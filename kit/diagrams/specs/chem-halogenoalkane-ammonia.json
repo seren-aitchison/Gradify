@@ -2,6 +2,7 @@
  "id": "chem-halogenoalkane-ammonia",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Halogenoalkanes",
  "title": "Ammonia and bromoethane",
  "caption": "Ammonia's lone pair attacks the δ+ carbon and bromide leaves (nucleophilic substitution), giving the ethylammonium ion. A second ammonia molecule removes a proton, giving ethylamine. Excess ammonia is used because ethylamine can itself react on.",

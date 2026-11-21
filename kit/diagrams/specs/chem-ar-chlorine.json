@@ -2,6 +2,7 @@
  "id": "chem-ar-chlorine",
  "renderer": "ms",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Relative atomic mass",
  "title": "Chlorine's isotopes and its relative atomic mass",
  "caption": "A mass spectrum of chlorine atoms shows ³⁵Cl (75.8%) and ³⁷Cl (24.2%). The weighted mean, (34.97 × 75.8 + 36.97 × 24.2) ÷ 100, is 35.45, the relative atomic mass in the periodic table.",

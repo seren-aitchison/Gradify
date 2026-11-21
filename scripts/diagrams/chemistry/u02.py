@@ -126,3 +126,31 @@ mk("u02-20", "chem-config-reactivity", "orbitals", "Why sodium loses and chlorin
          {"symbol": "Na", "charge": 1, "label": "Na⁺, [Ne]", "config": "1s2 2s2 2p6", "show": ["2p", "3s"], "core": ["1s", "2s"]},
          {"symbol": "Cl", "label": "Cl, [Ne] 3s² 3p⁵", "config": "[Ne] 3s2 3p5", "show": ["3s", "3p"], "core": ["1s", "2s", "2p"]},
          {"symbol": "Cl", "charge": -1, "label": "Cl⁻, [Ne] 3s² 3p⁶", "config": "[Ne] 3s2 3p6", "show": ["3s", "3p"], "core": ["1s", "2s", "2p"]}])
+
+mk("u02-14", "chem-hydrogen-spectrum", "levels", "The hydrogen spectrum",
+   "Hydrogen's energy levels, Eₙ = −13.6 eV ÷ n², crowd together towards n = ∞. Electrons falling to n = 1 emit ultraviolet (Lyman series), to n = 2 visible light (Balmer: 656, 486, 434 and 410 nm) and to n = 3 infrared (Paschen). Each line is one jump between two levels.",
+   "Energy levels n = 1 to 6, drawn to scale and converging below n = ∞, with downward arrows for the Lyman series to n = 1, the Balmer series to n = 2 and the Paschen series to n = 3.",
+   ["n = 1 at −13.6 eV, n = 2 at −3.40 eV, n = 3 at −1.51 eV, converging at 0.", "Lyman series: arrows ending on n = 1 (ultraviolet).", "Balmer series: arrows ending on n = 2 (visible).", "Paschen series: arrows ending on n = 3 (infrared)."],
+   also=["chemistry:u16-10"], kind="hydrogen", levels=6, balmerNm=[656, 486, 434, 410])
+
+mk("u02-15", "chem-emission-absorption", "levels", "Emission and absorption spectra of hydrogen",
+   "Hot hydrogen gas emits light only at certain wavelengths: bright lines on black. Cool hydrogen in front of a white light absorbs exactly the same wavelengths: dark lines on the continuous spectrum. The lines match because each corresponds to the same energy gap, ΔE = hc/λ.",
+   "Two spectrum strips from 380 to 720 nm: emission with coloured lines at 410, 434, 486 and 656 nm on black, and a full rainbow with dark lines at the same positions.",
+   ["Emission: violet 410, violet 434, blue-green 486 and red 656 nm lines on black.", "Absorption: a continuous rainbow with dark lines at 410, 434, 486 and 656 nm."],
+   kind="spectrum", balmerNm=[656, 486, 434, 410])
+
+r1s = "4*x^2*exp(-2*x)"
+mk("u02-17", "chem-radial-1s", "graph", "Where the 1s electron is",
+   "The radial probability distribution 4πr²ψ² for hydrogen's 1s electron. The electron is most likely to be found at the Bohr radius, a₀ = 52.9 pm, but there is a spread of distances: the quantum model replaces a fixed orbit with a probability.",
+   "Probability against distance from the nucleus in units of a₀: zero at the nucleus, a peak at 1 a₀, and a long tail.",
+   ["Zero at the nucleus.", "Maximum at r = a₀ = 52.9 pm.", "A tail stretching out several a₀."],
+   range={"x": [0, 6], "y": [0, 0.6]}, ticks=[[1, 2, 3, 4, 5, 6], [0.2, 0.4]], grid=[1, 0.1], axisLabels=["r / a₀", "radial probability"], xLabelBelow=True,
+   curves=[{"expr": r1s, "colour": "a1"}], marks=[{"x": 1, "label": "a₀ = 52.9 pm", "to": 0.54}],
+   checks=[{"type": "max", "expr": r1s, "domain": [0, 6], "x": 1, "y": round(4 * __import__("math").exp(-2), 5), "name": "the most probable distance is the Bohr radius, r = a₀"},
+           {"type": "area", "expr": r1s, "from": 0, "to": 40, "value": 1, "name": "total probability 1"}])
+
+mk("u02-18", "chem-orbital-shapes", "lobes", "The shapes of s, p and d orbitals",
+   "s orbitals are spheres; each p orbital has two lobes along an axis with a nodal plane between them; most d orbitals have four lobes. The colours show the opposite signs of the wavefunction, which matter when orbitals overlap to form bonds. An orbital has l angular nodes and n − l − 1 radial nodes.",
+   "Five orbital shapes: 1s sphere, 2s sphere with an inner sphere of opposite sign, 2pₓ and 2p_z dumbbells, 3d_xy cloverleaf and 3d_z² with a ring.",
+   ["1s: a sphere, no nodes.", "2s: a sphere with one radial node.", "2pₓ, 2p_z: two lobes, one nodal plane.", "3d_xy: four lobes between the axes, two nodal planes.", "3d_z²: two lobes on z and a ring."],
+   orbitals=[{"name": "1s"}, {"name": "2s", "claims": {"radial": 1}}, {"name": "2px", "claims": {"angular": 1}}, {"name": "2pz"}, {"name": "3dxy", "claims": {"angular": 2}}, {"name": "3dz2"}])

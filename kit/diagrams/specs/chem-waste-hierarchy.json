@@ -1,0 +1,74 @@
+{
+ "id": "chem-waste-hierarchy",
+ "renderer": "classify",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Chemical waste management",
+ "title": "The waste hierarchy",
+ "caption": "Options for waste in order of preference: prevent it in the first place, reuse, recycle, recover energy (incineration), and only last dispose of it in landfill.",
+ "alt": "A tree working down the hierarchy: can the waste be prevented? Otherwise reused? Otherwise recycled? Otherwise burned for energy? Otherwise disposed of.",
+ "description": [
+  "Prevent: design processes that make less waste.",
+  "Reuse.",
+  "Recycle.",
+  "Recover energy.",
+  "Dispose: the last resort."
+ ],
+ "start": "a",
+ "rowHeight": 86,
+ "nodes": {
+  "a": {
+   "q": "Can the waste be prevented?",
+   "yes": "pv",
+   "no": "b"
+  },
+  "pv": {
+   "leaf": "Prevent",
+   "tone": "good"
+  },
+  "b": {
+   "q": "Can it be reused?",
+   "yes": "ru",
+   "no": "c"
+  },
+  "ru": {
+   "leaf": "Reuse",
+   "tone": "a4"
+  },
+  "c": {
+   "q": "Can it be recycled?",
+   "yes": "rc",
+   "no": "d"
+  },
+  "rc": {
+   "leaf": "Recycle",
+   "tone": "a1"
+  },
+  "d": {
+   "q": "Can energy be recovered?",
+   "yes": "en",
+   "no": "dp"
+  },
+  "en": {
+   "leaf": "Recover energy",
+   "tone": "a3"
+  },
+  "dp": {
+   "leaf": "Dispose (landfill)",
+   "tone": "bad"
+  }
+ },
+ "claims": [
+  {
+   "type": "path",
+   "substance": "a waste that can only be burned",
+   "answers": [
+    "no",
+    "no",
+    "no",
+    "yes"
+   ],
+   "leaf": "Recover energy"
+  }
+ ]
+}

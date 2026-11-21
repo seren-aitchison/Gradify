@@ -2,6 +2,7 @@
  "id": "chem-charles",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Ideal gas equation",
  "title": "Charles's law",
  "caption": "At constant pressure, the volume of a gas is proportional to its absolute temperature. One mole of ideal gas at 1 atm occupies 22.4 dm³ at 273 K; extending the line back reaches zero volume at 0 K (−273 °C).",

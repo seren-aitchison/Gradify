@@ -2,6 +2,7 @@
  "id": "chem-covalent-water",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Covalent bonding",
  "title": "Covalent bonding in water and carbon dioxide",
  "caption": "Each bond is a shared pair, one electron from each atom. Water has two O–H bonds and two lone pairs on oxygen; carbon dioxide has two C=O double bonds, each sharing two pairs. Every atom ends with a full outer shell.",

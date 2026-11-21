@@ -2,6 +2,7 @@
  "id": "chem-gcms",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "GC-MS",
  "title": "GC–MS",
  "caption": "Gas chromatography separates a mixture in time; each compound then enters the mass spectrometer, which records its spectrum. Matching the retention time and the mass spectrum against a library identifies the compound, as in drug testing and forensic analysis.",

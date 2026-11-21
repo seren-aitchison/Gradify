@@ -247,8 +247,9 @@ function hydrogen(spec, W, narrow) {
   const E = (k) => -13.6 / k ** 2, y = (e) => top + ((0 - e) / 13.6) * (bot - top);
   const x0 = narrow ? 52 : 90, x1 = W - (narrow ? 14 : 30);
   let s = arrow(x0 - 30, bot + 6, x0 - 30, top - 20, { w: 1.6, head: 8 }) + text(x0 - 34, top - 28, "energy", { size: 12, anchor: "start", fill: C.soft });
-  for (let k = 1; k <= n; k++) s += line(x0, y(E(k)), x1, y(E(k)), { w: k === 1 ? 2.4 : 1.6 }) + text(x0 - 8, y(E(k)) + (k > 3 ? -2 : 0), `n = ${k}`, { size: k > 4 ? 10 : 12, weight: 600, anchor: "end", fill: C.ink });
-  s += line(x0, y(0), x1, y(0), { w: 1.4, dash: "6 4", stroke: C.line }) + text(x0 - 8, y(0) - 4, "n = ∞", { size: 11, anchor: "end", fill: C.soft });
+  // the levels crowd together towards n = ∞, so only n = 1 to 4 are labelled
+  for (let k = 1; k <= n; k++) s += line(x0, y(E(k)), x1, y(E(k)), { w: k === 1 ? 2.4 : 1.6 }) + (k <= 4 ? text(x0 - 8, y(E(k)) + (k === 4 ? 4 : 0), `n = ${k}`, { size: 12, weight: 600, anchor: "end", fill: C.ink }) : "");
+  s += line(x0, y(0), x1, y(0), { w: 1.4, dash: "6 4", stroke: C.line }) + text(x1, y(0) - 8, "n = ∞ (ionisation)", { size: 11, anchor: "end", fill: C.soft });
   if (!narrow) for (const k of [1, 2, 3]) s += text(x1 + 2, y(E(k)) + 14, `${E(k).toFixed(2).replace("-", "−")} eV`, { size: 10.5, anchor: "end", fill: C.soft });
   const series = [["Lyman", 1, "a5", "ultraviolet"], ["Balmer", 2, "a2", "visible"], ["Paschen", 3, "a3", "infrared"]].filter(([nm]) => (spec.series || ["Lyman", "Balmer", "Paschen"]).includes(nm));
   const span = (x1 - x0) / series.length;

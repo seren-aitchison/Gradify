@@ -2,6 +2,7 @@
  "id": "chem-buffer-region",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Buffers",
  "title": "The buffer region",
  "caption": "Titrating ethanoic acid with sodium hydroxide, the pH changes slowly over a wide range of added base: the solution contains both CH₃COOH and CH₃COO⁻ and resists change. This is the buffer region.",

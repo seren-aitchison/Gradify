@@ -2,6 +2,7 @@
  "id": "chem-equation-particles",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Chemical equations",
  "title": "An equation as particles",
  "caption": "CH₄ + 2O₂ → CO₂ + 2H₂O: one methane molecule and two oxygen molecules become one carbon dioxide and two water molecules. Count the atoms: 1 C, 4 H and 4 O on each side, so mass is conserved.",
@@ -13,6 +14,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Conservation of mass and relative formula mass"
   }
  ],

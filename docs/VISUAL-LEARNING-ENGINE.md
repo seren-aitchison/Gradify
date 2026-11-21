@@ -66,6 +66,28 @@ Tested negatively: reversing an SN2 curly arrow or claiming the wrong R/S label 
 3. `node scripts/diagrams/build.mjs <id>` until every check passes, then `node scripts/diagrams/shoot.cjs` and look at the desktop and phone screenshots.
 4. Review (separate person or AI reviewer), record it in the spec's `review`, rebuild. Only `approved` with a named reviewer goes live.
 
+## Chemistry
+
+Every written chemistry lesson is planned in `kit/diagrams/plans/chemistry.mjs`: the diagram it gets, or why it has none. `node scripts/diagrams/coverage.mjs` reports lessons covered, skipped by design, planned but missing, and failing (it exits 1 if anything planned is missing). The GCSE chemistry school reuses the same drawings through a spec's `also` placements.
+
+Specs are written by the Python batch scripts in `scripts/diagrams/chemistry/` (`mk(lessonId, id, renderer, …)`), so numbers computed for a curve and the numbers quoted in its caption and checks come from one calculation. Run a batch, then `node scripts/diagrams/place.mjs --clean` (adds `D:` lines, removes any that point at the wrong lesson; titles repeat across units, so specs carry `unit`), then build. Placing a diagram changes the lesson, so update the course registry afterwards (`updateRegistry` in `scripts/curriculum-registry.mjs`; `node scripts/new-course.mjs lock gcse` for the GCSE school).
+
+Renderers and what each recomputes:
+
+| renderer | file | checks |
+| --- | --- | --- |
+| mechanism | `scripts/diagrams/chem.py` | electron bookkeeping of every curly arrow, stage to stage |
+| structures, nmr, ms, ir | `scripts/diagrams/chem_more.py` | formula, groups (SMARTS), R/S and E/Z, isomers and enantiomers; NMR environments by symmetry and n + 1; m/z from formulae; IR bands in range and bonds present |
+| trend | `kit/diagrams/chem-renderers.js` | every value against the cited dataset in `kit/diagrams/data/chemistry.js`; dips, maxima, jumps, oxidation states from formulae |
+| orbitals, atom | same | configurations from the Aufbau order and its exceptions; shells from Z and charge |
+| particles, cycle, titration | same | atoms conserved; Hess's law; pH from the charge balance, equivalence, pKa, indicator choice |
+| classify, cell, levels, table, dotcross | `chem-renderers-2.js` | examples belong to their class; E° from data and half-equations that add up; Rydberg lines, MO bond orders, crystal-field spin; blocks; octets, formal charges, oxidation states |
+| vsepr, lattice, flow, apparatus, phase, lobes | `chem-renderers-3.js` | shape and angle from lone pairs; coordination numbers from the lattice; catalytic cycles add up with the catalyst regenerated; apparatus geometry (condenser water in at the bottom, thermometer at the side arm, baseline above the solvent); Clapeyron slope; nodes |
+
+The shared chemistry (formula and equation parsing, configurations, table positions) is `kit/diagrams/chem-core.js`, tested in `tests/chem-core.test.mjs`. RDKit (`pip install rdkit`) is needed for the Python renderers.
+
+Diagrams sit on frosted white glass cards in both themes (`kit/styles/components.css`, `.vx`): the card sets a light colour scheme, so diagram colours resolve to their light values.
+
 ## Figma
 
 Not connected in the build session, so not tested. Recommended role: art direction and the reusable design language (this file's tokens as a Figma library, illustration style for anatomy, apparatus and cells), and design review of rendered SVGs. Not the rendering engine: technical diagrams must stay deterministic, checkable and editable as code in this repository.

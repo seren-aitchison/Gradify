@@ -2,6 +2,7 @@
  "id": "chem-vsepr-domains",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "VSEPR theory",
  "title": "Electron domains and shapes",
  "caption": "Electron pairs repel and spread out as far as possible. With no lone pairs the shape follows the number of bonding domains: 2 linear (180°), 3 trigonal planar (120°), 4 tetrahedral (109.5°), 5 trigonal bipyramidal (90° and 120°), 6 octahedral (90°).",

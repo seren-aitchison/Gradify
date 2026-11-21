@@ -2,6 +2,7 @@
  "id": "chem-ie-trend-table",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Ionisation energy trends",
  "title": "First ionisation energy, hydrogen to calcium",
  "caption": "Peaks at the noble gases, troughs at the alkali metals: the pattern repeats each period, the evidence for shells. Each period starts lower than the last because the outer electron is in a new, more shielded shell.",

@@ -2,6 +2,7 @@
  "id": "chem-dipole-dipole",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Dipole-dipole interactions",
  "title": "Permanent dipole–dipole forces",
  "caption": "Each HCl molecule has a permanent dipole, H δ+ and Cl δ−. Neighbouring molecules line up so the δ+ end of one is near the δ− end of the next, an attraction on top of the London forces.",

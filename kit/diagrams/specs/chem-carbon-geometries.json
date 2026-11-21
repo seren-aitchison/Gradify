@@ -2,6 +2,7 @@
  "id": "chem-carbon-geometries",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Carbon bonding",
  "title": "Carbon's three shapes",
  "caption": "Four single bonds put carbon at the centre of a tetrahedron, 109.5°. With a double bond it is trigonal planar, 120°; with a triple bond, linear, 180°. A multiple bond counts as one region of electron density.",

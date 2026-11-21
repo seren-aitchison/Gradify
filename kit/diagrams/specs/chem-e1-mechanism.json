@@ -2,6 +2,7 @@
  "id": "chem-e1-mechanism",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "E1 mechanisms",
  "title": "The E1 mechanism",
  "caption": "In a polar solvent, 2-bromo-2-methylpropane first ionises (slow) to a tertiary carbocation and bromide. A water molecule then removes a proton from a carbon next to C⁺ (fast), and those electrons form the C=C of 2-methylpropene. Only the halogenoalkane is in the rate equation.",

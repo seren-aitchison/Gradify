@@ -2,6 +2,7 @@
  "id": "chem-mechanism-profile",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Reaction mechanisms",
  "title": "A three-step mechanism",
  "caption": "Each step has its own transition state, with an intermediate between steps. The step with the highest transition state, here the second, is rate-determining.",

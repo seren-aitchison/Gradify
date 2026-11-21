@@ -2,6 +2,7 @@
  "id": "chem-heating-curve",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Boiling and melting",
  "title": "Heating curve of water",
  "caption": "Heating one mole of ice from −20 °C at a steady rate. The temperature stops rising while the ice melts (6.01 kJ) and while the water boils (40.7 kJ): the energy separates particles instead of speeding them up. Boiling takes far more energy because the molecules separate completely.",

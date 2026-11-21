@@ -576,6 +576,7 @@ O: Explain how fractional distillation separates crude oil
 O: Explain why and how long hydrocarbons are cracked
 H: Crude oil and alkanes
 P: **Crude oil** is a finite resource formed over millions of years from the remains of ancient marine organisms, mainly plankton, buried in mud. It is a mixture of many **hydrocarbons**, compounds of hydrogen and carbon only. Most are **alkanes**, with the general formula **CₙH₂ₙ₊₂**. The first four are methane (CH₄), ethane (C₂H₆), propane (C₃H₈) and butane (C₄H₁₀). Alkanes are **saturated**: they contain only single carbon–carbon bonds.
+D: chem-fractionating-column
 H: Fractional distillation
 - Crude oil is heated until most of it evaporates, and the vapour enters a **fractionating column**.
 - The column is hot at the bottom and cooler at the top.
@@ -706,6 +707,7 @@ O: Explain the greenhouse effect and human contributions to climate change
 O: Describe the causes and effects of atmospheric pollutants
 H: The evolving atmosphere
 P: Today's atmosphere is about **80% nitrogen** and **20% oxygen**, with small amounts of argon, carbon dioxide and water vapour. The early atmosphere, formed by volcanic activity, was probably mainly **carbon dioxide**, with water vapour that condensed to form the oceans. Carbon dioxide decreased as it **dissolved in oceans**, formed **carbonate rocks** and fossil fuels, and was used by **algae and plants** in photosynthesis. Photosynthesis produced the **oxygen**, which built up over about 2.7 billion years.
+D: chem-keeling
 H: Greenhouse gases and climate change
 - **Greenhouse gases**, such as carbon dioxide, methane and water vapour, absorb long-wavelength infrared radiation from the Earth's surface.
 - This keeps the Earth warm enough for life.
@@ -751,6 +753,7 @@ O: Describe how waste water is treated
 O: Carry out and evaluate simple life cycle assessments
 H: Potable water
 P: **Potable water** is water that is safe to drink. It is not pure in the chemical sense, because it contains dissolved substances, but it has low levels of salts and microbes. In the UK, **fresh water** from rain, rivers, lakes and aquifers is treated by **filtering** through beds to remove solids, then **sterilising** with chlorine, ozone or ultraviolet light. Where fresh water is scarce, **desalination** of sea water by **distillation** or **reverse osmosis** is used, but it requires large amounts of energy.
+D: chem-water-treatment
 H: Waste water treatment
 - Sewage and agricultural and industrial waste water must be treated before release.
 - **Screening** and grit removal take out large objects.

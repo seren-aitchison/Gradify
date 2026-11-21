@@ -2,6 +2,7 @@
  "id": "chem-group2-solubility",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "s-block chemistry",
  "title": "Group 2 sulfates become less soluble",
  "caption": "Down group 2 the sulfates become less soluble: Ksp falls from 4.9 × 10⁻⁵ for CaSO₄ to 1.1 × 10⁻¹⁰ for BaSO₄, which is why acidified BaCl₂ is the test for sulfate. The hydroxides show the opposite trend.",

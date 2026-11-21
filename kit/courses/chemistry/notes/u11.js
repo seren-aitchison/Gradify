@@ -556,6 +556,7 @@ H: Range of states
 - Beyond manganese, high states become less stable.
 - **+2** is common for later metals; higher states are common for early metals.
 - Maximum states often equal the number of 4s plus 3d electrons up to Mn.
+D: chem-mn-oxidation-states
 H: Stabilising factors
 - **Oxide and fluoride** ligands stabilise high states, as in MnO₄⁻ and CrO₄²⁻.
 - **π-acceptor** ligands such as CO stabilise low states, even 0.
@@ -891,6 +892,7 @@ H: Properties
 - All are **radioactive**; elements beyond uranium are mostly synthetic.
 - Early actinides show **many oxidation states**, up to +7 for neptunium and plutonium.
 - 5f orbitals extend further than 4f, so they take more part in bonding.
+D: chem-table-f-block
 H: Uses and challenges
 - **Uranium** and **plutonium** fuel nuclear reactors.
 - **Americium** is used in smoke detectors.

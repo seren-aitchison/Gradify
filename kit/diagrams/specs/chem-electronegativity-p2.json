@@ -2,6 +2,7 @@
  "id": "chem-electronegativity-p2",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Electronegativity",
  "title": "Electronegativity across period 2",
  "caption": "Electronegativity rises across period 2 from lithium (0.98) to fluorine (3.98), the most electronegative element. A large difference between two bonded atoms gives a polar or ionic bond.",

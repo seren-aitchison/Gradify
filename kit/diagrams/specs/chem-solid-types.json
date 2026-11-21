@@ -2,6 +2,7 @@
  "id": "chem-solid-types",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Solid-state bonding",
  "title": "Classifying solids by bonding",
  "caption": "Ionic solids are metal with non-metal; metallic solids are metals. Non-metal solids are either giant covalent networks (diamond, silicon dioxide), with very high melting points, or simple molecular solids (ice, iodine), where only weak forces between molecules have to be overcome.",

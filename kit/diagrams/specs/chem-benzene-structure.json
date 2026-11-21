@@ -2,6 +2,7 @@
  "id": "chem-benzene-structure",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Benzene structure",
  "title": "Kekulé and delocalised benzene",
  "caption": "Kekulé's structure has alternating single (0.154 nm) and double (0.134 nm) bonds. X-ray diffraction finds every C–C bond 0.139 nm, so the six π electrons are delocalised round the ring, drawn as a circle.",
@@ -13,6 +14,7 @@
  "also": [
   {
    "course": "chemistry",
+   "unit": "u04",
    "lesson": "Delocalisation"
   }
  ],

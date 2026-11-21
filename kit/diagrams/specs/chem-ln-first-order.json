@@ -2,6 +2,7 @@
  "id": "chem-ln-first-order",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Integrated rate laws",
  "title": "ln[A] against time is a straight line for first order",
  "caption": "Taking logs of [A] = [A]₀e^(−kt) gives ln[A] = ln[A]₀ − kt: a straight line whose gradient is −k. Here k = 0.116 s⁻¹ (half-life 6 s).",

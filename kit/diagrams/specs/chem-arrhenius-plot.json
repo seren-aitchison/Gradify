@@ -2,6 +2,7 @@
  "id": "chem-arrhenius-plot",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Arrhenius equation",
  "title": "The Arrhenius plot",
  "caption": "ln k = ln A − Ea/RT, so plotting ln k against 1/T gives a straight line of gradient −Ea/R. Here the gradient is −6.01 × 10³ K, so Ea = 6.01 × 10³ × 8.314 = 50 kJ mol⁻¹.",

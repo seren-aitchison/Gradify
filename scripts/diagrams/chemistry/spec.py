@@ -14,10 +14,11 @@ IDS = {"chemistry": _ids("chemistry"), "gcse": _ids("gcse")}
 
 def mk(lesson, id, renderer, title, caption, alt, description, also=(), **body):
     """lesson: a chemistry lesson id ("u02-08"); also: extra placements as "gcse:u05-01" or "chemistry:u05-15"."""
-    spec = {"id": id, "renderer": renderer, "course": "chemistry", "lesson": IDS["chemistry"][lesson],
+    # the unit as well as the title: several lessons share a title across units ("Oxidation states")
+    spec = {"id": id, "renderer": renderer, "course": "chemistry", "unit": lesson[:3], "lesson": IDS["chemistry"][lesson],
             "title": title, "caption": caption, "alt": alt, "description": list(description)}
     if also:
-        spec["also"] = [{"course": a.split(":")[0], "lesson": IDS[a.split(":")[0]][a.split(":")[1]]} for a in also]
+        spec["also"] = [{"course": a.split(":")[0], "unit": a.split(":")[1][:3], "lesson": IDS[a.split(":")[0]][a.split(":")[1]]} for a in also]
     spec.update(body)
     with open(os.path.join(SPECS, f"{id}.json"), "w", encoding="utf8") as f:
         json.dump(spec, f, ensure_ascii=False, indent=1)

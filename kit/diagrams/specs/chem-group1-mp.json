@@ -2,6 +2,7 @@
  "id": "chem-group1-mp",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Group 1",
  "title": "Group 1 melting points",
  "caption": "Down group 1 the atoms get larger, so the delocalised electrons are further from the cations and metallic bonding weakens: melting points fall from lithium (181 °C) to caesium (29 °C).",

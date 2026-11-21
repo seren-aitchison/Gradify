@@ -2,6 +2,7 @@
  "id": "chem-ph-log",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "pH",
  "title": "pH is a logarithmic scale",
  "caption": "pH = −log₁₀[H⁺]. A tenfold dilution of a strong acid raises the pH by exactly 1: 0.1 mol dm⁻³ HCl is pH 1, 0.01 is pH 2, 0.001 is pH 3.",

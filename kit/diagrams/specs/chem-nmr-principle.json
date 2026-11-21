@@ -2,6 +2,7 @@
  "id": "chem-nmr-principle",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Nuclear magnetic resonance",
  "title": "Nuclear spin in a magnetic field",
  "caption": "A ¹H nucleus has two spin states that have the same energy until a magnetic field is applied. In a field they split: aligned with the field (α) is lower, against it (β) higher. Radio waves of exactly the gap flip spins; the gap depends on the local field, which is what chemical shift measures.",

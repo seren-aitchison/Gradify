@@ -2,6 +2,7 @@
  "id": "chem-first-order-decay",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "First-order reactions",
  "title": "First-order decay: constant half-lives",
  "caption": "A first-order reaction loses the same fraction in each equal time: the half-life is constant, here 6 s, whatever the starting concentration. t½ = ln 2 ÷ k, so k = 0.116 s⁻¹.",
@@ -15,6 +16,7 @@
  "also": [
   {
    "course": "chemistry",
+   "unit": "u07",
    "lesson": "Half-life"
   }
  ],

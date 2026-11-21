@@ -11,6 +11,7 @@ H: Describing structure
 - Molecules vibrate, so measured values are averages.
 - **Symmetry elements**: rotation axes, mirror planes, inversion centres.
 - Molecules are grouped into **point groups** by their symmetry, such as C₂ᵥ for water.
+D: chem-vsepr-lone-pairs
 H: Measuring structure
 - **X-ray and neutron diffraction** for crystals.
 - **Microwave spectroscopy** for gas-phase molecules.
@@ -52,6 +53,7 @@ H: Diatomic molecules
 - **Bond order** = ½(bonding − antibonding electrons).
 - O₂ has two unpaired electrons in π* orbitals: it is **paramagnetic**.
 - In B₂, C₂ and N₂, **s-p mixing** raises σ2p above π2p.
+D: chem-mo-h2
 H: Conjugated systems
 - **Hückel theory** treats π orbitals separately from σ.
 - n p orbitals combine into n π molecular orbitals.
@@ -93,6 +95,7 @@ H: Key ideas
 - Energy is **quantised**.
 - |ψ|² gives the **probability density** of finding an electron.
 - Classical physics cannot explain atomic stability or spectra.
+D: chem-mo-n2
 H: Approximations
 - **Born-Oppenheimer**: nuclei are much heavier and slower than electrons, so they are treated as fixed.
 - **Hartree-Fock**: each electron moves in the average field of the others.
@@ -140,6 +143,7 @@ H: The equation
 - The **Hamiltonian** includes kinetic and potential energy.
 - Solutions are **eigenfunctions** with **eigenvalues** E.
 - Only certain energies are allowed: **quantisation**.
+D: chem-schrodinger-well
 H: Acceptable wavefunctions
 - ψ must be **single-valued**, **continuous** and **finite**.
 - ψ must be **normalisable**: total probability equals 1.
@@ -181,6 +185,7 @@ H: The model
 - ψ must be zero at the walls.
 - Allowed energies: **Eₙ = n²h² / (8mL²)**, n = 1, 2, 3…
 - The lowest energy is **not zero**: **zero-point energy**.
+D: chem-particle-box
 H: Consequences
 - Energy levels are spaced further apart as n increases.
 - A **smaller box** gives **larger** energy gaps.
@@ -222,6 +227,7 @@ H: The model
 - Energy levels: **Eᵥ = (v + ½)hν**, v = 0, 1, 2…
 - Levels are **equally spaced** by hν.
 - Frequency depends on **force constant k** and **reduced mass μ**: ν = (1/2π)√(k/μ).
+D: chem-harmonic-oscillator
 H: Real bonds
 - Real bonds are **anharmonic**: levels get closer at high energy.
 - Bonds eventually **dissociate**, which a spring cannot do.
@@ -263,6 +269,7 @@ H: Rigid rotor
 - **B** is the rotational constant, inversely proportional to **moment of inertia I**.
 - **I = μr²** for a diatomic molecule.
 - Lines appear at 2B, 4B, 6B…, spaced by **2B**.
+D: chem-rotational-levels
 H: Selection rules
 - The molecule must have a **permanent dipole moment**.
 - **ΔJ = ±1**.
@@ -304,6 +311,7 @@ H: Normal modes
 - **Linear** molecules: 3N − 5 vibrations; **non-linear**: 3N − 6.
 - Each **normal mode** is an independent pattern of motion.
 - Modes include symmetric and asymmetric stretches and bends.
+D: chem-morse
 H: Selection rules
 - **IR active**: the mode changes the dipole moment.
 - **Raman active**: the mode changes polarisability.
@@ -345,6 +353,7 @@ H: Types of transition
 - **π → π***: strong absorption, in UV-visible for conjugated systems.
 - **n → π***: weak, from lone pairs, as in carbonyls.
 - **Charge transfer**: electron moves between parts of a molecule or complex.
+D: chem-franck-condon
 H: Rules and shapes
 - **Franck-Condon principle**: electrons move so fast that nuclei do not move during a transition.
 - This gives **vibrational structure** in electronic bands.
@@ -386,6 +395,7 @@ H: Energy scales
 - **Vibrational**: infrared.
 - **Rotational**: microwave, smallest gaps.
 - **Nuclear spin**: radio waves in a magnetic field (NMR).
+D: chem-hydrogen-spectrum
 H: Lines and bands
 - Atoms have only electronic levels: sharp **line spectra**.
 - Molecules add vibrational and rotational levels: **band spectra**.
@@ -427,6 +437,7 @@ H: Microstates and macrostates
 - A **microstate** is one specific arrangement of molecules among energy levels.
 - Many microstates correspond to one macrostate.
 - The most probable macrostate has the most microstates.
+D: chem-boltzmann-populations
 H: Key results
 - **Boltzmann distribution**: Nᵢ/N₀ = e^(−ΔE/kT).
 - **Boltzmann entropy**: **S = k ln W**, where W is the number of microstates.
@@ -468,6 +479,7 @@ H: Definition
 - q measures the **number of thermally accessible states**.
 - At very low T, q ≈ 1; at high T, q becomes large.
 - Fraction in level i: **pᵢ = e^(−εᵢ/kT) / q**.
+D: chem-partition-function
 H: Contributions
 - q = q_trans × q_rot × q_vib × q_elec.
 - **Translational**: very large, many accessible states.
@@ -509,6 +521,7 @@ H: The distribution
 - The curve starts at zero, rises to a peak and has a long tail.
 - **Most probable speed** < **mean speed** < **root-mean-square speed**.
 - Area under the curve equals the total number of molecules.
+D: chem-collision-ea
 H: Effects
 - **Higher temperature**: curve flattens and shifts to higher speeds.
 - **Heavier molecules**: lower speeds at the same temperature.
@@ -550,6 +563,7 @@ H: Theories
 - **Transition state theory**: reactants are in equilibrium with an **activated complex**.
 - The **Eyring equation** relates k to ΔG‡, the Gibbs energy of activation.
 - ΔH‡ and ΔS‡ give insight into the transition state.
+D: chem-kinetics-integrated
 H: Complex mechanisms
 - **Steady-state approximation**: concentrations of reactive intermediates stay constant.
 - **Chain reactions** have initiation, propagation and termination.
@@ -591,6 +605,7 @@ H: Why surfaces matter
 - **Surface energy** makes surfaces tend to minimise their area.
 - **Nanoparticles** have a high proportion of surface atoms.
 - Many reactions happen only at surfaces, as in heterogeneous catalysis.
+D: chem-langmuir
 H: Studying surfaces
 - **Scanning tunnelling microscopy (STM)** images individual atoms.
 - **X-ray photoelectron spectroscopy (XPS)** identifies surface elements and oxidation states.
@@ -632,6 +647,7 @@ H: Types
 - **Chemisorption**: chemical bonds form, high enthalpy (about −200 kJ mol⁻¹), monolayer only.
 - Adsorption is usually **exothermic**.
 - **Adsorption** (on a surface) differs from **absorption** (into a bulk).
+D: chem-physisorption
 H: Langmuir isotherm
 - Assumes a **monolayer** with equivalent, independent sites.
 - **θ = KP / (1 + KP)**, where θ is the fraction of sites covered.
@@ -674,6 +690,7 @@ H: Types
 - **Foam**: gas in liquid (whipped cream).
 - **Aerosol**: liquid or solid in gas (fog, smoke).
 - **Gel**: liquid trapped in a solid network (jelly).
+D: chem-colloid
 H: Stability and properties
 - Particles are kept apart by **charge repulsion** or **steric** barriers.
 - **Electrolytes** can cause **coagulation** by screening charges.
@@ -715,6 +732,7 @@ H: Surface tension and surfactants
 - **Surfactants** have a polar head and non-polar tail.
 - They gather at interfaces, **lowering** surface tension.
 - Above the **critical micelle concentration (CMC)**, they form **micelles**.
+D: chem-surfactant-interface
 H: Wetting
 - The **contact angle** measures how a liquid spreads on a solid.
 - **< 90°**: the liquid wets the surface (hydrophilic).
@@ -756,6 +774,7 @@ H: Principles
 - **Stark-Einstein law**: each absorbed photon excites one molecule.
 - **Quantum yield** Φ = molecules reacted ÷ photons absorbed.
 - Chain reactions can have Φ much greater than 1.
+D: chem-photochem
 H: Excited states
 - A **Jablonski diagram** shows singlet (S) and triplet (T) states.
 - Paths: fluorescence (S₁ → S₀), intersystem crossing (S₁ → T₁), phosphorescence (T₁ → S₀).
@@ -797,6 +816,7 @@ H: Types
 - **Ion-dipole** and **dipole-dipole**: depend on orientation.
 - **London dispersion**: from fluctuating dipoles, energy ∝ 1/r⁶.
 - **π-stacking** and **hydrogen bonding** are directional.
+D: chem-lennard-jones
 H: Distance dependence
 - At large distances, attraction dominates.
 - At short distances, electron clouds overlap and **repulsion** dominates.
@@ -838,6 +858,7 @@ H: Solvation
 - In water this is **hydration**; ions are strongly hydrated by ion-dipole forces.
 - Smaller, more highly charged ions have larger **hydration enthalpies**.
 - Solubility depends on the balance of lattice and solvation energies.
+D: chem-solvation-shell
 H: Hydrophobic effect
 - Non-polar molecules in water force water into **ordered** cages.
 - Clustering non-polar groups together **releases** water, increasing entropy.
@@ -879,6 +900,7 @@ H: Methods
 - **Quantum mechanical (QM)** methods such as DFT: include electrons; slower but can model bond breaking.
 - **QM/MM** combines both for large systems such as enzymes.
 - **Geometry optimisation** finds the lowest-energy structure.
+D: chem-energy-landscape
 H: Simulations
 - **Molecular dynamics (MD)** follows atoms over time using Newton's laws.
 - **Monte Carlo** methods sample random configurations.

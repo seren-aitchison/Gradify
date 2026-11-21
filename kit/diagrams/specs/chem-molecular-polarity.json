@@ -2,6 +2,7 @@
  "id": "chem-molecular-polarity",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Molecular polarity",
  "title": "When bond dipoles cancel",
  "caption": "CO₂ and BF₃ have polar bonds, but their symmetrical shapes make the dipoles cancel: non-polar. In bent H₂O and pyramidal NH₃ the dipoles do not cancel, so the molecules are polar.",

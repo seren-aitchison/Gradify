@@ -2,6 +2,7 @@
  "id": "chem-titration-curves",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Acid-base titrations",
  "title": "The four titration curves",
  "caption": "25.0 cm³ of 0.100 mol dm⁻³ acid titrated with 0.100 mol dm⁻³ base. Every curve reaches equivalence at 25.0 cm³, but where the pH jumps, and by how much, depends on whether acid and base are strong or weak. A weak acid with a weak base gives no sharp jump.",

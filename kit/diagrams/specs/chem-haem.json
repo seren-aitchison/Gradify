@@ -2,6 +2,7 @@
  "id": "chem-haem",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Bioinorganic chemistry",
  "title": "The iron centre of haem",
  "caption": "In haemoglobin, Fe²⁺ sits in an octahedral site: four nitrogens of the flat porphyrin ring, one histidine nitrogen below, and O₂ bound above. Carbon monoxide binds the same site about 200 times more strongly, which is why it is poisonous.",

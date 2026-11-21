@@ -2,6 +2,7 @@
  "id": "chem-carbonyl-reactivity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Carbonyl chemistry",
  "title": "Reactivity of carboxylic acid derivatives",
  "caption": "Towards nucleophiles: acyl chlorides > acid anhydrides > esters > amides. The better the leaving group (Cl⁻ best, NH₂⁻ worst) and the less the lone pair next to C=O feeds into it, the more reactive the derivative.",

@@ -2,6 +2,7 @@
  "id": "chem-selectivity-overview",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Reaction selectivity",
  "title": "Which kind of selectivity?",
  "caption": "When a reaction could give more than one product, ask what the products differ in. Reaction at one functional group rather than another is chemoselectivity; at one position rather than another, regioselectivity; one stereoisomer rather than another, stereoselectivity.",

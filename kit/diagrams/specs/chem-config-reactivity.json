@@ -2,6 +2,7 @@
  "id": "chem-config-reactivity",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Electronic structure and chemical properties",
  "title": "Why sodium loses and chlorine gains",
  "caption": "Sodium has one 3s electron outside a full shell; losing it leaves the neon configuration. Chlorine is one electron short of filling 3p; gaining one gives the argon configuration. The ions Na⁺ and Cl⁻ both have full outer sub-shells.",

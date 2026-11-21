@@ -2,6 +2,7 @@
  "id": "chem-gas-chromatogram",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Gas chromatography",
  "title": "A gas chromatogram",
  "caption": "Hexane, heptane and octane are carried through the column by the gas; the more volatile (lower boiling) the compound, the less time it spends dissolved in the stationary phase and the sooner it reaches the detector. The area under each peak is proportional to its amount.",

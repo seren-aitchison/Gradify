@@ -2,6 +2,7 @@
  "id": "chem-electron-affinity-p3",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Electron affinity",
  "title": "First electron affinities across period 3",
  "caption": "Gaining an electron releases energy for these atoms, most of all for chlorine, whose extra electron completes the 3p sub-shell. Phosphorus (3p³, half-filled) releases less than silicon: its value is less negative. Magnesium and argon form no stable 1− ion and are left out.",

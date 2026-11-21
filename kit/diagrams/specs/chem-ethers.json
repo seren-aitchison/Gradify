@@ -2,6 +2,7 @@
  "id": "chem-ethers",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Ethers",
  "title": "Ethers",
  "caption": "An ether has an oxygen bonded to two carbons, C–O–C. With no O–H, ethers cannot hydrogen bond to each other, so they boil far lower than alcohols of similar mass. Epoxides are three-membered cyclic ethers, strained and reactive.",

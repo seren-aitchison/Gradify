@@ -2,6 +2,7 @@
  "id": "chem-ionic-radius",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Ionic radius",
  "title": "Isoelectronic ions",
  "caption": "O²⁻, F⁻, Na⁺, Mg²⁺ and Al³⁺ all have the neon configuration, ten electrons. The nuclear charge rises from 8 to 13, pulling the same electrons closer, so the ions shrink from 140 to 54 pm.",

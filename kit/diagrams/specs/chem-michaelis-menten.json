@@ -2,6 +2,7 @@
  "id": "chem-michaelis-menten",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Enzyme catalysis",
  "title": "Enzyme kinetics",
  "caption": "At low substrate concentration the rate rises almost in proportion. As the enzyme's active sites fill, the rate levels towards Vmax. The Michaelis constant Km is the concentration that gives half of Vmax.",

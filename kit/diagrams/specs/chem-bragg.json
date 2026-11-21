@@ -2,6 +2,7 @@
  "id": "chem-bragg",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "X-ray diffraction",
  "title": "Bragg's law",
  "caption": "nλ = 2d sin θ. With copper Kα X-rays (λ = 0.154 nm) and the 0.282 nm spacing between planes in NaCl, reflections appear at θ = 15.9° (n = 1), 33.1° (n = 2) and 55.0° (n = 3). Measuring θ gives the spacing d.",

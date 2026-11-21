@@ -2,6 +2,7 @@
  "id": "chem-structural-isomers",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Structural isomerism",
  "title": "Three kinds of structural isomer",
  "caption": "Chain isomers have different skeletons (butane, methylpropane); position isomers have the group in a different place (propan-1-ol, propan-2-ol); functional group isomers have different groups (ethanol, methoxymethane). Each pair shares a molecular formula.",

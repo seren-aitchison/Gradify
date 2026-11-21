@@ -2,6 +2,7 @@
  "id": "chem-ligands-denticity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Ligands",
  "title": "Ligands by denticity",
  "caption": "A ligand donates a lone pair to the metal. Ammonia donates one (monodentate); ethane-1,2-diamine and ethanedioate donate two (bidentate); EDTA⁴⁻ donates six (hexadentate), wrapping round the metal ion. Multidentate ligands form more stable complexes (the chelate effect).",

@@ -53,6 +53,7 @@ H: Tracking changes
 - Compare each element's oxidation state in reactants and products.
 - Elements whose oxidation states do not change are not oxidised or reduced.
 - The total increase equals the total decrease.
+D: chem-oxidation-state-rules
 H: Special cases
 - **Disproportionation**: the same element is both oxidised and reduced.
 - Example: Cl₂ + 2NaOH → NaCl + NaClO + H₂O (Cl from 0 to −1 and +1).

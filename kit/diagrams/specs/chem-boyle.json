@@ -2,6 +2,7 @@
  "id": "chem-boyle",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Gas laws",
  "title": "Boyle's law",
  "caption": "At constant temperature, pressure is inversely proportional to volume: pV is constant, so halving the volume doubles the pressure. A higher temperature gives a larger constant and a curve further out.",

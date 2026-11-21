@@ -2,6 +2,7 @@
  "id": "chem-half-equivalence",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Henderson-Hasselbalch equation",
  "title": "pH = pKa at half-neutralisation",
  "caption": "Halfway to the equivalence point, half the ethanoic acid has become ethanoate, so [HA] = [A⁻] and pH = pKa. Reading the pH at half the equivalence volume measures pKa: 4.76.",

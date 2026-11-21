@@ -264,7 +264,6 @@ H: Aromaticity
 - Benzene has 6 π electrons.
 - Aromatic rings are unusually **stable**.
 D: chem-aromatics
-D: chem-friedel-crafts
 H: Reactions
 - Arenes undergo **electrophilic substitution**, keeping the stable ring.
 - **Nitration**: HNO₃ and H₂SO₄ give nitrobenzene.

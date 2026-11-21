@@ -2,6 +2,7 @@
  "id": "chem-paper-chromatography",
  "renderer": "apparatus",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Chromatography",
  "title": "Paper chromatography",
  "caption": "Spots of a food colouring and three known dyes are placed on a pencil baseline above the solvent. As the solvent rises it carries each dye a characteristic distance. The colouring contains dyes A and B (same Rf), but not C. Rf = distance moved by the spot ÷ distance moved by the solvent.",
@@ -14,10 +15,12 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Chemical analysis and chromatography"
   },
   {
    "course": "chemistry",
+   "unit": "u19",
    "lesson": "Thin-layer chromatography"
   }
  ],

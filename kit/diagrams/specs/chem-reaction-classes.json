@@ -2,6 +2,7 @@
  "id": "chem-reaction-classes",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Organic reaction classification",
  "title": "Classifying an organic reaction",
  "caption": "Ask what happens to the starting molecule. Two molecules joining into one is addition; a group swapped for another is substitution; a small molecule lost to form a double bond is elimination. Oxidation, reduction, condensation and hydrolysis are named by what is gained or lost.",

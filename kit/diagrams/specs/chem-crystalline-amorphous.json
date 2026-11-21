@@ -2,6 +2,7 @@
  "id": "chem-crystalline-amorphous",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Amorphous solids",
  "title": "Crystalline and amorphous solids",
  "caption": "A crystalline solid such as quartz has its particles in a regular, repeating arrangement and a sharp melting point. An amorphous solid such as glass has the same close packing but no long-range order, and softens over a range of temperatures.",

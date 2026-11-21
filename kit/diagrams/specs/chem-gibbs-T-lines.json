@@ -2,6 +2,7 @@
  "id": "chem-gibbs-T-lines",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Temperature dependence",
  "title": "ΔG against temperature for each sign case",
  "caption": "ΔG = ΔH − TΔS is a straight line with intercept ΔH and gradient −ΔS. Two cases never change sign; the other two cross zero at T = ΔH/ΔS, here 500 K.",

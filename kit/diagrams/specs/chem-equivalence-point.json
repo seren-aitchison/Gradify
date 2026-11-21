@@ -2,6 +2,7 @@
  "id": "chem-equivalence-point",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Equivalence points",
  "title": "The equivalence point",
  "caption": "At equivalence the acid and base have reacted in exactly the amounts in the equation. For 25.0 cm³ of 0.100 mol dm⁻³ HCl that is 2.50 × 10⁻³ mol, so 25.0 cm³ of 0.100 mol dm⁻³ NaOH; the pH there is 7 and the curve is steepest.",

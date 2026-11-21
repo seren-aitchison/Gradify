@@ -2,6 +2,7 @@
  "id": "chem-electrochemical-series",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Electrochemical series",
  "title": "The electrochemical series",
  "caption": "Couples listed by standard electrode potential. The oxidised form at the top (F₂, MnO₄⁻) is the strongest oxidising agent; the reduced form at the bottom (Li) is the strongest reducing agent. A species will oxidise anything below it on the left-hand side of the list.",
@@ -13,7 +14,7 @@
  ],
  "kind": "ladder",
  "dataset": "e0",
- "unit": "V",
+ "valueUnit": "V",
  "topLabel": "stronger oxidising agents (left)",
  "bottomLabel": "stronger reducing agents (right)",
  "height": [

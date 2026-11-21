@@ -2,6 +2,7 @@
  "id": "chem-hrms",
  "renderer": "ms",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "High-resolution mass spectrometry",
  "title": "High-resolution mass spectrometry",
  "caption": "CO, N₂ and C₂H₄ all have a nominal mass of 28, but their exact masses differ because isotopic masses are not whole numbers (¹²C is exactly 12, ¹H is 1.0078, ¹⁴N 14.0031, ¹⁶O 15.9949). Measured to four decimal places they are easily told apart.",

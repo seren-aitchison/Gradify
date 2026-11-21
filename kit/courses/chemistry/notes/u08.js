@@ -511,6 +511,7 @@ H: Haber process
 - Conditions: about **400–450 °C**, **200 atm**, **iron catalyst**.
 - Ammonia is removed by cooling and liquefying; unreacted gases are **recycled**.
 - Single-pass conversion is about 15%, but recycling gives overall about 98%.
+D: chem-haber-yield
 H: Contact process
 - 2SO₂ + O₂ ⇌ 2SO₃, ΔH = −196 kJ mol⁻¹.
 - Conditions: about **450 °C**, **1–2 atm**, **V₂O₅ catalyst**.

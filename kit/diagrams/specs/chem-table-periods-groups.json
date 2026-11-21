@@ -2,6 +2,7 @@
  "id": "chem-table-periods-groups",
  "renderer": "table",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Periods and groups",
  "title": "Periods and groups",
  "caption": "Rows are periods: the period number is the number of occupied electron shells. Columns are groups: elements in a group share their outer electron configuration, so they react alike. Group 1, group 17 and group 18 are highlighted.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "The periodic table and groups"
   }
  ],

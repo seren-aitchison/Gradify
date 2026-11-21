@@ -2,6 +2,7 @@
  "id": "chem-condensation-ester",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Condensation reactions",
  "title": "A condensation reaction: making an ester",
  "caption": "Ethanoic acid and ethanol join, losing a molecule of water, to give ethyl ethanoate. With a concentrated sulfuric acid catalyst this is an equilibrium; removing water or the ester pushes it forward.",

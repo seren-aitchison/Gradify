@@ -2,6 +2,7 @@
  "id": "chem-le-chatelier-conc",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Le Chatelier's principle",
  "title": "Adding a reactant",
  "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s extra A is added: [A] jumps from 0.4 to 0.8. The system responds by converting some A to B until [B]/[A] is 1.5 again, now at [A] = 0.56 and [B] = 0.84.",

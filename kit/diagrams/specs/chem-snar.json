@@ -2,6 +2,7 @@
  "id": "chem-snar",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Nucleophilic aromatic substitution",
  "title": "Nucleophilic aromatic substitution",
  "caption": "An electron-withdrawing nitro group para to the chlorine lets hydroxide add to the ring. The negative charge of the addition intermediate (the Meisenheimer complex) is spread onto the nitro group; chloride then leaves and the ring is restored, giving 4-nitrophenol (as its anion in excess alkali).",

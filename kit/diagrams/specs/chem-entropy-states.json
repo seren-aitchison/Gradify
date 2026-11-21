@@ -2,6 +2,7 @@
  "id": "chem-entropy-states",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Entropy",
  "title": "Entropy increases from solid to gas",
  "caption": "Entropy measures the number of ways particles and their energy can be arranged. A solid's particles are fixed in place (low entropy); a liquid's can move past each other; a gas's are free to be almost anywhere (high entropy). S(H₂O): ice 41, water 70, steam 189 J K⁻¹ mol⁻¹.",

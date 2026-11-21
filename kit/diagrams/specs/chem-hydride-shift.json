@@ -2,6 +2,7 @@
  "id": "chem-hydride-shift",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Rearrangements",
  "title": "A 1,2-hydride shift",
  "caption": "A secondary carbocation next to a carbon bearing a hydrogen and two methyl groups rearranges: the C–H bonding pair moves, with the hydrogen, to the C⁺. The positive charge moves to the neighbouring carbon, which is now tertiary and more stable.",

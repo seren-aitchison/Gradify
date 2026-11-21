@@ -2,6 +2,7 @@
  "id": "chem-maxwell-boltzmann-ea",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Temperature effects",
  "title": "Why a small temperature rise speeds reactions so much",
  "caption": "At the higher temperature the distribution flattens and shifts to higher energy. The area beyond Ea, the molecules that can react, grows far more than the shift suggests: here it more than doubles.",

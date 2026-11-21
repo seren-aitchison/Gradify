@@ -2,6 +2,7 @@
  "id": "chem-real-gas-z",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Real gases",
  "title": "Real gases are not quite ideal",
  "caption": "The compression factor Z = pV/nRT is exactly 1 for an ideal gas. For a real gas such as methane, attractions pull Z below 1 at moderate pressure; at high pressure the molecules' own volume pushes it above 1. The curve is illustrative.",

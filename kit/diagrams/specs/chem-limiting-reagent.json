@@ -2,6 +2,7 @@
  "id": "chem-limiting-reagent",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Limiting reagents",
  "title": "The limiting reagent",
  "caption": "Six H₂ molecules and two O₂ molecules: by 2H₂ + O₂ → 2H₂O the two O₂ can use only four H₂, making four H₂O. Oxygen runs out first, so it is limiting; two H₂ are left over.",

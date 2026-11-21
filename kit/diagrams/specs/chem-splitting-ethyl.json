@@ -2,6 +2,7 @@
  "id": "chem-splitting-ethyl",
  "renderer": "nmr",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Spin-spin coupling",
  "title": "Spin–spin splitting in ethyl ethanoate",
  "caption": "The n + 1 rule: a signal is split into n + 1 lines by n equivalent hydrogens on the neighbouring carbon. The ethyl group gives a quartet (CH₂, next to CH₃) and a triplet (CH₃, next to CH₂); the CH₃ attached to C=O has no neighbouring H, so it is a singlet.",

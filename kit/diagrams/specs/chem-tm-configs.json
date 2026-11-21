@@ -2,6 +2,7 @@
  "id": "chem-tm-configs",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Transition metal chemistry",
  "title": "The first transition series",
  "caption": "Across the series 3d fills behind 4s². A transition metal forms at least one ion with a partly filled d sub-shell: so scandium (Sc³⁺ is d⁰) and zinc (Zn²⁺ is d¹⁰) are d-block elements but not transition metals.",

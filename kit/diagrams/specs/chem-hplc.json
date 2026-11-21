@@ -2,6 +2,7 @@
  "id": "chem-hplc",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "High-performance liquid chromatography",
  "title": "An HPLC chromatogram of a painkiller",
  "caption": "Reversed-phase HPLC: the stationary phase is non-polar, so the most polar component (paracetamol) elutes first and the least polar (aspirin, here last) is retained longest. Comparing retention times with standards identifies each component; peak areas give amounts.",

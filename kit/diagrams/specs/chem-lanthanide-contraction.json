@@ -2,6 +2,7 @@
  "id": "chem-lanthanide-contraction",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Lanthanides",
  "title": "The lanthanide contraction",
  "caption": "Across the lanthanides each extra proton is poorly shielded by the added 4f electron, so the Ln³⁺ ions shrink steadily from La³⁺ (103 pm) to Lu³⁺ (86 pm). This makes the lanthanides chemically very similar and hard to separate.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "chemistry",
+   "unit": "u11",
    "lesson": "Lanthanide chemistry"
   }
  ],

@@ -2,6 +2,7 @@
  "id": "chem-ellingham",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Metal extraction",
  "title": "An Ellingham diagram: when carbon reduces iron oxide",
  "caption": "ΔG° per mole of O₂ against temperature. Forming CO gets more favourable as T rises (its line slopes down, ΔS > 0), while forming FeO gets less favourable. Above the crossing, about 994 K, carbon's line is lower, so carbon can reduce FeO.",

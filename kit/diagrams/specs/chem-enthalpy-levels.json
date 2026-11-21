@@ -2,6 +2,7 @@
  "id": "chem-enthalpy-levels",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Enthalpy",
  "title": "An enthalpy level diagram",
  "caption": "Neutralisation: H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ mol⁻¹. The products sit below the reactants on the enthalpy scale and the arrow points down: exothermic.",

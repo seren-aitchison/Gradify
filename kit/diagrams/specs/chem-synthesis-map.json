@@ -2,6 +2,7 @@
  "id": "chem-synthesis-map",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Functional group synthesis",
  "title": "A synthesis map from bromoethane",
  "caption": "From one halogenoalkane: aqueous hydroxide gives an alcohol, excess ammonia an amine, and cyanide in ethanol a nitrile with one more carbon, which hydrolyses to a carboxylic acid. Oxidising the alcohol gives ethanoic acid.",

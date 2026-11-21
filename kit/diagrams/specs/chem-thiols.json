@@ -2,6 +2,7 @@
  "id": "chem-thiols",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Thiols and sulfides",
  "title": "Thiols, sulfides and disulfides",
  "caption": "Sulfur sits below oxygen in group 16, giving thiols (R–SH), sulfides (R–S–R) and disulfides (R–S–S–R). Thiols smell strongly. Two cysteine thiols can be oxidised to a disulfide bridge, which holds protein chains in shape.",

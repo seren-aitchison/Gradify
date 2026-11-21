@@ -2,6 +2,7 @@
  "id": "chem-coordination-numbers",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Coordination numbers",
  "title": "Coordination numbers 2, 4 and 6",
  "caption": "The coordination number is the number of coordinate bonds to the central metal ion. Small ligands such as NH₃ and H₂O usually give 6; large ones such as Cl⁻ give 4; Ag⁺ forms linear complexes with 2, as in Tollens' reagent.",

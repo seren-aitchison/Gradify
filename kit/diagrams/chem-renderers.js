@@ -102,7 +102,7 @@ function ladder(spec, W, H, narrow) {
     let yy = y(it.value); for (const p of placed) if (Math.abs(p - yy) < 15) yy = p - 15; placed.push(yy);
     s += line(ax - 8, y(it.value), ax + 8, y(it.value), { stroke: col(spec.highlight?.[it.key] || "ink"), w: 2.2 });
     s += text(ax - 14, yy, fm(it.label ?? it.key), { size: 12.5, weight: 600, anchor: "end", fill: col(spec.highlight?.[it.key] || "ink") });
-    s += text(ax + 14, yy, `${it.value > 0 ? "+" : it.value < 0 ? "−" : ""}${Math.abs(it.value).toFixed(2)} ${spec.unit || ""}`, { size: 12, anchor: "start", fill: C.soft });
+    s += text(ax + 14, yy, `${it.value > 0 ? "+" : it.value < 0 ? "−" : ""}${Math.abs(it.value).toFixed(2)} ${spec.valueUnit || ""}`, { size: 12, anchor: "start", fill: C.soft });
   }
   return s;
 }

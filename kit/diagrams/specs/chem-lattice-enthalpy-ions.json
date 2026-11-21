@@ -2,6 +2,7 @@
  "id": "chem-lattice-enthalpy-ions",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Lattice enthalpy",
  "title": "Lattice enthalpy and ion size",
  "caption": "Lattice enthalpy becomes less exothermic from NaF to NaI: the halide ions get larger, so the oppositely charged ions are further apart and attract less. Charge matters even more: MgO, with 2+ and 2− ions, is −3791 kJ mol⁻¹.",

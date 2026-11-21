@@ -2,6 +2,7 @@
  "id": "chem-reversible-approach",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Reversible reactions",
  "title": "Rates of the forward and reverse reactions",
  "caption": "Starting with reactants only, the forward rate is high and falls as they are used up; the reverse rate starts at zero and rises as products form. When the two rates are equal, the system is at dynamic equilibrium.",

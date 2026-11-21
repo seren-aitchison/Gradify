@@ -2,6 +2,7 @@
  "id": "chem-complex-shapes",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Coordination compounds",
  "title": "Shapes of complex ions",
  "caption": "Six ligands give an octahedral complex (90°), four usually tetrahedral (109.5°); d⁸ ions such as Ni²⁺, Pd²⁺ and Pt²⁺ with strong-field ligands form square planar complexes (90°).",

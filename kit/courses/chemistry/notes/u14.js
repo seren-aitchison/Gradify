@@ -601,6 +601,7 @@ H: Side-chain chemistry
 - Side-chain hydrogens can be substituted by halogens in **UV light**.
 - Ring substitution needs a catalyst; side-chain substitution needs UV.
 - Benzyl positions are reactive because radicals and cations there are resonance-stabilised.
+D: chem-friedel-crafts
 H: Azo dyes
 - **Phenylamine** + nitrous acid (NaNO₂ + HCl) below 10 °C gives a **diazonium salt**.
 - The diazonium ion couples with **phenol** in alkali.

@@ -2,6 +2,7 @@
  "id": "chem-surface-tension",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Surface tension",
  "title": "Surface tension",
  "caption": "Molecules inside a liquid are pulled equally in all directions by their neighbours; molecules at the surface are pulled only sideways and inwards. The surface behaves like a stretched skin, strongest in water because of hydrogen bonding.",

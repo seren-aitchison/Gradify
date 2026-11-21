@@ -2,6 +2,7 @@
  "id": "chem-endothermic-decomposition",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Endothermic reactions",
  "title": "Decomposing calcium carbonate",
  "caption": "CaCO₃ → CaO + CO₂, ΔH = +178 kJ mol⁻¹. The products are higher in energy than the reactants, so energy must be supplied continuously: limestone is heated to about 900 °C in a lime kiln.",

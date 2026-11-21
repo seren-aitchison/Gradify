@@ -2,6 +2,7 @@
  "id": "chem-osmosis",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Osmosis",
  "title": "Osmosis",
  "caption": "A partially permeable membrane lets water molecules through but not the larger solute particles. Water moves overall from the dilute side (more free water) to the concentrated side until the pressures balance.",

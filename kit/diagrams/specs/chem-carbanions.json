@@ -2,6 +2,7 @@
  "id": "chem-carbanions",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Carbanions",
  "title": "A stabilised carbanion: the enolate",
  "caption": "A carbanion is a negatively charged carbon. Most are very reactive, but one next to a C=O is stabilised because its charge is delocalised onto the oxygen. The two resonance forms of propanone's enolate differ only in where the electrons are drawn.",

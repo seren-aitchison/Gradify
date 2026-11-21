@@ -2,6 +2,7 @@
  "id": "chem-acyl-chloride-water",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Acyl chlorides",
  "title": "Addition–elimination: ethanoyl chloride and water",
  "caption": "Water's lone pair attacks the very δ+ carbonyl carbon (addition); the C=O re-forms and chloride leaves (elimination); chloride then removes a proton from the oxygen. The products are ethanoic acid and steamy fumes of HCl.",

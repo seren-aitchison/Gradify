@@ -2,6 +2,7 @@
  "id": "chem-classify-matter",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Matter and its classification",
  "title": "Classifying matter",
  "caption": "A pure substance has a fixed composition: an element (one kind of atom) or a compound (elements chemically joined in fixed proportions). A mixture can be separated by physical means and may be uniform throughout (homogeneous) or not (heterogeneous).",

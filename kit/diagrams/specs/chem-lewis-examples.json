@@ -2,6 +2,7 @@
  "id": "chem-lewis-examples",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Lewis structures",
  "title": "Lewis structures",
  "caption": "Lines are bonding pairs and dots lone pairs. NH₃ has three bonds and one lone pair on N; CO₂ two double bonds; HCN a single and a triple bond. Every atom except hydrogen has an octet.",

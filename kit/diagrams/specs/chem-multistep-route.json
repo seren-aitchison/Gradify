@@ -2,6 +2,7 @@
  "id": "chem-multistep-route",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Multi-step synthesis",
  "title": "Two steps: benzene to phenylamine",
  "caption": "No single reaction puts –NH₂ on benzene. Nitration (concentrated HNO₃ and H₂SO₄, below 55 °C) gives nitrobenzene; reduction with tin and HCl, then NaOH, gives phenylamine.",

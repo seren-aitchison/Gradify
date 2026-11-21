@@ -2,6 +2,7 @@
  "id": "chem-amine-classes",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Amines",
  "title": "Classes of amine",
  "caption": "Amines are named by how many carbon groups are bonded to nitrogen: one (primary), two (secondary) or three (tertiary). A fourth gives a quaternary ammonium ion, which has no lone pair left and is no longer a base.",

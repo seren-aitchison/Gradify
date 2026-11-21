@@ -2,6 +2,7 @@
  "id": "chem-amides",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Amides",
  "title": "Amides and the peptide link",
  "caption": "Amides contain C(=O)–N. Replacing the N–H hydrogens with carbon groups gives secondary and tertiary amides. The amide bond joining amino acids in proteins is called the peptide link.",

@@ -2,6 +2,7 @@
  "id": "chem-hydrogenation-cycle",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Catalytic complexes",
  "title": "A catalytic cycle for hydrogenation",
  "caption": "A rhodium catalyst such as Wilkinson's adds H₂ (oxidative addition), binds the alkene, transfers a hydride to it (migratory insertion) and releases the alkane (reductive elimination), regenerating itself. [Rh] stands for the metal with its other ligands.",

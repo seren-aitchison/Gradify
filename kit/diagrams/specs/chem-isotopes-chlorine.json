@@ -2,6 +2,7 @@
  "id": "chem-isotopes-chlorine",
  "renderer": "atom",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Isotopes",
  "title": "Isotopes of chlorine",
  "caption": "Chlorine-35 and chlorine-37 both have 17 protons and 17 electrons arranged 2, 8, 7, so they react the same way. Only the neutrons differ: 18 against 20.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Atomic structure and isotopes"
   }
  ],

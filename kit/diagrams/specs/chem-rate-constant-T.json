@@ -2,6 +2,7 @@
  "id": "chem-rate-constant-T",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Rate constants",
  "title": "How k changes with temperature",
  "caption": "For a reaction with Ea = 50 kJ mol⁻¹, the Arrhenius equation predicts k nearly doubles for each 10 K rise near room temperature (×1.91 from 300 to 310 K) and rises ever faster.",

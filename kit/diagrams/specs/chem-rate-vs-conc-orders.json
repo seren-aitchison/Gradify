@@ -2,6 +2,7 @@
  "id": "chem-rate-vs-conc-orders",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Rate equations",
  "title": "Rate against concentration for each order",
  "caption": "Zero order: the rate does not change with [A]. First order: rate ∝ [A], a straight line through the origin. Second order: rate ∝ [A]², a curve, so doubling [A] quadruples the rate.",

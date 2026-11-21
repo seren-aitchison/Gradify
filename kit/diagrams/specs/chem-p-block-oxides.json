@@ -2,6 +2,7 @@
  "id": "chem-p-block-oxides",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "p-block chemistry",
  "title": "Two p-block oxides",
  "caption": "Phosphorus(V) oxide, P₄O₁₀, is a cage of four tetrahedral phosphorus atoms bridged by oxygens, each also double-bonded to one oxygen. Sulfur trioxide, SO₃, is a trigonal planar molecule. Both react with water to give strong acids.",

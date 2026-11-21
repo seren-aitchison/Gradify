@@ -2,6 +2,7 @@
  "id": "chem-friedel-crafts",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Aromatic compounds",
  "title": "Friedel–Crafts acylation of benzene",
  "caption": "AlCl₃ generates the acylium ion CH₃CO⁺ from ethanoyl chloride. The delocalised π electrons attack it, breaking aromaticity in the arenium ion; AlCl₄⁻ removes the proton from the sp³ carbon, restoring the ring and regenerating AlCl₃. The product is phenylethanone.",

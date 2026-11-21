@@ -2,6 +2,7 @@
  "id": "chem-s-block-config",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "s-block elements",
  "title": "s-block elements: outer s electrons",
  "caption": "Sodium (3s¹) and magnesium (3s²) have their outer electrons in an s sub-shell, which they lose to form Na⁺ and Mg²⁺ ions with the neon configuration.",

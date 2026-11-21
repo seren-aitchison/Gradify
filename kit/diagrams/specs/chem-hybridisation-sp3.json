@@ -2,6 +2,7 @@
  "id": "chem-hybridisation-sp3",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Hybridisation",
  "title": "sp³ hybridisation in carbon",
  "caption": "Carbon's 2s and three 2p orbitals mix into four equivalent sp³ hybrids of equal energy, each holding one electron, which point to the corners of a tetrahedron and form four identical bonds, as in methane.",

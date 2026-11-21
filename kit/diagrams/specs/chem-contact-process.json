@@ -2,6 +2,7 @@
  "id": "chem-contact-process",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Industrial inorganic chemistry",
  "title": "The Contact process",
  "caption": "Sulfur is burned to SO₂, which is oxidised to SO₃ over a vanadium(V) oxide catalyst at about 450 °C and 1–2 atm. SO₃ is absorbed in concentrated sulfuric acid (not water, which would make a mist) and then diluted.",

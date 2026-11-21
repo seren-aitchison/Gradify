@@ -2,6 +2,7 @@
  "id": "chem-resonance-carbonate",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Resonance",
  "title": "Resonance in the carbonate ion",
  "caption": "Three equivalent Lewis structures differ only in which oxygen carries the double bond. The real ion is a hybrid: the two negative charges and the π electrons are spread over all three C–O bonds, which are identical in length.",

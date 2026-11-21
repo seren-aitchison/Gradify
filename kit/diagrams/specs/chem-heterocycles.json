@@ -2,6 +2,7 @@
  "id": "chem-heterocycles",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Heterocyclic compounds",
  "title": "Aromatic heterocycles",
  "caption": "A heteroatom in an aromatic ring. Pyridine's nitrogen lone pair lies outside the π system, so it is basic. In pyrrole, furan and thiophene a lone pair on N, O or S is part of the 6-electron aromatic system.",

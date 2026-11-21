@@ -2,6 +2,7 @@
  "id": "chem-radical-chlorination",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Radical intermediates",
  "title": "Free-radical chlorination of methane",
  "caption": "UV light splits Cl₂ into two chlorine radicals (initiation). Each Cl• takes an H from methane, and the methyl radical takes a Cl from Cl₂, regenerating Cl• (propagation): the two steps add up to CH₄ + Cl₂ → CH₃Cl + HCl and repeat thousands of times. Any two radicals meeting end a chain (termination).",

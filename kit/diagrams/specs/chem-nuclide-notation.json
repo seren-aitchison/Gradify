@@ -2,6 +2,7 @@
  "id": "chem-nuclide-notation",
  "renderer": "atom",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Atomic number and mass number",
  "title": "Nuclide notation in a beta decay",
  "caption": "The mass number A (protons + neutrons) is written top left and the atomic number Z (protons) bottom left. In ¹⁴₆C → ¹⁴₇N + ⁰₋₁e a neutron becomes a proton: A stays 14 and Z rises from 6 to 7, so the element changes from carbon to nitrogen.",

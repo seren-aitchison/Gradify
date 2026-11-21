@@ -2,6 +2,7 @@
  "id": "chem-atomic-radius",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Atomic radius",
  "title": "Atomic radius across period 3",
  "caption": "Across period 3 the nuclear charge rises by one each step while the electrons go into the same shell with similar shielding, so the outer electrons are pulled closer and the atoms shrink from sodium (186 pm) to chlorine (99 pm).",

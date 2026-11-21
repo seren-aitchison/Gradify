@@ -2,6 +2,7 @@
  "id": "chem-stereoselectivity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Stereoselectivity",
  "title": "Stereoselectivity: anti addition of bromine",
  "caption": "Bromine adds to cyclohexene through a bromonium ion, which bromide opens from the opposite face. Only trans-1,2-dibromocyclohexane forms, as a racemic mixture of the (R,R) and (S,S) enantiomers; the cis isomer does not form.",

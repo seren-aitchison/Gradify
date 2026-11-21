@@ -2,6 +2,7 @@
  "id": "chem-k-large-small",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Equilibrium constants",
  "title": "The size of K and the position of equilibrium",
  "caption": "For A ⇌ B the fraction converted to B at equilibrium is K/(1 + K). K = 1 gives half; each factor of 10 pushes it further: K = 1000 is 99.9% products, K = 0.001 almost none.",

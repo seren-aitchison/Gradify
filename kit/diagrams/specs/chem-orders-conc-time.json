@@ -2,6 +2,7 @@
  "id": "chem-orders-conc-time",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Reaction order",
  "title": "Concentration against time for each order",
  "caption": "From the same start, a zero-order reaction falls in a straight line, a first-order one decays exponentially with a constant half-life, and a second-order one starts as fast but slows more, with half-lives that double.",

@@ -2,6 +2,7 @@
  "id": "chem-second-order-inverse",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Second-order reactions",
  "title": "Recognising second order",
  "caption": "For a second-order reaction 1/[A] = 1/[A]₀ + kt, so a plot of 1/[A] against time is a straight line with gradient k. Here k = 0.5 dm³ mol⁻¹ s⁻¹.",

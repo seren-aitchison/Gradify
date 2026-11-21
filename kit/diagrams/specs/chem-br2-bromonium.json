@@ -1,257 +1,258 @@
 {
-  "id": "chem-br2-bromonium",
-  "renderer": "mechanism",
-  "course": "chemistry",
-  "lesson": "Electrophilic addition",
-  "title": "Adding Br₂ to cyclohexene: anti addition through a bromonium ion",
-  "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a bromonium ion that bridges the top face of the ring (wedges). The top face is blocked, so bromide attacks from the bottom face and that bromine ends up on a hash. The two bromines end up on opposite faces: trans-1,2-dibromocyclohexane.",
-  "alt": "Mechanism of bromine adding to cyclohexene: a bromonium ion forms on the top face, bromide opens it from the bottom face, giving trans-1,2-dibromocyclohexane.",
-  "description": [
-    "Left: cyclohexene with a bromine molecule above its double bond, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other double-bond carbon; and from the Br–Br bond to the far bromine.",
-    "Middle: the bromonium ion. A positively charged bromine bridges the two former double-bond carbons; both of its bonds are drawn as wedges, so it sits on the top face of the ring. A bromide ion approaches the right-hand carbon. A curly arrow goes from a lone pair on bromide to that carbon, and another from that carbon's bond to the bridging bromine back onto the bromine.",
-    "Right: trans-1,2-dibromocyclohexane. One bromine is on a wedge (top face) and the other on a hash (bottom face): the two bromines added to opposite faces, which is anti addition."
-  ],
-  "stages": [
+ "id": "chem-br2-bromonium",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "Electrophilic addition",
+ "title": "Adding Br₂ to cyclohexene: anti addition through a bromonium ion",
+ "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a bromonium ion that bridges the top face of the ring (wedges). The top face is blocked, so bromide attacks from the bottom face and that bromine ends up on a hash. The two bromines end up on opposite faces: trans-1,2-dibromocyclohexane.",
+ "alt": "Mechanism of bromine adding to cyclohexene: a bromonium ion forms on the top face, bromide opens it from the bottom face, giving trans-1,2-dibromocyclohexane.",
+ "description": [
+  "Left: cyclohexene with a bromine molecule above its double bond, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other double-bond carbon; and from the Br–Br bond to the far bromine.",
+  "Middle: the bromonium ion. A positively charged bromine bridges the two former double-bond carbons; both of its bonds are drawn as wedges, so it sits on the top face of the ring. A bromide ion approaches the right-hand carbon. A curly arrow goes from a lone pair on bromide to that carbon, and another from that carbon's bond to the bridging bromine back onto the bromine.",
+  "Right: trans-1,2-dibromocyclohexane. One bromine is on a wedge (top face) and the other on a hash (bottom face): the two bromines added to opposite faces, which is anti addition."
+ ],
+ "stages": [
+  {
+   "smiles": "[CH:1]1=[CH:2][CH2:5][CH2:6][CH2:7][CH2:8]1.[Br:3][Br:4]",
+   "xy": {
+    "1": [
+     -0.6,
+     1.04
+    ],
+    "2": [
+     0.6,
+     1.04
+    ],
+    "5": [
+     1.2,
+     0
+    ],
+    "6": [
+     0.6,
+     -1.04
+    ],
+    "7": [
+     -0.6,
+     -1.04
+    ],
+    "8": [
+     -1.2,
+     0
+    ],
+    "3": [
+     0.55,
+     2.55
+    ],
+    "4": [
+     0.55,
+     3.85
+    ]
+   },
+   "charges": {
+    "3": "δ+",
+    "4": "δ−"
+   },
+   "chargeOffset": {
+    "3": [
+     30,
+     5
+    ],
+    "4": [
+     30,
+     5
+    ]
+   },
+   "label": "cyclohexene + Br₂",
+   "arrows": [
     {
-      "smiles": "[CH:1]1=[CH:2][CH2:5][CH2:6][CH2:7][CH2:8]1.[Br:3][Br:4]",
-      "xy": {
-        "1": [
-          -0.6,
-          1.04
-        ],
-        "2": [
-          0.6,
-          1.04
-        ],
-        "5": [
-          1.2,
-          0
-        ],
-        "6": [
-          0.6,
-          -1.04
-        ],
-        "7": [
-          -0.6,
-          -1.04
-        ],
-        "8": [
-          -1.2,
-          0
-        ],
-        "3": [
-          0.55,
-          2.55
-        ],
-        "4": [
-          0.55,
-          3.85
-        ]
-      },
-      "charges": {
-        "3": "δ+",
-        "4": "δ−"
-      },
-      "chargeOffset": {
-        "3": [
-          30,
-          5
-        ],
-        "4": [
-          30,
-          5
-        ]
-      },
-      "label": "cyclohexene + Br₂",
-      "arrows": [
-        {
-          "from": {
-            "bond": [
-              1,
-              2
-            ]
-          },
-          "to": {
-            "bond": [
-              2,
-              3
-            ]
-          },
-          "toward": 3,
-          "bend": -0.6
-        },
-        {
-          "from": {
-            "lp": 3
-          },
-          "to": {
-            "bond": [
-              3,
-              1
-            ]
-          },
-          "toward": 1,
-          "lpAngle": 180,
-          "bend": 0.45
-        },
-        {
-          "from": {
-            "bond": [
-              3,
-              4
-            ]
-          },
-          "to": {
-            "atom": 4
-          },
-          "bend": 1
-        }
+     "from": {
+      "bond": [
+       1,
+       2
       ]
+     },
+     "to": {
+      "bond": [
+       2,
+       3
+      ]
+     },
+     "toward": 3,
+     "bend": -0.6
     },
     {
-      "smiles": "[CH:1]12[CH:2]([Br+:3]1)[CH2:5][CH2:6][CH2:7][CH2:8]2.[Br-:4]",
-      "xy": {
-        "1": [
-          -0.6,
-          1.04
-        ],
-        "2": [
-          0.6,
-          1.04
-        ],
-        "5": [
-          1.2,
-          0
-        ],
-        "6": [
-          0.6,
-          -1.04
-        ],
-        "7": [
-          -0.6,
-          -1.04
-        ],
-        "8": [
-          -1.2,
-          0
-        ],
-        "3": [
-          0,
-          2.1
-        ],
-        "4": [
-          2.4,
-          1.0
-        ]
-      },
-      "wedges": [
-        [
-          1,
-          3,
-          "wedge"
-        ],
-        [
-          2,
-          3,
-          "wedge"
-        ]
-      ],
-      "label": "bromonium ion (top face)",
-      "arrows": [
-        {
-          "from": {
-            "lp": 4
-          },
-          "to": {
-            "bond": [
-              4,
-              2
-            ]
-          },
-          "toward": 2,
-          "lpAngle": 180,
-          "bend": -0.5,
-          "lpDist": 26
-        },
-        {
-          "from": {
-            "bond": [
-              2,
-              3
-            ]
-          },
-          "to": {
-            "atom": 3
-          },
-          "bend": -1
-        }
+     "from": {
+      "lp": 3
+     },
+     "to": {
+      "bond": [
+       3,
+       1
       ]
+     },
+     "toward": 1,
+     "lpAngle": 180,
+     "bend": 0.45
     },
     {
-      "smiles": "[CH:1]1([Br:3])[CH:2]([Br:4])[CH2:5][CH2:6][CH2:7][CH2:8]1",
-      "xy": {
-        "1": [
-          -0.6,
-          1.04
-        ],
-        "2": [
-          0.6,
-          1.04
-        ],
-        "5": [
-          1.2,
-          0
-        ],
-        "6": [
-          0.6,
-          -1.04
-        ],
-        "7": [
-          -0.6,
-          -1.04
-        ],
-        "8": [
-          -1.2,
-          0
-        ],
-        "3": [
-          -1.2,
-          2.08
-        ],
-        "4": [
-          1.2,
-          2.08
-        ]
-      },
-      "wedges": [
-        [
-          1,
-          3,
-          "wedge"
-        ],
-        [
-          2,
-          4,
-          "hash"
-        ]
-      ],
-      "drawnSame": [
-        1,
-        2,
-        "trans"
-      ],
-      "label": "trans-1,2-dibromocyclohexane"
+     "from": {
+      "bond": [
+       3,
+       4
+      ]
+     },
+     "to": {
+      "atom": 4
+     },
+     "bend": 1
     }
-  ],
-  "steps": [
-    {},
-    {}
-  ],
-  "review": {
-    "status": "approved",
-    "by": "site owner (seren-aitchison)",
-    "date": "2026-11-20",
-    "notes": "Round 1: ethene could not show anti addition; replaced by cyclohexene → trans-1,2-dibromocyclohexane with a drawn-trans check. Round 2: approve with a caption wording fix, applied.",
-    "approvedAt": "2026-11-20"
+   ]
+  },
+  {
+   "smiles": "[CH:1]12[CH:2]([Br+:3]1)[CH2:5][CH2:6][CH2:7][CH2:8]2.[Br-:4]",
+   "xy": {
+    "1": [
+     -0.6,
+     1.04
+    ],
+    "2": [
+     0.6,
+     1.04
+    ],
+    "5": [
+     1.2,
+     0
+    ],
+    "6": [
+     0.6,
+     -1.04
+    ],
+    "7": [
+     -0.6,
+     -1.04
+    ],
+    "8": [
+     -1.2,
+     0
+    ],
+    "3": [
+     0,
+     2.1
+    ],
+    "4": [
+     2.4,
+     1.0
+    ]
+   },
+   "wedges": [
+    [
+     1,
+     3,
+     "wedge"
+    ],
+    [
+     2,
+     3,
+     "wedge"
+    ]
+   ],
+   "label": "bromonium ion (top face)",
+   "arrows": [
+    {
+     "from": {
+      "lp": 4
+     },
+     "to": {
+      "bond": [
+       4,
+       2
+      ]
+     },
+     "toward": 2,
+     "lpAngle": 180,
+     "bend": -0.5,
+     "lpDist": 26
+    },
+    {
+     "from": {
+      "bond": [
+       2,
+       3
+      ]
+     },
+     "to": {
+      "atom": 3
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH:1]1([Br:3])[CH:2]([Br:4])[CH2:5][CH2:6][CH2:7][CH2:8]1",
+   "xy": {
+    "1": [
+     -0.6,
+     1.04
+    ],
+    "2": [
+     0.6,
+     1.04
+    ],
+    "5": [
+     1.2,
+     0
+    ],
+    "6": [
+     0.6,
+     -1.04
+    ],
+    "7": [
+     -0.6,
+     -1.04
+    ],
+    "8": [
+     -1.2,
+     0
+    ],
+    "3": [
+     -1.2,
+     2.08
+    ],
+    "4": [
+     1.2,
+     2.08
+    ]
+   },
+   "wedges": [
+    [
+     1,
+     3,
+     "wedge"
+    ],
+    [
+     2,
+     4,
+     "hash"
+    ]
+   ],
+   "drawnSame": [
+    1,
+    2,
+    "trans"
+   ],
+   "label": "trans-1,2-dibromocyclohexane"
   }
+ ],
+ "steps": [
+  {},
+  {}
+ ],
+ "review": {
+  "status": "approved",
+  "by": "site owner (seren-aitchison)",
+  "date": "2026-11-20",
+  "notes": "Round 1: ethene could not show anti addition; replaced by cyclohexene → trans-1,2-dibromocyclohexane with a drawn-trans check. Round 2: approve with a caption wording fix, applied.",
+  "approvedAt": "2026-11-20"
+ },
+ "unit": "u13"
 }

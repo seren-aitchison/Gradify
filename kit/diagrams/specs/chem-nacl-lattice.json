@@ -2,6 +2,7 @@
  "id": "chem-nacl-lattice",
  "renderer": "lattice",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Crystal structures",
  "title": "Ionic lattices: sodium chloride and caesium chloride",
  "caption": "In NaCl each ion has six nearest neighbours of the opposite charge (6:6), and the cubic cell holds four of each. The larger Cs⁺ fits eight Cl⁻ around it in CsCl (8:8). The cation-to-anion size ratio decides the structure.",

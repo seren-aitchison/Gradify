@@ -2,6 +2,7 @@
  "id": "chem-electrophiles-nucleophiles",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Electrophiles and nucleophiles",
  "title": "Nucleophiles and electrophiles",
  "caption": "Nucleophiles (top row) have a lone pair and often a negative charge, and attack electron-poor carbon. Electrophiles (bottom row) are electron-poor: a δ+ carbon next to an electronegative atom, or a cation such as NO₂⁺, and are attacked by electron-rich species.",

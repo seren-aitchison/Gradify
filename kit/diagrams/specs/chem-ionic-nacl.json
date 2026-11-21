@@ -2,6 +2,7 @@
  "id": "chem-ionic-nacl",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Ionic bonding",
  "title": "Ionic bonding in sodium chloride",
  "caption": "Sodium's single outer electron (cross) transfers to chlorine, which has seven (dots). Both ions end with full outer shells: Na⁺ (2, 8) and Cl⁻ (2, 8, 8). Only the outer shells are drawn.",
@@ -13,6 +14,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Ionic, covalent and metallic bonding"
   }
  ],

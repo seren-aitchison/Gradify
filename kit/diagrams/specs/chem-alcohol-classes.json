@@ -2,6 +2,7 @@
  "id": "chem-alcohol-classes",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Alcohols",
  "title": "Primary, secondary and tertiary alcohols",
  "caption": "The class depends on how many carbons are attached to the carbon bearing –OH: one (primary), two (secondary) or three (tertiary). The class decides what oxidation gives: aldehyde then acid, ketone, or no reaction.",

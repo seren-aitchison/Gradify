@@ -2,6 +2,7 @@
  "id": "chem-hydrogen-bond-water",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Hydrogen bonding",
  "title": "Hydrogen bonds between water molecules",
  "caption": "A hydrogen bonded to oxygen is strongly δ+ and is attracted to a lone pair on the oxygen of another molecule. The O–H···O arrangement is close to straight (180°). Each water molecule can make up to four hydrogen bonds.",

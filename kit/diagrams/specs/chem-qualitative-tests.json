@@ -2,6 +2,7 @@
  "id": "chem-qualitative-tests",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Qualitative analysis",
  "title": "Identifying an anion",
  "caption": "Test in this order so earlier ions do not interfere: dilute acid first (carbonate fizzes), then acidified barium chloride (sulfate gives a white precipitate), then acidified silver nitrate (halides).",

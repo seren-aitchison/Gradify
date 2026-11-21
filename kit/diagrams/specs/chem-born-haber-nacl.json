@@ -2,6 +2,7 @@
  "id": "chem-born-haber-nacl",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Born-Haber cycles",
  "title": "The Born–Haber cycle for sodium chloride",
  "caption": "From the elements, sodium and chlorine are atomised (+107, +122), sodium is ionised (+496) and chlorine gains an electron (−349). The gaseous ions then form the lattice. Since the two routes to NaCl(s) must agree, −411 = 107 + 122 + 496 − 349 + ΔlattH, so ΔlattH = −787 kJ mol⁻¹.",

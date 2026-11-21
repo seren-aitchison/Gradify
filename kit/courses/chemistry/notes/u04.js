@@ -516,6 +516,7 @@ H: The bonding continuum
 - Percentage ionic character rises with electronegativity difference.
 - Around a difference of 1.7–2.0, bonds are roughly 50% ionic.
 - **Van Arkel–Ketelaar triangles** plot average electronegativity against difference to place ionic, covalent and metallic bonding.
+D: chem-electronegativity-p2
 H: Scales
 - **Pauling scale**: based on bond enthalpies; fluorine 4.0.
 - **Mulliken scale**: average of ionisation energy and electron affinity.

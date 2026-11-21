@@ -2,6 +2,7 @@
  "id": "chem-q-vs-k",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Reaction quotients",
  "title": "Comparing Q with K",
  "caption": "The reaction quotient Q has the same form as K but uses the current concentrations. ΔG = RT ln(Q/K): if Q < K, ΔG is negative and the reaction moves forward; if Q > K it moves back; at Q = K it is at equilibrium. Here K = 100.",

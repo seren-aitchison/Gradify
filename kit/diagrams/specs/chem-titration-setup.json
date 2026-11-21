@@ -2,6 +2,7 @@
  "id": "chem-titration-setup",
  "renderer": "apparatus",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Titrimetry",
  "title": "Titration apparatus",
  "caption": "The analyte is measured into a conical flask with a pipette and a few drops of indicator added; the titrant is added from a burette until the indicator just changes colour. The titre is the final reading minus the initial reading, read at the bottom of the meniscus.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "chemistry",
+   "unit": "u15",
    "lesson": "Quantitative analysis"
   }
  ],

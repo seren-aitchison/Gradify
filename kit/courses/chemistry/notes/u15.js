@@ -905,7 +905,6 @@ H: Method
 - Spots are applied on a **pencil** baseline above the solvent level.
 - The plate develops in a covered tank until solvent nears the top.
 - Spots are seen by **UV light**, iodine or chemical stains.
-D: chem-paper-chromatography
 D: chem-tlc
 H: Interpreting results
 - **Polar** compounds stick to silica and have **low Rf**.

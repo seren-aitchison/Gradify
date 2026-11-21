@@ -2,6 +2,7 @@
  "id": "chem-cubic-cells",
  "renderer": "lattice",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Crystalline solids",
  "title": "Cubic unit cells",
  "caption": "Counting shared atoms: a corner atom is shared by 8 cells, a face atom by 2. Simple cubic holds 1 atom per cell (coordination 6), body-centred cubic 2 (coordination 8) and face-centred cubic 4 (coordination 12), the closest packing.",

@@ -352,7 +352,7 @@ mk("u07-02", "chem-collision-ea", "graph", "The activation energy on the energy 
    "Only collisions with at least the activation energy Ea lead to reaction. The shaded area beyond Ea is the fraction of molecules energetic enough to react: a small part of the whole.",
    "Maxwell–Boltzmann distribution of molecular energies starting at zero, rising to a peak and falling slowly; the tail beyond Ea is shaded.",
    ["The curve starts at the origin: no molecules have zero energy.", "It peaks at the most probable energy and tails off; it never quite reaches the axis.", "Beyond Ea (shaded): the molecules that can react."],
-   range={"x": [0, 9], "y": [0, 0.5]}, ticks=[[], []], axisLabels=["energy", "number of molecules"], xLabelBelow=True,
+   also=['chemistry:u16-13'], range={"x": [0, 9], "y": [0, 0.5]}, ticks=[[], []], axisLabels=["energy", "number of molecules"], xLabelBelow=True,
    curves=[{"expr": E1, "domain": [0, 9], "colour": "a1"}], areas=[{"expr": E1, "from": 4, "to": 9}], marks=[{"x": 4, "label": "Ea", "to": 0.2}],
    checks=[{"type": "area", "expr": E1, "from": 0, "to": 60, "value": 1, "name": "the area under the curve is all the molecules (normalised to 1)"},
            {"type": "max", "expr": E1, "domain": [0.01, 9], "x": 0.5, "y": round(2 / math.sqrt(math.pi) * math.sqrt(0.5) * math.exp(-0.5), 5), "name": "the most probable energy is ½kT"}])

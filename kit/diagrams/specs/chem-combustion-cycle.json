@@ -2,6 +2,7 @@
  "id": "chem-combustion-cycle",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Enthalpy of combustion",
  "title": "ΔfH from enthalpies of combustion",
  "caption": "Methane cannot be made directly from carbon and hydrogen, but both it and its elements burn to CO₂ and H₂O. ΔfH(CH₄) = [ΔcH(C) + 2ΔcH(H₂)] − ΔcH(CH₄) = (−394 − 572) − (−890) = −76 kJ mol⁻¹ with these rounded values (data books: −75).",

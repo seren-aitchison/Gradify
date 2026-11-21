@@ -2,6 +2,7 @@
  "id": "chem-raman",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Raman spectroscopy",
  "title": "Rayleigh and Raman scattering",
  "caption": "Light briefly lifts a molecule to a short-lived virtual state. Most photons scatter with unchanged energy (Rayleigh). A few leave the molecule one vibrational level higher and come out with less energy (Stokes), or take a level's energy away and come out with more (anti-Stokes). The shifts measure vibrational energies.",

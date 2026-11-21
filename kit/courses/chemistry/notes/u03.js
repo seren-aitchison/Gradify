@@ -721,6 +721,7 @@ H: Chemistry
 - All are **radioactive**; only thorium and uranium occur in large amounts naturally.
 - Early actinides show many oxidation states, such as U from +3 to +6.
 - Elements beyond uranium are **transuranic** and mostly made artificially.
+D: chem-table-f-block
 H: Nuclear uses and waste
 - **Uranium-235** undergoes **fission**, releasing energy in reactors.
 - Natural uranium is enriched to raise the proportion of U-235.
@@ -889,7 +890,6 @@ H: Definition and trends
 - Increases **across a period** and **decreases down a group**.
 - Nitrogen, oxygen and fluorine are especially electronegative.
 D: chem-electronegativity-trend
-D: chem-electronegativity-p2
 H: Bond type
 - Equal electronegativity: **non-polar covalent** bond, such as Cl–Cl.
 - Small difference: **polar covalent** bond, with partial charges δ+ and δ−.
@@ -975,8 +975,6 @@ H: Rules
 - Fluorine is always **−1**.
 - The sum of oxidation states equals the overall charge.
 D: chem-max-oxidation-p3
-D: chem-oxidation-state-rules
-D: chem-mn-oxidation-states
 H: Patterns and names
 - Group 1: +1; group 2: +2; aluminium: +3.
 - Non-metals can show negative and positive states, such as chlorine from −1 to +7.

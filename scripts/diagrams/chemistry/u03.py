@@ -47,7 +47,7 @@ mk("u03-07", "chem-table-f-block", "table", "The f block",
    "The lanthanides (cerium to lutetium) and actinides (thorium to lawrencium) fill 4f and 5f. They belong in periods 6 and 7 but are drawn below the table so it fits on a page.",
    "The periodic table with the lanthanide and actinide rows highlighted below the main table.",
    ["The main table, dimmed.", "Below it, two highlighted rows: the lanthanides (period 6) and the actinides (period 7)."],
-   dim=True, highlight={s: ("a5" if i < 14 else "a2") for i, s in enumerate("Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr".split())},
+   also=['chemistry:u03-18', 'chemistry:u11-22'], dim=True, highlight={s: ("a5" if i < 14 else "a2") for i, s in enumerate("Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr".split())},
    claims=[{"type": "block", "symbols": "Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr".split(), "block": "f"}])
 
 mk("u03-08", "chem-group1-mp", "trend", "Group 1 melting points",

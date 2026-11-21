@@ -2,6 +2,7 @@
  "id": "chem-ph-scale",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Introduction to acids and bases",
  "title": "The pH scale",
  "caption": "pH runs from about 0 (strongly acidic) to 14 (strongly alkaline), with 7 neutral at 25 °C. Each step of 1 is a factor of 10 in [H⁺]: stomach acid at pH 1.5 has about 300 000 times the [H⁺] of blood at pH 7.4. Typical values.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Acids, alkalis and salts"
   }
  ],

@@ -2,6 +2,7 @@
  "id": "chem-regioselectivity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Regioselectivity",
  "title": "Regioselectivity: adding HBr to propene",
  "caption": "HBr can add to propene two ways. The major product, 2-bromopropane, forms via the more stable secondary carbocation (Markovnikov's rule); 1-bromopropane, via a primary carbocation, is minor. The two products are position isomers.",

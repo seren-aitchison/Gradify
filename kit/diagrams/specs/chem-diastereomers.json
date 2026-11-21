@@ -2,6 +2,7 @@
  "id": "chem-diastereomers",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Diastereomers",
  "title": "The stereoisomers of 2,3-dibromobutane",
  "caption": "Two stereocentres allow up to 2² = 4 stereoisomers, but here there are three. (2R,3R) and (2S,3S) are enantiomers. The (2R,3S) form has a mirror plane, so it is meso and achiral, and it is a diastereomer of each of the others.",

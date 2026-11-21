@@ -2,6 +2,7 @@
  "id": "chem-fgi-map",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Functional group interconversion",
  "title": "Functional group interconversions",
  "caption": "A map of the A level reactions linking the main groups, with reagents on the arrows. Following it backwards from a target is how a synthesis is planned.",

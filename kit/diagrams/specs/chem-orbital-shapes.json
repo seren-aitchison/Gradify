@@ -1,0 +1,46 @@
+{
+ "id": "chem-orbital-shapes",
+ "renderer": "lobes",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Atomic orbitals and shapes",
+ "title": "The shapes of s, p and d orbitals",
+ "caption": "s orbitals are spheres; each p orbital has two lobes along an axis with a nodal plane between them; most d orbitals have four lobes. The colours show the opposite signs of the wavefunction, which matter when orbitals overlap to form bonds. An orbital has l angular nodes and n − l − 1 radial nodes.",
+ "alt": "Five orbital shapes: 1s sphere, 2s sphere with an inner sphere of opposite sign, 2pₓ and 2p_z dumbbells, 3d_xy cloverleaf and 3d_z² with a ring.",
+ "description": [
+  "1s: a sphere, no nodes.",
+  "2s: a sphere with one radial node.",
+  "2pₓ, 2p_z: two lobes, one nodal plane.",
+  "3d_xy: four lobes between the axes, two nodal planes.",
+  "3d_z²: two lobes on z and a ring."
+ ],
+ "orbitals": [
+  {
+   "name": "1s"
+  },
+  {
+   "name": "2s",
+   "claims": {
+    "radial": 1
+   }
+  },
+  {
+   "name": "2px",
+   "claims": {
+    "angular": 1
+   }
+  },
+  {
+   "name": "2pz"
+  },
+  {
+   "name": "3dxy",
+   "claims": {
+    "angular": 2
+   }
+  },
+  {
+   "name": "3dz2"
+  }
+ ]
+}

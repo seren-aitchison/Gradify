@@ -2,6 +2,7 @@
  "id": "chem-oil-rig",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Oxidation and reduction",
  "title": "Oxidation is loss, reduction is gain",
  "caption": "Magnesium in copper(II) sulfate solution: each Mg atom loses two electrons (oxidised) and each Cu²⁺ gains two (reduced). The electrons lost equal the electrons gained.",

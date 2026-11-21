@@ -2,6 +2,7 @@
  "id": "chem-second-law",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Second law of thermodynamics",
  "title": "Why gases spread out",
  "caption": "Removing the partition lets the gas spread into the empty half. Of all the ways to arrange the particles, almost all have them spread through the whole box, so the gas spreads and never gathers back on its own: entropy increases.",

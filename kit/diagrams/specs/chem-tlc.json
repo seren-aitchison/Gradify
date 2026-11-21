@@ -2,6 +2,7 @@
  "id": "chem-tlc",
  "renderer": "apparatus",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Thin-layer chromatography",
  "title": "Thin-layer chromatography",
  "caption": "On a silica plate the more polar compound sticks to the silica and moves less. Here the starting material (Rf 0.55) and the product (Rf 0.30) are clearly separated; the co-spot lane, with both applied together, shows two spots, confirming they are different.",

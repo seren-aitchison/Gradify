@@ -2,6 +2,7 @@
  "id": "chem-alkanes-series",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Alkanes",
  "title": "The first four alkanes",
  "caption": "Each alkane has one more CH₂ than the last, and every one fits CₙH₂ₙ₊₂. Methane to butane are gases at room temperature; boiling points rise with chain length.",

@@ -2,6 +2,7 @@
  "id": "chem-diagonal-relationships",
  "renderer": "table",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Periodic relationships",
  "title": "Diagonal relationships",
  "caption": "Lithium resembles magnesium, beryllium resembles aluminium and boron resembles silicon. Moving right raises charge density and electronegativity; moving down lowers them, so a diagonal step roughly cancels.",

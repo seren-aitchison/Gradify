@@ -2,6 +2,7 @@
  "id": "chem-successive-ie-al",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Ionisation energy",
  "title": "Successive ionisation energies of aluminium",
  "caption": "On a log scale each ionisation is a little harder than the last, with two large jumps: after the 3rd electron (the next comes from the second shell) and after the 11th (the next comes from the first). Three outer electrons put aluminium in group 13.",

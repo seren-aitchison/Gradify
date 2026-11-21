@@ -2,6 +2,7 @@
  "id": "chem-electrolysis-brine",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Electrolysis",
  "title": "Electrolysis of brine",
  "caption": "In concentrated sodium chloride solution, hydrogen forms at the cathode instead of sodium, because H⁺ from water is reduced more easily than Na⁺. Chlorine forms at the anode because chloride is concentrated. Sodium hydroxide is left in solution.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Electrolysis"
   }
  ],

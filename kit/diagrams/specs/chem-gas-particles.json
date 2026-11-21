@@ -2,6 +2,7 @@
  "id": "chem-gas-particles",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Gases",
  "title": "Gas particles",
  "caption": "Gas particles are far apart compared with their size and move fast in straight lines in random directions, colliding with each other and with the walls. Collisions with the walls cause the gas's pressure.",

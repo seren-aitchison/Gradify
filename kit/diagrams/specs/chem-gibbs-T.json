@@ -2,6 +2,7 @@
  "id": "chem-gibbs-T",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Gibbs free energy",
  "title": "When does limestone decompose?",
  "caption": "For CaCO₃ → CaO + CO₂, ΔH = +178 kJ mol⁻¹ and ΔS = +161 J K⁻¹ mol⁻¹. ΔG = ΔH − TΔS falls as T rises and becomes negative above T = ΔH ÷ ΔS = 1106 K (about 833 °C): the reaction becomes feasible.",

@@ -1,0 +1,65 @@
+{
+ "id": "chem-multistep-yield",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Multi-step synthesis",
+ "title": "Overall yield of a multi-step synthesis",
+ "caption": "Yields multiply. Three steps of 85%, 70% and 90% give 0.85 × 0.70 × 0.90 = 54% overall, so long routes lose a lot of material and chemists look for short, high-yielding ones.",
+ "alt": "A flow of three steps labelled 85%, 70% and 90%, ending in an overall yield of 54%.",
+ "description": [
+  "Step 1: 85%.",
+  "Step 2: 70%.",
+  "Step 3: 90%.",
+  "Overall: 54%."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "A"
+  },
+  {
+   "id": "b",
+   "label": "B"
+  },
+  {
+   "id": "c",
+   "label": "C"
+  },
+  {
+   "id": "d",
+   "label": "D",
+   "sub": "overall 54%",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "85%"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "70%"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "90%"
+  }
+ ],
+ "claims": [
+  {
+   "type": "yield",
+   "steps": [
+    0.85,
+    0.7,
+    0.9
+   ],
+   "overall": 0.54
+  }
+ ]
+}

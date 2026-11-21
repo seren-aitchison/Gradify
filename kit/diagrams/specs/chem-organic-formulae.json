@@ -2,6 +2,7 @@
  "id": "chem-organic-formulae",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Introduction to organic chemistry",
  "title": "Four ways to write butan-1-ol",
  "caption": "The same molecule, C₄H₁₀O, as a displayed formula (every bond and atom), a structural formula, CH₃CH₂CH₂CH₂OH, and a skeletal formula, where each corner or line end is a carbon carrying enough hydrogens to make four bonds.",

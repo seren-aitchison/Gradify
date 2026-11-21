@@ -2,6 +2,7 @@
  "id": "chem-main-group-oxides",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Main-group chemistry",
  "title": "Period 3 oxides in water",
  "caption": "Across period 3 the oxides change from basic to acidic. Na₂O and MgO give alkaline solutions; Al₂O₃ and SiO₂ do not dissolve (Al₂O₃ is amphoteric); P₄O₁₀ and SO₃ react to give strongly acidic solutions. Typical pH values.",

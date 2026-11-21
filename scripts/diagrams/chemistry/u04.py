@@ -90,7 +90,7 @@ mk("u04-10", "chem-vsepr-lone-pairs", "vsepr", "Lone pairs close the bond angle"
    "Methane, ammonia and water all have four electron pairs arranged tetrahedrally. Lone pairs repel more strongly than bonding pairs, so each lone pair squeezes the bond angle by about 2.5°: 109.5° in CH₄, 107° in NH₃, 104.5° in H₂O.",
    "CH₄ tetrahedral at 109.5°, NH₃ trigonal pyramidal at 107° with one lone pair, H₂O bent at 104.5° with two lone pairs.",
    ["CH₄: four bonding pairs, tetrahedral, 109.5°.", "NH₃: three bonding pairs and one lone pair, trigonal pyramidal, 107°.", "H₂O: two bonding pairs and two lone pairs, bent, 104.5°."],
-   molecules=[{"label": "CH4", "centre": "C", "ligands": [{"el": "H"}] * 4, "shape": "tetrahedral", "angle": "109.5°", "anglePair": [0, 1]},
+   also=['chemistry:u16-01'], molecules=[{"label": "CH4", "centre": "C", "ligands": [{"el": "H"}] * 4, "shape": "tetrahedral", "angle": "109.5°", "anglePair": [0, 1]},
               {"label": "NH3", "centre": "N", "ligands": [{"el": "H"}] * 3, "shape": "trigonal pyramidal", "angle": "107°", "anglePair": [0, 1]},
               {"label": "H2O", "centre": "O", "ligands": [{"el": "H"}] * 2, "shape": "bent", "angle": "104.5°", "anglePair": [0, 1]}])
 

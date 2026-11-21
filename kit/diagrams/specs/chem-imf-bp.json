@@ -2,6 +2,7 @@
  "id": "chem-imf-bp",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Intermolecular forces",
  "title": "Hydrogen bonding raises boiling points",
  "caption": "Boiling points of the hydrides usually rise down a group as London forces grow. NH₃, H₂O and HF break the pattern: hydrogen bonding makes them boil far higher than the next hydride down. Water is highest of all, with two hydrogen bonds per molecule.",

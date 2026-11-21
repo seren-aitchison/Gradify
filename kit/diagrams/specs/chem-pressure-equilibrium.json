@@ -2,6 +2,7 @@
  "id": "chem-pressure-equilibrium",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Pressure and equilibrium",
  "title": "Pressure and equilibrium",
  "caption": "N₂O₄ ⇌ 2NO₂. Squeezing the mixture into a smaller volume raises the pressure; the equilibrium shifts towards the side with fewer gas molecules, N₂O₄, partly relieving the change. The atoms are the same; only their grouping changes.",

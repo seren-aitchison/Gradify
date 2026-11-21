@@ -2,6 +2,7 @@
  "id": "chem-accuracy-precision",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Accuracy and precision",
  "title": "Accuracy and precision",
  "caption": "Four students each repeat a titration whose true titre is 25.00 cm³. Accuracy is how close the mean is to the true value; precision is how close the repeats are to each other. Precise results can still be inaccurate, from a systematic error such as a misread burette.",

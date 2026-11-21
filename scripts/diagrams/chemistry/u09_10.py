@@ -192,7 +192,7 @@ mk("u10-06", "chem-metal-reducing", "trend", "Metals as reducing agents",
    "The more negative a metal's electrode potential, the more readily it gives up electrons: lithium and potassium are the strongest reducing agents, gold the weakest. This is the reactivity series, measured.",
    "A vertical scale of E° for metal ion/metal couples from Li⁺/Li at −3.04 V at the bottom to Au³⁺/Au at +1.50 V at the top.",
    ["Bottom: Li −3.04, K −2.93, Ca −2.87, Na −2.71, Mg −2.37 V: most reactive.", "Middle: Al −1.66, Zn −0.76, Fe −0.44, Pb −0.13, H₂ 0.00.", "Top: Cu +0.34, Ag +0.80, Au +1.50 V: least reactive."],
-   also=["gcse:u05-08"], kind="ladder", dataset="e0", unit="V", topLabel="weaker reducing agents", bottomLabel="stronger reducing agents", height=[460, 520],
+   also=["gcse:u05-08"], kind="ladder", dataset="e0", valueUnit="V", topLabel="weaker reducing agents", bottomLabel="stronger reducing agents", height=[460, 520],
    items=[{"key": k, "value": v} for k, v in MET], highlight={"H+/H2": "a2"}, claims=[{"type": "min", "key": "Li+/Li"}, {"type": "max", "key": "Au3+/Au"}])
 
 SERIES = [("F2/F-", 2.87), ("MnO4-/Mn2+", 1.51), ("Cl2/Cl-", 1.36), ("Cr2O7 2-/Cr3+", 1.33), ("O2/H2O", 1.23), ("Br2/Br-", 1.09), ("Ag+/Ag", 0.80), ("Fe3+/Fe2+", 0.77), ("I2/I-", 0.54),
@@ -201,7 +201,7 @@ mk("u10-12", "chem-electrochemical-series", "trend", "The electrochemical series
    "Couples listed by standard electrode potential. The oxidised form at the top (F₂, MnO₄⁻) is the strongest oxidising agent; the reduced form at the bottom (Li) is the strongest reducing agent. A species will oxidise anything below it on the left-hand side of the list.",
    "A vertical scale of E° values from F₂/F⁻ at +2.87 V down to Li⁺/Li at −3.04 V, with the hydrogen electrode at 0.",
    ["Top: F₂/F⁻ +2.87, MnO₄⁻/Mn²⁺ +1.51, Cl₂/Cl⁻ +1.36 V.", "Middle: Ag⁺/Ag +0.80, Cu²⁺/Cu +0.34, H⁺/H₂ 0.", "Bottom: Zn −0.76, Mg −2.37, Na −2.71, Li −3.04 V."],
-   kind="ladder", dataset="e0", unit="V", topLabel="stronger oxidising agents (left)", bottomLabel="stronger reducing agents (right)", height=[520, 600],
+   kind="ladder", dataset="e0", valueUnit="V", topLabel="stronger oxidising agents (left)", bottomLabel="stronger reducing agents (right)", height=[520, 600],
    items=[{"key": k, "value": v, "label": k.replace(" 2-", "²⁻")} for k, v in SERIES], highlight={"H+/H2": "a2"}, claims=[{"type": "max", "key": "F2/F-"}, {"type": "min", "key": "Li+/Li"}])
 
 mk("u10-07", "chem-daniell-cell", "cell", "The Daniell cell",

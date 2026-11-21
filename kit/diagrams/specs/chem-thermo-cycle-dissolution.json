@@ -2,6 +2,7 @@
  "id": "chem-thermo-cycle-dissolution",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Thermodynamic cycles",
  "title": "Dissolving sodium chloride",
  "caption": "ΔsolH = −ΔlattH(formation) + ΔhydH(Na⁺) + ΔhydH(Cl⁻) = +787 − 406 − 364 = +17 kJ mol⁻¹ with these values (data books give about +4). Separating the lattice costs almost exactly what hydrating the ions returns, so NaCl dissolves with a small enthalpy change, driven by entropy.",

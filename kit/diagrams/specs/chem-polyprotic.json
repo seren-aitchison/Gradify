@@ -2,6 +2,7 @@
  "id": "chem-polyprotic",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Polyprotic acids",
  "title": "Titrating phosphoric acid",
  "caption": "Phosphoric acid gives up its protons one at a time, so titrating it with NaOH shows a separate rise for each: at 25 cm³ (H₂PO₄⁻) and 50 cm³ (HPO₄²⁻). The third proton (pKa 12.35) is too weak to give a visible end point in water.",

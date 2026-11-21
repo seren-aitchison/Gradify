@@ -2,6 +2,7 @@
  "id": "chem-states-of-matter",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "States of matter",
  "title": "Solid, liquid and gas",
  "caption": "In a solid the particles are packed in a regular pattern and vibrate in place. In a liquid they are still touching but move past each other. In a gas they are far apart and move quickly in all directions.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Structure and properties of substances"
   }
  ],

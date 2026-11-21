@@ -1,0 +1,53 @@
+{
+ "id": "chem-protecting-group",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Protecting groups",
+ "title": "Protect, react, deprotect",
+ "caption": "To reduce the ester of a keto-ester without touching the ketone, first protect the ketone as an acetal (with ethane-1,2-diol and acid), carry out the reduction with LiAlH₄, then remove the acetal with aqueous acid.",
+ "alt": "A flow: keto-ester → acetal-protected keto-ester → reduced (ester to alcohol) → deprotected hydroxy-ketone.",
+ "description": [
+  "Protect: ketone → acetal with HOCH₂CH₂OH, H⁺.",
+  "React: LiAlH₄ reduces the ester; the acetal is unaffected.",
+  "Deprotect: H₃O⁺ returns the ketone."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "keto-ester"
+  },
+  {
+   "id": "b",
+   "label": "acetal-protected",
+   "tone": "a5"
+  },
+  {
+   "id": "c",
+   "label": "ester reduced"
+  },
+  {
+   "id": "d",
+   "label": "hydroxy-ketone",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "protect"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "LiAlH₄"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "H₃O⁺"
+  }
+ ]
+}

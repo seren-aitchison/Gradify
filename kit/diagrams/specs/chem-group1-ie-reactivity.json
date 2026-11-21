@@ -2,6 +2,7 @@
  "id": "chem-group1-ie-reactivity",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Reactivity trends",
  "title": "Group 1: ionisation energy and reactivity",
  "caption": "Down group 1 the outer s electron is further out and more shielded, so first ionisation energy falls from 520 to 376 kJ mol⁻¹. The electron is lost more easily, so reactivity with water rises from lithium to caesium.",

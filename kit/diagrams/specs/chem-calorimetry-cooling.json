@@ -2,6 +2,7 @@
  "id": "chem-calorimetry-cooling",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Calorimetry",
  "title": "Correcting for heat loss",
  "caption": "The solution is mixed at 3 minutes. Because the cup loses heat while the reaction happens, the highest reading underestimates the rise. Extrapolating the cooling line back to the moment of mixing gives the true maximum, 27.0 °C: ΔT = 7.0 °C.",

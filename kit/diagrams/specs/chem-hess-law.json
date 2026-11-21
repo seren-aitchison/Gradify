@@ -2,6 +2,7 @@
  "id": "chem-hess-law",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Hess's law",
  "title": "Hess's law",
  "caption": "The enthalpy change depends only on the start and finish, not the route. Burning carbon straight to CO₂ releases 394 kJ mol⁻¹; going via CO (−111, then −283) gives the same total.",

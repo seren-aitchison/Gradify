@@ -2,6 +2,7 @@
  "id": "chem-lithium-ion",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Batteries",
  "title": "A lithium-ion cell discharging",
  "caption": "On discharge, lithium leaves the graphite negative electrode as Li⁺ and electrons; the Li⁺ crosses the electrolyte and the electrons go round the external circuit to the cobalt oxide positive electrode, where both are taken in. Charging reverses this.",

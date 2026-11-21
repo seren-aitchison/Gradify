@@ -2,6 +2,7 @@
  "id": "chem-chemical-potential",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Chemical potential",
  "title": "Chemical potential of a gas",
  "caption": "For an ideal gas μ = μ° + RT ln(p/p°): the chemical potential rises with pressure, logarithmically. At the standard pressure (1 bar) μ = μ°; matter flows from high μ to low.",

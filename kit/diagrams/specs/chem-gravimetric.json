@@ -2,6 +2,7 @@
  "id": "chem-gravimetric",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Gravimetric analysis",
  "title": "Gravimetric analysis of sulfate",
  "caption": "Sulfate is precipitated completely as barium sulfate, filtered, washed, dried and weighed until two weighings agree (constant mass). The mass of BaSO₄ gives the moles of sulfate: 0.583 g ÷ 233.4 g mol⁻¹ = 2.50 × 10⁻³ mol.",

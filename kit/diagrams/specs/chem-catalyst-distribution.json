@@ -2,6 +2,7 @@
  "id": "chem-catalyst-distribution",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Homogeneous catalysis",
  "title": "Why a catalyst speeds a reaction",
  "caption": "With a catalyst the activation energy falls from Ea to Ea(cat). The distribution of energies is unchanged, but a much larger fraction of molecules now has enough energy: here about 3.7 times as many.",

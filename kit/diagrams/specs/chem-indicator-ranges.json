@@ -2,6 +2,7 @@
  "id": "chem-indicator-ranges",
  "renderer": "titration",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Indicators",
  "title": "Choosing an indicator",
  "caption": "An indicator changes colour over about two pH units around its pKin. It works if that change falls within the steep part of the curve. Phenolphthalein (8.3–10.0) suits a weak acid with a strong base; methyl orange (3.1–4.4) does not, because it would change colour too early.",

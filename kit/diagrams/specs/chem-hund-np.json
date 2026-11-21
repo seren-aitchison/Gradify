@@ -2,6 +2,7 @@
  "id": "chem-hund-np",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Hund's rule",
  "title": "Hund's rule: nitrogen and oxygen",
  "caption": "In nitrogen the three 2p electrons occupy separate orbitals with parallel spins. Oxygen's fourth 2p electron must pair, and the repulsion within that pair makes it easier to remove: oxygen's first ionisation energy (1314 kJ mol⁻¹) is below nitrogen's (1402).",

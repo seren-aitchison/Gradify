@@ -2,6 +2,7 @@
  "id": "chem-config-cr-cu",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Electron configurations",
  "title": "Chlorine, chromium and copper in boxes",
  "caption": "Chlorine follows the filling order. Chromium and copper do not: one 4s electron moves into 3d to give a half-filled 3d⁵ or a full 3d¹⁰, so chromium is [Ar] 3d⁵ 4s¹ and copper is [Ar] 3d¹⁰ 4s¹.",

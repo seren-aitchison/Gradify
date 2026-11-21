@@ -486,6 +486,7 @@ E: E = hf = hc / λ
 X: Calculate the energy of a photon of red light with wavelength 656 nm.
 > E = hc / λ = (6.626 × 10⁻³⁴ × 2.998 × 10⁸) ÷ (656 × 10⁻⁹).
 > E = 1.987 × 10⁻²⁵ ÷ 6.56 × 10⁻⁷ = 3.03 × 10⁻¹⁹ J.
+D: chem-hydrogen-spectrum
 H: Why lines
 P: Electrons in an atom can only have certain energies. When an electron drops from a higher level to a lower one, it emits a photon whose energy exactly equals the difference, ΔE = hf. Because only certain differences are possible, only certain wavelengths appear: a **line spectrum**. Each element has its own pattern of levels, so its spectrum is a fingerprint.
 H: The hydrogen spectrum
@@ -519,6 +520,7 @@ O: Relate the convergence limit of a spectrum to ionisation energy
 PRE: Atomic spectra
 H: Two kinds of spectrum
 P: An **emission spectrum** comes from excited atoms, in a flame or a discharge tube, and appears as bright lines on a dark background. An **absorption spectrum** appears when white light passes through cooler atoms: they absorb exactly the wavelengths that match their energy gaps, leaving dark lines in a continuous spectrum. For the same element the lines fall at the same wavelengths, because the same energy gaps are involved.
+D: chem-emission-absorption
 H: Flame tests
 P: Heating a metal compound in a flame excites its electrons; as they fall back, the light emitted has a characteristic colour.
 - Lithium: crimson red
@@ -592,6 +594,7 @@ O: Explain the uncertainty principle and its consequence for electrons in atoms
 PRE: Wave-particle duality
 H: Beyond Bohr
 P: Bohr's model (1913) gave hydrogen's energy levels correctly, but it failed for atoms with more than one electron and couldn't explain the relative brightness of spectral lines or why only certain orbits were allowed. Treating the electron as a wave solved these problems.
+D: chem-radial-1s
 H: The Schrödinger equation
 P: In 1926 Erwin Schrödinger wrote an equation for the electron's wave. Its solutions, **wavefunctions** (ψ), exist only for particular energies, so quantisation follows naturally, just as a guitar string can vibrate only at certain frequencies. The square of the wavefunction, ψ², gives the **probability density**: how likely the electron is to be found in each small region. An orbital is a wavefunction, and its familiar shape is a picture of where ψ² is large.
 H: Uncertainty
@@ -629,6 +632,7 @@ H: The shapes
 - **p orbitals** have two lobes on opposite sides of the nucleus, with a plane of zero probability (a nodal plane) between them. The three p orbitals point along the x, y and z axes: pₓ, p_y and p_z.
 - **d orbitals**: four of the five have four lobes in a cloverleaf pattern; the fifth, d_z², has two lobes along the z axis and a ring around the middle.
 IX: orbitals
+D: chem-orbital-shapes
 H: Nodes
 P: A **node** is a region where the probability of finding the electron is zero. An orbital has n − 1 nodes in total: **l angular nodes** (planes or cones through the nucleus) and **n − l − 1 radial nodes** (spheres). 1s has none; 2s has one radial node; 2p has one angular node (the nodal plane); 3p has one of each.
 X: How many radial and angular nodes does a 3d orbital have?

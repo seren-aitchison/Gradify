@@ -2,6 +2,7 @@
  "id": "chem-bronsted-pairs",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Brønsted-Lowry theory",
  "title": "Conjugate acid–base pairs",
  "caption": "HCl donates a proton to water. HCl and Cl⁻ are a conjugate pair, differing by one H⁺; H₂O and H₃O⁺ are the other. Water acts as a Brønsted–Lowry base here.",

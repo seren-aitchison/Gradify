@@ -2,6 +2,7 @@
  "id": "chem-ie-period-2-3",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Periodic trends",
  "title": "First ionisation energy, lithium to argon",
  "caption": "Ionisation energy rises across each period as nuclear charge grows with similar shielding, and falls sharply at each new period. The small dips at boron and aluminium (a new p sub-shell) and at oxygen and sulfur (the first paired p electron) are evidence for sub-shells.",

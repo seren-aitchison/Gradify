@@ -2,6 +2,7 @@
  "id": "chem-vsepr-lone-pairs",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Molecular geometry",
  "title": "Lone pairs close the bond angle",
  "caption": "Methane, ammonia and water all have four electron pairs arranged tetrahedrally. Lone pairs repel more strongly than bonding pairs, so each lone pair squeezes the bond angle by about 2.5°: 109.5° in CH₄, 107° in NH₃, 104.5° in H₂O.",
@@ -10,6 +11,13 @@
   "CH₄: four bonding pairs, tetrahedral, 109.5°.",
   "NH₃: three bonding pairs and one lone pair, trigonal pyramidal, 107°.",
   "H₂O: two bonding pairs and two lone pairs, bent, 104.5°."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u16",
+   "lesson": "Molecular structure"
+  }
  ],
  "molecules": [
   {

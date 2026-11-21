@@ -2,6 +2,7 @@
  "id": "chem-aluminium-extraction",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Industrial electrochemistry",
  "title": "Extracting aluminium",
  "caption": "Aluminium oxide is dissolved in molten cryolite at about 950 °C, far below alumina's own melting point, and electrolysed. Aluminium forms at the carbon cathode lining; oxygen forms at the carbon anodes, which burn away to CO₂ and must be replaced.",

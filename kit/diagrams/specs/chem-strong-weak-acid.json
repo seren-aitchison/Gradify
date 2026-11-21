@@ -2,6 +2,7 @@
  "id": "chem-strong-weak-acid",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Strong acids and bases",
  "title": "Strong and weak acids",
  "caption": "A strong acid such as HCl is fully ionised in water: every molecule has given its proton to water. A weak acid such as HF ionises only slightly, so most of it stays as molecules and [H₃O⁺] is much lower at the same concentration.",

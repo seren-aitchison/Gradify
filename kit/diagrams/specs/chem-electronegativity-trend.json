@@ -2,6 +2,7 @@
  "id": "chem-electronegativity-trend",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Electronegativity",
  "title": "Electronegativity across period 3",
  "caption": "Electronegativity rises across a period as nuclear charge increases and atomic radius falls, so a bonding pair is held more tightly: from sodium (0.93) to chlorine (3.16) on the Pauling scale.",

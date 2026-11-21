@@ -2,6 +2,7 @@
  "id": "chem-zero-order",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Zero-order reactions",
  "title": "A zero-order reaction",
  "caption": "The concentration falls at a constant rate, so the graph is a straight line whose gradient is −k. Here k = 0.05 mol dm⁻³ s⁻¹: the half-life, [A]₀/2k = 10 s, gets shorter as the reaction goes on.",

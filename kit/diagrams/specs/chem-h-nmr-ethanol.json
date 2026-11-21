@@ -2,6 +2,7 @@
  "id": "chem-h-nmr-ethanol",
  "renderer": "nmr",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Proton NMR",
  "title": "¹H NMR spectrum of ethanol",
  "caption": "Ethanol has three hydrogen environments, so three peaks in a 3:2:1 ratio. The CH₃ is split into a triplet by the two neighbouring CH₂ hydrogens, the CH₂ into a quartet by the three CH₃ hydrogens, and the O–H is a singlet because it exchanges rapidly.",

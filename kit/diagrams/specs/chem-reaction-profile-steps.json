@@ -2,6 +2,7 @@
  "id": "chem-reaction-profile-steps",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Reaction profiles",
  "title": "A two-step reaction",
  "caption": "A reaction with an intermediate has two transition states with the intermediate in the valley between. The higher barrier, here the first, controls the overall rate.",

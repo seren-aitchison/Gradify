@@ -2,6 +2,7 @@
  "id": "chem-jablonski",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Fluorescence spectroscopy",
  "title": "A Jablonski diagram",
  "caption": "Absorption lifts a molecule from S₀ to an excited singlet. It quickly relaxes to the lowest level of S₁ (vibrational relaxation and internal conversion), then either emits fluorescence (nanoseconds) or crosses to the triplet T₁, which emits phosphorescence much more slowly. Emitted light has lower energy than absorbed light.",

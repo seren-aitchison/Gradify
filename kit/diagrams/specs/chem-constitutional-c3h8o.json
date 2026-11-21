@@ -2,6 +2,7 @@
  "id": "chem-constitutional-c3h8o",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Constitutional isomers",
  "title": "The constitutional isomers of C₃H₈O",
  "caption": "Three different connections of the same atoms: two alcohols and an ether. Their properties differ: propan-1-ol boils at 97 °C, propan-2-ol at 82 °C and methoxyethane at 7 °C, which has no O–H to hydrogen bond.",

@@ -2,6 +2,7 @@
  "id": "chem-max-oxidation-p3",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Oxidation states",
  "title": "Highest oxidation states across period 3",
  "caption": "The highest oxidation state equals the number of outer-shell electrons an element can use: +1 for sodium rising to +7 for chlorine (as in Cl₂O₇ and ClO₄⁻).",

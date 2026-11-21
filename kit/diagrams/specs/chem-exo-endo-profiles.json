@@ -2,6 +2,7 @@
  "id": "chem-exo-endo-profiles",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Energy in chemical systems",
  "title": "Exothermic and endothermic reactions",
  "caption": "In an exothermic reaction the products are lower in energy than the reactants and the difference is released to the surroundings (ΔH negative). In an endothermic reaction the products are higher and energy is taken in (ΔH positive). Both must first climb the activation energy.",
@@ -13,6 +14,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Exothermic and endothermic reactions"
   }
  ],

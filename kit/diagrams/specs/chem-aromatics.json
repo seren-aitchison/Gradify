@@ -2,6 +2,7 @@
  "id": "chem-aromatics",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Aromatic compounds",
  "title": "Aromatic compounds",
  "caption": "Each has a planar ring with 4n + 2 delocalised π electrons: six for benzene and its derivatives, ten for naphthalene (n = 2).",

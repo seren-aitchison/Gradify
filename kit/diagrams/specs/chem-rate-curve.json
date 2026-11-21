@@ -2,6 +2,7 @@
  "id": "chem-rate-curve",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Introduction to reaction rates",
  "title": "Following the rate of a reaction",
  "caption": "The volume of gas produced rises fastest at the start, when the reactants are most concentrated, and levels off as they are used up. The rate at any moment is the gradient of the curve.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Rates of reaction"
   }
  ],

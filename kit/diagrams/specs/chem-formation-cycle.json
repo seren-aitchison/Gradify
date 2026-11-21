@@ -2,6 +2,7 @@
  "id": "chem-formation-cycle",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Enthalpy of formation",
  "title": "ΔrH from enthalpies of formation",
  "caption": "For C₂H₄ + H₂ → C₂H₆, both routes from the elements must give the same total: ΔrH = ΣΔfH(products) − ΣΔfH(reactants) = −84 − (+52) = −136 kJ mol⁻¹.",

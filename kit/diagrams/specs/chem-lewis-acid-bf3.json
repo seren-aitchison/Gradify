@@ -2,6 +2,7 @@
  "id": "chem-lewis-acid-bf3",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Lewis acid-base theory",
  "title": "A Lewis acid–base reaction",
  "caption": "Ammonia's lone pair is donated to boron trifluoride, whose boron has only six outer electrons and an empty orbital. NH₃ is the Lewis base (electron-pair donor) and BF₃ the Lewis acid (acceptor); the product has a coordinate bond.",

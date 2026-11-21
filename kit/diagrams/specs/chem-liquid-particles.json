@@ -2,6 +2,7 @@
  "id": "chem-liquid-particles",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Liquids",
  "title": "Liquid particles",
  "caption": "In a liquid the particles touch, as in a solid, but are disordered and keep moving past one another, so a liquid flows and takes the shape of its container but is hardly compressible.",

@@ -2,6 +2,7 @@
  "id": "chem-carbocation-stability",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Carbocations",
  "title": "Carbocation stability",
  "caption": "Alkyl groups push electron density towards a positive carbon (a positive inductive effect), spreading its charge. So the more alkyl groups on C⁺, the more stable it is: tertiary > secondary > primary > methyl. This decides Markovnikov products and SN1 rates.",

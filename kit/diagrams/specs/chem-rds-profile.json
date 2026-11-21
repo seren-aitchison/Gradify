@@ -2,6 +2,7 @@
  "id": "chem-rds-profile",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Rate-determining steps",
  "title": "The rate-determining step",
  "caption": "In a two-step reaction the slower step is the one with the higher transition state. Here the first step is fast and the second slow, so the second step is rate-determining and the rate equation reflects the species in it.",

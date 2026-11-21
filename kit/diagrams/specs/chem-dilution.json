@@ -2,6 +2,7 @@
  "id": "chem-dilution",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Dilutions",
  "title": "Dilution keeps the moles, spreads the volume",
  "caption": "Adding water doubles the volume but adds no solute. The eight solute particles are now spread through twice the volume, so the concentration halves: c₁V₁ = c₂V₂.",

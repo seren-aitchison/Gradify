@@ -2,6 +2,7 @@
  "id": "chem-complex-ions",
  "renderer": "vsepr",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Complex ion equilibria",
  "title": "Two copper(II) complexes",
  "caption": "In water copper(II) is the blue octahedral [Cu(H₂O)₆]²⁺. Adding concentrated HCl swaps the six water ligands for four larger chloride ions, giving the yellow-green tetrahedral [CuCl₄]²⁻: the coordination number changes with the ligand.",

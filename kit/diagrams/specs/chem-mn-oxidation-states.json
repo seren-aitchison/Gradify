@@ -2,6 +2,7 @@
  "id": "chem-mn-oxidation-states",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Oxidation states",
  "title": "The oxidation states of manganese",
  "caption": "Manganese shows every state from +2 to +7, because its 4s and 3d electrons are close in energy. Each compound's oxidation state follows from its formula: Mn²⁺ +2, Mn₂O₃ +3, MnO₂ +4, MnO₄²⁻ +6, MnO₄⁻ +7 (purple manganate(VII)).",

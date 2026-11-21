@@ -2,6 +2,7 @@
  "id": "chem-activation-energy",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Activation energy",
  "title": "Activation energy",
  "caption": "The activation energy is the minimum energy colliding particles need to react: the height of the barrier from the reactants to the transition state. It is the same whether the reaction is exothermic or endothermic overall.",

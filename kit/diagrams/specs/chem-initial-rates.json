@@ -2,6 +2,7 @@
  "id": "chem-initial-rates",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Experimental kinetics",
  "title": "Measuring an initial rate",
  "caption": "The initial rate is the gradient of the concentration–time curve at t = 0. Draw the tangent at the start and measure its gradient: here 0.2 mol dm⁻³ min⁻¹. Repeating with different starting concentrations gives the orders.",

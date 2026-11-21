@@ -2,6 +2,7 @@
  "id": "chem-phase-water",
  "renderer": "phase",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Phase diagrams",
  "title": "Phase diagram of water",
  "caption": "Each region is a single phase; along each line two phases coexist, and at the triple point all three. Water's solid–liquid line slopes backwards because ice is less dense than liquid water, so pressure melts ice. Not to scale.",

@@ -2,6 +2,7 @@
  "id": "chem-stereoisomers",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Stereoisomerism",
  "title": "Two kinds of stereoisomer",
  "caption": "E- and Z-but-2-ene differ in which side of the rigid C=C the methyl groups sit. (R)- and (S)-butan-2-ol differ at a chiral centre and are non-superimposable mirror images. In each pair the atoms are joined in the same order.",

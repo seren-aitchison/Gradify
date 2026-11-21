@@ -2,6 +2,7 @@
  "id": "chem-enolate-formation",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Enolates and enols",
  "title": "Forming an enolate",
  "caption": "A hydrogen on the carbon next to C=O (the α-carbon) is weakly acidic (pKa about 19 to 20 for propanone) because removing it gives an anion whose charge is shared with oxygen. A strong base removes it: the C–H electrons form a C=C and the C=O π electrons move onto oxygen.",

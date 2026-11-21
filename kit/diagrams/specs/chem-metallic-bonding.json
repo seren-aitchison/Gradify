@@ -2,6 +2,7 @@
  "id": "chem-metallic-bonding",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Metallic bonding",
  "title": "Metallic bonding",
  "caption": "A metal is a lattice of positive ions in a sea of delocalised electrons. The attraction between the ions and the electrons is the metallic bond; the mobile electrons carry charge and heat, and layers can slide without breaking it.",

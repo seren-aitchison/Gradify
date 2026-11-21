@@ -2,6 +2,7 @@
  "id": "chem-fragmentation-butanone",
  "renderer": "ms",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Fragmentation patterns",
  "title": "Fragmentation of butanone",
  "caption": "Butanone (M⁺ at 72) breaks next to the C=O, giving acylium ions: CH₃CO⁺ at 43 (the base peak) and C₂H₅CO⁺ at 57. A peak at 29 is C₂H₅⁺. Fragments that keep the C=O are especially stable.",

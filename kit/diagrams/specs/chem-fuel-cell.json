@@ -2,6 +2,7 @@
  "id": "chem-fuel-cell",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Fuel cells",
  "title": "The hydrogen–oxygen fuel cell",
  "caption": "Hydrogen is oxidised at the negative electrode and oxygen reduced at the positive one, with H⁺ ions crossing the membrane. The only product is water and E°cell = 1.23 V.",

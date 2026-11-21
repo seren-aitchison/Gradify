@@ -2,6 +2,7 @@
  "id": "chem-alkynes",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Alkynes",
  "title": "Ethyne and propyne",
  "caption": "Each alkyne has a C≡C and fits CₙH₂ₙ₋₂. The two sp carbons and the atoms on them lie in a straight line.",

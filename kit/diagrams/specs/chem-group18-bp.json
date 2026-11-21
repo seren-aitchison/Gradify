@@ -2,6 +2,7 @@
  "id": "chem-group18-bp",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Group 18",
  "title": "Noble gas boiling points",
  "caption": "Noble gases exist as single atoms held together only by London forces. Larger atoms with more electrons are more polarisable, so boiling points rise down the group.",

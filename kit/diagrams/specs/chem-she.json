@@ -2,6 +2,7 @@
  "id": "chem-she",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Standard electrode potentials",
  "title": "Measuring E° against the hydrogen electrode",
  "caption": "The standard hydrogen electrode, H₂ at 100 kPa bubbling over platinum in 1 mol dm⁻³ H⁺ at 298 K, is defined as 0 V. Connected to Cu²⁺/Cu, the voltmeter reads 0.34 V with copper positive: E°(Cu²⁺/Cu) = +0.34 V.",

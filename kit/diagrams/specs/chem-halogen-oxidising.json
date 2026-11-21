@@ -2,6 +2,7 @@
  "id": "chem-halogen-oxidising",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Oxidising agents",
  "title": "Halogens as oxidising agents",
  "caption": "The more positive the standard electrode potential, the more strongly the halogen pulls in electrons: fluorine is the strongest oxidising agent and iodine the weakest. So chlorine displaces bromide and iodide, but iodine displaces neither.",

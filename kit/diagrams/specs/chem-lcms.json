@@ -2,6 +2,7 @@
  "id": "chem-lcms",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "LC-MS",
  "title": "LC–MS",
  "caption": "For compounds that are not volatile enough for GC, such as drugs and proteins, liquid chromatography separates them and electrospray ionisation gently turns each into gaseous ions (often [M+H]⁺) before mass analysis.",

@@ -2,6 +2,7 @@
  "id": "chem-bond-type",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Introduction to chemical bonding",
  "title": "Which kind of bond?",
  "caption": "A metal with a non-metal transfers electrons: ionic bonding. Metal atoms alone share a sea of delocalised electrons: metallic bonding. Non-metals share pairs of electrons: covalent bonding.",

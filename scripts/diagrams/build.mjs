@@ -28,10 +28,11 @@ mkdirSync(OUT, { recursive: true });
 const only = process.argv[2] || "";
 
 // the raw notes of one lesson, from kit/courses/<course>/notes/u*.js
-function lessonSource(course, title) {
+function lessonSource(course, title, unit) {
   const dir = join(ROOT, "kit/courses", course, "notes");
   if (!existsSync(dir)) return null;
-  for (const f of readdirSync(dir).filter((f) => /^u\d+\.js$/.test(f))) {
+  // the unit's file when the spec names one, since lesson titles repeat across units
+  for (const f of readdirSync(dir).filter((f) => /^u\d+\.js$/.test(f) && (!unit || f === `${unit}.js`))) {
     const src = readFileSync(join(dir, f), "utf8"), at = src.indexOf(`\n## ${title}\n`);
     if (at < 0) continue;
     const end = src.indexOf("\n## ", at + 4);
@@ -55,7 +56,7 @@ let failed = 0;
 for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
   const spec = JSON.parse(readFileSync(join(SPECS, f), "utf8"));
   if (only && !spec.id.includes(only)) continue;
-  const lesson = lessonSource(spec.course, spec.lesson);
+  const lesson = lessonSource(spec.course, spec.lesson, spec.unit);
   let out;
   const PY = { mechanism: "chem.py", structures: "chem_more.py", nmr: "chem_more.py", ms: "chem_more.py", ir: "chem_more.py" };
   if (PY[spec.renderer]) {
@@ -70,7 +71,7 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
   if (!out.checks.length) out.checks.push({ name: "the renderer checked the subject", ok: false, detail: "no subject checks ran for this spec" });
   // a diagram can be placed in more than one lesson (spec.also: [{course, lesson}]), e.g. a GCSE lesson reusing it
   const places = (l) => !!l && new RegExp(`^D:\\s*${spec.id}\\s*$`, "m").test(l.text);
-  const extra = (spec.also || []).map((a) => ({ ...a, src: lessonSource(a.course, a.lesson) }));
+  const extra = (spec.also || []).map((a) => ({ ...a, src: lessonSource(a.course, a.lesson, a.unit) }));
   const checks = [
     { name: "the lesson exists", ok: !!lesson, detail: lesson ? `${lesson.file}: ${spec.lesson}` : `${spec.course}: ${spec.lesson} not found` },
     { name: "the lesson places this diagram (D: line)", ok: places(lesson) },

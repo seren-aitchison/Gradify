@@ -2,6 +2,7 @@
  "id": "chem-rusting",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Corrosion",
  "title": "How iron rusts",
  "caption": "Under a drop of water, iron at the centre (where oxygen is scarce) is oxidised to Fe²⁺; electrons flow through the metal to the edge, where oxygen is reduced to OH⁻. Fe²⁺ and OH⁻ meet to form Fe(OH)₂, which oxidises further to rust, Fe₂O₃·xH₂O.",

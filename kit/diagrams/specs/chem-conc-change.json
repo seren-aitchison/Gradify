@@ -2,6 +2,7 @@
  "id": "chem-conc-change",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Concentration and equilibrium",
  "title": "Removing a product",
  "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s some B is removed: [B] drops from 0.6 to 0.2. The system makes more B from A until the ratio is 1.5 again, at [A] = 0.24 and [B] = 0.36. This is why removing a product drives a reaction on.",

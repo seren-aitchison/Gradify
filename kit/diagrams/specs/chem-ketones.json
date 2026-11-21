@@ -2,6 +2,7 @@
  "id": "chem-ketones",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Ketones",
  "title": "Ketones",
  "caption": "In a ketone the C=O is within the chain, with a carbon on each side, so there is no hydrogen on the carbonyl carbon to oxidise. Propanone is the simplest; ketones are named with -one.",

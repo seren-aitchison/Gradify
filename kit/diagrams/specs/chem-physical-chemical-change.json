@@ -2,6 +2,7 @@
  "id": "chem-physical-chemical-change",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Physical and chemical changes",
  "title": "Physical and chemical change",
  "caption": "Melting ice is a physical change: the same H₂O molecules, now free to move. Burning hydrogen is a chemical change: atoms rearrange into a new substance, 2H₂ + O₂ → 2H₂O. In both, every atom is still there.",

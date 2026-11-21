@@ -1,0 +1,75 @@
+{
+ "id": "chem-addition-condensation-polymers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Polymerisation",
+ "title": "Condensation polymerisation: nylon-6,6",
+ "caption": "A diacid and a diamine join to form an amide link, losing water each time; repeating this at both ends of each monomer builds a polyamide. Unlike addition polymers, condensation polymers have a small molecule as a by-product and can be broken down by hydrolysis.",
+ "alt": "Hexanedioic acid plus hexane-1,6-diamine gives one amide-linked unit plus water.",
+ "description": [
+  "Hexanedioic acid: a carboxylic acid at each end.",
+  "Hexane-1,6-diamine: an amine at each end.",
+  "They join through an amide bond, releasing H₂O."
+ ],
+ "between": [
+  "+",
+  "→",
+  "+"
+ ],
+ "bond": [
+  24,
+  20
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "OC(=O)CCCCC(=O)O",
+   "label": "hexanedioic acid",
+   "groups": [
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "NCCCCCCN",
+   "label": "hexane-1,6-diamine",
+   "groups": [
+    "primary amine"
+   ]
+  },
+  {
+   "smiles": "OC(=O)CCCCC(=O)NCCCCCCN",
+   "label": "amide-linked unit",
+   "groups": [
+    "amide"
+   ],
+   "highlight": [
+    {
+     "group": "amide",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "O",
+   "label": "water",
+   "displayed": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "reaction",
+   "left": [
+    0,
+    1
+   ],
+   "right": [
+    2,
+    3
+   ]
+  }
+ ]
+}

@@ -2,6 +2,7 @@
  "id": "chem-anhydride-acylation",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Acid anhydrides",
  "title": "Making aspirin with an acid anhydride",
  "caption": "Ethanoic anhydride acylates the phenol –OH of salicylic acid, forming the ester in aspirin and ethanoic acid. Industry uses the anhydride rather than ethanoyl chloride because it is cheaper, less corrosive, reacts less violently and gives no HCl.",

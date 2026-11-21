@@ -2,6 +2,7 @@
  "id": "chem-dg-lnk",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u08",
  "lesson": "Thermodynamic interpretation",
  "title": "ΔG° and K",
  "caption": "ΔG° = −RT ln K. At 298 K, every 5.7 kJ mol⁻¹ more negative multiplies K by 10. A negative ΔG° means K > 1 (products favoured); a positive ΔG° means K < 1.",

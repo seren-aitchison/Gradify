@@ -2,6 +2,7 @@
  "id": "chem-coordinate-ammonium",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Coordinate bonding",
  "title": "A coordinate bond: ammonium",
  "caption": "Ammonia's lone pair on nitrogen is donated to an H⁺ ion, which has no electrons. Once formed, the coordinate bond is identical to the other three N–H bonds; the ion carries a +1 charge.",

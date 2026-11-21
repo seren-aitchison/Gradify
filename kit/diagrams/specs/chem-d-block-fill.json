@@ -2,6 +2,7 @@
  "id": "chem-d-block-fill",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "d-block elements",
  "title": "d-block elements: filling 3d",
  "caption": "Across the first transition series the 3d sub-shell fills behind a 4s² pair: scandium 3d¹, iron 3d⁶, zinc 3d¹⁰. Chromium and copper are the exceptions with 4s¹.",

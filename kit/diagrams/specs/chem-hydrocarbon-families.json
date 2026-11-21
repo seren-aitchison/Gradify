@@ -2,6 +2,7 @@
  "id": "chem-hydrocarbon-families",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Hydrocarbons",
  "title": "The four hydrocarbon families",
  "caption": "Alkanes have only single bonds, alkenes a C=C, alkynes a C≡C, and arenes a benzene ring. Each is shown with four or six carbons so the families compare directly.",

@@ -2,6 +2,7 @@
  "id": "chem-metal-reducing",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Reducing agents",
  "title": "Metals as reducing agents",
  "caption": "The more negative a metal's electrode potential, the more readily it gives up electrons: lithium and potassium are the strongest reducing agents, gold the weakest. This is the reactivity series, measured.",
@@ -14,12 +15,13 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "Reactivity series and extraction of metals"
   }
  ],
  "kind": "ladder",
  "dataset": "e0",
- "unit": "V",
+ "valueUnit": "V",
  "topLabel": "weaker reducing agents",
  "bottomLabel": "stronger reducing agents",
  "height": [

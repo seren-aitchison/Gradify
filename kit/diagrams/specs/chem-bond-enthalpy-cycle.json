@@ -2,6 +2,7 @@
  "id": "chem-bond-enthalpy-cycle",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Bond enthalpies",
  "title": "Hydrogen and chlorine from bond enthalpies",
  "caption": "H₂ + Cl₂ → 2HCl: breaking H–H (436) and Cl–Cl (243) takes 679 kJ; making two H–Cl (2 × 432) releases 864 kJ. ΔH = 679 − 864 = −185 kJ mol⁻¹.",

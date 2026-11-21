@@ -2,6 +2,7 @@
  "id": "chem-optical-activity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Optical activity",
  "title": "Enantiomers rotate light oppositely",
  "caption": "(R)- and (S)-butan-2-ol rotate plane-polarised light by the same angle in opposite directions. A 50:50 racemic mixture shows no rotation, because the two effects cancel.",

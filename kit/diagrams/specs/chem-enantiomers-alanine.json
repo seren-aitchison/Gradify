@@ -2,6 +2,7 @@
  "id": "chem-enantiomers-alanine",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Enantiomers",
  "title": "The enantiomers of alanine",
  "caption": "(S)-alanine, the form in proteins, and (R)-alanine are mirror images that cannot be superimposed. They have the same melting point and solubility, and rotate plane-polarised light by equal amounts in opposite directions.",

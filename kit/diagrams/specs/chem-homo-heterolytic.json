@@ -2,6 +2,7 @@
  "id": "chem-homo-heterolytic",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Homolytic and heterolytic cleavage",
  "title": "Two ways a bond can break",
  "caption": "In homolytic fission each atom keeps one electron of the bonding pair, giving two radicals (half-headed arrows). In heterolytic fission the more electronegative atom takes both electrons, giving a cation and an anion (a full curly arrow).",

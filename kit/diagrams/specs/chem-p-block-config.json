@@ -2,6 +2,7 @@
  "id": "chem-p-block-config",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "p-block elements",
  "title": "p-block elements: filling 2p",
  "caption": "Across period 2 from carbon to fluorine the 2p sub-shell fills: 2p², 2p³, 2p⁴, 2p⁵. Electrons occupy separate orbitals before pairing.",

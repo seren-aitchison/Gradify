@@ -2,6 +2,7 @@
  "id": "chem-nabh4-reduction",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Reduction reactions",
  "title": "Reducing propanone with NaBH₄",
  "caption": "NaBH₄ supplies hydride, H⁻, which attacks the δ+ carbonyl carbon as a nucleophile while the C=O π electrons move onto oxygen. The alkoxide is then protonated by water, giving propan-2-ol: a secondary alcohol from a ketone.",

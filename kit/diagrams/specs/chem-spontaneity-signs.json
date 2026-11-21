@@ -2,6 +2,7 @@
  "id": "chem-spontaneity-signs",
  "renderer": "classify",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Spontaneity",
  "title": "Is the reaction feasible?",
  "caption": "ΔG = ΔH − TΔS must be negative. The signs of ΔH and ΔS decide whether that depends on temperature.",

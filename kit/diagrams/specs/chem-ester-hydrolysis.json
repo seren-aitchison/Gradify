@@ -2,6 +2,7 @@
  "id": "chem-ester-hydrolysis",
  "renderer": "mechanism",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Hydrolysis",
  "title": "Alkaline hydrolysis of an ester",
  "caption": "Hydroxide adds to the ester's carbonyl carbon to give a tetrahedral intermediate; the C=O re-forms and ethoxide leaves; ethoxide then takes the acid's proton. That last step is essentially irreversible, which is why alkaline hydrolysis goes to completion: ethanoate and ethanol.",

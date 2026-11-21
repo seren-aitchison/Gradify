@@ -2,6 +2,7 @@
  "id": "chem-daniell-cell",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Electrochemical cells",
  "title": "The Daniell cell",
  "caption": "Zinc (E° −0.76 V) is more easily oxidised than copper (+0.34 V), so zinc is the negative electrode (anode) and copper the positive (cathode). Electrons flow through the wire from zinc to copper; the salt bridge completes the circuit. E°cell = 0.34 − (−0.76) = 1.10 V.",

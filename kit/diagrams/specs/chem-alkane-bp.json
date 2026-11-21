@@ -2,6 +2,7 @@
  "id": "chem-alkane-bp",
  "renderer": "trend",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "London dispersion forces",
  "title": "London forces grow with chain length",
  "caption": "Each extra CH₂ adds electrons and surface contact, so London forces between alkane molecules grow and boiling points rise: methane to butane are gases at room temperature, pentane to octane are liquids.",

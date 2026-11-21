@@ -2,6 +2,7 @@
  "id": "chem-table-blocks",
  "renderer": "table",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "Modern periodic law",
  "title": "The periodic table by block",
  "caption": "The block is the sub-shell that the last electron enters: s for groups 1 and 2 (and helium), p for groups 13 to 18, d for the transition series, f for the lanthanides and actinides.",

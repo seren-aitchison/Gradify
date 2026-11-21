@@ -2,6 +2,7 @@
  "id": "chem-solid-types-lattice",
  "renderer": "lattice",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Solids",
  "title": "Three crystalline solids",
  "caption": "Sodium chloride is an ionic lattice (6:6), copper a face-centred cubic metal in which each atom touches twelve others, and iron a body-centred cubic metal with eight neighbours.",

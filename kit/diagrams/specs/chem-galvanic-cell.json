@@ -2,6 +2,7 @@
  "id": "chem-galvanic-cell",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Galvanic cells",
  "title": "A magnesium–copper cell",
  "caption": "The half-cell with the more negative E° supplies electrons. Magnesium (−2.37 V) is oxidised and copper ions (+0.34 V) are reduced; electrons flow externally from Mg to Cu, while ions in the salt bridge keep each solution neutral. E°cell = 2.71 V.",

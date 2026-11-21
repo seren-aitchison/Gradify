@@ -2,6 +2,7 @@
  "id": "chem-ph-poh",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "pOH",
  "title": "[H⁺] and [OH⁻] in water",
  "caption": "In any aqueous solution at 25 °C, [H⁺][OH⁻] = Kw = 1.0 × 10⁻¹⁴, so pH + pOH = 14. The two lines cross at pH 7, where [H⁺] = [OH⁻] = 10⁻⁷ mol dm⁻³: neutral.",

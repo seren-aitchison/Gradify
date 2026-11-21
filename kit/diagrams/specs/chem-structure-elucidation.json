@@ -2,6 +2,7 @@
  "id": "chem-structure-elucidation",
  "renderer": "flow",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Structure elucidation",
  "title": "Putting the evidence together",
  "caption": "An unknown with M⁺ at 88 (C₄H₈O₂), a strong IR absorption at 1740 cm⁻¹ but no broad O–H, and ¹H NMR peaks at 1.3 (t, 3H), 2.0 (s, 3H) and 4.1 (q, 2H) is ethyl ethanoate. Each technique narrows the possibilities.",

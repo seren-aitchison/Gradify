@@ -2,6 +2,7 @@
  "id": "chem-aufbau-order",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Aufbau principle",
  "title": "The order of filling",
  "caption": "Write the sub-shells in rows by shell and follow the diagonals from upper right to lower left: this is the n + l rule. Sub-shells fill in order of increasing n + l, the lower n first when n + l is equal, which puts 4s before 3d and 5s before 4d.",

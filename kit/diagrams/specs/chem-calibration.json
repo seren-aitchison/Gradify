@@ -2,6 +2,7 @@
  "id": "chem-calibration",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "Calibration",
  "title": "A calibration graph",
  "caption": "Standards of known concentration are measured and a best-fit line drawn. The unknown's absorbance, 0.300, is read across to the line and down: 5.85 mg dm⁻³. The unknown must lie within the range of the standards.",

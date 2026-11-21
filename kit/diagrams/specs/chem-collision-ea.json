@@ -2,6 +2,7 @@
  "id": "chem-collision-ea",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u07",
  "lesson": "Collision theory",
  "title": "The activation energy on the energy distribution",
  "caption": "Only collisions with at least the activation energy Ea lead to reaction. The shaded area beyond Ea is the fraction of molecules energetic enough to react: a small part of the whole.",
@@ -10,6 +11,13 @@
   "The curve starts at the origin: no molecules have zero energy.",
   "It peaks at the most probable energy and tails off; it never quite reaches the axis.",
   "Beyond Ea (shaded): the molecules that can react."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u16",
+   "lesson": "Molecular energy distributions"
+  }
  ],
  "range": {
   "x": [

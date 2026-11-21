@@ -2,6 +2,7 @@
  "id": "chem-atom-structure",
  "renderer": "atom",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Structure of the atom",
  "title": "The nuclear atom: carbon-12",
  "caption": "Six protons and six neutrons make a tiny nucleus; six electrons occupy shells around it, two in the first and four in the second. Not to scale: the nucleus is about 100 000 times smaller than the atom.",
@@ -14,6 +15,7 @@
  "also": [
   {
    "course": "gcse",
+   "unit": "u05",
    "lesson": "The development of the atomic model"
   }
  ],

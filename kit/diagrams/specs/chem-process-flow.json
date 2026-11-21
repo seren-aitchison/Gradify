@@ -1,0 +1,79 @@
+{
+ "id": "chem-process-flow",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Industrial chemical processes",
+ "title": "A continuous process with recycling",
+ "caption": "In the Haber process only about 15% of the gas reacts in one pass through the converter. The mixture is cooled so ammonia liquefies and is removed, and the unreacted nitrogen and hydrogen are recycled, so overall about 98% is eventually converted.",
+ "alt": "A flow: N₂ + H₂ feed → converter (iron catalyst) → cooler/separator → liquid NH₃ out, with unreacted gases recycled to the converter.",
+ "description": [
+  "Fresh N₂ and H₂ fed in.",
+  "Converter: N₂ + 3H₂ ⇌ 2NH₃ over iron at about 450 °C, 200 atm.",
+  "Cooler: NH₃ condenses and is removed.",
+  "Unreacted N₂ and H₂ are recycled."
+ ],
+ "layout": "grid",
+ "rowHeight": 110,
+ "boxWidth": 120,
+ "nodes": [
+  {
+   "id": "f",
+   "label": "N₂ + 3H₂ feed",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "r",
+   "label": "converter",
+   "sub": "Fe, 450 °C",
+   "col": 1,
+   "row": 0,
+   "tone": "a3"
+  },
+  {
+   "id": "s",
+   "label": "cooler / separator",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "p",
+   "label": "liquid NH₃",
+   "col": 2,
+   "row": 1,
+   "tone": "a4"
+  },
+  {
+   "id": "rc",
+   "label": "unreacted N₂ + H₂",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "f",
+   "to": "r"
+  },
+  {
+   "from": "r",
+   "to": "s",
+   "eq": "N2 + 3H2 → 2NH3"
+  },
+  {
+   "from": "s",
+   "to": "p"
+  },
+  {
+   "from": "s",
+   "to": "rc",
+   "label": "recycle"
+  },
+  {
+   "from": "rc",
+   "to": "r",
+   "label": "recycle"
+  }
+ ]
+}

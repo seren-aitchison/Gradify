@@ -2,6 +2,7 @@
  "id": "chem-subshell-energies",
  "renderer": "orbitals",
  "course": "chemistry",
+ "unit": "u02",
  "lesson": "Atomic orbitals",
  "title": "Sub-shell energies up to 4p",
  "caption": "Each box is an orbital: one per s, three per p, five per d. Energy rises up the page (not to scale). The 4s sub-shell lies just below 3d, so it fills first.",

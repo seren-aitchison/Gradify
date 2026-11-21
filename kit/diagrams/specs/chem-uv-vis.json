@@ -2,6 +2,7 @@
  "id": "chem-uv-vis",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "UV-visible spectroscopy",
  "title": "A UV–visible spectrum",
  "caption": "Tetraamminecopper(II), [Cu(NH₃)₄(H₂O)₂]²⁺, absorbs most strongly at about 600 nm (orange), so it appears deep blue. At λmax, absorbance A = εcl (the Beer–Lambert law), which is why concentrations are measured there.",

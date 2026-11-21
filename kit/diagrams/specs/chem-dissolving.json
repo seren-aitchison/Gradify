@@ -2,6 +2,7 @@
  "id": "chem-dissolving",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Solutions",
  "title": "Sodium chloride dissolving",
  "caption": "Water molecules surround the ions at the edge of the lattice: the δ− oxygens face Na⁺ and the δ+ hydrogens face Cl⁻. The energy released by hydration pulls the ions into solution.",

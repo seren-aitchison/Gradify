@@ -2,6 +2,7 @@
  "id": "chem-exothermic-combustion",
  "renderer": "energy-profile",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Exothermic reactions",
  "title": "Burning methane",
  "caption": "CH₄ + 2O₂ → CO₂ + 2H₂O, ΔcH = −890 kJ mol⁻¹. The products are far lower in energy than the reactants; a spark supplies the activation energy, after which the energy released keeps the reaction going.",

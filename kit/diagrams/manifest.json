@@ -222,7 +222,8 @@
   "also": [
    {
     "course": "chemistry",
-    "lesson": "Addition reactions"
+    "lesson": "Addition reactions",
+    "unit": "u13"
    }
   ],
   "renderer": "mechanism",
@@ -410,7 +411,8 @@
   "also": [
    {
     "course": "chemistry",
-    "lesson": "Substitution reactions"
+    "lesson": "Substitution reactions",
+    "unit": "u13"
    }
   ],
   "renderer": "mechanism",
@@ -814,7 +816,8 @@
   "also": [
    {
     "course": "chemistry",
-    "lesson": "Elimination reactions"
+    "lesson": "Elimination reactions",
+    "unit": "u13"
    }
   ],
   "renderer": "mechanism",
@@ -963,7 +966,8 @@
   "also": [
    {
     "course": "chemistry",
-    "lesson": "Curly arrow notation"
+    "lesson": "Curly arrow notation",
+    "unit": "u13"
    }
   ],
   "renderer": "mechanism",
@@ -1198,6 +1202,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "The development of the atomic model"
    }
   ],
@@ -1685,6 +1690,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Atomic structure and isotopes"
    }
   ],
@@ -2345,6 +2351,7 @@
   "also": [
    {
     "course": "chemistry",
+    "unit": "u04",
     "lesson": "Delocalisation"
    }
   ],
@@ -3608,6 +3615,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Moles and concentration"
    }
   ],
@@ -3770,6 +3778,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Conservation of mass and relative formula mass"
    }
   ],
@@ -3983,6 +3992,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Structure and properties of substances"
    }
   ],
@@ -4669,6 +4679,7 @@
   "also": [
    {
     "course": "chemistry",
+    "unit": "u11",
     "lesson": "Lanthanide chemistry"
    }
   ],
@@ -5009,7 +5020,18 @@
   ],
   "course": "chemistry",
   "lesson": "f-block elements",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u03",
+    "lesson": "Actinides"
+   },
+   {
+    "course": "chemistry",
+    "unit": "u11",
+    "lesson": "Actinide chemistry"
+   }
+  ],
   "renderer": "table",
   "status": "validated",
   "review": null,
@@ -5022,6 +5044,16 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Actinides",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js"
+   },
+   {
+    "name": "also placed in chemistry: Actinide chemistry",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -5058,6 +5090,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "The periodic table and groups"
    }
   ],
@@ -5686,7 +5719,7 @@
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/chemistry/notes/u03.js: Electronegativity"
+    "detail": "kit/courses/chemistry/notes/u04.js: Electronegativity"
    },
    {
     "name": "the lesson places this diagram (D: line)",
@@ -5960,6 +5993,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Ionic, covalent and metallic bonding"
    }
   ],
@@ -6681,7 +6715,13 @@
   ],
   "course": "chemistry",
   "lesson": "Molecular geometry",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u16",
+    "lesson": "Molecular structure"
+   }
+  ],
   "renderer": "vsepr",
   "status": "validated",
   "review": null,
@@ -6694,6 +6734,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Molecular structure",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -7277,7 +7322,13 @@
   ],
   "course": "chemistry",
   "lesson": "Collision theory",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u16",
+    "lesson": "Molecular energy distributions"
+   }
+  ],
   "renderer": "graph",
   "status": "validated",
   "review": null,
@@ -7290,6 +7341,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Molecular energy distributions",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -7662,6 +7718,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Reversible reactions and equilibrium"
    }
   ],
@@ -7870,6 +7927,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Exothermic and endothermic reactions"
    }
   ],
@@ -8013,6 +8071,7 @@
   "also": [
    {
     "course": "chemistry",
+    "unit": "u07",
     "lesson": "Half-life"
    }
   ],
@@ -9260,6 +9319,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Rates of reaction"
    }
   ],
@@ -10527,6 +10587,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Electrolysis"
    }
   ],
@@ -11133,6 +11194,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Reactivity series and extraction of metals"
    }
   ],
@@ -11306,7 +11368,7 @@
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/chemistry/notes/u03.js: Oxidation states"
+    "detail": "kit/courses/chemistry/notes/u10.js: Oxidation states"
    },
    {
     "name": "the lesson places this diagram (D: line)",
@@ -11484,6 +11546,7 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Acids, alkalis and salts"
    }
   ],
@@ -12352,7 +12415,7 @@
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/chemistry/notes/u12.js: Aromatic compounds"
+    "detail": "kit/courses/chemistry/notes/u14.js: Aromatic compounds"
    },
    {
     "name": "the lesson places this diagram (D: line)",
@@ -16276,7 +16339,7 @@
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/chemistry/notes/u03.js: Oxidation states"
+    "detail": "kit/courses/chemistry/notes/u11.js: Oxidation states"
    },
    {
     "name": "the lesson places this diagram (D: line)",
@@ -16382,10 +16445,12 @@
   "also": [
    {
     "course": "gcse",
+    "unit": "u05",
     "lesson": "Chemical analysis and chromatography"
    },
    {
     "course": "chemistry",
+    "unit": "u19",
     "lesson": "Thin-layer chromatography"
    }
   ],
@@ -16410,7 +16475,7 @@
    {
     "name": "also placed in chemistry: Thin-layer chromatography",
     "ok": true,
-    "detail": "kit/courses/chemistry/notes/u15.js"
+    "detail": "kit/courses/chemistry/notes/u19.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -16884,6 +16949,7 @@
   "also": [
    {
     "course": "chemistry",
+    "unit": "u15",
     "lesson": "Quantitative analysis"
    }
   ],
@@ -17147,6 +17213,3059 @@
     "name": "λmax = 600 nm",
     "ok": true,
     "detail": "found (600, 1.2)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-addition-condensation-polymers": {
+  "title": "Condensation polymerisation: nylon-6,6",
+  "caption": "A diacid and a diamine join to form an amide link, losing water each time; repeating this at both ends of each monomer builds a polyamide. Unlike addition polymers, condensation polymers have a small molecule as a by-product and can be broken down by hydrolysis.",
+  "alt": "Hexanedioic acid plus hexane-1,6-diamine gives one amide-linked unit plus water.",
+  "description": [
+   "Hexanedioic acid: a carboxylic acid at each end.",
+   "Hexane-1,6-diamine: an amine at each end.",
+   "They join through an amide bond, releasing H₂O."
+  ],
+  "course": "chemistry",
+  "lesson": "Polymerisation",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Polymerisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "hexanedioic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "hexane-1,6-diamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide-linked unit: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide-linked unit: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 12, 'H': 26, 'O': 4, 'N': 2} → {'C': 12, 'H': 26, 'N': 2, 'O': 4}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-alloy": {
+  "title": "Why alloys are harder",
+  "caption": "In a pure metal the layers of identical atoms slide over each other easily. Larger atoms of a second metal (here tin in copper, making bronze) distort the layers, so they cannot slide as easily and the alloy is harder.",
+  "alt": "Left: a regular lattice of copper atoms. Right: the same lattice with a few larger tin atoms disrupting the rows.",
+  "description": [
+   "Pure copper: regular rows that slide easily.",
+   "Bronze: larger tin atoms among the copper, distorting the rows."
+  ],
+  "course": "chemistry",
+  "lesson": "Metals and alloys",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Metals and alloys"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"pure copper\" is a element",
+    "ok": true,
+    "detail": "contents make it a element"
+   },
+   {
+    "name": "\"bronze (Cu + Sn)\" is a mixture",
+    "ok": true,
+    "detail": "contents make it a mixture"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-atom-economy-routes": {
+  "title": "Comparing routes by atom economy",
+  "caption": "Atom economy = mass of desired product ÷ total mass of reactants × 100. Hydrating ethene puts every atom into ethanol (100%); fermenting glucose loses two CO₂ for every two ethanol (51.1%), although it uses a renewable feedstock.",
+  "alt": "Two routes to ethanol: ethene + steam (atom economy 100%) and fermentation of glucose (51.1%).",
+  "description": [
+   "C₂H₄ + H₂O → C₂H₅OH: 100%.",
+   "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂: 2 × 46.07 ÷ 180.16 = 51.1%."
+  ],
+  "course": "chemistry",
+  "lesson": "Green chemistry",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Green chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atom economy for C2H5OH is 100%",
+    "ok": true,
+    "detail": "100.0% from relative masses"
+   },
+   {
+    "name": "C2H4 + H2O → C2H5OH balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "atom economy for C2H5OH is 51.1%",
+    "ok": true,
+    "detail": "51.1% from relative masses"
+   },
+   {
+    "name": "C6H12O6 → 2C2H5OH + 2CO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-band-gap": {
+  "title": "Conductors, semiconductors and insulators",
+  "caption": "In a metal the filled and empty bands overlap, so electrons move freely. In a semiconductor such as silicon the gap is small (1.1 eV), so heat or light can lift some electrons across. In an insulator such as diamond the gap (5.5 eV) is too large.",
+  "alt": "Three band diagrams: a metal with overlapping bands, silicon with a 1.1 eV gap and diamond with a 5.5 eV gap.",
+  "description": [
+   "Metal: valence and conduction bands overlap.",
+   "Silicon: a 1.1 eV gap.",
+   "Diamond: a 5.5 eV gap."
+  ],
+  "course": "chemistry",
+  "lesson": "Semiconductors",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Semiconductors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "metal: the empty band starts below the top of the filled band (overlap)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "silicon's gap is smaller than diamond's",
+    "ok": true,
+    "detail": "1.1 < 5.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-batch-continuous": {
+  "title": "Batch or continuous?",
+  "caption": "Continuous processes suit very large volumes of a single product made all the time (ammonia, sulfuric acid, petrol). Batch processes suit smaller amounts of many products, made in turn in the same equipment (pharmaceuticals, dyes, flavours).",
+  "alt": "A tree: is a large volume of one product needed continuously? Continuous. Otherwise: batch.",
+  "description": [
+   "Large, steady demand for one product: continuous, such as ammonia.",
+   "Smaller amounts or many products: batch, such as medicines."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemical manufacturing",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Chemical manufacturing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every example under \"Continuous process\" is a compound",
+    "ok": true,
+    "detail": "NH3, H2SO4"
+   },
+   {
+    "name": "ammonia: yes leads to \"Continuous process\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-biopolymers": {
+  "title": "Natural condensation polymers",
+  "caption": "Proteins are chains of amino acids joined by peptide (amide) links; polysaccharides such as starch are chains of glucose joined by glycosidic (C–O–C) links. Both form by condensation, releasing water, and are broken down by hydrolysis during digestion.",
+  "alt": "A dipeptide with its peptide link shaded, and maltose, two glucose units joined by a glycosidic link.",
+  "description": [
+   "Glycylalanine: two amino acids joined by –CO–NH–.",
+   "Maltose: two glucose rings joined by an oxygen bridge."
+  ],
+  "course": "chemistry",
+  "lesson": "Biopolymers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Biopolymers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a dipeptide: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a dipeptide: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "maltose: formula C12H22O11",
+    "ok": true,
+    "detail": "RDKit: C12H22O11"
+   },
+   {
+    "name": "maltose: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-boltzmann-populations": {
+  "title": "Boltzmann populations",
+  "caption": "The fraction of molecules in a level falls exponentially with its energy: Nᵢ/N₀ = e^(−Eᵢ/kT). At higher temperature the populations of the upper levels rise. These ratios explain the intensities of spectral lines and why reaction rates rise with temperature.",
+  "alt": "Relative population of levels 0 to 4 at two temperatures: both fall from 1, but the higher-temperature series falls more slowly.",
+  "description": [
+   "kT = ΔE: 1, 0.37, 0.14, 0.05, 0.02.",
+   "kT = 2ΔE: 1, 0.61, 0.37, 0.22, 0.14."
+  ],
+  "course": "chemistry",
+  "lesson": "Statistical thermodynamics",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Statistical thermodynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a0 → a4: decreasing",
+    "ok": true,
+    "detail": "a0 1, a1 0.3679, a2 0.1353, a3 0.0498, a4 0.0183"
+   },
+   {
+    "name": "b0 → b4: decreasing",
+    "ok": true,
+    "detail": "b0 1, b1 0.6065, b2 0.3679, b3 0.2231, b4 0.1353"
+   },
+   {
+    "name": "order a2 < b2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carbonate-speciation": {
+  "title": "Carbon dioxide in natural water",
+  "caption": "Dissolved CO₂ exists as CO₂(aq), HCO₃⁻ and CO₃²⁻ in proportions set by pH. They cross at pKa₁ = 6.35 and pKa₂ = 10.33. At seawater's pH of about 8.1, hydrogencarbonate dominates; as the ocean acidifies, carbonate falls, which harms shell-building organisms.",
+  "alt": "Fractions of CO₂(aq), HCO₃⁻ and CO₃²⁻ against pH: CO₂ falls, HCO₃⁻ peaks around pH 8.3, CO₃²⁻ rises; crossings at pH 6.35 and 10.33.",
+  "description": [
+   "Below pH 6: mostly CO₂(aq).",
+   "pH 6.35: CO₂ = HCO₃⁻.",
+   "Around 8: mostly HCO₃⁻ (seawater 8.1).",
+   "pH 10.33: HCO₃⁻ = CO₃²⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Aquatic chemistry",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Aquatic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CO₂ and HCO₃⁻ are equal at pH = pKa₁ = 6.35",
+    "ok": true,
+    "detail": "(1/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))-(10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33))) at 6.35 = 0; expected -0.001–0.001"
+   },
+   {
+    "name": "HCO₃⁻ and CO₃²⁻ are equal at pH = pKa₂ = 10.33",
+    "ok": true,
+    "detail": "(10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))-(10^(2*x-6.35-10.33)/(1+10^(x-6.35)+10^(2*x-6.35-10.33))) at 10.33 = 0; expected -0.001–0.001"
+   },
+   {
+    "name": "HCO₃⁻ peaks halfway between, at pH 8.34, at 98% of the total",
+    "ok": true,
+    "detail": "found (8.34, 0.98)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-catalytic-converter": {
+  "title": "Inside a catalytic converter",
+  "caption": "A honeycomb coated with platinum, palladium and rhodium converts the three main pollutants in car exhaust: carbon monoxide and unburned hydrocarbons are oxidised, and nitrogen oxides are reduced to nitrogen.",
+  "alt": "A flow from exhaust gases through the catalyst to cleaner gases, with the three reactions.",
+  "description": [
+   "2CO + O₂ → 2CO₂.",
+   "2NO + 2CO → N₂ + 2CO₂.",
+   "Hydrocarbons + O₂ → CO₂ + H₂O, for example C₈H₁₈."
+  ],
+  "course": "chemistry",
+  "lesson": "Air pollution",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Air pollution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2CO + O2 → 2CO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, O; charge 0)"
+   },
+   {
+    "name": "2NO + 2CO → N2 + 2CO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, O, C; charge 0)"
+   },
+   {
+    "name": "C8H18 + 12.5O2 → 8CO2 + 9H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-catalytic-cycle": {
+  "title": "A homogeneous catalytic cycle",
+  "caption": "Peroxodisulfate and iodide ions are both negative and repel, so they react slowly. Fe²⁺ catalyses the reaction: it reduces S₂O₈²⁻ and becomes Fe³⁺, which oxidises I⁻ back to I₂ and becomes Fe²⁺ again. Each step is between oppositely charged ions.",
+  "alt": "A cycle between Fe²⁺ and Fe³⁺: S₂O₈²⁻ converts Fe²⁺ to Fe³⁺, and I⁻ converts Fe³⁺ back to Fe²⁺.",
+  "description": [
+   "S₂O₈²⁻ + 2Fe²⁺ → 2SO₄²⁻ + 2Fe³⁺.",
+   "2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂.",
+   "Overall: S₂O₈²⁻ + 2I⁻ → 2SO₄²⁻ + I₂, with the iron regenerated."
+  ],
+  "course": "chemistry",
+  "lesson": "Catalytic cycles",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Catalytic cycles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S2O8^2- + 2Fe2+ → 2SO4^2- + 2Fe3+ balances",
+    "ok": true,
+    "detail": "atoms and charge balance (S, O, Fe; charge 2)"
+   },
+   {
+    "name": "2Fe3+ + 2I- → 2Fe2+ + I2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Fe, I; charge 4)"
+   },
+   {
+    "name": "the steps add up to S2O8^2- + 2I- → 2SO4^2- + I2",
+    "ok": true,
+    "detail": "S2O8^2- + 2I- → 2SO4^2- + I2"
+   },
+   {
+    "name": "S2O8^2- + 2Fe2+ → 2SO4^2- + 2Fe3+ balances",
+    "ok": true,
+    "detail": "atoms and charge balance (S, O, Fe; charge 2)"
+   },
+   {
+    "name": "2Fe3+ + 2I- → 2Fe2+ + I2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Fe, I; charge 4)"
+   },
+   {
+    "name": "Fe2+ is regenerated: it is not used up overall",
+    "ok": true,
+    "detail": "S2O8^2- + 2I- → 2SO4^2- + I2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-circular": {
+  "title": "A circular economy for materials",
+  "caption": "Instead of take, make, use and throw away, materials are kept in use: products are designed to be repaired, reused and finally recycled into new feedstock, so less virgin raw material is needed and less waste is produced.",
+  "alt": "A loop: make → use → collect → recycle → back to make.",
+  "description": [
+   "Make products from recycled feedstock.",
+   "Use, repair and reuse them.",
+   "Collect at end of life.",
+   "Recycle into feedstock again."
+  ],
+  "course": "chemistry",
+  "lesson": "Circular chemistry",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Circular chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-colloid": {
+  "title": "A colloid",
+  "caption": "In a colloid, particles between about 1 and 1000 nm are dispersed through another substance. They are too small to settle but large enough to scatter light, which is why a beam shows up passing through milk or fog (the Tyndall effect).",
+  "alt": "A box of water containing a few much larger dispersed particles.",
+  "description": [
+   "Many small water molecules.",
+   "A few far larger colloidal particles, spread evenly and not settling."
+  ],
+  "course": "chemistry",
+  "lesson": "Colloids",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Colloids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"colloidal dispersion\" has 4 colloid",
+    "ok": true,
+    "detail": "drawn 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-column": {
+  "title": "Column chromatography",
+  "caption": "A mixture of a non-polar hydrocarbon and a polar alcohol is loaded on top of a silica column and washed through with a non-polar eluent. The hydrocarbon barely sticks to the silica and comes off first; the alcohol hydrogen-bonds to the silica and comes off later.",
+  "alt": "A silica column with two separating bands: the non-polar compound lower down, the polar compound near the top.",
+  "description": [
+   "Lower band: the non-polar compound, eluting first.",
+   "Upper band: the polar alcohol, held back by the silica."
+  ],
+  "course": "chemistry",
+  "lesson": "Column chromatography",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Column chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "on polar silica the least polar compound moves fastest and elutes first",
+    "ok": true,
+    "detail": "hydrocarbon (polarity 1) → alcohol (polarity 3)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-distillation": {
+  "title": "Simple distillation",
+  "caption": "The vapour leaving the flask passes the thermometer bulb, placed level with the side arm so it reads the temperature of the vapour that is distilling, then condenses in a sloping condenser and is collected. Water enters the lower end of the condenser.",
+  "alt": "A heated flask, a still head with a thermometer bulb at the side arm, a sloping condenser with water in at the lower end, and a collecting flask.",
+  "description": [
+   "Heat the mixture.",
+   "Thermometer bulb level with the side arm.",
+   "Condenser: water in at the lower end, out at the upper end.",
+   "The distillate is collected."
+  ],
+  "course": "chemistry",
+  "lesson": "Distillation",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Distillation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "condenser: cooling water enters at the lower end and leaves at the upper end",
+    "ok": true,
+    "detail": "inlet y 322, outlet y 230 (down the page is larger)"
+   },
+   {
+    "name": "thermometer bulb is level with the side arm, where the vapour leaves",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-energy-landscape": {
+  "title": "A conformational energy landscape",
+  "caption": "Rotating bonds in a flexible molecule moves it across an energy landscape with several minima (stable conformers) separated by barriers. A conformational search aims to find the global minimum, not just the nearest local one. Illustrative one-dimensional slice.",
+  "alt": "Energy against a conformational coordinate: a wavy curve with several local minima, the lowest near 2.85.",
+  "description": [
+   "Several dips: local minima, each a stable conformer.",
+   "Hills between them: barriers to interconversion.",
+   "The deepest dip: the global minimum."
+  ],
+  "course": "chemistry",
+  "lesson": "Computational molecular modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Computational molecular modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the deepest minimum (global) is at 2.85, not the first one reached from either end",
+    "ok": true,
+    "detail": "found (2.851, -0.8258)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-filtration": {
+  "title": "Gravity and suction filtration",
+  "caption": "Gravity filtration through folded paper separates an insoluble solid from a solution when the liquid is wanted. Büchner (suction) filtration is faster and dries the solid well, so it is used when the crystals are the product.",
+  "alt": "A filter funnel with filter paper over a flask, and a Büchner funnel on a side-arm flask connected to a vacuum.",
+  "description": [
+   "Gravity filtration: residue in the paper, filtrate below.",
+   "Büchner filtration: crystals on the flat paper, liquid pulled into the flask by vacuum."
+  ],
+  "course": "chemistry",
+  "lesson": "Filtration",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Filtration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the residue (sand) is the insoluble substance",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-flash-column": {
+  "title": "Flash column chromatography",
+  "caption": "Air pressure pushes the eluent through a column of silica quickly. Less polar compounds spend less time adsorbed on the polar silica and leave first; more polar ones are held back and elute later.",
+  "alt": "A column of silica with air pressure applied at the top; bands of three compounds separating, the least polar lowest.",
+  "description": [
+   "Least polar compound: lowest band, elutes first.",
+   "Medium polarity: middle band.",
+   "Most polar: still near the top."
+  ],
+  "course": "chemistry",
+  "lesson": "Chromatographic purification",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Chromatographic purification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "on polar silica the least polar compound moves fastest and elutes first",
+    "ok": true,
+    "detail": "least polar (polarity 1) → medium (polarity 2) → most polar (polarity 3)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-fractionating-column": {
+  "title": "Fractional distillation of crude oil",
+  "caption": "Crude oil is vaporised and enters near the bottom of a column that is hot at the bottom and cooler at the top. Each fraction condenses where the temperature falls below its boiling range: the shortest molecules, with the lowest boiling points, rise furthest.",
+  "alt": "A tall column with outlets at different heights: refinery gases at the top, then petrol, naphtha, kerosene, diesel, fuel oil, and bitumen at the bottom.",
+  "description": [
+   "refinery gases: below 25 °C.",
+   "petrol: 40–110 °C.",
+   "naphtha: 110–180 °C.",
+   "kerosene: 180–260 °C.",
+   "diesel: 260–340 °C.",
+   "fuel oil: 340–400 °C.",
+   "bitumen: above 400 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Petroleum chemistry",
+  "also": [
+   {
+    "course": "gcse",
+    "unit": "u05",
+    "lesson": "Crude oil and hydrocarbons"
+   }
+  ],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Petroleum chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Crude oil and hydrocarbons",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "fractions with lower boiling points leave higher up the column",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-franck-condon": {
+  "title": "The Franck–Condon principle",
+  "caption": "Electronic transitions happen so fast that the nuclei do not move: the transition is a vertical line on the energy diagram. Because the excited state's minimum lies at a longer bond length, the vertical line lands on a high point of the excited curve, so the molecule is left vibrating.",
+  "alt": "Two potential curves: the ground state with a minimum at 1.0, and an excited state above it with a minimum displaced to 1.35; a vertical arrow from the ground minimum up to the excited curve.",
+  "description": [
+   "Ground state: minimum at bond length 1.0.",
+   "Excited state: higher, with a longer bond (minimum at 1.35).",
+   "Vertical arrow at 1.0: lands well above the excited minimum."
+  ],
+  "course": "chemistry",
+  "lesson": "Electronic transitions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Electronic transitions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ground-state minimum at 1.0",
+    "ok": true,
+    "detail": "found (1, 0)"
+   },
+   {
+    "name": "the excited state's minimum is displaced to a longer bond (1.35)",
+    "ok": true,
+    "detail": "found (1.35, 1.2)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-green-synthesis": {
+  "title": "Waste by industry: the E-factor",
+  "caption": "The E-factor is the mass of waste per mass of product. Oil refining makes very little waste per tonne; fine chemicals and pharmaceuticals can make 50 to over 100 kg of waste per kg, mostly solvents, because they use many steps. Upper ends of Sheldon's typical ranges.",
+  "alt": "Bar chart on a logarithmic scale of E-factor: oil refining 0.1, bulk chemicals 5, fine chemicals 50, pharmaceuticals 100.",
+  "description": [
+   "Oil refining: up to 0.1.",
+   "Bulk chemicals: up to 5.",
+   "Fine chemicals: up to 50.",
+   "Pharmaceuticals: 100 and above."
+  ],
+  "course": "chemistry",
+  "lesson": "Green synthesis",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Green synthesis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches E-factor (kg waste per kg product), upper end of the typical range (Sheldon R. A., Green Chemistry 9, 1273–1283 (2007), Table 1)",
+    "ok": true,
+    "detail": "4 values"
+   },
+   {
+    "name": "oil refining → pharmaceuticals: increasing",
+    "ok": true,
+    "detail": "oil refining 0.1, bulk chemicals 5, fine chemicals 50, pharmaceuticals 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-greenhouse": {
+  "title": "How CO₂ absorbs infrared",
+  "caption": "Earth radiates infrared. CO₂ molecules absorb photons of about 15 μm, which match the energy of their bending vibration (8.0 kJ mol⁻¹ per photon mole), and re-emit it in all directions, some back down: the greenhouse effect.",
+  "alt": "Vibrational levels of CO₂'s bending mode, v = 0 and v = 1, with an upward arrow for absorption of 15 μm infrared.",
+  "description": [
+   "v = 0: ground vibrational state.",
+   "v = 1: the bend excited.",
+   "Absorption of a 15 μm photon, 8.0 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Greenhouse gases",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Greenhouse gases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "15000 nm photons carry 7.98 kJ mol⁻¹",
+    "ok": true,
+    "detail": "8 kJ mol⁻¹"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-haber-ostwald": {
+  "title": "From ammonia to fertiliser",
+  "caption": "Ammonia from the Haber process is oxidised over platinum to nitrogen monoxide, which becomes nitrogen dioxide and then nitric acid (the Ostwald process). Nitric acid and more ammonia make ammonium nitrate fertiliser.",
+  "alt": "A flow: N₂ + H₂ → NH₃ → NO → NO₂ → HNO₃ → NH₄NO₃.",
+  "description": [
+   "N₂ + 3H₂ → 2NH₃.",
+   "4NH₃ + 5O₂ → 4NO + 6H₂O (Pt catalyst).",
+   "2NO + O₂ → 2NO₂.",
+   "4NO₂ + O₂ + 2H₂O → 4HNO₃.",
+   "HNO₃ + NH₃ → NH₄NO₃."
+  ],
+  "course": "chemistry",
+  "lesson": "Fertilisers",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Fertilisers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "4NH3 + 5O2 → 4NO + 6H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, H, O; charge 0)"
+   },
+   {
+    "name": "2NO + O2 → 2NO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, O; charge 0)"
+   },
+   {
+    "name": "4NO2 + O2 + 2H2O → 4HNO3 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, O, H; charge 0)"
+   },
+   {
+    "name": "HNO3 + NH3 → NH4NO3 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, N, O; charge 0)"
+   },
+   {
+    "name": "N2 + 3H2 → 2NH3 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, H; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-haber-yield": {
+  "title": "Equilibrium yield of ammonia",
+  "caption": "Calculated equilibrium percentage of NH₃ from a 1:3 N₂:H₂ mixture, treating the gases as ideal and using ΔH° and ΔS° at 298 K. Higher pressure raises the yield (4 gas molecules become 2); higher temperature lowers it (the forward reaction is exothermic). Industry compromises at about 450 °C and 200 atm for a fast rate, and recycles unreacted gas.",
+  "alt": "Percentage of ammonia at equilibrium against pressure for 350, 450 and 550 °C: each curve rises with pressure, and lower temperatures give higher curves.",
+  "description": [
+   "350 °C: the highest yields at every pressure.",
+   "450 °C: lower.",
+   "550 °C: lowest.",
+   "All rise as pressure increases."
+  ],
+  "course": "chemistry",
+  "lesson": "Industrial equilibrium",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Industrial equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "350 °C: every plotted yield solves Kp = 2.23e-03 bar⁻² (ideal gases, 1:3 feed)",
+    "ok": true,
+    "detail": "16 points match Kp = 2.23e-3 bar⁻²"
+   },
+   {
+    "name": "450 °C: every plotted yield solves Kp = 1.93e-04 bar⁻² (ideal gases, 1:3 feed)",
+    "ok": true,
+    "detail": "16 points match Kp = 1.93e-4 bar⁻²"
+   },
+   {
+    "name": "550 °C: every plotted yield solves Kp = 3.01e-05 bar⁻² (ideal gases, 1:3 feed)",
+    "ok": true,
+    "detail": "16 points match Kp = 3.01e-5 bar⁻²"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-harmonic-oscillator": {
+  "title": "The harmonic oscillator",
+  "caption": "A bond vibrating like a spring has a parabolic potential energy. Its allowed energies are evenly spaced, E = (v + ½)hν, and even the lowest level has energy ½hν: the molecule can never stop vibrating (zero-point energy).",
+  "alt": "A parabola of potential energy against displacement, with horizontal levels at 0.5, 1.5, 2.5 and 3.5 units drawn across it.",
+  "description": [
+   "The parabola V = ½kx².",
+   "Levels v = 0, 1, 2, 3 at 0.5, 1.5, 2.5 and 3.5 hν: equally spaced.",
+   "The lowest is above the minimum: zero-point energy."
+  ],
+  "course": "chemistry",
+  "lesson": "Harmonic oscillator",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Harmonic oscillator"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v = 0 lies at ½hν: the zero-point energy",
+    "ok": true,
+    "detail": "y(0.7071067811865476) = 0.5"
+   },
+   {
+    "name": "v = 1 at (1 + ½)hν",
+    "ok": true,
+    "detail": "y(1.224744871391589) = 1.5"
+   },
+   {
+    "name": "v = 2 at (2 + ½)hν",
+    "ok": true,
+    "detail": "y(1.5811388300841898) = 2.5"
+   },
+   {
+    "name": "v = 3 at (3 + ½)hν",
+    "ok": true,
+    "detail": "y(1.8708286933869707) = 3.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-heterogeneous-steps": {
+  "title": "How a solid catalyst works",
+  "caption": "Hydrogenating ethene on nickel: the gases adsorb onto the metal surface, which weakens their bonds; they react on the surface; the product desorbs, freeing the site. Adsorption must be strong enough to weaken bonds but weak enough to let the product go.",
+  "alt": "A cycle: free Ni surface → H₂ and C₂H₄ adsorbed → reaction on the surface → ethane desorbs → free surface.",
+  "description": [
+   "Adsorption: H₂ and C₂H₄ bond to the nickel surface.",
+   "Reaction: hydrogen atoms add to the adsorbed ethene.",
+   "Desorption: ethane leaves, freeing the surface for the next molecules."
+  ],
+  "course": "chemistry",
+  "lesson": "Heterogeneous catalysis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Heterogeneous catalysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the steps add up to H2 + C2H4 → C2H6",
+    "ok": true,
+    "detail": "H2 + C2H4 → C2H6"
+   },
+   {
+    "name": "Ni + H2 + C2H4 → NiH2C2H4 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Ni, H, C; charge 0)"
+   },
+   {
+    "name": "NiH2C2H4 → NiC2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Ni, H, C; charge 0)"
+   },
+   {
+    "name": "NiC2H6 → Ni + C2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Ni, C, H; charge 0)"
+   },
+   {
+    "name": "Ni is regenerated: it is not used up overall",
+    "ok": true,
+    "detail": "H2 + C2H4 → C2H6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-industrial-catalyst": {
+  "title": "The Haber process with and without iron",
+  "caption": "Breaking the N≡N triple bond gives the uncatalysed reaction a very high activation energy. On iron, nitrogen and hydrogen adsorb and react in a series of lower-barrier surface steps, so the rate is fast enough at 450 °C. ΔH (−92 kJ mol⁻¹) is unchanged.",
+  "alt": "Two profiles: uncatalysed with one very high peak; catalysed with several small humps; both ending at the same lower product level.",
+  "description": [
+   "Uncatalysed: one high barrier.",
+   "On iron: several smaller barriers via adsorbed intermediates.",
+   "Same start and finish: ΔH unchanged."
+  ],
+  "course": "chemistry",
+  "lesson": "Catalysis in industry",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Catalysis in industry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "uncatalysed: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uncatalysed: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uncatalysed: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -45"
+   },
+   {
+    "name": "uncatalysed: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: transition state is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: N(ads) is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: transition state is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: NH(ads) is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: transition state is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: 3 transition state(s), 2 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: the highest transition state is step 1, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "on iron: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -45"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-keeling": {
+  "title": "Atmospheric carbon dioxide at Mauna Loa",
+  "caption": "Annual mean CO₂ has risen from about 317 ppm in 1960 to 414 ppm in 2020, and the rise is accelerating. The yearly wiggle is the Northern Hemisphere's plants taking up CO₂ in summer and releasing it in winter. Fitted to NOAA annual means; seasonal cycle ±3 ppm.",
+  "alt": "CO₂ concentration against year from 1958 to 2023: a curve rising from about 315 to 420 ppm with a small seasonal oscillation.",
+  "description": [
+   "1960: 317 ppm.",
+   "1990: 354 ppm.",
+   "2020: 414 ppm; a seasonal swing of about 6 ppm each year."
+  ],
+  "course": "chemistry",
+  "lesson": "Climate chemistry",
+  "also": [
+   {
+    "course": "gcse",
+    "unit": "u05",
+    "lesson": "The Earth's atmosphere and climate change"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Climate chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: The Earth's atmosphere and climate change",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1960: within the seasonal swing of the NOAA annual mean 316.9 ppm",
+    "ok": true,
+    "detail": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x) at 1960.5 = 317.27; expected 314.4–319.4"
+   },
+   {
+    "name": "1980: within the seasonal swing of the NOAA annual mean 338.8 ppm",
+    "ok": true,
+    "detail": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x) at 1980.5 = 339.06; expected 336.3–341.3"
+   },
+   {
+    "name": "2000: within the seasonal swing of the NOAA annual mean 369.7 ppm",
+    "ok": true,
+    "detail": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x) at 2000.5 = 371.56; expected 367.2–372.2"
+   },
+   {
+    "name": "2020: within the seasonal swing of the NOAA annual mean 414.2 ppm",
+    "ok": true,
+    "detail": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x) at 2020.5 = 414.76; expected 411.7–416.7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-kinetics-integrated": {
+  "title": "Consecutive reactions A → B → C",
+  "caption": "A falls exponentially; the intermediate B rises, peaks and falls as it is converted to C; C rises to take everything. With k₁ = 0.5 and k₂ = 0.2 s⁻¹, [B] peaks at t = ln(k₁/k₂)/(k₁ − k₂) = 3.05 s.",
+  "alt": "Concentrations against time: A decaying, B rising to a maximum near 3 s then falling, C rising towards 1.",
+  "description": [
+   "[A] = e^(−k₁t).",
+   "[B] peaks at 0.54 at 3.05 s.",
+   "[C] = 1 − [A] − [B] rises towards 1."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemical kinetics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Chemical kinetics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "[B] is greatest at t = ln(k₁/k₂)/(k₁ − k₂) = 3.05 s",
+    "ok": true,
+    "detail": "found (3.054, 0.543)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-langmuir": {
+  "title": "The Langmuir isotherm",
+  "caption": "Gas molecules adsorb on a fixed number of surface sites. The fraction covered, θ = Kp/(1 + Kp), rises in proportion at low pressure and levels at 1 when every site is full (a monolayer). Half coverage occurs at p = 1/K.",
+  "alt": "Fraction of the surface covered against pressure: rising steeply, then levelling towards 1; θ = 0.5 at p = 0.5 for K = 2.",
+  "description": [
+   "Low pressure: θ ≈ Kp.",
+   "θ = 0.5 at p = 1/K = 0.5.",
+   "High pressure: θ → 1, a full monolayer."
+  ],
+  "course": "chemistry",
+  "lesson": "Surface chemistry",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Surface chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half coverage at p = 1/K",
+    "ok": true,
+    "detail": "y(0.5) = 0.5"
+   },
+   {
+    "name": "initial gradient K = 2 bar⁻¹",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-lennard-jones": {
+  "title": "The Lennard-Jones potential",
+  "caption": "The energy of two molecules as they approach: weak attraction (the r⁻⁶ term) at moderate distance and fierce repulsion (r⁻¹²) when their electron clouds overlap. The minimum, depth ε, lies at r = 2^(1/6)σ ≈ 1.12σ.",
+  "alt": "Energy (units of ε) against separation (units of σ): zero at r = σ, a minimum of −1 at 1.12σ, approaching zero at long range.",
+  "description": [
+   "Steep repulsion below σ.",
+   "Zero at r = σ.",
+   "Minimum −ε at 1.12σ.",
+   "Weak attraction fading at long range."
+  ],
+  "course": "chemistry",
+  "lesson": "Molecular interactions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Molecular interactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "minimum −ε at r = 2^(1/6)σ",
+    "ok": true,
+    "detail": "found (1.123, -1)"
+   },
+   {
+    "name": "energy zero at r = σ",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-melting-range": {
+  "title": "Melting point as a test of purity",
+  "caption": "A pure compound melts sharply, over a degree or so, at its known melting point: benzoic acid at 122 °C. Impurities disrupt the lattice, so an impure sample melts lower and over a wider range.",
+  "alt": "Temperature scale with two bars: pure benzoic acid melting from 121.5 to 122.5 °C, and an impure sample melting from 114 to 119 °C.",
+  "description": [
+   "Pure: 121.5–122.5 °C, sharp.",
+   "Impure: 114–119 °C, lower and broad."
+  ],
+  "course": "chemistry",
+  "lesson": "Purity assessment",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Purity assessment"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the impure sample finishes melting below the pure one starts",
+    "ok": true,
+    "detail": "119 < 121.5"
+   },
+   {
+    "name": "the impure range (5 °C) is wider than the pure one (1 °C)",
+    "ok": true,
+    "detail": "1 < 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-mo-h2": {
+  "title": "Molecular orbitals of hydrogen",
+  "caption": "Two 1s orbitals combine into a lower-energy bonding σ1s and a higher-energy antibonding σ*1s. H₂'s two electrons pair in σ1s: bond order 1. In He₂ the extra two would fill σ*1s and cancel the bond, which is why He₂ does not exist.",
+  "alt": "MO diagram: 1s on each hydrogen; σ1s below with two paired electrons, σ*1s above and empty.",
+  "description": [
+   "Each H atom: one electron in 1s.",
+   "σ1s: two paired electrons.",
+   "σ*1s: empty. Bond order (2 − 0) ÷ 2 = 1."
+  ],
+  "course": "chemistry",
+  "lesson": "Molecular orbitals",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Molecular orbitals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "H2: bond order 1",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "H2: 0 unpaired electron(s), diamagnetic",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "H2: 2 electrons placed",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-mo-n2": {
+  "title": "Molecular orbitals of nitrogen",
+  "caption": "For N₂ (and lighter diatomics) the π2p orbitals lie below σ2p. Its ten valence electrons fill up to σ2p with none in antibonding 2p orbitals: bond order 3, all electrons paired. This triple bond (945 kJ mol⁻¹) makes N₂ very unreactive.",
+  "alt": "MO diagram of N₂: σ2s and σ*2s full, π2p (two) and σ2p full, π*2p and σ*2p empty.",
+  "description": [
+   "σ2s, σ*2s: full.",
+   "π2p: both full; σ2p: full (here above π2p).",
+   "π*2p and σ*2p: empty. Bond order 3, diamagnetic."
+  ],
+  "course": "chemistry",
+  "lesson": "Quantum chemistry",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Quantum chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "N2: bond order 3",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "N2: 0 unpaired electron(s), diamagnetic",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "N2: 14 electrons placed",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-morse": {
+  "title": "A real bond: the Morse potential",
+  "caption": "A real bond is not a perfect spring. Squeezing the atoms together is very hard (the steep left wall) and stretching it far enough breaks it (the curve levels off at the dissociation energy). The vibrational levels get closer together towards the top. Values roughly for H₂.",
+  "alt": "Potential energy against bond length: a steep wall at short distance, a minimum at 0.074 nm and a curve levelling off at about 4.75 eV at long distance.",
+  "description": [
+   "Minimum at the bond length, 0.074 nm.",
+   "Steep repulsion at short distances.",
+   "Levelling off at the dissociation energy, about 4.75 eV."
+  ],
+  "course": "chemistry",
+  "lesson": "Vibrational spectroscopy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Vibrational spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the minimum is at the equilibrium bond length, 0.74 × 10⁻¹⁰ m",
+    "ok": true,
+    "detail": "found (0.74, 0)"
+   },
+   {
+    "name": "at long range the energy approaches the dissociation energy",
+    "ok": true,
+    "detail": "4.75*(1-exp(-1.94*(x-0.74)))^2 at 3.4 = 4.7; expected 4.65–4.75"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-multistep-yield": {
+  "title": "Overall yield of a multi-step synthesis",
+  "caption": "Yields multiply. Three steps of 85%, 70% and 90% give 0.85 × 0.70 × 0.90 = 54% overall, so long routes lose a lot of material and chemists look for short, high-yielding ones.",
+  "alt": "A flow of three steps labelled 85%, 70% and 90%, ending in an overall yield of 54%.",
+  "description": [
+   "Step 1: 85%.",
+   "Step 2: 70%.",
+   "Step 3: 90%.",
+   "Overall: 54%."
+  ],
+  "course": "chemistry",
+  "lesson": "Multi-step synthesis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Multi-step synthesis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "overall yield 85% × 70% × 90% = 54%",
+    "ok": true,
+    "detail": "53.5%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-ozone-cycle": {
+  "title": "How chlorine destroys ozone",
+  "caption": "UV light breaks C–Cl bonds in CFCs high in the stratosphere, releasing chlorine radicals. Each Cl• destroys an ozone molecule and is regenerated, so one radical can destroy many thousands of O₃ molecules before it is removed.",
+  "alt": "A cycle: Cl• reacts with O₃ to give ClO• and O₂; ClO• reacts with an O atom to give O₂ and Cl• again.",
+  "description": [
+   "Cl• + O₃ → ClO• + O₂.",
+   "ClO• + O → Cl• + O₂.",
+   "Overall: O₃ + O → 2O₂; chlorine is regenerated."
+  ],
+  "course": "chemistry",
+  "lesson": "Atmospheric chemistry",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Atmospheric chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Cl• + O3 → ClO• + O2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, O; charge 0)"
+   },
+   {
+    "name": "ClO• + O → Cl• + O2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, O; charge 0)"
+   },
+   {
+    "name": "the steps add up to O3 + O → 2O2",
+    "ok": true,
+    "detail": "O3 + O → 2O2"
+   },
+   {
+    "name": "Cl• + O3 → ClO• + O2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, O; charge 0)"
+   },
+   {
+    "name": "ClO• + O → Cl• + O2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, O; charge 0)"
+   },
+   {
+    "name": "Cl• is regenerated: it is not used up overall",
+    "ok": true,
+    "detail": "O3 + O → 2O2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-particle-box": {
+  "title": "Particle in a box",
+  "caption": "Only waves that fit exactly in the box are allowed: n half-wavelengths, with nodes at the walls. Energy rises as n²: E = n²h²/8mL², so the levels are spaced 1 : 4 : 9 and the gaps grow. Each wavefunction is drawn on its own energy level.",
+  "alt": "Three energy levels at 1, 4 and 9 units, each with its wavefunction drawn on it: one, two and three half-waves.",
+  "description": [
+   "n = 1: one half-wave, E = 1 unit.",
+   "n = 2: two half-waves (a node in the middle), E = 4.",
+   "n = 3: three half-waves, E = 9."
+  ],
+  "course": "chemistry",
+  "lesson": "Particle in a box",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Particle in a box"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 2 has a node at the centre",
+    "ok": true,
+    "detail": "y(0.5) = 4"
+   },
+   {
+    "name": "n = 3 has nodes at L/3 and 2L/3",
+    "ok": true,
+    "detail": "y(0.333333) = 9"
+   },
+   {
+    "name": "every wavefunction is zero at the walls",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-partition-function": {
+  "title": "A two-level partition function",
+  "caption": "The partition function q = Σ e^(−Eᵢ/kT) counts the states thermally available. For two levels a gap ε apart, q = 1 + e^(−ε/kT): just 1 when kT ≪ ε (only the ground state is used) and approaching 2 when kT ≫ ε (both equally).",
+  "alt": "q against kT/ε: starting at 1, rising through 1.37 at kT = ε, and levelling towards 2.",
+  "description": [
+   "Low temperature: q ≈ 1.",
+   "kT = ε: q = 1 + e⁻¹ = 1.37.",
+   "High temperature: q → 2."
+  ],
+  "course": "chemistry",
+  "lesson": "Partition functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Partition functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "q = 1 + 1/e at kT = ε",
+    "ok": true,
+    "detail": "y(1) = 1.3679"
+   },
+   {
+    "name": "q → 1 at low temperature",
+    "ok": true,
+    "detail": "1+exp(-1/x) at 0.05 = 1; expected 1–1.0001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-photochem": {
+  "title": "Light can break a bond",
+  "caption": "A photon breaks a bond if its energy at least equals the bond energy. Cl–Cl is 242 kJ mol⁻¹, so wavelengths of 494 nm or shorter can split Cl₂ into radicals, which is why chlorination of methane starts in sunlight.",
+  "alt": "Energy diagram: Cl₂ at the bottom, 2Cl• 242 kJ mol⁻¹ above, with a photon arrow of 494 nm reaching it.",
+  "description": [
+   "Lower level: Cl₂.",
+   "Upper level: two chlorine radicals, 242 kJ mol⁻¹ higher.",
+   "A 494 nm photon carries exactly 242 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Photochemistry",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Photochemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "494 nm photons carry 242 kJ mol⁻¹",
+    "ok": true,
+    "detail": "242 kJ mol⁻¹"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-physisorption": {
+  "title": "Physisorption and chemisorption",
+  "caption": "A molecule approaching a surface first feels weak van der Waals attraction: a shallow well far out (physisorption, about 20 kJ mol⁻¹). Closer in, it can form chemical bonds to the surface: a much deeper well (chemisorption, often over 200 kJ mol⁻¹). Illustrative curves.",
+  "alt": "Energy against distance from the surface: a shallow minimum at 0.16 nm for physisorption and a deep minimum at 0.095 nm for chemisorption.",
+  "description": [
+   "Physisorption: shallow minimum far from the surface.",
+   "Chemisorption: a deep minimum close to the surface."
+  ],
+  "course": "chemistry",
+  "lesson": "Adsorption",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Adsorption"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "physisorption: a shallow well at 1.6",
+    "ok": true,
+    "detail": "found (1.6, -0.6)"
+   },
+   {
+    "name": "chemisorption: a well over six times deeper, closer to the surface",
+    "ok": true,
+    "detail": "found (0.95, -4)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-polymers": {
+  "title": "Addition polymers",
+  "caption": "Many alkene molecules join by opening their C=C bonds. Ethene gives poly(ethene), propene gives poly(propene) with a CH₃ on every other carbon, and chloroethene gives PVC with a Cl on every other carbon. Each chain shown is a short section.",
+  "alt": "Ethene, propene and chloroethene, each above a short section of its polymer chain.",
+  "description": [
+   "Ethene → poly(ethene): a long saturated chain.",
+   "Propene → poly(propene): methyl groups on alternate carbons.",
+   "Chloroethene → PVC: chlorine atoms on alternate carbons."
+  ],
+  "course": "chemistry",
+  "lesson": "Polymers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Polymers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "chloroethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "poly(ethene): has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "poly(propene): has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "PVC: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "PVC: has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-process-flow": {
+  "title": "A continuous process with recycling",
+  "caption": "In the Haber process only about 15% of the gas reacts in one pass through the converter. The mixture is cooled so ammonia liquefies and is removed, and the unreacted nitrogen and hydrogen are recycled, so overall about 98% is eventually converted.",
+  "alt": "A flow: N₂ + H₂ feed → converter (iron catalyst) → cooler/separator → liquid NH₃ out, with unreacted gases recycled to the converter.",
+  "description": [
+   "Fresh N₂ and H₂ fed in.",
+   "Converter: N₂ + 3H₂ ⇌ 2NH₃ over iron at about 450 °C, 200 atm.",
+   "Cooler: NH₃ condenses and is removed.",
+   "Unreacted N₂ and H₂ are recycled."
+  ],
+  "course": "chemistry",
+  "lesson": "Industrial chemical processes",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Industrial chemical processes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "N2 + 3H2 → 2NH3 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (N, H; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-protecting-group": {
+  "title": "Protect, react, deprotect",
+  "caption": "To reduce the ester of a keto-ester without touching the ketone, first protect the ketone as an acetal (with ethane-1,2-diol and acid), carry out the reduction with LiAlH₄, then remove the acetal with aqueous acid.",
+  "alt": "A flow: keto-ester → acetal-protected keto-ester → reduced (ester to alcohol) → deprotected hydroxy-ketone.",
+  "description": [
+   "Protect: ketone → acetal with HOCH₂CH₂OH, H⁺.",
+   "React: LiAlH₄ reduces the ester; the acetal is unaffected.",
+   "Deprotect: H₃O⁺ returns the ketone."
+  ],
+  "course": "chemistry",
+  "lesson": "Protecting groups",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Protecting groups"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-reaction-monitoring": {
+  "title": "Following a reaction by TLC",
+  "caption": "Spotting the reaction mixture on TLC plates over time shows the starting material (Rf 0.55) fading as the product (Rf 0.30) grows. When the starting-material spot has gone, the reaction is complete.",
+  "alt": "Three TLC plates at 0, 30 and 60 minutes; the high spot fades and the low spot appears.",
+  "description": [
+   "0 min: only the starting material spot.",
+   "30 min: both spots.",
+   "60 min: only the product spot: complete."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction monitoring",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Reaction monitoring"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the baseline is above the solvent, so the spots do not dissolve into it",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the baseline is above the solvent, so the spots do not dissolve into it",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the baseline is above the solvent, so the spots do not dissolve into it",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every spot lies between the baseline and the solvent front (0 < Rf < 1)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "RM  : the starting material spot (Rf 0.55) has gone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-reaction-setup": {
+  "title": "Setting up a reaction",
+  "caption": "A round-bottomed flask heated in a mantle with a reflux condenser on top lets a reaction be heated for a long time without losing solvent; a dropping funnel adds a reagent slowly to control an exothermic reaction.",
+  "alt": "A round-bottomed flask on a heating mantle with a vertical condenser and a dropping funnel.",
+  "description": [
+   "Flask with reaction mixture and anti-bumping granules.",
+   "Vertical condenser, water in at the bottom.",
+   "Dropping funnel to add reagent dropwise."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction setup",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Reaction setup"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "condenser: cooling water enters at the lower end and leaves at the upper end",
+    "ok": true,
+    "detail": "inlet y 210, outlet y 86 (down the page is larger)"
+   },
+   {
+    "name": "reflux condenser is open at the top (a sealed system would build up pressure)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-recrystallisation": {
+  "title": "Recrystallisation",
+  "caption": "Benzoic acid is about 17 times more soluble in boiling water than at room temperature. Dissolving the crude solid in the minimum hot water, filtering, then cooling makes most of it crystallise out pure; soluble impurities stay in solution.",
+  "alt": "Solubility of benzoic acid against temperature: rising steeply from 0.3 g at 20 °C to about 7 g at 100 °C.",
+  "description": [
+   "20 °C: about 0.3 g per 100 g of water.",
+   "100 °C: about 7 g: dissolve here in the minimum volume.",
+   "Cooling to 20 °C crystallises out nearly all of it."
+  ],
+  "course": "chemistry",
+  "lesson": "Recrystallisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Recrystallisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "about 0.3 g at 20 °C",
+    "ok": true,
+    "detail": "0.3*exp(0.0396*(x-20)) at 20 = 0.3; expected 0.29–0.31"
+   },
+   {
+    "name": "about 7 g at 100 °C",
+    "ok": true,
+    "detail": "0.3*exp(0.0396*(x-20)) at 100 = 7.13; expected 6.5–7.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-reflux": {
+  "title": "Heating under reflux",
+  "caption": "Vapour rises into the vertical condenser, cools and drips back, so a volatile mixture can be heated at its boiling point for as long as needed without boiling dry. Cooling water enters at the bottom of the condenser so the jacket stays full; the top is open so pressure cannot build up.",
+  "alt": "A round-bottomed flask with anti-bumping granules over heat, with a vertical Liebig condenser: water in at the lower inlet, out at the upper one, open at the top.",
+  "description": [
+   "Heat under the flask; anti-bumping granules for smooth boiling.",
+   "Condenser vertical, open to the air at the top.",
+   "Water in at the bottom, out at the top."
+  ],
+  "course": "chemistry",
+  "lesson": "Reflux",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Reflux"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "condenser: cooling water enters at the lower end and leaves at the upper end",
+    "ok": true,
+    "detail": "inlet y 210, outlet y 86 (down the page is larger)"
+   },
+   {
+    "name": "reflux condenser is open at the top (a sealed system would build up pressure)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-retrosynthesis": {
+  "title": "A retrosynthetic disconnection",
+  "caption": "Work backwards: disconnect the ester in ethyl ethanoate at the C–O bond to give two synthons, an acyl cation and an alkoxide. Their real equivalents are ethanoyl chloride and ethanol, which react directly.",
+  "alt": "Ethyl ethanoate, a retrosynthetic arrow, the synthons CH₃CO⁺ and ⁻OC₂H₅, and the reagents ethanoyl chloride and ethanol.",
+  "description": [
+   "Target: CH₃COOC₂H₅.",
+   "Disconnect the C–O bond: synthons CH₃CO⁺ and C₂H₅O⁻.",
+   "Reagents: CH₃COCl and C₂H₅OH."
+  ],
+  "course": "chemistry",
+  "lesson": "Retrosynthetic analysis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Retrosynthetic analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH3COCl + C2H5OH → CH3COOC2H5 + HCl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O, Cl; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-rotational-levels": {
+  "title": "Rotational energy levels",
+  "caption": "A rotating diatomic molecule has energies E = BJ(J + 1): 0, 2B, 6B, 12B, 20B. Absorption obeys ΔJ = +1, so the lines come at 2B, 4B, 6B, 8B: equally spaced by 2B in the microwave spectrum. The spacing gives the bond length.",
+  "alt": "Levels J = 0 to 4 at 0, 2, 6, 12 and 20 B, getting further apart, with upward arrows between neighbours.",
+  "description": [
+   "J = 0 at 0, J = 1 at 2B, J = 2 at 6B, J = 3 at 12B, J = 4 at 20B.",
+   "Arrows J → J + 1: energies 2B, 4B, 6B, 8B.",
+   "Adjacent lines differ by 2B."
+  ],
+  "course": "chemistry",
+  "lesson": "Rotational spectroscopy",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Rotational spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels follow E = BJ(J + 1)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "adjacent lines are 2B apart",
+    "ok": true,
+    "detail": "2, 2, 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-schrodinger-well": {
+  "title": "A wavefunction and its probability",
+  "caption": "For the second level of a particle in a box, ψ is positive in one half and negative in the other, with a node in the middle. The probability density ψ² is never negative and its total area is 1: the particle is certainly somewhere in the box, but never at the node.",
+  "alt": "ψ for n = 2 (one full sine wave, positive then negative) and ψ² (two humps), with a node at the centre.",
+  "description": [
+   "ψ: rises, falls through zero at the centre, and returns to zero at the wall.",
+   "ψ²: two equal humps, zero at the walls and at the centre."
+  ],
+  "course": "chemistry",
+  "lesson": "Schrödinger equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Schrödinger equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ψ² integrates to 1 over the box: normalised",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "a node at the centre for n = 2",
+    "ok": true,
+    "detail": "y(0.5) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-separating-funnel": {
+  "title": "Using a separating funnel",
+  "caption": "Two immiscible liquids form layers, the denser one below. Dichloromethane (1.33 g cm⁻³) sinks below water, so an organic product dissolved in it is run off from the bottom through the tap.",
+  "alt": "A separating funnel with a stopper and tap: an aqueous layer on top and a dichloromethane layer below.",
+  "description": [
+   "Upper layer: water (1.00 g cm⁻³).",
+   "Lower layer: dichloromethane (1.33 g cm⁻³), containing the organic product.",
+   "Open the stopper, then run off the lower layer through the tap."
+  ],
+  "course": "chemistry",
+  "lesson": "Extraction",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Extraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the denser liquid (dichloromethane) is the lower layer",
+    "ok": true,
+    "detail": "1.33 against 1 g cm⁻³"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-solvation-shell": {
+  "title": "A hydrated sodium ion",
+  "caption": "Water molecules cluster round Na⁺ with their δ− oxygens pointing in and their hydrogens out, held by ion–dipole attractions. Forming this hydration shell releases energy (−406 kJ mol⁻¹ for Na⁺), which helps ionic solids dissolve.",
+  "alt": "A sodium ion at the centre with four water molecules around it, each oxygen facing the ion, joined by dashed ion–dipole attractions.",
+  "description": [
+   "Na⁺ at the centre.",
+   "Four water molecules, oxygen towards the ion, hydrogens pointing away.",
+   "Dashed lines: ion–dipole attractions."
+  ],
+  "course": "chemistry",
+  "lesson": "Solvation",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Solvation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Na⁺(aq): 32 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 32"
+   },
+   {
+    "name": "Na⁺(aq): every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-surface-area-volume": {
+  "title": "Why nanoparticles are so reactive",
+  "caption": "For a cube of side d, surface area ÷ volume = 6/d. Shrinking a particle from 100 nm to 1 nm multiplies its surface-to-volume ratio a hundredfold, so a far greater fraction of its atoms are at the surface, where reactions happen.",
+  "alt": "Surface-to-volume ratio against particle size: 6/d, steep below 10 nm and small above 50 nm.",
+  "description": [
+   "d = 100 nm: 0.06 nm⁻¹.",
+   "d = 10 nm: 0.6 nm⁻¹.",
+   "d = 1 nm: 6 nm⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Nanomaterials",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Nanomaterials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a 10 nm cube: 6 × 10² ÷ 10³ = 0.6 nm⁻¹",
+    "ok": true,
+    "detail": "y(10) = 0.6"
+   },
+   {
+    "name": "(100, 0.06) lies on y = 6/x",
+    "ok": true,
+    "detail": "y(100) = 0.06"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-surfactant-interface": {
+  "title": "A surfactant",
+  "caption": "Sodium dodecyl sulfate has a long non-polar hydrocarbon tail that dissolves in oil and an ionic sulfate head that dissolves in water. At an oil–water interface the molecules line up with heads in the water and tails in the oil, lowering the interfacial tension; in water they form micelles.",
+  "alt": "The structure of sodium dodecyl sulfate with its ionic head shaded.",
+  "description": [
+   "A twelve-carbon chain: the hydrophobic tail.",
+   "OSO₃⁻ Na⁺: the hydrophilic head."
+  ],
+  "course": "chemistry",
+  "lesson": "Interfaces",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js: Interfaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "sodium dodecyl sulfate: formula C12H25NaO4S",
+    "ok": true,
+    "detail": "RDKit: C12H25NaO4S"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-synthesis-plan": {
+  "title": "Planning a synthesis",
+  "caption": "Start from the target and the available starting materials; choose reactions that build the carbon skeleton and install the functional groups; consider conditions, yield, safety and purification at each step; then confirm the product by analysis.",
+  "alt": "A flow: target → identify key bonds and groups → choose reactions and conditions → carry out and purify → analyse.",
+  "description": [
+   "Define the target.",
+   "Work out which bonds and groups must be made.",
+   "Choose reactions, conditions and the order of steps.",
+   "Purify and confirm by melting point, IR and NMR."
+  ],
+  "course": "chemistry",
+  "lesson": "Organic synthesis planning",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js: Organic synthesis planning"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-waste-hierarchy": {
+  "title": "The waste hierarchy",
+  "caption": "Options for waste in order of preference: prevent it in the first place, reuse, recycle, recover energy (incineration), and only last dispose of it in landfill.",
+  "alt": "A tree working down the hierarchy: can the waste be prevented? Otherwise reused? Otherwise recycled? Otherwise burned for energy? Otherwise disposed of.",
+  "description": [
+   "Prevent: design processes that make less waste.",
+   "Reuse.",
+   "Recycle.",
+   "Recover energy.",
+   "Dispose: the last resort."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemical waste management",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Chemical waste management"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a waste that can only be burned: no, no, no, yes leads to \"Recover energy\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-water-treatment": {
+  "title": "Making water safe to drink",
+  "caption": "River or reservoir water is screened to remove large debris, treated with a coagulant (aluminium or iron(III) sulfate) so fine particles clump and settle, filtered through sand, and finally chlorinated to kill microorganisms.",
+  "alt": "A flow: screening → coagulation and sedimentation → sand filtration → chlorination → drinking water.",
+  "description": [
+   "Screening: removes twigs and litter.",
+   "Coagulation and sedimentation: small particles clump and settle.",
+   "Sand filtration: removes remaining particles.",
+   "Chlorination: kills bacteria."
+  ],
+  "course": "chemistry",
+  "lesson": "Water treatment",
+  "also": [
+   {
+    "course": "gcse",
+    "unit": "u05",
+    "lesson": "Using resources: water and life cycle assessment"
+   }
+  ],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js: Water treatment"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Using resources: water and life cycle assessment",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Cl2 + H2O → HCl + HClO balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-emission-absorption": {
+  "title": "Emission and absorption spectra of hydrogen",
+  "caption": "Hot hydrogen gas emits light only at certain wavelengths: bright lines on black. Cool hydrogen in front of a white light absorbs exactly the same wavelengths: dark lines on the continuous spectrum. The lines match because each corresponds to the same energy gap, ΔE = hc/λ.",
+  "alt": "Two spectrum strips from 380 to 720 nm: emission with coloured lines at 410, 434, 486 and 656 nm on black, and a full rainbow with dark lines at the same positions.",
+  "description": [
+   "Emission: violet 410, violet 434, blue-green 486 and red 656 nm lines on black.",
+   "Absorption: a continuous rainbow with dark lines at 410, 434, 486 and 656 nm."
+  ],
+  "course": "chemistry",
+  "lesson": "Emission and absorption",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Emission and absorption"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Balmer lines from the Rydberg equation: 656, 486, 434, 410 nm",
+    "ok": true,
+    "detail": "656.5, 486.3, 434.2, 410.3"
+   },
+   {
+    "name": "ionisation from n = 1 is 1312 kJ mol⁻¹",
+    "ok": true,
+    "detail": "1313 kJ mol⁻¹"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hydrogen-spectrum": {
+  "title": "The hydrogen spectrum",
+  "caption": "Hydrogen's energy levels, Eₙ = −13.6 eV ÷ n², crowd together towards n = ∞. Electrons falling to n = 1 emit ultraviolet (Lyman series), to n = 2 visible light (Balmer: 656, 486, 434 and 410 nm) and to n = 3 infrared (Paschen). Each line is one jump between two levels.",
+  "alt": "Energy levels n = 1 to 6, drawn to scale and converging below n = ∞, with downward arrows for the Lyman series to n = 1, the Balmer series to n = 2 and the Paschen series to n = 3.",
+  "description": [
+   "n = 1 at −13.6 eV, n = 2 at −3.40 eV, n = 3 at −1.51 eV, converging at 0.",
+   "Lyman series: arrows ending on n = 1 (ultraviolet).",
+   "Balmer series: arrows ending on n = 2 (visible).",
+   "Paschen series: arrows ending on n = 3 (infrared)."
+  ],
+  "course": "chemistry",
+  "lesson": "Atomic spectra",
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u16",
+    "lesson": "Atomic and molecular spectra"
+   }
+  ],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Atomic spectra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Atomic and molecular spectra",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u16.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Balmer lines from the Rydberg equation: 656, 486, 434, 410 nm",
+    "ok": true,
+    "detail": "656.5, 486.3, 434.2, 410.3"
+   },
+   {
+    "name": "ionisation from n = 1 is 1312 kJ mol⁻¹",
+    "ok": true,
+    "detail": "1313 kJ mol⁻¹"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-orbital-shapes": {
+  "title": "The shapes of s, p and d orbitals",
+  "caption": "s orbitals are spheres; each p orbital has two lobes along an axis with a nodal plane between them; most d orbitals have four lobes. The colours show the opposite signs of the wavefunction, which matter when orbitals overlap to form bonds. An orbital has l angular nodes and n − l − 1 radial nodes.",
+  "alt": "Five orbital shapes: 1s sphere, 2s sphere with an inner sphere of opposite sign, 2pₓ and 2p_z dumbbells, 3d_xy cloverleaf and 3d_z² with a ring.",
+  "description": [
+   "1s: a sphere, no nodes.",
+   "2s: a sphere with one radial node.",
+   "2pₓ, 2p_z: two lobes, one nodal plane.",
+   "3d_xy: four lobes between the axes, two nodal planes.",
+   "3d_z²: two lobes on z and a ring."
+  ],
+  "course": "chemistry",
+  "lesson": "Atomic orbitals and shapes",
+  "also": [],
+  "renderer": "lobes",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Atomic orbitals and shapes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1s: l angular and n − l − 1 radial nodes = 0 and 0",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2s: l angular and n − l − 1 radial nodes = 0 and 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2px: l angular and n − l − 1 radial nodes = 1 and 0",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2pz: l angular and n − l − 1 radial nodes = 1 and 0",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3dxy: l angular and n − l − 1 radial nodes = 2 and 0",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3dz2: l angular and n − l − 1 radial nodes = 2 and 0",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-radial-1s": {
+  "title": "Where the 1s electron is",
+  "caption": "The radial probability distribution 4πr²ψ² for hydrogen's 1s electron. The electron is most likely to be found at the Bohr radius, a₀ = 52.9 pm, but there is a spread of distances: the quantum model replaces a fixed orbit with a probability.",
+  "alt": "Probability against distance from the nucleus in units of a₀: zero at the nucleus, a peak at 1 a₀, and a long tail.",
+  "description": [
+   "Zero at the nucleus.",
+   "Maximum at r = a₀ = 52.9 pm.",
+   "A tail stretching out several a₀."
+  ],
+  "course": "chemistry",
+  "lesson": "Quantum mechanical model",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Quantum mechanical model"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the most probable distance is the Bohr radius, r = a₀",
+    "ok": true,
+    "detail": "found (1, 0.541)"
+   },
+   {
+    "name": "total probability 1",
+    "ok": true,
+    "detail": "area 1.0000"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",

@@ -2,6 +2,7 @@
  "id": "chem-maxwell-boltzmann-T",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Kinetic molecular theory",
  "title": "Molecular speeds at two temperatures",
  "caption": "Nitrogen molecules have a spread of speeds. At 300 K the most probable speed is about 422 m s⁻¹; at 600 K the curve flattens and shifts right to about 597 m s⁻¹. The area under each curve, the total number of molecules, is the same.",

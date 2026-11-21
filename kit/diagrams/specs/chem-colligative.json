@@ -2,6 +2,7 @@
  "id": "chem-colligative",
  "renderer": "phase",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Colligative properties",
  "title": "A solute lowers the freezing point and raises the boiling point",
  "caption": "Dissolving a non-volatile solute lowers the solvent's vapour pressure, shifting the liquid–gas line down (boiling point up) and the solid–liquid line left (freezing point down). For 1 mol of NaCl in 1 kg of water (2 mol of ions) ΔTb = 1.02 K and ΔTf = 3.72 K. Not to scale.",

@@ -2,6 +2,7 @@
  "id": "chem-magnetism-unpaired",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Magnetic properties",
  "title": "Unpaired electrons and magnetism",
  "caption": "Each unpaired electron adds to the magnetic moment: the spin-only value is μ = √(n(n + 2)) μB. High-spin Mn²⁺ (d⁵) has five, μ = 5.92; Cu²⁺ (d⁹) has one, 1.73; Zn²⁺ (d¹⁰) none, so it is diamagnetic.",

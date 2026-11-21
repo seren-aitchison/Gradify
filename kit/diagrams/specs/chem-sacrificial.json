@@ -2,6 +2,7 @@
  "id": "chem-sacrificial",
  "renderer": "cell",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Corrosion prevention",
  "title": "Sacrificial protection",
  "caption": "A block of zinc bolted to an iron hull corrodes instead of the iron, because zinc (E° −0.76 V) is more easily oxidised than iron (−0.44 V). The electrons it releases flow into the iron, where oxygen is reduced, so the iron is not oxidised.",

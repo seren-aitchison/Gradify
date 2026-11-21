@@ -2,6 +2,7 @@
  "id": "chem-faraday",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Faraday's laws",
  "title": "Faraday's first law",
  "caption": "The mass of copper deposited is proportional to the charge passed. One mole of electrons (96 485 C, one faraday) deposits half a mole of copper, 31.8 g, because Cu²⁺ needs two electrons per atom.",

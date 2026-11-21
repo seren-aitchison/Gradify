@@ -2,6 +2,7 @@
  "id": "chem-bond-enthalpy-methane",
  "renderer": "cycle",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Bond enthalpy",
  "title": "Bond enthalpies: burning methane",
  "caption": "Breaking every bond in CH₄ + 2O₂ to make free atoms takes 2648 kJ; forming the bonds in CO₂ + 2H₂O releases 3466 kJ. ΔH = 2648 − 3466 = −818 kJ mol⁻¹, from mean bond enthalpies.",

@@ -2,6 +2,7 @@
  "id": "chem-weak-acid-fraction",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Weak acids and bases",
  "title": "How much of a weak acid is ionised",
  "caption": "The fraction of ethanoic acid present as ethanoate depends on pH: 1/(1 + 10^(pKa − pH)). It is half at pH = pKa = 4.76, about 1% two units below and 99% two units above.",

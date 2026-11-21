@@ -2,6 +2,7 @@
  "id": "chem-shift-ranges",
  "renderer": "nmr",
  "course": "chemistry",
+ "unit": "u15",
  "lesson": "NMR chemical shifts",
  "title": "Chemical shift and environment",
  "caption": "4-Methoxybenzaldehyde shows the main ¹H regions in one spectrum: the aldehyde H at 9.9 ppm, aromatic H at 7–8 ppm, and the OCH₃ at 3.9 ppm. Hydrogens near electronegative atoms or π systems are deshielded and appear further left.",

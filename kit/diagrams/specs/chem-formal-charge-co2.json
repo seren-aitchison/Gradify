@@ -2,6 +2,7 @@
  "id": "chem-formal-charge-co2",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Formal charge",
  "title": "Choosing a Lewis structure by formal charge",
  "caption": "Formal charge = valence electrons − lone-pair electrons − ½ bonding electrons. O=C=O gives every atom zero. The alternative O≡C–O gives +1 and −1, so it is less favoured: the best structure keeps formal charges smallest.",

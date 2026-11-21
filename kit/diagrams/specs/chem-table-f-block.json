@@ -2,6 +2,7 @@
  "id": "chem-table-f-block",
  "renderer": "table",
  "course": "chemistry",
+ "unit": "u03",
  "lesson": "f-block elements",
  "title": "The f block",
  "caption": "The lanthanides (cerium to lutetium) and actinides (thorium to lawrencium) fill 4f and 5f. They belong in periods 6 and 7 but are drawn below the table so it fits on a page.",
@@ -9,6 +10,18 @@
  "description": [
   "The main table, dimmed.",
   "Below it, two highlighted rows: the lanthanides (period 6) and the actinides (period 7)."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u03",
+   "lesson": "Actinides"
+  },
+  {
+   "course": "chemistry",
+   "unit": "u11",
+   "lesson": "Actinide chemistry"
+  }
  ],
  "dim": true,
  "highlight": {

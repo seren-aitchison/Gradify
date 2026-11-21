@@ -2,6 +2,7 @@
  "id": "chem-solubility-curve",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Solubility",
  "title": "Solubility curves",
  "caption": "Potassium nitrate's solubility rises steeply with temperature; sodium chloride's barely changes. Cooling a saturated KNO₃ solution from 80 °C to 20 °C crystallises out about 137 g per 100 g of water, which is why it can be purified by recrystallisation and NaCl cannot.",

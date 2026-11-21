@@ -263,6 +263,7 @@ H: Mechanism
 - **Adsorption**: reactants bond to **active sites** on the surface.
 - Bonds in reactants weaken, and new bonds form.
 - **Desorption**: products leave the surface.
+D: chem-heterogeneous-steps
 H: Industrial use
 - **Iron** in the Haber process.
 - **Vanadium(V) oxide** in the Contact process.
@@ -850,6 +851,7 @@ H: Features
 - Reactants enter and products leave at different points.
 - Intermediates are catalyst-bound species within the loop.
 - Many involve **oxidative addition**, insertion and **reductive elimination** at metal centres.
+D: chem-catalytic-cycle
 H: Measuring performance
 - **Turnover number** (TON): moles of product per mole of catalyst before it deactivates.
 - **Turnover frequency** (TOF): turnovers per unit time.

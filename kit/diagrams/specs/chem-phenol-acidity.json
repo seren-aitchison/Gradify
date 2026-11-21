@@ -2,6 +2,7 @@
  "id": "chem-phenol-acidity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Phenols",
  "title": "Why phenol is more acidic than ethanol",
  "caption": "Phenol (pKa 10.0) loses H⁺ far more readily than ethanol (pKa about 16) because the phenoxide ion's charge is delocalised into the benzene ring. Ethoxide has nowhere to spread its charge.",

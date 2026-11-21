@@ -2,6 +2,7 @@
  "id": "chem-chirality",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Chirality",
  "title": "A chiral centre: four different groups",
  "caption": "Butan-2-ol's second carbon carries H, OH, CH₃ and C₂H₅, four different groups, so the molecule is chiral. Propan-2-ol's central carbon has two identical CH₃ groups and is not.",

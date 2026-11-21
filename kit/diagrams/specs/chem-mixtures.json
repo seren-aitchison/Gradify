@@ -2,6 +2,7 @@
  "id": "chem-mixtures",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Mixtures",
  "title": "A mixture keeps its components",
  "caption": "Mixing hydrogen, oxygen and water vapour makes a mixture: each substance keeps its own particles and properties, the proportions can vary, and they can be separated by physical means.",

@@ -2,6 +2,7 @@
  "id": "chem-diffusion",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Diffusion",
  "title": "Diffusion",
  "caption": "Particles move randomly, so a gas released in one corner spreads until it is evenly mixed: there is a net movement from high to low concentration even though no single particle aims anywhere.",

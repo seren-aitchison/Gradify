@@ -2,6 +2,7 @@
  "id": "chem-speciation",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Acid dissociation constants",
  "title": "Ethanoic acid and ethanoate",
  "caption": "As pH rises, CH₃COOH is converted to CH₃COO⁻. The curves cross at pH = pKa = 4.76, where the two are equal: the point of best buffering.",

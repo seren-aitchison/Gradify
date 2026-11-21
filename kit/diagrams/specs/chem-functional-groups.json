@@ -2,6 +2,7 @@
  "id": "chem-functional-groups",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Functional groups",
  "title": "The main functional groups",
  "caption": "A functional group is the atom or group of atoms that gives a family its reactions. Each two- or three-carbon example has its group shaded.",

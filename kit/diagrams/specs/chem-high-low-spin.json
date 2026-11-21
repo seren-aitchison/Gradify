@@ -2,6 +2,7 @@
  "id": "chem-high-low-spin",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Ligand field theory",
  "title": "High-spin and low-spin d⁶",
  "caption": "Fe²⁺ is d⁶. With weak-field water, Δo is smaller than the energy needed to pair electrons, so they spread out: high spin, four unpaired. With strong-field cyanide, Δo is large and all six pair in t₂g: low spin, none unpaired.",

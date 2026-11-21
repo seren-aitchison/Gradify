@@ -2,6 +2,7 @@
  "id": "chem-nernst",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u10",
  "lesson": "Nernst equation",
  "title": "The Nernst equation",
  "caption": "E = E° + (RT/nF) ln[Cu²⁺] = 0.34 + 0.0296 log₁₀[Cu²⁺] at 298 K. Diluting the Cu²⁺ tenfold lowers the electrode potential by 0.0296 V (59 mV divided by the 2 electrons).",

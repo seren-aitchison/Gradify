@@ -2,6 +2,7 @@
  "id": "chem-chemoselectivity",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Chemoselectivity",
  "title": "Chemoselectivity: NaBH₄ reduces a ketone, not an ester",
  "caption": "Sodium borohydride is a mild hydride donor: it reduces the ketone of methyl 4-oxopentanoate to a secondary alcohol but leaves the less electrophilic ester untouched. LiAlH₄ would reduce both.",

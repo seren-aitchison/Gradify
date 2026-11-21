@@ -2,6 +2,7 @@
  "id": "chem-elements-compounds",
  "renderer": "particles",
  "course": "chemistry",
+ "unit": "u01",
  "lesson": "Elements and compounds",
  "title": "Elements, compounds and mixtures as particles",
  "caption": "Helium is an element made of single atoms; oxygen is an element made of O₂ molecules; water is a compound, every molecule the same H₂O; air is a mixture of different substances.",

@@ -2,6 +2,7 @@
  "id": "chem-amphoteric-al",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u09",
  "lesson": "Amphoteric substances",
  "title": "Aluminium hydroxide dissolves in acid and in alkali",
  "caption": "Al(OH)₃ is amphoteric. In acid it dissolves as Al³⁺(aq); in excess alkali as [Al(OH)₄]⁻(aq). In between, around pH 5 to 7, it is least soluble and precipitates. The curve is illustrative.",

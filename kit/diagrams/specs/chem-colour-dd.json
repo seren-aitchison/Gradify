@@ -2,6 +2,7 @@
  "id": "chem-colour-dd",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u11",
  "lesson": "Colour in transition metal complexes",
  "title": "Why copper(II) solutions are blue",
  "caption": "In [Cu(H₂O)₆]²⁺ an electron is promoted from t₂g to eg by absorbing light near 800 nm (red and orange), about 150 kJ mol⁻¹. The light transmitted is the complementary colour, so the solution looks pale blue. Changing the ligand changes Δo and so the colour.",

@@ -2,6 +2,7 @@
  "id": "chem-vapour-pressure",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u05",
  "lesson": "Vapour pressure",
  "title": "Vapour pressure of water",
  "caption": "Vapour pressure rises steeply with temperature. A liquid boils when its vapour pressure equals the pressure above it: 101.3 kPa at 100 °C for water at sea level, lower on a mountain, so water boils at a lower temperature there.",

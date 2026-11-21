@@ -2,6 +2,7 @@
  "id": "chem-bond-polarity",
  "renderer": "dotcross",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Bond polarity",
  "title": "Polar bonds",
  "caption": "Chlorine (3.16) and fluorine (3.98) are more electronegative than hydrogen (2.20), so they pull the shared pair towards themselves and become δ−, leaving hydrogen δ+.",

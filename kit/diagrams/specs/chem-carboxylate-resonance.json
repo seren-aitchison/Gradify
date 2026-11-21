@@ -2,6 +2,7 @@
  "id": "chem-carboxylate-resonance",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u14",
  "lesson": "Carboxylic acids",
  "title": "Why carboxylic acids are acidic",
  "caption": "Losing H⁺ from ethanoic acid gives ethanoate, whose negative charge is shared equally between the two oxygens. The two resonance forms are equivalent and both C–O bonds are the same length (0.127 nm), which stabilises the ion.",

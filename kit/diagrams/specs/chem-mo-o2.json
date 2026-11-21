@@ -2,6 +2,7 @@
  "id": "chem-mo-o2",
  "renderer": "levels",
  "course": "chemistry",
+ "unit": "u04",
  "lesson": "Molecular orbital theory",
  "title": "Molecular orbitals of oxygen",
  "caption": "Filling the molecular orbitals of O₂ in order puts the last two electrons singly in the two π*2p orbitals. Bond order = (bonding − antibonding) ÷ 2 = 2, a double bond, and the two unpaired electrons make oxygen paramagnetic, which a Lewis structure cannot explain.",

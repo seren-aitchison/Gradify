@@ -291,7 +291,7 @@ function condenser(x1, y1, x2, y2, inlet, outlet) {
   const [a, b, c2, d] = [pt(0.08, j), pt(0.92, j), pt(0.92, -j), pt(0.08, -j)];
   let s = `<path d="M${f1(a[0])} ${f1(a[1])} L${f1(b[0])} ${f1(b[1])} L${f1(c2[0])} ${f1(c2[1])} L${f1(d[0])} ${f1(d[1])} Z" fill="#e0f2fe" stroke="${C.ink}" stroke-width="2"/>`;
   s += line(...pt(0, t), ...pt(1, t), { w: 2 }) + line(...pt(0, -t), ...pt(1, -t), { w: 2 });
-  const tube = (f, side, dir, label) => { const [px, py] = pt(f, side * j), [qx, qy] = [px + nx * side * 26, py + ny * side * 26]; return line(px, py, qx, qy, { w: 6, stroke: "#9fb4cc" }) + (dir === "in" ? arrow(qx + nx * side * 22, qy + ny * side * 22, qx, qy, { stroke: col("a1"), w: 2, head: 8 }) : arrow(qx, qy, qx + nx * side * 22, qy + ny * side * 22, { stroke: col("a1"), w: 2, head: 8 })) + text(qx + nx * side * 34, qy + ny * side * 34, label, { size: 11.5, weight: 700, fill: col("a1") }); };
+  const tube = (f, side, dir, label) => { const [px, py] = pt(f, side * j), [qx, qy] = [px + nx * side * 26, py + ny * side * 26]; return line(px, py, qx, qy, { w: 6, stroke: "#9fb4cc" }) + (dir === "in" ? arrow(qx + nx * side * 22, qy + ny * side * 22, qx, qy, { stroke: col("a1"), w: 2, head: 8 }) : arrow(qx, qy, qx + nx * side * 22, qy + ny * side * 22, { stroke: col("a1"), w: 2, head: 8 })) + text(qx + nx * side * 30 + (Math.abs(ny) < 0.5 ? 0 : 0), qy + ny * side * 30 + (Math.abs(nx) > 0.5 ? -12 : 0), label, { size: 11.5, weight: 700, anchor: Math.abs(nx) > 0.5 ? (nx * side > 0 ? "start" : "end") : "middle", fill: col("a1") }); };
   const pIn = pt(inlet.f, inlet.side * j), pOut = pt(outlet.f, outlet.side * j);
   s += tube(inlet.f, inlet.side, "in", "water in") + tube(outlet.f, outlet.side, "out", "water out");
   return { s, inY: pIn[1], outY: pOut[1] };
@@ -304,7 +304,7 @@ function apparatus(spec, W, narrow) {
 const APP = {
   reflux(spec) {
     let s = heat(160, 372) + rbFlask(160, 320, 48, spec.liquidColour || "#fde68a");
-    const c = condenser(160, 236, 160, 60, { f: 0.85, side: 1 }, { f: 0.15, side: 1 });
+    const c = condenser(160, 236, 160, 60, { f: 0.15, side: 1 }, { f: 0.85, side: 1 }); // water in near the bottom, out near the top
     s += c.s + line(151, 236, 151, 250, { w: 2 }) + line(169, 236, 169, 250, { w: 2 });
     s += text(160, 46, "open to the air", { size: 11.5, weight: 600, fill: C.soft });
     for (const [x, y] of [[148, 340], [170, 346], [158, 354]]) s += `<circle cx="${x}" cy="${y}" r="3.5" fill="#94a3b8"/>`;
@@ -322,8 +322,8 @@ const APP = {
     s += lbl(116, 140, 190, 112, "thermometer: bulb level with the side arm");
     const c = condenser(119, armY, 360, 320, { f: 0.85, side: 1 }, { f: 0.15, side: -1 });
     s += c.s + `<path d="M350 320 l30 18" stroke="${C.ink}" stroke-width="2"/>` + `<path d="M366 330 h60 v50 h-60 Z" fill="#dbeafe" fill-opacity=".7" stroke="${C.ink}" stroke-width="2"/>` + lab(380, 398, "distillate");
-    s += lbl(80, 336, 10, 300, spec.mixture || "mixture", "start");
-    return { s, H: 410, geom: { inY: c.inY, outY: c.outY, bulbY, armY } };
+    s += text(110, 404, spec.mixture || "mixture", { size: 12.5, weight: 600, fill: C.ink });
+    return { s, H: 416, geom: { inY: c.inY, outY: c.outY, bulbY, armY } };
   },
   separating(spec) {
     const [top, bot] = spec.layers, dTop = DENSITY[top.name], dBot = DENSITY[bot.name];
@@ -507,7 +507,7 @@ function phaseChecks(spec) {
 function lobe(cx, cy, ang, len, wid, c) { const a = ang * Math.PI / 180, ex = cx + Math.cos(a) * len / 2, ey = cy + Math.sin(a) * len / 2; return `<ellipse cx="${f1(ex)}" cy="${f1(ey)}" rx="${f1(len / 2)}" ry="${f1(wid / 2)}" transform="rotate(${ang} ${f1(ex)} ${f1(ey)})" fill="${c}" fill-opacity=".55" stroke="${c}" stroke-width="1.4"/>`; }
 function lobes(spec, W, narrow) {
   if (spec.kind === "sigma-pi") return sigmaPi(spec, W, narrow);
-  const n = spec.orbitals.length, perRow = narrow ? 2 : Math.min(n, 5), cw = (W - 20) / perRow, ch = 170;
+  const n = spec.orbitals.length, perRow = narrow ? 2 : n <= 5 ? n : Math.ceil(n / 2), cw = (W - 20) / perRow, ch = 186;
   let s = "";
   spec.orbitals.forEach((o, i) => {
     const cx = 10 + (i % perRow) * cw + cw / 2, cy = 20 + Math.floor(i / perRow) * ch + 70, Lm = narrow ? 52 : 60, A = col("a1"), B = col("a2");

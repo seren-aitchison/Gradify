@@ -2,6 +2,7 @@
  "id": "chem-gibbs-extent",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u06",
  "lesson": "Thermodynamic equilibrium",
  "title": "Equilibrium is the minimum of G",
  "caption": "As a reaction A ⇌ B proceeds, the Gibbs energy of the mixture falls to a minimum and then rises. The minimum is the equilibrium position. With ΔG° = −5 kJ mol⁻¹ at 298 K it lies at 0.88 of the way to products, where K = 7.5.",

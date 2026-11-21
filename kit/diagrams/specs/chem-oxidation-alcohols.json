@@ -2,6 +2,7 @@
  "id": "chem-oxidation-alcohols",
  "renderer": "structures",
  "course": "chemistry",
+ "unit": "u13",
  "lesson": "Oxidation reactions",
  "title": "Oxidising alcohols",
  "caption": "With acidified potassium dichromate (orange to green), a primary alcohol is oxidised to an aldehyde (distil it off as it forms) and then to a carboxylic acid (reflux). A secondary alcohol gives a ketone. A tertiary alcohol is not oxidised.",

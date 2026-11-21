@@ -2,6 +2,7 @@
  "id": "chem-butane-conformations",
  "renderer": "graph",
  "course": "chemistry",
+ "unit": "u12",
  "lesson": "Conformational analysis",
  "title": "Energy of butane as it rotates",
  "caption": "Rotating about the central C–C bond: the anti conformation (180°) is lowest; gauche (60°, 300°) is about 3.8 kJ mol⁻¹ higher; eclipsed forms are maxima, the fully eclipsed one (0°, methyls together) highest at about 19 kJ mol⁻¹.",
