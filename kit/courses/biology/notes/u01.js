@@ -585,12 +585,12 @@ O: Describe and interpret trends, including rates from gradients
 PRE: Variables and experimental design
 H: Results tables
 P: Put the independent variable in the first column and the dependent variable (with repeats and means) in the next columns. Column headings give the quantity and unit, separated by a solidus: "Temperature / °C". Units go in headings, not in the body of the table. Record raw data to the instrument's resolution and means to one more decimal place at most.
-D: bio-which-graph
 H: Which graph?
 - **Line graph**: both variables continuous, showing how the dependent variable changes with the independent variable (rate against temperature).
 - **Bar chart**: the independent variable is categorical (blood group, species).
 - **Histogram**: the frequency of a continuous variable in classes, with bars touching (heights of students).
 - **Scatter graph**: looking for a correlation between two measured variables, often with a line of best fit.
+D: bio-which-graph
 H: Drawing graphs
 - Independent variable on the x-axis, dependent on the y-axis, both labelled with units.
 - Scales should use more than half the grid and go up in even steps.
@@ -627,9 +627,9 @@ H: Averages and spread
 - **Range**: largest minus smallest; sensitive to outliers.
 - **Standard deviation (s)**: the typical distance of values from the mean.
 E: s = √( Σ(x − x̄)² / (n − 1) ) :: sample standard deviation
-D: bio-normal-distribution
 H: The normal distribution
 P: Many continuous biological variables (heights, leaf lengths) follow a roughly bell-shaped normal distribution. About 68% of values lie within one standard deviation of the mean and about 95% within two.
+D: bio-normal-distribution
 H: Choosing a test
 - **Student's t-test**: compare the means of two groups of normally distributed data.
 - **Chi-squared test**: compare observed counts in categories with expected counts (for example genetic ratios).

@@ -1,0 +1,37 @@
+{
+ "id": "bio-fungal-cell",
+ "renderer": "cellmap",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Fungal cells",
+ "title": "A fungal hypha",
+ "caption": "A segment of a fungal hypha: a chitin wall around a eukaryotic cell with a nucleus, mitochondria, ER, Golgi and a vacuole, but no chloroplasts. A septum with a pore divides it from the next segment.",
+ "alt": "One segment of a fungal hypha with labels for the cell wall, plasma membrane, cytoplasm, nucleus, mitochondrion, vacuole, rough endoplasmic reticulum, Golgi apparatus, ribosomes and a septum.",
+ "description": [
+  "The wall is made mainly of chitin, with glucans, not cellulose.",
+  "Inside are a nucleus, mitochondria, rough ER, a Golgi apparatus, ribosomes and a vacuole.",
+  "A septum, a cross-wall with a pore, separates this segment from the next.",
+  "There are no chloroplasts: fungi feed by absorbing food they digest outside themselves."
+ ],
+ "cell": "fungus",
+ "labels": [
+  "cell wall",
+  "plasma membrane",
+  "cytoplasm",
+  "nucleus",
+  "mitochondrion",
+  "vacuole",
+  "rough ER",
+  "Golgi apparatus",
+  "80S ribosomes",
+  "septum"
+ ],
+ "claims": [
+  {
+   "type": "lacks",
+   "structures": [
+    "chloroplast"
+   ]
+  }
+ ]
+}

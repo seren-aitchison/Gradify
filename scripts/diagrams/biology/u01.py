@@ -13,7 +13,8 @@ mk("u01-03", "bio-levels-of-organisation", "flow", "Levels of biological organis
    "Each level is built from the one before it, from molecules to the whole biosphere. New properties emerge at each step: one heart muscle cell contracts, but only the organised tissue of the heart pumps blood.",
    "A chain of eleven boxes from atoms and molecules, through organelles, cells, tissues, organs, organ systems and organisms, to populations, communities, ecosystems and the biosphere.",
    [f"{a[0].capitalize()}: {a[1]}." for a in LEVELS],
-   layout="grid", boxWidth=140, rowHeight=104,
+   also=("u02-30",),
+   layout="grid", boxWidth=118, rowHeight=118,
    nodes=[{"id": f"l{i}", "label": a, "sub": b, "col": snake(i, 4), "row": i // 4, "tone": "a1" if i < 7 else "a4"} for i, (a, b) in enumerate(LEVELS)],
    edges=[{"from": f"l{i}", "to": f"l{i + 1}"} for i in range(len(LEVELS) - 1)])
 

@@ -1,0 +1,102 @@
+{
+ "id": "bio-active-transport-gut",
+ "renderer": "membrane",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Active transport",
+ "title": "Pumping and co-transport in a gut lining cell",
+ "caption": "The Na⁺/K⁺ pump uses ATP to push 3 Na⁺ out into the blood for every 2 K⁺ it brings in, keeping sodium low inside the cell. Sodium then flows in from the gut through SGLT1 and drags glucose with it, against the glucose gradient: secondary active transport. Glucose leaves for the blood down its gradient through GLUT2.",
+ "alt": "A gut lining cell between the gut lumen above and the blood below. On the gut side, sodium ions and glucose enter together through a co-transporter. On the blood side, a sodium-potassium pump moves three sodium ions out and two potassium ions in using ATP, and glucose leaves through a carrier protein.",
+ "description": [
+  "Gut side: Na⁺ flows in from 140 to 12 mmol per dm³, down its gradient, through the SGLT1 co-transporter.",
+  "Glucose enters through the same protein from 0.5 to 8 mmol per dm³, against its own gradient: the sodium gradient pays for it.",
+  "Blood side: the Na⁺/K⁺ pump uses one ATP to move 3 Na⁺ out (12 to 145) and 2 K⁺ in (4 to 140), both against their gradients.",
+  "Each cycle of the pump carries one more positive charge out than in, so the inside of the cell is left negative.",
+  "Glucose leaves for the blood (8 to 5) by facilitated diffusion through GLUT2.",
+  "Concentrations are illustrative: SGLT1 goes on absorbing glucose even when the gut holds less than the cell."
+ ],
+ "concUnit": "mmol dm^{−3}",
+ "cell": "cell",
+ "sides": [
+  {
+   "id": "lumen",
+   "label": "gut lumen",
+   "conc": {
+    "Na⁺": 140,
+    "glucose": 0.5
+   }
+  },
+  {
+   "id": "cell",
+   "label": "gut lining cell",
+   "conc": {
+    "Na⁺": 12,
+    "K⁺": 140,
+    "glucose": 8
+   }
+  },
+  {
+   "id": "blood",
+   "label": "blood",
+   "conc": {
+    "Na⁺": 145,
+    "K⁺": 4,
+    "glucose": 5
+   }
+  }
+ ],
+ "proteins": {
+  "sglt": "SGLT1 co-transporter",
+  "pump": "Na⁺/K⁺ pump"
+ },
+ "moves": [
+  {
+   "substance": "Na⁺",
+   "kind": "cotransport",
+   "from": "lumen",
+   "to": "cell",
+   "protein": "sglt"
+  },
+  {
+   "substance": "glucose",
+   "kind": "cotransport",
+   "from": "lumen",
+   "to": "cell",
+   "protein": "sglt"
+  },
+  {
+   "substance": "Na⁺",
+   "label": "3 Na⁺",
+   "count": 3,
+   "kind": "active",
+   "atp": true,
+   "from": "cell",
+   "to": "blood",
+   "protein": "pump"
+  },
+  {
+   "substance": "K⁺",
+   "label": "2 K⁺",
+   "count": 2,
+   "kind": "active",
+   "atp": true,
+   "from": "blood",
+   "to": "cell",
+   "protein": "pump"
+  },
+  {
+   "substance": "glucose",
+   "kind": "carrier",
+   "from": "cell",
+   "to": "blood",
+   "note": "carrier protein (GLUT2)"
+  }
+ ],
+ "claims": [
+  {
+   "type": "netCharge",
+   "protein": "pump",
+   "out": 1
+  }
+ ]
+}

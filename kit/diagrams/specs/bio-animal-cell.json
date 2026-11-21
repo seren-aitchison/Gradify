@@ -1,0 +1,42 @@
+{
+ "id": "bio-animal-cell",
+ "renderer": "cellmap",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Animal cells",
+ "title": "An animal cell",
+ "caption": "An animal cell has a nucleus, mitochondria, rough and smooth ER, a Golgi apparatus, lysosomes and a pair of centrioles, all inside a flexible plasma membrane. There is no cell wall and no chloroplast.",
+ "alt": "An animal cell with labels for the plasma membrane, cytoplasm, nucleus, nucleolus, mitochondrion, rough and smooth endoplasmic reticulum, Golgi apparatus, lysosome, ribosomes and centrioles.",
+ "description": [
+  "The nucleus, with its nucleolus, holds the DNA.",
+  "Mitochondria carry out aerobic respiration and make ATP.",
+  "Rough ER (studded with ribosomes) makes proteins; smooth ER makes lipids.",
+  "The Golgi apparatus modifies, sorts and dispatches proteins in vesicles.",
+  "Lysosomes digest worn-out parts and engulfed material.",
+  "The centrioles organise microtubules, including the spindle.",
+  "Only a plasma membrane bounds the cell: there is no wall."
+ ],
+ "cell": "animal",
+ "labels": [
+  "plasma membrane",
+  "cytoplasm",
+  "nucleus",
+  "nucleolus",
+  "mitochondrion",
+  "rough ER",
+  "smooth ER",
+  "Golgi apparatus",
+  "lysosome",
+  "80S ribosomes",
+  "centrioles"
+ ],
+ "claims": [
+  {
+   "type": "lacks",
+   "structures": [
+    "cell wall",
+    "chloroplast"
+   ]
+  }
+ ]
+}

@@ -5,10 +5,16 @@
 //   pyramid    a pyramid of energy, biomass or numbers: energy falls at every level, transfer efficiencies recomputed
 //   pedigree   a family tree: which modes of inheritance are consistent, found by searching for genotypes that fit
 //   cellmap    a labelled cell: every labelled structure belongs to that kind of cell, and stated absences are true
-//   membrane   transport across a membrane: passive movement only down a gradient, active transport uses ATP
+//   membrane   transport across a membrane: passive movement only down a gradient, active transport uses ATP,
+//              co-transport is paid for by another gradient, a pump's charges add up
+//   tonicity   cells in solutions: water moves to the lower water potential, and the cell swells, bursts, crenates,
+//              becomes turgid or flaccid, or plasmolyses accordingly
+//   route      a path through the endomembrane system (drawn as a flow): every step is one cargo really takes
+//   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
+//   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
 // decision-tree renderers instead.
-import { register, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
+import { register, RENDERERS, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
 
 const TONES = ["a1", "a4", "a3", "a2", "a5"];
 const tone = (i) => C[TONES[i % TONES.length]];
@@ -327,10 +333,10 @@ export const STRUCTURES = {
 const ALL_STRUCT = ["nucleus", "nucleolus", "nuclear envelope", "mitochondrion", "chloroplast", "rough ER", "smooth ER", "Golgi apparatus", "lysosome", "centrioles", "cell wall", "vacuole", "tonoplast", "plasmodesmata", "nucleoid", "plasmid", "70S ribosomes", "80S ribosomes", "capsule", "flagellum", "pili", "septum", "vesicle", "plasma membrane", "cytoplasm"];
 // drawing positions on a 420 × 260 canvas: [anchor x, anchor y] for each structure's leader line
 const TEMPLATE = {
-  prokaryote: { "cell wall": [118, 70], "plasma membrane": [140, 92], cytoplasm: [250, 170], nucleoid: [205, 125], plasmid: [290, 150], "70S ribosomes": [160, 160], capsule: [96, 120], flagellum: [400, 132], pili: [250, 46] },
-  animal: { "plasma membrane": [72, 150], cytoplasm: [300, 200], nucleus: [200, 118], nucleolus: [205, 120], "nuclear envelope": [168, 92], mitochondrion: [312, 92], "rough ER": [128, 150], "smooth ER": [130, 196], "Golgi apparatus": [300, 150], lysosome: [250, 208], "80S ribosomes": [258, 70], centrioles: [262, 162], vesicle: [340, 176] },
-  plant: { "cell wall": [36, 40], "plasma membrane": [48, 120], cytoplasm: [90, 222], nucleus: [96, 76], nucleolus: [96, 78], mitochondrion: [340, 214], chloroplast: [356, 70], vacuole: [230, 130], tonoplast: [160, 160], "rough ER": [70, 160], "Golgi apparatus": [372, 150], "80S ribosomes": [300, 228], plasmodesmata: [210, 22] },
-  fungus: { "cell wall": [40, 76], "plasma membrane": [52, 94], cytoplasm: [110, 150], nucleus: [120, 130], mitochondrion: [180, 158], vacuole: [300, 130], "rough ER": [230, 152], "Golgi apparatus": [240, 106], "80S ribosomes": [180, 104], septum: [380, 130] },
+  prokaryote: { "cell wall": [110, 112], "plasma membrane": [131, 92], cytoplasm: [250, 170], nucleoid: [205, 125], plasmid: [290, 150], "70S ribosomes": [160, 160], capsule: [98, 146], flagellum: [400, 132], pili: [250, 46] },
+  animal: { "plasma membrane": [72, 150], cytoplasm: [300, 200], nucleus: [182, 100], nucleolus: [205, 120], "nuclear envelope": [168, 92], mitochondrion: [312, 92], "rough ER": [128, 150], "smooth ER": [130, 196], "Golgi apparatus": [300, 150], lysosome: [250, 208], "80S ribosomes": [258, 70], centrioles: [262, 162], vesicle: [340, 176] },
+  plant: { "cell wall": [24, 56], "plasma membrane": [34, 112], cytoplasm: [90, 222], nucleus: [82, 64], nucleolus: [96, 78], mitochondrion: [340, 214], chloroplast: [356, 70], vacuole: [230, 130], tonoplast: [130, 128], "rough ER": [70, 160], "Golgi apparatus": [372, 150], "80S ribosomes": [300, 228], plasmodesmata: [210, 22] },
+  fungus: { "cell wall": [35, 71], "plasma membrane": [36, 110], cytoplasm: [110, 150], nucleus: [106, 118], mitochondrion: [180, 158], vacuole: [300, 130], "rough ER": [230, 152], "Golgi apparatus": [240, 106], "80S ribosomes": [180, 104], septum: [380, 96] },
 };
 function cellBody(kind, s = "") {
   const g = (d, o = {}) => `<path d="${d}" fill="${o.fill || "none"}" fill-opacity="${o.op ?? 1}" stroke="${o.stroke || C.ink}" stroke-width="${o.w || 2}" stroke-linejoin="round"/>`;
@@ -377,19 +383,21 @@ function cellBody(kind, s = "") {
   }
   return s;
 }
+// the top and bottom of each drawing on its 420-wide canvas (pili, wall and plasmodesmata included)
+const SPAN = { prokaryote: [44, 202], animal: [30, 236], plant: [10, 248], fungus: [56, 204] };
 function cellmapDraw(spec, W, narrow) {
   const T = TEMPLATE[spec.cell], labs = spec.labels.filter((l) => T[l]);
   if (!narrow) {
     // the cell in the middle, labels in a column either side, spread so they never touch
-    const sc = 1, cw = 420, ox = (W - cw) / 2, oy = 20, colL = ox - 14, colR = ox + cw + 14;
+    const [t0, t1] = SPAN[spec.cell] || [0, 262], sc = 1, cw = 420, ox = (W - cw) / 2, oy = 20 - t0, colL = ox - 14, colR = ox + cw + 14;
     let s = `<g transform="translate(${f1(ox)} ${oy})">${cellBody(spec.cell)}</g>`;
     const items = labs.map((l) => ({ l, ax: ox + T[l][0] * sc, ay: oy + T[l][1] * sc })), side = (it) => (it.ax < ox + cw / 2 ? "L" : "R");
-    let H = 300;
+    let H = oy + t1 + 20;
     for (const sd of ["L", "R"]) {
       const its = items.filter((it) => side(it) === sd).sort((a, b) => a.ay - b.ay);
       let last = -1e9;
       for (const it of its) { it.ty = Math.max(it.ay, last + 24); last = it.ty; }
-      const over = last - (oy + 270); if (over > 0) for (const it of its) it.ty -= over;
+      const over = last - (oy + Math.max(t1, t0 + 250)); if (over > 0) for (const it of its) it.ty -= over;
       for (const it of its) {
         const tx = sd === "L" ? colL : colR;
         s += line(it.ax, it.ay, tx + (sd === "L" ? 4 : -4), it.ty, { stroke: C.soft, w: 1.2 }) + `<circle cx="${f1(it.ax)}" cy="${f1(it.ay)}" r="2.6" fill="${C.ink}"/>`;
@@ -400,10 +408,27 @@ function cellmapDraw(spec, W, narrow) {
     return { s, H };
   }
   // phone: the cell scaled to the width with numbered markers, and the key underneath
-  const sc = (W - 20) / 420, oy = 10;
+  const [t0, t1] = SPAN[spec.cell] || [0, 262], sc = (W - 20) / 420, oy = 14 - t0 * sc;
   let s = `<g transform="translate(10 ${oy}) scale(${sc.toFixed(4)})">${cellBody(spec.cell)}</g>`;
-  labs.forEach((l, i) => { const x = 10 + T[l][0] * sc, y = oy + T[l][1] * sc; s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.ink}" stroke-width="1.4"/>` + text(x, y + 0.5, String(i + 1), { size: 10.5, weight: 700 }); });
-  let y = oy + 262 * sc + 18;
+  // each marker sits a little outward from the structure it marks, so it never hides a small organelle, with a short
+  // leader line back to it; markers that would still touch (a nucleolus inside its nucleus) are pushed apart
+  const cx0 = 10 + 210 * sc, cy0 = oy + 130 * sc;
+  const mk = labs.map((l) => {
+    const ax = 10 + T[l][0] * sc, ay = oy + T[l][1] * sc, d = Math.hypot(ax - cx0, ay - cy0), ux = d > 1 ? (ax - cx0) / d : 0, uy = d > 1 ? (ay - cy0) / d : -1;
+    return { ax, ay, x: ax + ux * 17, y: ay + uy * 17 };
+  });
+  for (let it = 0; it < 60; it++) for (let i = 0; i < mk.length; i++) for (let j = i + 1; j < mk.length; j++) {
+    const a = mk[i], b = mk[j], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy), need = 21;
+    if (d >= need) continue;
+    const ux = d > 0.01 ? dx / d : 0.6, uy = d > 0.01 ? dy / d : 0.8, push = (need - d) / 2;
+    a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push;
+  }
+  for (const m of mk) { m.x = Math.min(W - 11, Math.max(11, m.x)); m.y = Math.max(11, m.y); }
+  mk.forEach((m, i) => {
+    s += line(m.ax, m.ay, m.x, m.y, { stroke: C.ink, w: 1.2 }) + `<circle cx="${f1(m.ax)}" cy="${f1(m.ay)}" r="2.2" fill="${C.ink}"/>`;
+    s += `<circle cx="${f1(m.x)}" cy="${f1(m.y)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.ink}" stroke-width="1.4"/>` + text(m.x, m.y + 0.5, String(i + 1), { size: 10.5, weight: 700 });
+  });
+  let y = oy + t1 * sc + 26;
   const half = Math.ceil(labs.length / 2);
   labs.forEach((l, i) => { const c = i < half ? 0 : 1, r = i < half ? i : i - half; s += text(20 + c * (W / 2), y + r * 20, `${i + 1}  ${l}`, { size: 12.5, anchor: "start" }); });
   return { s, H: y + half * 20 + 4 };
@@ -422,56 +447,317 @@ function cellmapChecks(spec) {
 }
 
 // ======================================================================== membrane
-// spec: sides: [{id: "out", label, conc: {glucose: 5, …}, psi}, {id: "in", …}] (outside drawn above),
-//   moves: [{substance, kind: "simple" | "channel" | "carrier" | "active" | "osmosis" | "endocytosis" | "exocytosis", from, to, atp}]
-const KIND = { simple: "simple diffusion", channel: "channel protein", carrier: "carrier protein", active: "active transport (pump)", osmosis: "osmosis (aquaporin)", endocytosis: "endocytosis", exocytosis: "exocytosis" };
+// spec: sides: [{id, label, conc: {glucose: 5, …}, psi, tone}, …] from the top of the picture down: two sides for one
+//   membrane, or three for a layer of cells (gut lumen, lining cell, blood) with a membrane between each pair;
+//   cell: the id of the side that is the cell's cytoplasm (default "in"), concUnit: shown once, e.g. "mmol dm^{−3}",
+//   moves: [{substance, label?, count?, kind, from, to, atp, protein?, note?}]. `substance` is the key into conc;
+//   `label` is what is printed ("3 Na⁺"). Moves naming the same protein (spec.proteins: {key: name}) are drawn
+//   through one protein: a pump that moves two ions, or a co-transporter. kind "cotransport": one substance runs down
+//   its gradient and carries another, which may go against its own; no ATP is used directly.
+//   claims: [{type: "netCharge", protein, out}]  net positive charges carried out of the cell per cycle
+const KIND = { simple: "simple diffusion", channel: "channel protein", carrier: "carrier protein", active: "active transport (pump)", osmosis: "osmosis (aquaporin)", endocytosis: "endocytosis", exocytosis: "exocytosis", cotransport: "co-transporter" };
+export const chargeOf = (s) => { const m = /([²³]?)([⁺⁻])$/.exec(String(s)); if (!m) return 0; const n = m[1] === "²" ? 2 : m[1] === "³" ? 3 : 1; return m[2] === "⁺" ? n : -n; };
+const minus = (v) => String(v).replace(/^-/, "−");
+const SIDE_TONES = ["a4", "a1", "a2"];
+// moves on membrane k, in order, grouped into runs that share a protein
+function proteinGroups(moves) {
+  const out = [];
+  moves.forEach((m, i) => { const g = out.at(-1); if (g && m.protein && g.protein === m.protein) g.idx.push(i); else out.push({ protein: m.protein, idx: [i] }); });
+  return out;
+}
 function membraneDraw(spec, W, narrow) {
-  const [top, bot] = spec.sides, n = spec.moves.length, mY = narrow ? 150 : 140, band = 44;
-  const left = 16, right = W - 16, slot = (right - left) / n;
-  let s = rect(0, 0, W, mY - band / 2, { fill: C.a4, op: 0.06, stroke: "none", rx: 0 }) + rect(0, mY + band / 2, W, 150, { fill: C.a1, op: 0.06, stroke: "none", rx: 0 });
-  // phospholipids: two rows of heads with tails pointing inward
-  for (let x = 6; x < W; x += 13) {
-    s += `<circle cx="${x}" cy="${mY - band / 2 + 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/><circle cx="${x}" cy="${mY + band / 2 - 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/>`;
-    s += line(x - 2, mY - band / 2 + 10, x - 2, mY - 3, { stroke: C.line, w: 1 }) + line(x + 2, mY - band / 2 + 10, x + 2, mY - 3, { stroke: C.line, w: 1 });
-    s += line(x - 2, mY + 3, x - 2, mY + band / 2 - 10, { stroke: C.line, w: 1 }) + line(x + 2, mY + 3, x + 2, mY + band / 2 - 10, { stroke: C.line, w: 1 });
-  }
-  s += text(left, 16, top.label, { size: 13.5, weight: 700, anchor: "start", fill: C.a4 }) + text(left, mY + band / 2 + 120, bot.label, { size: 13.5, weight: 700, anchor: "start", fill: C.a1 });
-  spec.moves.forEach((m, i) => {
-    const cx = left + (i + 0.5) * slot, down = m.from === top.id, fromS = down ? top : bot, toS = down ? bot : top;
-    const pw = Math.min(46, slot * 0.4);
-    if (["channel", "carrier", "active", "osmosis"].includes(m.kind)) {
-      const t = m.kind === "active" ? C.a2 : m.kind === "osmosis" ? C.a1 : C.a5;
-      if (m.kind === "channel" || m.kind === "osmosis") s += rect(cx - pw / 2, mY - band / 2 - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 }) + rect(cx + pw * 0.12, mY - band / 2 - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 });
-      else s += rect(cx - pw / 2, mY - band / 2 - 8, pw, band + 16, { fill: t, op: 0.35, stroke: t, rx: 14 });
+  const sides = spec.sides, band = 44, gut = narrow ? 0 : 132, left = gut + 10, right = W - 10;
+  const at = Object.fromEntries(sides.map((x, i) => [x.id, i]));
+  const mems = sides.slice(1).map((_, k) => spec.moves.filter((m) => Math.min(at[m.from], at[m.to]) === k));
+  let s = "", y = 26;
+  const memY = [], labels = [];
+  if (narrow) labels.push([0, 14]);
+  mems.forEach((moves, k) => {
+    const n = Math.max(1, moves.length), slot = (right - left) / n, y0 = y, mY = y0 + 94, top = mY - band / 2, bot = mY + band / 2;
+    memY.push(mY);
+    const groups = proteinGroups(moves);
+    // the arrows of one protein sit close together through it; every other move is centred in its own slot
+    const sp = Math.min(64, slot), xs = [], room = [];
+    for (const g of groups) {
+      const mid = left + ((g.idx[0] + g.idx.at(-1)) / 2 + 0.5) * slot;
+      g.idx.forEach((i, j) => { xs[i] = g.idx.length > 1 ? mid + (j - (g.idx.length - 1) / 2) * sp : mid; room[i] = g.idx.length > 1 ? sp : slot; });
     }
-    if (m.kind === "endocytosis" || m.kind === "exocytosis") s += `<circle cx="${f1(cx)}" cy="${f1(m.kind === "endocytosis" ? mY + band / 2 + 26 : mY - band / 2 - 26)}" r="14" fill="none" stroke="${C.a3}" stroke-width="5" stroke-opacity=".6"/>`;
-    const y1 = down ? 44 : mY + band / 2 + 90, y2 = down ? mY + band / 2 + 90 : 44;
-    s += arrow(cx, y1, cx, y2, { stroke: m.kind === "active" ? C.a2 : C.ink, w: 2.4, head: 10 });
-    const fc = fromS.conc?.[m.substance], tc = toS.conc?.[m.substance];
-    const name = textBlock(cx, 0, m.substance, Math.max(8, Math.floor(slot / 7.4)), { size: 12.5, weight: 700 });
-    s += `<g transform="translate(0 ${down ? 30 : mY + band / 2 + 104})">${name.svg}</g>`;
-    const kb = textBlock(cx, 0, KIND[m.kind] + (m.atp ? " + ATP" : ""), Math.max(9, Math.floor(slot / 6.9)), { size: 11.5, fill: C.soft });
-    s += `<g transform="translate(0 ${mY + band / 2 + 140 + (narrow ? 0 : 0)})">${kb.svg}</g>`;
-    if (fc != null && tc != null) {
-      const mk = (y, v, anchor) => text(cx + (anchor === "start" ? 8 : -8), y, String(v), { size: 11.5, anchor, fill: C.soft });
-      s += mk(down ? 66 : mY + band / 2 + 64, fc, "start") + mk(down ? mY + band / 2 + 64 : 66, tc, "start");
+    let kindLines = 1;
+    const parts = [];
+    // proteins first, so arrows and vesicles sit on top of them
+    for (const g of groups) {
+      const ms = g.idx.map((i) => moves[i]), m = ms[0], cxs = g.idx.map((i) => xs[i]), pw = Math.min(46, slot * 0.42) + (g.idx.length > 1 ? 14 : 0);
+      const x0 = cxs[0] - pw / 2, x1 = cxs.at(-1) + pw / 2;
+      if (["channel", "carrier", "active", "osmosis", "cotransport"].includes(m.kind)) {
+        const t = m.kind === "active" ? C.a2 : m.kind === "osmosis" ? C.a1 : m.kind === "cotransport" ? C.a4 : C.a5;
+        if (m.kind === "channel" || m.kind === "osmosis") parts.push(rect(x0, top - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 }) + rect(x1 - pw * 0.38, top - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 }));
+        else parts.push(rect(x0, top - 8, x1 - x0, band + 16, { fill: t, op: 0.35, stroke: t, rx: 14 }));
+      }
+      const what = (g.protein && spec.proteins?.[g.protein]) || m.note || KIND[m.kind];
+      const kt = what + (ms.some((x) => x.atp) ? ", uses ATP" : "");
+      const kb = textBlock((cxs[0] + cxs.at(-1)) / 2, 0, kt, Math.max(9, Math.floor((slot * g.idx.length) / 6.9)), { size: 11.5, fill: C.soft });
+      kindLines = Math.max(kindLines, kb.lines);
+      g.kb = kb;
     }
+    s += parts.join("");
+    let botLines = 0; // names printed under the membrane, which the protein labels must clear
+    moves.forEach((m, i) => {
+      const cx = xs[i], down = at[m.from] < at[m.to], fromS = sides[at[m.from]], toS = sides[at[m.to]];
+      let y1 = down ? y0 + 42 : bot + 30, y2 = down ? bot + 30 : y0 + 42;
+      if (m.kind === "endocytosis" || m.kind === "exocytosis") {
+        // the vesicle on the cytoplasm side, a ring of membrane around its cargo; the arrow runs to it or from it
+        const below = at[spec.cell || "in"] > k, vy = below ? bot + 30 : top - 30, r = 16;
+        s += `<circle cx="${f1(cx)}" cy="${f1(vy)}" r="${r}" fill="${C.panel}" stroke="${C.a3}" stroke-width="5" stroke-opacity=".55"/><circle cx="${f1(cx)}" cy="${f1(vy)}" r="${r}" fill="none" stroke="${C.a3}" stroke-width="1" stroke-dasharray="2 2.6"/>`;
+        s += `<rect x="${f1(cx - 7)}" y="${f1(vy - 4)}" width="14" height="8" rx="4" fill="${C.a3}" fill-opacity=".8"/>`;
+        const edge = below ? vy - r - 3 : vy + r + 3;
+        if (m.kind === "endocytosis") { if (below) y2 = edge; else y2 = edge; } else if (below) y1 = edge; else y1 = edge;
+      }
+      s += arrow(cx, y1, cx, y2, { stroke: m.kind === "active" ? C.a2 : C.ink, w: 2.4, head: 10 });
+      const name = textBlock(cx, 0, m.label || m.substance, Math.max(7, Math.floor(room[i] / 7.4)), { size: 12.5, weight: 700 });
+      s += `<g transform="translate(0 ${f1(down ? y0 + 12 - (name.lines - 1) * 8 : bot + 66 + (name.lines - 1) * 8)})">${name.svg}</g>`;
+      if (!down) botLines = Math.max(botLines, name.lines);
+      const v = (side) => (m.kind === "osmosis" ? (side.psi != null ? `ψ ${minus(side.psi)}` : null) : side.conc?.[m.substance]);
+      const tv = v(down ? fromS : toS), bv = v(down ? toS : fromS);
+      if (tv != null && bv != null) s += text(cx, y0 + 30, minus(tv), { size: 11.5, fill: C.soft }) + text(cx, bot + 44, minus(bv), { size: 11.5, fill: C.soft });
+    });
+    const ky = bot + (botLines ? 66 + (botLines - 1) * 16 + 26 : 72);
+    for (const g of groups) s += `<g transform="translate(0 ${f1(ky + ((g.kb.lines - 1) * 14.7) / 2)})">${g.kb.svg}</g>`;
+    y = ky + (kindLines - 1) * 14.7 + 14;
+    if (narrow) { labels.push([k + 1, y + 12]); y += 28; } else y += 8;
   });
-  const unit = spec.unit ? text(W - 16, 16, spec.unit, { size: 11.5, anchor: "end", fill: C.soft }) : "";
-  return { s: s + unit, H: mY + band / 2 + 172 };
+  const H = y + (narrow && spec.concUnit ? 22 : 0);
+  // the regions: shaded bands from membrane to membrane, drawn underneath everything
+  const bounds = [0, ...memY, H];
+  let bg = sides.map((sd, i) => rect(0, bounds[i], W, bounds[i + 1] - bounds[i], { fill: C[sd.tone || SIDE_TONES[i % 3]], op: 0.07, stroke: "none", rx: 0 })).join("");
+  // phospholipids: two rows of heads with tails pointing inward, at each membrane
+  for (const mY of memY) for (let x = gut + 6; x < W; x += 13) {
+    bg += `<circle cx="${x}" cy="${mY - band / 2 + 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/><circle cx="${x}" cy="${mY + band / 2 - 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/>`;
+    bg += line(x - 2, mY - band / 2 + 10, x - 2, mY - 3, { stroke: C.line, w: 1 }) + line(x + 2, mY - band / 2 + 10, x + 2, mY - 3, { stroke: C.line, w: 1 });
+    bg += line(x - 2, mY + 3, x - 2, mY + band / 2 - 10, { stroke: C.line, w: 1 }) + line(x + 2, mY + 3, x + 2, mY + band / 2 - 10, { stroke: C.line, w: 1 });
+  }
+  if (!narrow) {
+    // the gutter: each region's name beside it, clear of the membrane
+    sides.forEach((sd, i) => { const a = i ? memY[i - 1] + band / 2 : 0, b = i < memY.length ? memY[i] - band / 2 : H; const tb = textBlock(10, (a + b) / 2, sd.label, 15, { size: 13.5, weight: 700, anchor: "start", fill: C[sd.tone || SIDE_TONES[i % 3]] }); bg += tb.svg; });
+    if (spec.concUnit) bg += text(W - 10, 12, `concentrations in ${spec.concUnit}`, { size: 11.5, anchor: "end", fill: C.soft });
+  } else {
+    for (const [i, ly] of labels) bg += text(10, ly, sides[i].label, { size: 13, weight: 700, anchor: "start", fill: C[sides[i].tone || SIDE_TONES[i % 3]] });
+    if (spec.concUnit) bg += text(10, H - 10, `concentrations in ${spec.concUnit}`, { size: 11.5, anchor: "start", fill: C.soft });
+  }
+  return { s: bg + s, H };
 }
 function membraneChecks(spec) {
-  const out = [], S = Object.fromEntries(spec.sides.map((x) => [x.id, x]));
+  const out = [], S = Object.fromEntries(spec.sides.map((x) => [x.id, x])), cell = spec.cell || "in";
+  out.push(check("every move joins two neighbouring compartments across one membrane", spec.moves.every((m) => { const i = spec.sides.indexOf(S[m.from]), j = spec.sides.indexOf(S[m.to]); return i >= 0 && j >= 0 && Math.abs(i - j) === 1; })));
+  const name = (m) => m.label || m.substance;
   for (const m of spec.moves) {
     const f = S[m.from], t = S[m.to];
     if (m.kind === "osmosis") { out.push(check(`water moves by osmosis from higher to lower water potential (${f.label} → ${t.label})`, f.psi > t.psi, `ψ ${f.psi} → ${t.psi} kPa`)); continue; }
     const a = f.conc?.[m.substance], b = t.conc?.[m.substance];
+    if (["simple", "channel", "carrier", "active", "cotransport"].includes(m.kind)) out.push(check(`${name(m)}: a concentration is given on both sides`, a != null && b != null, `${a} → ${b}`));
     if (["simple", "channel", "carrier"].includes(m.kind)) {
-      out.push(check(`${m.substance} moves down its gradient by ${KIND[m.kind]}`, a > b, `${a} → ${b}`));
-      out.push(check(`${KIND[m.kind]} needs no ATP`, !m.atp));
+      out.push(check(`${name(m)} moves down its gradient by ${KIND[m.kind]}`, a > b, `${a} → ${b}`));
+      out.push(check(`${KIND[m.kind]} needs no ATP (${name(m)})`, !m.atp));
     }
-    if (m.kind === "active") { out.push(check(`active transport of ${m.substance} uses ATP`, !!m.atp)); if (a != null && b != null) out.push(check(`${m.substance} is pumped against its gradient`, a < b, `${a} → ${b}`)); }
-    if (m.kind === "endocytosis" || m.kind === "exocytosis") { out.push(check(`${m.kind} moves material ${m.kind === "endocytosis" ? "into" : "out of"} the cell`, (m.kind === "endocytosis") === (t.id === "in"))); out.push(check(`${m.kind} uses ATP`, !!m.atp)); }
+    if (m.kind === "active") { out.push(check(`active transport of ${name(m)} uses ATP`, !!m.atp)); out.push(check(`${name(m)} is pumped against its gradient`, a < b, `${a} → ${b}`)); }
+    if (m.kind === "endocytosis" || m.kind === "exocytosis") { out.push(check(`${m.kind} moves ${name(m)} ${m.kind === "endocytosis" ? "into" : "out of"} the cell`, m.kind === "endocytosis" ? t.id === cell : f.id === cell)); out.push(check(`${m.kind} uses ATP`, !!m.atp)); }
+  }
+  // co-transport: within each co-transporter, something runs down its gradient and pays for the rest
+  const byProtein = {};
+  for (const m of spec.moves) if (m.protein) (byProtein[m.protein] ||= []).push(m);
+  for (const [p, ms] of Object.entries(byProtein)) {
+    if (!ms.some((m) => m.kind === "cotransport")) continue;
+    const grad = (m) => S[m.from].conc?.[m.substance] - S[m.to].conc?.[m.substance];
+    const drivers = ms.filter((m) => grad(m) > 0), uphill = ms.filter((m) => grad(m) < 0);
+    out.push(check(`${spec.proteins?.[p] || p}: ${drivers.map(name).join(", ") || "nothing"} runs down its gradient and drives the transport`, drivers.length > 0, ms.map((m) => `${name(m)} ${S[m.from].conc?.[m.substance]} → ${S[m.to].conc?.[m.substance]}`).join("; ")));
+    if (uphill.length) out.push(check(`${spec.proteins?.[p] || p} carries ${uphill.map(name).join(", ")} against its own gradient`, drivers.length > 0));
+    out.push(check(`${spec.proteins?.[p] || p} uses no ATP directly (secondary active transport)`, ms.every((m) => !m.atp)));
+  }
+  for (const c of spec.claims || []) if (c.type === "netCharge") {
+    const net = spec.moves.filter((m) => m.protein === c.protein).reduce((q, m) => q + (m.count || 1) * chargeOf(m.substance) * (m.from === cell ? 1 : m.to === cell ? -1 : 0), 0);
+    out.push(check(`each cycle of the ${spec.proteins?.[c.protein] || c.protein} carries a net ${c.out} positive charge${Math.abs(c.out) === 1 ? "" : "s"} out of the cell, leaving the inside more negative`, net === c.out, `${net} computed from the ions moved`));
+  }
+  return out;
+}
+
+// ======================================================================== tonicity
+// spec: rows: [{cell: "animal" | "plant", label, psiS, psiP (0 for an animal cell), panels: [{solution, label?, outcome}]}],
+//   columns: [header per panel]. Water moves from the higher to the lower water potential; the outcome follows from
+//   the direction and the kind of cell: an animal cell "bursts" or "crenates"; a plant cell becomes "turgid", or
+//   "flaccid" while its wall still presses on it, and "plasmolysed" once the solution is below its solute potential.
+const OUTCOME = { bursts: "bursts (haemolysis)", unchanged: "no net movement", crenated: "shrinks (crenated)", turgid: "turgid", flaccid: "flaccid", plasmolysed: "plasmolysed" };
+export function osmoticOutcome(cell, psiS, psiP, solution) {
+  const psi = psiS + (psiP || 0);
+  if (solution === psi) return "unchanged";
+  if (cell === "animal") return solution > psi ? "bursts" : "crenated";
+  if (solution > psi) return "turgid";
+  return solution < psiS ? "plasmolysed" : "flaccid";
+}
+function cellShape(cell, outcome, x, y) {
+  let s = "";
+  if (cell === "animal") {
+    if (outcome === "bursts") {
+      // a swollen cell torn open, its contents spilling out
+      s += `<path d="M${f1(x + 30 * Math.cos(1.2))} ${f1(y - 30 * Math.sin(1.2))} A30 30 0 1 0 ${f1(x + 30 * Math.cos(0.55))} ${f1(y - 30 * Math.sin(0.55))}" fill="${C.a2}" fill-opacity=".18" stroke="${C.a2}" stroke-width="2.4" stroke-dasharray="7 4"/>`;
+      for (const [dx, dy] of [[26, -30], [33, -36], [24, -40], [36, -26]]) s += `<circle cx="${f1(x + dx)}" cy="${f1(y + dy)}" r="2.6" fill="${C.a2}" fill-opacity=".7"/>`;
+    } else if (outcome === "crenated") {
+      const pts = []; for (let i = 0; i < 28; i++) { const a = (i * Math.PI) / 14, r = i % 2 ? 15 : 20; pts.push([x + r * Math.cos(a), y + r * Math.sin(a)]); }
+      s += `<path d="M${pts.map(([a, b]) => `${f1(a)} ${f1(b)}`).join(" L")} Z" fill="${C.a2}" fill-opacity=".35" stroke="${C.a2}" stroke-width="2" stroke-linejoin="round"/>`;
+    } else s += `<circle cx="${x}" cy="${y}" r="24" fill="${C.a2}" fill-opacity=".3" stroke="${C.a2}" stroke-width="2.4"/><circle cx="${x}" cy="${y}" r="10" fill="${C.a2}" fill-opacity=".14" stroke="none"/>`;
+    return s;
+  }
+  const w = 76, h = 56, inset = { turgid: 3, unchanged: 3, flaccid: 3, plasmolysed: 15 }[outcome] ?? 3, vac = { turgid: 8, unchanged: 11, flaccid: 17, plasmolysed: 22 }[outcome] ?? 11;
+  s += rect(x - w / 2, y - h / 2, w, h, { fill: "none", stroke: C.a4, sw: 5, rx: 4 });
+  s += rect(x - w / 2 + inset, y - h / 2 + inset, w - 2 * inset, h - 2 * inset, { fill: C.good, op: 0.16, stroke: C.good, sw: 1.6, rx: outcome === "plasmolysed" ? 12 : 3 });
+  s += rect(x - w / 2 + vac, y - h / 2 + vac, w - 2 * vac, h - 2 * vac, { fill: C.a1, op: 0.22, stroke: C.a1, sw: 1.4, rx: 6 });
+  s += `<circle cx="${f1(x - w / 2 + inset + 7)}" cy="${f1(y - h / 2 + inset + 7)}" r="4" fill="${C.a2}" fill-opacity=".6"/>`;
+  return s;
+}
+function tonicityDraw(spec, W, narrow) {
+  const head = narrow ? 0 : 150, cols = spec.columns.length, pw = (W - head - 10 - (cols - 1) * 8) / cols, ph = 150;
+  let s = "", y = 8;
+  spec.columns.forEach((c, j) => { const tb = textBlock(head + 5 + j * (pw + 8) + pw / 2, 0, c, Math.floor(pw / 6.8), { size: 12, weight: 700, fill: C.soft }); s += `<g transform="translate(0 ${f1(y + 8 + ((tb.lines - 1) * 15.4) / 2)})">${tb.svg}</g>`; });
+  y += 8 + Math.max(...spec.columns.map((c) => wrap(c, Math.floor(pw / 6.8)).length)) * 15.4 + 6;
+  for (const r of spec.rows) {
+    const psi = r.psiS + (r.psiP || 0);
+    if (narrow) { s += text(10, y + 10, r.cell === "plant" ? `${r.label}: ψ = ${minus(r.psiS)} + ${r.psiP} = ${minus(psi)} kPa` : `${r.label}: ψ = ${minus(psi)} kPa`, { size: 12.5, weight: 700, anchor: "start" }); y += 24; }
+    else {
+      // the cell's water potential, built from its solute and pressure potentials for a plant cell
+      const ls = r.cell === "plant" ? [`ψs = ${minus(r.psiS)} kPa`, `ψp = +${r.psiP} kPa`, `ψ = ${minus(psi)} kPa`] : [`ψ = ${minus(psi)} kPa`];
+      s += text(10, y + ph / 2 - 8 - (ls.length - 1) * 8, r.label, { size: 13.5, weight: 700, anchor: "start" });
+      ls.forEach((l, i) => { s += text(10, y + ph / 2 + 12 + i * 16 - (ls.length - 1) * 8, l, { size: 12, anchor: "start", fill: i === ls.length - 1 ? C.ink : C.soft, weight: i === ls.length - 1 ? 600 : 500 }); });
+    }
+    r.panels.forEach((p, j) => {
+      const px = head + 5 + j * (pw + 8), cx = px + pw / 2, cy = y + 74, dir = Math.sign(p.solution - psi);
+      s += rect(px, y, pw, ph, { fill: C.a1, op: 0.04 + Math.min(0.2, (-p.solution / 1400) * 0.16), stroke: C.line, sw: 1.2, rx: 10 });
+      s += text(cx, y + 15, `${narrow ? "" : "solution "}ψ = ${minus(p.solution)} kPa`, { size: 11, fill: C.soft });
+      const k = narrow ? 0.8 : 1;
+      s += `<g transform="translate(${f1(cx)} ${f1(cy)}) scale(${k}) translate(${f1(-cx)} ${f1(-cy)})">${cellShape(r.cell, p.outcome, cx, cy)}</g>`;
+      // water arrows across the cell's surface, or none when there is no net movement
+      const R = (r.cell === "animal" ? 34 : 44) * k;
+      if (dir !== 0) for (const a of [Math.PI, 0]) {
+        const ox = Math.cos(a), far = R + (narrow ? 15 : 18), near0 = R + 2;
+        s += arrow(cx + ox * (dir > 0 ? far : near0), cy, cx + ox * (dir > 0 ? near0 : far), cy, { stroke: C.a1, w: 2, head: 7 });
+      }
+      const ob = textBlock(cx, 0, OUTCOME[p.outcome] || p.outcome, Math.floor(pw / 6.6), { size: 11.5, weight: 700, fill: C.ink });
+      s += `<g transform="translate(0 ${f1(y + ph - 24 - ((ob.lines - 1) * 14.7) / 2 + (ob.lines > 1 ? 7 : 0))})">${ob.svg}</g>`;
+    });
+    y += ph + 12;
+  }
+  return { s, H: y };
+}
+function tonicityChecks(spec) {
+  const out = [];
+  for (const r of spec.rows) {
+    const psi = r.psiS + (r.psiP || 0);
+    out.push(check(`${r.label}: ψ = ψs + ψp = ${psi} kPa`, r.psiS <= 0 && (r.cell === "plant" || !r.psiP), `ψs ${r.psiS}, ψp ${r.psiP || 0}`));
+    for (const p of r.panels) {
+      const want = osmoticOutcome(r.cell, r.psiS, r.psiP, p.solution);
+      const way = p.solution > psi ? "enters" : p.solution < psi ? "leaves" : "has no net movement";
+      out.push(check(`${r.label} in ψ = ${p.solution} kPa: water ${way}, so it ${OUTCOME[want]}`, p.outcome === want, `drawn: ${p.outcome}`));
+    }
+  }
+  return out;
+}
+
+// ======================================================================== route, lineage
+// Flow pictures with biology checks: drawn by the shared flow renderer (layout, nodes, edges as in flow), checked here.
+//   route    a path through the endomembrane system: nodes [{id, label, sub, is}], where `is` names the compartment;
+//            every arrow must be a step cargo really takes, and mitochondria and chloroplasts are not on any route
+//   lineage  cells from a stem cell to a specialised cell: nodes [{id, label, sub, cell, potency}]; each cell's potency
+//            is as classified, and potency never widens along an arrow (unless the arrow is marked reprogram: true)
+const flowDraw = (spec, W, narrow) => {
+  const f = RENDERERS.flow;
+  if (!f) throw new Error("the flow renderer (chem-renderers-3.js) is not loaded");
+  return f.draw(spec, W, narrow);
+};
+export const ROUTE = {
+  nucleus: ["ribosome"],                       // mRNA leaves through the nuclear pores
+  ribosome: ["rough ER"],                      // a signal sequence threads the growing chain into the ER
+  "rough ER": ["transport vesicle"],
+  "transport vesicle": ["Golgi apparatus"],    // fuses with the cis face
+  "Golgi apparatus": ["secretory vesicle", "lysosome", "transport vesicle"],
+  "secretory vesicle": ["plasma membrane"],    // exocytosis
+  "plasma membrane": ["outside the cell", "endocytic vesicle"],
+  "endocytic vesicle": ["endosome"],
+  endosome: ["lysosome"],
+};
+const NOT_ENDOMEMBRANE = ["mitochondrion", "chloroplast", "peroxisome"];
+function routeChecks(spec) {
+  const N = Object.fromEntries(spec.nodes.map((n) => [n.id, n])), known = new Set([...Object.keys(ROUTE), ...Object.values(ROUTE).flat()]);
+  const out = [check("every box names a compartment of the route", spec.nodes.every((n) => known.has(n.is)), spec.nodes.filter((n) => !known.has(n.is)).map((n) => n.is).join(", "))];
+  out.push(check("no mitochondrion, chloroplast or peroxisome on the route: they are not part of the endomembrane system", !spec.nodes.some((n) => NOT_ENDOMEMBRANE.includes(n.is))));
+  for (const e of spec.edges) { const a = N[e.from]?.is, b = N[e.to]?.is; out.push(check(`cargo goes from the ${a} to the ${b}`, (ROUTE[a] || []).includes(b))); }
+  return out;
+}
+const POTENCY = ["totipotent", "pluripotent", "multipotent", "unipotent", "specialised"];
+export const CELL_POTENCY = { zygote: "totipotent", "inner cell mass": "pluripotent", "embryonic stem cell": "pluripotent", "induced pluripotent stem cell": "pluripotent", "haematopoietic stem cell": "multipotent", "erythroid progenitor": "unipotent", "epidermal stem cell": "unipotent", "red blood cell": "specialised", keratinocyte: "specialised", "skin fibroblast": "specialised" };
+function lineageChecks(spec) {
+  const N = Object.fromEntries(spec.nodes.map((n) => [n.id, n])), out = [];
+  for (const n of spec.nodes) out.push(check(`a ${n.cell} is ${CELL_POTENCY[n.cell] || "?"}`, CELL_POTENCY[n.cell] === n.potency, `drawn as ${n.potency}`));
+  for (const e of spec.edges) {
+    const a = POTENCY.indexOf(N[e.from].potency), b = POTENCY.indexOf(N[e.to].potency);
+    out.push(check(e.reprogram ? `reprogramming a ${N[e.from].cell} widens its potency` : `a ${N[e.from].cell} gives rise to a ${N[e.to].cell}: potency narrows or stays, never widens`, e.reprogram ? b < a : b >= a, `${N[e.from].potency} → ${N[e.to].potency}`));
+  }
+  return out;
+}
+
+// ======================================================================== envelope
+// spec: panels: [{gram: "positive" | "negative", example, stain: "purple" | "pink", layers: [{kind, nm, label}]}]
+//   layers from the outside in; kind: "lps" | "outer membrane" | "periplasm" | "peptidoglycan" | "plasma membrane" | "cytoplasm".
+//   Layers are drawn to scale. Checks: the peptidoglycan is as thick as that kind of wall is (Gram-positive 20–80 nm,
+//   Gram-negative 2–7 nm), only Gram-negative bacteria have an outer membrane, the stain follows from the wall (a thick
+//   peptidoglycan layer with no outer membrane keeps crystal violet), and the example is that kind of bacterium.
+export const GRAM = { Staphylococcus: "positive", Streptococcus: "positive", Bacillus: "positive", Clostridium: "positive", "E. coli": "negative", Salmonella: "negative", Neisseria: "negative", Pseudomonas: "negative" };
+const PG = { positive: [20, 80], negative: [2, 7] };
+function envelopePanel(p, x, y, w, narrow) {
+  const sc = 2.6, bw = narrow ? 130 : 128, lx = x + 10, tx = lx + bw + 30;
+  // the genus or species name in italics, as biological names are written
+  let s = `<text x="${f1(x + 10)}" y="${f1(y + 12)}" font-size="13.5" font-weight="700" text-anchor="start" dominant-baseline="middle" fill="${C.ink}">Gram-${esc(p.gram)}, e.g. <tspan font-style="italic">${esc(p.example)}</tspan></text>`;
+  const stainC = p.stain === "purple" ? C.a5 : C.a2;
+  s += `<circle cx="${f1(x + 18)}" cy="${f1(y + 34)}" r="7" fill="${stainC}" fill-opacity=".8"/>` + text(x + 32, y + 34, p.stain === "purple" ? "keeps crystal violet: stains purple" : "loses crystal violet: counterstained pink", { size: 12, anchor: "start", fill: C.soft });
+  let yy = y + 56;
+  const items = [];
+  for (const L of p.layers) {
+    const h = Math.max(L.kind === "cytoplasm" ? 26 : 8, L.nm * sc), mid = yy + h / 2;
+    if (L.kind === "peptidoglycan") {
+      s += rect(lx, yy, bw, h, { fill: C.a3, op: 0.22, stroke: C.a3, sw: 1.2, rx: 0 });
+      for (let k = lx + 3; k + 6 <= lx + bw - 3; k += 12) s += line(k, yy + 1, k + 6, yy + h - 1, { stroke: C.a3, w: 1 }) + line(k + 6, yy + 1, k, yy + h - 1, { stroke: C.a3, w: 1 });
+    } else if (L.kind === "plasma membrane" || L.kind === "outer membrane") {
+      const r = Math.min(4, h / 4);
+      for (let k = lx + r; k < lx + bw; k += 2 * r + 1.6) s += `<circle cx="${f1(k)}" cy="${f1(yy + r)}" r="${f1(r)}" fill="${C.a4}" fill-opacity=".55"/><circle cx="${f1(k)}" cy="${f1(yy + h - r)}" r="${f1(r)}" fill="${C.a4}" fill-opacity=".55"/>`;
+      s += line(lx, mid, lx + bw, mid, { stroke: C.line, w: 1, dash: "3 3" });
+    } else if (L.kind === "lps") {
+      for (let k = lx + 6; k < lx + bw; k += 11) s += `<path d="M${f1(k)} ${f1(yy + h)} q3 ${f1(-h / 3)} 0 ${f1(-h / 1.6)} q-3 ${f1(-h / 4)} 0 ${f1(-h / 2.8)}" fill="none" stroke="${C.a2}" stroke-width="1.6"/>`;
+    } else if (L.kind === "cytoplasm") s += rect(lx, yy, bw, h, { fill: C.a1, op: 0.1, stroke: "none", rx: 0 });
+    else s += rect(lx, yy, bw, h, { fill: C.panel, op: 1, stroke: "none", rx: 0 });
+    items.push({ ay: mid, label: L.label || L.kind });
+    yy += h;
+  }
+  // labels in a column to the right, spread so they never touch, each with a leader line to its layer
+  let last = -1e9;
+  for (const it of items) { it.ty = Math.max(it.ay, last + 19); last = it.ty; }
+  for (const it of items) s += line(lx + bw + 2, it.ay, tx - 4, it.ty, { stroke: C.soft, w: 1 }) + text(tx, it.ty, it.label, { size: 12, anchor: "start" });
+  return { s, H: Math.max(yy, last + 12) - y };
+}
+function envelopeDraw(spec, W, narrow) {
+  let s = "", H = 0;
+  if (narrow) { let y = 6; for (const p of spec.panels) { const r = envelopePanel(p, 0, y, W, true); s += r.s; y += r.H + 22; } H = y - 10; }
+  else { const pw = W / spec.panels.length; spec.panels.forEach((p, i) => { const r = envelopePanel(p, i * pw, 6, pw, false); s += r.s; H = Math.max(H, r.H + 6); }); }
+  // a scale bar, so the thicknesses can be read
+  const sb = 10 * 2.6;
+  s += line(10, H + 14, 10, H + 14 + sb, { stroke: C.ink, w: 2.4, cap: "butt" }) + text(18, H + 14 + sb / 2, "10 nm", { size: 11.5, anchor: "start", fill: C.soft });
+  return { s, H: H + 14 + sb + 8 };
+}
+function envelopeChecks(spec) {
+  const out = [];
+  for (const p of spec.panels) {
+    const pg = p.layers.filter((l) => l.kind === "peptidoglycan").reduce((a, l) => a + l.nm, 0), outer = p.layers.some((l) => l.kind === "outer membrane"), [lo, hi] = PG[p.gram] || [NaN, NaN];
+    out.push(check(`Gram-${p.gram}: the peptidoglycan is ${lo}–${hi} nm thick`, pg >= lo && pg <= hi, `${pg} nm drawn`));
+    out.push(check(`Gram-${p.gram}: ${p.gram === "negative" ? "has" : "has no"} outer membrane`, outer === (p.gram === "negative")));
+    out.push(check(`Gram-${p.gram}: a plasma membrane surrounds the cytoplasm`, p.layers.some((l) => l.kind === "plasma membrane")));
+    const stain = pg >= 20 && !outer ? "purple" : "pink";
+    out.push(check(`Gram-${p.gram}: the stain follows from the wall (${stain})`, p.stain === stain));
+    out.push(check(`${p.example} is Gram-${p.gram}`, GRAM[p.example] === p.gram, GRAM[p.example] ? `Gram-${GRAM[p.example]}` : "not in the table of known bacteria"));
   }
   return out;
 }
@@ -483,4 +769,8 @@ register({
   pedigree: { draw: pedigreeDraw, checks: pedigreeChecks, widths: [620, 380] },
   cellmap: { draw: cellmapDraw, checks: cellmapChecks, widths: [720, 380] },
   membrane: { draw: membraneDraw, checks: membraneChecks, widths: [720, 380] },
+  tonicity: { draw: tonicityDraw, checks: tonicityChecks, widths: [720, 380] },
+  route: { draw: flowDraw, checks: routeChecks, widths: [700, 380] },
+  lineage: { draw: flowDraw, checks: lineageChecks, widths: [700, 380] },
+  envelope: { draw: envelopeDraw, checks: envelopeChecks, widths: [700, 380] },
 });

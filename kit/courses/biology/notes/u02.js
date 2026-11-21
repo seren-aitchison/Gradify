@@ -53,6 +53,7 @@ H: The parts of a prokaryotic cell
 - **Ribosomes** of the 70S type (smaller than the 80S ribosomes in eukaryotic cytoplasm).
 - **Cell wall** outside the membrane in almost all prokaryotes.
 - Often **plasmids** (small extra DNA circles), a **capsule** or slime layer, **pili** for attachment and DNA transfer, and one or more **flagella** for movement.
+D: bio-prokaryotic-cell
 H: Genes without a nucleus
 P: Because there is no nuclear envelope, transcription and translation happen in the same space: ribosomes can start translating an mRNA while it is still being made. Plasmids often carry useful genes such as antibiotic resistance and can be passed between cells, which is why resistance spreads quickly.
 H: Small and fast
@@ -124,6 +125,7 @@ H: The structures of an animal cell
 - **Rough and smooth endoplasmic reticulum** and **Golgi apparatus**: make, modify and dispatch proteins and lipids.
 - **Lysosomes**: digest worn-out parts and engulfed material.
 - **Centrosome** with a pair of **centrioles**: organises microtubules, including the spindle in cell division.
+D: bio-animal-cell
 H: Life without a wall
 P: Support comes instead from the **extracellular matrix**, a network of proteins such as collagen and fibronectin secreted around cells, and from the cytoskeleton inside them. Cells attach to the matrix through membrane proteins called integrins.
 P: Without a rigid wall, animal cells can change shape, crawl (white blood cells), contract (muscle) and engulf particles by phagocytosis. The cost is vulnerability to osmosis: in pure water an animal cell swells and bursts, so animals regulate the water and salt content of the fluid around their cells.
@@ -159,6 +161,7 @@ H: Three distinctive features
 - **Chloroplasts**: carry out photosynthesis (in green tissues).
 - **Large permanent vacuole**: filled with cell sap and surrounded by a membrane called the tonoplast; it can take up most of the cell's volume.
 P: Plant cells also have a nucleus, mitochondria, ER, Golgi and ribosomes, like animal cells. Root cells have no chloroplasts, because they are in the dark.
+D: bio-plant-cell
 H: Turgor: standing up with water
 P: Water enters the vacuole by osmosis and pushes the cytoplasm against the wall. The wall pushes back, creating **turgor pressure** that makes the cell firm. Turgid cells pressing against each other hold up soft stems and leaves; when they lose water, the plant wilts.
 H: Connected cells
@@ -191,6 +194,7 @@ PRE: Eukaryotic cells
 H: Structure
 P: Fungal cells have a nucleus, mitochondria, ER, Golgi and vacuoles, like other eukaryotes. Their walls are made mainly of **chitin**, the same tough polysaccharide found in insect exoskeletons, with glucans. They have no chloroplasts.
 P: Moulds and mushrooms grow as **hyphae**, threads a few micrometres wide that branch into a network called a **mycelium**. In many fungi the hyphae are divided by cross-walls (septa) with pores; in others the hyphae are one long cytoplasm with many nuclei. Yeasts grow as single oval cells that reproduce by budding.
+D: bio-fungal-cell
 H: Feeding by absorption
 P: Fungi are **heterotrophs** that secrete digestive enzymes into their surroundings and absorb the small molecules released. A mycelium has an enormous surface area for absorption. Many fungi are decomposers that recycle carbon and nutrients from dead matter; others are parasites or form partnerships with plant roots (mycorrhizae).
 H: Fungal cells and medicine
@@ -223,6 +227,7 @@ H: Gram-positive and Gram-negative
 - **Gram-positive** bacteria (such as *Staphylococcus*) have a thick peptidoglycan layer that keeps the crystal violet stain and appears purple.
 - **Gram-negative** bacteria (such as *E. coli*) have a thin peptidoglycan layer and an **outer membrane** containing lipopolysaccharide; they lose the stain and are counterstained pink.
 P: The outer membrane makes Gram-negative bacteria harder to kill with some antibiotics, because it blocks many molecules from reaching the wall.
+D: bio-gram-walls
 H: Why antibiotics can be selective
 P: Human cells have no peptidoglycan. **Penicillins** block the enzymes that cross-link peptidoglycan, so growing bacteria build weak walls and burst. Other antibiotics target bacterial 70S ribosomes, which differ from our cytoplasmic 80S ribosomes. Targeting structures that only bacteria have is what makes these drugs selectively toxic.
 K: Bacterial walls are made of peptidoglycan; its thickness and the presence of an outer membrane divide bacteria into Gram-positive and Gram-negative.
@@ -260,6 +265,7 @@ H: The endomembrane system
 P: The nuclear envelope, ER, Golgi apparatus, lysosomes, vesicles and plasma membrane form one connected system. Membrane and cargo flow between them in vesicles that bud from one compartment and fuse with the next. Mitochondria and chloroplasts are not part of it: they make most of their own membranes and import proteins directly.
 H: Organelles working together
 P: To make a secreted protein such as insulin, the nucleus provides the mRNA, ribosomes on the rough ER make the chain and thread it into the ER, the Golgi modifies and packages it, a vesicle carries it to the plasma membrane, and mitochondria supply the ATP for every step.
+D: bio-secretory-pathway
 H: How organelles are studied
 P: Much of what we know comes from **cell fractionation**. Cells are broken open in a cold, buffered solution of the same water potential as the cells, then spun in a centrifuge at increasing speeds. Large, dense parts settle first: nuclei at low speed, then mitochondria and chloroplasts, then fragments of ER and other membranes, and ribosomes only at very high speed. Each fraction can then be tested to find which reactions it carries out.
 P: **Investigate with the lab.** Go through every organelle in both cells and sort them into those that make proteins, those that release energy and those that store or transport materials.
@@ -428,6 +434,7 @@ H: Structure
 P: The ER is a single continuous membrane enclosing a space called the **lumen**, folded into flattened sacs (cisternae) and tubes. It is continuous with the outer nuclear membrane. **Rough ER** is studded with ribosomes and is mostly flattened sacs; **smooth ER** has no ribosomes and is mostly tubular.
 H: Rough ER: proteins
 P: Proteins made on bound ribosomes are threaded into the lumen as they grow. There they fold, with help from chaperone proteins, and many have sugar chains added (glycosylation) and disulfide bonds formed. Proteins that fold badly are held back and destroyed, a quality-control step. Correct proteins leave in vesicles for the Golgi.
+D: bio-secretory-pathway
 H: Smooth ER: lipids, detoxification and calcium
 - Makes **phospholipids and cholesterol** for membranes, and **steroid hormones** in cells such as the adrenal cortex and testes.
 - **Detoxifies** drugs and toxins, especially in liver cells, using enzymes that make them more water-soluble so they can be excreted.
@@ -465,6 +472,7 @@ H: Sorting and dispatch
 - **Membrane proteins** are delivered to the plasma membrane.
 - **Lysosomal enzymes** are tagged with **mannose-6-phosphate**, recognised by receptors in the trans Golgi that send them to lysosomes.
 P: In the genetic disorder I-cell disease, the tagging enzyme is missing, so lysosomal enzymes are secreted instead of delivered, and undigested material builds up in the lysosomes.
+D: bio-secretory-pathway
 P: **Investigate with the lab.** Find the Golgi apparatus, then the rough endoplasmic reticulum, and trace the route a protein takes between them.
 IX: organelle-id
 K: The Golgi modifies proteins and lipids as they pass from its cis to its trans face, and sorts them into vesicles by destination.
@@ -625,6 +633,7 @@ H: Passive and active
 - **Bulk transport**, endocytosis and exocytosis, moves large particles or volumes in vesicles and also uses energy.
 H: What decides the route
 P: Small, non-polar molecules (oxygen, carbon dioxide, steroid hormones) diffuse straight through the lipid. Ions are charged and surrounded by water, so they can't enter the hydrophobic core and need channels or pumps. Large polar molecules such as glucose and amino acids need carrier proteins. Macromolecules and particles such as bacteria need vesicles.
+D: bio-which-route
 H: Gradients
 P: A concentration gradient is a difference in concentration between two regions. For ions, the electrical difference across the membrane matters too, so ions move down an **electrochemical gradient**. Cells spend a large share of their ATP maintaining gradients, especially of sodium and potassium ions, which then power other transport.
 P: Rates matter as much as routes: the rate of passive transport rises with a steeper gradient, a larger surface area and a thinner barrier, which is why exchange surfaces such as alveoli and villi are large and thin.
@@ -661,6 +670,7 @@ H: What affects the rate
 P: **Fick's law** summarises the first three: rate ∝ (surface area × concentration difference) ÷ thickness. Lungs make the most of it with a huge alveolar area (around 70 m² in adults), walls only about 0.5 µm thick, and blood flow and breathing that keep the gradient steep.
 H: Surface area to volume ratio
 P: As an object gets bigger, its volume grows faster than its surface. A cell's needs depend on its volume, but its supply comes through its surface, so large organisms can't rely on diffusion across their outer surface and need specialised exchange surfaces and transport systems.
+D: bio-surface-area-volume
 X: Find the surface area to volume ratio of a cube with 2 µm sides and one with 4 µm sides.
 > 2 µm cube: area = 6 × 2² = 24 µm²; volume = 2³ = 8 µm³; ratio = 3 : 1.
 > 4 µm cube: area = 6 × 4² = 96 µm²; volume = 4³ = 64 µm³; ratio = 1.5 : 1. Doubling the side halves the ratio.
@@ -694,6 +704,7 @@ H: Effects on cells
 - In a solution of **higher** water potential (hypotonic), water enters. Animal cells swell and may burst (red blood cells undergo haemolysis); plant cells become **turgid**.
 - In a solution of **equal** water potential (isotonic), there is no net movement.
 - In a solution of **lower** water potential (hypertonic), water leaves. Animal cells shrink and crenate; in plant cells the membrane pulls away from the wall, called **plasmolysis**.
+D: bio-osmosis-cells
 X: A plant cell has ψs = −700 kPa and ψp = +300 kPa. It is placed in a solution with ψ = −500 kPa. Which way does water move?
 > Cell ψ = −700 + 300 = −400 kPa.
 > −400 kPa is higher than −500 kPa, so water moves out of the cell into the solution.
@@ -725,11 +736,13 @@ H: Channel proteins
 P: **Channel proteins** form water-filled pores through the membrane. Each is specific for certain ions or molecules: potassium channels let K⁺ through but exclude the smaller Na⁺, and aquaporins pass water. Many channels are **gated**, opening only in response to a voltage change or a binding molecule, which is how nerve impulses are produced.
 H: Carrier proteins
 P: **Carrier proteins** bind a specific molecule on one side of the membrane, change shape, and release it on the other side. Glucose transporters (GLUT proteins) carry glucose into most body cells this way. Carriers are slower than channels, because each cycle moves only one or a few molecules.
+D: bio-facilitated-diffusion
 H: How it differs from simple diffusion
 - Both are passive and go down the concentration gradient.
 - Facilitated diffusion needs **specific proteins**, so only particular substances use it.
 - Its rate **levels off** (saturates) at high concentrations once every carrier is busy, whereas simple diffusion keeps increasing in proportion to the gradient.
 P: Because the number of transporters limits the rate, cells can control uptake by adding or removing transporters. Insulin, for example, makes muscle and fat cells insert more GLUT4 transporters into their plasma membranes, speeding glucose uptake after a meal.
+D: bio-diffusion-saturation
 K: Facilitated diffusion is passive movement down a gradient through specific channel or carrier proteins; it saturates when all the proteins are in use.
 !: Thinking facilitated diffusion uses ATP because it involves proteins. The proteins only provide a path; the gradient supplies the energy.
 T: Facilitated diffusion | Passive movement of substances down a concentration gradient through specific membrane proteins
@@ -758,6 +771,7 @@ H: The sodium–potassium pump
 P: The **Na⁺/K⁺-ATPase**, discovered by Jens Skou (1957), pumps **3 Na⁺ out** and **2 K⁺ in** for each ATP used. It keeps sodium low and potassium high inside cells, makes the inside slightly negative, and in neurons maintains the resting potential needed for nerve impulses. It uses a large share of the body's ATP at rest, by some estimates around a fifth.
 H: Co-transport
 P: Some transporters use the energy stored in one gradient to move another substance. In the small intestine, the **sodium–glucose co-transporter (SGLT1)** lets Na⁺ flow into the cell down its gradient and carries glucose in with it, against the glucose gradient. The Na⁺/K⁺ pump on the other side of the cell keeps the sodium gradient going. This is **secondary active transport**: ATP is used, but indirectly.
+D: bio-active-transport-gut
 P: Oral rehydration solution, which has saved millions of lives in cholera and other diarrhoeal diseases, contains both glucose and salt because co-transport of glucose pulls sodium, and water with it, into the body.
 K: Active transport uses energy to move substances against their gradient; the Na⁺/K⁺ pump maintains the gradients that co-transporters then use.
 !: Saying active transport moves substances "from low to high concentration because it uses energy" without the mechanism. ATP changes the shape of a specific carrier protein; without the protein, energy alone moves nothing.
@@ -788,6 +802,7 @@ H: Endocytosis
 - **Receptor-mediated endocytosis**: specific molecules bind receptors gathered in pits coated with the protein **clathrin**; the pit pinches off as a vesicle. Cells take in cholesterol carried by LDL particles this way.
 H: Exocytosis
 P: In exocytosis, a vesicle moves to the plasma membrane and fuses with it, releasing its contents outside and adding its membrane to the cell surface. Examples include the secretion of digestive enzymes by the pancreas, release of neurotransmitter at synapses, and secretion of insulin. In regulated secretion, a signal (often a rise in Ca²⁺) triggers the fusion.
+D: bio-bulk-transport
 H: Energy and membrane balance
 P: Both processes need ATP, to rearrange the cytoskeleton and move vesicles. They also balance each other: endocytosis removes membrane from the surface and exocytosis adds it back, so the cell's surface area stays roughly constant.
 P: In familial hypercholesterolaemia, LDL receptors are faulty or missing, so cells can't take in cholesterol from the blood and blood cholesterol stays high, the discovery for which Brown and Goldstein shared a Nobel Prize in 1985.
@@ -856,6 +871,7 @@ H: How much potential
 - **Pluripotent**: can form all the body's cell types, but not the placenta: the inner cell mass of the blastocyst, the source of **embryonic stem cells**.
 - **Multipotent**: can form several related types: **haematopoietic stem cells** in bone marrow make all the blood cells.
 - **Unipotent**: can form one type, such as the cells in skin that make keratinocytes.
+D: bio-stem-cell-potency
 H: Medicine and ethics
 P: **Bone marrow (haematopoietic stem cell) transplants** have been used for decades to treat leukaemia and some inherited blood diseases. Embryonic stem cells could in principle replace any tissue, but obtaining them destroys an early embryo, which many people object to. In 2006 Takahashi and Yamanaka showed that adult mouse cells could be reprogrammed into **induced pluripotent stem cells (iPSCs)** by switching on four genes, avoiding embryos and allowing cells matched to the patient.
 P: Risks remain: pluripotent cells can form tumours if any stay undifferentiated, and many treatments sold commercially as "stem cell therapy" are unproven. In the UK, uses of human embryos are regulated by the Human Fertilisation and Embryology Authority.
@@ -923,6 +939,7 @@ P: A cell responds only to signals it has receptors for. **Water-soluble** signa
 H: Transduction and amplification
 P: At a cell-surface receptor, the signal is the **first messenger**; it doesn't enter the cell. Binding activates proteins that make a **second messenger** inside, such as **cyclic AMP**. Adrenaline binding to liver cells activates adenylyl cyclase, which makes cAMP, which activates protein kinase A, which sets off a chain of enzymes that breaks down glycogen into glucose. Each step activates many molecules of the next, so a few hormone molecules release vast numbers of glucose molecules.
 P: Because a response depends on the receptor and the cell's machinery, the same signal can do different things in different cells: adrenaline speeds the heart, relaxes airway muscle and releases glucose from the liver.
+D: bio-adrenaline-cascade
 K: Signals act through specific receptors; cell-surface receptors pass the message on through second messengers such as cAMP, amplifying it in a cascade.
 !: Thinking hormones enter every cell they reach. Only target cells with the right receptor respond, and water-soluble hormones never enter the cell at all.
 T: Receptor | A protein that binds a specific signal molecule and triggers a response
@@ -981,6 +998,7 @@ H: Cells to systems
 - A **tissue** is a group of similar cells working together, with the material between them: for example, cardiac muscle.
 - An **organ** is a structure made of several tissues working together: the heart contains muscle, connective tissue, nervous tissue and epithelium.
 - An **organ system** is a group of organs working together: the heart and blood vessels form the circulatory system.
+D: bio-levels-of-organisation
 IX: organ-systems
 H: Types of tissue
 P: Animals have four basic tissue types: **epithelial** (covering surfaces and lining tubes), **connective** (supporting and binding, including bone, cartilage, blood and fat), **muscle** (skeletal, cardiac and smooth), and **nervous**. Plants have **dermal** tissue (epidermis), **vascular** tissue (xylem and phloem) and **ground** tissue (such as mesophyll), produced by dividing regions called meristems.

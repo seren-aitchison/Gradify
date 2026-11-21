@@ -1,0 +1,76 @@
+{
+ "id": "bio-gram-walls",
+ "renderer": "envelope",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Bacterial cells",
+ "title": "Gram-positive and Gram-negative walls",
+ "caption": "Drawn to scale. A Gram-positive wall is a thick mesh of peptidoglycan that traps crystal violet, so the cell stains purple. A Gram-negative wall has only a thin peptidoglycan layer under an outer membrane of lipopolysaccharide; it loses the stain and is counterstained pink.",
+ "alt": "Two cross-sections of a bacterial cell surface, drawn to the same scale: Gram-positive with a thick peptidoglycan layer over the plasma membrane, and Gram-negative with lipopolysaccharide, an outer membrane, a thin peptidoglycan layer and the periplasm over the plasma membrane.",
+ "description": [
+  "Gram-positive (Staphylococcus): a peptidoglycan wall about 30 nm thick (20–80 nm), then the plasma membrane. It keeps crystal violet and stains purple.",
+  "Gram-negative (E. coli): lipopolysaccharide on an outer membrane, a thin peptidoglycan layer (2–7 nm), the periplasm, then the plasma membrane. It loses crystal violet and is counterstained pink.",
+  "The outer membrane keeps many antibiotics away from the Gram-negative wall."
+ ],
+ "panels": [
+  {
+   "gram": "positive",
+   "example": "Staphylococcus",
+   "stain": "purple",
+   "layers": [
+    {
+     "kind": "peptidoglycan",
+     "nm": 30,
+     "label": "thick peptidoglycan, 20–80 nm"
+    },
+    {
+     "kind": "plasma membrane",
+     "nm": 8,
+     "label": "plasma membrane"
+    },
+    {
+     "kind": "cytoplasm",
+     "nm": 10,
+     "label": "cytoplasm"
+    }
+   ]
+  },
+  {
+   "gram": "negative",
+   "example": "E. coli",
+   "stain": "pink",
+   "layers": [
+    {
+     "kind": "lps",
+     "nm": 8,
+     "label": "lipopolysaccharide"
+    },
+    {
+     "kind": "outer membrane",
+     "nm": 8,
+     "label": "outer membrane"
+    },
+    {
+     "kind": "peptidoglycan",
+     "nm": 4,
+     "label": "thin peptidoglycan, 2–7 nm"
+    },
+    {
+     "kind": "periplasm",
+     "nm": 10,
+     "label": "periplasm"
+    },
+    {
+     "kind": "plasma membrane",
+     "nm": 8,
+     "label": "plasma membrane"
+    },
+    {
+     "kind": "cytoplasm",
+     "nm": 10,
+     "label": "cytoplasm"
+    }
+   ]
+  }
+ ]
+}

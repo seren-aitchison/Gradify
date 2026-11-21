@@ -1,9 +1,10 @@
 // The biology the diagram checks rely on (kit/diagrams/bio-renderers.js): crosses, the genetic code, mutations,
-// pedigree reasoning and transport across membranes.
+// pedigree reasoning, transport across membranes, osmosis, the endomembrane route, stem cell potency and Gram walls.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf } from "../kit/diagrams/bio-renderers.js";
+import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
 
@@ -76,4 +77,88 @@ test("pyramid checks fail an energy pyramid that grows", () => {
 test("cell checks fail a prokaryote labelled with a nucleus", () => {
   const spec = { renderer: "cellmap", alt: "x", cell: "prokaryote", labels: ["nucleoid", "nucleus"] };
   assert.equal(render(spec).checks.every((c) => c.ok), false);
+});
+
+const allPass = (spec) => render(spec).checks.every((c) => c.ok);
+
+test("membrane: the concentration unit is printed, never the course unit", () => {
+  const spec = { renderer: "membrane", alt: "x", unit: "u02", concUnit: "mmol dm^{−3}", sides: [{ id: "out", label: "outside", conc: { glucose: 5 } }, { id: "in", label: "inside", conc: { glucose: 1 } }],
+    moves: [{ substance: "glucose", kind: "carrier", from: "out", to: "in" }] };
+  const r = render(spec);
+  assert.ok(r.wide.includes("concentrations in") && !r.wide.includes("u02"));
+});
+
+test("membrane: a pump's display label does not hide its gradient check", () => {
+  const spec = { renderer: "membrane", alt: "x", sides: [{ id: "out", label: "outside", conc: { "Na⁺": 145 } }, { id: "in", label: "inside", conc: { "Na⁺": 12 } }],
+    moves: [{ substance: "Na⁺", label: "3 Na⁺", count: 3, kind: "active", atp: true, from: "in", to: "out" }] };
+  assert.ok(render(spec).checks.some((c) => /against its gradient/.test(c.name)));
+  assert.equal(allPass(spec), true);
+  spec.sides[1].conc["Na⁺"] = 200; // now it would run downhill: not active transport
+  assert.equal(allPass(spec), false);
+});
+
+test("membrane: the Na⁺/K⁺ pump moves one net positive charge out per cycle", () => {
+  assert.equal(chargeOf("Na⁺"), 1); assert.equal(chargeOf("Ca²⁺"), 2); assert.equal(chargeOf("Cl⁻"), -1); assert.equal(chargeOf("glucose"), 0);
+  const spec = { renderer: "membrane", alt: "x", sides: [{ id: "out", label: "outside", conc: { "Na⁺": 145, "K⁺": 4 } }, { id: "in", label: "inside", conc: { "Na⁺": 12, "K⁺": 140 } }],
+    proteins: { pump: "Na⁺/K⁺ pump" },
+    moves: [{ substance: "Na⁺", count: 3, kind: "active", atp: true, from: "in", to: "out", protein: "pump" }, { substance: "K⁺", count: 2, kind: "active", atp: true, from: "out", to: "in", protein: "pump" }],
+    claims: [{ type: "netCharge", protein: "pump", out: 1 }] };
+  assert.equal(allPass(spec), true);
+  spec.claims[0].out = -1;
+  assert.equal(allPass(spec), false);
+});
+
+test("membrane: co-transport needs something running down its gradient, and no ATP", () => {
+  const spec = { renderer: "membrane", alt: "x", cell: "cell", proteins: { s: "SGLT1" },
+    sides: [{ id: "lumen", label: "lumen", conc: { "Na⁺": 140, glucose: 0.5 } }, { id: "cell", label: "cell", conc: { "Na⁺": 12, glucose: 8 } }],
+    moves: [{ substance: "Na⁺", kind: "cotransport", from: "lumen", to: "cell", protein: "s" }, { substance: "glucose", kind: "cotransport", from: "lumen", to: "cell", protein: "s" }] };
+  assert.equal(allPass(spec), true);
+  spec.sides[1].conc["Na⁺"] = 160; // sodium would have to go uphill too: nothing pays
+  assert.equal(allPass(spec), false);
+  spec.sides[1].conc["Na⁺"] = 12; spec.moves[1].atp = true;
+  assert.equal(allPass(spec), false);
+});
+
+test("osmosis: water moves to the lower water potential, and the cell responds as its kind does", () => {
+  assert.equal(osmoticOutcome("animal", -750, 0, 0), "bursts");
+  assert.equal(osmoticOutcome("animal", -750, 0, -1500), "crenated");
+  assert.equal(osmoticOutcome("plant", -700, 300, 0), "turgid");
+  assert.equal(osmoticOutcome("plant", -700, 300, -400), "unchanged");
+  assert.equal(osmoticOutcome("plant", -700, 300, -500), "flaccid"); // the lesson's worked example: water leaves
+  assert.equal(osmoticOutcome("plant", -700, 300, -1400), "plasmolysed");
+  const spec = { renderer: "tonicity", alt: "x", columns: ["a"], rows: [{ cell: "plant", label: "plant cell", psiS: -700, psiP: 300, panels: [{ solution: 0, outcome: "bursts" }] }] };
+  assert.equal(allPass(spec), false); // a walled plant cell does not burst in water
+});
+
+test("route: every arrow is a real step, and mitochondria are not on the endomembrane route", () => {
+  const node = (id, is, col) => ({ id, label: is, is, col, row: 0 });
+  const spec = { renderer: "route", alt: "x", layout: "grid", nodes: [node("a", "rough ER", 0), node("b", "transport vesicle", 1), node("c", "Golgi apparatus", 2)],
+    edges: [{ from: "a", to: "b" }, { from: "b", to: "c" }] };
+  assert.equal(allPass(spec), true);
+  spec.edges = [{ from: "a", to: "c" }, { from: "c", to: "b" }]; // ER straight into the Golgi, then back: not how cargo travels
+  assert.equal(allPass(spec), false);
+  spec.edges = [{ from: "a", to: "b" }, { from: "b", to: "c" }]; spec.nodes[1].is = "mitochondrion";
+  assert.equal(allPass(spec), false);
+});
+
+test("lineage: potency narrows along a line of descent unless the cell is reprogrammed", () => {
+  const n = (id, cell, potency) => ({ id, label: cell, cell, potency });
+  const spec = { renderer: "lineage", alt: "x", layout: "line", nodes: [n("a", "zygote", "totipotent"), n("b", "inner cell mass", "pluripotent"), n("c", "haematopoietic stem cell", "multipotent")],
+    edges: [{ from: "a", to: "b" }, { from: "b", to: "c" }] };
+  assert.equal(allPass(spec), true);
+  spec.nodes[2].potency = "pluripotent"; // a haematopoietic stem cell cannot make every body cell type
+  assert.equal(allPass(spec), false);
+  const ipsc = { renderer: "lineage", alt: "x", layout: "line", nodes: [n("a", "skin fibroblast", "specialised"), n("b", "induced pluripotent stem cell", "pluripotent")], edges: [{ from: "a", to: "b" }] };
+  assert.equal(allPass(ipsc), false);
+  ipsc.edges[0].reprogram = true;
+  assert.equal(allPass(ipsc), true);
+});
+
+test("Gram walls: thickness, outer membrane and stain must agree", () => {
+  const pos = { gram: "positive", example: "Staphylococcus", stain: "purple", layers: [{ kind: "peptidoglycan", nm: 30 }, { kind: "plasma membrane", nm: 8 }, { kind: "cytoplasm", nm: 10 }] };
+  const spec = { renderer: "envelope", alt: "x", panels: [pos] };
+  assert.equal(allPass(spec), true);
+  pos.stain = "pink"; assert.equal(allPass(spec), false);
+  pos.stain = "purple"; pos.example = "E. coli"; assert.equal(allPass(spec), false);
+  pos.example = "Staphylococcus"; pos.layers.unshift({ kind: "outer membrane", nm: 8 }); assert.equal(allPass(spec), false);
 });

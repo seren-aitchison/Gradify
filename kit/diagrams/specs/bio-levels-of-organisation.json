@@ -20,9 +20,16 @@
   "Ecosystems: community + non-living.",
   "Biosphere: all ecosystems on Earth."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u02",
+   "lesson": "Cellular organisation"
+  }
+ ],
  "layout": "grid",
- "boxWidth": 140,
- "rowHeight": 104,
+ "boxWidth": 118,
+ "rowHeight": 118,
  "nodes": [
   {
    "id": "l0",

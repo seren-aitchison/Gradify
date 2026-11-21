@@ -1,0 +1,60 @@
+{
+ "id": "bio-which-route",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Membrane transport",
+ "title": "How does it cross the membrane?",
+ "caption": "Three questions about the cargo choose its route. Size first: particles and macromolecules go in vesicles. Then the gradient: anything moved against it needs a pump and ATP. Finally the chemistry: small non-polar molecules slip through the lipid, while ions and polar molecules need a protein.",
+ "alt": "A flow chart of questions leading to bulk transport, active transport, simple diffusion, osmosis or facilitated diffusion.",
+ "description": [
+  "Is it a single small molecule or ion, not a macromolecule or particle? If not, it is moved in vesicles by endocytosis or exocytosis, using ATP.",
+  "Is it moving down its concentration gradient? If not, a pump moves it by active transport, using ATP.",
+  "Is it charged or polar? If not (oxygen, carbon dioxide, steroids), it crosses by simple diffusion through the lipid.",
+  "Is it a solute such as an ion, glucose or an amino acid? Then it crosses by facilitated diffusion through a channel or carrier protein.",
+  "If it is water itself, it crosses by osmosis, much of it through aquaporins."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Is it a single small molecule or ion, not a macromolecule or a particle such as a bacterium?",
+   "yes": "q2",
+   "no": "bulk"
+  },
+  "bulk": {
+   "outcome": "Endocytosis or exocytosis: carried in a vesicle, using ATP",
+   "tone": "warn"
+  },
+  "q2": {
+   "q": "Is it moving down its concentration gradient?",
+   "yes": "q3",
+   "no": "active"
+  },
+  "active": {
+   "outcome": "Active transport: a pump moves it, using ATP",
+   "tone": "warn"
+  },
+  "q3": {
+   "q": "Is it charged or polar?",
+   "yes": "q4",
+   "no": "simple"
+  },
+  "simple": {
+   "outcome": "Simple diffusion through the lipid: O₂, CO₂, steroids",
+   "tone": "good"
+  },
+  "q4": {
+   "q": "Is it a solute (an ion, glucose, an amino acid) rather than water itself?",
+   "yes": "facil",
+   "no": "osmosis"
+  },
+  "osmosis": {
+   "outcome": "Osmosis, much of it through aquaporins",
+   "tone": "good"
+  },
+  "facil": {
+   "outcome": "Facilitated diffusion: a channel protein for ions, a carrier protein for glucose and amino acids",
+   "tone": "good"
+  }
+ }
+}

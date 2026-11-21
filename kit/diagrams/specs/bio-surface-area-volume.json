@@ -1,0 +1,107 @@
+{
+ "id": "bio-surface-area-volume",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Diffusion",
+ "title": "Surface area to volume ratio falls as a cell grows",
+ "caption": "For a cube of side L the surface area is 6L² and the volume L³, so the ratio is 6/L: doubling the side halves it. A 2 µm cube has 3 µm² of surface for every µm³ of volume; a 4 µm cube only 1.5.",
+ "alt": "A curve of surface area to volume ratio against the side of a cube, falling steeply from 12 at 0.5 micrometres to 1 at 6 micrometres, with points marked at 1, 2 and 4 micrometres.",
+ "description": [
+  "The ratio is surface area ÷ volume = 6L² ÷ L³ = 6/L.",
+  "A 1 µm cube: 6 µm² ÷ 1 µm³ = 6 per µm.",
+  "A 2 µm cube: 24 µm² ÷ 8 µm³ = 3 per µm.",
+  "A 4 µm cube: 96 µm² ÷ 64 µm³ = 1.5 per µm.",
+  "Each doubling of size halves the surface available to supply each unit of volume."
+ ],
+ "range": {
+  "x": [
+   0,
+   6.4
+  ],
+  "y": [
+   0,
+   13
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "side of the cube, L / µm",
+  "surface area : volume / µm^{−1}"
+ ],
+ "curves": [
+  {
+   "expr": "6*x^2/x^3",
+   "domain": [
+    0.46,
+    6.4
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 6,
+   "label": "1 µm: 6 ÷ 1 = 6",
+   "colour": "a2"
+  },
+  {
+   "x": 2,
+   "y": 3,
+   "label": "2 µm: 24 ÷ 8 = 3",
+   "colour": "a2"
+  },
+  {
+   "x": 4,
+   "y": 1.5,
+   "label": "4 µm: 96 ÷ 64 = 1.5",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "6*x^2/x^3",
+   "x": 1,
+   "y": 6,
+   "name": "a 1 µm cube: 6 µm² of surface, 1 µm³ of volume, ratio 6"
+  },
+  {
+   "type": "point",
+   "expr": "6*x^2/x^3",
+   "x": 2,
+   "y": 3,
+   "name": "a 2 µm cube: 24 µm² of surface, 8 µm³ of volume, ratio 3"
+  },
+  {
+   "type": "point",
+   "expr": "6*x^2/x^3",
+   "x": 4,
+   "y": 1.5,
+   "name": "a 4 µm cube: 96 µm² of surface, 64 µm³ of volume, ratio 1.5"
+  }
+ ]
+}

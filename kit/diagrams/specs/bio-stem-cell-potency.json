@@ -1,0 +1,78 @@
+{
+ "id": "bio-stem-cell-potency",
+ "renderer": "lineage",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Stem cells",
+ "title": "Potency narrows as cells specialise",
+ "caption": "Following one line of descent from the zygote to a red blood cell, each cell can make fewer kinds of cell than the one before. Bone marrow transplants use the multipotent haematopoietic stem cells; induced pluripotent stem cells are adult cells turned back to the pluripotent stage.",
+ "alt": "Five boxes in order: zygote (totipotent), inner cell mass (pluripotent), haematopoietic stem cell (multipotent), erythroid progenitor (unipotent) and red blood cell (specialised).",
+ "description": [
+  "Zygote: totipotent, can make every cell type, and the placenta.",
+  "Inner cell mass: pluripotent, can make every body cell type, not the placenta.",
+  "Haematopoietic stem cell: multipotent, can make all the blood cells.",
+  "Erythroid progenitor: unipotent, can make red blood cells only.",
+  "Red blood cell: specialised, with no nucleus: cannot divide."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "p0",
+   "label": "zygote",
+   "sub": "totipotent: every cell type, and the placenta",
+   "cell": "zygote",
+   "potency": "totipotent",
+   "tone": "a2"
+  },
+  {
+   "id": "p1",
+   "label": "inner cell mass",
+   "sub": "pluripotent: every body cell type, not the placenta",
+   "cell": "inner cell mass",
+   "potency": "pluripotent",
+   "tone": "a5"
+  },
+  {
+   "id": "p2",
+   "label": "haematopoietic stem cell",
+   "sub": "multipotent: all the blood cells",
+   "cell": "haematopoietic stem cell",
+   "potency": "multipotent",
+   "tone": "a1"
+  },
+  {
+   "id": "p3",
+   "label": "erythroid progenitor",
+   "sub": "unipotent: red blood cells only",
+   "cell": "erythroid progenitor",
+   "potency": "unipotent",
+   "tone": "a4"
+  },
+  {
+   "id": "p4",
+   "label": "red blood cell",
+   "sub": "specialised: no nucleus: cannot divide",
+   "cell": "red blood cell",
+   "potency": "specialised",
+   "tone": "a3"
+  }
+ ],
+ "edges": [
+  {
+   "from": "p0",
+   "to": "p1"
+  },
+  {
+   "from": "p1",
+   "to": "p2"
+  },
+  {
+   "from": "p2",
+   "to": "p3"
+  },
+  {
+   "from": "p3",
+   "to": "p4"
+  }
+ ]
+}

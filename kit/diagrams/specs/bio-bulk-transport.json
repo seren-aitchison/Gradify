@@ -1,0 +1,52 @@
+{
+ "id": "bio-bulk-transport",
+ "renderer": "membrane",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Endocytosis and exocytosis",
+ "title": "Endocytosis and exocytosis",
+ "caption": "Cargo too big for any channel or carrier crosses wrapped in membrane. A phagocyte engulfs a whole bacterium; receptors in clathrin-coated pits gather LDL particles; and secretory vesicles fuse with the membrane to release enzymes. All three use ATP.",
+ "alt": "A phospholipid bilayer with a bacterium being engulfed by phagocytosis, an LDL particle taken in by receptor-mediated endocytosis, and digestive enzymes leaving the cell by exocytosis, each in a vesicle.",
+ "description": [
+  "Phagocytosis: the membrane flows around a bacterium and encloses it in a vesicle, which then fuses with lysosomes.",
+  "Receptor-mediated endocytosis: LDL particles carrying cholesterol bind receptors in clathrin-coated pits, which pinch off as vesicles.",
+  "Exocytosis: a vesicle of digestive enzymes fuses with the plasma membrane and releases them outside, adding its membrane to the surface.",
+  "All three use ATP to move vesicles and reshape the cytoskeleton."
+ ],
+ "sides": [
+  {
+   "id": "out",
+   "label": "outside the cell"
+  },
+  {
+   "id": "in",
+   "label": "cytoplasm"
+  }
+ ],
+ "moves": [
+  {
+   "substance": "bacterium",
+   "kind": "endocytosis",
+   "atp": true,
+   "from": "out",
+   "to": "in",
+   "note": "phagocytosis"
+  },
+  {
+   "substance": "LDL particles",
+   "kind": "endocytosis",
+   "atp": true,
+   "from": "out",
+   "to": "in",
+   "note": "receptor-mediated endocytosis"
+  },
+  {
+   "substance": "digestive enzymes",
+   "kind": "exocytosis",
+   "atp": true,
+   "from": "in",
+   "to": "out",
+   "note": "exocytosis"
+  }
+ ]
+}

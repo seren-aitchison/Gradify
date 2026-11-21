@@ -1,0 +1,106 @@
+{
+ "id": "bio-adrenaline-cascade",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Cell signalling",
+ "title": "From one hormone to many glucose molecules",
+ "caption": "Adrenaline never enters the liver cell: it binds a receptor in the membrane, and the cell makes its own second messenger, cyclic AMP. Each step activates many molecules of the next, so a few hormone molecules release vast numbers of glucose molecules.",
+ "alt": "Seven boxes in order: adrenaline, a G-protein-coupled receptor, adenylyl cyclase, cyclic AMP, protein kinase A, a chain of enzymes, and glucose released from glycogen.",
+ "description": [
+  "Adrenaline: first messenger: stays outside the cell.",
+  "G-protein-coupled receptor: in the membrane: the hormone binds.",
+  "Adenylyl cyclase: switched on inside the membrane.",
+  "Cyclic AMP: second messenger, made inside the cell.",
+  "Protein kinase A: activated by cAMP.",
+  "Chain of enzymes: each activates many of the next.",
+  "Glucose: released from glycogen in the liver."
+ ],
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 126,
+ "nodes": [
+  {
+   "id": "c0",
+   "label": "adrenaline",
+   "sub": "first messenger: stays outside the cell",
+   "col": 0,
+   "row": 0,
+   "tone": "a4"
+  },
+  {
+   "id": "c1",
+   "label": "G-protein-coupled receptor",
+   "sub": "in the membrane: the hormone binds",
+   "col": 1,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "c2",
+   "label": "adenylyl cyclase",
+   "sub": "switched on inside the membrane",
+   "col": 2,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "c3",
+   "label": "cyclic AMP",
+   "sub": "second messenger, made inside the cell",
+   "col": 3,
+   "row": 0,
+   "tone": "a2"
+  },
+  {
+   "id": "c4",
+   "label": "protein kinase A",
+   "sub": "activated by cAMP",
+   "col": 3,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "c5",
+   "label": "chain of enzymes",
+   "sub": "each activates many of the next",
+   "col": 2,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "c6",
+   "label": "glucose",
+   "sub": "released from glycogen in the liver",
+   "col": 1,
+   "row": 1,
+   "tone": "a1"
+  }
+ ],
+ "edges": [
+  {
+   "from": "c0",
+   "to": "c1"
+  },
+  {
+   "from": "c1",
+   "to": "c2"
+  },
+  {
+   "from": "c2",
+   "to": "c3"
+  },
+  {
+   "from": "c3",
+   "to": "c4"
+  },
+  {
+   "from": "c4",
+   "to": "c5"
+  },
+  {
+   "from": "c5",
+   "to": "c6"
+  }
+ ]
+}

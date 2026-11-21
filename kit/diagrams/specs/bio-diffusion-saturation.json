@@ -1,0 +1,120 @@
+{
+ "id": "bio-diffusion-saturation",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Facilitated diffusion",
+ "title": "Facilitated diffusion levels off",
+ "caption": "The rate of simple diffusion rises in proportion to the concentration difference. Facilitated diffusion is faster at first but levels off once every carrier protein is busy, so adding more transporters, not a steeper gradient, is what speeds it further.",
+ "alt": "Two lines of rate against concentration difference: a straight line through the origin for simple diffusion, and a curve for facilitated diffusion that rises steeply and then flattens towards a dashed maximum.",
+ "description": [
+  "Simple diffusion: the rate is proportional to the concentration difference, so doubling it doubles the rate.",
+  "Facilitated diffusion: the rate reaches half its maximum at a difference of 2 mmol per dm³, then flattens.",
+  "The dashed line is the maximum rate, reached only when every carrier is working as fast as it can.",
+  "The rate is in arbitrary units: the shapes, not the numbers, are the point."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   15
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   3,
+   6,
+   9,
+   12,
+   15
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "concentration difference / mmol dm^{−3}",
+  "rate of uptake (arbitrary units)"
+ ],
+ "curves": [
+  {
+   "expr": "12*x/(2+x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "0.5*x",
+   "colour": "a3"
+  }
+ ],
+ "marks": [
+  {
+   "y": 12,
+   "label": "maximum: every carrier busy"
+  }
+ ],
+ "legend": [
+  [
+   "facilitated diffusion",
+   "a1"
+  ],
+  [
+   "simple diffusion",
+   "a3"
+  ]
+ ],
+ "legendData": [
+  8.5,
+  3.2
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*x",
+   "x": 10,
+   "y": 5,
+   "name": "simple diffusion at a difference of 10: rate 5"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*x",
+   "x": 20,
+   "y": 10,
+   "name": "doubling the difference to 20 doubles the simple rate to 10"
+  },
+  {
+   "type": "point",
+   "expr": "12*x/(2+x)",
+   "x": 2,
+   "y": 6,
+   "name": "facilitated diffusion reaches half its maximum (6 of 12) at a difference of 2"
+  },
+  {
+   "type": "value",
+   "expr": "12*x/(2+x)",
+   "x": 20,
+   "between": [
+    10.8,
+    12
+   ],
+   "name": "by a difference of 20 facilitated diffusion is within 10% of its maximum, 12"
+  },
+  {
+   "type": "slope",
+   "expr": "12*x/(2+x)",
+   "x": 18,
+   "value": 0.06,
+   "name": "near the top the facilitated curve has almost flattened: gradient 0.06, against 6 at the start"
+  }
+ ]
+}

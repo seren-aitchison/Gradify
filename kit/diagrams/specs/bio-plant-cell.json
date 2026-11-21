@@ -1,0 +1,31 @@
+{
+ "id": "bio-plant-cell",
+ "renderer": "cellmap",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Plant cells",
+ "title": "A plant cell",
+ "caption": "A plant cell has everything an animal cell needs plus three extras: a cellulose cell wall, chloroplasts and a large permanent vacuole bounded by the tonoplast. Plasmodesmata cross the wall to join neighbouring cells.",
+ "alt": "A plant leaf cell with labels for the cell wall, plasmodesmata, plasma membrane, cytoplasm, nucleus, mitochondrion, chloroplast, vacuole, tonoplast, rough endoplasmic reticulum, Golgi apparatus and ribosomes.",
+ "description": [
+  "The cellulose cell wall lies outside the plasma membrane; plasmodesmata are channels through it.",
+  "The large permanent vacuole, full of cell sap, is surrounded by the tonoplast.",
+  "Chloroplasts carry out photosynthesis; root cells, in the dark, have none.",
+  "Like an animal cell it has a nucleus, mitochondria, rough ER, a Golgi apparatus and ribosomes."
+ ],
+ "cell": "plant",
+ "labels": [
+  "cell wall",
+  "plasmodesmata",
+  "plasma membrane",
+  "cytoplasm",
+  "nucleus",
+  "mitochondrion",
+  "chloroplast",
+  "vacuole",
+  "tonoplast",
+  "rough ER",
+  "Golgi apparatus",
+  "80S ribosomes"
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "bio-facilitated-diffusion",
+ "renderer": "membrane",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Facilitated diffusion",
+ "title": "Three ways down a gradient",
+ "caption": "Oxygen, small and non-polar, diffuses straight through the lipid. Potassium ions are charged, so they need a channel; glucose is large and polar, so it needs a carrier. All three move down their own gradients, so none of them uses ATP.",
+ "alt": "A phospholipid bilayer with oxygen diffusing straight through it, potassium ions leaving through a channel protein and glucose entering through a carrier protein, each with the concentration on either side.",
+ "description": [
+  "Oxygen: 0.05 outside, 0.02 inside; it crosses the bilayer by simple diffusion.",
+  "Potassium ions: 140 inside, 4 outside; they leave through a potassium channel.",
+  "Glucose: 5 outside, 0.5 inside; it enters on a GLUT carrier protein.",
+  "Concentrations are typical values in mmol per dm³."
+ ],
+ "concUnit": "mmol dm^{−3}",
+ "sides": [
+  {
+   "id": "out",
+   "label": "tissue fluid outside the cell",
+   "conc": {
+    "O₂": 0.05,
+    "K⁺": 4,
+    "glucose": 5
+   }
+  },
+  {
+   "id": "in",
+   "label": "cytoplasm",
+   "conc": {
+    "O₂": 0.02,
+    "K⁺": 140,
+    "glucose": 0.5
+   }
+  }
+ ],
+ "moves": [
+  {
+   "substance": "O₂",
+   "kind": "simple",
+   "from": "out",
+   "to": "in"
+  },
+  {
+   "substance": "K⁺",
+   "kind": "channel",
+   "from": "in",
+   "to": "out",
+   "note": "potassium channel"
+  },
+  {
+   "substance": "glucose",
+   "kind": "carrier",
+   "from": "out",
+   "to": "in",
+   "note": "carrier protein (GLUT)"
+  }
+ ]
+}

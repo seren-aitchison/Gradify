@@ -20350,7 +20350,13 @@
   ],
   "course": "biology",
   "lesson": "Levels of biological organisation",
-  "also": [],
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u02",
+    "lesson": "Cellular organisation"
+   }
+  ],
   "renderer": "flow",
   "status": "validated",
   "review": null,
@@ -20363,6 +20369,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in biology: Cellular organisation",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -20594,6 +20605,1075 @@
     "name": "the lesson exists",
     "ok": true,
     "detail": "kit/courses/biology/notes/u01.js: Graphs and data presentation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-active-transport-gut": {
+  "title": "Pumping and co-transport in a gut lining cell",
+  "caption": "The Na⁺/K⁺ pump uses ATP to push 3 Na⁺ out into the blood for every 2 K⁺ it brings in, keeping sodium low inside the cell. Sodium then flows in from the gut through SGLT1 and drags glucose with it, against the glucose gradient: secondary active transport. Glucose leaves for the blood down its gradient through GLUT2.",
+  "alt": "A gut lining cell between the gut lumen above and the blood below. On the gut side, sodium ions and glucose enter together through a co-transporter. On the blood side, a sodium-potassium pump moves three sodium ions out and two potassium ions in using ATP, and glucose leaves through a carrier protein.",
+  "description": [
+   "Gut side: Na⁺ flows in from 140 to 12 mmol per dm³, down its gradient, through the SGLT1 co-transporter.",
+   "Glucose enters through the same protein from 0.5 to 8 mmol per dm³, against its own gradient: the sodium gradient pays for it.",
+   "Blood side: the Na⁺/K⁺ pump uses one ATP to move 3 Na⁺ out (12 to 145) and 2 K⁺ in (4 to 140), both against their gradients.",
+   "Each cycle of the pump carries one more positive charge out than in, so the inside of the cell is left negative.",
+   "Glucose leaves for the blood (8 to 5) by facilitated diffusion through GLUT2.",
+   "Concentrations are illustrative: SGLT1 goes on absorbing glucose even when the gut holds less than the cell."
+  ],
+  "course": "biology",
+  "lesson": "Active transport",
+  "also": [],
+  "renderer": "membrane",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Active transport"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every move joins two neighbouring compartments across one membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Na⁺: a concentration is given on both sides",
+    "ok": true,
+    "detail": "140 → 12"
+   },
+   {
+    "name": "glucose: a concentration is given on both sides",
+    "ok": true,
+    "detail": "0.5 → 8"
+   },
+   {
+    "name": "3 Na⁺: a concentration is given on both sides",
+    "ok": true,
+    "detail": "12 → 145"
+   },
+   {
+    "name": "active transport of 3 Na⁺ uses ATP",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3 Na⁺ is pumped against its gradient",
+    "ok": true,
+    "detail": "12 → 145"
+   },
+   {
+    "name": "2 K⁺: a concentration is given on both sides",
+    "ok": true,
+    "detail": "4 → 140"
+   },
+   {
+    "name": "active transport of 2 K⁺ uses ATP",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 K⁺ is pumped against its gradient",
+    "ok": true,
+    "detail": "4 → 140"
+   },
+   {
+    "name": "glucose: a concentration is given on both sides",
+    "ok": true,
+    "detail": "8 → 5"
+   },
+   {
+    "name": "glucose moves down its gradient by carrier protein",
+    "ok": true,
+    "detail": "8 → 5"
+   },
+   {
+    "name": "carrier protein needs no ATP (glucose)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SGLT1 co-transporter: Na⁺ runs down its gradient and drives the transport",
+    "ok": true,
+    "detail": "Na⁺ 140 → 12; glucose 0.5 → 8"
+   },
+   {
+    "name": "SGLT1 co-transporter carries glucose against its own gradient",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SGLT1 co-transporter uses no ATP directly (secondary active transport)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each cycle of the Na⁺/K⁺ pump carries a net 1 positive charge out of the cell, leaving the inside more negative",
+    "ok": true,
+    "detail": "1 computed from the ions moved"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-adrenaline-cascade": {
+  "title": "From one hormone to many glucose molecules",
+  "caption": "Adrenaline never enters the liver cell: it binds a receptor in the membrane, and the cell makes its own second messenger, cyclic AMP. Each step activates many molecules of the next, so a few hormone molecules release vast numbers of glucose molecules.",
+  "alt": "Seven boxes in order: adrenaline, a G-protein-coupled receptor, adenylyl cyclase, cyclic AMP, protein kinase A, a chain of enzymes, and glucose released from glycogen.",
+  "description": [
+   "Adrenaline: first messenger: stays outside the cell.",
+   "G-protein-coupled receptor: in the membrane: the hormone binds.",
+   "Adenylyl cyclase: switched on inside the membrane.",
+   "Cyclic AMP: second messenger, made inside the cell.",
+   "Protein kinase A: activated by cAMP.",
+   "Chain of enzymes: each activates many of the next.",
+   "Glucose: released from glycogen in the liver."
+  ],
+  "course": "biology",
+  "lesson": "Cell signalling",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Cell signalling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-animal-cell": {
+  "title": "An animal cell",
+  "caption": "An animal cell has a nucleus, mitochondria, rough and smooth ER, a Golgi apparatus, lysosomes and a pair of centrioles, all inside a flexible plasma membrane. There is no cell wall and no chloroplast.",
+  "alt": "An animal cell with labels for the plasma membrane, cytoplasm, nucleus, nucleolus, mitochondrion, rough and smooth endoplasmic reticulum, Golgi apparatus, lysosome, ribosomes and centrioles.",
+  "description": [
+   "The nucleus, with its nucleolus, holds the DNA.",
+   "Mitochondria carry out aerobic respiration and make ATP.",
+   "Rough ER (studded with ribosomes) makes proteins; smooth ER makes lipids.",
+   "The Golgi apparatus modifies, sorts and dispatches proteins in vesicles.",
+   "Lysosomes digest worn-out parts and engulfed material.",
+   "The centrioles organise microtubules, including the spindle.",
+   "Only a plasma membrane bounds the cell: there is no wall."
+  ],
+  "course": "biology",
+  "lesson": "Animal cells",
+  "also": [],
+  "renderer": "cellmap",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Animal cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cell type animal is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled structure is found in a animal cell",
+    "ok": true,
+    "detail": "11 structures"
+   },
+   {
+    "name": "every labelled structure is drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a animal cell has no cell wall, chloroplast",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-bulk-transport": {
+  "title": "Endocytosis and exocytosis",
+  "caption": "Cargo too big for any channel or carrier crosses wrapped in membrane. A phagocyte engulfs a whole bacterium; receptors in clathrin-coated pits gather LDL particles; and secretory vesicles fuse with the membrane to release enzymes. All three use ATP.",
+  "alt": "A phospholipid bilayer with a bacterium being engulfed by phagocytosis, an LDL particle taken in by receptor-mediated endocytosis, and digestive enzymes leaving the cell by exocytosis, each in a vesicle.",
+  "description": [
+   "Phagocytosis: the membrane flows around a bacterium and encloses it in a vesicle, which then fuses with lysosomes.",
+   "Receptor-mediated endocytosis: LDL particles carrying cholesterol bind receptors in clathrin-coated pits, which pinch off as vesicles.",
+   "Exocytosis: a vesicle of digestive enzymes fuses with the plasma membrane and releases them outside, adding its membrane to the surface.",
+   "All three use ATP to move vesicles and reshape the cytoskeleton."
+  ],
+  "course": "biology",
+  "lesson": "Endocytosis and exocytosis",
+  "also": [],
+  "renderer": "membrane",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Endocytosis and exocytosis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every move joins two neighbouring compartments across one membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endocytosis moves bacterium into the cell",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endocytosis uses ATP",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endocytosis moves LDL particles into the cell",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endocytosis uses ATP",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "exocytosis moves digestive enzymes out of the cell",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "exocytosis uses ATP",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-diffusion-saturation": {
+  "title": "Facilitated diffusion levels off",
+  "caption": "The rate of simple diffusion rises in proportion to the concentration difference. Facilitated diffusion is faster at first but levels off once every carrier protein is busy, so adding more transporters, not a steeper gradient, is what speeds it further.",
+  "alt": "Two lines of rate against concentration difference: a straight line through the origin for simple diffusion, and a curve for facilitated diffusion that rises steeply and then flattens towards a dashed maximum.",
+  "description": [
+   "Simple diffusion: the rate is proportional to the concentration difference, so doubling it doubles the rate.",
+   "Facilitated diffusion: the rate reaches half its maximum at a difference of 2 mmol per dm³, then flattens.",
+   "The dashed line is the maximum rate, reached only when every carrier is working as fast as it can.",
+   "The rate is in arbitrary units: the shapes, not the numbers, are the point."
+  ],
+  "course": "biology",
+  "lesson": "Facilitated diffusion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Facilitated diffusion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "simple diffusion at a difference of 10: rate 5",
+    "ok": true,
+    "detail": "y(10) = 5"
+   },
+   {
+    "name": "doubling the difference to 20 doubles the simple rate to 10",
+    "ok": true,
+    "detail": "y(20) = 10"
+   },
+   {
+    "name": "facilitated diffusion reaches half its maximum (6 of 12) at a difference of 2",
+    "ok": true,
+    "detail": "y(2) = 6"
+   },
+   {
+    "name": "by a difference of 20 facilitated diffusion is within 10% of its maximum, 12",
+    "ok": true,
+    "detail": "12*x/(2+x) at 20 = 10.91; expected 10.8–12"
+   },
+   {
+    "name": "near the top the facilitated curve has almost flattened: gradient 0.06, against 6 at the start",
+    "ok": true,
+    "detail": "gradient 0.0600"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-facilitated-diffusion": {
+  "title": "Three ways down a gradient",
+  "caption": "Oxygen, small and non-polar, diffuses straight through the lipid. Potassium ions are charged, so they need a channel; glucose is large and polar, so it needs a carrier. All three move down their own gradients, so none of them uses ATP.",
+  "alt": "A phospholipid bilayer with oxygen diffusing straight through it, potassium ions leaving through a channel protein and glucose entering through a carrier protein, each with the concentration on either side.",
+  "description": [
+   "Oxygen: 0.05 outside, 0.02 inside; it crosses the bilayer by simple diffusion.",
+   "Potassium ions: 140 inside, 4 outside; they leave through a potassium channel.",
+   "Glucose: 5 outside, 0.5 inside; it enters on a GLUT carrier protein.",
+   "Concentrations are typical values in mmol per dm³."
+  ],
+  "course": "biology",
+  "lesson": "Facilitated diffusion",
+  "also": [],
+  "renderer": "membrane",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Facilitated diffusion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every move joins two neighbouring compartments across one membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "O₂: a concentration is given on both sides",
+    "ok": true,
+    "detail": "0.05 → 0.02"
+   },
+   {
+    "name": "O₂ moves down its gradient by simple diffusion",
+    "ok": true,
+    "detail": "0.05 → 0.02"
+   },
+   {
+    "name": "simple diffusion needs no ATP (O₂)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "K⁺: a concentration is given on both sides",
+    "ok": true,
+    "detail": "140 → 4"
+   },
+   {
+    "name": "K⁺ moves down its gradient by channel protein",
+    "ok": true,
+    "detail": "140 → 4"
+   },
+   {
+    "name": "channel protein needs no ATP (K⁺)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glucose: a concentration is given on both sides",
+    "ok": true,
+    "detail": "5 → 0.5"
+   },
+   {
+    "name": "glucose moves down its gradient by carrier protein",
+    "ok": true,
+    "detail": "5 → 0.5"
+   },
+   {
+    "name": "carrier protein needs no ATP (glucose)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-fungal-cell": {
+  "title": "A fungal hypha",
+  "caption": "A segment of a fungal hypha: a chitin wall around a eukaryotic cell with a nucleus, mitochondria, ER, Golgi and a vacuole, but no chloroplasts. A septum with a pore divides it from the next segment.",
+  "alt": "One segment of a fungal hypha with labels for the cell wall, plasma membrane, cytoplasm, nucleus, mitochondrion, vacuole, rough endoplasmic reticulum, Golgi apparatus, ribosomes and a septum.",
+  "description": [
+   "The wall is made mainly of chitin, with glucans, not cellulose.",
+   "Inside are a nucleus, mitochondria, rough ER, a Golgi apparatus, ribosomes and a vacuole.",
+   "A septum, a cross-wall with a pore, separates this segment from the next.",
+   "There are no chloroplasts: fungi feed by absorbing food they digest outside themselves."
+  ],
+  "course": "biology",
+  "lesson": "Fungal cells",
+  "also": [],
+  "renderer": "cellmap",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Fungal cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cell type fungus is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled structure is found in a fungus cell",
+    "ok": true,
+    "detail": "10 structures"
+   },
+   {
+    "name": "every labelled structure is drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a fungus cell has no chloroplast",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-gram-walls": {
+  "title": "Gram-positive and Gram-negative walls",
+  "caption": "Drawn to scale. A Gram-positive wall is a thick mesh of peptidoglycan that traps crystal violet, so the cell stains purple. A Gram-negative wall has only a thin peptidoglycan layer under an outer membrane of lipopolysaccharide; it loses the stain and is counterstained pink.",
+  "alt": "Two cross-sections of a bacterial cell surface, drawn to the same scale: Gram-positive with a thick peptidoglycan layer over the plasma membrane, and Gram-negative with lipopolysaccharide, an outer membrane, a thin peptidoglycan layer and the periplasm over the plasma membrane.",
+  "description": [
+   "Gram-positive (Staphylococcus): a peptidoglycan wall about 30 nm thick (20–80 nm), then the plasma membrane. It keeps crystal violet and stains purple.",
+   "Gram-negative (E. coli): lipopolysaccharide on an outer membrane, a thin peptidoglycan layer (2–7 nm), the periplasm, then the plasma membrane. It loses crystal violet and is counterstained pink.",
+   "The outer membrane keeps many antibiotics away from the Gram-negative wall."
+  ],
+  "course": "biology",
+  "lesson": "Bacterial cells",
+  "also": [],
+  "renderer": "envelope",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Bacterial cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Gram-positive: the peptidoglycan is 20–80 nm thick",
+    "ok": true,
+    "detail": "30 nm drawn"
+   },
+   {
+    "name": "Gram-positive: has no outer membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Gram-positive: a plasma membrane surrounds the cytoplasm",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Gram-positive: the stain follows from the wall (purple)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Staphylococcus is Gram-positive",
+    "ok": true,
+    "detail": "Gram-positive"
+   },
+   {
+    "name": "Gram-negative: the peptidoglycan is 2–7 nm thick",
+    "ok": true,
+    "detail": "4 nm drawn"
+   },
+   {
+    "name": "Gram-negative: has outer membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Gram-negative: a plasma membrane surrounds the cytoplasm",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Gram-negative: the stain follows from the wall (pink)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E. coli is Gram-negative",
+    "ok": true,
+    "detail": "Gram-negative"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-osmosis-cells": {
+  "title": "Animal and plant cells in different solutions",
+  "caption": "Water always moves from the higher to the lower water potential. In pure water a red blood cell bursts but a plant cell only becomes turgid, because its wall pushes back. In a strong solution both lose water: the red cell crenates and the plant cell's membrane pulls away from its wall.",
+  "alt": "Six panels: a red blood cell and a plant cell, each in a solution of higher, equal and lower water potential, with arrows showing water moving in, not moving, or moving out.",
+  "description": [
+   "Red blood cell, ψ = −750 kPa. In pure water (ψ = 0) water enters and the cell bursts (haemolysis).",
+   "In a solution of ψ = −750 kPa there is no net movement.",
+   "In a solution of ψ = −1500 kPa water leaves and the cell shrinks and crenates.",
+   "Plant cell, ψ = ψs + ψp = −700 + 300 = −400 kPa. In pure water, water enters and the cell becomes fully turgid.",
+   "In a solution of ψ = −400 kPa there is no net movement.",
+   "In a solution of ψ = −1400 kPa, below the cell's solute potential, water leaves until the membrane pulls away from the wall: plasmolysis."
+  ],
+  "course": "biology",
+  "lesson": "Osmosis",
+  "also": [],
+  "renderer": "tonicity",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Osmosis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "red blood cell: ψ = ψs + ψp = -750 kPa",
+    "ok": true,
+    "detail": "ψs -750, ψp 0"
+   },
+   {
+    "name": "red blood cell in ψ = 0 kPa: water enters, so it bursts (haemolysis)",
+    "ok": true,
+    "detail": "drawn: bursts"
+   },
+   {
+    "name": "red blood cell in ψ = -750 kPa: water has no net movement, so it no net movement",
+    "ok": true,
+    "detail": "drawn: unchanged"
+   },
+   {
+    "name": "red blood cell in ψ = -1500 kPa: water leaves, so it shrinks (crenated)",
+    "ok": true,
+    "detail": "drawn: crenated"
+   },
+   {
+    "name": "plant cell: ψ = ψs + ψp = -400 kPa",
+    "ok": true,
+    "detail": "ψs -700, ψp 300"
+   },
+   {
+    "name": "plant cell in ψ = 0 kPa: water enters, so it turgid",
+    "ok": true,
+    "detail": "drawn: turgid"
+   },
+   {
+    "name": "plant cell in ψ = -400 kPa: water has no net movement, so it no net movement",
+    "ok": true,
+    "detail": "drawn: unchanged"
+   },
+   {
+    "name": "plant cell in ψ = -1400 kPa: water leaves, so it plasmolysed",
+    "ok": true,
+    "detail": "drawn: plasmolysed"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-plant-cell": {
+  "title": "A plant cell",
+  "caption": "A plant cell has everything an animal cell needs plus three extras: a cellulose cell wall, chloroplasts and a large permanent vacuole bounded by the tonoplast. Plasmodesmata cross the wall to join neighbouring cells.",
+  "alt": "A plant leaf cell with labels for the cell wall, plasmodesmata, plasma membrane, cytoplasm, nucleus, mitochondrion, chloroplast, vacuole, tonoplast, rough endoplasmic reticulum, Golgi apparatus and ribosomes.",
+  "description": [
+   "The cellulose cell wall lies outside the plasma membrane; plasmodesmata are channels through it.",
+   "The large permanent vacuole, full of cell sap, is surrounded by the tonoplast.",
+   "Chloroplasts carry out photosynthesis; root cells, in the dark, have none.",
+   "Like an animal cell it has a nucleus, mitochondria, rough ER, a Golgi apparatus and ribosomes."
+  ],
+  "course": "biology",
+  "lesson": "Plant cells",
+  "also": [],
+  "renderer": "cellmap",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Plant cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cell type plant is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled structure is found in a plant cell",
+    "ok": true,
+    "detail": "12 structures"
+   },
+   {
+    "name": "every labelled structure is drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-prokaryotic-cell": {
+  "title": "A prokaryotic cell",
+  "caption": "A bacterium has no nucleus: its single circular chromosome lies in the nucleoid, free in the cytoplasm. Plasmids, 70S ribosomes, a wall, and often a capsule, pili and a flagellum complete the cell, typically 0.5–5 µm long.",
+  "alt": "A rod-shaped bacterium with labels for the capsule, cell wall, plasma membrane, cytoplasm, nucleoid, plasmid, 70S ribosomes, pili and a flagellum.",
+  "description": [
+   "The capsule is the outer slimy layer; inside it is the cell wall, then the plasma membrane.",
+   "The nucleoid holds the single, usually circular chromosome, with no membrane around it.",
+   "Plasmids are small extra circles of DNA, often carrying genes such as antibiotic resistance.",
+   "70S ribosomes are scattered through the cytoplasm.",
+   "Pili on the surface attach the cell and transfer DNA; the flagellum turns to move it.",
+   "There is no nucleus, and no mitochondria, endoplasmic reticulum or Golgi apparatus."
+  ],
+  "course": "biology",
+  "lesson": "Prokaryotic cells",
+  "also": [],
+  "renderer": "cellmap",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Prokaryotic cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cell type prokaryote is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled structure is found in a prokaryotic cell",
+    "ok": true,
+    "detail": "9 structures"
+   },
+   {
+    "name": "every labelled structure is drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a prokaryote cell has no nucleus, mitochondrion, rough ER, Golgi apparatus, 80S ribosomes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-secretory-pathway": {
+  "title": "How a cell makes and secretes a protein",
+  "caption": "A secreted protein such as insulin follows one route through the endomembrane system: made on ribosomes of the rough ER, folded inside it, modified in the Golgi and released by exocytosis. Mitochondria supply the ATP but are not part of the route.",
+  "alt": "Seven boxes in order: nucleus, ribosome on the rough endoplasmic reticulum, rough ER, transport vesicle, Golgi apparatus, secretory vesicle and plasma membrane.",
+  "description": [
+   "Nucleus: the gene is copied into mRNA.",
+   "Ribosome on the rough ER: translates the mRNA into a polypeptide.",
+   "Rough ER: the chain is threaded in, folded and given sugars.",
+   "Transport vesicle: buds off and carries it to the Golgi.",
+   "Golgi apparatus: modifies it from the cis face to the trans face.",
+   "Secretory vesicle: carries it to the cell surface.",
+   "Plasma membrane: the vesicle fuses: exocytosis releases it.",
+   "Lysosomal enzymes leave the same route at the Golgi, tagged with mannose-6-phosphate."
+  ],
+  "course": "biology",
+  "lesson": "Cell organelles",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u02",
+    "lesson": "Endoplasmic reticulum"
+   },
+   {
+    "course": "biology",
+    "unit": "u02",
+    "lesson": "Golgi apparatus"
+   }
+  ],
+  "renderer": "route",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Cell organelles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Endoplasmic reticulum",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js"
+   },
+   {
+    "name": "also placed in biology: Golgi apparatus",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every box names a compartment of the route",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no mitochondrion, chloroplast or peroxisome on the route: they are not part of the endomembrane system",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the nucleus to the ribosome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the ribosome to the rough ER",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the rough ER to the transport vesicle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the transport vesicle to the Golgi apparatus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the Golgi apparatus to the secretory vesicle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cargo goes from the secretory vesicle to the plasma membrane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-stem-cell-potency": {
+  "title": "Potency narrows as cells specialise",
+  "caption": "Following one line of descent from the zygote to a red blood cell, each cell can make fewer kinds of cell than the one before. Bone marrow transplants use the multipotent haematopoietic stem cells; induced pluripotent stem cells are adult cells turned back to the pluripotent stage.",
+  "alt": "Five boxes in order: zygote (totipotent), inner cell mass (pluripotent), haematopoietic stem cell (multipotent), erythroid progenitor (unipotent) and red blood cell (specialised).",
+  "description": [
+   "Zygote: totipotent, can make every cell type, and the placenta.",
+   "Inner cell mass: pluripotent, can make every body cell type, not the placenta.",
+   "Haematopoietic stem cell: multipotent, can make all the blood cells.",
+   "Erythroid progenitor: unipotent, can make red blood cells only.",
+   "Red blood cell: specialised, with no nucleus: cannot divide."
+  ],
+  "course": "biology",
+  "lesson": "Stem cells",
+  "also": [],
+  "renderer": "lineage",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Stem cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a zygote is totipotent",
+    "ok": true,
+    "detail": "drawn as totipotent"
+   },
+   {
+    "name": "a inner cell mass is pluripotent",
+    "ok": true,
+    "detail": "drawn as pluripotent"
+   },
+   {
+    "name": "a haematopoietic stem cell is multipotent",
+    "ok": true,
+    "detail": "drawn as multipotent"
+   },
+   {
+    "name": "a erythroid progenitor is unipotent",
+    "ok": true,
+    "detail": "drawn as unipotent"
+   },
+   {
+    "name": "a red blood cell is specialised",
+    "ok": true,
+    "detail": "drawn as specialised"
+   },
+   {
+    "name": "a zygote gives rise to a inner cell mass: potency narrows or stays, never widens",
+    "ok": true,
+    "detail": "totipotent → pluripotent"
+   },
+   {
+    "name": "a inner cell mass gives rise to a haematopoietic stem cell: potency narrows or stays, never widens",
+    "ok": true,
+    "detail": "pluripotent → multipotent"
+   },
+   {
+    "name": "a haematopoietic stem cell gives rise to a erythroid progenitor: potency narrows or stays, never widens",
+    "ok": true,
+    "detail": "multipotent → unipotent"
+   },
+   {
+    "name": "a erythroid progenitor gives rise to a red blood cell: potency narrows or stays, never widens",
+    "ok": true,
+    "detail": "unipotent → specialised"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-surface-area-volume": {
+  "title": "Surface area to volume ratio falls as a cell grows",
+  "caption": "For a cube of side L the surface area is 6L² and the volume L³, so the ratio is 6/L: doubling the side halves it. A 2 µm cube has 3 µm² of surface for every µm³ of volume; a 4 µm cube only 1.5.",
+  "alt": "A curve of surface area to volume ratio against the side of a cube, falling steeply from 12 at 0.5 micrometres to 1 at 6 micrometres, with points marked at 1, 2 and 4 micrometres.",
+  "description": [
+   "The ratio is surface area ÷ volume = 6L² ÷ L³ = 6/L.",
+   "A 1 µm cube: 6 µm² ÷ 1 µm³ = 6 per µm.",
+   "A 2 µm cube: 24 µm² ÷ 8 µm³ = 3 per µm.",
+   "A 4 µm cube: 96 µm² ÷ 64 µm³ = 1.5 per µm.",
+   "Each doubling of size halves the surface available to supply each unit of volume."
+  ],
+  "course": "biology",
+  "lesson": "Diffusion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Diffusion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a 1 µm cube: 6 µm² of surface, 1 µm³ of volume, ratio 6",
+    "ok": true,
+    "detail": "y(1) = 6"
+   },
+   {
+    "name": "a 2 µm cube: 24 µm² of surface, 8 µm³ of volume, ratio 3",
+    "ok": true,
+    "detail": "y(2) = 3"
+   },
+   {
+    "name": "a 4 µm cube: 96 µm² of surface, 64 µm³ of volume, ratio 1.5",
+    "ok": true,
+    "detail": "y(4) = 1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-which-route": {
+  "title": "How does it cross the membrane?",
+  "caption": "Three questions about the cargo choose its route. Size first: particles and macromolecules go in vesicles. Then the gradient: anything moved against it needs a pump and ATP. Finally the chemistry: small non-polar molecules slip through the lipid, while ions and polar molecules need a protein.",
+  "alt": "A flow chart of questions leading to bulk transport, active transport, simple diffusion, osmosis or facilitated diffusion.",
+  "description": [
+   "Is it a single small molecule or ion, not a macromolecule or particle? If not, it is moved in vesicles by endocytosis or exocytosis, using ATP.",
+   "Is it moving down its concentration gradient? If not, a pump moves it by active transport, using ATP.",
+   "Is it charged or polar? If not (oxygen, carbon dioxide, steroids), it crosses by simple diffusion through the lipid.",
+   "Is it a solute such as an ion, glucose or an amino acid? Then it crosses by facilitated diffusion through a channel or carrier protein.",
+   "If it is water itself, it crosses by osmosis, much of it through aquaporins."
+  ],
+  "course": "biology",
+  "lesson": "Membrane transport",
+  "also": [],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Membrane transport"
    },
    {
     "name": "the lesson places this diagram (D: line)",

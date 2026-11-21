@@ -1,0 +1,65 @@
+{
+ "id": "bio-osmosis-cells",
+ "renderer": "tonicity",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Osmosis",
+ "title": "Animal and plant cells in different solutions",
+ "caption": "Water always moves from the higher to the lower water potential. In pure water a red blood cell bursts but a plant cell only becomes turgid, because its wall pushes back. In a strong solution both lose water: the red cell crenates and the plant cell's membrane pulls away from its wall.",
+ "alt": "Six panels: a red blood cell and a plant cell, each in a solution of higher, equal and lower water potential, with arrows showing water moving in, not moving, or moving out.",
+ "description": [
+  "Red blood cell, ψ = −750 kPa. In pure water (ψ = 0) water enters and the cell bursts (haemolysis).",
+  "In a solution of ψ = −750 kPa there is no net movement.",
+  "In a solution of ψ = −1500 kPa water leaves and the cell shrinks and crenates.",
+  "Plant cell, ψ = ψs + ψp = −700 + 300 = −400 kPa. In pure water, water enters and the cell becomes fully turgid.",
+  "In a solution of ψ = −400 kPa there is no net movement.",
+  "In a solution of ψ = −1400 kPa, below the cell's solute potential, water leaves until the membrane pulls away from the wall: plasmolysis."
+ ],
+ "columns": [
+  "higher ψ outside (hypotonic)",
+  "equal ψ (isotonic)",
+  "lower ψ outside (hypertonic)"
+ ],
+ "rows": [
+  {
+   "cell": "animal",
+   "label": "red blood cell",
+   "psiS": -750,
+   "psiP": 0,
+   "panels": [
+    {
+     "solution": 0,
+     "outcome": "bursts"
+    },
+    {
+     "solution": -750,
+     "outcome": "unchanged"
+    },
+    {
+     "solution": -1500,
+     "outcome": "crenated"
+    }
+   ]
+  },
+  {
+   "cell": "plant",
+   "label": "plant cell",
+   "psiS": -700,
+   "psiP": 300,
+   "panels": [
+    {
+     "solution": 0,
+     "outcome": "turgid"
+    },
+    {
+     "solution": -400,
+     "outcome": "unchanged"
+    },
+    {
+     "solution": -1400,
+     "outcome": "plasmolysed"
+    }
+   ]
+  }
+ ]
+}

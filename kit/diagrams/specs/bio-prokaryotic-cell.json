@@ -1,0 +1,42 @@
+{
+ "id": "bio-prokaryotic-cell",
+ "renderer": "cellmap",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Prokaryotic cells",
+ "title": "A prokaryotic cell",
+ "caption": "A bacterium has no nucleus: its single circular chromosome lies in the nucleoid, free in the cytoplasm. Plasmids, 70S ribosomes, a wall, and often a capsule, pili and a flagellum complete the cell, typically 0.5–5 µm long.",
+ "alt": "A rod-shaped bacterium with labels for the capsule, cell wall, plasma membrane, cytoplasm, nucleoid, plasmid, 70S ribosomes, pili and a flagellum.",
+ "description": [
+  "The capsule is the outer slimy layer; inside it is the cell wall, then the plasma membrane.",
+  "The nucleoid holds the single, usually circular chromosome, with no membrane around it.",
+  "Plasmids are small extra circles of DNA, often carrying genes such as antibiotic resistance.",
+  "70S ribosomes are scattered through the cytoplasm.",
+  "Pili on the surface attach the cell and transfer DNA; the flagellum turns to move it.",
+  "There is no nucleus, and no mitochondria, endoplasmic reticulum or Golgi apparatus."
+ ],
+ "cell": "prokaryote",
+ "labels": [
+  "capsule",
+  "cell wall",
+  "plasma membrane",
+  "cytoplasm",
+  "nucleoid",
+  "plasmid",
+  "70S ribosomes",
+  "pili",
+  "flagellum"
+ ],
+ "claims": [
+  {
+   "type": "lacks",
+   "structures": [
+    "nucleus",
+    "mitochondrion",
+    "rough ER",
+    "Golgi apparatus",
+    "80S ribosomes"
+   ]
+  }
+ ]
+}
