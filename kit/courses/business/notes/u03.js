@@ -45,6 +45,16 @@ M2#business-u03-01-q2@2: A car maker decides how its marketing department will s
 M3#business-u03-01-q3@3: Two airlines both cut costs by copying each other's check-in technology. Using Porter, what is the best analysis? | They are improving operational effectiveness, which rivals can copy, rather than building a distinct strategy | Each airline has created a unique and defensible strategic position | Strategy plays no real part in the competitive airline industry | Copying rivals' technology is the definition of a good strategy | Porter argues imitable efficiency gains don't give lasting advantage; strategy needs a different set of activities and trade-offs.
 SEQ1#business-u03-01-q4@1: Order the stages of the strategic management process. | Strategic analysis ; Strategic choice ; Implementation ; Review | Analysis informs choice, choice is implemented, and results are reviewed to inform the next cycle.
 SA2#business-u03-01-q5@2,3: Explain the difference between strategy and operational effectiveness, with an example. | Operational effectiveness means performing the same activities as rivals but better, such as faster checkouts; competitors can copy it, so it rarely gives lasting advantage. Strategy means choosing a distinct position with different activities and trade-offs, such as a budget airline giving up meals and seat allocation to offer low fares from secondary airports. Both matter, but only strategy creates a defensible difference. | Defines operational effectiveness ; Defines strategy with trade-offs ; Example ; Lasting advantage point
+Q: How do Johnson and Whittington define strategy? | As the long-term direction of an organisation.
+Q: According to Porter, what two things does strategy involve? | Choosing a unique and valuable position, and making trade-offs by deciding what not to do.
+Q: Why does Porter distinguish strategy from operational effectiveness? | Operational effectiveness means doing the same activities better than rivals, which competitors can copy, whereas strategy needs a distinct position.
+Q: What are tactical decisions, and what is an example? | Medium-term decisions that implement strategy within a function, such as a pricing campaign.
+Q: What are operational decisions, and what is an example? | Day-to-day decisions, such as staff rotas.
+Q: What is business-level strategy? | How an organisation competes within a particular market. It is also called competitive strategy.
+Q: What is functional-level strategy? | How marketing, operations, HR and finance support the business strategy.
+Q: What does the choice stage of the strategic management process involve, and how are options evaluated? | Weighing options for direction and method, evaluated for suitability, acceptability and feasibility.
+Q: What do the analysis and review stages of the strategic management process involve? | Analysis examines the external environment and internal resources; review monitors results and adjusts.
+Q: Why is opening convenience stores in a new country a strategic decision in the supermarket example? | It commits large resources for years and shapes the other decisions.
 
 ## Mission, vision and objectives
 LV: Introductory · Application
@@ -87,6 +97,16 @@ M2#business-u03-02-q2@2: A charity's mission is to reduce child poverty. It is o
 M3#business-u03-02-q3@3: A bank's mission statement praises customer care, but its bonuses reward selling products regardless of need. What is the best evaluation? | The statement is weak, because behaviour follows rewards rather than the published words | The published mission will change staff behaviour on its own | Bonuses have no effect on behaviour once a mission statement exists | The bank has achieved full alignment under the Ashridge model | The Ashridge model stresses alignment of purpose, standards and values; misaligned rewards undermine a mission.
 TF1#business-u03-02-q4@1: Research shows mission statements strongly and consistently improve financial performance. | false | Meta-analyses find at most a small positive association, which may depend on how missions are used.
 SA2#business-u03-02-q5@3: Evaluate the usefulness of mission and vision statements to a large company. | They can communicate purpose, motivate staff, guide choices by excluding inconsistent options and provide a basis for objectives. But many are vague, generic or written for public relations, and they add value only when leaders' decisions, rewards and resource allocation reflect them. Evidence of a performance link is weak, so usefulness depends on alignment and use. | Communication and guidance ; Basis for objectives ; Generic or PR statements ; Depends on alignment
+Q: How does the lesson define a mission? | The organisation's purpose and what it does now: why it exists and for whom.
+Q: How does the lesson define values? | The principles that guide behaviour, such as integrity or sustainability.
+Q: What are strategic objectives? | Specific, measurable targets, often SMART, that show progress towards the vision.
+Q: What does Campbell and Yeung's Ashridge model say makes a mission strongest? | Its four elements, purpose, strategy, standards and behaviours, and values, are aligned, giving staff a sense of mission.
+Q: How can a mission set boundaries on strategy? Give the lesson's example. | It limits acceptable options: a company with a strong environmental mission is unlikely to acquire a coal business.
+Q: To whom do mission and vision communicate direction? | To staff, investors and customers.
+Q: In the bakery example, how does the objective relate to the vision? | The objective makes the vision measurable and assignable.
+Q: What was the bakery chain's vision in the example? | To be the most-loved neighbourhood bakery in the North of England.
+Q: Why should a published mission statement not be taken as proof of what an organisation does? | Statements are often generic, so judge them against decisions, resource allocation and behaviour.
+Q: Why must a vision be paired with objectives? | A vision only states an aspiration; objectives are the specific, measurable targets that show progress towards it.
 
 ## Planned and emergent strategy
 LV: Introductory · Application
@@ -126,6 +146,16 @@ M2#business-u03-03-q2@2: A software firm plans to sell to large banks, but a fea
 M3#business-u03-03-q3@3: When is a highly planned approach to strategy most suitable? | In stable environments where large, coordinated, long-term investments are needed | In fast-changing markets where customer needs are unknown | When the firm wants to avoid all commitment | When no information about the market is available | Planning works best when conditions are predictable and coordination of big commitments, such as power stations, is essential.
 TF1#business-u03-03-q4@1: Realised strategy is always identical to intended strategy. | false | Some intentions go unrealised and emergent patterns add to what was planned.
 SA2#business-u03-03-q5@3: Evaluate the planned and emergent approaches to strategy. | Planning gives clear direction, coordinates resources and suits stable conditions and large investments, but can be rigid, slow and based on poor forecasts. The emergent view captures learning and adaptation in uncertain markets, but risks drift and lacks coordination. Most organisations combine them: planning direction while allowing emergent learning, as logical incrementalism suggests. | Planning strengths and weaknesses ; Emergent strengths and weaknesses ; Context matters ; Combination
+Q: What is planned (prescriptive) strategy, and who is it associated with? | Senior managers analyse the environment, set objectives and choose a strategy which is then implemented; associated with Ansoff and the design and planning schools.
+Q: What is emergent strategy according to Mintzberg and Waters? | Strategy forming as a pattern in a stream of decisions, often from below, as the organisation learns and responds.
+Q: What is Mintzberg's difference between intended and deliberate strategy? | Intended strategy is what was planned; deliberate strategy is the part of it that was realised as intended.
+Q: What is unrealised strategy? | Intended strategy that was dropped.
+Q: How is realised strategy made up? | It combines deliberate and emergent elements.
+Q: What did James Quinn find about how managers move strategy forward? | They often move in small, experimental steps, keeping options open and building support.
+Q: Why is logical incrementalism called a middle way? | It sits between rigid plans and drift.
+Q: What went wrong with Honda's original US plan in Pascale's account? | Honda planned to sell large motorcycles, but they leaked oil and sold poorly.
+Q: How did Honda's strategy emerge in the US motorcycle example? | Staff rode small 50cc Super Cubs around Los Angeles and people asked where to buy them, so Honda switched focus to small bikes.
+Q: Why is emergent strategy not the same as having no strategy? | It is a consistent pattern developing through action and learning, often recognised and then formalised by managers.
 
 ## Porter's five forces
 LV: Introductory · Application
@@ -172,6 +202,16 @@ M2#business-u03-04-q2@2: A smartphone maker relies on one company for a vital ch
 M3#business-u03-04-q3@3: A student lists other coffee chains as "substitutes" for a coffee chain. What is the better analysis? | Other coffee chains are rivals; substitutes are alternatives such as energy drinks or making coffee at home | The student is right, since every alternative supplier is a substitute | Substitutes only exist in manufacturing industries | Coffee has no substitutes, so the force can be ignored | Substitutes meet the same need from outside the industry; similar firms are competitors in the rivalry force.
 MATCH1#business-u03-04-q4@1: Match each situation to the force it strengthens. | Few suppliers of a key input = Supplier power ; Customers can switch for free = Buyer power ; Video calls replace business travel = Threat of substitutes ; Many similar firms in a slow-growing market = Rivalry | Each situation intensifies one of the five forces.
 SA2#business-u03-04-q5@2,3: Use the five forces to explain why the airline industry has historically had low profitability. | Rivalry is intense: many carriers, high fixed costs and perishable seats encourage price cutting. Buyers are price-sensitive and compare fares online with low switching costs. Suppliers such as aircraft makers (a near duopoly), airports and unions have strong power. Substitutes include rail, cars and video calls. Entry has been eased by leasing aircraft. With strong forces, average profits are low. | Rivalry ; Buyer power ; Supplier power ; Substitutes or entrants
+Q: What did Porter argue determines industry profitability? | Five competitive forces.
+Q: When is the threat of new entrants high? | When barriers to entry are low: low capital needs, weak brands, easy access to distribution and no economies of scale.
+Q: When is supplier bargaining power high? | When suppliers are few, inputs are unique or switching costs are high.
+Q: When is the threat of substitutes high? Give the lesson's example. | When other products meet the same need at good value, such as video calls for business travel.
+Q: Name four conditions that make rivalry among existing competitors high. | Many similar competitors, slow growth, high fixed costs or high exit barriers.
+Q: What is the effect of stronger forces on an industry's profitability? | The stronger the forces, the lower the industry's average profitability.
+Q: Why can individual supermarket shoppers still exert buyer power? | Although individually weak, their switching costs are near zero and price comparison is easy.
+Q: What are three limitations of five forces analysis? | It is a snapshot of a changing industry, underplays co-operation (complementors as a sixth force) and industry boundaries can be hard to define.
+Q: What is the difference between a substitute and a competitor? | A substitute meets the same need in a different way, such as trains for domestic flights; a competitor offers a similar product, such as another airline.
+Q: What is a barrier to entry, and what is a switching cost? | A barrier to entry makes it difficult for new firms to enter an industry; a switching cost is what a buyer pays to change supplier.
 
 ## The industry life cycle
 LV: Introductory · Application
@@ -213,6 +253,16 @@ M2#business-u03-05-q2@2: An industry has many new entrants, rapidly rising sales
 M3#business-u03-05-q3@3: A firm is the last major maker of a product in a declining industry with loyal customers. What strategy might be profitable? | Becoming the dominant remaining supplier and pricing for the loyal niche | Investing heavily to restart rapid growth | Cutting prices to attract new customers from substitutes | Exiting immediately whatever the profits | Harrigan showed some firms profit in decline by serving the remaining demand with little competition.
 SEQ1#business-u03-05-q4@1: Order the stages of the industry life cycle. | Introduction ; Growth ; Shake-out ; Maturity ; Decline | Industries typically move from emergence through rapid growth and consolidation to maturity and decline.
 SA2#business-u03-05-q5@3: Evaluate the usefulness of the industry life cycle model for strategic planning. | It helps managers anticipate how competition, key success factors and profitability change, and so plan investment, pricing and capacity. But stages are hard to identify at the time, their length varies widely, industries can be renewed by innovation, and firm strategy can shape the cycle. It is a useful framework but not a reliable forecasting tool. | Anticipating change ; Guides strategy by stage ; Identification and timing problems ; Renewal possible
+Q: What are the five stages of the industry life cycle in this lesson? | Introduction, growth, shake-out, maturity and decline.
+Q: What characterises the introduction stage? | Few firms, low sales, high costs and prices and uncertain technology, with a focus on product development and creating demand.
+Q: What happens in the growth stage? | Rapid sales growth, new entrants and a dominant design emerging, with a focus on building capacity, brand and distribution.
+Q: What is a dominant design? | A product design that becomes the industry standard.
+Q: What characterises the maturity stage and its strategic focus? | Slow growth, standardised products and intense price competition, with a focus on efficiency, cost and differentiation.
+Q: What causes the decline stage and what are firms' options? | Falling sales as substitutes take over; options include harvesting, finding a niche, consolidating or exiting.
+Q: What does the industry life cycle describe, as opposed to a single product? | The whole industry; a firm's products may be at different stages.
+Q: Which tool is used alongside the life cycle because a firm's products can be at different stages? | Portfolio tools such as the Boston Matrix.
+Q: What do early and later stages of the life cycle reward? | Early stages reward innovation and speed; later stages reward efficiency and scale.
+Q: What did Harrigan's work show about declining industries? | Some firms profit in decline by becoming the last remaining supplier or serving a loyal niche.
 
 ## SWOT analysis
 LV: Introductory · Foundation
@@ -255,6 +305,16 @@ M2#business-u03-06-q2@2: A manufacturer has strong engineering skills and faces 
 M3#business-u03-06-q3@3: A firm's SWOT lists 30 factors in each quadrant with no evidence or ranking. What is the main problem? | Without prioritisation and evidence, it can't guide choice of strategy | It is too short and needs even more factors in each quadrant | SWOT should list only external factors, never internal ones | Ranking the factors would make the analysis biased and unfair | Critics note SWOT is most useful when focused on a few significant, evidenced factors linked to options.
 TF1#business-u03-06-q4@1: New government regulation affecting an industry is an external factor in SWOT. | true | Regulation comes from the external environment, so it is an opportunity or a threat.
 SA2#business-u03-06-q5@3: Evaluate SWOT analysis as a strategic tool. | SWOT is simple, quick and brings together internal and external analysis, and the TOWS matrix links it to options. But it can be subjective, unprioritised and static, factors can be misclassified, and it doesn't itself choose strategy. It is most useful when based on evidence from other tools and focused on the most important factors. | Simplicity and integration ; TOWS link to options ; Subjectivity and lack of priority ; Best used with evidence
+Q: What do the four SWOT quadrants cover? | Internal strengths and weaknesses, and external opportunities and threats.
+Q: What is the difference between a strength and a weakness in SWOT? | A strength is an internal resource or capability giving advantage, such as a strong brand; a weakness is an internal limitation, such as high costs.
+Q: Which SWOT factors are external and give examples? | Opportunities, such as a growing market or new technology, and threats, such as new rivals or regulation.
+Q: Which analyses supply the external factors for a SWOT? | PESTLE and five forces analysis.
+Q: Which analyses supply the internal factors for a SWOT? | Resource and value chain analysis.
+Q: What does the TOWS matrix do? | It matches SWOT factors to generate strategic options: SO, WO, ST and WT strategies.
+Q: What is an SO strategy? | A strategy that uses strengths to exploit opportunities.
+Q: What are ST and WT strategies? | ST uses strengths to counter threats; WT minimises weaknesses and avoids threats.
+Q: In the bus company example, what WO strategy was suggested? | Bid for government funding to replace diesel buses with electric ones.
+Q: Why is 'open new stores' a poor entry in the opportunities quadrant? | It is an action, not an external condition; actions are strategic options that come from matching factors in TOWS.
 
 ## Resources and capabilities
 LV: Introductory · Application
@@ -293,6 +353,16 @@ M2#business-u03-07-q2@2: Two hotels in the same city face identical market condi
 M3#business-u03-07-q3@3: A camera company had world-class film chemistry but failed when photography went digital. What concept best explains the failure? | A lack of dynamic capabilities to reconfigure resources as the market changed | Weak tangible resources such as factories | Too much buyer power | Too many valuable resources | Valuable capabilities can become rigidities; dynamic capabilities are needed to adapt.
 TF1#business-u03-07-q4@1: Under the resource-based view, firms in the same industry should have identical performance. | false | The RBV argues that differences in resources and capabilities lead to performance differences within an industry.
 SA2#business-u03-07-q5@2,3: Compare the resource-based view with the industry-based (five forces) view of competitive advantage. | The industry view explains profitability by the structure of the industry and the firm's position within it, looking outside-in. The RBV looks inside-out, explaining advantage by distinctive resources and capabilities that rivals can't easily copy. They are complementary: firms need an attractive position and the capabilities to defend it. | Industry view outside-in ; RBV inside-out ; Examples or mechanisms ; Complementary
+Q: What does the resource-based view argue? | That firms differ in resources and capabilities, and some differences persist and explain why some firms outperform others in the same industry.
+Q: Who developed the resource-based view? | Wernerfelt (1984) and Barney (1991).
+Q: What are tangible and intangible resources? Give examples of each. | Tangible are physical and financial, such as buildings, cash and equipment; intangible include brands, patents, reputation, knowledge and culture.
+Q: How does the lesson define a capability? | What the firm can do by combining resources through processes and skills, such as rapid product development or efficient logistics.
+Q: How do Teece, Pisano and Shuen define dynamic capabilities? | The firm's ability to integrate, build and reconfigure resources to address rapidly changing environments.
+Q: Why does the RBV matter in the two-retailer example where industry forces are the same? | Retailer A's fast design-to-store supply chain and demand data explain its higher margins, which industry forces cannot.
+Q: What gave Retailer A its capability to respond to trends in weeks? | A fast design-to-store supply chain built over decades, and strong data on customer demand.
+Q: Which kinds of resources does the RBV stress as sources of advantage? | Firm-specific resources and capabilities, especially intangible ones that are hard to copy.
+Q: Why is a valuable resource not enough on its own to give advantage? | If rivals have it too or can easily get it, it is necessary but does not create advantage.
+Q: What do dynamic capabilities let firms do? | Renew their resources as markets change.
 
 ## The value chain
 LV: Introductory · Application
@@ -334,6 +404,16 @@ M2#business-u03-08-q2@2: A furniture retailer's customers assemble products them
 M3#business-u03-08-q3@3: A carmaker redesigns its engines so they need less servicing, reducing warranty costs. What does this show? | A linkage: technology development lowers service costs | That service is a support activity | That procurement drives all costs | That activities are independent | Linkages between activities, such as design and after-sales service, are a key source of advantage.
 MATCH1#business-u03-08-q4@1: Match each activity to its category. | Recruitment and training = Human resource management ; Delivering goods to customers = Outbound logistics ; Buying raw materials = Procurement ; Repairs under warranty = Service | Each example belongs to one of Porter's primary or support activities.
 SA2#business-u03-08-q5@2,3: Explain how a firm could use the value chain to build a cost advantage. | Analyse the cost of each primary and support activity and compare with rivals. Reduce costs where possible, for example through scale in operations, efficient logistics, bulk procurement or technology. Exploit linkages, such as designs that cut manufacturing and service costs, and manage the value system with suppliers. Ensure savings don't destroy the value customers pay for. | Analyse activity costs ; Examples of cost reduction ; Linkages ; Protect customer value
+Q: Which activity of the value chain covers after-sales support, and which covers distribution? | Service covers after-sales support; outbound logistics covers distribution.
+Q: What do inbound and outbound logistics mean? | Inbound logistics is receiving and storing inputs; outbound logistics is distribution.
+Q: What does the service activity cover? | After-sales support.
+Q: What does firm infrastructure cover in the value chain? | Management, finance and planning.
+Q: How does the lesson define margin? | The difference between the value customers pay for and the cost of performing the activities.
+Q: What two kinds of advantage can the value chain help a firm find? | Activities where it is cheaper than rivals (cost advantage) or creates more value for customers (differentiation).
+Q: What are linkages in the value chain and why do they matter? | Links between activities, such as better product design cutting service costs, which can create advantage.
+Q: What is the value system? | The linked value chains of suppliers, the firm, distributors and customers; advantage can come from managing these relationships.
+Q: How does a single aircraft type support a budget airline's low cost strategy? | It cuts maintenance and training costs, within inbound logistics and procurement.
+Q: Why is it a mistake to analyse each value chain activity in isolation? | Much advantage comes from how activities fit together, and a tight fit is hard for rivals to copy.
 
 ## Core competences and the VRIO framework
 LV: Introductory · Application
@@ -378,6 +458,16 @@ M2#business-u03-09-q2@2: A resource is valuable and rare but rivals could copy i
 M3#business-u03-09-q3@3: A firm's distinctive culture of engineering collaboration has built up over 40 years. Why is it likely to give sustained advantage? | It is socially complex and history-dependent, so rivals can't easily copy it | Culture can always be copied by hiring a few staff | Culture is a tangible resource that can be bought | It is valuable only if competitors share it | History and social complexity create barriers to imitation.
 SEQ1#business-u03-09-q4@1: Order the VRIO questions as they are asked. | Valuable? ; Rare? ; Inimitable? ; Organised? | Each test builds on the previous one; only a resource passing all four gives sustained advantage.
 SA2#business-u03-09-q5@3: Apply the VRIO framework to a well-known brand, and evaluate whether it gives sustained advantage. | A strong brand is valuable (customers pay more and stay loyal), rare (few rivals have equal recognition), and costly to imitate because it is built over decades of history and reputation. If the firm is organised to exploit it, through marketing, quality and distribution, it can give sustained advantage. But brands can be damaged by scandal or changing tastes, so advantage must be maintained. | Valuable ; Rare ; Inimitable with reason ; Organised and evaluation
+Q: What is the combination of skills and technologies that Prahalad and Hamel call a core competence, and how do they illustrate it? | Honda's engine expertise, used across cars, motorcycles, lawnmowers and generators, giving access to many markets.
+Q: What was Prahalad and Hamel's example of a core competence? | Honda's expertise in engines, used in cars, motorcycles, lawnmowers and generators.
+Q: What does each letter of VRIO stand for? | Valuable, Rare, Inimitable and Organised.
+Q: What does a resource that is not valuable result in? | Competitive disadvantage.
+Q: What does a resource that is valuable but not rare give? | Competitive parity.
+Q: What must be true for sustained competitive advantage under VRIO? | The resource is valuable, rare and inimitable, and the firm is organised to exploit it.
+Q: Why is a resource costly to imitate when it depends on history? | It was built over time, so rivals cannot quickly copy it.
+Q: What is causal ambiguity? | Uncertainty about why a resource creates advantage, which makes it hard to copy.
+Q: What does socially complex mean as a reason resources are hard to imitate? | They depend on culture and relationships.
+Q: In the retailer example, why is customer data likely to give only temporary advantage? | It is valuable but only partly rare, and rivals could build similar data over a few years.
 
 ## Porter's generic strategies
 LV: Introductory · Application
@@ -420,6 +510,16 @@ M2#business-u03-10-q2@2: A watchmaker sells handmade watches only to wealthy col
 M3#business-u03-10-q3@3: A furniture retailer offers stylish design at low prices through flat-pack products and self-service. How does this challenge Porter's model? | It combines low cost and differentiation, a successful hybrid strategy | It proves the firm is stuck in the middle and failing | It shows differentiation never works in retail | It is pure cost leadership with no design value | Some firms achieve both low cost and valued features, contrary to Porter's warning.
 MATCH1#business-u03-10-q4@1: Match each firm to its strategy. | A no-frills budget airline = Cost leadership ; A luxury car brand = Differentiation ; A specialist vegan bakery = Differentiation focus ; A low-cost local taxi firm in one town = Cost focus | Each combines a source of advantage with a scope.
 SA2#business-u03-10-q5@3: Evaluate Porter's claim that firms must choose between cost leadership and differentiation. | Porter argued that the two require different activities, cultures and investments, so trying both leaves a firm stuck in the middle. This fits many industries. But some firms, such as IKEA or Toyota, achieve both through innovative activity systems, scale or lean production, and technology can lower the cost of differentiation. The claim is a useful warning against lack of clarity rather than an absolute rule. | Porter's reasoning ; Supporting cases ; Hybrid counter-examples ; Balanced judgement
+Q: What two sources of advantage and two kinds of scope does Porter's framework combine? | Lower cost or differentiation, combined with broad or narrow scope.
+Q: What is cost leadership and how is it achieved? | Being the lowest-cost producer in the industry through scale, efficient processes and tight cost control.
+Q: What is differentiation as a generic strategy? | Offering something customers value and will pay a premium for, such as quality, design, brand or service.
+Q: What are cost focus and differentiation focus? | Applying cost leadership or differentiation to a narrow segment, such as a region or customer group.
+Q: Why is cost leadership not the same as low prices? | It is about having the lowest costs; a cost leader can price at the industry average and earn above-average margins.
+Q: What are the risks facing cost leaders? | Technology change, imitation and losing sight of what customers want.
+Q: What are the risks facing differentiators? | Customers may stop paying the premium, imitation, and the cost gap becoming too large.
+Q: What are the risks facing focusers? | The segment shrinks or broad competitors move in.
+Q: Which UK grocer does the lesson use as a cost leadership example and what features? | Aldi, with a narrow range, own brands and simple stores.
+Q: What strategy does the local organic farm shop follow in the lesson's example? | Differentiation focus, serving one community and segment.
 
 ## The Ansoff matrix
 LV: Introductory · Foundation
@@ -462,6 +562,16 @@ M2#business-u03-11-q2@2: Why is diversification usually the riskiest Ansoff stra
 M3#business-u03-11-q3@3: A supermarket in a saturated home market with strong logistics skills wants growth. Which option best fits its capabilities? | Market development into new regions, using its logistics strength | Unrelated diversification into shipbuilding | Market penetration in a saturated market | Abandoning its home market entirely | Saturation limits penetration; its capabilities transfer well to new markets with a similar product.
 TF1#business-u03-11-q4@1: Market penetration involves launching new products. | false | Market penetration means selling more existing products to existing markets.
 SA2#business-u03-11-q5@2,3: Recommend a growth strategy for a successful UK coffee chain, using the Ansoff matrix. | Market penetration (loyalty apps, new UK outlets) is low risk but limited by saturation. Product development (food ranges, at-home coffee) uses the brand with current customers. Market development (overseas expansion) offers growth but needs local knowledge. Diversification (unrelated sectors) is highest risk. A combination of product development and selective market development is likely to balance growth and risk, depending on resources. | Uses all four options ; Risk assessment ; Recommendation ; Justified by context
+Q: Who developed the Ansoff matrix and what does it classify? | Igor Ansoff classified growth options by whether products and markets are existing or new.
+Q: What is market penetration and how can it be achieved? | Selling existing products in existing markets by raising market share through promotion, pricing or loyalty schemes.
+Q: What is market development? | Selling existing products in new markets, such as new regions, countries or customer segments.
+Q: What is diversification in the Ansoff matrix and why is it riskiest? | New products in new markets; it moves furthest from what the firm knows.
+Q: What is the difference between related and unrelated diversification? | Related builds on existing capabilities; unrelated (conglomerate) moves into unconnected areas.
+Q: How does risk change across the Ansoff matrix? | It rises as the firm moves away from what it knows, from penetration through product and market development to diversification.
+Q: What factors influence the choice of Ansoff growth option? | Market saturation, competitors, the firm's capabilities and resources, and its objectives.
+Q: Which Ansoff option are online classes for current gym members? | Product development: a new product for existing customers.
+Q: Which option is opening gyms in Ireland, and why? | Market development, because existing gym products are taken to a new market.
+Q: Why is the protein snack range the riskiest option for the gym chain? | It requires new skills and channels as well as a new market.
 
 ## The Boston Matrix and portfolio analysis
 LV: Introductory · Application
@@ -503,6 +613,16 @@ M2#business-u03-12-q2@2: A company's portfolio is mostly question marks and has 
 M3#business-u03-12-q3@3: A "dog" product earns a small profit and is bought by loyal customers who also buy the firm's star products. What is the best decision? | Consider keeping it, since it is profitable and supports other sales | Drop it immediately because all dogs must be divested | Invest heavily to turn it into a star in a declining market | Reclassify it as a cash cow | The matrix ignores links between products and actual profitability; decisions need wider analysis.
 MATCH1#business-u03-12-q4@1: Match each position to its category. | High share, low growth = Cash cow ; Low share, high growth = Question mark ; High share, high growth = Star ; Low share, low growth = Dog | These are the four BCG categories.
 SA2#business-u03-12-q5@3: Evaluate the Boston Matrix as a tool for managing a product portfolio. | It is simple, visual and highlights cash needs and the balance of a portfolio. But it uses only two variables, assumes market share drives profit, struggles to define markets, ignores links between products, and can lead to neglecting "dogs" that are profitable. It is best used as a starting point alongside other analysis. | Strengths ; Two-variable simplification ; Market definition and assumptions ; Use with other tools
+Q: What does the Boston Matrix plot, and what is relative market share? | Products or business units by market growth rate and relative market share, which is share compared with the largest rival.
+Q: What are stars in the Boston Matrix? | Products with high share in high growth that need investment to keep pace but generate strong revenue.
+Q: What are dogs in the Boston Matrix and what is usually done with them? | Low share, low growth products with usually low profits; candidates for divestment.
+Q: Why do question marks need careful decisions? | They have low share in high growth, need heavy investment, and may become stars or fail.
+Q: How does cash flow through a balanced portfolio? | Cash cows fund stars and selected question marks; successful question marks become stars and stars become cash cows as growth slows.
+Q: What problem does a portfolio with too many dogs or question marks face? | Cash shortages, if it has too few cash cows.
+Q: In the confectionery example, which product is the cash cow and why? | The long-established chocolate bar with 30% of a mature market: high share, low growth.
+Q: How should the confectionery company use the cash cow's cash? | Support the vegan chocolate star and decide whether to back the protein snack question mark.
+Q: Why should dogs not always be dropped? | A dog may still be profitable, support other products or serve loyal customers; the matrix is a starting point, not a decision.
+Q: Who developed the Boston Matrix and what does it guide? | The Boston Consulting Group; it guides how to allocate resources and cash across a portfolio of products or business units.
 
 ## Mergers, acquisitions and alliances
 LV: Introductory · Application
@@ -550,6 +670,16 @@ M2#business-u03-13-q2@2: Two rival car makers create a jointly owned company to 
 M3#business-u03-13-q3@3: An acquirer pays a 50% premium for a target, expecting large synergies, but cultures clash and key staff leave. What best explains the poor outcome? | Overpayment combined with integration failure, common reasons acquisitions destroy value | Acquisitions always succeed if the premium is high enough | Culture has no effect on the success of a merger | Synergies are guaranteed once the deal is signed | High premiums require large synergies; cultural clash and staff loss prevent them.
 TF1#business-u03-13-q4@1: The Competition and Markets Authority can block mergers that would substantially lessen competition in the UK. | true | The CMA reviews mergers against the substantial lessening of competition test.
 SA2#business-u03-13-q5@2,3: Explain why many acquisitions fail to create value for the acquiring company. | Acquirers often overpay, especially in competitive bids, driven by overconfidence. Synergies are overestimated and integration costs underestimated. Cultural differences lead to conflict and departure of key staff. Managers are distracted from the core business. Strategic fit may be poor. Value depends on disciplined pricing and careful integration. | Overpaying ; Overestimated synergies ; Culture and staff ; Integration or fit
+Q: What is a merger, and how does an acquisition differ? | A merger is two firms agreeing to combine into one; an acquisition is one firm buying a controlling stake in another.
+Q: What is a hostile takeover? | An acquisition made against the wishes of the target firm's board.
+Q: What is a joint venture? | Firms creating a new, jointly owned business.
+Q: How does a strategic alliance differ from a joint venture? | Firms co-operate without forming a new company, such as airline code-sharing.
+Q: What is horizontal integration and why do firms pursue it? | Combining with a firm in the same industry at the same stage, for market share and economies of scale.
+Q: What is forward vertical integration? | Moving towards customers to gain control of distribution.
+Q: What is conglomerate integration and what motive does it serve? | Combining firms in unrelated industries, to spread risk.
+Q: Name four motives for acquisitions listed in the lesson. | Synergies, faster growth than organic expansion, access to new markets, technology or talent, and reducing competition.
+Q: Why do many acquisitions disappoint? | Overpaying, overestimated synergies and underestimated integration costs, cultural clashes and loss of key staff, and poor strategic fit.
+Q: What is the role of the Competition and Markets Authority in the supermarket example? | It reviews whether the acquisition would substantially lessen competition.
 
 ## Blue ocean strategy
 LV: Introductory · Application
@@ -593,6 +723,16 @@ M2#business-u03-14-q2@2: A budget hotel removes restaurants and lobbies but offe
 M3#business-u03-14-q3@3: A firm creates a successful new market, but within three years many rivals copy it. What does this show? | Blue oceans attract imitation and turn red, so continuous innovation is needed | Blue ocean strategy guarantees permanent advantage | Imitation is impossible in a blue ocean | The original strategy must have been a red ocean all along | Success draws competitors; advantage lasts only if the firm keeps innovating or builds barriers.
 TF1#business-u03-14-q4@1: Value innovation aims to achieve differentiation and low cost together. | true | Kim and Mauborgne argue that rethinking industry factors can break Porter's trade-off.
 SA2#business-u03-14-q5@3: Evaluate blue ocean strategy as an alternative to Porter's competitive strategy. | Blue ocean strategy encourages firms to escape head-on competition by creating new demand and offers practical tools such as the four actions framework. It challenges Porter's trade-off between cost and differentiation. But its evidence rests on hindsight case studies, blue oceans attract imitators, and most firms must still compete in existing markets. It complements rather than replaces competitive analysis. | Escape competition and tools ; Challenge to trade-off ; Evidence and imitation problems ; Complementary
+Q: What are red oceans and blue oceans? | Red oceans are existing industries where firms fight for existing demand; blue oceans are new market space where demand is created.
+Q: Who described red and blue oceans? | Kim and Mauborgne (2005).
+Q: What is value innovation? | Pursuing differentiation and low cost at the same time by rethinking what the industry offers.
+Q: What are the four questions of the four actions framework? | Which factors to eliminate, reduce below the industry standard, raise above it, and create that the industry has never offered.
+Q: What is a strategy canvas? | A chart plotting the levels of each competing factor offered by rivals, showing how a new value curve diverges.
+Q: What did the circus example eliminate? | Animal shows and star performers.
+Q: What did the circus example create? | Themes, artistic music and dance, attracting theatre-goers as well as families.
+Q: What did the circus example raise and reduce? | It raised a unique venue and artistic quality, and reduced thrills and danger.
+Q: Name two limitations of blue ocean strategy. | Examples are chosen with hindsight (survivorship bias), and blue oceans attract imitators and turn red; it is also hard to apply systematically.
+Q: Why must firms keep innovating after reaching a blue ocean? | Successful new markets attract imitators, so the ocean does not stay blue permanently.
 
 ## Strategy implementation
 LV: Introductory · Application
@@ -636,6 +776,16 @@ M2#business-u03-15-q2@2: A firm adopts an innovation strategy but keeps a bonus 
 M3#business-u03-15-q3@3: A manufacturer's new strategy is clear and well funded, but managers and staff resist it and keep old routines. What is the most likely problem? | Misalignment of style and shared values with the new strategy | The strategy itself must be wrong | Too much funding was provided | The organisation has too many skills | Soft elements such as culture and leadership often block implementation even when hard elements are in place.
 SEQ1#business-u03-15-q4@2: Order these steps to diagnose an implementation problem with the 7S framework. | Describe the intended strategy ; Assess each of the seven elements ; Identify misalignments ; Plan changes to bring elements into line | Diagnosis moves from the strategy through each element to an action plan.
 SA2#business-u03-15-q5@2,3: Use the McKinsey 7S framework to explain how a retailer could implement a move to online sales. | Strategy: online growth. Structure: create a digital division with authority. Systems: invest in e-commerce, logistics and data. Skills: recruit and train in digital marketing and analytics. Staff: redeploy store staff to online fulfilment. Style: leaders champion and model the change. Shared values: emphasise customer convenience across channels. All seven must align. | Hard elements ; Soft elements ; Specific retailer actions ; Alignment point
+Q: Name five reasons strategy implementation fails. | Unclear strategy or poor communication, resources not matching priorities, structures and systems supporting the old strategy, culture and resistance to change, and weak leadership or monitoring.
+Q: Who identified the McKinsey 7S framework? | Waterman, Peters and Phillips (1980).
+Q: Which 7S elements are the soft elements? | Shared values, style, staff and skills.
+Q: Which elements are the soft elements in 7S? | Shared values, style, staff and skills.
+Q: What does systems mean in the 7S framework? | Processes, IT and budgets through which work gets done.
+Q: What does style mean in the 7S framework? | Leadership style.
+Q: What does the 7S framework say about changing one element? | A change in one element, such as strategy, usually requires changes in the others.
+Q: Why does the digital-first bank's structure threaten its strategy? | It is still built around branch regions, which do not support a digital-first approach.
+Q: Why will the bank's strategy fail unless other elements change too, according to 7S? | Old IT, few data and software staff, and a risk-averse, branch-focused culture are misaligned with the strategy.
+Q: Why do many good strategies still fail? | The organisation is not aligned or resourced to deliver them, not because the strategy is wrong.
 
 ## The balanced scorecard
 LV: Introductory · Application
@@ -677,4 +827,14 @@ M2#business-u03-16-q2@2: A call centre measures average time to resolve a query.
 M3#business-u03-16-q3@3: A company's scorecard has 80 measures and managers ignore most of them. What is the best advice? | Reduce to a few measures clearly linked to the strategy through a strategy map | Add more measures to cover every activity | Measure only profit to keep it simple | Abandon all non-financial measures | Kaplan and Norton stress a focused set of measures linked to strategic objectives.
 MATCH1#business-u03-16-q4@1: Match each measure to its perspective. | Revenue growth = Financial ; Customer retention rate = Customer ; Order fulfilment time = Internal business process ; Staff engagement score = Learning and growth | Each measure answers the question posed by one perspective.
 SA2#business-u03-16-q5@3: Evaluate the balanced scorecard as a way of managing strategic performance. | It broadens performance measurement beyond financial results, links measures to strategy and includes leading indicators of future performance, and strategy maps clarify cause and effect. But it can become a long list of measures, the cause-and-effect links are assumed rather than proven, it may omit stakeholders such as suppliers or the environment, and the evidence of financial benefit is mixed. It is most effective when kept focused and reviewed. | Broader measurement and leading indicators ; Links to strategy ; Weaknesses: too many measures or assumed links ; Evidence and conclusion
+Q: Why did Kaplan and Norton add perspectives to financial measures? | Financial measures alone look backwards and can encourage short-termism.
+Q: What question does the financial perspective ask and what are examples? | How do we look to shareholders? Examples are profit, return on capital and revenue growth.
+Q: What question does the customer perspective ask and what are examples? | How do customers see us? Examples are satisfaction, retention and market share.
+Q: What question does the internal business process perspective ask? | What must we excel at? Examples are quality, cycle time and productivity.
+Q: What question does the learning and growth perspective ask? | Can we continue to improve and create value? Examples are staff skills, engagement and innovation.
+Q: What is a strategy map? | A diagram, developed by Kaplan and Norton in 2004, showing cause-and-effect links between objectives across the perspectives.
+Q: Describe the cause-and-effect chain in a strategy map. | Investment in staff skills improves processes, which improves customer outcomes, which drive financial results.
+Q: What is a lagging indicator? | A measure of past results, such as profit.
+Q: Give two internal process measures from the hospital trust example. | Infection rates and bed occupancy; discharge before midday is also listed.
+Q: Why should a scorecard not have as many measures as possible? | It works with a small number of measures linked to strategy; too many measures dilute focus.
 `;
