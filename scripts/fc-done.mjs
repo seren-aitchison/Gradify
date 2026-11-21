@@ -34,7 +34,7 @@ const sleep = (ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 
 for (let i = 0; ; i++) {
   try {
     git("add", "--", file);
-    git("commit", "-q", "-m", `Notes: 10 more flashcards per lesson, ${file.replace("kit/courses/", "")}\n\n${cr.lessons} lessons, ${cr.added} new cards; passes check-flashcard-additions and the quality audit gate.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_0183yzNBbPAoibnEn3B5Qose`, "--", file);
+    git("commit", "-q", "-m", `Notes: 10 more flashcards per lesson, ${file.replace("kit/courses/", "")}\n\n${cr.lessons} lessons, ${cr.added} new cards; passes check-flashcard-additions and the quality audit gate.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01P878LY7ZmGpTexzzHpy1kZ`, "--", file);
     break;
   } catch (e) {
     const msg = String(e.stderr || e.message);
@@ -45,6 +45,6 @@ for (let i = 0; ; i++) {
 }
 console.log("COMMITTED " + git("log", "-1", "--format=%h").trim());
 for (let i = 0; i < 4; i++) {
-  try { git("push", "-q", "origin", "HEAD:claude/funny-johnson-jzpit1"); console.log("pushed"); break; }
+  try { git("push", "-q", "origin", `HEAD:${git("rev-parse", "--abbrev-ref", "HEAD").trim()}`); console.log("pushed"); break; }
   catch (e) { if (i === 3) console.log("push failed (commit is safe locally; the lead will push): " + String(e.stderr).slice(0, 200)); sleep(2000 * 2 ** i); }
 }

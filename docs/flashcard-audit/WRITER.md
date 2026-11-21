@@ -1,7 +1,7 @@
 # Writer brief: 10 more flashcards per lesson
 
 You are one of several writers working in the same checkout, /home/user/Gradify, on branch
-claude/funny-johnson-jzpit1. Read docs/FLASHCARD-QUALITY.md first: it is the standard.
+claude/tender-albattani-v7kiqg. Read docs/FLASHCARD-QUALITY.md first: it is the standard.
 
 Your batch is listed in docs/flashcard-audit/plan.json (find your batch id; work through its "files" in order,
 finishing one file completely before starting the next).
