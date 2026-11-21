@@ -1,0 +1,41 @@
+{
+ "id": "bio-thermoregulation",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Skin and thermoregulation",
+ "title": "Keeping core temperature near 37 °C",
+ "caption": "The hypothalamus compares blood temperature with the set point. If it is too high, sweating and vasodilation lose heat; if too low, shivering, vasoconstriction and a higher metabolic rate save and make heat. Two opposite responses give finer control.",
+ "alt": "A flow chart: temperature at the set point needs no response; above it leads to sweating, vasodilation and flattened hairs; below it leads to shivering, vasoconstriction, raised hairs and increased metabolism.",
+ "description": [
+  "The hypothalamus monitors blood temperature and input from skin receptors.",
+  "At the set point, about 37 °C, no response is needed.",
+  "Too hot: sweating, vasodilation of skin arterioles and hairs lying flat, so more heat is lost.",
+  "Too cold: shivering, vasoconstriction, hairs raised and increased metabolism, so heat is kept and made."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Is core temperature different from the set point, about 37 °C?",
+   "yes": "q2",
+   "no": "ok"
+  },
+  "ok": {
+   "outcome": "No response needed: temperature is at the set point",
+   "tone": "good"
+  },
+  "q2": {
+   "q": "Is it above the set point?",
+   "yes": "hot",
+   "no": "cold"
+  },
+  "hot": {
+   "outcome": "Too hot: sweating, vasodilation of skin arterioles, hairs lie flat",
+   "tone": "warn"
+  },
+  "cold": {
+   "outcome": "Too cold: shivering, vasoconstriction, hairs raised, more metabolism",
+   "tone": "bad"
+  }
+ }
+}

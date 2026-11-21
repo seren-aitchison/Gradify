@@ -1,0 +1,81 @@
+{
+ "id": "bio-negative-feedback",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Homeostasis",
+ "title": "A negative feedback loop",
+ "caption": "A receptor detects a change in a controlled variable, a coordinator processes the information and an effector makes a response that reverses the change, returning the variable towards its set point. Rising blood glucose triggering insulin release is an example; positive feedback, which amplifies a change, is rarer.",
+ "alt": "Five boxes in order: a change in the variable, the receptor, the coordinator, the effector and the restored set point.",
+ "description": [
+  "Change: a controlled variable moves away from its set point.",
+  "Receptor: detects the change.",
+  "Coordinator: such as the brain, processes the information.",
+  "Effector: carries out a response, such as a gland or muscle.",
+  "Set point restored: the response reverses the change.",
+  "Example: blood glucose rises, the pancreas releases insulin, and glucose falls back to the set point."
+ ],
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "f0",
+   "label": "change",
+   "sub": "a controlled variable moves away from its set point",
+   "tone": "a3",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "f1",
+   "label": "receptor",
+   "sub": "detects the change",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "f2",
+   "label": "coordinator",
+   "sub": "such as the brain, processes the information",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "f3",
+   "label": "effector",
+   "sub": "carries out a response, such as a gland or muscle",
+   "tone": "a4",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "f4",
+   "label": "set point restored",
+   "sub": "the response reverses the change",
+   "tone": "a2",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "f0",
+   "to": "f1"
+  },
+  {
+   "from": "f1",
+   "to": "f2"
+  },
+  {
+   "from": "f2",
+   "to": "f3"
+  },
+  {
+   "from": "f3",
+   "to": "f4"
+  }
+ ]
+}

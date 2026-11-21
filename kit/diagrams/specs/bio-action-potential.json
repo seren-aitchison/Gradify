@@ -1,0 +1,176 @@
+{
+ "id": "bio-action-potential",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Action potentials",
+ "title": "An action potential",
+ "caption": "From a resting potential of about −70 mV, a stimulus that reaches the threshold (about −55 mV) opens voltage-gated Na⁺ channels: depolarisation to about +40 mV. Then Na⁺ channels close and K⁺ channels open (repolarisation), the potential briefly undershoots below −70 mV (hyperpolarisation), and the resting potential is restored. The time axis is schematic.",
+ "alt": "A trace of membrane potential with its phases labelled depolarisation, repolarisation and hyperpolarisation: flat at -70 millivolts, a stimulus rising to the -55 millivolt threshold, a sharp rise to +40, a fall to about -80 below the resting level, and a return to -70.",
+ "description": [
+  "Resting: about −70 mV, inside negative.",
+  "A stimulus raises the potential to the threshold, about −55 mV.",
+  "Depolarisation: Na⁺ floods in and the potential rises to about +40 mV.",
+  "Repolarisation: Na⁺ channels close, K⁺ channels open and K⁺ leaves.",
+  "Hyperpolarisation: the potential briefly falls below −70 mV.",
+  "The resting potential is restored."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   -100,
+   60
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   -70,
+   -55,
+   0,
+   40
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time (schematic)",
+  "membrane potential / mV"
+ ],
+ "bands": [
+  {
+   "x": [
+    1.5,
+    2
+   ],
+   "label": "depol.",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    2,
+    3
+   ],
+   "label": "repol.",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    3,
+    4.5
+   ],
+   "label": "hyperpol.",
+   "colour": "a5"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "-70",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "-70+15*(x-1)/0.5",
+   "domain": [
+    1,
+    1.5
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "-55+95*sin(1.5708*(x-1.5)/0.5)",
+   "domain": [
+    1.5,
+    2
+   ],
+   "colour": "a2"
+  },
+  {
+   "expr": "40-120*sin(1.5708*(x-2)/1)",
+   "domain": [
+    2,
+    3
+   ],
+   "colour": "a4"
+  },
+  {
+   "expr": "-70-10*cos(1.5708*(x-3)/1.5)",
+   "domain": [
+    3,
+    4.5
+   ],
+   "colour": "a5"
+  },
+  {
+   "expr": "-70",
+   "domain": [
+    4.5,
+    6
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": -55,
+   "label": "threshold"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-70",
+   "x": 0.5,
+   "y": -70,
+   "name": "resting potential: −70 mV"
+  },
+  {
+   "type": "point",
+   "expr": "-70+15*(x-1)/0.5",
+   "x": 1.5,
+   "y": -55,
+   "name": "the stimulus brings the membrane to the threshold, −55 mV"
+  },
+  {
+   "type": "point",
+   "expr": "-55+95*sin(1.5708*(x-1.5)/0.5)",
+   "x": 2,
+   "y": 40,
+   "name": "depolarisation reaches about +40 mV"
+  },
+  {
+   "type": "max",
+   "expr": "-55+95*sin(1.5708*(x-1.5)/0.5)",
+   "domain": [
+    1.5,
+    2
+   ],
+   "x": 2,
+   "y": 40,
+   "name": "the peak is the top of the action potential"
+  },
+  {
+   "type": "point",
+   "expr": "40-120*sin(1.5708*(x-2)/1)",
+   "x": 3,
+   "y": -80,
+   "name": "hyperpolarisation: the potential falls below the resting level (−80 mV)"
+  },
+  {
+   "type": "point",
+   "expr": "-70-10*cos(1.5708*(x-3)/1.5)",
+   "x": 4.5,
+   "y": -70,
+   "name": "the resting potential is restored"
+  }
+ ]
+}

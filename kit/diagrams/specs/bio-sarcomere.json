@@ -1,0 +1,34 @@
+{
+ "id": "bio-sarcomere",
+ "renderer": "sarcomere",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Muscle contraction",
+ "title": "The sarcomere shortens, the filaments do not",
+ "caption": "In contraction the myosin heads pull the actin filaments towards the middle. The Z lines move closer, the I band and H zone shrink and may vanish, but the A band, which is the length of the myosin filament, stays the same: the filaments slide past each other and keep their length.",
+ "alt": "Two sarcomeres drawn to scale, relaxed at 2.4 micrometres and contracted at 1.8: the thin actin filaments from each Z line slide inwards over the central thick myosin filament; the A band stays 1.6 micrometres while the I band falls from 0.8 to 0.2 and the H zone from 0.4 to nothing.",
+ "description": [
+  "Relaxed: sarcomere 2.4 µm; A band 1.6 µm, I band 0.8 µm, H zone 0.4 µm.",
+  "Contracted: sarcomere 1.8 µm; A band still 1.6 µm, I band 0.2 µm, H zone gone.",
+  "Myosin heads form cross-bridges with actin and pivot, pulling the thin filaments inwards.",
+  "The sarcomere shortens by 0.6 µm but no filament changes length."
+ ],
+ "thick": 1.6,
+ "thin": 1.0,
+ "states": [
+  {
+   "label": "relaxed",
+   "L": 2.4
+  },
+  {
+   "label": "contracted",
+   "L": 1.8
+  }
+ ],
+ "claims": [
+  {
+   "type": "shortening",
+   "value": 0.6
+  }
+ ]
+}

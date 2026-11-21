@@ -59,6 +59,7 @@ H: Feedback
 - **Positive feedback** amplifies a change and is rarer.
 - Example: oxytocin increasing contractions during childbirth, and blood clotting.
 P: Homeostasis allows enzymes and cells to work in optimal conditions. Failure of homeostasis causes disease: in type 1 diabetes, insulin is not produced, so blood glucose cannot be controlled. Many variables are controlled by more than one effector working in opposite directions, which gives finer control, as with insulin and glucagon.
+D: bio-negative-feedback
 X: Blood glucose control.
 > After a meal, blood glucose rises above the set point.
 > The pancreas detects this and releases insulin.
@@ -182,6 +183,7 @@ H: The action potential
 - **Hyperpolarisation**: the potential briefly falls below −70 mV.
 - The resting potential is restored.
 P: Action potentials are **all-or-nothing**: if the stimulus reaches the **threshold** (about −55 mV), a full action potential occurs; otherwise none does. Stimulus strength is coded by the **frequency** of impulses, not their size. The **refractory period** after an action potential prevents another immediately, ensuring impulses travel in one direction and are separate.
+D: bio-action-potential
 X: Strong versus weak stimuli.
 > A light touch produces a few action potentials per second in a sensory neurone.
 > A firm press produces many more per second.
@@ -1182,6 +1184,7 @@ H: Sliding filaments
 - **ATP** binds myosin to release it, and its hydrolysis re-cocks the head.
 - Sarcomeres shorten, but filaments stay the same length.
 P: In death, ATP runs out, so myosin cannot detach from actin, causing rigor mortis. Muscles contain slow-twitch fibres, suited to endurance, and fast-twitch fibres, suited to rapid powerful contractions. Phosphocreatine provides a quick reserve to regenerate ATP during intense activity.
+D: bio-sarcomere
 X: Rigor mortis.
 > After death, cells stop making ATP.
 > Myosin heads remain bound to actin.
@@ -1264,6 +1267,7 @@ H: The menstrual cycle
 - A surge of **LH** triggers **ovulation** around day 14.
 - **Progesterone** maintains the uterus lining; if no pregnancy, it falls and menstruation occurs.
 P: Hormonal contraceptives, such as the combined pill, contain oestrogen and progesterone that inhibit FSH and LH, preventing ovulation. Barrier methods, such as condoms, also reduce the spread of sexually transmitted infections. In vitro fertilisation (IVF) uses FSH and LH to stimulate egg production; eggs are fertilised in the lab and embryos are implanted. The first IVF baby, Louise Brown, was born in 1978 in the UK.
+D: bio-menstrual-cycle
 X: Hormones and ovulation.
 > At the start of the cycle, FSH from the pituitary stimulates a follicle.
 > Rising oestrogen thickens the uterus lining.
@@ -1346,6 +1350,7 @@ H: Thermoregulation
 - **Too cold**: shivering, **vasoconstriction**, hairs raised and increased metabolism.
 - Core temperature is kept around 37 °C.
 P: Sweat cools the body because evaporation of water absorbs heat. In humid conditions, sweat evaporates poorly, so overheating is more likely. **Hypothermia** occurs when core temperature falls below 35 °C, and **heatstroke** occurs when temperature control fails in extreme heat. Babies and older people are more vulnerable to both.
+D: bio-thermoregulation
 X: Responding to cold.
 > A person steps outside on a cold day.
 > Skin receptors and the hypothalamus detect a fall in temperature.

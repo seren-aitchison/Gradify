@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -241,4 +241,14 @@ test("cladograms: a trait that does not match one clade, or arose twice, is reje
   assert.equal(allPass(ok), true);
   assert.equal(allPass({ ...ok, characters: [{ name: "wings", taxa: ["shark", "mouse"] }] }), false); // no single clade: it would have arisen twice
   assert.equal(allPass({ ...ok, claims: [{ type: "closer", taxa: ["frog", "lizard"], than: ["lizard", "mouse"] }] }), false);
+});
+
+test("sarcomere: contraction shortens the I band and H zone, never the A band", () => {
+  const spec = { thick: 1.6, thin: 1.0 };
+  assert.deepEqual([bandsOf(spec, 2.4).A, bandsOf(spec, 1.8).A], [1.6, 1.6]);
+  assert.ok(bandsOf(spec, 1.8).I < bandsOf(spec, 2.4).I);
+  assert.equal(bandsOf(spec, 1.8).H, 0);
+  const ok = { renderer: "sarcomere", alt: "x", thick: 1.6, thin: 1.0, states: [{ label: "relaxed", L: 2.4 }, { label: "contracted", L: 1.8 }], claims: [{ type: "shortening", value: 0.6 }] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, states: [{ label: "relaxed", L: 1.8 }, { label: "contracted", L: 2.4 }] }), false); // a "contracted" sarcomere that is longer
 });

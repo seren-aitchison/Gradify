@@ -18,6 +18,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   layers     the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   sarcomere  relaxed and contracted sarcomeres: band lengths worked out from the filament lengths
 //   cladogram  an evolutionary tree with the characters that define its clades, each character on one branch (parsimony)
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
 // decision-tree renderers instead.
@@ -1151,6 +1152,47 @@ function cladogramChecks(spec) {
   return out;
 }
 
+// ======================================================================== sarcomere
+// A sarcomere relaxed and contracted: the filaments slide, they do not shorten.
+// spec: thick: length of a myosin filament in µm, thin: length of an actin filament from its Z line,
+//   states: [{label, L}] sarcomere length (Z line to Z line) in µm,
+//   claims: [{type: "filamentsConstant"} | {type: "shorter", from, to} | {type: "bands", state, A, I, H}]
+export function bandsOf(spec, L) { return { A: spec.thick, I: Math.max(0, L - spec.thick), H: Math.max(0, L - 2 * spec.thin) }; }
+function sarcomereDraw(spec, W, narrow) {
+  const pad = 20, k = (W - 2 * pad) / Math.max(...spec.states.map((s) => s.L)), rowH = narrow ? 168 : 176;
+  let s = "";
+  spec.states.forEach((st, i) => {
+    const y = 14 + i * rowH, B = bandsOf(spec, st.L), x0 = pad + ((Math.max(...spec.states.map((q) => q.L)) - st.L) * k) / 2, x1 = x0 + st.L * k, mid = y + 70;
+    s += text(pad, y, st.label, { size: 14, weight: 800, anchor: "start", fill: C.a1 }) + text(W - pad, y, `sarcomere ${st.L} µm`, { size: 12, anchor: "end", fill: C.soft });
+    // thin filaments from each Z line (two rows), thick filament in the middle
+    for (const dy of [-13, 13]) {
+      s += line(x0, mid + dy, x0 + spec.thin * k, mid + dy, { stroke: C.a2, w: 4, cap: "butt" }) + line(x1, mid + dy, x1 - spec.thin * k, mid + dy, { stroke: C.a2, w: 4, cap: "butt" });
+    }
+    const tx = (x0 + x1) / 2 - (spec.thick * k) / 2;
+    s += rect(tx, mid - 5, spec.thick * k, 10, { fill: C.a4, op: 0.85, stroke: "none", rx: 3 });
+    s += line(x0, mid - 30, x0, mid + 30, { stroke: C.ink, w: 3 }) + line(x1, mid - 30, x1, mid + 30, { stroke: C.ink, w: 3 }) + text(x0, mid - 38, "Z", { size: 11.5, weight: 700 }) + text(x1, mid - 38, "Z", { size: 11.5, weight: 700 });
+    // the bands, to scale, under the filaments
+    const by = mid + 44;
+    s += rect(tx, by - 5, B.A * k, 10, { fill: C.a4, op: 0.5, stroke: C.a4, sw: 1.2, rx: 2 });
+    s += rect(x0, by - 5, (tx - x0), 10, { fill: C.a1, op: 0.3, stroke: C.a1, sw: 1.2, rx: 2 }) + rect(tx + B.A * k, by - 5, x1 - (tx + B.A * k), 10, { fill: C.a1, op: 0.3, stroke: C.a1, sw: 1.2, rx: 2 });
+    if (B.H > 0) s += rect((x0 + x1) / 2 - (B.H * k) / 2, by + 9, B.H * k, 9, { fill: C.a3, op: 0.55, stroke: C.a3, sw: 1.2, rx: 2 });
+    s += text(pad, by + 34, `A band ${B.A} µm  ·  I band ${+B.I.toFixed(2)} µm  ·  H zone ${+B.H.toFixed(2)} µm`, { size: 12, anchor: "start" });
+  });
+  const ky = 14 + spec.states.length * rowH + 6;
+  s += line(pad, ky, pad + 22, ky, { stroke: C.a2, w: 4, cap: "butt" }) + text(pad + 28, ky, "actin (thin)", { size: 12, anchor: "start" }) + rect(pad + 118, ky - 5, 22, 10, { fill: C.a4, op: 0.85, stroke: "none", rx: 3 }) + text(pad + 146, ky, "myosin (thick)", { size: 12, anchor: "start" });
+  return { s, H: ky + 14 };
+}
+function sarcomereChecks(spec) {
+  const out = [], [a, b] = spec.states.map((st) => bandsOf(spec, st.L));
+  out.push(check("the thick and thin filaments are the same length in both states: they slide past each other, they do not shorten", spec.thick > 0 && spec.thin > 0 && spec.states.length === 2));
+  out.push(check("the contracted sarcomere is shorter than the relaxed one", spec.states[1].L < spec.states[0].L, `${spec.states[1].L} µm against ${spec.states[0].L} µm`));
+  out.push(check("the A band (the length of the thick filaments) does not change", a.A === b.A, `${a.A} µm in both`));
+  out.push(check("the I band (actin only) shortens on contraction", b.I < a.I, `${a.I.toFixed(2)} → ${b.I.toFixed(2)} µm`));
+  out.push(check("the H zone (myosin only) shortens on contraction", b.H < a.H || (a.H > 0 && b.H === 0), `${a.H.toFixed(2)} → ${b.H.toFixed(2)} µm`));
+  for (const c of spec.claims || []) if (c.type === "shortening") out.push(check(`the sarcomere shortens by ${c.value} µm while every filament keeps its length`, Math.abs(spec.states[0].L - spec.states[1].L - c.value) < 1e-9));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1169,4 +1211,5 @@ register({
   layers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  sarcomere: { draw: sarcomereDraw, checks: sarcomereChecks, widths: [660, 380] },
 });

@@ -25432,5 +25432,300 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "bio-action-potential": {
+  "title": "An action potential",
+  "caption": "From a resting potential of about −70 mV, a stimulus that reaches the threshold (about −55 mV) opens voltage-gated Na⁺ channels: depolarisation to about +40 mV. Then Na⁺ channels close and K⁺ channels open (repolarisation), the potential briefly undershoots below −70 mV (hyperpolarisation), and the resting potential is restored. The time axis is schematic.",
+  "alt": "A trace of membrane potential with its phases labelled depolarisation, repolarisation and hyperpolarisation: flat at -70 millivolts, a stimulus rising to the -55 millivolt threshold, a sharp rise to +40, a fall to about -80 below the resting level, and a return to -70.",
+  "description": [
+   "Resting: about −70 mV, inside negative.",
+   "A stimulus raises the potential to the threshold, about −55 mV.",
+   "Depolarisation: Na⁺ floods in and the potential rises to about +40 mV.",
+   "Repolarisation: Na⁺ channels close, K⁺ channels open and K⁺ leaves.",
+   "Hyperpolarisation: the potential briefly falls below −70 mV.",
+   "The resting potential is restored."
+  ],
+  "course": "biology",
+  "lesson": "Action potentials",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Action potentials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "resting potential: −70 mV",
+    "ok": true,
+    "detail": "y(0.5) = -70"
+   },
+   {
+    "name": "the stimulus brings the membrane to the threshold, −55 mV",
+    "ok": true,
+    "detail": "y(1.5) = -55"
+   },
+   {
+    "name": "depolarisation reaches about +40 mV",
+    "ok": true,
+    "detail": "y(2) = 40"
+   },
+   {
+    "name": "the peak is the top of the action potential",
+    "ok": true,
+    "detail": "found (2, 40)"
+   },
+   {
+    "name": "hyperpolarisation: the potential falls below the resting level (−80 mV)",
+    "ok": true,
+    "detail": "y(3) = -80"
+   },
+   {
+    "name": "the resting potential is restored",
+    "ok": true,
+    "detail": "y(4.5) = -70"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-menstrual-cycle": {
+  "title": "The menstrual cycle: four hormones over 28 days",
+  "caption": "FSH stimulates a follicle to mature and the follicle releases oestrogen. A surge of LH triggers ovulation around day 14. After ovulation progesterone maintains the lining of the uterus; if there is no pregnancy it falls and menstruation follows. Relative levels, drawn schematically.",
+  "alt": "Four curves of relative hormone level over 28 days: FSH highest early with a small peak at day 14, oestrogen peaking just before day 14 and again later, a sharp LH surge at day 14, and progesterone peaking about day 21 and falling by day 28.",
+  "description": [
+   "FSH rises early in the cycle and stimulates a follicle to mature.",
+   "Oestrogen from the follicle rises to a peak just before the middle of the cycle.",
+   "A surge of LH around day 14 triggers ovulation.",
+   "Progesterone rises after ovulation, peaking in the second half, and maintains the uterus lining.",
+   "If there is no pregnancy, progesterone falls by day 28 and menstruation occurs."
+  ],
+  "course": "biology",
+  "lesson": "Reproductive system",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Reproductive system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the LH surge peaks at day 14, triggering ovulation",
+    "ok": true,
+    "detail": "found (14, 1.02)"
+   },
+   {
+    "name": "oestrogen peaks just before ovulation",
+    "ok": true,
+    "detail": "found (12.845, 0.829)"
+   },
+   {
+    "name": "progesterone peaks in the second half of the cycle, after ovulation",
+    "ok": true,
+    "detail": "found (21, 0.9)"
+   },
+   {
+    "name": "with no pregnancy, progesterone has fallen by day 28",
+    "ok": true,
+    "detail": "0.05+0.85*exp(-(x-21)^2/(2*3^2)) at 28 = 0.11; expected 0–0.15"
+   },
+   {
+    "name": "progesterone is low before ovulation",
+    "ok": true,
+    "detail": "0.05+0.85*exp(-(x-21)^2/(2*3^2)) at 5 = 0.05; expected 0–0.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-negative-feedback": {
+  "title": "A negative feedback loop",
+  "caption": "A receptor detects a change in a controlled variable, a coordinator processes the information and an effector makes a response that reverses the change, returning the variable towards its set point. Rising blood glucose triggering insulin release is an example; positive feedback, which amplifies a change, is rarer.",
+  "alt": "Five boxes in order: a change in the variable, the receptor, the coordinator, the effector and the restored set point.",
+  "description": [
+   "Change: a controlled variable moves away from its set point.",
+   "Receptor: detects the change.",
+   "Coordinator: such as the brain, processes the information.",
+   "Effector: carries out a response, such as a gland or muscle.",
+   "Set point restored: the response reverses the change.",
+   "Example: blood glucose rises, the pancreas releases insulin, and glucose falls back to the set point."
+  ],
+  "course": "biology",
+  "lesson": "Homeostasis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Homeostasis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-sarcomere": {
+  "title": "The sarcomere shortens, the filaments do not",
+  "caption": "In contraction the myosin heads pull the actin filaments towards the middle. The Z lines move closer, the I band and H zone shrink and may vanish, but the A band, which is the length of the myosin filament, stays the same: the filaments slide past each other and keep their length.",
+  "alt": "Two sarcomeres drawn to scale, relaxed at 2.4 micrometres and contracted at 1.8: the thin actin filaments from each Z line slide inwards over the central thick myosin filament; the A band stays 1.6 micrometres while the I band falls from 0.8 to 0.2 and the H zone from 0.4 to nothing.",
+  "description": [
+   "Relaxed: sarcomere 2.4 µm; A band 1.6 µm, I band 0.8 µm, H zone 0.4 µm.",
+   "Contracted: sarcomere 1.8 µm; A band still 1.6 µm, I band 0.2 µm, H zone gone.",
+   "Myosin heads form cross-bridges with actin and pivot, pulling the thin filaments inwards.",
+   "The sarcomere shortens by 0.6 µm but no filament changes length."
+  ],
+  "course": "biology",
+  "lesson": "Muscle contraction",
+  "also": [],
+  "renderer": "sarcomere",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Muscle contraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the thick and thin filaments are the same length in both states: they slide past each other, they do not shorten",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the contracted sarcomere is shorter than the relaxed one",
+    "ok": true,
+    "detail": "1.8 µm against 2.4 µm"
+   },
+   {
+    "name": "the A band (the length of the thick filaments) does not change",
+    "ok": true,
+    "detail": "1.6 µm in both"
+   },
+   {
+    "name": "the I band (actin only) shortens on contraction",
+    "ok": true,
+    "detail": "0.80 → 0.20 µm"
+   },
+   {
+    "name": "the H zone (myosin only) shortens on contraction",
+    "ok": true,
+    "detail": "0.40 → 0.00 µm"
+   },
+   {
+    "name": "the sarcomere shortens by 0.6 µm while every filament keeps its length",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "bio-thermoregulation": {
+  "title": "Keeping core temperature near 37 °C",
+  "caption": "The hypothalamus compares blood temperature with the set point. If it is too high, sweating and vasodilation lose heat; if too low, shivering, vasoconstriction and a higher metabolic rate save and make heat. Two opposite responses give finer control.",
+  "alt": "A flow chart: temperature at the set point needs no response; above it leads to sweating, vasodilation and flattened hairs; below it leads to shivering, vasoconstriction, raised hairs and increased metabolism.",
+  "description": [
+   "The hypothalamus monitors blood temperature and input from skin receptors.",
+   "At the set point, about 37 °C, no response is needed.",
+   "Too hot: sweating, vasodilation of skin arterioles and hairs lying flat, so more heat is lost.",
+   "Too cold: shivering, vasoconstriction, hairs raised and increased metabolism, so heat is kept and made."
+  ],
+  "course": "biology",
+  "lesson": "Skin and thermoregulation",
+  "also": [],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Skin and thermoregulation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
  }
 }
