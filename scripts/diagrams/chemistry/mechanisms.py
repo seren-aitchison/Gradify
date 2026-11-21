@@ -98,10 +98,10 @@ M("u14-14", "chem-halogenoalkane-ammonia", "Ammonia and bromoethane",
   ["Stage 1: arrows from ammonia's lone pair to the δ+ carbon and from the C–Br bond onto bromine.", "Stage 2: ethylammonium and Br⁻; arrows from a second ammonia to an N–H hydrogen and from that N–H bond onto nitrogen.",
    "Stage 3: ethylamine, NH₄⁺ and Br⁻."],
   [{"smiles": "[NH2:1][H:7].[CH3:2][CH2:3][Br:4].[NH3:5]", "xy": {"1": [-2.2, 0], "7": [-2.7, 1.0], "3": [0, 0], "2": [0.6, 1.1], "4": [1.3, -0.4], "5": [-2.4, -2.2]}, "charges": {"3": "δ+", "4": "δ−"}, "chargeOffset": {"3": [-4, -18], "4": [14, -14]},
-    "hide": [5], "label": "NH₃ + bromoethane", "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 3]}, "toward": 3, "lpAngle": 0, "lpDist": 18, "bend": -0.3}, {"from": {"bond": [3, 4]}, "to": {"atom": 4}, "bend": 1}]},
+    "hide": [5], "label": "NH₃ + bromoethane", "arrows": [{"from": {"lp": 1}, "to": {"bond": [1, 3]}, "toward": 3, "lpAngle": -35, "lpDist": 20, "bend": -0.3}, {"from": {"bond": [3, 4]}, "to": {"atom": 4}, "bend": 1}]},
    {"smiles": "[CH3:2][CH2:3][NH2+:1][H:7].[Br-:4].[NH3:5]", "xy": {"2": [-1.1, 0.6], "3": [0, 0], "1": [1.15, 0.6], "7": [1.6, 1.7], "4": [-1.6, -1.4], "5": [3.0, 1.7]},
-    "label": "ethylammonium + NH₃", "arrows": [{"from": {"lp": 5}, "to": {"bond": [5, 7]}, "toward": 7, "lpAngle": 180, "lpDist": 16, "bend": 0.4}, {"from": {"bond": [1, 7]}, "to": {"atom": 1}, "bend": 1}]},
-   {"smiles": "[CH3:2][CH2:3][NH2:1].[H:7][NH3+:5].[Br-:4]", "xy": {"2": [-1.1, 0.6], "3": [0, 0], "1": [1.15, 0.6], "7": [2.2, 1.6], "5": [3.0, 1.0], "4": [-1.6, -1.4]}, "hide": [7], "labels": {"5": "NH<sub>4</sub>"}, "label": "ethylamine + NH₄⁺ + Br⁻"}],
+    "label": "ethylammonium + NH₃", "arrows": [{"from": {"lp": 5}, "to": {"bond": [5, 7]}, "toward": 7, "lpAngle": 180, "lpDist": 16, "bend": 0.4}, {"from": {"bond": [1, 7]}, "to": {"atom": 1}, "bend": -1}]},
+   {"smiles": "[CH3:2][CH2:3][NH2:1].[H:7][NH3+:5].[Br-:4]", "xy": {"2": [-1.1, 0.6], "3": [0, 0], "1": [1.15, 0.6], "7": [2.2, 1.6], "5": [3.0, 1.0], "4": [-1.6, -1.4]}, "hide": [7], "labels": {"5": "NH<sub>4</sub><sup>+</sup>"}, "label": "ethylamine + NH₄⁺ + Br⁻"}],
   [{}, {}], perRow=2)
 
 M("u14-15", "chem-friedel-crafts", "Friedel–Crafts acylation of benzene",
