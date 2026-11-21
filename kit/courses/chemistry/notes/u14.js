@@ -11,6 +11,7 @@ H: Structure and properties
 - **Hydrogen bonding** gives higher boiling points than alkanes of similar mass.
 - Small alcohols mix with water; solubility falls as the chain grows.
 - Alcohols are very weak acids, weaker than water.
+D: chem-alcohol-classes
 H: Reactions
 - **Combustion** to CO₂ and water.
 - **Oxidation** with dichromate (primary and secondary only).
@@ -53,6 +54,7 @@ H: Acidity
 - The **phenoxide** ion is stabilised by **delocalisation** of the charge into the ring.
 - Phenol reacts with NaOH but **not** with sodium carbonate.
 - Phenol is weaker than carboxylic acids.
+D: chem-phenol-acidity
 H: Ring reactivity
 - The –OH lone pair **activates** the ring.
 - Phenol decolourises **bromine water** without a catalyst.
@@ -94,6 +96,7 @@ H: Structure and properties
 - Ethers **cannot** hydrogen bond to each other, so they boil lower than alcohols.
 - They **can** accept hydrogen bonds from water, so small ethers are slightly soluble.
 - Generally **unreactive**, making good solvents.
+D: chem-ethers
 H: Synthesis and hazards
 - **Williamson synthesis**: alkoxide + haloalkane → ether by SN2.
 - Works best with methyl or primary haloalkanes.
@@ -135,6 +138,7 @@ H: Structure and preparation
 - Named with **-al**: methanal, ethanal, propanal.
 - Made by **oxidising primary alcohols**, distilling off the aldehyde.
 - Also made by reducing acyl chlorides or esters under controlled conditions.
+D: chem-aldehydes
 H: Reactions
 - **Oxidation** to carboxylic acids, used in Tollens' and Fehling's tests.
 - **Reduction** with NaBH₄ to primary alcohols.
@@ -176,6 +180,7 @@ H: Structure and preparation
 - Named with **-one**: propanone, butanone, pentan-3-one.
 - Made by **oxidising secondary alcohols**.
 - Also made by Friedel-Crafts acylation of arenes.
+D: chem-ketones
 H: Reactions
 - **Not oxidised** by mild oxidants: no Tollens' or Fehling's reaction.
 - **Reduced** by NaBH₄ to secondary alcohols.
@@ -217,6 +222,7 @@ H: Structure and acidity
 - **Weak acids** (pKa ≈ 4–5), partly ionising in water.
 - The **carboxylate** ion is stabilised by **delocalisation** over two oxygens.
 - Electron-withdrawing groups such as Cl increase acidity.
+D: chem-carboxylate-resonance
 H: Reactions
 - With **metals**: salt and hydrogen.
 - With **carbonates**: salt, water and CO₂ (fizzing).
@@ -259,6 +265,7 @@ H: Reactivity
 - The carbonyl carbon is strongly δ+ due to both O and Cl.
 - **Cl⁻** is a good leaving group.
 - React by **nucleophilic addition-elimination**.
+D: chem-acyl-chloride-water
 H: Reactions
 - With **water**: carboxylic acid + HCl (vigorous, steamy fumes).
 - With **alcohols**: esters + HCl.
@@ -300,6 +307,7 @@ H: Structure and reactivity
 - Example: **ethanoic anhydride**, (CH₃CO)₂O.
 - React by addition-elimination like acyl chlorides, but **more slowly**.
 - The leaving group is a **carboxylate**, not chloride.
+D: chem-anhydride-acylation
 H: Reactions and uses
 - With water: two carboxylic acid molecules.
 - With alcohols and phenols: esters + carboxylic acid.
@@ -341,6 +349,7 @@ H: Naming and properties
 - Ethyl ethanoate comes from ethanol and ethanoic acid.
 - Volatile, often with **fruity** smells.
 - Cannot hydrogen bond to each other; low boiling points.
+D: chem-esters
 H: Formation and uses
 - From an **acid and alcohol** with a concentrated H₂SO₄ catalyst (reversible).
 - From an **acyl chloride or anhydride** and alcohol (irreversible).
@@ -382,6 +391,7 @@ H: Structure
 - **Secondary (N-substituted)**: RCONHR′.
 - **Tertiary**: RCONR′₂.
 - Amides are made from acyl chlorides or anhydrides with ammonia or amines.
+D: chem-amides
 H: Properties
 - The N lone pair is **delocalised** into C=O, so the C–N bond has partial double-bond character.
 - Amides are **planar** at the C–N bond and are **not basic**.
@@ -423,6 +433,7 @@ H: Classification and basicity
 - Amines are **bases** because the N lone pair accepts H⁺.
 - Alkyl amines are **stronger** bases than ammonia: alkyl groups push electron density onto N.
 - **Phenylamine** is weaker: the lone pair delocalises into the ring.
+D: chem-amine-classes
 H: Preparation and reactions
 - From **haloalkanes** with excess ammonia (gives mixtures).
 - By **reducing nitriles** with LiAlH₄.
@@ -464,6 +475,7 @@ H: Structure and preparation
 - Named with **-nitrile**, counting the CN carbon: ethanenitrile is CH₃CN.
 - Made from **haloalkanes** with KCN in ethanol (SN2).
 - Made from **aldehydes and ketones** with HCN, giving hydroxynitriles.
+D: chem-nitriles
 H: Reactions
 - **Hydrolysis** with acid gives a carboxylic acid.
 - **Hydrolysis** with alkali gives a carboxylate salt and ammonia.
@@ -505,6 +517,7 @@ H: Structure and preparation
 - Nitrogen is bonded to two oxygens with delocalised charge.
 - **Nitrobenzene** is made by nitrating benzene with concentrated HNO₃ and H₂SO₄ below 55 °C.
 - Higher temperatures give multiple nitration.
+D: chem-nitro-reduction
 H: Reactions and uses
 - **Reduction** with Sn and concentrated HCl gives phenylamine.
 - Phenylamine is used to make **dyes** and medicines.
@@ -546,6 +559,7 @@ H: Classification and properties
 - The C–X bond is **polar**, with δ+ carbon.
 - Boiling points rise with chain length and halogen size.
 - Insoluble in water, despite polarity.
+D: chem-halogenoalkane-ammonia
 H: Reactivity
 - Reactivity order: **R–I > R–Br > R–Cl > R–F**.
 - **Bond enthalpy** decides this, not polarity.
@@ -587,6 +601,7 @@ H: Side-chain chemistry
 - Side-chain hydrogens can be substituted by halogens in **UV light**.
 - Ring substitution needs a catalyst; side-chain substitution needs UV.
 - Benzyl positions are reactive because radicals and cations there are resonance-stabilised.
+D: chem-friedel-crafts
 H: Azo dyes
 - **Phenylamine** + nitrous acid (NaNO₂ + HCl) below 10 °C gives a **diazonium salt**.
 - The diazonium ion couples with **phenol** in alkali.
@@ -628,6 +643,7 @@ H: Structure and properties
 - **Sulfides** (thioethers): R–S–R′.
 - Thiols have **strong smells** and **weaker hydrogen bonding** than alcohols.
 - Thiols are **more acidic** than alcohols because S–H is weaker.
+D: chem-thiols
 H: Reactions and biology
 - Thiols are oxidised to **disulfides**, R–S–S–R.
 - **Disulfide bridges** between cysteine residues hold proteins in shape.
@@ -669,6 +685,7 @@ H: Uses
 - **Solvents** such as dichloromethane.
 - **Polymers** such as PVC and PTFE.
 - **Medicines** and **anaesthetics** such as halothane and fluoxetine.
+D: chem-organohalogens
 H: Environmental problems
 - **CFCs** release chlorine radicals in the stratosphere, destroying ozone.
 - The **Montreal Protocol** (1987) phased out CFCs.
@@ -710,6 +727,7 @@ H: Two pathways
 - **Acid derivatives**: nucleophilic **addition-elimination** (a leaving group departs).
 - Both start with attack on the δ+ carbonyl carbon.
 - A **tetrahedral intermediate** forms in both.
+D: chem-carbonyl-reactivity
 H: Reactivity order
 - **Acyl chloride > anhydride > ester > amide > carboxylate**.
 - Better leaving groups and less electron donation increase reactivity.
@@ -751,6 +769,7 @@ H: Enols and enolates
 - **Keto-enol tautomerism**: the keto form usually dominates.
 - A base removes an α-hydrogen, forming a resonance-stabilised **enolate**.
 - Enolates are nucleophilic at the α-carbon.
+D: chem-enolate-formation
 H: Reactions
 - **Aldol reaction**: an enolate adds to another carbonyl, giving a β-hydroxy carbonyl.
 - Heating gives the **aldol condensation** product, an α,β-unsaturated carbonyl.
@@ -792,6 +811,7 @@ H: Key heterocycles
 - **Pyrrole**: a five-membered ring with NH; aromatic but not basic.
 - **Furan** (O) and **thiophene** (S) are five-membered aromatic heterocycles.
 - **Saturated** heterocycles include piperidine and tetrahydrofuran.
+D: chem-heterocycles
 H: Basicity and importance
 - Pyridine's lone pair is in the ring plane, so it is available for H⁺.
 - Pyrrole's lone pair is part of the aromatic sextet, so it is not basic.
@@ -833,6 +853,7 @@ H: Preparing oxygen groups
 - **Aldehydes**: oxidation of primary alcohols with distillation.
 - **Ketones**: oxidation of secondary alcohols; Friedel-Crafts acylation.
 - **Carboxylic acids**: oxidation of primary alcohols under reflux; hydrolysis of nitriles.
+D: chem-synthesis-map
 H: Preparing other groups
 - **Esters**: acid + alcohol; acyl chloride + alcohol.
 - **Amines**: haloalkane + ammonia; reduction of nitriles or nitroarenes.
@@ -874,6 +895,7 @@ H: Retrosynthesis
 - Each backward step is a **disconnection**.
 - Identify key bonds, especially C–C bonds, to break.
 - Corey formalised retrosynthesis, winning the 1990 Nobel Prize.
+D: chem-multistep-route
 H: Evaluating routes
 - **Overall yield** = product of each step's yield.
 - Fewer steps usually mean higher yield and less waste.

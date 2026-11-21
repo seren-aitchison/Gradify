@@ -1,0 +1,28 @@
+{
+ "id": "chem-separating-funnel",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Extraction",
+ "title": "Using a separating funnel",
+ "caption": "Two immiscible liquids form layers, the denser one below. Dichloromethane (1.33 g cm⁻³) sinks below water, so an organic product dissolved in it is run off from the bottom through the tap.",
+ "alt": "A separating funnel with a stopper and tap: an aqueous layer on top and a dichloromethane layer below.",
+ "description": [
+  "Upper layer: water (1.00 g cm⁻³).",
+  "Lower layer: dichloromethane (1.33 g cm⁻³), containing the organic product.",
+  "Open the stopper, then run off the lower layer through the tap."
+ ],
+ "kind": "separating",
+ "layers": [
+  {
+   "name": "water",
+   "colour": "#bfdbfe",
+   "note": "aqueous impurities"
+  },
+  {
+   "name": "dichloromethane",
+   "colour": "#fde68a",
+   "note": "organic product"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "id": "chem-mass-spec",
+ "renderer": "ms",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Mass spectrometry",
+ "title": "Mass spectrum of pentane",
+ "caption": "The molecular ion C₅H₁₂⁺ at m/z 72 gives the relative molecular mass. Breaking C–C bonds gives fragment ions at 57, 43 and 29, each 14 (CH₂) apart; the tallest peak (the base peak) at 43 is C₃H₇⁺.",
+ "alt": "Mass spectrum with peaks at m/z 29, 43 (tallest), 57 and 72.",
+ "description": [
+  "m/z 72: molecular ion C₅H₁₂⁺.",
+  "m/z 57: C₄H₉⁺.",
+  "m/z 43: C₃H₇⁺, the base peak.",
+  "m/z 29: C₂H₅⁺."
+ ],
+ "molecule": "CCCCC",
+ "molecularIon": 72,
+ "base": 43,
+ "range": [
+  10,
+  80
+ ],
+ "peaks": [
+  {
+   "mz": 72,
+   "rel": 10,
+   "ion": "C5H12",
+   "label": "M⁺"
+  },
+  {
+   "mz": 57,
+   "rel": 15,
+   "ion": "C4H9",
+   "label": "C₄H₉⁺"
+  },
+  {
+   "mz": 43,
+   "rel": 100,
+   "ion": "C3H7",
+   "label": "C₃H₇⁺",
+   "colour": "a2"
+  },
+  {
+   "mz": 29,
+   "rel": 45,
+   "ion": "C2H5",
+   "label": "C₂H₅⁺"
+  },
+  {
+   "mz": 27,
+   "rel": 30,
+   "ion": "C2H3",
+   "dx": -14
+  }
+ ]
+}

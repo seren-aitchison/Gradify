@@ -1,0 +1,52 @@
+{
+ "id": "chem-nitriles",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Nitriles",
+ "title": "What nitriles become",
+ "caption": "A nitrile carries the C≡N group, which adds a carbon to a chain. Hydrolysis with acid turns it into a carboxylic acid; reduction with LiAlH₄ (or H₂ over Ni) turns it into a primary amine.",
+ "alt": "Ethanoic acid on the left, ethanenitrile in the middle, ethylamine on the right, with arrows from the nitrile to each.",
+ "description": [
+  "Middle: ethanenitrile, CH₃C≡N.",
+  "Left: hydrolysis (H⁺(aq), heat) gives ethanoic acid.",
+  "Right: reduction (LiAlH₄) gives ethylamine."
+ ],
+ "between": [
+  "←",
+  "→"
+ ],
+ "betweenLabels": [
+  "H⁺, H₂O",
+  "LiAlH₄"
+ ],
+ "panels": [
+  {
+   "smiles": "CC(=O)O",
+   "label": "ethanoic acid",
+   "groups": [
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "CC#N",
+   "label": "ethanenitrile",
+   "groups": [
+    "nitrile"
+   ],
+   "highlight": [
+    {
+     "group": "nitrile",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CCN",
+   "label": "ethylamine",
+   "groups": [
+    "primary amine"
+   ]
+  }
+ ]
+}

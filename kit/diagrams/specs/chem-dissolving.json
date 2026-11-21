@@ -1,0 +1,72 @@
+{
+ "id": "chem-dissolving",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Solutions",
+ "title": "Sodium chloride dissolving",
+ "caption": "Water molecules surround the ions at the edge of the lattice: the δ− oxygens face Na⁺ and the δ+ hydrogens face Cl⁻. The energy released by hydration pulls the ions into solution.",
+ "alt": "Left: a sodium chloride lattice in water. Right: separate Na⁺ and Cl⁻ ions spread through the water.",
+ "description": [
+  "Before: an ordered lattice of alternating Na⁺ and Cl⁻.",
+  "After: the same ions, now separate and spread through the solution, each surrounded by water."
+ ],
+ "species": {
+  "Na+": {
+   "atoms": [
+    "Na"
+   ],
+   "charge": 1
+  },
+  "Cl-": {
+   "atoms": [
+    "Cl"
+   ],
+   "charge": -1
+  }
+ },
+ "steps": [
+  "dissolves"
+ ],
+ "panelHeight": 170,
+ "panels": [
+  {
+   "title": "solid NaCl",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "Na+",
+     8
+    ],
+    [
+     "Cl-",
+     8
+    ]
+   ]
+  },
+  {
+   "title": "NaCl(aq)",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "Na+",
+     8
+    ],
+    [
+     "Cl-",
+     8
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  }
+ ]
+}

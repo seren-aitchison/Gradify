@@ -1,0 +1,50 @@
+{
+ "id": "chem-synthesis-plan",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Organic synthesis planning",
+ "title": "Planning a synthesis",
+ "caption": "Start from the target and the available starting materials; choose reactions that build the carbon skeleton and install the functional groups; consider conditions, yield, safety and purification at each step; then confirm the product by analysis.",
+ "alt": "A flow: target → identify key bonds and groups → choose reactions and conditions → carry out and purify → analyse.",
+ "description": [
+  "Define the target.",
+  "Work out which bonds and groups must be made.",
+  "Choose reactions, conditions and the order of steps.",
+  "Purify and confirm by melting point, IR and NMR."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "target"
+  },
+  {
+   "id": "b",
+   "label": "key bonds and groups"
+  },
+  {
+   "id": "c",
+   "label": "reactions and order"
+  },
+  {
+   "id": "d",
+   "label": "purify and analyse",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ]
+}

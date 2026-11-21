@@ -12,6 +12,7 @@ O: Explain what holds the nucleus together despite the repulsion between protons
 PRE: Atomic theory
 H: The nuclear atom
 P: Almost all of an atom's mass is in its **nucleus**, made of protons and neutrons, about 10⁻¹⁵ to 10⁻¹⁴ m across. The electrons occupy a region about 10⁻¹⁰ m across (0.1 nm). The atom is therefore mostly empty space: if the nucleus were a marble, the atom would be the size of a football stadium.
+D: chem-atom-structure
 H: The gold foil experiment
 P: In 1909 Hans Geiger and Ernest Marsden, working with Ernest Rutherford, fired alpha particles at gold foil a few hundred atoms thick. Most passed straight through, but about 1 in 8000 bounced back at large angles. Thomson's "plum pudding" model, with positive charge spread through the atom, couldn't explain this. In 1911 Rutherford proposed that the positive charge and mass are concentrated in a tiny nucleus: only alpha particles passing very close to a nucleus are strongly deflected.
 H: Holding the nucleus together
@@ -50,6 +51,7 @@ H: The three particles
 - **Electron**: around the nucleus, relative mass about 1/1836, relative charge −1.
 P: The proton and electron charges are equal and opposite, so an atom with equal numbers of each is neutral.
 IX: atom-builder
+D: chem-atom-sodium-ion
 H: Counting particles
 P: The **atomic number** Z is the number of protons, which defines the element. The **mass number** A is the number of protons plus neutrons. So neutrons = A − Z. In a neutral atom, electrons = Z.
 X: How many protons, neutrons and electrons are in an atom of iron-56 (Z = 26)?
@@ -84,6 +86,7 @@ O: Calculate relative atomic mass from isotopic abundances
 PRE: Protons, neutrons and electrons
 H: Same element, different mass
 P: All atoms of an element have the same number of protons, but the number of neutrons can vary. Chlorine has two stable isotopes: chlorine-35 (17 protons, 18 neutrons) and chlorine-37 (17 protons, 20 neutrons). Their symbols are ³⁵₁₇Cl and ³⁷₁₇Cl, with the mass number at top left and the atomic number at bottom left.
+D: chem-isotopes-chlorine
 H: Same chemistry
 P: Chemical reactions involve electrons, and isotopes of an element have the same number and arrangement of electrons, so they react in the same way. Their **physical** properties that depend on mass differ slightly: heavy water, D₂O, is about 11% denser than H₂O and boils at 101.4 °C.
 H: Relative atomic mass
@@ -122,6 +125,7 @@ O: Balance simple nuclear equations using atomic and mass numbers
 PRE: Isotopes
 H: The two numbers
 P: The **atomic number** Z counts protons. It defines the element: every atom with 6 protons is carbon. Since 1913, when Henry Moseley showed that X-ray frequencies increase steadily with Z, the periodic table has been ordered by atomic number rather than by mass. The **mass number** A counts protons plus neutrons and identifies the isotope.
+D: chem-nuclide-notation
 H: Mass number is not relative atomic mass
 P: Mass number is a whole-number count for one nucleus. Relative atomic mass is an average over an element's isotopes and is usually not a whole number (chlorine 35.45). Even an individual isotope's mass isn't exactly its mass number: chlorine-35 has a mass of 34.969, because of the binding energy of the nucleus (and carbon-12 is exactly 12 by definition).
 H: Nuclear equations
@@ -159,6 +163,7 @@ O: Link the number of outer electrons to an element's group and reactivity
 PRE: Protons, neutrons and electrons
 H: Shells of energy
 P: The electrons in an atom are in **shells** (energy levels), numbered n = 1, 2, 3… outwards. Electrons in shells further out are, on average, further from the nucleus, higher in energy and less tightly held. Electrons fill the lowest available energy levels first.
+D: chem-shells-period3
 H: How many in each shell
 P: The maximum number of electrons in shell n is **2n²**: 2 in the first, 8 in the second, 18 in the third and 32 in the fourth. For the first 20 elements a simple pattern works: 2, 8, 8, then the fourth shell begins. Sodium is 2,8,1 and calcium 2,8,8,2. Beyond calcium the third shell fills up to 18, which the next lessons explain with subshells.
 H: Outer electrons and chemistry
@@ -188,6 +193,7 @@ O: List the subshells present in each of the first four shells
 PRE: Electron shells
 H: What an orbital is
 P: Quantum mechanics shows that an electron in an atom doesn't follow a path. An **orbital** is a region of space around the nucleus where an electron with a particular energy is likely to be found, usually drawn as the surface enclosing 90% of the probability. Each orbital holds a maximum of **two electrons**, with opposite spins.
+D: chem-subshell-energies
 H: Subshells
 - **s subshell**: 1 orbital, up to 2 electrons.
 - **p subshell**: 3 orbitals, up to 6 electrons.
@@ -228,6 +234,7 @@ H: The four quantum numbers
 - **Magnetic quantum number, mₗ** = −l to +l: the orbital's orientation, giving 2l + 1 orbitals in each subshell.
 - **Spin quantum number, mₛ** = +½ or −½: the electron's spin.
 P: The first three come from solving the Schrödinger equation for the electron; spin was added after experiments such as Stern and Gerlach's (1922) showed electrons behave like tiny magnets with two possible orientations.
+D: chem-quantum-numbers
 H: Counting with quantum numbers
 X: How many orbitals and electrons are in the n = 3 shell?
 > l can be 0, 1 or 2 (3s, 3p, 3d).
@@ -269,6 +276,7 @@ IX: electron-config
 X: Write the electron configuration of iron (Z = 26).
 > Fill in order: 1s² 2s² 2p⁶ 3s² 3p⁶ (18 electrons), then 4s² (20), then 3d⁶ (26).
 > Iron: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s², or [Ar] 3d⁶ 4s².
+D: chem-config-cr-cu
 H: Ions
 P: For main-group ions, add or remove electrons from the outermost subshell: Na⁺ is 1s² 2s² 2p⁶ and Cl⁻ is [Ne] 3s² 3p⁶, both with noble gas configurations. For transition metals, the **4s electrons are removed before the 3d**: Fe²⁺ is [Ar] 3d⁶ and Fe³⁺ is [Ar] 3d⁵. 4s fills first, but once 3d is occupied the 4s electrons are the outermost and highest in energy.
 H: Chromium and copper
@@ -298,6 +306,7 @@ O: Explain why 4s fills before 3d
 PRE: Electron configurations
 H: Building up
 P: Imagine building each atom by adding electrons one at a time to a nucleus. The **aufbau principle** says each new electron goes into the lowest-energy orbital available, as long as the Pauli principle allows. Combined with Hund's rule for orbitals of equal energy, this gives the ground-state configuration of an atom, its lowest-energy arrangement.
+D: chem-aufbau-order
 H: The order of filling
 P: In many-electron atoms, subshell energy depends on n and l. A useful guide is the **n + l rule** (Madelung rule): subshells fill in order of increasing n + l, and for equal n + l, the one with lower n fills first. This gives 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p, matching the layout of the periodic table read row by row.
 X: Use the n + l rule to decide whether 4s or 3d fills first.
@@ -334,6 +343,7 @@ O: Draw orbital box diagrams that obey it
 PRE: Quantum numbers
 H: The principle
 P: Wolfgang Pauli proposed in 1925 that **no two electrons in an atom can have the same set of four quantum numbers**. Two electrons in the same orbital share n, l and mₗ, so they must differ in spin: one +½ and one −½. A third electron would have to repeat a set, so it can't enter that orbital.
+D: chem-pauli
 H: Orbital box diagrams
 P: In box diagrams each orbital is a box and each electron an arrow: up for +½, down for −½. Two electrons in a box must point opposite ways (paired). Nitrogen, 1s² 2s² 2p³, is drawn as a pair in the 1s box, a pair in the 2s box, and one arrow in each of the three 2p boxes.
 H: Why it matters
@@ -367,6 +377,7 @@ O: Explain the rule in terms of electron repulsion and its effect on ionisation 
 PRE: Pauli exclusion principle
 H: The rule
 P: For degenerate orbitals, such as the three 2p orbitals, **electrons occupy separate orbitals singly, with parallel spins, before any orbital gets a second electron**. Carbon's two 2p electrons go into two different 2p orbitals, both spin-up; nitrogen's three go one in each. Only at oxygen does a 2p orbital receive a pair.
+D: chem-hund-np
 H: Why it happens
 P: Electrons repel each other. Two electrons in separate orbitals are, on average, further apart than two in the same orbital, so the repulsion is smaller. Parallel spins reduce the repulsion further, a quantum effect called exchange energy. Both lower the energy of the atom.
 H: Consequences
@@ -402,6 +413,7 @@ O: Use successive ionisation energies to deduce an element's group
 PRE: Electron configurations
 H: Definitions
 P: The **first ionisation energy** is the energy needed to remove one mole of electrons from one mole of gaseous atoms, forming one mole of gaseous 1+ ions. For sodium: Na(g) → Na⁺(g) + e⁻, 496 kJ mol⁻¹. The **second ionisation energy** removes an electron from each 1+ ion: Na⁺(g) → Na²⁺(g) + e⁻. Ionisation is always endothermic.
+D: chem-successive-ie-al
 H: What affects it
 - **Nuclear charge**: more protons attract the electron more strongly, raising ionisation energy.
 - **Distance from the nucleus**: an electron in a higher shell is further away and held less strongly.
@@ -439,6 +451,7 @@ O: Explain why second electron affinities are endothermic
 PRE: Ionisation energy
 H: Definitions
 P: The **first electron affinity** is the enthalpy change when one mole of gaseous atoms each gain an electron to form one mole of gaseous 1− ions: Cl(g) + e⁻ → Cl⁻(g), ΔH = −349 kJ mol⁻¹. It is usually **exothermic**, because the added electron is attracted by the nucleus. (Some textbooks quote the energy released as a positive number, so check the sign convention.)
+D: chem-electron-affinity-p3
 H: Trends
 P: The halogens have the most exothermic first electron affinities: an extra electron completes their outer p subshell and is strongly attracted. Electron affinity generally becomes less exothermic down a group, as the added electron goes into a shell further from the nucleus. Fluorine is an exception: its value (−328 kJ mol⁻¹) is less exothermic than chlorine's, because its small 2p subshell is crowded and the incoming electron is repelled by the electrons already there.
 P: Elements whose extra electron would have to enter a new or half-filled subshell have small or unfavourable values: noble gases, and atoms such as nitrogen (2p³), whose value is close to zero.
@@ -473,6 +486,7 @@ E: E = hf = hc / λ
 X: Calculate the energy of a photon of red light with wavelength 656 nm.
 > E = hc / λ = (6.626 × 10⁻³⁴ × 2.998 × 10⁸) ÷ (656 × 10⁻⁹).
 > E = 1.987 × 10⁻²⁵ ÷ 6.56 × 10⁻⁷ = 3.03 × 10⁻¹⁹ J.
+D: chem-hydrogen-spectrum
 H: Why lines
 P: Electrons in an atom can only have certain energies. When an electron drops from a higher level to a lower one, it emits a photon whose energy exactly equals the difference, ΔE = hf. Because only certain differences are possible, only certain wavelengths appear: a **line spectrum**. Each element has its own pattern of levels, so its spectrum is a fingerprint.
 H: The hydrogen spectrum
@@ -506,6 +520,7 @@ O: Relate the convergence limit of a spectrum to ionisation energy
 PRE: Atomic spectra
 H: Two kinds of spectrum
 P: An **emission spectrum** comes from excited atoms, in a flame or a discharge tube, and appears as bright lines on a dark background. An **absorption spectrum** appears when white light passes through cooler atoms: they absorb exactly the wavelengths that match their energy gaps, leaving dark lines in a continuous spectrum. For the same element the lines fall at the same wavelengths, because the same energy gaps are involved.
+D: chem-emission-absorption
 H: Flame tests
 P: Heating a metal compound in a flame excites its electrons; as they fall back, the light emitted has a characteristic colour.
 - Lithium: crimson red
@@ -579,6 +594,7 @@ O: Explain the uncertainty principle and its consequence for electrons in atoms
 PRE: Wave-particle duality
 H: Beyond Bohr
 P: Bohr's model (1913) gave hydrogen's energy levels correctly, but it failed for atoms with more than one electron and couldn't explain the relative brightness of spectral lines or why only certain orbits were allowed. Treating the electron as a wave solved these problems.
+D: chem-radial-1s
 H: The Schrödinger equation
 P: In 1926 Erwin Schrödinger wrote an equation for the electron's wave. Its solutions, **wavefunctions** (ψ), exist only for particular energies, so quantisation follows naturally, just as a guitar string can vibrate only at certain frequencies. The square of the wavefunction, ψ², gives the **probability density**: how likely the electron is to be found in each small region. An orbital is a wavefunction, and its familiar shape is a picture of where ψ² is large.
 H: Uncertainty
@@ -616,6 +632,7 @@ H: The shapes
 - **p orbitals** have two lobes on opposite sides of the nucleus, with a plane of zero probability (a nodal plane) between them. The three p orbitals point along the x, y and z axes: pₓ, p_y and p_z.
 - **d orbitals**: four of the five have four lobes in a cloverleaf pattern; the fifth, d_z², has two lobes along the z axis and a ring around the middle.
 IX: orbitals
+D: chem-orbital-shapes
 H: Nodes
 P: A **node** is a region where the probability of finding the electron is zero. An orbital has n − 1 nodes in total: **l angular nodes** (planes or cones through the nucleus) and **n − l − 1 radial nodes** (spheres). 1s has none; 2s has one radial node; 2p has one angular node (the nodal plane); 3p has one of each.
 X: How many radial and angular nodes does a 3d orbital have?
@@ -650,6 +667,7 @@ PRE: Ionisation energy
 H: Effective nuclear charge
 P: An outer electron doesn't feel the full nuclear charge, because inner electrons repel it. The **effective nuclear charge** is roughly the nuclear charge minus the shielding by inner electrons. Across period 3, from sodium to argon, protons are added one at a time while the inner 10 electrons (1s² 2s² 2p⁶) stay the same, so the effective nuclear charge on the outer (n = 3) electrons rises steadily.
 IX: periodic-table
+D: chem-ie-period-2-3
 H: Three trends
 - **Atomic radius** decreases across a period (higher effective nuclear charge pulls the same shell in) and increases down a group (more shells). Sodium's atom (about 186 pm) is far larger than chlorine's (about 100 pm covalent radius).
 - **First ionisation energy** increases across a period and decreases down a group, for the same reasons, with small dips where a new subshell starts or pairing begins.
@@ -684,6 +702,7 @@ O: Explain why many transition metal compounds are coloured and show variable ox
 PRE: Periodic trends
 H: Gaining, losing and sharing
 P: Metals, on the left of the table, have few outer electrons and low ionisation energies, so they tend to lose electrons and form cations. Non-metals, on the right, have nearly full outer shells and exothermic electron affinities, so they tend to gain electrons (forming anions) or share them in covalent bonds. Noble gases, with full outer shells and very high ionisation energies, rarely react at all.
+D: chem-config-reactivity
 H: Reactivity trends
 - **Group 1** reactivity increases down the group: the outer s electron is further from the nucleus and more shielded, so it is lost more easily. Potassium reacts with water far more vigorously than lithium.
 - **Group 17** reactivity decreases down the group: a halogen reacts by gaining an electron, and an incoming electron is attracted less strongly by a larger atom. Fluorine is the most reactive non-metal, and chlorine displaces bromide and iodide from solution.

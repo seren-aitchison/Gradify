@@ -1,0 +1,134 @@
+{
+ "id": "chem-vsepr-domains",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "VSEPR theory",
+ "title": "Electron domains and shapes",
+ "caption": "Electron pairs repel and spread out as far as possible. With no lone pairs the shape follows the number of bonding domains: 2 linear (180°), 3 trigonal planar (120°), 4 tetrahedral (109.5°), 5 trigonal bipyramidal (90° and 120°), 6 octahedral (90°).",
+ "alt": "Five molecules: BeCl₂ linear, BF₃ trigonal planar, CH₄ tetrahedral, PCl₅ trigonal bipyramidal and SF₆ octahedral.",
+ "description": [
+  "BeCl₂: linear, 180°.",
+  "BF₃: trigonal planar, 120°.",
+  "CH₄: tetrahedral, 109.5°.",
+  "PCl₅: trigonal bipyramidal, 90° and 120°.",
+  "SF₆: octahedral, 90°."
+ ],
+ "perRow": 3,
+ "molecules": [
+  {
+   "label": "BeCl2",
+   "centre": "Be",
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    }
+   ],
+   "shape": "linear",
+   "angle": "180°",
+   "showAngle": false
+  },
+  {
+   "label": "BF3",
+   "centre": "B",
+   "ligands": [
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    }
+   ],
+   "shape": "trigonal planar",
+   "angle": "120°",
+   "anglePair": [
+    1,
+    2
+   ]
+  },
+  {
+   "label": "CH4",
+   "centre": "C",
+   "ligands": [
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    }
+   ],
+   "shape": "tetrahedral",
+   "angle": "109.5°",
+   "anglePair": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "PCl5",
+   "centre": "P",
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    }
+   ],
+   "shape": "trigonal bipyramidal",
+   "angle": "90° and 120°",
+   "showAngle": false
+  },
+  {
+   "label": "SF6",
+   "centre": "S",
+   "ligands": [
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    }
+   ],
+   "shape": "octahedral",
+   "angle": "90°",
+   "anglePair": [
+    0,
+    2
+   ]
+  }
+ ]
+}

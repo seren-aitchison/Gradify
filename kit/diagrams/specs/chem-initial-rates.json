@@ -1,0 +1,86 @@
+{
+ "id": "chem-initial-rates",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Experimental kinetics",
+ "title": "Measuring an initial rate",
+ "caption": "The initial rate is the gradient of the concentration–time curve at t = 0. Draw the tangent at the start and measure its gradient: here 0.2 mol dm⁻³ min⁻¹. Repeating with different starting concentrations gives the orders.",
+ "alt": "Product concentration against time, a curve levelling at 0.8, with a dashed tangent at the origin of gradient 0.2.",
+ "description": [
+  "The curve rises and levels off at 0.8 mol dm⁻³.",
+  "The tangent at t = 0 rises 0.4 in 2 min: initial rate 0.2 mol dm⁻³ min⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   15
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ]
+ ],
+ "grid": [
+  2,
+  0.2
+ ],
+ "axisLabels": [
+  "time / min",
+  "[product] / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.8*(1-exp(-0.25*x))",
+   "colour": "a1"
+  },
+  {
+   "expr": "0.2*x",
+   "domain": [
+    0,
+    4.5
+   ],
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "tangent at t = 0",
+   "labelAt": [
+    4.6,
+    0.92
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "0.8*(1-exp(-0.25*x))",
+   "x": 0,
+   "value": 0.2,
+   "name": "the curve's gradient at t = 0 is 0.2 mol dm⁻³ min⁻¹"
+  },
+  {
+   "type": "slope",
+   "expr": "0.2*x",
+   "x": 1,
+   "value": 0.2,
+   "name": "and the tangent drawn has that gradient"
+  }
+ ]
+}

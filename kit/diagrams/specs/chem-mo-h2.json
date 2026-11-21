@@ -1,0 +1,19 @@
+{
+ "id": "chem-mo-h2",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Molecular orbitals",
+ "title": "Molecular orbitals of hydrogen",
+ "caption": "Two 1s orbitals combine into a lower-energy bonding σ1s and a higher-energy antibonding σ*1s. H₂'s two electrons pair in σ1s: bond order 1. In He₂ the extra two would fill σ*1s and cancel the bond, which is why He₂ does not exist.",
+ "alt": "MO diagram: 1s on each hydrogen; σ1s below with two paired electrons, σ*1s above and empty.",
+ "description": [
+  "Each H atom: one electron in 1s.",
+  "σ1s: two paired electrons.",
+  "σ*1s: empty. Bond order (2 − 0) ÷ 2 = 1."
+ ],
+ "kind": "mo",
+ "molecule": "H2",
+ "bondOrder": 1,
+ "unpaired": 0
+}

@@ -1,0 +1,90 @@
+{
+ "id": "chem-states-of-matter",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "States of matter",
+ "title": "Solid, liquid and gas",
+ "caption": "In a solid the particles are packed in a regular pattern and vibrate in place. In a liquid they are still touching but move past each other. In a gas they are far apart and move quickly in all directions.",
+ "alt": "Three boxes: water molecules in a regular grid (solid), close but disordered (liquid), and widely spaced with motion arrows (gas).",
+ "description": [
+  "Solid: particles in fixed, regular positions.",
+  "Liquid: particles close together, irregular, sliding past each other.",
+  "Gas: particles far apart, moving randomly."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Structure and properties of substances"
+  }
+ ],
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "melting",
+  "boiling"
+ ],
+ "reversible": [
+  true,
+  true
+ ],
+ "panels": [
+  {
+   "title": "solid",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "H2O",
+     12
+    ]
+   ]
+  },
+  {
+   "title": "liquid",
+   "arrangement": "liquid",
+   "contents": [
+    [
+     "H2O",
+     11
+    ]
+   ]
+  },
+  {
+   "title": "gas",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     5
+    ]
+   ],
+   "motion": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "states",
+   "panel": 0,
+   "as": "solid"
+  },
+  {
+   "type": "states",
+   "panel": 1,
+   "as": "liquid"
+  },
+  {
+   "type": "states",
+   "panel": 2,
+   "as": "gas"
+  }
+ ]
+}

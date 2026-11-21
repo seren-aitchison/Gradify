@@ -1,0 +1,104 @@
+{
+ "id": "chem-tm-configs",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Transition metal chemistry",
+ "title": "The first transition series",
+ "caption": "Across the series 3d fills behind 4s². A transition metal forms at least one ion with a partly filled d sub-shell: so scandium (Sc³⁺ is d⁰) and zinc (Zn²⁺ is d¹⁰) are d-block elements but not transition metals.",
+ "alt": "Box diagrams of 3d and 4s for titanium, manganese, iron, copper and zinc.",
+ "description": [
+  "Ti [Ar] 3d² 4s².",
+  "Mn [Ar] 3d⁵ 4s²: five unpaired d electrons.",
+  "Fe [Ar] 3d⁶ 4s².",
+  "Cu [Ar] 3d¹⁰ 4s¹: the exception.",
+  "Zn [Ar] 3d¹⁰ 4s²: full 3d."
+ ],
+ "rows": [
+  {
+   "symbol": "Ti",
+   "label": "Ti, [Ar] 3d² 4s²",
+   "config": "[Ar] 3d2 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 2
+  },
+  {
+   "symbol": "Mn",
+   "label": "Mn, [Ar] 3d⁵ 4s²",
+   "config": "[Ar] 3d5 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 5
+  },
+  {
+   "symbol": "Fe",
+   "label": "Fe, [Ar] 3d⁶ 4s²",
+   "config": "[Ar] 3d6 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 4
+  },
+  {
+   "symbol": "Cu",
+   "label": "Cu, [Ar] 3d¹⁰ 4s¹",
+   "config": "[Ar] 3d10 4s1",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 1
+  },
+  {
+   "symbol": "Zn",
+   "label": "Zn, [Ar] 3d¹⁰ 4s²",
+   "config": "[Ar] 3d10 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 0
+  }
+ ]
+}

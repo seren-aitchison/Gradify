@@ -1,0 +1,63 @@
+{
+ "id": "chem-diffusion",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Diffusion",
+ "title": "Diffusion",
+ "caption": "Particles move randomly, so a gas released in one corner spreads until it is evenly mixed: there is a net movement from high to low concentration even though no single particle aims anywhere.",
+ "alt": "Before: bromine molecules crowded on the left of a box of air. After: bromine spread evenly through the box.",
+ "description": [
+  "Before: bromine (brown) only in the left half.",
+  "After a while: bromine everywhere, mixed with the air."
+ ],
+ "species": {
+  "Br2": {
+   "atoms": [
+    "Br",
+    "Br"
+   ]
+  },
+  "N2": {
+   "atoms": [
+    "N",
+    "N"
+   ]
+  }
+ },
+ "steps": [
+  "time"
+ ],
+ "panels": [
+  {
+   "title": "start",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "Br2",
+     6
+    ]
+   ],
+   "region": "left"
+  },
+  {
+   "title": "later",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "Br2",
+     6
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  }
+ ]
+}

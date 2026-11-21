@@ -1,0 +1,99 @@
+{
+ "id": "chem-exo-endo-profiles",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "unit": "u06",
+ "lesson": "Energy in chemical systems",
+ "title": "Exothermic and endothermic reactions",
+ "caption": "In an exothermic reaction the products are lower in energy than the reactants and the difference is released to the surroundings (ΔH negative). In an endothermic reaction the products are higher and energy is taken in (ΔH positive). Both must first climb the activation energy.",
+ "alt": "Two reaction profiles: exothermic, with products below reactants; endothermic, with products above reactants; both with an activation energy hump.",
+ "description": [
+  "Exothermic: rises to a peak, then falls below the starting level; ΔH negative.",
+  "Endothermic: rises to a peak, then falls to a level above the start; ΔH positive."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Exothermic and endothermic reactions"
+  }
+ ],
+ "profiles": [
+  {
+   "title": "exothermic",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 60,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 110,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "exothermic"
+   },
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ]
+  },
+  {
+   "title": "endothermic",
+   "colour": "a3",
+   "points": [
+    {
+     "x": 0,
+     "e": 10,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 110,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 60,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "endothermic"
+   },
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ]
+  }
+ ]
+}

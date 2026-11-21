@@ -1,0 +1,232 @@
+{
+ "id": "chem-sn2-mechanism",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "SN2 mechanisms",
+ "title": "SN2: hydroxide and (R)-2-bromobutane",
+ "caption": "One concerted step, (R) → (S). The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks. In the transition state carbon is partly bonded to both, with the other three groups flat; they then flip over like an umbrella in the wind.",
+ "alt": "SN2 mechanism: hydroxide attacks the carbon of (R)-2-bromobutane from the back, passes through a five-coordinate transition state, and gives (S)-butan-2-ol and bromide.",
+ "description": [
+  "Left: hydroxide ion and (R)-2-bromobutane, drawn with the methyl group on a wedge (towards you) and the hydrogen on a hash (away from you). A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
+  "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides. The hydrogen, methyl (wedge) and ethyl (hash) lie in one plane at right angles to the O–C–Br line. Oxygen and bromine each carry a partial negative charge.",
+  "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is on the side the hydroxide came from, and the other three groups have flipped to the other side, the mirror image of the starting arrangement: inversion of configuration."
+ ],
+ "stages": [
+  {
+   "smiles": "[OH-:1].[CH3:2][C@@:3]([H:7])([Br:4])[CH2:5][CH3:6]",
+   "xy": {
+    "1": [
+     -3.1,
+     0
+    ],
+    "3": [
+     0,
+     0
+    ],
+    "4": [
+     1.3,
+     0
+    ],
+    "7": [
+     -0.45,
+     1.0
+    ],
+    "2": [
+     -0.8,
+     -0.6
+    ],
+    "5": [
+     -0.1,
+     -1.15
+    ],
+    "6": [
+     -0.6,
+     -2.0
+    ]
+   },
+   "cip": {
+    "3": "R"
+   },
+   "label": "(R)-2-bromobutane",
+   "arrows": [
+    {
+     "from": {
+      "lp": 1
+     },
+     "to": {
+      "bond": [
+       1,
+       3
+      ]
+     },
+     "toward": 3,
+     "lpAngle": 30,
+     "bend": -0.4
+    },
+    {
+     "from": {
+      "bond": [
+       3,
+       4
+      ]
+     },
+     "to": {
+      "atom": 4
+     },
+     "bend": 1
+    }
+   ],
+   "wedges": [
+    [
+     3,
+     2,
+     "wedge"
+    ],
+    [
+     3,
+     7,
+     "hash"
+    ]
+   ]
+  },
+  {
+   "ts": true,
+   "smiles": "[OH:1].[CH3:2][C:3]([H:7])[CH2:5][CH3:6].[Br:4]",
+   "xy": {
+    "1": [
+     -1.9,
+     0
+    ],
+    "3": [
+     0,
+     0
+    ],
+    "4": [
+     1.9,
+     0
+    ],
+    "7": [
+     0,
+     1.1
+    ],
+    "2": [
+     -0.55,
+     -0.9
+    ],
+    "5": [
+     0.55,
+     -0.9
+    ],
+    "6": [
+     1.55,
+     -1.5
+    ]
+   },
+   "partial": [
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "charges": {
+    "1": "δ−",
+    "4": "δ−"
+   },
+   "label": "transition state",
+   "wedges": [
+    [
+     3,
+     2,
+     "wedge"
+    ],
+    [
+     3,
+     5,
+     "hash"
+    ]
+   ]
+  },
+  {
+   "smiles": "[OH:1][C@@:3]([H:7])([CH3:2])[CH2:5][CH3:6].[Br-:4]",
+   "xy": {
+    "1": [
+     -1.3,
+     0
+    ],
+    "3": [
+     0,
+     0
+    ],
+    "7": [
+     0.45,
+     1.0
+    ],
+    "2": [
+     0.8,
+     -0.6
+    ],
+    "5": [
+     0.1,
+     -1.15
+    ],
+    "6": [
+     0.6,
+     -2.0
+    ],
+    "4": [
+     3.0,
+     0
+    ]
+   },
+   "plus": [
+    [
+     2.1,
+     0
+    ]
+   ],
+   "cip": {
+    "3": "S"
+   },
+   "label": "(S)-butan-2-ol",
+   "wedges": [
+    [
+     3,
+     2,
+     "wedge"
+    ],
+    [
+     3,
+     7,
+     "hash"
+    ]
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "label": ""
+  },
+  {
+   "label": ""
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "by": "site owner (seren-aitchison)",
+  "date": "2026-11-20",
+  "notes": "Round 1: TS drawn flat, single stereo bond, caption lacked R→S; fixed (wedge/hash in all stages, drawn-stereo check added). Round 2: approve; R/S re-derived by hand from the drawn wedges.",
+  "approvedAt": "2026-11-20"
+ },
+ "also": [
+  {
+   "course": "chemistry",
+   "lesson": "Substitution reactions",
+   "unit": "u13"
+  }
+ ],
+ "unit": "u13"
+}

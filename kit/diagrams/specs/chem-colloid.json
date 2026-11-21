@@ -1,0 +1,56 @@
+{
+ "id": "chem-colloid",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Colloids",
+ "title": "A colloid",
+ "caption": "In a colloid, particles between about 1 and 1000 nm are dispersed through another substance. They are too small to settle but large enough to scatter light, which is why a beam shows up passing through milk or fog (the Tyndall effect).",
+ "alt": "A box of water containing a few much larger dispersed particles.",
+ "description": [
+  "Many small water molecules.",
+  "A few far larger colloidal particles, spread evenly and not settling."
+ ],
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  },
+  "colloid": {
+   "atoms": [
+    "X"
+   ]
+  }
+ },
+ "panelHeight": 190,
+ "panels": [
+  {
+   "title": "colloidal dispersion",
+   "arrangement": "random",
+   "contents": [
+    [
+     "H2O",
+     14
+    ],
+    [
+     "colloid",
+     4
+    ]
+   ],
+   "scale": 1,
+   "note": "dispersed particles 1–1000 nm across"
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "colloid",
+   "n": 4
+  }
+ ]
+}

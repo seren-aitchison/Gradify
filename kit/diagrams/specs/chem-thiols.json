@@ -1,0 +1,56 @@
+{
+ "id": "chem-thiols",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Thiols and sulfides",
+ "title": "Thiols, sulfides and disulfides",
+ "caption": "Sulfur sits below oxygen in group 16, giving thiols (R–SH), sulfides (R–S–R) and disulfides (R–S–S–R). Thiols smell strongly. Two cysteine thiols can be oxidised to a disulfide bridge, which holds protein chains in shape.",
+ "alt": "Ethanethiol, dimethyl sulfide and dimethyl disulfide.",
+ "description": [
+  "Ethanethiol, CH₃CH₂SH.",
+  "Dimethyl sulfide, CH₃SCH₃.",
+  "Dimethyl disulfide, CH₃SSCH₃: the S–S link."
+ ],
+ "panels": [
+  {
+   "smiles": "CCS",
+   "label": "ethanethiol",
+   "groups": [
+    "thiol"
+   ],
+   "highlight": [
+    {
+     "group": "thiol",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "CSC",
+   "label": "dimethyl sulfide",
+   "groups": [
+    "sulfide"
+   ],
+   "highlight": [
+    {
+     "group": "sulfide",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "CSSC",
+   "label": "dimethyl disulfide",
+   "groups": [
+    "disulfide"
+   ],
+   "highlight": [
+    {
+     "group": "disulfide",
+     "colour": "a3"
+    }
+   ]
+  }
+ ]
+}

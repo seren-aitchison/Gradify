@@ -1,0 +1,50 @@
+{
+ "id": "chem-gravimetric",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Gravimetric analysis",
+ "title": "Gravimetric analysis of sulfate",
+ "caption": "Sulfate is precipitated completely as barium sulfate, filtered, washed, dried and weighed until two weighings agree (constant mass). The mass of BaSO₄ gives the moles of sulfate: 0.583 g ÷ 233.4 g mol⁻¹ = 2.50 × 10⁻³ mol.",
+ "alt": "A flow: add excess BaCl₂(aq) → filter → wash → dry and weigh → repeat until constant mass.",
+ "description": [
+  "Ba²⁺ + SO₄²⁻ → BaSO₄(s), with excess barium so all the sulfate precipitates.",
+  "Filter through ashless paper and wash with water.",
+  "Dry, cool and weigh; repeat to constant mass."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "add excess BaCl₂"
+  },
+  {
+   "id": "b",
+   "label": "filter and wash"
+  },
+  {
+   "id": "c",
+   "label": "dry and weigh"
+  },
+  {
+   "id": "d",
+   "label": "constant mass?",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "eq": "Ba2+ + SO4^2- → BaSO4"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ]
+}

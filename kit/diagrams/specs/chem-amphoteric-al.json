@@ -1,0 +1,90 @@
+{
+ "id": "chem-amphoteric-al",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Amphoteric substances",
+ "title": "Aluminium hydroxide dissolves in acid and in alkali",
+ "caption": "Al(OH)₃ is amphoteric. In acid it dissolves as Al³⁺(aq); in excess alkali as [Al(OH)₄]⁻(aq). In between, around pH 5 to 7, it is least soluble and precipitates. The curve is illustrative.",
+ "alt": "log solubility of aluminium hydroxide against pH: a V-shaped curve, high at low pH, a minimum near pH 5.5, rising again at high pH.",
+ "description": [
+  "Low pH: dissolves as Al³⁺.",
+  "Minimum around pH 5 to 6: precipitates.",
+  "High pH: dissolves as [Al(OH)₄]⁻."
+ ],
+ "range": {
+  "x": [
+   2,
+   14
+  ],
+  "y": [
+   -8,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   -8,
+   -6,
+   -4,
+   -2,
+   0,
+   2
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "axisLabels": [
+  "pH",
+  "log₁₀(solubility)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "log(10^(9-3*x)+10^(x-12.7))/log(10)",
+   "colour": "a1"
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    2,
+    4
+   ],
+   "label": "Al³⁺(aq)",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    11,
+    14
+   ],
+   "label": "[Al(OH)₄]⁻",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "log(10^(9-3*x)+10^(x-12.7))/log(10)",
+   "domain": [
+    2,
+    14
+   ],
+   "x": 5.54,
+   "tol": 0.02,
+   "name": "least soluble near pH 5.5, between the acid and alkali ranges (illustrative constants)"
+  }
+ ]
+}

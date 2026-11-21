@@ -24,10 +24,15 @@ test("headers, footers, panels and course surfaces are glass", () => {
   for (const s of [".glass", ".panel", ".hub-foot", ".sub-foot", ".cx-lbar", ".cx-dock", ".co-card"]) assert.ok(GLASS.split(", ").includes(s), s);
 });
 
-test("every page loads it, through theme-boot, after the page has loaded", async () => {
+test("every page can load it, through theme-boot, after the page has loaded, on desktop by default (phones keep the frosted CSS glass)", async () => {
   const boot = await readFile(new URL("../kit/core/theme-boot.js", import.meta.url), "utf8");
   assert.match(boot, /ui\/liquid-gl\.js/);
   assert.match(boot, /addEventListener\("load"/);
+  assert.match(boot, /localStorage\.getItem\("gradify\.glass"\)/);
+  assert.match(boot, /\^\(on\|lite\|force\)\$/);
+  assert.match(boot, /\(pointer: fine\) and \(min-width: 1021px\)/);
+  assert.match(boot, /navigator\.maxTouchPoints > 1/, "an iPad with a trackpad keeps the frosted glass");
+  assert.match(boot, /\/Android\/i\.test\(navigator\.userAgent\)/, "an Android tablet with a trackpad keeps the frosted glass");
 });
 
 test("no GPU, no WebGL glass: software renderers keep the CSS glass", () => {

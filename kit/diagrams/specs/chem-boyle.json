@@ -1,0 +1,105 @@
+{
+ "id": "chem-boyle",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Gas laws",
+ "title": "Boyle's law",
+ "caption": "At constant temperature, pressure is inversely proportional to volume: pV is constant, so halving the volume doubles the pressure. A higher temperature gives a larger constant and a curve further out.",
+ "alt": "Two hyperbolas of pressure against volume: pV = 100 and, at a higher temperature, pV = 150.",
+ "description": [
+  "At the lower temperature, pV = 100 kPa dm³: 50 kPa at 2 dm³, 25 kPa at 4 dm³.",
+  "At the higher temperature, pV = 150 kPa dm³: the curve lies above."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ]
+ ],
+ "grid": [
+  2,
+  20
+ ],
+ "axisLabels": [
+  "V / dm³",
+  "p / kPa"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "100/x",
+   "domain": [
+    0.85,
+    10
+   ],
+   "colour": "a1",
+   "label": "T₁",
+   "labelAt": [
+    8.3,
+    18
+   ]
+  },
+  {
+   "expr": "150/x",
+   "domain": [
+    1.25,
+    10
+   ],
+   "colour": "a2",
+   "label": "T₂ > T₁",
+   "labelAt": [
+    7.5,
+    28
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 50,
+   "label": "(2, 50)"
+  },
+  {
+   "x": 4,
+   "y": 25,
+   "label": "(4, 25)"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100/x",
+   "x": 2,
+   "y": 50,
+   "name": "halving V from 4 to 2 dm³ doubles p from 25 to 50 kPa"
+  },
+  {
+   "type": "point",
+   "expr": "100/x",
+   "x": 4,
+   "y": 25
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "id": "chem-e1-mechanism",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "E1 mechanisms",
+ "title": "The E1 mechanism",
+ "caption": "In a polar solvent, 2-bromo-2-methylpropane first ionises (slow) to a tertiary carbocation and bromide. A water molecule then removes a proton from a carbon next to C⁺ (fast), and those electrons form the C=C of 2-methylpropene. Only the halogenoalkane is in the rate equation.",
+ "alt": "Three stages: the C–Br bond breaking to give a carbocation; water removing a neighbouring hydrogen while the C–H electrons form a double bond; 2-methylpropene and H₃O⁺.",
+ "description": [
+  "Stage 1: a curly arrow from the C–Br bond onto bromine.",
+  "Stage 2: the planar tertiary carbocation; a curly arrow from a lone pair on water to a hydrogen on the neighbouring carbon, and another from that C–H bond to the C–C bond.",
+  "Stage 3: 2-methylpropene, H₃O⁺ and Br⁻."
+ ],
+ "stages": [
+  {
+   "smiles": "[CH3:1][C:2]([CH3:3])([CH2:4][H:6])[Br:5].[OH2:7]",
+   "xy": {
+    "1": [
+     -1.1,
+     -0.55
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     0,
+     -1.3
+    ],
+    "4": [
+     1.15,
+     -0.5
+    ],
+    "6": [
+     1.6,
+     -1.6
+    ],
+    "5": [
+     0,
+     1.35
+    ],
+    "7": [
+     3.0,
+     -1.6
+    ]
+   },
+   "hide": [
+    7
+   ],
+   "label": "2-bromo-2-methylpropane",
+   "arrows": [
+    {
+     "from": {
+      "bond": [
+       2,
+       5
+      ]
+     },
+     "to": {
+      "atom": 5
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][C+:2]([CH3:3])[CH2:4][H:6].[Br-:5].[OH2:7]",
+   "xy": {
+    "1": [
+     -1.1,
+     0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     -0.05,
+     -1.3
+    ],
+    "4": [
+     1.15,
+     0.6
+    ],
+    "6": [
+     1.65,
+     1.7
+    ],
+    "5": [
+     -2.4,
+     1.6
+    ],
+    "7": [
+     3.4,
+     2.5
+    ]
+   },
+   "label": "tertiary carbocation",
+   "arrows": [
+    {
+     "from": {
+      "lp": 7
+     },
+     "to": {
+      "bond": [
+       7,
+       6
+      ]
+     },
+     "toward": 6,
+     "lpAngle": 200,
+     "lpDist": 18,
+     "bend": 0.4
+    },
+    {
+     "from": {
+      "bond": [
+       4,
+       6
+      ]
+     },
+     "to": {
+      "bond": [
+       4,
+       2
+      ]
+     },
+     "bend": 0.9
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][C:2]([CH3:3])=[CH2:4].[H:6][OH2+:7].[Br-:5]",
+   "xy": {
+    "1": [
+     -1.1,
+     0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     -0.05,
+     -1.3
+    ],
+    "4": [
+     1.15,
+     0.6
+    ],
+    "6": [
+     2.2,
+     1.6
+    ],
+    "7": [
+     3.0,
+     1.0
+    ],
+    "5": [
+     -2.4,
+     1.6
+    ]
+   },
+   "label": "2-methylpropene + H₃O⁺ + Br⁻"
+  }
+ ],
+ "steps": [
+  {
+   "label": "slow"
+  },
+  {
+   "label": "fast"
+  }
+ ],
+ "perRow": 2
+}

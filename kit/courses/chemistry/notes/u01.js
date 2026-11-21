@@ -30,8 +30,8 @@ SRC: Royal Society of Chemistry, "What is chemistry?" (education resources) | se
 Q: Why is chemistry called the central science? | It connects physics (the behaviour of particles and energy) with biology, medicine, materials and earth science, which all depend on chemical substances and reactions.
 Q: Name the three levels at which chemists describe matter. | Macroscopic, particulate (atoms, ions, molecules) and symbolic (formulae and equations).
 M1#chemistry-u01-01-q1: Which branch of chemistry mainly studies carbon compounds? | Organic chemistry | Inorganic chemistry | Analytical chemistry | Physical chemistry | Organic chemistry is the chemistry of carbon compounds, including most molecules in living things and medicines.
-M2#chemistry-u01-01-q2: A chemist measures how quickly a medicine breaks down at different temperatures. Which branch is this mostly? | Physical chemistry (kinetics) | Inorganic chemistry | Taxonomy | Nuclear physics | Rates of reaction and their temperature dependence belong to physical chemistry.
-M3#chemistry-u01-01-q3: Which statement links all three levels of description correctly? | Limewater turns cloudy (macroscopic) because Ca²⁺ and CO₃²⁻ ions form insoluble calcium carbonate (particulate), Ca(OH)₂ + CO₂ → CaCO₃ + H₂O (symbolic) | Limewater is a chemical | CO₂ is a gas | Limewater turns cloudy because it is cold | Only this answer connects what is observed to the particles and to the equation.
+M2#chemistry-u01-01-q2: A chemist measures how quickly a medicine breaks down at different temperatures. Which branch is this mostly? | Physical chemistry (kinetics) | Biochemistry (drug metabolism) :: Metabolism happens in the body; this is breakdown on standing at set temperatures, a rate study. | Inorganic chemistry (salts) :: Inorganic chemistry studies non-carbon compounds; how fast a change happens is kinetics. | Organic chemistry (synthesis) :: The medicine may be organic, but measuring how quickly it breaks down is a rate study, not making it. | Rates of reaction and their temperature dependence belong to physical chemistry.
+M3#chemistry-u01-01-q3: Which statement links all three levels of description correctly? | Limewater turns cloudy (macroscopic) because Ca²⁺ and CO₃²⁻ ions form insoluble calcium carbonate (particulate), Ca(OH)₂ + CO₂ → CaCO₃ + H₂O (symbolic) | Limewater turns cloudy (particulate) because CO₂ molecules dissolve in the water (macroscopic), shown by the formula CaCO₃ alone (symbolic) :: The levels are swapped: cloudiness is what you see (macroscopic), and a lone formula isn't an equation. | Limewater turns cloudy (symbolic) because calcium carbonate is a white solid (macroscopic), and Ca(OH)₂ + CO₂ → CaCO₃ + H₂O shows the ions (particulate) :: An equation is the symbolic level, and what you observe is macroscopic: the labels are misplaced. | Limewater turns cloudy (macroscopic) because the carbon dioxide gas condenses into tiny droplets (particulate), CO₂(g) → CO₂(l) (symbolic) :: Treats a chemical change as condensation; the cloudiness is a new insoluble solid, calcium carbonate. | Only this answer connects what is observed to the particles and to the equation.
 TF1#chemistry-u01-01-q4: Water is a chemical. | true | Water is a chemical compound, H₂O; "chemical" doesn't mean artificial or harmful.
 
 ## Matter and its classification
@@ -45,6 +45,7 @@ H: Pure substances and mixtures
 - **Element**: contains only one type of atom (iron, oxygen gas O₂).
 - **Compound**: two or more elements chemically combined in a fixed ratio (water H₂O, sodium chloride NaCl).
 - **Mixture**: two or more substances not chemically combined; the composition can vary and the parts keep their own properties (air, sea water).
+D: chem-classify-matter
 H: Kinds of mixture
 P: A **homogeneous** mixture has the same composition throughout (a solution such as salt water, or an alloy such as brass). A **heterogeneous** mixture has visibly different parts (sand in water, granite).
 H: Particle diagrams
@@ -66,9 +67,9 @@ SRC: IUPAC, Compendium of Chemical Terminology (Gold Book), "pure substance" and
 Q: What is the difference between an element and a compound? | An element contains only one type of atom; a compound contains two or more elements chemically combined in a fixed ratio.
 Q: Give one test that shows a substance is pure. | It melts (or boils) sharply at a fixed temperature; mixtures melt over a range.
 MATCH1#chemistry-u01-02-q1: Match each substance to its classification. | Copper = element ; Glucose = compound ; Air = homogeneous mixture ; Sand and water = heterogeneous mixture | Copper has one kind of atom, glucose is C₆H₁₂O₆, air is a uniform gas mixture and sand settles out of water.
-M1#chemistry-u01-02-q2: Which is a compound? | Sodium chloride | Oxygen gas | Brass | Sea water | NaCl contains two elements chemically combined; O₂ is an element, and brass and sea water are mixtures.
-M2#chemistry-u01-02-q3: A white solid melts between 120 and 128 °C. What does this suggest? | It is impure: a mixture melts over a range | It is a pure element | It is a pure compound | It is a gas | Pure substances melt at a sharp, fixed temperature; a melting range indicates impurities.
-M3#chemistry-u01-02-q4: Which particle diagram describes a mixture of an element and a compound? | Some pairs of identical atoms and some groups of two different atoms joined together, not linked to each other | Only single identical atoms | Only identical groups of two different atoms | Only pairs of identical atoms | Pairs of identical atoms are an element's molecules, groups of different joined atoms are a compound, and the two kinds being separate makes a mixture.
+M1#chemistry-u01-02-q2: Which is a compound? | Sodium chloride | Chlorine gas, Cl₂ :: Cl₂ is a molecule, but both atoms are the same element, so it is an element, not a compound. | Brass (an alloy) :: An alloy is a mixture of metals, not elements chemically bonded in fixed proportions. | Salty sea water :: Sea water contains compounds, but it is a mixture whose composition can vary. | NaCl contains two elements chemically combined; O₂ is an element, and brass and sea water are mixtures.
+M2#chemistry-u01-02-q3: A white solid melts between 120 and 128 °C. What does this suggest? | It is impure: a mixture melts over a range | It is pure: a compound melts over a range :: Reversed: a pure substance melts sharply at one temperature; a range points to an impurity. | It is a pure element with two melting points :: A pure substance has one melting point; melting across 8 °C shows a mixture. | It is pure, and the range is just measuring error :: An 8 °C range is far wider than measuring error; it is the classic sign of an impure sample. | Pure substances melt at a sharp, fixed temperature; a melting range indicates impurities.
+M3#chemistry-u01-02-q4: Which particle diagram describes a mixture of an element and a compound? | Some pairs of identical atoms and some groups of two different atoms joined together, not linked to each other | Only groups of two different atoms joined together, every group the same, with no separate pairs of identical atoms :: Identical groups of different atoms show a pure compound, not a mixture. | Some single identical atoms and some single atoms of another element, mixed together but none joined to another :: That is a mixture of two elements; no particle is a compound with different atoms joined. | Some pairs of identical atoms and some single atoms of a different element, all mixed but none chemically joined :: Both kinds of particle are elements here, so this is a mixture of two elements, not element and compound. | Pairs of identical atoms are an element's molecules, groups of different joined atoms are a compound, and the two kinds being separate makes a mixture.
 
 ## Elements and compounds
 S: There are 118 known elements, but millions of compounds. When elements combine, the compound has properties quite unlike those of its elements. This lesson looks at how compounds form and why their composition is fixed.
@@ -78,6 +79,7 @@ O: Describe how compounds can be broken down
 PRE: Matter and its classification
 H: Elements
 P: An element is a substance made of atoms with the same number of protons (the same atomic number). Elements can't be broken down into simpler substances by chemical means. About 90 occur naturally; the rest have been made in laboratories.
+D: chem-elements-compounds
 H: Compounds
 P: In a compound, atoms of different elements are held together by chemical bonds in a fixed ratio. Sodium is a reactive metal that fizzes in water and chlorine is a toxic green gas, but sodium chloride is a stable white solid that we eat. New bonds give new properties.
 H: Fixed composition
@@ -101,7 +103,7 @@ Q: Name two ways compounds can be broken down. | Thermal decomposition (heating)
 NUM2#chemistry-u01-03-q1: Calculate the percentage by mass of carbon in carbon dioxide, CO₂ (C = 12.011, O = 15.999), to one decimal place. | 27.3 | 0.1 |  % | Mr = 12.011 + 2 × 15.999 = 44.009; 12.011 ÷ 44.009 × 100 = 27.3%.
 M1#chemistry-u01-03-q2: Which can't be broken down into simpler substances by chemical reactions? | An element | A compound | A mixture | A solution | Elements are the simplest substances chemically; compounds can be decomposed into elements.
 M2#chemistry-u01-03-q3: Two samples of copper(II) oxide, made in different ways, both contain 79.9% copper by mass. This supports… | the law of definite proportions | the idea that compounds are mixtures | the existence of isotopes | the law of conservation of energy | A fixed mass composition regardless of preparation is exactly what the law predicts.
-M3#chemistry-u01-03-q4: Why is sodium chloride safe to eat when sodium and chlorine are both dangerous? | In the compound, sodium and chloride are ions held in a lattice and no longer have the reactivity of the free elements | It contains only a little sodium | Chlorine evaporates on cooking | Sodium chloride is a mixture | Chemical bonding creates a new substance with new properties; Na⁺ and Cl⁻ ions don't behave like sodium metal or chlorine gas.
+M3#chemistry-u01-03-q4: Why is sodium chloride safe to eat when sodium and chlorine are both dangerous? | In the compound, sodium and chloride are ions held in a lattice and no longer have the reactivity of the free elements | Sodium and chlorine stay as free atoms in the crystal, but in such small amounts that they are too dilute to be dangerous :: In the compound there are no free sodium or chlorine atoms: they are ions with different properties. | Cooking and dissolving in water turn the sodium and chlorine into harmless forms before the salt is eaten by anyone :: Salt is already safe in the packet; its properties come from forming the compound, not from cooking. | Sodium chloride is a mixture of the two elements, and mixing the two dangerous elements cancels out their reactivity :: It is a compound, not a mixture; a mixture would keep the elements' dangerous properties. | Chemical bonding creates a new substance with new properties; Na⁺ and Cl⁻ ions don't behave like sodium metal or chlorine gas.
 
 ## Mixtures
 S: Mixtures can be separated by physical methods that exploit differences in the properties of their parts: particle size, solubility, boiling point or how strongly they stick to a surface. This lesson matches separation methods to mixtures.
@@ -116,6 +118,7 @@ H: Separation methods
 - **Fractional distillation**: separates miscible liquids with different boiling points (ethanol from water; crude oil into fractions).
 - **Chromatography**: separates dissolved substances that move at different rates through a stationary phase (dyes in ink).
 - **Separating funnel**: separates immiscible liquids (oil and water).
+D: chem-mixtures
 H: Chromatography
 P: A mobile phase (solvent) moves through a stationary phase (paper or silica). Substances more attracted to the mobile phase travel further. The **Rf value** is fixed for a substance in given conditions, so it can help identify it.
 E: Rf = distance moved by spot / distance moved by solvent front
@@ -136,8 +139,8 @@ Q: What does an Rf value of 0.9 tell you about a substance in that system? | It 
 NUM1#chemistry-u01-04-q1: A spot moves 2.4 cm and the solvent front 6.0 cm. Calculate Rf. | 0.4 | 0.01 |  | Rf = 2.4 ÷ 6.0 = 0.40.
 MATCH2#chemistry-u01-04-q2: Match each mixture to the best separation method. | Chalk and water = filtration ; Copper sulfate crystals from solution = crystallisation ; Oil and water = separating funnel ; Pigments in a leaf extract = chromatography | Each method exploits a different property: insolubility, solubility, immiscibility and differing affinities.
 M1#chemistry-u01-04-q3: Which method separates an insoluble solid from a liquid? | Filtration | Distillation | Chromatography | Crystallisation | Filter paper traps the undissolved solid particles while the liquid passes through.
-M2#chemistry-u01-04-q4: Why can fractional distillation separate the hydrocarbons in crude oil? | They have different boiling points, so they condense at different heights in the column | They have different colours | They don't dissolve in each other | They have different densities | Larger molecules have stronger intermolecular forces and higher boiling points, so they condense lower in the column.
-M3#chemistry-u01-04-q5: In paper chromatography an unknown gives one spot with Rf 0.62 in solvent A, matching a known dye. In solvent B it gives two spots. What should you conclude? | The unknown is a mixture of two substances that happen to have the same Rf in solvent A | The unknown is the known dye | The experiment in solvent B failed | Rf values change randomly | Different substances can share an Rf in one solvent; separation in a second solvent reveals two components.
+M2#chemistry-u01-04-q4: Why can fractional distillation separate the hydrocarbons in crude oil? | They have different boiling points, so they condense at different heights in the column | They have different densities, so the heavier ones sink to the bottom of the column first :: Fractions separate by boiling point as vapours rise and condense, not by sinking. | They have different solubilities, so each one dissolves out at a different height in the column :: Nothing dissolves out in the column; the hydrocarbons condense where the temperature is below their boiling point. | They react with the hot column at different rates, so each forms a new product at its own height :: Distillation is a physical separation; the hydrocarbons are not changed into new products. | Larger molecules have stronger intermolecular forces and higher boiling points, so they condense lower in the column.
+M3#chemistry-u01-04-q5: In paper chromatography an unknown gives one spot with Rf 0.62 in solvent A, matching a known dye. In solvent B it gives two spots. What should you conclude? | The unknown is a mixture of two substances that happen to have the same Rf in solvent A | The unknown is the known dye, and solvent B has broken it down into two new substances :: Chromatography doesn't break substances down; two spots mean two substances were there all along. | The unknown is pure, since one spot in any single solvent proves a substance has only one component :: One spot in one solvent can hide two substances with the same Rf; solvent B separated them. | The unknown is the known dye, because an Rf match in one solvent is enough to identify a substance :: A match in one solvent is not proof; the second solvent shows the unknown is a mixture. | Different substances can share an Rf in one solvent; separation in a second solvent reveals two components.
 
 ## Physical and chemical changes
 S: In a physical change the same substance remains, perhaps in a different state or shape; in a chemical change new substances form. This lesson sets out the evidence for each and why the distinction matters.
@@ -147,6 +150,7 @@ O: Explain both kinds of change at the particle level
 PRE: Matter and its classification
 H: Physical changes
 P: Changes of state (melting, boiling, condensing), dissolving and changes of shape are physical changes. The particles are the same before and after; only their arrangement, spacing or movement changes. Physical changes are usually easy to reverse.
+D: chem-physical-chemical-change
 H: Chemical changes
 P: In a chemical change, bonds are broken and new bonds are made, so atoms are rearranged into new substances. Burning, rusting, cooking and digestion are chemical changes. They are often hard to reverse.
 H: Evidence of a reaction
@@ -172,8 +176,8 @@ Q: Give four observations that suggest a chemical reaction has happened. | Gas p
 Q: Why is dissolving salt in water a physical change? | No new substance forms: evaporating the water gives back the salt.
 MS2#chemistry-u01-05-q1: Which of these are chemical changes? | Toasting bread ; Fireworks exploding ; Milk going sour | Butter melting ; Salt dissolving ; Water freezing | New substances form in toasting, explosions and souring; melting, dissolving and freezing change only state or mixing.
 M1#chemistry-u01-05-q2: Which is a chemical change? | Wood burning | Ice melting | Glass breaking | Alcohol evaporating | Burning makes new substances (CO₂, water, ash); the others change only shape or state.
-M2#chemistry-u01-05-q3: Mixing two colourless solutions forms a yellow solid. What has most likely happened? | A chemical reaction producing an insoluble precipitate | The solutions froze | A physical change of state | The water evaporated | A new solid substance appearing from two solutions is a precipitation reaction.
-M3#chemistry-u01-05-q4: When ammonium nitrate dissolves in water the temperature falls sharply. Is this evidence of a chemical reaction? | Not by itself: dissolving is usually classed as physical, and an energy change alone doesn't prove a new substance has formed | Yes, any temperature change proves a reaction | Yes, because ammonium nitrate is a compound | No, because temperature changes never happen in reactions | Energy changes accompany both physical and chemical processes; evidence of a new substance is needed.
+M2#chemistry-u01-05-q3: Mixing two colourless solutions forms a yellow solid. What has most likely happened? | A chemical reaction producing an insoluble precipitate | A physical change in which one of the solutions froze solid :: Nothing cools here, and a frozen colourless solution would not turn yellow. | A physical change: the solid was already dissolved before :: Both solutions were colourless; a new yellow solid means a new substance formed. | Water evaporated, leaving behind the yellow solute as a solid :: Evaporation takes time and heat; an instant yellow solid on mixing is a precipitate from a reaction. | A new solid substance appearing from two solutions is a precipitation reaction.
+M3#chemistry-u01-05-q4: When ammonium nitrate dissolves in water the temperature falls sharply. Is this evidence of a chemical reaction? | Not by itself: dissolving is usually classed as physical, and an energy change alone doesn't prove a new substance has formed | Yes: a sharp temperature fall can only come from bonds forming in a reaction, so a new substance must have been made :: Dissolving also involves energy changes; temperature change alone doesn't prove a new substance. | Yes: ammonium nitrate is a compound, so whenever it is mixed with water a chemical reaction must take place :: Compounds can dissolve without reacting; being a compound says nothing about whether a reaction occurs. | No: reactions always give out heat, so a fall in temperature proves that only a physical change has happened :: Endothermic reactions take in heat, so a fall in temperature doesn't rule a reaction out. | Energy changes accompany both physical and chemical processes; evidence of a new substance is needed.
 
 ## States of matter
 S: Substances exist as solids, liquids or gases depending on the balance between the energy of their particles and the forces between them. The particle model explains each state's properties and the energy changes when state changes.
@@ -185,6 +189,7 @@ H: The particle model
 - **Solid**: particles closely packed in a regular arrangement, vibrating about fixed positions; fixed shape and volume.
 - **Liquid**: particles close together but randomly arranged and moving past each other; fixed volume, takes the shape of its container.
 - **Gas**: particles far apart, moving fast and randomly in all directions; fills its container and is easily compressed.
+D: chem-states-of-matter
 H: Changing state
 P: Melting, boiling and sublimation need energy to overcome the forces between particles. Freezing and condensing release energy as forces form. During a change of state the temperature stays constant: the energy goes into separating (or is released by bringing together) particles, not into making them move faster.
 H: Heating curves
@@ -317,6 +322,7 @@ O: Write ionic equations by removing spectator ions
 PRE: Chemical formulae
 H: Word and symbol equations
 P: Word equation: magnesium + oxygen → magnesium oxide. Symbol equation: 2Mg(s) + O₂(g) → 2MgO(s). The arrow means "react to form". State symbols: (s) solid, (l) liquid, (g) gas, (aq) aqueous, dissolved in water.
+D: chem-equation-particles
 H: Coefficients
 P: The large numbers in front of formulae are coefficients. They count particles (or moles) and must make the numbers of each atom equal on both sides, because atoms are neither created nor destroyed. Changing a subscript would change the substance; only coefficients can be changed.
 H: Ionic equations
@@ -348,6 +354,7 @@ O: Balance equations with polyatomic ions and odd numbers of atoms
 PRE: Chemical equations
 H: Conservation of mass
 P: In a chemical reaction atoms are rearranged, not created or destroyed, so the total mass of the products equals the total mass of the reactants (Lavoisier, 1789). In an open container, mass can seem to change when a gas escapes or is absorbed.
+D: chem-balancing
 H: A method
 - Write the correct formulae; never change them while balancing.
 - Count the atoms of each element on each side.
@@ -389,6 +396,7 @@ E: Ar = Σ (isotopic mass × abundance) / Σ abundances
 X: Chlorine is 75.78% ³⁵Cl (mass 34.969) and 24.22% ³⁷Cl (mass 36.966). Calculate Ar.
 > Ar = (34.969 × 75.78 + 36.966 × 24.22) ÷ 100.
 > = (2,650.0 + 895.3) ÷ 100 = 35.45.
+D: chem-ar-chlorine
 H: Why not whole numbers?
 P: Ar values are averages of several isotopes, so they are rarely whole numbers (chlorine 35.45). Even single isotopes don't have exactly whole-number masses (except carbon-12 by definition), because of the binding energy of the nucleus and the slightly different masses of protons and neutrons. IUPAC gives some atomic weights as ranges, because isotope abundances vary between natural sources.
 P: **Investigate with the lab.** Build the two common isotopes of chlorine, chlorine-35 and chlorine-37, and think about why the relative atomic mass isn't a whole number.
@@ -583,6 +591,7 @@ O: Calculate the amount of excess reagent left over
 PRE: Stoichiometry
 H: The idea
 P: To make cheese sandwiches you need two slices of bread per slice of cheese. With 10 slices of bread and 3 of cheese, you can make only 3 sandwiches: cheese is limiting and 4 slices of bread are left over. Reactions work the same way, but by moles.
+D: chem-limiting-reagent
 H: Method
 - Convert each reactant to moles.
 - Divide each by its coefficient in the balanced equation.
@@ -690,6 +699,7 @@ X: 4.00 g of sodium hydroxide (M 40.0) is dissolved to make 250 cm³ of solution
 > n = 4.00 ÷ 40.0 = 0.100 mol.
 > V = 250 ÷ 1,000 = 0.250 dm³.
 > c = 0.100 ÷ 0.250 = 0.400 mol/dm³ (16.0 g/dm³).
+D: chem-concentration
 H: Making a standard solution
 P: A standard solution has an accurately known concentration. Weigh the solid accurately, dissolve it in a beaker, transfer it with washings to a volumetric flask, make up to the mark with the bottom of the meniscus on the line, then invert to mix.
 K: c = n/V with V in dm³; always convert cm³ ÷ 1,000.
@@ -721,6 +731,7 @@ E: c_{1}V_{1} = c_{2}V_{2}
 X: What volume of 2.00 mol/dm³ sulfuric acid is needed to make 250 cm³ of 0.100 mol/dm³ acid?
 > V₁ = c₂V₂ ÷ c₁ = 0.100 × 250 ÷ 2.00 = 12.5 cm³.
 > Measure 12.5 cm³ with a burette or pipette, add to a 250 cm³ volumetric flask (adding acid to water, never water to concentrated acid) and make up to the mark.
+D: chem-dilution
 H: Serial dilution
 P: A serial dilution repeats the same dilution several times, giving concentrations that fall by a constant factor. Diluting 1 cm³ into 9 cm³ of water (a 1 in 10 dilution) five times gives concentrations of 10⁻¹ to 10⁻⁵ of the original. Serial dilutions are used to make calibration standards and to count bacteria.
 H: Dilution factor

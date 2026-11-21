@@ -1,0 +1,137 @@
+{
+ "id": "chem-harmonic-oscillator",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Harmonic oscillator",
+ "title": "The harmonic oscillator",
+ "caption": "A bond vibrating like a spring has a parabolic potential energy. Its allowed energies are evenly spaced, E = (v + ½)hν, and even the lowest level has energy ½hν: the molecule can never stop vibrating (zero-point energy).",
+ "alt": "A parabola of potential energy against displacement, with horizontal levels at 0.5, 1.5, 2.5 and 3.5 units drawn across it.",
+ "description": [
+  "The parabola V = ½kx².",
+  "Levels v = 0, 1, 2, 3 at 0.5, 1.5, 2.5 and 3.5 hν: equally spaced.",
+  "The lowest is above the minimum: zero-point energy."
+ ],
+ "range": {
+  "x": [
+   -2.2,
+   2.2
+  ],
+  "y": [
+   0,
+   4.5
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   0,
+   1,
+   2
+  ],
+  [
+   0.5,
+   1.5,
+   2.5,
+   3.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "axisLabels": [
+  "displacement",
+  "energy / hν"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1"
+  },
+  {
+   "expr": "0.5",
+   "domain": [
+    -0.7071067811865476,
+    0.7071067811865476
+   ],
+   "colour": "a2",
+   "label": "v = 0",
+   "labelAt": [
+    0.7871067811865475,
+    0.5
+   ]
+  },
+  {
+   "expr": "1.5",
+   "domain": [
+    -1.224744871391589,
+    1.224744871391589
+   ],
+   "colour": "a2",
+   "label": "v = 1",
+   "labelAt": [
+    1.304744871391589,
+    1.5
+   ]
+  },
+  {
+   "expr": "2.5",
+   "domain": [
+    -1.5811388300841898,
+    1.5811388300841898
+   ],
+   "colour": "a2",
+   "label": "v = 2",
+   "labelAt": [
+    1.6611388300841898,
+    2.5
+   ]
+  },
+  {
+   "expr": "3.5",
+   "domain": [
+    -1.8708286933869707,
+    1.8708286933869707
+   ],
+   "colour": "a2",
+   "label": "v = 3",
+   "labelAt": [
+    1.9508286933869707,
+    3.5
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 0.7071067811865476,
+   "y": 0.5,
+   "name": "v = 0 lies at ½hν: the zero-point energy"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1.224744871391589,
+   "y": 1.5,
+   "name": "v = 1 at (1 + ½)hν"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1.5811388300841898,
+   "y": 2.5,
+   "name": "v = 2 at (2 + ½)hν"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1.8708286933869707,
+   "y": 3.5,
+   "name": "v = 3 at (3 + ½)hν"
+  }
+ ]
+}

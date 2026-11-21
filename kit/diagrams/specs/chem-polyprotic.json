@@ -1,0 +1,63 @@
+{
+ "id": "chem-polyprotic",
+ "renderer": "titration",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Polyprotic acids",
+ "title": "Titrating phosphoric acid",
+ "caption": "Phosphoric acid gives up its protons one at a time, so titrating it with NaOH shows a separate rise for each: at 25 cm³ (H₂PO₄⁻) and 50 cm³ (HPO₄²⁻). The third proton (pKa 12.35) is too weak to give a visible end point in water.",
+ "alt": "Titration curve of 25 cm³ of 0.1 mol dm⁻³ H₃PO₄ with 0.1 mol dm⁻³ NaOH: steep rises at 25 and 50 cm³, then a gradual climb.",
+ "description": [
+  "First rise at 25 cm³, from about pH 3 to 6.",
+  "Second rise at 50 cm³, from about pH 8 to 11.",
+  "No third rise."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "pKa": [
+     2.15,
+     7.2,
+     12.35
+    ]
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 80,
+ "curves": [
+  {
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       2.15,
+       7.2,
+       12.35
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1"
+  }
+ ],
+ "claims": [
+  {
+   "type": "points",
+   "value": 2
+  }
+ ]
+}

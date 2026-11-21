@@ -1,0 +1,111 @@
+{
+ "id": "chem-band-gap",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Semiconductors",
+ "title": "Conductors, semiconductors and insulators",
+ "caption": "In a metal the filled and empty bands overlap, so electrons move freely. In a semiconductor such as silicon the gap is small (1.1 eV), so heat or light can lift some electrons across. In an insulator such as diamond the gap (5.5 eV) is too large.",
+ "alt": "Three band diagrams: a metal with overlapping bands, silicon with a 1.1 eV gap and diamond with a 5.5 eV gap.",
+ "description": [
+  "Metal: valence and conduction bands overlap.",
+  "Silicon: a 1.1 eV gap.",
+  "Diamond: a 5.5 eV gap."
+ ],
+ "kind": "custom",
+ "height": [
+  300,
+  320
+ ],
+ "axisLabel": "electron energy / eV",
+ "levels": [
+  {
+   "id": "mv",
+   "label": "metal",
+   "E": 1.0,
+   "x0": 0.12,
+   "x1": 0.3
+  },
+  {
+   "id": "mc",
+   "E": 0.6,
+   "x0": 0.12,
+   "x1": 0.3,
+   "dash": true
+  },
+  {
+   "id": "sv",
+   "label": "Si",
+   "E": 0,
+   "x0": 0.42,
+   "x1": 0.6
+  },
+  {
+   "id": "sc",
+   "E": 1.1,
+   "x0": 0.42,
+   "x1": 0.6,
+   "dash": true
+  },
+  {
+   "id": "dv",
+   "label": "diamond",
+   "E": 0,
+   "x0": 0.74,
+   "x1": 0.92
+  },
+  {
+   "id": "dc",
+   "E": 5.5,
+   "x0": 0.74,
+   "x1": 0.92,
+   "dash": true
+  }
+ ],
+ "transitions": [
+  {
+   "from": "sv",
+   "to": "sc",
+   "x": 0.51,
+   "label": "1.1 eV",
+   "colour": "a4"
+  },
+  {
+   "from": "dv",
+   "to": "dc",
+   "x": 0.83,
+   "label": "5.5 eV",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "x": 0.21,
+   "E": 1.0,
+   "dy": -16,
+   "text": "bands overlap"
+  },
+  {
+   "x": 0.5,
+   "E": 5.5,
+   "dy": 0,
+   "text": "dashed: bottom of the empty band"
+  }
+ ],
+ "claims": [
+  {
+   "type": "below",
+   "a": "mc",
+   "b": "mv",
+   "name": "metal: the empty band starts below the top of the filled band (overlap)"
+  },
+  {
+   "type": "lower",
+   "transitions": [
+    0,
+    1
+   ],
+   "name": "silicon's gap is smaller than diamond's"
+  }
+ ]
+}

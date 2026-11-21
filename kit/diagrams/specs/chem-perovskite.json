@@ -1,0 +1,54 @@
+{
+ "id": "chem-perovskite",
+ "renderer": "lattice",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Solid-state inorganic chemistry",
+ "title": "The perovskite structure",
+ "caption": "Calcium titanate, CaTiO₃, gives its name to the perovskite structure: Ti⁴⁺ at the cube centre surrounded octahedrally by six O²⁻ at the face centres, and Ca²⁺ at the corners with twelve oxygen neighbours. Many solar-cell materials share it.",
+ "alt": "A cubic cell with calcium at the corners, titanium at the centre and oxygen at the face centres.",
+ "description": [
+  "Ca²⁺ at the 8 corners: 1 per cell.",
+  "Ti⁴⁺ at the body centre: 1 per cell, 6 O²⁻ around it.",
+  "O²⁻ at the 6 face centres: 3 per cell. Formula CaTiO₃."
+ ],
+ "cells": [
+  {
+   "kind": "perovskite",
+   "label": "CaTiO₃",
+   "species": {
+    "A": {
+     "label": "Ca2+",
+     "colour": "#5a9e8f",
+     "r": 11
+    },
+    "B": {
+     "label": "Ti4+",
+     "colour": "#9aa1b5",
+     "r": 9
+    },
+    "X": {
+     "label": "O2-",
+     "colour": "#e0393e",
+     "r": 8
+    }
+   },
+   "claims": {
+    "coordination": {
+     "B": 6,
+     "A": 12
+    },
+    "perCell": {
+     "A": 1,
+     "B": 1,
+     "X": 3
+    },
+    "formula": {
+     "A": 1,
+     "B": 1,
+     "X": 3
+    }
+   }
+  }
+ ]
+}

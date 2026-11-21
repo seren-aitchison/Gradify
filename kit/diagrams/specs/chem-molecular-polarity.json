@@ -1,0 +1,90 @@
+{
+ "id": "chem-molecular-polarity",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Molecular polarity",
+ "title": "When bond dipoles cancel",
+ "caption": "CO₂ and BF₃ have polar bonds, but their symmetrical shapes make the dipoles cancel: non-polar. In bent H₂O and pyramidal NH₃ the dipoles do not cancel, so the molecules are polar.",
+ "alt": "Four shapes: CO₂ linear and BF₃ trigonal planar (non-polar); H₂O bent and NH₃ pyramidal (polar).",
+ "description": [
+  "CO₂: linear, non-polar.",
+  "BF₃: trigonal planar, non-polar.",
+  "H₂O: bent, polar, δ− oxygen.",
+  "NH₃: trigonal pyramidal, polar."
+ ],
+ "perRow": 4,
+ "molecules": [
+  {
+   "label": "CO2",
+   "centre": "C",
+   "ligands": [
+    {
+     "el": "O",
+     "order": 2
+    },
+    {
+     "el": "O",
+     "order": 2
+    }
+   ],
+   "shape": "linear",
+   "polar": false
+  },
+  {
+   "label": "BF3",
+   "centre": "B",
+   "ligands": [
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    },
+    {
+     "el": "F"
+    }
+   ],
+   "shape": "trigonal planar",
+   "polar": false
+  },
+  {
+   "label": "H2O",
+   "centre": "O",
+   "ligands": [
+    {
+     "el": "H",
+     "delta": "+"
+    },
+    {
+     "el": "H",
+     "delta": "+"
+    }
+   ],
+   "centreDelta": "-",
+   "shape": "bent",
+   "polar": true
+  },
+  {
+   "label": "NH3",
+   "centre": "N",
+   "ligands": [
+    {
+     "el": "H",
+     "delta": "+"
+    },
+    {
+     "el": "H",
+     "delta": "+"
+    },
+    {
+     "el": "H",
+     "delta": "+"
+    }
+   ],
+   "centreDelta": "-",
+   "shape": "trigonal pyramidal",
+   "polar": true
+  }
+ ]
+}

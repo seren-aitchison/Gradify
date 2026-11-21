@@ -1,0 +1,85 @@
+{
+ "id": "chem-langmuir",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Surface chemistry",
+ "title": "The Langmuir isotherm",
+ "caption": "Gas molecules adsorb on a fixed number of surface sites. The fraction covered, θ = Kp/(1 + Kp), rises in proportion at low pressure and levels at 1 when every site is full (a monolayer). Half coverage occurs at p = 1/K.",
+ "alt": "Fraction of the surface covered against pressure: rising steeply, then levelling towards 1; θ = 0.5 at p = 0.5 for K = 2.",
+ "description": [
+  "Low pressure: θ ≈ Kp.",
+  "θ = 0.5 at p = 1/K = 0.5.",
+  "High pressure: θ → 1, a full monolayer."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "pressure / bar",
+  "fraction covered, θ"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "2*x/(1+2*x)",
+   "colour": "a4"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "monolayer"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.5,
+   "label": "θ = ½ at p = 1/K"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x/(1+2*x)",
+   "x": 0.5,
+   "y": 0.5,
+   "name": "half coverage at p = 1/K"
+  },
+  {
+   "type": "slope",
+   "expr": "2*x/(1+2*x)",
+   "x": 0,
+   "value": 2,
+   "name": "initial gradient K = 2 bar⁻¹"
+  }
+ ]
+}

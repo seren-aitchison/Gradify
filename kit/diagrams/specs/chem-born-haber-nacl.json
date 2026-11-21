@@ -1,0 +1,99 @@
+{
+ "id": "chem-born-haber-nacl",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Born-Haber cycles",
+ "title": "The Born–Haber cycle for sodium chloride",
+ "caption": "From the elements, sodium and chlorine are atomised (+107, +122), sodium is ionised (+496) and chlorine gains an electron (−349). The gaseous ions then form the lattice. Since the two routes to NaCl(s) must agree, −411 = 107 + 122 + 496 − 349 + ΔlattH, so ΔlattH = −787 kJ mol⁻¹.",
+ "alt": "Enthalpy level diagram rising from Na(s) + ½Cl₂(g) through atomisation and ionisation, falling for the electron affinity, then a long downward arrow for lattice formation to NaCl(s), which is 411 below the start.",
+ "description": [
+  "Start: Na(s) + ½Cl₂(g) at zero.",
+  "Up +107 to Na(g); up +122 to Na(g) + Cl(g); up +496 to Na⁺(g) + e⁻ + Cl(g).",
+  "Down −349 to Na⁺(g) + Cl⁻(g).",
+  "Down by the lattice enthalpy to NaCl(s), which is −411 below the start (the enthalpy of formation).",
+  "So the lattice enthalpy is −787 kJ mol⁻¹."
+ ],
+ "kind": "levels",
+ "height": [
+  480,
+  560
+ ],
+ "states": [
+  {
+   "id": "e",
+   "label": "Na(s) + ½Cl2(g)"
+  },
+  {
+   "id": "na",
+   "label": "Na(g) + ½Cl2(g)"
+  },
+  {
+   "id": "cl",
+   "label": "Na(g) + Cl(g)"
+  },
+  {
+   "id": "ion",
+   "label": "Na+(g) + e− + Cl(g)"
+  },
+  {
+   "id": "ions",
+   "label": "Na+(g) + Cl−(g)"
+  },
+  {
+   "id": "s",
+   "label": "NaCl(s)"
+  }
+ ],
+ "steps": [
+  {
+   "from": "e",
+   "to": "na",
+   "dh": 107,
+   "label": "ΔatH(Na)",
+   "col": 1
+  },
+  {
+   "from": "na",
+   "to": "cl",
+   "dh": 122,
+   "label": "ΔatH(Cl)",
+   "col": 1
+  },
+  {
+   "from": "cl",
+   "to": "ion",
+   "dh": 496,
+   "label": "IE(Na)",
+   "col": 1
+  },
+  {
+   "from": "ion",
+   "to": "ions",
+   "dh": -349,
+   "label": "EA(Cl)",
+   "col": 2
+  },
+  {
+   "from": "ions",
+   "to": "s",
+   "dh": null,
+   "label": "ΔlattH",
+   "col": 3
+  },
+  {
+   "from": "e",
+   "to": "s",
+   "dh": -411,
+   "label": "ΔfH",
+   "col": 0
+  }
+ ],
+ "find": {
+  "step": 4,
+  "value": -787
+ },
+ "equations": [
+  "Na + ½Cl2 → NaCl"
+ ]
+}

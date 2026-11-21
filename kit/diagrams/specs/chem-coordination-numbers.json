@@ -1,0 +1,80 @@
+{
+ "id": "chem-coordination-numbers",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Coordination numbers",
+ "title": "Coordination numbers 2, 4 and 6",
+ "caption": "The coordination number is the number of coordinate bonds to the central metal ion. Small ligands such as NH₃ and H₂O usually give 6; large ones such as Cl⁻ give 4; Ag⁺ forms linear complexes with 2, as in Tollens' reagent.",
+ "alt": "Linear [Ag(NH₃)₂]⁺, tetrahedral [CuCl₄]²⁻ and octahedral [Co(NH₃)₆]³⁺.",
+ "description": [
+  "[Ag(NH₃)₂]⁺: 2, linear.",
+  "[CuCl₄]²⁻: 4, tetrahedral.",
+  "[Co(NH₃)₆]³⁺: 6, octahedral."
+ ],
+ "molecules": [
+  {
+   "label": "[Ag(NH3)2]^+",
+   "centre": "Ag",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    }
+   ],
+   "shape": "linear",
+   "sub": "coordination number 2"
+  },
+  {
+   "label": "[CuCl4]^2-",
+   "centre": "Cu",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    }
+   ],
+   "shape": "tetrahedral",
+   "sub": "coordination number 4"
+  },
+  {
+   "label": "[Co(NH3)6]^3+",
+   "centre": "Co",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    }
+   ],
+   "shape": "octahedral",
+   "sub": "coordination number 6"
+  }
+ ]
+}

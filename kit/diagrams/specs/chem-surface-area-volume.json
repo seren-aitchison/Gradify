@@ -1,0 +1,80 @@
+{
+ "id": "chem-surface-area-volume",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Nanomaterials",
+ "title": "Why nanoparticles are so reactive",
+ "caption": "For a cube of side d, surface area ÷ volume = 6/d. Shrinking a particle from 100 nm to 1 nm multiplies its surface-to-volume ratio a hundredfold, so a far greater fraction of its atoms are at the surface, where reactions happen.",
+ "alt": "Surface-to-volume ratio against particle size: 6/d, steep below 10 nm and small above 50 nm.",
+ "description": [
+  "d = 100 nm: 0.06 nm⁻¹.",
+  "d = 10 nm: 0.6 nm⁻¹.",
+  "d = 1 nm: 6 nm⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   25,
+   50,
+   75,
+   100
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  10,
+  0.5
+ ],
+ "axisLabels": [
+  "particle size d / nm",
+  "surface area ÷ volume / nm⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "6/x",
+   "domain": [
+    2,
+    100
+   ],
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.6,
+   "label": "10 nm: 0.6"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "6/x",
+   "x": 10,
+   "y": 0.6,
+   "name": "a 10 nm cube: 6 × 10² ÷ 10³ = 0.6 nm⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "6/x",
+   "x": 100,
+   "y": 0.06
+  }
+ ]
+}
