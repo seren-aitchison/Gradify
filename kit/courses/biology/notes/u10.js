@@ -99,6 +99,7 @@ H: Two branches
 - Helper T cells support both branches.
 - **Clonal selection**: lymphocytes that recognise an antigen are selected and multiply.
 P: In the **primary response**, it takes about 1–2 weeks for antibody levels to rise; in the **secondary response**, antibodies rise faster, higher and last longer. This is the principle behind vaccines and booster doses. Adaptive immunity evolved in jawed vertebrates, while jawless fish have a different adaptive system.
+D: bio-immune-response
 X: Primary and secondary responses.
 > A child is exposed to measles virus for the first time.
 > Antibodies rise slowly over about two weeks, and they become ill.
@@ -391,6 +392,7 @@ H: Activation and differentiation
 - It differentiates into **plasma cells**, which secrete thousands of antibodies per second, and **memory B cells**.
 - In **germinal centres**, **affinity maturation** and **class switching** improve antibodies.
 P: Plasma cells have extensive rough endoplasmic reticulum to make large amounts of antibody. Long-lived plasma cells in bone marrow can produce antibodies for decades. Monoclonal antibodies, used in diagnostics and therapy, are made from a single clone of B cells, a technique developed by Köhler and Milstein in 1975.
+D: bio-clonal-selection
 X: Responding to a vaccine.
 > A vaccine contains a viral protein.
 > A B cell with a matching receptor binds it.
@@ -557,6 +559,7 @@ H: MHC class II pathway
 - Peptides load onto MHC class II and are displayed.
 - **Helper T cells** (CD4⁺) recognise them.
 P: **Cross-presentation** lets dendritic cells present external antigens on MHC class I, activating cytotoxic T cells against viruses that do not infect dendritic cells and against tumours. Some viruses evade presentation by blocking the proteasome or MHC transport. Understanding presentation is important for designing vaccines and cancer immunotherapies.
+D: bio-mhc-pathways
 X: A virus-infected cell.
 > A virus infects a liver cell and viral proteins are made inside it.
 > The proteasome breaks some viral proteins into peptides.
@@ -719,6 +722,7 @@ H: Signs and mechanisms
 - **Vasodilation** increases blood flow, causing redness and heat.
 - Increased **capillary permeability** lets fluid and proteins leak out, causing swelling.
 - Neutrophils and later macrophages move into the tissue.
+D: bio-inflammation
 H: Acute and chronic
 - **Acute inflammation** is rapid and short-lived, and normally resolves.
 - **Chronic inflammation** lasts weeks to years, with macrophages and lymphocytes.
@@ -766,6 +770,7 @@ H: Why responses are stronger
 - Antibodies have already undergone affinity maturation and class switching to IgG.
 - Long-lived plasma cells may maintain antibody levels for years.
 P: Memory to some infections, such as measles, lasts for life, while immunity to others, such as seasonal coronaviruses, wanes more quickly. People who survived the 1918 influenza pandemic still had antibodies to the virus over 90 years later. **Antigenic variation** can allow pathogens to evade memory.
+D: bio-immune-response
 X: Memory lasting decades.
 > Survivors of the 1918 influenza pandemic were tested in 2008.
 > Their blood still contained B cells making antibodies to the 1918 virus.
@@ -801,7 +806,6 @@ H: How vaccines work
 - They trigger a primary response and create **memory cells** without causing disease.
 - On real infection, a fast secondary response prevents or reduces illness.
 - **Adjuvants** boost responses.
-D: bio-herd-immunity
 H: Types
 - **Live attenuated**: weakened pathogens, such as MMR.
 - **Inactivated**: killed pathogens, such as some polio and influenza vaccines.
@@ -809,6 +813,7 @@ H: Types
 - **Toxoid**: inactivated toxins, such as tetanus.
 - **mRNA** and **viral vector**: instructions for making an antigen, such as COVID-19 vaccines.
 P: **Herd immunity** occurs when enough people are immune that a pathogen cannot spread easily, protecting those who cannot be vaccinated, such as babies and immunosuppressed people. The threshold depends on R₀: roughly 1 − 1/R₀. Smallpox was declared eradicated in 1980 after a global vaccination campaign. Falling vaccine uptake has led to measles outbreaks in the UK.
+D: bio-herd-immunity
 X: Calculating a herd immunity threshold.
 > A disease has an R₀ of 5.
 > Threshold = 1 − 1/5 = 0.8.

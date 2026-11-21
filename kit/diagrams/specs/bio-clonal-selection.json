@@ -1,0 +1,57 @@
+{
+ "id": "bio-clonal-selection",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u10",
+ "lesson": "B lymphocytes",
+ "title": "Clonal selection of a B cell",
+ "caption": "Each B cell carries a receptor for one antigen. The antigen selects the matching cell, a helper T cell activates it, and it multiplies into a clone. Most of the clone becomes plasma cells that secrete antibody; some become memory cells that make later responses faster.",
+ "alt": "Four boxes in order: antigen meets its matching B cell, helper T cell activation, clonal expansion, and plasma cells and memory cells.",
+ "description": [
+  "Antigen meets its B cell: only the B cell whose receptor matches binds it.",
+  "Helper T cell activation: the B cell presents the antigen; a helper T cell gives the signals.",
+  "Clonal expansion: the selected B cell divides again and again.",
+  "Plasma cells and memory cells: plasma cells secrete antibodies; memory B cells wait for a second exposure."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "c0",
+   "label": "antigen meets its B cell",
+   "sub": "only the B cell whose receptor matches binds it",
+   "tone": "a1"
+  },
+  {
+   "id": "c1",
+   "label": "helper T cell activation",
+   "sub": "the B cell presents the antigen; a helper T cell gives the signals",
+   "tone": "a5"
+  },
+  {
+   "id": "c2",
+   "label": "clonal expansion",
+   "sub": "the selected B cell divides again and again",
+   "tone": "a4"
+  },
+  {
+   "id": "c3",
+   "label": "plasma cells and memory cells",
+   "sub": "plasma cells secrete antibodies; memory B cells wait for a second exposure",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "c0",
+   "to": "c1"
+  },
+  {
+   "from": "c1",
+   "to": "c2"
+  },
+  {
+   "from": "c2",
+   "to": "c3"
+  }
+ ]
+}

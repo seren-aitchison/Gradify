@@ -1,0 +1,81 @@
+{
+ "id": "bio-inflammation",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u10",
+ "lesson": "Inflammation",
+ "title": "Acute inflammation",
+ "caption": "Damaged cells and mast cells release histamine. Vasodilation brings more blood (redness, heat) and leakier capillaries let fluid out (swelling), while neutrophils and then macrophages move in. The fifth sign, pain, and the loss of function, follow. Acute inflammation resolves; chronic inflammation does not.",
+ "alt": "Five boxes in order: tissue damage, vasodilation, more permeable capillaries, neutrophils then macrophages arriving, and resolution and repair.",
+ "description": [
+  "Tissue damage or infection: damaged cells and mast cells release histamine and other mediators.",
+  "Vasodilation: more blood flow: redness and heat.",
+  "More permeable capillaries: fluid and proteins leak out: swelling.",
+  "Neutrophils, then macrophages: move into the tissue and remove the pathogen.",
+  "Resolution and repair: acute inflammation normally ends once the cause is gone.",
+  "The five signs are redness, heat, swelling, pain and loss of function."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 124,
+ "nodes": [
+  {
+   "id": "i0",
+   "label": "tissue damage or infection",
+   "sub": "damaged cells and mast cells release histamine and other mediators",
+   "tone": "a3",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "i1",
+   "label": "vasodilation",
+   "sub": "more blood flow: redness and heat",
+   "tone": "a2",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "i2",
+   "label": "more permeable capillaries",
+   "sub": "fluid and proteins leak out: swelling",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "i3",
+   "label": "neutrophils, then macrophages",
+   "sub": "move into the tissue and remove the pathogen",
+   "tone": "a1",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "i4",
+   "label": "resolution and repair",
+   "sub": "acute inflammation normally ends once the cause is gone",
+   "tone": "a4",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "i0",
+   "to": "i1"
+  },
+  {
+   "from": "i1",
+   "to": "i2"
+  },
+  {
+   "from": "i2",
+   "to": "i3"
+  },
+  {
+   "from": "i3",
+   "to": "i4"
+  }
+ ]
+}

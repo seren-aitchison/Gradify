@@ -1,0 +1,30 @@
+{
+ "id": "bio-mhc-pathways",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u10",
+ "lesson": "Antigen presentation",
+ "title": "Which MHC molecule presents the antigen?",
+ "caption": "Where the protein comes from decides the route. Proteins made inside any nucleated cell, including viral proteins, are cut up by the proteasome and shown on MHC class I to cytotoxic CD8⁺ T cells. Proteins taken in from outside by antigen-presenting cells are broken down in endosomes and shown on MHC class II to helper CD4⁺ T cells.",
+ "alt": "A flow chart: a protein made inside the cell goes by the proteasome to MHC class I and cytotoxic CD8 T cells; a protein taken in from outside goes by endosomes to MHC class II and helper CD4 T cells.",
+ "description": [
+  "Was the protein made inside the cell, as a viral protein is? If so: the proteasome breaks it into peptides, which enter the ER, load onto MHC class I and are shown to cytotoxic CD8⁺ T cells, which kill the infected cell.",
+  "If it was taken in from outside, on a professional antigen-presenting cell (dendritic cell, macrophage or B cell): endosomes break it down, the peptides load onto MHC class II and are shown to helper CD4⁺ T cells."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Was the protein made inside the cell, as a viral protein is?",
+   "yes": "m1",
+   "no": "m2"
+  },
+  "m1": {
+   "outcome": "MHC class I: the proteasome makes peptides, which are shown to cytotoxic CD8⁺ T cells that kill the infected cell",
+   "tone": "bad"
+  },
+  "m2": {
+   "outcome": "MHC class II: endosomes break down the protein, and the peptides are shown to helper CD4⁺ T cells",
+   "tone": "good"
+  }
+ }
+}
