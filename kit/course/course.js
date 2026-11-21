@@ -625,7 +625,14 @@ export function mountCourse(root, cfg) {
   let treeStale = false;
   const treeShown = () => !treeEl.hidden && treeEl.getClientRects().length > 0 && getComputedStyle(treeEl).visibility !== "hidden";
   const freshTree = (toHere) => { if (treeShown()) { treeStale = false; redrawTree?.(!toHere); } else if (redrawTree) treeStale = true; };
-  const showTree = (on) => { treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on); if (on) redrawTree = outline.mount(treeEl); else drawer(false); };
+  // a hidden outline isn't built at all until it's first seen (the drawer opening builds it)
+  const catchUpTree = () => { if (treeEl.hidden || !treeShown()) return; if (!treeEl.dataset.wired) { redrawTree = outline.mount(treeEl); treeStale = false; } else if (treeStale) freshTree(true); };
+  const showTree = (on) => {
+    treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on);
+    if (!on) drawer(false);
+    else if (treeShown()) { redrawTree = outline.mount(treeEl); treeStale = false; }
+    else if (redrawTree) treeStale = true;
+  };
   // below 1280px the outline is a drawer that slides in from the left
   function drawer(open) {
     treeEl.classList.toggle("open", open); scrim.hidden = !open; document.documentElement.classList.toggle("cx-lock", open);
@@ -634,8 +641,8 @@ export function mountCourse(root, cfg) {
   scrim.addEventListener("click", () => drawer(false));
   // on a wide screen the outline can be put away to give the lesson more room (remembered); smaller screens use the drawer
   const wideScreen = () => matchMedia("(min-width: 1281px)").matches;
-  const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); if (!off && treeStale) freshTree(true); };
-  new ResizeObserver(() => { if (treeStale && treeShown()) freshTree(true); }).observe(root);
+  const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); if (!off) catchUpTree(); };
+  new ResizeObserver(catchUpTree).observe(root);
   setTreeOff(Boolean(pref(cfg.slug, "outlineOff")));
   const toggleOutline = () => { if (wideScreen()) setTreeOff(!root.classList.contains("cx-treeoff")); else drawer(!treeEl.classList.contains("open")); };
   root.addEventListener("click", (e) => {
@@ -680,7 +687,7 @@ export function mountCourse(root, cfg) {
     document.querySelector(".cx-focusx")?.remove();
     if (on) { const b = Object.assign(document.createElement("button"), { type: "button", className: "cx-focusx", innerHTML: `${ic("expand")}<span>Exit focus</span><kbd>F</kbd>` }); b.addEventListener("click", () => setFocus(false)); document.body.append(b); }
     root.querySelectorAll("[data-focus]").forEach((b) => b.setAttribute("aria-pressed", String(on)));
-    if (!on && treeStale) freshTree(true);   // the outline comes back without the course changing size
+    if (!on) catchUpTree();   // the outline comes back without the course changing size
   }
   // the dock along the bottom of a phone: where to go, or, in a lesson, how to move through it
   function paintDock(view, l, prev, next) {
