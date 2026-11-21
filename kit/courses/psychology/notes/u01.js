@@ -41,6 +41,16 @@ M2#psychology-u01-01-q2@2: A newspaper claims that "everyone knows" stress cause
 TF1#psychology-u01-01-q3@1: Behaviour, in psychology, includes physiological responses such as a change in heart rate. | true | Behaviour is any observable and measurable response, including physiological ones.
 M3#psychology-u01-01-q4@3: Which is the strongest reply to the claim that psychology is "just common sense"? | Common sense contains contradictory sayings and is often wrong when tested, as myths show | Psychology uses technical words that common sense lacks | Psychologists have degrees and other people don't | Common sense is always wrong, so psychology is always right | The key point is that intuition must be tested; it is sometimes right and sometimes wrong, and only evidence tells us which. Jargon or credentials don't make a claim true.
 SA3#psychology-u01-01-q5@2,3: Evaluate the view that psychology is just common sense. | Some findings do match intuition, but common sense includes contradictory beliefs (opposites attract versus birds of a feather) and many myths, such as using 10% of the brain, fail when tested. Psychology's value lies in testing claims systematically, which can confirm, refine or overturn intuition; it also discovers effects nobody predicted. | Acknowledges some findings fit intuition ; Common sense contains contradictions ; Gives a myth contradicted by evidence ; Explains that systematic testing is what distinguishes psychology ; Reaches a balanced judgement
+Q: Define behaviour as psychologists use the term. | Anything an organism does that can be observed and measured, such as speaking, pressing a button or a change in heart rate.
+Q: What does the term mind cover in psychology? | Inner processes that can't be observed directly, such as perception, memory, thinking and emotion.
+Q: Name four scales at which psychology studies people and animals. | A single neurone firing, an individual making a decision, a crowd reacting to an emergency, and cultures differing in how they express emotion.
+Q: Which pair of contradictory sayings shows that common sense can contradict itself? | "Birds of a feather flock together" against "opposites attract".
+Q: Why is common sense an unreliable guide, apart from its contradictions? | It is shaped by memorable cases rather than representative evidence.
+Q: What two pieces of evidence show the claim that people use only 10% of their brains is a myth? | Brain imaging shows activity across virtually the whole brain over a day, and damage to almost any brain region produces some loss of function.
+Q: How does psychology test claims, according to this lesson? | Systematically, under conditions where the claims could turn out to be wrong.
+Q: Name the four questions psychology asks. | Describe, explain, predict and change.
+Q: What is the common misconception about psychology being mainly therapy, and what is the correction? | Clinical work is only one part; most psychologists research or apply knowledge about perception, learning, development, social behaviour and more.
+Q: How do psychologists study the mind indirectly? | By measuring behaviour and physiology and drawing inferences from them.
 
 ## The history of psychology
 LV: Introductory · Foundation
@@ -82,6 +92,16 @@ SEQ2#psychology-u01-02-q2@1: Put these in chronological order. | Fechner's Eleme
 M2#psychology-u01-02-q3@2: Cognitive psychologists in the 1960s studied memory using reaction times and recall tests. Why was this acceptable to scientists who had rejected introspection? | It inferred mental processes from objective, repeatable measurements | It relied on participants' descriptions of their thoughts | It avoided the mind and studied only behaviour | It used the same trained observers as Wundt | The key change was method: mental processes became theoretical constructs tested through observable, repeatable data, rather than private reports.
 M3#psychology-u01-02-q4@3: Which is the best criticism of the "great founders" account of psychology's history? | It overlooks contributors excluded from academic posts and the gradual spread of ideas | It wrongly includes Wundt, who in fact carried out no experiments of his own | It gives far too much credit to the cognitive revolution of the 1960s | It relies on primary sources, which historians always treat as unreliable | Historians argue such accounts simplify a gradual, international process and neglect people (often women and minorities) who were denied recognition, such as Calkins.
 SA3#psychology-u01-02-q5@2,3: Explain how behaviourism and cognitive psychology each responded to the approach before them. | Behaviourism rejected introspection because private reports were unreliable and uncheckable, and insisted on studying observable behaviour. Cognitive psychology argued behaviourism couldn't explain abilities such as language (Chomsky, 1959) and returned to mental processes, but studied them with objective measures, modelling the mind as an information processor. | Introspection unreliable ; Behaviourism studied observable behaviour only ; Chomsky's critique or the limits of behaviourism ; Cognitive psychology infers mental processes from objective data ; Information-processing analogy
+Q: What did Descartes argue about mind and body in 1641? | That mind and body are separate substances: dualism.
+Q: What did Locke argue about the mind in 1690? | That the mind begins as a blank slate filled by experience.
+Q: What did Fechner's Elements of Psychophysics (1860) show? | It related physical stimulus intensity to sensation, showing mental events could be measured.
+Q: What method did Wundt's students use? | Trained introspection, reporting the elements of conscious experience.
+Q: What did Ebbinghaus's 1885 memory experiments use and produce? | He tested his own memory using nonsense syllables, producing the forgetting curve.
+Q: What view of the mind did William James's Principles of Psychology (1890) set out? | Functionalism: the mind as adaptive, serving survival.
+Q: What did Freud's The Interpretation of Dreams (1900) introduce? | Psychoanalysis, emphasising unconscious motives.
+Q: Name three contributions associated with the cognitive revolution of the 1950s and 1960s. | Miller (1956), Chomsky's 1959 critique of Skinner, and Neisser (1967).
+Q: What happened to Mary Whiton Calkins at Harvard, and what did she later achieve? | She completed the requirements for a Harvard PhD but was refused the degree as a woman; she later became the first woman president of the APA (1905).
+Q: Why was Kenneth and Mamie Phipps Clark's research historically significant? | Their research on Black children's self-image was cited in the US Supreme Court's 1954 school desegregation ruling.
 
 ## Psychology as a science
 LV: Introductory · Foundation
@@ -123,6 +143,16 @@ M2#psychology-u01-03-q2@2: Which of these claims is falsifiable? | Students who 
 MS2#psychology-u01-03-q3@1,2: Which are features of a scientific approach? Choose all that apply. | Empiricism ; Replicability ; Falsifiable hypotheses | Appeal to authority ; Explanations that fit every possible result | Science rests on evidence and testable claims; appeals to authority and unfalsifiable explanations are what it avoids.
 M3#psychology-u01-03-q4@3: Which is the best evaluation of psychology's scientific status? | Much of it meets scientific criteria, though human subject matter makes control and measurement harder | It isn't a science at all, because the mind can never be measured in any way | It is exactly like physics, with one agreed paradigm and fully controlled variables | Replication failures since 2011 prove it can never become a genuine science | A balanced view recognises scientific methods are used widely, while human reactivity, measurement problems and culture make psychology harder; replication work is part of how science corrects itself.
 SA3#psychology-u01-03-q5@3: Evaluate whether psychology can be considered a science. | Psychology uses empirical methods, hypothesis testing, standardised measures, statistics and replication, so much of it meets scientific criteria. However, some theories (such as aspects of psychoanalysis) are hard to falsify, people react to being studied, many constructs are hard to measure, and there is no single paradigm. Replication failures show weaknesses but also self-correction. Overall, psychology is a science in its methods, with particular difficulties. | Empiricism and hypothesis testing ; Falsifiability, with an example of an unfalsifiable theory ; Problems of studying humans ; Kuhn and paradigms ; Replication crisis as both weakness and self-correction ; Judgement
+Q: Define empiricism as a feature of science. | Knowledge comes from observation and measurement, not authority or intuition.
+Q: Define objectivity as a feature of science. | Using procedures that minimise the influence of the researcher's expectations.
+Q: What is the hypothetico-deductive method? | Theories organise findings and generate testable hypotheses; evidence then supports or challenges them.
+Q: Why is "people dream about what they repress" hard to falsify? | Any dream content can be read as a disguised repressed wish, so no dream could ever count against the theory.
+Q: What does a scientific claim do that makes it a risky prediction? | It says what should not happen, so some evidence could count against it.
+Q: Why is a theory that can explain any result not strengthened by evidence? | Because no evidence could ever count against it.
+Q: Name three special difficulties psychology's subject matter brings to scientific study. | People react to being studied (demand characteristics), important variables are hard to measure, and findings can depend on culture.
+Q: Why did Kuhn's ideas lead some to call psychology pre-paradigmatic? | Kuhn argued mature sciences share one paradigm, whereas psychology contains several competing approaches.
+Q: How can the replication crisis be seen as a strength of psychology? | Correcting errors through replication is exactly what a science should do.
+Q: What defines science, if not laboratories and white coats? | Its method; observational studies, surveys and case studies can all be conducted scientifically.
 
 ## Psychology and its neighbouring disciplines
 LV: Introductory · Foundation
@@ -163,6 +193,16 @@ M2#psychology-u01-04-q2@2: A researcher explains differences in exam results bet
 MATCH1#psychology-u01-04-q3@1: Match each discipline to its focus. | Neuroscience = The nervous system ; Anthropology = Human cultures through fieldwork ; Sociology = Social structures and institutions ; Philosophy = Conceptual questions about mind and knowledge | Each neighbour shares topics with psychology but has a different focus and method.
 M3#psychology-u01-04-q4@3: Which statement best describes the relationship between biological and sociological explanations of smoking? | They work at different levels and can complement each other | The biological explanation must be correct because it is more scientific | The sociological explanation replaces the need for biology | Only one can be true at a time | Explanations at different levels (molecules, individuals, societies) can all be partly right; a full explanation often needs several.
 SA3#psychology-u01-04-q5@2,3: Using one example, explain how psychology and one neighbouring discipline could study the same topic differently. | Example: smoking. Psychology might study social learning from peers, beliefs about risk and personality traits such as sensation-seeking, using surveys and experiments on individuals. Sociology would study patterns by class, advertising and regulation, using population data. Each explains part of the picture; together they are more complete. | Names a topic ; Psychological explanation and method ; Neighbouring discipline's explanation and method ; Notes the explanations complement each other
+Q: How does psychology relate to philosophy's questions about the mind? | Philosophy asks conceptual questions; psychology tests empirical versions of them. They still meet in cognitive science.
+Q: What distinguishes psychology's question about the brain from neuroscience's? | Neuroscience studies the nervous system; psychology asks what functions the brain carries out. Cognitive neuroscience links the two.
+Q: How does biology explain behaviour? | Through genes, hormones and evolution.
+Q: Which field bridges psychology and sociology? | Social psychology.
+Q: What insight do cultural and cross-cultural psychology draw from anthropology? | That "normal" behaviour varies between societies.
+Q: Give a biological explanation of why young people start smoking. | Nicotine's effect on dopamine reward pathways and genetic differences in dependence.
+Q: Give a psychological explanation of why young people start smoking. | Social learning from peers and family, beliefs about risk, and personality traits such as sensation-seeking.
+Q: What main methods distinguish philosophy and anthropology from psychology? | Philosophy relies on argument and anthropology on long-term fieldwork, while psychology is mostly empirical and often experimental.
+Q: What is the main risk of interdisciplinary research? | Talking past one another, as when a sociologist sees a psychological explanation as ignoring structure.
+Q: Why is it a mistake to assume one discipline's explanation must be the real one? | Explanations at different levels can all be true and complement each other.
 
 ## The aims of psychological research
 LV: Introductory · Foundation
@@ -203,6 +243,16 @@ M2#psychology-u01-05-q2@2: Researchers test whether a mindfulness course reduces
 TF2#psychology-u01-05-q3@2: If shoe size predicts reading ability in primary-school children, bigger feet must cause better reading. | false | Both increase with age: shoe size predicts reading ability without causing it. Prediction doesn't establish explanation.
 M3#psychology-u01-05-q4@3: Which is the strongest ethical concern about the aim of controlling behaviour? | Knowledge can be used to change behaviour without people's consent or against their interests | Behaviour can never actually be changed, so the aim wastes research funding | Making predictions about people is unethical in itself, whatever is done with them | Describing behaviour always invades participants' privacy, whatever the safeguards | The concern is about how and by whom knowledge is applied: consent, autonomy and benefit, as debates about nudging and manipulative design show.
 SA2#psychology-u01-05-q5@1,2: Write one research question for each of the four aims on the topic of exam stress. | Description: what percentage of A level students report high stress before exams? Explanation: does fear of failure cause stress, or does stress produce fear of failure? Prediction: which students are most likely to experience severe stress? Control: does a revision-planning workshop reduce stress? | A descriptive question ; An explanatory question ; A predictive question ; An intervention question
+Q: Define explanation as an aim of psychological research. | Identifying the causes and mechanisms of behaviour.
+Q: Why do teenagers fall asleep later, according to the lesson's example? | Pubertal changes in the circadian rhythm are part of the answer.
+Q: Give the lesson's example of applying knowledge to change teenage sleep. | Moving school start times later.
+Q: How do the four aims of research build on each other? | Description makes explanation possible; explanation allows prediction; reliable prediction makes evidence-based change possible.
+Q: Which aim does "Does social media use increase loneliness, or do lonely people use it more?" address? | Explanation, specifically of causal direction.
+Q: Which methods suit each of the four research aims? | Surveys and observation describe; experiments test explanations; longitudinal studies and statistical models predict; randomised trials test interventions.
+Q: Give a historical example of the misuse of psychology to control people. | Intelligence testing used to justify discrimination in the early 20th century.
+Q: Under what conditions does modern psychology apply knowledge to change behaviour? | With consent, for people's benefit, and under ethical codes.
+Q: Define a nudge. | Changing how choices are presented to steer behaviour while leaving options open (Thaler and Sunstein).
+Q: Name two current debates about large-scale behaviour change. | Nudging by governments and companies, and manipulative design in technology.
 
 ## Structuralism and functionalism
 LV: Introductory · Foundation
@@ -237,6 +287,16 @@ M2#psychology-u01-06-q2@2: A researcher studies how children's attention helps t
 MATCH1#psychology-u01-06-q3@1: Match each feature to the school. | Trained introspection into elements = Structuralism ; Stream of consciousness = Functionalism ; Titchener = Structuralism ; Influenced by Darwin = Functionalism | Structuralism dissected experience; functionalism asked about its adaptive purpose.
 M3#psychology-u01-06-q4@3: Why did functionalism leave a stronger legacy than structuralism? | Its questions led to testable applied work, while structuralism depended on unverifiable reports | Functionalism used trained introspection more carefully and consistently | Structuralism never had a laboratory in which to run its experiments | Functionalism rejected the study of the mind in favour of behaviour alone | Functionalism's practical, adaptive questions fed into education, individual differences and evolutionary psychology; structuralism's method couldn't settle disagreements.
 SA3#psychology-u01-06-q5@2,3: Compare structuralism and functionalism. | Both were early schools studying conscious experience. Structuralism (Titchener) analysed experience into elements using trained introspection; functionalism (James) asked what mental processes are for, seeing them as adaptations, and used broader methods. Structuralism faded because introspection was unreliable; functionalism influenced education, individual differences and evolutionary psychology. | One similarity ; Different questions (elements versus purpose) ; Different methods ; Different legacies ; Names a figure from each
+Q: Who is structuralism most associated with, and where did he work? | Edward Titchener, a student of Wundt, working at Cornell.
+Q: What analogy describes structuralism's aim? | Like chemists analysing compounds, it broke experience into basic elements and found the rules by which they combine.
+Q: Name three elements of experience structuralists sought. | Sensations, images and feelings.
+Q: How did structuralist observers describe their experience of a stimulus? | In precise terms, avoiding everyday meanings.
+Q: How did James describe consciousness, in contrast to structuralism? | As a continuous "stream" rather than a set of separable elements.
+Q: Name four practical topics functionalism opened psychology to. | Learning, education, individual differences and animal behaviour.
+Q: How would a functionalist study the experience of eating an apple? | By asking how taste and smell help us choose safe, nutritious food and how this ability aids survival.
+Q: When and why did structuralism fade? | After Titchener's death in 1927, mainly because introspective reports were unreliable and couldn't be verified.
+Q: What was structuralism's lasting contribution? | The commitment to systematic, experimental study of mental events.
+Q: How does functionalism in psychology differ from functionalism in sociology? | Sociological functionalism (Parsons, Merton) asks how institutions serve society; they share the idea of function but are separate theories.
 
 ## Behaviourism
 LV: Introductory · Foundation
@@ -275,6 +335,16 @@ M2#psychology-u01-07-q2@2: A child gets a sticker every time they tidy their roo
 TF1#psychology-u01-07-q3@1: Behaviourists assumed the same laws of learning apply to humans and other animals. | true | This assumption justified using animal experiments to study learning.
 M3#psychology-u01-07-q4@3: Which finding most challenges the behaviourist assumption that any stimulus can be linked equally well to any response? | Rats learn taste aversions to sickness far more easily than to light or sound | Dogs come to salivate to a bell after repeated pairing with food | Behaviour that is reinforced tends to be repeated more often | Behaviour that is punished becomes gradually less frequent over time | Garcia and Koelling's finding shows biological preparedness: some associations are learned far more readily, which equipotentiality can't explain.
 SA3#psychology-u01-07-q5@2,3: Evaluate behaviourism as an approach to psychology. | Strengths: objective, controlled experiments; reliable principles of learning; effective applications such as exposure therapy and token economies. Weaknesses: ignores mental processes (Chomsky's critique of language learning); neglects biological preparedness (Garcia and Koelling); environmental determinism; generalising from animals to humans is limited. | Scientific rigour ; Applications ; Neglect of cognition ; Biological constraints ; Determinism or animal-to-human generalisation ; Balanced conclusion
+Q: What did behaviourists assume about the mind at birth? | That it is close to a blank slate, with behaviour learned from the environment.
+Q: How did behaviourists say learning can be explained? | By associations between stimuli and responses.
+Q: How does classical conditioning work? | A neutral stimulus paired repeatedly with one that triggers a reflex comes to trigger the response itself.
+Q: Name the two researchers associated with operant conditioning in this lesson. | Thorndike (1898) and Skinner (1938).
+Q: What is the effect of punishment in operant conditioning? | It makes a behaviour less likely.
+Q: How did Skinner study operant conditioning? | In controlled boxes where animals pressed levers for food.
+Q: Name three applications of behaviourism. | Behaviour therapy for phobias, token economies and behaviour modification in education.
+Q: What did Chomsky (1959) argue behaviourism can't explain? | How children produce sentences they have never heard.
+Q: How did Watson and Skinner differ in their treatment of thoughts? | Watson set thoughts aside as unscientific; Skinner's radical behaviourism treated them as private behaviour governed by the same principles.
+Q: What did Garcia and Koelling (1966) show about biological readiness? | Rats learn taste aversions to sickness far more readily than to sound or light.
 
 ## The cognitive approach
 LV: Introductory · Foundation
@@ -316,6 +386,16 @@ M2#psychology-u01-08-q2@2: People told a story about a "restaurant" recall detai
 TF2#psychology-u01-08-q3@2: Cognitive neuroscience combines cognitive models with evidence from brain imaging. | true | It links mental processes to brain systems using methods such as fMRI and EEG.
 M3#psychology-u01-08-q4@3: Which is the strongest criticism of the computer analogy? | Human cognition is shaped by emotion, motivation and the body in ways computers aren't | Computers process information much faster than any human brain can | Psychologists can't use computers to run their cognitive experiments | Computers have a memory store but human minds have no equivalent | Critics argue that emotion, bodily states and context shape cognition, which a purely computational metaphor can miss (embodied cognition).
 SA3#psychology-u01-08-q5@3: Evaluate the cognitive approach. | Strengths: rigorous experiments; testable models such as the multi-store model; applications to eyewitness testimony, therapy and design; links to neuroscience. Weaknesses: the computer analogy neglects emotion and embodiment; low ecological validity of some tasks; models can be descriptive rather than explanatory; reductionist about context. | Scientific methods ; Applications ; Neuroscience support ; Machine reductionism or neglect of emotion ; Ecological validity ; Judgement
+Q: Name the four stages of the information-processing model. | Input, storage, processing and output.
+Q: What is the cost of using schemas to interpret information quickly? | Sometimes accuracy.
+Q: How can mental processes be modelled and tested in the cognitive approach? | As box-and-arrow models or computer simulations.
+Q: What is inferred if people respond more slowly when two tasks compete? | That the tasks share a processing system.
+Q: Name a cognitive model of memory mentioned in the lesson. | The multi-store model (Atkinson and Shiffrin, 1968).
+Q: What did cognitive neuroscience add from the 1990s? | Brain imaging, linking mental processes to brain systems.
+Q: What happened when Bartlett's participants retold "The War of the Ghosts"? | The story became shorter and more conventional, and unfamiliar details were changed to fit their own expectations.
+Q: What did Bartlett conclude about memory? | Memory is reconstructive, shaped by schemas.
+Q: Name three applications of the cognitive approach. | Eyewitness testimony, cognitive behavioural therapy and interface design.
+Q: What three things does the computer analogy overlook, according to critics? | Emotion, motivation and the body (embodied cognition).
 ## The psychodynamic approach
 LV: Introductory · Foundation
 S: The psychodynamic approach, founded by Sigmund Freud, explains behaviour through unconscious mental processes shaped by early childhood. This lesson sets out its key ideas, how they were investigated, and why they remain both influential and contested.
@@ -352,6 +432,16 @@ M2#psychology-u01-09-q2@1,2: A man who is angry with his boss goes home and shou
 TF2#psychology-u01-09-q3@2: Freud's main evidence came from controlled laboratory experiments. | false | He relied on case studies of his patients, interpreted through free association and dream analysis.
 M3#psychology-u01-09-q4@3: Which is the most serious scientific criticism of Freud's theory? | Its claims can explain any outcome, so they are hard to falsify | It is too focused on the role of biology and genes | It relies too heavily on large laboratory experiments | It ignores the influence of childhood on adults | If both a symptom and its absence can be explained (for example as resistance), no observation can count against the theory.
 SA3#psychology-u01-09-q5@2,3: Evaluate the psychodynamic approach. | Strengths: highlighted unconscious processes and childhood; led to talking therapies; some modern evidence for psychodynamic therapy. Weaknesses: unfalsifiable claims; case-study evidence from an unrepresentative sample, open to interpretation; specific ideas such as the Oedipus complex unsupported; deterministic. Modern psychodynamic thinking differs from Freud. | Influence on therapy and unconscious processes ; Falsifiability ; Case-study evidence and its limits ; Lack of support for specific claims ; Distinguishes modern psychodynamic work
+Q: Name three things the unconscious influences, according to Freud. | Behaviour, dreams, slips of the tongue and symptoms (any three).
+Q: What does the superego represent? | Internalised moral standards.
+Q: What produces anxiety in Freud's tripartite model? | Conflict between the id, ego and superego.
+Q: Define displacement. | A defence mechanism that redirects feelings onto a safer target.
+Q: Name Freud's five psychosexual stages in order. | Oral, anal, phallic, latency and genital.
+Q: What did Freud claim unresolved conflicts at a psychosexual stage cause? | Lasting effects on adult personality.
+Q: What were the weaknesses of the Little Hans case as evidence? | It is hard to generalise, depends on interpretation, and was collected largely through the boy's father.
+Q: Define transference. | Feelings about others redirected onto the therapist.
+Q: What does psychoanalysis aim to do? | Bring unconscious conflicts into awareness, through free association, dream interpretation and analysis of transference.
+Q: Name three later psychodynamic theorists who changed Freud's ideas. | Jung, Klein and Erikson (also attachment researchers).
 
 ## The humanistic approach
 LV: Introductory · Foundation
@@ -386,6 +476,16 @@ M2#psychology-u01-10-q2@2: A teenager feels they are only loved when they win at
 TF2#psychology-u01-10-q3@2: Rogers' therapy aims to give clients unconditional positive regard. | true | Acceptance without conditions was one of his three core conditions, with empathy and genuineness.
 M3#psychology-u01-10-q4@3: Which is the strongest criticism of the humanistic approach? | Key concepts such as self-actualisation are vague and hard to test empirically | It focuses too much on unconscious childhood conflict | It ignores people's free will and choices | It relies too heavily on animal experiments | Its concepts resist measurement and falsification, which limits scientific testing; the other options describe other approaches.
 SA3#psychology-u01-10-q5@2,3: Evaluate the humanistic approach. | Strengths: holistic, person-centred view; influential in counselling; therapeutic relationship conditions supported by evidence; inspired positive psychology. Weaknesses: vague, untestable concepts; limited experimental support (Maslow's hierarchy not strictly supported); possible Western individualist bias; free will hard to reconcile with evidence of causes of behaviour. | Person-centred influence ; Therapeutic relationship evidence ; Untestable concepts ; Maslow's hierarchy evidence ; Cultural bias ; Judgement
+Q: Who presented humanistic psychology as a third force, and when? | Carl Rogers and Abraham Maslow, in the 1950s.
+Q: What did humanistic psychologists see as the faults of psychoanalysis and behaviourism? | The pessimism of psychoanalysis and the mechanism of behaviourism.
+Q: Name three assumptions of the humanistic approach. | People have free will, subjective experience is what matters (person-centred), and people naturally strive for growth.
+Q: What causes distress in Rogers' theory? | Incongruence: a mismatch between the self-concept and ideal self.
+Q: What are conditions of worth? | Conditional approval from others, such as "I'll love you if you get good marks".
+Q: Name Rogers' three core therapeutic conditions. | Unconditional positive regard, empathy and genuineness.
+Q: List Maslow's hierarchy of needs from bottom to top. | Physiological, safety, love and belonging, esteem, and self-actualisation.
+Q: Why is it wrong to treat Maslow's hierarchy as a strict ladder? | Maslow said the order was flexible, and research finds people pursue several needs at once.
+Q: What did Tay and Diener (2011) find across 123 countries? | Satisfaction of needs predicted wellbeing, but not in a strict hierarchy.
+Q: Why might the humanistic approach be culturally biased? | Its focus on individual growth may reflect individualist Western values.
 
 ## The biological approach
 LV: Introductory · Foundation
@@ -427,6 +527,16 @@ M2#psychology-u01-11-q2@2: Identical twins have a concordance of 50% for a disor
 TF1#psychology-u01-11-q3@3: A heritability of 50% means half of each person's trait is caused by genes. | false | Heritability describes the share of variation between people in a population, not the make-up of one person's trait.
 M3#psychology-u01-11-q4@3: Which is the strongest criticism of a purely biological explanation of depression? | It neglects psychological and social causes such as stressful events and thinking styles | It relies on brain scans rather than detailed clinical case studies | It has never led to any effective treatments for depression at all | It assumes that depression is learned from the environment | Purely biological accounts are reductionist: life events, cognition and social circumstances also predict depression.
 SA3#psychology-u01-11-q5@3: Evaluate the biological approach. | Strengths: objective, scientific methods; evidence from twin studies and imaging; treatments such as medication. Weaknesses: reductionist (neglects social and psychological causes); deterministic; correlational brain evidence can't show causal direction; heritability often misunderstood. Most evidence supports gene–environment interaction. | Scientific methods ; Applications ; Reductionism ; Determinism ; Causality problem ; Interactionist conclusion
+Q: What is the first assumption of the biological approach? | Everything psychological has a physical basis in the brain and body.
+Q: Name three biological factors that can influence behaviour. | Genes, neurochemistry (neurotransmitters and hormones) and brain structure.
+Q: Why do biological psychologists think many behavioural characteristics exist? | They evolved because they helped survival and reproduction.
+Q: What do adoption studies compare? | Adopted children with their biological and adoptive relatives, to estimate genetic influence.
+Q: Name three brain imaging methods used in the biological approach. | fMRI, PET and EEG.
+Q: What do drug studies and hormone studies do in the biological approach? | Drug studies manipulate neurotransmitters; hormone studies measure, for example, cortisol under stress.
+Q: What did Polderman et al. (2015) find across over 2,700 twin studies? | The average heritability across all traits studied was about 49%.
+Q: Define heritability. | The proportion of variation in a trait within a population that is associated with genetic differences.
+Q: Why does determinism pose a problem for the biological approach? | It sits uneasily with personal responsibility.
+Q: Why can't correlations between brain activity and behaviour establish cause? | They don't show which causes which.
 
 ## The evolutionary approach
 LV: Introductory · Foundation
@@ -464,6 +574,16 @@ M2#psychology-u01-12-q2@2: People acquire fears of snakes faster than fears of c
 TF2#psychology-u01-12-q3@3: Showing that a behaviour evolved shows that it is morally right. | false | This is the naturalistic fallacy: an explanation of origins isn't a moral justification.
 M3#psychology-u01-12-q4@3: Which is the strongest general criticism of evolutionary psychology? | Adaptive explanations can be invented for almost any trait without being tested | It doesn't consider genes, the brain or biology in its explanations | It relies only on case studies of individual clinical patients | It claims that all human behaviour is entirely learned from experience | The just-so story criticism targets explanations that fit the facts but make no testable predictions.
 SA3#psychology-u01-12-q5@2,3: Evaluate the evolutionary approach. | Strengths: ultimate explanations; links to biology; some testable predictions supported (preparedness). Weaknesses: limited knowledge of ancestral environments; just-so stories; not all traits are adaptations; neglects culture; naturalistic fallacy risks in explaining sex differences. | Ultimate explanations ; Supported prediction ; Just-so stories ; By-products or culture ; Naturalistic fallacy ; Judgement
+Q: How does natural selection explain the spread of traits? | Traits that improved survival and reproduction became more common over generations.
+Q: Name four ancestral problems that evolutionary psychologists say adaptations solved. | Finding food, avoiding predators, choosing mates and cooperating.
+Q: What is the environment of evolutionary adaptedness? | The ancestral conditions in which human adaptations evolved.
+Q: What prediction follows from the hypothesis that humans are prepared to fear snakes? | Fear of snakes should be learned faster than fear of modern dangers such as electrical sockets.
+Q: What did Öhman and Mineka (2001) find about conditioned fears of snakes and spiders? | They resist extinction more than fears of neutral objects, consistent with prepared learning.
+Q: Name three methods used to test evolutionary hypotheses. | Cross-cultural surveys, comparisons with other species, and experiments testing whether some things are learned more easily.
+Q: How do ultimate and proximate explanations differ? | Ultimate explanations say why a behaviour exists; proximate explanations say how it works.
+Q: Why is it a problem that not every trait is an adaptation? | Some traits are by-products, so an adaptive story may be wrong.
+Q: Why can culture weaken evolutionary explanations of behaviour? | Culture can change behaviour far faster than genes.
+Q: What is the naturalistic fallacy? | Treating an evolved behaviour as inevitable or morally right; an evolutionary explanation describes origins but doesn't justify a behaviour.
 
 ## The social approach
 LV: Introductory · Foundation
@@ -499,6 +619,16 @@ M2#psychology-u01-13-q2@2: Students drop litter less when a clean-up poster show
 TF1#psychology-u01-13-q3@1: In Milgram's study, the learner really received electric shocks. | false | The learner was a confederate who received no shocks; participants were deceived.
 M3#psychology-u01-13-q4@3: Which is the best evaluation of Milgram's findings? | They show strong situational influence, but deception, distress and debated interpretations limit what can be concluded | They prove that people will always obey any authority figure in any situation | They are invalid because most participants knew the shocks were fake | They apply only to American men in 1963 and tell us nothing about anyone else | A balanced view accepts the striking finding while recognising ethical issues, variation across conditions and competing explanations.
 SA3#psychology-u01-13-q5@2,3: Evaluate the social approach using one classic study. | Milgram showed 65% obeyed to 450 V, demonstrating the power of situations, with replications and variations (obedience fell with a nearby, dissenting peer or a remote experimenter). But participants were deceived and distressed; laboratory realism and generalisability are debated; and interpretations differ (agentic state versus social identification). Individual differences also matter. | Describes a classic study ; Situational power ; Ethical issues ; Validity or generalisability ; Competing interpretations ; Individual differences
+Q: Name four topics studied by social psychology. | Social influence, attitudes, attribution, prejudice, group processes, helping and aggression, and relationships (any four).
+Q: Who defined social psychology in a 1954 handbook chapter? | Gordon Allport.
+Q: What did Asch find in his line studies? | Participants conformed to a wrong majority on about a third of critical trials.
+Q: Why were no real shocks given in Milgram's study? | The "learner" was a confederate.
+Q: What do field experiments trade off compared with laboratory experiments? | Some control for greater realism.
+Q: Name three real-world applications of social psychology. | Understanding atrocities, prejudice reduction and public health messages.
+Q: Why would some classic social psychology studies be unethical today? | Participants, as in Milgram's study, were deceived and distressed.
+Q: How do Haslam and Reicher reinterpret obedience in Milgram's study? | As identification with the experimenter's cause, not blind obedience.
+Q: Why is it wrong to conclude that situations explain everything? | Personality and individual differences matter too: in every classic study, some people resisted.
+Q: Define obedience. | Following a direct instruction from a perceived authority figure.
 
 ## Positive psychology
 LV: Introductory · Foundation
@@ -533,6 +663,16 @@ M2#psychology-u01-14-q2@2: A parent says raising young children is exhausting an
 TF2#psychology-u01-14-q3@3: Positive psychology claims that negative emotions are always harmful. | false | It studies positive states and strengths; it doesn't claim negative emotions are always bad.
 M3#psychology-u01-14-q4@3: Which is the strongest criticism of positive psychology? | It can locate the causes of unhappiness in individuals and overlook social conditions such as poverty | It doesn't use any questionnaires or standardised measures of wellbeing | It studies only people who have been diagnosed with mental disorders | It rejects the scientific study of emotion and experience entirely | Critics argue that focusing on individual mindset can neglect structural causes of distress; the other options are false.
 SA3#psychology-u01-14-q5@3: Evaluate positive psychology. | Strengths: broadened psychology; reliable measures of wellbeing; some interventions show small benefits. Weaknesses: effects often smaller than claimed; replication problems (the retracted positivity ratio); individualism and neglect of social causes; overlap with humanistic psychology; cultural bias. | Broadens psychology ; Measures and evidence ; Small effects or replication ; Individualism ; Cultural bias ; Judgement
+Q: What did Seligman argue in his 1998 APA presidential address? | That psychology had focused on repairing damage and should also study what makes life worth living.
+Q: Name four things positive psychology studies. | Positive emotions, character strengths, engagement and flow, relationships, meaning and accomplishment (any four).
+Q: How is hedonic wellbeing measured? | As life satisfaction and positive rather than negative emotion (subjective wellbeing).
+Q: What does eudaimonic wellbeing involve? | Functioning well, with meaning, purpose, growth and autonomy.
+Q: How does raising children illustrate the difference between hedonic and eudaimonic wellbeing? | It often lowers moment-to-moment pleasure but increases meaning.
+Q: Which positive psychology intervention shows small positive effects in meta-analyses? | Gratitude exercises.
+Q: What happened to the claimed positivity ratio of 2.9? | It was retracted after mathematical criticism.
+Q: Why do critics say positive psychology can blame individuals? | It can attribute unhappiness to individuals when it is caused by poverty or injustice.
+Q: With which earlier approach does positive psychology overlap heavily? | Humanistic psychology.
+Q: What is the misconception that positive psychology means always think positively, and the correction? | It studies when and how positive states matter; it doesn't claim negative emotions are bad or should be suppressed.
 
 ## Contemporary psychology
 LV: Introductory · Application
@@ -573,6 +713,16 @@ M2#psychology-u01-15-q2@2: A clinician explains a patient's depression through a
 MS2#psychology-u01-15-q3@3: Which are forces currently changing psychology? Choose all that apply. | Open science ; Concern about WEIRD samples ; Computational methods and AI | A return to trained introspection ; Abandoning statistics | Replication reforms, diversity of samples and technology are reshaping the field; introspection and abandoning statistics are not.
 M3#psychology-u01-15-q4@3: Why does reliance on WEIRD samples matter for psychology? | Findings may not generalise to most of the world's population | WEIRD participants give less honest answers | It makes experiments too expensive | It means psychology can't use questionnaires | WEIRD societies are a minority globally and sometimes unusual on psychological measures, so universal claims need broader samples.
 SA3#psychology-u01-15-q5@2,3: Using an example, explain why contemporary psychology favours integrative explanations. | Example: chronic pain. Biological factors (tissue damage, pain processing), psychological factors (catastrophising, fear of movement) and social factors (work stress, isolation) all contribute and interact, so a single-approach explanation is incomplete. The biopsychosocial model guides combined treatment. Critics note it can be vague unless interactions are specified and tested. | Example ; Biological factor ; Psychological factor ; Social factor ; Interaction or treatment ; Limitation of integration
+Q: How are most psychologists organised today, instead of by schools? | In fields defined by topic, each drawing on several approaches.
+Q: How many divisions does the APA have? | More than 50.
+Q: Who proposed the biopsychosocial model, and when? | Engel, in 1977.
+Q: What model did the biopsychosocial model replace in much of health care? | A purely biomedical model.
+Q: Give the biological factors in a biopsychosocial explanation of chronic pain. | Tissue damage and changes in pain processing in the nervous system.
+Q: Give the psychological factors in a biopsychosocial explanation of chronic pain. | Catastrophising thoughts, fear of movement and low mood amplify pain.
+Q: What does biopsychosocial treatment of chronic pain combine? | Physical rehabilitation, psychological therapy and social support.
+Q: Name two open science practices adopted after replication failures. | Preregistration and data sharing.
+Q: Name four technologies reshaping contemporary psychology. | Big data, smartphones, computational modelling and AI.
+Q: What does integration not mean in the biopsychosocial model? | That everything matters equally; it asks which factors matter, how much and how they interact.
 
 ## Levels of explanation
 LV: Intermediate · Application
@@ -609,6 +759,16 @@ M2#psychology-u01-16-q2@2: A researcher describes the step-by-step procedure the
 MATCH2#psychology-u01-16-q3@2: Match each explanation of exam anxiety to its level. | Raised cortisol and heart rate = Neural or physiological ; Catastrophic thoughts about failing = Cognitive ; High-stakes testing culture in schools = Social or cultural ; Learned from a parent's anxious behaviour = Individual learning | One behaviour can be explained at several levels, each answering a different question.
 M3#psychology-u01-16-q4@3: Which statement best describes how levels of explanation relate? | Different levels can be valid together, and the most useful depends on the question being asked | Only the lowest, molecular level gives a true explanation | Higher-level explanations are always opinions rather than science | Each behaviour can be explained at only one level | Levels are complementary; whether higher levels reduce to lower ones is debated, but useful explanations are found at many levels.
 SA3#psychology-u01-16-q5@2,3: Apply Tinbergen's four questions to a behaviour of your choice. | Example: infant crying. Mechanism: discomfort activates brainstem and limbic circuits producing crying. Development: crying changes with age and caregiver responses. Function: it brings care and protection. Evolution: infants whose cries attracted care were more likely to survive. | Chooses a behaviour ; Mechanism ; Development ; Function ; Evolution
+Q: Name the six levels at which behaviour can be explained. | Molecular, neural, cognitive, individual, social and cultural.
+Q: Why are explanations at different levels not rival accounts? | They answer different questions about the same thing.
+Q: From which field does Tinbergen's framework come? | Biology.
+Q: What does Marr's computational level describe? | What problem is solved and why.
+Q: What does Marr's implementational level describe? | How the brain physically does it.
+Q: Give the mechanism explanation of fear on seeing a snake. | The amygdala rapidly detects threatening stimuli and triggers a stress response.
+Q: Give the development explanation of fear on seeing a snake. | Fear can be learned through experience, observation or instruction.
+Q: Define emergence. | Properties of a whole that aren't present in or predictable from its parts alone.
+Q: What pragmatic view do most psychologists take on how levels relate? | Lower levels constrain higher ones, higher levels guide what to look for at lower ones, and the useful level depends on the question.
+Q: Why would a neural explanation of prejudice not replace a social one? | It wouldn't explain where prejudiced attitudes come from; lower levels aren't automatically more real.
 
 ## Reductionism and holism
 LV: Intermediate · Evaluation
@@ -648,6 +808,16 @@ M2#psychology-u01-17-q2@2: Behaviourists explaining a phobia only as a learned a
 TF2#psychology-u01-17-q3@1: Experimental reductionism means breaking behaviour into measurable variables to test them. | true | Operationalising variables in controlled studies is experimental reductionism; it enables testing but can lose context.
 M3#psychology-u01-17-q4@3: Which is the strongest argument for some reductionism in psychology? | Breaking behaviour into measurable parts allows precise, testable hypotheses and targeted treatments | It always gives a more complete picture than any holistic explanation | It removes any need to consider social or cultural factors in behaviour | It has already explained consciousness fully in terms of neurones | Reduction's main value is testability and precision, which can lead to effective interventions, even if it leaves things out.
 SA3#psychology-u01-17-q5@3: Evaluate the debate between reductionism and holism using an example. | Example: schizophrenia. The dopamine hypothesis is testable and led to medication, but doesn't explain non-responders or risk factors such as stress and urban upbringing. A holistic, interactionist account (diathesis–stress) is more complete but harder to test. Both are useful; the best choice depends on the question. | Defines both ; Reductionist example with strengths ; Its limitations ; Holistic or interactionist alternative ; Its limitations ; Conclusion
+Q: Define biological reductionism. | Explaining behaviour by genes, neurotransmitters or brain structures.
+Q: Define environmental reductionism. | Explaining behaviour as learned stimulus–response associations, as in behaviourism.
+Q: Define experimental reductionism. | Breaking behaviour into measurable variables to study them in controlled conditions.
+Q: How did Gestalt psychologists illustrate holism in perception? | Perception organises stimuli into wholes: we see a melody, not a series of notes.
+Q: What is the reductionist explanation of schizophrenia in the lesson? | Excess dopamine activity in certain pathways: the dopamine hypothesis.
+Q: What limits the dopamine explanation of schizophrenia? | Not all people respond to dopamine-blocking drugs, and stress, trauma, urban upbringing and migration are also risk factors.
+Q: What is the weakness of a holistic account of schizophrenia? | It is more complete but harder to test precisely.
+Q: What are the main strength and weakness of reductionism? | It makes explanations testable and precise but can miss emergent and contextual causes.
+Q: Name three questions to ask when evaluating an explanation for reductionism. | First, whether it leaves out causes at other levels; second, whether it makes testable predictions; third, whether it leads to useful interventions.
+Q: Why is writing "this is reductionist" not enough as evaluation? | You need to explain what is left out and whether the reduction is useful anyway.
 
 ## The nature–nurture debate
 LV: Intermediate · Evaluation
@@ -688,6 +858,16 @@ M2#psychology-u01-18-q2@2: Children with a genetic tendency to enjoy reading ask
 TF2#psychology-u01-18-q3@3: Because height is highly heritable, improved nutrition can't change average height. | false | Average height rose in many countries during the 20th century with better nutrition; heritability doesn't mean a trait can't change.
 M3#psychology-u01-18-q4@3: Which is the strongest conclusion from twin and adoption research? | Both genes and environment contribute, and they interact | Behaviour is entirely genetic | Behaviour is entirely learned | Twins can't tell us anything about heritability | The evidence consistently shows substantial roles for both, with interaction and correlation between them.
 SA3#psychology-u01-18-q5@2,3: Evaluate the contribution of twin and adoption studies to the nature–nurture debate. | They estimate genetic and environmental contributions (e.g. Minnesota twins reared apart; ERA study showing effects of early deprivation). But twin studies assume MZ and DZ twins share environments equally, adoptive families are not random, and heritability is population-specific. They show both matter; interaction and correlation mean the question is how, not how much. | Twin method and finding ; Adoption finding ; Equal environments assumption ; Heritability limits ; Interactionist conclusion
+Q: What do nativists argue? | That many characteristics are innate, inherited or biologically prepared.
+Q: What do empiricists argue in the nature–nurture debate? | That knowledge and behaviour come from experience (Locke's blank slate).
+Q: Who coined the phrase "nature and nurture", and when? | Galton, in 1874, while arguing for heredity.
+Q: What did the Minnesota study of twins reared apart find? | Identical twins reared apart were strikingly similar in IQ and personality (Bouchard et al., 1990).
+Q: What do genome-wide studies find for most traits? | Many genes of very small effect.
+Q: Define gene–environment interaction. | The effect of genes depends on the environment, and vice versa.
+Q: Give the lesson's example of gene–environment correlation. | A child with a genetic tendency for sociability seeks out company, which further develops social skill.
+Q: What did the English and Romanian Adoptees study find about age at adoption? | Children adopted before about six months caught up well; many adopted later showed lasting difficulties.
+Q: How did the English and Romanian Adoptees study support interaction? | Early environment mattered greatly, yet children differed widely in outcome.
+Q: How does height show that a highly heritable trait can change? | Height is highly heritable, yet average height rose substantially over the 20th century as nutrition improved.
 
 ## Individual differences
 LV: Introductory · Foundation
@@ -725,6 +905,16 @@ M2#psychology-u01-19-q2@2: A personality questionnaire gives very different scor
 TF2#psychology-u01-19-q3@3: A test can be reliable but not valid. | true | A test can consistently measure the wrong thing; reliability is necessary but not sufficient for validity.
 M3#psychology-u01-19-q4@3: Which is the strongest concern about using an ability test developed in one country with people from another? | Items and norms may reflect the first country's culture, biasing scores | The test will become unreliable over time | It will measure personality instead of ability | It can't be scored without a computer | Cultural content and unrepresentative norms can disadvantage groups, threatening validity.
 SA3#psychology-u01-19-q5@2,3: Evaluate the use of psychometric tests to measure individual differences. | Strengths: standardised, reliable, valid tests predict outcomes and allow research. Weaknesses: measurement error; cultural bias in items and norms; labelling and self-fulfilling prophecy; scores describe tendencies, not fixed types; history of misuse. | Standardisation and prediction ; Reliability and validity ; Cultural bias ; Labelling or misuse ; Measurement error
+Q: How does experimental psychology often treat differences between people? | As "noise" while looking for general laws.
+Q: What did Cronbach (1957) call the two strategies, and what did he argue? | The "two disciplines" of scientific psychology, which he argued needed each other.
+Q: Define personality. | Stable patterns of thought, feeling and behaviour.
+Q: Name four domains of individual differences. | Personality, intelligence and abilities, motivation, values and interests, and wellbeing and mental health.
+Q: What is a psychometric test? | A standardised measure of a psychological characteristic, scored against norms.
+Q: Define validity. | The extent to which a test measures what it claims to measure.
+Q: Give an example of a standardised measure predicting an important outcome. | Conscientiousness predicts job performance.
+Q: How can psychometric tests be culturally biased? | If items or norms suit some groups better than others.
+Q: Name two risks of labelling people by test scores. | Labels can stigmatise or become self-fulfilling.
+Q: Why shouldn't a test score be treated as a fixed property of a person? | Every score has measurement error and is a snapshot in a context.
 
 ## Psychology in everyday life
 LV: Introductory · Application
@@ -764,6 +954,16 @@ M2#psychology-u01-20-q2@2: A student has an exam in three weeks. Which plan best
 TF2#psychology-u01-20-q3@3: An explanation that includes a brain scan is more likely to be correct. | false | Brain images can make explanations seem more convincing without improving their evidence.
 M3#psychology-u01-20-q4@3: An advert claims a supplement "boosts brain power" and cites customer reviews. What is the main weakness of this evidence? | There's no control group, so improvements could be expectation, chance or other factors | Customer reviews are always written by people paid to lie about products | No substance taken by mouth can ever affect how the brain works | The claim uses the word "brain", which makes any statement unscientific | Without a controlled comparison, apparent benefits can't be attributed to the supplement.
 SA3#psychology-u01-20-q5@2,3: Explain how you would evaluate a popular psychological claim, using an example. | Example: learning styles. Ask what evidence exists, whether studies used control groups and random allocation, whether results replicate, whether correlation is confused with causation and whether there's a commercial interest. Reviews (Pashler et al., 2008) found little support for style-matching, so the claim isn't evidence-based despite its popularity. | Example claim ; Evidence and control groups ; Replication ; Correlation versus causation or conflicts of interest ; Conclusion based on evidence
+Q: Why are road signs, cockpits and apps designed with psychology in mind? | They are designed around the limits of human attention and memory.
+Q: How has memory research influenced the law? | It informed guidelines on eyewitness identification (e.g. Loftus and Palmer, 1974).
+Q: What is the UK Behavioural Insights Team? | A team set up in government in 2010 that applies behavioural science to public services.
+Q: How should retrieval practice be applied to revision? | Close the book, write down everything you remember, then check.
+Q: Define spaced practice. | Spreading study sessions over time rather than massing them together.
+Q: What must be checked before applying a psychological finding? | That it was tested in conditions like those where it will be used, with similar people.
+Q: What is the learning styles belief? | That teaching should be matched to visual, auditory or kinaesthetic learners.
+Q: Name four questions to ask when judging a psychological claim in the media. | First, what the evidence is and who produced it; second, whether there was a control group; third, whether it has been replicated; fourth, whether correlation is presented as causation.
+Q: Why can brain images or technical words make a claim seem stronger than it is? | Neuroscience language can make weak explanations seem more convincing.
+Q: Name three areas of health and policy where psychology is applied. | Stop-smoking services, public health campaigns and public services policy.
 
 ## Careers in psychology
 LV: Introductory · Foundation
@@ -801,4 +1001,14 @@ M2#psychology-u01-21-q2@2: Someone with a psychology degree and no further train
 MS2#psychology-u01-21-q3@3: Which skills does a psychology degree typically develop? Choose all that apply. | Research design and statistics ; Critical evaluation of evidence ; Understanding human behaviour | Prescribing medication ; Performing surgery | Psychology graduates gain research, analytical and interpersonal skills; prescribing and surgery belong to medicine.
 M3#psychology-u01-21-q4@3: Why are some psychologist titles legally protected? | To protect the public by ensuring practitioners meet training and conduct standards | To limit how many students can study psychology at university | To prevent practising psychologists from also doing research | To give the BPS legal control over every psychology degree | Regulation exists to protect the public: registered practitioners must meet standards and can be held to account.
 SA2#psychology-u01-21-q5@2,3: Describe the route to becoming a clinical psychologist in the UK, and explain why it is regulated. | Complete a BPS-accredited degree (or conversion) for GBC; gain relevant experience (e.g. assistant psychologist roles); complete a three-year doctorate in clinical psychology; register with the HCPC to use the protected title. Regulation protects the public by ensuring standards of training, competence and conduct. | Accredited degree and GBC ; Relevant experience ; Doctorate ; HCPC registration ; Purpose of regulation
+Q: What is required to use a protected practitioner psychologist title in the UK? | HCPC registration, following approved postgraduate training.
+Q: What is the usual first step towards becoming a practitioner psychologist? | A BPS-accredited undergraduate degree or conversion course, giving eligibility for the GBC.
+Q: What does GBC stand for? | Graduate Basis for Chartered Membership.
+Q: What training do clinical psychologists usually complete? | A three-year NHS-funded doctorate, entry to which is competitive and usually needs relevant experience.
+Q: What do educational psychologists do? | Support children's learning and development in schools.
+Q: What do occupational psychologists work on? | Selection, wellbeing and organisational change.
+Q: Where do forensic psychologists work? | In prisons, probation and courts.
+Q: What qualification does university research and teaching usually require? | A PhD.
+Q: Name four careers psychology graduates enter without becoming psychologists. | Mental health support roles, teaching, human resources, marketing and user research, data analysis, policy and social research (any four).
+Q: Which title on its own isn't protected in the UK? | "Psychologist"; only the seven protected titles and "practitioner psychologist" require HCPC registration.
 `;
