@@ -32,6 +32,7 @@ test("every page can load it, through theme-boot, after the page has loaded, on 
   assert.match(boot, /\^\(on\|lite\|force\)\$/);
   assert.match(boot, /\(pointer: fine\) and \(min-width: 1021px\)/);
   assert.match(boot, /navigator\.maxTouchPoints > 1/, "an iPad with a trackpad keeps the frosted glass");
+  assert.match(boot, /\/Android\/i\.test\(navigator\.userAgent\)/, "an Android tablet with a trackpad keeps the frosted glass");
 });
 
 test("no GPU, no WebGL glass: software renderers keep the CSS glass", () => {
