@@ -1,0 +1,81 @@
+{
+ "id": "chem-zero-order",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Zero-order reactions",
+ "title": "A zero-order reaction",
+ "caption": "The concentration falls at a constant rate, so the graph is a straight line whose gradient is −k. Here k = 0.05 mol dm⁻³ s⁻¹: the half-life, [A]₀/2k = 10 s, gets shorter as the reaction goes on.",
+ "alt": "[A] against time: a straight line from 1.0 mol dm⁻³ at 0 s to zero at 20 s.",
+ "description": [
+  "A straight line: the rate does not depend on [A].",
+  "Gradient −0.05 mol dm⁻³ s⁻¹ = −k.",
+  "Half the reactant is gone at 10 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   22
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.25
+ ],
+ "axisLabels": [
+  "time / s",
+  "[A] / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1-0.05*x",
+   "domain": [
+    0,
+    20
+   ],
+   "colour": "a5"
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.5,
+   "label": "t½ = 10 s"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1-0.05*x",
+   "x": 5,
+   "value": -0.05,
+   "name": "gradient = −k = −0.05 mol dm⁻³ s⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "1-0.05*x",
+   "x": 10,
+   "y": 0.5,
+   "name": "t½ = [A]₀/2k = 10 s"
+  }
+ ]
+}

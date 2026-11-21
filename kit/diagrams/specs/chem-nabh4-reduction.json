@@ -1,0 +1,199 @@
+{
+ "id": "chem-nabh4-reduction",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "Reduction reactions",
+ "title": "Reducing propanone with NaBH₄",
+ "caption": "NaBH₄ supplies hydride, H⁻, which attacks the δ+ carbonyl carbon as a nucleophile while the C=O π electrons move onto oxygen. The alkoxide is then protonated by water, giving propan-2-ol: a secondary alcohol from a ketone.",
+ "alt": "Three stages: hydride attacking the carbonyl carbon of propanone; the alkoxide taking a proton from water; propan-2-ol and hydroxide.",
+ "description": [
+  "Stage 1: a curly arrow from the hydride's lone pair to the carbonyl carbon, and one from the C=O onto oxygen.",
+  "Stage 2: the alkoxide; a curly arrow from O⁻ to a hydrogen of water, and one from the O–H bond onto water's oxygen.",
+  "Stage 3: propan-2-ol and OH⁻."
+ ],
+ "stages": [
+  {
+   "smiles": "[H-:2].[CH3:3][C:4](=[O:5])[CH3:6].[H:8][OH:7]",
+   "xy": {
+    "2": [
+     0,
+     -2.0
+    ],
+    "3": [
+     -1.05,
+     -0.6
+    ],
+    "4": [
+     0,
+     0
+    ],
+    "5": [
+     0,
+     1.3
+    ],
+    "6": [
+     1.05,
+     -0.6
+    ],
+    "8": [
+     1.5,
+     2.0
+    ],
+    "7": [
+     2.5,
+     2.0
+    ]
+   },
+   "hide": [
+    7,
+    8
+   ],
+   "charges": {
+    "4": "δ+",
+    "5": "δ−"
+   },
+   "chargeOffset": {
+    "4": [
+     -16,
+     -6
+    ],
+    "5": [
+     -18,
+     -6
+    ]
+   },
+   "label": "propanone + H⁻ (from NaBH₄)",
+   "arrows": [
+    {
+     "from": {
+      "lp": 2
+     },
+     "to": {
+      "bond": [
+       2,
+       4
+      ]
+     },
+     "toward": 4,
+     "lpAngle": -90,
+     "lpDist": 14,
+     "bend": 0.3
+    },
+    {
+     "from": {
+      "bond": [
+       4,
+       5
+      ]
+     },
+     "to": {
+      "atom": 5
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:3][C:4]([H:2])([O-:5])[CH3:6].[H:8][OH:7]",
+   "xy": {
+    "3": [
+     -1.05,
+     -0.6
+    ],
+    "4": [
+     0,
+     0
+    ],
+    "2": [
+     0,
+     -1.3
+    ],
+    "5": [
+     0,
+     1.3
+    ],
+    "6": [
+     1.05,
+     -0.6
+    ],
+    "8": [
+     1.5,
+     2.0
+    ],
+    "7": [
+     2.5,
+     2.0
+    ]
+   },
+   "label": "alkoxide + H₂O",
+   "arrows": [
+    {
+     "from": {
+      "lp": 5
+     },
+     "to": {
+      "bond": [
+       5,
+       8
+      ]
+     },
+     "toward": 8,
+     "lpAngle": 10,
+     "lpDist": 20,
+     "bend": -0.4
+    },
+    {
+     "from": {
+      "bond": [
+       7,
+       8
+      ]
+     },
+     "to": {
+      "atom": 7
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:3][C:4]([H:2])([O:5][H:8])[CH3:6].[OH-:7]",
+   "xy": {
+    "3": [
+     -1.05,
+     -0.6
+    ],
+    "4": [
+     0,
+     0
+    ],
+    "2": [
+     0,
+     -1.3
+    ],
+    "5": [
+     0,
+     1.3
+    ],
+    "8": [
+     0.9,
+     1.8
+    ],
+    "6": [
+     1.05,
+     -0.6
+    ],
+    "7": [
+     2.6,
+     1.3
+    ]
+   },
+   "label": "propan-2-ol + OH⁻"
+  }
+ ],
+ "steps": [
+  {},
+  {}
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "id": "chem-main-group-oxides",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Main-group chemistry",
+ "title": "Period 3 oxides in water",
+ "caption": "Across period 3 the oxides change from basic to acidic. Na₂O and MgO give alkaline solutions; Al₂O₃ and SiO₂ do not dissolve (Al₂O₃ is amphoteric); P₄O₁₀ and SO₃ react to give strongly acidic solutions. Typical pH values.",
+ "alt": "Bar chart of the typical pH when each period 3 oxide is added to water: Na₂O 14, MgO 9, Al₂O₃ 7, SiO₂ 7, P₄O₁₀ 0, SO₃ 0.",
+ "description": [
+  "Na₂O: about pH 14 (NaOH forms).",
+  "MgO: about pH 9 (slightly soluble Mg(OH)₂).",
+  "Al₂O₃ and SiO₂: insoluble, pH 7.",
+  "P₄O₁₀ and SO₃: about pH 0 (H₃PO₄ and H₂SO₄ form)."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  14
+ ],
+ "ticks": [
+  0,
+  7,
+  14
+ ],
+ "yLabel": "typical pH of the mixture",
+ "items": [
+  {
+   "key": "Na2O",
+   "value": 14
+  },
+  {
+   "key": "MgO",
+   "value": 9
+  },
+  {
+   "key": "Al2O3",
+   "value": 7
+  },
+  {
+   "key": "SiO2",
+   "value": 7
+  },
+  {
+   "key": "P4O10",
+   "value": 0.5
+  },
+  {
+   "key": "SO3",
+   "value": 0.5
+  }
+ ],
+ "highlight": {
+  "Na2O": "a1",
+  "MgO": "a1",
+  "Al2O3": "a5",
+  "SiO2": "a5",
+  "P4O10": "a2",
+  "SO3": "a2"
+ },
+ "claims": [
+  {
+   "type": "order",
+   "keys": [
+    "MgO",
+    "Na2O"
+   ]
+  },
+  {
+   "type": "order",
+   "keys": [
+    "P4O10",
+    "Al2O3",
+    "MgO"
+   ]
+  }
+ ]
+}

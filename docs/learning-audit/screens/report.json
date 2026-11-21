@@ -1,0 +1,348 @@
+[
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-10",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-15",
+  "view": "desktop",
+  "diagrams": 2,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "fig2": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-07",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u04-12",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u19-06",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u16-06",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "mathgradify/course/#/lesson/u03-37",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/biology/#/lesson/u07-20",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "businessgradify/course/#/lesson/u08-02",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "lawgradify/course/#/lesson/u04-03",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-09",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-13",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-16",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-17",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-10",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-15",
+  "view": "phone",
+  "diagrams": 2,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "fig2": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-07",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u04-12",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u19-06",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/physics/#/lesson/u16-06",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "mathgradify/course/#/lesson/u03-37",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/biology/#/lesson/u07-20",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "businessgradify/course/#/lesson/u08-02",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "lawgradify/course/#/lesson/u04-03",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-09",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-13",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-16",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-17",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ }
+]

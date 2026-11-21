@@ -1,0 +1,98 @@
+{
+ "id": "chem-ph-scale",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Introduction to acids and bases",
+ "title": "The pH scale",
+ "caption": "pH runs from about 0 (strongly acidic) to 14 (strongly alkaline), with 7 neutral at 25 °C. Each step of 1 is a factor of 10 in [H⁺]: stomach acid at pH 1.5 has about 300 000 times the [H⁺] of blood at pH 7.4. Typical values.",
+ "alt": "Bar chart of typical pH values from stomach acid 1.5 through pure water 7 to bleach 12.6.",
+ "description": [
+  "Acidic: stomach acid 1.5, lemon juice 2.4, vinegar 2.9, coffee 5.0.",
+  "Neutral: pure water 7.0.",
+  "Alkaline: blood 7.4, seawater 8.1, baking soda solution 8.3, household ammonia 11.6, bleach 12.6."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Acids, alkalis and salts"
+  }
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  14
+ ],
+ "ticks": [
+  0,
+  2,
+  4,
+  6,
+  7,
+  8,
+  10,
+  12,
+  14
+ ],
+ "yLabel": "typical pH",
+ "items": [
+  {
+   "key": "stomach acid",
+   "value": 1.5
+  },
+  {
+   "key": "lemon",
+   "value": 2.4
+  },
+  {
+   "key": "vinegar",
+   "value": 2.9
+  },
+  {
+   "key": "coffee",
+   "value": 5.0
+  },
+  {
+   "key": "water",
+   "value": 7.0
+  },
+  {
+   "key": "blood",
+   "value": 7.4
+  },
+  {
+   "key": "seawater",
+   "value": 8.1
+  },
+  {
+   "key": "baking soda",
+   "value": 8.3
+  },
+  {
+   "key": "ammonia",
+   "value": 11.6
+  },
+  {
+   "key": "bleach",
+   "value": 12.6
+  }
+ ],
+ "highlight": {
+  "stomach acid": "a2",
+  "lemon": "a2",
+  "vinegar": "a2",
+  "coffee": "a3",
+  "water": "a4",
+  "blood": "a1",
+  "seawater": "a1",
+  "baking soda": "a1",
+  "ammonia": "a5",
+  "bleach": "a5"
+ },
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

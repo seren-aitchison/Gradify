@@ -1,0 +1,62 @@
+{
+ "id": "chem-ozone-cycle",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Atmospheric chemistry",
+ "title": "How chlorine destroys ozone",
+ "caption": "UV light breaks C–Cl bonds in CFCs high in the stratosphere, releasing chlorine radicals. Each Cl• destroys an ozone molecule and is regenerated, so one radical can destroy many thousands of O₃ molecules before it is removed.",
+ "alt": "A cycle: Cl• reacts with O₃ to give ClO• and O₂; ClO• reacts with an O atom to give O₂ and Cl• again.",
+ "description": [
+  "Cl• + O₃ → ClO• + O₂.",
+  "ClO• + O → Cl• + O₂.",
+  "Overall: O₃ + O → 2O₂; chlorine is regenerated."
+ ],
+ "layout": "cycle",
+ "radius": 110,
+ "nodes": [
+  {
+   "id": "cl",
+   "label": "Cl•",
+   "tone": "a2"
+  },
+  {
+   "id": "clo",
+   "label": "ClO•",
+   "tone": "a5"
+  }
+ ],
+ "edges": [
+  {
+   "from": "cl",
+   "to": "clo",
+   "label": "+ O₃ → + O₂",
+   "eq": "Cl• + O3 → ClO• + O2"
+  },
+  {
+   "from": "clo",
+   "to": "cl",
+   "label": "+ O → + O₂",
+   "eq": "ClO• + O → Cl• + O2"
+  }
+ ],
+ "centre": "net: O₃ + O → 2O₂",
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "Cl• + O3 → ClO• + O2",
+    "ClO• + O → Cl• + O2"
+   ],
+   "net": "O3 + O → 2O2"
+  },
+  {
+   "type": "regenerated",
+   "species": "Cl•",
+   "steps": [
+    "Cl• + O3 → ClO• + O2",
+    "ClO• + O → Cl• + O2"
+   ]
+  }
+ ]
+}

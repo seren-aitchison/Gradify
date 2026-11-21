@@ -11,6 +11,7 @@ H: Scope
 - Many also contain oxygen, nitrogen, sulfur, phosphorus and halogens.
 - Millions of organic compounds are known.
 - Simple carbon compounds such as CO₂ and carbonates are usually classed as inorganic.
+D: chem-organic-formulae
 H: Importance
 - **Fuels**: petrol, diesel and natural gas.
 - **Medicines**: aspirin, paracetamol and antibiotics.
@@ -52,6 +53,7 @@ H: Tetravalency and catenation
 - C–C bonds are strong, allowing long **chains** and **rings** (catenation).
 - Carbon forms single, double and triple bonds.
 - C–H bonds are strong and relatively unreactive.
+D: chem-carbon-geometries
 H: Hybridisation and shape
 - **sp³**: four single bonds, tetrahedral, 109.5°, as in methane.
 - **sp²**: one double bond, trigonal planar, 120°, as in ethene.
@@ -93,6 +95,7 @@ H: Classes
 - **Alkenes**: at least one C=C double bond, CₙH₂ₙ.
 - **Alkynes**: at least one C≡C triple bond.
 - **Arenes**: aromatic rings such as benzene.
+D: chem-hydrocarbon-families
 H: Sources and use
 - **Crude oil** is a mixture of hydrocarbons separated by **fractional distillation**.
 - **Cracking** breaks long alkanes into shorter alkanes and alkenes.
@@ -134,6 +137,7 @@ H: Structure and properties
 - Boiling points rise with chain length due to stronger London forces.
 - **Branching** lowers boiling point by reducing surface contact.
 - Alkanes are non-polar and insoluble in water.
+D: chem-alkanes-series
 H: Reactions
 - Alkanes are fairly **unreactive**: strong, non-polar C–C and C–H bonds.
 - They burn as fuels.
@@ -175,6 +179,7 @@ H: Structure
 - The C=C has a **σ bond** and a **π bond**.
 - The π bond is an area of high electron density, attracting **electrophiles**.
 - Restricted rotation about C=C gives **E/Z isomers**.
+D: chem-alkenes
 H: Additions
 - **Hydrogen** (Ni catalyst): forms an alkane.
 - **Halogens**: bromine water is **decolourised**, testing for unsaturation.
@@ -216,6 +221,7 @@ H: Structure
 - The C≡C contains **one σ and two π bonds**.
 - Carbons are **sp** hybridised and linear (180°).
 - Ethyne (acetylene) is the simplest alkyne.
+D: chem-alkynes
 H: Reactions
 - Add hydrogen in two steps: alkyne → alkene → alkane.
 - **Lindlar's catalyst** stops hydrogenation at the cis-alkene.
@@ -257,6 +263,7 @@ H: Aromaticity
 - **Hückel's rule**: they have **4n + 2** π electrons (2, 6, 10…).
 - Benzene has 6 π electrons.
 - Aromatic rings are unusually **stable**.
+D: chem-aromatics
 H: Reactions
 - Arenes undergo **electrophilic substitution**, keeping the stable ring.
 - **Nitration**: HNO₃ and H₂SO₄ give nitrobenzene.
@@ -298,6 +305,7 @@ H: Kekulé model
 - Predicts two bond lengths, 0.154 nm and 0.134 nm.
 - Predicts benzene should decolourise bromine water readily.
 - Does not explain benzene's stability.
+D: chem-benzene-structure
 H: Delocalised model
 - Each carbon is sp², with one p orbital above and below the ring.
 - The six p orbitals overlap to form a **delocalised π system**.
@@ -339,6 +347,7 @@ H: Common groups
 - **Aldehyde**: –CHO. **Ketone**: C=O within a chain.
 - **Carboxylic acid**: –COOH. **Ester**: –COO–.
 - **Amine**: –NH₂. **Amide**: –CONH₂.
+D: chem-functional-groups
 H: Homologous series
 - Members share a **general formula** and functional group.
 - Each member differs by **CH₂**.
@@ -380,6 +389,7 @@ H: Basic rules
 - Stem: meth (1), eth (2), prop (3), but (4), pent (5), hex (6).
 - Number from the end giving the functional group the **lowest number**.
 - Add **suffixes** for the main group: -ol, -al, -one, -oic acid.
+D: chem-iupac-naming
 H: Substituents
 - Prefixes: methyl, ethyl, chloro, bromo, amino.
 - List substituents in **alphabetical order**.
@@ -421,6 +431,7 @@ H: Types
 - **Position isomers**: same group in different positions, such as propan-1-ol and propan-2-ol.
 - **Functional group isomers**: different groups, such as ethanol and methoxymethane.
 - All share the same molecular formula.
+D: chem-structural-isomers
 H: Consequences
 - Isomers have different physical properties.
 - Functional group isomers have very different chemical properties.
@@ -462,6 +473,7 @@ H: Types
 - **Geometric (E/Z) isomers** arise from restricted rotation around C=C or in rings.
 - **Optical isomers** arise from chiral centres and are mirror images.
 - **Configurational** isomers cannot interconvert without breaking bonds.
+D: chem-stereoisomers
 H: Why they matter
 - Stereoisomers can smell, taste or act differently in the body.
 - Enzymes and receptors are themselves chiral.
@@ -503,6 +515,7 @@ H: Connectivity
 - This term is the IUPAC name for structural isomers.
 - Stereoisomers share connectivity; constitutional isomers do not.
 - Tautomers are constitutional isomers that interconvert rapidly.
+D: chem-constitutional-c3h8o
 H: Degrees of unsaturation
 - Formula: **DoU = (2C + 2 + N − H − X) / 2**.
 - Each ring or double bond counts as 1; a triple bond counts as 2.
@@ -544,6 +557,7 @@ H: Open chains
 - **Newman projections** look along a C–C bond.
 - **Staggered** conformations are lower in energy than **eclipsed** ones.
 - In butane, the **anti** conformation is most stable; **gauche** is slightly higher.
+D: chem-butane-conformations
 H: Cyclohexane
 - The **chair** conformation has no angle strain and staggered bonds.
 - Each carbon has one **axial** and one **equatorial** position.
@@ -585,6 +599,7 @@ H: Recognising chirality
 - A carbon with **four different groups** is a **stereocentre** (chiral centre).
 - Molecules with one stereocentre are always chiral.
 - **Achiral** molecules have a plane or centre of symmetry.
+D: chem-chirality
 H: Beyond single centres
 - Molecules with several stereocentres may be achiral if symmetric (**meso** compounds).
 - Some molecules are chiral without a stereocentre, such as certain allenes.
@@ -626,6 +641,7 @@ H: Properties
 - They rotate **plane-polarised light** equally in **opposite** directions.
 - They react identically with achiral reagents.
 - They react differently with **chiral** reagents, such as enzymes.
+D: chem-enantiomers-alanine
 H: Racemates and resolution
 - A **racemic mixture** contains equal amounts of both enantiomers.
 - It is optically inactive because rotations cancel.
@@ -667,6 +683,7 @@ H: Definition
 - They arise in molecules with **two or more stereocentres**.
 - E/Z isomers are also diastereomers.
 - Maximum stereoisomers = **2ⁿ** for n stereocentres.
+D: chem-diastereomers
 H: Properties
 - Diastereomers have **different** physical properties.
 - They can be separated by distillation, crystallisation or chromatography.
@@ -708,6 +725,7 @@ H: Measurement
 - Chiral samples rotate the plane by an angle α.
 - **Dextrorotatory (+)** rotates clockwise; **laevorotatory (−)** anticlockwise.
 - Specific rotation **[α] = α / (l × c)**, with l in dm and c in g cm⁻³.
+D: chem-optical-activity
 H: Enantiomeric excess
 - **ee = (observed [α] / [α] of pure enantiomer) × 100%**.
 - A racemate has ee = 0%; a pure enantiomer 100%.
@@ -749,6 +767,7 @@ H: Priority rules
 - If tied, compare the next atoms out until a difference appears.
 - **Double bonds** count as two single bonds to the same atom.
 - Example priorities: Br > Cl > OH > NH₂ > CH₃ > H.
+D: chem-r-s
 H: Assigning R or S
 - Point the **lowest-priority** group away from you.
 - Trace 1 → 2 → 3.
@@ -790,6 +809,7 @@ H: Why E/Z
 - It fails when all four groups are different.
 - **E/Z** uses CIP priorities on each alkene carbon.
 - It applies to any alkene showing geometric isomerism.
+D: chem-e-z
 H: Assigning E or Z
 - Find the higher-priority group on **each** carbon of the C=C.
 - If both are on the **same side**: **Z** (zusammen, together).
@@ -831,6 +851,7 @@ H: Key conversions
 - **Haloalkane → alcohol**: aqueous NaOH, heat.
 - **Primary alcohol → aldehyde → carboxylic acid**: acidified dichromate.
 - **Secondary alcohol → ketone**: acidified dichromate.
+D: chem-fgi-map
 H: More conversions
 - **Carboxylic acid + alcohol → ester**: acid catalyst.
 - **Haloalkane → amine**: excess ammonia in ethanol.
@@ -877,6 +898,7 @@ H: Reaction types
 - **Substitution**: one group replaces another; common for haloalkanes and arenes.
 - **Elimination**: a small molecule is removed, forming a double bond.
 - **Condensation**, **hydrolysis**, **oxidation** and **reduction** are also common.
+D: chem-reaction-classes
 H: Reacting species
 - **Nucleophiles** donate electron pairs, such as OH⁻, CN⁻, NH₃.
 - **Electrophiles** accept electron pairs, such as H⁺, NO₂⁺, Br⁺.

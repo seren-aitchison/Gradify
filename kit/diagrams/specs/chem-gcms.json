@@ -1,0 +1,54 @@
+{
+ "id": "chem-gcms",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "GC-MS",
+ "title": "GC–MS",
+ "caption": "Gas chromatography separates a mixture in time; each compound then enters the mass spectrometer, which records its spectrum. Matching the retention time and the mass spectrum against a library identifies the compound, as in drug testing and forensic analysis.",
+ "alt": "A flow: sample injected → GC column separates → each compound in turn ionised → mass spectrum → library match.",
+ "description": [
+  "Inject the vaporised sample.",
+  "The GC column separates components by retention time.",
+  "Each component is ionised and its mass spectrum recorded.",
+  "The spectrum and retention time are matched to a database."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "inject sample"
+  },
+  {
+   "id": "b",
+   "label": "GC separates",
+   "sub": "by retention time",
+   "tone": "a1"
+  },
+  {
+   "id": "c",
+   "label": "MS fragments",
+   "sub": "m/z spectrum",
+   "tone": "a2"
+  },
+  {
+   "id": "d",
+   "label": "library match",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "id": "chem-oil-rig",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Oxidation and reduction",
+ "title": "Oxidation is loss, reduction is gain",
+ "caption": "Magnesium in copper(II) sulfate solution: each Mg atom loses two electrons (oxidised) and each Cu²⁺ gains two (reduced). The electrons lost equal the electrons gained.",
+ "alt": "Two half-equations: Mg → Mg²⁺ + 2e⁻ (oxidation) and Cu²⁺ + 2e⁻ → Cu (reduction), adding to Mg + Cu²⁺ → Mg²⁺ + Cu.",
+ "description": [
+  "Mg → Mg²⁺ + 2e⁻: electrons lost, oxidation.",
+  "Cu²⁺ + 2e⁻ → Cu: electrons gained, reduction.",
+  "Overall: Mg + Cu²⁺ → Mg²⁺ + Cu."
+ ],
+ "layout": "grid",
+ "rowHeight": 110,
+ "boxWidth": 120,
+ "nodes": [
+  {
+   "id": "mg",
+   "label": "Mg",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "mg2",
+   "label": "Mg²⁺",
+   "col": 1,
+   "row": 0,
+   "tone": "a3",
+   "sub": "oxidised: lost 2e⁻"
+  },
+  {
+   "id": "cu2",
+   "label": "Cu²⁺",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "cu",
+   "label": "Cu",
+   "col": 1,
+   "row": 1,
+   "tone": "a1",
+   "sub": "reduced: gained 2e⁻"
+  }
+ ],
+ "edges": [
+  {
+   "from": "mg",
+   "to": "mg2",
+   "label": "Mg → Mg²⁺ + 2e⁻",
+   "eq": "Mg → Mg2+ + 2e-"
+  },
+  {
+   "from": "cu2",
+   "to": "cu",
+   "label": "Cu²⁺ + 2e⁻ → Cu",
+   "eq": "Cu2+ + 2e- → Cu"
+  }
+ ],
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "Mg → Mg2+ + 2e-",
+    "Cu2+ + 2e- → Cu"
+   ],
+   "net": "Mg + Cu2+ → Mg2+ + Cu"
+  }
+ ]
+}

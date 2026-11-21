@@ -1,0 +1,100 @@
+{
+ "id": "chem-physisorption",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Adsorption",
+ "title": "Physisorption and chemisorption",
+ "caption": "A molecule approaching a surface first feels weak van der Waals attraction: a shallow well far out (physisorption, about 20 kJ mol⁻¹). Closer in, it can form chemical bonds to the surface: a much deeper well (chemisorption, often over 200 kJ mol⁻¹). Illustrative curves.",
+ "alt": "Energy against distance from the surface: a shallow minimum at 0.16 nm for physisorption and a deep minimum at 0.095 nm for chemisorption.",
+ "description": [
+  "Physisorption: shallow minimum far from the surface.",
+  "Chemisorption: a deep minimum close to the surface."
+ ],
+ "range": {
+  "x": [
+   0.6,
+   3.0
+  ],
+  "y": [
+   -4.5,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   -4,
+   -2,
+   0,
+   2
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "axisLabels": [
+  "distance from surface / 10⁻¹⁰ m",
+  "energy (illustrative)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.6*((1.6/x)^12-2*(1.6/x)^6)",
+   "domain": [
+    1.42,
+    3
+   ],
+   "colour": "a1",
+   "label": "physisorption",
+   "labelAt": [
+    2.1,
+    -0.9
+   ]
+  },
+  {
+   "expr": "4*(1-exp(-2.2*(x-0.95)))^2-4",
+   "domain": [
+    0.7,
+    3
+   ],
+   "colour": "a2",
+   "label": "chemisorption",
+   "labelAt": [
+    1.5,
+    -2.6
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "0.6*((1.6/x)^12-2*(1.6/x)^6)",
+   "domain": [
+    1.45,
+    3
+   ],
+   "x": 1.6,
+   "y": -0.6,
+   "name": "physisorption: a shallow well at 1.6"
+  },
+  {
+   "type": "min",
+   "expr": "4*(1-exp(-2.2*(x-0.95)))^2-4",
+   "domain": [
+    0.75,
+    3
+   ],
+   "x": 0.95,
+   "y": -4,
+   "name": "chemisorption: a well over six times deeper, closer to the surface"
+  }
+ ]
+}

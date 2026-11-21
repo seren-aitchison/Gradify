@@ -1,0 +1,21 @@
+{
+ "id": "chem-phase-water",
+ "renderer": "phase",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Phase diagrams",
+ "title": "Phase diagram of water",
+ "caption": "Each region is a single phase; along each line two phases coexist, and at the triple point all three. Water's solid–liquid line slopes backwards because ice is less dense than liquid water, so pressure melts ice. Not to scale.",
+ "alt": "Pressure against temperature: solid at low temperature and high pressure, liquid in the middle, gas at low pressure; three lines meet at the triple point; the liquid–gas line ends at the critical point; the solid–liquid line leans left.",
+ "description": [
+  "Solid region upper left, liquid region upper middle, gas region at the bottom right.",
+  "The three boundaries meet at the triple point, 0.01 °C and 0.006 atm.",
+  "The liquid–gas line ends at the critical point, 374 °C and 218 atm.",
+  "At 1 atm the line crosses melting at 0 °C and boiling at 100 °C."
+ ],
+ "substance": "water",
+ "claims": {
+  "slope": "negative",
+  "sublimes": false
+ }
+}

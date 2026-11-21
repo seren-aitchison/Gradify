@@ -1,0 +1,90 @@
+{
+ "id": "chem-kinetics-integrated",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Chemical kinetics",
+ "title": "Consecutive reactions A → B → C",
+ "caption": "A falls exponentially; the intermediate B rises, peaks and falls as it is converted to C; C rises to take everything. With k₁ = 0.5 and k₂ = 0.2 s⁻¹, [B] peaks at t = ln(k₁/k₂)/(k₁ − k₂) = 3.05 s.",
+ "alt": "Concentrations against time: A decaying, B rising to a maximum near 3 s then falling, C rising towards 1.",
+ "description": [
+  "[A] = e^(−k₁t).",
+  "[B] peaks at 0.54 at 3.05 s.",
+  "[C] = 1 − [A] − [B] rises towards 1."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.25
+ ],
+ "axisLabels": [
+  "time / s",
+  "concentration (fraction of A₀)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "exp(-0.5*x)",
+   "colour": "a1",
+   "label": "A",
+   "labelAt": [
+    1.2,
+    0.85
+   ]
+  },
+  {
+   "expr": "-1.666667*(exp(-0.5*x)-exp(-0.2*x))",
+   "colour": "a2",
+   "label": "B",
+   "labelAt": [
+    3.3543024395805165,
+    0.5928835233189813
+   ]
+  },
+  {
+   "expr": "1-exp(-0.5*x)-(-1.666667*(exp(-0.5*x)-exp(-0.2*x)))",
+   "colour": "a4",
+   "label": "C",
+   "labelAt": [
+    17,
+    0.92
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "-1.666667*(exp(-0.5*x)-exp(-0.2*x))",
+   "domain": [
+    0,
+    20
+   ],
+   "x": 3.054,
+   "y": 0.54288,
+   "name": "[B] is greatest at t = ln(k₁/k₂)/(k₁ − k₂) = 3.05 s"
+  }
+ ]
+}

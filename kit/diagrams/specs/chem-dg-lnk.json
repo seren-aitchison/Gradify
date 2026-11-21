@@ -1,0 +1,74 @@
+{
+ "id": "chem-dg-lnk",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u08",
+ "lesson": "Thermodynamic interpretation",
+ "title": "ΔG° and K",
+ "caption": "ΔG° = −RT ln K. At 298 K, every 5.7 kJ mol⁻¹ more negative multiplies K by 10. A negative ΔG° means K > 1 (products favoured); a positive ΔG° means K < 1.",
+ "alt": "log₁₀ K against ΔG° at 298 K: a straight line falling through 0 at ΔG° = 0, gradient −1/5.71.",
+ "description": [
+  "ΔG° = 0: K = 1.",
+  "ΔG° = −5.71 kJ mol⁻¹: K = 10.",
+  "ΔG° = +5.71: K = 0.1."
+ ],
+ "range": {
+  "x": [
+   -30,
+   30
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   -30,
+   -20,
+   -10,
+   0,
+   10,
+   20,
+   30
+  ],
+  [
+   -4,
+   -2,
+   0,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  10,
+  2
+ ],
+ "axisLabels": [
+  "ΔG° / kJ mol⁻¹",
+  "log₁₀ K"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "-x/5.70482",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -5.7048,
+   "y": 1,
+   "label": "K = 10"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-x/5.70482",
+   "x": -5.7048,
+   "y": 1,
+   "name": "ΔG° = −2.303RT = −5.71 kJ mol⁻¹ gives K = 10"
+  }
+ ]
+}

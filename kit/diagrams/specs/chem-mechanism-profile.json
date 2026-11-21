@@ -1,0 +1,71 @@
+{
+ "id": "chem-mechanism-profile",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Reaction mechanisms",
+ "title": "A three-step mechanism",
+ "caption": "Each step has its own transition state, with an intermediate between steps. The step with the highest transition state, here the second, is rate-determining.",
+ "alt": "Profile with three humps and two intermediates; the second hump is highest.",
+ "description": [
+  "Step 1: a low barrier to intermediate 1.",
+  "Step 2: the highest transition state, rate-determining.",
+  "Step 3: a small barrier to the products."
+ ],
+ "profiles": [
+  {
+   "title": "three steps",
+   "colour": "a5",
+   "points": [
+    {
+     "x": 0,
+     "e": 40,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.18,
+     "e": 80,
+     "kind": "ts",
+     "label": "TS1"
+    },
+    {
+     "x": 0.33,
+     "e": 55,
+     "kind": "int",
+     "label": "I₁"
+    },
+    {
+     "x": 0.52,
+     "e": 120,
+     "kind": "ts",
+     "label": "TS2"
+    },
+    {
+     "x": 0.68,
+     "e": 65,
+     "kind": "int",
+     "label": "I₂"
+    },
+    {
+     "x": 0.82,
+     "e": 85,
+     "kind": "ts",
+     "label": "TS3"
+    },
+    {
+     "x": 1,
+     "e": 15,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 3,
+    "int": 2,
+    "rds": 2,
+    "dh": "exothermic"
+   }
+  }
+ ]
+}

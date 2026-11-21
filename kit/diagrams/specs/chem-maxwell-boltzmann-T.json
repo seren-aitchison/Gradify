@@ -1,0 +1,106 @@
+{
+ "id": "chem-maxwell-boltzmann-T",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Kinetic molecular theory",
+ "title": "Molecular speeds at two temperatures",
+ "caption": "Nitrogen molecules have a spread of speeds. At 300 K the most probable speed is about 422 m s⁻¹; at 600 K the curve flattens and shifts right to about 597 m s⁻¹. The area under each curve, the total number of molecules, is the same.",
+ "alt": "Two Maxwell–Boltzmann speed distributions for nitrogen: a taller, narrower curve peaking near 420 m/s at 300 K and a lower, broader curve peaking near 600 m/s at 600 K.",
+ "description": [
+  "300 K: a peak at about 422 m s⁻¹.",
+  "600 K: lower, broader, peaking at about 597 m s⁻¹.",
+  "Both start at zero, and both curves enclose the same area."
+ ],
+ "range": {
+  "x": [
+   0,
+   16
+  ],
+  "y": [
+   0,
+   0.24
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  []
+ ],
+ "grid": [
+  2,
+  0.04
+ ],
+ "axisLabels": [
+  "speed / 100 m s⁻¹",
+  "fraction of molecules"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.030011*x^2*exp(-0.056130*x^2)",
+   "colour": "a1",
+   "label": "300 K",
+   "labelAt": [
+    4.62086653256346,
+    0.20169302225886182
+   ]
+  },
+  {
+   "expr": "0.010610*x^2*exp(-0.028065*x^2)",
+   "colour": "a3",
+   "label": "600 K",
+   "labelAt": [
+    7.169206695317944,
+    0.1390829698513177
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "0.030011*x^2*exp(-0.056130*x^2)",
+   "domain": [
+    0.01,
+    16
+   ],
+   "x": 4.221,
+   "y": 0.19669,
+   "name": "300 K: most probable speed √(2RT/M) = 422 m s⁻¹"
+  },
+  {
+   "type": "max",
+   "expr": "0.010610*x^2*exp(-0.028065*x^2)",
+   "domain": [
+    0.01,
+    16
+   ],
+   "x": 5.969,
+   "y": 0.13908,
+   "name": "600 K: most probable speed 597 m s⁻¹"
+  },
+  {
+   "type": "area",
+   "expr": "0.030011*x^2*exp(-0.056130*x^2)",
+   "from": 0,
+   "to": 30,
+   "value": 1,
+   "name": "300 K: area 1 (all the molecules)"
+  },
+  {
+   "type": "area",
+   "expr": "0.010610*x^2*exp(-0.028065*x^2)",
+   "from": 0,
+   "to": 30,
+   "value": 1,
+   "name": "600 K: the same area"
+  }
+ ]
+}

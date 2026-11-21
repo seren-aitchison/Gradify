@@ -1,0 +1,49 @@
+{
+ "id": "chem-aromatics",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Aromatic compounds",
+ "title": "Aromatic compounds",
+ "caption": "Each has a planar ring with 4n + 2 delocalised π electrons: six for benzene and its derivatives, ten for naphthalene (n = 2).",
+ "alt": "Skeletal formulae of benzene, methylbenzene, phenol and naphthalene.",
+ "description": [
+  "Benzene, C₆H₆.",
+  "Methylbenzene: a CH₃ on the ring.",
+  "Phenol: an OH on the ring.",
+  "Naphthalene, C₁₀H₈: two fused rings."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "c1ccccc1",
+   "label": "benzene",
+   "formula": "C6H6",
+   "sub": "6 π electrons"
+  },
+  {
+   "smiles": "Cc1ccccc1",
+   "label": "methylbenzene",
+   "formula": "C7H8",
+   "sub": "6 π electrons"
+  },
+  {
+   "smiles": "Oc1ccccc1",
+   "label": "phenol",
+   "formula": "C6H6O",
+   "groups": [
+    "phenol"
+   ],
+   "sub": "6 π electrons"
+  },
+  {
+   "smiles": "c1ccc2ccccc2c1",
+   "label": "naphthalene",
+   "formula": "C10H8",
+   "sub": "10 π electrons"
+  }
+ ]
+}

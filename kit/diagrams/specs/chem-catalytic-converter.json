@@ -1,0 +1,58 @@
+{
+ "id": "chem-catalytic-converter",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Air pollution",
+ "title": "Inside a catalytic converter",
+ "caption": "A honeycomb coated with platinum, palladium and rhodium converts the three main pollutants in car exhaust: carbon monoxide and unburned hydrocarbons are oxidised, and nitrogen oxides are reduced to nitrogen.",
+ "alt": "A flow from exhaust gases through the catalyst to cleaner gases, with the three reactions.",
+ "description": [
+  "2CO + O₂ → 2CO₂.",
+  "2NO + 2CO → N₂ + 2CO₂.",
+  "Hydrocarbons + O₂ → CO₂ + H₂O, for example C₈H₁₈."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "exhaust",
+   "sub": "CO, NO, hydrocarbons"
+  },
+  {
+   "id": "b",
+   "label": "Pt/Pd/Rh catalyst",
+   "tone": "a3"
+  },
+  {
+   "id": "c",
+   "label": "out",
+   "sub": "CO₂, N₂, H₂O",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  }
+ ],
+ "claims": [
+  {
+   "type": "equation",
+   "eq": "2CO + O2 → 2CO2"
+  },
+  {
+   "type": "equation",
+   "eq": "2NO + 2CO → N2 + 2CO2"
+  },
+  {
+   "type": "equation",
+   "eq": "C8H18 + 12.5O2 → 8CO2 + 9H2O"
+  }
+ ]
+}

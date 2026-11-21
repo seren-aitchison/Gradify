@@ -1,0 +1,84 @@
+{
+ "id": "chem-coordinate-ammonium",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Coordinate bonding",
+ "title": "A coordinate bond: ammonium",
+ "caption": "Ammonia's lone pair on nitrogen is donated to an H⁺ ion, which has no electrons. Once formed, the coordinate bond is identical to the other three N–H bonds; the ion carries a +1 charge.",
+ "alt": "Dot-and-cross diagram of the ammonium ion in brackets with a + charge: four shared pairs around nitrogen, one of them two nitrogen electrons.",
+ "description": [
+  "Nitrogen in the centre with four hydrogens.",
+  "Three N–H bonds each share a dot (N) and a cross (H).",
+  "The fourth bond's pair is two dots, both from nitrogen: the coordinate bond.",
+  "Square brackets with a + charge."
+ ],
+ "keyDot": "nitrogen electron",
+ "keyCross": "hydrogen electron",
+ "molecules": [
+  {
+   "label": "NH₄⁺",
+   "bracket": true,
+   "charge": 1,
+   "atoms": [
+    {
+     "id": "n",
+     "el": "N",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "h1",
+     "el": "H",
+     "x": 0,
+     "y": -1,
+     "mark": "cross"
+    },
+    {
+     "id": "h2",
+     "el": "H",
+     "x": 1,
+     "y": 0,
+     "mark": "cross"
+    },
+    {
+     "id": "h3",
+     "el": "H",
+     "x": 0,
+     "y": 1,
+     "mark": "cross"
+    },
+    {
+     "id": "h4",
+     "el": "H",
+     "x": -1,
+     "y": 0,
+     "mark": "cross"
+    }
+   ],
+   "bonds": [
+    {
+     "a": "n",
+     "b": "h1",
+     "order": 1,
+     "dative": "n"
+    },
+    {
+     "a": "n",
+     "b": "h2",
+     "order": 1
+    },
+    {
+     "a": "n",
+     "b": "h3",
+     "order": 1
+    },
+    {
+     "a": "n",
+     "b": "h4",
+     "order": 1
+    }
+   ]
+  }
+ ]
+}

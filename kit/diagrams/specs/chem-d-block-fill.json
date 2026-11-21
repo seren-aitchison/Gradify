@@ -1,0 +1,68 @@
+{
+ "id": "chem-d-block-fill",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "d-block elements",
+ "title": "d-block elements: filling 3d",
+ "caption": "Across the first transition series the 3d sub-shell fills behind a 4s² pair: scandium 3d¹, iron 3d⁶, zinc 3d¹⁰. Chromium and copper are the exceptions with 4s¹.",
+ "alt": "Box diagrams of 3d and 4s for scandium, iron and zinc.",
+ "description": [
+  "Scandium, [Ar] 3d¹ 4s².",
+  "Iron, [Ar] 3d⁶ 4s²: one 3d pair and four singles.",
+  "Zinc, [Ar] 3d¹⁰ 4s²: every box paired."
+ ],
+ "rows": [
+  {
+   "symbol": "Sc",
+   "label": "Scandium, [Ar] 3d¹ 4s²",
+   "config": "[Ar] 3d1 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 1
+  },
+  {
+   "symbol": "Fe",
+   "label": "Iron, [Ar] 3d⁶ 4s²",
+   "config": "[Ar] 3d6 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 4
+  },
+  {
+   "symbol": "Zn",
+   "label": "Zinc, [Ar] 3d¹⁰ 4s²",
+   "config": "[Ar] 3d10 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 0
+  }
+ ]
+}

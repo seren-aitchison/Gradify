@@ -1,0 +1,48 @@
+{
+ "id": "chem-nitro-reduction",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Nitro compounds",
+ "title": "Reducing nitrobenzene to phenylamine",
+ "caption": "Tin and concentrated hydrochloric acid reduce the nitro group to –NH₂ (as the phenylammonium salt; adding NaOH frees the amine). Phenylamine is the starting point for azo dyes.",
+ "alt": "Nitrobenzene, an arrow labelled Sn / conc. HCl then NaOH, and phenylamine.",
+ "description": [
+  "Nitrobenzene, C₆H₅NO₂.",
+  "Phenylamine, C₆H₅NH₂."
+ ],
+ "between": [
+  "→"
+ ],
+ "betweenLabels": [
+  "Sn, HCl; NaOH"
+ ],
+ "panels": [
+  {
+   "smiles": "O=[N+]([O-])c1ccccc1",
+   "label": "nitrobenzene",
+   "groups": [
+    "nitro"
+   ],
+   "highlight": [
+    {
+     "group": "nitro",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "Nc1ccccc1",
+   "label": "phenylamine",
+   "groups": [
+    "primary amine"
+   ],
+   "highlight": [
+    {
+     "group": "primary amine",
+     "colour": "a4"
+    }
+   ]
+  }
+ ]
+}

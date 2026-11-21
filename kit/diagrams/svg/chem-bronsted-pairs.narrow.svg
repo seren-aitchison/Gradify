@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 236" width="380" height="236" role="img" aria-label="HCl + H₂O → Cl⁻ + H₃O⁺ drawn as structures, with the conjugate pairs labelled." style="color:var(--vx-ink, #151826);font-family:inherit;max-width:100%;height:auto"><g transform="translate(12.3 16.5) scale(1.000)">
+
+<path d='M 13.3 19.2
+L 14.9 19.2
+L 14.9 24.0
+L 20.7 24.0
+L 20.7 19.2
+L 22.2 19.2
+L 22.2 30.5
+L 20.7 30.5
+L 20.7 25.3
+L 14.9 25.3
+L 14.9 30.5
+L 13.3 30.5
+L 13.3 19.2
+' fill='var(--vx-cl, #0F8C51)'/>
+<path d='M 24.2 24.8
+Q 24.2 22.0, 25.5 20.5
+Q 26.8 19.0, 29.3 19.0
+Q 31.7 19.0, 32.9 20.7
+L 31.9 21.6
+Q 31.0 20.4, 29.3 20.4
+Q 27.6 20.4, 26.7 21.5
+Q 25.8 22.6, 25.8 24.8
+Q 25.8 27.1, 26.7 28.2
+Q 27.7 29.4, 29.5 29.4
+Q 30.8 29.4, 32.2 28.6
+L 32.7 29.8
+Q 32.1 30.2, 31.2 30.4
+Q 30.3 30.6, 29.3 30.6
+Q 26.8 30.6, 25.5 29.1
+Q 24.2 27.6, 24.2 24.8
+' fill='var(--vx-cl, #0F8C51)'/>
+<path d='M 34.2 18.4
+L 35.7 18.4
+L 35.7 30.5
+L 34.2 30.5
+L 34.2 18.4
+' fill='var(--vx-cl, #0F8C51)'/>
+</g><text x="36.8" y="78.0" font-size="13.5" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-ink, #151826)">HCl</text><text x="36.8" y="96.0" font-size="11.5" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">acid</text><text x="83.3" y="41.0" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-ink, #151826)">+</text><g transform="translate(105.3 16.0) scale(1.000)">
+
+<path d='M 42.9,23.4 L 46.0,25.3' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 46.0,25.3 L 49.2,27.1' style='fill:none;fill-rule:evenodd;stroke:var(--vx-soft, #5B6075);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 31.1,23.4 L 28.0,25.2' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 28.0,25.2 L 24.8,27.1' style='fill:none;fill-rule:evenodd;stroke:var(--vx-soft, #5B6075);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 31.8 20.1
+Q 31.8 17.3, 33.2 15.8
+Q 34.5 14.3, 37.0 14.3
+Q 39.5 14.3, 40.9 15.8
+Q 42.2 17.3, 42.2 20.1
+Q 42.2 22.8, 40.8 24.4
+Q 39.5 25.9, 37.0 25.9
+Q 34.5 25.9, 33.2 24.4
+Q 31.8 22.8, 31.8 20.1
+M 37.0 24.6
+Q 38.7 24.6, 39.7 23.5
+Q 40.6 22.3, 40.6 20.1
+Q 40.6 17.8, 39.7 16.7
+Q 38.7 15.6, 37.0 15.6
+Q 35.3 15.6, 34.3 16.7
+Q 33.4 17.8, 33.4 20.1
+Q 33.4 22.3, 34.3 23.5
+Q 35.3 24.6, 37.0 24.6
+' fill='var(--vx-o, #DB2633)'/>
+<path d='M 49.9 24.4
+L 51.4 24.4
+L 51.4 29.2
+L 57.2 29.2
+L 57.2 24.4
+L 58.8 24.4
+L 58.8 35.7
+L 57.2 35.7
+L 57.2 30.5
+L 51.4 30.5
+L 51.4 35.7
+L 49.9 35.7
+L 49.9 24.4
+' fill='var(--vx-soft, #5B6075)'/>
+<path d='M 15.2 24.3
+L 16.8 24.3
+L 16.8 29.2
+L 22.6 29.2
+L 22.6 24.3
+L 24.1 24.3
+L 24.1 35.7
+L 22.6 35.7
+L 22.6 30.4
+L 16.8 30.4
+L 16.8 35.7
+L 15.2 35.7
+L 15.2 24.3
+' fill='var(--vx-soft, #5B6075)'/>
+</g><text x="142.3" y="78.0" font-size="13.5" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-ink, #151826)">H₂O</text><text x="142.3" y="96.0" font-size="11.5" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">base</text><path d="M185.3 41.0 L208.3 41.0" stroke="var(--vx-ink, #151826)" stroke-width="2.2" fill="none"/><path d="M217.3 41.0 L207.3 45.5 L207.3 36.5 Z" fill="var(--vx-ink, #151826)"/><g transform="translate(271.0 16.5) scale(1.000)">
+
+<path d='M 15.9 24.8
+Q 15.9 22.0, 17.2 20.5
+Q 18.6 19.0, 21.1 19.0
+Q 23.4 19.0, 24.7 20.7
+L 23.6 21.6
+Q 22.7 20.4, 21.1 20.4
+Q 19.4 20.4, 18.4 21.5
+Q 17.5 22.6, 17.5 24.8
+Q 17.5 27.1, 18.5 28.2
+Q 19.4 29.4, 21.2 29.4
+Q 22.5 29.4, 23.9 28.6
+L 24.4 29.8
+Q 23.8 30.2, 22.9 30.4
+Q 22.0 30.6, 21.0 30.6
+Q 18.6 30.6, 17.2 29.1
+Q 15.9 27.6, 15.9 24.8
+' fill='var(--vx-cl, #0F8C51)'/>
+<path d='M 25.8 18.4
+L 27.3 18.4
+L 27.3 30.5
+L 25.8 30.5
+L 25.8 18.4
+' fill='var(--vx-cl, #0F8C51)'/>
+<path d='M 29.2 20.6
+L 33.1 20.6
+L 33.1 21.5
+L 29.2 21.5
+L 29.2 20.6
+' fill='var(--vx-cl, #0F8C51)'/>
+</g><text x="295.5" y="78.0" font-size="13.5" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-ink, #151826)">Cl<tspan baseline-shift="super" font-size="75%">−</tspan></text><text x="295.5" y="96.0" font-size="11.5" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">conjugate base of HCl</text><g transform="translate(153.0 114.0) scale(1.000)">
+
+<path d='M 42.9,43.4 L 46.0,45.2' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 46.0,45.2 L 49.2,47.1' style='fill:none;fill-rule:evenodd;stroke:var(--vx-soft, #5B6075);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 31.1,43.4 L 28.0,45.2' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 28.0,45.2 L 24.8,47.0' style='fill:none;fill-rule:evenodd;stroke:var(--vx-soft, #5B6075);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 37.0,33.6 L 37.0,30.0' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 37.0,30.0 L 37.0,26.3' style='fill:none;fill-rule:evenodd;stroke:var(--vx-soft, #5B6075);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 31.8 40.0
+Q 31.8 37.3, 33.2 35.8
+Q 34.5 34.3, 37.0 34.3
+Q 39.5 34.3, 40.9 35.8
+Q 42.2 37.3, 42.2 40.0
+Q 42.2 42.8, 40.8 44.3
+Q 39.5 45.9, 37.0 45.9
+Q 34.5 45.9, 33.2 44.3
+Q 31.8 42.8, 31.8 40.0
+M 37.0 44.6
+Q 38.7 44.6, 39.7 43.5
+Q 40.6 42.3, 40.6 40.0
+Q 40.6 37.8, 39.7 36.7
+Q 38.7 35.5, 37.0 35.5
+Q 35.3 35.5, 34.3 36.7
+Q 33.4 37.8, 33.4 40.0
+Q 33.4 42.3, 34.3 43.5
+Q 35.3 44.6, 37.0 44.6
+' fill='var(--vx-o, #DB2633)'/>
+<path d='M 43.9 36.3
+L 45.9 36.3
+L 45.9 34.2
+L 46.8 34.2
+L 46.8 36.3
+L 48.8 36.3
+L 48.8 37.0
+L 46.8 37.0
+L 46.8 39.2
+L 45.9 39.2
+L 45.9 37.0
+L 43.9 37.0
+L 43.9 36.3
+' fill='var(--vx-o, #DB2633)'/>
+<path d='M 49.9 44.3
+L 51.4 44.3
+L 51.4 49.2
+L 57.2 49.2
+L 57.2 44.3
+L 58.8 44.3
+L 58.8 55.7
+L 57.2 55.7
+L 57.2 50.4
+L 51.4 50.4
+L 51.4 55.7
+L 49.9 55.7
+L 49.9 44.3
+' fill='var(--vx-soft, #5B6075)'/>
+<path d='M 15.2 44.3
+L 16.8 44.3
+L 16.8 49.1
+L 22.6 49.1
+L 22.6 44.3
+L 24.1 44.3
+L 24.1 55.6
+L 22.6 55.6
+L 22.6 50.4
+L 16.8 50.4
+L 16.8 55.6
+L 15.2 55.6
+L 15.2 44.3
+' fill='var(--vx-soft, #5B6075)'/>
+<path d='M 32.6 14.3
+L 34.1 14.3
+L 34.1 19.1
+L 39.9 19.1
+L 39.9 14.3
+L 41.5 14.3
+L 41.5 25.7
+L 39.9 25.7
+L 39.9 20.4
+L 34.1 20.4
+L 34.1 25.7
+L 32.6 25.7
+L 32.6 14.3
+' fill='var(--vx-soft, #5B6075)'/>
+</g><text x="190.0" y="196.0" font-size="13.5" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-ink, #151826)">H₃O<tspan baseline-shift="super" font-size="75%">+</tspan></text><text x="190.0" y="214.0" font-size="11.5" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">conjugate acid of H₂O</text></svg>

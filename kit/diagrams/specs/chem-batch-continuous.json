@@ -1,0 +1,49 @@
+{
+ "id": "chem-batch-continuous",
+ "renderer": "classify",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Chemical manufacturing",
+ "title": "Batch or continuous?",
+ "caption": "Continuous processes suit very large volumes of a single product made all the time (ammonia, sulfuric acid, petrol). Batch processes suit smaller amounts of many products, made in turn in the same equipment (pharmaceuticals, dyes, flavours).",
+ "alt": "A tree: is a large volume of one product needed continuously? Continuous. Otherwise: batch.",
+ "description": [
+  "Large, steady demand for one product: continuous, such as ammonia.",
+  "Smaller amounts or many products: batch, such as medicines."
+ ],
+ "start": "q",
+ "rowHeight": 100,
+ "nodes": {
+  "q": {
+   "q": "Is a very large volume of one product needed all the time?",
+   "yes": "c",
+   "no": "b"
+  },
+  "c": {
+   "leaf": "Continuous process",
+   "examples": [
+    "NH3",
+    "H2SO4"
+   ],
+   "kind": "compound",
+   "tone": "a1"
+  },
+  "b": {
+   "leaf": "Batch process",
+   "examples": [
+    "medicines, dyes"
+   ],
+   "tone": "a3"
+  }
+ },
+ "claims": [
+  {
+   "type": "path",
+   "substance": "ammonia",
+   "answers": [
+    "yes"
+   ],
+   "leaf": "Continuous process"
+  }
+ ]
+}

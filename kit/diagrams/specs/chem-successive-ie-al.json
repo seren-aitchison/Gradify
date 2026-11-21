@@ -1,0 +1,112 @@
+{
+ "id": "chem-successive-ie-al",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Ionisation energy",
+ "title": "Successive ionisation energies of aluminium",
+ "caption": "On a log scale each ionisation is a little harder than the last, with two large jumps: after the 3rd electron (the next comes from the second shell) and after the 11th (the next comes from the first). Three outer electrons put aluminium in group 13.",
+ "alt": "Line graph of the 13 successive ionisation energies of aluminium on a logarithmic axis, rising gradually with big jumps between the 3rd and 4th and between the 11th and 12th.",
+ "description": [
+  "Ionisations 1 to 3: 578, 1817 and 2745 kJ mol⁻¹, the three outer electrons.",
+  "Ionisation 4 jumps to 11 577 kJ mol⁻¹: the electron comes from the second shell.",
+  "Ionisations 4 to 11 rise steadily to 42 647; ionisations 12 and 13 jump to about 201 000 and 222 000, the first shell."
+ ],
+ "kind": "line",
+ "dataset": "ieAl",
+ "log": true,
+ "range": [
+  300,
+  400000
+ ],
+ "ticks": [
+  1000,
+  10000,
+  100000
+ ],
+ "yLabel": "ionisation energy / kJ mol⁻¹ (log scale)",
+ "xTitle": "electron removed",
+ "items": [
+  {
+   "key": "1",
+   "value": 578
+  },
+  {
+   "key": "2",
+   "value": 1817
+  },
+  {
+   "key": "3",
+   "value": 2745
+  },
+  {
+   "key": "4",
+   "value": 11577
+  },
+  {
+   "key": "5",
+   "value": 14842
+  },
+  {
+   "key": "6",
+   "value": 18379
+  },
+  {
+   "key": "7",
+   "value": 23326
+  },
+  {
+   "key": "8",
+   "value": 27465
+  },
+  {
+   "key": "9",
+   "value": 31853
+  },
+  {
+   "key": "10",
+   "value": 38473
+  },
+  {
+   "key": "11",
+   "value": 42647
+  },
+  {
+   "key": "12",
+   "value": 201266
+  },
+  {
+   "key": "13",
+   "value": 222316
+  }
+ ],
+ "highlight": {
+  "3": "a2",
+  "11": "a2"
+ },
+ "notes": [
+  {
+   "key": "3",
+   "text": "jump: new shell",
+   "dy": -30
+  },
+  {
+   "key": "11",
+   "text": "jump: first shell",
+   "dy": -30
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  },
+  {
+   "type": "jumps",
+   "after": [
+    "3",
+    "11"
+   ],
+   "factor": 4
+  }
+ ]
+}

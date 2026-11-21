@@ -1,0 +1,100 @@
+{
+ "id": "chem-first-order-decay",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "First-order reactions",
+ "title": "First-order decay: constant half-lives",
+ "caption": "A first-order reaction loses the same fraction in each equal time: the half-life is constant, here 6 s, whatever the starting concentration. t½ = ln 2 ÷ k, so k = 0.116 s⁻¹.",
+ "alt": "[A] against time from 1.0, halving to 0.5 at 6 s, 0.25 at 12 s and 0.125 at 18 s.",
+ "description": [
+  "1.0 at 0 s.",
+  "0.5 at 6 s.",
+  "0.25 at 12 s.",
+  "0.125 at 18 s: three equal half-lives."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u07",
+   "lesson": "Half-life"
+  }
+ ],
+ "range": {
+  "x": [
+   0,
+   24
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   6,
+   12,
+   18,
+   24
+  ],
+  [
+   0.125,
+   0.25,
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  6,
+  0.25
+ ],
+ "axisLabels": [
+  "time / s",
+  "[A] / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "exp(-0.115525*x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 6,
+   "y": 0.5,
+   "label": "t½"
+  },
+  {
+   "x": 12,
+   "y": 0.25,
+   "label": "2t½"
+  },
+  {
+   "x": 18,
+   "y": 0.125,
+   "label": "3t½"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.115525*x)",
+   "x": 6,
+   "y": 0.5
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.115525*x)",
+   "x": 12,
+   "y": 0.25
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.115525*x)",
+   "x": 18,
+   "y": 0.125,
+   "name": "three half-lives of 6 s: 1 → ½ → ¼ → ⅛"
+  }
+ ]
+}

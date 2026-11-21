@@ -1,0 +1,56 @@
+{
+ "id": "chem-stereoselectivity",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "Stereoselectivity",
+ "title": "Stereoselectivity: anti addition of bromine",
+ "caption": "Bromine adds to cyclohexene through a bromonium ion, which bromide opens from the opposite face. Only trans-1,2-dibromocyclohexane forms, as a racemic mixture of the (R,R) and (S,S) enantiomers; the cis isomer does not form.",
+ "alt": "Cyclohexene, an arrow labelled Br₂, and the two enantiomers of trans-1,2-dibromocyclohexane.",
+ "description": [
+  "Cyclohexene + Br₂.",
+  "Products: (1R,2R)- and (1S,2S)-1,2-dibromocyclohexane, the bromines on opposite faces (trans)."
+ ],
+ "between": [
+  "→",
+  "+"
+ ],
+ "betweenLabels": [
+  "Br₂",
+  ""
+ ],
+ "panels": [
+  {
+   "smiles": "C1=CCCCC1",
+   "label": "cyclohexene",
+   "groups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "Br[C@@H:1]1CCCC[C@H:2]1Br",
+   "label": "(1R,2R)-trans",
+   "cip": {
+    "1": "R",
+    "2": "R"
+   }
+  },
+  {
+   "smiles": "Br[C@H:1]1CCCC[C@@H:2]1Br",
+   "label": "(1S,2S)-trans",
+   "cip": {
+    "1": "S",
+    "2": "S"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "type": "enantiomers",
+   "panels": [
+    1,
+    2
+   ]
+  }
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "id": "chem-radical-chlorination",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "Radical intermediates",
+ "title": "Free-radical chlorination of methane",
+ "caption": "UV light splits Cl₂ into two chlorine radicals (initiation). Each Cl• takes an H from methane, and the methyl radical takes a Cl from Cl₂, regenerating Cl• (propagation): the two steps add up to CH₄ + Cl₂ → CH₃Cl + HCl and repeat thousands of times. Any two radicals meeting end a chain (termination).",
+ "alt": "A cycle: Cl• reacts with CH₄ to give CH₃• and HCl; CH₃• reacts with Cl₂ to give CH₃Cl and Cl•, which returns to the start. Initiation and termination are shown beside it.",
+ "description": [
+  "Initiation: Cl₂ → 2Cl• in UV light.",
+  "Propagation 1: Cl• + CH₄ → CH₃• + HCl.",
+  "Propagation 2: CH₃• + Cl₂ → CH₃Cl + Cl•.",
+  "Termination: for example Cl• + CH₃• → CH₃Cl, or 2Cl• → Cl₂."
+ ],
+ "layout": "cycle",
+ "radius": 110,
+ "nodes": [
+  {
+   "id": "cl",
+   "label": "Cl•",
+   "tone": "a2",
+   "sub": "from Cl₂ → 2Cl• (UV)"
+  },
+  {
+   "id": "me",
+   "label": "CH₃•",
+   "tone": "a5",
+   "sub": "methyl radical"
+  }
+ ],
+ "edges": [
+  {
+   "from": "cl",
+   "to": "me",
+   "label": "+ CH₄ → CH₃• + HCl",
+   "eq": "Cl• + CH4 → CH3• + HCl"
+  },
+  {
+   "from": "me",
+   "to": "cl",
+   "label": "+ Cl₂ → CH₃Cl + Cl•",
+   "eq": "CH3• + Cl2 → CH3Cl + Cl•"
+  }
+ ],
+ "centre": "propagation",
+ "notes": [
+  "Termination: Cl• + CH₃• → CH₃Cl; 2Cl• → Cl₂; 2CH₃• → C₂H₆"
+ ],
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "Cl• + CH4 → CH3• + HCl",
+    "CH3• + Cl2 → CH3Cl + Cl•"
+   ],
+   "net": "CH4 + Cl2 → CH3Cl + HCl"
+  },
+  {
+   "type": "regenerated",
+   "species": "Cl•",
+   "steps": [
+    "Cl• + CH4 → CH3• + HCl",
+    "CH3• + Cl2 → CH3Cl + Cl•"
+   ]
+  },
+  {
+   "type": "equation",
+   "eq": "Cl2 → 2Cl•"
+  },
+  {
+   "type": "equation",
+   "eq": "Cl• + CH3• → CH3Cl"
+  },
+  {
+   "type": "equation",
+   "eq": "2CH3• → C2H6"
+  }
+ ]
+}

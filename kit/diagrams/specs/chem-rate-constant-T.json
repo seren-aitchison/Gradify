@@ -1,0 +1,85 @@
+{
+ "id": "chem-rate-constant-T",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Rate constants",
+ "title": "How k changes with temperature",
+ "caption": "For a reaction with Ea = 50 kJ mol⁻¹, the Arrhenius equation predicts k nearly doubles for each 10 K rise near room temperature (×1.91 from 300 to 310 K) and rises ever faster.",
+ "alt": "k relative to its value at 300 K against temperature from 290 to 360 K, rising in an accelerating curve; at 310 K it is about 1.9.",
+ "description": [
+  "At 300 K, k is 1 (the reference).",
+  "At 310 K, about 1.9.",
+  "At 360 K, about 28."
+ ],
+ "range": {
+  "x": [
+   290,
+   360
+  ],
+  "y": [
+   0,
+   32
+  ]
+ },
+ "ticks": [
+  [
+   300,
+   310,
+   320,
+   330,
+   340,
+   350,
+   360
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ]
+ ],
+ "grid": [
+  10,
+  5
+ ],
+ "axisLabels": [
+  "T / K",
+  "k ÷ k(300 K)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "exp(6013.95*(1/300-1/x))",
+   "colour": "a3"
+  }
+ ],
+ "points": [
+  {
+   "x": 310,
+   "y": 1.9092,
+   "label": "×1.9 for +10 K",
+   "dx": 10
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "exp(6013.95*(1/300-1/x))",
+   "x": 310,
+   "between": [
+    1.85,
+    1.95
+   ],
+   "name": "k rises by a factor of about 1.9 from 300 to 310 K (Ea = 50 kJ mol⁻¹)"
+  },
+  {
+   "type": "point",
+   "expr": "exp(6013.95*(1/300-1/x))",
+   "x": 300,
+   "y": 1
+  }
+ ]
+}

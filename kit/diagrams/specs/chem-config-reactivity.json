@@ -1,0 +1,74 @@
+{
+ "id": "chem-config-reactivity",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Electronic structure and chemical properties",
+ "title": "Why sodium loses and chlorine gains",
+ "caption": "Sodium has one 3s electron outside a full shell; losing it leaves the neon configuration. Chlorine is one electron short of filling 3p; gaining one gives the argon configuration. The ions Na⁺ and Cl⁻ both have full outer sub-shells.",
+ "alt": "Box diagrams for Na, 3s¹, and Na⁺ with nothing in shell 3; Cl, 3s² 3p⁵, and Cl⁻, 3s² 3p⁶.",
+ "description": [
+  "Na: one electron in 3s.",
+  "Na⁺: the 3s box is empty; 2p is full.",
+  "Cl: 3s² 3p⁵, one 3p box singly occupied.",
+  "Cl⁻: 3s² 3p⁶, every box paired."
+ ],
+ "rows": [
+  {
+   "symbol": "Na",
+   "label": "Na, [Ne] 3s¹",
+   "config": "[Ne] 3s1",
+   "show": [
+    "2p",
+    "3s"
+   ],
+   "core": [
+    "1s",
+    "2s"
+   ]
+  },
+  {
+   "symbol": "Na",
+   "charge": 1,
+   "label": "Na⁺, [Ne]",
+   "config": "1s2 2s2 2p6",
+   "show": [
+    "2p",
+    "3s"
+   ],
+   "core": [
+    "1s",
+    "2s"
+   ]
+  },
+  {
+   "symbol": "Cl",
+   "label": "Cl, [Ne] 3s² 3p⁵",
+   "config": "[Ne] 3s2 3p5",
+   "show": [
+    "3s",
+    "3p"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p"
+   ]
+  },
+  {
+   "symbol": "Cl",
+   "charge": -1,
+   "label": "Cl⁻, [Ne] 3s² 3p⁶",
+   "config": "[Ne] 3s2 3p6",
+   "show": [
+    "3s",
+    "3p"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p"
+   ]
+  }
+ ]
+}

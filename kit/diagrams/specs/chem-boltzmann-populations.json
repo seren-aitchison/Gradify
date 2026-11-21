@@ -1,0 +1,101 @@
+{
+ "id": "chem-boltzmann-populations",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Statistical thermodynamics",
+ "title": "Boltzmann populations",
+ "caption": "The fraction of molecules in a level falls exponentially with its energy: Nᵢ/N₀ = e^(−Eᵢ/kT). At higher temperature the populations of the upper levels rise. These ratios explain the intensities of spectral lines and why reaction rates rise with temperature.",
+ "alt": "Relative population of levels 0 to 4 at two temperatures: both fall from 1, but the higher-temperature series falls more slowly.",
+ "description": [
+  "kT = ΔE: 1, 0.37, 0.14, 0.05, 0.02.",
+  "kT = 2ΔE: 1, 0.61, 0.37, 0.22, 0.14."
+ ],
+ "kind": "series",
+ "range": [
+  0,
+  1.1
+ ],
+ "ticks": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "yLabel": "Nᵢ / N₀",
+ "xLabels": [
+  "level 0",
+  "1",
+  "2",
+  "3",
+  "4"
+ ],
+ "series": [
+  {
+   "label": "kT = ΔE",
+   "keys": [
+    "a0",
+    "a1",
+    "a2",
+    "a3",
+    "a4"
+   ],
+   "colour": "a1",
+   "values": {
+    "a0": 1.0,
+    "a1": 0.3679,
+    "a2": 0.1353,
+    "a3": 0.0498,
+    "a4": 0.0183
+   }
+  },
+  {
+   "label": "kT = 2ΔE",
+   "keys": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+   ],
+   "colour": "a3",
+   "values": {
+    "b0": 1.0,
+    "b1": 0.6065,
+    "b2": 0.3679,
+    "b3": 0.2231,
+    "b4": 0.1353
+   }
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing",
+   "keys": [
+    "a0",
+    "a1",
+    "a2",
+    "a3",
+    "a4"
+   ]
+  },
+  {
+   "type": "decreasing",
+   "keys": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+   ]
+  },
+  {
+   "type": "order",
+   "keys": [
+    "a2",
+    "b2"
+   ]
+  }
+ ]
+}

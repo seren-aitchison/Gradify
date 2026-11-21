@@ -1,0 +1,69 @@
+{
+ "id": "chem-table-periods-groups",
+ "renderer": "table",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "Periods and groups",
+ "title": "Periods and groups",
+ "caption": "Rows are periods: the period number is the number of occupied electron shells. Columns are groups: elements in a group share their outer electron configuration, so they react alike. Group 1, group 17 and group 18 are highlighted.",
+ "alt": "The periodic table with groups 1 to 18 numbered across the top and periods 1 to 7 down the side; groups 1, 17 and 18 highlighted.",
+ "description": [
+  "Group numbers 1 to 18 across the top, period numbers 1 to 7 down the left.",
+  "Group 1 (the alkali metals) highlighted on the left.",
+  "Group 17 (the halogens) and group 18 (the noble gases) highlighted on the right."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "The periodic table and groups"
+  }
+ ],
+ "groups": true,
+ "periods": true,
+ "dim": true,
+ "highlight": {
+  "Li": "a3",
+  "Na": "a3",
+  "K": "a3",
+  "Rb": "a3",
+  "Cs": "a3",
+  "Fr": "a3",
+  "F": "a4",
+  "Cl": "a4",
+  "Br": "a4",
+  "I": "a4",
+  "At": "a4",
+  "Ts": "a4",
+  "He": "a5",
+  "Ne": "a5",
+  "Ar": "a5",
+  "Kr": "a5",
+  "Xe": "a5",
+  "Rn": "a5",
+  "Og": "a5"
+ },
+ "notes": [
+  "orange: group 1 · green: group 17 · purple: group 18"
+ ],
+ "claims": [
+  {
+   "type": "group",
+   "symbol": "Na",
+   "group": 1,
+   "period": 3
+  },
+  {
+   "type": "group",
+   "symbol": "Cl",
+   "group": 17,
+   "period": 3
+  },
+  {
+   "type": "group",
+   "symbol": "Kr",
+   "group": 18,
+   "period": 4
+  }
+ ]
+}

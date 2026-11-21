@@ -1,0 +1,58 @@
+{
+ "id": "chem-gas-particles",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Gases",
+ "title": "Gas particles",
+ "caption": "Gas particles are far apart compared with their size and move fast in straight lines in random directions, colliding with each other and with the walls. Collisions with the walls cause the gas's pressure.",
+ "alt": "A box of air: nitrogen and oxygen molecules widely spaced, with arrows showing random motion.",
+ "description": [
+  "Nitrogen and oxygen molecules spread through the box.",
+  "Arrows: each moving in a different direction."
+ ],
+ "species": {
+  "N2": {
+   "atoms": [
+    "N",
+    "N"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  }
+ },
+ "panelHeight": 200,
+ "panels": [
+  {
+   "title": "air in a container",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "N2",
+     8
+    ],
+    [
+     "O2",
+     2
+    ]
+   ],
+   "motion": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "classify",
+   "panel": 0,
+   "as": "mixture"
+  },
+  {
+   "type": "states",
+   "panel": 0,
+   "as": "gas"
+  }
+ ]
+}

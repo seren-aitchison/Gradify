@@ -1688,16 +1688,13 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   background: linear-gradient(180deg, rgba(var(--spec-rgb), .55), rgba(var(--spec-rgb), 0));
   opacity: .55; mix-blend-mode: screen;
 }
-/* the dock over text: clear, but dimmed enough that its labels always read */
+/* the dock over text: frosted, not magnified, so its labels always read */
 .co-reading .cx-dock { --clr-glow: color-mix(in srgb, var(--la) 55%, transparent); background:
     radial-gradient(70% 60% at 30% 0%, rgba(var(--spec-rgb), .22), transparent 70%),
     linear-gradient(180deg, rgba(var(--spec-rgb), .1), rgba(var(--spec-rgb), 0) 60%),
-    rgba(var(--surface-rgb), .62);
-  -webkit-backdrop-filter: blur(6px) saturate(220%) brightness(1.05); backdrop-filter: blur(6px) saturate(220%) brightness(1.05); }
+    rgba(var(--surface-rgb), .72);
+  -webkit-backdrop-filter: blur(22px) saturate(180%); backdrop-filter: blur(22px) saturate(180%); }
 .co-reading .cx-dock > * { text-shadow: 0 1px 6px rgba(var(--surface-rgb), .9); }
-/* Chromium: the lens. Everything behind clear glass is drawn slightly magnified, as through a drop of water */
-.lg-lens .co-reading :is(.cx-kc, .co-pncard, .cx-w-next) { -webkit-backdrop-filter: url(#lg-lens) saturate(200%) brightness(1.08); backdrop-filter: url(#lg-lens) saturate(200%) brightness(1.08); }
-.lg-lens .co-reading .cx-dock { -webkit-backdrop-filter: url(#lg-lens) blur(5px) saturate(220%); backdrop-filter: url(#lg-lens) blur(5px) saturate(220%); }
 
 /* ----- frosted glass: blurred, with a fine grain ----- */
 .co-reading :is(.cx-tree, .cx-widget:not(.cx-w-next)) {
@@ -1898,7 +1895,8 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-rings { position: fixed; right: max(8px, env(safe-area-inset-right)); top: 50%; z-index: 120; translate: 0 -50%; display: none; flex-direction: column; gap: 14px; padding: 16px 9px; border-radius: 40px; pointer-events: none;
   background: #050507; color: #fff; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .14); opacity: 0; transform: translateX(16px); transition: opacity .35s, transform .35s; }
 .cx-rings.peek { opacity: 1; transform: none; }
-@media (max-width: 1020px) { .co-reading .cx-rings { display: flex; } }
+/* only where the window has a margin beside the text for it: below that it would sit on the words */
+@media (max-width: 1020px) and (min-width: 900px) { .co-reading .cx-rings { display: flex; } }
 html.cx-focus .cx-rings { display: none !important; }
 .cx-rr { display: grid; justify-items: center; gap: 2px; }
 .cx-rri { position: relative; display: grid; place-items: center; width: 40px; height: 40px; }
@@ -2201,3 +2199,21 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .cx-part2[open] > summary small { display: none; }
 .cx-part2[open] { background: none; border-color: transparent; }
 .cx-part2[open] > summary { border-bottom: 1px solid rgba(var(--ink-rgb), .12); margin-bottom: 12px; }
+/* the practice toolkit now follows the notes, with its own heading */
+.cx-kit .cx-kith { grid-column: 1 / -1; margin: 0 0 4px; }
+
+/* ---------- Gradify glass on every course surface (tokens in kit/styles/base.css: the Pro banner's frosted glass) ----------
+   Frosted, never magnified: a soft brand tint, a 22px blur, bright inner edges and a thin spectrum rim. The floating bars
+   (tabs, the lesson toolbar, the dock) take the stronger tint, like the banner itself. The notes sheet keeps its own
+   calmer fill so long reading stays easy. */
+:root body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-tree, .cx-widget, .co-pncard, .cx-kc, .cx-w-next, .co-tabs, .cx-lbar, .cx-dock, .cx-habit) {
+  border: 1px solid transparent;
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur); backdrop-filter: var(--gg-blur);
+  box-shadow: var(--gg-spec), var(--gg-shadow);
+}
+:root body .co :is(.co-tabs, .cx-lbar, .cx-dock) { background: var(--gg-tint-strong) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim-strong) border-box; }
+:root body .co .co-read .co-notes { border: 1px solid transparent; background: linear-gradient(var(--lg-fill-sheet), var(--lg-fill-sheet)) padding-box, var(--gg-rim) border-box; }
+@media (prefers-reduced-transparency: reduce) {
+  :root body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-tree, .cx-widget, .co-pncard, .cx-kc, .cx-w-next, .co-tabs, .cx-lbar, .cx-dock, .cx-habit) { background: linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box, var(--gg-rim) border-box; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}

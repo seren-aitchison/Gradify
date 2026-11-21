@@ -1,0 +1,66 @@
+{
+ "id": "chem-buffer-region",
+ "renderer": "titration",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Buffers",
+ "title": "The buffer region",
+ "caption": "Titrating ethanoic acid with sodium hydroxide, the pH changes slowly over a wide range of added base: the solution contains both CH₃COOH and CH₃COO⁻ and resists change. This is the buffer region.",
+ "alt": "Titration curve of 0.1 mol dm⁻³ ethanoic acid with 0.1 mol dm⁻³ sodium hydroxide, with the flat middle section shaded as the buffer region.",
+ "description": [
+  "Start: pH about 2.9.",
+  "From about 2 to 22 cm³ the pH rises slowly from about 3.8 to 5.7: the buffer region.",
+  "A steep rise at 25 cm³, then levelling near pH 12."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "pKa": [
+     4.76
+    ]
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 50,
+ "curves": [
+  {
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       4.76
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1"
+  }
+ ],
+ "marks": {
+  "buffer": true
+ },
+ "claims": [
+  {
+   "type": "veq",
+   "value": 25
+  },
+  {
+   "type": "startPh",
+   "value": 2.88
+  }
+ ]
+}
