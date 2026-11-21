@@ -1,0 +1,21 @@
+{
+ "id": "chem-emission-absorption",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Emission and absorption",
+ "title": "Emission and absorption spectra of hydrogen",
+ "caption": "Hot hydrogen gas emits light only at certain wavelengths: bright lines on black. Cool hydrogen in front of a white light absorbs exactly the same wavelengths: dark lines on the continuous spectrum. The lines match because each corresponds to the same energy gap, ΔE = hc/λ.",
+ "alt": "Two spectrum strips from 380 to 720 nm: emission with coloured lines at 410, 434, 486 and 656 nm on black, and a full rainbow with dark lines at the same positions.",
+ "description": [
+  "Emission: violet 410, violet 434, blue-green 486 and red 656 nm lines on black.",
+  "Absorption: a continuous rainbow with dark lines at 410, 434, 486 and 656 nm."
+ ],
+ "kind": "spectrum",
+ "balmerNm": [
+  656,
+  486,
+  434,
+  410
+ ]
+}

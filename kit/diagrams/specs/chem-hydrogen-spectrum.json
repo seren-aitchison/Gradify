@@ -1,0 +1,31 @@
+{
+ "id": "chem-hydrogen-spectrum",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Atomic spectra",
+ "title": "The hydrogen spectrum",
+ "caption": "Hydrogen's energy levels, Eₙ = −13.6 eV ÷ n², crowd together towards n = ∞. Electrons falling to n = 1 emit ultraviolet (Lyman series), to n = 2 visible light (Balmer: 656, 486, 434 and 410 nm) and to n = 3 infrared (Paschen). Each line is one jump between two levels.",
+ "alt": "Energy levels n = 1 to 6, drawn to scale and converging below n = ∞, with downward arrows for the Lyman series to n = 1, the Balmer series to n = 2 and the Paschen series to n = 3.",
+ "description": [
+  "n = 1 at −13.6 eV, n = 2 at −3.40 eV, n = 3 at −1.51 eV, converging at 0.",
+  "Lyman series: arrows ending on n = 1 (ultraviolet).",
+  "Balmer series: arrows ending on n = 2 (visible).",
+  "Paschen series: arrows ending on n = 3 (infrared)."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u16",
+   "lesson": "Atomic and molecular spectra"
+  }
+ ],
+ "kind": "hydrogen",
+ "levels": 6,
+ "balmerNm": [
+  656,
+  486,
+  434,
+  410
+ ]
+}

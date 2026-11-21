@@ -1,0 +1,40 @@
+{
+ "id": "chem-aluminium-extraction",
+ "renderer": "cell",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Industrial electrochemistry",
+ "title": "Extracting aluminium",
+ "caption": "Aluminium oxide is dissolved in molten cryolite at about 950 °C, far below alumina's own melting point, and electrolysed. Aluminium forms at the carbon cathode lining; oxygen forms at the carbon anodes, which burn away to CO₂ and must be replaced.",
+ "alt": "An electrolysis cell of molten alumina in cryolite: carbon anodes at the top, a carbon cathode lining, aluminium collecting at the bottom.",
+ "description": [
+  "Cathode: Al³⁺ + 3e⁻ → Al, molten aluminium.",
+  "Anode: 2O²⁻ → O₂ + 4e⁻; the oxygen reacts with the carbon anodes.",
+  "Overall: 4Al³⁺ + 6O²⁻ → 4Al + 3O₂."
+ ],
+ "kind": "single",
+ "supply": true,
+ "vessel": {
+  "label": "Al₂O₃ in molten cryolite, 950 °C",
+  "colour": "#fde68a"
+ },
+ "net": "4Al3+ + 6O2- → 4Al + 3O2",
+ "halves": [
+  {
+   "electrode": "C",
+   "label": "carbon",
+   "role": "anode",
+   "half": "2O2- → O2 + 4e-",
+   "product": "O₂ (+ C → CO₂)",
+   "ions": "O²⁻"
+  },
+  {
+   "electrode": "C",
+   "label": "carbon lining",
+   "role": "cathode",
+   "half": "Al3+ + 3e- → Al",
+   "product": "Al(l)",
+   "ions": "Al³⁺"
+  }
+ ]
+}

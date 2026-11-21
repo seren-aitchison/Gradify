@@ -1,0 +1,59 @@
+{
+ "id": "chem-hess-law",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "unit": "u06",
+ "lesson": "Hess's law",
+ "title": "Hess's law",
+ "caption": "The enthalpy change depends only on the start and finish, not the route. Burning carbon straight to CO₂ releases 394 kJ mol⁻¹; going via CO (−111, then −283) gives the same total.",
+ "alt": "Hess triangle: C + O₂ top left, CO₂ top right, CO + ½O₂ at the bottom; direct route −394, indirect route −111 then −283.",
+ "description": [
+  "Direct: C + O₂ → CO₂, ΔH = −394 kJ mol⁻¹.",
+  "Indirect: C + ½O₂ → CO, −111; then CO + ½O₂ → CO₂, −283.",
+  "−111 + (−283) = −394: the same."
+ ],
+ "kind": "triangle",
+ "states": [
+  {
+   "id": "a",
+   "label": "C + O2"
+  },
+  {
+   "id": "b",
+   "label": "CO2"
+  },
+  {
+   "id": "c",
+   "label": "CO + ½O2"
+  }
+ ],
+ "steps": [
+  {
+   "from": "a",
+   "to": "b",
+   "dh": null,
+   "label": "ΔH₁"
+  },
+  {
+   "from": "a",
+   "to": "c",
+   "dh": -111,
+   "label": "ΔH₂"
+  },
+  {
+   "from": "c",
+   "to": "b",
+   "dh": -283,
+   "label": "ΔH₃"
+  }
+ ],
+ "find": {
+  "step": 0,
+  "value": -394
+ },
+ "equations": [
+  "C + O2 → CO2",
+  "C + ½O2 → CO",
+  "CO + ½O2 → CO2"
+ ]
+}

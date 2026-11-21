@@ -1,0 +1,141 @@
+{
+ "id": "chem-ie-trend-table",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "Ionisation energy trends",
+ "title": "First ionisation energy, hydrogen to calcium",
+ "caption": "Peaks at the noble gases, troughs at the alkali metals: the pattern repeats each period, the evidence for shells. Each period starts lower than the last because the outer electron is in a new, more shielded shell.",
+ "alt": "Line graph of first ionisation energy for elements 1 to 20, with peaks at He, Ne and Ar and troughs at Li, Na and K.",
+ "description": [
+  "Helium is the highest, 2372 kJ mol⁻¹.",
+  "Lithium, sodium and potassium are troughs at 520, 496 and 419.",
+  "Neon (2081) and argon (1521) are peaks."
+ ],
+ "kind": "line",
+ "dataset": "ie1",
+ "range": [
+  0,
+  2500
+ ],
+ "ticks": [
+  0,
+  500,
+  1000,
+  1500,
+  2000,
+  2500
+ ],
+ "yLabel": "first ionisation energy / kJ mol⁻¹",
+ "items": [
+  {
+   "key": "H",
+   "value": 1312
+  },
+  {
+   "key": "He",
+   "value": 2372
+  },
+  {
+   "key": "Li",
+   "value": 520
+  },
+  {
+   "key": "Be",
+   "value": 899
+  },
+  {
+   "key": "B",
+   "value": 801
+  },
+  {
+   "key": "C",
+   "value": 1086
+  },
+  {
+   "key": "N",
+   "value": 1402
+  },
+  {
+   "key": "O",
+   "value": 1314
+  },
+  {
+   "key": "F",
+   "value": 1681
+  },
+  {
+   "key": "Ne",
+   "value": 2081
+  },
+  {
+   "key": "Na",
+   "value": 496
+  },
+  {
+   "key": "Mg",
+   "value": 738
+  },
+  {
+   "key": "Al",
+   "value": 578
+  },
+  {
+   "key": "Si",
+   "value": 787
+  },
+  {
+   "key": "P",
+   "value": 1012
+  },
+  {
+   "key": "S",
+   "value": 1000
+  },
+  {
+   "key": "Cl",
+   "value": 1251
+  },
+  {
+   "key": "Ar",
+   "value": 1521
+  },
+  {
+   "key": "K",
+   "value": 419
+  },
+  {
+   "key": "Ca",
+   "value": 590
+  }
+ ],
+ "highlight": {
+  "He": "a2",
+  "Ne": "a2",
+  "Ar": "a2",
+  "Li": "a3",
+  "Na": "a3",
+  "K": "a3"
+ },
+ "claims": [
+  {
+   "type": "max",
+   "key": "He"
+  },
+  {
+   "type": "dip",
+   "key": "Li",
+   "after": "He"
+  },
+  {
+   "type": "dip",
+   "key": "Na",
+   "after": "Ne"
+  },
+  {
+   "type": "dip",
+   "key": "K",
+   "after": "Ar"
+  }
+ ]
+}

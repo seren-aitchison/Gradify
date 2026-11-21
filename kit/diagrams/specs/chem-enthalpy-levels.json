@@ -1,0 +1,42 @@
+{
+ "id": "chem-enthalpy-levels",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "unit": "u06",
+ "lesson": "Enthalpy",
+ "title": "An enthalpy level diagram",
+ "caption": "Neutralisation: H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ mol⁻¹. The products sit below the reactants on the enthalpy scale and the arrow points down: exothermic.",
+ "alt": "Two levels: H⁺(aq) + OH⁻(aq) above, H₂O(l) below, with a downward arrow labelled ΔH = −57.1 kJ mol⁻¹.",
+ "description": [
+  "Upper level: H⁺(aq) + OH⁻(aq).",
+  "Lower level: H₂O(l).",
+  "Arrow down: ΔH = −57.1 kJ mol⁻¹."
+ ],
+ "kind": "levels",
+ "height": [
+  230,
+  260
+ ],
+ "states": [
+  {
+   "id": "r",
+   "label": "H+(aq) + OH−(aq)"
+  },
+  {
+   "id": "p",
+   "label": "H2O(l)"
+  }
+ ],
+ "steps": [
+  {
+   "from": "r",
+   "to": "p",
+   "dh": -57.1,
+   "label": "ΔH",
+   "col": 0
+  }
+ ],
+ "equations": [
+  "H+ + OH- → H2O"
+ ]
+}

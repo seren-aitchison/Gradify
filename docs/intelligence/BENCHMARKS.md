@@ -55,7 +55,8 @@ A mastery estimate that means anything should predict this. Learners are split 7
 | Model | What it is |
 |---|---|
 | `gradify-dimension` | The six-dimension profile's value for the dimension the question tests (`evidenceFromAttempts` → `sixProfile`) |
-| `gradify-mastery` | The profile's overall mastery |
+| `gradify-mastery` | What the app predicts for the next answer: the profile's BKT model with the app's fitted parameters (`kit/learning/bkt.js`, `bkt-params.js`, fitted by `scripts/fit-bkt.mjs` on a different seed from the one scored) |
+| `gradify-blend` | The old overall mastery, a weighted average of the dimensions, kept for comparison |
 | `running-accuracy` | Baseline: share right so far, smoothed |
 | `bkt`, `bkt-forget` | Bayesian Knowledge Tracing, written from the published equations (`scripts/bench/bkt.mjs`) and fitted by grid search. Benchmark only, not in the product. |
 
@@ -89,6 +90,23 @@ Every card goes through the same code path as AI cards (`cardsFromPack`). A card
 - no long stretch without a break
 
 Any violation fails `npm test`. The benchmark also reports time used, top-three items placed, priority inversions and items squeezed below half their time.
+
+## Phase 1 results (20 November 2026, `feat/intelligence-phase1`)
+
+The four engine fixes from AUDIT.md §5 (items 1, 2, 4 and 7), each measured against the baseline below. The new
+numbers are the recorded baseline now (`tests/fixtures/bench/baseline.json`).
+
+| What changed | Measure | Before | After |
+|---|---|---|---|
+| Card checks: notation answers aren't "empty"; "plus or minus" isn't a list; one-character answers are flagged | good cards wrongly blocked / flagged / rewritten | 7.1% / 7.1% / 3.6% | 0% / 0% / 0% |
+| | flawed cards flagged (now for the right reasons) | 57.7% | 57.7% |
+| One recall function (`recallProbability` is the scheduler's `recallNow`) | `mastery-card` log loss | 0.539 | 0.475 |
+| Mastery is P(known) from fitted BKT | `gradify-mastery` log loss / AUC / ECE | 0.690 / 0.575 / 0.076 | 0.656 / 0.642 / 0.029 |
+| Readiness from FSRS memory, fading to the fitted guessing rate | log loss / bias / 80% range holds / width | 0.719 / −0.119 / 85.6% / 0.487 | 0.667 / −0.012 / 80.2% / 0.407 |
+
+What these can't say: all of them are on synthetic learners. The BKT parameters were fitted on the simulator too
+(provisional). Fit them on real, anonymised answers with `node scripts/fit-bkt.mjs --attempts attempts.jsonl` (the
+export below), which also fits each subject with enough answers, then re-run `npm run bench -- --attempts …`.
 
 ## Baseline (17 November 2026, commit on `feat/intelligence-bench`)
 

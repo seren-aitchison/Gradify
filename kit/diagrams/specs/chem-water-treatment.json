@@ -1,0 +1,65 @@
+{
+ "id": "chem-water-treatment",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Water treatment",
+ "title": "Making water safe to drink",
+ "caption": "River or reservoir water is screened to remove large debris, treated with a coagulant (aluminium or iron(III) sulfate) so fine particles clump and settle, filtered through sand, and finally chlorinated to kill microorganisms.",
+ "alt": "A flow: screening → coagulation and sedimentation → sand filtration → chlorination → drinking water.",
+ "description": [
+  "Screening: removes twigs and litter.",
+  "Coagulation and sedimentation: small particles clump and settle.",
+  "Sand filtration: removes remaining particles.",
+  "Chlorination: kills bacteria."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Using resources: water and life cycle assessment"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "screening"
+  },
+  {
+   "id": "b",
+   "label": "coagulation",
+   "sub": "Al₂(SO₄)₃"
+  },
+  {
+   "id": "c",
+   "label": "sand filter"
+  },
+  {
+   "id": "d",
+   "label": "chlorination",
+   "sub": "Cl₂",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ],
+ "claims": [
+  {
+   "type": "equation",
+   "eq": "Cl2 + H2O → HCl + HClO"
+  }
+ ]
+}

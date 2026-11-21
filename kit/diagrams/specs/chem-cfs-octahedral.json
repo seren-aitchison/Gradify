@@ -1,0 +1,26 @@
+{
+ "id": "chem-cfs-octahedral",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Crystal field theory",
+ "title": "Splitting of the d orbitals in an octahedral complex",
+ "caption": "Six ligands approaching along the axes repel the d orbitals that point at them (eg: dz² and dx²−y²) more than those between the axes (t₂g). The gap is Δo. Ti³⁺ (d¹) puts its single electron in t₂g; absorbing light promotes it to eg.",
+ "alt": "Energy diagram: two eg orbitals above three t₂g orbitals, with the gap Δo; one electron in t₂g for Ti³⁺.",
+ "description": [
+  "Upper: eg, two orbitals.",
+  "Lower: t₂g, three orbitals, holding one electron for Ti³⁺.",
+  "The gap between them is Δo."
+ ],
+ "kind": "cfs",
+ "panels": [
+  {
+   "metal": "Ti",
+   "ox": 3,
+   "d": 1,
+   "unpaired": 1,
+   "moment": 1.73,
+   "title": "[Ti(H₂O)₆]³⁺, d¹"
+  }
+ ]
+}

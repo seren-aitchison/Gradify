@@ -1,0 +1,47 @@
+{
+ "id": "chem-surface-tension",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Surface tension",
+ "title": "Surface tension",
+ "caption": "Molecules inside a liquid are pulled equally in all directions by their neighbours; molecules at the surface are pulled only sideways and inwards. The surface behaves like a stretched skin, strongest in water because of hydrogen bonding.",
+ "alt": "Water molecules in a beaker; those at the surface have neighbours only beside and below them.",
+ "description": [
+  "Molecules in the bulk are surrounded on every side.",
+  "Surface molecules have no neighbours above, so they are pulled inwards."
+ ],
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "panelHeight": 180,
+ "panels": [
+  {
+   "title": "water",
+   "container": "beaker",
+   "arrangement": "liquid",
+   "contents": [
+    [
+     "H2O",
+     20
+    ]
+   ],
+   "fill": 0.86,
+   "note": "surface molecules: pulled sideways and down only"
+  }
+ ],
+ "claims": [
+  {
+   "type": "states",
+   "panel": 0,
+   "as": "liquid"
+  }
+ ]
+}

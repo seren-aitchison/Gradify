@@ -1,0 +1,18 @@
+{
+ "id": "chem-reaction-setup",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Reaction setup",
+ "title": "Setting up a reaction",
+ "caption": "A round-bottomed flask heated in a mantle with a reflux condenser on top lets a reaction be heated for a long time without losing solvent; a dropping funnel adds a reagent slowly to control an exothermic reaction.",
+ "alt": "A round-bottomed flask on a heating mantle with a vertical condenser and a dropping funnel.",
+ "description": [
+  "Flask with reaction mixture and anti-bumping granules.",
+  "Vertical condenser, water in at the bottom.",
+  "Dropping funnel to add reagent dropwise."
+ ],
+ "kind": "reflux",
+ "funnel": "dropping funnel",
+ "mixture": "reaction mixture"
+}

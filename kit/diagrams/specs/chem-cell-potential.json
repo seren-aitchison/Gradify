@@ -1,0 +1,34 @@
+{
+ "id": "chem-cell-potential",
+ "renderer": "cell",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Cell potentials",
+ "title": "Calculating a cell potential",
+ "caption": "E°cell = E°(positive electrode) − E°(negative electrode). For silver and zinc: 0.80 − (−0.76) = 1.56 V. Each silver ion takes one electron, so two are needed for each zinc atom: Zn + 2Ag⁺ → Zn²⁺ + 2Ag.",
+ "alt": "A zinc half-cell and a silver half-cell joined by a salt bridge, with a voltmeter reading 1.56 V.",
+ "description": [
+  "Zinc anode: Zn → Zn²⁺ + 2e⁻ (E° −0.76 V).",
+  "Silver cathode: Ag⁺ + e⁻ → Ag (E° +0.80 V).",
+  "E°cell = 0.80 − (−0.76) = 1.56 V; overall Zn + 2Ag⁺ → Zn²⁺ + 2Ag."
+ ],
+ "kind": "galvanic",
+ "ecell": 1.56,
+ "net": "Zn + 2Ag+ → Zn2+ + 2Ag",
+ "halves": [
+  {
+   "couple": "Zn2+/Zn",
+   "electrode": "Zn",
+   "solution": "Zn2+(aq)",
+   "role": "anode",
+   "half": "Zn → Zn2+ + 2e-"
+  },
+  {
+   "couple": "Ag+/Ag",
+   "electrode": "Ag",
+   "solution": "Ag+(aq)",
+   "role": "cathode",
+   "half": "Ag+ + e- → Ag"
+  }
+ ]
+}

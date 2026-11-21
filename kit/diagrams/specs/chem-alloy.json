@@ -1,0 +1,68 @@
+{
+ "id": "chem-alloy",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Metals and alloys",
+ "title": "Why alloys are harder",
+ "caption": "In a pure metal the layers of identical atoms slide over each other easily. Larger atoms of a second metal (here tin in copper, making bronze) distort the layers, so they cannot slide as easily and the alloy is harder.",
+ "alt": "Left: a regular lattice of copper atoms. Right: the same lattice with a few larger tin atoms disrupting the rows.",
+ "description": [
+  "Pure copper: regular rows that slide easily.",
+  "Bronze: larger tin atoms among the copper, distorting the rows."
+ ],
+ "species": {
+  "Cu": {
+   "atoms": [
+    "Cu"
+   ]
+  },
+  "Sn": {
+   "atoms": [
+    "Sn"
+   ]
+  }
+ },
+ "steps": [
+  null
+ ],
+ "panels": [
+  {
+   "title": "pure copper",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "Cu",
+     24
+    ]
+   ]
+  },
+  {
+   "title": "bronze (Cu + Sn)",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "Cu",
+     20
+    ],
+    [
+     "Sn",
+     4
+    ]
+   ],
+   "alternate": false
+  }
+ ],
+ "claims": [
+  {
+   "type": "classify",
+   "panel": 0,
+   "as": "element"
+  },
+  {
+   "type": "classify",
+   "panel": 1,
+   "as": "mixture"
+  }
+ ]
+}

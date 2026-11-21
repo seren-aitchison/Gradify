@@ -8,7 +8,8 @@
 // Every top-level entry in the repository must be listed in PUBLISH or EXCLUDE, so a new folder is never
 // published, or silently left out, without a decision.
 import { execFileSync } from "node:child_process";
-import { mkdir, copyFile, readFile, readdir, stat, mkdtemp, rm } from "node:fs/promises";
+import { mkdir, copyFile, readFile, writeFile, readdir, stat, mkdtemp, rm } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import { join, dirname, resolve, relative, sep, posix } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -41,6 +42,7 @@ export const EXCLUDE = {
     "scripts": "operational and deployment scripts",
     "supabase": "database migrations and server function source",
     "tests": "automated tests",
+    "labs": "design research prototypes (the Liquid Glass material lab), opened locally and never published",
     "package.json": "development tooling",
     "package-lock.json": "development tooling",
   },
@@ -92,11 +94,29 @@ export function classify(files) {
 export async function build(out, { root = REPO, files = tracked(root) } = {}) {
   const { publish, unclassified } = classify(files);
   if (unclassified.length) throw new Error(`not in the allowlist or the exclusions: ${unclassified.join(", ")}. Add each to PUBLISH or EXCLUDE in scripts/build-site.mjs`);
+  const digests = [];
   for (const f of publish) {
     await mkdir(dirname(join(out, f)), { recursive: true });
     await copyFile(join(root, f), join(out, f));
+    if (f !== "sw.js") digests.push([f, createHash("sha256").update(await readFile(join(out, f))).digest("hex")]);
   }
+  await stampServiceWorker(out, deployVersion(digests));
   return publish;
+}
+
+// the deploy's version: a hash of each published path with its own file's hash, sorted, so no two different sites share one
+export const deployVersion = (digests) =>
+  createHash("sha256").update(JSON.stringify([...digests].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)))).digest("hex").slice(0, 12);
+
+// The service worker serves each deploy from its own cache (sw.js): its cache name carries a hash of everything
+// published, so a deploy that changes anything installs a new worker with a fresh, consistent cache, and one that
+// changes nothing keeps the old one.
+export async function stampServiceWorker(out, version) {
+  const file = join(out, "sw.js");
+  const text = await readFile(file, "utf8").catch(() => null); if (text === null) return;
+  const stamped = text.replace(/const CACHE = "(gradify-v\d+)";/, `const CACHE = "$1-${version}";`);
+  if (stamped === text) throw new Error("sw.js: no CACHE name to stamp with the deploy version");
+  await writeFile(file, stamped);
 }
 
 async function walk(dir, base = dir) {

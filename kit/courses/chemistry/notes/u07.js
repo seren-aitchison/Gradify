@@ -11,6 +11,7 @@ H: Defining rate
 - Can also be measured as change in mass, volume of gas or colour per unit time.
 - **Initial rate** is the rate at the start, found from the gradient of the tangent at t = 0.
 - Rate usually **decreases** as reactants are used up.
+D: chem-rate-curve
 H: Measuring rates
 - **Gas volume**: gas syringe or upturned measuring cylinder.
 - **Mass loss**: balance, when gas escapes.
@@ -52,6 +53,7 @@ H: Successful collisions
 - They must collide with energy at least equal to the **activation energy**.
 - They must collide with the correct **orientation**.
 - Only a small fraction of collisions are successful.
+D: chem-collision-ea
 H: Factors
 - **Concentration** or **pressure**: more particles per volume, more frequent collisions.
 - **Surface area**: smaller pieces expose more particles to collision.
@@ -93,6 +95,7 @@ H: Definition
 - It is needed to break bonds and start the reaction.
 - Reactions with high Ea are slow at room temperature.
 - Shown as the energy gap between reactants and the top of the energy profile.
+D: chem-activation-energy
 H: Energy distributions
 - The **Maxwell-Boltzmann distribution** shows the energies of particles.
 - Only particles in the tail beyond Ea can react.
@@ -134,6 +137,7 @@ H: Features
 - **Reactants** and **products** are shown as levels.
 - The **peak** is the **transition state**, the highest-energy arrangement.
 - Ea is the height from reactants to the peak; ΔH is the gap from reactants to products.
+D: chem-reaction-profile-steps
 H: Multi-step reactions
 - Each step has its own transition state.
 - **Intermediates** sit in **troughs** between peaks.
@@ -175,6 +179,7 @@ H: How catalysts work
 - It provides an **alternative pathway** with **lower activation energy**.
 - It does not change ΔH or the position of equilibrium.
 - It speeds up forward and reverse reactions equally.
+D: chem-catalysed-profile
 H: Importance
 - Lower temperatures can be used, saving energy and costs.
 - Reduces waste by increasing selectivity.
@@ -216,6 +221,7 @@ H: Homogeneous catalysts
 - It forms an **intermediate** with a reactant.
 - The intermediate reacts to give products and regenerate the catalyst.
 - Often involves changes in oxidation state.
+D: chem-catalyst-distribution
 H: Examples
 - **Fe²⁺ catalyses** S₂O₈²⁻ + 2I⁻ → 2SO₄²⁻ + I₂.
 - Fe²⁺ reduces S₂O₈²⁻ to SO₄²⁻, becoming Fe³⁺; Fe³⁺ oxidises I⁻ to I₂, returning to Fe²⁺.
@@ -257,6 +263,7 @@ H: Mechanism
 - **Adsorption**: reactants bond to **active sites** on the surface.
 - Bonds in reactants weaken, and new bonds form.
 - **Desorption**: products leave the surface.
+D: chem-heterogeneous-steps
 H: Industrial use
 - **Iron** in the Haber process.
 - **Vanadium(V) oxide** in the Contact process.
@@ -298,6 +305,7 @@ H: Enzymes as catalysts
 - They stabilise the **transition state**, lowering Ea.
 - They are highly **specific**.
 - They can speed reactions by factors of millions or more.
+D: chem-michaelis-menten
 H: Kinetics
 - At low substrate concentration, rate rises proportionally (first order in substrate).
 - At high concentration, active sites are saturated and rate reaches **Vmax** (zero order).
@@ -339,6 +347,7 @@ H: The rate equation
 - k is the **rate constant**.
 - m and n are the **orders** with respect to A and B.
 - The **overall order** is m + n.
+D: chem-rate-vs-conc-orders
 H: Key points
 - Orders are usually 0, 1 or 2.
 - Orders are found by **experiment**, not from the balanced equation.
@@ -380,6 +389,7 @@ H: Initial rates method
 - Compare how the initial rate changes.
 - Doubling [A] with no change in rate: zero order; rate doubles: first order; rate quadruples: second order.
 - Then substitute into the rate equation to find k.
+D: chem-orders-conc-time
 H: Graphs and units
 - **Rate-concentration graphs**: zero order is horizontal, first order a straight line through the origin, second order a curve.
 - Units of k depend on overall order.
@@ -421,6 +431,7 @@ H: Zero order
 - The concentration-time graph is a **straight line** with gradient −k.
 - Units of k: mol dm⁻³ s⁻¹.
 - Half-life **decreases** as concentration falls.
+D: chem-zero-order
 H: Why zero order happens
 - A reactant is in large excess and its concentration barely changes.
 - A surface or enzyme is **saturated**, so adding more reactant does not increase rate.
@@ -462,6 +473,7 @@ H: First order
 - Rate-concentration graph: straight line through the origin with gradient k.
 - Concentration-time graph: **exponential decay**.
 - Units of k: **s⁻¹**.
+D: chem-first-order-decay
 H: Half-life
 - The **half-life** is constant: t½ = ln 2 ÷ k ≈ 0.693 ÷ k.
 - Independent of starting concentration.
@@ -503,6 +515,7 @@ H: Second order
 - Doubling [A] in rate = k[A]² quadruples the rate.
 - Units of k: **dm³ mol⁻¹ s⁻¹**.
 - Rate-concentration graph: a curve; rate against [A]² is a straight line.
+D: chem-second-order-inverse
 H: Half-life and examples
 - Half-life **increases** as concentration falls: t½ = 1 ÷ (k[A]₀).
 - Each successive half-life is double the previous one.
@@ -544,6 +557,7 @@ H: The rate constant
 - A **larger k** means a **faster** reaction at the same concentrations.
 - k is constant at a given temperature.
 - It does **not** change with concentration.
+D: chem-rate-constant-T
 H: Units and changes
 - Units follow from rate ÷ concentration terms: (mol dm⁻³)¹⁻ⁿ s⁻¹ for overall order n.
 - Third order: dm⁶ mol⁻² s⁻¹.
@@ -585,6 +599,7 @@ H: Definition and orders
 - **Zero order**: t½ = [A]₀ ÷ 2k, decreases as concentration falls.
 - **First order**: t½ = 0.693 ÷ k, constant.
 - **Second order**: t½ = 1 ÷ k[A]₀, increases as concentration falls.
+D: chem-first-order-decay
 H: Uses
 - Identifying reaction order from data.
 - **Radioactive dating**: carbon-14 and uranium-lead.
@@ -626,6 +641,7 @@ H: The equations
 - **First order**: ln[A] = ln[A]₀ − kt.
 - **Second order**: 1/[A] = 1/[A]₀ + kt.
 - Each gives a straight line when the right quantity is plotted against t.
+D: chem-ln-first-order
 H: Using plots
 - Plot [A], ln[A] and 1/[A] against time.
 - The plot that is a **straight line** shows the order.
@@ -667,6 +683,7 @@ H: The equation
 - A is the **pre-exponential factor**, related to collision frequency and orientation.
 - e^(−Ea/RT) is the fraction of collisions with enough energy.
 - Ea in J mol⁻¹, R = 8.314 J K⁻¹ mol⁻¹, T in K.
+D: chem-arrhenius-plot
 H: Arrhenius plots
 - Taking logs: **ln k = ln A − Ea/RT**.
 - Plotting ln k against 1/T gives a straight line.
@@ -708,6 +725,7 @@ H: Explaining the effect
 - More importantly, a larger fraction of collisions exceed Ea.
 - Many reactions near room temperature roughly **double** in rate per 10 °C rise.
 - The exact factor depends on Ea.
+D: chem-maxwell-boltzmann-ea
 H: Consequences
 - **Refrigeration** slows food spoilage.
 - Body temperature regulates enzyme reaction rates.
@@ -749,6 +767,7 @@ H: Mechanisms
 - **Molecularity** is the number of particles in an elementary step: unimolecular, bimolecular or termolecular.
 - Steps add up to the overall equation.
 - **Intermediates** are formed in one step and used in another.
+D: chem-mechanism-profile
 H: Linking to rate
 - For an elementary step, the rate equation follows its molecularity.
 - The **rate-determining step** controls the overall rate.
@@ -790,6 +809,7 @@ H: The slow step
 - The overall rate cannot be faster than this step.
 - It is like the narrowest point of a bottleneck.
 - It usually has the highest activation energy.
+D: chem-rds-profile
 H: Using the RDS
 - The rate equation contains species in the RDS and any steps before it.
 - Species only involved after the RDS are zero order.
@@ -831,6 +851,7 @@ H: Features
 - Reactants enter and products leave at different points.
 - Intermediates are catalyst-bound species within the loop.
 - Many involve **oxidative addition**, insertion and **reductive elimination** at metal centres.
+D: chem-catalytic-cycle
 H: Measuring performance
 - **Turnover number** (TON): moles of product per mole of catalyst before it deactivates.
 - **Turnover frequency** (TOF): turnovers per unit time.
@@ -872,6 +893,7 @@ H: Methods
 - **Discontinuous (sampling)**: withdrawing samples, **quenching** them and titrating.
 - **Clock reactions**: timing to a sudden colour change.
 - Temperature is controlled with a **water bath**.
+D: chem-initial-rates
 H: Errors
 - Keep all variables constant except the one being changed.
 - Start timing accurately when reactants mix.

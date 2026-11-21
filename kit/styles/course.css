@@ -48,7 +48,7 @@
 .co-me { display: flex; gap: 14px; align-items: center; }
 .co-me > div:last-child { flex: 1; min-width: 0; }
 .co-lvbadge { width: 58px; height: 58px; flex: none; display: grid; place-items: center; align-content: center; border-radius: 16px; background: var(--spectrum); box-shadow: 0 8px 24px -8px #f055dd; color: #fff; }
-.co-lvbadge b { font-size: 22px; line-height: 1; } .co-lvbadge small { font-size: 9.5px; color: var(--fg); text-transform: uppercase; letter-spacing: .1em; }
+.co-lvbadge b { font-size: 22px; line-height: 1; } .co-lvbadge small { font-size: 9.5px; color: #fff; text-transform: uppercase; letter-spacing: .1em; padding: 1px 4px; border-radius: 4px; background: rgba(8, 8, 20, .62); }
 .co-bar { height: 8px; margin: 7px 0 5px; border-radius: 9px; background: rgba(var(--ink-rgb), .08); overflow: hidden; }
 .co-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--a, #4641ff), var(--b, #f055dd)); transition: width .5s; }
 .co-bar.warm i { background: linear-gradient(90deg, #ff5600, #ffc002); }
@@ -60,7 +60,7 @@
 .co-ring { width: 76px; height: 76px; flex: none; transform: rotate(-90deg); }
 .co-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
 .co-ring .bg { stroke: rgba(var(--ink-rgb), .08); } .co-ring .fg { stroke: #40d4b1; transition: stroke-dashoffset .6s; filter: drop-shadow(0 0 6px rgba(64, 212, 177, .6)); }
-.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(16px, 1fr)); gap: 5px; margin-top: 10px; }
+.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 6px; margin-top: 10px; }
 .co-dots a { aspect-ratio: 1; border-radius: 5px; background: linear-gradient(0deg, var(--a) calc(var(--p) * 100%), rgba(var(--ink-rgb), .07) calc(var(--p) * 100%)); border: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
 .co-dots a:hover { outline: 2px solid var(--fg); }
 .co-badges { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 10px; }
@@ -139,7 +139,9 @@
 .co-crumbs { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--mute); }
 .co-crumbs a { color: var(--fg); text-decoration: none; }
 .co-steps { display: flex; gap: 4px; margin: 12px 0 0; }
-.co-steps a { flex: 1; height: 6px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); }
+.co-steps a { flex: 1; height: 6px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); position: relative; }
+/* each lesson's bar is thin to look at but tall to tap: an invisible target around it */
+.co-steps a::before { content: ""; position: absolute; inset: -16px -2px; }
 .co-steps a.done { background: linear-gradient(90deg, var(--a), var(--b)); }
 .co-steps a.here { background: var(--invert-bg); box-shadow: 0 0 10px rgba(255, 255, 255, .6); }
 .co-notes { margin-top: 16px; }
@@ -460,13 +462,24 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 /* overview */
 .co-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 22px; align-items: stretch; padding: clamp(20px, 3vw, 34px); border-radius: 18px; background: radial-gradient(90% 120% at 0 0, color-mix(in srgb, var(--a) 26%, transparent), transparent 60%), radial-gradient(80% 110% at 100% 100%, color-mix(in srgb, var(--b) 20%, transparent), transparent 60%), rgba(var(--ink-rgb), .02); border: 1px solid color-mix(in srgb, var(--a) 35%, var(--line)); }
 .co-hero h2 { margin: 8px 0 10px; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.045em; line-height: 1.02; }
-.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: #cfd3d8; max-width: 620px; }
+.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: rgba(var(--ink-rgb), .82); max-width: 620px; }
 .co-herostats { display: flex; flex-wrap: wrap; gap: 18px; margin: 4px 0 18px; } .co-herostats b { display: block; font-size: 28px; letter-spacing: -.03em; } .co-herostats small { color: var(--mute); font-size: 12.5px; }
 .co-hero .co-row { justify-content: flex-start; flex-wrap: wrap; }
 .co-bigsearch { position: relative; display: flex; align-items: center; gap: 8px; margin-top: 18px; padding: 0 14px; border-radius: 14px; background: rgba(var(--sink-rgb), .35); border: 1px solid var(--line-strong); color: var(--mute); }
 .co-bigsearch input { flex: 1; padding: 13px 0; border: 0; background: none; color: var(--fg); font: 15px var(--sans); outline: none; min-width: 0; }
 .co-bigsearch .co-results { position: absolute; top: 100%; left: 0; transform: none; margin-top: 6px; }
 .co-herolab .co-lab { height: 100%; margin: 0; }
+/* the hero's lab keeps one size from first paint: the stage (a whole periodic table can be ~1500px tall) scrolls inside
+   the card instead of stretching the hero when the interactive loads, which pushed the page down by a screen or more */
+.co-herolab .co-lab { display: flex; flex-direction: column; }
+.co-herolab .co-labstage { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+/* the preview shows the interactive itself; its model note and review status are on the full Lab page */
+.co-herolab .co-labnote, .co-herolab .co-labstatus { display: none; }
+@media (min-width: 901px) {
+  .co-herolab { position: relative; min-height: 600px; }   /* the text column sets the row's height, at least this tall */
+  .co-herolab .co-lab { position: absolute; inset: 0; }
+}
+@media (max-width: 900px) { .co-herolab .co-labstage { flex: none; height: min(70vh, 560px); } }
 .co-osec { margin-top: 40px; }
 .co-learn { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .co-learn div { padding: 16px; border-radius: 16px; background: rgba(var(--ink-rgb), .03); border: 1px solid var(--line); } .co-learn p { margin: 6px 0 0; color: var(--mute); font-size: 14px; line-height: 1.5; }
@@ -813,7 +826,9 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 /* the lesson's header */
 .co-lhead { position: relative; padding-bottom: 28px !important; }
 .co-lhead .co-licon { float: right; margin: -6px -6px 12px 20px; }
-.co-lhead h2 { font-size: clamp(32px, 4.6vw, 52px) !important; line-height: 1.04; letter-spacing: -.04em; margin-top: 12px !important; text-wrap: balance; }
+/* the lesson title is the page's heading (h1) while reading: the course header above it is hidden then */
+.co-lhead h1 { margin: 0; }
+.co-lhead :is(h1, h2) { font-size: clamp(32px, 4.6vw, 52px) !important; line-height: 1.04; letter-spacing: -.04em; margin-top: 12px !important; text-wrap: balance; }
 .co-lhead .mv-lead { font-size: clamp(17px, 1.6vw, 19.5px); line-height: 1.6; max-width: 62ch; margin-top: 16px; text-wrap: pretty; }
 .co-lhead .mv-chips { margin-top: 20px; gap: 8px; }
 .co-jump { text-decoration: none; color: var(--fg); cursor: pointer; }
@@ -1235,7 +1250,7 @@ a.cx-sess:hover { transform: translateY(-3px); border-color: color-mix(in srgb, 
 .cx-rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 18px 0; }
 .cx-rcard { display: grid; gap: 4px; align-content: start; padding: 18px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .035); color: var(--fg); text-decoration: none; transition: transform .18s, border-color .18s; }
 a.cx-rcard:hover { transform: translateY(-3px); border-color: var(--line-strong); }
-.cx-rcard.off { opacity: .6; }
+.cx-rcard.off { opacity: 1; } .cx-rcard.off :is(b, .cx-rci) { opacity: .7; }
 .cx-rci { position: relative; display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 13px; background: rgba(var(--ink-rgb), .07); }
 .cx-rci i { position: absolute; top: -6px; right: -8px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; font: 700 11px/20px var(--sans); font-style: normal; text-align: center; color: #fff; background: #ff3d6e; }
 .cx-rcard b { font-size: 17px; } .cx-rcard p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--mute); }
@@ -1404,8 +1419,6 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
   html.cx-focus .co.cx-split.co-reading .co-body, html.cx-focus .co.cx-split.co-reading .co-body.has-tree { grid-template-columns: minmax(0, 1500px); }
 }
 /* views fade in, so moving around feels continuous */
-.co-main.cx-enter { animation: cx-enter .2s cubic-bezier(.2, .8, .2, 1); }
-@keyframes cx-enter { from { opacity: .4; transform: translateY(4px); } }
 /* Next up: the syllabus, simplified to what to do now */
 .cx-nextgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; align-items: start; }
 .cx-nextup .cx-ll + .cx-ll { margin-top: 4px; }
@@ -1415,8 +1428,7 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 .cx-rn + ul { margin: 0; padding-left: 20px; line-height: 1.55; } .cx-rn + ul li + li { margin-top: 4px; }
 .cx-rnsecs { display: flex; flex-wrap: wrap; gap: 6px; }
 .cx-rnsecs .co-chip { cursor: pointer; border: 1px solid var(--line); font: inherit; font-size: 13px; }
-@media (prefers-reduced-motion: reduce) { .co-main.cx-enter { animation: none; } .cx-seclink { transition: none; } }
-html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
+@media (prefers-reduced-motion: reduce) { .cx-seclink { transition: none; } }
 @media (max-width: 760px) { .cx-secname, .cx-lact .cx-save:not([data-tone="warn"]), .cx-lact [data-revnotes] { display: none; } }
 @media print { .cx-seclink, .cx-secname, .cx-splitpane { display: none !important; } }
 /* explore related topics (a drawer from a lesson) */
@@ -1434,3 +1446,769 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-peek p { margin: 4px 0; } .cx-peek ul { margin: 4px 0; padding-left: 18px; }
 .cx-peekterms { display: flex; flex-wrap: wrap; gap: 6px; } .cx-peekterms span { padding: 2px 8px; border-radius: 999px; background: rgba(var(--ink-rgb), .07); font-size: 12px; }
 .cx-relfoot { margin: 6px 0 0; }
+/* today's topic quest: one topic, three steps (kit/game/quests.js topicQuest) */
+.cx-tquest { border-color: rgba(140, 39, 202, .45); background: radial-gradient(120% 140% at 0% 0%, rgba(140, 39, 202, .14), transparent 60%), rgba(var(--surface-rgb), .5); }
+.cx-tqxp { font: 600 12px var(--mono); color: var(--mute); }
+.cx-tqname { margin: 0 0 10px; font-size: 13.5px; color: var(--mute); } .cx-tqname b { display: block; font-size: 16px; color: var(--fg); }
+
+/* ---------- Touch: tap targets at least 44px (WCAG 2.5.5) ----------
+   Only on touch screens (pointer: coarse), so mouse layouts are unchanged. Inline links grow an invisible margin of
+   tap area (padding taken back by a negative margin), so nothing on the page moves. */
+@media (pointer: coarse) {
+  .cx-crumbs a, .cx-upnext a, .cx-sech a, .cx-qt a { padding-block: 14px; margin-block: -14px; }
+  .cx-stages a { min-height: 44px; }
+  .co-tabs > a, .cx-morebtn { min-height: 44px; display: inline-flex; align-items: center; }
+  .cx-pin { min-height: 44px; padding-block: 8px; }
+  .cx-ib { width: 44px; height: 44px; }
+  .cx-ob { min-height: 44px; min-width: 44px; justify-content: center; }
+  .co-askform input, .co-askform .btn, .co-dirbox .btn { min-height: 44px; }
+  .co-tmodes button, .aq .btn { min-height: 44px; }
+  .cx-mrl { min-height: 44px; }
+  /* the mastery grid's cells (one per lesson, 12px) are too dense to tap one by one: on a touch screen the row's
+     chapter link is the target, and the cells are its picture */
+  .cx-mrc a { pointer-events: none; }
+  /* the activity heatmap: each day is a 30px tap (above WCAG's 24px minimum); the grid scrolls sideways */
+  .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); }
+  .co-heat > * { width: 30px; height: 30px; }
+}
+
+/* ---------- Liquid Glass lesson ----------
+   The lesson as layered, frosted glass over soft light in its own colours (Apple's Liquid Glass): the outline, the
+   reading sheet, the toolbar and the rail's widgets float as translucent panels with a bright top edge, a soft rim
+   and deep, concentric corners. Only the big surfaces blur what's behind them (cards inside the sheet sit on glass
+   already), so it stays smooth on phones. Reduced transparency or high contrast: solid panels, same shapes. */
+:root { --spec-rgb: 255, 255, 255; }   /* the specular highlight: white light in both themes */
+.co.co-reading {
+  --lg-blur: blur(28px) saturate(185%);
+  --lg-fill: rgba(var(--surface-rgb), .26);
+  --lg-fill-sheet: rgba(var(--surface-rgb), .5);
+  --lg-rim: rgba(var(--ink-rgb), .1);
+  --lg-spec: rgba(var(--spec-rgb), .38);
+  --lg-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 24px 60px -28px rgba(0, 0, 0, .7);
+  --lg-r: 34px; --lg-r-md: 28px; --lg-r-sm: 22px; --lg-r-xs: 16px;
+}
+/* the glass itself */
+.co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) {
+  isolation: isolate;
+  background: linear-gradient(155deg, rgba(var(--ink-rgb), .09), rgba(var(--ink-rgb), .015) 42%, rgba(var(--ink-rgb), .04)), var(--lg-fill);
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur);
+  border: 1px solid var(--lg-rim);
+  box-shadow: inset 0 1px 0 var(--lg-spec), inset 0 -18px 36px -30px rgba(var(--spec-rgb), .22), var(--lg-shadow);
+}
+/* the panes that aren't already sticky or fixed hold their rim and sheen */
+.co-reading :is(.co-read .co-notes, .cx-widget, .co-pncard) { position: relative; }
+/* the liquid rim: a gradient edge, bright where the light falls (top left) and fading round the pane */
+.co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock)::before {
+  content: ""; position: absolute; inset: -1px; z-index: 1; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(145deg, rgba(var(--spec-rgb), .62), rgba(var(--spec-rgb), .12) 26%, rgba(var(--spec-rgb), 0) 52%, rgba(var(--spec-rgb), .06) 78%, rgba(var(--spec-rgb), .26));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+/* light catching the top-left edge of each pane */
+.co-reading :is(.cx-tree, .co-read .co-notes, .cx-widget, .co-pncard)::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 60% at 0% 0%, rgba(var(--spec-rgb), .1), transparent 55%);
+}
+.co-reading .co-read .co-notes { background: linear-gradient(170deg, rgba(var(--ink-rgb), .07), transparent 30%), var(--lg-fill-sheet); border-radius: var(--lg-r); }
+/* the reading sheet is tinted, not backdrop-blurred: it is the largest pane (blurring it costs the most), and a blurred
+   sheet becomes its own backdrop, so the bars floating over it couldn't frost the text underneath */
+.co-reading .co-read .co-notes { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.co-reading .cx-tree { border-radius: var(--lg-r-md); }
+.co-reading .cx-lbar { border-radius: 26px; padding: 8px 12px 10px; top: 10px; }
+.co-reading .cx-lbar .co-steps a { border-radius: 99px; }
+/* controls that float over the text use thicker glass, so what scrolls under them never competes with their labels */
+
+/* the reading sheet's furniture: concentric, softer corners */
+.co-reading .co-lhead { padding-bottom: 30px !important; }
+.co-reading .co-lhead .mv-chips button, .co-reading .co-lhead .mv-chips > span { border-radius: 99px; backdrop-filter: none; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .14); }
+.co-reading .cx-kit { gap: 10px; }
+.co-reading .cx-kc {
+  border-radius: var(--lg-r-sm); padding: 14px; border-color: var(--lg-rim);
+  background: linear-gradient(160deg, rgba(var(--ink-rgb), .09), rgba(var(--ink-rgb), .025));
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2), 0 10px 26px -20px rgba(0, 0, 0, .7);
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.co-reading .cx-kc:hover { transform: translateY(-2px); background: linear-gradient(160deg, rgba(var(--ink-rgb), .13), rgba(var(--ink-rgb), .04)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 16px 30px -18px rgba(0, 0, 0, .75); }
+.co-reading .cx-kc > :first-child { border-radius: 12px; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.co-reading .co-frame { border-radius: var(--lg-r-sm); border-color: var(--lg-rim); background: linear-gradient(165deg, rgba(var(--ink-rgb), .07), rgba(var(--ink-rgb), .02)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .14); }
+.co-reading .co-qn > :first-child { border-radius: var(--lg-r-sm); }
+.co-reading .co-draft { border-radius: var(--lg-r-xs); }
+.co-reading .co-builds a { border-radius: 99px; }
+.co-reading .co-pncard { border-radius: var(--lg-r-sm); }
+.co-reading .co-pncard:hover { box-shadow: inset 0 1px 0 var(--lg-spec), 0 20px 40px -24px rgba(0, 0, 0, .8); }
+
+/* the outline: the current lesson glows like a lit key */
+.co-reading .cx-tree .cx-l { border-radius: 12px; }
+.co-reading .cx-tree .cx-l.here { box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .22), 0 6px 18px -10px color-mix(in srgb, var(--la) 70%, transparent); }
+.co-reading .cx-tree .cx-tf, .co-reading .cx-tree .cx-tf input { border-radius: 14px; }
+
+/* the rail: a stack of widgets */
+.co-reading .co-side { gap: 14px; }
+.co-reading .cx-widgets { display: flex; flex-direction: column; gap: 14px; padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; }
+.co-reading .cx-widget { display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: var(--lg-r-md); color: inherit; text-decoration: none; }
+.co-reading .cx-widget .co-kicker { margin: 0; }
+.cx-w-title { font-size: 15.5px; line-height: 1.3; letter-spacing: -.01em; }
+.cx-widget small { color: var(--mute); font-size: 12.5px; }
+.cx-w-page .co-toc { margin: 0; }
+.cx-w-steps .co-railgo { width: 100%; justify-content: center; }
+/* this topic: a dot for each lesson in it */
+.cx-w-dots { display: flex; flex-wrap: wrap; gap: 7px; margin: 2px 0 0; padding: 0; list-style: none; }
+.cx-w-dots a { position: relative; display: block; width: 14px; height: 14px; border-radius: 50%; background: rgba(var(--ink-rgb), .12); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); }
+.cx-w-dots a::before { content: ""; position: absolute; inset: -6px; }   /* a bigger target than the dot */
+.cx-w-dots a.done { background: linear-gradient(135deg, var(--la), var(--lb)); }
+.cx-w-dots a.here { outline: 2px solid var(--fg); outline-offset: 2px; }
+.cx-w-dots a:hover { transform: scale(1.18); }
+/* up next: the whole widget is the link, with a glass arrow */
+.cx-w-next { padding-right: 64px !important; transition: transform .2s, box-shadow .2s; }
+.cx-w-next:hover { transform: translateY(-2px); }
+.cx-w-go { position: absolute; right: 16px; top: 50%; translate: 0 -50%; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(var(--ink-rgb), .1); border: 1px solid var(--lg-rim); box-shadow: inset 0 1px 0 var(--lg-spec); }
+.cx-w-go .co-ic { width: 18px; height: 18px; }
+.cx-w-next:hover .cx-w-go { background: linear-gradient(135deg, var(--la), var(--lb)); color: var(--invert-bg); }
+
+/* phones: the sheet, toolbar and dock are glass; the dock floats as a capsule */
+@media (max-width: 760px) {
+  .co.co-reading { --lg-r: 28px; --lg-r-md: 24px; --lg-r-sm: 20px; }
+  .co-reading .cx-dock { border-radius: 28px; }
+  .co-reading .cx-dock [aria-current] { border-radius: 20px; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); }
+  .co-reading .cx-lbar { border-radius: 22px; }
+}
+/* reduced transparency or high contrast: the same shapes, solid */
+@media (prefers-reduced-transparency: reduce) {
+  .co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) { background: rgb(var(--surface-rgb)); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .co.co-reading::before { display: none; }
+}
+:root[data-a-contrast="high"] .co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-color: var(--fg); }
+:root[data-a-contrast="high"] .co.co-reading::before { display: none; }
+@media (prefers-reduced-motion: reduce) { .co-reading :is(.cx-kc, .cx-w-next, .cx-w-dots a) { transition: none; } .co-reading :is(.cx-kc, .cx-w-next):hover { transform: none; } }
+
+
+/* ---------- Liquid Glass 2: colour at the edges, white light at the centre, three kinds of glass ----------
+   Every course page sits on light in the course's colours plus the Gradify rainbow, strongest at the edges of the window
+   and fading to white (dark: to deep ink) round the lesson, which glows and wears a gleaming rim in the course's colours.
+   The light is fixed to the window, so it runs the length of the page however far you scroll.
+   Three kinds of glass, as on Apple's and Samsung's systems:
+     clear   — wet and almost magnified: barely blurred, very bright edges, a coloured caustic glow beneath; on Chromium a
+               lens (an SVG displacement filter, kit/course/course.js) magnifies what's behind. Tiles, cards, the dock.
+     frosted — blurred with a fine grain, like etched glass. The outline, the rail's widgets, the folders' fronts.
+     blur    — the deepest, smoothest blur, tinted by the course. The lesson toolbar.                                  */
+.co { --la: var(--a); --lb: var(--b); --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.co::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(42vw 46vh at -4% 8%, color-mix(in srgb, var(--la) 46%, transparent), transparent 70%),
+    radial-gradient(40vw 50vh at 104% 14%, color-mix(in srgb, var(--lb) 44%, transparent), transparent 70%),
+    radial-gradient(34vw 40vh at -6% 58%, color-mix(in srgb, #ffb020 50%, transparent), transparent 70%),
+    radial-gradient(36vw 44vh at 106% 62%, color-mix(in srgb, #23c7d9 48%, transparent), transparent 70%),
+    radial-gradient(40vw 40vh at 4% 104%, color-mix(in srgb, #ff4fa3 50%, transparent), transparent 70%),
+    radial-gradient(44vw 42vh at 98% 106%, color-mix(in srgb, #4641ff 52%, transparent), transparent 70%),
+    radial-gradient(30vw 30vh at 50% -8%, color-mix(in srgb, var(--la) 36%, transparent), transparent 70%);
+}
+/* the centre of the window is the brightest (dark: the deepest): colour gathers at the edges */
+.co::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(44% 70% at 50% 46%, var(--lg-core), color-mix(in srgb, var(--lg-core) 60%, transparent) 55%, transparent 100%);
+}
+.co { --lg-core: rgba(var(--sink-rgb), .72); --mute: #c9c9d1; }
+:root[data-theme="light"] .co { --mute: #4a4a5e; }
+:root[data-theme="light"] .co { --lg-core: #fff; }
+
+/* text and edges a touch brighter: white reads as white, not grey (and near-black in light) */
+.co.co-reading { --lg-rim: rgba(var(--ink-rgb), .2); --mute: rgba(var(--ink-rgb), .76); }
+:root[data-theme="light"] .co.co-reading { --lg-rim: rgba(var(--spec-rgb), .95); --mute: #474760; }
+.co-reading .co-notes :is(.mv-cols p, .mv-cols ul, .co-frame p, .co-frame li) { color: rgba(var(--ink-rgb), .92); }
+.co-reading .co-notes .mv-lead { color: rgba(var(--ink-rgb), .95); }
+:root[data-theme="light"] .co-reading .co-notes :is(.mv-cols p, .mv-cols ul, .co-frame p, .co-frame li) { color: #1e1e30; }
+:root[data-theme="light"] .co-reading .co-notes .mv-lead { color: color-mix(in srgb, var(--la) 28%, #1a1a2e); }
+.co-reading .co-notes :is(h1, h2, h3, h4) { color: var(--fg); }
+.co-reading .co-notes :is(.co-recap, .co-check, .co-deeper, .co-refsec, .co-trylab) { border-top-color: rgba(var(--ink-rgb), .16); }
+
+/* the lesson: a bright sheet in a halo of white light, with a gleaming rim in the course's colours */
+@property --lg-ang { syntax: "<angle>"; inherits: false; initial-value: 120deg; }
+.co-reading .co-read .co-notes {
+  background: var(--grain), linear-gradient(170deg, rgba(var(--ink-rgb), .06), transparent 30%), rgba(var(--surface-rgb), .74);
+  background-size: 160px 160px, auto, auto; background-blend-mode: soft-light, normal, normal;
+  border-color: transparent;
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 0 0 1px rgba(var(--spec-rgb), .05), 0 0 90px 10px color-mix(in srgb, var(--la) 22%, transparent), 0 0 220px 40px rgba(var(--spec-rgb), .05);
+}
+:root[data-theme="light"] .co-reading .co-read .co-notes {
+  background: var(--grain), linear-gradient(170deg, #fff, rgba(var(--spec-rgb), .86) 40%, rgba(var(--spec-rgb), .9));
+  background-size: 160px 160px, auto; background-blend-mode: soft-light, normal;
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 6px rgba(var(--spec-rgb), .55), 0 0 70px 30px rgba(var(--spec-rgb), .95), 0 0 180px 90px rgba(var(--spec-rgb), .7), 0 40px 80px -30px color-mix(in srgb, var(--la) 40%, transparent);
+}
+.co-reading .co-read .co-notes::before {
+  inset: -2px; padding: 2px;
+  background: conic-gradient(from var(--lg-ang), var(--la), color-mix(in srgb, var(--la) 40%, #fff) 10%, var(--lb) 22%, #fff 27%, var(--lb) 32%, var(--la) 55%, color-mix(in srgb, var(--lb) 50%, #fff) 70%, #fff 76%, var(--la) 82%, var(--la));
+  filter: saturate(1.3); opacity: .95;
+  animation: lg-gleam 14s linear 1s;
+}
+/* one sweep round the rim just after the lesson opens (not while it's loading), ending where it started (480deg is
+   120deg). Turning a gradient's angle repaints the whole page-sized rim every frame, so it doesn't run on for as long
+   as the lesson is open (that took a fifth of a phone's main thread, all the time), and a phone keeps the rim still */
+@keyframes lg-gleam { to { --lg-ang: 480deg; } }
+@media (max-width: 1020px) { .co-reading .co-read .co-notes::before { animation: none; } }
+
+/* ----- clear glass: wet, bright-edged, almost magnified ----- */
+.co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .co-lhead .mv-chips > *) {
+  --clr-glow: color-mix(in srgb, var(--la) 70%, transparent);
+  isolation: isolate;
+  background:
+    radial-gradient(70% 46% at 30% 0%, rgba(var(--spec-rgb), .34), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .16), rgba(var(--spec-rgb), .02) 40%, rgba(var(--spec-rgb), 0) 62%, rgba(var(--spec-rgb), .1)),
+    rgba(var(--surface-rgb), .1);
+  -webkit-backdrop-filter: blur(1.5px) saturate(200%) brightness(1.08); backdrop-filter: blur(1.5px) saturate(200%) brightness(1.08);
+  border: 1px solid rgba(var(--spec-rgb), .34);
+  box-shadow:
+    inset 0 1.5px 0 rgba(var(--spec-rgb), .9), inset 0 -1px 0 rgba(var(--spec-rgb), .4),
+    inset 1px 0 0 rgba(var(--spec-rgb), .22), inset -1px 0 0 rgba(var(--spec-rgb), .16),
+    inset 0 12px 16px -12px rgba(var(--spec-rgb), .6),
+    inset 0 -16px 22px -16px var(--clr-glow),
+    inset 0 0 0 1px rgba(0, 0, 0, .06),
+    0 1px 1px rgba(0, 0, 0, .1), 0 18px 34px -18px var(--clr-glow);
+}
+/* (the dock is fixed; the rest hold their gloss) */
+.co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .co-lhead .mv-chips > *) { position: relative; }
+/* on the lesson sheet there's little behind a tile, so a tile carries its own wash of the course's colour */
+.co-reading .co-notes :is(.cx-kc, .mv-chips > *) { background:
+    radial-gradient(70% 46% at 30% 0%, rgba(var(--spec-rgb), .4), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .14), rgba(var(--spec-rgb), 0) 55%),
+    linear-gradient(135deg, color-mix(in srgb, var(--la) 16%, transparent), color-mix(in srgb, var(--lb) 12%, transparent)); }
+.co-reading .cx-kc:hover { transform: translateY(-3px) scale(1.015); }
+/* the droplet's gloss: a bright arc along the top edge */
+.co-reading :is(.cx-kc, .cx-w-next, .co-pncard)::after {
+  content: ""; position: absolute; z-index: 2; inset: 1px 12% auto; height: 40%; border-radius: 999px / 60%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .55), rgba(var(--spec-rgb), 0));
+  opacity: .55; mix-blend-mode: screen;
+}
+/* the dock over text: frosted, not magnified, so its labels always read */
+.co-reading .cx-dock { --clr-glow: color-mix(in srgb, var(--la) 55%, transparent); background:
+    radial-gradient(70% 60% at 30% 0%, rgba(var(--spec-rgb), .22), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .1), rgba(var(--spec-rgb), 0) 60%),
+    rgba(var(--surface-rgb), .72);
+  -webkit-backdrop-filter: blur(22px) saturate(180%); backdrop-filter: blur(22px) saturate(180%); }
+.co-reading .cx-dock > * { text-shadow: 0 1px 6px rgba(var(--surface-rgb), .9); }
+
+/* ----- frosted glass: blurred, with a fine grain ----- */
+.co-reading :is(.cx-tree, .cx-widget:not(.cx-w-next)) {
+  background: var(--grain), linear-gradient(155deg, rgba(var(--spec-rgb), .1), rgba(var(--spec-rgb), .02) 45%, rgba(var(--spec-rgb), .05)), rgba(var(--surface-rgb), .34);
+  background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal;
+  -webkit-backdrop-filter: blur(30px) saturate(170%); backdrop-filter: blur(30px) saturate(170%);
+}
+:root[data-theme="light"] .co-reading :is(.cx-tree, .cx-widget:not(.cx-w-next)) { background: var(--grain), linear-gradient(155deg, rgba(var(--spec-rgb), .75), rgba(var(--spec-rgb), .45) 50%, rgba(var(--spec-rgb), .55)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; }
+
+/* ----- blur glass: the deepest blur, tinted by the course ----- */
+.co.co-reading .cx-lbar {
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .12), rgba(var(--spec-rgb), 0) 60%), linear-gradient(90deg, color-mix(in srgb, var(--la) 14%, transparent), color-mix(in srgb, var(--lb) 10%, transparent)), rgba(var(--surface-rgb), .78);
+  -webkit-backdrop-filter: blur(44px) saturate(210%); backdrop-filter: blur(44px) saturate(210%);
+}
+
+/* light mode first: the rims are white light, the shadows tinted by the course rather than grey */
+:root[data-theme="light"] .co.co-reading { --lg-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 24px 50px -26px color-mix(in srgb, var(--la) 45%, rgba(22, 22, 48, .4)); --lg-spec: #fff; }
+:root[data-theme="light"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .co-lhead .mv-chips > *) { border-color: rgba(var(--spec-rgb), .95); box-shadow:
+    inset 0 1.5px 0 #fff, inset 0 -1px 0 rgba(var(--spec-rgb), .8), inset 0 12px 16px -12px #fff,
+    inset 0 -16px 22px -16px var(--clr-glow), 0 0 0 1px rgba(22, 22, 48, .06),
+    0 1px 2px rgba(22, 22, 48, .08), 0 18px 34px -16px var(--clr-glow); }
+
+/* ----- accordions: Sources (and anything else that folds) ----- */
+.cx-acc > summary { display: flex; align-items: center; gap: 10px; padding: 6px 0; cursor: pointer; list-style: none; font-size: 18px; font-weight: 650; letter-spacing: -.01em; color: var(--fg); }
+.cx-acc > summary::-webkit-details-marker { display: none; }
+.cx-acc > summary .co-ic { width: 18px; height: 18px; color: var(--la, var(--a)); }
+.cx-acc > summary .cx-chev { margin-left: auto; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(var(--ink-rgb), .07); transition: transform .25s; }
+.cx-acc[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-acc > .cx-accbody { padding-top: 14px; }
+.cx-acc .co-refs h3 { font-size: 15px; }
+
+/* ----- shelves: a course's modules are folders standing on frosted-glass shelves; one taken off its shelf spreads
+   its lessons out beneath it ----- */
+.cx-shelves { display: grid; gap: 30px; padding-top: 14px; }
+.cx-shelf { position: relative; min-width: 0; }
+.cx-shelfrow { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 16px; padding: 0 14px; }
+/* the shelf itself: a thick slab of frosted glass, lit along its front edge, casting a soft shadow down the wall */
+.cx-plank { position: relative; height: 26px; margin: -6px 2px 0; border-radius: 10px 10px 14px 14px;
+  background:
+    linear-gradient(180deg, rgba(var(--spec-rgb), .55) 0 1.5px, rgba(var(--spec-rgb), .26) 1.5px 9px, transparent 9px),   /* the top face, catching the light */
+    linear-gradient(180deg, transparent 9px, color-mix(in srgb, var(--la, #8f8cff) 22%, transparent) 9px, rgba(var(--spec-rgb), .07)),   /* the front edge, the course colour through the glass */
+    rgba(var(--surface-rgb), .34);
+  -webkit-backdrop-filter: blur(16px) saturate(190%); backdrop-filter: blur(16px) saturate(190%);
+  border: 1px solid rgba(var(--spec-rgb), .5);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .9), inset 0 9px 0 -8px rgba(var(--spec-rgb), .55), inset 0 -6px 10px -6px rgba(var(--spec-rgb), .45),
+    0 0 0 1px rgba(0, 0, 0, .25), 0 0 26px -6px color-mix(in srgb, var(--la, #8f8cff) 50%, transparent), 0 24px 28px -16px rgba(0, 0, 0, .65); }
+/* the light through the glass, pooled on the wall below */
+.cx-plank::after { content: ""; position: absolute; left: 6%; right: 6%; top: 100%; height: 22px; background: radial-gradient(60% 100% at 50% 0, color-mix(in srgb, var(--la, #8f8cff) 26%, transparent), transparent 75%); pointer-events: none; }
+:root[data-theme="light"] .cx-plank {
+  background: linear-gradient(180deg, #fff 0 9px, transparent 9px), linear-gradient(180deg, transparent 9px, color-mix(in srgb, var(--la, #8f8cff) 20%, rgba(255, 255, 255, .7)) 9px, rgba(255, 255, 255, .55));
+  border-color: #fff;
+  box-shadow: inset 0 1.5px 0 #fff, inset 0 9px 0 -8px rgba(22, 22, 48, .1), inset 0 -6px 10px -6px rgba(255, 255, 255, .9),
+    0 0 0 1px rgba(22, 22, 48, .08), 0 1px 0 1px color-mix(in srgb, var(--la, #8f8cff) 35%, transparent), 0 22px 28px -14px color-mix(in srgb, var(--la, #8f8cff) 30%, rgba(22, 22, 48, .35)); }
+.cx-folder { min-width: 0; border-radius: 24px; }
+.cx-fsum { position: relative; display: block; width: 100%; height: 150px; padding: 0; margin: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; border-radius: 24px; -webkit-tap-highlight-color: transparent; }
+.cx-fsum:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+.cx-folder.open > .cx-fsum { transform: translateY(-8px); transition: transform .35s cubic-bezier(.2, .9, .3, 1.2); }
+.cx-folder.open .cx-ffront { box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6), 0 0 0 2px color-mix(in srgb, var(--a) 70%, transparent), 0 16px 30px -14px color-mix(in srgb, var(--a) 70%, transparent); }
+/* the lessons of a folder taken off the shelf: a glass tray beneath the shelf, edged in the module's colour */
+.cx-fpanel { position: relative; margin-top: 18px; padding: 14px 14px 16px; border-radius: 22px; border: 1px solid color-mix(in srgb, var(--a) 55%, rgba(var(--spec-rgb), .3));
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .08), rgba(var(--spec-rgb), .02)), rgba(var(--surface-rgb), .62);
+  -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .3), 0 0 26px -10px color-mix(in srgb, var(--a) 60%, transparent); }
+:root[data-theme="light"] .cx-fpanel { background: linear-gradient(180deg, rgba(var(--spec-rgb), .95), rgba(var(--spec-rgb), .8)); box-shadow: inset 0 1.5px 0 #fff, 0 14px 32px -22px rgba(22, 22, 48, .35); }
+.cx-fpanel + .cx-fpanel { margin-top: 12px; }
+.cx-fpanel[hidden] { display: none; }
+.cx-fpanel > header { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 0 2px 10px 4px; }
+.cx-fpanel > header b { min-width: 0; font-size: 15.5px; line-height: 1.3; overflow-wrap: anywhere; }
+.cx-fpanel > header small { flex: none; margin-left: auto; font: 500 12px var(--mono); color: var(--mute); }
+.cx-fclose { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(var(--ink-rgb), .14); background: rgba(var(--ink-rgb), .06); color: var(--fg); cursor: pointer; }
+.cx-fclose .co-ic { width: 17px; height: 17px; }
+/* the back: vivid, swirling colour in the course's palette, with a tab on the right */
+.cx-fback { position: absolute; inset: 16px 0 0; border-radius: 22px;
+  background: radial-gradient(70% 110% at 12% 18%, var(--a), transparent 72%), radial-gradient(60% 110% at 88% 8%, var(--b), transparent 72%), radial-gradient(55% 90% at 55% 100%, #4641ff, transparent 72%), linear-gradient(120deg, var(--a), var(--b));
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .45), 0 18px 32px -18px color-mix(in srgb, var(--a) 75%, transparent); }
+.cx-fback::before { content: ""; position: absolute; right: 0; top: -16px; width: 48%; height: 34px; border-radius: 14px 22px 0 0; background: linear-gradient(90deg, color-mix(in srgb, var(--a) 35%, var(--b)), var(--b)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .45); }
+.cx-fback::after { content: ""; position: absolute; right: calc(48% - 12px); top: -16px; width: 26px; height: 18px; background: color-mix(in srgb, var(--a) 35%, var(--b)); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+/* a sheet of paper inside, peeking out, which lifts as you hover or open the folder */
+.cx-fpaper { position: absolute; left: 9%; right: 9%; top: 24px; height: 46px; border-radius: 10px; background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(22, 22, 48, .08) 9px 10px), linear-gradient(#fff, #f1f1f6); background: repeating-linear-gradient(180deg, transparent 0 9px, light-dark(rgba(241, 241, 249, .08), rgba(22, 22, 48, .08)) 9px 10px), linear-gradient(#fff, #f1f1f6); box-shadow: 0 -2px 8px rgba(0, 0, 0, .14); transition: transform .35s cubic-bezier(.2, .9, .3, 1.3); }
+/* the front: frosted glass over the colour, with the module's name and progress */
+.cx-ffront { position: absolute; inset: 52px 0 0; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 14px 14px 12px 16px; border-radius: 22px;
+  background: var(--grain), linear-gradient(180deg, rgba(var(--spec-rgb), .14), rgba(var(--spec-rgb), .02)), rgba(var(--surface-rgb), .58);
+  background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal;
+  -webkit-backdrop-filter: blur(18px) saturate(170%); backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(var(--spec-rgb), .3);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6), inset 0 -12px 22px -16px rgba(var(--spec-rgb), .35), 0 10px 24px -14px rgba(0, 0, 0, .55);
+  transition: transform .35s cubic-bezier(.2, .9, .3, 1.1), box-shadow .35s; }
+:root[data-theme="light"] .cx-ffront { background: var(--grain), linear-gradient(180deg, rgba(var(--spec-rgb), .8), rgba(var(--spec-rgb), .58)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; border-color: #fff; box-shadow: inset 0 1.5px 0 #fff, 0 12px 26px -16px rgba(22, 22, 48, .35); }
+.cx-fhead { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.cx-fhead b { font-size: 15.5px; line-height: 1.25; letter-spacing: -.01em; color: var(--fg); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cx-fhead .cx-n { flex: none; font: 600 12px var(--mono); color: var(--mute); }
+.cx-fmeta { display: flex; align-items: center; gap: 10px; }
+.cx-fmeta small { flex: none; font-size: 12.5px; color: var(--mute); }
+.cx-fbar { flex: 1; height: 6px; border-radius: 99px; background: rgba(var(--ink-rgb), .14); overflow: hidden; }
+.cx-fbar i { display: block; width: calc(var(--p) * 100%); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--a), var(--b)); }
+.cx-fbtn { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--invert-bg); color: var(--invert-fg); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 6px 14px -6px rgba(0, 0, 0, .6); transition: transform .3s; }
+.cx-fbtn .co-ic { width: 16px; height: 16px; }
+.cx-fsum:hover .cx-fpaper { transform: translateY(-10px); }
+.cx-fsum:hover .cx-ffront { transform: translateY(3px); }
+.cx-folder.open .cx-fpaper { transform: translateY(-16px) rotate(-1.5deg); }
+.cx-folder.open .cx-ffront { transform: translateY(5px); }
+.cx-folder.open .cx-fbtn { transform: rotate(90deg); }
+.cx-folder.full .cx-fbar i { background: var(--s-mastered); }
+.cx-fpanel > .cx-lgrid { margin: 0; }
+
+/* the syllabus and other course pages: the same glass, lighter, over the same light */
+.co:not(.co-reading) :is(.cx-ucard, .cx-panel, .co-card, .cx-sylhead) { border-color: rgba(var(--ink-rgb), .14); background: var(--grain), linear-gradient(160deg, rgba(var(--spec-rgb), .07), rgba(var(--spec-rgb), .01)), rgba(var(--surface-rgb), .5); background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .18); }
+:root[data-theme="light"] .co:not(.co-reading) :is(.cx-ucard, .cx-panel, .co-card, .cx-sylhead) { border-color: #fff; background: var(--grain), linear-gradient(160deg, rgba(var(--spec-rgb), .92), rgba(var(--spec-rgb), .72)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -28px color-mix(in srgb, var(--la) 40%, rgba(22, 22, 48, .4)); }
+.cx-ucard { border-radius: 24px; }
+.cx-ucard > summary { padding: 18px 20px; }
+.cx-ucard .cx-chev .co-ic, .cx-ucard .cx-chev { transition: transform .25s; }
+.cx-ucard[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-ucontent { padding: 4px 18px 18px; }
+
+@media (max-width: 760px) {
+  .cx-fsum { height: 136px; }
+  .cx-ffront { inset: 44px 0 0; }
+  .cx-ucontent { padding: 2px 10px 12px; }
+}
+/* two folders to a shelf on phones: the name gets the room, the bar gives way */
+@media (max-width: 639px) {
+  .cx-shelfrow { gap: 12px; padding: 0 8px; }
+  .cx-ffront { padding: 12px 10px 10px 12px; }
+  .cx-fhead b { font-size: 14.5px; }
+  .cx-fmeta { gap: 6px; } .cx-fmeta small { font-size: 11.5px; } .cx-fmeta .cx-fbar { display: none; }
+  .cx-fmeta .cx-fbtn { margin-left: auto; width: 30px; height: 30px; }
+  .cx-shelves { gap: 24px; }
+}
+@media (prefers-reduced-transparency: reduce) { :root .cx-plank, :root .cx-fpanel, :root[data-theme] .cx-plank, :root[data-theme] .cx-fpanel { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
+:root[data-a-contrast="high"] :is(.cx-plank, .cx-fpanel) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
+@media (prefers-reduced-motion: reduce) {
+  .co-reading .co-read .co-notes::before { animation: none; }
+  .cx-fpaper, .cx-ffront, .cx-fbtn, .cx-acc > summary .cx-chev, .cx-folder.open > .cx-fsum { transition: none; }
+}
+/* the learner's settings beat every glass rule above, whatever its specificity (lens, light theme, toolbar) */
+@media (prefers-reduced-transparency: reduce) {
+  .co::before, .co::after { display: none; }
+  .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), .cx-ffront { background: rgb(var(--surface-rgb)) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+}
+:root[data-a-contrast="high"] .co::before, :root[data-a-contrast="high"] .co::after { display: none; }
+:root[data-a-contrast="high"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), :root[data-a-contrast="high"] .cx-ffront { background: var(--bg) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--fg); }
+.co-reading .cx-tf input::placeholder { color: var(--mute); opacity: 1; }
+
+/* touch: each topic dot sits in its own 44px square, side by side, so a tap never lands on the neighbour */
+@media (pointer: coarse) {
+  .cx-w-dots { gap: 0; }
+  .cx-w-dots a { margin: 15px; }
+  .cx-w-dots a::before { inset: -15px; }
+  .cx-w-dots a:hover { transform: none; }
+}
+/* narrow phones: the toolbar keeps every control on screen (the step bar under it already shows where you are) */
+@media (max-width: 420px) { .cx-lbar .cx-pn small { display: none; } }
+@media (max-width: 350px) { .cx-lbar [data-focus] { display: none; } }
+
+
+/* ---------- From the reference boards: day bubbles, cover-flow, a ring rail, stacked decks, an activity board ---------- */
+/* this week, as bubbles: each fills with the course's colours as the day's XP reaches the goal; today stands larger */
+.cx-week { display: flex; gap: 10px; margin: 0 0 18px; padding: 4px 2px 8px; overflow-x: auto; scrollbar-width: none; }
+.cx-week::-webkit-scrollbar { display: none; }
+.cx-wday { position: relative; flex: none; display: grid; place-items: center; align-content: center; gap: 1px; width: 74px; height: 74px; border-radius: 50%; text-decoration: none; color: var(--fg);
+  background: radial-gradient(70% 50% at 35% 18%, rgba(var(--spec-rgb), .35), transparent 70%), conic-gradient(from -90deg, var(--a, #4641ff) 0, var(--b, #40d4b1) calc(var(--p) * 360deg), rgba(var(--ink-rgb), .07) 0);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6), inset 0 0 0 1px rgba(var(--ink-rgb), .1), 0 12px 24px -16px rgba(0, 0, 0, .5); transition: transform .2s; }
+.cx-wday::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; z-index: 0; background: rgba(var(--surface-rgb), .78); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.cx-wday > * { position: relative; z-index: 1; }
+.cx-wday small { font: 600 10.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.cx-wday b { font-size: 21px; line-height: 1; letter-spacing: -.03em; }
+.cx-wday em { font: 500 10.5px var(--sans); font-style: normal; color: var(--mute); }
+.cx-wday.today { width: 92px; height: 92px; }
+.cx-wday.today b { font-size: 27px; }
+.cx-wday.today::before { background: rgba(var(--surface-rgb), .6); }
+.cx-wday.met::before { background: linear-gradient(140deg, color-mix(in srgb, var(--a, #4641ff) 40%, rgba(var(--surface-rgb), .7)), color-mix(in srgb, var(--b, #40d4b1) 40%, rgba(var(--surface-rgb), .7))); }
+.cx-wday.future { opacity: .45; }
+.cx-wday:hover { transform: translateY(-3px); }
+.cx-wok { position: absolute; z-index: 2; right: 2px; top: 2px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--s-mastered); color: #fff; }
+.cx-wok .co-ic { width: 13px; height: 13px; }
+.cx-week { align-items: center; }
+.co .cx-week { --a: var(--la); --b: var(--lb); }
+
+/* up next, as cover-flow: cards snap to the middle; the middle one stands forward, the rest lean away */
+.cx-flowwrap { position: relative; }
+.cx-flow { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 26px calc(50% - 130px) 30px; perspective: 1100px; scrollbar-width: none; outline: none; }
+.cx-flow::-webkit-scrollbar { display: none; }
+.cx-flow:focus-visible { box-shadow: 0 0 0 2px var(--fg); border-radius: 24px; }
+.cx-fcard { --d: 0; flex: none; scroll-snap-align: center; position: relative; display: flex; flex-direction: column; gap: 6px; width: 260px; min-height: 200px; padding: 20px; border-radius: 28px; color: #fff; text-decoration: none; overflow: hidden;
+  background: radial-gradient(70% 50% at 92% 0%, rgba(255, 255, 255, .26), transparent 60%), linear-gradient(180deg, rgba(8, 8, 20, .42), rgba(8, 8, 20, .56)), linear-gradient(140deg, var(--a), var(--b));
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .18), 0 24px 44px -24px color-mix(in srgb, var(--a) 80%, transparent);
+  transform: rotateY(calc(var(--d) * -28deg)) scale(calc(1 - min(abs(var(--d)), 1.4) * .14)) translateZ(0); transition: transform .12s linear, filter .2s; filter: saturate(calc(1 - min(abs(var(--d)), 1) * .35)) brightness(calc(1 - min(abs(var(--d)), 1) * .12)); }
+.cx-fcard .co-kicker { color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .35); }
+.cx-fcard b { font-size: 21px; line-height: 1.2; letter-spacing: -.02em; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
+.cx-fcard small { color: #fff; font-size: 13px; text-shadow: 0 1px 6px rgba(0, 0, 0, .35); }
+.cx-fstat { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 99px; font: 600 12px var(--sans); background: rgba(var(--sink-rgb), .25); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3); }
+.cx-flowbtn { position: absolute; top: 50%; z-index: 20; translate: 0 -50%; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(var(--ink-rgb), .14); background: rgba(var(--surface-rgb), .7); color: var(--fg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .4), 0 10px 22px -12px rgba(0, 0, 0, .6); cursor: pointer; }
+.cx-flowbtn.prev { left: 4px; } .cx-flowbtn.next { right: 4px; }
+.cx-flowbtn .co-ic { width: 18px; height: 18px; }
+@media (max-width: 760px) { .cx-flow { padding-inline: calc(50% - 115px); } .cx-fcard { width: 230px; } .cx-flowbtn { display: none; } }
+
+/* the ring rail: a dark capsule at the window's edge with your progress in this lesson, shown while you pause */
+.cx-rings { position: fixed; right: max(8px, env(safe-area-inset-right)); top: 50%; z-index: 120; translate: 0 -50%; display: none; flex-direction: column; gap: 14px; padding: 16px 9px; border-radius: 40px; pointer-events: none;
+  background: #050507; color: #fff; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .14); opacity: 0; transform: translateX(16px); transition: opacity .35s, transform .35s; }
+.cx-rings.peek { opacity: 1; transform: none; }
+/* only where the window has a margin beside the text for it: below that it would sit on the words */
+@media (max-width: 1020px) and (min-width: 900px) { .co-reading .cx-rings { display: flex; } }
+html.cx-focus .cx-rings { display: none !important; }
+.cx-rr { display: grid; justify-items: center; gap: 2px; }
+.cx-rri { position: relative; display: grid; place-items: center; width: 40px; height: 40px; }
+.cx-rri > svg:not(.co-ic) { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.cx-rri .co-ic { width: 16px; height: 16px; }
+.cx-rri circle { fill: none; stroke-width: 3.2; }
+.cx-rri .bg { stroke: rgba(var(--ink-rgb), .16); }
+.cx-rri .fg { stroke-linecap: round; stroke: var(--la, #40d4b1); transition: stroke-dashoffset .4s; }
+.cx-rr[data-ring="check"] .fg { stroke: #34d399; } .cx-rr[data-ring="steps"] .fg { stroke: #ffc002; }
+.cx-rr b { font: 600 11px var(--sans); } .cx-rr small { font: 500 9.5px var(--mono); letter-spacing: .04em; color: rgba(var(--ink-rgb), .6); }
+.cx-rr.full .cx-rri { filter: drop-shadow(0 0 6px currentColor); }
+
+/* stacked decks: a set of flashcards looks like one, with cards fanned behind it */
+.cx-deck { --n: 2; --deck: color-mix(in srgb, var(--la, var(--a, #4641ff)) 40%, rgba(var(--surface-rgb), .9)); }
+.co-reading .cx-kc.cx-deck, .cx-rcard.cx-deck { box-shadow: 0 -7px 0 -3px var(--deck), 0 -13px 0 -6px color-mix(in srgb, var(--deck) 70%, transparent), 0 14px 26px -18px rgba(0, 0, 0, .6) !important; transition: box-shadow .25s, transform .25s; }
+.co-reading .cx-kc.cx-deck:hover, .cx-rcard.cx-deck:hover { transform: translateY(-3px); box-shadow: 0 -11px 0 -3px var(--deck), 0 -21px 0 -6px color-mix(in srgb, var(--deck) 70%, transparent), 0 18px 30px -18px rgba(0, 0, 0, .6) !important; }
+
+/* the activity board: round days in rows, with months and weekdays; capsule bars for the last two weeks */
+.cx-acth { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-bottom: 14px; }
+.cx-acth h3 { margin: 0; } .cx-acth span { font-size: 13px; color: var(--mute); }
+.cx-activity, .cx-capsules { border-radius: 28px; }
+.cx-heatwrap { display: grid; grid-template-columns: auto 1fr; gap: 8px; overflow-x: auto; }
+.cx-heatwd { display: grid; grid-template-rows: 18px repeat(7, 1fr); gap: 5px; }
+.cx-heatwd::before { content: ""; }
+.cx-heatwd small, .cx-heatm small { font: 500 10.5px var(--mono); color: var(--mute); line-height: 1; align-self: center; }
+.cx-heatm { display: grid; grid-auto-flow: column; grid-auto-columns: 17px; gap: 5px; height: 18px; margin-bottom: 0; }
+.cx-heatm small { white-space: nowrap; overflow: visible; }
+.cx-activity .co-heat { gap: 5px; grid-auto-columns: 17px; }
+.cx-activity .co-heat > * { width: 17px; height: 17px; border-radius: 50%; }
+.cx-activity .co-heat button { background: radial-gradient(circle at 35% 30%, rgba(var(--spec-rgb), calc(var(--v) * .55)), transparent 60%), color-mix(in srgb, #40d4b1 calc(var(--v) * 100%), rgba(var(--ink-rgb), .08)); box-shadow: 0 0 calc(var(--v) * 10px) color-mix(in srgb, #40d4b1 calc(var(--v) * 70%), transparent); }
+.cx-heatkey { display: flex; align-items: center; gap: 5px; margin-top: 12px; }
+.cx-heatkey i { width: 13px; height: 13px; border-radius: 50%; background: color-mix(in srgb, #40d4b1 calc(var(--v) * 100%), rgba(var(--ink-rgb), .08)); }
+.cx-heatkey small { font: 500 11px var(--sans); color: var(--mute); margin: 0 4px; }
+.cx-capsules .co-bars { gap: 8px; height: 190px; padding-bottom: 24px; }
+.cx-capsules .co-bars div { justify-content: flex-end; }
+.cx-cap { position: relative; display: flex; align-items: flex-end; width: 100%; max-width: 30px; height: 100%; border-radius: 99px; overflow: hidden; background: rgba(var(--ink-rgb), .08); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+.cx-cap i { width: 100%; border-radius: 99px; background: linear-gradient(0deg, rgba(var(--ink-rgb), .35), rgba(var(--ink-rgb), .6)); box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6); }
+.cx-cap i.hit { background: linear-gradient(0deg, var(--la, #4641ff), var(--lb, #40d4b1)); }
+.cx-capsules .co-bars small { position: static; margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) { .cx-fcard, .cx-rings, .cx-wday, .cx-deck { transition: none !important; } }
+/* touch: the activity board's days stay 30px, like the rest of the course's touch targets */
+@media (pointer: coarse) { .cx-activity .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); } .cx-activity .co-heat > * { width: 30px; height: 30px; } .cx-heatm { grid-auto-columns: 30px; } .cx-heatwd { grid-template-rows: 18px repeat(7, 30px); } }
+
+/* ---------- Calmer lessons, steadier widgets, an easier outline ----------
+   Less on the lesson's first screen: its facts as one quiet line, what it builds on as plain links, the draft note
+   in a line, the topic's tools in a grid that wraps instead of cutting words off, and the notes in one reading
+   column. Widgets share one padding; the outline's rows are bigger, wrap instead of truncating, and show focus. */
+.co-reading .co-lhead .mv-chips { gap: 4px 0; margin-top: 18px; }
+.co-reading .co-lhead .mv-chips > *, :root[data-theme="light"] .co-reading .co-lhead .mv-chips > * {
+  padding: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  font: 500 13.5px var(--sans); color: var(--mute); }
+.co-reading .co-lhead .mv-chips > *::after { display: none !important; }
+.co-reading .co-lhead .mv-chips > * + *::before { content: "·"; margin: 0 10px; color: rgba(var(--ink-rgb), .3); }
+.co-reading .co-lhead .mv-chips .co-ic { width: 14px; height: 14px; }
+.co-reading .co-builds { display: block; font-size: 13.5px; color: var(--mute); line-height: 1.7; }
+.co-reading .co-builds a { display: inline; padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; color: var(--fg); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .25); text-underline-offset: 3px; }
+.co-reading .co-builds a + a::before { content: ", "; color: var(--mute); display: inline-block; text-decoration: none; }
+.co-reading .co-builds a i { font-style: normal; color: var(--mute); font-size: 12px; }
+.co-reading .co-draft { padding: 10px 14px; font-size: 13px; line-height: 1.5; border-style: solid; border-color: rgba(var(--ink-rgb), .12); }
+.co-reading .cx-kit { grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; margin: 26px 0 14px; }
+.co-reading .cx-kc { min-height: 64px; padding: 12px 14px; grid-template-columns: 38px minmax(0, 1fr); column-gap: 12px; }
+.co-reading .cx-kc b { font-size: 14.5px; line-height: 1.25; }
+.co-reading .cx-kc small { white-space: normal; overflow: visible; line-height: 1.35; }
+.co-reading .co-read .mv-cols { columns: 1; max-width: 70ch; }
+.co-reading .co-read .mv-cols p, .co-reading .co-read .mv-cols ul { font-size: 16.5px; line-height: 1.75; }
+.co-reading .co-read .mv-cols section { margin-bottom: 34px; }
+
+/* the rail's widgets: one padding, and nothing spills */
+.co-reading .cx-widget { padding: 18px 18px 20px; gap: 12px; overflow: hidden; }
+.co-reading .cx-widget :is(b, small, p, a) { overflow-wrap: anywhere; }
+.co-reading .co-railq .co-checkn { padding: 10px 12px; font: 500 13px var(--sans); letter-spacing: 0; text-transform: none; }
+.co-reading .cx-loop { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0; }
+.co-reading .cx-step { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 10px; border-radius: 14px; font-size: 13px; }
+.co-reading .cx-step small { font: 600 12.5px var(--sans); white-space: nowrap; }
+.co-reading .cx-step .co-ic { flex: none; width: 16px; height: 16px; }
+
+/* the outline: bigger rows, two lines before an ellipsis, sticky stage headings, visible focus */
+.co-reading .cx-tree { --row: 40px; }
+.co-reading .cx-tf { margin: 0 14px 10px; min-height: 42px; border-radius: 14px; }
+.co-reading .cx-tf input { font-size: 14px; padding: 10px 0; }
+.co-reading .cx-tb { padding: 0 10px 14px; }
+.co-reading .cx-tg { position: sticky; top: 0; z-index: 2; margin: 10px 0 4px; padding: 8px 8px 6px; background: rgb(var(--surface-rgb)); border-radius: 10px; box-shadow: 0 6px 10px -6px rgba(var(--surface-rgb), 1); }
+.co-reading .cx-unit > summary { min-height: var(--row); padding: 8px 10px; font-size: 14px; grid-template-columns: 28px minmax(0, 1fr) auto; }
+.co-reading .cx-ut { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.3; }
+.co-reading .cx-l { min-height: 36px; padding: 8px 10px; font-size: 13.5px; border-radius: 12px; }
+.co-reading .cx-l.here { box-shadow: inset 4px 0 0 var(--la, var(--a)), inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.co-reading .cx-mt { margin: 12px 8px 4px; font-size: 13px; }
+.co-reading .cx-tree :is(a, summary, button, input):focus-visible { outline: 2px solid var(--la, var(--fg)); outline-offset: 2px; }
+
+/* ----- Gradify AI (kit/course/assistant.js): an orb in the corner of every course page, opening a small glass
+   assistant. Coloured by the course (--a, --b), above the phone dock, out of the way in focus mode ----- */
+/* the orb's colours turn by rotating their own layer: a transform the compositor runs without repainting (turning the
+   gradient's angle instead repainted it every frame, a fifth of a phone's main thread on every course page) */
+@keyframes gai-turn { to { transform: rotate(360deg); } }
+@keyframes gai-in { from { opacity: 0; transform: translateY(14px) scale(.96); } }
+@keyframes gai-dot { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.gai, .gai-fab { --a: #6c63ff; --b: #ff5fd2; }
+.gai-orb { flex: none; position: relative; width: 40px; height: 40px; border-radius: 50%;
+  box-shadow: 0 0 18px -2px color-mix(in srgb, var(--a) 70%, transparent); }
+.gai-orb > i { position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(var(--a), var(--b), #ffb35c, #39d0ff, var(--a));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35);
+  animation: gai-turn 9s linear infinite; }
+/* a glossy cap of light on the orb, and a soft core (above the turning colours, which they don't turn with) */
+.gai-orb::before, .gai-orb::after { z-index: 1; }
+.gai-orb::before { content: ""; position: absolute; inset: 18% 18% 18% 18%; border-radius: 50%; background: radial-gradient(circle at 50% 40%, hsl(0 0% 100% / .95), hsl(0 0% 100% / .35) 45%, transparent 70%); filter: blur(1px); }
+.gai-orb::after { content: ""; position: absolute; left: 14%; right: 14%; top: 5%; height: 42%; border-radius: 50%; background: linear-gradient(180deg, hsl(0 0% 100% / .75), hsl(0 0% 100% / 0)); }
+.gai-fab { position: fixed; right: calc(18px + env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 150; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 18px 6px 6px; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(var(--spec-rgb), .35); color: var(--fg); font: 600 14.5px var(--sans);
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .16), rgba(var(--spec-rgb), .03)), rgba(var(--surface-rgb), .72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .55), 0 0 0 1px rgba(0, 0, 0, .2), 0 0 30px -8px color-mix(in srgb, var(--a) 60%, transparent), 0 16px 32px -14px rgba(0, 0, 0, .6);
+  transition: transform .2s, box-shadow .2s; }
+.gai-fab:hover { transform: translateY(-2px); }
+/* at rest it's just the orb, so it covers as little of the page as possible; its name slides out when pointed at or
+   focused (the button's aria-label says it either way) */
+.gai-fab { gap: 0; padding: 6px; transition: transform .2s, box-shadow .2s, padding .25s ease, gap .25s ease; }
+.gai-fabt { display: inline-block; max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .25s ease, opacity .2s; }
+.gai-fab:is(:hover, :focus-visible) { gap: 10px; padding-right: 18px; }
+.gai-fab:is(:hover, :focus-visible) .gai-fabt { max-width: 160px; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .gai-fab, .gai-fabt { transition: none; } }
+.gai-fab:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+:root[data-theme="light"] .gai-fab { background: linear-gradient(180deg, #fff, rgba(255, 255, 255, .82)); border-color: #fff; box-shadow: inset 0 1.5px 0 #fff, 0 0 0 1px rgba(22, 22, 48, .07), 0 0 28px -8px color-mix(in srgb, var(--a) 55%, transparent), 0 14px 28px -14px rgba(22, 22, 48, .4); }
+body.gai-open .gai-fab { opacity: 0; pointer-events: none; transform: scale(.9); }
+body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
+
+.gai { position: fixed; right: calc(18px + env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 160; display: flex; flex-direction: column; width: min(410px, calc(100vw - 36px)); height: min(640px, calc(100vh - 110px)); border-radius: 30px; overflow: hidden; color: var(--fg);
+  border: 1px solid color-mix(in srgb, var(--a) 45%, rgba(var(--spec-rgb), .3));
+  background: radial-gradient(120% 50% at 0 0, color-mix(in srgb, var(--a) 16%, transparent), transparent 70%), radial-gradient(100% 45% at 100% 100%, color-mix(in srgb, var(--b) 12%, transparent), transparent 70%), rgba(var(--surface-rgb), .84);
+  -webkit-backdrop-filter: blur(30px) saturate(180%); backdrop-filter: blur(30px) saturate(180%);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .4), 0 0 0 1px rgba(0, 0, 0, .25), 0 0 46px -12px color-mix(in srgb, var(--a) 55%, transparent), 0 30px 60px -24px rgba(0, 0, 0, .7);
+  transform-origin: 100% 100%; animation: gai-in .28s cubic-bezier(.2, .9, .3, 1.1); }
+.gai[hidden] { display: none; }
+:root[data-theme="light"] .gai { background: radial-gradient(120% 50% at 0 0, color-mix(in srgb, var(--a) 12%, transparent), transparent 70%), radial-gradient(100% 45% at 100% 100%, color-mix(in srgb, var(--b) 9%, transparent), transparent 70%), rgba(255, 255, 255, .9);
+  box-shadow: inset 0 1.5px 0 #fff, 0 0 0 1px rgba(22, 22, 48, .06), 0 0 40px -12px color-mix(in srgb, var(--a) 45%, transparent), 0 28px 56px -26px rgba(22, 22, 48, .45); }
+.gai-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 10px; padding: 14px 12px 10px 16px; border-bottom: 1px solid rgba(var(--ink-rgb), .08); }
+.gai-head h2 { margin: 0; font-size: 16.5px; letter-spacing: -.01em; }
+.gai-ctx { margin: 1px 0 0; font-size: 12.5px; color: var(--mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gai-ib { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(var(--ink-rgb), .12); background: rgba(var(--ink-rgb), .06); color: var(--fg); cursor: pointer; }
+.gai-ib .co-ic { width: 17px; height: 17px; }
+.gai-log { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 12px; scroll-behavior: smooth; }
+.gai-msg { max-width: 88%; padding: 10px 14px; border-radius: 20px 20px 20px 6px; font-size: 14.5px; line-height: 1.55; overflow-wrap: anywhere; }
+.gai-msg p { margin: 0 0 .55em; } .gai-msg > :last-child { margin-bottom: 0; }
+.gai-msg.ai { align-self: flex-start; background: rgba(var(--ink-rgb), .07); border: 1px solid rgba(var(--ink-rgb), .08); }
+.gai-msg.me { align-self: flex-end; border-radius: 20px 20px 6px 20px; background: linear-gradient(135deg, var(--a), color-mix(in srgb, var(--a) 50%, var(--b))); color: white; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3); }
+:root[data-theme="light"] .gai-msg.ai { background: rgba(255, 255, 255, .9); border-color: rgba(22, 22, 48, .08); box-shadow: 0 6px 14px -10px rgba(22, 22, 48, .3); }
+.gai-msg a { color: inherit; text-decoration-color: color-mix(in srgb, var(--a) 70%, transparent); text-underline-offset: 3px; }
+.gai-msg .co-director ol { padding-left: 1.1em; margin: .4em 0; } .gai-msg .co-director li { margin-bottom: .5em; } .gai-msg .co-director li p { margin: .15em 0 0; color: var(--mute); font-size: 13px; }
+.gai-msg .aq-note, .gai-aside { font-size: 12px; color: var(--mute); }
+.gai-go { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--invert-bg); color: var(--invert-fg) !important; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 8px 18px -10px rgba(0, 0, 0, .6); }
+.gai-go .co-ic { width: 16px; height: 16px; }
+.gai-hits { list-style: none; margin: .3em 0 0; padding: 0; display: grid; gap: 6px; }
+.gai-hits a { display: grid; gap: 2px; min-height: 44px; padding: 8px 12px; border-radius: 14px; background: rgba(var(--ink-rgb), .06); text-decoration: none; }
+.gai-hits b { font-size: 14px; } .gai-hits small { font-size: 12px; color: var(--mute); }
+.gai-sugs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.gai-sugs button { display: grid; align-content: start; gap: 3px; min-height: 84px; padding: 12px; border-radius: 18px; text-align: left; cursor: pointer; color: var(--fg); font: inherit;
+  border: 1px solid rgba(var(--ink-rgb), .1); background: linear-gradient(180deg, rgba(var(--spec-rgb), .08), rgba(var(--spec-rgb), .02)), rgba(var(--ink-rgb), .04);
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); transition: transform .18s, border-color .18s; }
+.gai-sugs button:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--a) 60%, transparent); }
+.gai-sugs button:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+.gai-sugs .co-ic { width: 20px; height: 20px; color: var(--a); margin-bottom: 4px; }
+.gai-sugs b { font-size: 13.5px; line-height: 1.25; } .gai-sugs small { font-size: 12px; line-height: 1.3; color: var(--mute); }
+:root[data-theme="light"] .gai-sugs button { background: rgba(255, 255, 255, .92); border-color: rgba(22, 22, 48, .08); box-shadow: inset 0 1px 0 #fff, 0 6px 14px -10px rgba(22, 22, 48, .3); }
+.gai-dots { display: inline-flex; gap: 5px; padding: 4px 2px; } .gai-dots i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: gai-dot 1.2s infinite; } .gai-dots i:nth-child(2) { animation-delay: .15s; } .gai-dots i:nth-child(3) { animation-delay: .3s; }
+.gai-mode { display: flex; align-items: center; gap: 10px; margin: 0 14px 8px; padding: 4px 4px 4px 14px; border-radius: 999px; font: 600 12.5px var(--sans); background: color-mix(in srgb, var(--a) 18%, transparent); border: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
+.gai-mode[hidden] { display: none; }
+.gai-mode button { margin-left: auto; min-height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: rgba(var(--ink-rgb), .12); color: var(--fg); font: inherit; cursor: pointer; }
+.gai-form { display: flex; align-items: flex-end; gap: 8px; margin: 0 12px 6px; padding: 5px 5px 5px 16px; border-radius: 26px; background: rgba(var(--ink-rgb), .07); border: 1px solid rgba(var(--ink-rgb), .12); }
+.gai-form:focus-within { border-color: color-mix(in srgb, var(--a) 70%, transparent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--a) 25%, transparent); }
+:root[data-theme="light"] .gai-form { background: #fff; border-color: rgba(22, 22, 48, .12); }
+.gai-form textarea { flex: 1; min-width: 0; max-height: 112px; padding: 10px 0; border: 0; background: none; color: var(--fg); font: 16px/1.4 var(--sans); resize: none; outline: none; }
+.gai-form textarea::placeholder { color: var(--mute); }
+.gai-send { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 0; background: linear-gradient(135deg, var(--a), var(--b)); color: white; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 6px 14px -6px color-mix(in srgb, var(--a) 70%, transparent); }
+.gai-send:disabled { opacity: .5; cursor: progress; }
+.gai-send .co-ic { width: 19px; height: 19px; }
+.gai-note { margin: 0; padding: 0 18px 12px; font-size: 11.5px; line-height: 1.4; color: var(--mute); text-align: center; }
+
+@media (max-width: 760px) {
+  .gai-fab { right: calc(12px + env(safe-area-inset-right)); bottom: calc(84px + env(safe-area-inset-bottom)); width: 56px; height: 56px; min-height: 0; padding: 7px; justify-content: center; }
+  .gai-fab .gai-orb { width: 42px; height: 42px; }
+  .gai-fabt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  body.has-gai .gx-totop { bottom: calc(150px + env(safe-area-inset-bottom)); }
+  .gai { left: calc(8px + env(safe-area-inset-left)); right: calc(8px + env(safe-area-inset-right)); bottom: calc(8px + env(safe-area-inset-bottom)); width: auto; height: min(78vh, 640px); height: min(78dvh, 640px); border-radius: 28px; z-index: 170; }
+  .gai-msg { max-width: 92%; }
+}
+.cx-focus .gai-fab, .cx-focus .gai { display: none; }
+@media print { .gai, .gai-fab { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .gai-orb > i, .gai, .gai-dots i { animation: none; } .gai-fab, .gai-sugs button { transition: none; } }
+@media (prefers-reduced-transparency: reduce) { :root .gai, :root .gai-fab, :root[data-theme] .gai, :root[data-theme] .gai-fab { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
+:root[data-a-contrast="high"] :is(.gai, .gai-fab, .gai-sugs button, .gai-form) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
+
+/* ----- Continue reading: recent lessons as books on a shelf (course home), Kindle-style: big covers in a row you
+   swipe through, each with how far you've read ----- */
+.cx-books { list-style: none; margin: 0; padding: 6px 4px 14px; display: grid; grid-auto-flow: column; grid-auto-columns: 148px; gap: 18px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding: 0 4px; scrollbar-width: thin;
+  -webkit-mask: linear-gradient(90deg, #000 calc(100% - 36px), transparent); mask: linear-gradient(90deg, #000 calc(100% - 36px), transparent); }
+.cx-books > li { scroll-snap-align: start; min-width: 0; }
+.cx-book { display: grid; gap: 10px; color: var(--fg); text-decoration: none; border-radius: 8px 14px 14px 8px; }
+.cx-book:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+/* the cover: the course colour, a spine down the left, the page edges showing on the right */
+.cx-bcover { position: relative; display: flex; flex-direction: column; gap: 6px; aspect-ratio: 2 / 3; padding: 14px 16px 12px 20px; overflow: hidden; border-radius: 6px 14px 14px 6px; color: white;
+  background: radial-gradient(90% 60% at 85% 10%, color-mix(in srgb, var(--b) 85%, white), transparent 70%), linear-gradient(160deg, var(--a), color-mix(in srgb, var(--a) 55%, #120f2e));
+  box-shadow: inset 7px 0 0 -1px rgba(0, 0, 0, .28), inset 8px 0 0 -1px rgba(255, 255, 255, .25), inset -3px 0 0 rgba(255, 255, 255, .55), inset 0 1px 0 rgba(255, 255, 255, .35), 0 16px 26px -14px rgba(0, 0, 0, .6), 0 0 0 1px rgba(0, 0, 0, .12);
+  transition: transform .3s cubic-bezier(.2, .9, .3, 1.2), box-shadow .3s; }
+.cx-bcover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, .13) 48%, transparent 56%); pointer-events: none; }
+.cx-bcover small { font: 600 10.5px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; opacity: .85; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cx-bcover b { font-size: 16px; line-height: 1.22; letter-spacing: -.01em; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; text-shadow: 0 1px 8px rgba(0, 0, 0, .25); }
+.cx-bcover em { margin-top: auto; font: 600 11px var(--sans); font-style: normal; opacity: .8; }
+.cx-bcover .cx-bdone { position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, .92); color: #0b7a3e; }
+.cx-bcover .cx-bdone .co-ic { width: 15px; height: 15px; }
+.cx-book:hover .cx-bcover { transform: translateY(-4px) rotate(-.6deg); }
+.cx-bmeta { display: grid; gap: 6px; padding: 0 2px; }
+.cx-bbar { height: 5px; border-radius: 99px; background: rgba(var(--ink-rgb), .14); overflow: hidden; }
+.cx-bbar i { display: block; width: calc(var(--p) * 100%); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--a), var(--b)); }
+.cx-bmeta small { font-size: 12.5px; color: var(--mute); } .cx-bmeta small b { color: var(--fg); }
+@media (max-width: 640px) { .cx-books { grid-auto-columns: 124px; gap: 14px; } .cx-bcover { padding: 12px 12px 10px 17px; } .cx-bcover b { font-size: 14.5px; } }
+@media (prefers-reduced-motion: reduce) { .cx-bcover { transition: none; } .cx-book:hover .cx-bcover { transform: none; } }
+:root[data-a-contrast="high"] .cx-bcover { background: var(--a); text-shadow: none; }
+
+/* ---------- Easy in, easy on (the audit): readable labels, a calm start, a rail that never covers the text ----------
+   Labels in plain sentence case at a readable size (spaced-out capitals are the hardest style for dyslexic readers);
+   the course's first screen has one heading and one button; the lesson's progress rail sits clear of the text. */
+.co-kicker, .cx-crumbs, .co-reading .co-lhead .kicker, .mv-page .kicker { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-tg { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-rr small, .cx-wday small { font-family: var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; font-size: 11px !important; }
+
+/* the course's first screen: one heading, one Start, nothing that can push the page wider than the phone */
+.co-hero { grid-template-columns: minmax(0, 1fr); max-width: 100%; overflow: hidden; }
+.co-herotext { min-width: 0; max-width: 760px; }
+.co-hero h2 { overflow-wrap: anywhere; }
+.co-herogo { align-items: center; gap: 14px 18px; margin-top: 8px; }
+.co-start1 { font-size: 17px; padding: 16px 28px; }
+.co-pathlink { font-size: 15px; }
+.co-herosmall { margin: 16px 0 0 !important; font-size: 14px !important; color: var(--mute) !important; }
+.co-herolab { min-width: 0; max-width: 100%; overflow-x: auto; }
+.co-findsec { margin-top: 18px; }
+@media (max-width: 560px) { .co-start1 { width: 100%; justify-content: center; } .co-herogo { flex-direction: column; align-items: stretch; text-align: center; } }
+
+/* the progress rail on phones: a slim strip above the dock, shown while you pause; never over the text */
+@media (max-width: 1020px) {
+  /* in the flow, not floating: a row of rings after the lesson, so it never sits over the text you're reading */
+  .co-reading .cx-rings { position: static; translate: none; transform: none; opacity: 1; margin: 18px auto 0; width: max-content; max-width: 100%; flex-direction: row; gap: 14px; padding: 8px 16px; border-radius: 99px; }
+  .co-reading .cx-rings .cx-rri { width: 28px; height: 28px; }
+  .co-reading .cx-rings .cx-rri .co-ic { width: 12px; height: 12px; }
+  .co-reading .cx-rr { grid-template-columns: auto auto; align-items: center; column-gap: 6px; }
+  .co-reading .cx-rr b { font-size: 12px; } .co-reading .cx-rr small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .co-reading .cx-rr .cx-rri { grid-row: span 1; }
+}
+
+/* lesson complete: the next lesson is the first, biggest thing */
+.cx-donenext { display: flex; width: 100%; justify-content: center; margin: 4px 0 18px; font-size: 17px; padding: 16px 22px; }
+.co-quick { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+body:has(> .co-modal) .cx-rings { display: none !important; }
+/* mouse and trackpad: the dense grids keep 24px between neighbours' centres (WCAG 2.5.8 target spacing) */
+.cx-mrc { gap: 6px; } .cx-mrc a { width: 18px; height: 18px; border-radius: 5px; }
+.cx-activity .co-heat { gap: 7px; } .cx-heatm { gap: 7px; } .cx-heatwd { gap: 7px; }
+/* the lesson step bars: a 24px-tall target each, with the 5px bar drawn inside it, so pointer users have room too */
+.co-read .co-steps { margin: 0; }
+.co-steps a, .co-read .co-steps a { --bar: rgba(var(--ink-rgb), .1); height: 24px; background: none !important; box-shadow: none !important; transform: none !important; }
+.co-steps a::before { inset: 0; }
+.co-steps a::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 5px; translate: 0 -50%; border-radius: 99px; background: var(--bar); transition: transform .15s; }
+.co-steps a.done { --bar: linear-gradient(90deg, var(--a), var(--b)); }
+.co-steps a.here { --bar: var(--invert-bg); }
+.co-steps a.here::after { box-shadow: 0 0 10px rgba(var(--spec-rgb), .6); }
+.co-steps a:hover::after { transform: scaleY(1.8); }
+@media (prefers-reduced-motion: reduce) { .co-steps a::after { transition: none; } }
+/* this topic's dots, for mouse users: 24px apart (touch screens already give each a 44px square) */
+@media (pointer: fine) { .cx-w-dots { gap: 10px; } .cx-w-dots a { margin: 0; } }
+
+/* ---------- Second pass from the audit ---------- */
+/* phones: in a lesson Gradify AI is in the dock, so the floating orb doesn't sit over the text */
+@media (max-width: 760px) { body:has(.co.co-reading) .gai-fab:not([aria-expanded="true"]) { display: none; } }
+/* phones: the course header is the course's name and the tabs; the stat chips live on Progress, and saving and pinning
+   on the outline and menu */
+@media (max-width: 760px) {
+  .co-head .co-hud, .co-head .cx-headrow { display: none; }
+  .co-head h1 { margin-bottom: 8px; }
+}
+/* folded diagrams: one tidy line each, opening in place */
+.cx-fig { margin: 14px 0; border-radius: 16px; border: 1px solid rgba(var(--ink-rgb), .12); background: rgba(var(--ink-rgb), .03); }
+.cx-fig > summary { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 14px; cursor: pointer; list-style: none; font-size: 14.5px; font-weight: 600; color: var(--fg); }
+.cx-fig > summary::-webkit-details-marker { display: none; }
+.cx-fig > summary .co-ic { flex: none; width: 16px; height: 16px; color: var(--la, var(--a)); }
+.cx-fig > summary .cx-chev { margin-left: auto; transition: transform .2s; } .cx-fig[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-fig > .gd { margin: 0 12px 12px; }
+.co-read .co-deeper.cx-acc { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+@media (prefers-reduced-motion: reduce) { .cx-fig > summary .cx-chev { transition: none; } }
+.cx-autonext { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 14px 0 0; min-height: 44px; font-size: 14px; color: var(--mute); cursor: pointer; }
+.cx-autonext input { width: 20px; height: 20px; accent-color: var(--la, var(--a)); }
+.cx-countdown { margin: 6px 0 0; text-align: center; font-weight: 600; }
+/* the completion sheet always fits: it scrolls inside itself on short screens */
+.cx-donebox { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; }
+/* phones: the one button comes before the paragraph, so Start is on the first screen */
+@media (max-width: 760px) { .co-herotext { display: flex; flex-direction: column; } .co-herotext h2 { order: 1; } .co-herotext .co-herogo { order: 2; margin: 4px 0 14px; } .co-herotext > p:not(.co-herosmall) { order: 3; } .co-herotext .co-herosmall { order: 4; } }
+
+/* a long lesson's second half, folded into one card at a natural break (kit/course/course.js, "two parts") */
+.co-prose > .cx-part2 { grid-column: 1 / -1; column-span: all; margin: 28px 0; border-radius: 18px; border: 1.5px solid color-mix(in srgb, var(--accent, #6366f1) 45%, transparent); background: rgba(var(--surface-rgb), .6); }
+.cx-part2 > summary { display: grid; gap: 4px; padding: 18px 48px 18px 20px; cursor: pointer; list-style: none; position: relative; min-height: 44px; }
+.cx-part2 > summary::-webkit-details-marker { display: none; }
+.cx-part2 > summary .cx-p2k { font-size: .85rem; opacity: .8; display: inline-flex; gap: 6px; align-items: center; }
+.cx-part2 > summary b { font-size: 1.1rem; }
+.cx-part2 > summary small { opacity: .75; }
+.cx-part2 > summary .cx-chev { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); }
+.cx-part2[open] > summary .cx-chev { transform: translateY(-50%) rotate(90deg); }
+.cx-part2[open] > summary small { display: none; }
+.cx-part2[open] { background: none; border-color: transparent; }
+.cx-part2[open] > summary { border-bottom: 1px solid rgba(var(--ink-rgb), .12); margin-bottom: 12px; }
+/* the practice toolkit now follows the notes, with its own heading */
+.cx-kit .cx-kith { grid-column: 1 / -1; margin: 0 0 4px; }
+
+/* ---------- Gradify glass on every course surface (tokens in kit/styles/base.css: the Pro banner's frosted glass) ----------
+   Frosted, never magnified: a soft brand tint, a 22px blur, bright inner edges and a thin spectrum rim. The floating bars
+   (tabs, the lesson toolbar, the dock) take the stronger tint, like the banner itself. The notes sheet keeps its own
+   calmer fill so long reading stays easy. */
+:root body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-tree, .cx-widget, .co-pncard, .cx-kc, .cx-w-next, .co-tabs, .cx-lbar, .cx-dock, .cx-habit) {
+  border: 1px solid transparent;
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur); backdrop-filter: var(--gg-blur);
+  box-shadow: var(--gg-spec), var(--gg-shadow);
+}
+:root body .co :is(.co-tabs, .cx-lbar, .cx-dock) { background: var(--gg-tint-strong) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim-strong) border-box; }
+:root body .co .co-read .co-notes { border: 1px solid transparent; background: linear-gradient(var(--lg-fill-sheet), var(--lg-fill-sheet)) padding-box, var(--gg-rim) border-box; }
+@media (prefers-reduced-transparency: reduce) {
+  :root body .co :is(.co-card, .cx-panel, .cx-ucard, .cx-sylhead, .cx-plank, .cx-fpanel, .cx-tree, .cx-widget, .co-pncard, .cx-kc, .cx-w-next, .co-tabs, .cx-lbar, .cx-dock, .cx-habit) { background: linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box, var(--gg-rim) border-box; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}

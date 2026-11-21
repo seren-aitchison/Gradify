@@ -1,0 +1,73 @@
+{
+ "id": "chem-atom-economy-routes",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Green chemistry",
+ "title": "Comparing routes by atom economy",
+ "caption": "Atom economy = mass of desired product ÷ total mass of reactants × 100. Hydrating ethene puts every atom into ethanol (100%); fermenting glucose loses two CO₂ for every two ethanol (51.1%), although it uses a renewable feedstock.",
+ "alt": "Two routes to ethanol: ethene + steam (atom economy 100%) and fermentation of glucose (51.1%).",
+ "description": [
+  "C₂H₄ + H₂O → C₂H₅OH: 100%.",
+  "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂: 2 × 46.07 ÷ 180.16 = 51.1%."
+ ],
+ "layout": "grid",
+ "rowHeight": 96,
+ "boxWidth": 150,
+ "nodes": [
+  {
+   "id": "a",
+   "label": "ethene + steam",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "b",
+   "label": "ethanol",
+   "sub": "atom economy 100%",
+   "col": 1,
+   "row": 0,
+   "tone": "a4"
+  },
+  {
+   "id": "c",
+   "label": "glucose (fermentation)",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "d",
+   "label": "ethanol + CO₂",
+   "sub": "atom economy 51.1%",
+   "col": 1,
+   "row": 1,
+   "tone": "a3"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "H₃PO₄, 300 °C"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "yeast, 35 °C"
+  }
+ ],
+ "claims": [
+  {
+   "type": "atomEconomy",
+   "eq": "C2H4 + H2O → C2H5OH",
+   "product": "C2H5OH",
+   "value": 100
+  },
+  {
+   "type": "atomEconomy",
+   "eq": "C6H12O6 → 2C2H5OH + 2CO2",
+   "product": "C2H5OH",
+   "value": 51.1
+  }
+ ]
+}

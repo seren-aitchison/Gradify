@@ -1,0 +1,37 @@
+{
+ "id": "chem-e-z",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "E and Z nomenclature",
+ "title": "E and Z where cis and trans fail",
+ "caption": "In 1-bromo-1-chloropropene each carbon of the C=C carries two different groups, so cis/trans is ambiguous. By priority, Br beats Cl on one carbon and CH₃ beats H on the other: the two higher-priority groups together is Z, opposite is E.",
+ "alt": "Z- and E-1-bromo-1-chloropropene.",
+ "description": [
+  "Z isomer: Br and CH₃ on the same side of the double bond.",
+  "E isomer: Br and CH₃ on opposite sides."
+ ],
+ "panels": [
+  {
+   "smiles": "Cl/[C:1](Br)=[CH:2]/C",
+   "label": "Z isomer",
+   "ez": {
+    "1-2": "Z"
+   },
+   "sub": "Br and CH₃ same side"
+  },
+  {
+   "smiles": "Cl/[C:1](Br)=[CH:2]\\C",
+   "label": "E isomer",
+   "ez": {
+    "1-2": "E"
+   },
+   "sub": "Br and CH₃ opposite"
+  }
+ ],
+ "claims": [
+  {
+   "type": "isomers"
+  }
+ ]
+}

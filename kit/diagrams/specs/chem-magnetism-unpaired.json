@@ -1,0 +1,43 @@
+{
+ "id": "chem-magnetism-unpaired",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Magnetic properties",
+ "title": "Unpaired electrons and magnetism",
+ "caption": "Each unpaired electron adds to the magnetic moment: the spin-only value is μ = √(n(n + 2)) μB. High-spin Mn²⁺ (d⁵) has five, μ = 5.92; Cu²⁺ (d⁹) has one, 1.73; Zn²⁺ (d¹⁰) none, so it is diamagnetic.",
+ "alt": "Three splitting diagrams: Mn²⁺ with five unpaired electrons, Cu²⁺ with one, Zn²⁺ with none.",
+ "description": [
+  "Mn²⁺ d⁵ high spin: one electron in each d orbital, μ = 5.92 μB.",
+  "Cu²⁺ d⁹: one unpaired, 1.73 μB.",
+  "Zn²⁺ d¹⁰: all paired, diamagnetic."
+ ],
+ "kind": "cfs",
+ "panels": [
+  {
+   "metal": "Mn",
+   "ox": 2,
+   "spin": "high",
+   "d": 5,
+   "unpaired": 5,
+   "moment": 5.92,
+   "title": "Mn²⁺ d⁵"
+  },
+  {
+   "metal": "Cu",
+   "ox": 2,
+   "d": 9,
+   "unpaired": 1,
+   "moment": 1.73,
+   "title": "Cu²⁺ d⁹"
+  },
+  {
+   "metal": "Zn",
+   "ox": 2,
+   "d": 10,
+   "unpaired": 0,
+   "moment": 0,
+   "title": "Zn²⁺ d¹⁰"
+  }
+ ]
+}

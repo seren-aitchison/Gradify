@@ -1,0 +1,164 @@
+{
+ "id": "chem-solubility-curve",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Solubility",
+ "title": "Solubility curves",
+ "caption": "Potassium nitrate's solubility rises steeply with temperature; sodium chloride's barely changes. Cooling a saturated KNO₃ solution from 80 °C to 20 °C crystallises out about 137 g per 100 g of water, which is why it can be purified by recrystallisation and NaCl cannot.",
+ "alt": "Solubility in g per 100 g water against temperature: KNO₃ rising from 13 to 246; NaCl almost flat from 36 to 40.",
+ "description": [
+  "KNO₃: 13.3 g at 0 °C, 31.6 at 20 °C, 110 at 60 °C, 246 at 100 °C.",
+  "NaCl: 35.7 at 0 °C rising only to 39.8 at 100 °C.",
+  "The curves cross near 22 °C."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   260
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ]
+ ],
+ "grid": [
+  20,
+  50
+ ],
+ "axisLabels": [
+  "temperature / °C",
+  "solubility / g per 100 g water"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.00002002*x^3+0.0148671*x^2+0.639530*x+13.13730",
+   "colour": "a1",
+   "label": "KNO₃",
+   "labelAt": [
+    78,
+    190
+   ]
+  },
+  {
+   "expr": "0.00033482*x^2+0.0070893*x+35.71786",
+   "colour": "a3",
+   "label": "NaCl",
+   "labelAt": [
+    82,
+    52
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 13.3,
+   "colour": "a1"
+  },
+  {
+   "x": 20,
+   "y": 31.6,
+   "colour": "a1"
+  },
+  {
+   "x": 40,
+   "y": 63.9,
+   "colour": "a1"
+  },
+  {
+   "x": 60,
+   "y": 110,
+   "colour": "a1"
+  },
+  {
+   "x": 80,
+   "y": 169,
+   "colour": "a1"
+  },
+  {
+   "x": 100,
+   "y": 246,
+   "colour": "a1"
+  },
+  {
+   "x": 0,
+   "y": 35.7,
+   "colour": "a3"
+  },
+  {
+   "x": 20,
+   "y": 36.0,
+   "colour": "a3"
+  },
+  {
+   "x": 40,
+   "y": 36.6,
+   "colour": "a3"
+  },
+  {
+   "x": 60,
+   "y": 37.3,
+   "colour": "a3"
+  },
+  {
+   "x": 80,
+   "y": 38.4,
+   "colour": "a3"
+  },
+  {
+   "x": 100,
+   "y": 39.8,
+   "colour": "a3"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "0.00002002*x^3+0.0148671*x^2+0.639530*x+13.13730",
+   "x": 20,
+   "between": [
+    29,
+    34
+   ],
+   "name": "KNO₃: about 31.6 g at 20 °C (data)"
+  },
+  {
+   "type": "value",
+   "expr": "0.00002002*x^3+0.0148671*x^2+0.639530*x+13.13730",
+   "x": 80,
+   "between": [
+    164,
+    174
+   ],
+   "name": "KNO₃: about 169 g at 80 °C (data)"
+  },
+  {
+   "type": "value",
+   "expr": "0.00033482*x^2+0.0070893*x+35.71786",
+   "x": 60,
+   "between": [
+    37.0,
+    37.6
+   ],
+   "name": "NaCl: 37.3 g at 60 °C (data)"
+  }
+ ]
+}

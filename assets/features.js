@@ -74,7 +74,7 @@ function renderBubbles(filter) {
       <span class="b-ico">${glass(f, GLASS_SIZE[f.size])}${f.live ? '<i class="b-live" title="Live: try it now"></i>' : ""}</span><span class="b-name">${f.n}</span></button>`).join("");
 }
 // features that come with a paid plan (pricing.html); everything else is in Free
-const PLAN_LABEL = { plus: "Gradify Plus", pro: "Gradify Pro" };
+const PLAN_LABEL = { plus: "Gradify Pro", pro: "Gradify Ultra" };
 function showDetail(f) {
   $("#bubble-detail").innerHTML = `
     <span class="b-ico big">${glass(f, 72)}</span>

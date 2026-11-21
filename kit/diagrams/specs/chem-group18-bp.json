@@ -1,0 +1,58 @@
+{
+ "id": "chem-group18-bp",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "Group 18",
+ "title": "Noble gas boiling points",
+ "caption": "Noble gases exist as single atoms held together only by London forces. Larger atoms with more electrons are more polarisable, so boiling points rise down the group.",
+ "alt": "Bar chart of noble gas boiling points from helium −269 to radon −62 °C.",
+ "description": [
+  "He −269, Ne −246, Ar −186, Kr −153, Xe −108, Rn −62 °C."
+ ],
+ "kind": "bars",
+ "dataset": "bpNoble",
+ "range": [
+  -300,
+  0
+ ],
+ "ticks": [
+  -300,
+  -200,
+  -100,
+  0
+ ],
+ "yLabel": "boiling point / °C",
+ "colour": "a5",
+ "items": [
+  {
+   "key": "He",
+   "value": -269
+  },
+  {
+   "key": "Ne",
+   "value": -246
+  },
+  {
+   "key": "Ar",
+   "value": -186
+  },
+  {
+   "key": "Kr",
+   "value": -153
+  },
+  {
+   "key": "Xe",
+   "value": -108
+  },
+  {
+   "key": "Rn",
+   "value": -62
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

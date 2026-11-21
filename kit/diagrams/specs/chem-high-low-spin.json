@@ -1,0 +1,35 @@
+{
+ "id": "chem-high-low-spin",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Ligand field theory",
+ "title": "High-spin and low-spin d⁶",
+ "caption": "Fe²⁺ is d⁶. With weak-field water, Δo is smaller than the energy needed to pair electrons, so they spread out: high spin, four unpaired. With strong-field cyanide, Δo is large and all six pair in t₂g: low spin, none unpaired.",
+ "alt": "Two octahedral splitting diagrams for Fe²⁺: [Fe(H₂O)₆]²⁺ high spin with four unpaired electrons, [Fe(CN)₆]⁴⁻ low spin with none.",
+ "description": [
+  "[Fe(H₂O)₆]²⁺: t₂g with one pair and two singles, eg with two singles: four unpaired.",
+  "[Fe(CN)₆]⁴⁻: t₂g fully paired, eg empty: none unpaired, diamagnetic."
+ ],
+ "kind": "cfs",
+ "panels": [
+  {
+   "metal": "Fe",
+   "ox": 2,
+   "spin": "high",
+   "d": 6,
+   "unpaired": 4,
+   "moment": 4.9,
+   "title": "[Fe(H₂O)₆]²⁺ high spin"
+  },
+  {
+   "metal": "Fe",
+   "ox": 2,
+   "spin": "low",
+   "d": 6,
+   "unpaired": 0,
+   "moment": 0,
+   "title": "[Fe(CN)₆]⁴⁻ low spin"
+  }
+ ]
+}

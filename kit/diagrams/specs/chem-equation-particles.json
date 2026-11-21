@@ -1,0 +1,108 @@
+{
+ "id": "chem-equation-particles",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "Chemical equations",
+ "title": "An equation as particles",
+ "caption": "CH₄ + 2O₂ → CO₂ + 2H₂O: one methane molecule and two oxygen molecules become one carbon dioxide and two water molecules. Count the atoms: 1 C, 4 H and 4 O on each side, so mass is conserved.",
+ "alt": "Before: one methane and two oxygen molecules. After: one carbon dioxide and two water molecules.",
+ "description": [
+  "Before: CH₄ and two O₂, holding 1 carbon, 4 hydrogen and 4 oxygen atoms.",
+  "After: CO₂ and two H₂O, again 1 carbon, 4 hydrogen and 4 oxygen atoms."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Conservation of mass and relative formula mass"
+  }
+ ],
+ "species": {
+  "CH4": {
+   "atoms": [
+    "C",
+    "H",
+    "H",
+    "H",
+    "H"
+   ],
+   "shape": "tetra"
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  },
+  "CO2": {
+   "atoms": [
+    "C",
+    "O",
+    "O"
+   ],
+   "shape": "linear"
+  },
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "burns"
+ ],
+ "panelHeight": 150,
+ "panels": [
+  {
+   "title": "CH₄ + 2O₂",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "CH4",
+     1
+    ],
+    [
+     "O2",
+     2
+    ]
+   ],
+   "spacing": 14
+  },
+  {
+   "title": "CO₂ + 2H₂O",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "CO2",
+     1
+    ],
+    [
+     "H2O",
+     2
+    ]
+   ],
+   "spacing": 14
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "equation",
+   "eq": "CH4 + 2O2 → CO2 + 2H2O",
+   "panels": [
+    0,
+    1
+   ]
+  }
+ ]
+}

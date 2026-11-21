@@ -126,6 +126,7 @@ H: Systematic methods
 X: A 6 V cell and a 2 V cell are connected in a single loop so that they oppose each other, with 4 Ω of total resistance. Find the current.
 > Net EMF = 6 − 2 = 4 V
 > I = 4/4 = 1 A, driven by the 6 V cell
+D: phys-kirchhoff-loop
 !: Watch signs: going through a resistor along the current is a drop (−IR); through a cell from − to + is a rise (+ε).
 P: **Investigate with the lab.** In a mixed network, read the currents into and out of each junction and the voltages round each loop. Check both of Kirchhoff's laws.
 IX: circuits

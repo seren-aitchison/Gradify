@@ -47,7 +47,9 @@ The aim: a learner never has to ask "Where do I find that?", "Where was I?" or "
 | Motion and long pages | `kit/ui/motion.js` | `transition()`, `jumpTo()`, `mountToTop()`, `copyLink()` |
 | GradifyContinueLearning, Gradify-wide search | `kit/ui/global-nav.js` | `mountGlobalNav()` (the palette over every course and lesson) and `mountYourLearning()` (pins + course cards) for the homepage and subject sites |
 | Explore | `kit/ui/explore.js` | `mountExplore(el)` on `explore.html`: every course as site → course → chapter → topic → lesson, with topic preview cards (progress from evidence, estimated time, builds on / leads to), stage filters, remembered chapters and search |
+| Mastery map | `kit/ui/mastery-map-view.js` | `renderMasteryMap(el, map, { hrefOf, unitWord })`: a course's chapters from foundations (left) to advanced (right), lines for what builds on what, each chapter coloured by its mastery level; *Within reach* and *Holding you back* above it. Data: `kit/learning/mastery-map.js` |
 | Feedback moments | `kit/ui/feel.js` | `feel("correct" \| "wrong" \| "complete" \| "levelup" \| "achievement" \| "select")`: a haptic and an optional short sound, set in the Aa panel (Sounds off by default, Haptics on) |
+| Liquid Glass (GPU) | `kit/ui/liquid-gl.js` | `start()`, loaded on every page by `kit/core/theme-boot.js`: one WebGL canvas behind the page draws its light and every glass surface on screen (headers, footers, panels, plans, course cards) with refraction, dispersion, Fresnel, a specular that follows the pointer and contact shadows; floating bars carry a copy of their patch. Three tiers: `webgl` (full), `webgl-lite` (no colour split, 12 surfaces, fewer pixels: phones with little memory, no highp, few uniforms, or a full tier measured under 30fps) and `css` (no WebGL, software rendering reported by the browser through `failIfMajorPerformanceCaveat` or named by the renderer, reduced transparency, high contrast, data saver, a lost context, or lite measured slow too). Shaders compile in the background (`KHR_parallel_shader_compile`); speed is the median frame interval after warm-up, never `gl.finish()`. Lost contexts fall back to CSS and come back on restore; reduced motion keeps the light still. What happened: `<html data-glass>` and `window.gradifyGlass` in the console. `localStorage["gradify.glass"]`: `off`, `lite`, or `force` (skips the checks, for testing). `GLASS=slow-gpu node scripts/check-sync.cjs` runs the lesson journey through the step-down. Research: `labs/liquid-glass/` |
 | Storage helpers | `kit/ui/store.js` | Safe reads and writes (private windows, blocked storage), `esc`, and the stylesheet loader |
 | Everything at once | `kit/ui/index.js` | Re-exports the above |
 
@@ -106,6 +108,17 @@ Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css`
 - *Explore related topics* in every lesson (**E**, and in "What would you like to do next?"): what the lesson builds on,
   lessons named after its key terms and the rest of its topic, each previewable in the drawer. Opening one offers a
   *Back to* link to the exact place in the lesson you left.
+
+**Mastery** (the Gradify Mastery System)
+- Every chapter of every course has its prerequisites (`kit/learning/chapter-map.js`: authored for 33 courses, derived
+  from the concept graph for Maths; a test rejects unknown chapters, cycles and redundant links).
+- One mastery scale everywhere: Not started → Learning → Practising → Proficient → Mastered, plus Needs revision, from
+  answers only (`kit/learning/mastery-map.js`).
+- The mastery map: on Explore (Chapters / Mastery map) and at the top of each course's Progress page.
+- The course world: on each subject site's map, the course's stages are regions and its chapters are places. They
+  light up from real mastery, mastered chapters become landmarks, and the roads are the prerequisites.
+- Today's topic quest: Understand / Remember / Apply on the topic the learner is in (`kit/game/quests.js`), on course
+  Home and the Journey.
 
 **Premium**
 - Split screen (**S**, 1100px and wider): notes on the left; questions, flashcards, the AI tutor and the lesson's

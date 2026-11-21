@@ -180,9 +180,12 @@ export const CONCEPTS = {
     "u27/Optimisation solvers": [LP],
     // Schools 28 and 29: exam and everyday maths
     "u28/Qualifications": [N, ALG],
-    "u28/Exam skills": [FDP, EQ, PF],
+    // Exam skills and Data and risk teach the probability they use, at exam level (diagrams, "at least one",
+    // conditional probability in u28-20; natural frequencies and expected cost in u29-27), so neither needs School 12's
+    // Foundations of probability first. Listing it put both schools after Probability, and so after Calculus, in the map
+    "u28/Exam skills": [FDP, EQ],
     "u29/Money": [FDP],
     "u29/Measures and time": [FDP, MEAS],
-    "u29/Data and risk": [FDP, PF],
+    "u29/Data and risk": [FDP],
   },
 };

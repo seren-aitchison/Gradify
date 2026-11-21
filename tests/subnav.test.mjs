@@ -15,7 +15,8 @@ test("every page with a sub-site header loads the module that adds its phone and
     const html = await readFile(new URL(f, root), "utf8");
     if (!html.includes('class="sub-links"')) continue;
     n++;
-    assert.match(html, /kit\/core\/site\.js/, `${f} has a sub-site header but doesn't import kit/core/site.js, so phones get no menu`);
+    // directly, or through the header's own module (kit/core/subheader.js imports site.js)
+    assert.match(html, /kit\/core\/(site|subheader)\.js/, `${f} has a sub-site header but doesn't import kit/core/site.js or subheader.js, so phones get no menu`);
   }
   assert.ok(n > 80, `expected the sub-site pages, found ${n}`);
 });

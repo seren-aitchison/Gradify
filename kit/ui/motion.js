@@ -24,6 +24,9 @@ export async function transition(update) {
 
 export function jumpTo(el, offset = 90) {
   if (!el) return;
+  // a place inside a closed accordion opens it first, so jumping there always shows something
+  if (el.matches("details")) el.open = true;
+  for (let d = el.closest("details"); d; d = d.parentElement?.closest("details")) d.open = true;
   scrollTo({ top: el.getBoundingClientRect().top + scrollY - offset, behavior: reduced() ? "auto" : "smooth" });
 }
 
@@ -38,7 +41,9 @@ export function mountToTop({ after = 1.5 } = {}) {
   document.body.append(toTop);
   const check = () => { toTop.hidden = !(scrollY > innerHeight * after && document.documentElement.scrollHeight > innerHeight * 3); };
   addEventListener("scroll", check, { passive: true }); addEventListener("resize", check);
-  check();
+  // the first look waits for the next frame: measuring the page while it's still being built makes the browser lay it
+  // out early (it starts hidden, and a page opened part-way down is put right by then)
+  requestAnimationFrame(check);
   return toTop;
 }
 

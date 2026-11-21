@@ -216,6 +216,11 @@ When code from any project is incorporated later, add it here with its licence, 
 
 ## 5. What to build next, ranked
 
+**Done in phase 1 (20 November 2026):** items 1, 2, 4 and 7, with the measured results in BENCHMARKS.md ("Phase 1
+results"). Item 4 shipped without per-question guess floors (one fitted guess rate per subject for now) and item 7
+without logging predictions before mock exams (that needs the real exams to compare against). The BKT parameters are
+fitted on simulated learners until item 5's export exists: `scripts/fit-bkt.mjs --attempts` refits them on real ones.
+
 Ranked by expected improvement in what learners see, against effort and risk. Every item lands as its own pull request, has to move the benchmark the right way, and updates the baseline in the same PR.
 
 | # | Change | Expected benefit (measured or to measure) | Effort | Migration | AI cost |

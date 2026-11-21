@@ -193,4 +193,4 @@ Nothing new is stored. Where it shows:
 - **Subject Earth maps** (`kit/earth/subject-map.js`) now show the schools you've started in that site's courses as real pins next to your flashcard decks, with six-dimension evidence and a link back to the school.
 - **No evidence is shown as "no evidence yet", never as 0%.** A topic isn't told it has passed every check while parts of it are unmeasured.
 
-Still example data, and labelled as such: the LifeOS tour's own globe, community, credentials, calendar and the scripted assistant. Credentials need a real issuing and verification service before they can be shown for a learner.
+Still example data, and labelled as such: the LifeOS tour's own globe (on a subject site, below the learner's real learning map, `kit/lifeos/my-map.js`), community, credentials, calendar and the scripted assistant. Credentials need a real issuing and verification service before they can be shown for a learner.

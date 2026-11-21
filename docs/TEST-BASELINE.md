@@ -20,6 +20,10 @@ All 10 had one cause: `node_modules` wasn't installed, so `@electric-sql/pglite`
 
 **Always run `npm ci` before `npm test`.**
 
+The same thing happened again on 19 November 2026: a sandbox without `npm ci` reported 14 failures (`ai-controls`,
+`ai-flow`, the three `billing` suites, `community-db`, two goals table tests, `pg-rehearsal`, `plans`, `srs-reference`,
+`supabase-admin`, `tools-db` and one waitlist table test), all `ERR_MODULE_NOT_FOUND`. After `npm ci`: 902 of 902 pass, as in CI.
+
 ## Recorded runs (13 November 2026, `npm ci` then `npm test`)
 
 | Commit | What | Pass | Fail |
@@ -29,6 +33,7 @@ All 10 had one cause: `node_modules` wasn't installed, so `@electric-sql/pglite`
 | 14 November 2026 | After FSRS reference validation (`srs-reference`), glass icons and Intelligence 3.0 (`intel3`), merged with main | 762 | 0 |
 | 15 November 2026 | Site-wide light mode (`theme`) | 766 | 0 |
 | 17 November 2026 | Intelligence benchmarks (`bench`), on top of the flashcard engine branch | 796 | 5 |
+| 19 November 2026 | UX system (`ui`), Explore, topic status, Mastery System (`mastery-map`), topic quests | 902 | 0 |
 
 The 5 failures on 17 November are all in `deploy.test.mjs` and are local to the machine, not the code. The top-level allowlist (`scripts/build-site.mjs`) saw an untracked `.claude/` folder in the main checkout, and a `node_modules` symlink in a clean worktree. Nothing else failed.
 

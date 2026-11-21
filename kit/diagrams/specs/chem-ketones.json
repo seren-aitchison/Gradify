@@ -1,0 +1,56 @@
+{
+ "id": "chem-ketones",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Ketones",
+ "title": "Ketones",
+ "caption": "In a ketone the C=O is within the chain, with a carbon on each side, so there is no hydrogen on the carbonyl carbon to oxidise. Propanone is the simplest; ketones are named with -one.",
+ "alt": "Propanone, butanone and cyclohexanone with the C=O shaded.",
+ "description": [
+  "Propanone, CH₃COCH₃.",
+  "Butanone, CH₃COCH₂CH₃.",
+  "Cyclohexanone: the C=O in a six-membered ring."
+ ],
+ "panels": [
+  {
+   "smiles": "CC(C)=O",
+   "label": "propanone",
+   "groups": [
+    "ketone"
+   ],
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CCC(C)=O",
+   "label": "butanone",
+   "groups": [
+    "ketone"
+   ],
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "O=C1CCCCC1",
+   "label": "cyclohexanone",
+   "groups": [
+    "ketone"
+   ],
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    }
+   ]
+  }
+ ]
+}

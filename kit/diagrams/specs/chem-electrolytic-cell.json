@@ -1,0 +1,40 @@
+{
+ "id": "chem-electrolytic-cell",
+ "renderer": "cell",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Electrolytic cells",
+ "title": "Electrolysis of molten sodium chloride",
+ "caption": "An external supply forces a non-spontaneous reaction. Na⁺ ions move to the negative electrode (cathode) and gain electrons; Cl⁻ ions move to the positive electrode (anode) and lose them. Molten NaCl gives sodium metal and chlorine gas.",
+ "alt": "A vessel of molten sodium chloride with two electrodes connected to a d.c. supply; sodium forms at the negative electrode and chlorine at the positive.",
+ "description": [
+  "Negative electrode (cathode): Na⁺ + e⁻ → Na.",
+  "Positive electrode (anode): 2Cl⁻ → Cl₂ + 2e⁻.",
+  "Overall: 2Na⁺ + 2Cl⁻ → 2Na + Cl₂."
+ ],
+ "kind": "single",
+ "supply": true,
+ "vessel": {
+  "label": "molten NaCl",
+  "colour": "#fde68a"
+ },
+ "net": "2Na+ + 2Cl- → 2Na + Cl2",
+ "halves": [
+  {
+   "electrode": "C",
+   "label": "graphite",
+   "role": "anode",
+   "half": "2Cl- → Cl2 + 2e-",
+   "product": "Cl₂(g)",
+   "ions": "Cl⁻"
+  },
+  {
+   "electrode": "C",
+   "label": "graphite",
+   "role": "cathode",
+   "half": "Na+ + e- → Na",
+   "product": "Na(l)",
+   "ions": "Na⁺"
+  }
+ ]
+}

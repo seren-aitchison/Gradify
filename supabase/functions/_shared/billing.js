@@ -1,4 +1,4 @@
-// Gradify Pro billing helpers shared by the billing-checkout, billing-portal and billing-webhook Edge Functions.
+// Gradify billing helpers (Pro and Ultra) shared by the billing-checkout, billing-portal and billing-webhook Edge Functions.
 // Plain JavaScript with Web Crypto only, so the same code runs in Deno (Supabase) and in Node (tests/billing-stripe.test.mjs).
 // Talks to Stripe's REST API directly; no SDK.
 
@@ -57,9 +57,9 @@ export async function verifyStripeEvent(payload, header, secret, { tolerance = 3
 const iso = (s) => (s ? new Date(s * 1000).toISOString() : null);
 const STATUSES = new Set(["incomplete", "incomplete_expired", "trialing", "active", "past_due", "canceled", "unpaid", "paused"]);
 
-/** Which plan a Stripe price is: the Plus price, or Pro (Pro's prices, and the original Gradify Pro prices). Prices
+/** Which plan a Stripe price is: the Pro price, or Ultra (Ultra's prices, and the original Gradify Ultra prices). Prices
  *  are Edge Function secrets: STRIPE_PRICE_PLUS_MONTH, STRIPE_PRICE_PRO_MONTH (and the older STRIPE_PRICE_MONTH and
- *  STRIPE_PRICE_YEAR, which were Pro). An unknown price is null, and the subscription doesn't count as either. */
+ *  STRIPE_PRICE_YEAR, which were Ultra). An unknown price is null, and the subscription doesn't count as either. */
 export function planForPrice(priceId, env = {}) {   // → "plus" | "pro" | null (not a price Gradify knows)
   if (!priceId) return null;
   const ids = (...keys) => keys.map((k) => env[k]).filter(Boolean);
@@ -72,7 +72,7 @@ export function planForPrice(priceId, env = {}) {   // → "plus" | "pro" | null
 export function subscriptionRow(sub, env = {}) {
   const item = sub.items?.data?.[0] || {};
   const price = item.price || sub.plan || {};
-  // Plus by its price; anything else is Pro, as every subscription was before there were two plans (only Gradify's
+  // Pro by its price; anything else is Ultra, as every subscription was before there were two plans (only Gradify's
   // own checkout creates subscriptions, so a learner can't bring their own price)
   const plan = planForPrice(price.id, env) ?? "pro";
   return {
@@ -94,10 +94,10 @@ export const userOf = (obj) => obj?.metadata?.gradify_user_id || obj?.client_ref
 
 /** Which Stripe price a checkout for a plan and interval maps to (prices are Edge Function secrets). */
 export function priceFor(plan, interval, env) {
-  if (plan !== "plus" && plan !== "pro") throw Object.assign(new Error("Choose Gradify Plus or Gradify Pro."), { status: 400 });
+  if (plan !== "plus" && plan !== "pro") throw Object.assign(new Error("Choose Gradify Pro or Gradify Ultra."), { status: 400 });
   if (interval !== "month" && interval !== "year") throw Object.assign(new Error("Choose monthly billing."), { status: 400 });
   const id = env[`STRIPE_PRICE_${plan.toUpperCase()}_${interval === "year" ? "YEAR" : "MONTH"}`];
-  if (!id) throw Object.assign(new Error(`${plan === "plus" ? "Gradify Plus" : "Gradify Pro"} isn't on sale yet.`), { status: 503 });
+  if (!id) throw Object.assign(new Error(`${plan === "plus" ? "Gradify Pro" : "Gradify Ultra"} isn't on sale yet.`), { status: 503 });
   return id;
 }
 
@@ -144,6 +144,51 @@ export async function handleStripeEvent(payload, header, deps, opts = {}) {
 }
 
 /** A return path on the Gradify site only ("/x.html#/y"), or the default; never another host. */
+/** A promotion code as a learner could type it, or null: letters, digits, - and _, up to 40 characters. */
+export function cleanPromo(code) {
+  const c = typeof code === "string" ? code.trim().toUpperCase() : "";
+  return /^[A-Z0-9_-]{3,40}$/.test(c) ? c : null;
+}
+
+/** An active promotion code Stripe knows, with its coupon, or null. */
+export async function findPromo(secret, code, fetchImpl = fetch) {
+  const c = cleanPromo(code);
+  if (!c) return null;
+  const found = await stripe(secret, "GET", `/promotion_codes?code=${encodeURIComponent(c)}&active=true&limit=1`, null, fetchImpl).catch(() => null);
+  return found?.data?.[0]?.id ? found.data[0] : null;
+}
+
+/**
+ * The Checkout Session's discount fields for a promotion code. Stripe doesn't allow `discounts` together with
+ * `allow_promotion_codes`, so a session either has the code applied, or the "Add promotion code" field. Returns
+ * { discounts } for an active code Stripe knows, else { allow_promotion_codes }. The code's own restrictions
+ * (first-time customers, expiry, which product) are still checked by Stripe when the session is created.
+ */
+export const discountFields = (promo) => (promo?.id ? { discounts: [{ promotion_code: promo.id }] } : { allow_promotion_codes: "true" });
+export async function promoFields(secret, code, fetchImpl = fetch) {
+  return discountFields(await findPromo(secret, code, fetchImpl));
+}
+
+const money = (pence) => `£${(pence / 100).toFixed(pence % 100 ? 2 : 0)}`;
+/**
+ * The line Checkout shows above its pay button, so the buyer reads what they're agreeing to: a monthly membership that
+ * renews automatically, at what price, and how to cancel. From the real price and, when applied, the coupon's amount off
+ * for the first month ("once" coupons only; any other discount gets the plain wording).
+ */
+export function renewalNote(unitAmount, coupon = null, { codeEntry = false } = {}) {
+  const cancel = "Cancel any time from Manage billing on your Gradify Account page.";
+  if (coupon) {
+    // a one-off amount off: the exact first payment and what follows
+    if (coupon.duration === "once" && coupon.amount_off > 0 && coupon.amount_off < unitAmount)
+      return `A monthly membership: ${money(unitAmount - coupon.amount_off)} for your first month, then ${money(unitAmount)} a month (VAT included), taken automatically each month until you cancel. ${cancel}`;
+    // any other discount: no amount this line can't be sure of; Checkout shows the schedule
+    return `A monthly membership, taken automatically each month at the price shown above until you cancel. ${cancel}`;
+  }
+  // the buyer may still add a code here, so the first payment can differ from the monthly price
+  const after = codeEntry ? " once any discount shown above has ended" : "";
+  return `A monthly membership: ${money(unitAmount)} a month (VAT included)${after}, taken automatically each month until you cancel. ${cancel}`;
+}
+
 export function safeBack(from, fallback = "/pricing.html") {
   return typeof from === "string" && /^\/(?![\/\\])[^\s\\]*$/.test(from) && from.length < 300 ? from : fallback;
 }
@@ -155,7 +200,7 @@ export function returnUrl(site, back, params = {}) {
 }
 
 /** Whether this learner may buy a plan now: on sale to all, or listed as a billing tester (for the deliberate first
- *  test). Plus and Pro go on sale separately (GRADIFY_PLUS_ON_SALE, GRADIFY_PRO_ON_SALE). */
+ *  test). Pro and Ultra go on sale separately (GRADIFY_PLUS_ON_SALE, GRADIFY_PRO_ON_SALE). */
 export function mayBuy(email, env, plan = "pro") {
   if (env[plan === "plus" ? "GRADIFY_PLUS_ON_SALE" : "GRADIFY_PRO_ON_SALE"] === "on") return true;
   const testers = (env.GRADIFY_BILLING_TESTERS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);

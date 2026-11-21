@@ -7,3 +7,4 @@ supabase/.temp/
 department/__pycache__/
 department/state/
 department/worktrees/
+scripts/quality/.work/

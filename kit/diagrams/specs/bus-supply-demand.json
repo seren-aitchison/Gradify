@@ -1,0 +1,197 @@
+{
+  "id": "bus-supply-demand",
+  "renderer": "graph",
+  "course": "business",
+  "lesson": "Supply and market equilibrium",
+  "title": "Equilibrium, and what an increase in demand does",
+  "caption": "Equilibrium is where the curves cross: P = 20, Q = 60 for the worked example. Below it, at P = 15, buyers want 70 but sellers offer only 50: a shortage of 20 that pushes the price up. If demand increases (D → D₂), price and quantity both rise, to P = 25, Q = 70.",
+  "alt": "Supply and demand diagram with price on the vertical axis and quantity on the horizontal. Demand and supply cross at price 20, quantity 60. Demand shifting right moves equilibrium to price 25, quantity 70.",
+  "description": [
+    "Price is on the vertical axis and quantity on the horizontal axis, as is conventional in economics.",
+    "The demand curve D (Qd = 100 − 2P) slopes down; the supply curve S (Qs = 20 + 2P) slopes up. They cross at the equilibrium E: price 20, quantity 60.",
+    "At a price of 15, quantity demanded (70) is greater than quantity supplied (50): a shortage of 20, shown by a double-headed arrow between the two curves, which pushes the price up towards equilibrium.",
+    "A dashed curve D₂ (Qd = 120 − 2P) shows an increase in demand. It crosses supply at E₂: price 25, quantity 70. Both price and quantity have risen."
+  ],
+  "range": {
+    "x": [
+      0,
+      110
+    ],
+    "y": [
+      0,
+      60
+    ]
+  },
+  "ticks": [
+    [
+      20,
+      40,
+      60,
+      70,
+      80,
+      100
+    ],
+    [
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ]
+  ],
+  "grid": [
+    20,
+    10
+  ],
+  "height": [
+    400,
+    360
+  ],
+  "xLabelBelow": true,
+  "axisLabels": [
+    "quantity (Q)",
+    "price (P)"
+  ],
+  "curves": [
+    {
+      "expr": "50-x/2",
+      "colour": "a1",
+      "label": "D",
+      "labelAt": [
+        93,
+        7
+      ],
+      "domain": [
+        0,
+        100
+      ]
+    },
+    {
+      "expr": "60-x/2",
+      "colour": "a1",
+      "dash": "7 5",
+      "label": "D₂",
+      "labelAt": [
+        101,
+        13
+      ],
+      "domain": [
+        0,
+        110
+      ],
+      "width": 2.2
+    },
+    {
+      "expr": "(x-20)/2",
+      "colour": "a3",
+      "label": "S",
+      "labelAt": [
+        100,
+        44
+      ],
+      "domain": [
+        20,
+        110
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "x": 60,
+      "to": 20
+    },
+    {
+      "y": 20,
+      "to": 60
+    },
+    {
+      "x": 70,
+      "to": 25
+    },
+    {
+      "y": 25,
+      "to": 70
+    }
+  ],
+  "arrows": [
+    {
+      "from": [
+        50,
+        15
+      ],
+      "to": [
+        70,
+        15
+      ],
+      "colour": "a2",
+      "both": true,
+      "label": "shortage of 20",
+      "labelAt": [
+        47,
+        15
+      ],
+      "anchor": "end"
+    }
+  ],
+  "points": [
+    {
+      "x": 60,
+      "y": 20,
+      "label": "E",
+      "colour": "ink",
+      "dx": -12,
+      "dy": -1,
+      "anchor": "end"
+    },
+    {
+      "x": 70,
+      "y": 25,
+      "label": "E₂",
+      "colour": "ink",
+      "dx": -12,
+      "dy": -3,
+      "anchor": "end"
+    }
+  ],
+  "checks": [
+    {
+      "type": "intersect",
+      "a": "50-x/2",
+      "b": "(x-20)/2",
+      "x": 60,
+      "y": 20,
+      "name": "D and S cross at Q = 60, P = 20, as the worked example finds"
+    },
+    {
+      "type": "intersect",
+      "a": "60-x/2",
+      "b": "(x-20)/2",
+      "x": 70,
+      "y": 25,
+      "name": "after demand rises, equilibrium is Q = 70, P = 25 (both higher)"
+    },
+    {
+      "type": "point",
+      "expr": "50-x/2",
+      "x": 70,
+      "y": 15,
+      "name": "at P = 15, quantity demanded is 70"
+    },
+    {
+      "type": "point",
+      "expr": "(x-20)/2",
+      "x": 50,
+      "y": 15,
+      "name": "at P = 15, quantity supplied is 50 (a shortage of 20)"
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
+    "date": "2026-11-20",
+    "notes": "Round 1: phone label clipped; surplus arrow crossed D₂; fixed by showing the shortage at P = 15. Round 2: approve.",
+    "approvedAt": "2026-11-20"
+  }
+}

@@ -1,0 +1,163 @@
+{
+ "id": "chem-lewis-examples",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Lewis structures",
+ "title": "Lewis structures",
+ "caption": "Lines are bonding pairs and dots lone pairs. NH₃ has three bonds and one lone pair on N; CO₂ two double bonds; HCN a single and a triple bond. Every atom except hydrogen has an octet.",
+ "alt": "Lewis structures of ammonia, carbon dioxide and hydrogen cyanide.",
+ "description": [
+  "NH₃: three N–H bonds and one lone pair on nitrogen.",
+  "CO₂: O=C=O with two lone pairs on each oxygen.",
+  "HCN: H–C≡N with one lone pair on nitrogen."
+ ],
+ "perRow": 3,
+ "scale": [
+  1,
+  0.9
+ ],
+ "rowHeight": [
+  180,
+  150
+ ],
+ "molecules": [
+  {
+   "label": "NH₃",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "n",
+     "el": "N",
+     "x": 0,
+     "y": 0,
+     "lone": 1,
+     "loneAt": [
+      -90
+     ]
+    },
+    {
+     "id": "h1",
+     "el": "H",
+     "x": -0.9,
+     "y": 0.6
+    },
+    {
+     "id": "h2",
+     "el": "H",
+     "x": 0.9,
+     "y": 0.6
+    },
+    {
+     "id": "h3",
+     "el": "H",
+     "x": 0,
+     "y": 1.0
+    }
+   ],
+   "bonds": [
+    {
+     "a": "n",
+     "b": "h1",
+     "order": 1
+    },
+    {
+     "a": "n",
+     "b": "h2",
+     "order": 1
+    },
+    {
+     "a": "n",
+     "b": "h3",
+     "order": 1
+    }
+   ]
+  },
+  {
+   "label": "CO₂",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "o1",
+     "el": "O",
+     "x": -1,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -90,
+      90
+     ]
+    },
+    {
+     "id": "c",
+     "el": "C",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "o2",
+     "el": "O",
+     "x": 1,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -90,
+      90
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "a": "o1",
+     "b": "c",
+     "order": 2
+    },
+    {
+     "a": "c",
+     "b": "o2",
+     "order": 2
+    }
+   ]
+  },
+  {
+   "label": "HCN",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "h",
+     "el": "H",
+     "x": -1,
+     "y": 0
+    },
+    {
+     "id": "c",
+     "el": "C",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "n",
+     "el": "N",
+     "x": 1,
+     "y": 0,
+     "lone": 1,
+     "loneAt": [
+      0
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "a": "h",
+     "b": "c",
+     "order": 1
+    },
+    {
+     "a": "c",
+     "b": "n",
+     "order": 3
+    }
+   ]
+  }
+ ]
+}

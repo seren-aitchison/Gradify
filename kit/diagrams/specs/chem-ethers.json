@@ -1,0 +1,50 @@
+{
+ "id": "chem-ethers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Ethers",
+ "title": "Ethers",
+ "caption": "An ether has an oxygen bonded to two carbons, C–O–C. With no O–H, ethers cannot hydrogen bond to each other, so they boil far lower than alcohols of similar mass. Epoxides are three-membered cyclic ethers, strained and reactive.",
+ "alt": "Methoxymethane, ethoxyethane and epoxyethane, with the C–O–C shaded.",
+ "description": [
+  "Methoxymethane, CH₃OCH₃.",
+  "Ethoxyethane, C₂H₅OC₂H₅, the old anaesthetic 'ether'.",
+  "Epoxyethane: a three-membered ring of two carbons and an oxygen."
+ ],
+ "panels": [
+  {
+   "smiles": "COC",
+   "label": "methoxymethane",
+   "groups": [
+    "ether"
+   ],
+   "highlight": [
+    {
+     "group": "ether",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "CCOCC",
+   "label": "ethoxyethane",
+   "groups": [
+    "ether"
+   ],
+   "highlight": [
+    {
+     "group": "ether",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "C1CO1",
+   "label": "epoxyethane",
+   "groups": [
+    "epoxide"
+   ]
+  }
+ ]
+}

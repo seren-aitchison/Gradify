@@ -1,0 +1,29 @@
+{
+ "id": "chem-carbanions",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "Carbanions",
+ "title": "A stabilised carbanion: the enolate",
+ "caption": "A carbanion is a negatively charged carbon. Most are very reactive, but one next to a C=O is stabilised because its charge is delocalised onto the oxygen. The two resonance forms of propanone's enolate differ only in where the electrons are drawn.",
+ "alt": "Two resonance structures of the propanone enolate joined by a double-headed arrow: charge on carbon, and charge on oxygen.",
+ "description": [
+  "Left: the negative charge on the CH₂ carbon next to C=O.",
+  "Right: the same ion with C=C and the negative charge on oxygen, the more important form."
+ ],
+ "between": [
+  "↔"
+ ],
+ "panels": [
+  {
+   "smiles": "CC(=O)[CH2-]",
+   "label": "carbanion form",
+   "formula": "C3H5O"
+  },
+  {
+   "smiles": "CC([O-])=C",
+   "label": "enolate form",
+   "formula": "C3H5O"
+  }
+ ]
+}

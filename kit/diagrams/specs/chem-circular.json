@@ -1,0 +1,55 @@
+{
+ "id": "chem-circular",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Circular chemistry",
+ "title": "A circular economy for materials",
+ "caption": "Instead of take, make, use and throw away, materials are kept in use: products are designed to be repaired, reused and finally recycled into new feedstock, so less virgin raw material is needed and less waste is produced.",
+ "alt": "A loop: make → use → collect → recycle → back to make.",
+ "description": [
+  "Make products from recycled feedstock.",
+  "Use, repair and reuse them.",
+  "Collect at end of life.",
+  "Recycle into feedstock again."
+ ],
+ "layout": "cycle",
+ "radius": 110,
+ "nodes": [
+  {
+   "id": "m",
+   "label": "make"
+  },
+  {
+   "id": "u",
+   "label": "use and repair"
+  },
+  {
+   "id": "c",
+   "label": "collect"
+  },
+  {
+   "id": "r",
+   "label": "recycle",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "m",
+   "to": "u"
+  },
+  {
+   "from": "u",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "r"
+  },
+  {
+   "from": "r",
+   "to": "m"
+  }
+ ]
+}

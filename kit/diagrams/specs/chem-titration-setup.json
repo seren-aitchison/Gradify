@@ -1,0 +1,27 @@
+{
+ "id": "chem-titration-setup",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Titrimetry",
+ "title": "Titration apparatus",
+ "caption": "The analyte is measured into a conical flask with a pipette and a few drops of indicator added; the titrant is added from a burette until the indicator just changes colour. The titre is the final reading minus the initial reading, read at the bottom of the meniscus.",
+ "alt": "A burette clamped above a conical flask containing the analyte and indicator; burette readings and the titre beside it.",
+ "description": [
+  "Burette: initial reading 0.50 cm³.",
+  "Final reading 24.65 cm³.",
+  "Titre 24.15 cm³."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u15",
+   "lesson": "Quantitative analysis"
+  }
+ ],
+ "kind": "titration",
+ "initial": 0.5,
+ "final": 24.65,
+ "titre": 24.15,
+ "analyte": "25.0 cm³ NaOH(aq) + phenolphthalein"
+}

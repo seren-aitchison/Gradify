@@ -4,6 +4,7 @@ import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { EVIDENCE, EXPLORATION } from "./evidence.js";
+import { CONCEPTS } from "./concepts.js";
 import { defineCourse } from "../../subjects/define.js";
 import science, { scienceExams } from "../../subjects/science.js";
 // the science adapter (kit/subjects/science.js) gives the site, unit and stage words, the Lab label and note, and
@@ -19,6 +20,8 @@ export default defineCourse(science, {
   theme: { accent: "#f59e0b", spectrum: "linear-gradient(90deg, #facc15, #fbbf24 25%, #f59e0b 50%, #f97316 75%, #ea580c)" },
   // interactives (kit/labs/chemistry/): listed in the Lab tab and embedded in lessons with IX: lines
   interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery)
+  // what each module builds on (kit/learning/concepts.js): "Builds on" in every lesson, and weak foundations flagged
+  concepts: CONCEPTS,
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: scienceExams(UNITS, TRACKS),
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)

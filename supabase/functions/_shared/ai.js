@@ -3,7 +3,7 @@
 //
 // Every request:
 //   1. is claimed in the server-only usage ledger (public.ai_claim_for): AI on (or a tester), spending caps, rate
-//      limits, the learner's fair-use cap, conversation turns, and the Free or Pro allowance, in one locked step;
+//      limits, the learner's fair-use cap, conversation turns, and the Free or Ultra allowance, in one locked step;
 //   2. may be answered from the response cache (explanations of a lesson's own notes, lesson links): no Claude call,
 //      no cost, and the use is given back;
 //   3. calls Claude, then settles the claim with the real model, token counts and cost (public.ai_settle_for).
@@ -40,7 +40,7 @@ export function refusal(claim, mode) {
     case "conversation_long": return { status: 429, body: { ...base, error: "This conversation has reached its length limit. Start a new one to keep going." } };
     case "allowance": {
       const n = claim.allowance ?? 0, free = claim.plan !== "pro";
-      return { status: 429, body: { ...base, upgrade: free, error: `You've used ${free ? "your" : "this month's"} ${n} ${free ? "free " : ""}${plural(feature, n)}${free ? " this month" : ""}.${on ? ` ${free ? "They" : "Your allowance"} reset${free ? "" : "s"} on ${on}.` : ""}${free ? " Gradify Pro has many more." : ""}` } };
+      return { status: 429, body: { ...base, upgrade: free, error: `You've used ${free ? "your" : "this month's"} ${n} ${free ? "free " : ""}${plural(feature, n)}${free ? " this month" : ""}.${on ? ` ${free ? "They" : "Your allowance"} reset${free ? "" : "s"} on ${on}.` : ""}${free ? " Gradify Ultra has many more." : ""}` } };
     }
     default: return { status: 503, body: { ...base, error: "Gradify AI isn't available right now." } };
   }

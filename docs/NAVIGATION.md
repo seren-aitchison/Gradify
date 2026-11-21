@@ -6,6 +6,25 @@ screen, wayfinding) are the shared Gradify UX system: see [DESIGN-SYSTEM.md](DES
 Every Gradify course (all sites that call `mountCourse`, `kit/course/course.js`) shares one navigation and progress
 system. The aim: a learner opens a course, knows where they are, sees what needs work, and is learning in one click.
 
+## Headers and footers (every page)
+
+Three headers, each the same wherever it appears. Edit them in `scripts/sync-headers.mjs` (never in a page), then run
+`node scripts/sync-headers.mjs`; `tests/navigation.test.mjs` fails if any page has drifted.
+
+| Pages | Header | Footer | Behaviour |
+| --- | --- | --- | --- |
+| Hub: home, Explore, Journey, Pricing, Privacy, Terms, Status, Quality, AI usage, 404 | Explore · Sites · Journey · Pricing, current page marked; search, Sign in, Open Gradify | links, legal pages, contact | `kit/core/hubnav.js` |
+| Every page of a subject site (home, map, LifeOS, 3D, each course) | the site's courses · Study · Map · LifeOS · any 3D page, and More (Notes, Progress, Plan, All Gradify sites); Sign in, Start free | the family, All Gradify sites, Pricing, Privacy, Terms, Contact | `kit/core/subheader.js`, `kit/core/subnav.js` |
+| The app (`app.html`, each site's `app.html`) | its own app bar (Today, Study, Notes, Progress, Plan) | — | `kit/app/main.js` |
+
+- A site's courses and 3D pages are read from its homepage's header, so a new course appears in every header of the
+  site once it's on the homepage.
+- On phones every header is the logo, search and a menu; the menu holds every link, sign-in, the main button, and the
+  reading and theme settings (`kit/core/menu-set.js`).
+- Every page starts with one "Skip to content" link to its main content, and has one `h1`.
+- Course pages keep their own lesson search (and "/"), so their header has no Gradify-wide search button.
+- Planned courses without pages (`PLANNED` in `kit/learning/learner-data.js`) are never linked.
+
 ## Where things are
 
 | Piece | File |

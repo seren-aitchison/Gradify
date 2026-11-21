@@ -1,0 +1,105 @@
+{
+ "id": "chem-lanthanide-contraction",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "Lanthanides",
+ "title": "The lanthanide contraction",
+ "caption": "Across the lanthanides each extra proton is poorly shielded by the added 4f electron, so the Ln³⁺ ions shrink steadily from La³⁺ (103 pm) to Lu³⁺ (86 pm). This makes the lanthanides chemically very similar and hard to separate.",
+ "alt": "Line graph of Ln³⁺ six-coordinate ionic radius falling steadily from lanthanum 103.2 pm to lutetium 86.1 pm.",
+ "description": [
+  "La³⁺ 103.2 pm, Ce³⁺ 101, Pr³⁺ 99, falling steadily.",
+  "Gd³⁺ 93.8 pm in the middle.",
+  "Lu³⁺ 86.1 pm at the end."
+ ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u11",
+   "lesson": "Lanthanide chemistry"
+  }
+ ],
+ "kind": "line",
+ "dataset": "radiusLn3",
+ "range": [
+  80,
+  106
+ ],
+ "ticks": [
+  80,
+  85,
+  90,
+  95,
+  100,
+  105
+ ],
+ "yLabel": "Ln³⁺ radius / pm",
+ "colour": "a5",
+ "items": [
+  {
+   "key": "La",
+   "value": 103.2
+  },
+  {
+   "key": "Ce",
+   "value": 101
+  },
+  {
+   "key": "Pr",
+   "value": 99
+  },
+  {
+   "key": "Nd",
+   "value": 98.3
+  },
+  {
+   "key": "Pm",
+   "value": 97
+  },
+  {
+   "key": "Sm",
+   "value": 95.8
+  },
+  {
+   "key": "Eu",
+   "value": 94.7
+  },
+  {
+   "key": "Gd",
+   "value": 93.8
+  },
+  {
+   "key": "Tb",
+   "value": 92.3
+  },
+  {
+   "key": "Dy",
+   "value": 91.2
+  },
+  {
+   "key": "Ho",
+   "value": 90.1
+  },
+  {
+   "key": "Er",
+   "value": 89
+  },
+  {
+   "key": "Tm",
+   "value": 88
+  },
+  {
+   "key": "Yb",
+   "value": 86.8
+  },
+  {
+   "key": "Lu",
+   "value": 86.1
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}
