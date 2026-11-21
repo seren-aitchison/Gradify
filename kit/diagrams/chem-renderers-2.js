@@ -250,8 +250,8 @@ function levelsDraw(spec, W, narrow) {
 function hydrogen(spec, W, narrow) {
   const H = narrow ? 460 : 400, top = 40, bot = H - 30, n = spec.levels || 6;
   const E = (k) => -13.6 / k ** 2, y = (e) => top + ((0 - e) / 13.6) * (bot - top);
-  const x0 = narrow ? 52 : 90, x1 = W - (narrow ? 14 : 30);
-  let s = arrow(x0 - 30, bot + 6, x0 - 30, top - 20, { w: 1.6, head: 8 }) + text(x0 - 34, top - 28, "energy", { size: 12, anchor: "start", fill: C.soft });
+  const x0 = narrow ? 62 : 90, x1 = W - (narrow ? 14 : 30), ax = narrow ? 12 : x0 - 30;
+  let s = arrow(ax, bot + 6, ax, top - 20, { w: 1.6, head: 8 }) + text(ax - 4, top - 28, "energy", { size: 12, anchor: "start", fill: C.soft });
   // the levels crowd together towards n = ∞, so only n = 1 to 4 are labelled
   for (let k = 1; k <= n; k++) s += line(x0, y(E(k)), x1, y(E(k)), { w: k === 1 ? 2.4 : 1.6 }) + (k <= 4 ? text(x0 - 8, y(E(k)) + (k === 4 ? 4 : 0), `n = ${k}`, { size: 12, weight: 600, anchor: "end", fill: C.ink }) : "");
   s += line(x0, y(0), x1, y(0), { w: 1.4, dash: "6 4", stroke: C.line }) + text(x1, y(0) - 8, "n = ∞ (ionisation)", { size: 11, anchor: "end", fill: C.soft });
@@ -305,7 +305,7 @@ function mo(spec, W, narrow) {
   const H = narrow ? 460 : 420, top = 40, bot = H - 50;
   // vertical positions: bonding below its atomic orbital, antibonding above, in filling order
   const ys = {}; rows.forEach((o, i) => { ys[o.name] = bot - (i / Math.max(1, rows.length - 1)) * (bot - top); });
-  const cx = W / 2, ax = narrow ? 50 : 120, bx = W - (narrow ? 50 : 120), bw = narrow ? 22 : 26;
+  const cx = W / 2, ax = narrow ? 64 : 120, bx = W - (narrow ? 64 : 120), bw = narrow ? 22 : 26;
   let s = text(ax, 18, `${el} atom`, { size: 13, weight: 700 }) + text(bx, 18, `${el} atom`, { size: 13, weight: 700 }) + text(cx, 18, sym.replace("2", "₂"), { size: 14, weight: 800 });
   const conf = configuration(f.z), aoY = {};
   const aos = f.z <= 2 ? ["1s"] : ["2s", "2p"];
@@ -357,26 +357,49 @@ function cfs(spec, W, narrow) {
 }
 function arrowsBoxes(x, y, occ, bw) { return occ.map((n, i) => arrowsInBox(x + i * bw, y, n, bw)).join(""); }
 function custom(spec, W, narrow) {
-  const lv = spec.levels, Es = lv.map((l) => l.E), lo = Math.min(...Es), hi = Math.max(...Es);
-  const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 420 : 360), top = 34, bot = H - 40;
+  const lv = spec.levels, Es = [...lv.map((l) => l.E), ...(spec.bands || []).flatMap((b) => [b.lo, b.hi])], lo = Math.min(...Es), hi = Math.max(...Es);
+  // the axis title sits above the highest level, never on the same line as that level's label
+  const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 420 : 360), top = 50, bot = H - 40;
   const y = (e) => bot - ((e - lo) / (hi - lo || 1)) * (bot - top);
-  const xs = (f) => 20 + f * (W - 40);
-  let s = spec.axis === false ? "" : arrow(12, bot + 10, 12, top - 16, { w: 1.6, head: 8 }) + text(18, top - 20, spec.axisLabel || "energy", { size: 12, anchor: "start", fill: C.soft });
-  for (const l of lv) {
-    s += line(xs(l.x0), y(l.E), xs(l.x1), y(l.E), { w: l.thin ? 1.2 : 2.2, dash: l.dash ? "5 4" : "", stroke: l.colour ? col(l.colour) : C.ink });
-    if (l.label) s += text(l.labelRight ? xs(l.x1) + 6 : xs(l.x0) - 6, y(l.E), fm(l.label), { size: narrow ? 11 : 12.5, weight: 600, anchor: l.labelRight ? "start" : "end", fill: C.ink });
+  const xs = (f) => 20 + f * (W - 40), fs = narrow ? 11 : 12.5, ts = narrow ? 10.5 : 11.5, cw = (size) => size * 0.58;
+  const width = (str, size) => ascii(String(str).replace(/[_^]\{([^}]*)\}/g, "$1")).length * cw(size);
+  let s = spec.axis === false ? "" : arrow(12, bot + 10, 12, top - 24, { w: 1.6, head: 8 }) + text(6, top - 38, spec.axisLabel || "energy", { size: 12, anchor: "start", fill: C.soft });
+  let late = ""; // labels go on top of every line, on a halo
+  // bands (a solid's filled and empty bands): a shaded box when filled, an outline when empty
+  for (const b of spec.bands || []) {
+    const x0 = xs(b.x0), x1 = xs(b.x1), y0 = y(b.hi), y1 = y(b.lo), c = col(b.colour || (b.filled ? "a1" : "a4"));
+    s += `<rect x="${f1(x0)}" y="${f1(y0)}" width="${f1(x1 - x0)}" height="${f1(Math.max(2, y1 - y0))}" rx="3" fill="${c}" fill-opacity="${b.filled ? 0.35 : 0.06}" stroke="${c}" stroke-width="1.6"${b.filled ? "" : ' stroke-dasharray="5 4"'}/>`;
+    if (b.label) late += text((x0 + x1) / 2, (y0 + y1) / 2, fm(b.label), { size: ts, weight: 600, fill: C.ink, halo: true });
   }
   const byId = Object.fromEntries(lv.map((l) => [l.id, l]));
+  // dashed correlation lines (a level splitting in a field)
+  for (const [a, b] of spec.links || []) s += line(xs(byId[a].x1), y(byId[a].E), xs(byId[b].x0), y(byId[b].E), { stroke: C.line, w: 1.2, dash: "4 4" });
+  for (const l of lv) {
+    s += line(xs(l.x0), y(l.E), xs(l.x1), y(l.E), { w: l.thin ? 1.2 : 2.2, dash: l.dash ? "5 4" : "", stroke: l.colour ? col(l.colour) : C.ink });
+    if (!l.label) continue;
+    // beside the line when it fits in the picture, otherwise above it
+    const w = width(l.label, fs), right = !!l.labelRight, fits = right ? xs(l.x1) + 6 + w <= W - 4 : xs(l.x0) - 6 - w >= 22;
+    if (l.labelAbove || !fits) late += text(right ? xs(l.x1) : l.labelAbove ? (xs(l.x0) + xs(l.x1)) / 2 : xs(l.x0), y(l.E) - 11, fm(l.label), { size: fs, weight: 600, anchor: l.labelAbove ? "middle" : right ? "end" : "start", fill: C.ink, halo: true });
+    else late += text(right ? xs(l.x1) + 6 : xs(l.x0) - 6, y(l.E), fm(l.label), { size: fs, weight: 600, anchor: right ? "start" : "end", fill: C.ink, halo: true });
+  }
   for (const t of spec.transitions || []) {
     const a = byId[t.from], b = byId[t.to], x = xs(t.x), y1 = y(a.E), y2 = y(b.E);
     if (t.wavy) {
       const pts = []; for (let i = 0; i <= 30; i++) { const yy = y1 + ((y2 - y1) * i) / 30; pts.push(`${i ? "L" : "M"}${f1(x + Math.sin(i * 1.3) * 5)} ${f1(yy)}`); }
       s += `<path d="${pts.join(" ")}" fill="none" stroke="${col(t.colour || "a5")}" stroke-width="1.8"/>` + arrow(x, y2 - Math.sign(y2 - y1) * 9, x, y2, { stroke: col(t.colour || "a5"), w: 1.8, head: 7 });
     } else s += arrow(x, y1, x, y2, { stroke: col(t.colour || "a1"), w: 2.2, head: 8, dash: t.dash || "" });
-    if (t.label) s += text(x + (t.labelLeft ? -6 : 6), (y1 + y2) / 2 + (t.dy || 0), fm(t.label), { size: narrow ? 10.5 : 11.5, weight: 700, anchor: t.labelLeft ? "end" : "start", fill: col(t.colour || "a1") });
+    if (t.label) {
+      // wrapped to the room on its side of the arrow
+      const room = t.labelLeft ? x - 10 : W - x - 10, ls = wrap(t.label, Math.max(8, Math.floor(room / cw(ts)))), ym = (y1 + y2) / 2 + (t.dy || 0) - ((ls.length - 1) * 14) / 2;
+      late += ls.map((l, i) => text(x + (t.labelLeft ? -6 : 6), ym + i * 14, fm(l), { size: ts, weight: 700, anchor: t.labelLeft ? "end" : "start", fill: col(t.colour || "a1"), halo: true })).join("");
+    }
   }
-  for (const n of spec.notes || []) s += text(xs(n.x), y(n.E) + (n.dy || 0), fm(n.text), { size: 11.5, weight: n.bold ? 700 : 500, anchor: n.anchor || "middle", fill: n.colour ? col(n.colour) : C.soft });
-  return { s, H };
+  for (const n of spec.notes || []) {
+    const a = n.anchor || "middle", x = xs(n.x), room = a === "start" ? W - x - 6 : a === "end" ? x - 6 : 2 * Math.min(x, W - x) - 12;
+    const ls = wrap(n.text, Math.max(8, Math.floor(room / cw(11.5))));
+    late += ls.map((l, i) => text(x, y(n.E) + (n.dy || 0) + i * 14, fm(l), { size: 11.5, weight: n.bold ? 700 : 500, anchor: a, fill: n.colour ? col(n.colour) : C.soft, halo: true })).join("");
+  }
+  return { s: s + late, H };
 }
 function levelChecks(spec) {
   const out = [];
