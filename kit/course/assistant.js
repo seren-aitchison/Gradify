@@ -29,12 +29,12 @@ export function mountAssistant(o) {
   if (document.querySelector(".gai")) return null;
   const fab = document.createElement("button");
   fab.type = "button"; fab.className = "gai-fab"; fab.setAttribute("aria-expanded", "false"); fab.setAttribute("aria-controls", "gai");
-  fab.innerHTML = `<span class="gai-orb" aria-hidden="true"></span><span class="gai-fabt">Ask Gradify AI</span>`;
+  fab.innerHTML = `<span class="gai-orb" aria-hidden="true"><i></i></span><span class="gai-fabt">Ask Gradify AI</span>`;
   fab.setAttribute("aria-label", "Open Gradify AI");
   const box = document.createElement("section");
   box.className = "gai"; box.id = "gai"; box.hidden = true;
   box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "false"); box.setAttribute("aria-labelledby", "gai-h");
-  box.innerHTML = `<header class="gai-head"><span class="gai-orb" aria-hidden="true"></span><div><h2 id="gai-h">Gradify AI</h2><p class="gai-ctx"></p></div>
+  box.innerHTML = `<header class="gai-head"><span class="gai-orb" aria-hidden="true"><i></i></span><div><h2 id="gai-h">Gradify AI</h2><p class="gai-ctx"></p></div>
       <button type="button" class="gai-ib" data-gai-new aria-label="New conversation" title="New conversation">${ic("undo")}</button>
       <button type="button" class="gai-ib" data-gai-close aria-label="Close Gradify AI" title="Close (Esc)">${ic("close")}</button></header>
     <div class="gai-log" aria-live="polite"></div>
