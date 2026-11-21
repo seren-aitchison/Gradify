@@ -1,0 +1,71 @@
+{
+ "id": "maths-u01-lcm-venn",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Least Common Multiple (LCM)",
+ "title": "LCM of 20 and 45 from prime factors",
+ "caption": "The LCM uses every prime in the diagram once: 2 × 2 × 5 × 3 × 3 = 180. The shared 5 is counted only once.",
+ "alt": "A Venn diagram: circle 20 holds 2, 2; circle 45 holds 3, 3; the overlap holds 5.",
+ "description": [
+  "20 = 2 × 2 × 5 and 45 = 3 × 3 × 5.",
+  "The primes both share, 5, go in the overlap.",
+  "The rest of 20's primes (2, 2) and of 45's (3, 3) go in their own parts.",
+  "All the primes together multiply to the LCM, 180."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "20"
+  },
+  {
+   "name": "B",
+   "label": "45"
+  }
+ ],
+ "universe": {
+  "label": "prime factors"
+ },
+ "items": {
+  "A": [
+   "2",
+   "2"
+  ],
+  "AB": [
+   "5"
+  ],
+  "B": [
+   "3",
+   "3"
+  ]
+ },
+ "checks": [
+  {
+   "type": "members",
+   "event": "A",
+   "of": 20
+  },
+  {
+   "type": "members",
+   "event": "B",
+   "of": 45
+  },
+  {
+   "type": "product",
+   "event": "A∩B",
+   "value": 5,
+   "name": "the overlap multiplies to the HCF, 5"
+  },
+  {
+   "type": "product",
+   "event": "A∪B",
+   "value": 180,
+   "name": "everything multiplies to the LCM, 180"
+  }
+ ],
+ "fromLesson": [
+  "20 = 2^{2} × 5",
+  "45 = 3^{2} × 5",
+  "180 seconds"
+ ]
+}

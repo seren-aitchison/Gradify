@@ -1,0 +1,66 @@
+{
+ "id": "maths-u01-recipe-scale",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Ratios and Proportions",
+ "title": "Scaling a recipe by 15 ÷ 6 = 2.5",
+ "caption": "Fifteen people is 2.5 lots of six, so every amount is multiplied by 2.5: 450 g of flour becomes 1,125 g.",
+ "alt": "Two bars on the same scale: 450 g for 6 people, and 450 g + 450 g + 225 g = 1,125 g for 15 people.",
+ "description": [
+  "The top bar is the flour for 6 people, 450 g.",
+  "The lower bar is two whole copies of it and a half copy: 450 + 450 + 225.",
+  "That is 450 × 2.5 = 1,125 g, the flour for 15 people."
+ ],
+ "suffix": " g",
+ "bars": [
+  {
+   "label": "6 people",
+   "parts": [
+    {
+     "value": 450,
+     "shade": true
+    }
+   ]
+  },
+  {
+   "label": "15 people",
+   "parts": [
+    {
+     "value": 450,
+     "shade": true
+    },
+    {
+     "value": 450,
+     "shade": true
+    },
+    {
+     "value": 225,
+     "colour": "a4"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 1,
+   "from": 0,
+   "to": 2,
+   "value": 1125,
+   "text": "× 2.5 = 1,125 g"
+  }
+ ],
+ "checks": [
+  {
+   "type": "multiplier",
+   "from": 450,
+   "percent": 150,
+   "to": 1125,
+   "name": "450 × 2.5 = 1,125"
+  }
+ ],
+ "fromLesson": [
+  "15 ÷ 6 = 2.5",
+  "450 × 2.5 = 1,125 g"
+ ]
+}

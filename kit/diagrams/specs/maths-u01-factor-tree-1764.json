@@ -1,0 +1,66 @@
+{
+ "id": "maths-u01-factor-tree-1764",
+ "renderer": "factor-tree",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Prime Factorisation",
+ "title": "A factor tree for 1,764",
+ "caption": "Split off a prime at each step until every branch ends in a prime: 1,764 = 2² × 3² × 7². Every power is even, so 1,764 is a square: √1,764 = 2 × 3 × 7 = 42.",
+ "alt": "A factor tree: 1764 splits into 2 and 882, 882 into 2 and 441, 441 into 3 and 147, 147 into 3 and 49, and 49 into 7 and 7.",
+ "description": [
+  "1,764 is even: 1,764 = 2 × 882.",
+  "882 = 2 × 441.",
+  "441 = 3 × 147, and 147 = 3 × 49.",
+  "49 = 7 × 7, both prime.",
+  "The circled primes give 1,764 = 2² × 3² × 7²."
+ ],
+ "tree": {
+  "n": 1764,
+  "children": [
+   {
+    "n": 2
+   },
+   {
+    "n": 882,
+    "children": [
+     {
+      "n": 2
+     },
+     {
+      "n": 441,
+      "children": [
+       {
+        "n": 3
+       },
+       {
+        "n": 147,
+        "children": [
+         {
+          "n": 3
+         },
+         {
+          "n": 49,
+          "children": [
+           {
+            "n": 7
+           },
+           {
+            "n": 7
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "result": "2^{2} × 3^{2} × 7^{2}",
+ "fromLesson": [
+  "1,764 ÷ 2 = 882",
+  "441 ÷ 3 = 147",
+  "2^{2} × 3^{2} × 7^{2}"
+ ]
+}

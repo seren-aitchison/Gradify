@@ -1,0 +1,131 @@
+{
+ "id": "maths-u01-root50-diagonal",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Irrational Numbers",
+ "title": "√50 = 5√2 as a length",
+ "caption": "The diagonal of a square of side 5 is √(5² + 5²) = √50 = 5√2 ≈ 7.07: a length you can draw exactly, though its decimal never ends or repeats.",
+ "alt": "A square with side 5 and its diagonal, labelled √50 = 5√2.",
+ "description": [
+  "A square has sides of length 5 with a right angle at each corner.",
+  "Its diagonal is the hypotenuse of a right-angled triangle with legs 5 and 5.",
+  "By Pythagoras the diagonal is √(25 + 25) = √50 = √25 × √2 = 5√2."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   5,
+   0
+  ],
+  "C": [
+   5,
+   5
+  ],
+  "D": [
+   0,
+   5
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "colour": "a1",
+   "opacity": 0.08
+  }
+ ],
+ "segments": [
+  {
+   "a": "A",
+   "b": "C",
+   "colour": "a2",
+   "w": 3
+  }
+ ],
+ "angles": [
+  {
+   "at": "B",
+   "from": "A",
+   "to": "C",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 5,
+   "label": "5"
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "value": 5,
+   "label": "5"
+  },
+  {
+   "a": "A",
+   "b": "C",
+   "value": 7.0711,
+   "label": "√50 = 5√2",
+   "colour": "a2",
+   "side": -1
+  }
+ ],
+ "ticks": [
+  {
+   "seg": [
+    "A",
+    "B"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "B",
+    "C"
+   ],
+   "n": 1
+  }
+ ],
+ "view": {
+  "x": [
+   -2.4,
+   7
+  ],
+  "y": [
+   -1.4,
+   6.4
+  ]
+ },
+ "height": [
+  330,
+  320
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "A",
+   "b": "C",
+   "value": "sqrt(50)"
+  },
+  {
+   "type": "value",
+   "expr": "5*sqrt(2)",
+   "value": "sqrt(50)",
+   "name": "5√2 = √50"
+  }
+ ],
+ "fromLesson": [
+  "√50 = √25 × √2 = 5√2"
+ ]
+}

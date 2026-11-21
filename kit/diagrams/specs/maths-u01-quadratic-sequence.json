@@ -1,0 +1,35 @@
+{
+ "id": "maths-u01-quadratic-sequence",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Number Patterns",
+ "title": "A constant second difference: n² + 2n − 1",
+ "caption": "The first differences 5, 7, 9, 11 rise by 2 each time. A constant second difference of 2 means the sequence is quadratic with 2 ÷ 2 = 1 n²: the nth term is n² + 2n − 1.",
+ "alt": "Five boxes 2, 7, 14, 23, 34; first differences +5, +7, +9, +11 beneath; second differences +2, +2, +2 beneath those.",
+ "description": [
+  "The terms 2, 7, 14, 23, 34 for n = 1 to 5.",
+  "First differences: 5, 7, 9, 11.",
+  "Second differences: 2 each time, so the n² coefficient is 1.",
+  "The nth term is n² + 2n − 1."
+ ],
+ "terms": [
+  2,
+  7,
+  14,
+  23,
+  34
+ ],
+ "more": true,
+ "rule": {
+  "kind": "nth",
+  "expr": "n^2+2*n-1"
+ },
+ "show": "second",
+ "ruleText": "nth term = n² + 2n − 1",
+ "fromLesson": [
+  "2, 7, 14, 23, 34",
+  "5, 7, 9, 11",
+  "n^{2} + 2n − 1"
+ ]
+}

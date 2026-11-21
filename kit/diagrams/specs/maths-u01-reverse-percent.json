@@ -1,0 +1,59 @@
+{
+ "id": "maths-u01-reverse-percent",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Percentage Change and Reverse Percentages",
+ "title": "£68 is 85% of the original",
+ "caption": "After 15% off, the sale price is 85% of the original, so the original is £68 ÷ 0.85 = £80, not £68 + 15%.",
+ "alt": "A bar for the original price split into 85%, £68, and 15%, £12, with the whole bracketed as £80.",
+ "description": [
+  "The whole bar is the original price, 100%.",
+  "The sale price, £68, is the 85% part.",
+  "So 1% is £0.80 and 100% is £80; the 15% taken off was £12."
+ ],
+ "prefix": "£",
+ "bars": [
+  {
+   "parts": [
+    {
+     "value": 68,
+     "shade": true,
+     "text": "85% = £68"
+    },
+    {
+     "value": 12,
+     "colour": "a2",
+     "text": "15%"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 80,
+   "text": "100% = £80"
+  }
+ ],
+ "checks": [
+  {
+   "type": "multiplier",
+   "from": 80,
+   "percent": -15,
+   "to": 68
+  },
+  {
+   "type": "percent",
+   "of": 80,
+   "percent": 15,
+   "value": 12
+  }
+ ],
+ "fromLesson": [
+  "68 ÷ 0.85 = £80",
+  "85% of the original"
+ ]
+}
