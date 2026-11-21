@@ -1,0 +1,57 @@
+{
+ "id": "bio-genetic-drift",
+ "renderer": "drift",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Genetic drift",
+ "title": "Genetic drift is strongest in small populations",
+ "caption": "Six simulated populations each start with an allele at frequency 0.5 and change only by chance. With 20 gene copies the lines wander widely and some reach 0 (lost) or 1 (fixed); with 500 they stay close to 0.5. The simulation is seeded, so the picture does not change.",
+ "alt": "Two panels of allele frequency against generation for six simulated populations each: with 20 gene copies the lines wander widely and some reach 0 or 1; with 500 gene copies they stay near 0.5.",
+ "description": [
+  "Each line is one population, starting with the allele at frequency 0.5.",
+  "Every generation the alleles passed on are a random sample of those present: there is no selection.",
+  "N = 20: the frequencies wander far from 0.5, and some alleles are lost (0) or fixed (1) within 50 generations.",
+  "N = 500: the frequencies stay close to 0.5.",
+  "Drift is therefore strongest in small populations."
+ ],
+ "seed": 5,
+ "p0": 0.5,
+ "gens": 50,
+ "reps": 6,
+ "panels": [
+  {
+   "N": 20,
+   "label": "small population: 20 gene copies"
+  },
+  {
+   "N": 500,
+   "label": "large population: 500 gene copies"
+  }
+ ],
+ "claims": [
+  {
+   "type": "theory",
+   "N": 20
+  },
+  {
+   "type": "theory",
+   "N": 500
+  },
+  {
+   "type": "moreSpread",
+   "small": 20,
+   "large": 500,
+   "factor": 2
+  },
+  {
+   "type": "reaches",
+   "N": 20,
+   "value": true
+  },
+  {
+   "type": "reaches",
+   "N": 500,
+   "value": false
+  }
+ ]
+}

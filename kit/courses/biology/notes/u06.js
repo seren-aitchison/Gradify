@@ -94,11 +94,15 @@ H: Conditions
 - **Overproduction**: more offspring are produced than can survive.
 - **Differential survival and reproduction**: individuals with advantageous traits leave more offspring.
 - Over generations, advantageous alleles increase in frequency.
+D: bio-selection-conditions
 H: Types of selection
 - **Directional**: one extreme is favoured, shifting the mean, as in antibiotic resistance.
 - **Stabilising**: intermediate values are favoured, reducing variation, as in human birth weight.
 - **Disruptive**: both extremes are favoured, which may lead to two forms.
 P: Natural selection acts on phenotypes but changes allele frequencies in populations; individuals do not evolve. It is not random, because it depends on how traits affect survival and reproduction, but the variation it acts on arises randomly by mutation. Selection can only work with existing variation, which is why adaptations are often imperfect compromises.
+D: bio-selection-directional
+D: bio-selection-stabilising
+D: bio-selection-disruptive
 X: Peppered moths.
 > Before industrialisation, most peppered moths in Britain were pale, camouflaged on lichen-covered trees.
 > Soot darkened trees in industrial areas, and dark moths became better camouflaged.
@@ -258,6 +262,7 @@ H: Drift
 - It occurs because chance determines which individuals reproduce and which alleles are passed on.
 - Its effect is strongest in **small populations**.
 - Drift can lead to alleles being **lost** or **fixed** (reaching 100%).
+D: bio-genetic-drift
 H: Bottlenecks and founders
 - **Bottleneck effect**: a population is drastically reduced, and the survivors carry only some alleles.
 - Example: northern elephant seals were hunted to about 20 individuals in the 1890s and now have very low genetic diversity.
@@ -504,6 +509,7 @@ H: Prezygotic barriers
 - **Behavioural isolation**: different courtship rituals or songs.
 - **Mechanical isolation**: incompatible reproductive structures.
 - **Gametic isolation**: sperm and eggs cannot fuse.
+D: bio-reproductive-barriers
 H: Postzygotic barriers
 - **Hybrid inviability**: hybrids do not develop or survive.
 - **Hybrid sterility**: hybrids survive but are infertile, as with mules.
@@ -545,6 +551,7 @@ H: The process
 - Gene flow stops between the populations.
 - Different selection pressures, mutations and drift cause divergence.
 - Over time, reproductive isolation develops.
+D: bio-allopatric-speciation
 H: Examples
 - **Snapping shrimp** on either side of the Isthmus of Panama, separated about 3 million years ago, now cannot interbreed.
 - **Galápagos finches** diverged on different islands.
@@ -586,6 +593,7 @@ H: Polyploidy
 - **Allopolyploidy**: hybridisation between species followed by chromosome doubling.
 - Polyploids often cannot breed with the parent species, so speciation can be **instant**.
 - Bread wheat is a hexaploid formed by hybridisations.
+D: bio-polyploid-speciation
 H: Ecological and behavioural divergence
 - Groups specialise on different resources or habitats within one area.
 - **Apple maggot flies** in North America shifted from hawthorn to apple trees and now mate on their host fruit.
@@ -627,6 +635,7 @@ H: Data
 - **Morphological** data: anatomical features, including from fossils.
 - **Molecular** data: DNA, RNA and protein sequences.
 - Molecular data provide many characters and allow comparison of very different organisms.
+D: bio-cladogram
 H: Methods
 - **Shared derived characters** (synapomorphies) define groups that share a common ancestor.
 - **Parsimony**: the preferred tree is the one requiring the fewest evolutionary changes.
@@ -669,6 +678,7 @@ H: Parts
 - **Tips** represent living or extinct taxa.
 - The **root** represents the common ancestor of all taxa on the tree.
 - A **clade** is an ancestor and all its descendants.
+D: bio-cladogram
 H: Reading trees
 - Relatedness is shown by how recently two taxa share a common ancestor, not by how close their tips are.
 - Rotating branches at a node does not change relationships.
@@ -752,6 +762,7 @@ H: Formation and dating
 - **Relative dating**: lower rock layers are usually older (law of superposition).
 - **Radiometric dating**: measures decay of radioactive isotopes, such as uranium-lead or potassium-argon, in volcanic rocks.
 - **Carbon-14** dating works for remains up to about 50,000 years old.
+D: bio-radiometric-decay
 H: What fossils show
 - Sequences of change over time, such as in horse evolution.
 - **Transitional forms**, such as *Archaeopteryx* with bird and dinosaur features.
@@ -959,6 +970,7 @@ H: Forces of evolution
 - **Gene flow**: makes populations more similar.
 - **Mutation**: introduces new alleles, usually slowly.
 - **Non-random mating**: such as inbreeding, changes genotype frequencies.
+D: bio-hardy-weinberg
 H: Using Hardy-Weinberg
 - Hardy-Weinberg gives expected genotype frequencies with no evolutionary forces.
 - An excess of homozygotes may indicate **inbreeding** or population structure.

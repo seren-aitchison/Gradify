@@ -1,0 +1,80 @@
+{
+ "id": "bio-selection-conditions",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Natural selection",
+ "title": "What natural selection needs",
+ "caption": "Natural selection follows when a population has variation, some of it heritable, and produces more offspring than survive, so that individuals with advantageous traits leave more offspring. It acts on phenotypes but changes allele frequencies, so populations evolve, not individuals.",
+ "alt": "Five boxes in order: variation, heritability, overproduction, differential survival and reproduction, and changing allele frequencies.",
+ "description": [
+  "Variation: individuals in a population differ.",
+  "Heritability: some of the variation is inherited.",
+  "Overproduction: more offspring are born than can survive.",
+  "Differential survival: individuals with advantageous traits leave more offspring.",
+  "Allele frequencies change: advantageous alleles become more common."
+ ],
+ "layout": "grid",
+ "boxWidth": 126,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "c0",
+   "label": "variation",
+   "sub": "individuals in a population differ",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "c1",
+   "label": "heritability",
+   "sub": "some of the variation is inherited",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "c2",
+   "label": "overproduction",
+   "sub": "more offspring are born than can survive",
+   "tone": "a1",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "c3",
+   "label": "differential survival",
+   "sub": "individuals with advantageous traits leave more offspring",
+   "tone": "a3",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "c4",
+   "label": "allele frequencies change",
+   "sub": "advantageous alleles become more common",
+   "tone": "a2",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "c0",
+   "to": "c1"
+  },
+  {
+   "from": "c1",
+   "to": "c2"
+  },
+  {
+   "from": "c2",
+   "to": "c3"
+  },
+  {
+   "from": "c3",
+   "to": "c4"
+  }
+ ]
+}

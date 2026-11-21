@@ -14,6 +14,13 @@
   "At every q the three frequencies add up to 1.",
   "At q = 0.02, q² = 0.0004 (1 in 2,500) but 2pq = 0.039, about 1 in 25."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u06",
+   "lesson": "Population genetics"
+  }
+ ],
  "range": {
   "x": [
    0,

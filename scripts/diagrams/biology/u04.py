@@ -190,6 +190,7 @@ mk("u04-29", "bio-hardy-weinberg", "graph", "Genotype frequencies in Hardy–Wei
    "Three curves against the frequency q of the recessive allele: AA falling from 1 to 0, Aa rising to 0.5 at q = 0.5 and falling, and aa rising from 0 to 1, with q = 0.02 marked.",
    ["p² (AA) falls from 1 to 0 as q rises.", "2pq (Aa) peaks at 0.5 when q = 0.5.", "q² (aa) rises from 0 to 1.", "At every q the three frequencies add up to 1.",
     "At q = 0.02, q² = 0.0004 (1 in 2,500) but 2pq = 0.039, about 1 in 25."],
+   also=("u06-24",),
    range={"x": [0, 1], "y": [0, 1.08]}, ticks=[[0, 0.2, 0.4, 0.5, 0.6, 0.8, 1], [0.25, 0.5, 0.75, 1]], height=[340, 320], xLabelBelow=True,
    axisLabels=["frequency of the recessive allele, q", "genotype frequency"],
    curves=[{"expr": "(1-x)^2", "colour": "a1"}, {"expr": "2*x*(1-x)", "colour": "a4"}, {"expr": "x^2", "colour": "a2"}],

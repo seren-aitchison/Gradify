@@ -1,0 +1,104 @@
+{
+ "id": "bio-selection-directional",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Natural selection",
+ "title": "Directional selection",
+ "caption": "One extreme is favoured, so the whole distribution shifts and the mean moves towards it. Antibiotic resistance in bacteria is an example.",
+ "alt": "Two bell curves of a trait: a dashed curve before selection centred on 50 and a solid curve after directional selection centred on 58.",
+ "description": [
+  "Before: the trait is spread around a mean of 50.",
+  "Directional selection favours high values, so after selection the mean has moved to 58.",
+  "The spread (standard deviation) is unchanged."
+ ],
+ "range": {
+  "x": [
+   20,
+   80
+  ],
+  "y": [
+   0,
+   0.125
+  ]
+ },
+ "ticks": [
+  [
+   30,
+   40,
+   50,
+   60,
+   70
+  ],
+  []
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "value of the trait",
+  "proportion of the population"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-50)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "colour": "a1",
+   "dash": "6 5",
+   "width": 2.6
+  },
+  {
+   "expr": "exp(-(x-58)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "before selection",
+   "a1",
+   "6 5"
+  ],
+  [
+   "after directional selection",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  21,
+  0.12
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "exp(-(x-50)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "domain": [
+    20,
+    80
+   ],
+   "x": 50,
+   "y": 0.049868,
+   "name": "before selection the mean is 50"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-58)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "domain": [
+    20,
+    80
+   ],
+   "x": 58,
+   "y": 0.049868,
+   "name": "after directional selection the mean has moved to 58 and the curve keeps its shape"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-58)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "from": 0,
+   "to": 120,
+   "value": 1,
+   "tol": 0.002,
+   "name": "both curves describe the whole population: area 1"
+  }
+ ]
+}

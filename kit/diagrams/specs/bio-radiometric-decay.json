@@ -1,0 +1,102 @@
+{
+ "id": "bio-radiometric-decay",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Fossil evidence",
+ "title": "Radioactive decay and carbon-14 dating",
+ "caption": "Every half-life, 5,730 years for carbon-14, half of the remaining radioactive atoms decay. After 50,000 years only about 0.2% is left, too little to measure reliably, which is why carbon-14 dating works only for remains up to about 50,000 years old.",
+ "alt": "A curve of the fraction of carbon-14 remaining against time in thousands of years, halving every 5.73 thousand years: 0.5 at 5.73, 0.25 at 11.46 and about 0.002 at 50.",
+ "description": [
+  "The fraction of carbon-14 remaining halves every 5,730 years.",
+  "After one half-life, 0.5 remains; after two, 0.25.",
+  "After 50,000 years about 0.2% remains: the practical limit of the method."
+ ],
+ "range": {
+  "x": [
+   0,
+   60
+  ],
+  "y": [
+   0,
+   1.08
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50,
+   60
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time since death / thousand years",
+  "fraction of carbon-14 remaining"
+ ],
+ "curves": [
+  {
+   "expr": "0.5^(x/5.73)",
+   "colour": "a3"
+  }
+ ],
+ "marks": [
+  {
+   "x": 5.73,
+   "to": 0.5,
+   "label": "one half-life",
+   "dx": 44
+  },
+  {
+   "x": 11.46,
+   "to": 0.25,
+   "label": "two",
+   "dx": 18
+  },
+  {
+   "x": 50,
+   "to": 0.0024,
+   "label": "50 000 years: 0.2%",
+   "dx": -52
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5^(x/5.73)",
+   "x": 5.73,
+   "y": 0.5,
+   "name": "after one half-life (5,730 years) half remains"
+  },
+  {
+   "type": "point",
+   "expr": "0.5^(x/5.73)",
+   "x": 11.46,
+   "y": 0.25,
+   "name": "after two half-lives a quarter remains"
+  },
+  {
+   "type": "value",
+   "expr": "0.5^(x/5.73)",
+   "x": 50,
+   "between": [
+    0.002,
+    0.003
+   ],
+   "name": "after 50,000 years only about 0.2% remains: the limit of carbon-14 dating"
+  }
+ ]
+}

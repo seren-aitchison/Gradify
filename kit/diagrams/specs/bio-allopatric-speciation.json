@@ -1,0 +1,80 @@
+{
+ "id": "bio-allopatric-speciation",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Allopatric speciation",
+ "title": "Allopatric speciation",
+ "caption": "A geographic barrier stops gene flow, so the two populations diverge independently under different selection pressures, mutations and drift. Over time reproductive isolation develops and they become separate species, as with snapping shrimp on either side of the Isthmus of Panama.",
+ "alt": "Five boxes in order: one population, a geographic barrier, gene flow stops, divergence, and reproductive isolation giving two species.",
+ "description": [
+  "One population: a single species with gene flow.",
+  "A geographic barrier: a mountain range, river or sea splits it.",
+  "Gene flow stops: the two populations no longer mix.",
+  "Divergence: different selection pressures, mutations and drift.",
+  "Reproductive isolation: two species that can no longer interbreed."
+ ],
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "a0",
+   "label": "one population",
+   "sub": "a single species with gene flow",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "a1",
+   "label": "a geographic barrier",
+   "sub": "a mountain range, river or sea splits it",
+   "tone": "a3",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "a2",
+   "label": "gene flow stops",
+   "sub": "the two populations no longer mix",
+   "tone": "a3",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "a3",
+   "label": "divergence",
+   "sub": "different selection pressures, mutations and drift",
+   "tone": "a5",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "a4",
+   "label": "reproductive isolation",
+   "sub": "two species that can no longer interbreed",
+   "tone": "a2",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "a0",
+   "to": "a1"
+  },
+  {
+   "from": "a1",
+   "to": "a2"
+  },
+  {
+   "from": "a2",
+   "to": "a3"
+  },
+  {
+   "from": "a3",
+   "to": "a4"
+  }
+ ]
+}

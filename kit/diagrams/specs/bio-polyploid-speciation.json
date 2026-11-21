@@ -1,0 +1,57 @@
+{
+ "id": "bio-polyploid-speciation",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Sympatric speciation",
+ "title": "Instant speciation by polyploidy",
+ "caption": "If meiosis fails, a plant can make gametes with a double set of chromosomes. Two of them fuse to give a tetraploid offspring that cannot breed with its diploid parents, so a new species appears within one generation and without any geographic barrier.",
+ "alt": "Four boxes in order: a diploid species, failed meiosis giving diploid gametes, fusion into a tetraploid offspring, and a new species.",
+ "description": [
+  "Diploid species: parents with two sets of chromosomes (2n).",
+  "Failed meiosis: gametes with a double set (2n) instead of a single set.",
+  "Fusion of 2n gametes: a tetraploid (4n) offspring.",
+  "A new species: the 4n plant cannot breed with its 2n parents: speciation in one generation."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "p0",
+   "label": "diploid species",
+   "sub": "parents with two sets of chromosomes (2n)",
+   "tone": "a1"
+  },
+  {
+   "id": "p1",
+   "label": "failed meiosis",
+   "sub": "gametes with a double set (2n) instead of a single set",
+   "tone": "a5"
+  },
+  {
+   "id": "p2",
+   "label": "fusion of 2n gametes",
+   "sub": "a tetraploid (4n) offspring",
+   "tone": "a5"
+  },
+  {
+   "id": "p3",
+   "label": "a new species",
+   "sub": "the 4n plant cannot breed with its 2n parents: speciation in one generation",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "p0",
+   "to": "p1"
+  },
+  {
+   "from": "p1",
+   "to": "p2"
+  },
+  {
+   "from": "p2",
+   "to": "p3"
+  }
+ ]
+}

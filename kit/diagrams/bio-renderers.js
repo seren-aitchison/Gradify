@@ -17,6 +17,8 @@
 //   crossover  a crossover between linked genes: which chromatids are parental and which recombinant
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   layers     the three germ layers and what each becomes, each tissue checked against the layer it comes from
+//   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   cladogram  an evolutionary tree with the characters that define its clades, each character on one branch (parsimony)
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
 // decision-tree renderers instead.
 import { register, RENDERERS, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
@@ -1047,6 +1049,108 @@ function layersChecks(spec) {
   return out;
 }
 
+// ======================================================================== drift
+// Genetic drift: a Wright–Fisher simulation, run with a fixed seed so the picture never changes.
+// spec: seed, p0, gens, reps (lines drawn per panel), panels: [{N, label}] where N is the number of gene copies,
+//   claims: [{type: "theory", N, tol}  the spread over many runs matches p0(1-p0)(1-(1-1/N)^t)
+//            | {type: "moreSpread", small, large, factor} | {type: "reaches", N, value: true | false} (any drawn line fixed or lost)]
+function mulberry(seed) { let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+export function wrightFisher(N, p0, gens, rnd) {
+  const out = [p0]; let p = p0;
+  for (let g = 0; g < gens; g++) { let k = 0; for (let i = 0; i < N; i++) if (rnd() < p) k++; p = k / N; out.push(p); }
+  return out;
+}
+const finalSpread = (N, p0, gens, runs, seed) => { const r = mulberry(seed), f = Array.from({ length: runs }, () => wrightFisher(N, p0, gens, r).at(-1)), m = f.reduce((a, b) => a + b, 0) / runs; return Math.sqrt(f.reduce((a, b) => a + (b - m) ** 2, 0) / runs); };
+const theorySd = (N, p0, gens) => Math.sqrt(p0 * (1 - p0) * (1 - (1 - 1 / N) ** gens));
+function driftRuns(spec, N, pi) { const r = mulberry(spec.seed + 1000 * pi); return Array.from({ length: spec.reps }, () => wrightFisher(N, spec.p0, spec.gens, r)); }
+function driftDraw(spec, W, narrow) {
+  const n = spec.panels.length, ph = narrow ? 230 : 260, gap = 16, pw = narrow ? W - 20 : (W - 20 - gap * (n - 1)) / n;
+  const colours = ["a1", "a2", "a3", "a4", "a5", "good"];
+  let s = "";
+  spec.panels.forEach((P, pi) => {
+    const x0 = 10 + (narrow ? 0 : pi * (pw + gap)), y0 = 10 + (narrow ? pi * (ph + 20) : 0), l = 40, b = 36, t = 34, r = 10;
+    const sx = (g) => x0 + l + (g / spec.gens) * (pw - l - r), sy = (p) => y0 + t + (1 - p) * (ph - t - b);
+    s += text(x0 + pw / 2, y0 + 12, P.label, { size: 13.5, weight: 700 });
+    s += line(x0 + l, sy(0), x0 + pw - r, sy(0), { stroke: C.line, w: 1.6 }) + line(x0 + l, sy(0), x0 + l, sy(1), { stroke: C.line, w: 1.6 });
+    for (const v of [0, 0.5, 1]) s += text(x0 + l - 6, sy(v), String(v), { size: 11.5, anchor: "end", fill: C.soft }) + (v ? line(x0 + l, sy(v), x0 + pw - r, sy(v), { stroke: C.grid, w: 1 }) : "");
+    for (const g of [0, spec.gens / 2, spec.gens]) s += text(sx(g), sy(0) + 14, String(g), { size: 11.5, fill: C.soft });
+    s += text(x0 + l + (pw - l - r) / 2, sy(0) + 29, "generation", { size: 11.5, fill: C.soft }) + text(x0 + 4, y0 + t - 12, "allele frequency", { size: 11.5, anchor: "start", fill: C.soft });
+    driftRuns(spec, P.N, pi).forEach((run, k) => { s += `<path d="${run.map((p, g) => `${g ? "L" : "M"}${f1(sx(g))} ${f1(sy(p))}`).join(" ")}" fill="none" stroke="${C[colours[k % 6]]}" stroke-width="2.2" stroke-linejoin="round"/>`; });
+    s += line(x0 + l, sy(spec.p0), x0 + pw - r, sy(spec.p0), { stroke: C.ink, w: 1.2, dash: "5 5" });
+  });
+  return { s, H: 10 + (narrow ? n * (ph + 20) : ph) };
+}
+function driftChecks(spec) {
+  const out = [];
+  out.push(check("every frequency stays between 0 and 1, and an allele that reaches 0 or 1 stays there", spec.panels.every((P, pi) => driftRuns(spec, P.N, pi).every((run) => run.every((p, g) => p >= 0 && p <= 1 && (g === 0 || (run[g - 1] !== 0 && run[g - 1] !== 1) || p === run[g - 1]))))));
+  for (const c of spec.claims || []) {
+    if (c.type === "theory") { const sim = finalSpread(c.N, spec.p0, spec.gens, 400, 7), th = theorySd(c.N, spec.p0, spec.gens); out.push(check(`N = ${c.N}: the spread of final frequencies (${sim.toFixed(3)}) matches the Wright–Fisher expectation (${th.toFixed(3)})`, Math.abs(sim - th) / th <= (c.tol ?? 0.15), `${(Math.abs(sim - th) / th * 100).toFixed(1)}% apart over 400 runs`)); }
+    if (c.type === "moreSpread") { const a = finalSpread(c.small, spec.p0, spec.gens, 400, 11), b = finalSpread(c.large, spec.p0, spec.gens, 400, 13); out.push(check(`drift moves allele frequencies further in the small population (N = ${c.small}) than in the large one (N = ${c.large})`, a > b * (c.factor || 1), `spread ${a.toFixed(3)} against ${b.toFixed(3)}`)); }
+    if (c.type === "reaches") { const pi = spec.panels.findIndex((P) => P.N === c.N), any = driftRuns(spec, c.N, pi).some((run) => run.at(-1) === 0 || run.at(-1) === 1); out.push(check(`N = ${c.N}: ${c.value ? "some line is lost or fixed" : "no line is lost or fixed"} within ${spec.gens} generations`, any === c.value)); }
+  }
+  return out;
+}
+
+// ======================================================================== cladogram
+// An evolutionary tree with the characters that define its clades.
+// spec: tree: nested arrays, a leaf is a taxon name, e.g. ["lancelet", ["shark", ["frog", ["lizard", "mouse"]]]],
+//   characters: [{name, taxa: [...]}] (the taxa that have the derived character),
+//   claims: [{type: "closer", taxa: [a, b], than: [a, c]} | {type: "oneStep"} | {type: "clade", taxa: [...]}]
+const leavesOf = (t) => (typeof t === "string" ? [t] : t.flatMap(leavesOf));
+const sameSet = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
+function nodesOf(t, path = []) { const ls = leavesOf(t); return [{ node: t, path, leaves: ls }, ...(typeof t === "string" ? [] : t.flatMap((c, i) => nodesOf(c, [...path, i])))]; }
+const depthOfMrca = (tree, a, b) => Math.max(...nodesOf(tree).filter((n) => n.leaves.includes(a) && n.leaves.includes(b)).map((n) => n.path.length));
+// Fitch parsimony: the fewest changes of a binary character on this tree
+function fitchSteps(tree, has) {
+  let steps = 0;
+  const go = (t) => { if (typeof t === "string") return new Set([has.includes(t) ? 1 : 0]); const sets = t.map(go); let inter = new Set([...sets[0]].filter((x) => sets.every((s) => s.has(x)))); if (inter.size) return inter; steps++; return new Set(sets.flatMap((s) => [...s])); };
+  const root = go(tree); return steps + (root.has(0) ? 0 : 1); // the root is taken to lack the character
+}
+function cladogramDraw(spec, W, narrow) {
+  const leaves = leavesOf(spec.tree), nodes = nodesOf(spec.tree), maxDepth = Math.max(...nodes.map((n) => n.path.length));
+  const rowH = narrow ? 34 : 40, left = 18, right = narrow ? 86 : 120, top = 20, xAt = (depth) => left + (depth / maxDepth) * (W - left - right - 10);
+  const yOf = new Map(), ps = (n) => n.path.join(",");
+  leaves.forEach((l, i) => yOf.set(l, top + i * rowH));
+  const pos = new Map();
+  const place = (t, path) => { if (typeof t === "string") { pos.set(path.join(","), [W - right, yOf.get(t)]); return yOf.get(t); } const ys = t.map((c, i) => place(c, [...path, i])), y = (Math.min(...ys) + Math.max(...ys)) / 2; pos.set(path.join(","), [xAt(path.length), y]); return y; };
+  place(spec.tree, []);
+  let s = "";
+  const stem = [xAt(0) - 14, pos.get("")[1]];
+  s += line(stem[0], stem[1], pos.get("")[0], pos.get("")[1], { stroke: C.ink, w: 2.2 });
+  for (const n of nodes) {
+    if (typeof n.node === "string") continue;
+    const [x, y] = pos.get(ps(n)), kids = n.node.map((_, i) => pos.get([...n.path, i].join(",")));
+    s += line(x, Math.min(...kids.map((k) => k[1])), x, Math.max(...kids.map((k) => k[1])), { stroke: C.ink, w: 2.2 });
+    for (const k of kids) s += line(x, k[1], k[0], k[1], { stroke: C.ink, w: 2.2 });
+  }
+  for (const l of leaves) s += text(W - right + 8, yOf.get(l), l, { size: 13, weight: 600, anchor: "start" });
+  // characters: a numbered marker on the branch leading to the clade that has it; several on one branch sit side by side
+  const where = spec.characters.map((ch) => nodes.find((x) => sameSet(x.leaves, ch.taxa)));
+  spec.characters.forEach((ch, i) => {
+    const n = where[i]; if (!n) return;
+    const [x, y] = pos.get(ps(n)), px = n.path.length ? pos.get(n.path.slice(0, -1).join(","))[0] : stem[0];
+    const group = where.map((m, k) => (m && ps(m) === ps(n) ? k : -1)).filter((k) => k >= 0), j = group.indexOf(i);
+    const mx = (px + x) / 2 + (j - (group.length - 1) / 2) * 22;
+    s += `<circle cx="${f1(mx)}" cy="${f1(y)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.a2}" stroke-width="1.8"/>` + text(mx, y + 0.5, String(i + 1), { size: 11, weight: 800, fill: C.a2 });
+  });
+  const ky = top + leaves.length * rowH + 4;
+  spec.characters.forEach((ch, i) => { s += text(14, ky + 8 + i * 20, `${i + 1}  ${ch.name}`, { size: 12.5, anchor: "start" }); });
+  return { s, H: ky + 8 + spec.characters.length * 20 + 6 };
+}
+function cladogramChecks(spec) {
+  const out = [], nodes = nodesOf(spec.tree), leaves = leavesOf(spec.tree);
+  out.push(check("every taxon appears once on the tree", new Set(leaves).size === leaves.length));
+  for (const ch of spec.characters) {
+    const fits = nodes.some((n) => sameSet(n.leaves, ch.taxa));
+    out.push(check(`"${ch.name}" is shared by exactly one clade (${ch.taxa.join(", ")}) and so arose once`, fits && fitchSteps(spec.tree, ch.taxa) === 1, `${fitchSteps(spec.tree, ch.taxa)} change(s) on this tree`));
+  }
+  for (const c of spec.claims || []) {
+    if (c.type === "closer") out.push(check(`${c.taxa.join(" and ")} share a more recent common ancestor than ${c.than.join(" and ")}`, depthOfMrca(spec.tree, ...c.taxa) > depthOfMrca(spec.tree, ...c.than)));
+    if (c.type === "clade") out.push(check(`${c.taxa.join(", ")} form a clade: an ancestor and all of its descendants`, nodes.some((n) => sameSet(n.leaves, c.taxa))));
+  }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1063,4 +1167,6 @@ register({
   crossover: { draw: crossoverDraw, checks: crossoverChecks, widths: [700, 380] },
   ploidy: { draw: ploidyDraw, checks: ploidyChecks, widths: [700, 380] },
   layers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
+  drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
+  cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
 });

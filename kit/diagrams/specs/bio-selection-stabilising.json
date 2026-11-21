@@ -1,0 +1,113 @@
+{
+ "id": "bio-selection-stabilising",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Natural selection",
+ "title": "Stabilising selection",
+ "caption": "Intermediate values are favoured, so the extremes are removed. The mean stays put but the variation falls and the curve narrows and rises. Human birth weight is an example.",
+ "alt": "Two bell curves of a trait centred on 50: a dashed curve before selection and a narrower, taller solid curve after stabilising selection.",
+ "description": [
+  "Before: the trait is spread around a mean of 50.",
+  "Stabilising selection favours intermediate values and removes both extremes.",
+  "After: the mean is still 50 but the spread is smaller, so the peak is higher."
+ ],
+ "range": {
+  "x": [
+   20,
+   80
+  ],
+  "y": [
+   0,
+   0.125
+  ]
+ },
+ "ticks": [
+  [
+   30,
+   40,
+   50,
+   60,
+   70
+  ],
+  []
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "value of the trait",
+  "proportion of the population"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-50)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "colour": "a1",
+   "dash": "6 5",
+   "width": 2.6
+  },
+  {
+   "expr": "exp(-(x-50)^2/(2*5^2))/(5*sqrt(2*3.14159265))",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "before selection",
+   "a1",
+   "6 5"
+  ],
+  [
+   "after stabilising selection",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  21,
+  0.12
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "exp(-(x-50)^2/(2*5^2))/(5*sqrt(2*3.14159265))",
+   "domain": [
+    20,
+    80
+   ],
+   "x": 50,
+   "y": 0.079788,
+   "name": "after stabilising selection the mean is unchanged at 50 and the peak is higher (0.080, against 0.050 before)"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-(x-50)^2/(2*5^2))/(5*sqrt(2*3.14159265))",
+   "x": 35,
+   "between": [
+    0,
+    0.0045
+   ],
+   "name": "the low extreme (35) is much rarer after selection than before"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-(x-50)^2/(2*8^2))/(8*sqrt(2*3.14159265))",
+   "x": 35,
+   "between": [
+    0.008,
+    0.009
+   ],
+   "name": "before selection the low extreme (35) was more common (about 0.009)"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-50)^2/(2*5^2))/(5*sqrt(2*3.14159265))",
+   "from": 0,
+   "to": 100,
+   "value": 1,
+   "tol": 0.002,
+   "name": "the population is the same size: area 1"
+  }
+ ]
+}

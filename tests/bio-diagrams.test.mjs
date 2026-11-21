@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -222,4 +222,23 @@ test("germ layers: each tissue must come from the layer it is listed under", () 
   assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok }), true);
   assert.equal(allPass({ renderer: "layers", alt: "x", layers: [layer("ectoderm", ["liver"]), ok[1], ok[2]] }), false); // the liver is endoderm
   assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok.slice(0, 2) }), false); // two layers is not triploblastic
+});
+
+test("drift: a Wright–Fisher population loses or fixes alleles and stays in 0–1", () => {
+  let k = 1; const rnd = () => ((k = (k * 16807) % 2147483647) / 2147483647); // a simple deterministic generator
+  const run = wrightFisher(20, 0.5, 200, rnd);
+  assert.ok(run.every((p) => p >= 0 && p <= 1));
+  assert.ok(run.at(-1) === 0 || run.at(-1) === 1); // a small population reaches 0 or 1 within 200 generations
+  const spec = { renderer: "drift", alt: "x", seed: 5, p0: 0.5, gens: 50, reps: 4, panels: [{ N: 20, label: "a" }, { N: 500, label: "b" }], claims: [{ type: "moreSpread", small: 20, large: 500, factor: 2 }, { type: "theory", N: 20 }] };
+  assert.equal(allPass(spec), true);
+  spec.claims = [{ type: "moreSpread", small: 500, large: 20, factor: 1 }]; // the wrong way round
+  assert.equal(allPass(spec), false);
+});
+
+test("cladograms: a trait that does not match one clade, or arose twice, is rejected", () => {
+  const tree = ["lancelet", ["shark", ["frog", ["lizard", "mouse"]]]];
+  const ok = { renderer: "cladogram", alt: "x", tree, characters: [{ name: "jaws", taxa: ["shark", "frog", "lizard", "mouse"] }, { name: "amniotic egg", taxa: ["lizard", "mouse"] }], claims: [{ type: "closer", taxa: ["lizard", "mouse"], than: ["frog", "lizard"] }] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, characters: [{ name: "wings", taxa: ["shark", "mouse"] }] }), false); // no single clade: it would have arisen twice
+  assert.equal(allPass({ ...ok, claims: [{ type: "closer", taxa: ["frog", "lizard"], than: ["lizard", "mouse"] }] }), false);
 });
