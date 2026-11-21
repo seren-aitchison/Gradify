@@ -1,0 +1,81 @@
+{
+ "id": "bus-functional-structure",
+ "renderer": "orgchart",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Organisational structure",
+ "title": "A functional structure",
+ "caption": "Grouping by specialism builds expertise: everyone in marketing reports into marketing. The chart has three levels, and the chief executive's span of control is three.",
+ "alt": "Organisation chart with a chief executive over marketing, finance and operations, each with two teams.",
+ "description": [
+  "Top: the chief executive.",
+  "Second level: the heads of marketing, finance and operations, each a direct report, so the span is 3.",
+  "Third level: two teams under each function."
+ ],
+ "terms": [
+  "Functional",
+  "marketing, finance, operations",
+  "Span of control",
+  "Hierarchy"
+ ],
+ "nodes": [
+  {
+   "id": "ceo",
+   "label": "Chief executive"
+  },
+  {
+   "id": "mkt",
+   "label": "Marketing",
+   "parent": "ceo"
+  },
+  {
+   "id": "fin",
+   "label": "Finance",
+   "parent": "ceo"
+  },
+  {
+   "id": "ops",
+   "label": "Operations",
+   "parent": "ceo"
+  },
+  {
+   "id": "m1",
+   "label": "Brand team",
+   "parent": "mkt"
+  },
+  {
+   "id": "m2",
+   "label": "Sales team",
+   "parent": "mkt"
+  },
+  {
+   "id": "f1",
+   "label": "Accounts",
+   "parent": "fin"
+  },
+  {
+   "id": "f2",
+   "label": "Payroll",
+   "parent": "fin"
+  },
+  {
+   "id": "o1",
+   "label": "Production",
+   "parent": "ops"
+  },
+  {
+   "id": "o2",
+   "label": "Logistics",
+   "parent": "ops"
+  }
+ ],
+ "claims": {
+  "levels": 3,
+  "spans": {
+   "ceo": 3,
+   "mkt": 2,
+   "fin": 2,
+   "ops": 2
+  }
+ }
+}

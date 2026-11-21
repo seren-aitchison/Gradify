@@ -1,0 +1,82 @@
+{
+ "id": "bus-sources-of-finance",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Sources of finance",
+ "title": "Sources of finance",
+ "caption": "Internal sources cost no interest but are limited. External finance splits by time and by kind: short-term debt, longer-term debt, new equity, and other sources such as grants and crowdfunding.",
+ "alt": "Five boxes: internal sources; external short-term; external medium and long-term; equity; other (government grants, crowdfunding, peer-to-peer lending).",
+ "description": [
+  "Internal: retained profit, better working capital management, sale of assets.",
+  "External short-term: overdrafts, trade credit, invoice factoring and discounting.",
+  "Medium and long-term: bank loans, leasing and hire purchase, bonds and debentures.",
+  "Equity: new shares, business angels, venture capital, a stock market listing.",
+  "Other: government grants, crowdfunding and peer-to-peer lending."
+ ],
+ "terms": [
+  "Internal sources",
+  "Short-term",
+  "Medium and long-term",
+  "Equity",
+  "Other",
+  "Retained profit",
+  "bank overdrafts",
+  "bank loans",
+  "venture capital",
+  "crowdfunding"
+ ],
+ "cols": 12,
+ "rows": 2,
+ "cover": true,
+ "rowH": 118,
+ "expect": [
+  "Internal sources",
+  "External: short-term",
+  "External: medium and long-term",
+  "External: equity",
+  "Other"
+ ],
+ "blocks": [
+  {
+   "label": "Internal sources",
+   "col": 0,
+   "row": 0,
+   "cs": 3,
+   "note": "retained profit, working capital, sale of assets",
+   "colour": "good"
+  },
+  {
+   "label": "External: short-term",
+   "col": 3,
+   "row": 0,
+   "cs": 3,
+   "note": "overdrafts, trade credit, factoring",
+   "colour": "a1"
+  },
+  {
+   "label": "External: medium and long-term",
+   "col": 6,
+   "row": 0,
+   "cs": 3,
+   "note": "bank loans, leasing, bonds",
+   "colour": "a1"
+  },
+  {
+   "label": "External: equity",
+   "col": 9,
+   "row": 0,
+   "cs": 3,
+   "note": "new shares, business angels, venture capital, listing",
+   "colour": "a5"
+  },
+  {
+   "label": "Other",
+   "col": 0,
+   "row": 1,
+   "cs": 12,
+   "note": "government grants, crowdfunding and peer-to-peer lending",
+   "colour": "a4"
+  }
+ ]
+}

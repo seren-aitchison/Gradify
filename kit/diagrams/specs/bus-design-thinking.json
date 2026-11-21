@@ -1,0 +1,56 @@
+{
+ "id": "bus-design-thinking",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u09",
+ "lesson": "Design thinking",
+ "title": "Design thinking in five stages",
+ "caption": "Start from people, then iterate. The stages are not strictly linear: teams loop back as they learn, and good ideas balance what is desirable, feasible and viable.",
+ "alt": "Five boxes in order: empathise, define, ideate, prototype, test.",
+ "description": [
+  "Empathise: observe and interview the people affected.",
+  "Define the problem from their point of view.",
+  "Ideate: generate many ideas.",
+  "Prototype: make cheap versions.",
+  "Test with users, looping back as you learn."
+ ],
+ "terms": [
+  "empathise",
+  "define",
+  "ideate",
+  "prototype",
+  "test",
+  "human-centred",
+  "iterative"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Empathise",
+  "Define",
+  "Ideate",
+  "Prototype",
+  "Test"
+ ],
+ "steps": [
+  {
+   "label": "Empathise",
+   "note": "observe and interview"
+  },
+  {
+   "label": "Define",
+   "note": "the real problem"
+  },
+  {
+   "label": "Ideate",
+   "note": "many ideas"
+  },
+  {
+   "label": "Prototype",
+   "note": "cheap versions"
+  },
+  {
+   "label": "Test",
+   "note": "learn, loop back"
+  }
+ ]
+}

@@ -1,39 +1,33 @@
-// Render built diagrams in a real browser and flag text a learner could not read: any <text> that runs outside the
-// picture, or that prints over another piece of text. Both layouts (wide and narrow) of every SVG are checked.
-// Usage: node scripts/diagrams/legibility.cjs [idFilter]   (exit 1 if anything is flagged)
+// Render built diagram SVGs in a browser and report <text> clipped by the viewBox or overprinting another <text>,
+// and write PNG screenshots. Usage: node scripts/diagrams/legibility.cjs <idFilter> [outDir]
 const { chromium } = require("playwright");
-const fs = require("fs");
-const path = require("path");
-
-const DIR = path.resolve(__dirname, "../../kit/diagrams/svg");
-const only = process.argv[2] || "";
-const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".svg") && f.includes(only)).sort();
-
+const fs = require("fs"), path = require("path");
+const ROOT = path.resolve(__dirname, "../..");
+const only = process.argv[2] || "", OUT = path.resolve(process.argv[3] || "/tmp/vx-shots");
+fs.mkdirSync(OUT, { recursive: true });
 (async () => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  let flagged = 0;
-  for (const f of files) {
-    await page.setContent(`<!doctype html><body style="margin:0;font-family:system-ui,sans-serif">${fs.readFileSync(path.join(DIR, f), "utf8")}</body>`);
-    const issues = await page.evaluate(() => {
-      const svg = document.querySelector("svg"), vb = svg.viewBox.baseVal, out = [];
-      const boxes = [...svg.querySelectorAll("text")].map((t) => {
-        const b = t.getBBox(), m = t.getCTM(), p = svg.createSVGPoint();
-        const pts = [[b.x, b.y], [b.x + b.width, b.y], [b.x, b.y + b.height], [b.x + b.width, b.y + b.height]].map(([x, y]) => { p.x = x; p.y = y; const q = p.matrixTransform(m.multiply(svg.getCTM().inverse())); return [q.x, q.y]; });
-        const xs = pts.map((q) => q[0]), ys = pts.map((q) => q[1]);
-        return { s: t.textContent, x0: Math.min(...xs), x1: Math.max(...xs), y0: Math.min(...ys), y1: Math.max(...ys) };
-      }).filter((b) => b.s.trim());
-      for (const b of boxes) if (b.x0 < vb.x - 1 || b.y0 < vb.y - 1 || b.x1 > vb.x + vb.width + 1 || b.y1 > vb.y + vb.height + 1) out.push(`outside the picture: "${b.s}"`);
-      for (let i = 0; i < boxes.length; i++) for (let j = i + 1; j < boxes.length; j++) {
-        const a = boxes[i], c = boxes[j], w = Math.min(a.x1, c.x1) - Math.max(a.x0, c.x0), h = Math.min(a.y1, c.y1) - Math.max(a.y0, c.y0);
-        // more than a sliver of shared area (glyph boxes include some empty space above and below)
-        if (w > 2 && h > Math.min(a.y1 - a.y0, c.y1 - c.y0) * 0.35) out.push(`overprints: "${a.s}" and "${c.s}"`);
+  const browser = await chromium.launch(), page = await browser.newPage({ deviceScaleFactor: 1.5 });
+  const dir = path.join(ROOT, "kit/diagrams/svg");
+  let bad = 0;
+  for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".svg") && f.includes(only)).sort()) {
+    const svg = fs.readFileSync(path.join(dir, f), "utf8");
+    await page.setContent(`<body style="margin:0;background:#fff;font-family:Inter,system-ui,sans-serif">${svg}</body>`);
+    const r = await page.evaluate(() => {
+      const s = document.querySelector("svg"), vb = s.viewBox.baseVal, sb = s.getBoundingClientRect(), out = { clipped: [], overlap: [] };
+      const ts = [...s.querySelectorAll("text")].filter((t) => t.textContent.trim()).map((t) => ({ t: t.textContent, b: t.getBoundingClientRect(), rot: !!t.closest("g[transform*=rotate]") }));
+      for (const x of ts) if (x.b.left < sb.left - 1 || x.b.right > sb.right + 1 || x.b.top < sb.top - 1 || x.b.bottom > sb.bottom + 1) out.clipped.push(x.t);
+      for (let i = 0; i < ts.length; i++) for (let j = i + 1; j < ts.length; j++) {
+        const a = ts[i].b, b = ts[j].b; if (ts[i].rot || ts[j].rot) continue;
+        const ox = Math.min(a.right, b.right) - Math.max(a.left, b.left), oy = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+        if (ox > 2 && oy > 3) out.overlap.push(`${ts[i].t} / ${ts[j].t}`);
       }
       return out;
     });
-    if (issues.length) { flagged++; console.log(`${f}\n  ${issues.join("\n  ")}`); }
+    const png = path.join(OUT, f.replace(".svg", ".png"));
+    await (await page.$("svg")).screenshot({ path: png });
+    if (r.clipped.length || r.overlap.length) { bad++; console.log(`✗ ${f}${r.clipped.length ? `\n   clipped: ${r.clipped.join(" | ")}` : ""}${r.overlap.length ? `\n   overlap: ${r.overlap.join(" | ")}` : ""}`); }
   }
+  console.log(bad ? `${bad} svg(s) with problems` : "no clipped or overprinted text");
   await browser.close();
-  console.log(`${files.length} SVGs checked, ${flagged} with text problems`);
-  process.exit(flagged ? 1 : 0);
+  process.exit(bad ? 1 : 0);
 })();

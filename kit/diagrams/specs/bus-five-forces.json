@@ -1,0 +1,52 @@
+{
+ "id": "bus-five-forces",
+ "renderer": "radial",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "Porter's five forces",
+ "title": "Porter's five forces",
+ "caption": "Four forces press on the rivalry between existing competitors in the middle. The stronger each force, the lower the industry's average profit. Each arm says what makes that force strong.",
+ "alt": "Rivalry among existing competitors in the centre with arrows from threat of new entrants (above), threat of substitutes (below), bargaining power of suppliers (left) and bargaining power of buyers (right).",
+ "description": [
+  "Centre: rivalry among existing competitors, high when competitors are many and similar, growth is slow or fixed costs are high.",
+  "Above: threat of new entrants, high when barriers to entry are low.",
+  "Left: bargaining power of suppliers, high when suppliers are few or switching costs are high.",
+  "Right: bargaining power of buyers, high when buyers are few and large and switching is cheap.",
+  "Below: threat of substitutes, high when other products meet the same need at good value."
+ ],
+ "terms": [
+  "Threat of new entrants",
+  "Bargaining power of suppliers",
+  "Bargaining power of buyers",
+  "Threat of substitutes",
+  "Rivalry among existing competitors"
+ ],
+ "count": 5,
+ "inward": true,
+ "centre": {
+  "label": "Rivalry among existing competitors",
+  "note": "many similar rivals, slow growth, high fixed costs"
+ },
+ "arms": [
+  {
+   "label": "Threat of new entrants",
+   "note": "strong when barriers to entry are low",
+   "dir": "top"
+  },
+  {
+   "label": "Bargaining power of suppliers",
+   "note": "strong when suppliers are few or switching costs high",
+   "dir": "left"
+  },
+  {
+   "label": "Bargaining power of buyers",
+   "note": "strong when buyers are few, large and can switch cheaply",
+   "dir": "right"
+  },
+  {
+   "label": "Threat of substitutes",
+   "note": "strong when other products meet the same need",
+   "dir": "bottom"
+  }
+ ]
+}

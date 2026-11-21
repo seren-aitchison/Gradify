@@ -6,8 +6,8 @@ def snake(items, prefix, tones, per=3):
     return [{"id": f"{prefix}{i}", "label": a, "sub": b, "tone": tones[i % len(tones)], "col": i % per if (i // per) % 2 == 0 else per - 1 - i % per, "row": i // per} for i, (a, b, *_) in enumerate(items)]
 
 # ---------------------------------------------------------------- photosynthesis in outline
-PH = [("light and water", "light energy; H₂O from the roots", "a3"), ("light-dependent reactions", "thylakoid membranes: water split, O₂ released, ATP and NADPH made", "a1"),
-      ("ATP and NADPH", "carry energy and hydrogen to the stroma", "a5"), ("Calvin cycle", "stroma: CO₂ fixed and reduced to triose phosphate", "a4"), ("glucose and other products", "sugars, starch, cellulose, amino acids, lipids", "a2")]
+PH = [("light and water", "light energy and H₂O", "a3"), ("light-dependent reactions", "thylakoids: water split, O₂ released", "a1"),
+      ("ATP and NADPH", "carry energy to the stroma", "a5"), ("Calvin cycle", "stroma: sugar made from CO₂", "a4"), ("glucose and other products", "sugars, starch, cellulose", "a2")]
 mk("u08-12", "bio-photosynthesis-outline", "flow", "Photosynthesis in two stages",
    "The light-dependent reactions in the thylakoid membranes split water, release oxygen and make ATP and NADPH. The Calvin cycle in the stroma uses them to fix CO₂ into sugars. Overall: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
    "Five boxes in order: light and water, the light-dependent reactions, ATP and NADPH, the Calvin cycle, and glucose and other products.",

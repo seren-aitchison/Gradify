@@ -16,7 +16,7 @@
 //   density    Meselson–Stahl density bands: each copying model's bands are worked out and compared with what was seen
 //   crossover  a crossover between linked genes: which chromatids are parental and which recombinant
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
-//   layers     the three germ layers and what each becomes, each tissue checked against the layer it comes from
+//   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
 //   carbonflow a pathway or cycle (drawn as a flow) whose carbon atoms balance at every step
 //   sarcomere  relaxed and contracted sarcomeres: band lengths worked out from the filament lengths
@@ -1070,7 +1070,7 @@ function driftDraw(spec, W, narrow) {
   const colours = ["a1", "a2", "a3", "a4", "a5", "good"];
   let s = "";
   spec.panels.forEach((P, pi) => {
-    const x0 = 10 + (narrow ? 0 : pi * (pw + gap)), y0 = 10 + (narrow ? pi * (ph + 20) : 0), l = 40, b = 36, t = 34, r = 10;
+    const x0 = 10 + (narrow ? 0 : pi * (pw + gap)), y0 = 10 + (narrow ? pi * (ph + 20) : 0), l = 40, b = 36, t = 46, r = 10;
     const sx = (g) => x0 + l + (g / spec.gens) * (pw - l - r), sy = (p) => y0 + t + (1 - p) * (ph - t - b);
     s += text(x0 + pw / 2, y0 + 12, P.label, { size: 13.5, weight: 700 });
     s += line(x0 + l, sy(0), x0 + pw - r, sy(0), { stroke: C.line, w: 1.6 }) + line(x0 + l, sy(0), x0 + l, sy(1), { stroke: C.line, w: 1.6 });
@@ -1219,7 +1219,7 @@ register({
   density: { draw: densityDraw, checks: densityChecks, widths: [700, 380] },
   crossover: { draw: crossoverDraw, checks: crossoverChecks, widths: [700, 380] },
   ploidy: { draw: ploidyDraw, checks: ploidyChecks, widths: [700, 380] },
-  layers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
+  germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
   carbonflow: { draw: flowDraw, checks: carbonflowChecks, widths: [700, 380] },

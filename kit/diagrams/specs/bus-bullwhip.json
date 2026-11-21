@@ -1,0 +1,99 @@
+{
+ "id": "bus-bullwhip",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Supply chain management",
+ "title": "The bullwhip effect",
+ "caption": "A 10% rise in consumer sales becomes a 20% order from the retailer and a 40% order from the wholesaler. Each stage reads the order it receives as demand and adds safety stock, so the swing quadruples by the time it reaches the brewer.",
+ "alt": "Columns for the retailer, wholesaler and brewer: the demand change each sees (10%, 20%, 40%) and the order each places (20%, 40%, then expanded production).",
+ "description": [
+  "The retailer sees a 10% rise in sales and orders 20% more.",
+  "The wholesaler sees a 20% rise and orders 40% more.",
+  "The brewer sees a 40% rise and expands production.",
+  "A 10% change has become 40% by the brewer."
+ ],
+ "terms": [
+  "10% rise in sales",
+  "20% more",
+  "20% rise",
+  "40% more",
+  "40% rise",
+  "bullwhip effect"
+ ],
+ "kind": "columns",
+ "suffix": "%",
+ "range": [
+  0,
+  52
+ ],
+ "series": [
+  {
+   "name": "Rise in demand it sees",
+   "colour": "a1"
+  },
+  {
+   "name": "Order it places",
+   "colour": "a2"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Retailer",
+   "values": [
+    {
+     "id": "r_seen",
+     "v": 10,
+     "series": 0
+    },
+    {
+     "id": "r_order",
+     "v": 20,
+     "series": 1
+    }
+   ]
+  },
+  {
+   "label": "Wholesaler",
+   "values": [
+    {
+     "id": "w_seen",
+     "v": 20,
+     "series": 0
+    },
+    {
+     "id": "w_order",
+     "v": 40,
+     "series": 1
+    }
+   ]
+  },
+  {
+   "label": "Brewer",
+   "values": [
+    {
+     "id": "b_seen",
+     "v": 40,
+     "series": 0
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "r_order",
+   "equals": "w_seen",
+   "name": "the wholesaler sees the retailer's order as demand"
+  },
+  {
+   "expr": "w_order",
+   "equals": "b_seen",
+   "name": "the brewer sees the wholesaler's order as demand"
+  },
+  {
+   "expr": "b_seen / r_seen",
+   "equals": "4",
+   "name": "the original 10% swing is four times larger by the brewer"
+  }
+ ]
+}

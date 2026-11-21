@@ -1,0 +1,65 @@
+{
+ "id": "bus-four-ps-innovation",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u09",
+ "lesson": "Types of innovation",
+ "title": "The 4Ps of innovation",
+ "caption": "Innovation is not only new products. It can change how things are made, where and to whom they are sold, or the whole business model.",
+ "alt": "Four boxes: product innovation (a new phone), process (automated warehouses), position (repositioning a drink as a sports product), paradigm (low-cost airlines).",
+ "description": [
+  "Product: changes in what is offered, such as a new phone.",
+  "Process: changes in how it is made or delivered, such as automated warehouses.",
+  "Position: changes in context or market, such as repositioning a drink as a sports product.",
+  "Paradigm: changes in the underlying business model, such as low-cost airlines."
+ ],
+ "terms": [
+  "Product",
+  "Process",
+  "Position",
+  "Paradigm",
+  "new phone",
+  "automated warehouses",
+  "low-cost airlines"
+ ],
+ "cols": 2,
+ "rows": 2,
+ "cover": true,
+ "rowH": 108,
+ "expect": [
+  "Product",
+  "Process",
+  "Position",
+  "Paradigm"
+ ],
+ "blocks": [
+  {
+   "label": "Product",
+   "col": 0,
+   "row": 0,
+   "note": "what is offered: a new phone",
+   "colour": "a1"
+  },
+  {
+   "label": "Process",
+   "col": 1,
+   "row": 0,
+   "note": "how it is made or delivered: automated warehouses",
+   "colour": "a4"
+  },
+  {
+   "label": "Position",
+   "col": 0,
+   "row": 1,
+   "note": "context or market: a drink repositioned as a sports product",
+   "colour": "a3"
+  },
+  {
+   "label": "Paradigm",
+   "col": 1,
+   "row": 1,
+   "note": "the business model: low-cost airlines",
+   "colour": "a5"
+  }
+ ]
+}

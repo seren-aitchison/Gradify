@@ -1,0 +1,132 @@
+{
+ "id": "bus-business-model-canvas",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u09",
+ "lesson": "The business model canvas",
+ "title": "The business model canvas",
+ "caption": "Nine blocks on one page. The right side covers value and customers; the left side covers efficiency and costs. Each block is an assumption to test. This one is the bike-subscription service.",
+ "alt": "The nine blocks: key partnerships, key activities, key resources, value propositions, customer relationships, channels, customer segments, with cost structure and revenue streams along the bottom.",
+ "description": [
+  "Customer segments: students and young professionals in a city.",
+  "Value proposition: a working bike for a monthly fee, with free repairs.",
+  "Channels and relationships: app sign-up and home repair visits.",
+  "Revenue: monthly subscription.",
+  "Key resources: bikes and mechanics. Key partners: bike manufacturer.",
+  "Costs: bikes, repairs, staff and app."
+ ],
+ "terms": [
+  "Customer segments",
+  "Value propositions",
+  "Channels",
+  "Customer relationships",
+  "Revenue streams",
+  "Key resources",
+  "Key activities",
+  "Key partnerships",
+  "Cost structure"
+ ],
+ "cols": 10,
+ "rows": 3,
+ "cover": true,
+ "rowH": 116,
+ "expect": [
+  "Key partnerships",
+  "Key activities",
+  "Key resources",
+  "Value propositions",
+  "Customer relationships",
+  "Channels",
+  "Customer segments",
+  "Cost structure",
+  "Revenue streams"
+ ],
+ "narrowOrder": [
+  "Customer segments",
+  "Value propositions",
+  "Channels",
+  "Customer relationships",
+  "Revenue streams",
+  "Key resources",
+  "Key activities",
+  "Key partnerships",
+  "Cost structure"
+ ],
+ "blocks": [
+  {
+   "label": "Key partnerships",
+   "col": 0,
+   "row": 0,
+   "cs": 2,
+   "rs": 2,
+   "note": "bike manufacturer",
+   "colour": "a3"
+  },
+  {
+   "label": "Key activities",
+   "col": 2,
+   "row": 0,
+   "cs": 2,
+   "note": "repairs, app",
+   "colour": "a3"
+  },
+  {
+   "label": "Key resources",
+   "col": 2,
+   "row": 1,
+   "cs": 2,
+   "note": "bikes, mechanics",
+   "colour": "a3"
+  },
+  {
+   "label": "Value propositions",
+   "col": 4,
+   "row": 0,
+   "cs": 2,
+   "rs": 2,
+   "note": "a working bike for a monthly fee, free repairs",
+   "colour": "a2"
+  },
+  {
+   "label": "Customer relationships",
+   "col": 6,
+   "row": 0,
+   "cs": 2,
+   "note": "home repair visits",
+   "colour": "a1"
+  },
+  {
+   "label": "Channels",
+   "col": 6,
+   "row": 1,
+   "cs": 2,
+   "note": "app sign-up",
+   "colour": "a1"
+  },
+  {
+   "label": "Customer segments",
+   "col": 8,
+   "row": 0,
+   "cs": 2,
+   "rs": 2,
+   "note": "students, young professionals",
+   "colour": "a1"
+  },
+  {
+   "label": "Cost structure",
+   "col": 0,
+   "row": 2,
+   "cs": 5,
+   "note": "bikes, repairs, staff and app",
+   "colour": "bad"
+  },
+  {
+   "label": "Revenue streams",
+   "col": 5,
+   "row": 2,
+   "cs": 5,
+   "note": "monthly subscription",
+   "colour": "good"
+  }
+ ]
+}

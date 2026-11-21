@@ -1,0 +1,88 @@
+{
+ "id": "bus-pestle",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u01",
+ "lesson": "PESTLE analysis",
+ "title": "The six PESTLE factors",
+ "caption": "Six groups of outside forces to scan. A good analysis then says which create an opportunity or a threat and judges which matter most.",
+ "alt": "Six boxes: political, economic, social, technological, legal and environmental, each with examples.",
+ "description": [
+  "Political: government policy, taxation, trade agreements.",
+  "Economic: growth, interest rates, inflation, exchange rates.",
+  "Social: demographics, lifestyles, health trends.",
+  "Technological: automation, AI, e-commerce.",
+  "Legal: employment, consumer, competition, data protection law.",
+  "Environmental: climate change, net zero, resource scarcity."
+ ],
+ "terms": [
+  "Political",
+  "Economic",
+  "Social",
+  "Technological",
+  "Legal",
+  "Environmental",
+  "taxation",
+  "interest rates",
+  "demographics",
+  "automation",
+  "data protection",
+  "net zero"
+ ],
+ "cols": 3,
+ "rows": 2,
+ "cover": true,
+ "rowH": 112,
+ "expect": [
+  "Political",
+  "Economic",
+  "Social",
+  "Technological",
+  "Legal",
+  "Environmental"
+ ],
+ "blocks": [
+  {
+   "label": "Political",
+   "col": 0,
+   "row": 0,
+   "note": "Government policy, taxation, trade agreements",
+   "colour": "a1"
+  },
+  {
+   "label": "Economic",
+   "col": 1,
+   "row": 0,
+   "note": "Growth, interest rates, inflation, exchange rates",
+   "colour": "a5"
+  },
+  {
+   "label": "Social",
+   "col": 2,
+   "row": 0,
+   "note": "Demographics, lifestyles, health trends",
+   "colour": "a4"
+  },
+  {
+   "label": "Technological",
+   "col": 0,
+   "row": 1,
+   "note": "Automation, AI, e-commerce",
+   "colour": "a3"
+  },
+  {
+   "label": "Legal",
+   "col": 1,
+   "row": 1,
+   "note": "Employment, consumer, competition and data protection law",
+   "colour": "a2"
+  },
+  {
+   "label": "Environmental",
+   "col": 2,
+   "row": 1,
+   "note": "Climate change, net zero, resource scarcity",
+   "colour": "good"
+  }
+ ]
+}

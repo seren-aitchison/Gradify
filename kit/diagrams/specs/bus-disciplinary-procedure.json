@@ -1,0 +1,55 @@
+{
+ "id": "bus-disciplinary-procedure",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u06",
+ "lesson": "Discipline, grievance and conflict",
+ "title": "A fair disciplinary procedure",
+ "caption": "Each step protects fairness: investigate first, tell the employee what is alleged, hear their response with a companion present, decide in writing and allow an appeal.",
+ "alt": "Six boxes in order: establish the facts, inform in writing, hold a meeting, the right to be accompanied, decide and inform, the right of appeal.",
+ "description": [
+  "Establish the facts: investigate promptly.",
+  "Inform the employee in writing of the issue and evidence.",
+  "Hold a meeting so they can respond.",
+  "They have the right to be accompanied.",
+  "Decide and inform in writing.",
+  "Right of appeal."
+ ],
+ "terms": [
+  "Establish the facts",
+  "Inform",
+  "Hold a meeting",
+  "accompanied",
+  "Decide",
+  "appeal"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Establish the facts",
+  "Inform in writing",
+  "Hold a meeting",
+  "Right to be accompanied",
+  "Decide and inform",
+  "Right of appeal"
+ ],
+ "steps": [
+  {
+   "label": "Establish the facts"
+  },
+  {
+   "label": "Inform in writing"
+  },
+  {
+   "label": "Hold a meeting"
+  },
+  {
+   "label": "Right to be accompanied"
+  },
+  {
+   "label": "Decide and inform"
+  },
+  {
+   "label": "Right of appeal"
+  }
+ ]
+}

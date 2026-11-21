@@ -1,6 +1,6 @@
 {
  "id": "bio-germ-layers",
- "renderer": "layers",
+ "renderer": "germlayers",
  "course": "biology",
  "unit": "u05",
  "lesson": "Gastrulation",

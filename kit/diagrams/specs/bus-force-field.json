@@ -1,0 +1,97 @@
+{
+ "id": "bus-force-field",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Managing change",
+ "title": "Force-field analysis of an electronic records change",
+ "caption": "The drivers total 11 and the restrainers 10, so change is fragile. Training and protected learning time reduce two restrainers, which is what makes it secure.",
+ "alt": "Two stacked columns: driving forces (fewer errors 4, regulatory pressure 4, faster access to records 3) total 11; restraining forces (staff fear of technology 4, time to learn 3, cost 3) total 10.",
+ "description": [
+  "Driving forces: fewer errors 4, regulatory pressure 4, faster access to records 3: total 11.",
+  "Restraining forces: staff fear of technology 4, time to learn 3, cost 3: total 10.",
+  "Drivers narrowly outweigh restrainers, by 1."
+ ],
+ "terms": [
+  "driving forces",
+  "restraining forces",
+  "fewer errors",
+  "regulatory pressure",
+  "faster access to records",
+  "staff fear of technology",
+  "time to learn",
+  "cost",
+  "total 11",
+  "total 10"
+ ],
+ "kind": "stacked",
+ "range": [
+  0,
+  13
+ ],
+ "stacks": [
+  {
+   "label": "Driving",
+   "parts": [
+    {
+     "id": "d1",
+     "label": "Fewer errors",
+     "v": 4,
+     "colour": "good"
+    },
+    {
+     "id": "d2",
+     "label": "Regulation",
+     "v": 4,
+     "colour": "a4"
+    },
+    {
+     "id": "d3",
+     "label": "Faster access",
+     "v": 3,
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "label": "Restraining",
+   "parts": [
+    {
+     "id": "r1",
+     "label": "Fear of tech",
+     "v": 4,
+     "colour": "bad"
+    },
+    {
+     "id": "r2",
+     "label": "Time to learn",
+     "v": 3,
+     "colour": "a3"
+    },
+    {
+     "id": "r3",
+     "label": "Cost",
+     "v": 3,
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "d1 + d2 + d3",
+   "equals": "11",
+   "name": "driving forces total 11"
+  },
+  {
+   "expr": "r1 + r2 + r3",
+   "equals": "10",
+   "name": "restraining forces total 10"
+  },
+  {
+   "expr": "d1 + d2 + d3 - r1 - r2 - r3",
+   "equals": "1",
+   "name": "drivers outweigh restrainers by 1"
+  }
+ ]
+}

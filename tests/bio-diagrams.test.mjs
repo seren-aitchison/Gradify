@@ -219,9 +219,9 @@ test("mitosis and meiosis: cell and chromosome counts follow from the divisions"
 test("germ layers: each tissue must come from the layer it is listed under", () => {
   const layer = (name, items) => ({ name, position: "x", items });
   const ok = [layer("ectoderm", ["nervous system"]), layer("mesoderm", ["heart"]), layer("endoderm", ["liver"])];
-  assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok }), true);
-  assert.equal(allPass({ renderer: "layers", alt: "x", layers: [layer("ectoderm", ["liver"]), ok[1], ok[2]] }), false); // the liver is endoderm
-  assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok.slice(0, 2) }), false); // two layers is not triploblastic
+  assert.equal(allPass({ renderer: "germlayers", alt: "x", layers: ok }), true);
+  assert.equal(allPass({ renderer: "germlayers", alt: "x", layers: [layer("ectoderm", ["liver"]), ok[1], ok[2]] }), false); // the liver is endoderm
+  assert.equal(allPass({ renderer: "germlayers", alt: "x", layers: ok.slice(0, 2) }), false); // two layers is not triploblastic
 });
 
 test("drift: a Wright–Fisher population loses or fixes alleles and stays in 0–1", () => {

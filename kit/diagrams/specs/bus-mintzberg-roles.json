@@ -1,0 +1,63 @@
+{
+ "id": "bus-mintzberg-roles",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Mintzberg's managerial roles",
+ "title": "Mintzberg's ten managerial roles",
+ "caption": "Mintzberg grouped what managers actually do into three families: roles that arise from formal authority, roles in handling information, and roles in making decisions.",
+ "alt": "Three boxes of roles. Interpersonal: figurehead, leader, liaison. Informational: monitor, disseminator, spokesperson. Decisional: entrepreneur, disturbance handler, resource allocator, negotiator.",
+ "description": [
+  "Interpersonal roles: figurehead, leader, liaison.",
+  "Informational roles: monitor, disseminator, spokesperson.",
+  "Decisional roles: entrepreneur, disturbance handler, resource allocator, negotiator.",
+  "Together, ten roles."
+ ],
+ "terms": [
+  "Interpersonal roles",
+  "Informational roles",
+  "Decisional roles",
+  "Figurehead",
+  "Leader",
+  "Liaison",
+  "Monitor",
+  "Disseminator",
+  "Spokesperson",
+  "Entrepreneur",
+  "Disturbance handler",
+  "Resource allocator",
+  "Negotiator"
+ ],
+ "cols": 3,
+ "rows": 1,
+ "cover": true,
+ "rowH": 190,
+ "expect": [
+  "Interpersonal roles",
+  "Informational roles",
+  "Decisional roles"
+ ],
+ "blocks": [
+  {
+   "label": "Interpersonal roles",
+   "col": 0,
+   "row": 0,
+   "note": "Figurehead. Leader. Liaison.",
+   "colour": "a1"
+  },
+  {
+   "label": "Informational roles",
+   "col": 1,
+   "row": 0,
+   "note": "Monitor. Disseminator. Spokesperson.",
+   "colour": "a4"
+  },
+  {
+   "label": "Decisional roles",
+   "col": 2,
+   "row": 0,
+   "note": "Entrepreneur. Disturbance handler. Resource allocator. Negotiator.",
+   "colour": "a3"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "bus-build-measure-learn",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u09",
+ "lesson": "Effectuation and the lean start-up",
+ "title": "The build–measure–learn loop",
+ "caption": "A lean start-up builds the simplest thing that tests an assumption, measures what customers do and learns whether to continue or pivot. The meal-kit founder's 20 kits were the build; few repeat orders were the measurement.",
+ "alt": "A cycle of three boxes: build a minimum viable product, measure customer behaviour, learn whether to continue, leading back to build.",
+ "description": [
+  "Build a minimum viable product, the simplest version that tests a key assumption.",
+  "Measure customer behaviour.",
+  "Learn whether to continue or pivot, then build the next test."
+ ],
+ "terms": [
+  "build–measure–learn",
+  "minimum viable product",
+  "pivot",
+  "validated learning"
+ ],
+ "kind": "cycle",
+ "loop": true,
+ "expect": [
+  "Build",
+  "Measure",
+  "Learn"
+ ],
+ "centre": "validated learning",
+ "steps": [
+  {
+   "label": "Build",
+   "note": "a minimum viable product (MVP)"
+  },
+  {
+   "label": "Measure",
+   "note": "what customers actually do"
+  },
+  {
+   "label": "Learn",
+   "note": "continue, or pivot"
+  }
+ ]
+}

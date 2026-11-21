@@ -67,6 +67,7 @@ H: The layout
 - **Operating expenses**: distribution, administration and selling costs; gross profit minus these gives **operating profit**.
 - **Finance costs**: interest on borrowing; operating profit minus finance costs gives **profit before tax**.
 - **Tax**: corporation tax; deducting it gives **profit for the year**, available for dividends or retention.
+D: bus-income-statement
 H: Accruals and depreciation
 P: The income statement matches revenue with the expenses incurred to earn it in the same period. An electricity bill for March paid in April is still a March expense (an **accrual**); rent paid in advance for next year is not this year's expense (a **prepayment**). Non-current assets such as machinery are spread over their useful lives through **depreciation**. Straight-line depreciation is (cost − residual value) ÷ useful life.
 E: Straight-line depreciation = (cost − residual value) ÷ useful life :: annual charge
@@ -113,6 +114,7 @@ O: Explain what equity represents
 PRE: The income statement
 H: The accounting equation
 P: Every statement of financial position balances because **assets = equity + liabilities**. Assets are resources the business controls that are expected to bring future benefits. Liabilities are obligations to pay others. Equity is the owners' residual interest: what would be left for shareholders if the assets were sold at book value and the liabilities paid.
+D: bus-balance-sheet
 H: The categories
 - **Non-current assets**: held for more than a year, such as property, plant, equipment and intangible assets.
 - **Current assets**: inventory, trade receivables and cash, expected to turn into cash within a year.
@@ -168,6 +170,7 @@ H: Three sections
 - **Operating activities**: cash from trading, such as receipts from customers less payments to suppliers and staff.
 - **Investing activities**: buying and selling non-current assets and investments.
 - **Financing activities**: issuing or buying back shares, borrowing and repaying loans, and paying dividends.
+D: bus-operating-cash-flow
 H: The indirect method
 P: Most companies start from operating profit and adjust it to cash. Non-cash expenses such as **depreciation are added back**. Then working capital changes are adjusted: an **increase in receivables or inventory is deducted**, because cash is tied up, while an **increase in payables is added**, because cash has been kept. Interest and tax paid are then deducted.
 H: Reading the pattern
@@ -219,6 +222,7 @@ H: Margins
 - **Gross profit margin** = gross profit ÷ revenue × 100: how much is left from each £1 of sales after direct costs. It reflects pricing and purchasing.
 - **Operating profit margin** = operating profit ÷ revenue × 100: what remains after all operating costs. It reflects overhead control too.
 - Margins vary widely by industry: supermarkets run thin margins on high volumes; software firms can have very high gross margins.
+D: bus-profitability-ratios
 H: Return on capital employed
 P: **ROCE** = operating profit ÷ capital employed × 100, where capital employed is equity plus non-current liabilities. It shows how well management uses the long-term funds in the business to generate profit. A ROCE below the cost of borrowing suggests the business is not earning enough on its capital.
 H: Using ratios well
@@ -373,6 +377,7 @@ H: Cost behaviour
 - **Variable costs** rise in proportion to output, such as materials and sales commission.
 - **Semi-variable costs** have both parts, such as a phone bill with a line rental and a charge per call.
 - Fixed costs per unit fall as output rises, which is why volume matters.
+D: bus-break-even
 H: Contribution and break-even
 P: **Contribution per unit** is selling price minus variable cost per unit: the amount each unit contributes towards fixed costs and then profit. The **break-even point** in units is total fixed costs ÷ contribution per unit. Above it, each extra unit adds its contribution to profit. Profit = (units sold × contribution per unit) − fixed costs.
 E: Break-even units = fixed costs ÷ contribution per unit :: output at which profit is zero
@@ -531,6 +536,7 @@ O: Interpret favourable and adverse variances
 PRE: Budgeting
 H: Flexing the budget
 P: If a business sells more than budgeted, its costs will naturally be higher. Comparing actual costs with the original budget would wrongly suggest overspending. A **flexed budget** recalculates the budget at the actual level of activity, so that costs are compared on a like-for-like basis. Fixed costs stay the same; variable costs are adjusted.
+D: bus-materials-variance
 H: The main variances
 - **Sales price variance** = (actual price − budgeted price) × actual units sold.
 - **Sales volume variance** = (actual units − budgeted units) × budgeted contribution per unit.
@@ -587,6 +593,7 @@ H: The structure
 - **Payments**: suppliers, wages, rent, loan repayments, tax, equipment purchases.
 - **Net cash flow** = receipts − payments for the month.
 - **Closing balance** = opening balance + net cash flow; it becomes next month's opening balance.
+D: bus-cash-forecast
 H: Timing matters
 P: A forecast records cash when it actually moves, not when a sale is made. If customers pay one month after the sale, January's credit sales appear as February receipts. Similarly, supplier payments follow credit terms. Depreciation is never included, because it is not a cash flow. Seasonal patterns, one-off purchases and quarterly bills such as VAT can cause sharp swings.
 H: Acting on the forecast
@@ -639,6 +646,7 @@ H: Internal sources
 - **Retained profit**: no interest or dilution, but limited by past profits and competing with dividends.
 - **Better working capital management**: releasing cash tied up in stock and receivables.
 - **Sale of assets**, including sale and leaseback of property.
+D: bus-sources-of-finance
 H: External sources
 - **Short-term**: bank overdrafts, trade credit, invoice factoring and discounting.
 - **Medium and long-term**: bank loans, leasing and hire purchase, bonds and debentures.
@@ -689,6 +697,7 @@ O: Evaluate the limitations of both methods
 PRE: Sources of finance
 H: Payback
 P: The **payback period** is the time taken for a project's cash inflows to repay the initial investment. It is simple and focuses on liquidity and risk: shorter payback means money is at risk for less time. But it ignores cash flows after payback and the time value of money.
+D: bus-payback
 H: Accounting rate of return
 - **ARR** = average annual profit ÷ average investment × 100.
 - Profit is cash flow minus depreciation.
@@ -740,6 +749,7 @@ O: Interpret NPV and IRR in investment decisions
 PRE: Investment appraisal: payback and ARR
 H: Discounting
 P: £1 today is worth more than £1 in a year, because it could be invested to earn a return, and because future money carries risk and inflation. **Discounting** converts future cash flows into today's values. The present value of a cash flow in year n is cash flow × 1 ÷ (1 + r)^{n}, where r is the required rate of return or cost of capital. The factors 1 ÷ (1 + r)^{n} are given in discount tables.
+D: bus-npv
 H: NPV and IRR
 - **NPV** = present value of inflows − initial investment.
 - A positive NPV means the project earns more than the required return and adds value; a negative NPV destroys value.
@@ -790,6 +800,7 @@ O: Calculate the economic order quantity
 PRE: Net present value
 H: The trade-off
 P: **Net working capital** is current assets minus current liabilities. Too little risks being unable to pay bills; too much ties up cash that could earn a return elsewhere. Good working capital management keeps enough liquidity to operate safely while minimising idle resources.
+D: bus-eoq
 H: Managing the components
 - **Inventory**: forecast demand, set reorder levels, use the economic order quantity, or adopt just-in-time supply where suppliers are reliable.
 - **Receivables**: check credit before granting it, set clear terms, invoice promptly, chase overdue debts, offer early-payment discounts, or use factoring.
@@ -839,6 +850,7 @@ O: Calculate the weighted average cost of capital
 PRE: Working capital management
 H: Why it matters
 P: Investors provide funds only if they expect a return that compensates for risk. The **cost of capital** is that required return, and it is the discount rate used in NPV. A project that earns less than the cost of capital reduces shareholder value, even if it reports a profit.
+D: bus-wacc
 H: Components
 - **Cost of equity**: often estimated with the **capital asset pricing model (CAPM)**: K_{e} = R_{f} + β (R_{m} − R_{f}), where R_{f} is the risk-free rate, R_{m} the expected market return and β the share's sensitivity to the market.
 - **Cost of debt**: the interest rate on borrowing, reduced by tax relief: K_{d} × (1 − tax rate).

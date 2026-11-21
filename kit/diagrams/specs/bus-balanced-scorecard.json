@@ -1,0 +1,65 @@
+{
+ "id": "bus-balanced-scorecard",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "The balanced scorecard",
+ "title": "The balanced scorecard",
+ "caption": "Four perspectives balance the financial view with customers, processes and people. In a hospital trust each holds its own measures, and together they show whether strategy is being delivered.",
+ "alt": "Four boxes: financial, customer, internal business process, and learning and growth, each with the hospital trust's measures.",
+ "description": [
+  "Financial: staying within budget, cost per patient episode.",
+  "Customer (patients): satisfaction scores, waiting times.",
+  "Internal processes: infection rates, bed occupancy, discharge before midday.",
+  "Learning and growth: staff training completed, staff vacancy rates."
+ ],
+ "terms": [
+  "Financial",
+  "Customer",
+  "Internal business process",
+  "Learning and growth",
+  "waiting times",
+  "infection rates",
+  "vacancy rates"
+ ],
+ "cols": 2,
+ "rows": 2,
+ "cover": true,
+ "rowH": 118,
+ "expect": [
+  "Financial",
+  "Customer",
+  "Internal business process",
+  "Learning and growth"
+ ],
+ "blocks": [
+  {
+   "label": "Financial",
+   "col": 0,
+   "row": 0,
+   "note": "Staying within budget; cost per patient episode",
+   "colour": "a1"
+  },
+  {
+   "label": "Customer",
+   "col": 1,
+   "row": 0,
+   "note": "Patient satisfaction scores; waiting times",
+   "colour": "a4"
+  },
+  {
+   "label": "Internal business process",
+   "col": 0,
+   "row": 1,
+   "note": "Infection rates; bed occupancy; discharge before midday",
+   "colour": "a3"
+  },
+  {
+   "label": "Learning and growth",
+   "col": 1,
+   "row": 1,
+   "note": "Staff training completed; staff vacancy rates",
+   "colour": "a5"
+  }
+ ]
+}

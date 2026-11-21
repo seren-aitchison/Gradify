@@ -99,6 +99,7 @@ H: Segmentation
 - **Psychographic**: lifestyle, values, personality.
 - **Behavioural**: usage rate, loyalty, benefits sought, occasion.
 P: Useful segments are **measurable**, **substantial** (large enough to be profitable), **accessible** and **differentiable** (responding differently to marketing).
+D: bus-stp
 H: Targeting
 - **Undifferentiated**: one offer for the whole market.
 - **Differentiated**: different offers for different segments, like a car maker's range.
@@ -145,6 +146,7 @@ H: The decision process
 - **Purchase decision**.
 - **Post-purchase behaviour**: satisfaction, reviews, or **cognitive dissonance** (doubt after buying).
 P: High-involvement purchases, such as a car, follow the full process. Low-involvement, routine purchases, such as milk, are often habitual.
+D: bus-buying-process
 H: Influences
 - **Cultural**: culture, subculture and social class.
 - **Social**: family, friends, reference groups and influencers.
@@ -235,6 +237,8 @@ H: Levels of product
 - **Core benefit**: the basic need met, such as transport.
 - **Actual product**: the features, design, quality and brand.
 - **Augmented product**: extras such as warranty, delivery and after-sales service.
+D: bus-diffusion-adopters
+D: bus-product-life-cycle
 H: The product life cycle
 - **Introduction**: low sales, high costs, often losses; build awareness.
 - **Growth**: rising sales and profits; competitors enter.
@@ -371,6 +375,7 @@ X: Fewer transactions through a retailer.
 > Through one retailer: 5 transactions to the retailer and 20 to customers, 25 in total.
 > The retailer reduces contacts and costs, though it takes a margin.
 > Online marketplaces apply the same logic on a larger scale.
+D: bus-channel-transactions
 H: Distribution intensity
 - **Intensive**: as many outlets as possible, for convenience goods like soft drinks.
 - **Selective**: a limited number of suitable outlets, for goods like electrical appliances.
@@ -409,6 +414,7 @@ P: Jerome McCarthy (1960) grouped marketing decisions into **product, price, pro
 - **People**: staff who deliver the service and interact with customers, and other customers present.
 - **Process**: the systems and steps by which the service is delivered.
 - **Physical evidence**: tangible cues, such as premises, uniforms, websites and receipts.
+D: bus-seven-ps
 H: Why they matter
 P: Services are intangible, so customers judge quality from staff behaviour, the smoothness of the process and physical surroundings. A friendly, well-trained team can be a source of competitive advantage that is hard to copy.
 X: The seven Ps of a dental practice.

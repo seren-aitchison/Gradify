@@ -8,11 +8,11 @@
  "caption": "The light-dependent reactions in the thylakoid membranes split water, release oxygen and make ATP and NADPH. The Calvin cycle in the stroma uses them to fix CO₂ into sugars. Overall: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
  "alt": "Five boxes in order: light and water, the light-dependent reactions, ATP and NADPH, the Calvin cycle, and glucose and other products.",
  "description": [
-  "Light and water: light energy; H₂O from the roots.",
-  "Light-dependent reactions: thylakoid membranes: water split, O₂ released, ATP and NADPH made.",
-  "ATP and NADPH: carry energy and hydrogen to the stroma.",
-  "Calvin cycle: stroma: CO₂ fixed and reduced to triose phosphate.",
-  "Glucose and other products: sugars, starch, cellulose, amino acids, lipids.",
+  "Light and water: light energy and H₂O.",
+  "Light-dependent reactions: thylakoids: water split, O₂ released.",
+  "ATP and NADPH: carry energy to the stroma.",
+  "Calvin cycle: stroma: sugar made from CO₂.",
+  "Glucose and other products: sugars, starch, cellulose.",
   "Overall: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂, using light energy."
  ],
  "layout": "grid",
@@ -22,7 +22,7 @@
   {
    "id": "p0",
    "label": "light and water",
-   "sub": "light energy; H₂O from the roots",
+   "sub": "light energy and H₂O",
    "tone": "a3",
    "col": 0,
    "row": 0
@@ -30,7 +30,7 @@
   {
    "id": "p1",
    "label": "light-dependent reactions",
-   "sub": "thylakoid membranes: water split, O₂ released, ATP and NADPH made",
+   "sub": "thylakoids: water split, O₂ released",
    "tone": "a1",
    "col": 1,
    "row": 0
@@ -38,7 +38,7 @@
   {
    "id": "p2",
    "label": "ATP and NADPH",
-   "sub": "carry energy and hydrogen to the stroma",
+   "sub": "carry energy to the stroma",
    "tone": "a5",
    "col": 2,
    "row": 0
@@ -46,7 +46,7 @@
   {
    "id": "p3",
    "label": "Calvin cycle",
-   "sub": "stroma: CO₂ fixed and reduced to triose phosphate",
+   "sub": "stroma: sugar made from CO₂",
    "tone": "a4",
    "col": 1,
    "row": 1
@@ -54,7 +54,7 @@
   {
    "id": "p4",
    "label": "glucose and other products",
-   "sub": "sugars, starch, cellulose, amino acids, lipids",
+   "sub": "sugars, starch, cellulose",
    "tone": "a2",
    "col": 0,
    "row": 1

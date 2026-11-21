@@ -1,0 +1,100 @@
+{
+ "id": "bus-seven-wastes",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Lean production",
+ "title": "The seven wastes (TIMWOOD)",
+ "caption": "Lean looks for seven kinds of waste. Overproduction is often called the worst, because it leads to the others: more inventory, more transport and more handling.",
+ "alt": "Seven boxes: transport, inventory, motion, waiting, overproduction, over-processing, defects, each with what it means.",
+ "description": [
+  "Transport: unnecessary movement of materials.",
+  "Inventory: excess stock.",
+  "Motion: unnecessary movement of people.",
+  "Waiting: idle time.",
+  "Overproduction: making more, or sooner, than needed.",
+  "Over-processing: doing more than the customer requires.",
+  "Defects: errors and rework."
+ ],
+ "terms": [
+  "Transport",
+  "Inventory",
+  "Motion",
+  "Waiting",
+  "Overproduction",
+  "Over-processing",
+  "Defects",
+  "TIMWOOD"
+ ],
+ "cols": 12,
+ "rows": 2,
+ "cover": true,
+ "rowH": 104,
+ "expect": [
+  "Transport",
+  "Inventory",
+  "Motion",
+  "Waiting",
+  "Overproduction",
+  "Over-processing",
+  "Defects"
+ ],
+ "blocks": [
+  {
+   "label": "Transport",
+   "col": 0,
+   "row": 0,
+   "cs": 3,
+   "note": "unnecessary movement of materials",
+   "colour": "a1"
+  },
+  {
+   "label": "Inventory",
+   "col": 3,
+   "row": 0,
+   "cs": 3,
+   "note": "excess stock",
+   "colour": "a1"
+  },
+  {
+   "label": "Motion",
+   "col": 6,
+   "row": 0,
+   "cs": 3,
+   "note": "unnecessary movement of people",
+   "colour": "a1"
+  },
+  {
+   "label": "Waiting",
+   "col": 9,
+   "row": 0,
+   "cs": 3,
+   "note": "idle time",
+   "colour": "a1"
+  },
+  {
+   "label": "Overproduction",
+   "col": 0,
+   "row": 1,
+   "cs": 4,
+   "note": "more, or sooner, than needed: often the worst waste",
+   "colour": "bad"
+  },
+  {
+   "label": "Over-processing",
+   "col": 4,
+   "row": 1,
+   "cs": 4,
+   "note": "doing more than the customer requires",
+   "colour": "a3"
+  },
+  {
+   "label": "Defects",
+   "col": 8,
+   "row": 1,
+   "cs": 4,
+   "note": "errors and rework",
+   "colour": "a3"
+  }
+ ]
+}

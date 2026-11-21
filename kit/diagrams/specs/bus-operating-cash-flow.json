@@ -1,0 +1,88 @@
+{
+ "id": "bus-operating-cash-flow",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "The statement of cash flows",
+ "title": "From operating profit to operating cash flow",
+ "caption": "Profit is not cash. Depreciation is added back because no cash left; money tied up in receivables and inventory is deducted; the rise in payables is added. Here the adjustments cancel out, so operating cash flow equals operating profit: £80,000.",
+ "alt": "Waterfall from operating profit £80,000: add depreciation £20,000, deduct receivables rise £15,000, add payables rise £5,000, deduct inventory rise £10,000, leaving operating cash flow £80,000.",
+ "description": [
+  "Operating profit £80,000; add depreciation £20,000 to get £100,000.",
+  "Receivables rose £15,000: deduct, leaving £85,000.",
+  "Payables rose £5,000: add, giving £90,000.",
+  "Inventory rose £10,000: deduct, leaving operating cash flow of £80,000."
+ ],
+ "terms": [
+  "Operating profit",
+  "depreciation",
+  "receivables",
+  "payables",
+  "inventory",
+  "operating cash flow",
+  "£80,000"
+ ],
+ "kind": "waterfall",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  0,
+  125
+ ],
+ "items": [
+  {
+   "id": "profit",
+   "label": "Operating profit",
+   "short": "Profit",
+   "v": 80,
+   "type": "start"
+  },
+  {
+   "id": "dep",
+   "label": "Add depreciation",
+   "short": "Deprec.",
+   "v": 20,
+   "type": "delta"
+  },
+  {
+   "id": "recv",
+   "label": "Receivables rose",
+   "short": "Receiv.",
+   "v": -15,
+   "type": "delta"
+  },
+  {
+   "id": "pay",
+   "label": "Payables rose",
+   "short": "Payables",
+   "v": 5,
+   "type": "delta"
+  },
+  {
+   "id": "inv",
+   "label": "Inventory rose",
+   "short": "Invent.",
+   "v": -10,
+   "type": "delta"
+  },
+  {
+   "id": "ocf",
+   "label": "Operating cash flow",
+   "short": "Cash flow",
+   "v": 80,
+   "type": "total"
+  }
+ ],
+ "relations": [
+  {
+   "expr": "profit + dep + recv + pay + inv",
+   "equals": "ocf",
+   "name": "80 + 20 − 15 + 5 − 10 = 80"
+  },
+  {
+   "expr": "profit + dep + recv",
+   "equals": "85",
+   "name": "after receivables the running total is £85,000"
+  }
+ ]
+}

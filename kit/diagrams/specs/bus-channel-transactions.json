@@ -1,0 +1,66 @@
+{
+ "id": "bus-channel-transactions",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "Place and distribution channels",
+ "title": "Why a retailer reduces contacts",
+ "caption": "Five producers each selling to 20 customers need 100 transactions. Through one retailer they need 5 + 20 = 25. The retailer cuts contacts and costs, though it takes a margin.",
+ "alt": "Two columns: 100 transactions when five producers sell direct to 20 customers, and 25 through one retailer.",
+ "description": [
+  "Direct: 5 producers × 20 customers = 100 transactions.",
+  "Through one retailer: 5 to the retailer and 20 to customers, 25 in all."
+ ],
+ "terms": [
+  "5 × 20 = 100",
+  "25 in total",
+  "retailer",
+  "intermediaries"
+ ],
+ "kind": "columns",
+ "range": [
+  0,
+  120
+ ],
+ "series": [
+  {
+   "name": "Transactions",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Direct",
+   "values": [
+    {
+     "id": "direct",
+     "v": 100,
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "label": "Through one retailer",
+   "short": "Via retailer",
+   "values": [
+    {
+     "id": "via",
+     "v": 25,
+     "colour": "a4"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "5 * 20",
+   "equals": "direct",
+   "name": "direct: 5 producers × 20 customers = 100"
+  },
+  {
+   "expr": "5 + 20",
+   "equals": "via",
+   "name": "via one retailer: 5 + 20 = 25"
+  }
+ ]
+}

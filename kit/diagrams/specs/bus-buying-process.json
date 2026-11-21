@@ -1,0 +1,52 @@
+{
+ "id": "bus-buying-process",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "Consumer behaviour",
+ "title": "The consumer decision process",
+ "caption": "High-involvement purchases such as a car follow every step; routine ones such as milk skip most of them. Doubt after buying, cognitive dissonance, can undo a sale in the last step.",
+ "alt": "Five boxes in order: need recognition, information search, evaluation of alternatives, purchase decision, post-purchase behaviour.",
+ "description": [
+  "Need recognition: noticing a problem or want.",
+  "Information search: personal, commercial and online sources.",
+  "Evaluation of alternatives on key attributes.",
+  "Purchase decision.",
+  "Post-purchase behaviour: satisfaction, reviews or cognitive dissonance."
+ ],
+ "terms": [
+  "Need recognition",
+  "Information search",
+  "Evaluation of alternatives",
+  "Purchase decision",
+  "Post-purchase behaviour",
+  "cognitive dissonance"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Need recognition",
+  "Information search",
+  "Evaluation of alternatives",
+  "Purchase decision",
+  "Post-purchase behaviour"
+ ],
+ "steps": [
+  {
+   "label": "Need recognition"
+  },
+  {
+   "label": "Information search",
+   "note": "personal, commercial, online"
+  },
+  {
+   "label": "Evaluation of alternatives"
+  },
+  {
+   "label": "Purchase decision"
+  },
+  {
+   "label": "Post-purchase behaviour",
+   "note": "satisfaction, reviews, dissonance"
+  }
+ ]
+}

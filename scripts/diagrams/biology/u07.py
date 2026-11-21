@@ -60,7 +60,7 @@ mk("u07-31", "bio-menstrual-cycle", "graph", "The menstrual cycle: four hormones
    "Four curves of relative hormone level over 28 days: FSH highest early with a small peak at day 14, oestrogen peaking just before day 14 and again later, a sharp LH surge at day 14, and progesterone peaking about day 21 and falling by day 28.",
    ["FSH rises early in the cycle and stimulates a follicle to mature.", "Oestrogen from the follicle rises to a peak just before the middle of the cycle.", "A surge of LH around day 14 triggers ovulation.",
     "Progesterone rises after ovulation, peaking in the second half, and maintains the uterus lining.", "If there is no pregnancy, progesterone falls by day 28 and menstruation occurs."],
-   range={"x": [0, 28], "y": [0, 1.3]}, ticks=[[0, 7, 14, 21, 28], []], height=[340, 320], xLabelBelow=True, axisLabels=["day of the cycle", "relative hormone level (schematic)"],
+   range={"x": [0, 28], "y": [0, 1.3]}, ticks=[[0, 7, 14, 21, 28], []], height=[340, 320], xLabelBelow=True, axisLabels=["day of the cycle", "hormone level"],
    curves=[{"expr": FSH, "colour": "a1"}, {"expr": LH, "colour": "a2"}, {"expr": OES, "colour": "a4"}, {"expr": PRO, "colour": "a3"}],
    marks=[{"x": 14, "to": 1.25, "label": "ovulation", "dx": 34}],
    legend=[["FSH", "a1"], ["LH", "a2"], ["oestrogen", "a4"], ["progesterone", "a3"]], legendData=[0.5, 1.28],

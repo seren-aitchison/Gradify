@@ -1,0 +1,134 @@
+{
+ "id": "bus-generic-strategies",
+ "renderer": "matrix",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "Porter's generic strategies",
+ "title": "Porter's generic strategies",
+ "caption": "Two choices, the source of advantage and the scope of the market, give four strategies. Aldi sits in broad cost leadership, Waitrose in broad differentiation and the organic farm shop in differentiation focus.",
+ "alt": "A two by two grid: broad scope with lower cost is cost leadership, broad with differentiation is differentiation, narrow with lower cost is cost focus, narrow with differentiation is differentiation focus.",
+ "description": [
+  "Broad scope, lower cost: cost leadership (Aldi).",
+  "Broad scope, differentiation: differentiation (Waitrose).",
+  "Narrow scope, lower cost: cost focus.",
+  "Narrow scope, differentiation: differentiation focus (a local organic farm shop)."
+ ],
+ "terms": [
+  "Cost leadership",
+  "Differentiation",
+  "Cost focus",
+  "differentiation focus",
+  "Aldi",
+  "Waitrose",
+  "farm shop",
+  "broad",
+  "narrow"
+ ],
+ "cols": [
+  "Lower cost",
+  "Differentiation"
+ ],
+ "rows": [
+  "Broad scope",
+  "Narrow scope"
+ ],
+ "axes": {
+  "x": {
+   "title": "source of advantage",
+   "key": "advantage",
+   "values": [
+    "cost",
+    "differentiation"
+   ]
+  },
+  "y": {
+   "title": "scope",
+   "key": "scope",
+   "values": [
+    "broad",
+    "narrow"
+   ]
+  }
+ },
+ "cells": [
+  [
+   {
+    "title": "Cost leadership",
+    "colour": "a1"
+   },
+   {
+    "title": "Differentiation",
+    "colour": "a2"
+   }
+  ],
+  [
+   {
+    "title": "Cost focus",
+    "colour": "a4"
+   },
+   {
+    "title": "Differentiation focus",
+    "colour": "a5"
+   }
+  ]
+ ],
+ "claims": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "title": "Cost leadership"
+  },
+  {
+   "cell": [
+    0,
+    1
+   ],
+   "title": "Differentiation"
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "title": "Cost focus"
+  },
+  {
+   "cell": [
+    1,
+    1
+   ],
+   "title": "Differentiation focus"
+  }
+ ],
+ "items": [
+  {
+   "label": "Aldi",
+   "advantage": "cost",
+   "scope": "broad",
+   "cell": [
+    0,
+    0
+   ]
+  },
+  {
+   "label": "Waitrose",
+   "advantage": "differentiation",
+   "scope": "broad",
+   "cell": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "a local organic farm shop",
+   "advantage": "differentiation",
+   "scope": "narrow",
+   "cell": [
+    1,
+    1
+   ]
+  }
+ ]
+}

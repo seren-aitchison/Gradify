@@ -1,0 +1,146 @@
+{
+ "id": "bus-boston-matrix",
+ "renderer": "matrix",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "The Boston Matrix and portfolio analysis",
+ "title": "The Boston Matrix",
+ "caption": "Market growth and relative market share sort a portfolio into stars, cash cows, question marks and dogs. Cash from the cow funds the star and decides whether to back the question mark.",
+ "alt": "A two by two grid: high growth and high share is a star, high growth and low share a question mark, low growth and high share a cash cow, low growth and low share a dog, with the confectionery company's four products placed.",
+ "description": [
+  "Star: a leading vegan chocolate range in a booming segment.",
+  "Question mark: a new protein snack with 5% of a fast-growing market.",
+  "Cash cow: a long-established chocolate bar with 30% of a mature market.",
+  "Dog: an old boiled-sweet brand with falling share."
+ ],
+ "terms": [
+  "Stars",
+  "Cash cows",
+  "Question marks",
+  "Dogs",
+  "market growth rate",
+  "relative market share",
+  "protein snack",
+  "boiled-sweet"
+ ],
+ "cols": [
+  "High share",
+  "Low share"
+ ],
+ "rows": [
+  "High growth",
+  "Low growth"
+ ],
+ "axes": {
+  "x": {
+   "title": "relative market share",
+   "key": "share",
+   "values": [
+    "high",
+    "low"
+   ]
+  },
+  "y": {
+   "title": "market growth rate",
+   "key": "growth",
+   "values": [
+    "high",
+    "low"
+   ]
+  }
+ },
+ "cells": [
+  [
+   {
+    "title": "Stars",
+    "note": "invest to keep pace",
+    "colour": "a4"
+   },
+   {
+    "title": "Question marks",
+    "note": "need heavy investment",
+    "colour": "a3"
+   }
+  ],
+  [
+   {
+    "title": "Cash cows",
+    "note": "more cash than they need",
+    "colour": "good"
+   },
+   {
+    "title": "Dogs",
+    "note": "candidates for divestment",
+    "colour": "bad"
+   }
+  ]
+ ],
+ "claims": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "title": "Stars"
+  },
+  {
+   "cell": [
+    0,
+    1
+   ],
+   "title": "Question marks"
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "title": "Cash cows"
+  },
+  {
+   "cell": [
+    1,
+    1
+   ],
+   "title": "Dogs"
+  }
+ ],
+ "items": [
+  {
+   "label": "vegan chocolate range",
+   "share": "high",
+   "growth": "high",
+   "cell": [
+    0,
+    0
+   ]
+  },
+  {
+   "label": "new protein snack (5%)",
+   "share": "low",
+   "growth": "high",
+   "cell": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "chocolate bar (30%)",
+   "share": "high",
+   "growth": "low",
+   "cell": [
+    1,
+    0
+   ]
+  },
+  {
+   "label": "boiled-sweet brand",
+   "share": "low",
+   "growth": "low",
+   "cell": [
+    1,
+    1
+   ]
+  }
+ ]
+}

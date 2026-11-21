@@ -1,0 +1,117 @@
+{
+ "id": "bus-payback",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Investment appraisal: payback and ARR",
+ "title": "Cumulative cash flow and payback",
+ "caption": "The £100,000 outlay is still £30,000 short after two years; year 3's £50,000 repays it 0.6 of the way through, so payback is 2.6 years.",
+ "alt": "Columns of cumulative cash for years 0 to 4: −£100,000, −£70,000, −£30,000, +£20,000, +£40,000. The bars cross zero between years 2 and 3.",
+ "description": [
+  "Year 0: outlay −£100,000.",
+  "Year 1: inflow £30,000, cumulative −£70,000.",
+  "Year 2: inflow £40,000, cumulative −£30,000.",
+  "Year 3: inflow £50,000 makes it +£20,000; the £30,000 shortfall needs 0.6 of the year.",
+  "Payback is 2.6 years."
+ ],
+ "terms": [
+  "Payback",
+  "£30,000",
+  "£40,000",
+  "£50,000",
+  "£20,000",
+  "2.6 years"
+ ],
+ "kind": "columns",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  -120,
+  60
+ ],
+ "series": [
+  {
+   "name": "Cumulative cash flow",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Year 0",
+   "values": [
+    {
+     "id": "c0",
+     "v": -100,
+     "colour": "bad"
+    }
+   ]
+  },
+  {
+   "label": "Year 1",
+   "values": [
+    {
+     "id": "c1",
+     "v": -70,
+     "colour": "bad"
+    }
+   ]
+  },
+  {
+   "label": "Year 2",
+   "values": [
+    {
+     "id": "c2",
+     "v": -30,
+     "colour": "bad"
+    }
+   ]
+  },
+  {
+   "label": "Year 3",
+   "values": [
+    {
+     "id": "c3",
+     "v": 20,
+     "colour": "good"
+    }
+   ]
+  },
+  {
+   "label": "Year 4",
+   "values": [
+    {
+     "id": "c4",
+     "v": 40,
+     "colour": "good"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "c0 + 30",
+   "equals": "c1",
+   "name": "year 1: −100 + 30 = −70"
+  },
+  {
+   "expr": "c1 + 40",
+   "equals": "c2",
+   "name": "year 2: −70 + 40 = −30"
+  },
+  {
+   "expr": "c2 + 50",
+   "equals": "c3",
+   "name": "year 3: −30 + 50 = +20"
+  },
+  {
+   "expr": "c3 + 20",
+   "equals": "c4",
+   "name": "year 4: +20 + 20 = +40"
+  },
+  {
+   "expr": "2 + (0 - c2) / 50",
+   "equals": "2.6",
+   "name": "payback = 2 + 30 ÷ 50 = 2.6 years"
+  }
+ ]
+}

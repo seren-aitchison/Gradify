@@ -126,6 +126,7 @@ P: A **stakeholder** is anyone with an interest in, or affected by, what a busin
 - **Internal**: owners and shareholders, directors and managers, employees.
 - **Connected**: customers, suppliers, lenders (banks, bondholders).
 - **External**: the local community, government and regulators, trade unions, pressure groups, the media and the natural environment.
+D: bus-power-interest
 H: Mapping stakeholders
 P: Mendelow's (1991) **power–interest matrix** places each stakeholder by how much power they have over the business and how interested they are in a decision, and suggests a strategy for each quadrant.
 - **High power, high interest: manage closely** (key players), such as major shareholders or a key customer.
@@ -454,6 +455,7 @@ H: The six factors
 - **Legal**: employment, consumer, competition, data protection and health and safety law.
 - **Environmental**: climate change, extreme weather, net zero targets, resource scarcity and pressure to cut waste and emissions.
 P: The framework grew from Aguilar's (1967) work on environmental scanning, which grouped factors as economic, technical, political and social; later versions added legal and environmental factors (PESTLE or PESTEL), and some add ethics (STEEPLE).
+D: bus-pestle
 H: Using PESTLE well
 P: A good analysis does three things: it identifies the factors relevant to this business; it explains how each creates an **opportunity** or a **threat**; and it judges which are most significant, likely and urgent. The output feeds the external half of a SWOT analysis and strategic decisions.
 X: A PESTLE analysis for a UK chain of vape and convenience shops, in brief.

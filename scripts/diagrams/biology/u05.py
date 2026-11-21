@@ -9,10 +9,10 @@ mk("u05-01", "bio-cell-cycle", "flow", "The cell cycle and its checkpoints",
     "S: DNA is replicated; DNA content doubles from 2C to 4C.", "G₂: the cell makes proteins for division and the G₂ checkpoint checks the DNA has been copied correctly.",
     "M: mitosis, with the spindle checkpoint at metaphase, then cytokinesis; two identical daughter cells return to 2C.", "A typical cycle in cultured human cells takes about 24 hours."],
    also=("u05-08",), layout="line",
-   nodes=[{"id": "g1", "label": "G₁", "sub": "growth and normal function. G₁ checkpoint: size, nutrients, growth signals, DNA damage", "tone": "a1"},
+   nodes=[{"id": "g1", "label": "G₁", "sub": "growth, then a checkpoint", "tone": "a1"},
           {"id": "s", "label": "S", "sub": "DNA replicated: 2C to 4C", "tone": "a4"},
-          {"id": "g2", "label": "G₂", "sub": "prepares for division. G₂ checkpoint: DNA fully and correctly copied", "tone": "a5"},
-          {"id": "m", "label": "M", "sub": "mitosis (spindle checkpoint at metaphase), then cytokinesis. Two identical 2C cells start G₁ again, or leave for G₀", "tone": "a2"}],
+          {"id": "g2", "label": "G₂", "sub": "ready to divide? checkpoint", "tone": "a5"},
+          {"id": "m", "label": "M", "sub": "mitosis, then cytokinesis; spindle checkpoint at metaphase", "tone": "a2"}],
    edges=[{"from": "g1", "to": "s"}, {"from": "s", "to": "g2"}, {"from": "g2", "to": "m"}])
 
 # ---------------------------------------------------------------- DNA content through the cycle
@@ -78,7 +78,7 @@ mk("u05-13", "bio-tumour-progression", "flow", "From one mutated cell to metasta
    edges=[{"from": f"t{i}", "to": f"t{i + 1}"} for i in range(4)])
 
 # ---------------------------------------------------------------- germ layers
-mk("u05-18", "bio-germ-layers", "layers", "The three germ layers",
+mk("u05-18", "bio-germ-layers", "germlayers", "The three germ layers",
    "Gastrulation produces an embryo with three layers: ectoderm outside, mesoderm in the middle and endoderm inside. Every tissue of the body comes from one of them, so animals with three layers are triploblastic.",
    "Concentric rings for the ectoderm, mesoderm and endoderm of a gastrula, with the tissues each becomes: skin epidermis and nervous system; muscle, bone, blood, heart, kidneys and gonads; gut lining, respiratory lining, liver and pancreas.",
    ["Ectoderm (outer): the epidermis of the skin and the nervous system, including the brain and spinal cord.", "Mesoderm (middle): muscle, bone, blood, heart, kidneys and gonads.",

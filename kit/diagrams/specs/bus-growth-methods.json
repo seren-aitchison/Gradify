@@ -1,0 +1,109 @@
+{
+ "id": "bus-growth-methods",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "Mergers, acquisitions and alliances",
+ "title": "Ways to combine, and directions of growth",
+ "caption": "The top row is how firms combine; the bottom row is where the combination points. A merger or acquisition can be horizontal, vertical or into unrelated industries.",
+ "alt": "Eight boxes. Top: merger, acquisition, joint venture, strategic alliance. Bottom: horizontal, vertical backward, vertical forward, conglomerate.",
+ "description": [
+  "Merger: two firms combine into one.",
+  "Acquisition: one firm buys a controlling stake in another.",
+  "Joint venture: a new, jointly owned business.",
+  "Strategic alliance: co-operation without a new company.",
+  "Horizontal: same industry and stage.",
+  "Vertical backward: towards suppliers; vertical forward: towards customers.",
+  "Conglomerate: unrelated industries."
+ ],
+ "terms": [
+  "Merger",
+  "Acquisition",
+  "Joint venture",
+  "Strategic alliance",
+  "Horizontal",
+  "Vertical backward",
+  "Vertical forward",
+  "Conglomerate"
+ ],
+ "cols": 12,
+ "rows": 2,
+ "cover": true,
+ "rowH": 104,
+ "expect": [
+  "Merger",
+  "Acquisition",
+  "Joint venture",
+  "Strategic alliance",
+  "Horizontal",
+  "Vertical backward",
+  "Vertical forward",
+  "Conglomerate"
+ ],
+ "blocks": [
+  {
+   "label": "Merger",
+   "col": 0,
+   "row": 0,
+   "cs": 3,
+   "note": "two firms combine into one",
+   "colour": "a1"
+  },
+  {
+   "label": "Acquisition",
+   "col": 3,
+   "row": 0,
+   "cs": 3,
+   "note": "one buys a controlling stake",
+   "colour": "a1"
+  },
+  {
+   "label": "Joint venture",
+   "col": 6,
+   "row": 0,
+   "cs": 3,
+   "note": "a new, jointly owned business",
+   "colour": "a1"
+  },
+  {
+   "label": "Strategic alliance",
+   "col": 9,
+   "row": 0,
+   "cs": 3,
+   "note": "co-operation, no new company",
+   "colour": "a1"
+  },
+  {
+   "label": "Horizontal",
+   "col": 0,
+   "row": 1,
+   "cs": 3,
+   "note": "same industry, same stage",
+   "colour": "a4"
+  },
+  {
+   "label": "Vertical backward",
+   "col": 3,
+   "row": 1,
+   "cs": 3,
+   "note": "towards suppliers",
+   "colour": "a4"
+  },
+  {
+   "label": "Vertical forward",
+   "col": 6,
+   "row": 1,
+   "cs": 3,
+   "note": "towards customers",
+   "colour": "a4"
+  },
+  {
+   "label": "Conglomerate",
+   "col": 9,
+   "row": 1,
+   "cs": 3,
+   "note": "unrelated industries",
+   "colour": "a4"
+  }
+ ]
+}

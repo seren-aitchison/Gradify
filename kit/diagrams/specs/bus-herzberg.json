@@ -1,0 +1,52 @@
+{
+ "id": "bus-herzberg",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Motivation: content theories",
+ "title": "Herzberg: hygiene factors and motivators",
+ "caption": "Good hygiene factors only stop people being dissatisfied; they do not motivate. The motivators are what create satisfaction, which is why job enrichment gives people more responsibility.",
+ "alt": "Two boxes: hygiene factors (pay, working conditions, company policy, supervision, job security) and motivators (achievement, recognition, the work itself, responsibility, advancement).",
+ "description": [
+  "Hygiene factors: pay, working conditions, company policy, supervision, job security. If poor they cause dissatisfaction; if good they only prevent it.",
+  "Motivators: achievement, recognition, the work itself, responsibility, advancement. They create satisfaction and motivation."
+ ],
+ "terms": [
+  "Hygiene factors",
+  "Motivators",
+  "pay",
+  "working conditions",
+  "company policy",
+  "supervision",
+  "job security",
+  "achievement",
+  "recognition",
+  "the work itself",
+  "responsibility",
+  "advancement"
+ ],
+ "cols": 2,
+ "rows": 1,
+ "cover": true,
+ "rowH": 150,
+ "expect": [
+  "Hygiene factors",
+  "Motivators"
+ ],
+ "blocks": [
+  {
+   "label": "Hygiene factors",
+   "col": 0,
+   "row": 0,
+   "note": "Pay, working conditions, company policy, supervision, job security. Poor: dissatisfaction. Good: only prevents it.",
+   "colour": "a3"
+  },
+  {
+   "label": "Motivators",
+   "col": 1,
+   "row": 0,
+   "note": "Achievement, recognition, the work itself, responsibility, advancement. These create satisfaction and motivation.",
+   "colour": "good"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "id": "bus-eoq",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Working capital management",
+ "title": "The economic order quantity",
+ "caption": "Large orders cut ordering costs but raise holding costs. Total cost is lowest where the two cost lines cross: 500 units per order, 20 orders a year, at £2,000 a year.",
+ "alt": "Graph against order size: holding cost rising, ordering cost falling, total cost U-shaped with its minimum at 500 units, where holding and ordering costs are equal at £1,000 each.",
+ "description": [
+  "Annual demand 10,000 units, £50 per order, £4 to hold a unit for a year.",
+  "Holding cost = 4 × order size ÷ 2 rises with order size.",
+  "Ordering cost = 50 × 10,000 ÷ order size falls.",
+  "Total cost is lowest at 500 units, where holding equals ordering cost, £1,000 each."
+ ],
+ "terms": [
+  "Economic order quantity",
+  "10,000 units",
+  "£50",
+  "£4",
+  "500 units",
+  "20 orders a year"
+ ],
+ "range": {
+  "x": [
+   0,
+   1200
+  ],
+  "y": [
+   0,
+   4200
+  ]
+ },
+ "ticks": [
+  [
+   200,
+   400,
+   600,
+   800,
+   1000,
+   1200
+  ],
+  [
+   1000,
+   2000,
+   3000,
+   4000
+  ]
+ ],
+ "grid": [
+  200,
+  1000
+ ],
+ "axisLabels": [
+  "order size (units)",
+  "annual cost (£)"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "curves": [
+  {
+   "expr": "2*x",
+   "colour": "a4",
+   "label": "Holding cost",
+   "labelAt": [
+    830,
+    1900
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "500000/x",
+   "colour": "a3",
+   "domain": [
+    120,
+    1200
+   ],
+   "label": "Ordering cost",
+   "labelAt": [
+    150,
+    3300
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "2*x+500000/x",
+   "colour": "a1",
+   "width": 3.6,
+   "domain": [
+    120,
+    1200
+   ],
+   "label": "Total cost",
+   "labelAt": [
+    850,
+    3100
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 500,
+   "y": 2000,
+   "colour": "ink",
+   "label": "EOQ 500, £2,000",
+   "dx": 12,
+   "dy": -26
+  }
+ ],
+ "marks": [
+  {
+   "x": 500,
+   "to": 2000
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "2*x+500000/x",
+   "domain": [
+    120,
+    1200
+   ],
+   "x": 500,
+   "y": 2000,
+   "tol": 0.2,
+   "name": "total cost is lowest at 500 units, £2,000"
+  },
+  {
+   "type": "intersect",
+   "a": "2*x",
+   "b": "500000/x",
+   "x": 500,
+   "y": 1000,
+   "name": "holding cost equals ordering cost at the EOQ (£1,000 each)"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(2*10000*50/4)",
+   "x": 0,
+   "y": 500,
+   "name": "EOQ = √(2 × 10,000 × 50 ÷ 4) = 500"
+  }
+ ]
+}

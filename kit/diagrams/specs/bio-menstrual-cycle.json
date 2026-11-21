@@ -41,7 +41,7 @@
  "xLabelBelow": true,
  "axisLabels": [
   "day of the cycle",
-  "relative hormone level (schematic)"
+  "hormone level"
  ],
  "curves": [
   {

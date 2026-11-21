@@ -1,0 +1,51 @@
+{
+ "id": "bus-scrum-sprint",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u10",
+ "lesson": "Agile project management",
+ "title": "One Scrum sprint",
+ "caption": "Scrum works in sprints of two to four weeks. Each begins with planning, has a 15-minute daily scrum, ends with a review of the working result and a retrospective, and then the next sprint begins.",
+ "alt": "A cycle of four boxes: sprint planning, daily scrum, sprint review, retrospective, then back to sprint planning.",
+ "description": [
+  "Sprint planning chooses what to build from the product backlog.",
+  "A daily scrum of 15 minutes keeps the team in step.",
+  "The sprint review shows the working result and gathers feedback.",
+  "The retrospective improves how the team works, then the next sprint begins."
+ ],
+ "terms": [
+  "sprints",
+  "sprint planning",
+  "daily scrum",
+  "sprint review",
+  "retrospective",
+  "product backlog"
+ ],
+ "kind": "cycle",
+ "loop": true,
+ "expect": [
+  "Sprint planning",
+  "Daily scrum",
+  "Sprint review",
+  "Retrospective"
+ ],
+ "centre": "2 to 4 weeks",
+ "steps": [
+  {
+   "label": "Sprint planning",
+   "note": "pick work from the backlog"
+  },
+  {
+   "label": "Daily scrum",
+   "note": "15 minutes"
+  },
+  {
+   "label": "Sprint review",
+   "note": "show the result, get feedback"
+  },
+  {
+   "label": "Retrospective",
+   "note": "improve the way of working"
+  }
+ ]
+}

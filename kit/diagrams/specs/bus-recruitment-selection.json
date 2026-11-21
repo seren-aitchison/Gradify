@@ -1,0 +1,53 @@
+{
+ "id": "bus-recruitment-selection",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u06",
+ "lesson": "Recruitment and selection",
+ "title": "From job analysis to an offer",
+ "caption": "Each stage builds on the one before: the job analysis sets the job description and person specification, which set the shortlisting criteria and the selection methods.",
+ "alt": "Five boxes in order: job analysis, job description and person specification, advertise the role, shortlist and select, make an offer and complete checks.",
+ "description": [
+  "Job analysis: what the role involves.",
+  "Job description (duties) and person specification (skills, knowledge, experience).",
+  "Advertise the role by internal promotion, job boards, agencies and other methods.",
+  "Shortlist against the person specification and select with work samples and structured interviews.",
+  "Make an offer and complete right-to-work checks."
+ ],
+ "terms": [
+  "Job analysis",
+  "Job description",
+  "person specification",
+  "Shortlisting",
+  "work sample",
+  "structured interview",
+  "right-to-work checks"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Job analysis",
+  "Job description and person specification",
+  "Advertise the role",
+  "Shortlist and select",
+  "Offer and checks"
+ ],
+ "steps": [
+  {
+   "label": "Job analysis"
+  },
+  {
+   "label": "Job description and person specification"
+  },
+  {
+   "label": "Advertise the role"
+  },
+  {
+   "label": "Shortlist and select",
+   "note": "work samples, structured interviews"
+  },
+  {
+   "label": "Offer and checks",
+   "note": "right to work"
+  }
+ ]
+}

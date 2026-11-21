@@ -1,0 +1,71 @@
+{
+ "id": "bus-critical-path",
+ "renderer": "network",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Project management",
+ "title": "Finding the critical path",
+ "caption": "Path A–B–D takes 9 weeks and path A–C–D takes 11, so the longest path, A–C–D, sets the project at 11 weeks. B is off the critical path, with 2 weeks of float.",
+ "alt": "Network of four tasks: A (3 weeks) leads to B (4 weeks) and C (6 weeks), which both lead to D (2 weeks). The critical path A, C, D is 11 weeks.",
+ "description": [
+  "Task A takes 3 weeks; B (4 weeks) and C (6 weeks) both follow A.",
+  "D (2 weeks) follows both B and C.",
+  "A–B–D is 9 weeks; A–C–D is 11 weeks.",
+  "The critical path is A–C–D, 11 weeks; B has 2 weeks of float."
+ ],
+ "terms": [
+  "critical path",
+  "11 weeks",
+  "float",
+  "3 weeks",
+  "6 weeks"
+ ],
+ "timeUnit": "weeks",
+ "activities": [
+  {
+   "id": "A",
+   "label": "",
+   "dur": 3,
+   "after": []
+  },
+  {
+   "id": "B",
+   "label": "",
+   "dur": 4,
+   "after": [
+    "A"
+   ]
+  },
+  {
+   "id": "C",
+   "label": "",
+   "dur": 6,
+   "after": [
+    "A"
+   ]
+  },
+  {
+   "id": "D",
+   "label": "",
+   "dur": 2,
+   "after": [
+    "B",
+    "C"
+   ]
+  }
+ ],
+ "claims": {
+  "duration": 11,
+  "critical": [
+   "A",
+   "C",
+   "D"
+  ],
+  "float": {
+   "B": 2,
+   "A": 0,
+   "C": 0,
+   "D": 0
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "id": "bus-span-of-control",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Organisational structure",
+ "title": "Wider spans remove a layer",
+ "caption": "With the same 64 staff below the chief executive, a span of 4 needs three levels and a span of 8 needs two. Each level multiplies by the span, so widening spans is the arithmetic behind delayering.",
+ "alt": "Columns for a span of 4 (tall, three levels) and a span of 8 (flatter, two levels). Both reach 64 staff at the bottom.",
+ "description": [
+  "Span of 4: 4 + 16 + 64, three levels below the chief executive.",
+  "Span of 8: 8 + 64, two levels.",
+  "In both, the bottom level is span to the power of the number of levels: 4³ = 8² = 64."
+ ],
+ "terms": [
+  "64 staff",
+  "span of 4",
+  "span of 8",
+  "three levels",
+  "two levels",
+  "delayering"
+ ],
+ "kind": "columns",
+ "range": [
+  0,
+  9.5
+ ],
+ "series": [
+  {
+   "name": "Levels below the chief executive",
+   "colour": "a2"
+  },
+  {
+   "name": "Span of control",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Span of 4 (tall)",
+   "short": "Span of 4",
+   "values": [
+    {
+     "id": "l4",
+     "v": 3
+    },
+    {
+     "id": "s4",
+     "v": 4
+    }
+   ]
+  },
+  {
+   "label": "Span of 8 (flatter)",
+   "short": "Span of 8",
+   "values": [
+    {
+     "id": "l8",
+     "v": 2
+    },
+    {
+     "id": "s8",
+     "v": 8
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "s4 ^ l4",
+   "equals": "64",
+   "name": "span 4 over 3 levels reaches 64 staff (4 × 4 × 4)"
+  },
+  {
+   "expr": "s8 ^ l8",
+   "equals": "64",
+   "name": "span 8 over 2 levels reaches 64 staff (8 × 8)"
+  },
+  {
+   "expr": "s4 + s4 ^ 2 + s4 ^ 3",
+   "equals": "84",
+   "name": "4 + 16 + 64 = 84 people in all below the chief executive"
+  }
+ ]
+}

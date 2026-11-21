@@ -188,7 +188,7 @@ export const PLAN = [
   ["u05-15", null, "an overview of development: each stage is drawn in its own lesson where a picture helps"],
   ["u05-16", null, "the steps of fertilisation need a gamete-fusion drawing, not yet built"],
   ["u05-17", null, "morula, blastula and blastocyst need an embryo drawing, not yet built"],
-  ["u05-18", "layers", "bio-germ-layers", "the three germ layers and the tissues each forms"],
+  ["u05-18", "germlayers", "bio-germ-layers", "the three germ layers and the tissues each forms"],
   ["u05-19", null, "organogenesis is a list of organs and the layers they come from, drawn in the gastrulation lesson"],
   ["u05-20", "graph", "bio-morphogen-gradient", "one morphogen gradient giving three cell fates"],
   ["u05-21", null, "cell fate determination restates the morphogen and gene-regulation ideas already drawn"],

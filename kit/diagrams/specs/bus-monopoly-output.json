@@ -1,0 +1,159 @@
+{
+ "id": "bus-monopoly-output",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u08",
+ "lesson": "Perfect competition and monopoly",
+ "title": "Monopoly: MR = MC, higher price, lower output",
+ "caption": "The monopolist stops where marginal revenue equals marginal cost, then charges what the demand curve allows. Compared with perfect competition, where price falls to marginal cost, it produces less and charges more.",
+ "alt": "Demand, marginal revenue and marginal cost curves. The monopolist's MR = MC at 20 units sets a price of £80. Where demand meets marginal cost, at about 26.7 units and £73.33, is the competitive outcome.",
+ "description": [
+  "Marginal revenue lies below demand and falls twice as fast.",
+  "The monopolist produces where MR = MC: 20 units, read up to the demand curve for the price, £80.",
+  "Perfect competition would reach demand = MC at about 26.7 units and £73.33.",
+  "So monopoly means higher prices and lower output."
+ ],
+ "terms": [
+  "marginal revenue equals marginal cost",
+  "price maker",
+  "higher prices, lower output",
+  "deadweight loss"
+ ],
+ "range": {
+  "x": [
+   0,
+   55
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "grid": [
+  10,
+  20
+ ],
+ "axisLabels": [
+  "output",
+  "price and cost (£)"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "curves": [
+  {
+   "expr": "100-x",
+   "colour": "a1",
+   "label": "Demand",
+   "labelAt": [
+    3,
+    104
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "100-2*x",
+   "colour": "a4",
+   "domain": [
+    0,
+    50
+   ],
+   "label": "MR",
+   "labelAt": [
+    41,
+    12
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "20+2*x",
+   "colour": "a2",
+   "label": "MC",
+   "labelAt": [
+    40,
+    98
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 60,
+   "colour": "ink",
+   "label": "MR = MC",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  },
+  {
+   "x": 20,
+   "y": 80,
+   "colour": "a1",
+   "label": "monopoly price £80",
+   "dx": 12,
+   "dy": -14
+  },
+  {
+   "x": 26.6667,
+   "y": 73.3333,
+   "colour": "a5",
+   "label": "competition £73.33",
+   "dx": 12,
+   "dy": 30
+  }
+ ],
+ "marks": [
+  {
+   "x": 20,
+   "to": 80
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "100-2*x",
+   "b": "20+2*x",
+   "x": 20,
+   "y": 60,
+   "name": "MR = MC at 20 units, £60"
+  },
+  {
+   "type": "point",
+   "expr": "100-x",
+   "x": 20,
+   "y": 80,
+   "name": "the monopoly price is read from demand: £80 at 20 units"
+  },
+  {
+   "type": "intersect",
+   "a": "100-x",
+   "b": "20+2*x",
+   "x": 26.6667,
+   "y": 73.3333,
+   "name": "demand meets MC at 26.7 units, £73.33 (perfect competition)"
+  },
+  {
+   "type": "slope",
+   "expr": "100-2*x",
+   "x": 10,
+   "value": -2,
+   "name": "marginal revenue falls twice as fast as demand"
+  }
+ ]
+}

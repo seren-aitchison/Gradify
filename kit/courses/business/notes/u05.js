@@ -57,6 +57,7 @@ H: The transformation model
 - **Inputs**: **transformed resources** (materials, information, customers) and **transforming resources** (facilities and staff).
 - **Transformation process**: changing physical properties, location, ownership, information or the state of customers.
 - **Outputs**: products and services, usually a mix.
+D: bus-transformation-model
 H: The four Vs
 - **Volume**: how many units are produced.
 - **Variety**: how many different products or services.
@@ -101,6 +102,7 @@ H: Manufacturing process types
 - **Batch**: groups of identical items, such as a bakery's loaves.
 - **Mass**: high volume, standardised, such as cars on an assembly line.
 - **Continuous**: very high volume, non-stop flow, such as oil refining.
+D: bus-process-types
 H: Service process types
 - **Professional services**: high customer contact and customisation, such as law firms.
 - **Service shops**: a mix, such as banks and retail.
@@ -188,6 +190,7 @@ O: Distinguish quality control, quality assurance and ISO 9001
 PRE: What is operations management?
 H: What is quality?
 P: Quality can mean **conformance to specification** (Philip Crosby), **fitness for use** (Joseph Juran) or meeting **customer expectations**. David Garvin (1987) identified eight dimensions: performance, features, reliability, conformance, durability, serviceability, aesthetics and perceived quality.
+D: bus-cost-of-quality
 H: Costs of quality
 - **Prevention**: training, process design, supplier development.
 - **Appraisal**: inspection and testing.
@@ -278,6 +281,7 @@ O: Calculate defects per million opportunities and process capability
 PRE: Total quality management
 H: Origins and aims
 P: Six Sigma was developed at **Motorola** in the mid-1980s and popularised by General Electric under Jack Welch from 1995. It aims to reduce **variation** so that processes rarely produce defects. A "six sigma" process, allowing for some drift, produces no more than **3.4 defects per million opportunities**.
+D: bus-dmaic
 H: DMAIC
 - **Define** the problem, customer requirements and project goals.
 - **Measure** current performance.
@@ -322,6 +326,7 @@ O: Describe lean tools such as 5S, kanban and poka-yoke
 PRE: Total quality management
 H: Origins
 P: Lean grew from the **Toyota Production System**, developed by Taiichi Ohno and others after the Second World War. The term "lean" was coined by John Krafcik (1988) and popularised by Womack, Jones and Roos's The Machine That Changed the World (1990), which compared car plants worldwide.
+D: bus-seven-wastes
 H: The seven wastes (muda)
 - **Transport**: unnecessary movement of materials.
 - **Inventory**: excess stock.
@@ -376,6 +381,7 @@ H: Structure
 - **Downstream**: distributors, retailers and customers.
 - **Flows**: materials downstream, information and money in both directions.
 P: **Supply chain management** coordinates these flows across organisations to serve end customers efficiently.
+D: bus-bullwhip
 H: The bullwhip effect
 P: Small changes in consumer demand become amplified as orders move upstream, a pattern Jay Forrester described in 1958 and Hau Lee and colleagues analysed in 1997 as the **bullwhip effect**. Causes include demand forecasting at each stage, batch ordering, price promotions and rationing.
 X: The bullwhip effect in a drinks supply chain.
@@ -422,6 +428,7 @@ H: Why hold inventory?
 - **Cycle stock** from ordering in batches.
 - **Anticipation stock** for seasonal demand.
 - **Pipeline stock** in transit.
+D: bus-reorder-point
 H: Costs
 P: Inventory ties up **capital**, needs **storage**, **insurance** and **handling**, and risks **obsolescence**, **damage** and **theft**. But too little causes **stock-outs**, lost sales and production stoppages.
 H: ABC analysis
@@ -695,6 +702,7 @@ O: Compare traditional and agile project management approaches
 PRE: What is operations management?
 H: The project triangle
 P: Projects balance **time**, **cost** and **scope** (including quality). Changing one usually affects the others: adding scope needs more time or money.
+D: bus-critical-path
 H: Planning tools
 - **Work breakdown structure (WBS)**: dividing the project into manageable tasks.
 - **Gantt chart**: bars showing tasks against time, named after Henry Gantt, who developed it in the 1910s.
