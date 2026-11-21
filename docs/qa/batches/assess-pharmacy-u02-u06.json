@@ -310,6 +310,81 @@
     "New questions: M3, SA2"
    ],
    "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-01",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: X (Convert before dividing. Tablets of Medicine G contain 0.125 mg; th...)",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-02",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (The direction of rounding can matter. When a calculated volume fall...)",
+    "Added second source: National Patient Safety Agency, Patient Safety Alert 19: promoting safer measurement ...",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-03",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added second source: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf...",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-04",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-05",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-06",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM1, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-07",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added second source: Medusa NHS Injectable Medicines Guide | guidance | 2026 | https://www.medusaimg.nhs.u...",
+    "New questions: SA2"
+   ],
+   "findings": []
   }
  ],
  "notes": [

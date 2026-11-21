@@ -7,6 +7,7 @@ export default `
 S: Almost every pharmaceutical calculation starts with units. Most serious calculation errors are unit errors, especially between milligrams and micrograms, where a slip gives a thousandfold mistake.
 O: Convert accurately between units of mass and volume used in pharmacy
 O: Explain why some units must be written in full
+LV: Intermediate · Foundation
 T: Microgram | One thousandth of a milligram; written in full on prescriptions and labels, never abbreviated
 T: Nanogram | One thousandth of a microgram
 H: The units you'll use
@@ -20,8 +21,13 @@ H: Writing units safely
 - Write "micrograms", "nanograms" and "units" in full. Abbreviations such as µg, mcg, ng and IU are easily misread (µg as mg; U as 0).
 - Use a leading zero for values below 1 (0.5 mg, never .5 mg) and never a trailing zero (5 mg, never 5.0 mg), which can be misread as 50.
 - Change to the smaller unit to avoid decimals where it helps: 500 micrograms is safer than 0.5 mg in many settings.
+X: Convert before dividing. Tablets of Medicine G contain 0.125 mg; the dose is 62.5 micrograms.
+> Make the units match: 0.125 mg = 125 micrograms.
+> 62.5 ÷ 125 = 0.5, so half a tablet.
+> Dividing 62.5 by 0.125 without converting gives 500, a thousandfold error.
 K: Check every answer's unit as well as its number. A thousandfold error usually comes from moving between milligrams and micrograms.
 !: Abbreviating micrograms as "mcg" or "µg" on a label or record: the convention in UK practice is to write it in full.
+EV: established | Mass units step by factors of 1,000, and writing micrograms and units in full prevents misreading errors.
 Q: How many micrograms are in 1 mg? | 1,000
 Q: Why is a trailing zero (5.0 mg) unsafe? | The decimal point can be missed and the dose read as 50 mg.
 SUM: Mass units step by factors of 1,000: kg, g, mg, micrograms, nanograms.
@@ -32,11 +38,14 @@ M1#pharmacy-u06-01-q1@1: How many micrograms are in 2.5 mg? | 2,500 micrograms |
 M1#pharmacy-u06-01-q2@1: How many milligrams are in 0.04 g? | 40 mg | 4 mg | 400 mg | 0.4 mg | 0.00004 mg | 1 g is 1,000 mg, so 0.04 g is 0.04 × 1,000 = 40 mg.
 M2#pharmacy-u06-01-q3@2: Which way of writing a dose is safest? | 0.5 mg | .5 mg | 0.50 mg | 500 mcg | 1/2 mg | A leading zero prevents ".5" being read as 5; trailing zeros and abbreviations such as mcg cause misreading.
 NUM1#pharmacy-u06-01-q4@1: Convert 0.125 mg to micrograms. | 125 | 0 | micrograms | Multiply by 1,000: 0.125 × 1,000 = 125 micrograms.
+NUM3@1: An infusion contains 2 mg of Medicine H in 50 mL. How many micrograms are in each mL? | 40 | 0 | micrograms/mL | Convert first: 2 mg = 2,000 micrograms; 2,000 ÷ 50 = 40 micrograms per mL.
+SA2@1,2: Explain how to convert between grams, milligrams, micrograms and nanograms, and why micrograms and units are written in full. | Each step down the mass ladder (g, mg, micrograms, nanograms) multiplies by 1,000 and each step up divides by 1,000. Convert to matching units before calculating. Abbreviations such as µg, mcg and IU are easily misread (µg as mg, U as 0), causing thousandfold or tenfold errors, so micrograms, nanograms and units are written in full, with a leading zero and no trailing zero. | Factor of 1,000 per step ; Convert before calculating ; Abbreviations misread ; Size of resulting error ; Leading and trailing zero rules
 
 ## Significant figures and rounding
 S: Rounding decides whether a calculated dose can actually be measured and given. Round too early and errors build up; round carelessly and a dose becomes inaccurate or impossible to measure.
 O: Round answers correctly to the required decimal places or significant figures
 O: Explain when and how to round in pharmaceutical calculations
+LV: Intermediate · Foundation
 T: Significant figures | The digits in a number that carry meaning about its precision, starting from the first non-zero digit
 T: Measurable volume | A volume that can actually be measured with the device used, such as an oral syringe graduated in 0.1 mL
 H: Rules for rounding
@@ -51,22 +60,28 @@ H: Rounding in practice
 - Round to something the person can measure: an oral syringe may be graduated in 0.1 mL or 0.2 mL; a 5 mL spoon can't measure 3.8 mL.
 - Dose banding (for example in chemotherapy) deliberately rounds to standard doses within an agreed tolerance, under local protocols.
 - Never round in a way that takes a dose above a maximum.
+P: The direction of rounding can matter. When a calculated volume falls between graduations, round to the nearest measurable volume and check it stays within the prescribed dose and any maximum; when working out a quantity to supply, round up so the course isn't cut short.
 K: Carry full precision through the working; round once, at the end, to what's asked and to what can be measured.
 !: Rounding an intermediate step (for example a concentration) and then using the rounded figure in the next step.
+EV: established | Rounding only the final answer, to a measurable quantity, avoids compounding error.
 Q: When should you round in a multi-step calculation? | Only at the end, keeping full precision in the working.
 Q: Round 0.04567 to two significant figures. | 0.046
 SUM: Round only the final answer, to the precision asked for.
 SUM: In practice, round to a volume the device can measure and never above a maximum dose.
 SRC: Rees JA, Smith I, Watson J, Introduction to Pharmaceutical Calculations, 4th edition, Pharmaceutical Press | secondary | 2015
+SRC: National Patient Safety Agency, Patient Safety Alert 19: promoting safer measurement and administration of liquid medicines via oral and other enteral routes | guidance | 2007
 M1#pharmacy-u06-02-q1@1: What is 12.348 rounded to one decimal place? | 12.3 | 12.4 | 12.35 | 12.0 | 12 | The second decimal place is 4, which is less than 5, so the first decimal place stays 3.
 M2#pharmacy-u06-02-q2@2: In a two-step calculation, when is it best to round? | At the end only | After each step | At the start | Never at all | Before converting units | Rounding intermediate values carries errors into later steps; round the final answer.
-M2#pharmacy-u06-02-q3@1: What is 0.006285 to two significant figures? | 0.0063 | 0.006 | 0.0062 | 0.01 | 0.00628 | Count from the first non-zero digit (6): the next digit is 2, then 8 rounds it up to 3, giving 0.0063.
+M2#pharmacy-u06-02-q3@1: What is 0.006285 to two significant figures? | 0.0063 | 0.006 | 0.0062 | 0.01 | 0.00628 | The first two significant figures are 6 and 2; the next digit, 8, is 5 or more, so the 2 rounds up, giving 0.0063.
 NUM1#pharmacy-u06-02-q4@1: Round 7.865 mL to the nearest 0.1 mL. | 7.9 | 0 | mL | The second decimal place is 6, so round 7.8 up to 7.9.
+NUM3@1,2: Illustrative only: a child weighing 13.4 kg is prescribed 7.5 mg/kg of Medicine J; the liquid contains 120 mg in 5 mL. What volume is needed, to the nearest 0.1 mL? | 4.2 | 0 | mL | Keep full precision: 7.5 × 13.4 = 100.5 mg; 100.5 ÷ 120 × 5 = 4.1875 mL, which rounds to 4.2 mL at the end.
+SA2@2: Explain when and how you should round in a multi-step dose calculation, and what practical limits apply. | Keep full precision through every step and round only the final answer, because rounding intermediate values carries errors into later steps. Round to exactly what the question asks (decimal places or significant figures). In practice, round to a volume the device can measure, such as an oral syringe graduated in 0.1 mL, never round above a maximum dose, and follow local dose-banding protocols where they apply. | Full precision until the end ; Why early rounding compounds error ; Follow the requested precision ; Round to a measurable volume ; Never exceed a maximum
 
 ## Ratio and proportion
 S: Most dose and volume calculations are proportions: if a known amount of drug is in a known volume, how much volume holds the dose you need? Setting the proportion out clearly prevents upside-down answers.
 O: Solve dose and volume problems using ratio and proportion
 O: Check an answer for reasonableness
+LV: Intermediate · Foundation
 T: Proportion | Two equal ratios, such as 250 mg : 5 mL = 400 mg : x mL
 T: Formula method | Volume = (dose needed ÷ amount in stock) × stock volume
 H: Setting up a proportion
@@ -87,20 +102,25 @@ H: A second example: an injection
 - The same method works for any "amount in a volume" product: tablets per dose, inhaler doses, or grams of cream.
 K: Estimate before calculating. If the dose you want is more than the stock strength, the volume must be more than the stock volume, and vice versa.
 !: Inverting the ratio (dividing the stock by the dose), which gives an answer that is wrong by a large factor.
+EV: established | Dose and volume problems are proportions, and estimating first catches inverted ratios.
 Q: State the formula method for a liquid dose. | Volume = (dose needed ÷ stock strength) × stock volume.
 Q: What should you do before calculating? | Estimate the expected answer so you can spot an error.
 SUM: Set up proportions with matching units; cross-multiply or use the formula method.
 SUM: Estimate first and check the answer is plausible.
 SRC: Rees JA, Smith I, Watson J, Introduction to Pharmaceutical Calculations, 4th edition, Pharmaceutical Press | secondary | 2015
+SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf.nice.org.uk/
 M1#pharmacy-u06-03-q1@1: A suspension contains 250 mg in 5 mL. What volume contains 375 mg? | 7.5 mL | 6.25 mL | 3.3 mL | 5 mL | 15 mL | Volume = dose ÷ strength × volume: 375 ÷ 250 × 5 = 7.5 mL, a bit more than 5 mL as expected.
 M2#pharmacy-u06-03-q2@2: A colleague calculates that 40 mg from a 10 mg in 5 mL liquid needs 1.25 mL. What's wrong? | The ratio is inverted | Nothing; it's correct | The units differ | It should be 2.5 mL | It should be 80 mL | 40 mg is four times the 10 mg in 5 mL, so 20 mL is needed; 1.25 mL comes from dividing 10 by 40 and multiplying by 5.
 M2#pharmacy-u06-03-q3@1: Injection: 40 mg in 2 mL. Dose: 30 mg. Volume? | 1.5 mL | 2.67 mL | 1.33 mL | 0.75 mL | 3 mL | Volume = 30 ÷ 40 × 2 = 1.5 mL; the dose is less than the 40 mg in 2 mL, so the volume is less than 2 mL.
 NUM1#pharmacy-u06-03-q4@1: An oral liquid of Medicine A contains 125 mg in 5 mL. What volume contains 300 mg? | 12 | 0.01 | mL | 300 ÷ 125 × 5 = 12 mL.
+NUM3@1,2: An oral solution of Medicine K contains 2.5 mg in 5 mL. The dose is 750 micrograms. What volume is needed? | 1.5 | 0 | mL | Convert first: 750 micrograms = 0.75 mg; 0.75 ÷ 2.5 × 5 = 1.5 mL, less than 5 mL as expected for a dose below 2.5 mg.
+SA2@1,2: Describe how to calculate the volume of a liquid needed for a dose, and how you would check your answer. | Make the units match, then use volume = (dose needed ÷ amount in stock) × stock volume, or set up a proportion and cross-multiply. Before calculating, estimate: if the dose is more than the stock amount, the volume must be more than the stock volume, and vice versa. Compare the answer with the estimate; if it is far off, check whether the ratio has been inverted or the units differ. | Matching units ; Formula or proportion ; Estimate first ; Compare result with estimate ; Spot inverted ratio
 
 ## Percentage concentrations
 S: Percentage strengths describe how much drug is in a product. The units hidden in the percentage (grams per 100 mL or per 100 g) matter, and w/v, w/w and v/v aren't interchangeable.
 O: Interpret w/v, w/w and v/v percentage concentrations
 O: Convert percentage strengths to mg/mL and calculate amounts of drug
+LV: Intermediate · Foundation
 T: % w/v | Grams of solute in 100 mL of the final solution
 T: % w/w | Grams of ingredient in 100 g of the final product (for example creams and ointments)
 H: The three kinds of percentage
@@ -119,6 +139,7 @@ P: **Investigate with the lab.** Practise percentage strength calculations, conv
 IX: pharmcalc
 K: For w/v, percentage × 10 = mg/mL. Always check whether a percentage is w/v, w/w or v/v before using it.
 !: Treating a w/w cream strength as if it were w/v, or forgetting that the percentage refers to the final product, not the solvent.
+EV: established | Percentage strengths are w/v (g per 100 mL), w/w (g per 100 g) or v/v (mL per 100 mL), and 1% w/v equals 10 mg/mL.
 Q: What is 1% w/v in mg/mL? | 10 mg/mL
 Q: How much glucose is in 1 litre of glucose 5% w/v? | 50 g
 SUM: w/v is g per 100 mL; w/w is g per 100 g; v/v is mL per 100 mL.
@@ -130,11 +151,14 @@ M2#pharmacy-u06-04-q2@2: How much hydrocortisone is in 30 g of a 1% w/w cream? |
 M2#pharmacy-u06-04-q3@1: Which concentration describes grams of ingredient per 100 g? | % w/w | % w/v | % v/v | mg/mL | mmol/L | w/w (weight in weight) is used for creams, ointments and powders.
 NUM1#pharmacy-u06-04-q4@2: How many milligrams of Medicine B are in 5 mL of a 2% w/v solution? | 100 | 0 | mg | 2% w/v = 20 mg/mL; 20 × 5 = 100 mg.
 M2#pharmacy-u06-04-q5@1: How many milligrams of drug are in 1 mL of a 1% w/v solution? | 10 mg | 1 mg | 100 mg | 0.1 mg | 1% w/v means 1 g per 100 mL, which is 10 mg per mL.
+NUM3@2: How many milligrams of sodium chloride are in a 250 mL bag of sodium chloride 0.9% w/v? | 2250 | 0 | mg | 0.9% w/v is 9 mg/mL; 9 × 250 = 2,250 mg (2.25 g).
+SA2@1,2: Explain what w/v, w/w and v/v percentages mean and show how to find the amount of drug in a stated quantity of a 2% w/v solution. | w/v is grams of solute in 100 mL of final solution, used for solutions and injections; w/w is grams per 100 g of product, used for creams and ointments; v/v is millilitres per 100 mL, used for liquids in liquids. For w/v, multiply the percentage by 10 to get mg/mL: 2% w/v is 20 mg/mL, so 5 mL contains 100 mg. Always check which kind of percentage applies, and that it refers to the final product. | w/v defined ; w/w defined ; v/v defined ; Percentage × 10 = mg/mL ; Correct worked amount
 
 ## Ratio strengths and parts per million
 S: Some products describe very dilute concentrations as ratios (1 in 1,000) or parts per million. They are easy to misread, which is why adrenaline is now labelled in mg/mL in the UK, but they still appear in exams and older texts.
 O: Convert ratio strengths and parts per million into mg/mL and percentages
 O: Explain why mg/mL labelling is safer than ratio strengths
+LV: Intermediate · Foundation
 T: Ratio strength | A concentration written as 1 part in a number of parts, such as 1 in 1,000 w/v (1 g in 1,000 mL)
 T: Parts per million (ppm) | 1 part in 1,000,000; for water, 1 ppm ≈ 1 mg per litre
 H: Ratio strengths
@@ -156,6 +180,7 @@ P: **Investigate with the lab.** Convert ratio strengths such as 1 in 1,000 into
 IX: pharmcalc
 K: For w/v ratios, 1 in 1,000 is 1 mg/mL. Each extra zero in the ratio divides the concentration by 10.
 !: Confusing 1 in 1,000 with 1 in 10,000 adrenaline: a tenfold error. Read the mg/mL strength on the label.
+EV: established | Ratio strengths such as 1 in 1,000 w/v convert directly to mg/mL, and mg/mL labelling reduces tenfold errors.
 Q: What is 1 in 1,000 w/v in mg/mL? | 1 mg/mL
 Q: What is 1 ppm of fluoride in water, in mg per litre? | About 1 mg per litre.
 SUM: 1 in 1,000 w/v = 1 mg/mL = 0.1%; 1 in 10,000 = 100 micrograms/mL.
@@ -167,11 +192,14 @@ M2#pharmacy-u06-05-q2@1: What is 1 in 5,000 w/v as a percentage? | 0.02% | 0.2% 
 M2#pharmacy-u06-05-q3@2: Why is adrenaline injection labelled in mg/mL in the UK? | Ratio strengths caused tenfold errors | Ratio strengths are illegal now | mg/mL products are more stable | It makes the injection cheaper | Ratios only apply to oral liquids | 1 in 1,000 and 1 in 10,000 were confused; mg/mL labelling reduces this.
 NUM1#pharmacy-u06-05-q4@1: How many milligrams of fluoride are in 2 litres of water containing 1 ppm fluoride? | 2 | 0 | mg | 1 ppm ≈ 1 mg per litre, so 2 litres contain 2 mg.
 M2#pharmacy-u06-05-q5@1: What is adrenaline 1 in 1,000 expressed in mg per mL? | 1 mg per mL | 0.1 mg per mL | 10 mg per mL | 1,000 mg per mL | 1 in 1,000 means 1 g in 1,000 mL, which is 1 mg per mL.
+NUM3@1: How many micrograms of adrenaline are in 0.5 mL of a 1 in 1,000 (1 mg/mL) solution? | 500 | 0 | micrograms | 1 mg/mL × 0.5 mL = 0.5 mg, which is 500 micrograms.
+SA2@1,2: Convert 1 in 1,000 and 1 in 10,000 w/v into mg/mL and percentages, and explain why adrenaline is labelled in mg/mL in the UK. | 1 in 1,000 w/v is 1 g in 1,000 mL, which is 1 mg/mL or 0.1%. 1 in 10,000 is 1 g in 10,000 mL, which is 0.1 mg/mL (100 micrograms/mL) or 0.01%. The ratios differ by one zero but the strengths differ tenfold, and confusing them has caused serious harm, so adrenaline is labelled 1 mg/mL and 100 micrograms/mL, and the label strength should be read every time. | 1 in 1,000 conversion ; 1 in 10,000 conversion ; Percentages correct ; Tenfold confusion risk ; Read the mg/mL label
 
 ## Molarity, millimoles and milliequivalents
 S: Electrolytes and many infusions are prescribed in millimoles, not milligrams. Converting between mass and millimoles needs the molecular mass, and the valency when milliequivalents are used.
 O: Convert between milligrams and millimoles using molecular mass
 O: Calculate millimoles and milliequivalents in electrolyte products
+LV: Intermediate · Application
 T: Millimole (mmol) | One thousandth of a mole; mmol = mass in mg ÷ relative molecular mass
 T: Milliequivalent (mEq) | mmol multiplied by the valency of the ion
 H: Moles and millimoles
@@ -189,6 +217,7 @@ P: **Investigate with the lab.** Work through millimole calculations, converting
 IX: pharmcalc
 K: mmol = mg ÷ Mr. Know which ions each formula unit releases, and multiply by the valency for mEq.
 !: Forgetting that one unit of calcium chloride releases two chloride ions, or treating mEq and mmol as the same for divalent ions.
+EV: established | Millimoles equal milligrams divided by relative molecular mass, and milliequivalents equal millimoles multiplied by valency.
 Q: How do you convert mg to mmol? | Divide by the relative molecular mass (Mr).
 Q: How many mEq are in 1 mmol of calcium? | 2 mEq
 SUM: mmol = mg ÷ Mr; mEq = mmol × valency.
@@ -200,11 +229,14 @@ M3#pharmacy-u06-06-q2@2: How many mEq of calcium are in 2 mmol of calcium ions? 
 M2#pharmacy-u06-06-q3@1: Potassium chloride has an Mr of 74.5. How many mmol of potassium are in 1 g? | About 13.4 mmol | About 74.5 mmol | About 1.34 mmol | About 7.45 mmol | About 134 mmol | 1,000 mg ÷ 74.5 = 13.4 mmol, and each unit gives one potassium ion.
 NUM2#pharmacy-u06-06-q4@2: How many millimoles of potassium are in 1.5 g of potassium chloride (Mr 74.5)? Give your answer to one decimal place. | 20.1 | 0.05 | mmol | 1,500 mg ÷ 74.5 = 20.13, so 20.1 mmol.
 M2#pharmacy-u06-06-q5@1: How many millimoles are in 5.85 g of sodium chloride (Mr 58.5)? | 100 mmol | 10 mmol | 1,000 mmol | 58.5 mmol | 5.85 g ÷ 58.5 g/mol = 0.1 mol = 100 mmol.
+NUM1@1: What is the mass, in milligrams, of 1 mmol of potassium chloride (Mr 74.5)? | 74.5 | 0 | mg | One millimole weighs its relative molecular mass in milligrams: 74.5 mg.
+SA2@1,2: Show how to calculate the sodium content of sodium chloride 0.9% w/v in mmol/L, and explain when mEq differs from mmol. | 0.9% w/v is 9 g per litre, which is 9,000 mg/L. Millimoles = mg ÷ Mr = 9,000 ÷ 58.5, about 154 mmol/L. Each formula unit of NaCl releases one sodium ion, so this is also the sodium (and chloride) content. Milliequivalents are mmol × valency: for monovalent ions such as sodium and potassium they are equal, but for divalent ions such as calcium and magnesium 1 mmol is 2 mEq. | Convert % w/v to mg/L ; mmol = mg ÷ Mr ; About 154 mmol/L ; Ions per formula unit ; mEq = mmol × valency
 
 ## Dilutions
 S: Diluting a stock solution is routine in pharmacy, from making up preparations to preparing injections. The rule is simple: the amount of drug stays the same while the volume changes.
 O: Use C1V1 = C2V2 to calculate dilutions
 O: Work with dilution factors and serial dilutions
+LV: Intermediate · Application
 T: C1V1 = C2V2 | Concentration × volume before dilution equals concentration × volume after, because the amount of drug doesn't change
 T: Dilution factor | Final volume ÷ initial volume; the concentration falls by this factor
 H: The dilution equation
@@ -227,16 +259,19 @@ P: **Investigate with the lab.** Practise dilution calculations with C₁V₁ = 
 IX: pharmcalc
 K: The amount of drug is constant in a dilution; only the volume changes. C1V1 = C2V2.
 !: Adding the diluent volume to the stock instead of making up to the final volume, or mixing percentage and mg/mL units in one equation.
+EV: established | In a dilution the amount of drug is unchanged, so C1V1 = C2V2.
 Q: What does C1V1 = C2V2 express? | The amount of drug is the same before and after dilution.
 Q: A 1 in 20 solution is diluted 1 in 5. What is the final strength? | 1 in 100
 SUM: Use V1 = C2V2 ÷ C1 to find the stock volume, then make up to the final volume.
 SUM: Serial dilutions multiply.
 SRC: Rees JA, Smith I, Watson J, Introduction to Pharmaceutical Calculations, 4th edition, Pharmaceutical Press | secondary | 2015
+SRC: Medusa NHS Injectable Medicines Guide | guidance | 2026 | https://www.medusaimg.nhs.uk/
 M1#pharmacy-u06-07-q1@1: You dilute 20 mL of a 5% w/v solution to 100 mL. What is the new concentration? | 1% w/v | 0.5% w/v | 2% w/v | 4% w/v | 0.1% w/v | The drug in 20 mL stays the same in 100 mL: C2 = C1V1 ÷ V2 = 5 × 20 ÷ 100 = 1%.
 M3#pharmacy-u06-07-q2@2: A 1 in 50 stock is diluted 1 in 10. What is the final strength? | 1 in 500 | 1 in 60 | 1 in 5 | 1 in 40 | 1 in 5,000 | Serial dilutions multiply: 50 × 10 = 500.
 M2#pharmacy-u06-07-q3@1: How much 20% w/v stock do you need for 250 mL of a 4% w/v solution? | 50 mL | 25 mL | 80 mL | 62.5 mL | 125 mL | V1 = C2 × V2 ÷ C1 = 4 × 250 ÷ 20 = 50 mL of stock, made up to 250 mL.
 NUM1#pharmacy-u06-07-q4@1: What volume of a 10% w/v stock solution is needed to make 500 mL of a 2% w/v solution? | 100 | 0 | mL | V1 = C2 × V2 ÷ C1 = 2 × 500 ÷ 10 = 100 mL.
 M2#pharmacy-u06-07-q5@1: What volume of 10% solution is diluted to make 500 mL of 2%? | 100 mL | 50 mL | 250 mL | 10 mL | C₁V₁ = C₂V₂: 10 × V₁ = 2 × 500, so V₁ = 100 mL.
+SA2@1,2: Explain the principle behind C1V1 = C2V2 and show how you would make 500 mL of a 2% w/v solution from a 10% w/v stock, including the practical steps. | In a dilution the amount of drug stays the same; only the volume changes, so concentration × volume before equals concentration × volume after. V1 = C2 × V2 ÷ C1 = 2 × 500 ÷ 10 = 100 mL of stock. Measure 100 mL with a suitable measure and make up to 500 mL in a calibrated container (not "add 500 mL"). Use the same units on both sides, check the diluent is compatible, and label with the final strength. | Amount of drug unchanged ; Correct rearrangement ; 100 mL of stock ; Make up to final volume ; Units, compatibility and labelling
 
 ## Concentrating and mixing
 S: Sometimes you need a strength between two that you have, or you mix products of different strengths. Working out the drug content of each part, or using alligation, gives the answer reliably.

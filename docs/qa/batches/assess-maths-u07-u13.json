@@ -1212,6 +1212,58 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-71",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-72",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-73",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 (return level) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-74",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-74-q1",
+    "added NUM3 and SA3 (minimax and EVPI) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-75",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-75-q1",
+    "added NUM2 and SA2 (leakage) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

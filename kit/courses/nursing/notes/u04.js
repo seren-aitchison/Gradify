@@ -8,6 +8,8 @@ export default `
 S: Pharmacology is the study of how medicines interact with the body. Nurses need it to give medicines safely, monitor their effects, recognise harm and explain treatment to the people they care for.
 O: Define key pharmacology terms and reliable information sources
 O: Explain why nurses need pharmacology knowledge before giving medicines
+LV: Year 1 · Foundation
+EV: established | Nurses must know a medicine's purpose, usual dose and monitoring, or look it up, before giving it.
 T: Pharmacology | The study of how medicines interact with the body
 T: BNF | The British National Formulary, the standard UK reference on medicines
 SUM: Nurses need pharmacology to give medicines safely, monitor effects and explain treatment.
@@ -29,16 +31,23 @@ H: Why nurses need pharmacology
 - To check that a prescribed medicine is appropriate for this person (allergies, interactions, kidney function, pregnancy).
 - To give it by the right route at the right time and monitor for the expected effect and adverse effects.
 - To educate people and support adherence.
+P: The NMC Code requires nurses to give medicines only within the limits of their training and competence. Pharmacology knowledge supports, but never replaces, the checks against the prescription, the person and the BNF.
+!: Relying on a brand name or memory. Brand names vary and look-alike, sound-alike names cause errors: check the generic name, strength and form against the prescription.
 K: If you don't know what a medicine is for, how it works, its usual dose and what to monitor, look it up or ask before giving it.
 Q: What is the difference between pharmacokinetics and pharmacodynamics? | Pharmacokinetics is what the body does to the drug (ADME); pharmacodynamics is what the drug does to the body.
 Q: What does a narrow therapeutic index mean? | The effective dose is close to the toxic dose, so small changes can cause harm and monitoring is often needed.
 M1#nursing-u04-01-q1@1: Which reference gives UK doses, cautions and interactions? | The British National Formulary (BNF) | The NMC Code | The Mental Capacity Act Code | The Caldicott Principles | NEWS2 chart | The BNF is the standard UK prescribing reference.
 M2#nursing-u04-01-q2@2: A nurse is asked to give a medicine they've never heard of. What should they do first? | Look it up or ask a pharmacist first | Give it, since it has been prescribed | Ask the patient what it's for, then give it | Skip it and document "not given" | Ask a student nurse to give it instead | Nurses must understand what they administer.
+M1@1: What does a narrow therapeutic index mean? | The toxic dose is close to the effective dose | The drug has a very wide margin of safety | The drug works only in one age group | The drug can be given by one route only | The drug is effective at any dose | With a narrow index, small changes in dose or clearance can cause toxicity, so monitoring is often needed.
+M3@1,2: Mrs Ahmed (invented) is prescribed a medicine by brand name, but the box in the cupboard shows a different, generic name. What should the nurse do? | Confirm in the BNF or with a pharmacist that it is the same medicine and strength | Give it, because generic and brand versions always look the same | Omit the dose and record that the medicine wasn't available | Ask her whether the tablets look familiar, then give them | Give it, because everything in the cupboard has been checked | Generic and brand names differ; confirming the medicine, strength and form prevents a substitution or look-alike error.
+SA3@2: Using an example, explain why a nurse needs pharmacology knowledge before giving a medicine. | Knowing what a medicine is for, how it works, its usual dose, cautions and monitoring lets the nurse check it is right for this person and spot harm. For example, before giving a beta-blocker the nurse checks the pulse and blood pressure and asks about asthma, because it slows the heart and can cause bronchospasm. Knowledge also lets the nurse explain the medicine and monitor its effect. Unfamiliar medicines are looked up in the BNF or discussed with a pharmacist first. | Checks the medicine is appropriate for the person ; Gives a relevant example with a check ; Monitors expected and adverse effects ; Educates the person ; Looks up or asks when unsure
 
 ## Pharmacokinetics
 S: Pharmacokinetics describes how a drug moves through the body over time: absorption, distribution, metabolism and excretion (ADME). It explains dose timing, routes, interactions and why some people need different doses.
 O: Describe the four stages of pharmacokinetics
 O: Explain how half-life, steady state and patient factors affect dosing
+LV: Year 1 · Application
+EV: established | Regular dosing reaches steady state after about four to five half-lives.
 T: Pharmacokinetics | How a drug moves through the body: absorption, distribution, metabolism and excretion
 T: Half-life | The time for the plasma concentration of a drug to fall by half
 SUM: Pharmacokinetics explains dose timing, routes and individual variation.
@@ -58,21 +67,32 @@ H: Factors that change pharmacokinetics
 - Interactions with other medicines and foods.
 - Genetics (for example, variation in liver enzymes).
 - Critical illness, dehydration and low albumin.
+X: Illustrative only: a drug with a half-life of 6 hours and a starting plasma level of 80 units.
+> After 6 hours the level is 40, after 12 hours 20, after 18 hours 10.
+> With regular dosing, steady state takes about 4–5 half-lives: here about 24–30 hours. Real dosing follows the prescription and the BNF.
+P: For therapeutic drug monitoring, timing matters: take the sample when the prescriber or local protocol says (often just before a dose) and record when the last dose was given.
+!: Expecting a regular medicine to work fully after the first dose. Without a loading dose, the full effect builds over about 4–5 half-lives.
 K: Doses of renally cleared medicines often need adjusting when kidney function falls. Check kidney function before giving them.
 Q: What is first-pass metabolism? | Metabolism of an orally absorbed drug in the gut wall and liver before it reaches the systemic circulation, reducing bioavailability.
 Q: How long does it take to reach steady state? | About 4–5 half-lives of regular dosing.
 M1#nursing-u04-02-q1@1: What is the bioavailability of an intravenous dose? | 100% | 50% | 0% | 75% | It depends on food | IV medicines enter the circulation directly.
 M2#nursing-u04-02-q2@2: A patient on gentamicin has a rising creatinine. What is the main concern? | Possible accumulation: check levels, tell prescriber | The drug will now work faster than usual | No concern, as kidneys don't affect gentamicin | The dose should be increased to compensate | The patient should drink less fluid today | Gentamicin is renally cleared and nephrotoxic, with a narrow therapeutic index.
+M2@2: Illustrative only: a drug has a half-life of 8 hours. About how long will regular dosing take to reach steady state? | About 32–40 hours | About 8 hours | About 16 hours | About 4 hours | About 80 hours | Steady state takes about 4–5 half-lives: 4 × 8 = 32 and 5 × 8 = 40 hours.
+M3@1,2: Mr Jones (invented), 84, takes digoxin. He has been vomiting, his urine output has fallen, and he now has nausea and yellow-tinged vision. What should the nurse do? | Suspect toxicity from reduced clearance and escalate before the next dose | Give the digoxin with an antiemetic as usual | Encourage fluids and give the digoxin as normal | Treat the vision change as unrelated to his medicines | Omit his other medicines but give the digoxin | Digoxin is renally cleared with a narrow therapeutic index; dehydration and falling kidney function cause accumulation, and nausea and visual change suggest toxicity.
+SA3@2: Explain why a person with falling kidney function may need a dose change for a renally cleared medicine, and what the nurse should check. | Renally cleared medicines depend on the kidneys for removal, so when kidney function falls, clearance falls, the half-life lengthens and the drug accumulates to toxic levels, especially with a narrow therapeutic index (such as gentamicin or lithium). The nurse checks recent kidney function, urine output and any prescribed drug levels, looks for signs of toxicity, and queries the dose with the prescriber or pharmacist before giving it if unsafe. | Links reduced clearance to accumulation ; Mentions longer half-life or narrow therapeutic index ; Checks kidney function and urine output ; Checks drug levels or signs of toxicity ; Queries the dose before giving
 
 ## Pharmacodynamics
 S: Pharmacodynamics is how drugs produce their effects: the targets they act on, how strongly they act and how the response relates to the dose.
 O: Describe drug targets and the dose-response relationship
 O: Use a drug's mechanism to predict effects and side effects
+LV: Year 1 · Application
+EV: established | Drugs produce their effects by acting on receptors, enzymes, ion channels and transporters.
 T: Agonist | A drug that binds a receptor and activates it
 T: Therapeutic index | The ratio between toxic and effective doses
 SUM: Drugs act on receptors, enzymes, ion channels and transporters.
 SUM: Narrow therapeutic index drugs need careful monitoring.
 SAFE: For narrow therapeutic index drugs such as digoxin, lithium and gentamicin, check the levels and monitoring the prescriber has asked for, and report signs of toxicity to the prescriber.
+SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf.nice.org.uk/
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
 H: Drug targets
 - **Receptors**: proteins that drugs bind to. **Agonists** activate receptors (for example, salbutamol at beta-2 receptors); **antagonists** block them (for example, propranolol at beta receptors); **partial agonists** produce a smaller maximal effect (for example, buprenorphine at opioid receptors).
@@ -86,16 +106,23 @@ H: Dose and response
 - **Dependence**: physical or psychological need, with withdrawal effects on stopping.
 H: Selectivity
 P: Few drugs act only where intended. Beta-blockers that act on beta-1 receptors in the heart can also block beta-2 receptors in the airways, causing bronchospasm in some people with asthma. Understanding selectivity explains many side effects.
+P: Antagonists can reverse agonists. Naloxone, an opioid antagonist, reverses opioid-induced respiratory depression, but it may wear off before the opioid does, so monitoring continues.
+!: Assuming a more potent drug is more effective. Potency is the amount needed for an effect; efficacy is the maximum effect, and a less potent drug can be more effective.
 K: Knowing a drug's mechanism lets you predict its main effects, its side effects and its interactions.
 Q: What is an antagonist? | A drug that binds to a receptor and blocks it without activating it.
 Q: What is the difference between potency and efficacy? | Potency is how much drug is needed for an effect; efficacy is the maximum effect it can produce.
 M1#nursing-u04-03-q1@1: Salbutamol relieves bronchospasm by acting as which kind of drug at beta-2 receptors? | An agonist | An antagonist | An enzyme inhibitor | A partial antagonist | An ion channel blocker | Salbutamol stimulates beta-2 receptors, relaxing airway smooth muscle.
 M2#nursing-u04-03-q2@2: Why might a non-selective beta-blocker be dangerous for someone with asthma? | It may block beta-2 receptors, causing bronchospasm | It increases the heart rate dangerously | It causes high blood sugar in asthma | It dilates the airways too much | It blocks histamine and causes wheeze | Non-selective beta-blockers also block beta-2 receptors in the airways, which can trigger bronchospasm in people with asthma.
+M2@1: Naloxone reverses opioid toxicity. What kind of drug is it? | An opioid receptor antagonist | An opioid receptor agonist | A partial opioid agonist | An enzyme inducer | A sodium channel blocker | Naloxone binds opioid receptors without activating them, displacing the opioid and reversing its effects.
+M3@2: Mr Lewis (invented) was given naloxone for opioid-induced respiratory depression and is now alert. Why must the nurse keep monitoring him closely? | Naloxone may wear off before the opioid, so sedation can return | Naloxone always causes a delayed rise in blood pressure | The opioid is now permanently blocked from its receptors | Naloxone increases absorption of the remaining opioid | Monitoring is needed only for the pain score now | Naloxone's action is often shorter than the opioid's; sedation and slow breathing can recur, so respiratory rate, sedation and NEWS2 are monitored and escalated.
+SA3@1,2: Using salbutamol and propranolol, explain the difference between an agonist and an antagonist, and predict one side effect of each from its mechanism. | An agonist binds a receptor and activates it; an antagonist binds and blocks it. Salbutamol is a beta-2 agonist: it relaxes airway smooth muscle, but stimulating beta receptors elsewhere causes tremor and a fast heart rate. Propranolol is a non-selective beta antagonist: blocking beta-1 receptors slows the heart, and blocking beta-2 receptors in the airways can cause bronchospasm, so it is avoided in asthma. | Defines agonist ; Defines antagonist ; Salbutamol as beta-2 agonist with tremor or tachycardia ; Propranolol as beta blocker with bradycardia or bronchospasm ; Links side effects to receptor selectivity
 
 ## Absorption
 S: Absorption is the movement of a drug from where it is given into the bloodstream. It determines how quickly and how much of a drug takes effect.
 O: Explain how route and formulation affect absorption
 O: Apply rules for crushing tablets and using patches safely
+LV: Year 1 · Application
+EV: established | Route, formulation, food and perfusion determine how quickly and how much of a drug is absorbed.
 T: Bioavailability | The proportion of a dose that reaches the systemic circulation
 T: First-pass metabolism | Metabolism of a drug in the gut wall and liver before it reaches the circulation
 SUM: Route, formulation, food and gut function affect absorption.
@@ -118,21 +145,29 @@ H: Factors affecting absorption
 - Poor perfusion (shock) reduces absorption from IM and SC sites.
 H: Patches
 P: Heat over a transdermal patch (a hot water bottle, fever, a hot bath) increases absorption and can cause toxicity, especially with opioid patches such as fentanyl. Check patches during skin checks, remove old patches and record sites.
+P: If a person can't swallow, don't choose a substitute yourself. Ask the prescriber or pharmacist about a liquid, dispersible or alternative-route product, because crushing or opening capsules can change absorption and may be unlicensed.
+!: Giving every morning medicine together regardless of instructions. Some, such as levothyroxine, are taken on an empty stomach and apart from calcium or iron; check the label and the BNF.
 K: Never crush or split modified-release or enteric-coated tablets unless a pharmacist confirms it's safe.
 Q: Why are sublingual medicines fast-acting? | They are absorbed through the mouth's lining directly into the circulation, avoiding first-pass metabolism.
 Q: Why must modified-release tablets not be crushed? | Crushing can release the whole dose at once (dose dumping), causing toxicity.
 M1#nursing-u04-04-q1@1: Which route avoids absorption entirely? | Intravenous | Oral | Intramuscular | Transdermal | Rectal | IV medicines go straight into the circulation.
 M2#nursing-u04-04-q2@2: A patient with a fentanyl patch develops a fever of 39°C and becomes drowsy. What should the nurse consider? | Heat may raise absorption: assess and escalate | The patch has stopped working in the heat | The fever is unrelated to the fentanyl patch | A second patch should be applied for cover | A hot water bottle will help the patch work | Fever or external heat increases blood flow to the skin and speeds absorption from the patch, which can cause opioid toxicity; escalate and assess sedation and breathing.
+M2@2: Mrs Ellis (invented) has a new swallowing difficulty and is prescribed a modified-release tablet. What should the nurse do? | Ask the pharmacist or prescriber for a suitable alternative | Crush the tablet and mix it with yoghurt | Cut the tablet in half to make swallowing easier | Dissolve it in water and give it by oral syringe | Omit it until her swallowing improves, telling no one | Crushing, splitting or dissolving modified-release tablets can dump the whole dose; an alternative product or route must be prescribed.
+M3@1: Mr Price (invented) is in septic shock with cold, mottled skin. Why may an intramuscular or subcutaneous dose be unreliable? | Poor blood flow to skin and muscle slows and reduces absorption | Shock speeds up absorption from every route | Sepsis destroys medicines while they are in muscle | IM and SC doses all undergo first-pass metabolism | Cold skin increases bioavailability from injections | Absorption from IM and SC sites depends on local blood flow, which falls in shock; prescribers often choose the IV route in critical illness.
+SA3@2: Explain why heat increases absorption from a fentanyl patch, and describe how a nurse keeps patch use safe. | Heat from fever, a hot water bottle, an electric blanket or a hot bath dilates skin vessels and increases blood flow, so more drug is absorbed from the patch, which can cause opioid toxicity: drowsiness and slow breathing. The nurse avoids external heat over the patch, monitors temperature, sedation and respiratory rate, escalates signs of toxicity, removes the old patch before applying a new one, rotates and records sites, and checks for patches during skin checks. | Explains increased skin blood flow with heat ; Names a heat source or fever ; Identifies opioid toxicity signs ; Monitors sedation and respiratory rate and escalates ; Removes old patches and records sites
 
 ## Distribution
 S: Distribution is the movement of a drug from the bloodstream into tissues. It affects how much drug reaches its target, how long it stays and how it should be dosed.
 O: Describe factors affecting drug distribution
 O: Apply distribution principles to special populations
+LV: Year 1 · Application
+EV: established | Only the unbound fraction of a protein-bound drug is active, and low albumin increases it.
 T: Volume of distribution | A measure of how widely a drug spreads into body tissues
 T: Protein binding | The attachment of a drug to plasma proteins such as albumin
 SUM: Blood flow, protein binding, fat and barriers affect distribution.
 SUM: Low albumin can increase free drug and toxicity.
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
+SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf.nice.org.uk/
 H: Key factors
 - **Blood flow**: well-perfused organs (heart, liver, kidneys, brain) receive drug quickly.
 - **Plasma protein binding**: many drugs bind to albumin; only the unbound (free) fraction is active. Low albumin (malnutrition, liver disease, critical illness) increases the free fraction of highly bound drugs such as phenytoin.
@@ -143,16 +178,26 @@ H: Special populations
 - **Older people**: more body fat and less body water: fat-soluble drugs (such as some benzodiazepines) last longer.
 - **Pregnancy and breastfeeding**: check suitability in the BNF and with a pharmacist.
 - **Obesity**: some doses are based on ideal or adjusted body weight.
+X: Illustrative only: a drug that is 90% bound to albumin.
+> Normally 100 - 90 = 10% of it is free (active).
+> If low albumin lets binding fall to 80%, 20% is free: twice the active drug at the same total level.
+P: Small, unbound, lipid-soluble drugs cross the placenta and pass into breast milk more readily, so suitability in pregnancy and breastfeeding is always checked in the BNF and with a pharmacist.
+!: Assuming an older person needs the same dose as a younger adult. More body fat, less body water, lower albumin and slower clearance can all increase a drug's effect.
 K: A normal total blood level can hide toxicity if albumin is low and the drug is highly protein-bound.
 Q: Which fraction of a protein-bound drug is active? | The unbound (free) fraction.
 Q: Why might benzodiazepines last longer in older people? | Increased body fat stores the fat-soluble drug, prolonging its effect, and clearance may also be reduced.
 M1#nursing-u04-05-q1@1: Which barrier limits many drugs from entering the brain? | The blood-brain barrier | The placenta | The skin | The gut wall | The glomerulus | The blood-brain barrier restricts entry to the central nervous system.
 M2#nursing-u04-05-q2@2: A malnourished patient with low albumin is on phenytoin. Their total phenytoin level is in range, but they are unsteady with nystagmus. What is the best explanation? | Raised free fraction from low albumin | The phenytoin level is far too low | The symptoms are unrelated to phenytoin | Phenytoin isn't bound to plasma proteins | The patient is simply dehydrated | Low albumin raises free phenytoin; levels need interpreting with albumin.
+M2@2: An 85-year-old is prescribed a fat-soluble benzodiazepine. Why may its effect last longer than in a younger adult? | More body fat stores the drug and clearance may be slower | Older people have more body water to dilute it | Older people absorb almost nothing from the gut | Benzodiazepines are not soluble in fat at all | The blood-brain barrier is stronger in older age | Body fat rises with age, so fat-soluble drugs build up in tissues and are released slowly, prolonging sedation and falls risk.
+M3@2: Ms Clarke (invented) is breastfeeding a two-week-old baby and is prescribed a new medicine. What should the nurse do before giving it? | Check its suitability in breastfeeding with the BNF or a pharmacist | Give it, because medicines never pass into breast milk | Advise her to stop breastfeeding permanently | Give it and watch the baby for a rash afterwards | Halve the dose without asking the prescriber | Many drugs pass into breast milk; checking the BNF or with a pharmacist protects the baby without stopping breastfeeding unnecessarily.
+SA3@1: Explain how a low serum albumin can cause toxicity from a highly protein-bound drug even when its total blood level is in range. | Many drugs, such as phenytoin, bind to albumin, and only the unbound (free) fraction is active. When albumin is low, from malnutrition, liver disease or critical illness, less drug is bound, so the free fraction rises. The total level, which measures bound and free drug, can look normal while the active drug is high, causing toxicity such as unsteadiness. Levels must be interpreted with the albumin, and signs of toxicity reported. | States only free drug is active ; Names a highly bound drug ; Links low albumin to a higher free fraction ; Explains that the total level can mislead ; Reports signs of toxicity or interprets with albumin
 
 ## Metabolism
 S: Metabolism (biotransformation) chemically changes drugs, mainly in the liver, usually making them easier to excrete. It can inactivate drugs, activate prodrugs or produce toxic metabolites.
 O: Describe the role of the liver and enzymes in drug metabolism
 O: Recognise interactions caused by enzyme inducers and inhibitors
+LV: Year 1 · Application
+EV: established | Enzyme inducers lower and enzyme inhibitors raise the levels of drugs metabolised by the same liver enzymes.
 T: Enzyme inducer | A substance that increases drug-metabolising enzyme activity
 T: Prodrug | An inactive drug converted into an active form by metabolism
 SUM: Metabolism happens mainly in the liver, often via cytochrome P450 enzymes.
@@ -171,11 +216,16 @@ H: Changes in metabolism
 - **Age**: neonates and older people may metabolise drugs more slowly.
 H: Toxic metabolites
 P: In paracetamol overdose, the normal pathways are overwhelmed and a toxic metabolite damages the liver. Acetylcysteine is the antidote; timing matters, so treat suspected overdose as an emergency.
+P: Stopping an interacting medicine matters too. When an inducer such as carbamazepine is stopped, levels of the drugs it was lowering can rise, so the prescriber may need to review their doses.
+!: Forgetting herbal remedies and grapefruit juice. St John's wort and grapefruit juice change enzyme activity, so include them in the medication history.
 K: Before giving a new medicine, check for interactions with enzyme inducers and inhibitors the person already takes.
 Q: Name two enzyme inducers. | Rifampicin, carbamazepine, phenytoin, St John's wort (any two).
 Q: What is a prodrug? | An inactive drug converted to its active form by metabolism (for example, codeine to morphine).
 M1#nursing-u04-06-q1@1: Which is an enzyme inhibitor that can raise levels of other drugs? | Clarithromycin | Rifampicin | St John's wort | Carbamazepine | Phenytoin | Clarithromycin inhibits the liver enzyme CYP3A4, raising levels of drugs it metabolises; rifampicin, St John's wort, carbamazepine and phenytoin are inducers.
 M2#nursing-u04-06-q2@2: A woman on a combined oral contraceptive starts rifampicin. What is the main risk? | Reduced contraceptive effect (enzyme induction) | Increased contraceptive side effects | No interaction between these medicines | Acute liver failure from the combination | A reduced effect of rifampicin itself | Rifampicin induces enzymes that metabolise hormonal contraceptives.
+M2@1: Why may codeine be ineffective in some people and dangerous in others? | Genetic differences in how fast they convert it to morphine | Codeine is not metabolised by the liver at all | Codeine is excreted unchanged through the lungs | Some people are allergic to every opioid | Codeine is only active when given intravenously | Codeine is a prodrug: poor metabolisers get little morphine and little relief, while ultra-rapid metabolisers can produce toxic morphine levels.
+M3@2: Mr Okoro (invented) takes simvastatin and is started on clarithromycin. A few days later he has muscle pain and weakness. What should the nurse do? | Suspect an interaction raising the statin level and report it promptly | Reassure him that muscle aches are normal with an infection | Give extra simvastatin to protect his muscles | Stop the clarithromycin herself and record the reason | Advise more exercise to ease the muscle stiffness | Clarithromycin inhibits the enzyme that metabolises simvastatin; high statin levels can cause muscle damage, so he needs prompt medical review.
+SA3@2: Explain enzyme induction and enzyme inhibition, with an example of each, and the nursing implications. | Many drugs are metabolised by liver enzymes such as cytochrome P450. An inducer, such as rifampicin, increases enzyme activity, so other drugs are broken down faster and may stop working: for example, hormonal contraception can fail. An inhibitor, such as clarithromycin, slows metabolism, so other drugs accumulate and cause toxicity. Nurses take a full medication history including herbal remedies, check new medicines for interactions in the BNF or with a pharmacist, monitor for reduced effect or toxicity, and report concerns. | Defines induction with an example ; Defines inhibition with an example ; Links induction to reduced effect ; Links inhibition to toxicity ; Checks interactions and history including herbal remedies
 
 ## Excretion
 S: Excretion removes drugs and their metabolites from the body, mainly through the kidneys, but also in bile, faeces, breath, sweat and breast milk. Reduced excretion causes accumulation and toxicity.

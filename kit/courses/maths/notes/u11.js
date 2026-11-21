@@ -640,6 +640,8 @@ SA2@1,2: For which k does the system x + y + z = 1, x + 2y + 3z = 2, 2x + 3y + 4
 S: The column space of a matrix is the span of its columns: every vector Ax can produce. It answers the question "for which b does Ax = b have a solution?", and its dimension is the rank.
 O: Find a basis for the column space
 O: Decide whether a vector lies in the column space
+LV: Year 1 · Application
+EV: established | Ax = b has a solution exactly when b lies in the column space of A, whose dimension is the rank and whose basis is the original pivot columns.
 T: Column space | col(A), the span of the columns of A, a subspace of ℝ^{m} for an m × n matrix
 T: Pivot columns | The columns of the original matrix that correspond to pivots in its echelon form
 H: Meaning
@@ -667,14 +669,18 @@ SUM: The column space is all possible outputs.
 SUM: It decides solvability.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
-NUM1#maths-u11-17-q1@1: What is the dimension of the column space of a 4 × 6 matrix with rank 3? | 3 | 0 |  | dim col(A) = rank = 3.
+NUM1#maths-u11-17-q1@1: What is the dimension of the column space of a 4 × 6 matrix with rank 3? | 3 | 0 |  | The column space has dimension equal to the rank, whatever the matrix's shape, so dim col(A) = rank = 3.
 M1#maths-u11-17-q2@1: Which vector is in the column space of [[1, 0], [0, 1], [0, 0]]? | (2, 5, 0) | (0, 0, 1) | (1, 1, 1) | (3, 0, 2) | (0, 1, 4) | Combinations of the columns have third component 0.
 M2#maths-u11-17-q3@2: Why take basis vectors from the original matrix's pivot columns rather than the reduced matrix? | Row operations change the column space but keep column dependencies | The reduced matrix has no columns | The original has fewer columns | They give the same vectors | It doesn't matter | Row operations preserve which columns are independent, not the columns themselves.
+NUM3@2: For which k is b = (1, k, 3) in the column space of [[1, 1], [2, 0], [3, 1]]? | 2 | 0 |  | Ax = (a + b, 2a, 3a + b) for x = (a, b). The first and third components need a + b = 1 and 3a + b = 3, so a = 1 and b = 0; the second component is then 2a = 2, so k = 2.
+SA2@1: Find a basis for the column space of A = [[1, 2, 0], [2, 4, 1], [3, 6, 1]], and explain why you take columns of the original matrix. | R₂ − 2R₁ and R₃ − 3R₁ both give (0, 0, 1), and R₃ − R₂ then gives a zero row, so the pivots are in columns 1 and 3. A basis is the original columns 1 and 3: (1, 2, 3) and (0, 1, 1), and the rank is 2. Column 2 is twice column 1, which is why it adds nothing. Row operations keep the dependencies between columns but change the columns themselves (the reduced columns have third entry 0), so the reduced matrix's columns don't span col(A). | Row reduces correctly ; Identifies pivot columns 1 and 3 ; Gives the basis (1, 2, 3) and (0, 1, 1) from the original matrix ; Explains that row operations change the columns but preserve their dependencies
 
 ## Row Space
 S: The row space of a matrix is the span of its rows. Row operations don't change it, so the non-zero rows of an echelon form give a basis, and it's the orthogonal complement of the null space.
 O: Find a basis for the row space by row reduction
 O: Relate the row space to the null space and rank
+LV: Year 1 · Application
+EV: established | Row operations do not change the row space, and the null space of A is the orthogonal complement of its row space.
 T: Row space | row(A), the span of the rows of A, a subspace of ℝⁿ for an m × n matrix
 T: Orthogonal complement | The set of all vectors perpendicular to every vector in a subspace
 H: Finding a basis
@@ -702,12 +708,16 @@ SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Pres
 SRC: Strang G, The fundamental theorem of linear algebra, American Mathematical Monthly 100(9), 848 | primary | 1993 | https://doi.org/10.2307/2324660
 NUM1#maths-u11-18-q1@1: What is the dimension of the row space in the example? | 2 | 0 |  | Two non-zero echelon rows remain, so the rank is 2.
 M1#maths-u11-18-q2@1: In which space does the row space of a 3 × 5 matrix lie? | ℝ^{5} | ℝ^{3} | ℝ^{15} | ℝ^{8} | ℝ^{2} | Each row of a 3 × 5 matrix has 5 entries, so the rows (and their span) live in ℝ^{5}.
-M2#maths-u11-18-q3@2: x is in null(A) and r is a row of A. What is r · x? | 0 | 1 | |r||x| | It depends on A | Undefined | Ax = 0 means each row dotted with x is zero.
+M2#maths-u11-18-q3@2: x is in null(A) and r is a row of A. What is r · x? | 0 | 1 | The product of their lengths | It depends on A | Undefined | Each entry of Ax is a row of A dotted with x, so Ax = 0 means every row dotted with x is zero.
+M3@2: A is a 3 × 5 matrix of rank 2. What are the dimensions of row(A) and null(A)? | 2 and 3 | 2 and 1 | 3 and 2 | 2 and 2 | 5 and 0 | row(A) has dimension equal to the rank, 2. null(A) is its orthogonal complement in ℝ^{5}, so it has dimension 5 − 2 = 3.
+SA2@2: Show that every vector in null(A) is perpendicular to every vector in row(A), and check it for A = [[1, 2, 3], [2, 4, 6]] and x = (−2, 1, 0). | If Ax = 0, then each row r of A satisfies r · x = 0, because the entries of Ax are exactly these dot products. Any vector in row(A) is c₁r₁ + … + c_{m}r_{m}, and its dot product with x is c₁(r₁ · x) + … + c_{m}(r_{m} · x) = 0. So null(A) is perpendicular to row(A). Here row(A) = span{(1, 2, 3)}, and (1, 2, 3) · (−2, 1, 0) = −2 + 2 + 0 = 0. | Notes that the entries of Ax are row dot products ; Extends to all combinations of rows by linearity ; Concludes null(A) ⟂ row(A) ; Verifies the dot product is 0 for the example
 
 ## Null Space
 S: The null space (kernel) of a matrix is the set of solutions of Ax = 0. It tells you whether solutions of Ax = b are unique and describes all of them: one particular solution plus anything in the null space.
 O: Find a basis for the null space
 O: Describe the general solution of Ax = b using the null space
+LV: Year 1 · Application
+EV: established | Every solution of a consistent system Ax = b is one particular solution plus a vector of the null space.
 T: Null space | null(A) = {x : Ax = 0}, a subspace of ℝⁿ
 T: Nullity | The dimension of the null space, equal to the number of free variables
 H: Finding a basis
@@ -734,14 +744,18 @@ SUM: The null space solves Ax = 0.
 SUM: It governs uniqueness.
 SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
-NUM1#maths-u11-19-q1@1: A is 4 × 7 with rank 4. What is the nullity? | 3 | 0 |  | 7 − 4 = 3 free variables.
+NUM1#maths-u11-19-q1@1: A is 4 × 7 with rank 4. What is the nullity? | 3 | 0 |  | By rank–nullity the nullity is the number of columns minus the rank: 7 − 4 = 3 free variables.
 M1#maths-u11-19-q2@1: Which vector is in the null space of [[1, 1], [2, 2]]? | (1, −1) | (1, 1) | (2, 1) | (0, 1) | (1, 2) | Multiplying gives (1 − 1, 2 − 2) = (0, 0), so (1, −1) is in the null space.
 M3#maths-u11-19-q3@2: Ax = b has a solution x_{p}, and null(A) is a line. How many solutions are there? | Infinitely many, forming a line through x_{p} | Exactly one | Exactly two | None | It depends on b only | Every x_{p} + tn (n spanning the null space) solves the system.
+M2@2: The general solution of Ax = b is (1, 0, 2) + s(1, −1, 0). Which vector is also a solution? | (3, −2, 2) | (2, −1, 0) | (1, −1, 0) | (0, 1, 0) | (3, −2, 4) | Taking s = 2 gives (1 + 2, 0 − 2, 2), which is (3, −2, 2). Every solution has third component 2, and (1, −1, 0) solves only Ax = 0.
+SA2@1,2: Solve x + y + 2z = 3, 2x + y + 3z = 5, and write the general solution as a particular solution plus the null space. | R₂ − 2R₁ gives −y − z = −1, so y = 1 − z. Then x = 3 − y − 2z = 2 − z. With z = t free, the solutions are (2 − t, 1 − t, t) = (2, 1, 0) + t(−1, −1, 1). Check: (2, 1, 0) gives 2 + 1 = 3 and 4 + 1 = 5, and (−1, −1, 1) gives −1 − 1 + 2 = 0 and −2 − 1 + 3 = 0, so it spans the null space. The solution set is a line through (2, 1, 0). | Eliminates correctly to find y = 1 − z ; Expresses x in terms of the free variable ; Writes the solution as (2, 1, 0) + t(−1, −1, 1) ; Checks the particular solution and the null space vector
 
 ## Systems of Linear Equations
 S: Systems of linear equations appear everywhere: balancing chemical reactions, network flows, economics, circuits and fitting curves. Gaussian elimination solves them systematically and shows whether there are no, one or infinitely many solutions.
 O: Solve systems by Gaussian elimination on the augmented matrix
 O: Classify systems as inconsistent, uniquely solvable or underdetermined
+LV: A level · Application
+EV: established | Gaussian elimination decides whether a linear system has no solution, exactly one or infinitely many, and finds them.
 T: Augmented matrix | [A ∣ b], the coefficients with the right-hand side attached
 T: Consistent system | A system with at least one solution
 H: Elimination
@@ -772,11 +786,15 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-20-q1@1: Solve x + y = 5, x − y = 1. Give x. | 3 | 0 |  | Adding gives 2x = 6, so x = 3 (and y = 2).
 M1#maths-u11-20-q2@1: The system x + y = 2, 2x + 2y = 5 has how many solutions? | None | One | Two | Infinitely many | Three | The second equation would need x + y = 2.5, contradicting the first.
 M2#maths-u11-20-q3@2: Why is partial pivoting used in Gaussian elimination? | Choosing large pivots limits the growth of rounding errors | It reduces the number of equations | It makes matrices symmetric | It avoids back-substitution | It's required for exact arithmetic | Dividing by tiny pivots magnifies errors.
+NUM3@2: For which value of k does the system x + 2y = 3, 2x + ky = 6 have infinitely many solutions? | 4 | 0 |  | When k = 4 the second equation is exactly twice the first, so the two lines coincide. For any other k the determinant 1 × k − 2 × 2, which is k − 4, is non-zero and the solution is unique.
+SA2@1,2: Use Gaussian elimination to classify the system x + y + z = 2, x + 2y + 3z = 5, 2x + 3y + 4z = 8, and interpret the result geometrically. | R₂ − R₁ gives y + 2z = 3, and R₃ − 2R₁ gives y + 2z = 4. Subtracting these gives 0 = 1, a row [0 0 0 ∣ 1], so the system is inconsistent: there is no solution. The coefficient rows are dependent (row 3 = row 1 + row 2) but the right-hand sides aren't (2 + 5 ≠ 8). Geometrically the three planes have no common point; no two are parallel, so they meet in pairs along three parallel lines, forming a triangular prism. | Performs the eliminations correctly ; Reaches a contradictory row 0 = 1 ; Concludes there is no solution ; Interprets it as three planes forming a prism, none parallel
 
 ## Linear Transformations
 S: A linear transformation is a function between vector spaces that respects addition and scaling. Every linear map between finite-dimensional spaces is given by a matrix, so rotations, reflections, projections and shears can all be computed by multiplication.
 O: Check linearity and find the matrix of a linear map
 O: Describe kernels, images and common geometric transformations
+LV: Year 1 · Application
+EV: established | A map between finite-dimensional spaces is linear exactly when it is given by a matrix, whose columns are the images of the basis vectors.
 T: Linear transformation | T with T(u + v) = T(u) + T(v) and T(cv) = cT(v)
 T: Standard matrix | The matrix whose columns are T(e₁), …, T(eₙ)
 H: Matrices of maps
@@ -805,15 +823,19 @@ SUM: Linear maps are matrices.
 SUM: Columns are images of basis vectors.
 SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
-NUM1#maths-u11-21-q1@1: The shear [[1, 2], [0, 1]] maps (3, 1) to (x, y). Find x. | 5 | 0 |  | x = 3 + 2 × 1 = 5 (and y = 1).
+NUM1#maths-u11-21-q1@1: The shear [[1, 2], [0, 1]] maps (3, 1) to (x, y). Find x. | 5 | 0 |  | [[1, 2], [0, 1]](3, 1) has first component 1 × 3 + 2 × 1 = 5, so x = 5 (and y = 1).
 M1#maths-u11-21-q2@1: Which map from ℝ^{2} to ℝ^{2} is linear? | (x, y) ↦ (2x, x − y) | (x, y) ↦ (x + 1, y) | (x, y) ↦ (x^{2}, y) | (x, y) ↦ (xy, y) | (x, y) ↦ (|x|, y) | Each component is a linear combination of x and y with no constant.
 M2#maths-u11-21-q3@2: What is the kernel of the projection onto the x-axis? | The y-axis | The x-axis | Only the origin | All of ℝ^{2} | The line y = x | Projection onto the x-axis sends (0, y) to the origin, so the kernel is the y-axis.
 M2#maths-u11-21-q4@2: Which matrix rotates the plane 90° anticlockwise? | [[0, −1], [1, 0]] | [[0, 1], [−1, 0]] | [[1, 0], [0, −1]] | [[−1, 0], [0, −1]] | [[1, 1], [0, 1]] | It sends i = (1, 0) to (0, 1) and j = (0, 1) to (−1, 0).
+NUM3@1,2: T reflects the plane in the line y = 2x. Find the first component of T(5, 0). | -3 | 0 |  | With d = (1, 2), the reflection of v is 2(v · d)/(d · d) d − v. For v = (5, 0), v · d = 5 and d · d = 5, so 2(v · d)/(d · d) d = (2, 4), and the image is (2, 4) − (5, 0) = (−3, 4).
+SA2@2: For T(x, y, z) = (x + y, y + z) from ℝ^{3} to ℝ^{2}, find the matrix of T, its kernel and its image, and check the rank–nullity theorem. | T(e₁) = (1, 0), T(e₂) = (1, 1) and T(e₃) = (0, 1), so the matrix is [[1, 1, 0], [0, 1, 1]]. The kernel needs x + y = 0 and y + z = 0, so x = −y and z = −y: ker T = span{(1, −1, 1)}, of dimension 1. The matrix has rank 2, so the image is all of ℝ^{2}. Check: 1 + 2 = 3, the dimension of the domain. | Builds the matrix from the images of the basis vectors ; Solves for the kernel, span{(1, −1, 1)} ; Identifies the image as ℝ^{2} (rank 2) ; Checks that 1 + 2 = 3
 
 ## Change of Basis
 S: The same vector has different coordinates in different bases, and the same linear map has different matrices. Change of basis converts between them, and choosing a clever basis can make a problem much simpler.
 O: Convert coordinates between bases using a change-of-basis matrix
 O: Write the matrix of a linear map in a new basis
+LV: Year 1 · Application
+EV: established | Coordinates change by old = P × new, and the matrix of a linear map in the new basis is P^{−1}AP.
 T: Change-of-basis matrix | P, whose columns are the new basis vectors written in old coordinates
 T: Coordinates | [v]_{B}, the coefficients expressing v in the basis B
 H: Coordinates
@@ -841,14 +863,18 @@ SUM: Coordinates depend on the basis.
 SUM: A good basis simplifies problems.
 SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
-NUM1#maths-u11-22-q1@1: In the example, what is the second new coordinate of v = (4, 3)? | 2 | 0 |  | [v]_{new} = (1, 2).
+NUM1#maths-u11-22-q1@1: In the example, what is the second new coordinate of v = (4, 3)? | 2 | 0 |  | Using P^{−1} = [[1, −1], [−1, 2]], the new coordinates are (4 − 3, −4 + 6), which is (1, 2), so the second is 2.
 M1#maths-u11-22-q2@1: The basis {(1, 0), (0, 2)} is used. What are the coordinates of (3, 4)? | (3, 2) | (3, 4) | (3, 8) | (1, 2) | (4, 3) | Solve a(1, 0) + b(0, 2) = (3, 4): a = 3 and 2b = 4, so the coordinates are (3, 2).
 M2#maths-u11-22-q3@2: Why are orthonormal bases convenient for changing coordinates? | The inverse of the change-of-basis matrix is just its transpose | They have no coordinates | They make every matrix diagonal | They only exist in 2D | They aren't convenient | With orthonormal columns PᵀP = I, so P^{−1} = Pᵀ and no matrix inversion is needed.
+NUM3@2: A = [[3, 1], [0, 2]] in the standard basis. Find the (1, 2) entry of its matrix in the basis b₁ = (1, 0), b₂ = (1, 1). | 2 | 0 |  | A b₂ = A(1, 1) = (4, 2), and (4, 2) = 2b₁ + 2b₂, so the second column of the new matrix is (2, 2). In full, P^{−1}AP = [[3, 2], [0, 2]].
+SA2@1,2: Explain why [v]_{old} = P[v]_{new} when the columns of P are the new basis vectors, and derive the matrix P^{−1}AP of a map in the new basis. | If [v]_{new} = (c₁, …, cₙ), then v = c₁b₁ + … + cₙbₙ, and that combination of the columns of P is exactly P[v]_{new}, written in old coordinates. So [v]_{old} = P[v]_{new} and [v]_{new} = P^{−1}[v]_{old}. To apply the map in new coordinates: convert to old (multiply by P), apply A, then convert back (multiply by P^{−1}). So the new matrix is P^{−1}AP. | Writes v as a combination of the new basis vectors ; Identifies the combination as P[v]_{new} ; Inverts to get new coordinates ; Composes P, A and P^{−1} in the right order
 
 ## Similarity Transformations
 S: Two matrices are similar when they represent the same linear map in different bases: B = P^{−1}AP. Similar matrices share all basis-independent features (eigenvalues, trace, determinant, rank), so similarity is how we find the simplest form of a map.
 O: Recognise similar matrices and their shared invariants
 O: Use similarity to simplify computations
+LV: Year 1 · Application
+EV: established | Similar matrices represent one linear map in two bases, so they share their characteristic polynomial, eigenvalues, trace, determinant and rank.
 T: Similar matrices | A and B with B = P^{−1}AP for some invertible P
 T: Similarity invariant | A property shared by similar matrices: characteristic polynomial, eigenvalues, trace, determinant, rank
 H: Invariants
@@ -875,14 +901,18 @@ SUM: Similarity changes basis, not the map.
 SUM: Invariants survive similarity.
 SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
-NUM1#maths-u11-23-q1@1: B is similar to A, and det A = 7. Find det B. | 7 | 0 |  | det(P^{−1}AP) = det A.
+NUM1#maths-u11-23-q1@1: B is similar to A, and det A = 7. Find det B. | 7 | 0 |  | det(P^{−1}AP) = det(P^{−1}) det A det P = det A, since det(P^{−1}) det P = 1, so det B = 7.
 M1#maths-u11-23-q2@1: Which property do similar matrices always share? | Their eigenvalues | Their entries | Their eigenvectors | Their first columns | Their inverses' entries | Eigenvalues are basis-independent; eigenvectors change with the basis.
 M3#maths-u11-23-q3@2: A has trace 5 and B has trace 6. What can you conclude? | They aren't similar | They are similar | They have equal determinants | They have the same eigenvectors | Nothing at all | Trace is a similarity invariant, so different traces rule similarity out.
+M2@1: Which matrix is similar to [[2, 1], [0, 3]]? | [[3, 0], [5, 2]] | [[2, 0], [0, 2]] | [[1, 1], [0, 3]] | [[5, 0], [0, 1]] | [[2, 1], [0, 2]] | Similar matrices share trace 5 and determinant 6; only [[3, 0], [5, 2]] has both. Both matrices have the distinct eigenvalues 2 and 3, so both are similar to diag(2, 3).
+SA2@1,2: Prove that similar matrices have the same characteristic polynomial, and explain why [[1, 1], [0, 1]] isn't similar to I even though their characteristic polynomials are equal. | If B = P^{−1}AP, then B − λI = P^{−1}(A − λI)P, so det(B − λI) = det(P^{−1}) det(A − λI) det P = det(A − λI). For the second part: any matrix similar to I is P^{−1}IP = I, so I is similar only to itself. [[1, 1], [0, 1]] has the same characteristic polynomial (λ − 1)^{2} but isn't I, so it isn't similar to I; it isn't diagonalisable. | Writes B − λI = P^{−1}(A − λI)P ; Uses multiplicativity of the determinant ; Shows P^{−1}IP = I for every P ; Concludes the shear isn't similar to I despite equal polynomials
 
 ## Eigenvalues
 S: An eigenvalue λ of a square matrix A is a number for which Av = λv has a non-zero solution v. Eigenvalues reveal how a linear map stretches space, and they govern stability, vibrations, Markov chains and quantum energy levels.
 O: Find eigenvalues by solving the characteristic equation
 O: Use the trace and determinant as checks
+LV: Year 1 · Application
+EV: established | The eigenvalues of a square matrix are the roots of det(A − λI) = 0, and they sum to the trace and multiply to the determinant.
 T: Eigenvalue | λ with Av = λv for some non-zero v
 T: Characteristic equation | det(A − λI) = 0, whose roots are the eigenvalues
 H: Finding eigenvalues
@@ -917,6 +947,8 @@ NUM1#maths-u11-24-q1@1: Find the product of the eigenvalues of [[4, 1], [2, 3]].
 M1#maths-u11-24-q2@1: A has eigenvalue 3. What is an eigenvalue of A^{2} + I? | 10 | 9 | 4 | 3 | 7 | If Av = 3v, then (A^{2} + I)v = (9 + 1)v.
 M2#maths-u11-24-q3@2: Why does a singular matrix have 0 as an eigenvalue? | Some non-zero v has Av = 0 = 0v | Its trace is zero | Its entries are zero | It has no eigenvalues | It doesn't | Singular means a non-trivial null space, which is the eigenspace for 0.
 M2#maths-u11-24-q4@2: Why does the rotation matrix [[0, −1], [1, 0]] have no real eigenvalues? | It turns every vector 90°, so none is just stretched (λ = ±i) | Its determinant is zero | It has one repeated eigenvalue 1 | All matrices have real eigenvalues | Its eigenvalues are 0 | The characteristic equation λ^{2} + 1 = 0 has no real roots.
+NUM3@1,2: A is 3 × 3 with eigenvalues 1, 2 and 4. Find det(A^{2} + I). | 170 | 0 |  | If Av = λv then (A^{2} + I)v = (λ^{2} + 1)v, so the eigenvalues of A^{2} + I are 2, 5 and 17, and the determinant is their product, 2 × 5 × 17 = 170.
+SA2@1,2: Find the eigenvalues of [[2, 3], [3, −6]], showing the characteristic equation, and check them with the trace and determinant. | det(A − λI) = (2 − λ)(−6 − λ) − 9 = λ^{2} + 4λ − 21. Using the trace −4 and determinant −12 − 9 = −21 gives the same equation. It factorises as (λ + 7)(λ − 3) = 0, so λ = 3 or λ = −7. Check: 3 + (−7) = −4, the trace, and 3 × (−7) = −21, the determinant. | Forms det(A − λI) correctly ; Obtains λ^{2} + 4λ − 21 = 0 ; Solves to get 3 and −7 ; Checks the sum against the trace and the product against the determinant
 
 ## Eigenvectors
 S: An eigenvector is a direction a linear map doesn't turn: it's only stretched by its eigenvalue. Eigenvectors give the natural axes of a transformation, the modes of a vibrating system and the long-run state of a Markov chain.

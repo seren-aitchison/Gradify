@@ -2714,6 +2714,7 @@ SA2@2: A Cox model gives a hazard ratio of 0.70 (95% CI 0.55 to 0.89) for a new 
 S: Spatial statistics analyses data where location matters: pollution readings, disease cases, mineral deposits, house prices. Nearby observations tend to be similar, and spatial methods use that structure to map, predict and test.
 O: Measure spatial autocorrelation and compute an empirical semivariogram value
 O: Describe kriging and point pattern analysis
+LV: Year 3 · Application
 T: Spatial autocorrelation | The tendency of nearby locations to have similar values (Tobler: "near things are more related than distant things")
 T: Semivariogram | γ(h) = ½E[(Z(s + h) − Z(s))^{2}], describing how dissimilarity grows with distance h
 H: Geostatistics
@@ -2738,16 +2739,20 @@ Q: What is kriging? | Optimal spatial interpolation based on the semivariogram.
 Q: What does a positive Moran's I suggest? | Similar values cluster together.
 SUM: Location matters in spatial data.
 SUM: Variograms and kriging use that structure.
+EV: established | Nearby spatial observations are usually positively correlated, so treating them as independent overstates precision.
 SRC: Cressie NAC, Statistics for Spatial Data (revised edn, Wiley 1993) | secondary | 1993 | https://www.wiley.com/
 SRC: Tobler WR, A computer movie simulating urban growth in the Detroit region, Economic Geography 46, 234 | primary | 1970 | https://doi.org/10.2307/143141
 NUM1#maths-u13-71-q1@1: Three pairs at distance h have differences 3, 1 and 2. Find γ(h), to 3 decimal places. | 2.333 | 0.001 |  | (9 + 1 + 4)/(2 × 3) = 14/6 ≈ 2.333.
 M1#maths-u13-71-q2@1: What does the range of a semivariogram represent? | The distance beyond which observations are effectively uncorrelated | The largest value measured | The number of sites | The measurement error | The largest difference measured between any two sites | Beyond the range, the semivariogram levels off at the sill.
 M2#maths-u13-71-q3@2: Disease rates for large regions are correlated with average income. Why can't we conclude the same for individuals? | The ecological fallacy | Kriging error | Spatial randomness | The nugget effect | Survivorship bias | Group-level associations needn't hold for the individuals within them.
+NUM2@1: Five pairs of sites at distance h have differences 1, −2, 3, 0 and 2. Find the empirical semivariance γ(h). | 1.8 | 0.001 |  | Squared differences 1, 4, 9, 0 and 4 sum to 18, so γ(h) = 18/(2 × 5) = 1.8.
+SA3@2: Explain how kriging differs from simple interpolation such as inverse-distance weighting, and why ignoring spatial correlation in a regression of pollution readings overstates precision. | Kriging uses a semivariogram model fitted to the data to choose weights that minimise the prediction variance, accounting for how correlation decays with distance and for clustering of the sites, and it gives a prediction error at every location. Inverse-distance weighting uses fixed weights with no error estimate. Nearby readings share information, so n correlated readings carry less information than n independent ones; treating them as independent makes standard errors too small and p-values too optimistic. | Says kriging uses a fitted semivariogram ; Says it minimises prediction variance ; Notes it gives prediction errors ; Contrasts with fixed inverse-distance weights ; Explains correlated readings carry less information
 
 ## Reliability Analysis
 S: Reliability analysis studies how long products and systems work before failing, and how design choices such as redundancy change that. It guides maintenance, warranties and safety in engineering, from aircraft to power grids.
 O: Calculate the reliability of series and parallel systems
 O: Use lifetime distributions and the mean time to failure
+LV: Year 2 · Application
 T: Reliability function | R(t) = P(T > t), the probability of working beyond time t
 T: Mean time to failure | MTTF = E(T) = ∫₀^∞ R(t) dt
 H: Lifetimes
@@ -2773,16 +2778,20 @@ Q: What is the MTTF for a constant failure rate of 0.002 per hour? | 500 hours.
 Q: What does the bathtub curve describe? | Early failures, a period of constant random failures, then wear-out.
 SUM: Reliability quantifies time to failure.
 SUM: Redundancy and design change system reliability.
+EV: established | For independent components, series reliability is the product of the reliabilities, and parallel unreliability is the product of the unreliabilities.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, chapter 8: Assessing product reliability | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 SRC: Meeker WQ, Escobar LA, Pascual FG, Statistical Methods for Reliability Data (2nd edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u13-72-q1@1: Two independent components with reliabilities 0.8 and 0.7 are in parallel. Find the system reliability. | 0.94 | 0.001 |  | 1 − 0.2 × 0.3 = 1 − 0.06 = 0.94.
 M1#maths-u13-72-q2@1: What happens to a series system's reliability as components are added? | It falls | It rises | It stays the same | It becomes 1 | It becomes 0.5 | Every extra component is another way for the system to fail.
 M2#maths-u13-72-q3@2: Why can redundancy fail to deliver its calculated reliability? | Common-cause failures can disable all copies at once | Parallel systems are always weaker | Redundancy reduces MTTF | Components can't be duplicated | It always delivers | The parallel formula assumes independent failures, which shared causes break.
+NUM3@1,2: A system has two subsystems in series; each subsystem has two independent components in parallel, each with reliability 0.9. Find the system reliability, to 4 decimal places. | 0.9801 | 0.0001 |  | Each parallel subsystem has reliability 1 − 0.1^{2} = 0.99, and in series 0.99 × 0.99 = 0.9801.
+SA3@2: A component has a constant failure rate of 0.002 per hour. Find its MTTF and the probability it survives 100 hours, and explain when a constant hazard is a poor model. | With constant hazard, lifetime is exponential: MTTF = 1/λ = 500 hours and R(100) = e^{−0.002 × 100} = e^{−0.2} ≈ 0.819. A constant hazard means the component doesn't age: a used one is as good as new. That fits the flat middle of the bathtub curve (random failures) but not early-life failures (falling hazard) or wear-out (rising hazard), where a Weibull model with shape below or above 1 is better. | Gets MTTF = 500 hours ; Gets R(100) ≈ 0.819 ; Explains the memoryless no-ageing property ; Relates to the bathtub curve ; Suggests a Weibull model for changing hazard
 
 ## Extreme Value Theory
 S: Extreme value theory gives the statistical methods for estimating the probabilities of rare, extreme events from limited data: floods higher than any recorded, record winds, market crashes. It extrapolates into the tail on a sound mathematical basis.
 O: Describe the block maxima and peaks-over-threshold approaches
 O: Estimate an exceedance probability from a fitted tail model
+LV: Year 3 · Application
 T: Block maxima | Fitting a GEV distribution to the maximum in each block, such as each year
 T: Peaks over threshold | Fitting a generalised Pareto distribution to the amounts by which data exceed a high threshold
 H: Approaches
@@ -2807,16 +2816,20 @@ Q: Which distribution models exceedances over a high threshold? | The generalise
 Q: Why might peaks over threshold be preferred to block maxima? | It uses more of the extreme data.
 SUM: EVT estimates rare-event probabilities.
 SUM: Tail models need careful thresholds and honest intervals.
+EV: established | Exceedances over a high threshold approximately follow a generalised Pareto distribution, which justifies extrapolation into the tail.
 SRC: Coles S, An Introduction to Statistical Modeling of Extreme Values (Springer 2001) | secondary | 2001 | https://link.springer.com/
 SRC: Davison AC, Smith RL, Models for exceedances over high thresholds, Journal of the Royal Statistical Society B 52(3), 393 | primary | 1990 | https://doi.org/10.1111/j.2517-6161.1990.tb01796.x
 NUM1#maths-u13-73-q1@1: Exceedances over u = 20 occur with rate 0.1 and are exponential with σ = 5. Find P(X > 30), to 4 decimal places. | 0.0135 | 0.0002 |  | 0.1 × e^{−10/5} = 0.1 × e^{−2} ≈ 0.0135.
 M1#maths-u13-73-q2@1: What is a weakness of the block maxima method? | It discards all values in each block except the largest | It can't estimate return levels | It can't be used to estimate return levels at all | It ignores extremes | It assumes normality | Only one value per block is used, wasting other large observations.
 M2#maths-u13-73-q3@2: Why are confidence intervals for a 1,000-year return level usually very wide? | Extrapolating far beyond the data magnifies parameter uncertainty | Floods follow a normal law | Extremes are normal | Data are always biased | They're calculated wrongly by standard software | Small changes in the tail shape make huge differences far out in the tail.
+NUM3@2: Daily exceedances over u = 10 mm occur at rate 0.05 and are exponential with σ = 2 mm. Find the rainfall level exceeded with probability 0.001 on a day, to 2 decimal places. | 17.82 | 0.01 | mm | 0.05e^{−(x − 10)/2} = 0.001 gives e^{−(x − 10)/2} = 0.02, so x = 10 + 2 ln 50 ≈ 17.82 mm.
+SA3@2: Explain why fitting a normal distribution to all daily river flows is a poor way to estimate a 100-year flood, and how peaks-over-threshold analysis does better. | A normal fit is driven by the bulk of ordinary days and assumes a light, symmetric tail, while flows are skewed with heavier tails, so it badly underestimates extremes. Peaks over threshold fits a generalised Pareto distribution only to exceedances of a high threshold, the part of the data relevant to floods, with theory justifying that form. The threshold should be chosen with diagnostic plots, exceedances declustered so one storm counts once, and return levels reported with wide (profile likelihood) intervals, perhaps allowing for climate trends. | Says the normal fit is driven by typical days ; Notes normal tails are too light ; Describes fitting a GPD to threshold exceedances ; Mentions threshold choice or declustering ; Mentions wide intervals or non-stationarity
 
 ## Decision Theory
 S: Statistical decision theory chooses actions under uncertainty by weighing the consequences of each action against the probabilities of each state of the world. It links statistics to economics, medicine and machine learning.
 O: Choose an action by minimising expected loss
 O: Describe Bayes and minimax decision rules and the value of information
+LV: Year 2 · Application
 T: Loss function | L(action, state): the cost of taking an action when a particular state is true
 T: Bayes decision | The action that minimises expected loss under the current (posterior) probabilities
 H: The framework
@@ -2842,16 +2855,20 @@ Q: Under squared-error loss, which posterior summary is the Bayes estimate? | Th
 Q: What does the minimax rule minimise? | The worst-case (maximum) loss.
 SUM: Decision theory weighs consequences by probabilities.
 SUM: Information is worth its expected improvement.
+EV: established | The Bayes decision rule chooses the action with the smallest expected loss under the probabilities of the states.
 SRC: Berger JO, Statistical Decision Theory and Bayesian Analysis (2nd edn, Springer 1985) | secondary | 1985 | https://link.springer.com/
 SRC: Wald A, Statistical Decision Functions (Wiley 1950) | secondary | 1950 | https://archive.org/
-NUM1#maths-u13-74-q1@1: An action costs 100 if a state with probability 0.15 occurs and 0 otherwise. Find its expected loss. | 15 | 0 |  | 100 × 0.15 = 15.
+NUM1#maths-u13-74-q1@1: An action costs 100 if a state with probability 0.15 occurs and 0 otherwise. Find its expected loss. | 15 | 0 |  | Expected loss = Σ loss × probability = 100 × 0.15 + 0 × 0.85 = 15.
 M1#maths-u13-74-q2@1: Under absolute-error loss, which posterior summary minimises expected loss? | The posterior median | The posterior mean | The posterior mode | The prior mean | The maximum | The median minimises expected absolute deviation.
 M2#maths-u13-74-q3@2: When is it not worth collecting more data before deciding? | When the expected value of the information is less than its cost | When the prior distribution is uniform | Always | When the sample is already large | When losses are equal | Information is only worth buying if it's expected to improve the decision by more than it costs.
+NUM3@1: Treating a patient costs 10 whatever happens; not treating costs 100 if the patient has the disease and 0 otherwise. At what probability of disease are the two actions equally good? | 0.1 | 0.001 |  | Expected losses are 10 and 100p, which are equal when p = 0.1; treat whenever P(disease) > 0.1.
+SA3@2: For the umbrella example (P(rain) = 0.3; umbrella costs 1; no umbrella costs 5 if it rains), find the minimax action and the expected value of perfect information. | Minimax: the worst case for carrying the umbrella is 1 and for not carrying it is 5, so minimax also says carry it. Without information the best expected loss is 1 (carry). With perfect information you would carry the umbrella only on rainy days: expected loss 0.3 × 1 + 0.7 × 0 = 0.3. So EVPI = 1 − 0.3 = 0.7: a perfect forecast is worth paying up to 0.7 per day. | Finds worst-case losses 1 and 5 ; Chooses carry by minimax ; Finds expected loss 0.3 with perfect information ; Gets EVPI = 0.7 ; Interprets EVPI as the most worth paying
 
 ## Statistical Learning
 S: Statistical learning builds models that learn patterns from data to make predictions or find structure, bridging statistics and machine learning. Its central ideas, the bias–variance trade-off and honest validation, guard against models that fit noise.
 O: Distinguish supervised and unsupervised learning and explain the bias–variance trade-off
 O: Use cross-validation to estimate prediction error
+LV: Year 3 · Application
 T: Supervised learning | Learning to predict a labelled outcome from inputs (regression or classification)
 T: Cross-validation | Estimating out-of-sample error by repeatedly training on part of the data and testing on the rest
 H: Types of learning
@@ -2877,9 +2894,12 @@ Q: What is overfitting? | Fitting noise in the training data, so performance on 
 Q: Which part of the expected test error can no model reduce? | The irreducible noise.
 SUM: Statistical learning predicts from data.
 SUM: Validation keeps it honest.
+EV: established | Expected test error decomposes into squared bias, variance and irreducible noise, and only held-out data estimate it honestly.
 SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
-NUM1#maths-u13-75-q1@1: A model has squared bias 1.5, variance 2.5 and noise variance 1. Find the expected test MSE. | 5 | 0 |  | 1.5 + 2.5 + 1 = 5.
+NUM1#maths-u13-75-q1@1: A model has squared bias 1.5, variance 2.5 and noise variance 1. Find the expected test MSE. | 5 | 0 |  | Expected test MSE = bias^{2} + variance + noise = 1.5 + 2.5 + 1 = 5.
 M1#maths-u13-75-q2@1: Which is an unsupervised learning task? | Grouping customers by purchasing behaviour without labels | Predicting house prices | Classifying emails as spam | Forecasting sales | Diagnosing disease from labelled scans | No outcome labels are used: it's clustering.
 M3#maths-u13-75-q3@2: A model's training error keeps falling as complexity grows, but its validation error starts rising. What's happening? | Overfitting: variance now outweighs the drop in bias | Underfitting: the model is still too simple | The data are too simple | The validation set is wrong | Bias is increasing as complexity grows | Beyond the optimum, extra flexibility fits noise.
+NUM2@2: Five-fold cross-validation gives error rates 0.20, 0.18, 0.22, 0.19 and 0.21. Find the cross-validated error. | 0.2 | 0.001 |  | The CV estimate is the average over folds: 1.00/5 = 0.20.
+SA2@1,2: A researcher selects the 50 genes most correlated with the outcome using all 200 samples, then reports a 5-fold cross-validated accuracy of 95% for a classifier on those genes. Explain what is wrong and how to fix it. | This is leakage: the gene selection used the test folds' outcomes, so each fold's test data have already influenced the model, and the CV accuracy is optimistic (it can be high even with pure noise). Every step that learns from data, including feature selection, scaling and tuning, must be repeated inside each training fold, using only that fold's training data; nested cross-validation or a truly untouched test set then gives an honest estimate. | Identifies leakage ; Explains selection used test outcomes ; Says the accuracy is optimistic ; Puts selection inside each fold ; Mentions nested CV or a held-out test set
 `;
