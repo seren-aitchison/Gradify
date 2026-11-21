@@ -78,3 +78,17 @@ test("layouts keep labels inside the picture: return steps to the first box, ser
     assert.ok(Math.abs(title - key) >= 14, `x title at ${title}, key at ${key}`);
   }
 });
+
+test("wrapped category labels stay clear of the x title on a phone", async () => {
+  const { render } = await import("../kit/diagrams/renderers.js");
+  await import("../kit/diagrams/chem-renderers.js");
+  // short words, so the labels wrap (onto three lines on a phone) instead of turning
+  const out = render({ id: "t-wrap", renderer: "trend", kind: "bars", xTitle: "the solution", claims: [],
+    items: [{ key: "a", label: "salt in warm tap water", value: 3 }, { key: "b", label: "acid in cold sea water", value: 1 }, { key: "c", label: "c", value: 2 }, { key: "d", label: "d", value: 4 }] });
+  for (const svg of [out.wide, out.narrow]) {
+    const texts = [...svg.matchAll(/<text x="[\d.]+" y="([\d.]+)"[^>]*>([^<]*)<\/text>/g)].map((m) => [+m[1], m[2]]);
+    const title = texts.find(([, t]) => t === "the solution")[0], lines = texts.filter(([, t]) => /salt|acid|warm|cold|tap|sea|water|in /.test(t)).map(([y]) => y);
+    assert.ok(lines.length >= 2, "category lines found");
+    assert.ok(title - Math.max(...lines) >= 12, `title at ${title}, lowest category line at ${Math.max(...lines)}`);
+  }
+});

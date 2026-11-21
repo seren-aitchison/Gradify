@@ -61,6 +61,8 @@ function trend(spec, W, narrow) {
   const raw = items.map((it) => String(it.label ?? it.key)), cwid = (t) => ascii(t).length * lblSize * 0.52, fitN = Math.max(3, Math.floor((slot - 4) / (lblSize * 0.52)));
   const turn = narrow && n > 12 ? -60 : raw.some((t) => t.split(" ").some((w) => cwid(w) > slot - 4)) ? -40 : 0;
   if (turn === -40) pad.b = Math.max(pad.b, 26 + Math.max(...raw.map(cwid)) * 0.66 + (spec.xTitle ? 18 : 0));
+  // labels wrapped onto a third line or more push the axis title (and the key) down by a line each
+  else if (!turn) pad.b += 14 * Math.max(0, Math.max(...raw.map((t) => wrap(t, cwid(t) > slot - 4 ? fitN : 99).length)) - 2);
   // axes and gridlines
   const ticks = spec.ticks || (log ? [] : niceTicks(lo, hi, 5));
   for (const t of ticks) s += line(pad.l, sy(t), W - pad.r, sy(t), { stroke: C.grid, w: 1 }) + text(pad.l - 8, sy(t), fmtNum(t), { size: 11.5, anchor: "end", fill: C.soft });
