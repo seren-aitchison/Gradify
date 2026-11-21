@@ -206,35 +206,100 @@ function latticeChecks(spec) {
 //   claims: [{type: "net", steps: [eq], net} | {type: "regenerated", species, steps} | {type: "yield", steps: [..], overall}
 //            | {type: "atomEconomy", eq, product, value} | {type: "equation", eq}]
 function flow(spec, W, narrow) {
-  const N = spec.nodes, byId = Object.fromEntries(N.map((n) => [n.id, n]));
-  const pos = {}, bw = narrow ? 150 : spec.boxWidth || 150;
+  const N = spec.nodes, pos = {}, bw = narrow ? 150 : spec.boxWidth || 150, CH = 6.4; // CH: px per 11px bold character
+  // box sizes first: the narrow layouts space the boxes by them
+  const lineW = narrow ? (spec.layout === "cycle" && N.length > 2 ? 13 : 22) : Math.max(12, Math.floor((spec.layout === "line" ? (W - 20) / N.length - 16 : bw) / 7.6));
+  const dims = Object.fromEntries(N.map((n) => { const ls = wrap(n.label, lineW), sub = n.sub ? wrap(n.sub, lineW + 4) : []; return [n.id, { ls, sub, w: Math.min(spec.layout === "line" && !narrow ? (W - 20) / N.length - 18 : bw + 30, Math.max(...ls.map((l) => l.length), ...sub.map((l) => l.length * 0.86)) * 7.8 + 24), h: ls.length * 17 + sub.length * 15 + 16 }]; }));
+  const edgeOf = (a, b) => (spec.edges || []).find((e) => (e.from === a && e.to === b) || (e.from === b && e.to === a));
+  // One column on a phone. Boxes go in depth-first order from the starting boxes, so a branch follows its parent. A
+  // step between neighbours is a straight arrow with its label on the right; a step that skips boxes (or runs back
+  // against another) takes a lane down the left side, its label left of the centre line in the gap above the box it
+  // reaches. Each gap is tall enough for the labels in it.
+  const lanes = new Map(); // edge -> lane number
+  const stack = () => {
+    const E = spec.edges || [], into = new Set(E.map((e) => e.to)), order = [], seen = new Set();
+    const visit = (id) => { if (seen.has(id)) return; seen.add(id); order.push(id); for (const e of E) if (e.from === id) visit(e.to); };
+    N.filter((n) => !into.has(n.id)).forEach((n) => visit(n.id)); N.forEach((n) => visit(n.id));
+    const at = Object.fromEntries(order.map((id, i) => [id, i])), direct = new Set();
+    for (const e of E) { const i = at[e.from], j = at[e.to];
+      if (Math.abs(i - j) === 1 && ![...direct].some((d) => (d.from === e.to && d.to === e.from) || (d.from === e.from && d.to === e.to))) direct.add(e);
+      else lanes.set(e, lanes.size); }
+    const laneLines = (e) => (e.label ? wrap(e.label, laneChars()).length : 0);
+    let y = 24;
+    order.forEach((id, i) => {
+      if (i) {
+        const d = [...direct].find((e) => [e.from, e.to].includes(order[i - 1]) && [e.from, e.to].includes(id));
+        const left = [...lanes.keys()].filter((e) => at[e.to] === i).reduce((t, e) => t + laneLines(e), 0);
+        y += dims[order[i - 1]].h / 2 + Math.max(44, Math.max(d?.label ? wrap(d.label, 26).length : 0, left) * 14 + 22) + dims[id].h / 2;
+      } else y += dims[id].h / 2;
+      pos[id] = [W / 2, y];
+    });
+    // where several lanes meet one box they join its left side at different heights
+    const att = new Map();
+    for (const id of order) {
+      const ends = [...lanes.keys()].flatMap((e) => [e.from === id ? [e, "from"] : null, e.to === id ? [e, "to"] : null]).filter(Boolean).sort((p, q) => lanes.get(p[0]) - lanes.get(q[0]));
+      const step = Math.min(10, (dims[id].h - 12) / Math.max(1, ends.length - 1));
+      ends.forEach(([e, end], i) => att.set(`${end}:${lanes.get(e)}`, ends.length > 1 ? (i - (ends.length - 1) / 2) * step : 0));
+    }
+    stacked = { at, order, att };
+    return y + dims[order.at(-1)].h / 2 + 24;
+  };
+  let stacked = null;
+  const laneX = (k) => 12 + k * 10, laneChars = () => Math.max(10, Math.floor((W / 2 - 10 - laneX(lanes.size)) / CH));
   let H;
-  if (spec.layout === "cycle") {
-    const R = narrow ? 125 : spec.radius || 140, cx = W / 2, cy = R + 60;
-    N.forEach((n, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / N.length; pos[n.id] = [cx + Math.cos(a) * R * (narrow ? 0.9 : 1.35), cy + Math.sin(a) * R]; });
-    H = cy + R + 70;
+  const cycle = spec.layout === "cycle", R0 = narrow ? 125 : spec.radius || 140;
+  if (cycle) {
+    const cx = W / 2, cy = R0 + 60;
+    // on a phone the loop is as wide as the boxes allow, so boxes on the same level keep a gap for the step between them
+    const ang = N.map((_, i) => -Math.PI / 2 + (i * 2 * Math.PI) / N.length), reach = Math.max(...ang.map((a) => Math.abs(Math.cos(a))));
+    const fx = narrow ? (reach > 0.01 ? Math.min(1.2, (W / 2 - 6 - Math.max(...N.map((n) => dims[n.id].w)) / 2) / (R0 * reach)) : 0.9) : 1.35;
+    N.forEach((n, i) => { pos[n.id] = [cx + Math.cos(ang[i]) * R0 * fx, cy + Math.sin(ang[i]) * R0]; });
+    H = cy + R0 + 70;
   } else if (spec.layout === "grid") {
     const cols = Math.max(...N.map((n) => n.col)) + 1, rows = Math.max(...N.map((n) => n.row)) + 1, cw = (W - 20) / cols, rh = spec.rowHeight || 110;
-    if (narrow && cols > 2) { N.forEach((n, i) => { pos[n.id] = [W / 2, 40 + i * 92]; }); H = 40 + N.length * 92; }
+    // on a phone, side-by-side boxes stay only when every label on a horizontal step fits the gap between them
+    const fits = (spec.edges || []).every((e) => { const A = N.find((n) => n.id === e.from), B = N.find((n) => n.id === e.to);
+      if (!e.label || A.row !== B.row) return true;
+      const gap = Math.abs(A.col - B.col) * cw - (dims[A.id].w + dims[B.id].w) / 2;
+      return Math.max(...wrap(e.label, 16).map((l) => l.replace(/[_^{}]/g, "").length)) * CH + 8 <= gap; });
+    if (narrow && (cols > 2 || !fits)) H = stack();
     else { N.forEach((n) => { pos[n.id] = [10 + (n.col + 0.5) * cw, 56 + n.row * rh]; }); H = 56 + (rows - 1) * rh + 40; }
   } else {
-    if (narrow) { N.forEach((n, i) => { pos[n.id] = [W / 2, 40 + i * 96]; }); H = 40 + N.length * 96 - 30; }
+    if (narrow) H = stack();
     else { const cw = (W - 20) / N.length; N.forEach((n, i) => { pos[n.id] = [10 + (i + 0.5) * cw, 70]; }); H = 170; }
   }
-  const lineW = narrow ? 22 : Math.max(12, Math.floor((spec.layout === "line" ? (W - 20) / N.length - 16 : bw) / 7.6));
-  const dims = Object.fromEntries(N.map((n) => { const ls = wrap(n.label, lineW), sub = n.sub ? wrap(n.sub, lineW + 4) : []; return [n.id, { ls, sub, w: Math.min(spec.layout === "line" && !narrow ? (W - 20) / N.length - 18 : bw + 30, Math.max(...ls.map((l) => l.length), ...sub.map((l) => l.length * 0.86)) * 7.8 + 24), h: ls.length * 17 + sub.length * 15 + 16 }]; }));
   let s = "";
+  const cx = W / 2, cy = R0 + 60;
   for (const e of spec.edges || []) {
     const [x1, y1] = pos[e.from], [x2, y2] = pos[e.to], A = dims[e.from], B = dims[e.to];
     const L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L;
     const clip = (d, ux2, uy2) => Math.min(Math.abs(ux2) > 1e-6 ? d.w / 2 / Math.abs(ux2) : 1e9, Math.abs(uy2) > 1e-6 ? d.h / 2 / Math.abs(uy2) : 1e9) + 5;
     const a = clip(A, ux, uy), b = clip(B, ux, uy);
-    if (spec.layout === "cycle") {
+    if (cycle) {
       // each step bows outwards to its own side (perpendicular to its direction), so even a two-step cycle reads as a loop
-      const R0 = narrow ? 125 : spec.radius || 140, mx = (x1 + x2) / 2, my = (y1 + y2) / 2, bow = N.length === 2 ? 0.55 : 0.18, ox = -uy * R0 * bow, oy = ux * R0 * bow;
-      s += `<path d="M${f1(x1 + ux * a)} ${f1(y1 + uy * a)} Q${f1(mx + ox)} ${f1(my + oy)} ${f1(x2 - ux * b)} ${f1(y2 - uy * b)}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
-      s += arrow(x2 - ux * (b + 10) + ox * 0.1, y2 - uy * (b + 10) + oy * 0.1, x2 - ux * b, y2 - uy * b, { w: 2, head: 9 });
-      if (e.label) s += textWrap(mx + ox * 1.25 + (ox > 0 ? 10 : ox < 0 ? -10 : 0), my + oy * 1.25, fm(e.label), narrow ? 14 : 22, { size: 11.5, weight: 700, anchor: ox > 1 ? "start" : ox < -1 ? "end" : "middle", fill: col(e.colour || "a2") });
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, bow = N.length === 2 ? 0.55 : 0.18, ox = -uy * R0 * bow, oy = ux * R0 * bow;
+      const sx0 = x1 + ux * a, sy0 = y1 + uy * a, ex = x2 - ux * b, ey = y2 - uy * b;
+      s += `<path d="M${f1(sx0)} ${f1(sy0)} Q${f1(mx + ox)} ${f1(my + oy)} ${f1(ex)} ${f1(ey)}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
+      s += arrow(x2 - ux * (b + 10) + ox * 0.1, y2 - uy * (b + 10) + oy * 0.1, ex, ey, { w: 2, head: 9 });
+      if (e.label) {
+        // the label sits just outside the arc's apex, on the side away from the loop, wrapped to the room on that side
+        const px = 0.25 * sx0 + 0.5 * (mx + ox) + 0.25 * ex, py = 0.25 * sy0 + 0.5 * (my + oy) + 0.25 * ey;
+        let dx = px - cx, dy = py - cy; const dl = Math.hypot(dx, dy) || 1; dx /= dl; dy /= dl;
+        const anchor = dx > 0.35 ? "start" : dx < -0.35 ? "end" : "middle", lx = px + dx * 12, room = anchor === "start" ? W - lx - 6 : anchor === "end" ? lx - 6 : 2 * Math.min(lx, W - lx) - 12;
+        const n = Math.max(8, Math.min(narrow ? 24 : 26, Math.floor(room / CH))), ls = wrap(fm(e.label), n);
+        const ly = anchor === "middle" ? py + dy * 14 + (dy < 0 ? -(ls.length - 1) * 17 : 0) : py - ((ls.length - 1) * 17) / 2;
+        s += ls.map((l, i) => text(lx, ly + i * 17, l, { size: 11.5, weight: 700, anchor, fill: col(e.colour || "a2"), halo: true })).join("");
+      }
+    } else if (lanes.has(e)) {
+      // a routed step: out of the source box's left side, along its lane, into the target box's left side
+      const k = lanes.get(e), lx = laneX(k), sxl = x1 - A.w / 2, txl = x2 - B.w / 2, sy1 = y1 + stacked.att.get(`from:${k}`), ty = y2 + stacked.att.get(`to:${k}`);
+      s += `<path d="M${f1(sxl)} ${f1(sy1)} H${f1(lx)} V${f1(ty)} H${f1(txl - 8)}" fill="none" stroke="${C.ink}" stroke-width="2" stroke-linejoin="round"${e.dashed ? ' stroke-dasharray="6 5"' : ""}/>`;
+      s += arrow(txl - 12, ty, txl - 2, ty, { w: 2, head: 9 });
+      if (e.label) {
+        const before = [...lanes.keys()].filter((o) => o !== e && stacked.at[o.to] === stacked.at[e.to] && lanes.get(o) < lanes.get(e)).reduce((t, o) => t + (o.label ? wrap(o.label, laneChars()).length : 0), 0);
+        const ls = wrap(fm(e.label), laneChars()), top = y2 - B.h / 2 - 12 - (ls.length - 1 + before) * 14;
+        s += ls.map((l, k) => text(W / 2 - 10, top + k * 14, l, { size: 11, weight: 700, anchor: "end", fill: col(e.colour || "a2"), halo: true })).join("");
+      }
     } else {
       s += arrow(x1 + ux * a, y1 + uy * a, x2 - ux * b, y2 - uy * b, { w: 2, head: 9, dash: e.dashed ? "6 5" : "" });
       if (e.label) {
@@ -250,8 +315,12 @@ function flow(spec, W, narrow) {
     d.ls.forEach((l, i) => { s += text(x, y - d.h / 2 + 16 + i * 17, fm(l), { size: 13, weight: 700, fill: n.tone ? tc : C.ink }); });
     d.sub.forEach((l, i) => { s += text(x, y - d.h / 2 + 16 + d.ls.length * 17 + i * 15, fm(l), { size: 11.5, fill: C.soft }); });
   }
-  if (spec.centre) s += textWrap(W / 2, (narrow ? 125 : spec.radius || 140) + 52, fm(spec.centre), narrow ? 18 : 24, { size: 12.5, weight: 700, fill: col("a2") });
   let y = H;
+  // the net equation: in the middle of the loop where there is room, otherwise under it
+  // (a two-step loop has no middle: its arcs nearly touch)
+  const inLoop = !narrow && N.length > 2;
+  if (spec.centre && inLoop) s += textWrap(W / 2, R0 + 52, fm(spec.centre), 24, { size: 12.5, weight: 700, fill: col("a2") });
+  if (spec.centre && !inLoop) { const ls = wrap(fm(spec.centre), narrow ? 44 : 80); s += ls.map((l, i) => text(W / 2, y - 22 + i * 17, l, { size: 12.5, weight: 700, fill: col("a2") })).join(""); y += ls.length * 17 - 6; }
   for (const nt of spec.notes || []) { s += textWrap(W / 2, y, fm(nt), narrow ? 46 : 90, { size: 12, fill: C.soft }); y += 18 * Math.ceil(nt.length / (narrow ? 46 : 90)); }
   return { s, H: y + 8 };
 }
