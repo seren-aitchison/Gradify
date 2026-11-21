@@ -48,3 +48,47 @@ test("periodic table positions", () => {
   assert.deepEqual(position(Z.La), { period: 6, group: 3, block: "d" });
   assert.equal(position(Z.Lu).block, "f");
 });
+
+test("display formatter: charges after a slash, polyatomic and complex ions", async () => {
+  const { fm } = await import("../kit/diagrams/chem-renderers.js");
+  assert.equal(fm("Fe3+/Fe2+"), "Fe^{3+}/Fe^{2+}");
+  assert.equal(fm("MnO4-/Mn2+"), "MnO_{4}^{−}/Mn^{2+}");
+  assert.equal(fm("NH4+ + Br-"), "NH_{4}^{+} + Br^{−}");
+  assert.equal(fm("NO3- ions"), "NO_{3}^{−} ions");
+  assert.equal(fm("[Cu(H2O)6]2+"), "[Cu(H_{2}O)_{6}]^{2+}");
+  assert.equal(fm("Cr2O7^2-"), "Cr_{2}O_{7}^{2−}");
+  assert.equal(fm("2H2 + O2 → 2H2O"), "2H_{2} + O_{2} → 2H_{2}O");
+  assert.equal(fm("but-2-ene"), "but-2-ene");
+});
+
+test("layouts keep labels inside the picture: return steps to the first box, series key with an x title", async () => {
+  const { render } = await import("../kit/diagrams/renderers.js");
+  await import("../kit/diagrams/chem-renderers.js"); await import("../kit/diagrams/chem-renderers-2.js"); await import("../kit/diagrams/chem-renderers-3.js");
+  const ys = (svg) => [...svg.matchAll(/<text x="[-\d.]+" y="([-\d.]+)"/g)].map((m) => +m[1]);
+  const height = (svg) => +/viewBox="0 0 [\d.]+ ([\d.]+)"/.exec(svg)[1];
+  // two boxes with steps both ways: on a phone the return step is routed in a lane, its label above the first box
+  const flow = render({ id: "t-flow", renderer: "flow", layout: "line", nodes: [{ id: "a", label: "reactor" }, { id: "b", label: "separator" }],
+    edges: [{ from: "a", to: "b", label: "products" }, { from: "b", to: "a", label: "unreacted gases are returned to the reactor here" }], claims: [] });
+  for (const y of ys(flow.narrow)) assert.ok(y > 0 && y < height(flow.narrow), `flow label at y = ${y}`);
+  // a point-labelled series with a key and an x title: the two rows must not coincide
+  const trend = render({ id: "t-series", renderer: "trend", kind: "series", xLabels: ["a", "b"], pointLabels: true, xTitle: "period",
+    series: [{ label: "group 1", keys: ["p", "q"], colour: "a1" }], items: [], claims: [] });
+  for (const svg of [trend.wide, trend.narrow]) {
+    const title = +new RegExp(`y="([\\d.]+)"[^>]*>period<`).exec(svg)[1], key = +new RegExp(`y="([\\d.]+)"[^>]*>group 1<`).exec(svg)[1];
+    assert.ok(Math.abs(title - key) >= 14, `x title at ${title}, key at ${key}`);
+  }
+});
+
+test("wrapped category labels stay clear of the x title on a phone", async () => {
+  const { render } = await import("../kit/diagrams/renderers.js");
+  await import("../kit/diagrams/chem-renderers.js");
+  // short words, so the labels wrap (onto three lines on a phone) instead of turning
+  const out = render({ id: "t-wrap", renderer: "trend", kind: "bars", xTitle: "the solution", claims: [],
+    items: [{ key: "a", label: "salt in warm tap water", value: 3 }, { key: "b", label: "acid in cold sea water", value: 1 }, { key: "c", label: "c", value: 2 }, { key: "d", label: "d", value: 4 }] });
+  for (const svg of [out.wide, out.narrow]) {
+    const texts = [...svg.matchAll(/<text x="[\d.]+" y="([\d.]+)"[^>]*>([^<]*)<\/text>/g)].map((m) => [+m[1], m[2]]);
+    const title = texts.find(([, t]) => t === "the solution")[0], lines = texts.filter(([, t]) => /salt|acid|warm|cold|tap|sea|water|in /.test(t)).map(([y]) => y);
+    assert.ok(lines.length >= 2, "category lines found");
+    assert.ok(title - Math.max(...lines) >= 12, `title at ${title}, lowest category line at ${Math.max(...lines)}`);
+  }
+});

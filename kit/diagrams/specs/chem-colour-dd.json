@@ -21,14 +21,14 @@
  "levels": [
   {
    "id": "t",
-   "label": "t₂g",
+   "label": "t_{2g}",
    "E": 0,
    "x0": 0.2,
    "x1": 0.5
   },
   {
    "id": "e",
-   "label": "eg",
+   "label": "e_{g}",
    "E": 1,
    "x0": 0.2,
    "x1": 0.5
@@ -45,9 +45,11 @@
  ],
  "notes": [
   {
-   "x": 0.8,
-   "E": 0.5,
-   "text": "transmits blue",
+   "x": 0.2,
+   "E": 0,
+   "dy": 30,
+   "anchor": "start",
+   "text": "the light left over looks blue",
    "bold": true,
    "colour": "a1"
   }

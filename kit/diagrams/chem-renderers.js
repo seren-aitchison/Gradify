@@ -17,10 +17,15 @@ import { parseFormula, balanced, configuration, readConfig, sameConfig, configTe
 const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line: "var(--vx-line, #8a92a8)", grid: "var(--vx-grid, #e6e8f0)", panel: "var(--vx-panel, #f4f5fb)" };
 // subscript digits in formulae and superscript charges, written in the text() markup: H2O → H_{2}O, SO4^2- → SO_{4}^{2−}
 export function fm(s) {
-  // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too
+  // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too. A charge may be
+  // followed by "/" in a redox couple (Fe3+/Fe2+). One element: the digit is the charge (Fe3+). Several elements: the
+  // digits are counts and the sign is a charge of 1 (NH4+, MnO4−). A complex ion's charge follows "]" ([Cu(H2O)6]2+).
+  const q1 = (q) => (q === "+" ? "+" : "−"), END = "(?=$|[\\s(),;:/])";
   return ascii(s, true).replace(/\^([+-]\d+)/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
-    .replace(/(^|[\s(+])(\d*)([A-Z][a-z]?)(\d)([+−-])(?=$|[\s(),;:])/g, (_, b, c, el, n, q) => `${b}${c}${el}^{${n}${q === "+" ? "+" : "−"}}`)
-    .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:])/g, (_, a, q) => `${a}^{${q === "+" ? "+" : "−"}}`)
+    .replace(new RegExp(`(^|[\\s(+/])(\\d*)([A-Z][a-z]?)(\\d)([+−-])${END}`, "g"), (_, b, c, el, n, q) => `${b}${c}${el}^{${n}${q1(q)}}`)
+    .replace(new RegExp(`(^|[\\s(+/])((?:[A-Z][a-z]?\\d*|\\([^()\\s]*\\)\\d*){2,})([+−-])${END}`, "g"), (_, b, f, q) => `${b}${f}^{${q1(q)}}`)
+    .replace(new RegExp(`\\](\\d*)([+−-])${END}`, "g"), (_, n, q) => `]^{${n}${q1(q)}}`)
+    .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:/])/g, (_, a, q) => `${a}^{${q1(q)}}`)
     .replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
 const rng = (seed) => { let h = 2166136261; for (const c of String(seed)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; };
@@ -38,7 +43,9 @@ function trendValues(spec) {
 }
 function trend(spec, W, narrow) {
   const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 360 : 360);
-  const pad = { l: narrow ? 56 : 66, r: 18, t: 34, b: spec.kind === "ladder" ? 20 : 62 };
+  // a series key (point-labelled series) takes the bottom row; an x title then goes on the row above it
+  const keyBelow = spec.kind === "series" && spec.pointLabels && (spec.series || []).some((sr) => sr.label);
+  const pad = { l: narrow ? 56 : 66, r: 18, t: 34, b: spec.kind === "ladder" ? 20 : 62 + (keyBelow && spec.xTitle ? 20 : 0) };
   const vals = trendValues(spec), all = Object.values(vals);
   const log = !!spec.log;
   const [lo, hi] = spec.range || [Math.min(0, ...all), Math.max(...all) * 1.12];
@@ -46,6 +53,16 @@ function trend(spec, W, narrow) {
   const sy = (v) => H - pad.b - ((tr(v) - tr(lo)) / (tr(hi) - tr(lo))) * (H - pad.t - pad.b);
   let s = "";
   if (spec.kind === "ladder") return { s: ladder(spec, W, H, narrow), H };
+  const items = spec.kind === "series" ? spec.xLabels.map((l) => ({ key: l, label: l })) : spec.items;
+  const n = items.length, slot = (W - pad.l - pad.r) / n, sx = (i) => pad.l + slot * (i + 0.5);
+  const lblSize = narrow && n > 10 ? 9.5 : n > 14 ? 10.5 : 12;
+  // category labels: on one line when they fit the slot, else wrapped at spaces, else turned (and then set clear of
+  // each other rather than overprinted: 'stomach acid', 'lemon' and 'vinegar' on a phone), with room made below
+  const raw = items.map((it) => String(it.label ?? it.key)), cwid = (t) => ascii(t).length * lblSize * 0.52, fitN = Math.max(3, Math.floor((slot - 4) / (lblSize * 0.52)));
+  const turn = narrow && n > 12 ? -60 : raw.some((t) => t.split(" ").some((w) => cwid(w) > slot - 4)) ? -40 : 0;
+  if (turn === -40) pad.b = Math.max(pad.b, 26 + Math.max(...raw.map(cwid)) * 0.66 + (spec.xTitle ? 18 : 0));
+  // labels wrapped onto a third line or more push the axis title (and the key) down by a line each
+  else if (!turn) pad.b += 14 * Math.max(0, Math.max(...raw.map((t) => wrap(t, cwid(t) > slot - 4 ? fitN : 99).length)) - 2);
   // axes and gridlines
   const ticks = spec.ticks || (log ? [] : niceTicks(lo, hi, 5));
   for (const t of ticks) s += line(pad.l, sy(t), W - pad.r, sy(t), { stroke: C.grid, w: 1 }) + text(pad.l - 8, sy(t), fmtNum(t), { size: 11.5, anchor: "end", fill: C.soft });
@@ -53,33 +70,53 @@ function trend(spec, W, narrow) {
   const zeroY = sy(log ? lo : Math.max(lo, Math.min(0, hi)));
   s += line(pad.l, zeroY, W - pad.r, zeroY, { stroke: C.ink, w: 1.6 });
   s += text(pad.l - 4, pad.t - 18, spec.yLabel || "", { size: 12.5, weight: 600, anchor: "start", fill: C.soft });
-  const items = spec.kind === "series" ? spec.xLabels.map((l) => ({ key: l, label: l })) : spec.items;
-  const n = items.length, slot = (W - pad.l - pad.r) / n, sx = (i) => pad.l + slot * (i + 0.5);
-  const lblSize = narrow && n > 10 ? 9.5 : n > 14 ? 10.5 : 12;
+
   items.forEach((it, i) => {
-    const lab = fm(it.label ?? it.key);
-    if (narrow && n > 12) s += text(sx(i), H - pad.b + 14, lab, { size: lblSize, fill: C.ink }).replace("<text", `<text transform="rotate(-60 ${f1(sx(i))} ${f1(H - pad.b + 14)})" text-anchor="end"`).replace(/text-anchor="middle"/, "");
-    else s += text(sx(i), H - pad.b + 16, lab, { size: lblSize, weight: 600, fill: C.ink });
+    const lab = fm(raw[i]);
+    if (turn) s += text(sx(i), H - pad.b + 14, lab, { size: lblSize, weight: narrow && n > 12 ? 500 : 600, fill: C.ink }).replace("<text", `<text transform="rotate(${turn} ${f1(sx(i))} ${f1(H - pad.b + 14)})" text-anchor="end"`).replace(/text-anchor="middle"/, "");
+    else wrap(raw[i], cwid(raw[i]) > slot - 4 ? fitN : 99).forEach((l, k) => { s += text(sx(i), H - pad.b + 16 + k * 14, fm(l), { size: lblSize, weight: 600, fill: C.ink }); });
   });
-  if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - 14, spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
+  if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - (keyBelow ? 36 : 14), spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
+  const pl = [], ends = []; let keyRow = false;
   if (spec.kind === "bars") {
     const bw = Math.min(46, slot * 0.66);
     items.forEach((it, i) => {
       const v = it.value, y0 = sy(log ? lo : 0), y1 = sy(v);
       const colour = col(spec.highlight?.[it.key] || spec.colour || "a1");
       s += `<rect x="${f1(sx(i) - bw / 2)}" y="${f1(Math.min(y0, y1))}" width="${f1(bw)}" height="${f1(Math.max(1, Math.abs(y1 - y0)))}" rx="4" fill="${colour}" fill-opacity="${spec.highlight?.[it.key] ? 0.95 : 0.78}"/>`;
-      if (spec.showValues !== false && (!narrow || n <= 8)) s += text(sx(i), v >= 0 || log ? y1 - 9 : y1 + 11, fmtNum(v), { size: narrow ? 10.5 : 11.5, weight: 600, fill: C.ink });
+      // a value label that would reach the axis title goes inside the top of its bar
+      const inside = (v >= 0 || log) && y1 - 9 < pad.t + 4 && Math.abs(y1 - y0) > 22;
+      if (spec.showValues !== false && (!narrow || n <= 8)) s += text(sx(i), inside ? y1 + 11 : v >= 0 || log ? y1 - 9 : y1 + 11, fmtNum(v), { size: narrow ? 10.5 : 11.5, weight: 600, fill: inside ? "#fff" : C.ink });
     });
   } else {
     const series = spec.kind === "series" ? spec.series.map((sr) => ({ ...sr, pts: sr.keys.map((k, i) => (k == null ? null : [sx(i), sy(vals[k]), k])) })) : [{ colour: spec.colour || "a1", pts: items.map((it, i) => [sx(i), sy(it.value), it.key]) }];
+    // point labels are set clear of each other within each column, on halos, after every line; with point labels
+    // the series are named in a key under the axis instead of at their ends, where they would pile up
+    keyRow = spec.kind === "series" && spec.pointLabels && series.some((sr) => sr.label);
     for (const sr of series) {
       const pts = sr.pts.filter(Boolean);
       s += `<path d="${pts.map(([x, y], i) => `${i ? "L" : "M"}${f1(x)} ${f1(y)}`).join(" ")}" fill="none" stroke="${col(sr.colour)}" stroke-width="2.6" stroke-linejoin="round"/>`;
       for (const [x, y, k] of pts) {
         s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${spec.highlight?.[k] ? 6 : 4.5}" fill="${col(spec.highlight?.[k] || sr.colour)}" stroke="#fff" stroke-width="1.5"/>`;
-        if (spec.kind === "series" && spec.pointLabels) s += text(x + 8, y - 9, fm(k), { size: 11, weight: 600, anchor: "start", fill: col(sr.colour) });
+        if (spec.kind === "series" && spec.pointLabels) pl.push({ x, y: y - 9, k, colour: sr.colour });
       }
-      if (sr.label) { const [x, y] = pts.at(-1); s += text(Math.min(x + 10, W - pad.r), y + (sr.labelDy || 0), sr.label, { size: 12, weight: 700, anchor: x + 10 > W - 60 ? "end" : "start", fill: col(sr.colour) }); }
+      // at the right edge the name goes above and left of the end point, not on it; names are set apart below
+      if (sr.label && !keyRow) { const [x, y] = pts.at(-1), edge = x + 10 > W - 60; ends.push({ x: edge ? x - 8 : x + 10, y: y + (sr.labelDy || 0) - (edge ? 13 : 0), label: sr.label, colour: sr.colour, anchor: edge ? "end" : "start" }); }
+    }
+  }
+  ends.sort((a, b) => a.y - b.y);
+  for (let i = ends.length - 2; i >= 0; i--) ends[i].y = Math.min(ends[i].y, ends[i + 1].y - 15);
+  for (const e of ends) s += text(e.x, e.y, e.label, { size: 12, weight: 700, anchor: e.anchor, fill: col(e.colour), halo: true });
+  if (spec.kind === "series") {
+    const cols = new Map(); for (const p of pl) cols.set(p.x, [...(cols.get(p.x) || []), p]);
+    for (const c of cols.values()) {
+      c.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < c.length; i++) c[i].y = Math.max(c[i].y, c[i - 1].y + 13);
+      for (const p of c) s += text(p.x + 8, p.y, fm(p.k), { size: 11, weight: 600, anchor: "start", fill: col(p.colour), halo: true });
+    }
+    if (keyRow) {
+      const named = spec.series.filter((sr) => sr.label), kw = (W - pad.l) / named.length;
+      named.forEach((sr, i) => { const x = pad.l + i * kw; s += line(x, H - 16, x + 16, H - 16, { stroke: col(sr.colour), w: 3 }) + text(x + 21, H - 16, sr.label, { size: narrow ? 11 : 12, weight: 700, anchor: "start", fill: col(sr.colour) }); });
     }
   }
   for (const nt of spec.notes || []) {
@@ -383,7 +420,9 @@ function particles(spec, W, narrow) {
         items.forEach((k, q) => { list.push(k); pts.push(got[q]); });
       }
     } else {
-      pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, p);
+      // charged particles keep room for their charge labels between them
+      const charged = list.some((k) => spec.species[k].charge);
+      pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, { ...p, spacing: p.spacing ?? (charged ? 14 : 6) });
       if (p.arrangement !== "lattice" && p.arrangement !== "layer") list.sort(() => R() - 0.5);
     }
     list.forEach((k, q) => { if (pts[q]) s += drawSpecies(spec, k, pts[q][0], pts[q][1], (p.scale || 1) * (pts.scale || 1)); });
@@ -515,19 +554,24 @@ function cycle(spec, W, narrow) {
   const cols = Math.max(...spec.steps.map((st) => st.col ?? 0)) + 1, colX = (c) => lx0 + 40 + (c + 0.5) * ((narrow ? W * 0.42 : W * 0.5) / cols);
   const labelX = narrow ? W * 0.5 : W * 0.6;
   const used = [];
+  let late = "";
   for (const st of spec.states) {
     let yy = y(h[st.id]); for (const u of used) if (Math.abs(u - yy) < 18) yy = u + (yy >= u ? 18 : -18); used.push(yy);
     const xs = spec.steps.filter((p) => p.from === st.id || p.to === st.id).map((p) => colX(p.col ?? 0));
     s += line(Math.min(...xs) - 26, y(h[st.id]), lx1, y(h[st.id]), { stroke: C.ink, w: 2 });
-    s += text(labelX, yy - 10, fm(st.label), { size: narrow ? 11.5 : 12.5, weight: 600, anchor: "start", fill: C.ink });
+    // a label pushed down by its neighbour's goes under its own line rather than between two close lines
+    s += text(labelX, yy > y(h[st.id]) ? y(h[st.id]) + 14 : yy - 10, fm(st.label), { size: narrow ? 11.5 : 12.5, weight: 600, anchor: "start", fill: C.ink });
   }
   for (const st of spec.steps) {
     const x = colX(st.col ?? 0), y1 = y(h[st.from]), y2 = y(h[st.to]), v = dhOf(st);
     s += arrow(x, y1, x, y2 + (y2 > y1 ? -2 : 2), { stroke: st === find ? col("a2") : v > 0 ? col("a3") : col("a1"), w: 2.2, head: 9 });
-    const lab = `${st.label}${narrow ? "" : `: ${st === find ? "?" : kj(v)}`}`;
-    s += text(x + 7, (y1 + y2) / 2, lab, { size: narrow ? 10.5 : 11.5, weight: 700, anchor: "start", fill: st === find ? col("a2") : C.ink });
-    if (narrow) s += text(x + 7, (y1 + y2) / 2 + 13, st === find ? "?" : kj(v), { size: 10.5, anchor: "start", fill: C.soft });
+    // labels on halos (a level line can cross a long arrow's label); a step too short to hold its label (ΔsolH
+    // between NaCl(s) and the hydrated ions) has it under the lower level, where the diagram is empty
+    const lab = `${st.label}${narrow ? "" : `: ${st === find ? "?" : kj(v)}`}`, short = Math.abs(y2 - y1) < 34, ly = short ? Math.max(y1, y2) + 14 : (y1 + y2) / 2;
+    late += text(x + 7, ly, lab, { size: narrow ? 10.5 : 11.5, weight: 700, anchor: "start", fill: st === find ? col("a2") : C.ink, halo: true });
+    if (narrow) late += text(x + 7, ly + 13, st === find ? "?" : kj(v), { size: 10.5, anchor: "start", fill: C.soft, halo: true });
   }
+  s += late;
   if (find) s += text(W - 12, H - 10, `${find.label} = ${kj(dhOf(find))}`, { size: 13, weight: 700, anchor: "end", fill: col("a2") });
   return { s, H };
 }

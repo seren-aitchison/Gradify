@@ -23,40 +23,52 @@
    "id": "z",
    "label": "no field",
    "E": 0.5,
-   "x0": 0.1,
-   "x1": 0.35
+   "x0": 0.08,
+   "x1": 0.3,
+   "labelAbove": true
   },
   {
    "id": "a",
-   "label": "α",
+   "label": "α (aligned)",
    "E": 0,
-   "x0": 0.55,
-   "x1": 0.85,
+   "x0": 0.5,
+   "x1": 0.76,
    "labelRight": true
   },
   {
    "id": "b",
-   "label": "β",
+   "label": "β (opposed)",
    "E": 1,
-   "x0": 0.55,
-   "x1": 0.85,
+   "x0": 0.5,
+   "x1": 0.76,
    "labelRight": true
   }
+ ],
+ "links": [
+  [
+   "z",
+   "a"
+  ],
+  [
+   "z",
+   "b"
+  ]
  ],
  "transitions": [
   {
    "from": "a",
    "to": "b",
-   "x": 0.7,
-   "label": "radio waves, ΔE ∝ B",
+   "x": 0.63,
+   "label": "radio waves, ΔE ∝ B₀",
    "colour": "a2"
   }
  ],
  "notes": [
   {
-   "x": 0.45,
-   "E": 0.5,
-   "text": "field B₀ on →",
+   "x": 0.63,
+   "E": 1,
+   "dy": -26,
+   "text": "in field B₀",
    "colour": "a1",
    "bold": true
   }
