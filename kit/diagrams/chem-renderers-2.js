@@ -173,15 +173,20 @@ function cell(spec, W, narrow) {
     const ai = halves.findIndex((h) => h.role === "anode"), dir = ai === 0 ? 1 : -1;
     s += arrow(W / 2 - dir * 80, 32, W / 2 - dir * 40, 32, { stroke: col("a1"), w: 2.2, head: 8 }) + text(W / 2 - dir * 60, 20, "e⁻", { size: 13, weight: 700, fill: col("a1") });
   }
-  if (spec.membrane) s += line(vx + vw / 2, vy + 10, vx + vw / 2, vy + vh - 30, { stroke: col("a5"), w: 3, dash: "7 5" }) + text(vx + vw / 2, vy + 2, spec.membrane, { size: 11, weight: 600, fill: col("a5") });
+  if (spec.membrane) s += line(vx + vw / 2, vy + 10, vx + vw / 2, vy + vh - 30, { stroke: col("a5"), w: 3, dash: "7 5" });
+  // labels between the electrodes are wrapped to the room there and drawn after them, on a halo
+  const room = (px) => Math.max(6, Math.floor(px / 6.6));
   halves.forEach((hf, i) => {
     s += electrode(ex[i] - 9, vy - 14, 18, vh - 46, hf.electrode);
     const pos = (spec.supply ? (hf.role === "cathode" ? "−" : "+") : hf.role === "anode" ? "−" : "+");
     s += text(ex[i], vy + vh + 18, `${hf.label || hf.electrode} ${hf.role} (${pos})`, { size: 12.5, weight: 700, fill: hf.role === "anode" ? col("a3") : col("a1") });
     s += text(ex[i], vy + vh + 38, fm(hf.half), { size: narrow ? 10.5 : 12, weight: 600, fill: C.ink });
-    if (hf.product) s += text(ex[i] + (i ? -16 : 16), vy + 40, fm(hf.product), { size: 12, weight: 700, anchor: i ? "end" : "start", fill: col("a2") });
+    // a product label may use the room between the electrodes that the other side's label leaves
+    const other = halves[1 - i]?.product || "", free = ex[1] - ex[0] - 32 - (other ? ascii(other).length * 6.6 + 12 : 0);
+    if (hf.product) s += wrap(hf.product, room(Math.max((ex[1] - ex[0]) / 2 - 22, free))).map(fm).map((l, k) => text(ex[i] + (i ? -16 : 16), vy + 40 + k * 15, l, { size: 12, weight: 700, anchor: i ? "end" : "start", fill: col("a2"), halo: true })).join("");
     if (hf.ions) s += arrow(ex[i] + (i ? -70 : 70) * (narrow ? 0.5 : 1), vy + 90, ex[i] + (i ? -24 : 24), vy + 90, { stroke: col("a4"), w: 2, head: 8 }) + text(ex[i] + (i ? -56 : 56) * (narrow ? 0.6 : 1), vy + 76, fm(hf.ions), { size: 12, weight: 700, fill: col("a4") });
   });
+  if (spec.membrane) { const ls = wrap(spec.membrane, room(ex[1] - ex[0] - 30)); s += ls.map((l, k) => text(vx + vw / 2, vy + 2 - (ls.length - 1 - k) * 14, l, { size: 11, weight: 600, fill: col("a5"), halo: true })).join(""); }
   let y = vy + vh + 56;
   for (const n of spec.notes || []) { s += text(W / 2, y + 6, fm(n), { size: 12, fill: C.soft }); y += 18; }
   return { s, H: y + 10 };
