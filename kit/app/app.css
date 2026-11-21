@@ -1519,3 +1519,12 @@ section[data-tab] { gap: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { .jt-card, .jt-tag span { transition: none; } .jt-card:hover { transform: none; } }
 :root[data-a-contrast="high"] :is(.jt-card, .jt-tools, .jt-new textarea, .jt-text, .jt-read) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
+
+/* Gradify glass (tokens in kit/styles/base.css): the side menu, and the phone tab bar with the stronger tint, like the Pro banner */
+:root body :is(.lo-side, .tabbar) {
+  border: 1px solid transparent;
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur); backdrop-filter: var(--gg-blur);
+  box-shadow: var(--gg-spec), var(--gg-shadow);
+}
+:root body .tabbar { background: var(--gg-tint-strong) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim-strong) border-box; }

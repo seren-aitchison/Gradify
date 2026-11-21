@@ -1310,3 +1310,12 @@ dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-ba
 .vx-fullart { overflow-x: auto; touch-action: pan-x pan-y pinch-zoom; }
 .vx-fullart svg { display: block; min-width: 640px; width: 100%; height: auto; }
 .vx-close { position: sticky; float: right; top: 0; width: 44px; height: 44px; border-radius: 50%; border: 0; font-size: 26px; cursor: pointer; background: light-dark(#eef0f7, #232a40); color: inherit; }
+
+/* Gradify glass (tokens in kit/styles/base.css) on the shared cards and footers that aren't already .glass */
+:root body :is(.plan, .pro-card, .cp-card, .course-card, .goal-card, .hub-foot, .sub-foot):not(.glass) {
+  border: 1px solid transparent;
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur); backdrop-filter: var(--gg-blur);
+  box-shadow: var(--gg-spec), var(--gg-shadow);
+}
+:root[data-a-contrast="high"] body :is(.plan, .pro-card, .cp-card, .course-card, .goal-card, .hub-foot, .sub-foot) { background: var(--bg) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--fg) !important; }

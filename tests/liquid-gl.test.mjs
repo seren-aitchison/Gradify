@@ -24,10 +24,12 @@ test("headers, footers, panels and course surfaces are glass", () => {
   for (const s of [".glass", ".panel", ".hub-foot", ".sub-foot", ".cx-lbar", ".cx-dock", ".co-card"]) assert.ok(GLASS.split(", ").includes(s), s);
 });
 
-test("every page loads it, through theme-boot, after the page has loaded", async () => {
+test("every page can load it, through theme-boot, after the page has loaded, but only when asked for (frosted CSS glass by default)", async () => {
   const boot = await readFile(new URL("../kit/core/theme-boot.js", import.meta.url), "utf8");
   assert.match(boot, /ui\/liquid-gl\.js/);
   assert.match(boot, /addEventListener\("load"/);
+  assert.match(boot, /localStorage\.getItem\("gradify\.glass"\)/);
+  assert.match(boot, /\^\(on\|lite\|force\)\$/);
 });
 
 test("no GPU, no WebGL glass: software renderers keep the CSS glass", () => {

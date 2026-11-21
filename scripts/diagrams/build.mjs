@@ -8,7 +8,7 @@
 // renderer's subject checks; checks the lesson places the diagram with a `D: <id>` line; and writes
 // kit/diagrams/svg/<id>.wide.svg, <id>.narrow.svg and an entry in kit/diagrams/manifest.json.
 //
-// Publication status (shown to learners only when "approved"; see kit/diagrams/visual.js):
+// Publication status (every status but "failed" is shown to learners; see kit/diagrams/visual.js):
 //   failed       a check failed; never shown
 //   validated    every automatic check passed; no reviewer yet
 //   ai-reviewed  a separate AI reviewer checked accuracy and the picture (spec.review), still awaiting a person

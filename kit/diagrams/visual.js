@@ -4,9 +4,9 @@
 // <figure class="vx" data-dg="id" hidden>). hydrateDiagrams() fills each one from kit/diagrams/manifest.json and the
 // prebuilt SVGs in kit/diagrams/svg/ (scripts/diagrams/build.mjs).
 //
-// Publishing rule: learners only see a diagram whose status is "approved" (a named subject reviewer signed it off).
-// Anything else stays hidden, unless preview mode is on (?diagrams=preview in the address, or
-// localStorage "gradify:diagrams" = "preview"), when it shows with a banner saying what has and hasn't been checked.
+// Publishing rule: every diagram that passed its checks is shown to every learner; only a "failed" one stays hidden.
+// Preview mode (?diagrams=preview in the address, or localStorage "gradify:diagrams" = "preview") adds a
+// "What was checked" list under each diagram.
 //
 // Each diagram has: a wide layout for desktop and a narrow one for phones (chosen by the figure's own width), a
 // caption that says what to notice, a full-size view, and a step-by-step text description for screen readers and for
@@ -23,11 +23,6 @@ export function previewMode() {
     return localStorage.getItem("gradify:diagrams") === "preview";
   } catch { return false; }
 }
-const STATUS = {
-  validated: "Draft: every automatic check passed; not yet reviewed",
-  "ai-reviewed": "Draft: automatic checks passed and an AI reviewer checked it; awaiting a subject expert",
-  approved: "Checked by a subject reviewer",
-};
 
 async function loadManifest() {
   if (!manifest) manifest = fetch(new URL("manifest.json", BASE)).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
@@ -51,12 +46,10 @@ export async function hydrateDiagrams(root, { preview = previewMode() } = {}) {
   for (const fig of figs) {
     fig.dataset.vxDone = "1";
     const d = m[fig.dataset.dg];
-    if (!d || d.status === "failed" || (d.status !== "approved" && !preview)) { fig.remove(); continue; }
+    if (!d || d.status === "failed") { fig.remove(); continue; }
     const [wide, narrow] = await Promise.all([loadSvg(fig.dataset.dg, "wide"), loadSvg(fig.dataset.dg, "narrow")]);
     if (!wide) { fig.remove(); continue; }
-    const passed = d.checks.filter((c) => c.ok).length;
     fig.innerHTML = `
-      ${d.status !== "approved" ? `<p class="vx-draft" role="note"><b>Preview</b> ${esc(STATUS[d.status] || d.status)} (${passed}/${d.checks.length} checks).</p>` : ""}
       <button type="button" class="vx-art" aria-label="Open the diagram full size: ${esc(d.title)}">
         <span class="vx-wide">${uniq(wide)}</span><span class="vx-narrow">${uniq(narrow || wide)}</span>
       </button>

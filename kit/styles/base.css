@@ -84,16 +84,37 @@ a { color: inherit; }
   100% { transform: translate(-3vw, 6vh) scale(.95); }
 }
 /* ---------- Glass panels ---------- */
+/* Gradify glass: the Pro banner's material (kit/styles/components.css .lim-banner) as tokens, for every glass surface.
+   Frosted, never magnified: a brand tint (indigo, pink, orange) over smoked glass, a 22px blur, bright inner edges and a
+   thin spectrum rim drawn as a border-box background (no pseudo-elements, so it works on any element). */
+:root {
+  --gg-fill: rgba(18, 18, 28, .55);
+  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .2), rgba(240, 85, 221, .15) 55%, rgba(255, 138, 0, .13));
+  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .42), rgba(240, 85, 221, .32) 55%, rgba(255, 138, 0, .28));
+  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .7), rgba(240, 85, 221, .6) 35%, rgba(255, 86, 0, .5) 70%, rgba(255, 192, 2, .5));
+  --gg-rim-strong: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
+  --gg-blur: blur(22px) saturate(180%);
+  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .5), inset -1px -1px 0 -.5px rgba(255, 255, 255, .25);
+  --gg-shadow: 0 24px 60px -24px rgba(0, 0, 0, .6);
+}
+:root[data-theme="light"] {
+  --gg-fill: rgba(255, 255, 255, .66);
+  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .09), rgba(240, 85, 221, .07) 55%, rgba(255, 138, 0, .06));
+  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .16), rgba(240, 85, 221, .12) 55%, rgba(255, 138, 0, .1));
+  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .45), rgba(240, 85, 221, .4) 35%, rgba(255, 86, 0, .35) 70%, rgba(255, 192, 2, .4));
+  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .95), inset -1px -1px 0 -.5px rgba(255, 255, 255, .6);
+  --gg-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 18px 44px -22px rgba(22, 22, 48, .22);
+}
 .glass {
-  background: linear-gradient(180deg, rgba(var(--ink-rgb), .045), rgba(var(--ink-rgb), .01)), var(--panel);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  backdrop-filter: blur(22px) saturate(150%);
-  border: 1px solid var(--line);
-  box-shadow: inset 0 1px 0 var(--edge), 0 24px 48px -28px rgba(0, 0, 0, .85);
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur);
+  backdrop-filter: var(--gg-blur);
+  border: 1px solid transparent;
+  box-shadow: var(--gg-spec), var(--gg-shadow);
   border-radius: var(--radius);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .glass { background: var(--panel-strong); }
+  .glass { background: var(--gg-tint) padding-box, linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--gg-rim) border-box; }
 }
 /* recessed area inside a panel */
 .inset {
@@ -306,7 +327,7 @@ header.bar.glass, header.sub-nav.glass {
 /* light mode: the aurora glow is a soft wash of the brand colours, not white light; shadows are lighter */
 :root[data-theme="light"] .aurora { opacity: .55; }
 :root[data-theme="light"] .aurora span { mix-blend-mode: multiply; }
-:root[data-theme="light"] .glass, :root[data-theme="light"] .panel { box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 10px 30px -12px rgba(22, 22, 48, .14); }
+:root[data-theme="light"] .panel:not(.glass) { box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 10px 30px -12px rgba(22, 22, 48, .14); }
 
 /* Dark islands: things that stay dark in light mode (3D stages, the night-time Earth map, lab canvases, the app pictured
    on the homepage), and cards painted in a brand colour, where text is white whatever the theme. Inside them every
@@ -437,3 +458,4 @@ header.bar.glass, header.sub-nav.glass {
 .access-btn.access-named { width: auto !important; gap: 6px; padding: 0 12px 0 9px; border-radius: 999px; display: inline-flex; align-items: center; }
 .access-name { font: 600 13.5px var(--sans); }
 @media (max-width: 760px) { .access-btn.access-named { width: 36px !important; padding: 0; justify-content: center; } .access-name { display: none; } }
+@media (prefers-reduced-transparency: reduce) { .glass { background: linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box, var(--gg-rim) border-box; -webkit-backdrop-filter: none; backdrop-filter: none; } }

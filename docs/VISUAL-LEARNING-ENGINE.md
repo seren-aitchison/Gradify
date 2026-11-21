@@ -30,11 +30,11 @@ No build step is added to the site itself: SVGs are prebuilt and committed, like
 | Status | Meaning | Shown to learners? |
 |---|---|---|
 | `failed` | At least one check failed | Never |
-| `validated` | Every automatic check passed | No (preview only) |
-| `ai-reviewed` | Also checked by a separate AI reviewer | No (preview only) |
+| `validated` | Every automatic check passed | **Yes** |
+| `ai-reviewed` | Also checked by a separate AI reviewer | **Yes** |
 | `approved` | A named subject reviewer approved it (`review.status: "approved"`, `review.by`) | **Yes** |
 
-Preview mode: add `?diagrams=preview` to a course URL (it is remembered; `?diagrams=off` clears it). Preview shows a banner with the status and a "What was checked" list.
+Preview mode: add `?diagrams=preview` to a course URL (it is remembered; `?diagrams=off` clears it). Preview adds a "What was checked" list under each diagram. Every diagram but a `failed` one is shown to learners, with no draft banner.
 
 ## What the checks do
 
@@ -64,7 +64,7 @@ Tested negatively: reversing an SN2 curly arrow or claiming the wrong R/S label 
 1. Write `kit/diagrams/specs/<subject>-<topic>.json` (copy the nearest pilot spec). Put the lesson's own numbers in it so the checks test the lesson.
 2. Add `D: <id>` to the lesson, directly after the block it explains.
 3. `node scripts/diagrams/build.mjs <id>` until every check passes, then `node scripts/diagrams/shoot.cjs` and look at the desktop and phone screenshots.
-4. Review (separate person or AI reviewer), record it in the spec's `review`, rebuild. Only `approved` with a named reviewer goes live.
+4. Review (separate person or AI reviewer), record it in the spec's `review`, rebuild. Every diagram that passes its checks goes live; recording a review is still worthwhile.
 
 ## Chemistry
 

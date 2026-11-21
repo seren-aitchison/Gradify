@@ -392,14 +392,6 @@ export function mountCourse(root, cfg) {
   const TAB_OF = { lesson: "learn", quiz: "learn", review: "revise", target: "revise", problems: "revise", exam: "exams", overview: "home" };
   roadDefs();
   root.classList.add("co");
-  // clear glass magnifies what's behind it, like a drop of water: an SVG lens for backdrop-filter, which Chromium draws
-  // (elsewhere the class isn't set, and clear glass is just clear). A displacement map whose red and green ramp across
-  // the element pulls every point towards the centre: the backdrop is drawn about 9% larger.
-  if (!document.getElementById("lg-lens") && navigator.userAgentData?.brands?.some((b) => /Chromium/.test(b.brand))) {
-    const map = encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" preserveAspectRatio="none"><defs><linearGradient id="r"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#f00"/></linearGradient><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#000"/><stop offset="1" stop-color="#0f0"/></linearGradient></defs><rect width="64" height="64" fill="url(#r)"/><rect width="64" height="64" fill="url(#g)" style="mix-blend-mode:screen"/></svg>`);
-    document.body.insertAdjacentHTML("beforeend", `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="lg-lens" x="0" y="0" width="1" height="1" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feImage href="data:image/svg+xml,${map}" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="m"/><feDisplacementMap in="SourceGraphic" in2="m" scale="-.09" xChannelSelector="R" yChannelSelector="G"/></filter></svg>`);
-    document.documentElement.classList.add("lg-lens");
-  }
   if (cfg.theme) { root.classList.add("co-themed"); if (cfg.theme.spectrum) root.style.setProperty("--spectrum", cfg.theme.spectrum); if (cfg.theme.accent) root.style.setProperty("--co-accent", cfg.theme.accent); }
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform || "");
   // the breadcrumb in the course header names where you are, all the way down: Gradify › site › course › view › unit,
