@@ -1,5 +1,9 @@
-// Gradify service worker: lets the site open offline.
-// Network first, so a new deploy shows straight away; the cache is the fallback.
+// Gradify service worker: lets the site open offline, and makes return visits instant.
+// Each deploy has its own cache: the build stamps CACHE with a hash of what it published (scripts/build-site.mjs), so a
+// new deploy installs a new worker whose cache is filled from that deploy alone. Within a deploy, pages and files come
+// straight from the cache (no round trip to the server for each of the ~100 files a course page uses), and they all
+// belong to the same deploy, so old and new code never mix. A new deploy is fetched in the background and used from
+// the next page load.
 // Everything in SHELL is kept for offline use, in two steps so a first visit stays light: installing fetches the
 // core (the pages, styles and what the app and homepage need to start, about a fifth of the bytes); the heavy rest
 // (the PDF reader, the 3D engine, each course's data, the labs, the search index) follows a few seconds later, a few
@@ -93,21 +97,36 @@ function warm() {
   })().catch(() => {}).finally(() => { warming = null; });   // a pass cut short (Data Saver, a dropped file) can run again later
   return warming;
 }
+// only a deployed worker (stamped by the build) serves from the cache first; one served straight from the repository
+// (local development) asks the server first, so edits show at once
+const DEPLOYED = /-[0-9a-f]{12}$/.test(CACHE);
+// a page is cached once, whatever query or hash it was opened with (a sign-in return, a share link): never per query
+const pageKey = (req) => { const u = new URL(req.url); u.search = ""; u.hash = ""; return u.href; };
 self.addEventListener("fetch", (e) => {
   const req = e.request;
-  if (req.method !== "GET") return;
-  const sameOrigin = new URL(req.url).origin === location.origin;
-  const isFont = /fonts\.(googleapis|gstatic)\.com$/.test(new URL(req.url).hostname);
+  if (req.method !== "GET" || req.headers.has("range")) return;
+  const url = new URL(req.url), sameOrigin = url.origin === location.origin;
+  const isFont = /fonts\.(googleapis|gstatic)\.com$/.test(url.hostname);
   if (!sameOrigin && !isFont) return;
-  if (!warmed && !warming && req.mode === "navigate") e.waitUntil(warm());
-  e.respondWith(
-    // same-origin files are revalidated with the server (a cheap 304 when unchanged): a module from the HTTP cache can be
-    // older than the module importing it, and after a deploy that mix fails to load
-    fetch(req, sameOrigin ? { cache: "no-cache" } : undefined).then((res) => {
-      if (res.ok || res.type === "opaque") { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+  const page = req.mode === "navigate";
+  if (!warmed && !warming && page) e.waitUntil(warm());
+  e.respondWith((async () => {
+    const cache = await caches.open(CACHE), key = page ? pageKey(req) : req;
+    const hit = DEPLOYED && await cache.match(key, page ? { ignoreSearch: true } : undefined);
+    if (hit) return hit;
+    try {
+      // not cached yet in this deploy: from the server, revalidated (a module in the HTTP cache can be older than the
+      // one importing it), then kept for next time
+      const res = await fetch(req, sameOrigin ? { cache: "no-cache" } : undefined);
+      if (res.ok || res.type === "opaque") e.waitUntil(cache.put(key, res.clone()).catch(() => {}));
       return res;
-    }).catch(() => caches.match(req).then((hit) => hit || (req.mode === "navigate" ? caches.match("index.html") : undefined))),
-  );
+    } catch (err) {
+      // offline: whatever this deploy has kept, then the home page
+      const kept = await cache.match(key, page ? { ignoreSearch: true } : undefined) || (page && await cache.match("index.html"));
+      if (kept) return kept;
+      throw err;
+    }
+  })());
 });
 
 // Push notifications (supabase/functions/push-send, rules in kit/intel/nudges.js) and reminders the open app asks for.
