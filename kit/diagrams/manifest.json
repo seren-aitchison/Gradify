@@ -139,7 +139,7 @@
   "lesson": "Electrophilic addition",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "approved",
   "review": {
    "status": "approved",
    "by": "site owner (seren-aitchison)",
@@ -162,14 +162,49 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[Br:3][Br:4].[CH:1]1=[CH:2][CH2:5][CH2:6][CH2:7][CH2:8]1"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[CH:1]12[CH:2]([Br+:3]1)[CH2:5][CH2:6][CH2:7][CH2:8]2"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH:1]1([Br:3])[CH:2]([Br:4])[CH2:5][CH2:6][CH2:7][CH2:8]1"
+   },
+   {
+    "name": "stage 3: drawn stereocentres 1 and 2 are trans",
+    "ok": true,
+    "detail": "atom 1 reads R, atom 2 reads R (equal labels = trans for 1,2-dibromocyclohexane)"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "810px wide, shown at 87% (labels 13.1px)"
    }
   ]
  },
@@ -192,7 +227,7 @@
    }
   ],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "approved",
   "review": {
    "status": "approved",
    "by": "site owner (seren-aitchison)",
@@ -220,14 +255,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]=[CH2:3].[H:4][Br:5]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][CH+:2][CH2:3][H:4]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]([CH2:3][H:4])[Br:5]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
    }
   ]
  },
@@ -351,7 +416,7 @@
    }
   ],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "approved",
   "review": {
    "status": "approved",
    "by": "site owner (seren-aitchison)",
@@ -379,14 +444,54 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][C@@:3]([Br:4])([CH2:5][CH3:6])[H:7].[OH-:1]"
+   },
+   {
+    "name": "stage 2 is a transition state",
+    "ok": true,
+    "detail": "drawn for illustration: partial bonds dashed, not validated as a species"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[OH:1][C@@:3]([CH3:2])([CH2:5][CH3:6])[H:7]"
+   },
+   {
+    "name": "stage 1 CIP labels",
+    "ok": true,
+    "detail": "as stated: atom 3 is R"
+   },
+   {
+    "name": "stage 1: the wedges and hashes as drawn encode the stated R/S",
+    "ok": true,
+    "detail": "atom 3 reads as R"
+   },
+   {
+    "name": "stage 3 CIP labels",
+    "ok": true,
+    "detail": "as stated: atom 3 is S"
+   },
+   {
+    "name": "stage 3: the wedges and hashes as drawn encode the stated R/S",
+    "ok": true,
+    "detail": "atom 3 reads as S"
+   },
+   {
+    "name": "stages 1→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 9→9"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "948px wide, shown at 75% (labels 11.2px)"
    }
   ]
  },
@@ -716,7 +821,7 @@
    }
   ],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "ai-reviewed",
   "review": {
    "status": "ai-reviewed",
    "by": "independent AI reviewer (one round, fixes applied)",
@@ -744,14 +849,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][CH:3]([Br:4])[CH2:5][H:6].[O-:1][H:11]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[CH3:2][CH:3]=[CH2:5].[O:1]([H:6])[H:11]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "629px wide, shown at 112% (labels 16.9px)"
    }
   ]
  },
@@ -768,7 +888,7 @@
   "lesson": "Electrophilic aromatic substitution",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "ai-reviewed",
   "review": {
    "status": "ai-reviewed",
    "by": "independent AI reviewer (one round, fixes applied)",
@@ -791,14 +911,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[N+:7](=[O:8])=[O:9].[O-:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([N+:7]([O-:8])=[O:9])([H:10])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[O-:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([N+:7]([O-:8])=[O:9])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][O:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "816px wide, shown at 87% (labels 13.0px)"
    }
   ]
  },
@@ -821,7 +971,7 @@
    }
   ],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "ai-reviewed",
   "review": {
    "status": "ai-reviewed",
    "by": "independent AI reviewer (one round, fixes applied)",
@@ -849,14 +999,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C-:4]#[N:5].[CH3:1][C:2](=[O:3])[H:10].[H:6][C:7]#[N:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([C:4]#[N:5])[H:10].[H:6][C:7]#[N:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C-:7]#[N:8].[CH3:1][C:2]([O:3][H:6])([C:4]#[N:5])[H:10]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "875px wide, shown at 81% (labels 12.1px)"
    }
   ]
  },
@@ -874,7 +1054,7 @@
   "lesson": "SN1 mechanisms",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "ai-reviewed",
   "review": {
    "status": "ai-reviewed",
    "by": "independent AI reviewer (one round, fixes applied)",
@@ -897,14 +1077,59 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]([CH3:2])([CH3:3])([CH3:4])[Br:5].[O:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C+:1]([CH3:2])([CH3:3])[CH3:4].[O:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C:1]([CH3:2])([CH3:3])([CH3:4])[O+:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C:1]([CH3:2])([CH3:3])([CH3:4])[O:6][H:8].[H:7][OH2+:9]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "842px wide, shown at 84% (labels 12.6px)"
    }
   ]
  },
@@ -1878,7 +2103,7 @@
   "lesson": "Alkanes",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -1895,14 +2120,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methane: formula CH4",
+    "ok": true,
+    "detail": "RDKit: CH4"
+   },
+   {
+    "name": "ethane: formula C2H6",
+    "ok": true,
+    "detail": "RDKit: C2H6"
+   },
+   {
+    "name": "propane: formula C3H8",
+    "ok": true,
+    "detail": "RDKit: C3H8"
+   },
+   {
+    "name": "butane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "each member differs from the last by CH₂",
+    "ok": true,
+    "detail": "CH4, C2H6, C3H8, C4H10"
+   },
+   {
+    "name": "every member fits CₙH₂ₙ₊₂",
+    "ok": true,
+    "detail": "CH4, C2H6, C3H8, C4H10"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -1918,7 +2168,7 @@
   "lesson": "Alkenes",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -1935,14 +2185,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethene: formula C2H4",
+    "ok": true,
+    "detail": "RDKit: C2H4"
+   },
+   {
+    "name": "ethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propene: formula C3H6",
+    "ok": true,
+    "detail": "RDKit: C3H6"
+   },
+   {
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every member fits CₙH₂ₙ",
+    "ok": true,
+    "detail": "C2H4, C3H6"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -1958,7 +2228,7 @@
   "lesson": "Alkynes",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -1975,14 +2245,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethyne: formula C2H2",
+    "ok": true,
+    "detail": "RDKit: C2H2"
+   },
+   {
+    "name": "ethyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propyne: formula C3H4",
+    "ok": true,
+    "detail": "RDKit: C3H4"
+   },
+   {
+    "name": "propyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every member fits CₙH₂ₙ₋₂",
+    "ok": true,
+    "detail": "C2H2, C3H4"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2000,7 +2290,7 @@
   "lesson": "Aromatic compounds",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2017,14 +2307,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "benzene: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "methylbenzene: formula C7H8",
+    "ok": true,
+    "detail": "RDKit: C7H8"
+   },
+   {
+    "name": "phenol: formula C6H6O",
+    "ok": true,
+    "detail": "RDKit: C6H6O"
+   },
+   {
+    "name": "phenol: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "naphthalene: formula C10H8",
+    "ok": true,
+    "detail": "RDKit: C10H8"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2046,7 +2356,7 @@
    }
   ],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2068,14 +2378,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "Kekulé form: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "Kekulé form: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "delocalised: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "each Kekulé form is benzene",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2224,7 +2549,7 @@
   "lesson": "Chirality",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2241,14 +2566,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "butan-2-ol: 1 chiral centre(s)",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "propan-2-ol: 0 chiral centre(s)",
+    "ok": true,
+    "detail": "found 0"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2265,7 +2595,7 @@
   "lesson": "Constitutional isomers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2282,14 +2612,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "propan-1-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-2-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "methoxyethane: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "methoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-1-ol, propan-2-ol, methoxyethane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H8O']; 3 distinct structures"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2306,7 +2656,7 @@
   "lesson": "Diastereomers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2323,14 +2673,54 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "(2R,3R): atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(2R,3R): atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(2S,3S): atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(2S,3S): atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "meso (2R,3S): atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "meso (2R,3S): atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R', 'R'] against ['S', 'S']"
+   },
+   {
+    "name": "the two are diastereomers: same structure, stereoisomers but not mirror images",
+    "ok": true,
+    "detail": "[(1, 'R'), (2, 'R')] against [(1, 'R'), (2, 'S')]"
+   },
+   {
+    "name": "meso (2R,3S) is meso: 2 stereocentres, yet identical to its mirror image",
+    "ok": true,
+    "detail": "C[C@H](Br)[C@@H](C)Br"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2346,7 +2736,7 @@
   "lesson": "E and Z nomenclature",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2363,14 +2753,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "Z isomer: the double bond 1-2 is Z",
+    "ok": true,
+    "detail": "RDKit CIP: Z"
+   },
+   {
+    "name": "E isomer: the double bond 1-2 is E",
+    "ok": true,
+    "detail": "RDKit CIP: E"
+   },
+   {
+    "name": "Z isomer, E isomer: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H4BrCl']; 2 distinct structures"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2387,7 +2787,7 @@
   "lesson": "Enantiomers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2404,14 +2804,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "(S)-alanine: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(R)-alanine: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['S'] against ['R']"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2476,7 +2886,7 @@
   "lesson": "Functional groups",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2493,14 +2903,49 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "alcohol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "halogenoalkane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ketone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "carboxylic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ester: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide: contains amide",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2518,7 +2963,7 @@
   "lesson": "Hydrocarbons",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2535,14 +2980,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "alkane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "alkene: formula C4H8",
+    "ok": true,
+    "detail": "RDKit: C4H8"
+   },
+   {
+    "name": "alkene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alkyne: formula C4H6",
+    "ok": true,
+    "detail": "RDKit: C4H6"
+   },
+   {
+    "name": "alkyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "arene: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "arene: contains arene",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2558,7 +3033,7 @@
   "lesson": "IUPAC nomenclature",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2575,14 +3050,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "4-methylpentan-2-ol: formula C6H14O",
+    "ok": true,
+    "detail": "RDKit: C6H14O"
+   },
+   {
+    "name": "4-methylpentan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2598,7 +3078,7 @@
   "lesson": "Optical activity",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2615,14 +3095,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "(S)-(+)-butan-2-ol: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(R)-(−)-butan-2-ol: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['S'] against ['R']"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2639,7 +3129,7 @@
   "lesson": "Introduction to organic chemistry",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2656,14 +3146,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "displayed formula: formula C4H10O",
+    "ok": true,
+    "detail": "RDKit: C4H10O"
+   },
+   {
+    "name": "skeletal formula: formula C4H10O",
+    "ok": true,
+    "detail": "RDKit: C4H10O"
+   },
+   {
+    "name": "skeletal formula: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "both drawings are the same compound",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2679,7 +3184,7 @@
   "lesson": "R and S nomenclature",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2696,14 +3201,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "(R)-CHBrClF: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(S)-CHBrClF: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R'] against ['S']"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2766,7 +3281,7 @@
   "lesson": "Stereoisomerism",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2783,14 +3298,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "E-but-2-ene: the double bond 1-2 is E",
+    "ok": true,
+    "detail": "RDKit CIP: E"
+   },
+   {
+    "name": "Z-but-2-ene: the double bond 1-2 is Z",
+    "ok": true,
+    "detail": "RDKit CIP: Z"
+   },
+   {
+    "name": "(R)-butan-2-ol: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(S)-butan-2-ol: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "E-but-2-ene, Z-but-2-ene: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H8']; 2 distinct structures"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R'] against ['S']"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2807,7 +3347,7 @@
   "lesson": "Structural isomerism",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2824,14 +3364,74 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "butane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "methylpropane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "propan-1-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-1-ol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-2-ol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: formula C2H6O",
+    "ok": true,
+    "detail": "RDKit: C2H6O"
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methoxymethane: formula C2H6O",
+    "ok": true,
+    "detail": "RDKit: C2H6O"
+   },
+   {
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butane, methylpropane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H10']; 2 distinct structures"
+   },
+   {
+    "name": "propan-1-ol, propan-2-ol: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H8O']; 2 distinct structures"
+   },
+   {
+    "name": "ethanol, methoxymethane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C2H6O']; 2 distinct structures"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -2848,7 +3448,7 @@
   "lesson": "Relative atomic mass",
   "also": [],
   "renderer": "ms",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -2865,14 +3465,14 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "Ar = Σ(mass × abundance) ÷ Σ abundance = 35.45",
+    "ok": true,
+    "detail": "35.452"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -5845,7 +6445,7 @@
   "lesson": "Resonance",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -5862,14 +6462,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "O=C([O-])[O-]: formula CO3-2",
+    "ok": true,
+    "detail": "RDKit: CO3-2"
+   },
+   {
+    "name": "the resonance forms have the same atoms joined the same way",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "and so do the second and third",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -9584,7 +10194,7 @@
   "lesson": "Brønsted-Lowry theory",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -9601,14 +10211,14 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'H': 3, 'Cl': 1, 'O': 1} → {'Cl': 1, 'H': 3, 'O': 1}"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -11500,7 +12110,7 @@
   "lesson": "Acyl chlorides",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11517,14 +12127,59 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[Cl:4].[OH:5][H:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([Cl:4])[OH+:5][H:6]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[OH+:5][H:6].[Cl-:4]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[OH:5].[Cl:4][H:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "732px wide, shown at 97% (labels 14.5px)"
    }
   ]
  },
@@ -11541,7 +12196,7 @@
   "lesson": "E1 mechanisms",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11558,14 +12213,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([CH3:3])([CH2:4][H:6])[Br:5].[OH2:7]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][C+:2]([CH3:3])[CH2:4][H:6].[OH2:7]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][C:2]([CH3:3])=[CH2:4].[H:6][OH2+:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "626px wide, shown at 113% (labels 16.9px)"
    }
   ]
  },
@@ -11581,7 +12266,7 @@
   "lesson": "Enolates and enols",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11598,14 +12283,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[CH2:4][H:5].[OH-:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])=[CH2:4].[H:5][OH:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "596px wide, shown at 119% (labels 17.8px)"
    }
   ]
  },
@@ -11623,7 +12323,7 @@
   "lesson": "Hydrolysis",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11640,14 +12340,59 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O:4][CH2:5][CH3:6].[O-:7][H:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([O:4][CH2:5][CH3:6])[O:7][H:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O:7][H:8].[O-:4][CH2:5][CH3:6]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O-:7].[O:4]([CH2:5][CH3:6])[H:8]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "884px wide, shown at 80% (labels 12.0px)"
    }
   ]
  },
@@ -11664,7 +12409,7 @@
   "lesson": "Aromatic compounds",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11681,14 +12426,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[CH3:20][C+:21]=[O:22].[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])([C:21]([CH3:20])=[O:22])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Al:31]([Cl:32])([Cl:33])[Cl:34].[C:1]1([C:21]([CH3:20])=[O:22])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][Cl:30]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "852px wide, shown at 83% (labels 12.4px)"
    }
   ]
  },
@@ -11705,7 +12480,7 @@
   "lesson": "Halogenoalkanes",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11722,14 +12497,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][CH2:3][Br:4].[NH2:1][H:7].[NH3:5]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[NH2+:1]([CH2:3][CH3:2])[H:7].[NH3:5]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[NH2:1][CH2:3][CH3:2].[NH3+:5][H:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "629px wide, shown at 112% (labels 16.9px)"
    }
   ]
  },
@@ -11790,7 +12595,7 @@
   "lesson": "Rearrangements",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11807,14 +12612,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH+:2][C:3]([CH3:4])([CH3:5])[H:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]([C+:3]([CH3:4])[CH3:5])[H:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 1→1, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "597px wide, shown at 118% (labels 17.8px)"
    }
   ]
  },
@@ -11831,7 +12651,7 @@
   "lesson": "Lewis acid-base theory",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11848,14 +12668,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[B:2]([F:3])([F:4])[F:5].[NH3:1]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[NH3+:1][B-:2]([F:3])([F:4])[F:5]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "516px wide, shown at 137% (labels 20.6px)"
    }
   ]
  },
@@ -11872,7 +12707,7 @@
   "lesson": "Reduction reactions",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -11889,14 +12724,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:3][C:4](=[O:5])[CH3:6].[H-:2].[OH:7][H:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[H:2][C:4]([CH3:3])([O-:5])[CH3:6].[OH:7][H:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[H:2][C:4]([CH3:3])([O:5][H:8])[CH3:6].[OH-:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 7→7"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 7→7"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "859px wide, shown at 82% (labels 12.3px)"
    }
   ]
  },
@@ -11996,7 +12861,7 @@
   "lesson": "Nucleophilic aromatic substitution",
   "also": [],
   "renderer": "mechanism",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12013,14 +12878,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem.py\", line 22, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([Cl:7])=[CH:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1.[OH-:11]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([Cl:7])([OH:11])[CH-:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([OH:11])=[CH:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1.[Cl-:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 5→5"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 5→5"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "486px wide, shown at 145% (labels 21.8px)"
    }
   ]
  },
@@ -12037,7 +12932,7 @@
   "lesson": "Alcohols",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12054,14 +12949,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "butan-1-ol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-1-ol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-methylpropan-2-ol: contains tertiary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-methylpropan-2-ol: contains tertiary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-1-ol, butan-2-ol, 2-methylpropan-2-ol: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H10O']; 3 distinct structures"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12078,7 +13003,7 @@
   "lesson": "Aldehydes",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12095,14 +13020,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "benzaldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "benzaldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12120,7 +13070,7 @@
   "lesson": "Amides",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12137,14 +13087,49 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N-methylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N-methylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N,N-dimethylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N,N-dimethylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12162,7 +13147,7 @@
   "lesson": "Amines",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12179,14 +13164,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethylamine: contains secondary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "trimethylamine: contains tertiary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "tetramethylammonium: contains quaternary ammonium",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12204,7 +13204,7 @@
   "lesson": "Acid anhydrides",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12221,14 +13221,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "salicylic acid: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "salicylic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic anhydride: contains acid anhydride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 11, 'H': 12, 'O': 6} → {'C': 11, 'H': 12, 'O': 6}"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12244,7 +13274,7 @@
   "lesson": "Carbanions",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12261,14 +13291,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "carbanion form: formula C3H5O",
+    "ok": true,
+    "detail": "RDKit: C3H5O-"
+   },
+   {
+    "name": "enolate form: formula C3H5O",
+    "ok": true,
+    "detail": "RDKit: C3H5O-"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12286,7 +13321,7 @@
   "lesson": "Carbocations",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12303,14 +13338,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methyl: formula CH3",
+    "ok": true,
+    "detail": "RDKit: CH3+"
+   },
+   {
+    "name": "primary: formula C2H5",
+    "ok": true,
+    "detail": "RDKit: C2H5+"
+   },
+   {
+    "name": "secondary: formula C3H7",
+    "ok": true,
+    "detail": "RDKit: C3H7+"
+   },
+   {
+    "name": "tertiary: formula C4H9",
+    "ok": true,
+    "detail": "RDKit: C4H9+"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12328,7 +13378,7 @@
   "lesson": "Carbonyl chemistry",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12345,14 +13395,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "acyl chloride: contains acyl chloride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "anhydride: contains acid anhydride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ester: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide: contains amide",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12368,7 +13433,7 @@
   "lesson": "Carboxylic acids",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12385,14 +13450,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "CC(=O)[O-]: formula C2H3O2",
+    "ok": true,
+    "detail": "RDKit: C2H3O2-"
+   },
+   {
+    "name": "CC(=O)[O-]: contains carboxylate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CC(=O)[O-]: formula C2H3O2",
+    "ok": true,
+    "detail": "RDKit: C2H3O2-"
+   },
+   {
+    "name": "both forms have the same atoms and connections",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12408,7 +13488,7 @@
   "lesson": "Chemoselectivity",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12425,14 +13505,54 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methyl 4-oxopentanoate: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: has no ketone",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12449,7 +13569,7 @@
   "lesson": "Condensation reactions",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12466,14 +13586,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 4, 'H': 10, 'O': 3} → {'C': 4, 'H': 10, 'O': 3}"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12489,7 +13629,7 @@
   "lesson": "Electrophiles and nucleophiles",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12506,14 +13646,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "CH₃Br: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "HCHO: contains aldehyde",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12530,7 +13675,7 @@
   "lesson": "Esters",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12547,14 +13692,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl butanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl butanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3-methylbutyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3-methylbutyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12571,7 +13741,7 @@
   "lesson": "Ethers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12588,14 +13758,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "epoxyethane: contains epoxide",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12613,7 +13803,7 @@
   "lesson": "Heterocyclic compounds",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12630,14 +13820,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "pyridine: formula C5H5N",
+    "ok": true,
+    "detail": "RDKit: C5H5N"
+   },
+   {
+    "name": "pyrrole: formula C4H5N",
+    "ok": true,
+    "detail": "RDKit: C4H5N"
+   },
+   {
+    "name": "furan: formula C4H4O",
+    "ok": true,
+    "detail": "RDKit: C4H4O"
+   },
+   {
+    "name": "thiophene: formula C4H4S",
+    "ok": true,
+    "detail": "RDKit: C4H4S"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12654,7 +13859,7 @@
   "lesson": "Ketones",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12671,14 +13876,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cyclohexanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cyclohexanone: contains ketone",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12740,7 +13970,7 @@
   "lesson": "Nitriles",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12757,14 +13987,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanenitrile: contains nitrile",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanenitrile: contains nitrile",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12780,7 +14025,7 @@
   "lesson": "Nitro compounds",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12797,14 +14042,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "nitrobenzene: contains nitro",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "nitrobenzene: contains nitro",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12821,7 +14081,7 @@
   "lesson": "Organohalogen compounds",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12838,14 +14098,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "CFC-12: formula CCl2F2",
+    "ok": true,
+    "detail": "RDKit: CCl2F2"
+   },
+   {
+    "name": "CFC-12: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CFC-11: formula CCl3F",
+    "ok": true,
+    "detail": "RDKit: CCl3F"
+   },
+   {
+    "name": "CFC-11: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "halothane: formula C2HBrClF3",
+    "ok": true,
+    "detail": "RDKit: C2HBrClF3"
+   },
+   {
+    "name": "halothane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12861,7 +14146,7 @@
   "lesson": "Oxidation reactions",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12878,14 +14163,59 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethanol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12901,7 +14231,7 @@
   "lesson": "Phenols",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12918,14 +14248,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "phenol: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -12942,7 +14277,7 @@
   "lesson": "Regioselectivity",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -12959,14 +14294,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-bromopropane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1-bromopropane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-bromopropane, 1-bromopropane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H7Br']; 2 distinct structures"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13028,7 +14378,7 @@
   "lesson": "Stereoselectivity",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13045,14 +14395,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "cyclohexene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "(1R,2R)-trans: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(1R,2R)-trans: atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(1S,2S)-trans: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(1S,2S)-trans: atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R', 'R'] against ['S', 'S']"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13127,7 +14502,7 @@
   "lesson": "Thiols and sulfides",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13144,14 +14519,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethanethiol: contains thiol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanethiol: contains thiol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl sulfide: contains sulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl sulfide: contains sulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl disulfide: contains disulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl disulfide: contains disulfide",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13168,7 +14568,7 @@
   "lesson": "Carbon-13 NMR",
   "also": [],
   "renderer": "nmr",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13185,14 +14585,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "3 peaks: 3 carbon environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 1, 1]"
+   },
+   {
+    "name": "δ 10: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 10 lies in the C–C range (5–40 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 26: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 26 lies in the C–C range (5–40 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 64: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 64 lies in the C–O range (50–90 ppm)",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13209,7 +14639,7 @@
   "lesson": "Proton NMR",
   "also": [],
   "renderer": "nmr",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13226,14 +14656,64 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "3 peaks: 3 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 2, 3]"
+   },
+   {
+    "name": "δ 1.2: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 1.2: t by the n + 1 rule",
+    "ok": true,
+    "detail": "2 neighbouring H → t"
+   },
+   {
+    "name": "δ 1.2 lies in the R–CH3 range (0.7–1.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 3.7: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 3.7: q by the n + 1 rule",
+    "ok": true,
+    "detail": "3 neighbouring H → q"
+   },
+   {
+    "name": "δ 3.7 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 2.6: 1H in one environment",
+    "ok": true,
+    "detail": "1 H in 1 class(es)"
+   },
+   {
+    "name": "δ 2.6: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 2.6 lies in the R–OH range (0.5–5.0 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 6 hydrogens in C2H6O",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13796,7 +15276,7 @@
   "lesson": "Organometallic chemistry",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13813,14 +15293,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "C₅H₅⁻: formula C5H5",
+    "ok": true,
+    "detail": "RDKit: C5H5-"
+   },
+   {
+    "name": "Fe²⁺: formula Fe",
+    "ok": true,
+    "detail": "RDKit: Fe+2"
+   },
+   {
+    "name": "C₅H₅⁻: formula C5H5",
+    "ok": true,
+    "detail": "RDKit: C5H5-"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -13838,7 +15328,7 @@
   "lesson": "Fragmentation patterns",
   "also": [],
   "renderer": "ms",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -13855,14 +15345,59 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "m/z 72 is C4H8O",
+    "ok": true,
+    "detail": "mass 72"
+   },
+   {
+    "name": "C4H8O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 57 is C3H5O",
+    "ok": true,
+    "detail": "mass 57"
+   },
+   {
+    "name": "C3H5O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 43 is C2H3O",
+    "ok": true,
+    "detail": "mass 43"
+   },
+   {
+    "name": "C2H3O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 29 is C2H5",
+    "ok": true,
+    "detail": "mass 29"
+   },
+   {
+    "name": "C2H5 can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "molecular ion at m/z 72",
+    "ok": true,
+    "detail": "C4H8O: 72"
+   },
+   {
+    "name": "base peak at m/z 43",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -14216,7 +15751,7 @@
   "lesson": "High-resolution mass spectrometry",
   "also": [],
   "renderer": "ms",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -14233,14 +15768,39 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "CO: accurate mass 27.9949",
+    "ok": true,
+    "detail": "27.9949"
+   },
+   {
+    "name": "CO: nominal mass 28",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N2: accurate mass 28.0061",
+    "ok": true,
+    "detail": "28.0061"
+   },
+   {
+    "name": "N2: nominal mass 28",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C2H4: accurate mass 28.0313",
+    "ok": true,
+    "detail": "28.0313"
+   },
+   {
+    "name": "C2H4: nominal mass 28",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -14324,7 +15884,7 @@
   "lesson": "Infrared spectroscopy",
   "also": [],
   "renderer": "ir",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -14341,14 +15901,49 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "O–H (acid) at 2900 cm⁻¹ lies in 2500–3000 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an O–H (acid) bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C=O at 1710 cm⁻¹ lies in 1680–1750 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an C=O bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C–O at 1290 cm⁻¹ lies in 1000–1300 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an C–O bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no O–H (alcohol) band, and the molecule has no O–H (alcohol) bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no C≡N band, and the molecule has no C≡N bond",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -14460,7 +16055,7 @@
   "lesson": "Ligands",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -14477,14 +16072,24 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "en: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanedioate: contains carboxylate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "EDTA⁴⁻: formula C10H12N2O8",
+    "ok": true,
+    "detail": "RDKit: C10H12N2O8-4"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -14630,7 +16235,7 @@
   "lesson": "Mass spectrometry",
   "also": [],
   "renderer": "ms",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -14647,14 +16252,69 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "m/z 72 is C5H12",
+    "ok": true,
+    "detail": "mass 72"
+   },
+   {
+    "name": "C5H12 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 57 is C4H9",
+    "ok": true,
+    "detail": "mass 57"
+   },
+   {
+    "name": "C4H9 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 43 is C3H7",
+    "ok": true,
+    "detail": "mass 43"
+   },
+   {
+    "name": "C3H7 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 29 is C2H5",
+    "ok": true,
+    "detail": "mass 29"
+   },
+   {
+    "name": "C2H5 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 27 is C2H3",
+    "ok": true,
+    "detail": "mass 27"
+   },
+   {
+    "name": "C2H3 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "molecular ion at m/z 72",
+    "ok": true,
+    "detail": "C5H12: 72"
+   },
+   {
+    "name": "base peak at m/z 43",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -14738,7 +16398,7 @@
   "lesson": "p-block chemistry",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -14755,14 +16415,19 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "P₄O₁₀: formula O10P4",
+    "ok": true,
+    "detail": "RDKit: O10P4"
+   },
+   {
+    "name": "SO₃: formula O3S",
+    "ok": true,
+    "detail": "RDKit: O3S"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -15044,7 +16709,7 @@
   "lesson": "NMR chemical shifts",
   "also": [],
   "renderer": "nmr",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -15061,14 +16726,79 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "4 peaks: 4 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 2, 2, 3]"
+   },
+   {
+    "name": "δ 9.9: 1H in one environment",
+    "ok": true,
+    "detail": "1 H in 1 class(es)"
+   },
+   {
+    "name": "δ 9.9: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 9.9 lies in the H–C=O range (9.0–10.2 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 7.8: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 7.8: d by the n + 1 rule",
+    "ok": true,
+    "detail": "1 neighbouring H → d"
+   },
+   {
+    "name": "δ 7.8 lies in the Ar–H range (6.5–8.5 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 7.0: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 7.0: d by the n + 1 rule",
+    "ok": true,
+    "detail": "1 neighbouring H → d"
+   },
+   {
+    "name": "δ 7.0 lies in the Ar–H range (6.5–8.5 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 3.9: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 3.9: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 3.9 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 8 hydrogens in C8H8O2",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -15085,7 +16815,7 @@
   "lesson": "Spin-spin coupling",
   "also": [],
   "renderer": "nmr",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -15102,14 +16832,64 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "3 peaks: 3 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [2, 3, 3]"
+   },
+   {
+    "name": "δ 1.3: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 1.3: t by the n + 1 rule",
+    "ok": true,
+    "detail": "2 neighbouring H → t"
+   },
+   {
+    "name": "δ 1.3 lies in the R–CH3 range (0.7–1.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 4.1: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 4.1: q by the n + 1 rule",
+    "ok": true,
+    "detail": "3 neighbouring H → q"
+   },
+   {
+    "name": "δ 4.1 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 2.0: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 2.0: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 2.0 lies in the H–C–C=O range (2.0–2.7 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 8 hydrogens in C4H8O2",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -15454,7 +17234,7 @@
   "lesson": "Polymerisation",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -15471,14 +17251,34 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "hexanedioic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "hexane-1,6-diamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide-linked unit: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide-linked unit: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 12, 'H': 26, 'O': 4, 'N': 2} → {'C': 12, 'H': 26, 'N': 2, 'O': 4}"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -15695,7 +17495,7 @@
   "lesson": "Biopolymers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -15712,14 +17512,29 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "a dipeptide: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a dipeptide: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "maltose: formula C12H22O11",
+    "ok": true,
+    "detail": "RDKit: C12H22O11"
+   },
+   {
+    "name": "maltose: contains ether",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -17449,7 +19264,7 @@
   "lesson": "Polymers",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -17466,14 +19281,44 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "ethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "chloroethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "poly(ethene): has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "poly(propene): has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "PVC: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "PVC: has no alkene",
+    "ok": true,
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -18036,7 +19881,7 @@
   "lesson": "Interfaces",
   "also": [],
   "renderer": "structures",
-  "status": "failed",
+  "status": "validated",
   "review": null,
   "checks": [
    {
@@ -18053,14 +19898,14 @@
     "ok": true
    },
    {
-    "name": "chemistry renderer ran",
-    "ok": false,
-    "detail": "Traceback (most recent call last):\n  File \"/home/user/Gradify/scripts/diagrams/chem_more.py\", line 18, in <module>\n    from rdkit import Chem, RDLogger\nModuleNotFoundError: No module named 'rdkit'\n"
+    "name": "sodium dodecyl sulfate: formula C12H25NaO4S",
+    "ok": true,
+    "detail": "RDKit: C12H25NaO4S"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": false,
-    "detail": "0px wide, shown at Infinity% (labels Infinitypx)"
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
