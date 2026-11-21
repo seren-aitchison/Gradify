@@ -34,3 +34,45 @@ Rules: edit only notes files in your batch. Never run git checkout, reset, stash
 `git add -A`/`git add .`, and never commit other people's files; fc-done commits for you. Don't touch main.
 If fc-done reports a push failure, carry on (the commit is safe and the lead will push).
 When finished (or if you stop), reply with: files committed, lessons, cards, and anything left unfinished.
+
+Skip these files: the course content job is rewriting their lessons, so cards written now would be against
+stale text. They get their cards after that work is merged.
+- kit/courses/biology/notes/u01.js
+- kit/courses/biology/notes/u02.js
+- kit/courses/chemistry/notes/u01.js
+- kit/courses/chemistry/notes/u02.js
+- kit/courses/law/notes/u03.js
+- kit/courses/maths/notes/u02.js
+- kit/courses/maths/notes/u03.js
+- kit/courses/maths/notes/u04.js
+- kit/courses/maths/notes/u05.js
+- kit/courses/maths/notes/u06.js
+- kit/courses/maths/notes/u10.js
+- kit/courses/maths/notes/u11.js
+- kit/courses/maths/notes/u12.js
+- kit/courses/maths/notes/u13.js
+- kit/courses/maths/notes/u16.js
+- kit/courses/maths/notes/u17.js
+- kit/courses/maths/notes/u18.js
+- kit/courses/maths/notes/u19.js
+- kit/courses/maths/notes/u20.js
+- kit/courses/maths/notes/u24.js
+- kit/courses/maths/notes/u25.js
+- kit/courses/maths/notes/u26.js
+- kit/courses/maths/notes/u27.js
+- kit/courses/maths/notes/u28.js
+- kit/courses/nursing/notes/u02.js
+- kit/courses/nursing/notes/u16.js
+- kit/courses/pharmacy/notes/u02.js
+- kit/courses/pharmacy/notes/u06.js
+- kit/courses/pharmacy/notes/u15.js
+- kit/courses/pharmacy/notes/u18.js
+- kit/courses/pharmacy/notes/u19.js
+- kit/courses/physics/notes/u10.js
+- kit/courses/physics/notes/u12.js
+- kit/courses/physics/notes/u15.js
+- kit/courses/physics/notes/u16.js
+- kit/courses/physics/notes/u17.js
+- kit/courses/physics/notes/u19.js
+- kit/courses/physics/notes/u21.js
+- kit/courses/physics/notes/u23.js
