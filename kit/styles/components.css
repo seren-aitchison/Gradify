@@ -1319,3 +1319,12 @@ dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-ba
   box-shadow: var(--gg-spec), var(--gg-shadow);
 }
 :root[data-a-contrast="high"] body :is(.plan, .pro-card, .cp-card, .course-card, .goal-card, .hub-foot, .sub-foot) { background: var(--bg) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--fg) !important; }
+
+/* Gradify ownership mark under every diagram and lab (kit/diagrams/visual.js MARK, kit/labs/lab.js shell): small, faint,
+   on its own line at the bottom right, so it never overlaps a label, an axis or a control and never takes a tap. Labs
+   follow the page theme; the diagram card is white in both themes, so its mark keeps the card's ink. The repeated
+   class only raises specificity above lesson text styles. */
+.gx-mark.gx-mark.gx-mark { display: block; margin: 6px 2px 0; text-align: right; font-size: 11px; line-height: 1.3; letter-spacing: .02em;
+  font-weight: 500; color: var(--mute); opacity: .62; pointer-events: none; user-select: none; -webkit-user-select: none; }
+.vx.vx.vx.vx.vx .gx-mark { color: rgba(21, 24, 38, .5); opacity: 1; }
+:root[data-a-contrast="high"] .gx-mark.gx-mark.gx-mark { opacity: 1; }
