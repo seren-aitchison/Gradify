@@ -18,9 +18,11 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 
 import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { render } from "../../kit/diagrams/renderers.js";
-import "../../kit/diagrams/chem-renderers.js"; // registers the chemistry renderers
-import "../../kit/diagrams/chem-renderers-2.js";
-import "../../kit/diagrams/chem-renderers-3.js";
+
+// Subject renderer modules register themselves when imported: every kit/diagrams/*-renderers*.js file (chemistry,
+// physics, maths, biology, …), so a new subject builder adds its own file and never edits this one.
+const DIAGRAMS = new URL("../../kit/diagrams/", import.meta.url).pathname;
+for (const f of readdirSync(DIAGRAMS).filter((f) => /^[a-z]+-renderers(-\d+)?\.js$/.test(f)).sort()) await import(join(DIAGRAMS, f));
 
 const ROOT = new URL("../../", import.meta.url).pathname;
 const SPECS = join(ROOT, "kit/diagrams/specs"), OUT = join(ROOT, "kit/diagrams/svg"), MANIFEST = join(ROOT, "kit/diagrams/manifest.json");
