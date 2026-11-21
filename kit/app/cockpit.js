@@ -58,7 +58,7 @@ export function heroCard({ s, reviews }) {
     <div class="cp-actions">
       <a class="cp-pill dark" href="#/study">Revise</a>
       <a class="cp-pill" href="#/new">Add notes</a>
-      <a class="cp-round" href="#/notes" aria-label="Open your library" title="Library">↗</a>
+      <a class="cp-round" href="#/library" aria-label="Open your library" title="Library">↗</a>
     </div>
   </article>`;
 }

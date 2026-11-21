@@ -124,7 +124,7 @@ const NAV = [
   ["ai", "Gradify AI", "AI", "bulb"],
   ["learning", "Learn", "Learn", "book"],
   ["study", "Study", "Study", "layers"],
-  ["notes", "Notes Studio", "Notes", "upload"],
+  ["notes", "Notes", "Notes", "upload"],
   ["tools", "Tools", "Tools", "forge"],
   ["community", "Community", "Community", "people"],
   ["account", "Settings", "Settings", "cog"],
@@ -132,7 +132,7 @@ const NAV = [
 // the phone tab bar has room for five: the rest are under More
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
@@ -265,7 +265,7 @@ function decorate(root) {
 async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
   const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
-  if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
+  if (needsSetup(profile) && !["start", "account"].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
@@ -566,7 +566,7 @@ async function renderDeck(id) {
   const topics = [...new Set(cards.map((c) => c.topic || "Cards"))];
   const deeper = { why: cards.filter((c) => c.kind === "why").length, apply: cards.filter((c) => c.kind === "apply").length };
   view.innerHTML = `<section class="deck">
-    <a class="back" href="#/notes">← All notes</a>
+    <a class="back" href="#/library">← Your library</a>
     <div class="deck-head">
       <div><span class="kicker">${esc(doc.site || profile.site)} · ${fmtDate(doc.created_at)}</span><h1>${esc(doc.title)}</h1>
         <span class="engine-badge ${pack?.engine === "claude" ? "ai" : ""}">${pack?.engine === "claude" ? `${icon("sparkles")}Made by Gradify AI` : `${icon("lock")}Made on this device`}</span></div>
@@ -626,7 +626,7 @@ async function renderDeck(id) {
       if (!confirm(`Delete “${doc.title}” and its ${cards.length} cards? This can't be undone.`)) return;
       await store.deleteDocument(id);
       toast("Deleted.");
-      location.hash = "#/notes";
+      location.hash = "#/library";
       return;
     }
     if (!row || !act) return;
@@ -715,7 +715,9 @@ async function renderNotes() {
   </section>`;
   wireJotStrip(view);
 }
-routes.notes = renderNotes;
+routes.library = renderNotes;
+// Gradify Notes (kit/notes/kb): the knowledge base, loaded when opened. It reads the rest of the hash itself.
+routes.notes = async () => (await import("../notes/kb/view.js")).renderNotesKb(view, { store, toast, site: profile.site || SITE || "Gradify", profile });
 routes.jot = (arg) => renderJot(view, arg, { toast });
 // Tools (kit/tools): the lesson search, mind map creator, flashcard creator and notes converter, loaded when opened
 routes.tools = async () => (await import("../tools/tools.js")).renderTools(view, { store, toast, site: profile.site || "Gradify", pricing: PRICING });
@@ -727,13 +729,18 @@ const SURE_BUTTONS = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], [
 async function renderStudy(arg) {
   // #/study/<deck id>, or #/study/t:<topic key> for a targeted practice session on one topic
   const topicKey = arg?.startsWith("t:") ? decodeURIComponent(arg.slice(2)) : null;
-  const deckId = topicKey ? topicKey.split("|")[0] : arg;
+  // #/study/kb:<rem id>|<mode>: cards from Gradify Notes (kit/notes/kb/view-study.js studyQueue)
+  const kbSpec = arg?.startsWith("kb:") ? decodeURIComponent(arg.slice(3)) : null;
+  const deckId = kbSpec ? null : topicKey ? topicKey.split("|")[0] : arg;
   // Free: 5 flashcard sets in all (kit/data/limits.js), once Pro is on sale
   const { gate, lockedHtml } = await import("../data/limits.js");
-  if (!(await gate("flashcards", deckId || "due", { store, pricing: PRICING }))) { view.innerHTML = lockedHtml("flashcards", { pricing: PRICING }); return; }
+  if (!(await gate("flashcards", deckId || (kbSpec ? "notes" : "due"), { store, pricing: PRICING }))) { view.innerHTML = lockedHtml("flashcards", { pricing: PRICING }); return; }
   const all = await store.listCards(deckId ? { documentId: deckId } : {});
-  let queue, practice = false, topicName = null;
-  if (topicKey) {
+  let queue, practice = false, topicName = null, kb = null;
+  if (kbSpec) {
+    kb = await (await import("../notes/kb/view-study.js")).studyQueue(kbSpec, all);
+    ({ queue, practice } = kb); topicName = kb.label;
+  } else if (topicKey) {
     const [p] = topicProfiles(all, await store.listReviews(400)).filter((x) => x.key === topicKey);
     topicName = p?.topic || "Topic";
     queue = p ? practiceOrder(all.filter((c) => `${c.document_id}|${c.topic || "Cards"}` === topicKey), p).slice(0, 12) : [];
@@ -747,7 +754,7 @@ async function renderStudy(arg) {
   // builds on them, sure-but-wrong cards early, new cards capped, topics interleaved, fitted to the learner's minutes.
   // Practice and topic sessions keep their own order.
   let ordered = false;
-  if (!topicKey && !practice && queue.length > 1 && ACCESS.has("intelligence")) {
+  if (!topicKey && !kb && !practice && queue.length > 1 && ACCESS.has("intelligence")) {
     try {
       const reviews = await store.listReviews(400), concepts = learnerMemory({ cards: all, reviews, examDate: profile.exam_date || null });
       const edges = usable(weightedGraph({ noteEdges: dependencyGraph(all), concepts }));
@@ -755,7 +762,9 @@ async function renderStudy(arg) {
       ordered = true;
     } catch (e) { console.warn("Card ordering fell back to due date", e); }
   }
-  if (!ordered && !topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
+  // image occlusion cards from Gradify Notes show their image
+  if (queue.some((c) => c.kind === "occlusion" && !c._front)) queue = await (await import("../notes/kb/view-study.js")).decorateAny(queue).catch(() => queue);
+  if (!ordered && !topicKey && !kb) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
   queue = queue.slice(0, cap);
   // the ledger: the session starts, and a snapshot of what the learner knew, to see what changed by the end
   const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
@@ -763,7 +772,7 @@ async function renderStudy(arg) {
   if (queue.length) record(store, { event: "session_started", site: profile.site, concept: topicKey, source: practice ? "practice" : topicKey ? "topic" : "due", detail: { cards: queue.length } });
   addEventListener("hashchange", () => { if (!finished && answeredSoFar) record(store, { event: "session_abandoned", site: profile.site, concept: topicKey, detail: { answered: answeredSoFar, of: queue.length } }); }, { once: true });
   if (!queue.length) {
-    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">Nothing is due right now. Add more notes, or come back later.</p><div class="row-actions"><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
+    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">${kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later."}</p><div class="row-actions"><a class="btn btn-primary lg" href="${kb ? kb.back : "#/new"}"><span>${kb ? "Back to your notes" : "Add notes"}</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
     return;
   }
   const total = queue.length;
@@ -783,11 +792,11 @@ async function renderStudy(arg) {
     const p = preview(c, srsOpts());
     const deep = c.kind === "why" || c.kind === "apply";
     view.innerHTML = `<section class="study-session">
-      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}${ordered ? ` · <span title="Fading and important cards first, foundations before what builds on them, topics mixed">ordered by Gradify</span>` : ""}</span></div>
+      <div class="sess-top"><a href="${kb ? kb.back : topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}${ordered ? ` · <span title="Fading and important cards first, foundations before what builds on them, topics mixed">ordered by Gradify</span>` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
         <span class="fc-icon" data-g3d="${esc(`${c.topic || ""} ${c.front}`)}" data-g3d-size="58"></span>
         <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
-        <p class="fc-front">${esc(c.front)}</p>
+        ${c._front ? `<div class="fc-front fc-img">${shown ? c._back : c._front}</div>` : `<p class="fc-front">${esc(c.front)}</p>`}
         ${!deep && !shown ? `<label class="fc-type"><span class="sr-only">Type your answer (optional)</span><input id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="Type your answer, or just think it" value="${esc(attempt)}"></label>` : ""}
         ${deep && !shown ? `<label class="fc-write"><span>${c.kind === "why" ? "Explain it in your own words" : "Work it out"} <em>optional, just for you</em></span><textarea id="attempt" rows="3" placeholder="${c.kind === "why" ? "Because…" : "It would…, because…"}">${esc(attempt)}</textarea></label>` : ""}
         ${shown && grade ? `<div class="fc-typed v-${grade.verdict}" role="status"><b>${VERDICT_TEXT[grade.verdict]}</b><span>You typed “${esc(attempt)}”</span></div>` : ""}
@@ -807,7 +816,7 @@ async function renderStudy(arg) {
     const c = queue[i];
     // in a topic session, cards that aren't due yet only move if you've forgotten them
     const reschedule = !practice && (!topicKey || !c.reps || isDue(c) || r === "again");
-    const next = reschedule ? schedule(c, r, srsOpts()) : {};
+    const next = reschedule ? schedule(c, r, kb?.examDate ? { ...srsOpts(), examDate: kb.examDate } : srsOpts()) : {};
     results[r]++; answeredSoFar++;
     xp += r === "again" ? 1 : 2;
     record(store, answerEvent(c, { rating: r, confidence: sure, ms: Date.now() - t0, mode: practice ? "practice" : "scheduled", site: profile.site }));
@@ -1217,7 +1226,7 @@ async function renderLearning() {
     ${s.cards.length ? `<article class="panel glass"><div class="deck-stats">
         <div><b>${s.docs.length}</b><span>${s.docs.length === 1 ? "deck" : "decks"}</span></div><div><b>${s.cards.length}</b><span>cards</span></div>
         <div><b>${s.due.length}</b><span>due now</span></div><div><b>${s.learned.length}</b><span>learned</span></div></div>
-        <div class="row-actions">${s.due.length ? `<a class="btn btn-light lg btn-sm" href="#/study"><span>Review ${s.due.length} due</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/notes"><span>Open your library</span></a><a class="btn btn-ghost lg btn-sm" href="#/new"><span>Add notes</span></a></div></article>`
+        <div class="row-actions">${s.due.length ? `<a class="btn btn-light lg btn-sm" href="#/study"><span>Review ${s.due.length} due</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/library"><span>Open your library</span></a><a class="btn btn-ghost lg btn-sm" href="#/new"><span>Add notes</span></a></div></article>`
       : `<article class="panel glass lo-empty"><h3>Turn your own notes into flashcards</h3><p class="sub">Paste or upload notes and Gradify makes flashcards, each checked against what you wrote, then schedules your reviews.</p><a class="btn btn-light lg btn-sm" href="#/new"><span>Add notes</span></a></article>`}
     ${courses.length ? `<h2 class="lo-h">More Gradify courses</h2><div class="lo-chips">${startCourses(L, 12)}</div>` : ""}
   </section>`;
@@ -1567,7 +1576,7 @@ async function renderAi(arg) {
     ["upload", "Study packs from messy notes", "Reads handwriting-heavy PDFs, diagrams and scans, and checks every card against what you wrote.", "#/new", "Add notes"],
     ["brain", "Explain and apply questions", "Questions that make you explain why and use an idea on a problem you haven't seen.", docs[0] ? `#/deck/${docs[0].id}` : "#/new", docs[0] ? "Open your latest pack" : "Make a pack first"],
     ["book", "A tutor in every lesson", "Talk a topic through, get questioned like a viva, or ask why something works, grounded in the lesson's notes.", "#/learning", "Go to your courses"],
-    ["checklist", "Fix a card", "Regenerate any card that doesn't match your notes, straight from the pack.", docs[0] ? `#/deck/${docs[0].id}` : "#/notes", "Open a pack"],
+    ["checklist", "Fix a card", "Regenerate any card that doesn't match your notes, straight from the pack.", docs[0] ? `#/deck/${docs[0].id}` : "#/library", "Open a pack"],
   ];
   view.innerHTML = `<section class="ai-route">
     <span class="kicker lo-kicker">${icon("sparkles")}Gradify AI</span>

@@ -82,6 +82,9 @@ const toDataUrl = (blob) => new Promise((ok, no) => { const r = new FileReader()
 const fromDataUrl = (s) => fetch(s).then((r) => r.blob());
 
 // ---------- the account ----------
+// other features whose images travel with Tools' images (Gradify Notes: kit/notes/kb/store.js)
+const imageSources = new Set();
+export const needImages = (fn) => { imageSources.add(fn); };
 let cloud = null, timer = 0, running = null;
 export const status = { mode: "local", note: "" };
 /** Use the learner's account when signed in (the app's store). Returns once this browser and the account agree. */
@@ -129,6 +132,7 @@ async function pull() {
   }
   // images the decks use that this browser doesn't have yet
   const need = new Set([...decks(), ...pages()].flatMap((d) => [...String(d.text || "").matchAll(/\(img:([a-z0-9-]+)\)/gi)].map((m) => m[1])));
+  for (const f of imageSources) { try { for (const id of f()) need.add(id); } catch { /* that source's own problem */ } }
   const have = new Set(await tx("readonly", (s) => s.getAllKeys()).catch(() => []));
   const missing = [...need].filter((id) => !have.has(id));
   if (missing.length) {
