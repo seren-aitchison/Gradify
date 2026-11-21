@@ -61,5 +61,8 @@ rubric. The results go in `docs/flashcard-audit/review.md`, and any fix-or-drop 
 ## 5. Commit gate
 
 `node scripts/fc-done.mjs <file>` runs both checks on one file and commits it only if the structural
-checker passes with every lesson at 10, and the audit has no blocking flags. Committing a file after
-each pass means work survives usage interruptions. Nothing here is merged into main or deployed.
+checker passes with every lesson at 10, and the audit has no blocking flags. `--checkpoint` commits a partly
+done file on the same terms (every started lesson at 10, no checker errors, no blocking flags), so a usage
+limit loses at most the lessons in hand. After each commit, `scripts/fc-publish.mjs` publishes to main (the
+live site) in the background: in a clean checkout of main it merges the branch, regenerates the course
+registries and content API, and pushes only if `npm test` passes. Its log is `.git/fc-publish.log`.
