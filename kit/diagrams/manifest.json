@@ -32357,5 +32357,208 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u07-g-inside-outside": {
+  "title": "g inside and outside a uniform Earth",
+  "caption": "Gauss's law for gravity: inside a uniform sphere only the mass within r pulls, so g rises in a straight line from 0 at the centre to 9.8 m s⁻² at the surface (g = g₀r/R). Outside it falls as 1/r². At r = R/2 the field is half the surface value, 4.90 m s⁻².",
+  "alt": "Graph of g against r/R: a straight line from zero at the centre up to 9.8 metres per second squared at the surface, then a curve falling as one over r squared. The point at half the radius is marked at 4.90.",
+  "description": [
+   "The horizontal axis is distance from the centre in Earth radii (r/R); the vertical axis is g in m s⁻².",
+   "Inside (r < R) the enclosed mass grows as r³ and the surface area as r², so g = g₀(r/R): a straight line from 0 to 9.8.",
+   "Outside (r > R) all the mass counts as if at the centre, so g = g₀(R/r)²: 9.8 at r = R, 2.45 at r = 2R.",
+   "The example's point: at r = R/2, g = 4.90 m s⁻², half the surface value."
+  ],
+  "course": "physics",
+  "lesson": "Gravitational fields",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u07.js: Gravitational fields"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "g at r = R/2 is 4.90 m s⁻²",
+    "ok": true,
+    "detail": "y(0.5) = 4.9"
+   },
+   {
+    "name": "the inside line reaches g₀ at the surface",
+    "ok": true,
+    "detail": "y(1) = 9.8"
+   },
+   {
+    "name": "the outside curve starts at g₀ at the surface",
+    "ok": true,
+    "detail": "y(1) = 9.8"
+   },
+   {
+    "name": "g falls to a quarter at 2R",
+    "ok": true,
+    "detail": "y(2) = 2.45"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u07-kepler-period": {
+  "title": "Kepler's third law: T² = a³",
+  "caption": "With a in AU and T in years, T = a^{3/2} for every planet. Earth (1 AU) has T = 1 year; Jupiter at 5.2 AU has T = 5.2^{3/2} = 11.86 years. Doubling the orbit radius multiplies the period by 2^{3/2} ≈ 2.8, not 2.",
+  "alt": "Graph of orbital period in years against semi-major axis in astronomical units: a curve T equals a to the power 3 over 2, through Earth at (1, 1) and Jupiter at (5.2, 11.9).",
+  "description": [
+   "The horizontal axis is the semi-major axis a in AU; the vertical axis is the period T in years.",
+   "The curve is T = a^{3/2}, which is T² = a³ in these units.",
+   "Earth sits at (1, 1) by definition of the AU and the year.",
+   "Jupiter: a = 5.2 AU gives T = 11.86 years."
+  ],
+  "course": "physics",
+  "lesson": "Kepler's laws",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u07.js: Kepler's laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Earth: T = 1 year at 1 AU",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "Jupiter: T = 11.86 years at 5.2 AU",
+    "ok": true,
+    "detail": "y(5.2) = 11.8578"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u07-orbit-energies": {
+  "title": "Energies of a circular orbit",
+  "caption": "In a circular orbit K = GMm/2r, U = −GMm/r and E = −GMm/2r = −K. Raising the 500 kg satellite from 7000 to 8000 km changes E by +1.78 GJ: the potential energy rises by 3.56 GJ but the kinetic energy falls by 1.78 GJ.",
+  "alt": "Graph of energy in gigajoules against orbital radius in thousands of kilometres: U falls steeply, K is positive and half its size, and the total E is minus K. Values at 7000 and 8000 km are marked.",
+  "description": [
+   "The horizontal axis is the orbit radius in thousands of km; the vertical axis is energy in GJ for the 500 kg satellite.",
+   "U = −GMm/r = −199.3/r (r in 10³ km) is the lowest curve; K = +99.7/r is half its size and opposite in sign; E = K + U = −99.7/r lies between them.",
+   "At 7000 km E = -14.24 GJ; at 8000 km E = -12.46 GJ, so ΔE = +1.78 GJ.",
+   "ΔK = -1.78 GJ and ΔU = +3.56 GJ add to ΔE: -1.78 + 3.56 = 1.78."
+  ],
+  "course": "physics",
+  "lesson": "Orbital energy and angular momentum",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u07.js: Orbital energy and angular momentum"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E = -14.24 GJ at 7000 km",
+    "ok": true,
+    "detail": "y(7) = -14.2357"
+   },
+   {
+    "name": "E = -12.46 GJ at 8000 km",
+    "ok": true,
+    "detail": "y(8) = -12.4563"
+   },
+   {
+    "name": "U = -24.91 GJ at 8000 km, twice E",
+    "ok": true,
+    "detail": "y(8) = -24.9125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u07-potential-well": {
+  "title": "Earth's potential well",
+  "caption": "φ = −GM/r is negative everywhere and rises towards 0 at infinity. At the surface φ = −62.56 MJ kg⁻¹; at 400 km it is −58.87. The difference, 3.70 MJ kg⁻¹, times 1000 kg is the 3.7 GJ needed to lift the satellite.",
+  "alt": "Graph of gravitational potential against distance from Earth's centre: a curve rising from minus 62.6 megajoules per kilogram at the surface towards zero. Points at the surface and 400 kilometres up are marked.",
+  "description": [
+   "The horizontal axis is distance from Earth's centre in thousands of km; the vertical axis is potential φ in MJ kg⁻¹.",
+   "φ = −GM/r with GM = 3.986 × 10¹⁴ m³ s⁻². At r = R = 6371 km, φ = −62.56 MJ kg⁻¹.",
+   "At r = R + 400 km = 6771 km, φ = −58.87 MJ kg⁻¹.",
+   "Work to lift 1000 kg = m Δφ = 1000 × 3.70 × 10⁶ J = 3.7 GJ."
+  ],
+  "course": "physics",
+  "lesson": "Gravitational potential and potential energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u07.js: Gravitational potential and potential energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "φ at the surface is −62.56 MJ/kg",
+    "ok": true,
+    "detail": "y(6.371) = -62.5647"
+   },
+   {
+    "name": "φ at 400 km is −58.87 MJ/kg",
+    "ok": true,
+    "detail": "y(6.771) = -58.8687"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
