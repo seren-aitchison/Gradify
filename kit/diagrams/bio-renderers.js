@@ -1,0 +1,486 @@
+// Biology renderers for the Gradify Visual Learning Engine (see kit/diagrams/BUILDERS.md). Each recomputes the biology
+// it draws, so a spec that claims something false fails its checks:
+//   cross      a genetic cross as a Punnett square: gametes, offspring genotypes and phenotype ratios are computed
+//   strand     DNA → template → mRNA → protein: base pairing, translation with the standard genetic code, mutations
+//   pyramid    a pyramid of energy, biomass or numbers: energy falls at every level, transfer efficiencies recomputed
+//   pedigree   a family tree: which modes of inheritance are consistent, found by searching for genotypes that fit
+//   cellmap    a labelled cell: every labelled structure belongs to that kind of cell, and stated absences are true
+//   membrane   transport across a membrane: passive movement only down a gradient, active transport uses ATP
+// Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
+// decision-tree renderers instead.
+import { register, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
+
+const TONES = ["a1", "a4", "a3", "a2", "a5"];
+const tone = (i) => C[TONES[i % TONES.length]];
+const tw = (s, size) => String(s).replace(/[_^]\{([^}]*)\}/g, "$1").length * size * 0.56; // estimated text width
+const rect = (x, y, w, h, { fill = C.panel, stroke = C.line, sw = 1.6, rx = 8, op = 1 } = {}) =>
+  `<rect x="${f1(x)}" y="${f1(y)}" width="${f1(w)}" height="${f1(h)}" rx="${rx}" fill="${fill}" fill-opacity="${op}" stroke="${stroke}" stroke-width="${sw}"/>`;
+const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+function reduce(counts) {
+  const vs = Object.values(counts).filter((v) => v > 0), g = vs.reduce((a, b) => gcd(a, b), vs[0] || 1);
+  return Object.fromEntries(Object.entries(counts).filter(([, v]) => v > 0).map(([k, v]) => [k, v / g]));
+}
+const sameRatio = (a, b) => { const x = reduce(a), y = reduce(b), ks = new Set([...Object.keys(x), ...Object.keys(y)]); return [...ks].every((k) => x[k] === y[k]); };
+const ratioText = (r) => Object.entries(reduce(r)).map(([k, v]) => `${v} ${k}`).join(" : ");
+
+// ======================================================================== cross
+// spec: loci: [{alleles: ["T", "t"], dominance: {kind: "complete", dominant: "T", traits: ["tall", "short"]}
+//                 | {kind: "map", map: {"Iᴬ Iᴮ": "group AB", …}} | {kind: "sexlinked", disease: "Xʰ", recessive: true, trait}}],
+//   parents: [{genotype: ["T t", …], label}, {…}] (one "a b" pair per locus; the first parent's gametes go across the top),
+//   claims: [{type: "genotypes", ratio: {TT: 1, Tt: 2, tt: 1}} | {type: "phenotypes", ratio: {tall: 3, short: 1}}
+//            | {type: "probability", phenotype | genotype, value}]
+export function gametes(genotype) {
+  let out = [[]];
+  for (const pair of genotype) { const [a, b] = pair.split(" "); const next = []; for (const g of out) for (const x of [...new Set([a, b])]) next.push([...g, x]); out = next; }
+  // a heterozygote at every locus gives each gamete type equally often; homozygous loci collapse
+  return out;
+}
+const canon = (locus, a, b) => { const i = (x) => { const k = locus.alleles.indexOf(x); return k < 0 ? 99 : k; }; return i(a) <= i(b) ? [a, b] : [b, a]; };
+export function phenotypeOf(locus, a, b) {
+  const d = locus.dominance || {};
+  const [p, q] = canon(locus, a, b);
+  if (d.kind === "map") return d.map[`${p} ${q}`] ?? d.map[`${q} ${p}`] ?? "?";
+  if (d.kind === "sexlinked") {
+    const male = p === "Y" || q === "Y", xs = [p, q].filter((x) => x !== "Y"), n = xs.filter((x) => x === d.disease).length;
+    const affected = male ? n === 1 : d.recessive ? n === 2 : n >= 1;
+    if (male) return affected ? `${d.trait} male` : "unaffected male";
+    return affected ? `${d.trait} female` : n ? "carrier female" : "unaffected female";
+  }
+  return [p, q].includes(d.dominant) ? d.traits[0] : d.traits[1];
+}
+export function crossOf(spec) {
+  const [g1, g2] = spec.parents.map((p) => gametes(p.genotype));
+  const cells = g2.map((b) => g1.map((a) => spec.loci.map((L, i) => canon(L, a[i], b[i]))));
+  const geno = {}, pheno = {};
+  for (const row of cells) for (const c of row) {
+    const gk = c.map(([x, y]) => x + y).join(""), pk = c.map(([x, y], i) => phenotypeOf(spec.loci[i], x, y)).join(", ");
+    geno[gk] = (geno[gk] || 0) + 1; pheno[pk] = (pheno[pk] || 0) + 1;
+  }
+  return { g1, g2, cells, geno, pheno, total: g1.length * g2.length };
+}
+function crossDraw(spec, W, narrow) {
+  const X = crossOf(spec), n1 = X.g1.length, n2 = X.g2.length, phen = Object.keys(X.pheno);
+  const cs = Math.min(narrow ? 78 : 92, Math.floor((W - 30) / (n1 + 1))), gx = (W - cs * (n1 + 1)) / 2;
+  const size = n1 > 2 ? (narrow ? 12.5 : 14) : 16;
+  let s = "", y = 22;
+  const head = spec.parents.map((p) => `${p.genotype.map((g) => g.replace(" ", "")).join("")}${p.label ? ` (${p.label})` : ""}`);
+  if (narrow || tw(head.join(" × "), 15) > W - 30) {
+    s += text(W / 2, y, `${head[0]} ×`, { size: 14.5, weight: 700 }); y += 22; s += text(W / 2, y, head[1], { size: 14.5, weight: 700 }); y += 14;
+  } else { s += text(W / 2, y, head.join(" × "), { size: 15, weight: 700 }); y += 14; }
+  y += 12;
+  s += text(gx + cs / 2, y + cs / 2, "gametes", { size: 11.5, fill: C.soft });
+  X.g1.forEach((g, i) => { s += rect(gx + (i + 1) * cs + 3, y + 3, cs - 6, cs - 6, { fill: C.panel, stroke: C.a1 }) + text(gx + (i + 1.5) * cs, y + cs / 2, g.join(""), { size: size + 1, weight: 700, fill: C.a1 }); });
+  X.g2.forEach((g, j) => { s += rect(gx + 3, y + (j + 1) * cs + 3, cs - 6, cs - 6, { fill: C.panel, stroke: C.a2 }) + text(gx + cs / 2, y + (j + 1.5) * cs, g.join(""), { size: size + 1, weight: 700, fill: C.a2 }); });
+  X.cells.forEach((row, j) => row.forEach((c, i) => {
+    const pk = c.map(([a, b], k) => phenotypeOf(spec.loci[k], a, b)).join(", "), t = tone(phen.indexOf(pk));
+    s += rect(gx + (i + 1) * cs + 3, y + (j + 1) * cs + 3, cs - 6, cs - 6, { fill: t, op: 0.14, stroke: t, sw: 1.4 }) + text(gx + (i + 1.5) * cs, y + (j + 1.5) * cs, c.map(([a, b]) => a + b).join(""), { size, weight: 600 });
+  }));
+  y += (n2 + 1) * cs + 20;
+  // the key: each phenotype's colour, count and fraction, computed from the grid
+  const keys = phen.map((p, i) => [p, X.pheno[p], i]);
+  for (const [p, k, i] of keys) {
+    const lab = `${p}: ${k} of ${X.total}`, ls = wrap(lab, Math.floor((W - 60) / 7.4));
+    s += rect(24, y - 8, 16, 16, { fill: tone(i), op: 0.3, stroke: tone(i), rx: 4 });
+    ls.forEach((l, li) => { s += text(48, y + li * 18, l, { size: 13.5, anchor: "start" }); });
+    y += ls.length * 18 + 6;
+  }
+  const rt = `ratio ${Object.values(reduce(X.pheno)).join(" : ")}`;
+  s += text(24, y + 6, rt, { size: 13.5, weight: 700, anchor: "start", fill: C.soft });
+  return { s, H: y + 24 };
+}
+function crossChecks(spec) {
+  const out = [], X = crossOf(spec);
+  for (const [i, L] of spec.loci.entries()) for (const p of spec.parents) { const [a, b] = p.genotype[i].split(" "); out.push(check(`parent ${p.genotype.join(" ")}: alleles ${a} and ${b} are alleles of this gene`, L.alleles.includes(a) && L.alleles.includes(b))); }
+  out.push(check(`each parent's gametes: ${X.g1.map((g) => g.join("")).join(", ")} and ${X.g2.map((g) => g.join("")).join(", ")}`, X.g1.length && X.g2.length));
+  for (const c of spec.claims || []) {
+    if (c.type === "genotypes") out.push(check(`genotype ratio ${ratioText(c.ratio)}`, sameRatio(X.geno, c.ratio), ratioText(X.geno)));
+    if (c.type === "phenotypes") out.push(check(`phenotype ratio ${ratioText(c.ratio)}`, sameRatio(X.pheno, c.ratio), ratioText(X.pheno)));
+    if (c.type === "probability") {
+      const k = c.phenotype ?? c.genotype, pool = c.phenotype ? X.pheno : X.geno, p = (pool[k] || 0) / X.total;
+      out.push(check(`P(${k}) = ${c.value}`, Math.abs(p - c.value) < 1e-9, `${pool[k] || 0} of ${X.total}`));
+    }
+  }
+  if (!(spec.claims || []).length) out.push(check("the spec states the ratio it teaches", false, "add a genotypes or phenotypes claim"));
+  return out;
+}
+
+// ======================================================================== strand
+// spec: coding: "ATG…" (5′→3′ coding strand, a multiple of three), rows: ["coding", "template", "mrna", "protein"],
+//   mutant: {coding} (drawn underneath, changed bases marked), claims: [{type: "protein", value: ["Met", …]}
+//   | {type: "template", value} | {type: "mrna", value} | {type: "mutation", kind: "silent" | "missense" | "nonsense"
+//   | "frameshift"} | {type: "count", base, value} | {type: "hbonds", value}]
+const CODE = "FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG", ORDERB = "UCAG";
+const THREE = { F: "Phe", L: "Leu", S: "Ser", Y: "Tyr", C: "Cys", W: "Trp", P: "Pro", H: "His", Q: "Gln", R: "Arg", I: "Ile", M: "Met", T: "Thr", N: "Asn", K: "Lys", V: "Val", A: "Ala", D: "Asp", E: "Glu", G: "Gly", "*": "Stop" };
+export const complement = (dna) => dna.replace(/[ATGC]/g, (b) => ({ A: "T", T: "A", G: "C", C: "G" })[b]);
+export const transcribe = (coding) => coding.replace(/T/g, "U");
+export function codonToAA(c) { const i = 16 * ORDERB.indexOf(c[0]) + 4 * ORDERB.indexOf(c[1]) + ORDERB.indexOf(c[2]); return THREE[CODE[i]]; }
+export function translate(mrna) {
+  const out = [];
+  for (let i = 0; i + 3 <= mrna.length; i += 3) { const aa = codonToAA(mrna.slice(i, i + 3)); out.push(aa); if (aa === "Stop") break; }
+  return out;
+}
+export function mutationKind(a, b) {
+  if (a.length !== b.length) return (a.length - b.length) % 3 ? "frameshift" : "in-frame indel";
+  const pa = translate(transcribe(a)), pb = translate(transcribe(b));
+  if (pa.join() === pb.join()) return "silent";
+  const k = pa.findIndex((x, i) => x !== pb[i]);
+  return pb[k] === "Stop" ? "nonsense" : "missense";
+}
+const BASE_TONE = { A: "a1", T: "a2", U: "a2", G: "a4", C: "a3" };
+function strandBlock(seq, rows, y, W, narrow, opts = {}) {
+  const bw = narrow ? 24 : 27, gap = 6, labW = narrow ? 0 : 118, perRow = Math.max(1, Math.floor((W - 24 - labW) / (3 * bw + gap)));
+  const codons = seq.length / 3, lines = Math.ceil(codons / perRow), rowH = 34, mrna = transcribe(seq), tmpl = complement(seq), prot = translate(mrna);
+  const NAME = { coding: "DNA coding 5′→3′", template: "DNA template 3′→5′", mrna: "mRNA 5′→3′", protein: "polypeptide" };
+  let s = "";
+  for (let L = 0; L < lines; L++) {
+    const c0 = L * perRow, c1 = Math.min(codons, c0 + perRow), x0 = 12 + labW;
+    rows.forEach((r, ri) => {
+      const ry = y + ri * rowH;
+      if (narrow) { if (ri === 0 && L === 0) {} }
+      if (!narrow) s += text(12, ry + 13, NAME[r], { size: 12.5, weight: 600, anchor: "start", fill: C.soft });
+      else s += text(12, ry - 2, NAME[r], { size: 11, weight: 600, anchor: "start", fill: C.soft });
+      for (let c = c0; c < c1; c++) {
+        const cx = x0 + (c - c0) * (3 * bw + gap);
+        if (r === "protein") {
+          const aa = prot[c]; if (aa == null) continue;
+          s += rect(cx + 1, ry + (narrow ? 4 : 0), 3 * bw - 2, 26, { fill: aa === "Stop" ? C.bad : C.a5, op: 0.14, stroke: aa === "Stop" ? C.bad : C.a5, rx: 13 }) + text(cx + 1.5 * bw, ry + (narrow ? 17 : 13), aa, { size: 13, weight: 700, fill: aa === "Stop" ? C.bad : C.ink });
+          continue;
+        }
+        const str = r === "coding" ? seq : r === "template" ? tmpl : mrna;
+        for (let k = 0; k < 3; k++) {
+          const i = c * 3 + k, b = str[i], bx = cx + k * bw, by = ry + (narrow ? 4 : 0), changed = opts.changed?.has(i) && r === "coding";
+          s += rect(bx + 1.5, by, bw - 3, 26, { fill: C[BASE_TONE[b]], op: 0.15, stroke: changed ? C.bad : C[BASE_TONE[b]], sw: changed ? 2.6 : 1.3, rx: 5 }) + text(bx + bw / 2, by + 13, b, { size: 14, weight: 700 });
+        }
+      }
+      // hydrogen bonds between the two DNA strands: two for A–T, three for G–C
+      if (r === "template" && rows[ri - 1] === "coding") for (let i = c0 * 3; i < c1 * 3; i++) {
+        const bx = x0 + Math.floor((i - c0 * 3) / 3) * (3 * bw + gap) + ((i - c0 * 3) % 3) * bw + bw / 2, n = /[GC]/.test(seq[i]) ? 3 : 2;
+        for (let h = 0; h < n; h++) s += line(bx + (h - (n - 1) / 2) * 5, ry - 7 + (narrow ? 4 : 0), bx + (h - (n - 1) / 2) * 5, ry - 1 + (narrow ? 4 : 0), { stroke: C.soft, w: 1.4, dash: "2 2", cap: "butt" });
+      }
+    });
+    y += rows.length * rowH + (narrow ? rows.length * 12 : 0) + 18;
+  }
+  return { s, y };
+}
+function strandDraw(spec, W, narrow) {
+  const rows = spec.rows || ["coding", "template", "mrna", "protein"];
+  let { s, y } = strandBlock(spec.coding, rows, narrow ? 26 : 14, W, narrow);
+  if (spec.mutant) {
+    const a = spec.coding, b = spec.mutant.coding, changed = new Set([...b].map((x, i) => (x !== a[i] ? i : -1)).filter((i) => i >= 0));
+    const kind = mutationKind(a, b);
+    s += line(12, y - 6, W - 12, y - 6, { stroke: C.grid, w: 1.5 });
+    s += text(12, y + 14, `${spec.mutant.label || "after the mutation"}: ${kind}`, { size: 14, weight: 700, anchor: "start", fill: C.bad });
+    const r2 = strandBlock(b.slice(0, b.length - (b.length % 3)), spec.mutant.rows || ["coding", "protein"], y + (narrow ? 50 : 32), W, narrow, { changed });
+    s += r2.s; y = r2.y;
+  }
+  return { s, H: y };
+}
+function strandChecks(spec) {
+  const out = [], a = spec.coding;
+  out.push(check("the coding strand is DNA (A, T, G, C) in whole codons", /^[ATGC]+$/.test(a) && a.length % 3 === 0, `${a.length} bases`));
+  const tmpl = complement(a), mrna = transcribe(a), prot = translate(mrna);
+  out.push(check("every base pairs with its complement (A–T, G–C)", [...a].every((b, i) => ({ A: "T", T: "A", G: "C", C: "G" })[b] === tmpl[i])));
+  for (const c of spec.claims || []) {
+    if (c.type === "protein") out.push(check(`translation gives ${c.value.join("–")}`, prot.join() === c.value.join(), prot.join("–")));
+    if (c.type === "template") out.push(check(`template strand ${c.value}`, tmpl === c.value, tmpl));
+    if (c.type === "mrna") out.push(check(`mRNA ${c.value}`, mrna === c.value, mrna));
+    if (c.type === "mutation") out.push(check(`the mutation is ${c.kind}`, mutationKind(a, spec.mutant.coding) === c.kind, mutationKind(a, spec.mutant.coding)));
+    if (c.type === "count") { const n = [...(c.strand === "both" ? a + tmpl : a)].filter((x) => x === c.base).length; out.push(check(`${c.base} appears ${c.value} times`, n === c.value, `${n}`)); }
+    if (c.type === "hbonds") { const n = [...a].reduce((t, b) => t + (/[GC]/.test(b) ? 3 : 2), 0); out.push(check(`${c.value} hydrogen bonds hold the strands together`, n === c.value, `${n}`)); }
+  }
+  return out;
+}
+
+// ======================================================================== pyramid
+// spec: kind: "energy" | "biomass" | "numbers", unit, scale: "log" | "linear",
+//   levels: [{label, value, sub}] from the producers up, claims: [{type: "efficiency", from, to, value, tol}
+//   | {type: "inverted", level} (a level larger than the one below it, as in a pyramid of numbers on one tree)]
+const fmtN = (v) => (Math.abs(v) >= 10000 ? Math.round(v).toLocaleString("en-GB").replace(/,/g, " ") : String(+(+v).toPrecision(3)));
+const eff = (spec, a, b) => (100 * spec.levels[b].value) / spec.levels[a].value;
+function pyramidDraw(spec, W, narrow) {
+  const L = spec.levels, n = L.length, vs = L.map((l) => l.value), log = spec.scale === "log";
+  const lo = log ? Math.log10(Math.min(...vs)) - 0.6 : 0, hi = log ? Math.log10(Math.max(...vs)) : Math.max(...vs);
+  const maxW = narrow ? W - 40 : Math.min(360, W * 0.5), minW = 34;
+  const wOf = (v) => minW + (maxW - minW) * (log ? (Math.log10(v) - lo) / (hi - lo) : v / hi);
+  let s = "";
+  if (!narrow) {
+    const bh = 46, cx = 130 + maxW / 2, top = 20, labX = cx + maxW / 2 + 22;
+    L.forEach((l, i) => {
+      const y = top + (n - 1 - i) * bh, w = wOf(l.value);
+      s += rect(cx - w / 2, y, w, bh - 6, { fill: tone(i), op: 0.22, stroke: tone(i), rx: 6 });
+      s += text(labX, y + 12, l.label, { size: 14, weight: 700, anchor: "start" });
+      s += text(labX, y + 30, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.unit}`, { size: 12.5, anchor: "start", fill: C.soft });
+      if (i > 0 && spec.kind === "energy") s += text(118, y + bh - 3, `${f1(eff(spec, i - 1, i))}%`, { size: 13, weight: 700, anchor: "end", fill: C.a2 }) + arrow(124, y + bh + 8, 124, y + bh - 16, { stroke: C.a2, w: 1.6, head: 7 });
+    });
+    if (spec.kind === "energy") s += text(118, top + n * bh + 12, "passed on", { size: 11.5, anchor: "end", fill: C.soft });
+    return { s, H: top + n * bh + 26 };
+  }
+  // phone: each level's name above its bar, the transfer efficiency in the gap between levels
+  let y = 16;
+  for (let i = n - 1; i >= 0; i--) {
+    const l = L[i], w = wOf(l.value);
+    s += text(20, y + 6, l.label, { size: 13.5, weight: 700, anchor: "start" });
+    s += text(20, y + 24, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.unit}`, { size: 12, anchor: "start", fill: C.soft });
+    s += rect(W / 2 - w / 2, y + 34, w, 26, { fill: tone(i), op: 0.22, stroke: tone(i), rx: 6 });
+    y += 64;
+    if (i > 0 && spec.kind === "energy") { s += text(W / 2, y + 8, `↑ ${f1(eff(spec, i - 1, i))}% passed on`, { size: 12.5, weight: 700, fill: C.a2 }); y += 22; }
+  }
+  return { s, H: y + 6 };
+}
+function pyramidChecks(spec) {
+  const out = [], L = spec.levels;
+  out.push(check("every level has a positive value", L.every((l) => l.value > 0)));
+  if (spec.kind === "energy") out.push(check("energy falls at every level (some is lost as heat at each transfer)", L.every((l, i) => !i || l.value < L[i - 1].value), L.map((l) => fmtN(l.value)).join(" → ")));
+  for (const c of spec.claims || []) {
+    if (c.type === "efficiency") { const e = eff(spec, c.from, c.to); out.push(check(`${L[c.from].label} → ${L[c.to].label}: ${c.value}% transferred`, Math.abs(e - c.value) <= (c.tol ?? 0.5), `${e.toFixed(2)}%`)); }
+    if (c.type === "inverted") out.push(check(`${L[c.level].label} is larger than the level below`, L[c.level].value > L[c.level - 1].value));
+  }
+  return out;
+}
+
+// ======================================================================== pedigree
+// spec: people: [{id: "II-3", sex: "m" | "f", affected, gen: 2, x: 3, parents: ["I-1", "I-2"]}] (x is a column;
+//   partners sit side by side), claims: [{type: "consistent" | "excluded", mode: "AR" | "AD" | "XR" | "XD"}
+//   | {type: "genotype", id, mode, value}] (the genotype is forced in every assignment that fits)
+const MODES = { AR: "autosomal recessive", AD: "autosomal dominant", XR: "X-linked recessive", XD: "X-linked dominant" };
+function genotypesFor(mode, sex) { return mode[0] === "A" ? ["AA", "Aa", "aa"] : sex === "f" ? ["XᴬXᴬ", "XᴬXᵃ", "XᵃXᵃ"] : ["XᴬY", "XᵃY"]; }
+function affectedBy(mode, g) {
+  const a = (g.match(/a|ᵃ/g) || []).length, A = (g.match(/A|ᴬ/g) || []).length;
+  if (mode === "AR") return a === 2; if (mode === "AD") return A >= 1;
+  const male = g.endsWith("Y");
+  if (mode === "XR") return male ? a === 1 : a === 2; return A >= 1; // XD: the disease allele is ᴬ
+}
+// for the dominant modes the capital letter is the disease allele, so swap the reading: AD affected = has A
+const allelesOf = (g) => (g.startsWith("X") ? g.match(/X[ᴬᵃ]|Y/g) : g.split(""));
+function canParent(child, mum, dad) {
+  const c = allelesOf(child), m = allelesOf(mum), d = allelesOf(dad);
+  if (child.startsWith("X")) {
+    if (child.endsWith("Y")) return m.includes(c[0]) && d.includes("Y");
+    const fromDad = d.find((x) => x !== "Y");
+    return (c[0] === fromDad && m.includes(c[1])) || (c[1] === fromDad && m.includes(c[0]));
+  }
+  return (m.includes(c[0]) && d.includes(c[1])) || (m.includes(c[1]) && d.includes(c[0]));
+}
+export function pedigreeFits(spec, mode, fixed = {}) {
+  const P = spec.people, byId = Object.fromEntries(P.map((p) => [p.id, p])), order = [...P].sort((a, b) => a.gen - b.gen), g = {};
+  const opts = (p) => (fixed[p.id] ? [fixed[p.id]] : genotypesFor(mode, p.sex)).filter((x) => affectedBy(mode, x) === !!p.affected);
+  const ok = (p) => { if (!p.parents) return true; const [a, b] = p.parents.map((id) => byId[id]); const mum = a.sex === "f" ? a : b, dad = a.sex === "f" ? b : a; return canParent(g[p.id], g[mum.id], g[dad.id]); };
+  const go = (i) => { if (i === order.length) return true; const p = order[i]; for (const x of opts(p)) { g[p.id] = x; if (ok(p) && go(i + 1)) return true; } delete g[p.id]; return false; };
+  return go(0);
+}
+function pedigreeDraw(spec, W, narrow) {
+  const P = spec.people, byId = Object.fromEntries(P.map((p) => [p.id, p])), gens = Math.max(...P.map((p) => p.gen)), cols = Math.max(...P.map((p) => p.x)) + 1;
+  const left = narrow ? 34 : 56, cw = Math.min(90, (W - left - 16) / cols), r = Math.min(15, cw * 0.32), rowH = narrow ? 104 : 112;
+  const at = (p) => [left + (p.x + 0.5) * cw, 30 + (p.gen - 1) * rowH];
+  let s = "";
+  const romans = ["I", "II", "III", "IV", "V"];
+  for (let gI = 1; gI <= gens; gI++) s += text(14, 30 + (gI - 1) * rowH, romans[gI - 1], { size: 14, weight: 700, anchor: "start", fill: C.soft });
+  // partnerships and sibships, from the children's parents
+  const fam = {};
+  for (const p of P) if (p.parents) (fam[p.parents.slice().sort().join("|")] ||= []).push(p);
+  for (const [k, kids] of Object.entries(fam)) {
+    const [a, b] = k.split("|").map((id) => at(byId[id])), my = a[1], mx = (a[0] + b[0]) / 2, sy = my + rowH / 2;
+    s += line(Math.min(a[0], b[0]) + r, my, Math.max(a[0], b[0]) - r, my, { stroke: C.ink, w: 2 });
+    s += line(mx, my, mx, sy, { stroke: C.ink, w: 2 });
+    const xs = kids.map((c) => at(c)[0]);
+    s += line(Math.min(mx, ...xs), sy, Math.max(mx, ...xs), sy, { stroke: C.ink, w: 2 });
+    for (const x of xs) s += line(x, sy, x, sy + rowH / 2 - r, { stroke: C.ink, w: 2 });
+  }
+  for (const p of P) {
+    const [x, y] = at(p), fill = p.affected ? C.ink : "var(--vx-bg, #ffffff)";
+    s += p.sex === "m" ? `<rect x="${f1(x - r)}" y="${f1(y - r)}" width="${f1(2 * r)}" height="${f1(2 * r)}" fill="${fill}" stroke="${C.ink}" stroke-width="2"/>` : `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(r)}" fill="${fill}" stroke="${C.ink}" stroke-width="2"/>`;
+    if (p.carrier && !p.affected) s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(r * 0.32)}" fill="${C.ink}"/>`;
+    s += text(x, y + r + 13, p.id.split("-")[1], { size: 12, fill: C.soft });
+  }
+  const H = 30 + (gens - 1) * rowH + r + 24;
+  // key
+  const ky = H + 6;
+  s += `<rect x="${left}" y="${ky}" width="16" height="16" fill="none" stroke="${C.ink}" stroke-width="2"/>` + text(left + 22, ky + 8, "male", { size: 12.5, anchor: "start" });
+  s += `<circle cx="${left + 88}" cy="${ky + 8}" r="8" fill="none" stroke="${C.ink}" stroke-width="2"/>` + text(left + 102, ky + 8, "female", { size: 12.5, anchor: "start" });
+  const kx = narrow ? left : left + 172, ky2 = narrow ? ky + 26 : ky;
+  s += `<rect x="${kx}" y="${ky2}" width="16" height="16" fill="${C.ink}"/>` + text(kx + 22, ky2 + 8, "affected", { size: 12.5, anchor: "start" });
+  if (P.some((p) => p.carrier)) s += `<circle cx="${kx + 106}" cy="${ky2 + 8}" r="8" fill="none" stroke="${C.ink}" stroke-width="2"/><circle cx="${kx + 106}" cy="${ky2 + 8}" r="2.6" fill="${C.ink}"/>` + text(kx + 120, ky2 + 8, "carrier", { size: 12.5, anchor: "start" });
+  return { s, H: ky2 + 26 };
+}
+function pedigreeChecks(spec) {
+  const out = [], byId = Object.fromEntries(spec.people.map((p) => [p.id, p]));
+  out.push(check("every child's parents are a female and a male in the generation above", spec.people.every((p) => !p.parents || (() => { const [a, b] = p.parents.map((id) => byId[id]); return a && b && a.sex !== b.sex && a.gen === p.gen - 1 && b.gen === p.gen - 1; })())));
+  for (const c of spec.claims || []) {
+    if (c.type === "consistent" || c.type === "excluded") { const fits = pedigreeFits(spec, c.mode); out.push(check(`${MODES[c.mode]} inheritance is ${c.type === "consistent" ? "consistent with" : "ruled out by"} the pedigree`, c.type === "consistent" ? fits : !fits, fits ? "some set of genotypes fits" : "no set of genotypes fits")); }
+    if (c.type === "genotype") {
+      const p = byId[c.id], other = genotypesFor(c.mode, p.sex).filter((g) => g !== c.value && pedigreeFits(spec, c.mode, { [c.id]: g }));
+      out.push(check(`if ${MODES[c.mode]}, ${c.id} must be ${c.value}`, pedigreeFits(spec, c.mode, { [c.id]: c.value }) && !other.length, other.length ? `also possible: ${other.join(", ")}` : "forced"));
+    }
+  }
+  return out;
+}
+
+// ======================================================================== cellmap
+// spec: cell: "prokaryote" | "animal" | "plant" | "fungus", labels: [structure names drawn and labelled],
+//   claims: [{type: "lacks", structures: [..]}]
+export const STRUCTURES = {
+  prokaryote: ["cell wall", "plasma membrane", "cytoplasm", "nucleoid", "plasmid", "70S ribosomes", "capsule", "flagellum", "pili"],
+  animal: ["plasma membrane", "cytoplasm", "nucleus", "nucleolus", "nuclear envelope", "mitochondrion", "rough ER", "smooth ER", "Golgi apparatus", "lysosome", "80S ribosomes", "centrioles", "vesicle"],
+  plant: ["cell wall", "plasma membrane", "cytoplasm", "nucleus", "nucleolus", "mitochondrion", "chloroplast", "vacuole", "tonoplast", "rough ER", "Golgi apparatus", "80S ribosomes", "plasmodesmata"],
+  fungus: ["cell wall", "plasma membrane", "cytoplasm", "nucleus", "mitochondrion", "vacuole", "rough ER", "Golgi apparatus", "80S ribosomes", "septum"],
+};
+const ALL_STRUCT = ["nucleus", "nucleolus", "nuclear envelope", "mitochondrion", "chloroplast", "rough ER", "smooth ER", "Golgi apparatus", "lysosome", "centrioles", "cell wall", "vacuole", "tonoplast", "plasmodesmata", "nucleoid", "plasmid", "70S ribosomes", "80S ribosomes", "capsule", "flagellum", "pili", "septum", "vesicle", "plasma membrane", "cytoplasm"];
+// drawing positions on a 420 × 260 canvas: [anchor x, anchor y] for each structure's leader line
+const TEMPLATE = {
+  prokaryote: { "cell wall": [118, 70], "plasma membrane": [140, 92], cytoplasm: [250, 170], nucleoid: [205, 125], plasmid: [290, 150], "70S ribosomes": [160, 160], capsule: [96, 120], flagellum: [400, 132], pili: [250, 46] },
+  animal: { "plasma membrane": [72, 150], cytoplasm: [300, 200], nucleus: [200, 118], nucleolus: [205, 120], "nuclear envelope": [168, 92], mitochondrion: [312, 92], "rough ER": [128, 150], "smooth ER": [130, 196], "Golgi apparatus": [300, 150], lysosome: [250, 208], "80S ribosomes": [258, 70], centrioles: [262, 162], vesicle: [340, 176] },
+  plant: { "cell wall": [36, 40], "plasma membrane": [48, 120], cytoplasm: [90, 222], nucleus: [96, 76], nucleolus: [96, 78], mitochondrion: [340, 214], chloroplast: [356, 70], vacuole: [230, 130], tonoplast: [160, 160], "rough ER": [70, 160], "Golgi apparatus": [372, 150], "80S ribosomes": [300, 228], plasmodesmata: [210, 22] },
+  fungus: { "cell wall": [40, 76], "plasma membrane": [52, 94], cytoplasm: [110, 150], nucleus: [120, 130], mitochondrion: [180, 158], vacuole: [300, 130], "rough ER": [230, 152], "Golgi apparatus": [240, 106], "80S ribosomes": [180, 104], septum: [380, 130] },
+};
+function cellBody(kind, s = "") {
+  const g = (d, o = {}) => `<path d="${d}" fill="${o.fill || "none"}" fill-opacity="${o.op ?? 1}" stroke="${o.stroke || C.ink}" stroke-width="${o.w || 2}" stroke-linejoin="round"/>`;
+  const circ = (x, y, r, o = {}) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${o.fill || "none"}" fill-opacity="${o.op ?? 1}" stroke="${o.stroke || C.ink}" stroke-width="${o.w || 1.6}"/>`;
+  const ell = (x, y, rx, ry, o = {}) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${o.fill || "none"}" fill-opacity="${o.op ?? 1}" stroke="${o.stroke || C.ink}" stroke-width="${o.w || 1.6}"/>`;
+  const dots = (pts) => pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.4" fill="${C.ink}"/>`).join("");
+  const mito = (x, y) => ell(x, y, 24, 12, { fill: C.a3, op: 0.18, stroke: C.a3 }) + g(`M${x - 16} ${y} q4 -8 8 0 q4 8 8 0 q4 -8 8 0 q4 8 8 0`, { stroke: C.a3, w: 1.4 });
+  const golgi = (x, y) => [0, 1, 2, 3].map((k) => g(`M${x - 26 + k * 2} ${y - 10 + k * 7} q26 -8 52 0`, { stroke: C.a5, w: 2.6 })).join("") + circ(x + 32, y - 4, 4, { stroke: C.a5 }) + circ(x + 34, y + 16, 4, { stroke: C.a5 });
+  const rer = (x, y) => [0, 1, 2].map((k) => g(`M${x - 30} ${y - 12 + k * 10} q15 -7 30 0 q15 7 30 0`, { stroke: C.a1, w: 1.6 })).join("") + dots([[x - 24, y - 16], [x - 6, y - 14], [x + 14, y - 8], [x - 20, y - 4], [x + 4, y + 4], [x + 22, y + 10]]);
+  if (kind === "prokaryote") {
+    s += `<rect x="96" y="58" width="260" height="140" rx="70" fill="${C.a4}" fill-opacity=".08" stroke="${C.a4}" stroke-width="10" stroke-opacity=".35"/>`;
+    s += `<rect x="108" y="70" width="236" height="116" rx="58" fill="none" stroke="${C.ink}" stroke-width="3"/>`;
+    s += `<rect x="116" y="78" width="220" height="100" rx="50" fill="${C.panel}" stroke="${C.ink}" stroke-width="1.4"/>`;
+    s += g("M175 120 c10 -25 30 10 45 -8 c15 -18 30 16 18 25 c-12 9 -40 -10 -55 8 c-10 12 -18 -10 -8 -25", { stroke: C.a2, w: 2.2 });
+    s += circ(290, 150, 9, { stroke: C.a2, w: 2 }) + circ(268, 104, 6, { stroke: C.a2, w: 2 });
+    s += dots([[150, 150], [160, 160], [172, 152], [230, 160], [242, 150], [300, 118], [312, 128], [258, 98], [140, 112]]);
+    s += g("M356 128 c14 -10 22 10 34 0 c10 -8 16 8 26 2", { w: 2 });
+    for (const x of [170, 210, 250, 290]) s += line(x, 64, x + (x - 230) * 0.05, 46, { stroke: C.ink, w: 1.4 });
+  } else if (kind === "animal") {
+    s += g("M70 130 C60 60 160 30 230 38 C320 46 380 80 372 140 C366 200 300 236 210 232 C120 228 78 196 70 130 Z", { fill: C.panel, w: 2.4 });
+    s += circ(200, 118, 32, { fill: C.a2, op: 0.12, stroke: C.a2, w: 2.6 }) + circ(205, 120, 10, { fill: C.a2, op: 0.5, stroke: C.a2 });
+    s += mito(312, 92) + rer(140, 160) + golgi(298, 150);
+    s += g("M110 196 q12 -10 24 0 q12 10 24 0", { stroke: C.a1, w: 1.6 });
+    s += circ(250, 208, 9, { fill: C.a3, op: 0.3, stroke: C.a3 }) + circ(340, 176, 6, { stroke: C.a5 });
+    s += `<rect x="256" y="156" width="6" height="14" fill="${C.ink}"/><rect x="262" y="166" width="14" height="6" fill="${C.ink}"/>`;
+    s += dots([[250, 72], [262, 70], [270, 80], [150, 90], [330, 210], [180, 210]]);
+  } else if (kind === "plant") {
+    s += `<rect x="24" y="16" width="372" height="228" rx="6" fill="${C.a4}" fill-opacity=".12" stroke="${C.a4}" stroke-width="9"/>`;
+    s += `<rect x="34" y="26" width="352" height="208" rx="4" fill="${C.panel}" stroke="${C.ink}" stroke-width="1.6"/>`;
+    for (const x of [200, 220]) s += line(x, 12, x, 30, { stroke: C.ink, w: 1.6 });
+    s += `<rect x="130" y="58" width="190" height="140" rx="40" fill="${C.a1}" fill-opacity=".08" stroke="${C.a1}" stroke-width="2.4"/>`;
+    s += circ(96, 76, 22, { fill: C.a2, op: 0.12, stroke: C.a2, w: 2.4 }) + circ(96, 78, 7, { fill: C.a2, op: 0.5, stroke: C.a2 });
+    for (const [x, y] of [[356, 70], [356, 112], [60, 196]]) { s += ell(x, y, 20, 11, { fill: C.good, op: 0.25, stroke: C.good }); for (const k of [-8, 0, 8]) s += line(x + k, y - 5, x + k, y + 5, { stroke: C.good, w: 2.4 }); }
+    s += mito(340, 214) + golgi(366, 156);
+    s += [0, 1].map((k) => g(`M50 ${150 + k * 10} q12 -7 24 0 q12 7 24 0`, { stroke: C.a1, w: 1.6 })).join("") + dots([[56, 146], [72, 152], [86, 158], [300, 228], [312, 222], [250, 222]]);
+  } else if (kind === "fungus") {
+    s += `<rect x="26" y="62" width="380" height="136" rx="30" fill="${C.a4}" fill-opacity=".12" stroke="${C.a4}" stroke-width="8"/>`;
+    s += `<rect x="36" y="72" width="360" height="116" rx="22" fill="${C.panel}" stroke="${C.ink}" stroke-width="1.6"/>`;
+    s += line(380, 72, 380, 120, { stroke: C.a4, w: 6 }) + line(380, 140, 380, 188, { stroke: C.a4, w: 6 });
+    s += circ(120, 130, 20, { fill: C.a2, op: 0.12, stroke: C.a2, w: 2.4 }) + circ(122, 132, 6, { fill: C.a2, op: 0.5, stroke: C.a2 });
+    s += mito(180, 158) + golgi(244, 104) + rer(232, 154);
+    s += ell(306, 130, 34, 30, { fill: C.a1, op: 0.08, stroke: C.a1, w: 2.2 });
+    s += dots([[170, 96], [182, 104], [194, 98], [300, 172], [150, 170]]);
+  }
+  return s;
+}
+function cellmapDraw(spec, W, narrow) {
+  const T = TEMPLATE[spec.cell], labs = spec.labels.filter((l) => T[l]);
+  if (!narrow) {
+    // the cell in the middle, labels in a column either side, spread so they never touch
+    const sc = 1, cw = 420, ox = (W - cw) / 2, oy = 20, colL = ox - 14, colR = ox + cw + 14;
+    let s = `<g transform="translate(${f1(ox)} ${oy})">${cellBody(spec.cell)}</g>`;
+    const items = labs.map((l) => ({ l, ax: ox + T[l][0] * sc, ay: oy + T[l][1] * sc })), side = (it) => (it.ax < ox + cw / 2 ? "L" : "R");
+    let H = 300;
+    for (const sd of ["L", "R"]) {
+      const its = items.filter((it) => side(it) === sd).sort((a, b) => a.ay - b.ay);
+      let last = -1e9;
+      for (const it of its) { it.ty = Math.max(it.ay, last + 24); last = it.ty; }
+      const over = last - (oy + 270); if (over > 0) for (const it of its) it.ty -= over;
+      for (const it of its) {
+        const tx = sd === "L" ? colL : colR;
+        s += line(it.ax, it.ay, tx + (sd === "L" ? 4 : -4), it.ty, { stroke: C.soft, w: 1.2 }) + `<circle cx="${f1(it.ax)}" cy="${f1(it.ay)}" r="2.6" fill="${C.ink}"/>`;
+        s += text(tx, it.ty, it.l, { size: 13, weight: 600, anchor: sd === "L" ? "end" : "start" });
+        H = Math.max(H, it.ty + 16);
+      }
+    }
+    return { s, H };
+  }
+  // phone: the cell scaled to the width with numbered markers, and the key underneath
+  const sc = (W - 20) / 420, oy = 10;
+  let s = `<g transform="translate(10 ${oy}) scale(${sc.toFixed(4)})">${cellBody(spec.cell)}</g>`;
+  labs.forEach((l, i) => { const x = 10 + T[l][0] * sc, y = oy + T[l][1] * sc; s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.ink}" stroke-width="1.4"/>` + text(x, y + 0.5, String(i + 1), { size: 10.5, weight: 700 }); });
+  let y = oy + 262 * sc + 18;
+  const half = Math.ceil(labs.length / 2);
+  labs.forEach((l, i) => { const c = i < half ? 0 : 1, r = i < half ? i : i - half; s += text(20 + c * (W / 2), y + r * 20, `${i + 1}  ${l}`, { size: 12.5, anchor: "start" }); });
+  return { s, H: y + half * 20 + 4 };
+}
+function cellmapChecks(spec) {
+  const out = [], has = STRUCTURES[spec.cell];
+  out.push(check(`the cell type ${spec.cell} is known`, !!has));
+  const bad = spec.labels.filter((l) => !has.includes(l)), undrawn = spec.labels.filter((l) => !TEMPLATE[spec.cell][l]);
+  out.push(check(`every labelled structure is found in a ${spec.cell === "prokaryote" ? "prokaryotic" : spec.cell} cell`, !bad.length, bad.join(", ") || `${spec.labels.length} structures`));
+  out.push(check("every labelled structure is drawn", !undrawn.length, undrawn.join(", ")));
+  for (const c of spec.claims || []) if (c.type === "lacks") {
+    const wrong = c.structures.filter((x) => has.includes(x) || !ALL_STRUCT.includes(x));
+    out.push(check(`a ${spec.cell} cell has no ${c.structures.join(", ")}`, !wrong.length, wrong.join(", ")));
+  }
+  return out;
+}
+
+// ======================================================================== membrane
+// spec: sides: [{id: "out", label, conc: {glucose: 5, …}, psi}, {id: "in", …}] (outside drawn above),
+//   moves: [{substance, kind: "simple" | "channel" | "carrier" | "active" | "osmosis" | "endocytosis" | "exocytosis", from, to, atp}]
+const KIND = { simple: "simple diffusion", channel: "channel protein", carrier: "carrier protein", active: "active transport (pump)", osmosis: "osmosis (aquaporin)", endocytosis: "endocytosis", exocytosis: "exocytosis" };
+function membraneDraw(spec, W, narrow) {
+  const [top, bot] = spec.sides, n = spec.moves.length, mY = narrow ? 150 : 140, band = 44;
+  const left = 16, right = W - 16, slot = (right - left) / n;
+  let s = rect(0, 0, W, mY - band / 2, { fill: C.a4, op: 0.06, stroke: "none", rx: 0 }) + rect(0, mY + band / 2, W, 150, { fill: C.a1, op: 0.06, stroke: "none", rx: 0 });
+  // phospholipids: two rows of heads with tails pointing inward
+  for (let x = 6; x < W; x += 13) {
+    s += `<circle cx="${x}" cy="${mY - band / 2 + 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/><circle cx="${x}" cy="${mY + band / 2 - 5}" r="5" fill="${C.a3}" fill-opacity=".5" stroke="${C.a3}" stroke-width="1"/>`;
+    s += line(x - 2, mY - band / 2 + 10, x - 2, mY - 3, { stroke: C.line, w: 1 }) + line(x + 2, mY - band / 2 + 10, x + 2, mY - 3, { stroke: C.line, w: 1 });
+    s += line(x - 2, mY + 3, x - 2, mY + band / 2 - 10, { stroke: C.line, w: 1 }) + line(x + 2, mY + 3, x + 2, mY + band / 2 - 10, { stroke: C.line, w: 1 });
+  }
+  s += text(left, 16, top.label, { size: 13.5, weight: 700, anchor: "start", fill: C.a4 }) + text(left, mY + band / 2 + 120, bot.label, { size: 13.5, weight: 700, anchor: "start", fill: C.a1 });
+  spec.moves.forEach((m, i) => {
+    const cx = left + (i + 0.5) * slot, down = m.from === top.id, fromS = down ? top : bot, toS = down ? bot : top;
+    const pw = Math.min(46, slot * 0.4);
+    if (["channel", "carrier", "active", "osmosis"].includes(m.kind)) {
+      const t = m.kind === "active" ? C.a2 : m.kind === "osmosis" ? C.a1 : C.a5;
+      if (m.kind === "channel" || m.kind === "osmosis") s += rect(cx - pw / 2, mY - band / 2 - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 }) + rect(cx + pw * 0.12, mY - band / 2 - 6, pw * 0.38, band + 12, { fill: t, op: 0.35, stroke: t, rx: 6 });
+      else s += rect(cx - pw / 2, mY - band / 2 - 8, pw, band + 16, { fill: t, op: 0.35, stroke: t, rx: 14 });
+    }
+    if (m.kind === "endocytosis" || m.kind === "exocytosis") s += `<circle cx="${f1(cx)}" cy="${f1(m.kind === "endocytosis" ? mY + band / 2 + 26 : mY - band / 2 - 26)}" r="14" fill="none" stroke="${C.a3}" stroke-width="5" stroke-opacity=".6"/>`;
+    const y1 = down ? 44 : mY + band / 2 + 90, y2 = down ? mY + band / 2 + 90 : 44;
+    s += arrow(cx, y1, cx, y2, { stroke: m.kind === "active" ? C.a2 : C.ink, w: 2.4, head: 10 });
+    const fc = fromS.conc?.[m.substance], tc = toS.conc?.[m.substance];
+    const name = textBlock(cx, 0, m.substance, Math.max(8, Math.floor(slot / 7.4)), { size: 12.5, weight: 700 });
+    s += `<g transform="translate(0 ${down ? 30 : mY + band / 2 + 104})">${name.svg}</g>`;
+    const kb = textBlock(cx, 0, KIND[m.kind] + (m.atp ? " + ATP" : ""), Math.max(9, Math.floor(slot / 6.9)), { size: 11.5, fill: C.soft });
+    s += `<g transform="translate(0 ${mY + band / 2 + 140 + (narrow ? 0 : 0)})">${kb.svg}</g>`;
+    if (fc != null && tc != null) {
+      const mk = (y, v, anchor) => text(cx + (anchor === "start" ? 8 : -8), y, String(v), { size: 11.5, anchor, fill: C.soft });
+      s += mk(down ? 66 : mY + band / 2 + 64, fc, "start") + mk(down ? mY + band / 2 + 64 : 66, tc, "start");
+    }
+  });
+  const unit = spec.unit ? text(W - 16, 16, spec.unit, { size: 11.5, anchor: "end", fill: C.soft }) : "";
+  return { s: s + unit, H: mY + band / 2 + 172 };
+}
+function membraneChecks(spec) {
+  const out = [], S = Object.fromEntries(spec.sides.map((x) => [x.id, x]));
+  for (const m of spec.moves) {
+    const f = S[m.from], t = S[m.to];
+    if (m.kind === "osmosis") { out.push(check(`water moves by osmosis from higher to lower water potential (${f.label} → ${t.label})`, f.psi > t.psi, `ψ ${f.psi} → ${t.psi} kPa`)); continue; }
+    const a = f.conc?.[m.substance], b = t.conc?.[m.substance];
+    if (["simple", "channel", "carrier"].includes(m.kind)) {
+      out.push(check(`${m.substance} moves down its gradient by ${KIND[m.kind]}`, a > b, `${a} → ${b}`));
+      out.push(check(`${KIND[m.kind]} needs no ATP`, !m.atp));
+    }
+    if (m.kind === "active") { out.push(check(`active transport of ${m.substance} uses ATP`, !!m.atp)); if (a != null && b != null) out.push(check(`${m.substance} is pumped against its gradient`, a < b, `${a} → ${b}`)); }
+    if (m.kind === "endocytosis" || m.kind === "exocytosis") { out.push(check(`${m.kind} moves material ${m.kind === "endocytosis" ? "into" : "out of"} the cell`, (m.kind === "endocytosis") === (t.id === "in"))); out.push(check(`${m.kind} uses ATP`, !!m.atp)); }
+  }
+  return out;
+}
+
+register({
+  cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
+  strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
+  pyramid: { draw: pyramidDraw, checks: pyramidChecks, widths: [720, 380] },
+  pedigree: { draw: pedigreeDraw, checks: pedigreeChecks, widths: [620, 380] },
+  cellmap: { draw: cellmapDraw, checks: cellmapChecks, widths: [720, 380] },
+  membrane: { draw: membraneDraw, checks: membraneChecks, widths: [720, 380] },
+});
