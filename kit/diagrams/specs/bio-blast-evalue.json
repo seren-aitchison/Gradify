@@ -1,0 +1,126 @@
+{
+ "id": "bio-blast-evalue",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u13",
+ "lesson": "BLAST",
+ "title": "E-value, bit score and database size",
+ "caption": "The E-value is the number of hits of at least that score expected by chance: E = m × n × 2^−S for a query of length m, a database of n letters and a bit score S. On a log scale it falls in a straight line as the bit score rises, and a database ten times larger raises every E-value tenfold, so the same alignment is less significant.",
+ "alt": "Two parallel lines of log of the E-value against bit score, falling by 0.301 per bit, the line for a ten times larger database one unit higher, with a threshold at E = 10 to the minus 5.",
+ "description": [
+  "E = m × n × 2^−S, so log₁₀ E falls by 0.301 for each extra bit of score.",
+  "Here the query has 300 residues and the databases have 10⁸ and 10⁹ residues.",
+  "A 10 times larger database raises log₁₀ E by exactly 1: more chance matches are expected.",
+  "E-values below about 10⁻⁵ usually indicate meaningful similarity: that needs a bit score of about 51 (smaller database) or 55 (larger)."
+ ],
+ "range": {
+  "x": [
+   20,
+   80
+  ],
+  "y": [
+   -10,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   30,
+   40,
+   50,
+   60,
+   70,
+   80
+  ],
+  [
+   -10,
+   -5,
+   0,
+   5,
+   10
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "bit score, S",
+  "log₁₀ of the E-value"
+ ],
+ "curves": [
+  {
+   "expr": "11.4771-0.30103*x",
+   "colour": "a2"
+  },
+  {
+   "expr": "10.4771-0.30103*x",
+   "colour": "a1"
+  }
+ ],
+ "legend": [
+  [
+   "database of 10⁹ residues",
+   "a2"
+  ],
+  [
+   "database of 10⁸ residues",
+   "a1"
+  ]
+ ],
+ "legendData": [
+  48,
+  11.5
+ ],
+ "marks": [
+  {
+   "y": -5,
+   "label": "E = 10⁻⁵"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "10.4771-0.30103*x",
+   "x": 50,
+   "value": -0.30103,
+   "name": "each extra bit of score cuts the E-value by a factor of 2: log₁₀ E falls by 0.301"
+  },
+  {
+   "type": "point",
+   "expr": "10.4771-0.30103*x",
+   "x": 20,
+   "y": 4.4551,
+   "name": "the 10⁸ database at a bit score of 20: E = 300 × 10⁸ × 2⁻²⁰, log₁₀ about 4.46"
+  },
+  {
+   "type": "point",
+   "expr": "11.4771-0.30103*x",
+   "x": 20,
+   "y": 5.4551,
+   "name": "a 10 times larger database gives log₁₀ E exactly 1 higher"
+  },
+  {
+   "type": "value",
+   "expr": "10.4771-0.30103*x",
+   "x": 53,
+   "between": [
+    -5.6,
+    -5.4
+   ],
+   "name": "a bit score of 53 is needed to pass E = 10⁻⁵ with the smaller database"
+  },
+  {
+   "type": "value",
+   "expr": "11.4771-0.30103*x",
+   "x": 53,
+   "between": [
+    -4.6,
+    -4.4
+   ],
+   "name": "the same score is not quite significant against the larger database"
+  }
+ ]
+}

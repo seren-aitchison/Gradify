@@ -18,6 +18,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   align      a pairwise alignment: its score is recomputed and must be the best dynamic programming finds
 //   restriction a restriction enzyme cutting and ligase joining: sites, fragments, sticky ends and the restored site checked
 //   sanger     chain-termination sequencing: a fragment of every length, read back into the sequence
 //   biocycle   the carbon and nitrogen cycles: stores and processes, each arrow a real step, no dead ends
@@ -1354,6 +1355,51 @@ function sangerChecks(spec) {
   return out;
 }
 
+// ======================================================================== align
+// Pairwise global alignment (Needleman–Wunsch): the drawn alignment's score must equal the best score dynamic programming finds.
+// spec: scoring: {match, mismatch, gap}, pairs: [{seq1, seq2, aligned1, aligned2, label}]
+export function needlemanScore(a, b, { match = 1, mismatch = -1, gap = -2 } = {}) {
+  const n = a.length, k = b.length, S = Array.from({ length: n + 1 }, () => new Array(k + 1).fill(0));
+  for (let i = 1; i <= n; i++) S[i][0] = i * gap;
+  for (let j = 1; j <= k; j++) S[0][j] = j * gap;
+  for (let i = 1; i <= n; i++) for (let j = 1; j <= k; j++) S[i][j] = Math.max(S[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? match : mismatch), S[i - 1][j] + gap, S[i][j - 1] + gap);
+  return S[n][k];
+}
+export function scoreAlignment(a1, a2, { match = 1, mismatch = -1, gap = -2 } = {}) {
+  let s = 0, ident = 0; for (let i = 0; i < a1.length; i++) { if (a1[i] === "-" || a2[i] === "-") s += gap; else if (a1[i] === a2[i]) { s += match; ident++; } else s += mismatch; }
+  return { score: s, ident };
+}
+function alignDraw(spec, W, narrow) {
+  let s = "", y = 10;
+  const sc = spec.scoring;
+  for (const p of spec.pairs) {
+    const n = p.aligned1.length, cw = Math.min(30, (W - 30) / n), x0 = (W - n * cw) / 2, { score, ident } = scoreAlignment(p.aligned1, p.aligned2, sc);
+    s += text(W / 2, y + 8, p.label, { size: 13, weight: 700 }); y += 34;
+    for (let i = 0; i < n; i++) {
+      const a = p.aligned1[i], b = p.aligned2[i], gapHere = a === "-" || b === "-", same = a === b, col = gapHere ? C.soft : same ? C.good : C.bad, x = x0 + i * cw + cw / 2;
+      s += rect(x0 + i * cw + 1, y - 12, cw - 2, 24, { fill: col, op: 0.13, stroke: col, sw: 1.2, rx: 4 }) + text(x, y, a, { size: 14, weight: 700 });
+      s += text(x, y + 22, same && !gapHere ? "|" : gapHere ? "" : "×", { size: 14, weight: 700, fill: col });
+      s += rect(x0 + i * cw + 1, y + 34, cw - 2, 24, { fill: col, op: 0.13, stroke: col, sw: 1.2, rx: 4 }) + text(x, y + 46, b, { size: 14, weight: 700 });
+    }
+    y += 78;
+    s += text(W / 2, y, `score ${score}  ·  ${ident} of ${n} positions identical (${Math.round((100 * ident) / n)}%)`, { size: 12.5, fill: C.soft }); y += 28;
+  }
+  s += text(W / 2, y, `match ${sc.match >= 0 ? "+" : ""}${sc.match}, mismatch ${sc.mismatch}, gap ${sc.gap}   (| match, × mismatch, – gap)`, { size: 11.5, fill: C.soft });
+  return { s, H: y + 14 };
+}
+function alignChecks(spec) {
+  const out = [];
+  for (const p of spec.pairs) {
+    const ok1 = p.aligned1.replace(/-/g, "") === p.seq1, ok2 = p.aligned2.replace(/-/g, "") === p.seq2;
+    out.push(check(`${p.seq1} / ${p.seq2}: removing the gaps gives back both original sequences`, ok1 && ok2 && p.aligned1.length === p.aligned2.length));
+    const { score } = scoreAlignment(p.aligned1, p.aligned2, spec.scoring), best = needlemanScore(p.seq1, p.seq2, spec.scoring);
+    out.push(check(`${p.seq1} / ${p.seq2}: the drawn alignment scores ${score}, the best possible by dynamic programming (${best})`, score === best));
+    out.push(check(`${p.seq1} / ${p.seq2}: no column is a gap against a gap`, [...p.aligned1].every((c, i) => !(c === "-" && p.aligned2[i] === "-"))));
+  }
+  for (const c of spec.claims || []) if (c.type === "identity") { const p = spec.pairs[c.pair], { ident } = scoreAlignment(p.aligned1, p.aligned2, spec.scoring); out.push(check(`pair ${c.pair + 1} is ${c.value}% identical`, Math.abs((100 * ident) / p.aligned1.length - c.value) < 0.5, `${((100 * ident) / p.aligned1.length).toFixed(1)}%`)); }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1372,6 +1418,7 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  align: { draw: alignDraw, checks: alignChecks, widths: [560, 380] },
   restriction: { draw: restrictionDraw, checks: restrictionChecks, widths: [700, 380] },
   sanger: { draw: sangerDraw, checks: sangerChecks, widths: [660, 380] },
   biocycle: { draw: biocycleDraw, checks: biocycleChecks, widths: [700, 380] },

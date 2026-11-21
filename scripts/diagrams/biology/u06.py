@@ -103,7 +103,7 @@ mk("u06-17", "bio-cladogram", "cladogram", "Reading an evolutionary tree",
    ["Branches are lineages, nodes are common ancestors and the tips are the taxa.", "Trait 1, a vertebral column, and trait 2, jaws, arose in the ancestor of the shark, frog, lizard and mouse; the lancelet lacks them.",
     "Trait 3, four limbs, arose in the ancestor of the frog, lizard and mouse; trait 4, the amniotic egg, in the ancestor of the lizard and mouse; trait 5, hair and mammary glands, in the mouse lineage.",
     "The lizard and mouse share a more recent common ancestor with each other than with the frog."],
-   also=("u06-16",), tree=["lancelet", ["shark", ["frog", ["lizard", "mouse"]]]],
+   also=("u06-16", "u13-08"), tree=["lancelet", ["shark", ["frog", ["lizard", "mouse"]]]],
    characters=[{"name": "vertebral column", "taxa": ["shark", "frog", "lizard", "mouse"]}, {"name": "jaws", "taxa": ["shark", "frog", "lizard", "mouse"]},
                {"name": "four limbs", "taxa": ["frog", "lizard", "mouse"]}, {"name": "amniotic egg", "taxa": ["lizard", "mouse"]}, {"name": "hair and mammary glands", "taxa": ["mouse"]}],
    claims=[{"type": "closer", "taxa": ["lizard", "mouse"], "than": ["frog", "lizard"]}, {"type": "clade", "taxa": ["lizard", "mouse"]}, {"type": "clade", "taxa": ["frog", "lizard", "mouse"]}])

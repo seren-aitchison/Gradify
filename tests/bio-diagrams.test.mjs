@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -283,4 +283,13 @@ test("Sanger: a fragment of every length, read back into the new strand", () => 
   assert.deepEqual(sangerFragments("GAT").map((f) => f.last), ["G", "A", "T"]);
   assert.equal(allPass({ renderer: "sanger", alt: "x", newStrand: "GATTACA", template: "CTAATGT", claims: [{ type: "reads", value: "GATTACA" }] }), true);
   assert.equal(allPass({ renderer: "sanger", alt: "x", newStrand: "GATTACA", template: "CTAATGA" }), false); // template is not the complement
+});
+
+test("alignment: the drawn alignment must score the dynamic-programming optimum", () => {
+  const sc = { match: 1, mismatch: -1, gap: -2 };
+  assert.equal(needlemanScore("GATTACA", "GATACA", sc), 4);
+  assert.equal(scoreAlignment("GATTACA", "GA-TACA", sc).score, 4);
+  const pair = (a1, a2) => ({ seq1: "GATTACA", seq2: "GATACA", aligned1: a1, aligned2: a2, label: "x" });
+  assert.equal(allPass({ renderer: "align", alt: "x", scoring: sc, pairs: [pair("GATTACA", "GA-TACA")] }), true);
+  assert.equal(allPass({ renderer: "align", alt: "x", scoring: sc, pairs: [pair("GATTACA-", "GA-TAC-A")] }), false); // two gaps score worse than the optimum, and the second is not even a valid alignment
 });

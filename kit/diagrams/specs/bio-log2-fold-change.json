@@ -1,0 +1,125 @@
+{
+ "id": "bio-log2-fold-change",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u13",
+ "lesson": "Differential expression",
+ "title": "Why log₂ fold change?",
+ "caption": "A fold change is expression in condition B divided by expression in condition A. A doubling is 2 and a halving is 0.5, which are not symmetrical; on a log₂ scale they are +1 and −1, and 'no change' is 0. Volcano plots use this scale.",
+ "alt": "A curve of log base 2 of the fold change: zero at a fold change of 1, plus 1 at 2, plus 2 at 4, minus 1 at one half and minus 2 at one quarter.",
+ "description": [
+  "Fold change = expression in B ÷ expression in A.",
+  "No change: fold change 1, log₂ = 0.",
+  "Doubled: fold change 2, log₂ = +1.  Halved: fold change ½, log₂ = −1.",
+  "On the log₂ scale increases and decreases of the same size are symmetrical."
+ ],
+ "range": {
+  "x": [
+   0,
+   8.5
+  ],
+  "y": [
+   -3.2,
+   3.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   4,
+   8
+  ],
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "fold change (B ÷ A)",
+  "log₂ fold change"
+ ],
+ "curves": [
+  {
+   "expr": "log(x)/0.693147",
+   "colour": "a1",
+   "domain": [
+    0.12,
+    8.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1,
+   "label": "doubled",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12
+  },
+  {
+   "x": 0.5,
+   "y": -1,
+   "label": "halved",
+   "colour": "a4",
+   "dx": 8,
+   "dy": 14
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "label": "no change",
+   "colour": "ink",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "log(x)/0.693147",
+   "x": 1,
+   "y": 0,
+   "name": "no change (fold change 1) is 0"
+  },
+  {
+   "type": "point",
+   "expr": "log(x)/0.693147",
+   "x": 2,
+   "y": 1,
+   "name": "a doubling is +1"
+  },
+  {
+   "type": "point",
+   "expr": "log(x)/0.693147",
+   "x": 0.5,
+   "y": -1,
+   "name": "a halving is −1: the same size as a doubling, opposite sign"
+  },
+  {
+   "type": "point",
+   "expr": "log(x)/0.693147",
+   "x": 4,
+   "y": 2,
+   "name": "a four-fold increase is +2"
+  },
+  {
+   "type": "point",
+   "expr": "log(x)/0.693147",
+   "x": 0.25,
+   "y": -2,
+   "name": "a four-fold decrease is −2"
+  }
+ ]
+}

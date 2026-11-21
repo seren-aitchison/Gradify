@@ -1,0 +1,56 @@
+{
+ "id": "bio-pairwise-alignment",
+ "renderer": "align",
+ "course": "biology",
+ "unit": "u13",
+ "lesson": "Sequence alignment",
+ "title": "Aligning two sequences",
+ "caption": "An alignment lines up two sequences so that matching positions sit in the same column; a mismatch (×) and a gap (–, standing for an insertion or deletion) each cost points. Dynamic programming finds the alignment with the best total score, and percentage identity is the share of identical positions.",
+ "alt": "Two alignments of GATTACA: against GCTTACA, six matches and one mismatch scoring 5; and against GATACA, six matches and one gap scoring 4.",
+ "description": [
+  "Scoring: +1 for a match, −1 for a mismatch, −2 for a gap.",
+  "GATTACA against GCTTACA: six matches and one mismatch, score 5, 86% identical.",
+  "GATTACA against GATACA: one T is missing, so a gap is needed; six matches and one gap, score 4.",
+  "The best score is found by dynamic programming (Needleman–Wunsch); any other alignment scores less."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u13",
+   "lesson": "DNA sequence analysis"
+  }
+ ],
+ "scoring": {
+  "match": 1,
+  "mismatch": -1,
+  "gap": -2
+ },
+ "pairs": [
+  {
+   "seq1": "GATTACA",
+   "seq2": "GCTTACA",
+   "aligned1": "GATTACA",
+   "aligned2": "GCTTACA",
+   "label": "one mismatch"
+  },
+  {
+   "seq1": "GATTACA",
+   "seq2": "GATACA",
+   "aligned1": "GATTACA",
+   "aligned2": "GA-TACA",
+   "label": "one gap (a deletion)"
+  }
+ ],
+ "claims": [
+  {
+   "type": "identity",
+   "pair": 0,
+   "value": 85.7
+  },
+  {
+   "type": "identity",
+   "pair": 1,
+   "value": 85.7
+  }
+ ]
+}

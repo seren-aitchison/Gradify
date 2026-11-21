@@ -1,0 +1,119 @@
+{
+ "id": "bio-rnaseq-workflow",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u13",
+ "lesson": "RNA sequencing",
+ "title": "An RNA-seq experiment, bench to results",
+ "caption": "In the laboratory RNA is extracted, mRNA selected (ribosomal RNA is most of the RNA, so it is removed), reverse transcribed to cDNA, fragmented and sequenced. On the computer the reads are checked, aligned to a reference, counted for each gene and tested for differences between conditions.",
+ "alt": "Eight boxes in order: extract RNA, select mRNA, reverse transcribe, fragment and sequence, quality control, align, count reads per gene, and test for differences.",
+ "description": [
+  "Extract RNA: and check its quality.",
+  "Select mRNA: by poly-A tail, or remove ribosomal RNA.",
+  "Reverse transcribe: RNA to cDNA.",
+  "Fragment and sequence: add adapters, then sequence.",
+  "Quality control: check the reads.",
+  "Align the reads: to a reference genome or transcriptome.",
+  "Count reads per gene: quantification.",
+  "Test for differences: between conditions, with correction."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "r0",
+   "label": "extract RNA",
+   "sub": "and check its quality",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "r1",
+   "label": "select mRNA",
+   "sub": "by poly-A tail, or remove ribosomal RNA",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "r2",
+   "label": "reverse transcribe",
+   "sub": "RNA to cDNA",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "r3",
+   "label": "fragment and sequence",
+   "sub": "add adapters, then sequence",
+   "tone": "a3",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "r4",
+   "label": "quality control",
+   "sub": "check the reads",
+   "tone": "a1",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "r5",
+   "label": "align the reads",
+   "sub": "to a reference genome or transcriptome",
+   "tone": "a4",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "r6",
+   "label": "count reads per gene",
+   "sub": "quantification",
+   "tone": "a5",
+   "col": 0,
+   "row": 2
+  },
+  {
+   "id": "r7",
+   "label": "test for differences",
+   "sub": "between conditions, with correction",
+   "tone": "a2",
+   "col": 1,
+   "row": 2
+  }
+ ],
+ "edges": [
+  {
+   "from": "r0",
+   "to": "r1"
+  },
+  {
+   "from": "r1",
+   "to": "r2"
+  },
+  {
+   "from": "r2",
+   "to": "r3"
+  },
+  {
+   "from": "r3",
+   "to": "r4"
+  },
+  {
+   "from": "r4",
+   "to": "r5"
+  },
+  {
+   "from": "r5",
+   "to": "r6"
+  },
+  {
+   "from": "r6",
+   "to": "r7"
+  }
+ ]
+}

@@ -25940,6 +25940,11 @@
     "course": "biology",
     "unit": "u06",
     "lesson": "Phylogenetics"
+   },
+   {
+    "course": "biology",
+    "unit": "u13",
+    "lesson": "Phylogenetic analysis"
    }
   ],
   "renderer": "cladogram",
@@ -25959,6 +25964,11 @@
     "name": "also placed in biology: Phylogenetics",
     "ok": true,
     "detail": "kit/courses/biology/notes/u06.js"
+   },
+   {
+    "name": "also placed in biology: Phylogenetic analysis",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -31891,6 +31901,264 @@
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
     "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "bio-blast-evalue": {
+  "title": "E-value, bit score and database size",
+  "caption": "The E-value is the number of hits of at least that score expected by chance: E = m × n × 2^−S for a query of length m, a database of n letters and a bit score S. On a log scale it falls in a straight line as the bit score rises, and a database ten times larger raises every E-value tenfold, so the same alignment is less significant.",
+  "alt": "Two parallel lines of log of the E-value against bit score, falling by 0.301 per bit, the line for a ten times larger database one unit higher, with a threshold at E = 10 to the minus 5.",
+  "description": [
+   "E = m × n × 2^−S, so log₁₀ E falls by 0.301 for each extra bit of score.",
+   "Here the query has 300 residues and the databases have 10⁸ and 10⁹ residues.",
+   "A 10 times larger database raises log₁₀ E by exactly 1: more chance matches are expected.",
+   "E-values below about 10⁻⁵ usually indicate meaningful similarity: that needs a bit score of about 51 (smaller database) or 55 (larger)."
+  ],
+  "course": "biology",
+  "lesson": "BLAST",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: BLAST"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "each extra bit of score cuts the E-value by a factor of 2: log₁₀ E falls by 0.301",
+    "ok": true,
+    "detail": "gradient -0.3010"
+   },
+   {
+    "name": "the 10⁸ database at a bit score of 20: E = 300 × 10⁸ × 2⁻²⁰, log₁₀ about 4.46",
+    "ok": true,
+    "detail": "y(20) = 4.4565"
+   },
+   {
+    "name": "a 10 times larger database gives log₁₀ E exactly 1 higher",
+    "ok": true,
+    "detail": "y(20) = 5.4565"
+   },
+   {
+    "name": "a bit score of 53 is needed to pass E = 10⁻⁵ with the smaller database",
+    "ok": true,
+    "detail": "10.4771-0.30103*x at 53 = -5.48; expected -5.6–-5.4"
+   },
+   {
+    "name": "the same score is not quite significant against the larger database",
+    "ok": true,
+    "detail": "11.4771-0.30103*x at 53 = -4.48; expected -4.6–-4.4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-log2-fold-change": {
+  "title": "Why log₂ fold change?",
+  "caption": "A fold change is expression in condition B divided by expression in condition A. A doubling is 2 and a halving is 0.5, which are not symmetrical; on a log₂ scale they are +1 and −1, and 'no change' is 0. Volcano plots use this scale.",
+  "alt": "A curve of log base 2 of the fold change: zero at a fold change of 1, plus 1 at 2, plus 2 at 4, minus 1 at one half and minus 2 at one quarter.",
+  "description": [
+   "Fold change = expression in B ÷ expression in A.",
+   "No change: fold change 1, log₂ = 0.",
+   "Doubled: fold change 2, log₂ = +1.  Halved: fold change ½, log₂ = −1.",
+   "On the log₂ scale increases and decreases of the same size are symmetrical."
+  ],
+  "course": "biology",
+  "lesson": "Differential expression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: Differential expression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "no change (fold change 1) is 0",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "a doubling is +1",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "a halving is −1: the same size as a doubling, opposite sign",
+    "ok": true,
+    "detail": "y(0.5) = -1"
+   },
+   {
+    "name": "a four-fold increase is +2",
+    "ok": true,
+    "detail": "y(4) = 2"
+   },
+   {
+    "name": "a four-fold decrease is −2",
+    "ok": true,
+    "detail": "y(0.25) = -2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-pairwise-alignment": {
+  "title": "Aligning two sequences",
+  "caption": "An alignment lines up two sequences so that matching positions sit in the same column; a mismatch (×) and a gap (–, standing for an insertion or deletion) each cost points. Dynamic programming finds the alignment with the best total score, and percentage identity is the share of identical positions.",
+  "alt": "Two alignments of GATTACA: against GCTTACA, six matches and one mismatch scoring 5; and against GATACA, six matches and one gap scoring 4.",
+  "description": [
+   "Scoring: +1 for a match, −1 for a mismatch, −2 for a gap.",
+   "GATTACA against GCTTACA: six matches and one mismatch, score 5, 86% identical.",
+   "GATTACA against GATACA: one T is missing, so a gap is needed; six matches and one gap, score 4.",
+   "The best score is found by dynamic programming (Needleman–Wunsch); any other alignment scores less."
+  ],
+  "course": "biology",
+  "lesson": "Sequence alignment",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u13",
+    "lesson": "DNA sequence analysis"
+   }
+  ],
+  "renderer": "align",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: Sequence alignment"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: DNA sequence analysis",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "GATTACA / GCTTACA: removing the gaps gives back both original sequences",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "GATTACA / GCTTACA: the drawn alignment scores 5, the best possible by dynamic programming (5)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "GATTACA / GCTTACA: no column is a gap against a gap",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "GATTACA / GATACA: removing the gaps gives back both original sequences",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "GATTACA / GATACA: the drawn alignment scores 4, the best possible by dynamic programming (4)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "GATTACA / GATACA: no column is a gap against a gap",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pair 1 is 85.7% identical",
+    "ok": true,
+    "detail": "85.7%"
+   },
+   {
+    "name": "pair 2 is 85.7% identical",
+    "ok": true,
+    "detail": "85.7%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "560px wide, shown at 126% (labels 18.9px)"
+   }
+  ]
+ },
+ "bio-rnaseq-workflow": {
+  "title": "An RNA-seq experiment, bench to results",
+  "caption": "In the laboratory RNA is extracted, mRNA selected (ribosomal RNA is most of the RNA, so it is removed), reverse transcribed to cDNA, fragmented and sequenced. On the computer the reads are checked, aligned to a reference, counted for each gene and tested for differences between conditions.",
+  "alt": "Eight boxes in order: extract RNA, select mRNA, reverse transcribe, fragment and sequence, quality control, align, count reads per gene, and test for differences.",
+  "description": [
+   "Extract RNA: and check its quality.",
+   "Select mRNA: by poly-A tail, or remove ribosomal RNA.",
+   "Reverse transcribe: RNA to cDNA.",
+   "Fragment and sequence: add adapters, then sequence.",
+   "Quality control: check the reads.",
+   "Align the reads: to a reference genome or transcriptome.",
+   "Count reads per gene: quantification.",
+   "Test for differences: between conditions, with correction."
+  ],
+  "course": "biology",
+  "lesson": "RNA sequencing",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: RNA sequencing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
  }

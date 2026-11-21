@@ -94,6 +94,7 @@ H: Basic analysis
 - **Reverse complement**: the sequence of the opposite strand, read 5′ to 3′.
 - **Translation** in six **reading frames** (three on each strand).
 - **Open reading frames** (ORFs): stretches from a start codon (ATG) to a stop codon.
+D: bio-pairwise-alignment
 H: GC content and motifs
 - **GC content**: the percentage of bases that are G or C.
 - GC pairs have three hydrogen bonds, so high-GC DNA is more stable.
@@ -182,6 +183,7 @@ H: Scoring
 - **Dynamic programming** finds the optimal alignment.
 - **Percentage identity** gives the proportion of identical positions.
 P: **Homology** means shared ancestry and is either true or false, while **similarity** is a measured quantity. High similarity suggests homology but does not prove it. Alignments are used to infer function, study evolution and identify mutations.
+D: bio-pairwise-alignment
 X: A simple alignment.
 > Sequence 1: GATTACA
 > Sequence 2: GATCACA
@@ -223,6 +225,7 @@ H: Interpreting results
 - **Percentage identity** and **query coverage** show how well sequences match.
 - **Bit score** measures alignment quality independent of database size.
 P: BLAST, published in 1990, is one of the most cited scientific papers. It is used to identify unknown sequences, find homologues in other species and check primers. Very large databases increase the chance of random matches, which E-values account for.
+D: bio-blast-evalue
 X: Identifying an unknown gene.
 > A researcher sequences an unknown DNA fragment.
 > blastn against the nucleotide database returns a top hit with 99% identity and E-value 0.
@@ -299,6 +302,7 @@ H: Methods
 - **Maximum parsimony** chooses the tree needing fewest changes.
 - **Maximum likelihood** finds the tree that makes the data most probable under a model of evolution.
 - **Bayesian inference** estimates the probability of trees given the data.
+D: bio-cladogram
 H: Confidence and rooting
 - **Bootstrapping** resamples alignment columns many times to test tree support.
 - Bootstrap values above about 70% are often taken as good support.
@@ -428,6 +432,7 @@ H: Analysis
 - **Quantification**: counting reads per gene.
 - Statistical testing for differences between conditions.
 P: RNA-seq can discover new transcripts, alternative splicing, gene fusions in cancer and non-coding RNAs. Ribosomal RNA makes up most cellular RNA, so it is removed to avoid wasting reads. Careful experimental design, including randomisation and replicates, avoids batch effects.
+D: bio-rnaseq-workflow
 X: Finding a fusion gene.
 > RNA-seq is run on leukaemia cells.
 > Some reads contain sequence from two different genes joined together.
@@ -463,6 +468,7 @@ H: Fold change and testing
 - **Log₂ fold change** makes increases and decreases symmetrical: +1 means doubled, −1 means halved.
 - Statistical tests give a **p-value** for each gene.
 - Tools such as DESeq2 model count data.
+D: bio-log2-fold-change
 H: Multiple testing
 - Testing 20,000 genes at p < 0.05 would give about 1,000 false positives by chance.
 - **False discovery rate** (FDR) correction, such as Benjamini-Hochberg, controls the proportion of false positives.
