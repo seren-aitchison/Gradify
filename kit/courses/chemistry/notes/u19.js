@@ -134,6 +134,7 @@ H: Apparatus
 - **Condensers** return or collect vapour.
 - **Dropping funnels** add reagents slowly.
 - Quickfit joints connect glassware securely.
+D: chem-reaction-setup
 H: Controlling conditions
 - **Heating**: water baths, oil baths, heating mantles.
 - **Cooling**: ice baths, ice-salt or dry-ice baths.
@@ -175,6 +176,7 @@ H: Apparatus
 - Cooling water enters at the **bottom** of the condenser and leaves at the top.
 - **Anti-bumping granules** or stirring ensure smooth boiling.
 - The top of the condenser is left **open**.
+D: chem-reflux
 H: Purpose
 - Vapour condenses and drips back, so **solvent is not lost**.
 - Reactions can be heated for hours at constant temperature.
@@ -216,6 +218,7 @@ H: Simple and fractional
 - The **thermometer bulb** sits at the side-arm to read the vapour temperature.
 - **Fractional distillation** adds a column with many surfaces for repeated condensation and evaporation.
 - It separates liquids with closer boiling points.
+D: chem-distillation
 H: Special methods
 - **Vacuum distillation** lowers boiling points, protecting heat-sensitive compounds.
 - **Steam distillation** isolates volatile, water-insoluble compounds such as essential oils.
@@ -257,6 +260,7 @@ H: Liquid-liquid extraction
 - The compound **partitions** between them according to solubility.
 - The denser layer is at the bottom.
 - **Several small extractions** remove more than one large one.
+D: chem-separating-funnel
 H: Acid-base extraction
 - Acids react with aqueous base to form water-soluble salts.
 - Bases react with aqueous acid to form water-soluble salts.
@@ -298,6 +302,7 @@ H: Choosing a solvent
 - Impurities should stay dissolved or not dissolve at all.
 - The solvent should not react with the compound.
 - Mixed solvents can be used when no single solvent works.
+D: chem-recrystallisation
 H: Steps
 - Dissolve the solid in the **minimum** volume of hot solvent.
 - **Hot filter** to remove insoluble impurities.
@@ -339,6 +344,7 @@ H: Gravity filtration
 - Slow but gentle.
 - Used to remove solids when the **filtrate** is wanted.
 - Also used for hot filtration in recrystallisation.
+D: chem-filtration
 H: Vacuum filtration
 - Uses a **Büchner** or Hirsch funnel and a side-arm flask.
 - Suction pulls liquid through quickly.
@@ -380,6 +386,7 @@ H: Methods
 - **Preparative TLC**: thick plates for small amounts.
 - **Preparative HPLC**: high resolution for difficult separations.
 - **Ion exchange** and **size exclusion** for charged or large molecules.
+D: chem-flash-column
 H: Choosing
 - Scale: milligrams to grams for flash; micrograms to milligrams for prep TLC.
 - Difficulty: close-running compounds may need HPLC.
@@ -421,6 +428,7 @@ H: Choosing solvents
 - Adjust the ratio of polar to non-polar solvents, such as ethyl ethanoate in hexane.
 - Good separation between spots is needed.
 - Try several mixtures quickly on small plates.
+D: chem-paper-chromatography
 H: Practical uses
 - **Co-spotting**: spot sample and standard together to see if they match.
 - Check **fractions** from a column to decide which to combine.
@@ -462,6 +470,7 @@ H: Preparing the column
 - Load the sample in a minimum volume, or pre-adsorbed onto silica (**dry loading**).
 - Add a thin layer of sand to protect the surface.
 - Never let the column run dry.
+D: chem-column
 H: Running the column
 - Less polar compounds **elute first** on silica.
 - **Gradient elution** gradually increases solvent polarity.
@@ -544,6 +553,7 @@ H: Physical tests
 - Impurities **lower** and **broaden** the melting range.
 - A **mixed melting point** with an authentic sample confirms identity.
 - Pure liquids boil at a constant temperature.
+D: chem-melting-range
 H: Instrumental tests
 - **TLC**, **GC** or **HPLC** show impurity peaks or spots.
 - **NMR** reveals impurity signals; integration estimates amounts.
@@ -585,6 +595,7 @@ H: Methods
 - **GC** or **LC-MS**: identify and quantify components.
 - **NMR** of small samples shows conversion.
 - **In-line IR** or **Raman** probes follow reactions continuously.
+D: chem-reaction-monitoring
 H: Using the data
 - Stop when starting material is consumed or conversion levels off.
 - Avoid over-running reactions that form by-products.
@@ -626,6 +637,7 @@ H: Route choice
 - Use **available**, affordable starting materials.
 - Avoid hazardous reagents where alternatives exist.
 - Consider **scale**: some reactions do not scale well.
+D: chem-synthesis-plan
 H: Ordering steps
 - Install sensitive groups **late** if they would not survive earlier steps.
 - Consider **chemoselectivity** at each step.
@@ -667,6 +679,7 @@ H: Disconnections and synthons
 - Breaking a bond gives idealised fragments called **synthons**.
 - Each synthon has a real **synthetic equivalent** (reagent).
 - Disconnect next to functional groups, where reactions are known.
+D: chem-retrosynthesis
 H: Strategies
 - Disconnect **C–X** bonds (X = O, N) first, such as esters and amides.
 - Disconnect **C–C** bonds next to carbonyls or alcohols.
@@ -708,6 +721,7 @@ H: Common groups
 - **Amines**: Boc, removed by acid; Fmoc, removed by base.
 - **Carbonyls**: acetals, removed by aqueous acid.
 - **Carboxylic acids**: esters, removed by hydrolysis.
+D: chem-protecting-group
 H: Good practice
 - A protecting group must go on and come off in **high yield**.
 - It must survive the conditions of the steps in between.
@@ -749,6 +763,7 @@ H: Practical management
 - Make enough material early, since losses accumulate.
 - **Telescoping**: carry crude material into the next step when purification is not needed.
 - Keep careful records of batches and yields.
+D: chem-multistep-yield
 H: Troubleshooting
 - Check reagent quality and dryness.
 - Monitor reactions to see where problems arise.
@@ -790,6 +805,7 @@ H: Greener choices
 - Avoid hazardous solvents such as dichloromethane where possible.
 - Prefer **catalytic** reagents over stoichiometric ones.
 - Reduce or recycle solvent volumes.
+D: chem-green-synthesis
 H: Efficient methods
 - **Microwave heating** shortens reaction times.
 - **Flow chemistry** improves safety and heat control.

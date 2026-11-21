@@ -1,0 +1,33 @@
+{
+ "id": "chem-pauli",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Pauli exclusion principle",
+ "title": "Two electrons per orbital, opposite spins",
+ "caption": "Helium's two electrons share 1s with opposite spins. Lithium's third electron cannot enter 1s, which is full, so it starts 2s. Nitrogen's 2p electrons are each in their own box.",
+ "alt": "Box diagrams: helium 1s²; lithium 1s² 2s¹; nitrogen 1s² 2s² 2p³ with three single 2p electrons.",
+ "description": [
+  "Helium: one 1s box with an up and a down arrow.",
+  "Lithium: 1s paired, 2s with a single up arrow.",
+  "Nitrogen: 1s and 2s paired, three 2p boxes each with one up arrow."
+ ],
+ "rows": [
+  {
+   "symbol": "He",
+   "label": "Helium, 1s²",
+   "config": "1s2"
+  },
+  {
+   "symbol": "Li",
+   "label": "Lithium, 1s² 2s¹",
+   "config": "1s2 2s1"
+  },
+  {
+   "symbol": "N",
+   "label": "Nitrogen, 1s² 2s² 2p³",
+   "config": "1s2 2s2 2p3",
+   "unpaired": 3
+  }
+ ]
+}

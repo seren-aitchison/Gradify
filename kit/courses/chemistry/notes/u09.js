@@ -11,6 +11,7 @@ H: Properties
 - **Bases** neutralise acids; **alkalis** are bases that dissolve in water.
 - Alkalis feel soapy and turn red litmus blue, with pH above 7.
 - Acids in water release H⁺ ions; alkalis release OH⁻ ions.
+D: chem-ph-scale
 H: Reactions of acids
 - Acid + metal → salt + hydrogen.
 - Acid + base (metal oxide or hydroxide) → salt + water.
@@ -93,6 +94,7 @@ H: Definitions
 - A **Brønsted-Lowry base** is a **proton acceptor**.
 - Acid-base reactions involve **proton transfer**.
 - Works in any solvent, not just water.
+D: chem-bronsted-pairs
 H: Conjugate pairs
 - When an acid donates a proton, it becomes its **conjugate base**.
 - When a base accepts a proton, it becomes its **conjugate acid**.
@@ -134,6 +136,7 @@ H: Definitions
 - A **Lewis base** is an **electron pair donor**.
 - Reaction forms a **dative covalent bond**.
 - No protons need be involved.
+D: chem-lewis-acid-bf3
 H: Examples
 - BF₃ + NH₃ → F₃B←NH₃: BF₃ accepts, NH₃ donates.
 - Metal ions in complexes act as Lewis acids; ligands are Lewis bases.
@@ -175,6 +178,7 @@ H: Strong acids and bases
 - Examples: HCl, HNO₃, H₂SO₄ (first proton).
 - **Strong bases** dissociate completely, such as NaOH and KOH.
 - [H⁺] equals the acid concentration for monoprotic strong acids.
+D: chem-strong-weak-acid
 H: Strength versus concentration
 - **Strength** describes the degree of ionisation.
 - **Concentration** describes the amount dissolved per volume.
@@ -216,6 +220,7 @@ H: Partial ionisation
 - Most molecules stay un-ionised.
 - **Weak bases**, such as ammonia, accept protons partially.
 - Equilibrium lies to the **left**.
+D: chem-weak-acid-fraction
 H: Comparison
 - Same concentration: a weak acid has **higher pH** than a strong acid.
 - Weak acids conduct electricity less well.
@@ -257,6 +262,7 @@ H: Definition
 - [H⁺] = 10⁻ᵖᴴ.
 - Each unit change in pH is a **tenfold** change in [H⁺].
 - At 25 °C, neutral water has pH 7.
+D: chem-ph-log
 H: Measuring pH
 - **Universal indicator** gives an approximate colour-based pH.
 - **pH meters** use a glass electrode for accurate readings.
@@ -298,6 +304,7 @@ H: Ionic product of water
 - **Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ mol² dm⁻⁶** at 25 °C.
 - **pOH = −log[OH⁻]**.
 - **pH + pOH = 14** at 25 °C.
+D: chem-ph-poh
 H: Neutrality and temperature
 - Neutral means **[H⁺] = [OH⁻]**, not necessarily pH 7.
 - Self-ionisation is endothermic, so Kw **increases** with temperature.
@@ -339,6 +346,7 @@ H: Ka
 - Larger Ka means a **stronger** weak acid.
 - **pKa = −log Ka**; smaller pKa means stronger acid.
 - Units: mol dm⁻³.
+D: chem-speciation
 H: pH of weak acids
 - Assume [H⁺] = [A⁻].
 - Assume [HA] at equilibrium ≈ initial concentration (small dissociation).
@@ -462,6 +470,7 @@ H: Composition
 - A **basic buffer** contains a weak base and its conjugate acid, such as ammonia and ammonium chloride.
 - Both components must be present in reasonable amounts.
 - Buffers work best when pH is near the pKa.
+D: chem-buffer-region
 H: How they work
 - Added **H⁺** reacts with the conjugate base: A⁻ + H⁺ → HA.
 - Added **OH⁻** reacts with the weak acid: HA + OH⁻ → A⁻ + H₂O.
@@ -503,6 +512,7 @@ H: The equation
 - Derived from the Ka expression.
 - When [A⁻] = [HA], **pH = pKa**.
 - Changing the ratio tenfold changes pH by 1.
+D: chem-half-equivalence
 H: Using it
 - Calculate pH from known concentrations of acid and salt.
 - Choose an acid with pKa close to the target pH.
@@ -544,6 +554,7 @@ H: Procedure
 - A **burette** adds the other solution until the **end point**.
 - An **indicator** shows the end point by a colour change.
 - Repeat until **concordant** titres (within 0.10 cm³) are obtained.
+D: chem-titration-curves
 H: Calculations
 - Moles = concentration × volume (in dm³).
 - Use the **mole ratio** from the balanced equation.
@@ -585,6 +596,7 @@ H: How indicators work
 - HIn ⇌ H⁺ + In⁻.
 - In acid, equilibrium shifts left (HIn colour); in alkali, right (In⁻ colour).
 - The colour changes over about **pKin ± 1**.
+D: chem-indicator-ranges
 H: Common indicators
 - **Methyl orange**: red to yellow, range about pH 3.1–4.4.
 - **Phenolphthalein**: colourless to pink, range about pH 8.3–10.
@@ -626,6 +638,7 @@ H: Equivalence point
 - The **end point** is when the indicator changes; ideally it matches the equivalence point.
 - Strong acid–strong base: equivalence at pH 7.
 - Weak acid–strong base: equivalence above pH 7; strong acid–weak base: below pH 7.
+D: chem-equivalence-point
 H: Titration curves
 - Plot pH against volume added.
 - A **steep vertical section** occurs around the equivalence point.
@@ -667,6 +680,7 @@ H: Equilibria
 - Ions dissolve and precipitate at equal rates.
 - The solid is in contact with the solution.
 - Solubility is often very small, such as 10⁻⁵ mol dm⁻³.
+D: chem-solubility-equilibrium
 H: Solubility rules and precipitation
 - Nitrates and most sodium, potassium and ammonium salts are soluble.
 - Most chlorides are soluble, except silver and lead.
@@ -749,6 +763,7 @@ H: The effect
 - AgCl is less soluble in NaCl solution than in pure water.
 - Weak acid ionisation is suppressed by adding its conjugate base, which is the basis of buffers.
 - Ksp stays the same.
+D: chem-common-ion
 H: Calculations and uses
 - In 0.10 mol dm⁻³ NaCl, [Cl⁻] ≈ 0.10, so s(AgCl) = Ksp ÷ 0.10.
 - Used to precipitate salts more completely in gravimetric analysis.
@@ -790,6 +805,7 @@ H: Complex formation
 - **Stability constant** Kstab measures how favoured the complex is.
 - Larger Kstab means a more stable complex.
 - Ligand substitution can change colour and coordination number.
+D: chem-complex-ions
 H: Chelate effect
 - **Multidentate** (chelating) ligands bind through several atoms.
 - Examples: ethane-1,2-diamine (bidentate) and EDTA⁴⁻ (hexadentate).
@@ -831,6 +847,7 @@ H: Amphoteric oxides and hydroxides
 - Al₂O₃ and Al(OH)₃: with acid form Al³⁺; with alkali form [Al(OH)₄]⁻.
 - Zn(OH)₂ similarly dissolves in acid and excess alkali.
 - Metals near the metal/non-metal boundary often form amphoteric oxides.
+D: chem-amphoteric-al
 H: Other amphoteric species
 - **Water** can donate or accept protons.
 - **Hydrogencarbonate** (HCO₃⁻) can act as acid or base.
@@ -872,6 +889,7 @@ H: Stepwise ionisation
 - **Triprotic** acids donate three, such as H₃PO₄.
 - Each step has its own Ka: Ka1 > Ka2 > Ka3.
 - Each successive proton is harder to remove from a more negative ion.
+D: chem-polyprotic
 H: Titration curves
 - Polyprotic acids show **more than one equivalence point**.
 - Each step can act as a buffer region.

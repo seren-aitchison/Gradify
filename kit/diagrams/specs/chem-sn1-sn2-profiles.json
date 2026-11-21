@@ -1,0 +1,113 @@
+{
+ "id": "chem-sn1-sn2-profiles",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "lesson": "Reaction energy profiles",
+ "title": "SN1 and SN2 energy profiles",
+ "caption": "SN2 has one transition state and no intermediate. SN1 has two transition states with a carbocation intermediate in the valley between them; the first barrier is the highest, so ionisation is the rate-determining step.",
+ "alt": "Two energy profiles. SN2: a single hump. SN1: two humps with a carbocation intermediate in the dip between them, the first hump higher.",
+ "description": [
+  "Left panel, SN2: energy rises from the reactants to a single transition state, marked with a double dagger, then falls to the products, which are lower in energy than the reactants. The activation energy is marked from the reactants to the top of the hump.",
+  "Right panel, SN1: energy rises to a first, higher transition state (ionisation), falls into a shallow dip holding the carbocation intermediate, rises to a second, lower transition state (nucleophile attack), then falls to the products. The activation energy of step 1 is marked; it is the largest barrier, so step 1 is rate-determining."
+ ],
+ "profiles": [
+  {
+   "title": "SN2: one step",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 20,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 95,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 0,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "rds": 1,
+    "dh": "exothermic"
+   }
+  },
+  {
+   "title": "SN1: two steps",
+   "colour": "a5",
+   "points": [
+    {
+     "x": 0,
+     "e": 20,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.3,
+     "e": 100,
+     "kind": "ts",
+     "label": "TS1"
+    },
+    {
+     "x": 0.52,
+     "e": 68,
+     "kind": "int",
+     "label": "carbocation"
+    },
+    {
+     "x": 0.72,
+     "e": 80,
+     "kind": "ts",
+     "label": "TS2"
+    },
+    {
+     "x": 1,
+     "e": 0,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea (step 1)",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ],
+   "expect": {
+    "ts": 2,
+    "int": 1,
+    "rds": 1,
+    "dh": "exothermic"
+   }
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "by": "site owner (seren-aitchison)",
+  "date": "2026-11-20",
+  "notes": "Round 1: labels on curves, no plateaus; fixed. Round 2: products label moved below the curve end.",
+  "approvedAt": "2026-11-20"
+ },
+ "unit": "u13"
+}

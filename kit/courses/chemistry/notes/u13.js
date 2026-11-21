@@ -11,6 +11,7 @@ H: Rules
 - A **half-headed** (fishhook) arrow shows movement of **one electron**.
 - Arrows start at a **lone pair** or a **bond**, never at an atom's nucleus or a positive charge.
 - Arrows end where the electrons go: an atom (forming a lone pair) or between atoms (forming a bond).
+D: chem-nucleophilic-addition
 H: Checking
 - The **overall charge** must be the same on both sides of each step.
 - No atom should exceed its valence, such as carbon with five bonds.
@@ -52,6 +53,7 @@ H: Nucleophiles
 - Strength rises with **negative charge**: OH⁻ is stronger than H₂O.
 - Less electronegative donor atoms are often stronger: NH₃ outdoes H₂O.
 - Bulky nucleophiles react more slowly at crowded carbons.
+D: chem-electrophiles-nucleophiles
 H: Electrophiles
 - Have an **empty orbital** or a **δ+** atom.
 - Carbonyl carbons and carbons bonded to halogens are δ+.
@@ -93,6 +95,7 @@ H: Two ways to break
 - **Heterolytic**: one atom takes both electrons, forming a **cation** and an **anion**.
 - Homolysis is shown with fishhook arrows.
 - Heterolysis is shown with a full curly arrow.
+D: chem-homo-heterolytic
 H: Conditions
 - **Homolysis** is favoured by **UV light**, heat and non-polar bonds, often in the gas phase.
 - **Heterolysis** is favoured by **polar bonds** and **polar solvents** that stabilise ions.
@@ -134,6 +137,7 @@ H: Structure
 - It is **sp²** and **trigonal planar**, with an empty p orbital.
 - Nucleophiles can attack from either face.
 - Carbocations are strong electrophiles.
+D: chem-carbocation-stability
 H: Stability
 - **Tertiary > secondary > primary > methyl**.
 - Alkyl groups donate electron density by **inductive effects** and **hyperconjugation**.
@@ -175,6 +179,7 @@ H: Structure and stability
 - Simple carbanions are roughly **pyramidal** (sp³).
 - Stability order is the **reverse** of carbocations: methyl > primary > secondary > tertiary.
 - **Electron-withdrawing groups** and **resonance** stabilise carbanions, as in enolates.
+D: chem-carbanions
 H: In synthesis
 - Carbanions are strong **nucleophiles** and **bases**.
 - **Grignard** and **organolithium** reagents behave like carbanions.
@@ -216,6 +221,7 @@ H: Structure and stability
 - Roughly planar, with the electron in a p orbital.
 - Stability: **tertiary > secondary > primary > methyl**.
 - **Resonance** stabilises allylic and benzylic radicals.
+D: chem-radical-chlorination
 H: Reactions
 - **Chain reactions**: initiation, propagation, termination.
 - **Selectivity**: bromine radicals are more selective than chlorine radicals.
@@ -262,6 +268,7 @@ H: Hammond's postulate
 - In an **endothermic** step, it resembles the **products**.
 - In an **exothermic** step, it resembles the **reactants**.
 - Explains why carbocation stability affects SN1 rates.
+D: chem-sn1-sn2-profiles
 P: An SN1 profile has two humps with a carbocation in the valley between; SN2 has one hump with no intermediate. Profiles help compare mechanisms and explain selectivity, since the lower-energy pathway is usually followed.
 X: Reading an SN1 profile.
 > The first hump is ionisation, forming a carbocation.
@@ -298,6 +305,7 @@ H: Nucleophilic substitution
 - Haloalkanes react with OH⁻, CN⁻, NH₃ and alkoxides.
 - **SN1** goes through a carbocation; **SN2** is one concerted step.
 - Products: alcohols, nitriles, amines and ethers.
+D: chem-sn2-mechanism
 H: Leaving groups
 - Good leaving groups are **weak bases** that are stable on their own.
 - Order: **I⁻ > Br⁻ > Cl⁻ > F⁻**.
@@ -339,6 +347,7 @@ H: Mechanism
 - **Step 2**: the nucleophile attacks the carbocation (fast).
 - Rate = k[R–X]: **first order**, independent of nucleophile.
 - Called **unimolecular** because one species is in the rate-determining step.
+D: chem-sn1-mechanism
 H: Favouring conditions
 - **Tertiary** substrates, which form stable carbocations.
 - **Polar protic solvents** that stabilise ions.
@@ -348,7 +357,7 @@ P: 2-bromo-2-methylpropane hydrolyses by SN1 in water. If the carbon is a stereo
 X: Hydrolysis of 2-bromo-2-methylpropane.
 > C–Br breaks, forming (CH₃)₃C⁺ and Br⁻.
 > Water attacks the carbocation.
-> A proton is lost from the oxonium ion.
+> A second water molecule removes a proton from the oxonium ion.
 > 2-methylpropan-2-ol forms.
 K: SN1 reactions form a carbocation in a slow first step and then capture a nucleophile; rate depends only on substrate, tertiary substrates, polar protic solvents and weak nucleophiles favour them and stereocentres are racemised.
 !: Thinking nucleophile concentration changes SN1 rate. It does not appear in the rate equation.
@@ -380,6 +389,7 @@ H: Mechanism
 - Bond forming and bond breaking happen **together**.
 - The transition state has five groups around carbon, partly bonded.
 - Rate = k[R–X][Nu]: **second order**, **bimolecular**.
+D: chem-sn2-mechanism
 H: Features
 - **Inversion of configuration**, like an umbrella turning inside out (**Walden inversion**).
 - Favoured by **methyl and primary** substrates, which are uncrowded.
@@ -405,7 +415,7 @@ SRC: Hughes E. D. and Ingold C. K., "Mechanism of substitution at a saturated ca
 Q: What is the rate equation for SN2? | Rate = k[R–X][Nu].
 Q: What happens to configuration in SN2? | It is inverted.
 M1#chemistry-u13-10-q1@1: Which substrate reacts fastest by SN2? | Bromomethane, an uncrowded methyl halide | 2-bromo-2-methylpropane, a tertiary halide | 2-bromopropane, a secondary halide | 2-bromobutane, a secondary halide | Least steric hindrance allows easiest backside attack.
-M2#chemistry-u13-10-q2@2: Why do tertiary haloalkanes not react by SN2? | Three bulky groups block backside attack by the nucleophile | Tertiary carbons have no leaving group | The nucleophile is too small to react | Tertiary substrates are always gases | Steric hindrance prevents the nucleophile reaching carbon.
+M2#chemistry-u13-10-q2@2: Why do tertiary haloalkanes not react by SN2? | Three bulky groups block backside attack by the nucleophile | Tertiary carbons have no leaving group | The nucleophile is too small to react | The C–Br bond in a tertiary haloalkane is too strong to break | Steric hindrance prevents the nucleophile reaching carbon.
 MATCH1#chemistry-u13-10-q3@3: Match each feature to SN1 or SN2. | Carbocation intermediate = SN1 ; Backside attack = SN2 ; Racemisation = SN1 outcome ; Inversion = SN2 outcome | The two mechanisms differ in key ways.
 M3#chemistry-u13-10-q4@3: Why do polar aprotic solvents speed up SN2? | They do not solvate anionic nucleophiles strongly, leaving them reactive | They stabilise carbocation intermediates strongly | They donate protons directly to the nucleophile | They slow every reaction step down to a crawl | Free, poorly solvated nucleophiles attack the carbon much faster.
 SA2#chemistry-u13-10-q5@1,3: Explain the SN2 mechanism and its features. | In SN2, the nucleophile attacks carbon from the side opposite the leaving group in one concerted step, forming a five-coordinate transition state, so rate = k[R–X][Nu], second order and bimolecular. Backside attack inverts configuration, as (R)-2-bromobutane gives (S)-butan-2-ol. SN2 is fastest for methyl and primary substrates and blocked at tertiary centres by steric hindrance, and is favoured by strong nucleophiles and polar aprotic solvents. It is common in biological methylation. | Backside attack ; Concerted ; Rate equation ; Inversion ; Conditions
@@ -421,6 +431,7 @@ H: Eliminations
 - **Dehydration**: alcohol + acid catalyst → alkene + H₂O.
 - A hydrogen is lost from the carbon **next to** the leaving group (β-hydrogen).
 - Two mechanisms: **E1** and **E2**.
+D: chem-e2-mechanism
 H: Elimination versus substitution
 - **Zaitsev's rule**: the more substituted alkene is usually major.
 - **Hot**, **ethanolic** KOH favours elimination.
@@ -462,6 +473,7 @@ H: Mechanism
 - **Step 2**: a base removes a **β-hydrogen**, forming the C=C (fast).
 - Rate = k[R–X]: first order.
 - Shares its first step with SN1.
+D: chem-e1-mechanism
 H: Conditions and products
 - Favoured by **tertiary** substrates and **weak bases**.
 - **Heat** favours E1 over SN1, since elimination increases entropy.
@@ -503,6 +515,7 @@ H: Mechanism
 - All in **one concerted step**.
 - Rate = k[R–X][base]: **second order**.
 - Favoured by **strong bases** such as alkoxides and hydroxide.
+D: chem-e2-mechanism
 H: Geometry
 - The β-hydrogen and leaving group must be **anti-periplanar**: 180° apart in the same plane.
 - This lines up orbitals to form the π bond.
@@ -510,7 +523,7 @@ H: Geometry
 - Geometry controls which E or Z alkene forms.
 P: E2 is the main elimination with strong bases, including for primary and secondary substrates. Because of the anti-periplanar requirement, some cyclohexyl halides react slowly or give unexpected alkenes when the needed hydrogen cannot be axial.
 X: Anti-periplanar elimination.
-> In a staggered conformation, H on C2 and Br on C1 are 180° apart.
+> In a staggered conformation, Br on one carbon and H on the neighbouring (β) carbon are 180° apart.
 > The base removes H as the C–Br bond breaks.
 > Electrons from the C–H bond form the π bond.
 > The alkene forms in one step with defined geometry.
@@ -544,6 +557,7 @@ H: Two kinds of π bond
 - **C=O** is polar with a δ+ carbon: it attracts **nucleophiles**.
 - In both, the π bond breaks and two new σ bonds form.
 - Addition turns sp² carbons into sp³ carbons.
+D: chem-hbr-propene
 H: Examples
 - Ethene + HBr → bromoethane (electrophilic addition).
 - Ethanal + HCN → 2-hydroxypropanenitrile (nucleophilic addition).
@@ -584,12 +598,14 @@ H: Adding HBr
 - The π electrons attack H of H–Br, which is δ+.
 - A **carbocation** forms; Br⁻ is released.
 - Br⁻ attacks the carbocation.
-- The more stable carbocation leads to the major product.
+- The more stable carbocation leads to the major product: with propene, H adds to the end carbon and Br to the middle one, giving **2-bromopropane** (Markovnikov's rule).
+D: chem-hbr-propene
 H: Adding Br₂
 - Br₂ is **polarised** as the π bond approaches.
 - A cyclic **bromonium ion** forms.
 - Br⁻ attacks from the opposite face: **anti addition**.
 - Cyclohexene gives trans-1,2-dibromocyclohexane.
+D: chem-br2-bromonium
 P: Evidence for the intermediate: bromine in the presence of chloride ions gives some products containing both Br and Cl, showing that a positive intermediate is captured by whichever anion is nearby. Hydration with steam and acid follows the HBr pathway, with water as the nucleophile.
 X: Bromine with ethene in brine.
 > Br₂ adds to form a bromonium ion.
@@ -612,7 +628,7 @@ Q: What product does cyclohexene give with bromine? | trans-1,2-dibromocyclohexa
 M1#chemistry-u13-15-q1@1: Which atom in HBr does the alkene's π bond attack first? | The δ+ hydrogen atom | The δ− bromine atom | Both atoms at the same time | Neither atom reacts | Electrons flow towards the electron-poor hydrogen.
 M2#chemistry-u13-15-q2@2: Why does bromine in sodium chloride solution give some chlorinated products? | Chloride ions capture the positive intermediate | Chlorine replaces bromine in Br₂ | Sodium ions add to the alkene | The alkene reacts with water only | A two-step mechanism lets any nearby anion attack.
 SEQ1#chemistry-u13-15-q3@2: Put the steps of bromine addition to ethene in order. | Br₂ is polarised by the π bond ; A cyclic bromonium ion forms ; Br⁻ attacks from the opposite face ; 1,2-dibromoethane forms | Two steps give anti addition.
-M3#chemistry-u13-15-q4@3: Why does bromination of cyclohexene give only the trans product? | Bromide attacks the bromonium ion from the face opposite the bridging bromine | Both bromines add together from the same face | The ring flips during reaction to give cis product | Cyclohexene contains no carbon-carbon double bond | The bridged intermediate blocks one face.
+M3#chemistry-u13-15-q4@3: Why does bromination of cyclohexene give only the trans product? | Bromide attacks the bromonium ion from the face opposite the bridging bromine | Both bromines add together from the same face | The ring flips during reaction to give cis product | A flat carbocation forms and is attacked equally from both faces | The bridged intermediate blocks one face.
 SA2#chemistry-u13-15-q5@1,3: Explain the mechanisms of electrophilic addition to alkenes. | With HBr, the π electrons attack the δ+ hydrogen, forming a carbocation and Br⁻, which then attacks; the more stable carbocation gives the major product. Steam addition with acid follows the same path with water as nucleophile. With Br₂, the approaching π bond polarises bromine and a cyclic bromonium ion forms; Br⁻ attacks from the opposite face, giving anti addition, so cyclohexene forms trans-1,2-dibromocyclohexane. Mixed products in brine show a positive intermediate is captured. | HBr mechanism ; Carbocation stability ; Bromonium ion ; Anti addition ; Evidence
 
 ## Nucleophilic addition
@@ -626,12 +642,13 @@ H: Mechanism
 - The π electrons move onto oxygen, forming an **alkoxide**.
 - The alkoxide is **protonated** to give an alcohol.
 - Examples: HCN gives hydroxynitriles; NaBH₄ gives alcohols.
+D: chem-nucleophilic-addition
 H: Reactivity and stereochemistry
 - **Aldehydes** are more reactive than **ketones**.
 - Ketones have two alkyl groups that donate electrons and crowd the carbon.
 - The planar carbonyl can be attacked from **either face**.
 - Unsymmetrical carbonyls give **racemic** products.
-P: Adding HCN to ethanal makes 2-hydroxypropanenitrile, extending the carbon chain. Because KCN is used with acid rather than HCN gas for safety in teaching labs, the cyanide ion is the nucleophile. Grignard reagents add to carbonyls to make larger alcohols.
+P: Adding HCN to ethanal makes 2-hydroxypropanenitrile, extending the carbon chain. In teaching labs KCN with acid is used rather than HCN gas, for safety; either way the cyanide ion is the nucleophile, and the alkoxide is then protonated by HCN or by H⁺ from the acid. Grignard reagents add to carbonyls to make larger alcohols.
 X: HCN with propanal.
 > CN⁻ attacks the carbonyl carbon from above or below.
 > An alkoxide intermediate forms.
@@ -667,6 +684,7 @@ H: General mechanism
 - A positively charged **arenium ion** (Wheland intermediate) forms; aromaticity is lost.
 - A base removes H⁺ from the sp³ carbon.
 - Aromaticity is **restored**, giving the substituted product.
+D: chem-nitration
 H: Making electrophiles
 - **Nitration**: H₂SO₄ protonates HNO₃, giving **NO₂⁺**.
 - **Halogenation**: FeBr₃ accepts Br⁻ from Br₂, giving a **Br⁺**-like electrophile.
@@ -708,6 +726,7 @@ H: Why it is unusual
 - Backside attack is blocked by the ring.
 - Aryl cations are very unstable.
 - The C–X bond is strengthened by overlap with the ring.
+D: chem-snar
 H: SNAr mechanism
 - **Electron-withdrawing groups** (–NO₂) at the 2- or 4-position activate the ring.
 - The nucleophile **adds** to the carbon bearing the leaving group.
@@ -749,6 +768,7 @@ H: Recognising oxidation
 - Alcohol → aldehyde/ketone → carboxylic acid is an oxidation sequence.
 - Tertiary alcohols resist oxidation: no H on the carbinol carbon.
 - Shown with [O] in simplified equations.
+D: chem-oxidation-alcohols
 H: Reagents and tests
 - **Acidified dichromate**: orange to green.
 - **Tollens' reagent**: silver mirror with aldehydes, not ketones.
@@ -795,6 +815,7 @@ H: Recognising reduction
 - Shown with [H] in simplified equations.
 - Aldehydes reduce to **primary** alcohols; ketones to **secondary** alcohols.
 - Nitriles and amides can reduce to **amines**.
+D: chem-nabh4-reduction
 H: Reagents
 - **NaBH₄**: mild, works in water or alcohol; reduces aldehydes and ketones.
 - **LiAlH₄**: powerful, needs dry ether; also reduces acids, esters and amides.
@@ -836,6 +857,7 @@ H: Small-molecule condensations
 - **Esterification**: acid + alcohol ⇌ ester + water (acid catalyst).
 - **Amide formation**: acyl chloride + amine → amide + HCl.
 - **Aldol condensation**: two carbonyls join and lose water, forming C=C.
+D: chem-condensation-ester
 H: Polymers
 - **Polyesters**: diacid + diol, such as PET.
 - **Polyamides**: diacid or diacyl chloride + diamine, such as nylon-6,6.
@@ -877,6 +899,7 @@ H: Esters
 - **Base hydrolysis (saponification)**: irreversible; gives a **carboxylate salt** and an alcohol.
 - Base hydrolysis goes to completion because the carboxylate cannot react back.
 - Saponification of fats makes soap.
+D: chem-ester-hydrolysis
 H: Other groups
 - **Amides** hydrolyse slowly, needing hot acid or base.
 - **Haloalkanes** hydrolyse to alcohols with water or hydroxide.
@@ -918,6 +941,7 @@ H: Carbocation shifts
 - **1,2-alkyl shifts** move a methyl or other alkyl group.
 - Shifts form a **more stable** carbocation.
 - They occur in SN1, E1 and electrophilic addition.
+D: chem-hydride-shift
 H: Named rearrangements
 - **Pinacol rearrangement**: a 1,2-diol in acid gives a ketone.
 - **Beckmann rearrangement**: an oxime gives an amide, used to make nylon-6.
@@ -959,6 +983,7 @@ H: Types of selectivity
 - **Regioselectivity**: which position or orientation is favoured.
 - **Stereoselectivity**: which stereoisomer forms.
 - Selective reactions reduce waste and purification.
+D: chem-selectivity-overview
 H: Kinetic versus thermodynamic control
 - **Kinetic product** forms fastest, through the lowest barrier.
 - **Thermodynamic product** is most stable.
@@ -1000,6 +1025,7 @@ H: Reagent control
 - NaBH₄ reduces aldehydes and ketones but not esters or acids.
 - Hydrogen with Lindlar's catalyst reduces alkynes but not alkenes.
 - Reactivity order of carbonyls: acyl chlorides > aldehydes > ketones > esters > amides.
+D: chem-chemoselectivity
 H: Protecting groups
 - A **protecting group** temporarily masks a reactive group.
 - Ketones and aldehydes are protected as **acetals**.
@@ -1041,6 +1067,7 @@ H: Additions
 - **Anti-Markovnikov**: HBr with peroxides adds by a radical route, putting Br on the less substituted carbon.
 - **Hydroboration-oxidation** gives anti-Markovnikov alcohols.
 - Regioselectivity follows the most stable intermediate.
+D: chem-regioselectivity
 H: Eliminations and arenes
 - **Zaitsev**: more substituted alkene from small bases.
 - **Hofmann**: less substituted alkene from bulky bases.
@@ -1082,6 +1109,7 @@ H: Definitions
 - **Stereospecific**: different stereoisomers of reactant give different stereoisomers of product.
 - SN2 (inversion) and E2 (anti-periplanar) are stereospecific.
 - Bromine addition (anti) is stereospecific.
+D: chem-stereoselectivity
 H: Asymmetric synthesis
 - **Chiral catalysts** favour one enantiomer, measured by **ee**.
 - **Chiral auxiliaries** are temporary chiral groups that guide reactions.

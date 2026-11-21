@@ -1,0 +1,35 @@
+{
+ "id": "chem-ferrocene",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Organometallic chemistry",
+ "title": "The pieces of ferrocene",
+ "caption": "Ferrocene, Fe(C₅H₅)₂, is a sandwich: an iron(II) ion between two cyclopentadienide rings. Each aromatic C₅H₅⁻ ring donates six π electrons, and Fe²⁺ (d⁶) brings six, giving the stable 18-electron count.",
+ "alt": "Two cyclopentadienide anions and an iron(II) ion, the components of ferrocene.",
+ "description": [
+  "Two C₅H₅⁻ rings, each aromatic with six π electrons.",
+  "Fe²⁺ (d⁶), held between them in ferrocene: 6 + 6 + 6 = 18 electrons."
+ ],
+ "between": [
+  "+",
+  "+"
+ ],
+ "panels": [
+  {
+   "smiles": "[cH-]1cccc1",
+   "label": "C₅H₅⁻",
+   "formula": "C5H5"
+  },
+  {
+   "smiles": "[Fe+2]",
+   "label": "Fe²⁺",
+   "formula": "Fe"
+  },
+  {
+   "smiles": "[cH-]1cccc1",
+   "label": "C₅H₅⁻",
+   "formula": "C5H5"
+  }
+ ]
+}

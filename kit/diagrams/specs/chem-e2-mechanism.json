@@ -1,0 +1,156 @@
+{
+ "id": "chem-e2-mechanism",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "E2 mechanisms",
+ "title": "E2: hydroxide and 2-bromopropane",
+ "caption": "One concerted step with ethanolic KOH and heat (in water, substitution competes). Hydroxide takes a β-hydrogen, the C–H bonding pair becomes the new π bond, and bromide leaves, all at once. The hydrogen and bromine are drawn on opposite sides (anti-periplanar), the arrangement E2 needs. Rate = k[R–X][base].",
+ "alt": "E2 mechanism: hydroxide removes a hydrogen from the carbon next to the C–Br carbon while the C=C forms and bromide leaves, giving propene, water and bromide.",
+ "description": [
+  "Left: 2-bromopropane with the bromine pointing up from carbon 2 and a hydrogen on carbon 1 pointing down, on the opposite side (anti-periplanar), and a hydroxide ion, drawn ⁻O–H with its lone pair facing that hydrogen. The conditions are KOH in ethanol, heated.",
+  "Three curly arrows act together: from a lone pair on hydroxide's oxygen to the hydrogen; from the C–H bond to between carbons 1 and 2, forming the π bond; and from the C–Br bond to the bromine.",
+  "Right: propene, water and a bromide ion."
+ ],
+ "stages": [
+  {
+   "smiles": "[O-:1][H:11].[CH3:2][CH:3]([Br:4])[CH2:5][H:6]",
+   "xy": {
+    "2": [
+     -1.05,
+     -0.6
+    ],
+    "3": [
+     0,
+     0
+    ],
+    "4": [
+     0,
+     1.35
+    ],
+    "5": [
+     1.2,
+     0
+    ],
+    "6": [
+     1.5,
+     -1.25
+    ],
+    "1": [
+     2.9,
+     -2.0
+    ],
+    "11": [
+     3.9,
+     -2.0
+    ]
+   },
+   "label": "2-bromopropane + OH⁻",
+   "arrows": [
+    {
+     "from": {
+      "lp": 1
+     },
+     "to": {
+      "bond": [
+       1,
+       6
+      ]
+     },
+     "toward": 6,
+     "lpAngle": 180,
+     "lpDist": 16,
+     "bend": -0.4
+    },
+    {
+     "from": {
+      "bond": [
+       5,
+       6
+      ]
+     },
+     "to": {
+      "bond": [
+       5,
+       3
+      ]
+     },
+     "bend": -0.9
+    },
+    {
+     "from": {
+      "bond": [
+       3,
+       4
+      ]
+     },
+     "to": {
+      "atom": 4
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[O:1]([H:6])[H:11].[CH3:2][CH:3]=[CH2:5].[Br-:4]",
+   "xy": {
+    "2": [
+     -1.05,
+     -0.6
+    ],
+    "3": [
+     0,
+     0
+    ],
+    "5": [
+     1.2,
+     0
+    ],
+    "1": [
+     2.6,
+     -1.4
+    ],
+    "6": [
+     2.1,
+     -2.1
+    ],
+    "11": [
+     3.4,
+     -2.0
+    ],
+    "4": [
+     1.0,
+     1.2
+    ]
+   },
+   "label": "propene + H₂O + Br⁻",
+   "hide": [
+    6,
+    11
+   ],
+   "labels": {
+    "1": "H<sub>2</sub>O"
+   }
+  }
+ ],
+ "steps": [
+  {
+   "label": "KOH in ethanol",
+   "below": "heat"
+  }
+ ],
+ "review": {
+  "status": "ai-reviewed",
+  "by": "independent AI reviewer (one round, fixes applied)",
+  "date": "2026-11-20",
+  "notes": "Round 1 (AI reviewer): arrow appeared to start from H of HO⁻ (now ⁻O–H), conditions missing (now KOH in ethanol, heat), lesson's C1/C2 wording corrected, water drawn as H₂O; all fixed.",
+  "awaiting": "approval by a named subject reviewer"
+ },
+ "also": [
+  {
+   "course": "chemistry",
+   "lesson": "Elimination reactions",
+   "unit": "u13"
+  }
+ ],
+ "unit": "u13"
+}

@@ -1,0 +1,54 @@
+{
+ "id": "chem-green-synthesis",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Green synthesis",
+ "title": "Waste by industry: the E-factor",
+ "caption": "The E-factor is the mass of waste per mass of product. Oil refining makes very little waste per tonne; fine chemicals and pharmaceuticals can make 50 to over 100 kg of waste per kg, mostly solvents, because they use many steps. Upper ends of Sheldon's typical ranges.",
+ "alt": "Bar chart on a logarithmic scale of E-factor: oil refining 0.1, bulk chemicals 5, fine chemicals 50, pharmaceuticals 100.",
+ "description": [
+  "Oil refining: up to 0.1.",
+  "Bulk chemicals: up to 5.",
+  "Fine chemicals: up to 50.",
+  "Pharmaceuticals: 100 and above."
+ ],
+ "kind": "bars",
+ "dataset": "eFactor",
+ "log": true,
+ "range": [
+  0.05,
+  200
+ ],
+ "ticks": [
+  0.1,
+  1,
+  10,
+  100
+ ],
+ "yLabel": "E-factor / kg waste per kg product (log scale)",
+ "colour": "a3",
+ "items": [
+  {
+   "key": "oil refining",
+   "value": 0.1
+  },
+  {
+   "key": "bulk chemicals",
+   "value": 5
+  },
+  {
+   "key": "fine chemicals",
+   "value": 50
+  },
+  {
+   "key": "pharmaceuticals",
+   "value": 100
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "id": "chem-mo-n2",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Quantum chemistry",
+ "title": "Molecular orbitals of nitrogen",
+ "caption": "For N₂ (and lighter diatomics) the π2p orbitals lie below σ2p. Its ten valence electrons fill up to σ2p with none in antibonding 2p orbitals: bond order 3, all electrons paired. This triple bond (945 kJ mol⁻¹) makes N₂ very unreactive.",
+ "alt": "MO diagram of N₂: σ2s and σ*2s full, π2p (two) and σ2p full, π*2p and σ*2p empty.",
+ "description": [
+  "σ2s, σ*2s: full.",
+  "π2p: both full; σ2p: full (here above π2p).",
+  "π*2p and σ*2p: empty. Bond order 3, diamagnetic."
+ ],
+ "kind": "mo",
+ "molecule": "N2",
+ "bondOrder": 3,
+ "unpaired": 0
+}

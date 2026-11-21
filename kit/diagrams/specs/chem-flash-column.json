@@ -1,0 +1,37 @@
+{
+ "id": "chem-flash-column",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Chromatographic purification",
+ "title": "Flash column chromatography",
+ "caption": "Air pressure pushes the eluent through a column of silica quickly. Less polar compounds spend less time adsorbed on the polar silica and leave first; more polar ones are held back and elute later.",
+ "alt": "A column of silica with air pressure applied at the top; bands of three compounds separating, the least polar lowest.",
+ "description": [
+  "Least polar compound: lowest band, elutes first.",
+  "Medium polarity: middle band.",
+  "Most polar: still near the top."
+ ],
+ "kind": "column",
+ "pressure": true,
+ "bands": [
+  {
+   "label": "most polar",
+   "polarity": 3,
+   "y": 0.1,
+   "colour": "a2"
+  },
+  {
+   "label": "medium",
+   "polarity": 2,
+   "y": 0.45,
+   "colour": "a4"
+  },
+  {
+   "label": "least polar",
+   "polarity": 1,
+   "y": 0.8,
+   "colour": "a1"
+  }
+ ]
+}

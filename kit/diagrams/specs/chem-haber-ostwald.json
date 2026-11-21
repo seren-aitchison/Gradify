@@ -1,0 +1,73 @@
+{
+ "id": "chem-haber-ostwald",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Fertilisers",
+ "title": "From ammonia to fertiliser",
+ "caption": "Ammonia from the Haber process is oxidised over platinum to nitrogen monoxide, which becomes nitrogen dioxide and then nitric acid (the Ostwald process). Nitric acid and more ammonia make ammonium nitrate fertiliser.",
+ "alt": "A flow: N₂ + H₂ → NH₃ → NO → NO₂ → HNO₃ → NH₄NO₃.",
+ "description": [
+  "N₂ + 3H₂ → 2NH₃.",
+  "4NH₃ + 5O₂ → 4NO + 6H₂O (Pt catalyst).",
+  "2NO + O₂ → 2NO₂.",
+  "4NO₂ + O₂ + 2H₂O → 4HNO₃.",
+  "HNO₃ + NH₃ → NH₄NO₃."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "NH₃"
+  },
+  {
+   "id": "b",
+   "label": "NO"
+  },
+  {
+   "id": "c",
+   "label": "NO₂"
+  },
+  {
+   "id": "d",
+   "label": "HNO₃"
+  },
+  {
+   "id": "e",
+   "label": "NH₄NO₃",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "O₂, Pt",
+   "eq": "4NH3 + 5O2 → 4NO + 6H2O"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "O₂",
+   "eq": "2NO + O2 → 2NO2"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "O₂, H₂O",
+   "eq": "4NO2 + O2 + 2H2O → 4HNO3"
+  },
+  {
+   "from": "d",
+   "to": "e",
+   "label": "+ NH₃",
+   "eq": "HNO3 + NH3 → NH4NO3"
+  }
+ ],
+ "claims": [
+  {
+   "type": "equation",
+   "eq": "N2 + 3H2 → 2NH3"
+  }
+ ]
+}

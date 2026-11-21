@@ -1,0 +1,70 @@
+{
+ "id": "chem-heterogeneous-steps",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Heterogeneous catalysis",
+ "title": "How a solid catalyst works",
+ "caption": "Hydrogenating ethene on nickel: the gases adsorb onto the metal surface, which weakens their bonds; they react on the surface; the product desorbs, freeing the site. Adsorption must be strong enough to weaken bonds but weak enough to let the product go.",
+ "alt": "A cycle: free Ni surface → H₂ and C₂H₄ adsorbed → reaction on the surface → ethane desorbs → free surface.",
+ "description": [
+  "Adsorption: H₂ and C₂H₄ bond to the nickel surface.",
+  "Reaction: hydrogen atoms add to the adsorbed ethene.",
+  "Desorption: ethane leaves, freeing the surface for the next molecules."
+ ],
+ "layout": "cycle",
+ "radius": 115,
+ "boxWidth": 120,
+ "nodes": [
+  {
+   "id": "a",
+   "label": "free Ni surface",
+   "tone": "a4"
+  },
+  {
+   "id": "b",
+   "label": "H₂ and C₂H₄ adsorbed"
+  },
+  {
+   "id": "c",
+   "label": "C₂H₆ on the surface"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "adsorption"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "reaction"
+  },
+  {
+   "from": "c",
+   "to": "a",
+   "label": "desorption of C₂H₆"
+  }
+ ],
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "Ni + H2 + C2H4 → NiH2C2H4",
+    "NiH2C2H4 → NiC2H6",
+    "NiC2H6 → Ni + C2H6"
+   ],
+   "net": "H2 + C2H4 → C2H6"
+  },
+  {
+   "type": "regenerated",
+   "species": "Ni",
+   "steps": [
+    "Ni + H2 + C2H4 → NiH2C2H4",
+    "NiH2C2H4 → NiC2H6",
+    "NiC2H6 → Ni + C2H6"
+   ]
+  }
+ ]
+}

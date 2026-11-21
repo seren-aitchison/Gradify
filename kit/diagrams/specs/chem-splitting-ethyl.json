@@ -1,0 +1,53 @@
+{
+ "id": "chem-splitting-ethyl",
+ "renderer": "nmr",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Spin-spin coupling",
+ "title": "Spin–spin splitting in ethyl ethanoate",
+ "caption": "The n + 1 rule: a signal is split into n + 1 lines by n equivalent hydrogens on the neighbouring carbon. The ethyl group gives a quartet (CH₂, next to CH₃) and a triplet (CH₃, next to CH₂); the CH₃ attached to C=O has no neighbouring H, so it is a singlet.",
+ "alt": "Spectrum: triplet at 1.3 ppm (3H), singlet at 2.0 ppm (3H), quartet at 4.1 ppm (2H).",
+ "description": [
+  "δ 1.3, 3H, triplet.",
+  "δ 2.0, 3H, singlet: CH₃ next to C=O.",
+  "δ 4.1, 2H, quartet: CH₂ next to O."
+ ],
+ "molecule": "CCOC(C)=O",
+ "nucleus": "1H",
+ "range": [
+  0,
+  6
+ ],
+ "peaks": [
+  {
+   "shift": 1.3,
+   "n": 3,
+   "split": "t",
+   "atoms": [
+    0
+   ],
+   "env": "R–CH3",
+   "colour": "a1"
+  },
+  {
+   "shift": 4.1,
+   "n": 2,
+   "split": "q",
+   "atoms": [
+    1
+   ],
+   "env": "H–C–O",
+   "colour": "a2"
+  },
+  {
+   "shift": 2.0,
+   "n": 3,
+   "split": "s",
+   "atoms": [
+    4
+   ],
+   "env": "H–C–C=O",
+   "colour": "a4"
+  }
+ ]
+}

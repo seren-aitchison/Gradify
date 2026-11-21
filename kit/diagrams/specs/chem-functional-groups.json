@@ -1,0 +1,110 @@
+{
+ "id": "chem-functional-groups",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Functional groups",
+ "title": "The main functional groups",
+ "caption": "A functional group is the atom or group of atoms that gives a family its reactions. Each two- or three-carbon example has its group shaded.",
+ "alt": "Eight small molecules: ethanol, bromoethane, ethanal, propanone, ethanoic acid, methyl ethanoate, ethylamine and ethanamide, each with its functional group shaded.",
+ "description": [
+  "alcohol: CCO with the alcohol group shaded.",
+  "halogenoalkane: CCBr with the halogenoalkane group shaded.",
+  "aldehyde: CC=O with the aldehyde group shaded.",
+  "ketone: CC(C)=O with the ketone group shaded.",
+  "carboxylic acid: CC(=O)O with the carboxylic acid group shaded.",
+  "ester: CC(=O)OC with the ester group shaded.",
+  "amine: CCN with the primary amine group shaded.",
+  "amide: CC(N)=O with the amide group shaded."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  30,
+  28
+ ],
+ "panels": [
+  {
+   "smiles": "CCO",
+   "label": "alcohol",
+   "highlight": [
+    {
+     "group": "alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CCBr",
+   "label": "halogenoalkane",
+   "highlight": [
+    {
+     "group": "halogenoalkane",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "CC=O",
+   "label": "aldehyde",
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)=O",
+   "label": "ketone",
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(=O)O",
+   "label": "carboxylic acid",
+   "highlight": [
+    {
+     "group": "carboxylic acid",
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(=O)OC",
+   "label": "ester",
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "CCN",
+   "label": "amine",
+   "highlight": [
+    {
+     "group": "primary amine",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(N)=O",
+   "label": "amide",
+   "highlight": [
+    {
+     "group": "amide",
+     "colour": "a3"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "id": "chem-heating-curve",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Boiling and melting",
+ "title": "Heating curve of water",
+ "caption": "Heating one mole of ice from −20 °C at a steady rate. The temperature stops rising while the ice melts (6.01 kJ) and while the water boils (40.7 kJ): the energy separates particles instead of speeding them up. Boiling takes far more energy because the molecules separate completely.",
+ "alt": "Temperature against energy supplied: a short rise to 0 °C, a short flat stretch (melting), a rise to 100 °C, a long flat stretch (boiling), then a short rise.",
+ "description": [
+  "Ice warms from −20 to 0 °C.",
+  "Flat at 0 °C while melting: 6.01 kJ.",
+  "Water warms to 100 °C.",
+  "Flat at 100 °C while boiling: 40.7 kJ, nearly seven times as long.",
+  "Steam warms above 100 °C."
+ ],
+ "range": {
+  "x": [
+   0,
+   57
+  ],
+  "y": [
+   -30,
+   130
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ],
+  [
+   -20,
+   0,
+   50,
+   100
+  ]
+ ],
+ "grid": [
+  10,
+  20
+ ],
+ "axisLabels": [
+  "energy supplied / kJ",
+  "temperature / °C"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "-20+20*x/0.7524",
+   "domain": [
+    0,
+    0.7524
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "0",
+   "domain": [
+    0.7524,
+    6.7623999999999995
+   ],
+   "colour": "a1",
+   "label": "melting",
+   "labelAt": [
+    1.2524,
+    -10
+   ]
+  },
+  {
+   "expr": "100*(x-6.7624)/7.5240",
+   "domain": [
+    6.7623999999999995,
+    14.286399999999999
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "100",
+   "domain": [
+    14.286399999999999,
+    54.9864
+   ],
+   "colour": "a1",
+   "label": "boiling",
+   "labelAt": [
+    30,
+    108
+   ]
+  },
+  {
+   "expr": "100+20*(x-54.9864)/0.7236",
+   "domain": [
+    54.9864,
+    55.71
+   ],
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "100",
+   "x": 30,
+   "between": [
+    100,
+    100
+   ],
+   "name": "the temperature is constant while water boils"
+  },
+  {
+   "type": "point",
+   "expr": "100*(x-6.7624)/7.5240",
+   "x": 14.2864,
+   "y": 100,
+   "name": "liquid water reaches 100 °C after 18 g × 4.18 J g⁻¹ K⁻¹ × 100 K = 7.52 kJ"
+  },
+  {
+   "type": "value",
+   "expr": "40.7000/6.0100",
+   "x": 0,
+   "between": [
+    6.5,
+    7.0
+   ],
+   "name": "boiling takes about 6.8 times the energy of melting (40.7 ÷ 6.01)"
+  }
+ ]
+}

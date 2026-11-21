@@ -33,6 +33,7 @@ import { gate, lockedHtml } from "../data/limits.js";
 import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { hydrateDiagrams } from "../diagrams/visual.js";
 import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
@@ -1134,15 +1135,8 @@ export function mountCourse(root, cfg) {
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
-  // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
-  // five per lesson (kit/core/glass-diagrams.js), each beside the part it shows, full width so their words stay readable;
-  // the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, recall) open its Recap
-  const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
-  const recapDiagrams = (N) => diagramsFor(N).filter((d) => RECAP_KINDS.has(d.kind));
-  const lessonDiagrams = (N) => {
-    const at = new Map(); for (const d of diagramsFor(N)) if (!RECAP_KINDS.has(d.kind)) at.set(d.at, [...(at.get(d.at) || []), d]);
-    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((d) => glassDiagram(d)).join("") });
-  };
+  // the notes carry no auto-generated glass diagrams: a lesson's diagrams are the checked teaching diagrams it places
+  // itself with D: lines (kit/diagrams). Glass diagrams remain on flashcard backs and in mind maps.
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -1329,6 +1323,7 @@ export function mountCourse(root, cfg) {
       addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
     };
     main.addEventListener("click", zoom);
+    hydrateDiagrams(main);
     main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
     // ← → B F S N and the rest are registered once, with the shared shortcuts (see "keyboard shortcuts" below)
     curPN = { prev, next };
@@ -1485,19 +1480,19 @@ export function mountCourse(root, cfg) {
         <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
-        ${N ? `<nav class="cx-kit" aria-label="Everything for this topic">
+        ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
+        ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
+        ${buildsOnHtml(id)}
+        ${N ? F.top : ""}
+        ${N ? `<div class="mv-cols co-prose">${lessonHtml(N)}</div>${F.end ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
+        ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
           ${nQ ? `<a class="cx-kc" href="#co-check" data-jump="co-check"><span>${ic("target")}</span><b>Check yourself</b><small>${nQ} question${nQ > 1 ? "s" : ""}</small></a>` : ""}
           ${N.cards.length ? `<button type="button" class="cx-kc cx-deck" data-cards style="--n:${Math.min(3, N.cards.length - 1)}"><span>${ic("cards")}</span><b>Flashcards</b><small>${N.cards.length} card${N.cards.length > 1 ? "s" : ""}</small></button>` : ""}
           ${nIx ? `<a class="cx-kc" href="#co-trylab" data-jump="co-trylab" data-kit-lab><span>${ic("cube")}</span><b>${PL === "Lab" ? "Interactive" : esc(PL)}</b><small>${nIx} to try</small></a>` : ""}
           <a class="cx-kc" href="#/quiz/${u.id}"><span>${ic("trophy")}</span><b>${U} quiz</b><small>${qz ? `best ${pc(qz.best)}` : `+${XP.quiz} XP`}</small></a>
           <a class="cx-kc" href="#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}"><span>${ic("bolt")}</span><b>Target test</b><small>5 min · ${esc(g?.title || "this lesson")}</small></a>
         </nav>` : ""}
-        ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
-        ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
-        ${buildsOnHtml(id)}
-        ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapDiagrams(N).map((d) => glassDiagram(d)).join("")}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
-        ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<details class="co-deeper cx-acc" id="co-deeper"><summary>${ic("sparkles")} Go deeper: ask the AI tutor, mind maps<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody"><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</div></details>` : ""}
         ${resourceSwitcher({ kicker: `${U} ${u.n} · ${u.title} · ${l.title}`, items: res, id: "co-next" })}

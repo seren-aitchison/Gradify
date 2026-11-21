@@ -1,0 +1,93 @@
+{
+ "id": "chem-rate-vs-conc-orders",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Rate equations",
+ "title": "Rate against concentration for each order",
+ "caption": "Zero order: the rate does not change with [A]. First order: rate ∝ [A], a straight line through the origin. Second order: rate ∝ [A]², a curve, so doubling [A] quadruples the rate.",
+ "alt": "Rate against [A]: a horizontal line (zero order), a straight line through the origin (first), and an upward curve (second).",
+ "description": [
+  "Zero order: flat.",
+  "First order: rate doubles when [A] doubles.",
+  "Second order: rate × 4 when [A] doubles."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   2.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.5
+ ],
+ "axisLabels": [
+  "[A] / mol dm⁻³",
+  "rate / mol dm⁻³ s⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.6",
+   "colour": "a5",
+   "label": "zero order",
+   "labelAt": [
+    1.55,
+    0.7
+   ]
+  },
+  {
+   "expr": "0.5*x",
+   "colour": "a1",
+   "label": "first order",
+   "labelAt": [
+    1.55,
+    0.95
+   ]
+  },
+  {
+   "expr": "0.5*x^2",
+   "colour": "a2",
+   "label": "second order",
+   "labelAt": [
+    1.2,
+    1.6
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*x",
+   "x": 1.6,
+   "y": 0.8,
+   "name": "first order: doubling [A] from 0.8 to 1.6 doubles the rate"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*x^2",
+   "x": 1.6,
+   "y": 1.28,
+   "name": "second order: doubling [A] from 0.8 (0.32) to 1.6 (1.28) quadruples the rate"
+  }
+ ]
+}

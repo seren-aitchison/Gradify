@@ -10,6 +10,11 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import { updateRegistry } from "./curriculum-registry.mjs";
 import { ADAPTERS } from "../kit/subjects/index.js";
+
+// options nobody would choose: they make a question easier without testing anything
+const ABSURD = /\balways (gases|zero|infinite)\b|to a crawl|purely decorative|has no effect on anything|only on Tuesdays|is magic\b|randomly chosen|never matters\b/i;
+// a lesson's skeleton: sections, worked examples with their step counts, flashcards, questions, summary points
+const shapeOf = (L) => `${L.blocks.filter((b) => b.t === "h").length}H ${L.blocks.filter((b) => b.t === "ex").map((b) => `X${b.steps.length}`).join("") || "X0"} ${L.cards.length}Q ${L.mcq.length}M ${L.tasks.length}T ${L.summary.length}S`;
 import { standard2Rules } from "../kit/subjects/social.js";
 
 // each course takes its expert, QA rules and review flags from its subject adapter (kit/subjects/<id>.js)
@@ -96,6 +101,7 @@ for (const C0 of COURSES) {
       for (const l of missing) row.hard.push(`no notes for "${l.title}"`);
       for (const p of extra) row.hard.push(`notes for "${p.title}", which isn't in the syllabus`);
       let bytes = 0, cards = 0, mcq = 0, longestRight = 0, diff = [0, 0, 0, 0], taskTypes = {};
+      const shapes = new Map(); let shaped = 0;
       const cites = new Map();
       for (const l of unit.lessons) {
         const L = byTitle.get(norm(l.title)); if (!L) continue;
@@ -121,6 +127,7 @@ for (const C0 of COURSES) {
         for (const x of L.sources) if (!x.kind || !/^\d{4}(-\d{2}){0,2}$/.test(x.date)) row.hard.push(`${where}: source "${x.cite.slice(0, 40)}" needs a kind and a date`);
         if (meta.length) (QA[unit.id]?.standard >= 2 ? row.hard : row.metaGaps).push(`${where}: ${meta.join(", ")}`);
         for (const t of L.tasks) diff[t.d]++, (taskTypes[t.type] = (taskTypes[t.type] || 0) + 1);
+        shapes.set(shapeOf(L), (shapes.get(shapeOf(L)) || 0) + 1); shaped++;
         for (const m of L.mcq) {
           diff[m.d]++;
           if (m.wrong.length < C.minWrong - 1) row.hard.push(`${where}: "${m.q.slice(0, 50)}…" has too few options`);
@@ -129,15 +136,22 @@ for (const C0 of COURSES) {
           // answers written in another script (Japanese, Chinese) normalise to nothing, so only compare when something is left
           if (m.right.length > 12 && norm(m.right).length > 8 && norm(m.q).includes(norm(m.right))) row.hard.push(`${where}: answer appears in the question "${m.q.slice(0, 50)}…"`);
           const k = norm(m.q); if (seenQ.has(k)) row.hard.push(`${where}: question duplicates one in ${seenQ.get(k)}`); else seenQ.set(k, `${unit.id} ${l.title}`);
-          // a classic flaw: the right answer is conspicuously the longest option
-          if (m.right.length > 1.6 * Math.max(...m.wrong.map((w) => w.length))) longestRight++;
+          // a classic flaw: the right answer is conspicuously the longest option (docs/CURRICULUM_CONTENT_STANDARD.md,
+          // "Check-question options must not give the answer away"): a hard failure in schools written to standard 3
+          const guessable = m.right.length > 1.3 * Math.max(...m.wrong.map((w) => w.length));
+          if (guessable) { longestRight++; if (QA[unit.id]?.standard >= 3) row.hard.push(`${where}: right answer gives itself away by length in "${m.q.slice(0, 50)}…"`); }
+          const absurd = m.wrong.find((w) => ABSURD.test(w));
+          if (absurd) (QA[unit.id]?.standard >= 3 ? row.hard : row.warn).push(`${where}: implausible option "${absurd.slice(0, 50)}" in "${m.q.slice(0, 40)}…"`);
         }
         row.warn.push(...C.rules(unit, L, text).map((x) => `${where}: ${x}`));
         if (course.publish) queue.push({ unit, l, flags: C.flags ? C.flags(L, text) : [] });
         if (C.srcRegister) for (const x of L.sources) { const key = `${x.kind}|${x.cite}${x.date ? ` (${x.date})` : ""}`; if (!cites.has(key)) cites.set(key, new Set()); cites.get(key).add(l.title); }
         else for (const [kind, c] of citations(text)) { const key = `${kind}|${c}`; if (!cites.has(key)) cites.set(key, new Set()); cites.get(key).add(l.title); }
       }
-      if (mcq && longestRight / mcq > 0.25) row.warn.push(`right answer is much the longest option in ${longestRight} of ${mcq} questions (${Math.round((100 * longestRight) / mcq)}%): rewrite distractors so length doesn't give the answer away`);
+      if (mcq && longestRight / mcq > 0.05) row.warn.push(`right answer is much the longest option in ${longestRight} of ${mcq} questions (${Math.round((100 * longestRight) / mcq)}%): rewrite distractors so length doesn't give the answer away`);
+      // the shape report: share of lessons with the school's most common skeleton (standard 3: size follows the topic)
+      const top = Math.max(0, ...shapes.values());
+      if (shaped >= 8 && top / shaped > 0.25) row.warn.push(`${Math.round((100 * top) / shaped)}% of lessons share one shape (${[...shapes].find(([, n]) => n === top)[0]}): size each lesson to its topic`);
       if (mcq && diff[3] / mcq < 0.1) row.warn.push(`only ${diff[3]} hard (M3) questions out of ${mcq}`);
       if (row.metaGaps.length) row.warn.push(`${row.metaGaps.length} lessons lack lesson metadata (objectives, summary, key terms or sources): add at review`);
       row.stats = { bytes, cards, mcq, diff, cites: cites.size, tasks: taskTypes };

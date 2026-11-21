@@ -1,0 +1,92 @@
+{
+ "id": "chem-schrodinger-well",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Schrödinger equation",
+ "title": "A wavefunction and its probability",
+ "caption": "For the second level of a particle in a box, ψ is positive in one half and negative in the other, with a node in the middle. The probability density ψ² is never negative and its total area is 1: the particle is certainly somewhere in the box, but never at the node.",
+ "alt": "ψ for n = 2 (one full sine wave, positive then negative) and ψ² (two humps), with a node at the centre.",
+ "description": [
+  "ψ: rises, falls through zero at the centre, and returns to zero at the wall.",
+  "ψ²: two equal humps, zero at the walls and at the centre."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   -1.6,
+   2.2
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   -1,
+   0,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.5
+ ],
+ "axisLabels": [
+  "position x / L",
+  "ψ and ψ²"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1.414214*sin(6.283185*x)",
+   "colour": "a1",
+   "label": "ψ",
+   "labelAt": [
+    0.22,
+    1.6
+   ]
+  },
+  {
+   "expr": "2*sin(6.283185*x)^2",
+   "colour": "a2",
+   "label": "ψ²",
+   "labelAt": [
+    0.66,
+    2.05
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0,
+   "label": "node",
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "2*sin(6.283185*x)^2",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "ψ² integrates to 1 over the box: normalised"
+  },
+  {
+   "type": "point",
+   "expr": "1.414214*sin(6.283185*x)",
+   "x": 0.5,
+   "y": 0,
+   "name": "a node at the centre for n = 2"
+  }
+ ]
+}

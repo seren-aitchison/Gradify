@@ -1,0 +1,70 @@
+{
+ "id": "chem-polymers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Polymers",
+ "title": "Addition polymers",
+ "caption": "Many alkene molecules join by opening their C=C bonds. Ethene gives poly(ethene), propene gives poly(propene) with a CH₃ on every other carbon, and chloroethene gives PVC with a Cl on every other carbon. Each chain shown is a short section.",
+ "alt": "Ethene, propene and chloroethene, each above a short section of its polymer chain.",
+ "description": [
+  "Ethene → poly(ethene): a long saturated chain.",
+  "Propene → poly(propene): methyl groups on alternate carbons.",
+  "Chloroethene → PVC: chlorine atoms on alternate carbons."
+ ],
+ "perRow": [
+  3,
+  3
+ ],
+ "bond": [
+  28,
+  24
+ ],
+ "panels": [
+  {
+   "smiles": "C=C",
+   "label": "ethene",
+   "groups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "C=CC",
+   "label": "propene",
+   "groups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "C=CCl",
+   "label": "chloroethene",
+   "groups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "CCCCCCCC",
+   "label": "poly(ethene)",
+   "notGroups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "CC(C)CC(C)CC(C)C",
+   "label": "poly(propene)",
+   "notGroups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "CC(Cl)CC(Cl)CC(Cl)C",
+   "label": "PVC",
+   "notGroups": [
+    "alkene"
+   ],
+   "groups": [
+    "halogenoalkane"
+   ]
+  }
+ ]
+}

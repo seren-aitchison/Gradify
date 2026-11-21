@@ -1,0 +1,132 @@
+{
+ "id": "chem-calorimetry-cooling",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u06",
+ "lesson": "Calorimetry",
+ "title": "Correcting for heat loss",
+ "caption": "The solution is mixed at 3 minutes. Because the cup loses heat while the reaction happens, the highest reading underestimates the rise. Extrapolating the cooling line back to the moment of mixing gives the true maximum, 27.0 °C: ΔT = 7.0 °C.",
+ "alt": "Temperature against time: steady at 20 °C for 3 minutes, a sharp rise, then a straight cooling line; the cooling line is extended back to 3 minutes, meeting 27 °C.",
+ "description": [
+  "0–3 min: steady at 20.0 °C.",
+  "Mixed at 3 min.",
+  "From 4 min: cooling in a straight line, 0.25 °C per minute.",
+  "Extended back to 3 min: 27.0 °C, so ΔT = 7.0 °C."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   18,
+   29
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  [
+   20,
+   22,
+   24,
+   26,
+   28
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "axisLabels": [
+  "time / min",
+  "temperature / °C"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "20",
+   "domain": [
+    0,
+    3
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "20+6.4*(x-3)/0.8",
+   "domain": [
+    3,
+    3.8
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "27.0-0.25*(x-3)",
+   "domain": [
+    3.8,
+    10
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "27.0-0.25*(x-3)",
+   "domain": [
+    3,
+    3.8
+   ],
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3,
+   "label": "mixed",
+   "to": 27
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    2.6,
+    20
+   ],
+   "to": [
+    2.6,
+    27
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "ΔT = 7.0 °C",
+   "labelAt": [
+    0.3,
+    25.5
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "27.0-0.25*(x-3)",
+   "x": 3,
+   "y": 27,
+   "name": "the cooling line extrapolated to the time of mixing gives 27.0 °C"
+  },
+  {
+   "type": "slope",
+   "expr": "27.0-0.25*(x-3)",
+   "x": 6,
+   "value": -0.25,
+   "name": "cooling at 0.25 °C per minute"
+  }
+ ]
+}

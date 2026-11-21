@@ -1,0 +1,70 @@
+{
+ "id": "chem-p-block-config",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "p-block elements",
+ "title": "p-block elements: filling 2p",
+ "caption": "Across period 2 from carbon to fluorine the 2p sub-shell fills: 2p², 2p³, 2p⁴, 2p⁵. Electrons occupy separate orbitals before pairing.",
+ "alt": "Box diagrams of 2s and 2p for carbon, nitrogen, oxygen and fluorine.",
+ "description": [
+  "Carbon, 2s² 2p²: two single 2p electrons.",
+  "Nitrogen, 2s² 2p³: three single 2p electrons.",
+  "Oxygen, 2s² 2p⁴: one pair and two singles.",
+  "Fluorine, 2s² 2p⁵: two pairs and one single."
+ ],
+ "rows": [
+  {
+   "symbol": "C",
+   "label": "Carbon, [He] 2s² 2p²",
+   "config": "1s2 2s2 2p2",
+   "show": [
+    "2s",
+    "2p"
+   ],
+   "core": [
+    "1s"
+   ],
+   "unpaired": 2
+  },
+  {
+   "symbol": "N",
+   "label": "Nitrogen, [He] 2s² 2p³",
+   "config": "1s2 2s2 2p3",
+   "show": [
+    "2s",
+    "2p"
+   ],
+   "core": [
+    "1s"
+   ],
+   "unpaired": 3
+  },
+  {
+   "symbol": "O",
+   "label": "Oxygen, [He] 2s² 2p⁴",
+   "config": "1s2 2s2 2p4",
+   "show": [
+    "2s",
+    "2p"
+   ],
+   "core": [
+    "1s"
+   ],
+   "unpaired": 2
+  },
+  {
+   "symbol": "F",
+   "label": "Fluorine, [He] 2s² 2p⁵",
+   "config": "1s2 2s2 2p5",
+   "show": [
+    "2s",
+    "2p"
+   ],
+   "core": [
+    "1s"
+   ],
+   "unpaired": 1
+  }
+ ]
+}

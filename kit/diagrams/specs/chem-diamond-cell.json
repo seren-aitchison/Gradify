@@ -1,0 +1,36 @@
+{
+ "id": "chem-diamond-cell",
+ "renderer": "lattice",
+ "course": "chemistry",
+ "unit": "u03",
+ "lesson": "Group 14",
+ "title": "Diamond: each carbon bonded to four",
+ "caption": "In diamond every carbon atom is covalently bonded to four others in a tetrahedral giant lattice, which is why it is so hard and has a very high melting point. The cubic cell holds eight carbon atoms.",
+ "alt": "A cubic unit cell of diamond: atoms at the corners and face centres, and four more inside the cell.",
+ "description": [
+  "Carbon atoms on the eight corners and six face centres of a cube.",
+  "Four more atoms inside, each bonded tetrahedrally to four neighbours."
+ ],
+ "cells": [
+  {
+   "kind": "diamond",
+   "bonds": true,
+   "label": "diamond",
+   "species": {
+    "A": {
+     "label": "C",
+     "colour": "#3a3f4b",
+     "r": 9
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 4
+    },
+    "perCell": {
+     "A": 8
+    }
+   }
+  }
+ ]
+}

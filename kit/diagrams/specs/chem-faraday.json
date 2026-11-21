@@ -1,0 +1,73 @@
+{
+ "id": "chem-faraday",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Faraday's laws",
+ "title": "Faraday's first law",
+ "caption": "The mass of copper deposited is proportional to the charge passed. One mole of electrons (96 485 C, one faraday) deposits half a mole of copper, 31.8 g, because Cu²⁺ needs two electrons per atom.",
+ "alt": "Mass of copper deposited against charge passed: a straight line through the origin, 3.18 g at 9648.5 C.",
+ "description": [
+  "A straight line through the origin: mass ∝ charge.",
+  "9648.5 C (0.1 mol of electrons) deposits 3.18 g of copper."
+ ],
+ "range": {
+  "x": [
+   0,
+   12000
+  ],
+  "y": [
+   0,
+   4.2
+  ]
+ },
+ "ticks": [
+  [
+   2000,
+   4000,
+   6000,
+   8000,
+   10000,
+   12000
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  2000,
+  1
+ ],
+ "axisLabels": [
+  "charge / C",
+  "mass of Cu / g"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "x*63.546/(2*96485)",
+   "colour": "a3"
+  }
+ ],
+ "points": [
+  {
+   "x": 9648.5,
+   "y": 3.1773,
+   "label": "0.1 mol e⁻: 3.18 g",
+   "dx": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x*63.546/(2*96485)",
+   "x": 9648.5,
+   "y": 3.1773,
+   "name": "0.1 F deposits 0.05 mol of copper, 3.18 g (Cu²⁺ + 2e⁻ → Cu)"
+  }
+ ]
+}

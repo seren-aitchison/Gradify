@@ -1,0 +1,38 @@
+{
+ "id": "chem-lithium-ion",
+ "renderer": "cell",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Batteries",
+ "title": "A lithium-ion cell discharging",
+ "caption": "On discharge, lithium leaves the graphite negative electrode as Li⁺ and electrons; the Li⁺ crosses the electrolyte and the electrons go round the external circuit to the cobalt oxide positive electrode, where both are taken in. Charging reverses this.",
+ "alt": "A cell with a graphite electrode on the left and a lithium cobalt oxide electrode on the right; Li⁺ ions move left to right through the electrolyte and electrons through the device.",
+ "description": [
+  "Negative electrode (anode on discharge): LiC₆ → Li⁺ + C₆ + e⁻.",
+  "Positive electrode (cathode): CoO₂ + Li⁺ + e⁻ → LiCoO₂.",
+  "Overall: LiC₆ + CoO₂ → C₆ + LiCoO₂."
+ ],
+ "kind": "single",
+ "load": "device",
+ "membrane": "separator",
+ "vessel": {
+  "label": "organic electrolyte with a lithium salt",
+  "colour": "#ede9fe"
+ },
+ "net": "LiC6 + CoO2 → C6 + LiCoO2",
+ "halves": [
+  {
+   "electrode": "C",
+   "label": "graphite",
+   "role": "anode",
+   "half": "LiC6 → Li+ + C6 + e-",
+   "ions": "Li⁺ →"
+  },
+  {
+   "electrode": "Co",
+   "label": "LiCoO₂",
+   "role": "cathode",
+   "half": "CoO2 + Li+ + e- → LiCoO2"
+  }
+ ]
+}

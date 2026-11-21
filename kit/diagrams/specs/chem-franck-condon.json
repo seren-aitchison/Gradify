@@ -1,0 +1,119 @@
+{
+ "id": "chem-franck-condon",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Electronic transitions",
+ "title": "The Franck–Condon principle",
+ "caption": "Electronic transitions happen so fast that the nuclei do not move: the transition is a vertical line on the energy diagram. Because the excited state's minimum lies at a longer bond length, the vertical line lands on a high point of the excited curve, so the molecule is left vibrating.",
+ "alt": "Two potential curves: the ground state with a minimum at 1.0, and an excited state above it with a minimum displaced to 1.35; a vertical arrow from the ground minimum up to the excited curve.",
+ "description": [
+  "Ground state: minimum at bond length 1.0.",
+  "Excited state: higher, with a longer bond (minimum at 1.35).",
+  "Vertical arrow at 1.0: lands well above the excited minimum."
+ ],
+ "range": {
+  "x": [
+   0.5,
+   3
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "axisLabels": [
+  "bond length",
+  "energy"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "4*(1-exp(-1.6*(x-1.0)))^2",
+   "domain": [
+    0.62,
+    3
+   ],
+   "colour": "a1",
+   "label": "ground state",
+   "labelAt": [
+    2.2,
+    3.4
+   ]
+  },
+  {
+   "expr": "1.2+3*(1-exp(-1.4*(x-1.35)))^2",
+   "domain": [
+    0.9,
+    3
+   ],
+   "colour": "a2",
+   "label": "excited state",
+   "labelAt": [
+    2.2,
+    4.5
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    1.0,
+    0
+   ],
+   "to": [
+    1.0,
+    2.399
+   ],
+   "colour": "a5",
+   "label": "vertical transition",
+   "labelAt": [
+    1.05,
+    1.5
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "4*(1-exp(-1.6*(x-1.0)))^2",
+   "domain": [
+    0.7,
+    3
+   ],
+   "x": 1.0,
+   "y": 0,
+   "name": "ground-state minimum at 1.0"
+  },
+  {
+   "type": "min",
+   "expr": "1.2+3*(1-exp(-1.4*(x-1.35)))^2",
+   "domain": [
+    0.95,
+    3
+   ],
+   "x": 1.35,
+   "y": 1.2,
+   "name": "the excited state's minimum is displaced to a longer bond (1.35)"
+  }
+ ]
+}

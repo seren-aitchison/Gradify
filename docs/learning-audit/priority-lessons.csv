@@ -1,0 +1,501 @@
+course,file,lesson_no,title,score,reasons,words
+nursing,kit/courses/nursing/notes/u10.js,8,"Renal nursing",9.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",342
+biology,kit/courses/biology/notes/u02.js,22,"Facilitated diffusion",8.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer",253
+biology,kit/courses/biology/notes/u02.js,26,"Stem cells",8.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer",301
+nursing,kit/courses/nursing/notes/u06.js,13,"Enteral feeding principles",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",277
+nursing,kit/courses/nursing/notes/u09.js,18,"Resuscitation",8.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer",264
+nursing,kit/courses/nursing/notes/u14.js,23,"Health education",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",246
+nursing,kit/courses/nursing/notes/u15.js,21,"Family support",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",249
+nursing,kit/courses/nursing/notes/u17.js,5,"Mental Capacity Act 2005",8.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer",399
+nursing,kit/courses/nursing/notes/u17.js,25,"Advance decisions",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",412
+pharmacy,kit/courses/pharmacy/notes/u02.js,20,"Mechanisms of drug interactions",8.5,"visual topic, no visual; no worked example; 3 MCQ(s) where the longest option is the answer",165
+pharmacy,kit/courses/pharmacy/notes/u07.js,4,"Cardiovascular risk assessment",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",210
+pharmacy,kit/courses/pharmacy/notes/u09.js,13,"Obesity and weight management",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",207
+pharmacy,kit/courses/pharmacy/notes/u17.js,8,"Adherence and concordance",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",189
+pharmacy,kit/courses/pharmacy/notes/u18.js,12,"Antimicrobial prescribing",8.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",164
+law,kit/courses/law/notes/u02.js,20,"Procedural impropriety",8,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",233
+pharmacy,kit/courses/pharmacy/notes/u02.js,15,"Adrenergic pharmacology",8,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",169
+pharmacy,kit/courses/pharmacy/notes/u07.js,2,"Antihypertensive drugs",8,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",220
+art,kit/courses/art/notes/u02.js,14,"Anatomy for artists",7.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",355
+biology,kit/courses/biology/notes/u01.js,1,"What is biology?",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",307
+biology,kit/courses/biology/notes/u02.js,2,"Prokaryotic cells",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",296
+biology,kit/courses/biology/notes/u02.js,6,"Fungal cells",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",259
+biology,kit/courses/biology/notes/u02.js,7,"Bacterial cells",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",223
+biology,kit/courses/biology/notes/u02.js,15,"Lysosomes and peroxisomes",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",240
+biology,kit/courses/biology/notes/u02.js,16,"Cytoskeleton",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",278
+biology,kit/courses/biology/notes/u02.js,17,"Cell membranes",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",271
+biology,kit/courses/biology/notes/u02.js,23,"Active transport",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",300
+biology,kit/courses/biology/notes/u02.js,25,"Cell specialisation",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",342
+biology,kit/courses/biology/notes/u02.js,27,"Cell differentiation",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",309
+biology,kit/courses/biology/notes/u02.js,29,"Cell junctions",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",289
+law,kit/courses/law/notes/u08.js,2,"Commercial conveyancing",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",195
+law,kit/courses/law/notes/u11.js,14,"Company meetings",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",232
+maths,kit/courses/maths/notes/u08.js,13,"Line Integrals",7.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; 1 implausible distractor(s); list-heavy, little explanation",243
+maths,kit/courses/maths/notes/u08.js,17,"Stokes' Theorem",7.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; 2 implausible distractor(s)",257
+medicine,kit/courses/medicine/notes/u03.js,15,"Tachyarrhythmias",7.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",345
+medicine,kit/courses/medicine/notes/u04.js,10,"Pneumothorax",7.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",335
+nursing,kit/courses/nursing/notes/u01.js,22,"Evidence-based practice",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",174
+nursing,kit/courses/nursing/notes/u03.js,9,"Pulse",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",200
+nursing,kit/courses/nursing/notes/u03.js,15,"Cardiovascular assessment",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",180
+nursing,kit/courses/nursing/notes/u03.js,25,"Clinical reasoning",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",162
+nursing,kit/courses/nursing/notes/u04.js,26,"Respiratory medicines",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",207
+nursing,kit/courses/nursing/notes/u05.js,8,"Ischaemic heart disease",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",276
+nursing,kit/courses/nursing/notes/u06.js,26,"Basic life support",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",215
+nursing,kit/courses/nursing/notes/u07.js,12,"Shared decision-making",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",299
+nursing,kit/courses/nursing/notes/u07.js,24,"Delegation",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",303
+nursing,kit/courses/nursing/notes/u09.js,8,"Acute respiratory failure",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",338
+nursing,kit/courses/nursing/notes/u09.js,9,"Acute cardiac conditions",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",249
+nursing,kit/courses/nursing/notes/u09.js,13,"Acute kidney injury",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",274
+nursing,kit/courses/nursing/notes/u10.js,4,"Cardiovascular nursing",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",316
+nursing,kit/courses/nursing/notes/u10.js,14,"Dermatology nursing",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",305
+nursing,kit/courses/nursing/notes/u11.js,15,"Paediatric cardiovascular conditions",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",322
+nursing,kit/courses/nursing/notes/u12.js,5,"Communication",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",244
+nursing,kit/courses/nursing/notes/u13.js,11,"Advocacy",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",261
+nursing,kit/courses/nursing/notes/u15.js,15,"Palliative care",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",307
+nursing,kit/courses/nursing/notes/u16.js,15,"Clinical guidelines",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",231
+nursing,kit/courses/nursing/notes/u16.js,23,"Delegation",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",248
+nursing,kit/courses/nursing/notes/u17.js,18,"Professional accountability",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",305
+nursing,kit/courses/nursing/notes/u17.js,24,"End-of-life law",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",447
+nursing,kit/courses/nursing/notes/u17.js,26,"Best interests",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",379
+pharmacy,kit/courses/pharmacy/notes/u01.js,5,"The standards for pharmacy professionals",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",187
+pharmacy,kit/courses/pharmacy/notes/u01.js,18,"Public health and health promotion",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",174
+pharmacy,kit/courses/pharmacy/notes/u07.js,6,"Acute coronary syndromes",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",172
+pharmacy,kit/courses/pharmacy/notes/u07.js,17,"Peripheral arterial disease",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",175
+pharmacy,kit/courses/pharmacy/notes/u09.js,1,"Type 1 diabetes",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",184
+pharmacy,kit/courses/pharmacy/notes/u09.js,3,"Type 2 diabetes",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",178
+pharmacy,kit/courses/pharmacy/notes/u10.js,7,"Attention deficit hyperactivity disorder",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",145
+pharmacy,kit/courses/pharmacy/notes/u10.js,19,"Neuropathic pain",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",171
+pharmacy,kit/courses/pharmacy/notes/u11.js,5,"Choosing an antibiotic",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",177
+pharmacy,kit/courses/pharmacy/notes/u11.js,8,"Skin and soft tissue infections",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",163
+pharmacy,kit/courses/pharmacy/notes/u12.js,9,"Chronic kidney disease",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",166
+pharmacy,kit/courses/pharmacy/notes/u12.js,12,"Liver disease and drug handling",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",163
+pharmacy,kit/courses/pharmacy/notes/u13.js,1,"Non-steroidal anti-inflammatory drugs",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",184
+pharmacy,kit/courses/pharmacy/notes/u14.js,4,"Cytotoxic chemotherapy",7.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",154
+pharmacy,kit/courses/pharmacy/notes/u16.js,19,"Ethics in pharmacy practice",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",204
+pharmacy,kit/courses/pharmacy/notes/u17.js,10,"Shared decision-making",7.5,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",176
+law,kit/courses/law/notes/u02.js,18,"Illegality",7,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",270
+pharmacy,kit/courses/pharmacy/notes/u02.js,11,"Transporters as drug targets",7,"visual topic, no visual; no worked example; 2 MCQ(s) where the longest option is the answer",150
+pharmacy,kit/courses/pharmacy/notes/u10.js,6,"Antipsychotics",7,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",170
+art,kit/courses/art/notes/u02.js,1,"Drawing as thinking and recording",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",340
+biology,kit/courses/biology/notes/u01.js,8,"Scientific method",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",305
+biology,kit/courses/biology/notes/u02.js,5,"Plant cells",6.5,"no worked example; 4 MCQ(s) where the longest option is the answer",244
+biology,kit/courses/biology/notes/u02.js,24,"Endocytosis and exocytosis",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",271
+biology,kit/courses/biology/notes/u02.js,28,"Cell signalling",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",298
+biology,kit/courses/biology/notes/u03.js,21,"Protein folding",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",247
+biology,kit/courses/biology/notes/u05.js,7,"Cell-cycle regulation",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",256
+biology,kit/courses/biology/notes/u05.js,11,"Cellular senescence",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",258
+biology,kit/courses/biology/notes/u05.js,23,"Regeneration",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",263
+biology,kit/courses/biology/notes/u08.js,14,"Calvin cycle",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",253
+biology,kit/courses/biology/notes/u08.js,16,"C4 photosynthesis",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",242
+biology,kit/courses/biology/notes/u09.js,9,"Viral replication",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",250
+biology,kit/courses/biology/notes/u10.js,14,"Antigen presentation",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",243
+biology,kit/courses/biology/notes/u10.js,15,"MHC molecules",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",242
+biology,kit/courses/biology/notes/u10.js,26,"Cancer immunology",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",239
+biology,kit/courses/biology/notes/u12.js,6,"Cloning vectors",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",228
+biology,kit/courses/biology/notes/u13.js,13,"Proteomics",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",214
+business,kit/courses/business/notes/u03.js,16,"The balanced scorecard",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",224
+business,kit/courses/business/notes/u04.js,18,"The marketing plan",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",263
+business,kit/courses/business/notes/u05.js,6,"Total quality management",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",268
+careers,kit/courses/careers/notes/u10.js,18,"The marketing plan",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",263
+chemistry,kit/courses/chemistry/notes/u10.js,11,"Cell potentials",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",198
+chemistry,kit/courses/chemistry/notes/u13.js,16,"Nucleophilic addition",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",193
+chemistry,kit/courses/chemistry/notes/u15.js,6,"Titrimetry",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",203
+chemistry,kit/courses/chemistry/notes/u15.js,25,"GC-MS",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",180
+chemistry,kit/courses/chemistry/notes/u16.js,2,"Molecular orbitals",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",198
+dentistry,kit/courses/dentistry/notes/u01.js,12,"Blood supply and lymphatic drainage of the head and neck",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",466
+dentistry,kit/courses/dentistry/notes/u06.js,1,"The medical history",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",460
+design,kit/courses/design/notes/u06.js,4,"Wireframes",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",269
+ecology,kit/courses/ecology/notes/u01.js,6,"Climate and the distribution of life",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",438
+ecology,kit/courses/ecology/notes/u02.js,18,"Population viability analysis",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",283
+gcse,kit/courses/gcse/notes/u07.js,6,"Climate and the distribution of life",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",438
+health,kit/courses/health/notes/u05.js,3,"Circadian rhythms",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",302
+investing,kit/courses/investing/notes/u02.js,12,"The economic cycle and markets",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",310
+law,kit/courses/law/notes/u02.js,12,"Judicial independence",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",213
+law,kit/courses/law/notes/u02.js,19,"Irrationality",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",230
+law,kit/courses/law/notes/u06.js,10,"Charging decisions",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",221
+law,kit/courses/law/notes/u12.js,24,"Appeals",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",223
+law,kit/courses/law/notes/u14.js,3,"Sources of EU law",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",169
+law,kit/courses/law/notes/u15.js,25,"Ethical decision-making",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",193
+law,kit/courses/law/notes/u18.js,1,"Academic study and professional qualification",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",265
+law,kit/courses/law/notes/u19.js,11,"Legal writing: a letter of advice",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",295
+law,kit/courses/law/notes/u19.js,15,"Ethics in the skills assessments",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",237
+literature,kit/courses/literature/notes/u10.js,9,"Paragraphing: point, evidence, analysis",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",279
+maths,kit/courses/maths/notes/u02.js,24,"Arithmetic Geometry",6.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s); list-heavy, little explanation",249
+maths,kit/courses/maths/notes/u02.js,25,"Cryptography",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",240
+maths,kit/courses/maths/notes/u10.js,46,"Fractional Differential Equations",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",215
+maths,kit/courses/maths/notes/u14.js,23,"Game Theory",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",236
+maths,kit/courses/maths/notes/u22.js,17,"Vector Autoregression (VAR)",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",214
+medicine,kit/courses/medicine/notes/u02.js,1,"The medical history",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",460
+medicine,kit/courses/medicine/notes/u03.js,16,"Hypertension",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",438
+nursing,kit/courses/nursing/notes/u01.js,15,"Documentation",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",195
+nursing,kit/courses/nursing/notes/u01.js,18,"Delegation",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",217
+nursing,kit/courses/nursing/notes/u01.js,28,"Ethical decision-making",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",167
+nursing,kit/courses/nursing/notes/u02.js,2,"Cells and tissues",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",297
+nursing,kit/courses/nursing/notes/u02.js,9,"Autonomic nervous system",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",294
+nursing,kit/courses/nursing/notes/u02.js,10,"Cardiovascular system",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",332
+nursing,kit/courses/nursing/notes/u02.js,16,"Renal system",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",317
+nursing,kit/courses/nursing/notes/u02.js,20,"Immune system",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",288
+nursing,kit/courses/nursing/notes/u02.js,21,"Lymphatic system",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",286
+nursing,kit/courses/nursing/notes/u02.js,22,"Fluid balance",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",281
+nursing,kit/courses/nursing/notes/u02.js,24,"Acid-base balance",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",271
+nursing,kit/courses/nursing/notes/u03.js,11,"Blood pressure",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",234
+nursing,kit/courses/nursing/notes/u04.js,25,"Cardiovascular medicines",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",223
+nursing,kit/courses/nursing/notes/u05.js,2,"Inflammation",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",177
+nursing,kit/courses/nursing/notes/u05.js,6,"Hypertension",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",301
+nursing,kit/courses/nursing/notes/u05.js,7,"Heart failure",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",315
+nursing,kit/courses/nursing/notes/u05.js,9,"Myocardial infarction",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",311
+nursing,kit/courses/nursing/notes/u05.js,10,"Arrhythmias",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",266
+nursing,kit/courses/nursing/notes/u05.js,12,"Respiratory disease",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",163
+nursing,kit/courses/nursing/notes/u05.js,15,"Pneumonia",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",262
+nursing,kit/courses/nursing/notes/u05.js,19,"Renal disease",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",177
+nursing,kit/courses/nursing/notes/u05.js,27,"Parkinson's disease",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",282
+nursing,kit/courses/nursing/notes/u06.js,22,"Medication administration",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",247
+nursing,kit/courses/nursing/notes/u06.js,24,"ECG recording",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",256
+nursing,kit/courses/nursing/notes/u06.js,25,"Resuscitation principles",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",248
+nursing,kit/courses/nursing/notes/u07.js,17,"Discharge planning",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",282
+nursing,kit/courses/nursing/notes/u08.js,2,"Bacteria",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",286
+nursing,kit/courses/nursing/notes/u08.js,11,"Isolation precautions",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",315
+nursing,kit/courses/nursing/notes/u09.js,17,"Cardiac arrest",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",252
+nursing,kit/courses/nursing/notes/u10.js,2,"Medical nursing",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",241
+nursing,kit/courses/nursing/notes/u10.js,5,"Respiratory nursing",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",298
+nursing,kit/courses/nursing/notes/u10.js,12,"Haematology nursing",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",352
+nursing,kit/courses/nursing/notes/u10.js,19,"Long-term conditions",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",264
+nursing,kit/courses/nursing/notes/u11.js,7,"Consent and parental responsibility",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",381
+nursing,kit/courses/nursing/notes/u11.js,11,"Neonatal fundamentals",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",305
+nursing,kit/courses/nursing/notes/u11.js,13,"Congenital conditions",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",303
+nursing,kit/courses/nursing/notes/u11.js,17,"Paediatric infections",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",337
+nursing,kit/courses/nursing/notes/u13.js,9,"Mental capacity",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",299
+nursing,kit/courses/nursing/notes/u15.js,22,"Ethical decision-making",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",301
+nursing,kit/courses/nursing/notes/u17.js,2,"The NMC Code",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",429
+pharmacy,kit/courses/pharmacy/notes/u01.js,6,"Person-centred care",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",177
+pharmacy,kit/courses/pharmacy/notes/u01.js,12,"Professional judgement and accountability",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",190
+pharmacy,kit/courses/pharmacy/notes/u02.js,9,"Ion channels as drug targets",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",176
+pharmacy,kit/courses/pharmacy/notes/u02.js,18,"Neurotransmitters in the brain",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",153
+pharmacy,kit/courses/pharmacy/notes/u02.js,21,"Drug toxicity and overdose",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",170
+pharmacy,kit/courses/pharmacy/notes/u03.js,8,"Cytochrome P450 enzymes",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",167
+pharmacy,kit/courses/pharmacy/notes/u03.js,9,"Renal excretion",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",169
+pharmacy,kit/courses/pharmacy/notes/u03.js,18,"Pharmacokinetics in renal impairment",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",169
+pharmacy,kit/courses/pharmacy/notes/u07.js,9,"Atrial fibrillation",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",197
+pharmacy,kit/courses/pharmacy/notes/u07.js,18,"Cardiovascular adverse drug reactions",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",160
+pharmacy,kit/courses/pharmacy/notes/u08.js,4,"Inhaler devices and technique",6.5,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",206
+pharmacy,kit/courses/pharmacy/notes/u12.js,8,"Acute kidney injury",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",180
+pharmacy,kit/courses/pharmacy/notes/u15.js,12,"Care homes",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",170
+pharmacy,kit/courses/pharmacy/notes/u16.js,4,"Who can prescribe",6.5,"no worked example; 3 MCQ(s) where the longest option is the answer; list-heavy, little explanation",182
+pharmacy,kit/courses/pharmacy/notes/u18.js,4,"Consultation models",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",149
+pharmacy,kit/courses/pharmacy/notes/u18.js,16,"Prescribing in practice: case reviews",6.5,"visual topic, no visual; no worked example; list-heavy, little explanation",170
+physics,kit/courses/physics/notes/u10.js,20,"Coupled waves",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",143
+physics,kit/courses/physics/notes/u18.js,13,"Polarisation",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",167
+physics,kit/courses/physics/notes/u28.js,15,"Semiconductor heterojunctions",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",165
+physics,kit/courses/physics/notes/u34.js,3,"Biological fluid dynamics",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",176
+physics,kit/courses/physics/notes/u37.js,4,"Quantum circuits",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",239
+physics,kit/courses/physics/notes/u40.js,23,"Green's functions",6.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",240
+professional,kit/courses/professional/notes/u06.js,16,"The balanced scorecard",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",224
+research,kit/courses/research/notes/u01.js,16,"Planning time: milestones and Gantt charts",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",364
+research,kit/courses/research/notes/u03.js,8,"Critical realism",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",302
+sport,kit/courses/sport/notes/u02.js,5,"Regulation of heart rate during exercise",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",328
+teaching,kit/courses/teaching/notes/u03.js,10,"The graduated approach: assess, plan, do, review",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",461
+teaching,kit/courses/teaching/notes/u10.js,3,"Circadian rhythms",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",302
+university,kit/courses/university/notes/u01.js,12,"Support services and reasonable adjustments",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",344
+university,kit/courses/university/notes/u02.js,11,"Dual coding",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",336
+university,kit/courses/university/notes/u08.js,9,"Reading graphs critically",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",292
+university,kit/courses/university/notes/u11.js,3,"Circadian rhythms",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",302
+veterinary,kit/courses/veterinary/notes/u01.js,17,"Avian anatomy",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",522
+veterinary,kit/courses/veterinary/notes/u05.js,16,"Cytology and histopathology",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",314
+veterinary,kit/courses/veterinary/notes/u08.js,1,"The medical history",6.5,"visual topic, no visual; 3 MCQ(s) where the longest option is the answer",460
+law,kit/courses/law/notes/u02.js,24,"Justiciability",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",199
+law,kit/courses/law/notes/u09.js,1,"Historical development of equity",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",233
+law,kit/courses/law/notes/u13.js,20,"Remedies",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",197
+pharmacy,kit/courses/pharmacy/notes/u02.js,16,"Histamine and its antagonists",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",194
+pharmacy,kit/courses/pharmacy/notes/u02.js,24,"Biological medicines and biosimilars",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",189
+pharmacy,kit/courses/pharmacy/notes/u07.js,3,"Lipid management",6,"visual topic, no visual; no worked example; list-heavy, little explanation",210
+pharmacy,kit/courses/pharmacy/notes/u07.js,8,"Chronic heart failure",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",193
+pharmacy,kit/courses/pharmacy/notes/u10.js,12,"Antiepileptic drugs",6,"visual topic, no visual; no worked example; list-heavy, little explanation",158
+physics,kit/courses/physics/notes/u01.js,14,"Symmetry and invariance",6,"visual topic, no visual; no worked example; 1 MCQ(s) where the longest option is the answer",220
+art,kit/courses/art/notes/u03.js,2,"Additive and subtractive colour",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",374
+art,kit/courses/art/notes/u04.js,3,"Fresco",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",362
+art,kit/courses/art/notes/u04.js,14,"Portraiture",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",327
+art,kit/courses/art/notes/u06.js,6,"Photography as art",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",415
+art,kit/courses/art/notes/u08.js,12,"The Early Renaissance in Florence",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",378
+art,kit/courses/art/notes/u12.js,13,"Documenting and presenting your work",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",323
+biology,kit/courses/biology/notes/u02.js,1,"Cell theory",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",372
+biology,kit/courses/biology/notes/u02.js,12,"Ribosomes",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",296
+biology,kit/courses/biology/notes/u02.js,13,"Endoplasmic reticulum",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",296
+biology,kit/courses/biology/notes/u02.js,20,"Diffusion",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",336
+biology,kit/courses/biology/notes/u03.js,2,"Water and biological systems",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",298
+biology,kit/courses/biology/notes/u03.js,4,"pH and biological buffers",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",276
+biology,kit/courses/biology/notes/u03.js,12,"Phospholipids",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",244
+biology,kit/courses/biology/notes/u03.js,14,"Proteins",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",249
+biology,kit/courses/biology/notes/u03.js,30,"ATP and biological energy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",284
+biology,kit/courses/biology/notes/u04.js,14,"Gene regulation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",239
+biology,kit/courses/biology/notes/u05.js,8,"Checkpoints",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",272
+biology,kit/courses/biology/notes/u05.js,12,"Cancer biology",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",275
+biology,kit/courses/biology/notes/u05.js,17,"Cleavage",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",258
+biology,kit/courses/biology/notes/u05.js,20,"Developmental signalling",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",291
+biology,kit/courses/biology/notes/u05.js,21,"Cell fate determination",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",263
+biology,kit/courses/biology/notes/u06.js,15,"Sympatric speciation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",256
+biology,kit/courses/biology/notes/u07.js,16,"Circulation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",257
+biology,kit/courses/biology/notes/u07.js,26,"Urine formation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",237
+biology,kit/courses/biology/notes/u08.js,9,"Water transport",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",250
+biology,kit/courses/biology/notes/u08.js,20,"Auxins",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",245
+biology,kit/courses/biology/notes/u10.js,3,"Adaptive immunity",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",218
+biology,kit/courses/biology/notes/u10.js,5,"Immune cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",221
+biology,kit/courses/biology/notes/u10.js,9,"Natural killer cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",239
+biology,kit/courses/biology/notes/u10.js,10,"B lymphocytes",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",250
+biology,kit/courses/biology/notes/u10.js,18,"Inflammation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",225
+biology,kit/courses/biology/notes/u11.js,12,"Carbon cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",226
+biology,kit/courses/biology/notes/u11.js,13,"Nitrogen cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",228
+biology,kit/courses/biology/notes/u12.js,4,"DNA ligase",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",247
+biology,kit/courses/biology/notes/u12.js,20,"Cell therapy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",233
+biology,kit/courses/biology/notes/u14.js,5,"Microscopy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",239
+biology,kit/courses/biology/notes/u14.js,13,"Chromatography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",206
+biology,kit/courses/biology/notes/u14.js,16,"Flow cytometry",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",204
+biology,kit/courses/biology/notes/u14.js,18,"Data visualisation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",217
+business,kit/courses/business/notes/u01.js,13,"Technology and social change",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",378
+business,kit/courses/business/notes/u08.js,6,"Oligopoly and game theory",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",361
+business,kit/courses/business/notes/u10.js,2,"Digital transformation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",276
+careers,kit/courses/careers/notes/u05.js,10,"Structuring a cover letter",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",386
+chemistry,kit/courses/chemistry/notes/u02.js,1,"Structure of the atom",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",342
+chemistry,kit/courses/chemistry/notes/u02.js,10,"Pauli exclusion principle",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",336
+chemistry,kit/courses/chemistry/notes/u02.js,14,"Atomic spectra",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",336
+chemistry,kit/courses/chemistry/notes/u02.js,15,"Emission and absorption",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",347
+chemistry,kit/courses/chemistry/notes/u02.js,17,"Quantum mechanical model",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",329
+chemistry,kit/courses/chemistry/notes/u04.js,24,"Delocalisation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",235
+chemistry,kit/courses/chemistry/notes/u06.js,20,"Thermodynamic cycles",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",217
+chemistry,kit/courses/chemistry/notes/u07.js,10,"Reaction order",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",253
+chemistry,kit/courses/chemistry/notes/u07.js,20,"Rate-determining steps",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",237
+chemistry,kit/courses/chemistry/notes/u07.js,21,"Catalytic cycles",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",213
+chemistry,kit/courses/chemistry/notes/u09.js,16,"Equivalence points",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",233
+chemistry,kit/courses/chemistry/notes/u10.js,7,"Electrochemical cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",212
+chemistry,kit/courses/chemistry/notes/u10.js,8,"Galvanic cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",231
+chemistry,kit/courses/chemistry/notes/u10.js,9,"Electrolytic cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",208
+chemistry,kit/courses/chemistry/notes/u10.js,10,"Standard electrode potentials",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",238
+chemistry,kit/courses/chemistry/notes/u10.js,12,"Electrochemical series",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",232
+chemistry,kit/courses/chemistry/notes/u10.js,17,"Fuel cells",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",224
+chemistry,kit/courses/chemistry/notes/u11.js,10,"Crystal field theory",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",240
+chemistry,kit/courses/chemistry/notes/u13.js,10,"SN2 mechanisms",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",207
+chemistry,kit/courses/chemistry/notes/u13.js,12,"E1 mechanisms",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",180
+chemistry,kit/courses/chemistry/notes/u13.js,13,"E2 mechanisms",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",209
+chemistry,kit/courses/chemistry/notes/u14.js,20,"Heterocyclic compounds",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",218
+chemistry,kit/courses/chemistry/notes/u15.js,5,"Calibration",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",214
+chemistry,kit/courses/chemistry/notes/u15.js,23,"Gas chromatography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",257
+chemistry,kit/courses/chemistry/notes/u15.js,24,"High-performance liquid chromatography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",204
+chemistry,kit/courses/chemistry/notes/u16.js,9,"Electronic transitions",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",212
+chemistry,kit/courses/chemistry/notes/u17.js,4,"Polymerisation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",175
+chemistry,kit/courses/chemistry/notes/u17.js,12,"Atmospheric chemistry",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",201
+chemistry,kit/courses/chemistry/notes/u17.js,20,"Chemical manufacturing",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",226
+chemistry,kit/courses/chemistry/notes/u19.js,10,"Chromatographic purification",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",194
+chemistry,kit/courses/chemistry/notes/u19.js,11,"Thin-layer chromatography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",215
+computing,kit/courses/computing/notes/u06.js,10,"Vector graphics",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",299
+computing,kit/courses/computing/notes/u06.js,11,"Sound",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",297
+dentistry,kit/courses/dentistry/notes/u02.js,10,"The dental pulp",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",359
+dentistry,kit/courses/dentistry/notes/u03.js,1,"Cell structure and function in health",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",480
+dentistry,kit/courses/dentistry/notes/u03.js,13,"Adaptive immunity",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",502
+dentistry,kit/courses/dentistry/notes/u06.js,3,"Communicating risk and shared decision-making",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",384
+dentistry,kit/courses/dentistry/notes/u06.js,8,"The respiratory examination",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",408
+dentistry,kit/courses/dentistry/notes/u06.js,17,"Presenting a patient and documenting care",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",418
+dentistry,kit/courses/dentistry/notes/u08.js,4,"Radiation doses in dentistry",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",407
+dentistry,kit/courses/dentistry/notes/u08.js,8,"Quality assurance in dental radiography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",341
+dentistry,kit/courses/dentistry/notes/u08.js,15,"Radiographic interpretation: caries and periodontal bone",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",415
+dentistry,kit/courses/dentistry/notes/u11.js,15,"Referral pathways and urgent dental care",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",322
+design,kit/courses/design/notes/u01.js,9,"Designers and design disciplines",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",291
+design,kit/courses/design/notes/u04.js,12,"Empathy maps",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",263
+design,kit/courses/design/notes/u09.js,11,"Stress transformation and Mohr's circle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",231
+design,kit/courses/design/notes/u12.js,2,"Workshops and facilitation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",366
+ecology,kit/courses/ecology/notes/u02.js,10,"Life tables and survivorship curves",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",305
+ecology,kit/courses/ecology/notes/u02.js,16,"Small populations and extinction risk",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",275
+ecology,kit/courses/ecology/notes/u05.js,3,"The carbon cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",308
+ecology,kit/courses/ecology/notes/u05.js,9,"The phosphorus cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",271
+ecology,kit/courses/ecology/notes/u05.js,14,"Coupled cycles and global change",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",270
+ecology,kit/courses/ecology/notes/u06.js,16,"Drivers of biodiversity loss",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",246
+ecology,kit/courses/ecology/notes/u09.js,21,"Remote sensing and GIS",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",294
+engineering,kit/courses/engineering/notes/u01.js,3,"Engineering models and assumptions",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",363
+engineering,kit/courses/engineering/notes/u02.js,11,"Frames and machines",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",327
+engineering,kit/courses/engineering/notes/u04.js,11,"Stress transformation and Mohr's circle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",231
+engineering,kit/courses/engineering/notes/u06.js,10,"Entropy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",264
+engineering,kit/courses/engineering/notes/u06.js,12,"The Rankine cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",287
+engineering,kit/courses/engineering/notes/u09.js,12,"Sensors and actuators",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",287
+finance,kit/courses/finance/notes/u03.js,8,"Statement of profit or loss and other comprehensive income",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",300
+finance,kit/courses/finance/notes/u04.js,4,"Efficiency ratios and the working capital cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",240
+finance,kit/courses/finance/notes/u05.js,17,"Life-cycle costing",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",240
+gcse,kit/courses/gcse/notes/u03.js,3,"Comedy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",274
+gcse,kit/courses/gcse/notes/u04.js,7,"The heart",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",461
+gcse,kit/courses/gcse/notes/u04.js,10,"The respiratory system",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",477
+gcse,kit/courses/gcse/notes/u04.js,11,"Gas exchange and breathing",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",444
+gcse,kit/courses/gcse/notes/u05.js,15,"Chemical analysis and chromatography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",317
+gcse,kit/courses/gcse/notes/u05.js,18,"Using resources: water and life cycle assessment",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",341
+gcse,kit/courses/gcse/notes/u08.js,14,"Issue evaluation and decision making",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",363
+health,kit/courses/health/notes/u05.js,2,"Sleep stages and cycles",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",272
+health,kit/courses/health/notes/u05.js,12,"Stress and health",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",273
+history,kit/courses/history/notes/u01.js,13,"Essay construction",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",405
+history,kit/courses/history/notes/u02.js,11,"Thomas Becket",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",319
+history,kit/courses/history/notes/u10.js,16,"The atomic bombings of Hiroshima and Nagasaki",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",339
+investing,kit/courses/investing/notes/u05.js,11,"Strategic asset allocation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",307
+investing,kit/courses/investing/notes/u07.js,4,"Efficiency ratios and the working capital cycle",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",240
+investing,kit/courses/investing/notes/u11.js,4,"Advice, guidance and execution-only",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",330
+investing,kit/courses/investing/notes/u12.js,12,"When to get regulated financial advice",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",318
+law,kit/courses/law/notes/u01.js,30,"Introduction to legal argument",5.5,"visual topic, no visual; no worked example",185
+law,kit/courses/law/notes/u03.js,35,"Consumer contracts",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",245
+law,kit/courses/law/notes/u06.js,11,"Prosecution",5.5,"visual topic, no visual; no worked example",188
+law,kit/courses/law/notes/u07.js,10,"Title investigation",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",229
+law,kit/courses/law/notes/u11.js,13,"Company decision-making",5.5,"visual topic, no visual; no worked example",203
+law,kit/courses/law/notes/u12.js,6,"Commencing proceedings",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",240
+law,kit/courses/law/notes/u13.js,5,"Convention rights",5.5,"visual topic, no visual; no worked example",207
+law,kit/courses/law/notes/u14.js,4,"EU legislation",5.5,"visual topic, no visual; no worked example",196
+law,kit/courses/law/notes/u14.js,13,"International law sources",5.5,"visual topic, no visual; no worked example",201
+law,kit/courses/law/notes/u16.js,8,"Case analysis",5.5,"visual topic, no visual; no worked example",193
+law,kit/courses/law/notes/u16.js,19,"Legal argumentation",5.5,"visual topic, no visual; no worked example",170
+literature,kit/courses/literature/notes/u03.js,3,"Comedy",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",274
+literature,kit/courses/literature/notes/u04.js,13,"The postmodern novel",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",269
+literature,kit/courses/literature/notes/u08.js,11,"A Christmas Carol: Scrooge's transformation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",382
+literature,kit/courses/literature/notes/u08.js,13,"Jane Eyre: context",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",364
+maths,kit/courses/maths/notes/u02.js,23,"Elliptic Curves",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",265
+maths,kit/courses/maths/notes/u02.js,34,"Prime Factorisation Algorithms",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",240
+maths,kit/courses/maths/notes/u02.js,35,"Lattice-Based Cryptography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",242
+maths,kit/courses/maths/notes/u02.js,36,"Post-Quantum Cryptography",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",218
+maths,kit/courses/maths/notes/u05.js,14,"Constructions",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",241
+maths,kit/courses/maths/notes/u05.js,35,"Non-Euclidean Geometry",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",225
+maths,kit/courses/maths/notes/u05.js,37,"Hyperbolic Geometry",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",219
+maths,kit/courses/maths/notes/u05.js,41,"Discrete Geometry",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",237
+maths,kit/courses/maths/notes/u05.js,43,"Computational Geometry",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",188
+maths,kit/courses/maths/notes/u05.js,48,"Algebraic Geometry",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",260
+maths,kit/courses/maths/notes/u05.js,49,"Topological Geometry",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",201
+maths,kit/courses/maths/notes/u06.js,15,"Cosecant",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",256
+maths,kit/courses/maths/notes/u07.js,19,"Stationary Points",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",259
+maths,kit/courses/maths/notes/u08.js,7,"Jacobians",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",234
+maths,kit/courses/maths/notes/u08.js,14,"Surface Integrals",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",234
+maths,kit/courses/maths/notes/u08.js,20,"Tensor Calculus",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",244
+maths,kit/courses/maths/notes/u10.js,26,"Reaction-Diffusion Equations",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",188
+maths,kit/courses/maths/notes/u11.js,6,"Span",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",235
+maths,kit/courses/maths/notes/u11.js,33,"Inner Product Spaces",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",215
+maths,kit/courses/maths/notes/u11.js,36,"Orthogonal Projections",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",232
+maths,kit/courses/maths/notes/u11.js,50,"Exterior Algebra",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",250
+maths,kit/courses/maths/notes/u13.js,11,"Maximum Likelihood Estimation",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",230
+maths,kit/courses/maths/notes/u13.js,74,"Decision Theory",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",240
+maths,kit/courses/maths/notes/u14.js,17,"Boolean Functions",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",206
+maths,kit/courses/maths/notes/u15.js,6,"Paths and Cycles",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",207
+maths,kit/courses/maths/notes/u15.js,7,"Graph Connectivity",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",208
+maths,kit/courses/maths/notes/u15.js,23,"Minimum Spanning Trees",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",202
+maths,kit/courses/maths/notes/u15.js,34,"Network Clustering",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",184
+maths,kit/courses/maths/notes/u17.js,4,"Metric Spaces",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",202
+maths,kit/courses/maths/notes/u17.js,22,"Category Theory",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",232
+maths,kit/courses/maths/notes/u18.js,10,"Multiobjective Optimisation",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",231
+maths,kit/courses/maths/notes/u18.js,17,"Integer Programming",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",255
+maths,kit/courses/maths/notes/u18.js,31,"Operations Research",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",225
+maths,kit/courses/maths/notes/u18.js,37,"Network Optimisation",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",204
+maths,kit/courses/maths/notes/u18.js,40,"Assignment Problems",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",222
+maths,kit/courses/maths/notes/u18.js,42,"Markov Decision Processes",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",225
+maths,kit/courses/maths/notes/u20.js,23,"Chemical Kinetics",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",213
+maths,kit/courses/maths/notes/u20.js,38,"Acoustics",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",192
+maths,kit/courses/maths/notes/u20.js,47,"Nonlinear Dynamics",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",214
+maths,kit/courses/maths/notes/u20.js,49,"Agent-Based Modelling",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",204
+maths,kit/courses/maths/notes/u21.js,21,"Financial Modelling",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",200
+maths,kit/courses/maths/notes/u22.js,18,"Vector Error Correction Models",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",202
+maths,kit/courses/maths/notes/u22.js,22,"Functional Time Series",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",189
+maths,kit/courses/maths/notes/u24.js,19,"Random Forest Theory",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",191
+maths,kit/courses/maths/notes/u24.js,23,"Manifold Learning",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",209
+maths,kit/courses/maths/notes/u24.js,30,"Reinforcement Learning",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",184
+maths,kit/courses/maths/notes/u25.js,3,"Nonlinear Systems",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",207
+maths,kit/courses/maths/notes/u25.js,27,"Stochastic Control",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",187
+maths,kit/courses/maths/notes/u25.js,29,"Distributed Control",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",199
+maths,kit/courses/maths/notes/u27.js,35,"Desmos",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",205
+maths,kit/courses/maths/notes/u27.js,42,"COMSOL Multiphysics",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",183
+maths,kit/courses/maths/notes/u27.js,45,"MapleSim",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",186
+maths,kit/courses/maths/notes/u28.js,13,"SAT Mathematics",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",225
+medicine,kit/courses/medicine/notes/u01.js,1,"Cell structure and function in health",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",480
+medicine,kit/courses/medicine/notes/u02.js,3,"Communicating risk and shared decision-making",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",384
+medicine,kit/courses/medicine/notes/u02.js,8,"The respiratory examination",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",408
+medicine,kit/courses/medicine/notes/u02.js,17,"Presenting a patient and documenting care",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",418
+medicine,kit/courses/medicine/notes/u03.js,4,"Atherosclerosis and cardiovascular risk",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",360
+medicine,kit/courses/medicine/notes/u03.js,5,"Stable angina",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",361
+medicine,kit/courses/medicine/notes/u03.js,8,"Heart failure: causes and classification",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",298
+medicine,kit/courses/medicine/notes/u03.js,9,"Managing chronic heart failure",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",330
+medicine,kit/courses/medicine/notes/u03.js,10,"Valvular heart disease",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",338
+medicine,kit/courses/medicine/notes/u03.js,11,"Infective endocarditis",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",362
+medicine,kit/courses/medicine/notes/u03.js,14,"Bradyarrhythmias and heart block",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",365
+medicine,kit/courses/medicine/notes/u03.js,18,"Venous thromboembolism",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",360
+medicine,kit/courses/medicine/notes/u04.js,5,"Chronic obstructive pulmonary disease (COPD)",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",338
+medicine,kit/courses/medicine/notes/u04.js,11,"Interstitial lung disease",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",286
+medicine,kit/courses/medicine/notes/u04.js,13,"Pulmonary embolism",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",312
+medicine,kit/courses/medicine/notes/u04.js,14,"Pulmonary hypertension",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",313
+medicine,kit/courses/medicine/notes/u04.js,15,"Lung cancer",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; list-heavy, little explanation",383
+medicine,kit/courses/medicine/notes/u05.js,14,"Viral hepatitis",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",304
+medicine,kit/courses/medicine/notes/u06.js,3,"Chronic kidney disease",5.5,"visual topic, no visual; 1 MCQ(s) where the longest option is the answer; 1 implausible distractor(s)",282
+medicine,kit/courses/medicine/notes/u09.js,21,"Head and neck cancer",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",345
+music,kit/courses/music/notes/u05.js,12,"Ground bass, ostinato and passacaglia",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",275
+music,kit/courses/music/notes/u10.js,2,"The Lied and art song",5.5,"visual topic, no visual; 2 MCQ(s) where the longest option is the answer",351
+nursing,kit/courses/nursing/notes/u01.js,12,"Capacity",5.5,"visual topic, no visual; no worked example",341
+nursing,kit/courses/nursing/notes/u02.js,11,"Blood and circulation",5.5,"visual topic, no visual; no worked example",316
+nursing,kit/courses/nursing/notes/u02.js,12,"Respiratory system",5.5,"visual topic, no visual; no worked example",335
+nursing,kit/courses/nursing/notes/u02.js,19,"Reproductive system",5.5,"visual topic, no visual; no worked example",277
+nursing,kit/courses/nursing/notes/u02.js,23,"Electrolytes",5.5,"visual topic, no visual; no worked example",289
+nursing,kit/courses/nursing/notes/u02.js,28,"Cellular pathology",5.5,"visual topic, no visual; no worked example",267
+nursing,kit/courses/nursing/notes/u03.js,30,"Documentation and reassessment",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",171
+nursing,kit/courses/nursing/notes/u04.js,6,"Metabolism",5.5,"visual topic, no visual; no worked example",192
+nursing,kit/courses/nursing/notes/u04.js,7,"Excretion",5.5,"visual topic, no visual; no worked example",186
+nursing,kit/courses/nursing/notes/u04.js,31,"Insulin and diabetes medicines",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",245
+nursing,kit/courses/nursing/notes/u05.js,5,"Cardiovascular disease",5.5,"visual topic, no visual; no worked example",210
+nursing,kit/courses/nursing/notes/u05.js,14,"COPD",5.5,"visual topic, no visual; no worked example",276
+nursing,kit/courses/nursing/notes/u05.js,20,"Acute kidney injury",5.5,"visual topic, no visual; no worked example",314
+nursing,kit/courses/nursing/notes/u05.js,21,"Chronic kidney disease",5.5,"visual topic, no visual; no worked example",303
+nursing,kit/courses/nursing/notes/u05.js,28,"Cancer",5.5,"visual topic, no visual; no worked example",298
+nursing,kit/courses/nursing/notes/u05.js,29,"Haematological disorders",5.5,"visual topic, no visual; no worked example",225
+nursing,kit/courses/nursing/notes/u06.js,8,"Catheter care",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",244
+nursing,kit/courses/nursing/notes/u07.js,5,"SMART goals",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",286
+nursing,kit/courses/nursing/notes/u07.js,8,"Evaluation of outcomes",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",253
+nursing,kit/courses/nursing/notes/u07.js,13,"Patient education",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",290
+nursing,kit/courses/nursing/notes/u07.js,22,"Risk assessment",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",282
+nursing,kit/courses/nursing/notes/u07.js,25,"Safe escalation",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",331
+nursing,kit/courses/nursing/notes/u07.js,27,"End-of-life care",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",333
+nursing,kit/courses/nursing/notes/u08.js,18,"Clostridioides difficile",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",256
+nursing,kit/courses/nursing/notes/u08.js,27,"Occupational exposure",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",324
+nursing,kit/courses/nursing/notes/u09.js,4,"Early warning scores",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",281
+nursing,kit/courses/nursing/notes/u09.js,14,"Fluid resuscitation principles",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",291
+nursing,kit/courses/nursing/notes/u09.js,16,"Emergency escalation",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",243
+nursing,kit/courses/nursing/notes/u10.js,13,"Musculoskeletal nursing",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",269
+nursing,kit/courses/nursing/notes/u10.js,17,"Frailty",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",283
+nursing,kit/courses/nursing/notes/u10.js,18,"Rehabilitation",5.5,"visual topic, no visual; no worked example",278
+nursing,kit/courses/nursing/notes/u10.js,22,"End-of-life care",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",354
+nursing,kit/courses/nursing/notes/u10.js,23,"Postoperative care",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",275
+nursing,kit/courses/nursing/notes/u10.js,24,"Discharge planning",5.5,"visual topic, no visual; no worked example",339
+nursing,kit/courses/nursing/notes/u10.js,25,"Community adult nursing",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",316
+nursing,kit/courses/nursing/notes/u11.js,8,"Safeguarding children",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",321
+nursing,kit/courses/nursing/notes/u11.js,9,"Paediatric assessment",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",283
+nursing,kit/courses/nursing/notes/u11.js,14,"Paediatric respiratory disease",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",323
+nursing,kit/courses/nursing/notes/u11.js,23,"Mental health in children",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",296
+nursing,kit/courses/nursing/notes/u11.js,26,"Preparing for a children's nursing placement",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",257
+nursing,kit/courses/nursing/notes/u12.js,4,"Therapeutic relationships",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",229
+nursing,kit/courses/nursing/notes/u12.js,18,"Self-harm",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",322
+nursing,kit/courses/nursing/notes/u12.js,24,"Safeguarding",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",274
+nursing,kit/courses/nursing/notes/u12.js,26,"Recovery-oriented practice",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",217
+nursing,kit/courses/nursing/notes/u12.js,29,"Forensic mental health",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",302
+nursing,kit/courses/nursing/notes/u12.js,31,"Preparing for a mental health nursing placement",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",280
+nursing,kit/courses/nursing/notes/u13.js,10,"Consent",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",271
+nursing,kit/courses/nursing/notes/u13.js,18,"Family and carer support",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",276
+nursing,kit/courses/nursing/notes/u13.js,23,"Multidisciplinary care",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",249
+nursing,kit/courses/nursing/notes/u14.js,3,"Health inequalities",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",335
+nursing,kit/courses/nursing/notes/u14.js,12,"Maternal health",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",325
+nursing,kit/courses/nursing/notes/u14.js,24,"Behaviour change",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",292
+nursing,kit/courses/nursing/notes/u14.js,25,"Community assessment",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",272
+nursing,kit/courses/nursing/notes/u15.js,17,"Pain management",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",333
+nursing,kit/courses/nursing/notes/u16.js,11,"Critical appraisal",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",224
+nursing,kit/courses/nursing/notes/u16.js,12,"Research ethics",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",308
+nursing,kit/courses/nursing/notes/u17.js,7,"Safeguarding adults",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",338
+nursing,kit/courses/nursing/notes/u17.js,8,"Safeguarding children",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",407
+nursing,kit/courses/nursing/notes/u17.js,10,"Human rights",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",334
+nursing,kit/courses/nursing/notes/u17.js,16,"Duty of candour",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",352
+nursing,kit/courses/nursing/notes/u17.js,20,"Raising concerns",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",351
+nursing,kit/courses/nursing/notes/u17.js,22,"Professional boundaries",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",379
+pharmacy,kit/courses/pharmacy/notes/u01.js,1,"Introduction to pharmacy",5.5,"no worked example; 3 MCQ(s) where the longest option is the answer",186
+pharmacy,kit/courses/pharmacy/notes/u01.js,10,"Confidentiality and information governance",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",190
+pharmacy,kit/courses/pharmacy/notes/u01.js,13,"Raising concerns and speaking up",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",193
+pharmacy,kit/courses/pharmacy/notes/u02.js,2,"Drug targets",5.5,"visual topic, no visual; no worked example",187
+pharmacy,kit/courses/pharmacy/notes/u02.js,8,"G protein-coupled receptors and second messengers",5.5,"visual topic, no visual; no worked example",173
+pharmacy,kit/courses/pharmacy/notes/u02.js,13,"The autonomic nervous system",5.5,"visual topic, no visual; no worked example",158
+pharmacy,kit/courses/pharmacy/notes/u03.js,7,"Drug metabolism: phase I and II",5.5,"visual topic, no visual; no worked example",159
+pharmacy,kit/courses/pharmacy/notes/u03.js,11,"Clearance",5.5,"visual topic, no visual; no worked example",206
+pharmacy,kit/courses/pharmacy/notes/u03.js,19,"Pharmacokinetics in hepatic impairment",5.5,"visual topic, no visual; no worked example",159
+pharmacy,kit/courses/pharmacy/notes/u07.js,1,"Hypertension",5.5,"visual topic, no visual; no worked example",231
+pharmacy,kit/courses/pharmacy/notes/u07.js,5,"Stable angina",5.5,"visual topic, no visual; no worked example",204
+pharmacy,kit/courses/pharmacy/notes/u07.js,7,"Secondary prevention after a heart attack",5.5,"visual topic, no visual; no worked example",156
+pharmacy,kit/courses/pharmacy/notes/u09.js,6,"Diabetes in special situations",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",164
+pharmacy,kit/courses/pharmacy/notes/u10.js,16,"Pain physiology and assessment",5.5,"no worked example; 2 MCQ(s) where the longest option is the answer; list-heavy, little explanation",186

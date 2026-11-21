@@ -1897,7 +1897,8 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-rings { position: fixed; right: max(8px, env(safe-area-inset-right)); top: 50%; z-index: 120; translate: 0 -50%; display: none; flex-direction: column; gap: 14px; padding: 16px 9px; border-radius: 40px; pointer-events: none;
   background: #050507; color: #fff; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .14); opacity: 0; transform: translateX(16px); transition: opacity .35s, transform .35s; }
 .cx-rings.peek { opacity: 1; transform: none; }
-@media (max-width: 1020px) { .co-reading .cx-rings { display: flex; } }
+/* only where the window has a margin beside the text for it: below that it would sit on the words */
+@media (max-width: 1020px) and (min-width: 900px) { .co-reading .cx-rings { display: flex; } }
 html.cx-focus .cx-rings { display: none !important; }
 .cx-rr { display: grid; justify-items: center; gap: 2px; }
 .cx-rri { position: relative; display: grid; place-items: center; width: 40px; height: 40px; }
@@ -2200,3 +2201,5 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .cx-part2[open] > summary small { display: none; }
 .cx-part2[open] { background: none; border-color: transparent; }
 .cx-part2[open] > summary { border-bottom: 1px solid rgba(var(--ink-rgb), .12); margin-bottom: 12px; }
+/* the practice toolkit now follows the notes, with its own heading */
+.cx-kit .cx-kith { grid-column: 1 / -1; margin: 0 0 4px; }

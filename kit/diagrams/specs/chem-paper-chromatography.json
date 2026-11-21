@@ -1,0 +1,109 @@
+{
+ "id": "chem-paper-chromatography",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Chromatography",
+ "title": "Paper chromatography",
+ "caption": "Spots of a food colouring and three known dyes are placed on a pencil baseline above the solvent. As the solvent rises it carries each dye a characteristic distance. The colouring contains dyes A and B (same Rf), but not C. Rf = distance moved by the spot ÷ distance moved by the solvent.",
+ "alt": "A paper chromatogram: the mixture lane has three spots; lanes A, B and C have one spot each; A and B match two of the mixture's spots.",
+ "description": [
+  "Mixture: spots at Rf 0.32, 0.61 and 0.83.",
+  "Dye A: one spot at 0.32. Dye B: 0.61. Dye C: 0.45, matching nothing in the mixture.",
+  "Rf for the B spot: 4.88 cm ÷ 8.0 cm = 0.61."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Chemical analysis and chromatography"
+  },
+  {
+   "course": "chemistry",
+   "unit": "u19",
+   "lesson": "Thin-layer chromatography"
+  }
+ ],
+ "kind": "paper",
+ "measure": [
+  2,
+  0
+ ],
+ "lanes": [
+  {
+   "label": "mixture",
+   "spots": [
+    {
+     "rf": 0.32,
+     "colour": "a3"
+    },
+    {
+     "rf": 0.61,
+     "colour": "a1"
+    },
+    {
+     "rf": 0.83,
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "label": "A",
+   "spots": [
+    {
+     "rf": 0.32,
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "spots": [
+    {
+     "rf": 0.61,
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "label": "C",
+   "spots": [
+    {
+     "rf": 0.45,
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "same",
+   "a": "mixture",
+   "b": "A",
+   "rf": 0.32
+  },
+  {
+   "type": "same",
+   "a": "mixture",
+   "b": "B",
+   "rf": 0.61
+  },
+  {
+   "type": "pure",
+   "lane": "C",
+   "pure": true
+  },
+  {
+   "type": "pure",
+   "lane": "mixture",
+   "pure": false
+  },
+  {
+   "type": "rf",
+   "lane": "B",
+   "distance": 4.88,
+   "front": 8.0,
+   "value": 0.61
+  }
+ ]
+}

@@ -48,7 +48,7 @@ export function parseNotes(text) {
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
     // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|CASE|LAW|DRUG):\s*(.*)$/) || line.match(TAG_LINE);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|D|EV|LV|CASE|LAW|DRUG):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -68,6 +68,8 @@ export function parseNotes(text) {
     else if (tag === "SRC") { const [cite, kind = "", date = "", url = ""] = body.split(" | ").map((x) => x.trim()); if (cite) L.sources.push({ cite, kind, date, url }); }
     else if (tag === "READ") L.reading.push(body);
     else if (tag === "IX") L.blocks.push({ t: "ix", id: body.trim() });
+    // a checked teaching diagram from the Visual Learning Engine (kit/diagrams/visual.js, docs/VISUAL-LEARNING-ENGINE.md)
+    else if (tag === "D") L.blocks.push({ t: "dg", id: body.trim() });
     else if (tag === "EV") { const [status, claim] = body.split(" | ").map((x) => x.trim()); if (status && claim) L.evidence.push({ status: status.toLowerCase(), claim }); }
     else if (tag === "LV") L.level = body.trim();
     else if (tag === "CASE") {
@@ -124,6 +126,7 @@ function block(b) {
   if (b.t === "safe") return `<div class="co-safe"><b>Competence and safety</b>${inline(b.x)}</div>`;
   if (b.t === "pit") return `<div class="mv-clin co-pit"><b>Common mistake</b>${inline(b.x)}</div>`;
   if (b.t === "ix") return `<div class="co-ixslot" data-ix="${esc(b.id)}"></div>`;
+  if (b.t === "dg") return `<figure class="vx" data-dg="${esc(b.id)}" hidden></figure>`;
   return "";
 }
 // the lesson as plain text, for saving to the learner's documents
@@ -135,7 +138,7 @@ export function lessonText(L) {
     else if (b.t === "eq") out.push(...b.rows.map(([x, n]) => `${x}${n ? `  (${n})` : ""}`));
     else if (b.t === "ex") out.push(`Example: ${b.x}`, ...b.steps.map((s, i) => `  ${i + 1}. ${s}`));
     else if (b.t === "pit") out.push(`Mistake to avoid: ${b.x}`);
-    else if (b.t === "ix") continue;
+    else if (b.t === "ix" || b.t === "dg") continue;
     else out.push(b.x);
   }
   return out.join("\n").replace(/\*\*|`|\^\{|_\{|\}/g, "");

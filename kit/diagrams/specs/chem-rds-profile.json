@@ -1,0 +1,58 @@
+{
+ "id": "chem-rds-profile",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Rate-determining steps",
+ "title": "The rate-determining step",
+ "caption": "In a two-step reaction the slower step is the one with the higher transition state. Here the first step is fast and the second slow, so the second step is rate-determining and the rate equation reflects the species in it.",
+ "alt": "Profile with two humps; the second is higher.",
+ "description": [
+  "Step 1: a low barrier, fast, forming the intermediate.",
+  "Step 2: the higher barrier, slow: rate-determining."
+ ],
+ "profiles": [
+  {
+   "title": "slow second step",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 40,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.28,
+     "e": 75,
+     "kind": "ts",
+     "label": "TS1"
+    },
+    {
+     "x": 0.5,
+     "e": 55,
+     "kind": "int",
+     "label": "intermediate"
+    },
+    {
+     "x": 0.72,
+     "e": 125,
+     "kind": "ts",
+     "label": "TS2"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 2,
+    "int": 1,
+    "rds": 2,
+    "dh": "exothermic"
+   }
+  }
+ ]
+}

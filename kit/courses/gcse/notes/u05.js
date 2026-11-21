@@ -8,6 +8,7 @@ O: Use atomic and mass numbers to work out numbers of particles
 O: Calculate relative atomic mass from isotope abundances
 H: Inside the atom
 P: An atom has a tiny central **nucleus** containing **protons** and **neutrons**, surrounded by **electrons** in shells (energy levels). Atoms are about 0.1 nm across, and the nucleus is around 10,000 times smaller than the atom, yet it contains almost all the mass. Atoms have no overall charge because the number of electrons equals the number of protons.
+D: chem-isotopes-chlorine
 H: Subatomic particles
 - **Proton**: relative mass 1, relative charge +1, in the nucleus.
 - **Neutron**: relative mass 1, charge 0, in the nucleus.
@@ -51,6 +52,7 @@ O: Explain how the alpha scattering experiment changed the model
 O: Evaluate how scientific models change in response to evidence
 H: Early models
 P: In the early 1800s, **John Dalton** described atoms as tiny solid spheres that could not be divided. In 1897, **J. J. Thomson** discovered the **electron**, showing atoms contained smaller charged particles. His **plum pudding model** pictured a ball of positive charge with negative electrons embedded in it. Each model explained the evidence available at the time.
+D: chem-atom-structure
 H: The nuclear model
 - In 1909, **Geiger and Marsden**, working with **Ernest Rutherford**, fired alpha particles at thin gold foil.
 - Most passed straight through, but a few were deflected through large angles and some bounced back.
@@ -95,6 +97,7 @@ O: Explain Mendeleev's contribution to the modern table
 O: Explain trends in reactivity in Groups 1 and 7
 H: Arrangement
 P: The modern periodic table arranges elements in order of **atomic number**. **Rows** are called **periods** and **columns** are **groups**. Elements in the same group have the same number of electrons in their outer shell, so they have similar chemical properties. Metals are on the left and in the centre; non-metals are on the right. In 1869, **Dmitri Mendeleev** arranged elements by atomic weight but left gaps for undiscovered elements and predicted their properties; elements such as gallium and germanium were later found to fit.
+D: chem-table-periods-groups
 H: Groups 1 and 0
 - **Group 1**, the **alkali metals**, have one outer electron.
 - They react with water to form a metal hydroxide and hydrogen.
@@ -139,6 +142,7 @@ O: Predict the type of bonding between elements
 O: Represent bonding using dot and cross diagrams
 H: Ionic bonding
 P: **Ionic bonding** occurs between **metals and non-metals**. Metal atoms **lose** electrons to form positive ions; non-metal atoms **gain** electrons to form negative ions, so both achieve full outer shells. The oppositely charged ions are held together by strong **electrostatic forces** in a giant lattice. For example, sodium loses one electron to form Na⁺ and chlorine gains one to form Cl⁻, giving sodium chloride.
+D: chem-ionic-nacl
 H: Covalent bonding
 - **Covalent bonding** occurs between **non-metal atoms**.
 - Atoms **share pairs of electrons** to complete their outer shells.
@@ -181,6 +185,7 @@ O: Explain the properties of giant covalent structures, including forms of carbo
 O: Explain the properties of metals and alloys
 H: Ionic and simple molecular substances
 P: **Ionic compounds** have high melting and boiling points because strong electrostatic forces act in all directions in the lattice. They conduct electricity when **melted or dissolved**, because the ions can move, but not when solid. **Small molecules**, such as water and carbon dioxide, have low melting and boiling points because only weak **intermolecular forces** must be overcome, not the covalent bonds. They do not conduct electricity because they have no overall charge.
+D: chem-states-of-matter
 H: Giant covalent structures and carbon
 - **Diamond**: each carbon forms four covalent bonds; very hard with a very high melting point; does not conduct.
 - **Graphite**: each carbon forms three bonds in layers; layers slide, making it soft and slippery; delocalised electrons let it conduct.
@@ -224,6 +229,7 @@ O: Balance symbol equations
 O: Calculate relative formula masses
 H: Conservation of mass
 P: The **law of conservation of mass** states that no atoms are lost or made during a chemical reaction, so the **mass of the products equals the mass of the reactants**. If a reaction appears to change mass, a gas is usually involved: mass may seem to **increase** when a gas, such as oxygen, is taken in, or **decrease** when a gas, such as carbon dioxide, escapes from an open container.
+D: chem-equation-particles
 H: Balancing equations
 - Symbol equations show the formulae of reactants and products.
 - Balance by placing **numbers in front** of formulae, never by changing the formulae.
@@ -266,6 +272,7 @@ O: Calculate moles from mass and use them in reacting masses
 O: Calculate the concentration of solutions
 H: The mole
 P: A **mole** is the amount of substance containing **6.02 × 10²³** particles, the **Avogadro constant**. One mole of a substance has a mass in grams equal to its relative formula mass: for example, one mole of carbon (Ar 12) has a mass of 12 g, and one mole of water (Mr 18) has a mass of 18 g. The key equation is: **moles = mass (g) ÷ Mr**.
+D: chem-concentration
 H: Reacting masses
 - Balanced equations show the ratio of moles that react.
 - To find a product mass: calculate moles of a reactant, use the ratio from the equation, then multiply by the product's Mr.
@@ -308,6 +315,7 @@ O: Define oxidation and reduction in terms of oxygen
 O: Explain how metals are extracted using carbon or electrolysis
 H: The reactivity series
 P: The **reactivity series** lists metals in order of how readily they react, for example: potassium, sodium, lithium, calcium, magnesium, (carbon), zinc, iron, (hydrogen), copper, silver, gold. More reactive metals lose electrons more easily to form positive ions. A more reactive metal will **displace** a less reactive metal from a solution of its compound: magnesium placed in copper sulfate solution becomes coated in copper.
+D: chem-metal-reducing
 H: Oxidation and reduction
 - **Oxidation** is the gain of oxygen; **reduction** is the loss of oxygen.
 - Higher tier: oxidation is loss of electrons, and reduction is gain of electrons ("OIL RIG").
@@ -350,6 +358,7 @@ O: Write word equations for reactions of acids
 O: Describe how to prepare a pure, dry soluble salt
 H: Acids, alkalis and pH
 P: The **pH scale** runs from 0 to 14. Solutions with pH below 7 are **acidic**, pH 7 is **neutral** and above 7 is **alkaline**. Acids produce **hydrogen ions (H⁺)** in water; alkalis produce **hydroxide ions (OH⁻)**. pH can be measured with universal indicator or a pH probe. In **neutralisation**, hydrogen ions react with hydroxide ions to form water: H⁺ + OH⁻ → H₂O.
+D: chem-ph-scale
 H: Reactions of acids
 - Acid + metal → salt + hydrogen.
 - Acid + metal oxide or hydroxide → salt + water.
@@ -394,6 +403,7 @@ O: Predict the products of electrolysis of molten and aqueous electrolytes
 O: Describe industrial uses of electrolysis
 H: How electrolysis works
 P: In **electrolysis**, an electric current is passed through an **electrolyte**, an ionic compound that is molten or dissolved so its ions can move. **Positive ions** (cations) move to the **negative electrode** (cathode), where they gain electrons. **Negative ions** (anions) move to the **positive electrode** (anode), where they lose electrons. For example, molten lead bromide forms lead at the cathode and bromine at the anode.
+D: chem-electrolysis-brine
 H: Aqueous solutions
 - Water provides H⁺ and OH⁻ ions, so products can differ.
 - At the **cathode**, hydrogen forms if the metal is more reactive than hydrogen; otherwise the metal forms.
@@ -436,6 +446,7 @@ O: Interpret reaction profiles
 O: Calculate energy changes from bond energies
 H: Energy transfers
 P: Energy is conserved in reactions. In an **exothermic** reaction, energy is transferred **to** the surroundings, so the temperature rises; examples include combustion, neutralisation and most oxidation reactions. In an **endothermic** reaction, energy is taken **in** from the surroundings, so the temperature falls; examples include thermal decomposition and the reaction of citric acid with sodium hydrogencarbonate. Exothermic reactions are used in hand warmers and self-heating cans; endothermic reactions in some sports injury packs.
+D: chem-exo-endo-profiles
 H: Reaction profiles
 - A **reaction profile** shows the energy of reactants and products.
 - In exothermic reactions, products are **lower** in energy than reactants.
@@ -478,6 +489,7 @@ O: Describe the factors that affect rates of reaction
 O: Explain these effects using collision theory
 H: Measuring rate
 P: The **rate of reaction** is how quickly reactants are used up or products are formed. **Mean rate** = quantity of reactant used or product formed ÷ time taken. Rates can be measured by recording the volume of gas produced, the loss in mass as gas escapes, or the time for a solution to turn cloudy. On a graph of product against time, the **gradient** shows the rate; a steeper line means a faster reaction, and the line levels off when the reaction stops.
+D: chem-rate-curve
 H: Factors affecting rate
 - **Temperature**: higher temperature increases rate.
 - **Concentration** of solutions, or **pressure** of gases: higher increases rate.
@@ -520,6 +532,7 @@ O: Explain dynamic equilibrium
 O: Predict the effect of changing conditions on an equilibrium
 H: Reversible reactions
 P: In a **reversible reaction**, the products can react to form the original reactants, shown by the symbol ⇌. For example, heating blue **hydrated copper sulfate** produces white anhydrous copper sulfate and water; adding water reverses the change. If a reaction is exothermic in one direction, it is **endothermic** by the same amount in the other. Ammonium chloride decomposing on heating and re-forming on cooling is another example.
+D: chem-dynamic-equilibrium
 H: Dynamic equilibrium
 - In a **closed system**, a reversible reaction reaches **equilibrium**.
 - At equilibrium, the forward and reverse reactions happen at the **same rate**.
@@ -563,6 +576,7 @@ O: Explain how fractional distillation separates crude oil
 O: Explain why and how long hydrocarbons are cracked
 H: Crude oil and alkanes
 P: **Crude oil** is a finite resource formed over millions of years from the remains of ancient marine organisms, mainly plankton, buried in mud. It is a mixture of many **hydrocarbons**, compounds of hydrogen and carbon only. Most are **alkanes**, with the general formula **CₙH₂ₙ₊₂**. The first four are methane (CH₄), ethane (C₂H₆), propane (C₃H₈) and butane (C₄H₁₀). Alkanes are **saturated**: they contain only single carbon–carbon bonds.
+D: chem-fractionating-column
 H: Fractional distillation
 - Crude oil is heated until most of it evaporates, and the vapour enters a **fractionating column**.
 - The column is hot at the bottom and cooler at the top.
@@ -607,6 +621,7 @@ O: Describe how to carry out paper chromatography
 O: Calculate and interpret Rf values
 H: Purity and formulations
 P: In chemistry, a **pure substance** is a single element or compound, not mixed with any other substance. Pure substances melt and boil at **specific temperatures**; impure substances melt and boil over a **range** of temperatures. In everyday language, "pure" often just means natural or unprocessed, as in "pure orange juice". A **formulation** is a mixture designed as a useful product, with measured quantities of each component; examples include paints, medicines, fuels and cleaning agents.
+D: chem-paper-chromatography
 H: Paper chromatography
 - Draw a **pencil** start line on chromatography paper and add spots of the samples.
 - Stand the paper in a **solvent** below the line, and cover the container.
@@ -692,6 +707,7 @@ O: Explain the greenhouse effect and human contributions to climate change
 O: Describe the causes and effects of atmospheric pollutants
 H: The evolving atmosphere
 P: Today's atmosphere is about **80% nitrogen** and **20% oxygen**, with small amounts of argon, carbon dioxide and water vapour. The early atmosphere, formed by volcanic activity, was probably mainly **carbon dioxide**, with water vapour that condensed to form the oceans. Carbon dioxide decreased as it **dissolved in oceans**, formed **carbonate rocks** and fossil fuels, and was used by **algae and plants** in photosynthesis. Photosynthesis produced the **oxygen**, which built up over about 2.7 billion years.
+D: chem-keeling
 H: Greenhouse gases and climate change
 - **Greenhouse gases**, such as carbon dioxide, methane and water vapour, absorb long-wavelength infrared radiation from the Earth's surface.
 - This keeps the Earth warm enough for life.
@@ -737,6 +753,7 @@ O: Describe how waste water is treated
 O: Carry out and evaluate simple life cycle assessments
 H: Potable water
 P: **Potable water** is water that is safe to drink. It is not pure in the chemical sense, because it contains dissolved substances, but it has low levels of salts and microbes. In the UK, **fresh water** from rain, rivers, lakes and aquifers is treated by **filtering** through beds to remove solids, then **sterilising** with chlorine, ozone or ultraviolet light. Where fresh water is scarce, **desalination** of sea water by **distillation** or **reverse osmosis** is used, but it requires large amounts of energy.
+D: chem-water-treatment
 H: Waste water treatment
 - Sewage and agricultural and industrial waste water must be treated before release.
 - **Screening** and grit removal take out large objects.

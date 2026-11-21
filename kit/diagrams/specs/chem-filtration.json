@@ -1,0 +1,18 @@
+{
+ "id": "chem-filtration",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Filtration",
+ "title": "Gravity and suction filtration",
+ "caption": "Gravity filtration through folded paper separates an insoluble solid from a solution when the liquid is wanted. Büchner (suction) filtration is faster and dries the solid well, so it is used when the crystals are the product.",
+ "alt": "A filter funnel with filter paper over a flask, and a Büchner funnel on a side-arm flask connected to a vacuum.",
+ "description": [
+  "Gravity filtration: residue in the paper, filtrate below.",
+  "Büchner filtration: crystals on the flat paper, liquid pulled into the flask by vacuum."
+ ],
+ "kind": "filtration",
+ "residue": "sand",
+ "filtrate": "salt solution",
+ "insoluble": "sand"
+}
