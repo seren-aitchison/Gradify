@@ -1,0 +1,32 @@
+{
+ "id": "phys-u01-collision-energy",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Conservation laws",
+ "title": "Where the kinetic energy goes when trolleys stick",
+ "caption": "Momentum is conserved (2 × 3 = 3 × 2), so the joined trolleys move at 2.0 m s⁻¹. Energy is conserved too, but not as kinetic energy: of the 9.0 J before, 6.0 J is still kinetic and 3.0 J becomes heat and sound.",
+ "alt": "Energy flow diagram: 9.0 J of kinetic energy before the collision splits into 6.0 J of kinetic energy after and 3.0 J of heat and sound.",
+ "description": [
+  "Before: a 2 kg trolley at 3 m s⁻¹ has kinetic energy ½ × 2 × 3² = 9.0 J; the 1 kg trolley is at rest.",
+  "Momentum: 2 × 3 = 3.0 v, so v = 2.0 m s⁻¹ after they stick.",
+  "After: ½ × 3 × 2² = 6.0 J of kinetic energy, the band that carries straight on.",
+  "The other 3.0 J turns down as heat and sound. The widths add up: energy is conserved even though kinetic energy is not."
+ ],
+ "units": "J",
+ "input": {
+  "label": "kinetic energy before",
+  "value": 9
+ },
+ "outputs": [
+  {
+   "label": "kinetic energy after",
+   "value": 6,
+   "useful": true
+  },
+  {
+   "label": "heat and sound",
+   "value": 3
+  }
+ ]
+}

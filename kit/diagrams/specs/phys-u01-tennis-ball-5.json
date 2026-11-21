@@ -1,0 +1,53 @@
+{
+ "id": "phys-u01-tennis-ball-5",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Idealisation and simplifying assumptions",
+ "title": "Tennis ball falling at 5 m s⁻¹",
+ "caption": "At 5 m s⁻¹ the drag on a 0.06 kg tennis ball is 0.025 N against a weight of 0.59 N: a ratio of about 4%. Neglecting air resistance is a controlled approximation here, fine for a rough model.",
+ "alt": "Free-body diagram of a falling tennis ball: weight 0.59 N down and drag 0.025 N up.",
+ "description": [
+  "The ball is shown as a box. Its weight, mg = 0.06 × 9.81 = 0.59 N, acts straight down.",
+  "Drag acts upward, against the motion: ½ρC_dAv² = ½ × 1.2 × 0.5 × 0.0034 × 5² = 0.025 N, drawn to the same scale.",
+  "Drag ÷ weight = 4.3%; the net force is 0.56 N downward."
+ ],
+ "mode": "body",
+ "units": "N",
+ "showResultant": true,
+ "vectors": [
+  {
+   "label": "mg",
+   "mag": 0.5886,
+   "angle": 270,
+   "source": "Earth's gravity",
+   "text": "0.59 N, down"
+  },
+  {
+   "label": "drag",
+   "mag": 0.0255,
+   "angle": 90,
+   "colour": "a2",
+   "source": "air resistance, opposing the motion",
+   "text": "0.025 N, up"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 0.5631,
+  "angle": 270,
+  "text": "0.56 N, down"
+ },
+ "notes": [
+  "drag ÷ weight ≈ 4%: neglect it for a rough model"
+ ],
+ "claims": [
+  {
+   "type": "ratio",
+   "a": "drag",
+   "b": "mg",
+   "value": 0.043,
+   "name": "drag ÷ weight = 0.043 from ½ρC_dAv² and mg"
+  }
+ ]
+}

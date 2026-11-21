@@ -1,0 +1,122 @@
+{
+ "id": "phys-u01-si-prefixes",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Unit conversions and prefixes",
+ "title": "SI prefixes: a step of 10³ each",
+ "caption": "The SI prefixes step by factors of 1000, from quecto (10⁻³⁰) to quetta (10³⁰). Moving one prefix along multiplies or divides by 10³, so 1 km = 10³ m and 1 μm = 10⁻⁶ m. Centi, deci and hecto break the pattern and are left off.",
+ "alt": "A logarithmic scale from 10^-30 to 10^30 with each SI prefix from quecto to quetta marked at its power of ten.",
+ "description": [
+  "A logarithmic scale of the multiplying factor, from 10⁻³⁰ to 10³⁰.",
+  "Below 1: milli 10⁻³, micro 10⁻⁶, nano 10⁻⁹, pico 10⁻¹², femto 10⁻¹⁵, atto 10⁻¹⁸, zepto 10⁻²¹, yocto 10⁻²⁴, ronto 10⁻²⁷, quecto 10⁻³⁰.",
+  "Above 1: kilo 10³, mega 10⁶, giga 10⁹, tera 10¹², peta 10¹⁵, exa 10¹⁸, zetta 10²¹, yotta 10²⁴, ronna 10²⁷, quetta 10³⁰.",
+  "Each prefix is 1000 times the one before it."
+ ],
+ "kind": "prefix",
+ "quantity": "factor",
+ "min": -30,
+ "max": 30,
+ "markers": [
+  {
+   "label": "quecto (q)",
+   "prefix": "quecto",
+   "value": 1e-30
+  },
+  {
+   "label": "ronto (r)",
+   "prefix": "ronto",
+   "value": 1e-27
+  },
+  {
+   "label": "yocto (y)",
+   "prefix": "yocto",
+   "value": 1.0000000000000001e-24
+  },
+  {
+   "label": "zepto (z)",
+   "prefix": "zepto",
+   "value": 1.0000000000000001e-21
+  },
+  {
+   "label": "atto (a)",
+   "prefix": "atto",
+   "value": 1e-18
+  },
+  {
+   "label": "femto (f)",
+   "prefix": "femto",
+   "value": 1e-15
+  },
+  {
+   "label": "pico (p)",
+   "prefix": "pico",
+   "value": 1e-12
+  },
+  {
+   "label": "nano (n)",
+   "prefix": "nano",
+   "value": 1e-9
+  },
+  {
+   "label": "micro (μ)",
+   "prefix": "micro",
+   "value": 0.000001
+  },
+  {
+   "label": "milli (m)",
+   "prefix": "milli",
+   "value": 0.001
+  },
+  {
+   "label": "kilo (k)",
+   "prefix": "kilo",
+   "value": 1000
+  },
+  {
+   "label": "mega (M)",
+   "prefix": "mega",
+   "value": 1000000
+  },
+  {
+   "label": "giga (G)",
+   "prefix": "giga",
+   "value": 1000000000
+  },
+  {
+   "label": "tera (T)",
+   "prefix": "tera",
+   "value": 1000000000000
+  },
+  {
+   "label": "peta (P)",
+   "prefix": "peta",
+   "value": 1000000000000000
+  },
+  {
+   "label": "exa (E)",
+   "prefix": "exa",
+   "value": 1000000000000000000
+  },
+  {
+   "label": "zetta (Z)",
+   "prefix": "zetta",
+   "value": 1e+21
+  },
+  {
+   "label": "yotta (Y)",
+   "prefix": "yotta",
+   "value": 1e+24
+  },
+  {
+   "label": "ronna (R)",
+   "prefix": "ronna",
+   "value": 1e+27
+  },
+  {
+   "label": "quetta (Q)",
+   "prefix": "quetta",
+   "value": 1e+30
+  }
+ ]
+}
