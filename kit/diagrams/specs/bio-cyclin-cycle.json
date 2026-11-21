@@ -1,0 +1,169 @@
+{
+ "id": "bio-cyclin-cycle",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Cell-cycle regulation",
+ "title": "Cyclins rise and fall, driving the cycle",
+ "caption": "A CDK is active only when bound to a cyclin. CDK levels stay steady, but each cyclin builds up before the phase it drives, switches on its CDK, and is then destroyed, which resets the cycle. Different cyclin–CDK complexes control G₁/S, S and M.",
+ "alt": "Three bell-shaped curves of cyclin level peaking in late G1, in S phase and at the start of M, over a flat line for constant CDK, against bands for the phases of the cell cycle.",
+ "description": [
+  "CDK level: steady all through the cycle.",
+  "G₁/S cyclin: peaks at the end of G₁, driving entry to S phase.",
+  "S cyclin: peaks in S phase.",
+  "M cyclin: peaks at the start of M, then is destroyed so the cycle resets."
+ ],
+ "range": {
+  "x": [
+   0,
+   36
+  ],
+  "y": [
+   -0.3,
+   1.9
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time through one cell cycle",
+  "relative level"
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    10
+   ],
+   "label": "G₁",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    10,
+    18
+   ],
+   "label": "S",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    18,
+    26
+   ],
+   "label": "G₂",
+   "colour": "a5"
+  },
+  {
+   "x": [
+    26,
+    30
+   ],
+   "label": "M",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    30,
+    36
+   ],
+   "label": "G₁",
+   "colour": "a1"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "0.4",
+   "colour": "a5",
+   "dash": "6 5",
+   "width": 2.4
+  },
+  {
+   "expr": "exp(-(x-9)^2/(2*1.6^2))",
+   "colour": "a1"
+  },
+  {
+   "expr": "exp(-(x-14)^2/(2*2^2))",
+   "colour": "a4"
+  },
+  {
+   "expr": "exp(-(x-27)^2/(2*1.8^2))",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "CDK (steady)",
+   "a5",
+   "6 5"
+  ],
+  [
+   "G₁/S cyclin",
+   "a1"
+  ],
+  [
+   "S cyclin",
+   "a4"
+  ],
+  [
+   "M cyclin",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  3,
+  1.84
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "exp(-(x-9)^2/(2*1.6^2))",
+   "domain": [
+    0,
+    36
+   ],
+   "x": 9,
+   "y": 1,
+   "name": "G₁/S cyclin peaks at the end of G₁"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-14)^2/(2*2^2))",
+   "domain": [
+    0,
+    36
+   ],
+   "x": 14,
+   "y": 1,
+   "name": "S cyclin peaks in S phase"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-27)^2/(2*1.8^2))",
+   "domain": [
+    0,
+    36
+   ],
+   "x": 27,
+   "y": 1,
+   "name": "M cyclin peaks as the cell enters M"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-(x-27)^2/(2*1.8^2))",
+   "x": 34,
+   "between": [
+    0,
+    0.01
+   ],
+   "name": "M cyclin has been destroyed by the next G₁"
+  }
+ ]
+}

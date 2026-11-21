@@ -15,6 +15,8 @@
 //   codontable the standard genetic code: 64 codons, 61 sense, 3 stop, start AUG, degeneracy claims
 //   density    Meselson–Stahl density bands: each copying model's bands are worked out and compared with what was seen
 //   crossover  a crossover between linked genes: which chromatids are parental and which recombinant
+//   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
+//   layers     the three germ layers and what each becomes, each tissue checked against the layer it comes from
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
 // decision-tree renderers instead.
 import { register, RENDERERS, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
@@ -931,6 +933,120 @@ function crossoverChecks(spec) {
   return out;
 }
 
+// ======================================================================== ploidy
+// Mitosis and meiosis from the same parent cell, with the chromosomes worked out, not drawn by hand.
+// spec: pairs: 2 (homologous pairs, so 2n = 2 × pairs), crossover: true | false (one crossover in the first pair during meiosis),
+//   claims: [{type: "cells", process, value} | {type: "chromosomes", process, value} | {type: "identical", process, value: true | false}
+//            | {type: "divisions", process, value}]
+// A chromosome is a string of two letters, the origin (m = maternal, p = paternal) of its top and bottom halves.
+export function divide(process, pairs, crossover) {
+  const parent = []; // after S phase: every chromosome is two identical chromatids
+  for (let i = 0; i < pairs; i++) parent.push({ pair: i, chroms: ["mm", "pp"] });
+  const homologues = parent.flatMap((p) => p.chroms);
+  if (process === "mitosis") return { divisions: 1, cells: [homologues.slice(), homologues.slice()] };
+  // meiosis I separates the homologues (all maternal to one pole, all paternal to the other: one orientation);
+  // meiosis II separates the sister chromatids. A crossover in pair 0 swaps the bottom halves of one chromatid of each homologue.
+  const cellsI = [parent.map(() => "mm"), parent.map(() => "pp")];
+  const out = [];
+  cellsI.forEach((cell, k) => {
+    const sisters = [cell.slice(), cell.slice()];
+    if (crossover) { sisters[0][0] = k === 0 ? "mm" : "pp"; sisters[1][0] = k === 0 ? "mp" : "pm"; }
+    out.push(...sisters);
+  });
+  return { divisions: 2, cells: out };
+}
+const sig = (cell) => [...cell].sort().join("|");
+function chromRod(x, y, c, w = 6, h = 24) {
+  const col = (o) => (o === "m" ? C.a1 : C.a2);
+  return rect(x - w / 2, y - h / 2, w, h / 2, { fill: col(c[0]), op: 0.9, stroke: "none", rx: 2 }) + rect(x - w / 2, y, w, h / 2, { fill: col(c[1]), op: 0.9, stroke: "none", rx: 2 });
+}
+function drawCell(cx, cy, chroms, doubled) {
+  const r = 34, n = chroms.length, gap = Math.min(15, (2 * r - 20) / Math.max(1, n));
+  let s = `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${r}" fill="${C.panel}" stroke="${C.line}" stroke-width="2"/>`;
+  chroms.forEach((c, i) => {
+    const x = cx + (i - (n - 1) / 2) * gap * (doubled ? 1.5 : 1);
+    s += doubled ? chromRod(x - 3.5, cy, c, 5, 24) + chromRod(x + 3.5, cy, c, 5, 24) : chromRod(x, cy, c);
+  });
+  return s;
+}
+function ploidyDraw(spec, W, narrow) {
+  const pairs = spec.pairs || 2, procs = ["mitosis", "meiosis"], rowH = narrow ? 210 : 150;
+  let s = "";
+  procs.forEach((p, ri) => {
+    const R = divide(p, pairs, !!spec.crossover), y0 = 14 + ri * rowH, parent = R.cells.length ? [].concat(...Array.from({ length: pairs }, () => ["mm", "pp"])) : [];
+    const lab = p === "mitosis" ? ["mitosis", "one division"] : ["meiosis", "two divisions"];
+    if (narrow) {
+      s += text(10, y0 + 6, lab[0], { size: 15, weight: 800, anchor: "start", fill: p === "mitosis" ? C.a1 : C.a2 }) + text(10 + lab[0].length * 9.5 + 10, y0 + 6, lab[1], { size: 12, anchor: "start", fill: C.soft });
+      s += drawCell(52, y0 + 56, parent, true) + text(52, y0 + 104, `2n = ${2 * pairs}, copied`, { size: 11, fill: C.soft });
+      s += arrow(96, y0 + 56, 130, y0 + 56, { w: 2, head: 9 });
+      const k = R.cells.length, sx = (W - 150) / k;
+      R.cells.forEach((cell, i) => { const cx = 150 + sx * (i + 0.5) - (k === 4 ? 6 : 0); s += drawCell(cx, y0 + 56, cell, false).replace(/r="34"/, 'r="' + (k === 4 ? 27 : 30) + '"'); s += text(cx, y0 + 104, p === "mitosis" ? `2n = ${cell.length}` : `n = ${cell.length}`, { size: 11, fill: C.soft }); });
+    } else {
+      s += text(10, y0 + 52, lab[0], { size: 16, weight: 800, anchor: "start", fill: p === "mitosis" ? C.a1 : C.a2 }) + text(10, y0 + 72, lab[1], { size: 12, anchor: "start", fill: C.soft });
+      s += drawCell(190, y0 + 56, parent, true) + text(190, y0 + 106, `2n = ${2 * pairs}, after S phase`, { size: 11.5, fill: C.soft });
+      s += arrow(240, y0 + 56, 300, y0 + 56, { w: 2, head: 10 });
+      const k = R.cells.length;
+      R.cells.forEach((cell, i) => { const cx = 360 + i * 92; s += drawCell(cx, y0 + 56, cell, false) + text(cx, y0 + 106, p === "mitosis" ? `2n = ${cell.length}` : `n = ${cell.length}`, { size: 11.5, fill: C.soft }); });
+    }
+  });
+  const ky = 14 + 2 * rowH - 4;
+  s += rect(10, ky - 6, 12, 12, { fill: C.a1, op: 0.9, stroke: "none", rx: 2 }) + text(28, ky, "maternal", { size: 12, anchor: "start" }) + rect(100, ky - 6, 12, 12, { fill: C.a2, op: 0.9, stroke: "none", rx: 2 }) + text(118, ky, "paternal", { size: 12, anchor: "start" });
+  if (spec.crossover) { if (narrow) { s += text(10, ky + 22, "a two-coloured chromosome has crossed over", { size: 12, anchor: "start", fill: C.soft }); return { s, H: ky + 40 }; } s += text(190, ky, "a two-coloured chromosome is one that crossed over", { size: 12, anchor: "start", fill: C.soft }); }
+  return { s, H: ky + 18 };
+}
+function ploidyChecks(spec) {
+  const out = [], pairs = spec.pairs || 2, M = divide("mitosis", pairs, false), E = divide("meiosis", pairs, !!spec.crossover);
+  const parentSig = sig(Array.from({ length: pairs }, () => ["mm", "pp"]).flat());
+  out.push(check("mitosis: both daughters have the parent's full diploid set, so they are identical to it and to each other", M.cells.length === 2 && M.cells.every((c) => sig(c) === parentSig)));
+  out.push(check(`meiosis: four cells, each with half the chromosomes (n = ${pairs}), one from each homologous pair`, E.cells.length === 4 && E.cells.every((c) => c.length === pairs)));
+  out.push(check("meiosis: the cells are genetically different from the parent", E.cells.every((c) => sig(c) !== parentSig)));
+  const distinct = new Set(E.cells.map(sig)).size;
+  out.push(check(`meiosis: ${spec.crossover ? "with a crossover all four cells differ from each other" : "without crossing over the cells come in identical pairs"}`, spec.crossover ? distinct === 4 : distinct < 4, `${distinct} different cells`));
+  for (const c of spec.claims || []) {
+    const R = divide(c.process, pairs, !!spec.crossover);
+    if (c.type === "cells") out.push(check(`${c.process} gives ${c.value} cells`, R.cells.length === c.value, `${R.cells.length}`));
+    if (c.type === "divisions") out.push(check(`${c.process} has ${c.value} division${c.value > 1 ? "s" : ""}`, R.divisions === c.value, `${R.divisions}`));
+    if (c.type === "chromosomes") out.push(check(`each ${c.process} product has ${c.value} chromosomes`, R.cells.every((x) => x.length === c.value), `${R.cells[0].length}`));
+  }
+  return out;
+}
+
+// ======================================================================== layers
+// The three germ layers of a gastrula and what each becomes.
+// spec: layers: [{name: "ectoderm" | "mesoderm" | "endoderm", items: [...]}], every item is checked against the table below.
+export const GERM = {
+  ectoderm: ["epidermis of the skin", "nervous system", "brain", "spinal cord"],
+  mesoderm: ["muscle", "bone", "blood", "heart", "kidneys", "gonads"],
+  endoderm: ["lining of the gut", "lining of the respiratory tract", "liver", "pancreas"],
+};
+function layersDraw(spec, W, narrow) {
+  const tone = { ectoderm: "a1", mesoderm: "a3", endoderm: "a4" }, ring = { ectoderm: 1, mesoderm: 0.68, endoderm: 0.38 };
+  const R = narrow ? 84 : 100, cx = narrow ? W / 2 : 14 + R, cy = (narrow ? 8 : 10) + R;
+  let s = "";
+  for (const L of spec.layers) s += `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(R * ring[L.name])}" fill="${C[tone[L.name]]}" fill-opacity="0.22" stroke="${C[tone[L.name]]}" stroke-width="2.4"/>`;
+  s += text(cx, cy, "gut cavity", { size: 11.5, fill: C.soft });
+  let y = narrow ? cy + R + 26 : 14;
+  const tx = narrow ? 10 : 2 * R + 56, tw = narrow ? W - 20 : W - tx - 10;
+  for (const L of spec.layers) {
+    const c = C[tone[L.name]];
+    s += rect(tx, y - 2, 14, 14, { fill: c, op: 0.3, stroke: c, sw: 2, rx: 4 }) + text(tx + 22, y + 5, `${L.name} (${L.position})`, { size: 14, weight: 800, anchor: "start", fill: c });
+    const tb = textBlock(tx + 22, 0, L.items.join(", "), Math.floor((tw - 22) / 6.8), { size: 12.5, anchor: "start" });
+    s += `<g transform="translate(0 ${f1(y + 26 + ((tb.lines - 1) * 16) / 2)})">${tb.svg}</g>`;
+    y += 36 + tb.lines * 16 + 12;
+  }
+  return { s, H: Math.max(y, 2 * R + 24) };
+}
+function layersChecks(spec) {
+  const out = [check("the embryo has three germ layers: it is triploblastic", spec.layers.length === 3 && new Set(spec.layers.map((l) => l.name)).size === 3)];
+  for (const L of spec.layers) {
+    const bad = L.items.filter((i) => !(GERM[L.name] || []).includes(i));
+    out.push(check(`everything listed under ${L.name} develops from the ${L.name}`, !bad.length, bad.length ? `not from ${L.name}: ${bad.join(", ")}` : `${L.items.length} tissues`));
+  }
+  const all = spec.layers.flatMap((l) => l.items);
+  out.push(check("no tissue is listed under two layers", new Set(all).size === all.length));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -945,4 +1061,6 @@ register({
   codontable: { draw: codontableDraw, checks: codontableChecks, widths: [720, 380] },
   density: { draw: densityDraw, checks: densityChecks, widths: [700, 380] },
   crossover: { draw: crossoverDraw, checks: crossoverChecks, widths: [700, 380] },
+  ploidy: { draw: ploidyDraw, checks: ploidyChecks, widths: [700, 380] },
+  layers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
 });

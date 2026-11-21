@@ -1,0 +1,65 @@
+{
+ "id": "bio-cell-cycle",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Cell cycle",
+ "title": "The cell cycle and its checkpoints",
+ "caption": "Interphase (G₁, S and G₂) takes up most of the cycle, and M phase is mitosis and cytokinesis. The cycle can pause at three checkpoints, in G₁, G₂ and at metaphase, until problems are fixed. Cells that stop dividing leave for G₀.",
+ "alt": "A cycle of four boxes, G1, S, G2 and M, with arrows between them labelled with the G1 and G2 checkpoints and the daughter cells that start the next G1.",
+ "description": [
+  "G₁: the cell grows and carries out its normal functions; the G₁ checkpoint checks size, nutrients, growth signals and DNA damage before S phase.",
+  "S: DNA is replicated; DNA content doubles from 2C to 4C.",
+  "G₂: the cell makes proteins for division and the G₂ checkpoint checks the DNA has been copied correctly.",
+  "M: mitosis, with the spindle checkpoint at metaphase, then cytokinesis; two identical daughter cells return to 2C.",
+  "A typical cycle in cultured human cells takes about 24 hours."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u05",
+   "lesson": "Checkpoints"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "g1",
+   "label": "G₁",
+   "sub": "growth and normal function. G₁ checkpoint: size, nutrients, growth signals, DNA damage",
+   "tone": "a1"
+  },
+  {
+   "id": "s",
+   "label": "S",
+   "sub": "DNA replicated: 2C to 4C",
+   "tone": "a4"
+  },
+  {
+   "id": "g2",
+   "label": "G₂",
+   "sub": "prepares for division. G₂ checkpoint: DNA fully and correctly copied",
+   "tone": "a5"
+  },
+  {
+   "id": "m",
+   "label": "M",
+   "sub": "mitosis (spindle checkpoint at metaphase), then cytokinesis. Two identical 2C cells start G₁ again, or leave for G₀",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "g1",
+   "to": "s"
+  },
+  {
+   "from": "s",
+   "to": "g2"
+  },
+  {
+   "from": "g2",
+   "to": "m"
+  }
+ ]
+}

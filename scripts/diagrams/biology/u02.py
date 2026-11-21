@@ -203,7 +203,7 @@ mk("u02-26", "bio-stem-cell-potency", "lineage", "Potency narrows as cells speci
    "Following one line of descent from the zygote to a red blood cell, each cell can make fewer kinds of cell than the one before. Bone marrow transplants use the multipotent haematopoietic stem cells; induced pluripotent stem cells are adult cells turned back to the pluripotent stage.",
    "Five boxes in order: zygote (totipotent), inner cell mass (pluripotent), haematopoietic stem cell (multipotent), erythroid progenitor (unipotent) and red blood cell (specialised).",
    [f"{a[0].upper() + a[1:]}: {p}, can make {w}." if p != "specialised" else f"{a[0].upper() + a[1:]}: specialised, with {w}." for _, a, p, w, _t in LINE],
-   layout="line",
+   also=("u05-14",), layout="line",
    nodes=[{"id": f"p{i}", "label": a, "sub": f"{p}: {w}", "cell": c, "potency": p, "tone": t} for i, (c, a, p, w, t) in enumerate(LINE)],
    edges=[{"from": f"p{i}", "to": f"p{i + 1}"} for i in range(len(LINE) - 1)])
 

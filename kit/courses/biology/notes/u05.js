@@ -11,12 +11,14 @@ H: Phases
 - **M phase**: **mitosis** (nuclear division) and **cytokinesis** (division of the cytoplasm).
 - Some cells leave the cycle and enter **G₀**, a resting or non-dividing state, such as most neurones.
 - A typical cycle in cultured human cells takes about 24 hours, mostly in interphase.
+D: bio-cell-cycle
 H: DNA content
 - After S phase, each chromosome has two sister chromatids.
 - DNA content doubles from 2C to 4C in S phase.
 - Mitosis returns each daughter cell to 2C.
 - Daughter cells are genetically identical to the parent.
 P: The cell cycle allows growth of multicellular organisms, replacement of worn-out cells, such as skin and gut lining, and repair of wounds. Single-celled eukaryotes use it for asexual reproduction. Because errors can cause cancer, the cycle is tightly controlled by checkpoints and regulatory proteins.
+D: bio-dna-content
 X: Tracking DNA content.
 > A cell in G₁ has 46 chromosomes, each one chromatid: DNA content 2C.
 > After S phase, it still has 46 chromosomes, but each has two chromatids: 4C.
@@ -52,6 +54,7 @@ H: G₁ and S
 - Cells check conditions before committing to division at the G₁ checkpoint.
 - **S phase**: DNA is replicated, producing sister chromatids joined at centromeres.
 - Histones are made to package new DNA.
+D: bio-dna-content
 H: G₂
 - The cell continues to grow and makes proteins needed for division, such as tubulin for spindle fibres.
 - **Centrosomes** are duplicated in animal cells.
@@ -140,6 +143,7 @@ H: Meiosis II
 - **Sister chromatids** separate in **anaphase II**.
 - Four haploid cells result, each genetically different.
 P: Meiosis halves the chromosome number from **diploid (2n)** to **haploid (n)**, so that fertilisation restores the diploid number: in humans, gametes have 23 chromosomes and the zygote 46. Without halving, the chromosome number would double each generation. In humans, meiosis in testes produces four sperm, while in ovaries it produces one egg and polar bodies.
+D: bio-mitosis-meiosis
 X: Chromosome numbers in meiosis.
 > A human germ cell has 46 chromosomes (2n).
 > After meiosis I, two cells each have 23 chromosomes, each with two chromatids.
@@ -175,6 +179,7 @@ H: Differences in process
 - **Pairing of homologues**: only in meiosis (prophase I).
 - **Crossing over**: only in meiosis.
 - **What separates**: chromatids in mitosis; homologues then chromatids in meiosis.
+D: bio-mitosis-meiosis
 H: Differences in products
 - **Mitosis**: two diploid cells, genetically identical to the parent.
 - **Meiosis**: four haploid cells, genetically different from each other and the parent.
@@ -257,6 +262,7 @@ H: Cyclins and CDKs
 - CDKs are active only when bound to **cyclins**, whose levels rise and fall through the cycle.
 - Different cyclin-CDK complexes control G₁/S, S and M phases.
 - Cyclins are destroyed after use, resetting the cycle.
+D: bio-cyclin-cycle
 H: Signals and genes
 - **Growth factors** bind receptors and trigger signalling that increases cyclin production.
 - **Proto-oncogenes** promote division, such as genes for growth factor receptors.
@@ -298,6 +304,7 @@ H: Main checkpoints
 - **G₂ checkpoint**: checks that DNA has been fully and correctly replicated before mitosis.
 - **Metaphase (spindle) checkpoint**: checks all chromosomes are attached to the spindle before anaphase.
 - If conditions are not met, the cycle pauses until problems are fixed.
+D: bio-cell-cycle
 H: p53
 - **p53** is activated by DNA damage.
 - It increases production of proteins such as **p21**, which inhibits CDKs and halts the cycle.
@@ -339,6 +346,7 @@ H: Features
 - The cell shrinks, chromatin condenses and DNA is cut into fragments.
 - The membrane forms **blebs**, and the cell breaks into **apoptotic bodies**.
 - Phagocytes engulf the fragments without causing inflammation.
+D: bio-apoptosis-necrosis
 H: Pathways
 - **Caspases**, protease enzymes, carry out the process.
 - **Intrinsic pathway**: internal stress, such as DNA damage, causes mitochondria to release **cytochrome c**, activating caspases.
@@ -385,6 +393,7 @@ H: Comparison with apoptosis
 - **Necrosis**: uncontrolled, cell swells and bursts, causes inflammation, often many cells.
 - Some forms, such as **necroptosis**, are regulated forms of necrotic death.
 P: In a heart attack, blocked blood flow deprives heart muscle of oxygen, and the affected cells die by necrosis, releasing proteins such as troponin that can be measured in blood for diagnosis. Gangrene is extensive necrosis of tissue, often from poor blood supply or infection. Inflammation from necrosis can damage surrounding healthy tissue.
+D: bio-apoptosis-necrosis
 X: A heart attack.
 > A coronary artery is blocked by a clot.
 > Heart muscle cells beyond the block lack oxygen and ATP.
@@ -508,6 +517,7 @@ H: Progression and metastasis
 - **Metastasis**: cells detach, invade, enter blood or lymph, survive in circulation and form secondary tumours.
 - Secondary tumours are named after the primary site, such as breast cancer in bone.
 P: Early detection improves outcomes because cancers are easier to treat before they spread. NHS screening programmes, such as bowel, breast and cervical screening, aim to detect cancers or precancerous changes early. Most cancer deaths result from metastases rather than the primary tumour.
+D: bio-tumour-progression
 X: Colorectal cancer progression.
 > A mutation in APC causes a small benign polyp.
 > Further mutations, such as in KRAS, enlarge the polyp.
@@ -544,6 +554,7 @@ H: Properties and types
 - **Pluripotent**: can form all body cell types; embryonic stem cells.
 - **Multipotent**: can form a limited range, such as haematopoietic stem cells forming blood cells.
 - **Unipotent**: form one cell type, such as some skin stem cells.
+D: bio-stem-cell-potency
 H: Uses
 - **Bone marrow transplants** use haematopoietic stem cells to treat leukaemia.
 - **Induced pluripotent stem cells (iPSCs)** are made by reprogramming adult cells, as shown by Yamanaka in 2006.
@@ -715,6 +726,7 @@ H: Germ layers
 - **Endoderm** (inner): lining of the gut and respiratory tract, liver and pancreas.
 - Animals with three germ layers are **triploblastic**.
 P: The developmental biologist Lewis Wolpert remarked that "it is not birth, marriage or death, but gastrulation which is truly the most important time in your life", because it establishes the basic body plan. In humans, gastrulation occurs in the third week after fertilisation. Errors during gastrulation can cause severe defects.
+D: bio-germ-layers
 X: Tracing origins.
 > The brain develops from ectoderm.
 > The heart develops from mesoderm.
@@ -795,6 +807,7 @@ H: Morphogens
 - Cells respond differently depending on the concentration they receive, adopting different fates.
 - Example: **Bicoid** protein in the fruit fly egg forms a head-to-tail gradient.
 - Example: **Sonic hedgehog (Shh)** from the zone of polarising activity patterns the digits of the limb.
+D: bio-morphogen-gradient
 H: Major pathways
 - **Hedgehog**, **Wnt**, **Notch**, **TGF-β/BMP** and **FGF** pathways are used repeatedly in development.
 - They typically involve a ligand binding a receptor, triggering a cascade that changes gene expression.

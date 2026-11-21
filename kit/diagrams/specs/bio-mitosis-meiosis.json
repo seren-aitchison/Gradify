@@ -1,0 +1,57 @@
+{
+ "id": "bio-mitosis-meiosis",
+ "renderer": "ploidy",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Comparison of mitosis and meiosis",
+ "title": "Mitosis and meiosis from the same parent cell",
+ "caption": "Both start after S phase. Mitosis is one division and gives two diploid cells identical to the parent. Meiosis is two divisions and gives four haploid cells; with a crossover (a two-coloured chromosome) they differ from each other and from the parent.",
+ "alt": "A parent cell with four chromosomes, two maternal and two paternal, each copied. Mitosis gives two cells with all four chromosomes; meiosis gives four cells with two chromosomes each, one with a chromosome that has crossed over.",
+ "description": [
+  "The parent has 2n = 4 chromosomes, two from each parent, each copied in S phase.",
+  "Mitosis: one division, two cells, each 2n = 4 and identical to the parent.",
+  "Meiosis: two divisions, four cells, each n = 2, with one chromosome of each homologous pair.",
+  "A crossover swaps ends between homologues, so the four meiotic products all differ from each other and from the parent."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u05",
+   "lesson": "Meiosis"
+  }
+ ],
+ "pairs": 2,
+ "crossover": true,
+ "claims": [
+  {
+   "type": "cells",
+   "process": "mitosis",
+   "value": 2
+  },
+  {
+   "type": "divisions",
+   "process": "mitosis",
+   "value": 1
+  },
+  {
+   "type": "chromosomes",
+   "process": "mitosis",
+   "value": 4
+  },
+  {
+   "type": "cells",
+   "process": "meiosis",
+   "value": 4
+  },
+  {
+   "type": "divisions",
+   "process": "meiosis",
+   "value": 2
+  },
+  {
+   "type": "chromosomes",
+   "process": "meiosis",
+   "value": 2
+  }
+ ]
+}

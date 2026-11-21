@@ -1,0 +1,183 @@
+{
+ "id": "bio-dna-content",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Interphase",
+ "title": "DNA content through the cell cycle",
+ "caption": "DNA content is 2C in G₁, rises steadily during S phase as the DNA is replicated, stays at 4C through G₂ and mitosis, and falls back to 2C when the cell divides. Each daughter cell is again 2C.",
+ "alt": "A stepped line of DNA content against time through one cell cycle: flat at 2C in G1, rising to 4C across S phase, flat at 4C in G2 and M, then dropping to 2C in the daughter cells.",
+ "description": [
+  "G₁: 2C.",
+  "S phase: DNA is replicated, so the content rises from 2C to 4C.",
+  "G₂ and M: 4C, each chromosome two sister chromatids.",
+  "Cytokinesis divides the DNA between two daughter cells, each back to 2C."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u05",
+   "lesson": "Cell cycle"
+  }
+ ],
+ "range": {
+  "x": [
+   0,
+   36
+  ],
+  "y": [
+   0,
+   5
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   2,
+   4
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time through one cell cycle",
+  "DNA per cell (C)"
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    10
+   ],
+   "label": "G₁",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    10,
+    18
+   ],
+   "label": "S",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    18,
+    26
+   ],
+   "label": "G₂",
+   "colour": "a5"
+  },
+  {
+   "x": [
+    26,
+    30
+   ],
+   "label": "M",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    30,
+    36
+   ],
+   "label": "G₁ (daughter)",
+   "colour": "a1"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "2",
+   "domain": [
+    0,
+    10
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "2+0.25*(x-10)",
+   "domain": [
+    10,
+    18
+   ],
+   "colour": "a4"
+  },
+  {
+   "expr": "4",
+   "domain": [
+    18,
+    30
+   ],
+   "colour": "a2"
+  },
+  {
+   "expr": "2",
+   "domain": [
+    30,
+    36
+   ],
+   "colour": "a1"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    30,
+    4
+   ],
+   "to": [
+    30,
+    2
+   ],
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2",
+   "x": 5,
+   "y": 2,
+   "name": "G₁: 2C"
+  },
+  {
+   "type": "point",
+   "expr": "2+0.25*(x-10)",
+   "x": 10,
+   "y": 2,
+   "name": "S phase starts at 2C"
+  },
+  {
+   "type": "point",
+   "expr": "2+0.25*(x-10)",
+   "x": 14,
+   "y": 3,
+   "name": "halfway through S phase the DNA is half copied: 3C"
+  },
+  {
+   "type": "point",
+   "expr": "2+0.25*(x-10)",
+   "x": 18,
+   "y": 4,
+   "name": "S phase ends at 4C: the DNA content has doubled"
+  },
+  {
+   "type": "point",
+   "expr": "4",
+   "x": 28,
+   "y": 4,
+   "name": "G₂ and M: 4C"
+  },
+  {
+   "type": "point",
+   "expr": "2",
+   "x": 33,
+   "y": 2,
+   "name": "each daughter cell is back to 2C"
+  }
+ ]
+}

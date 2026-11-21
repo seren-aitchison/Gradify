@@ -1,0 +1,49 @@
+{
+ "id": "bio-germ-layers",
+ "renderer": "layers",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Gastrulation",
+ "title": "The three germ layers",
+ "caption": "Gastrulation produces an embryo with three layers: ectoderm outside, mesoderm in the middle and endoderm inside. Every tissue of the body comes from one of them, so animals with three layers are triploblastic.",
+ "alt": "Concentric rings for the ectoderm, mesoderm and endoderm of a gastrula, with the tissues each becomes: skin epidermis and nervous system; muscle, bone, blood, heart, kidneys and gonads; gut lining, respiratory lining, liver and pancreas.",
+ "description": [
+  "Ectoderm (outer): the epidermis of the skin and the nervous system, including the brain and spinal cord.",
+  "Mesoderm (middle): muscle, bone, blood, heart, kidneys and gonads.",
+  "Endoderm (inner): the lining of the gut and respiratory tract, the liver and the pancreas."
+ ],
+ "layers": [
+  {
+   "name": "ectoderm",
+   "position": "outer",
+   "items": [
+    "epidermis of the skin",
+    "nervous system",
+    "brain",
+    "spinal cord"
+   ]
+  },
+  {
+   "name": "mesoderm",
+   "position": "middle",
+   "items": [
+    "muscle",
+    "bone",
+    "blood",
+    "heart",
+    "kidneys",
+    "gonads"
+   ]
+  },
+  {
+   "name": "endoderm",
+   "position": "inner",
+   "items": [
+    "lining of the gut",
+    "lining of the respiratory tract",
+    "liver",
+    "pancreas"
+   ]
+  }
+ ]
+}

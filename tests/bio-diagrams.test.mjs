@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -203,4 +203,23 @@ test("pedigrees: the unit 4 families fit their mode of inheritance and rule out 
   assert.equal(pedigreeFits({ people: rec }, "AD"), false); // unaffected parents, affected child
   assert.equal(pedigreeFits({ people: rec }, "AR"), true);
   assert.equal(pedigreeFits({ people: rec }, "XR"), true);
+});
+
+test("mitosis and meiosis: cell and chromosome counts follow from the divisions", () => {
+  const m = divide("mitosis", 2, false), e = divide("meiosis", 2, true);
+  assert.equal(m.cells.length, 2); assert.ok(m.cells.every((c) => c.length === 4)); assert.equal(m.divisions, 1);
+  assert.equal(e.cells.length, 4); assert.ok(e.cells.every((c) => c.length === 2)); assert.equal(e.divisions, 2);
+  assert.equal(new Set(e.cells.map((c) => [...c].sort().join())).size, 4); // a crossover makes all four different
+  assert.ok(new Set(divide("meiosis", 2, false).cells.map((c) => [...c].sort().join())).size < 4); // without it they come in identical pairs
+  assert.equal(allPass({ renderer: "ploidy", alt: "x", pairs: 2, crossover: true, claims: [{ type: "cells", process: "meiosis", value: 4 }, { type: "chromosomes", process: "meiosis", value: 2 }] }), true);
+  assert.equal(allPass({ renderer: "ploidy", alt: "x", pairs: 2, crossover: true, claims: [{ type: "cells", process: "mitosis", value: 4 }] }), false);
+  assert.equal(allPass({ renderer: "ploidy", alt: "x", pairs: 2, crossover: false, claims: [] }), true);
+});
+
+test("germ layers: each tissue must come from the layer it is listed under", () => {
+  const layer = (name, items) => ({ name, position: "x", items });
+  const ok = [layer("ectoderm", ["nervous system"]), layer("mesoderm", ["heart"]), layer("endoderm", ["liver"])];
+  assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok }), true);
+  assert.equal(allPass({ renderer: "layers", alt: "x", layers: [layer("ectoderm", ["liver"]), ok[1], ok[2]] }), false); // the liver is endoderm
+  assert.equal(allPass({ renderer: "layers", alt: "x", layers: ok.slice(0, 2) }), false); // two layers is not triploblastic
 });

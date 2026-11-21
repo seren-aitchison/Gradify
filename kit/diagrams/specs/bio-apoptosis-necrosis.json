@@ -1,0 +1,37 @@
+{
+ "id": "bio-apoptosis-necrosis",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Apoptosis",
+ "title": "Apoptosis or necrosis?",
+ "caption": "Apoptosis is a controlled, energy-requiring suicide: the cell shrinks and breaks into apoptotic bodies that phagocytes remove quietly. Necrosis follows severe injury: the cell swells and bursts, and its contents leak out and cause inflammation.",
+ "alt": "A flow chart: a controlled, energy-requiring death triggered by signals leads to apoptosis, with shrinking and no inflammation; death from severe injury leads to necrosis, with swelling, bursting and inflammation.",
+ "description": [
+  "Is the death controlled and energy-requiring, triggered by a signal such as DNA damage or a death receptor? If so it is apoptosis: the cell shrinks, the DNA is cut up, apoptotic bodies form and phagocytes remove them without inflammation.",
+  "If the cause is severe injury (lack of oxygen, toxins, trauma) it is necrosis: the cell swells and its membrane ruptures, and its contents leak out and cause inflammation."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u05",
+   "lesson": "Necrosis"
+  }
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Is the death controlled and energy-requiring, triggered by a signal such as DNA damage or a death receptor?",
+   "yes": "apop",
+   "no": "necro"
+  },
+  "apop": {
+   "outcome": "Apoptosis: the cell shrinks and breaks into apoptotic bodies; phagocytes remove them with no inflammation",
+   "tone": "good"
+  },
+  "necro": {
+   "outcome": "Necrosis: severe injury; the cell swells and bursts, and the leaked contents cause inflammation",
+   "tone": "bad"
+  }
+ }
+}

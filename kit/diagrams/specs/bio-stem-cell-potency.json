@@ -14,6 +14,13 @@
   "Erythroid progenitor: unipotent, can make red blood cells only.",
   "Red blood cell: specialised, with no nucleus: cannot divide."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u05",
+   "lesson": "Stem-cell biology"
+  }
+ ],
  "layout": "line",
  "nodes": [
   {

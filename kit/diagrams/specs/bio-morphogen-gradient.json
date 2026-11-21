@@ -1,0 +1,112 @@
+{
+ "id": "bio-morphogen-gradient",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Developmental signalling",
+ "title": "A morphogen gradient sets cell fates",
+ "caption": "A morphogen spreads from its source and falls in concentration with distance. Cells read the concentration: above one threshold they take one fate, between the two thresholds another, below the lower one a third. One gradient can pattern a whole tissue, as Bicoid does along the fruit fly egg.",
+ "alt": "A curve of morphogen concentration falling with distance from its source, with two horizontal thresholds dividing the tissue into three zones labelled fate A, fate B and fate C.",
+ "description": [
+  "The morphogen is made at the left and its concentration falls with distance.",
+  "Cells where the concentration is above the upper threshold (0.6) take fate A.",
+  "Cells between the thresholds (0.6 and 0.25) take fate B.",
+  "Cells below the lower threshold (0.25) take fate C.",
+  "One gradient therefore makes three different cell types in order."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   0.25,
+   0.6,
+   1.0
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance from the source of the morphogen",
+  "morphogen concentration"
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    1.277
+   ],
+   "label": "fate A",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    1.277,
+    3.466
+   ],
+   "label": "fate B",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    3.466,
+    8
+   ],
+   "label": "fate C",
+   "colour": "a2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/2.5)",
+   "colour": "a3",
+   "width": 3.2
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.6,
+   "to": 1.277,
+   "label": "upper threshold"
+  },
+  {
+   "y": 0.25,
+   "to": 3.466,
+   "label": "lower threshold"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/2.5)",
+   "x": 1.277,
+   "y": 0.6,
+   "name": "the gradient falls to the upper threshold, 0.6, at distance 1.28"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/2.5)",
+   "x": 3.466,
+   "y": 0.25,
+   "name": "the gradient falls to the lower threshold, 0.25, at distance 3.47"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(-x/2.5)",
+   "x": 2,
+   "value": -0.17975,
+   "name": "the concentration falls steadily with distance (negative gradient everywhere)"
+  }
+ ]
+}

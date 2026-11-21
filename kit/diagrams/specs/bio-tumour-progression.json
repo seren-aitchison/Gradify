@@ -1,0 +1,80 @@
+{
+ "id": "bio-tumour-progression",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Tumour development",
+ "title": "From one mutated cell to metastasis",
+ "caption": "Cancer builds up over years as mutations accumulate in a single cell lineage. A benign tumour stays put; a malignant one invades. Beyond about 1–2 mm a tumour needs its own blood supply (angiogenesis), and metastasis, which causes most cancer deaths, sends cells to form secondary tumours.",
+ "alt": "Five boxes in order: a mutated cell, a benign tumour, a malignant tumour, blood supply by angiogenesis, and metastasis.",
+ "description": [
+  "A mutated cell: mutations accumulate in one lineage over years.",
+  "Benign tumour: grows slowly, enclosed, does not invade.",
+  "Malignant tumour: grows faster and invades surrounding tissue.",
+  "Blood supply: angiogenesis beyond about 1–2 mm.",
+  "Metastasis: cells enter blood or lymph and form secondary tumours."
+ ],
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "t0",
+   "label": "a mutated cell",
+   "sub": "mutations accumulate in one lineage over years",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "t1",
+   "label": "benign tumour",
+   "sub": "grows slowly, enclosed, does not invade",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "t2",
+   "label": "malignant tumour",
+   "sub": "grows faster and invades surrounding tissue",
+   "tone": "a3",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "t3",
+   "label": "blood supply",
+   "sub": "angiogenesis beyond about 1–2 mm",
+   "tone": "a5",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "t4",
+   "label": "metastasis",
+   "sub": "cells enter blood or lymph and form secondary tumours",
+   "tone": "a2",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "t0",
+   "to": "t1"
+  },
+  {
+   "from": "t1",
+   "to": "t2"
+  },
+  {
+   "from": "t2",
+   "to": "t3"
+  },
+  {
+   "from": "t3",
+   "to": "t4"
+  }
+ ]
+}
