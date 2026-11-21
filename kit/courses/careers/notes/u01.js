@@ -96,7 +96,7 @@ Q: What does Super's life-span, life-space approach add? | That people play seve
 Q: What does recycling mean in Super's theory? | Returning to exploration when changing direction in mid-life.
 Q: Which five qualities help turn chance into opportunity in planned happenstance theory? | Curiosity, persistence, flexibility, optimism and willingness to take risks.
 Q: What is Savickas's career construction theory? | The view that people author their own career stories, adapting through concern, control, curiosity and confidence.
-Q: Is DOTS a theory of career development? | No, it is a practical planning framework used to structure many university careers modules.
+Q: What kind of tool is DOTS, as opposed to a theory of career development? | A practical planning framework used to structure many university careers modules.
 
 ## The Gatsby Benchmarks and careers support
 LV: Introductory · Foundation
@@ -240,7 +240,7 @@ Q: How did the Future Fit report (2009) define employability? | As a set of attr
 Q: Which organisations produced the Future Fit report? | The CBI and Universities UK.
 Q: In which areas does the ISE report graduates are often less ready? | Resilience, managing up, commercial awareness and handling conflict.
 Q: What does managing up mean? | Dealing with senior colleagues.
-Q: How are hard-to-find skills like resilience best developed? | Through experience.
+Q: How, according to employer surveys, are skills such as resilience and managing up best developed? | Through experience, rather than being taught directly.
 Q: Who created the CareerEDGE model, and when? | Dacre Pool and Sewell, in 2007.
 Q: What is identity capital in Tomlinson's model? | Seeing yourself as a future professional.
 Q: What is cultural capital in Tomlinson's model? | Knowing how professional worlds work.
@@ -336,7 +336,7 @@ Q: What is a weakness in Linley's strengths model? | Something you perform poorl
 Q: Why can learned behaviours lead to burnout? | If a job demands them all day, you are doing draining work constantly despite being good at it.
 Q: Who developed the VIA Classification, and when? | Peterson and Seligman, in 2004.
 Q: How many talent themes does CliftonStrengths have? Give an example. | 34, such as Achiever, Strategic or Empathy.
-Q: Are VIA and CliftonStrengths objective measurements? | No, they are self-report questionnaires, useful prompts for reflection.
+Q: What kind of instruments are VIA and CliftonStrengths, and how should their results be used? | Self-report questionnaires, not objective measurements; useful as prompts for reflection.
 Q: Why do employers use strengths-based interviews? | To find people who will thrive in the role and to reduce well-rehearsed answers.
 Q: Besides content, what do strengths-based interviewers watch for? | Energy and authenticity.
 Q: Ellie does spreadsheets well but dreads them. What are they in Linley's model? | A learned behaviour.
@@ -524,7 +524,7 @@ TF1#careers-u01-11-q3@1: A personal brand should be consistent across your CV, L
 M3#careers-u01-11-q4@3: A candidate's LinkedIn calls him "a visionary growth hacker" but his CV shows one summer internship. What is the main risk? | Overclaiming undermines credibility when the evidence doesn't match | Recruiters are not allowed to look at the LinkedIn profiles of candidates | It will stop him getting any interviews for marketing roles at all | It is too modest and fails to show his strengths to recruiters | Recruiters check claims against evidence; inflated labels that the CV can't support make the whole application less believable.
 SA3#careers-u01-11-q5@2,3: A student has studied law but now wants a career in HR, and worries her story doesn't make sense. Explain how she could build a convincing career narrative. | Identify a thread linking her experiences, for example an interest in fairness at work from employment law modules, plus experience such as a student rep role resolving problems. Frame law as an asset: understanding of employment law, analysis and careful writing. Build a pitch (present, past, future) explaining the move as a positive choice, back it with evidence such as HR work experience or a CIPD-related course, and keep CV, LinkedIn and interviews consistent. | Identifies a thread linking experiences ; Frames the degree as an asset ; Uses a structure such as present past future ; Adds evidence of commitment to the new field ; Stresses honesty and consistency
 Q: What do recruiters look for in a candidate's career story? | A coherent narrative explaining how past choices lead to this role.
-Q: Does a career story need to be a straight line? | No, it needs a thread that makes your choices make sense.
+Q: What does a career story need instead of a straight line? | A thread that makes your choices make sense.
 Q: What is a personal brand? | The impression people form of you professionally: what you're known for.
 Q: What does a personal brand mean for a student? | A consistent, honest message across CV, LinkedIn, applications, interviews and behaviour at events.
 Q: Where can you use an elevator pitch? | At a careers fair, a networking event, or for "Tell me about yourself".
