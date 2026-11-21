@@ -40,6 +40,19 @@ test("every refusal reason gives a clear message, the right status and what the 
   }
 });
 
+test("a fair-use refusal gives the calendar-month reset, not the learner's allowance period", () => {
+  // a Pro learner whose period runs to 15 December; the fair-use spend resets on 1 December (UTC)
+  const claim = { reason: "fair_use", plan: "pro", used: 3, allowance: 25, period_end: "2026-12-15T09:30:00Z" };
+  const r = refusal(claim, "explain", Date.UTC(2026, 10, 20, 12));
+  assert.equal(r.body.resetsAt, "2026-12-01T00:00:00.000Z");
+  assert.match(r.body.error, /resets on 1 December\./);
+  // the last moment of a month still resets on the 1st of the next; December rolls into January
+  assert.equal(refusal(claim, "explain", Date.UTC(2026, 10, 30, 23, 59, 59)).body.resetsAt, "2026-12-01T00:00:00.000Z");
+  assert.equal(refusal(claim, "explain", Date.UTC(2026, 11, 5)).body.resetsAt, "2027-01-01T00:00:00.000Z");
+  // an allowance refusal keeps the learner's own period
+  assert.equal(refusal({ ...claim, reason: "allowance" }, "explain", Date.UTC(2026, 10, 20)).body.resetsAt, "2026-12-15T09:30:00Z");
+});
+
 test("a successful request settles with the real model and tokens, and returns the learner's usage", async () => {
   const f = fakes();
   const out = await runAi(f.deps, f.job());
