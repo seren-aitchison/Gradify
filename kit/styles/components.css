@@ -1434,6 +1434,7 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
   .gd.quiz .gd-a:not(.seen), .gd.quiz .gd-a:not(.seen) * { color: inherit !important; background: none !important; }
   .gd.stepping .gd-flow > li.todo .gd-item > *, .gd.stepping .gd-cyc .gd-branches > li.todo > div, .gd.stepping .gd-rnode.todo > span { visibility: visible !important; }
   .gd.stepping .gd-flow > li.todo .gd-item, .gd.stepping .gd-cyc .gd-branches > li.todo, .gd.stepping .gd-rnode.todo { background: none !important; }
+  .gd.stepping .gd-flow > li.todo .gd-item { color: var(--gd-ink) !important; }
   .gd.stepping .gd-flow > li.todo .gd-item * { color: inherit !important; }
 }
 
