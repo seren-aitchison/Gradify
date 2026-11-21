@@ -383,8 +383,8 @@ Q: Which act sets the National Minimum Wage? | The National Minimum Wage Act 199
 Q: What was the minimum wage from April 2025 for workers aged 21 and over? | £12.21 an hour.
 Q: How often do minimum wage rates change? | Every April.
 Q: What features make a person likely to be a worker? | A contract or arrangement to do work personally, for reward, with obligations such as set hours or duties.
-Q: Can a promise of future work count as reward? | Yes.
-Q: Are school pupils on work experience entitled to the minimum wage? | No, if they are below compulsory school leaving age.
+Q: Besides money, what can count as reward when deciding whether someone is a worker? | A promise of future work.
+Q: Which school pupils doing work experience are not entitled to the minimum wage? | Those below compulsory school leaving age.
 Q: Where can an intern get free advice about unpaid wages? | ACAS.
 Q: What can HMRC do about minimum wage underpayment? | Order arrears and penalties.
 Q: What can happen publicly to employers who underpay? | They can be named by the government.
