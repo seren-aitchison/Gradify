@@ -99,14 +99,16 @@ document.addEventListener("click", function (e) {
   t.focus({ preventScroll: true }); t.scrollIntoView({ block: "start" });
 });
 
-// Liquid Glass on the GPU (kit/ui/liquid-gl.js): opt-in. By default every page draws the frosted CSS glass (kit/styles/base.css,
-// the look of the Pro banner); the GPU material bends and magnifies what's behind it, so it only runs when
-// localStorage "gradify.glass" is "on", "lite" or "force", once the page has loaded and gone quiet.
+// Liquid Glass on the GPU (kit/ui/liquid-gl.js), once the page has loaded and gone quiet. On by default on desktop (a mouse
+// or trackpad and a screen wider than 1020px); phones and tablets keep the frosted CSS glass (kit/styles/base.css, the
+// look of the Pro banner), since the GPU material bends and magnifies what's behind the lesson dock. localStorage
+// "gradify.glass": "on", "lite" or "force" turns it on anywhere, "off" turns it off anywhere.
 (function () {
   var src = (document.currentScript && document.currentScript.src) || "";
   if (!src || !("noModule" in HTMLScriptElement.prototype)) return;
   var pref = null; try { pref = localStorage.getItem("gradify.glass"); } catch (e) { /* storage blocked: CSS glass */ }
-  if (!/^(on|lite|force)$/.test(pref || "")) return;
+  var desktop = !!(window.matchMedia && matchMedia("(pointer: fine) and (min-width: 1021px)").matches);
+  if (pref === "off" || !(desktop || /^(on|lite|force)$/.test(pref || ""))) return;
   var go = function () { import(src.replace(/core\/theme-boot\.js(\?.*)?$/, "ui/liquid-gl.js")).then(function (m) { m.start(); }).catch(function () { /* CSS glass stays */ }); };
   var later = function () { "requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300); };
   if (document.readyState === "complete") later(); else addEventListener("load", later);
