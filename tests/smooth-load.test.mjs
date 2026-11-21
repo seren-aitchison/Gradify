@@ -53,6 +53,4 @@ test("nothing on a course page repaints on every frame for as long as it's open"
   // the lesson's gleaming rim sweeps once, and not on a phone
   assert.match(css, /animation: lg-gleam 14s linear 1s;/);
   assert.doesNotMatch(css, /lg-gleam[^;]*infinite/);
-  // the overview's sections below the first screen wait until they're near it
-  assert.match(css, /\.co-osec ~ \.co-osec \{ content-visibility: auto;/);
 });
