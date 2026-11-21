@@ -16,6 +16,8 @@ const C = {
   a5: "var(--vx-a5, #7c3aed)", good: "var(--vx-good, #16a34a)", bad: "var(--vx-bad, #dc2626)",
 };
 export const COLOURS = C;
+// the diagram card's colour, painted under a label so a line crossing it does not cut the letters
+const HALO = "var(--vx-card, #fff)";
 const col = (k) => C[k] || k;
 const f1 = (n) => (+n).toFixed(1);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -26,13 +28,13 @@ const check = (name, ok, detail = "") => ({ name, ok: !!ok, detail });
 function svg(W, H, alt, body) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f1(W)} ${f1(H)}" width="${f1(W)}" height="${f1(H)}" role="img" aria-label="${esc(alt)}" style="color:${C.ink};font-family:inherit;max-width:100%;height:auto">${body}</svg>`;
 }
-function text(x, y, s, { size = 14, weight = 500, anchor = "middle", fill = C.ink, italic = false, baseline = "middle" } = {}) {
+function text(x, y, s, { size = 14, weight = 500, anchor = "middle", fill = C.ink, italic = false, baseline = "middle", halo = false } = {}) {
   // sub/superscripts written x_{0} and x^{2}
   const parts = String(s).split(/([_^]\{[^}]*\})/).map((p) => {
     const m = p.match(/^([_^])\{([^}]*)\}$/);
     return m ? `<tspan baseline-shift="${m[1] === "^" ? "super" : "sub"}" font-size="${f1(size * 0.72)}">${esc(m[2])}</tspan>` : esc(p);
   }).join("");
-  return `<text x="${f1(x)}" y="${f1(y)}" font-size="${size}" font-weight="${weight}" text-anchor="${anchor}" dominant-baseline="${baseline}" fill="${fill}"${italic ? ' font-style="italic"' : ""}>${parts}</text>`;
+  return `<text x="${f1(x)}" y="${f1(y)}" font-size="${size}" font-weight="${weight}" text-anchor="${anchor}" dominant-baseline="${baseline}" fill="${fill}"${italic ? ' font-style="italic"' : ""}${halo ? ` stroke="${HALO}" stroke-width="4" stroke-linejoin="round" paint-order="stroke"` : ""}>${parts}</text>`;
 }
 function line(x1, y1, x2, y2, { stroke = C.ink, w = 2, dash = "", cap = "round" } = {}) {
   return `<path d="M${f1(x1)} ${f1(y1)} L${f1(x2)} ${f1(y2)}" stroke="${stroke}" stroke-width="${w}" stroke-linecap="${cap}"${dash ? ` stroke-dasharray="${dash}"` : ""} fill="none"/>`;
@@ -44,6 +46,8 @@ function arrow(x1, y1, x2, y2, { stroke = C.ink, w = 2.4, head = 11, dash = "", 
   const s0 = both ? head * 0.9 : 0;
   return line(x1 + ux * s0, y1 + uy * s0, x2 - ux * head * 0.9, y2 - uy * head * 0.9, { stroke, w, dash }) + hd(x2, y2, ux, uy) + (both ? hd(x1, y1, -ux, -uy) : "");
 }
+// rough width of a label in px (sub/superscript markup removed), to keep labels inside the picture
+const textWidth = (s, size) => String(s ?? "").replace(/[_^]\{([^}]*)\}/g, (_, t) => t.slice(0, Math.ceil(t.length * 0.7))).length * size * 0.56;
 const pathOf = (pts) => pts.map(([x, y], i) => `${i ? "L" : "M"}${f1(x)} ${f1(y)}`).join(" ");
 function legend(items, x, y, { size = 13, gap = 22 } = {}) {
   return items.map(([label, colour, dash], i) => line(x, y + i * gap, x + 26, y + i * gap, { stroke: col(colour), w: 3, dash }) + text(x + 34, y + i * gap, label, { size, anchor: "start" })).join("");
@@ -89,8 +93,12 @@ function axes(spec, W, H, pad) {
   if (ticks[0]) for (const t of ticks[0]) s += line(sx(t), sy(ax) - 4, sx(t), sy(ax) + 4, { stroke: C.ink, w: 1.4 }) + text(sx(t), sy(ax) + 17, String(t), { size: 12, fill: C.soft });
   if (ticks[1]) for (const t of ticks[1]) s += line(sx(ay) - 4, sy(t), sx(ay) + 4, sy(t), { stroke: C.ink, w: 1.4 }) + text(sx(ay) - 9, sy(t), String(t), { size: 12, fill: C.soft, anchor: "end" });
   const [lx, ly] = spec.axisLabels || ["x", "y"];
-  s += text(W - pad.r + 2, sy(ax) + (spec.xLabelBelow ? 36 : -14), lx, { size: 13, weight: 600, anchor: "end", fill: C.soft });
-  s += text(sx(ay) + 10, pad.t - 14, ly, { size: 13, weight: 600, anchor: "start", fill: C.soft });
+  // below the axis means below the plot when the x-axis runs through the middle (y = 0 inside the range), where the
+  // curves are
+  s += text(W - pad.r + 2, spec.xLabelBelow ? Math.max(sy(ax) + 36, sy(y0) + 24) : sy(ax) - 14, lx, { size: 13, weight: 600, anchor: "end", fill: C.soft });
+  // a y-axis at the right-hand edge (every x negative) takes its title on its left, or the title runs off the edge
+  const yRight = sx(ay) + 10 + textWidth(ly, 13) > W;
+  s += text(sx(ay) + (yRight ? -10 : 10), pad.t - 14, ly, { size: 13, weight: 600, anchor: yRight ? "end" : "start", fill: C.soft });
   return { s, sx, sy };
 }
 
@@ -98,16 +106,24 @@ function axes(spec, W, H, pad) {
 // spec: range, ticks, grid, axisLabels, curves: [{expr, colour, dash, label, domain}], points: [{x, y, label, of}],
 // marks: [{x | y, label}], checks: [{type: "point", expr, x, y} | {type: "root"...}]
 function graph(spec, W, H) {
+  // Chemistry graphs (and any spec with labelHalo) draw their labels after every line, each on a halo, so a curve
+  // or mark drawn later never cuts through a label. Other subjects' approved graphs are drawn exactly as before.
+  const halo = spec.labelHalo ?? String(spec.id || "").startsWith("chem-");
+  let late = "";
+  // they are also kept inside the picture: a label that would run past an edge slides back in
+  const inside = (x, str, o) => { const w = textWidth(str, o.size || 14), a = o.anchor || "middle", lo = a === "start" ? x : a === "end" ? x - w : x - w / 2;
+    return x + Math.max(0, 4 - lo) - Math.max(0, lo + w - (W - 4)); };
+  const L = (x, y, str, o) => (halo ? ((late += text(inside(x, str, o), y, str, { ...o, halo: true })), "") : text(x, y, str, o));
   const pad = { l: 52, r: 24, t: 40, b: spec.xLabelBelow ? 58 : 40 };
   const { s: base, sx, sy } = axes(spec, W, H, pad);
   let s = base;
   const { x: [x0, x1], y: [y0, y1] } = spec.range;
   const clipId = `vx${Math.abs([...spec.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7))}${W}`;
   s += `<defs><clipPath id="${clipId}"><rect x="${f1(sx(x0))}" y="${f1(sy(y1))}" width="${f1(sx(x1) - sx(x0))}" height="${f1(sy(y0) - sy(y1))}"/></clipPath></defs>`;
-  for (const m of spec.bands || []) s += `<rect x="${f1(sx(m.x[0]))}" y="${f1(sy(y1))}" width="${f1(sx(m.x[1]) - sx(m.x[0]))}" height="${f1(sy(y0) - sy(y1))}" fill="${col(m.colour || "a1")}" fill-opacity=".08"/>` + text((sx(m.x[0]) + sx(m.x[1])) / 2, sy(y0) - 12, m.label, { size: 12, weight: 600, fill: C.soft });
+  for (const m of spec.bands || []) s += `<rect x="${f1(sx(m.x[0]))}" y="${f1(sy(y1))}" width="${f1(sx(m.x[1]) - sx(m.x[0]))}" height="${f1(sy(y0) - sy(y1))}" fill="${col(m.colour || "a1")}" fill-opacity=".08"/>` + L((sx(m.x[0]) + sx(m.x[1])) / 2, sy(y0) - 12, m.label, { size: 12, weight: 600, fill: C.soft });
   for (const m of spec.marks || []) {
-    if (m.x != null) s += line(sx(m.x), sy(y0), sx(m.x), sy(m.to ?? y1), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? text(sx(m.x) + (m.dx || 0), sy(m.to ?? y1) - 10, m.label, { size: 12, fill: C.soft }) : "");
-    if (m.y != null) s += line(sx(x0), sy(m.y), sx(m.to ?? x1), sy(m.y), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? text(sx(x0) + 6, sy(m.y) - 10, m.label, { size: 12, fill: C.soft, anchor: "start" }) : "");
+    if (m.x != null) s += line(sx(m.x), sy(y0), sx(m.x), sy(m.to ?? y1), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? L(sx(m.x) + (m.dx || 0), sy(m.to ?? y1) - 10, m.label, { size: 12, fill: C.soft }) : "");
+    if (m.y != null) s += line(sx(x0), sy(m.y), sx(m.to ?? x1), sy(m.y), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? L(sx(x0) + 6, sy(m.y) - 10, m.label, { size: 12, fill: C.soft, anchor: "start" }) : "");
   }
   // shaded areas under a curve between two x values (a Maxwell–Boltzmann tail beyond Ea)
   for (const a of spec.areas || []) {
@@ -119,20 +135,21 @@ function graph(spec, W, H) {
   for (const sr of spec.series || []) {
     s += `<path d="${pathOf(sr.points.map(([x, y]) => [sx(x), sy(y)]))}" fill="none" stroke="${col(sr.colour || "a1")}" stroke-width="${sr.width || 2.6}" stroke-linejoin="round"${sr.dash ? ` stroke-dasharray="${sr.dash}"` : ""} clip-path="url(#${clipId})"/>`;
     if (sr.dots) for (const [x, y] of sr.points) s += `<circle cx="${f1(sx(x))}" cy="${f1(sy(y))}" r="3.5" fill="${col(sr.colour || "a1")}"/>`;
-    if (sr.label) { const [lx, ly] = sr.labelAt || sr.points.at(-1); s += text(sx(lx) + 6, sy(ly), sr.label, { size: 12.5, weight: 700, anchor: sr.anchor || "start", fill: col(sr.colour || "a1") }); }
+    if (sr.label) { const [lx, ly] = sr.labelAt || sr.points.at(-1); s += L(sx(lx) + 6, sy(ly), sr.label, { size: 12.5, weight: 700, anchor: sr.anchor || "start", fill: col(sr.colour || "a1") }); }
   }
   for (const c of spec.curves || []) {
     const f = compile(c.expr), [d0, d1] = c.domain || [x0, x1], pts = [];
     const N = c.samples || 240;
     for (let i = 0; i <= N; i++) { const x = d0 + ((d1 - d0) * i) / N, y = f(x); if (Number.isFinite(y) && y > y0 - (y1 - y0) && y < y1 + (y1 - y0)) pts.push([sx(x), sy(y)]); }
     s += `<path d="${pathOf(pts)}" fill="none" stroke="${col(c.colour || "a1")}" stroke-width="${c.width || 3}" stroke-linecap="round" stroke-linejoin="round"${c.dash ? ` stroke-dasharray="${c.dash}"` : ""} clip-path="url(#${clipId})"/>`;
-    if (c.label) { const [lx, ly] = c.labelAt; s += text(sx(lx), sy(ly), c.label, { size: 13, weight: 700, fill: col(c.colour || "a1"), anchor: c.anchor || "start" }); }
+    if (c.label) { const [lx, ly] = c.labelAt; s += L(sx(lx), sy(ly), c.label, { size: 13, weight: 700, fill: col(c.colour || "a1"), anchor: c.anchor || "start" }); }
   }
-  for (const a of spec.arrows || []) s += arrow(sx(a.from[0]), sy(a.from[1]), sx(a.to[0]), sy(a.to[1]), { stroke: col(a.colour || "ink"), w: 2, head: 9, dash: a.dash || "", both: !!a.both }) + (a.label ? (a.labelAt ? text(sx(a.labelAt[0]), sy(a.labelAt[1]), a.label, { size: 12.5, weight: 600, anchor: a.anchor || "start", fill: col(a.colour || "ink") }) : text((sx(a.from[0]) + sx(a.to[0])) / 2 + (a.dx || 0), (sy(a.from[1]) + sy(a.to[1])) / 2 + (a.dy || -12), a.label, { size: 12.5, weight: 600, fill: col(a.colour || "ink") })) : "");
+  for (const a of spec.arrows || []) s += arrow(sx(a.from[0]), sy(a.from[1]), sx(a.to[0]), sy(a.to[1]), { stroke: col(a.colour || "ink"), w: 2, head: 9, dash: a.dash || "", both: !!a.both }) + (a.label ? (a.labelAt ? L(sx(a.labelAt[0]), sy(a.labelAt[1]), a.label, { size: 12.5, weight: 600, anchor: a.anchor || "start", fill: col(a.colour || "ink") }) : L((sx(a.from[0]) + sx(a.to[0])) / 2 + (a.dx || 0), (sy(a.from[1]) + sy(a.to[1])) / 2 + (a.dy || -12), a.label, { size: 12.5, weight: 600, fill: col(a.colour || "ink") })) : "");
   for (const p of spec.points || []) {
     s += `<circle cx="${f1(sx(p.x))}" cy="${f1(sy(p.y))}" r="5" fill="${col(p.colour || "ink")}" stroke="${C.panel}" stroke-width="2"/>`;
-    if (p.label) s += text(sx(p.x) + (p.dx ?? 10), sy(p.y) + (p.dy ?? -12), p.label, { size: 13, weight: 600, anchor: p.anchor || "start", fill: col(p.colour || "ink") });
+    if (p.label) s += L(sx(p.x) + (p.dx ?? 10), sy(p.y) + (p.dy ?? -12), p.label, { size: 13, weight: 600, anchor: p.anchor || "start", fill: col(p.colour || "ink") });
   }
+  s += late;
   if (spec.legend) s += legend(spec.legend, spec.legendData ? sx(spec.legendData[0]) : spec.legendAt?.[0] ?? pad.l + 14, spec.legendData ? sy(spec.legendData[1]) : spec.legendAt?.[1] ?? pad.t + 10);
   return s;
 }

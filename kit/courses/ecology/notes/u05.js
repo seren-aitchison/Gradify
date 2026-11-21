@@ -41,6 +41,16 @@ M2#ecology-u05-01-q2@2: A reservoir gains more of an element each year than it l
 M3#ecology-u05-01-q3@3: Why will carbon dioxide from fossil fuels affect climate for centuries? | Parts of the carbon cycle that remove it have long residence times and slow fluxes | Carbon dioxide breaks down within days in the atmosphere | Plants absorb all extra carbon dioxide within a year | Fossil carbon is destroyed when it is burnt | Removal into the deep ocean and rocks is slow, so excess persists.
 NUM2#ecology-u05-01-q4@3: The atmosphere holds about 12,900 km³ of water, and about 500,000 km³ evaporates each year. What is the residence time, in days, to the nearest day? | 9 | 1 | days | 12,900 ÷ 500,000 = 0.0258 years × 365 = 9.4, about 9 days.
 SA2#ecology-u05-01-q5@2,3: Explain the difference between a source and a sink, using an example. | A source releases more of an element than it takes in, while a sink takes in more than it releases. For example, a growing forest is a carbon sink because photosynthesis exceeds respiration and decomposition, while a draining peatland becomes a source as stored carbon is oxidised and released as carbon dioxide. Whether a reservoir is a source or sink can change over time. | Definitions ; Sink example ; Source example ; Can change
+Q: Why is matter recycled on Earth while energy flows through? | The Earth receives constant energy from the Sun but almost no new matter, so atoms are reused again and again.
+Q: What is a biogeochemical cycle? | The movement of an element between living things and the physical environment.
+Q: Which four parts of the Earth does a biogeochemical cycle pass through? | The biosphere, atmosphere, hydrosphere (water) and lithosphere (rocks and soil).
+Q: What is a reservoir in a biogeochemical cycle? | An amount of an element held in one place, such as carbon in the atmosphere.
+Q: What is a source in a biogeochemical cycle? | A reservoir that loses more of an element than it gains.
+Q: What is a sink? | A reservoir that gains more of an element than it loses.
+Q: What is residence time? | The average time an atom or molecule spends in a reservoir.
+Q: What assumption does the residence time equation make? | That the reservoir is roughly in balance, with inflow and outflow about equal.
+Q: How long does water stay in the deep ocean compared with the atmosphere? | Over a thousand years in the deep ocean, compared with about 9 days in the atmosphere.
+Q: Why does a short residence time mean a reservoir responds quickly to change? | Material turns over fast, so a pollutant in the atmosphere, for example, spreads within weeks.
 
 ## The water cycle
 LV: Introductory · Application
@@ -87,6 +97,16 @@ M2#ecology-u05-02-q2@2: Where is most of the Earth's fresh water stored? | In ic
 M3#ecology-u05-02-q3@3: An upland catchment is heavily drained and compacted. What is the likely effect downstream? | Faster runoff and higher flood peaks | Slower runoff and lower flood peaks | More water stored as groundwater | No change in river flow at all | Compacted, drained soils absorb less water, so it reaches rivers faster.
 TF1#ecology-u05-02-q4@2: Warmer air can hold more water vapour, which tends to increase heavy rainfall. | true | Air holds about 7% more water vapour per degree of warming, intensifying downpours.
 SA2#ecology-u05-02-q5@2,3: Explain how deforestation can affect rainfall and flooding. | Trees transpire large amounts of water, which returns to the atmosphere and falls again as rain, so clearing forest can reduce rainfall downwind, as in the Amazon. Forest soils and leaf litter absorb rain and release it slowly; without them, more water runs off quickly, raising flood peaks and causing soil erosion. | Transpiration and recycling ; Reduced rainfall ; Soil absorption ; Faster runoff
+Q: What share of the Earth's water is in ice sheets and glaciers? | About 2%, which is most of the fresh water.
+Q: Where is most of the remaining liquid fresh water? | In groundwater.
+Q: Why do small water stores such as rivers and the atmosphere matter? | Although tiny, they turn over quickly.
+Q: What powers evaporation in the water cycle? | Solar energy.
+Q: What is transpiration? | The loss of water from leaves through stomata.
+Q: What is infiltration? | The movement of water from the surface into the soil.
+Q: Why can Amazon forest loss reduce rainfall downwind? | A large share of Amazon rainfall is recycled from transpiration.
+Q: How does woodland and wetland vegetation reduce flood peaks? | Their soils absorb water and release it gradually, slowing runoff.
+Q: Name three natural flood management measures. | Tree planting, leaky dams and restored wetlands.
+Q: How much more water vapour does warmer air hold per degree Celsius? | About 7% more, which increases heavy rainfall in many regions.
 
 ## The carbon cycle
 LV: Introductory · Application
@@ -134,6 +154,16 @@ M2#ecology-u05-03-q2@2: Why does atmospheric CO_{2} fall each northern summer? |
 M3#ecology-u05-03-q3@3: Why does burning fossil fuels raise atmospheric CO_{2} when the carbon was once in the atmosphere? | It returns carbon in decades that the slow cycle took millions of years to remove | Fossil carbon is a new element created underground | Burning destroys the plants that would absorb it | The ocean releases all fossil carbon immediately | The release rate far exceeds natural removal by weathering and burial.
 SEQ1#ecology-u05-03-q4@2: Order the steps by which carbon becomes limestone. | CO_{2} dissolves in seawater ; Marine organisms build calcium carbonate shells ; Shells sink and accumulate on the sea floor ; Sediments are compressed into limestone | This is part of the slow carbon cycle.
 SA2#ecology-u05-03-q5@2,3: Compare the fast and slow carbon cycles. | The fast cycle moves carbon between the atmosphere, living things, soils and surface ocean through photosynthesis, respiration, decomposition and gas exchange, over days to centuries. The slow cycle moves carbon between rocks and the surface through weathering, sedimentation and volcanism, over thousands to millions of years. Fossil fuel burning links them by moving slow-cycle carbon into the fast cycle rapidly. | Fast processes and timescales ; Slow processes and timescales ; Link via fossil fuels
+Q: Which processes return CO_{2} to the air in the fast carbon cycle? | Respiration, decomposition, release from the ocean and combustion.
+Q: How does weathering of silicate rocks affect atmospheric carbon? | It consumes CO_{2} over thousands to millions of years.
+Q: How does limestone form in the slow carbon cycle? | From the shells of marine organisms that settle as sediment.
+Q: What can buried organic matter form over geological time? | Coal, oil and gas.
+Q: Which process returns slow-cycle carbon to the atmosphere naturally? | Volcanism.
+Q: What is the solubility pump? | The ocean carrying CO_{2}-rich cold water to depth.
+Q: Who began measuring CO_{2} at Mauna Loa, and when? | Charles David Keeling, in 1958.
+Q: How much has atmospheric CO_{2} risen since 1958? | From about 315 ppm to over 420 ppm today.
+Q: What do the seasonal wiggle and the upward trend in the Keeling Curve show? | The wiggle shows the fast cycle; the upward trend shows fossil carbon entering it.
+Q: Roughly how much of human CO_{2} emissions do plants and oceans take up? | Roughly half; the rest accumulates in the atmosphere.
 
 ## Carbon stores and fluxes
 LV: Introductory · Application
@@ -182,6 +212,16 @@ M2#ecology-u05-04-q2@2: Emissions are 10 Pg C, the ocean sink 2.8 and the land s
 M3#ecology-u05-04-q3@3: Why is the ocean carbon sink not entirely good news? | Dissolved CO_{2} acidifies seawater, harming calcifying organisms | The ocean releases all its carbon each winter | It increases atmospheric CO_{2} directly | Ocean uptake causes sea levels to fall | Uptake lowers pH and carbonate availability for shell-building organisms.
 NUM2#ecology-u05-04-q4@3: The atmosphere gains 5.2 Pg C in a year, and 1 ppm of CO_{2} corresponds to 2.12 Pg C. How many ppm does CO_{2} rise? | 2.45 | 0.05 | ppm | 5.2 ÷ 2.12 = 2.45 ppm.
 SA2#ecology-u05-04-q5@2,3: Explain why atmospheric CO_{2} rises by less each year than human emissions alone would suggest. | Each year, land ecosystems and the ocean take up a large share of emitted carbon. Plants absorb more through photosynthesis than is released, especially with CO_{2} fertilisation and regrowing forests, and CO_{2} dissolves in the surface ocean and is carried to depth. Together these sinks absorb about half of emissions, so the atmosphere gains only about half. | Land sink ; Ocean sink ; About half absorbed ; Remainder accumulates
+Q: What is a petagram? | 10^{15} grams, or one billion tonnes, used for global carbon stocks.
+Q: How much carbon does the ocean hold? | About 38,000 Pg C.
+Q: How much carbon is held in vegetation? | About 450–650 Pg C.
+Q: What is a carbon budget? | An accounting of carbon sources, sinks and atmospheric change.
+Q: What were average fossil fuel emissions over 2013–2022? | About 9.6 Pg C per year.
+Q: How large were the ocean and land sinks over 2013–2022? | About 2.8 Pg C per year for the ocean and 3.3 Pg C per year for land.
+Q: How much carbon corresponds to 1 ppm of atmospheric CO_{2}? | About 2.12 Pg C.
+Q: How much faster would CO_{2} rise without land and ocean sinks? | About twice as fast.
+Q: How much has surface ocean pH fallen since pre-industrial times? | By about 0.1, a roughly 30% rise in hydrogen ion concentration.
+Q: Why might natural carbon sinks not keep pace with emissions? | Their uptake depends on climate, and warming may weaken them.
 
 ## Peatlands, forests and blue carbon
 LV: Introductory · Evaluation
@@ -225,6 +265,16 @@ M2#ecology-u05-05-q2@2: What happens to carbon in a peatland when it is drained?
 M3#ecology-u05-05-q3@3: A company plants conifers on deep peat to offset its emissions. What is the problem? | Drainage and tree roots dry the peat, releasing more carbon than the trees store | Conifers store no carbon at all | Peat cannot be planted on | Offsets are illegal in the UK | Disturbing peat can turn a large store into a source.
 TF1#ecology-u05-05-q4@1: Peatlands cover a small fraction of the world's land but store more carbon than all forest vegetation. | true | About 3% of land area holds around 600 Pg C.
 SA2#ecology-u05-05-q5@3: Evaluate the role of nature-based solutions in tackling climate change. | Protecting and restoring peatlands, forests and coastal wetlands can cut emissions and remove CO_{2}, while supporting biodiversity, flood control and fisheries. However, their total capacity is limited, results take decades, stored carbon can be lost to fire or drought, and poor schemes, such as trees on peat, can backfire. They complement, but cannot replace, rapid cuts in fossil fuel emissions. | Benefits ; Co-benefits ; Limits and risks ; Complement not replace
+Q: What share of the world's land do peatlands cover, and how much carbon do they store? | About 3% of land, storing around 600 Pg C, more than all forest vegetation.
+Q: How much carbon do UK peatlands store? | Over 3 billion tonnes.
+Q: Why do drained peatlands release CO_{2}? | They dry out, so the stored plant material decomposes.
+Q: How do old-growth and young forests differ in carbon? | Old-growth forests hold large stocks; young forests take up carbon fast.
+Q: What is the largest part of land-use change emissions? | Tropical deforestation.
+Q: What is blue carbon? | Carbon stored in coastal ecosystems such as saltmarshes, seagrass meadows and mangroves.
+Q: Besides storing carbon, what benefits do blue carbon habitats provide? | They protect coasts and support fisheries.
+Q: How is a drained peat bog restored? | By blocking ditches to raise the water table and re-wet the peat, so Sphagnum recolonises.
+Q: Why can't nature-based solutions replace cutting fossil fuel emissions? | Their capacity is limited, and stored carbon can be lost to fire, drought or later clearance.
+Q: Why can planting trees on peat be counterproductive? | It can release more carbon from the peat than the trees store.
 
 ## The nitrogen cycle
 LV: Introductory · Application
@@ -267,6 +317,16 @@ M2#ecology-u05-06-q2@2: Why does denitrification increase in waterlogged soils? 
 M3#ecology-u05-06-q3@3: A farmer applies fertiliser just before a week of heavy rain on clay soil. What losses are likely? | Nitrate leaching and denitrification to N_{2} and nitrous oxide | No losses, as rain locks nitrogen into soil | Nitrogen fixation by the extra rainfall | Conversion of nitrate into phosphate | Wet soils leach nitrate and favour denitrification.
 SEQ1#ecology-u05-06-q4@1: Order the steps as nitrogen moves from dead leaves to a plant root. | Decomposers release ammonium ; Nitrosomonas oxidise ammonium to nitrite ; Nitrobacter oxidise nitrite to nitrate ; Plant roots absorb nitrate | Ammonification and nitrification make nitrogen available to plants.
 SA2#ecology-u05-06-q5@2,3: Explain why nitrogen is often scarce for plants despite being abundant in the air. | Atmospheric nitrogen is N_{2}, held by a strong triple bond that most organisms cannot break. Only nitrogen-fixing bacteria, lightning and industrial processes convert it to reactive forms. Reactive nitrogen in soil is easily lost by leaching of nitrate and by denitrification, so supply is often limited relative to plant demand. | Triple bond ; Few fixers ; Losses ; Limitation
+Q: Why can most organisms not use atmospheric N_{2}? | Its triple bond makes it unreactive and unusable.
+Q: Why do living things need reactive nitrogen? | To build amino acids and nucleic acids.
+Q: Name three ways nitrogen is fixed. | By bacteria such as Rhizobium and cyanobacteria, by lightning, and industrially.
+Q: What is assimilation in the nitrogen cycle? | Plants taking up ammonium and nitrate to build organic molecules.
+Q: What is ammonification? | The conversion of organic nitrogen in dead matter and wastes to ammonium by decomposers.
+Q: Which bacteria carry out the two steps of nitrification? | Nitrosomonas turns ammonium to nitrite; Nitrobacter turns nitrite to nitrate.
+Q: Where does denitrification occur? | In waterlogged soils and sediments, carried out by anaerobic bacteria.
+Q: Why does nitrification slow in a waterlogged field? | Nitrification needs oxygen, which falls when soil is waterlogged.
+Q: What do anammox bacteria do? | They convert ammonium and nitrite directly to N_{2} without oxygen.
+Q: How do nitrification and denitrification differ? | Nitrification needs oxygen and makes nitrate; denitrification happens without oxygen and removes nitrate as N_{2}.
 
 ## Nitrogen fixation
 LV: Introductory · Application
@@ -307,6 +367,16 @@ M2#ecology-u05-07-q2@2: Why do many cyanobacteria fix nitrogen in heterocysts? |
 M3#ecology-u05-07-q3@3: Alder trees are often among the first to colonise bare river gravels. Why? | Their Frankia partners fix nitrogen, so they can grow in nitrogen-poor ground | They need no water to survive on gravel | They absorb nitrogen gas directly through their leaves | Gravel is rich in nitrate from rivers | Symbiotic fixation lets them thrive where soil nitrogen is scarce.
 TF1#ecology-u05-07-q4@1: Legume plants fix nitrogen without help from bacteria. | false | The bacteria in the nodules carry out fixation; the plant supplies sugars and protection.
 SA2#ecology-u05-07-q5@2,3: Explain why nitrogen fixation is energetically costly and how plants support it. | Breaking the triple bond of N_{2} requires a great deal of energy: nitrogenase uses at least 16 ATP for each N_{2} fixed. In legumes, the plant supplies sugars from photosynthesis to the bacteria in its nodules to meet this cost, and produces leghaemoglobin to keep oxygen low. In return, the bacteria supply ammonia, so the plant can grow in nitrogen-poor soils. | Triple bond and ATP ; Plant supplies sugars ; Oxygen protection ; Mutual benefit
+Q: How much ATP is needed to fix one molecule of N_{2}? | At least 16 molecules of ATP.
+Q: Why must nitrogen fixers protect nitrogenase? | Nitrogenase is destroyed by oxygen.
+Q: Which nitrogen-fixing bacterium lives in alder roots? | Frankia.
+Q: What is a heterocyst? | A thick-walled cyanobacterial cell that excludes oxygen, where nitrogen fixation takes place.
+Q: Give an example of a free-living nitrogen-fixing soil bacterium. | Azotobacter.
+Q: How does Rhizobium come to infect clover roots? | Clover roots release chemical signals, and Rhizobium responds and infects the root hairs.
+Q: Why is a clover root nodule pink? | It contains leghaemoglobin, which binds oxygen.
+Q: Why is the legume–Rhizobium relationship a mutualism? | The plant supplies sugars; the bacteria supply ammonia.
+Q: Before industrial fertilisers, what were the only routes for new reactive nitrogen into ecosystems? | Biological fixation and lightning.
+Q: Why is it wrong to say legumes fix nitrogen themselves? | Their bacterial partners fix it; the plant supplies energy and an oxygen-protected environment.
 
 ## Human alteration of the nitrogen cycle
 LV: Introductory · Evaluation
@@ -355,6 +425,16 @@ M2#ecology-u05-08-q2@2: How does nitrogen deposition reduce plant diversity on h
 M3#ecology-u05-08-q3@3: A farm injects slurry into the soil rather than spraying it on the surface. What is the main benefit? | It cuts ammonia losses to the air | It increases nitrous oxide emissions | It adds phosphorus to the slurry | It makes the slurry more acidic | Injection reduces exposure to air, so less ammonia volatilises.
 NUM2#ecology-u05-08-q4@2: Nitrous oxide has a 100-year global warming potential of about 270. How many tonnes of CO_{2}-equivalent is 2 tonnes of N_{2}O? | 540 | 5 | tonnes CO₂e | 2 × 270 = 540 tonnes of CO_{2}-equivalent.
 SA2#ecology-u05-08-q5@3: Evaluate the benefits and costs of the Haber–Bosch process. | Haber–Bosch made fertiliser abundant, greatly increasing crop yields and helping feed billions of people. But much of the nitrogen applied is not taken up by crops; it leaks as nitrate into water, causing eutrophication, as ammonia and NO_{x} into air, harming health and habitats, and as nitrous oxide, warming the climate. Using it more efficiently keeps the benefits while reducing costs. | Food production ; Low efficiency ; Pollution effects ; Efficiency as solution
+Q: How much nitrogen does the Haber–Bosch process fix each year? | About 120 Tg N per year.
+Q: By how much have humans increased reactive nitrogen inputs to land? | Humans have about doubled the rate.
+Q: Who described the nitrogen cascade? | James Galloway.
+Q: How does reactive nitrogen affect air quality? | NO_{x} forms ozone and fine particles, and ammonia from farming forms particulate pollution.
+Q: How does nitrate harm water? | It leaches into rivers and groundwater, causing eutrophication and affecting drinking water.
+Q: Apart from warming, what other harm does nitrous oxide cause? | It depletes stratospheric ozone.
+Q: How powerful a greenhouse gas is nitrous oxide compared with CO_{2}? | About 270 times as powerful over 100 years.
+Q: What is a critical load? | The level of pollutant deposition above which harmful effects are expected.
+Q: Name three ways to reduce nitrogen pollution. | Precise fertiliser use, covering and injecting slurry, catalytic converters and emission limits, and buffer strips and wetlands.
+Q: Why is nitrogen pollution not only a water problem? | The same nitrogen can harm air quality, climate and biodiversity as it cascades.
 
 ## The phosphorus cycle
 LV: Introductory · Application
@@ -395,6 +475,16 @@ M2#ecology-u05-09-q2@2: What did Schindler's divided-lake experiment show? | Pho
 M3#ecology-u05-09-q3@3: Why is recovering phosphorus from sewage important for food security? | Mined phosphate is finite and concentrated in few countries | Sewage contains no phosphorus | Phosphorus can be made from air instead | Recovery increases phosphate mining | Recycling reduces dependence on a limited, unevenly distributed resource.
 TF1#ecology-u05-09-q4@1: The phosphorus cycle has a large atmospheric reservoir, like the nitrogen cycle. | false | Phosphorus has no significant gas phase; its reservoir is in rocks and sediments.
 SA2#ecology-u05-09-q5@2,3: Explain why phosphorus is often the limiting nutrient in lakes. | Phosphorus enters lakes mainly from weathering and runoff, which supply it slowly, and it binds to sediments, so concentrations are low. Nitrogen can be added by nitrogen-fixing cyanobacteria from the atmosphere, but there is no atmospheric source of phosphorus. So algal growth is often limited by phosphorus, as Schindler's whole-lake experiments demonstrated. | Slow supply ; Binding to sediments ; Nitrogen fixation compensates ; Experimental evidence
+Q: Name three molecules that need phosphorus. | DNA, ATP and cell membranes.
+Q: What is a sedimentary cycle? | A cycle whose main reservoir is rocks and sediments rather than the atmosphere.
+Q: In what form do organisms use phosphorus? | As phosphate, PO_{4}^{3-}.
+Q: How do mycorrhizal fungi help the phosphorus cycle? | They help plants absorb phosphate.
+Q: Why is much soil phosphorus unavailable to plants? | Phosphate binds tightly to soil particles, especially iron, aluminium and calcium compounds.
+Q: How is the long phosphorus cycle completed? | Ocean sediments become rock over millions of years and may be uplifted.
+Q: How was Lake 226 divided in Schindler's experiment? | By a plastic curtain, with one half receiving carbon, nitrogen and phosphorus and the other only carbon and nitrogen.
+Q: Which countries hold around 70% of known phosphate reserves? | Morocco and Western Sahara.
+Q: How could dependence on mined phosphate be reduced? | By recovering phosphorus from sewage and manure.
+Q: Why can't phosphorus be replaced from the atmosphere like nitrogen? | It has no atmospheric source; new phosphorus comes only from rocks.
 
 ## Eutrophication
 LV: Introductory · Application
@@ -442,6 +532,16 @@ M2#ecology-u05-10-q2@2: Why do rooted water plants decline in eutrophic lakes? |
 M3#ecology-u05-10-q3@3: Phosphorus inputs to a lake are cut, but blooms continue for years. Why? | Phosphorus stored in sediments is still being released | Phosphorus cuts never affect algae | Blooms are caused only by sunlight | Nitrogen fixation adds phosphorus | Internal loading from sediments delays recovery.
 SEQ1#ecology-u05-10-q4@1: Order the events in eutrophication. | Nutrient enrichment ; Algal bloom ; Algae die and decompose ; Dissolved oxygen falls ; Fish and invertebrates die | Each step drives the next.
 SA2#ecology-u05-10-q5@3: Evaluate ways of reducing eutrophication in a river catchment. | Upgrading sewage works to remove phosphorus quickly cuts point sources and has proven effective. Diffuse farm runoff is harder: it needs precise fertiliser and manure use, buffer strips, cover crops and wetlands, which depend on many landowners and may need incentives or regulation. Recovery may be slow due to stored phosphorus, so action must be sustained across the whole catchment. | Point sources ; Diffuse sources ; Practical challenges ; Long-term catchment approach
+Q: What is eutrophication? | Enrichment of water with nutrients, causing excessive plant and algal growth.
+Q: What is hypoxia? | Low dissolved oxygen in water.
+Q: What harm can cyanobacterial blooms cause besides oxygen loss? | Some cyanobacteria produce toxins harmful to animals and people.
+Q: What are point sources of nutrient pollution? | Sewage treatment works and industrial discharges, which are easier to identify and control.
+Q: Give three diffuse sources of nutrient pollution. | Farmland runoff, manure and fertilisers, septic tanks and urban surfaces.
+Q: How many coastal dead zones did Diaz and Rosenberg count in 2008? | Over 400 worldwide.
+Q: What contributed to the 2023 algal blooms in Lough Neagh? | Nutrients from farming and wastewater, warm weather, and invasive zebra mussels clearing water and increasing light.
+Q: What is phosphorus stripping? | Removing phosphorus at sewage works to reduce eutrophication.
+Q: What policy has the EU used to reduce phosphorus entering water? | Banning phosphates in detergents.
+Q: Is it the algae that use up oxygen in eutrophic water? | No; bacteria decomposing the dead algae consume most of the oxygen.
 
 ## The sulfur cycle and acid deposition
 LV: Introductory · Application
@@ -487,6 +587,16 @@ M2#ecology-u05-11-q2@2: How did acidification harm fish in upland lakes? | Low p
 M3#ecology-u05-11-q3@3: Why was international cooperation needed to tackle acid rain? | Pollution from one country fell as acid rain in others | Each country's emissions affected only itself | Acid rain was caused only by volcanoes | Cooperation was needed to increase sulfur emissions | Long-range transport meant no country could solve it alone.
 TF1#ecology-u05-11-q4@2: UK sulfur dioxide emissions have fallen by more than 95% since 1970. | true | Emission controls and the decline of coal have cut SO_{2} dramatically.
 SA2#ecology-u05-11-q5@3: Evaluate the response to acid rain as a model for tackling other environmental problems. | The response showed that scientific evidence of cross-border harm can drive binding international agreements, and that technology such as flue-gas desulfurisation and changes in energy use can cut pollution rapidly. However, sulfur was released by relatively few large sources, making controls easier than for diffuse problems like carbon dioxide or farm nitrogen, and ecosystem recovery has been slow. | Science and agreement ; Technology ; Few large sources ; Slow recovery
+Q: What are the natural sources of sulfur in the sulfur cycle? | Weathering of rocks, volcanoes, marine phytoplankton releasing DMS, and bacteria in sediments.
+Q: What is dimethyl sulfide and why does it matter for clouds? | A sulfur gas from marine phytoplankton that forms sulfate particles which help clouds form.
+Q: What causes the rotten eggs smell of marshes? | Bacteria reducing sulfate to hydrogen sulfide in waterlogged sediments.
+Q: Which acids form acid rain? | Sulfuric and nitric acids, from sulfur dioxide and nitrogen oxides.
+Q: What is acid deposition? | Deposition of acids from the atmosphere as rain, snow or dry particles.
+Q: How did acidified soils harm trees and fish? | They released aluminium, which harmed fish gills and tree roots.
+Q: What is flue-gas desulfurisation? | Technology that removes sulfur dioxide from power station exhaust.
+Q: When did protocols requiring cuts in sulfur emissions begin? | From 1985 onwards.
+Q: What did the CLAW hypothesis propose? | That DMS from plankton could regulate climate through clouds; the full feedback remains uncertain.
+Q: Why is acid rain not solved everywhere? | Emissions remain high in some rapidly industrialising regions, and soils and waters recover slowly.
 
 ## Nutrient limitation
 LV: Introductory · Application
@@ -529,6 +639,16 @@ M2#ecology-u05-12-q2@2: Water has an N:P ratio of 8:1. Which nutrient is likely 
 M3#ecology-u05-12-q3@3: Adding nitrogen alone or phosphorus alone gives little growth, but adding both gives a large increase. What does this show? | Co-limitation by nitrogen and phosphorus | Neither nutrient affects growth | Only phosphorus is limiting | The experiment must have failed | A strong response to both together indicates co-limitation.
 NUM2#ecology-u05-12-q4@2: Lake water has 30 µmol/L nitrate and 1 µmol/L phosphate. What is its N:P ratio? | 30 | 0.5 | ratio | N:P = 30 ÷ 1 = 30, above 16, suggesting phosphorus limitation.
 SA2#ecology-u05-12-q5@2,3: Explain how an ecologist could test which nutrient limits algal growth in a pond. | Collect pond water in identical bottles and add nitrogen to some, phosphorus to others, both to a third set, and nothing to controls. Keep them in the same light and temperature and measure algal growth, for example by chlorophyll. Growth in response to one nutrient shows it is limiting; a response only to both shows co-limitation. | Bioassay design ; Treatments and controls ; Measurement ; Interpretation
+Q: Who is the law of the minimum linked to? | Carl Sprengel and Justus von Liebig, in the nineteenth century.
+Q: What image is used to picture the law of the minimum? | A barrel with staves of different heights, where water rises only to the lowest stave.
+Q: Who discovered the constant C:N:P ratio of marine plankton? | Alfred Redfield.
+Q: What does an N:P ratio above 16 suggest? | Phosphorus is relatively scarce, so growth is likely phosphorus-limited.
+Q: What does an N:P ratio below 16 suggest? | Growth is likely nitrogen-limited.
+Q: In the lake with an N:P ratio of 30, which nutrient addition would increase growth most? | Adding phosphorus.
+Q: What is a nutrient bioassay? | Adding nutrients to bottles or plots and measuring the growth response.
+Q: What did Elser and colleagues' 2007 meta-analysis find? | Adding nitrogen and phosphorus together often increased growth more than either alone, across freshwater, marine and terrestrial systems.
+Q: Why doesn't adding any nutrient increase growth? | Only adding the limiting nutrient, or nutrients, increases productivity.
+Q: What is the law of the minimum? | The principle that growth is controlled by the scarcest essential resource, not the total.
 
 ## Planetary boundaries
 LV: Introductory · Evaluation
@@ -571,6 +691,16 @@ M2#ecology-u05-13-q2@2: How many boundaries did the 2023 assessment conclude had
 M3#ecology-u05-13-q3@3: A critic says the phosphorus boundary makes little sense globally. What is the basis of this argument? | Phosphorus pollution acts mainly at regional and catchment scales | Phosphorus has no environmental effects | Phosphorus cycles mainly through the atmosphere | The global total of phosphorus is unknown | Effects depend on where phosphorus accumulates, not a global sum.
 TF1#ecology-u05-13-q4@1: The planetary boundaries framework was first proposed in 2009. | true | Rockström and colleagues published it in Nature in 2009.
 SA2#ecology-u05-13-q5@3: Evaluate the planetary boundaries framework as a guide for policy. | It brings together climate, biodiversity, nutrients and pollution into one picture of human pressure on the Earth, communicates urgency and has influenced organisations and governments. However, some boundaries are hard to measure, several act regionally rather than globally, the precise limits involve judgement, and it does not say how to share the safe space fairly. It is best used alongside local and social considerations. | Integration ; Influence ; Measurement and scale ; Fairness
+Q: Who proposed planetary boundaries, and in what year? | Johan Rockström and colleagues, in 2009.
+Q: What conditions is the safe operating space based on? | The relatively stable conditions of the Holocene.
+Q: What are novel entities? | New substances released by humans, such as synthetic chemicals and plastics.
+Q: Which six boundaries did Richardson and colleagues say were transgressed in 2023? | Climate change, biosphere integrity, land-system change, freshwater change, biogeochemical flows and novel entities.
+Q: What does the nitrogen planetary boundary limit? | Industrial and intentional biological nitrogen fixation.
+Q: What would staying within the nitrogen boundary require? | Much higher nitrogen use efficiency in farming.
+Q: Give two strengths of the planetary boundaries framework. | It links global environmental problems, communicates urgency and informs policy.
+Q: Why do critics question some planetary boundaries? | Some are hard to quantify, some problems act regionally, and thresholds can be arbitrary.
+Q: Why shouldn't a planetary boundary be treated as a precise tipping point? | Boundaries are set cautiously with uncertainty zones, not at exact thresholds of collapse.
+Q: What is the safe operating space? | The range of conditions within which human societies can develop safely.
 
 ## Coupled cycles and global change
 LV: Introductory · Evaluation
@@ -614,4 +744,14 @@ M2#ecology-u05-14-q2@2: Why might higher CO_{2} not greatly increase forest carb
 M3#ecology-u05-14-q3@3: Warmer surface oceans become more stratified. What effect is expected on productivity? | Reduced mixing cuts nutrient supply, lowering productivity in many regions | More mixing raises nutrient supply everywhere | No effect, as nutrients come from the air | Productivity rises because water is warmer | Stratification limits the upward flow of nutrients.
 SEQ1#ecology-u05-14-q4@2: Order the steps of the permafrost carbon feedback. | Climate warms ; Permafrost thaws ; Microbes release CO_{2} and methane ; Further warming occurs | Each step amplifies the previous one.
 SA2#ecology-u05-14-q5@3: Explain why climate models need to include the nitrogen cycle. | Plant carbon uptake depends on nitrogen, so models that ignore nitrogen limitation may assume plants will keep absorbing more carbon as CO_{2} rises, overestimating the land sink. Nitrogen also affects decomposition and nitrous oxide emissions. Including nitrogen gives more realistic projections of how much carbon land ecosystems will absorb and how much warming will occur. | Nitrogen limits carbon uptake ; Risk of overestimating sink ; Other nitrogen effects ; More realistic projections
+Q: What are coupled cycles? | Biogeochemical cycles linked so that changes in one affect the others.
+Q: Why are biogeochemical cycles coupled? | Organisms need elements in roughly fixed ratios, and water links weathering, decomposition and growth.
+Q: What is CO_{2} fertilisation? | Increased plant growth caused by higher atmospheric CO_{2}.
+Q: How can nitrogen deposition affect forest carbon uptake? | It can increase uptake in nitrogen-poor regions while harming biodiversity.
+Q: How does warming affect soil decomposition? | Higher temperatures speed soil respiration, releasing carbon and nutrients.
+Q: Which gases does thawing permafrost release? | CO_{2} and methane.
+Q: What is a positive feedback? | A process that amplifies the original change.
+Q: Why do climate models that ignore nitrogen limitation go wrong? | They tend to overestimate future land carbon uptake.
+Q: What trade-off comes from cutting nitrogen pollution? | It reduces nitrous oxide warming but may slightly reduce forest carbon uptake.
+Q: Why won't rising CO_{2} automatically make plants absorb more carbon? | Nutrient and water limitation can restrict the response.
 `;

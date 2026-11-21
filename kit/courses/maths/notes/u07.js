@@ -31,6 +31,16 @@ SRC: Department for Education, Mathematics AS and A level subject content | stan
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-01-q1@1: Which is 5/x^{3} in index form? | 5x^{−3} | 5x^{3} | x^{−15} | 5^{−3}x | (5x)^{−3} | Dividing by x^{3} is multiplying by x^{−3}, and the 5 stays as a coefficient.
 M2#maths-u07-01-q2@2: Which is (x^{2} + 3)/√x in index form? | x^{3/2} + 3x^{−1/2} | x^{2} + 3x^{−1/2} | x^{3/2} + 3 | x + 3x^{1/2} | x^{5/2} + 3x^{−1/2} | x^{2}/x^{1/2} = x^{3/2} and 3/x^{1/2} = 3x^{−1/2}: divide each term separately.
+Q: What is index form? | Writing roots and reciprocals as powers, such as 1/√x = x^{−1/2}, so the power rule applies.
+Q: Which functions count as the standard functions of calculus? | Polynomials, powers, e^{x}, ln x, sin x, cos x and tan x.
+Q: How do you write √x in index form? | x^{1/2}.
+Q: How do you rewrite 3/x^{2} ready for differentiation? | As 3x^{−2}.
+Q: How should you prepare a fraction with a single-term denominator, such as (x^{3} − 4x)/x^{2}, for calculus? | Split it into separate terms: x − 4x^{−1}.
+Q: What should you usually do with a product before differentiating term by term? | Expand it, unless you plan to use the product rule.
+Q: Which function idea from precalculus does the chain rule rely on? | Composition of functions.
+Q: What common mistake involves angle units in calculus? | Using degrees: the derivative of sin x is cos x only when x is in radians.
+Q: Where do most errors in calculus really come from? | Precalculus errors, such as slips in algebra, indices, logs or trigonometry.
+Q: Write (x^{2} + 1)/x as a sum of powers. | x + x^{−1}.
 
 ## Infinitesimal Calculus
 S: Calculus began with the idea of infinitely small changes, the "infinitesimals" of Newton and Leibniz in the 17th century. Their methods worked brilliantly, but it took until the 19th century to put them on a rigorous footing with limits.
@@ -61,6 +71,16 @@ SRC: Boyer CB, The History of the Calculus and Its Conceptual Development (Dover
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-02-q1@1: Whose notation, dy/dx and ∫, do we use today? | Leibniz | Newton | Euler | Archimedes | Cauchy | Leibniz introduced dy/dx and the integral sign; Newton used dots and "fluxions".
 M2#maths-u07-02-q2@2: What made calculus rigorous in the 19th century? | The precise definition of a limit | The invention of computers | Euclid's axioms | Decimal notation | The discovery of π | Cauchy and Weierstrass defined limits precisely, replacing vague infinitesimals.
+Q: What is an infinitesimal? | An informally infinitely small quantity, later made rigorous by limits and by non-standard analysis.
+Q: What does differentiation measure? | Instantaneous rates of change, such as the slope of a curve at a point or speed at an instant.
+Q: What does the fundamental theorem of calculus say about differentiation and integration? | They are inverse processes.
+Q: What is Leibniz notation? | dy/dx for derivatives and ∫ f(x) dx for integrals, suggesting ratios and sums of tiny quantities.
+Q: How did Archimedes find areas and volumes around 250 BCE? | By the method of exhaustion.
+Q: What did Newton call his version of calculus? | Fluxions.
+Q: How did Bishop Berkeley mock infinitesimals in 1734? | As "the ghosts of departed quantities".
+Q: Who made calculus rigorous with limits and the ε–δ definition in the 1800s? | Cauchy and Weierstrass.
+Q: How do thin rings show that a circle's area is πr^{2}? | Each ring has area about 2πx dx; adding them from 0 to r gives ∫ 2πx dx = πr^{2}.
+Q: What is the common mistake about dy/dx as a fraction? | Treating it as an ordinary fraction everywhere: it is a limit, though it often behaves like a fraction.
 
 ## Limits
 S: A limit describes the value a function approaches as its input approaches some value. Limits underpin every idea in calculus: derivatives, integrals, continuity and infinite series are all defined by them.
@@ -96,6 +116,16 @@ NUM1#maths-u07-03-q1@1: Find lim_{x→2} (x^{3} − 8)/(x − 2). | 12 | 0 |  | 
 M1#maths-u07-03-q2@1: What is lim_{x→∞} (5x + 2)/(2x − 1)? | 5/2 | 0 | ∞ | −2 | 5 | Divide top and bottom by x: (5 + 2/x)/(2 − 1/x) → 5/2.
 M3#maths-u07-03-q3@2: What is lim_{x→0} (sin 3x)/x? | 3 | 1 | 0 | 1/3 | It doesn't exist | (sin 3x)/x = 3 × (sin 3x)/(3x), and (sin u)/u → 1 as u → 0.
 M2#maths-u07-03-q4@2: For f(x) = |x| at x = 0, what do the secant gradients from the right and left approach? | +1 from the right and −1 from the left, so the limit doesn't exist | 0 from both sides, since the graph touches the axis there | +1 from both sides, since |x| = x near 0 | Both grow without bound, since the corner is infinitely steep | −1 from the right and +1 from the left, so the limit is 0 | The one-sided limits differ, so the difference quotient has no limit at 0.
+Q: What does lim_{x→a} f(x) = L mean? | f(x) gets arbitrarily close to L as x gets close to a, but not equal to a.
+Q: What is an indeterminate form? | An expression like 0/0 or ∞/∞ whose value can't be decided without further work.
+Q: How do you evaluate a limit when f is continuous at a? | Substitute x = a directly.
+Q: How do you handle a 0/0 limit such as (x^{2} − 9)/(x − 3) as x → 3? | Factorise and cancel: it becomes x + 3, which tends to 6.
+Q: What is lim_{x→0} (sin x)/x, with x in radians? | 1.
+Q: What is lim_{h→0} (e^{h} − 1)/h? | 1.
+Q: How do you find a limit at infinity of a rational function? | Divide by the highest power: (3x^{2} + 1)/(x^{2} − 5) tends to 3.
+Q: Why does lim_{x→0} 1/x not exist? | The right-hand limit is +∞ and the left-hand limit is −∞, so they differ.
+Q: Must a limit at a equal the function's value at a? | No: f could even be undefined at a.
+Q: What mistake do people make with 0/0 limits? | Concluding the limit is 0, 1 or undefined without further work.
 
 ## Continuity
 S: A function is continuous at a point if its graph has no break there: you could draw it without lifting your pen. Continuity is what lets us find roots by sign changes and guarantees that many calculus theorems apply.
@@ -125,6 +155,16 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-04-q1@1: Which function is continuous for all real x? | sin x + x^{2} | 1/x | ln x | tan x | 1/(x^{2} − 1) | Sums of continuous functions are continuous, and sin x and x^{2} are both continuous everywhere.
 M2#maths-u07-04-q2@2: f(x) = x^{2} + k for x < 1 and 3x for x ≥ 1 is continuous. What is k? | 2 | 3 | 1 | 0 | 4 | At x = 1 the pieces must agree: 1 + k = 3, so k = 2.
+Q: When is a function continuous at a? | When lim_{x→a} f(x) exists and equals f(a).
+Q: What are the three conditions for continuity at a point? | f(a) is defined, the limit as x → a exists, and the two are equal.
+Q: What does the intermediate value theorem state? | If f is continuous on [a, b] and k lies between f(a) and f(b), then f(c) = k for some c in [a, b].
+Q: Where are rational functions continuous? | Everywhere except where the denominator is zero.
+Q: Where is ln x continuous? | For x > 0.
+Q: What is a removable discontinuity? | A hole in the graph, as in (x^{2} − 1)/(x − 1) at x = 1.
+Q: Name the three types of discontinuity. | Removable (a hole), jump (as in step functions) and infinite (as in 1/x at 0).
+Q: Why does f(x) = x^{3} − x − 1 have a root in (1, 2)? | It is continuous, f(1) = −1 and f(2) = 5, so it changes sign.
+Q: Why does 1/x not have a root between −1 and 1 despite changing sign? | It is not continuous there: it has an asymptote at 0, so the intermediate value theorem doesn't apply.
+Q: Which numerical method does the intermediate value theorem justify? | Root-finding by sign change, such as bisection.
 
 ## Differentiability
 S: A function is differentiable at a point if it has a well-defined tangent there: a single slope. Differentiable functions are smooth; corners, cusps, jumps and vertical tangents break differentiability.
@@ -159,6 +199,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-05-q1@1: Where is f(x) = |x + 2| not differentiable? | At x = −2 | At x = 0 | At x = 2 | Nowhere | Everywhere | The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.
 M2#maths-u07-05-q2@2: Which statement about continuity and differentiability is true? | Every differentiable function is continuous | Every continuous function is differentiable | |x| is differentiable at 0 | A jump discontinuity can still be differentiable | ∛x has derivative 0 at x = 0 | Differentiability at a point forces continuity there; the converse fails, as |x| shows.
 M2#maths-u07-05-q3@2: Why is |x| continuous but not differentiable at 0? | Its graph has no gap, but the gradient jumps from −1 to +1 at a corner | Its graph has a gap at 0, so neither property holds | Its gradient is infinite at 0, like a vertical tangent | It isn't defined at 0, so it can't be differentiated | It is differentiable at 0, with derivative 0 there | Continuity needs no break; differentiability needs a single tangent, which a corner lacks.
+Q: When is a function differentiable at a? | When lim_{h→0} (f(a + h) − f(a))/h exists.
+Q: What is a cusp? | A sharp point where the slopes from either side approach ±∞ in opposite directions.
+Q: Why is the absolute value function not differentiable at 0? | It has a corner: slope −1 on the left and +1 on the right.
+Q: Why is the cube root of x not differentiable at 0? | It has a vertical tangent there: infinitely steep.
+Q: What example is continuous at 0 but not differentiable there because of wild oscillation? | x sin(1/x).
+Q: Does continuity imply differentiability? | No: a function can be continuous but have a corner, as the absolute value of x does at 0.
+Q: What did Weierstrass find in 1872? | A function continuous everywhere and differentiable nowhere.
+Q: When is a piecewise function differentiable at a join? | Only if both the values and the slopes match there.
+Q: f(x) = x^{2} for x ≤ 1 and ax + b for x > 1 is differentiable at 1. What are a and b? | a = 2 and b = −1.
+Q: Why does a jump discontinuity prevent differentiability? | A jump means there is no tangent at that point.
 
 ## Differential Calculus
 S: Differential calculus studies how quantities change. The derivative measures the instantaneous rate of change of a function, which is the gradient of its graph at a point.
@@ -193,6 +243,16 @@ NUM1#maths-u07-06-q1@1: Find the gradient of the chord of y = x^{3} from x = 1 t
 M1#maths-u07-06-q2@1: What does a negative derivative tell you about a function? | It's decreasing at that point | It's negative at that point | It has a maximum | It's increasing | It's zero | The derivative is the gradient: negative gradient means the function is going down.
 M2#maths-u07-06-q3@2: A chord of y = f(x) from x = 2 to x = 2 + h has gradient 5 + 3h. What is f′(2)? | 5 | 8 | 3 | 5 + 3h | 0 | The derivative is the limit as h → 0: 5 + 3h → 5.
 M2#maths-u07-06-q4@2: What does the derivative measure at a point? | The instantaneous rate of change: the limit of secant gradients as h → 0 | The area under the curve up to that point | The average value of the function over an interval | The value of the function itself at the point | The distance from the point to the x-axis | The derivative is defined as the limit of the difference quotient.
+Q: What is a derivative? | The instantaneous rate of change of a function, dy/dx or f′(x): the gradient of its graph at a point.
+Q: What is a chord of a curve? | A straight line joining two points on the curve; its gradient approximates the tangent's.
+Q: What is the gradient of the chord from (x, f(x)) to (x + h, f(x + h))? | (f(x + h) − f(x))/h.
+Q: What happens to chord gradients as h → 0? | They approach the tangent's gradient, which is the derivative.
+Q: If v is velocity and t is time, what does dv/dt represent? | Acceleration.
+Q: What is marginal cost in calculus terms? | dC/dq, the rate of change of cost with quantity.
+Q: Name the three derivative notations and their originators. | dy/dx (Leibniz), f′(x) (Lagrange) and a dot over y for time derivatives (Newton).
+Q: What does a positive derivative tell you about a function? | The function is increasing there.
+Q: Chords of y = x^{2} at x = 3 with h = 0.1 and 0.01 give 6.1 and 6.01. What is the derivative? | 6, which is 2x at x = 3.
+Q: What mistake mixes up y and dy/dx? | Confusing a function's value with its rate of change: y can be large while dy/dx is small.
 
 ## Derivatives
 S: A derivative is defined as the limit of the gradient of a chord, and computed in practice with rules. Differentiating from first principles shows where the rules come from.
@@ -231,6 +291,16 @@ M1#maths-u07-07-q1@1: What is d/dx (6x^{3} − 2x + 9)? | 18x^{2} − 2 | 18x^{2
 M2#maths-u07-07-q2@2: What is d/dx (4/x)? | −4/x^{2} | 4 | 4/x^{2} | −4x | 4 ln x | 4/x = 4x^{−1}, which differentiates to −4x^{−2}.
 NUM1#maths-u07-07-q3@1: Differentiate 4x^{3} − 2x and evaluate at x = 1. | 10 | 0 |  | The derivative is 12x^{2} − 2, which is 10 at x = 1.
 NUM1#maths-u07-07-q4@1: For f(x) = x^{2} at x = 3 with h = 0.01, what is the secant gradient (f(3 + h) − f(3))/h? | 6.01 | 0.0001 |  | (9.0601 − 9)/0.01 = 6.01, approaching the derivative 6.
+Q: What does differentiating from first principles mean? | Finding f′(x) directly from the limit definition.
+Q: What is the first-principles formula for f′(x)? | f′(x) = lim_{h→0} (f(x + h) − f(x))/h.
+Q: State the power rule. | d/dx (x^{n}) = nx^{n−1}, for any real n.
+Q: Show from first principles that the derivative of x^{2} is 2x. | ((x + h)^{2} − x^{2})/h = 2x + h, which tends to 2x as h → 0.
+Q: What is d/dx √x? | ½x^{−1/2}.
+Q: What is d/dx e^{kx}? | ke^{kx}.
+Q: What is d/dx ln x? | 1/x.
+Q: Why can polynomials be differentiated term by term? | Differentiation is linear: the derivative of a sum is the sum of the derivatives.
+Q: What does a constant differentiate to? | 0.
+Q: What mistake do people make with the power rule? | Differentiating x^{n} as x^{n−1}, forgetting to multiply by n.
 
 ## First Derivatives
 S: The first derivative f′(x) tells you the gradient of a curve everywhere: where it rises, falls and levels off. It finds tangents and normals, and stationary points where the gradient is zero.
@@ -265,6 +335,16 @@ NUM1#maths-u07-08-q1@1: Find the gradient of y = x^{3} − 4x^{2} + 2 at x = 3. 
 M1#maths-u07-08-q2@1: What is the tangent to y = x^{2} at (3, 9)? | y = 6x − 9 | y = 6x + 9 | y = 2x + 3 | y = 9x − 18 | y = 3x | The gradient is 2x = 6, so y − 9 = 6(x − 3), giving y = 6x − 9.
 M2#maths-u07-08-q3@2: For which x is f(x) = 2x^{3} − 6x decreasing? | −1 < x < 1 | x > 1 | x < −1 | x > 0 | All x | f′(x) = 6x^{2} − 6 = 6(x − 1)(x + 1) is negative between −1 and 1.
 NUM1#maths-u07-08-q4@1: Where is the tangent to y = x^{2} − 6x horizontal (give x)? | 3 | 0 |  | dy/dx = 2x − 6 = 0 at x = 3.
+Q: What is a tangent to a curve? | The straight line touching the curve at a point with the same gradient as the curve there.
+Q: What is a normal to a curve? | The line through a point on the curve perpendicular to the tangent.
+Q: What is the equation of the tangent to y = f(x) at x = a? | y − f(a) = f′(a)(x − a).
+Q: What is the gradient of the normal at x = a? | −1/f′(a), provided f′(a) ≠ 0.
+Q: Where is a function decreasing? | Where f′(x) < 0.
+Q: Where is f(x) = x^{3} − 3x decreasing? | For −1 < x < 1, since f′(x) = 3(x − 1)(x + 1) is negative there.
+Q: How do you find points on a curve with a given gradient m? | Solve f′(x) = m.
+Q: Where does y = x^{2} − 4x have gradient 2? | At x = 3, solving 2x − 4 = 2.
+Q: What is the tangent to y = x^{3} − 2x at x = 1? | y = x − 2.
+Q: What common mistake is made in the tangent equation? | Using the y-value instead of the gradient.
 
 ## Higher-Order Derivatives
 S: Differentiating a derivative gives the second derivative, and so on. The second derivative measures how the gradient changes: acceleration for motion, and concavity for graphs.
@@ -295,6 +375,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-09-q1@1: f(x) = 2x^{4} − x^{3}. Find f″(1). | 18 | 0 |  | f′(x) = 8x^{3} − 3x^{2}, f″(x) = 24x^{2} − 6x, so f″(1) = 18.
 M1#maths-u07-09-q2@1: What is the 4th derivative of sin x? | sin x | cos x | −sin x | −cos x | 0 | Derivatives of sin x cycle cos x, −sin x, −cos x, sin x, so the 4th returns to sin x.
 M2#maths-u07-09-q3@2: What is d^{2}/dx^{2} (e^{3x})? | 9e^{3x} | 3e^{3x} | e^{3x} | 6e^{3x} | e^{9x} | Each differentiation multiplies by 3, so twice gives 9e^{3x}.
+Q: What is the second derivative? | f″(x) or d^{2}y/dx^{2}: the derivative of the derivative.
+Q: What is the nth derivative f^{(n)}(x)? | The result of differentiating f n times.
+Q: Which derivative of a degree-n polynomial is first zero? | The (n + 1)th derivative.
+Q: How do the derivatives of sin x repeat? | They cycle every four: cos x, −sin x, −cos x, sin x.
+Q: What is every derivative of e^{x}? | e^{x}.
+Q: What is jerk in motion? | The third derivative of displacement with respect to time.
+Q: What does f″ > 0 tell you about a graph? | The gradient is increasing: the curve is concave up, or "smiling".
+Q: How do Taylor series use higher derivatives? | They use all the derivatives at a point to build a polynomial approximation.
+Q: For s = t^{3} − 6t^{2} + 9t, what is the acceleration when the velocity is first zero? | −6 m s^{−2}, at t = 1.
+Q: What mistake is made with the notation f″(x)? | Confusing f″(x) with (f′(x))^{2}.
 
 ## Chain Rule
 S: The chain rule differentiates composite functions, functions of functions like (3x + 1)^{5} or e^{sin x}. Multiply the derivative of the outer function by the derivative of the inner one.
@@ -328,6 +418,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-10-q1@1: What is d/dx (e^{4x})? | 4e^{4x} | e^{4x} | 4xe^{4x−1} | e^{4} | 4e^{x} | The inner function 4x has derivative 4, which multiplies e^{4x}.
 M2#maths-u07-10-q2@2: What is d/dx sin(x^{2})? | 2x cos(x^{2}) | cos(x^{2}) | 2x cos(2x) | −2x cos(x^{2}) | 2 cos(x) | Outer cos(x^{2}) times inner derivative 2x.
 M3#maths-u07-10-q3@2: What is d/dx (1/(2x + 3)^{2})? | −4/(2x + 3)^{3} | −2/(2x + 3)^{3} | 1/(2(2x + 3)) | −4/(2x + 3)^{2} | 4/(2x + 3)^{3} | (2x + 3)^{−2} gives −2(2x + 3)^{−3} × 2 = −4(2x + 3)^{−3}.
+Q: What does the chain rule differentiate? | Composite functions, functions of functions such as (3x + 1)^{5} or e^{sin x}.
+Q: State the chain rule in Leibniz notation. | dy/dx = dy/du × du/dx.
+Q: State the chain rule in function notation. | d/dx f(g(x)) = f′(g(x)) g′(x).
+Q: What is the inner function in (3x + 1)^{5}? | u = 3x + 1, the function applied first.
+Q: What is d/dx e^{x^{2}}? | 2x e^{x^{2}}.
+Q: What is the general derivative of ln f(x)? | f′(x)/f(x).
+Q: What is d/dx cos^{2} x? | −2 sin x cos x.
+Q: How does the chain rule give dy/dx from dx/dy? | dy/dx = 1/(dx/dy), so for x = y^{3} + y, dy/dx = 1/(3y^{2} + 1).
+Q: Is the chain rule just cancelling fractions? | No: it looks like cancelling in Leibniz notation, which helps memory, but it is a theorem.
+Q: Which techniques rely on the chain rule? | Implicit, parametric and logarithmic differentiation.
 
 ## Product Rule
 S: The product rule differentiates a product of two functions. The derivative of uv isn't u′v′: it's u′v + uv′.
@@ -363,6 +463,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-11-q1@1: What is d/dx (x ln x)? | ln x + 1 | 1/x | ln x | x/x | 1 | u = x and v = ln x: 1 × ln x + x × 1/x = ln x + 1.
 M2#maths-u07-11-q2@2: What is d/dx (x^{3}e^{2x})? | x^{2}e^{2x}(3 + 2x) | 3x^{2}e^{2x} | 6x^{2}e^{2x} | x^{3}e^{2x}(3 + 2x) | 3x^{2} + 2e^{2x} | 3x^{2}e^{2x} + 2x^{3}e^{2x} = x^{2}e^{2x}(3 + 2x).
+Q: State the product rule. | d/dx (uv) = u′v + uv′.
+Q: Why should you factorise after using the product rule? | It simplifies the answer and makes solving f′(x) = 0 for stationary points easy.
+Q: What is d/dx (x sin x)? | sin x + x cos x.
+Q: What is d/dx (x^{3} ln x)? | 3x^{2} ln x + x^{2}.
+Q: What is the product rule for three factors? | (uvw)′ = u′vw + uv′w + uvw′.
+Q: Where are the stationary points of y = x^{2}e^{−x}? | At x = 0 and x = 2, since dy/dx = xe^{−x}(2 − x).
+Q: Why does the product rule work? | (u + Δu)(v + Δv) − uv = vΔu + uΔv + ΔuΔv; dividing by Δx and letting it tend to 0 leaves u′v + uv′.
+Q: How can you check the product rule on x^{2} × x^{3}? | 2x × x^{3} + x^{2} × 3x^{2} = 5x^{4}, the same as the derivative of x^{5}.
+Q: How can a quotient be differentiated with the product rule? | Write it with a negative power, such as x(x + 1)^{−1}.
+Q: What is the most common product rule mistake? | Writing (uv)′ = u′v′.
 
 ## Quotient Rule
 S: The quotient rule differentiates one function divided by another. It's a combination of the product and chain rules, and it's needed for functions like tan x and rational functions.
@@ -394,6 +504,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-12-q1@1: What is d/dx (1/x^{2}) by any method? | −2/x^{3} | −2/x | 2/x^{3} | −1/x^{3} | 1/(2x) | x^{−2} differentiates to −2x^{−3}; the quotient rule gives the same answer.
 M2#maths-u07-12-q2@2: What is d/dx ((x − 1)/(x + 1))? | 2/(x + 1)^{2} | −2/(x + 1)^{2} | 1 | 2x/(x + 1)^{2} | 0 | ((x + 1) − (x − 1))/(x + 1)^{2} = 2/(x + 1)^{2}.
+Q: State the quotient rule. | d/dx (u/v) = (vu′ − uv′)/v^{2}.
+Q: What is a rational function? | A quotient of polynomials, such as (2x + 1)/(x − 3).
+Q: What memory phrase gives the quotient rule? | "Low d-high minus high d-low, over low squared".
+Q: What is d/dx ((2x + 1)/(x − 3))? | −7/(x − 3)^{2}.
+Q: How does the quotient rule show d/dx tan x = sec^{2} x? | Differentiating sin x/cos x gives (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x.
+Q: What should you do with a single-term denominator such as (x^{3} + 1)/x? | Divide first: x^{2} + x^{−1}, then use the power rule.
+Q: What is d/dx sec x? | sec x tan x.
+Q: What is d/dx (e^{x}/(x^{2} + 1))? | e^{x}(x − 1)^{2}/(x^{2} + 1)^{2}.
+Q: How does the quotient rule on 1/x check against the power rule? | It gives (0 × x − 1 × 1)/x^{2} = −1/x^{2}, matching.
+Q: What happens if you reverse the order in the quotient rule numerator? | The sign of the answer flips.
 
 ## Implicit Differentiation
 S: Implicit differentiation finds dy/dx when y isn't the subject, as on the circle x^{2} + y^{2} = 25. Differentiate every term with respect to x, using the chain rule on terms in y, then solve for dy/dx.
@@ -425,6 +545,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-13-q1@1: For x^{2} + y^{2} = 13, what is dy/dx at (2, 3)? | −2/3 | 2/3 | −3/2 | 3/2 | 0 | Differentiating gives 2x + 2y dy/dx = 0, so dy/dx = −x/y = −2/3 at (2, 3).
 M2#maths-u07-13-q2@2: What is dy/dx for y^{2} = 4x? | 2/y | 4 | 2y | 4/y^{2} | y/2 | Differentiating y^{2} implicitly gives 2y dy/dx = 4, so dy/dx = 2/y.
+Q: What is implicit differentiation? | Differentiating both sides of an equation in x and y with respect to x, treating y as a function of x.
+Q: What is d/dx (y^{n})? | ny^{n−1} dy/dx, by the chain rule.
+Q: What is dy/dx on the circle x^{2} + y^{2} = 25? | −x/y.
+Q: What is the gradient of x^{2} + y^{2} = 25 at (3, 4)? | −3/4.
+Q: After differentiating implicitly, how do you find dy/dx? | Collect the dy/dx terms on one side and factorise.
+Q: How does implicit differentiation give the derivative of arcsin x? | sin y = x gives cos y dy/dx = 1, so dy/dx = 1/√(1 − x^{2}).
+Q: How does implicit differentiation give d/dx 2^{x}? | ln y = x ln 2, so dy/dx = 2^{x} ln 2.
+Q: Give a curve that needs implicit differentiation because it can't be rearranged. | x^{3} + y^{3} = 6xy.
+Q: Where are the stationary points of an implicit curve? | Where the numerator of dy/dx is zero.
+Q: What mistake is made when differentiating y^{2}? | Writing 2y without the dy/dx factor.
 
 ## Logarithmic Differentiation
 S: Logarithmic differentiation takes the log of both sides before differentiating. It turns products, quotients and powers into sums, making messy derivatives manageable, and handles variable powers like x^{x}.
@@ -458,6 +588,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 NUM1#maths-u07-14-q1@1: For y = x^{x}, find dy/dx at x = 1. | 1 | 0 |  | dy/dx = x^{x}(ln x + 1) = 1 × (0 + 1) = 1.
 M1#maths-u07-14-q2@1: What is d/dx (2^{x})? | 2^{x} ln 2 | x2^{x−1} | 2^{x} | 2^{x}/ln 2 | ln 2 | ln y = x ln 2, so dy/dx = y ln 2 = 2^{x} ln 2.
 M3#maths-u07-14-q3@2: Why can't the power rule differentiate x^{x}? | The exponent isn't a constant | x^{x} isn't continuous | It has no derivative | The base is negative | It's an exponential with constant base | The power rule needs x^{n} with n constant; here the exponent varies with x.
+Q: What is logarithmic differentiation? | Taking ln of both sides, simplifying with log laws, then differentiating implicitly.
+Q: What is a variable exponent? | A power where both base and exponent depend on x, such as x^{x}.
+Q: What is d/dx ln y in terms of dy/dx? | (1/y) dy/dx.
+Q: What is the final step of logarithmic differentiation? | Multiply by y to get dy/dx.
+Q: What is d/dx a^{x}? | a^{x} ln a.
+Q: Why does logarithmic differentiation help with many factors? | It turns products, quotients and powers into sums, often faster than repeated product and quotient rules.
+Q: What is d/dx (sin x)^{x} for 0 < x < π? | (sin x)^{x}(ln(sin x) + x cot x).
+Q: Where does logarithmic differentiation strictly work? | Only where y > 0, though the result usually extends to other x.
+Q: How does logarithmic differentiation prove the power rule for any real n? | ln y = n ln x gives (1/y) dy/dx = n/x, so dy/dx = nx^{n−1}.
+Q: What is the mistake in differentiating x^{x} as x × x^{x−1}? | The power rule needs a constant exponent; x^{x} has a variable one.
 
 
 ## Parametric Differentiation
@@ -492,6 +632,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-15-q1@1: For x = t^{2} + 1, y = 4t, find dy/dx at t = 2. | 1 | 0 |  | dx/dt = 2t = 4 and dy/dt = 4, so dy/dx = 4/4 = 1.
 M1#maths-u07-15-q2@1: For x = 5 cos t, y = 5 sin t, what is dy/dx? | −cot t | tan t | −tan t | cot t | 5 | dy/dt = 5 cos t and dx/dt = −5 sin t, so dy/dx = −cos t/sin t.
 M2#maths-u07-15-q3@2: For x = t^{3} − 3t, y = t^{2}, where are the vertical tangents? | t = ±1 | t = 0 | t = ±3 | t = 3 | None | dx/dt = 3t^{2} − 3 = 0 at t = ±1, where dy/dt = 2t ≠ 0.
+Q: What is the parametric derivative formula? | dy/dx = (dy/dt) ÷ (dx/dt), provided dx/dt ≠ 0.
+Q: Do you need the Cartesian equation to find a parametric gradient? | No: the chain rule gives it directly from the parameter.
+Q: For x = t^{2}, y = t^{3}, what is dy/dx? | 3t/2.
+Q: For x = cos θ, y = sin θ, what is dy/dx? | −cot θ.
+Q: Where does a parametric curve have a horizontal tangent? | Where dy/dt = 0 and dx/dt ≠ 0.
+Q: What is the tangent to x = t^{2}, y = t^{3} at t = 2? | y = 3x − 4, through (4, 8) with gradient 3.
+Q: In motion, what is (dx/dt, dy/dt)? | The velocity vector; its length is the speed.
+Q: How do you find the parametric second derivative d^{2}y/dx^{2}? | (d/dt (dy/dx))/(dx/dt), not (d^{2}y/dt^{2})/(d^{2}x/dt^{2}).
+Q: What is the speed along a parametric curve? | √((dx/dt)^{2} + (dy/dt)^{2}).
+Q: What is the common mistake with the parametric formula? | Dividing the wrong way round: dy/dx is dy/dt over dx/dt.
 
 ## Rates of Change
 S: Derivatives measure how fast one quantity changes with another. In science, economics and everyday life, "rate of change" problems ask how fast something is growing, shrinking or moving at an instant.
@@ -523,6 +673,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-16-q1@1: A ball's height is h = 30t − 4.9t^{2} m. Find its velocity at t = 2 s. | 10.4 | 0.01 | m/s | dh/dt = 30 − 9.8t = 30 − 19.6 = 10.4 m s^{−1}.
 M1#maths-u07-16-q2@1: P = 200e^{0.05t}. What is dP/dt when P = 400? | 20 | 10 | 400 | 0.05 | 200 | dP/dt = 0.05P, so 0.05 × 400 = 20 per unit time.
 M2#maths-u07-16-q3@2: The volume of a cube of side x is V = x^{3}. What is dV/dx when x = 4? | 48 | 64 | 12 | 16 | 3 | dV/dx = 3x^{2} = 48: the volume grows by about 48 units^{3} per unit of side.
+Q: What is a rate of change? | The derivative of a quantity with respect to another, usually time.
+Q: What does marginal mean in economics? | The rate of change with respect to quantity, such as marginal cost dC/dq.
+Q: For s = 20t − 5t^{2}, what are the velocity and acceleration? | v = 20 − 10t and acceleration −10 m s^{−2}.
+Q: For P = 500e^{0.03t}, what is dP/dt as a fraction of P? | 3% of P at every moment.
+Q: For C(q) = 0.01q^{2} + 4q + 200, what is the marginal cost at q = 100? | About £6 per extra unit, since C′(q) = 0.02q + 4.
+Q: How is dV/dr for a sphere related to its surface area? | dV/dr = 4πr^{2}, which equals the surface area.
+Q: What are the units of a rate of change? | Output units per input unit, such as m s^{−1} or £ per item.
+Q: How does an average rate differ from an instantaneous rate? | An average rate is a chord's gradient over an interval; an instantaneous rate is the derivative.
+Q: If h = (10 − 0.5t)^{2} cm, how fast is the depth falling at t = 6 minutes? | At 7 cm per minute.
+Q: What mistakes are made when giving a rate? | Leaving out units, or giving the wrong sign for a decrease.
 
 ## Related Rates
 S: Related rates problems connect the rates of change of several linked quantities. If a balloon's radius grows at a known rate, how fast is its volume growing? The chain rule links them.
@@ -554,6 +714,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-17-q1@1: A circle's radius grows at 2 cm/s. How fast is its area growing when r = 10 cm? Give the answer to 1 decimal place. | 125.7 | 0.1 | cm²/s | dA/dt = 2πr dr/dt = 2π × 10 × 2 = 40π ≈ 125.7 cm^{2} s^{−1}.
 M1#maths-u07-17-q2@1: For a cube of side x, dx/dt = 0.1 cm/s. What is dV/dt when x = 10 cm? | 30 cm³/s | 300 cm³/s | 3 cm³/s | 100 cm³/s | 0.3 cm³/s | By the chain rule dV/dt = 3x^{2} × dx/dt = 300 × 0.1 = 30 cm^{3} s^{−1}.
 M2#maths-u07-17-q3@2: A sphere's volume increases at 36π cm³/s. What is dr/dt when r = 3 cm? | 1 cm/s | 3 cm/s | 1/3 cm/s | 9 cm/s | 4 cm/s | dV/dt = 4πr^{2} dr/dt: 36π = 36π dr/dt, so dr/dt = 1.
+Q: What are related rates? | Rates of change of quantities connected by an equation.
+Q: What formula connects rates through an intermediate variable? | dy/dt = dy/dx × dx/dt.
+Q: What are the first two steps of a related rates problem? | Draw a diagram and name the variables, then write the equation linking them.
+Q: How do you differentiate the linking equation in a related rates problem? | With respect to time, using the chain rule.
+Q: For a sphere, how is dV/dt related to dr/dt? | dV/dt = 4πr^{2} dr/dt.
+Q: Air enters a balloon at 100 cm^{3} s^{−1}. How fast does its radius grow at r = 5 cm? | About 0.32 cm s^{−1}, which is 100/(100π).
+Q: What equation links the rates for a ladder of length L sliding down a wall? | 2x dx/dt + 2y dy/dt = 0, from x^{2} + y^{2} = L^{2}.
+Q: A 5 m ladder's foot slides out at 0.3 m s^{−1}. How fast does the top fall when the foot is 3 m out? | 0.225 m s^{−1}.
+Q: Why is substituting values before differentiating wrong? | It freezes quantities that are actually changing.
+Q: What equation models ripples spreading on a pond? | A = πr^{2}, giving dA/dt = 2πr dr/dt.
 
 ## L'Hôpital's Rule
 S: L'Hôpital's rule evaluates limits of the indeterminate forms 0/0 and ∞/∞ by differentiating the top and bottom separately. It's quick and powerful, but only applies to those forms.
@@ -587,6 +757,16 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 NUM1#maths-u07-18-q1@1: Find lim_{x→0} (sin 4x)/(2x). | 2 | 0 |  | 0/0, so differentiate: 4 cos 4x/2 → 4/2 = 2.
 M1#maths-u07-18-q2@1: What is lim_{x→∞} ln x/x? | 0 | 1 | ∞ | e | −1 | ∞/∞, so (1/x)/1 → 0: logarithms grow more slowly than x.
 M3#maths-u07-18-q3@2: Why can't L'Hôpital's rule be used for lim_{x→1} (x^{2} + 1)/(x + 1)? | It isn't an indeterminate form: the limit is simply 1 | The functions aren't differentiable | The limit is infinite | x → 1 isn't allowed | It gives the same answer anyway | Substitution gives 2/2 = 1; the rule only applies to 0/0 or ∞/∞.
+Q: What does L'Hôpital's rule state? | If f(x)/g(x) tends to 0/0 or ∞/∞ as x → a, then lim f/g = lim f′/g′, if the latter exists.
+Q: List the indeterminate forms. | 0/0, ∞/∞, 0 × ∞, ∞ − ∞, 1^{∞}, 0^{0} and ∞^{0}.
+Q: What is lim_{x→0} (1 − cos x)/x^{2}? | ½, after applying L'Hôpital's rule twice.
+Q: What does lim_{x→∞} x^{2}/e^{x} = 0 show? | Exponentials beat powers.
+Q: How do you handle a 0 × ∞ form such as x ln x as x → 0⁺? | Rewrite it as a quotient, ln x/(1/x), then apply the rule: the limit is 0.
+Q: How do you handle a 1^{∞} form such as (1 + 1/n)^{n}? | Take logs: n ln(1 + 1/n) tends to 1, so the limit is e.
+Q: What is lim_{x→0} (e^{x} − 1 − x)/x^{2}? | 1/2.
+Q: What should you check before every use of L'Hôpital's rule? | That the form is still 0/0 or ∞/∞; otherwise the rule gives wrong answers.
+Q: What is often quicker than L'Hôpital's rule? | Algebra or standard limits, so check them first.
+Q: Does L'Hôpital's rule work for limits at infinity and one-sided limits? | Yes.
 
 ## Stationary Points
 S: Stationary points are where a curve's gradient is zero: maxima, minima and stationary points of inflection. Finding and classifying them is one of the most useful skills in calculus.
@@ -616,6 +796,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-19-q1@1: Find the x-coordinate of the stationary point of y = x^{2} − 10x + 3. | 5 | 0 |  | dy/dx = 2x − 10 = 0 gives x = 5 (a minimum, since d^{2}y/dx^{2} = 2 > 0).
 M1#maths-u07-19-q2@1: At a stationary point, f″(x) = 4. What kind of point is it? | A minimum | A maximum | An inflection | Not stationary | It can't be decided | A positive second derivative means the curve is concave up, so it's a minimum.
 M2#maths-u07-19-q3@2: What kind of stationary point does y = x^{3} have at the origin? | A stationary point of inflection | A maximum | A minimum | It has none | A corner | The gradient 3x^{2} is positive on both sides of 0, so it's an inflection, not a turning point.
+Q: What is a stationary point? | A point where dy/dx = 0.
+Q: What is a point of inflection? | A point where the concavity changes.
+Q: How do you find stationary points? | Solve f′(x) = 0, then find the y-coordinates.
+Q: What does f″ > 0 at a stationary point tell you? | It is a minimum.
+Q: What should you do when f″ = 0 at a stationary point? | Check the sign of f′ on each side, because the second derivative test fails.
+Q: What does f′ going from + to − across a stationary point mean? | A maximum.
+Q: What are the stationary points of y = x^{3} − 12x? | Minimum (2, −16) and maximum (−2, 16).
+Q: What are the stationary points of y = x^{3} − 3x^{2} − 9x + 5? | A minimum at (3, −22) and a maximum at (−1, 10).
+Q: Why does f″ = 0 not prove a point of inflection? | y = x^{4} has f″(0) = 0 but a minimum there.
+Q: What kind of stationary point does y = x^{3} have at 0? | A stationary point of inflection.
 
 ## Critical Points
 S: Critical points are where a function's derivative is zero or doesn't exist. They're the only candidates for local maxima and minima, so finding them is the first step in any optimisation problem.
@@ -645,6 +835,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
 M1#maths-u07-20-q1@1: Which is a critical point of f(x) = x^{2} − 4x? | x = 2 | x = 0 | x = 4 | x = −2 | x = 1 | Critical points are where f′(x) = 0: here 2x − 4 = 0, so x = 2.
 M2#maths-u07-20-q2@2: Where are the critical points of f(x) = √(x)(x − 3) for x ≥ 0? | x = 0 and x = 1 | x = 3 only | x = 1 only | x = 0 and x = 3 | x = 3/2 | f′(x) = (3x − 3)/(2√x): zero at x = 1, undefined at x = 0 (an endpoint where f is defined).
+Q: What is a critical point? | A point in the domain where f′(x) = 0 or f′(x) doesn't exist.
+Q: What does Fermat's theorem say? | If f has a local extremum at an interior point c and f′(c) exists, then f′(c) = 0.
+Q: Why is x = 0 a critical point of x^{2/3}? | Its derivative (2/3)x^{−1/3} is undefined there.
+Q: Are critical points guaranteed to be extrema? | No: they are candidates only; x^{3} has a critical point at 0 but no extremum.
+Q: Where are the absolute extremes on a closed interval? | At critical points or endpoints.
+Q: In several variables, what are critical points? | Points where all partial derivatives vanish.
+Q: What are the critical points of f(x) = x^{2/3}(x − 5)? | x = 0 (f′ undefined) and x = 2 (f′ = 0).
+Q: Why is finding critical points the first step in optimisation? | They are the only candidates for local maxima and minima.
+Q: What mistake is made when listing critical points? | Ignoring points where the derivative doesn't exist, such as corners and cusps.
+Q: How do stationary points relate to critical points? | Stationary points, where f′ = 0, are one kind of critical point.
 
 ## Local Maxima and Minima
 S: A local maximum is higher than all nearby points; a local minimum is lower. Local extrema are "peaks and valleys" of a graph, not necessarily the highest or lowest overall.
@@ -673,6 +873,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-21-q1@1: f′ changes from positive to negative at x = 2. What is at x = 2? | A local maximum | A local minimum | A point of inflection | An asymptote | Nothing | The function rises then falls, so x = 2 is a peak.
 M2#maths-u07-21-q2@2: What is the local minimum value of f(x) = x^{3} − 3x? | −2 | 2 | 0 | −1 | 1 | f′(x) = 3x^{2} − 3 = 0 at x = ±1; f″(1) = 6 > 0, and f(1) = −2.
+Q: What is a local maximum? | A point c with f(c) ≥ f(x) for all x near c.
+Q: What does the first derivative test say? | f′ changing from + to − gives a local maximum; from − to +, a local minimum; no change, neither.
+Q: When is the second derivative test inconclusive? | When f″ = 0 at the stationary point.
+Q: Why is the first derivative test more widely usable? | It works even at critical points where f′ doesn't exist.
+Q: Does a local maximum have to be the highest value of the function? | No: y = x^{3} − 3x has a local max of 2 but exceeds 2 for x > 2.
+Q: Can a function have local extrema but no global ones? | Yes, on the whole real line, as with x^{3} − 3x.
+Q: What are the stationary points of f(x) = x^{4} − 4x^{3}? | A stationary inflection at x = 0 and a local minimum at (3, −27).
+Q: Why is x = 0 not an extremum of x^{4} − 4x^{3}? | f′ is negative on both sides, so it doesn't change sign.
+Q: How are local extrema described informally? | As the peaks and valleys of a graph.
+Q: What mistake is made about local maxima? | Assuming a local maximum is the largest value of the function.
 
 ## Global Optimisation
 S: Global optimisation finds the absolute largest or smallest value of a function, often under constraints. It answers practical questions: the cheapest design, the maximum profit, the shortest route.
@@ -702,6 +912,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 NUM1#maths-u07-22-q1@1: Find the maximum value of f(x) = 12x − x^{3} on 0 ≤ x ≤ 3. | 16 | 0 |  | f′ = 12 − 3x^{2} = 0 at x = 2, f(2) = 16; f(0) = 0 and f(3) = 9, so the maximum is 16.
 M1#maths-u07-22-q2@1: Two positive numbers add to 20. What is the largest possible product? | 100 | 96 | 400 | 200 | 99 | P = x(20 − x), P′ = 20 − 2x = 0 at x = 10, giving 10 × 10 = 100.
 M3#maths-u07-22-q3@2: What is the minimum of f(x) = x^{2} − 6x on 4 ≤ x ≤ 7? | −8 | −9 | 0 | 7 | −5 | The critical point x = 3 is outside the interval; f(4) = −8 and f(7) = 7, so the minimum is −8 at the endpoint.
+Q: What is a global maximum? | The largest value of f over its whole domain.
+Q: What does the extreme value theorem state? | A continuous function on a closed interval [a, b] attains a maximum and a minimum.
+Q: How do you find global extremes on a closed interval? | Evaluate f at every interior critical point and both endpoints; take the largest and smallest.
+Q: What are the max and min of x^{3} − 3x on [0, 3]? | Maximum 18 at x = 3, minimum −2 at x = 1.
+Q: What is the first step in an optimisation modelling problem? | Write the quantity as a function of one variable, using the constraint to eliminate others.
+Q: After finding critical points in a model, what must you check? | That they give the right type of extremum and fit the context.
+Q: What cut size maximises an open box made from a 30 cm square sheet? | x = 5 cm, giving a volume of 2,000 cm^{3}.
+Q: What is the largest pen area from 200 m of fencing on three sides against a wall? | 5,000 m^{2}, with sides 50 m and 100 m.
+Q: Why is x = 15 rejected in the 30 cm box problem? | It gives a volume of 0.
+Q: What mistake is made with closed intervals? | Forgetting the endpoints, where the global extremum may lie.
 
 ## Concavity and Convexity
 S: Concavity describes how a graph bends: concave up (convex), like a cup, or concave down (concave), like a cap. The second derivative measures it, and convexity is central to optimisation and economics.
@@ -733,6 +953,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
 M1#maths-u07-23-q1@1: On which interval is f(x) = x^{3} − 3x^{2} concave? | x < 1 | x > 1 | x < 0 | x > 3 | All x | The curve is concave where f″(x) < 0: f″(x) = 6x − 6 < 0 when x < 1.
 M2#maths-u07-23-q2@2: Which function is convex for all real x? | x^{2} + e^{x} | ln x | −x^{2} | sin x | x^{3} | Both x^{2} and e^{x} have positive second derivatives, so their sum does too.
+Q: What is a convex function? | One whose graph lies below its chords; f″ ≥ 0 if twice differentiable.
+Q: What is a concave function? | One whose graph lies above its chords; f″ ≤ 0 if twice differentiable.
+Q: What does f″ > 0 on an interval mean about the gradient? | The gradient is increasing, so the function is convex.
+Q: Where is x^{3} concave and convex? | Concave for x < 0, convex for x > 0, since f″ = 6x.
+Q: Is ln x convex or concave? | Concave for x > 0.
+Q: What does Jensen's inequality say for convex f? | f(average) ≤ average of f.
+Q: Which economic idea matches concave production functions? | Diminishing marginal returns.
+Q: Where is x^{4} − 6x^{2} convex? | For x < −1 and x > 1.
+Q: Why should you say "concave up" clearly? | The conventions for "concave" and "convex" vary.
+Q: What mistake confuses concavity with direction? | Thinking concave means decreasing: a concave function can be increasing.
 
 ## Points of Inflection
 S: A point of inflection is where a curve changes concavity, from bending one way to bending the other. At such a point the second derivative changes sign, and the tangent crosses the curve.
@@ -764,6 +994,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-24-q1@1: Find the x-coordinate of the point of inflection of y = x^{3} + 3x^{2} − 9x. | -1 | 0 |  | y″ = 6x + 6 = 0 at x = −1, where y″ changes sign.
 M1#maths-u07-24-q2@1: Which curve has a point of inflection at the origin? | y = x^{3} | y = x^{2} | y = x^{4} | y = |x| | y = e^{x} | y″ = 6x changes sign at 0; for x^{4}, y″ = 12x^{2} doesn't.
 M2#maths-u07-24-q3@2: For y = sin x on 0 < x < 2π, where is the inflection? | x = π | x = π/2 | x = 3π/2 | x = π/4 | There isn't one | y″ = −sin x is zero at x = π and changes sign there, so it's an inflection.
+Q: What is a non-stationary inflection? | A point of inflection where the gradient isn't zero.
+Q: How do you find points of inflection? | Solve f″(x) = 0, then check that f″ changes sign there.
+Q: Where is the inflection of f(x) = x^{3} − 6x^{2} + 4? | At (2, −12), a non-stationary inflection.
+Q: What is true of the gradient at a point of inflection? | It is at a local maximum or minimum: the curve is locally steepest there.
+Q: What does the inflection of a logistic growth curve mark? | The fastest growth.
+Q: Where is the inflection of y = xe^{x}? | At (−2, −2e^{−2}), about (−2, −0.271).
+Q: What does the tangent do at a non-stationary inflection? | It crosses the curve.
+Q: Can a point be both stationary and an inflection? | Yes: a stationary inflection, like x^{3} at 0.
+Q: What happens to the concavity at a point of inflection? | It switches from convex to concave or vice versa.
+Q: What is the common mistake about f″ = 0? | Calling every point with f″ = 0 an inflection without checking the sign change.
 
 ## Curve Sketching
 S: Curve sketching uses calculus and algebra together to draw an accurate picture of a function: its intercepts, asymptotes, stationary points, inflections and end behaviour. A good sketch shows the key features, not exact plotting.
@@ -798,6 +1038,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-25-q1@1: What is the vertical asymptote of y = 3/(x + 4)? | x = −4 | x = 4 | y = 0 | x = 3 | y = 3 | The denominator is zero at x = −4, where y grows without bound.
 M2#maths-u07-25-q2@2: What is the horizontal asymptote of y = (6x^{2} + 1)/(3x^{2} − 2)? | y = 2 | y = 6 | y = 0 | y = 1/2 | None | As x → ∞, the leading terms dominate: 6x^{2}/3x^{2} = 2.
 M2#maths-u07-25-q3@2: Where are the asymptotes of y = 2/(x − 1) + 1? | x = 1 and y = 1 | x = −1 and y = 1 | x = 2 and y = 1 | x = 1 and y = 2 | There are none | The denominator is zero at x = 1, and the curve approaches y = 1 as x grows.
+Q: What is an asymptote? | A line a curve approaches but doesn't reach: vertical, horizontal or oblique.
+Q: What is end behaviour? | What the function does as x → ±∞.
+Q: How do you test whether a function is even or odd? | Even if f(−x) = f(x); odd if f(−x) = −f(x).
+Q: Where do vertical asymptotes occur in a rational function? | Where the denominator is zero and the numerator isn't.
+Q: How are oblique asymptotes found? | By division.
+Q: What are the turning points of y = x/(x^{2} + 1)? | Maximum (1, ½) and minimum (−1, −½).
+Q: What are the asymptotes of y = (x + 1)/(x − 2)? | Vertical x = 2 and horizontal y = 1.
+Q: What are the intercepts of y = (x + 1)/(x − 2)? | (−1, 0) and (0, −1/2).
+Q: Does a good sketch need exact plotting? | No: it shows key features such as intercepts, asymptotes and turning points.
+Q: What mistakes are made in curve sketching? | Drawing a curve crossing a vertical asymptote, or ignoring end behaviour.
 
 ## Integral Calculus
 S: Integral calculus is the mathematics of accumulation: adding up infinitely many small pieces to find areas, volumes, distances and totals. It's also the reverse of differentiation.
@@ -833,6 +1083,16 @@ NUM1#maths-u07-26-q1@1: A tap's flow rate is r(t) = 2t litres per minute. How ma
 M1#maths-u07-26-q2@1: Which quantity is found by integrating acceleration with respect to time? | Velocity | Displacement | Force | Jerk | Mass | Acceleration is the derivative of velocity, so integrating it gives velocity.
 M2#maths-u07-26-q3@2: What does ∫_{a}^{b} f(x) dx represent if f is positive? | The area between the curve and the x-axis from a to b | The gradient at b | The average of f(a) and f(b) | The length of the curve | f(b) − f(a) | For a positive function, the definite integral is the area under the curve.
 M2#maths-u07-26-q4@2: Which rule usually gives the smallest error for a smooth function with the same number of strips? | The midpoint rule (with the trapezium close behind) | The left rectangle rule, using each strip's start | The right rectangle rule, using each strip's end | All four rules give exactly the same error | Whichever rule uses the fewest strips | Midpoint and trapezium rules have O(h^{2}) error, while left and right rules are O(h).
+Q: What are the two meanings of an integral? | An antiderivative (indefinite integral) or an accumulated total over an interval (definite integral).
+Q: Why is ∫ 2x dx = x^{2} + c? | Because d/dx (x^{2}) = 2x.
+Q: What does ∫_{a}^{b} f(x) dx add up? | f(x) × dx over [a, b], giving the signed area under the curve.
+Q: What connects the two views of integration? | The fundamental theorem of calculus.
+Q: Name three applications of integration. | Areas and volumes of curved shapes, centres of mass, and work done by a variable force.
+Q: How is integration used in probability? | To find areas under probability density functions.
+Q: If water flows at r(t) litres per minute, what gives the total in 10 minutes? | ∫_{0}^{10} r(t) dt.
+Q: How far does a car with v = 3t^{2} m s^{−1} travel from t = 0 to 4 s? | 64 m.
+Q: Does every function have an elementary antiderivative? | No: e^{−x^{2}} doesn't, though its definite integrals can still be computed.
+Q: What mistake is made about areas below the axis? | Forgetting they count as negative in a definite integral.
 
 ## Indefinite Integrals
 S: An indefinite integral is the family of all antiderivatives of a function. Because constants differentiate to zero, every indefinite integral includes "+ c".
@@ -868,6 +1128,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-27-q1@1: What is ∫ (4x − 1) dx? | 2x^{2} − x + c | 4 + c | 2x^{2} − 1 + c | 4x^{2} − x + c | x^{2} − x + c | 4x integrates to 2x^{2}, −1 integrates to −x, plus the constant c.
 M2#maths-u07-27-q2@2: dy/dx = 2x and y = 7 when x = 2. What is y? | x^{2} + 3 | x^{2} + 7 | x^{2} − 3 | 2x^{2} − 1 | x^{2} | y = x^{2} + c, and 7 = 4 + c gives c = 3.
 M3#maths-u07-27-q3@2: What is ∫ 1/(3x) dx? | (1/3) ln|x| + c | ln|3x|/3x + c | 3 ln|x| + c | x^{0}/0 + c | ln|x|/x + c | 1/(3x) = (1/3) × 1/x, and ∫ 1/x dx = ln|x|.
+Q: What is an antiderivative? | A function F with F′(x) = f(x).
+Q: Why does every indefinite integral include + c? | Constants differentiate to zero, so the antiderivative is only fixed up to a constant.
+Q: What is ∫ x^{n} dx for n ≠ −1? | x^{n+1}/(n + 1) + c.
+Q: What is ∫ 1/x dx? | ln of the modulus of x, plus c.
+Q: What is ∫ sin kx dx? | −cos(kx)/k + c.
+Q: What is ∫ 3/√x dx? | 6x^{1/2} + c, after rewriting as 3x^{−1/2}.
+Q: If dy/dx = 3x^{2} − 2 and the curve passes through (1, 4), what is y? | y = x^{3} − 2x + 5.
+Q: What is ∫ a^{x} dx? | a^{x}/ln a + c.
+Q: Is ∫ fg dx equal to ∫ f dx × ∫ g dx? | No: there is no product rule like that for integrals.
+Q: How can you always check an indefinite integral? | Differentiate your answer and compare it with the integrand.
 
 ## Riemann Sums
 S: A Riemann sum approximates the area under a curve by adding up the areas of thin rectangles. As the rectangles get thinner, the sum approaches the definite integral, which is how integration is defined.
@@ -904,6 +1174,16 @@ NUM1#maths-u07-28-q1@1: Estimate ∫_{0}^{3} x dx with three strips and left end
 M1#maths-u07-28-q2@1: With n strips on [a, b], what is the width of each? | (b − a)/n | n/(b − a) | b − a | (a + b)/n | 1/n | The interval's length divided equally into n parts.
 M2#maths-u07-28-q3@2: For a decreasing function, how does a right Riemann sum compare with the integral? | It underestimates | It overestimates | It's exact | It's always zero | It depends on n only | Right endpoints of a decreasing function are the lowest points in each strip.
 M2#maths-u07-28-q4@2: For an increasing function, how does the left Riemann sum compare with the exact integral? | It underestimates, since each rectangle uses the lowest value on its strip | It overestimates, since each strip uses its highest value | It is always exact for increasing functions | It depends only on n, not on the function | It always gives zero for increasing functions | On an increasing function the left endpoint is the minimum of each strip.
+Q: What is a Riemann sum? | Σ f(x_{i}*) Δx, a sum of rectangle areas approximating ∫_{a}^{b} f(x) dx.
+Q: What is a partition of [a, b]? | A division of the interval into subintervals of width Δx.
+Q: What is the strip width with n strips on [a, b]? | Δx = (b − a)/n.
+Q: Which heights can a Riemann sum use in each strip? | The left endpoint, right endpoint or midpoint.
+Q: Does a right Riemann sum over- or underestimate for an increasing function? | It overestimates.
+Q: How is the definite integral defined from Riemann sums? | As lim_{n→∞} Σ f(x_{i}) Δx.
+Q: What does the right-endpoint sum for ∫_{0}^{1} x^{2} dx tend to? | 1/3, since (n + 1)(2n + 1)/(6n^{2}) tends to 1/3.
+Q: What is the four-strip right-endpoint estimate of ∫_{0}^{2} x^{2} dx? | 3.75, an overestimate of the exact 8/3.
+Q: Which Riemann sums are usually most accurate? | Midpoint sums, much more than left or right sums.
+Q: What common mistake is made with Riemann sums? | Forgetting to multiply the sum of heights by the strip width.
 
 ## Definite Integrals
 S: A definite integral ∫_{a}^{b} f(x) dx gives a number: the net signed area between the curve and the x-axis from a to b. It's evaluated by finding an antiderivative and subtracting its values at the limits.
@@ -942,6 +1222,16 @@ NUM1#maths-u07-29-q1@1: Evaluate ∫_{1}^{4} 3√x dx. | 14 | 0 |  | [2x^{3/2}]_
 M1#maths-u07-29-q2@1: What is ∫_{0}^{2} (x^{3} + 1) dx? | 6 | 4 | 5 | 8 | 2 | An antiderivative is x^{4}/4 + x; evaluating from 0 to 2 gives 4 + 2 − 0 = 6.
 M2#maths-u07-29-q3@2: What is the total area between y = x − 1 and the x-axis from x = 0 to x = 2? | 1 | 0 | 2 | 1/2 | −1 | Each triangle has area 1/2, one below and one above the axis; the total area is 1, though the integral is 0.
 M2#maths-u07-29-q4@2: What is ∫ x dx from −1 to 1? | 0, since the negative and positive areas cancel | 1, the total area between the line and the axis | 2, the length of the interval of integration | −1, since the left half dominates the right | It is undefined, since the line crosses the axis | The area below the axis on [−1, 0] is −½ and the area above on [0, 1] is +½, so the signed areas cancel to 0.
+Q: What does a definite integral give? | A number: the net signed area between the curve and the x-axis from a to b.
+Q: How do you evaluate ∫_{a}^{b} f(x) dx? | Find an antiderivative F and calculate F(b) − F(a).
+Q: Why is no + c needed in a definite integral? | It cancels when you subtract.
+Q: What is ∫_{b}^{a} f in terms of ∫_{a}^{b} f? | Its negative.
+Q: How do you find total area when a curve crosses the axis? | Split at the x-intercepts and add the absolute values of each part.
+Q: What is ∫_{0}^{2π} sin x dx, and what is the actual area? | The integral is 0, but the area between sin x and the axis is 4.
+Q: How do you find the area between two curves? | ∫_{a}^{b} (top − bottom) dx, where a and b are the intersection points.
+Q: What is the area enclosed by y = x^{2} and y = 2x? | 4/3.
+Q: What is the average value of f on [a, b]? | (1/(b − a)) ∫_{a}^{b} f(x) dx.
+Q: What is ∫_{−a}^{a} f for an even function? | 2∫_{0}^{a} f.
 
 ## Fundamental Theorem of Calculus
 S: The fundamental theorem of calculus links the two halves of calculus: differentiation and integration are inverse processes. It's why we can evaluate areas using antiderivatives instead of limits of sums.
@@ -974,6 +1264,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-30-q1@1: What is d/dx ∫_{0}^{x} √(1 + t^{2}) dt? | √(1 + x^{2}) | √(1 + x^{2}) − 1 | x√(1 + x^{2}) | 0 | 1/(2√(1 + x^{2})) | Part 1 of the theorem: the derivative of the accumulation function is the integrand at x.
 M2#maths-u07-30-q2@2: What is d/dx ∫_{0}^{x^{3}} sin t dt? | 3x^{2} sin(x^{3}) | sin(x^{3}) | −cos(x^{3}) | 3x^{2} cos(x^{3}) | sin x | The integrand at the upper limit, sin(x^{3}), times the derivative of x^{3}, which is 3x^{2}.
 NUM1#maths-u07-30-q3@1: Using F(x) = x^{3}/3, what is ∫₀^{3} x^{2} dx? | 9 | 0 |  | F(3) − F(0) = 27/3 = 9, the value the Riemann sums approach.
+Q: What is an accumulation function? | A(x) = ∫_{a}^{x} f(t) dt, the area from a to x.
+Q: What does part 1 of the fundamental theorem say? | If f is continuous, d/dx ∫_{a}^{x} f(t) dt = f(x).
+Q: What does part 2 of the fundamental theorem say? | If F′ = f, then ∫_{a}^{b} f(x) dx = F(b) − F(a).
+Q: Why does A′(x) = f(x)? | A(x + h) − A(x) is a thin strip of area about f(x) × h, so dividing by h gives f(x).
+Q: What is d/dx ∫_{0}^{x} cos(t^{2}) dt? | cos(x^{2}), even though cos(t^{2}) has no elementary antiderivative.
+Q: What is d/dx ∫_{0}^{x^{2}} e^{t} dt? | e^{x^{2}} × 2x, using the chain rule.
+Q: What is d/dx ∫_{1}^{3x} ln t dt? | 3 ln(3x).
+Q: Why does the fundamental theorem matter in practice? | It lets us evaluate areas using antiderivatives instead of limits of sums.
+Q: Who understood the fundamental theorem before its rigorous proof? | Barrow, Newton and Leibniz; it was proved rigorously in the 19th century.
+Q: What mistake is made when the upper limit is a function of x? | Forgetting the chain rule.
 
 ## Integration by Substitution
 S: Integration by substitution reverses the chain rule. Replacing an awkward part of the integrand with a new variable u often turns a hard integral into a standard one.
@@ -1005,6 +1305,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: integ
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-31-q1@1: What is ∫ 2x e^{x^{2}} dx? | e^{x^{2}} + c | 2e^{x^{2}} + c | x^{2}e^{x^{2}} + c | e^{2x} + c | e^{x^{2}}/(2x) + c | With u = x^{2}, du = 2x dx, the integral becomes ∫ e^{u} du = e^{u} + c.
 M2#maths-u07-31-q2@2: What is ∫ (2x + 3)^{4} dx? | (2x + 3)^{5}/10 + c | (2x + 3)^{5}/5 + c | 2(2x + 3)^{5}/5 + c | (2x + 3)^{3}/12 + c | 4(2x + 3)^{3} + c | With u = 2x + 3, dx = du/2, so ∫ u^{4}/2 du = u^{5}/10 + c.
+Q: Which differentiation rule does substitution reverse? | The chain rule.
+Q: What is du? | The differential of u: du = (du/dx) dx.
+Q: What are the steps of integration by substitution? | Choose u, find du in terms of dx, rewrite in u, integrate, then substitute back.
+Q: What is ∫ 2x(x^{2} + 1)^{5} dx? | (x^{2} + 1)^{6}/6 + c, using u = x^{2} + 1.
+Q: How do you handle limits in a definite integral by substitution? | Change them to u-values and don't substitute back.
+Q: What is ∫ f′(x)e^{f(x)} dx? | e^{f(x)} + c.
+Q: What is ∫ tan x dx by the f′/f pattern? | −ln of the modulus of cos x, plus c.
+Q: Which trigonometric substitution suits √(1 − x^{2})? | x = sin θ.
+Q: What is ∫_{0}^{1} x√(1 − x^{2}) dx? | 1/3, using u = 1 − x^{2}.
+Q: What mistake is made when changing variable? | Forgetting to change the limits or the dx.
 
 ## Integration by Parts
 S: Integration by parts reverses the product rule. It integrates products like x e^{x} or x sin x by trading one integral for a simpler one.
@@ -1039,6 +1349,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-32-q1@1: Evaluate ∫_{0}^{1} x e^{x} dx. | 1 | 0 |  | [x e^{x} − e^{x}]_{0}^{1} = (e − e) − (0 − 1) = 1.
 M1#maths-u07-32-q2@1: For ∫ x^{2} ln x dx, which choice of u is best? | u = ln x | u = x^{2} | u = x^{2} ln x | u = 1 | u = x | Logarithms come first in LIATE, and ln x simplifies to 1/x when differentiated.
 M3#maths-u07-32-q3@2: What is ∫ ln x dx? | x ln x − x + c | 1/x + c | x ln x + c | (ln x)^{2}/2 + c | ln x − x + c | Parts with u = ln x, dv = dx gives x ln x − ∫ 1 dx.
+Q: Which differentiation rule does integration by parts reverse? | The product rule.
+Q: State the integration by parts formula. | ∫ u dv = uv − ∫ v du.
+Q: What does LIATE stand for? | Logarithms, Inverse trig, Algebraic, Trigonometric, Exponential: earlier types are chosen as u first.
+Q: How should you choose u and dv? | u should get simpler when differentiated, and dv should be easy to integrate.
+Q: What is ∫ x e^{x} dx? | x e^{x} − e^{x} + c.
+Q: What is ∫ x^{2} e^{x} dx? | e^{x}(x^{2} − 2x + 2) + c, using parts twice.
+Q: How is ∫ e^{x} sin x dx found? | It returns to itself after two applications; solving gives ½e^{x}(sin x − cos x) + c.
+Q: What is ∫ x cos x dx? | x sin x + cos x + c.
+Q: What is ∫ arctan x dx? | x arctan x − ½ ln(1 + x^{2}) + c.
+Q: What is the bad choice of u for ∫ x e^{x} dx? | u = e^{x} and dv = x dx, which makes the new integral harder.
 
 ## Partial Fraction Integration
 S: Rational functions are integrated by splitting them into partial fractions (School 3), each of which integrates to a logarithm or a power. It's essential for integrals like ∫ 1/(x^{2} − 1) dx.
@@ -1070,6 +1390,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: integ
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
 M1#maths-u07-33-q1@1: What is ∫ (1/x − 1/(x + 1)) dx? | ln|x/(x + 1)| + c | ln|x(x + 1)| + c | 1/x^{2} + c | ln|x| + c | −1/(x(x + 1)) + c | ln|x| − ln|x + 1| combines to ln|x/(x + 1)|.
 M2#maths-u07-33-q2@2: What is ∫ 2/(x^{2} − 1) dx? | ln|(x − 1)/(x + 1)| + c | 2 ln|x^{2} − 1| + c | ln|x^{2} − 1| + c | 2 arctan x + c | ln|(x + 1)/(x − 1)| + c | 2/(x^{2} − 1) = 1/(x − 1) − 1/(x + 1), which integrates to ln|x − 1| − ln|x + 1|.
+Q: What are partial fractions? | A sum of simpler fractions equal to a rational function.
+Q: What is an improper fraction, and what do you do first? | One where the numerator's degree is at least the denominator's; divide first.
+Q: What is ∫ A/(x − a) dx? | A ln of the modulus of (x − a), plus c.
+Q: What is ∫ B/(x − a)^{2} dx? | −B/(x − a) + c.
+Q: How is 1/(x^{2} − 1) split into partial fractions? | ½(1/(x − 1) − 1/(x + 1)).
+Q: What is ∫ 1/(x^{2} + a^{2}) dx? | (1/a) arctan(x/a) + c.
+Q: What is ∫_{2}^{3} 5/((x − 1)(x + 4)) dx? | ln(12/7), about 0.539.
+Q: How does (x^{2} + 1)/(x − 1) divide out? | x + 1 + 2/(x − 1).
+Q: Which differential equation uses partial fractions? | The logistic equation.
+Q: What mistake is made with 1/(x − 1)^{2}? | Integrating it to a log; it integrates to −1/(x − 1).
 
 ## Trigonometric Integration
 S: Integrating trigonometric functions uses standard results, identities to rewrite powers and products, and substitutions. Double angle formulas are the key tool for squares of sin and cos.
@@ -1103,6 +1433,16 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | t
 NUM1#maths-u07-34-q1@1: Evaluate ∫_{0}^{π} sin x dx. | 2 | 0 |  | [−cos x]_{0}^{π} = 1 − (−1) = 2.
 M1#maths-u07-34-q2@1: What is ∫ sec^{2} 2x dx? | (1/2) tan 2x + c | tan 2x + c | 2 tan 2x + c | sec 2x + c | (1/2) sec^{2} 2x + c | d/dx tan 2x = 2 sec^{2} 2x, so divide by 2.
 M2#maths-u07-34-q3@2: Which identity integrates sin^{2} x? | sin^{2} x = ½(1 − cos 2x) | sin^{2} x = 1 + cos^{2} x | sin^{2} x = 2 sin x cos x | sin^{2} x = tan^{2} x + 1 | sin^{2} x = cos 2x | The double angle formula replaces the square with a first-power cosine, which integrates directly.
+Q: Which double angle identity lowers powers of sin and cos? | cos 2x = 1 − 2 sin^{2} x = 2 cos^{2} x − 1.
+Q: What is the reverse chain rule? | ∫ f′(x) g′(f(x)) dx = g(f(x)) + c.
+Q: What is ∫ cos^{2} x dx? | x/2 + (sin 2x)/4 + c.
+Q: What is ∫ tan^{2} x dx? | tan x − x + c, using tan^{2} x = sec^{2} x − 1.
+Q: What is ∫ sec x tan x dx? | sec x + c.
+Q: How do you integrate an odd power such as sin^{3} x? | Write it as (1 − cos^{2} x) sin x and substitute u = cos x.
+Q: How can sin x cos x be integrated? | Use sin x cos x = ½ sin 2x, or substitute u = sin x.
+Q: What is ∫_{0}^{π/2} cos^{2} x dx? | π/4.
+Q: How is sin 3x cos x rewritten for integration? | ½(sin 4x + sin 2x), by a product-to-sum identity.
+Q: What mistake is made with ∫ sin^{2} x dx? | Integrating it as sin^{3} x/3.
 
 ## Improper Integrals
 S: An improper integral has an infinite limit or an integrand that blows up somewhere in the interval. It's defined as a limit, and it may converge to a finite value or diverge.
@@ -1137,6 +1477,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u07-35-q1@1: Evaluate ∫_{2}^{∞} 4/x^{3} dx. | 0.5 | 0.001 |  | [−2/x^{2}]_{2}^{∞} = 0 − (−2/4) = 1/2.
 M1#maths-u07-35-q2@1: Which integral diverges? | ∫_{1}^{∞} 1/x dx | ∫_{1}^{∞} 1/x^{2} dx | ∫_{0}^{∞} e^{−x} dx | ∫_{0}^{1} 1/√x dx | ∫_{1}^{∞} x^{−1.5} dx | ∫ 1/x = ln x, which grows without bound as x → ∞.
 M3#maths-u07-35-q3@2: What is wrong with computing ∫_{−1}^{1} 1/x^{2} dx = [−1/x]_{−1}^{1} = −2? | The integrand is unbounded at x = 0, and the integral diverges | Nothing: the answer is −2 | The limits should be swapped | The antiderivative should be ln|x| | It should be 2 | A positive integrand can't give a negative area; the asymptote at 0 makes it improper and divergent.
+Q: What is an improper integral? | An integral with an infinite limit, or with an integrand unbounded on the interval.
+Q: How is ∫_{a}^{∞} f(x) dx defined? | As lim_{b→∞} ∫_{a}^{b} f(x) dx.
+Q: What does it mean for an improper integral to converge? | It has a finite limiting value.
+Q: What is ∫_{1}^{∞} 1/x^{2} dx? | 1.
+Q: Why does ∫_{1}^{∞} 1/x dx diverge? | It equals lim ln b, which is infinite.
+Q: For which p does ∫_{1}^{∞} 1/x^{p} dx converge? | Exactly when p > 1.
+Q: What is ∫_{0}^{1} 1/√x dx? | 2: it converges although the integrand is unbounded near 0.
+Q: What is ∫_{0}^{∞} x e^{−x^{2}} dx? | ½.
+Q: What is the Gaussian integral? | ∫_{−∞}^{∞} e^{−x^{2}} dx = √π, which underpins the normal distribution.
+Q: How is convergence decided when the antiderivative is unknown? | By comparison tests.
 
 ## Numerical Integration
 S: Many integrals can't be found exactly, and data often comes as a table rather than a formula. Numerical methods (the trapezium rule, Simpson's rule) estimate definite integrals with known accuracy.
@@ -1170,6 +1520,16 @@ NUM1#maths-u07-36-q1@1: Use the trapezium rule with 2 strips to estimate ∫_{0}
 M1#maths-u07-36-q2@1: In the trapezium rule with n strips on [a, b], what is h? | (b − a)/n | n/(b − a) | (b − a)/(n + 1) | b − a | 1/n | h is the strip width: the interval's length divided by the number of strips.
 M2#maths-u07-36-q3@2: Which rule is usually more accurate for a smooth function with the same points? | Simpson's rule | The trapezium rule | They're always equal | A left Riemann sum | A right Riemann sum | Simpson's rule fits parabolas, giving errors of order h^{4} instead of h^{2}.
 M2#maths-u07-36-q4@2: Doubling the number of strips in the midpoint rule changes the error by roughly what factor? | It divides it by about 4, since the error is O(h^{2}) | It halves it, since the error is O(h) | It doubles it, since more strips add rounding | It leaves it unchanged for smooth functions | It divides it by 16, since the error is O(h^{4}) | Halving h in a second-order rule quarters the error.
+Q: Why are numerical integration methods needed? | Many integrals can't be found exactly, and data often comes as a table rather than a formula.
+Q: State the trapezium rule. | ∫_{a}^{b} y dx ≈ (h/2)[y_{0} + 2(y_{1} + … + y_{n−1}) + y_{n}], with h = (b − a)/n.
+Q: State Simpson's rule. | ∫_{a}^{b} y dx ≈ (h/3)[y_{0} + 4(odd ys) + 2(even interior ys) + y_{n}], with n even.
+Q: How does the trapezium rule approximate the area? | It joins the points with straight lines and adds the trapezium areas.
+Q: Does the trapezium rule over- or underestimate for a concave curve? | It underestimates.
+Q: What happens to the trapezium rule's error when h is halved? | It roughly quarters.
+Q: How does Simpson's rule fit the curve? | It fits parabolas through triples of points, giving error proportional to h^{4}.
+Q: Which method chooses the sample points cleverly for greater accuracy? | Gaussian quadrature.
+Q: What is the 4-strip trapezium estimate of ∫_{0}^{2} e^{x} dx? | About 6.52, an overestimate of the exact 6.39.
+Q: What mistake is made when finding h? | Using the number of ordinates instead of the number of strips.
 
 ## Arc Length and Surface Area
 S: Integration measures more than areas: the length of a curve and the surface area of a solid of revolution come from adding up tiny straight pieces. These are Further Maths and first-year university results.
@@ -1202,6 +1562,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-37-q1@1: Find the length of the line y = 3x/4 from x = 0 to x = 4. | 5 | 0 |  | √(1 + 9/16) = 5/4, and ∫_{0}^{4} 5/4 dx = 5 (a 3-4-5 triangle).
 M1#maths-u07-37-q2@1: Which integral gives the arc length of y = x^{2} from 0 to 1? | ∫_{0}^{1} √(1 + 4x^{2}) dx | ∫_{0}^{1} √(1 + x^{4}) dx | ∫_{0}^{1} (1 + 2x) dx | ∫_{0}^{1} 2πx^{2} dx | ∫_{0}^{1} √(1 + 2x) dx | dy/dx = 2x, so (dy/dx)^{2} = 4x^{2} goes under the root.
 M2#maths-u07-37-q3@2: Rotating y = x from x = 0 to x = 1 about the x-axis gives a cone. What is its curved surface area? | π√2 | 2π | π | 2π√2 | π/√2 | S = 2π ∫_{0}^{1} x√2 dx = 2π√2 × ½ = π√2, matching πrl with r = 1, l = √2.
+Q: What is arc length? | The length of a curve between two points.
+Q: What is a surface of revolution? | The surface made by rotating a curve about an axis.
+Q: What is the arc length formula for y = f(x)? | L = ∫_{a}^{b} √(1 + (dy/dx)^{2}) dx.
+Q: What is the parametric arc length formula? | L = ∫ √((dx/dt)^{2} + (dy/dt)^{2}) dt.
+Q: Why does the arc length formula have a square root? | A tiny piece of curve is the hypotenuse of a triangle with sides dx and dy.
+Q: How does the arc length formula check out on a circle? | x = r cos t, y = r sin t gives ∫_{0}^{2π} r dt = 2πr.
+Q: What is the surface area formula for rotation about the x-axis? | S = 2π ∫_{a}^{b} y √(1 + (dy/dx)^{2}) dx.
+Q: Where does the factor 2πy in surface area come from? | Each tiny piece sweeps out a band of circumference 2πy.
+Q: What should you do when an arc length integral has no elementary antiderivative? | Use numerical integration.
+Q: What is the length of x = t^{2}, y = (2/3)t^{3} for 0 ≤ t ≤ 1? | (2/3)(2√2 − 1), about 1.22.
 
 ## Volumes of Revolution
 S: Rotating a region around an axis creates a solid of revolution. Its volume comes from adding up thin circular discs: ∫ πy^{2} dx. This finds the volumes of vases, nose cones and other curved shapes.
@@ -1233,6 +1603,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-38-q1@1: Find the volume when y = x is rotated about the x-axis from x = 0 to x = 3, as a multiple of π. | 9 | 0 | π | π ∫_{0}^{3} x^{2} dx = π × 9: a cone of radius 3 and height 3.
 M1#maths-u07-38-q2@1: Rotating y = √x from 0 to 2 about the x-axis gives a volume of: | 2π | 4π | π | 8π/3 | √2π | V = π ∫ y^{2} dx = π ∫_{0}^{2} x dx = π × [x^{2}/2]_{0}^{2} = 2π.
 M3#maths-u07-38-q3@2: Which integral gives the volume between y = 3 and y = x^{2} + 1 (from x = −√2 to √2) rotated about the x-axis? | π ∫ (9 − (x^{2} + 1)^{2}) dx | π ∫ (3 − x^{2} − 1)^{2} dx | π ∫ (x^{2} + 1)^{2} dx | 2π ∫ x(2 − x^{2}) dx | π ∫ 9 dx | Washers: outer radius 3 and inner radius x^{2} + 1, so subtract the squares.
+Q: What is a solid of revolution? | A solid formed by rotating a region about an axis.
+Q: What is the disc method formula about the x-axis? | V = π ∫_{a}^{b} y^{2} dx.
+Q: What volume comes from rotating y = √x from 0 to 4 about the x-axis? | 8π.
+Q: How does the disc method give the cone formula? | Rotating y = (r/h)x from 0 to h gives πr^{2}h/3.
+Q: What volume comes from rotating y = √(r^{2} − x^{2}) from −r to r? | (4/3)πr^{3}, the volume of a sphere.
+Q: What is the washer method formula? | V = π ∫ (f^{2} − g^{2}) dx, with f the outer and g the inner curve.
+Q: What is the volume formula for a parametric curve rotated about the x-axis? | V = π ∫ y^{2} (dx/dt) dt.
+Q: What volume comes from rotating the region between y = x^{2} and y = 2x about the x-axis? | 64π/15.
+Q: Give a practical use of volumes of revolution. | Finding volumes of containers, vases, nose cones or engineering components.
+Q: What mistake is made with washers? | Squaring the difference of radii, (f − g)^{2}, instead of subtracting the squares.
 
 ## Sequences and Series
 S: A sequence is a list of numbers; a series is their sum. Arithmetic and geometric series have neat formulas, and sums of sequences lead naturally to infinite series and calculus.
@@ -1268,6 +1648,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u07-39-q1@1: Find the sum of the arithmetic series 5 + 8 + 11 + … + 62. | 670 | 0 |  | There are 20 terms ((62 − 5)/3 + 1), so S = 20 × (5 + 62)/2 = 670.
 M1#maths-u07-39-q2@1: What is Σ_{r=1}^{4} r^{2}? | 30 | 16 | 10 | 100 | 20 | Square each of 1 to 4 and add: 1 + 4 + 9 + 16 = 30.
 M2#maths-u07-39-q3@2: What is Σ_{r=1}^{n} 1/(r(r + 1))? | 1 − 1/(n + 1) | 1/(n + 1) | n | 1/n | ln n | It telescopes: (1 − ½) + (½ − ⅓) + … + (1/n − 1/(n + 1)).
+Q: What is the difference between a sequence and a series? | A sequence is a list of numbers; a series is their sum.
+Q: What does Σ_{r=1}^{n} f(r) mean? | f(1) + f(2) + … + f(n).
+Q: State the sum of an arithmetic series. | S_{n} = n/2 (2a + (n − 1)d).
+Q: State the sum of a geometric series. | S_{n} = a(1 − r^{n})/(1 − r), for r ≠ 1.
+Q: What is Σ_{r=1}^{n} r^{2}? | n(n + 1)(2n + 1)/6.
+Q: What is Σ_{r=1}^{n} r^{3}? | (n(n + 1)/2)^{2}.
+Q: What is the method of differences? | Writing terms as differences so most cancel (telescoping), as with Σ (1/r − 1/(r + 1)).
+Q: How do you recover a term u_{n} from partial sums? | u_{n} = S_{n} − S_{n−1}.
+Q: Which everyday calculations are geometric series? | Compound interest and loan repayments.
+Q: What mistake is made with Σ_{r=1}^{n} c? | Writing c instead of nc.
 
 ## Infinite Series
 S: An infinite series adds infinitely many terms. Some add up to a finite number, like ½ + ¼ + ⅛ + … = 1, and some grow without limit. Infinite series define functions like e^{x} and sin x.
@@ -1302,6 +1692,16 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 NUM1#maths-u07-40-q1@1: Find the sum to infinity of 27 − 9 + 3 − 1 + …. | 20.25 | 0.001 |  | a = 27 and r = −1/3, so S = 27/(4/3) = 20.25.
 M1#maths-u07-40-q2@1: For which r does a geometric series converge? | |r| < 1 | r > 1 | r = 1 | r < 0 | All r | The terms shrink to zero fast enough only when |r| < 1.
 M3#maths-u07-40-q3@2: Why does 1 + 1/2 + 1/3 + 1/4 + … diverge although its terms tend to 0? | Its partial sums grow without bound (like ln n) | It doesn't: it converges to 2 | Its terms are negative | It's a geometric series with r = 1 | It converges to π^{2}/6 | Grouping terms shows each block of terms adds at least ½, so the sum is unbounded.
+Q: What is a partial sum S_{n}? | The sum of the first n terms of a series.
+Q: What is a sum to infinity? | The limit of the partial sums S_{n} as n → ∞, if it exists.
+Q: What is the sum to infinity of a geometric series? | a/(1 − r), valid only when r is between −1 and 1.
+Q: Why does 0.333… equal 1/3? | It is the geometric series 3/10 + 3/100 + …, with sum (3/10)/(1 − 1/10) = 1/3.
+Q: Why does 1 + 2 + 4 + … have no sum? | Its ratio is 2, which is not between −1 and 1, so it diverges.
+Q: How fast does the harmonic series grow? | Like ln n.
+Q: What is Σ 1/n^{2}? | π^{2}/6, found by Euler (the Basel problem).
+Q: A ball dropped from 10 m rebounds to 60% each time. What total distance does it travel? | 40 m.
+Q: Does changing the first few terms of a series affect convergence? | No: it changes the sum but not whether it converges.
+Q: Why are recurring decimals rational? | They are geometric series with a finite sum.
 
 ## Convergence and Divergence
 S: Deciding whether an infinite series converges is a central question in analysis. Convergence tests (comparison, ratio, integral and alternating series tests) answer it without finding the sum.
@@ -1332,6 +1732,16 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-41-q1@1: Which series converges? | Σ 1/n^{2} | Σ 1/n | Σ 1/√n | Σ 1 | Σ n | A p-series with p = 2 > 1 converges (to π^{2}/6).
 M2#maths-u07-41-q2@2: The ratio test gives L = 3 for a series. What follows? | It diverges | It converges | It's inconclusive | It converges absolutely | It sums to 3 | L > 1 means the terms eventually grow, so the series diverges.
+Q: What is a convergent series? | A series whose partial sums approach a finite limit.
+Q: What is absolute convergence? | The series of absolute values converges; this implies the series itself converges.
+Q: What does the divergence test say? | If a_{n} doesn't tend to 0 the series diverges; if it does, the test is inconclusive.
+Q: What does the comparison test say? | If 0 ≤ a_{n} ≤ b_{n} and Σ b_{n} converges, then Σ a_{n} converges.
+Q: When does the p-series Σ 1/n^{p} converge? | If and only if p > 1.
+Q: What does the ratio test conclude when L < 1? | The series converges.
+Q: What does the integral test say? | For f positive and decreasing, Σ f(n) and ∫_{1}^{∞} f(x) dx converge or diverge together.
+Q: What does 1 − ½ + ⅓ − … converge to? | ln 2, by the alternating series test.
+Q: What does Riemann's rearrangement theorem say? | Conditionally convergent series can be rearranged to sum to any value; absolutely convergent ones can't.
+Q: Does Σ n/2^{n} converge? | Yes: the ratio tends to ½, and its sum is 2.
 
 ## Power Series
 S: A power series is an infinite polynomial, Σ a_{n}(x − c)^{n}. Inside its interval of convergence it behaves like a function you can differentiate and integrate term by term.
@@ -1364,6 +1774,16 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 NUM1#maths-u07-42-q1@1: What is the radius of convergence of Σ x^{n}/3^{n}? | 3 | 0 |  | It's geometric with ratio x/3, converging when |x/3| < 1, so R = 3.
 M1#maths-u07-42-q2@1: Which function has the power series x − x^{3}/3 + x^{5}/5 − …? | arctan x | sin x | ln(1 + x) | e^{−x} | tan x | Integrating 1/(1 + x^{2}) = 1 − x^{2} + x^{4} − … term by term gives arctan x.
 M2#maths-u07-42-q3@2: For Σ x^{n}/n, what is the interval of convergence? | −1 ≤ x < 1 | −1 < x < 1 | −1 ≤ x ≤ 1 | x < 1 | All real x | R = 1; at x = −1 it's the alternating harmonic series (converges), at x = 1 the harmonic series (diverges).
+Q: What is a power series? | Σ_{n=0}^{∞} a_{n}(x − c)^{n}, an infinite polynomial centred at c.
+Q: What is the radius of convergence? | R such that the series converges when x is within R of c and diverges when further than R.
+Q: Which test is used to find a radius of convergence? | The ratio test.
+Q: What must be checked separately after finding R? | The endpoints of the interval.
+Q: What can you do to a power series inside its radius? | Differentiate or integrate it term by term.
+Q: How is the series for ln(1 + x) found from the geometric series? | Substitute −x into 1/(1 − x) to get 1/(1 + x), then integrate term by term.
+Q: What is the radius of convergence of Σ (2x)^{n}/(n + 1)? | 1/2.
+Q: What properties does a power series have inside its radius? | It is continuous and infinitely differentiable.
+Q: What does uniqueness of power series say? | Two power series that agree near c are identical, term by term.
+Q: What are power series used for beyond approximation? | Solving differential equations and defining special functions.
 
 ## Taylor Series
 S: A Taylor series represents a function as a power series built from its derivatives at one point. Truncating it gives Taylor polynomials, the best polynomial approximations near that point, used in physics, engineering and computing.
@@ -1393,6 +1813,16 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
 M1#maths-u07-43-q1@1: What is the coefficient of (x − a)^{2} in a Taylor series? | f″(a)/2 | f″(a) | 2f″(a) | f′(a)/2 | f(a)/2 | Each term is f^{(n)}(a)(x − a)^{n}/n!, so the x^{2} term has f″(a)/2! = f″(a)/2.
 M2#maths-u07-43-q2@2: The linear approximation of e^{x} about x = 0 gives e^{0.1} ≈ | 1.1 | 1.0 | 1.105 | 0.9 | 1.01 | e^{x} ≈ 1 + x near 0, so e^{0.1} ≈ 1.1 (true value 1.105…).
+Q: What is a Taylor series? | f(x) = Σ f^{(n)}(a)(x − a)^{n}/n!, a power series built from derivatives at a.
+Q: What is a Taylor polynomial? | The Taylor series truncated after the (x − a)^{n} term, an approximation of degree n.
+Q: What is the Taylor polynomial of ln x about 1 up to the cubic term? | (x − 1) − (x − 1)^{2}/2 + (x − 1)^{3}/3.
+Q: What does Taylor's theorem give? | A bound on the remainder: f^{(n+1)}(ξ)(x − a)^{n+1}/(n + 1)! for some ξ between a and x.
+Q: Where are Taylor approximations most accurate? | Near the point a.
+Q: How do more terms affect a Taylor approximation? | They improve it, within the radius of convergence.
+Q: What does sin θ ≈ θ give in physics? | Simple harmonic motion of a pendulum for small angles.
+Q: What does the degree 2 Taylor polynomial about 4 give for √4.1? | About 2.024844, very close to the true 2.024846.
+Q: Which Taylor polynomial is the linear approximation? | The first-order one: the tangent line.
+Q: What common mistake is made in Taylor series? | Forgetting the factorials in the denominators.
 
 ## Maclaurin Series
 S: A Maclaurin series is a Taylor series about x = 0. The Maclaurin series of e^{x}, sin x, cos x and ln(1 + x) are among the most important formulas in mathematics, and combine to give Euler's formula.
@@ -1425,4 +1855,14 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-44-q1@1: Use the first three terms of the series for e^{x} to estimate e^{0.2}, to 3 decimal places. | 1.22 | 0.0005 |  | 1 + 0.2 + 0.04/2 = 1.22 (true value 1.2214…).
 M1#maths-u07-44-q2@1: What is the coefficient of x^{3} in the Maclaurin series of sin x? | −1/6 | 1/6 | 1/3 | −1/3 | 0 | sin x = x − x^{3}/3! + x^{5}/5! − …, and 3! = 6, so the coefficient is −1/6.
 M3#maths-u07-44-q3@2: What is the Maclaurin series of e^{−x^{2}} up to x^{4}? | 1 − x^{2} + x^{4}/2 | 1 − x^{2} + x^{4} | 1 + x^{2} + x^{4}/2 | 1 − 2x + 2x^{2} | 1 − x^{2}/2 + x^{4}/24 | Substitute −x^{2} into e^{u} = 1 + u + u^{2}/2: 1 − x^{2} + x^{4}/2.
+Q: What is a Maclaurin series? | A Taylor series about x = 0: f(x) = Σ f^{(n)}(0) x^{n}/n!.
+Q: What is Euler's formula? | e^{iθ} = cos θ + i sin θ.
+Q: What is the Maclaurin series of e^{x}? | 1 + x + x^{2}/2! + x^{3}/3! + …, valid for all x.
+Q: What is the Maclaurin series of sin x? | x − x^{3}/3! + x^{5}/5! − …, valid for all x.
+Q: What is the binomial series for (1 + x)^{n}? | 1 + nx + n(n − 1)x^{2}/2! + …, for x between −1 and 1.
+Q: How is the series for e^{−x^{2}} found? | Substitute −x^{2} into the e^{x} series: 1 − x^{2} + x^{4}/2 − ….
+Q: How does Euler's formula follow from the series? | Substitute iθ into the e^{x} series and separate real and imaginary parts.
+Q: What identity does Euler's formula give with θ = π? | e^{iπ} + 1 = 0.
+Q: What is the series for e^{2x} cos x up to x^{2}? | 1 + 2x + (3/2)x^{2}.
+Q: How do series show (sin x)/x → 1 as x → 0? | (sin x)/x = 1 − x^{2}/6 + …, which tends to 1.
 `;

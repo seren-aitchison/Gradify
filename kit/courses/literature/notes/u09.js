@@ -41,6 +41,16 @@ M2#literature-u09-01-q2@2: What does the repetition of "charter'd" in "London" s
 M3#literature-u09-01-q3@3: Why are Blake's Songs written in simple, childlike forms? | The simplicity heightens the shock of their darker social and spiritual meanings | Blake could not write in more complex forms | They were intended only for very young children | Simple forms were required by his publisher | The contrast between form and content sharpens the critique.
 MATCH1#literature-u09-01-q4@2: Match each poem to its collection. | "The Lamb" = Innocence ; "The Tyger" = Experience ; "London" = Experience ; "Holy Thursday" (with joyful children) = Innocence | Many poems have contrasting partners in the other collection.
 SA3#literature-u09-01-q5@2,3: How does Blake present suffering in "London"? | Through a wandering speaker who sees "marks of weakness, marks of woe" in every face, Blake shows suffering as universal. Repetition of "charter'd" links it to commercial control. "Mind-forg'd manacles" shows people imprisoned by their own thinking. The chimney sweeper, soldier and harlot reveal how church, state and marriage cause or ignore suffering. The final image of the "Marriage hearse" fuses love and death, suggesting society itself is diseased. | Universal suffering ; Commerce ; Mind-forg'd manacles ; Institutions ; Marriage hearse
+Q: What was William Blake's profession besides poetry? | He was a London engraver and painter who printed his books himself.
+Q: What is illuminated printing? | Blake's method of combining text and image on hand-coloured engraved plates.
+Q: When did Songs of Innocence first appear on its own? | In 1789.
+Q: What historical events formed the background to Blake's Songs? | The French Revolution and the rapid growth of industrial London.
+Q: Why do Blake's simple song and ballad forms make his poems more striking? | Their childlike language makes the darker meanings stand out.
+Q: What qualities belong to Blake's state of Innocence? | Trust, joy and a protective God, as in "The Lamb".
+Q: What qualities belong to Blake's state of Experience? | Fear, oppression and questioning, as in "The Tyger".
+Q: What does Blake mean by "mind-forg'd manacles" in "London"? | That people are imprisoned by their own accepted ideas, fear and obedience as much as by laws.
+Q: Which three institutions does "London" implicate in suffering? | Church, state and marriage, through the chimney-sweeper, the soldier and the harlot.
+Q: What is the mistake in reading Innocence as good and Experience as bad? | Blake presents both as limited perspectives, and Innocence can be naive or exploited.
 
 ## Wordsworth: nature and memory
 LV: Intermediate · Application
@@ -83,6 +93,16 @@ M2#literature-u09-02-q2@2: What does the daffodils poem suggest about memory? | 
 M3#literature-u09-02-q3@3: In the boat-stealing episode, what does the "huge peak" teach the boy? | Awe and a sense of moral fear before nature | That boating is dangerous for children | That mountains are beautiful to paint | That he should leave the countryside | Nature disciplines and shapes his moral imagination.
 MATCH2#literature-u09-02-q4@2: Match each text to its focus. | Preface to Lyrical Ballads = Language really used by men ; "Tintern Abbey" = Revisiting a landscape after five years ; "I wandered lonely as a cloud" = The inward eye of memory ; The Prelude = Growth of a poet's mind | Wordsworth's works explore nature, memory and self.
 SA3#literature-u09-02-q5@2,3: How does Wordsworth present the relationship between nature and the mind in "Tintern Abbey"? | The speaker returns after five years and reflects that the memory of the landscape has given him "tranquil restoration" in cities. He describes stages of his relationship with nature, from youthful physical delight to mature reflection, sensing "something far more deeply interfused" in nature and in "the mind of man". Nature is a moral and spiritual guide; he hopes his sister will also store such memories. Blank verse gives a meditative, conversational tone. | Return and memory ; Restoration ; Stages of growth ; Spiritual presence ; Form
+Q: Why is Lyrical Ballads (1798) important? | It is often seen as a starting point of English Romanticism.
+Q: What kind of language did Wordsworth aim to use in the Preface to Lyrical Ballads? | "A selection of language really used by men", writing about ordinary, rural life.
+Q: How does "Tintern Abbey" begin? | "Five years have past; five summers, with the length / Of five long winters!"
+Q: How has the memory of the Wye valley helped the speaker of "Tintern Abbey"? | It has sustained him while living in towns and cities.
+Q: What does Wordsworth mean by "a sense sublime / Of something far more deeply interfused"? | A spiritual presence felt in nature and in the mind.
+Q: Whose writing did "I wandered lonely as a cloud" draw on? | His sister Dorothy's journal account of the daffodils.
+Q: What is the "inward eye" in "I wandered lonely as a cloud"? | Memory, which recreates the experience of the daffodils as "the bliss of solitude".
+Q: What does The Prelude trace, and when was it published? | "The growth of a poet's mind"; it was published after Wordsworth's death, in 1850.
+Q: What role does nature play in The Prelude? | Nature acts as both nurse and teacher.
+Q: Why is it a mistake to read Wordsworth's nature poems as simple description? | They are about the mind's relationship with nature over time.
 
 ## Coleridge: The Rime of the Ancient Mariner
 LV: Intermediate · Application
@@ -126,6 +146,16 @@ M2#literature-u09-03-q2@2: Why is the Mariner's blessing of the water-snakes sig
 M3#literature-u09-03-q3@3: Why might the frame narrative with the Wedding-Guest matter? | It shows the tale's lasting power to change its hearer | It explains how the albatross was shot | It proves the story is entirely true | It shortens the poem for readers | The guest leaves "a sadder and a wiser man", affected by the tale.
 SEQ1#literature-u09-03-q4@1: Order the main events of the poem. | The albatross is shot ; The ship is becalmed ; The crew die ; The Mariner blesses the water-snakes ; The Mariner tells his tale to the guest | The story moves from crime through punishment to redemption and confession.
 SA3#literature-u09-03-q5@2,3: Evaluate the claim that the Rime of the Ancient Mariner is a poem about the relationship between humans and nature. | The killing of the albatross is a violation of nature that brings suffering, and redemption comes when the Mariner loves the water-snakes, supporting an ecological reading reinforced by the moral. But the poem also uses Christian imagery of sin, grace and penance, and explores guilt and isolation psychologically. Nature is central but intertwined with spiritual and psychological meanings. | Violation of nature ; Redemption through love ; Christian reading ; Psychological reading ; Balanced judgement
+Q: What did Coleridge add to the 1817 version of the Rime of the Ancient Mariner? | A prose marginal gloss.
+Q: Why does the Rime use archaic diction and ballad stanzas? | To imitate old folk ballads.
+Q: How does the frame narrative of the Rime begin? | The Mariner stops one of three guests on the way to a wedding.
+Q: What does "Water, water, every where, / Nor any drop to drink" describe? | The becalmed ship, where the crew are surrounded by undrinkable sea water.
+Q: What happens when Death and Life-in-Death dice for the crew? | The sailors die and the Mariner lives on alone.
+Q: What happens at the moment the Mariner blesses the water-snakes? | He can pray, and the albatross falls from his neck: his redemption begins.
+Q: How does the Wedding-Guest leave at the end of the Rime? | "A sadder and a wiser man".
+Q: What are the main readings of the Rime of the Ancient Mariner? | A Christian story of sin and grace, a Romantic plea for reverence for nature, a psychological study of guilt, and an ecological parable.
+Q: What was Coleridge's role in Lyrical Ballads, as reflected in the Rime? | To make the supernatural feel real.
+Q: Why is it a mistake to reduce the Rime to its final moral? | Its imagery, isolation and lasting guilt suggest more complex meanings than the stated moral.
 
 ## Shelley: Ozymandias and the political poems
 LV: Intermediate · Application
@@ -170,6 +200,16 @@ M2#literature-u09-04-q2@2: What is the main irony of "Ozymandias"? | The boastfu
 M3#literature-u09-04-q3@3: Why was The Masque of Anarchy not published until 1832? | Its radical call to resist the government risked prosecution | Shelley disliked the poem | It was lost for many years at sea | Publishers thought it too short | Fear of prosecution for sedition delayed publication.
 MATCH2#literature-u09-04-q4@1: Match each quotation to its poem. | "Look on my Works, ye Mighty, and despair!" = Ozymandias ; "Ye are many—they are few" = The Masque of Anarchy ; "An old, mad, blind, despised, and dying king" = England in 1819 ; "Poets are the unacknowledged legislators of the world" = A Defence of Poetry | Shelley's political views run across his work.
 SA3#literature-u09-04-q5@1,3: How does Shelley use form and structure in "Ozymandias" to convey his ideas about power? | The poem is a sonnet, a form associated with order, but its rhyme scheme breaks conventional patterns, mirroring the collapse of power. The story is told at second hand (a traveller's report), distancing us from the king. The volta turns from the boastful inscription to "Nothing beside remains", and the final line's long, alliterative "lone and level sands" stretches into emptiness, enacting the triumph of time over tyranny. | Sonnet and broken rhyme ; Narrative distance ; Volta ; Final image ; Power and time
+Q: Where and when was "Ozymandias" first published? | In The Examiner, in January 1818.
+Q: What expression survives on the face of Ozymandias's statue? | A "sneer of cold command".
+Q: What does "The hand that mocked them, and the heart that fed" refer to in "Ozymandias"? | The sculptor's hand, which mocked the ruler's passions, and the ruler's heart, which fed them.
+Q: What does "The lone and level sands stretch far away" reveal? | The irony that the boasted works have vanished, leaving empty desert.
+Q: What is unusual about the form of "Ozymandias"? | It is a sonnet whose rhyme scheme mixes Petrarchan and Shakespearean patterns, perhaps reflecting the breaking down of power.
+Q: What was the Peterloo Massacre? | The attack by cavalry on a peaceful reform meeting at St Peter's Field, Manchester, on 16 August 1819, killing at least 15 people.
+Q: What kind of resistance does The Masque of Anarchy urge? | Nonviolent mass resistance: "Ye are many—they are few."
+Q: Whom does "England in 1819" attack as "An old, mad, blind, despised, and dying king"? | The king of England at the time, as a symbol of corrupt power.
+Q: What did Shelley claim about poets in A Defence of Poetry? | "Poets are the unacknowledged legislators of the world."
+Q: What do Shelley's unpublished radical poems show about poetry's power? | Its limits under censorship: fear of prosecution kept them from being published in his lifetime.
 
 ## Keats: the odes
 LV: Intermediate · Evaluation
@@ -212,6 +252,16 @@ M2#literature-u09-05-q2@2: What draws the speaker back from the nightingale's wo
 M3#literature-u09-05-q3@3: How does "To Autumn" differ from the other odes? | It accepts change and mortality rather than seeking to escape them | It longs to escape into a frozen work of art | It rejects nature in favour of the city | It ends with a question about dreaming | Its tone is calm acceptance of passing time.
 MATCH2#literature-u09-05-q4@3: Match each opening to its ode. | "My heart aches, and a drowsy numbness pains" = Ode to a Nightingale ; "Thou still unravish'd bride of quietness" = Ode on a Grecian Urn ; "Season of mists and mellow fruitfulness" = To Autumn ; "Beauty is truth, truth beauty" = Ode on a Grecian Urn | Each ode has a distinctive voice.
 SA3#literature-u09-05-q5@2,3: How does Keats explore the relationship between art and life in "Ode on a Grecian Urn"? | The urn preserves moments of love, music and ritual forever, so its lovers never fade, but they also never kiss: permanence brings incompleteness and coldness ("Cold Pastoral!"). The speaker is drawn to art's escape from time but recognises its limits. The final statement that "Beauty is truth, truth beauty" offers the urn's consolation, but its tone and meaning remain open, reflecting negative capability. | Permanence of art ; Frozen incompleteness ; Cold Pastoral ; Ambiguous conclusion ; Negative capability
+Q: How did Keats die? | Of tuberculosis, in Rome, aged 25, the same disease he had nursed his brother Tom through.
+Q: What is an ode? | A lyric poem of address, often celebrating its subject.
+Q: What stanza did Keats develop for his great odes of 1819? | A ten-line stanza.
+Q: How does "Ode to a Nightingale" open? | "My heart aches, and a drowsy numbness pains / My sense".
+Q: What world does the speaker of "Ode to a Nightingale" long to escape? | A world "Where youth grows pale, and spectre-thin, and dies".
+Q: How does the urn's frozen scene affect its lovers in "Ode on a Grecian Urn"? | They never kiss but never fade: their love is permanent but can never be completed.
+Q: What phrase shows that the urn's frozen beauty is also cold? | "Cold Pastoral!"
+Q: How does "To Autumn" respond to change, compared with the earlier odes? | Instead of escaping change, it accepts ripeness, harvest and approaching winter, which critics see as calm acceptance of mortality.
+Q: What sounds end "To Autumn"? | The music of gnats, lambs, crickets and "gathering swallows".
+Q: What is synaesthesia? | Describing one sense in terms of another, as in tasting colour or sound.
 
 ## Tennyson: The Charge of the Light Brigade and In Memoriam
 LV: Intermediate · Application
@@ -256,6 +306,16 @@ M2#literature-u09-06-q2@2: What does the dactylic rhythm of "The Charge of the L
 M3#literature-u09-06-q3@3: How does the ABBA rhyme scheme suit In Memoriam? | The enclosed rhyme mirrors grief turning back on itself | It makes the poem sound comic | It speeds up the narrative | It imitates the sound of a battle | The returning rhyme suggests circling, contained mourning.
 MATCH2#literature-u09-06-q4@1: Match each phrase to its poem. | "Theirs not to reason why" = The Charge of the Light Brigade ; "red in tooth and claw" = In Memoriam ; "Some one had blunder'd" = The Charge of the Light Brigade ; "'Tis better to have loved and lost" = In Memoriam | Tennyson wrote both public and private poetry.
 SA3#literature-u09-06-q5@2,3: How does Tennyson present attitudes to war in "The Charge of the Light Brigade"? | The galloping dactylic rhythm and repetition create excitement and momentum, immersing the reader in the charge. The admission "Some one had blunder'd" acknowledges a fatal error, and "Theirs not to reason why" stresses obedience, which can be read as admiration or unease. Imagery of "the valley of Death" and "the mouth of hell" shows danger, but the final command to "Honour the Light Brigade" makes celebration of heroism dominant. | Rhythm and repetition ; Blunder ; Obedience ; Death imagery ; Celebration
+Q: What caused the disastrous charge at Balaclava? | A misunderstood order sent cavalry against Russian guns in the Crimean War.
+Q: What prompted Tennyson to write "The Charge of the Light Brigade"? | Newspaper reports of the charge in 1854.
+Q: How does "The Charge of the Light Brigade" admit an error? | With the line "Some one had blunder'd".
+Q: What is the effect of "Cannon to right of them, / Cannon to left of them"? | The repetition encloses the riders in danger.
+Q: How does "The Charge of the Light Brigade" end? | With a call to "Honour the Light Brigade", celebrating heroism while acknowledging error.
+Q: How long did Tennyson take to write In Memoriam, and how many sections does it have? | Seventeen years, in 131 sections.
+Q: What is the metre of the In Memoriam stanza? | Quatrains of iambic tetrameter.
+Q: What scientific anxieties does In Memoriam reflect? | Fears raised by geology and early evolutionary ideas that Nature, "red in tooth and claw", is indifferent to individuals and species.
+Q: How does In Memoriam develop, and how does it end? | From despair through doubt to a hard-won, hopeful faith, ending with a wedding.
+Q: Why is it wrong to call "The Charge of the Light Brigade" an anti-war poem in the modern sense? | It acknowledges a blunder but celebrates the soldiers' heroism.
 
 ## Browning: My Last Duchess
 LV: Intermediate · Application
@@ -299,6 +359,16 @@ M2#literature-u09-07-q2@2: What did the Duke most resent about his wife? | She w
 M3#literature-u09-07-q3@3: Why does Browning use enjambed rhyming couplets? | They create a controlled, natural-sounding voice that hides the rhyme | They make the Duke sound uneducated | They break the poem into separate stanzas | They show the Duke is singing | The regular form under natural speech mirrors the Duke's control.
 MATCH1#literature-u09-07-q4@2: Match each detail to what it suggests. | The curtain over the portrait = The Duke's control ; "nine-hundred-years-old name" = Pride in status ; "I gave commands" = Murder implied ; Neptune taming a sea-horse = Domination | Details build a picture of the Duke.
 SA3#literature-u09-07-q5@2,3: How does Browning present power and control in "My Last Duchess"? | The Duke controls the conversation, the envoy and the portrait, which only he may unveil. He resents his wife's independent warmth and refuses to "stoop" to correct her, preferring to give "commands" that ended her smiles. His pride in his name and the closing image of Neptune taming a sea-horse reinforce domination. The tightly controlled couplets mirror his control, while the reader sees through it via dramatic irony. | Control of portrait ; Resentment ; Commands ; Pride and Neptune ; Form and irony
+Q: What is a dramatic monologue? | A poem spoken by a character, not the poet, to a silent listener at a particular moment, revealing more than the speaker intends.
+Q: In which collection was "My Last Duchess" published, and when? | Dramatic Lyrics, in 1842.
+Q: Which historical figure is "My Last Duchess" often linked to? | Alfonso II, Duke of Ferrara, whose young wife died in 1561.
+Q: What does the Duke complain about in his late wife's nature? | That she had "A heart ... too soon made glad, / Too easily impressed": she smiled at everyone.
+Q: What gift did the Duke feel his wife undervalued? | His "gift of a nine-hundred-years-old name".
+Q: Why did the Duke not correct his wife's behaviour himself? | He refused to "stoop" to do so.
+Q: What does the curtain over the Duchess's portrait show about the Duke? | Only he may draw it, so he controls her in death as he could not in life.
+Q: What does the bronze of Neptune "Taming a sea-horse" suggest? | It is another image of domination, reflecting the Duke's desire for control.
+Q: What is the effect of enjambment on the rhyming couplets in "My Last Duchess"? | It hides the rhyme, making the Duke's speech sound natural and controlled.
+Q: What is dramatic irony in "My Last Duchess"? | The reader understands more than the envoy appears to, including the clear warning to the next Duchess.
 
 ## Christina Rossetti
 LV: Intermediate · Application
@@ -344,6 +414,16 @@ M2#literature-u09-08-q2@2: What form is "Remember"? | A Petrarchan sonnet | A dr
 M3#literature-u09-08-q3@3: Which reading of "Goblin Market" focuses on Lizzie's sacrifice to save Laura? | A Christian reading of redemption through sacrifice | A reading about the Crimean War | A reading about industrial machinery | A reading about scientific discovery | Lizzie suffers to bring salvation, echoing Christ.
 MATCH2#literature-u09-08-q4@2: Match each reading of "Goblin Market" to its focus. | Christian = Sacrifice and redemption ; Feminist = Sisterhood and female desire ; Economic = The marketplace and buying ; Moral fable = Warning against temptation | The poem supports multiple interpretations.
 SA3#literature-u09-08-q5@2,3: How does Rossetti present love and death in "Remember"? | The octave's repeated imperative "Remember" expresses a lover's wish to be held in memory after death, with death imagined gently as the "silent land". The volta brings a selfless shift: she releases the beloved from grief, preferring he "forget and smile". The controlled sonnet form contains strong emotion, and her calm acceptance of death reflects Christian faith. | Repeated plea ; Gentle images of death ; Volta and release ; Selflessness ; Form and faith
+Q: When did Christina Rossetti live? | From 1830 to 1894.
+Q: How did Christina Rossetti's Anglo-Catholic faith affect her life? | It shaped her poetry and choices, including breaking off engagements on religious grounds.
+Q: What voluntary work of Rossetti's has been linked to "Goblin Market"? | Volunteering at a home for "fallen women" in Highgate.
+Q: When was Goblin Market and Other Poems published? | In 1862.
+Q: What is the Pre-Raphaelite Brotherhood? | A group of Victorian artists and writers seeking detail, colour and sincerity, including Dante Gabriel Rossetti.
+Q: How does "Remember" begin? | "Remember me when I am gone away, / Gone far away into the silent land".
+Q: Where does the volta come in "Remember", and what changes? | At line 9, "Yet if you should forget me for a while"; she now permits the beloved to forget.
+Q: How does Laura pay the goblins for their fruit? | With a lock of her hair.
+Q: How is Laura saved in "Goblin Market"? | Lizzie refuses to eat, is covered in the goblins' juice, and Laura kisses the juice from her.
+Q: What mistake should be avoided when reading "Goblin Market"? | Treating it as a simple children's tale; its sensual imagery and ambiguity invite complex readings.
 
 ## Thomas Hardy's poetry
 LV: Intermediate · Application
@@ -384,6 +464,16 @@ M2#literature-u09-09-q2@2: What does the thrush's song suggest to the speaker? |
 M3#literature-u09-09-q3@3: Why is the burial of Drummer Hodge "Uncoffined—just as found" significant? | It shows his anonymity and the indifference of war | It shows he was honoured with a grand funeral | It proves he survived the battle | It shows he was buried at home in Wessex | His rough burial far from home emphasises loss and displacement.
 MATCH2#literature-u09-09-q4@1: Match each poem to its subject. | "The Darkling Thrush" = The turn of the century ; "Drummer Hodge" = A soldier's foreign grave ; "The Voice" = Grief for Emma ; Poems of 1912–13 = Elegies for his wife | Hardy's poems cover public and private loss.
 SA3#literature-u09-09-q5@2,3: How does Hardy present loss in "The Voice"? | The opening lines' rolling, repetitive rhythm ("call to me, call to me") conveys the speaker's longing to hear Emma. He remembers her as she was when they first met, contrasting it with later estrangement. Doubt enters as he wonders if it is "only the breeze". In the final stanza, shorter, broken rhythms and images of falling leaves and the north wind show him "faltering forward", alone and uncertain. | Rhythm of longing ; Memory of early love ; Doubt ; Broken final stanza ; Isolation
+Q: When did Hardy concentrate on poetry rather than novels? | From the 1890s.
+Q: What features mark Hardy's poetic style? | Varied stanza forms, irregular rhythms and rugged diction.
+Q: How does "The Darkling Thrush" present the dying century? | As a corpse: "The Century's corpse outleant".
+Q: How is the thrush described in "The Darkling Thrush"? | "An aged thrush, frail, gaunt, and small", which nevertheless sings joyfully.
+Q: Does the speaker of "The Darkling Thrush" share the bird's hope? | No, but he cannot dismiss it; Hardy leaves the question open.
+Q: When was "Drummer Hodge" written? | In 1899, during the Boer War.
+Q: What do the unknown southern stars over Drummer Hodge's grave emphasise? | His displacement and anonymity, buried far from his Wessex home.
+Q: What feelings fill the Poems of 1912–13? | Guilt and longing for Hardy's early love with Emma, after years of estrangement.
+Q: How does the rhythm of "The Voice" change? | The insistent rhythm of the opening falters by the final stanza, leaving the speaker "faltering forward".
+Q: Why is calling Hardy simply a pessimist a mistake? | His poems often leave room for unexplained hope or tenderness.
 
 ## First World War poetry: an overview
 LV: Intermediate · Foundation
@@ -426,6 +516,16 @@ M2#literature-u09-10-q2@2: How does "The Soldier" differ from "Dulce et Decorum 
 M3#literature-u09-10-q3@3: Why have critics widened the canon of First World War poetry? | To include women, working-class and colonial voices previously overlooked | Because Owen and Sassoon wrote nothing of value | Because protest poetry was invented after 1950 | To remove all poems by soldiers | A wider canon reflects the variety of responses to the war.
 MATCH1#literature-u09-10-q4@1: Match each poet to their position. | Rupert Brooke = Early idealism ; Jessie Pope = Recruiting verse ; Wilfred Owen = Realism and pity ; Laurence Binyon = Remembrance | Poets responded to the war in different ways.
 SA3#literature-u09-10-q5@2,3: Explain why the poetry of Owen and Sassoon has dominated public memory of the First World War. | Their vivid, angry realism matched later views of the war as futile slaughter, especially after the Second World War and the critical work of Paul Fussell. Their poems were widely taught in schools and anthologies. However, this focus can obscure the variety of wartime responses, including patriotic, religious and women's poetry, which recent scholarship has recovered. | Realism and anger ; Later attitudes ; Education and anthologies ; Narrowed canon ; Recovered voices
+Q: When did Britain introduce conscription in the First World War? | In 1916.
+Q: What features of the First World War does the lesson list? | Mass volunteering, conscription, trench warfare on the Western Front, poison gas, artillery and huge casualties.
+Q: What is the Western Front? | The line of trenches across Belgium and France where British forces fought Germany.
+Q: What themes did early First World War poems often express? | Duty and sacrifice.
+Q: How did recruiting verse by writers such as Jessie Pope present war? | As a game.
+Q: How does Brooke's "The Soldier" imagine death? | As a noble gift to England, in a calm, idealised sonnet.
+Q: Which critic influenced the dominance of Owen and Sassoon in memory of the war? | Paul Fussell, in The Great War and Modern Memory (1975).
+Q: Which voices have scholars added to the canon of First World War poetry? | Women poets, working-class soldiers, poets from across the empire, and those writing in other modes.
+Q: What is the canon? | The body of works generally accepted as the most important in a field.
+Q: What is the mistake in assuming all soldiers shared Owen's and Sassoon's views? | Responses varied, and many soldiers wrote patriotic or religious verse.
 
 ## Wilfred Owen
 LV: Intermediate · Application
@@ -465,6 +565,16 @@ M2#literature-u09-11-q2@2: What does Owen call the patriotic motto at the end of
 M3#literature-u09-11-q3@3: Why does Owen use pararhyme in poems such as "Strange Meeting"? | Its imperfect echoes create a sense of unease and dislocation | It makes the poems easier to sing | It follows strict sonnet rules | It imitates the rhythm of marching | Half-rhymes feel incomplete, matching the disordered world of war.
 MATCH2#literature-u09-11-q4@2: Match each quotation to its poem. | "What passing-bells for these who die as cattle?" = Anthem for Doomed Youth ; "But nothing happens" = Exposure ; "Bent double, like old beggars under sacks" = Dulce et Decorum Est ; "escaped" and "scooped" = Strange Meeting | Owen's poems share themes but differ in focus.
 SA3#literature-u09-11-q5@2,3: How does Owen present the suffering of soldiers in "Dulce et Decorum Est"? | Similes of "old beggars" and "hags" show exhausted, broken young men. The sudden direct speech of the gas alarm and "ecstasy of fumbling" create panic. The image of drowning "under a green sea" makes death horrific, and its return in dreams shows trauma. Direct address to "My friend" builds anger, ending by exposing "The old Lie" of glorious sacrifice. | Exhaustion imagery ; Gas attack ; Drowning image ; Trauma ; Attack on patriotic lie
+Q: When was Wilfred Owen killed? | On 4 November 1918, a week before the Armistice.
+Q: Why was Owen treated at Craiglockhart hospital in 1917? | For shell shock.
+Q: When were most of Owen's poems published? | After his death.
+Q: How does "Dulce et Decorum Est" describe exhausted soldiers? | "Bent double, like old beggars under sacks, / Knock-kneed, coughing like hags".
+Q: What question does "Anthem for Doomed Youth" ask, and how does it answer? | "What passing-bells for these who die as cattle?" Only "the monstrous anger of the guns."
+Q: Where does the sestet of "Anthem for Doomed Youth" turn? | To quieter mourning at home.
+Q: What do soldiers suffer from most in "Exposure"? | The cold, more than enemy fire.
+Q: What does the refrain "But nothing happens" stress in "Exposure"? | The endless waiting of the soldiers.
+Q: Give an example of Owen's pararhyme. | "Escaped" and "scooped" in "Strange Meeting".
+Q: Why is it a mistake to read Owen only as anti-war propaganda? | His poems also express deep compassion for soldiers and complex feelings about duty.
 
 ## Siegfried Sassoon
 LV: Intermediate · Application
@@ -507,6 +617,16 @@ M2#literature-u09-12-q2@2: What is typical of Sassoon's poetic technique? | Shor
 M3#literature-u09-12-q3@3: How does Sassoon's approach differ most from Owen's? | Sassoon uses direct satire against targets; Owen focuses on pity with richer imagery | Sassoon praises the war while Owen attacks it | Sassoon writes only about nature | Owen uses no imagery at all | Both oppose the war but with different methods and tone.
 MATCH2#literature-u09-12-q4@1: Match each poem to its target. | "The General" = Incompetent commanders ; "Base Details" = Staff officers far from danger ; "Suicide in the Trenches" = Cheering civilians at home ; "A Soldier's Declaration" = Politicians prolonging the war | Sassoon aimed his anger at specific groups.
 SA3#literature-u09-12-q5@2,3: Compare how Sassoon and Owen criticise those at home. | Sassoon attacks civilians directly, as in the "smug-faced crowds" of "Suicide in the Trenches", using short, sharp satire and a final barb. Owen addresses "My friend" in "Dulce et Decorum Est", building a detailed, harrowing scene before calling the patriotic motto "The old Lie". Sassoon's tone is bitter and colloquial; Owen's is more intense and compassionate, but both expose ignorance and complacency at home. | Sassoon's direct satire ; Owen's detailed imagery ; Tone ; Shared purpose ; Examples
+Q: When did Siegfried Sassoon live? | From 1886 to 1967.
+Q: What was Sassoon's 1917 statement called? | "Finished with the War: A Soldier's Declaration".
+Q: Where was Sassoon's 1917 declaration read out? | In Parliament.
+Q: What did Sassoon do for Owen at Craiglockhart? | He encouraged Owen's poetry, helping him develop his mature style.
+Q: What does "The General" describe? | A cheerful general greeting troops who later die because of his poor planning, ending on a bitter line about his responsibility.
+Q: What is the speaker's role in "Base Details"? | A comfortable staff officer far from the fighting, who would send others to death and then go home to die in bed.
+Q: Whom does "Suicide in the Trenches" attack at its end? | The "smug-faced crowds" who cheer marching soldiers.
+Q: How does Sassoon typically build a satirical poem? | He sets up a cheerful or ordinary scene in a light tone, then a final line delivers a sudden, bitter revelation.
+Q: What is satire? | Using humour, irony or exaggeration to criticise people or institutions.
+Q: What did Sassoon do with Owen's poems after Owen's death? | He edited them.
 
 ## Isaac Rosenberg and Edward Thomas
 LV: Intermediate · Application
@@ -551,6 +671,16 @@ M2#literature-u09-13-q2@2: Why does Rosenberg describe the rat's "cosmopolitan s
 M3#literature-u09-13-q3@3: How does "Adlestrop" relate to the war? | Its peaceful remembered moment gains poignancy from the war, though it never mentions it | It describes a battle at Adlestrop | It praises soldiers leaving by train | It attacks the government's war policy | The poem's stillness is shadowed by the time of writing.
 MATCH2#literature-u09-13-q4@2: Match each detail to its poem. | "Droll rat" = Break of Day in the Trenches ; "It was late June" = Adlestrop ; "Poppies whose roots are in man's veins" = Break of Day in the Trenches ; "all the birds / Of Oxfordshire and Gloucestershire" = Adlestrop | Different poets, different approaches.
 SA3#literature-u09-13-q5@2,3: Compare how Rosenberg and Thomas present the effects of war in their poetry. | Rosenberg writes from the trenches with ironic understatement: the rat's freedom and the poppy rooted in "man's veins" expose the absurdity and fragility of soldiers' lives. Thomas rarely shows fighting; in "Adlestrop" and other poems, war is felt through remembered peace, landscape and absence. Both reject heroic rhetoric and use quiet, precise detail, but Rosenberg confronts the front directly while Thomas evokes what war threatens. | Rosenberg's irony ; Images of fragility ; Thomas's indirectness ; Memory and landscape ; Comparison
+Q: Who was Isaac Rosenberg? | A working-class Jewish poet and painter from London's East End who served as a private soldier and was killed in April 1918.
+Q: How does "Break of Day in the Trenches" begin? | "The darkness crumbles away. / It is the same old druid Time as ever."
+Q: Why would the rat be shot for its "cosmopolitan sympathies"? | Because it touches both English and German hands, crossing between the enemy lines.
+Q: What does the rat show about the soldiers in "Break of Day in the Trenches"? | The rat is safer than the "haughty athletes" of both armies, exposing the fragility of human life and the absurdity of national hatred.
+Q: What does Rosenberg say about the poppies' roots? | "Poppies whose roots are in man's veins / Drop, and are ever dropping".
+Q: What form and tone does "Break of Day in the Trenches" use? | Free verse, with irony and understatement rather than open protest.
+Q: When and where was Edward Thomas killed? | At Arras, in April 1917.
+Q: What does "Adlestrop" recall? | An express train stopping briefly at a country station one hot afternoon in late June, when a blackbird sang.
+Q: How do Edward Thomas's poems such as "Rain" and "As the team's head-brass" show the war? | Indirectly, through its effects on landscape, memory and rural life, with quiet, conversational rhythms.
+Q: What is understatement? | Presenting something as less significant than it is, for effect.
 
 ## Women's poetry of the First World War
 LV: Intermediate · Evaluation
@@ -593,6 +723,16 @@ M2#literature-u09-14-q2@2: What experiences did many women war poets draw on? | 
 M3#literature-u09-14-q3@3: Why was women's war poetry long excluded from the canon? | Critics assumed only combatants' experience was authentic | Women wrote no poetry during the war | All women's poems were lost | Publishers refused to print any poems by women | The focus on soldiers' testimony marginalised other perspectives.
 MATCH1#literature-u09-14-q4@2: Match each writer to their work. | Vera Brittain = Testament of Youth ; Jessie Pope = Recruiting verse ; Charlotte Mew = "The Cenotaph" ; Catherine Reilly = Scars Upon My Heart | Recovering these voices widens the picture of the war.
 SA3#literature-u09-14-q5@2,3: Evaluate the claim that women's war poetry offers a different perspective from that of soldier poets. | Women wrote mainly from home, hospitals and factories, giving views of grief, waiting, care and changing work largely absent from soldiers' poetry. They range from patriotic recruiting verse to protest, showing that civilian attitudes were varied. However, some women, such as nurses near the front, witnessed suffering directly, and themes of loss and protest overlap with soldier poets. Their poetry broadens rather than simply contrasts with the canon. | Home front focus ; Range of attitudes ; Direct experience of nurses ; Shared themes ; Broadening the canon
+Q: What roles did women take on during the First World War? | Nurses, ambulance drivers and munitions workers.
+Q: What subjects does women's First World War poetry cover? | Grief, waiting, hospital work, factory work, patriotism, protest and the changed roles of women.
+Q: How does Jessie Pope present war in "Who's for the game"? | As an exciting game, challenging men to join.
+Q: Who was Vera Brittain? | A nurse who lost her fiancé, brother and friends, wrote poems of grief, and later the memoir Testament of Youth (1933).
+Q: What does Charlotte Mew's "The Cenotaph" question? | Public memorials.
+Q: What did Margaret Postgate Cole write about? | Young men aged by war.
+Q: Why was women's war poetry long overlooked? | The canon focused on male combatants, assuming only soldiers' experience was authentic.
+Q: What is the home front? | The civilian population and activities of a country at war.
+Q: What was a Voluntary Aid Detachment? | A unit of volunteers, many of them women, providing nursing and care.
+Q: What is the mistake in treating women's war poetry as all patriotic or all mournful? | It includes recruiting verse, protest, grief and new experiences of work.
 
 ## War poetry after 1918
 LV: Intermediate · Evaluation
@@ -635,4 +775,14 @@ M2#literature-u09-15-q2@2: What concern is especially prominent in modern war po
 M3#literature-u09-15-q3@3: How does Douglas's tone in "Vergissmeinnicht" differ from Owen's in "Dulce et Decorum Est"? | Douglas is cool and detached, while Owen is angry and emotional | Douglas is patriotic, while Owen praises war | Douglas writes comic verse, while Owen writes sonnets only | Both use exactly the same tone | Douglas's precision contrasts with Owen's passionate protest.
 MATCH2#literature-u09-15-q4@1: Match each poem to its conflict. | "Vergissmeinnicht" = Second World War ; "Bayonet Charge" = First World War, imagined later ; "Remains" = Iraq ; "Naming of Parts" = Second World War training | Poets have written about many conflicts.
 SA3#literature-u09-15-q5@2,3: Compare how war poetry after 1918 differs from First World War poetry. | First World War poetry often moved from patriotism to protest, focusing on soldiers' suffering and the lies of those at home. Later poetry shows more detachment (Douglas) or irony (Reed), pays attention to civilians and the enemy, and explores the role of media (Duffy) and long-term trauma (Armitage). Many later poems still echo Owen's compassion and protest, while questioning the heroic soldier-poet myth. | First World War themes ; Detachment and irony ; Civilians and enemy ; Media and trauma ; Continuity
+Q: Who was Keith Douglas? | A tank officer and poet who wrote with cool detachment and was killed in Normandy in 1944.
+Q: What does the speaker find in "Vergissmeinnicht"? | A dead German soldier with a photograph of his girlfriend.
+Q: How does Douglas present the dead soldier in "Vergissmeinnicht"? | As both "lover and killer", refusing simple sympathy or hatred.
+Q: How does Henry Reed's "Naming of Parts" use irony? | It sets the language of rifle drill against images of spring, showing the gap between training and life.
+Q: What does Ted Hughes's "Bayonet Charge" imagine? | A First World War soldier's terror in a single moment, with violent, physical imagery.
+Q: What is Simon Armitage's "Remains" based on, and what does it explore? | A soldier's account; it explores trauma after a shooting in Iraq.
+Q: What concerns do modern war poems focus on more than earlier ones? | Civilians, post-traumatic stress, the media's role in shaping images of war, and experiences on all sides.
+Q: How does later war poetry relate to Owen and Sassoon? | It either echoes their protest or questions a canon that celebrated the soldier-poet.
+Q: What is detachment in war poetry? | A cool, unemotional tone used to describe disturbing events.
+Q: What is the mistake in assuming war poetry ended in 1918? | Poets have written about every major conflict since, often focusing on new concerns such as trauma and the media.
 `;

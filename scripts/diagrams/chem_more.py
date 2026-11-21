@@ -13,7 +13,7 @@ Renderers and what they check:
               mass and the fragment is part of the molecule; isotope peaks give the relative atomic mass
   ir          an infrared spectrum: each labelled band lies in its data-booklet range and the bond is present
 """
-import json, math, re, sys, os
+import decimal, json, math, re, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from rdkit import Chem, RDLogger
 from rdkit.Chem import rdDepictor, rdMolDescriptors, rdCIPLabeler, Descriptors
@@ -164,6 +164,17 @@ def draw_mol(m, bond, opts=None):
     return inner, max(w, 40), max(h, 40), pos
 
 
+def wrap_words(s, n):
+    """Greedy word wrap to lines of at most n characters (a longer word gets a line to itself)."""
+    lines = []
+    for w in s.split():
+        if lines and len(lines[-1]) + 1 + len(w) <= n:
+            lines[-1] += " " + w
+        else:
+            lines.append(w)
+    return lines or [""]
+
+
 def text(x, y, s, size=14, weight=600, anchor="middle", fill=None):
     return f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}" dominant-baseline="middle" fill="{fill or INK}">{chem.esc(s)}</text>'
 
@@ -254,7 +265,10 @@ def structures(spec, W, narrow):
             lx += 34 + len(g["label"]) * 7.2
         y += 22
     if spec.get("note"):
-        out.append(text(W / 2, y + 4, spec["note"], 12, 500, fill=SOFT)); y += 22
+        # wrapped to the width (the carbonate note ran off a phone)
+        for line in wrap_words(spec["note"], int((W - 16) / (12 * 0.55))):
+            out.append(text(W / 2, y + 4, line, 12, 500, fill=SOFT)); y += 17
+        y += 5
     return "".join(out), y + 4
 
 
@@ -488,10 +502,19 @@ def ms(spec, W, narrow):
     out = [f'<path d="M{pl} {base} L{W - pr} {base} M{pl} {base} L{pl} {top - 6}" stroke="{INK}" stroke-width="1.6" fill="none"/>']
     for r in (0, 50, 100):
         out.append(text(pl - 8, Y(r), str(r), 11, 500, "end", SOFT))
+    # ticks by index, not by adding the step (0.01 steps drift: 27.990000000000002), with the step's decimals; on a
+    # narrow axis every k-th label is kept so neighbours never touch
     step = spec.get("tick", 10)
-    t = math.ceil(lo / step) * step
-    while t <= hi:
-        out.append(text(X(t), base + 16, str(t), 11, 500, fill=SOFT)); t += step
+    # decimals from the step as written (0.25 → 2, 2.5 → 1, 0.01 → 2), not from its magnitude
+    dec = max(0, -decimal.Decimal(str(step)).normalize().as_tuple().exponent)
+    first, n = math.ceil(lo / step - 1e-9), math.floor(hi / step + 1e-9)
+    labw = max(len(f"{v * step:.{dec}f}") for v in (first, n)) * 6.6 + 8
+    every = max(1, math.ceil(labw / max(1e-9, X(step) - X(0))))
+    for i in range(first, n + 1):
+        t = i * step
+        out.append(f'<path d="M{X(t):.1f} {base} L{X(t):.1f} {base + 4}" stroke="{INK}" stroke-width="1.2"/>')
+        if (i - first) % every == 0:
+            out.append(text(X(t), base + 16, f"{t:.{dec}f}", 11, 500, fill=SOFT))
     out.append(text(W - pr, base + 34, "m/z", 12, 600, "end", SOFT))
     out.append(text(pl - 4, top - 18, "relative abundance / %", 12, 600, "start", SOFT))
     for p in spec["peaks"]:
@@ -502,7 +525,9 @@ def ms(spec, W, narrow):
             out.append(text(X(p["mz"]) + p.get("dx", 0), Y(p["rel"]) - 26, p["label"], 11, 600, fill=colr))
     H = base + 44
     for n in spec.get("notes", []):
-        out.append(text(W / 2, H + 4, n, 12, 600, fill=INK)); H += 20
+        for line in wrap_words(n, int((W - 16) / (12 * 0.57))):
+            out.append(text(W / 2, H + 4, line, 12, 600, fill=INK)); H += 18
+        H += 2
     if spec.get("table"):
         for row in spec["table"]:
             out.append(text(W / 2, H + 6, row, 12.5, 600)); H += 20

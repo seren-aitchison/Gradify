@@ -38,12 +38,17 @@ Every request goes through one locked step in the database, `ai_claim_for`, befo
 3. **Rate limits.** Per learner a minute and an hour; overall a minute (`rate`, `busy`).
 4. **Allowance.** Free or Pro, per feature, per month (`allowance`). A tutor conversation counts once for all its
    turns, up to the plan's turn limit (`conversation_long`).
-5. **Fair use.** What the learner's requests have cost this month must be below their plan's cap (`fair_use`).
+5. **Fair use.** What the learner's requests have cost this month, plus this request's worst-case cost, must fit
+   under their plan's cap (`fair_use`). The cap holds as long as the estimate does: output is capped by `max_tokens`,
+   but input tokens are estimated from characters. A request that costs more than its estimate is recorded at its real
+   cost, and a later request is refused once its own estimate no longer fits in what's left of the cap. A learner just
+   under the cap can be refused a large request (a study pack) while a smaller one still fits.
 
 Then the function calls Claude, with the model the claim names for that feature (`ai_feature_models`), and `ai_settle_for` records the model, input, output and cache tokens, and the cost in
 pence. A failed request (Claude unavailable, a refusal, an unusable answer, notes too long) gives the use back but its
 cost still counts towards the budgets. An answer from the response cache costs nothing and gives the use back. A
-request still marked in flight after 10 minutes (the function died) stops counting against the learner.
+request still marked in flight after 10 minutes (the function died) stops using one of the learner's allowance, but its
+worst-case cost stays in the month's spend for the budgets and the fair-use cap.
 
 Only the Edge Functions can claim and settle (service role); learners can read their own allowance
 (`my_ai_allowance()`) and nothing else. Token limits: every request has a fixed `max_tokens`; tutor inputs are capped in
@@ -87,6 +92,8 @@ failures with their reasons.
 
 1. Migration applied and both functions deployed (10 November 2026, after a verified backup and a rehearsal on a copy of
    the live data; `docs/BACKEND-LOG.md`). While AI is off they refuse every request before any Claude call.
+   Also apply `20261119130000_fair_use_cap_includes_request.sql` (the fair-use cap counts the request being claimed)
+   and redeploy the functions for its refusal message, before switching AI on.
 2. Set the key: Supabase → Edge Functions → Secrets → `ANTHROPIC_API_KEY`. Set a spend limit on the Anthropic side
    too (Anthropic Console → Limits) as a second safety net.
 3. Make yourself an owner and a tester:

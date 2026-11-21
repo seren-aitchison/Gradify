@@ -45,6 +45,16 @@ M2#health-u04-01-q2@2: About how many METs is a moderate-intensity activity? | 3
 M3#health-u04-01-q3@3: A person can comfortably sing while walking. What does this suggest about the intensity? | It is light, so walking faster would bring it into the moderate range | It is vigorous, so they should slow down | It is moderate, because walking always counts as moderate | The talk test can't be used for walking | Being able to sing indicates light intensity; moderate activity makes breathing faster so singing is difficult.
 TF1#health-u04-01-q4@1: Housework and gardening can count towards physical activity guidelines. | true | Guidelines count any activity of sufficient intensity, not only sport or gym exercise.
 SA2#health-u04-01-q5@2,3: Explain the difference between physical activity, exercise and fitness, using examples. | Physical activity is any movement that uses energy, such as walking the dog or gardening. Exercise is a subset that is planned and structured to improve fitness, such as a training run. Fitness is a set of attributes, such as cardiovascular endurance or strength, that people have and that activity can improve. | Physical activity ; Exercise ; Fitness ; Examples
+Q: Define physical activity. | Any bodily movement produced by skeletal muscles that uses energy, such as walking to work, gardening or housework.
+Q: Define exercise. | Physical activity that is planned, structured and repeated to improve or maintain fitness.
+Q: Define physical fitness. | A set of attributes, such as cardiorespiratory endurance and strength, that affect the ability to perform activity.
+Q: What is a MET? | A metabolic equivalent: the rate of energy used at rest, used to express activity intensity.
+Q: How many METs does a vigorous activity use? | More than 6 METs.
+Q: Give two examples of light-intensity activity. | Slow walking and standing work.
+Q: Give two examples of vigorous-intensity activity. | Running, fast cycling or swimming lengths (any two).
+Q: What does the Intensity part of FITT describe? | How hard the activity is.
+Q: What common mistake do people make about which activities count towards the guidelines? | Thinking only sport or gym exercise counts; all movement counts, including active travel, housework and play.
+Q: How valid is the talk test as a way of judging moderate intensity? | It is a practical and reasonably valid way to judge moderate intensity.
 
 ## The UK physical activity guidelines
 LV: Level 3 · Foundation
@@ -88,6 +98,16 @@ M2#health-u04-02-q2@2: A man runs (vigorous) for 25 minutes three times a week a
 M3#health-u04-02-q3@3: A public health team wants the biggest health gain for its budget. Which group should it target? | The least active people, since moving from none to some activity brings the largest benefits | People who already exceed the guidelines by a wide margin | Elite athletes, to raise their competitive performance further | Only school children, because adults are unable to change habits | The dose–response curve is steepest at low levels of activity.
 MATCH1#health-u04-02-q4@1: Match each group to its main guideline. | Adults = 150 minutes moderate a week ; Children 5–18 = Average 60 minutes a day ; Older adults = Add balance and strength activities ; Children 1–4 = 180 minutes a day | Each age group has its own recommendation.
 SA2#health-u04-02-q5@2,3: Explain why the 2019 guidelines emphasise that "some is better than none". | Many people find 150 minutes daunting and may give up if they can't reach it. Evidence shows health benefits start with small amounts of activity and the largest gains come from moving from inactivity to some activity. The message encourages the least active to start, building up gradually, which has the biggest public health impact. | Guidelines can seem daunting ; Benefits start at low levels ; Dose–response curve ; Public health impact
+Q: How much vigorous activity a week meets the UK adult aerobic guideline? | At least 75 minutes of vigorous activity a week, or an equivalent combination with moderate activity.
+Q: What do the UK guidelines advise adults about sedentary time? | Minimise sedentary time by breaking up long periods of sitting.
+Q: How much activity is recommended each day for children aged 1 to 4? | At least 180 minutes a day of activity, including at least 60 minutes of moderate to vigorous activity for 3 to 4-year-olds.
+Q: What extra activity is recommended for older adults aged 65 and over? | Activities to improve balance and strength on at least 2 days a week, to reduce falls.
+Q: What do the guidelines recommend during pregnancy and after birth? | Aim for 150 minutes of moderate activity a week in pregnancy, and return to activity gradually after birth.
+Q: What do the guidelines recommend for disabled adults? | 150 minutes of moderate activity and strength activity on 2 days a week, adapted to ability.
+Q: How should infants be active, according to the guidelines? | Several times a day, including tummy time.
+Q: When adding up activity, how are vigorous minutes counted against moderate ones? | Vigorous minutes count double, so 20 minutes of running is about 40 moderate-equivalent minutes.
+Q: What do dose-response studies show about where the steepest health gains come from? | Moving people from inactivity to small amounts of activity.
+Q: What evidence are the UK activity guidelines based on? | Systematic reviews linking these amounts of activity to lower risks of disease and early death.
 
 ## Sedentary behaviour
 LV: Level 3 · Application
@@ -129,6 +149,16 @@ M2#health-u04-03-q2@2: What is the difference between sedentary behaviour and ph
 M3#health-u04-03-q3@3: A company wants to reduce health risks for desk-based staff who mostly already exercise after work. What is the best intervention? | Encourage regular breaks from sitting, standing desks and walking meetings | Offer gym membership and change nothing about the working day | Lengthen meetings so staff move between rooms less often | Ban any exercise or walking during working hours | Breaking up prolonged sitting addresses the separate risk of sedentary time.
 TF1#health-u04-03-q4@1: Sleeping at night counts as sedentary behaviour. | false | Sedentary behaviour is defined as waking behaviour; sleep is separate.
 SA2#health-u04-03-q5@2,3: Explain why sedentary behaviour is treated as a separate health risk from physical inactivity. | Studies show that long periods of sitting are associated with higher risks of type 2 diabetes, heart disease and early death even in people who meet activity guidelines. Prolonged sitting affects blood glucose and lipid metabolism. Large amounts of moderate activity can offset the risk, but most people don't do enough, so reducing and breaking up sitting is advised in its own right. | Association independent of activity ; Mechanisms ; Offset needs large activity ; Separate advice
+Q: Define physical inactivity. | Not meeting recommended levels of physical activity.
+Q: Give three examples of sedentary behaviour. | Any three of: watching TV, desk work, driving and screen use.
+Q: Name three health risks linked to long sitting time. | Type 2 diabetes, cardiovascular disease and early death.
+Q: What did Ekelund and colleagues find could remove the extra mortality risk of high sitting time? | About 60 to 75 minutes a day of moderate activity, though few people reach this.
+Q: What is high screen time linked to in children? | Poorer sleep and fitness.
+Q: How often should long periods of sitting be broken up? | Stand or move every 30 to 60 minutes.
+Q: Name three workplace changes that reduce sitting time. | Standing desks, walking meetings and taking the stairs.
+Q: What remains contested about the link between sitting and poor health? | Whether sitting itself is causal, or a marker of other unhealthy behaviours.
+Q: Why is a daily workout not enough to cancel out a sedentary day? | High sitting time carries risk unless offset by large amounts of activity, so reducing and breaking up sitting matters too.
+Q: What do guidelines advise about sitting, in addition to being active? | Breaking up and reducing sitting, as it is linked to disease even in people who exercise.
 
 ## The benefits of physical activity
 LV: Level 3 · Application
@@ -176,6 +206,16 @@ M2#health-u04-04-q2@2: A person exercises regularly but doesn't lose weight. Wha
 M3#health-u04-04-q3@3: Why did the CMOs describe physical activity as a potential "miracle cure"? | It reduces the risk of many different diseases at once at low cost | It completely cures every disease once a person starts exercising | It replaces the need for any medicines in people who exercise | It affects only heart disease, but reduces it dramatically | Few interventions reduce the risk of so many conditions together, from heart disease to depression.
 TF1#health-u04-04-q4@1: Physical activity can lower the risk of some cancers. | true | Evidence is strongest for colon and breast cancer.
 SA2#health-u04-04-q5@2,3: Explain how regular physical activity reduces the risk of cardiovascular disease. | Activity lowers blood pressure, improves blood lipids (raising HDL and lowering triglycerides), improves insulin sensitivity and blood glucose control, helps maintain a healthy weight and reduces inflammation. The heart becomes more efficient, with a lower resting heart rate. Together these reduce atherosclerosis, heart attack and stroke risk. | Blood pressure ; Lipids ; Glucose and weight ; Heart efficiency or inflammation
+Q: How does physical activity reduce cardiovascular disease and stroke risk? | Through lower blood pressure, better lipids and healthier weight.
+Q: Which two cancers are especially linked to lower risk with physical activity? | Colon cancer and breast cancer.
+Q: How does physical activity reduce the risk of osteoporosis and falls? | Through stronger bones and muscles.
+Q: For weight loss, which matters more, diet or activity? | Diet changes usually matter more for weight loss than activity.
+Q: How effective is exercise for mild to moderate depression? | It can be as effective as some other treatments.
+Q: What benefits does physical activity bring for cognition in older age? | Lower risk of dementia and better cognitive function.
+Q: What social benefit can physical activity bring? | Social contact through clubs and groups.
+Q: About what proportion of UK deaths is physical inactivity associated with? | Around 1 in 6 deaths, according to Public Health England.
+Q: What does all-cause mortality mean? | Death from any cause, used to measure overall health risk.
+Q: What is contested about estimates of deaths caused by inactivity? | The exact proportion of deaths attributable to inactivity varies between methods and studies.
 
 ## Short-term responses to exercise
 LV: Level 3 · Application
@@ -220,6 +260,16 @@ M2#health-u04-05-q2@2: During exercise, heart rate is 160 bpm and stroke volume 
 M3#health-u04-05-q3@3: Which change most directly drives the increase in breathing rate during exercise? | Rising carbon dioxide and acidity detected by chemoreceptors | A fall in body temperature as sweating increases | A drop in blood glucose as muscles use more fuel | A fall in heart rate as stroke volume increases | Chemoreceptors detect rising CO2 and hydrogen ions and stimulate the respiratory centre.
 NUM2#health-u04-05-q4@2: During exercise, breathing rate is 30 breaths per minute and tidal volume is 2.5 litres. What is minute ventilation, in litres per minute? | 75 | 1% | L/min | Minute ventilation = breathing rate × tidal volume = 30 × 2.5 = 75 L/min.
 SA2#health-u04-05-q5@2,3: Explain how the cardiovascular system responds to meet the oxygen demands of exercise. | Heart rate rises, partly before exercise through adrenaline, and stroke volume increases with greater venous return, so cardiac output increases several-fold. Blood is redistributed to working muscles by vasodilation there and vasoconstriction elsewhere. Systolic pressure rises. Together these deliver more oxygen and remove carbon dioxide and heat. | Heart rate and stroke volume ; Cardiac output ; Redistribution ; Delivery of oxygen
+Q: What causes stroke volume to rise during exercise? | Increased venous return, following Starling's law.
+Q: Define cardiac output. | The volume of blood pumped by the heart per minute: heart rate multiplied by stroke volume.
+Q: What happens to systolic and diastolic blood pressure during exercise? | Systolic blood pressure rises; diastolic changes little.
+Q: Which systems coordinate the cardiovascular responses to exercise? | The sympathetic nervous system and adrenaline.
+Q: Why is heart rate recovery a useful measure? | How quickly heart rate returns to resting level after exercise is a sign of fitness.
+Q: Where is the respiratory centre that receives signals from chemoreceptors? | In the medulla.
+Q: What do chemoreceptors detect to increase breathing during exercise? | Rising carbon dioxide and acidity.
+Q: How does the body increase heat loss as temperature rises during exercise? | Through sweating and vasodilation in the skin.
+Q: Define the vascular shunt. | Redistribution of blood flow from organs such as the gut to working muscles during exercise.
+Q: In untrained people, what drives further rises in cardiac output once stroke volume plateaus? | Mainly heart rate.
 
 ## Long-term adaptations to training
 LV: Level 3 · Application
@@ -264,6 +314,16 @@ M2#health-u04-06-q2@2: A runner stops training for three months and finds her fi
 M3#health-u04-06-q3@3: Two people follow the same programme; one improves VO_{2} max far more than the other. What best explains this? | Individual differences, including genetics, in response to training | The principle of reversibility | One person must have trained less, as response is always identical | Specificity of training | Studies such as HERITAGE show large variation in response to identical training.
 MATCH1#health-u04-06-q4@1: Match each training principle to its meaning. | Specificity = Training matches the type of activity ; Progressive overload = Gradually increase demand ; Reversibility = Gains are lost without training ; Recovery = Adaptation occurs during rest | These principles guide effective training programmes.
 SA2#health-u04-06-q5@2,3: Explain the principles a beginner should follow when starting a running programme. | Start gradually and build up using progressive overload, increasing frequency, time or intensity a little at a time. Train specifically for running. Include rest days for recovery to avoid injury and overtraining. Keep training regular, as gains reverse if stopped. Recognise that individual progress varies, and seek advice if there are health conditions. | Progressive overload ; Specificity ; Recovery ; Reversibility or individual differences
+Q: What is cardiac hypertrophy? | A larger, stronger heart resulting from training.
+Q: Name three cardiovascular adaptations to training other than lower resting heart rate. | Any three of: cardiac hypertrophy, greater stroke volume, more capillaries in muscles, more red blood cells and plasma, lower resting blood pressure.
+Q: Define VO2 max. | The maximum rate at which the body can take up and use oxygen.
+Q: How does aerobic training change muscles? | It increases mitochondria and enzymes.
+Q: How does resistance training change muscles? | It increases muscle size (hypertrophy) and strength.
+Q: Which kinds of exercise increase bone density? | Weight-bearing and resistance exercise.
+Q: Define progressive overload. | Gradually increasing training demands to stimulate further adaptation.
+Q: Why do people respond differently to the same training programme? | Individual differences, partly because of genetics, as shown in studies such as HERITAGE.
+Q: When does adaptation to training actually happen, and what happens if this is neglected? | During rest; too little rest leads to overtraining.
+Q: Why should a beginner avoid increasing training load too quickly? | Big jumps raise the risk of injury and overtraining.
 
 ## Energy systems
 LV: Level 3 · Application
@@ -303,6 +363,16 @@ M2#health-u04-07-q2@2: A swimmer races 200 m in about 2 minutes at high intensit
 M3#health-u04-07-q3@3: Why can a sprinter repeat maximal sprints well if given 3 minutes' rest, but not 20 seconds? | Phosphocreatine takes about 2–3 minutes to be resynthesised | Lactate is removed within 20 seconds | ATP stores last for several minutes | The aerobic system can't operate during rest | Phosphocreatine recovery needs a few minutes, supported by the aerobic system.
 SEQ1#health-u04-07-q4@1: Order the energy systems by the duration of maximal effort they mainly support, shortest first. | ATP–PC ; Anaerobic glycolysis ; Aerobic | ATP–PC lasts about 10 seconds, glycolysis up to about 2 minutes, and the aerobic system supports longer efforts.
 SA2#health-u04-07-q5@2,3: Explain how the three energy systems contribute during a 1,500 m race. | At the start, the ATP–PC system supplies rapid energy for the first few seconds. Anaerobic glycolysis contributes during fast early pace and the final sprint, producing lactate and hydrogen ions that contribute to fatigue. For most of the race, lasting around 4 minutes, the aerobic system supplies the majority of energy. All three operate together on the energy continuum. | ATP–PC at start ; Glycolysis in fast phases ; Aerobic dominant overall ; Systems work together
+Q: Why must ATP be continually resynthesised during exercise? | Muscles store only enough ATP for about 2 to 3 seconds of maximal effort.
+Q: How long does the ATP-PC system power maximal effort? | About 10 seconds.
+Q: How long does phosphocreatine take to recover? | About 2 to 3 minutes.
+Q: What by-products does anaerobic glycolysis produce? | Lactate and hydrogen ions, which contribute to fatigue.
+Q: For what duration of effort is anaerobic glycolysis dominant? | High-intensity efforts of about 10 seconds to 2 minutes, such as a 400 m run.
+Q: Which fuels does the aerobic system break down, and where? | Carbohydrates and fats, in the mitochondria.
+Q: Define the energy continuum. | The changing contribution of each energy system according to intensity and duration.
+Q: What role does the aerobic system play between sprints in a football match? | It helps recover phosphocreatine between sprints.
+Q: What causes delayed muscle soreness the day after exercise? | Muscle damage and inflammation, not lactate, which is cleared within an hour or so.
+Q: How has the view of lactate's role in fatigue been revised? | Lactate is now seen as a fuel as well as a by-product, and acidosis and other factors also cause fatigue.
 
 ## Components of fitness
 LV: Level 3 · Foundation
@@ -349,6 +419,16 @@ M2#health-u04-08-q2@2: A goalkeeper must dive quickly to save a penalty. Which c
 M3#health-u04-08-q3@3: Why is balance an important fitness component for older adults, not just for athletes? | Good balance reduces the risk of falls, a major cause of injury in older age | Balance only matters in sports such as gymnastics or dance | Balance improves cardiorespiratory endurance directly | Older adults can't improve their balance with training | Falls are a leading cause of injury in older people, and balance training reduces risk.
 MATCH1#health-u04-08-q4@1: Match each activity to the main component it develops. | Long-distance cycling = Cardiorespiratory endurance ; Heavy weightlifting = Muscular strength ; Yoga = Flexibility ; Box jumps = Power | Each activity mainly trains one component, though most develop several.
 SA2#health-u04-08-q5@2,3: Explain which components of fitness a netball player needs and why. | A netball player needs agility to change direction around opponents, speed to reach the ball, power for jumping, reaction time to intercept passes, coordination for catching and passing, and cardiorespiratory and muscular endurance to keep performing throughout a match. Balance helps landing and pivoting. | Skill-related components ; Health-related components ; Links to game demands ; Range of components
+Q: Define cardiorespiratory endurance. | The ability of the heart, lungs and blood vessels to supply oxygen during sustained activity.
+Q: What are the five health-related components of fitness? | Cardiorespiratory endurance, muscular strength, muscular endurance, flexibility and body composition.
+Q: Define power as a component of fitness. | Strength combined with speed; the ability to combine strength and speed in a movement.
+Q: What is the difference between static and dynamic balance? | Static balance is keeping the body stable while still; dynamic balance is keeping it stable while moving.
+Q: Define agility. | Changing direction quickly while keeping control.
+Q: Why are health-related components distinguished from skill-related components? | Health-related components are most linked to reduced disease risk and everyday function; skill-related components matter more for sport performance.
+Q: What components does a tennis player need, according to the lesson? | Agility, reaction time, power and coordination, as well as endurance.
+Q: Define reaction time and coordination. | Reaction time is the time between a stimulus and the start of a response; coordination is using different body parts together smoothly.
+Q: Why does the lesson say a mix of activities gives all-round fitness? | Different activities develop different components, so combining them develops all components.
+Q: How does a 70-year-old taking tai chi benefit, in terms of fitness components? | Tai chi improves balance and flexibility, which reduces the risk of falls.
 
 ## Measuring fitness
 LV: Level 3 · Application
@@ -395,6 +475,16 @@ M2#health-u04-09-q2@2: Using 220 − age, what is the estimated maximum heart ra
 M3#health-u04-09-q3@3: A coach tests players' endurance once on a hot afternoon and once on a cool morning and sees a big change. What is the main problem? | Conditions weren't standardised, so the test's reliability is reduced | The test must be invalid for every person | Endurance can't change in any circumstances | The players' fitness definitely improved | Different conditions introduce variation, so results can't be compared reliably.
 NUM1#health-u04-09-q4@1: Using the 220 − age formula, what is the estimated maximum heart rate of a 25-year-old, in beats per minute? | 195 | 0 | bpm | Estimated maximum heart rate = 220 − 25 = 195 bpm.
 SA2#health-u04-09-q5@2,3: Explain how to make a fitness test valid and reliable. | Choose a test that measures the intended component, such as the multistage fitness test for aerobic endurance, for validity. For reliability, use standardised procedures: the same warm-up, equipment, surface, tester, instructions and time of day, and repeat tests to check consistency. Screen participants for safety beforehand. | Valid choice of test ; Standardised procedures ; Consistency of conditions ; Safety screening
+Q: Name three tests of cardiorespiratory endurance. | The multistage fitness (bleep) test, the Cooper 12-minute run and the Harvard step test.
+Q: What does validity mean in fitness testing, and which test is more valid for aerobic fitness than a sit-up test? | Validity is whether a test measures what it claims to; a treadmill VO_{2} max test is more valid for aerobic fitness.
+Q: Which factors improve the reliability of a fitness test? | Standardised procedures, the same tester, a warm-up, and the same time of day and conditions.
+Q: What does practicality mean when choosing a fitness test? | How practical the test is in terms of cost, time and equipment.
+Q: Name the tests the lesson gives for power and for speed and agility. | Power: vertical jump and standing long jump. Speed and agility: 30 m sprint and Illinois agility run.
+Q: Which methods can be used to test body composition? | BMI, waist circumference, skinfold callipers and bioelectrical impedance.
+Q: Why should 220 minus age be treated with caution? | It is only an approximation, with wide individual variation, so training zones set from it are estimates.
+Q: What safety steps should come before maximal fitness tests? | People should be screened, for example with a pre-activity questionnaire, and anyone with chest pain, dizziness or a heart condition should seek medical advice first.
+Q: Why should conditions be standardised before concluding that fitness has changed? | Changes in weather, surface, motivation or tester can alter results, so the difference may not reflect real fitness change.
+Q: What is the multistage fitness test and what does it estimate? | A shuttle-run test with increasing speed, used to estimate aerobic fitness.
 
 ## Physical activity in children and young people
 LV: Level 3 · Application
@@ -439,6 +529,16 @@ M2#health-u04-10-q2@2: A child does two PE lessons a week and nothing else. Do t
 M3#health-u04-10-q3@3: Which is the strongest reason to promote walking or cycling to school? | It builds activity into every school day for many children at low cost | It replaces the need for any PE in schools | It only benefits children who are already very fit | It guarantees children will meet all activity guidelines | Active travel adds regular daily activity and can reach many children.
 TF1#health-u04-10-q4@1: Physical activity can improve children's concentration and learning. | true | Research links activity with better attention and academic outcomes, though effects vary.
 SA2#health-u04-10-q5@3: Evaluate ways of increasing physical activity in teenage girls. | Approaches include offering a wider choice of activities, such as dance or fitness classes, girls-only sessions, addressing body image concerns and kit, involving girls in planning, and role models such as through the This Girl Can campaign. Barriers include self-consciousness, lack of time and changing priorities. Interventions that address these social and psychological barriers are more likely to work than simply offering more sport. | Barriers ; Choice and inclusive activities ; Social or psychological approaches ; Evaluation
+Q: Name the physical benefits of activity for children. | Healthy growth, stronger bones and muscles, better cardiorespiratory fitness and a healthy weight.
+Q: Which psychological benefits does the lesson list for children's activity? | Better mood, self-esteem and sleep, and lower anxiety and depression.
+Q: Why does childhood activity matter for later life? | Activity habits formed in childhood often continue into adulthood.
+Q: Which survey measures activity among children in England, and who runs it? | The Active Lives Children and Young People survey, run by Sport England.
+Q: Roughly how many children in England are classed as less active, and what does that mean? | Around 3 in 10, meaning they do under 30 minutes of activity a day.
+Q: Which groups of children are less likely to be active? | Teenage girls, as activity falls with age, and children from less affluent families.
+Q: Name four school-based approaches that help children be more active. | High-quality PE, active playtimes, the Daily Mile and active lessons.
+Q: Why is the Daily Mile considered easy to adopt? | It is free, needs no kit and includes every child.
+Q: Why are PE lessons alone not enough to meet children's needs? | PE usually provides only part of the daily average, so play, active travel and out-of-school activity are needed too.
+Q: What does active travel mean, and how can families help children be active? | Walking, cycling or wheeling for transport rather than leisure; families help through parents' own activity and support.
 
 ## Physical activity in older adults
 LV: Level 3 · Application
@@ -484,6 +584,16 @@ M2#health-u04-11-q2@2: An 80-year-old with limited mobility wants to be more act
 M3#health-u04-11-q3@3: An older man becomes much less active after a fall because he fears another. What is the likely result? | Weakness and worse balance, increasing his falls risk further | Lower falls risk, because he is avoiding activity | No change, because fitness doesn't decline with inactivity | Better bone density from resting | Fear of falling can start a cycle of inactivity, weakness and further falls.
 TF1#health-u04-11-q4@1: Older adults should avoid strength training because it is unsafe. | false | Supervised, progressive strength training is safe for most older adults and reduces falls and frailty.
 SA2#health-u04-11-q5@2,3: Explain why physical activity is important for maintaining independence in older age. | Activity maintains muscle strength and power needed for everyday tasks such as climbing stairs and getting out of a chair; balance training reduces falls; weight-bearing activity protects bones; aerobic activity maintains stamina; and activity protects against dementia and depression. Together these help people live independently for longer. | Strength for daily tasks ; Balance and falls ; Bones or stamina ; Mental health and independence
+Q: What is sarcopenia and how does activity affect it? | Age-related loss of muscle mass and strength; activity maintains muscle strength and slows it.
+Q: Why is balance an important benefit of activity in older adults? | Better balance reduces falls, a leading cause of injury and hospital admission.
+Q: How does activity help older adults' bones? | It protects bone density, reducing fracture risk.
+Q: Name the long-term diseases whose risk is lowered by activity in older age. | Heart disease, stroke, type 2 diabetes and dementia.
+Q: How much moderate activity do the UK guidelines recommend for older adults each week? | 150 minutes of moderate activity a week, plus breaking up long periods of sitting.
+Q: What do Otago and FaME programmes have in common, and what makes them effective? | Both are falls prevention exercise programmes that reduce falls when delivered over several months.
+Q: What does NICE NG249 (2025) recommend for falls prevention? | Strength and balance programmes as part of falls prevention.
+Q: Why should older people start low and progress gradually? | Safe progression is important, especially after illness, so activity should begin at a low level and build slowly.
+Q: Which activities does the lesson suggest to make activity accessible for older adults? | Chair-based exercise for frail people, walking groups, swimming, tai chi, dancing and gardening.
+Q: Which barriers should be addressed to help older people be active? | Fear of falling, transport, cost and social isolation.
 
 ## Activity with long-term conditions
 LV: Level 3 · Application
@@ -532,6 +642,16 @@ M2#health-u04-12-q2@2: A person with type 2 diabetes starts exercising. What sho
 M3#health-u04-12-q3@3: During an exercise class, a participant with heart disease develops chest pain that doesn't settle with rest. What should happen? | Stop the activity and call 999 | Encourage them to push through the pain | Tell them to rest and try again tomorrow without telling anyone | Increase the intensity to warm up the heart | Persistent chest pain may be a heart attack and needs emergency help.
 TF1#health-u04-12-q4@1: For most long-term conditions, appropriate physical activity is safe and beneficial. | true | Activity is part of the management of most long-term conditions, with tailored advice.
 SA2#health-u04-12-q5@2,3: Explain how physical activity helps people with type 2 diabetes. | Activity increases glucose uptake by muscles and improves insulin sensitivity, lowering blood glucose and HbA1c. It helps with weight management, lowers blood pressure and improves lipids, reducing cardiovascular risk, which is high in diabetes. It also improves mood. Medicines may need review to avoid hypoglycaemia. | Glucose uptake and insulin sensitivity ; Weight and cardiovascular risk ; Mood or wellbeing ; Medicine safety
+Q: How does activity help in type 2 diabetes, according to the lesson? | It improves blood glucose control and insulin sensitivity.
+Q: What benefit does cardiac rehabilitation offer people with heart disease? | It reduces deaths and readmissions.
+Q: How does pulmonary rehabilitation help people with COPD? | It improves breathlessness, exercise capacity and quality of life.
+Q: How does exercise help people with osteoarthritis? | It reduces pain and improves function, and NICE recommends it as a core treatment.
+Q: What effects does activity have for people with cancer? | Activity during and after treatment improves fatigue and quality of life.
+Q: What is an exercise referral scheme? | A scheme in which GPs refer people to supervised programmes in leisure centres.
+Q: What is Moving Medicine? | Guidance from the Faculty of Sport and Exercise Medicine for health professionals on talking about activity.
+Q: What general safety advice applies to people with long-term conditions starting activity? | Start gradually and follow advice from the healthcare team; most people benefit and the risks are low.
+Q: When should 999 be called for someone exercising? | For chest pain that does not settle.
+Q: Why is it a mistake to assume people with long-term conditions should avoid activity? | For most conditions appropriate activity is safe and beneficial, and inactivity carries greater risk.
 
 ## Barriers to physical activity
 LV: Level 3 · Application
@@ -576,6 +696,16 @@ M2#health-u04-13-q2@2: A wheelchair user wants to swim but the local pool has no
 M3#health-u04-13-q3@3: A campaign tells people "just find the willpower to exercise". Why is it likely to have limited effect on people in deprived areas? | It ignores barriers of opportunity, such as cost, time, safety and access to facilities | Willpower is the only factor that affects activity | People in deprived areas don't benefit from activity | Campaigns never change any behaviour | COM-B suggests targeting all three factors; opportunity barriers are often greater in deprived areas.
 MATCH1#health-u04-13-q4@1: Match each barrier to its type. | Gym fees are too high = Economic ; Fear of being judged = Social ; No cycle lanes = Environmental ; Low fitness and confidence = Personal | Each example illustrates one category of barrier.
 SA2#health-u04-13-q5@3: Evaluate the COM-B model as a way of designing interventions to increase physical activity. | COM-B identifies whether capability, opportunity or motivation is limiting behaviour and links to the Behaviour Change Wheel for choosing interventions, encouraging targeted, evidence-based design. It recognises that environment and opportunity matter, not just individual choice. However, it is broad and doesn't predict exactly which intervention will work; applying it needs good data about the target group. | Diagnoses limiting factors ; Links to intervention design ; Recognises opportunity ; Limitations
+Q: Name the four categories of barrier to physical activity. | Personal, social, environmental and economic.
+Q: Give examples of personal barriers to physical activity. | Lack of time, low motivation, low confidence, health conditions, disability and tiredness.
+Q: Give examples of social barriers to physical activity. | Lack of support, caring responsibilities, cultural norms and fear of judgement.
+Q: Which economic barriers does the lesson list? | The cost of facilities, kit and transport.
+Q: Who proposed the COM-B model and when? | Michie, van Stralen and West, in 2011.
+Q: What does the capability component of COM-B cover? | Physical and psychological ability, such as skills, knowledge and fitness.
+Q: What does the opportunity component of COM-B cover? | Physical and social opportunity, such as facilities, time and support.
+Q: What are reflective and automatic motivation in COM-B? | Reflective motivation is beliefs and plans; automatic motivation is habits and emotions.
+Q: When do interventions to increase activity work best? | When they target the factors that are actually limiting a person or group.
+Q: Which groups are less likely to be active, according to Active Lives data? | People with lower incomes, disabled people, people with long-term conditions, some ethnic minority groups and women.
 
 ## Active environments and active travel
 LV: Level 3 · Application
@@ -621,4 +751,14 @@ M2#health-u04-14-q2@2: Why are environmental interventions said to reach more pe
 M3#health-u04-14-q3@3: A town builds one short cycle lane that doesn't connect to other routes and sees little change in cycling. What is the best explanation? | Isolated routes have limited effect; connected networks are needed | Cycle lanes never increase cycling anywhere | People in the town can't ride bikes | The lane must have been too wide | Evidence shows networks, not single routes, drive larger changes.
 TF1#health-u04-14-q4@1: Active travel can reduce air pollution as well as increase physical activity. | true | Replacing car journeys with walking and cycling reduces emissions.
 SA2#health-u04-14-q5@3: Evaluate environmental approaches to increasing physical activity compared with individual approaches. | Environmental approaches, such as safe cycle networks, walkable neighbourhoods and green spaces, reach whole populations, including those less likely to respond to advice, and bring benefits for air quality and climate. But they are costly, take time, can be politically controversial and need connected networks to work. Individual approaches can help motivated people and those with health conditions, but have limited population reach. A combination is most effective. | Population reach ; Wider benefits ; Cost, time and controversy ; Comparison and conclusion
+Q: Why can changing environments be more effective than individual advice? | Individual advice reaches only some people, while changing environments can make activity the easy, normal choice for everyone.
+Q: Name four features of environments linked to higher activity. | Connected walkable streets, safe cycle routes, green spaces and lower traffic speeds such as 20 mph zones.
+Q: Why does accessible public transport support physical activity? | It usually involves walking at each end of the journey.
+Q: Which wider benefits does active travel bring besides activity? | It reduces car use, air pollution and carbon emissions, and saves money.
+Q: When was Active Travel England set up, and what does it do? | It was set up in 2022 and funds and inspects active travel schemes in England.
+Q: What does NICE NG90 (2018) recommend? | Designing environments that encourage walking and cycling.
+Q: Why might the net increase from a new protected cycle lane be smaller than the rise in cycle counts? | Some journeys may have moved from other routes rather than being new.
+Q: What else do evaluations of cycle lanes consider besides cycle counts? | Safety, local businesses and air quality.
+Q: What did studies of London's mini-Holland schemes find? | People in intervention areas became more active (Aldred et al., 2019).
+Q: Why will a single cycle lane not transform activity levels? | Connected networks, safety and wider policies such as lower speeds are needed; benefits depend on networks, not isolated routes.
 `;

@@ -34,6 +34,16 @@ SRC: Burton DM, Elementary Number Theory (7th edn, McGraw-Hill 2011) | textbook 
 NUM1#maths-u02-01-q1@1: Find the remainder when 1,000 is divided by 37. | 1 | 0 |  | 37 × 27 = 999, so 1,000 = 37 × 27 + 1 and the remainder is 1.
 M1#maths-u02-01-q2@1: Which form describes every odd integer? | 2k + 1 for some integer k | 2k for some integer k | k + 2 for some integer k | k^{2} for some integer k | 3k + 1 for some integer k | Odd integers leave remainder 1 on division by 2, so each is 2k + 1.
 M2#maths-u02-01-q3@2: Why is the product of any three consecutive integers divisible by 3? | One of any three consecutive integers is a multiple of 3 | Three consecutive numbers always include a multiple of 9 | Every integer is divisible by 3 | Only if the first is odd | It isn't always divisible by 3 | Remainders mod 3 cycle 0, 1, 2, so one of the three has remainder 0.
+Q: What does it mean for a to divide b? | b = ka for some integer k.
+Q: State the division algorithm. | For integers a and b > 0 there are unique q and r with a = bq + r and 0 ≤ r < b.
+Q: If a divides both b and c, what combination of b and c must a divide? | a divides bx + cy for any integers x and y.
+Q: What does the fundamental theorem of arithmetic state? | Every integer greater than 1 is a product of primes, uniquely apart from order.
+Q: Into which three forms can every integer be split by its remainder on division by 3? | 3k, 3k + 1 or 3k + 2.
+Q: How does n^{3} − n factorise? | (n − 1)n(n + 1), a product of three consecutive integers.
+Q: Why does 6 divide the product of three consecutive integers? | One of them is even and one is a multiple of 3; since 2 and 3 are coprime, 6 divides the product.
+Q: What does Goldbach's conjecture state? | Every even number above 2 is a sum of two primes.
+Q: Who proved Fermat's Last Theorem, and when? | Wiles, in 1995.
+Q: Why is checking a few values of n not a proof of a divisibility result? | It only covers those values; a proof must hold for every integer n, for example by general forms or cases by remainder.
 
 ## Modular Arithmetic
 S: Modular arithmetic is "clock arithmetic": numbers wrap around after reaching a modulus. It turns huge calculations into small ones and is the language of check digits, calendars and cryptography.
@@ -71,6 +81,16 @@ NUM1#maths-u02-02-q1@1: Find 7^{4} mod 9. | 7 | 0 |  | 7^{2} = 49 ≡ 4, so 7^{4
 M1#maths-u02-02-q2@1: What is 245 × 378 mod 10? | 0 | 5 | 8 | 4 | 2 | Only last digits matter mod 10: 5 × 8 = 40 ≡ 0.
 M2#maths-u02-02-q3@2: Why can't you always cancel a factor in a congruence like 2x ≡ 2y (mod 4)? | 2 shares a factor with 4, so x and y may differ by 2 | Congruences can't be multiplied | Cancelling is always allowed | Because 2 is prime, so it can never be cancelled | The congruence is false | x = 1 and y = 3 satisfy 2x ≡ 2y (mod 4) though x ≢ y (mod 4).
 M2#maths-u02-02-q4@2: Working mod 8 on the clock, what is 4 × 6? | 0, since 24 is a multiple of 8 | 24, since clock arithmetic doesn't reduce | 2, since 4 + 6 = 10 ≡ 2 | 4, since 6 ≡ −2 | 10, since 4 × 6 needs no reduction | 24 = 3 × 8, so 4 × 6 ≡ 0 mod 8: two non-zero numbers multiplying to zero, which can't happen with a prime modulus.
+Q: What does a ≡ b (mod n) mean? | n divides a − b, so a and b leave the same remainder on division by n.
+Q: Define the residue of a number modulo n. | Its remainder modulo n, between 0 and n − 1.
+Q: If a ≡ b and c ≡ d (mod n), what can you say about a + c and ac? | a + c ≡ b + d and ac ≡ bd (mod n).
+Q: When can you divide by a in arithmetic modulo n? | Only when a has an inverse mod n, that is when gcd(a, n) = 1.
+Q: What is 37 × 52 mod 5, reducing early? | 2 × 2 = 4.
+Q: What cycle do the last digits of powers of 3 follow? | 3, 9, 7, 1, then repeat, with cycle length 4.
+Q: How do you find a large power such as 3^{2025} mod 10? | Reduce the exponent by the cycle length of the powers, here 4, so 3^{2025} ≡ 3^{1}.
+Q: What time is it 9 hours after 20:00? | 29 mod 24 = 5:00.
+Q: Which moduli do the ISBN-10 and bank card checks use? | ISBN-10 uses mod 11; bank cards use the Luhn mod 10 check.
+Q: Which theorems explain why powers cycle modulo n? | Fermat's and Euler's theorems.
 
 ## Congruences
 S: A congruence equation such as 3x ≡ 4 (mod 7) asks which integers satisfy a relationship modulo n. Solving them uses inverses and the gcd, and they explain the divisibility tests learnt at school.
@@ -108,6 +128,16 @@ NUM1#maths-u02-03-q1@1: Find the inverse of 7 modulo 26 (between 0 and 25). | 15
 M1#maths-u02-03-q2@1: Is 918,082 divisible by 11? | Yes: the alternating digit sum is 0 | No: the digit sum is 28 | Yes: it ends in 2 | No: it's even | It can't be decided | 2 − 8 + 0 − 8 + 1 − 9 = −22, a multiple of 11 (918,082 = 11 × 83,462).
 M3#maths-u02-03-q3@2: How many solutions does 6x ≡ 9 (mod 15) have modulo 15? | 3 | 1 | 0 | 6 | 15 | gcd(6, 15) = 3 divides 9, so there are 3 solutions: x ≡ 4, 9, 14.
 NUM1#maths-u02-03-q4@1: Using congruences mod 7, what is 17 × 20 reduced mod 7? | 4 | 0 |  | 17 ≡ 3 and 20 ≡ 6, so the product ≡ 18 ≡ 4 (mod 7), the same as 340 mod 7.
+Q: When does the linear congruence ax ≡ b (mod n) have solutions? | Exactly when gcd(a, n) divides b.
+Q: Define a modular inverse of a modulo n. | A number a^{−1} with a × a^{−1} ≡ 1 (mod n); it exists when gcd(a, n) = 1.
+Q: How do you solve ax ≡ b (mod n) when gcd(a, n) = 1? | Multiply both sides by a^{−1}: x ≡ a^{−1}b (mod n), a unique solution.
+Q: How many solutions mod n does ax ≡ b (mod n) have when d = gcd(a, n) divides b? | d solutions mod n.
+Q: Why has 2x ≡ 1 (mod 4) no solution? | gcd(2, 4) = 2 does not divide 1.
+Q: What is the solution of 3x ≡ 4 (mod 7)? | x ≡ 6 (mod 7), since 3^{−1} ≡ 5 and 5 × 4 = 20 ≡ 6.
+Q: Which congruence explains the alternating-digit test for 11? | 10 ≡ −1 (mod 11).
+Q: Why does only the last digit matter for divisibility by 2 and 5? | 10 ≡ 0 (mod 2 and mod 5).
+Q: Which theorem solves several congruences with coprime moduli? | The Chinese remainder theorem.
+Q: What do polynomial congruences such as x^{2} ≡ a (mod p) lead to? | Quadratic residues.
 
 ## Euclidean Algorithm
 S: The Euclidean algorithm finds the greatest common divisor of two integers by repeated division. Over 2,300 years old, it's still one of the fastest and most used algorithms in mathematics and computing.
@@ -143,6 +173,16 @@ SRC: Knuth DE, The Art of Computer Programming, vol 2: Seminumerical Algorithms 
 NUM1#maths-u02-04-q1@1: Find gcd(1071, 462). | 21 | 0 |  | 1071 = 2 × 462 + 147; 462 = 3 × 147 + 21; 147 = 7 × 21, so the gcd is 21.
 M1#maths-u02-04-q2@1: Which step does the Euclidean algorithm repeat? | Replace (a, b) with (b, a mod b) | Replace (a, b) with (a + b, b) | Halve both numbers | Factorise both numbers completely | Subtract 1 from each | Each step keeps the gcd and shrinks the numbers.
 M2#maths-u02-04-q3@2: Why is the Euclidean algorithm better than factorising to find a gcd of large numbers? | Factorising large numbers is very slow, while the algorithm needs few divisions | Factorising always gives the wrong answer | The algorithm needs prime factors | It isn't better | Factorising only works for primes | Steps grow only with the number of digits, but no fast factoring method is known.
+Q: Define gcd(a, b). | The largest integer dividing both a and b.
+Q: What step does the Euclidean algorithm repeat, and what does it return? | Replace (a, b) by (b, a mod b) until the remainder is 0; the last non-zero remainder is the gcd.
+Q: What identity justifies the Euclidean algorithm? | gcd(a, b) = gcd(b, a − qb), since common divisors of a and b divide the remainder and vice versa.
+Q: Why does the Euclidean algorithm always terminate? | The remainders strictly decrease, so the process must end.
+Q: What does Lamé's theorem say about the Euclidean algorithm? | The number of steps is at most about five times the number of digits of the smaller number.
+Q: What is gcd(252, 198)? | 18.
+Q: Which inputs are the worst case for the Euclidean algorithm? | Consecutive Fibonacci numbers.
+Q: How many steps does gcd(21, 13) take? | 6 steps.
+Q: Name three uses of the Euclidean algorithm. | Simplifying fractions, finding modular inverses with the extended algorithm, and computing polynomial gcds.
+Q: What error is made by reporting 0 at the end of the Euclidean algorithm? | Stopping at the zero remainder; the gcd is the previous, last non-zero remainder.
 
 ## Extended Euclidean Algorithm
 S: The extended Euclidean algorithm finds integers x and y with ax + by = gcd(a, b). These Bézout coefficients give modular inverses, which are needed to solve congruences and to build RSA keys.
@@ -176,6 +216,16 @@ SRC: Menezes AJ, van Oorschot PC, Vanstone SA, Handbook of Applied Cryptography,
 NUM1#maths-u02-05-q1@1: Find the inverse of 3 modulo 11 (between 0 and 10). | 4 | 0 |  | 3 × 4 = 12 = 11 + 1, so 3 × 4 ≡ 1 (mod 11).
 M1#maths-u02-05-q2@1: The extended algorithm gives 17 × 5 − 12 × 7 = 1. What is the inverse of 17 modulo 12? | 5 | 7 | −7 | 12 | 17 | Reducing mod 12 leaves 17 × 5 ≡ 1, so 5 is the inverse.
 M2#maths-u02-05-q3@2: Why does 6 have no inverse modulo 15? | gcd(6, 15) = 3, so 6x + 15y can't equal 1 | 15 is odd | 6 is even | Every number has an inverse | Inverses only exist mod primes | Any combination 6x + 15y is a multiple of 3, never 1.
+Q: What does the extended Euclidean algorithm find? | Integers x and y with ax + by = gcd(a, b), the Bézout coefficients.
+Q: Define back-substitution in the extended Euclidean algorithm. | Rewriting each remainder from the Euclidean algorithm in terms of a and b.
+Q: Where does back-substitution start? | From the gcd line, substituting each remainder using the line above.
+Q: What version of the extended algorithm is used in code? | The iterative version, tracking coefficients in a table as you go.
+Q: How do Bézout coefficients give the inverse of a mod n? | If gcd(a, n) = 1 then ax + ny = 1, so ax ≡ 1 (mod n) and x is the inverse.
+Q: How is the RSA private exponent d found? | As the inverse of e modulo φ(n), using the extended Euclidean algorithm.
+Q: State Euclid's lemma. | If p is prime and p divides ab, then p divides a or p divides b.
+Q: Why is Euclid's lemma important? | It is the key to unique factorisation.
+Q: What Bézout coefficients satisfy 240x + 46y = 2? | x = −9 and y = 47.
+Q: How should you guard against sign errors in back-substitution? | Check the final equation numerically.
 
 ## Diophantine Equations
 S: Diophantine equations are equations whose solutions must be integers, named after Diophantus of Alexandria. Linear ones are solved completely with the gcd; others, like Fermat's Last Theorem, can be extraordinarily hard.
@@ -209,6 +259,16 @@ SRC: Wiles A, Modular elliptic curves and Fermat's Last Theorem, Annals of Mathe
 NUM1#maths-u02-06-q1@1: How many positive integer solutions does 2x + 3y = 20 have? | 3 | 0 |  | y must be even: y = 2, 4, 6 gives x = 7, 4, 1; y = 0 isn't positive.
 M1#maths-u02-06-q2@1: Which equation has integer solutions? | 4x + 6y = 10 | 4x + 6y = 9 | 6x + 9y = 4 | 10x + 15y = 7 | 8x + 12y = 2 | gcd(4, 6) = 2 divides 10; in each other case the gcd doesn't divide the right side.
 M2#maths-u02-06-q3@2: What did Matiyasevich prove about Hilbert's tenth problem? | No algorithm can decide whether every Diophantine equation has integer solutions | Every Diophantine equation is solvable | Fermat's Last Theorem is true | All linear equations have solutions | Pell's equation has finitely many solutions | Building on Davis, Putnam and Robinson, he showed the problem is undecidable.
+Q: Define a Diophantine equation. | An equation whose solutions must be integers.
+Q: When is ax + by = c solvable in integers? | Exactly when gcd(a, b) divides c.
+Q: Give the general solution of ax + by = c from one solution (x₀, y₀). | x = x₀ + (b/d)t, y = y₀ − (a/d)t, where d = gcd(a, b) and t is an integer.
+Q: How is one solution of ax + by = c found? | By inspection or by the extended algorithm, scaling by c/d.
+Q: What effect do constraints such as x, y ≥ 0 have on the solutions? | They select finitely many solutions.
+Q: What are the non-negative solutions of 3x + 5y = 47? | (4, 7), (9, 4) and (14, 1).
+Q: What formula gives all Pythagorean triples? | (m^{2} − n^{2}, 2mn, m^{2} + n^{2}) times a constant.
+Q: What does Fermat's Last Theorem state? | x^{n} + y^{n} = z^{n} has no positive integer solutions for n ≥ 3.
+Q: Name two kinds of applied problem solved with linear Diophantine equations. | Coin and stamp problems, and scheduling or integer programming.
+Q: What mistake is made by giving one solution of a linear Diophantine equation? | The question usually asks for all solutions, given by the general solution with parameter t.
 
 ## Divisor Functions
 S: Divisor functions count or add the divisors of a number. Their formulas follow from prime factorisation, and they lead to perfect numbers, amicable pairs and deep questions in analytic number theory.
@@ -244,6 +304,16 @@ SRC: Burton DM, Elementary Number Theory (7th edn, McGraw-Hill 2011) | textbook 
 NUM1#maths-u02-07-q1@1: Find σ(28). | 56 | 0 |  | 28 = 2^{2} × 7: σ = (1 + 2 + 4)(1 + 7) = 7 × 8 = 56.
 M1#maths-u02-07-q2@1: How many divisors does 2^{4} × 5^{2} have? | 15 | 8 | 6 | 10 | 40 | Add one to each exponent and multiply: d = (4 + 1)(2 + 1) = 15 divisors.
 M2#maths-u02-07-q3@2: What does it mean for a function f to be multiplicative? | f(mn) = f(m)f(n) whenever m and n are coprime | f(mn) = f(m) + f(n) always | f(n) = n always | f(mn) = f(m)f(n) for all m and n | f is increasing | The property only needs to hold for coprime m and n.
+Q: Define d(n) and σ(n). | d(n) is the number of positive divisors of n; σ(n) is their sum.
+Q: What is d(n) for n = p₁^{a₁} … p_{k}^{a_{k}}? | (a₁ + 1)(a₂ + 1)…(a_{k} + 1).
+Q: What is σ(p^{a})? | 1 + p + … + p^{a} = (p^{a+1} − 1)/(p − 1).
+Q: When is a function f multiplicative? | When f(mn) = f(m)f(n) whenever gcd(m, n) = 1.
+Q: Name three multiplicative divisor-type functions. | d, σ and Euler's φ.
+Q: Why is d(n) odd exactly when n is a perfect square? | Divisors pair up as d and n/d, except √n when n is a square.
+Q: What are highly composite numbers? | Numbers with more divisors than any smaller number, such as 12, 60 and 360.
+Q: Define an amicable pair. | Numbers m and n with σ(m) − m = n and σ(n) − n = m, such as 220 and 284.
+Q: What are d(72) and σ(72)? | d(72) = 12 and σ(72) = 195.
+Q: What is the common mistake when counting divisors from a prime factorisation? | Multiplying the exponents instead of the exponents plus one.
 
 ## Perfect Numbers
 S: A perfect number equals the sum of its proper divisors, like 6 = 1 + 2 + 3. Euclid and Euler showed that even perfect numbers come exactly from Mersenne primes, while whether any odd perfect number exists is one of the oldest open problems.
@@ -277,6 +347,16 @@ SRC: Great Internet Mersenne Prime Search (GIMPS), List of known Mersenne prime 
 NUM1#maths-u02-08-q1@1: Using p = 7 (2^{7} − 1 = 127 is prime), find the corresponding perfect number. | 8128 | 0 |  | 2^{6} × 127 = 64 × 127 = 8,128.
 M1#maths-u02-08-q2@1: What do all known perfect numbers have in common? | They're even | They're odd | They're prime | They're squares | They end in 7 | Every known perfect number has Euclid–Euler form; no odd one has been found.
 M3#maths-u02-08-q3@2: Why can't 2^{p} − 1 be prime when p is composite? | If p = ab, then 2^{a} − 1 divides 2^{p} − 1 | Composite exponents give even numbers | It can be prime | Because 2 is prime | Only if p is odd | x^{b} − 1 is divisible by x − 1; put x = 2^{a}.
+Q: Define a perfect number using σ. | n with σ(n) = 2n, so the sum of proper divisors equals n.
+Q: Define a Mersenne prime. | A prime of the form 2^{p} − 1, where p must itself be prime.
+Q: Name the four perfect numbers known to the ancient Greeks. | 6, 28, 496 and 8128.
+Q: Distinguish abundant and deficient numbers. | Abundant numbers have σ(n) > 2n, like 12; deficient numbers have σ(n) < 2n, like all primes.
+Q: What did Euclid prove about perfect numbers? | If 2^{p} − 1 is prime, then 2^{p−1}(2^{p} − 1) is perfect.
+Q: What did Euler add to Euclid's result on perfect numbers? | Every even perfect number has the form 2^{p−1}(2^{p} − 1) with 2^{p} − 1 prime.
+Q: What is the oldest open problem about perfect numbers? | Whether any odd perfect number exists.
+Q: What is GIMPS? | A volunteer computing project that finds record Mersenne primes.
+Q: How many Mersenne primes were known by late 2024? | 52.
+Q: Why is 2^{11} − 1 a counterexample? | It equals 2047 = 23 × 89, so 2^{p} − 1 need not be prime for prime p.
 
 ## Fibonacci Numbers
 S: The Fibonacci numbers 1, 1, 2, 3, 5, 8, … each add the two before. They're full of number-theoretic structure, they're linked to the golden ratio, and they appear in algorithms, nature and art.
@@ -312,6 +392,16 @@ SRC: Sigler LE, Fibonacci's Liber Abaci: A Translation into Modern English (Spri
 NUM1#maths-u02-09-q1@1: Find gcd(F₁₂, F₁₈) using gcd(F_{m}, F_{n}) = F_{gcd(m, n)}. | 8 | 0 |  | gcd(12, 18) = 6, and F₆ = 8 (check: gcd(144, 2584) = 8).
 M1#maths-u02-09-q2@1: What is F₅F₇ − F₆^{2}? | 1 | −1 | 0 | 13 | 2 | Cassini: (−1)^{6} = 1; check 5 × 13 − 64 = 1.
 M2#maths-u02-09-q3@2: Write 100 as a Zeckendorf sum of non-consecutive Fibonacci numbers. | 89 + 8 + 3 | 55 + 34 + 8 + 3 | 89 + 11 | 50 + 50 | 89 + 5 + 3 + 2 + 1 | Greedily take 89, then 8 from 11, then 3; 55 + 34 uses consecutive numbers.
+Q: State the Fibonacci recurrence. | F₁ = F₂ = 1 and F_{n} = F_{n−1} + F_{n−2}.
+Q: What is the golden ratio φ? | (1 + √5)/2 ≈ 1.618, the limit of F_{n+1}/F_{n}.
+Q: State Binet's formula. | F_{n} = (φ^{n} − ψ^{n})/√5, with ψ = (1 − √5)/2.
+Q: Why is F_{n} the nearest integer to φ^{n}/√5? | Because |ψ| < 1, so the ψ^{n} term is small.
+Q: What is F₁ + … + F_{n}? | F_{n+2} − 1.
+Q: What is gcd(F_{m}, F_{n})? | F_{gcd(m, n)}.
+Q: State Cassini's identity. | F_{n−1}F_{n+1} − F_{n}^{2} = (−1)^{n}.
+Q: What does Zeckendorf's theorem state? | Every positive integer is a unique sum of non-consecutive Fibonacci numbers.
+Q: Who introduced the Fibonacci numbers to Europe, and in which book? | Leonardo of Pisa (Fibonacci), in Liber Abaci (1202), with a rabbit puzzle.
+Q: Where do Fibonacci numbers appear in nature? | Spiral counts in sunflowers and pine cones are often consecutive Fibonacci numbers.
 
 ## Continued Fractions
 S: A continued fraction writes a number as an integer plus 1 over (an integer plus 1 over …). Its truncations, the convergents, are the best rational approximations to the number, which is how 22/7 and 355/113 approximate π.
@@ -346,6 +436,16 @@ SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxf
 NUM1#maths-u02-10-q1@1: Evaluate [1; 2, 2, 2] as a decimal, to 4 decimal places. | 1.4167 | 0.0001 |  | [1; 2, 2, 2] = 17/12 ≈ 1.4167, a convergent to √2.
 M1#maths-u02-10-q2@1: Which rational numbers have infinite continued fractions? | None: every rational's expansion terminates | All of them | Those with odd denominators | Those greater than 1 | Fractions in lowest terms only | Expanding a rational repeats the Euclidean algorithm, which always stops.
 M2#maths-u02-10-q3@2: Why is 355/113 such a good approximation to π? | The next partial quotient, 292, is unusually large | Its denominator 113 is the largest prime below 120 | It's the first convergent | 355 is divisible by 5 | It isn't a convergent | A large next term means the convergent before it is extremely close.
+Q: What does [a₀; a₁, a₂, …] denote? | The continued fraction a₀ + 1/(a₁ + 1/(a₂ + …)).
+Q: Define a convergent of a continued fraction. | A truncation p_{k}/q_{k} of the continued fraction.
+Q: How is a continued fraction computed? | Take the integer part, invert the fractional part and repeat.
+Q: Which numbers have finite continued fractions, and which have eventually periodic ones? | Rationals have finite ones; quadratic irrationals have eventually periodic ones.
+Q: State the recurrences for the convergents p_{k} and q_{k}. | p_{k} = a_{k}p_{k−1} + p_{k−2} and q_{k} = a_{k}q_{k−1} + q_{k−2}.
+Q: List the first five convergents of √2. | 1, 3/2, 7/5, 17/12, 41/29.
+Q: What approximation property do convergents satisfy? | |x − p/q| < 1/q^{2}, and they are best approximations for their denominators.
+Q: What is the continued fraction of 43/19? | [2; 3, 1, 4].
+Q: What is the continued fraction of φ, and what does it imply? | [1; 1, 1, 1, …]; φ is the most irrational number, hardest to approximate.
+Q: Which equation can continued fractions solve? | Pell's equation.
 
 ## Prime Number Theory
 S: Prime number theory studies how primes are distributed. They never run out, they thin out roughly like 1/ln x, and simple-sounding questions about them, such as twin primes, remain unsolved.
@@ -384,6 +484,16 @@ NUM1#maths-u02-11-q1@1: Estimate π(10^{6}) using x/ln x, to the nearest thousan
 M1#maths-u02-11-q2@1: Which statement is Dirichlet's theorem? | Every arithmetic progression a + nd with gcd(a, d) = 1 contains infinitely many primes | Every even number is a sum of two primes | There are infinitely many twin primes | π(x) = x/ln x exactly | All Mersenne numbers are prime | Dirichlet proved it in 1837 using L-functions.
 M2#maths-u02-11-q3@2: Why are the numbers 7! + 2, 7! + 3, …, 7! + 7 all composite? | 7! + k is divisible by k for 2 ≤ k ≤ 7 | They're all even | 7! is prime | They're all perfect squares | They aren't all composite | k divides both 7! and itself, giving a run of 6 composites.
 NUM1#maths-u02-11-q4@1: The prime number theorem estimates π(200) ≈ 200/ln 200. To 1 decimal place, what is that estimate? | 37.7 | 0.1 |  | 200/ln 200 ≈ 200/5.298 ≈ 37.7, below the true count of 46: the estimate is asymptotic, not exact for small x.
+Q: Define π(x). | The number of primes up to x.
+Q: State the prime number theorem. | π(x) is asymptotic to x/ln x: their ratio tends to 1.
+Q: Outline Euclid's proof that there are infinitely many primes. | If p₁, …, p_{k} were all the primes, p₁p₂…p_{k} + 1 would have a prime factor not in the list.
+Q: State Dirichlet's theorem. | Every arithmetic progression a, a + d, a + 2d, … with gcd(a, d) = 1 contains infinitely many primes.
+Q: Why do primes have arbitrarily large gaps? | n! + 2, …, n! + n are all composite.
+Q: What are π(1,000) and π(10^{6})? | 168 and 78,498.
+Q: Who proved the prime number theorem, and when? | Hadamard and de la Vallée Poussin, in 1896.
+Q: Which function approximates π(x) much better than x/ln x? | The logarithmic integral Li(x).
+Q: What did Zhang prove in 2013? | Bounded gaps between primes, progress towards the twin prime conjecture.
+Q: What would the Riemann hypothesis give for prime counting? | The sharpest error term in the prime number theorem.
 
 ## Fermat's Little Theorem
 S: Fermat's little theorem says that for a prime p and any a not divisible by p, a^{p−1} ≡ 1 (mod p). It makes huge powers easy to reduce, underlies fast primality tests and is a cornerstone of RSA.
@@ -421,6 +531,16 @@ NUM1#maths-u02-12-q1@1: Find 3^{50} mod 7. | 2 | 0 |  | 3^{6} ≡ 1, and 50 = 8 
 M1#maths-u02-12-q2@1: Using Fermat's little theorem, what is the inverse of 4 modulo 7? | 2 | 4 | 3 | 6 | 1 | a^{−1} ≡ a^{p−2} = 4^{5} = 1024 ≡ 2, and 4 × 2 = 8 ≡ 1.
 M3#maths-u02-12-q3@2: A number n passes the Fermat test for base 2. What can you conclude? | n is probably prime, but could be composite | n is definitely prime | n is definitely composite | n is a Carmichael number | n is prime, because base 2 is the strongest base | Some composites (pseudoprimes such as 341) pass for base 2.
 NUM1#maths-u02-12-q4@1: Using Fermat's little theorem, what is 3^{12} mod 13? | 1 | 0 |  | 13 is prime and doesn't divide 3, so 3^{13 − 1} ≡ 1 (mod 13).
+Q: State Fermat's little theorem. | If p is prime and p ∤ a, then a^{p−1} ≡ 1 (mod p); equivalently a^{p} ≡ a (mod p) for all a.
+Q: Define a Carmichael number. | A composite n with a^{n−1} ≡ 1 (mod n) for all a coprime to n, such as 561.
+Q: How does Fermat's little theorem give inverses mod p? | a^{−1} ≡ a^{p−2} (mod p).
+Q: What is the idea of the proof of Fermat's little theorem? | Multiplying 1, 2, …, p − 1 by a permutes them mod p.
+Q: What can you conclude if a^{n−1} ≢ 1 (mod n)? | n is definitely composite.
+Q: How does 561 factorise? | 3 × 11 × 17.
+Q: Which test fixes the Fermat test's weakness to Carmichael numbers? | The Miller–Rabin test.
+Q: What is 2^{100} mod 13? | 3.
+Q: Why does 1/7 repeat every 6 digits? | Since 7 is prime, 10^{6} ≡ 1 (mod 7).
+Q: Who stated Fermat's little theorem, and who proved it? | Fermat stated it in 1640 without proof; Euler gave a proof and a generalisation.
 
 ## Euler's Totient Function
 S: Euler's totient function φ(n) counts the numbers from 1 to n that are coprime to n. It measures the size of the group of units mod n, appears in Euler's theorem and is central to RSA.
@@ -461,6 +581,16 @@ NUM1#maths-u02-13-q1@1: Find φ(77). | 60 | 0 |  | 77 = 7 × 11, so φ = 6 × 10
 M1#maths-u02-13-q2@1: What is φ(27)? | 18 | 26 | 9 | 24 | 3 | For a prime power, φ(p^{k}) = p^{k−1}(p − 1), so φ(3^{3}) = 9 × 2 = 18.
 M2#maths-u02-13-q3@2: For which n is φ(n) = n − 1? | When n is prime | When n is even | When n is a square | For all n | When n is a power of 2 | Every number below a prime is coprime to it, and only primes have that property.
 NUM1#maths-u02-13-q4@1: How many numbers in the multiplication table mod 12 have an inverse (that is, what is φ(12))? | 4 | 0 |  | Only 1, 5, 7 and 11 are coprime to 12, so φ(12) = 4.
+Q: Define Euler's totient φ(n). | The number of integers k with 1 ≤ k ≤ n and gcd(k, n) = 1.
+Q: What are the units modulo n, and how many are there? | The residues with inverses mod n; there are φ(n) of them.
+Q: What is φ(p^{k}) for a prime p? | p^{k} − p^{k−1} = p^{k−1}(p − 1).
+Q: State the product formula for φ(n). | φ(n) = n Π(1 − 1/p) over the primes p dividing n.
+Q: What is the sum of φ(d) over all divisors d of n? | n.
+Q: What is φ(360)? | 96.
+Q: What probability does φ(n)/n measure? | The probability that a random number is coprime to n.
+Q: Why does φ(n) stay secret in RSA? | Computing φ(n) is easy given n's prime factors and believed hard without them.
+Q: What is φ(2^{k}), and why? | 2^{k−1}, because half of the numbers up to 2^{k} are odd.
+Q: Why does φ(4) show the multiplicative rule needs coprimality? | φ(4) = 2 but φ(2)φ(2) = 1, since 2 and 2 share a factor.
 
 ## Euler's Theorem
 S: Euler's theorem generalises Fermat's little theorem to any modulus: if gcd(a, n) = 1, then a^{φ(n)} ≡ 1 (mod n). It explains why powers cycle and why RSA decryption works.
@@ -496,6 +626,16 @@ SRC: Rivest RL, Shamir A, Adleman L, A method for obtaining digital signatures a
 NUM1#maths-u02-14-q1@1: Find 5^{100} mod 12. | 1 | 0 |  | φ(12) = 4 and 100 is a multiple of 4, so 5^{100} ≡ 1 (mod 12).
 M1#maths-u02-14-q2@1: Why can't Euler's theorem be used for 6^{10} mod 9? | gcd(6, 9) = 3, not 1 | 9 isn't prime | φ(9) is odd | 10 is too small | It can be used | Euler's theorem needs gcd(a, n) = 1, but 6 and 9 share the factor 3.
 M3#maths-u02-14-q3@2: The order of 2 modulo 7 is 3. What is 2^{100} mod 7? | 2 | 1 | 4 | 3 | 6 | 100 = 33 × 3 + 1, so 2^{100} ≡ 2^{1} = 2.
+Q: State Euler's theorem. | If gcd(a, n) = 1, then a^{φ(n)} ≡ 1 (mod n).
+Q: Define the order of a modulo n. | The smallest positive k with a^{k} ≡ 1 (mod n).
+Q: How does the order of a relate to φ(n)? | It divides φ(n) and may be smaller than it.
+Q: Which modulus and totient are used to find the last two digits of a power? | Mod 100, with φ(100) = 40.
+Q: What is the idea of the proof of Euler's theorem? | Multiplying the φ(n) units mod n by a permutes them, so their product equals a^{φ(n)} times itself.
+Q: Which group theory result is Euler's theorem in disguise? | Lagrange's theorem.
+Q: Why does RSA decryption return the message? | With ed ≡ 1 (mod φ(n)), m^{ed} = m^{1 + kφ(n)} ≡ m (mod n).
+Q: What is the last digit of 7^{222}? | 9.
+Q: What are the last two digits of 3^{100}? | 01.
+Q: When must Euler's theorem not be used? | When a and n share a factor.
 
 ## Chinese Remainder Theorem
 S: The Chinese remainder theorem says that a system of congruences with pairwise coprime moduli has exactly one solution modulo their product. It first appeared in Sunzi's Mathematical Manual (around the 3rd to 5th century) and now speeds up RSA and big-number arithmetic.
@@ -529,6 +669,16 @@ SRC: Menezes AJ, van Oorschot PC, Vanstone SA, Handbook of Applied Cryptography,
 NUM1#maths-u02-15-q1@1: Find the smallest positive x with x ≡ 1 (mod 4) and x ≡ 2 (mod 5). | 17 | 0 |  | Numbers ≡ 2 mod 5 are 2, 7, 12, 17; 17 = 4 × 4 + 1.
 M1#maths-u02-15-q2@1: Which system is guaranteed a unique solution modulo the product of its moduli? | x ≡ 1 (mod 8), x ≡ 3 (mod 15) | x ≡ 1 (mod 6), x ≡ 2 (mod 9) | x ≡ 0 (mod 4), x ≡ 1 (mod 6) | x ≡ 2 (mod 10), x ≡ 3 (mod 15) | x ≡ 1 (mod 12), x ≡ 5 (mod 18) | The CRT needs coprime moduli; only 8 and 15 share no common factor.
 M2#maths-u02-15-q3@2: Does x ≡ 1 (mod 6), x ≡ 2 (mod 4) have a solution? | No: the first makes x odd, the second makes it even | Yes, exactly one mod 24 | Yes: the CRT gives one solution modulo 24 | Yes, infinitely many mod 12 | Only mod 10 | Both moduli are even and the conditions disagree mod 2.
+Q: Define pairwise coprime moduli. | Every pair of the moduli has gcd 1.
+Q: State the Chinese remainder theorem. | If n₁, …, n_{k} are pairwise coprime, x ≡ a_{i} (mod n_{i}) for all i has a unique solution mod N = n₁…n_{k}.
+Q: Describe the constructive CRT formula. | N_{i} = N/n_{i}, y_{i} ≡ N_{i}^{−1} (mod n_{i}), and x = Σ a_{i}N_{i}y_{i} mod N.
+Q: Describe the step-by-step CRT method. | Write x = a₁ + n₁t, substitute into the next congruence and solve for t, then repeat.
+Q: When does a system with non-coprime moduli have a solution? | Only if the congruences agree on common factors.
+Q: In which ancient text did the CRT first appear? | Sunzi's Mathematical Manual, around the 3rd to 5th century.
+Q: What is the answer to Sunzi's problem (remainders 2, 3, 2 on division by 3, 5, 7)? | 23 (mod 105).
+Q: How much faster does CRT make RSA decryption? | About four times faster, by working mod p and mod q separately.
+Q: What are residue number systems? | Computer arithmetic on huge numbers using several small moduli, based on the CRT.
+Q: Name two uses of the CRT besides RSA and big-number arithmetic. | Secret sharing and calendar calculations.
 
 ## Quadratic Residues
 S: A quadratic residue modulo p is a number that's a perfect square mod p. Which numbers are squares follows beautiful laws, culminating in Gauss's quadratic reciprocity, which he called the "golden theorem".
@@ -564,6 +714,16 @@ SRC: Gauss CF, Disquisitiones Arithmeticae (1801), trans. Clarke AA (Springer 19
 NUM1#maths-u02-16-q1@1: How many quadratic residues (non-zero) are there modulo 23? | 11 | 0 |  | Exactly (p − 1)/2 = 22/2 = 11.
 M1#maths-u02-16-q2@1: Using Euler's criterion, is 2 a quadratic residue mod 7? | Yes: 2^{3} = 8 ≡ 1 | No: 2^{3} ≡ −1 | Yes: 2 is prime | No: 7 is odd | It can't be decided | 2^{(7−1)/2} ≡ 1, and indeed 3^{2} = 9 ≡ 2.
 M3#maths-u02-16-q3@2: Primes p = 7 and q = 11 are both ≡ 3 (mod 4). Given that (7/11) = −1, what is (11/7)? | 1 | −1 | 0 | 7 | It's undetermined | Reciprocity says the symbols are opposite when both primes are ≡ 3 (mod 4).
+Q: Define a quadratic residue mod p. | A number a, not divisible by p, for which x^{2} ≡ a (mod p) has a solution.
+Q: Define the Legendre symbol (a/p). | 1 if a is a QR mod p, −1 if not, and 0 if p divides a.
+Q: How many non-zero residues mod an odd prime p are squares? | Exactly (p − 1)/2.
+Q: List the squares mod 11. | 1, 4, 9, 5, 3.
+Q: How does the Legendre symbol behave on products? | (ab/p) = (a/p)(b/p), so two residues or two non-residues multiply to a residue.
+Q: State Euler's criterion. | (a/p) ≡ a^{(p−1)/2} (mod p).
+Q: When is −1 a quadratic residue mod p? | Exactly when p ≡ 1 (mod 4).
+Q: When is 2 a quadratic residue mod p? | Exactly when p ≡ ±1 (mod 8).
+Q: State the law of quadratic reciprocity. | For distinct odd primes p and q, (p/q)(q/p) = (−1)^{((p−1)/2)((q−1)/2)}.
+Q: When are (p/q) and (q/p) opposite? | When both p and q are ≡ 3 (mod 4).
 
 ## Primitive Roots
 S: A primitive root modulo p is a number whose powers run through every non-zero residue. Primitive roots make multiplication mod p look like addition of exponents, the idea behind discrete logarithms and Diffie–Hellman key exchange.
@@ -600,6 +760,16 @@ NUM1#maths-u02-17-q1@1: How many primitive roots are there modulo 13? | 4 | 0 | 
 M1#maths-u02-17-q2@1: To test whether g is a primitive root mod 13, which powers must not be 1? | g^{6} and g^{4} | g^{12} only | g^{1} and g^{2} | g^{13} | All powers up to g^{12} | 12 = 2^{2} × 3, so check g^{12/2} and g^{12/3}.
 M2#maths-u02-17-q3@2: Which modulus has no primitive root? | 8 | 7 | 9 | 10 | 4 | Every unit mod 8 (1, 3, 5, 7) squares to 1, so none has order 4.
 M2#maths-u02-17-q4@2: Mod 7, which of 2 and 3 is a primitive root? | 3, because its powers 3, 2, 6, 4, 5, 1 hit every non-zero residue | 2, because its powers 2, 4, 1 cover everything | Both, since every number is a primitive root mod a prime | Neither, since 7 has no primitive roots | 2 and 3 are only primitive roots mod 5 | 2 has order 3 mod 7 (2, 4, 1), while 3 has order 6 = 7 − 1, so 3 is a primitive root.
+Q: Define a primitive root mod p. | A number g of order p − 1, so g, g^{2}, …, g^{p−1} are all different.
+Q: Define the discrete logarithm. | The exponent x with g^{x} ≡ h (mod p).
+Q: How many primitive roots does a prime p have? | φ(p − 1).
+Q: For which moduli do primitive roots exist? | 2, 4, p^{k} and 2p^{k}, and no others.
+Q: What does Artin's conjecture state? | 2 is a primitive root for infinitely many primes; it is still open.
+Q: State the test for g being a primitive root mod p. | g^{(p−1)/q} ≢ 1 for every prime q dividing p − 1.
+Q: Why is checking g^{p−1} ≡ 1 not enough to show g is a primitive root? | Every non-zero g satisfies it, by Fermat's little theorem.
+Q: What asymmetry do Diffie–Hellman and DSA rely on? | Computing powers mod p is easy, but finding x from g^{x} is believed hard for large p.
+Q: What are the primitive roots mod 7? | 3 and 5.
+Q: What is the order of 2 mod 7? | 3, since its powers are 2, 4, 1.
 
 ## Pell's Equation
 S: Pell's equation x^{2} − Dy^{2} = 1, for a non-square D, always has infinitely many integer solutions, all generated from the smallest one. Ancient Indian mathematicians (Brahmagupta, Bhāskara II) solved it centuries before Europe, and continued fractions explain why.
@@ -634,6 +804,16 @@ SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxf
 NUM1#maths-u02-18-q1@1: Find the smallest positive x with x^{2} − 5y^{2} = 1 for some positive integer y. | 9 | 0 |  | y = 4 gives 1 + 80 = 81 = 9^{2}, and y = 1, 2, 3 give 6, 21, 46, not squares.
 M1#maths-u02-18-q2@1: Which pair solves x^{2} − 2y^{2} = 1? | (17, 12) | (7, 5) | (10, 7) | (5, 3) | (12, 17) | Check directly: 17^{2} − 2 × 12^{2} = 289 − 288 = 1, so (17, 12) works.
 M3#maths-u02-18-q3@2: Why does x^{2} − 9y^{2} = 1 have only the trivial solution (1, 0)? | (x − 3y)(x + 3y) = 1 forces y = 0 | 9 is odd | Pell equations never have solutions | 9 is prime | It has infinitely many | With D a square the equation factorises, and integer factors of 1 are ±1.
+Q: State Pell's equation. | x^{2} − Dy^{2} = 1 with D a positive non-square integer.
+Q: Define the fundamental solution of Pell's equation. | The smallest positive solution (x₁, y₁), from which all others come by powers of x₁ + y₁√D.
+Q: How can the fundamental solution be found for small D? | Try y = 1, 2, 3, … until 1 + Dy^{2} is a square.
+Q: Where does the fundamental solution come from in general? | A convergent of the continued fraction of √D.
+Q: How are further Pell solutions generated? | (x_{n} + y_{n}√D) = (x₁ + y₁√D)^{n}.
+Q: What is the next solution after (3, 2) for D = 2? | (17, 12), from (3 + 2√2)^{2} = 17 + 12√2.
+Q: What do the ratios x/y of Pell solutions approximate? | √D, very well.
+Q: Who first found a composition rule for Pell's equation, and when? | Brahmagupta, in 628.
+Q: Who proved that Pell's equation always has solutions, and when? | Lagrange, in 1768.
+Q: Why is it called Pell's equation? | Because of Euler's mistaken attribution.
 
 ## Diophantine Approximation
 S: Diophantine approximation asks how closely real numbers can be approximated by fractions with small denominators. It separates "badly approximable" numbers like the golden ratio from Liouville's transcendental numbers, and its deepest result, Roth's theorem, won a Fields Medal.
@@ -668,6 +848,16 @@ SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxf
 NUM1#maths-u02-19-q1@1: The Gregorian calendar has 97 leap years in 400. What average year length, in days, does that give? | 365.2425 | 0.0001 | days | 365 + 97/400 = 365.2425 days.
 M1#maths-u02-19-q2@1: What does Dirichlet's approximation theorem guarantee for irrational α? | Infinitely many p/q with |α − p/q| < 1/q^{2} | A finite number of good approximations | An exact rational value | Approximations only for algebraic α | Nothing for transcendental α | The pigeonhole principle gives infinitely many such fractions.
 M2#maths-u02-19-q3@2: Why is the golden ratio called "badly approximable"? | All its continued fraction terms are 1, the smallest possible | It's transcendental, so no fraction comes close | Its decimal expansion repeats | It has no continued fraction | Its convergents don't exist | Small partial quotients mean convergents are never unusually close.
+Q: State Dirichlet's approximation theorem. | For irrational α there are infinitely many fractions p/q with |α − p/q| < 1/q^{2}.
+Q: Which principle proves Dirichlet's approximation theorem? | The pigeonhole principle.
+Q: Which fractions achieve Dirichlet's bound? | Continued fraction convergents.
+Q: How did Hurwitz improve Dirichlet's bound? | To 1/(√5 q^{2}), which cannot be improved further for the golden ratio.
+Q: Which numbers are badly approximable? | Those with bounded continued fraction terms, including all quadratic irrationals.
+Q: Define a Liouville number. | A real number approximable by rationals so well that it must be transcendental.
+Q: What was Liouville's explicit transcendental number? | Σ 10^{−n!}.
+Q: State Roth's theorem. | Algebraic irrationals cannot be approximated to within 1/q^{2+ε} infinitely often.
+Q: What fraction does 12-tone equal temperament use to approximate log₂(3/2)? | 7/12.
+Q: How is the quality of a rational approximation measured? | Relative to the denominator q, not just by closeness.
 
 ## Analytic Number Theory
 S: Analytic number theory uses calculus and complex analysis to study integers, especially primes. Its central object, the Riemann zeta function, links the primes to an infinite series, and the Riemann hypothesis about its zeros is the most famous open problem in mathematics.
@@ -704,6 +894,16 @@ SRC: Clay Mathematics Institute, The Riemann hypothesis: Millennium Prize proble
 NUM1#maths-u02-20-q1@1: Find 6/π^{2} to 4 decimal places. | 0.6079 | 0.0001 |  | 6/9.8696 ≈ 0.6079.
 M1#maths-u02-20-q2@1: Which fact about the primes follows from the divergence of the harmonic series? | There are infinitely many primes | All primes are odd | Primes have bounded gaps | Twin primes exist | There are 25 primes below 100 | If primes were finite, the Euler product at s = 1 would be finite, but Σ 1/n diverges.
 M3#maths-u02-20-q3@2: Why does the Euler product hold? | Unique prime factorisation makes each n^{−s} appear exactly once when the product is expanded | All numbers are prime | ζ(s) is always 1 | It's a definition with no reason | Primes are evenly spaced | Expanding Π(1 + p^{−s} + p^{−2s} + …) produces each n^{−s} from n's factorisation.
+Q: Define the Riemann zeta function. | ζ(s) = Σ 1/n^{s} for real part of s greater than 1, extended to the complex plane.
+Q: State the Euler product for ζ(s). | ζ(s) = Π 1/(1 − p^{−s}) over all primes p.
+Q: What property of the integers does the Euler product encode? | Unique factorisation: expanding the factors gives every 1/n^{s} once.
+Q: How did Euler deduce infinitely many primes from ζ? | As s → 1, Σ 1/n diverges, which needs infinitely many primes.
+Q: What is the probability that two random integers are coprime? | 1/ζ(2) = 6/π^{2} ≈ 0.608.
+Q: What did Riemann do in 1859? | Extended ζ to the complex plane and linked its zeros to prime counting.
+Q: What prize is offered for proving the Riemann hypothesis? | A Clay Millennium Prize of $1 million.
+Q: What do Dirichlet L-functions prove? | Infinitely many primes in arithmetic progressions.
+Q: What do sieve methods estimate? | How many numbers avoid small prime factors.
+Q: Which method attacks additive problems such as Goldbach's? | The circle method.
 
 ## Algebraic Number Theory
 S: Algebraic number theory studies number systems such as the Gaussian integers, where unique factorisation can fail. Repairing it with ideals, as Kummer and Dedekind did, created much of modern algebra and was needed for the proof of Fermat's Last Theorem.
@@ -738,6 +938,16 @@ SRC: Ireland K, Rosen M, A Classical Introduction to Modern Number Theory (2nd e
 NUM1#maths-u02-21-q1@1: Find the norm of 3 + 4i. | 25 | 0 |  | N(3 + 4i) = 3^{2} + 4^{2} = 25.
 M1#maths-u02-21-q2@1: Which prime splits in the Gaussian integers? | 29 | 7 | 11 | 19 | 3 | 29 ≡ 1 (mod 4) and 29 = 4 + 25 = (2 + 5i)(2 − 5i).
 M2#maths-u02-21-q3@2: Why do the two factorisations of 6 in ℤ[√−5] matter? | They show unique factorisation into irreducibles fails there | They prove 6 is prime | They show √−5 is rational | They're the same factorisation | They don't matter | 2, 3 and 1 ± √−5 are irreducible and not associates, so factorisation isn't unique.
+Q: Define the Gaussian integers and their norm. | Numbers a + bi with a and b integers; N(a + bi) = a^{2} + b^{2}.
+Q: Define an ideal of a ring. | A subset closed under addition and under multiplication by ring elements.
+Q: What is a number field? | The rationals with an algebraic number added, such as ℚ(i) or ℚ(√−5).
+Q: What property do norms have on products? | They are multiplicative: N(αβ) = N(α)N(β).
+Q: How does 13 factorise in the Gaussian integers? | 13 = (2 + 3i)(2 − 3i).
+Q: What happens to primes p ≡ 3 (mod 4) in the Gaussian integers? | They stay prime.
+Q: Which theorem do Gaussian integers prove? | Fermat's two-squares theorem.
+Q: Give the two factorisations of 6 in ℤ[√−5]. | 6 = 2 × 3 = (1 + √−5)(1 − √−5).
+Q: Who repaired unique factorisation, and how? | Kummer with ideal numbers and Dedekind with ideals, giving unique factorisation of ideals.
+Q: What does the class number measure? | How badly unique factorisation fails: 1 for ℤ[i], 2 for ℤ[√−5].
 
 ## Computational Number Theory
 S: Computational number theory designs algorithms for number-theoretic problems: testing primality, factorising, computing gcds and discrete logarithms. The gap between easy problems (multiplying) and hard ones (factorising) is what modern cryptography relies on.
@@ -771,6 +981,16 @@ SRC: Agrawal M, Kayal N, Saxena N, PRIMES is in P, Annals of Mathematics 160(2),
 NUM1#maths-u02-22-q1@1: How many primes are there between 30 and 50? | 5 | 0 |  | 31, 37, 41, 43 and 47.
 M1#maths-u02-22-q2@1: Which problem has no known classical polynomial-time algorithm? | Factorising large integers | Computing a gcd | Multiplying two integers | Testing primality | Computing a^{b} mod n | Factorising is believed hard, which RSA relies on.
 M2#maths-u02-22-q3@2: Why is it enough to sieve with primes up to √N? | Any composite up to N has a prime factor at most √N | Primes above √N don't exist | √N is always prime | It saves memory only | Primes larger than √N can never divide numbers up to N | If n = ab with both factors above √N, then n > N.
+Q: Define a polynomial-time algorithm. | One whose running time grows like a power of the number of digits of the input.
+Q: Describe the sieve of Eratosthenes. | List primes up to N by crossing out multiples of each prime up to √N.
+Q: Name four number-theoretic operations that run in polynomial time. | Multiplication, gcd, modular inverses and modular powers.
+Q: Which primality tests are used in practice and in theory? | Miller–Rabin in practice; AKS (2002) proved primality testing deterministically polynomial.
+Q: Why must RSA-style problems avoid polynomial-time algorithms? | Their security relies on factorising and discrete logarithms having no known classical polynomial-time algorithm.
+Q: What is the best classical factoring method, and how fast is it? | The number field sieve, which is sub-exponential.
+Q: What would Shor's algorithm do? | Factorise and compute discrete logarithms in polynomial time on a large quantum computer.
+Q: Name three number theory software packages. | PARI/GP, SageMath and Magma.
+Q: Which test does GIMPS use to find record primes? | The Lucas–Lehmer test.
+Q: What gap does modern cryptography rely on? | Easy problems such as multiplying versus hard ones such as factorising.
 
 ## Elliptic Curves
 S: An elliptic curve is a curve y^{2} = x^{3} + ax + b whose points can be added together, forming a group. They're central to modern number theory (they led to the proof of Fermat's Last Theorem) and to cryptography.
@@ -805,6 +1025,16 @@ SRC: Washington LC, Elliptic Curves: Number Theory and Cryptography (2nd edn, CR
 NUM1#maths-u02-23-q1@1: By Hasse's theorem, what is the largest possible number of points on an elliptic curve over 𝔽₁₀₁ (including O)? | 122 | 0 |  | N ≤ 101 + 1 + 2√101 ≈ 102 + 20.1, so at most 122.
 M1#maths-u02-23-q2@1: Which condition makes y^{2} = x^{3} + ax + b an elliptic curve? | 4a^{3} + 27b^{2} ≠ 0 | a = b | b = 0 | a > 0 | a and b are primes | The discriminant condition rules out cusps and self-intersections.
 M3#maths-u02-23-q3@2: Why is elliptic curve scalar multiplication suitable for cryptography? | Computing nP is fast by doubling, but finding n from nP is believed hard | It's slow in both directions | Points can't be added | It needs no prime field | Finding n is easy | The elliptic curve discrete logarithm problem has no known efficient classical algorithm.
+Q: Define an elliptic curve. | y^{2} = x^{3} + ax + b with 4a^{3} + 27b^{2} ≠ 0, plus a point at infinity O.
+Q: Describe the elliptic curve group law. | P + Q is the reflection in the x-axis of the third point where the line through P and Q meets the curve.
+Q: What slope is used for doubling a point? | λ = (3x₁^{2} + a)/(2y₁).
+Q: Give the formulas for the coordinates of P + Q. | x₃ = λ^{2} − x₁ − x₂ and y₃ = λ(x₁ − x₃) − y₁.
+Q: State Mordell's theorem. | The rational points on an elliptic curve form a finitely generated group.
+Q: State Hasse's theorem. | The number of points N over 𝔽_{p} satisfies |N − (p + 1)| ≤ 2√p.
+Q: What asymmetry underlies elliptic curve cryptography? | Computing nP is fast, but recovering n from nP is hard.
+Q: How did Wiles prove Fermat's Last Theorem? | By proving the modularity of semistable elliptic curves.
+Q: What does the Birch and Swinnerton-Dyer conjecture predict? | The rank of the rational points from an L-function.
+Q: Which factoring method uses elliptic curves? | Lenstra's elliptic curve factoring method.
 
 ## Arithmetic Geometry
 S: Arithmetic geometry studies the integer and rational solutions of polynomial equations using geometry. The shape of a curve, measured by its genus, largely decides whether it has no rational points, infinitely many, or only finitely many.
@@ -838,6 +1068,16 @@ SRC: Faltings G, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern
 NUM1#maths-u02-24-q1@1: Using slope t = 2/3 on the unit circle, the point has x = (1 − t^{2})/(1 + t^{2}). Find x as a decimal, to 4 decimal places. | 0.3846 | 0.0001 |  | (1 − 4/9)/(1 + 4/9) = (5/9)/(13/9) = 5/13 ≈ 0.3846, from the 5-12-13 triangle.
 M1#maths-u02-24-q2@1: How many rational points can a curve of genus 3 have? | Only finitely many | Always infinitely many | Exactly one | None ever | Exactly 3 | Faltings' theorem applies to all curves of genus at least 2.
 M2#maths-u02-24-q3@2: Why does x^{2} + y^{2} = 3 have no rational points? | Clearing denominators gives a^{2} + b^{2} = 3c^{2}, impossible by a mod 3 argument | Its genus is 2, so Faltings rules out any points | Circles never have rational points | It has infinitely many | 3 is odd | Squares mod 3 are 0 or 1, forcing a, b and then c to be divisible by 3 forever.
+Q: Define a rational point. | A solution of a polynomial equation with rational coordinates.
+Q: What is the genus of lines and conics, and of elliptic curves? | 0 for lines and conics, 1 for elliptic curves.
+Q: How many rational points can a conic have? | Either none or infinitely many.
+Q: Given one rational point on a conic, how are all others found? | Using lines through it with rational slope t.
+Q: Give the parametrisation of x^{2} + y^{2} = 1 from (−1, 0). | ((1 − t^{2})/(1 + t^{2}), 2t/(1 + t^{2})).
+Q: What does Faltings' theorem state? | Curves of genus at least 2 have only finitely many rational points.
+Q: Why do Fermat curves with n ≥ 4 have only finitely many rational points? | Their genus is at least 2, so Faltings' theorem applies.
+Q: State the local–global principle. | Solutions in the reals and modulo every prime power often, but not always, imply rational solutions.
+Q: What rational point and triple does slope t = 1/2 give? | (3/5, 4/5), giving the triple 3, 4, 5.
+Q: Which programmes link geometry to L-functions? | The Birch and Swinnerton-Dyer conjecture and the Langlands programme.
 
 ## Cryptography
 S: Cryptography protects information: keeping it secret, proving it hasn't been altered and confirming who sent it. It has evolved from simple letter shifts to mathematically grounded systems that secure every online payment.
@@ -874,6 +1114,16 @@ SRC: Singh S, The Code Book (Fourth Estate 1999) | textbook | 1999 | https://www
 NUM1#maths-u02-25-q1@1: How many possible keys does a simple substitution cipher on 26 letters have? Give the answer as a power of ten, rounded to the nearest whole exponent. | 26 | 0 |  | 26! ≈ 4.03 × 10^{26}, so about 10^{26} keys, yet frequency analysis breaks it easily.
 M1#maths-u02-25-q2@1: Which method breaks a simple substitution cipher? | Frequency analysis of letters | Trying all 26 shifts | Factorising the key | Reversing the alphabet | It can't be broken | Common letters like E and T show through the substitution.
 M2#maths-u02-25-q3@2: What is the main practical problem with symmetric encryption? | Securely sharing the secret key | It's too slow | It can't encrypt text | Keys are always short | It needs prime numbers | Both parties need the same key before communicating.
+Q: Define symmetric cryptography. | Encryption where sender and receiver share the same secret key, such as AES.
+Q: Name the three goals of cryptography. | Confidentiality, integrity, and authentication with non-repudiation.
+Q: How does a Caesar shift encrypt a message? | It replaces each letter by the one k places later in the alphabet.
+Q: Which technique breaks substitution ciphers, and who described it? | Frequency analysis, described by al-Kindi in the 9th century.
+Q: Who broke the Vigenère cipher? | Kasiski and Babbage, in the 19th century.
+Q: When is the one-time pad perfectly secret? | When the key is random, as long as the message and never reused.
+Q: What problem does public-key cryptography solve for symmetric ciphers? | Sharing the key.
+Q: How many keys does AES-128 have? | 2^{128} ≈ 3.4 × 10^{38}.
+Q: What did Bletchley Park's breaking of Enigma show? | The importance of mathematics in cryptanalysis.
+Q: What is security through obscurity, and why is it a mistake? | Relying on a secret algorithm instead of a secret key; Kerckhoffs's principle says only the key should need secrecy.
 
 ## Public-Key Cryptography
 S: Public-key cryptography lets strangers communicate securely without sharing a secret in advance. Each person has a public key that anyone can use and a private key only they hold, linked by a one-way mathematical function.
@@ -908,6 +1158,16 @@ SRC: Katz J, Lindell Y, Introduction to Modern Cryptography (3rd edn, CRC Press 
 NUM1#maths-u02-26-q1@1: With p = 11, g = 2 and Alice's secret a = 3, what does Alice send? | 8 | 0 |  | A = 2^{3} mod 11 = 8.
 M1#maths-u02-26-q2@1: Which key do you use to verify someone's digital signature? | Their public key | Their private key | Your private key | A shared symmetric key | No key is needed | Only the signer's private key can sign; anyone can verify with the public key.
 M3#maths-u02-26-q3@2: Why can't an eavesdropper who sees g^{a} and g^{b} compute g^{ab} easily? | They would need to solve a discrete logarithm problem | g^{ab} = g^{a} + g^{b} | p is kept secret, so they can't reduce modulo p | They can compute it easily | The values are encrypted | Combining g^{a} and g^{b} without a or b is believed as hard as discrete logarithms.
+Q: Define a trapdoor one-way function. | A function easy to compute but hard to invert unless you know a secret, the trapdoor.
+Q: Define a digital signature. | A value made with a private key that anyone can verify with the public key.
+Q: What did Diffie and Hellman publish, and what did RSA add? | Diffie and Hellman published key exchange in 1976; RSA in 1977 gave encryption and signatures.
+Q: Who at GCHQ found public-key ideas earlier? | Ellis, Cocks and Williamson, kept secret until 1997.
+Q: How are public keys trusted in a browser? | They are certified by trusted authorities, shown by the padlock.
+Q: How do Alice and Bob each compute the Diffie–Hellman shared key? | Alice computes B^{a} and Bob computes A^{b}, both giving g^{ab} mod p.
+Q: What problem does Diffie–Hellman security rest on? | The difficulty of discrete logarithms.
+Q: Describe hybrid encryption. | Public-key methods exchange a symmetric key, which then encrypts the data.
+Q: Name three things that use hybrid public-key encryption. | TLS (HTTPS), messaging apps and software updates.
+Q: What shared key results from p = 23, g = 5, a = 6, b = 15? | 2.
 
 ## Modular Exponentiation
 S: Modular exponentiation computes a^{e} mod n. It's the core operation of RSA, Diffie–Hellman and primality testing, and the square-and-multiply method does it in a number of steps proportional to the number of digits of e, not to e itself.
@@ -944,6 +1204,16 @@ NUM1#maths-u02-27-q1@1: Compute 5^{6} mod 13. | 12 | 0 |  | 5^{2} = 25 ≡ 12 �
 M1#maths-u02-27-q2@1: How many squarings does square-and-multiply need for an exponent of 1,000 (10 bits)? | About 9 or 10 | 1,000 | 500 | About 500, half the exponent | 100 | One squaring per bit after the first: the cost is logarithmic in e.
 M2#maths-u02-27-q3@2: What is a timing side-channel attack on modular exponentiation? | Measuring how long operations take to infer the secret exponent's bits | Guessing the modulus | Factorising n directly | Changing the public key | Breaking AES | Extra multiplications for 1 bits take extra time, leaking information.
 NUM1#maths-u02-27-q4@1: Powers of 2 mod 11 repeat every 10 steps. What is 2^{23} mod 11? | 8 | 0 |  | 2^{23} = 2^{20} × 2^{3} ≡ 1 × 8 = 8 (mod 11), since 2^{10} ≡ 1.
+Q: What does modular exponentiation compute? | a^{e} mod n.
+Q: Describe square-and-multiply. | Square for each bit of e and multiply when the bit is 1, reducing mod n throughout.
+Q: Write 13 in binary. | 1101₂ = 8 + 4 + 1.
+Q: What is the first step of square-and-multiply? | Write the exponent e in binary.
+Q: How many operations does a 2,048-bit exponent need with square-and-multiply? | About 2,048 squarings and up to 2,048 multiplications.
+Q: Why reduce mod n after each step? | To keep the numbers small.
+Q: What speeds up modular reductions in hardware? | Montgomery multiplication.
+Q: What is a side-channel attack on modular exponentiation? | Leaking the key through timing or power use of a simple implementation.
+Q: How do constant-time implementations resist side channels? | They do the same work whatever the bits of the key are.
+Q: What is 3^{13} mod 7? | 3.
 
 ## RSA Cryptography
 S: RSA, published by Rivest, Shamir and Adleman in 1977, was the first practical public-key system for encryption and signatures. Its security rests on the difficulty of factorising the product of two large primes.
@@ -978,6 +1248,16 @@ SRC: National Institute of Standards and Technology, Recommendation for key mana
 NUM1#maths-u02-28-q1@1: For p = 11, q = 13 and e = 7, find d. | 103 | 0 |  | φ = 10 × 12 = 120, and 7 × 103 = 721 = 6 × 120 + 1.
 M1#maths-u02-28-q2@1: In RSA with n = 33 and e = 3, what is the ciphertext for m = 4? | 31 | 12 | 64 | 4 | 7 | Encrypt with c = m^{e} mod n: 4^{3} = 64 = 33 + 31, so c = 31.
 M2#maths-u02-28-q3@2: Why is the public exponent e often 65,537? | It's prime with few 1 bits, so encryption is fast | It makes d small | It's the largest prime | It hides n | Standards require all keys to be equal | 65,537 = 2^{16} + 1 needs only 17 multiplications and is coprime to most φ(n).
+Q: Who published RSA, and when? | Rivest, Shamir and Adleman, in 1977.
+Q: What is the RSA modulus? | n = pq for large primes p and q, part of the public key.
+Q: How is the RSA private exponent d defined? | The inverse of e modulo φ(n) = (p − 1)(q − 1).
+Q: Which public exponent is common in RSA? | 65,537.
+Q: State RSA encryption and decryption. | Encrypt c = m^{e} mod n; decrypt m = c^{d} mod n.
+Q: How are RSA signatures made and verified? | Sign s = m^{d} mod n; verify by checking s^{e} ≡ m.
+Q: Name two RSA padding schemes. | OAEP and PSS.
+Q: Which theorem makes RSA decryption work? | Euler's theorem.
+Q: What RSA key size is recommended? | 2,048 bits or more.
+Q: Which RSA challenge number was factorised in 2020? | RSA-250 (829 bits).
 
 ## Discrete Logarithm Problem
 S: The discrete logarithm problem asks, given g and h = g^{x} mod p, to find x. Easy in one direction and believed hard in the other, it secures Diffie–Hellman, DSA and elliptic curve cryptography.
@@ -1012,6 +1292,16 @@ SRC: Pohlig S, Hellman M, An improved algorithm for computing logarithms over GF
 NUM1#maths-u02-29-q1@1: Solve 2^{x} ≡ 9 (mod 11) for x between 1 and 10. | 6 | 0 |  | Powers of 2 mod 11: 2, 4, 8, 5, 10, 9, so x = 6.
 M1#maths-u02-29-q2@1: About how many operations does baby-step giant-step need for a prime p ≈ 10^{12}? | About 10^{6} | About 10^{12} | About 12 | About 10^{24} | About 10^{3} | Baby-step giant-step needs about √p steps, and √(10^{12}) = 10^{6}.
 M2#maths-u02-29-q3@2: Why should p − 1 have a large prime factor in Diffie–Hellman? | Otherwise Pohlig–Hellman reduces the problem to easy small ones | It makes g smaller | It speeds up encryption | p − 1 must be prime | It doesn't matter | The algorithm's cost depends on the largest prime factor of the group order.
+Q: State the discrete logarithm problem. | Given g and h = g^{x} mod p, find x.
+Q: Describe baby-step giant-step. | It finds x in about √p steps using a table of g^{j} and repeated multiplication by g^{−m}.
+Q: How many steps does exhaustive search for a discrete log take? | Up to p − 1 steps.
+Q: Name two generic discrete log algorithms taking about √p steps. | Baby-step giant-step and Pollard's rho.
+Q: Why do prime fields need bigger keys than elliptic curves? | Index calculus is sub-exponential for prime fields.
+Q: What does Pohlig–Hellman exploit? | A prime p where p − 1 has only small prime factors, splitting the problem into small ones.
+Q: Define a safe prime. | p = 2q + 1 with q prime.
+Q: Name three systems built on discrete logarithms. | Diffie–Hellman key exchange, ElGamal encryption and the Digital Signature Algorithm.
+Q: What is the solution of 3^{x} ≡ 13 (mod 17)? | x = 4.
+Q: Which key sizes give about 112 to 128 bits of security? | 2,048-bit prime fields or 256-bit elliptic curves.
 
 ## Elliptic Curve Cryptography
 S: Elliptic curve cryptography (ECC) uses the group of points on an elliptic curve over a finite field. Because the elliptic curve discrete logarithm problem resists the attacks that work on numbers mod p, ECC gives the same security with much shorter keys.
@@ -1046,6 +1336,16 @@ SRC: National Institute of Standards and Technology, Recommendation for key mana
 NUM1#maths-u02-30-q1@1: About how many times longer is a 3,072-bit RSA modulus than a 256-bit ECC key of similar strength? | 12 | 0 |  | 3,072/256 = 12.
 M1#maths-u02-30-q2@1: What is the public key in elliptic curve cryptography? | The point Q = nG | The private number n | The prime p only | The curve's discriminant | The nonce | The private scalar n is multiplied by the base point G.
 M2#maths-u02-30-q3@2: What went wrong with the PlayStation 3's ECDSA signatures? | The same nonce was used for every signature, revealing the private key | The curve was too small | RSA was used instead | The hash function was missing | Nothing went wrong | Two signatures with the same nonce let attackers solve for the private key.
+Q: State the ECDLP. | Given P and Q = nP on an elliptic curve, find n.
+Q: What does ECDSA stand for? | The Elliptic Curve Digital Signature Algorithm.
+Q: What are the public parameters in ECC? | A curve over 𝔽_{p} and a base point G of large prime order.
+Q: How is an ECC public key formed? | Q = nG from a random private key n, computed by double-and-add.
+Q: How does ECDH work? | Alice and Bob exchange aG and bG and both compute abG.
+Q: What RSA size is a 256-bit ECC key comparable to? | 3,072-bit RSA.
+Q: Why are short ECC keys good for phones and smart cards? | Shorter keys mean faster operations and less bandwidth.
+Q: Name two widely used elliptic curves besides Bitcoin's. | P-256 and Curve25519.
+Q: How many group operations does double-and-add need for a 256-bit n? | About 384: about 256 doublings and about 128 additions.
+Q: Which algorithm would break ECC as well as RSA? | Shor's algorithm.
 
 ## Cryptographic Hash Functions
 S: A cryptographic hash function turns any input into a short fixed-length digest that acts like a fingerprint. Hashes check integrity, store passwords, build digital signatures and underpin blockchains.
@@ -1081,6 +1381,16 @@ SRC: Stevens M, Bursztein E, Karpman P, Albertini A, Markov Y, The first collisi
 NUM1#maths-u02-31-q1@1: What is the generic collision security, in bits, of a 512-bit hash function? | 256 | 0 | bits | By the birthday bound, collisions take about 2^{512/2} = 2^{256} work.
 M1#maths-u02-31-q2@1: Which property means it's hard to find any two inputs with the same digest? | Collision resistance | Preimage resistance | The avalanche effect | Compression | Determinism | Collision resistance concerns any pair, not a given target.
 M2#maths-u02-31-q3@2: Why are slow hash functions such as Argon2 recommended for passwords? | They make each guess expensive for an attacker | They produce longer passwords | They're reversible | They avoid salts | They're faster to verify | Legitimate logins check one password; attackers must try billions, so slowness hurts only them.
+Q: Define a hash function. | A function mapping inputs of any length to a fixed-length output, such as SHA-256's 256 bits.
+Q: Define a collision. | Two different inputs with the same hash.
+Q: Define preimage resistance. | Given h, it is hard to find any m with H(m) = h.
+Q: Define second-preimage resistance. | Given m, it is hard to find m′ ≠ m with the same hash.
+Q: What is the avalanche effect? | Changing one bit of input changes about half the output bits.
+Q: After how many tries do collisions appear for an n-bit hash? | About 2^{n/2}.
+Q: Which hash functions are broken for collisions, and which should be used? | MD5 and SHA-1 are broken; use SHA-2 or SHA-3.
+Q: Name three slow, memory-hard functions for passwords. | Argon2, scrypt and bcrypt.
+Q: What is the probability that two of 23 people share a birthday? | About 0.507, just over a half.
+Q: What is the collision security of SHA-256? | About 128 bits.
 
 ## Primality Testing
 S: Primality tests decide whether a number is prime without factorising it. Cryptography needs huge random primes, so fast tests, mostly probabilistic, are essential.
@@ -1115,6 +1425,16 @@ SRC: Rabin MO, Probabilistic algorithm for testing primality, Journal of Number 
 NUM1#maths-u02-32-q1@1: What is the error bound for 10 rounds of Miller–Rabin, as a power of 4? Give the exponent of 4 as a negative number. | -10 | 0 |  | Each round has error at most 1/4, so 10 rounds give at most 4^{−10}.
 M1#maths-u02-32-q2@1: Which composite passes the Fermat test for every base coprime to it? | 561 | 221 | 91 | 15 | 341 only for base 3 | 561 = 3 × 11 × 17 is a Carmichael number.
 M3#maths-u02-32-q3@2: A number passes 50 rounds of Miller–Rabin with random bases. What's the best conclusion? | It's prime with overwhelming probability | It must be a perfect square | It's a Carmichael number | It's certainly composite | It's certainly prime, since 50 rounds is a proof | The chance a composite passes all 50 rounds is at most 4^{−50}.
+Q: Describe the Miller–Rabin test's error per round. | A composite passes a random round with probability at most 1/4.
+Q: Define a strong pseudoprime. | A composite that passes a Miller–Rabin round for a particular base.
+Q: Why is trial division unsuitable for large n? | It is certain but far too slow.
+Q: How is n − 1 written for the Miller–Rabin test? | n − 1 = 2^{s}d with d odd.
+Q: What does Miller–Rabin check for a base a? | Whether a^{d} ≡ 1 or a^{2^{r}d} ≡ −1 for some r < s.
+Q: Why are 40 rounds of Miller–Rabin enough? | The error becomes far smaller than the chance of a hardware fault.
+Q: Why is AKS important? | It was the first unconditional polynomial-time deterministic primality test.
+Q: What does ECPP produce? | Certificates of primality for large primes.
+Q: Which primes must trial division try to show 221 is composite? | Primes up to √221 ≈ 14.9: 2, 3, 5, 7, 11, 13, finding 221 = 13 × 17.
+Q: How many tries does finding a 1,024-bit prime take, and why? | A few hundred, because random large numbers are prime with probability about 1/ln n.
 
 ## Integer Factorisation
 S: Integer factorisation is splitting a number into primes. Multiplying primes is easy, but recovering them from a large product appears very hard, and that asymmetry is what RSA's security rests on.
@@ -1151,6 +1471,16 @@ NUM1#maths-u02-33-q1@1: Factorise 899 using 899 = 30^{2} − 1^{2}. Give the lar
 M1#maths-u02-33-q2@1: Why must RSA's primes p and q not be too close together? | Fermat's method would factorise n quickly | They must be equal | n would turn out to be prime, so it couldn't be used | Encryption would fail | It makes no difference | If p ≈ q, then n is close to a square and a − b is small.
 M2#maths-u02-33-q3@2: What would a large quantum computer running Shor's algorithm do to RSA? | Factorise n efficiently, breaking it | Make it twice as secure | Nothing | Only slow it down | Replace primes with squares | Shor's algorithm factorises in polynomial time.
 M2#maths-u02-33-q4@2: Why does trial division only need to test primes up to √n? | If n = ab with both factors above √n, then ab > n, so some factor is at most √n | Primes above √n don't exist | Larger primes always divide n | The sieve can't reach beyond √n | Testing beyond √n gives wrong answers | A composite n always has a prime factor no bigger than √n, so finding none up to √n proves n prime.
+Q: Describe Fermat's factorisation method. | Write n = a^{2} − b^{2} = (a − b)(a + b), searching for a from ⌈√n⌉ upwards.
+Q: Define a semiprime. | A product of two primes, the form of an RSA modulus.
+Q: What asymmetry does RSA's security rest on? | Multiplying primes is easy, but recovering them from a large product appears very hard.
+Q: What is the best classical factoring algorithm? | The general number field sieve, which is sub-exponential.
+Q: What did factorising RSA-250 require? | Thousands of core-years, in 2020.
+Q: How does 5,959 factorise by Fermat's method? | 59 × 101, from 80^{2} − 21^{2}.
+Q: When was Shor's algorithm published, and what does it need? | 1994; a large fault-tolerant quantum computer.
+Q: Why does Shor's algorithm drive post-quantum cryptography now? | Current quantum computers are far too small, but the threat is real.
+Q: What size of RSA modulus is out of reach of classical methods? | 2,048-bit moduli.
+Q: When is trial division a suitable factoring method? | For small numbers.
 
 ## Prime Factorisation Algorithms
 S: Beyond trial division, mathematicians have built clever factorisation algorithms that exploit hidden structure: Pollard's rho and p − 1 methods, Lenstra's elliptic curve method, and the quadratic and number field sieves. Each suits different sizes of number and factor.
@@ -1184,6 +1514,16 @@ SRC: Lenstra HW, Factoring integers with elliptic curves, Annals of Mathematics 
 NUM1#maths-u02-34-q1@1: Is 2^{4} × 3^{2} × 7 a 7-smooth number? Enter 1 for yes or 0 for no. | 1 | 0 |  | All its prime factors (2, 3 and 7) are at most 7, so it's 7-smooth.
 M1#maths-u02-34-q2@1: Which method suits finding a 20-digit factor of a 200-digit number? | The elliptic curve method | Trial division | Fermat's method | The quadratic sieve | Guessing | ECM's cost depends on the size of the factor found, not of n.
 M3#maths-u02-34-q3@2: What do the quadratic and number field sieves ultimately look for? | x and y with x^{2} ≡ y^{2} (mod n), giving a factor via gcd(x − y, n) | A prime factor directly by division | Primitive roots | Points on a curve | Pell equation solutions | Such a congruence often splits n when x ≢ ±y.
+Q: Define a B-smooth number. | A number whose prime factors are all at most B.
+Q: Describe Pollard's rho method. | It uses a pseudo-random sequence mod n to find a factor p in about √p steps.
+Q: How does Pollard's p − 1 method work? | Compute gcd(a^{M} − 1, n) with M a product of small primes; it succeeds if p − 1 is smooth.
+Q: How does Lenstra's ECM relate to Pollard's p − 1? | It works like p − 1 but over many random curves.
+Q: What size of factor does ECM suit? | Medium-sized factors.
+Q: Up to what size is the quadratic sieve best? | About 100 digits.
+Q: What congruence do the sieves aim for? | x^{2} ≡ y^{2} (mod n).
+Q: How do the sieves combine smooth relations? | With linear algebra.
+Q: In what order should factoring methods be tried? | Small factors first by trial division, then rho or ECM; large balanced semiprimes by the number field sieve.
+Q: Why did p − 1 factorise 299 with M = 12? | Because 13 − 1 = 12 is smooth, giving gcd(208, 299) = 13.
 
 ## Lattice-Based Cryptography
 S: Lattice-based cryptography builds security on hard geometric problems in high-dimensional lattices, such as finding short vectors. No efficient quantum algorithm is known for them, so lattices underpin the main new post-quantum standards.
@@ -1217,6 +1557,16 @@ SRC: National Institute of Standards and Technology, Module-Lattice-Based Key-En
 NUM1#maths-u02-35-q1@1: With q = 13, s = (2, 4), a = (5, 3) and e = −1, compute b = ⟨a, s⟩ + e mod 13. | 8 | 0 |  | ⟨a, s⟩ = 10 + 12 = 22; 22 − 1 = 21 ≡ 8 (mod 13).
 M1#maths-u02-35-q2@1: Why does LWE add small errors to the equations? | Without them, linear algebra would recover the secret easily | To make decryption impossible | To shorten keys | Errors are accidental | To make it faster | Noise turns an easy linear system into a hard problem.
 M2#maths-u02-35-q3@2: What is a lattice? | The set of all integer combinations of some basis vectors | A random set of points | A curve over a finite field | A random scatter of points in n dimensions | A prime field | Lattices are regular grids of points generated by a basis.
+Q: Define a lattice. | All integer combinations of a set of basis vectors in ℝ^{n}.
+Q: State the Learning With Errors problem. | Recover a secret vector s from many noisy equations b = ⟨a, s⟩ + e (mod q).
+Q: State the shortest vector problem. | Find the shortest non-zero lattice vector.
+Q: How does the basis affect the difficulty of SVP? | A short, nearly orthogonal basis makes it easy; a bad basis in hundreds of dimensions makes it very hard.
+Q: What does the LLL algorithm do? | Finds fairly short lattice vectors in polynomial time, not short enough to break well-chosen parameters.
+Q: How is b = As (mod q) solved without noise? | By linear algebra.
+Q: Who showed LWE is believed hard, and when? | Regev, in 2005.
+Q: What does Module-LWE add? | Structure for efficiency.
+Q: Which lattice-based standards did NIST publish in 2024? | ML-KEM (FIPS 203) and ML-DSA (FIPS 204).
+Q: What do lattices enable besides post-quantum encryption? | Fully homomorphic encryption: computing on encrypted data.
 
 ## Post-Quantum Cryptography
 S: Post-quantum cryptography is public-key cryptography designed to resist attacks by large quantum computers. Because data encrypted today could be stored and decrypted later, governments and companies are already migrating to the new standards.
@@ -1252,4 +1602,14 @@ SRC: National Cyber Security Centre, Timelines for migration to post-quantum cry
 NUM1#maths-u02-36-q1@1: Against Grover's algorithm, how many bits of security does a 192-bit symmetric key keep? | 96 | 0 | bits | Grover square-roots the search: 2^{192} becomes about 2^{96}.
 M1#maths-u02-36-q2@1: Which cryptographic primitive survives quantum attack with a modest change? | Symmetric encryption, by using longer keys | RSA with the same key size | Diffie–Hellman over prime fields | Elliptic curve cryptography | None of them | Grover only halves the key length's effective strength.
 M3#maths-u02-36-q3@2: Why is "harvest now, decrypt later" a reason to act now? | Secrets with long lifetimes recorded today could be exposed once quantum computers arrive | Quantum computers already break RSA | Old data is never valuable | It only affects passwords | It isn't a real concern | Data that must stay confidential for decades is already at risk.
+Q: Define post-quantum cryptography. | Public-key cryptography designed to resist attacks by large quantum computers.
+Q: What does Shor's algorithm do? | Factorises and solves discrete logarithms in polynomial time on a quantum computer.
+Q: What is harvest now, decrypt later? | Recording encrypted traffic today to decrypt it once quantum computers exist.
+Q: How does Grover's algorithm affect symmetric cryptography? | It square-roots brute-force search, so symmetric crypto survives with longer keys.
+Q: What security does AES-256 keep against Grover's algorithm? | About 128 bits (2^{128} steps).
+Q: Which standards give post-quantum signatures? | FIPS 204 ML-DSA (lattice-based) and FIPS 205 SLH-DSA (hash-based).
+Q: Which code-based algorithm was selected as a backup? | HQC.
+Q: What are hybrid schemes in post-quantum migration? | Schemes combining classical and post-quantum key exchange during the transition.
+Q: What completion date has the UK's NCSC set for migration? | 2035.
+Q: How do the new algorithms affect protocols and devices? | They have larger keys and signatures.
 `;

@@ -42,6 +42,16 @@ M2#teaching-u01-01-q2@2: A trainee notes that every pupil answered the plenary q
 M3#teaching-u01-01-q3@2,3: Which lesson feature is the strongest evidence that pupils have learned last month's content? | Accurate answers to unprompted questions on it at the start of today's lesson | Pupils working quietly on the topic for a whole hour | Every pupil completing last month's worksheet | Pupils saying they found the topic easy | Unprompted retrieval after a delay is direct evidence of a change in long-term memory. Quiet work, completion and self-report are proxies that can occur without retention.
 TF2#teaching-u01-01-q4@2: Practice conditions that slow pupils down during a lesson can sometimes produce better long-term retention. | true | Soderstrom and Bjork (2015) review evidence that spacing, retrieval and interleaving can lower performance in practice but improve later recall.
 SA3#teaching-u01-01-q5@1,3: A head of department judges lessons mainly by how busy and engaged pupils look. Evaluate this approach using the distinction between learning and performance. | Engagement and busyness are proxies: they can be present without any lasting change in long-term memory, and productive struggle can look less smooth. Because learning is a lasting change, better evidence comes from what pupils can retrieve and use after a delay, such as low-stakes quizzes in later lessons. Engagement still matters as a precondition for attention, so it is necessary but not sufficient. | Defines learning as a lasting change in long-term memory ; Explains that engagement is a proxy, not proof ; Notes that harder practice can look less successful but produce more learning ; Proposes delayed checks as better evidence ; Reaches a balanced judgement
+Q: How did Kirschner, Sweller and Clark (2006) state the link between long-term memory and learning? | If nothing has changed in long-term memory, nothing has been learned.
+Q: What is long-term memory? | The store of everything a person knows, from facts and concepts to procedures and the links between them, with practically unlimited capacity.
+Q: Besides adding knowledge, what else does learning do to long-term memory? | It reorganises it, connecting new ideas to what is already there.
+Q: Define performance, as distinct from learning. | What a pupil can do now, often with support, prompts and the material fresh in mind, which may not last.
+Q: Name three practice conditions that make practice feel smooth but often produce gains that fade. | Massed repetition, constant hints and re-reading.
+Q: Name three conditions that can depress performance in the lesson yet improve long-term retention. | Spacing, retrieval and mixing problem types.
+Q: What did Coe (2013) call features such as busy pupils and completed worksheets? | Poor proxies for learning.
+Q: What do correct answers straight after an explanation show? | That pupils can follow the explanation, not that they will remember it.
+Q: In the Year 8 simultaneous equations example, how did the teacher respond to the 40% score a week later? | Not by reteaching from scratch, but by planning spaced retrieval and further practice, then checking again later.
+Q: What three planning consequences follow from defining learning as change in long-term memory? | Sequencing new material onto secure prior knowledge, returning to content over time, and assessing after a delay.
 
 ## Working memory and its limits
 LV: Introductory · Foundation
@@ -85,6 +95,16 @@ M2#teaching-u01-02-q2@3: A trainee's science slide has a dense paragraph, a diag
 M3#teaching-u01-02-q3@2,3: Two pupils are given the same multi-step algebra problem. One knows the rules of signs fluently; the other is unsure. Why is the second pupil more likely to fail? | Uncertain rules must be worked out in working memory, leaving less capacity for the steps | The second pupil has a smaller working memory, so cannot hold the steps | The second pupil lacks the motivation to finish a long problem | The problem is too long for anyone to complete | Fluent knowledge is retrieved as chunks and costs little working memory. Working out the rules each time consumes capacity needed for the problem. Nothing suggests a difference in capacity or motivation.
 MS2#teaching-u01-02-q4@3: Which strategies reduce the demand on pupils' working memory? Choose all that apply. | Giving instructions one step at a time ; Leaving key information visible on the board ; Securing prerequisite facts before a complex task | Adding decorative images to every slide ; Explaining while pupils copy long notes | Stepping, external aids and fluent prerequisites all reduce load. Decorative images and copying while listening add competing demands.
 SA3#teaching-u01-02-q5@2,3: Explain why a teacher should make sure pupils are fluent in basic facts before teaching a complex procedure that uses them, with reference to working memory. | Working memory can hold only a few new elements at once. If basic facts are not fluent, pupils must compute them in working memory while also holding the steps of the procedure, causing overload and errors. Facts stored securely in long-term memory are retrieved as chunks with little effort, freeing capacity to attend to and learn the procedure. | States the limited capacity of working memory ; Explains that non-fluent facts consume capacity ; Explains chunking or retrieval from long-term memory ; Links freed capacity to learning the procedure
+Q: What does Rosenshine (2012) advise about presenting complex material? | Break it into smaller steps and give practice after each.
+Q: What capacity did Miller (1956) suggest for working memory? | About seven items, plus or minus two.
+Q: How long does unrehearsed new information last in working memory, and what limits how much it holds? | It is lost within seconds, and only a few new items, about four chunks, can be held at once.
+Q: Name the three original components of Baddeley and Hitch's (1974) working memory model. | A central executive, a phonological loop for sound and words, and a visuospatial sketchpad.
+Q: Which component was added to Baddeley and Hitch's model in 2000? | The episodic buffer.
+Q: What is a chunk? | A unit of information organised in long-term memory that can be handled in working memory as one item.
+Q: How does an expert chess player illustrate chunking? | They recall a whole board position as a few familiar patterns rather than many separate pieces.
+Q: In the Year 4 example of 37 × 8, why did the pupil lose track of the 240? | Counting on in eights to find 7 × 8 used most of her working memory, because the fact was not recalled from long-term memory.
+Q: How should teachers view pupils who struggle because of overload, rather than telling them to concentrate? | As a design problem: reduce new elements, give steps one at a time and provide external memory aids.
+Q: What do meta-analyses find about general working-memory training? | Near-transfer gains on trained tasks, but little far transfer to reading or maths.
 
 ## Long-term memory and schemas
 LV: Introductory · Foundation
@@ -125,6 +145,16 @@ M2#teaching-u01-03-q2@2: A pupil who believes all metals are magnetic learns tha
 M3#teaching-u01-03-q3@3: A department wants pupils to analyse unseen texts better. Based on schema theory, which plan is likely to help most? | Teach rich, connected knowledge of contexts and genres alongside analysis practice | Repeat generic analysis drills on short extracts with no context | Teach analysis as a skill once, then assess it every week | Let pupils choose texts so they are motivated | Analysis depends on knowledge organised into schemas. Generic drills without knowledge transfer poorly; motivation helps but cannot supply missing knowledge.
 SEQ2#teaching-u01-03-q4@2: Put these in the order they happen when a pupil learns a new idea that fits what she knows. | Attends to the new information in working memory ; Links it to a related existing schema ; Stores the extended schema in long-term memory ; Retrieves the schema as one chunk later | New information is processed in working memory, integrated with an existing schema and stored; the organised schema can then be retrieved as a unit.
 SA3#teaching-u01-03-q5@2,3: Explain how schema theory supports teaching knowledge explicitly, and identify one limitation of the theory. | Schemas let learners integrate new information and handle complex knowledge as single chunks, so building connected knowledge makes later learning and thinking easier; experts differ from novices mainly in how their knowledge is organised. This supports teaching core knowledge explicitly and making links visible. A limitation is that schemas are loosely defined and hard to observe directly, so the theory describes rather than precisely explains. | Defines schema ; Explains integration of new learning ; Uses the expert and novice evidence ; Links to explicit teaching of connected knowledge ; Identifies a limitation
+Q: Who introduced the term schema, and what did his study show? | Bartlett (1932), who showed that people recall stories by reshaping them to fit what they already expect.
+Q: What two jobs do schemas do? | They store knowledge efficiently, and they let a learner treat a whole structure as one chunk in working memory.
+Q: What did Sweller, van Merriënboer and Paas (1998) describe as the central aim of instruction? | The acquisition and automation of schemas.
+Q: Define assimilation in schema growth. | New information fits into an existing schema, as in learning that a lemur is another kind of primate.
+Q: Define accommodation in schema growth. | Restructuring an existing schema to fit information that does not match it, as in learning that whales are mammals, not fish.
+Q: Around what is experts' knowledge organised, according to Chi, Feltovich and Glaser (1981)? | Deep principles that transfer, rather than surface features.
+Q: In the Poor Law history example, what explained the difference between Pupil A and Pupil B? | Connected knowledge, not a generic source skill: Pupil A had a schema to place the source in context.
+Q: What common mistake does the lesson warn against when teaching topics? | Teaching topics as unconnected chunks and assuming pupils will join them up.
+Q: Name three practical ways to teach for connected knowledge. | Start from what pupils already know, use advance or knowledge organisers that show topic structure, and ask how-does-this-connect questions.
+Q: Why do some researchers see schema theory as a metaphor rather than a precise mechanism? | Because schema is loosely defined and hard to measure directly.
 
 ## Prior knowledge and how it shapes learning
 LV: Introductory · Application
@@ -166,6 +196,16 @@ M2#teaching-u01-04-q2@2,3: Before a unit on the causes of the First World War, a
 M3#teaching-u01-04-q3@1,3: Recht and Leslie's study is most often cited to support which claim? | Reading comprehension depends heavily on background knowledge | Strong readers will understand any text | Generic comprehension strategies matter more than knowledge | Pupils learn best from topics they choose | Knowledgeable but weak readers outperformed strong readers who lacked knowledge, showing the weight of domain knowledge in comprehension.
 TF1#teaching-u01-04-q4@1: Having covered a topic in a previous year means pupils can be assumed to know it. | false | Coverage does not guarantee retention; prior knowledge should be checked.
 SA2#teaching-u01-04-q5@2,3: Describe two ways a teacher could find out what a class already knows before a new unit, and explain how the results should change the plan. | A short low-stakes quiz on the prerequisites and diagnostic multiple-choice questions, or mini-whiteboard responses from every pupil. If the prerequisites are secure, the teacher can move on to new content; if there are gaps or misconceptions, the teacher reteaches or corrects them first, possibly for part of the class, before building the new learning on them. | Names a first valid method ; Names a second valid method ; Explains moving on when knowledge is secure ; Explains reteaching or correcting gaps first
+Q: According to Ausubel (1968), what should teachers do about what the learner already knows? | Ascertain it and teach accordingly.
+Q: According to the ITTECF, what is more likely where pupils' prior knowledge is weak? | Pupils are more likely to develop misconceptions.
+Q: What does the ITTECF say committing key facts to memory helps pupils do? | Learn more complex ideas.
+Q: What should a teacher do before teaching something new that depends on earlier knowledge? | Check the knowledge it depends on is secure, and teach or revisit it first if it is not.
+Q: Why are diagnostic multiple-choice questions useful for eliciting prior knowledge? | Their wrong answers reveal particular misconceptions.
+Q: Why does the lesson prefer mini-whiteboard responses to hands-up? | They gather a response from every pupil, not just a few.
+Q: In the Year 9 percentage change example, how did the trainee adjust when a third could not convert 3/8 to a decimal? | A short reteach with a worked example for that group while others started, introducing decimal multipliers only once conversions were secure.
+Q: Why should teachers not assume a topic covered last year is known? | Coverage is not retention, so it must always be checked.
+Q: How can prior knowledge mislead learning? | Intuitive ideas and partial understandings can be strongly held, so activating knowledge means checking it, not assuming it is correct.
+Q: Define prerequisite knowledge. | Knowledge a new topic depends on, which must be secure for the new learning to succeed.
 
 ## Misconceptions and conceptual change
 LV: Introductory · Application
@@ -207,6 +247,16 @@ M2#teaching-u01-05-q2@2: A trainee's diagnostic question shows that half the cla
 M3#teaching-u01-05-q3@3: Which teaching approach is most likely to produce lasting conceptual change? | A failed prediction followed by a clear explanation and later revisiting in new contexts | A single demonstration that contradicts the misconception, with no discussion | Repeating the correct definition until pupils can recite it | Letting pupils discover the correct idea through open-ended investigation alone | Conflict opens the idea, explanation replaces it, and revisiting makes it stick. Unresolved conflict or recitation alone often leaves the misconception in place.
 TF2#teaching-u01-05-q4@3: The rule "to multiply by ten, add a zero" is a safe shortcut because it will always remain true. | false | It fails for decimals (2.5 × 10 is not 2.50) and creates a misconception about place value.
 SA3#teaching-u01-05-q5@2,3: A colleague says that addressing misconceptions just means correcting wrong answers. Evaluate this claim. | Correcting answers is necessary but rarely sufficient. Misconceptions are coherent beliefs embedded in schemas, often supported by experience, so pupils may give the right answer when told but revert later. Effective approaches anticipate them, surface them with diagnostic questions, create cognitive conflict, explain why the intuitive idea seemed right, and revisit over time. | Explains that misconceptions are coherent and persistent ; Notes that simple correction often fails to last ; Describes surfacing with diagnostic questions ; Describes conflict followed by explanation ; Mentions revisiting over time
+Q: Define a misconception. | A belief that conflicts with the accepted understanding of a subject but makes sense to the person who holds it.
+Q: Name four sources of misconceptions given in the lesson. | Everyday experience, language, overgeneralisation and earlier teaching that was simplified.
+Q: Give the lesson's example of a misconception arising from language. | A theory is just a guess.
+Q: What did Vosniadou and Brewer (1992) find when children were told the Earth is round? | Many formed synthetic models, such as a flat disc or a hollow sphere with people on a flat floor inside.
+Q: List the five steps of bringing about conceptual change. | Anticipate, surface, confront, explain and revisit.
+Q: Why should misconceptions be revisited later, in new contexts? | Because old beliefs often re-emerge after the lesson.
+Q: In the dropped balls example, what does the teacher say causes the differences pupils see in daily life? | Air resistance, not mass.
+Q: Why does the shortcut you can't take a bigger number from a smaller one cause problems? | It breaks when negative numbers arrive, creating a misconception.
+Q: How can teachers help prevent misconceptions created by teaching? | Use precise language and examples that will remain true later, and secure foundations of prior knowledge.
+Q: When does cognitive conflict help conceptual change, according to reviews? | When it is followed by clear explanation; left unresolved, it can confuse or demotivate.
 
 ## Cognitive load theory: Sweller 1988
 LV: Introductory · Foundation
@@ -249,6 +299,16 @@ M2#teaching-u01-06-q2@2: Why can a pupil solve many problems by trial and error 
 M3#teaching-u01-06-q3@3: Which is the most valid criticism of how cognitive load theory is used in schools? | Much of its evidence comes from short studies in structured subjects, and load is hard to measure directly | It has never been tested experimentally, in the laboratory or in classrooms | It claims working memory has no limit | It recommends unguided discovery learning for all pupils, whatever their prior knowledge | The theory has substantial experimental support, but critics question generalisation and measurement. The other options misstate the theory.
 TF2#teaching-u01-06-q4@1: Cognitive load theory holds that all difficulty should be removed from learning tasks. | false | It aims to remove unnecessary (extraneous) load so that capacity is spent on the material itself.
 SA3#teaching-u01-06-q5@2,3: Evaluate cognitive load theory as a guide for classroom teachers. | Strengths: it rests on a well-supported model of limited working memory and schema-based long-term memory, makes testable predictions such as the worked example effect, and gives practical guidance (worked examples, stepping, removing distraction). Limitations: much evidence comes from short laboratory studies in well-structured domains; load is hard to measure; it says less about motivation; and school policies sometimes apply it too rigidly. Overall it is a useful framework for novices learning complex material, applied with judgement. | Summarises the theory's basis ; Gives an empirical strength such as the worked example effect ; Gives a practical implication ; Identifies a limitation of evidence or measurement ; Reaches a balanced judgement
+Q: Define means-ends analysis. | A problem-solving strategy that reduces the difference between the current state and the goal; effective for solving but costly for learning.
+Q: What central design principle came from Sweller's 1988 findings? | Instruction should minimise unnecessary demands on working memory so capacity is available for building schemas in long-term memory.
+Q: According to cognitive load theory, when is working memory not limited? | When it is using organised knowledge from long-term memory rather than dealing with new information.
+Q: How does cognitive load theory define expertise? | The possession of many automated schemas in long-term memory.
+Q: Name the two sources of load the core claims distinguish. | Intrinsic load from the material itself, and extraneous load from the way it is presented.
+Q: In the geometry example, what did Group B do, and how did it fare on new problems? | Studied four worked examples each paired with a similar problem, and typically did better in less time.
+Q: Why is it a mistake to treat cognitive load theory as make everything easy? | It aims to remove unnecessary load, not all challenge; difficulty that requires thinking about the material is what produces learning.
+Q: Which 2019 Ofsted publication drew on cognitive load theory? | Its research review.
+Q: Name three criticisms of cognitive load theory given in the lesson. | Early evidence came from short laboratory studies in structured subjects; load is hard to measure directly; and classroom applications sometimes stretch it beyond its evidence.
+Q: How is cognitive load often measured in studies, according to critics? | By self-rated mental effort.
 
 ## Intrinsic and extraneous load
 LV: Introductory · Application
@@ -287,6 +347,16 @@ M2#teaching-u01-07-q2@3: A class finds a new chemistry topic hard because each i
 M3#teaching-u01-07-q3@1,2: Why is intrinsic load said to depend on the learner as well as the material? | The same material involves fewer separate elements for someone who already has relevant schemas | Some learners have permanently larger working memories | Intrinsic load is set by how the teacher presents the material | Motivated learners experience no intrinsic load | Prior knowledge lets learners treat many elements as one chunk, so element interactivity is lower for them. Presentation affects extraneous, not intrinsic, load.
 MATCH2#teaching-u01-07-q4@1,2: Match each feature to the kind of load it mainly creates. | Searching a cluttered slide = Extraneous load ; Many interacting ideas in a concept = Intrinsic load ; Vague, multi-part instructions = Extraneous load ; Working on the material itself to build schemas = Germane processing | Presentation and task design create extraneous load; complexity creates intrinsic load; germane processing is capacity devoted to the material.
 SA2#teaching-u01-07-q5@2,3: A trainee's slides are full of text, images and animations, and pupils struggle to follow. Using the idea of extraneous load, suggest three changes and explain why each helps. | Cut the text to the essentials and speak the explanation rather than putting it all on screen, which avoids pupils reading and listening at once; remove decorative images and animations that compete for attention; place labels on diagrams rather than in separate keys so pupils do not have to search and match. Each removes demands that use working memory without contributing to learning, freeing capacity for the content. | Proposes cutting or speaking text ; Proposes removing decoration ; Proposes integrating labels or another valid change ; Explains that each removes extraneous load and frees capacity
+Q: Define element interactivity. | The degree to which elements of the material must be processed together to be understood.
+Q: Give the lesson's contrasting examples of low and high element interactivity. | Learning the French for cat is low; balancing a chemical equation, where each change affects the others, is high.
+Q: Name three examples of extraneous load from the lesson. | Searching a cluttered slide, matching a diagram to a separate key, and following vague instructions.
+Q: How should intrinsic load be managed, rather than removing important content? | By sequencing and building prior knowledge.
+Q: How did earlier versions of the theory define germane load? | The effort that goes into building schemas.
+Q: How do Sweller, van Merriënboer and Paas (2019) now treat germane processing? | As the working-memory resources devoted to intrinsic load, not a separate, additive type of load.
+Q: Name three strategies for managing intrinsic load. | Sequence from simpler to more complex, teach component parts before combining them, and make prerequisite knowledge fluent.
+Q: In the geography worksheet example, how was extraneous load fixed? | Integrating key data next to the questions, cutting the text to what the questions need, and numbering the steps.
+Q: In the geography example, why was the interaction of rainfall, relief and land use kept? | It is the intrinsic load and is the learning itself, so it was kept but introduced one factor at a time.
+Q: What is the danger of simplifying content when the real problem was presentation? | Removing the interacting ideas that make a topic hard can remove the learning too.
 
 ## The worked example effect
 LV: Introductory · Application
@@ -327,6 +397,16 @@ M2#teaching-u01-08-q2@3: Which sequence best applies the worked example effect f
 M3#teaching-u01-08-q3@2,3: A pupil studies a worked example by copying it neatly into her book. What would most improve her learning from it? | Explaining to herself why each step is done | Copying it out a second time | Highlighting the final answer | Reading it faster to see more examples | Self-explanation directs attention to the structure of the solution; copying and highlighting can be done without thinking about why the steps work.
 TF2#teaching-u01-08-q4@2: Worked examples help novices because they remove the need to search for a solution, freeing working memory. | true | That is cognitive load theory's explanation of the effect.
 SA3#teaching-u01-08-q5@2,3: Design a short worked-example sequence for a procedure in a subject you teach, and justify each part with reference to the research. | A good answer names a procedure, presents a first example with each step written and narrated, follows it with a similar problem, gives a second example with a different surface but the same structure, then fades steps. It justifies example-problem pairs (Sweller and Cooper), visible and integrated steps (reducing extraneous load), self-explanation prompts (Chi), varied surface features (learning the principle) and fading (moving towards independence and avoiding expertise reversal). | Names a procedure and gives a first example with steps ; Includes example-problem pairing ; Varies surface features ; Includes self-explanation or fading ; Justifies choices with research
+Q: Who first showed the worked example effect, and in which subject? | Sweller and Cooper (1985), with algebra.
+Q: Name four domains in which the worked example effect has been replicated. | Mathematics, science, programming and other structured domains.
+Q: What does the ITTECF say about worked examples? | Worked examples that take pupils through each step of a new process are likely to support learning.
+Q: Define an example-problem pair. | A worked example followed immediately by a similar problem for the learner to solve.
+Q: What did Chi and colleagues find about self-explanation? | Learners who explain examples to themselves learn more.
+Q: Why should worked examples vary in surface features? | So pupils learn the shared principle or structure, not the context.
+Q: What does fading mean in a worked-example sequence? | Gradually removing steps so pupils complete more of the solution themselves.
+Q: Why should a diagram and its working be kept together in a worked example? | To avoid split attention.
+Q: In the Year 10 speed example, what four steps were narrated for the cyclist problem? | Write the equation, substitute the values, calculate, and give the units.
+Q: What common mistake with worked examples does the lesson warn against? | Showing one example quickly then setting twenty problems; novices need several examples with paired problems, then fading.
 
 ## The expertise reversal effect
 LV: Intermediate · Application
@@ -366,6 +446,16 @@ M2#teaching-u01-09-q2@3: Most of a class now solves a type of problem correctly,
 M3#teaching-u01-09-q3@2: Why does redundant guidance increase load for more expert learners? | They must process and reconcile information they already have, using working memory without new learning | Experts have smaller working memories | Guidance usually contains small errors that only more expert learners notice | More expert learners are less motivated than novices by guided tasks | The guidance duplicates schemas already in long-term memory, so processing it is extraneous for them.
 TF2#teaching-u01-09-q4@1,2: The expertise reversal effect means worked examples should never be used with older pupils. | false | It depends on expertise with the specific material, not age: an older pupil new to a topic is a novice.
 SA3#teaching-u01-09-q5@1,3: Explain how the expertise reversal effect should influence the way a teacher plans support across a sequence of lessons. | Early in a sequence pupils are novices, so high guidance (worked examples, step prompts, integrated diagrams) reduces load and builds schemas. As accuracy grows, the same guidance becomes redundant and adds load, so the teacher fades it: completion problems, then independent practice, with checks such as hinge questions to judge readiness, and continued support for pupils who still need it. | Describes the effect ; Explains redundancy and load ; Plans high guidance early ; Plans fading as expertise grows ; Mentions checking readiness or differing needs
+Q: Who described the expertise reversal effect, and when? | Kalyuga, Ayres, Chandler and Sweller (2003).
+Q: What kind of practice is the better use of working memory for more expert learners? | Practice that requires retrieval and application.
+Q: Describe the sequence of support as accuracy rises. | Move from worked examples to completion problems to independent problems.
+Q: Define a completion problem. | A partly worked example that the learner finishes.
+Q: How should a teacher check before fading support? | Use hinge questions or quick problems to see who is ready.
+Q: What effect can detailed explanations and step-by-step prompts have on confident pupils? | They may irritate and slow them; such pupils should be allowed to skip ahead to problems.
+Q: In the Year 12 moles example, how did the teacher adapt by lesson three? | Set problems straight away, with a worked example available on a card for the few who needed it.
+Q: Name three techniques besides worked examples that have shown expertise reversals. | Integrated diagrams with text, detailed instructions and step prompts.
+Q: Why does the ITTECF stress increasing independence, in light of expertise reversal? | Because support suited to novices can hinder more knowledgeable learners, so scaffolds are meant to be temporary.
+Q: What practical difficulty with the expertise reversal effect remains contested? | Judging reliably, in a busy classroom, the point at which a pupil has enough expertise for support to be withdrawn.
 
 ## Split attention and redundancy
 LV: Introductory · Application
@@ -407,6 +497,16 @@ M2#teaching-u01-10-q2@2: A trainee reads every word of her slides aloud. Which e
 M3#teaching-u01-10-q3@3: Which redesign of a cluttered science worksheet best applies both principles? | Label the diagram directly, place the explanation beside each step, and cut the background story | Add a second copy of the diagram so pupils can compare | Put all the text on a separate sheet to keep the diagram clear | Add cartoons to make the worksheet more engaging | Integration removes split attention; cutting the story removes redundancy and seductive detail. Separating text creates split attention; cartoons add irrelevant load.
 TF2#teaching-u01-10-q4@1: Split attention occurs whenever two sources of information appear on the same page. | false | It occurs only when the sources must be mentally combined to be understood.
 SA2#teaching-u01-10-q5@2,3: Describe how you would redesign a slide that has a diagram, a separate key, a long paragraph and decorative clip art, explaining the effects you are addressing. | Label the diagram directly to remove the separate key, addressing split attention; remove or shorten the paragraph and explain verbally instead, addressing redundancy if it would otherwise be read aloud; remove the decorative clip art as a seductive detail. Each change reduces extraneous load, leaving working memory for the content. | Integrates labels into the diagram ; Removes or shortens text, explaining verbally ; Removes decoration ; Names split attention and redundancy correctly ; Links changes to reduced load
+Q: What did Chandler and Sweller (1991) find about integrating text into a diagram? | Placing each explanation next to the part it describes improved learning.
+Q: When does the split-attention effect not apply? | When sources each make sense alone, such as a photo and caption, so they need not be combined to be understood.
+Q: Define the redundancy effect. | Reduced learning when the same or unnecessary information is presented alongside what is needed.
+Q: Why does reading slide text aloud interfere with learning? | Pupils try to read and listen at once, and the two streams interfere.
+Q: Define seductive details. | Interesting but irrelevant content that draws attention away from the material to be learned.
+Q: Where should worked solutions be placed relative to the problem? | Beside it, not below it or on another page.
+Q: How should diagrams be labelled to avoid split attention? | Directly, rather than with a separate key.
+Q: In the heart diagram example, what was the redesign? | Label the chambers and vessels directly, add arrows for blood flow, and narrate while pointing, with no paragraph on screen.
+Q: What belief about information does the lesson identify as a pitfall? | That more information is more helpful; for novices, extra or duplicated information can reduce learning.
+Q: When might on-screen text alongside narration still be justified? | Brief on-screen key words, and support for pupils with hearing or language needs.
 
 ## Dual coding
 LV: Introductory · Application
@@ -445,6 +545,16 @@ M2#teaching-u01-11-q2@2: Which is the best example of dual coding in a lesson? |
 M3#teaching-u01-11-q3@3: A colleague says dual coding proves that visual learners should be taught with pictures. What is the best reply? | Dual coding helps all pupils, and matching teaching to learning styles has not been shown to work | Dual coding works only for visual learners, so they should be identified first | Visual learners should be taught mainly with text, to challenge their weaker style | Learning styles and dual coding are the same idea | The theory concerns how all minds process information. Pashler et al. (2008) found no good evidence for the meshing hypothesis behind learning styles.
 TF1#teaching-u01-11-q4@2: Adding decorative clip art to slides is a form of dual coding. | false | Dual coding needs a visual that represents the content; decoration adds extraneous load.
 SA3#teaching-u01-11-q5@2,3: Explain how a teacher could use dual coding in a lesson in their subject, and why it supports learning. Distinguish it from learning styles. | A teacher builds a diagram, timeline or flow chart live while narrating, pointing to each part, then asks pupils to redraw it from memory. It supports learning because verbal and visual information use connected systems, giving two routes to recall and spreading load across visual and verbal channels. Unlike learning styles, it is used with all pupils, not matched to supposed preferences, which evidence does not support. | Gives a concrete subject example ; Integrates narration with the visual ; Explains two connected systems or channels ; Distinguishes from learning styles with evidence
+Q: Why are concrete words such as elephant easier to remember than abstract words, according to Clark and Paivio (1991)? | Partly because they are easily imagined, so they can be encoded both verbally and as images.
+Q: Why does encoding information both verbally and visually help recall? | It gives two routes to recall.
+Q: What does Mayer's multimedia work add to dual coding theory? | People learn more deeply from words and pictures than from words alone, provided the materials are well designed.
+Q: Why can a narrated diagram avoid overloading working memory? | Working memory has partly separate capacity for visual and verbal information, so narration and diagram use both channels.
+Q: Which graphic organiser does the lesson suggest for each of processes, chronology and comparison? | Flow charts for processes, timelines for chronology and Venn diagrams for comparison.
+Q: What does narrate, don't caption mean? | Explain a diagram aloud while pointing, rather than adding paragraphs of text to it.
+Q: Why build a diagram live while explaining? | So pupils see how the parts relate step by step.
+Q: Why is asking pupils to turn text into a diagram valuable? | It is a generative activity.
+Q: In the English Civil War example, how did the lesson combine retrieval with dual coding? | Pupils later redrew the diagram of religion, money and power from memory, adding one event under each heading.
+Q: What did Pashler et al. (2008) find about learning styles? | Matching instruction to a pupil's supposed learning style does not improve learning.
 
 ## Retrieval practice
 LV: Introductory · Application
@@ -490,6 +600,16 @@ M2#teaching-u01-12-q2@3: Which starter activity best uses retrieval practice? | 
 M3#teaching-u01-12-q3@2,3: A school publishes weekly retrieval quiz scores on a league table. What is the main risk? | Raising the stakes turns a learning strategy into a source of anxiety and gaming | Pupils will retrieve too much information | Retrieval practice stops working after a few weeks | Quizzes become too easy | Retrieval works without high stakes; publishing scores adds pressure and can encourage cramming or copying without improving learning.
 TF2#teaching-u01-12-q4@2: Re-reading notes is generally more effective for long-term retention than testing yourself on them. | false | Dunlosky et al. (2013) rated re-reading low utility and practice testing high utility.
 SA3#teaching-u01-12-q5@2,3: Explain why retrieval practice is effective and describe how you would build it into a sequence of lessons. | Retrieving information strengthens the memory and the cues to it, especially when retrieval is effortful after some forgetting; it also exposes gaps and reduces the illusion of knowing. In practice: short low-stakes quizzes at the start of lessons mixing recent and older content, free-recall brain dumps, mini-whiteboards so every pupil answers, and quick feedback on correct answers, with results used to decide what to revisit. | Explains strengthening of memory through retrieval ; Mentions effort or desirable difficulty ; Plans low-stakes, regular retrieval for all pupils ; Includes mixing older material ; Includes feedback or use of results
+Q: Describe what Roediger and Karpicke (2006) found after five minutes. | The restudy group did slightly better than the group that took recall tests.
+Q: What did Karpicke and Blunt (2011) find? | Retrieval practice produced better learning than elaborative concept mapping, even on inference questions.
+Q: How did Dunlosky et al. (2013) rate re-reading and highlighting? | Low utility, despite being the strategies students use most.
+Q: Why does effortful retrieval after some forgetting help more than easy retrieval? | It produces larger gains, making it a desirable difficulty.
+Q: Define the illusion of knowing. | Mistaking familiarity with material, for example after re-reading, for the ability to recall it.
+Q: Why should retrieval practice be low-stakes? | Its purpose is learning, so scores need not be recorded and anxiety should be kept low.
+Q: Why should feedback follow retrieval practice promptly? | So that errors are not strengthened.
+Q: What should a retrieval quiz mix, beyond last lesson's content? | Material from last week, last month and last term.
+Q: Distinguish free recall from cued recall in retrieval practice. | Free recall asks pupils to write everything they know about a topic; cued recall uses short-answer or multiple-choice questions.
+Q: What remains contested about retrieval practice? | How much it transfers to complex, novel problems rather than the retrieved material itself.
 
 ## Spaced practice
 LV: Introductory · Application
@@ -532,6 +652,16 @@ M2#teaching-u01-13-q2@2: Why does spacing produce better retention than massed p
 M3#teaching-u01-13-q3@3: A department wants Year 11 to retain Year 10 content for the summer exam. Which plan best uses spacing? | Revisit Year 10 topics in starters and homework throughout Year 11, with cumulative tests | Reteach all Year 10 content in the final month before the exam | Test Year 10 content once at the end of Year 10 | Teach Year 11 content only, trusting pupils to revise | Regular, spread revisiting across the year applies spacing; a final cram is massed practice.
 TF2#teaching-u01-13-q4@2: Pupils usually feel that massed practice works better than spaced practice, even when it does not. | true | Massed practice feels fluent and produces quick gains, creating an illusion of mastery (Soderstrom and Bjork, 2015).
 SA2#teaching-u01-13-q5@2,3: Describe how you would build spaced practice into a term's teaching, and explain why it works. | Plan lesson starters that revisit content from earlier weeks and previous units, set homework that mixes old and new topics, include earlier content in cumulative assessments, and schedule returns to key concepts with increasing gaps. It works because partial forgetting between sessions makes retrieval effortful, strengthening memory, and varied sessions give more retrieval cues. | Plans revisiting in starters or homework ; Includes cumulative assessment or increasing gaps ; Explains effortful retrieval after forgetting ; Contrasts with massed practice
+Q: Who first reported the spacing effect, and when? | Ebbinghaus, in 1885.
+Q: What did Cepeda et al.'s (2006) meta-analysis confirm? | That spaced practice beats massed practice for later recall, across hundreds of experiments.
+Q: What gap, as a share of the retention interval, often works well (Cepeda et al., 2008)? | Around 10 to 20% of the retention interval.
+Q: Define the retention interval. | The time between the last study session and the test.
+Q: Define massed practice. | Practising the same material repeatedly in one block, as in cramming.
+Q: Give three reasons spacing works. | Each return requires effortful retrieval of partly forgotten material; different sessions link material to varied contexts and cues; and massed practice's fluent feeling fades quickly.
+Q: Name four ways to plan spacing into teaching. | Lesson starters revisiting older content, homework on older topics, curriculum design returning to core concepts, and cumulative assessments.
+Q: What do cumulative assessments signal to pupils? | That earlier content still matters.
+Q: In the French vocabulary example, how did Class B's practice differ from Class A's? | Four 15-minute sessions, one a week over a month, instead of one 60-minute lesson, with the same total time.
+Q: What pitfall of unit planning does the spacing lesson warn against? | Teaching a unit, testing it at the end and never returning to it, so much is forgotten by year end.
 
 ## Interleaving
 LV: Intermediate · Application
@@ -571,6 +701,16 @@ M2#teaching-u01-14-q2@2: Why might pupils do worse during interleaved practice y
 M3#teaching-u01-14-q3@3: When is blocked practice the better choice? | When pupils are first learning a new method | When pupils already know several confusable methods | When preparing for a mixed exam paper | When revising topics from last term | Novices need to build the schema for each method first; interleaving is for practising selection among known methods.
 TF2#teaching-u01-14-q4@1,2: Learners usually recognise that interleaving helped them more than blocking. | false | In Kornell and Bjork (2008) most learners believed blocking helped more, though interleaving produced better results.
 SA3#teaching-u01-14-q5@2,3: A colleague says interleaving is always better than blocking. Evaluate this claim. | Interleaving improves later performance for confusable problem types because pupils must identify the problem type, and it adds spacing. But it is harder during practice and is not suited to first learning a method, when blocked practice with worked examples builds the schema. It also gives little benefit when mixing unrelated topics. So the best sequence is to block when introducing methods, then interleave once pupils can do each. | Explains the benefit of interleaving for discrimination ; Cites evidence such as Rohrer and Taylor ; Notes that it feels harder in practice ; Explains that blocking suits initial learning ; Reaches a judgement about sequencing
+Q: Define blocked practice. | Practising one type of problem or skill at a time before moving to the next.
+Q: What did Rohrer and Taylor (2007) find with volumes of solids? | Blocked practice did better during practice, but interleaved practice scored much higher on a test a week later.
+Q: What did Kornell and Bjork (2008) find about learning painters' styles? | Mixing different artists' examples helped identify new paintings, though most participants believed blocking had helped them more.
+Q: Define discrimination in the context of interleaving. | Recognising which category a problem belongs to and therefore which method it needs.
+Q: How does seeing categories side by side help learning? | The contrast highlights the features that distinguish them.
+Q: Why does interleaving include a spacing benefit? | Mixing types also spaces out practice of each type.
+Q: Which types of problem benefit most from being interleaved? | Types that are easily confused: similar-looking problems that need different methods.
+Q: What benefit comes from interleaving very different topics with nothing in common? | Little benefit.
+Q: In the Year 9 area example, what happened in lesson 4? | Pupils did 15 mixed problems choosing a formula first; errors were higher initially, but a test two weeks later showed better formula selection.
+Q: What is contested about interleaving's evidence? | How well it generalises beyond mathematics and category learning, and how much is due to spacing rather than mixing.
 
 ## Elaboration and generative learning
 LV: Intermediate · Application
@@ -611,6 +751,16 @@ M2#teaching-u01-15-q2@2: A history teacher wants pupils to remember the causes o
 M3#teaching-u01-15-q3@3: Why might a generative "explain why" task fail with a class new to a topic? | Without relevant knowledge, pupils cannot build an explanation and working memory is overloaded | Generative tasks only work with older pupils who can already write fluently | Explaining always produces misconceptions | Pupils remember less of what they generate than of what they are told | Generative strategies rely on prior knowledge to connect to. Novices need teaching first; age is not the issue.
 TF1#teaching-u01-15-q4@1: Craik and Lockhart proposed that processing material for meaning tends to produce more durable memories than attending to its surface features. | true | That is the levels of processing framework (1972).
 SA3#teaching-u01-15-q5@2,3: Evaluate the use of generative learning strategies such as self-explanation and summarising in the classroom. | They make pupils select, organise and integrate information, so they process meaning deeply and remember more, supported by the generation effect and Fiorella and Mayer's review. However, they depend on prior knowledge; novices can be overloaded or generate errors, and summarising is only useful when pupils know how to do it well. They work best after explicit teaching, with feedback to correct weak explanations. | Explains deep processing or the generation effect ; Cites evidence ; Notes dependence on prior knowledge ; Identifies risk of overload or errors ; Recommends use after teaching with feedback
+Q: What did Craik and Lockhart (1972) propose about memory? | Memory depends on depth of processing: thinking about meaning produces more durable memories than attending to surface features.
+Q: Define elaboration. | Connecting new information to existing knowledge, for example by asking and answering why it is true.
+Q: How did Dunlosky et al. (2013) rate elaborative interrogation and self-explanation? | As moderate-utility techniques.
+Q: Who identified the generation effect, and when? | Slamecka and Graf (1978).
+Q: Name the eight generative learning strategies reviewed by Fiorella and Mayer (2016). | Summarising, mapping, drawing, imagining, self-testing, self-explaining, teaching others and enacting.
+Q: What three processes do generative strategies ask learners to carry out? | Select, organise and integrate information.
+Q: Give an example of a transform task. | Turning a paragraph into a diagram, or a timeline into a paragraph.
+Q: In the Haiti earthquake example, what did pupils have to connect to answer the why question? | Plate boundaries, building quality, poverty and emergency response.
+Q: Why should a generative task not be set before pupils have enough knowledge? | Novices with nothing to draw on guess and become overloaded; teach first, then elaborate.
+Q: On what do the benefits of generative strategies in real classrooms depend? | On pupils' prior knowledge and on pupils doing the strategy well.
 
 ## Forgetting and desirable difficulties
 LV: Intermediate · Evaluation
@@ -655,6 +805,16 @@ M2#teaching-u01-16-q2@2: Which is a desirable difficulty? | Recalling a process 
 M3#teaching-u01-16-q3@3: A trainee sets Year 7 a problem using a method they haven't been taught, citing "desirable difficulties". What is the best evaluation? | It is not desirable, because pupils lack the knowledge to succeed with effort | It is desirable, because all struggle aids learning | It is desirable as long as the problem is long | It is undesirable only if pupils complain | Bjork stresses that a difficulty is desirable only when learners can respond to it successfully. Without the method, pupils can only guess.
 TF2#teaching-u01-16-q4@1: Forgetting is often a failure to retrieve a memory rather than the memory being erased. | true | Much forgotten information can be relearned faster (savings) or recalled with better cues, showing it was still stored.
 SA3#teaching-u01-16-q5@2,3: Explain the difference between storage strength and retrieval strength, and use it to evaluate a revision strategy based on re-reading notes. | Storage strength is how well information is embedded in long-term memory; retrieval strength is how easily it can be accessed now. Re-reading keeps retrieval strength high during study, so it feels fluent, but adds little storage strength. Retrieval practice and spacing make access harder at the time but increase storage strength. Re-reading is therefore a weak strategy compared with self-testing spaced over time, though it can help if followed by retrieval. | Defines storage strength ; Defines retrieval strength ; Explains why re-reading feels effective ; Contrasts with desirable difficulties ; Reaches a judgement
+Q: How did Ebbinghaus (1885) measure forgetting? | He learned lists of nonsense syllables and measured how much effort it took to relearn them after different delays.
+Q: What did Murre and Dros (2015) do? | They replicated Ebbinghaus's forgetting curve findings closely.
+Q: How does forgetting of meaningful material compare with forgetting of nonsense syllables? | Meaningful material is forgotten more slowly, but the curve has a similar shape.
+Q: Name two factors that make retrieval harder and cause forgetting. | Interference from similar learning and changes of context.
+Q: Define retrieval strength, as distinct from storage strength. | How easily information can be accessed now, as opposed to how well it is embedded in long-term memory.
+Q: Why do massed practice and re-reading feel effective yet build little lasting learning? | They keep retrieval strength high during practice but build little storage strength.
+Q: Name the four desirable difficulties listed in the lesson. | Retrieval rather than re-reading, spacing rather than massing, interleaving rather than blocking, and varying the conditions and examples of practice.
+Q: In the Krebs cycle example, what did Option B involve? | Drawing the cycle from memory, checking against the diagram, correcting, and repeating a week later.
+Q: Name three examples of undesirable difficulties. | Problems far beyond pupils' knowledge, confusing instructions and extraneous load.
+Q: Why does Rosenshine recommend a high success rate, in light of desirable difficulties? | Retrieval should be effortful but achievable, since difficulties are desirable only when learners can respond to them successfully.
 
 ## Motivation and self-efficacy
 LV: Intermediate · Application
@@ -693,6 +853,16 @@ M2#teaching-u01-17-q2@2: A teacher wants to support pupils' sense of autonomy wi
 M3#teaching-u01-17-q3@3: Garon-Carrier et al. (2016) found that earlier maths achievement predicted later intrinsic motivation, but not the reverse. What does this suggest for teaching? | Helping pupils succeed may be one of the best ways to build their motivation | Motivation must be fixed before teaching can begin | Motivation has no relationship with achievement | Pupils who are not motivated cannot learn maths | If success leads to motivation, designing for success is a route to motivation. The study does not show motivation is irrelevant.
 TF2#teaching-u01-17-q4@1: Praise and encouragement are the most powerful way to raise a pupil's self-efficacy. | false | Verbal persuasion is weaker than mastery experience; praise without real success is often discounted.
 SA3#teaching-u01-17-q5@2,3: Evaluate the view that teachers must motivate pupils before they can teach them. | Motivation matters for effort and persistence, and self-determination theory suggests supporting autonomy, competence and relatedness. But the relationship is not one-way: self-efficacy grows mostly from mastery experiences, and longitudinal evidence suggests achievement predicts later motivation. So teaching that produces genuine success at challenging work is itself a strong motivator; waiting for motivation before teaching may be counterproductive. | Explains why motivation matters ; Uses self-efficacy or SDT ; Cites evidence that success builds motivation ; Notes that the link may be reciprocal ; Reaches a balanced judgement
+Q: Define self-efficacy, as Bandura (1977) did. | A person's belief in their capability to succeed at a specific task.
+Q: What does self-efficacy predict? | Effort, persistence and choice of challenge.
+Q: Which of Bandura's sources of self-efficacy is the strongest? | Mastery experiences: actual success.
+Q: Define vicarious experience as a source of self-efficacy. | Seeing similar others succeed.
+Q: What does the ITTECF Standard 1 say teachers can affect? | The wellbeing, motivation and behaviour of their pupils.
+Q: When do high expectations work, according to the lesson? | When pupils also experience success that makes the goals believable.
+Q: According to self-determination theory, what happens when the three needs are supported? | Motivation becomes more internalised, moving from external pressure towards personal value.
+Q: Name four classroom implications of self-determination theory. | Explaining why work matters, offering meaningful choices, giving feedback that builds competence, and warm relationships.
+Q: In the Year 8 fractions example, what did the teacher praise after the pupil got eight of ten right? | The strategy he used, not that he was clever.
+Q: What have large trials found about growth mindset interventions? | Small average effects, sometimes larger for lower-achieving groups, and in some trials none.
 
 ## Metacognition and self-regulated learning
 LV: Intermediate · Application
@@ -730,6 +900,16 @@ M2#teaching-u01-18-q2@3: Which approach does the EEF guidance most support for d
 M3#teaching-u01-18-q3@2: During independent work a pupil stops, rereads a question and says "I've answered a different question from the one asked". Which part of the cycle is this? | Monitoring | Planning | Evaluating | Memorising | Checking understanding and progress during a task is monitoring; planning comes before and evaluating after.
 SEQ1#teaching-u01-18-q4@1: Put the stages of metacognitive regulation in order. | Plan the approach ; Monitor progress during the task ; Evaluate the outcome afterwards | Regulation moves from planning, through monitoring during the task, to evaluation after it.
 SA3#teaching-u01-18-q5@2,3: Plan how you would explicitly teach a metacognitive strategy for a task in your subject, following the EEF's guidance. | Choose a task such as solving a multi-step problem or planning an essay. Activate prior knowledge; explicitly name the strategy (e.g. plan-monitor-evaluate questions); model it by thinking aloud on an example, including monitoring an error; provide guided practice with prompts; reduce prompts in independent practice; finish with structured reflection on what worked. Keep it within subject content and at an appropriate level of challenge. | Names a subject task and strategy ; Includes explicit teaching and modelling by thinking aloud ; Includes guided then independent practice ; Includes reflection or evaluation ; Keeps it subject-specific with appropriate challenge
+Q: Who introduced the term metacognition, and how did he define it? | Flavell (1979), as knowledge and regulation of one's own thinking.
+Q: Name the three areas metacognitive knowledge covers. | Knowledge of oneself as a learner, of tasks and of strategies.
+Q: Give a question a pupil asks at each stage of the plan, monitor, evaluate cycle. | Plan: what is the goal and which strategy? Monitor: is this working, do I understand? Evaluate: how well did it go, what would I change?
+Q: What cycle did Zimmerman (2002) describe? | Forethought, performance and self-reflection.
+Q: How is metacognition best taught, according to the lesson? | Explicitly within subjects, by modelling how an expert plans, monitors and evaluates a specific task.
+Q: How does the EEF Toolkit rate metacognition and self-regulation? | High impact for very low cost.
+Q: Name four of the EEF's recommendations on metacognition for teachers. | Explicitly teach metacognitive strategies, model their own thinking, set an appropriate level of challenge, and promote metacognitive talk in the classroom.
+Q: List the stages of the EEF's seven-step model. | Activating prior knowledge, explicit strategy instruction, modelling, memorisation of the strategy, guided practice, independent practice and structured reflection.
+Q: In the Year 6 persuasive letter example, how did the teacher model monitoring? | Midway through, she noticed a paragraph had no evidence and fixed it.
+Q: Why do standalone learning to learn lessons rarely work? | Strategies taught in the abstract rarely transfer; they should be taught in the context where they will be used.
 
 ## Learning styles and other neuromyths
 LV: Introductory · Evaluation
@@ -771,4 +951,14 @@ M2#teaching-u01-19-q2@2,3: A colleague suggests giving "kinaesthetic learners" a
 M3#teaching-u01-19-q3@3: A programme claims to raise attainment by "balancing the left and right hemispheres". What should a teacher look for first? | Evidence from a controlled trial comparing it with normal teaching | Positive testimonials from schools that already use it | Whether the programme explains itself with brain diagrams | How many schools have bought it | Comparative evidence is the test of an intervention's impact; testimonials, diagrams and sales are not. The hemisphere claim itself is a neuromyth.
 TF1#teaching-u01-19-q4@1: People can be classified as left-brained or right-brained learners, and this affects how they should be taught. | false | Some functions are lateralised, but there is no evidence for dominant-hemisphere learner types.
 SA3#teaching-u01-19-q5@2,3: Explain why the learning styles myth is so widespread among teachers, and how a teacher could evaluate similar claims. | It distorts a real observation (people have preferences, content suits different modes), offers a simple and appealing solution, has been commercially promoted, and fits the intuition that pupils differ. Dekker et al. found it common even among teachers interested in neuroscience. To evaluate claims, a teacher should ask for comparative evidence such as randomised trials, check sources like the EEF Toolkit, be wary of neuroscience language and testimonials, and judge whether effect sizes are plausible. | Gives reasons the myth spreads ; Cites evidence of prevalence ; Proposes seeking comparative evidence ; Mentions caution about brain language or testimonials ; Mentions a trustworthy source such as the EEF
+Q: Name the three styles in the VAK model of learning styles. | Visual, auditory and kinaesthetic.
+Q: What study design did Pashler et al. (2008) say would be needed to support learning styles? | Pupils classified by style, randomly assigned to matched or mismatched teaching, with a crossover interaction where each group does best with its own style.
+Q: When does it make sense to choose a mode of teaching, according to the learning styles lesson? | When it suits the content, such as a map for a coastline, not the learner's supposed style.
+Q: How can teaching matched to learning styles limit pupils? | It wastes time and can lead pupils to believe they cannot learn in other ways, such as from reading.
+Q: What evidence counters the myth that we only use 10% of our brains? | Imaging shows activity across virtually the whole brain.
+Q: What is the truth behind the left-brained and right-brained myth? | Some functions are lateralised, but people do not have a dominant hemisphere that determines how they learn.
+Q: What is the evidence on Brain Gym? | Claims that specific movements improve brain integration lack support, though physical activity and breaks can help attention.
+Q: What is the truth behind the critical periods myth? | Sensitive periods exist for some abilities, such as aspects of vision and language, but the brain stays plastic and pupils can learn throughout school.
+Q: Give Howard-Jones's (2014) three reasons that neuromyths spread. | They distort a real finding, offer simple solutions and are promoted commercially.
+Q: Name three questions to ask of a programme claiming to rewire the brain. | Whether there is a randomised trial with a comparison group; whether the neuroscience language does real work; and whether the effect size is plausible.
 `;

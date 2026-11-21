@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 151" width="380" height="151" role="img" aria-label="Two resonance structures of ethanoate joined by a double-headed arrow." style="color:var(--vx-ink, #151826);font-family:inherit;max-width:100%;height:auto"><g transform="translate(85.0 16.0) scale(1.000)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 168" width="380" height="168" role="img" aria-label="Two resonance structures of ethanoate joined by a double-headed arrow." style="color:var(--vx-ink, #151826);font-family:inherit;max-width:100%;height:auto"><g transform="translate(85.0 16.0) scale(1.000)">
 
 <path d='M 34.8,48.7 L 47.2,41.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path d='M 48.6,42.5 L 48.7,35.4' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -232,4 +232,4 @@ L 26.5 21.3
 L 22.6 21.3
 L 22.6 20.5
 ' fill='var(--vx-o, #DB2633)'/>
-</g><text x="190.0" y="129.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">Both C–O bonds 0.127 nm, between C=O (0.123) and C–O (0.143)</text></svg>
+</g><text x="190.0" y="129.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">Both C–O bonds 0.127 nm, between C=O (0.123) and C–O</text><text x="190.0" y="146.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">(0.143)</text></svg>

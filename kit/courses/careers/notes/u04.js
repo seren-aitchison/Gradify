@@ -38,6 +38,16 @@ M2#careers-u04-01-q2@2: Which contact is most likely to tell a student about an 
 TF1#careers-u04-01-q3@1: Good networking is reciprocal: you offer help and information as well as asking for it. | true | Relationships last when both sides benefit, for example by sharing articles, introductions or help.
 M3#careers-u04-01-q4@3: Which is the strongest reason networks contribute to unequal access to professional careers? | Opportunities shared informally reach those already connected to professionals | Employers are legally required to recruit only through personal networks | People from professional families are always better qualified than others | Networking events are banned for students at most UK universities | Informal sharing advantages those whose strong and weak ties already include professionals, which access schemes try to counter.
 SA3#careers-u04-01-q5@2,3: Using the idea of weak ties, explain why a student should build a professional network and how they could start. | Granovetter found job information often comes from acquaintances, because they link to different circles; a 2022 LinkedIn experiment supported this. A student whose close contacts don't work in their field can gain new information and opportunities through weak ties. Start with alumni networks, lecturers, careers events, professional bodies' student membership, societies and LinkedIn; have short informational conversations; stay in touch and offer help in return. | Explains weak ties accurately ; Refers to supporting evidence ; Links to students without professional contacts ; Gives practical starting points ; Stresses reciprocity or maintenance
+Q: What is networking? | Building and maintaining relationships with people who can share information, advice, introductions and opportunities, and helping them in return.
+Q: Give three everyday examples of networking. | Talking to a lecturer about research, staying in touch with a former manager, helping a classmate and joining a professional body.
+Q: What two qualities mark good networking? | It is reciprocal and long-term.
+Q: Through which kind of tie did Granovetter find people more often heard about jobs? | Weak ties, acquaintances seen occasionally.
+Q: Why do strong ties offer less new information? | Close contacts tend to know the same people and information as you.
+Q: What did the 2022 LinkedIn experiment by Rajkumar and colleagues find? | Moderately weak ties were most likely to lead to job changes.
+Q: What is a bridge in a network? | A person linking otherwise separate groups, often the most valuable contact.
+Q: Which organisations have highlighted how networks help reproduce advantage? | The Social Mobility Commission and the Sutton Trust.
+Q: Name three schemes that aim to give everyone useful weak ties. | University alumni schemes, mentoring charities and employer access programmes.
+Q: How did Nadia find a summer research post? | Through a postdoc she met at a Royal Society of Chemistry student event, a weak tie.
 
 ## Building a network from where you are
 LV: Introductory · Application
@@ -78,6 +88,16 @@ M2#careers-u04-02-q2@2: A student interested in HR has no contacts in the field.
 TF1#careers-u04-02-q3@1: Lecturers can be useful networking contacts because many have links with industry and former students. | true | Academics often collaborate with employers, consult or keep in touch with alumni.
 M3#careers-u04-02-q4@3: Which approach best supports a shy, first-generation student in networking? | Small, structured steps such as one alumni conversation a fortnight with prepared questions | Attending large evening networking events every week with no preparation | Avoiding networking completely and relying only on online job applications | Asking every contact for a job as quickly as possible to save time | Small, prepared steps build confidence and contacts gradually; large unstructured events can overwhelm, and avoidance loses opportunities.
 SA3#careers-u04-02-q5@2,3: A student says she can't network because her family has no professional contacts. Explain how she could build a useful network. | Map existing contacts: lecturers, course mates, part-time job colleagues, friends' families, community groups; most people have some relevant links. Use university resources: careers service, alumni mentoring, employer events and access programmes. Join a professional body as a student and subject or career societies, perhaps with a committee role. Use LinkedIn to find alumni and request informational conversations. Take small regular steps, keep a record and follow up. | Challenges the assumption by mapping contacts ; Uses university and alumni resources ; Uses professional bodies or societies ; Uses online tools such as LinkedIn ; Recommends small regular recorded steps
+Q: Name four categories of contact to include in a network map. | Family, friends and their families, course mates, lecturers, work and volunteering colleagues, clubs and community groups, and online communities.
+Q: What should you note for each contact on a network map? | What they do, who they might know and what you could ask them.
+Q: Why are lecturers useful networking contacts? | They often have industry links and former students.
+Q: Name two professional bodies offering student membership. | The CIPD, the Royal Society of Chemistry and the Institution of Civil Engineers.
+Q: Why does a society committee role help networking? | It gives you a reason to contact employers.
+Q: What regular networking goals are suggested? | One new conversation a fortnight and one follow-up message a week.
+Q: How should you keep track of your networking? | A simple spreadsheet of who you met, what you discussed and when to follow up.
+Q: What is a professional body? | An organisation representing a profession, often setting standards and offering membership, events and qualifications.
+Q: What contacts did Marcus find through network mapping? | A lecturer who advised a parliamentary committee, a council contact via his uncle, and a former manager now a caseworker.
+Q: What did Marcus achieve within a term of networking? | Three informational conversations and an invitation to a think tank event.
 
 ## Careers fairs and networking events
 LV: Introductory · Application
@@ -119,6 +139,16 @@ M2#careers-u04-03-q2@2: After a good conversation at a fair, what is the best ne
 TF1#careers-u04-03-q3@1: Mentioning a conversation from a careers fair in an application can show genuine interest. | true | Recruiters often value specific evidence that a candidate engaged with the organisation.
 M3#careers-u04-03-q4@3: Which is the strongest evaluation of virtual careers fairs? | They widen access, but rapport and informal conversation are often weaker | They are always better than in-person fairs for every kind of student | They are useless because employers never recruit from virtual events | They only work for technology employers and not for any other sector | Virtual fairs remove travel costs and barriers, but many people find relationships harder to build online.
 SA3#careers-u04-03-q5@2,3: Plan how a student should prepare for and follow up a university careers fair. | Before: check the exhibitor list, choose five to eight priority employers including some less well known, research their business, roles and deadlines, prepare a 30-second introduction and specific questions, and bring a way to take notes. During: start with a warm-up stand, introduce yourself, ask questions, listen, note names and details, and ask to connect. After: follow up within two days with a specific message, connect on LinkedIn, record contacts, and use the insight in applications. | Researches and prioritises employers ; Prepares an introduction and specific questions ; Engages and records details ; Follows up promptly and specifically ; Uses insight in applications
+Q: Who usually staffs careers fair stands? | Recruiters and recent graduates.
+Q: What are careers fairs good for? | Comparing employers and asking about schemes.
+Q: Name three types of networking event besides careers fairs. | Employer presentations, sector panels, professional body events and virtual fairs.
+Q: How many employers should be on a careers fair priority list? | Five to eight.
+Q: What should you prepare for each priority employer at a fair? | Brief research, a 30-second introduction and two or three specific questions.
+Q: Why is "What does your company do?" a weak fair question? | You should have researched it first.
+Q: How should you end a conversation at a careers fair stand? | Thank them and ask if you may connect on LinkedIn.
+Q: Why did Hassan start with a lower-priority stand? | To warm up before his main conversations.
+Q: What did the engineering SME tell Hassan about its recruitment? | It recruits year-round, and suggested he email his CV.
+Q: Why is collecting freebies without talking to anyone a mistake? | An event's value is the conversations and contacts.
 
 ## Speculative approaches and follow-up
 LV: Intermediate · Application
@@ -158,6 +188,16 @@ M2#careers-u04-04-q2@2: Which cold message request is most likely to get a posit
 TF1#careers-u04-04-q3@2: After one polite follow-up with no reply, it's usually best to leave it rather than keep messaging. | true | Repeated messages can annoy; the person may be busy, and you can try other contacts.
 M3#careers-u04-04-q4@3: Which approach best balances persistence and respect? | One follow-up after a week, then move on, while trying other contacts | Daily messages until the person replies, to show strong motivation | No follow-up at all, because any second message is always rude | Messaging the person's colleagues to ask why they haven't replied | One follow-up shows interest without pressure; daily messages or contacting colleagues are intrusive, and no follow-up misses missed messages.
 SA3#careers-u04-04-q5@2,3: Write the plan for a cold approach to a professional in a field you're interested in, explaining each choice. | Choose a specific person found through alumni, an event or an article. Write a short message (under 150 words) with a clear subject line: who you are, a specific reason for contacting them, one small request such as a 15-minute call, flexibility and thanks. Check names and spelling and don't attach a CV. If no reply in a week, send one brief follow-up. If you speak, prepare questions, thank them within a day and close the loop later with an update. Each choice keeps the request easy to accept and builds a relationship. | Identifies a specific contact ; Includes the key message elements ; Keeps the request small and clear ; Plans one follow-up ; Plans thanks and closing the loop
+Q: How long should a cold message be? | Short, under 150 words.
+Q: When should you attach a CV to a cold message? | Only when asking about a specific opportunity.
+Q: Which cold message gets more replies, one asking for advice or one asking for a job? | One asking for advice.
+Q: What should you check before sending a cold message? | A clear subject line, spelling and names.
+Q: How many follow-ups should you send to an unanswered cold message? | One short, polite follow-up after about a week.
+Q: How soon should you thank someone after a networking conversation? | Within a day.
+Q: How can you keep contacts warm? | Occasional, genuine messages, such as congratulating a new role or sharing a relevant article.
+Q: What specific link did Ayesha mention in her message? | Dr Okafor's talk on accessibility testing at the UX Bristol meetup.
+Q: How does a single conversation become a relationship? | By closing the loop: updating the contact on what you did with their advice.
+Q: Why is asking a stranger for a referral a mistake? | A short request for advice is easier to say yes to and starts a relationship.
 
 ## Mentors and sponsors
 LV: Intermediate · Application
@@ -198,6 +238,16 @@ M2#careers-u04-05-q2@2: A senior partner recommends a junior lawyer for a major 
 TF1#careers-u04-05-q3@1: You can have more than one mentor at the same time. | true | Different mentors can support different needs, such as sector insight, skills or peer support.
 M3#careers-u04-05-q4@3: Which explains why sponsorship programmes are used to address inequality at work? | Under-represented groups may get advice but fewer senior advocates for promotion | Mentoring is illegal for employees from under-represented groups in the UK | Sponsors are needed because mentors are not allowed to give career advice | Promotion decisions in most organisations are made entirely at random | Research suggests a gap in advocacy rather than advice, so sponsorship programmes target access to senior champions.
 SA3#careers-u04-05-q5@2,3: Explain how a new graduate could find and make the most of a mentor, and why they might also need a sponsor later. | Find a mentor through the graduate scheme, a professional body, alumni or charities, or informally from a former manager or lecturer. Agree frequency and goals, prepare for each meeting, act on advice and report back, respecting time and confidentiality; consider several mentors for different needs. Later, progression depends on sponsors who advocate in decisions; earn sponsorship through visible, reliable work and relationships with senior people. Under-represented groups may need sponsorship especially. | Identifies sources of mentors ; Describes how to work with a mentor ; Distinguishes sponsorship ; Explains how sponsorship is earned ; Notes equality aspect
+Q: What is a coach? | Someone who helps you find your own answers through questions, often structured and time-limited.
+Q: When did Kathy Kram publish her research on mentoring functions? | In 1985.
+Q: Name three career functions of mentoring. | Coaching, exposure, protection, challenging assignments and sponsorship.
+Q: Name three psychosocial functions of mentoring. | Role modelling, acceptance, counselling and friendship.
+Q: Name three sources of formal mentoring schemes. | University alumni schemes, professional bodies, graduate schemes, and charities such as the Social Mobility Foundation and upReach.
+Q: How can you make a mentoring relationship work? | Agree frequency and topics, come prepared, act on advice and report back, and respect time and confidentiality.
+Q: What different mentors might one person have? | One for the sector, one for skills and a peer mentor at a similar stage.
+Q: Which groups are often well mentored but less often sponsored? | Women and people from ethnic minorities.
+Q: How is sponsorship earned? | Through visible, reliable performance and relationships with senior people.
+Q: Why should you not expect a mentor to find you a job? | Mentors help you think and learn; opportunities come from your own efforts and later from sponsors.
 
 ## Alumni networks
 LV: Introductory · Application
@@ -237,6 +287,16 @@ M2#careers-u04-06-q2@2: Which first line is best for a message to an alumnus? | 
 TF1#careers-u04-06-q3@1: LinkedIn's alumni tool lets users filter a university's graduates by where they work and what they do. | true | The tool on each university's LinkedIn page filters alumni by location, employer, function and subject.
 M3#careers-u04-06-q4@3: Which is the strongest criticism of alumni networks as a careers resource? | Universities with alumni in elite fields give their students an extra advantage | Alumni are never willing to help current students from their university | Using alumni networks breaks university rules for most UK students | Alumni networks only include people who graduated over thirty years ago | Alumni networks are useful, but they mirror inequalities between institutions in access to elite professions.
 SA3#careers-u04-06-q5@2,3: Explain how a student could use their university's alumni network to explore a career and why it is likely to work. | Search the alumni platform and LinkedIn's alumni tool by sector, employer, role and course; identify recent and senior graduates; send short messages mentioning the shared university and course, asking for brief advice; prepare questions; attend alumni events and panels; follow up and close the loop. It works because shared identity and loyalty make alumni willing to help, and alumni are weak ties connecting to new information. Give back after graduating. | Uses alumni platforms and LinkedIn tool ; Targets recent and senior graduates ; Mentions shared identity in messages ; Explains why alumni help ; Includes follow-up or giving back
+Q: What do university alumni relations offices run? | Online alumni platforms, mentoring schemes, careers events with alumni speakers and sector or regional groups.
+Q: Who else besides the central university may hold alumni events? | Departments and colleges.
+Q: By what can LinkedIn's alumni tool filter graduates? | Where they live, where they work, what they do and what they studied.
+Q: Why do messages mentioning a shared university get better responses? | Shared identity makes alumni more willing to help.
+Q: How should you open a message to an alumnus? | Mention the shared link in the first line.
+Q: What should you ask alumni for? | Insight and advice, not jobs.
+Q: How can you give back to an alumni network? | Once graduated, offer to speak, mentor or answer messages.
+Q: How should you use alumni events? | Attend panels and ask speakers for a follow-up conversation.
+Q: How many relevant alumni did Lucas find through LinkedIn? | 40, including six in offshore wind.
+Q: What skills did an alumna tell Lucas were in demand? | GIS skills.
 
 ## Building a LinkedIn profile
 LV: Introductory · Application
@@ -279,6 +339,16 @@ M2#careers-u04-07-q2@2: Which headline is most effective for a student seeking m
 TF1#careers-u04-07-q3@1: A LinkedIn profile can include projects and media that wouldn't fit on a two-page CV. | true | LinkedIn has space for projects, media and fuller descriptions, which suits a public, general profile.
 M3#careers-u04-07-q4@3: Which is the strongest reason to include keywords in a LinkedIn profile? | Recruiters search LinkedIn by skills and terms, so keywords make you findable | LinkedIn rejects any profile that contains fewer than twenty keywords | Keywords replace the need for any evidence of skills on the profile | Keywords make the profile look longer and therefore more impressive | Recruiters actively search for candidates, so relevant keywords increase visibility, though they still need evidence behind them.
 SA3#careers-u04-07-q5@2,3: Explain how a student's LinkedIn profile should differ from and relate to their CV. | Differences: the CV is tailored to each role and concise; LinkedIn is public, general and searchable, with room for a personal About section, projects, media and wider experience, and needs a photo and keyword-rich headline. Relationship: dates, titles and achievements must match, as recruiters compare them; both should tell the same career story. The profile should be updated alongside the CV and support applications rather than replace them. | Explains tailored versus general purposes ; Notes extra features of LinkedIn ; Stresses consistency of facts ; Mentions keywords or searchability ; Links both to a shared career story
+Q: What two ways do recruiters use LinkedIn? | To search for candidates by keywords, location and education, and to check candidates who have applied.
+Q: What kind of photo suits a LinkedIn profile? | A clear, friendly head-and-shoulders photo in plain surroundings.
+Q: Why include a photo on LinkedIn? | Profiles with photos are viewed far more often.
+Q: How should the About section be written? | As a short first-person summary in plain, natural language.
+Q: What should LinkedIn Experience entries include? | Jobs, internships, volunteering and society roles, each with a few achievement-focused lines.
+Q: What education details belong on a LinkedIn profile? | Degree, relevant modules, dissertation topic and grades if strong.
+Q: Why add skills to a LinkedIn profile? | Recruiters can search for them.
+Q: Name three extras that can strengthen a LinkedIn profile. | Projects, certifications, languages, honours and a custom profile URL.
+Q: How does a LinkedIn profile differ from a CV? | It is public, general and searchable, so it can be broader and more personal; a CV is tailored and usually two pages.
+Q: What skills did Jess add to her profile? | ArcGIS, QGIS, Python and stakeholder engagement.
 
 ## Using LinkedIn to research and connect
 LV: Intermediate · Application
@@ -320,6 +390,16 @@ M2#careers-u04-08-q2@2: Which connection request note is strongest? | Hi Sam, we
 TF1#careers-u04-08-q3@1: Studying the profiles of people in a target role can reveal common routes into it. | true | Career path research shows patterns in degrees, first jobs and skills that lead to a role.
 M3#careers-u04-08-q4@3: A student wants advice from a senior manager she hasn't met. What is the best approach? | A personalised request mentioning a shared link, then a brief message asking for advice | A blank connection request followed immediately by a request for a job referral | A message to the manager's whole team asking who can help her get a job | Repeated connection requests until the manager finally accepts one | A shared link and a small, separate request for advice respect the person's time; demands and repeated requests do not.
 SA3#careers-u04-08-q5@2,3: Explain how a student could use LinkedIn to research a career they know little about, and how to connect with people in it appropriately. | Use people search filtered by job title, location and university to find people in the role; study career paths for common degrees, first jobs and skills; follow company pages and groups for news; set job alerts. Connect with personalised notes mentioning a shared link such as alumni status or an event; after acceptance, ask for brief advice in a separate message; don't ask strangers for jobs; follow up and thank. | Uses people search and filters ; Analyses career paths ; Uses company pages or groups ; Writes personalised connection notes ; Asks for advice appropriately and follows up
+Q: What filters can LinkedIn people search use? | Job title, employer, location and school.
+Q: What can company pages on LinkedIn show? | Posts, news, employee numbers, where staff studied, and who works there.
+Q: How can LinkedIn groups and hashtags help? | They give sector discussions and news.
+Q: What extra information do LinkedIn job searches show? | Who at the employer you're connected to.
+Q: When should you connect with people you've met? | Straight after meeting them.
+Q: What helps a connection request to a stranger succeed? | A shared link, such as alumni, a talk they gave or a mutual contact.
+Q: Why is "I'd like to add you to my professional network" a weak note? | It is generic and gives no reason or personal link.
+Q: After a contact accepts your connection request, how should you ask for a conversation? | In a separate message asking for advice; accepting a connection is not agreeing to a conversation.
+Q: What common route into data science did Theo find? | A physics degree, a Python-heavy project or master's, then a graduate analyst role.
+Q: Why is sending hundreds of blank requests a mistake? | They are often ignored and can make your profile look like spam.
 
 ## Content, engagement and visibility
 LV: Intermediate · Application
@@ -359,6 +439,16 @@ M2#careers-u04-09-q2@2: Which post about a placement is most appropriate? | What
 TF1#careers-u04-09-q3@1: Posts on professional platforms such as LinkedIn may be seen by recruiters. | true | Public posts form part of your professional reputation and can be viewed by recruiters and employers.
 M3#careers-u04-09-q4@3: Which is the most balanced view of building online visibility as a student? | Useful in some fields if specific and professional, but optional in many | Essential for every student, since recruiters reject anyone who doesn't post | Always harmful, because recruiters dislike candidates who post anything | Only valuable when posts receive many thousands of likes and shares | Visibility helps in some sectors and for networking, but isn't required everywhere; quality and professionalism matter more than volume.
 SA3#careers-u04-09-q5@2,3: Evaluate whether students should post content on LinkedIn to improve their career prospects. | Benefits: visibility to recruiters and professionals, relationships through engagement, evidence of interest and commercial awareness, and a showcase for projects; especially valuable in marketing, tech and media. Risks and limits: public and permanent, potential confidentiality or professionalism problems, time-consuming, unnecessary in some sectors, and uncomfortable for some. Commenting and sharing thoughtfully may achieve much of the benefit. Judgement: worthwhile if done selectively and professionally, depending on the field. | Identifies visibility and relationship benefits ; Notes sector variation ; Identifies risks of permanence or confidentiality ; Suggests lower-effort engagement ; Reaches a supported judgement
+Q: Why follow organisations and people on LinkedIn? | To stay informed about your field.
+Q: How do comments help you get noticed? | Comments are seen by the post's author and their network.
+Q: How should you share an article on LinkedIn? | Repost it with two or three sentences on why it matters.
+Q: Name three things a student could post about. | A project, an event attended, something learned on a placement or a reflection on a sector issue.
+Q: What three qualities make content valuable? | It is specific, useful or thoughtful.
+Q: How does commercial awareness show naturally on LinkedIn? | By commenting on news affecting your target sector.
+Q: What risks does online visibility carry? | Posts are public and permanent, recruiters may read them, and opinions about employers or colleagues can cause problems.
+Q: What must you never share from a placement? | Confidential information.
+Q: How should students handle their genuine views online? | Express them respectfully; there is no need to hide them, but avoid controversy for its own sake.
+Q: What made Aaron's post about the AI talk strong? | It thanked the speaker by name, gave a key takeaway and said what he would do next.
 
 ## Managing your digital footprint
 LV: Introductory · Application
@@ -399,6 +489,16 @@ M2#careers-u04-10-q2@2: What is the best first step in auditing your digital foo
 TF1#careers-u04-10-q3@2: Under the Equality Act 2010, an employer may lawfully reject a candidate because their social media reveals their religion. | false | Religion or belief is a protected characteristic, so rejecting someone because of it is unlawful discrimination.
 M3#careers-u04-10-q4@3: Which is the strongest criticism of employers screening candidates' social media? | It risks bias from irrelevant or protected information unrelated to the role | It always reveals that candidates are unsuitable for most jobs | It is the only reliable way to assess any candidate's skills | It is banned outright for all UK employers in every situation | Screening can expose information about protected characteristics or irrelevant past behaviour, risking unfair decisions, which is why it should be limited and transparent.
 SA3#careers-u04-10-q5@2,3: Explain how a final-year student should manage their digital footprint before applying for graduate jobs. | Search their name signed out, including images and with location or university; review all platforms for public content; set personal accounts to private and control tagging; delete or archive offensive, discriminatory or unprofessional content and ask friends to remove problem photos; build positive content such as a complete LinkedIn profile, portfolio or projects. Understand that employers mustn't discriminate on protected characteristics and should be transparent under data protection law, but content can still shape impressions. | Searches themselves as an employer would ; Reviews privacy and tagging settings ; Removes harmful content ; Builds positive content ; Refers to legal protections accurately
+Q: What is a digital footprint? | The trail of information about a person online, both shared by them and published by others.
+Q: In which roles are employers especially likely to check social media? | Roles involving public trust, children or vulnerable people, or the employer's reputation.
+Q: How should you search yourself online? | Your name in a search engine while signed out, with your university or town, and check images.
+Q: What privacy settings should you check? | Restrict personal accounts to friends and check who can tag you.
+Q: What content should you remove in a digital footprint clean-up? | Offensive or discriminatory content, illegal activity, and criticism of employers or colleagues.
+Q: How can you build positive online content? | A complete LinkedIn profile, a portfolio, a blog or projects that appear high in searches.
+Q: What does data protection law expect of employers who screen social media? | Transparency with candidates, a legitimate reason and checks limited to what is relevant to the role.
+Q: Which laws govern employers' use of candidates' personal data? | UK GDPR and the Data Protection Act 2018.
+Q: Why isn't a private account fully safe? | Friends can share screenshots, tags may be public and old content can be cached.
+Q: What did Kieran's name search show after his clean-up? | His LinkedIn profile and a news item about a charity run.
 
 ## Professional email communication
 LV: Introductory · Application
@@ -441,6 +541,16 @@ M2#careers-u04-11-q2@2: Which subject line is best for sending a requested appli
 TF1#careers-u04-11-q3@1: It is acceptable to send a short, polite email asking about timelines if you haven't heard back after the date a recruiter gave. | true | A courteous follow-up after the stated timeframe is normal professional practice.
 M3#careers-u04-11-q4@3: Why might an informal, error-filled email harm a strong candidate? | It signals poor attention to detail and professionalism, which may be criteria | Recruiters are not legally allowed to read informal emails from candidates | Informal emails are automatically deleted by every employer's email system | Errors in emails mean the candidate's application has been rejected already | Communication and attention to detail are often assessed; careless emails give negative evidence on both.
 SA3#careers-u04-11-q5@2,3: A student needs to reschedule an assessment centre because it clashes with an exam. Explain how to write the email and why. | Email promptly to give maximum notice. Use a specific subject line ("Request to reschedule assessment centre: Graduate Scheme, 12 May"). Greet the recruiter by name, thank them for the invitation, explain the clash briefly (a university exam), express continued interest, offer alternative dates or ask what options exist, and sign off with full name and phone number. Keep it polite, concise and in plain English. This shows professionalism and makes it easy for the recruiter to help. | Acts promptly ; Uses a specific subject line ; Explains briefly and politely ; Offers alternatives and shows interest ; Explains how this creates a professional impression
+Q: What email address should you use with recruiters? | A professional one, such as your university email or a simple name-based address.
+Q: What greeting should you avoid in professional emails? | "Hey".
+Q: What should the first sentence of a professional email do? | State its purpose.
+Q: How should you sign off a professional email? | "Kind regards" or "Best wishes", your full name and a phone number.
+Q: What tone should professional emails aim for? | Polite, clear and concise.
+Q: How quickly should you reply to recruiters? | Within one working day where possible.
+Q: What should an email accepting an interview include? | Thanks, confirmation of date, time and format, and any practical questions such as accessibility needs.
+Q: How should you reschedule an interview by email? | Give as much notice as possible, explain briefly and offer alternatives.
+Q: How should you decline a job offer by email? | Thank them, decline clearly and courteously, and keep the door open.
+Q: What is an avoidable error in recruiter emails? | Misspelling the recruiter's name or the company.
 
 ## Job scams and staying safe online
 LV: Intermediate · Application
@@ -483,4 +593,14 @@ M2#careers-u04-12-q2@2: A "recruiter" for a well-known bank emails from a free w
 TF1#careers-u04-12-q3@1: Letting someone use your bank account to move money for them can be a criminal offence. | true | This is money laundering; money mules can face prosecution, a criminal record and closure of their accounts.
 M3#careers-u04-12-q4@3: Which is the strongest single protective habit against recruitment scams? | Verifying employers and recruiters independently before sharing money or data | Only applying for jobs advertised on the very largest national job boards | Never applying for any remote or online roles at all during university | Trusting any message that uses a real company's name and logo carefully | Independent checks defeat impersonation and fake adverts on any platform; avoiding whole categories of jobs or trusting branding doesn't.
 SA3#careers-u04-12-q5@2,3: Explain how a student could tell whether an unexpected job offer is genuine and what to do if it isn't. | Look for warning signs: unsolicited contact, no interview, messaging apps or personal email addresses, pay too good to be true, pressure, requests for fees, bank details or identity documents early, and moving money. Check the company's official website and careers page, Companies House, the recruiter's LinkedIn and call a number found independently. If it's a scam: don't engage or send anything, block the contact, report to Action Fraud (Police Scotland in Scotland) and the platform, and contact your bank immediately if details were shared. | Lists several warning signs ; Describes independent verification ; Mentions money mule or identity risks ; Describes reporting routes ; Advises contacting the bank if details shared
+Q: Give three examples of upfront fee scams. | Charges for training, DBS checks, visas, uniforms or registration before starting.
+Q: What is the purpose of fake job offers made without interviews? | To collect passport and bank details for identity fraud.
+Q: How does an overpayment scam work? | A "client" sends too much money and asks you to return the difference before the original payment bounces.
+Q: How does a task scam work? | You are paid small amounts for simple online tasks, then asked to pay to unlock larger earnings.
+Q: How do fake recruiters often disguise themselves? | By impersonating real companies, often with slightly altered email domains.
+Q: Name four warning signs of a job scam. | Pay too good to be true, no interview, messaging-app contact, poor spelling, personal email addresses, pressure to act and early requests for money or bank details.
+Q: How can you check an employer is genuine? | Its official website and careers page, Companies House, the recruiter on LinkedIn, and calling a number you found yourself.
+Q: Where should job fraud be reported in Scotland? | Police Scotland.
+Q: What is SAFERjobs? | A non-profit organisation offering advice on job scams.
+Q: What should you do immediately if you've shared bank details with a scammer? | Contact your bank.
 `;

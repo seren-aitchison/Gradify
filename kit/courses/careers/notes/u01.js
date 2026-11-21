@@ -39,6 +39,16 @@ M2#careers-u01-01-q2@2: Sam has a strong degree, internships and good references
 TF1#careers-u01-01-q3@2: In the CDI Career Development Framework, "see the big picture" means understanding how the economy, society and labour market shape opportunities. | true | The learning area asks people to understand the wider context, such as economic change and labour market trends, that affects their options.
 M3#careers-u01-01-q4@3: Which is the strongest reason the CDI framework treats career development as lifelong? | People change roles and sectors and return to learning, so they must keep managing transitions | Most careers advisers prefer to work with adults rather than with school pupils | Employers no longer offer any permanent contracts to new graduate employees | Skills learned at school stop being useful after the age of about twenty-five | Non-linear careers with repeated transitions are the norm, so the ability to manage change is needed throughout life, not just at one decision point.
 SA3#careers-u01-01-q5@1,3: Evaluate the view that a career is a single choice made at the end of education. | Careers are now usually non-linear: people change employer, sector and role, move in and out of self-employment and return to study. A career includes learning, caring and volunteering as well as paid work. The CDI framework treats career development as lifelong, built on skills such as reflection, exploration and managing change. Early choices still matter because they shape opportunities, but they rarely fix a whole career. | Defines career broadly ; Notes non-linear careers and repeated transitions ; Refers to lifelong learning areas such as the CDI framework ; Acknowledges early choices still shape options ; Reaches a balanced judgement
+Q: How do careers professionals use the word career? | For the whole pattern of a person's learning, work and life roles over time, including education, caring, volunteering and gaps.
+Q: What is career development? | The lifelong process of managing learning, work and life roles: making decisions, gaining skills, taking opportunities and adapting to change.
+Q: Whose definition of employability is widely used in UK higher education? | Yorke and Knight's.
+Q: Why is being employable not the same as being employed? | An employable graduate may be unemployed in a weak labour market, and someone in work may lack the skills to progress.
+Q: Why are career management skills more valuable than any single early choice? | Modern careers are rarely linear: people change employer, sector and profession, and move between employment, self-employment and learning.
+Q: Name four career management skills. | Knowing yourself, researching options, making decisions and handling transitions.
+Q: What is the Career Development Institute? | The UK professional body for careers advisers.
+Q: What does the "create opportunities" learning area of the CDI framework involve? | Developing the skills, experience and contacts that open doors.
+Q: What does the "balance life and work" learning area cover? | Looking after wellbeing and fitting work around the rest of life.
+Q: Priya says she has no career yet. Why is she mistaken? | Her degree, café job, museum volunteering and caring already form her career and have built skills.
 
 ## Career theories: matching, development and chance
 LV: Introductory · Foundation
@@ -77,6 +87,16 @@ M2#careers-u01-02-q2@2: Aisha, 45, leaves accountancy to retrain as a teacher an
 TF1#careers-u01-02-q3@1: Planned happenstance theory says careers should be planned in detail so that chance plays no part. | false | It says the opposite: unplanned events are common, and people should develop the attitudes that let them create and use chance opportunities.
 M3#careers-u01-02-q4@3: Which is the strongest criticism of relying only on matching theories? | They assume stable people and jobs, but interests develop and jobs change | They ignore personality and interests when they recommend jobs | They were designed only for manual work in the early 1900s | They have no research evidence for any link to satisfaction | Matching does have some evidence and does use interests; its weakness is a static view of people and work in a labour market where both change.
 SA3#careers-u01-02-q5@2,3: Using two career theories, explain how a student who "doesn't know what they want to do" might be helped. | Matching theory (Parsons, Holland) suggests building self-knowledge, for example through an interest inventory giving a RIASEC profile, and researching roles that fit. Super's developmental theory treats uncertainty as normal in the exploration stage, so trying out roles through work experience helps form a self-concept. Planned happenstance suggests staying curious and open, taking up opportunities and treating unplanned events as possible openings. The best help combines self-assessment with real experience rather than waiting for certainty. | Applies a matching theory with a practical step ; Applies a second theory such as Super or Krumboltz ; Treats uncertainty as normal or useful ; Recommends combining reflection and experience ; Uses accurate terminology
+Q: Who founded vocational guidance, and in which city? | Frank Parsons, in Boston.
+Q: What are the three steps of Parsons's model? | Understand yourself, understand the requirements of different work, and use true reasoning to match the two.
+Q: What is the trait and factor approach? | Parsons's matching approach, which underlies most self-assessment and job-matching tools today.
+Q: According to Holland, when are people more satisfied at work? | When their type and the work environment's type are congruent.
+Q: What are Super's five career stages? | Growth, exploration, establishment, maintenance and disengagement.
+Q: What does Super's life-span, life-space approach add? | That people play several roles at once and that a career expresses a developing self-concept.
+Q: What does recycling mean in Super's theory? | Returning to exploration when changing direction in mid-life.
+Q: Which five qualities help turn chance into opportunity in planned happenstance theory? | Curiosity, persistence, flexibility, optimism and willingness to take risks.
+Q: What is Savickas's career construction theory? | The view that people author their own career stories, adapting through concern, control, curiosity and confidence.
+Q: What kind of tool is DOTS, as opposed to a theory of career development? | A practical planning framework used to structure many university careers modules.
 
 ## The Gatsby Benchmarks and careers support
 LV: Introductory · Foundation
@@ -121,6 +141,16 @@ M2#careers-u01-03-q2@2: A school arranges for every Year 10 pupil to spend a wee
 TF1#careers-u01-03-q3@2: The National Careers Service offers free careers advice to adults in England. | true | It provides free, impartial information, advice and guidance by phone, online and in person to adults and young people in England.
 M3#careers-u01-03-q4@3: Which most directly addresses the risk that students without family contacts in professional work miss out? | Benchmark 5's employer encounters for every pupil | A published programme under Benchmark 1 only | Benchmark 7's visits to universities only | Labour market data under Benchmark 2 only | Guaranteed encounters with employers give every pupil contacts and role models that some get at home, which narrows a gap that information alone does not.
 SA3#careers-u01-03-q5@2,3: Evaluate how far the Gatsby Benchmarks can reduce unequal access to careers support. | The benchmarks require every pupil to have employer encounters, workplace experience and personal guidance, which helps those without professional networks at home, and Benchmark 3 asks schools to address each pupil's needs and challenge stereotypes. However, provision depends on school funding, staff time and local employers, so quality varies, and the benchmarks cover schools and colleges, not universities or adults. Families' networks and resources still give some students more opportunities. | Explains a benchmark that gives every pupil access ; Refers to Benchmark 3 or stereotypes ; Identifies limits such as resources or local employers ; Notes scope is schools and colleges ; Reaches a supported judgement
+Q: When did the Department for Education adopt the Gatsby Benchmarks? | In its 2017 careers strategy.
+Q: How many countries did Holman's Good Career Guidance report study? | Six.
+Q: What is Gatsby Benchmark 1? | A stable careers programme, planned, published and evaluated.
+Q: What does Gatsby Benchmark 3 require? | Addressing the needs of each pupil, including challenging stereotypes.
+Q: What does Gatsby Benchmark 4 cover? | Linking curriculum learning to careers.
+Q: What changed in the 2024 Gatsby review? | The eight benchmarks were kept, with refreshed wording giving more weight to inclusion, parents and carers, and all routes including apprenticeships.
+Q: What is Compass? | The Careers and Enterprise Company's self-evaluation tool for schools and colleges.
+Q: Name the all-age careers services in Scotland, Wales and Northern Ireland. | My World of Work (Skills Development Scotland), Careers Wales and Careers Service NI.
+Q: What does joining the UK Register of Career Development Professionals require? | A recognised qualification, a code of ethics and continuing professional development.
+Q: What level of qualification do qualified careers advisers usually hold? | A Level 6 or 7 qualification in career guidance.
 
 ## Identifying your skills
 LV: Introductory · Foundation
@@ -159,6 +189,16 @@ M2#careers-u01-04-q2@2: A student captained a netball team that organised weekly
 TF1#careers-u01-04-q3@1: Only paid work experience counts as evidence of skills on a graduate application. | false | Recruiters assess the skill and the evidence; volunteering, study, caring and societies all provide valid examples.
 M3#careers-u01-04-q4@3: Which statement gives the strongest evidence of communication skills? | Explained a new rota system to 20 staff, cutting missed shifts by half | Excellent written and verbal communication skills throughout | Have always been told I am a good and natural communicator | Communicated daily with customers and with other colleagues | The first gives a specific action, a number and an outcome; the others are unsupported claims or describe routine contact without impact.
 SA3#careers-u01-04-q5@2,3: A student rates herself 9 out of 10 for teamwork. Explain why recruiters treat self-ratings cautiously and how she could provide better evidence. | Self-ratings are subjective: people tend to overestimate common skills, and everyone claims teamwork, so a number tells the recruiter little. Better evidence describes a real situation, her own actions, and a measurable result, for example resolving a disagreement in a group project that then gained a first. Feedback from others, such as a supervisor's reference or peer assessment, adds independent support. | Explains self-ratings are subjective or inflated ; Notes the claim does not differentiate ; Recommends a specific example with actions ; Includes a measurable outcome ; Mentions independent feedback or references
+Q: What is knowledge, as distinct from skills, in careers terms? | What you know, such as contract law or thermodynamics.
+Q: What are technical or job-specific skills? | How you apply knowledge, such as drafting a contract or using CAD software.
+Q: Name four sources of skills besides paid work. | Modules and assessments, sport, societies, caring, volunteering and hobbies.
+Q: What do recruiters assess when looking at your experience? | The skill and the evidence, not the setting.
+Q: What should you start from when identifying your skills? | Activities, not a list of skills, asking what you did, solved, and changed.
+Q: What skills does organising a society trip show? | Planning, budgeting, negotiation and risk management.
+Q: What skills does a dissertation show? | Research, project management and written communication.
+Q: Give four action verbs that help describe skills. | Analysed, negotiated, coordinated, built, trained, persuaded, reduced, improved.
+Q: Mia covers supermarket shifts at short notice. Which skills does this show? | Reliability and flexibility.
+Q: Why is listing "excellent communicator, team player" a mistake? | Without evidence a recruiter can't tell claim from reality; every skill needs an example.
 
 ## Transferable skills and graduate attributes
 LV: Introductory · Application
@@ -195,6 +235,16 @@ M2#careers-u01-05-q2@2: Two students have the same grades, but one gets an offer
 TF1#careers-u01-05-q3@1: In the CareerEDGE model, reflection and evaluation link the five ingredients to self-efficacy, self-confidence and self-esteem. | true | Dacre Pool and Sewell placed reflection and evaluation between the ingredients and the outcomes, which lead to employability.
 M3#careers-u01-05-q4@3: Which is the strongest criticism of the view that employability is a list of skills? | It ignores networks, confidence and labour markets that shape outcomes | It gives students too much useful information about employers | It means universities would have to stop teaching their degree subjects | It has never been used by any employer in their recruitment | A skills checklist overlooks social and structural factors and the individual's identity and confidence, which models like graduate capitals add.
 SA3#careers-u01-05-q5@2,3: Using one employability model, plan how a first-year student could become more employable by the end of their degree. | Using CareerEDGE: develop career development learning by attending careers sessions and researching roles; gain experience through part-time work, volunteering or a placement; keep developing subject knowledge; build generic skills through societies and group work; work on emotional intelligence through feedback. Reflect regularly, for example in a skills log, to build self-efficacy and confidence. A good plan sets timed, specific actions for each year. | Names and uses a recognised model ; Covers experience ; Covers career learning or research ; Includes reflection ; Gives specific timed actions
+Q: What are graduate attributes? Give two examples. | Qualities a university aims to develop in all graduates, such as critical thinking, digital capability, global awareness or ethical awareness.
+Q: How did the Future Fit report (2009) define employability? | As a set of attributes, skills and knowledge underpinned by a positive attitude.
+Q: Which organisations produced the Future Fit report? | The CBI and Universities UK.
+Q: In which areas does the ISE report graduates are often less ready? | Resilience, managing up, commercial awareness and handling conflict.
+Q: What does managing up mean? | Dealing with senior colleagues.
+Q: How, according to employer surveys, are skills such as resilience and managing up best developed? | Through experience, rather than being taught directly.
+Q: Who created the CareerEDGE model, and when? | Dacre Pool and Sewell, in 2007.
+Q: What is identity capital in Tomlinson's model? | Seeing yourself as a future professional.
+Q: What is cultural capital in Tomlinson's model? | Knowing how professional worlds work.
+Q: What does the graduate capitals model explain? | Why students with equal grades can have unequal outcomes.
 
 ## Values and what matters to you at work
 LV: Introductory · Application
@@ -233,6 +283,16 @@ M2#careers-u01-06-q2@2: Raj is good at his sales job and enjoys persuading peopl
 TF1#careers-u01-06-q3@2: In Schwartz's theory, values on opposite sides of the circle, such as self-direction and conformity, tend to be in tension. | true | The circular structure places compatible values next to each other and conflicting ones opposite.
 M3#careers-u01-06-q4@3: A graduate values helping others most but has £40,000 of debt and a family to support. Which approach is most realistic? | Find roles meeting financial needs while serving her top value where possible | Ignore her values completely until all the debt has been fully repaid | Take the lowest-paid helping role available whatever the effect on family | Choose purely on salary because values change over a lifetime anyway | Values guide choices within constraints; a good decision meets essential needs and satisfies the most important values as far as possible.
 SA3#careers-u01-06-q5@2,3: Explain how a student could identify their work values and use them to choose between two job offers. | Identify values by reflecting on past experiences of satisfaction and frustration, using a values card sort or list, and ranking the top three to five. Then score each offer against those values using evidence: pay, hours, culture, progression, mission and day-to-day tasks, found from the offer, the employer's site and conversations with staff. Note essential constraints such as minimum income. Choose the option that meets essentials and satisfies the most important values, accepting some trade-offs. | Uses reflection on experience ; Ranks or prioritises values ; Compares offers using evidence ; Considers practical constraints ; Reaches a reasoned choice process
+Q: What are values? | Beliefs about what is important and desirable that guide choices.
+Q: Give four examples of work values. | Achievement, autonomy, security, status, income, variety, helping others, creativity, work-life balance, recognition, belonging and ethical alignment.
+Q: Why do people often feel dissatisfied in jobs that use their skills well? | The job may clash with their values.
+Q: How many basic human values did Schwartz identify, and when? | Ten, in 1992, found across cultures.
+Q: In Schwartz's circle, how do neighbouring values relate? | They are compatible, such as achievement and power.
+Q: Name four of Schein's career anchors. | Technical competence, managerial competence, autonomy, security, entrepreneurial creativity, service, pure challenge and lifestyle.
+Q: When do career anchors usually become clear? | Only after some years of experience.
+Q: How can you look for evidence of your values? | Consider when you have been most and least satisfied, and why.
+Q: Why did Hannah check both salaries before choosing on values? | She needs to cover £800 a month rent, so both must be affordable.
+Q: Why should values be revisited at each career decision? | Priorities shift with experience and circumstances, such as caring responsibilities or debt.
 
 ## Strengths and how to use them
 LV: Introductory · Application
@@ -270,6 +330,16 @@ M2#careers-u01-07-q2@2: Which interview question is most typical of a strengths-
 TF1#careers-u01-07-q3@1: The VIA Classification describes 24 character strengths. | true | Peterson and Seligman's VIA Classification lists 24 character strengths grouped under six virtues.
 M3#careers-u01-07-q4@3: Which is the strongest caution about using a strengths questionnaire to choose a career? | It is a self-report prompt for reflection, so check it against real evidence | It measures abilities so precisely that no other evidence is ever needed | It only applies to people who already work in senior management roles | It is illegal for employers to ask candidates about their strengths | Self-report questionnaires reflect how you see yourself; they are most useful when tested against performance, feedback and experience.
 SA3#careers-u01-07-q5@2,3: Explain how a student could identify their strengths and use them in a graduate application. | Reflect on when they perform well and feel energised, ask friends, tutors or supervisors what they rely on them for, and optionally use a tool such as the VIA survey as a prompt. Separate realised strengths from learned behaviours. In an application, choose roles that need those strengths, answer strengths-based questions with genuine examples and enthusiasm, and back each strength with evidence of performance across settings. | Uses reflection on performance and energy ; Seeks feedback from others ; Distinguishes strengths from learned behaviours ; Links strengths to role choice ; Evidences strengths in answers
+Q: Which school of psychology is the strengths approach associated with? | Positive psychology.
+Q: What is a realised strength? | Something you are good at, energised by and use often.
+Q: What is a weakness in Linley's strengths model? | Something you perform poorly at and find draining.
+Q: Why can learned behaviours lead to burnout? | If a job demands them all day, you are doing draining work constantly despite being good at it.
+Q: Who developed the VIA Classification, and when? | Peterson and Seligman, in 2004.
+Q: How many talent themes does CliftonStrengths have? Give an example. | 34, such as Achiever, Strategic or Empathy.
+Q: What kind of instruments are VIA and CliftonStrengths, and how should their results be used? | Self-report questionnaires, not objective measurements; useful as prompts for reflection.
+Q: Why do employers use strengths-based interviews? | To find people who will thrive in the role and to reduce well-rehearsed answers.
+Q: Besides content, what do strengths-based interviewers watch for? | Energy and authenticity.
+Q: Ellie does spreadsheets well but dreads them. What are they in Linley's model? | A learned behaviour.
 
 ## Interests and personality tools: uses and limits
 LV: Intermediate · Application
@@ -308,6 +378,16 @@ M2#careers-u01-08-q2@2: An interest inventory gives Zara the code "IRC" and sugg
 TF1#careers-u01-08-q3@2: Many people get a different MBTI type when they retake the questionnaire weeks later. | true | Studies of the MBTI report that a substantial share of people change at least one letter on retest, which limits its reliability.
 M3#careers-u01-08-q4@3: Which is the strongest reason a careers adviser would use an interest inventory with a student? | To generate options to research when a student has no starting point | To decide which single career the student is best suited to enter | To prove to an employer that the student has the right personality | To replace a guidance conversation with a quicker computer result | Inventories are best as conversation starters that broaden thinking; they can't make the decision or serve as evidence to employers.
 SA3#careers-u01-08-q5@2,3: Evaluate the usefulness of online personality and interest quizzes for choosing a career. | Useful as prompts: they structure reflection, introduce unfamiliar roles and can start a guidance conversation, and validated interest inventories predict field choice reasonably well. Limits: many free quizzes are unvalidated; type indicators like the MBTI have weak retest reliability; all reflect self-report and past experience; they predict performance weakly; and labour market realities are ignored. Best used to generate hypotheses that are tested through research and experience. | Identifies a genuine use ; Notes validation or reliability problems ; Distinguishes stronger and weaker tools ; Notes reliance on self-report or experience ; Concludes they generate options to test
+Q: How do interest inventories work? | They ask what activities you like and compare your pattern with people in different occupations.
+Q: What does a Holland code such as "SAE" mean? | Social, Artistic, Enterprising, your top interest types in order.
+Q: Name two free UK interest tools. | The National Careers Service's Discover your skills and careers, and the Prospects Career Planner.
+Q: What do interests predict better, field choice or performance? | Which fields people enter and stay in, rather than how well they perform.
+Q: What are the five Big Five traits? | Openness, conscientiousness, extraversion, agreeableness and neuroticism.
+Q: How are Big Five traits measured, as types or dimensions? | As continuous dimensions, fairly stable in adulthood.
+Q: How does the MBTI classify people? | Into 16 types from four either/or preferences.
+Q: Why does research question the MBTI's two-type split? | Scores cluster around the middle rather than splitting into two types.
+Q: What three checks should you make about a career tool's source? | Who made it, whether it has been validated and whether it says what it measures.
+Q: How should Ben test a quiz suggesting he become a software architect? | Cheaply, for example a free coding course and a conversation with someone in tech.
 
 ## Reflective practice and the skills audit
 LV: Intermediate · Application
@@ -347,6 +427,16 @@ M2#careers-u01-09-q2@2: In a skills audit for a role requiring project managemen
 TF1#careers-u01-09-q3@1: In Kolb's cycle, abstract conceptualisation means drawing a general lesson from experience. | true | It is the stage where you form a general idea or principle from what you observed, which you then test in active experimentation.
 M3#careers-u01-09-q4@3: Which reflective statement shows the deepest learning? | My group missed a deadline; I now agree milestones at the first meeting | My group project was difficult and I felt stressed for weeks | My group project went well apart from the deadline we missed | My group missed a deadline because other members were very lazy | The first identifies a cause within the writer's control and a changed behaviour; the others only describe, record feelings or blame others.
 SA3#careers-u01-09-q5@2,3: Using Gibbs's reflective cycle, show how a student could reflect on a presentation that went badly and use it in an interview. | Description: the presentation overran and the audience lost interest. Feelings: anxious and embarrassed. Evaluation: content was strong but too long. Analysis: she hadn't rehearsed with a timer and tried to include everything. Conclusion: prioritising key messages matters more than coverage. Action plan: rehearse with a timer and cut to three key points. In an interview, she can describe the failure briefly and focus on what she learned and how a later presentation went better. | Uses the stages of Gibbs's cycle ; Analyses causes rather than only describing ; Draws a general conclusion ; Sets a concrete action ; Links reflection to an interview answer
+Q: When did Kolb publish the experiential learning cycle? | In 1984.
+Q: What happens in Kolb's active experimentation stage? | You try things differently next time.
+Q: When did Gibbs publish his reflective cycle? | In 1988.
+Q: What are the two ways reflection helps a career? | It speeds learning from experience and creates ready-made material for applications and interviews.
+Q: What is a skills audit? | A structured comparison of your current skills and evidence with those needed for a target role.
+Q: What should you use as the basis of a skills audit? | A real job description, listing each essential and desirable criterion.
+Q: In a skills audit, what should you do with criteria where you have strong evidence? | Use that evidence in applications.
+Q: In a skills audit, what should you do with "some evidence" criteria? | Look for a better example or a way to build on it.
+Q: How did Kai plan to fill his SQL gap? | Complete a free online SQL course this month and build a small project with a public data set.
+Q: Why is purely descriptive reflection a mistake? | It shows no development unless it explains what you learned and what you'd do differently.
 
 ## Motivations and work-life priorities
 LV: Intermediate · Application
@@ -385,6 +475,16 @@ M2#careers-u01-10-q2@2: Ola has a well-paid job with good conditions but says sh
 TF1#careers-u01-10-q3@1: In Herzberg's two-factor theory, recognition is a motivator rather than a hygiene factor. | true | Herzberg listed achievement, recognition, responsibility, the work itself and advancement as motivators.
 M3#careers-u01-10-q4@3: Which is the strongest approach when a better-paid job would mean moving away from a parent you care for? | Treat caring as a non-negotiable and look for options that meet it | Always take the higher salary since money can pay for other care | Always refuse the job because family must come before any career | Ignore the caring issue because it's not part of career planning | Life commitments belong in career decisions; naming non-negotiables and searching for options that meet them (remote work, local roles) is better than a fixed rule.
 SA3#careers-u01-10-q5@2,3: Using a motivation theory, evaluate whether a graduate should choose a job mainly on salary. | Salary matters: it meets needs, repays debt and is a hygiene factor whose absence causes dissatisfaction. But self-determination theory and Herzberg suggest lasting satisfaction comes from autonomy, competence, relatedness, achievement and the work itself. Headline salary also misleads without cost of living and commuting. A good decision ensures pay is adequate, then weighs intrinsic factors, development and life priorities. | Applies a named theory accurately ; Recognises salary's genuine importance ; Explains intrinsic factors drive lasting satisfaction ; Considers cost of living or life priorities ; Reaches a balanced judgement
+Q: What is extrinsic motivation? | Doing something for a separate outcome, such as pay or approval.
+Q: Who proposed self-determination theory? | Ryan and Deci.
+Q: What does autonomy mean in self-determination theory? | Feeling you choose what you do.
+Q: What is relatedness in self-determination theory? | Feeling connected to others.
+Q: When did Herzberg publish his two-factor theory? | In 1959.
+Q: Name three of Herzberg's hygiene factors. | Pay, conditions, policies, job security and relationships with supervisors.
+Q: Name three of Herzberg's motivators. | Achievement, recognition, responsibility, the work itself and advancement.
+Q: Which roles have gained least from hybrid and remote working? | Most healthcare, retail and laboratory work.
+Q: What is the difference between non-negotiables and preferences in a career decision? | Non-negotiables must be met, such as living near a relative you care for; preferences can be traded.
+Q: Why might Noah be better off in Leeds on £28,000 than London on £32,000? | Lower rent and a short commute leave more disposable income, and friends support his wellbeing.
 
 ## Your career story and personal brand
 LV: Intermediate · Application
@@ -423,6 +523,16 @@ M2#careers-u01-11-q2@2: At a careers fair, which opening works best? | A brief i
 TF1#careers-u01-11-q3@1: A personal brand should be consistent across your CV, LinkedIn and interviews. | true | Recruiters compare sources; consistency builds credibility, while contradictions raise doubts.
 M3#careers-u01-11-q4@3: A candidate's LinkedIn calls him "a visionary growth hacker" but his CV shows one summer internship. What is the main risk? | Overclaiming undermines credibility when the evidence doesn't match | Recruiters are not allowed to look at the LinkedIn profiles of candidates | It will stop him getting any interviews for marketing roles at all | It is too modest and fails to show his strengths to recruiters | Recruiters check claims against evidence; inflated labels that the CV can't support make the whole application less believable.
 SA3#careers-u01-11-q5@2,3: A student has studied law but now wants a career in HR, and worries her story doesn't make sense. Explain how she could build a convincing career narrative. | Identify a thread linking her experiences, for example an interest in fairness at work from employment law modules, plus experience such as a student rep role resolving problems. Frame law as an asset: understanding of employment law, analysis and careful writing. Build a pitch (present, past, future) explaining the move as a positive choice, back it with evidence such as HR work experience or a CIPD-related course, and keep CV, LinkedIn and interviews consistent. | Identifies a thread linking experiences ; Frames the degree as an asset ; Uses a structure such as present past future ; Adds evidence of commitment to the new field ; Stresses honesty and consistency
+Q: What do recruiters look for in a candidate's career story? | A coherent narrative explaining how past choices lead to this role.
+Q: What does a career story need instead of a straight line? | A thread that makes your choices make sense.
+Q: What is a personal brand? | The impression people form of you professionally: what you're known for.
+Q: What does a personal brand mean for a student? | A consistent, honest message across CV, LinkedIn, applications, interviews and behaviour at events.
+Q: Where can you use an elevator pitch? | At a careers fair, a networking event, or for "Tell me about yourself".
+Q: How should you end an elevator pitch? | With a question or an invitation to continue the conversation.
+Q: What should you do with your pitch for different listeners? | Adapt it to the listener and keep it conversational.
+Q: What thread linked Sofia's music, bar and radio experience? | She repeatedly builds audiences.
+Q: Why is overselling your personal brand risky? | Recruiters probe claims, and a brand that doesn't match your CV, references or behaviour damages credibility.
+Q: Which theory sees people as authors of their own career stories? | Savickas's career construction theory.
 
 ## Setting career goals
 LV: Intermediate · Evaluation
@@ -464,4 +574,14 @@ M2#careers-u01-12-q2@2: Which is the best SMART version of "improve my CV"? | Ge
 TF1#careers-u01-12-q3@2: An implementation intention takes the form "If situation X arises, then I will do Y." | true | Gollwitzer's if–then format links a cue to an action, so the action is triggered without a new decision.
 M3#careers-u01-12-q4@3: Which approach to goals best suits an uncertain early career? | Layered goals, including exploratory ones, reviewed regularly | One fixed long-term goal that is never revisited or changed | No goals at all so that chance can take over completely | Goals set only by parents or tutors to keep expectations high | Layered, reviewed goals give direction while allowing learning; fixed goals can trap and no goals give no guidance.
 SA3#careers-u01-12-q5@2,3: Evaluate the use of SMART goals in career planning. | Strengths: SMART goals are clear, measurable and dated, which goal-setting research links to better performance, and they turn vague ambitions into action. Limits: they suit short-term actions better than long-term direction; overly rigid goals can block unplanned opportunities; "achievable" can encourage unambitious targets; and they don't address motivation or follow-through, which implementation intentions help with. Best used for short-term steps within a flexible, reviewed long-term direction. | Explains the SMART criteria ; Links to evidence on specific goals ; Identifies a limitation such as rigidity ; Mentions flexibility or review ; Reaches a balanced judgement
+Q: What does goal-setting theory find? | Specific, challenging goals lead to higher performance than vague "do your best" goals.
+Q: Who developed goal-setting theory? | Locke and Latham.
+Q: Under what conditions do specific, challenging goals improve performance? | When people are committed, have the ability and receive feedback.
+Q: How do goals improve performance? | They direct attention, increase effort and persistence, and encourage people to find strategies.
+Q: Who devised the SMART criteria, and when? | George Doran, in 1981.
+Q: What did the A and R in SMART originally stand for in Doran's version? | Assignable and realistic.
+Q: Who developed implementation intentions? | Peter Gollwitzer.
+Q: Why do implementation intentions increase follow-through? | The cue triggers the action without needing a fresh decision.
+Q: What are the three layers of career goals? | Long-term direction, medium-term steps and short-term SMART actions.
+Q: Why should some career goals be exploratory? | Planned happenstance suggests exploring, such as speaking to people in a field, rather than fixing outcomes in an uncertain career.
 `;

@@ -43,6 +43,16 @@ M2#art-u04-01-q2@2: A painter wants to blend skin tones slowly over several hour
 MATCH1#art-u04-01-q3@1: Match each medium to its binder. | Oil = Linseed oil ; Tempera = Egg yolk ; Watercolour = Gum arabic ; Acrylic = Acrylic polymer emulsion | The binder defines each medium.
 M3#art-u04-01-q4@3: Why must oil painters work "fat over lean"? | Upper layers need more oil so they stay flexible and do not crack over faster-drying, less flexible layers beneath | Fat paint dries faster on top | Lean paint is brighter on the surface | It makes glazes opaque | Lean lower layers dry and stiffen first; flexible upper layers prevent cracking as the layers move and cure.
 SA2#art-u04-01-q5@2,3: Explain why the binder matters when choosing a painting medium, with examples. | The binder controls drying time, reworkability, transparency, surface and durability: oil's slow oxidation allows blending and glazing but needs fat-over-lean; acrylic's fast evaporation suits flat colour and quick layering but limits blending; tempera dries fast, so forms are built with hatched strokes; watercolour's gum arabic gives transparency over white paper. Incompatible binders fail when layered. | Explains drying or curing ; Gives at least two media examples ; Links to handling or appearance ; Mentions layering compatibility ; Accurate terms
+Q: What does the pigment do in paint? | It gives the paint its colour.
+Q: What is a diluent? | A liquid used to thin paint, which evaporates as it dries.
+Q: What is the binder in oil paint? | A drying oil such as linseed, walnut or poppy.
+Q: How is pigment bound in fresco? | Pigment in water is applied to wet lime plaster and is bound as the lime carbonates.
+Q: What is the binder in acrylic paint? | An acrylic polymer emulsion, which dries to a flexible plastic film.
+Q: How does gouache differ from watercolour? | Both use gum arabic, but gouache adds more pigment or filler for opacity.
+Q: How do water-based paints dry compared with oil? | Water-based paints dry quickly by evaporation; oil cures slowly by oxidation.
+Q: Why should acrylic not be painted over oil? | Acrylic is a water-based emulsion and does not bond well to an oily, non-absorbent surface, so it can peel.
+Q: What does Cennino Cennini's Il libro dell'arte (c.1400) describe? | Grinding pigments by hand into binders, and preparing panels and tempera in Italian workshops.
+Q: How does the medium shape the look of a work? | Tempera is crisp and luminous, fresco matt and chalky, oil deep and blended, watercolour transparent, acrylic fast and flat.
 
 ## Egg tempera
 LV: Intermediate · Foundation
@@ -83,6 +93,16 @@ M2#art-u04-02-q2@2: A conservator sees a greenish tone showing through worn face
 TF2#art-u04-02-q3@2: Thick, heavy impasto is well suited to egg tempera. | false | Tempera is applied thinly; thick layers are prone to cracking.
 M3#art-u04-02-q4@3: Why might an art historian connect the gold backgrounds of Duccio's Maestà to both technique and meaning? | Gold leaf on bole was a costly workshop technique, and its shimmer signified a heavenly, timeless realm | Gold was used because blue pigments were unavailable | Gold leaf was cheaper than paint | It was added in the 19th century | Material, cost and devotional convention combine in the gold ground.
 SA2#art-u04-02-q5@1,3: Describe how a 14th-century Italian tempera panel was made and painted, and explain how this affects its appearance. | Poplar panel sized with glue, linen, many gesso layers scraped smooth; gold leaf on bole, burnished and punched; design transferred; flesh underpainted in green earth; egg tempera applied in thin layers with fine hatching because it dries fast. Appearance: smooth luminous surface, crisp linear modelling, gold non-naturalistic space, durable matt to satin finish. | Describes panel and gesso ; Describes gilding ; Describes underpainting ; Describes hatching or layers ; Links technique to appearance
+Q: Which woods were used for tempera panels? | Often poplar in Italy and oak in the North.
+Q: How was a panel prepared for tempera? | Sized with animal glue, covered with linen, then built up with many layers of gesso scraped smooth.
+Q: What is bole? | Red clay on which gold leaf was laid and burnished on panels.
+Q: What is verdaccio? | A greenish-grey underpainting used in Italian painting to model flesh.
+Q: What finish does egg tempera have? | Matt to satin, crisp, luminous and very durable.
+Q: Why should tempera not be applied thickly? | Thick tempera cracks, so heavy impasto is avoided.
+Q: What do the gold backgrounds of Duccio's Maestà signal? | A heavenly, non-naturalistic space.
+Q: Why is expecting soft blended transitions from tempera a mistake? | Tempera is linear and precise; smooth effects come from very fine hatching, not wet blending.
+Q: What is mixed technique in 15th-century painting? | Tempera underpainting combined with oil glazes.
+Q: Who revived tempera in the 20th century? | Artists such as Andrew Wyeth in the United States and the Society of Painters in Tempera in Britain.
 
 ## Fresco
 LV: Intermediate · Foundation
@@ -122,6 +142,16 @@ M2#art-u04-03-q2@2: Why have the blue skies of some medieval murals flaked away 
 SEQ2#art-u04-03-q3@2: Order the steps of painting one giornata in buon fresco. | Lay fresh intonaco for the day ; Transfer the cartoon by pouncing or incising ; Paint pigment in water onto damp plaster ; Cut away unpainted plaster at the day's end | The day's plaster must be painted before it dries.
 M3#art-u04-03-q4@3: Why did Leonardo's Last Supper deteriorate so quickly? | He painted in tempera and oil on dry plaster rather than in buon fresco, so the paint did not bond into the wall | He used too much gold leaf | The wall was too thick | Fresco always deteriorates within a lifetime | His experimental technique allowed slow, revised work but adhered poorly.
 SA3#art-u04-03-q5@1,3: Evaluate fresco as a medium for large public murals. | Strengths: durability when bound into sound walls, luminous matt colour suited to architecture and distance, and a tradition of monumental cycles (Giotto, Michelangelo, Rivera). Limitations: speed and planning required (giornate), difficult corrections, colours limited to lime-resistant pigments, secco additions that flake, vulnerability to damp and building movement. Judgement depends on site and intention. | States strengths ; Gives examples ; States technical limitations ; Mentions secco or damp ; Reaches a judgement
+Q: What is buon fresco? | Painting with water-ground pigment into wet lime plaster, which binds it as it sets.
+Q: What is fresco secco? | Paint with a binder such as glue or egg applied to dry plaster; less durable and prone to flaking.
+Q: What is the intonaco? | The fresh, damp lime plaster layer that buon fresco is painted into.
+Q: What is the arriccio? | The rough plaster layer on which the composition may be drawn in red earth.
+Q: How is a cartoon transferred to fresh plaster? | By pouncing (dusting charcoal through pricked holes) or incising lines.
+Q: Why must fresco be painted quickly and decisively? | The plaster dries, and corrections need new plaster.
+Q: Where should unpainted plaster be cut away at the end of a giornata? | Along a contour, where the seam will be less visible.
+Q: How was Leonardo's Last Supper painted, and with what result? | In tempera and oil on dry plaster, an experiment that began deteriorating within his lifetime.
+Q: What did the 1980–94 restoration of the Sistine Chapel ceiling reveal? | Brighter colours beneath grime, though some argued it removed final secco layers.
+Q: Who revived fresco for public murals in the 20th century? | Diego Rivera, in Mexico and the United States.
 
 ## Oil paint
 LV: Intermediate · Foundation
@@ -161,6 +191,16 @@ M2#art-u04-04-q2@2: A painter wants a deep, glowing red cloak. Which oil techniq
 TF1#art-u04-04-q3@1: Canvas became the usual support for oil painting in Venice in the 16th century. | true | Venetian painters adopted canvas widely, partly because damp affected walls and panels and canvas suited large works.
 M3#art-u04-04-q4@3: Which is the most accurate statement about van Eyck and oil paint? | He refined oil glazing to new levels of detail and luminosity, but did not invent oil binders | He invented oil paint in 1434 | He painted only in tempera | Oil paint was unknown in Europe until the 17th century | Vasari's claim is a myth; Theophilus describes drying oils centuries earlier.
 SA2#art-u04-04-q5@1,3: Explain why oil paint came to dominate European easel painting. | Slow drying allowed blending and revision; transparency allowed glazing for luminous colour and detail (van Eyck); opacity allowed impasto and expressive brushwork (Titian, Rembrandt); rich darks and saturated colour; compatibility with canvas, which was light, portable and suited to large works; tube paints later enabled outdoor work. | Slow drying and blending ; Glazing and luminosity ; Impasto or brushwork ; Canvas or portability ; Uses named examples
+Q: Why does oil paint give rich darks? | Its high refractive index gives depth and saturation, especially in dark colours.
+Q: What are oil painting mediums used for? | Liquids such as stand oil or alkyd change flow, gloss or drying speed.
+Q: How are water-mixable oils thinned? | With water, because they use modified oils.
+Q: When and where did canvas become the usual support for oil? | From the 16th century, especially in Venice.
+Q: What is varnish in oil painting? | A removable protective layer, traditionally applied once the paint has cured.
+Q: Who described drying oils for painting around 1100? | Theophilus, in De diversis artibus.
+Q: What did van Eyck and his contemporaries achieve with oil? | Thin, transparent glazes over a white chalk ground, giving jewel-like colour and minute detail.
+Q: Why does the white chalk ground matter in the Arnolfini Portrait? | It reflects light back through the thin glazes, giving luminosity.
+Q: Who is traditionally credited with bringing oil painting to Venice? | Antonello da Messina.
+Q: How did Rembrandt and Velázquez show oil's range? | Rembrandt with thick impasto; Velázquez with economical alla prima strokes.
 
 ## Watercolour and gouache
 LV: Intermediate · Application
@@ -203,6 +243,16 @@ M2#art-u04-05-q2@2: A student's watercolour looks muddy and dull. What is the mo
 TF1#art-u04-05-q3@1: Gouache can be used to paint light colours over dark ones. | true | Gouache is opaque, so light colours can cover darker layers, unlike transparent watercolour.
 M3#art-u04-05-q4@3: Why does traditional watercolour practice work from light to dark? | Lights come from the paper, which cannot be recovered once covered, while darks can always be added | Dark paint dries faster | Light colours are opaque | It is a convention with no practical reason | Because white is the paper itself, the painter preserves lights first and builds darks progressively.
 SA2#art-u04-05-q5@2,3: Explain how a watercolourist plans and paints a landscape, and why planning is important. | Plan the whites and lights (reserve or mask), lay large washes first (sky wet-in-wet, graded washes), allow drying, then wet-on-dry for middle distance and crisp edges, with darks and details last; lift for soft lights. Planning matters because watercolour is transparent: lights cannot be painted back in and overworking muddies colour. | Mentions reserving whites ; Mentions washes or wet-in-wet ; Mentions wet-on-dry and layering ; Light-to-dark order ; Explains transparency reason
+Q: What is watercolour? | Transparent pigment bound in gum arabic, thinned with water; light reflects from the paper through the paint.
+Q: Why are light papers stretched for watercolour? | To resist cockling; heavier paper, such as 300 gsm, resists it unstretched.
+Q: What is a graded wash? | A wash of gradually changing tone, laid with a loaded brush on tilted paper.
+Q: What is wet-on-dry? | Painting onto dry paper for crisp edges and layered glazes.
+Q: What is lifting in watercolour? | Removing paint with a damp brush or tissue.
+Q: What is masking fluid? | Rubber latex used to protect whites in watercolour.
+Q: Why does watercolour become muddy? | Too many layers or too many pigments mixed reduce its transparency.
+Q: What is notable about Dürer's Young Hare (1502)? | It shows early mastery of watercolour, mixed with gouache.
+Q: Which British artists made watercolour a major medium? | Thomas Girtin, J. M. W. Turner and John Sell Cotman, in the 18th and 19th centuries.
+Q: How did Matisse use gouache? | To paint the papers for his cut-outs.
 
 ## Acrylic paint
 LV: Introductory · Application
@@ -246,6 +296,16 @@ M2#art-u04-06-q2@2: A painter wants razor-sharp edges between flat colour areas 
 TF2#art-u04-06-q3@2: Acrylic colours often dry slightly darker than they look when wet. | true | The binder is milky when wet and clear when dry, so colours deepen as it dries.
 M3#art-u04-06-q4@3: Which is the best evaluation of acrylic compared with oil? | Acrylic is faster and more versatile with mediums but harder to blend, and its long-term ageing is less known | Acrylic is better in every respect | Oil is better in every respect | They are chemically identical | Each medium suits different aims; acrylic's history is short, so durability evidence is limited.
 SA2#art-u04-06-q5@1,3: Compare acrylic and oil paint for a student planning a large painting with flat colour areas and some blended passages. | Acrylic: fast drying, crisp edges with tape, layering in one session, water clean-up, adhesion to many supports; but blending is harder (use retarder), colours dry darker. Oil: slow drying allows blending and glazing but delays flat-colour layering and requires solvents and fat-over-lean. A combination (acrylic underpainting, oil blends on top) is possible, but not acrylic over oil. Choice depends on priorities. | Acrylic strengths ; Acrylic limits ; Oil strengths and limits ; Layering compatibility ; Reasoned choice
+Q: How quickly does acrylic paint dry? | In minutes, by evaporation.
+Q: Why do acrylic colours dry slightly darker? | The binder is milky when wet and clear when dry.
+Q: What do gel mediums do to acrylic? | They thicken it or add texture.
+Q: Why must brushes be washed promptly after acrylic? | Acrylic dries to a water-resistant film, so dried paint ruins them.
+Q: How do you prevent paint bleeding under masking tape in hard-edge acrylic painting? | Seal the tape edge with matt medium before painting.
+Q: What is staining with acrylic? | Soaking thinned acrylic into raw canvas.
+Q: How does acrylic medium help in collage and mixed media? | It acts as both glue and varnish.
+Q: How can a painter extend acrylic's working time? | Use retarder, a stay-wet palette or work in smaller areas.
+Q: Name two artists who exploited acrylic's flatness and speed. | Any two: Helen Frankenthaler, David Hockney (A Bigger Splash, 1967), Bridget Riley.
+Q: Why is acrylic's long-term ageing less understood than oil's? | It has existed for only about seventy years.
 
 ## Supports and grounds
 LV: Intermediate · Foundation
@@ -286,6 +346,16 @@ M2#art-u04-07-q2@2: A painter finds it hard to judge the values of a portrait on
 TF2#art-u04-07-q3@2: Oil paint can be applied over acrylic gesso. | true | Acrylic gesso is designed to accept both acrylic and oil paint.
 M3#art-u04-07-q4@3: Why did some 17th-century copper paintings survive in excellent condition? | Copper is rigid and stable, so the paint film does not flex and crack as on canvas | Copper absorbs oil | Copper adds colour to the paint | They were never displayed | A rigid, non-absorbent support avoids flexing and moisture movement that damage paint.
 SA2#art-u04-07-q5@1,2: Explain how you would choose and prepare a support for a large oil painting, and the reasons. | Choose stretched linen or cotton canvas for lightness and scale (or rigid board for a smaller work); size or use acrylic gesso to seal the fibres; prime to an even surface with suitable tooth; consider a toned ground to unify colour and judge values. Reasons: adhesion, preventing oil damage, stability and the look of the finished work. | Chooses a suitable support ; Explains sizing ; Explains priming or ground ; Considers toned ground ; Gives reasons
+Q: What are the drawbacks of a wooden panel support? | It can warp or split with humidity.
+Q: What are the pros and cons of canvas as a support? | It is light, portable and suits large works, but it flexes, which can crack brittle paint.
+Q: Why were copper plates used in the 17th century? | For small, precise oil paintings.
+Q: What does a primer or ground provide? | A uniform surface with the right absorbency and tooth.
+Q: What traditional grounds were used on panels and canvas? | Chalk gesso on panels and lead white oil grounds on canvas.
+Q: What does modern acrylic gesso do? | It both sizes and primes, and accepts both acrylic and oil.
+Q: What is imprimatura? | A thin, transparent toned layer over a ground.
+Q: How do you prepare a burnt sienna toned ground? | Brush a thin wash of burnt sienna over primed canvas and wipe it back with a rag to an even mid-tone.
+Q: Why is painting oil onto unprimed canvas or paper a mistake? | Oil soaks in and its acidity degrades the fibres over time.
+Q: Why do many conservators recommend alternatives to animal glue size? | Animal glue is sensitive to humidity.
 
 ## Brushes, knives and tools
 LV: Introductory · Foundation
@@ -326,6 +396,16 @@ M2#art-u04-08-q2@2: A painter wants thick, textured oil strokes that hold their 
 TF1#art-u04-08-q3@1: Painting knives can be used to apply paint as well as to mix it. | true | Cranked painting knives lay, spread and scrape paint.
 M3#art-u04-08-q4@3: Why is brushwork often treated as evidence of individuality in Abstract Expressionism? | Visible gestures record the artist's physical action and decisions, read as a personal signature | Brushwork was standardised in that period | Abstract Expressionists hid all brushwork | It reveals the brand of brush used | Critics such as Harold Rosenberg emphasised the canvas as an arena of action, where marks recorded the artist.
 SA2#art-u04-08-q5@2,3: Compare the brushwork of two painters and explain how it contributes to the effect of their work. | For example, Ingres conceals strokes for smooth, idealised surfaces and authority; Van Gogh's thick, directional strokes describe form and convey energy and emotion. Or Frans Hals's rapid strokes suggest spontaneity and liveliness versus Vermeer's subtle, fused handling for stillness. Explanation links handling to mood, meaning or the period's values. | Names two painters ; Describes brushwork of each ; Explains effect of each ; Makes a comparison ; Accurate vocabulary
+Q: What marks does a round brush make? | Lines, details and washes, from its pointed tip.
+Q: What is a flat brush used for? | Broad strokes and crisp edges, from its square end.
+Q: What is a bright brush? | A short flat, giving controlled, thick strokes.
+Q: What is a fan brush used for? | Blending and textures such as foliage.
+Q: Why is hog bristle used for oil and acrylic? | It is stiff and holds thick paint.
+Q: What are the advantages of synthetic brush fibres? | They are durable, cheaper, resist acrylic and avoid animal hair.
+Q: How did Gerhard Richter make his abstract paintings from the 1980s? | By dragging layers of paint across the canvas with a large squeegee.
+Q: Which tool suits thick, flat planes of sunlit rock in an oil landscape? | A painting knife.
+Q: Why should brushes not be stood on their bristles in water? | It bends the hairs; store them flat or bristles up.
+Q: How does Ingres's brushwork differ from Frans Hals's? | Hals's rapid, visible strokes give life; Ingres's near-invisible brushwork creates polished ideal surfaces.
 
 ## Underpainting and glazing
 LV: Intermediate · Application
@@ -366,6 +446,16 @@ M2#art-u04-09-q2@2: A painter wants a deep, transparent shadow on a red cloak wi
 SEQ2#art-u04-09-q3@2: Order the indirect method for a still life. | Drawing on a toned ground ; Monochrome underpainting of values ; Let it dry ; Transparent colour glazes ; Scumbles and final opaque highlights | Value is solved first, then colour, with drying between layers.
 M3#art-u04-09-q4@3: Which is the best evaluation of the indirect method? | It gives luminous depth and control over value and colour, but is slow and less spontaneous than direct painting | It is always superior to direct painting | It cannot produce rich colour | It was abandoned after the Middle Ages | Both methods have strengths; the choice depends on time, intention and the desired surface.
 SA2#art-u04-09-q5@1,3: Explain how an Old Master painting might have been built by underpainting and glazing, and evaluate the effect. | A drawing on a ground, a monochrome underpainting (grisaille or brunaille) establishing value and form, then transparent glazes building colour, scumbles softening lights, opaque highlights last, each layer dry. Effect: luminous, deep colour because light passes through glazes and reflects from lighter layers; controlled modelling; but slow and requiring planning. | Describes underpainting ; Describes glazing ; Mentions scumbling or highlights ; Explains optical effect ; Evaluates time or control
+Q: What is an underpainting? | An early layer laying in the composition and values before colour.
+Q: What is a brunaille? | An underpainting in browns or muted colours, also called dead colouring.
+Q: Why should an underpainting be lean and dry before the next stage? | It solves drawing and tone first, so colour can be added without confusion and the layers follow fat over lean.
+Q: How does a glaze enrich colour? | Light passes through the transparent layer and reflects back from the lighter layer beneath.
+Q: What does a scumble do to the colour beneath? | It softens and cools it.
+Q: What is velatura? | A semi-transparent layer, between a glaze and a scumble.
+Q: How is a red apple painted by the indirect method? | A grisaille underpainting models the form; when dry, a transparent red glaze goes over it, then a pale scumble and opaque highlight.
+Q: Why is glazing over wet paint or with opaque pigments a mistake? | Glazes need dry underlayers and transparent pigments; otherwise they mix and cloud.
+Q: What is the main drawback of indirect painting? | It takes time, since each layer must dry.
+Q: How did Titian reportedly build his paintings? | Over months with many glazes and scumbles, working parts with his fingers.
 
 ## Alla prima
 LV: Intermediate · Application
@@ -402,6 +492,16 @@ M2#art-u04-10-q2@2: A student's alla prima portrait has turned muddy. What is th
 TF1#art-u04-10-q3@1: The Impressionists' outdoor painting relied heavily on direct, alla prima technique. | true | Changing light demanded quick, direct painting completed on the spot.
 M3#art-u04-10-q4@3: What does Frans Hals's handling in The Laughing Cavalier suggest about alla prima? | Rapid, visible strokes can convey liveliness and immediacy in a portrait | Alla prima can only be used for landscapes | Hals hid his brushwork entirely | Direct painting cannot achieve detail | Hals's economical strokes describe lace and fabric while keeping the sitter animated.
 SA2#art-u04-10-q5@2,3: Compare the alla prima and indirect methods and explain when an artist might choose each. | Alla prima: one wet session, near-final colours, fresh brushwork, suited to plein air, changing light and lively portraits; demands confident decisions and economy. Indirect: underpainting then glazes over time, giving luminous depth and control, suited to detailed, planned studio work. Choice depends on subject, time and desired surface; many artists combine them. | Describes alla prima ; Describes indirect ; Gives suitable uses for each ; Mentions strengths and limits ; Reaches a reasoned choice
+Q: What is direct painting? | Another name for alla prima: placing each stroke near its final colour and value, wet-into-wet.
+Q: What is typical of the surface of an alla prima painting? | Fresh, visible brushwork and soft edges where colours meet.
+Q: How should an alla prima painting begin? | With a thin sketch or toned ground, then large blocks of value and colour.
+Q: Why should paint be used generously in alla prima? | Plenty of paint with little blending keeps strokes clean and fresh.
+Q: When are highlights placed in alla prima painting? | Last, with clean paint, and not touched again.
+Q: Why does alla prima demand clear decisions? | There is little layering, so each colour must be mixed right, placed and left.
+Q: Why is over-mixing on the canvas a mistake in alla prima? | Wet paint quickly turns muddy; mix on the palette, place strokes and stop.
+Q: What is plein air painting? | Painting outdoors, directly from the subject.
+Q: Why did the Impressionists depend on alla prima? | To catch changing light outdoors.
+Q: Which painters became famous for bravura direct painting? | John Singer Sargent and Joaquín Sorolla.
 
 ## Impasto and texture
 LV: Intermediate · Application
@@ -438,6 +538,16 @@ M2#art-u04-11-q2@2: In acrylic, which material helps build thick, permanent text
 TF2#art-u04-11-q3@2: Very thick oil impasto can take months to dry through. | true | Oil cures by oxidation from the surface inwards, so thick layers dry slowly.
 M3#art-u04-11-q4@3: Why do Rembrandt's late portraits keep shadows thin while building lights in thick impasto? | Thick, light-catching lights advance and thin translucent shadows recede, strengthening the illusion of light and form | Thick shadows were too expensive | He ran out of paint for the shadows | Thin paint dries faster in shadows | The contrast of texture reinforces the contrast of light, a key part of his effect.
 SA2#art-u04-11-q5@2,3: Analyse the use of impasto in a painting you know and explain what it contributes. | Names a work (Rembrandt late self-portrait, Van Gogh, Auerbach) and describes where paint is thick and thin, how marks were made (brush, knife), how raised paint catches light, and what it contributes: illusion of light and form, energy and gesture, presence of the paint as material, or the record of reworking and time. | Names a work ; Describes where and how impasto is used ; Explains optical effect ; Explains expressive or material meaning ; Accurate vocabulary
+Q: How is impasto built in acrylic? | With heavy-body paint, gel mediums and modelling paste, which build relief quickly and permanently.
+Q: What can stiffen oil paint for impasto? | Impasto mediums or wax.
+Q: What risk does very thick oil impasto carry? | It dries slowly, taking months or years, and can wrinkle if the surface skins over first.
+Q: Why does impasto make highlights glitter? | Raised paint catches light and casts tiny shadows.
+Q: What is dry brush or broken colour? | Dragging a brush with little paint across a surface so the paint breaks over its texture.
+Q: How did Rembrandt use impasto in his late portraits? | He built lights such as gold chains and lit faces thickly while keeping shadows thin and transparent.
+Q: Which painters piled paint almost sculpturally in the 1950s and 1960s? | Frank Auerbach and Leon Kossoff.
+Q: How should impasto be used selectively in a portrait? | Keep shadows thin, build the lit forms thicker, and place the brightest highlight last as a single raised stroke.
+Q: Why is making every part equally thick a mistake? | Uniform impasto loses the thin-thick contrast that makes texture expressive, and wastes drying time in oil.
+Q: Name one way to add texture to paint besides thick application. | Adding sand or other materials, scraping (sgraffito) or dry brush.
 
 ## Still life
 LV: Introductory · Application
@@ -478,6 +588,16 @@ M2#art-u04-12-q2@2: A still life looks flat and static. Which change helps most?
 TF2#art-u04-12-q3@2: Cézanne's still lifes often show objects from more than one viewpoint. | true | Tilted tabletops and shifting viewpoints are characteristic and influenced Cubism.
 M3#art-u04-12-q4@3: Which is the most balanced reading of a Dutch banquet still life? | It may carry moral warnings, but also displays wealth, imported goods and the painter's skill | It is purely a moral sermon | It has no meaning beyond decoration | It was painted to mock the patron | Historians debate the weight of symbolism; trade, wealth and virtuosity are also part of the meaning.
 SA2#art-u04-12-q5@1,3: Explain how still life has been used for different purposes, from the 17th century to modern art. | Dutch vanitas used symbols of mortality to carry moral meaning; banquet and flower pieces displayed wealth, global trade and virtuoso skill; the genre ranked low in the academic hierarchy; Cézanne used it to explore form, colour and viewpoint, leading to Cubism; Morandi to explore quiet variation; contemporary artists extend it into photography and installation. | Vanitas symbolism ; Wealth or skill ; Academic ranking ; Cézanne or modern use ; Uses examples
+Q: What is a still life? | A depiction of inanimate objects arranged by the artist.
+Q: When and where did still life become an independent genre? | Around 1600, in the Netherlands, Flanders and Spain.
+Q: What did Rachel Ruysch specialise in? | Flower pieces with elaborate bouquets.
+Q: What do skulls, candles and hourglasses symbolise in a vanitas? | The shortness of life.
+Q: What do musical instruments and books symbolise in a vanitas? | The vanity of pleasures, learning and wealth.
+Q: Who set out the French hierarchy of genres in 1667? | André Félibien.
+Q: How did Cézanne's still lifes lead towards Cubism? | His apples became studies of form and multiple viewpoints, with tilted tabletops and objects seen from different angles.
+Q: What did Giorgio Morandi paint? | The same bottles and boxes for decades in muted tones.
+Q: Why is lining objects up evenly with flat lighting a mistake in still life? | It looks flat and static; overlap, varied heights, a dominant object and directional light make it work.
+Q: What do some historians stress instead of hidden moral symbolism in Dutch still life? | The display of wealth, skill and trade.
 
 ## Landscape painting
 LV: Introductory · Application
@@ -518,6 +638,16 @@ M2#art-u04-13-q2@2: A painting shows a tiny figure on a cliff before a raging se
 MATCH2#art-u04-13-q3@1,2: Match each artist to the approach most associated with them. | Claude Lorrain = Ideal landscape ; Caspar David Friedrich = The sublime ; John Constable = Naturalism ; William Gilpin = The picturesque | Each name is linked to a distinctive way of seeing landscape.
 M3#art-u04-13-q4@3: Why might an art historian argue that 18th-century English landscape paintings are not neutral views? | They often idealised estates and hid or tidied the rural poor, reflecting landowners' interests | They were painted entirely from imagination | Landscape could not be painted accurately | They ignore the weather | Barrell and others read landscape as shaped by class and property.
 SA3#art-u04-13-q5@2,3: Compare two ways of seeing landscape and evaluate what each reveals about its period. | For example, Claude's ideal landscape composes harmonious classical scenes with framing trees and golden light, reflecting a taste for order and antiquity; Friedrich's sublime confronts the viewer with vastness and solitude, reflecting Romantic interest in feeling and the spiritual in nature. Each reveals values; social readings add property and class. | Describes first approach ; Describes second approach ; Names works or artists ; Links to period values ; Evaluates
+Q: When did shanshui become a major genre in China? | From the 10th century.
+Q: Name a Chinese landscape painting of the early 11th century. | Fan Kuan's Travellers among Mountains and Streams.
+Q: When did landscape emerge as an independent genre in Europe? | In the 16th and 17th centuries, with Altdorfer, Bruegel and Dutch painters such as Ruisdael.
+Q: What is ideal landscape? | Harmonious classical scenes with framing trees and luminous distances, as by Claude Lorrain and Poussin.
+Q: What is the picturesque? | An 18th-century British taste for irregular, varied, rough scenery, described by William Gilpin.
+Q: Which painting by Caspar David Friedrich exemplifies the sublime? | Wanderer above the Sea of Fog (c.1818).
+Q: How is Constable's work an example of naturalism? | His oil sketches of clouds and the Stour valley record observed nature, as in The Hay Wain.
+Q: Why is treating landscape as a list of things a mistake? | It misses the big shapes of light and colour; simplify into masses first.
+Q: What did John Barrell argue in The Dark Side of the Landscape (1980)? | That English rural painting idealised or hid labourers.
+Q: How does land art relate to landscape? | It makes the landscape itself the material.
 
 ## Portraiture
 LV: Intermediate · Application
@@ -558,6 +688,16 @@ M2#art-u04-14-q2@2: A full-length portrait shows a sitter in armour beside a glo
 TF2#art-u04-14-q3@2: The skull in Holbein's The Ambassadors appears correctly only from a particular viewpoint. | true | It is an anamorphosis, resolved from a sharp angle to the side.
 M3#art-u04-14-q4@3: Why is it misleading to read a commissioned portrait as a straightforward record of the sitter's character? | Dress, pose, setting and flattering idealisation were often negotiated with the sitter to present a desired image | Artists could not paint likenesses | Portraits were always painted without the sitter present | Character is always shown by the background colour | Portraits are constructed self-presentations, shaped by artist, sitter and convention.
 SA3#art-u04-14-q5@2,3: Analyse how a portrait of your choice constructs the identity or status of its sitter. | Names a portrait (for example The Ambassadors, Dürer's 1500 Self-Portrait, the Obama portraits) and analyses format and scale, pose and gaze, dress, setting, attributes and symbolism, and style; explains what identity or status these construct and for whom; considers the relationship of artist and sitter and the context. | Names a portrait ; Analyses pose or format ; Analyses attributes or setting ; Explains constructed identity ; Considers context
+Q: What were the Fayum portraits made for, and in what medium? | Commemoration: funerary portraits from Roman Egypt, painted in encaustic and tempera on wooden panels.
+Q: What is encaustic? | Pigment in wax.
+Q: What does the format of a portrait signal? | Importance and cost, from head and shoulders to full-length.
+Q: What does a profile pose recall? | Coins and medals.
+Q: What does a direct gaze suggest in a portrait, compared with an averted one? | A direct gaze engages the viewer; an averted one suggests introspection.
+Q: What do the objects on the shelves in Holbein's The Ambassadors signal? | Learning and perhaps religious discord, through astronomical instruments, a lute with a broken string and a hymn book.
+Q: What is a memento mori? | Latin for "remember you must die": an image or object reminding viewers of mortality.
+Q: Why is treating a portrait as a transparent record of character a mistake? | The sitter often chose dress, setting and pose, and the artist idealised or flattered, so meaning is constructed.
+Q: How did photography change painted portraiture? | It took over much of the record-keeping function, freeing painters to explore expression and distortion.
+Q: Who painted the official portraits of Barack and Michelle Obama (2018)? | Kehinde Wiley and Amy Sherald.
 
 ## Abstract painting
 LV: Intermediate · Evaluation
@@ -597,6 +737,16 @@ M2#art-u04-15-q2@2: A painting consists of precise black lines and rectangles of
 TF2#art-u04-15-q3@1,2: Hilma af Klint made abstract paintings before Kandinsky's first fully abstract works. | true | Her series begun in 1906 predates Kandinsky's abstraction around 1910–13, though she did not exhibit it.
 M3#art-u04-15-q4@3: Which is the strongest response to the claim that abstract art is meaningless? | Meaning can come from formal relationships, process, scale, titles and context, which can be analysed with evidence | Abstract art is meaningless, so it should not be studied | Only the price gives it meaning | Meaning in art comes only from recognisable subjects | Formal, contextual and intentional evidence supports interpretation of abstract works.
 SA3#art-u04-15-q5@2,3: Evaluate the view that abstract painting requires less skill than figurative painting. | Abstract work rejects depiction, so some skills (likeness, perspective) are not used; but it demands control of colour, scale, surface, composition and decision, often over many layers (Rothko), and many pioneers were trained figurative painters. Effects are hard to reproduce and depend on context. Skill is redefined rather than reduced; judgement should match criteria to aims. | Acknowledges different skills ; Identifies skills abstraction requires ; Uses named examples ; Notes training or process ; Reaches a judgement
+Q: What are the two meanings of abstraction in painting? | Simplifying from nature, as in Mondrian's trees, or making non-objective work with no reference to the visible world.
+Q: When did Hilma af Klint begin her abstract Paintings for the Temple? | In 1906, though they were little shown until the 1980s.
+Q: What is geometric abstraction? | Abstraction based on precise geometric shapes and flat colour, as in Suprematism and Neo-Plasticism.
+Q: What is gestural abstraction? | Abstraction emphasising expressive brushwork and the physical act of painting, as in Pollock and de Kooning.
+Q: What is colour field painting? | Painting with large areas of colour for contemplative effect, as by Rothko, Newman and Frankenthaler.
+Q: What did Kandinsky compare colour to in Concerning the Spiritual in Art (1911)? | Music.
+Q: Which spiritual movement influenced af Klint and Mondrian? | Theosophy.
+Q: What did Clement Greenberg argue modernist painting should focus on? | What is specific to it: flatness and colour.
+Q: How would you answer "my child could do that" about a Rothko? | Simplicity of means is not simplicity of decision: its effect depends on layered paint, scale, colour relationships and setting.
+Q: Why is it a mistake to assume abstract art has no meaning? | Meaning comes from formal qualities, process, titles, context and stated aims, which can be analysed as evidence.
 
 ## Health and safety in the studio
 LV: Introductory · Foundation
@@ -640,6 +790,16 @@ M2#art-u04-16-q2@2: A class finds turpentine fumes unpleasant. What is the best 
 SEQ1#art-u04-16-q3@1: Order the hierarchy of control from most to least effective. | Elimination ; Substitution ; Engineering controls ; Administrative controls ; Personal protective equipment | PPE is the last line of defence.
 M3#art-u04-16-q4@3: A student wants to sand a dry pastel drawing to soften it. What is the most appropriate response? | Avoid creating fine pigment dust; use a blending tool instead, or work with extraction and a suitable mask under supervision | Sand it in a closed room | Blow the dust away by mouth | Sanding dust is harmless | Fine pigment dust can be inhaled; elimination or control measures come first.
 SA2#art-u04-16-q5@2,3: Carry out a short risk assessment for screen-printing or oil painting in a school studio. | Identifies hazards (solvent vapour and flammability, toxic pigments, oily rags, sharp tools or cleaning chemicals), who is at risk, and controls in order: substitute water-based or low-odour products, ventilate, label and close containers, safe disposal, no eating or pointing brushes with lips, gloves and aprons, teacher or technician supervision, first aid and emergency procedures. | Identifies at least three hazards ; Identifies who is at risk ; Applies substitution or elimination ; Applies other controls ; Mentions supervision or local rules
+Q: What hazards do turpentine and mineral spirits pose? | Vapours can cause headaches and dizziness and irritate skin, and they are flammable.
+Q: Which toxic metals can some pigments contain? | Lead, cadmium, cobalt and chromium.
+Q: Why is clay dust a long-term hazard? | It contains fine silica dust, a long-term lung hazard.
+Q: What is substitution in the hierarchy of control? Give an art example. | Replacing a hazard with something safer, such as odourless solvent or water-mixable oils instead of turpentine.
+Q: What are engineering controls in a studio? | Ventilation, extraction and spray booths.
+Q: What do the COSHH Regulations 2002 require of schools and employers? | To assess and control exposure to hazardous substances.
+Q: How can solvent be avoided when cleaning oil brushes? | Wipe them, then wash with soap and water or a safflower oil cleaner.
+Q: Why should solvent never be poured down the sink? | It is a hazardous substance; dispose of it safely instead.
+Q: What are the main ways toxic pigments get into the body? | Pointing brushes with the lips, eating while painting, and sanding dry pigment without a mask.
+Q: Where can you find a paint's hazards and safe handling information? | On its label's hazard pictograms and statements under GB CLP rules, and on the supplier's safety data sheet.
 
 ## Conservation and the life of a painting
 LV: Intermediate · Evaluation
@@ -682,4 +842,14 @@ M2#art-u04-17-q2@2: A conservator must fill a small loss in a 17th-century portr
 TF2#art-u04-17-q3@2: Natural resin varnishes yellow over time. | true | Yellowing varnish alters the colour balance and is one reason paintings are cleaned.
 M3#art-u04-17-q4@3: Why are cleaning campaigns sometimes controversial? | Removing varnish can also risk removing original glazes or toning and changes how familiar works look | Cleaning always damages paintings | Conservators add new colours | Museums clean paintings to sell them | Debates focus on what counts as original and whether a work's historic appearance should be preserved.
 SA3#art-u04-17-q5@2,3: Evaluate the arguments for and against cleaning a famous old painting with yellowed varnish. | For: restores intended colour balance, spatial depth and detail; removes harmful discoloured layers and old overpaint; based on examination and testing. Against: risk of removing original glazes or toning; loss of the familiar historic appearance; uncertainty about the artist's intentions; past controversies (National Gallery 1940s, Sistine Chapel). A judgement weighs evidence from technical study and reversibility. | Gives reasons for ; Gives risks against ; Uses an example controversy ; Mentions technical evidence or principles ; Reaches a judgement
+Q: Why does old varnish change a painting's appearance? | Natural resin varnishes yellow and darken, changing the colour balance.
+Q: What causes craquelure? | Movement of the support and ageing of the paint and ground.
+Q: What happens to smalt in oil over time? | It loses its blue.
+Q: What is raking light used for in conservation? | Examining a painting's surface as part of documenting its condition.
+Q: How does infrared reflectography reveal underdrawing? | Infrared passes through many paint layers but is absorbed by carbon-based underdrawing.
+Q: What does X-radiography reveal in a painting? | Earlier compositions and lead white.
+Q: What is inpainting? | Retouching only areas of paint loss, with reversible, distinguishable materials.
+Q: Why is it a mistake to think restoration means repainting to look new? | Modern conservation inpaints only losses and avoids covering original paint.
+Q: What was the National Gallery's 1940s "cleaning controversy"? | Critics argued its cleaning campaigns removed original glazes and toned varnishes.
+Q: What questions did climate activists' 2022 attacks on glazed paintings raise? | New questions about protecting paintings while keeping them accessible.
 `;

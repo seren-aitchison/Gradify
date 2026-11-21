@@ -39,6 +39,16 @@ M2#sport-u02-01-q2@2: Blood leaves the right ventricle. Where does it go next? |
 SEQ1#sport-u02-01-q3@2: Put these in the order blood passes through them, starting from the vena cava. | Right atrium ; Tricuspid valve ; Right ventricle ; Pulmonary artery ; Lungs ; Pulmonary vein ; Left atrium ; Left ventricle ; Aorta | Blood passes through the right heart to the lungs and returns to the left heart, which pumps it to the body.
 TF1#sport-u02-01-q4@3: Cardiac muscle relies mainly on aerobic metabolism, which helps it resist fatigue. | true | The myocardium is packed with mitochondria and has a dense coronary blood supply, so it makes ATP aerobically and keeps contracting continuously.
 SA3#sport-u02-01-q5@3: Explain how the structure of the heart allows it to meet the increased demands of exercise. | Valves keep flow one-way so every contraction moves blood forward. The thick, muscular left ventricle can generate high pressure to drive increased cardiac output to the working muscles. Cardiac muscle is myogenic, with intercalated discs so the chambers contract together, and is rich in mitochondria and supplied by coronary arteries, so it works aerobically without fatiguing. The septum keeps oxygenated blood separate, maximising oxygen delivery. | One-way valves ; Thick left ventricle for high pressure ; Myogenic, coordinated contraction ; Aerobic, fatigue-resistant muscle with coronary supply ; Septum separates oxygenated blood
+Q: What do the atria do, and how do their walls compare with the ventricles? | They receive blood; their walls are thin, while the ventricles are thick-walled to pump blood out.
+Q: Which vessels bring blood into the right atrium? | The venae cavae, carrying deoxygenated blood from the body.
+Q: Where does the left ventricle pump blood? | Into the aorta and out to the body.
+Q: What is the function of the septum? | It divides the left and right sides so oxygenated and deoxygenated blood don't mix.
+Q: Name the two atrioventricular valves. | The tricuspid valve on the right and the bicuspid (mitral) valve on the left.
+Q: What role do the chordae tendineae play? | They anchor the atrioventricular valves so they can't turn inside out.
+Q: What do the semilunar valves prevent? | Backflow of blood from the arteries into the ventricles.
+Q: What supplies the heart muscle itself with blood? | The coronary arteries, branching from the base of the aorta.
+Q: Why do the heart's chambers contract as one? | Cardiac muscle cells are branched and joined by intercalated discs, so impulses spread rapidly.
+Q: Define myogenic. | Able to generate its own electrical impulse without nervous stimulation, as cardiac muscle does.
 
 ## The cardiac conduction system
 LV: Introductory · Application
@@ -76,6 +86,16 @@ M2#sport-u02-02-q2@2: Why do the Purkinje fibres spread the impulse from the ape
 NUM2#sport-u02-02-q3@3: An ECG shows an R–R interval of 0.4 s during exercise. What is the heart rate in beats per minute? | 150 | 1 | bpm | Heart rate = 60 ÷ 0.4 = 150 beats per minute.
 SEQ1#sport-u02-02-q4@1: Put the conduction pathway in order. | Sinoatrial node ; Atrial walls ; Atrioventricular node ; Bundle of His ; Bundle branches ; Purkinje fibres | The impulse starts at the SA node and spreads to the ventricles through the AV node and the ventricular conducting system.
 SA3#sport-u02-02-q5@2,3: Explain why the conduction system is organised as it is, and why the heart can keep beating after its nerves are cut, as in a heart transplant. | The SA node sets the rhythm and the atria contract first; the AV node delay lets the ventricles fill fully; the bundle of His and Purkinje fibres conduct rapidly to the apex, so the ventricles contract together from the bottom up and eject blood efficiently. Because cardiac muscle is myogenic, the SA node fires without nervous input, so a denervated transplanted heart still beats, though its rate rises more slowly in exercise, relying on circulating adrenaline. | Role of SA node ; Purpose of AV delay ; Apex-upward contraction ; Myogenic nature explains transplanted heart ; Slower response via hormones
+Q: Where is the sinoatrial node? | In the wall of the right atrium.
+Q: Why does the AV node delay the impulse? | So the atria finish emptying into the ventricles before the ventricles contract.
+Q: About how long is the delay at the AV node? | About 0.1 s.
+Q: Where does the bundle of His run, and what does it divide into? | In the septum; it divides into left and right bundle branches.
+Q: What is the function of Purkinje fibres? | They spread the impulse through the ventricle walls from the apex upwards.
+Q: What does the P wave on an ECG represent? | Atrial depolarisation.
+Q: What does the T wave on an ECG represent? | Ventricular repolarisation.
+Q: How is heart rate calculated from an ECG? | Heart rate = 60 ÷ R-R interval in seconds.
+Q: Name two normal ECG adaptations seen in endurance athletes. | Sinus bradycardia and larger QRS voltages from a bigger ventricle.
+Q: Why does pre-participation ECG screening need specialist reading? | Training adaptations must be separated from signs of heart disease, using international athlete-specific criteria.
 
 ## The cardiac cycle
 LV: Intermediate · Application
@@ -115,6 +135,16 @@ NUM2#sport-u02-03-q3@2: Using an EDV of 120 ml and an SV of 72 ml, what is the e
 M2#sport-u02-03-q4@3: As heart rate rises from 70 to 180 beats per minute, which phase is shortened most? | Diastole | Systole | Atrial systole only | Neither changes | Systole shortens a little, but diastole shortens much more, which eventually limits filling time at very high heart rates.
 M3#sport-u02-03-q5@3: What makes the semilunar valves open during ventricular systole? | Ventricular pressure rising above the pressure in the aorta and pulmonary artery | Contraction of the chordae tendineae | An impulse from the AV node | Atrial pressure falling below zero | Valves are passive: they open when the pressure behind them exceeds the pressure in front.
 SA3#sport-u02-03-q6@3: Explain how stroke volume increases from rest to submaximal exercise, using the terms EDV and ESV. | Venous return rises (muscle and respiratory pumps, venoconstriction), so the ventricles fill more and EDV rises; the greater stretch produces a stronger contraction (Starling's law). Sympathetic stimulation and adrenaline increase contractility, so the ventricle empties more completely and ESV falls. Since SV = EDV − ESV, both changes increase stroke volume. | Increased venous return raises EDV ; Starling's law ; Increased contractility lowers ESV ; Uses SV = EDV − ESV
+Q: Define diastole. | The relaxation phase of the cardiac cycle, when the chambers fill.
+Q: How much ventricular filling happens passively in diastole at rest? | About 70 to 80%.
+Q: What does atrial systole do? | The atria contract, topping up the ventricles.
+Q: What causes the dub heart sound? | Closure of the semilunar valves as the ventricles relax.
+Q: How long is a cardiac cycle at 75 beats per minute, and how is it split? | 0.8 s: about 0.3 s systole and 0.5 s diastole.
+Q: Define ejection fraction. | The percentage of end-diastolic volume ejected in one beat: EF = SV ÷ EDV × 100.
+Q: Give typical resting EDV, ESV and stroke volume for a young adult. | EDV about 120 ml, ESV about 50 ml, stroke volume about 70 ml.
+Q: How does exercise lower end-systolic volume? | A stronger contraction empties the ventricle more fully.
+Q: How does exercise raise end-diastolic volume? | Greater venous return fills the ventricle more.
+Q: What makes heart valves open and close? | Pressure differences either side of them, acting passively.
 
 ## Cardiac output, stroke volume and heart rate
 LV: Intermediate · Application
@@ -154,6 +184,16 @@ NUM2#sport-u02-04-q3@2: A trained cyclist has a resting cardiac output of 5 L/mi
 M2#sport-u02-04-q4@2: Why do a trained and an untrained person have similar resting cardiac outputs? | Their oxygen demand at rest is similar; the trained person meets it with a bigger stroke volume and lower heart rate | Training doesn't affect the heart | The untrained heart is larger | Trained people have less blood | Resting oxygen demand depends on body size and metabolism, not fitness; training changes how the same output is achieved.
 M3#sport-u02-04-q5@3: An athlete's maximal cardiac output rises after a year of endurance training. What is the main cause? | An increase in maximal stroke volume | An increase in maximal heart rate | A fall in blood volume | A rise in end-systolic volume | Training enlarges the left ventricle and blood volume, raising maximal SV; maximal HR doesn't rise, and a higher ESV would reduce SV.
 SA3#sport-u02-04-q6@2,3: Explain why an elite endurance athlete can achieve a much higher maximal cardiac output than an untrained person of the same age. | Maximal heart rates are similar, set mainly by age, so the difference is stroke volume. Endurance training enlarges the left ventricular chamber (cardiac hypertrophy) and increases blood and plasma volume, raising venous return and EDV; via Starling's law and greater contractility, maximal SV may reach 160–200 ml compared with about 110 ml. So Q max may be 30–40 L/min compared with about 20 L/min. Genetics also contributes. | Maximal HR similar ; Difference is stroke volume ; Hypertrophy and larger chamber ; Increased blood volume and venous return ; Calculation or typical values
+Q: Define cardiac output. | The volume of blood pumped by the left ventricle per minute.
+Q: Define stroke volume. | The volume of blood ejected by the left ventricle in one beat.
+Q: Give typical resting stroke volume and heart rate for a trained endurance athlete. | Stroke volume about 100 ml and heart rate about 50 bpm.
+Q: What is a typical maximal cardiac output for an untrained person? | About 20 to 22 L/min.
+Q: What maximal cardiac output can elite endurance athletes reach? | 30 to 40 L/min.
+Q: What maximal stroke volume can elite endurance athletes reach? | 160 to 200 ml or more.
+Q: How does increased venous return raise stroke volume? | It stretches the ventricle more, so it contracts more forcefully (Starling's law).
+Q: When does stroke volume plateau in untrained people, and why? | At about 40 to 60% of maximal effort, as shorter diastole limits filling.
+Q: How does stroke volume behave at high intensity in well-trained endurance athletes? | It may keep rising towards maximum rather than plateauing.
+Q: How does training affect maximal heart rate? | It is unchanged or slightly lower; it is mostly set by age and genetics.
 
 ## Regulation of heart rate during exercise
 LV: Intermediate · Application
@@ -193,6 +233,16 @@ M2#sport-u02-05-q2@2: During a 5 km run, carbon dioxide levels in the blood rise
 M2#sport-u02-05-q3@3: What causes a footballer's heart rate to rise in the tunnel before kick-off? | Adrenaline released in anticipation, acting on the SA node | Chemoreceptors detecting lactic acid | Proprioceptors detecting running | Baroreceptors detecting low blood pressure | The anticipatory rise is driven by higher brain centres and adrenaline before any physical work.
 TF2#sport-u02-05-q4@1: The SA node's intrinsic rate is above a typical resting heart rate, because the vagus nerve holds it down at rest. | true | A denervated heart beats at about 100 bpm; resting vagal tone keeps the normal resting rate lower.
 SA3#sport-u02-05-q5@2,3: Explain how heart rate is increased from rest to the middle of a cycling race. | Before the start, higher centres and adrenaline cause an anticipatory rise. As exercise begins, proprioceptors signal movement and the CCC withdraws vagal tone and increases sympathetic stimulation via the cardiac accelerator nerve. As exercise continues, chemoreceptors detect rising CO₂ and H⁺, increasing sympathetic drive; baroreceptor set points reset upwards. Adrenaline and rising body temperature further increase SA node firing, and Starling's law raises stroke volume as venous return increases. | Anticipatory rise and adrenaline ; Proprioceptors at onset ; Chemoreceptors during exercise ; Sympathetic increase and vagal withdrawal via CCC ; Temperature or intrinsic factors
+Q: At roughly what rate does the SA node fire on its own? | Around 100 beats per minute.
+Q: What does sympathetic stimulation via the cardiac accelerator nerve do? | It increases heart rate and the force of contraction.
+Q: Where are chemoreceptors found? | In the aorta, carotid arteries and medulla.
+Q: What do chemoreceptors detect? | Rising carbon dioxide and hydrogen ions (falling pH) and falling oxygen.
+Q: Where are baroreceptors, and what do they detect? | In the aortic arch and carotid sinus; they detect stretch from blood pressure.
+Q: What role do proprioceptors play in heart rate control? | They detect movement in muscles and joints and signal increased activity almost immediately.
+Q: Which brain centres cause the anticipatory rise? | Higher centres: the motor cortex and limbic system.
+Q: Where is adrenaline released from, and what does it do to the heart? | From the adrenal medulla; it increases heart rate and contractility.
+Q: How does higher temperature raise heart rate? | It speeds nerve conduction and the SA node's firing.
+Q: How do baroreceptors allow heart rate to rise in exercise? | Their set point is reset upwards.
 
 ## Heart rate responses to exercise
 LV: Intermediate · Application
@@ -234,6 +284,16 @@ NUM2#sport-u02-06-q4@2: Using Tanaka's formula, what is the predicted maximal he
 M2#sport-u02-06-q5@1: Two runners finish the same 10-minute run. One's heart rate returns to resting level in 3 minutes, the other's in 8. What does this most likely show? | The first runner is aerobically fitter | The first runner worked harder | The second runner has a higher maximal heart rate | Recovery time tells you nothing | Faster heart rate recovery reflects better aerobic fitness and stronger vagal reactivation.
 M3#sport-u02-06-q6@3: Why might a coach prefer a measured maximal heart rate to 220 − age when setting zones for an athlete? | Individual maxima can differ from the prediction by 10–20 bpm or more, making predicted zones wrong | 220 − age always overestimates in athletes | Measured maxima rise with training | Predicted values ignore resting heart rate | The formulas describe population averages with a large spread; a measured maximum makes zones individual.
 SA3#sport-u02-06-q7@3: Evaluate the use of heart rate to monitor training intensity. | Strengths: heart rate is cheap and easy to record with wearables, rises roughly linearly with submaximal oxygen uptake, and with HRmax and reserve can set individual zones. Limitations: predicted HRmax has large individual error; heart rate lags behind sudden changes, so it misses short intervals and sprints; it drifts upwards in heat and dehydration (cardiovascular drift) and changes with caffeine, stress, illness and fatigue; and it doesn't measure anaerobic or neuromuscular load. Best combined with pace, power or RPE. | Ease and linear relationship ; Individual zones via reserve ; Error in predicted maximum ; Lag in short intervals ; Drift and other confounders ; Combine with other measures
+Q: What causes the rapid rise in heart rate at the start of exercise? | Withdrawal of vagal tone and proprioceptor signals of movement.
+Q: How soon is steady state often reached in submaximal exercise? | Often within 2 to 3 minutes.
+Q: What happens to heart rate in maximal or increasing-intensity exercise? | It keeps rising until maximal heart rate.
+Q: Define steady state. | A heart rate plateau when supply meets demand in submaximal exercise.
+Q: State Tanaka's formula for maximal heart rate. | HRmax ≈ 208 − 0.7 × age.
+Q: State the Karvonen formula for target heart rate. | Target HR = HRrest + intensity × (HRmax − HRrest).
+Q: What percentage of heart rate reserve are aerobic zones often set at? | Around 60 to 85% of heart rate reserve.
+Q: How does ACSM define moderate and vigorous intensity? | Moderate is 40 to 59% and vigorous 60 to 89% of heart rate reserve.
+Q: What is the standard deviation of the 220 − age prediction? | About 10 to 12 bpm.
+Q: What causes the anticipatory rise? | Adrenaline released before exercise.
 
 ## Blood vessels and blood pressure
 LV: Intermediate · Application
@@ -271,6 +331,16 @@ NUM2#sport-u02-07-q2@2: A blood pressure reading is 150/90 mmHg. What is the mea
 M2#sport-u02-07-q3@3: During a heavy squat with breath held, which blood pressure response is expected? | Both systolic and diastolic pressure rise sharply | Systolic rises and diastolic falls | Both fall | Neither changes | Intense muscle contraction compresses vessels and breath-holding raises intrathoracic pressure, so both pressures rise; this is why breath-holding during lifts is discouraged for people with hypertension.
 M2#sport-u02-07-q4@2: Which vessels mainly control how much blood flows into a particular capillary bed? | Arterioles and pre-capillary sphincters | Veins | The aorta | Venules | Smooth muscle in arterioles and the sphincters at the start of capillaries dilates or constricts to direct flow.
 SA3#sport-u02-07-q5@3: Explain why systolic pressure rises but diastolic pressure stays similar during a steady run. | Systolic pressure rises because cardiac output increases, with more forceful ejection into the arteries. Diastolic pressure depends on peripheral resistance; arterioles in working muscles dilate greatly, lowering total resistance, which offsets the rise in output during diastole, so diastolic pressure stays about the same or falls slightly. | Higher cardiac output raises systolic ; Diastolic depends on resistance ; Vasodilation in muscle lowers resistance ; Net effect on diastolic
+Q: Describe the structure of arteries. | Thick walls of elastic tissue and smooth muscle, a small lumen and high pressure.
+Q: What does elastic recoil of arteries do? | It smooths the pulsatile flow of blood.
+Q: What are pre-capillary sphincters for? | They fine-tune blood flow at the start of capillaries.
+Q: Why are capillaries ideal for exchange, apart from thin walls? | Their huge total cross-section gives slow flow.
+Q: Roughly how much of the blood volume do the veins hold at rest? | About two-thirds.
+Q: Define blood pressure and state what it equals. | The force exerted by blood on vessel walls; it equals cardiac output × resistance.
+Q: What clinic reading does NICE use to diagnose hypertension? | 140/90 mmHg or above, confirmed by ambulatory or home monitoring.
+Q: State the formula for mean arterial pressure at rest. | MAP ≈ DBP + ⅓ × (SBP − DBP).
+Q: What is the Valsalva manoeuvre's effect in heavy resistance exercise? | Breath-holding makes both systolic and diastolic pressure rise sharply.
+Q: How does regular aerobic training affect resting blood pressure? | It lowers it by a few mmHg on average, and more in people with hypertension.
 
 ## The vascular shunt and venous return
 LV: Intermediate · Application
@@ -309,6 +379,16 @@ M2#sport-u02-08-q2@2: Why is eating a large meal just before intense exercise un
 M2#sport-u02-08-q3@3: What happens in the arterioles supplying the stomach during exercise? | Vasoconstriction, and pre-capillary sphincters close | Vasodilation, and sphincters open | Valves close | No change | Sympathetic stimulation constricts arterioles to non-essential organs, redirecting blood to the muscles.
 TF2#sport-u02-08-q4@2: Stopping suddenly after intense running can cause blood pooling because the skeletal muscle pump stops. | true | Without rhythmic contraction squeezing the leg veins, blood collects there, reducing venous return.
 SA3#sport-u02-08-q5@1,3: Explain how blood flow is redistributed during exercise. | Chemoreceptors detect rising CO₂ and acidity and baroreceptors detect pressure changes; the vasomotor centre increases sympathetic stimulation, causing vasoconstriction of arterioles and closure of pre-capillary sphincters to organs such as the gut and kidneys. In working muscle, arterioles vasodilate and sphincters open, and local metabolites override sympathetic constriction. So muscles' share rises from about 15–20% to 80–85% of cardiac output, while brain flow is maintained. | Receptors and vasomotor centre ; Vasoconstriction to organs ; Vasodilation in muscle and local factors ; Pre-capillary sphincters ; Figures or brain maintained
+Q: What share of cardiac output do muscles receive at rest? | About 15 to 20%.
+Q: What happens to blood flow to the skin during exercise? | It rises to lose heat, until very high intensities.
+Q: What happens to blood flow to the brain during exercise? | It stays roughly constant in absolute terms.
+Q: What happens in arterioles and sphincters supplying working muscles? | The arterioles vasodilate and pre-capillary sphincters open.
+Q: Name four local factors that cause vasodilation in working muscle. | Any four of: falling oxygen, rising CO₂, H⁺, potassium, adenosine, nitric oxide and heat.
+Q: What is functional sympatholysis? | Local factors in working muscle override sympathetic vasoconstriction there.
+Q: How does the skeletal muscle pump aid venous return? | Contracting muscles squeeze veins, pushing blood towards the heart.
+Q: How does the respiratory pump aid venous return? | Deeper breathing changes thoracic and abdominal pressures, drawing blood up the large veins.
+Q: What is venoconstriction? | Smooth muscle in vein walls contracts, reducing their capacity and pushing blood on.
+Q: Define venous return. | The volume of blood returning to the heart per minute.
 
 ## Blood composition and oxygen transport
 LV: Intermediate · Application
@@ -345,6 +425,16 @@ NUM2#sport-u02-09-q2@3: An athlete's haemoglobin is 140 g/L and arterial blood i
 M2#sport-u02-09-q3@2: Why does myoglobin help muscles during exercise? | It has a higher oxygen affinity than haemoglobin, so it takes up and stores oxygen and releases it to the mitochondria | It carries carbon dioxide out of the muscle | It increases blood viscosity | It produces red blood cells | Myoglobin's higher affinity lets it extract oxygen from haemoglobin and act as a small store.
 M3#sport-u02-09-q4@3: Why is raising haematocrit by EPO dangerous as well as banned? | It increases blood viscosity, raising the work of the heart and the risk of clots and stroke | It lowers oxygen-carrying capacity | It destroys myoglobin | It prevents carbon dioxide transport | Thicker blood flows less easily, especially when dehydration concentrates it further; deaths of cyclists in the EPO era were linked to this risk.
 SA3#sport-u02-09-q5@3: Evaluate methods of increasing the oxygen-carrying capacity of an endurance athlete's blood. | Altitude or hypoxic training can increase red cell mass and haemoglobin through natural EPO release, but responses vary widely between individuals and the benefit may be small or temporary. EPO injections and blood transfusions reliably increase haemoglobin and performance but are banned by the World Anti-Doping Code and dangerous, raising viscosity and clot risk. Ensuring adequate iron intake and treating deficiency supports haemoglobin legally. | Altitude training and variable response ; EPO and blood doping effective but banned ; Health risks of viscosity ; Iron status ; Judgement
+Q: What does plasma carry? | Mostly water, carrying glucose, ions, hormones, proteins and carbon dioxide.
+Q: What are the roles of white blood cells and platelets? | White cells fight infection; platelets clot.
+Q: How are red blood cells adapted to carry oxygen? | They have no nucleus, a biconcave shape for large surface area, and are packed with haemoglobin.
+Q: How many oxygen molecules can one haemoglobin carry? | Up to four.
+Q: What proportion of oxygen is dissolved in plasma? | About 1.5%.
+Q: What is carbaminohaemoglobin, and what share of CO₂ travels this way? | Carbon dioxide bound to haemoglobin; about 20 to 23%.
+Q: Which enzyme forms hydrogencarbonate ions in red cells? | Carbonic anhydrase.
+Q: State the formula for blood oxygen content. | O₂ content ≈ Hb × 1.34 × saturation, in ml per litre with Hb in g/L.
+Q: What is athlete's pseudoanaemia? | Plasma expansion from endurance training dilutes red cells, lowering haematocrit while total haemoglobin is higher.
+Q: Why is EPO misuse banned? | It raises haemoglobin and oxygen-carrying capacity artificially, like blood doping.
 
 ## The oxygen–haemoglobin dissociation curve
 LV: Intermediate · Evaluation
@@ -386,6 +476,16 @@ M2#sport-u02-10-q2@2: What is the effect of a rightward shift of the curve at a 
 MS2#sport-u02-10-q3@2: Which changes in a working muscle shift the curve to the right? | Rising temperature ; Rising carbon dioxide ; Falling pH | Rising pH ; Falling temperature | Heat, CO₂ and acidity all lower haemoglobin's affinity for oxygen; rising pH and cooling shift the curve left.
 TF1#sport-u02-10-q4@3: Because the top of the curve is flat, a small fall in alveolar PO₂ (as at modest altitude) barely reduces haemoglobin saturation. | true | On the plateau, saturation changes little with PO₂, protecting oxygen loading against small falls in alveolar oxygen.
 SA3#sport-u02-10-q5@3: Use the oxygen–haemoglobin dissociation curve to explain how oxygen delivery to muscles increases during exercise. | At the lungs PO₂ is high and haemoglobin about 98% saturated. In exercising muscle, oxygen use lowers PO₂ to about 20 mmHg or less, on the steep part of the curve, so a large fraction of oxygen dissociates. At the same time temperature, PCO₂ and acidity rise, shifting the curve right (Bohr shift), so saturation falls further at any PO₂ and even more oxygen is released. Combined with greater blood flow, this widens the a-vO₂ difference. | Loading at the lungs ; Low PO₂ in muscle on the steep section ; Bohr shift and its causes ; Greater unloading or a-vO₂ difference
+Q: What axes define the oxygen-haemoglobin dissociation curve? | Percentage saturation of haemoglobin against the partial pressure of oxygen.
+Q: What causes the steep middle section of the curve? | Cooperative binding: one oxygen binding makes the next bind more easily.
+Q: How saturated is haemoglobin in resting tissues at a PO₂ of about 40 mmHg? | About 75%, leaving a reserve.
+Q: Why does a small fall in PO₂ in exercising muscle release a lot of oxygen? | At around 20 mmHg the curve is steep.
+Q: What does 2,3-BPG do, and when does it build up? | It shifts the curve right; it builds over longer periods such as acclimatisation to altitude.
+Q: Define P₅₀ and give its resting value. | The PO₂ at which haemoglobin is 50% saturated, about 27 mmHg at rest.
+Q: How does a right shift affect P₅₀? | It raises it.
+Q: What does a rightward shift mean for haemoglobin's oxygen affinity? | Lower affinity: haemoglobin releases oxygen more readily.
+Q: Define partial pressure. | The pressure exerted by one gas in a mixture, which drives its diffusion.
+Q: Why does loading in the lungs stay nearly complete even if PO₂ falls a little? | The curve is flat at lung PO₂ of about 100 mmHg.
 
 ## Structure of the respiratory system
 LV: Introductory · Foundation
@@ -422,6 +522,16 @@ M2#sport-u02-11-q2@3: Which feature of the alveoli most directly shortens the di
 SEQ1#sport-u02-11-q3@1: Put the structures in the order air passes through them on inspiration. | Nasal cavity ; Pharynx ; Larynx ; Trachea ; Bronchus ; Bronchiole ; Alveolus | Air passes down the conducting airways, branching repeatedly, to reach the alveoli.
 M2#sport-u02-11-q4@2: Some athletes' bronchioles narrow during exercise in cold, dry air. Which feature of the bronchioles makes this possible? | Smooth muscle in their walls | C-shaped cartilage rings | A single layer of flattened cells | Surfactant | Bronchiolar smooth muscle can constrict, narrowing the airways (exercise-induced bronchoconstriction); cartilage rings in larger airways stop them collapsing.
 SA3#sport-u02-11-q5@3: Explain how the structure of the respiratory system allows it to meet the high oxygen demand of exercise. | Wide airways held open by cartilage allow large volumes of air to move quickly; bronchioles can dilate in exercise. The alveoli provide a huge surface area (about 50–100 m²) with walls one cell thick and a dense capillary network, so diffusion distance is short; ventilation and blood flow keep the gradients steep. Moist surfaces and surfactant keep the alveoli functional. Together these allow oxygen uptake to rise more than tenfold. | Airways held open and bronchodilation ; Large surface area ; Short diffusion distance ; Capillary network and gradients ; Link to increased oxygen uptake
+Q: What happens to air in the nose and mouth? | It is warmed, moistened and, in the nose, filtered.
+Q: What does the epiglottis do? | It closes the airway during swallowing.
+Q: How does the trachea remove particles? | Its ciliated epithelium and mucus trap and remove them.
+Q: What allows bronchioles to constrict or dilate? | Smooth muscle in their walls.
+Q: What is the total surface area of the alveoli? | Roughly 50 to 100 m², about the size of a badminton court.
+Q: How short is the diffusion distance between alveolar air and blood? | Under a micrometre.
+Q: Why is the moist lining of alveoli important? | It lets gases dissolve before diffusing.
+Q: How many lobes does each lung have, and why? | The right has three and the left two, leaving room for the heart.
+Q: What do the pleural membranes and fluid do? | They reduce friction as the lungs move with breathing.
+Q: What maintains a steep concentration gradient at the alveoli? | Ventilation and blood flow.
 
 ## Mechanics of breathing
 LV: Intermediate · Application
@@ -457,6 +567,16 @@ M2#sport-u02-12-q2@2: Which muscle is an additional muscle of inspiration in exe
 SEQ2#sport-u02-12-q3@1: Order the events of inspiration. | Diaphragm and external intercostals contract ; Ribs move up and out and the diaphragm flattens ; Thoracic volume increases ; Pressure in the lungs falls below atmospheric ; Air flows into the lungs | Muscle contraction increases volume, which lowers pressure and draws air in.
 TF2#sport-u02-12-q4@3: Expiration at rest is passive, relying on elastic recoil of the lungs. | true | At rest the inspiratory muscles simply relax; recoil reduces volume and raises pressure. Muscles are recruited for expiration only when ventilation must increase.
 SA3#sport-u02-12-q5@2,3: Compare the mechanics of breathing at rest with those during a 400 m swim. | At rest, inspiration uses only the diaphragm and external intercostals and expiration is passive through elastic recoil. During the swim, inspiration also recruits the sternocleidomastoid, scalenes and pectoralis minor to increase thoracic volume further, increasing tidal volume; expiration becomes active, with internal intercostals and abdominals forcing air out quickly, allowing higher breathing rate and depth, so minute ventilation rises greatly. | Rest: diaphragm and external intercostals ; Rest: passive expiration ; Exercise: additional inspiratory muscles ; Exercise: active expiration muscles ; Link to tidal volume and ventilation
+Q: State Boyle's law. | At constant temperature, pressure and volume are inversely proportional.
+Q: What does the diaphragm do during inspiration? | It contracts and flattens, increasing thoracic volume.
+Q: What do the external intercostals do in inspiration? | They contract, lifting the ribs up and out.
+Q: Why does air flow in during inspiration? | Increased thoracic volume lowers lung pressure below atmospheric, so air flows in.
+Q: What reduces thoracic volume in passive expiration? | The elastic recoil of the lungs and the weight of the ribs.
+Q: Name three extra muscles of inspiration recruited in exercise. | The sternocleidomastoid, scalenes and pectoralis minor.
+Q: What do the internal intercostals do in exercise? | They pull the ribs down and in, making expiration active.
+Q: How do the abdominal muscles help expiration in exercise? | They push the diaphragm up, forcing air out faster and further.
+Q: Why does a rower breathe out forcefully at high intensity? | Passive recoil can't empty the lungs fast enough at high rates, so active expiration allows large tidal volume.
+Q: Why is it wrong to say the lungs suck in air? | The lungs are passive; muscles change chest volume and air flows down the pressure gradient.
 
 ## Lung volumes and capacities
 LV: Intermediate · Application
@@ -496,6 +616,16 @@ NUM2#sport-u02-13-q3@2: A spirometer shows TV 0.5 L, IRV 3.1 L and ERV 1.2 L. Wh
 NUM2#sport-u02-13-q4@2: During exercise minute ventilation is 90 L/min with a breathing rate of 36 breaths per minute. What is the tidal volume? | 2.5 | 0.05 | L | TV = VE ÷ f = 90 ÷ 36 = 2.5 L.
 M2#sport-u02-13-q5@2: Why does inspiratory reserve volume decrease during exercise? | Tidal volume expands into it, so less extra inspiration remains | The lungs shrink | Residual volume increases | Breathing rate falls | Deeper breaths use up part of the reserve, so IRV falls as TV rises.
 SA3#sport-u02-13-q6@3: A student claims that endurance athletes are fit because they have much bigger lungs. Evaluate this claim. | Lung volumes depend mainly on body size, sex and age and change little with training, so elite endurance athletes' lungs are often only as large as expected for their size. Ventilation rarely limits VO2max in healthy people; the main limit is oxygen delivery by the heart (cardiac output) and use by muscle. Training does strengthen respiratory muscles and allows higher maximal ventilation. Some very highly trained athletes do show exercise-induced arterial hypoxaemia, where the lungs become a partial limit. | Lung volumes set mainly by size and change little ; Ventilation usually not the limit ; Cardiac output as main limit ; Respiratory muscle adaptation ; Exception such as arterial hypoxaemia
+Q: Define tidal volume and give its resting value. | The air breathed in or out per normal breath; about 0.5 L at rest.
+Q: Define inspiratory reserve volume. | The extra air that can be breathed in after a normal inspiration; about 3 L.
+Q: Define expiratory reserve volume. | The extra air that can be forced out after a normal expiration; about 1.2 L.
+Q: What is the function of residual volume? | It keeps the alveoli open.
+Q: How is vital capacity calculated from lung volumes? | VC = TV + IRV + ERV.
+Q: How is total lung capacity calculated, and what is a typical value? | TLC = VC + RV; about 6 L.
+Q: What is a typical resting minute ventilation? | About 6 L/min (0.5 L × 12 breaths).
+Q: How high can breathing frequency rise during exercise? | To 40 to 60 breaths per minute.
+Q: What minute ventilation can large elite endurance athletes reach? | 150 to 200 L/min.
+Q: What mainly sets lung volumes? | Body size, sex and age; they change little with training.
 
 ## Gas exchange at the lungs and muscles
 LV: Intermediate · Application
@@ -530,6 +660,16 @@ NUM2#sport-u02-14-q2@2: Arterial blood contains 195 ml O₂/L and venous blood l
 M2#sport-u02-14-q3@2: During exercise, what happens to the partial pressure of oxygen in the working muscle? | It falls, steepening the diffusion gradient from the blood | It rises, slowing diffusion | It stays at 100 mmHg | It equals alveolar PO₂ | Mitochondria use oxygen faster, lowering muscle PO₂ and increasing the gradient from capillary blood.
 M3#sport-u02-14-q4@3: Why can carbon dioxide diffuse out of the blood into the alveoli effectively despite a gradient of only about 6 mmHg? | Carbon dioxide is far more soluble than oxygen, so it diffuses much more readily | The gradient is actually larger than for oxygen | Carbon dioxide is actively transported | Haemoglobin pushes it out | CO₂ is about 20 times more soluble in water than O₂, so a small partial pressure gradient is enough.
 SA3#sport-u02-14-q5@3: Explain why the a-vO₂ difference increases during exercise and after a period of endurance training. | During exercise, muscle PO₂ falls as oxygen is used, steepening the gradient; the Bohr shift (heat, CO₂, acidity) increases unloading; more capillaries open, increasing surface area and transit time; myoglobin takes up oxygen. After training, capillary density, mitochondrial number and myoglobin increase, so muscles can extract and use more oxygen, raising maximal a-vO₂ difference, which with higher cardiac output raises VO2max. | Steeper gradient as muscle PO₂ falls ; Bohr shift ; Capillary recruitment ; Training increases capillaries, mitochondria and myoglobin ; Link to VO2max
+Q: What is the PO₂ of alveolar air? | About 100 to 105 mmHg.
+Q: What is the PO₂ of blood arriving in the pulmonary capillaries? | About 40 mmHg, giving a gradient of about 60 mmHg.
+Q: What are the PCO₂ values in pulmonary capillary blood and alveoli? | About 46 mmHg in blood and 40 mmHg in the alveoli.
+Q: How much more soluble is CO₂ than O₂? | About 20 times more soluble.
+Q: Why does muscle PO₂ fall during exercise? | Mitochondria use more oxygen.
+Q: Name three factors besides the PO₂ gradient that increase oxygen extraction in muscle. | Increased capillary recruitment, the Bohr shift and myoglobin.
+Q: What is a typical resting a-vO₂ difference? | About 50 ml per litre (5 ml per 100 ml).
+Q: How high can the a-vO₂ difference rise in maximal exercise? | To about 150 to 170 ml per litre.
+Q: How does training increase the a-vO₂ difference? | Through more capillaries, mitochondria and myoglobin.
+Q: Define diffusion. | The net movement of molecules from higher to lower partial pressure or concentration.
 
 ## Control of breathing during exercise
 LV: Intermediate · Application
@@ -573,6 +713,16 @@ M2#sport-u02-15-q2@2: What causes the immediate increase in breathing at the sta
 M3#sport-u02-15-q3@3: Why does ventilation rise steeply once exercise intensity passes the point where lactate accumulates? | Buffering of hydrogen ions by bicarbonate produces extra CO₂, which stimulates chemoreceptors | Oxygen in the blood rises | Proprioceptors stop working | The vagus nerve slows breathing | Hydrogen ions from lactic acid are buffered by bicarbonate, releasing extra CO₂; together with the H⁺ this drives ventilation above the rise in oxygen uptake.
 TF1#sport-u02-15-q4@1: Peripheral chemoreceptors are found in the carotid and aortic bodies. | true | The carotid and aortic bodies detect blood O₂, CO₂ and H⁺ and signal the respiratory centre.
 SA3#sport-u02-15-q5@2,3: Describe and explain the pattern of minute ventilation before, during and after a 20-minute submaximal run. | Before: an anticipatory rise from adrenaline and higher centres. Start: a rapid rise from proprioceptors and central command. Then a slower rise to a steady state as chemoreceptors detect rising CO₂ and H⁺ and thermoreceptors detect rising temperature, until ventilation matches demand. After: a rapid fall as movement stops, then a slower decline as CO₂, temperature and adrenaline return to resting levels, part of EPOC. | Anticipatory rise ; Rapid neural rise ; Slower rise to steady state via chemoreceptors and temperature ; Fast then slow recovery ; Correct receptors linked to phases
+Q: What role do centres in the pons play in breathing? | They smooth the rhythm.
+Q: Which nerves carry signals to the intercostal muscles? | The intercostal nerves.
+Q: What does the expiratory centre do in exercise? | It stimulates the muscles of active expiration.
+Q: How do central chemoreceptors detect rising CO₂? | Via falling pH in the cerebrospinal fluid.
+Q: What do thermoreceptors contribute to breathing control? | They detect rising blood temperature and increase ventilation.
+Q: Define the Hering-Breuer reflex. | Inhibition of inspiration by stretch receptors in the bronchioles to prevent overinflation.
+Q: What causes the slower rise to steady state in submaximal exercise? | Chemical and thermal stimuli.
+Q: Why does ventilation rise disproportionately in maximal exercise? | Lactate accumulates and its buffering produces extra CO₂.
+Q: Describe the ventilation pattern in recovery. | A rapid fall, then a slower decline as CO₂, lactate and temperature return to normal.
+Q: Why does breathing stay high for minutes after a 200 m swim? | Buffering lactate produces extra CO₂, and raised temperature and adrenaline keep stimulating the respiratory centre.
 
 ## Maximal oxygen uptake (VO2max)
 LV: Advanced · Evaluation
@@ -616,6 +766,16 @@ NUM3#sport-u02-16-q3@2: At maximal exercise an athlete has a cardiac output of 2
 M2#sport-u02-16-q4@3: Why is relative VO2max more useful than absolute VO2max for comparing distance runners? | Runners carry their body mass, so oxygen use per kilogram better reflects their aerobic capacity for running | Absolute values can't be measured in runners | Relative values are always higher | Body mass doesn't matter in running | In weight-bearing activities, the oxygen cost of moving scales with mass, so per-kilogram values compare like with like.
 M3#sport-u02-16-q5@2: In a trained athlete, which factor most limits VO2max? | Maximal cardiac output | Lung volume | Mitochondrial number | Breathing frequency | Evidence from experiments raising oxygen delivery (blood doping, breathing oxygen-enriched air) shows VO2max rises when delivery rises, so in trained people the main limit is central oxygen delivery.
 SA3#sport-u02-16-q6@3: Evaluate the multistage fitness test as a method of estimating VO2max. | Strengths: cheap, needs little equipment, tests large groups at once, is related to VO2max (correlations around 0.8–0.9 in validation studies) and is specific to running sports with turns. Limitations: it is a prediction, not a measurement, with error for individuals; it depends on motivation to reach true maximum; turning skill, surface, weather and pacing affect results; it suits runners more than cyclists or swimmers; and it isn't suitable for people for whom maximal effort is unsafe. Direct gas analysis is more valid but expensive and lab-based. | Practical advantages ; Validity relative to direct measurement ; Motivation and maximal effort ; Specificity and conditions ; Comparison with direct testing
+Q: When is absolute VO2max most important? | Where body mass is supported, as in rowing.
+Q: When is relative VO2max most important? | Where body mass is carried, as in running.
+Q: Give typical relative VO2max values for untrained young men and women. | About 40 to 45 ml/kg/min for men and 35 to 40 for women.
+Q: What VO2max do elite endurance athletes reach? | Men 70 to 85 or more, women 60 to 75 ml/kg/min.
+Q: What did the HERITAGE Family Study find? | Baseline VO2max and its training response run strongly in families, with training-response heritability about 47%.
+Q: How much does endurance training typically raise VO2max in sedentary people? | By 15 to 20%.
+Q: How does VO2max change with age in sedentary people? | It declines by roughly 10% per decade after about 25 to 30, less in those who stay active.
+Q: Why are men's VO2max values typically 15 to 25% higher? | Larger hearts, higher haemoglobin and less body fat.
+Q: Name the criteria that a true VO2max was reached. | A VO₂ plateau despite rising workload, RER above about 1.10 to 1.15, heart rate near predicted maximum, and lactate above about 8 mmol/L.
+Q: Among elite athletes with similar VO2max, what better separates performances? | Lactate threshold and running economy.
 
 ## Cardiovascular drift
 LV: Intermediate · Evaluation
@@ -655,6 +815,16 @@ M2#sport-u02-17-q2@2: What is the main reason plasma volume falls during a long 
 M2#sport-u02-17-q3@3: A cyclist trains by heart rate during a hot 3-hour ride. What problem does drift cause? | Holding a fixed heart rate forces her to slow down as drift raises heart rate at a given power | Her maximal heart rate will rise | Her stroke volume will increase | Heart rate stops responding to exercise | With drift, the same heart rate later in the ride corresponds to a lower power output, so heart-rate targets become misleading.
 NUM2#sport-u02-17-q4@2: Early in a run, stroke volume is 120 ml and heart rate 150 bpm. After an hour, stroke volume has fallen to 105 ml. What heart rate keeps cardiac output the same, to the nearest whole number? | 171 | 1 | bpm | Q = 0.120 × 150 = 18 L/min; HR = 18 ÷ 0.105 ≈ 171 bpm.
 SA3#sport-u02-17-q5@3: Evaluate strategies an endurance athlete could use to reduce the effects of cardiovascular drift in a hot marathon. | Drinking to limit body-mass loss (without overdrinking, which risks hyponatraemia) maintains plasma volume and is well supported. Heat acclimatisation over 1–2 weeks expands plasma volume and improves sweating, a strong strategy. Pre-cooling and cooling during the race reduce skin blood flow demand. Pacing by feel or speed rather than heart rate avoids misreading drift. Each has practical limits (gut tolerance, access to heat, race rules), so a combined plan is best. | Fluid replacement and its limits ; Heat acclimatisation ; Cooling strategies ; Pacing and monitoring ; Judgement
+Q: When does cardiovascular drift usually appear? | Beyond about 10 to 20 minutes of prolonged steady-state exercise, particularly in warm conditions.
+Q: What happens to cardiac output and mean arterial pressure during drift? | Cardiac output is maintained or falls slightly; mean arterial pressure may fall slightly.
+Q: How does sweating contribute to drift? | It reduces plasma volume, lowering blood volume and venous return.
+Q: Why does increased skin blood flow contribute to drift? | It reduces central blood volume and venous return.
+Q: Why does lower venous return reduce stroke volume? | It lowers end-diastolic volume, so by Starling's law stroke volume falls.
+Q: What do Coyle and González-Alonso argue is a major cause of drift? | A higher heart rate shortens filling time, reducing stroke volume further.
+Q: How does heat acclimatisation reduce drift? | It expands plasma volume and improves sweating.
+Q: Name three ways to cool the body and limit drift. | Any three of: shade, pre-cooling, cooling vests, cold drinks, light clothing.
+Q: Why do heart-rate zones mislead late in a long hot run? | Drift raises heart rate at constant workload, so zones overestimate intensity.
+Q: Define plasma volume. | The volume of the liquid part of the blood, reduced by sweating.
 
 ## Cardiorespiratory adaptations to endurance training
 LV: Advanced · Evaluation
@@ -699,4 +869,14 @@ M2#sport-u02-18-q2@2: Which adaptation increases the a-vO₂ difference? | Incre
 NUM2#sport-u02-18-q3@2: After training, a runner's resting stroke volume is 100 ml and resting cardiac output 5 L/min. What is her resting heart rate? | 50 | 0.5 | bpm | HR = Q ÷ SV = 5 ÷ 0.1 = 50 bpm.
 M3#sport-u02-18-q4@3: A 19-year-old footballer faints during a match. Why should doctors not assume this is simply an "athlete's heart"? | Some inherited heart conditions, such as hypertrophic cardiomyopathy, can resemble athlete's heart and cause sudden cardiac death | Athletes never faint | Athlete's heart always causes fainting | Fainting proves the heart is too small | Fainting during exercise is a warning sign; specialist assessment (ECG, echocardiography) is needed to distinguish adaptation from disease.
 SA3#sport-u02-18-q5@2,3: Explain how the cardiovascular and respiratory adaptations to endurance training improve performance in a 10 km run. | Cardiac hypertrophy and increased blood volume raise stroke volume and maximal cardiac output, increasing oxygen delivery; capillarisation, mitochondria and myoglobin raise oxygen extraction (a-vO₂ difference); by the Fick equation VO2max rises. Stronger respiratory muscles reduce the work and fatigue of breathing. The lactate threshold rises, so a faster pace is sustainable aerobically with less fatigue, and the heart works at a lower rate at any given pace, sparing glycogen and delaying fatigue. | Central adaptations raise cardiac output ; Peripheral adaptations raise a-vO₂ difference ; Fick equation and VO2max ; Respiratory muscle adaptations ; Lactate threshold and sustainable pace
+Q: Describe the cardiac hypertrophy caused by endurance training. | The left ventricle's chamber enlarges, with some wall thickening.
+Q: What resting heart rates may elite endurance athletes have? | In the 30s to 40s.
+Q: How does blood volume change with endurance training? | It increases, mainly plasma at first, then red cell mass and total haemoglobin.
+Q: Name two respiratory adaptations to endurance training. | Stronger, more fatigue-resistant respiratory muscles; higher maximal minute ventilation (or lower submaximal ventilation).
+Q: How does the lactate threshold change with endurance training? | It rises as a percentage of VO2max, so a higher pace can be sustained.
+Q: Using the Fick equation, how do training adaptations raise VO2max? | Central adaptations raise maximal cardiac output and peripheral ones raise maximal a-vO₂ difference.
+Q: What did the Dallas bed rest and training study show? | Three weeks of bed rest cut VO2max by about a quarter; training restored and exceeded it, mainly via stroke volume and cardiac output.
+Q: Which inherited condition can resemble the athlete's heart? | Hypertrophic cardiomyopathy, which can cause sudden cardiac death in young athletes.
+Q: What tools do sports cardiologists use to distinguish athlete's heart from disease? | ECG, echocardiography and detraining.
+Q: Why is the athlete's heart considered healthy? | It is an enlarged chamber with normal function that partly regresses with detraining.
 `;

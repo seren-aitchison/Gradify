@@ -42,6 +42,16 @@ M2#dentistry-u02-01-q2@2: A referral asks for extraction of Universal tooth 30. 
 MATCH1#dentistry-u02-01-q3@2: Match each FDI number to the tooth. | 21 = Upper left permanent central incisor ; 53 = Upper right primary canine ; 75 = Lower left primary second molar ; 44 = Lower right first premolar | Quadrants 5 to 8 are primary; the second digit counts from the midline.
 M3#dentistry-u02-01-q4@3: A record reads "extract 11" with no system stated, and a mirrored radiograph is attached. What should the dentist do before treatment? | Confirm which tooth is meant from the referrer, the clinical findings and correctly oriented radiographs | Extract the upper right central incisor, because FDI is the UK standard | Extract the upper left canine, because Universal numbers are more common on radiographs | Extract whichever tooth looks most damaged | "11" is the upper right central incisor in FDI but the upper left canine in Universal, and mirrored images reverse sides; the tooth must be confirmed before an irreversible procedure.
 SA2#dentistry-u02-01-q5@2,3: Write the lower right primary first molar and the upper left permanent third molar in FDI, Palmer and Universal notation, and explain why records must name their system. | Lower right primary first molar: FDI 84, Palmer LR D, Universal S. Upper left permanent third molar: FDI 28, Palmer UL8, Universal 16. The same number can mean different teeth in different systems, so stating the system prevents wrong-site treatment. | FDI 84 ; Universal S ; FDI 28 ; Universal 16 ; Palmer forms ; Safety reason
+Q: Which standard is the FDI two-digit tooth notation adopted as? | ISO 3950.
+Q: In FDI notation, which permanent quadrant numbers go with which quadrant? | 1 upper right, 2 upper left, 3 lower left, 4 lower right.
+Q: How should the FDI number 36 be spoken? | As "three six", not "thirty-six".
+Q: How does the Palmer system show a tooth? | A cross divides the mouth into quadrants and the tooth number (1 to 8, or A to E for primary) sits in its quadrant's angle.
+Q: How are primary teeth labelled in the Universal system? | With letters A to T, in the same order as the permanent numbering.
+Q: Where does Universal numbering start and end? | It starts at the upper right third molar (1) and ends at the lower right third molar (32).
+Q: What is the FDI number of the lower right primary canine? | 83.
+Q: What is the lower left first premolar in Universal notation? | 21.
+Q: Why must a dental record state which notation system it uses? | The same number means different teeth in different systems, for example 11 in FDI and Universal.
+Q: What reduces the risk of wrong-site tooth extraction? | Checking the tooth against the referral, the radiograph and the patient, and using one notation system consistently.
 
 ## The primary and permanent dentitions
 LV: BDS Year 1 · Foundation
@@ -81,6 +91,16 @@ M2#dentistry-u02-02-q2@2: A cavity involves the surface of a lower right first p
 TF1#dentistry-u02-02-q3@1: The permanent molars have primary predecessors. | false | Permanent molars erupt behind the primary dentition with no predecessors; the premolars are the successors of the primary molars.
 M3#dentistry-u02-02-q4@3: A 9-year-old has erupted permanent incisors and first molars and retained primary canines and molars. How should this dentition be described, and what is expected next? | A mixed dentition; the canines and premolars are expected to erupt over the next few years | A permanent dentition with retained teeth that need extraction | A primary dentition with early eruption | A mixed dentition that is now complete | At 9 the mixed dentition is normal; primary canines and molars are shed as canines and premolars erupt, typically between about 10 and 12 years.
 SA2#dentistry-u02-02-q5@1,2: Write the dental formulae for both dentitions and explain the terms mesial and distal. | Primary: I 2/2, C 1/1, M 2/2 per side, 20 teeth. Permanent: I 2/2, C 1/1, P 2/2, M 3/3 per side, 32 teeth. Mesial is the surface facing towards the midline along the curve of the arch; distal is the surface facing away from it. | Primary formula ; Permanent formula ; Totals ; Mesial definition ; Distal definition along the arch
+Q: What does heterodont mean? | Having teeth of different classes.
+Q: What is the dental formula for one side of the permanent dentition? | I 2/2, C 1/1, P 2/2, M 3/3: 16 teeth per side.
+Q: By what age is the primary dentition complete? | About 2½ to 3 years.
+Q: When does the mixed dentition begin and end? | From the eruption of the first permanent molars and lower incisors at about 6 years until the last primary tooth is shed at about 12.
+Q: What is the mesial surface of a tooth? | The surface facing towards the midline along the curve of the arch.
+Q: What is the difference between the anatomical and clinical crown? | The anatomical crown is covered by enamel; the clinical crown is the part visible in the mouth.
+Q: What is the inner surface of an upper tooth often called? | Palatal, the upper-arch term for lingual.
+Q: What is the cingulum? | The bulge on the lingual or palatal surface of an anterior tooth near the cervical third.
+Q: What is the root trunk? | The part of a multi-rooted tooth's root between the cervical line and the furcation.
+Q: How would a cavity on the surface of 36 facing the premolar, extending onto the biting surface, be recorded? | Mesio-occlusal (MO) on 36.
 
 ## Permanent incisors and canines
 LV: BDS Year 1 · Core
@@ -120,6 +140,16 @@ M2#dentistry-u02-03-q2@2: Which feature identifies the mesial side of an upper c
 MS2#dentistry-u02-03-q3@1,3: Which statements about the upper lateral incisor are correct? Choose all that apply. | It is often congenitally missing ; It may be peg-shaped ; Its palatal pit is a common site of dens invaginatus | It is the widest incisor ; It usually has two roots | The upper lateral is variable, small, single-rooted and prone to absence, peg shape and dens invaginatus.
 M3#dentistry-u02-03-q4@3: A root-filled lower central incisor develops a periapical lesion two years later; the radiograph shows the root filling centred in a broad, flattened root. What is the most likely cause? | A missed lingual canal | Vertical root fracture from the crown preparation | Overfilling beyond the apex | A second root on the distal | Lower incisor roots are flattened and often contain labial and lingual canals; a single centred root filling suggests the lingual canal was missed, leaving infected tissue.
 SA3#dentistry-u02-03-q5@2,3: Compare the morphology of the upper and lower canines and explain the clinical importance of the upper canine. | The upper canine has a broader, more pointed crown with a strong cingulum and labial ridge, a shorter mesial than distal cusp ridge and the longest root in the mouth; the lower canine is narrower, with a less pointed cusp, a straighter mesial outline and occasionally a bifid root. The upper canine's long root and corner position give it strong anchorage, make it key to lateral (canine) guidance and appearance, and it is usually one of the last teeth lost. | Upper crown features ; Lower crown features ; Root differences ; Canine guidance ; Anchorage and longevity
+Q: How can you tell the side of an upper central incisor? | The mesio-incisal angle is sharp and the disto-incisal angle more rounded.
+Q: How many root canals does an upper central incisor usually have? | One, in a single conical root.
+Q: Why is the palatal pit of the upper lateral incisor clinically important? | It is a site of caries and dens invaginatus, and caries there can reach the pulp quickly.
+Q: What shape is the lower central incisor crown? | Narrow and symmetrical.
+Q: How does the lower lateral incisor differ from the lower central? | It is slightly larger and less symmetrical, with the crown slightly twisted distally on the root.
+Q: Which cusp ridge of the upper canine is shorter? | The mesial cusp ridge.
+Q: Why is the upper canine called the keystone of the anterior dentition? | Its long root and corner position let it guide lateral movements, and it is usually the last tooth lost.
+Q: What root variant can the lower canine have? | Occasionally a bifid root, labial and lingual.
+Q: Why do lower incisor root canal treatments often fail? | A second, lingual canal is common and easily missed.
+Q: What is dens invaginatus? | An infolding of enamel and dentine into the crown, most often in upper lateral incisors.
 
 ## Permanent premolars
 LV: BDS Year 1 · Core
@@ -157,6 +187,16 @@ M2#dentistry-u02-04-q2@3: When restoring the mesial surface of an upper first pr
 TF2#dentistry-u02-04-q3@2: The lower second premolar may have two lingual cusps. | true | Its three-cusp form has one buccal and two lingual cusps with a Y-shaped fissure pattern.
 M3#dentistry-u02-04-q4@3: During extraction of an upper first premolar, the tooth fractures near the cervical margin, leaving two root fragments. What explains this? | The tooth usually has two slender, divergent roots or a bifurcated root that resists rotation | The tooth has a single conical root that is easily rotated | The tooth is ankylosed in all cases | The crown is weakened by a palatal pit | Two thin roots, buccal and palatal, make the upper first premolar prone to fracture if rotated; it is extracted with buccal–palatal movements rather than rotation.
 SA2#dentistry-u02-04-q5@2,3: Distinguish the four premolars by crown and root features. | Upper first: tall sharp buccal cusp, mesial concavity, usually two roots and two canals. Upper second: nearly equal cusps, rounded outline, single root. Lower first: dominant buccal cusp, tiny lingual cusp, lingual tilt, single root. Lower second: larger lingual cusp, two- or three-cusp forms, single root near the mental foramen. | Upper first features ; Upper second features ; Lower first features ; Lower second forms ; Root differences
+Q: Which cusp of the upper first premolar is longer? | The buccal cusp, which is longer and sharper than the palatal.
+Q: Why is extraction of the upper first premolar prone to root fracture? | Its root is bifurcated or split into two roots.
+Q: Why does a straight matrix band fail on the mesial of an upper first premolar? | The mesial concavity leaves a gap or overhang at the cervical margin; wedges and contoured matrices are needed.
+Q: How many roots does the upper second premolar usually have? | A single root, often with one canal but sometimes two.
+Q: Which way does the lower first premolar crown tilt? | Lingually on the root, like a small canine.
+Q: What are the two forms of the lower second premolar? | A two-cusp form and a three-cusp form with one buccal and two lingual cusps.
+Q: What fissure pattern does the three-cusp lower second premolar show? | A Y-shaped fissure pattern.
+Q: Which teeth are most often extracted for orthodontic crowding? | Premolars, commonly the first premolars.
+Q: Why is the lower second premolar apex clinically relevant? | It often lies close to the mental foramen, which matters for surgery, implants and infection spread.
+Q: What is a bifurcation? | The division of a root trunk into two roots.
 
 ## Permanent molars
 LV: BDS Year 1 · Core
@@ -195,6 +235,16 @@ M2#dentistry-u02-05-q2@2: A molar crown has four similar cusps separated by a cr
 TF1#dentistry-u02-05-q3@1: The cusp of Carabelli is found on the mesiopalatal surface of the upper first molar. | true | Carabelli's cusp is an accessory cusp on the mesiopalatal cusp, variable in size and sometimes only a pit.
 M3#dentistry-u02-05-q4@3: A root-treated upper first molar has persistent apical periodontitis on the mesiobuccal root only. What is the most likely reason? | An untreated second mesiobuccal canal | Overfilling of the palatal canal | A fractured distobuccal root | A missed distolingual canal | Disease limited to the mesiobuccal root of an upper first molar most often reflects an untreated MB2 canal; distolingual canals are a lower molar feature.
 SA3#dentistry-u02-05-q5@2,3: Explain why the anatomy of molars makes them challenging to treat endodontically and periodontally. | Molars have multiple roots and canals, including frequent extra canals (MB2 in upper first molars, two mesial canals in lower first molars, sometimes two distal), narrow, curved canals and hidden orifices, so canals are easily missed. Their furcations, once exposed by bone loss, form niches that patients cannot clean, worsening periodontal prognosis; a short root trunk means early furcation involvement. Their posterior position limits access. | Multiple and extra canals ; Named examples ; Curved narrow canals ; Furcation problems ; Root trunk ; Access
+Q: What does the oblique ridge of an upper molar join? | The mesiopalatal and distobuccal cusps.
+Q: Which root of the upper first molar is longest? | The palatal root.
+Q: Which canal is commonly missed in upper first molars? | The second mesiobuccal canal (MB2), narrow and hidden under dentine.
+Q: How does the upper second molar differ from the first? | It is smaller, with a reduced or absent distopalatal cusp, no Carabelli cusp and closer, sometimes fused roots.
+Q: How many canals does the mesial root of a lower first molar usually have? | Two: mesiobuccal and mesiolingual.
+Q: How many roots does a lower first molar have? | Two, mesial and distal, well separated.
+Q: Which teeth are the most variable in both arches? | Third molars, often with fused roots and often impacted or absent.
+Q: Why does bone loss into a molar furcation worsen periodontal prognosis? | It makes plaque control very difficult.
+Q: What does the length of the root trunk determine? | How soon periodontal bone loss reaches the furcation.
+Q: Why are first permanent molars key targets for fissure sealants? | They erupt at about 6, often unnoticed, and have deep fissures.
 
 ## Primary teeth
 LV: BDS Year 1 · Core
@@ -236,6 +286,16 @@ M2#dentistry-u02-06-q2@2: Where are the primate spaces in the primary dentition?
 MS2#dentistry-u02-06-q3@1,3: Which features of primary molars matter when extracting them? Choose all that apply. | Roots are splayed around the developing premolar ; Roots may be partly resorbed | The roots are always fused ; The tooth has a permanent predecessor | Forceps must avoid the premolar crypt between splayed, often resorbing roots; primary teeth have successors, not predecessors.
 M3#dentistry-u02-06-q4@3: On a radiograph of a 7-year-old, a dentist is asked to extract a lower molar with deep caries. The tooth has no developing tooth below it and its roots are still forming. What is it? | The lower first permanent molar, which must not be extracted as a primary tooth | The lower primary second molar | The lower primary first molar | A supernumerary premolar | A molar without a successor and with incomplete roots at 7 is the first permanent molar; primary molars have premolars forming between their roots.
 SA3#dentistry-u02-06-q5@2,3: Explain how the anatomy of primary teeth affects caries progression and treatment. | Primary enamel and dentine are thin and the pulps large with high pulp horns, so caries reaches the pulp quickly. Broad flat contacts hide approximal lesions until they are advanced, so bitewing radiographs help. The constricted neck and cervical bulge affect matrix placement and crown retention (preformed metal crowns grip the bulge). Splayed, resorbing roots around a successor mean extraction and pulp treatment must avoid the developing premolar. | Thin tissues and large pulps ; Rapid progression ; Broad contacts and detection ; Crown form and restorations ; Roots and successor
+Q: How thick is primary enamel compared with permanent enamel? | About half the thickness.
+Q: Which pulp horn is especially prominent in primary molars? | The mesiobuccal pulp horn.
+Q: Why is approximal caries hard to see in primary molars? | They have broad, flat contact areas.
+Q: Why do primary teeth look whiter? | Their enamel is more opaque.
+Q: In which direction do cervical enamel rods slope in primary teeth? | Occlusally rather than cervically.
+Q: Which primary tooth is unlike any permanent tooth? | The lower primary first molar, with a prominent mesiobuccal cervical bulge and large mesial marginal ridge.
+Q: Why is spacing between primary teeth normal? | It helps the larger permanent incisors fit.
+Q: What should be checked before extracting a "molar" in a child? | The number of teeth and root development on a radiograph, since primary second molars resemble first permanent molars.
+Q: Which cells resorb primary roots before shedding? | Odontoclasts.
+Q: Why must forceps be used carefully on primary molars? | Their splayed roots straddle the developing premolar crypt.
 
 ## Odontogenesis: from bud to bell
 LV: BDS Year 1 · Core
@@ -275,6 +335,16 @@ M2#dentistry-u02-07-q2@2: At which stage is the shape of the crown determined? |
 SEQ1#dentistry-u02-07-q3@1: Put the stages of tooth development in order. | Dental lamina forms ; Bud stage ; Cap stage ; Early bell stage ; Late bell stage with hard tissue formation | The germ grows from a bud into a cap, then a bell, before ameloblasts and odontoblasts lay down enamel and dentine.
 M3#dentistry-u02-07-q4@3: A child has congenitally missing second premolars and third molars, with an MSX1 variant found on genetic testing. What best explains the link? | MSX1 is needed in the dental mesenchyme for tooth germs to progress beyond the bud stage | MSX1 encodes the main enamel protein, so the teeth form without enamel | MSX1 controls eruption, so the teeth are present but buried | MSX1 controls root resorption of primary teeth | MSX1 is a mesenchymal transcription factor required for early tooth development; variants are associated with agenesis of premolars and third molars. Enamel proteins and eruption are separate processes.
 SA3#dentistry-u02-07-q5@2,3: Explain the role of epithelial–mesenchymal interactions in tooth development. | Tooth development begins when oral epithelium signals to underlying neural crest-derived mesenchyme, which condenses; the instructive potential then shifts to the mesenchyme. Signalling molecules such as BMP, FGF, Shh and Wnt coordinate the bud, cap and bell stages; enamel knots act as signalling centres directing cusp formation. Later, odontoblast differentiation and dentine formation induce ameloblast differentiation. Disruption of these signals or their genes (for example MSX1, PAX9) causes missing or malformed teeth. | Epithelium initiates ; Shift to mesenchyme ; Signalling families named ; Enamel knot ; Reciprocal induction of hard tissues ; Genetic consequences
+Q: When does tooth development begin? | At about the sixth week of embryonic life, as the primary epithelial band.
+Q: Into which two laminae does the primary epithelial band divide? | The vestibular lamina and the dental lamina.
+Q: Where does the ectomesenchyme of the tooth germ come from? | The neural crest.
+Q: What is the enamel knot? | A cluster of non-dividing cells that acts as a signalling centre controlling cusp formation.
+Q: What is morphodifferentiation in tooth development? | Setting the crown shape by folding of the inner enamel epithelium in the bell stage.
+Q: Which signalling families drive tooth development? | BMP, FGF, Shh and Wnt.
+Q: Which cells differentiate first in hard tissue formation, odontoblasts or ameloblasts? | Odontoblasts first; their dentine signals the inner enamel epithelium to become ameloblasts.
+Q: Which teeth are mainly missing with PAX9 variants? | Mainly molars.
+Q: Which teeth form from the successional lamina? | The permanent incisors, canines and premolars.
+Q: What are rests of Serres? | Remnants of the dental lamina that can give rise to cysts.
 
 ## Amelogenesis and enamel structure
 LV: BDS Year 1 · Core
@@ -313,6 +383,16 @@ M2#dentistry-u02-08-q2@2: In which stage of amelogenesis is most of the mineral 
 TF1#dentistry-u02-08-q3@1: Enamel spindles are the ends of odontoblast processes trapped in enamel. | true | Spindles are odontoblast process extensions that crossed the EDJ before enamel formed around them.
 M3#dentistry-u02-08-q4@3: A child's first permanent molars have enamel of normal thickness that is soft, chalky and breaks down soon after eruption. A disturbance in which stage is most likely? | Maturation | Secretory | Initiation | Root formation | Normal thickness with soft enamel indicates hypomineralisation: the matrix was laid down but not properly mineralised, a maturation-stage problem. Secretory disturbance gives thin or pitted (hypoplastic) enamel.
 SA3#dentistry-u02-08-q5@2,3: Explain how the stage of amelogenesis that is disturbed determines the type of enamel defect. | During the secretory stage ameloblasts lay down the enamel matrix to its full thickness; disturbance here reduces the amount of enamel, causing hypoplasia (pits, grooves, thin enamel) with hard enamel. During maturation, protein and water are removed and mineral added; disturbance leaves enamel of normal thickness but hypomineralised, opaque, soft and prone to breakdown. The timing of a systemic insult relative to each tooth's development explains which teeth and which levels of the crown are affected. | Secretory role ; Hypoplasia ; Maturation role ; Hypomineralisation ; Timing and chronology
+Q: Why can enamel not repair itself biologically? | It is acellular and the ameloblasts that made it are lost once the tooth erupts.
+Q: What is the main mineral of enamel? | Hydroxyapatite, carbonated and partly substituted with fluoride.
+Q: Why is enamel brittle? | Its long, tightly packed crystals make it hard but brittle; it depends on resilient dentine beneath.
+Q: What happens in the maturation stage of amelogenesis? | Ameloblasts pump in calcium and phosphate and remove water and protein, so crystals grow in width.
+Q: Which proteases break down enamel matrix protein in maturation? | MMP-20 and KLK4.
+Q: What forms the reduced enamel epithelium? | Ameloblasts and the remaining enamel organ in the protective stage.
+Q: What defect follows disturbance in the secretory stage of amelogenesis? | Thin or pitted enamel.
+Q: What are Hunter–Schreger bands? | The appearance of prisms' wavy course, which resists crack propagation.
+Q: What does the neonatal line mark? | Birth, in teeth mineralising at that time.
+Q: Why does caries spread sideways at the enamel–dentine junction? | It meets more organic, less mineralised tissue, so it spreads laterally, undermining enamel.
 
 ## Dentinogenesis and dentine
 LV: BDS Year 1 · Core
@@ -353,6 +433,16 @@ M2#dentistry-u02-09-q2@2: Why is a deep cavity more likely to irritate the pulp 
 MATCH2#dentistry-u02-09-q3@2: Match each dentine type to its description. | Secondary dentine = Formed slowly throughout life after root completion ; Reactionary dentine = Formed by surviving odontoblasts after a mild stimulus ; Peritubular dentine = Highly mineralised lining of the tubules ; Mantle dentine = The first-formed layer next to the EDJ | Each type reflects when and why the dentine was formed.
 M3#dentistry-u02-09-q4@3: An older patient's radiograph shows a markedly narrowed pulp chamber in an unrestored, caries-free tooth. What is the most likely explanation? | Continued deposition of secondary dentine with age | Reparative dentine from a recent pulp exposure | Internal resorption of the pulp | Hypomineralised enamel | Secondary dentine forms throughout life and narrows the pulp; without caries or trauma, there is no need to invoke tertiary dentine.
 SA3#dentistry-u02-09-q5@2,3: Explain why dentine and pulp are considered a single functional unit. | They share the same developmental origin (dental papilla); odontoblast cell bodies lie in the pulp with processes in the dentinal tubules, and tubular fluid connects dentine to pulp. Any stimulus to exposed dentine (caries, cavity preparation, temperature) affects the odontoblasts and pulp, causing sensitivity, inflammation or tertiary dentine and sclerosis. The pulp's nerves and blood supply sustain the dentine's ability to respond. | Shared origin ; Odontoblast processes in tubules ; Fluid connection ; Stimuli reach the pulp ; Defensive responses ; Pulp sustains dentine
+Q: What is the composition of dentine by weight? | About 70% mineral, 20% organic and 10% water.
+Q: What is predentine? | The unmineralised collagen matrix secreted by odontoblasts before it mineralises.
+Q: Why is deep dentine more permeable than outer dentine? | Tubules are more crowded and wider near the pulp.
+Q: What is mantle dentine? | The first-formed layer of dentine next to the EDJ.
+Q: When is secondary dentine formed? | Slowly throughout life after root completion, narrowing the pulp chamber.
+Q: What is sclerotic dentine? | Dentine whose tubules are occluded by mineral, reducing permeability.
+Q: What is the dentine–pulp complex? | Dentine and pulp acting as one unit, so a stimulus to dentine reaches the odontoblast processes and pulp.
+Q: Why should hard, stained dentine at the base of an arrested lesion be kept? | It is sclerotic, a defence; minimally invasive caries management keeps it.
+Q: What is Tomes' granular layer? | A granular zone under the cementum in the root.
+Q: What are dead tracts in dentine? | Groups of empty tubules whose odontoblasts have died.
 
 ## The dental pulp
 LV: BDS Year 1 · Core
@@ -393,6 +483,16 @@ M2#dentistry-u02-10-q2@2: A patient describes a dull, throbbing, poorly localise
 TF2#dentistry-u02-10-q3@3: A tooth that does not respond to cold testing a week after trauma must have a dead pulp. | false | Sensibility tests assess nerves, which may be temporarily non-responsive after trauma while the blood supply recovers; vitality is judged over time.
 M3#dentistry-u02-10-q4@3: Why is pulpitis more likely than inflammation of most soft tissues to progress to necrosis? | The pulp is enclosed by rigid dentine with a narrow apical blood supply, so swelling raises pressure and compromises flow | The pulp has no immune cells | The pulp contains no blood vessels | Pulp tissue cannot produce inflammatory mediators | The low-compliance environment and limited collateral circulation mean raised tissue pressure compresses vessels; the pulp does have immune cells and vessels.
 SA3#dentistry-u02-10-q5@2,3: Explain the functions of the dental pulp and how they change with age. | The pulp is formative (odontoblasts lay down primary, secondary and tertiary dentine), nutritive (blood supply to odontoblasts and dentine), sensory (A-delta and C fibres signal stimuli and inflammation) and defensive (tertiary dentine, sclerosis and immune responses). With age, secondary dentine narrows the chamber and canals, cell numbers, vessels and nerves fall, fibrosis and pulp stones increase, and responses to injury and to sensibility tests become weaker. | Formative ; Nutritive ; Sensory with fibre types ; Defensive ; Age changes in volume and cells ; Effect on responses
+Q: Name the four zones of the pulp from the dentine inwards. | Odontoblast layer, cell-free zone of Weil, cell-rich zone and pulp core.
+Q: What is the main cell type of the pulp? | The fibroblast.
+Q: What type of pain do C fibres produce? | Dull, aching, poorly localised pain, typical of inflammation.
+Q: What does the cell-rich zone of the pulp contain? | Fibroblasts and undifferentiated mesenchymal (stem) cells.
+Q: Name the four functions of the pulp. | Formative, nutritive, sensory and defensive.
+Q: What is the plexus of Raschkow? | The subodontoblastic nerve plexus of the pulp.
+Q: Why can an inflamed pulp die? | In its rigid low-compliance enclosure, rising pressure compresses venules and reduces flow, leading to necrosis.
+Q: Why might a recently traumatised tooth not respond to cold despite having a blood supply? | Sensibility tests stimulate nerves, not blood flow.
+Q: Name pulp age changes. | Reduced volume, fewer cells and nerves, more fibrosis, and pulp stones and calcifications.
+Q: Which collagen types are in the pulp matrix? | Types I and III.
 
 ## Dentine sensitivity and the hydrodynamic theory
 LV: BDS Year 1 · Core
@@ -431,6 +531,16 @@ M2#dentistry-u02-11-q2@2: Which exposed dentine surface is most likely to be sen
 MS2#dentistry-u02-11-q3@3: Which approaches are consistent with the hydrodynamic theory for managing sensitivity? Choose all that apply. | Occluding open tubules ; Reducing acidic dietary intake that opens tubules ; Reducing abrasive brushing that exposes dentine | Prescribing antibiotics ; Extracting the tooth as first-line treatment | Management targets fluid flow and the causes of exposure; antibiotics and extraction are not indicated for hypersensitivity.
 M3#dentistry-u02-11-q4@3: A patient reports sharp pain from one upper premolar when biting on a particular cusp and when drinking cold water; there is no recession and the enamel is intact. What is the most important consideration? | Exclude a cracked tooth before diagnosing dentine hypersensitivity | Prescribe a desensitising toothpaste without further examination | Diagnose hypersensitivity because cold causes pain | Recommend whitening to reduce sensitivity | Hypersensitivity requires exposed dentine and is a diagnosis of exclusion; pain on biting a cusp with intact enamel suggests a crack.
 SA3#dentistry-u02-11-q5@2,3: Evaluate the hydrodynamic theory as an explanation of dentine hypersensitivity. | Supporting evidence: stimuli that move tubular fluid (cold, air, osmotic) cause pain; sensitive dentine has more and wider open tubules; treatments that occlude tubules reduce pain; fluid movement has been shown to excite intradental nerves experimentally. Limitations: it does not fully explain the role of odontoblasts, which express ion channels and might act as transducers, and individual variation in pain is not explained by tubule patency alone. Overall it is the best-supported theory and guides treatment. | Mechanism stated ; Evidence from stimuli ; Evidence from tubule studies ; Treatment evidence ; Limitation or alternative theory ; Judgement
+Q: Who proposed the hydrodynamic theory? | Brännström.
+Q: What is dentine hypersensitivity? | Short, sharp pain from exposed dentine in response to stimuli, not attributable to another dental defect.
+Q: Which way do cold and air blasts move tubule fluid? | Outwards.
+Q: How do sweet solutions cause dentine pain? | They draw tubule fluid outwards osmotically.
+Q: Name ways dentine becomes exposed. | Gingival recession, enamel loss from erosion, abrasion or attrition, and periodontal treatment.
+Q: Why is some exposed dentine insensitive? | Its tubules are occluded by a smear layer or mineral.
+Q: Why is dentine hypersensitivity a diagnosis of exclusion? | Caries, a cracked tooth or a leaking restoration can cause similar sharp pain and must be ruled out.
+Q: How do stannous fluoride and arginine toothpastes reduce sensitivity? | They occlude dentinal tubules, reducing fluid flow.
+Q: How are potassium salts thought to reduce sensitivity? | By depolarising the nerves, reducing their excitability.
+Q: Which alternative explanations of dentine sensitivity are less well supported? | Nerves running the full tubule length, or odontoblasts acting as sensory receptors.
 
 ## Root formation and cementum
 LV: BDS Year 1 · Core
@@ -470,6 +580,16 @@ M2#dentistry-u02-12-q2@2: Which type of cementum provides the main attachment fo
 TF1#dentistry-u02-12-q3@3: Inflamed rests of Malassez can proliferate to form the epithelial lining of a radicular cyst. | true | Periapical inflammation stimulates the rests, which can form the lining of radicular (periapical) cysts.
 M3#dentistry-u02-12-q4@3: An older patient's lower molar is difficult to extract; the radiograph shows bulbous apical root ends. What is the most likely cause? | Hypercementosis | Root resorption | Dens invaginatus | Taurodontism | Bulbous apices from excess cementum are characteristic of hypercementosis, associated with age and loss of the opposing tooth among other causes.
 SA2#dentistry-u02-12-q5@1,3: Describe how the root forms and why an open apex matters clinically. | After crown completion, inner and outer enamel epithelia fuse to form Hertwig's epithelial root sheath, which grows apically and induces odontoblasts to form root dentine, its diaphragm dividing multi-rooted teeth; it then fragments into rests of Malassez, and cementoblasts from the follicle lay cementum. The apex remains open until two to three years after eruption. An open apex has a rich blood supply, improving pulp survival after injury, but if the pulp dies root development stops, leaving thin walls. | HERS formation ; Induction of root dentine ; Fragmentation into rests ; Cementum from follicle ; Timing of apex closure ; Clinical significance
+Q: What is Hertwig's epithelial root sheath? | The double epithelial layer from the cervical loop that maps out the root and induces root dentine.
+Q: How is a multi-rooted tooth's root trunk divided? | By inward flaps of the root sheath, the epithelial diaphragm.
+Q: When does root formation complete in permanent teeth? | About two to three years after eruption.
+Q: How mineralised is cementum? | About 45–50% mineral.
+Q: Which cells make cementum? | Cementoblasts, from the dental follicle.
+Q: What does acellular extrinsic fibre cementum do? | Covers the cervical and middle root with densely packed Sharpey's fibres, giving the main attachment.
+Q: What are the three relationships of cementum and enamel at the CEJ? | Cementum may overlap enamel, meet it edge to edge, or leave a gap exposing dentine.
+Q: Why does an open apex improve pulp survival after injury? | The wide apex gives a better blood supply, so the pulp may survive or revascularise.
+Q: Why is it wrong to say cementum remodels like bone? | It is avascular and grows only by apposition, not continuous remodelling.
+Q: Name causes of hypercementosis. | Age, chronic inflammation, loss of an opposing tooth and Paget's disease.
 
 ## Eruption and the chronology of the dentition
 LV: BDS Year 1 · Core
@@ -509,6 +629,16 @@ M2#dentistry-u02-13-q2@2: An 8-year-old's upper left central incisor erupted 18 
 SEQ2#dentistry-u02-13-q3@2: Put these permanent teeth in typical eruption order in the upper arch. | First molar ; Central incisor ; Lateral incisor ; First premolar ; Canine and second premolar ; Second molar | Upper sequence is usually 6, 1, 2, 4, then 3 and 5 around the same time, then 7.
 M3#dentistry-u02-13-q4@3: Which observation best supports the view that root growth alone does not drive eruption? | Teeth can erupt in experimental models after their root formation is prevented, but not after removal of the follicle | Teeth erupt faster when roots are long | Lower teeth erupt before upper teeth | Third molars often fail to erupt | Experiments show eruption depends on the follicle, not the root: rootless teeth still erupt, but follicle removal stops eruption.
 SA3#dentistry-u02-13-q5@2,3: Explain how a dentist would assess whether an 11-year-old's upper canines are developing normally. | Upper canines usually erupt at 11–12. The dentist compares the two sides and the eruption sequence, palpates the buccal sulcus for the canine bulge from about age 10, checks the mobility and position of the primary canines and the angulation of the lateral incisors. Absent or asymmetric bulges, firm retained primary canines or a delayed side suggest palatal displacement, and radiographs (for example parallax views or a panoramic radiograph) are taken to locate the canine, with early referral for interceptive management. | Normal age ; Compare sides and sequence ; Palpation of bulge ; Other signs ; Radiographic localisation ; Early referral
+Q: What are the three phases of eruption? | Pre-eruptive, pre-functional eruptive and functional.
+Q: How does the dental follicle drive eruption? | It coordinates bone resorption above the tooth and bone formation below.
+Q: How do teeth erupt without bleeding? | The reduced enamel epithelium fuses with the oral epithelium, creating an epithelium-lined path.
+Q: When do the lower primary central incisors usually erupt? | At about 6 months.
+Q: When do the upper permanent canines usually erupt? | At 11–12 years.
+Q: Which tend to erupt first, upper or lower teeth? | Lower teeth usually erupt before upper.
+Q: When should an unerupted tooth be investigated relative to its partner? | When it hasn't erupted 6 months after its contralateral partner.
+Q: What is a common cause of an unerupted upper central incisor? | A supernumerary tooth.
+Q: Why is chronological age a poor guide to dental development alone? | Eruption varies widely; comparing sides and the eruption sequence is often more informative.
+Q: What suggests a palatally displaced upper canine? | No buccal bulge by 10–11, or asymmetry between sides.
 
 ## The periodontal ligament and alveolar bone
 LV: BDS Year 1 · Core
@@ -549,6 +679,16 @@ M2#dentistry-u02-14-q2@2: Which principal fibre group mainly converts biting for
 MATCH1#dentistry-u02-14-q3@3: Match each PDL feature to its function. | Mechanoreceptors = Proprioception of bite force ; Osteoclasts = Bone resorption during tooth movement ; Sharpey's fibres = Anchoring the tooth to cementum and bone ; Rests of Malassez = Possible source of cyst epithelium | The PDL is a supporting, sensory and remodelling tissue.
 M3#dentistry-u02-14-q4@3: Orthodontic teeth move slowly and a radiograph shows root shortening after very heavy forces were used. What explains this? | Heavy force crushes the PDL (hyalinisation), delaying resorption and causing root resorption | Heavy force speeds movement by stretching all fibres | Heavy force causes the lamina dura to thicken | Heavy force stimulates cementum to grow faster than bone | Excessive pressure compresses the PDL until it becomes cell-free (hyalinised); movement waits for undermining resorption, and the root itself can be resorbed.
 SA3#dentistry-u02-14-q5@2,3: Explain how the periodontal ligament allows orthodontic tooth movement. | The PDL is a cellular, vascular tissue between root and bone. A sustained orthodontic force compresses it on the pressure side, where osteoclasts resorb the alveolar bone, and stretches it on the tension side, where osteoblasts form new bone; fibroblasts remodel the collagen fibres. The tooth therefore moves with its socket. Light, continuous forces allow direct resorption; heavy forces cause hyalinisation, slower movement and risk of root resorption. Transseptal fibres remodel slowly, contributing to relapse. | Pressure side resorption ; Tension side formation ; Fibre remodelling ; Light versus heavy force ; Hyalinisation and root resorption ; Relapse
+Q: Where is the periodontal ligament widest? | At the crest and apex; it is thinnest at mid-root.
+Q: What do the alveolar crest fibres resist? | Extrusion.
+Q: What do the horizontal PDL fibres resist? | Lateral forces.
+Q: Why do transseptal fibres matter in orthodontics? | They contribute to orthodontic relapse.
+Q: Where does PDL proprioception feed centrally? | To the mesencephalic nucleus.
+Q: What happens to the PDL on each side of a tooth under orthodontic force? | It is compressed on one side, with bone resorption, and stretched on the other, with bone formation.
+Q: What is hyalinisation of the PDL? | A result of excessive orthodontic force that slows movement and risks root resorption.
+Q: What is bundle bone? | Alveolar bone proper where Sharpey's fibres insert.
+Q: What happens to alveolar bone after extraction? | It resorbs, because it exists because of the teeth.
+Q: What causes a widened PDL space other than infection? | Occlusal trauma, orthodontic movement and, rarely, malignancy such as osteosarcoma.
 
 ## The oral mucosa
 LV: BDS Year 1 · Core
@@ -586,6 +726,16 @@ M2#dentistry-u02-15-q2@2: Why are drugs given under the tongue absorbed quickly?
 TF2#dentistry-u02-15-q3@1: The junctional epithelium has a slow turnover and tight intercellular junctions. | false | It has a very rapid turnover and wide intercellular spaces, making it permeable to bacterial products and defence cells.
 M3#dentistry-u02-15-q4@3: A patient has a white, slightly thickened patch on the floor of the mouth that does not wipe off. Why does its site increase concern? | The floor of mouth is non-keratinised lining mucosa where a white patch is abnormal and oral cancer commonly arises | Keratinised masticatory mucosa there normally looks white | The floor of mouth has no epithelium | White patches cannot occur in lining mucosa | Lining mucosa is normally non-keratinised and pink; a non-wipeable white patch (leukoplakia) on the floor of mouth, a high-risk site, needs referral and usually biopsy.
 SA2#dentistry-u02-15-q5@1,3: Describe the structure of healthy gingiva from the outer surface to the tooth. | The outer oral gingival epithelium is keratinised or parakeratinised over a dense lamina propria; free gingiva surrounds the neck of the tooth and attached gingiva is bound to bone, ending at the mucogingival junction. Inside, the non-keratinised sulcular epithelium lines a sulcus up to about 3 mm deep clinically, whose base is the junctional epithelium, attached to enamel by hemidesmosomes and an internal basal lamina. Gingival fibres, including transseptal fibres, support it. | Oral epithelium keratinised ; Free and attached gingiva ; Mucogingival junction ; Sulcular epithelium and depth ; Junctional epithelium attachment ; Gingival fibres
+Q: What are the three types of oral mucosa? | Masticatory, lining and specialised.
+Q: Where is masticatory mucosa found? | On the gingiva and hard palate.
+Q: How many circumvallate papillae are there and where? | 8–12, in a V in front of the sulcus terminalis.
+Q: Where are foliate papillae found? | On the lateral borders of the tongue, posteriorly.
+Q: What type of epithelium lines the mouth? | Stratified squamous epithelium.
+Q: What do Langerhans cells in oral epithelium do? | Present antigens.
+Q: What is the mucogingival junction? | The boundary between attached gingiva and alveolar mucosa.
+Q: What is the probing depth of the healthy gingival sulcus? | Up to about 3 mm.
+Q: Why is the junctional epithelium both a weakness and a defence? | It is thin and permeable to bacterial products, but its fast turnover sheds bacteria and lets neutrophils through.
+Q: Which gingival epithelia are non-keratinised? | The sulcular and junctional epithelia.
 
 ## Developmental anomalies of the teeth
 LV: BDS Year 1 · Core
@@ -633,4 +783,14 @@ M2#dentistry-u02-16-q2@2: A child has amber-grey, translucent teeth in both dent
 MATCH2#dentistry-u02-16-q3@3: Match each anomaly to its most likely cause. | Turner tooth = Infection of the primary predecessor ; Fluorosis = Excess fluoride during enamel formation ; Amelogenesis imperfecta = Inherited gene variant ; Dilaceration = Trauma during root formation | A single tooth suggests a local cause; symmetrical chronological defects suggest systemic exposure; all teeth suggest genetics.
 M3#dentistry-u02-16-q4@3: A 7-year-old has sharply demarcated yellow-brown opacities on two first permanent molars, with breakdown of one, and a white opacity on one upper incisor; the other teeth are normal. What is the most likely diagnosis? | Molar–incisor hypomineralisation | Fluorosis | Amelogenesis imperfecta | Dentinogenesis imperfecta | Demarcated, asymmetric defects confined to first molars and incisors with post-eruptive breakdown are typical of MIH; fluorosis is diffuse and symmetrical, and inherited disorders affect all teeth.
 SA3#dentistry-u02-16-q5@2,3: Explain how the distribution of an enamel defect helps identify its cause. | Defects affecting all teeth of both dentitions in a similar way suggest a genetic disorder such as amelogenesis imperfecta, because the problem is present throughout development. Symmetrical defects on teeth forming at the same time, following incremental lines, suggest a systemic insult at that period, such as fluorosis or childhood illness; the level on each crown reflects timing. Demarcated, asymmetrical defects on first molars and incisors suggest MIH. A defect in a single tooth suggests a local cause, such as infection or trauma of the primary predecessor (Turner tooth). | Generalised genetic ; Chronological systemic ; Timing from crown level ; MIH pattern ; Single tooth local cause
+Q: What is oligodontia? | Developmental absence of six or more teeth, excluding third molars.
+Q: Which syndrome features multiple supernumerary teeth? | Cleidocranial dysplasia.
+Q: How does gemination differ from fusion? | Gemination is one germ partly splitting, with a normal count; fusion is two germs joining, giving one fewer tooth.
+Q: What is taurodontism? | An elongated pulp chamber with short roots in molars.
+Q: What is dilaceration? | A sharp bend in the root, often after trauma to the primary predecessor.
+Q: What is concrescence? | Roots of two teeth joined by cementum.
+Q: What does amelogenesis imperfecta affect? | All teeth of both dentitions, with hypoplastic, hypomaturation or hypocalcified enamel.
+Q: What causes tetracycline staining? | Tetracycline given during tooth formation, causing grey-brown banding.
+Q: What does a defect affecting all teeth in both dentitions suggest? | A genetic disorder.
+Q: How does fluorosis look compared with MIH? | Fluorosis gives diffuse, symmetrical opacities; MIH gives sharply demarcated, asymmetric opacities on first molars and incisors.
 `;

@@ -37,6 +37,16 @@ M2#history-u06-01-q2@2: Why does the resistance of enslaved people matter to the
 TF1#history-u06-01-q3@1: Formerly enslaved people were forced to serve as apprentices until 1838. | true | Apprenticeship kept them working for former owners for four more years.
 M3#history-u06-01-q4@3: Which judgement about how the empire was held together is best supported? | Local collaboration, backed by the threat and use of force | Force alone, with no local cooperation anywhere | Consent alone, with no use of force | Trade agreements with no political control at all | Collaboration and coercion worked together across the empire.
 SA3#history-u06-01-q5@2,3: How did the British Empire change during the nineteenth century? | The empire grew to about a quarter of the world's land by 1900, combining self-governing settler colonies, India (under the Crown from 1858, with Victoria Empress from 1876), crown colonies and informal influence. The slave trade was abolished in 1807 and slavery from 1834, with apprenticeship to 1838 and compensation to owners. A strong answer explains these changes and judges how the empire was held together. | Explains extent and types ; Explains abolition ; Explains India ; Explains force and consent ; Reaches a judgement
+Q: What share of the world's land did the British Empire cover by 1900? | About a quarter.
+Q: Name three settler colonies that gained self-government in the nineteenth century. | Canada, Australia and New Zealand.
+Q: Where did Britain exercise informal empire? | In places such as Latin America and China, through trade and influence.
+Q: Name two abolitionists who campaigned against the slave trade. | Thomas Clarkson and William Wilberforce.
+Q: Which resistance by enslaved people preceded abolition? | The Jamaican rebellion of 1831 to 1832.
+Q: When did the Slavery Abolition Act take effect? | It was passed in 1833 and ended slavery in most of the empire from 1834.
+Q: How much compensation was paid under the Slavery Abolition Act? | £20 million, paid to slave owners, not to the enslaved.
+Q: When was Queen Victoria proclaimed Empress of India? | In 1876.
+Q: Who ruled India until 1858? | The East India Company.
+Q: How did the empire rely on consent as well as force? | It relied on collaboration by local rulers and elites and self-government in settler colonies, backed by force.
 
 ## Victorian monarchy
 LV: GCSE and A level · Application
@@ -75,6 +85,16 @@ M2#history-u06-02-q2@2: Why did a republican movement grow in the early 1870s? |
 TF1#history-u06-02-q3@1: Victoria married Prince Albert in 1840. | true | Albert promoted the Great Exhibition and a respectable royal image.
 M3#history-u06-02-q4@3: Which judgement about Victorian monarchy is best supported? | By 1901 it had lost power but gained popularity, largely because of that change | It gained more political power than at any time since 1688 | It became deeply unpopular and nearly abolished in 1901 | It ruled the empire without any role for Parliament | Withdrawal from politics made the Crown a national symbol.
 SA3#history-u06-02-q5@2,3: How did the role of the monarchy change during Victoria's reign? | Victoria's direct interference, as in the Bedchamber Crisis (1839), became rarer; Albert promoted a respectable image; her withdrawal after 1861 fed republicanism, but Disraeli, the title of Empress (1876) and the jubilees (1887, 1897) restored popularity. Bagehot (1867) described a dignified monarchy with rights to be consulted, encourage and warn. A strong answer weighs lost power against new popularity. | Explains political role ; Explains withdrawal ; Explains the recovery ; Uses Bagehot ; Reaches a judgement
+Q: How old was Victoria when she became queen? | Eighteen, in 1837.
+Q: What was the Bedchamber Crisis of 1839? | Victoria refused to replace ladies of her household with Tory appointees.
+Q: What did Prince Albert champion? | The Great Exhibition of 1851 and the image of a respectable royal family.
+Q: When did Prince Albert die? | In December 1861.
+Q: How did Victoria react to Albert's death? | She withdrew from public life for years.
+Q: In which book did Bagehot describe the monarchy's role? | The English Constitution (1867).
+Q: What rights did Bagehot say the monarch kept? | The right to be consulted, to encourage and to warn.
+Q: How did the mass press help the Victorian monarchy? | It reported jubilees and ceremonies, creating national occasions.
+Q: Why did withdrawal from party politics make the monarchy popular? | It made the monarchy acceptable to all parties.
+Q: What is a constitutional monarchy? | A monarchy whose powers are limited by law and convention.
 
 ## Parliamentary reform, 1867–1884
 LV: GCSE and A level · Application
@@ -111,6 +131,16 @@ M2#history-u06-03-q2@2: Why did the Ballot Act reduce bribery and intimidation? 
 TF1#history-u06-03-q3@1: The Redistribution Act of 1885 created mostly single-member constituencies. | true | Constituencies became roughly equal in size.
 M3#history-u06-03-q4@3: Which judgement about democracy by 1885 is best supported? | Britain had moved a long way towards democracy, but was not yet one | Britain had full democracy, including votes for women | Britain was no more democratic than in 1832 | The House of Lords had been abolished by 1885 | Progress was real, but large groups remained excluded.
 SA3#history-u06-03-q5@2,3: How far had Britain become a democracy by 1885? | The Second Reform Act (1867) roughly doubled the electorate; the Ballot Act (1872) made voting secret; the 1883 Act curbed corruption; the Third Reform Act (1884) gave around six in ten men the vote; the Redistribution Act (1885) equalised constituencies. But women and about four in ten men were excluded, and the Lords could block laws. A strong answer weighs progress against limits. | Explains 1867 ; Explains the ballot and corruption ; Explains 1884 to 1885 ; Explains limits ; Reaches a judgement
+Q: What happened in Hyde Park in July 1866? | Demonstrators broke into the park after a Liberal reform bill failed.
+Q: Which government passed the Second Reform Act? | Lord Derby's Conservative government, with Disraeli leading in the Commons.
+Q: Roughly how large was the electorate after 1867? | About two million, roughly doubled.
+Q: What did the Corrupt and Illegal Practices Act of 1883 do? | Limited election spending and banned bribery more effectively.
+Q: Who gained the vote under the Third Reform Act of 1884? | Many county householders, such as agricultural labourers and miners.
+Q: What proportion of adult men could vote after 1884? | Around six in ten.
+Q: What did the Redistribution Act of 1885 do? | Created mostly single-member constituencies of roughly equal size.
+Q: What is household suffrage? | The vote for men who were householders.
+Q: What unelected body could still block laws after 1885? | The House of Lords.
+Q: What is redistribution? | Redrawing constituencies to make them more equal.
 
 ## The development of democracy
 LV: GCSE and A level · Application
@@ -149,6 +179,16 @@ M2#history-u06-04-q2@2: Why did parties build national organisations after 1867?
 TF1#history-u06-04-q3@1: MPs were first paid a salary in 1911. | true | Payment of MPs was one of the Chartists' six points.
 M3#history-u06-04-q4@3: Which judgement about when Britain became a democracy is best supported? | Democracy developed in stages, and 1928 is the strongest case for equal adult suffrage | Britain became a full democracy in 1832 | Britain has never had any democratic elections | Democracy arrived only when the Lords was abolished | The date depends on which features of democracy are stressed.
 SA3#history-u06-04-q5@2,3: When did Britain become a democracy? | Mass parties (the National Union 1867, the National Liberal Federation 1877, the Primrose League 1883) and campaigns such as Midlothian (1879 to 1880) changed politics; the Parliament Act (1911) made the Commons supreme after the Lords rejected the People's Budget; the Acts of 1918 and 1928 gave all men and then women equal votes. A strong answer weighs these stages and defines democracy. | Explains mass politics ; Explains the Lords crisis ; Explains 1918 and 1928 ; Defines democracy ; Reaches a judgement
+Q: When did the Conservatives found the National Union? | In 1867.
+Q: What was the Primrose League? | A Conservative organisation founded in 1883 that organised hundreds of thousands of supporters.
+Q: When did the Liberals found the National Liberal Federation? | In 1877.
+Q: How did cheap newspapers affect politics? | They spread political news widely.
+Q: Which Home Rule Bill did the Lords reject in 1893? | Gladstone's Second Home Rule Bill.
+Q: What did George V promise before the Parliament Act? | To create new peers if needed.
+Q: What powers did the Parliament Act of 1911 leave the Lords? | Delaying non-money bills for two years.
+Q: Who gained the vote in 1918? | All men aged 21 and over, and women over 30 who met a property qualification.
+Q: Which year is the strongest case for equal adult suffrage in Britain? | 1928.
+Q: What preceded the Parliament Act of 1911? | Two general elections in 1910.
 
 ## The growth of the Labour movement
 LV: GCSE and A level · Application
@@ -186,6 +226,16 @@ M2#history-u06-05-q2@2: Why did the Taff Vale case push unions towards Labour? |
 TF1#history-u06-05-q3@1: The LRC won 29 seats in the 1906 general election. | true | It renamed itself the Labour Party that year.
 M3#history-u06-05-q4@3: Which judgement about Taff Vale is best supported? | It turned union support for Labour from a minority choice into a majority one | It had no effect on the Labour Party at all | It destroyed the Labour Party in 1906 | It was reversed by the House of Lords in 1902 | Taff Vale made political representation urgent for unions.
 SA3#history-u06-05-q5@2,3: Why did the Labour Party emerge between 1888 and 1906? | New Unionism (the match girls 1888, the dock strike 1889) organised unskilled workers; Hardie and the ILP (1893) and the LRC (1900) sought working-class MPs; Taff Vale (1901) drove unions to affiliate; the 1903 pact with the Liberals helped win 29 seats in 1906, and the Trade Disputes Act reversed Taff Vale. A strong answer weighs these causes. | Explains New Unionism ; Explains the ILP and LRC ; Explains Taff Vale ; Explains the 1903 pact ; Reaches a judgement
+Q: What did the match girls strike over in 1888? | Pay, fines and the dangers of phosphorus, at Bryant and May in London.
+Q: Who supported the match girls' strike? | Annie Besant.
+Q: When was the London Dock Strike? | In 1889.
+Q: Name two groups of unskilled workers who formed unions under New Unionism. | Dockers and gas workers.
+Q: For which seat was Keir Hardie elected in 1892? | West Ham South.
+Q: Who formed the Labour Representation Committee in 1900? | Unions and socialist societies.
+Q: What did the Taff Vale ruling require? | A railway union to pay damages to the company for strike losses.
+Q: What reversed the Taff Vale judgement? | The Trade Disputes Act of 1906.
+Q: What electoral pact helped Labour in 1906? | A secret pact with the Liberals in 1903.
+Q: Was Labour founded as a revolutionary party? | No. It was a coalition of unions and socialists seeking representation in Parliament.
 
 ## Ireland and the Union
 LV: GCSE and A level · Application
@@ -224,6 +274,16 @@ M2#history-u06-06-q2@2: Why was famine relief so limited? | Belief in laissez-fa
 TF1#history-u06-06-q3@1: Gladstone's Land Act of 1881 gave Irish tenants fair rents and security. | true | It followed the Land War of 1879 to 1882.
 M3#history-u06-06-q4@3: Which judgement about British policy towards Ireland is best supported? | Reforms usually came late and under pressure, strengthening nationalism | Policy satisfied every Irish grievance by 1850 | Britain took no action of any kind in Ireland | The famine was entirely prevented by government relief | Late, reluctant reform encouraged demands for more.
 SA3#history-u06-06-q5@2,3: How effectively did British governments deal with Ireland between 1801 and 1882? | The Union (1801) abolished the Irish Parliament; Catholic Emancipation came only in 1829 after O'Connell's Clare election; famine relief in 1845 to 1852 was limited while food was exported, and about a million died and over a million emigrated; Gladstone disestablished the Church (1869) and passed Land Acts (1870, 1881) after the Land War. A strong answer weighs failure against reform. | Explains the Union ; Explains Emancipation ; Explains the famine ; Explains land reform ; Reaches a judgement
+Q: What rebellion preceded the Act of Union? | The rebellion of 1798.
+Q: What did the Act of Union abolish? | The Irish Parliament; Irish MPs sat at Westminster.
+Q: What did Catholic Emancipation (1829) allow? | Catholics to sit in Parliament.
+Q: How many died in the Great Famine? | About a million, between 1845 and 1852.
+Q: How many emigrated during the Great Famine, and where to? | Over a million, many to Britain and North America.
+Q: What continued to leave Ireland during the famine? | Food continued to be exported.
+Q: Who owned most Irish land? | Protestant landlords, many living in England.
+Q: When was the Church of Ireland disestablished? | In 1869, by Gladstone.
+Q: When was the Land War? | From 1879 to 1882.
+Q: What is disestablishment? | Removing a church's status as the official state church.
 
 ## Irish nationalism
 LV: GCSE and A level · Application
@@ -261,6 +321,16 @@ M2#history-u06-07-q2@2: Why could the Third Home Rule Bill pass after 1912? | Th
 TF1#history-u06-07-q3@1: The Third Home Rule Bill came into effect in 1914. | false | It became law in 1914 but was suspended for the duration of the war.
 M3#history-u06-07-q4@3: Which judgement about unionist opposition in Ulster is best supported? | It was the decisive obstacle after 1912, leading to partition in 1921 | It had no effect on the Home Rule crisis | It was supported by most Irish Catholics | It ended after the Covenant of 1912 | Ulster's resistance shaped the eventual settlement.
 SA3#history-u06-07-q5@2,3: Why had Ireland not achieved Home Rule by 1914? | Parnell's party made Home Rule central, but the First Bill (1886) fell when Chamberlain's Liberal Unionists voted against, and the Second (1893) was rejected by the Lords. After the Parliament Act (1911) the Third Bill passed in 1914 but was suspended, while Ulster unionists signed the Covenant (1912) and armed the UVF (1913) with Conservative support. A strong answer weighs these. | Explains the nationalist movements ; Explains the 1886 and 1893 bills ; Explains the Lords ; Explains Ulster ; Reaches a judgement
+Q: When was the Irish Republican Brotherhood founded? | In 1858.
+Q: What did the Fenians aim for? | An independent Irish republic by force.
+Q: Who founded the Home Rule League in 1873? | Isaac Butt.
+Q: What was cultural nationalism in Ireland? | Promoting Irish sport and language through the Gaelic Athletic Association (1884) and the Gaelic League (1893).
+Q: What did the defeat of the First Home Rule Bill do to the Liberals? | It split the Liberal Party.
+Q: Why did Ulster Protestant unionists oppose Home Rule? | They feared rule by a Catholic Dublin parliament.
+Q: When was the Ulster Volunteer Force formed? | In 1913, armed with smuggled guns.
+Q: How did nationalists respond to the Ulster Volunteer Force? | They formed the Irish Volunteers.
+Q: What happened to the Third Home Rule Bill in 1914? | It became law but was suspended for the duration of the war.
+Q: What did Ulster's opposition lead to in 1921? | Partition.
 
 ## Imperial expansion
 LV: GCSE and A level · Evaluation
@@ -301,6 +371,16 @@ M2#history-u06-08-q2@2: Why did Robinson and Gallagher speak of an "imperialism 
 TF1#history-u06-08-q3@1: Britain fought two Opium Wars with China. | true | They were fought in 1839 to 1842 and 1856 to 1860.
 M3#history-u06-08-q4@3: Which explanation of British expansion is best supported? | Economic and strategic interests were central, with ideology providing justification | Missionaries alone decided where Britain expanded | Britain expanded only to stop the slave trade | Expansion happened without any use of force | Several motives combined, with interests at the centre.
 SA3#history-u06-08-q5@2,3: Why did Britain expand its empire in the nineteenth century? | The Opium Wars opened China and gained Hong Kong (1842); the Suez shares (1875) and occupation of Egypt (1882) protected the route to India; Africa was partitioned in the 1880s and 1890s. Trade, finance (Cain and Hopkins), strategy, local crises (Robinson and Gallagher) and ideas of superiority all mattered. A strong answer weighs these. | Explains areas of expansion ; Explains economic motives ; Explains strategic motives ; Explains ideology ; Reaches a judgement
+Q: What did Britain force China to accept in the Opium Wars? | The opium trade and the opening of ports.
+Q: When were the Opium Wars fought? | From 1839 to 1842 and 1856 to 1860.
+Q: When did Britain take large parts of Africa? | In the 1880s and 1890s.
+Q: What economic motives drove imperial expansion? | Merchants and investors wanted markets, raw materials and secure trade.
+Q: What strategic motive drove British expansion? | Protecting the route to India and naval bases.
+Q: Which explorer and missionary is associated with the civilising mission? | David Livingstone.
+Q: What phrase expressed ideas of racial superiority in empire? | "The white man's burden".
+Q: When did Robinson and Gallagher publish their interpretation? | In 1953.
+Q: According to Robinson and Gallagher, when did Britain take formal control? | Only when local crises threatened its interests.
+Q: What is gentlemanly capitalism? | Cain and Hopkins's idea that City financial interests drove imperial expansion.
 
 ## Colonial administration
 LV: GCSE and A level · Application
@@ -340,6 +420,16 @@ M2#history-u06-09-q2@2: Why did Britain use indirect rule in Africa? | It was ch
 TF1#history-u06-09-q3@1: About two-fifths of India was ruled through princely states. | true | Their rulers accepted British authority.
 M3#history-u06-09-q4@3: Which judgement about colonial administration is best supported? | Cheap and effective at control, but serving British interests first | Designed mainly to prepare colonies for democracy | Run entirely by elected local assemblies | Without any effect on colonised peoples' lives | Control and British interests shaped administration.
 SA3#history-u06-09-q5@2,3: How did Britain govern its empire in the late nineteenth century, and with what effects? | India was governed through the Viceroy, the Indian Civil Service (examinations from 1855) and princely states, with English education for an elite after Macaulay's Minute (1835); Africa largely through indirect rule (Lugard). Railways and ports served trade; taxation, land loss, exclusion and famines marked colonial rule. A strong answer weighs efficiency against effects. | Explains India ; Explains indirect rule ; Explains infrastructure ; Explains costs to colonised peoples ; Reaches a judgement
+Q: Who oversaw Indian government from London after 1858? | The Secretary of State for India.
+Q: From when were Indian Civil Service exams open and competitive? | From 1855, held in London.
+Q: What did Macaulay's Minute on Education (1835) promote? | English-language education for an Indian elite.
+Q: In which book did Lugard describe indirect rule? | The Dual Mandate in British Tropical Africa (1922).
+Q: What were the drawbacks of indirect rule? | It strengthened cooperating chiefs and created "traditional" authorities where none had existed.
+Q: What was colonial infrastructure mainly built to serve? | Trade and administration.
+Q: Where did colonised peoples lose land, especially? | In settler areas such as Kenya and southern Africa.
+Q: What raised questions about British priorities in India? | Late nineteenth-century famines in which millions died.
+Q: What is a Viceroy? | The Crown's representative who governed India after 1858.
+Q: Did Britain govern its colonies mainly with British officials? | No. It depended heavily on local rulers, soldiers and clerks.
 
 ## The Scramble for Africa
 LV: GCSE and A level · Application
@@ -380,6 +470,16 @@ M2#history-u06-10-q2@2: Why did the Maxim gun matter to European conquest? | It 
 TF1#history-u06-10-q3@1: Over 10,000 Sudanese soldiers were killed at Omdurman in 1898. | true | British and Egyptian losses were fewer than 50.
 M3#history-u06-10-q4@3: Which explanation of the Scramble is best supported? | Rivalry turned long-standing interests into rapid partition, made possible by technology | Africans invited Europeans to rule the whole continent | The Scramble was planned entirely by Britain alone | It happened without any use of force | Rivalry, interests and technology combined.
 SA3#history-u06-10-q5@2,3: Why did European powers partition Africa between 1880 and 1914? | Rivalry between Britain, France, Germany, Belgium and Italy turned interests into a race, regulated by the Berlin Conference (1884 to 1885); hopes of markets, minerals and investment, and Britain's concern for routes to India via Egypt (1882) and the Cape, drove claims; quinine, steamships, railways and the Maxim gun (Omdurman 1898) made conquest cheap. A strong answer weighs these and notes African agency. | Explains rivalry ; Explains economic motives ; Explains strategy ; Explains technology ; Reaches a judgement
+Q: What did Europeans control in Africa in 1880? | Mainly coastal areas.
+Q: What rule did the Berlin Conference set for claiming territory? | Effective occupation: claims needed real control on the ground.
+Q: Whose state did the Berlin Conference recognise? | King Leopold II's Congo Free State.
+Q: When did Britain defeat the Mahdist army at Omdurman? | In 1898.
+Q: Which company took the lands later called Rhodesia? | Cecil Rhodes's British South Africa Company, from 1889 to 1890.
+Q: Name three African territories Britain took. | Nigeria, the Gold Coast, Kenya and Uganda.
+Q: How did quinine help European conquest? | It reduced deaths from malaria among Europeans.
+Q: How many British and Egyptian troops died at Omdurman? | Fewer than 50.
+Q: Which powers' entry turned competition in Africa into a race? | France, Germany, Belgium and Italy.
+Q: Did Africans play no part in the Scramble? | No. African rulers negotiated, resisted and sometimes allied with Europeans.
 
 ## Imperial resistance
 LV: GCSE and A level · Application
@@ -417,6 +517,16 @@ M2#history-u06-11-q2@2: Why did the new rifle cartridges anger sepoys in 1857? |
 TF1#history-u06-11-q3@1: The Mahdi's forces took Khartoum in 1885. | true | General Gordon was killed when the city fell.
 M3#history-u06-11-q4@3: Which judgement about how resistance changed is best supported? | Military defeat changed its form, laying foundations for later nationalism | Resistance ended completely after 1858 | Resistance was always peaceful throughout the century | Colonised peoples welcomed British rule without opposition | Resistance moved from armed struggle towards organised politics.
 SA3#history-u06-11-q5@2,3: How did colonised peoples resist British rule in the nineteenth century? | The Indian Rebellion (1857) began at Meerut over cartridges, annexations and land; Zulus won at Isandlwana (1879); the Mahdists took Khartoum (1885); Bogle led Morant Bay (1865); the Asante fought several wars. The Indian National Congress (1885) showed a shift to political organisation. A strong answer explains causes, methods and changes, and judges their impact. | Explains 1857 ; Explains African resistance ; Explains Caribbean resistance ; Explains political resistance ; Reaches a judgement
+Q: What is a sepoy? | An Indian soldier in the East India Company's army.
+Q: Name two grievances besides the cartridges behind the 1857 rebellion. | Annexations of Indian states, land policies and Christian missionaries.
+Q: Where were atrocities committed in 1857? | At Cawnpore, and in British reprisals.
+Q: By when was the Indian Rebellion crushed? | By 1858.
+Q: When was the Battle of Isandlwana? | On 22 January 1879.
+Q: Who was killed when the Mahdi's forces took Khartoum? | General Gordon, in January 1885.
+Q: Whose suppression of Morant Bay caused controversy in Britain? | Governor Eyre's.
+Q: Which West African people fought several wars against Britain? | The Asante.
+Q: What did the Indian National Congress seek at first? | A greater share in government for educated Indians.
+Q: Why is "mutiny" an incomplete name for 1857? | It began among soldiers but became a wider rebellion involving rulers and civilians.
 
 ## The Boer Wars
 LV: GCSE and A level · Application
@@ -458,6 +568,16 @@ M2#history-u06-12-q2@2: Why did the Boers turn to guerrilla warfare in 1900? | B
 TF1#history-u06-12-q3@1: More than 26,000 Boer women and children died in the camps. | true | Many thousands of Black Africans also died in separate camps.
 M3#history-u06-12-q4@3: Which judgement about the Second Boer War is best supported? | A costly victory that changed British policy at home and abroad | A quick and cheap victory with no consequences | A defeat that ended British rule in southern Africa | A war fought without any civilian casualties | The war's costs reshaped British policy at home and abroad.
 SA3#history-u06-12-q5@2,3: What were the consequences of the Second Boer War for Britain? | Britain won at Vereeniging (1902) after sieges, Black Week and guerrilla warfare, but farm burning and concentration camps, exposed by Hobhouse, killed over 26,000 Boer women and children and many Black Africans and damaged Britain's reputation. Recruits' poor health fed national efficiency and welfare reform, isolation encouraged alliances, and the 1910 Union entrenched white rule. A strong answer weighs these. | Explains the war ; Explains the camps ; Explains domestic consequences ; Explains international consequences ; Reaches a judgement
+Q: Which two Boer republics did Britain fight? | The Transvaal and the Orange Free State.
+Q: When did Britain annex the Transvaal? | In 1877.
+Q: What was the Jameson Raid? | A failed raid of 1895 to 1896, backed by Cecil Rhodes, that worsened relations with the Transvaal.
+Q: When did the Second Boer War begin? | In October 1899.
+Q: Which towns did the Boers besiege? | Mafeking, Ladysmith and Kimberley.
+Q: What was Black Week? | December 1899, when British forces suffered three defeats.
+Q: Which commanders led British reinforcements? | Lord Roberts and Lord Kitchener.
+Q: Which treaty ended the Second Boer War? | The Treaty of Vereeniging, in May 1902.
+Q: How did the Boer War affect welfare policy in Britain? | Poor health among recruits fed concerns about national efficiency and welfare reform.
+Q: When was the Union of South Africa formed? | In 1910.
 
 ## Women's suffrage
 LV: GCSE and A level · Evaluation
@@ -499,6 +619,16 @@ M2#history-u06-13-q2@2: Why did the government pass the Cat and Mouse Act in 191
 TF1#history-u06-13-q3@1: The 1918 Act gave the vote to all women over 21. | false | It gave the vote to women over 30 with a property qualification; equal votes came in 1928.
 M3#history-u06-13-q4@3: Which explanation of the 1918 vote is best supported? | Decades of campaigning, the opportunity of 1918 and wartime change combined | Women's war work alone won the vote | Militancy alone forced the government to act | Parliament gave the vote without any campaign | Several causes, long and short term, combined.
 SA3#history-u06-13-q5@2,3: Why did some women gain the vote in 1918? | The NUWSS (1897) built support through peaceful campaigning; the WSPU (1903) used militancy, met by force-feeding and the Cat and Mouse Act (1913); war work changed attitudes, though many workers were under 30; reform for soldiers in 1918 created an opportunity. Pugh doubts militancy helped; Purvis defends it. A strong answer weighs these. | Explains suffragists ; Explains suffragettes ; Explains the war ; Uses interpretations ; Reaches a judgement
+Q: Who proposed votes for women in 1867? | John Stuart Mill, in an amendment to the Reform Bill.
+Q: From when could unmarried women ratepayers vote in local elections? | From 1869.
+Q: When was the NUWSS formed? | In 1897.
+Q: What methods did suffragists use? | Petitions, meetings, marches and lobbying MPs.
+Q: What militant actions did suffragettes take? | Disrupting meetings, smashing windows, setting fires and attacking property.
+Q: What happened to imprisoned suffragettes on hunger strike? | They were force-fed.
+Q: How did Emily Wilding Davison die? | Struck by the King's horse at the Derby in June 1913.
+Q: What did the WSPU do when war began in 1914? | It suspended its campaign and supported the war effort.
+Q: How many women gained the vote in 1918? | About 8.4 million.
+Q: Why may militancy have hurt the cause? | It may have alienated some MPs.
 
 ## The Liberal welfare reforms
 LV: GCSE and A level · Application
@@ -541,6 +671,16 @@ M2#history-u06-14-q2@2: Why did the Boer War encourage welfare reform? | Many re
 TF1#history-u06-14-q3@1: The National Insurance Act of 1911 covered workers' families for health care. | false | It covered many workers themselves, but not their families.
 M3#history-u06-14-q4@3: Which judgement about the Liberal reforms is best supported? | A decisive break with laissez-faire, though far from a full welfare state | A complete welfare state created by 1911 | A set of reforms that changed nothing | Reforms paid for entirely by the poor | They began, but did not complete, a new role for the state.
 SA3#history-u06-14-q5@2,3: Why did the Liberal governments introduce welfare reforms between 1906 and 1911? | Booth (from 1886) and Rowntree (1901) showed poverty caused by age, sickness, low pay and unemployment; Boer War recruits' poor health raised national efficiency fears; New Liberals such as Lloyd George and Churchill favoured state action; the Liberals faced Labour's challenge. School meals (1906), pensions (1908), labour exchanges (1909) and insurance (1911) followed. A strong answer weighs these motives. | Explains social surveys ; Explains national efficiency ; Explains New Liberalism ; Explains the Labour challenge ; Reaches a judgement
+Q: What did Charles Booth find in London? | About a third of people living in poverty.
+Q: Name two New Liberals. | David Lloyd George and Winston Churchill.
+Q: When were free school meals and school medical inspections introduced? | Free meals in 1906 and medical inspections in 1907.
+Q: When were labour exchanges introduced? | In 1909.
+Q: What did the National Insurance Act of 1911 provide? | Health insurance for many workers and unemployment insurance in some trades.
+Q: Who paid for national insurance? | Workers, employers and the state.
+Q: What did the People's Budget tax? | The rich and land.
+Q: What did the People's Budget fund? | Pensions and the navy.
+Q: What limited the Liberal reforms? | Pensions were small and means-tested, insurance covered only some workers, and families were not covered for health.
+Q: What political challenge encouraged Liberal reform? | Competition from Labour.
 
 ## Britain's changing international position
 LV: GCSE and A level · Evaluation
@@ -579,4 +719,14 @@ M2#history-u06-15-q2@2: Why did HMS Dreadnought begin a new naval race? | It mad
 TF1#history-u06-15-q3@1: The ententes committed Britain to go to war alongside France and Russia. | false | They settled disputes but did not bind Britain to fight.
 M3#history-u06-15-q4@3: Which judgement about Britain's position by 1914 is best supported? | A great power, no longer unchallenged, adjusting by seeking partners | A minor power with no navy or empire left | An unchallenged power with no need for any partners | A country allied to Germany against France | Britain's strength remained but was contested.
 SA3#history-u06-15-q5@2,3: Why did Britain abandon splendid isolation between 1902 and 1907? | Britain had relied on its navy (the two-power standard) and empire, but isolation during the Boer War, Germany's growth and Navy Laws (1898, 1900) and imperial rivalries led to the Anglo-Japanese Alliance (1902), the Entente Cordiale (1904) and the Anglo-Russian Entente (1907); the Dreadnought (1906) began a naval race and Moroccan crises drew Britain closer to France. A strong answer weighs these. | Explains isolation ; Explains the German challenge ; Explains the agreements ; Explains the Boer War's influence ; Reaches a judgement
+Q: On what did Britain rely during splendid isolation? | The Royal Navy, its empire and its trade.
+Q: When did the phrase "splendid isolation" become common? | In the 1890s.
+Q: What did the Entente Cordiale (1904) settle? | Colonial disputes with France, in Egypt and Morocco.
+Q: What followed the Entente Cordiale militarily? | Military conversations with France.
+Q: Which German laws alarmed Britain? | The Navy Laws of 1898 and 1900.
+Q: When was HMS Dreadnought launched? | In 1906.
+Q: Which crises drew Britain closer to France? | Crises over Morocco in 1905 and 1911.
+Q: How had the Boer War shown the dangers of isolation? | Britain had no allies during the war.
+Q: What is an entente? | An understanding between states, short of a binding alliance.
+Q: Was Britain still a great power by 1914? | Yes, with the largest navy, empire and leading financial centre, but no longer unchallenged.
 `;

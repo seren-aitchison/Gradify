@@ -37,6 +37,16 @@ M2#history-u14-01-q2@2: Why do recent historians question the idea of Ottoman de
 TF1#history-u14-01-q3@1: The Ottomans besieged Vienna in 1529. | true | A second siege failed in 1683.
 M3#history-u14-01-q4@3: Which judgement about Ottoman decline is best supported? | It lost relative power to Europe, but "decline" understates its adaptation | It declined continuously from 1300 onwards | It grew stronger than every European power by 1900 | It collapsed suddenly in 1529 | Relative weakness and resilience both appear in the evidence.
 SA3#history-u14-01-q5@2,3: How did the Ottoman Empire govern its diverse population? | The sultan ruled through a grand vizier and bureaucracy; the millet system let Orthodox Christians, Jews and others run their own affairs; the devshirme trained Christian boys as Janissaries and officials. The empire expanded to 1566, adapted through the Tanzimat (from 1839) and ended after 1918. A strong answer explains these and considers the decline debate. | Explains central government ; Explains the millet system ; Explains the devshirme ; Explains reform ; Reaches a judgement
+Q: Who founded the Ottoman state, and when? | Osman, around 1300.
+Q: What did Mehmed II do after capturing Constantinople in 1453? | He ended the Byzantine Empire and made the city his capital, Istanbul.
+Q: How far did the Ottoman Empire reach under Suleiman the Magnificent? | Deep into Hungary, and it besieged Vienna in 1529.
+Q: What was the devshirme? | The levy of Christian boys from the Balkans, converted and trained as Ottoman soldiers and officials.
+Q: Who were the Janissaries? | The elite infantry of the Ottoman army, drawn from the devshirme.
+Q: How did the Ottoman sultan govern? | Through a grand vizier and a large bureaucracy.
+Q: What were the Tanzimat reforms? | Reforms from 1839 that modernised Ottoman law, the army and administration.
+Q: What did European powers call the Ottoman Empire in the nineteenth century? | The "sick man of Europe".
+Q: When did a second Ottoman siege of Vienna fail? | In 1683.
+Q: According to recent historians such as Caroline Finkel, what mainly caused the Ottoman fall? | War after 1914, rather than a long decline; the empire adapted and reformed for centuries.
 
 ## The Mughal Empire
 LV: GCSE and A level · Application
@@ -77,6 +87,16 @@ M2#history-u14-02-q2@2: Why did Akbar include Hindu Rajput nobles in government?
 TF1#history-u14-02-q3@1: Aurangzeb reimposed the jizya in 1679. | true | The decision is often contrasted with Akbar's tolerance.
 M3#history-u14-02-q4@3: Which explanation of Mughal weakening is best supported? | Overstretch and the rise of regional powers, not simply religious policy | The empire was conquered by the Ottomans in 1707 | Akbar's tolerance caused immediate collapse | The Taj Mahal bankrupted the empire on its own | Overstretch, succession disputes and rivals combined after 1707.
 SA3#history-u14-02-q5@2,3: Why did the Mughal Empire weaken after 1707? | Aurangzeb (1658 to 1707) expanded the empire but fought draining wars in the Deccan and reimposed the jizya (1679); after 1707 wars of succession and weak emperors let governors become independent; the Marathas and regional states rose; Nadir Shah sacked Delhi (1739); the East India Company later expanded. A strong answer weighs these, including the debate over Aurangzeb. | Explains overstretch ; Explains religious policy ; Explains succession ; Explains rivals ; Reaches a judgement
+Q: Who founded the Mughal Empire? | Babur, a descendant of Timur and Genghis Khan.
+Q: What happened at the First Battle of Panipat in 1526? | Babur defeated the Sultan of Delhi, founding the Mughal Empire.
+Q: When did Akbar rule? | From 1556 to 1605.
+Q: What was the mansabdari system? | A Mughal system ranking officials by the number of troops they maintained, in return for land revenue.
+Q: How did Akbar encourage religious understanding? | He held debates among scholars of different religions.
+Q: What gave the Mughal state a steady income? | A land revenue system based on surveys of crops.
+Q: Who were the Marathas? | A Hindu power in western India that fought long wars against the Mughals.
+Q: How did Aurangzeb's long wars in the Deccan weaken the empire? | They drained resources through overstretch.
+Q: What happened to Mughal provincial governors after 1707? | They became independent as the empire fragmented.
+Q: What common mistake is made about the Mughal decline? | Blaming Aurangzeb's religious policies alone; overstretch, succession disputes and regional rivals mattered at least as much.
 
 ## The Qing dynasty
 LV: GCSE and A level · Application
@@ -116,6 +136,16 @@ M2#history-u14-03-q2@2: Why did the Boxer Rebellion humiliate the dynasty? | It 
 TF1#history-u14-03-q3@1: China's population grew to around 300 million by 1800. | true | Population pressure strained resources in the nineteenth century.
 M3#history-u14-03-q4@3: Which explanation of the Qing fall is best supported? | External humiliation and internal crisis together destroyed its claim to rule | A single defeat by Britain in 1842 | A peaceful vote by the Chinese people in 1900 | The death of the Qianlong emperor alone | Pressures from inside and outside combined.
 SA3#history-u14-03-q5@2,3: Why did the Qing dynasty collapse in 1912? | The eighteenth-century Qing were strong, but the Opium Wars and unequal treaties, the Taiping Rebellion (1850 to 1864), the limited Self-Strengthening Movement, defeat by Japan (1894 to 1895) and the Boxer Rebellion (1899 to 1901) undermined them; late reforms came slowly, and the Wuchang uprising (1911) led to Puyi's abdication (1912). A strong answer weighs external and internal causes. | Explains Qing strength ; Explains foreign pressure ; Explains rebellions ; Explains the revolution ; Reaches a judgement
+Q: Who founded the Qing dynasty? | The Manchus, who took Beijing in 1644.
+Q: Which two emperors presided over the Qing golden age? | Kangxi (1661 to 1722) and Qianlong (1735 to 1796).
+Q: What did Qianlong tell Lord Macartney in 1793? | That China had no need of British manufactures.
+Q: What were the unequal treaties? | Treaties forced on China after the Opium Wars, opening ports and giving foreign powers special rights.
+Q: Roughly how many people died in the Taiping Rebellion? | Perhaps 20 million.
+Q: What was the Self-Strengthening Movement? | Qing efforts from the 1860s to adopt Western weapons and industry, with limited success.
+Q: What uprising began the end of the Qing dynasty? | An uprising at Wuchang on 10 October 1911.
+Q: Who was the last Qing emperor? | The child Puyi.
+Q: How did nationalists such as Sun Yat-sen explain China's weakness? | They blamed the Manchu dynasty.
+Q: What common mistake is made about Qing China? | Thinking it was weak and isolated throughout; in the eighteenth century it was one of the largest and most prosperous states.
 
 ## The rise of modern Japan
 LV: GCSE and A level · Application
@@ -156,6 +186,16 @@ M2#history-u14-04-q2@2: Why did Japan's leaders push rapid modernisation? | Chin
 TF1#history-u14-04-q3@1: Japan defeated Russia in the war of 1904 to 1905. | true | It was the first modern victory of an Asian power over a European one.
 M3#history-u14-04-q4@3: Which explanation of Japan's rapid modernisation is best supported? | Danger and strong central leadership drove change on existing foundations | Japan was forced to modernise by American occupation | Modernisation happened slowly over three centuries | Japan had no traditions to build on | Threat, leadership and foundations combined.
 SA3#history-u14-04-q5@2,3: Why did Japan modernise so rapidly after 1868? | Perry's arrival (1853) and unequal treaties exposed weakness, and China's humiliation warned of colonisation; Meiji reformers abolished the domains (1871), ended samurai privilege, introduced conscription (1873), built industry and education and wrote a constitution (1889); high Tokugawa literacy and commerce gave foundations. Victories over China and Russia followed. A strong answer weighs these. | Explains the opening ; Explains Meiji reforms ; Explains foundations ; Explains imperial expansion ; Reaches a judgement
+Q: Who were the shoguns in Japan? | The military rulers of Japan under the Tokugawa, who restricted foreign contact for over two centuries.
+Q: What happened in the Meiji Restoration of 1868? | Rebels restored power to the young Emperor Meiji, ending the shogunate.
+Q: What replaced Japan's feudal domains in 1871? | Prefectures run by the central government.
+Q: How did the Meiji reforms change the samurai? | Samurai lost their privileges, and conscription from 1873 created a national army.
+Q: What did the Meiji state build to modernise Japan? | Railways, factories and schools, and it sent missions abroad to study Western institutions.
+Q: Which territory did Japan take after defeating China in 1894 to 1895? | Taiwan.
+Q: Why was Japan's victory over Russia in 1904 to 1905 significant? | It was the first Asian power to defeat a European one in modern war.
+Q: When did Japan annex Korea? | In 1910.
+Q: Which Tokugawa foundations helped Japan modernise quickly? | High literacy, commerce and a strong administrative tradition.
+Q: What common mistake is made about Japanese modernisation? | Thinking Japan simply copied the West; it adapted Western models selectively, keeping imperial ideology and its own traditions.
 
 ## European colonialism
 LV: GCSE and A level · Application
@@ -194,6 +234,16 @@ M2#history-u14-05-q2@2: Why did so many Indigenous Americans die after 1492? | T
 TF1#history-u14-05-q3@1: Bartolomé de las Casas condemned Spanish cruelty in the Americas. | true | His Short Account was published in 1552.
 M3#history-u14-05-q4@3: Which judgement about the Columbian exchange is best supported? | It transformed world ecology and economy, at catastrophic cost to Indigenous peoples | It had little effect outside the Americas | It benefited Indigenous Americans more than anyone | It involved only the exchange of gold and silver | Its effects were global and deeply unequal.
 SA3#history-u14-05-q5@2,3: What were the consequences of European colonisation of the Americas after 1492? | Cortés (1519 to 1521) and Pizarro (from 1532) conquered the Aztec and Inca empires with Indigenous allies; disease and the encomienda devastated Indigenous populations, as Las Casas (1552) recorded; the Columbian exchange moved crops, animals and silver around the world and labour shortages drove the slave trade. A strong answer weighs these consequences. | Explains conquest ; Explains Indigenous losses ; Explains the Columbian exchange ; Explains links to slavery ; Reaches a judgement
+Q: When did Vasco da Gama reach India by sea? | In 1498.
+Q: Who conquered the Aztec Empire, and when? | Hernán Cortés, between 1519 and 1521.
+Q: When was the Dutch East India Company founded? | In 1602.
+Q: Which disease especially devastated Indigenous Americans? | Smallpox, to which they had no immunity.
+Q: What did Bartolomé de las Casas write in 1552? | A Short Account of the Destruction of the Indies, condemning Spanish cruelty.
+Q: Who named the Columbian exchange? | Alfred Crosby.
+Q: Which animals and crops came to the Americas in the Columbian exchange? | Horses, cattle, wheat and sugar.
+Q: How did the Columbian exchange help drive the Atlantic slave trade? | Labour shortages in the Americas helped drive demand for enslaved Africans.
+Q: Where did silver flow into the world economy from after the conquest? | From Potosí and Mexico.
+Q: What common mistake is made in explaining the Spanish conquest? | Explaining it only by European weapons; disease and Indigenous allies, such as Cortés's Tlaxcalan allies, were crucial.
 
 ## The Atlantic slave trade
 LV: GCSE and A level · Application
@@ -231,6 +281,16 @@ M2#history-u14-06-q2@2: Why must historians combine different sources on the sla
 TF1#history-u14-06-q3@1: Death rates on Caribbean sugar plantations were very high. | true | Brutal work and disease killed many enslaved people.
 M3#history-u14-06-q4@3: Which judgement about evidence on the slave trade is best supported? | Combining sources is essential, because most enslaved people left no records | Planters' records alone give a complete picture | No evidence about the slave trade survives | Numbers are known exactly for every voyage | Different kinds of source fill different gaps in the record.
 SA3#history-u14-06-q5@2,3: What was the experience of enslaved Africans in the Atlantic slave trade? | Captives bought on the African coast endured the Middle Passage, packed and chained, with high death rates; about 12.5 million were embarked and about 10.7 million survived. On plantations they faced brutal work and high mortality, and resisted through revolt, escape and culture. Equiano (1789) and the Slave Trade Database give evidence. A strong answer uses evidence carefully. | Explains the trade ; Explains the Middle Passage ; Explains plantation life ; Explains resistance and evidence ; Reaches a judgement
+Q: How did European traders obtain captives in Africa? | They bought them from African rulers and merchants on the coast, in exchange for textiles, guns and metal.
+Q: Which crops did enslaved Africans produce on American plantations? | Sugar, tobacco, rice and later cotton.
+Q: What were conditions like on the Middle Passage? | Captives were chained and packed tightly below decks for weeks or months; disease, starvation and violence killed many.
+Q: How did captives resist on slave ships? | Through revolts and refusing food.
+Q: What happened to enslaved Africans on arrival in the Americas? | They were sold, families were separated and names changed.
+Q: How did enslaved people resist on plantations? | By slowing work, running away, keeping African culture and religion alive, and rebellion.
+Q: What is a plantation? | A large estate growing cash crops with enslaved or forced labour.
+Q: What is the limitation of planters' and traders' records as evidence of slavery? | They show the business, but from the enslavers' point of view.
+Q: Why do historians need to combine sources on the slave trade? | Most enslaved people left no written records.
+Q: What common mistake is made about enslaved people? | Thinking they were passive victims; they resisted on ships and plantations through revolt, escape and keeping their cultures.
 
 ## Abolition and emancipation
 LV: GCSE and A level · Evaluation
@@ -270,6 +330,16 @@ M2#history-u14-07-q2@2: Why did Seymour Drescher challenge Eric Williams? | He s
 TF1#history-u14-07-q3@1: The Baptist War in Jamaica took place in 1831 to 1832. | true | It hastened the British abolition of slavery.
 M3#history-u14-07-q4@3: Which explanation of abolition is best supported? | Campaigning and resistance together, in changing economic and political conditions | Economic decline alone, with no role for campaigns | A decision by plantation owners to free everyone | A single law passed by all nations in 1807 | Campaigning, resistance and changing conditions combined.
 SA3#history-u14-07-q5@2,3: Why was the slave trade and slavery abolished in the British Empire? | The Somerset case (1772), the Society of 1787 with Clarkson and Sharp, petitions, the sugar boycott (1791), Wilberforce and Equiano built pressure; rebellions in Haiti, Demerara (1823) and Jamaica (1831 to 1832) made slavery dangerous; Williams stressed economics, Drescher continued profitability. The trade ended in 1807 and slavery in 1833. A strong answer weighs these. | Explains campaigning ; Explains resistance ; Uses the economic debate ; Explains the stages ; Reaches a judgement
+Q: Who founded the Society for Effecting the Abolition of the Slave Trade in 1787? | Thomas Clarkson, Granville Sharp and others.
+Q: Which campaign methods did British abolitionists use? | Petitions, pamphlets, the image of the slave ship Brookes and a boycott of slave-grown sugar in 1791.
+Q: Who led the abolition campaign in Parliament? | William Wilberforce.
+Q: When did Britain abolish its slave trade and slavery itself? | The trade in 1807 and slavery in 1833.
+Q: When did the United States ban the import of enslaved people? | In 1808.
+Q: How did the United States abolish slavery? | Through the 13th Amendment in 1865.
+Q: How did rebellions by enslaved people affect British emancipation? | Risings such as Demerara (1823) and the Baptist War (1831 to 1832) hastened it.
+Q: What is the difference between abolition and emancipation? | Abolition is ending the slave trade or slavery by law; emancipation is freeing enslaved people.
+Q: When did France finally abolish slavery? | In 1848.
+Q: What common mistake is made about who achieved abolition? | Crediting a few British politicians; enslaved people's resistance and mass campaigning were central.
 
 ## The Haitian Revolution
 LV: GCSE and A level · Application
@@ -309,6 +379,16 @@ M2#history-u14-08-q2@2: Why did Napoleon's army fail to reconquer Saint-Domingue
 TF1#history-u14-08-q3@1: Toussaint Louverture died in a French prison in 1803. | true | He was captured after Napoleon's army arrived in 1802.
 M3#history-u14-08-q4@3: Which judgement about the Haitian Revolution is best supported? | A revolution of world significance, long neglected by historians | A minor revolt with no effects beyond the island | A revolution led by French planters against Paris | A failure that restored slavery in 1804 | Its significance reached across the Atlantic world.
 SA3#history-u14-08-q5@2,3: Why was the Haitian Revolution significant? | The revolt of August 1791 in Saint-Domingue, France's richest colony, led by Toussaint Louverture and Dessalines, forced France to abolish slavery (1794), defeated Napoleon's army (1802 to 1803) and created Haiti (1804), the first state founded by formerly enslaved people. It inspired the enslaved, terrified slaveholders and influenced the Louisiana sale, though Haiti was isolated and burdened by the 1825 indemnity. A strong answer weighs these. | Explains events ; Explains leaders ; Explains Atlantic impact ; Explains aftermath ; Reaches a judgement
+Q: Why was Saint-Domingue so valuable to France? | It was France's richest colony, producing much of the world's sugar and coffee.
+Q: About how many enslaved Africans worked in Saint-Domingue? | Around half a million.
+Q: Who were the free people of colour in Saint-Domingue? | People of African descent who were free but denied equal rights.
+Q: How did the French Revolution affect Saint-Domingue? | The Declaration of the Rights of Man (1789) raised questions about liberty that reached the colony.
+Q: Who was Toussaint Louverture? | A formerly enslaved man who became the leading general of the Haitian Revolution.
+Q: When did France abolish slavery in its colonies? | In 1794.
+Q: What did Napoleon do in 1802 regarding Saint-Domingue? | He sent an army under General Leclerc to restore French control.
+Q: How did the Haitian Revolution affect the United States? | It led Napoleon to sell Louisiana to the United States in 1803.
+Q: Which historian argued in 1938 that the Haitian Revolution had been neglected? | C. L. R. James.
+Q: What common mistake is made about the Haitian Revolution? | Seeing it as a side effect of the French Revolution; enslaved people led it, and it shaped the whole Atlantic world.
 
 ## Latin American independence
 LV: GCSE and A level · Application
@@ -345,6 +425,16 @@ M2#history-u14-09-q2@2: Why did creoles resent Spanish rule? | Officials born in
 TF1#history-u14-09-q3@1: Brazil declared independence from Portugal in 1822. | true | It became an empire under Pedro I.
 M3#history-u14-09-q4@3: Which judgement about Latin American independence is best supported? | A political revolution more than a social one | A complete social revolution that ended inequality | A failure that left Spain in control | A movement led by Indigenous peoples alone | Political change outran social change in the new states.
 SA3#history-u14-09-q5@2,3: Why did Spain lose its American empire between 1808 and 1826? | Creole resentment of peninsulares, Enlightenment and revolutionary ideas, and Napoleon's invasion of Spain (1808) created a crisis; Hidalgo's rising (1810), Bolívar's campaigns, San Martín's crossing of the Andes and victory at Ayacucho (1824) ended Spanish rule. Independence was more political than social. A strong answer weighs long-term and immediate causes. | Explains creole grievances ; Explains ideas ; Explains Napoleon's invasion ; Explains the wars ; Reaches a judgement
+Q: Who were the creoles in Spanish America? | People of Spanish descent born in the Americas.
+Q: Who were the peninsulares? | Officials and settlers born in Spain, whose privileges creoles resented.
+Q: Which ideas inspired calls for self-rule in Latin America? | Enlightenment ideas and the American and French Revolutions.
+Q: When did Miguel Hidalgo begin the Mexican rising? | On 16 September 1810.
+Q: When did Mexico win independence? | In 1821.
+Q: Which leader led independence in the north of South America? | Simón Bolívar.
+Q: What did the Battle of Ayacucho in 1824 achieve? | It ended Spanish power in South America.
+Q: Under whom did Brazil declare independence in 1822? | Pedro I.
+Q: What happened to Bolívar's dream of Gran Colombia? | It broke apart by 1831.
+Q: Why is Latin American independence called a political rather than a social revolution? | Creole elites replaced Spanish officials, landholding stayed unequal, and Indigenous and Black people often gained little.
 
 ## The Scramble for Africa: African experiences
 LV: GCSE and A level · Evaluation
@@ -384,6 +474,16 @@ M2#history-u14-10-q2@2: Why did Belgium take over the Congo from Leopold II in 1
 TF1#history-u14-10-q3@1: Germany formally acknowledged the killing of the Herero and Nama as genocide in 2021. | true | The killings followed von Trotha's extermination order of 1904.
 M3#history-u14-10-q4@3: Which judgement about African agency is best supported? | Africans were active participants who shaped colonial rule, usually from weakness | Africans had no influence on colonial rule at all | Africans controlled the partition of their continent | European rule was welcomed everywhere without resistance | Agency and constraint must both be recognised.
 SA3#history-u14-10-q5@2,3: How did Africans experience and respond to the European partition of Africa? | Africans faced hut taxes, land seizures, forced labour and arbitrary borders; atrocities in the Congo Free State (exposed by Casement in 1904) and against the Herero and Nama (1904) killed vast numbers. They resisted (Adwa 1896, Samori Touré, Maji Maji 1905 to 1907) and negotiated treaties and alliances. A strong answer weighs agency against constraint. | Explains colonial rule ; Explains atrocities ; Explains resistance ; Explains negotiation ; Reaches a judgement
+Q: How did colonial rulers take land in Africa? | Land was taken for European settlers in areas such as Kenya, Rhodesia and South Africa.
+Q: What did forced labour build in colonial Africa? | Roads, railways and plantations.
+Q: Why did colonial borders cause problems for Africans? | They were drawn in Europe and cut across African peoples and states.
+Q: How were rubber quotas enforced in the Congo Free State? | Through hostage-taking, mutilation and killing.
+Q: What was the Congo Free State? | The territory ruled personally by Leopold II of Belgium from 1885 to 1908.
+Q: What happened to the Herero after their rising of 1904? | General von Trotha's extermination order and the camps that followed killed most of the Herero people.
+Q: What is genocide? | The deliberate destruction of a national, ethnic, racial or religious group.
+Q: Who resisted the French in West Africa for nearly two decades? | Samori Touré.
+Q: What was the Maji Maji rising? | A rising of 1905 to 1907 that challenged German rule in East Africa.
+Q: What common mistake is made about Africans during the partition? | Seeing them only as victims; they resisted, negotiated and allied with Europeans, shaping colonial rule.
 
 ## Anti-colonial resistance
 LV: GCSE and A level · Application
@@ -423,6 +523,16 @@ M2#history-u14-11-q2@2: Why was armed struggle common in Kenya and Algeria? | La
 TF1#history-u14-11-q3@1: Algeria's war of independence against France lasted from 1954 to 1962. | true | The National Liberation Front led the struggle.
 M3#history-u14-11-q4@3: Which judgement about anti-colonial methods is best supported? | The choice of method depended above all on how far colonial powers and settlers would compromise | Every movement used exactly the same methods | Non-violence always failed everywhere | Armed struggle was used only in India | Local conditions shaped the choice of method.
 SA3#history-u14-11-q5@2,3: Why did anti-colonial movements use different methods? | Gandhi's satyagraha in India and Nkrumah's mass politics in the Gold Coast (independent 1957) worked where colonial powers would negotiate; in Kenya (Mau Mau from 1952) and Algeria (1954 to 1962) settlers and intransigence led to armed struggle, as in Vietnam (Dien Bien Phu 1954); Pan-Africanism, socialism and Fanon shaped ideas. A strong answer compares cases. | Explains ideas ; Explains non-violent methods ; Explains armed struggle ; Compares conditions ; Reaches a judgement
+Q: What is Pan-Africanism? | The movement for the unity and liberation of African peoples.
+Q: Which ideas inspired anti-colonial movements? | Nationalism, Pan-Africanism, and socialism and communism.
+Q: What is satyagraha? | Gandhi's method of non-violent resistance.
+Q: How did Nkrumah win independence for the Gold Coast? | Through strikes and mass politics; it became Ghana in 1957.
+Q: How did British forces respond to the Mau Mau rising? | With mass detention and brutality.
+Q: Who fought France in Algeria from 1954 to 1962? | The National Liberation Front.
+Q: Why was armed struggle used in Vietnam? | The colonial power refused to negotiate.
+Q: When was mass politics often enough to win independence? | Where the colonial power was willing to transfer power, as in the Gold Coast.
+Q: What mainly decided the method an anti-colonial movement used? | How far colonial powers and settlers would compromise.
+Q: What common mistake is made about independence movements? | Treating them all as alike; methods varied with local conditions, settlers and the colonial power's attitude.
 
 ## Indian independence
 LV: GCSE and A level · Application
@@ -463,6 +573,16 @@ M2#history-u14-12-q2@2: Why did the Second World War make British rule in India 
 TF1#history-u14-12-q3@1: The Government of India Act of 1935 gave Indian provinces elected governments. | true | Congress won most provincial elections in 1937.
 M3#history-u14-12-q4@3: Which explanation of independence in 1947 is best supported? | Nationalism made rule unsustainable, and the war made it impossible to continue | Britain left because India asked politely once | Independence was won by a military defeat of Britain in India | Britain left India without any pressure at all | Long-term nationalist pressure and the war combined.
 SA3#history-u14-12-q5@2,3: Why did India gain independence in 1947? | Amritsar (1919) turned opinion; Gandhi's non-cooperation (1920 to 1922), the Salt March (1930) and Quit India (1942) built a mass movement with Nehru and Congress; the 1935 Act gave provincial power. War exhaustion, doubts about Indian soldiers' loyalty (the 1946 mutiny), Attlee's commitment and Mountbatten's acceleration led to independence on 15 August 1947. A strong answer weighs these. | Explains turning points ; Explains Gandhi ; Explains the war ; Explains British policy ; Reaches a judgement
+Q: What was the non-cooperation movement? | Gandhi's campaign of 1920 to 1922 of refusing to work with British institutions.
+Q: What was the Quit India campaign? | The 1942 Congress campaign demanding immediate British withdrawal, which led to the arrest of Congress leaders.
+Q: How did Gandhi turn Congress into a mass movement? | Through non-violent resistance, boycotts of British goods and campaigns against untouchability.
+Q: Which Congress leader besides Gandhi was central to the national movement? | Jawaharlal Nehru.
+Q: What did the naval mutiny of 1946 show? | That Indian soldiers' loyalty could no longer be relied on.
+Q: Which British government was committed to Indian independence? | Clement Attlee's Labour government.
+Q: What did Lord Mountbatten do about the date of independence? | He brought it forward.
+Q: When did Pakistan and India become independent? | On 14 and 15 August 1947.
+Q: How did the Amritsar massacre affect Indian opinion? | It turned many Indians against British rule.
+Q: What common mistake is made about Indian independence? | Crediting Gandhi alone; Congress leaders, mass participation, the war and British weakness all mattered.
 
 ## Partition
 LV: GCSE and A level · Evaluation
@@ -502,6 +622,16 @@ M2#history-u14-13-q2@2: Why did the Muslim League demand a separate state? | It 
 TF1#history-u14-13-q3@1: Gandhi was assassinated in January 1948. | true | A Hindu nationalist killed him in Delhi on 30 January 1948.
 M3#history-u14-13-q4@3: Which judgement about responsibility for partition violence is best supported? | Shared, but the speed of British withdrawal left no time to prepare | Entirely the fault of one community | No one bore any responsibility at all | The violence was planned in London years earlier | Several groups shared responsibility for the violence.
 SA3#history-u14-13-q5@2,3: Why was the partition of India so violent? | Muslim League fears and the Lahore Resolution (1940), the Great Calcutta Killings (1946) and failed negotiations led to partition; Radcliffe drew borders in weeks, announced only on 17 August 1947; 10 to 20 million migrated, and violence by militias and communal groups killed hundreds of thousands or more. A strong answer weighs British haste, leaders' choices and local violence. | Explains causes of partition ; Explains the borders ; Explains migration and violence ; Weighs responsibility ; Reaches a judgement
+Q: What did the Lahore Resolution of 1940 call for? | Independent states for Muslim-majority areas.
+Q: What were the Great Calcutta Killings? | Communal violence in August 1946 that made a united India seem impossible.
+Q: Why was Cyril Radcliffe a controversial choice to draw the borders? | He had never been to India and drew the borders in a few weeks.
+Q: Which provinces did the Radcliffe Line divide? | Punjab and Bengal.
+Q: How was Pakistan geographically divided in 1947? | Into West and East Pakistan, separated by India.
+Q: What is communal violence? | Violence between religious communities.
+Q: Who assassinated Gandhi? | A Hindu nationalist, on 30 January 1948.
+Q: Which territory did India and Pakistan fight over in 1947 to 1948? | Kashmir.
+Q: What became of East Pakistan? | It became Bangladesh in 1971.
+Q: Why are the British blamed for partition violence? | They left hastily and announced the borders late, leaving no time to prepare.
 
 ## The Chinese Revolution
 LV: GCSE and A level · Application
@@ -541,6 +671,16 @@ M2#history-u14-14-q2@2: Why did the war with Japan help the Communists? | It wea
 TF1#history-u14-14-q3@1: Chiang Kai-shek turned on the Communists in Shanghai in April 1927. | true | Thousands of Communists were massacred.
 M3#history-u14-14-q4@3: Which explanation of the Communist victory is best supported? | The war with Japan transformed the balance, and the Communists exploited it better | The Communists always had more troops than the Nationalists | The United States supported the Communists | The Nationalists surrendered in 1927 | Both sides' choices and the war shaped the outcome.
 SA3#history-u14-14-q5@2,3: Why did the Communists win power in China in 1949? | After 1911 warlords divided China; Chiang's GMD massacred Communists (1927) and drove them on the Long March (1934 to 1935); the Japanese invasion (1937) exhausted the Nationalists, who were blamed for corruption and inflation, while the CCP won peasant support through land reform and discipline. A strong answer weighs Communist strengths against Nationalist weaknesses. | Explains the background ; Explains Communist strengths ; Explains Nationalist weaknesses ; Explains the war ; Reaches a judgement
+Q: Who became provisional president after the 1911 revolution in China? | Sun Yat-sen, though power passed to Yuan Shikai and then to warlords.
+Q: What is a warlord? | A regional military ruler.
+Q: When was the Chinese Communist Party founded? | In 1921.
+Q: What was the Northern Expedition? | The Guomindang's campaign of 1926 to reunify China.
+Q: Where did the Long March end? | At Yan'an.
+Q: When did Japan invade China? | In 1937.
+Q: How did the Communists expand during the war with Japan? | They spread in rural areas behind Japanese lines.
+Q: What weakened the Nationalists by 1945? | Corruption, inflation and losses against Japan.
+Q: Where did Chiang Kai-shek retreat after 1949? | To Taiwan.
+Q: What common mistake is made about the Chinese Communists? | Thinking they were always stronger; in 1927 and 1934 they came close to destruction.
 
 ## Mao and the People's Republic of China
 LV: GCSE and A level · Evaluation
@@ -580,6 +720,16 @@ M2#history-u14-15-q2@2: Why did false harvest reports worsen the famine? | Grain
 TF1#history-u14-15-q3@1: The Cultural Revolution lasted until Mao's death in 1976. | true | It began in 1966 and devastated education and culture.
 M3#history-u14-15-q4@3: Which judgement about Mao's legacy is best supported? | He unified China but caused suffering on a vast scale | He governed without causing any loss of life | He opposed every form of revolution | His policies made China a democracy | Unification and catastrophe both define his rule.
 SA3#history-u14-15-q5@2,3: How should Mao Zedong's rule of China be judged? | Mao unified China, ended foreign domination, redistributed land and raised literacy, but campaigns against enemies, the Hundred Flowers (1956 to 1957), the Great Leap Forward (1958) with its famine of tens of millions and the Cultural Revolution (1966 to 1976) caused vast suffering. The party's 1981 verdict was political. A strong answer weighs these, using evidence and estimates carefully. | Explains consolidation ; Explains the Great Leap Forward ; Explains the Cultural Revolution ; Weighs claimed achievements ; Reaches a judgement
+Q: What happened to landlords during Chinese land reform from 1950? | Land was redistributed and many landlords were killed.
+Q: What happened in the Hundred Flowers campaign? | In 1956 to 1957 criticism was invited and then punished.
+Q: What methods did the Great Leap Forward use to industrialise? | Huge communes and backyard steel furnaces.
+Q: What are common estimates of the Great Leap Forward famine death toll? | From about 15 million to over 40 million.
+Q: Why did Mao launch the Cultural Revolution? | To revive revolutionary zeal and attack his rivals.
+Q: Who were the Red Guards? | Young militants mobilised by Mao who attacked teachers, officials and "old" culture.
+Q: What happened to education during the Cultural Revolution? | Schools and universities closed.
+Q: What achievements are claimed for Mao's rule? | National unity, the end of foreign domination, land redistribution and rising literacy.
+Q: What was the Chinese Communist Party's verdict on Mao in 1981? | That he was 70% right and 30% wrong.
+Q: What mistake is made about the Party's "70% right" verdict on Mao? | Treating it as a historical judgement; it is a political statement by the ruling party.
 
 ## Post-colonial states
 LV: GCSE and A level · Application
@@ -620,6 +770,16 @@ M2#history-u14-16-q2@2: Why were many post-colonial economies vulnerable? | They
 TF1#history-u14-16-q3@1: Kwame Nkrumah was overthrown in a military coup in 1966. | true | Many post-colonial states experienced coups.
 M3#history-u14-16-q4@3: Which explanation of the different paths of post-colonial states is best supported? | Colonial legacies set constraints, but leaders and circumstances decided outcomes | Every state followed the same path after independence | Colonial rule determined everything that followed | Leadership made no difference to any outcome | Legacies, leaders, resources and the Cold War interacted.
 SA3#history-u14-16-q5@2,3: Why did post-colonial states face such difficulties after independence? | Arbitrary borders, export-dependent economies and weak or authoritarian institutions inherited from colonial rule created challenges; one-party states and coups (Ghana 1966) followed; the Cold War brought interference, which Bandung (1955) and the Non-Aligned Movement (1961) resisted; debt crises led to structural adjustment. India and Botswana show alternatives. A strong answer weighs legacies against choices. | Explains colonial legacies ; Explains political instability ; Explains the Cold War ; Explains contrasting cases ; Reaches a judgement
+Q: What economic weakness did many post-colonial states inherit? | Dependence on exporting a few raw materials, whose prices rose and fell.
+Q: What is a military coup? | A seizure of power by the armed forces.
+Q: Which leaders founded the Non-Aligned Movement? | Leaders including Nehru, Nasser, Tito and Sukarno.
+Q: How did the Cold War affect post-colonial states? | The superpowers competed for influence, supplying aid and weapons and propping up some rulers.
+Q: How did Botswana develop after independence in 1966? | It used diamond wealth to grow steadily under stable government.
+Q: When did Nigeria suffer civil war? | From 1967 to 1970.
+Q: Who ruled Zaire as a dictator? | Mobutu.
+Q: What is structural adjustment? | Economic reforms required by international lenders in return for loans, imposed after the debt crises of the 1980s.
+Q: What did India achieve despite poverty and conflict after independence? | It remained a democracy.
+Q: What common mistake is made about post-colonial problems? | Blaming every problem on colonialism, or none; colonial legacies, leadership and the world economy all mattered.
 
 ## Globalisation and historical change
 LV: A level · Evaluation
@@ -659,4 +819,14 @@ M2#history-u14-17-q2@2: Why did globalisation produce losers as well as winners?
 TF1#history-u14-17-q3@1: The world economy became less connected between 1914 and 1945. | true | War and depression reversed earlier globalisation.
 M3#history-u14-17-q4@3: Which judgement about globalisation is best supported? | Faster and broader today, but continuing and resuming earlier processes | Entirely new, with no earlier connections | Ended permanently in 2008 | A process affecting only Europe | Historians stress both novelty and continuity.
 SA3#history-u14-17-q5@2,3: How far is globalisation a new historical phenomenon? | Containerisation (1956), the WTO (1995), the internet, China's opening (1978) and the end of the Cold War (1991) drove unprecedented speed and scale, lifting many from poverty but creating losers, as 2008 showed. But the Columbian exchange and the wave of 1870 to 1914 were highly global, and 1914 to 1945 saw deglobalisation. A strong answer weighs novelty against continuity. | Explains recent drivers ; Explains effects ; Explains earlier waves ; Uses Osterhammel ; Reaches a judgement
+Q: Which international institution, founded in 1995, reduced trade barriers? | The World Trade Organization.
+Q: How did the internet drive globalisation? | The internet and mobile phones connected people across the world.
+Q: Which events brought billions of people into the world economy? | China's opening from 1978 and the end of the Cold War in 1991.
+Q: Who gained most from globalisation since 1945? | Hundreds of millions, especially in China and East Asia, rose out of extreme poverty.
+Q: Who lost out from globalisation? | Older industrial regions lost manufacturing jobs, and inequality within many countries grew.
+Q: What did the 2008 financial crisis show about globalisation? | How crises could spread worldwide.
+Q: How did migration change under globalisation? | It increased, bringing both opportunity and political conflict.
+Q: What is deglobalisation? | A period in which global connections weaken, as between 1914 and 1945.
+Q: How does Jürgen Osterhammel describe the nineteenth century? | As a period of global transformation.
+Q: What is new about present-day globalisation? | The speed of communication and the scale of trade and finance are unprecedented.
 `;

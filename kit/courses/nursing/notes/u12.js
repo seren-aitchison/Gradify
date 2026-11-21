@@ -44,6 +44,16 @@ M1#nursing-u12-01-q1@1: What is the biopsychosocial model? | Health explained by
 M2#nursing-u12-01-q2@2: Why do people with serious mental illness die earlier than average? | Mostly from preventable physical illnesses | Mostly from rare genetic disorders | Only from suicide in every case | Because of old age at diagnosis | Physical illnesses such as heart disease are the main cause, which is why physical health checks matter.
 M2#nursing-u12-01-q3@3: Which is respectful, person-first language? | A person with schizophrenia | A schizophrenic on the ward | A psycho in bed 3 | The self-harmer in bay 2 | Person-first language reduces stigma and respects identity.
 TF1#nursing-u12-01-q4@3: Black people in England are detained under the Mental Health Act at higher rates than white people. | True | This inequality is well documented and is one of the reasons for reform.
+Q: What does the biopsychosocial model say mental health reflects? | Interacting biological, psychological and social factors, such as genetics, trauma and poverty.
+Q: According to the stress-vulnerability model, how can relapse be reduced? | By reducing stress and building resilience.
+Q: Who proposed the stress-vulnerability model? | Zubin and Spring.
+Q: What are the core values of mental health nursing? | Hope, respect, collaboration, autonomy, social inclusion and human rights.
+Q: What are the 6Cs? | Care, compassion, competence, communication, courage and commitment.
+Q: How does the medical model differ from social and recovery models? | The medical model focuses on diagnosis and treatment; social and recovery models emphasise context, meaning and the person's goals.
+Q: What does it mean that mental health exists on a continuum? | Everyone has mental health, not only people with a diagnosis.
+Q: What does parity of esteem mean? | Valuing mental health equally with physical health.
+Q: How do stigma and discrimination harm people with mental health problems? | They stop people seeking help and harm their opportunities.
+Q: What language should replace a label such as "a self-harmer"? | Person-first, respectful language, such as "a person who self-harms".
 
 ## Mental health assessment
 S: Mental health assessment gathers information about a person's mental state, history, risks, strengths and circumstances to understand their difficulties and plan care with them. It is collaborative and holistic.
@@ -88,6 +98,16 @@ M1#nursing-u12-02-q1@1: Which tool screens for depression? | PHQ-9 | AUDIT-C | M
 M2#nursing-u12-02-q2@2: Why should physical health be assessed in a mental health assessment? | Physical illness can cause or mimic mental health symptoms | It isn't the mental health nurse's role at all | Physical health never affects mental health | Only to complete hospital paperwork | Conditions such as thyroid disease or delirium can present as mental health problems.
 M2#nursing-u12-02-q3@3: Which is a protective factor in a formulation? | A supportive friendship network | A recent bereavement | Childhood trauma | Ongoing debt worries | Protective factors reduce risk and support recovery.
 MATCH1#nursing-u12-02-q4@3: Match each "P" to an example. | Predisposing = Childhood trauma ; Precipitating = Recent job loss ; Perpetuating = Social isolation ; Protective = Supportive family | Formulation links past and present factors to the current difficulties.
+Q: What is the purpose of a mental health assessment? | To understand a person's mental state, history, risks, strengths and circumstances and plan care with them.
+Q: What does a mental health assessment ask about presenting difficulties? | What the person is experiencing, in their own words, and why now.
+Q: Which areas of risk does a mental health assessment cover? | Risk to self, to others and from others, with needs and safety planning.
+Q: Which tool is used to screen for depression in the perinatal period? | The EPDS (Edinburgh Postnatal Depression Scale).
+Q: Which tools screen for alcohol use? | AUDIT or AUDIT-C.
+Q: What is HoNOS used for? | Measuring outcomes (Health of the Nation Outcome Scales).
+Q: Should screening tools replace a conversation in assessment? | No. They support a conversation and should be used with an understanding of their limits.
+Q: Name physical illnesses that can cause or mimic mental health symptoms. | Thyroid disease, infection, delirium or head injury.
+Q: When should carers' views be included in assessment? | With the person's consent, where possible.
+Q: What is a common mistake when someone develops new confusion or hallucinations? | Assuming it is psychiatric without checking physical causes such as infection or delirium.
 
 ## Mental state examination
 S: The mental state examination (MSE) is a structured description of a person's mental state at the time of assessment. It is the mental health equivalent of a physical examination, and it must be objective and clearly recorded.
@@ -131,6 +151,16 @@ M1#nursing-u12-03-q1@1: What is a hallucination? | A perception without an exter
 M2#nursing-u12-03-q2@2: A person speaks very quickly, jumping between loosely connected topics. What is this called? | Flight of ideas | Poverty of speech | Thought block | Perseveration | Rapid jumps between loosely connected topics are called flight of ideas, which is common in mania.
 M2#nursing-u12-03-q3@3: Which is the most objective MSE entry? | "Speaking rapidly and loudly, difficult to interrupt" | "Clearly manic and out of control" | "Being difficult on purpose" | "Typical bipolar presentation" | Objective descriptions record what was observed, not conclusions.
 MS2#nursing-u12-03-q4@2: Which are components of the mental state examination? | Appearance and behaviour ; Thought content ; Insight | Blood pressure ; Pressure ulcer risk | The MSE describes mental state; physical observations are recorded separately.
+Q: What is the mental state examination? | A structured, objective description of a person's mental state at the time of assessment.
+Q: What does the speech section of the MSE describe? | Rate, volume, tone and quantity, such as pressured speech or poverty of speech.
+Q: What is thought form in the MSE? | The flow and connection of ideas, such as flight of ideas or thought block.
+Q: What is a delusion? | A fixed, false belief not in keeping with the person's culture.
+Q: What does insight mean in the MSE? | The person's understanding of their difficulties and need for help.
+Q: How should mood and beliefs be recorded in the MSE? | In the person's own words, in quotation marks.
+Q: What is a persecutory delusion? | Believing that others intend harm.
+Q: What is a grandiose delusion? | Believing in special powers or importance.
+Q: What is thought insertion or broadcasting? | Believing thoughts are put into or taken from the mind.
+Q: Why are command hallucinations important to note? | They tell the person to act and can be linked to risk.
 
 ## Therapeutic relationships
 S: The therapeutic relationship is the foundation of mental health nursing. A trusting, collaborative relationship helps people feel safe, engage with care and move towards recovery.
@@ -171,6 +201,16 @@ M1#nursing-u12-04-q1@1: Which theorist described nursing as an interpersonal pro
 M2#nursing-u12-04-q2@2: A person says the nurse "doesn't care" after a missed meeting. What is the best response? | Acknowledge the rupture, apologise and talk it through | Defend yourself and move on | Avoid the person to reduce conflict | Transfer their care to another nurse | Repairing ruptures openly can strengthen the relationship.
 M2#nursing-u12-04-q3@3: A nurse feels unusually irritated by one patient and isn't sure why. What should she do? | Reflect on it in supervision, considering countertransference | Avoid the patient where possible | Tell the patient she finds them irritating | Ignore the feeling completely | Supervision helps nurses understand and manage their emotional responses.
 TF1#nursing-u12-04-q4@2: Congruence means being genuine rather than hiding behind a professional façade. | True | Genuineness helps build trust in therapeutic relationships.
+Q: What happens in the orientation phase of Peplau's model? | Nurse and person get to know each other and build trust.
+Q: What happens in the resolution phase of Peplau's model? | The relationship ends, with the person's growing independence.
+Q: Name roles a nurse may take in Peplau's model. | Stranger, resource person, teacher, counsellor, surrogate and leader.
+Q: What is empathy in Rogers' core conditions? | Understanding the person's experience from their perspective and communicating that understanding.
+Q: What is congruence? | Being genuine and authentic, not hiding behind a professional façade.
+Q: How should a rupture in a therapeutic relationship be handled? | Acknowledge, discuss and repair it; repaired ruptures can strengthen relationships.
+Q: How can nurses prevent unhelpful dependency? | Support independence and plan endings from the start.
+Q: What is transference? | Feelings a person brings into the relationship from other relationships.
+Q: What is cultural humility? | Learning about the person's culture and identity rather than assuming.
+Q: Why shouldn't a nurse promise to always be available? | It sets up disappointment; be reliable about what you can offer and plan endings.
 
 ## Communication
 S: Communication in mental health nursing is a therapeutic intervention in itself. Skilled listening, questioning and responding help people feel understood, explore their experiences and make decisions about their care.
@@ -212,6 +252,16 @@ M1#nursing-u12-05-q1@1: In OARS, which skill means saying back what you have und
 M2#nursing-u12-05-q2@2: A man says the neighbours are poisoning his water. What is the most therapeutic response? | "That sounds really frightening for you." | "That's not true, nobody is poisoning you." | "Yes, I can see why they would do that." | "Let's change the subject to something nicer." | Acknowledging feelings without arguing or agreeing maintains trust.
 M3#nursing-u12-05-q3@3: A person says, "Part of me wants to stop drinking, but it's the only thing that helps me sleep." What motivational interviewing approach fits best? | Reflect the ambivalence and explore their own reasons for change | Tell them firmly to stop drinking now | Lecture them on the harms of alcohol | Ignore the comment and move on | Reflecting ambivalence and eliciting change talk strengthens their motivation.
 MS2#nursing-u12-05-q4@1: Which are core active listening behaviours? | Full attention ; Tolerating silence ; Reflecting back what you hear | Interrupting to give advice ; Quick reassurance that all will be fine | Active listening helps people feel heard.
+Q: What does active listening involve? | Full attention, minimal encouragers and tolerating silence.
+Q: What is validation in communication? | Acknowledging that a person's feelings make sense from their perspective.
+Q: Which responses should be avoided when communicating therapeutically? | Premature reassurance, advice-giving, judgement and arguing.
+Q: How should a nurse ask about suicidal thoughts? | Directly, for example "Are you thinking of ending your life?", and listen without judgement.
+Q: How should you communicate with someone with cognitive impairment? | Use short sentences, one question at a time and visual cues.
+Q: What is motivational interviewing? | A collaborative style for strengthening a person's own motivation to change.
+Q: What is change talk in motivational interviewing? | The person's own reasons for change, which the nurse elicits.
+Q: When is motivational interviewing useful? | For substance use, medication concerns and lifestyle change.
+Q: What can you share with carers when you can't share confidential details? | General information, while listening to their concerns.
+Q: How should you communicate with someone in psychosis? | Calmly and simply, acknowledging feelings, reducing stimulation, neither arguing with nor agreeing with delusions.
 
 ## Trauma-informed care
 S: Many people who use mental health services have experienced trauma, such as abuse, violence or neglect. Trauma-informed care recognises the impact of trauma and organises services to avoid re-traumatising people and to support recovery.
@@ -254,6 +304,16 @@ M1#nursing-u12-06-q1@1: Which is a principle of trauma-informed care? | Offering
 M2#nursing-u12-06-q2@2: Why can restraint be especially harmful for people with a history of abuse? | It can echo past abuse and re-traumatise them | It always improves their trust in staff | It has no psychological effects | It is preferred by people with trauma | Restrictive practices can trigger trauma responses and should be minimised.
 M2#nursing-u12-06-q3@3: A woman who has experienced sexual violence needs personal care on the ward. What is the trauma-informed approach? | Offer a choice of staff gender and explain each step | Assign whoever is available without asking | Carry out care quickly without talking | Ask her to describe her trauma first | Choice, explanation and control reduce the risk of re-traumatisation.
 TF2#nursing-u12-06-q4@3: Staff can experience vicarious trauma from supporting people who have been traumatised. | True | Trauma-informed organisations recognise and support staff wellbeing.
+Q: What are adverse childhood experiences linked to? | Later mental and physical health problems.
+Q: Name trauma responses a person might show. | Hypervigilance, dissociation, flashbacks, avoidance, difficulty trusting others and self-harm.
+Q: Why does behaviour often make sense after trauma? | It is often a survival response.
+Q: What does the principle of choice mean in trauma-informed care? | Offering options and control wherever possible.
+Q: Name care practices that can echo past abuse. | Restraint, seclusion, forced medication, searches, being observed and loss of control.
+Q: How can nurses reduce re-traumatisation? | Minimise restrictive practices, explain what is happening and why, offer choices and debrief after incidents.
+Q: What is vicarious trauma? | Trauma experienced by staff from supporting people who have been traumatised.
+Q: What supports trauma-informed services in Scotland? | The National Trauma Transformation Programme.
+Q: What is dissociation? | A disconnection from thoughts, feelings, memories or surroundings, often a response to trauma.
+Q: Why shouldn't a person be pushed to describe trauma in detail at assessment? | Ask sensitively and only when they're ready; pushing for details can be harmful.
 
 ## Depression
 S: Depression is one of the most common mental health conditions. It affects mood, thinking, sleep, energy and physical health, and it carries a risk of suicide. Effective treatments and nursing support help most people recover.
@@ -294,6 +354,16 @@ M1#nursing-u12-07-q1@1: How long must core symptoms usually last for a diagnosis
 M2#nursing-u12-07-q2@2: What is behavioural activation? | Planning small, meaningful activities to improve mood | Prescribing a stimulant medicine | Restraining an agitated person | A type of brain scan | Behavioural activation is an evidence-based psychological approach for depression.
 M3#nursing-u12-07-q3@3: A man with severe depression suddenly seems calm and gives away his possessions after starting treatment. What should the nurse consider? | Increased suicide risk: explore his thoughts and escalate | That he is recovering, so observation can reduce | That he is simply decluttering his home | That his medication can now be stopped | Sudden calm and giving away possessions can signal suicidal planning.
 TF2#nursing-u12-07-q4@3: Hyponatraemia is a recognised side effect of SSRIs, especially in older people. | True | Low sodium can cause confusion and falls; monitoring may be needed.
+Q: What is anhedonia? | Loss of interest or pleasure in activities.
+Q: Name other symptoms of depression besides low mood and anhedonia. | Fatigue, sleep and appetite changes, poor concentration, worthlessness or guilt, psychomotor changes and thoughts of death.
+Q: What features may occur in severe depression? | Psychotic features such as nihilistic delusions, or stopping eating and drinking.
+Q: What is stepped care in depression? | Offering the least intensive effective treatment first, stepping up as needed.
+Q: Name psychological therapies used for depression. | Guided self-help, behavioural activation, CBT, interpersonal therapy and counselling.
+Q: How soon do antidepressants usually start to help? | Benefits usually take a few weeks.
+Q: When might ECT be used for depression? | For severe, life-threatening depression in specific circumstances.
+Q: What antidepressant side effect should be monitored in older people? | Hyponatraemia.
+Q: What risk should be watched for in young people starting antidepressants? | Increased agitation or suicidal thinking early in treatment.
+Q: Why might suicide risk rise as depression begins to lift? | Energy can return before mood improves, increasing risk; keep assessing.
 
 ## Bipolar disorder
 S: Bipolar disorder involves episodes of depression and of mania or hypomania, with periods of stability between. Nurses help people recognise early warning signs, take medicines safely and plan for relapse.
@@ -335,6 +405,16 @@ M1#nursing-u12-08-q1@1: Which is a feature of mania? | Reduced need for sleep wi
 M2#nursing-u12-08-q2@2: A person on lithium develops vomiting, diarrhoea and a coarse tremor. What should the nurse do? | Suspect lithium toxicity and escalate urgently | Give their next lithium dose as usual | Encourage them to rest and recheck tomorrow | Give an NSAID for the discomfort | These are classic toxicity signs; levels need checking urgently.
 M3#nursing-u12-08-q3@3: A woman of childbearing age with bipolar disorder is prescribed valproate. What should the nurse check? | That the national pregnancy prevention requirements are in place | Nothing, as valproate is safe in pregnancy | Only her weight and blood pressure | Whether she likes the taste of the tablets | Valproate has strict safety rules because of the risk to unborn babies.
 MS2#nursing-u12-08-q4@2: Which can raise lithium levels? | Dehydration ; NSAIDs such as ibuprofen ; Diuretics | Drinking adequate fluids ; Regular sleep | These factors reduce lithium excretion and increase toxicity risk.
+Q: How long must mania last for diagnosis? | At least a week, or any length if hospital admission is needed.
+Q: How does hypomania differ from mania? | It is milder and shorter, without psychosis or severe impairment.
+Q: Name triggers of bipolar episodes. | Sleep loss, stress, substance use and antidepressants without a mood stabiliser.
+Q: What are the benefits of lithium in bipolar disorder? | It prevents relapse and reduces suicide.
+Q: What should be monitored in people taking lithium? | Serum lithium levels, kidney and thyroid function, weight and calcium.
+Q: Which medicines can raise lithium levels? | NSAIDs, ACE inhibitors and diuretics.
+Q: What should people taking lithium carry and know? | A lithium record book, and knowledge of toxicity, hydration and interactions.
+Q: Why is valproate restricted in women and girls of childbearing potential? | Because of the high risk of birth defects and developmental disorders.
+Q: What nursing environment helps a person with mania? | A calm, low-stimulus environment with consistent boundaries, sleep, nutrition and hydration.
+Q: What does relapse prevention in bipolar disorder include? | Identifying early warning signs, keeping regular sleep and a written crisis plan, often shared with family.
 
 ## Anxiety disorders
 S: Anxiety disorders are the most common mental health conditions. They cause persistent, excessive worry or fear that affects daily life. Psychological therapies are effective, and nurses play a key role in assessment and support.
@@ -377,6 +457,16 @@ M1#nursing-u12-09-q1@1: Which is the main psychological therapy for anxiety diso
 M2#nursing-u12-09-q2@2: During a panic attack, what can the nurse do to help? | Stay calm, support slow breathing and explain the symptoms aren't dangerous | Tell the person to calm down immediately | Leave them alone until it passes | Give them a paper bag to breathe into for a long time | Calm support, slow breathing and reassurance help the attack pass.
 M2#nursing-u12-09-q3@3: A woman avoids supermarkets because of panic attacks. What maintains her anxiety? | Avoidance, which prevents her learning the fear will pass | Her shopping list being too long | Eating too much fruit | Taking regular exercise | Avoidance relieves anxiety short term but reinforces the fear.
 TF2#nursing-u12-09-q4@2: Physical causes such as thyroid disease or caffeine can contribute to anxiety symptoms. | True | Physical causes should be considered and addressed.
+Q: What is panic disorder? | Recurrent, unexpected panic attacks with worry about further attacks, which may lead to agoraphobia.
+Q: What is social anxiety disorder? | Intense fear of social situations and of being judged.
+Q: What is health anxiety? | Persistent worry about having a serious illness.
+Q: What is a specific phobia? | Intense fear of a particular object or situation.
+Q: What is the fight or flight response in anxiety? | A normal response to threat that, in anxiety disorders, is triggered too easily or for too long.
+Q: What is the usual order of stepped care for anxiety? | Psychoeducation and guided self-help, then high-intensity CBT or applied relaxation, then medication, usually an SSRI.
+Q: What is psychoeducation in panic? | Explaining the physical symptoms of anxiety and panic and that they aren't dangerous.
+Q: Name a grounding technique for panic. | 5-4-3-2-1 grounding, or slow breathing.
+Q: Name physical causes that can contribute to anxiety symptoms. | Thyroid disease, caffeine, medicines and withdrawal.
+Q: Why shouldn't chest pain be assumed to be a panic attack? | Physical emergencies must be excluded before attributing symptoms to anxiety.
 
 ## OCD
 S: Obsessive-compulsive disorder (OCD) involves intrusive, distressing obsessions and repetitive compulsions performed to reduce anxiety. It can be severely disabling, but effective treatments exist.
@@ -417,6 +507,16 @@ M1#nursing-u12-10-q1@1: Which is a compulsion? | Repeated hand washing to reduce
 M2#nursing-u12-10-q2@3: A man with OCD has distressing thoughts about harming his baby, which horrify him. How should these be understood? | As intrusive, unwanted thoughts that don't indicate intent to act | As a clear sign he intends to harm the baby | As a psychotic delusion needing urgent detention | As something to ignore completely | Ego-dystonic intrusive thoughts in OCD are distressing but don't indicate intent; assess sensitively.
 M2#nursing-u12-10-q3@2: What is the recommended psychological treatment for OCD? | CBT including exposure and response prevention | Long-term benzodiazepines | Avoidance of all triggers | Electroconvulsive therapy | ERP is the core evidence-based therapy for OCD.
 TF2#nursing-u12-10-q4@2: Family members are often drawn into helping with rituals, which can maintain OCD. | True | Family accommodation of rituals is common and addressed in treatment.
+Q: What is an obsession? | An unwanted, intrusive thought, image or urge that causes distress.
+Q: Give examples of compulsions. | Washing, checking, counting, ordering, seeking reassurance and mental rituals.
+Q: What does ego-dystonic mean for intrusive thoughts of harm? | The person finds them abhorrent, and they don't indicate a wish or risk to act.
+Q: How is the OCD cycle maintained? | Compulsions briefly reduce anxiety, so the obsession returns stronger.
+Q: Which medicines are used for OCD? | SSRIs, sometimes at higher doses, or clomipramine.
+Q: What is family accommodation in OCD? | Family members being drawn into the person's rituals, which maintains OCD.
+Q: Should nurses take part in a person's OCD rituals? | No. Agree a consistent approach with the person and team as part of the treatment plan.
+Q: Do people with OCD usually recognise their thoughts are excessive? | Yes, but they feel unable to stop.
+Q: How does reassurance-seeking affect OCD? | It works like a compulsion, briefly relieving anxiety but maintaining the cycle.
+Q: What co-existing problem should be recognised in OCD? | Depression, with assessment of risk.
 
 ## PTSD
 S: Post-traumatic stress disorder (PTSD) can develop after experiencing or witnessing traumatic events. It involves re-experiencing, avoidance and hyperarousal, and it responds well to trauma-focused therapies.
@@ -459,6 +559,16 @@ M1#nursing-u12-11-q1@1: Which is a re-experiencing symptom of PTSD? | Flashbacks
 M2#nursing-u12-11-q2@2: A patient becomes distressed and disoriented when a door slams, saying "they're coming." What should the nurse do? | Use grounding: calmly orient her to the present and her surroundings | Restrain her for safety immediately | Ask her to describe the original trauma in detail | Leave her alone to recover | Grounding helps bring a person out of a flashback safely.
 M2#nursing-u12-11-q3@3: Is routine single-session psychological debriefing recommended to prevent PTSD after trauma? | No; active monitoring and support are recommended instead | Yes, for every person straight after the event | Yes, but only for healthcare staff | Yes, if done within one hour | NICE doesn't recommend routine debriefing for prevention.
 TF1#nursing-u12-11-q4@3: Intensive care stays can lead to PTSD. | True | Critical illness and ICU experiences are recognised causes of PTSD.
+Q: What are hyperarousal symptoms in PTSD? | Hypervigilance, exaggerated startle, irritability, poor sleep and poor concentration.
+Q: What does complex PTSD add to PTSD? | Difficulties in emotional regulation, self-identity and relationships, often after prolonged or repeated trauma.
+Q: Name events that can lead to PTSD. | Assault, abuse, accidents, combat, disasters, traumatic childbirth and life-threatening illness.
+Q: What is a flashback? | Re-experiencing a traumatic event as if it is happening now.
+Q: What does EMDR stand for? | Eye movement desensitisation and reprocessing.
+Q: When might medication such as an SSRI be offered for PTSD? | If psychological therapy isn't suitable or effective.
+Q: What is used instead of routine debriefing after a traumatic event? | Active monitoring and support.
+Q: How can a nurse help during a flashback? | Use grounding techniques such as orientation to the present and sensory focus.
+Q: Why should substance misuse be considered in PTSD? | It is common as a coping strategy.
+Q: Can healthcare staff develop PTSD? | Yes, after traumatic events at work.
 
 ## Psychosis
 S: Psychosis is a state in which a person's perception of reality is altered, with hallucinations, delusions or disorganised thinking. Early recognition and treatment improve outcomes, and early intervention services support young people through first episodes.
@@ -503,6 +613,16 @@ M1#nursing-u12-12-q1@1: Which is a positive symptom of psychosis? | Hearing voic
 M2#nursing-u12-12-q2@2: A young man with a first episode of psychosis uses high-potency cannabis daily. Why is this relevant? | It raises the risk of psychosis | It has no effect on mental health | It always cures psychosis | It only matters for physical health | Cannabis, especially high-potency forms, increases psychosis risk.
 M2#nursing-u12-12-q3@3: Which is part of the early intervention in psychosis package? | Family intervention and CBT for psychosis | Long-term benzodiazepines | Immediate admission to a secure unit | Stopping all contact with family | The NICE-recommended package includes family intervention, CBTp and physical health support.
 MATCH1#nursing-u12-12-q4@1: Match each symptom to its type. | Hallucinations = Positive ; Delusions = Positive ; Reduced motivation = Negative ; Social withdrawal = Negative | Positive symptoms add experiences; negative symptoms reduce normal functions.
+Q: What is psychosis? | A state in which perception of reality is altered, with hallucinations, delusions or disorganised thinking.
+Q: What is a prodrome in psychosis? | Gradual changes such as withdrawal, declining function and unusual ideas before psychosis.
+Q: Name conditions in which psychosis can occur. | Schizophrenia, bipolar disorder, severe depression and postpartum psychosis.
+Q: Which substances can cause psychosis? | Cannabis, especially high-potency forms, and stimulants.
+Q: Which medicine is given as an example that can cause psychosis? | Steroids.
+Q: What age range do early intervention in psychosis services often cover? | People aged about 14 to 65.
+Q: What does CBTp stand for? | CBT for psychosis.
+Q: What cognitive difficulties occur in psychosis? | Problems with attention, memory and planning.
+Q: What risks should be assessed in psychosis? | Risks including command hallucinations and self-neglect.
+Q: Why should physical causes be considered at a first episode of psychosis? | Delirium, infection, brain injury, epilepsy and autoimmune conditions can cause psychosis.
 
 ## Schizophrenia
 S: Schizophrenia is a long-term mental illness involving episodes of psychosis and often ongoing negative and cognitive symptoms. With treatment and support, many people live fulfilling lives. Physical health and medicine monitoring are major nursing priorities.
@@ -547,6 +667,16 @@ M1#nursing-u12-13-q1@1: When is clozapine usually used? | For treatment-resistan
 M2#nursing-u12-13-q2@2: A man on an antipsychotic develops a high fever, rigid muscles and confusion. What should the nurse suspect? | Neuroleptic malignant syndrome: escalate urgently | A simple viral infection needing rest | Akathisia, which is harmless | A normal reaction that will settle | These features suggest NMS, a medical emergency.
 M3#nursing-u12-13-q3@3: A patient on clozapine stops smoking on admission to a smoke-free ward. What should the nurse do? | Inform the prescriber, as clozapine levels may rise | Nothing, as smoking doesn't affect clozapine | Double the clozapine dose | Encourage him to restart smoking | Stopping smoking can raise clozapine levels and cause toxicity.
 MS2#nursing-u12-13-q4@3: Which should be monitored in people taking antipsychotics long term? | Weight and BMI ; Blood glucose or HbA1c ; Lipids | Hair colour ; Shoe size | Metabolic side effects need regular physical health checks.
+Q: What is relapse in schizophrenia often linked to? | Stopping medication, stress and substance use.
+Q: What is akathisia? | Inner restlessness and an urge to move, a side effect of antipsychotics.
+Q: What side effect can occur with long-term antipsychotic use? | Tardive dyskinesia.
+Q: What metabolic effects can antipsychotics cause? | Weight gain, diabetes and raised cholesterol.
+Q: What are the signs of neuroleptic malignant syndrome? | Fever, muscle rigidity, confusion and autonomic instability.
+Q: How can depot injections help? | Long-acting injections can support adherence for some people.
+Q: How often are clozapine blood tests needed after the first 18 weeks? | Fortnightly up to a year, then monthly.
+Q: Why is clozapine-induced constipation dangerous? | It can be fatal through bowel obstruction, so monitor and treat proactively.
+Q: What happens if clozapine doses are missed for more than about 48 hours? | Retitration is needed under medical advice.
+Q: What tool supports annual physical health checks in schizophrenia? | The Lester tool.
 
 ## Personality disorders
 S: Personality disorders describe long-standing patterns of thinking, feeling and relating that cause significant distress and difficulty. They are often linked to trauma, and people frequently experience stigma in services. Compassionate, consistent care helps.
@@ -587,6 +717,16 @@ M1#nursing-u12-14-q1@1: Which is a recognised therapy for emotionally unstable p
 M2#nursing-u12-14-q2@2: Which approach helps most when caring for a person with EUPD on a ward? | A consistent, team-wide approach with compassionate boundaries | Different rules depending on which nurse is on shift | Ignoring the person to discourage self-harm | Long admissions without clear goals | Consistency reduces confusion and supports trust.
 M2#nursing-u12-14-q3@3: A colleague calls a patient with EUPD "manipulative" at handover. What is the best response? | Challenge the label and describe the behaviour and distress factually | Agree, as it saves time | Record the label in the notes | Avoid the patient for the rest of the shift | Stigmatising labels harm care; describe behaviours and needs instead.
 TF1#nursing-u12-14-q4@1: Many people diagnosed with personality disorder have experienced childhood trauma. | True | Trauma is common in people with personality disorder diagnoses.
+Q: When do personality disorders usually begin? | In adolescence or early adulthood.
+Q: What are the features of emotionally unstable personality disorder? | Intense, changing emotions, impulsivity, unstable relationships and self-image, fear of abandonment, emptiness and self-harm.
+Q: How does ICD-11 describe personality disorder? | By severity with trait domains, with a borderline pattern specifier.
+Q: What is mentalisation-based treatment? | A long-term, structured psychological therapy for personality disorder (MBT).
+Q: Why are long hospital admissions avoided in personality disorder? | They can be unhelpful; brief admissions with clear goals may be used.
+Q: Why is consistency important in caring for people with personality disorder? | Agreed, team-wide approaches with clear, compassionate boundaries help.
+Q: What does a collaborative crisis plan set out? | Triggers, coping strategies and what helps.
+Q: Why do staff need supervision when working with personality disorder? | Working with intense emotions and self-harm can be demanding.
+Q: What experience is common in people diagnosed with personality disorder? | Childhood trauma.
+Q: Why might some people dislike the personality disorder diagnosis? | It is controversial for some, and people may prefer other terms.
 
 ## Eating disorders
 S: Eating disorders are serious mental illnesses with high physical risk; anorexia nervosa has one of the highest mortality rates of any mental illness. Nurses monitor physical risk, support nutrition and work therapeutically with people and families.
@@ -632,6 +772,16 @@ M1#nursing-u12-15-q1@1: Which eating disorder involves binge eating with compens
 M2#nursing-u12-15-q2@2: A woman with bulimia who vomits several times a day feels weak and has palpitations. What blood result is most concerning? | A low potassium level | A normal sodium level | A slightly raised haemoglobin | A normal glucose level | Purging causes hypokalaemia, which can cause dangerous arrhythmias.
 M2#nursing-u12-15-q3@3: Which nursing approach supports meals for a person with anorexia? | Calm, consistent meal support with an agreed plan | Commenting on how much weight they've gained | Leaving them to eat alone without support | Allowing meals to be skipped if distressed | Consistent, supportive meal care helps nutrition and trust.
 MS2#nursing-u12-15-q4@3: Which should be monitored for physical risk in eating disorders? | Heart rate and blood pressure ; Electrolytes including phosphate ; Rate of weight loss | Shoe size ; Hair length | MEED identifies these as key indicators of risk.
+Q: What is bulimia nervosa? | Recurrent binge eating with compensatory behaviours, often at normal weight.
+Q: What is binge eating disorder? | Recurrent binges without compensatory behaviours.
+Q: What is ARFID? | Avoidant restrictive food intake disorder: restriction for reasons other than weight or shape.
+Q: Which electrolyte is especially affected in refeeding syndrome? | Phosphate.
+Q: What test checks muscle strength in eating disorders? | The sit-up-squat-stand test.
+Q: What national guidance sets out risk levels in eating disorders? | MEED guidance.
+Q: Which therapies are used for adults with anorexia? | Eating-disorder-focused CBT, MANTRA and SSCM.
+Q: Which therapy is used for young people with eating disorders? | Family therapy.
+Q: What comments should nurses avoid in eating disorders? | Comments about weight or appearance; focus on health and recovery.
+Q: Can people be at high physical risk from an eating disorder at a normal weight? | Yes, especially with rapid weight loss or purging.
 
 ## Substance misuse
 S: Substance misuse involves harmful use of alcohol, drugs or medicines. It is common in people with mental health problems ("dual diagnosis") and causes physical, psychological and social harm. Nurses identify, assess and support people without judgement.
@@ -674,6 +824,16 @@ M1#nursing-u12-16-q1@1: Which vitamin prevents Wernicke's encephalopathy? | Thia
 M2#nursing-u12-16-q2@2: A man admitted 18 hours ago becomes tremulous, sweaty and anxious, and his heart rate is 112. He drinks heavily. What should the nurse suspect? | Alcohol withdrawal: assess and escalate | Normal anxiety about being in hospital | An allergic reaction to hospital food | Opioid overdose | The timing and signs fit alcohol withdrawal, which can progress to seizures.
 M3#nursing-u12-16-q3@3: A patient on methadone is admitted and says his dose is 80 mL daily. What should the nurse do before it is given? | Confirm the dose with prescriber and pharmacy | Give 80 mL straight away as he says | Withhold it for a week to assess need | Ask a relative to bring his methadone in | Opioid substitution doses must be confirmed to avoid dangerous errors.
 TF2#nursing-u12-16-q4@3: People with co-occurring mental health and substance use problems should be treated by integrated services rather than sent between services. | True | A "no wrong door" approach treats both together.
+Q: What is dual diagnosis? | Co-occurring mental health and substance use problems.
+Q: What are early signs of alcohol withdrawal? | Tremor, sweating, anxiety, nausea and tachycardia.
+Q: What is delirium tremens? | Severe alcohol withdrawal with confusion, hallucinations, agitation and autonomic instability.
+Q: Which scale can structure assessment of alcohol withdrawal? | CIWA-Ar.
+Q: What are the features of Wernicke's encephalopathy? | Confusion, ataxia and eye movement abnormalities.
+Q: What can untreated Wernicke's encephalopathy lead to? | Permanent memory damage (Korsakoff's syndrome).
+Q: Why must you monitor after giving naloxone? | Naloxone may wear off before the opioid.
+Q: What is opioid substitution therapy? | Methadone or buprenorphine, which reduces harm and death.
+Q: What does "no wrong door" mean in dual diagnosis? | Co-occurring problems are treated together, not by sending people between services.
+Q: Name harm reduction measures for substance use. | Naloxone supply, needle and syringe programmes, safer use information, blood-borne virus testing and vaccination.
 
 ## Addiction
 S: Addiction is a chronic, relapsing condition in which a person continues to use a substance or behaviour despite harm. Understanding addiction reduces stigma and helps nurses support recovery through evidence-based treatments.
@@ -715,6 +875,16 @@ M1#nursing-u12-17-q1@1: Which describes addiction? | A chronic, relapsing condit
 M3#nursing-u12-17-q2@3: A woman relapses on heroin after six months abstinent following prison release. What advice is most important? | Her tolerance has fallen, so overdose risk is high; offer naloxone | She should use the same amount as before | Relapse means treatment has failed | She should avoid all services | Lost tolerance makes overdose very likely; naloxone and support save lives.
 M2#nursing-u12-17-q3@2: What is recovery capital? | The resources that help a person start and sustain recovery | The money spent on treatment services | A type of residential rehab centre | A medicine used in detoxification | Recovery capital includes housing, relationships, work and meaning.
 TF2#nursing-u12-17-q4@1: Gambling disorder is recognised as an addiction with specialist NHS treatment. | True | NHS gambling clinics treat gambling disorder.
+Q: What is addiction? | A chronic, relapsing condition in which a person continues a substance or behaviour despite harm.
+Q: What features make up dependence? | Craving, loss of control, tolerance, withdrawal and continued use despite harm, with other activities neglected.
+Q: How does the biopsychosocial view explain addiction? | Through reward pathway brain changes, psychological factors such as trauma, and social factors such as poverty and peers.
+Q: Is addiction a moral failing? | No. Treating it as one adds stigma that stops people seeking help.
+Q: How should support be matched to the cycle of change? | Match it to the person's stage, using motivational interviewing.
+Q: What is contingency management? | Using rewards for positive behaviours, such as negative drug tests.
+Q: Which medicines help prevent relapse in alcohol dependence? | Acamprosate or naltrexone, or disulfiram in some cases.
+Q: Name mutual aid groups for addiction. | SMART Recovery, Alcoholics Anonymous and Narcotics Anonymous.
+Q: When should nurses ask about gambling? | Routinely, especially when there are unexplained financial problems.
+Q: How should nurses respond to relapse? | With compassion: explore triggers, review the plan, renew support and offer naloxone where relevant.
 
 ## Self-harm
 S: Self-harm is any act of self-poisoning or self-injury, whatever the motivation. It is common, often hidden, and linked to an increased risk of suicide. How nurses respond can make a real difference to whether people seek help again.
@@ -757,6 +927,16 @@ M1#nursing-u12-18-q1@1: What is the link between self-harm and suicide? | Self-h
 M2#nursing-u12-18-q2@2: A man attends A&E after cutting his arm and says he feels nobody cares. What should the nurse do first? | Treat his wound with compassion and ask how he is feeling | Tell him he is wasting A&E time | Delay treatment to discourage repetition | Discharge him as soon as the wound is closed | Compassionate physical care and listening build trust and engagement.
 M2#nursing-u12-18-q3@3: What should a safety plan include? | Warning signs, coping strategies, supports and crisis contacts | A risk score to predict future suicide | A contract promising not to self-harm | Only the phone number of the police | Safety plans are personal, practical and collaborative.
 MS2#nursing-u12-18-q4@1: Which are recognised functions of self-harm for some people? | Coping with overwhelming emotions ; Self-punishment ; Communicating distress | Always seeking attention ; Always a sign of low risk | Self-harm serves many functions; assumptions such as "attention-seeking" are harmful.
+Q: Name reasons people may self-harm. | To cope with overwhelming emotions, punish themselves, feel something, communicate distress, or in response to suicidal thoughts.
+Q: Does low apparent intent mean self-harm carries little suicide risk? | No. Self-harm strongly predicts future suicide even when intent seemed low.
+Q: How should injuries from self-harm be treated? | Promptly and with the same care as any other patient.
+Q: Who should have a psychosocial assessment after self-harm? | Everyone, by a trained professional, ideally before discharge from emergency care.
+Q: What should care after self-harm focus on instead of risk scores? | The person's needs, safety and what will help.
+Q: What psychological help does NICE recommend after self-harm? | Psychological interventions specifically structured for people who self-harm.
+Q: What is harm minimisation in self-harm? | Approaches such as safer wound care that reduce physical harm, as part of a wider plan.
+Q: Is harm minimisation used for self-poisoning? | No. It is not for self-poisoning, and only after full assessment.
+Q: Why does a compassionate response to self-harm matter? | It helps people seek help again; dismissive responses increase risk.
+Q: What should be arranged before a person leaves after self-harm? | Follow-up, and making sure they know how to get help.
 
 ## Suicide risk assessment
 S: Suicide is a leading cause of death, especially among men and young people. Assessing and responding to suicide risk is about understanding the person's situation and needs, and working with them on safety, not about predicting with a score.
@@ -798,6 +978,16 @@ M1#nursing-u12-19-q1@1: How should a nurse ask about suicidal thoughts? | Direct
 M2#nursing-u12-19-q2@2: Which is a protective factor against suicide? | Reasons for living, such as family | Access to large stockpiles of medicines | A recent bereavement | Heavy alcohol use | Reasons for living and connections protect against suicide.
 M3#nursing-u12-19-q3@3: A man with depression is discharged from a ward. Two days later, his partner calls to say he has stopped eating and is withdrawn. What should the nurse do? | Arrange urgent review with the crisis team | Reassure her that it's normal after discharge | Advise her to wait for his outpatient appointment | Note the call and take no further action | The weeks after discharge are high risk; family concern needs an urgent response.
 TF2#nursing-u12-19-q4@3: Suicide risk can be predicted reliably using standardised risk scores. | False | NICE advises against using risk tools to predict suicide; use assessment and formulation.
+Q: Name risk factors for suicide. | Previous self-harm, depression, substance misuse, male sex, middle age, chronic pain, isolation, bereavement, debt and access to means.
+Q: Name warning signs of suicide. | Talking about wanting to die, hopelessness, withdrawing, making plans, saying goodbye, giving away possessions and sudden calm.
+Q: Name high-risk periods for suicide. | The first weeks after ward discharge, after a crisis, and around court appearances or major losses.
+Q: What should be explored when someone has suicidal thoughts? | Frequency, intent, plans, access to means, preparations, previous attempts, protective factors and what would help.
+Q: What does intent mean in suicide assessment? | The degree to which a person intends to act on suicidal thoughts.
+Q: What is means restriction? | Reducing access to methods of suicide, such as medicines, ligature points or sharp objects.
+Q: What should guide suicide risk decisions instead of risk tools? | Professional judgement and formulation.
+Q: What is postvention? | Bereavement support for people affected by suicide, part of suicide prevention.
+Q: What options exist for the level of support after suicide risk assessment? | Community follow-up, crisis team or admission.
+Q: Why should family and carers be involved in suicide assessment? | They can share concerns and support safety; listen to them where possible.
 
 ## Crisis intervention
 S: A mental health crisis is when a person feels they can't cope or are at risk, and needs urgent help. Crisis services aim to respond quickly, keep people safe and avoid unnecessary hospital admission where possible.
@@ -841,6 +1031,16 @@ M1#nursing-u12-20-q1@1: Which service offers intensive home support as an altern
 M2#nursing-u12-20-q2@2: What is the first priority in crisis intervention? | Assessing immediate safety | Completing the full social history | Arranging long-term therapy | Discussing medication side effects | Safety comes first, then stabilising and planning.
 M2#nursing-u12-20-q3@3: Where should a person detained under section 136 usually be taken? | A health-based place of safety | A police cell in every case | Their own home | A general hospital ward bay | Health-based places of safety are preferred; police cells are very rarely lawful.
 SEQ2#nursing-u12-20-q4@2: Put these crisis intervention steps in order. | Assess safety ; Listen and stabilise ; Understand the crisis ; Explore options and coping ; Agree a plan and follow-up | The steps move from immediate safety to a shared plan.
+Q: What is a mental health crisis? | When a person feels they can't cope or is at risk and needs urgent help.
+Q: What do crisis resolution and home treatment teams provide? | 24-hour assessment and intensive home support as an alternative to admission.
+Q: Name crisis alternatives to hospital. | Crisis cafés, safe havens, crisis houses and liaison psychiatry in emergency departments.
+Q: What crisis service operates in Scotland? | NHS 24's mental health hub.
+Q: What is the first principle of crisis intervention? | Safety first: assess immediate risks to the person and others.
+Q: What existing documents should be used in a crisis? | The person's crisis plan or advance statement, if they have one.
+Q: How long can a person be held in a place of safety under section 136? | Up to 24 hours, extendable in limited circumstances.
+Q: What does section 135 allow? | Entry to private premises with a warrant.
+Q: What does Right Care, Right Person aim for? | Health and social care, not police, responding to most mental health calls unless there is risk to life or serious harm.
+Q: What reduces repeated crises? | Follow-up, reviewing what helped, updating crisis plans and addressing underlying problems.
 
 ## Psychiatric medication
 S: Medicines play an important role in mental health care, alongside psychological and social approaches. Mental health nurses give medicines, monitor effects and side effects, support informed choice and manage rapid tranquillisation safely.
@@ -883,6 +1083,16 @@ M1#nursing-u12-21-q1@1: Which class of medicine carries a risk of dependence and
 M2#nursing-u12-21-q2@2: A person on two serotonergic medicines becomes agitated, sweaty and feverish with muscle twitching. What should the nurse suspect? | Serotonin syndrome: escalate urgently | Normal anxiety needing reassurance | A side effect to monitor at next review | Alcohol withdrawal | These features suggest serotonin syndrome.
 M3#nursing-u12-21-q3@3: After intramuscular rapid tranquillisation, a man falls asleep. How should he be monitored? | Observations every 15 minutes | No observations, to avoid waking him | Observations once at the end of the shift | Only if he complains of feeling unwell | Sedated people need more frequent monitoring per NICE.
 MS2#nursing-u12-21-q4@2: Which are recognised side effects of antipsychotics? | Weight gain ; Movement disorders ; QTc prolongation | Improved bone density ; Lowered blood glucose in all users | Antipsychotics have metabolic, movement and cardiac effects.
+Q: Name side effects of antidepressants. | Nausea, sexual dysfunction, hyponatraemia and discontinuation symptoms.
+Q: Which antidepressants are dangerous in overdose? | Tricyclics.
+Q: What serious side effect is linked to lamotrigine? | Rash, including serious skin reactions.
+Q: What are the risks of benzodiazepines and Z-drugs? | Sedation, falls and dependence; they are for short-term use only.
+Q: What should be monitored with ADHD stimulants? | Appetite, sleep, heart rate and blood pressure.
+Q: What is GASS used for? | Rating antipsychotic side effects.
+Q: Why might people stop their psychiatric medicines? | Side effects, beliefs, stigma or practical issues.
+Q: When is rapid tranquillisation used? | Only when de-escalation has failed, as part of a planned approach, oral first if possible.
+Q: What should be done if a person refuses observations after rapid tranquillisation? | Observe for signs such as breathing and colour, and document.
+Q: What are discontinuation symptoms? | Symptoms such as dizziness and irritability when an antidepressant is stopped suddenly.
 
 ## Mental Health Act
 S: The Mental Health Act 1983 (as amended) shapes daily practice for mental health nurses in England and Wales. This lesson focuses on applying it on wards and in the community: rights, leave, consent to treatment and community treatment orders. The law itself is covered in School 17.
@@ -924,6 +1134,16 @@ M1#nursing-u12-22-q1@1: Under which section must detained patients be told their
 M2#nursing-u12-22-q2@2: A detained patient has authorised section 17 leave but seems more distressed and is talking about ending his life. What should the nurse do? | Reassess risk and postpone the leave | Let him go, as leave is already authorised | Extend the leave to help him relax | Discharge him from his section | Nurses must assess current risk before any leave.
 M3#nursing-u12-22-q3@3: A patient detained for four months is due her antipsychotic. She refuses, and lacks capacity. What must the nurse check? | That a valid SOAD certificate covers this treatment | Nothing, as detained patients can always be treated | That her family have signed a consent form | That she had capacity on admission | After three months, treatment without consent needs SOAD authorisation.
 TF2#nursing-u12-22-q4@3: Community treatment orders can include the possibility of recall to hospital. | True | CTOs allow supervised community treatment with recall if needed.
+Q: What must detained people be told under section 132? | Their section and its effect, rights of appeal to the Tribunal and hospital managers, and about IMHAs.
+Q: How should rights be given under section 132? | Orally and in writing, as soon as practicable, repeated as needed, checking understanding and recording each time.
+Q: What must section 17 leave documentation include? | Conditions such as escorted or unescorted, duration and destination.
+Q: What should a nurse do before a patient goes on authorised leave? | Assess current mental state and risk.
+Q: Under which section can a person who is AWOL be returned? | Section 18.
+Q: When does medicine for mental disorder need consent or a SOAD certificate? | After three months from first giving it in that period of detention.
+Q: When can a capable person's refusal of ECT be overridden? | Only in emergencies under section 62.
+Q: Which certificates should nurses check before giving medicines under Part 4 in England? | T2 or T3 forms.
+Q: Who can be placed on a community treatment order? | Some people discharged from section 3.
+Q: What does Mental Health Act reform aim to do? | Increase choice and autonomy, change detention criteria, reduce racial disparities and limit detention of autistic people and those with learning disabilities.
 
 ## Mental Capacity Act
 S: The Mental Capacity Act 2005 applies to mental health care as it does elsewhere, but its interaction with the Mental Health Act and with fluctuating capacity raises particular questions. This lesson applies it to mental health nursing practice.
@@ -962,6 +1182,16 @@ M1#nursing-u12-23-q1@1: What is fluctuating capacity? | Capacity that changes ov
 M2#nursing-u12-23-q2@3: A detained patient with capacity refuses treatment for a leg ulcer. What applies? | Her refusal must be respected | She can be treated because she is detained | Her nearest relative can consent instead | The SOAD can authorise it | The MHA covers treatment for mental disorder, not unrelated physical conditions.
 M2#nursing-u12-23-q3@2: Which helps respect a person's wishes in future mental health crises? | A joint crisis plan agreed with them | A plan written by staff only | Avoiding any discussion of the future | Recording only their diagnosis | Joint crisis plans reflect the person's own preferences.
 TF1#nursing-u12-23-q4@1: Most people with mental illness have capacity for most decisions. | True | Capacity must be assessed for each decision and isn't removed by a diagnosis.
+Q: How should a nurse handle fluctuating capacity? | Where possible wait for a time when the person has capacity, or plan ahead with them.
+Q: Is capacity assessed in general or for a specific decision? | For the specific decision, and recorded.
+Q: When is the Mental Health Act used rather than the MCA? | For assessing or treating mental disorder in hospital when detention is needed and criteria are met.
+Q: When can a detained person's physical illness be treated under the MHA? | Only if the treatment is for the mental disorder or its direct consequences.
+Q: What does supported decision-making involve? | Good timing, accessible information and involving trusted people.
+Q: Are advance statements legally binding? | No, but they must be considered.
+Q: Can MHA treatment override an advance decision refusing treatment? | Yes, for mental disorder, except in specific cases such as ECT.
+Q: What is a joint crisis plan? | A plan agreed by the person and their team about what should happen in a future crisis.
+Q: What should a nurse do about the interface between DoLS and the MHA? | Seek specialist advice, as it is complex.
+Q: Can mania or psychosis affect capacity? | Yes. Capacity can fluctuate with mental state.
 
 ## Safeguarding
 S: People who use mental health services are at higher risk of abuse, exploitation and neglect, and may also pose risks to others, including children in their family. Mental health nurses have key safeguarding responsibilities.
@@ -1002,6 +1232,16 @@ M1#nursing-u12-24-q1@1: Which question should be asked on every mental health ad
 M2#nursing-u12-24-q2@2: A man with psychosis says new "friends" have moved into his flat and use it to sell drugs. What might this be? | Cuckooing, a form of exploitation | A positive new friendship | A sign he is recovering | Something to ignore | Cuckooing exploits vulnerable people and needs a safeguarding response.
 M2#nursing-u12-24-q3@3: A patient discloses that another patient touched her sexually on the ward. What should the nurse do? | Ensure her safety, support her and report it | Tell her not to make accusations | Wait to see whether it happens again | Move her without recording anything | Sexual safety concerns need immediate protective action and reporting.
 MS2#nursing-u12-24-q4@2: Which are signs of a closed, abusive culture in a service? | Overuse of restraint ; Staff mocking patients ; Visitors being discouraged | Open visiting ; Regular advocacy visits | Closed cultures allow abuse; openness and advocacy protect people.
+Q: Why are people using mental health services at higher safeguarding risk? | They face more abuse, exploitation and neglect.
+Q: Name forms of exploitation affecting mental health service users. | Financial abuse, cuckooing, sexual and criminal exploitation, and radicalisation.
+Q: How should nurses ask about domestic abuse? | Routinely and safely.
+Q: What did inquiries such as Winterbourne View show? | How quickly harm can become normalised in closed services.
+Q: What does "think family" mean in mental health care? | Asking about children and caring responsibilities and how the person's mental health affects them.
+Q: Who are young carers in mental health safeguarding? | Children affected by and caring for a parent with mental illness, substance misuse or domestic abuse.
+Q: What measures support sexual safety on wards? | Single-sex accommodation, observation, clear reporting, supporting disclosure and staff training.
+Q: Can staff form sexual relationships with patients? | Never; any concern must be reported.
+Q: What is MAPPA used for? | Sharing information about some offenders who may pose risks to others.
+Q: What is organisational abuse? | Abuse or neglect resulting from an organisation's culture, policies or practices.
 
 ## De-escalation
 S: De-escalation uses communication and other approaches to reduce agitation and aggression and prevent harm. It is the first-line response to distress and the foundation of reducing restrictive practice in mental health settings.
@@ -1044,6 +1284,16 @@ M1#nursing-u12-25-q1@1: Which is an early sign of escalating agitation? | Pacing
 M2#nursing-u12-25-q2@2: Which is an effective de-escalation technique? | Speaking calmly and acknowledging the person's feelings | Shouting instructions to regain control | Blocking the doorway to keep them in | Laughing to lighten the mood | Calm, respectful acknowledgement of feelings lowers tension and helps the person feel heard.
 M2#nursing-u12-25-q3@3: Which law in England regulates the use of force in mental health units? | The Mental Health Units (Use of Force) Act 2018 | The Care Act 2014 | The Data Protection Act 2018 | The Children Act 1989 | Seni's Law requires policies, training and recording on the use of force.
 SEQ2#nursing-u12-25-q4@2: Put the response to an agitated person in order of preference. | Verbal and non-verbal de-escalation ; Offering choices and addressing causes ; Planned restrictive intervention as a last resort ; Debrief afterwards | Restrictive interventions come only after de-escalation fails, always followed by debrief.
+Q: What is de-escalation? | Techniques using communication and the environment to reduce agitation and aggression and prevent harm.
+Q: What often causes agitation and aggression? | Fear, pain, frustration, unmet needs, voices or delusions, intoxication, restrictions or the environment.
+Q: How should your voice and posture be during de-escalation? | A slow, low voice, relaxed posture and open hands.
+Q: Where should you stand when de-escalating? | At an angle, respecting personal space and not blocking exits.
+Q: Why should only one person lead de-escalation? | Several staff crowd the person; others should give space.
+Q: How does reducing stimulation help de-escalation? | Moving to a quieter area with fewer people calms the situation.
+Q: When may restrictive interventions be used? | Only as a last resort, when necessary and proportionate to prevent harm, for the shortest time.
+Q: What is another name for the Mental Health Units (Use of Force) Act 2018? | Seni's Law.
+Q: What should happen after every restrictive intervention? | A debrief with the person and staff.
+Q: Which approach besides Safewards reduces conflict and restrictive practice? | Positive behaviour support.
 
 ## Recovery-oriented practice
 S: Recovery in mental health means living a satisfying, hopeful and contributing life, even with ongoing symptoms. Recovery-oriented practice supports people to define their own goals and draws on their strengths, experiences and communities.
@@ -1088,6 +1338,16 @@ M1#nursing-u12-26-q1@1: What does personal recovery mean? | Living a meaningful,
 M2#nursing-u12-26-q2@2: What do peer support workers bring to mental health teams? | Lived experience that offers hope and understanding | Prescribing expertise | Legal authority to detain | Nothing beyond what nurses offer | Peer workers' lived experience supports recovery.
 M2#nursing-u12-26-q3@3: A man with schizophrenia wants to return to work. Which approach is evidence-based? | Individual Placement and Support | Advising him to wait until all symptoms go | Day care with no work focus | Discouraging him to avoid stress | IPS helps people with severe mental illness gain and keep paid work.
 MATCH1#nursing-u12-26-q4@1: Match each CHIME element to an example. | Connectedness = Rebuilding relationships with family ; Hope = Believing life can improve ; Identity = Seeing oneself beyond a diagnosis ; Empowerment = Taking control of decisions | CHIME elements guide recovery-focused care.
+Q: Is personal recovery the same as being symptom-free? | No. It means a satisfying, hopeful life, which may include ongoing symptoms.
+Q: What is the difference between clinical and personal recovery? | Clinical recovery means fewer symptoms; personal recovery means a meaningful life on the person's terms. Both matter.
+Q: What does identity mean in CHIME? | Rebuilding a positive sense of self beyond illness.
+Q: What does empowerment mean in CHIME? | Personal responsibility, control and focusing on strengths.
+Q: What does connectedness mean in CHIME? | Relationships and community.
+Q: What is Individual Placement and Support? | An evidence-based approach helping people with severe mental illness find and keep paid work.
+Q: What is a Wellness Recovery Action Plan? | A self-designed plan for staying well and managing difficulties.
+Q: What is co-production? | People with lived experience working as equal partners in designing services.
+Q: What does strengths-based care planning mean? | Planning around the person's own goals and strengths.
+Q: What kind of language supports recovery? | Hopeful, person-centred language.
 
 ## Community mental health
 S: Most mental health care happens in the community. Community mental health nurses support people in their homes and local areas, coordinating care, managing risk and helping people build lives beyond illness.
@@ -1132,6 +1392,16 @@ M1#nursing-u12-27-q1@1: Which is a role of a community mental health nurse? | Co
 M2#nursing-u12-27-q2@3: A person who usually engages well has missed three appointments and isn't answering calls. What should the nurse do? | Make further efforts to contact them and assess for relapse or risk | Discharge them for non-attendance | Wait for them to get in touch | Send a single letter and close the case | Disengagement can signal relapse; follow up actively.
 M2#nursing-u12-27-q3@2: Which service supports people with common mental health problems through psychological therapy in England? | NHS Talking Therapies | Forensic secure units | Paediatric intensive care | Orthopaedic outpatients | NHS Talking Therapies provide evidence-based therapy for anxiety and depression.
 TF2#nursing-u12-27-q4@2: Community mental health nurses support housing, benefits and work as well as clinical care. | True | Social needs strongly affect recovery.
+Q: Where does most mental health care happen? | In the community.
+Q: How are CMHTs being reorganised in England? | Into integrated primary and community teams around primary care networks, under the Community Mental Health Framework.
+Q: What is care coordination? | Being the person's main point of contact and coordinating care across services.
+Q: Which medicines do community mental health nurses often monitor? | Depot injections and clozapine.
+Q: What was the Care Programme Approach? | A framework that structured care coordination for people with complex needs in England.
+Q: When did NHS England move away from CPA? | In its 2023 guidance.
+Q: What is a key worker? | A named professional who coordinates a person's care.
+Q: What safety issue matters for community mental health nurses? | Lone working safety.
+Q: How should nurses engage people who are hard to reach? | With flexibility and persistence.
+Q: Why shouldn't a case be closed when someone misses appointments? | Disengagement can signal relapse or risk, so explore why.
 
 ## Inpatient mental health care
 S: Inpatient mental health wards care for people who need more intensive support and safety than the community can provide. Good inpatient care is therapeutic, safe, respectful and focused on recovery and discharge.
@@ -1176,6 +1446,16 @@ M1#nursing-u12-28-q1@1: Which observation level requires staff to stay within ar
 M2#nursing-u12-28-q2@2: A nurse on within-eyesight observation sits silently reading on her phone. What is wrong? | It should involve engagement, not just watching | Nothing, as long as the patient is visible | She should sit further away | She should only look up every hour | Engagement makes observation therapeutic and safer.
 M2#nursing-u12-28-q3@3: What should happen within 72 hours of discharge from a mental health ward? | A follow-up contact with the person | Readmission to the ward | Closure of the case | A letter only | Follow-up within 72 hours addresses the high-risk post-discharge period.
 MS2#nursing-u12-28-q4@3: Which make inpatient care more therapeutic? | Meaningful activities ; One-to-one time with a named nurse ; Family involvement | Long periods with nothing to do ; Frequent unexplained rule changes | Activity, engagement and involvement support recovery.
+Q: When is inpatient mental health admission used? | When risk or needs can't be safely met at home, for assessment and treatment.
+Q: Can mental health admission be voluntary? | Yes. It can be informal or under the Mental Health Act.
+Q: What should happen on admission to a mental health ward? | Assessment, rights information if detained, physical check, medicines reconciliation, risk assessment and orientation.
+Q: Name the levels of therapeutic observation. | General, intermittent, within eyesight and within arm's length.
+Q: What is intermittent observation? | Checks on the person at set intervals.
+Q: What should be balanced when deciding observation levels? | Safety against intrusiveness, with dignity, privacy and gender considered.
+Q: What is a psychiatric intensive care unit? | A ward for people needing intensive care and higher security for a short period.
+Q: What makes a ward environment therapeutic? | Meaningful activities, groups, one-to-one time with a named nurse, Safewards and a calm, predictable setting.
+Q: When should discharge planning start? | From admission, with community teams involved.
+Q: Why should out-of-area placements be avoided? | They disrupt relationships and continuity of care.
 
 ## Forensic mental health
 S: Forensic mental health services care for people with mental illness who have been in contact with the criminal justice system or who pose a risk of serious harm to others. Nurses balance therapeutic care with security and public protection.
@@ -1215,6 +1495,16 @@ M1#nursing-u12-29-q1@1: What is relational security? | Using knowledge of patien
 M2#nursing-u12-29-q2@2: What do liaison and diversion services do? | Identify mental health needs at police stations and courts | Provide surgery in prisons | Decide criminal sentences | Run high secure hospitals | They help divert people to appropriate care.
 M2#nursing-u12-29-q3@3: A patient under a restriction order wants leave to visit family. Who must approve it? | The Ministry of Justice, as well as the responsible clinician | Only the ward nurse | The patient's family alone | No one, as leave is automatic | Restricted patients' leave needs Ministry of Justice consent.
 TF2#nursing-u12-29-q4@3: Risk assessment tools such as the HCR-20 are used as structured professional judgement rather than simple predictive scores. | True | They guide formulation and management, not prediction alone.
+Q: What are forensic mental health services? | Services for people with mental illness in contact with criminal justice or posing a risk of serious harm to others.
+Q: What are the levels of secure services? | Low, medium and high secure.
+Q: Which high secure hospital serves Scotland and Northern Ireland? | The State Hospital at Carstairs.
+Q: What is a section 37 order? | A hospital order made by a court.
+Q: What do sections 47 and 48 allow? | Transfer from prison to hospital.
+Q: What is conditional discharge? | Discharge of a restricted patient with conditions and supervision.
+Q: What is the HCR-20? | A structured professional judgement tool supporting risk formulation and management plans.
+Q: What does "See, Think, Act" relate to? | Relational security in forensic care.
+Q: What are physical and procedural security? | Physical: fences and locks. Procedural: searches and policies.
+Q: What does recovery-focused forensic care include? | Offence-focused therapies, treatment of illness and substance use, education and work skills, and graduated leave.
 
 ## Older adult mental health
 S: Older people experience mental health problems such as depression, anxiety, dementia and delirium, often alongside physical illness. Their mental health needs are often missed or wrongly attributed to ageing.
@@ -1256,6 +1546,16 @@ M1#nursing-u12-30-q1@1: Which condition has an acute onset with fluctuating atte
 M2#nursing-u12-30-q2@2: A woman with dementia becomes agitated every afternoon. What should the nurse do first? | Look for causes such as pain, hunger, constipation or noise | Ask for an antipsychotic to be prescribed | Restrain her in a chair | Ignore it as part of dementia | Distress usually has identifiable causes that can be addressed.
 M3#nursing-u12-30-q3@3: An 80-year-old man has become forgetful, withdrawn and stopped eating since his wife died, and says he is "a burden." What should the nurse consider? | Late-life depression with suicide risk: assess and refer | Normal ageing needing no action | Dementia only, so arrange a memory clinic | Laziness after bereavement | Depression can present with cognitive changes; his statements suggest risk.
 MATCH1#nursing-u12-30-q4@1: Match each condition to its typical onset. | Delirium = Hours to days ; Dementia = Months to years ; Depression = Weeks | Onset helps distinguish them.
+Q: Why are older people's mental health needs often missed? | They are often wrongly attributed to ageing.
+Q: Is consciousness affected in dementia? | No. Consciousness is normal in dementia.
+Q: What is pseudodementia? | Cognitive impairment caused by depression that can resemble dementia.
+Q: Can delirium and dementia coexist? | Yes. Delirium on top of dementia is common.
+Q: Which medicines are used for some types of dementia? | Acetylcholinesterase inhibitors.
+Q: Who developed person-centred dementia care? | Kitwood.
+Q: What common causes of distress in dementia should be looked for? | Pain, constipation, infection, hunger, noise, unfamiliar people or unmet needs.
+Q: Name a model for assessing distress in dementia. | The Newcastle model.
+Q: How may depression present in older people? | With physical complaints, anxiety, irritability or cognitive problems.
+Q: Which group of older people has significant suicide risk? | Older men.
 
 ## Preparing for a mental health nursing placement
 S: Mental health placements offer rich learning in therapeutic relationships, assessment and recovery-focused care. They can also be emotionally demanding. Preparing well helps students learn safely and make the most of each opportunity.
@@ -1297,6 +1597,16 @@ M1#nursing-u12-31-q1@1: Which training may be required before a mental health wa
 M2#nursing-u12-31-q2@2: Which is a suitable learning goal for a first mental health placement? | Developing a therapeutic relationship with a service user | Prescribing antipsychotics independently | Leading a Mental Health Act tribunal | Detaining patients under section 5(4) | Goals should fit the student's stage and the setting.
 M2#nursing-u12-31-q3@3: A service user asks a student for her personal phone number to stay in touch. What should she do? | Politely decline and discuss it with her supervisor | Give her number to build trust | Give a friend's number instead | Ignore the request completely | Sharing personal contact details breaches professional boundaries.
 MS2#nursing-u12-31-q4@3: Which support student wellbeing on mental health placements? | Supervision ; Peer support ; University wellbeing services | Keeping all distress to yourself ; Avoiding reflection | Support helps students manage emotionally demanding experiences.
+Q: Name personal safety procedures to learn before a mental health placement. | Alarms, lone working, ward rules on items you can bring, and how to call for help.
+Q: What is breakaway training? | Training in techniques to safely disengage from a physical grip.
+Q: What is the usual dress code on mental health placements? | Often own clothes with a badge.
+Q: What emotionally demanding situations may students meet on mental health placements? | Distressing stories, self-harm, aggression and restrictive practices.
+Q: How can students look after their wellbeing on placement? | Rest, peer support, supervision and university wellbeing services.
+Q: What should placement learning goals be linked to? | The proficiencies and the practice assessment document.
+Q: What is a practice assessment document? | The record of a student's practice learning, assessments and proficiencies.
+Q: Should students have social media contact with service users? | No. Avoid it to keep professional boundaries.
+Q: Who should students talk to about boundary questions? | Their supervisor.
+Q: Why should students reflect on their own experiences before placement? | Their experiences may affect how they respond to what they see.
 
 ## Reflective learning and case studies in mental health nursing
 S: Reflection is especially important in mental health nursing, where relationships, emotions and ethical tensions are central. Case studies help link mental health theory, law and evidence to the care of real people.
@@ -1340,4 +1650,14 @@ M1#nursing-u12-32-q1@1: Which should be included in a mental health case study? 
 M2#nursing-u12-32-q2@2: Why is anonymisation especially important in mental health case studies? | The information is sensitive and identifying | It is only a university rule with no purpose | Mental health information is never confidential | To make the work shorter | Sensitive information and unusual details need careful anonymisation.
 M2#nursing-u12-32-q3@3: A student feels uncomfortable after seeing a patient restrained. What should she do? | Reflect on it in supervision, exploring the ethics and her feelings | Keep it to herself to seem professional | Avoid the patient afterwards | Post about it online | Supervised reflection helps process difficult experiences and learn.
 MATCH1#nursing-u12-32-q4@2: Match each element to its purpose in a case study. | Formulation = Understanding the person's difficulties ; Legal framework = Showing the lawful basis for care ; Reflection = Identifying personal learning | Each part supports a thorough case study.
+Q: Which reflective models can be used in mental health nursing? | Gibbs, Driscoll or Johns, alongside clinical supervision.
+Q: What topics are worth reflecting on in mental health nursing? | Relationships, emotional responses, restrictive practices, ethical dilemmas and recovery-focused care.
+Q: What is clinical supervision? | A formal process of professional support and reflection on practice.
+Q: Whose values can conflict in mental health care? | The person's, their family's, the professional's and society's.
+Q: Which details can identify a person in a mental health case study? | Unusual events, locations or offences.
+Q: Which formulation framework can be used in a case study? | The 5 Ps.
+Q: What evidence should support interventions in a case study? | NICE guidance and research.
+Q: Which legal frameworks may a mental health case study discuss? | The Mental Health Act and the Mental Capacity Act.
+Q: How should the person's voice be included in a case study? | Through their recovery goals, with care to anonymise.
+Q: In a first-episode psychosis case study, which early intervention care might be discussed? | CBTp, family intervention, antipsychotic choice and physical health monitoring.
 `;

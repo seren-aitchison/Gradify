@@ -44,6 +44,16 @@ M2#health-u03-01-q2@2: An adult eats about 18 g of fibre a day. Which change wou
 M3#health-u03-01-q3@3: A cereal is labelled "no added sugar" but is sweetened with concentrated fruit juice. How should it be judged? | Its sweetness still comes from free sugars, so it may not be a lower-sugar choice | It contains no free sugars, because fruit is natural | It must be healthier than any cereal with added sugar | It contains only fibre, because fruit is a plant food | Concentrated fruit juice counts as free sugars; check the "of which sugars" line on the label.
 TF1#health-u03-01-q4@1: Most UK adults eat the recommended 30 g of fibre a day. | false | The average UK adult eats about 20 g a day, well below the recommendation.
 SA2#health-u03-01-q5@2,3: Explain why health advice focuses on reducing free sugars rather than all carbohydrates. | Starchy, wholegrain carbohydrates provide energy with fibre, vitamins and minerals and are linked to better health. Free sugars provide energy with few other nutrients, promote tooth decay and are easy to overconsume, especially in drinks, contributing to weight gain. So advice is to base meals on starchy, high-fibre foods while cutting free sugars to under 5% of energy. | Starchy foods bring fibre and nutrients ; Free sugars and tooth decay ; Overconsumption and weight ; Recommendation stated
+Q: Name the three monosaccharides. | Glucose, fructose and galactose.
+Q: Name the three disaccharides. | Sucrose, lactose and maltose.
+Q: What is dietary fibre? | Plant carbohydrates that resist digestion in the small intestine, such as cellulose, pectins and resistant starch.
+Q: How much energy do carbohydrate and fibre provide per gram? | Carbohydrate about 4 kcal per gram; fibre less, about 2 kcal per gram through fermentation by gut bacteria.
+Q: What does the glycaemic index rank? | Carbohydrate foods by how quickly they raise blood glucose; wholegrain and high-fibre foods generally have a lower GI.
+Q: Which sugars are not counted as free sugars? | Sugars inside intact fruit and vegetables, and in milk.
+Q: Name four major sources of free sugars in the UK diet. | Sugary drinks, biscuits, cakes and breakfast cereals.
+Q: What fibre intakes does SACN recommend for children? | 15 g a day at 2–5 years, 20 g at 5–11 years and 25 g at 11–16 years.
+Q: How much fibre does the average UK adult eat each day? | About 20 g a day, below the 30 g target.
+Q: Which diseases is higher fibre intake linked with a lower risk of? | Heart disease, stroke, type 2 diabetes and bowel cancer.
 
 ## Protein
 LV: Level 3 · Foundation
@@ -86,6 +96,16 @@ M2#health-u03-02-q2@2: What is the protein RNI for an adult weighing 60 kg? | 45
 M3#health-u03-02-q3@3: A vegan eats rice and lentils regularly but worries about protein quality. What is the best advice? | Combining cereals and pulses across the day supplies all essential amino acids | Vegans can't meet essential amino acid needs from food | Only protein powders can provide essential amino acids | Lentils alone contain all essential amino acids in ideal proportions | Cereals (low in lysine) and pulses (low in methionine) complement each other.
 TF1#health-u03-02-q4@1: Protein provides about 9 kcal per gram. | false | Protein, like carbohydrate, provides about 4 kcal per gram; fat provides about 9.
 SA2#health-u03-02-q5@2,3: Explain why protein needs are higher in some groups than in healthy adults. | Growth in children and adolescents needs extra protein for new tissue. Pregnancy and breastfeeding need protein for the baby, placenta and milk. Illness, surgery and burns increase protein breakdown and need for repair. Older adults may need more to counter muscle loss. | Growth ; Pregnancy and breastfeeding ; Illness and repair ; Older adults
+Q: What are proteins made of? | Chains of amino acids.
+Q: How many amino acids are found in human proteins? | 20, of which 9 are essential.
+Q: Name four functions of protein in the body. | Any four of: building and repairing tissues, enzymes, hormones such as insulin, antibodies, transport proteins such as haemoglobin, and energy.
+Q: Which essential amino acid are cereals low in, and which are pulses low in? | Cereals are low in lysine; pulses are low in methionine.
+Q: Which two plant foods have good essential amino acid profiles? | Soya and quinoa.
+Q: What is protein complementation, with an example? | Eating different plant proteins together or across the day to supply all essential amino acids, such as beans on toast.
+Q: What is the daily protein RNI for a 70 kg adult? | 52.5 g a day (0.75 × 70).
+Q: When do protein needs rise above the adult RNI? | During growth, pregnancy and breastfeeding, and recovery from illness, surgery or burns.
+Q: What happens to protein eaten beyond requirements? | It is used for energy or excreted; muscle growth depends on resistance training and overall energy intake.
+Q: What is a reference nutrient intake? | The amount of a nutrient enough for about 97.5% of people in a group.
 
 ## Fats
 LV: Level 3 · Foundation
@@ -129,6 +149,16 @@ M2#health-u03-03-q2@2: Which swap best reduces saturated fat intake? | Cooking w
 M3#health-u03-03-q3@3: A man cuts butter and cream but replaces them with sugary snacks and white bread. Why might his heart disease risk not fall? | Replacing saturated fat with refined carbohydrate doesn't lower risk; unsaturated fats should replace it | Butter and cream are good for the heart, so cutting them raises risk | Any reduction in fat always lowers risk, whatever replaces it | White bread contains more saturated fat than butter does | Benefit comes from replacing saturated fat with polyunsaturated or monounsaturated fat.
 TF1#health-u03-03-q4@1: Fat-soluble vitamins include vitamins A, D, E and K. | true | These vitamins dissolve in fat and need dietary fat for absorption.
 SA2#health-u03-03-q5@2,3: Explain how saturated fat intake is linked to cardiovascular disease and what dietary changes reduce risk. | Saturated fat raises blood LDL cholesterol, which contributes to atherosclerotic plaques in arteries, increasing heart attack and stroke risk. Replacing saturated fat with unsaturated fats (vegetable oils, nuts, oily fish) lowers LDL and cardiovascular events. Limiting saturated fat to under 10% of energy, choosing lean meat and lower-fat dairy, and eating oily fish weekly are recommended. | Raises LDL ; Atherosclerosis ; Replace with unsaturated fat ; Practical changes
+Q: What distinguishes saturated, monounsaturated and polyunsaturated fats chemically? | Saturated have no double bonds, monounsaturated have one, and polyunsaturated have two or more.
+Q: Name three sources of monounsaturated fat. | Any three of: olive oil, rapeseed oil, avocados and nuts.
+Q: What are the main sources of omega-6 and omega-3 fats? | Omega-6: sunflower oil. Omega-3: oily fish, walnuts and flaxseed.
+Q: How do trans fats affect blood cholesterol? | They raise LDL and lower HDL cholesterol.
+Q: Name two roles of fat in the diet besides supplying energy. | It carries fat-soluble vitamins A, D, E and K and supplies essential fatty acids the body can't make.
+Q: About how much saturated fat a day does the 10% limit allow for men and for women? | About 30 g a day for men and 20 g for women.
+Q: What is the UK limit for trans fats? | No more than 2% of energy; UK intakes are now well below this.
+Q: What is the UK advice on fish? | At least two portions a week, one of them oily, such as salmon, mackerel or sardines.
+Q: Why does "low fat" not always mean healthier? | Some low-fat products replace fat with sugar or refined starch, which doesn't lower heart disease risk.
+Q: What is LDL cholesterol? | Low-density lipoprotein cholesterol; raised levels increase atherosclerosis risk.
 
 ## Vitamins
 LV: Level 3 · Foundation
@@ -175,6 +205,16 @@ M2#health-u03-04-q2@2: A vegan has fatigue and tingling in the feet. Which defic
 M3#health-u03-04-q3@3: A pregnant woman asks if she should eat liver for its iron. What is the best advice? | Avoid liver in pregnancy because its high vitamin A content can harm the baby | Eat liver daily, because it is the best source of folate | Liver is safe in any amount, because it is a natural food | Take a vitamin A supplement instead of eating liver | NHS advice is to avoid liver and vitamin A supplements in pregnancy; iron can come from other foods.
 MATCH1#health-u03-04-q4@1: Match each deficiency to its vitamin. | Rickets = Vitamin D ; Scurvy = Vitamin C ; Beriberi = Thiamin (B1) ; Night blindness = Vitamin A | These are classic deficiency diseases.
 SA2#health-u03-04-q5@2,3: Explain why UK public health advice recommends vitamin D supplements for many people. | Most vitamin D is made in the skin by summer sunlight; in the UK, from October to March, sunlight isn't strong enough. Few foods are rich in it. People with darker skin, those who cover up or stay indoors, and older people make less. SACN recommends 10 µg a day for everyone over 1, so supplements are advised in autumn and winter for all, and all year for those at higher risk. | Sunlight and season ; Few food sources ; At-risk groups ; The 10 µg recommendation
+Q: What does vitamin A do, and what does its deficiency cause? | It supports vision in dim light, immunity and skin; deficiency causes night blindness.
+Q: What does vitamin D deficiency cause in children and in adults? | Rickets in children and osteomalacia in adults.
+Q: What is the role of vitamin K, and why is it given to newborns? | It is needed for blood clotting; newborns are given it to prevent bleeding.
+Q: Why can excess fat-soluble vitamins be harmful? | They are stored in the body so excess can build up; too much vitamin A in pregnancy can harm the baby.
+Q: Which deficiency diseases are caused by lack of thiamin and niacin? | Thiamin (B1) deficiency causes beriberi; niacin (B3) deficiency causes pellagra.
+Q: What does folate deficiency cause? | Megaloblastic anaemia and neural tube defects.
+Q: Why are vegans at risk of vitamin B12 deficiency? | B12 is found almost only in animal foods.
+Q: Name three functions of vitamin C. | Collagen formation, wound healing and iron absorption.
+Q: Why do water-soluble vitamins need a regular intake? | They are generally not stored and are easily lost in cooking water.
+Q: What is the UK folic acid advice for women who could become pregnant? | Take 400 micrograms a day before conception and until 12 weeks of pregnancy to reduce neural tube defects.
 
 ## Minerals
 LV: Level 3 · Foundation
@@ -216,6 +256,16 @@ M2#health-u03-05-q2@2: Which drink, taken with a meal, would most improve iron a
 M3#health-u03-05-q3@3: A 16-year-old girl who has heavy periods and skips meals feels constantly tired. What is the most sensible advice? | See a GP to check for iron deficiency, and include iron-rich foods with vitamin C | Take high-dose iron supplements without seeing anyone | Avoid all red meat to improve energy | Drink more tea, as caffeine treats tiredness | Heavy periods and low intake raise the risk of iron deficiency anaemia, which needs a blood test.
 TF1#health-u03-05-q4@1: Haem iron from meat is absorbed better than non-haem iron from plants. | true | Haem iron is absorbed more efficiently and is less affected by other foods.
 SA2#health-u03-05-q5@2,3: Explain why some groups in the UK are at higher risk of iron deficiency. | Menstruation increases iron losses in girls and women; teenage girls often have low intakes. Pregnancy increases needs. Vegetarians and vegans rely on non-haem iron, which is less well absorbed. Infants, toddlers on large amounts of cow's milk and people with gut conditions such as coeliac disease or blood loss are also at risk. | Menstrual losses ; Growth and pregnancy ; Plant-based diets ; Other causes
+Q: Name four functions of calcium. | Bones and teeth, muscle contraction, nerve signals and blood clotting.
+Q: What is the adult RNI for calcium? | 700 mg a day.
+Q: Name three non-dairy sources of calcium. | Fortified plant drinks, tofu set with calcium, and bread made with fortified flour.
+Q: Where does most of the sodium people eat come from? | Salt in processed foods.
+Q: What are the roles of potassium, and where is it found? | Fluid balance, nerve and muscle function, and helping lower blood pressure; found in fruit, vegetables and pulses.
+Q: What hinders absorption of non-haem iron? | Tea, coffee and phytates.
+Q: What are the iron RNIs for men and for women aged 19–50? | 8.7 mg a day for men and 14.8 mg a day for women.
+Q: Name three functions of zinc. | Immunity, wound healing and growth.
+Q: How can phytates in wholegrains and pulses be reduced? | By soaking and sprouting.
+Q: Why are teenage girls and women of childbearing age at risk of iron deficiency? | Menstrual losses, especially heavy periods, combined with low intakes.
 
 ## Water and hydration
 LV: Level 3 · Foundation
@@ -261,6 +311,16 @@ M2#health-u03-06-q2@2: Which sign most suggests dehydration? | Dark yellow urine
 M3#health-u03-06-q3@3: A marathon runner drinks several litres of water during a race and becomes confused and nauseous. What is a likely cause? | Hyponatraemia from drinking far more than sweat losses | Dehydration from drinking too little | Low blood sugar from too much water | Vitamin deficiency caused by sweating | Overdrinking dilutes blood sodium; this is a medical emergency needing urgent help.
 TF1#health-u03-06-q4@1: Tea and coffee count towards daily fluid intake. | true | In usual amounts, caffeinated drinks add to fluid intake; the Eatwell Guide includes them.
 SA2#health-u03-06-q5@2,3: Explain why older people are at increased risk of dehydration and how carers can help. | Older people have a reduced sense of thirst, their kidneys concentrate urine less well, and they may drink less to avoid continence problems or because of mobility or memory difficulties. Some medicines, such as diuretics, increase losses. Carers can offer drinks regularly, provide preferred drinks and water-rich foods, make drinks easy to reach, and watch for dark urine, confusion or dizziness, seeking help when needed. | Reduced thirst and kidney function ; Behaviour, mobility or medicines ; Practical support ; Watching for signs and escalating
+Q: Name four functions of water in the body. | Any four of: transporting nutrients and waste, regulating temperature by sweating, lubricating joints, a medium for chemical reactions, and blood volume.
+Q: About what share of water intake comes from food? | About 20%.
+Q: Name the four routes of water loss from the body. | Urine, sweat, breathing and faeces.
+Q: How does ADH respond when the blood becomes too concentrated? | It increases water reabsorption in the kidneys, making urine darker and smaller in volume.
+Q: Which drinks count towards fluid intake in the Eatwell Guide? | Water, lower-fat milk and sugar-free drinks, including tea and coffee.
+Q: What total daily water intakes does EFSA (2010) suggest? | About 2.0 litres for women and 2.5 litres for men from food and drink.
+Q: When do fluid needs increase? | In hot weather, during exercise, with fever, vomiting or diarrhoea, and when breastfeeding.
+Q: Why are older adults at increased risk of dehydration? | Reduced thirst and kidney concentrating ability.
+Q: Which signs in a dehydrated older person need urgent medical help? | Becoming confused, very drowsy or stopping passing urine.
+Q: What causes exercise-associated hyponatraemia? | Drinking well beyond losses during long endurance events, which dangerously lowers blood sodium.
 
 ## The Eatwell Guide
 LV: Level 3 · Application
@@ -304,6 +364,16 @@ M2#health-u03-07-q2@2: A person drinks three glasses of orange juice a day. How 
 M3#health-u03-07-q3@3: A family on a low income finds it hard to follow the Eatwell Guide. Which is the most realistic advice? | Use frozen and tinned vegetables, pulses and wholegrains, which are cheaper and still count | Buy only fresh organic produce to meet the guide | Ignore the guide, as healthy eating is impossible on a budget | Replace vegetables with vitamin pills | Frozen and tinned produce and pulses are affordable ways to meet Eatwell; structural costs remain a concern.
 SEQ1#health-u03-07-q4@1: Order these Eatwell food groups from the largest share to the smallest. | Fruit and vegetables ; Beans, pulses, fish, eggs and meat ; Dairy and alternatives ; Oils and spreads | Fruit and vegetables (just over a third, roughly equal to starchy foods) are largest; oils and spreads are the smallest.
 SA2#health-u03-07-q5@3: Evaluate the Eatwell Guide as a tool for improving the nation's diet. | It is evidence-based, simple and visual, and fits many cuisines. But many people don't follow it: average UK diets have too little fruit, vegetables and fibre and too much free sugar and salt. It doesn't show portion sizes or apply to under-2s, and the cost of an Eatwell diet is a barrier for low-income households. A guide alone can't overcome food environment and price; policies such as reformulation and taxes are also needed. | Strengths ; Low adherence ; Limitations of scope ; Need for wider policy
+Q: What share of the Eatwell Guide do fruit and vegetables make up? | Just over a third.
+Q: How much juice or smoothie counts towards 5 A Day? | 150 ml, counting once a day at most.
+Q: What does the Eatwell Guide advise about the protein group? | Eat more beans and pulses, two portions of fish a week (one oily), and less red and processed meat.
+Q: What does the Eatwell Guide advise on oils and spreads? | Choose unsaturated ones and use them in small amounts.
+Q: Where do foods high in fat, salt and sugar sit in the Eatwell Guide, and what is the advice? | Outside the main guide: eat them less often and in small amounts.
+Q: Name three strengths of the Eatwell Guide. | It is evidence-based, simple and visual, and flexible for different cuisines and vegetarian diets.
+Q: Name three limitations of the Eatwell Guide. | Any three of: not for under-2s, no portion sizes or meal patterns, hard to relate to mixed dishes, and affordability for low-income households.
+Q: Why should the Eatwell Guide not be applied to children under 2? | Under-2s have different needs, including full-fat milk and more energy-dense foods.
+Q: What did the Food Foundation (2023) find about the Eatwell Guide? | A diet meeting it costs more than many low-income households can afford.
+Q: What is processed meat? | Meat preserved by smoking, curing, salting or adding preservatives, such as bacon and ham.
 
 ## Energy balance
 LV: Level 3 · Application
@@ -349,6 +419,16 @@ M2#health-u03-08-q2@2: A woman weighs 81 kg and is 1.80 m tall. What is her BMI?
 M3#health-u03-08-q3@3: A rugby player has a BMI of 31 with low body fat. What does this show? | BMI doesn't distinguish muscle from fat, so it can misclassify very muscular people | He definitely has obesity and needs to lose weight | BMI is a precise measure of body fat for everyone | His waist measurement must be wrong | High muscle mass raises BMI; measures such as waist-to-height ratio or body fat add context.
 NUM2#health-u03-08-q4@2: A man's BMR is 1,750 kcal a day and his physical activity level is 1.6. What is his estimated total energy expenditure, in kcal a day? | 2800 | 1% | kcal | Total energy expenditure = BMR × PAL = 1,750 × 1.6 = 2,800 kcal a day.
 SA2#health-u03-08-q5@3: Evaluate the idea that weight loss is simply a matter of "eating less and moving more". | Energy balance does determine weight change, so reducing intake or increasing activity is necessary. But expenditure falls as weight falls, so losses slow; appetite hormones increase hunger after weight loss; and sleep, stress, medicines, genetics, income and the food environment shape what people eat and do. Effective approaches combine individual support with changes to the environment, and some people benefit from medical treatment. | Energy balance is the basis ; Metabolic adaptation ; Biological, psychological and social influences ; Implications for support or policy
+Q: How many kilojoules are in one kilocalorie? | 4.184 kJ.
+Q: What share of daily energy expenditure does BMR usually account for? | 60–70%.
+Q: What is the thermic effect of food? | Energy used to digest and process food, about 10% of expenditure.
+Q: How is total energy expenditure estimated from BMR? | BMR × PAL, the physical activity level.
+Q: What are the UK reference energy intakes on food labels? | 2,000 kcal for women and 2,500 kcal for men.
+Q: Give the adult BMI categories. | Under 18.5 underweight; 18.5–24.9 healthy; 25–29.9 overweight; 30 or more obesity.
+Q: What BMI thresholds does NICE recommend for people of South Asian or Black African family background? | Lower thresholds: overweight from 23 and obesity from 27.5.
+Q: What waist-to-height ratio indicates lower risk of central fat? | Under 0.5.
+Q: Why does the 3,500 kcal per pound rule overestimate long-term weight loss? | Energy expenditure falls as weight falls (Hall et al., 2011).
+Q: Name four influences on energy balance besides intake and activity. | Any four of: appetite, sleep, stress, medicines, genetics and the food environment.
 
 ## Reading food labels
 LV: Level 3 · Application
@@ -397,6 +477,16 @@ M2#health-u03-09-q2@2: A ready meal has 6 g of saturates per 100 g. How is it cl
 M3#health-u03-09-q3@3: Yoghurt is past its best-before date by two days and has been kept chilled. Chicken is one day past its use-by date. What is the best advice? | The yoghurt may still be safe if it looks and smells fine; the chicken should be thrown away | Both are safe because dates are only guidance | Both must be thrown away immediately | The chicken is fine if cooked well, but the yoghurt must be thrown away | Use-by dates are about safety and must be followed; best-before dates are about quality.
 MATCH1#health-u03-09-q4@1: Match each nutrient to its high threshold per 100 g. | Fat = Over 17.5 g ; Saturates = Over 5 g ; Sugars = Over 22.5 g ; Salt = Over 1.5 g | These are the UK traffic-light thresholds for foods.
 SA2#health-u03-09-q5@2,3: Explain how a shopper could use food labels to choose a healthier ready meal. | Compare products per 100 g rather than per portion. Look for green and amber traffic lights, especially for saturates, sugars and salt, and avoid many reds. Check the ingredients list: ingredients near the top make up most of the product. Check the energy and portion size against reference intakes, and allergens if relevant. | Compare per 100 g ; Traffic lights ; Ingredients order ; Reference intakes or portion
+Q: Which regulations set UK rules for pre-packed food labels? | The Food Information Regulations 2014, based on retained EU Regulation 1169/2011.
+Q: What must the nutrition declaration show per 100 g or 100 ml? | Energy (kJ and kcal), fat, saturates, carbohydrate, sugars, protein and salt.
+Q: How must allergens appear on a food label? | The 14 major allergens are emphasised in the ingredients list, for example in bold.
+Q: What are the traffic-light thresholds for sugars per 100 g? | High over 22.5 g; low 5 g or less.
+Q: What are the traffic-light thresholds for fat per 100 g? | High over 17.5 g; low 3 g or less.
+Q: Give the adult reference intakes for fat, saturates and sugars. | Fat 70 g, saturates 20 g and sugars 90 g.
+Q: Why check the ingredients list as well as the sugars figure? | The sugars figure includes all sugars, so the ingredients show added sugars and honey.
+Q: What is the difference between use-by and best-before dates? | Use-by is about safety: don't eat after it. Best-before is about quality: food may still be safe.
+Q: Which food should not be eaten after its best-before date? | Eggs.
+Q: Why compare products per 100 g rather than per portion? | Manufacturers choose portion sizes, so per 100 g figures allow a fair comparison.
 
 ## Salt, sugar and saturated fat
 LV: Level 3 · Application
@@ -442,6 +532,16 @@ M2#health-u03-10-q2@2: A label shows 0.6 g sodium per portion. How much salt is 
 M3#health-u03-10-q3@3: Which evidence best supports population-level salt reduction? | Falls in salt intake in England from 2003 to 2011 were associated with lower blood pressure and cardiovascular deaths | Salt is needed for life, so reducing it must be harmful for everyone | Individuals who cut salt can't taste the difference | Sea salt contains less sodium than ordinary table salt | Observational data from England's reduction programme link lower salt intake with lower blood pressure and mortality.
 TF1#health-u03-10-q4@1: Sea salt is a healthier choice than table salt. | false | Both are sodium chloride; they affect blood pressure in the same way.
 SA2#health-u03-10-q5@3: Evaluate the Soft Drinks Industry Levy as a public health policy. | The levy encouraged manufacturers to reformulate, cutting sugar in many drinks before it took effect, and raised revenue for school sport and breakfast clubs. Evidence shows reduced sugar purchased from soft drinks. Limitations: it covers only drinks, not foods such as confectionery; people may switch to other sugary products; and effects on obesity are still being assessed. | Reformulation effect ; Evidence of reduced sugar ; Limitations in scope ; Uncertain effect on health outcomes
+Q: How much salt do UK adults eat on average? | About 8 g a day, above the 6 g maximum.
+Q: What share of salt in UK diets comes from processed foods? | About three-quarters.
+Q: Name four processed foods that are major sources of salt. | Bread, processed meat, ready meals, sauces and snacks (any four).
+Q: How do UK free sugar intakes compare with the recommendation? | They are about twice the 5% of energy limit, highest in teenagers.
+Q: What are average UK saturated fat intakes compared with the 10% limit? | Around 12–13% of energy.
+Q: How does excess salt harm health? | It raises blood pressure, increasing stroke and heart disease risk.
+Q: What happened to UK salt intake under the salt reduction programme? | It fell by about 15% between 2003 and 2011, with falls in blood pressure and cardiovascular deaths.
+Q: Which drinks does the Soft Drinks Industry Levy charge? | Drinks with 5 g or more of sugar per 100 ml, with a higher charge for 8 g or more.
+Q: How did manufacturers respond to the Soft Drinks Industry Levy before it started? | Many reformulated their drinks to reduce sugar.
+Q: What is reformulation? | Changing a product's recipe to make it healthier, such as reducing salt or sugar.
 
 ## Ultra-processed food
 LV: Level 3 · Evaluation
@@ -486,6 +586,16 @@ M2#health-u03-11-q2@2: Which is the main limitation of observational studies on 
 M3#health-u03-11-q3@3: A campaign tells people to "cut out all ultra-processed foods". What is the strongest critique? | Some UPFs, such as wholemeal sliced bread, are nutritious and affordable, so blanket advice may have unintended effects | The campaign is right, because all UPFs have identical nutrient content | UPFs have no link with any health outcome | Only fresh food from markets is safe to eat | Nutrient content varies within group 4; advice may need to focus on the types of UPF most linked to harm.
 TF1#health-u03-11-q4@1: Ultra-processed foods provide over half of the energy in typical UK diets. | true | Analyses of national diet survey data estimate that UPFs supply over 50% of energy intake in the UK.
 SA2#health-u03-11-q5@3: Evaluate the evidence that ultra-processed food is harmful to health. | Large observational studies consistently link high UPF intake with obesity, type 2 diabetes, heart disease and early death, and one controlled trial showed people overeat on UPF diets. But observational studies can be confounded; NOVA categories are broad; it is hard to separate processing from fat, salt, sugar and fibre content; and some UPFs are healthy. The evidence justifies concern and further research, and supports reducing energy-dense UPFs, but not necessarily blanket avoidance. | Observational evidence ; Trial evidence ; Limitations and confounding ; Balanced conclusion
+Q: Who developed the NOVA classification, and on what basis does it group foods? | Carlos Monteiro and colleagues in Brazil; by the extent and purpose of processing.
+Q: What foods are in NOVA group 2? | Processed culinary ingredients, such as oils, butter, sugar and salt.
+Q: What foods are in NOVA group 3? | Processed foods made from groups 1 and 2, such as cheese, tinned vegetables and fresh bread.
+Q: Name four ingredients typical of ultra-processed foods. | Emulsifiers, flavourings, colours and modified starches.
+Q: Which health outcomes do observational studies link with higher UPF intake? | Obesity, type 2 diabetes, cardiovascular disease, depression and early death.
+Q: How was Hall et al.'s 2019 UPF trial designed? | 20 adults ate ultra-processed or unprocessed diets for two weeks each, matched for presented nutrients.
+Q: Name four typical nutritional features of ultra-processed foods. | Energy-dense, high in salt, sugar and fat, and low in fibre, and often eaten quickly.
+Q: What limitations did SACN (2023) note in the UPF evidence? | NOVA groups are broad and inconsistently applied, studies can't separate processing from nutrient content, and some UPFs fit healthy eating advice.
+Q: Why can "avoid all UPF" advice be harmful, using bread as an example? | A sliced wholemeal loaf is NOVA group 4 but has more fibre and is cheaper, so people may drop an affordable high-fibre staple.
+Q: What share of UK dietary energy comes from UPFs? | Over half (Rauber et al., 2018).
 
 ## Nutrition in pregnancy and infancy
 LV: Level 3 · Application
@@ -531,6 +641,16 @@ M2#health-u03-12-q2@2: Which food should a pregnant woman avoid? | Unpasteurised
 M3#health-u03-12-q3@3: A breastfed 2-month-old isn't given any supplements. What does NHS advice recommend? | A daily vitamin D supplement from birth | No supplements until 6 months | Iron drops from birth | Honey to boost immunity | Breast milk contains little vitamin D, so breastfed babies need a daily supplement from birth.
 TF1#health-u03-12-q4@1: Pregnant women need an extra 500 kcal a day from the start of pregnancy. | false | No extra energy is needed in the first two trimesters; about an extra 200 kcal a day is needed in the last three months.
 SA2#health-u03-12-q5@2,3: Explain why the NHS recommends introducing solid foods at around 6 months rather than earlier. | By around 6 months most babies can sit up, hold their head steady, coordinate hands and mouth and swallow solid food safely. Breast milk or formula meets their needs until then. Very early solids are linked with more infections and may displace milk. Introducing a range of foods, including allergens, from around 6 months supports development and can reduce allergy risk. | Developmental readiness ; Milk meets needs ; Risks of very early solids ; Allergens introduced from around 6 months
+Q: What extra energy is needed during pregnancy? | None in the first two trimesters; about an extra 200 kcal a day in the last three months.
+Q: What is the UK CMO advice on alcohol in pregnancy? | No alcohol is the safest approach.
+Q: Why should pregnant women avoid unpasteurised milk and soft mould-ripened cheeses? | They can carry listeria, which can cause miscarriage, stillbirth or serious infection in newborns.
+Q: Which fish should be avoided in pregnancy, and why? | Shark, swordfish and marlin, because of mercury.
+Q: What is the caffeine limit in pregnancy? | No more than 200 mg a day.
+Q: What does the Healthy Start scheme provide for pregnant women on a low income? | Help to buy fruit, vegetables and milk, plus free vitamins.
+Q: What benefits does breastfeeding bring to baby and mother? | Fewer infections for the baby and lower breast cancer risk for the mother.
+Q: Which formula-fed babies don't need a vitamin D supplement? | Those having more than 500 ml of formula a day.
+Q: What are the signs that a baby is ready for solid food? | Sitting up, holding the head steady, coordinating eyes, hands and mouth, and swallowing food.
+Q: Why are whole nuts and cow's milk as a main drink avoided in young children? | Whole nuts are a choking risk under 5; cow's milk shouldn't be a main drink before 12 months.
 
 ## Nutrition in childhood and adolescence
 LV: Level 3 · Application
@@ -575,6 +695,16 @@ M2#health-u03-13-q2@2: Childhood obesity rates in Year 6 are about twice as high
 M3#health-u03-13-q3@3: A 15-year-old girl has heavy periods, avoids red meat and feels tired. What is the most appropriate advice? | See a GP to check for iron deficiency, and include iron-rich foods with vitamin C | Start an energy drink each morning to reduce tiredness | Take high-dose vitamin A supplements | Cut out dairy to absorb more iron | Heavy periods and low intake put her at risk of iron deficiency, which needs a blood test.
 TF1#health-u03-13-q4@1: Reduced-fat milk is suitable as a main drink for children under 2. | false | Children under 2 should have whole milk; semi-skimmed can be introduced from 2 if they are eating and growing well.
 SA2#health-u03-13-q5@3: Evaluate approaches to reducing childhood obesity in the UK. | Individual approaches, such as education and weight-management programmes, help some families but have limited population effect. Environmental approaches, including school food standards, the Soft Drinks Industry Levy, restrictions on advertising and promotions, and Healthy Start, change what is available and affordable. Because obesity is strongly linked to deprivation, policies addressing poverty and the food environment are likely to have more impact, though evidence on some measures is still emerging. | Individual approaches ; Environmental policies ; Link to deprivation ; Balanced judgement on evidence
+Q: Why do children aged 1–5 need regular meals and snacks? | They have small stomachs.
+Q: Which vitamin supplements are recommended for children aged 6 months to 5 years? | Vitamins A, C and D.
+Q: Why do adolescents need more iron? | Rapid growth increases needs, especially after periods start.
+Q: What share of children are living with obesity in Reception and in Year 6? | Around 1 in 10 in Reception and over 1 in 5 in Year 6.
+Q: How do childhood obesity rates differ between deprived and affluent areas? | They are about twice as high in the most deprived areas as in the least deprived.
+Q: Name two school-based food interventions in England. | School food standards for school meals and universal free school meals for infants (Reception to Year 2).
+Q: What does the Healthy Start scheme provide for low-income families with young children? | Support to buy fruit, vegetables and milk, and free vitamins.
+Q: What nutritional concerns arise from a teenager's day of energy drinks, crisps, meal deals and takeaway? | High free sugars and caffeine, low fibre, and low calcium and iron.
+Q: At what ages can children move to semi-skimmed and skimmed milk? | Semi-skimmed from 2 if growing well; skimmed not before 5.
+Q: What is peak bone mass? | The greatest bone density achieved, reached in early adulthood.
 
 ## Nutrition in older age
 LV: Level 3 · Application
@@ -619,6 +749,16 @@ M2#health-u03-14-q2@2: Which intervention is most effective at slowing sarcopeni
 M3#health-u03-14-q3@3: A care home resident is losing weight and has poorly fitting dentures. What is the best first approach? | Screen for malnutrition, arrange a dental review and offer soft, nutrient-dense foods while assessing other causes | Accept the weight loss as part of ageing | Restrict her diet to liquids only | Start a weight-loss diet | Poor dentition is a common, correctable cause of reduced intake; screening identifies risk and guides action.
 TF1#health-u03-14-q4@1: Unplanned weight loss in older people is a normal part of ageing and needs no action. | false | It is a warning sign of malnutrition or illness and should be assessed.
 SA2#health-u03-14-q5@2,3: Explain why older adults are at risk of malnutrition and how this can be reduced. | Appetite, taste and smell decline; dental and swallowing problems make eating harder; loneliness, depression and dementia reduce intake; low income and mobility limit shopping and cooking; illness and medicines affect appetite. Risk can be reduced by routine screening, dental care, social meals and support services, nutrient-dense foods and drinks, and treating underlying conditions. | Physical causes ; Psychological or social causes ; Economic or medical causes ; Ways to reduce risk
+Q: Why do energy needs usually fall in older age? | BMR and activity decline.
+Q: How do protein needs change in older age, and why? | They stay the same or may rise, to help preserve muscle.
+Q: What is the vitamin D advice for older people indoors or in care homes? | Take 10 micrograms a day all year.
+Q: Which medicines can reduce vitamin B12 absorption in older people? | Metformin and proton pump inhibitors.
+Q: Why do older people need fibre and fluid? | To prevent constipation.
+Q: What harms does sarcopenia lead to? | More falls, frailty and loss of independence.
+Q: Name four physical barriers to eating well in older age. | Poor teeth or dentures, swallowing problems, reduced taste and smell, and arthritis making cooking hard.
+Q: Name three psychological or social barriers to eating well in older age. | Any three of: loneliness, bereavement, depression and dementia.
+Q: What tool can screen an older person for malnutrition risk? | A screening tool such as MUST.
+Q: What support suits an older man losing weight after bereavement? | Lunch clubs or meals services, easy high-protein foods, a dental review, checking mood and GP referral to a dietitian if needed.
 
 ## Vegetarian and vegan diets
 LV: Level 3 · Application
@@ -666,6 +806,16 @@ M2#health-u03-15-q2@2: Which food would best improve calcium intake in a vegan d
 M3#health-u03-15-q3@3: EPIC-Oxford found vegetarians had lower heart disease risk but higher haemorrhagic stroke risk. What is the best interpretation? | Plant-based diets may have different effects on different outcomes, and observational data can't prove cause | Vegetarian diets are harmful overall and should be avoided | Meat protects against all diseases | The study proves that diet has no effect on health | Mixed findings show trade-offs and the limits of observational evidence.
 TF1#health-u03-15-q4@1: A well-planned vegan diet can meet nutritional needs at all life stages. | true | The British Dietetic Association states that well-planned vegan diets can support healthy living at every age, with attention to key nutrients.
 SA2#health-u03-15-q5@2,3: Plan advice for a teenager who has just become vegan. | Explain that B12 is essential from fortified foods or a supplement; include fortified plant drinks or calcium-set tofu for calcium; iron-rich pulses, fortified cereals and greens with vitamin C; protein from a variety of pulses, soya, nuts and seeds; an iodine source; vitamin D; and algal omega-3. Remind them that teens have high calcium and iron needs and that vegan junk food is still junk food. | B12 ; Calcium and iron ; Protein variety ; Other nutrients and balance
+Q: What does a lacto-ovo vegetarian eat and avoid? | Eats dairy and eggs but no meat or fish.
+Q: What is a lacto-vegetarian diet? | A diet with dairy but no eggs, meat or fish.
+Q: Why can iodine be a concern in vegan diets? | Iodine is low in plant foods, and plant drinks may not be fortified.
+Q: Name three vegan sources of calcium. | Any three of: fortified plant drinks, calcium-set tofu, pulses and green vegetables.
+Q: Why do vegans need to check the form of vitamin D supplement they take? | Some vitamin D supplements are made from lanolin.
+Q: How can a vegan diet supply enough protein? | By eating a variety of pulses, soya, nuts, seeds and grains.
+Q: Which supplements should a vegan take or consider? | Vitamin B12 and vitamin D, and consider iodine and algal omega-3.
+Q: What did EPIC-Oxford find about vegans and fractures? | Vegans had a higher risk of fractures (Tong et al., 2020).
+Q: What is the British Dietetic Association's position on vegan diets? | Well-planned vegan diets can support healthy living at every age.
+Q: Why isn't every vegan food healthy? | Many vegan processed foods are high in salt, sugar or saturated fat.
 
 ## Malnutrition
 LV: Level 3 · Application
@@ -715,6 +865,16 @@ M2#health-u03-16-q2@2: What does the "double burden of malnutrition" mean? | Und
 M3#health-u03-16-q3@3: A severely underweight patient hasn't eaten for 10 days. A relative wants to give large meals at once. What is the best response? | Feeding should be restarted cautiously under clinical supervision, because of refeeding syndrome risk | Large meals are best, to restore weight quickly | Food should be withheld for another week | Only vitamin tablets should be given | Rapid refeeding can cause dangerous electrolyte shifts; NICE CG32 advises careful, supervised feeding.
 TF1#health-u03-16-q4@1: People with overweight can't be malnourished. | false | Malnutrition includes nutrient deficiencies, and people with overweight can have poor protein or micronutrient intake.
 SA2#health-u03-16-q5@2,3: Explain why malnutrition matters in hospital patients and how it is identified. | Malnourished patients have weaker immunity, slower wound healing, more complications and falls, and longer stays, increasing costs. Illness itself reduces appetite and increases needs. Screening with MUST on admission and regularly identifies risk using BMI, unplanned weight loss and acute illness, and links scores to management such as dietitian referral and monitoring. | Effects on outcomes ; Illness increases risk ; MUST screening ; Linked management
+Q: How is malnutrition defined? | A deficiency, excess or imbalance of energy, protein or other nutrients that harms body function and clinical outcomes.
+Q: What is undernutrition and what does it cause? | Too little energy or nutrients, causing weight loss, wasting and micronutrient deficiencies.
+Q: Which groups in the UK commonly experience undernutrition? | Older people, people with long-term conditions, and hospital and care home patients.
+Q: How many people in the UK does BAPEN estimate are malnourished or at risk? | Around 3 million at any time.
+Q: When does acute illness score 2 on MUST? | When the patient is acutely ill with no nutritional intake likely for more than 5 days.
+Q: What do MUST total scores of 0, 1 and 2 or more mean? | 0 is low risk, 1 medium risk, and 2 or more high risk.
+Q: What MUST score does an unplanned weight loss of 5–10% receive? | A score of 1.
+Q: Name four effects of malnutrition. | Any four of: weakened immunity, poor wound healing, muscle loss and falls, fatigue, depression and longer hospital stays.
+Q: Which NICE guideline covers identifying and feeding people at risk of refeeding syndrome? | NICE CG32.
+Q: Why can people with overweight still be malnourished? | They can be undernourished in protein or micronutrients, and unplanned weight loss matters even from a high BMI.
 
 ## Diet and chronic disease
 LV: Level 3 · Evaluation
@@ -760,6 +920,16 @@ M2#health-u03-17-q2@2: A study reports that a food raises the risk of a disease 
 M3#health-u03-17-q3@3: A headline says "Bacon as dangerous as smoking", citing IARC Group 1. What is the best critique? | Group 1 shows strength of evidence, not size of risk; smoking causes far more cancer | The headline is correct, because both are in the same group | Processed meat has no link with cancer | IARC groups show how much people eat of each product | IARC groups describe how certain it is that something causes cancer, not how much risk it carries.
 TF1#health-u03-17-q4@1: Observational studies alone can prove that a food causes a disease. | false | They show associations; confounding and measurement error mean causation needs support from other kinds of evidence.
 SA2#health-u03-17-q5@3: Evaluate the strength of evidence linking diet to type 2 diabetes. | Strong: cohort studies consistently link obesity, sugary drinks and low wholegrain intake to higher risk; RCTs such as the Diabetes Prevention Program showed lifestyle change reduces incidence; DiRECT showed weight loss can produce remission. Weaker: evidence on specific foods and diets is less consistent, and long-term adherence is a challenge. Overall, the link between excess weight and type 2 diabetes is among the best-established in nutrition. | Cohort evidence ; Trial evidence ; Limitations ; Judgement
+Q: Which foods protect against cardiovascular disease? | Fibre, fruit, vegetables, wholegrains, nuts and oily fish.
+Q: What is the main risk factor for type 2 diabetes? | Excess body fat.
+Q: How does IARC classify red meat? | Probably carcinogenic (Group 2A) for bowel cancer.
+Q: How many cancers does obesity increase the risk of? | At least 13.
+Q: What protects bone against osteoporosis? | Calcium, vitamin D and physical activity.
+Q: Why do dietary patterns often show clearer links with health than single nutrients? | Foods are eaten in combination, so patterns such as a Mediterranean-style diet capture their combined effect.
+Q: What are the strength and weaknesses of observational cohort studies of diet? | They show associations over decades but are open to confounding and errors in reported diet.
+Q: Why are randomised trials of diet limited? | They test causation but are hard to run for long-term diets.
+Q: What absolute change in lifetime bowel cancer risk matches the 18% increase from 50 g processed meat a day? | From about 6 in 100 to about 7 in 100.
+Q: What does remission of type 2 diabetes mean? | A return to normal blood glucose without diabetes medication.
 
 ## Food insecurity
 LV: Level 3 · Application
@@ -807,6 +977,16 @@ M2#health-u03-18-q2@2: Why can food insecurity be linked to obesity? | Cheaper f
 M3#health-u03-18-q3@3: A local council plans cooking classes as its main response to rising food insecurity. What is the strongest critique? | Most food insecurity is driven by low income and high costs, so skills alone won't solve it | Cooking classes are always harmful | Food insecurity doesn't exist in the UK | Only food banks can help | Evidence points to income as the main driver; skills can help but don't address the cause.
 TF1#health-u03-18-q4@1: Food insecurity in the UK is mainly caused by poor budgeting skills. | false | Research points to low and insecure incomes, rising costs and benefit problems as the main causes.
 SA2#health-u03-18-q5@3: Evaluate food banks as a response to food insecurity. | Food banks provide immediate emergency relief and can signpost to advice, reducing hunger in a crisis. But they depend on donations, can't provide a full balanced diet, may carry stigma, and don't address the causes of food insecurity, such as low income and benefit delays. Many organisations, including the Trussell Trust, argue for policy change on income so that food banks aren't needed. | Immediate relief ; Limitations ; Don't address causes ; Need for policy solutions
+Q: What range of experiences does food insecurity cover? | From worrying about running out of food, to cutting meal size or skipping meals, to going without food for a day.
+Q: Name two survey tools used to measure food insecurity. | The FAO's Food Insecurity Experience Scale and the US Department of Agriculture's module.
+Q: Which UK households have higher rates of food insecurity? | Households with children, single parents, disabled people and those on Universal Credit.
+Q: How many emergency food parcels did the Trussell Trust network distribute in 2023/24? | About 3.1 million.
+Q: How does food insecurity affect diet quality? | Less fruit, vegetables and fibre, and more cheap, energy-dense foods.
+Q: How does food insecurity affect children? | It affects growth, concentration and school performance.
+Q: What did the Food Foundation estimate about the cost of healthier foods? | Healthier foods cost more than twice as much per calorie as less healthy foods.
+Q: Name three forms of emergency food aid. | Food banks, pantries and community fridges.
+Q: Name four policy responses to food insecurity. | Any four of: benefit levels, free school meals, Healthy Start, the Holiday Activities and Food programme, and the minimum wage.
+Q: What do critics say about food banks as a response? | They treat symptoms, not causes, and may entrench charity in place of state support; income-based solutions are needed.
 
 ## Eating disorders
 LV: Level 3 · Foundation
@@ -852,4 +1032,14 @@ M2#health-u03-19-q2@2: Which is a warning sign of an eating disorder? | Regularl
 M3#health-u03-19-q3@3: A friend with suspected anorexia says she is fine and asks you to keep it secret. What is the best approach? | Express concern kindly, encourage her to seek help, and tell a trusted adult or professional if you are worried about her safety | Promise to keep it secret, whatever happens | Tell her she just needs to eat more | Comment on her weight to show how serious it is | Eating disorders are serious; support with care, avoid comments on weight, and seek help if there are safety concerns.
 TF1#health-u03-19-q4@1: Eating disorders only affect young women. | false | They affect people of any gender, age, ethnicity and body size.
 SA2#health-u03-19-q5@2,3: Explain why early recognition and help are important in eating disorders. | Eating disorders have serious physical and psychological effects, including heart problems, bone loss and high mortality in anorexia. The longer they continue, the more entrenched behaviours become and the harder they are to treat. Early help with psychological therapy and medical monitoring improves recovery. Friends, family, schools and GPs can recognise warning signs and encourage the person to get support. | Serious physical risks ; Entrenchment over time ; Effective treatment ; Role of others in recognising signs
+Q: What characterises anorexia nervosa? | Restriction of energy intake leading to significantly low weight, intense fear of gaining weight and disturbed body image.
+Q: What characterises binge eating disorder? | Recurrent binge eating without regular compensatory behaviour.
+Q: What is OSFED? | Other specified feeding or eating disorders that don't meet full criteria but are just as serious.
+Q: Give two reasons for limited eating in ARFID. | Sensory sensitivity or fear of choking.
+Q: Name four risk factors for eating disorders. | Any four of: genetics, perfectionism, anxiety, low self-esteem, dieting, weight-related bullying, trauma, and occupations or sports emphasising weight.
+Q: Name four warning signs of an eating disorder. | Any four of: preoccupation with food, weight or shape; avoiding eating with others; rapid weight change; disappearing to the toilet after meals; excessive exercise; secrecy; mood changes.
+Q: What does NICE NG69 recommend for adults with eating disorders? | Eating-disorder-focused CBT and other specified therapies, with medical monitoring.
+Q: What is recommended as a first step for bulimia and binge eating disorder? | Guided self-help.
+Q: How should you raise concerns with a friend who may have an eating disorder? | Choose a private, calm moment and express concern about specific behaviours, not weight or appearance.
+Q: Why is anorexia nervosa especially serious among mental disorders? | It has one of the highest mortality rates of any mental disorder.
 `;

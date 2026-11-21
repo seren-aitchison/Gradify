@@ -42,6 +42,16 @@ M2#design-u01-01-q2@2: A bank's new app is easy to use and customers love it, bu
 M3#design-u01-01-q3@3: A critic says "design is just making things pretty". Which reply is strongest? | Appearance is one requirement, but a design is judged on function, use, cost and impact too | Designers rarely think about appearance, which is the job of marketing teams | Pretty things always sell, so appearance is the only test of a design | Design has nothing to do with appearance, only engineering | The strongest reply accepts appearance matters and shows it is one of several requirements; the other options are exaggerations.
 MS2#design-u01-01-q4@2: A school canteen redesign team asks: "Can our kitchen cook this in the time available?" and "Will pupils actually choose it?" Which lenses are they using? Choose all that apply. | Feasibility ; Desirability | Viability ; Styling | The kitchen question tests feasibility (can it be made); the pupils question tests desirability. Neither is about cost or appearance alone.
 SA3#design-u01-01-q5@1,3: Evaluate the view that design is mainly about how things look. | Appearance matters: it affects first impressions, emotion and sometimes use. But design is purposeful problem solving for people (Simon), so a design is judged on whether it meets a need, works, can be made and can be sustained. Examples such as a beautiful but confusing app show that appearance without function is poor design. Overall, appearance is one requirement within a broader process. | Defines design as purposeful ; Credits the role of appearance ; Names desirability, feasibility, viability or function ; Gives an example where appearance without function fails ; Reaches a balanced judgement
+Q: How did Herbert Simon define designing? | "Everyone designs who devises courses of action aimed at changing existing situations into preferred ones".
+Q: What does design produce at the end of the process? | A plan, such as a drawing, model, specification or prototype, for something that doesn't yet exist.
+Q: How does design differ from art? | A designer works to a brief set by a need, user or client, and is judged by how well it works for them.
+Q: What is a brief? | A statement of the need, user and context a design must respond to.
+Q: Which lens of design asks whether people want and need a product? | Desirability, the human lens.
+Q: Which lens asks whether a design can be built? | Feasibility, the technical lens.
+Q: Where does good design sit among the three lenses? | Where desirability, feasibility and viability overlap.
+Q: Where do IDEO and Brown say design thinking should start? | With desirability, then testing feasibility and viability.
+Q: Why is equating design with appearance a mistake? | A beautiful chair that collapses is badly designed; appearance is only one requirement.
+Q: What does Norman argue when people struggle with everyday objects? | The fault usually lies with the design, not the user.
 
 ## A short history of design
 LV: Introductory · Foundation
@@ -82,6 +92,16 @@ SEQ1#design-u01-02-q2@1: Put these in chronological order. | Arts and Crafts mov
 M2#design-u01-02-q3@2: Why did industrial mass production create the role of the professional designer? | Planning a product was separated from making the many copies of it | Machines needed artists to decorate every product by hand | Factories banned craftspeople from making anything | Customers refused to buy anything without a signature | Once machines or workers made thousands of copies, someone had to plan the product in advance: design became a separate job.
 M3#design-u01-02-q4@3: Which is the best evaluation of "form follows function"? | A useful discipline against needless ornament, but function alone cannot settle appearance or meaning | A law of nature that proves all ornament is always bad design | A rule that only applies to buildings and never to products | An idea that postmodernism showed to be entirely false | The phrase usefully focuses on purpose, but many forms can serve the same function, and emotion and meaning are part of what a design does.
 SA3#design-u01-02-q5@2,3: Explain how two design movements each responded to the problems of the period before them. | Arts and Crafts responded to cheap, poorly made, over-decorated industrial goods by valuing handcraft and honest materials. Modernism and the Bauhaus accepted the machine and rejected ornament, designing simple forms suited to mass production. Postmodernism then reacted against modernist austerity with colour and reference; user-centred design responded to products that confused their users. | Names a first movement and what it reacted to ; Names a second movement and what it reacted to ; Links each to industrial production or use ; Uses accurate dates or designers
+Q: How did mass production change design? | It split designing from making: a designer planned once and machines or workers made many copies.
+Q: Why is Wedgwood's pottery an early example of design for production? | It used standard patterns and a division of labour.
+Q: Who championed the Arts and Crafts movement? | William Morris and others, from the 1860s.
+Q: What characterised Art Nouveau? | Flowing, organic forms in architecture, posters and furniture, from the 1890s to 1910s.
+Q: Who coined "form ever follows function" and when? | Louis Sullivan, in 1896.
+Q: What did Henry Dreyfuss's Designing for People do? | Put the human body and user at the centre of design, in 1955.
+Q: What was postmodernism a reaction against? | Modernist austerity, using colour, humour and historical reference.
+Q: Why did Bauhaus ideas spread worldwide? | Its teachers and students emigrated in the 1930s and shaped design schools elsewhere.
+Q: When did the Council of Industrial Design become the Design Council? | In 1972; it was set up in 1944.
+Q: Why should design movements not be treated as tidy periods? | They overlapped, designers worked across them and dates are approximate.
 
 ## Design thinking defined
 LV: Introductory · Foundation
@@ -123,6 +143,16 @@ M2#design-u01-03-q2@2: A council team spends a week interviewing residents befor
 M3#design-u01-03-q3@3: Which is the strongest criticism of design thinking as practised in some organisations? | It can shrink to workshop rituals without real research, craft or follow-through | It is too slow because it never involves prototypes | It relies only on statistics and ignores people | It was invented in 2015 and has no history | The common critique is shallow, ritualised use; the other statements misdescribe the method and its history.
 TF1#design-u01-03-q4@1: Design thinking expects the understanding of a problem to change as solutions are prototyped. | true | Problem and solution co-evolve: prototypes reveal what the real problem is.
 SA3#design-u01-03-q5@2,3: Compare design thinking with a purely analytical approach to a problem, and evaluate when each is most useful. | An analytical approach defines the problem from data and deduces an optimal solution; it suits well-defined problems with clear measures. Design thinking starts with people, frames the problem through research, generates options and learns through prototypes; it suits ill-defined, human problems. The best practice often combines both: research and prototypes to frame, analysis to measure. | Describes the analytical approach ; Describes design thinking's human-centred, iterative features ; Matches each to a type of problem ; Notes the approaches can be combined ; Reaches a judgement
+Q: How did Tim Brown define design thinking? | Using the designer's sensibility and methods to match people's needs with what is technologically feasible and commercially viable.
+Q: Who wrote Design Thinking in 1987? | Peter Rowe, studying how architects reason.
+Q: Which organisations turned design thinking into a teachable method? | IDEO (founded 1991) and the Stanford d.school (mid-2000s).
+Q: What does iterative mean in design thinking? | Cycles of making and testing replace a single plan.
+Q: Why is design thinking described as comfortable with ambiguity? | The problem and solution develop together.
+Q: How did design thinking help a hospital with missed appointments? | Interviews showed patients couldn't find the clinic or park, leading to clearer maps and a "running late" line.
+Q: Is design thinking a fixed five-step recipe? | No. Models are scaffolds; designers move back and forth as they learn.
+Q: What do critics say about design thinking in business? | It can become a shallow sticky-note ritual, underplays craft and has limited rigorous evidence.
+Q: How do supporters defend design thinking? | Its value lies in making human-centred, experimental habits common across organisations.
+Q: How does a rough prototype help with the problem? | Making it often reveals what the real problem is.
 
 ## Design as a process, not a product
 LV: Introductory · Foundation
@@ -162,6 +192,16 @@ M2#design-u01-04-q2@2: A student builds a cardboard model of a phone stand and r
 M3#design-u01-04-q3@3: Which is the best evaluation of a strictly linear design process? | It aids planning and communication but misses how designers learn by trying solutions | It is always better because it never wastes time on loops | It is useless and should never be used in any project | It is identical to Schön's reflection-in-action | Linear models help structure work and deadlines, but research shows real design loops; good practice uses stages as a guide, not a straitjacket.
 MATCH1#design-u01-04-q4@1: Match each researcher to the finding. | Lawson = designers learn about problems by trying solutions ; Cross = designerly ways of knowing ; Schön = reflection-in-action ; Dorst and Cross = co-evolution of problem and solution | Each researcher contributed one of the classic findings about how designers think.
 SA3#design-u01-04-q5@2,3: Explain why iteration is an efficient part of the design process rather than a sign of failure. | Each prototype or sketch tests assumptions cheaply; the response reveals problems (co-evolution, reflection-in-action) early, when changes are inexpensive. Fixing an error after manufacture or launch costs far more. Iteration therefore reduces risk and improves fit to users, though it needs limits (time, budget) to avoid endless looping. | Early tests are cheap ; Prototypes reveal the real problem ; Late changes are costly ; Links to Schön or co-evolution ; Notes the need for limits
+Q: How did early 1960s models describe design? | As a rational, linear sequence: analyse, synthesise, evaluate.
+Q: What did Lawson find in 1979? | Architecture students tried solutions to learn about a problem, while science students analysed first.
+Q: What did Cross call designers' solution-focused thinking? | "Designerly ways of knowing".
+Q: When did Schön describe reflection-in-action? | In 1983.
+Q: Who described co-evolution of problem and solution? | Dorst and Cross, in 2001.
+Q: Where does a creative idea often appear according to co-evolution research? | When a new framing links the problem and solution spaces.
+Q: Why is iteration efficient rather than failure? | It is cheaper to learn from a sketch than from a finished product.
+Q: How does a clear process make decisions traceable? | A portfolio or design history shows why choices were made.
+Q: How does a design process reduce risk? | Early, cheap tests catch errors before money is spent on manufacture.
+Q: In the bike shelter example, why was a clear polycarbonate screen chosen? | It blocked sideways rain while keeping sight lines for safety.
 
 ## The Double Diamond
 LV: Introductory · Foundation
@@ -199,6 +239,16 @@ SEQ1#design-u01-05-q2@1: Put the Double Diamond phases in order. | Discover ; De
 M2#design-u01-05-q3@2: A team pilots three versions of a new ticket machine at one station and drops the two that confuse people. Which phase is this? | Deliver | Discover | Define | Develop | Testing at small scale and rejecting what doesn't work is the Deliver phase.
 M3#design-u01-05-q4@3: Which is the best criticism of how the Double Diamond is sometimes used? | Teams treat it as a one-way sequence and skip the research that shapes the problem | It has too many phases for most projects to follow | It forbids any testing until the very end | It was designed only for engineering and not for services | The model itself encourages loops and research; the main risk is in use, when teams rush Discover or never loop back.
 SA3#design-u01-05-q5@2,3: Using the Double Diamond, plan how a team could redesign the way a GP surgery handles repeat prescription requests. Evaluate one limitation of the model. | Discover: interview patients, receptionists and pharmacists, observe the process, review complaints. Define: synthesise into a problem statement such as reducing the time and confusion of requests. Develop: generate options (online form, pharmacy link, text reminders), co-design with patients. Deliver: pilot one option, measure errors and waiting time, iterate, then scale. Limitation: it can appear linear and says little about implementation across many surgeries. | Discover activities with real users ; Define as a framed problem ; Develop as many options, co-designed ; Deliver as testing and iteration ; A reasoned limitation
+Q: Who introduced the Double Diamond and when? | The Design Council, in 2004.
+Q: What is the second diamond about? | Finding the right solution.
+Q: What shape of thinking does each diamond show? | Divergent thinking opening out, then convergent thinking narrowing.
+Q: What happens in the Discover phase? | Exploring widely to understand the issue through research with the people affected.
+Q: What happens in the Develop phase? | Generating many possible answers, drawing on inspiration and co-designing with others.
+Q: What happens in the Deliver phase? | Testing solutions at small scale, rejecting what fails, improving what works and launching.
+Q: What did the 2019 Framework for Innovation add? | Design principles, a methods bank, and leadership and engagement around the diamond.
+Q: Name the four design principles of the Framework for Innovation. | Put people first; communicate visually and inclusively; collaborate and co-create; iterate, iterate, iterate.
+Q: What is the most common way to waste a good second diamond? | Skipping the first diamond and solving the wrong problem.
+Q: Is the Double Diamond a one-way sequence? | No. Findings in Develop or Deliver can loop back to show the problem was defined wrongly.
 
 ## Divergent and convergent thinking
 LV: Introductory · Foundation
@@ -234,6 +284,16 @@ M2#design-u01-06-q2@2: During an idea session, a manager says "that will never w
 M3#design-u01-06-q3@3: A team agrees its selection criteria before generating ideas, but scores ideas only afterwards. What is the main benefit? | Selection is fair and not driven by the loudest voice, while generation stays open | It stops the team from generating any unusual ideas | It removes the need for any convergent thinking | It guarantees the first idea will be chosen | Pre-agreed criteria make convergence transparent; scoring afterwards keeps divergence free of judgement.
 MS1#design-u01-06-q4@1: Which are rules for a divergent phase? Choose all that apply. | Aim for quantity ; Defer judgement ; Build on others' ideas | Score each idea as it is said ; Stop at the first good idea | Divergence values quantity, deferring judgement and building; scoring and stopping early belong to (or damage) convergence.
 SA3#design-u01-06-q5@2,3: Explain why a design team should separate divergent and convergent thinking, and evaluate whether the separation should always be strict. | Separating them prevents self-censorship and early lock-in to obvious ideas, increasing the number and variety of options; convergence then uses agreed criteria to choose fairly. However, some evidence suggests brief, constructive critique can improve idea quality, and experienced teams switch modes rapidly. A clear default separation, flexibly applied, is best. | Defines both modes ; Explains self-censorship or early lock-in ; Role of criteria in convergence ; Counterpoint on constructive critique ; Judgement
+Q: Who distinguished divergent and convergent thinking? | J. P. Guilford, in 1950 and 1967.
+Q: What is convergent thinking? | Narrowing many options to the best answer using criteria.
+Q: Why does design need divergence? | To find possibilities nobody expected.
+Q: Name rules for convergent thinking. | Clear criteria, fair comparison, combining strong elements, deciding and recording why.
+Q: How do facilitators manage the switch between modes? | Signal the mode clearly, use time limits and choose criteria before converging.
+Q: Why choose criteria before converging? | So the loudest voice doesn't decide.
+Q: What happened between divergence and convergence in the coffee cup example? | The team paused and clustered the ideas into themes.
+Q: Why is converging on the first workable idea a mistake? | Early ideas are usually the most obvious; the strongest often come later.
+Q: How does the Double Diamond show the diverge-converge rhythm? | Twice: on the problem, then on the solution.
+Q: What happens when ideas are judged while being generated? | People self-censor and unusual ideas never appear.
 
 ## The d.school and IDEO models
 LV: Introductory · Foundation
@@ -272,6 +332,16 @@ M2#design-u01-07-q2@2: A student builds a cardboard version of a new bin lid in 
 M3#design-u01-07-q3@3: Which is the best comparison of the d.school model with the Double Diamond? | Both diverge and converge on problem then solution, but Deliver covers launch more explicitly | They are unrelated, as one is about products and one about services | The d.school model has no stage for understanding users | The Double Diamond forbids prototyping until the final phase | The models map closely; the main difference is the Double Diamond's explicit attention to delivery.
 MATCH2#design-u01-07-q4@3: Match each Double Diamond phase to the closest d.school mode or modes. | Discover = Empathise ; Define = Define ; Develop = Ideate and prototype ; Deliver = Test | The mapping is approximate, but shows the shared rhythm of understanding, framing, exploring and testing.
 SA3#design-u01-07-q5@1,3: Compare two design process models and evaluate which would suit a school project team. | The d.school model (empathise, define, ideate, prototype, test) is simple and action-oriented, good for short projects; the Double Diamond (discover, define, develop, deliver) makes the two stages of divergence and convergence visible and includes delivery. A school team may prefer the d.school model for its clear activities, but the Double Diamond helps show where research ends and solutions begin. Either works if used flexibly. | Describes the first model accurately ; Describes the second model accurately ; Identifies a key difference ; Applies to the school context ; Justified judgement
+Q: What happens in the d.school's Empathise mode? | Understanding people by observing, engaging and immersing in their experience.
+Q: What is produced in the d.school Define mode? | A point-of-view statement: a meaningful, actionable problem.
+Q: What are prototypes in the d.school model? | Quick, rough artefacts people can interact with.
+Q: Why does the d.school call its stages modes, not steps? | Teams may move back and forth, such as testing then returning to empathy.
+Q: Name d.school mindsets. | "Show, don't tell", "bias towards action" and "radical collaboration".
+Q: What is inspiration in IDEO's model? | The problem or opportunity that motivates the search for solutions.
+Q: What is IDEO's implementation space? | Charting a path to market: production, launch and scaling.
+Q: Which IDEO.org guide uses inspiration, ideation and implementation? | The Field Guide to Human-Centered Design (2015).
+Q: What does the Double Diamond cover that the d.school model says little about? | Launch, within the Deliver phase.
+Q: Is one design process model correct? | No. They are teaching tools; choose the one that helps your team communicate.
 
 ## Iterative design in Design and Technology
 LV: Introductory · Foundation
@@ -307,6 +377,16 @@ M2#design-u01-08-q2@2: A student's card model of a lamp falls over when the arm 
 M3#design-u01-08-q3@3: Which portfolio is strongest on iteration? | One showing three tested versions with the reasons for each change | One with twenty sketches and a perfect final model photo | One with detailed research and no prototypes | One that shows only the final product from many angles | Assessors reward evidence of testing and decisions between versions, not volume of drawings or a polished outcome alone.
 TF1#design-u01-08-q4@1: In the explore, create, evaluate model, a project must always begin with explore. | false | The cycle has no fixed starting point: a project can start from a model or an evaluation of an existing product.
 SA2#design-u01-08-q5@2,3: Explain how a student could show genuine iteration in a D&T portfolio. | By documenting each cycle: what was explored or tested (with users and against the specification), what was learned, and what was changed as a result, with dated photos of models and prototypes. Annotation should link each change to evidence, and the specification can be updated as understanding grows. | Documents tests with users or against the specification ; Records what was learned ; Shows the change in the next version ; Uses models or prototypes, not only sketches ; Updates specification where needed
+Q: Which document requires an iterative design process in GCSE D&T? | The Department for Education's GCSE Design and Technology subject content (2015).
+Q: Does the explore, create, evaluate cycle have a fixed starting point? | No.
+Q: What does explore involve in D&T? | Investigating the context, users, existing products and constraints, and identifying needs.
+Q: What does create involve in D&T? | Generating, modelling and developing ideas, from sketches to working prototypes.
+Q: What does evaluate involve in D&T? | Testing against the specification and with users, feeding results into the next cycle.
+Q: What is the NEA in D&T? | A substantial design-and-make coursework project.
+Q: Name typical NEA assessment strands. | Investigating possibilities, brief and specification, generating and developing ideas, realising a prototype, and analysing and evaluating.
+Q: What do NEA marks reward? | Evidence that decisions were tested and refined, not just a polished final model.
+Q: What should each iterative cycle in a portfolio show? | What was tested, what was learned and what changed as a result.
+Q: Why is a straight line of drawings a weak portfolio? | Assessors look for testing, feedback and visible change between versions.
 
 ## Designers and design disciplines
 LV: Introductory · Foundation
@@ -348,6 +428,16 @@ M2#design-u01-09-q2@2: A train company wants to improve what happens from bookin
 M3#design-u01-09-q3@3: Why might a UX designer and a product designer both work on a smart thermostat? | It has a physical form and a digital interface that together shape the experience | Only the product designer's work affects the experience of use | Regulations require two designers on every product | UX design applies only to websites, so the brief is wrong | Connected products combine hardware and software; the user experience depends on both working together.
 MS2#design-u01-09-q4@2: Which disciplines would be needed to design a new museum exhibition with an audio guide app? Choose all that apply. | Spatial or exhibition design ; Interaction or UX design ; Graphic design | Fashion design ; Textile design | The space, the app and the signage each need a discipline; fashion and textiles are not central.
 SA3#design-u01-09-q5@2,3: Using an example, analyse how several design disciplines contribute to one project. | For a new hospital outpatient service: service designers map the patient journey and staff processes; UX designers design the booking app; graphic designers create wayfinding signs; interior designers shape the waiting area. Each discipline works on a different medium but shares research and testing; the result depends on them coordinating around the patient's whole experience. | Chooses a realistic project ; Names at least three disciplines ; Explains what each contributes ; Explains shared methods or coordination
+Q: What do product and industrial designers design? | Physical objects for manufacture, from kettles to cars.
+Q: What does UX and interaction design cover? | How people use digital products: flows, interfaces and feedback.
+Q: What does spatial design cover? | Buildings, rooms, exhibitions and places.
+Q: What do systems and strategic designers design? | Organisations, policies and complex systems.
+Q: What does engineering design focus on? | Technical systems meeting performance requirements.
+Q: What did the Design Council's design economy research count? | Designers working inside other industries as well as in design agencies.
+Q: Why does Norman say all designers need psychology? | Every design is used by people.
+Q: How do design disciplines differ? | In medium: atoms, pixels, services or places.
+Q: In an e-bike hire scheme, what would service designers do? | Map the whole journey, including repairs, payment disputes and support.
+Q: Why is it wrong to say UX design means only screens? | It covers the whole experience of using something, overlapping with service and product design.
 
 ## Human-centred design
 LV: Introductory · Foundation
@@ -391,6 +481,16 @@ M2#design-u01-10-q2@2: Many patients press the wrong button on a hospital lift. 
 M3#design-u01-10-q3@3: Which is the strongest criticism of human-centred design? | Focusing on current users can miss non-users, society and the environment | It ignores users' needs in favour of the designer's taste | It never uses prototypes or any form of testing | It cannot be applied to digital products at all | Critics, including Norman, note that HCD can be too narrow; the other options describe the opposite of HCD.
 TF2#design-u01-10-q4@2: In human-centred design, a feature should be added whenever users ask for it. | false | HCD studies what users do and need; requests are evidence, but designers judge what best meets the underlying need.
 SA3#design-u01-10-q5@1,3: Evaluate human-centred design as an approach for designing a new public transport app. | Strengths: understanding passengers, tasks and contexts and testing with them reduces errors and failure, and involving diverse users improves accessibility. Limitations: focusing on current app users may miss people without smartphones or wider effects such as congestion; users may not imagine radically new services. A humanity-centred extension, with non-users and system effects, would strengthen it. | States HCD principles ; Applies benefits to the app ; Identifies non-users or wider effects ; Notes incrementalism or limits of user imagination ; Reaches a judgement
+Q: What is human-centred design? | An approach basing design on users' needs, abilities and contexts, with users involved throughout.
+Q: Name principles of ISO 9241-210. | Explicit understanding of users, user involvement, user-centred evaluation, iteration, whole experience and multidisciplinary teams.
+Q: What does Norman say about "human error"? | Most is really design error: if many people make the same mistake, the design invites it.
+Q: What is the risk of technology-led design? | Products nobody needs.
+Q: What is the risk of designer-led design? | The designer is not the user.
+Q: What is the risk of business-led design? | Poor experience and lost trust.
+Q: How did HCD fix a ticket machine selling wrong tickets? | Observation showed zone names confused users; plain destination names were tested and errors fell.
+Q: Why isn't HCD "doing whatever users ask"? | Users are experts in their lives, not design; HCD studies what people do and need.
+Q: What is humanity-centred design? | Norman's later idea of designing for whole communities and the planet, not just current users.
+Q: Why can HCD favour incremental improvement? | Users struggle to imagine what doesn't exist.
 
 ## Wicked problems
 LV: Intermediate · Application
@@ -429,6 +529,16 @@ M2#design-u01-11-q2@2: Which of these is best described as a tame problem? | Cal
 M3#design-u01-11-q3@3: A city's new cycle lanes reduce traffic on one road but increase it on another, and residents disagree whether the scheme worked. Which feature of wicked problems does this best show? | Solutions are better or worse, judged differently, and change the problem | The problem has a single correct solution that was missed | The problem was tame and was simply solved badly | Wicked problems never involve physical infrastructure | Consequences spread and stakeholders judge outcomes differently: classic wicked-problem features.
 MS2#design-u01-11-q4@2: Which are wicked problems? Choose all that apply. | Childhood obesity ; Climate adaptation in coastal towns ; Homelessness | Designing a gear ratio for a bicycle ; Solving a Sudoku | Social problems with competing framings are wicked; gears and puzzles have clear, checkable solutions.
 SA3#design-u01-11-q5@1,3: Evaluate how far design thinking can help with a wicked problem such as homelessness. | Design thinking can help by researching the experiences of homeless people, involving stakeholders to explore framings, prototyping small interventions (such as better hostel access) and iterating. But homelessness has causes in housing supply, income and policy that need political action and resources beyond any design team. Design can improve services and frame problems well; it cannot solve the problem alone. | Characteristics of wicked problems ; Specific design contributions ; Limits: power, policy, resources ; Example interventions ; Balanced judgement
+Q: What is a tame problem? | A problem that can be clearly defined and has a checkable solution.
+Q: Give examples of wicked problems. | Reducing homelessness or obesity.
+Q: Why do wicked problems have no definitive formulation? | How you define the problem depends on the solution you have in mind.
+Q: How are solutions to wicked problems judged? | Not true or false, only better or worse, differently by different stakeholders.
+Q: What is meant by a one-shot operation for wicked problems? | Every solution has consequences that cannot be undone.
+Q: Can wicked problems be solved once and for all? | No. They can be improved, managed and reframed.
+Q: Why did Buchanan say design suits wicked problems? | Designers are used to indeterminate problems with no single right answer.
+Q: Name approaches designers use for wicked problems. | Involving stakeholders, prototyping small interventions, learning from results and working at systems level.
+Q: How did different framings of city food waste lead to different solutions? | Shopping tools, redesigned labels or a surplus redistribution service, each with different stakeholders.
+Q: Is designing a bridge a wicked problem? | No. It can be hard but is tame, with clear criteria and a testable solution.
 
 ## The value of design
 LV: Intermediate · Application
@@ -468,4 +578,14 @@ M2#design-u01-12-q2@2: A report shows companies with large design teams earn mor
 M3#design-u01-12-q3@3: Which is the best evaluation of the McKinsey Design Index finding? | Good evidence that design practices accompany success, but not proof that design alone causes it | Proof that any company investing in design will grow by 32% | Irrelevant, because design cannot be measured at all | Evidence that design reduces revenue in most industries | The study is correlational and well sized, so it supports a link while leaving causation open.
 TF1#design-u01-12-q4@1: The Design Council counts designers working in non-design industries, such as banking, in the design economy. | true | The Design Economy report includes design skills used across the whole economy, not only in design firms.
 SA3#design-u01-12-q5@2,3: Evaluate the claim that "investing in design guarantees business success". | Evidence such as McKinsey (2018) shows firms with strong design practices outperform peers, and design can reduce errors and increase loyalty. But the evidence is correlational: successful firms may afford more design, and management quality may drive both. Design must also be combined with viable strategy and delivery. Design improves the odds; it guarantees nothing. | Cites evidence of a link ; Explains correlation and causation ; Names alternative explanations ; Notes that design needs strategy and delivery ; Judgement rejecting "guarantees"
+Q: Name four forms of value design creates. | User, economic, social and environmental value.
+Q: What GVA did the UK design economy generate in 2016, according to the Design Council? | £85.2 billion.
+Q: How many workers used design skills in the UK, according to the Design Economy report? | Around 1.69 million.
+Q: How many companies did McKinsey's 2018 study track? | 300 listed companies over five years.
+Q: What practices did the McKinsey Design Index score? | Measuring design performance, cross-functional teams and continuous user testing.
+Q: Give alternative explanations for the McKinsey correlation. | Growing firms can afford more design, or good management drives both.
+Q: What is gross value added? | A measure of the value of goods and services produced, estimating a sector's contribution.
+Q: What is design maturity? | How fully an organisation embeds design practices such as research, testing and design leadership.
+Q: How is design value measured in public services? | In outcomes such as fewer missed appointments, quicker benefit claims or fewer errors.
+Q: Which Government Digital Service principle aims to deliver design value? | "Start with user needs".
 `;

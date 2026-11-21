@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 151" width="380" height="151" role="img" aria-label="Three structures of carbonate, each with the C=O to a different oxygen, joined by double-headed resonance arrows." style="color:var(--vx-ink, #151826);font-family:inherit;max-width:100%;height:auto"><g transform="translate(21.5 16.0) scale(1.000)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 168" width="380" height="168" role="img" aria-label="Three structures of carbonate, each with the C=O to a different oxygen, joined by double-headed resonance arrows." style="color:var(--vx-ink, #151826);font-family:inherit;max-width:100%;height:auto"><g transform="translate(21.5 16.0) scale(1.000)">
 
 <path d='M 40.3,31.0 L 40.3,38.1' style='fill:none;fill-rule:evenodd;stroke:var(--vx-o, #DB2633);stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <path d='M 40.3,38.1 L 40.3,45.3' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
@@ -238,4 +238,4 @@ L 52.2 21.4
 L 48.3 21.4
 L 48.3 20.5
 ' fill='var(--vx-o, #DB2633)'/>
-</g><text x="190.0" y="129.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">The real ion is the average: each C–O bond is 1⅓ bonds and each O carries −⅔.</text></svg>
+</g><text x="190.0" y="129.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">The real ion is the average: each C–O bond is 1⅓ bonds</text><text x="190.0" y="146.0" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle" fill="var(--vx-soft, #5b6275)">and each O carries −⅔.</text></svg>

@@ -43,6 +43,16 @@ M2#engineering-u09-01-q2@2: In a feedback loop, what does the sensor do? | Measu
 M3#engineering-u09-01-q3@3: Why might making a controller more aggressive be undesirable? | It can increase overshoot and reduce stability margins | It always makes the system slower | It removes the need for a sensor | It reduces the accuracy to zero | Faster response often trades off against overshoot and robustness.
 MATCH1#engineering-u09-01-q4@2: Match each element to its role in cruise control. | Set point = 70 mph chosen by driver ; Sensor = Speedometer ; Actuator = Throttle ; Disturbance = Hill | Each block in the loop has a physical counterpart.
 SA2#engineering-u09-01-q5@1,3: Compare open-loop and closed-loop control, giving an advantage of each. | Open-loop control applies an input without measuring the output: it is simple, cheap and cannot become unstable through feedback, but it cannot correct for disturbances or changes. Closed-loop control measures the output and corrects errors: it is accurate and rejects disturbances, but needs sensors, is more complex and can become unstable if poorly designed. | Open-loop definition ; Simplicity ; Closed-loop correction ; Instability risk
+Q: What is open-loop control? | Control in which the input is set without measuring the output, such as a toaster on a timer.
+Q: Give an everyday example of closed-loop control. | A thermostat controlling room temperature.
+Q: Why is positive feedback usually avoided in control systems? | It amplifies deviations rather than reducing the error.
+Q: What is the set point in a control system? | The desired value of the controlled output.
+Q: What does the controller do in a feedback loop? | It decides the control action from the error.
+Q: What is a disturbance in a control system? | An unwanted input that affects the output of the system.
+Q: Where does noise act in a feedback loop? | On the measurement made by the sensor.
+Q: Name the main design goals of a control system. | Stability, accuracy, speed with acceptable overshoot, robustness, disturbance rejection and ignoring sensor noise.
+Q: In cruise control, what does the controller do when the car slows on a hill? | The error becomes positive, so it opens the throttle.
+Q: What is a common mistake about adding feedback to a system? | Assuming it always helps; poorly designed feedback can cause oscillation or instability.
 
 ## Laplace transforms
 LV: Year 1 · Intermediate
@@ -85,6 +95,16 @@ M2#engineering-u09-02-q2@2: What is the transform of dy/dt if y(0) = 3? | sY(s) 
 NUM2#engineering-u09-02-q3@3: Use the final value theorem to find the steady-state value of y(t) when Y(s) = 10 ÷ [s(s + 5)]. | 2 | 0.01 | – | lim s→0 of sY(s) = 10/5 = 2.
 M3#engineering-u09-02-q4@3: What is the inverse transform of 3/(s + 4)? | 3e^{−4t} | 3e^{4t} | 4e^{−3t} | 3 sin 4t | The pair 1/(s + a) corresponds to e^{−at}.
 SA3#engineering-u09-02-q5@2,3: Explain why Laplace transforms are useful for analysing dynamic systems. | They turn linear differential equations into algebraic equations in s, which are easier to manipulate and combine. Initial conditions are included automatically. Transfer functions, block diagram algebra, stability analysis through pole positions and steady-state results via the final value theorem all follow, so the behaviour of complex systems can be analysed without solving every differential equation directly. | ODEs to algebra ; Initial conditions ; Transfer functions ; Poles and stability ; Final value theorem
+Q: What is the definition of the Laplace transform? | F(s) = ∫_{0}^{∞} f(t) e^{−st} dt.
+Q: What is the Laplace transform of t? | 1/s^{2}.
+Q: What is the Laplace transform of sin ωt? | ω/(s^{2} + ω^{2}).
+Q: What is the Laplace transform of cos ωt? | s/(s^{2} + ω^{2}).
+Q: What does linearity of the Laplace transform mean? | The transform of af(t) + bg(t) is aF(s) + bG(s).
+Q: What is the Laplace transform of df/dt? | sF(s) − f(0).
+Q: What does integration become in the Laplace domain? | Division by s.
+Q: What does the final value theorem state? | The limit of f(t) as t → ∞ equals the limit of sF(s) as s → 0.
+Q: What are the steps to solve an ODE by Laplace transform? | Transform with initial conditions, solve for Y(s), split into partial fractions, then invert using a table.
+Q: What is the solution of dy/dt + 2y = 4 with y(0) = 0? | y(t) = 2(1 − e^{−2t}).
 
 ## Transfer functions and block diagrams
 LV: Year 1 · Intermediate
@@ -129,6 +149,16 @@ M2#engineering-u09-03-q2@2: G(s) = 4/(s + 2) has unity negative feedback. What i
 NUM2#engineering-u09-03-q3@3: What is the steady-state gain of the closed-loop system 4/(s + 6)? | 0.667 | 0.005 | – | Setting s = 0 gives the steady-state gain T(0) = 4/6 = 0.667.
 M3#engineering-u09-03-q4@3: What is the characteristic equation of a unity feedback system with G(s) = K/[s(s + 3)]? | s^{2} + 3s + K = 0 | s^{2} + 3s = 0 | s + K = 0 | s^{2} − 3s + K = 0 | Setting 1 + G = 0 and clearing fractions gives s(s + 3) + K = 0.
 SA3#engineering-u09-03-q5@2,3: Explain how negative feedback changes the behaviour of the system G(s) = 10/(s + 1). | Closing the loop gives T(s) = 10/(s + 11). The pole moves from −1 to −11, so the time constant falls from 1 s to about 0.09 s and the response is much faster. The steady-state gain falls from 10 to 10/11, so the output follows the reference closely, though with a small error. Feedback also makes the system less sensitive to changes in the plant gain. | Closed-loop TF ; Pole moves ; Faster response ; Gain and error ; Reduced sensitivity
+Q: What is a transfer function? | The ratio of output to input transforms, G(s) = Y(s) ÷ U(s), with zero initial conditions.
+Q: What are the zeros of a transfer function? | Values of s that make the numerator zero.
+Q: What kind of response do poles in the left half of the s-plane give? | Decaying responses.
+Q: What is the steady-state gain of a stable transfer function? | G(0).
+Q: How do blocks in series combine? | They multiply: G_{1}(s)G_{2}(s).
+Q: How do blocks in parallel combine? | They add: G_{1}(s) + G_{2}(s).
+Q: What is unity feedback? | Feedback in which H(s) = 1.
+Q: What is the closed-loop transfer function with positive feedback? | G/(1 − GH).
+Q: What is the closed-loop transfer function of G(s) = 10/(s + 1) with unity negative feedback? | 10/(s + 11), with the pole moved from −1 to −11.
+Q: What are the roots of the characteristic equation 1 + G(s)H(s) = 0? | The closed-loop poles.
 
 ## Modelling physical systems
 LV: Year 1 · Intermediate
@@ -171,6 +201,16 @@ M2#engineering-u09-04-q2@2: In the force–voltage analogy, what does a damper c
 NUM2#engineering-u09-04-q3@3: A mass-spring-damper has k = 2,000 N/m. What is its steady-state deflection under a constant 500 N force, in m? | 0.25 | 0.005 | m | G(0) = 1/k, so x = 500/2,000 = 0.25 m.
 M3#engineering-u09-04-q4@3: Why are real control models often linearised? | Many real systems are non-linear but behave nearly linearly near an operating point | Linear models are always exact for any input | Non-linear systems cannot be controlled at all | Linearisation removes the need for experiments | Linear tools apply only to linear models, so systems are approximated near operating points.
 SA3#engineering-u09-04-q5@1,3: Derive the transfer function of a mass-spring-damper system and explain the role of each term. | Newton's second law: the applied force minus the spring force kx and damping force c dx/dt equals m d^{2}x/dt^{2}. So m d^{2}x/dt^{2} + c dx/dt + kx = F. Taking Laplace transforms with zero initial conditions gives (ms^{2} + cs + k)X = F, so X/F = 1/(ms^{2} + cs + k). Mass resists acceleration, the damper dissipates energy, and the spring stores energy and sets the stiffness. | Newton's law ; Differential equation ; Laplace transform ; Transfer function ; Physical roles
+Q: What is the equation of motion of a mass-spring-damper? | m d^{2}x/dt^{2} + c dx/dt + kx = F.
+Q: What is the transfer function of a mass-spring-damper? | X(s) ÷ F(s) = 1 ÷ (ms^{2} + cs + k).
+Q: What order is an RLC circuit? | Second-order, analogous to the mass-spring-damper.
+Q: What is the transfer function of a thermal system with capacitance C_{t} and resistance R_{t}? | R_{t}/(R_{t}C_{t}s + 1), temperature rise over heat input.
+Q: How is a DC motor's speed response to voltage often modelled? | As a first-order system.
+Q: In the force–voltage analogy, what corresponds to spring compliance? | Capacitance.
+Q: How are non-linear systems linearised? | About an operating point, using Taylor series.
+Q: What is thermal capacitance? | The heat needed to raise a body's temperature by one degree.
+Q: A quarter-car suspension has k = 10,000 N/m. What is its steady deflection under 1,000 N? | 0.1 m, from G(0) × 1,000.
+Q: What is a common mistake when using a linear model of a real system? | Forgetting it is an approximation valid only near its operating point, because of friction and saturation.
 
 ## First-order system response
 LV: Year 1 · Intermediate
@@ -214,6 +254,16 @@ NUM2#engineering-u09-05-q2@2: A first-order system has τ = 3 s. What is its 2% 
 M2#engineering-u09-05-q3@2: A step response rises from 0 to a final value of 50 and reaches 31.6 after 5 s. What is τ? | 5 s | 3.16 s | 10 s | 2.5 s | τ is the time to reach 63.2% of the final value; 31.6 is 63.2% of 50, so τ = 5 s.
 M3#engineering-u09-05-q4@3: How does a first-order step response differ from an underdamped second-order one? | It never overshoots | It always oscillates | It never reaches steady state | It overshoots by exactly 63.2% | The single real pole gives a smooth exponential rise.
 SA3#engineering-u09-05-q5@2,3: Explain how you would identify a first-order model from an experimental step test. | Apply a step change of known size and record the output. The steady-state gain K is the final change in output divided by the step size. The time constant τ is the time from the step to reaching 63.2% of the final change. Check that the response shows no overshoot or delay; if it does, a higher-order or dead-time model may be needed. | Step test ; Gain from final value ; τ at 63.2% ; Check fit
+Q: What is the standard form of a first-order transfer function? | G(s) = K ÷ (τs + 1).
+Q: Where is the pole of a first-order system K/(τs + 1)? | At s = −1/τ.
+Q: What is the unit step response of a first-order system? | y(t) = K(1 − e^{−t/τ}).
+Q: What fraction of its final value does a first-order system reach after 4τ? | About 98%.
+Q: What is the 10% to 90% rise time of a first-order system? | About 2.2τ.
+Q: Does a first-order step response overshoot? | No. It rises smoothly.
+Q: How is the steady-state gain K found from a step test? | The final change in output divided by the step size.
+Q: What is a common mistake when reading a time constant from a step response? | Reading it at 50% of the final value instead of 63.2%.
+Q: An oven G(s) = 5/(2s + 1) gets a step of 40 units. What is the final temperature rise? | 200 °C.
+Q: How does a smaller time constant affect a first-order response? | The response is faster.
 
 ## Second-order system response
 LV: Year 1 · Advanced
@@ -259,6 +309,16 @@ M2#engineering-u09-06-q2@2: A system has characteristic equation s^{2} + 6s + 25
 NUM3#engineering-u09-06-q3@3: For s^{2} + 6s + 25, what is the 2% settling time, in s? | 1.33 | 0.02 | s | t_{s} ≈ 4 ÷ (ζω_{n}) = 4 ÷ 3 = 1.33 s.
 M3#engineering-u09-06-q4@3: Which change reduces overshoot in an underdamped second-order system? | Increasing the damping ratio | Decreasing the damping ratio | Increasing ω_{n} with ζ fixed | Removing all damping | Overshoot depends only on ζ and falls as ζ rises.
 SA3#engineering-u09-06-q5@2,3: A positioning system has ζ = 0.2. Explain the consequences and how a designer might improve it. | With ζ = 0.2 the response is lightly damped: overshoot is about 53%, and many oscillations occur before settling, which may cause damage, wear or inaccuracy. The designer could add damping physically, use derivative or velocity feedback, or retune the controller to raise ζ towards about 0.7, accepting a slightly slower rise for much less overshoot. | Light damping ; Large overshoot ; Slow settling ; Adding damping ; Target ζ
+Q: What is the standard second-order transfer function? | G(s) = ω_{n}^{2} ÷ (s^{2} + 2ζω_{n}s + ω_{n}^{2}).
+Q: What response does ζ = 0 give? | Undamped, sustained oscillation.
+Q: What are the poles of an underdamped second-order system like? | Complex.
+Q: What response does ζ > 1 give? | Overdamped: slow with no overshoot, and real, distinct poles.
+Q: What is the formula for percentage overshoot of an underdamped system? | %OS = 100 exp(−ζπ ÷ √(1 − ζ^{2})).
+Q: What is the 2% settling time of a second-order system? | t_{s} ≈ 4 ÷ (ζω_{n}).
+Q: What is the time to the first peak? | t_{p} = π ÷ (ω_{n}√(1 − ζ^{2})).
+Q: What does overshoot depend on in a second-order system? | Only the damping ratio ζ.
+Q: Roughly what overshoot does a damping ratio of about 0.7 give? | About 5%.
+Q: A system has s^{2} + 4s + 16. What are ω_{n} and ζ? | ω_{n} = 4 rad/s and ζ = 0.5.
 
 ## Steady-state error
 LV: Year 1 · Advanced
@@ -302,6 +362,16 @@ NUM2#engineering-u09-07-q2@2: What is the unit step steady-state error for G(s) 
 M2#engineering-u09-07-q3@2: What is the unit ramp error of G(s) = 20/[s(s + 4)] with unity feedback? | 0.2 | 0.05 | 0 | Infinite | The velocity constant K_{v} = 20/4 = 5, so the ramp error is 1/5 = 0.2.
 M3#engineering-u09-07-q4@3: Why does adding integral action remove steady-state error to a step? | It adds an integrator, raising the system type | It increases the damping ratio to one | It removes all poles from the system | It makes the sensor more accurate | The added integrator makes the loop type 1, which has zero step error.
 SA3#engineering-u09-07-q5@2,3: A temperature controller with proportional control settles 2 °C below the set point. Explain why and how to fix it. | The loop is type 0, so with finite proportional gain there is a steady-state error 1/(1 + K_{p}) times the step. Some error is needed to keep the heater on against losses. Raising the gain reduces the error but may cause overshoot or instability. Adding integral action makes the loop type 1, so the controller keeps adjusting until the error is zero. | Type 0 ; Finite gain error ; Gain trade-off ; Integral action ; Zero error
+Q: What is the type of a unity feedback system? | The number of pure integrators, poles at s = 0, in G(s).
+Q: What is the position error constant? | K_{p} = lim G(s) as s → 0.
+Q: What is the steady-state error to a unit step? | e_{ss} = 1 ÷ (1 + K_{p}).
+Q: What is the steady-state error to a unit ramp? | e_{ss} = 1 ÷ K_{v}.
+Q: How does a type 0 system respond in steady state to step and ramp inputs? | Finite step error and infinite ramp error.
+Q: What are the step and ramp errors of a type 2 system? | Both zero.
+Q: Where can integrators in a control loop come from? | The plant, such as a motor positioning system, or the controller's integral action.
+Q: What is the drawback of increasing loop gain to reduce steady-state error? | It may reduce stability.
+Q: What is the unit step error of G(s) = 10/(s + 2) with unity feedback? | 0.167, since K_{p} = 5.
+Q: What is a common mistake when calculating steady-state error? | Doing it for an unstable closed loop; check stability first.
 
 ## Stability and the Routh–Hurwitz criterion
 LV: Year 1 · Advanced
@@ -344,6 +414,16 @@ M2#engineering-u09-08-q2@2: Which characteristic equation fails the necessary co
 NUM3#engineering-u09-08-q3@3: For s^{3} + 4s^{2} + 5s + K = 0, what is the largest K for stability? | 20 | 0.5 | – | The s^{1} row is (4 × 5 − K)/4, which must be positive, so K < 20.
 M3#engineering-u09-08-q4@3: What does a whole row of zeros in a Routh array indicate? | Roots symmetric about the origin, such as a pair on the imaginary axis | The system is always stable | The calculation has no meaning | All poles are at the origin | A zero row arises from an even polynomial factor, often indicating marginal stability.
 SA3#engineering-u09-08-q5@2,3: Explain how the Routh–Hurwitz criterion helps a designer choose a controller gain. | The designer writes the closed-loop characteristic equation with the gain K as a parameter, builds the Routh array and requires every first-column entry to be positive. This gives inequalities on K and so the stable range without solving for roots. The boundary value of K gives marginal stability, and the auxiliary equation from that row gives the oscillation frequency. The designer then chooses K well inside the range for good margins. | Characteristic equation with K ; Routh array ; Inequalities ; Marginal gain and frequency ; Margin
+Q: What does it mean for a linear system to be stable? | Every bounded input produces a bounded output.
+Q: What do poles on the imaginary axis give? | Sustained oscillation, called marginal stability.
+Q: What is the necessary condition for stability in Routh–Hurwitz? | All coefficients of the characteristic polynomial are present and have the same sign.
+Q: How are the first two rows of a Routh array filled? | With alternate coefficients of the characteristic polynomial.
+Q: What does the number of sign changes in the Routh first column equal? | The number of roots in the right half-plane.
+Q: What is the main design use of the Routh–Hurwitz criterion? | Finding the range of gain K that keeps a system stable without solving for the roots.
+Q: What does a row of zeros in a Routh array give a designer? | The gain and frequency of sustained oscillation, from roots symmetric about the origin.
+Q: For s^{3} + 2s^{2} + 3s + K = 0, what range of K is stable? | 0 < K < 6.
+Q: What is a common mistake about positive coefficients and stability? | Assuming they guarantee stability; above second order this is necessary but not sufficient.
+Q: What is the Routh array? | A table built from the characteristic polynomial's coefficients to test stability.
 
 ## Feedback and PID control
 LV: Year 1 · Advanced
@@ -386,6 +466,16 @@ M2#engineering-u09-09-q2@2: A proportional-only temperature loop settles below i
 NUM2#engineering-u09-09-q3@3: Using Ziegler–Nichols PID rules, what is K_{p} if K_{u} = 15? | 9 | 0.1 | – | K_{p} = 0.6 × K_{u} = 0.6 × 15 = 9.
 M3#engineering-u09-09-q4@3: A valve saturates fully open during start-up, and the loop then overshoots badly. What is the likely cause? | Integral windup | Derivative kick | Too little proportional gain | Sensor noise only | The integral grows while the valve cannot respond, then drives a large overshoot.
 SA3#engineering-u09-09-q5@1,2: Explain the effect of increasing each PID gain on the closed-loop response. | Increasing K_{p} speeds the response and reduces steady-state error in a type 0 loop but increases overshoot and can destabilise. Increasing K_{i} removes steady-state error faster but increases overshoot and oscillation and risks windup. Increasing K_{d} adds damping and reduces overshoot but amplifies noise and can make the actuator noisy. Tuning balances these effects. | Proportional ; Integral ; Derivative ; Trade-offs
+Q: What is the PID control law? | u(t) = K_{p}e(t) + K_{i}∫e dt + K_{d} de/dt.
+Q: What are the effects of increasing proportional gain? | Faster response and smaller steady-state error, but risk of overshoot and instability.
+Q: What is the drawback of integral action? | It adds lag and can increase overshoot.
+Q: What is the drawback of derivative action? | It amplifies high-frequency noise.
+Q: How is integral windup prevented? | Anti-windup schemes stop or limit integration when the actuator saturates.
+Q: Why is derivative action often applied to the measured output instead of the error? | To avoid derivative kick on set-point changes.
+Q: What controller do many industrial loops use? | PI control only.
+Q: What are the Ziegler–Nichols PID settings? | K_{p} = 0.6K_{u}, T_{i} = P_{u}/2 and T_{d} = P_{u}/8.
+Q: How are K_{u} and P_{u} found in the Ziegler–Nichols ultimate gain method? | Increase proportional-only gain until the loop oscillates steadily; that gain is K_{u} and its period P_{u}.
+Q: What response do Ziegler–Nichols settings typically give? | Fast but fairly oscillatory, so they are usually refined.
 
 ## Root locus
 LV: Year 1 · Advanced
@@ -427,6 +517,16 @@ M2#engineering-u09-10-q2@2: G(s) = K/[s(s + 4)]. At what value of K do the close
 NUM3#engineering-u09-10-q3@3: A system has 3 open-loop poles and no zeros. What is the angle of the asymptote nearest the positive real axis, in degrees? | 60 | 0.5 | ° | Angles are (2k + 1)180°/3 = 60°, 180° and 300°.
 M3#engineering-u09-10-q4@3: A designer cannot find any gain giving the required damping on the root locus. What should they do? | Add a compensator to reshape the locus | Increase the gain to infinity | Remove the feedback loop | Reverse the sign of all poles | Adding poles and zeros changes the locus shape.
 SA3#engineering-u09-10-q5@1,3: Explain how a root locus helps a designer meet an overshoot specification. | Overshoot depends on the damping ratio, which corresponds to a line from the origin at a fixed angle. The designer sketches the root locus, finds where it crosses the line for the required ζ, and calculates the gain at that point using the magnitude condition. If the dominant poles are there, the overshoot is met; if not, a compensator reshapes the locus. | Overshoot and ζ ; Constant damping line ; Intersection ; Gain calculation ; Compensation
+Q: Who introduced the root locus, and when? | Walter Evans, in 1948.
+Q: What equation gives the closed-loop poles for a root locus? | 1 + KG(s) = 0.
+Q: About which axis is a root locus symmetric? | The real axis.
+Q: At what angles do root locus asymptotes lie? | (2k + 1)180°/(n − m), for n poles and m zeros.
+Q: Where is the centroid of root locus asymptotes? | At (sum of poles − sum of zeros)/(n − m).
+Q: How are imaginary-axis crossings of a root locus found? | With the Routh–Hurwitz criterion, giving the gain at the stability limit.
+Q: On a root locus, what does an overshoot specification correspond to? | Lines of constant damping ratio from the origin.
+Q: On a root locus, what does a settling time specification correspond to? | A vertical line of constant real part.
+Q: For G(s) = K/[s(s + 2)], what happens to the poles for K > 1? | They become −1 ± j√(K − 1), stable but more oscillatory.
+Q: What is a breakaway point? | Where branches of the locus leave or join the real axis.
 
 ## Frequency response and Bode plots
 LV: Year 1 · Advanced
@@ -468,6 +568,16 @@ M2#engineering-u09-11-q2@2: What is the phase of a first-order lag at its corner
 NUM2#engineering-u09-11-q3@3: A first-order lag has DC gain 1. What is its magnitude at the corner frequency, in dB, to one decimal place? | -3 | 0.1 | dB | |G| = 1/√2, and 20 log_{10}(0.707) is about −3.0 dB.
 M3#engineering-u09-11-q4@3: Why do designers aim for a phase margin of about 45° to 60°? | It gives adequate damping and robustness without being too slow | It guarantees zero steady-state error | It maximises overshoot | It makes the system type 2 | Phase margin relates to damping; too little gives large overshoot.
 SA3#engineering-u09-11-q5@2,3: Explain how gain and phase margins describe the robustness of a feedback system. | The gain margin is how far the loop gain can rise at the phase crossover (−180°) before the closed loop becomes unstable; the phase margin is how much extra lag at the gain crossover (0 dB) would cause instability. Large margins mean the loop tolerates uncertainty in gain, delays and modelling errors; small margins give oscillatory responses and risk instability. Phase margin also correlates with damping. | Gain margin definition ; Phase margin definition ; Tolerance to uncertainty ; Small margins ; Damping link
+Q: How does a stable linear system respond to a sinusoidal input? | It settles to a sinusoid of the same frequency, scaled in amplitude and shifted in phase.
+Q: What does a Bode plot show? | Magnitude in dB and phase in degrees against log frequency.
+Q: How is magnitude converted to decibels? | 20 log_{10} of the magnitude.
+Q: What is the Bode plot of an integrator 1/s? | A line falling at −20 dB per decade with −90° phase.
+Q: What are the magnitude and phase of a first-order lag at its corner frequency? | −3 dB and −45°.
+Q: Why can factors be added on a Bode plot? | Factors multiply, so their dB values and phases add.
+Q: Where is gain margin measured? | Where the open-loop phase is −180°.
+Q: What phase margin do designers often aim for? | 45° to 60°, for good damping.
+Q: What is the low-frequency gain of G(s) = 10/(1 + s/100) in dB? | 20 dB.
+Q: What is a common mistake when using phase margin? | Relying on it alone for loops with several gain crossovers or unusual responses.
 
 ## Sensors and actuators
 LV: Year 1 · Intermediate
@@ -513,6 +623,16 @@ M2#engineering-u09-12-q2@2: Why are strain gauges used in a Wheatstone bridge? |
 NUM2#engineering-u09-12-q3@3: A strain gauge has gauge factor 2.1 and resistance 350 Ω. What is ΔR for a strain of 1,000 × 10^{−6}, in Ω? | 0.735 | 0.005 | Ω | ΔR = 2.1 × 0.001 × 350 = 0.735 Ω.
 M3#engineering-u09-12-q4@3: Why must a sensor's bandwidth exceed that of the controlled system? | Otherwise it adds lag and hides fast changes, degrading control | A slow sensor always improves stability | Bandwidth only affects the actuator | Sensors never affect the loop dynamics | The sensor is in the loop, so its delay adds phase lag.
 SA3#engineering-u09-12-q5@2,3: Choose and justify a sensor and actuator for controlling the position of a robot arm joint. | An absolute or incremental optical encoder on the joint gives high-resolution, digital position (and speed by differentiation) and is fast and robust to noise. A brushless DC servomotor with a gearbox, driven by a PWM motor drive, provides precise, responsive torque. A stepper motor could be used for simple, low-load joints without feedback, but risks missing steps. Signal conditioning and limits protect the system. | Encoder choice ; Resolution and speed ; Servomotor ; Drive electronics ; Alternatives
+Q: Name three position sensors. | Potentiometers, LVDTs and encoders.
+Q: How are strain gauges usually connected? | In a Wheatstone bridge.
+Q: Name three temperature sensors. | Thermocouples, resistance thermometers (RTDs) and thermistors.
+Q: What sensor measures acceleration? | MEMS accelerometers.
+Q: What is the resolution of a sensor? | The smallest change it can detect.
+Q: What is sensor sensitivity? | Output change per input change.
+Q: What is the strain gauge equation? | ΔR ÷ R = GF × ε, gauge factor times strain.
+Q: What is distinctive about a stepper motor? | It moves in fixed steps.
+Q: What does signal conditioning do? | It amplifies, filters and converts sensor signals, often to digital, for a controller.
+Q: A 120 Ω strain gauge with gauge factor 2 sees a strain of 500 × 10^{−6}. What is ΔR? | 0.12 Ω.
 
 ## Digital control and sampling
 LV: Year 1 · Advanced
@@ -556,6 +676,16 @@ NUM2#engineering-u09-13-q2@2: What is the resolution of a 10-bit ADC with a 0 to
 M2#engineering-u09-13-q3@2: A 70 Hz vibration is sampled at 100 Hz. At what frequency does it appear? | 30 Hz | 70 Hz | 170 Hz | 100 Hz | Above the 50 Hz Nyquist frequency it aliases to 100 − 70 = 30 Hz.
 M3#engineering-u09-13-q4@3: Why can slow sampling destabilise a control loop? | Sampling and hold add delay that reduces phase margin | Slow sampling increases the loop gain to infinity | It removes the controller from the loop | It makes the sensor more accurate | Extra lag from sampling erodes stability margins.
 SA3#engineering-u09-13-q5@2,3: Explain how to choose the sampling rate for a digital control loop. | The rate must exceed twice the highest frequency in the measured signal (after an anti-aliasing filter) to avoid aliasing. For good control, it should be much faster than the closed-loop bandwidth, typically 10 to 30 times, to keep the delay and phase loss from sampling and hold small. Too fast wastes computation and may amplify noise in derivative terms. | Nyquist limit ; Anti-aliasing filter ; Multiple of bandwidth ; Delay and phase ; Practical limits
+Q: What comes before the ADC in a digital control loop? | An anti-aliasing filter.
+Q: How is a digital controller's output usually delivered? | Through a DAC or PWM, held constant between samples by a zero-order hold.
+Q: What is the Nyquist frequency? | Half the sampling frequency.
+Q: What is aliasing? | High-frequency signals appearing falsely as lower frequencies due to insufficient sampling.
+Q: How fast is sampling usually chosen for control loops? | Often 10 to 30 times the closed-loop bandwidth.
+Q: What is the resolution of an n-bit ADC? | Full-scale range ÷ 2^{n}.
+Q: How much effective delay does a zero-order hold add? | About half a sampling period.
+Q: What transform is used for discrete-time analysis? | The z-transform.
+Q: What is the resolution of a 12-bit ADC over 0 to 5 V? | About 1.22 mV.
+Q: What is a common mistake in choosing a control sampling rate? | Sampling at just twice the bandwidth; loops need much faster sampling to limit delay and phase loss.
 
 ## Signals and the Fourier series
 LV: Year 1 · Advanced
@@ -599,4 +729,14 @@ NUM2#engineering-u09-14-q2@2: What is the amplitude of the fundamental of a squa
 M2#engineering-u09-14-q3@2: A 1 kHz square wave is analysed. At which frequency is the second-largest harmonic? | 3 kHz | 2 kHz | 500 Hz | 4 kHz | Only odd harmonics are present, so the next after the fundamental is 3 kHz.
 M3#engineering-u09-14-q4@3: Why is Fourier analysis useful for predicting the output of a linear system to a periodic input? | Each harmonic can be passed through the frequency response separately and the results added | Linear systems remove all harmonics | It replaces the need for a model | It only works for sine wave inputs | Superposition lets each frequency component be treated independently.
 SA3#engineering-u09-14-q5@1,3: Explain how Fourier analysis can be used to diagnose faults in rotating machinery. | Vibration from a machine is measured with an accelerometer and analysed with an FFT to show its spectrum. Different faults produce characteristic frequencies: imbalance at the running speed, misalignment at twice running speed, bearing defects at specific bearing frequencies, and gear faults at gear-mesh frequencies. Rising amplitude at these frequencies indicates developing faults, allowing maintenance before failure. | Measurement and FFT ; Spectrum ; Fault frequencies ; Trend monitoring ; Predictive maintenance
+Q: Who showed that periodic functions can be expressed as sums of sinusoids? | Joseph Fourier, in 1822.
+Q: What is the fundamental angular frequency of a periodic signal with period T? | ω_{0} = 2π/T.
+Q: What are harmonics? | Sinusoidal components at integer multiples of the fundamental frequency.
+Q: What terms does the Fourier series of an even function contain? | Only cosine terms.
+Q: What terms does the Fourier series of an odd function contain? | Only sine terms.
+Q: How do square wave harmonic amplitudes change with harmonic number? | They fall as 1/n.
+Q: What is the Fourier series of a square wave of amplitude A? | (4A/π)[sin ω_{0}t + (1/3) sin 3ω_{0}t + (1/5) sin 5ω_{0}t + …].
+Q: How are non-periodic signals analysed? | With the Fourier transform, computed digitally with the FFT.
+Q: What is the third harmonic amplitude of a 1 V, 50 Hz square wave? | About 0.42 V, at 150 Hz.
+Q: Name three engineering uses of Fourier analysis. | Measuring power harmonic distortion, analysing machine vibrations, designing filters, and audio and image processing.
 `;

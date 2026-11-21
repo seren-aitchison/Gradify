@@ -71,8 +71,8 @@
       ]
      },
      "toward": 3,
-     "lpAngle": 0,
-     "lpDist": 18,
+     "lpAngle": -35,
+     "lpDist": 20,
      "bend": -0.3
     },
     {
@@ -144,7 +144,7 @@
      "to": {
       "atom": 1
      },
-     "bend": 1
+     "bend": -1
     }
    ]
   },
@@ -180,7 +180,7 @@
     7
    ],
    "labels": {
-    "5": "NH<sub>4</sub>"
+    "5": "NH<sub>4</sub><sup>+</sup>"
    },
    "label": "ethylamine + NH₄⁺ + Br⁻"
   }

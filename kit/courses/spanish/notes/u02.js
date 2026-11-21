@@ -39,6 +39,16 @@ M2#spanish-u02-01-q2@2: Who is the subject of *Compran fruta en el mercado*? | T
 TF1#spanish-u02-01-q3@1: The yo form of *estudiar* is *estudio*. | true | Stem *estudi-* plus *-o*: *estudio*.
 M3#spanish-u02-01-q4@2,3: Which sentence about parents' jobs is correct? | Mis padres trabajan en un hospital | Mis padres trabaja en un hospital | Mis padres trabajamos en un hospital | Mis padres trabajas en un hospital | *Mis padres* is third-person plural, so the verb takes *-an*.
 SA3#spanish-u02-01-q5@1,3: Write four sentences about what you and others do at the weekend, using four different regular -ar verbs and four different subjects, and explain how you formed each. | *Los sábados trabajo en una tienda. Mi hermano escucha música. Mis amigos y yo bailamos en una discoteca. Mis padres compran comida.* Each verb drops -ar and adds the ending for its subject: -o for yo, -a for one person, -amos for we, -an for they. | Four regular -ar verbs used correctly ; Four different subjects ; Explains stem plus ending ; Endings correct for each person ; Sensible weekend context
+Q: Define the infinitive. | The dictionary form of a verb, ending in -ar, -er or -ir, such as hablar.
+Q: How do you find the stem of an -ar verb? | Remove -ar from the infinitive: hablar gives habl-.
+Q: State the six present-tense endings of regular -ar verbs. | -o, -as, -a, -amos, -áis, -an.
+Q: What is the vosotros form of hablar? | habláis.
+Q: Who can be the subject of trabajan? | They, or you all (ustedes).
+Q: Which verb is used for playing an instrument? | Tocar: Mi hermana toca la guitarra.
+Q: Which verb is used for playing a sport or game? | Jugar: juegas al tenis.
+Q: What does the -o of hablo mark? | The yo form, I; it is not the masculine -o of nouns.
+Q: Why are subject pronouns often left out with -ar verbs? | Because each ending is different, so the verb alone shows who is acting.
+Q: What does the verb llevar mean? | To wear or carry.
 
 ## Regular -er and -ir verbs in the present
 LV: CEFR A1 · GCSE Foundation
@@ -75,6 +85,16 @@ M2#spanish-u02-02-q2@2: What is the nosotros form of *abrir*? | abrimos | abremo
 TF1#spanish-u02-02-q3@2: *Comemos* and *vivimos* show that -er and -ir verbs have the same nosotros ending. | false | -er verbs take *-emos* (*comemos*) and -ir verbs *-imos* (*vivimos*).
 M3#spanish-u02-02-q4@1,3: Which sentence about grandparents is correct? | Mis abuelos viven en el campo y beben mucho té | Mis abuelos vivan en el campo y beban mucho té | Mis abuelos vivimos en el campo y bebemos mucho té | Mis abuelos vive en el campo y bebe mucho té | Third-person plural -er and -ir verbs end in *-en*; *-an* would be the subjunctive.
 SA3#spanish-u02-02-q5@1,2: Conjugate *aprender* and *compartir* in full and explain the pattern that links them. | aprendo, aprendes, aprende, aprendemos, aprendéis, aprenden; comparto, compartes, comparte, compartimos, compartís, comparten. Both use the same endings in four of six forms (-o, -es, -e, -en); they differ in nosotros (-emos against -imos) and vosotros (-éis against -ís), where each keeps the vowel of its infinitive. | Correct full aprender ; Correct full compartir ; Identifies the four shared endings ; Identifies the nosotros and vosotros differences ; Links the difference to the infinitive vowel
+Q: State the present tense of comer. | como, comes, come, comemos, coméis, comen.
+Q: State the present tense of vivir. | vivo, vives, vive, vivimos, vivís, viven.
+Q: In which two forms do -er and -ir verbs differ in the present? | Nosotros (-emos against -imos) and vosotros (-éis against -ís).
+Q: Which vowel do -er and -ir endings have where -ar verbs have a? | e: hablas but comes and vives.
+Q: What does asistir a mean in standard use? | To attend, not to assist.
+Q: What does deber mean? | Must, or to owe.
+Q: Define desinencia. | The ending added to the stem to show person, number and tense.
+Q: What does compartir mean? | To share.
+Q: What is the él form of escribir? | escribe.
+Q: Why is ellos viván wrong in the present? | -er and -ir verbs use e in their endings, so it should be viven.
 
 ## Using the present tense
 LV: CEFR A1 · GCSE Foundation
@@ -112,6 +132,16 @@ M2#spanish-u02-03-q2@2: Translate "We have been living in Glasgow for ten years"
 TF1#spanish-u02-03-q3@3: *¿Vamos a la playa?* can be a suggestion meaning "Shall we go to the beach?". | true | The present tense in a question makes suggestions and offers.
 M3#spanish-u02-03-q4@1,3: A friend texts *Mañana como con mis abuelos*. What does it mean? | Tomorrow I'm having lunch with my grandparents | I always eat with my grandparents | Yesterday I had lunch with my grandparents | I'd like to eat with my grandparents tomorrow | With a future time expression, the present describes a fixed plan.
 SA3#spanish-u02-03-q5@1,2,3: Explain three different meanings the Spanish present tense can have, with an example and translation for each, and show how Spanish says "I have been doing X for Y". | Habits: *Nado los lunes* (I swim on Mondays). Ongoing now: *Leo un libro* (I'm reading a book). Fixed future plan: *El viernes juego un partido* (I'm playing a match on Friday). Suggestion: *¿Pongo la tele?* (Shall I put the TV on?). For continuing duration, Spanish uses the present with desde hace: *Nado desde hace tres años* (I've been swimming for three years), or *Hace tres años que nado*. | First meaning with example ; Second meaning with example ; Third meaning with example ; Accurate translations ; Correct desde hace or hace que construction
+Q: Name the five uses of the Spanish present tense. | Habits, what is happening now, general truths, fixed future plans with a time expression, and suggestions or offers.
+Q: How does Spanish say shall we go to the cinema? | With the present in a question: ¿Vamos al cine?
+Q: How does Spanish translate I have been studying for two years? | With the present plus desde hace: Estudio español desde hace dos años.
+Q: What is the alternative pattern to desde hace for duration? | Hace + time + que + present: Hace dos años que estudio español.
+Q: How do you ask How long have you been living here? | ¿Desde cuándo vives aquí?
+Q: What does the present continuous stress compared with the simple present? | That the action is happening at this moment.
+Q: What does the present need to express a fixed future plan? | A time expression, as in Mañana salgo para Madrid.
+Q: How does Spanish translate I'm playing tennis tomorrow? | With a plain present: Juego al tenis mañana.
+Q: Define the presente habitual. | The present used for repeated actions and routines.
+Q: What does desde hace mean? | For a length of time, with the action still continuing.
 
 ## Tener and expressions with tener
 LV: CEFR A1 · GCSE Foundation
@@ -151,6 +181,16 @@ M2#spanish-u02-04-q2@2: How do you say "She's very cold"? | Tiene mucho frío | 
 TF1#spanish-u02-04-q3@3: *Tengo ganas de salir* means "I have to go out". | false | It means "I feel like going out"; "I have to" is *tengo que*.
 M3#spanish-u02-04-q4@2,3: Which sentence correctly says "I'm very sleepy and very hungry"? | Tengo mucho sueño y mucha hambre | Tengo muy sueño y muy hambre | Estoy mucho sueño y mucha hambre | Tengo mucho sueño y mucho hambres | Both are nouns used with tener; *sueño* is masculine (mucho), *hambre* feminine (mucha).
 SA3#spanish-u02-04-q5@1,2,3: Write a short text message (four sentences) describing how you feel after a long hike, using four tener expressions, and explain why Spanish uses tener here. | *Estoy en casa. Tengo mucha sed y mucha hambre. También tengo sueño, pero tengo ganas de ver una película. Tienes razón: ¡la próxima vez llevo más agua!* Spanish expresses physical and mental states such as hunger, thirst and sleepiness as things you "have" (nouns), so it uses tener with a noun, and intensifies with mucho or mucha agreeing with the noun rather than muy. | Four correct tener expressions ; Correct mucho or mucha agreement ; Correct forms of tener ; Explains states are nouns with tener ; Explains why muy is not used
+Q: State the present tense of tener. | tengo, tienes, tiene, tenemos, tenéis, tienen.
+Q: Which stem change does tener make in its stressed forms? | e changes to ie: tienes, tiene, tienen.
+Q: What does tener frío mean? | To be cold.
+Q: What does tener sueño mean? | To be sleepy.
+Q: What does tener miedo de mean? | To be afraid of.
+Q: What does tener suerte mean? | To be lucky.
+Q: Why is very in tener expressions mucho or mucha, not muy? | The expressions use nouns, so very is mucho or mucha agreeing with the noun.
+Q: Why is it mucha hambre? | Hambre is feminine, though it takes el because of the stressed a-.
+Q: Why should a person not say Estoy caliente for I'm hot? | Estar caliente refers to objects and, of people, has a sexual meaning; a hot person says tengo calor.
+Q: What does tener que mean, in contrast to tener ganas de? | I have to; tener ganas de means to feel like doing.
 
 ## Ir, ir a and the near future
 LV: CEFR A1 · GCSE Foundation
@@ -186,6 +226,16 @@ M2#spanish-u02-05-q2@2: How do you say "We're going to play football"? | Vamos a
 TF1#spanish-u02-05-q3@1: "On foot" in Spanish is *en pie*. | false | It is *a pie*; other means of transport use *en*.
 M3#spanish-u02-05-q4@3: In which sentence does *vamos a* most clearly mean "let's"? | ¡Venga, vamos a bailar! | Mañana vamos a bailar en la fiesta | El sábado vamos a bailar salsa | Creo que vamos a bailar después | An exclamation urging others to act (*¡Venga!*) signals "let's"; the others state future plans.
 SA3#spanish-u02-05-q5@2,3: Write four sentences about your plans for next weekend using ir a + infinitive with four different subjects, and explain how the construction works and one way it differs from the simple future. | *El sábado voy a ver a mis abuelos. Mi hermana va a ir de compras. Mis amigos y yo vamos a jugar al baloncesto. Mis padres van a descansar.* Ir is conjugated for the subject, followed by a and an infinitive, which never changes. It is the near future, used for plans and intentions, and is more common in speech than the simple future (iré), which can sound more formal or distant. | Four correct sentences with different subjects ; Ir conjugated correctly ; Includes a and an unchanged infinitive ; Explains the structure ; Contrasts with the simple future
+Q: State the present tense of ir. | voy, vas, va, vamos, vais, van.
+Q: Which preposition introduces destinations after ir? | a, which contracts with el to al.
+Q: Which preposition is used with means of transport? | en: en tren, en autobús, en coche.
+Q: What is the exception to using en with means of transport? | On foot, which is a pie.
+Q: How is the near future formed? | A form of ir, then a, then an infinitive: voy a estudiar.
+Q: Which verb changes in the near future construction? | Only ir; the second verb stays in the infinitive.
+Q: What can vamos a + infinitive mean besides we are going to? | Let's, as in ¡Vamos a ver!
+Q: What does ¡Vamos! mean on its own? | Let's go! or Come on!
+Q: What error is Voy estudiar? | It is missing the a: Voy a estudiar.
+Q: Where is ir a + infinitive used more than the simple future? | In spoken Spanish, especially Latin America.
 
 ## Irregular yo forms: hacer, poner, salir and others
 LV: CEFR A1 · GCSE Foundation
@@ -226,6 +276,16 @@ M2#spanish-u02-06-q2@2: What is the yo form of *traducir*? | traduzco | traduco 
 TF1#spanish-u02-06-q3@3: *¿Sabes Barcelona?* is the right way to ask "Do you know Barcelona?". | false | Familiarity with a place is *conocer*: *¿Conoces Barcelona?*.
 M3#spanish-u02-06-q4@1,3: Which sentence uses saber and conocer correctly? | No sé dónde está, pero conozco a su madre | No conozco dónde está, pero sé a su madre | No sé dónde está, pero sé su madre | No conozco dónde está, pero conozco su madre | Information (where it is) takes *saber*; knowing a person takes *conocer* plus the personal *a*.
 SA3#spanish-u02-06-q5@1,2,3: Write four sentences about yourself using the yo forms of hacer, salir, saber and conocer, and explain the difference between the last two. | *Hago deporte los lunes. Salgo con mis amigos los viernes. Sé hablar un poco de francés. Conozco bien Londres.* Saber is used for facts and information and, with an infinitive, for knowing how to do something; conocer is used for being acquainted with people, places or things, and takes the personal a before people. | Correct hago ; Correct salgo ; Correct sé with a fact or infinitive ; Correct conozco with a person or place ; Clear explanation of saber versus conocer
+Q: What is the yo form of hacer? | hago.
+Q: What is the yo form of traer? | traigo.
+Q: What is the yo form of oír? | oigo.
+Q: Which verbs take a -zco yo form? | Verbs ending in a vowel plus -cer or -cir, such as conocer and conducir.
+Q: What is the yo form of conocer? | conozco.
+Q: What are the yo forms of saber, dar and ver? | sé, doy and veo.
+Q: When is saber used for knowing? | For facts or information, and with an infinitive for knowing how to.
+Q: When is conocer used for knowing? | For being acquainted with a person, place or thing.
+Q: What must be placed before a person after conocer? | The personal a: Conozco a tu hermano.
+Q: How does Latin America usually say do homework? | hacer la tarea, while Spain says hacer los deberes.
 
 ## Stem-changing verbs: e to ie
 LV: CEFR A1 · GCSE Foundation
@@ -265,6 +325,16 @@ M2#spanish-u02-07-q2@1,2: Which form is correct? | Nosotros cerramos la puerta |
 TF1#spanish-u02-07-q3@2: *Ellos prefieren* is correct. | true | The third-person plural stresses the stem, so e becomes ie.
 M3#spanish-u02-07-q4@3: A learner writes *¿Qué piensáis hacer?*. What is the error? | The vosotros form keeps e: pensáis | It should be piensas | It should be pensamos | There is no error | The vosotros ending is stressed, so the stem doesn't change: *¿Qué pensáis hacer?*.
 SA3#spanish-u02-07-q5@1,2,3: Conjugate empezar fully and write two sentences using querer and preferir, then explain the stress rule behind the pattern. | empiezo, empiezas, empieza, empezamos, empezáis, empiezan. *Quiero ir al concierto, pero mi hermano prefiere quedarse en casa.* The stem vowel e becomes ie only when it is stressed; in the present this is the yo, tú, él/ella/usted and ellos/ustedes forms. In nosotros and vosotros the stress moves to the ending, so the e stays. | Correct full empezar ; Correct querer sentence ; Correct preferir sentence ; Explains the stress rule ; Identifies the unchanged forms
+Q: When does stem e become ie? | When it is stressed: in the yo, tú, él and ellos forms of the present.
+Q: Why do nosotros and vosotros keep the e? | In those forms the stress falls on the ending, not the stem.
+Q: Why is it called the boot pattern? | Written in a grid, the changing forms make the shape of a boot.
+Q: State the present tense of querer. | quiero, quieres, quiere, queremos, queréis, quieren.
+Q: What does pensar en mean? | To think about.
+Q: What does pensar + infinitive mean? | To plan to: Pienso ir a Perú.
+Q: What does empezar a + infinitive mean? | To start doing something.
+Q: Which two e to ie verbs also have an irregular yo form? | Tener (tengo) and venir (vengo).
+Q: What does lo siento mean, and which verb is it from? | I'm sorry, from sentir.
+Q: Define diptongación. | The change of a stressed vowel into a diphthong, as e to ie.
 ## Stem-changing verbs: o to ue and e to i
 LV: CEFR A1 · GCSE Foundation
 S: Two more groups of stem-changing verbs follow the same boot pattern as e to ie: stressed o becomes ue, and in some -ir verbs stressed e becomes i. This lesson covers both, plus *jugar*, the only verb whose u becomes ue.
@@ -303,6 +373,16 @@ M2#spanish-u02-08-q2@1: Complete: *El camarero ___ (servir) la comida.* | sirve 
 TF1#spanish-u02-08-q3@2: *Jugamos al baloncesto* is correct. | true | Nosotros keeps the original u because the stress falls on the ending.
 M3#spanish-u02-08-q4@3: Which sentence correctly says "I'm asking my teacher a question"? | Le pregunto algo a mi profesor | Le pido algo a mi profesor | Pido una pregunta a mi profesor | Le pedo algo a mi profesor | Asking a question is *preguntar*; *pedir* is asking for a thing.
 SA3#spanish-u02-08-q5@1,2,3: Write four sentences about a typical Saturday using dormir, jugar, volver and pedir, and explain the stem change in each verb. | *Duermo hasta las diez. Juego al fútbol con mis amigos. Vuelvo a casa a la una. En el restaurante pido paella.* Dormir and volver change stressed o to ue; jugar changes u to ue (the only such verb) and takes al in Spain; pedir, an -ir verb, changes stressed e to i. None of them change in nosotros or vosotros. | Correct duermo ; Correct juego al ; Correct vuelvo ; Correct pido ; Explains each change and the unchanged forms
+Q: State the present tense of poder. | puedo, puedes, puede, podemos, podéis, pueden.
+Q: What is the él form of dormir? | duerme.
+Q: Which verb is the only one whose u becomes ue? | jugar.
+Q: What follows jugar in Spain before a sport? | a + the article: Juego al tenis.
+Q: Which verb group can change stressed e to i? | Some -ir verbs, such as pedir.
+Q: What is the yo form of seguir? | sigo.
+Q: What is the yo form of elegir? | elijo.
+Q: What is the difference between pedir and preguntar? | Pedir is to ask for something; preguntar is to ask a question.
+Q: What does volver mean? | To return.
+Q: How is jugar fútbol used in Latin America? | Often without a, which the RAE accepts as a regional use.
 
 ## Estar: location and states
 LV: CEFR A1 · GCSE Foundation
@@ -343,6 +423,16 @@ M2#spanish-u02-09-q2@2: Which sentence correctly says "Lima is in Peru"? | Lima 
 TF1#spanish-u02-09-q3@3: *La ventana está abierta* describes a condition, so it uses estar. | true | The open window is a state or result at a given moment.
 M3#spanish-u02-09-q4@3: A friend writes *Mi abuela es enferma hoy*. How should it be corrected, and why? | Está enferma: being ill today is a temporary state | Es enfermo: the adjective must be masculine | Tiene enferma: illness uses tener | No change: illness is a characteristic | A current state of health takes *estar*, and the adjective agrees with *abuela*.
 SA3#spanish-u02-09-q5@1,2,3: You are on a school trip. Write a message home with four sentences using estar for different purposes, and name each purpose. | *Estamos en Salamanca* (location of people). *El hotel está cerca de la plaza* (location of a building). *Estoy un poco cansada, pero contenta* (feelings and physical state). *La comida está muy rica* (condition of a thing now). Each uses the correct form of estar, and the adjectives agree with the subject. | Four correct estar sentences ; Location used ; State or feeling used ; Purpose named for each ; Adjective agreement correct
+Q: State the present tense of estar. | estoy, estás, está, estamos, estáis, están.
+Q: What is the difference between está and esta? | Está means is; esta means this.
+Q: Which verb expresses permanent location, as of Madrid in Spain? | Estar: Madrid está en el centro de España.
+Q: Name three kinds of state that estar expresses. | Feelings and moods, physical states, and conditions of things.
+Q: What does estar de vacaciones mean? | To be on holiday.
+Q: What does estar de pie mean? | To be standing.
+Q: How do adjectives after estar agree? | With the subject, like any adjective: Mis hermanas están cansadas.
+Q: How do you say the door is open? | La puerta está abierta.
+Q: What is wrong with Londres es en Inglaterra? | Places are located with estar: Londres está en Inglaterra.
+Q: Where has estar been extending into ser's territory? | Especially in Mexico and Central America, as in está alto for height.
 
 ## Ser or estar?
 LV: CEFR A1 · GCSE Foundation
@@ -383,6 +473,16 @@ M2#spanish-u02-10-q2@2: Complete: *¡La paella ___ muy rica!* (It tastes delicio
 MS2#spanish-u02-10-q3@1,2: Choose all the sentences where estar is the right verb. | ___ en la biblioteca (We are in the library) ; Mi abuelo ___ muerto (My grandfather is dead) | ___ las cinco (It is five o'clock) ; La reunión ___ en el aula 3 (The meeting is in room 3) | Location of people and the state of being dead take estar; times and the location of events take ser.
 M3#spanish-u02-10-q4@3: Why is "ser is permanent, estar is temporary" an unreliable rule? | Estar muerto is permanent, and ser joven is not | Ser is never used for time or dates | Estar can't be used with adjectives | It works for every case except professions | Counter-examples show the real contrast is nature or classification (ser) against location and state (estar).
 SA3#spanish-u02-10-q5@1,2,3: Write two pairs of sentences showing an adjective whose meaning changes with ser and estar, translate them, and evaluate the "permanent versus temporary" rule. | *Mi hermana es muy lista* (My sister is very clever); *Mi hermana está lista* (My sister is ready). *La clase es aburrida* (The class is boring); *Los alumnos están aburridos* (The pupils are bored). The permanent/temporary rule works for many cases but fails for estar muerto, estar casado and the location of cities (all lasting, with estar) and ser joven (temporary, with ser). A better rule is nature or classification for ser, location and state for estar. | Correct first pair with translations ; Correct second pair with translations ; States the permanent and temporary rule ; Gives counter-examples ; Offers the better nature versus state account
+Q: What does ser describe in the decision method? | What something is: identity, origin, nationality, profession, characteristics, time, dates, material, possession and where events take place.
+Q: What does estar describe in the decision method? | Where people and things are, and how something is at a given time: states, moods, conditions, results.
+Q: Which verb forms the present continuous? | Estar: estoy comiendo.
+Q: What better principle replaces permanent versus temporary? | Nature for ser versus state or location for estar.
+Q: Why does estar muerto break the permanent rule? | Being dead is permanent, yet it takes estar.
+Q: What is the difference between ser listo and estar listo? | Ser listo is to be clever; estar listo is to be ready.
+Q: What does estar malo mean in Spain? | To be ill.
+Q: What is the difference between ser verde and estar verde? | Ser verde is to be green; estar verde is to be unripe.
+Q: What does estar guapo mean? | To look good today.
+Q: Why is it el estadio está cerca del río but el concierto es en el estadio? | A concert is an event, located with ser; a stadium is a place, located with estar.
 
 ## Hay and estar compared
 LV: CEFR A1 · GCSE Foundation
@@ -418,6 +518,16 @@ M2#spanish-u02-11-q2@2: Complete: *El estadio ___ en las afueras.* | está | hay
 TF1#spanish-u02-11-q3@1: *Hay* changes to *han* before a plural noun. | false | *Hay* is invariable: *Hay un libro*, *Hay diez libros*.
 M3#spanish-u02-11-q4@2,3: Which pair of sentences is correct? | Hay una playa cerca. La playa está a dos kilómetros | Está una playa cerca. La playa hay a dos kilómetros | Hay la playa cerca. Una playa está a dos kilómetros | Es una playa cerca. La playa hay a dos kilómetros | New, indefinite item: *hay una playa*; the now-known, definite beach is located with *está*.
 SA3#spanish-u02-11-q5@1,2,3: Describe your town in four sentences, using hay twice and estar twice, and explain the rule that decides which to use. | *En mi pueblo hay un mercado y muchas tiendas. No hay cine. El mercado está en la plaza principal. Mi colegio está cerca de la estación.* Hay introduces things or says whether they exist, followed by no article, un/una, a number or a quantity; it never changes. Estar locates something specific, introduced with a definite article, a name or a possessive. | Two correct hay sentences ; Two correct estar sentences ; Explains hay with indefinite or no article ; Explains estar with definite or known nouns ; Notes hay is invariable
+Q: What does hay mean? | There is or there are.
+Q: Which verb does hay come from? | haber.
+Q: What can follow hay? | No article, an indefinite article, a number or a quantity word.
+Q: How do you say there's no milk? | No hay leche.
+Q: When is hay used rather than estar? | To introduce something new or say whether something exists.
+Q: When is estar used rather than hay? | To locate something specific already known, with a definite article, name or possessive.
+Q: What does hay que + infinitive express? | A general obligation, one must, with no specific person.
+Q: How do you ask Is there a supermarket round here? | ¿Hay un supermercado por aquí?
+Q: What is wrong with Hay el museo en el centro? | Hay cannot take a definite article; say El museo está en el centro.
+Q: What does normative grammar require instead of habían muchos niños? | The singular: había muchos niños.
 ## Family and relationships
 LV: CEFR A1 · GCSE Foundation
 S: Family is a core GCSE theme and the subject of countless conversations. This lesson gives the vocabulary for family members and relationships, how to say whether you get on with someone, and how family life in the Spanish-speaking world has been changing.
@@ -455,6 +565,16 @@ M2#spanish-u02-12-q2@2: How do you say "We get on well"? | Nos llevamos bien | L
 TF1#spanish-u02-12-q3@1: *Mis padres* can refer to a mother and a father together. | true | The masculine plural *padres* means parents, a mixed group.
 M3#spanish-u02-12-q4@3: A learner writes *Mis parientes viven en Leeds*, meaning "My mother and father live in Leeds". What is the best correction? | Mis padres viven en Leeds | Mis parentes viven en Leeds | Mis familiares viven en Leeds | No change is needed | *Parientes* and *familiares* both mean relatives in general; a mother and father together are *mis padres*.
 SA3#spanish-u02-12-q5@1,2,3: Describe your family in four sentences, including how you get on with two people, and comment on one way families in Spain have changed. | *En mi familia somos cuatro: mis padres, mi hermano menor y yo. Mi madre es enfermera. Me llevo muy bien con mi padre porque es divertido, pero discuto a veces con mi hermano.* Spanish families have become smaller since the 1980s: the fertility rate is among the lowest in the EU, and only children are more common, though grandparents often still play a large role. | Correct family vocabulary ; Correct llevarse bien or mal ; Mayor or menor or other detail used accurately ; Sensible comment on change ; Evidence or example given
+Q: What does los abuelos mean? | Grandparents.
+Q: What does la nieta mean? | Granddaughter.
+Q: What does hijo único mean? | An only child.
+Q: What are a stepfather and stepmother in Spanish? | El padrastro and la madrastra.
+Q: What gender is la pareja when meaning partner? | Always feminine.
+Q: What can mis tíos mean? | My uncles and aunts, or my uncle and aunt.
+Q: Which phrase says how you get on with someone? | Llevarse bien or mal con, which is reflexive.
+Q: What do mayor and menor mean of siblings? | Older and younger.
+Q: What does los parientes mean? | Relatives in general, not parents.
+Q: What does confiar en mean? | To trust.
 
 ## Describing people: appearance and personality
 LV: CEFR A1 · GCSE Foundation
@@ -493,6 +613,16 @@ M2#spanish-u02-13-q2@1,2: How do you say "My sisters are quite tall"? | Mis herm
 TF1#spanish-u02-13-q3@2: *Es una chica egoísta* and *Es un chico egoísta* both use the same form of the adjective. | true | Adjectives ending in -ista have one form for both genders.
 M3#spanish-u02-13-q4@3: A student writes *Mi abuelo tiene pelo blanco y es muy simpática*. How many errors are there? | Two: el pelo and simpático | One: simpática should be simpático | One: tiene should be es | None | Spanish needs the article (*tiene el pelo blanco*), and the adjective must agree with *abuelo* (*simpático*).
 SA3#spanish-u02-13-q5@1,2,3: Describe a famous person in five sentences, covering appearance and personality, and justify your choice of ser, tener or llevar in each sentence. | *Rafa Nadal es alto y fuerte. Tiene el pelo castaño y corto. Tiene los ojos marrones. No lleva gafas. Es muy trabajador y bastante tímido.* Ser is used for build and personality (es alto, es trabajador), tener with the definite article for hair and eyes (tiene el pelo), and llevar for things worn (lleva gafas). Adjectives agree with the person described. | At least two appearance sentences correct ; At least two personality sentences correct ; Correct use of the article with pelo or ojos ; Justifies each verb choice ; Uses a modifier such as bastante or muy
+Q: Which verb describes build and height? | Ser: Es alto.
+Q: Which verb describes hair and eyes? | Tener, with the definite article: Tiene el pelo largo.
+Q: Which verb describes wearing glasses? | Llevar: Lleva gafas.
+Q: What does pelirrojo mean? | Red-haired.
+Q: What does moreno mean? | Dark-haired or dark-skinned.
+Q: What does perezoso mean? | Lazy.
+Q: What does maleducado mean? | Rude.
+Q: What does bastante mean as a modifier? | Quite.
+Q: Where is un poco usually used? | Before negative qualities: Es un poco tímida.
+Q: What does simpático mean, and what false friend is it? | Nice or friendly; it doesn't mean sympathetic.
 
 ## Possessive adjectives
 LV: CEFR A1 · GCSE Foundation
@@ -532,6 +662,16 @@ M2#spanish-u02-14-q2@2: How do you say "our school" (*el instituto*)? | nuestro 
 TF1#spanish-u02-14-q3@2: In *María y su padre*, *su* is used because María is female. | false | *Su* is used for his, her and their alike; it agrees in number with *padre*, not with María.
 M3#spanish-u02-14-q4@3: How can you make clear that *su casa* means "her house" and not "his house"? | la casa de ella | la casa suya de él | sus casa de ella | la su casa | Replace or support *su* with *de ella*: *la casa de ella*.
 SA3#spanish-u02-14-q5@1,2,3: Translate "Our parents and their friends are in my sister's car" and explain the agreement of each possessive, plus how Spanish shows "my sister's". | *Nuestros padres y sus amigos están en el coche de mi hermana.* Nuestros is masculine plural to agree with padres; sus is plural to agree with amigos (whoever "their" refers to); mi is singular to agree with hermana. Spanish has no apostrophe s, so possession by a person uses de: el coche de mi hermana. | Accurate translation ; Nuestros agreement explained ; Sus agreement explained ; De used for possession ; States agreement is with the thing owned
+Q: What does a Spanish possessive adjective agree with? | The thing possessed, not the owner.
+Q: Which possessives change only for number? | mi, tu and su.
+Q: Which possessives change for gender and number? | nuestro and vuestro.
+Q: What can su mean? | His, her, its, your (usted), their or your (ustedes).
+Q: How does Spanish clarify the meaning of su? | With de + pronoun: el coche de él, la casa de ella.
+Q: How does Spanish show possession by a named person? | With de: el perro de Ana.
+Q: Which possessive is used for your with vosotros? | vuestro, vuestra, vuestros, vuestras.
+Q: What is the difference between tu and tú? | Tu means your and has no accent; tú means you.
+Q: How do you say their house? | su casa, singular to agree with casa.
+Q: What does Spanish lack that English uses for possession? | The apostrophe s.
 
 ## Gustar and expressing likes
 LV: CEFR A1 · GCSE Foundation
@@ -570,4 +710,14 @@ M2#spanish-u02-15-q2@2: How do you say "My mother likes cooking"? | A mi madre l
 TF1#spanish-u02-15-q3@3: *Me duelen los pies* follows the same pattern as *me gustan los deportes*. | true | *Doler* works like *gustar*: the plural subject *los pies* takes *duelen*.
 M3#spanish-u02-15-q4@2,3: Which sentence about friends' likes is correct? | A mis amigos les encanta jugar al fútbol | Mis amigos encantan jugar al fútbol | A mis amigos le encantan jugar al fútbol | A mis amigos les encantan jugar al fútbol | Plural people take *les*; an infinitive subject takes the singular *encanta*.
 SA3#spanish-u02-15-q5@1,2,3: Write four sentences giving your own and other people's opinions about free-time activities, using gustar, encantar, preferir and odiar, and explain how gustar differs grammatically from preferir. | *Me gusta mucho la música. A mi hermana le encantan los conciertos. Mis padres prefieren el cine. Odio los deportes de invierno.* Gustar and encantar take the thing liked as the subject (gusta or gustan) and the person as an indirect object pronoun (me, le, nos, les); preferir and odiar are ordinary verbs whose subject is the person, so they are conjugated for the person (prefieren, odio). | Correct gustar sentence ; Correct encantar with agreement ; Correct preferir and odiar ; Explains subject and indirect object of gustar ; Contrasts with ordinary verbs
+Q: What does Me gusta el chocolate mean literally? | Chocolate pleases me.
+Q: When is gusta used? | With a singular noun or an infinitive.
+Q: When is gustan used? | With a plural noun.
+Q: Name the indirect object pronouns used with gustar. | me, te, le, nos, os, les.
+Q: Where does no go in a negative gustar sentence? | Before the pronoun: No me gusta el pescado.
+Q: Why add a mí or a ella to a gustar sentence? | For emphasis or clarity.
+Q: What happens to the pronoun when the person is named? | It stays: A Juan le gusta el tenis.
+Q: Name four verbs that work like gustar. | encantar, interesar, molestar and doler.
+Q: Which two opinion verbs are normal verbs, unlike gustar? | preferir and odiar.
+Q: What does apetecer mean, and where is it everyday Spanish? | To fancy; it is everyday in Spain.
 `;

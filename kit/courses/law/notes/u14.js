@@ -34,6 +34,16 @@ Q: Which treaty made the Charter of Fundamental Rights legally binding? | The Tr
 Q: Which article of the TEU governs withdrawal? | Article 50.
 M1#law-u14-01-q1@1: When did the UK leave the EU? | 31 January 2020 | 23 June 2016 | 31 December 2020 | 29 March 2019 | 1 January 2021 | The UK left on 31 January 2020; the transition period ended on 31 December 2020.
 M2#law-u14-01-q2@2: The EU wants to legislate on an issue in an area of shared competence that member states can handle well alone. Which principle is engaged? | Subsidiarity | Supremacy | Direct effect | State liability | Mutual recognition | Subsidiarity limits EU action where member states can achieve the objective.
+Q: What is the principle of conferral in EU law? | The EU acts only within the competences the member states confer on it (Article 5 TEU).
+Q: What is subsidiarity in EU law? | In shared competence, the EU acts only if objectives can be better achieved at EU level.
+Q: Give two examples of exclusive EU competence. | The customs union and competition rules for the internal market.
+Q: Which three principles in Article 5 TEU limit EU action? | Conferral, subsidiarity and proportionality.
+Q: Which Treaty articles set out exclusive, shared and supporting competences? | Articles 3, 4 and 6 TFEU.
+Q: What did the Treaty of Paris (1951) create? | The European Coal and Steel Community.
+Q: Which treaty created the European Union, and when? | Maastricht, in 1992.
+Q: Name four values in Article 2 TEU. | Human dignity, freedom, democracy, equality, the rule of law and human rights.
+Q: Which Act gave EU law effect in the UK, and which repealed it? | The European Communities Act 1972 gave effect; the European Union (Withdrawal) Act 2018 repealed it.
+Q: When did the Brexit transition period end? | 31 December 2020.
 
 ## EU institutions
 S: The EU's institutions make, implement and interpret EU law. The Commission proposes legislation, the Parliament and Council adopt it, the European Council sets direction, and the Court of Justice ensures the law is observed.
@@ -66,6 +76,16 @@ Q: Which institution proposes EU legislation? | The Commission.
 Q: What is a preliminary reference? | A national court's request for a ruling on EU law from the Court of Justice (Article 267 TFEU).
 M1#law-u14-02-q1@1: Which EU institution brings infringement proceedings against member states? | The Commission | The European Council | The Council of the EU | The European Parliament | The Court of Auditors | Article 258 TFEU gives the Commission this role.
 M2#law-u14-02-q2@2: A member state's highest court faces an unclear question of EU law on which the Court of Justice hasn't ruled. What must it generally do? | Make a preliminary reference | Decide the point itself | Refer to the Commission | Ask the European Parliament | Dismiss the case | CILFIT: courts of last instance must refer unless the answer is clear or settled.
+Q: What does the European Council do? | Made up of heads of state or government, it sets the EU's general direction.
+Q: Who sits in the Council of the EU, and what is its role? | Ministers of member states; it is a co-legislator, usually voting by qualified majority.
+Q: What are the roles of the European Parliament? | It is directly elected, a co-legislator and a budgetary authority.
+Q: Which two courts make up the Court of Justice of the EU? | The Court of Justice and the General Court.
+Q: Name two EU institutions besides the main law-making ones. | The European Central Bank and the Court of Auditors.
+Q: How does the ordinary legislative procedure work? | The Commission proposes, and Parliament and Council must agree, in up to three readings (Article 294 TFEU).
+Q: What does qualified majority in the Council generally require? | 55% of member states representing 65% of the EU population.
+Q: Which Article of the TFEU governs infringement proceedings by the Commission? | Article 258.
+Q: Under CILFIT, when may a court of last instance decline to refer? | When the question is irrelevant, already decided, or so obvious as to leave no reasonable doubt (acte clair).
+Q: What is the common mistake about the Council of the EU? | Confusing it with the Council of Europe, the ECHR body.
 
 ## Sources of EU law
 S: EU law has several sources. Primary law consists of the Treaties and the Charter; secondary law consists of regulations, directives and decisions; general principles and Court of Justice case law fill gaps; and international agreements bind the EU and its institutions.
@@ -95,6 +115,16 @@ Q: Which article of the TFEU lists the types of EU legal act? | Article 288.
 Q: Name two general principles of EU law. | Proportionality and legal certainty (also legitimate expectations, equality, fundamental rights).
 M1#law-u14-03-q1@1: Which source of EU law has the same legal value as the Treaties? | The Charter of Fundamental Rights | Directives | Recommendations | Commission press releases | National constitutions | Article 6 TEU gives the Charter Treaty status.
 M2#law-u14-03-q2@2: A Commission recommendation advises member states on data retention. Is it binding? | No: recommendations are non-binding | Yes, like a regulation | Yes, like a directive | Only on the Commission | Only if the Parliament agrees | Article 288 says recommendations have no binding force.
+Q: What is primary EU law? | The Treaties (TEU and TFEU) and the Charter of Fundamental Rights.
+Q: What is secondary EU law? | Legal acts adopted by the institutions under the Treaties: regulations, directives and decisions.
+Q: What are general principles of EU law? | Unwritten principles such as proportionality, legal certainty and fundamental rights.
+Q: Which case is cited for fundamental rights as a general principle of EU law? | Internationale Handelsgesellschaft (Case 11/70).
+Q: What are general principles of EU law used for? | To interpret and review EU measures and national measures within the scope of EU law.
+Q: Which EU doctrines did Court of Justice case law create without Treaty text? | Direct effect and supremacy.
+Q: Where do international agreements concluded by the EU rank? | Above secondary law; they bind the institutions and member states (Article 216 TFEU).
+Q: Which Article of the TEU gives the Charter its status? | Article 6 TEU.
+Q: What role do Court of Justice rulings play as a source of EU law? | They authoritatively interpret EU law and fill gaps.
+Q: What is the common mistake about recommendations and opinions? | Treating them as binding EU law; they have no binding force.
 
 ## EU legislation
 S: The main EU legislative acts are regulations, directives and decisions. They differ in how they apply in member states: regulations apply directly, directives must be transposed into national law by a deadline, and decisions bind those to whom they are addressed.
@@ -124,6 +154,16 @@ Q: What is the difference between a regulation and a directive? | A regulation a
 Q: Who is bound by a decision? | Those to whom it is addressed.
 M1#law-u14-04-q1@1: Which EU act is binding in its entirety and directly applicable in all member states? | A regulation | A directive | A recommendation | An opinion | A resolution | Article 288 TFEU: regulations are binding in their entirety and directly applicable.
 M3#law-u14-04-q2@2: The deadline for implementing a directive passes and a member state hasn't transposed it. What can individuals do? | Rely on its clear provisions against the state | Nothing until it is transposed | Sue private companies directly | Ask the European Parliament to enforce it | Ignore national law entirely | Vertical direct effect allows reliance against the state after the deadline.
+Q: What is a directive in EU law? | An act binding as to the result, leaving the form and methods to member states.
+Q: What is transposition? | Implementing a directive into national law.
+Q: Does a regulation need a national implementing measure? | No; it is binding in its entirety and directly applicable.
+Q: What must every EU legislative act have? | A legal basis in the Treaties.
+Q: What are delegated and implementing acts? | Acts supplementing legislation under Articles 290 and 291 TFEU.
+Q: How are most EU legislative acts adopted? | By the ordinary legislative procedure on a Commission proposal.
+Q: What is vertical direct effect of a directive? | Individuals relying on an untransposed directive against the state.
+Q: What does indirect effect require when a directive is not transposed? | National courts must interpret national law consistently with the directive.
+Q: What did Italy fail to do in Francovich? | Transpose a directive correctly and on time.
+Q: What is the common mistake about directives? | Assuming a directive applies automatically like a regulation; it needs transposition.
 
 ## Direct effect
 S: Direct effect allows individuals to rely on EU provisions in national courts. Established in Van Gend en Loos, it applies to clear, precise and unconditional provisions. Treaty articles can have vertical and horizontal effect; directives generally have only vertical effect, supplemented by indirect effect.
@@ -158,6 +198,16 @@ Q: What are the conditions for direct effect? | The provision must be clear, pre
 Q: Can directives have horizontal direct effect? | No (Marshall; Faccini Dori).
 M1#law-u14-05-q1@1: Which case established direct effect? | Van Gend en Loos | Costa v ENEL | Francovich | Marshall | Cassis de Dijon | Van Gend en Loos [1963] created the doctrine.
 M3#law-u14-05-q2@2: An employee of a private company wants to rely on an unimplemented directive against her employer. What is her best route? | Indirect effect, or state liability against the state | Direct effect against the employer | Supremacy alone | Article 267 directly | No route at all | Directives lack horizontal direct effect, so she should use indirect effect or Francovich.
+Q: What is vertical direct effect? | Reliance on EU law against the state or an emanation of the state.
+Q: What is horizontal direct effect? | Reliance on EU law against a private party.
+Q: What did Van Gend en Loos say about the Community? | It constitutes a new legal order whose provisions can create individual rights.
+Q: Which case held that Treaty articles on equal pay have horizontal effect? | Defrenne v Sabena (Case 43/75).
+Q: When can a directive have vertical direct effect? | Only after its implementation deadline has passed.
+Q: Which case defined an emanation of the state? | Foster v British Gas (Case C-188/89).
+Q: Which case first set out the duty of consistent interpretation? | Von Colson (Case 14/83), developed in Marleasing.
+Q: What is the limit on indirect effect? | National law need not be interpreted contra legem, against its clear meaning.
+Q: Can Charter rights have horizontal effect? | Some can, in disputes within the scope of EU law (Egenberger, 2018).
+Q: What were the facts of Marshall v Southampton AHA? | A dietitian was forced to retire at 62 when male colleagues retired at 65.
 
 ## Supremacy
 S: Supremacy means EU law takes precedence over conflicting national law in member states. The Court of Justice established it in Costa v ENEL, and national courts must set aside conflicting national provisions. In the UK, supremacy was given effect by the European Communities Act 1972 and has now been abolished.
@@ -192,6 +242,16 @@ Q: Which case first established the supremacy of EU law? | Costa v ENEL.
 Q: When did EU supremacy end in UK law? | From the start of 2024, under the REUL Act 2023.
 M1#law-u14-06-q1@1: Which case requires national courts to set aside conflicting national law of their own motion? | Simmenthal | Costa v ENEL | Van Gend en Loos | Francovich | Factortame | Simmenthal [1978] ECR 629 requires immediate disapplication of conflicting national law.
 M2#law-u14-06-q2@2: In 2025, a UK claimant argues that an assimilated rule should override a later Act of Parliament because of EU supremacy. What is the position? | Supremacy no longer applies | Assimilated law always prevails | The court must make a reference to Luxembourg | The Act is void | Only Parliament can decide | The REUL Act 2023 abolished EU supremacy in UK law from the start of 2024.
+Q: What is supremacy in EU law? | The priority of EU law over conflicting national law.
+Q: What is disapplication? | Setting aside a national rule that conflicts with EU law.
+Q: What is assimilated law? | Former retained EU law, now without supremacy.
+Q: What did Internationale Handelsgesellschaft add to supremacy? | EU law prevails even over national constitutional rules.
+Q: What did Factortame (No 2) decide? | UK courts disapplied an Act of Parliament conflicting with EU law and granted an interim injunction against the Crown.
+Q: Which Act was disapplied in Factortame? | The Merchant Shipping Act 1988, for its nationality rules.
+Q: How did the European Union (Withdrawal) Act 2018 treat supremacy? | It preserved supremacy only for retained EU law over pre-exit domestic law.
+Q: Which Act abolished EU supremacy in UK law? | The Retained EU Law (Revocation and Reform) Act 2023.
+Q: How did the German Federal Constitutional Court's 2020 PSPP judgment bear on supremacy? | It questioned an ECB programme, showing some national courts accept supremacy only within limits.
+Q: What is the common mistake about supremacy and UK law today? | Saying EU supremacy still applies after 2023; it was abolished from the start of 2024.
 
 ## State liability
 S: State liability allows individuals to claim damages from a member state for loss caused by its breach of EU law. Established in Francovich and refined in Brasserie du Pêcheur, it requires a rule intended to confer rights, a sufficiently serious breach and a causal link. It no longer applies in the UK for new claims.
@@ -226,6 +286,16 @@ Q: What are the three conditions for state liability? | A rule conferring rights
 Q: What did Köbler decide? | State liability can arise from manifest breaches by courts of last instance.
 M1#law-u14-07-q1@1: Which case first recognised state liability for failure to implement a directive? | Francovich | Brasserie du Pêcheur | Köbler | Dillenkofer | Marshall | Francovich [1991] concerned Italian employees.
 M3#law-u14-07-q2@2: A state completely fails to transpose a directive giving package holidaymakers protection, and they suffer loss. Is the breach sufficiently serious? | Yes: non-transposition is serious per se | No: states have discretion | Only if intentional | Only if the Commission complained | Only for large losses | Dillenkofer: total failure to transpose is sufficiently serious.
+Q: What is state liability in EU law? | A member state's liability in damages for loss caused by its breach of EU law.
+Q: What is a sufficiently serious breach? | A manifest and grave disregard of the limits on the state's discretion.
+Q: What are Francovich damages? | Damages for a state's failure to implement a directive.
+Q: Name three factors in deciding whether a breach is sufficiently serious. | Clarity of the rule, discretion left to the state, intention, excusability of an error of law, and the institutions' position.
+Q: What did Dillenkofer decide? | Failing to transpose a directive at all is sufficiently serious per se.
+Q: What did Brasserie du Pêcheur add about who can breach EU law? | State liability extends to all breaches, including those by the legislature.
+Q: What directive did Italy fail to implement in Francovich? | One guaranteeing employees' wages on their employer's insolvency.
+Q: Can new Francovich claims be brought in the UK? | No; the 2018 Act removed them for breaches after the transition period, subject to transitional provisions.
+Q: Who were the claimants in Brasserie du Pêcheur and Factortame III? | A French brewer excluded from the German market and Spanish fishermen.
+Q: What is the common mistake about EU law breaches and damages? | Assuming any breach, however technical, gives damages; it must be sufficiently serious.
 
 ## Free movement
 S: The internal market rests on the four freedoms: free movement of goods, persons, services and capital. The Court of Justice has interpreted them broadly, while allowing justified restrictions. Since Brexit, the UK is outside the internal market.
@@ -258,6 +328,16 @@ Q: What is the Dassonville formula? | All trading rules capable of hindering tra
 Q: What did Keck decide? | Certain non-discriminatory selling arrangements aren't MEQRs.
 M1#law-u14-08-q1@1: Which case introduced the principle of mutual recognition? | Cassis de Dijon | Dassonville | Keck | Van Gend en Loos | Costa v ENEL | Cassis [1979] concerned a German minimum alcohol rule.
 M2#law-u14-08-q2@2: A member state bans the sale of a liqueur from another state because its alcohol content is lower than domestic rules require. What is the likely analysis? | An MEQR, unless justified and proportionate | Lawful: states set their own standards | A selling arrangement under Keck | Outside EU law | A customs duty | Cassis: such product rules are MEQRs needing justification.
+Q: What are the four freedoms of the EU internal market? | Free movement of goods, persons, services and capital.
+Q: What is a measure having equivalent effect (MEQR)? | A national rule capable of hindering trade between member states (Article 34 TFEU).
+Q: What is mutual recognition in EU free movement of goods? | Goods lawfully marketed in one member state should generally be accepted in others.
+Q: What are mandatory requirements in free movement of goods? | Public interest grounds, such as consumer protection, that can justify indistinctly applicable restrictions.
+Q: Name three grounds of justification under Article 36 TFEU. | Public morality, public policy, public security and health, among others.
+Q: What must any justification for restricting free movement satisfy? | It must be proportionate.
+Q: Which TFEU Articles cover workers, establishment, services and capital? | Article 45 (workers), 49 (establishment), 56 (services) and 63 (capital).
+Q: What were the facts of Keck? | French supermarket managers were prosecuted for reselling goods at a loss.
+Q: When do selling arrangements fall outside Article 34 under Keck? | When they apply to all traders and affect domestic and imported goods alike.
+Q: What does the Trade and Cooperation Agreement not provide that the single market did? | Free movement of people and full market access for services.
 
 ## EU citizenship
 S: EU citizenship is held by every national of a member state. It gives rights to move and reside freely within the EU, to vote in local and European elections, and to non-discrimination on grounds of nationality. UK nationals lost EU citizenship on Brexit, with protections for those already resident.
@@ -292,6 +372,16 @@ Q: After how many years' legal residence do EU citizens gain permanent residence
 Q: What did Zambrano decide? | A non-EU parent may have a derived right to reside where refusal would force an EU citizen child to leave the EU.
 M1#law-u14-09-q1@1: Which article of the TFEU establishes EU citizenship? | Article 20 | Article 45 | Article 34 | Article 101 | Article 267 | Article 20 TFEU establishes citizenship of the Union.
 M2#law-u14-09-q2@2: An economically inactive EU citizen with no resources moves to another member state solely to claim social assistance. Must the host state pay? | Not necessarily: Dano allows refusal | Yes: citizenship guarantees benefits | Yes, after one month | Only if she has children | Only in Germany | Dano permits excluding such citizens from social assistance.
+Q: Who holds EU citizenship? | Every national of a member state; it is additional to national citizenship (Article 20 TFEU).
+Q: What is the Citizens' Rights Directive? | Directive 2004/38, governing EU citizens' rights to move and reside.
+Q: Name three rights of EU citizenship. | Free movement and residence, voting and standing in local and European elections, consular protection and petitioning.
+Q: Which TFEU Article prohibits discrimination on grounds of nationality? | Article 18.
+Q: What did Grzelczyk say about EU citizenship? | It is destined to be the fundamental status of nationals of member states.
+Q: What is needed to reside in another member state for up to three months under Directive 2004/38? | A valid ID.
+Q: Who may reside for over three months under Directive 2004/38? | Workers, the self-employed, self-sufficient people with health insurance, students, and their family members.
+Q: What did Dano v Jobcenter Leipzig decide? | Economically inactive EU citizens without sufficient resources may be refused social assistance.
+Q: How do EU citizens' rights in the UK apply after Brexit? | Through the EU Settlement Scheme, for those resident before the end of 2020, under the Withdrawal Agreement.
+Q: What is the common mistake about EU citizens and social assistance? | Assuming they have an unconditional right to it in any member state.
 
 ## Competition law
 S: EU competition law prohibits anti-competitive agreements (Article 101 TFEU), abuse of a dominant position (Article 102 TFEU) and controls mergers. UK competition law mirrors these rules in the Competition Act 1998, enforced by the Competition and Markets Authority.
@@ -324,6 +414,16 @@ Q: What does Article 102 TFEU prohibit? | Abuse of a dominant position.
 Q: What is the maximum fine for UK competition infringements? | Up to 10% of worldwide turnover.
 M1#law-u14-10-q1@1: Which chapter of the Competition Act 1998 mirrors Article 101? | Chapter I | Chapter II | Chapter III | Part 4 | Schedule 1 | Chapter I prohibits anti-competitive agreements.
 M2#law-u14-10-q2@2: Three rival suppliers secretly agree to charge the same prices to UK retailers. What is this? | A cartel prohibited by Chapter I | Lawful cooperation | An abuse of dominance only | A merger | A selling arrangement | Price-fixing is an object restriction under Chapter I (and Article 101).
+Q: What is a cartel? | An agreement between competitors to fix prices, share markets or limit output.
+Q: What is a dominant position in competition law? | Economic strength enabling a firm to behave independently of competitors and customers.
+Q: What does Article 101 TFEU prohibit? | Agreements, decisions and concerted practices affecting trade between member states that restrict competition by object or effect.
+Q: When can an agreement be exempted under Article 101(3)? | Where efficiency benefits pass to consumers, restrictions are indispensable and competition isn't eliminated.
+Q: What do block exemptions cover in EU competition law? | Many vertical agreements.
+Q: Name three examples of abuse of a dominant position. | Excessive or predatory pricing, refusals to supply, and tying.
+Q: Which case concerned predatory pricing under Article 102? | AKZO Chemie (Case C-62/86).
+Q: Which Act creates a criminal cartel offence and governs UK merger control? | The Enterprise Act 2002.
+Q: What is strategic market status? | A designation under the DMCC Act 2024 letting the CMA impose tailored conduct requirements on large digital firms.
+Q: What is the common mistake about dominance in competition law? | Assuming being dominant is itself unlawful; only abuse of dominance is prohibited.
 
 ## UK-EU relationship
 S: Since leaving the EU, the UK's relationship with it is governed mainly by the Withdrawal Agreement (with the Northern Ireland arrangements now known as the Windsor Framework) and the Trade and Cooperation Agreement. These shape trade, citizens' rights, cooperation and dispute settlement.
@@ -358,6 +458,16 @@ Q: What is the Windsor Framework? | The 2023 revision of the Northern Ireland Pr
 Q: Does the TCA provide tariff-free trade in goods? | Yes, for goods meeting rules of origin.
 M1#law-u14-11-q1@1: Which Act gives effect to the Trade and Cooperation Agreement in UK law? | European Union (Future Relationship) Act 2020 | European Union (Withdrawal) Act 2018 | European Communities Act 1972 | REUL Act 2023 | UK Internal Market Act 2020 | The Future Relationship Act 2020 implemented the TCA.
 M2#law-u14-11-q2@2: A UK manufacturer exports goods to France made mostly from Chinese components. Will they automatically be tariff-free under the TCA? | Not necessarily: rules of origin must be met | Yes: all UK goods are tariff-free | No: the TCA imposes tariffs on all goods | Only if shipped by sea | Only with a Windsor Framework label | Tariff-free treatment depends on meeting rules of origin.
+Q: What is the Withdrawal Agreement? | The 2020 treaty governing the UK's exit, including citizens' rights and Northern Ireland.
+Q: What is the Trade and Cooperation Agreement? | The 2020 agreement on the future UK-EU relationship.
+Q: Name three things the Withdrawal Agreement covers. | Citizens' rights, the financial settlement, and the Northern Ireland Protocol.
+Q: Why does Northern Ireland stay aligned with some EU goods rules? | To avoid a hard border, under the Protocol as revised by the Windsor Framework.
+Q: What mechanism does the Windsor Framework include? | A "Stormont brake".
+Q: Which Act gives effect to the Withdrawal Agreement in UK law? | The European Union (Withdrawal Agreement) Act 2020.
+Q: What level playing field commitments does the TCA contain? | Commitments on subsidies, labour and environmental standards.
+Q: How is the Trade and Cooperation Agreement governed? | Through the Partnership Council and arbitration-based dispute settlement.
+Q: Name two areas where the TCA has only limited provisions. | Services, law enforcement cooperation, transport and fisheries.
+Q: What is the common mistake about the Trade and Cooperation Agreement? | Assuming it restores free movement of people or full services access.
 
 ## Retained and assimilated law
 S: To avoid gaps on Brexit, the European Union (Withdrawal) Act 2018 converted EU law into domestic "retained EU law". The Retained EU Law (Revocation and Reform) Act 2023 revoked some of it, renamed the rest "assimilated law" and removed EU-derived principles such as supremacy.
@@ -390,6 +500,16 @@ Q: What is assimilated law? | Retained EU law renamed from 1 January 2024 by the
 Q: Are UK courts bound by CJEU decisions made after exit? | No, but they may have regard to them (s 6 EUWA 2018).
 M1#law-u14-12-q1@1: Which section of the EUWA 2018 governs the interpretation of retained EU law? | Section 6 | Section 2 | Section 3 | Section 4 | Section 8 | Section 6 deals with interpretation and departure.
 M2#law-u14-12-q2@2: The Court of Appeal is asked to depart from a pre-Brexit CJEU ruling on assimilated law. What test applies? | The test for departing from its own precedents, under the regulations | It must always follow the ruling | It must refer to the CJEU | It can ignore all EU case law | Only the Supreme Court can decide | TuneIn applied the Practice Statement-style test.
+Q: What is retained EU law? | EU-derived law preserved in UK law after exit by the European Union (Withdrawal) Act 2018.
+Q: What is retained case law? | CJEU and domestic case law on retained EU law, which higher courts can depart from.
+Q: What three categories became retained EU law under the 2018 Act? | EU-derived domestic legislation (s 2), direct EU legislation (s 3), and rights under s 2(1) of the 1972 Act (s 4).
+Q: Which courts can depart from retained EU case law? | The Supreme Court and some appeal courts designated by regulation.
+Q: What did TuneIn v Warner Music decide? | The Court of Appeal could depart from retained EU case law but saw no reason to on the facts.
+Q: What happened to listed instruments under the REUL Act 2023? | They were revoked at the end of 2023.
+Q: What did the REUL Act 2023 abolish besides supremacy? | General principles of EU law in UK law.
+Q: What powers did the REUL Act 2023 give ministers? | To restate, revoke and replace assimilated law.
+Q: What three things should be checked when advising on a formerly EU-governed area? | Whether the rule survived as assimilated law, whether it has been amended, and the weight of earlier CJEU case law.
+Q: What is the common mistake about post-Brexit CJEU judgments? | Treating them as binding on UK courts; courts may only have regard to them.
 
 ## International law sources
 S: Public international law governs relations between states and other international actors. Its sources are listed in Article 38(1) of the Statute of the International Court of Justice: treaties, custom, general principles, and, as subsidiary means, judicial decisions and the teachings of eminent publicists.
@@ -421,6 +541,16 @@ Q: What are the main sources listed in Article 38(1)? | Treaties, custom, genera
 Q: What does Article 103 of the UN Charter provide? | Charter obligations prevail over obligations under other treaties.
 M1#law-u14-13-q1@1: Which article of the ICJ Statute lists the sources of international law? | Article 38 | Article 36 | Article 59 | Article 2 | Article 103 | Article 38(1) of the ICJ Statute lists treaties, custom, general principles and subsidiary means.
 M2#law-u14-13-q2@2: Two states sign a treaty agreeing to cooperate in torturing suspects. What is its legal status? | Void for conflict with jus cogens | Valid between the parties | Valid if ratified | Valid unless the UN objects | Valid for 10 years | Article 53 VCLT voids treaties conflicting with peremptory norms.
+Q: What does public international law govern? | Relations between states and other international actors.
+Q: What is soft law? | Non-binding instruments, such as declarations, that may influence law.
+Q: How is international custom described in Article 38(1)(b)? | As evidence of a general practice accepted as law.
+Q: What are subsidiary means for determining international law? | Judicial decisions and the teachings of the most highly qualified publicists.
+Q: Is there a formal hierarchy between treaties and custom? | Generally no, though jus cogens and Article 103 UN Charter add hierarchy.
+Q: Which case treated treaties and custom as central sources? | North Sea Continental Shelf [1969] ICJ Rep 3.
+Q: Which VCLT article makes treaties conflicting with jus cogens void? | Article 53.
+Q: Name three jus cogens norms. | Prohibitions of genocide, torture, slavery and aggression.
+Q: Whose work is influential in codifying international law? | The International Law Commission.
+Q: What is the common mistake about UN General Assembly resolutions? | Treating them as binding law; they may only reflect or shape custom.
 
 ## Treaties
 S: Treaties are written agreements between states (and international organisations) governed by international law. The Vienna Convention on the Law of Treaties 1969 sets the rules on making, interpreting, reserving, invalidating and ending treaties. In the UK, treaties need legislation to take effect domestically.
@@ -452,6 +582,16 @@ Q: What does pacta sunt servanda mean? | Every treaty in force binds the parties
 Q: How long must most treaties be laid before Parliament before ratification? | 21 sitting days (CRAG Act 2010).
 M1#law-u14-14-q1@1: Which article of the VCLT sets the general rule of treaty interpretation? | Article 31 | Article 26 | Article 53 | Article 60 | Article 2 | Article 31 sets the general rule of interpretation.
 M2#law-u14-14-q2@2: A state argues it needn't perform a treaty because its own parliament has passed a conflicting law. Is this a valid excuse? | No: internal law can't justify non-performance | Yes, if the law is later | Yes, if the treaty is old | Only with the UN's consent | Yes, under pacta sunt servanda | Article 27 VCLT forbids relying on internal law.
+Q: What is a treaty? | A written agreement between states or international organisations governed by international law.
+Q: What is a reservation to a treaty? | A unilateral statement excluding or modifying the legal effect of treaty provisions for the reserving state.
+Q: What is ratification? | A state's formal consent to be bound by a treaty.
+Q: What does Article 27 VCLT provide? | A state can't invoke its internal law to justify not performing a treaty.
+Q: What supplementary means of treaty interpretation does Article 32 VCLT allow? | Supplementary means such as preparatory work.
+Q: When is a reservation not permitted? | When it is incompatible with the treaty's object and purpose.
+Q: Name two grounds on which a treaty may be invalid. | Coercion or conflict with jus cogens (art 53).
+Q: Name three ways a treaty can be terminated. | By its terms, consent, material breach (art 60) or fundamental change of circumstances (art 62).
+Q: What kind of power is treaty-making in the UK? | A prerogative power.
+Q: What happened in JH Rayner v Department of Trade and Industry? | Creditors of the International Tin Council couldn't enforce its debts against member states, as the treaty was unincorporated.
 
 ## Customary international law
 S: Customary international law arises from general state practice accepted as law (opinio juris). It binds all states, except persistent objectors, and in the UK is part of the common law unless inconsistent with statute.
@@ -483,6 +623,16 @@ Q: What two elements make customary international law? | State practice and opin
 Q: Can the courts create a domestic crime from customary international law? | No (R v Jones (Margaret)).
 M1#law-u14-15-q1@1: Which ICJ case discussed the requirements of state practice and opinio juris? | North Sea Continental Shelf | Lotus | Chorzów Factory | Barcelona Traction | Corfu Channel | North Sea Continental Shelf [1969] ICJ Rep 3.
 M2#law-u14-15-q2@2: Protesters damage a military base, claiming they were preventing the crime of aggression under customary law. What did the House of Lords decide in a similar case? | Aggression isn't a crime in domestic law without statute | Aggression is a domestic crime automatically | Customary law always overrides statute | The protesters had a complete defence | The case must go to the ICC | R v Jones (Margaret) [2006] UKHL 16: only Parliament can create domestic crimes.
+Q: What is customary international law? | Law arising from general state practice accepted as law (opinio juris).
+Q: What is state practice? | The consistent conduct of states, including their actions and statements.
+Q: What is opinio juris? | The belief that a practice is legally required, not followed from courtesy or convenience.
+Q: What is a persistent objector? | A state that consistently objects to an emerging rule while it is forming, and so may not be bound.
+Q: How extensive must state practice be to form custom? | Extensive and virtually uniform, including that of specially affected states.
+Q: What did Nicaragua v USA say about inconsistent state conduct? | Inconsistent conduct treated as a breach can confirm the rule.
+Q: Which case recognised the persistent objector rule? | Anglo-Norwegian Fisheries (UK v Norway) [1951].
+Q: Can a persistent objector escape a jus cogens norm? | No; the persistent objector exception doesn't apply to jus cogens.
+Q: What did Trendtex v Central Bank of Nigeria decide? | Customary international law is part of the common law, and the bank had no immunity under the restrictive doctrine.
+Q: What is the common mistake about creating custom? | Assuming widespread practice alone creates custom without opinio juris.
 
 ## State responsibility
 S: A state is responsible under international law for its internationally wrongful acts. The International Law Commission's Articles on State Responsibility (2001) set out when conduct is attributable to a state, when wrongfulness is precluded, and what reparation is owed.
@@ -515,6 +665,16 @@ Q: What are the two elements of an internationally wrongful act? | Conduct attri
 Q: What forms does reparation take? | Restitution, compensation and satisfaction.
 M1#law-u14-16-q1@1: Which case set out the principle of full reparation? | Factory at Chorzów | Nicaragua v USA | Lotus | Barcelona Traction | North Sea Continental Shelf | Chorzów Factory (1928) established full reparation.
 M3#law-u14-16-q2@2: Rebels funded and armed by State A attack civilians in State B, but State A doesn't direct their operations. Are the attacks attributable to State A? | Not without effective control over the operations | Yes: funding is enough | Yes: arming is enough | Only if the UN agrees | Always, under jus cogens | Nicaragua required effective control for attribution.
+Q: What is an internationally wrongful act? | Conduct attributable to a state that breaches an international obligation.
+Q: What is attribution in state responsibility? | Treating conduct as the act of a state.
+Q: Which instrument sets out the rules on state responsibility? | The International Law Commission's Articles on State Responsibility (2001).
+Q: Are ultra vires acts of state organs attributable to the state? | Yes, if done in an official capacity (arts 4 and 7).
+Q: When is the conduct of private persons attributable to a state under art 8? | When they act on its instructions or under its direction or control, requiring effective control of the operations.
+Q: Name four circumstances precluding wrongfulness. | Consent, self-defence, countermeasures, force majeure, distress and necessity.
+Q: Can circumstances precluding wrongfulness excuse a breach of jus cogens? | No.
+Q: What is diplomatic protection? | A state espousing its nationals' claims against another state, after local remedies are exhausted.
+Q: What did Nicaragua v USA decide about the contras? | The US wasn't responsible for their acts because it lacked effective control.
+Q: What is the common mistake about attributing private groups' acts to states? | Attributing them without showing effective control.
 
 ## International courts
 S: International courts and tribunals settle disputes and develop international law. The International Court of Justice decides disputes between states and gives advisory opinions; other bodies include the International Criminal Court, the International Tribunal for the Law of the Sea, human rights courts, and WTO dispute settlement.
@@ -547,6 +707,16 @@ Q: Who can be parties to contentious cases before the ICJ? | Only states.
 Q: Are ICJ advisory opinions binding? | No, though they carry significant weight.
 M1#law-u14-17-q1@1: Which ICJ Statute provision allows states to accept compulsory jurisdiction by declaration? | Article 36(2) | Article 38(1) | Article 59 | Article 65 | Article 94 | Article 36(2) ICJ Statute is the optional clause accepting compulsory jurisdiction.
 M2#law-u14-17-q2@2: A company wants to sue a foreign state at the ICJ for expropriating its assets. Can it? | No: only states can be parties | Yes, as of right | Yes, with the UK's permission | Only through the ICC | Only via an advisory opinion | The ICJ's contentious jurisdiction is limited to states; the company may need diplomatic protection or investment arbitration.
+Q: What is the ICJ's contentious jurisdiction? | Its power to decide disputes between consenting states.
+Q: What is the optional clause? | A declaration under Article 36(2) ICJ Statute accepting the ICJ's compulsory jurisdiction.
+Q: What is an advisory opinion? | A non-binding ICJ opinion requested by authorised UN bodies.
+Q: Where does the ICJ sit, and how many judges does it have? | The Hague, with 15 judges.
+Q: Name three ways a state can consent to ICJ jurisdiction. | Special agreement, a treaty clause, or optional clause declarations.
+Q: Which provisions make ICJ judgments binding on the parties? | Article 59 ICJ Statute and Article 94 UN Charter.
+Q: What did the Chagos advisory opinion conclude? | Decolonisation wasn't lawfully completed, and the UK should end its administration as quickly as possible.
+Q: What does ITLOS decide? | Law of the sea disputes.
+Q: What has happened to the WTO Appellate Body since 2019? | It has been unable to hear appeals.
+Q: What does the Permanent Court of Arbitration do? | It administers inter-state and investor-state arbitrations.
 
 ## Jurisdiction in international law
 S: Jurisdiction in international law concerns a state's power to make, apply and enforce laws. States may legislate on recognised bases such as territory and nationality, but enforcement is generally territorial. Immunities protect foreign states and diplomats from local courts.
@@ -580,6 +750,16 @@ Q: Which crimes attract universal jurisdiction? | Grave crimes such as piracy, t
 Q: Is a foreign state immune in the UK for commercial transactions? | No (State Immunity Act 1978, s 3).
 M1#law-u14-18-q1@1: Which Act gives effect to the Vienna Convention on Diplomatic Relations in the UK? | Diplomatic Privileges Act 1964 | State Immunity Act 1978 | International Criminal Court Act 2001 | Human Rights Act 1998 | CRAG Act 2010 | The 1964 Act gives effect to the 1961 Convention.
 M2#law-u14-18-q2@2: A UK company sues a foreign state for unpaid invoices under a contract to supply office equipment. Can the state claim immunity? | Probably not: commercial transaction exception | Yes: states are always immune | Only if the contract was signed abroad | Only through diplomatic channels | Yes, under the Lotus principle | Section 3 removes immunity for commercial transactions.
+Q: What is prescriptive jurisdiction? | The power to make laws applying to persons or conduct.
+Q: What is restrictive immunity? | State immunity covering sovereign acts but not commercial acts.
+Q: What is objective territoriality? | Jurisdiction over acts having effects within the state.
+Q: What is passive personality jurisdiction? | Jurisdiction over acts committed against a state's nationals.
+Q: What is protective jurisdiction? | Jurisdiction over acts threatening the state's security.
+Q: Can a state enforce its laws in another state's territory? | Not without that state's consent; enforcement is generally territorial.
+Q: What did the Lotus Case suggest about state jurisdiction? | States are free to act unless a rule of international law prohibits it, though this is now much qualified.
+Q: What did Benkharbouche v Embassy of Sudan decide? | Some State Immunity Act provisions were incompatible with Article 6 for embassy employment claims.
+Q: Which section of the State Immunity Act 1978 concerns employment contracts? | Section 4.
+Q: What is the common mistake about foreign state immunity? | Assuming a foreign state is always immune, even for commercial contracts.
 
 ## International human rights
 S: International human rights law imposes obligations on states through treaties and custom, enforced mainly through monitoring rather than courts. This lesson focuses on how those obligations bind the UK and how they are enforced internationally, including refugee protection.
@@ -612,6 +792,16 @@ Q: Which article of the Refugee Convention prohibits refoulement? | Article 33.
 Q: Are UN treaty body views binding on UK courts? | No; they are influential but not binding.
 M1#law-u14-19-q1@1: Which article of the Refugee Convention defines a refugee? | Article 1A | Article 33 | Article 3 | Article 14 | Article 31 | Article 1A sets out the refugee definition.
 M2#law-u14-19-q2@2: The UK plans to send an asylum seeker to a third country with a real risk of onward return to persecution. Which principle is engaged? | Non-refoulement | Subsidiarity | Supremacy | Direct effect | Pacta sunt servanda | AAA applied non-refoulement to the Rwanda policy.
+Q: What is a treaty body? | A committee of experts monitoring state compliance with a human rights treaty.
+Q: Who is a refugee under the Refugee Convention? | A person outside their country with a well-founded fear of persecution for a Convention reason.
+Q: How are international human rights obligations mainly enforced? | Through monitoring, such as state reporting, rather than courts.
+Q: What do treaty bodies issue after reviewing state reports? | Concluding observations.
+Q: How many individual complaint mechanisms does the UK accept? | Few.
+Q: Which international human rights mechanisms give binding judgments? | Regional courts, such as the European Court of Human Rights.
+Q: Which instruments form the core of refugee protection? | The Refugee Convention 1951 and its 1967 Protocol.
+Q: Why did R (AAA) v Secretary of State for the Home Department hold the Rwanda policy unlawful? | Because of a real risk of refoulement.
+Q: Which recent statutes changed the UK asylum framework? | The Nationality and Borders Act 2022 and the Illegal Migration Act 2023.
+Q: Why should asylum law be checked before advising? | It changes frequently, so current legislation must be checked.
 
 ## International dispute resolution
 S: International disputes can be resolved by diplomatic means or by legal methods. The UN Charter requires states to settle disputes peacefully. Options include negotiation, mediation, inter-state arbitration, the ICJ, investor-state arbitration and international commercial arbitration.
@@ -644,4 +834,14 @@ Q: Which article of the UN Charter lists methods of peaceful settlement? | Artic
 Q: What does the New York Convention 1958 provide? | Recognition and enforcement of foreign arbitral awards.
 M1#law-u14-20-q1@1: Which body administered the Chagos Marine Protected Area arbitration? | The Permanent Court of Arbitration | The ICJ | ICSID | The WTO | The ICC | The PCA administers many inter-state arbitrations.
 M2#law-u14-20-q2@2: A UK company and a Brazilian company want a neutral, binding and internationally enforceable way to resolve contract disputes. What should their contract provide? | International commercial arbitration | ICJ jurisdiction | WTO dispute settlement | A UN advisory opinion | Diplomatic protection | Arbitration awards are enforceable under the New York Convention.
+Q: What is the obligation of peaceful settlement? | The duty to settle disputes without force (UN Charter, arts 2(3) and 33).
+Q: What is investor-state dispute settlement? | Arbitration between foreign investors and host states under investment treaties.
+Q: Name four methods of peaceful settlement in Article 33 UN Charter. | Negotiation, enquiry, mediation, conciliation, arbitration, judicial settlement and regional bodies.
+Q: Where is investor-state arbitration often held? | At ICSID.
+Q: Why did the UK withdraw from the Energy Charter Treaty? | Partly because of concerns about investor claims against climate policy; withdrawal was effective in 2025.
+Q: In how many states are arbitral awards enforceable under the New York Convention? | Over 170 states.
+Q: Which statutes govern arbitration seated in London? | The Arbitration Act 1996, as amended by the Arbitration Act 2025.
+Q: How are UK-EU disputes resolved? | Through the TCA's own dispute mechanisms.
+Q: What factor guides the choice of dispute resolution method? | The parties and the need for a binding, enforceable outcome.
+Q: What is the common mistake about investor-state arbitration? | Assuming any foreign investor can use it without an applicable treaty.
 `;

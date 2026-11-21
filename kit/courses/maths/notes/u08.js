@@ -34,6 +34,16 @@ SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | text
 NUM1#maths-u08-01-q1@1: For f(x, y) = x^{3}y^{2}, find f_{xy} at (1, 1). | 6 | 0 |  | f_{x} = 3x^{2}y^{2}, then f_{xy} = 6x^{2}y = 6 at (1, 1).
 M1#maths-u08-01-q2@1: What is ∂/∂x of x^{2}y + y^{3}? | 2xy | x^{2} + 3y^{2} | 2x + 3y^{2} | 2xy + 3y^{2} | x^{2}y | Treat y as a constant: the y^{3} term vanishes and x^{2}y gives 2xy.
 M2#maths-u08-01-q3@2: Why does xy/(x^{2} + y^{2}) have no limit at (0, 0)? | Different paths give different values: 0 on the axes, ½ on y = x | It's undefined at every point | The numerator grows faster | Both partials are infinite there | It does have a limit of 0 | A limit must be the same along every path of approach.
+Q: What is a partial derivative ∂f/∂x? | The rate of change of f as x varies with the other variables held fixed.
+Q: What is the tangent plane to z = f(x, y) at (a, b)? | z = f(a, b) + f_{x}(a, b)(x − a) + f_{y}(a, b)(y − b).
+Q: What are two ways to picture f(x, y)? | As a surface z = f(x, y), or by level curves f(x, y) = c on a contour map.
+Q: What must be true for a limit of f(x, y) to exist? | It must agree along every path to the point.
+Q: How do you find a partial derivative with respect to x? | Differentiate with respect to x, treating the other variables as constants.
+Q: Name the second partial derivatives of f(x, y). | f_{xx}, f_{yy} and the mixed f_{xy} and f_{yx}.
+Q: What is the linear approximation for the change in f(x, y)? | Δf ≈ f_{x}Δx + f_{y}Δy.
+Q: What practical use does the linear approximation Δf ≈ f_{x}Δx + f_{y}Δy have? | Error propagation in measurements.
+Q: What are critical points of f(x, y), and how are they classified? | Points where both partials are zero, classified with the Hessian.
+Q: For f = x^{2}y + 3xy^{2}, what are f_{x} and f_{y} at (1, 2)? | f_{x} = 16 and f_{y} = 13.
 
 ## Directional Derivatives
 S: A directional derivative measures how fast a function changes as you move in any chosen direction, not just along the axes. It's the gradient dotted with a unit vector, and it explains why the gradient points uphill.
@@ -69,6 +79,16 @@ SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | textbook | 1969 | https
 NUM1#maths-u08-02-q1@1: For f = x^{2} + y^{2} at (1, 2), find the greatest rate of increase, to 3 decimal places. | 4.472 | 0.001 |  | |∇f| = |(2, 4)| = √20 ≈ 4.472.
 M1#maths-u08-02-q2@1: ∇f = (3, 4) at a point. What is the rate of change in the direction (0, 1)? | 4 | 3 | 5 | 7 | 0 | (0, 1) is already a unit vector, and (3, 4) · (0, 1) = 4.
 M2#maths-u08-02-q3@2: ∇f = (6, 8) at P. What is the rate of change in the direction of (−8, 6)? | 0, since it's perpendicular to ∇f | 10, the length of the gradient | −10, the steepest descent | 14, the sum of components | 2, the difference of components | (6, 8) · (−8, 6) = −48 + 48 = 0: that direction runs along the level curve.
+Q: What is a directional derivative? | D_{u}f = ∇f · u, the rate of change of f in the direction of the unit vector u.
+Q: How do you make a unit vector from any vector? | Divide it by its length.
+Q: What are the steps to compute a directional derivative? | Find ∇f at the point, turn the direction into a unit vector u, then take the dot product.
+Q: How is D_{u}f written using the angle θ between ∇f and u? | The magnitude of ∇f times cos θ.
+Q: In which direction does f increase fastest, and at what rate? | In the direction of ∇f, at a rate equal to the magnitude of ∇f.
+Q: In which direction is the rate of change of f zero? | Perpendicular to ∇f, along the level curve.
+Q: Why does the steepest path on a contour map cross contours at right angles? | The steepest direction is ∇f, which is perpendicular to level curves.
+Q: Which direction does gradient descent move in? | −∇f.
+Q: For f = x^{2} + y^{2} at (1, 2), what is the rate of change in the direction (3, 4)? | 22/5 = 4.4.
+Q: What do directional derivatives reduce to along the axes? | The partial derivatives.
 
 ## Gradient
 S: The gradient ∇f collects all the partial derivatives of a function into a vector. It points in the direction of steepest increase, is perpendicular to level curves and surfaces, and is the basis of optimisation algorithms and conservative force fields.
@@ -103,6 +123,16 @@ SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | text
 NUM1#maths-u08-03-q1@1: Find |∇f| for f(x, y) = 3x + 4y. | 5 | 0 |  | ∇f = (3, 4) everywhere, with length √(9 + 16) = 5.
 M1#maths-u08-03-q2@1: Which vector is normal to the sphere x^{2} + y^{2} + z^{2} = 9 at (1, 2, 2)? | (2, 4, 4) | (1, −2, 2) | (2, −1, 0) | (0, 2, −2) | (1, 1, 1) | ∇(x^{2} + y^{2} + z^{2}) = (2x, 2y, 2z) = (2, 4, 4), along the radius.
 M2#maths-u08-03-q3@2: What does one step of gradient descent do? | Moves x a small step in the direction −∇f(x) | Moves x along a level curve of f | Sets x to the point where f is largest | Moves x in the direction +∇f(x) | Doubles the gradient each time | Stepping against the gradient decreases f fastest locally.
+Q: What is the gradient of f? | ∇f = (∂f/∂x, ∂f/∂y, ∂f/∂z), the vector of partial derivatives.
+Q: What is a conservative field? | A vector field F = ∇φ for some scalar potential φ.
+Q: How is ∇f related to level curves and surfaces? | It is perpendicular to the level curve or surface through each point.
+Q: What is the tangent plane to F(x, y, z) = c at P? | ∇F(P) · (x − P) = 0.
+Q: What do closely spaced contours tell you about the gradient? | The gradient is large: the function is steep there.
+Q: How are gravitational and electric fields related to potentials? | They are gradients of potentials, with a minus sign.
+Q: What is special about the work done by a conservative field? | It is independent of path.
+Q: What is one step of gradient descent? | x ← x − η∇f(x).
+Q: State the chain rule for f along a path r(t). | d/dt f(r(t)) = ∇f · r′(t).
+Q: What mistake is made with the gradient and level curves? | Using the gradient as a tangent direction instead of a normal to the level curve.
 
 ## Multiple Integrals
 S: Multiple integrals add up quantities over areas and volumes: mass from density, probability from a joint density, average temperature over a region. They're computed as repeated single integrals, one variable at a time.
@@ -136,6 +166,16 @@ SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | textbook | 1969 | https
 NUM1#maths-u08-04-q1@1: Find the average value of f(x, y) = x + y over the square 0 ≤ x, y ≤ 2. | 2 | 0 |  | ∬(x + y) dA = 8 and the area is 4, giving an average of 2.
 M1#maths-u08-04-q2@1: What does ∬_{R} ρ(x, y) dA give if ρ is a density in kg per m^{2}? | The total mass of the plate in kg | The plate's average density | The plate's area in m^{2} | The plate's centre of mass | The density's maximum value | Integrating mass per unit area over the region gives total mass.
 M2#maths-u08-04-q3@2: Why can ∬ e^{x} sin y dA over a rectangle be computed as a product of two integrals? | The integrand separates into a function of x times a function of y | Every double integral splits this way | e^{x} and sin y are both periodic | The rectangle has equal sides | It can't be split | For f = g(x)h(y) on a rectangle, ∬ f dA = (∫ g dx)(∫ h dy).
+Q: What is a double integral ∬_{R} f dA? | The limit of Riemann sums of f over small rectangles in R.
+Q: What does Fubini's theorem say? | For continuous f on a rectangle, ∬ f dA equals either iterated integral.
+Q: How is a multiple integral computed in practice? | As repeated single integrals, one variable at a time.
+Q: When do the inner limits of a double integral depend on the outer variable? | When the region isn't a rectangle.
+Q: What does ∬ f dA represent when f ≥ 0? | The volume under the surface.
+Q: How is mass found from a density over a region? | Mass = ∬ density dA.
+Q: How are probabilities found from a joint density? | Integrate the joint density over the event.
+Q: How can ∬ g(x)h(y) dA be computed over a rectangle? | As the product (∫g dx)(∫h dy).
+Q: What is ∬ 6xy dA over 0 ≤ x ≤ 1, 0 ≤ y ≤ 2? | 6.
+Q: Where is the separable shortcut common? | In probability with independent variables.
 
 ## Double Integrals
 S: Double integrals over general regions need careful limits, and some become easy only after swapping the order of integration or switching to polar coordinates. Polar coordinates even evaluate the famous Gaussian integral.
@@ -170,6 +210,16 @@ SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Enginee
 NUM1#maths-u08-05-q1@1: Use polar coordinates to find the area of a disc of radius 3, to 2 decimal places. | 28.27 | 0.01 |  | ∫₀^{2π}∫₀³ r dr dθ = 2π × 9/2 = 9π ≈ 28.27.
 M1#maths-u08-05-q2@1: What are the limits for ∬ over the region between y = x^{2} and y = x, integrating dy first? | x from 0 to 1, y from x^{2} to x | x from 0 to 1, y from x to x^{2} | x from −1 to 1, y from 0 to 1 | y from 0 to 1, x from x^{2} to x | x from 0 to 2, y from x^{2} to 2x | The curves meet at x = 0 and 1, and x ≥ x^{2} between them.
 M3#maths-u08-05-q3@2: Why reverse the order in ∫₀¹∫_{y}¹ e^{x^{2}} dx dy? | e^{x^{2}} has no elementary antiderivative in x, but after swapping the inner integral is in y | Reversing always makes integrals smaller | The original limits are wrong | Polar coordinates would be needed otherwise | The integral is zero either way | Swapping gives ∫₀¹ x e^{x^{2}} dx = (e − 1)/2, which is elementary.
+Q: What is a type I region? | a ≤ x ≤ b, g₁(x) ≤ y ≤ g₂(x), integrated dy then dx.
+Q: What is a type II region? | One described by horizontal strips, integrated dx then dy.
+Q: What is the polar area element? | dA = r dr dθ.
+Q: What should you do first when setting limits for a general region? | Sketch the region and decide which variable runs between constants.
+Q: Why reverse the order of integration? | It can turn an impossible inner integral into an easy one.
+Q: What is ∫₀¹∫_{y}¹ e^{x^{2}} dx dy after reversing the order? | (e − 1)/2.
+Q: When are polar coordinates ideal? | For discs, annuli, sectors and integrands involving x^{2} + y^{2}.
+Q: How is the Gaussian integral evaluated? | Square it to get ∬ e^{−(x^{2}+y^{2})} dA, which is π in polar coordinates, so I = √π.
+Q: What is ∬ xy dA over the triangle 0 ≤ y ≤ x ≤ 1? | 1/8.
+Q: Which constant of the normal distribution comes from the Gaussian integral? | 1/√(2π).
 
 ## Triple Integrals
 S: Triple integrals add up quantities over solid regions: volume, mass and centre of mass. Cylindrical and spherical coordinates make them manageable for cylinders, cones and balls.
@@ -206,6 +256,16 @@ SRC: Boas ML, Mathematical Methods in the Physical Sciences (3rd edn, Wiley 2006
 NUM1#maths-u08-06-q1@1: Evaluate ∭ xyz dV over the unit cube [0, 1]^{3}. | 0.125 | 0.0001 |  | The integral separates: (½)(½)(½) = 1/8.
 M1#maths-u08-06-q2@1: Which coordinates suit a solid cylinder of radius 2 and height 5? | Cylindrical | Spherical | Polar in 2D only | Cartesian with no change | Elliptic | A cylinder about the z-axis is simply 0 ≤ r ≤ 2, 0 ≤ z ≤ 5.
 M2#maths-u08-06-q3@2: A solid has constant density. Where is its centre of mass if it's symmetric about the z-axis? | On the z-axis | At the origin always | At its highest point | On the x-axis | Outside the solid | Symmetry makes the x and y moments cancel, so x̄ = ȳ = 0.
+Q: What are cylindrical coordinates? | (r, θ, z), with dV = r dr dθ dz.
+Q: What is dV in spherical coordinates? | ρ^{2} sin φ dρ dφ dθ.
+Q: How is x written in spherical coordinates? | x = ρ sin φ cos θ.
+Q: How is the centre of mass x̄ of a solid found? | x̄ = (1/M) ∭ xρ dV.
+Q: Which coordinates suit balls and cones from the origin? | Spherical coordinates.
+Q: What is the moment of inertia integral? | I = ∭ r_{⊥}^{2} ρ dV.
+Q: How do triple integrals give the volume of a ball of radius R? | ∫₀^{2π}∫₀^{π}∫₀^{R} ρ^{2} sin φ dρ dφ dθ = 4πR^{3}/3.
+Q: What is the volume of a cone of height h and base radius a from cylindrical coordinates? | πa^{2}h/3.
+Q: How do you describe a solid before integrating? | With nested inequalities, from the innermost variable outwards.
+Q: What mistake is made with φ in spherical coordinates? | Letting it run from 0 to 2π; it runs from 0 to π.
 
 ## Jacobians
 S: The Jacobian matrix collects all first partial derivatives of a transformation, and its determinant measures how the transformation stretches area or volume. It's the key to changing variables in integrals and to inverting functions locally.
@@ -241,6 +301,16 @@ SRC: Apostol TM, Mathematical Analysis (2nd edn, Addison-Wesley 1974) | textbook
 NUM1#maths-u08-07-q1@1: Find the Jacobian determinant of x = 2u + v, y = u + 3v. | 5 | 0 |  | det [[2, 1], [1, 3]] = 6 − 1 = 5.
 M1#maths-u08-07-q2@1: What does |det J| = 3 mean for a transformation at a point? | Small areas near the point are tripled | Lengths are tripled in every direction | The map is not invertible there | Angles are tripled | The function value is 3 | The Jacobian determinant is the local area scaling factor.
 M2#maths-u08-07-q3@2: When does the inverse function theorem guarantee a local inverse? | When the Jacobian determinant is non-zero at the point | When the Jacobian is the identity matrix | When all partial derivatives are positive | When the map is linear only | When the determinant is negative | det J ≠ 0 means the linear approximation is invertible, and so is the map nearby.
+Q: What is the Jacobian matrix of (x, y) = T(u, v)? | [[∂x/∂u, ∂x/∂v], [∂y/∂u, ∂y/∂v]].
+Q: What does the Jacobian determinant measure? | The factor by which the transformation scales small areas; its sign shows orientation.
+Q: What is the Jacobian determinant for spherical coordinates? | ρ^{2} sin φ.
+Q: What is the Jacobian of a linear map? | The matrix itself.
+Q: What does a small rectangle du × dv map to? | Roughly a parallelogram of area equal to the absolute value of det J times du dv.
+Q: What does det J < 0 mean? | The transformation reverses orientation.
+Q: What does the inverse function theorem state? | If det J ≠ 0 at a point, the map has a smooth local inverse there.
+Q: What is the Jacobian of the inverse map? | The inverse matrix of the Jacobian.
+Q: What is det J for x = u + v, y = u − v? | −2: areas double and orientation reverses.
+Q: Where else do Jacobians appear? | In Newton's method for systems and in robotics.
 
 ## Change of Variables
 S: Changing variables in a multiple integral replaces awkward regions or integrands with simple ones, at the cost of a Jacobian factor. It's how polar, cylindrical and spherical coordinates work, and it handles ellipses, parallelograms and more.
@@ -274,6 +344,16 @@ SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | text
 NUM1#maths-u08-08-q1@1: Find the area of the ellipse x^{2}/9 + y^{2}/4 ≤ 1, to 2 decimal places. | 18.85 | 0.01 |  | πab = π × 3 × 2 = 6π ≈ 18.85.
 M1#maths-u08-08-q2@1: With u = x + y and v = x − y, what is |∂(x, y)/∂(u, v)|? | ½ | 2 | 1 | −2 | 4 | ∂(u, v)/∂(x, y) = −2, so the inverse Jacobian has absolute value ½.
 M2#maths-u08-08-q3@2: A region is bounded by xy = 1, xy = 4, y = x and y = 2x. Which substitution helps? | u = xy, v = y/x | u = x + y, v = x − y | Polar coordinates centred at the origin | u = x^{2}, v = y^{2} | Spherical coordinates | Each boundary becomes a constant: u from 1 to 4 and v from 1 to 2.
+Q: State the change of variables formula for double integrals. | ∬_{R} f dx dy = ∬_{S} f(x(u, v), y(u, v)) times the absolute Jacobian ∂(x, y)/∂(u, v), du dv.
+Q: What is the image region S? | The region in the uv-plane that maps onto R.
+Q: How should you choose new variables u and v? | To simplify the region's boundaries or the integrand.
+Q: Which substitution suits a parallelogram bounded by x + y = c and x − y = d? | u = x + y, v = x − y, with absolute Jacobian ½.
+Q: Which substitution turns an ellipse into a disc? | x = ar cos θ, y = br sin θ, with absolute Jacobian abr.
+Q: What is the area of the ellipse x^{2}/a^{2} + y^{2}/b^{2} ≤ 1? | πab.
+Q: How is ∂(x, y)/∂(u, v) related to ∂(u, v)/∂(x, y)? | They are reciprocals.
+Q: How do you check the new region after a change of variables? | Map its boundary curves.
+Q: Where else does the Jacobian appear when transforming variables? | In the density of transformed random variables.
+Q: What mistakes are made when changing variables? | Forgetting the Jacobian factor, or not converting the limits.
 
 ## Vector Calculus
 S: Vector calculus studies vector fields, such as wind velocity, electric fields and fluid flow, using three differential operators (gradient, divergence and curl) and integral theorems that link them. It's the mathematical language of electromagnetism and fluid dynamics.
@@ -308,6 +388,16 @@ SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge Universit
 NUM1#maths-u08-09-q1@1: For F = (x^{2}, y^{2}, z^{2}), find ∇ · F at (1, 1, 1). | 6 | 0 |  | ∇ · F = 2x + 2y + 2z = 6 at (1, 1, 1).
 M1#maths-u08-09-q2@1: Which operator takes a scalar field to a vector field? | The gradient | The divergence | The Laplacian | The line integral | The determinant | The gradient ∇f turns a scalar field into a vector field, one vector at each point.
 M3#maths-u08-09-q3@2: Why must a gradient field be irrotational? | curl(∇f) = 0 because mixed partial derivatives are equal | Gradients are always constant | All vector fields are irrotational | Gradients have zero divergence | Gradient fields can't be differentiated | Each curl component is a difference of equal mixed partials, like f_{xy} − f_{yx}.
+Q: What is a vector field? | A function assigning a vector to each point, such as F(x, y, z) = (P, Q, R).
+Q: What is the del operator? | ∇ = (∂/∂x, ∂/∂y, ∂/∂z), used to write ∇f, ∇ · F and ∇ × F.
+Q: What does divergence take as input and output? | A vector field in, a scalar field out: net outflow per unit volume.
+Q: What does curl measure? | Rotation of a vector field; it takes a vector field to a vector field.
+Q: What is the Laplacian in terms of other operators? | ∇^{2}f = ∇ · ∇f, the divergence of the gradient.
+Q: What is curl(grad f)? | Zero: gradient fields are irrotational.
+Q: State the product rule for ∇ · (fF). | ∇ · (fF) = ∇f · F + f ∇ · F.
+Q: What do the integral theorems of vector calculus all say? | Integrating a derivative over a region equals integrating the field over the boundary.
+Q: Which physical laws are written in vector calculus? | Maxwell's equations of electromagnetism, four statements in this language.
+Q: What mistake is made with grad and curl in elementary vector calculus? | Taking the curl of a scalar or the gradient of a vector field.
 
 ## Divergence
 S: The divergence of a vector field measures how much it spreads out from a point: positive at sources, negative at sinks, zero for an incompressible flow. It's central to fluid dynamics, heat flow and Gauss's law for electric fields.
@@ -343,6 +433,16 @@ SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge Universit
 NUM1#maths-u08-10-q1@1: Find ∇ · F for F = (3x, −2y, 5z). | 6 | 0 |  | 3 − 2 + 5 = 6.
 M1#maths-u08-10-q2@1: A flow has negative divergence at a point. What is happening there? | Fluid is converging: the point acts as a sink | Fluid is spreading out from a source | The fluid is rotating without spreading | The flow is incompressible there | The velocity is zero | Negative divergence means net inflow per unit volume.
 M2#maths-u08-10-q3@2: Which field is solenoidal (divergence-free)? | (y, z, x) | (x, y, z) | (x^{2}, 0, 0) | (x, 0, 0) | (0, y^{2}, 0) | Each component is independent of its own variable: ∂y/∂x + ∂z/∂y + ∂x/∂z = 0 + 0 + 0.
+Q: What is the divergence of F = (P, Q, R)? | ∂P/∂x + ∂Q/∂y + ∂R/∂z.
+Q: What is a solenoidal field? | A field with zero divergence everywhere.
+Q: What is the divergence of F = (x, y, z)? | 3: the field spreads out from the origin.
+Q: What does positive divergence at a point indicate? | A source: the field spreads out there.
+Q: How is divergence defined as a limit? | Flux out of a small closed surface divided by its volume, as the surface shrinks to the point.
+Q: What is the divergence of the velocity of an incompressible fluid? | Zero.
+Q: State the continuity equation. | ∂ρ/∂t + ∇ · (ρv) = 0, expressing conservation of mass.
+Q: What is Gauss's law in divergence form? | ∇ · E = ρ/ε₀: charges are sources of electric field.
+Q: What is the divergence of F = (xy, yz, zx) at (1, 2, 3)? | 6, so the point is a source.
+Q: What mistake is made when computing divergence? | Differentiating a component with respect to the wrong variable.
 
 ## Curl
 S: The curl of a vector field measures its local rotation: the axis and strength of the swirl a tiny paddle wheel would feel. It describes vorticity in fluids and the relationship between electric and magnetic fields.
@@ -377,6 +477,16 @@ SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | text
 NUM1#maths-u08-11-q1@1: For F = (y^{2}, x^{2}, 0), find the k-component of curl F at (1, 2). | -2 | 0 |  | ∂Q/∂x − ∂P/∂y = 2x − 2y = 2 − 4 = −2.
 M1#maths-u08-11-q2@1: Which field is irrotational? | (2x, 2y, 2z) | (−y, x, 0) | (y, 0, 0) | (0, x, 0) | (z, 0, −x) | (2x, 2y, 2z) = ∇(x^{2} + y^{2} + z^{2}), and gradients have zero curl.
 M2#maths-u08-11-q3@2: The shear flow v = (y, 0, 0) has straight streamlines. What is its curl? | (0, 0, −1), so it still rotates small paddles | (0, 0, 0), because the lines are straight | (1, 0, 0), along the flow | (0, 1, 0), across the flow | (0, 0, 1), anticlockwise | ∂Q/∂x − ∂P/∂y = 0 − 1 = −1: faster flow on one side spins a paddle wheel.
+Q: What is the curl of F = (P, Q, R)? | (∂R/∂y − ∂Q/∂z, ∂P/∂z − ∂R/∂x, ∂Q/∂x − ∂P/∂y).
+Q: What is an irrotational field? | A field with zero curl everywhere.
+Q: In 2D, which part of the curl matters? | Only the k-component, ∂Q/∂x − ∂P/∂y.
+Q: How is the curl computed as a determinant? | Expand with rows (i, j, k), (∂/∂x, ∂/∂y, ∂/∂z) and (P, Q, R).
+Q: What does curl measure physically? | The axis and strength of the swirl a tiny paddle wheel would feel.
+Q: What is vorticity? | The curl of the velocity field of a fluid.
+Q: What is the curl of the shear flow (y, 0, 0)? | (0, 0, −1), even though its streamlines are straight.
+Q: When does zero curl mean a field is conservative? | On a simply connected region: curl F = 0 iff F = ∇φ.
+Q: State Faraday's law in curl form. | ∇ × E = −∂B/∂t: changing magnetic fields create circulating electric fields.
+Q: What does the curl component along n give? | Circulation per unit area around n, as in Stokes' theorem.
 
 ## Laplacian Operator
 S: The Laplacian ∇^{2}f is the divergence of the gradient: it compares a function's value at a point with its average nearby. It appears in the heat, wave, Laplace and Schrödinger equations, and its solutions (harmonic functions) are remarkably smooth.
@@ -411,6 +521,16 @@ SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Enginee
 NUM1#maths-u08-12-q1@1: Find ∇^{2}(x^{3} + y^{3}) at (1, 1). | 12 | 0 |  | ∇^{2} = 6x + 6y = 12 at (1, 1).
 M1#maths-u08-12-q2@1: Which function is harmonic in the plane? | e^{x} cos y | x^{2} + y^{2} | x^{3} | e^{x} e^{y} | sin x sin y | f_{xx} = e^{x} cos y and f_{yy} = −e^{x} cos y sum to 0.
 M3#maths-u08-12-q3@2: Why can't a non-constant harmonic function have a maximum inside its domain? | Its value equals the average over any small sphere, so it can't exceed all nearby values | Harmonic functions are always linear | Their gradient is never zero | They're unbounded | It can have one | The mean value property rules out strict interior maxima (the maximum principle).
+Q: What is the Laplacian of f? | ∇^{2}f = ∂^{2}f/∂x^{2} + ∂^{2}f/∂y^{2} + ∂^{2}f/∂z^{2}.
+Q: What is a harmonic function? | A function with ∇^{2}f = 0.
+Q: What does ∇^{2}f(P) > 0 mean? | f at P is below its average on small spheres around P: a valley.
+Q: What is the mean value property? | A harmonic function equals the average of its values on any sphere.
+Q: State the heat equation. | ∂u/∂t = k∇^{2}u.
+Q: State the wave equation. | ∂^{2}u/∂t^{2} = c^{2}∇^{2}u.
+Q: What is Poisson's equation in electrostatics? | ∇^{2}φ = −ρ/ε₀.
+Q: What is the Laplacian in 2D polar coordinates? | f_{rr} + (1/r)f_{r} + (1/r^{2})f_{θθ}.
+Q: Which radial function is harmonic in 3D away from the origin? | 1/r.
+Q: What mistake is made when computing a Laplacian? | Including mixed partial derivatives.
 
 ## Line Integrals
 S: A line integral adds up a quantity along a curve: the mass of a wire, or the work done by a force along a path. For conservative fields, the work depends only on the endpoints, a vector version of the fundamental theorem of calculus.
@@ -446,6 +566,16 @@ SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | text
 NUM1#maths-u08-13-q1@1: F = (2x, 2y) is conservative. Find the work done moving from (0, 0) to (3, 4). | 25 | 0 |  | φ = x^{2} + y^{2}, so the work is 25 − 0 = 25.
 M1#maths-u08-13-q2@1: Which quantity is a line integral of a vector field? | The work done by a force along a path | The area enclosed by a curve | The volume under a surface | The flux through a surface | The length of a vector | Work is the line integral ∫ F · dr of the force along the path taken.
 M2#maths-u08-13-q3@2: Why does the work done by gravity on a closed loop equal zero? | Gravity is conservative, so loop integrals of its field vanish | Gravity is zero on average | The path has zero length | Work is always zero | Gravity acts only vertically | A gradient field gives φ(end) − φ(start), which is 0 when they coincide.
+Q: What is the line integral of a vector field along C? | ∫_{C} F · dr = ∫ₐ^{b} F(r(t)) · r′(t) dt, the work done by F along C.
+Q: State the fundamental theorem for line integrals. | ∫_{C} ∇φ · dr = φ(end) − φ(start).
+Q: What is the first step in computing a line integral? | Parametrise C as r(t), a ≤ t ≤ b.
+Q: What does a scalar line integral ∫_{C} f ds give? | Mass of a wire, or arc length when f = 1.
+Q: What is the test for a conservative field? | curl F = 0 on a simply connected region.
+Q: How do you find a potential φ? | Integrate the components and match the results.
+Q: Is friction conservative? | No: the work it does depends on the path.
+Q: What does circulation ∮ F · dr measure? | Rotation around a loop.
+Q: What is ∫_{C} (y, x) · dr along r(t) = (t, t^{2}) from t = 0 to 1? | 1, which matches φ = xy.
+Q: What factor is often forgotten in line integrals? | r′(t), or its length for scalar integrals.
 
 ## Surface Integrals
 S: Surface integrals add up quantities over curved surfaces: the area of a dome, the mass of a shell, or the flux of a fluid or field through a membrane. Flux integrals are the surface version of work integrals.
@@ -480,6 +610,16 @@ SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge Universit
 NUM1#maths-u08-14-q1@1: Find the upward flux of F = (0, 0, 3) through the square 0 ≤ x, y ≤ 2 in the plane z = 0. | 12 | 0 |  | F · k = 3 over an area of 4, giving 12.
 M1#maths-u08-14-q2@1: What is the flux of F = (1, 0, 0) through the square 0 ≤ y, z ≤ 1 in the plane z = 0, with normal k? | 0, because F runs parallel to the surface | 1, the square's area | −1, flowing backwards | 2, counting both sides | π, a circle's area | F · k = 0: the field skims along the plane without crossing it.
 M2#maths-u08-14-q3@2: For the graph z = g(x, y), what is dS? | √(1 + g_{x}^{2} + g_{y}^{2}) dx dy | (1 + g_{x} + g_{y}) dx dy | g_{x}g_{y} dx dy | √(g_{x}^{2} + g_{y}^{2}) dx dy | dx dy only | The cross product of (1, 0, g_{x}) and (0, 1, g_{y}) has that length.
+Q: What is the surface element for a parametrised surface r(u, v)? | The length of r_{u} × r_{v}, times du dv.
+Q: What is flux? | ∬_{S} F · n dS, the rate at which F flows through S along the unit normal n.
+Q: What is dS for a graph z = g(x, y)? | √(1 + g_{x}^{2} + g_{y}^{2}) dx dy.
+Q: What is dS on a cylinder of radius R? | R dθ dz.
+Q: Which orientation is used for closed surfaces? | Outward.
+Q: How is the flux of a constant field through a flat region found? | The component of F along n times the area.
+Q: How is surface area written as a surface integral? | ∬ 1 dS.
+Q: Give two physical uses of flux integrals. | Electric flux in Gauss's law, and heat flux through walls or fluid flow through a membrane.
+Q: How does the sphere parametrisation give its surface area? | ∫₀^{2π}∫₀^{π} R^{2} sin φ dφ dθ = 4πR^{2}.
+Q: Why does orientation matter in a flux integral? | Ignoring it can flip the sign of the flux.
 
 ## Volume Integrals
 S: Volume integrals add a scalar or vector quantity over a three-dimensional region: total mass, charge, energy or the volume itself. In vector calculus they appear on one side of the divergence theorem, balancing flux through the boundary.
@@ -514,6 +654,16 @@ SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge Universit
 NUM1#maths-u08-15-q1@1: A ball of radius 1 has constant density 3. Find its mass, to 2 decimal places. | 12.57 | 0.01 |  | Mass = 3 × 4π/3 = 4π ≈ 12.57.
 M1#maths-u08-15-q2@1: What does ∭_{V} ρ dV give if ρ is charge density? | The total charge in V | The electric field in V | The charge density at the centre | The voltage across V | The surface area of V | Integrating charge per unit volume gives total charge.
 M2#maths-u08-15-q3@2: Fluid mass inside a fixed region is decreasing. What does conservation of mass imply about the boundary? | There's a net outward flux of mass through it | There's a net inward flux through it | The fluid's density must be constant | The boundary's area is shrinking | Nothing about the boundary | The rate of change of ∭ρ dV equals minus the outward flux of ρv.
+Q: What is a volume integral? | ∭_{V} f dV, the total of a scalar density f over a region V.
+Q: What is a density? | A quantity per unit volume, such as mass density ρ in kg/m^{3}.
+Q: How are vector volume integrals computed? | Component by component.
+Q: What is the electrostatic energy volume integral? | (ε₀/2) times the volume integral of the square of the field strength E.
+Q: How is a conservation law written with volume integrals? | The rate of change of ∭ ρ dV equals minus the flux through the boundary.
+Q: State the divergence theorem. | ∭ ∇ · F dV = ∯ F · n dS.
+Q: What is the mass of the cube [0, 2]^{3} with density x + y + z? | 24.
+Q: How do spherical coordinates simplify a radially symmetric density? | ∭ f(ρ) dV = 4π∫ f(ρ)ρ^{2} dρ.
+Q: How should coordinates be chosen for a volume integral? | To match the region: Cartesian, cylindrical or spherical.
+Q: What units mistake is made in volume integrals? | Mixing units, such as a density in g/cm^{3} over a volume in m^{3}.
 
 ## Green's Theorem
 S: Green's theorem links a line integral around a closed plane curve with a double integral over the region inside. It turns circulation into total curl, and it explains how a planimeter measures area by tracing a boundary.
@@ -548,6 +698,16 @@ SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | text
 NUM1#maths-u08-16-q1@1: Use Green's theorem to find ∮ (−y dx + x dy) anticlockwise around the square [0, 1]^{2}. | 2 | 0 |  | The integrand of the double integral is 2, over area 1.
 M1#maths-u08-16-q2@1: By Green's theorem, ∮ (x^{2} dx + y^{2} dy) around any simple closed curve equals what? | 0, since ∂Q/∂x − ∂P/∂y = 0 | The enclosed area | Twice the enclosed area | The curve's length | It depends on the curve | Q_{x} = 0 and P_{y} = 0, so the double integral vanishes.
 M2#maths-u08-16-q3@2: How does a planimeter find the area of a shape? | By tracing the boundary, computing a line integral equal to the area | By counting grid squares inside | By weighing a cut-out shape | By measuring the longest diameter | By using the shape's perimeter squared | Green's theorem turns the area integral into a boundary integral the instrument accumulates.
+Q: State Green's theorem. | ∮_{C} (P dx + Q dy) = ∬_{D} (∂Q/∂x − ∂P/∂y) dA, with C anticlockwise.
+Q: What is positive orientation of a boundary? | Travelling with the region on the left: anticlockwise for the outer boundary.
+Q: What conditions does Green's theorem need? | C simple, closed and piecewise smooth; P and Q with continuous partials on D.
+Q: How are holes handled in Green's theorem? | Include inner boundaries traversed clockwise.
+Q: Give the simplest line integrals for area. | Area = ∮ x dy = −∮ y dx.
+Q: Which polygon area formula is Green's theorem for straight edges? | The shoelace formula.
+Q: What is ∮ (−y dx + x dy) around the unit circle? | 2π.
+Q: What does ∂Q/∂x = ∂P/∂y on a simply connected region imply? | F is conservative.
+Q: How is Green's theorem related to Stokes' theorem? | Green's theorem is the 2D case of Stokes' theorem.
+Q: What happens if the curve is traversed clockwise? | The sign flips.
 
 ## Stokes' Theorem
 S: Stokes' theorem says the circulation of a field around a closed curve equals the flux of its curl through any surface bounded by that curve. It generalises Green's theorem to curved surfaces in space and underlies Faraday's law of induction.
@@ -582,6 +742,16 @@ SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge Universit
 NUM1#maths-u08-17-q1@1: For F = (−y, x, 0), find ∮ F · dr anticlockwise around the circle of radius 2 in the xy-plane, to 2 decimal places. | 25.13 | 0.01 |  | Flux of curl (0, 0, 2) through the disc: 2 × 4π = 8π ≈ 25.13.
 M1#maths-u08-17-q2@1: Two surfaces share the same boundary curve. What does Stokes' theorem say about the flux of curl F through them? | It's the same through both (with matching orientation) | It's always zero through both | The larger surface has more flux | They're negatives of each other | It depends on their areas | Both equal the same line integral around the shared boundary.
 M3#maths-u08-17-q3@2: Why is the flux of curl F through a closed sphere zero? | A closed surface has no boundary curve to integrate around | Curl fields are always zero | Spheres have no normal vector | The divergence is non-zero | It isn't zero | Splitting the sphere into two hemispheres gives equal and opposite boundary integrals (equivalently, div curl = 0).
+Q: State Stokes' theorem. | ∮_{C} F · dr = ∬_{S} (∇ × F) · n dS, where C is the boundary of S.
+Q: What is the right-hand rule in Stokes' theorem? | With fingers curling along C, the thumb points along the normal n.
+Q: Which surface should you choose when applying Stokes' theorem? | Any surface with boundary C gives the same flux of curl, so choose the easiest.
+Q: What does ∇ × F = 0 imply about circulation on a simply connected region? | Circulation around every closed curve is zero.
+Q: How can Stokes' theorem simplify a hard line integral? | Replace it with the flux of the curl through a flat disc.
+Q: State Faraday's law in integral form. | ∮ E · dr = −d/dt ∬ B · n dS: changing magnetic flux induces voltage.
+Q: State Ampère's law. | ∮ B · dr = μ₀I_{enclosed}.
+Q: Which fluid dynamics result relies on Stokes' theorem? | Kelvin's circulation theorem.
+Q: How does F = (−y, x, 0) verify Stokes' theorem on the unit hemisphere? | The circulation around the unit circle is 2π, and the flux of curl (0, 0, 2) through the disc is also 2π.
+Q: What mistake is made when applying Stokes' theorem? | Mismatching the orientation of the curve and the surface normal.
 
 ## Divergence Theorem
 S: The divergence theorem says that the total outward flux through a closed surface equals the integral of the divergence over the volume inside. It's the mathematical form of conservation laws and of Gauss's law for electric fields.
@@ -616,6 +786,16 @@ SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | text
 NUM1#maths-u08-18-q1@1: Find the outward flux of F = (2x, 0, 0) through the boundary of the box [0, 1] × [0, 2] × [0, 3]. | 12 | 0 |  | ∇ · F = 2 and the volume is 6, so the flux is 12.
 M1#maths-u08-18-q2@1: What does the divergence theorem require of the surface? | It must be closed, with an outward normal | It must be flat | It must be a sphere | It must have a boundary curve | It must be infinite | The theorem relates a closed surface to the volume it encloses.
 M2#maths-u08-18-q3@2: The flux of a field through every closed surface is zero. What can you conclude? | Its divergence is zero everywhere | Its curl is zero everywhere | The field is zero everywhere | The field is conservative | Nothing at all | Shrinking surfaces around any point shows the divergence there must vanish.
+Q: State the divergence theorem. | ∯_{S} F · n dS = ∭_{V} ∇ · F dV, with n the outward normal of the closed surface S.
+Q: State Gauss's law in integral form. | ∯ E · n dS = Q_{enclosed}/ε₀.
+Q: What does the divergence theorem say in words? | Net outflow through the boundary equals the total of sources inside.
+Q: What kind of surface does the divergence theorem apply to? | A closed surface enclosing a solid region.
+Q: Why is the divergence theorem often useful? | A hard flux over several faces becomes one volume integral.
+Q: How does the field of a point charge fall off, by Gauss's law? | As 1/r^{2}.
+Q: Which conservation equation follows from the divergence theorem? | ∂ρ/∂t + ∇ · J = 0.
+Q: What is the outward flux of (x, y, z) through a sphere of radius R? | 4πR^{3}.
+Q: Why do fields like 1/r^{2} need care with the divergence theorem? | They have a singularity inside, and the point source contributes.
+Q: Which equations are derived using the divergence theorem? | The heat and diffusion equations.
 
 ## Matrix Calculus
 S: Matrix calculus differentiates functions of vectors and matrices with respect to those vectors and matrices. It's essential in statistics, optimisation and machine learning, where gradients of losses with millions of parameters drive training.
@@ -651,6 +831,16 @@ SRC: Magnus JR, Neudecker H, Matrix Differential Calculus with Applications in S
 NUM1#maths-u08-19-q1@1: For f(x) = x₁^{2} + 3x₁x₂, find ∂f/∂x₁ at (1, 1). | 5 | 0 |  | ∂f/∂x₁ = 2x₁ + 3x₂ = 2 + 3 = 5.
 M1#maths-u08-19-q2@1: What is ∇_{x}(xᵀAx) for a symmetric matrix A? | 2Ax | Ax | xᵀA | Aᵀx + 1 | 2xᵀ | In general ∇(xᵀAx) = (A + Aᵀ)x, which equals 2Ax when A is symmetric.
 M2#maths-u08-19-q3@2: Why do automatic differentiation libraries matter for machine learning? | They compute gradients of losses with many parameters efficiently and exactly | They avoid needing any gradients | They solve the normal equations symbolically | They compute only numerical estimates by finite differences | They replace matrix calculus with guesswork | Reverse-mode differentiation (backpropagation) gets the whole gradient in about the cost of one function evaluation.
+Q: What is the gradient with respect to a vector x? | ∇_{x}f, the vector of partial derivatives ∂f/∂x_{i}.
+Q: What is the Hessian? | The matrix of second partial derivatives ∂^{2}f/∂x_{i}∂x_{j}.
+Q: What is ∇_{x}(aᵀx)? | a.
+Q: What is ∇_{x}(xᵀAx) in general? | (A + Aᵀ)x.
+Q: What is the gradient of the squared norm of Ax − b? | 2Aᵀ(Ax − b).
+Q: Why is the least squares solution a minimum? | The Hessian 2XᵀX is positive semi-definite.
+Q: What equations does ridge regression give? | (XᵀX + λI)β = Xᵀy.
+Q: How do numerator and denominator layout conventions differ? | By a transpose, so be consistent.
+Q: What minimises xᵀAx − 2bᵀx for symmetric positive definite A? | x = A^{−1}b, solving Ax = b.
+Q: Where is matrix calculus essential? | In statistics, optimisation and machine learning, where gradients of losses drive training.
 
 ## Tensor Calculus
 S: Tensor calculus extends vector calculus to curved spaces and to quantities with several indices, like stress or curvature. It uses index notation and the metric tensor, and it's the language of general relativity and continuum mechanics.
@@ -686,6 +876,16 @@ SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Enginee
 NUM1#maths-u08-20-q1@1: In four-dimensional spacetime, what is δ_{ii} (summed)? | 4 | 0 |  | Each of the four diagonal entries is 1, summing to 4.
 M1#maths-u08-20-q2@1: In index notation, what does a_{i}b_{i} represent? | The dot product a · b | The cross product a × b | The matrix ab^{T} | A single component a₁b₁ only | The sum a + b | The repeated index i is summed: Σ a_{i}b_{i}.
 M2#maths-u08-20-q3@2: Why are Christoffel symbols needed in curved coordinates? | Basis vectors change from point to point, so derivatives must correct for that | They replace the metric tensor entirely | They make all derivatives zero | Coordinates in flat space never need them | They convert vectors into scalars | Covariant derivatives add Christoffel terms so the result transforms as a tensor.
+Q: What is the Einstein summation convention? | A repeated index in a term is summed over: a_{i}b_{i} means Σ a_{i}b_{i}.
+Q: What is the metric tensor? | g_{ij}, giving lengths and angles via ds^{2} = g_{ij} dx^{i} dx^{j}.
+Q: What is the Kronecker delta? | δ_{ij}, equal to 1 if i = j and 0 otherwise.
+Q: How is the cross product written with the Levi-Civita symbol? | (a × b)_{i} = ε_{ijk}a_{j}b_{k}.
+Q: What is the difference between upper and lower tensor indices? | Upper (contravariant) and lower (covariant) indices transform differently under coordinate changes.
+Q: Give three examples of tensors. | The stress tensor, the inertia tensor and the electromagnetic field tensor.
+Q: What does contracting indices give? | Invariants.
+Q: Why are covariant derivatives needed? | Ordinary derivatives of tensors aren't tensors; Christoffel symbols fix this.
+Q: What does the Riemann tensor measure? | Curvature: how parallel transport around loops fails.
+Q: What is the metric tensor for plane polar coordinates? | diag(1, r^{2}), from ds^{2} = dr^{2} + r^{2} dθ^{2}.
 
 ## Calculus of Variations
 S: The calculus of variations finds functions that make an integral as small or large as possible: the shortest path, the fastest slide, the shape of a hanging chain. Its Euler–Lagrange equation also generates the equations of motion in physics.
@@ -721,6 +921,16 @@ SRC: Goldstein H, Poole C, Safko J, Classical Mechanics (3rd edn, Addison-Wesley
 NUM1#maths-u08-21-q1@1: For L = y′^{2} + 4y, the Euler–Lagrange equation gives y″ = c. Find c. | 2 | 0 |  | ∂L/∂y = 4 and d/dx(2y′) = 2y″, so 4 − 2y″ = 0 and y″ = 2.
 M1#maths-u08-21-q2@1: For L = y′^{2} − y^{2}, what does the Euler–Lagrange equation give? | y″ = −y | y″ = y | y′ = y | y″ = 0 | y = 0 only | ∂L/∂y = −2y and d/dx(2y′) = 2y″, so −2y − 2y″ = 0.
 M2#maths-u08-21-q3@2: Which principle gives Snell's law of refraction? | Fermat's principle of least time | The principle of least distance | Conservation of momentum | The isoperimetric inequality | Newton's third law | Light takes the path of stationary travel time, giving sin θ₁/v₁ = sin θ₂/v₂.
+Q: What is a functional? | A rule assigning a number to a function, such as J[y] = ∫ L(x, y, y′) dx.
+Q: State the Euler–Lagrange equation. | ∂L/∂y − d/dx(∂L/∂y′) = 0.
+Q: How is the Euler–Lagrange equation derived? | Perturb y to y + εη with η zero at the ends, require dJ/dε = 0, and integrate by parts.
+Q: What is the Beltrami identity? | If L doesn't depend on x, L − y′ ∂L/∂y′ is constant.
+Q: Why are straight lines the shortest paths in the plane? | L = √(1 + y′^{2}) gives y′ constant, so y = mx + c.
+Q: What shape does a hanging chain take? | A catenary, y = a cosh(x/a), minimising potential energy.
+Q: What does the isoperimetric problem show? | The circle encloses the most area for a given perimeter.
+Q: How are constraints handled in variational problems? | With Lagrange multipliers.
+Q: What do the Euler–Lagrange equations give from Hamilton's principle? | Newton's laws in any coordinates.
+Q: What mistake is made with partial derivatives of L? | Treating y and y′ as dependent; they are treated as independent variables.
 
 ## Fractional Calculus
 S: Fractional calculus defines derivatives and integrals of non-integer order, such as a half-derivative. These operators have memory (they depend on the whole history of a function), which makes them useful for modelling viscoelastic materials and anomalous diffusion.
@@ -755,4 +965,14 @@ SRC: Oldham KB, Spanier J, The Fractional Calculus (Academic Press 1974) | textb
 NUM1#maths-u08-22-q1@1: Find Γ(3/2) to 4 decimal places. | 0.8862 | 0.0001 |  | Γ(3/2) = ½Γ(½) = √π/2 ≈ 0.8862.
 M1#maths-u08-22-q2@1: What is D^{½} applied twice to a suitable function f? | The first derivative f′ | The second derivative f″ | f itself | The integral of f | Zero | Two half-derivatives compose to an ordinary first derivative.
 M3#maths-u08-22-q3@2: Why are fractional derivatives used to model viscoelastic materials? | Their memory captures behaviour between a pure spring and a pure fluid damper | They're simpler than ordinary derivatives | They remove the need for any data | Viscoelastic materials are always fractals | They make every equation linear | Stress depends on the whole strain history, which non-local operators represent naturally.
+Q: What is fractional calculus? | Derivatives and integrals of non-integer order, such as a half-derivative.
+Q: What is the Riemann–Liouville integral? | I^{α}f(x) = (1/Γ(α)) ∫₀^{x} (x − t)^{α−1} f(t) dt, for α > 0.
+Q: State the fractional power rule. | D^{α}x^{k} = [Γ(k + 1)/Γ(k − α + 1)] x^{k−α}.
+Q: Which formula extends to non-integer order with the gamma function? | Cauchy's formula for repeated integration.
+Q: How is a fractional derivative of order α defined? | Differentiate the fractional integral of order n − α, n times.
+Q: Which fractional derivative suits initial value problems? | The Caputo definition.
+Q: Is the fractional derivative of a constant zero? | It can be non-zero in the Riemann–Liouville sense, but is zero for Caputo.
+Q: What is the half-derivative of x? | 2√x/√π.
+Q: What is anomalous diffusion? | Diffusion where spread grows like t^{α} rather than t.
+Q: Give an engineering use of fractional calculus. | Fractional PID controllers in control engineering, or electrochemistry.
 `;

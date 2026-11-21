@@ -321,7 +321,7 @@ mk("u06-19", "chem-gibbs-T-lines", "graph", "ΔG against temperature for each si
    ["ΔH −50, ΔS +0.1: always negative.", "ΔH +50, ΔS −0.1: always positive.", "ΔH −50, ΔS −0.1: negative below 500 K.", "ΔH +50, ΔS +0.1: negative above 500 K."],
    range={"x": [0, 1000], "y": [-160, 160]}, ticks=[[200, 400, 600, 800, 1000], [-150, -100, -50, 0, 50, 100, 150]], grid=[200, 50], axisLabels=["T / K", "ΔG / kJ mol⁻¹"], xLabelBelow=True,
    curves=[{"expr": "-50-0.1*x", "colour": "good", "label": "ΔH < 0, ΔS > 0", "labelAt": [560, -140]}, {"expr": "50+0.1*x", "colour": "bad", "label": "ΔH > 0, ΔS < 0", "labelAt": [560, 135]},
-           {"expr": "-50+0.1*x", "colour": "a1", "label": "ΔH < 0, ΔS < 0", "labelAt": [760, 45]}, {"expr": "50-0.1*x", "colour": "a3", "label": "ΔH > 0, ΔS > 0", "labelAt": [760, -45]}],
+           {"expr": "-50+0.1*x", "colour": "a1", "label": "ΔH < 0, ΔS < 0", "labelAt": [640, 64]}, {"expr": "50-0.1*x", "colour": "a3", "label": "ΔH > 0, ΔS > 0", "labelAt": [640, -64]}],
    marks=[{"y": 0}],
    checks=[{"type": "point", "expr": "-50+0.1*x", "x": 500, "y": 0, "name": "ΔH < 0, ΔS < 0: ΔG = 0 at 500 K"}, {"type": "point", "expr": "50-0.1*x", "x": 500, "y": 0, "name": "ΔH > 0, ΔS > 0: ΔG = 0 at 500 K"},
            {"type": "value", "expr": "-50-0.1*x", "x": 1000, "between": [-1000, -1], "name": "ΔH < 0, ΔS > 0 stays negative"}, {"type": "value", "expr": "50+0.1*x", "x": 0, "between": [1, 1000], "name": "ΔH > 0, ΔS < 0 stays positive"}])

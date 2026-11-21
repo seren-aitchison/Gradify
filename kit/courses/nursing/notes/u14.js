@@ -47,6 +47,16 @@ M1#nursing-u14-01-q1@1: Which domain of public health covers outbreaks of infect
 M2#nursing-u14-01-q2@2: Which body leads public health in Scotland? | Public Health Scotland | The UK Health Security Agency only | NHS England | The Public Health Agency | Each nation has its own public health body.
 M2#nursing-u14-01-q3@3: Which NMC platform covers promoting health and preventing ill health? | Platform 2 | Platform 5 | Platform 7 | Platform 4 | Platform 2 sets public health proficiencies for all nurses.
 TF1#nursing-u14-01-q4@1: Public health focuses on the health of whole populations as well as individuals. | True | Its population focus distinguishes it from individual clinical care.
+Q: What is the Acheson (1988) definition of public health? | The science and art of preventing disease, prolonging life and promoting health through the organised efforts of society.
+Q: What does public health focus on? | Populations, prevention and equity, using evidence, data and partnerships.
+Q: What does health improvement cover? | Lifestyles, inequalities, education, housing, employment and communities.
+Q: What does health protection cover? | Infectious diseases, chemicals, radiation, emergency response and environmental hazards.
+Q: What is healthcare public health? | Planning and improving health services so they meet population needs fairly.
+Q: Who leads public health locally in England? | Local authorities, through directors of public health.
+Q: What does OHID lead? | Health improvement in England, within the Department of Health and Social Care.
+Q: Which bodies lead public health in Wales and Northern Ireland? | Public Health Wales, and the Public Health Agency in Northern Ireland.
+Q: Name specialist public health nursing roles. | Health visitors, school nurses, sexual health nurses and public health nurses.
+Q: How do all nurses protect health in daily practice? | Through immunisation, infection prevention and safeguarding.
 
 ## Social determinants of health
 S: The social determinants of health are the conditions in which people are born, grow, live, work and age. They shape health far more than healthcare alone, and understanding them helps nurses see the causes behind the illnesses they treat.
@@ -93,6 +103,16 @@ M1#nursing-u14-02-q1@1: Which is a fixed factor in the Dahlgren and Whitehead mo
 M2#nursing-u14-02-q2@2: How can cold, damp housing affect health? | It harms respiratory and mental health | It has no effect on health | It only affects the building | It improves immunity | Poor housing is a recognised determinant of ill health.
 M3#nursing-u14-02-q3@3: A patient with COPD is frequently readmitted and says he can't afford to heat his flat. What should the nurse do? | Refer to welfare, energy and housing support | Focus only on his inhaler technique | Tell him to wear more jumpers | Note it and take no action | Addressing social determinants can reduce readmissions.
 MS2#nursing-u14-02-q4@2: Which are social determinants of health? | Income ; Housing ; Education | Blood group ; Eye colour | Social and economic conditions shape health.
+Q: What are the layers of the Dahlgren and Whitehead model? | Age, sex and constitutional factors; lifestyle; social and community networks; living and working conditions; and general socioeconomic, cultural and environmental conditions.
+Q: How does income affect health? | It affects diet, housing, heating, stress and access to opportunities.
+Q: How does education affect health? | It is linked to health literacy, employment and lifelong health.
+Q: How does work affect health? | Unemployment and insecure work harm health; good work protects it.
+Q: Name environmental determinants of health. | Air pollution, green space, transport and food environments.
+Q: How do discrimination and racism affect health? | They cause stress, exclusion and unequal access.
+Q: Does healthcare account for most differences in health outcomes? | No, only a minority; social, economic, environmental factors and behaviours account for much more.
+Q: What social questions should nurses ask in assessment? | About housing, income, work, caring roles and social support.
+Q: Where can nurses refer patients with social needs? | Welfare advice, housing support, social prescribing, food banks and community services.
+Q: Why shouldn't nurses simply blame individuals for unhealthy behaviours? | Behaviour is shaped by social and economic circumstances.
 
 ## Health inequalities
 S: Health inequalities are unfair and avoidable differences in health between groups of people. They follow a social gradient: the more disadvantaged people are, the worse their health tends to be. Reducing them is a core aim of public health and the NHS.
@@ -134,6 +154,16 @@ M1#nursing-u14-03-q1@1: What does the social gradient in health describe? | Heal
 M2#nursing-u14-03-q2@2: What does "Core20" refer to in Core20PLUS5? | The most deprived 20% of the national population | The top 20 hospitals | 20 core medicines | People aged over 20 | Core20 focuses on the most deprived fifth of the population.
 M3#nursing-u14-03-q3@3: A GP practice in a deprived area has fewer staff per patient than one in an affluent area. Which concept does this illustrate? | The inverse care law | Proportionate universalism | Herd immunity | The stages of change | Care is less available where need is greater.
 MATCH2#nursing-u14-03-q4@2: Match each concept to its originator or source. | Inverse care law = Julian Tudor Hart ; Fair Society, Healthy Lives = Michael Marmot ; Rainbow model of determinants = Dahlgren and Whitehead | These works underpin UK public health thinking.
+Q: What are health inequalities? | Unfair and avoidable differences in health between groups of people.
+Q: What is the social gradient in health? | Health worsens at each step down the social ladder, not only for the poorest.
+Q: Name inclusion health groups. | People experiencing homelessness, Gypsy, Roma and Traveller communities, sex workers, people in prison and vulnerable migrants.
+Q: What did the 2020 Marmot Review find? | Health improvement had stalled and inequalities had widened over the decade.
+Q: Who described the inverse care law, and when? | Tudor Hart, in 1971.
+Q: What is health equity? | Fairness, not identical treatment.
+Q: What does the PLUS refer to in Core20PLUS5? | Locally identified groups beyond the most deprived 20%.
+Q: Name the five clinical areas in adult Core20PLUS5. | Maternity, severe mental illness, chronic respiratory disease, early cancer diagnosis, and hypertension and lipid management.
+Q: Which legal duty requires public bodies to consider equality? | The public sector equality duty in the Equality Act 2010.
+Q: How can nurses reduce health inequalities? | Recognise barriers, make reasonable adjustments, provide interpreters, reach underserved groups and challenge discrimination.
 
 ## Epidemiology
 S: Epidemiology is the study of the distribution and determinants of health and disease in populations. It provides the evidence that public health and clinical practice rely on, from identifying risk factors to evaluating interventions.
@@ -178,6 +208,16 @@ M1#nursing-u14-04-q1@1: Which measure counts new cases of a disease over a perio
 M2#nursing-u14-04-q2@2: Which study design follows exposed and unexposed people forward over time? | A cohort study | A case-control study | A cross-sectional survey | A case report | Cohort studies measure incidence by exposure.
 M3#nursing-u14-04-q3@3: A medicine doubles the risk of a side effect that affects 1 in 100,000 people. How should this be explained? | Relative risk doubles, absolute risk barely changes | The risk becomes very high for everyone | Half of people will have the side effect | The risk is unchanged | Absolute risk gives a clearer picture than relative risk alone.
 MATCH1#nursing-u14-04-q4@3: Match each study design to its best use. | Case-control = Studying rare diseases ; Cohort = Measuring incidence by exposure ; Cross-sectional = Estimating prevalence ; Randomised controlled trial = Testing an intervention | Each design suits different questions.
+Q: What is epidemiology? | The study of the distribution and determinants of health and disease in populations.
+Q: What does prevalence reflect? | Both incidence and the duration of the condition.
+Q: Why are age-standardised mortality rates used? | To compare populations with different age structures fairly.
+Q: What is relative risk? | How many times more or less likely an outcome is in an exposed group than an unexposed group.
+Q: What is absolute risk? | The actual chance of the outcome happening.
+Q: Which measures help communicate the benefit of a treatment? | Absolute risk reduction and number needed to treat.
+Q: Give an example of confounding. | Smoking confounding an apparent link between coffee and lung cancer.
+Q: Name Bradford Hill considerations for causation. | Strength, consistency, temporality and dose-response, among others.
+Q: Why are case-control studies good for rare diseases? | They start with people who have the disease and look back at exposures.
+Q: What does a cross-sectional study measure? | A snapshot, giving prevalence.
 
 ## Disease prevention
 S: Disease prevention at population level aims to reduce the burden of illness through action on causes and early detection. This lesson looks at prevention strategies, the prevention paradox and how nurses contribute beyond individual care.
@@ -217,6 +257,16 @@ M1#nursing-u14-05-q1@1: Which is an example of a population strategy for prevent
 M2#nursing-u14-05-q2@2: Who described the prevention paradox? | Geoffrey Rose | Julian Tudor Hart | Michael Marmot | Florence Nightingale | Rose explained why population approaches matter.
 M2#nursing-u14-05-q3@3: Which measure is an example of fiscal prevention policy? | The soft drinks industry levy | A smoking cessation leaflet | A blood pressure check | A hospital discharge letter | Taxes and levies are fiscal tools for prevention.
 TF2#nursing-u14-05-q4@3: Upstream measures such as legislation can reduce health inequalities more than advice to individuals alone. | True | Policy and environmental measures reach everyone, including those least able to act on advice.
+Q: What is the high-risk prevention strategy? | Identifying and treating those at highest risk, such as statins for high cardiovascular risk.
+Q: What is the population prevention strategy? | Shifting the whole population's risk downwards, such as reducing salt in processed food.
+Q: Who described the prevention paradox? | Rose.
+Q: Why may population measures seem to offer little to individuals? | Large community benefits may mean little benefit to each participating individual.
+Q: Give examples of primary prevention at population scale. | Immunisation programmes, smoke-free laws, fluoridation and road safety.
+Q: Give examples of secondary prevention at population scale. | National screening programmes and NHS Health Checks.
+Q: Give examples of tertiary prevention at population scale. | Rehabilitation programmes and structured self-management education.
+Q: Where does minimum unit pricing for alcohol apply? | Scotland and Wales.
+Q: Why are upstream measures often preferred to individual advice? | They often have larger, fairer effects.
+Q: Name NHS prevention programmes. | The NHS Diabetes Prevention Programme, inpatient smoking cessation, NHS Health Checks and making every contact count.
 
 ## Health promotion
 S: Health promotion at community and population level goes beyond individual advice to building healthy public policy, supportive environments and community action. This lesson looks at frameworks, settings and evaluation.
@@ -260,6 +310,16 @@ M1#nursing-u14-06-q1@1: Which is an Ottawa Charter action area? | Create support
 M2#nursing-u14-06-q2@2: A school changes its menus, adds water fountains and runs cooking clubs. Which approach is this? | The settings approach | One-to-one counselling only | Tertiary prevention | Secondary screening | The school setting is changed as a whole.
 M3#nursing-u14-06-q3@3: A nurse-led walking group wants to know if it is working. Which is an outcome evaluation measure? | Changes in participants' blood pressure over a year | The number of leaflets printed | Whether sessions started on time | The colour of the posters | Outcome evaluation measures longer-term health change.
 MATCH1#nursing-u14-06-q4@3: Match each evaluation type to an example. | Process = Number and type of people attending ; Impact = Increased knowledge of healthy eating ; Outcome = Reduced obesity rates over five years | Different evaluation types answer different questions.
+Q: Which document sets out health promotion action areas including healthy public policy? | The Ottawa Charter.
+Q: What strategies does the Ottawa Charter name? | Advocate, enable and mediate.
+Q: What is the settings approach? | Promoting health within the places people live, learn, work and play.
+Q: Name settings for health promotion. | Schools, workplaces, prisons, hospitals, communities and cities.
+Q: What does the WHO Healthy Cities initiative illustrate? | The settings approach applied to cities.
+Q: What is community development in health promotion? | Working with communities to identify their own priorities and act on them.
+Q: What is impact evaluation? | Assessing short-term changes in knowledge, attitudes or behaviour.
+Q: What is outcome evaluation? | Assessing longer-term changes in health.
+Q: What does RE-AIM stand for? | Reach, effectiveness, adoption, implementation and maintenance.
+Q: What should planning a health promotion intervention involve? | Assessing needs, SMART objectives, evidence-based methods, and considering equity and the target group.
 
 ## Screening
 S: Screening identifies people who appear healthy but may be at increased risk of a disease, so they can be offered further tests or treatment. Good screening programmes save lives; poorly designed ones can cause harm.
@@ -301,6 +361,16 @@ M1#nursing-u14-07-q1@1: Which body advises on screening programmes across the UK
 M2#nursing-u14-07-q2@2: A test has high specificity. What does this mean? | Few people without the condition test positive | Few people with the condition test negative | All positive results are certain | It is cheap to perform | High specificity means few false positives.
 M3#nursing-u14-07-q3@3: A good screening test is used in a population where the condition is very rare. What happens to the positive predictive value? | It falls, so many positive results are false positives | It rises to 100% | It is unaffected by prevalence | Every positive result is a true case | Low prevalence reduces positive predictive value.
 MS2#nursing-u14-07-q4@2: Which are potential harms of screening? | False positives ; Overdiagnosis ; False reassurance from false negatives | Guaranteed cure ; No anxiety for anyone | Informed choice requires understanding harms as well as benefits.
+Q: What is screening? | Identifying people who appear healthy but may be at increased risk, so they can be offered further tests or treatment.
+Q: Name Wilson and Jungner screening criteria. | An important problem, understood natural history, a recognisable early stage, a suitable test, effective treatment, facilities and balanced cost.
+Q: What is specificity? | The proportion of people without a condition who test negative.
+Q: What is positive predictive value? | The proportion of positive results that are true positives.
+Q: What does positive predictive value depend on? | How common the condition is (prevalence).
+Q: What is the harm of a false negative screening result? | False reassurance.
+Q: What should support a person's decision to be screened? | Balanced information enabling informed choice.
+Q: Who is offered abdominal aortic aneurysm screening in England? | Men aged 65.
+Q: What is the primary test in cervical screening? | HPV testing.
+Q: Name newborn screening programmes. | Newborn blood spot, newborn hearing and newborn physical examination.
 
 ## Vaccination
 S: Vaccination is giving a vaccine to stimulate immunity against a disease. Nurses deliver most vaccinations in the UK and play a central role in safe practice, informed consent and building confidence in vaccines.
@@ -346,6 +416,16 @@ M1#nursing-u14-08-q1@1: Which is a live attenuated vaccine? | MMR | Tetanus toxo
 M2#nursing-u14-08-q2@2: The vaccine fridge thermometer shows a maximum of 12°C overnight. What should the nurse do? | Quarantine, report and seek advice | Use the vaccines as normal | Discard everything without reporting | Turn the fridge off | Cold chain breaches need reporting and expert advice.
 M2#nursing-u14-08-q3@3: A parent says they're worried about vaccine side effects and want to delay. What is the best approach? | Listen, acknowledge concerns and give clear, honest information | Tell them they are wrong | Refuse to discuss it | Vaccinate without consent | Respectful, evidence-based conversations build confidence.
 MS2#nursing-u14-08-q4@2: Which must be recorded when a vaccine is given? | The vaccine name ; The batch number ; The site of administration | The nurse's favourite colour ; The weather | Accurate records support safety and recall.
+Q: What is the difference between vaccination and immunisation? | Vaccination is giving a vaccine; immunisation is the process of becoming protected.
+Q: Why are live attenuated vaccines generally avoided in pregnancy? | They are generally avoided in pregnancy and significant immunosuppression.
+Q: Give examples of toxoid vaccines. | Tetanus and diphtheria.
+Q: Give examples of conjugate vaccines. | Pneumococcal, Hib and MenACWY.
+Q: Name legal authorities for giving a vaccine. | A prescription, PGD, patient specific direction or national protocol.
+Q: How should vaccine fridge temperatures be managed? | Record them daily and act on any breach.
+Q: Which guide is used to check vaccine eligibility and contraindications? | The Green Book.
+Q: How are suspected adverse reactions to vaccines reported? | Through the Yellow Card scheme.
+Q: What three factors influence vaccine hesitancy according to WHO? | Confidence, complacency and convenience.
+Q: How should nurses respond to vaccine hesitancy? | Listen without judgement, give clear, honest information, recommend confidently and make access easy.
 
 ## Immunisation
 S: Immunisation is the process of becoming immune to a disease. National immunisation programmes protect individuals and, through herd immunity, whole communities, including those who can't be vaccinated.
@@ -389,6 +469,16 @@ M1#nursing-u14-09-q1@1: Which gives long-lasting immunity? | Active immunity fro
 M2#nursing-u14-09-q2@2: Why does measles need very high vaccine coverage for herd immunity? | It is extremely infectious | It is a mild illness | It only affects adults | It can't spread between people | Highly infectious diseases need high coverage to stop transmission.
 M2#nursing-u14-09-q3@3: Which approach improves vaccine uptake in underserved communities? | Outreach clinics with trusted community champions | Offering appointments only on weekday mornings | Sending one letter only | Waiting for people to ask | Outreach and trusted messengers reduce barriers.
 MATCH1#nursing-u14-09-q4@2: Match each vaccine to the group it targets. | HPV = Adolescents ; Shingles = Older adults ; Pertussis = Pregnant women ; Rotavirus = Infants | The schedule targets protection at the right life stage.
+Q: What is active immunity? | Immunity produced by the body's own response to infection or vaccination, usually long-lasting.
+Q: What is a drawback of passive immunity? | It is temporary.
+Q: How can immunoglobulin give protection? | It provides passive immunity through given antibodies.
+Q: Which vaccines in pregnancy protect newborns? | Pertussis and RSV.
+Q: Who does herd immunity protect? | People who can't be vaccinated or don't respond, such as babies and immunosuppressed people.
+Q: What coverage is needed for measles herd immunity? | Around 95%.
+Q: Which vaccines are given to adolescents in the UK? | HPV, the tetanus, diphtheria and polio booster, and MenACWY.
+Q: Which vaccines are offered to older adults? | Influenza, pneumococcal, shingles, RSV and COVID-19 boosters as advised.
+Q: How is vaccine uptake monitored in England? | Through COVER data.
+Q: What factors are linked to lower vaccine uptake? | Deprivation, some ethnic groups, mobile populations and access barriers.
 
 ## Sexual health
 S: Sexual health is a state of physical, emotional, mental and social wellbeing in relation to sexuality. Nurses promote sexual health, prevent and treat sexually transmitted infections, and support safe, respectful relationships.
@@ -432,6 +522,16 @@ M1#nursing-u14-10-q1@1: Which is the most commonly diagnosed bacterial STI in En
 M2#nursing-u14-10-q2@2: Why is antimicrobial resistance a major concern in gonorrhoea? | Resistant strains are harder to treat | It makes gonorrhoea viral | It prevents testing | It only affects animals | Resistance threatens effective treatment.
 M2#nursing-u14-10-q3@3: Which is an effective HIV prevention method for people at high risk? | Pre-exposure prophylaxis (PrEP) | Antibiotics after sex | A cold remedy | Vitamin supplements | PrEP is highly effective when taken as advised.
 TF2#nursing-u14-10-q4@3: People with HIV on effective treatment with an undetectable viral load don't transmit HIV sexually. | True | Treatment as prevention is a key part of HIV strategy.
+Q: What is sexual health? | A state of physical, emotional, mental and social wellbeing in relation to sexuality.
+Q: What complications can untreated chlamydia cause? | Pelvic inflammatory disease and infertility.
+Q: Why is syphilis a concern? | It has been rising, can have serious complications and can affect pregnancy.
+Q: How can STI testing be made easier to access? | Through self-sampling kits and online services.
+Q: What is PEP? | Post-exposure prophylaxis, started as soon as possible after a significant HIV exposure.
+Q: What target has England set for HIV? | Ending new HIV transmissions by 2030.
+Q: How should a sexual history be taken? | In private, explaining confidentiality and its limits, using inclusive, non-judgemental language.
+Q: What should a sexual history ask about? | Partners, practices, contraception, previous STIs, symptoms and risks.
+Q: Can a child under 13 consent to sexual activity in law? | No.
+Q: What do sexual assault referral centres do? | Support people after sexual assault.
 
 ## Reproductive health
 S: Reproductive health covers the ability to have a satisfying and safe sex life and the freedom to decide whether, when and how often to have children. Nurses support contraception, preconception health, fertility, menopause and reproductive conditions.
@@ -475,6 +575,16 @@ M1#nursing-u14-11-q1@1: Which type of contraception is most effective in typical
 M2#nursing-u14-11-q2@2: What is the most effective emergency contraception? | A copper intrauterine device | Waiting to see if a period comes | A higher dose of a daily pill | Douching | The copper IUD is the most effective emergency contraception.
 M2#nursing-u14-11-q3@3: Which law governs abortion in England, Wales and Scotland? | The Abortion Act 1967 | The Children Act 1989 | The Mental Health Act 1983 | The Care Act 2014 | The Abortion Act sets the conditions for lawful abortion in Great Britain.
 TF2#nursing-u14-11-q4@1: Condoms help protect against sexually transmitted infections as well as pregnancy. | True | Barrier methods reduce STI transmission.
+Q: What does reproductive health include? | A satisfying and safe sex life and freedom to decide whether, when and how often to have children.
+Q: Why is LARC the most effective contraception in typical use? | It doesn't depend on daily action.
+Q: Name LARC methods. | Implants, copper and hormonal intrauterine devices, and injections.
+Q: Name combined hormonal contraceptive methods. | The pill, patch and ring.
+Q: Up to how long after unprotected sex can a copper IUD often be fitted as emergency contraception? | Up to five days in many cases.
+Q: Who needs a higher dose of folic acid before conception? | People at higher risk of neural tube defects, usually 5 mg as prescribed.
+Q: Name preconception health steps besides folic acid. | Stopping smoking and alcohol, healthy weight, reviewing medicines such as valproate, managing conditions and checking vaccinations.
+Q: What are typical features of endometriosis? | Pain, heavy periods and fertility problems, often with long delays to diagnosis.
+Q: Up to how many weeks is abortion usually lawful under the Abortion Act 1967? | Usually up to 24 weeks, with exceptions.
+Q: What does conscientious objection to abortion not cover? | Emergency care or giving information about where to go.
 
 ## Maternal health
 S: Maternal health covers the health of women and birthing people during pregnancy, birth and the postnatal period. Most pregnancies are healthy, but serious complications and inequalities persist, and every nurse may care for pregnant or recently pregnant people.
@@ -516,6 +626,16 @@ M1#nursing-u14-12-q1@1: Which early warning score should be used for pregnant wo
 M2#nursing-u14-12-q2@2: A woman 34 weeks pregnant attends with a headache, visual disturbance and raised blood pressure. What should the nurse suspect? | Pre-eclampsia: involve maternity urgently | Migraine needing rest | Normal pregnancy symptoms | Dehydration only | These features suggest pre-eclampsia, which can be life-threatening.
 M2#nursing-u14-12-q3@3: What have MBRRACE-UK reports found about maternal deaths? | Black women are several times more likely to die than white women | Maternal deaths no longer occur in the UK | All groups have equal risk | Deaths are only caused by bleeding | Persistent ethnic inequalities require action.
 MS2#nursing-u14-12-q4@3: Which are warning signs in pregnancy needing urgent assessment? | Reduced fetal movements ; Severe headache with visual disturbance ; Heavy bleeding | Mild tiredness ; Food cravings | These may indicate serious complications.
+Q: Who leads maternity care? | Midwives.
+Q: What should nurses in other settings do for pregnant patients? | Recognise pregnancy-related problems and involve maternity teams.
+Q: What symptoms may suggest pre-eclampsia? | Headache, visual disturbance, upper abdominal pain and swelling.
+Q: What is a leading direct cause of maternal death in the UK? | Venous thromboembolism.
+Q: How should reduced fetal movements be managed? | They always need prompt assessment.
+Q: Why are Black women at higher risk of maternal death? | Reasons include racism, bias, barriers to care and social disadvantage.
+Q: What is a leading cause of maternal death in the year after birth? | Suicide.
+Q: How often should mood be asked about in the perinatal period? | At every contact.
+Q: What services support perinatal mental health? | Specialist perinatal mental health services and mother and baby units.
+Q: Which initiative supports breastfeeding? | The UNICEF UK Baby Friendly Initiative.
 
 ## Smoking cessation
 S: Smoking remains the leading preventable cause of death and illness in the UK and a major driver of health inequalities. Helping people stop smoking is one of the most effective things nurses can do.
@@ -555,6 +675,16 @@ M1#nursing-u14-13-q1@1: What is the leading preventable cause of death in the UK
 M2#nursing-u14-13-q2@2: Which approach gives the best chance of quitting smoking? | Behavioural support combined with stop smoking medicines | Willpower alone | Cutting down slowly without support | Switching to cigars | Combined support roughly triples success rates.
 M3#nursing-u14-13-q3@3: A smoker is admitted to hospital and is irritable and restless on day one. What should the nurse offer? | Nicotine replacement and a referral | Nothing until discharge | Permission to smoke outside in a gown | A sedative | Treating nicotine withdrawal supports comfort and quitting.
 TF2#nursing-u14-13-q4@3: Smoking rates are higher among people with serious mental illness. | True | This contributes to their reduced life expectancy.
+Q: Name conditions caused by smoking. | Cancers, heart disease, stroke and COPD.
+Q: Which groups have much higher smoking rates? | People in deprived areas and people with serious mental illness.
+Q: How quickly do the benefits of stopping smoking begin? | Quickly: carbon monoxide levels fall within days.
+Q: How much do stop smoking services improve quitting? | Behavioural support with medicines roughly triples the chance compared with going it alone.
+Q: Name medicines for stopping smoking. | Nicotine replacement therapy, varenicline, bupropion and, in some areas, cytisine.
+Q: What is very brief advice on smoking? | Short advice offered at every contact.
+Q: How does carbon monoxide monitoring help? | It motivates people and checks progress.
+Q: Are e-cigarettes recommended for young people or non-smokers? | No. They are less harmful than smoking but not risk-free.
+Q: What is the Ottawa model in hospitals? | Offering tobacco dependence treatment to everyone admitted who smokes.
+Q: Why start nicotine replacement on hospital admission? | To manage withdrawal and support quitting.
 
 ## Alcohol and substance use
 S: Alcohol and drug use cause substantial harm to individuals, families and communities. From a public health perspective, prevention focuses on population measures, early identification and brief advice, alongside treatment services.
@@ -596,6 +726,16 @@ M1#nursing-u14-14-q1@1: What volume of pure alcohol is one UK unit? | 10 mL | 1 
 M2#nursing-u14-14-q2@2: About how many units are in a 500 mL can of 5% lager? | 2.5 units | 0.5 units | 5 units | 25 units | Units = ABV × volume in mL ÷ 1,000, so 5 × 500 ÷ 1,000 = 2.5 units.
 M3#nursing-u14-14-q3@3: A man drinks a bottle of spirits daily and wants to stop today on his own. What should the nurse advise? | Seek medical support before stopping | Stop completely today without help | Switch to beer instead | Drink more water and carry on | Dependent drinkers need medically supported withdrawal.
 MS2#nursing-u14-14-q4@2: Which are harm reduction measures for drug use? | Naloxone distribution ; Needle and syringe programmes ; Opioid substitution therapy | Refusing treatment until abstinent ; Criminalising service users in clinics | Harm reduction keeps people alive and connected to care.
+Q: What alcohol advice is given for pregnancy? | The safest approach is not to drink at all.
+Q: Is there a completely safe level of drinking? | No.
+Q: About how many units are in a 175 mL glass of 12% wine? | About 2.1 units.
+Q: How is AUDIT-C used? | To screen for risky drinking, followed by full AUDIT if positive.
+Q: What does brief alcohol advice include? | Feedback on the score, information on risks and support to cut down, using motivational techniques.
+Q: Where should people with possible alcohol dependence be referred? | To specialist alcohol services.
+Q: What do hospital alcohol care teams do? | Support people with alcohol-related problems.
+Q: When did minimum unit pricing start in Scotland and Wales? | Scotland in 2018, Wales in 2020.
+Q: What is harm reduction? | Accepting some people will use drugs and aiming to reduce harm.
+Q: Which UK nation has had particularly high drug-related death rates? | Scotland.
 
 ## Nutrition
 S: Diet is one of the biggest influences on health across the life course. Public health nutrition aims to improve diets across the population, reduce obesity and malnutrition, and tackle food insecurity.
@@ -635,6 +775,16 @@ M1#nursing-u14-15-q1@1: What BMI range indicates obesity in adults? | 30 or abov
 M2#nursing-u14-15-q2@2: How many portions of fruit and vegetables a day does UK guidance recommend? | At least 5 | At least 1 | At least 10 only for children | None, as they contain sugar | The "5 a day" message encourages fruit and vegetables.
 M2#nursing-u14-15-q3@3: A family tells a nurse they often skip meals so the children can eat. What should the nurse do? | Signpost to food support services | Advise them to eat more vegetables | Tell them to plan meals better | Ignore it, as it isn't a health issue | Food insecurity affects health and needs practical support.
 TF2#nursing-u14-15-q4@3: Weight stigma can discourage people from seeking healthcare. | True | Respectful, non-judgemental approaches improve engagement.
+Q: How much fibre should adults aim for daily? | Around 30 g.
+Q: What is the limit for free sugars? | No more than 5% of energy.
+Q: How much fluid does UK guidance suggest daily? | Around 6–8 glasses.
+Q: What BMI range is overweight in adults? | 25 to 29.9.
+Q: How is obesity measured in children? | By BMI centiles.
+Q: Name health problems linked to obesity. | Type 2 diabetes, heart disease, some cancers and joint problems.
+Q: Name causes of obesity. | Food environments, marketing, poverty, genetics, sleep, stress and activity.
+Q: Which tool screens for malnutrition? | MUST.
+Q: What is food insecurity? | Lack of reliable access to enough affordable, nutritious food.
+Q: Which schemes support families on low incomes with food? | Healthy Start vouchers and free school meals.
 
 ## Physical activity
 S: Physical activity reduces the risk of many diseases, supports mental health and helps people stay independent as they age. Inactivity is a major public health problem, and nurses can encourage activity in every contact.
@@ -678,6 +828,16 @@ M1#nursing-u14-16-q1@1: How much daily activity is recommended on average for ch
 M2#nursing-u14-16-q2@2: How often should adults do muscle-strengthening activities? | On at least two days a week | Once a month | Only before age 30 | Never | Strength activities are recommended at least twice weekly.
 M2#nursing-u14-16-q3@3: An inactive older woman with arthritis wants to be more active. What is the best advice? | Start gentle activity and build up | Avoid all activity to protect her joints | Start running daily | Wait until her arthritis is cured | Gradual, enjoyable activity with balance work is safe and beneficial.
 TF2#nursing-u14-16-q4@2: Long periods of sitting carry health risks even for people who exercise. | True | Reducing sedentary time is part of the guidelines.
+Q: How much vigorous activity a week can replace 150 minutes of moderate activity for adults? | 75 minutes.
+Q: What advice is given about activity in pregnancy? | Regular moderate activity is recommended during and after pregnancy.
+Q: What activity advice is given for under-5s? | Active play throughout the day, with specific advice by age.
+Q: Name diseases whose risk is reduced by physical activity. | Heart disease, stroke, type 2 diabetes, some cancers, depression and dementia.
+Q: What is sedentary behaviour? | Time spent sitting or lying with low energy expenditure while awake.
+Q: Name a resource for brief physical activity interventions. | Moving Medicine.
+Q: Name barriers to physical activity. | Cost, safety, time, caring roles and confidence.
+Q: Which rehabilitation services can support activity in long-term conditions? | Physiotherapy, cardiac and pulmonary rehabilitation.
+Q: What is active travel? | Walking, cycling or wheeling for everyday journeys.
+Q: Which population measures increase physical activity? | Active travel infrastructure, safe green spaces, school sport and workplace initiatives.
 
 ## Community nursing
 S: Community nursing covers the wide range of nurses who care for people outside hospital: in homes, clinics, schools, workplaces, prisons and communities. Specialist community public health nurses form a distinct part of the NMC register.
@@ -721,6 +881,16 @@ M1#nursing-u14-17-q1@1: Which group is registered on the SCPHN part of the NMC r
 M2#nursing-u14-17-q2@2: What is the district nursing specialist practitioner qualification? | A recorded post-registration qualification | A separate part of the register | A degree for students | A type of prescribing licence | It is recorded on the register for district nurses.
 M2#nursing-u14-17-q3@3: Which principle distinguishes community nursing from much hospital nursing? | Considering the needs of whole communities and caseloads | Working only in emergency settings | Never working with other agencies | Avoiding health promotion | Population and caseload approaches are central.
 TF2#nursing-u14-17-q4@1: Community nurses often work alone in people's homes. | True | Lone working requires safety policies and support.
+Q: Where do community nurses work? | In homes, clinics, schools, workplaces, prisons and communities.
+Q: What do district nurses provide? | Nursing care at home.
+Q: Which nurses provide public health care for children and families? | Health visitors and school nurses.
+Q: Name specialist community nursing areas. | Diabetes, respiratory, tissue viability, continence and palliative care.
+Q: When did the NMC publish new SCPHN standards? | In 2022.
+Q: What does working "as guests" mean in community nursing? | Respecting that care happens in people's own homes and communities.
+Q: What is a caseload? | The group of people a community nurse or team is responsible for.
+Q: Who do community nurses work in partnership with? | GPs, social care, schools, voluntary organisations and families.
+Q: Name challenges facing community services. | Rising demand, workforce shortages, complex caseloads, travel time and digital records.
+Q: Why is the community nursing workforce a national priority? | Community nurses help keep people at home and out of hospital.
 
 ## District nursing
 S: District nurses lead teams providing complex care to housebound people in their homes and care homes. They manage caseloads, coordinate care and support people to live and die at home.
@@ -763,6 +933,16 @@ M1#nursing-u14-18-q1@1: Who usually leads a district nursing team? | A district 
 M2#nursing-u14-18-q2@2: How should district nursing visits be prioritised? | By clinical need and risk | By the alphabetical order of names | By the shortest driving route only | By who calls first | Prioritising by need and risk keeps people safe.
 M2#nursing-u14-18-q3@3: A man with advanced cancer wants to die at home. What should the district nurse ensure? | Medicines, equipment and support in place | That he is admitted to hospital | That only the family provide care | That no medicines are kept at home | Anticipatory medicines, equipment and coordinated support make it possible for him to die at home as he wishes.
 MATCH1#nursing-u14-18-q4@2: Match each prescribing annotation to its scope. | V100 = Community practitioner prescriber (with programme) ; V150 = Community practitioner prescriber (standalone) ; V300 = Independent and supplementary prescriber | Prescribing scope depends on the qualification.
+Q: Who do district nurses lead? | Community staff nurses, nursing associates and healthcare support workers.
+Q: Which qualification do many district nurses hold? | The specialist practitioner qualification.
+Q: Name complex care district nurses deliver at home. | Leg ulcer compression, insulin and injections, catheter care, enteral feeding and IV therapy.
+Q: What palliative care do district nurses provide? | Syringe pumps, anticipatory medicines and family support.
+Q: Which prescribing annotations may district nurses hold? | V100 or V150 community practitioner prescribing, or V300 independent prescribing.
+Q: Why do residential care homes need district nursing support? | They don't employ nurses.
+Q: Name services that help prevent avoidable admissions. | Virtual wards, urgent community response and anticipatory care.
+Q: What is anticipatory care? | Proactive planning to prevent deterioration and avoidable hospital admissions.
+Q: How do district nurses support death at home? | They coordinate care, ensure medicines and equipment, support families, verify expected deaths where authorised and offer bereavement support.
+Q: Should visits be allocated by geography alone? | No. Prioritise by clinical need and risk.
 
 ## School nursing
 S: School nurses are specialist community public health nurses who promote the health and wellbeing of school-aged children and young people. They work across schools and communities to give children the best start for learning and life.
@@ -802,6 +982,16 @@ M1#nursing-u14-19-q1@1: Which programme do school nurses lead in England? | The 
 M2#nursing-u14-19-q2@2: A pupil with epilepsy is starting secondary school. What should the school nurse help put in place? | An individual healthcare plan with staff training | Nothing, as the GP manages epilepsy | Exclusion from PE lessons | A requirement for parents to stay at school | Healthcare plans and training keep pupils safe.
 M2#nursing-u14-19-q3@3: A 14-year-old visits a school nurse drop-in and asks if what she says will be kept secret. What should the nurse say? | It is confidential unless there is a risk of serious harm | Everything will always be kept secret | Nothing can be kept confidential | Her parents must be told everything | Explaining limits builds trust and meets safeguarding duties.
 TF2#nursing-u14-19-q4@3: School nurses contribute to safeguarding and child protection plans. | True | Safeguarding is a core part of school nursing.
+Q: Which children do school nurses work with? | Children in mainstream and special schools, those educated at home and those not in education.
+Q: What health promotion topics do school nurses cover? | Healthy eating, physical activity, relationships and sex education support, and substance use.
+Q: How do school nurses support emotional wellbeing? | Early support for anxiety, low mood and self-harm, with referral to mental health services.
+Q: Which long-term conditions commonly need individual healthcare plans in school? | Asthma, diabetes, epilepsy and allergies.
+Q: Which immunisations are given in school-aged programmes? | HPV, teenage boosters and influenza.
+Q: How can young people get confidential school nurse advice? | Through drop-ins and digital services such as text messaging.
+Q: Why does confidentiality matter to young people? | It encourages them to seek help.
+Q: When will a school nurse share information despite confidentiality? | When there is a risk of serious harm.
+Q: Which frameworks apply to confidential care for under-16s? | Gillick competence and the Fraser guidelines.
+Q: Who do school nurses work in partnership with? | Teachers, SENCOs, GPs, mental health support teams, social care and families.
 
 ## Health visiting
 S: Health visitors are specialist community public health nurses who work with families from pregnancy until children start school. They promote health, support parenting, identify needs early and safeguard children.
@@ -843,6 +1033,16 @@ M1#nursing-u14-20-q1@1: Until when do health visitors usually work with families
 M2#nursing-u14-20-q2@2: At which mandated contact is a developmental review using ASQ-3 commonly done? | 2–2½ years | The antenatal contact | The new birth visit | At school entry only | The 2–2½-year review commonly uses ASQ-3.
 M3#nursing-u14-20-q3@3: At a new birth visit, a mother says she feels hopeless and can't bond with her baby. What should the health visitor do? | Explore her mood and refer | Reassure her it's normal and move on | Focus only on the baby's weight | Advise her to sleep more and leave | Early recognition and referral are vital in perinatal mental health.
 MATCH1#nursing-u14-20-q4@2: Match each service level to its description. | Universal = Support for every family ; Universal plus = Extra help for specific needs ; Universal partnership plus = Ongoing multi-agency support for complex needs | Levels match support to need.
+Q: When does the antenatal health visiting contact happen? | From around 28 weeks of pregnancy.
+Q: When does the new birth visit happen? | Around 10–14 days after birth.
+Q: What is Wales's health visiting programme called? | The Healthy Child Wales Programme.
+Q: What is Scotland's health visiting programme called? | The Universal Health Visiting Pathway.
+Q: What is universal plus in health visiting? | Extra help for specific needs.
+Q: Which tool is used for child development reviews? | ASQ-3.
+Q: Name key areas of health visiting work. | Attachment, infant feeding, development, perinatal mental health, safe sleep, immunisation, oral health and language.
+Q: What safeguarding concerns might health visitors identify? | Neglect, domestic abuse, parental mental illness or substance misuse.
+Q: How do health visitors work with parents? | In partnership, recognising parents' strengths and knowledge rather than telling them what to do.
+Q: Which approaches support change in health visiting? | Motivational and solution-focused approaches.
 
 ## Population health
 S: Population health is an approach that aims to improve the physical and mental health outcomes and wellbeing of whole populations while reducing inequalities. It brings together health services, local government and communities around shared goals.
@@ -887,6 +1087,16 @@ M1#nursing-u14-21-q1@1: Which is one of the four pillars of population health? |
 M2#nursing-u14-21-q2@2: A team groups its patients into "healthy", "long-term conditions", "frailty" and "end of life" to plan services. What is this called? | Segmentation | Triage | Randomisation | Audit | Segmentation groups people by similar needs.
 M2#nursing-u14-21-q3@3: Why should risk stratification tools be used critically? | They can carry bias and widen inequalities | They are always perfectly accurate | They replace clinical judgement | They are illegal to use | Data and algorithms can carry bias and under-represent some groups, so using them uncritically can widen inequalities.
 TF2#nursing-u14-21-q4@3: Integrated care systems in England bring together NHS organisations, local authorities and partners to plan health and care. | True | ICSs plan care for their populations across organisations.
+Q: What is population health? | Improving health and wellbeing across whole populations while reducing inequalities.
+Q: Which organisation describes the four pillars of population health? | The King's Fund.
+Q: What data does population health management use? | Linked data from health and care services.
+Q: What is segmentation? | Grouping a population by similar needs, such as healthy, long-term conditions, frailty or end of life.
+Q: What follows segmentation and risk stratification? | Targeted, proactive interventions with evaluation of impact.
+Q: Which bodies plan health and care in England's integrated care systems? | Integrated care boards and integrated care partnerships.
+Q: Who delivers care at local level in integrated care systems? | Primary care networks and neighbourhood teams.
+Q: What informs integrated care priorities? | Joint strategic needs assessments and joint health and wellbeing strategies.
+Q: Why must population health data be used carefully? | Information governance matters, and data can under-represent groups and widen inequalities.
+Q: How do nurses contribute to population health? | Using caseload data, identifying people needing proactive support, working across organisations and feeding back community insights.
 
 ## Infection control in communities
 S: Infection prevention and control in community settings, such as homes, care homes, schools and prisons, protects people who are often vulnerable and helps prevent outbreaks spreading. Health protection teams coordinate the public health response.
@@ -927,6 +1137,16 @@ M1#nursing-u14-22-q1@1: Which team coordinates the response to a measles case in
 M2#nursing-u14-22-q2@2: A care home has several residents with vomiting and diarrhoea. What should the home do? | Report it to the health protection team and follow outbreak advice | Wait to see if it spreads further | Move residents between rooms to spread the workload | Stop all hand washing | Early reporting enables outbreak control.
 M2#nursing-u14-22-q3@3: A nurse visits a patient at home to give injections. How should the used needles be disposed of? | In a sharps bin, with arranged clinical waste collection | In the household bin | Taken back in a pocket | Flushed down the toilet | Safe sharps disposal protects patients, families and staff.
 MS2#nursing-u14-22-q4@1: Which reduce infection spread in care homes? | Vaccinating residents and staff ; Early recognition of illness ; Staff training | Sharing equipment without cleaning ; Ignoring soft signs | These measures protect vulnerable residents.
+Q: Which standard precautions apply in community settings? | Hand hygiene, PPE, safe sharps and waste disposal, and cleaning reusable equipment.
+Q: What infection prevention can nurses teach patients and carers? | Catheter care, wound care and hand hygiene.
+Q: Why do infections spread easily in care homes? | Residents are often frail and live closely together.
+Q: Name infection control measures in care homes. | Vaccination, early recognition of illness, isolation, staff training, antimicrobial stewardship and support from infection prevention teams.
+Q: Name outbreaks common in care homes. | Norovirus, influenza, COVID-19 and scabies.
+Q: What do UKHSA health protection teams respond to? | Notifiable diseases, outbreaks, incidents and contact tracing.
+Q: Who must report notifiable diseases? | The registered medical practitioner; nurses help by recognising and escalating them.
+Q: What reduces infection spread in schools? | Hand and respiratory hygiene, cleaning and up-to-date immunisations.
+Q: Which infections are high risks in prisons and hostels? | Tuberculosis, blood-borne viruses and outbreaks.
+Q: What protects people in prisons and homeless settings from infection? | Targeted screening, vaccination and outreach services.
 
 ## Health education
 S: Health education gives people knowledge and skills to make informed decisions about their health. It is one part of health promotion and is most effective when tailored to people's needs, health literacy and circumstances.
@@ -970,6 +1190,16 @@ M1#nursing-u14-23-q1@1: Which describes health education? | Communication to imp
 M2#nursing-u14-23-q2@2: Which principle of adult learning should guide a group session for people with COPD? | Make it relevant to their own experiences and problems | Lecture without discussion | Avoid any practical demonstration | Use only technical language | Adults learn best when content is relevant and problem-centred.
 M2#nursing-u14-23-q3@3: A community has low uptake of bowel screening and many residents speak Bengali. Which approach is most likely to help? | Community-developed, translated materials | Posting English leaflets to every home | Doing nothing, as screening is voluntary | Telling people they must attend | Tailored, community-developed education improves engagement.
 TF2#nursing-u14-23-q4@2: Providing information alone rarely changes health behaviour. | True | Education works best combined with skills and supportive environments.
+Q: Give examples of health education. | A diabetes education course or an antenatal class.
+Q: What does Tannahill's model of health promotion include? | Health education, prevention and health protection as overlapping spheres.
+Q: What is skills-based health education? | Demonstrations and practice, such as inhaler technique or cooking.
+Q: What is the empowerment approach to health education? | Helping people identify and act on their own priorities.
+Q: What should be considered with digital health education? | Digital exclusion; offer non-digital options.
+Q: Who described andragogy? | Knowles.
+Q: What motivates adult learners according to andragogy? | Internal factors, relevance and problem-centred learning.
+Q: Name an evidence-based structured education programme for type 2 diabetes. | DESMOND.
+Q: How can education be tailored for health literacy? | Plain language, visuals and teach-back.
+Q: How can health education be made accessible? | Easy read, large print and British Sign Language.
 
 ## Behaviour change
 S: Changing health behaviours is complex. Behaviour change science gives nurses frameworks and techniques to design interventions that work, both for individuals and for populations.
@@ -1012,6 +1242,16 @@ M1#nursing-u14-24-q1@1: Which is an intervention function in the Behaviour Chang
 M2#nursing-u14-24-q2@2: A man writes, "If I finish work on Tuesday, then I'll walk home instead of taking the bus." What technique is this? | An implementation intention | Self-monitoring | Social support | Incentivisation | An if-then plan links a cue to an action.
 M2#nursing-u14-24-q3@3: A hospital canteen places water at eye level and moves sugary drinks lower down. What is this? | A nudge through choice architecture | A ban on sugary drinks | A tax on sugar | A health education leaflet | Changing the environment makes the healthy choice easier.
 TF2#nursing-u14-24-q4@3: Nudges usually have larger effects than legislation and regulation. | False | Nudges are useful but typically modest; regulation can achieve larger change.
+Q: Who developed the Behaviour Change Wheel? | Michie and colleagues, in 2011.
+Q: What does COM-B stand for? | Capability, opportunity and motivation, which produce behaviour.
+Q: Name policy categories in the Behaviour Change Wheel. | Communication and marketing, guidelines, fiscal measures, regulation, legislation, environmental and social planning, and service provision.
+Q: What is the first step when using the Behaviour Change Wheel? | Diagnose what needs to change.
+Q: What is self-monitoring? | Tracking one's own behaviour, such as step counts or food diaries.
+Q: What is the Behaviour Change Technique Taxonomy? | A list defining techniques so interventions can be designed and reported consistently.
+Q: How are new habits formed? | Repeating a behaviour in a consistent context until it becomes automatic, over weeks to months.
+Q: Give examples of nudges. | Water at eye level, smaller plates and default options such as opt-out organ donation.
+Q: What is the limitation of nudges? | They usually have modest effects, so stronger measures may be needed.
+Q: Why might education alone fail to change behaviour? | The barrier may be opportunity rather than knowledge.
 
 ## Community assessment
 S: Community assessment identifies the health needs, assets and priorities of a defined population, so services and interventions can be targeted where they will make the most difference. Community and public health nurses use it to plan their work.
@@ -1056,4 +1296,14 @@ M1#nursing-u14-25-q1@1: Which data source measures relative deprivation of areas
 M2#nursing-u14-25-q2@2: Which approach adds community voices to a needs assessment? | Focus groups with residents and community groups | Using only census data | Reviewing hospital budgets only | Counting staff numbers | Qualitative engagement captures priorities and experiences.
 M2#nursing-u14-25-q3@3: A school nursing team wants to plan services for its area. What should the assessment include? | Local data, young people's views and community assets | Only national averages | Only the views of staff | Only the number of complaints | Combining data, voices and assets gives a full picture.
 SEQ2#nursing-u14-25-q4@2: Put the stages of a community health needs assessment in order. | Define the community ; Gather data and community views ; Identify needs and assets ; Agree priorities ; Plan and evaluate action | Assessment leads to targeted, evaluated action.
+Q: What is community assessment? | Identifying the health needs, assets and priorities of a defined population to target services.
+Q: How can a community be defined? | Geographically, such as a ward, or as a community of interest, such as carers.
+Q: What quantitative data are used in community assessment? | Demographics, deprivation, disease rates and service use.
+Q: What qualitative data are used in community assessment? | People's views, experiences and priorities.
+Q: Name a public health profile tool in England. | OHID's Fingertips tool.
+Q: Name data sources for community assessment. | Census and ONS data, deprivation index, public health profiles, local service, school, police and housing data.
+Q: What is a windshield survey? | A community walk to observe an area as part of assessment.
+Q: Which groups should community engagement include? | Seldom-heard groups.
+Q: What does the JSNA inform? | The joint local health and wellbeing strategy and commissioning decisions.
+Q: What should a good community assessment lead to? | Clear priorities, SMART objectives, partnership plans and evaluation.
 `;

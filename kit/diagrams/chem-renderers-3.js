@@ -206,35 +206,101 @@ function latticeChecks(spec) {
 //   claims: [{type: "net", steps: [eq], net} | {type: "regenerated", species, steps} | {type: "yield", steps: [..], overall}
 //            | {type: "atomEconomy", eq, product, value} | {type: "equation", eq}]
 function flow(spec, W, narrow) {
-  const N = spec.nodes, byId = Object.fromEntries(N.map((n) => [n.id, n]));
-  const pos = {}, bw = narrow ? 150 : spec.boxWidth || 150;
+  const N = spec.nodes, pos = {}, bw = narrow ? 150 : spec.boxWidth || 150, CH = 6.4; // CH: px per 11px bold character
+  // box sizes first: the narrow layouts space the boxes by them
+  const lineW = narrow ? (spec.layout === "cycle" && N.length > 2 ? 13 : 22) : Math.max(12, Math.floor((spec.layout === "line" ? (W - 20) / N.length - 16 : bw) / 7.6));
+  const dims = Object.fromEntries(N.map((n) => { const ls = wrap(n.label, lineW), sub = n.sub ? wrap(n.sub, lineW + 4) : []; return [n.id, { ls, sub, w: Math.min(spec.layout === "line" && !narrow ? (W - 20) / N.length - 18 : bw + 30, Math.max(...ls.map((l) => l.length), ...sub.map((l) => l.length * 0.86)) * 7.8 + 24), h: ls.length * 17 + sub.length * 15 + 16 }]; }));
+  const edgeOf = (a, b) => (spec.edges || []).find((e) => (e.from === a && e.to === b) || (e.from === b && e.to === a));
+  // One column on a phone. Boxes go in depth-first order from the starting boxes, so a branch follows its parent. A
+  // step between neighbours is a straight arrow with its label on the right; a step that skips boxes (or runs back
+  // against another) takes a lane down the left side, its label left of the centre line in the gap above the box it
+  // reaches. Each gap is tall enough for the labels in it.
+  const lanes = new Map(); // edge -> lane number
+  const stack = () => {
+    const E = spec.edges || [], into = new Set(E.map((e) => e.to)), order = [], seen = new Set();
+    const visit = (id) => { if (seen.has(id)) return; seen.add(id); order.push(id); for (const e of E) if (e.from === id) visit(e.to); };
+    N.filter((n) => !into.has(n.id)).forEach((n) => visit(n.id)); N.forEach((n) => visit(n.id));
+    const at = Object.fromEntries(order.map((id, i) => [id, i])), direct = new Set();
+    for (const e of E) { const i = at[e.from], j = at[e.to];
+      if (Math.abs(i - j) === 1 && ![...direct].some((d) => (d.from === e.to && d.to === e.from) || (d.from === e.from && d.to === e.to))) direct.add(e);
+      else lanes.set(e, lanes.size); }
+    const laneLines = (e) => (e.label ? wrap(e.label, laneChars()).length : 0);
+    // room above the first box for the labels of steps routed back to it
+    let y = 24 + [...lanes.keys()].filter((e) => at[e.to] === 0).reduce((t, e) => t + laneLines(e), 0) * 14;
+    order.forEach((id, i) => {
+      if (i) {
+        const d = [...direct].find((e) => [e.from, e.to].includes(order[i - 1]) && [e.from, e.to].includes(id));
+        const left = [...lanes.keys()].filter((e) => at[e.to] === i).reduce((t, e) => t + laneLines(e), 0);
+        y += dims[order[i - 1]].h / 2 + Math.max(44, Math.max(d?.label ? wrap(d.label, 26).length : 0, left) * 14 + 22) + dims[id].h / 2;
+      } else y += dims[id].h / 2;
+      pos[id] = [W / 2, y];
+    });
+    // where several lanes meet one box they join its left side at different heights
+    const att = new Map();
+    for (const id of order) {
+      const ends = [...lanes.keys()].flatMap((e) => [e.from === id ? [e, "from"] : null, e.to === id ? [e, "to"] : null]).filter(Boolean).sort((p, q) => lanes.get(p[0]) - lanes.get(q[0]));
+      const step = Math.min(10, (dims[id].h - 12) / Math.max(1, ends.length - 1));
+      ends.forEach(([e, end], i) => att.set(`${end}:${lanes.get(e)}`, ends.length > 1 ? (i - (ends.length - 1) / 2) * step : 0));
+    }
+    stacked = { at, order, att };
+    return y + dims[order.at(-1)].h / 2 + 24;
+  };
+  let stacked = null;
+  const laneX = (k) => 12 + k * 10, laneChars = () => Math.max(10, Math.floor((W / 2 - 10 - laneX(lanes.size)) / CH));
   let H;
-  if (spec.layout === "cycle") {
-    const R = narrow ? 125 : spec.radius || 140, cx = W / 2, cy = R + 60;
-    N.forEach((n, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / N.length; pos[n.id] = [cx + Math.cos(a) * R * (narrow ? 0.9 : 1.35), cy + Math.sin(a) * R]; });
-    H = cy + R + 70;
+  const cycle = spec.layout === "cycle", R0 = narrow ? 125 : spec.radius || 140;
+  if (cycle) {
+    const cx = W / 2, cy = R0 + 60;
+    // on a phone the loop is as wide as the boxes allow, so boxes on the same level keep a gap for the step between them
+    const ang = N.map((_, i) => -Math.PI / 2 + (i * 2 * Math.PI) / N.length), reach = Math.max(...ang.map((a) => Math.abs(Math.cos(a))));
+    const fx = narrow ? (reach > 0.01 ? Math.min(1.2, (W / 2 - 6 - Math.max(...N.map((n) => dims[n.id].w)) / 2) / (R0 * reach)) : 0.9) : 1.35;
+    N.forEach((n, i) => { pos[n.id] = [cx + Math.cos(ang[i]) * R0 * fx, cy + Math.sin(ang[i]) * R0]; });
+    H = cy + R0 + 70;
   } else if (spec.layout === "grid") {
     const cols = Math.max(...N.map((n) => n.col)) + 1, rows = Math.max(...N.map((n) => n.row)) + 1, cw = (W - 20) / cols, rh = spec.rowHeight || 110;
-    if (narrow && cols > 2) { N.forEach((n, i) => { pos[n.id] = [W / 2, 40 + i * 92]; }); H = 40 + N.length * 92; }
+    // on a phone, side-by-side boxes stay only when every label on a horizontal step fits the gap between them
+    const fits = (spec.edges || []).every((e) => { const A = N.find((n) => n.id === e.from), B = N.find((n) => n.id === e.to);
+      if (!e.label || A.row !== B.row) return true;
+      const gap = Math.abs(A.col - B.col) * cw - (dims[A.id].w + dims[B.id].w) / 2;
+      return Math.max(...wrap(e.label, 16).map((l) => l.replace(/[_^{}]/g, "").length)) * CH + 8 <= gap; });
+    if (narrow && (cols > 2 || !fits)) H = stack();
     else { N.forEach((n) => { pos[n.id] = [10 + (n.col + 0.5) * cw, 56 + n.row * rh]; }); H = 56 + (rows - 1) * rh + 40; }
   } else {
-    if (narrow) { N.forEach((n, i) => { pos[n.id] = [W / 2, 40 + i * 96]; }); H = 40 + N.length * 96 - 30; }
+    if (narrow) H = stack();
     else { const cw = (W - 20) / N.length; N.forEach((n, i) => { pos[n.id] = [10 + (i + 0.5) * cw, 70]; }); H = 170; }
   }
-  const lineW = narrow ? 22 : Math.max(12, Math.floor((spec.layout === "line" ? (W - 20) / N.length - 16 : bw) / 7.6));
-  const dims = Object.fromEntries(N.map((n) => { const ls = wrap(n.label, lineW), sub = n.sub ? wrap(n.sub, lineW + 4) : []; return [n.id, { ls, sub, w: Math.min(spec.layout === "line" && !narrow ? (W - 20) / N.length - 18 : bw + 30, Math.max(...ls.map((l) => l.length), ...sub.map((l) => l.length * 0.86)) * 7.8 + 24), h: ls.length * 17 + sub.length * 15 + 16 }]; }));
   let s = "";
+  const cx = W / 2, cy = R0 + 60;
   for (const e of spec.edges || []) {
     const [x1, y1] = pos[e.from], [x2, y2] = pos[e.to], A = dims[e.from], B = dims[e.to];
     const L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L;
     const clip = (d, ux2, uy2) => Math.min(Math.abs(ux2) > 1e-6 ? d.w / 2 / Math.abs(ux2) : 1e9, Math.abs(uy2) > 1e-6 ? d.h / 2 / Math.abs(uy2) : 1e9) + 5;
     const a = clip(A, ux, uy), b = clip(B, ux, uy);
-    if (spec.layout === "cycle") {
+    if (cycle) {
       // each step bows outwards to its own side (perpendicular to its direction), so even a two-step cycle reads as a loop
-      const R0 = narrow ? 125 : spec.radius || 140, mx = (x1 + x2) / 2, my = (y1 + y2) / 2, bow = N.length === 2 ? 0.55 : 0.18, ox = -uy * R0 * bow, oy = ux * R0 * bow;
-      s += `<path d="M${f1(x1 + ux * a)} ${f1(y1 + uy * a)} Q${f1(mx + ox)} ${f1(my + oy)} ${f1(x2 - ux * b)} ${f1(y2 - uy * b)}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
-      s += arrow(x2 - ux * (b + 10) + ox * 0.1, y2 - uy * (b + 10) + oy * 0.1, x2 - ux * b, y2 - uy * b, { w: 2, head: 9 });
-      if (e.label) s += textWrap(mx + ox * 1.25 + (ox > 0 ? 10 : ox < 0 ? -10 : 0), my + oy * 1.25, fm(e.label), narrow ? 14 : 22, { size: 11.5, weight: 700, anchor: ox > 1 ? "start" : ox < -1 ? "end" : "middle", fill: col(e.colour || "a2") });
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, bow = N.length === 2 ? 0.55 : 0.18, ox = -uy * R0 * bow, oy = ux * R0 * bow;
+      const sx0 = x1 + ux * a, sy0 = y1 + uy * a, ex = x2 - ux * b, ey = y2 - uy * b;
+      s += `<path d="M${f1(sx0)} ${f1(sy0)} Q${f1(mx + ox)} ${f1(my + oy)} ${f1(ex)} ${f1(ey)}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
+      s += arrow(x2 - ux * (b + 10) + ox * 0.1, y2 - uy * (b + 10) + oy * 0.1, ex, ey, { w: 2, head: 9 });
+      if (e.label) {
+        // the label sits just outside the arc's apex, on the side away from the loop, wrapped to the room on that side
+        const px = 0.25 * sx0 + 0.5 * (mx + ox) + 0.25 * ex, py = 0.25 * sy0 + 0.5 * (my + oy) + 0.25 * ey;
+        let dx = px - cx, dy = py - cy; const dl = Math.hypot(dx, dy) || 1; dx /= dl; dy /= dl;
+        const anchor = dx > 0.35 ? "start" : dx < -0.35 ? "end" : "middle", lx = px + dx * 12, room = anchor === "start" ? W - lx - 6 : anchor === "end" ? lx - 6 : 2 * Math.min(lx, W - lx) - 12;
+        const n = Math.max(8, Math.min(narrow ? 24 : 26, Math.floor(room / CH))), ls = wrap(fm(e.label), n);
+        const ly = anchor === "middle" ? py + dy * 14 + (dy < 0 ? -(ls.length - 1) * 17 : 0) : py - ((ls.length - 1) * 17) / 2;
+        s += ls.map((l, i) => text(lx, ly + i * 17, l, { size: 11.5, weight: 700, anchor, fill: col(e.colour || "a2"), halo: true })).join("");
+      }
+    } else if (lanes.has(e)) {
+      // a routed step: out of the source box's left side, along its lane, into the target box's left side
+      const k = lanes.get(e), lx = laneX(k), sxl = x1 - A.w / 2, txl = x2 - B.w / 2, sy1 = y1 + stacked.att.get(`from:${k}`), ty = y2 + stacked.att.get(`to:${k}`);
+      s += `<path d="M${f1(sxl)} ${f1(sy1)} H${f1(lx)} V${f1(ty)} H${f1(txl - 8)}" fill="none" stroke="${C.ink}" stroke-width="2" stroke-linejoin="round"${e.dashed ? ' stroke-dasharray="6 5"' : ""}/>`;
+      s += arrow(txl - 12, ty, txl - 2, ty, { w: 2, head: 9 });
+      if (e.label) {
+        const before = [...lanes.keys()].filter((o) => o !== e && stacked.at[o.to] === stacked.at[e.to] && lanes.get(o) < lanes.get(e)).reduce((t, o) => t + (o.label ? wrap(o.label, laneChars()).length : 0), 0);
+        const ls = wrap(fm(e.label), laneChars()), top = y2 - B.h / 2 - 12 - (ls.length - 1 + before) * 14;
+        s += ls.map((l, k) => text(W / 2 - 10, top + k * 14, l, { size: 11, weight: 700, anchor: "end", fill: col(e.colour || "a2"), halo: true })).join("");
+      }
     } else {
       s += arrow(x1 + ux * a, y1 + uy * a, x2 - ux * b, y2 - uy * b, { w: 2, head: 9, dash: e.dashed ? "6 5" : "" });
       if (e.label) {
@@ -250,8 +316,12 @@ function flow(spec, W, narrow) {
     d.ls.forEach((l, i) => { s += text(x, y - d.h / 2 + 16 + i * 17, fm(l), { size: 13, weight: 700, fill: n.tone ? tc : C.ink }); });
     d.sub.forEach((l, i) => { s += text(x, y - d.h / 2 + 16 + d.ls.length * 17 + i * 15, fm(l), { size: 11.5, fill: C.soft }); });
   }
-  if (spec.centre) s += textWrap(W / 2, (narrow ? 125 : spec.radius || 140) + 52, fm(spec.centre), narrow ? 18 : 24, { size: 12.5, weight: 700, fill: col("a2") });
   let y = H;
+  // the net equation: in the middle of the loop where there is room, otherwise under it
+  // (a two-step loop has no middle: its arcs nearly touch)
+  const inLoop = !narrow && N.length > 2;
+  if (spec.centre && inLoop) s += textWrap(W / 2, R0 + 52, fm(spec.centre), 24, { size: 12.5, weight: 700, fill: col("a2") });
+  if (spec.centre && !inLoop) { const ls = wrap(fm(spec.centre), narrow ? 44 : 80); s += ls.map((l, i) => text(W / 2, y - 22 + i * 17, l, { size: 12.5, weight: 700, fill: col("a2") })).join(""); y += ls.length * 17 - 6; }
   for (const nt of spec.notes || []) { s += textWrap(W / 2, y, fm(nt), narrow ? 46 : 90, { size: 12, fill: C.soft }); y += 18 * Math.ceil(nt.length / (narrow ? 46 : 90)); }
   return { s, H: y + 8 };
 }
@@ -296,10 +366,21 @@ function condenser(x1, y1, x2, y2, inlet, outlet) {
   s += tube(inlet.f, inlet.side, "in", "water in") + tube(outlet.f, outlet.side, "out", "water out");
   return { s, inY: pIn[1], outY: pOut[1] };
 }
+// how far the drawing's labels reach left and right of the 460-wide canvas, estimated from each <text>'s position,
+// anchor, size and length (labels such as 'expanded polystyrene cup' run past the glassware)
+function extent(svg) {
+  let lo = 0, hi = 460;
+  for (const m of svg.matchAll(/<text x="([-\d.]+)"[^>]*?font-size="([\d.]+)"[^>]*?text-anchor="(\w+)"[^>]*>(.*?)<\/text>/g)) {
+    const x = +m[1], w = m[4].replace(/<[^>]+>/g, "").replace(/&\w+;/g, "x").length * +m[2] * 0.55, a = m[3];
+    lo = Math.min(lo, a === "start" ? x : a === "end" ? x - w : x - w / 2); hi = Math.max(hi, a === "start" ? x + w : a === "end" ? x : x + w / 2);
+  }
+  return [lo - 4, hi + 4];
+}
 function apparatus(spec, W, narrow) {
-  const k = spec.kind, d = APP[k] ? APP[k](spec) : { s: text(230, 40, `no drawing for ${k}`), H: 80 };
-  const sc = narrow ? W / 470 : 1, dx = narrow ? 0 : (W - 460) / 2;
-  return { s: `<g transform="translate(${f1(dx)} 0) scale(${f1(sc)})">${d.s}</g>`, H: d.H * sc, geom: d.geom };
+  const k = spec.kind, d = APP[k] ? APP[k](spec, narrow) : { s: text(230, 40, `no drawing for ${k}`), H: 80 };
+  // fitted to the width with its labels, centred, never enlarged
+  const [lo, hi] = extent(d.s), sc = Math.min(1, W / (hi - lo)), dx = (W - (hi - lo) * sc) / 2 - lo * sc;
+  return { s: `<g transform="translate(${f1(dx)} 0) scale(${sc.toFixed(3)})">${d.s}</g>`, H: d.H * sc, geom: d.geom };
 }
 const APP = {
   reflux(spec) {
@@ -369,17 +450,19 @@ const APP = {
     s += `<path d="M206 368 h48 v40 h-48 Z" fill="${col(bands.at(-1).colour)}" fill-opacity=".35" stroke="${C.ink}" stroke-width="1.8"/>` + lab(262, 392, `first to elute: ${bands.at(-1).label}`);
     return { s, H: 420 };
   },
-  titration(spec) {
+  titration(spec, narrow) {
     let s = `<rect x="214" y="20" width="22" height="250" fill="#fff" stroke="${C.ink}" stroke-width="2"/>`;
     s += `<rect x="216" y="${20 + 250 * (spec.initial / 50)}" width="18" height="${250 - 250 * (spec.initial / 50)}" fill="#dbeafe" fill-opacity=".9"/>`;
     for (let v = 0; v <= 50; v += 5) s += line(236, 20 + v * 5, 244, 20 + v * 5, { w: 1 }) + (v % 10 ? "" : text(250, 20 + v * 5, String(v), { size: 10, anchor: "start", fill: C.soft }));
     s += `<path d="M219 270 h12 v10 h-12 Z" fill="#94a3b8" stroke="${C.ink}" stroke-width="1.4"/><path d="M222 280 v26 h6 v-26" fill="none" stroke="${C.ink}" stroke-width="1.6"/>`;
     s += `<path d="M205 320 h40 v20 l40 60 h-120 l40 -60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M178 375 l-13 25 h120 l-13 -25 Z" fill="${spec.colour || "#fbcfe8"}" fill-opacity=".9"/>`;
     s += lbl(214, 60, 120, 50, "burette: titrant", "end") + text(225, 420, `conical flask: ${spec.analyte || "analyte + indicator"}`, { size: 12.5, weight: 600, fill: C.ink });
-    s += lab(300, 120, `initial reading ${spec.initial.toFixed(2)} cm³`) + lab(300, 142, `final reading ${spec.final.toFixed(2)} cm³`) + lab(300, 168, `titre ${spec.titre.toFixed(2)} cm³`, { fill: col("a2") });
-    s += lab(300, 196, "read the bottom of the meniscus at eye level", { fill: C.soft });
+    // the readings beside the burette, or under the flask on a phone, where there is no room beside it
+    const [rx, ry] = narrow ? [40, 456] : [300, 120];
+    s += lab(rx, ry, `initial reading ${spec.initial.toFixed(2)} cm³`) + lab(rx, ry + 22, `final reading ${spec.final.toFixed(2)} cm³`) + lab(rx, ry + 48, `titre ${spec.titre.toFixed(2)} cm³`, { fill: col("a2") });
+    s += lab(rx, ry + 76, "read the bottom of the meniscus at eye level", { fill: C.soft });
     s += `<rect x="0" y="0" width="0" height="0"/>`;
-    return { s, H: 432 };
+    return { s, H: narrow ? ry + 92 : 432 };
   },
   filtration(spec) {
     let s = `<path d="M70 60 h120 l-50 70 v60 h-20 v-60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M80 66 h100 l-50 62 Z" fill="#f8fafc" stroke="${C.soft}" stroke-width="1.2"/><path d="M98 90 h64 l-32 38 Z" fill="${spec.residueColour || "#d6c7a1"}"/>`;
@@ -391,16 +474,18 @@ const APP = {
     s += line(395, 180, 440, 180, { w: 5, stroke: "#9fb4cc" }) + arrow(420, 165, 455, 165, { stroke: col("a1"), w: 2, head: 8 }) + lab(400, 155, "to vacuum", { fill: col("a1") }) + text(355, 40, "Büchner (suction)", { size: 12.5, weight: 700 });
     return { s, H: 330 };
   },
-  calorimeter(spec) {
+  calorimeter(spec, narrow) {
     let s = `<path d="M150 120 l12 200 h136 l12 -200" fill="#fff" stroke="${C.ink}" stroke-width="2"/><path d="M155 170 l7 150 h136 l7 -150 Z" fill="#dbeafe" fill-opacity=".8"/>`;
     s += `<rect x="140" y="104" width="180" height="16" rx="4" fill="#e2e8f0" stroke="${C.ink}" stroke-width="1.6"/>`;
     s += `<rect x="226" y="30" width="8" height="250" rx="3" fill="#fff" stroke="${C.ink}" stroke-width="1.6"/><circle cx="230" cy="284" r="6" fill="#ef4444" stroke="${C.ink}"/>`;
-    s += lbl(150, 220, 70, 220, "expanded polystyrene cup", "end") + lbl(140, 112, 70, 112, "lid", "end") + lbl(234, 60, 300, 50, "thermometer (±0.1 °C)");
-    s += lab(330, 150, spec.mixture || "acid + alkali");
+    s += lbl(150, 220, 70, 220, narrow ? "polystyrene cup" : "expanded polystyrene cup", "end") + lbl(140, 112, 70, 112, "lid", "end") + lbl(234, 60, 300, 50, "thermometer (±0.1 °C)");
+    // the mixture and the working beside the cup, or under it on a phone
+    const [cx, cy] = narrow ? [60, 356] : [330, 150];
+    s += lab(cx, cy, spec.mixture || "acid + alkali");
     const q = spec.mass * 4.18 * spec.dT;
-    s += lab(330, 190, `m = ${spec.mass} g, ΔT = ${spec.dT} °C`) + lab(330, 212, `q = mcΔT = ${spec.mass} × 4.18 × ${spec.dT}`) + lab(330, 234, `= ${Math.round(q)} J`, { fill: col("a2") });
-    if (spec.moles) s += lab(330, 262, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(330, 284, `= −${(q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
-    return { s, H: 340 };
+    s += lab(cx, cy + 40, `m = ${spec.mass} g, ΔT = ${spec.dT} °C`) + lab(cx, cy + 62, `q = mcΔT = ${spec.mass} × 4.18 × ${spec.dT}`) + lab(cx, cy + 84, `= ${Math.round(q)} J`, { fill: col("a2") });
+    if (spec.moles) s += lab(cx, cy + 112, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(cx, cy + 134, `= −${(q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
+    return { s, H: narrow ? cy + (spec.moles ? 150 : 100) : 340 };
   },
   fractionating(spec) {
     let s = `<path d="M180 30 h100 v300 l30 40 h-160 l30 -40 Z" fill="#f8fafc" stroke="${C.ink}" stroke-width="2"/>`;
@@ -473,19 +558,23 @@ function phase(spec, W, narrow) {
   for (let i = 0; i <= 20; i++) { const t = i / 20, u = tp[0] + (cp[0] - tp[0]) * t; lg.push([u, tp[1] + (cp[1] - tp[1]) * (Math.exp(1.6 * t) - 1) / (Math.exp(1.6) - 1)]); }
   s += curve(sg) + curve(lg) + curve(sl);
   s += `<circle cx="${f1(X(tp[0]))}" cy="${f1(Y(tp[1]))}" r="5" fill="${col("a2")}"/><circle cx="${f1(X(cp[0]))}" cy="${f1(Y(cp[1]))}" r="5" fill="${col("a2")}"/>`;
-  s += text(X(tp[0]) + 8, Y(tp[1]) + 16, `triple point (${d.triple[0]} °C, ${d.triple[1]} atm)`, { size: 11, weight: 700, anchor: "start", fill: col("a2") });
-  s += text(X(cp[0]) - 6, Y(cp[1]) - 12, `critical point (${d.critical[0]} °C, ${d.critical[1]} atm)`, { size: 11, weight: 700, anchor: "end", fill: col("a2") });
+  s += text(X(tp[0]) + 8, Y(tp[1]) + 16, `triple point (${d.triple[0]} °C, ${d.triple[1]} atm)`, { size: 11, weight: 700, anchor: "start", fill: col("a2"), halo: true });
+  s += text(X(cp[0]) - 6, Y(cp[1]) - 12, `critical point (${d.critical[0]} °C, ${d.critical[1]} atm)`, { size: 11, weight: 700, anchor: "end", fill: col("a2"), halo: true });
   s += line(pad.l, Y(atm), W - pad.r, Y(atm), { stroke: C.line, w: 1.2, dash: "5 4" }) + text(pad.l - 4, Y(atm), "1 atm", { size: 11, weight: 600, anchor: "end", fill: C.soft });
   s += text(X(0.12), Y(0.75), "solid", { size: 14, weight: 800, fill: col("a1") }) + text(X(0.55), Y(0.72), "liquid", { size: 14, weight: 800, fill: col("a4") }) + text(X(0.72), Y(0.2), "gas", { size: 14, weight: 800, fill: col("a3") });
   if (water) {
     const mpU = tp[0] + slope * 0.05 * ((atm - tp[1]) / (1 - tp[1])), bpU = lg.find(([, v]) => v >= atm)[0];
     s += `<circle cx="${f1(X(mpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/><circle cx="${f1(X(bpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/>`;
-    s += text(X(mpU) - 6, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "end" }) + text(X(bpU) - 8, Y(atm) - 14, "100 °C", { size: 11, weight: 700, anchor: "end" });
+    s += text(X(mpU) + 7, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "start", halo: true }) + text(X(bpU) - 8, Y(atm) - 14, "100 °C", { size: 11, weight: 700, anchor: "end", halo: true });
     if (spec.solution) {
       const sh = 0.07, lg2 = lg.map(([u, v]) => [u + sh * (0.4 + 0.6 * (v - tp[1]) / (cp[1] - tp[1])), v * 0.97]).filter(([u]) => u <= 0.98), sl2 = [[tp[0] - 0.06, tp[1] * 0.93], [tp[0] - 0.06 + slope * 0.05, 1]];
       s += curve(lg2, col("a2"), 2.2, "7 5") + curve(sl2, col("a2"), 2.2, "7 5");
-      s += text(X(0.98), Y(0.94), "solution (dashed)", { size: 11.5, weight: 700, anchor: "end", fill: col("a2") });
-      s += text(X(0.98), Y(0.94) + 16, `ΔT_{b} = K_{b}m = ${(d.Kb * spec.solution.molality * (spec.solution.i || 1)).toFixed(2)} K; ΔT_{f} = K_{f}m = ${(d.Kf * spec.solution.molality * (spec.solution.i || 1)).toFixed(2)} K`, { size: 11, anchor: "end", fill: C.soft });
+      // the key and the working under the axis, one equation a line (beside the critical point they overprinted it)
+      const m = spec.solution.molality * (spec.solution.i || 1);
+      s += line(pad.l, H + 4, pad.l + 26, H + 4, { stroke: col("a2"), w: 2.2, dash: "7 5" }) + text(pad.l + 32, H + 4, "the solution", { size: 11.5, weight: 700, anchor: "start", fill: col("a2") });
+      s += text(pad.l, H + 24, `ΔT_{b} = K_{b}m = ${(d.Kb * m).toFixed(2)} K (boiling point raised)`, { size: 11.5, anchor: "start", fill: C.soft });
+      s += text(pad.l, H + 42, `ΔT_{f} = K_{f}m = ${(d.Kf * m).toFixed(2)} K (freezing point lowered)`, { size: 11.5, anchor: "start", fill: C.soft });
+      return { s, H: H + 54 };
     }
   } else s += text(X(0.15), Y(atm) - 12, `sublimes at ${d.subl} °C`, { size: 11, weight: 700, anchor: "start" });
   return { s, H };
@@ -525,8 +614,10 @@ function lobes(spec, W, narrow) {
     const { ang, rad } = nodes(o.name);
     s += text(cx, cy + Lm + 47, `${ang} angular, ${rad} radial node${ang + rad === 1 ? "" : "s"}`, { size: 11, fill: C.soft });
   });
-  s += text(W - 12, 14, "colours: opposite signs of ψ", { size: 11, anchor: "end", fill: C.soft });
-  return { s, H: 20 + Math.ceil(n / perRow) * ch };
+  // the colour key under the drawings (at the top right it sat on an axis label)
+  const H0 = 20 + Math.ceil(n / perRow) * ch;
+  s += text(W / 2, H0 + 4, "the two colours: opposite signs of the wavefunction ψ", { size: 11, fill: C.soft });
+  return { s, H: H0 + 16 };
 }
 function nodes(name) { const n = +name[0], l = "spdf".indexOf(name[1]); return { ang: l, rad: n - l - 1 }; }
 function sigmaPi(spec, W, narrow) {

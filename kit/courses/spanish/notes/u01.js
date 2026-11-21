@@ -37,6 +37,16 @@ M2#spanish-u01-01-q2@3: In the word *guitarra*, which letters are silent or comb
 TF1#spanish-u01-01-q3@1: Ch and ll are still counted as separate letters of the Spanish alphabet. | false | Since the 2010 Ortografía, ch and ll are digraphs, not letters; the alphabet has 27 letters.
 M3#spanish-u01-01-q4@2: Why can an English learner usually read an unseen Spanish word aloud correctly but not an unseen English word? | Spanish letters map consistently onto sounds | Spanish words are always shorter than English ones | Spanish has fewer vowel letters than English | Spanish never borrows words from other languages | Spanish spelling is close to phonemic, so the letters predict the sounds; English spelling preserves historical forms, so the same letters spell many sounds.
 SA3#spanish-u01-01-q5@2,3: Explain why Spanish spelling is described as phonemic, using two examples, and give one exception to the one-letter-one-sound rule. | Spanish is phonemic because each letter or digraph normally spells one sound and each sound has one or two spellings, so words are read as written: *casa*, *mesa*, *pelota* are pronounced letter by letter. Digraphs such as ch in *chico* spell one sound. Exceptions include the silent h (*hola*), the silent u in *que* and *gui*, and the /k/ sound spelt both c and qu (*casa*, *queso*). | Defines phonemic as a consistent letter-sound match ; Gives two examples read as spelt ; Mentions digraphs spelling one sound ; Gives a valid exception such as silent h or silent u ; Notes that some sounds have two spellings
+Q: Which letter does the Spanish alphabet have that English lacks? | ñ, called eñe.
+Q: Define a digraph in Spanish spelling. | A pair of letters that together spell a single sound, such as ch, ll, rr, qu and gu.
+Q: Name the five Spanish vowels. | a, e, i, o and u.
+Q: What grammatical gender are Spanish letter names? | Feminine: la a, la eñe, la jota.
+Q: Which two letters appear mainly in borrowed words? | K and w, as in el kilo, el kiwi and la web.
+Q: What is the Spanish name of the letter v? | uve.
+Q: How would you say that José has an accent on the e when spelling it aloud? | Con tilde en la e.
+Q: Why is Spanish spelling described as close to phonemic? | Each letter or digraph stands for one sound, and each sound is spelt in only one or two ways.
+Q: How is the h in hola pronounced? | It is silent: hola is said OH-la.
+Q: What sound does qu spell before e, and what happens to the u? | It spells /k/ and the u is silent.
 
 ## Vowels and diphthongs
 LV: CEFR A1 · GCSE Foundation
@@ -76,6 +86,16 @@ M2#spanish-u01-02-q2@2: How many syllables does *tiempo* (time, weather) have? |
 TF1#spanish-u01-02-q3@3: In *país* (country), the accent on the i keeps a and i in separate syllables. | true | The accent makes the weak i stressed, so the vowels are in hiatus: pa-ís, two syllables.
 M3#spanish-u01-02-q4@2,3: Which word contains hiatus rather than a diphthong? | poeta | puerta | cuidado | aire | o + e are both strong vowels, so *po-e-ta* has hiatus; *puerta*, *cuidado* and *aire* all contain a weak vowel forming a diphthong.
 SA3#spanish-u01-02-q5@1,2: An English speaker reads *Lo quiero todo* ("I want it all") with English-style vowels. Explain what is going wrong and how to correct it. | They are probably gliding the vowels (o as "oh-oo") and reducing unstressed ones to "uh". Each Spanish vowel should be short and pure: lo with a steady o, quie as one syllable with the ie diphthong, ro and to with full o sounds. Unstressed vowels such as the final o in *quiero* and *todo* keep their full value. | Identifies gliding English vowels ; Identifies vowel reduction in unstressed syllables ; States the five vowels are pure and constant ; Recognises the ie diphthong in quiero ; Gives a clear correction
+Q: How many vowel sounds does Spanish have? | Five.
+Q: What does it mean that Spanish vowels are pure? | The tongue does not glide during the vowel, unlike English go or day.
+Q: Which Spanish vowels are strong? | a, e and o.
+Q: What happens to unstressed vowels in Spanish, unlike English? | They keep their full value instead of reducing to a neutral uh.
+Q: Define a diphthong in Spanish. | Two vowels pronounced in one syllable, one of them a weak i or u, as in bueno and tiempo.
+Q: What do two strong vowels next to each other form? | Hiatus: they stay in separate syllables, as in le-o.
+Q: How does a written accent on i or u affect a diphthong? | It makes the weak vowel stressed, breaking the diphthong into hiatus, as in dí-a.
+Q: How is ciudad divided into syllables, and why? | ciu-dad: i and u are both weak, so they form a diphthong.
+Q: Which English word gives the vowel sound of Spanish e? | bet, as in mesa and leche.
+Q: What mistake makes no or de sound foreign at once? | Gliding the vowel, as in noh-oo or day; each vowel should be short, steady and unglided.
 
 ## Stress and written accents
 LV: CEFR A1 · GCSE Foundation
@@ -111,6 +131,16 @@ M2#spanish-u01-03-q2@2: Why does *canción* (song) need a written accent but *ca
 MS2#spanish-u01-03-q3@3: Which sentences contain a word that carries a diacritic accent: choose all that apply. | Tú eres mi amigo (you are my friend) ; Sí, quiero té (yes, I want tea) | Tu casa es grande (your house is big) ; Si llueve, no salgo (if it rains, I don't go out) | *Tú* (you), *sí* (yes) and *té* (tea) take diacritic accents; *tu* (your) and *si* (if) don't.
 M3#spanish-u01-03-q4@1,2: Which of these words is spelt correctly? | árbol | arból | lapiz | examén | *Árbol* ends in l and is stressed on the first syllable, so it needs an accent there; *lápiz* needs one too, and *examen* follows rule 1 with no accent.
 SA3#spanish-u01-03-q5@1,2,3: A learner writes *Mi papa esta en el jardin*. Correct the sentence and explain each change using the stress rules. | Correct: *Mi papá está en el jardín* (My dad is in the garden). *Papá* is stressed on the last syllable but ends in a vowel, so it needs an accent (and *papa* means potato or Pope). *Está* is stressed on the last syllable and ends in a vowel, so it needs an accent, which also distinguishes it from *esta* (this). *Jardín* ends in n and is stressed on the last syllable, so it needs an accent. *Mi* (my) needs none. | Corrects papá with reason ; Corrects está with reason ; Corrects jardín with reason ; Notes the change in meaning without the accent ; Leaves mi unaccented as the possessive
+Q: Where is the stress in a word ending in a consonant other than n or s? | On the last syllable, as in ha-blar and ciu-dad.
+Q: What is a tilde in Spanish? | The written accent mark on a vowel, showing stress or distinguishing two words.
+Q: Define an esdrújula. | A word stressed on the third-to-last syllable; it always takes a written accent.
+Q: When does a word need a written accent for stress? | When its stress breaks the two default rules, and always when it is an esdrújula.
+Q: Why does joven need no accent but jóvenes does? | Joven follows rule 1; the plural adds a syllable, putting stress third-to-last, which always needs an accent.
+Q: What is a diacritic accent? | An accent that separates words spelt alike, such as tú and tu or sí and si.
+Q: What is the difference between él and el? | Él means he; el means the.
+Q: What does papá mean compared with papa? | Papá is dad; papa is potato or Pope.
+Q: Which accent mark does Spanish always use for the tilde? | The acute accent.
+Q: What do question words such as qué, cómo and dónde take in questions? | A written accent: ¿qué?, ¿cómo?, ¿dónde?
 
 ## Consonants that differ from English
 LV: CEFR A1 · GCSE Foundation
@@ -152,6 +182,16 @@ M2#spanish-u01-04-q2@1: Which word contains the throaty "loch" sound? | gente | 
 TF1#spanish-u01-04-q3@3: A Mexican speaker who pronounces *cinco* as "SEEN-ko" is making a mistake. | false | This is seseo, the standard pronunciation of most Spanish speakers, including all of Latin America.
 M3#spanish-u01-04-q4@2: A learner says *caro* (expensive) but listeners hear *carro* (car). What is the learner doing wrong? | Trilling the single r instead of tapping it | Pronouncing the c as "th" | Stressing the wrong syllable | Pronouncing the final o as "oh-oo" | A single r between vowels is one quick tap; a trill signals rr and changes the word to *carro*.
 SA3#spanish-u01-04-q5@1,3: Describe three consonant sounds in which Peninsular (Spain) and Latin American Spanish differ, and explain whether a learner should choose one variety. | In most of Spain c before e or i and z are "th"; in Latin America they are /s/ (seseo). Ll and y sound like "sh" or the s of "measure" in Argentina and Uruguay but like "y" elsewhere. J is a strong "loch" sound in central and northern Spain but softer, like English h, in the Caribbean. Learners should choose one consistent model, usually the variety they hear most, since all are standard and mutually intelligible. | c and z: th versus s ; ll and y in Argentina and Uruguay ; j: strong versus soft h ; States that all varieties are standard ; Recommends consistency in one model
+Q: How is c pronounced before a, o, u or a consonant? | As /k/: casa, cosa, clase.
+Q: Define seseo. | Pronouncing c before e and i, and z, as /s/, as in Latin America, the Canaries and parts of Andalusia.
+Q: How is g pronounced before e or i? | As a throaty sound like Scottish loch: gente, girasol.
+Q: How does Spanish keep a hard g before e or i? | By writing gu, with the u silent: guerra, guitarra.
+Q: What shows that the u in güe or güi is pronounced? | A diaeresis on the u: pingüino, vergüenza.
+Q: How is j pronounced in much of the Caribbean and Central America? | Softer, like English h.
+Q: How do ll and y sound in Argentina and Uruguay? | Like sh or the s in measure.
+Q: When is r trilled rather than tapped? | When written rr, and when r begins a word or follows n, l or s.
+Q: How do b and v differ in Spanish pronunciation? | They don't: they are the same sound, so vaca and baca sound alike.
+Q: How is ñ pronounced? | Like ny in canyon: niño, mañana.
 
 ## Greetings and goodbyes
 LV: CEFR A1 · GCSE Foundation
@@ -191,6 +231,16 @@ M2#spanish-u01-05-q2@2: Someone asks you *¿Qué tal?*. Which reply fits best? |
 TF1#spanish-u01-05-q3@1: *Buenas noches* can be used both to say hello and to say goodbye. | true | It works as a greeting and a farewell in the evening and at night.
 M3#spanish-u01-05-q4@3: A British student in Madrid is greeted by a friend's mother with two kisses on the cheeks. What best explains this? | Two kisses are the usual greeting between acquaintances in Spain | She has mistaken the student for a relative | Kissing is only used between close family in Spain | It shows she expects to be addressed as tú | *Dos besos* are the normal informal greeting in Spain; elsewhere one kiss or a handshake may be usual.
 SA3#spanish-u01-05-q5@1,2,3: You meet your Spanish host's elderly neighbour at 5 pm. Write the exchange (greeting, asking how they are, replying and saying goodbye) and justify your choices of expression. | *Buenas tardes, señora. ¿Cómo está usted?* ... *Muy bien, gracias.* ... *Adiós, hasta luego.* Buenas tardes fits 5 pm (after lunch, before dark). Usted and the formal *¿Cómo está usted?* show respect to an older person you don't know. Gracias and a polite farewell such as *hasta luego* or *adiós* close the exchange. | Correct time-of-day greeting with justification ; Uses usted with an older stranger and explains why ; Correct inverted question marks ; Polite reply and thanks ; Appropriate farewell
+Q: When is buenos días used? | As good morning, until lunch.
+Q: When is buenas tardes used? | From lunch until it gets dark.
+Q: What does hasta mañana mean? | See you tomorrow.
+Q: What does hasta pronto mean? | See you soon.
+Q: Where does the opening question or exclamation mark go in Spanish? | Where the question or exclamation begins.
+Q: How do you ask how someone is formally? | ¿Cómo está usted?
+Q: What does the reply regular mean to ¿Qué tal? | So-so.
+Q: What informal phrase returns the question how are you? | ¿Y tú?, meaning and you?
+Q: Why is it buenos días but buenas noches? | Día is masculine despite ending in -a; noches is feminine.
+Q: What greeting custom is conventional among acquaintances in Spain? | Two kisses on the cheeks, dos besos.
 
 ## Introducing yourself
 LV: CEFR A1 · GCSE Foundation
@@ -228,6 +278,16 @@ M2#spanish-u01-06-q2@2: You want to ask an older stranger formally how old they 
 TF1#spanish-u01-06-q3@3: In *María López Fernández*, López is the surname of María's mother. | false | Traditionally the first surname is the father's (López) and the second the mother's (Fernández).
 M3#spanish-u01-06-q4@1: Which sentence correctly says "I'm Spanish and I'm fifteen" for a girl? | Soy española y tengo quince años | Soy española y soy quince años | Estoy española y tengo quince años | Soy español y tengo quince año | A girl says *española*; age uses *tener* with plural *años*; nationality uses *ser*.
 SA3#spanish-u01-06-q5@1,2: Write a four-line introduction for a Spanish pen friend (name, age, origin, home) and explain the two places where English speakers most often go wrong. | *Hola, me llamo Sam. Tengo quince años. Soy de Liverpool, pero vivo en York.* English speakers often say *soy quince años* by translating "I am fifteen", but age uses tener; and they confuse origin (*soy de*) with residence (*vivo en*), or use estar instead of ser for origin. Nationality adjectives must also agree with the speaker's gender. | Correct name sentence ; Age with tener ; Origin with ser de and residence with vivir en ; Identifies the tener error ; Identifies another typical error such as estar for origin or agreement
+Q: How do you ask someone's name informally? | ¿Cómo te llamas?
+Q: What does me llamo literally mean? | I call myself.
+Q: How do you ask where someone is from informally? | ¿De dónde eres?
+Q: How do you say I live in Leeds? | Vivo en Leeds.
+Q: What does mucho gusto mean? | Pleased to meet you.
+Q: Which verb does Spanish use to state age? | Tener: Tengo quince años.
+Q: What are the two traditional Spanish surnames, in order? | The father's first surname, then the mother's first surname.
+Q: What does apellido mean? | Surname.
+Q: What traditionally happens to a woman's surnames on marriage in Spanish-speaking countries? | She does not traditionally change them.
+Q: Since Spain's 2017 change in surname law, who chooses the order of surnames? | The parents.
 
 ## Tú and usted
 LV: CEFR A1 · GCSE Foundation
@@ -265,6 +325,16 @@ M2#spanish-u01-07-q2@2: Complete for a formal question to one person: *¿De dón
 TF1#spanish-u01-07-q3@3: A teacher in Mexico would address a group of her pupils as *vosotros*. | false | Latin America doesn't use *vosotros*; she would say *ustedes*, informally.
 M3#spanish-u01-07-q4@2,3: A Spanish teenager says to two friends: *¿Queréis venir?* What would a Colombian teenager most likely say? | ¿Quieren venir? | ¿Queréis venir? | ¿Quieres venir? | ¿Quiere venir? | *Queréis* is the vosotros form used in Spain; Latin America uses the ustedes form *quieren* for all plural "you".
 SA3#spanish-u01-07-q5@1,3: Explain how you would decide between tú and usted when working as a summer volunteer in a Spanish hotel, and how this might differ in Bogotá. | With guests, especially older ones, start with usted, as a polite default in a service role; with fellow young staff, tú is normal. In Spain tú is widespread, so colleagues and many guests may invite you to tutear. In Bogotá usted is used more widely, even among friends in some regions, and the plural is always ustedes, never vosotros. | Usted with guests as a default ; Tú with peers ; Mentions being invited to tutear ; Notes wider usted in Colombia ; Notes ustedes replaces vosotros in Latin America
+Q: When is tú used? | With one person informally: friends, family, children, people your age.
+Q: When is usted used? | With one person formally: strangers, older people, officials, customers.
+Q: Where is vosotros used? | In Spain only, as the informal plural you.
+Q: What is the function of ustedes in Latin America? | It is the plural you for both formal and informal use.
+Q: Which old title do usted and ustedes come from? | Vuestra merced, your grace.
+Q: Why does usted take third-person verbs? | Because it comes from the title vuestra merced, so it is grammatically like él.
+Q: What does tutear mean? | To address someone as tú.
+Q: Which form of you should you use with an adult stranger when in doubt? | Usted.
+Q: How might someone invite you to switch to tú? | Puedes tutearme or Tutéame.
+Q: Which verb form asks Do you speak English? to a group of friends in Spain? | The vosotros form: ¿Habláis inglés?
 
 ## Numbers 0 to 100
 LV: CEFR A1 · GCSE Foundation
@@ -303,6 +373,16 @@ M2#spanish-u01-08-q2@2: How is 44 written? | cuarenta y cuatro | cuarentaicuatro
 TF1#spanish-u01-08-q3@3: "Twenty-one girls" is *veintiuno chicas*. | false | *Uno* agrees with a feminine noun: *veintiuna chicas*.
 M3#spanish-u01-08-q4@1,2: You hear *Son sesenta y seis euros*. How much is it? | 66 euros | 76 euros | 67 euros | 56 euros | *Sesenta* is 60 and *seis* 6; *setenta* (70) and *siete* (7) are the usual traps.
 SA3#spanish-u01-08-q5@2,3: Write in words: 16, 22, 31 books, 21 houses and 100, and explain the spelling or agreement rule behind each. | *dieciséis* (one word, accent because it ends in s and is stressed on the last syllable); *veintidós* (one word, accent for the same reason); *treinta y un libros* (three words from 31; uno shortens to un before a masculine noun); *veintiuna casas* (uno becomes una before a feminine noun); *cien* (exactly one hundred). | dieciséis with reason ; veintidós with reason ; treinta y un libros with agreement ; veintiuna casas with agreement ; cien
+Q: How are the numbers 16 to 19 written? | As one word: dieciséis, diecisiete, dieciocho, diecinueve.
+Q: Why do dieciséis and veintidós carry written accents? | They end in s and are stressed on the last syllable.
+Q: How are numbers from 31 to 99 formed? | As three words, tens and units joined by y: treinta y uno.
+Q: What is 100 in Spanish? | cien.
+Q: What happens to uno before a masculine noun? | It shortens to un: un libro, veintiún años.
+Q: What form does uno take before a feminine noun? | una: una casa, treinta y una chicas.
+Q: Define apócope. | Shortening of a word before a noun, as uno to un.
+Q: How can you tell sesenta from setenta? | Sesenta (60) has the s of seis; setenta (70) has the t of siete.
+Q: What is 50 in Spanish? | cincuenta.
+Q: How do Spain and Mexico differ in writing the decimal sign? | Spain writes a comma, as 2,5; Mexico writes a point, as 2.5.
 ## Days, months and dates
 LV: CEFR A1 · GCSE Foundation
 S: Days, months and dates let you talk about birthdays, timetables and plans. This lesson teaches the days of the week and the months, how Spanish writes and says a date, and the small differences from English such as lower-case letters and the article *el*.
@@ -338,6 +418,16 @@ M2#spanish-u01-09-q2@2: How do you write "My birthday is on 23 April"? | Mi cump
 TF1#spanish-u01-09-q3@3: *Los viernes juego al fútbol* means "This Friday I'm playing football". | false | *Los viernes* means "on Fridays", a repeated habit; "this Friday" would be *el viernes* or *este viernes*.
 M3#spanish-u01-09-q4@1,2: Which is the correct Spanish for "Wednesday, 1 January"? | miércoles, uno de enero | Miércoles, primer de Enero | el miércoles, enero uno | miércoles, el primo de enero | Lower case for days and months; the first is *uno* or *primero*, never *primer* or *primo*, before *de*.
 SA3#spanish-u01-09-q5@2,3: Write three sentences about your week and one about your birthday, then explain how Spanish expresses "on" with days and how it writes dates. | *Los lunes tengo matemáticas. El sábado voy a una fiesta. Los domingos como con mi familia. Mi cumpleaños es el treinta de julio.* Spanish uses no preposition for "on" with days: el + day for one occasion, los + day for a habit. Dates use el + cardinal number + de + month, lower case, and day before month. | Correct use of los for habits ; Correct use of el for a single occasion ; Correct birthday date pattern ; Explains no preposition is used ; Notes lower case and cardinal numbers
+Q: On which day does the week start in Spanish calendars? | Monday.
+Q: What case are days and months written in? | Lower case, unless they begin a sentence.
+Q: What grammatical gender are the days of the week? | Masculine.
+Q: How do you say on Monday for a single occasion? | El lunes, with no word for on.
+Q: What happens to days ending in -s in the plural? | They don't change: el martes, los martes.
+Q: What is the pattern for saying a full date? | el + number + de + month, then de + year.
+Q: Which kind of numbers does Spanish use for dates? | Ordinary cardinal numbers, not ordinals, except the first, which can be el primero.
+Q: How do you ask When is your birthday? | ¿Cuándo es tu cumpleaños?
+Q: How do you ask What's the date today? | ¿Qué fecha es hoy?
+Q: In which order are dates written numerically? | Day first, then month, then year.
 
 ## Telling the time
 LV: CEFR A1 · GCSE Foundation
@@ -375,6 +465,16 @@ M2#spanish-u01-10-q2@1,2: How do you say "It's 11.40"? | Son las doce menos vein
 TF1#spanish-u01-10-q3@2: *Es la una y media* is the correct way to say 1.30. | true | One o'clock uses the singular *es la una*, and *y media* adds half an hour.
 M3#spanish-u01-10-q4@3: A Spanish timetable says *Salida: 20.15*. A friend says the bus leaves *a las ocho y cuarto de la tarde*. Is that right? | Yes, 20.15 is quarter past eight in the evening | No, it means quarter to eight | No, de la tarde ends at six o'clock | No, it means quarter past ten | 20.15 is 8.15 pm; Spanish uses *de la tarde* well into the evening, until about nine, before *de la noche*.
 SA3#spanish-u01-10-q5@2,3: Write a short timetable for a school day in Spanish (four events with times, using both clocks) and explain how to say times before the half hour and after it. | *Las clases empiezan a las ocho y media. El recreo es a las once menos cuarto. Comemos a las dos. El autobús sale a las dieciséis diez.* Before the half hour Spanish adds minutes to the current hour with y (y cuarto, y media); after it, it names the next hour and subtracts with menos (las once menos cuarto = 10.45). Timetables use the 24-hour clock. | Four correct times with a las ; Explains y for minutes past ; Explains menos and the next hour ; Uses or explains the 24-hour clock ; Correct es la una or son las forms
+Q: How do you say It's one o'clock? | Es la una.
+Q: Why is the article feminine when telling the time? | It agrees with hora, hour.
+Q: How are minutes past the hour added? | With y: son las tres y diez.
+Q: How does Spanish say minutes to the hour? | It names the next hour and subtracts with menos: son las cinco menos veinte.
+Q: What does en punto mean? | On the dot.
+Q: What are midday and midnight in Spanish? | Mediodía and medianoche.
+Q: What does de la madrugada refer to? | The small hours after midnight, before dawn.
+Q: Which clock do Spanish timetables, cinemas and stations use? | The 24-hour clock.
+Q: How do you say 9.45 in conversation? | Son las diez menos cuarto.
+Q: How might a Latin American speaker say quarter to three? | Son cuarto para las tres.
 
 ## Asking questions
 LV: CEFR A1 · GCSE Foundation
@@ -413,6 +513,16 @@ M2#spanish-u01-11-q2@2: Complete: *¿___ años tiene tu abuela?* | Cuántos | Cu
 MS2#spanish-u01-11-q3@1,2: Which of these are correctly formed Spanish questions: choose all that apply. | ¿Juegas al tenis? ; ¿Dónde vive tu hermana? | ¿Do juegas al tenis? ; ¿Donde vive tu hermana? | A yes/no question needs no helper word, and *dónde* needs its accent in a question.
 M3#spanish-u01-11-q4@3: Which question asks a friend for their favourite film's title? | ¿Cuál es tu película favorita? | ¿Qué es tu película favorita? | ¿Cuáles es tu película favorita? | ¿Qué película es favorita tuya? | *¿Cuál es...?* asks which one from a set; *¿Qué es...?* would ask what a film is, a definition.
 SA3#spanish-u01-11-q5@2,3: Write five questions to interview a new Spanish exchange student, each with a different question word, and explain the accent rule and the qué/cuál choice you applied. | *¿Cómo te llamas? ¿De dónde eres? ¿Cuántos hermanos tienes? ¿Qué deportes practicas? ¿Cuál es tu asignatura favorita?* Question words always carry a written accent, in direct and indirect questions. Qué is used before a noun (qué deportes), while cuál is used before es to ask which one of a set (cuál es tu asignatura favorita). | Five correct questions with different words ; Accents on every question word ; Correct inverted question marks ; Explains qué before nouns ; Explains cuál es for one of a set
+Q: How is a yes/no question formed from a statement in Spanish? | By raising the pitch at the end and adding question marks, with no helper word like do.
+Q: Which tags ask for confirmation of a statement? | ¿verdad? and ¿no?
+Q: What does ¿adónde? mean? | Where to?
+Q: How do ¿cuántos? and ¿cuántas? differ? | They agree with the noun: cuántos for masculine plural, cuántas for feminine plural.
+Q: When do question words carry a written accent? | Always, in both direct and indirect questions.
+Q: What are question words without an accent used as? | Relatives or conjunctions, as in la casa donde vivo.
+Q: Which question word is used directly before a noun? | Qué: ¿Qué libro lees?
+Q: When is cuál used before es or son? | When asking for one item from a set: ¿Cuál es tu número de teléfono?
+Q: What does ¿Qué es...? ask for? | A definition, as in ¿Qué es una tapa?
+Q: Which word order option can a yes/no question use besides intonation? | The subject can follow the verb: ¿Tiene tu hermano un perro?
 
 ## Nouns: gender and number
 LV: CEFR A1 · GCSE Foundation
@@ -452,6 +562,16 @@ M2#spanish-u01-12-q2@3: What is the plural of *el autobús*? | los autobuses | l
 TF1#spanish-u01-12-q3@2: *Mano* (hand) is masculine because it ends in -o. | false | *La mano* is one of the few feminine nouns ending in -o.
 M3#spanish-u01-12-q4@1,2: Which phrase is correct? | un idioma difícil | una idioma difícil | un idioma difícila | una idioma difícila | *Idioma* is masculine (Greek -ma), so *un*; *difícil* has one form for both genders.
 SA3#spanish-u01-12-q5@1,2,3: A learner writes *la sistema*, *los jóvens* and *las vezes*. Correct each and state the rule. | *el sistema*: Greek-origin nouns in -ma are masculine. *los jóvenes*: nouns ending in a consonant add -es, and the stress (now third-to-last) needs an accent. *las veces*: nouns ending in -z change z to c before -es. | Corrects el sistema with the -ma rule ; Corrects jóvenes with the -es rule ; Mentions the accent on jóvenes ; Corrects veces with the z to c rule ; Clear statement of each rule
+Q: Which noun endings are usually masculine? | -o, -or and -aje, and most ending in a stressed vowel or other consonants.
+Q: Which noun endings are usually feminine? | -a, -ción, -sión, -dad, -tad, -tud and -umbre.
+Q: What gender do nouns ending in -e have? | Either; learn each with its article, as el coche and la noche.
+Q: Why are problema, idioma and tema masculine? | They are words of Greek origin in -ma, which are masculine.
+Q: Name four feminine nouns that end in -o. | la mano, la radio, la foto and la moto.
+Q: How do nouns in -ista show the sex of the person? | Through the article: el or la artista.
+Q: How do you pluralise a noun ending in an unstressed vowel? | Add -s: casa, casas.
+Q: How do you pluralise a noun ending in -z? | Change z to c and add -es: lápiz, lápices.
+Q: What happens to nouns ending in unstressed -s in the plural? | They don't change: el lunes, los lunes.
+Q: Why does examen need an accent in the plural? | Exámenes keeps stress on -xa-, now third-to-last, which requires an accent.
 
 ## Definite and indefinite articles
 LV: CEFR A1 · GCSE Foundation
@@ -489,6 +609,16 @@ M2#spanish-u01-13-q2@2: Complete: *Vamos ___ cine y luego ___ casa de Ana.* | al
 TF1#spanish-u01-13-q3@3: "My sister is a nurse" is *Mi hermana es una enfermera*. | false | With a bare profession after ser, Spanish omits the article: *Mi hermana es enfermera*.
 M3#spanish-u01-13-q4@3: Which sentence correctly says "I love chocolate"? | Me encanta el chocolate | Me encanta chocolate | Me encanta un chocolate | Me encanta del chocolate | A generalisation about a substance takes the definite article in Spanish, unlike English.
 SA3#spanish-u01-13-q5@1,2,3: Translate "Water is important for health. My father is a teacher; he's a very good teacher" and explain each article you used. | *El agua es importante para la salud. Mi padre es profesor; es un profesor muy bueno.* El agua: feminine noun with stressed a- takes el in the singular; definite article for a generalisation. La salud: abstract noun in a generalisation takes the article. Es profesor: no article with an unqualified profession. Es un profesor muy bueno: the article returns because the profession is qualified by an adjective. | El agua with the stressed a- rule ; Article for generalisations ; No article with bare profession ; Un returns with an adjective ; Accurate translation overall
+Q: What are the four Spanish definite articles? | el, la, los and las.
+Q: What does unos amigos mean? | Some friends.
+Q: Which two article contractions are compulsory? | a + el = al and de + el = del.
+Q: Why do el agua and el aula take el? | They are feminine nouns starting with stressed a-, taking el in the singular to avoid two a sounds clashing.
+Q: Which article does Spanish use for generalisations and abstract nouns? | The definite article: Me gustan los perros, La salud es importante.
+Q: When is the definite article used with a title such as señor? | When talking about the person, not when addressing them.
+Q: What does Spanish use instead of a possessive with parts of the body? | The definite article: Me lavo las manos.
+Q: When does the indefinite article return before a profession? | When the profession is qualified by an adjective: Es una médica excelente.
+Q: Which two words never take un? | otro and cien.
+Q: Why doesn't de él contract to del? | Él with an accent is the pronoun he, not the article.
 
 ## Subject pronouns
 LV: CEFR A1 · GCSE Foundation
@@ -526,6 +656,16 @@ M2#spanish-u01-14-q2@3: Where is the pronoun most justified? | Yo trabajo mucho,
 TF1#spanish-u01-14-q3@2: *Es muy bonito* can mean "It's very pretty". | true | Spanish has no subject pronoun for "it"; the verb alone expresses it.
 M3#spanish-u01-14-q4@2,3: A learner writes *Ella es una ciudad bonita* to describe Bilbao. What is the problem? | Ella means "she", so it shouldn't be used for a thing | Ella should be él because ciudad is masculine | The verb should be está, not es | It needs vosotros, not ella | Spanish doesn't use a subject pronoun for "it"; *Es una ciudad bonita* is correct, and *ella* would personify the city.
 SA3#spanish-u01-14-q5@2,3: Explain why Spanish learners are told to leave out subject pronouns, and give two examples where including one changes the meaning or effect. | Spanish verb endings mark person and number, so the subject is usually clear without a pronoun; adding one every time sounds unnatural or insistent. Including one adds contrast (*Yo pago, tú no*: I'm paying, you're not), emphasis (*Lo hago yo*: I'll do it myself), or removes ambiguity (*Ella habla, usted escucha*, since *habla* could be he, she or you). | Verb endings show the subject ; Unnatural to overuse pronouns ; Example of contrast ; Example of emphasis or clarity ; Notes ambiguity of third-person forms
+Q: Name the singular Spanish subject pronouns. | yo, tú, él, ella and usted.
+Q: Which pronoun gender does a mixed group take? | The masculine plural.
+Q: Define a pro-drop language. | A language whose verbs can appear without a stated subject pronoun.
+Q: Why can Spanish drop subject pronouns? | Each verb form has its own ending, which already shows the subject.
+Q: What subject pronoun does Spanish use for it? | None: Es interesante.
+Q: Name the three reasons for including a subject pronoun. | Contrast, emphasis and clarity.
+Q: Why might usted be needed with habla? | For clarity, since habla could mean he, she or you.
+Q: When does yo take a capital letter? | Only at the start of a sentence.
+Q: How does it sound to add yo or nosotros every time? | Heavy or insistent.
+Q: Which variety of Spanish uses overt subject pronouns much more often than central Spain? | Caribbean Spanish, as in Puerto Rico and the Dominican Republic.
 
 ## Ser: identity, origin and nationality
 LV: CEFR A1 · GCSE Foundation
@@ -568,6 +708,16 @@ M2#spanish-u01-15-q2@3: Which nationality form is correct for "the English girls
 TF1#spanish-u01-15-q3@2: *Es de plástico* means "It's made of plastic". | true | *Ser de* expresses what something is made of, as well as origin and possession.
 M3#spanish-u01-15-q4@2: Which sentence uses ser correctly? | Mi padre es ingeniero y es de Lima | Mi padre está ingeniero y es de Lima | Mi padre es ingeniero y está de Lima | Mi padre es un ingeniero y está de Lima | Profession and origin are both expressed with ser; *estar de* doesn't express origin.
 SA3#spanish-u01-15-q5@1,2,3: Write four sentences about a friend's family using ser for four different purposes, and name each purpose. | *Mi amiga se llama Inés y es colombiana* (nationality). *Su padre es de Cali* (origin). *Su madre es enfermera* (profession). *Sus hermanos son muy simpáticos* (characteristics). Each uses the correct form of ser agreeing with the subject, and the adjectives agree in gender and number. | Four correct ser sentences ; Four different named purposes ; Correct forms of ser ; Nationality lower case and agreeing ; Adjective agreement accurate
+Q: State the present tense of ser. | soy, eres, es, somos, sois, son.
+Q: How is origin expressed with ser? | With ser de: Somos de Bogotá.
+Q: How is possession expressed with ser? | With ser de: Es de Juan.
+Q: Which time-related uses does ser have? | Telling the time and dates: Son las tres, Hoy es lunes.
+Q: In which case are nationality adjectives written? | Lower case.
+Q: What happens to francés in the feminine? | It adds -a and loses the accent: francesa.
+Q: What is special about estadounidense? | It has one form for both genders.
+Q: Why is ser described as irregular? | It is irregular in every form, so must be learnt by heart.
+Q: What is a gentilicio? | An adjective of nationality or origin, such as español or madrileño.
+Q: Which phrase about marriage shows the blurred line between ser and estar? | Ser or estar casado, both heard.
 
 ## Adjective agreement
 LV: CEFR A1 · GCSE Foundation
@@ -605,4 +755,14 @@ M2#spanish-u01-16-q2@2: Which phrase correctly says "a good film"? | una buena p
 MS2#spanish-u01-16-q3@1: Choose all the correctly agreeing phrases. | los ojos azules ; una chica feliz ; unas chicas francesas | los ojos azuls ; unas chicas felizes | Consonant-final adjectives add -es and -z changes to -ces; *feliz* has one singular form for both genders.
 M3#spanish-u01-16-q4@3: What is the difference between *mi viejo amigo* and *mi amigo viejo*? | A friend of long standing versus a friend who is elderly | A friend I no longer see versus a new friend | There is no difference in meaning | A male friend versus a female friend | Before the noun, *viejo* means long-standing; after it, it means old in age, like *gran* and *grande*.
 SA3#spanish-u01-16-q5@1,2,3: Write a short description (three sentences) of a person and a place using at least five adjectives, and explain the agreement and position of each. | *Mi tía es una mujer simpática y trabajadora. Vive en una gran ciudad con calles estrechas. Tiene dos perros pequeños y un buen coche.* Simpática and trabajadora agree with feminine singular mujer (trabajador adds -a). Gran precedes ciudad and means great. Estrechas agrees with feminine plural calles. Pequeños agrees with masculine plural perros. Buen is the short form before masculine singular coche. | At least five adjectives used correctly ; Explains gender agreement ; Explains number agreement ; Explains position after the noun ; Explains a short form or meaning change before the noun
+Q: How many forms does an adjective ending in -o have? | Four: alto, alta, altos, altas.
+Q: How many forms do adjectives ending in -e or most consonants have? | Two, singular and plural, the same for both genders.
+Q: How do adjectives in -or form the feminine? | They add -a: trabajador, trabajadora.
+Q: Which form does an adjective take for a noun mixing masculine and feminine? | The masculine plural.
+Q: What is the plural of feliz? | felices.
+Q: Where do most describing adjectives go in Spanish? | After the noun: una casa blanca.
+Q: Where do adjectives of quantity go? | Before the noun: muchos amigos, pocas personas.
+Q: When do bueno and malo shorten to buen and mal? | Before a masculine singular noun.
+Q: What does gran mean before a noun, compared with grande after it? | Gran means great; grande after the noun means big.
+Q: Define concordancia. | Agreement: matching gender and number between a noun and its adjectives and articles.
 `;

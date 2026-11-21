@@ -29,6 +29,16 @@ SRC: Royal College of Physicians, Why asthma still kills: the National Review of
 M2#pharmacy-u08-01-q1@1: What is first-line treatment for newly diagnosed asthma in a 30-year-old under NG245? | As-needed low-dose ICS/formoterol | Salbutamol alone as needed | Montelukast alone | Oral prednisolone daily | A long-acting antimuscarinic alone | NG245 recommends AIR therapy with ICS/formoterol for people aged 12 and over.
 M2#pharmacy-u08-01-q2@2: Someone with asthma buys a salbutamol inhaler every two weeks. What should the pharmacist do? | Refer for an urgent asthma review | Supply more salbutamol each time | Suggest a stronger antihistamine | Advise avoiding exercise | Recommend a cough linctus | Frequent reliever use indicates poor control and risk of a severe attack.
 M3#pharmacy-u08-01-q3@1: Before stepping up asthma treatment, what should be checked first? | Adherence and inhaler technique | Liver function tests | The person's blood group | Bone density | Their cholesterol level | Poor technique and adherence are common reasons for apparent treatment failure.
+Q: What is MART in asthma? | Maintenance and reliever therapy: one ICS and formoterol inhaler used regularly and as needed.
+Q: Which objective tests help diagnose asthma? | FeNO, blood eosinophils, spirometry with bronchodilator reversibility, and peak flow variability.
+Q: When is low-dose MART used first instead of AIR therapy? | If the person is highly symptomatic or has severe exacerbations.
+Q: What is the step after low-dose MART if asthma is uncontrolled? | Moderate-dose MART.
+Q: What happens if asthma stays uncontrolled on moderate-dose MART? | Check FeNO and eosinophils and refer for specialist care, for example biologics.
+Q: Is SABA alone without an inhaled corticosteroid still recommended for asthma? | No; it is no longer recommended.
+Q: Name three signs of poor asthma control. | Using the reliever more than usual, night waking, limiting activity, or exacerbations needing oral steroids.
+Q: What should be checked besides technique before stepping up asthma treatment? | Adherence, triggers, smoking and other conditions.
+Q: Which review linked SABA overuse with asthma deaths? | The National Review of Asthma Deaths.
+Q: What should a pharmacist do instead of supplying repeated salbutamol to someone with no ICS? | Refer them for an asthma review.
 
 ## Asthma in children
 S: Diagnosing and treating asthma in children needs care: many young children wheeze with viral infections without having asthma. Treatment uses age-appropriate devices and doses, with growth and technique monitored.
@@ -56,6 +66,16 @@ SRC: MHRA, Drug Safety Update: montelukast, reminder of the risk of neuropsychia
 M1#pharmacy-u08-02-q1@2: Which device is most suitable for a 3-year-old with asthma? | Metered-dose inhaler with spacer and face mask | Dry powder inhaler | Breath-actuated inhaler without spacer | Nebuliser at every dose | Soft mist inhaler without spacer | Young children can't coordinate or inhale forcefully enough for other devices.
 M2#pharmacy-u08-02-q2@1: What adverse effects of montelukast should parents be told about? | Sleep disturbance and mood or behaviour changes | Weight gain and hair loss | Low blood sugar | Bleeding gums | Blue urine | The MHRA has highlighted neuropsychiatric reactions with montelukast.
 M2#pharmacy-u08-02-q3@2: Why monitor height in children on inhaled corticosteroids? | Higher doses can slow growth | Steroids always increase height | It shows inhaler technique | It's required for antibiotics | Height predicts asthma attacks exactly | Growth monitoring detects effects of higher ICS doses.
+Q: Why is asthma diagnosis difficult in young children? | Many young children wheeze with viral infections without having asthma.
+Q: How may suspected asthma be managed in a child under 5? | With a trial of paediatric ICS, then review, referring if uncertain.
+Q: What is first-line treatment for asthma in children aged 5 to 11? | Paediatric low-dose ICS with a SABA reliever.
+Q: What are next options for a 5 to 11-year-old whose asthma isn't controlled on low-dose ICS? | MART, if the child can use the device, or adding an LTRA.
+Q: What is a leukotriene receptor antagonist? | A tablet or granules drug, such as montelukast, that blocks leukotriene receptors.
+Q: How is asthma treated in children aged 12 and over? | As for adults.
+Q: Up to about what age do children usually use a pMDI with a spacer? | About 5 to 7 years.
+Q: Who should a child's written asthma action plan be shared with? | The school.
+Q: Why might a dry powder inhaler be unsuitable for a young child? | They may not inhale forcefully enough to use it.
+Q: What should be checked so families don't mix up a child's inhalers? | That the child and family understand which inhaler is which.
 
 ## Chronic obstructive pulmonary disease
 S: COPD causes persistent breathlessness and cough from airflow obstruction, usually due to smoking. Treatment relieves symptoms and reduces exacerbations; stopping smoking and pulmonary rehabilitation change the outlook most.
@@ -85,6 +105,16 @@ SRC: MHRA, Drug Safety Update: inhaled corticosteroids, pneumonia risk in COPD |
 M1#pharmacy-u08-03-q1@1: How is COPD confirmed? | Post-bronchodilator spirometry | A chest X-ray alone | A blood test | Peak flow on one day | A sputum sample | Spirometry shows persistent airflow obstruction.
 M2#pharmacy-u08-03-q2@2: A breathless person with COPD and no asthmatic features needs more than a SABA. What's next? | A LAMA plus a LABA | An ICS alone | Oral prednisolone daily | A LABA plus ICS straight away | Theophylline first | NICE recommends LAMA plus LABA without asthmatic features.
 M2#pharmacy-u08-03-q3@1: Which risk does an inhaled corticosteroid add in COPD? | Pneumonia | Hypertension | Hair loss | Kidney stones | Hyperkalaemia | The MHRA and NICE note increased pneumonia risk with ICS in COPD.
+Q: What usually causes COPD? | Smoking.
+Q: What are asthmatic features in COPD? | Features suggesting steroid responsiveness, such as previous asthma, raised eosinophils or variable symptoms.
+Q: Which vaccinations are offered in COPD? | Influenza, pneumococcal and others as recommended.
+Q: What inhaled treatment is used for COPD with asthmatic features? | A LABA plus an ICS.
+Q: What is triple therapy in COPD? | A LAMA, a LABA and an ICS together, for continuing symptoms or exacerbations.
+Q: When is theophylline used in COPD? | Only after trials of inhaled therapy, with level monitoring and interaction checks.
+Q: What non-drug treatment changes the COPD outlook alongside stopping smoking? | Pulmonary rehabilitation.
+Q: What symptoms does COPD cause? | Persistent breathlessness and cough from airflow obstruction.
+Q: What should everyone with COPD have to manage their condition? | A self-management plan.
+Q: What is the mistake in starting an ICS in COPD without asthmatic features or frequent exacerbations? | It adds pneumonia risk without clear benefit.
 
 ## Inhaler devices and technique
 S: An inhaler only works if the drug reaches the lungs. Poor technique is very common, and pharmacists are well placed to check and correct it at every opportunity.
@@ -113,6 +143,16 @@ SRC: Asthma + Lung UK, Inhaler videos | guidance | 2026 | https://www.asthmaandl
 M1#pharmacy-u08-04-q1@1: How should someone breathe in through a pMDI? | Slowly and steadily | Quickly and forcefully | Through the nose | In short sniffs | Without closing their lips | A slow, steady breath carries the aerosol into the lungs.
 M2#pharmacy-u08-04-q2@2: Why rinse the mouth after an inhaled corticosteroid? | To reduce oral thrush and hoarseness | To make the dose work faster | To remove the inhaler's taste only | To increase absorption | To prevent tooth decay only | Steroid deposited in the mouth can cause candidiasis and dysphonia.
 M2#pharmacy-u08-04-q3@1: Which inhaler type has the larger carbon footprint? | Pressurised metered-dose inhalers | Dry powder inhalers | Both are the same | Nebulisers only | Soft mist inhalers only | The propellants in pMDIs are potent greenhouse gases.
+Q: How long should the breath be held after using a pMDI? | Up to 10 seconds.
+Q: What are the benefits of using a spacer with a pMDI? | It improves lung delivery and reduces mouth deposition.
+Q: Should a dry powder inhaler be shaken or breathed into? | No; breathe out away from the device and don't shake it.
+Q: What kind of inhalation does a soft mist inhaler need? | A slow inhalation, with less coordination needed.
+Q: What factors guide the choice of inhaler device? | The person's inspiratory flow, coordination and dexterity.
+Q: Why prefer one device type for all a person's inhalers? | It means they only need to master one technique.
+Q: How can pharmacists reduce the carbon footprint of inhalers? | Switching suitable people from pMDIs to DPIs with their agreement, and returning used inhalers for disposal.
+Q: When should inhaler technique be checked? | At every review and new supply.
+Q: What breath is needed with a pMDI? | A slow, steady breath over a few seconds, coordinated with pressing the canister.
+Q: What is the mistake in assuming a long-term inhaler user has good technique? | Poor technique is very common, so it should still be checked.
 
 ## Bronchodilators
 S: Bronchodilators relax airway smooth muscle. Beta-2 agonists and antimuscarinics, short and long acting, are the main groups; theophylline is now used much less because of its narrow therapeutic index.
@@ -139,6 +179,16 @@ SRC: NICE, BTS and SIGN NG245, Asthma | guidance | 2024 | https://www.nice.org.u
 M1#pharmacy-u08-05-q1@1: Which is a long-acting muscarinic antagonist? | Tiotropium | Salbutamol | Formoterol | Beclometasone | Montelukast | Tiotropium is a LAMA used mainly in COPD.
 M2#pharmacy-u08-05-q2@2: Why must a LABA in asthma always be used with an ICS? | LABA alone increases the risk of severe attacks | It reduces the LABA's effect | It's required only for children | It prevents tremor | It makes the inhaler cheaper | LABA monotherapy in asthma is associated with severe exacerbations.
 M3#pharmacy-u08-05-q3@2: A person on theophylline is prescribed ciprofloxacin. What's the concern? | Theophylline levels may rise to toxic levels | Theophylline will stop working | Ciprofloxacin will be inactivated | No interaction exists | Blood glucose will fall | Ciprofloxacin inhibits CYP1A2, raising theophylline levels.
+Q: Name two SABAs. | Salbutamol and terbutaline.
+Q: What are the side effects of SABAs at high doses? | Tremor, palpitations and low potassium.
+Q: Name two LABAs. | Salmeterol and formoterol.
+Q: What adverse effects do antimuscarinic bronchodilators cause? | Dry mouth, urinary retention and glaucoma risk.
+Q: Which antimuscarinic is short-acting? | Ipratropium.
+Q: In which condition are antimuscarinic bronchodilators mainly used? | COPD.
+Q: How does smoking affect theophylline levels? | Smoking lowers them.
+Q: Which drugs raise theophylline levels via CYP1A2? | Ciprofloxacin and clarithromycin.
+Q: How do combination inhalers help? | They reduce the number of devices and help adherence.
+Q: How do bronchodilators work? | They relax airway smooth muscle.
 
 ## Inhaled corticosteroids
 S: Inhaled corticosteroids (ICS) control airway inflammation and prevent asthma attacks. Using the lowest effective dose and recognising high doses keeps the benefit while limiting adverse effects.
@@ -167,6 +217,16 @@ SRC: Joint Formulary Committee, British National Formulary: corticosteroids, inh
 M1#pharmacy-u08-06-q1@2: Why should beclometasone inhalers be prescribed by brand? | Products differ in potency | Generics are illegal | All brands are identical | It's required only for children | To reduce the cost | Extra-fine particle products are more potent than others.
 M2#pharmacy-u08-06-q2@1: Which is a local adverse effect of inhaled corticosteroids? | Oral candidiasis | Hyperkalaemia | Tremor | Bradycardia | Hair loss | Steroid deposited in the mouth predisposes to thrush.
 M2#pharmacy-u08-06-q3@2: When asthma has been well controlled for some time, what should happen to the ICS dose? | Consider stepping down to the lowest effective dose | Increase it to prevent attacks | Stop it completely at once | Switch to oral steroids | Double it in winter only | Guidance recommends reducing to the lowest effective dose.
+Q: What is an ICS dose band? | The low, moderate or high dose category of an inhaled corticosteroid set by national guidance.
+Q: Why can't ICS doses be compared simply in micrograms? | Potency differs between drugs and devices, so check the bands in the BNF and guidance.
+Q: What are the systemic adverse effects of high-dose ICS? | Adrenal suppression, reduced growth in children, bone loss, cataracts and glaucoma, and pneumonia in COPD.
+Q: Which beclometasone products are more potent? | Extra-fine particle products.
+Q: How can local ICS side effects be reduced? | Rinse the mouth and use a spacer.
+Q: What advice besides a steroid card may people on high-dose ICS need? | Sick-day advice, following national guidance.
+Q: What is the benefit of ICS in asthma? | They reduce exacerbations and deaths.
+Q: How do inhaled corticosteroids work? | They act on glucocorticoid receptors to reduce airway inflammation.
+Q: Why is switching between beclometasone brands a mistake? | Products differ in potency, so a switch can change the dose received.
+Q: Why is a steroid emergency card given? | To flag people at risk of adrenal insufficiency.
 
 ## Acute exacerbations
 S: Asthma attacks and COPD exacerbations can be life-threatening. Recognising severity, starting treatment promptly and following up afterwards save lives and prevent the next attack.
@@ -193,6 +253,16 @@ SRC: NICE NG114, Chronic obstructive pulmonary disease (acute exacerbation): ant
 M2#pharmacy-u08-07-q1@1: Which feature indicates life-threatening asthma? | A silent chest | Wheeze only on exertion | A peak flow of 80% of best | Speaking in full sentences | Mild cough at night | A silent chest means very little air movement.
 M2#pharmacy-u08-07-q2@2: How soon should someone be followed up after an asthma attack? | Within 2 working days | Within 6 months | Only at the annual review | Never if they recovered | Within 1 hour | Prompt follow-up reduces the risk of another attack.
 M3#pharmacy-u08-07-q3@1: What oxygen saturation target applies to someone with COPD at risk of hypercapnia? | 88 to 92% | 94 to 98% | 100% | 80 to 85% | 70 to 80% | Over-oxygenation can worsen carbon dioxide retention.
+Q: Name three severe features of acute asthma. | Can't complete sentences, peak flow 33 to 50% of best, respiratory rate 25 or more, heart rate 110 or more.
+Q: What peak flow suggests life-threatening asthma? | Below 33% of best.
+Q: How is salbutamol given in acute asthma? | Via a spacer, repeated, or nebulised.
+Q: How long is oral prednisolone given after an asthma attack? | At least 5 days.
+Q: When is ipratropium used in acute asthma? | For severe attacks in hospital.
+Q: What are the features of a COPD exacerbation? | Increased breathlessness, cough and sputum.
+Q: When are antibiotics given for a COPD exacerbation? | When the sputum is purulent or there are signs of infection, following NICE NG114.
+Q: What is a COPD rescue pack? | Oral steroids, sometimes with antibiotics, kept at home and used with a self-management plan.
+Q: What should someone do when they start their COPD rescue pack? | Tell their clinician.
+Q: What should be reviewed at follow-up after an asthma attack? | The cause, inhaler technique, adherence and the action plan.
 
 ## Allergic rhinitis and allergy
 S: Allergic rhinitis (hay fever) is very common and is mostly managed in pharmacies. Choosing the right treatment for the person's symptoms and knowing when to refer improves quality of life and asthma control.
@@ -221,6 +291,16 @@ SRC: Scadding GK and others, BSACI guideline for the diagnosis and management of
 M1#pharmacy-u08-08-q1@1: Which treatment is most effective for persistent hay fever? | A regular intranasal corticosteroid | A decongestant spray for a month | A sedating antihistamine at night only | An antibiotic | A cough suppressant | Intranasal corticosteroids are most effective when used regularly.
 M2#pharmacy-u08-08-q2@2: What happens with prolonged decongestant spray use? | Rebound congestion (rhinitis medicamentosa) | Permanent loss of smell in all cases | Improved asthma control | Lower blood pressure | Faster healing | Using decongestant sprays for more than about a week causes rebound congestion (rhinitis medicamentosa).
 M2#pharmacy-u08-08-q3@1: Which symptom should prompt referral? | Symptoms only on one side with nosebleeds | Sneezing in spring | Itchy eyes in summer | A runny nose with pollen | Mild congestion after gardening | Unilateral symptoms with bleeding need assessment.
+Q: Name three second-generation oral antihistamines for hay fever. | Cetirizine, loratadine and fexofenadine.
+Q: How quickly do intranasal corticosteroids work? | They take days to work fully, so they should be used regularly.
+Q: What is rhinitis medicamentosa? | Rebound nasal congestion from prolonged use of decongestant sprays.
+Q: What can treat the eye symptoms of hay fever? | Antihistamine or sodium cromoglicate eye drops.
+Q: Which non-drug measures help allergic rhinitis? | Allergen avoidance and saline rinses.
+Q: What should be done if hay fever symptoms persist on an intranasal corticosteroid? | Add an antihistamine if needed, and refer if still not controlled.
+Q: Why refer someone with nasal polyps? | Nasal polyps are a referral sign in rhinitis.
+Q: Which condition makes decongestants unsuitable? | Uncontrolled hypertension.
+Q: Why does rhinitis matter for asthma? | Uncontrolled asthma alongside rhinitis needs referral; good rhinitis care improves asthma control.
+Q: Name three intranasal corticosteroids. | Beclometasone, fluticasone and mometasone.
 
 ## Anaphylaxis
 S: Anaphylaxis is a severe, life-threatening allergic reaction. Intramuscular adrenaline is the first and most important treatment; antihistamines and steroids are not substitutes.
@@ -248,6 +328,16 @@ SRC: MHRA, Drug Safety Update: adrenaline auto-injectors, advice for patients | 
 M1#pharmacy-u08-09-q1@1: Where is intramuscular adrenaline injected in anaphylaxis? | The outer thigh | The buttock | The abdomen | The forearm | Into a vein | The anterolateral thigh gives reliable absorption.
 M2#pharmacy-u08-09-q2@2: Why call 999 even if symptoms improve after an auto-injector? | Symptoms can return and need hospital monitoring | Because the device must be returned | To report the pharmacy | Only if the person is a child | It isn't necessary | Biphasic reactions can occur after initial improvement.
 M2#pharmacy-u08-09-q3@1: Someone in anaphylaxis feels faint. How should they be positioned? | Lying flat with legs raised | Standing up and walking | Sitting in a chair upright | Bending forwards | Lying face down | Standing can cause cardiovascular collapse; lie flat with legs raised.
+Q: What is anaphylaxis? | A severe, life-threatening systemic hypersensitivity reaction with airway, breathing or circulation problems.
+Q: What symptoms suggest anaphylaxis? | Sudden swelling of the throat or tongue, wheeze, breathlessness, faintness or collapse, usually with skin changes, after a trigger.
+Q: When is IM adrenaline repeated in anaphylaxis? | After 5 minutes if there's no improvement.
+Q: How should someone in anaphylaxis with difficult breathing be positioned? | Sitting up.
+Q: Should someone in anaphylaxis stand or walk? | No; standing can cause cardiovascular collapse.
+Q: Are antihistamines and steroids first-line for anaphylaxis? | No; IM adrenaline is first line.
+Q: What should be said when calling 999 after using an auto-injector? | Say "anaphylaxis".
+Q: What should people with auto-injectors check regularly? | The expiry dates.
+Q: Where is the adrenaline dose for anaphylaxis found? | In the Resuscitation Council UK guideline and the BNF, by age.
+Q: Can pharmacies supply adrenaline for emergency use? | Yes, under specific exemptions and with training, following the pharmacy's procedure.
 
 ## Cough and respiratory infections
 S: Most acute coughs and respiratory infections are viral and self-limiting. Pharmacists help people manage symptoms, avoid unnecessary antibiotics and recognise when a cough needs medical review.
@@ -276,6 +366,16 @@ SRC: NICE NG12, Suspected cancer: recognition and referral | guidance | 2015 | h
 M1#pharmacy-u08-10-q1@2: Which self-care remedy has evidence for acute cough in people over 1 year? | Honey | Antibiotics | Codeine linctus for children | Antifungal tablets | Vitamin K | NICE NG120 lists honey as a self-care option.
 M2#pharmacy-u08-10-q2@1: Which cough needs referral? | A cough with blood in the sputum | A 5-day cough with a cold | A dry tickly cough at night | A cough after a sore throat | A cough during hay fever season | Coughing up blood (haemoptysis) is a red flag needing prompt medical assessment.
 M2#pharmacy-u08-10-q3@2: Does NICE recommend antibiotics for most acute coughs? | No, most are viral and self-limiting | Yes, for every cough | Only for coughs at night | Yes, if the cough is dry | Only in summer | Antibiotics rarely help acute cough and add resistance risk.
+Q: How long does a cold usually last? | About 7 to 10 days.
+Q: From what age can honey be used for cough? | Over 1 year.
+Q: Why are codeine-containing cough medicines restricted? | Because of misuse and toxicity; they aren't for children.
+Q: What can be used for fever or discomfort with a cold? | Paracetamol or ibuprofen where suitable.
+Q: How long a cough needs referral? | A cough lasting over 3 weeks.
+Q: What signs suggest pneumonia? | High fever, fast breathing and confusion.
+Q: Which symptoms in children with a respiratory infection need referral? | Breathing difficulty, high fever or reduced feeding.
+Q: Why might sedating antihistamines be unsuitable in cough products? | They are a concern for older people and drivers.
+Q: Why are antibiotics usually avoided for acute cough? | Most coughs are viral and self-limiting; antibiotics rarely help and add resistance risk.
+Q: Name three red flags with a cough. | Coughing up blood, breathlessness or chest pain, and unexplained weight loss.
 
 ## Smoking cessation
 S: Stopping smoking is the most effective way for smokers to improve their health. Combining behavioural support with medicines more than doubles the chance of quitting, and pharmacists provide both.
@@ -304,4 +404,14 @@ SRC: Joint Formulary Committee, British National Formulary: smoking cessation | 
 M1#pharmacy-u08-11-q1@1: Which approach is most effective with NRT? | Combining a patch with a short-acting product | Using a patch only when craving | Using gum for one day | Halving the patch daily | Using NRT only after quitting fails | Combination NRT is more effective than a single form.
 M2#pharmacy-u08-11-q2@2: A person on clozapine stops smoking. What should happen? | Monitor clozapine levels and side effects closely | Increase the clozapine dose | Stop clozapine immediately | Nothing changes | Start theophylline | Loss of CYP1A2 induction can raise clozapine levels.
 M3#pharmacy-u08-11-q3@2: Which component of tobacco smoke induces CYP1A2? | Polycyclic aromatic hydrocarbons | Nicotine | Carbon monoxide | Tar-free smoke | Menthol | It's the hydrocarbons, not nicotine, so NRT doesn't maintain induction.
+Q: How much does combining behavioural support with medicines improve quit rates? | It more than doubles the chance of quitting.
+Q: How does varenicline help people stop smoking? | As a partial nicotinic agonist it reduces cravings and the reward from smoking.
+Q: When is varenicline started? | Before the quit date, then titrated.
+Q: What are common side effects of varenicline? | Nausea, abnormal dreams, insomnia and headache.
+Q: What should be asked about during varenicline treatment? | Mood changes or agitation.
+Q: Can nicotine-containing e-cigarettes help people quit? | Yes, with behavioural support.
+Q: What are the three steps of very brief advice on smoking? | Ask, advise, act.
+Q: Is varenicline recommended in pregnancy? | No; NRT with behavioural support is an option instead.
+Q: Does NRT keep CYP1A2 induced? | No; the inducers are hydrocarbons in smoke, not nicotine.
+Q: How should varenicline be taken? | After food with water.
 `;

@@ -35,6 +35,16 @@ SRC: Rudin W, Principles of Mathematical Analysis (3rd edn, McGraw-Hill 1976) | 
 NUM1#maths-u09-01-q1@1: For ε = 0.01, find the smallest whole N such that 5/(n + 3) < ε for all n > N. | 497 | 0 |  | Need n + 3 > 500, so n > 497: N = 497 works and no smaller N does.
 M1#maths-u09-01-q2@1: Which sequence converges? | (1 + 1/n) | (−1)^{n} | n^{2} | sin(n) | (−2)^{n} | 1 + 1/n → 1; the others oscillate or diverge.
 M3#maths-u09-01-q3@2: The functions f_{n}(x) = x^{n} on [0, 1] converge pointwise. Why isn't the convergence uniform? | The limit is discontinuous at 1, but uniform limits of continuous functions are continuous | The functions aren't continuous | They don't converge at all | Uniform convergence needs differentiability | The convergence is uniform, because every f_{n} is bounded by 1 | The limit is 0 for x < 1 and 1 at x = 1, a jump that uniform convergence would forbid.
+Q: What does real analysis do for calculus? | It puts calculus on rigorous foundations, with precise definitions of limits, continuity and convergence.
+Q: What does completeness of the real numbers say? | Every non-empty set of reals bounded above has a least upper bound, its supremum.
+Q: State the ε–δ definition of continuity at a. | For every ε > 0 there is δ > 0 such that x within δ of a implies f(x) within ε of f(a).
+Q: What makes continuity or convergence uniform? | One δ, or one N, works everywhere at once.
+Q: What does the monotone convergence theorem state? | Bounded monotone sequences converge.
+Q: Which famous theorems of calculus follow from completeness? | The intermediate and extreme value theorems.
+Q: Why did intuition need rigour, according to Weierstrass's 1872 example? | He found a function continuous everywhere but differentiable nowhere.
+Q: Why does x^{n} on [0, 1] show the value of uniform convergence? | Its pointwise limit is discontinuous, but uniform limits of continuous functions are continuous.
+Q: How do you prove (2n + 1)/(n + 3) → 2? | The distance from 2 is 5/(n + 3); given ε, choose N > 5/ε − 3.
+Q: What mistake is made when choosing N in an ε–N proof? | Choosing N that depends on n rather than only on ε.
 
 ## Complex Analysis
 S: Complex analysis studies differentiable functions of a complex variable. Complex differentiability is so strong that such functions are infinitely differentiable and given by power series, and contour integration evaluates real integrals that resist other methods.
@@ -72,6 +82,16 @@ NUM1#maths-u09-02-q1@1: What is the residue of e^{z}/z at z = 0? | 1 | 0 |  | A 
 M1#maths-u09-02-q2@1: Which function is entire (holomorphic everywhere)? | e^{z} | 1/z | |z|^{2} | conj(z) | 1/(1 − z) | e^{z} has a convergent power series everywhere; the others have poles or fail Cauchy–Riemann.
 M2#maths-u09-02-q3@2: How does Liouville's theorem prove the fundamental theorem of algebra? | If p had no roots, 1/p would be bounded and entire, hence constant | It shows all polynomials are linear | It computes roots explicitly | It applies only to real polynomials | It bounds every polynomial on ℂ, forcing all of them to be constant | A non-constant polynomial p makes 1/p non-constant, so p must have a root.
 M2#maths-u09-02-q4@2: Why does multiplying by a fixed non-zero complex number w preserve angles between directions? | It rotates every direction by arg w and scales every length by |w|, so angles between directions are unchanged | It reflects directions, which preserves angles | It only works when w is real | It changes angles by arg w | It doesn't preserve angles | A holomorphic map with non-zero derivative acts locally like multiplication by f′(z), which is why it's conformal.
+Q: What is a holomorphic function? | A function complex-differentiable on an open set.
+Q: What is a residue? | The coefficient of 1/(z − a) in the Laurent series of f about a.
+Q: State the Cauchy–Riemann equations. | u_{x} = v_{y} and u_{y} = −v_{x}, for f = u + iv.
+Q: What is special about the real and imaginary parts of a holomorphic function? | They are harmonic.
+Q: What does Cauchy's theorem say? | ∮ f dz = 0 around closed curves in a simply connected region where f is holomorphic.
+Q: State Cauchy's integral formula. | f(a) = (1/2πi) ∮ f(z)/(z − a) dz.
+Q: What does Liouville's theorem say? | Bounded entire functions are constant.
+Q: State the residue theorem. | ∮ f dz = 2πi times the sum of the residues inside the contour.
+Q: How is the residue at a simple pole a found? | Res = lim (z − a)f(z) as z → a.
+Q: What is ∫_{−∞}^{∞} dx/(1 + x^{2}) by residues? | π, from the pole at i with residue 1/(2i).
 
 ## Harmonic Analysis
 S: Harmonic analysis decomposes functions into basic waves and studies how well the pieces reconstruct the whole. Beginning with Fourier series, it now spans Fourier transforms on groups, wavelets and deep convergence theorems.
@@ -106,6 +126,16 @@ SRC: Carleson L, On convergence and growth of partial sums of Fourier series, Ac
 NUM1#maths-u09-03-q1@1: Evaluate π^{2}/6 to 4 decimal places. | 1.6449 | 0.0001 |  | π^{2}/6 ≈ 9.8696/6 ≈ 1.6449, the sum of 1/n^{2}.
 M1#maths-u09-03-q2@1: What guarantees that Fourier series of square-integrable functions converge in mean square? | Completeness of the trigonometric system in L^{2} | Every function is continuous | Fourier series are finite | Pointwise convergence everywhere | Carleson's theorem alone | The sines and cosines form an orthonormal basis of L^{2}.
 M2#maths-u09-03-q3@2: Why are wavelets useful where Fourier series struggle? | They localise in both time and frequency, capturing short events | Their coefficients never need computing, as they come from tables | They need no computation | They converge everywhere always | They ignore high frequencies | Sines spread over the whole interval; wavelets capture transients and edges compactly.
+Q: What does harmonic analysis study? | How functions decompose into basic waves and how well the pieces reconstruct the whole.
+Q: What does Parseval's identity equate? | The energy of the function with a sum of the squares of its Fourier coefficients.
+Q: What is L^{2} convergence? | Convergence in mean square: the integral of the squared error tends to 0.
+Q: What did Kolmogorov find about Fourier series? | An L¹ function whose Fourier series diverges everywhere.
+Q: Which tools underlie Fourier convergence results? | Orthogonality of sines and cosines, Bessel's inequality and Parseval's identity.
+Q: What theorem extends Parseval to the Fourier transform on ℝ? | Plancherel's theorem.
+Q: What unifies Fourier series, transforms and the discrete transform? | Fourier analysis on groups, using characters.
+Q: Where are wavelets used? | In signal processing, such as JPEG 2000, because they localise in time and frequency.
+Q: How does Parseval for f(x) = x on (−π, π) give Σ 1/n^{2}? | 4Σ 1/n^{2} = 2π^{2}/3, so Σ 1/n^{2} = π^{2}/6.
+Q: What mistake is made about Fourier series convergence? | Assuming every Fourier series converges at every point.
 
 ## Measure Theory
 S: Measure theory generalises length, area and probability to assign sizes to very complicated sets. It underlies modern integration and probability, and it explains surprises such as uncountable sets with zero length.
@@ -140,6 +170,16 @@ SRC: Tao T, An Introduction to Measure Theory (American Mathematical Society 201
 NUM1#maths-u09-04-q1@1: Find the total length removed from [0, 1] after the first three steps of the Cantor construction, to 4 decimal places. | 0.7037 | 0.0001 |  | 1/3 + 2/9 + 4/27 = 19/27 ≈ 0.7037.
 M1#maths-u09-04-q2@1: Which set has Lebesgue measure zero? | The integers | The interval [0, 0.001] | The irrationals in [0, 1] | The interval (2, 3) | The real line | Countable sets such as ℤ have measure 0; the others have positive measure.
 M3#maths-u09-04-q3@2: The irrational numbers in [0, 1] have what Lebesgue measure? | 1 | 0 | ½ | It's undefined | π/4 | [0, 1] has measure 1 and the rationals have measure 0, so the irrationals have measure 1.
+Q: What is a σ-algebra? | A collection of sets closed under complements and countable unions, containing the whole space.
+Q: What is a measure? | A function μ on a σ-algebra with μ(∅) = 0 and countable additivity for disjoint sets.
+Q: What is the Lebesgue measure of [a, b]? | b − a.
+Q: What measure do countable sets have? | 0.
+Q: Why is the Cantor set surprising? | It is uncountable but has measure 0.
+Q: What is Vitali's set? | A set built with the axiom of choice that isn't Lebesgue measurable.
+Q: What does the Banach–Tarski paradox show? | Non-measurable pieces of a ball can be rearranged into two balls.
+Q: How did Kolmogorov define a probability space in 1933? | A measure space with total measure 1.
+Q: In measure theory, what are random variables? | Measurable functions.
+Q: What does "almost surely" mean? | Except on a set of probability 0.
 
 ## Lebesgue Integration
 S: Lebesgue integration slices the range of a function rather than its domain. It integrates far more functions than the Riemann integral, and its convergence theorems make it safe to swap limits and integrals, which is essential in probability and PDEs.
@@ -174,6 +214,16 @@ SRC: Rudin W, Real and Complex Analysis (3rd edn, McGraw-Hill 1987) | textbook |
 NUM1#maths-u09-05-q1@1: Find ∫₀¹ x^{9} dx. | 0.1 | 0.0001 |  | 1/(9 + 1) = 0.1.
 M1#maths-u09-05-q2@1: Which function is Lebesgue but not Riemann integrable on [0, 1]? | The indicator of the rationals | x^{2} | sin x | A step function | The constant 1 | It's discontinuous everywhere, defeating Riemann sums, but its Lebesgue integral is 0.
 M3#maths-u09-05-q3@2: Why doesn't ∫ f_{n} → ∫ f for f_{n} = n on (0, 1/n) and 0 elsewhere? | No integrable function dominates all the f_{n} | The f_{n} don't converge | The limit isn't measurable | Lebesgue integrals can't be computed | It does converge | f_{n} → 0 pointwise but each has integral 1; the bound sup f_{n} isn't integrable.
+Q: How does Lebesgue integration differ from Riemann integration? | It slices the range of the function rather than its domain.
+Q: What is a simple function? | A finite combination Σ c_{i} 1_{A_{i}} of indicator functions of measurable sets.
+Q: What is the integral of a simple function? | Σ c_{i} μ(A_{i}).
+Q: How is the Lebesgue integral of f ≥ 0 defined? | As the supremum of integrals of simple functions below f.
+Q: What analogy did Lebesgue give for his integral? | Counting coins by sorting them by value, not in the order received.
+Q: How do Riemann and Lebesgue integrals compare for Riemann integrable functions? | Every Riemann integrable function is Lebesgue integrable with the same value.
+Q: What does the Riesz–Fischer theorem say? | L^{p} spaces are complete.
+Q: State the monotone convergence theorem for integrals. | If 0 ≤ f_{n} increases to f, then ∫ f_{n} increases to ∫ f.
+Q: What does the Fubini–Tonelli theorem address? | When iterated integrals can be swapped.
+Q: Why can't you swap limit and integral for f_{n} = n on (0, 1/n)? | There is no dominating integrable function: f_{n} → 0 but each integral is 1.
 
 ## Distribution Theory
 S: Distributions, or generalised functions, give rigorous meaning to objects like the Dirac delta, which physicists used long before mathematicians could justify them. Every distribution can be differentiated, making PDE theory much more flexible.
@@ -209,6 +259,16 @@ SRC: Schwartz L, Théorie des distributions (Hermann 1950) | textbook | 1950 | h
 NUM1#maths-u09-06-q1@1: Evaluate ∫ δ(x − 1)(x^{2} + 3) dx. | 4 | 0 |  | The delta samples the function at x = 1: 1 + 3 = 4.
 M1#maths-u09-06-q2@1: How is the derivative of a distribution T defined? | ⟨T′, φ⟩ = −⟨T, φ′⟩ | ⟨T′, φ⟩ = ⟨T, φ⟩′ | ⟨T′, φ⟩ = ⟨T, φ⟩^{2} | ⟨T′, φ⟩ = φ(0) | It can't be defined | Integration by parts moves the derivative onto the smooth test function.
 M2#maths-u09-06-q3@2: What is a Green's function for a linear operator L? | A solution of LG = δ, used to solve Lu = f by convolution | Any harmonic function | The inverse of a matrix only | The eigenvalue of L | A harmonic function chosen to vanish on the boundary of the region | Superposing responses to point sources gives the solution for any source f.
+Q: What is a test function? | A smooth function that vanishes outside a bounded set.
+Q: How does the Dirac delta act on a test function? | ⟨δ, φ⟩ = φ(0).
+Q: What is a distribution? | A continuous linear functional on test functions.
+Q: How does an ordinary function act as a distribution? | By ⟨f, φ⟩ = ∫ fφ dx.
+Q: Why is δ not an ordinary function? | No ordinary f has ∫ fφ = φ(0) for every test function φ.
+Q: How is the derivative of a distribution defined? | ⟨T′, φ⟩ = −⟨T, φ′⟩, from integration by parts.
+Q: What is the second derivative of the absolute value of x as a distribution? | 2δ.
+Q: How do Green's functions solve Lu = f? | Solve L G = δ, then build u by convolving G with f.
+Q: What is the Fourier transform of 1 as a tempered distribution? | 2πδ.
+Q: Who developed distribution theory? | Laurent Schwartz, around 1950, winning a Fields Medal.
 
 ## Functional Analysis
 S: Functional analysis studies infinite-dimensional vector spaces of functions, equipped with norms or inner products, and the linear maps between them. It provides the framework for PDEs, quantum mechanics, optimisation and signal processing.
@@ -243,6 +303,16 @@ SRC: Brezis H, Functional Analysis, Sobolev Spaces and Partial Differential Equa
 NUM1#maths-u09-07-q1@1: Find the ℓ^{2} norm of the sequence (3, 4, 0, 0, …). | 5 | 0 |  | √(3^{2} + 4^{2}) = 5.
 M1#maths-u09-07-q2@1: Which property fails in infinite-dimensional normed spaces? | The closed unit ball is compact | Vectors can be added | Norms satisfy the triangle inequality | Scalars can multiply vectors | Zero is a vector | Riesz's lemma shows the closed unit ball is compact only in finite dimensions.
 M2#maths-u09-07-q3@2: What does the uniform boundedness principle say? | A family of bounded operators on a Banach space bounded at each point is bounded in norm | Every operator is bounded | Every linear operator between Banach spaces is automatically bounded | Every sequence converges | Functionals can be extended | Pointwise bounds on a complete space force a uniform bound on the operator norms.
+Q: What does functional analysis study? | Infinite-dimensional vector spaces of functions with norms or inner products, and the linear maps between them.
+Q: What is a normed space? | A vector space with a norm measuring the size of vectors.
+Q: What is a bounded linear functional? | A linear map to the scalars whose output is at most C times the norm of the input.
+Q: What is the norm on C[a, b]? | The max norm: the maximum of the absolute value of f.
+Q: Give an unbounded linear map. | Differentiation on C[0, 1].
+Q: What fails for norms in infinite dimensions? | Different norms aren't equivalent, and the closed unit ball isn't compact.
+Q: What does the uniform boundedness principle state? | Pointwise-bounded families of operators are uniformly bounded.
+Q: What do the open mapping and closed graph theorems control? | Inverses of operators.
+Q: Why isn't the closed unit ball of ℓ^{2} compact? | The unit vectors e_{n} are all √2 apart, so no subsequence converges.
+Q: Give three uses of functional analysis. | Existence of PDE solutions, quantum mechanics in Hilbert space, and optimisation and duality.
 
 ## Banach Spaces
 S: A Banach space is a complete normed vector space: Cauchy sequences always converge. Completeness is what makes iterative methods, series and fixed-point arguments work, including the proof that ordinary differential equations have solutions.
@@ -276,6 +346,16 @@ SRC: Banach S, Sur les opérations dans les ensembles abstraits et leur applicat
 NUM1#maths-u09-08-q1@1: Find the max norm of f(x) = x − x^{2} on [0, 1]. | 0.25 | 0.0001 |  | The maximum is at x = ½: ½ − ¼ = ¼.
 M1#maths-u09-08-q2@1: Which space is a Banach space? | C[0, 1] with the maximum norm | The rationals with |·| | Polynomials on [0, 1] with the maximum norm | Continuous functions on [0, 1] with the L¹ norm | Finite sequences with the ℓ^{2} norm | Uniform limits of continuous functions are continuous, so C[0, 1] is complete in the max norm.
 M2#maths-u09-08-q3@2: Why does the Banach fixed-point theorem prove that y′ = f(t, y), y(0) = y₀ has a unique solution (for Lipschitz f, on a short interval)? | The integral form defines a contraction on a complete space of functions | Linear ODEs are the only ones it covers, through matrix powers | Solutions are always polynomials | Fixed points never exist | It doesn't prove it | Picard's operator y ↦ y₀ + ∫ f(s, y(s)) ds is a contraction for small t.
+Q: What is a Banach space? | A normed vector space in which every Cauchy sequence converges.
+Q: What is a contraction? | A map T that shrinks distances by a factor k < 1: the distance between Tx and Ty is at most k times that between x and y.
+Q: Give three examples of Banach spaces. | ℝ^{n}, C[a, b] with the max norm, and ℓ^{p} or L^{p} for 1 ≤ p ≤ ∞.
+Q: Why are polynomials on [0, 1] with the max norm not complete? | Their uniform limits include functions like e^{x}, which aren't polynomials.
+Q: Can every normed space be completed? | Yes, just as ℚ completes to ℝ.
+Q: State the Banach fixed-point theorem. | A contraction on a complete metric space has exactly one fixed point.
+Q: How is the fixed point of a contraction found? | Iterate x_{n+1} = Tx_{n} from any starting point.
+Q: How does Picard–Lindelöf prove ODE solutions exist? | Rewriting y′ = f(t, y) as an integral equation gives a contraction, so a unique solution exists.
+Q: What is the fixed point of T(x) = x/2 + 1? | 2.
+Q: When does a series converge in a Banach space? | When the series of norms converges: absolute convergence works in complete spaces.
 
 ## Hilbert Spaces
 S: A Hilbert space is a complete space with an inner product, so it has lengths, angles and orthogonal projections, even in infinite dimensions. L^{2} is the main example, and Hilbert spaces are the setting for Fourier series and quantum mechanics.
@@ -310,6 +390,16 @@ SRC: Reed M, Simon B, Methods of Modern Mathematical Physics I: Functional Analy
 NUM1#maths-u09-09-q1@1: Find ⟨x, y⟩ in ℓ^{2} for x = (1, 2, 0, …) and y = (3, −1, 5, …) with all other entries zero. | 1 | 0 |  | 1 × 3 + 2 × (−1) + 0 × 5 = 1.
 M1#maths-u09-09-q2@1: What does the projection theorem guarantee in a Hilbert space? | A unique closest point in any closed subspace | Every subspace is finite-dimensional | All vectors are orthogonal | Every operator is bounded | Every functional is zero | Completeness and the inner product guarantee a unique best approximation.
 M2#maths-u09-09-q3@2: What does the Riesz representation theorem say? | Every bounded linear functional is an inner product with a fixed vector | Bounded operators on Hilbert spaces always have eigenvalues | Every Banach space is a Hilbert space | Fourier series converge pointwise | Hilbert spaces are finite-dimensional | Each bounded linear functional f has the form f(x) = ⟨x, y_{f}⟩ for one unique vector y_{f}.
+Q: What is a Hilbert space? | A complete inner product space.
+Q: What is an orthonormal basis in a Hilbert space? | Orthonormal vectors e_{n} with x = Σ ⟨x, e_{n}⟩e_{n} for every x.
+Q: How does the inner product give the norm? | The norm of x is √⟨x, x⟩.
+Q: What does the projection theorem state? | Every closed subspace has a unique nearest point Px to x, with x − Px orthogonal to the subspace.
+Q: What does Bessel's inequality say? | The sum of squared coefficients ⟨x, e_{n}⟩ is at most the squared norm of x.
+Q: When does Bessel's inequality become Parseval's identity? | When the orthonormal set is a basis.
+Q: What is the orthonormal Fourier basis of L^{2}[−π, π]? | 1/√(2π), cos nx/√π and sin nx/√π.
+Q: How are quantum states and observables modelled in Hilbert space? | States are unit vectors; observables are self-adjoint operators.
+Q: What is the L^{2}[−π, π] norm of sin x? | √π, about 1.772.
+Q: What mistake is made with Fourier basis functions? | Forgetting to normalise, such as using sin nx instead of sin nx/√π.
 
 ## Operator Theory
 S: Operator theory studies linear maps between infinite-dimensional spaces: their norms, adjoints, inverses and special classes such as compact, self-adjoint and unitary operators. These are the infinite-dimensional matrices of analysis and physics.
@@ -344,6 +434,16 @@ SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978)
 NUM1#maths-u09-10-q1@1: Find the operator norm of the matrix diag(2, −7). | 7 | 0 |  | A diagonal matrix's norm is its largest absolute entry, |−7| = 7.
 M1#maths-u09-10-q2@1: Which operator is self-adjoint? | A real symmetric matrix | The right shift on ℓ^{2} | A rotation by 90° | A non-symmetric real matrix | Differentiation with no domain conditions | Real symmetric matrices satisfy A = Aᵀ = A*.
 M2#maths-u09-10-q3@2: The right shift S on ℓ^{2} satisfies S*S = I. Why isn't it unitary? | SS* ≠ I: S isn't onto, so it has no two-sided inverse | It doesn't preserve norms | S* doesn't exist | It's not linear | It is unitary | Unitary operators must also be surjective; e₁ is missed by S.
+Q: What is the operator norm of T? | The supremum of the norm of Tx over x with norm at most 1: the largest stretching.
+Q: What is the adjoint T*? | The operator with ⟨Tx, y⟩ = ⟨x, T*y⟩.
+Q: What is a self-adjoint operator? | One with T = T*, like a symmetric matrix, with real spectrum.
+Q: What is a unitary operator? | One with T*T = TT* = I; it preserves inner products.
+Q: What is a normal operator? | One with T*T = TT*.
+Q: What is a compact operator? | One mapping bounded sets to sets with compact closure; a limit of finite-rank operators.
+Q: What does the right shift on ℓ^{2} show? | An isometry need not be onto: S*S = I but SS* ≠ I.
+Q: Why do differential operators need careful domains? | They are unbounded.
+Q: When are integral operators compact? | When the kernel k(x, y) is nice.
+Q: How is quantum time evolution described in operator theory? | By unitary operators.
 
 ## Spectral Theory
 S: Spectral theory generalises eigenvalues to operators on infinite-dimensional spaces. The spectrum may include continuous ranges as well as eigenvalues, and the spectral theorem diagonalises self-adjoint operators, which is the mathematics of quantum measurement.
@@ -379,6 +479,16 @@ SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | textb
 NUM1#maths-u09-11-q1@1: Find the spectral radius of [[2, 1], [1, 2]]. | 3 | 0 |  | The eigenvalues are 1 and 3, so the spectral radius is 3.
 M1#maths-u09-11-q2@1: Which statement holds for every bounded operator on a complex Banach space? | Its spectrum is non-empty and compact | Its spectrum is empty | Every spectral value is an eigenvalue | Its spectrum is all of ℂ | Its spectrum is a single point | Gelfand proved non-emptiness; closedness and boundedness give compactness.
 M3#maths-u09-11-q3@2: Why does multiplication by x on L^{2}[0, 1] have no eigenvalues? | xf(x) = λf(x) forces f = 0 except at the single point λ, a set of measure 0 | The operator is unbounded | Multiplication by x is unbounded, so eigenvalues can't be defined | Every function is an eigenvector | It has eigenvalue 1 only | (x − λ)f = 0 almost everywhere means f = 0 in L^{2}.
+Q: What is the spectrum σ(T)? | The set of λ for which T − λI has no bounded inverse.
+Q: How is the spectral radius computed as a limit? | r(T) = lim of the nth root of the norm of Tⁿ.
+Q: What is the spectrum of a matrix? | The set of its eigenvalues.
+Q: What is continuous spectrum? | Spectrum in infinite dimensions with no eigenvectors, such as multiplication by x on L^{2}[0, 1].
+Q: What two properties does the spectrum of a bounded operator have? | It is non-empty and compact.
+Q: What does the spectral theorem say for compact self-adjoint operators? | Real eigenvalues accumulating only at 0, and an orthonormal basis of eigenvectors.
+Q: Which matrices are unitarily diagonalisable? | Normal matrices.
+Q: How does spectral theory describe hydrogen? | Its energy levels are the discrete spectrum of its Hamiltonian; ionised states form continuous spectrum.
+Q: What are the spectrum and spectral radius of [[2, 1], [1, 2]]? | Spectrum {1, 3}, spectral radius 3.
+Q: What mistake is made about the spectrum? | Thinking every point of the spectrum is an eigenvalue.
 
 ## Banach Algebras
 S: A Banach algebra is a Banach space with a multiplication compatible with the norm. Bounded operators, continuous functions and convolution algebras are examples, and Gelfand's theory turns commutative Banach algebras into algebras of functions.
@@ -413,6 +523,16 @@ SRC: Rudin W, Functional Analysis (2nd edn, McGraw-Hill 1991) | textbook | 1991 
 NUM1#maths-u09-12-q1@1: If ‖x‖ = 0.2 in a Banach algebra, what bound does the Neumann series give for ‖(1 − x)^{−1}‖? | 1.25 | 0.0001 |  | 1/(1 − 0.2) = 1.25.
 M1#maths-u09-12-q2@1: Which is a Banach algebra under its natural product? | The bounded operators on a Banach space | The natural numbers | Polynomials with the max norm on [0, 1] | The rationals | Finite sets | B(X) is complete in the operator norm, and composition satisfies ‖ST‖ ≤ ‖S‖‖T‖.
 M2#maths-u09-12-q3@2: Why does 1 − x have an inverse when ‖x‖ < 1? | The series 1 + x + x^{2} + … converges in the complete space and inverts it | Every element is invertible | Banach algebras make all elements invertible, whatever their norm | Because ‖1‖ = 0 | It needn't have one | Absolute convergence (Σ‖x‖ⁿ < ∞) in a Banach space gives a convergent geometric series.
+Q: What is a Banach algebra? | A Banach space with an associative multiplication where the norm of xy is at most the product of the norms.
+Q: What is the Neumann series? | (1 − x)^{−1} = Σ xⁿ, which converges when the norm of x is below 1.
+Q: Give three examples of Banach algebras. | Bounded operators B(X), continuous functions C(K), and L¹(ℝ) with convolution.
+Q: What is the spectrum of an element x of a Banach algebra? | The set of λ for which x − λ1 is not invertible.
+Q: What did Gelfand prove about spectra in Banach algebras? | They are non-empty and compact.
+Q: What bound does the Neumann series give for the inverse of 1 − x? | Its norm is at most 1/(1 − norm of x).
+Q: What does the Gelfand transform do? | It maps commutative Banach algebras into C(K), algebras of functions.
+Q: What is Wiener's lemma? | Non-vanishing absolutely convergent Fourier series have absolutely convergent reciprocals.
+Q: What is the spectrum of x^{2} + 1 in C[0, 1]? | [1, 2], its range.
+Q: What condition is often forgotten in defining a Banach algebra? | The submultiplicative condition on the norm of a product.
 
 ## C*-Algebras
 S: A C*-algebra is a Banach algebra with an adjoint operation whose norm obeys ‖x*x‖ = ‖x‖^{2}. They abstract algebras of operators on Hilbert space, and the commutative ones are exactly algebras of continuous functions, leading to "noncommutative geometry".
@@ -447,6 +567,16 @@ SRC: Davidson KR, C*-Algebras by Example (American Mathematical Society 1996) | 
 NUM1#maths-u09-13-q1@1: In a C*-algebra, ‖x‖ = 4. What is ‖x*x‖? | 16 | 0 |  | The C*-identity gives ‖x*x‖ = ‖x‖^{2} = 16.
 M1#maths-u09-13-q2@1: Which is a C*-algebra? | B(H) with the operator adjoint | ℓ¹ with convolution and no involution | Polynomials with the max norm | The integers | Any Banach space | B(H) is complete, closed under adjoints, and satisfies the C*-identity ‖T*T‖ = ‖T‖^{2}.
 M2#maths-u09-13-q3@2: What is the significance of the second Gelfand–Naimark theorem? | Every C*-algebra can be realised concretely as operators on a Hilbert space | Every C*-algebra is commutative | C*-algebras are all commutative, so they're spaces of functions | All operators are compact | Hilbert spaces are finite | Abstract C*-algebras embed isometrically into some B(H).
+Q: What is a C*-algebra? | A Banach algebra with an involution where the norm of x*x equals the square of the norm of x.
+Q: What properties does an involution have? | (x*)* = x, (xy)* = y*x*, and (λx)* = conj(λ)x*.
+Q: Give three examples of C*-algebras. | B(H) with the adjoint, M_{n}(ℂ) with conjugate transpose, and C₀(X) with conjugation.
+Q: What does the second Gelfand–Naimark theorem say? | Every C*-algebra is isomorphic to a closed *-subalgebra of some B(H).
+Q: What is non-commutative geometry? | Treating non-commutative C*-algebras like functions on non-commutative spaces (Connes).
+Q: What are quantum states in C*-algebra language? | Positive functionals on the algebra of observables.
+Q: Which topics use K-theory of C*-algebras? | Index theorems.
+Q: For x = diag(2, 3i), what is x*x? | diag(4, 9), with norm 9 = 3^{2}.
+Q: Name two areas of physics that use C*-algebras. | Quantum information and quantum statistical mechanics.
+Q: What is the confusion about the C*-identity? | Confusing it with the weaker statement that x* has the same norm as x.
 
 ## Operator Algebras
 S: Operator algebras are algebras of operators on Hilbert space closed under adjoints and suitable limits: C*-algebras and von Neumann algebras. Murray and von Neumann's classification of factors led to deep connections with quantum physics, knot theory and quantum information.
@@ -481,4 +611,14 @@ SRC: Murray FJ, von Neumann J, On rings of operators, Annals of Mathematics 37(1
 NUM1#maths-u09-14-q1@1: What is the dimension of the commutant of the diagonal 2 × 2 matrices? | 2 | 0 |  | The commutant consists of diagonal matrices, which form a 2-dimensional algebra.
 M1#maths-u09-14-q2@1: What does the double commutant theorem characterise? | Weakly closed unital *-algebras of operators | Finite groups | Banach spaces | Prime ideals | Measure-zero sets | A unital *-algebra M is a von Neumann algebra iff M = M″.
 M2#maths-u09-14-q3@2: Which field uses type III factors? | Quantum field theory | Elementary number theory | Euclidean geometry | Linear programming | Classical mechanics only | Algebras of local observables in relativistic quantum field theory are type III.
+Q: What is the commutant M′? | The set of operators T with TS = ST for every S in M.
+Q: What is a von Neumann algebra? | A *-algebra of operators containing I with M = M″, equivalently closed in the weak operator topology.
+Q: What does the double commutant theorem say? | A unital *-algebra is weakly closed iff it equals its double commutant.
+Q: How do von Neumann algebras decompose? | Every one decomposes into factors.
+Q: What are the Murray–von Neumann types of factors? | Type I (like matrix algebras), and types II and III, with no minimal projections.
+Q: What did Connes classify? | Injective factors, earning a Fields Medal in 1982.
+Q: What did Jones's subfactor theory lead to? | The Jones polynomial of knots and a Fields Medal in 1990.
+Q: What type are algebras of observables in quantum field theory? | Type III factors.
+Q: What is free probability used for? | Studying large random matrices (Voiculescu).
+Q: What is the commutant of the 2 × 2 diagonal matrices? | The diagonal matrices again.
 `;

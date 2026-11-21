@@ -44,6 +44,16 @@ M2#sport-u01-01-q2@2: A goalkeeper dives sideways to save a shot, moving the who
 TF1#sport-u01-01-q3@1: The knee is distal to the hip. | true | Distal means further from the limb's attachment to the trunk; the knee is further from the hip joint than the thigh's origin, so it is distal to the hip.
 M2#sport-u01-01-q4@2: A discus thrower spins before release. Which axis is the body rotating about? | The longitudinal axis | The frontal axis | The sagittal axis | The transverse axis | Spinning on the spot is rotation about the vertical, head-to-toe longitudinal axis, in the transverse plane.
 SA3#sport-u01-01-q5@3: Explain why sport scientists describe movements relative to the anatomical position rather than to the athlete's actual posture. | Athletes move through every orientation, so terms such as "up" or "front" would change meaning as they turn or invert. A fixed reference position means each term (superior, anterior, medial, proximal) and each plane and axis always refers to the same direction relative to the body, so analyses, injury reports and coaching notes are unambiguous and comparable between people. | Athletes' orientation changes during movement ; A fixed reference keeps terms consistent ; Gives an example such as an inverted gymnast ; Links to clear communication between coaches, scientists and clinicians
+Q: Describe the anatomical position. | Standing upright, facing forwards, feet together and parallel, arms by the sides with palms facing forwards.
+Q: What do the terms superior and inferior mean? | Superior means towards the head; inferior means towards the feet.
+Q: What do medial and lateral mean? | Medial means towards the body's midline; lateral means away from it.
+Q: Define superficial and deep. | Superficial is nearer to the body's surface; deep is further from it.
+Q: Define a plane of movement. | An imaginary flat surface through the body in which a movement takes place.
+Q: Define an axis of rotation. | An imaginary line, at right angles to its plane, about which a body or segment rotates.
+Q: Which movements occur in the frontal plane? | Abduction, adduction and lateral flexion, as in a star jump or a cartwheel.
+Q: Which plane and axis does a golf swing use? | The transverse plane, about the longitudinal (vertical) axis.
+Q: Why does a hanging gymnast's head still count as superior to the feet? | Directional terms are always relative to the anatomical position, not the athlete's actual orientation.
+Q: What common error is made when pairing planes with axes? | Matching a plane with the axis of the same name; sagittal-plane movements turn about the frontal axis and frontal-plane movements about the sagittal axis.
 
 ## Functions of the skeleton
 LV: Introductory · Foundation
@@ -80,6 +90,16 @@ M2#sport-u01-02-q2@2: Which function of the skeleton most directly helps an endu
 MS2#sport-u01-02-q3@1,2: Which are mechanical functions of the skeleton? | Protection ; Support ; Movement | Mineral storage ; Blood cell production | Protection, support and movement depend on the skeleton's rigidity and leverage; mineral storage and blood cell production are physiological (metabolic) functions.
 TF1#sport-u01-02-q4@1: The skeleton stores about 99% of the body's calcium. | true | Bone mineral (hydroxyapatite) holds about 99% of the body's calcium, released to keep blood calcium within a narrow range.
 SA3#sport-u01-02-q5@2,3: Explain how both the mechanical and the physiological functions of the skeleton contribute to performance in a 400 m sprint. | Mechanically, the long bones of the legs act as levers and joints as fulcra, so muscle force produces stride; the skeleton supports the body against ground reaction forces several times body weight. Physiologically, red marrow produces the red blood cells that carry oxygen for the aerobic contribution and recovery, and the calcium store keeps blood calcium available for contraction. | Bones as levers and joints as pivots ; Support against impact forces ; Red blood cells and oxygen transport ; Calcium for muscle contraction ; Applies points to the 400 m
+Q: Name the four mechanical functions of the skeleton. | Support and shape, protection, movement, and attachment for muscles.
+Q: What does the cranium protect? | The brain.
+Q: How does the skeleton produce movement? | Bones act as levers and joints as pivots (fulcra); muscles pull on bones through tendons.
+Q: What is haemopoiesis? | The production of blood cells, in adults mainly in the red marrow of flat bones and the ends of long bones.
+Q: Which three types of blood component does red bone marrow make? | Red cells, white cells and platelets.
+Q: What does yellow marrow store, and where is it found? | Fat, in the shafts of long bones.
+Q: Why is the skeleton's calcium store important for exercise? | Calcium triggers muscle contraction, so bone's store helps keep blood calcium constant for contraction and nerve conduction.
+Q: What gives muscles leverage on bones, with an example? | Processes, ridges and tuberosities on bones, such as the deltoid tuberosity of the humerus.
+Q: What does the pelvis protect? | The bladder and reproductive organs.
+Q: Why is it wrong to say the skeleton produces blood? | It produces blood cells in red marrow; plasma is mostly water and is not made in bone.
 
 ## Bone structure and types of bone
 LV: Introductory · Foundation
@@ -121,6 +141,16 @@ M2#sport-u01-03-q2@3: Why are flat bones such as the scapula well suited to the 
 M2#sport-u01-03-q3@1: A 14-year-old fractures the end of the tibia close to the knee. Why might doctors be particularly concerned? | The fracture may involve the epiphyseal plate, where the bone is still growing in length | Adolescents have no periosteum | Spongy bone cannot heal | The diaphysis is made of cartilage at that age | Growth-plate injuries in young athletes can affect later bone growth, so they are assessed carefully.
 TF1#sport-u01-03-q4@1: The diaphysis of a long bone is mostly spongy bone. | false | The diaphysis (shaft) is mostly compact bone around the medullary cavity; spongy bone fills the epiphyses.
 SA3#sport-u01-03-q5@3: Explain how the structure of a long bone such as the femur suits it to running and jumping. | The compact-bone shaft is a hollow tube, strong against bending yet light, so it can act as a long lever without excess mass. Spongy bone in the ends has trabeculae aligned to the stresses from the hip and knee, giving strength with low weight, and holds red marrow. Hyaline cartilage reduces friction and absorbs impact at the joints, and the periosteum anchors tendons and ligaments. | Compact shaft resists bending ; Hollow structure keeps mass low ; Spongy bone aligned to stress ; Articular cartilage reduces friction and shock ; Periosteum for attachment
+Q: What is the diaphysis of a long bone? | The shaft: a tube of dense compact bone around a medullary cavity of yellow marrow.
+Q: What are the epiphyses mostly made of? | Spongy (cancellous) bone, with trabeculae lined up with stress and holding red marrow.
+Q: What is the periosteum? | A tough membrane covering the outside of bone, rich in nerves and blood vessels, where tendons and ligaments attach.
+Q: What happens at the epiphyseal plate? | Bones grow in length there until the cartilage plate ossifies, usually in the late teens to early twenties.
+Q: What is the function of articular cartilage? | It reduces friction and absorbs shock where bones meet.
+Q: Give two examples of short bones and state their function. | Carpals and tarsals; they give strength and weight-bearing with small gliding movements.
+Q: What is a sesamoid bone? | A bone that develops within a tendon, such as the patella.
+Q: How does the patella make knee extension more efficient? | It holds the quadriceps tendon further from the knee's axis, increasing the tendon's moment arm.
+Q: Why are long bones suited to large movements? | Being longer than wide, they act as levers for large movements.
+Q: What are the functions of flat bones? | Protection and large areas for muscle attachment.
 
 ## The axial and appendicular skeleton
 LV: Introductory · Foundation
@@ -156,6 +186,16 @@ M2#sport-u01-04-q2@2: In a kick, which bone of the lower leg bears most of the b
 NUM1#sport-u01-04-q3@1: The adult skeleton has about 206 bones, 80 of them axial. How many are appendicular? | 126 | 0 | bones | 206 − 80 = 126 bones in the limbs and girdles.
 M3#sport-u01-04-q4@3: Why are shoulder dislocations far more common in sport than hip dislocations? | The shoulder girdle's loose attachment and shallow socket favour mobility over stability | The humerus is weaker than the femur | Shoulder muscles are always weaker than hip muscles | The shoulder has no ligaments | The pectoral girdle attaches to the trunk only at the sternoclavicular joint and the glenoid is shallow, so the joint is mobile but easily displaced; the deep acetabulum and fused pelvic girdle make the hip very stable.
 SA3#sport-u01-04-q5@3: Compare the roles of the axial and appendicular skeleton in a tennis serve. | The axial skeleton provides a stable core: the vertebral column extends and rotates to transfer force from legs to arm, and the ribs protect the thorax. The appendicular skeleton provides the levers: the legs drive from the ground, the mobile shoulder girdle allows the large range of motion needed to swing the racket, and the arm bones act as a long lever to give high racket-head speed. | Axial skeleton as stable core and protection ; Spine transfers force through rotation and extension ; Appendicular skeleton as levers ; Shoulder girdle mobility ; Applied to the phases of the serve
+Q: Which bones make up the axial skeleton? | The cranium and face, the vertebral column, the ribs and the sternum.
+Q: What does the appendicular skeleton consist of? | The bones of the limbs and the shoulder and pelvic girdles that attach them.
+Q: What do the curves of the vertebral column do? | They absorb shock and balance the head over the pelvis.
+Q: Name the three bones that make up each hip bone. | Ilium, ischium and pubis.
+Q: Which forearm bone is on the thumb side? | The radius.
+Q: Name two tarsal bones mentioned in the lesson. | The talus and the calcaneus.
+Q: Where does the shoulder girdle attach to the axial skeleton? | Only at the sternoclavicular joint.
+Q: Why is the pelvic girdle very stable? | It is fused firmly to the sacrum, suiting it to transmitting body weight and ground forces to the trunk.
+Q: What is the main role of the fibula? | It is lateral and mainly anchors muscles; the tibia bears most of the load.
+Q: Name the curves of the spine and their type. | Cervical and lumbar lordosis, and thoracic kyphosis.
 
 ## Bone remodelling and the effects of exercise on bone
 LV: Intermediate · Application
@@ -194,6 +234,16 @@ M2#sport-u01-05-q2@2: Which athlete is most likely to have low bone mineral dens
 M3#sport-u01-05-q3@3: A 70-year-old wants exercise to protect against osteoporotic fracture. Which advice best reflects the evidence? | Progressive resistance and, where safe, impact training, combined with balance work | Swimming alone, because it avoids impact | Complete rest to prevent stress fractures | Only stretching, because it maintains range of motion | Resistance and impact loading preserve bone, and balance training reduces falls, the immediate cause of most fractures. Swimming is good for fitness but barely loads bone; rest causes bone loss. Educational only: older adults should get individual advice.
 TF2#sport-u01-05-q4@2: Bed rest and spaceflight cause bone loss because strain falls below the level needed to maintain bone. | true | Under the mechanostat model, strain below the lower threshold tips remodelling towards resorption, so unloaded bone is lost.
 SA3#sport-u01-05-q5@2,3: Evaluate the claim that "exercise is good for your bones". | Partly true: weight-bearing, impact and resistance exercise increase or maintain BMD at loaded sites, shown even within individuals (tennis players' racket arms). But non-weight-bearing exercise such as swimming and cycling has little effect, and high training loads with low energy availability or low oestrogen can reduce BMD and cause stress fractures. Effects are greatest in childhood and adolescence. So the type, dose, timing and energy context matter. | Weight-bearing, impact and resistance increase BMD ; Evidence such as tennis players' arms ; Non-weight-bearing sports have little effect ; Low energy availability or overload can harm bone ; Adolescence as key window ; Balanced judgement
+Q: What do osteocytes do? | Osteocytes are osteoblasts trapped in matrix; they sense strain and signal where bone is needed.
+Q: Roughly how much of the skeleton is renewed each year in healthy young adults? | About a tenth.
+Q: What does Frost's mechanostat theory add to Wolff's law? | Above a strain threshold formation exceeds resorption and bone strengthens; below a lower threshold bone is lost.
+Q: Which kinds of activity increase bone mineral density at loaded sites? | Weight-bearing and impact activities such as running, jumping, racket sports and gymnastics, plus resistance training.
+Q: Define bone mineral density. | The mass of mineral per area or volume of bone, an indicator of bone strength.
+Q: Why may elite cyclists have low bone mineral density? | Cycling is non-weight-bearing and barely loads the skeleton.
+Q: Why are childhood and adolescence a key window for bone? | About 90% of peak bone mass is reached by around age 18 to 20, and active children build stronger skeletons.
+Q: How do low energy availability and low oestrogen affect bone? | They reduce bone formation.
+Q: Which two nutrients are needed to mineralise new bone? | Calcium and vitamin D.
+Q: Why is the tennis player's dominant-arm comparison strong evidence for loading effects? | Both arms share genes, diet and hormones; only loading differs, so the greater density shows local loading causes adaptation.
 
 ## Classification of joints
 LV: Introductory · Foundation
@@ -228,6 +278,16 @@ M2#sport-u01-06-q2@3: Why do synovial joints need strong ligaments and muscles a
 TF1#sport-u01-06-q3@1: Most joints used in sporting movement are synovial joints. | true | The joints of the limbs used to run, jump, throw and kick are synovial, freely movable joints.
 M2#sport-u01-06-q4@2: Which joint is a slightly movable cartilaginous joint used in a rugby scrum? | The joints between lumbar vertebral bodies | The knee | The sutures of the skull | The shoulder | The intervertebral discs between lumbar vertebrae allow a little movement and absorb compression as the scrum loads the spine.
 SA3#sport-u01-06-q5@2,3: Explain, using two examples, the relationship between joint structure, mobility and stability. | The more freely a joint moves, the less stable it tends to be. Skull sutures are fibrous and immovable, giving maximum stability and protection. The shoulder is a synovial joint with a shallow socket, giving a huge range of motion for throwing but low stability, so it relies on the rotator cuff and is prone to dislocation. | States the inverse relationship ; Fibrous example with high stability ; Synovial example with high mobility ; Explains reliance on ligaments and muscles
+Q: Define a joint. | A place where two or more bones meet (an articulation).
+Q: What are the three structural classes of joint and their mobility? | Fibrous (immovable), cartilaginous (slightly movable) and synovial (freely movable).
+Q: What joins the bones in a fibrous joint? | Dense connective tissue.
+Q: Give two examples of fibrous joints. | The sutures of the cranium and the distal tibiofibular joint.
+Q: What is the functional name for a slightly movable joint? | An amphiarthrosis.
+Q: What is the relationship between joint mobility and stability? | The more freely a joint moves, the less inherently stable it is.
+Q: What makes the hip stable enough to bear several times body weight? | Its deep acetabulum, strong capsule and ligaments.
+Q: Why does the shoulder have a high dislocation rate? | Its shallow glenoid gives the greatest range of any joint, at the cost of stability.
+Q: How can training shift a joint's mobility-stability balance? | Strengthening surrounding muscles adds dynamic stability, and flexibility work adds range.
+Q: What type of joint are the spinal facet joints? | Small synovial joints between the vertebral arches.
 
 ## Synovial joints
 LV: Introductory · Application
@@ -272,6 +332,16 @@ M2#sport-u01-07-q2@2: A netball player turns the palm of her hand to face down t
 MATCH2#sport-u01-07-q3@2: Match each joint to its type. | Knee = Hinge ; Shoulder = Ball and socket ; Atlas–axis = Pivot ; Wrist = Condyloid ; Thumb carpometacarpal = Saddle | The knee is a (modified) hinge, the shoulder a ball and socket, the atlas–axis a pivot, the radiocarpal wrist condyloid and the thumb's carpometacarpal joint the classic saddle joint.
 M3#sport-u01-07-q4@3: Which structure most directly prevents the tibia sliding forwards on the femur during a sudden stop? | The anterior cruciate ligament | The synovial membrane | The patellar bursa | The articular cartilage | Ligaments resist unwanted movement between bones; the ACL specifically resists anterior translation of the tibia, which is why sudden deceleration and cutting can rupture it.
 SA3#sport-u01-07-q5@1,3: Explain how the structures of the knee joint allow movement while protecting it from injury. | Articular cartilage and synovial fluid reduce friction so the bones glide smoothly; the menisci deepen the joint, spread load and absorb shock; ligaments (cruciates and collaterals) and the capsule resist abnormal movements; bursae reduce friction where tendons pass over bone. Together they allow flexion and extension under high loads while limiting damaging forces. | Cartilage and fluid reduce friction ; Menisci absorb shock and spread load ; Ligaments resist abnormal movement ; Bursae reduce friction ; Links structure to protection
+Q: What is the role of the joint capsule? | A fibrous sleeve enclosing the joint and holding the bones together.
+Q: What does the synovial membrane do? | It lines the capsule and secretes synovial fluid.
+Q: What is a bursa? | A small fluid-filled sac that reduces friction where tendons pass over bone.
+Q: What do menisci do in the knee? | These fibrocartilage pads deepen the joint and spread load.
+Q: Why is repeated joint injury linked with early osteoarthritis? | Articular cartilage, once damaged, repairs poorly.
+Q: Which movements does a ball and socket joint allow? | Flexion, extension, abduction, adduction, rotation and circumduction.
+Q: Give two examples of pivot joints. | The atlas-axis joint and the proximal radio-ulnar joint.
+Q: Which joint is an example of a saddle joint? | The carpometacarpal joint of the thumb.
+Q: Where are gliding joints found? | Between carpals, between tarsals and between vertebral facets.
+Q: How does a warm-up help a synovial joint? | It stimulates secretion of less viscous synovial fluid and thickens articular cartilage slightly, giving smoother movement and less injury risk.
 
 ## Movement terminology
 LV: Introductory · Application
@@ -314,6 +384,16 @@ M2#sport-u01-08-q2@2: In the downward phase of a squat, what is the action at th
 M2#sport-u01-08-q3@2: A swimmer's arm moves sideways and up in the recovery of backstroke away from the body's midline. Which action is this at the shoulder? | Abduction | Adduction | Horizontal adduction | Medial rotation | Moving the arm away from the midline in the frontal plane is abduction.
 SEQ2#sport-u01-08-q4@2: Put the ankle actions of a sprinter's foot in order through one ground contact, from landing to toe-off. | Dorsiflexion as the foot lands and loads ; Further dorsiflexion as the body passes over the foot ; Plantar flexion to drive off the ground | The ankle dorsiflexes as the foot strikes and the shin moves forward over it, then plantar flexes forcefully at toe-off.
 SA3#sport-u01-08-q5@3: Explain why coaches and sport scientists should use precise movement terminology. | Precise terms identify the joint, plane and direction of movement unambiguously, so a coach, physiotherapist and biomechanist mean the same thing. This allows accurate technique analysis, identification of the muscles responsible, targeted training (for example plantar flexor strength for sprinting) and clear injury reporting. | Removes ambiguity ; Allows identification of muscles and planes ; Supports targeted training ; Supports communication about injury and technique
+Q: Define flexion. | A movement that decreases the angle between bones at a joint.
+Q: What is hyperextension, with an example? | Extension beyond the anatomical position, such as arching the back in a high jump.
+Q: What is dorsiflexion? | Pulling the toes up towards the shin.
+Q: Why are flexion and extension the commonest actions in sport? | Running, jumping, squatting and most strokes are driven in the sagittal plane.
+Q: Define abduction and adduction. | Abduction is movement away from the midline; adduction is movement towards it.
+Q: What is lateral flexion? | Bending the trunk sideways.
+Q: What is horizontal abduction or adduction, with an example? | Moving the arm across the transverse plane at shoulder height, as in a discus swing.
+Q: What are pronation and supination, and where do they occur? | Turning the palm down and up, at the radio-ulnar joints.
+Q: What are inversion and eversion? | Turning the sole of the foot inwards and outwards.
+Q: Name the joint actions at the take-off leg in a high jump. | Hip extension, knee extension and ankle plantar flexion: triple extension.
 
 ## Joint analysis of sporting actions
 LV: Intermediate · Application
@@ -356,6 +436,16 @@ M2#sport-u01-09-q2@2: Which is the agonist at the knee in the recovery (leg swin
 M3#sport-u01-09-q3@2: In the lowering phase of a biceps curl, which muscle is working and how? | Biceps brachii, eccentrically | Triceps brachii, concentrically | Biceps brachii, concentrically | Triceps brachii, isometrically | The elbow extends under gravity, but the biceps lengthens under tension to control the descent: an eccentric contraction of the same muscle that lifted the weight.
 TF2#sport-u01-09-q4@2: In the drive phase of a sprint start, the hip, knee and ankle all extend (with plantar flexion at the ankle). | true | This "triple extension" is the main power-producing action of sprinting and jumping.
 SA3#sport-u01-09-q5@1,3: Carry out a joint analysis of the knee in the preparation and execution phases of a football kick, then evaluate one limitation of this kind of analysis. | Preparation: knee flexion, hinge joint (femur and tibia), sagittal plane, frontal axis; agonist hamstrings, concentric. Execution: knee extension; agonist quadriceps (rectus femoris), concentric; antagonist hamstrings. Limitation: it treats joints separately, whereas the kick depends on sequenced, multi-joint action, biarticular muscles such as rectus femoris acting at hip and knee, and the hamstrings working eccentrically to decelerate the leg at the end. | Correct preparation phase ; Correct execution phase ; Agonist, antagonist and contraction type ; Identifies a valid limitation ; Explains it with an example
+Q: List the six items recorded for each joint in a joint analysis. | Joint and type, articulating bones, movement, plane and axis, agonist and antagonist, and contraction type.
+Q: Name the six core joints at A level. | Ankle, knee, hip, shoulder, elbow and wrist.
+Q: Which muscles produce knee extension and ankle plantar flexion in the running drive phase? | Quadriceps for knee extension; gastrocnemius and soleus for plantar flexion.
+Q: Which muscle produces hip flexion in the running recovery leg? | The iliopsoas.
+Q: Which muscle produces ankle dorsiflexion in the recovery leg? | The tibialis anterior.
+Q: What type of contraction drives the upward phase of a jump or squat? | Concentric contractions producing hip and knee extension and ankle plantar flexion.
+Q: Define an agonist. | The muscle mainly responsible for producing a movement: the prime mover.
+Q: Which muscles are agonist and antagonist at the elbow in the upward phase of a push-up? | Triceps brachii is the agonist (concentric); biceps brachii is the antagonist.
+Q: Which bones articulate at the elbow? | The humerus, radius and ulna.
+Q: Why are the hamstrings not the agonist in the downward phase of a squat? | Gravity produces the knee flexion; the quadriceps lengthen under tension to control it.
 
 ## Ligaments, tendons and cartilage
 LV: Intermediate · Application
@@ -393,6 +483,16 @@ M2#sport-u01-10-q2@2: How does the Achilles tendon reduce the energy cost of run
 M2#sport-u01-10-q3@3: Why does a ligament injury usually take longer to heal than a muscle strain of similar severity? | Ligaments have a poorer blood supply and slower collagen turnover | Ligaments contain more mitochondria | Muscles have no blood supply | Ligaments are made of hyaline cartilage | Healing needs blood-borne cells and nutrients; muscle is richly vascularised, whereas ligaments and tendons are not.
 TF1#sport-u01-10-q4@1: Adult articular cartilage has a rich blood supply. | false | Articular cartilage is avascular; it is nourished by diffusion from synovial fluid, which is one reason it heals poorly.
 SA3#sport-u01-10-q5@3: Explain why coaches are advised to increase training load gradually, with reference to connective tissue. | Muscles and the cardiovascular system adapt within weeks, but tendons, ligaments and cartilage have a limited blood supply and slow collagen turnover, so they adapt over months. A rapid rise in load can exceed connective-tissue capacity even when the athlete feels fit, causing tendinopathy or stress injury. Gradual progression lets connective tissue strengthen alongside muscle. | Different adaptation rates of muscle and connective tissue ; Poor blood supply and slow collagen turnover ; Risk of overuse injury such as tendinopathy ; Gradual progression as the solution
+Q: What gives ligaments and tendons great tensile strength? | Collagen fibres laid in parallel in dense regular connective tissue.
+Q: What is the function of a ligament? | It joins bone to bone and stabilises joints, resisting excessive movement.
+Q: How does the Achilles tendon store and return energy in running? | It stretches as the foot lands and recoils at toe-off, returning much of that energy and reducing muscle work.
+Q: Define the stretch-shortening cycle. | A rapid eccentric stretch followed by a concentric contraction, using stored elastic energy.
+Q: Describe hyaline cartilage and its role. | A smooth, glassy covering of joint surfaces that reduces friction and spreads load.
+Q: What does fibrocartilage resist, and where is it found? | Compression and tension; in the knee menisci and intervertebral discs.
+Q: Where is elastic cartilage found? | The ear and the epiglottis.
+Q: How does adult articular cartilage get its nutrients? | By diffusion from synovial fluid, as it has no blood supply.
+Q: Why do tendons and ligaments adapt to training more slowly than muscle? | They have a poor blood supply, so they adapt over months rather than weeks.
+Q: What is the difference between a sprain and a strain? | A sprain is a ligament injury; a strain is a muscle or tendon injury.
 
 ## Skeletal muscle structure
 LV: Introductory · Foundation
@@ -433,6 +533,16 @@ M2#sport-u01-11-q2@2: During a contraction, which part of the sarcomere stays th
 SEQ1#sport-u01-11-q3@1: Order these from largest to smallest. | Muscle ; Fascicle ; Muscle fibre ; Myofibril ; Sarcomere ; Myosin filament | A muscle is made of fascicles of fibres; each fibre holds myofibrils made of sarcomeres, which contain actin and myosin filaments.
 TF1#sport-u01-11-q4@1: The function of T-tubules is to carry the action potential into the interior of the muscle fibre. | true | T-tubules are infoldings of the sarcolemma that carry depolarisation close to the sarcoplasmic reticulum so that calcium is released throughout the fibre at once.
 SA3#sport-u01-11-q5@3: Explain how the structure of a skeletal muscle fibre allows it to contract rapidly and forcefully. | The fibre is packed with myofibrils of sarcomeres in series, so many small shortenings add up to a large one and many cross-bridges in parallel add up to large force. T-tubules carry the action potential deep into the fibre, beside the sarcoplasmic reticulum, so calcium is released throughout the fibre almost at once. Mitochondria, myoglobin and glycogen supply energy, and connective-tissue sheaths transmit force to the tendon. | Sarcomeres in series and parallel ; T-tubules and sarcoplasmic reticulum for rapid calcium release ; Energy supply from mitochondria and glycogen ; Connective tissue transmits force
+Q: What connective tissue wraps a whole muscle? | The epimysium, which merges into the tendon.
+Q: What is a fascicle, and what wraps it? | A bundle of muscle fibres, wrapped in perimysium.
+Q: What are the sarcolemma and sarcoplasm? | The sarcolemma is the fibre's membrane; the sarcoplasm is its cytoplasm.
+Q: What does the sarcoplasm contain? | Myoglobin, glycogen and mitochondria.
+Q: Define a myofibril. | A chain of sarcomeres running the length of a muscle fibre.
+Q: Where are actin filaments anchored in a sarcomere? | At the Z lines.
+Q: Name the two regulatory proteins on actin. | Troponin and tropomyosin.
+Q: What is the I band? | The light region containing actin only; it shortens during contraction.
+Q: What is the H zone? | The myosin-only region in the middle of the A band; it shortens during contraction.
+Q: Why does skeletal muscle look striated? | The regular overlap of actin and myosin gives it a striped appearance.
 
 ## The sliding filament theory
 LV: Intermediate · Application
@@ -472,6 +582,16 @@ M2#sport-u01-12-q2@2: What would happen if the sarcoplasmic reticulum could not 
 SEQ2#sport-u01-12-q3@2: Put these events in order. | Acetylcholine released at the neuromuscular junction ; Action potential spreads along the sarcolemma and T-tubules ; Calcium released from the sarcoplasmic reticulum ; Calcium binds to troponin and tropomyosin moves ; Myosin heads bind to actin and perform the power stroke | This is the sequence of excitation–contraction coupling followed by cross-bridge cycling.
 M3#sport-u01-12-q4@2: Why does a muscle become rigid after death (rigor mortis)? | With no ATP, myosin heads cannot detach from actin | Calcium is pumped back into the sarcoplasmic reticulum | Acetylcholine is broken down | Actin filaments shorten | ATP binding is needed to release myosin from actin; without it cross-bridges stay locked. Rigor shows that relaxation, not just contraction, needs ATP.
 SA3#sport-u01-12-q5@3: Evaluate the evidence that muscles contract by filaments sliding rather than by filaments shortening. | Microscopy in 1954 (Huxley and Niedergerke; Huxley and Hanson) showed the A band stays constant while the I band and H zone shorten, which fits sliding of constant-length filaments, not shortening. Later electron microscopy imaged cross-bridges, X-ray diffraction tracked myosin head movement, and single-molecule experiments measured the step of one myosin head. The length–tension relationship, with force proportional to filament overlap, is also predicted. Details of the power stroke are still refined, but the core theory is well established. | Band pattern evidence ; Constant A band versus shortening I band and H zone ; Later structural or molecular evidence ; Length–tension relationship ; Judgement on how established it is
+Q: How does acetylcholine start a muscle action potential? | It binds to receptors on the sarcolemma and depolarises it.
+Q: What triggers the sarcoplasmic reticulum to release calcium? | The muscle action potential spreading along the sarcolemma and down the T-tubules.
+Q: Why does acetylcholinesterase break down acetylcholine rapidly? | So each nerve impulse gives a discrete signal.
+Q: What blocks the myosin-binding sites on actin at rest? | Tropomyosin.
+Q: Define a cross-bridge. | The attachment of a myosin head to an actin filament.
+Q: What triggers the power stroke? | Release of ADP and Pi from the attached myosin head.
+Q: What does ATPase on the myosin head do? | It hydrolyses ATP, re-cocking the head for the next cycle.
+Q: How does a muscle relax when stimulation stops? | Calcium is actively pumped back into the sarcoplasmic reticulum, using ATP, and tropomyosin covers the binding sites again.
+Q: Why does rigor mortis occur? | Without ATP, bound myosin heads cannot detach from actin, so muscles lock rigid.
+Q: What conditions keep the cross-bridge cycle repeating? | The presence of calcium ions and ATP.
 
 ## Muscle fibre types
 LV: Intermediate · Application
@@ -510,6 +630,16 @@ M2#sport-u01-13-q2@2: A 1500 m runner needs both speed and endurance. Which fibr
 MATCH2#sport-u01-13-q3@1: Match each characteristic to the fibre type with the most of it. | Mitochondrial density = Type I ; Phosphocreatine stores = Type IIx ; Moderate fatigue resistance with high force = Type IIa | Type I fibres are richest in mitochondria; IIx in phosphocreatine and glycolytic enzymes; IIa combine high force with moderate fatigue resistance.
 M3#sport-u01-13-q4@3: Six months of heavy resistance training would be expected to change a muscle's fibre profile how? | The proportion of IIx falls and IIa rises | Type I fibres become type IIx | Type IIa fibres become type I | Fibre proportions cannot change | Resistance training shifts IIx to IIa. Type I to II conversion is minimal, and fibres do change, so "cannot change" is wrong.
 SA3#sport-u01-13-q5@2,3: Evaluate the importance of muscle fibre type for success in sport. | Fibre type matters: elite marathoners have a high proportion of type I and sprinters of type II fibres, and fibre type is largely inherited, so it sets limits. But it is one factor among many: VO2max, lactate threshold, economy, technique, tactics and psychology all matter, training changes the oxidative capacity of all fibres and shifts IIx to IIa, and team sports demand a mix. Fibre type is best seen as one inherited predisposition. | Evidence linking fibre type to event ; Fibre type largely inherited ; Other physiological factors matter ; Trainability within fibre types ; Balanced conclusion
+Q: Describe the contraction speed, force and fatigue resistance of type I fibres. | Slow contraction, low force and very high fatigue resistance.
+Q: Why do type I fibres look red? | They contain much myoglobin.
+Q: Which sports suit type IIa fibres? | Middle distance and repeated sprints.
+Q: Name three energy-related features of type IIx fibres. | High phosphocreatine and glycogen stores, and high glycolytic enzyme activity.
+Q: Define myoglobin. | An oxygen-storing protein in muscle fibres, abundant in type I fibres.
+Q: Why might a textbook refer to type IIb fibres in humans? | Human IIx fibres were long called IIb; true IIb fibres are found mainly in small mammals.
+Q: What fibre profile might elite marathon runners have in the leg muscles? | About 80% type I fibres.
+Q: Why does talent identification assess fibre type indirectly through performance tests? | Fibre-type distribution is largely inherited.
+Q: What is detraining overshoot? | Fibres shift back towards IIx after detraining, sometimes beyond the original proportion.
+Q: Why does a sprinter's speed fall over 400 m? | Type IIx fibres have few mitochondria and fatigue quickly as phosphocreatine falls and metabolites accumulate.
 
 ## Agonists, antagonists, fixators and synergists
 LV: Introductory · Application
@@ -546,6 +676,16 @@ M2#sport-u01-14-q2@2: In the upward phase of a sit-up, which muscle is the agoni
 M3#sport-u01-14-q3@3: Why are the hamstrings often strained at the end of a sprinting stride or a powerful kick? | They contract eccentrically at high force to decelerate the rapidly extending knee | They are the agonist for knee extension | They are fixators with no blood supply | They contract isometrically throughout the stride | At the end of the swing phase the hamstrings lengthen under high tension to brake the leg; eccentric overload at long muscle lengths is a recognised mechanism of hamstring strain.
 TF2#sport-u01-14-q4@1: The same muscle can be an agonist in one movement and an antagonist in another. | true | Roles depend on the action: the quadriceps are agonists for knee extension and antagonists in knee flexion.
 SA2#sport-u01-14-q5@2,3: Explain how the muscles at the elbow work together in the upward and downward phases of a push-up. | Upward: elbow extension; the triceps is the agonist (concentric) and the biceps the antagonist, relaxing under reciprocal inhibition; rotator cuff and scapular muscles act as fixators. Downward: elbow flexion under gravity, controlled by the triceps contracting eccentrically, so the triceps remains the working muscle. | Correct agonist and antagonist in upward phase ; Reciprocal inhibition ; Fixators named ; Eccentric triceps in downward phase
+Q: Define the antagonist. | The muscle that opposes the agonist and lengthens to allow the movement.
+Q: What is a synergist? | A muscle that assists the agonist or neutralises unwanted movement.
+Q: Give an example of a synergist in elbow flexion. | Brachialis, assisting biceps brachii.
+Q: Which muscles fix the scapula and shoulder in a biceps curl? | Trapezius and the rotator cuff.
+Q: Why does every joint need antagonistic pairs? | Muscles can only pull, so pairs acting in opposite directions are needed.
+Q: Name the antagonistic pair at the hip. | Gluteus maximus and iliopsoas.
+Q: Name the antagonistic pair of the trunk. | Rectus abdominis and erector spinae.
+Q: What is reciprocal inhibition? | The nervous system inhibits the antagonist when the agonist contracts, so the two don't fight.
+Q: What does the antagonist do near the end of a fast movement? | It contracts to decelerate the limb and protect the joint.
+Q: Which muscles act as fixators at the pelvis and trunk in the upward phase of a squat? | Muscles such as gluteus medius and the deep abdominals.
 
 ## Types of muscle contraction
 LV: Intermediate · Application
@@ -583,6 +723,16 @@ M2#sport-u01-15-q2@2: A rugby forward pushes in a scrum that is not moving. What
 M2#sport-u01-15-q3@3: Why might a coach include Nordic hamstring curls in a football squad's programme? | They develop eccentric hamstring strength, which is associated with lower hamstring injury risk | They train the hamstrings concentrically at high speed | They improve aerobic capacity | They prevent all muscle soreness | Hamstring strains often occur during eccentric braking of the leg; eccentric strengthening at long lengths is a well-studied prevention strategy.
 TF2#sport-u01-15-q4@2: For a given muscle, maximum eccentric force is greater than maximum concentric force. | true | Under the force–velocity relationship, force rises from fast concentric through isometric to eccentric contractions.
 SA3#sport-u01-15-q5@3: Explain why walking downhill causes more muscle soreness the next day than walking uphill, even though uphill feels harder. | Downhill, the quadriceps work eccentrically to control knee flexion, lengthening under tension. Eccentric contractions use fewer motor units to produce high force, so each active fibre is under greater strain, causing microdamage and DOMS 24–72 hours later. Uphill is concentric, costs more energy (so feels harder) but causes little damage. | Downhill is eccentric quadriceps work ; Fewer fibres share high force ; Microdamage leads to DOMS ; Uphill concentric, higher energy cost, less damage
+Q: Define a concentric contraction. | A contraction in which the muscle shortens under tension.
+Q: Define an eccentric contraction, with an example. | The muscle lengthens under tension, controlling movement, such as the quadriceps when landing from a jump.
+Q: What is an isokinetic contraction? | Shortening at a constant velocity throughout the range, produced on specialist dynamometers.
+Q: What are isokinetic contractions used for? | Testing and rehabilitation.
+Q: How does the energy cost of eccentric work compare with concentric work? | Eccentric work costs less energy.
+Q: When does delayed-onset muscle soreness peak? | Around 24 to 72 hours after unaccustomed exercise.
+Q: What is the repeated-bout effect? | After unaccustomed eccentric exercise, a second bout causes much less damage.
+Q: State the force-velocity relationship. | Concentric force falls as shortening speed rises; isometric force is higher, and eccentric force higher still.
+Q: What contraction type do the quadriceps perform when holding the bottom of a squat? | Isometric.
+Q: Give two sporting examples of isometric contraction. | Holding a plank, a gymnast's crucifix on rings, or a stationary rugby scrum (any two).
 
 ## The major muscles used in sport
 LV: Introductory · Foundation
@@ -627,6 +777,16 @@ M2#sport-u01-16-q2@3: In a chest pass in netball, which muscle horizontally addu
 MATCH1#sport-u01-16-q3@2: Match each muscle to its main action. | Tibialis anterior = Dorsiflexion ; Soleus = Plantar flexion ; Erector spinae = Trunk extension ; Gluteus medius = Hip abduction | These are the principal actions of each muscle in the anatomical position.
 M3#sport-u01-16-q4@3: A footballer's rectus femoris is under particular strain during the kick. Why? | It crosses both hip and knee, flexing the hip and extending the knee at the same time | It is the main plantar flexor | It is a fixator of the scapula | It works only isometrically during kicking | As a biarticular muscle, rectus femoris contributes to both hip flexion and knee extension in the kick, producing high forces across two joints; it is a common site of strain in kicking sports.
 SA2#sport-u01-16-q5@2,3: Identify the agonist at the hip, knee and ankle during the upward phase of a vertical jump, and explain why jumping is described as triple extension. | Hip extension: gluteus maximus; knee extension: quadriceps; ankle plantar flexion: gastrocnemius and soleus, all concentric. It is triple extension because the three joints extend (plantar flex) together in sequence to project the body upwards, summing their forces. | Gluteus maximus at the hip ; Quadriceps at the knee ; Gastrocnemius and soleus at the ankle ; Explains triple extension as coordinated extension of three joints
+Q: What are the actions of the three parts of the deltoid? | Middle fibres abduct, anterior fibres flex, and posterior fibres extend and horizontally abduct the shoulder.
+Q: What are the actions of latissimus dorsi? | Shoulder extension, adduction and medial rotation.
+Q: What does trapezius do? | It elevates, retracts and stabilises the scapula.
+Q: Name the four rotator cuff muscles. | Supraspinatus, infraspinatus, teres minor and subscapularis.
+Q: Why does the shoulder depend on its muscles more than any other joint? | The rotator cuff holds the humeral head in a glenoid socket only about a third of its size.
+Q: What do the obliques do? | Lateral flexion and rotation of the trunk.
+Q: What do gluteus medius and minimus do? | Hip abduction and pelvic stability on one leg.
+Q: Name the four quadriceps muscles. | Rectus femoris, vastus lateralis, vastus medialis and vastus intermedius.
+Q: Define a biarticular muscle, with an example. | A muscle that crosses and acts on two joints, such as rectus femoris, the hamstrings or gastrocnemius.
+Q: What happens to a runner with a weak gluteus medius? | The pelvis drops on the opposite side in stance and the knee may collapse inwards.
 
 ## Motor units and the all-or-none law
 LV: Intermediate · Application
@@ -661,6 +821,16 @@ M2#sport-u01-17-q2@3: Which muscle would you expect to have the smallest motor u
 TF1#sport-u01-17-q3@2: When a motor unit is stimulated above threshold, its fibres contract more forcefully than at threshold. | false | Under the all-or-none law, any stimulus at or above threshold produces the same full contraction of the unit's fibres.
 NUM2#sport-u01-17-q4@3: A muscle of 300,000 fibres is supplied by 150 motor neurones. What is the average number of fibres per motor unit? | 2000 | 0 | fibres | 300,000 ÷ 150 = 2,000 fibres per unit, typical of a large, powerful limb muscle such as gastrocnemius.
 SA3#sport-u01-17-q5@2,3: Explain how the structure of motor units allows the same nervous system to produce both delicate and powerful movements. | Motor units vary in size: muscles for fine control have many small units, so recruiting one more adds only a little force and gives fine gradation; muscles for gross movement have large units, each adding a big increment, producing large forces. Because each unit is all-or-none, force is graded by recruiting more units and increasing their firing frequency, so a precise darts throw and a powerful sprint start both use the same mechanism with different unit sizes. | Variation in motor unit size ; Small units give fine gradation ; Large units give power ; All-or-none means grading by number and frequency ; Sporting examples
+Q: Where does a motor neurone's cell body lie? | In the spinal cord.
+Q: What do all the fibres of one motor unit have in common? | They are all the same type, slow or fast.
+Q: What size of motor units do muscles for fine movement have? | Small units of a few to tens of fibres, as in the extraocular and hand muscles.
+Q: How large are motor units in muscles for gross, powerful movement? | Hundreds to around two thousand fibres, as in gastrocnemius and quadriceps.
+Q: Define threshold. | The minimum stimulus needed to trigger an action potential.
+Q: How does a motor neurone's action potential change with stimulus strength above threshold? | It does not: once threshold is reached the action potential is always the same size.
+Q: How does a whole muscle grade its force? | By changing how many motor units are active and how often they fire.
+Q: What does each branch of a motor neurone's axon end at? | A neuromuscular junction on one muscle fibre.
+Q: Why can a pianist grade hand force finely? | Hand muscles have many small motor units, so each extra unit adds only a little force.
+Q: Why does a sprinter's calf produce force in big steps? | The gastrocnemius has fewer, much larger units, each adding a large increment.
 
 ## Gradation of force: recruitment, summation and tetanus
 LV: Intermediate · Application
@@ -696,6 +866,16 @@ M2#sport-u01-18-q2@3: In the first minutes of a gentle jog, which motor units ar
 SEQ2#sport-u01-18-q3@3: Order the motor units in the sequence they are recruited as effort increases from rest to maximum. | Type I (slow oxidative) units ; Type IIa (fast oxidative glycolytic) units ; Type IIx (fast glycolytic) units | Recruitment follows motor neurone size and threshold: slow units first, then fast oxidative, then fast glycolytic.
 TF2#sport-u01-18-q4@1: A muscle can produce smooth sustained contractions partly because motor units fire asynchronously. | true | With different units firing at different moments, the overall force is smooth, and rotating units delays fatigue.
 SA3#sport-u01-18-q5@1,3: Explain how the nervous system increases muscle force from a light jog to a final sprint finish. | At a jog, few small type I units fire at low rates. As effort rises, more units are recruited in order of size (spatial summation), adding type IIa and finally type IIx units in the sprint finish. Firing frequency also increases, so twitches sum and approach tetanus. Together these raise force; synchronised firing may also increase it in maximal efforts. | Recruitment in order of size ; Spatial summation ; Increased firing frequency, wave summation and tetanus ; Applied to jog and sprint
+Q: State Henneman's size principle. | Motor units are recruited in order from smallest, low-threshold units to largest, high-threshold units.
+Q: In what order are fibre types recruited as effort rises? | Type I first, then type IIa, and finally type IIx.
+Q: What is asynchronous recruitment, and why does it help? | Rotating motor units during a sustained submaximal contraction so some rest while others work, delaying fatigue.
+Q: Define a twitch. | The brief contraction and relaxation of a motor unit in response to a single impulse.
+Q: Why are most voluntary contractions smooth? | Many units fire asynchronously at fusing frequencies.
+Q: Which motor units does a sprint start or heavy lift recruit? | Nearly all units, including type IIx.
+Q: Name two neural gains from training that raise force. | More complete recruitment and higher firing rates.
+Q: Why is it wrong to say fast-twitch fibres are used only in sprints? | They are recruited in any near-maximal effort, including the last kick of a long race.
+Q: Name the two ways the nervous system grades muscle force. | Recruiting more motor units and firing them faster.
+Q: What causes wave summation to occur? | A second impulse arrives before the fibres have relaxed, so the contractions add together.
 
 ## Proprioceptors and the stretch reflex
 LV: Intermediate · Evaluation
@@ -736,4 +916,14 @@ M2#sport-u01-19-q2@2: In the PNF contract–relax method, what is the purpose of
 M3#sport-u01-19-q3@3: A doctor taps the patellar tendon and the leg kicks forward. What explains this? | Muscle spindles in the quadriceps detect sudden stretch and trigger a reflex contraction | Golgi tendon organs relax the quadriceps | The hamstrings contract to flex the knee | The brain consciously decides to kick | The tap stretches the quadriceps suddenly; spindles signal the spinal cord, which makes the quadriceps contract via a monosynaptic reflex, without the brain's involvement.
 TF2#sport-u01-19-q4@1: The stretch reflex causes a rapidly stretched muscle to contract. | true | Spindle activation leads, through the spinal cord, to contraction of the stretched muscle, resisting the stretch.
 SA3#sport-u01-19-q5@3: Evaluate PNF stretching as a method of improving flexibility for athletes. | Strengths: PNF produces large gains in range of motion, at least comparable to static stretching, both acutely and over weeks; it also trains isometric strength at end range. Limitations: it usually needs a trained partner and careful technique, can be uncomfortable and carries some risk if overdone; the mechanism is debated (autogenic inhibition versus stretch tolerance); and like long static stretches it may briefly reduce maximal force if done just before power events, so it is better placed after training or in separate sessions. | Effectiveness for range of motion ; Comparison with static stretching ; Practical demands such as a partner ; Mechanism debate ; Timing relative to performance ; Judgement
+Q: Where do muscle spindles lie? | In parallel with muscle fibres.
+Q: Describe the stretch reflex. | A rapid stretch makes spindles signal the spinal cord, which makes the same muscle contract to resist the stretch.
+Q: Where are Golgi tendon organs located? | At the muscle-tendon junction.
+Q: What do joint receptors detect, and where are they? | Joint position and movement; they are in capsules and ligaments.
+Q: Define kinaesthesis. | The sense of body position and movement, given by proprioceptors.
+Q: Describe the steps of contract-relax PNF stretching. | Passively stretch to the limit, contract isometrically against a partner for about 6 to 10 seconds, relax and stretch further, then repeat.
+Q: What is the classic explanation of how PNF works? | The isometric contraction raises tension so Golgi tendon organs trigger autogenic inhibition, allowing a deeper stretch.
+Q: What alternative mechanism does current evidence suggest for PNF? | Increased stretch tolerance, a change in sensation.
+Q: Why is ballistic stretching riskier than slow static stretching? | Bouncing activates spindles strongly, so the stretch reflex makes the muscle contract against the stretch, raising strain risk.
+Q: Define proprioceptive neuromuscular facilitation. | A stretching method combining passive stretch with isometric contraction to increase range of motion.
 `;

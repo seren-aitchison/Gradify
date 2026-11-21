@@ -42,3 +42,48 @@ test("nothing typed means nothing to grade", () => {
   assert.equal(gradeTyped("  ", "stroma"), null);
   assert.equal(gradeTyped("the", "stroma"), null);
 });
+
+test("an answer that negates the card is wrong, however many words match", () => {
+  // short answers: the opposite of the answer
+  assert.deepEqual([v("not vector", "vector"), gradeTyped("not vector", "vector").suggest], ["wrong", "again"]);
+  assert.equal(v("vector", "not a vector"), "wrong", "leaving out the card's not is the opposite too");
+  assert.equal(v("it isn't reversible", "reversible"), "wrong", "contractions count");
+  assert.equal(v("no", "yes"), "wrong");
+  // the same negation on both sides is fine, and the positive answer is still right
+  assert.equal(v("vector", "vector"), "right");
+  assert.equal(v("not a vector", "not a vector"), "right");
+  assert.equal(v("No", "no"), "right");
+  // longer answers: the key words may all be there, but a flipped meaning is at most partial
+  const e = "Amount of blood ejected by each ventricle per beat.";
+  assert.deepEqual([v("blood not ejected by each ventricle per beat", e), gradeTyped("blood not ejected by each ventricle per beat", e).suggest], ["partial", "hard"]);
+  assert.equal(v("the reaction does not need light", "The reaction needs light energy to split water"), "partial");
+  // two negations don't cancel when they negate different things: this denies both halves of the answer
+  assert.equal(v("Electrons have neither mass nor charge", "Electrons have mass and charge"), "wrong");
+  assert.equal(v("electrons have mass and charge", "Electrons have mass and charge"), "right");
+  // two negations of the same thing cancel; neither … nor doesn't, as each negates its own word
+  assert.equal(v("not not vector", "vector"), "right");
+  assert.equal(v("not not vector", "not a vector"), "wrong");
+  // a word in another claim doesn't clear a flipped one: both claims reversed
+  assert.equal(v("Cats are not mammals; birds are mammals", "Cats are mammals; birds are not mammals"), "wrong");
+  assert.equal(v("cats are mammals; birds are not mammals", "Cats are mammals; birds are not mammals"), "right");
+  assert.equal(v("Birds are not mammals; cats are mammals", "Cats are mammals; birds are not mammals"), "right", "the same claims in another order");
+  const virus = "Viruses are not cells; cells infected by viruses contain viruses";
+  assert.equal(v(virus, virus), "right", "an exact copy, with a word repeated across its claims");
+  assert.equal(v("Cells infected by viruses contain viruses; viruses are not cells", virus), "right", "and reordered");
+  assert.notEqual(v("It dissolves in water.", "It does not dissolve in water."), "right");
+});
+
+test("a negation applies to what it negates, so reordering and additive phrases are fine", () => {
+  assert.equal(v("In water, it does not dissolve.", "It does not dissolve in water."), "right");
+  assert.equal(v("Electrons have not only mass but also charge", "Electrons have mass and charge"), "right");
+  assert.equal(v("not (a vector)", "vector"), "wrong", "a bracket doesn't end the negation");
+  assert.equal(v("stroma (not thylakoid)", "stroma"), "right");
+});
+
+test("negating something other than the answer is fine; negating the answer is not", () => {
+  assert.equal(v("stroma, not thylakoid", "stroma"), "right");
+  assert.equal(v("stroma not thylakoid", "stroma"), "right");
+  assert.equal(v("not stroma", "stroma"), "wrong");
+  assert.equal(v("not stroma but thylakoid", "stroma"), "wrong");
+  assert.equal(v("it does not dissolve in water", "It does not dissolve in water."), "right");
+});

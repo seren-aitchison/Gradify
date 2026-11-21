@@ -34,6 +34,16 @@ Q: What is the overriding objective of the Criminal Procedure Rules? | That crim
 Q: Give an example of an either-way offence. | Theft.
 M1#law-u06-01-q1@2: Where is an indictable-only offence tried? | The Crown Court | The magistrates' court | The youth court | The High Court | The county court | Indictable-only offences are tried in the Crown Court.
 M2#law-u06-01-q2@1: Which body decides charges in most serious cases? | The Crown Prosecution Service | The police alone | The magistrates | The victim | The Home Office | The CPS makes most charging decisions under the Director's Guidance.
+Q: What is a summary offence? | An offence triable only in the magistrates' court, such as common assault.
+Q: What is an indictable-only offence? | An offence triable only in the Crown Court, such as murder and robbery.
+Q: What is the role of the police in the criminal justice system? | To investigate offences and charge some.
+Q: Which Act set up the Crown Prosecution Service? | The Prosecution of Offences Act 1985.
+Q: Which courts make up the criminal court structure? | Magistrates' courts, the Crown Court, the Court of Appeal (Criminal Division) and the Supreme Court.
+Q: Who manages sentences in the criminal justice system? | Probation and prisons.
+Q: What does dealing with cases justly include under CrimPR 1.1? | Acquitting the innocent, convicting the guilty, treating prosecution and defence fairly, and respecting the defendant's rights.
+Q: Which part of the Criminal Procedure Rules requires active case management? | CrimPR Part 3.
+Q: Which ECHR article guarantees a fair trial? | Article 6.
+Q: Who funds many defence lawyers in criminal cases? | Legal aid.
 
 ## Police powers
 S: The Police and Criminal Evidence Act 1984 (PACE) and its Codes of Practice regulate police powers to stop, search, enter premises, seize evidence, arrest, detain and question. Breaches can affect the admissibility of evidence.
@@ -64,6 +74,16 @@ Q: Which PACE Code governs detention and questioning? | Code C.
 Q: What does s 18 PACE allow? | Search of premises occupied or controlled by a person arrested for an indictable offence, for evidence of that or a related offence.
 M1#law-u06-02-q1@1: Which PACE Code governs identification procedures? | Code D | Code A | Code C | Code E | Code G | PACE Code D governs identification procedures such as video identification.
 M2#law-u06-02-q2@2: Police arrest a suspect for burglary and want to search his flat for stolen goods. What power may they use? | Section 18, with an inspector's authority | Section 1 stop and search | No power without a warrant | Section 60 CJPOA | Section 24 | Section 18 allows searching premises the arrested person occupies or controls.
+Q: What does PACE Code A govern? | Stop and search.
+Q: What does PACE Code B govern? | Search of premises and seizure.
+Q: What do PACE Codes E and F govern? | Audio recording (E) and visual recording (F) of interviews.
+Q: What does PACE Code G govern? | Arrest.
+Q: When may a magistrate issue a search warrant under s 8 PACE? | Where there are reasonable grounds to believe an indictable offence was committed and relevant evidence is on the premises.
+Q: When may police enter premises without a warrant under s 17 PACE? | To arrest, recapture, save life or prevent serious damage.
+Q: What does s 32 PACE allow? | Search of the arrested person and the premises where they were at or immediately before arrest.
+Q: Whose authority is needed for a s 18 search? | An inspector's.
+Q: What material can police not seize? | Legally privileged material (PACE, s 10).
+Q: Does a breach of PACE automatically exclude evidence? | No, but the court may exclude it under s 78 if admitting it would be unfair.
 
 ## Stop and search
 S: Stop and search allows police to search people and vehicles in public for prohibited items. The main power, in s 1 of PACE, requires reasonable grounds for suspicion. Other powers, such as s 60 of the Criminal Justice and Public Order Act 1994, allow searches without suspicion in limited circumstances.
@@ -94,6 +114,16 @@ Q: What does GOWISELY stand for? | Grounds, Object, Warrant card, Identity, Stat
 Q: What can a person be required to remove during a public search? | Outer coat, jacket and gloves.
 M1#law-u06-03-q1@1: Which statute contains the power to search for controlled drugs on reasonable suspicion? | Misuse of Drugs Act 1971 | Theft Act 1968 | Bail Act 1976 | Criminal Justice Act 2003 | Sentencing Act 2020 | Section 23 Misuse of Drugs Act 1971 allows searches for controlled drugs on reasonable suspicion.
 M2#law-u06-03-q2@2: An officer searches a teenager in a hoodie solely because young people in hoodies often carry knives. Is the search lawful under s 1? | No: generalisations aren't reasonable suspicion | Yes: knife crime is common | Yes, if nothing is found | Yes, under s 60 automatically | Only if the teenager consents | Code A forbids suspicion based on personal factors or stereotypes.
+Q: What does s 1 PACE allow? | Stopping and searching a person or vehicle in a public place for stolen or prohibited articles, on reasonable grounds for suspicion.
+Q: Give examples of prohibited articles under s 1 PACE. | Offensive weapons, bladed articles, articles for burglary or theft, and fireworks.
+Q: What does Code A say reasonable suspicion can't be based on? | Personal factors alone, such as race, age or appearance, or generalisations.
+Q: What is reasonable grounds for suspicion? | An objective basis for suspicion, not based on personal factors alone.
+Q: What must be made after a stop and search? | A record.
+Q: When can police search without suspicion under s 60 CJPOA 1994? | In an authorised area where serious violence is anticipated, for weapons.
+Q: What is a s 60 authorisation? | Authorisation for searches without suspicion where serious violence is anticipated.
+Q: When must an officer show a warrant card before a search? | When not in uniform.
+Q: What safeguards apply before a s 1 search? | The GOWISELY information, limits on clothing removal, and a record.
+Q: What is a common mistake about grounds for stop and search? | Treating a person's age or clothing alone as reasonable grounds.
 
 ## Arrest
 S: A police officer may arrest without warrant under s 24 of PACE if they have reasonable grounds to suspect an offence and believe arrest is necessary for a listed reason. Members of the public have narrower powers. The person must be told they are under arrest and why.
@@ -125,6 +155,16 @@ Q: What two conditions does s 24 PACE require for arrest? | Reasonable grounds t
 Q: What must an arrested person be told? | That they are under arrest and the grounds for it.
 M1#law-u06-04-q1@1: Which section of PACE allows a citizen's arrest? | Section 24A | Section 24 | Section 28 | Section 1 | Section 37 | Section 24A gives limited powers to people other than constables.
 M2#law-u06-04-q2@2: A suspect gives a verifiable name and address and offers to attend for interview. Is arrest likely necessary? | Possibly not: voluntary interview may suffice | Yes: arrest is always necessary | Yes, to establish identity | Only if the offence is summary | Only at night | The necessity criteria require a reason why arrest, not voluntary attendance, is needed.
+Q: What are the necessity criteria for arrest? | The reasons in s 24(5) PACE that make an arrest necessary.
+Q: List some necessity reasons in s 24(5) PACE. | To establish name or address, prevent injury or damage, protect a child or vulnerable person, allow prompt investigation, or prevent disappearance.
+Q: Which Code gives guidance on necessity for arrest? | Code G.
+Q: When must the person be told of the arrest and its grounds? | As soon as practicable (s 28).
+Q: Which section of PACE allows reasonable force in arrest? | Section 117.
+Q: Where must an arrested person be taken? | To a police station as soon as practicable (s 30), unless street bail applies.
+Q: For what offences can a citizen's arrest be made? | Only indictable offences.
+Q: When can a citizen's arrest be made? | Where it isn't reasonably practicable for a constable to arrest, and to prevent injury, damage or escape.
+Q: What is voluntary attendance? | Attending a police station voluntarily, without arrest, with the right to leave and to free legal advice (s 29).
+Q: What must follow telling a person they are under arrest? | They must be cautioned.
 
 ## Detention and questioning
 S: After arrest, the custody officer decides whether to detain the suspect without charge. PACE sets strict time limits and reviews, and the suspect has rights to legal advice, to have someone informed, and to proper treatment under Code C.
@@ -158,6 +198,16 @@ Q: What is the basic time limit for detention without charge? | 24 hours from th
 Q: When are detention reviews carried out? | First after 6 hours, then at intervals of no more than 9 hours.
 M1#law-u06-05-q1@1: What is the maximum period of pre-charge detention for a non-terrorism offence with court warrants? | 96 hours | 24 hours | 36 hours | 48 hours | 14 days | Warrants of further detention can extend detention to 96 hours.
 M2#law-u06-05-q2@2: A 15-year-old is arrested for theft. Who must be present during the interview? | An appropriate adult | Only a solicitor | A magistrate | A social worker always | No one | Code C requires an appropriate adult for juveniles.
+Q: Who is the custody officer? | The officer responsible for the detained person's welfare and detention (s 36).
+Q: What is the relevant time in detention? | The time from which the detention clock runs, usually arrival at the station.
+Q: When can a suspect be detained without charge under s 37? | Only if necessary to secure or preserve evidence or obtain it by questioning.
+Q: What should happen if there is sufficient evidence to charge? | The suspect should be charged or released.
+Q: Who can extend detention to 36 hours? | A superintendent, for indictable offences (s 42).
+Q: How can detention be extended up to 96 hours? | By warrants of further detention from magistrates (ss 43–44).
+Q: Which section gives the right to have someone informed of an arrest? | Section 56.
+Q: What does s 58 PACE give? | The right to free and private legal advice.
+Q: What rest period does Code C normally require? | 8 hours in any 24.
+Q: Who needs an appropriate adult in custody? | Juveniles and vulnerable adults.
 
 ## Police interviews
 S: A police interview is the questioning of a suspect about their involvement in an offence, under caution and recorded. The defence solicitor advises on whether to answer questions, give a prepared statement or stay silent, bearing in mind the risk of adverse inferences.
@@ -194,6 +244,16 @@ Q: Can a conviction be based solely on an adverse inference? | No (s 38(3) CJPOA
 Q: What is the test where a suspect stayed silent on legal advice? | Whether they genuinely and reasonably relied on the advice (Beckles).
 M1#law-u06-06-q1@1: Which section allows an inference from failure to mention a fact later relied on? | Section 34 CJPOA 1994 | Section 35 CJPOA 1994 | Section 36 CJPOA 1994 | Section 78 PACE | Section 76 PACE | Section 34 CJPOA 1994 allows inferences from failing to mention facts later relied on.
 M3#law-u06-06-q2@2: Police disclose very little before interview. The client has a strong alibi. What strategy might the solicitor consider? | A prepared statement setting out the alibi | Full silence with no record of reasons | Answering every question without advice | Refusing to attend | Lying to the police | A prepared statement can put the alibi on record while limiting risk.
+Q: What is an adverse inference? | A conclusion the court may draw from a suspect's silence.
+Q: What is a prepared statement? | A written statement read in interview, setting out the suspect's account.
+Q: What do ss 36–37 CJPOA 1994 cover? | Failure to account for objects, marks or presence at a place, after a special warning.
+Q: What does s 35 CJPOA 1994 cover? | Failure to give evidence at trial.
+Q: Which case sets the strict conditions for s 34 inferences? | R v Argent [1997].
+Q: Which case, with Beckles, deals with silence on legal advice? | R v Condron [1997].
+Q: What are the three interview options? | Answer questions; give a prepared statement and then remain silent; or remain silent.
+Q: How can a prepared statement help a suspect? | It can protect against s 34 inferences if it covers the facts later relied on.
+Q: What is the solicitor's role in a police interview? | To protect and advance the client's legal rights (Code C, Note 6D), including challenging improper questions.
+Q: What should the solicitor assess before an interview? | The police disclosure.
 
 ## PACE
 S: The Police and Criminal Evidence Act 1984 is the central statute on police powers and the treatment of suspects. Besides creating powers and safeguards, it gives the courts tools to exclude evidence obtained unfairly, especially ss 76 and 78.
@@ -227,6 +287,16 @@ Q: What is the test under s 78 PACE? | Whether admitting the evidence would have
 Q: What did R v Samuel decide? | Wrongful denial of access to a solicitor led to the exclusion of interview evidence.
 M1#law-u06-07-q1@1: Which section of PACE gives the general discretion to exclude unfair prosecution evidence? | Section 78 | Section 76 | Section 24 | Section 58 | Section 117 | Section 78 is the general fairness discretion.
 M2#law-u06-07-q2@2: Police deliberately fail to record an interview and deny the suspect a solicitor without authority. What might the defence seek? | Exclusion of the interview under s 78 | Nothing: breaches don't matter | A retrial only | An increase in bail | A Newton hearing | Significant, deliberate breaches support exclusion.
+Q: What does Part I of PACE cover? | Stop and search.
+Q: What does Part VIII of PACE cover? | Evidence, including ss 76 and 78.
+Q: Are the PACE Codes admissible in evidence? | Yes, and courts take breaches into account (s 67(11)).
+Q: When must a confession be excluded under s 76? | If obtained by oppression or in circumstances likely to render it unreliable.
+Q: What kind of breach weighs in favour of exclusion under s 78? | A significant and substantial breach (R v Walsh) or bad faith.
+Q: Do minor technical PACE breaches usually lead to exclusion? | No.
+Q: What is bad faith in the context of s 78? | Deliberate misconduct by police, weighing towards exclusion.
+Q: What other remedies exist for PACE breaches? | Complaints to the IOPC, civil claims for false imprisonment or trespass, and in extreme cases a stay for abuse of process.
+Q: Must the defence prove police bad faith for s 78 exclusion? | No. Fairness is the test.
+Q: Which PACE part covers detention? | Part IV.
 
 ## Disclosure
 S: Disclosure in criminal cases ensures the defence receives material that might undermine the prosecution or assist the defence. It is governed by the Criminal Procedure and Investigations Act 1996 (CPIA), its Code of Practice and the Attorney General's Guidelines.
@@ -261,6 +331,16 @@ Q: What is the prosecution disclosure test? | Material that might reasonably be 
 Q: Is a defence statement compulsory in the magistrates' court? | No, it is voluntary there.
 M1#law-u06-08-q1@1: Which section of the CPIA 1996 requires a defence statement in the Crown Court? | Section 5 | Section 3 | Section 6 | Section 7A | Section 11 | Section 5 makes it compulsory in the Crown Court.
 M2#law-u06-08-q2@2: The defence statement says the defendant was at home, but at trial he claims he was at a friend's house. What may follow? | Adverse comment and inferences under s 11 | Nothing: defences can change freely | Automatic conviction | A retrial | Exclusion of the defendant's evidence | Inconsistency with the defence statement can attract s 11 consequences.
+Q: What is unused material? | Material gathered in the investigation that the prosecution doesn't rely on.
+Q: What is a defence statement? | A document setting out the nature of the defence and the issues in dispute.
+Q: Which section imposes a continuing duty of prosecution disclosure? | CPIA 1996, s 7A.
+Q: What can protect sensitive material from disclosure? | Public interest immunity, under strict procedures (R v H and C).
+Q: What must a defence statement contain under s 6A? | The nature of the defence, facts in issue and why, points of law, and alibi details.
+Q: What can follow failure to serve a defence statement or inconsistencies in it? | Adverse comment and inferences (s 11).
+Q: When can the defence apply for specific disclosure? | Once a defence statement is served (s 8).
+Q: Which guidance supplements the CPIA on disclosure? | The Attorney General's Guidelines on Disclosure (revised 2024) and the CPIA Code of Practice.
+Q: Why does diligent disclosure matter? | Disclosure failures have caused miscarriages of justice.
+Q: Which CrimPR part requires initial details of the prosecution case? | CrimPR Part 8.
 
 ## Bail
 S: Bail is release from custody while proceedings continue. Under the Bail Act 1976, defendants have a general right to bail, which can be refused only on statutory grounds. Courts can attach conditions to address risks.
@@ -294,6 +374,16 @@ Q: What are the three main grounds for refusing bail? | Substantial grounds for 
 Q: Who can grant bail to someone charged with murder? | Only a Crown Court judge.
 M1#law-u06-09-q1@1: Which section of the Bail Act 1976 creates the offence of absconding? | Section 6 | Section 4 | Section 7 | Schedule 1 | Section 3 | Section 6 makes failure to surrender an offence.
 M3#law-u06-09-q2@2: The prosecution says the defendant may contact a witness who lives nearby. What condition could address this? | Not to contact the witness or enter her street | A curfew only | Surrender of passport only | A surety only | No condition can help | Targeted conditions address specific risks.
+Q: What is bail? | Release from custody while proceedings continue.
+Q: What is a surety? | A person who promises to pay money if the defendant fails to surrender.
+Q: Which section gives a general right to bail? | Bail Act 1976, s 4, subject to Schedule 1.
+Q: What factors are considered in bail decisions under Sch 1 para 9? | The offence's seriousness, the defendant's character, antecedents and community ties, bail record, and the strength of the evidence.
+Q: Name other grounds for refusing bail besides the three main ones. | The defendant's own protection and insufficient information.
+Q: Give examples of bail conditions. | Residence, curfew, reporting, surrender of passport, no contact, and sureties or security.
+Q: How many full bail applications are allowed after the first refusal? | One further full application; later ones need new arguments.
+Q: Which Act lets the prosecution appeal a grant of bail? | The Bail (Amendment) Act 1993.
+Q: What can follow breach of bail conditions? | Arrest (s 7) and reconsideration of bail.
+Q: What is absconding? | Failing to surrender to custody without reasonable cause (s 6).
 
 ## Charging decisions
 S: Charging decisions are made by the police for minor offences and by the CPS for most others, applying the Code for Crown Prosecutors. The Full Code Test has an evidential stage and a public interest stage; the Threshold Test allows charge in urgent cases.
@@ -323,6 +413,16 @@ Q: What are the two stages of the Full Code Test? | The evidential stage and the
 Q: What does "realistic prospect of conviction" mean? | An objective jury properly directed is more likely than not to convict.
 M1#law-u06-10-q1@1: Which document sets out the Full Code Test? | The Code for Crown Prosecutors | PACE Code C | The Bail Act 1976 | The CrimPR | The Sentencing Act 2020 | The Code for Crown Prosecutors governs charging decisions.
 M2#law-u06-10-q2@2: The evidence against a suspect is strong, but she is 84, terminally ill and the offence was minor. What might the CPS decide? | Prosecution may not be in the public interest | It must prosecute because the evidence is strong | It must use the Threshold Test | It must charge a more serious offence | It must refer the case to the court | The public interest stage weighs age, health and seriousness.
+Q: Who makes charging decisions in criminal cases? | The police for minor offences and the CPS for most others.
+Q: What is the Threshold Test? | A test allowing charge before all evidence is available where the suspect is a substantial bail risk.
+Q: When can the Threshold Test be used? | Where the Full Code Test isn't yet met, the suspect is a substantial bail risk, there are reasonable grounds to suspect guilt, and further evidence will become available.
+Q: Name public interest factors in the Full Code Test. | Seriousness, culpability, harm to the victim, the suspect's age and maturity, community impact and proportionality.
+Q: Which document sets which offences the police can charge? | The Director's Guidance on Charging.
+Q: What is an out-of-court disposal? | A way of dealing with an offence without prosecution, such as a caution.
+Q: When can cautions and conditional cautions be used? | For less serious offences where the offender admits guilt.
+Q: Which Act introduces a two-tier framework of out-of-court disposals? | The Police, Crime, Sentencing and Courts Act 2022.
+Q: What is a common mistake about a realistic prospect of conviction? | Treating it as meaning certain conviction.
+Q: What does the evidential stage of the Full Code Test ask? | Whether there is sufficient evidence for a realistic prospect of conviction.
 
 ## Prosecution
 S: Most prosecutions are brought by the Crown Prosecution Service, which must act fairly, independently and in the public interest. Other bodies, and private individuals, can also prosecute. The CPS can discontinue cases and must review decisions on request in some circumstances.
@@ -356,6 +456,16 @@ Q: Who heads the CPS? | The Director of Public Prosecutions.
 Q: Can a private individual bring a prosecution? | Yes (s 6 POA 1985), subject to the DPP's power to take over and discontinue.
 M1#law-u06-11-q1@1: Which section of the Prosecution of Offences Act 1985 allows the CPS to discontinue? | Section 23 | Section 6 | Section 3 | Section 10 | Section 1 | Section 23 POA 1985 lets the CPS discontinue proceedings in the magistrates' court.
 M2#law-u06-11-q2@2: The CPS decides not to charge a suspect in an assault case. What can the victim do? | Seek a review under the Victims' Right to Review scheme | Nothing at all | Appeal to the Crown Court | Charge the suspect themselves at the police station | Ask the jury to decide | The scheme allows review of decisions not to prosecute.
+Q: What does it mean that a prosecutor is a minister of justice? | The prosecutor presents the case fairly rather than seeking conviction at all costs.
+Q: What is discontinuance? | Ending a prosecution (Prosecution of Offences Act 1985, s 23).
+Q: When can the CPS discontinue a case? | Where the Code test is no longer met.
+Q: Name duties of the prosecution. | Act fairly and dispassionately, comply with disclosure obligations, and not mislead the court.
+Q: Name prosecutors other than the CPS. | The Serious Fraud Office, HMRC, the Financial Conduct Authority and local authorities.
+Q: What is the Victims' Right to Review scheme? | A scheme allowing victims to seek review of a CPS decision not to charge or to stop a case.
+Q: Which Act strengthens victims' rights, including the Victims' Code? | The Victims and Prisoners Act 2024.
+Q: How does the CPS review cases? | Continuously, under the Code for Crown Prosecutors.
+Q: Can the DPP take over a private prosecution? | Yes, and discontinue it.
+Q: What is a common mistake about the prosecutor's role? | Treating it as winning at all costs.
 
 ## Magistrates' Court
 S: Magistrates' courts deal with almost all criminal cases at first, and try most summary and many either-way offences. Cases are heard by lay justices or a District Judge, advised by a legal adviser, with limited sentencing powers.
@@ -390,6 +500,16 @@ Q: What is the role of the legal adviser in the magistrates' court? | To advise 
 Q: Under which section are indictable-only offences sent to the Crown Court? | Crime and Disorder Act 1998, s 51.
 M1#law-u06-12-q1@1: What is the maximum prison sentence magistrates can impose for a single summary offence? | Six months | 12 months | Two years | Five years | Life | Summary offences carry at most six months in the magistrates' court.
 M2#law-u06-12-q2@2: A defendant is charged with robbery, an indictable-only offence. What happens at the first magistrates' court hearing? | The case is sent to the Crown Court | The magistrates try it | The defendant chooses where to be tried | The case is adjourned for allocation | It goes to the youth court | Section 51 CDA 1998 requires sending indictable-only cases.
+Q: Who are lay justices? | Unpaid magistrates, usually sitting in panels of three.
+Q: Who is a District Judge (Magistrates' Courts)? | A legally qualified judge who sits alone.
+Q: Does the legal adviser take part in decisions on the facts? | No. They advise only on law, practice and procedure.
+Q: Which offences do magistrates try? | Summary offences and either-way offences allocated for summary trial.
+Q: Which court deals with most offences by under-18s? | The youth court.
+Q: What happens at the first hearing in the magistrates' court? | Identifying the defendant, confirming representation and legal aid, taking a plea, allocation, bail, and directions.
+Q: What fines can magistrates impose for most offences? | Unlimited fines.
+Q: What can magistrates do if a greater sentence is needed? | Commit the case to the Crown Court for sentence.
+Q: What is the limit for a single either-way offence in the magistrates' court? | The general statutory limit, raised to 12 months; check the current figure.
+Q: What is a common mistake about magistrates' sentencing powers? | Assuming they can impose any sentence available to the Crown Court.
 
 ## Crown Court
 S: The Crown Court tries indictable offences before a judge and jury, and hears either-way offences sent or elected for trial. It also deals with appeals from magistrates and committals for sentence. Cases are managed through the Plea and Trial Preparation Hearing.
@@ -422,6 +542,16 @@ Q: What is a PTPH? | The Plea and Trial Preparation Hearing, the first main Crow
 Q: How long must a jury deliberate before a majority verdict can be accepted? | At least two hours and ten minutes.
 M1#law-u06-13-q1@1: What is the minimum majority for a jury verdict with 12 jurors? | 10–2 | 9–3 | 7–5 | 11–1 only | 12–0 only | Juries Act 1974, s 17 allows 11–1 or 10–2.
 M2#law-u06-13-q2@2: A defendant convicted in the magistrates' court appeals against conviction. Which court hears it? | The Crown Court, by rehearing | The Court of Appeal | The Supreme Court | The High Court only | The same magistrates | Appeals against conviction go to the Crown Court as a rehearing.
+Q: What is an indictment? | The formal document listing the charges in the Crown Court.
+Q: What is arraignment? | Putting the indictment to the defendant at the PTPH and taking pleas.
+Q: What happens at the PTPH? | The indictment is put, pleas taken, a trial date fixed and directions given.
+Q: How does the Crown Court hear appeals from the magistrates' court? | As a rehearing, against conviction and sentence.
+Q: Which section of the Juries Act 1974 allows majority verdicts? | Section 17.
+Q: Who decides facts and who decides law in the Crown Court? | The twelve jurors decide the facts; the judge decides law and sentence.
+Q: What does the Juries Act 1974, ss 20A–20D prohibit? | Jurors researching the case or discussing it outside the jury room.
+Q: What sentence can the Crown Court impose? | Any sentence up to the statutory maximum, following Sentencing Council guidelines.
+Q: What is a majority verdict? | A verdict by at least 10 of 12 jurors after the required time.
+Q: What other work does the Crown Court do besides trials? | Appeals from magistrates and sentencing after committal.
 
 ## Allocation of offences
 S: Either-way offences can be tried in the magistrates' court or the Crown Court. The allocation procedure starts with the defendant indicating a plea; if not guilty, the magistrates decide whether summary trial is suitable, and the defendant may still elect Crown Court trial.
@@ -452,6 +582,16 @@ Q: What happens if a defendant indicates a guilty plea at plea before venue? | T
 Q: Can a defendant elect Crown Court trial if magistrates accept jurisdiction? | Yes.
 M1#law-u06-14-q1@1: Which section of the MCA 1980 governs plea before venue? | Section 17A | Section 19 | Section 20 | Section 108 | Section 111 | Section 17A sets out the indication of plea.
 M2#law-u06-14-q2@2: A client charged with theft wants the best chance of acquittal and has disputed identification evidence to challenge. What might the solicitor advise? | Consider electing Crown Court trial | Always choose the magistrates' court | Plead guilty to avoid delay | Ask for the youth court | Refuse to indicate a plea | Crown Court trial allows a voir dire and jury decision on disputed evidence.
+Q: What is plea before venue? | The defendant's indication of plea before allocation (MCA 1980, s 17A).
+Q: What is allocation? | The magistrates' decision whether an either-way case is suitable for summary trial.
+Q: What is election? | The defendant's choice of Crown Court trial.
+Q: Which sections of the MCA 1980 govern allocation? | Sections 19–20.
+Q: What do magistrates consider in allocation? | Whether their sentencing powers are adequate and the Sentencing Council's allocation guideline.
+Q: When should an either-way case go to the Crown Court on allocation? | When the outcome would clearly exceed the court's powers or the case is complex.
+Q: What may a defendant ask for when a case is suitable for summary trial? | An indication of sentence.
+Q: What are the advantages of summary trial? | It is quicker, cheaper and has lower sentencing powers.
+Q: What are the advantages of Crown Court trial? | A jury, separate decision-makers on law and fact, and a voir dire for disputed evidence.
+Q: Which provision allows committal for sentence after summary conviction? | Sentencing Act 2020, s 14.
 
 ## Plea and trial preparation
 S: Effective case preparation means early identification of the issues, timely disclosure and pleas. Defendants who plead guilty get a reduction in sentence depending on when they plead, and courts can give indications of sentence in some circumstances.
@@ -483,6 +623,16 @@ Q: What is the maximum reduction for a guilty plea at the first stage? | One-thi
 Q: What is a Newton hearing? | A hearing to resolve a factual dispute affecting sentence after a guilty plea.
 M1#law-u06-15-q1@1: What is the reduction for a guilty plea on the first day of trial? | One-tenth | One-third | One-quarter | One-half | None | The guideline reduces credit to one-tenth on the first day of trial.
 M2#law-u06-15-q2@2: A defendant pleads guilty to assault but says he used a fist, while the victim says a bottle was used. The difference matters to sentence. What should happen? | A Newton hearing | A new trial | A Goodyear indication | Acquittal | The judge accepts the defendant's version | Newton hearings resolve disputed facts that affect sentence.
+Q: What is credit for a guilty plea? | A reduction in sentence for pleading guilty, larger for earlier pleas.
+Q: What is the maximum reduction for a guilty plea after the first stage? | One-quarter, reducing on a sliding scale.
+Q: Which provision governs guilty plea reductions? | Sentencing Act 2020, s 73, with the Sentencing Council guideline.
+Q: When can the guilty plea reduction be less? | Where the evidence is overwhelming in limited cases, or for murder.
+Q: What is a Goodyear indication? | An indication from a Crown Court judge of the maximum sentence on a guilty plea now (R v Goodyear).
+Q: What is a basis of plea? | A written statement of the facts on which the defendant pleads guilty.
+Q: When is a Newton hearing needed? | When the prosecution doesn't accept the basis of plea and the difference affects sentence.
+Q: What does CrimPR Part 3 require of the parties? | To identify the real issues early.
+Q: What should the defence do to prepare a case? | Review evidence, advise on plea, serve the defence statement and prepare witnesses.
+Q: What happened in R v Newton? | He pleaded guilty but said his wife consented; the prosecution disagreed, so the dispute had to be resolved.
 
 ## Evidence
 S: Criminal evidence law decides what facts must be proved, by whom, and what evidence can be used to prove them. The prosecution must prove guilt beyond reasonable doubt, and the court can exclude evidence that would make the trial unfair.
@@ -515,6 +665,16 @@ Q: What is the test for witness competence? | Whether the witness can understand
 Q: Give two examples of special measures. | Screens and live links (also video-recorded evidence and intermediaries).
 M1#law-u06-16-q1@1: Which Act provides special measures for vulnerable witnesses? | Youth Justice and Criminal Evidence Act 1999 | PACE 1984 | Criminal Justice Act 2003 | Bail Act 1976 | CPIA 1996 | Sections 16–30 YJCEA 1999 provide special measures such as screens and live links.
 M2#law-u06-16-q2@2: A 9-year-old witnessed an assault. Is she competent to give evidence? | Yes, if she can understand and answer questions | No: children can't give evidence | Only with a parent's consent | Only in writing | Only if over 14 | Section 53 YJCEA 1999 sets a test of understanding, not age.
+Q: What standard must the prosecution meet in a criminal trial? | The jury must be sure: beyond reasonable doubt.
+Q: What standard applies where a defendant bears a legal burden? | The balance of probabilities.
+Q: What is circumstantial evidence? | Evidence from which a fact can be inferred.
+Q: Name types of evidence in criminal cases. | Direct, circumstantial, real, documentary, hearsay and expert opinion.
+Q: What are special measures? | Measures helping vulnerable or intimidated witnesses give evidence.
+Q: Which sections of the YJCEA 1999 cover special measures? | Sections 16–30.
+Q: Is corroboration generally required in criminal cases? | No, but the judge may warn the jury to take care (R v Makanjuola).
+Q: Can adverse inferences alone prove the prosecution case? | No. They can support but not alone prove it.
+Q: Can admissible evidence be excluded? | Yes, under s 78 PACE.
+Q: What is a common mistake about the standard of proof? | Telling the jury that "probably guilty" is enough.
 
 ## Hearsay
 S: Hearsay is a statement made out of court and offered to prove the truth of what it says. In criminal proceedings it is admissible only through the gateways in the Criminal Justice Act 2003, which balance fairness to the defendant against the need for relevant evidence.
@@ -548,6 +708,16 @@ Q: What are the four routes to admitting hearsay under s 114(1)? | Statute, pres
 Q: What must a judge do if the case depends on unconvincing hearsay? | Stop the case (s 125).
 M1#law-u06-17-q1@1: Which section admits hearsay from a witness who has died? | Section 116 | Section 117 | Section 118 | Section 114(1)(c) | Section 125 | Section 116 covers unavailable witnesses.
 M2#law-u06-17-q2@2: A victim, shortly after being stabbed, shouts "Dan did it!" before dying. Which gateway may admit this? | Res gestae under s 118 | Business documents under s 117 | Agreement only | It can never be admitted | Bad character | A spontaneous statement in the excitement of the event may be res gestae.
+Q: What is hearsay? | A statement not made in oral evidence, relied on as evidence of the matter stated.
+Q: What is res gestae? | A preserved common law exception for statements made in the excitement of an event.
+Q: What is the interests of justice gateway? | Admission of hearsay where the court is satisfied it is in the interests of justice (s 114(1)(d)).
+Q: Which section of the CJA 2003 preserves common law hearsay rules? | Section 118.
+Q: When is a witness unavailable under s 116? | Dead, unfit, abroad, can't be found, or in fear (with leave).
+Q: Which section admits business documents as hearsay? | Section 117.
+Q: Which sections cover previous inconsistent and consistent statements? | Sections 119–120.
+Q: Under which provisions can hearsay be excluded? | Section 78 PACE or s 126 CJA 2003.
+Q: Which cases deal with hearsay and Article 6 ECHR? | R v Horncastle [2009] and R v Riat [2012].
+Q: What is a common mistake about hearsay in criminal trials? | Assuming it is always inadmissible.
 
 ## Confessions
 S: A confession is any statement adverse to the person who made it. Confessions are powerful evidence, but PACE requires the court to exclude those obtained by oppression or in circumstances likely to make them unreliable, and gives a wider discretion to exclude unfairly obtained confessions.
@@ -581,6 +751,16 @@ Q: How does PACE define a confession? | Any statement wholly or partly adverse t
 Q: What standard must the prosecution meet to admit a challenged confession under s 76? | Beyond reasonable doubt.
 M1#law-u06-18-q1@1: Which case defined oppression in s 76 PACE? | R v Fulling | R v Paris | R v Samuel | R v Walsh | R v Turnbull | R v Fulling gave oppression its ordinary meaning.
 M3#law-u06-18-q2@2: A suspect with a learning disability confesses after an interview without an appropriate adult or solicitor. What is the likely argument? | Exclusion under s 76(2)(b) for unreliability | No argument: he confessed | Exclusion as hearsay | Exclusion as bad character | A Newton hearing | McGovern: such circumstances are likely to render a confession unreliable.
+Q: What is oppression under s 76 PACE? | Torture, inhuman or degrading treatment, violence or its threat, and wrongful exercise of power.
+Q: How did R v Fulling define oppression? | The exercise of authority or power in a burdensome, harsh or wrongful manner.
+Q: What did R v McGovern decide? | Questioning a vulnerable suspect without an appropriate adult or solicitor could make a confession unreliable.
+Q: Can confessions be excluded under s 78 as well as s 76? | Yes, where admitting them would be unfair, such as after significant breaches of Code C.
+Q: What happens to facts discovered through an excluded confession? | They remain admissible (s 76(4)), but the prosecution can't say how they were found.
+Q: Can a co-defendant rely on another defendant's confession? | Yes, subject to s 76A.
+Q: How is confession admissibility decided in the Crown Court? | In a voir dire in the jury's absence.
+Q: Can the defence challenge a confession's weight after it is admitted? | Yes, before the jury.
+Q: Does reliability save a confession obtained by oppression? | No. Oppression makes it inadmissible however reliable it seems.
+Q: What is a common mistake about signed confessions? | Treating them as automatically admissible.
 
 ## Identification evidence
 S: Eyewitness identification is a leading cause of wrongful convictions. Code D of PACE sets procedures for identification, and the Turnbull guidelines require judges to warn juries about the special need for caution where the case depends substantially on disputed identification.
@@ -612,6 +792,16 @@ Q: When must an identification procedure be held? | When a witness may be able t
 Q: What should a judge do if identification is poor and unsupported? | Withdraw the case from the jury.
 M1#law-u06-19-q1@1: Which case sets out guidelines for identification evidence? | R v Turnbull | R v Fulling | R v Hanson | R v Galbraith | R v Newton | Turnbull [1977] QB 224 requires a warning where identification is disputed.
 M2#law-u06-19-q2@2: A witness glimpsed a robber for two seconds at night from 50 metres and later picked the defendant from a video identification. Nothing else links him. What should happen? | The judge may withdraw the case | The jury convicts automatically | No warning is needed | The witness's confidence decides | The case goes to the Court of Appeal | Poor quality, unsupported identification should be withdrawn under Turnbull.
+Q: Why is eyewitness identification treated with caution? | It is a leading cause of wrongful convictions.
+Q: What is the usual identification procedure under Code D? | Video identification; identification parades and group identifications are alternatives.
+Q: What is video identification? | A procedure using video images of the suspect and similar people.
+Q: What can follow a Code D breach? | Exclusion under s 78 or a jury direction (R v Forbes).
+Q: When must a Turnbull warning be given? | Where the case depends wholly or substantially on disputed identification.
+Q: What does a Turnbull warning tell the jury? | That there is a special need for caution, and why.
+Q: What does ADVOKATE stand for? | Amount of time, Distance, Visibility, Obstruction, Known or seen before, Any reason to remember, Time lapse, Errors or discrepancies.
+Q: Is a warning needed for recognition of someone known to the witness? | Yes. Recognition can be more reliable, but mistakes about close relatives and friends still happen.
+Q: Which Code D paragraph sets when a procedure must be held? | Code D, para 3.12.
+Q: What is a common mistake about identification procedures? | Skipping a procedure because the witness "is sure".
 
 ## Bad character evidence
 S: Evidence of a defendant's or witness's bad character, such as previous convictions, is admissible only through the gateways in the Criminal Justice Act 2003. The aim is to admit relevant character evidence while protecting defendants from unfair prejudice.
@@ -643,6 +833,16 @@ Q: Which gateway covers propensity? | Section 101(1)(d), read with s 103.
 Q: What safeguard applies to gateways (d) and (g)? | The court must exclude if admission would have an adverse effect on fairness (s 101(3)).
 M1#law-u06-20-q1@1: Which gateway applies if the defendant attacks a prosecution witness's character? | Section 101(1)(g) | Section 101(1)(a) | Section 101(1)(c) | Section 101(1)(e) | Section 100 | Gateway (g) applies where the defendant attacks another's character.
 M3#law-u06-20-q2@2: A defendant charged with burglary has three recent burglary convictions. The prosecution wants to use them. What will the court consider? | Propensity under s 101(1)(d) and fairness | Nothing: convictions are always admitted | Only whether the defendant agrees | Hearsay rules | Only the age of the convictions | Hanson guides whether the convictions show a relevant propensity and are fair to admit.
+Q: How does s 98 CJA 2003 define bad character? | Evidence of misconduct or a disposition towards it, other than evidence about the facts of the offence or its investigation or prosecution.
+Q: What is propensity in bad character evidence? | A tendency to commit offences of the kind charged, or to be untruthful.
+Q: What is important explanatory evidence? | Evidence without which the jury would find other evidence hard to understand (s 101(1)(c)).
+Q: What is gateway (e) under s 101(1)? | Substantial probative value on an important matter between co-defendants.
+Q: What is gateway (f) under s 101(1)? | Correcting a false impression given by the defendant.
+Q: What three questions does R v Hanson ask about propensity? | Does the history show propensity, does propensity make guilt more likely, and is it just to rely on it?
+Q: Can a single previous conviction show propensity? | Yes, if it is distinctive (R v Hanson).
+Q: What factors matter for previous convictions under Hanson? | The number, similarity and age of the convictions.
+Q: What is needed to admit a non-defendant's bad character under s 100? | The court's leave, unless agreed, and important explanatory evidence or substantial probative value on a matter of substantial importance.
+Q: Which CrimPR part requires notice of bad character evidence? | CrimPR Part 21.
 
 ## Witnesses
 S: Witnesses give oral evidence that is tested by cross-examination. The law governs who must give evidence, how vulnerable witnesses are supported, and limits on questioning, especially about complainants' sexual history.
@@ -677,6 +877,16 @@ Q: Is a defendant compellable to give evidence? | No; they are competent but not
 Q: What does s 41 YJCEA 1999 restrict? | Evidence and questions about a complainant's sexual behaviour.
 M1#law-u06-21-q1@1: Which section of PACE governs the compellability of spouses? | Section 80 | Section 76 | Section 78 | Section 58 | Section 24 | Section 80 sets out when spouses are compellable.
 M2#law-u06-21-q2@2: A husband is charged with assaulting his wife. She doesn't want to testify. Can the prosecution compel her? | Yes: the offence involves assault on her | No: spouses are never compellable | Only with her husband's consent | Only for the defence | Only if she made a statement | Section 80 makes her compellable for assaults on herself.
+Q: What is compellability? | Whether a witness can be required to give evidence.
+Q: Can the prosecution call the defendant as a witness? | No.
+Q: For which offences is a spouse compellable for the prosecution? | Specified offences such as assaults on the spouse or a person under 16, and sexual offences against a person under 16.
+Q: Which provisions allow witness anonymity orders? | Coroners and Justice Act 2009, ss 86–90, exceptionally.
+Q: What does s 34 YJCEA 1999 prohibit? | Defendants in person cross-examining complainants in sexual offence cases.
+Q: How did R v A (No 2) read s 41? | Under the HRA, so evidence needed for a fair trial could be admitted.
+Q: When may witnesses refresh their memory from a document? | When it was made or verified earlier (CJA 2003, s 139).
+Q: What is a hostile witness? | A witness showing no desire to tell the truth for the party calling them, who may be cross-examined by that party with leave.
+Q: What must cross-examination do for the defence? | Test reliability and credibility and put the defence case.
+Q: What must advocates not do in cross-examination? | Mislead or ask questions merely to humiliate.
 
 ## Expert evidence
 S: Expert evidence gives the court opinions on matters beyond ordinary knowledge, such as forensic science or medicine. Experts must be qualified, independent and reliable, and the Criminal Procedure Rules impose duties and notice requirements.
@@ -707,6 +917,16 @@ Q: What did R v Turner decide? | Expert evidence is inadmissible on matters with
 Q: To whom does an expert in criminal proceedings owe their overriding duty? | The court.
 M1#law-u06-22-q1@1: Which part of the Criminal Procedure Rules governs expert evidence? | Part 19 | Part 1 | Part 3 | Part 8 | Part 21 | CrimPR Part 19 deals with expert evidence.
 M2#law-u06-22-q2@2: The defence wants a psychologist to say an ordinary person would have panicked in the defendant's position. Is this likely admissible? | Probably not: it's within ordinary knowledge | Yes: all expert evidence is admissible | Yes, if the expert is qualified | Only with prosecution consent | Only in the magistrates' court | R v Turner excludes expert evidence on ordinary human reactions.
+Q: What is expert evidence? | Opinion evidence from a person with specialised knowledge.
+Q: What qualifies an expert? | Knowledge, skill or experience.
+Q: What factors decide whether expert opinion is reliable enough? | The methodology, the data and peer acceptance.
+Q: What is the ultimate issue? | The question the jury must decide, such as guilt.
+Q: What must an expert's report contain? | Qualifications, sources, the range of opinion and a declaration of truth, among other required information.
+Q: When must expert evidence be served? | In advance, if a party intends to rely on it.
+Q: Does an expert's duty to the court override duties to the instructing party? | Yes. The duty is to give objective, unbiased opinion within their expertise.
+Q: Why must expert evidence be scrutinised? | Miscarriages of justice, such as flawed statistics in infant death cases, show its dangers.
+Q: What did the defence want in R v Turner? | A psychiatrist to say a man without mental illness was likely provoked by his girlfriend's confession of infidelity.
+Q: What is a common mistake with expert evidence? | Accepting an expert's opinion without examining the reliability of the method.
 
 ## Trial procedure
 S: A criminal trial follows a set structure: the prosecution opens and calls evidence, the defence may submit there is no case to answer, then presents its evidence, and both sides make closing speeches. In the Crown Court the judge sums up before the jury retires.
@@ -741,6 +961,16 @@ Q: What is the Galbraith test? | Whether there is no evidence, or the evidence a
 Q: What inference may follow if a defendant doesn't give evidence? | An inference under s 35 CJPOA 1994, if the conditions are met.
 M1#law-u06-23-q1@1: Which case sets the test for a submission of no case to answer? | R v Galbraith | R v Turnbull | R v Hanson | R v Newton | R v Goodyear | Galbraith [1981] 1 WLR 1039 sets the two-limb test for no case to answer.
 M2#law-u06-23-q2@2: The prosecution's only witness gave confused, contradictory evidence about whether the defendant was present. What may the defence do? | Submit no case to answer | Call bad character evidence | Ask for a Newton hearing | Plead guilty | Nothing until verdict | If the evidence at its highest is too tenuous, Galbraith's second limb applies.
+Q: What is a submission of no case to answer? | An application that the prosecution evidence is insufficient for a conviction.
+Q: What is summing up? | The judge's directions to the jury on law and summary of the evidence.
+Q: What are the three stages of questioning a witness? | Examination in chief, cross-examination and re-examination.
+Q: Who usually gives evidence first in the defence case? | The defendant.
+Q: In what order are closing speeches given? | Prosecution, then defence.
+Q: What does the judge often provide in summing up besides directions? | A written route to verdict.
+Q: Is witness reliability generally for the judge or the jury on a Galbraith submission? | Generally for the jury.
+Q: Who decides fact and law in a magistrates' trial? | The magistrates, with their legal adviser, and they give reasons.
+Q: When does the prosecution give its opening speech? | After arraignment and empanelling the jury, before calling evidence.
+Q: What is a common mistake about no case submissions? | Making one just because the defence disputes the witnesses' credibility.
 
 ## Sentencing
 S: Sentencing is governed by the Sentencing Act 2020 (the Sentencing Code) and Sentencing Council guidelines. Courts assess seriousness by culpability and harm, consider aggravating and mitigating factors, apply guilty plea credit, and choose from a range of disposals.
@@ -775,6 +1005,16 @@ Q: What are the five purposes of sentencing? | Punishment, crime reduction, refo
 Q: What is the maximum length of a custodial sentence that can be suspended? | Two years.
 M1#law-u06-24-q1@1: Which section of the Sentencing Act 2020 sets the purposes of sentencing? | Section 57 | Section 59 | Section 63 | Section 73 | Section 230 | Section 57 lists the purposes for adult offenders.
 M2#law-u06-24-q2@2: In mitigation, the defence wants to argue that the offence falls in a lower guideline category. What two factors decide the category? | Culpability and harm | Age and gender | The victim's wishes and the press | The defendant's wealth and job | The judge's discretion only | Guidelines categorise offences by culpability and harm.
+Q: Which statute is the Sentencing Code? | The Sentencing Act 2020.
+Q: What two factors determine an offence's seriousness? | Culpability and harm (s 63).
+Q: When must courts follow Sentencing Council guidelines? | Unless contrary to the interests of justice (s 59).
+Q: What aggravating factors are listed for sentencing? | Previous convictions (s 65) and offences committed on bail.
+Q: What is totality in sentencing? | Considering the overall sentence where there are several offences.
+Q: When may custody be imposed under s 230? | Only if the offence is so serious that neither a fine nor a community sentence can be justified.
+Q: Name the types of sentence available. | Discharges, fines, community orders, suspended sentence orders and immediate custody.
+Q: What is a suspended sentence order? | A custodial sentence of up to two years suspended for a period, with possible requirements.
+Q: How are most determinate prisoners released? | On licence part-way through the sentence.
+Q: What is a common mistake in mitigation? | Ignoring the relevant Sentencing Council guideline.
 
 ## Appeals
 S: Criminal appeals allow convictions and sentences to be challenged. Routes depend on where the case was tried: from the magistrates' court to the Crown Court or High Court, and from the Crown Court to the Court of Appeal. The Criminal Cases Review Commission investigates possible miscarriages of justice.
@@ -806,6 +1046,16 @@ Q: What is the ground for allowing an appeal against conviction from the Crown C
 Q: What is the time limit for applying for leave to appeal to the Court of Appeal? | 28 days.
 M1#law-u06-25-q1@1: Which body investigates possible miscarriages of justice after appeals fail? | The Criminal Cases Review Commission | The CPS | The Sentencing Council | The Legal Aid Agency | The IOPC | The CCRC can refer cases back to the appeal courts.
 M3#law-u06-25-q2@2: A defendant convicted after trial in the magistrates' court thinks the magistrates got the facts wrong. What is the usual route? | Appeal to the Crown Court for a rehearing | Case stated to the High Court | Appeal to the Court of Appeal | Judicial review | Appeal to the Supreme Court | Appeals on facts from the magistrates go to the Crown Court by rehearing.
+Q: What is an unsafe conviction? | The ground for allowing an appeal against conviction (Criminal Appeal Act 1968, s 2).
+Q: What is an appeal by case stated? | An appeal on a point of law or jurisdiction from magistrates to the High Court (MCA 1980, s 111).
+Q: What is the time limit for appealing from the magistrates' court to the Crown Court? | 15 business days.
+Q: Can a defendant who pleaded guilty appeal against conviction to the Crown Court? | No. Conviction appeals require a not guilty plea.
+Q: When is judicial review used against magistrates? | For procedural unfairness.
+Q: What are the grounds for a sentence appeal to the Court of Appeal? | The sentence was wrong in principle or manifestly excessive.
+Q: What is an unduly lenient sentence reference? | The Attorney General referring certain sentences for review within 28 days (CJA 1988, s 36).
+Q: When does the Supreme Court hear criminal appeals? | On points of law of general public importance.
+Q: When can the CCRC refer a case? | Where there is a real possibility the conviction would not be upheld.
+Q: Is leave needed to appeal from the Crown Court to the Court of Appeal? | Yes.
 
 ## Criminal legal aid
 S: Criminal legal aid funds advice and representation for people suspected or accused of crimes. Advice at the police station is free for everyone; representation in court depends on an interests of justice test and, in most cases, a means test.
@@ -834,6 +1084,16 @@ Q: Is legal advice at the police station means-tested? | No; it is free for ever
 Q: Which section of LASPO sets out the interests of justice factors? | Section 17(2).
 M1#law-u06-26-q1@1: Which body administers legal aid in England and Wales? | The Legal Aid Agency | The CPS | The SRA | The Law Society | HMCTS | The LAA decides applications and pays providers.
 M2#law-u06-26-q2@2: A defendant facing a likely prison sentence applies for legal aid in the magistrates' court. Which factor supports the interests of justice test? | Likely loss of liberty | The defendant's preference | The prosecution's consent | The time of day | The court's workload | Likely loss of liberty is a key Widgery criterion.
+Q: What is a representation order? | The grant of criminal legal aid for court proceedings.
+Q: What is the interests of justice test based on? | The Widgery criteria.
+Q: What is a duty solicitor? | A solicitor available to advise at the police station or court.
+Q: Which body arranges police station advice? | The Defence Solicitor Call Centre.
+Q: How may advice be given for some lower-level police station matters? | By telephone.
+Q: Name interests of justice factors. | Likely loss of liberty or livelihood, a substantial question of law, inability to understand proceedings, and the need to trace or expertly cross-examine witnesses.
+Q: How is the means test applied in the magistrates' court? | Based on income.
+Q: How does the Crown Court means test work? | Legal aid is generally available, but higher-income defendants may pay contributions from income and capital.
+Q: Which SRA Code paragraph requires telling clients about legal aid? | Paragraph 8.7.
+Q: Which Act provides free police station advice? | The Legal Aid, Sentencing and Punishment of Offenders Act 2012.
 
 ## Professional conduct in criminal practice
 S: Criminal defence work raises distinctive ethical issues. Defence lawyers must fearlessly protect the client's interests without misleading the court. They must handle confessions of guilt, co-defendant conflicts and incorrect information given to the court with care.
@@ -863,4 +1123,14 @@ Q: Can a solicitor represent a client who admits guilt but pleads not guilty? | 
 Q: When can one firm act for co-defendants? | Only where there is no conflict or significant risk of one.
 M1#law-u06-27-q1@1: Which SRA Code paragraph prohibits misleading the court? | Paragraph 2.7 and section 1 | Paragraph 8.6 | Paragraph 4.3 | Paragraph 6.4 | Paragraph 3.5 | The Code requires solicitors not to mislead the court or others.
 M3#law-u06-27-q2@2: Two co-defendants instruct the same firm. One now says the other carried the knife. What should the firm do? | Consider whether it can still act for both, and likely cease acting for one | Continue for both without change | Tell each client the other's account | Ask the court to decide | Act only for the client who pays | Diverging defences create a conflict requiring separate representation.
+Q: What does putting the prosecution to proof mean? | Testing whether the prosecution can prove its case, without asserting a positive false defence.
+Q: What must a solicitor not do for a client who admits guilt? | Assert a known false defence, call the client to give untrue evidence, or suggest someone else committed the offence.
+Q: What is a conflict between co-defendants? | Where their interests diverge, such as cut-throat defences.
+Q: Which SRA Code paragraph governs conflicts? | Paragraph 6.2.
+Q: How can confidential information affect acting for co-defendants? | It may prevent the firm acting for another client.
+Q: What must a solicitor do if the court is wrongly told the client has no previous convictions? | Not repeat the falsehood, and withdraw without disclosing the reason if the client won't allow correction.
+Q: What must a solicitor do if a client gives a false name to the court? | Not repeat it, and withdraw if the client won't allow correction.
+Q: What must all advocates avoid? | Abusing their role, such as making allegations without proper basis.
+Q: What is the balance in criminal defence ethics? | Defend fearlessly but never mislead the court.
+Q: What is a common ethical mistake in criminal defence? | Running an alibi the client has admitted is false.
 `;

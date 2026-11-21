@@ -39,6 +39,16 @@ M2#ecology-u03-01-q2@2: Why is intraspecific competition often more intense than
 M3#ecology-u03-01-q3@3: Two species of beetle feed on the same leaves, but the leaves are always abundant. Are they competing? | Not necessarily: competition needs the resource to be limiting | Yes: any overlap in diet proves competition | Yes, because beetles always compete for food | No, because insects never compete with each other | Overlap without a limiting resource doesn't reduce either species' fitness.
 SEQ1#ecology-u03-01-q4@2: Order the steps of a removal experiment to test for competition. | Record the distribution of both species ; Remove one species from experimental plots ; Leave control plots untouched ; Compare the remaining species in removal and control plots | Comparing removal plots with controls shows whether one species limits the other.
 SA2#ecology-u03-01-q5@2,3: Explain what Connell's barnacle experiment shows about the factors controlling species distribution. | It shows that the lower limit of Chthamalus is set by competition with Semibalanus, which smothers and crushes it, while the upper limit of Semibalanus is set by physical stress from drying out. So a species' realised distribution is narrower than its fundamental niche because of competition, and abiotic and biotic factors act together to set zonation. | Competition sets lower limit ; Abiotic stress sets upper limit ; Fundamental versus realised niche ; Combined factors
+Q: What is intraspecific competition? | Competition between individuals of the same species for a shared limited resource.
+Q: What is exploitation competition? | Indirect competition in which organisms use up a shared resource, such as plants taking up the same soil nitrogen.
+Q: What does it mean to say competition is asymmetric? | One competitor suffers much more than the other, which is common in nature.
+Q: Why is intraspecific competition a major source of density dependence? | Its intensity rises as more individuals of the same species need exactly the same resources.
+Q: What is allelopathy? | Chemical inhibition of competitors, a form of interference competition.
+Q: Where did Chthamalus and Semibalanus live on the Scottish shore before Connell's experiment? | Chthamalus lived higher on the shore and Semibalanus lower down.
+Q: How did Semibalanus outcompete Chthamalus on the lower shore? | By smothering and crushing it.
+Q: What sets the upper limit of Semibalanus on the shore? | Physical stress from drying out (desiccation), not competition.
+Q: What does Connell's barnacle work show about fundamental and realised niches? | Chthamalus's fundamental niche extends lower than its realised niche, which competition with Semibalanus restricts to higher up the shore.
+Q: Why is resource overlap alone not evidence that two species are competing? | Competition only occurs if the shared resource is limiting.
 
 ## The competitive exclusion principle
 LV: Introductory · Application
@@ -82,6 +92,16 @@ M2#ecology-u03-02-q2@2: Why could P. caudatum and P. bursaria coexist in Gause's
 M3#ecology-u03-02-q3@3: A dominant competitor is kept rare by a specialist predator, allowing a weaker competitor to persist. What does this show? | Predation can prevent competitive exclusion and maintain diversity | Competition never occurs when predators are present | The weaker species must be the better competitor | Predators always reduce diversity in communities | Predators that target the dominant species can stop it excluding others.
 TF1#ecology-u03-02-q4@1: The competitive exclusion principle means no two species can ever eat the same food. | false | Species can share some foods if they differ in other resources or are limited by other factors.
 SA2#ecology-u03-02-q5@3: Evaluate the competitive exclusion principle as an explanation of community structure. | It is supported by laboratory experiments and explains why similar species often differ in their niches. But in nature, environmental variation, disturbance, predators and parasites often prevent exclusion, and many species coexist despite overlap. It is a useful starting point that highlights the role of niche differences, but alone it can't explain the diversity of real communities. | Experimental support ; Explains niche differences ; Factors preventing exclusion ; Balanced conclusion
+Q: What is the competitive exclusion principle? | Two species competing for exactly the same limiting resources can't coexist indefinitely.
+Q: How did each Paramecium species grow when Gause grew it alone? | Each grew logistically.
+Q: What is a competition coefficient in the Lotka–Volterra model? | A measure of how much one species reduces the other's growth.
+Q: What are the four possible outcomes of the Lotka–Volterra competition model? | Species 1 wins, species 2 wins, either wins depending on starting numbers, or stable coexistence.
+Q: How does the Lotka–Volterra competition model relate to the logistic model? | It extends the logistic model by adding competition coefficients for the effect of each species on the other.
+Q: What is niche differentiation? | Differences in resource use, place or time that reduce competition between species.
+Q: How can environmental variation and disturbance allow competitors to coexist? | Conditions change before competitive exclusion is complete.
+Q: In the meadow example, why can two grasses coexist when one always wins in a greenhouse? | Patchy field conditions mean each is the better competitor somewhere: one in wet hollows, the other on dry ridges.
+Q: What is the mistake in claiming no two similar species ever share a habitat? | Many similar species coexist by differing in resource use, responding to variation or being held below competitive levels by predators.
+Q: How can predators or parasites allow competitors to coexist? | By keeping the dominant competitor in check so it can't exclude others.
 
 ## Resource partitioning and niche differentiation
 LV: Introductory · Application
@@ -124,6 +144,16 @@ M2#ecology-u03-03-q2@2: Two finch species have more different beak sizes where t
 M3#ecology-u03-03-q3@3: Two closely related species live in different habitats and never meet. A student says this proves competition has no role. What is the best response? | Their separation may reflect past competition or other adaptations, so absence of current competition doesn't rule out a role | The student is right: competition can only act when species meet today | Separation proves the species are identical | Competition only acts within species | The "ghost of competition past" may have shaped current distributions; evidence is needed either way.
 TF1#ecology-u03-03-q4@1: A species' realised niche is usually narrower than its fundamental niche. | true | Competitors and other interactions restrict where a species actually lives.
 SA2#ecology-u03-03-q5@2,3: Explain how resource partitioning allows similar species to coexist, using an example. | If species divide resources by space, food or time, the overlap in their use of limiting resources falls, so intraspecific competition becomes stronger than interspecific competition and neither excludes the other. For example, MacArthur's warblers fed in different zones of spruce trees and nested at different times; bats may hunt at different heights or times. | Reduces overlap ; Intraspecific stronger than interspecific ; Example ; Coexistence
+Q: How did Hutchinson define the niche in 1957? | As an n-dimensional hypervolume of conditions and resources in which a species can survive and reproduce.
+Q: What is resource partitioning? | The division of resources between coexisting species, by space, food type or size, or time.
+Q: How many warbler species did MacArthur study in spruce trees? | Five species feeding in the same spruce trees in North America.
+Q: Apart from feeding position, how else did MacArthur's warblers differ? | They used different feeding behaviours and nested at slightly different times.
+Q: What did the Grants document in Geospiza fortis on Daphne Major? | A shift in beak size after a larger competitor arrived.
+Q: What is meant by the "ghost of competition past"? | Differences between species may reflect competition in the past rather than present-day competition.
+Q: Two bats hunt over the same river, one near the water and one around the canopy. What kind of partitioning is this? | Spatial partitioning, which reduces competition and allows coexistence.
+Q: Two bat species emerge at slightly different times of the evening. What does this illustrate? | Temporal partitioning of resources, which reduces competition.
+Q: Why should differences between species not always be blamed on present-day competition? | They may reflect past competition or adaptations unrelated to competition.
+Q: Where are beak sizes of two Galápagos ground finches most different? | On islands where both species occur, compared with islands where each lives alone.
 
 ## Predation
 LV: Introductory · Foundation
@@ -172,6 +202,16 @@ M2#ecology-u03-04-q2@2: A harmless fly has the same colours as a stinging bee. W
 M3#ecology-u03-04-q3@3: At low prey densities, a predator eats almost none of a species, then its consumption rises steeply as prey become common. Which response and explanation fit? | Type III, as the predator switches to this prey only when it becomes common | Type I, because consumption is linear | Type II, because of a constant handling time | No functional response, because predators don't respond to density | A sigmoid response is type III, often caused by prey switching or refuges.
 MATCH1#ecology-u03-04-q4@1: Match each defence to its description. | Crypsis = Camouflage against the background ; Aposematism = Warning colours advertising toxicity ; Batesian mimicry = Harmless species copies harmful one ; Müllerian mimicry = Harmful species share a signal | Each is a distinct anti-predator strategy.
 SA2#ecology-u03-04-q5@2,3: Explain how warning coloration and mimicry protect prey from predators. | Aposematic prey advertise toxicity with conspicuous colours; predators that try them learn to avoid the pattern. In Müllerian mimicry, several harmful species share one pattern, so predators learn faster and each suffers fewer losses. In Batesian mimicry, harmless species copy the pattern of harmful ones and gain protection, as long as the harmful model is common enough for predators to keep avoiding it. | Aposematism and learning ; Müllerian mimicry ; Batesian mimicry ; Dependence on model frequency
+Q: What is predation? | The consumption of one organism by another.
+Q: How do true predators differ from grazers? | True predators kill and eat many prey; grazers feed on parts of many prey, usually without killing them.
+Q: What is a parasitoid? | An organism that lays eggs in or on a host, which the larvae then kill, such as many wasps.
+Q: What is crypsis? | Camouflage, such as the peppered moth on tree bark.
+Q: What is aposematism? | Warning coloration that advertises the prey is toxic or dangerous, such as cinnabar moth caterpillars.
+Q: Why does Müllerian mimicry benefit the harmful species that share a pattern? | Predators learn to avoid the shared warning pattern faster.
+Q: What is a functional response? | The relationship between prey density and a predator's consumption rate.
+Q: Describe a type I functional response. | Consumption rises linearly to a maximum, as in some filter feeders.
+Q: Why is a type III functional response low at low prey density? | Predators switch to other prey or the prey find refuges.
+Q: What would happen to a hoverfly's protection if hoverflies became far more common than wasps? | Birds would learn the pattern is harmless, so the protection would weaken.
 
 ## Predator–prey dynamics
 LV: Introductory · Application
@@ -216,6 +256,16 @@ M2#ecology-u03-05-q2@2: In Huffaker's simple arrangement, what happened? | Preda
 M3#ecology-u03-05-q3@3: A biological control agent eradicates a pest, then disappears, and the pest returns. What change might give more stable control? | Habitat complexity or refuges so that a low pest population persists to sustain the control agent | Releasing far more of the control agent at once | Removing all remaining habitat for the pest | Stopping all monitoring of pest numbers | A low, persistent prey population maintains the predator and prevents boom-and-bust outbreaks.
 TF1#ecology-u03-05-q4@1: A numerical response is a change in the number of prey each predator eats. | false | That is a functional response; a numerical response is a change in predator numbers.
 SA2#ecology-u03-05-q5@2,3: Explain why predator and prey populations can cycle, and why the predator peak lags behind the prey peak. | When prey are abundant, predators have plenty of food, so they survive and reproduce more, increasing in number after a delay for breeding. Rising predators kill more prey, so prey decline. With fewer prey, predators starve or breed less and decline, allowing prey to recover. The delay in predator reproduction causes the lag. | Prey abundance boosts predators ; Predators reduce prey ; Predators decline ; Time lag from breeding
+Q: Who independently modelled predator–prey dynamics in the 1920s? | Alfred Lotka (1925) and Vito Volterra (1926).
+Q: In the Lotka–Volterra model, what happens to prey without predators? | Prey grow exponentially.
+Q: In the Lotka–Volterra model, what happens to predators without prey? | Predators die out.
+Q: What is a weakness of the cycles in the basic Lotka–Volterra predator–prey model? | They are neutrally stable and sensitive to starting conditions.
+Q: What happened in Huffaker's complex arrangement of oranges and mites? | Barriers slowed predators but let prey disperse, so predator and prey persisted with oscillations.
+Q: What is a numerical response? | A change in predator numbers as prey density changes, through breeding or immigration.
+Q: What is a refuge in predator–prey ecology? | A place or condition where prey are protected from predators.
+Q: Why do lynx numbers decline after hares fall steeply? | Food runs short for the lynx.
+Q: How can refuges prevent both predator and prey going extinct? | Prey can escape locally, so they are not wiped out and predators keep a food supply.
+Q: Why don't real predator–prey cycles prove the Lotka–Volterra model correct? | Real cycles also involve food supply, disease and other factors; the model is a simplified starting point.
 
 ## Herbivory and plant defences
 LV: Introductory · Application
@@ -258,6 +308,16 @@ M2#ecology-u03-06-q2@2: Why do grasses tolerate grazing well? | Their growing po
 M3#ecology-u03-06-q3@3: A plant produces more toxins only after it is attacked by caterpillars. Why might this be advantageous? | Defences are costly, so producing them only when needed saves resources for growth | Toxins cost nothing to make, so their timing makes no difference | Caterpillars actively prefer to feed on the most toxic plants | Induced defences always kill every herbivore that feeds on the plant | Induced defences balance the cost of defence against the risk of attack.
 MATCH1#ecology-u03-06-q4@1: Match each defence to its type. | Holly spines = Physical ; Nicotine in tobacco = Chemical ; Volatiles attracting parasitoid wasps = Indirect ; Grass regrowing after grazing = Tolerance | Plants use several kinds of response to herbivores.
 SA2#ecology-u03-06-q5@2,3: Explain how herbivores can influence the composition of a plant community, with an example. | Herbivores eat some species more than others and suppress fast-growing competitors, allowing less competitive species to persist. Rabbit and sheep grazing on chalk grassland keeps grasses short and prevents scrub, maintaining many small flowering plants; when grazing stops, coarse grasses and scrub take over and diversity falls. | Selective feeding ; Suppressing dominant competitors ; Example ; Effect when grazing stops
+Q: How does herbivory usually affect plants? | It rarely kills them but reduces growth, seed production and competitive ability.
+Q: How does rabbit grazing shape chalk grassland? | It keeps the grassland short and rich in wild flowers.
+Q: Give three physical plant defences. | Spines, as in holly and hawthorn; hairs (trichomes); tough leaves; silica in grasses.
+Q: What is a secondary metabolite? | A plant chemical not needed for basic metabolism, often used in defence.
+Q: Which plant defence chemical is found in white clover? | Cyanogenic glycosides.
+Q: What is a constitutive defence? | A plant defence that is always present.
+Q: What is an indirect plant defence? | A defence that attracts the herbivores' enemies, such as volatile chemicals that draw parasitoid wasps to caterpillars.
+Q: What is phenological escape? | Timing growth to avoid herbivores.
+Q: Why must winter moth caterpillars hatch as oak buds burst? | Within weeks oak leaves become tougher and higher in tannins.
+Q: Why are induced defences common in plants? | Defences cost energy and nutrients that could go to growth or reproduction, so investing only after attack saves resources.
 
 ## Parasitism and disease
 LV: Introductory · Application
@@ -302,6 +362,16 @@ M2#ecology-u03-07-q2@2: A disease has R_{0} of 0.8 in a population. What is like
 M3#ecology-u03-07-q3@3: Infected rats lose their fear of cat odour. What best explains this? | The parasite manipulates host behaviour to reach its definitive host, the cat | Rats prefer cats when they are healthy | It is a random side-effect with no benefit to the parasite | Cats avoid infected rats completely | Behavioural manipulation increases the chance the parasite completes its life cycle.
 MATCH1#ecology-u03-07-q4@1: Match each parasite to its type. | Influenza virus = Microparasite ; Tapeworm = Macroparasite, endoparasite ; Head louse = Macroparasite, ectoparasite ; Chytrid fungus = Microparasite of amphibians | Size and location classify parasites.
 SA2#ecology-u03-07-q5@2,3: Explain how parasites can regulate host populations. | When transmission is density dependent, infection spreads faster as hosts become more crowded, increasing deaths or reducing breeding at high density. This acts as a density-dependent factor, pulling the population back down. Red grouse studies showed that removing a parasitic nematode reduced population cycles, showing parasites can drive host dynamics. | Density-dependent transmission ; Reduced survival or breeding ; Negative feedback ; Example
+Q: What is a parasite? | An organism living on or in a host, taking resources and usually harming it without killing it quickly.
+Q: What are microparasites? | Small parasites that multiply within the host, such as viruses, bacteria and protists.
+Q: How do endoparasites differ from ectoparasites? | Endoparasites live inside the host; ectoparasites live on its surface.
+Q: What is an intermediate host? Give an example. | A host used in a complex parasite life cycle, such as the snails used by liver flukes.
+Q: What is R_{0}? | The average number of new infections caused by one infected individual in a wholly susceptible population.
+Q: Why can density-dependent transmission let disease regulate host populations? | Transmission increases with host density, so disease hits harder as hosts become more numerous.
+Q: Which UK bird is an example of a host population regulated by a parasite? | The red grouse, regulated by its nematode.
+Q: How does ash dieback spread? | By wind-borne spores from fallen leaves.
+Q: How is ash dieback managed in UK woodland? | By protecting tolerant trees and planting other native species.
+Q: Why is it wrong to assume parasites always reduce biodiversity? | Parasites are a large part of biodiversity and can maintain diversity by suppressing dominant host species.
 
 ## Mutualism
 LV: Introductory · Application
@@ -344,6 +414,16 @@ M2#ecology-u03-08-q2@2: What did Janzen's removal of ants from acacias show? | T
 M3#ecology-u03-08-q3@3: Rising sea temperatures cause corals to expel their algae and turn white. What is the ecological significance? | Loss of the algae removes the coral's main energy source, which can kill reefs and the species they support | Bleaching has no effect on corals or reef species | Corals grow faster without their algae | Bleaching increases reef biodiversity | Corals depend on zooxanthellae for sugars; prolonged bleaching can kill them and collapse reef ecosystems.
 TF1#ecology-u03-08-q4@1: In mutualism, both partners must be completely dependent on each other. | false | Facultative mutualisms benefit partners that can also survive alone.
 SA2#ecology-u03-08-q5@2,3: Explain the ecological importance of mycorrhizal fungi. | Mycorrhizal fungi form associations with most land plants, extending root systems and supplying water and nutrients, especially phosphorus, in return for sugars. They help plants establish, tolerate drought and resist some pathogens, and can link plants through fungal networks. Many ecosystems, from forests to grasslands, depend on them for productivity. | Nutrient exchange ; Benefits to plants ; Fungal networks ; Ecosystem importance
+Q: What is mutualism? | An interaction in which both species gain a net benefit in survival or reproduction.
+Q: What is facultative mutualism? | A mutualism where both partners can survive alone but do better together.
+Q: What do mycorrhizal fungi receive from plants? | Sugars.
+Q: Roughly what proportion of leading food crops benefit from animal pollination? | About three-quarters benefit at least partly.
+Q: What do cleaner wrasse do in their mutualism? | They remove parasites from larger fish.
+Q: What do bullhorn acacias provide for their ants? | Shelter and food.
+Q: What do zooxanthellae provide for corals? | Sugars from photosynthesis, while the coral provides shelter and nutrients.
+Q: What is a cheater in a mutualism? | A species that takes benefits without giving any, such as a nectar robber.
+Q: Why is mutualism not altruism? | Each partner acts in its own interest; the relationship persists because benefits outweigh costs for both.
+Q: What three kinds of benefit do mutualisms often involve? | Nutrition, protection or dispersal.
 
 ## Commensalism and facilitation
 LV: Introductory · Application
@@ -387,6 +467,16 @@ M2#ecology-u03-09-q2@2: Beavers build dams that create ponds used by many other 
 M3#ecology-u03-09-q3@3: In a salt marsh, a plant species survives in the harshest zones only next to another plant that shades and oxygenates the soil. Which concept best explains this? | Facilitation increasing in importance under high stress, as predicted by the stress gradient hypothesis | Competitive exclusion of one species by the other | Predation by the second plant on the first | Amensalism, because one plant harms the other | Under harsh conditions, neighbours can improve conditions more than they compete.
 TF1#ecology-u03-09-q4@1: Nitrogen-fixing plants can facilitate later species in succession by enriching the soil. | true | Nitrogen fixers such as alder and lupins increase soil nitrogen for other plants.
 SA2#ecology-u03-09-q5@2,3: Explain how nurse plants facilitate the establishment of other species. | In harsh environments such as deserts or mountains, nurse plants provide shade, lower temperatures, retain moisture, shelter from wind and sometimes protect seedlings from herbivores. These improved microhabitats raise seedling survival compared with open ground. As seedlings grow, competition may increase, so the interaction can change over time. | Harsh environments ; Improved microclimate ; Protection ; Change over time
+Q: What is amensalism? | An interaction in which one species is harmed and the other is unaffected, such as an elephant trampling grass.
+Q: Give an example of commensalism involving cattle. | Cattle egrets feeding on insects disturbed by grazing cattle.
+Q: Why are commensal relationships hard to confirm? | Effects are hard to measure, and some turn out to have small costs or benefits.
+Q: What is facilitation? | An interaction in which one species improves conditions for another, for example through shade, shelter, moisture or nutrients.
+Q: What is a nurse plant? Give an example. | A plant that shelters young plants, such as palo verde trees shading young saguaro cacti in deserts.
+Q: How do alder and gorse facilitate later species? | As nitrogen-fixing plants, they enrich soils for later species in succession.
+Q: What is an ecosystem engineer? | An organism that creates, modifies or maintains habitats, such as beavers building dams.
+Q: Who proposed the stress gradient hypothesis? | Bertness and Callaway, in 1994.
+Q: How do plant interactions change from low to high altitude on a mountainside? | Competition for light dominates at low altitude; at high altitude cushion plants shelter seedlings, so facilitation becomes more important.
+Q: Why is it a mistake to treat facilitation as rare? | It is common, especially in harsh environments and during succession, and can matter as much as competition.
 
 ## What is an ecological community?
 LV: Introductory · Foundation
@@ -432,6 +522,16 @@ M2#ecology-u03-10-q2@2: Along a mountainside, tree species replace each other gr
 M3#ecology-u03-10-q3@3: An ecologist groups woodpeckers, nuthatches and treecreepers as bark-foraging insectivores. What concept is she using? | A guild of species exploiting the same resource in similar ways | A single trophic level including all consumers | A food chain of predators and prey | A population of one species | A guild groups species by how they use a shared resource, regardless of relatedness.
 SEQ1#ecology-u03-10-q4@1: Order these trophic levels from the base of a food chain upwards. | Producers ; Primary consumers ; Secondary consumers ; Tertiary consumers | Energy passes from producers to herbivores and then to successive levels of carnivores.
 SA2#ecology-u03-10-q5@3: Compare Clements's and Gleason's views of the ecological community. | Clements saw communities as integrated units, like organisms, developing towards a stable climax with tightly linked species and clear boundaries. Gleason saw them as chance assemblages of species, each responding individually to environmental conditions, with gradual boundaries. Gradient studies such as Whittaker's mostly support Gleason, though some species do form consistent associations. | Clements's view ; Gleason's view ; Evidence ; Conclusion
+Q: What is species richness? | The number of species present in a community.
+Q: What is a dominant species in a community? | A species with the most biomass or cover, such as oak in an oak wood.
+Q: What layers make up the physical structure of a woodland? | Canopy, shrub, field and ground layers.
+Q: How did Clements see ecological communities? | As integrated superorganisms developing to a predictable climax, with species tightly bound together.
+Q: What did Whittaker's work in the Great Smoky Mountains find? | Species replaced each other gradually along environmental gradients, largely supporting Gleason's view.
+Q: Name the trophic levels from the base of a food chain. | Producers, primary consumers, secondary consumers, tertiary consumers, plus decomposers.
+Q: Why are most real food webs complex? | They include omnivory and many feeding links.
+Q: In a pond community, give two primary consumers. | Water snails, mayfly nymphs or water fleas.
+Q: Give an example of a guild in a pond community. | Filter feeders, including water fleas and some mussels.
+Q: Why should community boundaries not be treated as sharp lines? | Along gradients species usually change gradually, and boundaries are often drawn for convenience.
 
 ## Keystone species and trophic cascades
 LV: Introductory · Application
@@ -472,6 +572,16 @@ M2#ecology-u03-11-q2@2: Sea otters are removed from a coastline. What is the mos
 M3#ecology-u03-11-q3@3: A documentary claims wolves alone "changed the course of rivers" in Yellowstone. What is the most balanced evaluation? | Wolves likely contributed to changes, but other predators, hunting and climate also played roles, and the strength of the cascade is debated | The claim is proven beyond doubt by every study | Wolves had no effect at all on elk or vegetation | Rivers only change because of rainfall, so the claim is irrelevant | Evidence supports some wolf effects, but researchers dispute how strong and direct they were.
 TF1#ecology-u03-11-q4@1: A keystone species is always the most abundant species in a community. | false | Keystone species have large effects relative to their abundance; they are often not abundant.
 SA2#ecology-u03-11-q5@3: Evaluate the evidence for trophic cascades in marine and terrestrial ecosystems. | In marine systems, experiments and natural comparisons, such as Paine's starfish and sea otters with urchins and kelp, give strong evidence of cascades. In terrestrial systems such as Yellowstone, wolves' return coincided with fewer elk and some plant recovery, but other predators, hunting, drought and behaviour changes make the cause harder to isolate, and studies disagree. Cascades appear strongest in simpler food webs. | Marine evidence ; Terrestrial evidence ; Confounding factors ; Conclusion on strength
+Q: What is a keystone species? | A species whose impact on its community is disproportionately large relative to its abundance.
+Q: By how much did diversity fall in Paine's plots after starfish removal? | From 15 species to 8.
+Q: Why did mussels spread when Paine removed Pisaster? | Without the starfish eating them, mussels crowded out other species.
+Q: What is an urchin barren? | An area of seabed where sea urchins have grazed away kelp.
+Q: What happened where sea otters returned in the North Pacific? | Urchin numbers fell and kelp forests recovered.
+Q: How do sea otters indirectly support high biodiversity? | By eating urchins, they protect kelp forests, which shelter many fish and invertebrates.
+Q: What changes followed wolf reintroduction to Yellowstone in 1995–96? | Elk numbers fell and some streamside willows and aspens recovered.
+Q: Besides wolves, what factors may explain changes in Yellowstone? | Bears, cougars, human hunting, drought and changing elk behaviour.
+Q: In which systems are trophic cascades easiest to demonstrate? | Simple aquatic systems, compared with complex terrestrial ones.
+Q: Why shouldn't every top predator be assumed to be a keystone species? | Keystone status must be shown by evidence; many predators have modest effects and cascades can be weakened by other factors.
 
 ## Species richness and evenness
 LV: Introductory · Application
@@ -514,6 +624,16 @@ M2#ecology-u03-12-q2@2: A sample has 4, 4 and 2 individuals of three species. Wh
 M3#ecology-u03-12-q3@3: Two woods each contain 12 tree species, but in one wood 90% of trees are beech. What can be concluded? | The beech-dominated wood has lower diversity because evenness is lower | Both woods have identical diversity, because richness is the same | The beech wood is more diverse because it has a dominant species | Diversity can't be compared without counting insects | Same richness but low evenness gives lower diversity.
 NUM2#ecology-u03-12-q4@2: A sample has 10, 5 and 5 individuals of three species. What is Simpson's diversity index (1 − D form), to two decimal places? | 0.66 | 0.01 | index | D = 1 − (90 + 20 + 20)/(20 × 19) = 1 − 130/380 = 0.66.
 SA2#ecology-u03-12-q5@2,3: Explain why species richness alone can give a misleading picture of biodiversity. | Richness counts species but ignores how many individuals of each there are. A community dominated by one species can have the same richness as one where all species are common, but it is less diverse and may be less resilient. Measures such as Simpson's index combine richness and evenness. Sample size also affects richness. | Ignores abundance ; Dominance example ; Indices combining both ; Sampling effects
+Q: What is species evenness? Give an uneven example. | How equal species' abundances are; a community where one species makes up 95% of individuals is uneven.
+Q: How can two communities with the same richness differ in diversity? | One may be dominated by a single species, making it less even and less diverse.
+Q: What is the formula for Simpson's diversity index? | D = 1 − [Σ n(n − 1) ÷ N(N − 1)], where n is individuals of each species and N is total individuals.
+Q: What is the range of Simpson's index D? | From 0 (no diversity) to near 1 (high diversity).
+Q: In the meadow example, what is Simpson's index for 15, 3 and 2 plants? | 0.43, because Σ n(n − 1) = 218 and N(N − 1) = 380.
+Q: Why is meadow A (10, 5, 5) more diverse than meadow B (15, 3, 2)? | Both have the same richness, but meadow A is more even.
+Q: What is alpha diversity? | Diversity within a single site or habitat.
+Q: What is beta diversity? | The change in species composition between sites.
+Q: Why can't species richness from samples of different sizes be compared directly? | Larger samples find more species, so comparisons need equal effort or methods such as rarefaction.
+Q: What two parts of biodiversity does Simpson's index summarise? | Species richness and evenness.
 
 ## Island biogeography
 LV: Introductory · Application
@@ -559,6 +679,16 @@ M2#ecology-u03-13-q2@2: With z = 0.25, how does species number change if area in
 M3#ecology-u03-13-q3@3: A woodland is reduced to a tenth of its area, but a survey a year later finds almost no species have been lost. What best explains this? | An extinction debt: losses expected from reduced area may take years to occur | The species–area relationship doesn't apply to woodlands | Small woodlands always hold more species than large ones | The survey must have counted the wrong area | Populations in reduced habitat can persist for a time before declining to extinction.
 NUM2#ecology-u03-13-q4@2: A reserve of 500 km^{2} holds 160 species. Using S = cA^z with z = 0.25, how many species would a reserve of 8,000 km^{2} be expected to hold? | 320 | 2% | species | 8,000 ÷ 500 = 16; 16^{0.25} = 2; so 160 × 2 = 320 species.
 SA2#ecology-u03-13-q5@2,3: Explain how island biogeography theory can inform the design of nature reserves. | Larger reserves support more species, because extinction rates are lower in bigger populations. Reserves closer together or linked by corridors allow recolonisation, raising immigration. So reserves should be as large as possible and connected. However, several small reserves may sometimes hold more species in total, so design must also consider habitat variety and the needs of particular species. | Larger reserves ; Connectivity ; Link to immigration and extinction ; SLOSS nuance
+Q: What is the species–area equation? | S = cA^{z}, where S is species number, A is area, and c and z are constants.
+Q: What value does z often take for islands? | About 0.2–0.35.
+Q: What shape is the species–area relationship on a log–log graph? | A straight line with slope z.
+Q: With z = 0.25, how much does a ten-fold increase in area raise species number? | By a factor of about 1.8.
+Q: How does distance from the mainland affect immigration in the equilibrium model? | Immigration is lower on islands far from the mainland.
+Q: How is the equilibrium number of species found in MacArthur and Wilson's model? | It is where the immigration and extinction curves cross.
+Q: What did recolonisation of Simberloff and Wilson's mangrove islands show? | Species numbers returned to roughly original levels within a year, but with different species, supporting equilibrium with turnover.
+Q: What is extinction debt? | Future extinctions expected as a result of past habitat loss.
+Q: What is the SLOSS debate? | The debate over whether to create a single large or several small reserves.
+Q: Why shouldn't the species–area equation be used as an exact prediction? | It gives an approximate expectation; species differ in sensitivity and losses may be delayed.
 
 ## Ecological succession
 LV: Introductory · Foundation
@@ -606,6 +736,16 @@ M2#ecology-u03-14-q2@2: How does soil usually change during succession? | It bec
 M3#ecology-u03-14-q3@3: Established grass on an abandoned field prevents tree seedlings from establishing until the grass is disturbed. Which mechanism does this illustrate? | Inhibition | Facilitation | Tolerance | Competitive exclusion of the grass | Early colonists resist invasion until they are removed or damaged.
 SEQ1#ecology-u03-14-q4@1: Order the stages of succession on bare ground. | Pioneer species such as mosses and lichens ; Grasses and herbs ; Shrubs ; Woodland | Each stage alters conditions, allowing later stages to establish.
 SA2#ecology-u03-14-q5@2,3: Explain how pioneer species change conditions to allow other species to colonise. | Pioneers such as lichens and mosses weather rock and trap particles; when they die, they add organic matter, forming thin soil that holds water and nutrients. Nitrogen-fixing plants add nitrogen. They provide shelter and moisture. These changes allow species that couldn't survive the harsh early conditions to establish, and these then outcompete the pioneers. | Soil formation ; Nutrient addition ; Shelter and microclimate ; Replacement of pioneers
+Q: What is ecological succession? | Directional change in the species composition of a community over time.
+Q: What traits do pioneer species usually have? | Fast growth, good dispersal and tolerance of harsh conditions.
+Q: How do pioneer species change conditions? | By adding organic matter, building soil and providing shelter.
+Q: What is a sere? | The sequence of communities in a succession; each stage is a seral stage.
+Q: What happens to biomass and structural complexity during succession? | Both increase.
+Q: How does species diversity usually change during succession? | It usually rises, then may fall slightly in late stages as dominant trees shade out others.
+Q: How does microclimate change during succession? | It becomes less extreme, with more shade, humidity and shelter.
+Q: What is the tolerance model of succession? | Later species tolerate lower resource levels and outcompete earlier species, which neither help nor hinder them.
+Q: What is the inhibition model of succession? | Early species resist invasion; later species replace them only when they die or are damaged.
+Q: Why doesn't succession always follow one fixed path to the same end point? | The sequence depends on chance arrivals, disturbance and local conditions, and different mechanisms operate at different stages.
 
 ## Primary and secondary succession
 LV: Introductory · Application
@@ -650,6 +790,16 @@ M2#ecology-u03-15-q2@2: Why do grey dunes support more species than yellow dunes
 M3#ecology-u03-15-q3@3: An abandoned field near ancient woodland becomes oak woodland in 50 years, but a similar field far from any woodland remains scrub. What best explains the difference? | Seed sources: the first field received tree seeds from nearby woodland | The second field must have been primary succession | Soil can't form on abandoned fields far from woods | Scrub is always the final stage of succession | Colonisation depends on dispersal from nearby seed sources.
 MATCH1#ecology-u03-15-q4@1: Match each dune zone to its typical species. | Embryo dune = Sea rocket and sand couch ; Yellow dune = Marram grass ; Grey dune = Mosses, lichens and more herbs ; Dune heath = Heather | Each zone reflects increasing age and soil development inland.
 SA2#ecology-u03-15-q5@3: Compare primary and secondary succession. | Primary succession starts on bare surfaces with no soil, such as rock or sand, so pioneers must build soil first and the process is slow, often centuries. Secondary succession follows disturbance where soil, seeds and roots remain, so it starts further along and is faster, often decades. Both show increasing biomass and soil development, but the route depends on local conditions, seed sources and disturbance. | Primary starting conditions ; Secondary starting conditions ; Speed difference ; Similarities and variation
+Q: What is primary succession? | Succession on newly formed or exposed surfaces with no soil.
+Q: Give four surfaces where primary succession occurs. | Bare rock after glacial retreat, lava flows, new volcanic islands and sand dunes.
+Q: What sequence followed glacial retreat at Glacier Bay, Alaska? | Bare rock, then mosses, then nitrogen-fixing alder, then spruce forest.
+Q: What is Surtsey and why is it studied? | A volcanic island formed off Iceland in 1963, monitored as plants and animals arrived.
+Q: Which species colonise embryo dunes? | Sea rocket and sand couch grass, which tolerate salt and shifting sand.
+Q: What is a psammosere? | The sequence of communities in sand dune succession.
+Q: What darkens the sand of grey dunes? | Humus.
+Q: Where in England can the full dune sequence be seen over a few hundred metres? | The Sefton Coast dunes in north-west England.
+Q: What is secondary succession? Give two triggers. | Succession where soil remains after a community is removed, for example after fire, felling, flooding or farmland abandonment.
+Q: Why may abandoned farmland not return to its original community? | The result depends on seed sources, soil changes and grazing.
 
 ## Climax communities and plagioclimax
 LV: Introductory · Application
@@ -694,6 +844,16 @@ M2#ecology-u03-16-q2@2: Grazing stops on a chalk grassland reserve. What is the 
 M3#ecology-u03-16-q3@3: Conservationists debate whether to keep burning a heather moor or let it develop into woodland. Which is the best summary of the trade-off? | Burning maintains heather and species of open moor but may damage peat and release carbon; letting succession proceed benefits woodland species but loses moorland habitat | Burning has only benefits and no costs of any kind | Woodland is always worthless for conservation | The choice has no effect on biodiversity | Management choices favour different species and ecosystem services.
 TF1#ecology-u03-16-q4@1: Modern ecologists see climax communities as completely fixed and unchanging. | false | Climaxes are now seen as dynamic, with gaps, disturbance and ongoing change.
 SA2#ecology-u03-16-q5@3: Evaluate whether conservation should maintain plagioclimax habitats or allow succession to continue. | Plagioclimaxes such as chalk grassland and heath are often species-rich, support rare species and are culturally valued, so management is justified. But management can be costly and, in the case of moorland burning, may harm peat, carbon storage and water. Allowing succession or rewilding can benefit woodland species and reduce management costs. The best choice depends on the site, the species present and wider goals such as carbon storage. | Value of plagioclimaxes ; Costs or harms of management ; Benefits of succession or rewilding ; Site-specific judgement
+Q: What is a climax community? | A relatively stable community at the end of succession, in balance with climate and soil.
+Q: How do modern ecologists view climax communities? | As dynamic, with gaps from fallen trees and ongoing change, not fixed end points.
+Q: What is deflected succession? | Succession prevented from reaching the climax by human or other interference.
+Q: How is heather moorland maintained as a plagioclimax? | By grazing and rotational burning (muirburn) for grouse.
+Q: How are hay meadows maintained? | By mowing and grazing.
+Q: What happens to chalk grassland without grazing? | Coarse grasses, then hawthorn scrub, then woodland develop, and orchids and chalkhill blue butterflies decline.
+Q: How do conservation managers maintain chalk grassland? | By reintroducing sheep or cattle grazing and clearing scrub.
+Q: Give two arguments for maintaining plagioclimaxes. | Many are species-rich and support rare species, and some are cultural landscapes valued for centuries.
+Q: What are the concerns about burning moorland? | It may damage peat, increase carbon emissions and affect water quality.
+Q: Why isn't the climax community always the most valuable for conservation? | Many species-rich habitats, such as chalk grassland, are plagioclimaxes that disappear if succession continues.
 
 ## Disturbance and the intermediate disturbance hypothesis
 LV: Introductory · Evaluation
@@ -738,6 +898,16 @@ M2#ecology-u03-17-q2@2: According to the IDH, why is diversity low where disturb
 M3#ecology-u03-17-q3@3: A review of 100 studies finds the predicted hump-shaped pattern in only 20. What is the most reasonable conclusion? | The IDH isn't a general rule; other factors often shape diversity–disturbance relationships | The IDH has been proven correct in all ecosystems | Disturbance has no effect on diversity anywhere | The 80 studies must all be wrong | A pattern found in a minority of studies can't be treated as universal.
 TF1#ecology-u03-17-q4@1: Disturbance can increase diversity at the landscape scale by creating a mosaic of patches. | true | Patches at different stages support different species, increasing overall diversity.
 SA2#ecology-u03-17-q5@3: Evaluate the intermediate disturbance hypothesis. | It offers a simple explanation: at low disturbance, competitors exclude others; at high disturbance, few species survive; at intermediate levels, both coexist. Some field studies, such as Sousa's boulders, support it. But reviews find the hump-shaped pattern in only a minority of cases, its theoretical basis has been challenged, and diversity depends on productivity, scale and history. It is best seen as one possible pattern, not a general law. | Explanation ; Supporting evidence ; Contradictory evidence and criticism ; Conclusion
+Q: What is a disturbance in ecology? | A relatively discrete event that removes organisms or biomass and opens up space or resources.
+Q: In what three ways do disturbances vary? | In frequency, intensity and spatial scale.
+Q: What is patch dynamics? | The view of communities as mosaics of patches at different stages of recovery after disturbance.
+Q: Who proposed the intermediate disturbance hypothesis, and when? | Joseph Connell, in 1978.
+Q: According to the IDH, why is diversity low where disturbance is very high? | Only a few hardy, fast-colonising species survive.
+Q: Why does intermediate disturbance allow high diversity according to the IDH? | Both colonisers and competitors can coexist.
+Q: Why did large boulders have few species in Sousa's study? | They were rarely moved, so a dominant red alga took over.
+Q: What did Mackey and Currie's 2001 review find about the IDH? | The predicted hump-shaped pattern appeared in only a minority of studies.
+Q: What did Fox argue about the IDH in 2013? | That its theoretical basis is flawed and the hypothesis should be abandoned.
+Q: What do diversity–disturbance relationships depend on besides disturbance? | Productivity, scale and the species involved.
 
 ## Invasive non-native species
 LV: Introductory · Application
@@ -792,4 +962,14 @@ M2#ecology-u03-18-q2@2: Why has the grey squirrel caused red squirrels to declin
 M3#ecology-u03-18-q3@3: A council must choose how to spend limited money on invasive species. Which strategy is usually most cost-effective? | Prevention and rapid eradication of new arrivals before they spread | Waiting until a species is widespread before acting | Spending everything on control of the most widespread species | Ignoring invasive species altogether | Costs rise steeply once a species is established; early action is far cheaper.
 TF1#ecology-u03-18-q4@1: All non-native species become invasive. | false | Most introduced species don't establish or cause harm; only a small proportion become invasive.
 SA2#ecology-u03-18-q5@2,3: Explain why some introduced species become invasive. | In their new range they may lack natural predators, parasites and diseases (enemy release). Many grow and reproduce quickly, tolerate a wide range of conditions or spread vegetatively. Disturbed habitats offer easy colonisation. Some have novel chemical or other traits native species can't cope with. Human activity can repeatedly introduce and spread them. | Enemy release ; Life-history traits ; Disturbed habitats ; Novel traits or repeated introduction
+Q: What is a non-native species? | A species introduced by people outside its natural range.
+Q: What are the three main pathways for introducing non-native species? | Deliberate introduction, escapes, and accidental transport such as ballast water, timber or hitchhiking on equipment.
+Q: What does Williamson's tens rule suggest? | About 1 in 10 introduced species establishes in the wild and about 1 in 10 of those becomes a pest.
+Q: What are novel weapons in invasion ecology? | Chemicals of an introduced species that native species haven't encountered.
+Q: How does Japanese knotweed spread and cause damage? | It spreads from root fragments and damages structures and riverbanks.
+Q: Why does Himalayan balsam increase riverbank erosion? | It forms dense stands that die back in winter.
+Q: How have signal crayfish harmed native crayfish? | They carry crayfish plague, devastating native white-clawed crayfish.
+Q: What biological control agent has been released against Japanese knotweed? | A psyllid insect.
+Q: Why do volunteers pull Himalayan balsam from upstream to downstream? | Water carries seeds downstream, so working downstream stops cleared areas being reseeded.
+Q: Name two pieces of UK legislation on invasive species. | The Wildlife and Countryside Act 1981 and the Invasive Alien Species (Enforcement and Permitting) Order 2019.
 `;

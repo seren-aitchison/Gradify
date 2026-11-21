@@ -6,7 +6,7 @@ import { parseDeck, cardHtml, suggestCards, clozeAt, imagesIn } from "../kit/too
 import { packOf, mapOf, deckOf, chantOf, chantLines, cheatsheetOf } from "../kit/tools/convert.js";
 import { searchLessons, loadLesson, factsOf } from "../kit/tools/search.js";
 import { take, usage, FREE } from "../kit/data/limits.js";
-import { diagramsFor, diagramForNode, diagramForCard, diagramSvg, glassDiagram, label } from "../kit/core/glass-diagrams.js";
+import { diagramsFor, diagramForNode, diagramForCard, diagramSvg, glassDiagram, label, minisFor, miniCard } from "../kit/core/glass-diagrams.js";
 import { parseNotes } from "../kit/course/notes.js";
 import { SAMPLE } from "../kit/notes/studio.js";
 
@@ -117,12 +117,96 @@ test("glass diagrams are drawn from a lesson's own notes, beside the part they s
       }
     }
   }
-  assert.match(glassDiagram(ds[0]), /class="gd gd-md"/);
+  assert.match(glassDiagram(ds[0]), /class="gd gd-md/);
   assert.equal(label("**Channels**: ions flow through pores"), "Channels");
   assert.equal(diagramForNode({ topic: "Steps", kind: "example", children: [{ topic: "1. A", children: [] }, { topic: "2. B", children: [] }] }).kind, "flow");
   const flow = { kind: "flow", title: "Nernst equation potassium", items: ["potassium gradient", "membrane potential"] };
   assert.equal(diagramForCard([flow], "What sets the membrane potential?", "The potassium gradient"), flow);
   assert.equal(diagramForCard([flow], "Something else entirely"), null);
+});
+
+test("diagram cards show every word as text, can be covered for recall, and stay inert on a flashcard", () => {
+  const long = "Sustained depolarisation inactivates voltage-gated sodium channels, so the net effect in the heart is depressed conduction and a risk of arrhythmia";
+  const flow = { kind: "flow", title: "What happens to E_K?", items: ["E_K becomes less negative", long] };
+  const html = glassDiagram(flow, { n: 2, of: 5, id: "co-d2" });
+  assert.ok(html.includes(long), "the whole step, never cut to fit a box");
+  assert.match(html, /<figcaption class="gd-head">/, "a figure named by its caption");
+  assert.match(html, /2 of 5/);
+  assert.match(html, /<ol class="gd-flow/, "a process is an ordered list to a screen reader");
+  assert.match(html, /data-gd-mode="quiz" aria-pressed="false"/, "Cover & recall, off to start");
+  assert.match(html, /data-gd-mode="step"/, "a process can be stepped through");
+  assert.match(html, /data-gd-zoom/);
+  assert.doesNotMatch(html, /role="button"/, "answers are plain text until covered");
+  // covered from the start (the Recap): each answer is a button until revealed
+  const quiz = glassDiagram(flow, { quiz: true });
+  assert.match(quiz, /class="gd gd-md quiz"/);
+  assert.equal((quiz.match(/role="button" tabindex="0" aria-label="Hidden answer: reveal"/g) || []).length, 2);
+  // small (inside a flashcard, itself a button): no buttons or other controls in it
+  assert.doesNotMatch(glassDiagram(flow, { size: "sm", caption: false }), /<button|role="button"|data-gd-/);
+  // a lesson map links to its sections, and a two-section lesson gets none
+  const map = glassDiagram({ kind: "map", title: "Cells", items: ["Structure", "Function", "Injury"] });
+  assert.match(map, /data-jump="co-s3"/);
+  assert.match(map, /First letters: <b>S · F · I<\/b>/, "a first-letter cue for short parts");
+  assert.ok(!glassDiagram({ kind: "hub", title: "AOs", items: ["AO1 Develop", "AO2 Refine", "AO3 Record", "AO4 Present"] }).includes("First letters"), "no cue when the letters don't tell the parts apart");
+  const L = { title: "T", blocks: [{ t: "h", x: "One" }, { t: "p", x: "A first. A second." }, { t: "h", x: "Two" }, { t: "p", x: "B." }], objectives: ["Do x", "Do y"], prereq: [], terms: [], cards: [], summary: [] };
+  assert.ok(!diagramsFor(L).some((d) => d.kind === "map"), "two sections: no map");
+  assert.ok(diagramsFor(L).some((d) => d.kind === "path") && !diagramsFor(L, { skip: ["path"] }).some((d) => d.kind === "path"), "a kind can be left out");
+});
+
+test("each kind of card has the ways to practise that suit it, and the small cards quote the notes", async () => {
+  const modes = (d) => [...glassDiagram(d).matchAll(/data-gd-mode="(\w+)"/g)].map((m) => m[1]);
+  assert.deepEqual(modes({ kind: "terms", title: "Key terms", items: [{ term: "Osmosis", def: "water moving" }, { term: "Diffusion", def: "solutes moving" }] }), ["match", "quiz"]);
+  assert.deepEqual(modes({ kind: "mistake", title: "x", wrong: "Thinking A.", right: "B is true." }), ["pick", "quiz"]);
+  assert.deepEqual(modes({ kind: "evidence", title: "e", items: [{ status: "established", text: "a" }, { status: "contested", text: "b" }] }), ["rate", "quiz"]);
+  assert.deepEqual(modes({ kind: "cycle", title: "c", items: ["One", "Two", "Three"] }), ["step", "quiz"]);
+  assert.deepEqual(modes({ kind: "key", title: "k", text: "short idea" }), ["quiz"]);
+  assert.deepEqual(modes({ kind: "flow", title: "f", items: ["a", "b", "c"] }), ["step", "order", "quiz"], "three or more steps can be put in order");
+  // a worked example is called one; a timeline is drawn to scale, with the gaps in years
+  assert.match(glassDiagram({ kind: "flow", ex: true, title: "q", items: ["a", "b"] }), />Worked example</);
+  const tl = glassDiagram({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1990", text: "b" }, { year: "2000", text: "c" }] });
+  assert.match(tl, /left:4\.0%/); assert.match(tl, /left:96\.0%/); assert.match(tl, /90 years/);
+  // the small cards: every word from the notes, at most one a section, and they start covered
+  const flat = (t) => String(t).replace(/\*\*|__|`/g, "").replace(/\^\{([^}]*)\}/g, "^$1").replace(/_\{([^}]*)\}/g, "_$1").replace(/\s+/g, " ");
+  let seen = 0; const kinds = new Set();
+  for (const course of ["medicine", "biology", "physics", "history", "nursing"]) {
+    const notes = (await import(`../kit/courses/${course}/notes/u01.js`)).default, all = flat(notes);
+    for (const L of parseNotes(notes).slice(0, 6)) {
+      const ms = minisFor(L);
+      assert.ok(ms.length <= 4);
+      assert.equal(new Set(ms.map((m) => m.at)).size, ms.length, "one per place");
+      for (const m of ms) {
+        seen++;
+        assert.ok(L.blocks[m.at] && L.blocks[m.at].t !== "h");
+        const bits = m.kind === "check" ? [m.q, m.a] : m.kind === "gap" ? m.items.flatMap((g) => [g.pre, g.ans, g.post, ...g.choices]) : m.items.flatMap((l) => [l.pre, l.n, l.post]);
+        if (m.kind === "gap") for (const g of m.items) { assert.equal(g.choices.length, 3); assert.ok(g.choices.includes(g.ans), "the right word is one of the choices"); kinds.add("gap"); }
+        for (const w of bits) { const bit = w.replace(/^…|…$/g, "").replace(/[.,;:]+$/, "").trim(); if (bit.length > 2) assert.ok(all.includes(bit), `${course} ${m.kind}: "${bit}" is in the notes`); }
+        assert.match(miniCard(m), /class="gd gd-mini quiz"/);
+      }
+    }
+  }
+  assert.ok(seen >= 10, "lessons get small cards");
+  // a worked example's steps reach the card whole, however long (the picture, diagramSvg, shortens its own copy)
+  const longStep = `Work out the dose: ${"take the weight in kilograms, multiply by the dose per kilogram, and check the total against the maximum; ".repeat(7)}then round down.`;
+  const exL = { title: "t", blocks: [{ t: "h", x: "Dose" }, { t: "ex", x: "A child weighs 20 kg.", steps: [longStep, "Give it."] }], cards: [] };
+  const flowD = diagramsFor(exL).find((d) => d.kind === "flow");
+  assert.ok(longStep.length > 600 && flowD.items[0] === longStep, "the whole step, never cut");
+  assert.ok(glassDiagram(flowD).includes(longStep));
+  // review fixes: a grouped number is never half-covered; a tie in dates can't be put in order; a small map has no buttons;
+  // the Recap's questions are left out exactly, not by their first words
+  const numL = { title: "t", blocks: [{ t: "h", x: "A" }, { t: "p", x: "The band runs from 1,000,000 Hz up. A fibre is about 25 kHz here. Another 40% now." }], cards: [] };
+  assert.deepEqual(minisFor(numL)[0].items.map((l) => l.n), ["25 kHz", "40%"]);
+  assert.ok(!modes({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1900", text: "b" }, { year: "2000", text: "c" }] }).includes("order"));
+  assert.doesNotMatch(glassDiagram({ kind: "map", title: "M", items: ["One", "Two", "Three"] }, { size: "sm", caption: false }), /<button/);
+  assert.doesNotMatch(glassDiagram({ kind: "cycle", title: "C", items: ["One", "Two", "Three", "Four"] }, { size: "sm", caption: false }), /<button|data-gd-ring/, "a small cycle has no ring buttons");
+  assert.match(glassDiagram({ kind: "cycle", title: "C", items: ["One", "Two", "Three", "Four"] }), /data-gd-ring="3"/, "a full one does");
+  const qL = { title: "t", blocks: [{ t: "h", x: "Osmosis" }, { t: "p", x: "Osmosis moves water across membranes towards solutes." }], cards: [["What is osmosis? How does it differ from diffusion?", "Water moving across membranes towards solutes."]] };
+  assert.equal(minisFor(qL, { skipQ: ["What is osmosis?"] })[0]?.kind, "check", "a longer question isn't dropped for starting the same way");
+  assert.equal(minisFor(qL, { skipQ: ["What is osmosis? How does it differ from diffusion?"] }).length, 0, "an exact repeat is");
+  // a card in a lesson carries its key, so it can remember what's been practised on it; a small card does too
+  assert.match(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "med:u01-02:key-3" }), /data-gd-key="med:u01-02:key-3"/);
+  assert.doesNotMatch(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "x", size: "sm" }), /data-gd-key/, "not on a flashcard");
+  assert.match(miniCard({ kind: "check", q: "Why?", a: "Because." }, { key: "med:u01-02:check-4" }), /data-gd-key="med:u01-02:check-4"/);
+  assert.ok(kinds.has("gap"), "some sections get a gap to fill");
 });
 
 test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze cards kept as cloze", () => {

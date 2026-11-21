@@ -173,15 +173,20 @@ function cell(spec, W, narrow) {
     const ai = halves.findIndex((h) => h.role === "anode"), dir = ai === 0 ? 1 : -1;
     s += arrow(W / 2 - dir * 80, 32, W / 2 - dir * 40, 32, { stroke: col("a1"), w: 2.2, head: 8 }) + text(W / 2 - dir * 60, 20, "e⁻", { size: 13, weight: 700, fill: col("a1") });
   }
-  if (spec.membrane) s += line(vx + vw / 2, vy + 10, vx + vw / 2, vy + vh - 30, { stroke: col("a5"), w: 3, dash: "7 5" }) + text(vx + vw / 2, vy + 2, spec.membrane, { size: 11, weight: 600, fill: col("a5") });
+  if (spec.membrane) s += line(vx + vw / 2, vy + 10, vx + vw / 2, vy + vh - 30, { stroke: col("a5"), w: 3, dash: "7 5" });
+  // labels between the electrodes are wrapped to the room there and drawn after them, on a halo
+  const room = (px) => Math.max(6, Math.floor(px / 6.6));
   halves.forEach((hf, i) => {
     s += electrode(ex[i] - 9, vy - 14, 18, vh - 46, hf.electrode);
     const pos = (spec.supply ? (hf.role === "cathode" ? "−" : "+") : hf.role === "anode" ? "−" : "+");
     s += text(ex[i], vy + vh + 18, `${hf.label || hf.electrode} ${hf.role} (${pos})`, { size: 12.5, weight: 700, fill: hf.role === "anode" ? col("a3") : col("a1") });
     s += text(ex[i], vy + vh + 38, fm(hf.half), { size: narrow ? 10.5 : 12, weight: 600, fill: C.ink });
-    if (hf.product) s += text(ex[i] + (i ? -16 : 16), vy + 40, fm(hf.product), { size: 12, weight: 700, anchor: i ? "end" : "start", fill: col("a2") });
+    // a product label may use the room between the electrodes that the other side's label leaves
+    const other = halves[1 - i]?.product || "", free = ex[1] - ex[0] - 32 - (other ? ascii(other).length * 6.6 + 12 : 0);
+    if (hf.product) s += wrap(hf.product, room(Math.max((ex[1] - ex[0]) / 2 - 22, free))).map(fm).map((l, k) => text(ex[i] + (i ? -16 : 16), vy + 40 + k * 15, l, { size: 12, weight: 700, anchor: i ? "end" : "start", fill: col("a2"), halo: true })).join("");
     if (hf.ions) s += arrow(ex[i] + (i ? -70 : 70) * (narrow ? 0.5 : 1), vy + 90, ex[i] + (i ? -24 : 24), vy + 90, { stroke: col("a4"), w: 2, head: 8 }) + text(ex[i] + (i ? -56 : 56) * (narrow ? 0.6 : 1), vy + 76, fm(hf.ions), { size: 12, weight: 700, fill: col("a4") });
   });
+  if (spec.membrane) { const ls = wrap(spec.membrane, room(ex[1] - ex[0] - 30)); s += ls.map((l, k) => text(vx + vw / 2, vy + 2 - (ls.length - 1 - k) * 14, l, { size: 11, weight: 600, fill: col("a5"), halo: true })).join(""); }
   let y = vy + vh + 56;
   for (const n of spec.notes || []) { s += text(W / 2, y + 6, fm(n), { size: 12, fill: C.soft }); y += 18; }
   return { s, H: y + 10 };
@@ -245,8 +250,8 @@ function levelsDraw(spec, W, narrow) {
 function hydrogen(spec, W, narrow) {
   const H = narrow ? 460 : 400, top = 40, bot = H - 30, n = spec.levels || 6;
   const E = (k) => -13.6 / k ** 2, y = (e) => top + ((0 - e) / 13.6) * (bot - top);
-  const x0 = narrow ? 52 : 90, x1 = W - (narrow ? 14 : 30);
-  let s = arrow(x0 - 30, bot + 6, x0 - 30, top - 20, { w: 1.6, head: 8 }) + text(x0 - 34, top - 28, "energy", { size: 12, anchor: "start", fill: C.soft });
+  const x0 = narrow ? 62 : 90, x1 = W - (narrow ? 14 : 30), ax = narrow ? 12 : x0 - 30;
+  let s = arrow(ax, bot + 6, ax, top - 20, { w: 1.6, head: 8 }) + text(ax - 4, top - 28, "energy", { size: 12, anchor: "start", fill: C.soft });
   // the levels crowd together towards n = ∞, so only n = 1 to 4 are labelled
   for (let k = 1; k <= n; k++) s += line(x0, y(E(k)), x1, y(E(k)), { w: k === 1 ? 2.4 : 1.6 }) + (k <= 4 ? text(x0 - 8, y(E(k)) + (k === 4 ? 4 : 0), `n = ${k}`, { size: 12, weight: 600, anchor: "end", fill: C.ink }) : "");
   s += line(x0, y(0), x1, y(0), { w: 1.4, dash: "6 4", stroke: C.line }) + text(x1, y(0) - 8, "n = ∞ (ionisation)", { size: 11, anchor: "end", fill: C.soft });
@@ -300,7 +305,7 @@ function mo(spec, W, narrow) {
   const H = narrow ? 460 : 420, top = 40, bot = H - 50;
   // vertical positions: bonding below its atomic orbital, antibonding above, in filling order
   const ys = {}; rows.forEach((o, i) => { ys[o.name] = bot - (i / Math.max(1, rows.length - 1)) * (bot - top); });
-  const cx = W / 2, ax = narrow ? 50 : 120, bx = W - (narrow ? 50 : 120), bw = narrow ? 22 : 26;
+  const cx = W / 2, ax = narrow ? 64 : 120, bx = W - (narrow ? 64 : 120), bw = narrow ? 22 : 26;
   let s = text(ax, 18, `${el} atom`, { size: 13, weight: 700 }) + text(bx, 18, `${el} atom`, { size: 13, weight: 700 }) + text(cx, 18, sym.replace("2", "₂"), { size: 14, weight: 800 });
   const conf = configuration(f.z), aoY = {};
   const aos = f.z <= 2 ? ["1s"] : ["2s", "2p"];
@@ -352,26 +357,49 @@ function cfs(spec, W, narrow) {
 }
 function arrowsBoxes(x, y, occ, bw) { return occ.map((n, i) => arrowsInBox(x + i * bw, y, n, bw)).join(""); }
 function custom(spec, W, narrow) {
-  const lv = spec.levels, Es = lv.map((l) => l.E), lo = Math.min(...Es), hi = Math.max(...Es);
-  const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 420 : 360), top = 34, bot = H - 40;
+  const lv = spec.levels, Es = [...lv.map((l) => l.E), ...(spec.bands || []).flatMap((b) => [b.lo, b.hi])], lo = Math.min(...Es), hi = Math.max(...Es);
+  // the axis title sits above the highest level, never on the same line as that level's label
+  const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 420 : 360), top = 50, bot = H - 40;
   const y = (e) => bot - ((e - lo) / (hi - lo || 1)) * (bot - top);
-  const xs = (f) => 20 + f * (W - 40);
-  let s = spec.axis === false ? "" : arrow(12, bot + 10, 12, top - 16, { w: 1.6, head: 8 }) + text(18, top - 20, spec.axisLabel || "energy", { size: 12, anchor: "start", fill: C.soft });
-  for (const l of lv) {
-    s += line(xs(l.x0), y(l.E), xs(l.x1), y(l.E), { w: l.thin ? 1.2 : 2.2, dash: l.dash ? "5 4" : "", stroke: l.colour ? col(l.colour) : C.ink });
-    if (l.label) s += text(l.labelRight ? xs(l.x1) + 6 : xs(l.x0) - 6, y(l.E), fm(l.label), { size: narrow ? 11 : 12.5, weight: 600, anchor: l.labelRight ? "start" : "end", fill: C.ink });
+  const xs = (f) => 20 + f * (W - 40), fs = narrow ? 11 : 12.5, ts = narrow ? 10.5 : 11.5, cw = (size) => size * 0.58;
+  const width = (str, size) => ascii(String(str).replace(/[_^]\{([^}]*)\}/g, "$1")).length * cw(size);
+  let s = spec.axis === false ? "" : arrow(12, bot + 10, 12, top - 24, { w: 1.6, head: 8 }) + text(6, top - 38, spec.axisLabel || "energy", { size: 12, anchor: "start", fill: C.soft });
+  let late = ""; // labels go on top of every line, on a halo
+  // bands (a solid's filled and empty bands): a shaded box when filled, an outline when empty
+  for (const b of spec.bands || []) {
+    const x0 = xs(b.x0), x1 = xs(b.x1), y0 = y(b.hi), y1 = y(b.lo), c = col(b.colour || (b.filled ? "a1" : "a4"));
+    s += `<rect x="${f1(x0)}" y="${f1(y0)}" width="${f1(x1 - x0)}" height="${f1(Math.max(2, y1 - y0))}" rx="3" fill="${c}" fill-opacity="${b.filled ? 0.35 : 0.06}" stroke="${c}" stroke-width="1.6"${b.filled ? "" : ' stroke-dasharray="5 4"'}/>`;
+    if (b.label) late += text((x0 + x1) / 2, (y0 + y1) / 2, fm(b.label), { size: ts, weight: 600, fill: C.ink, halo: true });
   }
   const byId = Object.fromEntries(lv.map((l) => [l.id, l]));
+  // dashed correlation lines (a level splitting in a field)
+  for (const [a, b] of spec.links || []) s += line(xs(byId[a].x1), y(byId[a].E), xs(byId[b].x0), y(byId[b].E), { stroke: C.line, w: 1.2, dash: "4 4" });
+  for (const l of lv) {
+    s += line(xs(l.x0), y(l.E), xs(l.x1), y(l.E), { w: l.thin ? 1.2 : 2.2, dash: l.dash ? "5 4" : "", stroke: l.colour ? col(l.colour) : C.ink });
+    if (!l.label) continue;
+    // beside the line when it fits in the picture, otherwise above it
+    const w = width(l.label, fs), right = !!l.labelRight, fits = right ? xs(l.x1) + 6 + w <= W - 4 : xs(l.x0) - 6 - w >= 22;
+    if (l.labelAbove || !fits) late += text(right ? xs(l.x1) : l.labelAbove ? (xs(l.x0) + xs(l.x1)) / 2 : xs(l.x0), y(l.E) - 11, fm(l.label), { size: fs, weight: 600, anchor: l.labelAbove ? "middle" : right ? "end" : "start", fill: C.ink, halo: true });
+    else late += text(right ? xs(l.x1) + 6 : xs(l.x0) - 6, y(l.E), fm(l.label), { size: fs, weight: 600, anchor: right ? "start" : "end", fill: C.ink, halo: true });
+  }
   for (const t of spec.transitions || []) {
     const a = byId[t.from], b = byId[t.to], x = xs(t.x), y1 = y(a.E), y2 = y(b.E);
     if (t.wavy) {
       const pts = []; for (let i = 0; i <= 30; i++) { const yy = y1 + ((y2 - y1) * i) / 30; pts.push(`${i ? "L" : "M"}${f1(x + Math.sin(i * 1.3) * 5)} ${f1(yy)}`); }
       s += `<path d="${pts.join(" ")}" fill="none" stroke="${col(t.colour || "a5")}" stroke-width="1.8"/>` + arrow(x, y2 - Math.sign(y2 - y1) * 9, x, y2, { stroke: col(t.colour || "a5"), w: 1.8, head: 7 });
     } else s += arrow(x, y1, x, y2, { stroke: col(t.colour || "a1"), w: 2.2, head: 8, dash: t.dash || "" });
-    if (t.label) s += text(x + (t.labelLeft ? -6 : 6), (y1 + y2) / 2 + (t.dy || 0), fm(t.label), { size: narrow ? 10.5 : 11.5, weight: 700, anchor: t.labelLeft ? "end" : "start", fill: col(t.colour || "a1") });
+    if (t.label) {
+      // wrapped to the room on its side of the arrow
+      const room = t.labelLeft ? x - 10 : W - x - 10, ls = wrap(t.label, Math.max(8, Math.floor(room / cw(ts)))), ym = (y1 + y2) / 2 + (t.dy || 0) - ((ls.length - 1) * 14) / 2;
+      late += ls.map((l, i) => text(x + (t.labelLeft ? -6 : 6), ym + i * 14, fm(l), { size: ts, weight: 700, anchor: t.labelLeft ? "end" : "start", fill: col(t.colour || "a1"), halo: true })).join("");
+    }
   }
-  for (const n of spec.notes || []) s += text(xs(n.x), y(n.E) + (n.dy || 0), fm(n.text), { size: 11.5, weight: n.bold ? 700 : 500, anchor: n.anchor || "middle", fill: n.colour ? col(n.colour) : C.soft });
-  return { s, H };
+  for (const n of spec.notes || []) {
+    const a = n.anchor || "middle", x = xs(n.x), room = a === "start" ? W - x - 6 : a === "end" ? x - 6 : 2 * Math.min(x, W - x) - 12;
+    const ls = wrap(n.text, Math.max(8, Math.floor(room / cw(11.5))));
+    late += ls.map((l, i) => text(x, y(n.E) + (n.dy || 0) + i * 14, fm(l), { size: 11.5, weight: n.bold ? 700 : 500, anchor: a, fill: n.colour ? col(n.colour) : C.soft, halo: true })).join("");
+  }
+  return { s: s + late, H };
 }
 function levelChecks(spec) {
   const out = [];
@@ -464,12 +492,15 @@ function shellFull(el) { return el === "H" || el === "He" || el === "Li" || el =
 function dotcross(spec, W, narrow) {
   const mols = spec.molecules, n = mols.length, perRow = narrow ? 1 : Math.min(n, spec.perRow || n), cw = (W - 20) / perRow, scale = spec.scale?.[narrow ? 1 : 0] || (narrow ? 0.9 : 1);
   let s = "", H = 0;
+  // on a phone each molecule gets a row as tall as it needs (a fixed row let SO4 2- run into the next panel)
+  const rowH0 = spec.rowHeight?.[narrow ? 1 : 0] || 230 * scale, heights = mols.map((m) => { const ys = m.atoms.map((a) => a.y); return Math.max(rowH0, (Math.max(...ys) - Math.min(...ys)) * 54 * scale + 64 * scale + 70); });
+  const tops = heights.map((_, i) => 20 + heights.slice(0, i).reduce((t, h) => t + h, 0));
   mols.forEach((m, mi) => {
     const R = 32 * scale, step = 54 * scale;
     const xs = m.atoms.map((a) => a.x), ys = m.atoms.map((a) => a.y);
     const mw = (Math.max(...xs) - Math.min(...xs)) * step + 2 * R + 30, mh = (Math.max(...ys) - Math.min(...ys)) * step + 2 * R + 30;
-    const col0 = mi % perRow, row = Math.floor(mi / perRow), rowH = spec.rowHeight?.[narrow ? 1 : 0] || 230 * scale;
-    const ox = 10 + col0 * cw + cw / 2 - ((Math.max(...xs) + Math.min(...xs)) / 2) * step, oy = 20 + row * rowH + rowH / 2 - 20 - ((Math.max(...ys) + Math.min(...ys)) / 2) * step;
+    const col0 = mi % perRow, row = Math.floor(mi / perRow), rowH = narrow ? heights[mi] : rowH0, top = narrow ? tops[mi] : 20 + row * rowH;
+    const ox = 10 + col0 * cw + cw / 2 - ((Math.max(...xs) + Math.min(...xs)) / 2) * step, oy = top + rowH / 2 - 20 - ((Math.max(...ys) + Math.min(...ys)) / 2) * step;
     const P = (a) => [ox + a.x * step, oy + a.y * step];
     const byId = Object.fromEntries(m.atoms.map((a) => [a.id, a]));
     const mark = (x, y, kind) => (kind === "cross" ? `<path d="M${f1(x - 3.6)} ${f1(y - 3.6)} L${f1(x + 3.6)} ${f1(y + 3.6)} M${f1(x - 3.6)} ${f1(y + 3.6)} L${f1(x + 3.6)} ${f1(y - 3.6)}" stroke="${col("a2")}" stroke-width="2"/>` : `<circle cx="${f1(x)}" cy="${f1(y)}" r="3.3" fill="${col("a1")}"/>`);
@@ -517,9 +548,9 @@ function dotcross(spec, W, narrow) {
       if (a.delta) s += text(x, y - (m.style === "lewis" ? 24 : R + 10), a.delta === "+" ? "δ+" : "δ−", { size: 13, weight: 700, fill: a.delta === "+" ? col("a3") : col("a1") });
     }
     if (m.bracket) { const minx = Math.min(...m.atoms.map((a) => P(a)[0])) - (m.style === "lewis" ? 30 : R + 8), maxx = Math.max(...m.atoms.map((a) => P(a)[0])) + (m.style === "lewis" ? 30 : R + 8), miny = Math.min(...m.atoms.map((a) => P(a)[1])) - (m.style === "lewis" ? 30 : R + 6), maxy = Math.max(...m.atoms.map((a) => P(a)[1])) + (m.style === "lewis" ? 30 : R + 6); s += `<path d="M${f1(minx + 6)} ${f1(miny)} h-6 v${f1(maxy - miny)} h6 M${f1(maxx - 6)} ${f1(miny)} h6 v${f1(maxy - miny)} h-6" fill="none" stroke="${C.ink}" stroke-width="2"/>` + text(maxx + 6, miny + 4, m.charge > 0 ? `${m.charge > 1 ? m.charge : ""}+` : `${-m.charge > 1 ? -m.charge : ""}−`, { size: 15, weight: 800, anchor: "start" }); }
-    s += text(10 + col0 * cw + cw / 2, 20 + row * rowH + rowH - 12, fm(m.label || ""), { size: 13, weight: 700 });
-    if (m.sub) s += text(10 + col0 * cw + cw / 2, 20 + row * rowH + rowH + 6, fm(m.sub), { size: 11.5, fill: C.soft });
-    H = Math.max(H, 20 + (row + 1) * rowH + (m.sub ? 20 : 4));
+    s += text(10 + col0 * cw + cw / 2, top + rowH - 12, fm(m.label || ""), { size: 13, weight: 700 });
+    if (m.sub) s += text(10 + col0 * cw + cw / 2, top + rowH + 6, fm(m.sub), { size: 11.5, fill: C.soft });
+    H = Math.max(H, top + rowH + (m.sub ? 20 : 4));
   });
   if (spec.arrowBetween && !narrow) s += arrow(W / 2 - 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, W / 2 + 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, { w: 2.4, head: 10 });
   const marks = [...new Set(spec.molecules.flatMap((m) => m.atoms.map((a) => a.mark || "dot")))];

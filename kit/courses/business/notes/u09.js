@@ -42,6 +42,16 @@ M2#business-u09-01-q2@2: Which example best fits Schumpeter's idea of the entrep
 M3#business-u09-01-q3@3: Which statement about new firms is best supported by evidence? | A small share of fast-growing firms creates many new jobs | Most new firms grow into large companies | New firms rarely create any jobs | All new firms are innovative | Job creation is concentrated in a minority of high-growth firms.
 MATCH1#business-u09-01-q4@2: Match each thinker to their view. | Schumpeter = Innovation and creative destruction ; Kirzner = Alertness to opportunities ; Knight = Bearing uncertainty ; Shane and Venkataraman = Discovery, evaluation and exploitation | Each offers a different lens on entrepreneurship.
 SA3#business-u09-01-q5@1,3: Explain why entrepreneurship is important to a national economy. | Entrepreneurs create new firms that provide jobs and income, introduce new products, processes and business models, increase competition so that existing firms improve, and raise productivity. Creative destruction moves resources to more valuable uses. A small number of high-growth firms contribute disproportionately, so policy often supports start-ups and scale-ups. | Jobs ; Innovation ; Competition ; Productivity ; High-growth firms
+Q: How did Shane and Venkataraman define entrepreneurship? | The study of how opportunities to create future goods and services are discovered, evaluated and exploited, and by whom.
+Q: What does an entrepreneur do? | Bears risk and organises resources to pursue an opportunity, often under uncertainty.
+Q: What is a lifestyle business? | A business that aims for stable income rather than innovation or growth.
+Q: What is intrapreneurship? | Entrepreneurial behaviour by employees inside an established organisation.
+Q: What did Schumpeter mean by "new combinations"? | New products, methods, markets, sources of supply or organisations introduced by entrepreneurs.
+Q: Which thinker stressed risk-bearing under uncertainty? | Frank Knight.
+Q: What share of UK businesses are small and medium-sized enterprises? | Over 99%.
+Q: Roughly what share of UK private sector employment do SMEs provide? | Around three-fifths.
+Q: Which new firms create a large share of new jobs? | A small number of fast-growing firms; most new firms stay small or fail.
+Q: Tom builds an app selling cafés' surplus food. Why is this entrepreneurial in Schumpeter's sense? | It introduces a new combination, creating a new market.
 
 ## Opportunity recognition and the entrepreneurial mindset
 LV: Introductory · Application
@@ -85,6 +95,16 @@ M2#business-u09-02-q2@2: Why are people with industry experience more likely to 
 M3#business-u09-02-q3@3: An entrepreneur has a clever product idea but no evidence anyone will pay. What should she do first? | Test demand cheaply with potential customers | Rent premises and hire staff | Borrow a large bank loan | Launch a national advertising campaign | Testing demand before committing resources reduces risk.
 MATCH1#business-u09-02-q4@2: Match each change to the opportunity it might create. | Ageing population = Home care services ; Stricter recycling rules = Waste-reduction products ; Remote working = Collaboration software ; Rising energy prices = Insulation services | Change creates new needs.
 SA3#business-u09-02-q5@2,3: Evaluate the claim that entrepreneurs are born, not made. | Some traits, such as tolerance of uncertainty and proactivity, are associated with entrepreneurship and may be partly innate. But evidence on traits predicting success is mixed, and many entrepreneurial skills, such as opportunity testing, networking, financial planning and resilience, can be learned through education and experience. Context, resources and networks also shape who becomes an entrepreneur. | Traits evidence ; Mixed findings ; Learnable skills ; Context and resources
+Q: When does an idea become an opportunity? | Only when customers will pay and the venture can deliver profitably.
+Q: Besides Drucker's sources, what else creates openings for entrepreneurs? | Technological change, regulation, social trends such as sustainability, and customer frustrations.
+Q: How do people commonly recognise opportunities? | Through prior knowledge of a market or problem, and through networks.
+Q: What is prior knowledge in opportunity recognition? | Existing understanding of a market or problem that helps someone see an opportunity.
+Q: Name four questions for evaluating an opportunity. | Is there a real problem and paying customer, how large is the market, can an advantage be built, and are resources available?
+Q: How can an opportunity be tested cheaply? | With customer interviews or a simple prototype before full commitment.
+Q: What is self-efficacy? | Belief in one's ability to succeed at a task.
+Q: Which tendencies does research link with entrepreneurship? | Tolerating uncertainty, acting proactively, persisting after setbacks and self-efficacy.
+Q: Why are trait explanations of entrepreneurship limited? | No single personality defines entrepreneurs; context, resources and learning matter.
+Q: A nurse sees older patients struggling with home technology. What turns this into an opportunity? | Prior knowledge, a clear problem and evidence that families and care providers would pay.
 
 ## Effectuation and the lean start-up
 LV: Introductory · Application
@@ -126,6 +146,16 @@ M2#business-u09-03-q2@2: Which reasoning starts from the resources an entreprene
 M3#business-u09-03-q3@3: In which case is detailed upfront planning most necessary? | Developing a new medicine needing regulatory approval | Testing a new café menu | Launching a simple mobile app | Selling handmade cards online | Regulated, capital-intensive products cannot easily be tested in small, cheap steps.
 SEQ1#business-u09-03-q4@2: Order the lean start-up loop. | Build a minimum viable product ; Measure customer behaviour ; Learn from the data ; Decide to persevere or pivot | Each cycle tests an assumption and informs the next step.
 SA3#business-u09-03-q5@2,3: Compare effectual and causal approaches to starting a business. | Causal reasoning sets a goal, researches the market, writes a plan and acquires resources to reach it; it suits predictable markets. Effectual reasoning starts from available means, limits risk to affordable loss, builds partnerships and adapts goals to surprises; it suits uncertain, new markets. Many founders combine them, using experiments early and planning more as the venture matures. | Causal goal-first ; Effectual means-first ; Fit to uncertainty ; Combination
+Q: Who developed the idea of effectuation? | Saras Sarasvathy, from studying expert entrepreneurs.
+Q: How does causal reasoning differ from effectual reasoning? | Causal starts from a fixed goal and plans the means; effectual starts from available means and lets goals emerge.
+Q: What is the bird in hand principle? | Start with who you are, what you know and whom you know.
+Q: What is the crazy quilt principle? | Building partnerships and pre-commitments.
+Q: What is the lemonade principle in effectuation? | Using surprises rather than avoiding them.
+Q: What is the pilot in the plane principle? | Shaping the future rather than trying to predict it.
+Q: What is validated learning? | Replacing guesswork with evidence from customer behaviour.
+Q: What is a pivot? | A fundamental change to the business model, such as customer segment or revenue model, based on learning.
+Q: When do experimental approaches like the lean start-up suit best? | Under high uncertainty, where markets do not yet exist and forecasts are unreliable.
+Q: Why is it wrong to think an MVP is a poor-quality product? | It is the smallest test of a key assumption but must still deliver enough value to measure real behaviour.
 
 ## The business model canvas
 LV: Introductory · Application
@@ -171,6 +201,16 @@ M2#business-u09-04-q2@2: A printer is sold cheaply and profit comes from ink car
 M3#business-u09-04-q3@3: Which block would change most if a software firm moved from one-off licences to monthly subscriptions? | Revenue streams | Key partnerships | Customer segments | Channels | Changing how money is earned alters revenue streams, with knock-on effects on relationships.
 MATCH1#business-u09-04-q4@2: Match each element to the bike-subscription example. | Value proposition = Working bike with free repairs ; Revenue stream = Monthly fee ; Key resource = Fleet of bikes ; Key partner = Bike manufacturer | The canvas organises a model into clear blocks.
 SA3#business-u09-04-q5@2,3: Use the business model canvas to explain how a platform business such as a food delivery app creates value. | It serves two customer segments, diners and restaurants (plus couriers). Its value propositions are convenience and choice for diners and extra sales for restaurants. Channels are the app; key resources are the technology and network; key activities are matching orders and managing couriers. Revenue comes from commissions and delivery fees; costs include technology, marketing and courier payments. | Multiple segments ; Value for each ; Network resource ; Commission revenue ; Costs
+Q: How do Osterwalder and Pigneur define a business model? | The rationale of how an organisation creates, delivers and captures value.
+Q: What does the customer segments block describe? | The groups of people or organisations served.
+Q: What is a value proposition? | The bundle of benefits that solves customers' problems.
+Q: What does the channels block describe? | How the value proposition reaches customers.
+Q: What do the right and left sides of the canvas cover? | The right covers value and customers; the left covers efficiency and costs.
+Q: What is a platform business model? | One that connects two groups.
+Q: What is the razor and blades pattern? | A cheap product sold with profitable consumables.
+Q: How can two firms selling similar products have different business models? | One may sell products outright while another rents them by subscription.
+Q: In the bike-subscription canvas, what are the key resources? | Bikes and mechanics.
+Q: Why is filling in the canvas once a mistake? | Each block is a hypothesis to be tested and revised as the founder learns.
 
 ## The business plan
 LV: Introductory · Application
@@ -218,6 +258,16 @@ M2#business-u09-05-q3@3: Expected sales are 12,000 units and break-even is 10,00
 M3#business-u09-05-q4@2: Which is the main limitation of a start-up business plan? | Its forecasts are highly uncertain and may quickly date | It cannot include financial information | Banks never read business plans | It prevents the business from changing | New ventures face uncertainty, so plans must be revised as evidence emerges.
 SEQ1#business-u09-05-q5@2: Order the steps in a break-even calculation. | Identify fixed costs ; Find selling price and variable cost per unit ; Calculate contribution per unit ; Divide fixed costs by contribution | Contribution links price and variable cost to fixed costs.
 SA3#business-u09-05-q6@2,3: Evaluate the usefulness of a business plan to a new entrepreneur. | It forces the founder to research the market, think through operations and finances, set targets and identify risks, and it is usually needed to raise finance. But forecasts are uncertain, planning takes time, and a fixed plan may stop the founder adapting. It is most useful when treated as a living document and combined with testing. | Clarifies thinking ; Raises finance ; Uncertain forecasts ; Rigidity risk ; Living document
+Q: What does the executive summary of a business plan contain? | The venture in one page.
+Q: What does the market analysis section of a business plan cover? | Customers, market size, competitors and trends.
+Q: Which financial forecasts belong in a business plan? | Sales, profit and loss, a cash-flow forecast and break-even analysis.
+Q: What is the break-even formula in a business plan? | Fixed costs ÷ (selling price − variable cost per unit).
+Q: What is the margin of safety? | The amount by which expected sales exceed break-even output.
+Q: Name three uses of a business plan. | Thinking through the idea, setting targets, and persuading banks and investors.
+Q: When does research suggest business planning helps most? | When the plan is updated as the business learns, rather than written once and filed away.
+Q: A coffee sells for £3.00 with variable costs of £1.20. What is contribution per cup? | £1.80.
+Q: A coffee cart has fixed costs of £18,000 and contribution of £1.80. What is break-even? | 10,000 cups a year, about 40 a day over 250 trading days.
+Q: What should a business plan say about risks? | It should set out the risks and how they will be managed.
 
 ## Funding a start-up
 LV: Introductory · Application
@@ -262,6 +312,16 @@ M2#business-u09-06-q3@2: What is the main difference between business angels and
 M3#business-u09-06-q4@3: A founder wants to keep full control and grow slowly. Which source is most suitable? | Bootstrapping from savings and revenue | Venture capital | Equity crowdfunding | Selling half the shares to an angel | Bootstrapping avoids giving away ownership.
 MATCH1#business-u09-06-q5@2: Match each source to its main feature. | Bank loan = Repaid with interest ; Angel investment = Equity plus mentoring ; Reward crowdfunding = Customers pre-order ; Grant = Usually not repaid | Each source has distinct costs and conditions.
 SA3#business-u09-06-q6@1,3: Advise a technology start-up seeking £500,000 on the advantages and disadvantages of venture capital compared with a bank loan. | A bank loan keeps ownership but requires regular repayments, interest and often security, which is difficult without revenue or assets. Venture capital requires no repayment and brings expertise and contacts, suiting a risky, high-growth firm, but the founders give up equity and some control, and investors expect rapid growth and an exit. For a pre-revenue tech firm, VC or angels with SEIS or EIS are usually more realistic. | Loan keeps control ; Repayment burden ; VC no repayment ; Dilution and control ; Recommendation
+Q: What are the pros and cons of personal savings and bootstrapping? | They keep control but limit the speed of growth.
+Q: What is the risk of funding from friends and family? | It is flexible but can strain relationships.
+Q: What does the Start Up Loans scheme offer? | Small government-backed personal loans with mentoring.
+Q: Name a body that gives grants to start-ups. | Innovate UK, usually for specific projects.
+Q: What is venture capital? | Professionally managed funds invested in high-growth firms for equity, seeking a large return through a sale or flotation.
+Q: What two forms can crowdfunding take? | Rewards, such as pre-ordering a product, or equity.
+Q: What income tax relief do SEIS and EIS give investors, under rules from April 2023? | 50% for SEIS and 30% for EIS.
+Q: What does the British Business Bank do? | It supports finance markets for smaller firms.
+Q: An angel invests £100,000 for 20%. What is the post-investment value of the company? | £500,000.
+Q: What is the mistake in seeing equity finance as free money? | Founders give up a share of future profits and some control.
 
 ## Protecting ideas: intellectual property
 LV: Introductory · Application
@@ -306,6 +366,16 @@ M2#business-u09-07-q2@2: How long can a UK registered trade mark last? | Indefin
 M3#business-u09-07-q3@3: Why might a company keep its manufacturing process secret rather than patent it? | A patent requires public disclosure and expires, while a secret can last indefinitely | Secrets are always cheaper to defend in court | Patents cannot protect processes | Secrets give stronger legal protection than patents | Patenting reveals the invention; secrecy lasts as long as it is kept, though others may discover it independently.
 MATCH1#business-u09-07-q4@2: Match each asset to its main protection. | A new type of battery = Patent ; A company logo = Trade mark ; Software source code = Copyright ; The shape of a lamp = Registered design | Different rights protect different kinds of creation.
 SA3#business-u09-07-q5@3: Advise a start-up that has developed a new kitchen gadget on protecting its intellectual property. | Keep the invention confidential and use NDAs until a patent application is filed with the IPO; consider patenting the mechanism if it is new and inventive. Register the product's appearance as a design and the brand name and logo as trade marks after checking availability. Ensure the company owns work created by staff and contractors. Consider overseas protection in key markets and weigh costs against benefits. | Confidentiality ; Patent ; Design and trade mark ; Ownership ; Territorial and cost
+Q: What three tests must an invention meet to be patented? | It must be new, involve an inventive step and be capable of industrial application.
+Q: What must an inventor give up in exchange for a patent? | Public disclosure of the invention.
+Q: How long does UK trade mark registration last? | 10 years, renewable indefinitely.
+Q: What does a registered design protect, and for how long? | A product's appearance, for up to 25 years in five-year periods.
+Q: How long does copyright generally last for literary works? | The author's life plus 70 years.
+Q: How are trade secrets protected? | By confidentiality agreements and the law of confidence, for as long as they stay secret.
+Q: Which body grants registered IP rights in the UK? | The Intellectual Property Office.
+Q: Why is UK IP protection not enough for selling abroad? | Protection is territorial, so separate applications are needed abroad.
+Q: Name three ways a start-up can earn value from its IP. | It can attract investors, be licensed for income or be sold.
+Q: Why might some firms not rely on patents? | They can be expensive to obtain and enforce, so firms use secrecy, speed to market or strong brands.
 
 ## Small business support in the UK
 LV: Introductory · Application
@@ -349,6 +419,16 @@ M2#business-u09-08-q2@2: What does a business accelerator typically provide? | M
 M3#business-u09-08-q3@3: A sole trader begins employing two staff. Which new obligation applies? | Registering as an employer and operating PAYE | Registering at Companies House | Paying corporation tax | Publishing annual accounts | Employers must operate PAYE, pay National Insurance and hold employer's liability insurance.
 MATCH1#business-u09-08-q4@2: Match each organisation to its role. | Companies House = Registers companies ; HMRC = Collects taxes ; Innovate UK = Funds innovation ; Start Up Loans = Personal loans with mentoring | Each organisation supports or regulates new businesses.
 SA3#business-u09-08-q5@1,3: Compare operating as a sole trader with forming a limited company for a new business. | A sole trader is simple and cheap, with few formalities and private accounts, but has unlimited liability and may seem less established. A limited company limits liability, may be more tax-efficient at higher profits and can raise equity, but requires registration, annual accounts and confirmation statements, and public disclosure. The choice depends on risk, profits and growth plans. | Simplicity ; Liability ; Formalities ; Tax and finance ; Choice
+Q: What are the advantages of being a sole trader? | It is simple and cheap to set up, and the owner keeps the profits.
+Q: What is an LLP? | A limited liability partnership, which limits members' liability.
+Q: What are the drawbacks of a private limited company? | More filing duties and public accounts.
+Q: What is limited liability? | Owners can lose no more than the amount they invested.
+Q: Name the business support services in Scotland, Wales and Northern Ireland. | Business Gateway, Business Wales and Invest NI.
+Q: What do Growth Hubs provide? | Business support in England.
+Q: What is an accelerator? | A fixed-term programme offering mentoring, networks and often investment to start-ups.
+Q: Which taxes might a new business need to register for with HMRC? | Self-assessment, corporation tax, VAT above the threshold, and PAYE if it employs people.
+Q: What insurance is required when employing staff? | Employer's liability insurance.
+Q: Why did the web-design partners form a limited company? | To limit personal liability and appear more established as they won larger contracts and planned to hire.
 
 ## Types of innovation
 LV: Introductory · Application
@@ -392,6 +472,16 @@ M2#business-u09-09-q2@2: A car maker installs robots on its assembly line. Which
 M3#business-u09-09-q3@3: Why do established firms often struggle with architectural innovation? | Their knowledge is organised around the old way components fit together | They lack any technical knowledge | Architectural innovations are always very small | Customers refuse new architectures | Henderson and Clark showed that established firms' structures and knowledge reflect the old architecture.
 MATCH2#business-u09-09-q4@1: Match each example to the 4Ps. | Low-cost airline model = Paradigm ; New smartphone model = Product ; Online banking replacing branches = Process ; Repositioning an energy drink for sport = Position | The 4Ps classify what changes.
 SA3#business-u09-09-q5@2,3: Explain why a company should invest in both incremental and radical innovation. | Incremental innovation keeps current products competitive, improves efficiency and brings reliable returns at low risk. Radical innovation is risky and uncertain but can create new markets and protect the firm from disruption. Relying only on incremental change risks being overtaken; relying only on radical bets risks failure. A balanced portfolio spreads risk and supports both present and future performance. | Incremental benefits ; Radical potential ; Disruption risk ; Portfolio balance
+Q: What is product innovation? Give an example. | A change in what an organisation offers, such as a new phone.
+Q: What is position innovation? | A change in the context or market, such as repositioning a drink as a sports product.
+Q: What is paradigm innovation? Give an example. | A change in the underlying business model, such as low-cost airlines.
+Q: What is incremental innovation? | A small improvement to an existing product or process, with low risk and steady benefit.
+Q: What is radical innovation? | A major departure that creates new markets or makes old ones obsolete, with high risk and high potential reward.
+Q: What is architectural innovation? | Reconfiguring existing components in a new way, which can catch established firms out.
+Q: Who described architectural innovation, and when? | Henderson and Clark, in 1990.
+Q: Why do firms manage an innovation portfolio? | To combine many incremental improvements with a few riskier radical projects.
+Q: What type of innovation is a supermarket moving into online grocery delivery? | Position and paradigm innovation.
+Q: Why is it wrong to equate innovation only with high technology? | Service, process and business model innovations are just as important.
 
 ## Disruptive innovation
 LV: Introductory · Evaluation
@@ -433,6 +523,16 @@ M2#business-u09-10-q2@2: Why do incumbents often ignore disruptive innovations a
 M3#business-u09-10-q3@3: Why did Christensen and colleagues argue Uber was not a classic disruptive innovation? | It began by serving existing taxi customers with a service at least as good | It failed to attract any customers | It started in the luxury market only | It used no new technology | Disruption starts with overlooked customers and inferior products; Uber did not.
 TF1#business-u09-10-q4@2: In disruption theory, the disruptive product is usually better than incumbents' products when first launched. | false | It usually performs worse on traditional measures but is cheaper, simpler or more convenient.
 SA3#business-u09-10-q5@2,3: Evaluate the usefulness of disruptive innovation theory for managers. | It explains why successful firms can fail by doing what seems rational, and encourages managers to watch low-end and non-consumer markets and to create separate units to pursue disruptive ideas. However, it is often misapplied, it is easier to identify disruption in hindsight, and critics question its predictive power. It is best used as one lens among several. | Explains incumbent failure ; Practical responses ; Misuse ; Hindsight and prediction ; Balanced view
+Q: Who developed the theory of disruptive innovation? | Clayton Christensen.
+Q: How does a disruptive innovation usually start? | As a simpler, cheaper or more convenient product, worse on traditional measures, appealing to overlooked customers.
+Q: How does a disruptive product eventually displace incumbents? | It improves until it is good enough for mainstream customers, who then switch.
+Q: What is low-end disruption? | Serving the least demanding customers of an existing market with a cheaper product.
+Q: Give an example of low-end disruption. | Minimills in steel making.
+Q: Give an example of new-market disruption. | Personal computers for people who could not afford mainframes.
+Q: Which critic questioned how well disruption theory predicts outcomes? | Jill Lepore.
+Q: What did Christensen and colleagues argue in 2015 about the term disruption? | It is often misused for any successful new entrant.
+Q: Why did the video rental leader ignore postal DVD rental at first? | Its core customers wanted new releases immediately, so it saw little threat.
+Q: What is the mistake in calling every new technology disruptive? | Disruption has a specific path from overlooked customers to the mainstream.
 
 ## Diffusion of innovations
 LV: Introductory · Application
@@ -477,6 +577,16 @@ M2#business-u09-11-q3@2: A new farming technique gives visible results that neig
 M3#business-u09-11-q4@3: A start-up's gadget sells well to tech enthusiasts but stalls with businesses. What does Moore advise? | Target a specific niche with a complete, supported solution | Lower the price and target laggards first | Add more novel features for innovators | Stop selling to businesses entirely | Pragmatic buyers need a whole product and references from similar customers.
 MATCH1#business-u09-11-q5@1: Match each category to its share of adopters. | Innovators = 2.5% ; Early adopters = 13.5% ; Early majority = 34% ; Laggards = 16% | Rogers's categories are based on a normal distribution.
 SA3#business-u09-11-q6@2,3: Use Rogers's attributes to explain why some innovations spread faster than others, with an example. | Adoption is faster when an innovation has a clear relative advantage, fits existing habits and systems, is simple to use, can be tried on a small scale and has visible results. Smartphone apps spread quickly because they are cheap or free, easy to try and visible through sharing. Heat pumps have spread more slowly because of high upfront cost, compatibility issues with existing homes, complexity of installation and low visibility. | Relative advantage ; Compatibility ; Complexity ; Trialability and observability ; Contrasting examples
+Q: Who developed the adopter categories model of diffusion? | Rogers.
+Q: What percentage of adopters are innovators and laggards in Rogers's model? | Innovators 2.5% and laggards 16%.
+Q: What shape does cumulative adoption form over time? | An S-curve: slow at first, then rapid, then levelling off.
+Q: Why do early adopters matter to diffusion? | They are often opinion leaders whose example influences others.
+Q: What is relative advantage in diffusion? | How much better an innovation is than what it replaces.
+Q: What is compatibility in diffusion theory? | How well an innovation fits existing values, habits and systems.
+Q: How does complexity affect adoption? | Harder-to-understand products spread more slowly.
+Q: Who described the chasm in technology adoption? | Geoffrey Moore.
+Q: What does the early majority want from a technology product? | Proven, practical solutions with support.
+Q: How do public chargers help electric car adoption? | They increase observability, making the technology visible.
 
 ## Open innovation
 LV: Introductory · Application
@@ -519,6 +629,16 @@ M2#business-u09-12-q2@2: What is absorptive capacity? | A firm's ability to reco
 M3#business-u09-12-q3@3: Which is the main risk of open innovation? | Losing control of valuable intellectual property | Having too few ideas | Being unable to license technology | Higher internal research costs only | Sharing knowledge with partners can expose a firm's sources of advantage.
 MATCH2#business-u09-12-q4@1: Match each practice to its type. | Innovation challenge for outside inventors = Inbound ; Licensing out an unused patent = Outbound ; Joint venture to co-develop a product = Coupled ; Corporate venture capital in start-ups = Inbound | Open innovation flows in, out or both ways.
 SA3#business-u09-12-q5@2,3: Evaluate whether a small technology firm should adopt open innovation. | Benefits: access to ideas, expertise and markets it lacks, shared costs and faster development, and income from licensing its own technology. Risks: larger partners may take its IP, collaboration is time-consuming, and it may lack absorptive capacity. A small firm should protect core IP, use clear contracts and choose partners carefully, opening up where it gains most. | Access and speed ; Licensing income ; IP risk ; Capacity limits ; Selective openness
+Q: What is closed innovation? | Generating, developing and commercialising ideas internally and protecting them closely.
+Q: What are the drivers of open innovation? | Mobile skilled workers, venture capital, university research and digital collaboration.
+Q: Name three inbound open innovation practices. | Licensing in, partnering with universities and start-ups, crowdsourcing, innovation challenges and corporate venture capital.
+Q: What is coupled open innovation? | Co-development through alliances and joint ventures.
+Q: What is an extreme form of open innovation? | Open source software, with code shared freely.
+Q: What are the benefits of open innovation? | A wider pool of ideas, faster development and shared cost and risk.
+Q: What is a spin-off? | A new company created from an existing organisation's technology or project.
+Q: Name two problems open innovation raises. | Protecting IP, coordinating partners and building absorptive capacity.
+Q: What must firms decide when adopting open innovation? | What to keep closed as a source of advantage.
+Q: A firm licenses out a patented process it no longer uses. What type of open innovation is this? | Outbound.
 
 ## Design thinking
 LV: Introductory · Application
@@ -561,6 +681,16 @@ M2#business-u09-13-q2@2: What happens in each diamond of the Double Diamond? | T
 M3#business-u09-13-q3@3: Which criticism of design thinking is most common? | It can be applied superficially without deep research or follow-through | It ignores the people who use products | It never uses prototypes | It is only for graphic designers | Critics warn that workshop-style design thinking can lack rigour and implementation.
 SEQ1#business-u09-13-q4@2: Order the stages of design thinking. | Empathise ; Define ; Ideate ; Prototype ; Test | In practice teams loop back as they learn.
 SA3#business-u09-13-q5@2,3: Explain how design thinking could help a bank improve its mobile app for older customers. | Empathise by observing and interviewing older users to understand their difficulties and fears. Define the problem precisely, such as confusion over security steps. Ideate many solutions, then prototype simplified screens or guided set-up. Test with older users, measure success and iterate. This ensures changes address real needs, while checking feasibility and security constraints. | Empathy research ; Problem definition ; Ideation ; Prototyping and testing ; Constraints
+Q: What does human-centred mean in design thinking? | Starting from deep understanding of the people affected, their needs and experiences.
+Q: What three things does design thinking balance, according to Tim Brown? | What is desirable to people, feasible technically and viable commercially.
+Q: When did the Design Council introduce the Double Diamond? | In 2005.
+Q: What does the first diamond of the Double Diamond aim to find? | The right problem, through discover and define.
+Q: What does the second diamond aim to find? | The right solution, through develop and deliver.
+Q: What do diverge and converge mean in the Double Diamond? | Diverging opens up possibilities; converging narrows them down.
+Q: How do teams move through the stages of design thinking? | Not strictly in a line: they loop back as they learn.
+Q: What is a prototype? | An early, simple model of a solution used to test ideas.
+Q: Name two criticisms of design thinking. | It can be applied superficially as workshops, and can neglect technical, organisational and commercial constraints.
+Q: What problem was defined in the hospital waiting example? | Anxious patients do not know how long they will wait or what will happen next.
 
 ## Scaling a business
 LV: Introductory · Application
@@ -604,6 +734,16 @@ M2#business-u09-14-q2@2: In Greiner's model, which crisis follows the direction 
 M3#business-u09-14-q3@3: Which business is best placed to scale? | A software platform with low cost per extra user | A handmade furniture workshop | A hairdresser run by one stylist | A consultancy billing by the hour | Digital products can add customers with little extra cost.
 NUM2#business-u09-14-q4@2: A firm's turnover grows from £2.0m to £2.4m in a year. What is its growth rate, in %? | 20 | 0.5 | % | (2.4 − 2.0) ÷ 2.0 × 100 = 20%.
 SA3#business-u09-14-q5@2,3: Explain why many small firms struggle to scale, and how they can overcome these barriers. | Barriers include lack of growth finance, cash flow pressure from working capital, difficulty recruiting skilled staff and managers, founders who cannot delegate, and systems built for a small firm. Firms can raise equity or growth loans, manage cash tightly, hire experienced managers, invest in systems and processes, use partnerships or franchising, and seek support from programmes such as accelerators. | Finance ; Cash flow ; People and leadership ; Systems ; Solutions
+Q: What does scaling mean, compared with simple growth? | Increasing revenue without a proportional rise in costs, while simple growth may raise costs as fast as sales.
+Q: Name three ways firms can scale revenue faster than costs. | Technology, automation or network effects.
+Q: What did Greiner argue in 1972? | Organisations pass through phases of evolution separated by crises.
+Q: In Greiner's model, which crisis follows delegation? | A crisis of control.
+Q: In Greiner's model, which crisis follows coordination? | A crisis of red tape.
+Q: Which phase follows the crisis of red tape in Greiner's model? | Collaboration.
+Q: Name four strategies for scaling a firm. | New markets including exports, new products, partnerships, franchising, licensing and acquisitions.
+Q: Name three common barriers to scaling. | Finance for growth, recruiting skilled staff, leadership capability, cash flow strain and systems that cannot cope.
+Q: What sign suggests the bakery chain is heading for a crisis of autonomy? | Shop managers want more freedom to respond locally.
+Q: Why can rapid sales growth be dangerous? | It can drain cash and break systems if not managed.
 
 ## Social entrepreneurship
 LV: Introductory · Evaluation
@@ -646,4 +786,14 @@ M2#business-u09-15-q2@2: Which UK legal form was created specifically for social
 M3#business-u09-15-q3@3: A social enterprise wins a profitable contract that would require it to stop employing its target group. What is the risk? | Mission drift | Overtrading | Creative destruction | Absorptive capacity | Chasing income at the cost of purpose is mission drift.
 MATCH2#business-u09-15-q4@2: Match each term to its meaning. | CIC = Company with an asset lock ; B Corp = Private certification of social and environmental standards ; SROI = Social value per pound invested ; Double bottom line = Financial and social goals | Social enterprises use distinctive forms and measures.
 SA3#business-u09-15-q5@2,3: Evaluate whether social enterprises are a better way of tackling social problems than charities. | Social enterprises can be more financially sustainable, as trading income is less dependent on donations, and they can create jobs and dignity. But they may struggle to serve the poorest who cannot pay, face mission drift, and find it hard to compete with conventional firms. Charities can focus fully on need but depend on funding. Each suits different problems, and many organisations combine both. | Sustainability ; Jobs and dignity ; Limits and mission drift ; Charity strengths ; Context
+Q: What is a social enterprise? | A business that trades to achieve a social or environmental mission and reinvests most of its profits in it.
+Q: How does a social enterprise differ from a conventional business? | A conventional business aims mainly to return profit to owners.
+Q: Give two examples of social enterprises. | Firms employing people facing barriers to work, community-owned shops and energy schemes, and fair trade companies.
+Q: Which act created the community interest company? | The Companies (Audit, Investigations and Community Enterprise) Act 2004.
+Q: Who oversees CICs? | The CIC Regulator.
+Q: What is B Corp certification? | A private label for companies meeting standards of social and environmental performance and accountability.
+Q: What is the double bottom line? | The need to earn enough to survive while delivering a social mission.
+Q: What is social return on investment? | An estimate of the social value created per pound invested.
+Q: Why must SROI figures be treated with care? | They rely on assumptions.
+Q: What do social enterprises do with their surpluses? | They must make surpluses but reinvest them mainly in their mission.
 `;

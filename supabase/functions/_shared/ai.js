@@ -25,9 +25,17 @@ export const CONVERSATION_MODES = ["roleplay", "socratic", "examiner"];
 const day = (iso) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "Europe/London" }) : null);
 const plural = (f, n) => (LABEL[f] ? LABEL[f][n === 1 ? 0 : 1] : "uses");
 
+/** When the fair-use spend resets: the 1st of next month, 00:00 UTC. ai_user_month_spend_pence counts from
+ * date_trunc('month', now()) in the database's time zone (UTC on Supabase), not from the learner's billing period. */
+export function fairUseResetsAt(now = Date.now()) {
+  const d = new Date(now);
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString();
+}
+
 /** The learner-facing answer when a claim is refused. */
-export function refusal(claim, mode) {
-  const feature = FEATURE_OF[mode] ?? null, resetsAt = claim.period_end ?? null, on = day(resetsAt);
+export function refusal(claim, mode, now = Date.now()) {
+  // allowances reset with the learner's period; the fair-use cap resets with the calendar month
+  const feature = FEATURE_OF[mode] ?? null, resetsAt = claim.reason === "fair_use" ? fairUseResetsAt(now) : claim.period_end ?? null, on = day(resetsAt);
   const base = { reason: claim.reason, feature, plan: claim.plan ?? null, used: claim.used ?? 0, allowance: claim.allowance ?? 0, resetsAt, upgrade: false };
   switch (claim.reason) {
     case "signed_out": return { status: 401, body: { ...base, error: "Please sign in to use Gradify AI." } };
@@ -36,7 +44,8 @@ export function refusal(claim, mode) {
     case "budget": return { status: 503, body: { ...base, error: "Gradify AI is taking a short break. Please try again later." } };
     case "busy": return { status: 503, body: { ...base, error: "Gradify AI is busy right now. Please try again in a minute." } };
     case "rate": return { status: 429, body: { ...base, error: "That's a lot of requests in a short time. Wait a minute, then try again." } };
-    case "fair_use": return { status: 429, body: { ...base, error: `You've reached this month's fair-use limit for Gradify AI.${on ? ` It resets on ${on}.` : ""}` } };
+    // refused when this request's worst case doesn't fit what's left of the cap, so the learner may be just under it
+    case "fair_use": return { status: 429, body: { ...base, error: `This request would go over this month's fair-use limit for Gradify AI. A shorter request may still fit.${on ? ` The limit resets on ${on}.` : ""}` } };
     case "conversation_long": return { status: 429, body: { ...base, error: "This conversation has reached its length limit. Start a new one to keep going." } };
     case "allowance": {
       const n = claim.allowance ?? 0, free = claim.plan !== "pro";

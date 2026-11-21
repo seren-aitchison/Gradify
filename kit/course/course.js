@@ -34,7 +34,9 @@ import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { hydrateDiagrams } from "../diagrams/visual.js";
-import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
+import { diagramsFor, diagramForCard, glassDiagram, minisFor, miniCard, DIAGRAM_KINDS } from "../core/glass-diagrams.js";
+import { haptic } from "../core/haptics.js";
+import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -1130,7 +1132,30 @@ export function mountCourse(root, cfg) {
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
   // the notes carry no auto-generated glass diagrams: a lesson's diagrams are the checked teaching diagrams it places
-  // itself with D: lines (kit/diagrams). Glass diagrams remain on flashcard backs and in mind maps.
+  // itself with D: lines (kit/diagrams). What the glass cards (kit/core/glass-diagrams.js) still do in a lesson is
+  // practice: the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, evidence, recall)
+  // open its Recap, covered, so the Recap is a chance to recall rather than reread; and the small cards (Quick
+  // check, Numbers to know, Fill the gap) close the sections. Glass diagrams also stay on flashcard backs and mind maps.
+  const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
+  // each card's key (course, lesson, card) is how it remembers, on this device, what the learner has practised on it
+  // worked out once for a lesson's notes: the placement, the Recap and the Quick checks all use the same five
+  const cardsMemo = new WeakMap();
+  const lessonCards = (N, lid) => {
+    const m = cardsMemo.get(N); if (m?.lid === lid) return m.v;
+    const ds = diagramsFor(N, { max: 3, skip: DIAGRAM_KINDS.filter((k) => !RECAP_KINDS.has(k)) });
+    const v = ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.id}` } }));
+    cardsMemo.set(N, { lid, v });
+    return v;
+  };
+  const recapDiagrams = (N, lid) => lessonCards(N, lid).filter((x) => x.recap);
+  const lessonDiagrams = (N, lid) => {
+    // the small cards (Quick check, Numbers to know, Fill the gap), never asking a question the Recap asks too
+    // the Recap's Test yourself card asks the lesson's first questions (diagramsFor): those exact questions, in full
+    const recallQs = lessonCards(N, lid).some((x) => x.d.kind === "recall") ? N.cards.slice(0, 4).map(([q]) => q) : [];
+    const minis = new Map(); for (const m of minisFor(N, { skipQ: recallQs })) minis.set(m.at, [...(minis.get(m.at) || []), m]);
+    return lessonHtml(N, { after: (i) => (minis.get(i) || []).map((m) => miniCard(m, { key: `${cfg.slug}:${lid}:${m.kind}-${m.at}` })).join("") });
+  };
+  const recapHtml = (N, lid) => { const xs = recapDiagrams(N, lid); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -1309,19 +1334,7 @@ export function mountCourse(root, cfg) {
     }
     const secLink = (e) => { const b = e.target.closest("[data-seclink]"); if (b) copyLink(`${location.pathname}#/lesson/${id}/${b.dataset.seclink}`, "Link to this section copied"); };
     main.addEventListener("click", secLink);
-    // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
-    const zoom = (e) => {
-      const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
-      const box = Object.assign(document.createElement("div"), { className: "gd-zoom", role: "dialog", ariaModal: "true", ariaLabel: fig.querySelector("svg")?.getAttribute("aria-label") || "Diagram" });
-      box.innerHTML = `<div class="gd-zoomin" style="${fig.getAttribute("style")}">${fig.querySelector(".gd-pane").innerHTML}${fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""}</div><button type="button" class="gd-zoomx" aria-label="Close">×</button>`;
-      const close = () => { box.remove(); removeEventListener("keydown", key); fig.focus?.(); };
-      const key = (k) => { if (k.key === "Escape") close(); };
-      box.addEventListener("click", (k) => { if (k.target === box || k.target.closest(".gd-zoomx")) close(); });
-      addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
-    };
-    main.addEventListener("click", zoom);
     hydrateDiagrams(main);
-    main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
     // ← → B F S N and the rest are registered once, with the shared shortcuts (see "keyboard shortcuts" below)
     curPN = { prev, next };
     // the rail's Complete button does what the lesson's own does
@@ -1329,7 +1342,7 @@ export function mountCourse(root, cfg) {
     side.addEventListener("click", railGo);
     addEventListener("scroll", soon, { passive: true }); addEventListener("resize", soon);
     soon();
-    readStop = () => { cancelAnimationFrame(raf); removeEventListener("scroll", soon); removeEventListener("resize", soon); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    readStop = () => { cancelAnimationFrame(raf); removeEventListener("scroll", soon); removeEventListener("resize", soon); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); document.querySelector("dialog.gd-zoom")?.close(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
   // revision notes: the lesson's key ideas on one page (what you can now do, the summary, key terms, its sections),
   // made from the lesson's own notes, so they're never out of step with it
@@ -1481,7 +1494,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonHtml(N)}</div>${F.end ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
           ${nQ ? `<a class="cx-kc" href="#co-check" data-jump="co-check"><span>${ic("target")}</span><b>Check yourself</b><small>${nQ} question${nQ > 1 ? "s" : ""}</small></a>` : ""}
@@ -1511,7 +1524,7 @@ export function mountCourse(root, cfg) {
     addSave(main.querySelector(".cx-lact .cx-save"));
     scrollTo(0, 0);
     // diagrams after the first fold to one line each ("Show diagram: …"), so the reading is a few screens, not twenty
-    main.querySelectorAll(".co-notes .gd").forEach((g, k) => {
+    main.querySelectorAll(".co-notes .gd:not(.gd-mini):not(.co-recap .gd)").forEach((g, k) => {
       if (k === 0 || g.closest("details")) return;
       const cap = [...(g.querySelector("figcaption")?.children || [])].map((x) => x.textContent.trim()).filter(Boolean);
       const label = [...new Set(cap)].join(": ") || "Diagram";
@@ -1861,8 +1874,16 @@ export function mountCourse(root, cfg) {
   const weakLink = () => { const n = weakTargets().length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/weak"><span>Target my weaknesses (${n})</span></a>` : ""; };
   const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
 
+  const RATE = ["again", "hard", "good", "easy"];
+  const SURE = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], ["guess", "No idea", "L"]];
+  let reviewCtl = null;   // the Review session in progress: its keys and clicks stop when another starts or the page moves on
   async function viewReview() {
-    await reviewPool(); paintHud();
+    reviewCtl?.abort();
+    const ctl = reviewCtl = new AbortController();
+    addEventListener("hashchange", () => ctl.abort(), { once: true, signal: ctl.signal });
+    await reviewPool();
+    if (ctl.signal.aborted) return;   // left (or re-rendered) while the notes loaded
+    paintHud();
     const due = shuffle(dueCards()).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
     if (!due.length) {
@@ -1872,23 +1893,72 @@ export function mountCourse(root, cfg) {
         actions: [nl ? { label: total ? "Continue learning" : "Study a lesson to get cards", href: `#/lesson/${nl.id}`, primary: true } : null, { label: "Open the syllabus", href: "#/learn" }].filter(Boolean) })}<p class="co-row">${revisitLink()}</p></div>`;
       return;
     }
-    let k = 0, done = 0;
-    const step = () => {
-      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
-      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st);
-      main.innerHTML = `<div class="co-review"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(byId[c.lesson].title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
-        <button class="co-card3d big"><span class="f"><div>${inline(c.front)}</div><small>Tap or press space to reveal</small></span><span class="b"><div>${inline(c.back)}</div></span></button>
-        <div class="co-rate" hidden>${["again", "hard", "good", "easy"].map((r) => `<button data-r="${r}" class="${r}"><b>${r[0].toUpperCase() + r.slice(1)}</b><small>${fmtInterval(pv[r])}</small></button>`).join("")}</div></div>`;
-      const card = main.querySelector(".co-card3d"), rate = main.querySelector(".co-rate");
-      card.onclick = () => { card.classList.add("flip"); rate.hidden = false; };
-      rate.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
-        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; done++; k++;
-        // the rating is evidence too: recall, and retention once the card comes back after a gap
-        const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[b.dataset.r];
-        record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: b.dataset.r });
-        award(XP.review, "review", c.id); step();
-      }));
+    // The study app's Liquid Glass card (kit/styles/flashcards.css): say how sure you are, or type an answer, then see
+    // the answer and rate it. Scheduling (kit/learning/srs.js), the attempt record and XP are as before.
+    // sure: the "How sure are you?" answer, recorded with the rating as in the study app (kit/app/main.js), so
+    // confident wrong answers show up in calibration; t0: when this card was shown, for the time taken
+    let k = 0, done = 0, shown = false, attempt = "", grade = null, sure = null, t0 = Date.now(), at = Date.now();
+    const CONFIDENCE = { sure: 3, unsure: 2, guess: 1 };
+    const plain = (s) => String(s).replace(/\^\{([^}]*)\}|_\{([^}]*)\}/g, "$1$2").replace(/[*`]/g, "");
+    const reveal = (how = null) => {
+      if (shown || k >= due.length) return;
+      sure = how; at = Date.now();   // the intervals shown on the rating buttons are worked out at the reveal
+      attempt = main.querySelector("#co-typed")?.value ?? attempt;
+      grade = gradeTyped(attempt, plain(due[k].back));
+      shown = true; step();
+      main.querySelector(".rate4")?.focus();   // the group, not a button, so a held Enter can't press Again
     };
+    const rate = (r) => {
+      if (!shown || !RATE.includes(r)) return;
+      haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
+      const c = due[k], st = S.cards[c.id] || {};
+      // scheduled from the rating itself, so a card left open a while is never already due when rated
+      S.cards[c.id] = { ...st, ...schedule(st, r) }; done++; k++;
+      // the rating is evidence too: recall, and retention once the card comes back after a gap
+      const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[r];
+      record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r, confidence: CONFIDENCE[sure] ?? null, ms: Date.now() - t0 });
+      award(XP.review, "review", c.id);
+      shown = false; attempt = ""; grade = null; sure = null; t0 = Date.now(); step();
+    };
+    const step = () => {
+      if (k >= due.length) { ctl.abort(); main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
+      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st, { now: at }), l = byId[c.lesson];
+      main.innerHTML = `<section class="co-revsess study-session"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(l.title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
+        <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
+          <span class="fc-icon" data-g3d="${esc(`${c.front} ${l.title}`)}" data-g3d-size="58"></span>
+          <span class="kicker">${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}${S.cards[c.id] ? "" : " · new"}</span>
+          <p class="fc-front">${inline(c.front)}</p>
+          ${shown ? "" : `<label class="fc-type"><span class="sr-only">Type your answer (optional)</span><input id="co-typed" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="Type your answer, or just think it" value="${esc(attempt)}"></label>`}
+          ${shown && grade ? `<div class="fc-typed v-${grade.verdict}" role="status"><b>${VERDICT_TEXT[grade.verdict]}</b><span>You typed “${esc(attempt)}”</span></div>` : ""}
+          ${shown ? `<p class="fc-back">${inline(c.back)}</p>` : ""}
+        </article>
+        ${shown ? `<div class="rate4" role="group" tabindex="-1" aria-label="How well did you know it?">${RATE.map((r, i) => `<button type="button" class="r-${r}${grade?.suggest === r ? " suggested" : ""}" data-r="${r}"${grade?.suggest === r ? ' aria-describedby="co-suggest"' : ""}><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(pv[r])}</span><kbd>${i + 1}</kbd></button>`).join("")}${grade ? `<p class="suggest-note" id="co-suggest">Suggested from what you typed</p>` : ""}</div>`
+          : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
+              <span class="sure-q">How sure are you?</span>
+              ${SURE.map(([id, label, key]) => `<button type="button" data-sure="${id}" class="sure-${id}"><b>${label}</b><kbd>${key}</kbd></button>`).join("")}
+              <button type="button" class="sure-skip" data-reveal>Just show me <kbd>Space</kbd></button>
+            </div>`}
+      </section>`;
+      glassIcons(main, cfg.site).catch(() => {});
+    };
+    main.addEventListener("click", (e) => {
+      if (!shown) attempt = main.querySelector("#co-typed")?.value ?? attempt;
+      if (e.target.closest("[data-reveal]")) return reveal();
+      const s = e.target.closest("[data-sure]"); if (s) { haptic("tap"); return reveal(s.dataset.sure); }
+      const r = e.target.closest("[data-r]"); if (r) rate(r.dataset.r);
+    }, { signal: ctl.signal });
+    addEventListener("keydown", (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (document.querySelector(".co-modal")) return;   // a level-up dialog is open: its buttons have the keyboard
+      if (e.isComposing || e.keyCode === 229) return;    // an input method is still composing (its Enter picks a word)
+      // Enter and Space on a link or button activate it (a sure button reveals with its answer, the lesson link opens)
+      if ((e.key === " " || e.key === "Enter") && e.target.closest?.("a, button, summary")) return;
+      // typing an answer: Enter turns the card over and grades it
+      if (e.target.closest?.("input, textarea, select")) { if (!shown && e.key === "Enter" && e.target.id === "co-typed") { e.preventDefault(); reveal(); } return; }
+      const how = SURE.find(([, , key]) => key.toLowerCase() === e.key.toLowerCase());
+      if (!shown && (e.key === " " || e.key === "Enter" || how)) { e.preventDefault(); reveal(how ? how[0] : null); }
+      else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATE[+e.key - 1]);
+    }, { signal: ctl.signal });
     step();
   }
 

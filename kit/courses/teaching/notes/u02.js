@@ -48,6 +48,16 @@ M2#teaching-u02-01-q2@2: Rosenshine drew on studies observing the teachers whose
 M3#teaching-u02-01-q3@3: A school observes trainees against all ten principles in every 50-minute lesson. What is the strongest criticism? | The principles describe teaching over time, so one lesson need not show all ten | The principles are not based on research | Observation can never judge teaching | Rosenshine said the principles apply only to primary schools | Weekly and monthly review, for example, cannot happen in every lesson, and a lesson may focus on some stages. The principles are research-based and not limited to primary.
 SEQ2#teaching-u02-01-q4@1: Put these principles in the order they typically occur when teaching new material. | Review previous learning ; Present new material in small steps ; Provide models ; Guide pupil practice ; Require independent practice | Rosenshine's principles move from review, through small steps and models, to guided and then independent practice.
 SA3#teaching-u02-01-q5@1,3: Evaluate Rosenshine's Principles of Instruction as a model for teaching in your subject. | Strengths: they combine three converging research traditions, align with cognitive load theory, and give a clear progression from review and modelling to independent practice and spaced review. They suit teaching new, well-structured content to novices. Limitations: they are less directly supported for open-ended or creative tasks, can be misused as a checklist, and say less about motivation or discussion. Good answers illustrate with a subject example and reach a judgement. | Names several principles accurately ; Explains the research basis ; Gives a subject example ; Identifies a limitation or misuse ; Reaches a balanced judgement
+Q: In which year was Rosenshine's Principles of Instruction published, and in which journal? | 2012, in American Educator.
+Q: What does the cognitive science strand of Rosenshine's research cover? | How the brain acquires and uses information, including the limits of working memory.
+Q: What did the process-product studies behind the principles observe? | What the teachers whose classes made most progress actually did.
+Q: How did the three research traditions behind the principles relate to each other? | They pointed to the same practices.
+Q: State Rosenshine's principle 2. | Present new material in small steps, with pupil practice after each step.
+Q: State Rosenshine's principles 7 and 8. | Principle 7: obtain a high success rate. Principle 8: provide scaffolds for difficult tasks.
+Q: What pattern do the ten principles describe taken together? | Review, small steps, many questions, models, guided practice, checks, high success, scaffolds, independent practice and regular review, moving pupils from new material to fluent, independent use.
+Q: For which kind of content are the principles most clearly supported? | Teaching well-defined content to novices; Rosenshine noted they apply most to well-structured tasks.
+Q: In the Year 7 filtration lesson, which principles does the mini-whiteboard question after each step serve? | Principles 2, 3 and 6: small steps, questioning all pupils and checking understanding.
+Q: What common mistake is made when using the principles in lesson observation, and why is it wrong? | Requiring every principle in every lesson as a checklist; the principles describe teaching over time, so a single lesson may emphasise only some.
 
 ## Explicit instruction and its critics
 LV: Intermediate · Evaluation
@@ -90,6 +100,16 @@ M2#teaching-u02-02-q2@2: Why do Kirschner, Sweller and Clark argue minimal guida
 M3#teaching-u02-02-q3@3: Which statement about productive failure is most accurate? | It involves problem-solving before instruction but still ends with explicit teaching of the solution | It shows that pupils learn best when they are given no instruction at all on the topic | It shows explicit instruction always harms understanding | It applies only to pupils with special educational needs who need extra time | Kapur's design pairs an initial attempt with later explicit instruction; it is about sequence, not abandoning teaching.
 TF2#teaching-u02-02-q4@1: Explicit instruction means the teacher talks for most of the lesson while pupils listen. | false | Explicit instruction is interactive: short explanations, many questions, models and guided practice.
 SA3#teaching-u02-02-q5@2,3: Evaluate the claim that explicit instruction is always better than enquiry-based learning. | Evidence strongly favours explicit, guided instruction for novices learning new material (Kirschner, Sweller and Clark; Mayer; Project Follow Through), because minimal guidance overloads working memory. But "always" is too strong: as expertise grows, guidance can become redundant; productive failure suggests attempting problems before instruction can sometimes deepen understanding; and enquiry can be valuable once pupils have the knowledge to enquire with. The best answer is sequencing: explicit teaching first, with structured enquiry later. | Defines explicit instruction ; Cites evidence for it with novices ; Raises expertise reversal or productive failure ; Notes the role of enquiry later ; Reaches a balanced judgement
+Q: How does the lesson define explicit instruction, with its authors? | A structured, systematic approach where the teacher sets clear goals, explains and models in small steps, checks understanding, guides practice and gradually transfers responsibility to pupils (Archer and Hughes, 2011).
+Q: What phrase sometimes summarises explicit instruction? | I do, we do, you do.
+Q: Why is explicit instruction not the same as lecturing? | It is highly interactive, with frequent questions and practice.
+Q: What did Kirschner, Sweller and Clark (2006) conclude about minimal guidance, and why? | It is less effective for novices than guided instruction, because it overloads working memory.
+Q: What did Mayer (2004) conclude from decades of studies on discovery learning? | Pure discovery was consistently less effective than guided discovery.
+Q: What did Project Follow Through (1968 to 1977) find about Direct Instruction? | Engelmann's Direct Instruction model was among the most effective for basic skills.
+Q: What does the ITTECF Standard 4 say about explicitly teaching pupils knowledge and skills? | Explicitly teaching the knowledge and skills pupils need to succeed within particular subjects is beneficial; guides, scaffolds and worked examples help them apply new ideas.
+Q: What did Kapur's research on productive failure find? | In some conditions, letting pupils attempt problems before instruction, then teaching the canonical solution, improved conceptual understanding.
+Q: What is the expertise reversal effect, as a criticism of explicit instruction? | Experts and older pupils may benefit from less guidance.
+Q: Why is the debate between explicit instruction and enquiry often about timing rather than either-or? | Productive failure still ends with explicit instruction, and enquiry can work well once pupils have the knowledge to enquire with.
 
 ## Daily, weekly and monthly review
 LV: Introductory · Application
@@ -130,6 +150,16 @@ M2#teaching-u02-03-q2@3: A trainee's starter asks "Who can remember what we did 
 M3#teaching-u02-03-q3@2,3: A review shows that most pupils have forgotten the prerequisite for today's new topic. What should the teacher do? | Reteach the prerequisite briefly before introducing the new material | Introduce the new topic as planned and hope pupils catch up | Set the new topic as homework instead | Note the result and review it at the end of term | New learning depends on prior knowledge; a brief reteach now prevents overload and misconceptions later.
 TF2#teaching-u02-03-q4@1: Weekly and monthly review mainly helps by reducing forgetting and connecting ideas into larger schemas. | true | Spaced review counters the forgetting curve and links content over time.
 SA2#teaching-u02-03-q5@2,3: Plan a five-minute lesson-opening review for a lesson you might teach and justify its design. | A good plan names the lesson, includes several short questions answered by every pupil (written or mini-whiteboards), targets prerequisites for today plus one or two older items, includes a quick check of answers with correction, and states what the teacher will do if many pupils struggle. Justification refers to retrieval, spacing and activating prior knowledge. | Targets prerequisites for the lesson ; Every pupil retrieves ; Includes older material ; Plans feedback and a response to gaps ; Justifies with retrieval or spacing
+Q: How long did effective teachers' lesson-opening reviews last, according to Rosenshine (2012)? | Five to eight minutes.
+Q: What does daily review do for recently learned material and prerequisites? | It strengthens recent material, helps it become fluent, and brings prerequisite knowledge into working memory.
+Q: What do weekly and monthly reviews counter, and what do they help pupils build? | They counter forgetting and help pupils connect ideas into larger schemas.
+Q: Which two learning strategies make review effective? | Retrieval and spacing, both well evidenced (Dunlosky et al., 2013).
+Q: What information does a review give the teacher? | If pupils cannot recall last lesson's key idea, today's new material may need to wait.
+Q: How should every pupil answer in a good review, rather than volunteers only? | Through written quizzes or mini-whiteboards.
+Q: What should a review focus on, and how long should it be? | Prerequisites for today and core knowledge, not trivia; five to ten minutes so new learning still has time.
+Q: Why should a good review be mixed, and what should follow it? | It combines last lesson with older material; errors are then corrected and material briefly retaught if many pupils struggle.
+Q: Name three forms weekly and monthly review can take. | Cumulative quizzes, homework revisiting earlier topics, and extended tasks combining several ideas.
+Q: Why is asking 'What did we do last lesson?' of one volunteer a poor review? | It checks one pupil's memory and gives everyone else nothing to retrieve.
 
 ## Presenting new material in small steps
 LV: Introductory · Application
@@ -171,6 +201,16 @@ M2#teaching-u02-04-q2@2: When teaching long division for the first time, which a
 M3#teaching-u02-04-q3@3: After a step, 25 of 30 pupils get the check question wrong. What is the most likely cause and response? | The step was too large or unclear; re-explain in smaller parts and check again | Pupils weren't trying; move on and set a detention | The question was too hard; remove it from future lessons | Pupils need more independent practice of the next step | Widespread failure signals a teaching problem; re-explain with a smaller step before moving on.
 TF2#teaching-u02-04-q4@1,2: Once a skill has been broken into steps, pupils never need to practise the whole task. | false | Steps must be recombined; pupils need practice of the whole task as well as its parts.
 SA3#teaching-u02-04-q5@2,3: Break a skill from your subject into a sequence of small steps, and explain how you would check each step and decide when to move on. | A good answer names a skill, identifies the end point, lists the components in a sensible order from prerequisite to combined task, plans a quick whole-class check after each step, and uses the results to re-explain or move on, adjusting step size to pupils' prior knowledge, ending with practice of the whole task. | Names a skill and its end point ; Gives a logical sequence of steps ; Plans checks after each step ; Explains decisions based on success rate ; Includes recombining into the whole task
+Q: Why do effective teachers avoid presenting large amounts of new content at once? | They taught one point, checked and practised it, then built on it, because working memory limits what pupils can process.
+Q: What does the ITTECF Standard 4 say about breaking complex material into smaller steps? | It can help pupils learn, for example by using partially completed examples to focus pupils on the specific steps.
+Q: List the stages of breaking content down, starting with the end point. | Identify the end point, list the components, order them, plan a check after each step, and adjust step size.
+Q: In what order should the components of a task be arranged for teaching? | Prerequisite first, simple before complex, isolated before combined.
+Q: How should step size be adjusted for different pupils? | Larger steps for confident pupils, smaller steps for those who struggle.
+Q: What is task analysis? | Breaking a complex task into its component knowledge and sub-skills and ordering them for teaching.
+Q: In the Year 10 PEE example, what is pupils' job in step 2? | Choose a short quotation that supports the point, selecting from three options and justifying the choice.
+Q: What mistake can follow breaking a skill into steps, and what is the remedy? | Never recombining the steps leaves them as fragments; pupils also need practice of the whole task.
+Q: How do you judge whether a step is the right size? | It is right if most pupils can succeed after explanation and a little practice.
+Q: What does it mean if everyone finds a step trivial? | The step can be bigger.
 
 ## Modelling and thinking aloud
 LV: Introductory · Application
@@ -213,6 +253,16 @@ M2#teaching-u02-05-q2@2: Which is the most effective way to model writing a pers
 M3#teaching-u02-05-q3@3: In the "we do" stage, most pupils are making the same error. What should the teacher do? | Return briefly to modelling that step, then continue guided practice | Move to independent practice so pupils learn from mistakes | Give the class the answers to copy | Skip that step in the task | Widespread errors mean pupils aren't ready for release; re-model the step before reducing support.
 TF2#teaching-u02-05-q4@1: Deliberately making and correcting an error while modelling can help pupils learn how experts check their work. | true | Showing how an expert notices and fixes errors models monitoring as well as performance.
 SA2#teaching-u02-05-q5@2,3: Plan an "I do, we do, you do" sequence for a task in your subject, explaining what you would say while modelling. | A good plan names a task; for "I do", describes a live model with specific think-aloud statements revealing decisions and checks; for "we do", describes how pupils contribute and the teacher corrects, with a check of accuracy; for "you do", describes an independent task with the model visible and monitoring. It explains that support is withdrawn as accuracy rises. | Names a task ; Gives specific think-aloud statements ; Describes a guided stage with correction ; Describes independent practice with monitoring ; Links release to accuracy
+Q: What does Rosenshine's fourth principle say? | Provide models.
+Q: Which two ideas explain why modelling helps pupils learn complex tasks? | Bandura's (1977) social learning theory, that people learn by observing others, and the worked example effect, that novices learn procedures better from examples.
+Q: Why are experts' decisions often invisible to pupils? | Experts often do a task automatically, so the decisions behind it are not seen.
+Q: What is cognitive apprenticeship (Collins, Brown and Newman, 1989)? | Teachers externalise their thinking so pupils can see the strategies, checks and choices behind expert performance.
+Q: What should the model reveal, according to the key idea? | The decisions behind the work, not just the finished product.
+Q: Why should a model be built live rather than shown finished? | Pupils see the process being built in front of them, on a visualiser or board, rather than only the product.
+Q: What should a teacher narrate while modelling? | Each decision and why other options were rejected.
+Q: Who described gradual release of responsibility, and what does it involve? | Pearson and Gallagher (1983): moving from teacher modelling to shared guided work to independent work.
+Q: What happens in the 'we do' stage? | Pupils contribute while the teacher guides and corrects, withdrawing support as accuracy grows.
+Q: Why is showing only a finished exemplar a pitfall? | Novices see the product but not the process, so they cannot work out how it was made.
 
 ## Worked examples and faded guidance
 LV: Intermediate · Application
@@ -253,6 +303,16 @@ M2#teaching-u02-06-q2@2: Which sequence uses backward fading? | Full example, th
 M3#teaching-u02-06-q3@3: After two completion problems, a third of the class still can't finish the final step. What is the best response? | Keep fuller examples for that group while others move on to more faded problems | Move the whole class on to independent problems to keep the pace up | Return the whole class to full worked examples until everyone is secure | Give the struggling group answers to copy | Fading should respond to pupils' readiness; adaptive support keeps the transition smooth for each group.
 MATCH2#teaching-u02-06-q4@1: Match each stage of a faded sequence to what pupils do. | Full worked example = Study every step and its explanation ; Completion problem = Finish the last step ; More faded example = Complete most of the solution ; Independent problem = Solve the whole problem | Each stage shifts more of the problem to the pupil.
 SA3#teaching-u02-06-q5@2,3: Design a faded sequence for teaching a procedure in your subject and explain how you would decide when to remove each step. | A good answer names a procedure and shows a full worked example, a completion problem with the last step removed, a more faded example and an independent problem. It explains using whole-class checks (mini-whiteboards, hinge questions) at each stage, moving on when most pupils succeed, and keeping fuller examples for pupils who still need them, referring to the expertise reversal effect or cognitive load. | Names a procedure ; Shows a full example ; Shows at least two faded stages ; Explains checks to decide progression ; Links to load or expertise reversal
+Q: What did Renkl and colleagues (2002) show about fading worked examples? | Gradually fading the steps gave better learning than switching abruptly from examples to problems.
+Q: What is the expertise reversal effect, as it applies to worked examples? | As pupils gain expertise, full worked examples become redundant.
+Q: How does forward fading differ from backward fading? | Forward fading removes the first step first; backward fading removes the last step first.
+Q: Why has backward fading often worked well? | Pupils start by completing only a small part of a familiar solution.
+Q: What is a completion problem? | A partly worked example that the learner finishes.
+Q: Put the stages of a faded sequence in order. | Full worked example, completion problem, more faded problem, then independent problem, with a check at each stage.
+Q: When should the teacher move to the next stage of a faded sequence? | When most pupils succeed; fuller examples stay available for those who need them.
+Q: What can support pupils in the independent problem stage? | A prompt card may be available.
+Q: In the 3x + 5 = 20 example, what is the first step of the full worked example? | Subtract 5 from both sides, giving 3x = 15.
+Q: What goes wrong when a teacher moves from one worked example to a page of independent problems? | The abrupt jump leaves many pupils solving by trial and error.
 
 ## Questioning to check understanding
 LV: Introductory · Foundation
@@ -294,6 +354,16 @@ M2#teaching-u02-07-q2@2: A history teacher asks "Why did Henry VIII break with R
 M3#teaching-u02-07-q3@3: A colleague says recall questions are low-level and should be replaced by higher-order questions. What is the best response? | Higher-order thinking depends on secure knowledge, so recall questions are often a necessary foundation | Agree, because recall questions do not help learning | Agree, because Bloom's taxonomy shows higher levels are more important | Disagree, because higher-order questions confuse pupils | Pupils can't analyse or evaluate what they don't know; recall builds and checks the knowledge needed.
 TF1#teaching-u02-07-q4@1: Rosenshine reported that the most effective teachers asked more questions than less effective teachers. | true | Effective teachers asked many questions, including process questions, and checked responses from all pupils.
 SA2#teaching-u02-07-q5@2,3: Write three questions you could use to check understanding of a key idea in your subject, and explain what each would reveal. | A good answer names an idea and gives a recall question checking a key fact, a process or "why" question revealing reasoning, and a diagnostic question whose wrong options match common misconceptions. It says how all pupils would answer (whiteboards, cold call) and what the teacher would do with the answers. | Names a key idea ; Gives a recall or factual question ; Gives a process or why question ; Gives a diagnostic or misconception question ; Explains how all pupils respond and how answers are used
+Q: What do Rosenshine's third and sixth principles say? | Third: ask a large number of questions and check the responses of all pupils. Sixth: check for pupil understanding.
+Q: What kind of questions did the most effective teachers ask, in Rosenshine's account? | More questions, including process questions asking pupils to explain how they got an answer.
+Q: Give three benefits of questioning for pupils and teacher. | It gives retrieval practice, helps pupils connect new material to prior knowledge, and shows the teacher whether to move on.
+Q: What does the ITTECF Standard 4 say questioning can be used for? | Checking prior knowledge, assessing understanding and breaking down problems.
+Q: Why is hands-up from volunteers a weak check? | The teacher hears only from the confident few.
+Q: Name two better ways of checking understanding than 'Does that make sense?' | A specific question every pupil answers, such as on whiteboards, and asking pupils to explain why.
+Q: Name the four kinds of question the lesson lists. | Recall, process, application and evaluation.
+Q: Why are recall questions not inferior to higher-order questions? | Higher-order questions depend on knowledge; pupils cannot evaluate what they do not know, so recall is often the foundation.
+Q: In the ionic bonding example, what did the whiteboard check reveal? | Eight pupils had shared rather than transferred the electron, so she addressed the misconception before moving on.
+Q: How can diagnostic multiple choice distinguish understanding from misconception? | Each wrong option can represent a specific misconception.
 
 ## Cold calling and no opt out
 LV: Introductory · Application
@@ -334,6 +404,16 @@ M2#teaching-u02-08-q2@2: Why should a teacher ask the question before saying the
 M3#teaching-u02-08-q3@3: A pupil answers "I don't know". Which response best applies no opt out? | Ask another pupil, then return to the first pupil to repeat or explain the answer | Move on to another pupil and don't return, to avoid embarrassing the first | Tell the pupil to pay more attention | Give the pupil a sanction for not listening to the explanation | No opt out keeps the expectation that every pupil reaches the correct answer; returning to the first pupil completes the loop.
 TF2#teaching-u02-08-q4@3: Cold calling works best when it is used unpredictably to catch out pupils who are not concentrating. | false | It should be a predictable, warm routine; used punitively it raises anxiety and damages relationships.
 SA3#teaching-u02-08-q5@2,3: Evaluate cold calling as a questioning strategy, including how you would use it inclusively. | Strengths: it makes all pupils think, gives the teacher evidence from a wider range of pupils than hands-up, and signals high expectations. Risks: anxiety for some pupils and damage to relationships if used punitively; limited direct research on anxious pupils. Inclusive use: explain it as a routine, ask first then pause then name, give think or pair time, scaffold with cues and easier entry questions, combine with no opt out, and agree alternatives for pupils with specific needs. | Explains how it raises participation ; Explains the evidence it gives the teacher ; Identifies a risk ; Describes inclusive techniques ; Reaches a judgement
+Q: Define cold calling. | The teacher asks a question, pauses, then names the pupil who will answer, regardless of who has hands up.
+Q: What three purposes does Lemov give for cold calling? | Checking understanding of the whole class, keeping everyone thinking, and raising expectations.
+Q: Why must the pupil's name come after the pause in cold calling? | If the name comes first, everyone else stops thinking.
+Q: How does cold calling differ from hands-up in who thinks? | With hands-up a few pupils do the thinking; with cold calling everyone must think because anyone may be asked.
+Q: What are three ways a teacher can apply no opt out when a pupil says 'I don't know'? | Ask another pupil then return to the first, give a cue, or narrow the question.
+Q: What expectation does no opt out set? | That 'I don't know' is the start of the exchange, not the end.
+Q: How can cold calling be made inclusive and routine? | Explain it to the class so it feels normal, keep the tone warm, and use think time or pair talk first.
+Q: What should pupils be asked in cold calling, and how can the less confident be supported? | Questions they have been taught to answer; scaffold with an easier entry question or a cue.
+Q: What may pupils with selective mutism or high anxiety need? | Agreed alternatives to cold calling.
+Q: Why does punitive use of cold calling backfire? | Used to catch out inattentive pupils, it raises anxiety and damages relationships.
 
 ## Hinge questions and mini-whiteboards
 LV: Intermediate · Application
@@ -377,6 +457,16 @@ M2#teaching-u02-09-q2@2: In a hinge question on decimals, why include 0.405 as a
 M3#teaching-u02-09-q3@3: After a hinge question, 60% answer correctly and most of the rest choose the same distractor. What is the best response? | Address that misconception with the pupils who chose it while the others move on | Move the whole class on, since most were right | Reteach the whole topic to the whole class from the start | Ignore the result and continue with the plan | The pattern pinpoints a specific misconception for a specific group, allowing a targeted, efficient response.
 TF2#teaching-u02-09-q4@1,2: A hinge question should take most of the lesson for pupils to answer, so that it is thorough. | false | It should take about a minute or less to answer and seconds for the teacher to read.
 SA3#teaching-u02-09-q5@2,3: Design a hinge question for a key idea in your subject, explain the misconception behind each distractor, and say what you would do with different patterns of response. | A good answer names a key idea, gives a multiple-choice question with one correct answer and three distractors each linked to a specific misconception, explains why the right answer is hard to get for the wrong reason, and describes responses: move on if almost all correct, reteach differently if most wrong, and target the misconception group if mixed. | Names a key idea and writes a clear question ; Links distractors to specific misconceptions ; Ensures the right answer can't be reached by a misconception ; Describes responses to different patterns
+Q: Who describes the hinge question, and what is a hinge point? | Wiliam (2011); a point in the lesson where the next step depends on whether pupils understood a key idea.
+Q: How long should a hinge question take pupils and the teacher? | Around a minute or less for pupils to answer and seconds for the teacher to read.
+Q: Why do well-designed multiple-choice questions suit hinge questions? | Each wrong option can represent a specific misconception.
+Q: Why is it a flaw if pupils can reach the right answer through a misconception? | The question gives false confidence.
+Q: Name four all-response systems. | Mini-whiteboards, finger voting, coloured or ABCD cards, and digital quizzes.
+Q: What is the 'write, hover, show' routine for? | It has pupils show answers on the teacher's signal so they do not copy each other.
+Q: What should the teacher do if almost all pupils answer a hinge question right, and if almost all are wrong? | Almost all right: move on. Almost all wrong: reteach the idea differently, then check again.
+Q: What does a mixed pattern of responses tell the teacher? | Which misconception to address, perhaps with a short intervention while others move on.
+Q: In the Year 7 decimals hinge question, which wrong answers show which misconception? | C (0.405) suggests longer decimals are larger; B (0.45) suggests comparing digit by digit wrongly.
+Q: What makes a hinge question useless, even if well designed? | Moving on regardless of the answers; a check is only useful if the response changes what the teacher does next.
 
 ## Wait time and think-pair-share
 LV: Introductory · Application
@@ -414,6 +504,16 @@ M2#teaching-u02-10-q2@2: In think-pair-share, why give pairs a specific task suc
 M3#teaching-u02-10-q3@3: A trainee asks a hard question and, after one second of silence, rephrases it twice. What is the best advice? | Ask once and wait several seconds, perhaps with brief paired talk, before taking an answer | Ask an easier question straight away | Answer the question yourself to save time and keep the pace | Choose the pupil who is most likely to know the answer quickly | Rowe found that quick rephrasing cuts short thinking. Wait time or think-pair-share gives everyone time to form an answer.
 TF1#teaching-u02-10-q4@1: Wait time 1 is the pause after the teacher asks a question. | true | Rowe's wait time 1 follows the teacher's question; wait time 2 follows a pupil's answer.
 SA2#teaching-u02-10-q5@2,3: Explain how you would use wait time and think-pair-share in a lesson, and why they improve answers. | Ask the question to everyone, pause for at least three seconds (longer for complex questions) or set timed silent thinking, then a short paired task with a specific outcome, then cold call pairs to share. Pause after answers so pupils can elaborate. They improve answers because pupils have time to retrieve and organise ideas, rehearse with a partner, and more pupils have something to contribute, as Rowe's research found. | Describes waiting at least three seconds ; Describes the think, pair and share stages ; Mentions a focused paired task or cold calling the share ; Explains the benefits with reference to research
+Q: What is wait time, according to Rowe (1986)? | The pause between a teacher's question and the next speaker.
+Q: What changed when teachers waited three seconds or more? | Pupils gave longer and more complete answers, more pupils responded, fewer said 'I don't know', and answers included more reasoning and speculation.
+Q: What did teachers typically do after about a second of silence in Rowe's classrooms? | Answered themselves, rephrased the question or called on someone.
+Q: How do wait time 1 and wait time 2 differ? | Wait time 1 follows the teacher's question; wait time 2 follows a pupil's answer, before the teacher responds.
+Q: Why is pausing after a pupil's answer useful? | The pupil can add to it and others can build on it.
+Q: How does think-pair-share work, and who devised it? | Pupils think alone, discuss with a partner, then pairs share with the class (Lyman, 1981).
+Q: Which pupils benefit especially from think-pair-share? | Less confident pupils and those learning English, since they have time to form and rehearse an answer.
+Q: What should the pair stage of think-pair-share involve? | A specific task, such as agreeing on one reason and one piece of evidence.
+Q: How should the share stage be run, and why? | Cold call pairs, so the share is not just volunteers.
+Q: What does Rowe suggest is wrong with filling silence at once with a hint or rephrasing? | It cuts short pupils' thinking; often the original question just needed time.
 
 ## Probing questions and extending answers
 LV: Intermediate · Application
@@ -454,6 +554,16 @@ M2#teaching-u02-11-q2@2: A pupil gives a partly correct answer. What does "Right
 M3#teaching-u02-11-q3@3: Which response best improves the quality of a short, correct answer? | "Yes. Can you explain why that happens, using the term we learned today?" | "Yes, well done." | "Yes, and what I think you mean is that it depends on the light…" | "Good. Hands up who agrees with that answer?" | Asking for explanation and precise vocabulary extends the answer; completing it for the pupil does the thinking for them.
 MS2#teaching-u02-11-q4@2: Which of these are probing moves? Choose all that apply. | Asking for evidence ; Asking the pupil to connect to an earlier topic ; Asking another pupil whether they agree and why | Saying "Correct" and moving on ; Rephrasing the pupil's answer yourself | Probing keeps the pupils thinking; evaluating and rephrasing for them close the exchange.
 SA3#teaching-u02-11-q5@2,3: Explain why teachers should probe pupils' answers, and describe a sequence of probes you might use with a partial answer in your subject. | The IRE pattern often closes exchanges after a thin answer, with the teacher doing the thinking. Probing makes pupils clarify, justify and extend, raises the standard of answers and shows the teacher the depth of understanding. A good sequence starts from a partial answer, asks for clarification, then justification or evidence, then a connection or extension, and ends by asking the pupil to restate a full answer with precise vocabulary, possibly bouncing to another pupil. | Explains the limits of IRE ; Explains benefits for thinking and standards ; Gives a realistic partial answer ; Gives at least three appropriate probes ; Ends with a full answer from the pupil
+Q: Describe the IRE pattern in classroom exchanges. | The teacher Initiates a question, a pupil Responds, the teacher Evaluates; the exchange ends there even if the answer was thin.
+Q: What does probing replace in the IRE pattern? | The evaluation is replaced with a follow-up that makes the pupil think further.
+Q: Give three example probing questions from the lesson. | 'Why?', 'How do you know?', 'Can you give an example?' or 'What would happen if...?'
+Q: What is Lemov's 'Right is Right' technique? | Holding out for fully correct answers rather than accepting a partly right one and completing it for the pupil.
+Q: What is the key idea of probing? | Do not stop at the first answer; follow up so pupils explain, justify and improve, and hold out for a fully right answer.
+Q: Name the Clarify and Justify probing moves with an example each. | Clarify: 'What do you mean by it?' Justify: 'What's your evidence?'
+Q: What do the Extend and Connect probing moves ask? | Extend: 'What else could explain that?' Connect: 'How does that link to what we learned about...?'
+Q: What does the Bounce probing move do? | Asks another pupil whether they agree with a classmate and why, involving others.
+Q: In the earthquake example, how does the teacher get from 'Because they're poor' to a full answer? | By asking 'Say more', 'Why might that be?' and finally asking the pupil to combine it using 'building codes'.
+Q: Why is finishing a pupil's 'kind of' right answer for them a pitfall? | The teacher does the thinking, and the pupil learns that a partial answer is enough.
 
 ## Scaffolding
 LV: Introductory · Foundation
@@ -497,6 +607,16 @@ M2#teaching-u02-12-q2@2: Which is an example of scaffolding rather than simplify
 M3#teaching-u02-12-q3@3: A pupil has used the same writing frame for two terms and can't write a paragraph without it. What has gone wrong? | The scaffold was not faded, so responsibility was never transferred to the pupil | The frame was too detailed from the start and confused the pupil | The pupil was not motivated to write without help | Writing frames never work | Scaffolds should be faded; without that, the pupil depends on the support.
 TF2#teaching-u02-12-q4@1: Vygotsky's zone of proximal development is the gap between what a learner can do alone and what they can do with help. | true | Scaffolding works within this zone, supporting tasks just beyond independent performance.
 SA3#teaching-u02-12-q5@2,3: Explain the difference between scaffolding and lowering expectations, with an example from your subject. | Scaffolding keeps the task and goal the same for all pupils and adds temporary, contingent support, such as a model, frame or checklist, which is faded until the pupil can do the task alone. Lowering expectations changes the task to something easier for some pupils, which can widen gaps. Example: all pupils write an explanation of a process; some use a frame with sentence starters that is reduced over three lessons, rather than being given a fill-in-the-gaps sheet instead. | Defines scaffolding with the same goal ; Mentions contingency or fading ; Explains why simplifying lowers expectations ; Gives a clear subject example
+Q: What was the original context of scaffolding in Wood, Bruner and Ross (1976)? | An adult tutor helping young children build a pyramid of blocks.
+Q: Name some ways the tutor scaffolded the child in that study. | Recruited interest, reduced what the child had to manage, kept them on track, marked critical features, controlled frustration and demonstrated solutions.
+Q: What is Vygotsky's zone of proximal development? | The gap between what a learner can do alone and what they can do with help.
+Q: What does the ITTECF say about scaffolds and their removal? | Guides, scaffolds and worked examples can help pupils apply new ideas, but should be gradually removed as pupil expertise increases.
+Q: What does a scaffold support pupils to do? | The real task, not an easier one; it is designed to be removed.
+Q: Name three types of scaffold. | Any three of: models and worked examples, writing frames, checklists, graphic organisers, prompt cards, verbal prompts.
+Q: What does contingency mean in scaffolding? | Support tailored to the pupil's current level.
+Q: How does scaffolding differ from simplifying a task? | A scaffold keeps the goal the same and adds support; simplifying changes the goal.
+Q: Why can giving some pupils a cut-down task be harmful? | It lowers expectations and can widen gaps.
+Q: How was the writing frame faded over two evaluations in the Year 8 example? | It was reduced to the first word of each sentence, then removed.
 
 ## Guided practice
 LV: Introductory · Application
@@ -536,6 +656,16 @@ M2#teaching-u02-13-q2@2: Which activity best fits guided practice? | Pupils solv
 M3#teaching-u02-13-q3@3: During guided practice the teacher sees half the class repeating the same error. What should she do? | Stop, address the error with the class and give another guided example | Continue so pupils can discover their mistake later | Move everyone to independent practice to save time | Mark the error in books next week | Widespread errors show pupils aren't ready for independence; correcting now prevents the error being practised.
 TF2#teaching-u02-13-q4@1,2: Guided practice is the "we do" stage between teacher modelling and independent practice. | true | It is the middle stage of gradual release.
 SA2#teaching-u02-13-q5@2,3: Plan a guided practice stage for a skill in your subject and explain how you would decide when pupils are ready for independent practice. | A good plan follows a model with three or four short tasks, each done by all pupils (whiteboards or books), with prompts that reduce each time, immediate feedback and circulation. Readiness is judged by success rate: when most pupils (around 80% or more) are getting it right without prompts, move to independent practice, keeping extra support for those still struggling. | Plans short tasks after a model ; All pupils respond ; Includes feedback and reducing prompts ; Uses success rate to judge readiness ; Supports pupils who are not yet ready
+Q: What did Rosenshine find effective teachers spent more time on, in guided practice? | More time on guided practice; they asked more questions, checked understanding and corrected errors.
+Q: Why is guided practice best done with the teacher present? | Errors caught early do not become embedded.
+Q: What do pupils and teacher each do in guided practice? | Pupils do increasing amounts of the work while the teacher prompts, questions and gives immediate feedback.
+Q: What is the key idea of guided practice? | Practise with pupils before they practise alone, catching and correcting errors early, and move on only when most are succeeding.
+Q: What kind of tasks suit guided practice, and how do pupils respond? | Short problems similar to the model, done one at a time, with all pupils responding on whiteboards or in books.
+Q: What does immediate feedback involve in guided practice? | Showing the answer or working through it straight away.
+Q: What does circulating mean in guided practice? | The teacher looks at work during the task, not only at the end.
+Q: How does support change across a guided practice sequence? | The teacher says less with each problem.
+Q: In the Year 4 column addition example, what prompt does the teacher use for the second calculation? | 'What do we do if the column adds to more than 9?'
+Q: Why is moving straight from model to independent work a pitfall? | Errors go unnoticed until marking, by which time pupils have practised the mistake.
 
 ## Independent practice and a high success rate
 LV: Intermediate · Application
@@ -575,6 +705,16 @@ M2#teaching-u02-14-q2@2: During independent practice, what should the teacher ma
 M3#teaching-u02-14-q3@3: A trainee sets an independent task on which most pupils score under 40%. What is the best conclusion? | Pupils needed more teaching or guided practice before working alone | The task was usefully challenging and should be repeated | Pupils were not trying hard enough | The class should be moved to a lower set | Low success shows the step from teaching to independence was too big; repeated failure embeds errors.
 TF2#teaching-u02-14-q4@1: A high success rate means setting tasks that pupils find easy. | false | It means teaching well enough that pupils succeed at challenging work.
 SA3#teaching-u02-14-q5@2,3: Evaluate the idea that pupils should succeed about 80% of the time. | It is supported by Rosenshine's account of effective teaching: success builds fluency and self-efficacy, while frequent errors are practised and embedded. It also signals that teaching has prepared pupils. But 80% is a guide, not a rule: it depends on the stage of learning, the task and the pupil, and work must still be challenging, so "high success" should come from good teaching, not easy tasks. | Explains the rationale for a high success rate ; Mentions risks of practising errors ; Notes the need for challenge ; Treats 80% as a guide not a rule ; Reaches a judgement
+Q: What does Rosenshine's seventh principle say, and what success rate was linked to better achievement? | Obtain a high success rate; around 80% during guided practice was associated with better achievement.
+Q: Why does a high success rate matter for learning? | Practising errors embeds them, while succeeding builds fluency and motivation.
+Q: What does a high success rate mean, if not easy work? | Teaching has prepared pupils well enough for them to succeed at challenging work.
+Q: What does a low success rate usually indicate? | The task was too far ahead of the teaching, so pupils need more teaching or guided practice first.
+Q: What is overlearning, and what does it achieve? | Practising beyond the point of first getting it right, so material becomes automatic and frees working memory.
+Q: What did effective teachers do during independent practice? | Circulated, giving short contacts to monitor and help, rather than sitting at the desk.
+Q: How should independent practice be designed? | Enough practice for fluency, similar to guided practice at first then varied, with early checks and some earlier material.
+Q: What is automaticity? | Performing a skill quickly and accurately with little conscious effort.
+Q: In the Year 10 rearranging formulae example, what did the independent practice contain? | Twelve questions gradually increasing in difficulty, with three from earlier topics.
+Q: Why is setting work most pupils get wrong and calling it challenge a pitfall? | Repeated failure teaches errors and erodes self-efficacy.
 
 ## Removing scaffolds
 LV: Intermediate · Evaluation
@@ -615,6 +755,16 @@ M2#teaching-u02-15-q2@2: Which is a good way to fade a writing frame? | Reduce f
 M3#teaching-u02-15-q3@3: Which is the best evidence that a pupil is ready for less support? | She succeeds on a question with the support removed | She says she likes the scaffold | She completes the scaffold neatly | She finishes before others | Success without the support is direct evidence of readiness; liking or completing the scaffold is not.
 SEQ2#teaching-u02-15-q4@2: Put these prompts in order from most to least support. | "Divide both sides by 3." ; "What operation undoes multiplying by 3?" ; "What's the next step?" ; No prompt | Prompts fade from specific instructions through targeted questions and general cues to none.
 SA3#teaching-u02-15-q5@2,3: Evaluate the risks of removing scaffolds too early and too late, and explain how you would decide when to fade support. | Too early: pupils face tasks beyond them, fail, practise errors and lose confidence. Too late: they become dependent, can't perform without support (for example in exams), and redundant support adds load (expertise reversal). Decide using evidence: high success rate with current support, pupils not referring to it, and success on a check question without it; fade in steps and keep or reintroduce support for pupils who need it. | Explains risks of fading too early ; Explains risks of fading too late ; Uses expertise reversal or dependence ; Describes evidence of readiness ; Describes stepwise, contingent fading
+Q: What is the goal of scaffolding, and what does the ITTECF say about it? | Independence; scaffolds should be gradually removed as pupil expertise increases.
+Q: What happens if a scaffold stays in place too long? | Pupils may learn to complete the scaffold rather than the task and cannot perform when it is gone, for example in an exam.
+Q: What second reason does the expertise reversal effect add for removing scaffolds? | As pupils gain knowledge, support that once helped can become redundant and add load.
+Q: What should a teacher plan from the start about scaffolds? | How each will be removed: fade in steps, check pupils cope, and be ready to bring support back.
+Q: Describe how a writing frame can be faded. | Full sentence starters, then first words only, then paragraph headings, then nothing.
+Q: How can checklists be faded? | The full list, then key reminders, then pupils write their own checklist.
+Q: How can prompts be faded? | From specific hints, to general cues, to silence.
+Q: Name three signs that pupils are ready for a scaffold to go. | A high success rate with current support, not referring to the scaffold, and success on a task without it.
+Q: What are the costs of removing a scaffold too soon versus too late? | Too soon causes failure and frustration; too late leaves dependence.
+Q: Why is removing a scaffold for the whole class on a fixed date a pitfall? | Fading should be contingent on evidence of readiness, not a date.
 
 ## Teacher explanations and analogies
 LV: Intermediate · Application
@@ -656,6 +806,16 @@ M2#teaching-u02-16-q2@2: To teach "prime number", which set of examples best cla
 M3#teaching-u02-16-q3@3: A teacher explains the cell as "like a factory". What is the most important thing to add? | Where the analogy breaks down, so pupils don't carry over wrong features | More factory details, such as a canteen, to make it memorable | A different analogy for every organelle in the cell | Nothing, as analogies are always helpful | Analogies always fail somewhere; naming the limits prevents misconceptions.
 TF2#teaching-u02-16-q4@1: According to Wittwer and Renkl, explanations often fail when they are not adapted to the learner's existing knowledge. | true | Poor adaptation to prior knowledge is one of the main reasons they identified.
 SA3#teaching-u02-16-q5@2,3: Plan an explanation of an abstract concept in your subject using an example, a non-example and an analogy, and evaluate the analogy. | A good answer names a concept, links it to prior knowledge, gives a concrete example, a close non-example with the reason it is not an instance, and an analogy that maps relations, then says where the analogy breaks down and what misconception it could cause, and includes a check question. | Names a concept and links to prior knowledge ; Gives an example and a close non-example ; Gives a relational analogy ; Identifies where the analogy breaks down ; Includes a check of understanding
+Q: Why do instructional explanations often fail, according to Wittwer and Renkl (2008)? | They are poorly adapted to existing knowledge, focus on facts rather than principles, or pupils are not required to do anything with them.
+Q: What should a good explanation be? | Clear, concise and connected to what pupils know.
+Q: What does ITTECF Standard 4 say helps pupils learn, regarding explanations? | Explicitly teaching needed knowledge and skills, and using concrete representation of abstract ideas.
+Q: List the five tips for planning an explanation. | Plan it, start from the known, concrete then abstract, precise language, and check.
+Q: Why are close non-examples better than distant ones? | A dolphin and shark teach 'mammal' more than a dog and goldfish because they show the concept's boundaries.
+Q: What did Engelmann emphasise about examples and non-examples? | Sequences differing in only one feature, so pupils see exactly what matters.
+Q: Define an analogy. | A comparison mapping a familiar situation onto an unfamiliar one.
+Q: According to Gentner (1983), why is water in pipes a good analogy for current? | It maps relations: pressure drives flow, and narrow pipes resist, corresponding to electrical relationships.
+Q: What should a teacher do about the limits of an analogy? | Say where it breaks down, since every analogy fails somewhere.
+Q: Why is using an analogy without saying where it fails risky? | Pupils may carry its wrong features into the concept, creating misconceptions.
 
 ## Classroom discussion and dialogic teaching
 LV: Intermediate · Application
@@ -701,6 +861,16 @@ M2#teaching-u02-17-q2@2: A group agrees with every suggestion and adds to it wit
 M3#teaching-u02-17-q3@3: Which change would most move a whole-class discussion towards dialogic teaching? | Asking pupils to build on or challenge the previous speaker before the teacher responds | Asking more closed questions to keep the pace of the discussion up | Evaluating each answer immediately as right or wrong so pupils know where they stand | Only taking answers from pupils with hands up | Dialogic teaching depends on exchanges that build on each other; immediate evaluation closes them.
 TF2#teaching-u02-17-q4@1,3: Discussion works best when pupils have little knowledge of the topic, so they can share fresh opinions. | false | Discussion needs knowledge to reason with; without it, pupils share unsupported opinions.
 SA3#teaching-u02-17-q5@2,3: Plan a structured discussion for a topic in your subject that develops exploratory talk, and explain your choices. | A good plan teaches the necessary knowledge first, sets an open question where reasoning matters, establishes ground rules (reasons for claims, respectful challenge, aim to agree), provides talk stems, assigns roles in groups, and has the teacher facilitate a whole-class phase where pupils respond to each other. It explains that these features promote exploratory talk (Mercer) and dialogic exchanges (Alexander). | Builds knowledge before discussion ; Sets an open, worthwhile question ; Uses ground rules or talk stems ; Uses roles or structure ; Justifies with Mercer or Alexander
+Q: How does Alexander (2020) define dialogic teaching? | Using talk to stimulate and extend pupils' thinking, with questions inviting extended answers and pupils building on each other.
+Q: State the five features of dialogic talk. | Collective, reciprocal, supportive, cumulative and purposeful.
+Q: What did the EEF-funded trial of Alexander's programme find? | Positive effects on pupils' attainment, with the EEF rating the evidence as moderate.
+Q: Describe Mercer's disputational talk. | Disagreement and individual decision-making with little sharing of reasons.
+Q: Describe Mercer's cumulative talk. | Pupils build positively but uncritically on each other, agreeing without challenge.
+Q: What happens in exploratory talk? | Pupils engage critically but constructively, giving reasons and challenging, so reasoning is visible.
+Q: What did Mercer's Thinking Together programme teach, and what did it find? | Ground rules for exploratory talk, such as asking for reasons and trying to agree; it improved reasoning.
+Q: Give three ways to structure classroom discussion. | Agree ground rules, ask open genuine questions, and teach talk moves, give roles or prepare pupils with knowledge first.
+Q: Give two example talk moves from the lesson. | 'I agree with... because...' and 'I'd like to challenge...'
+Q: Why should pupils be prepared with knowledge before discussion? | Discussion without knowledge produces opinion without substance.
 
 ## Collaborative learning and groupwork
 LV: Intermediate · Evaluation
@@ -747,4 +917,14 @@ M2#teaching-u02-18-q2@2: In a jigsaw task, why does each pupil become the expert
 M3#teaching-u02-18-q3@3: A groupwork poster task leaves two pupils doing everything. Which redesign best fixes this? | Give each pupil a distinct role, and assess each pupil individually as well as the group | Make the groups bigger so the work is shared between more pupils | Let pupils choose whether to join a group | Give a prize for the best-looking poster to motivate every group | Roles create interdependence and individual accountability counters free riding and social loafing.
 TF2#teaching-u02-18-q4@1: The EEF Toolkit finds collaborative learning approaches have a positive average impact, but the range of effects is wide. | true | Average impact is positive at low cost, with effects depending heavily on how groupwork is structured.
 SA3#teaching-u02-18-q5@2,3: Evaluate the use of groupwork in the classroom and explain how to design it so that it works. | Evidence shows collaborative learning can have a positive average effect, but outcomes vary widely and unstructured groupwork suffers from social loafing, free riders, off-task talk and domination by confident pupils. It works when pupils already have the knowledge, groups are small, roles and tasks create interdependence (jigsaw), group goals are combined with individual accountability, and pupils are taught how to collaborate. For first teaching of complex new material, explicit instruction may be more efficient. | Summarises the evidence ; Identifies problems such as social loafing ; Describes group goals and individual accountability ; Gives practical design features ; Reaches a balanced judgement
+Q: What does the EEF Toolkit say about the average impact of collaborative learning? | A positive average impact, around five months' additional progress, for low cost, but with a wide range of effects.
+Q: What did Slavin's (1996) review find made cooperative learning most reliable? | Combining group goals with individual accountability.
+Q: What is meant by group goals and individual accountability? | The group is rewarded for the success of all members, and each member's learning is assessed.
+Q: Define social loafing and name who studied it. | Individuals put in less effort in groups (Latane, Williams and Harkins, 1979).
+Q: What is the free rider problem in groupwork? | One pupil does the work and the others copy.
+Q: Name three other reasons groupwork goes wrong besides social loafing. | Off-task talk, lack of knowledge, free riding or unequal participation, with confident pupils dominating.
+Q: Why should content be taught before groupwork? | Groups cannot discuss what they do not know; groups should practise, apply or explain content.
+Q: How does the jigsaw method work? | Each pupil learns one part and teaches it to the group.
+Q: What group size and task design does the lesson recommend? | Small groups of two to four, with time-limited tasks and a clear product.
+Q: How did the redesigned Cold War task create individual accountability? | Each pupil became the expert on one cause and taught it, the teacher cold called any member, and each pupil wrote an individual paragraph.
 `;

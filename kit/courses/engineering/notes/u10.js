@@ -44,6 +44,16 @@ M2#engineering-u10-01-q2@2: A prototype fails a test and the team changes the co
 M3#engineering-u10-01-q3@3: Why should engineers spend effort on early design decisions? | Early decisions commit most of the life-cycle cost, and changes later are expensive | Early design stages are where most of the money is actually spent | Late changes in production cost nothing to make | Manufacturing choices have no effect on product cost | Concept and material choices lock in most of the cost.
 SEQ1#engineering-u10-01-q4@1: Put these design stages in order. | Problem definition ; Conceptual design ; Embodiment design ; Detail design | Each stage builds on the decisions of the one before.
 SA2#engineering-u10-01-q5@1,3: Explain the stages of the engineering design process and why iteration is important. | The process starts with defining the problem and writing a specification, then generating and selecting concepts, embodiment design of layout, materials and sizes, and detail design with drawings and tolerances, followed by testing and verification. Iteration is important because analysis, prototypes and reviews reveal problems or better solutions, so the team returns to earlier stages; fixing problems early is cheaper than after production starts. | Problem definition ; Concepts ; Embodiment and detail ; Testing ; Iteration and cost
+Q: What is produced at the end of problem definition in design? | A specification, after clarifying the need, users and constraints.
+Q: What happens in conceptual design? | Alternative concepts are generated and evaluated.
+Q: What happens in detail design? | Full drawings, tolerances and manufacturing information are produced.
+Q: What are the four stages of the Double Diamond? | Discover, define, develop and deliver.
+Q: Which body published the Double Diamond design model? | The UK Design Council.
+Q: What is the purpose of design reviews at stage gates? | To check progress against the specification, risks and costs.
+Q: Why are design changes more expensive later in a project? | Once a design reaches tooling, production and service, changes cost much more.
+Q: Which document sets out professional engineers' duties on safety, sustainability and ethics? | The Engineering Council's UK-SPEC.
+Q: A bike rack prototype fails a vandalism test, so the tube is thickened and retested. What does this show? | Iteration in the design process.
+Q: What is a common mistake about how design proceeds? | Treating it as a straight line; real design loops back as testing reveals problems.
 
 ## Requirements and specifications
 LV: Year 1 · Foundation
@@ -86,6 +96,16 @@ M2#engineering-u10-02-q2@2: What does the house of quality matrix show? | How cu
 M3#engineering-u10-02-q3@3: Why should every requirement be traceable to a test? | So the team can verify the design meets each requirement | So customers can choose the test method | Because tests replace the need for design | So requirements never need updating | Traceability ensures nothing is missed in verification.
 MATCH2#engineering-u10-02-q4@2: Match each PDS heading to an example requirement. | Performance = Lift 200 kg to 3 m ; Environment = Operate from −10 °C to 40 °C ; Safety = Comply with the Machinery Directive requirements ; Life = Last 10 years of daily use | A PDS groups requirements by aspect.
 SA2#engineering-u10-02-q5@1,3: Explain how a design team turns customer needs into a product design specification. | The team gathers needs from users and stakeholders through interviews, observation and market research. It converts them into specific, measurable, solution-neutral requirements, classifying demands and wishes. Requirements are grouped under PDS headings such as performance, environment, cost, safety and standards. QFD can prioritise engineering characteristics. The PDS is reviewed and kept under change control, with each requirement linked to a verification test. | Gathering needs ; Measurable requirements ; Demands and wishes ; PDS headings ; QFD and traceability
+Q: How do requirements differ from customer needs? | Requirements turn vague needs into precise, measurable statements.
+Q: What qualities should a good requirement have? | Specific, measurable, achievable, testable and solution-neutral.
+Q: What is a product design specification? | A document listing all the requirements a design must meet.
+Q: Name four headings found in a product design specification. | Performance, environment, cost and safety, among others such as size, weight and disposal.
+Q: Whose total design approach places the PDS at the centre of design? | Stuart Pugh's.
+Q: Why is a specification called a living document? | It is updated under change control as understanding improves.
+Q: What matrix does quality function deployment use? | The house of quality.
+Q: What is requirements traceability? | Linking every requirement to design features and the tests that verify it.
+Q: Why are poor requirements a frequent cause of project failure? | Errors in requirements become very expensive to fix later.
+Q: What is a common mistake when writing a specification? | Writing a solution into it, such as "use an aluminium frame", which rules out better alternatives.
 
 ## Concept generation and selection
 LV: Year 1 · Intermediate
@@ -128,6 +148,16 @@ M2#engineering-u10-03-q2@2: Why should no concept that fails a demand be selecte
 M3#engineering-u10-03-q3@3: Two concepts score 3.9 and 3.8 in a weighted matrix. What is the best next step? | Test the sensitivity of the result and gather more evidence | Choose 3.9 immediately without question | Discard both concepts | Add a random criterion to separate them | Close scores are within the uncertainty of the method.
 NUM2#engineering-u10-03-q4@2: A concept scores 4, 3 and 5 on criteria with weights 0.5, 0.3 and 0.2. What is its weighted score? | 3.9 | 0.01 | – | Weighted total = 0.5 × 4 + 0.3 × 3 + 0.2 × 5 = 2 + 0.9 + 1 = 3.9.
 SA2#engineering-u10-03-q5@1,3: Describe how a design team could generate and select concepts for a new product. | Break the overall function into sub-functions, then use a morphological chart, brainstorming, analogy or TRIZ to find several solutions for each and combine them into concepts. Screen out concepts that fail demands. Use Pugh's datum method to compare and combine concepts, then a weighted decision matrix with criteria from the specification. Check the sensitivity of the result to weights, and use prototypes or analysis when scores are close. | Functional decomposition ; Creative methods ; Screening ; Pugh and weighting ; Sensitivity and judgement
+Q: What is functional decomposition? | Breaking the overall function into sub-functions such as store energy or transmit force.
+Q: How does a morphological chart create concepts? | By combining one option for each sub-function.
+Q: What is TRIZ? | A creative method using patterns from patents to resolve contradictions.
+Q: Name three creative methods for generating concepts. | Brainstorming, sketching, analogy and biomimicry.
+Q: What scores are used in Pugh's controlled convergence? | Better (+), same (S) or worse (−) than the datum.
+Q: How is a weighted total calculated in a decision matrix? | The sum of weight × score across the criteria.
+Q: Why should weighted decision matrix results be tested for sensitivity? | The scores and weights are subjective, so small changes can alter the winner.
+Q: Where should selection criteria come from? | The specification, so selection reflects real requirements.
+Q: Two door-closer concepts score 3.9 and 3.7. What did the team do next? | Built quick prototypes of both before deciding.
+Q: What is a common mistake with weighted decision matrices? | Treating the highest score as objective; close results need further testing.
 
 ## Engineering drawing and CAD
 LV: Year 1 · Foundation
@@ -171,6 +201,16 @@ M2#engineering-u10-04-q2@2: Why are dimensions taken from functional datums? | T
 M3#engineering-u10-04-q3@3: An engineer changes one dimension in a parametric model and connected features update. This shows | Design intent captured through parameters and constraints | A drawing error caused by conflicting constraints in the model | Third-angle projection being applied to the views | Model-based definition replacing all 2D drawings | Parametric models update geometry from driving dimensions.
 MATCH2#engineering-u10-04-q4@2: Match each line type to its use. | Thick continuous line = Visible edges ; Thin dashed line = Hidden detail ; Thin chain line = Centre lines ; Thin hatching lines = Cut surfaces in sections | Standard line types make drawings unambiguous.
 SA2#engineering-u10-04-q5@1,3: Explain the advantages of 3D parametric CAD over traditional 2D drawing. | Parametric CAD captures design intent so changes update related features automatically. 3D assemblies reveal interference and fit problems early. Models can be used directly for finite element analysis, simulation, rendering and CAM toolpaths, and to generate drawings consistently. Product data management controls versions. However, 2D drawings or annotations are still needed for tolerances and inspection, and users need training and good modelling practice. | Design intent ; Assemblies ; Links to analysis and CAM ; Data management ; Limitations
+Q: Which views does an orthographic drawing usually show? | Front, plan and end views.
+Q: In third-angle projection, where is the plan view drawn? | Above the front view.
+Q: Where is first-angle projection common? | In the UK and Europe.
+Q: How do you tell which projection a drawing uses? | Check the projection symbol on the drawing.
+Q: How do section views show cut material? | With hatching.
+Q: What information does a drawing's title block give? | Part number, material, scale, revision and projection.
+Q: In what units are engineering drawing dimensions usually given? | Millimetres.
+Q: What is a parametric CAD model? | A model in which dimensions and constraints drive the geometry.
+Q: What does product data management do? | Controls versions and revisions so everyone works from the current design.
+Q: What can CAD models feed into? | Finite element analysis, simulation and computer-aided manufacture.
 
 ## Tolerances and fits
 LV: Year 1 · Intermediate
@@ -215,6 +255,16 @@ M2#engineering-u10-05-q2@2: Why should tolerances be no tighter than necessary? 
 M3#engineering-u10-05-q3@3: A gear must be held on a shaft without keys by friction. Which fit is suitable? | An interference fit such as H7/p6 | A loose clearance fit | A sliding fit such as H7/g6 | No tolerance at all | Interference provides the grip needed to transmit torque.
 NUM2#engineering-u10-05-q4@2: A hole is 25.000 to 25.021 mm and a shaft 24.980 to 24.993 mm. What is the maximum clearance, in mm? | 0.041 | 0.001 | mm | Maximum clearance = 25.021 − 24.980 = 0.041 mm.
 SA2#engineering-u10-05-q5@1,3: Explain how a designer chooses tolerances and fits for a shaft running in a bushing. | The shaft must rotate freely, so a clearance fit such as H7/g6 is chosen using the hole-basis system. The designer calculates maximum and minimum clearance from the limits to ensure lubrication and free running without excessive play. Tolerances are set only as tight as function requires, because tighter tolerances raise cost. Geometric tolerances such as cylindricity or runout control form. Stack-up is checked across the assembly. | Function ; Fit selection ; Clearance calculation ; Cost ; GD&T and stack-up
+Q: What is a tolerance? | The permitted variation in a dimension, the difference between upper and lower limits.
+Q: Why do tighter tolerances cost more? | They need more precise processes and more inspection.
+Q: Which standard covers the ISO system of limits and fits? | ISO 286.
+Q: In ISO fits, what do capital and lower-case letters indicate? | Capitals for holes and lower case for shafts.
+Q: What kind of fit is H7/k6? | A transition fit, which may give clearance or interference.
+Q: How are interference fits assembled? | By pressing or shrinking the parts together.
+Q: How is maximum clearance calculated? | Largest hole − smallest shaft.
+Q: How is minimum clearance calculated? | Smallest hole − largest shaft.
+Q: What does GD&T control that size tolerances do not? | Form, orientation and position, such as flatness, perpendicularity and runout.
+Q: What is a common mistake when specifying tolerances? | Making them tight everywhere to be safe, which raises cost without improving function.
 
 ## Design for manufacture and assembly
 LV: Year 1 · Intermediate
@@ -258,6 +308,16 @@ M2#engineering-u10-06-q2@2: Which process is usually most economical for 500,000
 M3#engineering-u10-06-q3@3: What is a drawback of replacing screws with permanent snap fits? | Products may become harder to repair and recycle | Assembly always takes longer than with screws | The total part count always increases | Snap fits cannot be produced by moulding | Easy assembly can conflict with design for disassembly.
 NUM2#engineering-u10-06-q4@2: A product's ideal assembly time is 30 s and the estimated actual time is 120 s. What is its design efficiency, in %? | 25 | 0.5 | % | Design efficiency = 30 ÷ 120 × 100 = 25%.
 SA2#engineering-u10-06-q5@1,3: Evaluate the use of design for manufacture and assembly in a consumer product. | DFMA reduces part count, assembly time and cost, cuts inventory and supplier management, and often improves quality and reliability. Matching features to processes such as moulding reduces scrap and tooling problems. However, combining parts can raise tooling cost and complexity, and permanent joints may hinder repair, upgrading and recycling, conflicting with right-to-repair and circular economy goals. The best designs balance manufacturing efficiency with serviceability. | Part count ; Process fit ; Quality ; Tooling cost ; Repair and recycling
+Q: Which processes suit low and high production volumes? | Machining for low volumes; casting or moulding for high volumes.
+Q: Name design features that make moulding easier. | Uniform wall thickness, draft angles and generous radii.
+Q: How can parts be made self-fastening? | For example, with snap fits instead of screws.
+Q: What is poka-yoke? | Error-proofing features that prevent incorrect assembly.
+Q: From what direction should products ideally be assembled? | One direction, ideally top-down.
+Q: How can DFMA improve reliability? | Fewer parts and joints means fewer things that can fail.
+Q: What is design efficiency in DFA? | The ratio of ideal to estimated assembly time.
+Q: How does DFMA conflict with design for disassembly? | Snap fits and moulded assemblies can make disassembly, repair and recycling harder.
+Q: In the kettle base redesign, how many of 22 parts were essential? | Only 9.
+Q: What is a common mistake about part count reduction? | Assuming fewer parts is always better; it can raise tooling cost and hinder repair.
 
 ## Factors of safety and design codes
 LV: Year 1 · Intermediate
@@ -301,6 +361,16 @@ M2#engineering-u10-07-q2@2: Why might an aircraft use a lower factor of safety t
 M3#engineering-u10-07-q3@3: A beam is strong enough but deflects so much that plaster cracks. Which limit state is exceeded? | Serviceability limit state | Ultimate limit state | Fatigue limit state only | No limit state | Excessive deflection affects use rather than causing collapse.
 NUM1#engineering-u10-07-q4@1: A steel with yield strength 250 MPa works at 100 MPa. What is the factor of safety against yield? | 2.5 | 0.05 | – | Factor of safety = 250 ÷ 100 = 2.5.
 SA2#engineering-u10-07-q5@1,3: Explain why engineers use factors of safety and how limit state design improves on a single overall factor. | Loads, material strengths, dimensions and analysis all carry uncertainty, and components deteriorate, so designs include a margin between capacity and demand. A single factor treats all uncertainty together. Limit state design applies partial factors to loads and material strengths separately, reflecting where uncertainty lies, and checks both ultimate and serviceability limit states. This gives more consistent reliability and economy, as set out in the Eurocodes. | Sources of uncertainty ; Overall factor ; Partial factors ; Limit states ; Consistency and economy
+Q: What is a factor of safety? | The ratio of capacity to demand, such as failure stress ÷ working stress.
+Q: When are larger factors of safety used? | Where failure has severe consequences or uncertainty is high.
+Q: How does aerospace achieve low weight with small safety factors? | By using rigorous testing.
+Q: What does limit state design check? | That a structure reaches neither an ultimate limit state nor a serviceability limit state.
+Q: What are typical partial factors for loads in building design? | About 1.35 for permanent and 1.5 for variable actions.
+Q: How are partial factors applied to material strengths? | Strengths are divided by the factors.
+Q: Why are partial factors better than one overall factor? | They target uncertainty where it arises.
+Q: How are the Eurocodes published in the UK? | As BS EN standards with UK National Annexes.
+Q: Which UK Act creates legal duties that complying with standards helps meet? | The Health and Safety at Work etc. Act 1974.
+Q: What is a common mistake about a factor of safety of 2? | Thinking the part can always carry twice the load; fatigue and corrosion can reduce real margins.
 
 ## Bolted and welded joints
 LV: Year 1 · Intermediate
@@ -346,6 +416,16 @@ M2#engineering-u10-08-q2@2: Why are welded details often critical for fatigue? |
 M3#engineering-u10-08-q3@3: A walkway must be dismantled for maintenance each year. Which joint is most suitable? | Bolted joints | Full-penetration welds | Adhesive bonds that cannot be reversed | Riveted joints that must be drilled out | Bolts allow repeated dismantling and reassembly.
 NUM2#engineering-u10-08-q4@2: A fillet weld has a leg length of 8 mm. What is its throat thickness, in mm? | 5.66 | 0.02 | mm | Throat = 0.707 × 8 = 5.66 mm.
 SA2#engineering-u10-08-q5@1,3: Compare bolted and welded joints for a steel frame. | Bolted joints can be dismantled, are quick to assemble on site without skilled welders and are easy to inspect, but holes reduce section and joints can loosen or slip unless preloaded. Welded joints are rigid, compact and sealed, and full-penetration welds can match parent strength, but need skilled labour, inspection and controlled conditions, and introduce residual stress, distortion and fatigue-sensitive details. Common practice is to weld in the factory and bolt on site. | Dismantling ; Site work ; Strength and rigidity ; Fatigue and residual stress ; Typical practice
+Q: In what two ways do bolts carry load? | In shear, where plates slide, or in tension, where plates separate.
+Q: What carries the load in a preloaded friction-grip joint? | Friction between the clamped plates.
+Q: Name failure modes of bolted joints. | Bolt shear, plate bearing failure, plate tearing, thread stripping and loosening under vibration.
+Q: What strength can a full-penetration butt weld reach? | It can match the parent plate.
+Q: How is fillet weld stress approximated? | Load ÷ (throat × weld length).
+Q: What problems does welding introduce? | Heat-affected zones, residual stresses, distortion and fatigue-prone details.
+Q: Name two advantages of welded joints. | They are rigid, compact and watertight.
+Q: Which standard covers design of steel joints in the UK? | BS EN 1993-1-8.
+Q: A 10 mm bolt in single shear carries 10 kN. What is the average shear stress? | About 127 MPa, as the area is 78.5 mm^{2}.
+Q: What is a common mistake in fillet weld calculations? | Using leg length instead of the throat, which is the critical section.
 
 ## Shafts and bearings
 LV: Year 1 · Intermediate
@@ -391,6 +471,16 @@ M2#engineering-u10-09-q2@2: Why is one bearing on a shaft arranged to float axia
 M3#engineering-u10-09-q3@3: The load on a ball bearing doubles. What happens to its L10 life? | It falls to one-eighth | It halves | It stays the same | It doubles | Life varies with (C ÷ P) cubed, so doubling P divides life by eight.
 NUM2#engineering-u10-09-q4@2: A shaft transmits 10 kW at 1,500 rpm. What is the torque, in N m? | 63.7 | 0.2 | N m | ω = 2π × 1,500 ÷ 60 = 157.1 rad/s; T = 10,000 ÷ 157.1 = 63.7 N m.
 SA2#engineering-u10-09-q5@1,3: Describe how an engineer designs a shaft carrying a gear and a pulley. | Calculate torque from power and speed using P = Tω. Find the bending moments from gear and belt forces and draw bending moment diagrams. Combine bending and torsional stresses using a failure theory, allowing for reversed bending and fatigue. Apply stress concentration factors at shoulders and keyways and use generous radii. Check deflection and critical speed, select bearings for the loads and required life, and arrange locating and floating bearings. | Torque ; Bending ; Combined stress and fatigue ; Stress concentrations ; Bearings and deflection
+Q: How are shaft power and torque related? | P = Tω, with ω = 2πN ÷ 60 for N in rpm.
+Q: What loads does a shaft usually carry? | Torsion from the power and bending from gears, pulleys and its own weight.
+Q: Why does fatigue govern shaft design? | Bending stress reverses each revolution as the shaft rotates.
+Q: What are the features of plain journal bearings? | They use a lubricant film, are quiet and compact, carry high loads, and need good lubrication.
+Q: What loads do deep-groove ball bearings carry? | Radial and some axial load.
+Q: What load do thrust bearings carry? | Axial load.
+Q: How do rolling bearings eventually fail? | By fatigue of the raceways.
+Q: What is the life exponent for roller bearings? | 10/3.
+Q: What is the L10 life of a ball bearing with C = 20 kN under 5 kN? | 64 million revolutions.
+Q: What reduces real bearing life below rated life? | Contamination and poor lubrication.
 
 ## Gears and power transmission
 LV: Year 1 · Intermediate
@@ -438,6 +528,16 @@ M2#engineering-u10-10-q2@2: Why is a worm drive often chosen for a lifting winch
 M3#engineering-u10-10-q3@3: A compound train has stages of 3 and 4. What is the overall ratio? | 12 | 7 | 1.33 | 0.75 | Overall ratio is the product of the stage ratios.
 NUM2#engineering-u10-10-q4@2: A 1,500 rpm motor drives a 20-tooth pinion meshing with a 60-tooth gear. What is the output speed, in rpm? | 500 | 1 | rpm | Ratio = 60 ÷ 20 = 3, so output speed = 1,500 ÷ 3 = 500 rpm.
 SA2#engineering-u10-10-q5@1,3: Compare gear, belt and chain drives for transmitting power in a machine. | Gears are compact, precise and highly efficient, carry high power and give exact ratios, but need accurate alignment, lubrication and are costlier. Belts are cheap, quiet, tolerate misalignment and absorb shock, and can span longer distances, but can slip unless toothed. Chains give a positive drive and carry high loads at lower cost than gears but are noisier and need lubrication and tensioning. The choice depends on power, distance, precision, cost and maintenance. | Gears ; Belts ; Chains ; Efficiency and precision ; Selection factors
+Q: What are spur gears? | Gears with straight teeth on parallel shafts; simple but noisy at high speed.
+Q: What drawback do helical gears have? | They create axial thrust.
+Q: What are the drawbacks of worm gears? | Lower efficiency, and they are often self-locking.
+Q: Where are epicyclic gears used? | In vehicle transmissions and wind turbines.
+Q: What tooth profile do most gears use? | The involute profile, giving a constant speed ratio.
+Q: How is output torque found for a gear pair? | Input torque × ratio × efficiency.
+Q: What is the overall ratio of a compound gear train? | The product of the stage ratios.
+Q: What are the pros and cons of chain drives? | They do not slip and carry high loads, but need lubrication and are noisier.
+Q: How efficient can a spur gear stage be? | Over 98%.
+Q: What two failure modes are gear teeth designed against? | Bending fatigue at the tooth root and surface pitting from contact stress.
 
 ## Casting and forming
 LV: Year 1 · Intermediate
@@ -483,6 +583,16 @@ M2#engineering-u10-11-q2@2: Which casting process is best for complex, accurate 
 M3#engineering-u10-11-q3@3: A firm needs 50 large pump housings. Which process is most economical? | Sand casting | High-pressure die casting with steel dies | Closed-die forging with costly dies | Precision investment casting of each part | Sand moulds are cheap, suiting large parts in low volumes.
 NUM2#engineering-u10-11-q4@2: A die costs £60,000 and each casting costs £4 in materials and labour. What is the cost per part for 20,000 parts, in £? | 7 | 0.01 | £ | Cost per part = 60,000 ÷ 20,000 + 4 = 3 + 4 = £7.
 SA2#engineering-u10-11-q5@1,3: Compare casting and forging for making a steel crankshaft. | Casting can produce complex shapes near final form with lower tooling cost, but risks porosity and has a coarser structure, lowering fatigue strength and toughness. Forging aligns grain flow with the shape and closes internal voids, giving higher strength, toughness and fatigue resistance, which matter for a crankshaft under cyclic loads, but needs expensive dies and more machining. For high-performance or high-volume engines, forging is usually preferred; castings may suit lower-stressed applications. | Shape and cost ; Defects ; Grain flow ; Fatigue ; Choice
+Q: What is sand casting suited to? | Large parts and low volumes, with a rough finish.
+Q: What is die casting? | Injecting molten metal, often aluminium or zinc, into a steel die under pressure.
+Q: Name four casting defects. | Shrinkage porosity, gas porosity, cold shuts and misruns.
+Q: What is rolling used to make? | Plate, sheet and sections.
+Q: What is extrusion? | Pushing metal through a die to make constant cross-sections.
+Q: Where is sheet metal forming used? | For example, car body panels, by bending, deep drawing and stamping.
+Q: What is the advantage of hot working? | It needs less force, being above the recrystallisation temperature.
+Q: What is the cost per part formula with tooling? | Tooling cost ÷ quantity + variable cost per part.
+Q: What can casting make in a single step that forming cannot? | Complex shapes including internal cavities.
+Q: What is a common mistake about cast versus forged parts? | Assuming castings are as strong; porosity and coarser structure usually weaken them in fatigue.
 
 ## Machining processes
 LV: Year 1 · Intermediate
@@ -529,6 +639,16 @@ M2#engineering-u10-12-q2@2: Why do harder workpiece materials need lower cutting
 M3#engineering-u10-12-q3@3: What is the main drawback of machining a part entirely from solid billet? | Much of the material is wasted as chips | Accuracy is always poor | Complex shapes are impossible with CNC | Machined parts cannot be measured | Near-net-shape processes reduce waste and machining time.
 NUM2#engineering-u10-12-q4@2: A 50 mm diameter bar is turned at 800 rpm. What is the cutting speed, in m/min? | 125.7 | 0.5 | m/min | V = π × 50 × 800 ÷ 1000 = 125.7 m/min.
 SA2#engineering-u10-12-q5@1,3: Explain how CNC machining and CAM have changed manufacturing. | CNC machines follow programmed toolpaths, giving repeatable accuracy, complex multi-axis shapes and reduced reliance on manual skill. CAM software generates toolpaths directly from CAD models, shortening the time from design to part and allowing simulation to avoid collisions. This supports small batches and rapid changes. However, CNC needs programming skills and capital investment, and machining still wastes material and depends on tool life and cutting parameters. | Repeatability ; Complex shapes ; CAD to CAM ; Flexibility ; Costs and limits
+Q: What is turning? | Cutting a rotating workpiece on a lathe with a single-point tool, producing cylindrical parts.
+Q: What does milling produce? | Flat faces, slots and pockets.
+Q: How are drilled holes improved in size and finish? | By reaming and boring.
+Q: Name three non-traditional machining processes. | EDM, laser cutting and waterjet cutting.
+Q: What is the cutting speed formula? | V = πDN ÷ 1000, in m/min with D in mm and N in rpm.
+Q: What sets the material removal rate in machining? | Feed and depth of cut.
+Q: By what mechanisms do cutting tools wear? | Abrasion, adhesion, diffusion and chipping.
+Q: What is Taylor's tool life equation? | VT^{n} = C.
+Q: What spindle speed gives 125 m/min on a 50 mm bar? | About 800 rpm.
+Q: What is a common mistake when setting spindle speed? | Ignoring diameter; the same rpm gives a much higher cutting speed on a larger diameter.
 
 ## Additive manufacturing
 LV: Year 1 · Intermediate
@@ -574,6 +694,16 @@ M2#engineering-u10-13-q2@2: Why are support structures needed in many additive p
 M3#engineering-u10-13-q3@3: For which part is additive manufacturing most suitable? | A low-volume titanium bracket with internal cooling channels | A million identical plastic bottle caps | A simple steel bolt made in huge numbers | A standard flat washer for general use | Complex, low-volume, high-value parts suit additive manufacturing.
 NUM1#engineering-u10-13-q4@1: A part 30 mm tall is printed with 0.2 mm layers. How many layers are needed? | 150 | 0 | layers | Number of layers = 30 ÷ 0.2 = 150.
 SA2#engineering-u10-13-q5@1,3: Evaluate the use of additive manufacturing for aerospace components. | Additive manufacturing allows complex, topology-optimised and lightweight parts with internal channels, consolidating many parts into one and reducing assembly and failure points, which saves fuel and weight. It suits low production volumes and rapid design changes. However, parts can be anisotropic and porous, need extensive post-processing and inspection, and qualifying them for safety-critical use is demanding and costly. Build rates and sizes are limited. It is valuable for selected high-value parts rather than all components. | Complexity and weight ; Part consolidation ; Low volume ; Defects and post-processing ; Qualification
+Q: Which standard groups additive manufacturing into seven categories? | ISO/ASTM 52900.
+Q: What is material extrusion in additive manufacturing? | Fused filament fabrication, depositing molten polymer through a nozzle.
+Q: What is powder bed fusion? | Fusing regions of a powder layer with a laser or electron beam.
+Q: What shapes can additive manufacturing make that cannot be machined or cast? | Complex internal channels, lattices and topology-optimised shapes.
+Q: What is topology optimisation? | A computational method placing material only where loads require it.
+Q: Name four limitations of additive manufacturing. | Anisotropy, surface roughness, porosity, support structures, residual stress, limited build size and slow builds.
+Q: What post-processing do most metal printed parts need? | Support removal, heat treatment, machining of critical surfaces and inspection.
+Q: How many layers does a 30 mm part need at 0.2 mm layers? | 150 layers, from build height ÷ layer thickness.
+Q: How was the aero-engine fuel nozzle improved by additive manufacturing? | About 20 parts became one, lighter and more durable, with fewer joints.
+Q: What is a common mistake about 3D printing and mass production? | Assuming it will replace it; for simple high-volume parts moulding and casting are far cheaper.
 
 ## Quality, metrology and inspection
 LV: Year 1 · Intermediate
@@ -619,6 +749,16 @@ M2#engineering-u10-14-q2@2: What does a point outside the control limits on an S
 M3#engineering-u10-14-q3@3: Why does Cpk matter as well as Cp? | Cpk accounts for whether the process is centred within the tolerance | Cpk ignores the process spread entirely | Cp already includes centring automatically | Cpk measures only the cost of quality | A capable spread can still produce defects if it is off-centre.
 NUM2#engineering-u10-14-q4@2: A tolerance band is 0.06 mm and the process standard deviation is 0.008 mm. What is Cp? | 1.25 | 0.01 | – | Cp = 0.06 ÷ (6 × 0.008) = 0.06 ÷ 0.048 = 1.25.
 SA2#engineering-u10-14-q5@1,3: Explain how a manufacturer can ensure a machined feature consistently meets its tolerance. | Use calibrated instruments with uncertainty well below the tolerance and suitable methods such as gauges or a CMM. Measure samples and plot SPC control charts to detect special-cause variation and act on it. Calculate Cp and Cpk to check the process is capable and centred, and reduce variation through tooling, fixtures and settings if not. Operate within a quality management system such as ISO 9001 with documented procedures and continual improvement, rather than relying on final inspection. | Measurement ; SPC ; Capability ; Improvement ; Quality system
+Q: What is metrology? | The science of measurement.
+Q: How precise should a measuring instrument be relative to the tolerance? | About ten times more precise, as a rule of thumb.
+Q: What keeps measuring instruments accurate? | Calibration against standards traceable to national standards, such as those at the National Physical Laboratory.
+Q: What do go/no-go gauges do? | Quickly check whether features are within limits.
+Q: Name four non-destructive testing methods. | Dye penetrant, magnetic particle, ultrasonic, radiography and eddy current testing.
+Q: When is 100% inspection used? | Where failure is critical.
+Q: What is the process capability formula Cp? | Cp = (USL − LSL) ÷ 6σ.
+Q: What Cpk value is a common target? | At least 1.33.
+Q: What does ISO 9001 require? | Documented processes, continual improvement and customer focus.
+Q: What is a common mistake about inspection and quality? | Relying on final inspection; quality comes from capable, controlled processes.
 
 ## Lean manufacturing and production systems
 LV: Year 1 · Intermediate
@@ -663,4 +803,14 @@ M2#engineering-u10-15-q2@2: Which waste does making products before they are ord
 M3#engineering-u10-15-q3@3: Why did some lean supply chains struggle during the COVID-19 pandemic? | Very low inventories left no buffer against supply disruption | Lean firms held far too much stock at all times | Kanban cards stopped working during lockdowns | Takt time cannot be calculated in a crisis | Minimal buffers make supply chains vulnerable to disruption.
 NUM2#engineering-u10-15-q4@2: A machine has availability 0.90, performance 0.95 and quality 0.99. What is its OEE, in %? | 84.6 | 0.2 | % | OEE = 0.90 × 0.95 × 0.99 = 0.846, or 84.6%.
 SA2#engineering-u10-15-q5@1,3: Evaluate the use of lean manufacturing in a car components factory. | Lean can shorten lead times, reduce inventory and defects, and free space and cash by removing waste and creating flow and pull with kanban and just-in-time delivery. Takt time aligns production with demand, and tools such as 5S, SMED and kaizen engage workers in improvement. However, low inventory increases vulnerability to supplier failure and demand shocks, and lean needs stable demand, reliable suppliers and a supportive culture. Firms may hold strategic buffers to balance efficiency with resilience. | Waste reduction ; Flow and pull ; Takt and tools ; Supply risk ; Culture and resilience
+Q: From which system did lean manufacturing grow? | The Toyota Production System.
+Q: What are Womack and Jones's five lean principles? | Value, value stream, flow, pull and perfection.
+Q: What is often added as the eighth waste? | Unused talent.
+Q: What is takt time? | Available production time ÷ customer demand.
+Q: What is overall equipment effectiveness? | Availability × performance × quality.
+Q: What is just-in-time delivery? | Delivering what is needed when it is needed.
+Q: What does kaizen mean in lean? | Continuous improvement.
+Q: What does lean rely on to work? | Stable demand, reliable suppliers and engaged workers.
+Q: A shift has 27,000 s and demand is 450 units. What is takt time? | 60 s per unit.
+Q: What is a common mistake about lean? | Treating it as cutting staff or inventory; it is about removing waste and improving flow with workers.
 `;

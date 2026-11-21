@@ -54,3 +54,18 @@ test("nothing on a course page repaints on every frame for as long as it's open"
   assert.match(css, /animation: lg-gleam 14s linear 1s;/);
   assert.doesNotMatch(css, /lg-gleam[^;]*infinite/);
 });
+
+test("every page preloads its whole static import graph, so modules download together, not one level at a time", async () => {
+  const { pages, withPreloads } = await import("../scripts/preload-modules.mjs");
+  const { resolve } = await import("node:path");
+  const root = new URL("../", import.meta.url).pathname, stale = [];
+  for (const p of pages()) { const path = resolve(root, p), html = await readFile(path, "utf8"); if (withPreloads(path, html) !== html) stale.push(p); }
+  assert.deepEqual(stale, [], "out of date: run node scripts/preload-modules.mjs (npm run preload)");
+  // a course page lists course.js and what it imports; the lazy parts (labs, the island, the globe) stay lazy
+  const chem = await read("scigradify/chemistry/index.html");
+  assert.match(chem, /<link rel="modulepreload" href="\.\.\/\.\.\/kit\/course\/course\.js">/);
+  assert.match(chem, /<link rel="modulepreload" href="\.\.\/\.\.\/kit\/learning\/bkt-params\.js">/);
+  assert.doesNotMatch(chem, /modulepreload" href="[^"]*(three\.module|island3d|labs\/lab)\.js"/);
+  const home = await read("index.html");
+  assert.doesNotMatch(home, /modulepreload" href="[^"]*lifeos\/(lifeos|os)\.js"/);   // the hidden tour stays unloaded
+});

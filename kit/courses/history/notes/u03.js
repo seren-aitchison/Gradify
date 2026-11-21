@@ -35,6 +35,16 @@ M2#history-u03-01-q2@2: Why did Henry VII use bonds and recognisances? | To guar
 TF1#history-u03-01-q3@1: Prince Arthur succeeded Henry VII as king in 1509. | false | Arthur died in 1502; his brother became Henry VIII in 1509.
 M3#history-u03-01-q4@3: Which judgement about Tudor security in 1509 is best supported? | Real but fragile: a peaceful succession, but with one male heir | Completely secure, with no possible rival anywhere | Hopelessly insecure, with civil war certain | Secure only because Henry had conquered France | The evidence supports security with lasting weaknesses.
 SA3#history-u03-01-q5@2,3: How successfully did Henry VII secure the Tudor dynasty? | Henry won at Bosworth in 1485 with a weak claim, married Elizabeth of York in 1486, defeated Simnel at Stoke in 1487 and executed Warbeck in 1499. He controlled nobles through bonds and recognisances, avoided costly wars (Étaples 1492) and made dynastic marriages (Medina del Campo 1489; Margaret and James IV 1503). But Arthur's death in 1502 left one heir. A strong answer weighs success against fragility. | Explains threats ; Explains methods of control ; Explains diplomacy and marriage ; Considers weaknesses ; Reaches a judgement
+Q: When was the Battle of Bosworth fought? | On 22 August 1485.
+Q: Why did Henry VII date his reign from the day before Bosworth? | So that those who fought against him could be treated as traitors.
+Q: Whom did Lambert Simnel claim to be? | The Earl of Warwick.
+Q: When was the Battle of Stoke fought? | On 16 June 1487.
+Q: What caused the Cornish Rebellion of 1497? | Taxation for war with Scotland.
+Q: Who were Empson and Dudley? | Henry VII's ministers who pursued royal rights ruthlessly.
+Q: What did the Treaty of Étaples (1492) achieve for Henry VII? | Peace with France, avoiding an expensive war.
+Q: What did the Treaty of Medina del Campo (1489) agree? | That Prince Arthur would marry Catherine of Aragon.
+Q: Whom did Henry VII's daughter Margaret marry, and when? | James IV of Scotland, in 1503.
+Q: Why was Henry VIII's accession in 1509 significant? | It was the first undisputed succession since 1422.
 
 ## Henry VIII's government
 LV: GCSE and A level · Application
@@ -72,6 +82,16 @@ M2#history-u03-02-q2@2: Why was the Amicable Grant of 1525 abandoned? | It met w
 TF1#history-u03-02-q3@1: Wolsey organised the Field of the Cloth of Gold in 1520. | true | It was a lavish meeting between Henry VIII and Francis I.
 M3#history-u03-02-q4@3: How far should Elton's view of Cromwell's reforms be accepted? | Cromwell made lasting changes, but "revolution" overstates their speed | Cromwell changed nothing in the way England was governed | Every Tudor reform was planned by Wolsey in 1515 | Henry VIII abolished his council after 1540 | Historians accept change while questioning the word revolution.
 SA3#history-u03-02-q5@2,3: How far did Thomas Cromwell transform the government of England? | Cromwell, chief minister from about 1532, carried the break with Rome through Parliament (the Act of Supremacy 1534), ran the dissolution from 1536 and reformed finance and the council. Elton (1953) called this a revolution in government; critics argue changes were gradual, built on earlier trends and depended on the king and court. A strong answer weighs these, comparing Wolsey's personal rule. | Explains Cromwell's reforms ; Compares with Wolsey ; Explains Elton's thesis ; Explains criticisms ; Reaches a judgement
+Q: What was Thomas Wolsey's background? | He was a butcher's son from Ipswich.
+Q: When did Wolsey become Lord Chancellor and cardinal? | Both in 1515.
+Q: What was the Field of the Cloth of Gold? | A meeting between Henry VIII and Francis I of France in 1520, organised by Wolsey.
+Q: How did Wolsey die? | In November 1530, on his way to face charges of treason.
+Q: What is a Lord Chancellor? | The king's chief minister and head of the legal system.
+Q: When did Cromwell organise the dissolution of the monasteries? | From 1536.
+Q: Why did Thomas Cromwell fall? | After the failed marriage to Anne of Cleves; he was executed in July 1540.
+Q: What is the Privy Council? | The small group of leading councillors who advised the monarch and ran government.
+Q: What do critics of Elton say about Cromwell's reforms? | Many changes were gradual, continued earlier trends or were reversed, and personal monarchy and the court still mattered.
+Q: Did Henry VIII run the daily business of government himself? | No. His ministers, such as Wolsey and Cromwell, did most of the work.
 
 ## The English Reformation
 LV: GCSE and A level · Application
@@ -109,6 +129,16 @@ M2#history-u03-03-q2@2: Why did Pope Clement VII refuse the annulment? | He was 
 TF1#history-u03-03-q3@1: The Act of Six Articles of 1539 reaffirmed Catholic teaching. | true | It upheld doctrines such as transubstantiation.
 M3#history-u03-03-q4@3: How quickly did the English Reformation change religion in England? | The political break was fast, but religious change in parishes took decades | England was fully Protestant by the end of 1534 | No religious change happened at all under the Tudors | The Reformation was demanded by every parish in England | Historians separate the political break from slow religious change.
 SA3#history-u03-03-q5@2,3: Why did Henry VIII break with Rome, and how far did religion in England change by 1547? | Henry wanted an annulment from Catherine of Aragon to secure a male heir; Clement VII, influenced by Charles V, refused, so the Act in Restraint of Appeals (1533) and the Act of Supremacy (1534) created a royal church. Doctrine stayed largely Catholic (the Six Articles 1539), though the Great Bible appeared in 1539. Dickens saw rapid popular change; Haigh and Duffy a slow, imposed one. A strong answer weighs these. | Explains the annulment ; Explains the laws ; Explains limited doctrinal change ; Uses historians ; Reaches a judgement
+Q: What biblical argument did Henry VIII use for his annulment? | That marrying his brother Arthur's widow was forbidden by the Bible.
+Q: Who influenced Pope Clement VII against the annulment? | Catherine's nephew, the Emperor Charles V.
+Q: What did the Act in Restraint of Appeals (1533) do? | It stopped appeals to Rome, so English courts could decide the marriage.
+Q: Who annulled Henry's marriage to Catherine, and when? | Thomas Cranmer, Archbishop of Canterbury, in May 1533.
+Q: When did Henry marry Anne Boleyn, and when was Elizabeth born? | He married her in January 1533; Elizabeth was born in September 1533.
+Q: Who was executed in 1535 for refusing the royal supremacy? | Thomas More and John Fisher.
+Q: When was the Great Bible in English published? | In 1539.
+Q: What did A. G. Dickens argue about the Reformation in 1964? | It was popular and rapid, building on anticlericalism and Lollardy.
+Q: What did Haigh and Duffy argue about the Reformation? | Traditional religion was strong and popular, and the Reformation was imposed slowly from above.
+Q: What is royal supremacy? | The monarch's authority as head of the Church in England.
 
 ## The dissolution of the monasteries
 LV: GCSE and A level · Application
@@ -146,6 +176,16 @@ M2#history-u03-04-q2@2: Why did landowners who bought monastic land support the 
 TF1#history-u03-04-q3@1: The Court of Augmentations managed former monastic property. | true | It was set up in 1536 for this purpose.
 M3#history-u03-04-q4@3: Which judgement about the effects of the dissolution is best supported? | It enriched the crown briefly and gave landowners a stake in the Reformation | It made the crown permanently wealthy for centuries | It had no effect on the poor or on landholding | It strengthened the Pope's authority in England | Gains were short-lived, but the land transfer lasted.
 SA3#history-u03-04-q5@2,3: Why were the monasteries dissolved, and with what results? | After the Valor Ecclesiasticus (1535) Cromwell dissolved the smaller houses in 1536 and the larger by 1540. Motives included royal need for money, reformers' criticism of monastic life and the threat of loyalty to Rome. The Pilgrimage of Grace (1536) resisted it; around 200 were executed. Land sold to gentry and nobles gave them a stake in the Reformation, while charity, learning and art were lost. A strong answer weighs motives and effects. | Explains the process ; Explains financial motives ; Explains religious and political motives ; Explains effects ; Reaches a judgement
+Q: When did the dissolution of the monasteries take place? | Between 1536 and 1540.
+Q: Which was the last abbey to close, and when? | Waltham Abbey, in March 1540.
+Q: How many religious houses closed in the dissolution? | More than 800.
+Q: When was the Court of Augmentations set up? | In 1536.
+Q: How did the larger monasteries close? | They surrendered between 1538 and 1540, confirmed by an Act of 1539.
+Q: What did the Pilgrimage of Grace demand? | Restoration of the monasteries and an end to Cromwell's influence.
+Q: Roughly how many people were executed after the Pilgrimage of Grace? | Around 200, after further risings early in 1537.
+Q: Why did monastic loyalty to Rome worry Henry VIII? | It made the monasteries a potential threat to the royal supremacy.
+Q: What did communities lose when the monasteries closed? | Hospitality, care for the poor, schools, and much art and many libraries.
+Q: Did the dissolution make the crown permanently rich? | No. Much of the land was sold quickly, mostly by 1547, to pay for war.
 
 ## Edward VI and Protestant reform
 LV: GCSE and A level · Application
@@ -183,6 +223,16 @@ M2#history-u03-05-q2@2: Why did rebels in Devon and Cornwall rise in 1549? | The
 TF1#history-u03-05-q3@1: The second Prayer Book of 1552 was more Protestant than the first. | true | It moved further from Catholic practice.
 M3#history-u03-05-q4@3: Which judgement about Edward VI's reign is best supported? | A Protestant church in law, but not yet a Protestant people | A fully Catholic restoration under royal protection | No change in religion during the reign | A reign with no rebellions or opposition | Official religion changed faster than popular belief did.
 SA3#history-u03-05-q5@2,3: How far did England become Protestant under Edward VI? | Somerset and Northumberland dissolved the chantries (1547), introduced English Prayer Books (1549 and 1552), removed images and issued the Forty-Two Articles (1553). But the Prayer Book Rebellion of 1549 showed strong support for the old religion, and many parishes complied slowly. A strong answer weighs official change against popular belief. | Explains religious changes ; Explains government ; Explains opposition ; Weighs law against belief ; Reaches a judgement
+Q: How old was Edward VI when he became king in 1547? | Nine.
+Q: Who led the council after Somerset's fall? | John Dudley, later Duke of Northumberland, until 1553.
+Q: What were chantries, and when were they dissolved? | Foundations that paid for prayers for the dead; they were dissolved in 1547.
+Q: Who largely wrote the 1549 Book of Common Prayer? | Thomas Cranmer.
+Q: What changed in church interiors under Edward VI? | Images were removed and altars replaced by communion tables.
+Q: What did the Forty-Two Articles (1553) do? | They set out Protestant doctrine.
+Q: What did the Prayer Book rebels of 1549 demand? | The return of the Latin mass.
+Q: Where did Kett's Rebellion take place? | In Norfolk.
+Q: What was the political result of the 1549 rebellions? | Both were crushed, and the crisis led to Somerset's fall.
+Q: How Protestant was England by 1553? | Protestant in law, services and doctrine, but not yet a Protestant people.
 
 ## Mary I and Catholic restoration
 LV: GCSE and A level · Application
@@ -221,6 +271,16 @@ M2#history-u03-06-q2@2: Why did Wyatt's Rebellion break out in 1554? | Fear of S
 TF1#history-u03-06-q3@1: Mary returned the monastic lands to the Church. | false | Landowners kept them, which limited the restoration.
 M3#history-u03-06-q4@3: Which judgement about Mary's reign is best supported? | Coherent policies undone by a short reign and the lack of an heir | A total success that lasted for generations | A reign without any religious policy at all | A Protestant reign that continued Edward's work | Historians weigh coherence against outcome.
 SA3#history-u03-06-q5@2,3: How far was Mary I's reign a failure? | Mary defeated Jane Grey (1553), restored the mass, married Philip (1554), restored papal authority and burned around 280 Protestants. Wyatt's Rebellion, the loss of Calais (1558) and her death without an heir suggest failure, and Foxe shaped her reputation. Duffy argues her church was energetic and gaining support. A strong answer weighs these and considers sources. | Explains accession ; Explains restoration ; Explains failures ; Uses historians' debate ; Reaches a judgement
+Q: Who tried to make Lady Jane Grey queen in 1553? | The Duke of Northumberland.
+Q: Where did Mary rally support in 1553? | In East Anglia.
+Q: When was Lady Jane Grey executed? | In February 1554.
+Q: Who absolved England and restored papal authority in November 1554? | Cardinal Reginald Pole.
+Q: When did the burning of Protestants begin under Mary? | From February 1555.
+Q: When was Cranmer burned? | In March 1556.
+Q: When did Mary I die? | On 17 November 1558, childless.
+Q: How did John Foxe shape Mary's reputation? | His Book of Martyrs (1563 in English) made her "Bloody Mary" for later Protestant England.
+Q: What does Eamon Duffy argue about Mary's church? | It was energetic and gaining support, and she ran out of time rather than failing.
+Q: What is heresy? | Beliefs contrary to the official teaching of the Church.
 
 ## Elizabeth I and the religious settlement
 LV: GCSE and A level · Application
@@ -259,6 +319,16 @@ M2#history-u03-07-q2@2: Why did Elizabeth take the title Supreme Governor rather
 TF1#history-u03-07-q3@1: Mary Queen of Scots was executed in 1587. | true | She was at the centre of several Catholic plots.
 M3#history-u03-07-q4@3: Which judgement about the settlement is best supported? | Broad and durable, enforced more firmly as threats grew | A failure that collapsed within ten years | A fully Catholic settlement under royal control | A Puritan settlement that abolished bishops | It lasted despite challenges from both sides.
 SA3#history-u03-07-q5@2,3: How successful was Elizabeth's religious settlement? | The Acts of Supremacy and Uniformity (1559) and the Thirty-Nine Articles (1563) created a broad Protestant church. Catholic challenges came from the Northern Rebellion (1569), the excommunication (1570), missionary priests and plots around Mary Queen of Scots (executed 1587); Puritans pressed for further reform, resisted by Elizabeth and Whitgift. Most attended by 1603, but minorities remained. A strong answer weighs success against limits. | Explains the settlement ; Explains Catholic challenges ; Explains Puritan challenges ; Explains outcomes ; Reaches a judgement
+Q: What did the Act of Uniformity (1559) do? | It restored a Prayer Book based on that of 1552, with some wording Catholics could accept.
+Q: What were recusancy fines? | Fines paid by those who missed Church of England services.
+Q: What set out the Church of England's doctrine in 1563? | The Thirty-Nine Articles.
+Q: What did the Northern Rebellion of 1569 support? | Catholicism and Mary Queen of Scots.
+Q: Which Pope excommunicated Elizabeth? | Pope Pius V, in 1570.
+Q: When did Jesuit priests arrive in England? | From 1580; seminary priests trained abroad arrived from 1574.
+Q: When was Edmund Campion executed? | In 1581.
+Q: What did Puritans want? | Further reform of the Church, removing vestments and ceremonies.
+Q: Why was Archbishop Grindal suspended in 1577? | For refusing to suppress "prophesyings".
+Q: How successful was the 1559 settlement by 1603? | It lasted and most people attended the Church of England, though a Catholic minority and Puritan pressure remained.
 
 ## Elizabethan government
 LV: GCSE and A level · Application
@@ -297,6 +367,16 @@ M2#history-u03-08-q2@2: Why did faction grow in the 1590s? | Older councillors d
 TF1#history-u03-08-q3@1: Parliament met only when summoned by the monarch. | true | It was called mainly to grant taxation and pass laws.
 M3#history-u03-08-q4@3: Which judgement about Elizabeth and Parliament is best supported? | Real disputes, but Parliament was mainly a partner rather than an opposition | Parliament openly ruled England in place of the queen | Parliament never disagreed with Elizabeth on anything | Elizabeth abolished Parliament after the Armada | Historians weigh disputes against cooperation.
 SA3#history-u03-08-q5@2,3: How effective was Elizabethan government? | Elizabeth ruled through a small Privy Council led by Cecil (Secretary 1558, Lord Treasurer 1572) and Walsingham, controlling faction through patronage; Parliament granted taxation and laws; JPs and Lord Lieutenants ran the counties. Faction grew in the 1590s, ending in Essex's failed rebellion of 1601. Neale saw Parliament as an opposition; Elton and Graves as a partner. A strong answer weighs these. | Explains the council and ministers ; Explains local government ; Explains faction ; Uses the Parliament debate ; Reaches a judgement
+Q: How large was Elizabeth's Privy Council? | Usually around a dozen to twenty members.
+Q: What posts did William Cecil hold? | Secretary from 1558 and Lord Treasurer from 1572 until his death in 1598.
+Q: How did patronage strengthen Elizabeth's government? | Granting offices, lands and favours bound the elite to the queen.
+Q: What were Lord Lieutenants responsible for? | Commanding the local militia.
+Q: What was Parliament mainly summoned for under Elizabeth? | To grant taxation and pass laws.
+Q: Whose rivalry with the Cecils was an earlier example of court faction? | Robert Dudley, Earl of Leicester.
+Q: What happened to the Earl of Essex? | His rebellion in February 1601 failed, and he was executed.
+Q: What did Neale argue about Elizabeth's Parliaments? | An organised Puritan group in the Commons challenged the queen over religion, marriage and succession.
+Q: What did Elton and Graves argue about Elizabeth's Parliaments? | Parliament was usually cooperative, and disputes were managed, often by councillors using Parliament to press the queen.
+Q: What is faction? | A rival group competing for influence at court.
 
 ## The Spanish Armada
 LV: GCSE and A level · Application
@@ -336,6 +416,16 @@ M2#history-u03-09-q2@2: Why did the Armada's plan depend on perfect coordination
 TF1#history-u03-09-q3@1: Drake's attack on Cadiz in 1587 delayed the Armada. | true | It destroyed ships and supplies.
 M3#history-u03-09-q4@3: Which explanation of the Armada's failure is best supported? | A flawed plan, exploited by English tactics and finished by the weather | A single English victory that sank the whole fleet | Spanish ships that were faster and better armed | A decision by Philip II to cancel the invasion | Spanish weaknesses, English tactics and the weather combined.
 SA3#history-u03-09-q5@2,3: Why did the Spanish Armada fail in 1588? | The Armada of about 130 ships had to meet Parma's army without a deep-water port; English fireships scattered it off Calais (7 August) and English guns damaged it at Gravelines (8 August); storms wrecked many ships around Scotland and Ireland, and perhaps a third never returned. A strong answer weighs Spanish weaknesses, English strengths and chance. | Explains the plan ; Explains English tactics ; Explains the weather ; Weighs causes ; Reaches a judgement
+Q: How did privateering contribute to war with Spain? | Drake and others raided Spanish shipping and colonies.
+Q: Why did Mary Queen of Scots' execution push Philip II to act? | It removed the Catholic heir and gave Philip a reason to invade.
+Q: How large was the Spanish Armada? | About 130 ships.
+Q: Whose army was the Armada meant to meet? | The Duke of Parma's army in the Netherlands.
+Q: When was the Battle of Gravelines? | On 8 August 1588.
+Q: What route did the Armada take home? | North around Scotland and Ireland, where storms wrecked many ships.
+Q: What proportion of the Armada never returned? | Perhaps a third.
+Q: Where did Elizabeth make her famous speech in August 1588? | To her troops at Tilbury.
+Q: What English strengths helped defeat the Armada? | Faster ships, long-range guns and good leadership under Howard and Drake.
+Q: What was a key Spanish weakness in the Armada plan? | No deep-water port to meet Parma.
 
 ## Elizabethan exploration
 LV: GCSE and A level · Application
@@ -373,6 +463,16 @@ M2#history-u03-10-q2@2: Why did Elizabethan sailors raid Spanish America? | For 
 TF1#history-u03-10-q3@1: England founded a lasting colony in North America before 1603. | false | Roanoke failed; Jamestown, the first lasting colony, came in 1607.
 M3#history-u03-10-q4@3: Which judgement about Elizabethan exploration is best supported? | More important for what it began than for what it achieved by 1603 | A complete empire already established by 1603 | An enterprise with no lasting consequences at all | Purely scientific voyages without profit motives | Its significance lay mostly in what followed.
 SA3#history-u03-10-q5@2,3: How significant was Elizabethan exploration? | Hawkins's slaving voyages (1562–1569) began English involvement in the Atlantic slave trade; Drake circumnavigated the world (1577–1580); Gilbert claimed Newfoundland (1583); Roanoke (1585, 1587) failed; the East India Company was chartered in 1600. Motives were trade, plunder, rivalry with Spain and prestige. A strong answer weighs limited achievement by 1603 against long-term consequences. | Explains the voyages ; Explains motives ; Explains limits ; Explains consequences ; Reaches a judgement
+Q: What did Hawkins do on his slaving voyages? | He captured Africans and sold them in Spanish America, between 1562 and 1569.
+Q: When did Drake sail around the world? | Between 1577 and 1580.
+Q: Where was Drake knighted, and when? | Aboard the Golden Hind, in 1581.
+Q: Who claimed Newfoundland, and when? | Humphrey Gilbert, in 1583.
+Q: Who sponsored the Roanoke colony? | Walter Raleigh, in 1585 and again in 1587.
+Q: What did Richard Hakluyt's Principal Navigations (1589) do? | It promoted English expansion.
+Q: Name three motives for Elizabethan exploration. | Trade and plunder, especially Spanish silver, Protestant rivalry with Spain, and national prestige.
+Q: What made long Elizabethan voyages possible? | Improved ships and navigation.
+Q: What was the first lasting English colony, and when was it founded? | Jamestown, in 1607.
+Q: What is a chartered company? | A trading company given rights by royal charter.
 
 ## Poverty and social policy
 LV: GCSE and A level · Application
@@ -412,6 +512,16 @@ M2#history-u03-11-q2@2: Why did prices rise faster than wages in the sixteenth c
 TF1#history-u03-11-q3@1: The Elizabethan poor law system lasted until 1834. | true | The Poor Law Amendment Act of 1834 replaced it.
 M3#history-u03-11-q4@3: Which judgement about Elizabethan poor relief is best supported? | A significant achievement, more humane for the deserving poor than for vagrants | A complete failure that helped nobody | A system that ended poverty in England by 1603 | A private scheme with no part played by the law | Its achievements and harshness both matter.
 SA3#history-u03-11-q5@2,3: How effectively did Elizabethan governments deal with poverty? | Poverty grew through population growth, inflation, enclosure, bad harvests (1594–1597) and the loss of monastic charity. Laws of 1572 and 1576 introduced a poor rate and work, and the Acts of 1597 and 1601 created parish overseers and relief that lasted until 1834. But vagrants were punished harshly, enforcement was uneven and private charity remained vital. A strong answer weighs these. | Explains causes ; Explains attitudes ; Explains the laws ; Explains limits ; Reaches a judgement
+Q: How much did England's population grow in the sixteenth century? | From about 2.5 million in the 1520s to about 4 million by 1600.
+Q: How did enclosure contribute to Tudor poverty? | Common land was enclosed for sheep farming in some areas.
+Q: When were the worst bad harvests of the 1590s? | Between 1594 and 1597.
+Q: How did the dissolution of the monasteries affect the poor? | It removed a source of charity.
+Q: Who were "sturdy beggars"? | Able-bodied poor people thought to choose idleness, the undeserving poor.
+Q: How could vagrants be punished in Tudor England? | They could be whipped.
+Q: What did the Act of 1572 introduce? | A compulsory local poor rate.
+Q: What did the Act of 1576 require towns to provide? | Work and houses of correction.
+Q: What did the Poor Laws require for poor children? | That they be apprenticed.
+Q: What limited Elizabethan poor relief? | Harsh punishment of vagrants and uneven local enforcement; much relief still came from private charity.
 
 ## Tudor culture and society
 LV: GCSE and A level · Application
@@ -448,6 +558,16 @@ M2#history-u03-12-q2@2: Why did the gentry grow in wealth in the sixteenth centu
 TF1#history-u03-12-q3@1: Puritans criticised the theatres. | true | They thought plays encouraged immorality and disorder.
 M3#history-u03-12-q4@3: Which judgement about the golden age is best supported? | A real cultural flowering, alongside hardship for many | A time of prosperity and peace for every subject | A period with no cultural achievement at all | An age that ended with the death of Mary I | Culture flourished while many people suffered hardship.
 SA3#history-u03-12-q5@2,3: How far does the Elizabethan period deserve to be called a golden age? | Theatre (the Theatre 1576, the Globe 1599), Marlowe and Shakespeare, rising literacy, grammar schools and print, and pride after the Armada suggest a golden age. But the 1590s brought war, harvest failure, poverty and faction, and the image was shaped later. A strong answer weighs cultural achievement against social hardship. | Explains cultural achievements ; Explains social structure ; Explains hardship ; Considers how the image was built ; Reaches a judgement
+Q: Describe the Tudor social hierarchy from top to bottom. | Monarch, nobility, gentry, yeomen, husbandmen and labourers, with the poor at the bottom.
+Q: What helped the gentry grow? | The sale of monastic land.
+Q: What is a yeoman? | A farmer who owned or held land, below the gentry.
+Q: Who introduced printing to England, and when? | William Caxton, in 1476.
+Q: What did printing spread in Tudor England? | Books, pamphlets and the English Bible.
+Q: Among whom did literacy rise most in Tudor England? | The gentry and townspeople.
+Q: What shaped the lives of most Tudor women? | Marriage and the household; few received formal education, though some elite women were highly educated.
+Q: Name two Elizabethan playwrights. | Christopher Marlowe and William Shakespeare.
+Q: Who criticised the theatres? | Puritans and the City authorities.
+Q: Why is the golden age image of Elizabeth's reign misleading? | The 1590s brought war, harvest failure, poverty and faction; the image was built later.
 
 ## Tudor foreign policy
 LV: GCSE and A level · Application
@@ -484,6 +604,16 @@ M2#history-u03-13-q2@2: Why did Elizabeth go to war with Spain in 1585? | She co
 TF1#history-u03-13-q3@1: James IV of Scotland was killed at Flodden in 1513. | true | The Scots had invaded England while Henry was in France.
 M3#history-u03-13-q4@3: Which judgement about Tudor foreign policy is best supported? | Henry VII and Elizabeth won security at lower cost than Henry VIII | Henry VIII's wars won England a lasting empire in France | Tudor foreign policy lost England every war it fought | The Tudors never fought a war with France | The contrast between cautious and glory-seeking monarchs is clear.
 SA3#history-u03-13-q5@2,3: How successful was Tudor foreign policy between 1485 and 1603? | Henry VII sought security and trade (Medina del Campo 1489, Étaples 1492); Henry VIII won at the Spurs and Flodden (1513) and took Boulogne (1544) at great cost; Mary lost Calais (1558); Elizabeth secured Scotland (1560), fought Spain from 1585, defeated the Armada and won the Nine Years' War in Ireland. A strong answer compares monarchs and weighs gains against costs. | Explains Henry VII ; Explains Henry VIII ; Explains Elizabeth ; Explains Ireland ; Reaches a judgement
+Q: What were Henry VII's foreign policy aims? | Security and trade.
+Q: What battle did Henry VIII win against France in 1513? | The Battle of the Spurs.
+Q: What did Henry VIII capture in 1544? | Boulogne.
+Q: How did Mary I's foreign policy lead to the loss of Calais? | Her alliance with Spain drew England into war with France.
+Q: How did Elizabeth secure Scotland in 1560? | Through the Treaty of Edinburgh.
+Q: How long did Elizabeth's war with Spain last? | From 1585 until 1604.
+Q: What was plantation in Ireland? | Settling English and Scottish colonists on land taken in Ireland.
+Q: What happened at Kinsale in 1601? | Hugh O'Neill and his Spanish allies were defeated, leading to his surrender in 1603.
+Q: When was the Nine Years' War in Ireland? | From 1594 to 1603.
+Q: Did Henry VIII's wars make England a great power? | No. They were expensive and won little lasting territory.
 
 ## Succession and the end of the Tudor dynasty
 LV: GCSE and A level · Evaluation
@@ -524,4 +654,14 @@ M2#history-u03-14-q2@2: Why was marriage to a foreign prince risky for Elizabeth
 TF1#history-u03-14-q3@1: Elizabeth named her heir publicly long before her death. | false | She avoided naming an heir; Cecil secretly prepared James's accession.
 M3#history-u03-14-q4@3: Which explanation of Elizabeth's decision not to marry is best supported? | Political risks made marriage difficult, and remaining single became part of her image | She was legally forbidden to marry by her father's will | No suitor ever proposed marriage to her | Parliament demanded that she stay unmarried | Political reasons are the best evidenced; personal ones are speculation.
 SA3#history-u03-14-q5@2,3: Why was the succession a recurring problem for the Tudors, and how was it solved in 1603? | Henry VIII's search for a male heir drove six marriages and the Succession Acts (1534, 1544); Edward VI's Device tried to crown Jane Grey in 1553; Elizabeth never married, despite pressure after 1562, because of the risks of foreign influence and faction; Mary Queen of Scots was a Catholic claimant until 1587. Cecil prepared James VI's peaceful accession in March 1603. A strong answer explains and weighs these. | Explains Henry VIII ; Explains 1553 ; Explains Elizabeth and marriage ; Explains 1603 ; Reaches a judgement
+Q: How many times did Henry VIII marry? | Six times.
+Q: Whom did the Succession Act of 1534 recognise as heir? | Elizabeth.
+Q: What confirmed the order of succession set in 1544? | Henry VIII's will.
+Q: Why did Mary's claim win in July 1553? | It was backed by law and popular support.
+Q: What event in 1562 increased pressure on Elizabeth to marry? | She nearly died of smallpox.
+Q: Name three suitors of Elizabeth I. | Philip II, Archduke Charles of Austria, the Duke of Anjou and Robert Dudley.
+Q: Why was marrying a subject risky for Elizabeth? | It risked faction at court.
+Q: When did Elizabeth I die? | On 24 March 1603.
+Q: Who secretly prepared James VI's accession? | Robert Cecil.
+Q: What was the Union of the Crowns? | The rule of England and Scotland by one monarch from 1603.
 `;
