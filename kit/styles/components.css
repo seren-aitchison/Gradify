@@ -1327,4 +1327,7 @@ dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-ba
 .gx-mark.gx-mark.gx-mark { display: block; margin: 6px 2px 0; text-align: right; font-size: 11px; line-height: 1.3; letter-spacing: .02em;
   font-weight: 500; color: var(--mute); opacity: .62; pointer-events: none; user-select: none; -webkit-user-select: none; }
 .vx.vx.vx.vx.vx .gx-mark { color: rgba(21, 24, 38, .5); opacity: 1; }
+/* the full-size view is white too, but sits outside the card (appended to the body), so it needs the card's ink */
+.vx-full .gx-mark.gx-mark.gx-mark { color: rgba(21, 24, 38, .5); opacity: 1; }
 :root[data-a-contrast="high"] .gx-mark.gx-mark.gx-mark { opacity: 1; }
+:root[data-a-contrast="high"] .vx.vx.vx.vx.vx .gx-mark, :root[data-a-contrast="high"] .vx-full .gx-mark.gx-mark.gx-mark { color: rgba(21, 24, 38, .8); }
