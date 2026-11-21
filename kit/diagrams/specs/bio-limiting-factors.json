@@ -1,0 +1,117 @@
+{
+ "id": "bio-limiting-factors",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Photosynthesis",
+ "title": "Light intensity as a limiting factor",
+ "caption": "At low light intensity the rate rises in proportion to the light, whatever the CO₂ concentration or temperature: light is the limiting factor. At high intensity the curve levels off, and a higher CO₂ concentration (or temperature) lifts the plateau, because a different factor is now limiting.",
+ "alt": "Two curves of photosynthesis rate against light intensity that rise together and then level off: a lower plateau at low CO2 and a higher plateau at high CO2.",
+ "description": [
+  "At low light intensity both curves rise together: light is limiting.",
+  "At high light intensity each curve levels off: another factor, such as CO₂ or temperature, is now limiting.",
+  "With more CO₂ the plateau is higher (100 against 50).",
+  "Glasshouses raise light, CO₂ and temperature to raise yields."
+ ],
+ "range": {
+  "x": [
+   0,
+   200
+  ],
+  "y": [
+   0,
+   115
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "light intensity (arbitrary units)",
+  "rate of photosynthesis (arbitrary units)"
+ ],
+ "curves": [
+  {
+   "expr": "4*x*100/(4*x+100)",
+   "colour": "a4"
+  },
+  {
+   "expr": "4*x*50/(4*x+50)",
+   "colour": "a3"
+  }
+ ],
+ "legend": [
+  [
+   "higher CO₂ or temperature",
+   "a4"
+  ],
+  [
+   "lower CO₂ or temperature",
+   "a3"
+  ]
+ ],
+ "legendData": [
+  45,
+  28
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "4*x*50/(4*x+50)",
+   "x": 0.001,
+   "value": 4,
+   "name": "at low light the lower curve rises in proportion to light: gradient 4"
+  },
+  {
+   "type": "slope",
+   "expr": "4*x*100/(4*x+100)",
+   "x": 0.001,
+   "value": 4,
+   "name": "at low light the higher curve has the same gradient: light, not CO₂, is limiting"
+  },
+  {
+   "type": "value",
+   "expr": "4*x*50/(4*x+50)",
+   "x": 200,
+   "between": [
+    45,
+    50
+   ],
+   "name": "the lower curve levels off near 50"
+  },
+  {
+   "type": "value",
+   "expr": "4*x*100/(4*x+100)",
+   "x": 200,
+   "between": [
+    85,
+    100
+   ],
+   "name": "the higher curve levels off near 100"
+  },
+  {
+   "type": "order",
+   "a": "4*x*100/(4*x+100)",
+   "b": "4*x*50/(4*x+50)",
+   "x": 150,
+   "rel": ">",
+   "name": "at high light, more CO₂ gives a higher rate: another factor was limiting"
+  }
+ ]
+}

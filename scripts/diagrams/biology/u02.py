@@ -31,6 +31,7 @@ mk("u02-05", "bio-plant-cell", "cellmap", "A plant cell",
     "The large permanent vacuole, full of cell sap, is surrounded by the tonoplast.",
     "Chloroplasts carry out photosynthesis; root cells, in the dark, have none.",
     "Like an animal cell it has a nucleus, mitochondria, rough ER, a Golgi apparatus and ribosomes."],
+   also=("u08-01",),
    cell="plant", labels=["cell wall", "plasmodesmata", "plasma membrane", "cytoplasm", "nucleus", "mitochondrion", "chloroplast", "vacuole", "tonoplast", "rough ER", "Golgi apparatus", "80S ribosomes"])
 
 mk("u02-06", "bio-fungal-cell", "cellmap", "A fungal hypha",

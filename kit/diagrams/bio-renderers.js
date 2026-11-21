@@ -18,6 +18,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   layers     the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   carbonflow a pathway or cycle (drawn as a flow) whose carbon atoms balance at every step
 //   sarcomere  relaxed and contracted sarcomeres: band lengths worked out from the filament lengths
 //   cladogram  an evolutionary tree with the characters that define its clades, each character on one branch (parsimony)
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
@@ -1193,6 +1194,16 @@ function sarcomereChecks(spec) {
   return out;
 }
 
+// ======================================================================== carbonflow
+// A cycle or pathway drawn by the shared flow renderer whose atoms must balance at every step.
+// spec: nodes, edges (as in flow), balance: [{name, in: [[molecules, carbons each], …], out: [[…]]}]
+function carbonflowChecks(spec) {
+  const out = [], tot = (side) => side.reduce((a, [n, c]) => a + n * c, 0);
+  for (const b of spec.balance || []) out.push(check(`${b.name}: ${tot(b.in)} carbon atoms in, ${tot(b.out)} out`, tot(b.in) === tot(b.out), b.in.map(([n, c]) => `${n}×${c}C`).join(" + ") + " → " + b.out.map(([n, c]) => `${n}×${c}C`).join(" + ")));
+  if (!(spec.balance || []).length) out.push(check("the spec states the steps it balances", false));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1211,5 +1222,6 @@ register({
   layers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  carbonflow: { draw: flowDraw, checks: carbonflowChecks, widths: [700, 380] },
   sarcomere: { draw: sarcomereDraw, checks: sarcomereChecks, widths: [660, 380] },
 });

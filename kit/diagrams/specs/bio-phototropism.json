@@ -1,0 +1,64 @@
+{
+ "id": "bio-phototropism",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Tropisms",
+ "title": "How a shoot bends towards light",
+ "caption": "Auxin made in the shoot tip moves to the shaded side. Cells there elongate more than on the lit side, so the shoot bends towards the light. In gravitropism auxin collects on the lower side, which bends a shoot up but, because high auxin inhibits root growth, bends a root down.",
+ "alt": "Four boxes in order: light from one side, auxin moving to the shaded side, shaded cells elongating more, and the shoot bending towards the light.",
+ "description": [
+  "Light from one side: a shoot is lit unevenly.",
+  "Auxin moves to the shaded side: made in the tip, transported sideways.",
+  "Shaded cells elongate more: auxin loosens their walls (acid growth).",
+  "The shoot bends towards the light: positive phototropism."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "Auxins"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "t0",
+   "label": "light from one side",
+   "sub": "a shoot is lit unevenly",
+   "tone": "a3"
+  },
+  {
+   "id": "t1",
+   "label": "auxin moves to the shaded side",
+   "sub": "made in the tip, transported sideways",
+   "tone": "a1"
+  },
+  {
+   "id": "t2",
+   "label": "shaded cells elongate more",
+   "sub": "auxin loosens their walls (acid growth)",
+   "tone": "a4"
+  },
+  {
+   "id": "t3",
+   "label": "the shoot bends towards the light",
+   "sub": "positive phototropism",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "t0",
+   "to": "t1"
+  },
+  {
+   "from": "t1",
+   "to": "t2"
+  },
+  {
+   "from": "t2",
+   "to": "t3"
+  }
+ ]
+}

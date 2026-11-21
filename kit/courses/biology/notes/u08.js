@@ -11,6 +11,7 @@ H: Distinctive structures
 - **Large central vacuole**: filled with cell sap, maintains **turgor pressure**.
 - **Plastids**: chloroplasts for photosynthesis, amyloplasts for starch storage and chromoplasts for pigments.
 - **Plasmodesmata**: channels through cell walls linking neighbouring cells.
+D: bio-plant-cell
 H: Functions in the plant
 - Turgid cells press against their walls, keeping stems and leaves firm.
 - When water is lost, cells become **flaccid** and the plant wilts.
@@ -348,6 +349,7 @@ H: Up the stem
 - **Transpiration** from leaves creates **tension**, pulling a continuous column of water up.
 - **Root pressure**: active pumping of ions into the xylem draws water in, pushing water up a little.
 P: Cohesion-tension explains how water reaches the tops of trees over 100 m tall, without using energy from the plant to move water up the stem. Evidence includes the narrowing of tree trunks during the day when tension is highest. Root pressure explains guttation, when droplets appear at leaf edges at night, but it is too weak to raise water to great heights.
+D: bio-water-pathway
 X: Shrinking tree trunks.
 > Instruments measure the diameter of a tree trunk.
 > At midday, when transpiration is fastest, the trunk narrows slightly.
@@ -469,12 +471,14 @@ H: Overview
 - **Light-dependent reactions** in the **thylakoid membranes**.
 - **Light-independent reactions** (Calvin cycle) in the **stroma**.
 - **Chlorophyll** absorbs mainly red and blue light.
+D: bio-photosynthesis-outline
 H: Limiting factors
 - **Light intensity**, **CO₂ concentration** and **temperature** limit the rate.
 - The factor in shortest supply is the **limiting factor**.
 - Increasing it raises the rate until another factor limits.
 - Glasshouses raise CO₂, light and temperature to increase crop yields.
 P: The oxygen released comes from water, as shown by experiments using the isotope oxygen-18. Glucose is used for respiration, converted to starch for storage, cellulose for walls, and combined with nitrates to make proteins. Photosynthesis is the source of almost all the energy in food chains and of atmospheric oxygen.
+D: bio-limiting-factors
 X: Interpreting a limiting factor graph.
 > A graph shows rate rising with light intensity, then levelling off.
 > At low light, light is the limiting factor.
@@ -551,6 +555,7 @@ H: Three stages
 - **Reduction**: GP is reduced to **triose phosphate** (TP) using ATP and NADPH.
 - **Regeneration**: most TP is used to regenerate RuBP, using ATP.
 - One in six TP molecules leaves the cycle to make sugars.
+D: bio-calvin-cycle
 H: Products and RuBisCO
 - TP is used to make glucose, sucrose, starch, amino acids and lipids.
 - Six turns of the cycle fix six CO₂ to make one glucose.
@@ -634,6 +639,7 @@ H: The pathway
 - Malate moves to **bundle sheath cells**, where CO₂ is released.
 - RuBisCO in bundle sheath cells fixes this CO₂ in the Calvin cycle.
 - **Kranz anatomy**: bundle sheath cells arranged in a ring around veins.
+D: bio-c3-c4-cam
 H: Advantages and costs
 - High CO₂ in bundle sheath cells almost eliminates photorespiration.
 - C4 plants grow well in hot, sunny, dry conditions.
@@ -675,6 +681,7 @@ H: The pathway
 - At **night**, stomata open; PEP carboxylase fixes CO₂ into malate, stored in vacuoles.
 - During the **day**, stomata close; malate releases CO₂ for the Calvin cycle.
 - Examples: cacti, pineapples, agave and many succulents.
+D: bio-c3-c4-cam
 H: Comparison
 - C4 separates the steps in **space** (different cells); CAM separates them in **time** (night and day).
 - CAM plants lose much less water because stomata open in cool night air.
@@ -799,6 +806,7 @@ H: How auxin works
 - It is made in shoot tips and young leaves.
 - It moves by **polar transport** from cell to cell, using carrier proteins.
 - **Acid growth hypothesis**: auxin causes cells to pump H⁺ into walls, loosening them so the cell can elongate.
+D: bio-phototropism
 H: Effects and uses
 - **Apical dominance**: auxin from the shoot tip inhibits side buds.
 - Removing the tip allows side shoots to grow, making plants bushier.
@@ -1010,6 +1018,7 @@ H: Auxin mechanism
 - In gravitropism, auxin collects on the **lower side**.
 - In shoots this increases elongation (bending up); in roots it inhibits elongation (bending down).
 P: Charles and Francis Darwin showed in 1880 that the tip of a grass coleoptile detects light. Later experiments by Boysen-Jensen and Went showed that a chemical, later identified as auxin, moves from the tip. In roots, **statoliths** (starch-filled amyloplasts) settle to the bottom of cells and help detect gravity.
+D: bio-phototropism
 X: Darwin's coleoptile experiments.
 > Grass coleoptiles were lit from one side.
 > Normal coleoptiles bent towards the light.

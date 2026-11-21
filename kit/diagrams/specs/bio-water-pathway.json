@@ -1,0 +1,93 @@
+{
+ "id": "bio-water-pathway",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Water transport",
+ "title": "The path of water through a plant",
+ "caption": "Water enters the root hairs by osmosis and crosses the cortex by the apoplast and symplast pathways. At the endodermis the Casparian strip forces it into the symplast. In the xylem, transpiration creates tension and cohesion between water molecules pulls a continuous column upwards, until water leaves the leaf as vapour.",
+ "alt": "Six boxes in order: root hair, root cortex, endodermis, xylem, leaf and air.",
+ "description": [
+  "Root hair: water enters by osmosis down a water potential gradient.",
+  "Root cortex: apoplast (walls) and symplast (cytoplasm).",
+  "Endodermis: the Casparian strip blocks the apoplast: water enters the symplast.",
+  "Xylem: water rises in a continuous column by cohesion and tension.",
+  "Leaf: water evaporates from the mesophyll walls.",
+  "Air: water vapour leaves through the stomata: transpiration."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 130,
+ "nodes": [
+  {
+   "id": "w0",
+   "label": "root hair",
+   "sub": "water enters by osmosis down a water potential gradient",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "w1",
+   "label": "root cortex",
+   "sub": "apoplast (walls) and symplast (cytoplasm)",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "w2",
+   "label": "endodermis",
+   "sub": "the Casparian strip blocks the apoplast: water enters the symplast",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "w3",
+   "label": "xylem",
+   "sub": "water rises in a continuous column by cohesion and tension",
+   "tone": "a1",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "w4",
+   "label": "leaf",
+   "sub": "water evaporates from the mesophyll walls",
+   "tone": "a3",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "w5",
+   "label": "air",
+   "sub": "water vapour leaves through the stomata: transpiration",
+   "tone": "a2",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "w0",
+   "to": "w1"
+  },
+  {
+   "from": "w1",
+   "to": "w2"
+  },
+  {
+   "from": "w2",
+   "to": "w3"
+  },
+  {
+   "from": "w3",
+   "to": "w4"
+  },
+  {
+   "from": "w4",
+   "to": "w5"
+  }
+ ]
+}

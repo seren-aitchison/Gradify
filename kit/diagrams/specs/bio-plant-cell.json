@@ -13,6 +13,13 @@
   "Chloroplasts carry out photosynthesis; root cells, in the dark, have none.",
   "Like an animal cell it has a nucleus, mitochondria, rough ER, a Golgi apparatus and ribosomes."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "Plant cell structure"
+  }
+ ],
  "cell": "plant",
  "labels": [
   "cell wall",

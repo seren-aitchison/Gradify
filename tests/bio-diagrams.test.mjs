@@ -252,3 +252,11 @@ test("sarcomere: contraction shortens the I band and H zone, never the A band", 
   assert.equal(allPass(ok), true);
   assert.equal(allPass({ ...ok, states: [{ label: "relaxed", L: 1.8 }, { label: "contracted", L: 2.4 }] }), false); // a "contracted" sarcomere that is longer
 });
+
+test("the Calvin cycle: carbon is conserved at every step, so a miscounted step fails", () => {
+  const nodes = [{ id: "a", label: "A" }, { id: "b", label: "B" }];
+  const spec = { renderer: "carbonflow", alt: "x", layout: "line", nodes, edges: [{ from: "a", to: "b" }], balance: [{ name: "fixation", in: [[3, 1], [3, 5]], out: [[6, 3]] }, { name: "regeneration", in: [[5, 3]], out: [[3, 5]] }] };
+  assert.equal(allPass(spec), true);
+  spec.balance[0].out = [[6, 4]]; // 24 carbons out of 18 in
+  assert.equal(allPass(spec), false);
+});

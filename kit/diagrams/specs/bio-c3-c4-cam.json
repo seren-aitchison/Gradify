@@ -1,0 +1,47 @@
+{
+ "id": "bio-c3-c4-cam",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "C4 photosynthesis",
+ "title": "C3, C4 or CAM?",
+ "caption": "C3 plants fix CO₂ directly with RuBisCO. C4 and CAM plants first fix CO₂ into a four-carbon acid with PEP carboxylase, which does not bind oxygen, and release it near RuBisCO. C4 separates the steps in space (mesophyll and bundle sheath cells); CAM separates them in time (night and day).",
+ "alt": "A flow chart: no four-carbon acid means C3; a four-carbon acid with steps in different cells means C4; with steps at different times means CAM.",
+ "description": [
+  "Does the plant first fix CO₂ into a 4-carbon acid? If not, it is C3: RuBisCO fixes CO₂ directly.",
+  "If so, are the steps in different cells, mesophyll and bundle sheath? If so, it is C4: separated in space, as in maize.",
+  "If not, they are at different times: CAM, as in cacti. Stomata open at night and malate is stored; by day the stomata close and malate releases CO₂."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "CAM photosynthesis"
+  }
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Does the plant first fix CO₂ into a four-carbon acid (with PEP carboxylase)?",
+   "yes": "q2",
+   "no": "c3"
+  },
+  "c3": {
+   "outcome": "C3: RuBisCO fixes CO₂ directly in the Calvin cycle",
+   "tone": "neutral"
+  },
+  "q2": {
+   "q": "Are the steps in different cells: mesophyll, then bundle sheath?",
+   "yes": "c4",
+   "no": "cam"
+  },
+  "c4": {
+   "outcome": "C4: steps separated in space. Maize, sugarcane; good in hot, sunny, dry conditions",
+   "tone": "good"
+  },
+  "cam": {
+   "outcome": "CAM: steps separated in time. Stomata open at night: cacti, pineapples",
+   "tone": "warn"
+  }
+ }
+}

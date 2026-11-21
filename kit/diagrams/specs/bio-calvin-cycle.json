@@ -1,0 +1,141 @@
+{
+ "id": "bio-calvin-cycle",
+ "renderer": "carbonflow",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Calvin cycle",
+ "title": "The Calvin cycle: counting the carbon",
+ "caption": "Three turns fix three CO₂ (1 carbon each) onto three RuBP (5 carbons each), giving six GP (3 carbons each). The GP is reduced to six triose phosphate; five of them regenerate three RuBP and one leaves to make sugars. Carbon is conserved at every step: 18 in, 18 out, and one triose phosphate gained from three CO₂.",
+ "alt": "A cycle of RuBP, GP and triose phosphate: RuBisCO fixes CO2 onto RuBP to give GP, GP is reduced to triose phosphate, and triose phosphate regenerates RuBP, with one triose phosphate in six leaving.",
+ "description": [
+  "Fixation: 3 CO₂ + 3 RuBP (5C) become 6 GP (3C): 18 carbons in, 18 out.",
+  "Reduction: 6 GP become 6 triose phosphate using ATP and NADPH: 18 carbons.",
+  "Regeneration: 5 triose phosphate (15C) are rearranged into 3 RuBP (15C) using ATP.",
+  "One triose phosphate (3C) leaves for each three CO₂ fixed; six turns make one glucose (6C)."
+ ],
+ "layout": "line",
+ "notes": [
+  "One triose phosphate in six leaves the cycle to make sugars; six turns fix six CO₂ into one glucose."
+ ],
+ "nodes": [
+  {
+   "id": "rubp",
+   "label": "RuBP",
+   "sub": "5 carbons",
+   "tone": "a1"
+  },
+  {
+   "id": "gp",
+   "label": "GP",
+   "sub": "3 carbons, made by fixing CO₂ (RuBisCO)",
+   "tone": "a4"
+  },
+  {
+   "id": "tp",
+   "label": "triose phosphate",
+   "sub": "3 carbons, made by reduction with ATP and NADPH",
+   "tone": "a5"
+  },
+  {
+   "id": "rubp2",
+   "label": "RuBP again",
+   "sub": "5 carbons, regenerated using ATP",
+   "tone": "a1"
+  }
+ ],
+ "edges": [
+  {
+   "from": "rubp",
+   "to": "gp"
+  },
+  {
+   "from": "gp",
+   "to": "tp"
+  },
+  {
+   "from": "tp",
+   "to": "rubp2"
+  }
+ ],
+ "balance": [
+  {
+   "name": "fixation",
+   "in": [
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "out": [
+    [
+     6,
+     3
+    ]
+   ]
+  },
+  {
+   "name": "reduction",
+   "in": [
+    [
+     6,
+     3
+    ]
+   ],
+   "out": [
+    [
+     6,
+     3
+    ]
+   ]
+  },
+  {
+   "name": "regeneration",
+   "in": [
+    [
+     5,
+     3
+    ]
+   ],
+   "out": [
+    [
+     3,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "one turn of three CO₂ into one triose phosphate",
+   "in": [
+    [
+     3,
+     1
+    ]
+   ],
+   "out": [
+    [
+     1,
+     3
+    ]
+   ]
+  },
+  {
+   "name": "six turns: six CO₂ into one glucose",
+   "in": [
+    [
+     6,
+     1
+    ]
+   ],
+   "out": [
+    [
+     1,
+     6
+    ]
+   ]
+  }
+ ]
+}
