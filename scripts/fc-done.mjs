@@ -5,7 +5,7 @@
 // --checkpoint commits a partly done file the same way, so a usage limit can't lose finished lessons: every
 // started lesson must have exactly 10 cards, the checker must report no errors, and no card may be blocking.
 // Retries on git lock and push races, since several writers share one checkout.
-import { execFileSync, spawnSync } from "node:child_process";
+import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -50,7 +50,11 @@ for (let i = 0; ; i++) {
   }
 }
 console.log((checkpoint ? "CHECKPOINT COMMITTED " : "COMMITTED ") + git("log", "-1", "--format=%h").trim());
+const branch = git("rev-parse", "--abbrev-ref", "HEAD").trim();
 for (let i = 0; i < 4; i++) {
-  try { git("push", "-q", "origin", `HEAD:${git("rev-parse", "--abbrev-ref", "HEAD").trim()}`); console.log("pushed"); break; }
+  try { git("push", "-q", "origin", `HEAD:${branch}`); console.log("pushed"); break; }
   catch (e) { if (i === 3) console.log("push failed (commit is safe locally; the lead will push): " + String(e.stderr).slice(0, 200)); sleep(2000 * 2 ** i); }
 }
+// publish to main (the live site) in the background: scripts/fc-publish.mjs merges, regenerates, tests and pushes
+spawn(process.execPath, ["scripts/fc-publish.mjs", branch], { detached: true, stdio: "ignore" }).unref();
+console.log("publishing to the live site in the background");

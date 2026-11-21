@@ -31,7 +31,8 @@ For each file:
    check it against the lesson: rewrite it if the lesson does not support it. Then run it again. Don't start
    the next JSON until the checkpoint prints CHECKPOINT COMMITTED (or COMMITTED).
 5. When every lesson is written, `node scripts/fc-done.mjs <file>`. The file only counts as done when it
-   prints COMMITTED.
+   prints COMMITTED. Every commit (checkpoint or final) is published to the live site automatically in the
+   background once the full test suite passes; you don't need to do anything for that.
 
 Rules: edit only notes files in your batch. Never run git checkout, reset, stash, rebase, merge or
 `git add -A`/`git add .`, and never commit other people's files; fc-done commits for you. Don't touch main.
