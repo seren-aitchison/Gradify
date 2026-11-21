@@ -34,7 +34,7 @@ import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { hydrateDiagrams } from "../diagrams/visual.js";
-import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
+import { diagramsFor, diagramForCard, glassDiagram, minisFor, miniCard, DIAGRAM_KINDS } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -1130,7 +1130,30 @@ export function mountCourse(root, cfg) {
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
   // the notes carry no auto-generated glass diagrams: a lesson's diagrams are the checked teaching diagrams it places
-  // itself with D: lines (kit/diagrams). Glass diagrams remain on flashcard backs and in mind maps.
+  // itself with D: lines (kit/diagrams). What the glass cards (kit/core/glass-diagrams.js) still do in a lesson is
+  // practice: the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, evidence, recall)
+  // open its Recap, covered, so the Recap is a chance to recall rather than reread; and the small cards (Quick
+  // check, Numbers to know, Fill the gap) close the sections. Glass diagrams also stay on flashcard backs and mind maps.
+  const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
+  // each card's key (course, lesson, card) is how it remembers, on this device, what the learner has practised on it
+  // worked out once for a lesson's notes: the placement, the Recap and the Quick checks all use the same five
+  const cardsMemo = new WeakMap();
+  const lessonCards = (N, lid) => {
+    const m = cardsMemo.get(N); if (m?.lid === lid) return m.v;
+    const ds = diagramsFor(N, { max: 3, skip: DIAGRAM_KINDS.filter((k) => !RECAP_KINDS.has(k)) });
+    const v = ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.id}` } }));
+    cardsMemo.set(N, { lid, v });
+    return v;
+  };
+  const recapDiagrams = (N, lid) => lessonCards(N, lid).filter((x) => x.recap);
+  const lessonDiagrams = (N, lid) => {
+    // the small cards (Quick check, Numbers to know, Fill the gap), never asking a question the Recap asks too
+    // the Recap's Test yourself card asks the lesson's first questions (diagramsFor): those exact questions, in full
+    const recallQs = lessonCards(N, lid).some((x) => x.d.kind === "recall") ? N.cards.slice(0, 4).map(([q]) => q) : [];
+    const minis = new Map(); for (const m of minisFor(N, { skipQ: recallQs })) minis.set(m.at, [...(minis.get(m.at) || []), m]);
+    return lessonHtml(N, { after: (i) => (minis.get(i) || []).map((m) => miniCard(m, { key: `${cfg.slug}:${lid}:${m.kind}-${m.at}` })).join("") });
+  };
+  const recapHtml = (N, lid) => { const xs = recapDiagrams(N, lid); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -1309,19 +1332,7 @@ export function mountCourse(root, cfg) {
     }
     const secLink = (e) => { const b = e.target.closest("[data-seclink]"); if (b) copyLink(`${location.pathname}#/lesson/${id}/${b.dataset.seclink}`, "Link to this section copied"); };
     main.addEventListener("click", secLink);
-    // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
-    const zoom = (e) => {
-      const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
-      const box = Object.assign(document.createElement("div"), { className: "gd-zoom", role: "dialog", ariaModal: "true", ariaLabel: fig.querySelector("svg")?.getAttribute("aria-label") || "Diagram" });
-      box.innerHTML = `<div class="gd-zoomin" style="${fig.getAttribute("style")}">${fig.querySelector(".gd-pane").innerHTML}${fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""}</div><button type="button" class="gd-zoomx" aria-label="Close">×</button>`;
-      const close = () => { box.remove(); removeEventListener("keydown", key); fig.focus?.(); };
-      const key = (k) => { if (k.key === "Escape") close(); };
-      box.addEventListener("click", (k) => { if (k.target === box || k.target.closest(".gd-zoomx")) close(); });
-      addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
-    };
-    main.addEventListener("click", zoom);
     hydrateDiagrams(main);
-    main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
     // ← → B F S N and the rest are registered once, with the shared shortcuts (see "keyboard shortcuts" below)
     curPN = { prev, next };
     // the rail's Complete button does what the lesson's own does
@@ -1329,7 +1340,7 @@ export function mountCourse(root, cfg) {
     side.addEventListener("click", railGo);
     addEventListener("scroll", soon, { passive: true }); addEventListener("resize", soon);
     soon();
-    readStop = () => { cancelAnimationFrame(raf); removeEventListener("scroll", soon); removeEventListener("resize", soon); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    readStop = () => { cancelAnimationFrame(raf); removeEventListener("scroll", soon); removeEventListener("resize", soon); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); document.querySelector("dialog.gd-zoom")?.close(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
   // revision notes: the lesson's key ideas on one page (what you can now do, the summary, key terms, its sections),
   // made from the lesson's own notes, so they're never out of step with it
@@ -1481,7 +1492,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonHtml(N)}</div>${F.end ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? `<nav class="cx-kit" aria-label="Practise this lesson"><h3 class="co-part cx-kith">${ic("target")} Practise this lesson</h3>
           ${nQ ? `<a class="cx-kc" href="#co-check" data-jump="co-check"><span>${ic("target")}</span><b>Check yourself</b><small>${nQ} question${nQ > 1 ? "s" : ""}</small></a>` : ""}
@@ -1511,7 +1522,7 @@ export function mountCourse(root, cfg) {
     addSave(main.querySelector(".cx-lact .cx-save"));
     scrollTo(0, 0);
     // diagrams after the first fold to one line each ("Show diagram: …"), so the reading is a few screens, not twenty
-    main.querySelectorAll(".co-notes .gd").forEach((g, k) => {
+    main.querySelectorAll(".co-notes .gd:not(.gd-mini):not(.co-recap .gd)").forEach((g, k) => {
       if (k === 0 || g.closest("details")) return;
       const cap = [...(g.querySelector("figcaption")?.children || [])].map((x) => x.textContent.trim()).filter(Boolean);
       const label = [...new Set(cap)].join(": ") || "Diagram";

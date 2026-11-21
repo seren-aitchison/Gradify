@@ -145,12 +145,10 @@
 .tl-mn { margin-left: auto; font: 800 12px var(--mono, monospace); letter-spacing: .12em; padding: 3px 8px; border-radius: 8px; background: rgba(127, 127, 127, .15); }
 .tl-stile ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: 13.5px; line-height: 1.45; }
 .tl-stile .gd { margin: 0; }
-.tl-stile .gd-art { width: 100%; }
 @media print {
   body.tl-printing * { visibility: hidden; }
   body.tl-printing .tl-print-me .tl-sheet, body.tl-printing .tl-print-me .tl-sheet * { visibility: visible; }
   body.tl-printing .tl-print-me .tl-sheet { position: absolute; inset: 0; }
-  .gd-art { animation: none; }
 }
 @media (max-width: 860px) {
   .tl-split, .tl-cards, .tl-conv { grid-template-columns: 1fr; }

@@ -10,7 +10,9 @@
 //
 // Each diagram has: a wide layout for desktop and a narrow one for phones (chosen by the figure's own width), a
 // caption that says what to notice, a full-size view, and a step-by-step text description for screen readers and for
-// anyone who wants the diagram in words.
+// anyone who wants the diagram in words. Practice on it (Label it, Talk it through) is in kit/diagrams/practice.js.
+
+import { addPractice } from "./practice.js";
 
 const BASE = new URL("./", import.meta.url);
 let manifest = null;
@@ -58,6 +60,8 @@ export async function hydrateDiagrams(root, { preview = previewMode() } = {}) {
       ${preview ? `<details class="vx-checks"><summary>What was checked</summary><ul>${d.checks.map((c) => `<li class="${c.ok ? "ok" : "no"}">${c.ok ? "✓" : "✗"} ${esc(c.name)}${c.detail ? ` <small>${esc(c.detail)}</small>` : ""}</li>`).join("")}</ul>${d.review?.notes ? `<p><b>Review:</b> ${esc(d.review.notes)}</p>` : ""}</details>` : ""}`;
     fig.hidden = false;
     fig.querySelector(".vx-art").addEventListener("click", () => openFull(d, wide));
+    // ways to practise on it: label it, talk it through (kit/diagrams/practice.js)
+    addPractice(fig, d, fig.dataset.dg);
   }
 }
 
