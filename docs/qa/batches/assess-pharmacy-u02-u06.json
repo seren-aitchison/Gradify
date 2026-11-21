@@ -385,6 +385,78 @@
     "New questions: SA2"
    ],
    "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-08",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added second source: British Pharmacopoeia Commission, British Pharmacopoeia: general notices on expressin...",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-09",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-10",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM1, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-11",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-12",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (A useful habit is to compare the calculated volume with what is sen...)",
+    "New questions: M2, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-13",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u06-14",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "New questions: NUM3, SA2"
+   ],
+   "findings": []
   }
  ],
  "notes": [

@@ -211,10 +211,11 @@ SA3#gcse-u04-28-q5@2,3: Explain why the response to touching something hot is fa
 
 ## The endocrine system
 LV: Level 3 · Foundation
-S: The endocrine system controls the body with hormones carried in the blood. This lesson describes the main endocrine glands and their hormones, contrasts hormonal and nervous control, explains the stress hormones, and outlines common endocrine disorders.
+S: The endocrine system controls the body with hormones carried in the blood. This lesson describes the main endocrine glands and their hormones, contrasts hormonal and nervous control, explains the stress hormones and the hormones of the menstrual cycle, and outlines common endocrine disorders.
 O: Identify the main endocrine glands and the hormones they secrete
 O: Compare nervous and hormonal control
 O: Explain hormonal feedback loops, including the stress response and thyroid control, and what happens when they fail
+O: Describe the roles of FSH, LH, oestrogen and progesterone in the menstrual cycle
 PRE: Homeostasis
 H: Glands and hormones
 P: **Hormones** are chemical messengers made by endocrine glands and carried in the blood to target cells with matching receptors.
@@ -232,6 +233,12 @@ X: How is thyroid hormone kept stable?
 > Thyroxine inhibits the release of TRH and TSH: negative feedback.
 > In **hypothyroidism** the thyroid makes too little thyroxine, so TSH is high; people feel tired, cold and gain weight. A blood test of TSH and thyroxine diagnoses it, and replacement levothyroxine treats it.
 K: Hormones travel in the blood to targets with matching receptors; most endocrine control uses negative feedback, often through the hypothalamus and pituitary.
+H: Hormones in reproduction and the menstrual cycle
+P: At puberty, reproductive hormones cause secondary sex characteristics to develop. **Testosterone**, made by the testes, is the main male reproductive hormone and stimulates sperm production. **Oestrogen**, made by the ovaries, is the main female reproductive hormone; from puberty an egg matures and is released about every 28 days (**ovulation**).
+- **FSH** (follicle stimulating hormone, from the pituitary) causes an egg to mature in the ovary and stimulates the ovaries to make oestrogen.
+- **Oestrogen** makes the uterus lining thicken, inhibits FSH and (Higher tier) stimulates the release of LH.
+- **LH** (luteinising hormone, from the pituitary) stimulates the release of the egg.
+- **Progesterone**, made in the ovary after ovulation, maintains the uterus lining and inhibits FSH and LH. If no embryo implants, progesterone falls and the lining breaks down (menstruation).
 H: Endocrine disorders
 P: Common endocrine conditions include diabetes (insulin), hypothyroidism and hyperthyroidism (thyroid), polycystic ovary syndrome (sex hormones and insulin resistance) and, more rarely, Addison's disease (too little cortisol) and Cushing's syndrome (too much cortisol, often from long-term steroid medicines). Long-term raised cortisol from chronic stress is linked to raised blood pressure, raised blood glucose and suppressed immunity, a link explored in School 5.
 !: Thinking hormones affect every cell they reach. A hormone affects only target cells that have receptors for it.
@@ -240,17 +247,23 @@ EV: contested | How far chronic psychological stress causes disease through rais
 T: Hormone | A chemical messenger secreted into the blood by an endocrine gland and acting on target cells
 T: Target cell | A cell with receptors for a particular hormone
 T: HPA axis | The hypothalamic–pituitary–adrenal axis, which controls cortisol release
+T: Ovulation | The release of a mature egg from the ovary, triggered by LH about every 28 days
 SUM: The main glands are the hypothalamus, pituitary, thyroid, adrenals, pancreas and gonads.
 SUM: Hormonal control is slower and longer-lasting than nervous control; most is regulated by negative feedback.
+SUM: In the menstrual cycle FSH matures an egg, LH releases it, and oestrogen and progesterone maintain the uterus lining.
 SRC: Betts J. G. et al., Anatomy and Physiology 2e, OpenStax, chapter 17 "The endocrine system" | secondary | 2022
 SRC: National Institute for Health and Care Excellence, Thyroid disease: assessment and management (NG145) | guidance | 2019 | https://www.nice.org.uk/guidance/ng145
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.5.3.3 Hormones in human reproduction | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
+SRC: Betts J. G. et al., Anatomy and Physiology 2e, OpenStax, section 27.2 "Anatomy and physiology of the ovarian reproductive system" (hormonal control of the ovarian and menstrual cycles) | secondary | 2022 | https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system
 Q: Which gland is called the "master gland", and why? | The pituitary, because its hormones control several other endocrine glands.
 Q: Name the two adrenal hormones released in stress. | Adrenaline (fast, from the medulla) and cortisol (slower, from the cortex via the HPA axis).
+Q: Which hormone stimulates the release of an egg from the ovary? | LH (luteinising hormone), from the pituitary gland.
 M1#gcse-u04-29-q1@1: Which hormone sets the body's metabolic rate? | Thyroxine | Insulin | ADH | Oxytocin | Thyroid hormones (T4 and T3) control the rate of metabolism in most cells.
 MATCH1#gcse-u04-29-q2@1: Match each gland to a hormone it secretes. | Pancreas = Insulin ; Thyroid = Thyroxine ; Adrenal medulla = Adrenaline ; Pituitary = Growth hormone | Each gland secretes characteristic hormones into the blood.
 M2#gcse-u04-29-q3@2: A blood test shows high TSH and low thyroxine. What does this suggest? | An underactive thyroid (hypothyroidism) | An overactive thyroid (hyperthyroidism) | Type 1 diabetes | A normal result | Low thyroxine removes negative feedback, so the pituitary releases more TSH to stimulate the failing thyroid.
 M3#gcse-u04-29-q4@3: Which is the best comparison of nervous and hormonal control? | Nervous control is fast and precisely targeted; hormonal control is slower, longer-lasting and can affect many tissues | Hormonal control is always faster than nervous control | Nervous control uses the blood to carry signals | Hormones affect every cell in the body equally | Neurones carry rapid electrical signals to specific cells; hormones travel in blood and act wherever there are receptors.
 SA3#gcse-u04-29-q5@2,3: Explain how the body responds to a sudden stressor through both nervous and hormonal pathways, and evaluate why long-term activation may harm health. | The sympathetic nervous system activates the adrenal medulla to release adrenaline within seconds: heart rate, blood pressure and blood glucose rise and blood is diverted to muscles. The HPA axis releases CRH, then ACTH, then cortisol, which raises glucose and suppresses inflammation; cortisol feeds back to switch the axis off. Chronic activation may contribute to high blood pressure, raised glucose and reduced immunity, but evidence is mixed and behaviour (smoking, poor sleep) also links stress with illness. | Sympathetic and adrenaline ; Effects of adrenaline ; HPA axis sequence ; Cortisol and negative feedback ; Possible harms of chronic activation ; Evaluates strength of evidence
+M2#gcse-u04-29-q6@4: Higher tier. During the menstrual cycle, which hormone inhibits FSH and stimulates the release of LH? | Oestrogen | Progesterone | Testosterone | Insulin | Oestrogen from the ovary switches off FSH, so no more eggs mature, and triggers the LH surge that causes ovulation.
 
 ## The heart
 LV: Level 3 · Foundation
@@ -263,6 +276,7 @@ P: The heart has four chambers: two **atria** above and two **ventricles** below
 P: **Valves** keep blood flowing one way: the tricuspid and mitral (bicuspid) valves between atria and ventricles, and the pulmonary and aortic valves at the exits. The heart muscle itself is supplied by the **coronary arteries**.
 H: The cardiac cycle and its control
 P: Each heartbeat is a **cardiac cycle**: atrial systole (atria contract), ventricular systole (ventricles contract, closing the atrioventricular valves, the "lub" sound, and opening the exit valves), and diastole (the heart relaxes and fills; exit valves close, the "dub"). The beat starts in the **sinoatrial node (SAN)**, the heart's natural pacemaker in the right atrium. The impulse spreads across the atria, is delayed at the **atrioventricular node (AVN)** so the ventricles fill, then travels down the **bundle of His** and **Purkinje fibres**, so the ventricles contract from the bottom up. An electrocardiogram (ECG) records this electrical activity.
+P: If the natural pacemaker fails or the beat is irregular, an **artificial pacemaker**, a small battery-powered electrical device fitted under the skin with a wire to the heart, sends electrical impulses to correct the heart rate.
 E: Cardiac output = heart rate × stroke volume :: litres of blood pumped per minute
 X: At rest, an adult has a heart rate of 70 beats per minute and a stroke volume of 70 mL. During exercise these rise to 150 beats per minute and 110 mL.
 > Rest: 70 × 70 = 4,900 mL/min ≈ 4.9 L/min.
@@ -282,13 +296,16 @@ SUM: The SAN starts each beat, the AVN delays it, and cardiac output equals hear
 SRC: Betts J. G. et al., Anatomy and Physiology 2e, OpenStax, chapter 19 "The cardiovascular system: the heart" | secondary | 2022
 SRC: Resuscitation Council UK, Resuscitation Guidelines | guidance | 2021
 SRC: National Institute for Health and Care Excellence, Atrial fibrillation: diagnosis and management (NG196) | guidance | 2021 | https://www.nice.org.uk/guidance/ng196
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.2 The heart and blood vessels | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
 Q: Why is the wall of the left ventricle thicker than the right? | It pumps blood around the whole body at higher pressure; the right pumps only to the nearby lungs.
 Q: What is the heart's natural pacemaker? | The sinoatrial node (SAN) in the right atrium.
+Q: What is an artificial pacemaker? | An electrical device fitted under the skin that sends impulses to the heart to correct an irregular or slow heart rate.
 M1#gcse-u04-30-q1@1: Which blood vessel carries oxygenated blood from the lungs to the heart? | The pulmonary vein | The pulmonary artery | The vena cava | The aorta | The pulmonary vein returns oxygenated blood to the left atrium.
 NUM2#gcse-u04-30-q2@3: A person's heart rate is 80 beats per minute and their stroke volume is 75 mL. What is their cardiac output in litres per minute? | 6 | 0.01 | L/min | 80 × 75 = 6,000 mL/min = 6.0 L/min.
 M2#gcse-u04-30-q3@2: Why is there a short delay at the atrioventricular node? | So the atria finish emptying into the ventricles before the ventricles contract | To let the heart muscle rest between beats | To allow the valves to grow | To make the ventricles contract from the top down | The delay ensures ventricular filling is complete before ventricular systole.
 M3#gcse-u04-30-q4@3: Why does atrial fibrillation increase the risk of stroke? | Blood pools in the poorly contracting atria and can form clots that travel to the brain | It raises blood glucose | It destroys the coronary arteries | It stops the lungs from working | Ineffective atrial contraction lets blood stagnate, especially in the left atrial appendage; clots can reach the brain.
 SA3#gcse-u04-30-q5@2,3: Describe the sequence of events in one cardiac cycle and explain how cardiac output increases during exercise. | The SAN fires; atria contract and push blood into the ventricles; the impulse is delayed at the AVN and then travels down the bundle of His and Purkinje fibres; ventricles contract from the apex, AV valves close and semilunar valves open, ejecting blood into the aorta and pulmonary artery; in diastole the heart relaxes and refills and semilunar valves close. In exercise, sympathetic stimulation and adrenaline raise heart rate and the force of contraction, increasing stroke volume; cardiac output = HR × SV can rise several-fold. | SAN and atrial systole ; AVN delay ; Bundle of His or Purkinje fibres and ventricular systole ; Valve actions ; Diastole and filling ; Cardiac output = HR × SV with sympathetic control
+M1#gcse-u04-30-q6@2: What does an artificial pacemaker do? | Corrects irregularities in the heart rate with electrical impulses | Holds a narrowed coronary artery open with a mesh tube | Replaces a leaking heart valve with a mechanical one | Lowers blood cholesterol to slow fatty deposits | It is an electrical device that takes over or corrects the work of the natural pacemaker cells in the right atrium.
 
 ## Blood vessels and blood pressure
 LV: Level 3 · Application
@@ -296,6 +313,7 @@ S: Arteries, capillaries and veins carry blood around the body, and blood pressu
 O: Compare the structure and function of arteries, capillaries and veins
 O: Interpret blood pressure readings using NICE thresholds
 O: Explain how high blood pressure damages health and how it can be reduced
+O: Calculate the rate of blood flow
 PRE: The heart
 H: Three kinds of vessel
 - **Arteries** carry blood away from the heart at high pressure. They have thick walls of muscle and elastic tissue, which stretch and recoil with each beat (the pulse).
@@ -309,6 +327,10 @@ X: A 52-year-old has a clinic reading of 148/92 mmHg. What happens next?
 > 148/92 is at or above the 140/90 clinic threshold.
 > NICE recommends confirming with ambulatory monitoring (or home monitoring if that isn't suitable), because readings can be raised in the clinic ("white-coat effect").
 > If the average is 135/85 or more, hypertension is diagnosed; lifestyle advice is offered and, depending on risk, medicine.
+H: Rate of blood flow
+E: Rate of blood flow = volume of blood ÷ time :: for example in mL per minute
+X: 2,700 mL of blood flows through an artery in 3 minutes. What is the rate of blood flow?
+> 2,700 ÷ 3 = 900 mL per minute.
 H: Why it matters
 P: High blood pressure usually causes no symptoms, so many people don't know they have it; it is often called a "silent killer". Over years it damages artery walls, speeding atherosclerosis and making the heart work harder. It is a major risk factor for stroke, heart attack, heart failure, chronic kidney disease and vascular dementia. Lowering blood pressure reduces these risks. Lifestyle measures include reducing salt, keeping to a healthy weight, being physically active, drinking less alcohol and not smoking; medicines include ACE inhibitors, calcium channel blockers and diuretics.
 K: High blood pressure is common, usually silent and a leading modifiable cause of stroke and heart disease, which is why adults are offered regular checks.
@@ -321,6 +343,7 @@ T: Hypertension | Persistently raised blood pressure; in the UK, clinic 140/90 o
 SUM: Arteries are thick and elastic, capillaries one cell thick for exchange, veins thin with valves.
 SUM: Hypertension (140/90 clinic, confirmed at 135/85) is usually silent but a major cause of stroke, heart and kidney disease.
 SRC: National Institute for Health and Care Excellence, Hypertension in adults: diagnosis and management (NG136) | guidance | 2019 | https://www.nice.org.uk/guidance/ng136
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.2 The heart and blood vessels | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
 SRC: Ettehad D. et al., "Blood pressure lowering for prevention of cardiovascular disease and death: a systematic review and meta-analysis", The Lancet 387(10022):957–967 | primary | 2016 | https://doi.org/10.1016/S0140-6736(15)01225-8
 Q: What do the two numbers in a blood pressure reading mean? | Systolic (pressure as the ventricles contract) over diastolic (pressure when the heart relaxes), in mmHg.
 Q: Why do veins have valves? | To prevent backflow of blood, which travels at low pressure back to the heart.
@@ -329,6 +352,7 @@ M2#gcse-u04-31-q2@2: A clinic reading is 162/104 mmHg, and home monitoring avera
 TF2#gcse-u04-31-q3@2: High blood pressure usually causes obvious symptoms, so people know when they have it. | false | Hypertension is usually symptomless, which is why measurement is the only way to find it.
 M3#gcse-u04-31-q4@3: Why does NICE recommend ambulatory or home monitoring to confirm hypertension? | Clinic readings can be raised by anxiety and vary, so averaging many readings avoids misdiagnosis | Clinic machines are always inaccurate | Home monitoring is cheaper than any clinic reading | It removes the need for any treatment | Many readings over normal activities give a truer average, reducing overdiagnosis from the white-coat effect.
 SA3#gcse-u04-31-q5@2,3: Explain why high blood pressure is called a "silent killer" and evaluate approaches to reducing it in the population. | It usually has no symptoms yet damages arteries over years, increasing stroke, heart attack, heart failure, kidney disease and dementia. Approaches: detection through NHS Health Checks and pharmacy checks; treatment with medicines, effective but requiring diagnosis and adherence; lifestyle measures; and population measures such as salt reduction in processed foods, which reach everyone without relying on individuals. A combination is needed, with population salt reduction among the most cost-effective. | No symptoms ; Damage to arteries and named consequences ; Detection or screening ; Medication ; Lifestyle measures ; Population measures with judgement
+NUM2#gcse-u04-31-q6@4: 1,500 mL of blood passes through a vein in 2.5 minutes. What is the rate of blood flow in mL per minute? | 600 | 0.5 | mL/min | Rate = volume ÷ time = 1,500 ÷ 2.5 = 600 mL per minute.
 
 ## Blood
 LV: Level 3 · Foundation

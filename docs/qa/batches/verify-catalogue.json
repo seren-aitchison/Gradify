@@ -1,0 +1,822 @@
+{
+ "task": "verify-catalogue",
+ "on": "2026-11-20",
+ "rows": [
+  {
+   "id": "aqa:gcse:maths:8300",
+   "status": "confirmed",
+   "code": "8300",
+   "title": "GCSE Mathematics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300"
+  },
+  {
+   "id": "aqa:gcse:statistics:8382",
+   "status": "confirmed",
+   "code": "8382",
+   "title": "GCSE Statistics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8382"
+  },
+  {
+   "id": "aqa:gcse:english-language:8700",
+   "status": "confirmed",
+   "code": "8700",
+   "title": "GCSE English Language",
+   "url": "https://www.aqa.org.uk/subjects/english/gcse/english-8700"
+  },
+  {
+   "id": "aqa:gcse:english-literature:8702",
+   "status": "confirmed",
+   "code": "8702",
+   "title": "GCSE English Literature",
+   "url": "https://www.aqa.org.uk/subjects/english/gcse/english-8702"
+  },
+  {
+   "id": "aqa:gcse:biology:8461",
+   "status": "confirmed",
+   "code": "8461",
+   "title": "GCSE Biology",
+   "url": "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461"
+  },
+  {
+   "id": "aqa:gcse:chemistry:8462",
+   "status": "confirmed",
+   "code": "8462",
+   "title": "GCSE Chemistry",
+   "url": "https://www.aqa.org.uk/subjects/chemistry/gcse/chemistry-8462"
+  },
+  {
+   "id": "aqa:gcse:physics:8463",
+   "status": "confirmed",
+   "code": "8463",
+   "title": "GCSE Physics",
+   "url": "https://www.aqa.org.uk/subjects/physics/gcse/physics-8463"
+  },
+  {
+   "id": "aqa:gcse:combined-science:8464",
+   "status": "confirmed",
+   "code": "8464",
+   "title": "GCSE Combined Science: Trilogy",
+   "url": "https://www.aqa.org.uk/subjects/science/gcse/science-8464"
+  },
+  {
+   "id": "aqa:gcse:combined-science:8465",
+   "status": "confirmed",
+   "code": "8465",
+   "title": "GCSE Combined Science: Synergy",
+   "url": "https://www.aqa.org.uk/subjects/science/gcse/science-8465"
+  },
+  {
+   "id": "aqa:gcse:geography:8035",
+   "status": "confirmed",
+   "code": "8035",
+   "title": "GCSE Geography",
+   "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035"
+  },
+  {
+   "id": "aqa:gcse:history:8145",
+   "status": "confirmed",
+   "code": "8145",
+   "title": "GCSE History",
+   "url": "https://www.aqa.org.uk/subjects/history/gcse/history-8145"
+  },
+  {
+   "id": "aqa:gcse:religious-studies:8062",
+   "status": "confirmed",
+   "code": "8062",
+   "title": "GCSE Religious Studies A",
+   "url": "https://www.aqa.org.uk/subjects/religious-studies/gcse/religious-studies-8062",
+   "note": "Page names it Religious Studies A; 8063 is RS B, 8061 the Short Course."
+  },
+  {
+   "id": "aqa:gcse:citizenship:8100",
+   "status": "corrected",
+   "code": "8100",
+   "title": "GCSE Citizenship Studies",
+   "url": "https://www.aqa.org.uk/subjects/citizenship-studies/gcse/citizenship-studies-8100",
+   "note": "Code right; title is Citizenship Studies."
+  },
+  {
+   "id": "aqa:gcse:psychology:8182",
+   "status": "confirmed",
+   "code": "8182",
+   "title": "GCSE Psychology",
+   "url": "https://www.aqa.org.uk/subjects/psychology/gcse/psychology-8182"
+  },
+  {
+   "id": "aqa:gcse:sociology:8192",
+   "status": "confirmed",
+   "code": "8192",
+   "title": "GCSE Sociology",
+   "url": "https://www.aqa.org.uk/subjects/sociology/gcse/sociology-8192"
+  },
+  {
+   "id": "aqa:gcse:economics:8136",
+   "status": "confirmed",
+   "code": "8136",
+   "title": "GCSE Economics",
+   "url": "https://www.aqa.org.uk/subjects/economics/gcse/economics-8136"
+  },
+  {
+   "id": "aqa:gcse:business:8132",
+   "status": "confirmed",
+   "code": "8132",
+   "title": "GCSE Business",
+   "url": "https://www.aqa.org.uk/subjects/business/gcse/business-8132"
+  },
+  {
+   "id": "aqa:gcse:computer-science:8525",
+   "status": "confirmed",
+   "code": "8525",
+   "title": "GCSE Computer Science",
+   "url": "https://www.aqa.org.uk/subjects/computer-science/gcse/computer-science-8525"
+  },
+  {
+   "id": "aqa:gcse:design-technology:8552",
+   "status": "confirmed",
+   "code": "8552",
+   "title": "GCSE Design and Technology",
+   "url": "https://www.aqa.org.uk/subjects/design-and-technology/gcse/design-and-technology-8552"
+  },
+  {
+   "id": "aqa:gcse:food:8585",
+   "status": "confirmed",
+   "code": "8585",
+   "title": "GCSE Food preparation and nutrition",
+   "url": "https://www.aqa.org.uk/subjects/food-preparation-and-nutrition/gcse/food-preparation-and-nutrition-8585"
+  },
+  {
+   "id": "aqa:gcse:art-design:art-and-design",
+   "status": "corrected",
+   "code": "8201",
+   "title": "GCSE Art and Design (Art, craft and design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8201",
+   "note": "Art and Design is six titles, 8201–8206 (Art, craft and design; Fine art; Graphic communication; Textile design; Three-dimensional design; Photography). Others listed under missing."
+  },
+  {
+   "id": "aqa:gcse:drama:8261",
+   "status": "confirmed",
+   "code": "8261",
+   "title": "GCSE Drama",
+   "url": "https://www.aqa.org.uk/subjects/drama/gcse/drama-8261"
+  },
+  {
+   "id": "aqa:gcse:dance:8236",
+   "status": "confirmed",
+   "code": "8236",
+   "title": "GCSE Dance",
+   "url": "https://www.aqa.org.uk/subjects/dance/gcse/dance-8236"
+  },
+  {
+   "id": "aqa:gcse:music:8271",
+   "status": "confirmed",
+   "code": "8271",
+   "title": "GCSE Music",
+   "url": "https://www.aqa.org.uk/subjects/music/gcse/music-8271"
+  },
+  {
+   "id": "aqa:gcse:pe:8582",
+   "status": "confirmed",
+   "code": "8582",
+   "title": "GCSE Physical Education",
+   "url": "https://www.aqa.org.uk/subjects/physical-education/gcse/physical-education-8582"
+  },
+  {
+   "id": "aqa:gcse:french:8652",
+   "status": "confirmed",
+   "code": "8652",
+   "title": "GCSE French",
+   "url": "https://www.aqa.org.uk/subjects/french/gcse/french-8652",
+   "note": "The new specification: first teaching September 2024, first exams summer 2026 (page wording). 8658 is the 2016 specification, still listed."
+  },
+  {
+   "id": "aqa:gcse:german:8662",
+   "status": "confirmed",
+   "code": "8662",
+   "title": "GCSE German",
+   "url": "https://www.aqa.org.uk/subjects/german/gcse/german-8662",
+   "note": "New specification, first teaching September 2024, first exams 2026. 8668 is the 2016 specification."
+  },
+  {
+   "id": "aqa:gcse:spanish:8692",
+   "status": "confirmed",
+   "code": "8692",
+   "title": "GCSE Spanish",
+   "url": "https://www.aqa.org.uk/subjects/spanish/gcse/spanish-8692",
+   "note": "New specification, first teaching September 2024, first exams 2026. 8698 is the 2016 specification."
+  },
+  {
+   "id": "aqa:gcse:chinese:8673",
+   "status": "corrected",
+   "code": "8673",
+   "title": "GCSE Chinese (Mandarin)",
+   "url": "https://www.aqa.org.uk/subjects/chinese-mandarin/gcse/chinese-mandarin-8673",
+   "note": "Code right; board title is Chinese (Mandarin)."
+  },
+  {
+   "id": "aqa:as-level:biology:7401",
+   "status": "confirmed",
+   "code": "7401",
+   "title": "AS Biology",
+   "url": "https://www.aqa.org.uk/subjects/biology/as-level/biology-7401"
+  },
+  {
+   "id": "aqa:as-level:chemistry:7404",
+   "status": "confirmed",
+   "code": "7404",
+   "title": "AS Chemistry",
+   "url": "https://www.aqa.org.uk/subjects/chemistry/as-level/chemistry-7404"
+  },
+  {
+   "id": "aqa:as-level:physics:7407",
+   "status": "confirmed",
+   "code": "7407",
+   "title": "AS Physics",
+   "url": "https://www.aqa.org.uk/subjects/physics/as-level/physics-7407"
+  },
+  {
+   "id": "aqa:as-level:maths:7356",
+   "status": "confirmed",
+   "code": "7356",
+   "title": "AS Mathematics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/as-level/mathematics-7356"
+  },
+  {
+   "id": "aqa:as-level:psychology:7181",
+   "status": "confirmed",
+   "code": "7181",
+   "title": "AS Psychology",
+   "url": "https://www.aqa.org.uk/subjects/psychology/as-level/psychology-7181"
+  },
+  {
+   "id": "aqa:as-level:sociology:7191",
+   "status": "confirmed",
+   "code": "7191",
+   "title": "AS Sociology",
+   "url": "https://www.aqa.org.uk/subjects/sociology/as-level/sociology-7191"
+  },
+  {
+   "id": "aqa:as-level:english-literature:7711",
+   "status": "confirmed",
+   "code": "7711",
+   "title": "AS English Literature A",
+   "url": "https://www.aqa.org.uk/subjects/english/as-level/english-7711"
+  },
+  {
+   "id": "aqa:as-level:history:7041",
+   "status": "confirmed",
+   "code": "7041",
+   "title": "AS History",
+   "url": "https://www.aqa.org.uk/subjects/history/as-level/history-7041"
+  },
+  {
+   "id": "aqa:as-level:geography:7036",
+   "status": "confirmed",
+   "code": "7036",
+   "title": "AS Geography",
+   "url": "https://www.aqa.org.uk/subjects/geography/as-level/geography-7036"
+  },
+  {
+   "id": "aqa:as-level:computer-science:7516",
+   "status": "confirmed",
+   "code": "7516",
+   "title": "AS Computer Science",
+   "url": "https://www.aqa.org.uk/subjects/computer-science/as-level/computer-science-7516"
+  },
+  {
+   "id": "aqa:as-level:business:7131",
+   "status": "withdrawn",
+   "code": "7131",
+   "title": "AS Business",
+   "url": "https://www.aqa.org.uk/subjects/business/as-level/business-7131",
+   "note": "Page: continue using it for cohorts taking exams in 2026; new specification (AS Business (New) 7137) for first teaching September 2026."
+  },
+  {
+   "id": "aqa:as-level:economics:7135",
+   "status": "confirmed",
+   "code": "7135",
+   "title": "AS Economics",
+   "url": "https://www.aqa.org.uk/subjects/economics/as-level/economics-7135"
+  },
+  {
+   "id": "aqa:as-level:law:7161",
+   "status": "not-found",
+   "code": "7161",
+   "title": "AS Law",
+   "url": "https://www.aqa.org.uk/qualifications?level=gcse",
+   "note": "Not in AQA's qualifications list (which lists A-level Law 7162 and no AS Law)."
+  },
+  {
+   "id": "aqa:a-level:maths:7357",
+   "status": "confirmed",
+   "code": "7357",
+   "title": "A-level Mathematics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357"
+  },
+  {
+   "id": "aqa:a-level:further-maths:7367",
+   "status": "confirmed",
+   "code": "7367",
+   "title": "A-level Further Mathematics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367"
+  },
+  {
+   "id": "aqa:a-level:biology:7402",
+   "status": "confirmed",
+   "code": "7402",
+   "title": "A-level Biology",
+   "url": "https://www.aqa.org.uk/subjects/biology/a-level/biology-7402"
+  },
+  {
+   "id": "aqa:a-level:chemistry:7405",
+   "status": "confirmed",
+   "code": "7405",
+   "title": "A-level Chemistry",
+   "url": "https://www.aqa.org.uk/subjects/chemistry/a-level/chemistry-7405"
+  },
+  {
+   "id": "aqa:a-level:physics:7408",
+   "status": "confirmed",
+   "code": "7408",
+   "title": "A-level Physics",
+   "url": "https://www.aqa.org.uk/subjects/physics/a-level/physics-7408"
+  },
+  {
+   "id": "aqa:a-level:environmental-science:7447",
+   "status": "confirmed",
+   "code": "7447",
+   "title": "A-level Environmental Science",
+   "url": "https://www.aqa.org.uk/subjects/environmental-science/a-level/environmental-science-7447"
+  },
+  {
+   "id": "aqa:a-level:english-language:7702",
+   "status": "confirmed",
+   "code": "7702",
+   "title": "A-level English Language",
+   "url": "https://www.aqa.org.uk/subjects/english/a-level/english-7702"
+  },
+  {
+   "id": "aqa:a-level:english-literature:7712",
+   "status": "confirmed",
+   "code": "7712",
+   "title": "A-level English Literature A",
+   "url": "https://www.aqa.org.uk/subjects/english/a-level/english-7712"
+  },
+  {
+   "id": "aqa:a-level:english-literature:7717",
+   "status": "confirmed",
+   "code": "7717",
+   "title": "A-level English Literature B",
+   "url": "https://www.aqa.org.uk/subjects/english/a-level/english-7717"
+  },
+  {
+   "id": "aqa:a-level:english-language:7707",
+   "status": "confirmed",
+   "code": "7707",
+   "title": "A-level English Language and Literature",
+   "url": "https://www.aqa.org.uk/subjects/english/a-level/english-7707"
+  },
+  {
+   "id": "aqa:a-level:geography:7037",
+   "status": "confirmed",
+   "code": "7037",
+   "title": "A-level Geography",
+   "url": "https://www.aqa.org.uk/subjects/geography/a-level/geography-7037"
+  },
+  {
+   "id": "aqa:a-level:history:7042",
+   "status": "confirmed",
+   "code": "7042",
+   "title": "A-level History",
+   "url": "https://www.aqa.org.uk/subjects/history/a-level/history-7042"
+  },
+  {
+   "id": "aqa:a-level:religious-studies:7062",
+   "status": "confirmed",
+   "code": "7062",
+   "title": "A-level Religious Studies",
+   "url": "https://www.aqa.org.uk/subjects/religious-studies/a-level/religious-studies-7062"
+  },
+  {
+   "id": "aqa:a-level:philosophy:7172",
+   "status": "confirmed",
+   "code": "7172",
+   "title": "A-level Philosophy",
+   "url": "https://www.aqa.org.uk/subjects/philosophy/a-level/philosophy-7172"
+  },
+  {
+   "id": "aqa:a-level:politics:7152",
+   "status": "confirmed",
+   "code": "7152",
+   "title": "A-level Politics",
+   "url": "https://www.aqa.org.uk/subjects/politics/a-level/politics-7152"
+  },
+  {
+   "id": "aqa:a-level:psychology:7182",
+   "status": "confirmed",
+   "code": "7182",
+   "title": "A-level Psychology",
+   "url": "https://www.aqa.org.uk/subjects/psychology/a-level/psychology-7182"
+  },
+  {
+   "id": "aqa:a-level:sociology:7192",
+   "status": "confirmed",
+   "code": "7192",
+   "title": "A-level Sociology",
+   "url": "https://www.aqa.org.uk/subjects/sociology/a-level/sociology-7192"
+  },
+  {
+   "id": "aqa:a-level:economics:7136",
+   "status": "confirmed",
+   "code": "7136",
+   "title": "A-level Economics",
+   "url": "https://www.aqa.org.uk/subjects/economics/a-level/economics-7136"
+  },
+  {
+   "id": "aqa:a-level:law:7162",
+   "status": "confirmed",
+   "code": "7162",
+   "title": "A-level Law",
+   "url": "https://www.aqa.org.uk/subjects/law/a-level/law-7162"
+  },
+  {
+   "id": "aqa:a-level:business:7132",
+   "status": "withdrawn",
+   "code": "7132",
+   "title": "A-level Business",
+   "url": "https://www.aqa.org.uk/subjects/business/a-level/business-7138",
+   "note": "Page for 7138: 'Last teaching 2025/26 A-level Business 7132 (Current) Last exams 2027'. Replaced by 7138, first teaching September 2026, first exams 2028."
+  },
+  {
+   "id": "aqa:a-level:accounting:7127",
+   "status": "confirmed",
+   "code": "7127",
+   "title": "A-level Accounting",
+   "url": "https://www.aqa.org.uk/subjects/accounting/a-level/accounting-7127"
+  },
+  {
+   "id": "aqa:a-level:computer-science:7517",
+   "status": "confirmed",
+   "code": "7517",
+   "title": "A-level Computer Science",
+   "url": "https://www.aqa.org.uk/subjects/computer-science/a-level/computer-science-7517"
+  },
+  {
+   "id": "aqa:a-level:design-technology:7552",
+   "status": "confirmed",
+   "code": "7552",
+   "title": "A-level Design and Technology: Product Design",
+   "url": "https://www.aqa.org.uk/subjects/design-and-technology/a-level/design-and-technology-7552",
+   "note": "7562 is Design and Technology: Fashion and Textiles (missing)."
+  },
+  {
+   "id": "aqa:a-level:art-design:art-and-design",
+   "status": "corrected",
+   "code": "7201",
+   "title": "A-level Art and Design (Art, craft and design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7201",
+   "note": "Six titles, 7201–7206; the others listed under missing."
+  },
+  {
+   "id": "aqa:a-level:drama:7262",
+   "status": "confirmed",
+   "code": "7262",
+   "title": "A-level Drama",
+   "url": "https://www.aqa.org.uk/subjects/drama/a-level/drama-7262"
+  },
+  {
+   "id": "aqa:a-level:dance:7237",
+   "status": "confirmed",
+   "code": "7237",
+   "title": "A-level Dance",
+   "url": "https://www.aqa.org.uk/subjects/dance/a-level/dance-7237"
+  },
+  {
+   "id": "aqa:a-level:music:7272",
+   "status": "confirmed",
+   "code": "7272",
+   "title": "A-level Music",
+   "url": "https://www.aqa.org.uk/subjects/music/a-level/music-7272"
+  },
+  {
+   "id": "aqa:a-level:pe:7582",
+   "status": "confirmed",
+   "code": "7582",
+   "title": "A-level Physical Education",
+   "url": "https://www.aqa.org.uk/subjects/physical-education/a-level/physical-education-7582"
+  },
+  {
+   "id": "aqa:a-level:french:7652",
+   "status": "confirmed",
+   "code": "7652",
+   "title": "A-level French",
+   "url": "https://www.aqa.org.uk/subjects/french/a-level/french-7652"
+  },
+  {
+   "id": "aqa:a-level:german:7662",
+   "status": "confirmed",
+   "code": "7662",
+   "title": "A-level German",
+   "url": "https://www.aqa.org.uk/subjects/german/a-level/german-7662"
+  },
+  {
+   "id": "aqa:a-level:spanish:7692",
+   "status": "confirmed",
+   "code": "7692",
+   "title": "A-level Spanish",
+   "url": "https://www.aqa.org.uk/subjects/spanish/a-level/spanish-7692"
+  }
+ ],
+ "missing": [
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "art-design",
+   "code": "8202",
+   "title": "GCSE Art and Design (Fine art)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8202"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "art-design",
+   "code": "8203",
+   "title": "GCSE Art and Design (Graphic communication)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8203"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "art-design",
+   "code": "8204",
+   "title": "GCSE Art and Design (Textile design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8204"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "art-design",
+   "code": "8205",
+   "title": "GCSE Art and Design (Three-dimensional design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8205"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "art-design",
+   "code": "8206",
+   "title": "GCSE Art and Design (Photography)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8206"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "art-design",
+   "code": "7202",
+   "title": "A-level Art and Design (Fine art)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7202"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "art-design",
+   "code": "7203",
+   "title": "A-level Art and Design (Graphic communication)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7203"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "art-design",
+   "code": "7204",
+   "title": "A-level Art and Design (Textile design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7204"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "art-design",
+   "code": "7205",
+   "title": "A-level Art and Design (Three-dimensional design)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7205"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "art-design",
+   "code": "7206",
+   "title": "A-level Art and Design (Photography)",
+   "url": "https://www.aqa.org.uk/subjects/art-and-design/a-level/art-and-design-7206"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "religious-studies",
+   "code": "8063",
+   "title": "GCSE Religious Studies B",
+   "url": "https://www.aqa.org.uk/subjects/religious-studies/gcse/religious-studies-8063"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "religious-studies",
+   "code": "8061",
+   "title": "GCSE Religious Studies Short Course",
+   "url": "https://www.aqa.org.uk/subjects/religious-studies/gcse/religious-studies-8061"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "engineering",
+   "code": "8852",
+   "title": "GCSE Engineering",
+   "url": "https://www.aqa.org.uk/subjects/engineering/gcse/engineering-8852"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": "media",
+   "code": "8572",
+   "title": "GCSE Media Studies",
+   "url": "https://www.aqa.org.uk/subjects/media-studies/gcse/media-studies-8572"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8638",
+   "title": "GCSE Bengali",
+   "url": "https://www.aqa.org.uk/subjects/bengali/gcse/bengali-8638"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8678",
+   "title": "GCSE Hebrew (Modern)",
+   "url": "https://www.aqa.org.uk/subjects/hebrew-modern/gcse/hebrew-modern-8678"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8633",
+   "title": "GCSE Italian",
+   "url": "https://www.aqa.org.uk/subjects/italian/gcse/italian-8633"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8683",
+   "title": "GCSE Panjabi",
+   "url": "https://www.aqa.org.uk/subjects/panjabi/gcse/panjabi-8683"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8688",
+   "title": "GCSE Polish",
+   "url": "https://www.aqa.org.uk/subjects/polish/gcse/polish-8688"
+  },
+  {
+   "body": "aqa",
+   "qualification": "gcse",
+   "subject": null,
+   "code": "8648",
+   "title": "GCSE Urdu",
+   "url": "https://www.aqa.org.uk/subjects/urdu/gcse/urdu-8648"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "business",
+   "code": "7138",
+   "title": "A-level Business (New), first teaching September 2026",
+   "url": "https://www.aqa.org.uk/subjects/business/a-level/business-7138"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "business",
+   "code": "7137",
+   "title": "AS Business (New), first teaching September 2026",
+   "url": "https://www.aqa.org.uk/subjects/business/as-level/business-7137"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "design-technology",
+   "code": "7562",
+   "title": "A-level Design and Technology: Fashion and Textiles",
+   "url": "https://www.aqa.org.uk/subjects/design-and-technology/a-level/design-and-technology-7562"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": "media",
+   "code": "7572",
+   "title": "A-level Media Studies",
+   "url": "https://www.aqa.org.uk/subjects/media-studies/a-level/media-studies-7572"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": null,
+   "code": "7637",
+   "title": "A-level Bengali",
+   "url": "https://www.aqa.org.uk/subjects/bengali/a-level/bengali-7637"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": null,
+   "code": "7677",
+   "title": "A-level Hebrew (Biblical)",
+   "url": "https://www.aqa.org.uk/subjects/hebrew-(biblical)/a-level/hebrew-(biblical)-7677"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": null,
+   "code": "7672",
+   "title": "A-level Hebrew (Modern)",
+   "url": "https://www.aqa.org.uk/subjects/hebrew-modern/a-level/hebrew-modern-7672"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": null,
+   "code": "7682",
+   "title": "A-level Panjabi",
+   "url": "https://www.aqa.org.uk/subjects/panjabi/a-level/panjabi-7682"
+  },
+  {
+   "body": "aqa",
+   "qualification": "a-level",
+   "subject": null,
+   "code": "7687",
+   "title": "A-level Polish",
+   "url": "https://www.aqa.org.uk/subjects/polish/a-level/polish-7687"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "further-maths",
+   "code": "7366",
+   "title": "AS Further Mathematics",
+   "url": "https://www.aqa.org.uk/subjects/mathematics/as-level/mathematics-7366"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "english-language",
+   "code": "7701",
+   "title": "AS English Language",
+   "url": "https://www.aqa.org.uk/subjects/english/as-level/english-7701"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "english-literature",
+   "code": "7716",
+   "title": "AS English Literature B",
+   "url": "https://www.aqa.org.uk/subjects/english/as-level/english-7716"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "religious-studies",
+   "code": "7061",
+   "title": "AS Religious Studies",
+   "url": "https://www.aqa.org.uk/subjects/religious-studies/as-level/religious-studies-7061"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "french",
+   "code": "7651",
+   "title": "AS French",
+   "url": "https://www.aqa.org.uk/subjects/french/as-level/french-7651"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "german",
+   "code": "7661",
+   "title": "AS German",
+   "url": "https://www.aqa.org.uk/subjects/german/as-level/german-7661"
+  },
+  {
+   "body": "aqa",
+   "qualification": "as-level",
+   "subject": "spanish",
+   "code": "7691",
+   "title": "AS Spanish",
+   "url": "https://www.aqa.org.uk/subjects/spanish/as-level/spanish-7691"
+  }
+ ],
+ "notes": [
+  "AQA: all rows checked against https://www.aqa.org.uk/qualifications?level=gcse (lists GCSE, AS and A level with codes) and individual specification pages, 2026-11-20/21. AQA still lists the 2016 GCSE French/German/Spanish specs 8658/8668/8698 alongside the 2024 ones (8652/8662/8692); the catalogue's codes are the current ones. Missing rows with subject null have no SUBJECTS key (community languages)."
+ ]
+}

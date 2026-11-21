@@ -2391,7 +2391,7 @@ Q: What makes a simulation reproducible? | Recording the random seed, code and s
 SUM: Numerical care prevents silent errors.
 SUM: Scripts and seeds make analyses reproducible.
 EV: established | Mathematically equivalent formulas can differ greatly in floating-point accuracy, so stable algorithms such as log-sum-exp and centring are needed.
-SRC: R Core Team, R: A language and environment for statistical computing (R Foundation for Statistical Computing 2025) | software | 2025 | https://www.r-project.org/
+SRC: R Core Team, R: A language and environment for statistical computing (R Foundation for Statistical Computing 2025) | secondary | 2025 | https://www.r-project.org/
 SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | secondary | 2002 | https://epubs.siam.org/
 NUM1#maths-u13-62-q1@1: Find the population variance of 1,000,000,001, 1,000,000,002 and 1,000,000,003 by subtracting 1,000,000,000 first, to 4 decimal places. | 0.6667 | 0.0005 |  | The shifted values 1, 2, 3 have variance 2/3; shifting doesn't change variance.
 M1#maths-u13-62-q2@1: What is the log-sum-exp trick for? | Adding exponentials without overflow or underflow | Speeding up sorting | Sorting a list quickly | Inverting matrices | Generating random numbers on a log scale | Factoring out the maximum keeps the exponents in a safe range.

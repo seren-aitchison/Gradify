@@ -277,6 +277,7 @@ SA2@1,2: Explain the principle behind C1V1 = C2V2 and show how you would make 50
 S: Sometimes you need a strength between two that you have, or you mix products of different strengths. Working out the drug content of each part, or using alligation, gives the answer reliably.
 O: Calculate the strength of a mixture of two preparations
 O: Use alligation to find the proportions needed for a target strength
+LV: Intermediate · Application
 T: Alligation | A method for finding the parts of a stronger and a weaker preparation needed to make an intermediate strength
 T: Diluent or base | The drug-free vehicle, which counts as 0% in mixing calculations
 H: Working out a mixture's strength
@@ -295,20 +296,25 @@ H: Raising a strength
 - Whenever an exact answer matters, check by recalculating the final strength from the quantities you chose.
 K: Check every mixing answer by adding up the drug content and dividing by the total quantity.
 !: Diluting a licensed cream or ointment without checking it's suitable: dilution can affect stability and preservatives, so check the SPC or a specialist source.
+EV: established | A mixture's strength is its total drug content divided by its total quantity, and alligation gives the proportions for a target strength.
 Q: What strength is 100 g of 4% mixed with 300 g of base? | 1%
 Q: In alligation, what are the parts of the stronger preparation? | Target strength minus the weaker strength.
 SUM: Mixture strength = total drug ÷ total quantity.
 SUM: Alligation gives the parts of each component; always check the result.
 SRC: Rees JA, Smith I, Watson J, Introduction to Pharmaceutical Calculations, 4th edition, Pharmaceutical Press | secondary | 2015
+SRC: British Pharmacopoeia Commission, British Pharmacopoeia: general notices on expressing concentrations | standard | 2026 | https://www.pharmacopoeia.com/
 M1#pharmacy-u06-08-q1@1: You mix 100 g of 4% w/w ointment with 300 g of plain base. What is the strength? | 1% | 2% | 4% | 1.33% | 0.75% | The drug content is 4 g (4% of 100 g) in 400 g in total, which is 1% w/w.
 M2#pharmacy-u06-08-q2@2: How much 10% product do you need to make 400 g of 5% using 10% and 2% products? | 150 g | 250 g | 200 g | 100 g | 320 g | Alligation gives 3 parts of 10% and 5 parts of 2%; 3/8 × 400 = 150 g.
 M2#pharmacy-u06-08-q3@1: Mixing 50 mL of 10% w/v with 150 mL of 2% w/v gives what strength? | 4% w/v | 6% w/v | 3% w/v | 5% w/v | 12% w/v | Drug content: 5 g (10% of 50 mL) plus 3 g (2% of 150 mL) = 8 g in 200 mL, which is 4% w/v.
 NUM2#pharmacy-u06-08-q4@2: How many grams of a 10% ointment are needed to make 400 g of a 5% ointment, mixing it with a 2% ointment? | 150 | 0 | g | Alligation: 3 parts of 10% to 5 parts of 2%; 3/8 × 400 = 150 g.
+NUM3@1,2: How many grams of pure drug must be added to 200 g of a 1% w/w cream to make it 2% w/w? Give your answer to two decimal places. | 2.04 | 0.01 | g | The cream holds 2 g of drug. With x g added: 2 + x = 0.02 × (200 + x), so 0.98x = 2 and x = 2.04 g. Check: 4.04 g in 204.04 g is 2%.
+SA2@2: Explain how alligation works, using 10% and 2% products to make 400 g of 5%, and how you would check the answer. | Parts of the stronger product = target minus weaker strength (5 − 2 = 3); parts of the weaker = stronger minus target (10 − 5 = 5); total 8 parts. For 400 g: 3/8 × 400 = 150 g of 10% and 5/8 × 400 = 250 g of 2%. Check by adding the drug content: 15 g plus 5 g is 20 g in 400 g, which is 5%. Before diluting a licensed product, check the SPC or a specialist source for stability. | Parts of stronger ; Parts of weaker ; Correct quantities 150 g and 250 g ; Check by total drug ÷ total quantity ; Suitability of diluting a product
 
 ## Dose calculations
 S: A dose calculation turns a prescription into what's measured and given, and what's supplied. Keeping dose, frequency and daily total clearly separate prevents the commonest errors.
 O: Calculate numbers of tablets, volumes and daily totals from a prescription
 O: Check a calculated dose against the maximum
+LV: Intermediate · Application
 T: Total daily dose | The dose per administration multiplied by the number of times a day
 T: Maximum dose | The largest single or daily dose recommended in the BNF or SPC for that indication and patient
 H: From prescription to dose
@@ -328,6 +334,7 @@ H: Liquids and injections
 - Record the dose, the volume and the product strength together so another person can check them.
 K: Separate the dose per administration, the frequency and the daily total, and check the result against the BNF.
 !: Confusing a daily dose with a per-dose amount ("in four divided doses"), giving four times the intended dose.
+EV: established | Tablets per dose equal dose divided by strength, and the daily total is dose multiplied by frequency.
 Q: Total daily dose of 250 mg four times a day? | 1 g (1,000 mg)
 Q: What prompts a recheck of a tablet calculation? | An unusually large number of tablets or an awkward fraction.
 SUM: Tablets per dose = dose ÷ strength; daily dose = dose × frequency.
@@ -338,11 +345,14 @@ M1#pharmacy-u06-09-q1@1: What is the total daily dose of 250 mg four times a day
 M2#pharmacy-u06-09-q2@1: A dose of 37.5 mg is prescribed; tablets are 25 mg and scored. How many tablets per dose? | One and a half | Two | One | Three | Half | 37.5 ÷ 25 = 1.5 tablets (check the tablet can be halved).
 M2#pharmacy-u06-09-q3@2: Prescribed 30 mg/kg/day "in three divided doses" for a 20 kg child. What's each dose? | 200 mg | 600 mg | 10 mg | 1,800 mg | 60 mg | 30 × 20 = 600 mg a day, divided into three doses of 200 mg (illustrative; check the BNFC).
 NUM1#pharmacy-u06-09-q4@1: Medicine C 15 mg once daily for 28 days is prescribed; tablets are 5 mg. How many tablets are needed? | 84 | 0 | tablets | 15 ÷ 5 = 3 tablets a day; 3 × 28 = 84.
+NUM3@1,2: Illustrative only: Medicine L 125 mg four times a day for 7 days is prescribed as a 250 mg in 5 mL suspension. What total volume is needed? | 70 | 0 | mL | Each dose is 125 ÷ 250 × 5 = 2.5 mL; 2.5 × 4 × 7 = 70 mL.
+SA2@1,2: Describe how to turn a prescription into a dose, a quantity and a check, using "15 mg once daily for 28 days, 5 mg tablets" as the example. | Tablets per dose = dose ÷ strength: 15 ÷ 5 = 3 tablets. The daily total is dose × frequency: 15 mg. The quantity for the course is 3 × 28 = 84 tablets. Check whether the dose is per dose or per day (including "divided" doses), compare it with the usual and maximum doses in the current BNF for the indication, age and kidney function, and query an unusual number of tablets or an awkward fraction. | Tablets per dose ; Daily total ; Course quantity ; Per dose versus per day ; Check against BNF and plausibility
 
 ## Weight-based dosing
 S: Many medicines are dosed per kilogram of body weight, especially in children, in critical care and for drugs with narrow therapeutic ranges. Which weight to use, and whether the dose is per dose or per day, matters as much as the arithmetic.
 O: Calculate weight-based doses and the resulting volumes
 O: Explain when ideal or adjusted body weight is used instead of actual weight
+LV: Intermediate · Application
 T: Ideal body weight (IBW) | An estimate of lean weight from height and sex, used for some drugs in people with obesity
 T: Dose cap | A maximum dose that a weight-based calculation must not exceed
 H: Calculating the dose
@@ -359,6 +369,7 @@ P: **Investigate with the lab.** Calculate weight-based doses, checking each aga
 IX: pharmcalc
 K: Dose = mg/kg × the right weight, then check against the maximum. Confirm which weight the drug's guidance uses.
 !: Using an estimated or out-of-date weight, or forgetting a maximum dose for a heavy patient.
+EV: established | Weight-based doses equal the dose per kg multiplied by the appropriate weight, capped at any maximum dose.
 Q: What's the Devine IBW for a man? | 50 kg plus 2.3 kg for each inch over 5 feet.
 Q: After calculating a mg/kg dose, what must you check? | That it doesn't exceed the maximum dose.
 SUM: Dose = mg/kg × weight; check the maximum dose.
@@ -370,11 +381,14 @@ M3#pharmacy-u06-10-q2@2: Using the Devine formula, what is the ideal body weight
 M2#pharmacy-u06-10-q3@2: Why might a calculated mg/kg dose need capping in a heavy adult? | It can exceed the maximum dose | Heavy patients absorb less | The weight is always estimated | mg/kg doses are only for children | Body weight doesn't matter | A weight-based calculation can exceed the maximum recommended dose, which then applies.
 NUM2#pharmacy-u06-10-q4@2: Estimate the ideal body weight of a woman who is 5 ft 6 in, using the Devine formula. | 59.3 | 0.05 | kg | 45.5 + (2.3 × 6) = 59.3 kg.
 M2#pharmacy-u06-10-q5@1: A child of 20 kg needs 15 mg/kg. What is the dose? | 300 mg | 35 mg | 150 mg | 1.3 mg | Dose = weight × dose per kg = 20 × 15 = 300 mg.
+NUM1@1: Illustrative only: a 50 kg adult is prescribed Medicine D 2 mg/kg. What is the dose? | 100 | 0 | mg | Dose = 2 mg/kg × 50 kg = 100 mg.
+SA2@1,2: Explain the steps and checks in calculating a weight-based dose, including which weight to use. | Dose = dose per kg × weight, then volume = dose ÷ concentration. Use a recent measured weight, not an estimate. Some drugs are dosed on ideal or adjusted body weight in obesity, for example by the Devine formula for ideal weight (men 50 kg, women 45.5 kg, plus 2.3 kg per inch over 5 feet); follow the BNF, SPC or local guideline for the drug. Check the result against any maximum dose, which a heavy patient's calculated dose can exceed. | Dose = mg/kg × weight ; Then volume ; Measured current weight ; Ideal or adjusted weight where specified ; Cap at maximum
 
 ## Body surface area dosing
 S: Cytotoxic chemotherapy and a few other medicines are dosed by body surface area (BSA), which tracks metabolic rate more closely than weight. BSA is calculated from height and weight, usually with the Mosteller formula.
 O: Calculate body surface area using the Mosteller formula
 O: Calculate a dose from a dose per square metre
+LV: Intermediate · Application
 T: Body surface area (BSA) | The calculated surface area of the body in square metres (m²)
 T: Mosteller formula | BSA (m²) = √(height in cm × weight in kg ÷ 3,600)
 H: Calculating BSA
@@ -395,6 +409,7 @@ P: **Investigate with the lab.** Calculate doses from body surface area and comp
 IX: pharmcalc
 K: BSA = √(height × weight ÷ 3,600); dose = mg/m² × BSA, then apply protocol rules on banding and capping.
 !: Using height in metres or inches in the Mosteller formula, which gives a wrong BSA.
+EV: established | The Mosteller formula estimates body surface area from height in cm and weight in kg.
 Q: State the Mosteller formula. | BSA = √(height in cm × weight in kg ÷ 3,600)
 Q: What's the dose for 75 mg/m² and a BSA of 1.6 m²? | 120 mg
 SUM: Mosteller: BSA = √(cm × kg ÷ 3,600).
@@ -406,11 +421,13 @@ M2#pharmacy-u06-11-q2@1: In the Mosteller formula, which units are used? | Centi
 M3#pharmacy-u06-11-q3@1: What is the BSA of a person 160 cm tall weighing 90 kg? | 2.0 m² | 1.6 m² | 1.8 m² | 2.4 m² | 4.0 m² | 160 × 90 = 14,400; ÷ 3,600 = 4; √4 = 2.0 m².
 NUM2#pharmacy-u06-11-q4@1: Calculate the body surface area of a person 170 cm tall weighing 70 kg, using the Mosteller formula. Give your answer to two decimal places. | 1.82 | 0.01 | m² | √(170 × 70 ÷ 3,600) = √3.306 = 1.82 m².
 M2#pharmacy-u06-11-q5@1: A drug's dose is 100 mg/m²; the patient's BSA is 1.8 m². What is the dose? | 180 mg | 55.6 mg | 100 mg | 1.8 mg | Dose = BSA × dose per m² = 1.8 × 100 = 180 mg.
+SA2@1,2: Calculate the dose for a 120 mg/m² regimen in a person 160 cm tall weighing 90 kg, and explain what else must happen before the dose is given. | BSA = √(160 × 90 ÷ 3,600) = √4 = 2.0 m², using height in centimetres and weight in kilograms. Dose = 120 × 2.0 = 240 mg. Before it is given, apply the local protocol on dose banding and any BSA cap (for example in obesity), use a current measured height and weight, and have the calculation independently checked, as this is a specialist, high-risk calculation. | Correct units ; BSA of 2.0 m² ; Dose 240 mg ; Banding or capping per protocol ; Independent check
 
 ## Doses in children
 S: Children's doses come from the BNF for Children (BNFC), by age band, weight or BSA. Old rules that scale adult doses by age are unsafe, and the product and the measuring device matter as much as the number.
 O: Find and calculate children's doses using the BNFC approach
 O: Identify the safety checks for children's doses
+LV: Intermediate · Clinical reasoning
 T: BNFC | The BNF for Children, the UK reference for children's doses by age, weight or BSA
 T: Oral syringe | A purple or clearly marked syringe for measuring oral liquids, which doesn't fit injection devices
 H: How children's doses are worked out
@@ -424,8 +441,10 @@ H: Safety checks
 - Use an oral syringe for oral liquids, and choose a strength that gives a sensible volume.
 - Check for excipients unsuitable in young children (for example some alcohol-containing or high-sugar products), using the BNFC and SPC.
 - Count tenfold errors as a known risk in children: double-check decimals.
+P: A useful habit is to compare the calculated volume with what is sensible for the product. If a child's oral dose comes to 40 mL, or to 0.1 mL, recheck the decimal point, the strength used and whether the dose is per dose or per day, and consider whether a different strength would give a more measurable volume.
 K: Use the BNFC by age and weight, check against the adult maximum, and make sure the volume is measurable with an oral syringe.
 !: Scaling an adult dose by age, or giving a dose that is 10 times too high because of a misplaced decimal point.
+EV: established | Children's doses come from the BNFC by age, weight or BSA, and should not exceed the adult maximum.
 Q: Which reference is used for children's doses in the UK? | The BNF for Children (BNFC).
 Q: Why use an oral syringe? | It measures oral liquids accurately and can't be connected to injection devices.
 SUM: Use BNFC doses by age, weight or BSA with a current weight.
@@ -436,11 +455,14 @@ M2#pharmacy-u06-12-q1@1: A 16 kg child needs 15 mg/kg; the liquid is 120 mg in 5
 M2#pharmacy-u06-12-q2@2: What's the best way to decide a child's dose? | The BNFC dose for age and weight | Young's rule from the adult dose | Half the adult dose | Clark's rule from the adult dose | The parent's usual dose | Age-scaling rules ignore how children handle drugs differently; use the BNFC.
 M3#pharmacy-u06-12-q3@2: A weight-based dose for a large 13-year-old exceeds the adult dose. What should happen? | Cap it at the adult maximum and check | Give the full calculated dose | Halve the calculated dose | Use the child's age band only | Ignore it as children clear drugs faster | A calculated children's dose shouldn't exceed the adult maximum; check with the BNFC and prescriber.
 NUM1#pharmacy-u06-12-q4@1: A child weighing 16 kg is prescribed Medicine F 15 mg/kg. The oral liquid contains 120 mg in 5 mL. What volume should be given? | 10 | 0.01 | mL | 15 × 16 = 240 mg; 240 ÷ 120 × 5 = 10 mL.
+M2@2: A child's calculated dose of an oral liquid comes to 40 mL. What is the best next step? | Recheck the strength and the working | Give it as eight 5 mL spoonfuls | Round it down to 30 mL | Supply it exactly as calculated | Ask the parent to estimate it | An unusually large volume suggests a tenfold or per-day error; recheck before supplying.
+SA2@1,2: Describe how a child's dose of an oral liquid should be worked out and checked. | Use the BNFC dose for the indication and age band, by weight (mg/kg) or BSA where stated, with a current measured weight; don't scale adult doses by age. Calculate the dose and then the volume from the product's strength. Check the dose doesn't exceed the adult maximum, that the volume is measurable with an oral syringe, that excipients are suitable, and double-check decimals because tenfold errors are a known risk in children. | BNFC by age and weight ; No age-scaling rules ; Dose then volume ; Adult maximum and measurable volume ; Decimal double-check and excipients
 
 ## Quantities to supply
 S: Working out how much to supply is everyday pharmacy arithmetic: tablets for a course, millilitres of a liquid, doses in an inhaler, or grams of a cream. Original-pack dispensing and sensible pack sizes come into it too.
 O: Calculate quantities to supply for tablets, liquids, inhalers and topical products
 O: Apply original pack dispensing and pack-size considerations
+LV: Intermediate · Application
 T: Original pack dispensing | Supplying medicines in the manufacturer's pack, with its patient information leaflet, where possible
 T: Fingertip unit (FTU) | The amount of cream squeezed from a standard tube along an adult fingertip, about 0.5 g
 H: Calculating quantities
@@ -462,6 +484,7 @@ P: **Investigate with the lab.** Work out quantities to supply for courses of tr
 IX: pharmcalc
 K: Quantity = dose × frequency × duration; for inhalers, divide the doses in the device by the doses used each day.
 !: Forgetting that "two puffs twice a day" is four doses a day.
+EV: established | Quantity to supply equals dose × frequency × duration, and inhaler duration equals doses in the device divided by doses a day.
 Q: How long does a 200-dose inhaler last at 2 puffs twice a day? | 50 days
 Q: About how much is one fingertip unit? | About 0.5 g.
 SUM: Quantity = dose × frequency × days.
@@ -473,11 +496,14 @@ M2#pharmacy-u06-13-q2@1: A 200-dose inhaler is used as two puffs twice a day. Ho
 M2#pharmacy-u06-13-q3@2: Why is original pack dispensing encouraged? | People get the leaflet and an intact pack | It always costs the NHS less | It's required for every medicine | It removes the need to label | It avoids the clinical check | The manufacturer's pack keeps the leaflet and batch details together.
 NUM1#pharmacy-u06-13-q4@1: How many days will a 120-dose inhaler last if the dose is two puffs twice a day? | 30 | 0 | days | 2 × 2 = 4 puffs a day; 120 ÷ 4 = 30 days.
 M2#pharmacy-u06-13-q5@1: One tablet twice daily for 14 days. How many tablets are supplied? | 28 | 14 | 42 | 7 | One tablet, twice a day, for 14 days is 1 × 2 × 14 = 28 tablets.
+NUM3@1: Illustrative only: Medicine M is taken as 6 tablets daily for 5 days, then reduced by one tablet a day every 5 days until stopped. How many tablets are needed? | 105 | 0 | tablets | The stages are 6, 5, 4, 3, 2 and 1 tablets daily, each for 5 days: 21 × 5 = 105 tablets.
+SA2@1,2: Explain how to work out the quantity to supply for a tablet course, an oral liquid and an inhaler, and what practical points apply. | Tablets: tablets per dose × doses per day × days. Liquids: volume per dose × doses per day × days, rounding to whole bottles where appropriate and checking the in-use shelf life. Inhalers: doses in the device ÷ puffs per day gives the days it lasts (remembering two puffs twice a day is four). Round to complete original packs where appropriate and permitted, and record any difference; controlled drug quantities must be stated in words and figures. | Tablet formula ; Liquid formula ; Inhaler duration ; Original packs and rounding ; Controlled drug quantity rule
 
 ## Infusion rates
 S: Intravenous fluids and many medicines are given by infusion. You need to convert a volume and a time into a pump rate in mL per hour, or for gravity sets into drops per minute.
 O: Calculate infusion rates in mL per hour
 O: Calculate drip rates for gravity giving sets
+LV: Intermediate · Application
 T: Volumetric pump | A pump that delivers a set volume per hour
 T: Drop factor | The number of drops per mL a giving set delivers (usually 20 for crystalloids and 15 for blood sets)
 H: mL per hour
@@ -495,6 +521,7 @@ H: Practical checks
 - Example: 250 mL over 2 hours is 125 mL/hour, the same rate as 1 litre over 8 hours.
 K: mL/hour = volume ÷ hours; drops/minute = volume × drop factor ÷ minutes. Check the drop factor on the giving set.
 !: Using hours instead of minutes in the drops-per-minute formula.
+EV: established | Pump rate in mL/hour equals volume divided by hours, and drip rate equals volume × drop factor divided by minutes.
 Q: What is the rate for 1 litre over 8 hours? | 125 mL/hour
 Q: What is the usual drop factor for a crystalloid giving set? | 20 drops/mL
 SUM: mL/hour = volume ÷ time in hours.
@@ -505,6 +532,8 @@ M1#pharmacy-u06-14-q1@1: What pump rate gives 100 mL over 30 minutes? | 200 mL/h
 M2#pharmacy-u06-14-q2@2: 1 L over 8 hours with a 20 drops/mL set: how many drops per minute? | 42 | 125 | 21 | 83 | 2.6 | 1,000 × 20 ÷ 480 = 41.7, about 42 drops/minute.
 M2#pharmacy-u06-14-q3@2: Which figure must you check before calculating a gravity drip rate? | The set's drop factor | The patient's height | The bag's expiry time | The pump's battery | The fluid's pH | Giving sets deliver different numbers of drops per mL.
 NUM1#pharmacy-u06-14-q4@1: 500 mL of fluid is to be given over 4 hours by volumetric pump. What rate should be set? | 125 | 0 | mL/hour | 500 ÷ 4 = 125 mL/hour.
+NUM3@2: 500 mL of fluid is to run over 6 hours through a 20 drops/mL giving set. What drip rate is needed, to the nearest whole drop per minute? | 28 | 0 | drops/minute | 6 hours is 360 minutes; 500 × 20 ÷ 360 = 27.8, about 28 drops per minute.
+SA2@1,2: Explain how to calculate an infusion rate for a volumetric pump and for a gravity giving set, and the checks that apply. | Pump rate (mL/hour) = volume ÷ time in hours: 1 litre over 8 hours is 125 mL/hour. Drip rate (drops/minute) = volume × drop factor ÷ time in minutes; the drop factor is on the giving set (usually 20 drops/mL for crystalloids, 15 for blood). Check the total time against the rate, use minutes in the drip formula, and prefer pumps for medicines and people at risk of fluid overload. | Pump formula ; Drip formula ; Drop factor from the set ; Minutes not hours ; Pumps for high-risk patients
 
 ## Drug infusions in mg per hour
 S: Medicine infusions are prescribed as a dose rate (mg per hour, or micrograms per kg per minute). You need to move between the dose rate, the infusion's concentration and the pump rate in mL per hour.
