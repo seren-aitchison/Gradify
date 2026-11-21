@@ -1,5 +1,6 @@
 /* Gradify courses (kit/course/course.js): the road, unit banners, lessons, quizzes, review and progress.
    Load after base.css, components.css, subsite.css and model.css (the notes reuse the model notes' look). */
+@import url("flashcards.css");   /* the Liquid Glass review card, shared with the study app */
 .co { --a: #ff5600; --b: #f055dd; margin: 26px 0 40px; }
 .co-kicker { display: inline-flex; align-items: center; gap: 6px; font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
 .co-ic { width: 18px; height: 18px; flex: none; }
@@ -138,6 +139,7 @@
 /* a lesson */
 .co-crumbs { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--mute); }
 .co-crumbs a { color: var(--fg); text-decoration: none; }
+.co-revsess .flash-card { margin-bottom: 18px; }   /* the course review uses the shared Liquid Glass card (flashcards.css) */
 .co-steps { display: flex; gap: 4px; margin: 12px 0 0; }
 .co-steps a { flex: 1; height: 6px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); position: relative; }
 /* each lesson's bar is thin to look at but tall to tap: an invisible target around it */
@@ -199,10 +201,6 @@
 /* a card with a diagram on its back: from the top, and it scrolls if the diagram is tall */
 .co-card3d .b:has(.gd) { justify-content: flex-start; overflow-y: auto; }
 .co-card3d .b .gd { margin: 4px 0 0; font-size: 13px; }
-.co-rate { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.co-rate button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px; border-radius: 14px; cursor: pointer; color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); font: 15px var(--sans); box-shadow: 0 4px 0 rgba(0, 0, 0, .4); }
-.co-rate small { font-size: 12px; color: var(--mute); }
-.co-rate .again { border-color: #ff3d6e; } .co-rate .hard { border-color: #ffb35c; } .co-rate .good { border-color: #40d4b1; } .co-rate .easy { border-color: #6ea8ff; }
 
 /* modal, toasts, confetti */
 .co-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: rgba(var(--sink-rgb), .7); backdrop-filter: blur(6px); animation: co-fade .2s; }
@@ -298,7 +296,6 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
   .co-bbtns { flex-direction: row; }
   .co-road { max-width: 340px; }
   .co-node { width: 58px; height: 58px; margin: -29px 0 0 -29px; } .co-node.cur { width: 68px; height: 68px; margin: -34px 0 0 -34px; }
-  .co-rate { grid-template-columns: repeat(2, 1fr); }
   .co-label, .co-node.cur .co-label { width: min(150px, calc(50vw - 70px)); font-size: 12.5px; }
   .co-node.cur .co-label { font-size: 13.5px; }
   .co-mastery > div { grid-template-columns: 1fr 50px; } .co-mastery .co-bar { grid-column: 1 / -1; grid-row: 2; }
