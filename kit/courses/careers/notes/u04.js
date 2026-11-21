@@ -189,7 +189,7 @@ TF1#careers-u04-04-q3@2: After one polite follow-up with no reply, it's usually 
 M3#careers-u04-04-q4@3: Which approach best balances persistence and respect? | One follow-up after a week, then move on, while trying other contacts | Daily messages until the person replies, to show strong motivation | No follow-up at all, because any second message is always rude | Messaging the person's colleagues to ask why they haven't replied | One follow-up shows interest without pressure; daily messages or contacting colleagues are intrusive, and no follow-up misses missed messages.
 SA3#careers-u04-04-q5@2,3: Write the plan for a cold approach to a professional in a field you're interested in, explaining each choice. | Choose a specific person found through alumni, an event or an article. Write a short message (under 150 words) with a clear subject line: who you are, a specific reason for contacting them, one small request such as a 15-minute call, flexibility and thanks. Check names and spelling and don't attach a CV. If no reply in a week, send one brief follow-up. If you speak, prepare questions, thank them within a day and close the loop later with an update. Each choice keeps the request easy to accept and builds a relationship. | Identifies a specific contact ; Includes the key message elements ; Keeps the request small and clear ; Plans one follow-up ; Plans thanks and closing the loop
 Q: How long should a cold message be? | Short, under 150 words.
-Q: Should you attach a CV to a cold message? | Not unless asking about a specific opportunity.
+Q: When should you attach a CV to a cold message? | Only when asking about a specific opportunity.
 Q: Which cold message gets more replies, one asking for advice or one asking for a job? | One asking for advice.
 Q: What should you check before sending a cold message? | A clear subject line, spelling and names.
 Q: How many follow-ups should you send to an unanswered cold message? | One short, polite follow-up after about a week.
@@ -397,7 +397,7 @@ Q: What extra information do LinkedIn job searches show? | Who at the employer y
 Q: When should you connect with people you've met? | Straight after meeting them.
 Q: What helps a connection request to a stranger succeed? | A shared link, such as alumni, a talk they gave or a mutual contact.
 Q: Why is "I'd like to add you to my professional network" a weak note? | It is generic and gives no reason or personal link.
-Q: Does accepting a connection mean agreeing to a conversation? | No; ask for advice in a separate message after they accept.
+Q: After a contact accepts your connection request, how should you ask for a conversation? | In a separate message asking for advice; accepting a connection is not agreeing to a conversation.
 Q: What common route into data science did Theo find? | A physics degree, a Python-heavy project or master's, then a graduate analyst role.
 Q: Why is sending hundreds of blank requests a mistake? | They are often ignored and can make your profile look like spam.
 
@@ -447,7 +447,7 @@ Q: What three qualities make content valuable? | It is specific, useful or thoug
 Q: How does commercial awareness show naturally on LinkedIn? | By commenting on news affecting your target sector.
 Q: What risks does online visibility carry? | Posts are public and permanent, recruiters may read them, and opinions about employers or colleagues can cause problems.
 Q: What must you never share from a placement? | Confidential information.
-Q: Do students need to hide their genuine views online? | No, genuine views expressed respectfully are fine, but avoid controversy for its own sake.
+Q: How should students handle their genuine views online? | Express them respectfully; there is no need to hide them, but avoid controversy for its own sake.
 Q: What made Aaron's post about the AI talk strong? | It thanked the speaker by name, gave a key takeaway and said what he would do next.
 
 ## Managing your digital footprint
