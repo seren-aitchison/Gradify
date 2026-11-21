@@ -178,6 +178,7 @@ X: Five forces for UK supermarkets.
 > Buyers: individual shoppers are weak, but switching costs are near zero and price comparison is easy.
 > Substitutes: moderate: online delivery, convenience stores, eating out.
 > Rivalry: intense, with price competition and low margins: an industry with modest average profitability.
+D: bus-five-forces
 H: Limitations
 - A **snapshot** of a changing industry; digital platforms can reshape forces quickly.
 - Underplays **co-operation**: some analysts add complementors as a "sixth force".
@@ -227,6 +228,7 @@ H: The stages
 - **Maturity**: slow growth, standardised products, intense price competition; focus on efficiency, cost and differentiation.
 - **Decline**: falling sales as substitutes take over; options include harvesting, finding a niche, consolidating or exiting.
 P: The industry life cycle describes the whole industry, not one product. A single firm's products may be at different stages, which is why portfolio tools such as the Boston Matrix are used alongside it.
+D: bus-industry-life-cycle
 H: Strategy through the cycle
 P: Early stages reward innovation and speed; later stages reward efficiency and scale. Harrigan's work on declining industries (1980) showed some firms profit in decline by becoming the last remaining supplier or serving a loyal niche.
 X: The UK mobile phone industry.
@@ -277,6 +279,7 @@ H: The four quadrants
 - **Opportunities** (external): favourable trends, such as a growing market or new technology.
 - **Threats** (external): unfavourable trends, such as new rivals or regulation.
 P: External factors come from PESTLE and five forces analysis; internal factors from resource and value chain analysis.
+D: bus-swot-tows
 H: From SWOT to strategy: TOWS
 - **SO** strategies: use strengths to exploit opportunities.
 - **WO**: overcome weaknesses by taking opportunities.
@@ -376,6 +379,7 @@ P: Porter (1985) divided a firm's activities into:
 - **Primary activities**: **inbound logistics** (receiving and storing inputs), **operations** (turning inputs into products), **outbound logistics** (distribution), **marketing and sales**, and **service** (after-sales support).
 - **Support activities**: **firm infrastructure** (management, finance, planning), **human resource management**, **technology development** and **procurement**.
 P: **Margin** is the difference between the value customers pay for and the cost of performing the activities.
+D: bus-value-chain
 H: Using the value chain
 - Find activities where the firm is **cheaper** than rivals (cost advantage) or creates **more value** for customers (differentiation).
 - Look at **linkages** between activities: better product design can cut service costs.
@@ -428,6 +432,7 @@ P: Prahalad and Hamel (1990) defined a **core competence** as a combination of s
 - makes a significant contribution to **customer benefits**;
 - is **difficult for competitors to imitate**.
 P: Their example was Honda's expertise in engines, used in cars, motorcycles, lawnmowers and generators.
+D: bus-vrio
 H: VRIO
 - **Valuable**: does it let the firm exploit opportunities or neutralise threats? If not: competitive disadvantage.
 - **Rare**: do few competitors have it? If not: competitive parity.
@@ -481,6 +486,7 @@ P: Porter (1980, 1985) proposed two sources of advantage, **lower cost** or **di
 - **Cost leadership**: be the lowest-cost producer in the industry, through scale, efficient processes and tight cost control, and sell at or near average prices or lower.
 - **Differentiation**: offer something customers value and will pay a premium for, such as quality, design, brand or service.
 - **Cost focus** and **differentiation focus**: apply either approach to a narrow segment, such as a region or customer group.
+D: bus-generic-strategies
 H: Risks
 - **Cost leaders**: technology change, imitation, losing sight of what customers want.
 - **Differentiators**: customers may stop paying the premium; imitation; the cost gap becomes too large.
@@ -534,6 +540,7 @@ P: Igor Ansoff (1957) classified growth by product and market:
 - **Product development** (new products, existing markets): new or improved products for current customers.
 - **Market development** (existing products, new markets): new regions, countries or customer segments.
 - **Diversification** (new products, new markets): highest risk. **Related** diversification builds on existing capabilities; **unrelated** (conglomerate) moves into unconnected areas.
+D: bus-ansoff
 H: Risk and choice
 - Risk rises as the firm moves away from what it knows.
 - Choice depends on market saturation, competitors, the firm's capabilities and resources, and its objectives.
@@ -586,6 +593,7 @@ P: The **Boston Matrix** (BCG, 1970) plots products or business units by **marke
 - **Cash cows**: high share, low growth. Generate more cash than they need.
 - **Question marks** (problem children): low share, high growth. Need heavy investment; may become stars or fail.
 - **Dogs**: low share, low growth. Usually low profits; candidates for divestment.
+D: bus-boston-matrix
 H: A balanced portfolio
 P: Cash from cash cows funds stars and selected question marks; successful question marks become stars; stars become cash cows as growth slows. A firm with too many dogs or question marks, and too few cash cows, faces cash shortages.
 X: A confectionery company's portfolio.
@@ -636,6 +644,7 @@ H: Methods
 - **Acquisition (takeover)**: one firm buys a controlling stake in another, sometimes against the target board's wishes (hostile).
 - **Joint venture**: firms create a new, jointly owned business.
 - **Strategic alliance**: firms co-operate without forming a new company, such as airline code-sharing.
+D: bus-growth-methods
 H: Types and motives
 - **Horizontal**: same industry, same stage (market share, economies of scale).
 - **Vertical backward**: towards suppliers (control of inputs). **Vertical forward**: towards customers (control of distribution).
@@ -693,6 +702,7 @@ P: Kim and Mauborgne (2005) describe:
 - **Red oceans**: existing industries with known boundaries, where firms compete for a share of existing demand, often through price.
 - **Blue oceans**: new market space, where demand is created rather than fought over, making competition irrelevant for a time.
 P: The key idea is **value innovation**: pursuing differentiation and low cost at the same time by rethinking what the industry offers.
+D: bus-four-actions
 H: Tools
 - **Four actions framework**: which factors should be **eliminated**, **reduced** below the industry standard, **raised** above it, and **created** that the industry has never offered?
 - **Strategy canvas**: a chart plotting the levels of each competing factor offered by rivals, showing how a new value curve diverges.
@@ -800,6 +810,7 @@ P: Kaplan and Norton (1992) argued that financial measures alone look backwards 
 - **Customer**: how do customers see us? (satisfaction, retention, market share)
 - **Internal business process**: what must we excel at? (quality, cycle time, productivity)
 - **Learning and growth**: can we continue to improve and create value? (staff skills, engagement, innovation)
+D: bus-balanced-scorecard
 H: Strategy maps
 P: Kaplan and Norton later developed **strategy maps** (2004) showing cause-and-effect links: investment in staff skills (learning) improves processes, which improves customer outcomes, which drive financial results.
 X: A scorecard for an NHS-style hospital trust.

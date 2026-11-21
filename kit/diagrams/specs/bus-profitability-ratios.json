@@ -1,0 +1,87 @@
+{
+ "id": "bus-profitability-ratios",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Profitability ratios",
+ "title": "Three profitability ratios for a retailer",
+ "caption": "The same £500,000 of sales gives a 40% gross margin, but overheads take it to a 16% operating margin. Return on capital employed uses the £400,000 of long-term funds: 20%.",
+ "alt": "Columns: gross profit margin 40%, operating profit margin 16%, ROCE 20%.",
+ "description": [
+  "Gross margin: 200,000 ÷ 500,000 = 40%.",
+  "Operating margin: 80,000 ÷ 500,000 = 16%.",
+  "ROCE: 80,000 ÷ 400,000 = 20%."
+ ],
+ "terms": [
+  "Gross profit margin",
+  "Operating profit margin",
+  "ROCE",
+  "£400,000",
+  "40%",
+  "16%",
+  "20%"
+ ],
+ "kind": "columns",
+ "suffix": "%",
+ "range": [
+  0,
+  50
+ ],
+ "series": [
+  {
+   "name": "Ratio",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Gross profit margin",
+   "short": "Gross margin",
+   "values": [
+    {
+     "id": "gm",
+     "v": 40,
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "label": "Operating profit margin",
+   "short": "Operating margin",
+   "values": [
+    {
+     "id": "om",
+     "v": 16,
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "label": "ROCE",
+   "values": [
+    {
+     "id": "roce",
+     "v": 20,
+     "colour": "a5"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "200000 / 500000 * 100",
+   "equals": "gm",
+   "name": "gross margin = 200,000 ÷ 500,000 × 100 = 40%"
+  },
+  {
+   "expr": "80000 / 500000 * 100",
+   "equals": "om",
+   "name": "operating margin = 80,000 ÷ 500,000 × 100 = 16%"
+  },
+  {
+   "expr": "80000 / 400000 * 100",
+   "equals": "roce",
+   "name": "ROCE = 80,000 ÷ 400,000 × 100 = 20%"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "id": "bus-disruptive-innovation",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u09",
+ "lesson": "Disruptive innovation",
+ "title": "Disruptive innovation",
+ "caption": "Incumbents improve faster than mainstream customers need. A simpler, cheaper product starts below even the mainstream's needs, then improves until it is good enough, and customers switch.",
+ "alt": "Performance against time: incumbents' sustaining products rise above the mainstream customers' needs; a disruptive product starts far below but climbs faster and crosses the mainstream need at year 6.",
+ "description": [
+  "Mainstream customers' needs rise slowly.",
+  "Incumbents' products rise faster and soon exceed what mainstream customers need.",
+  "The disruptive product starts worse on traditional measures but improves faster.",
+  "At year 6 it becomes good enough for mainstream customers, who then switch."
+ ],
+ "terms": [
+  "sustaining",
+  "disruptive",
+  "innovator's dilemma",
+  "good enough",
+  "mainstream customers"
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   150
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "grid": [
+  2,
+  25
+ ],
+ "axisLabels": [
+  "time",
+  "performance"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "curves": [
+  {
+   "expr": "70+7*x",
+   "colour": "a1",
+   "label": "Incumbent (sustaining)",
+   "labelAt": [
+    5.4,
+    132
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "50+4*x",
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "What mainstream customers need",
+   "labelAt": [
+    10,
+    74
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "20+9*x",
+   "colour": "a2",
+   "label": "Disruptive product",
+   "labelAt": [
+    0.2,
+    6
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 6,
+   "y": 74,
+   "colour": "ink",
+   "label": "good enough",
+   "dx": 12,
+   "dy": 24,
+   "anchor": "start"
+  }
+ ],
+ "marks": [
+  {
+   "x": 6,
+   "to": 74
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "20+9*x",
+   "b": "50+4*x",
+   "x": 6,
+   "y": 74,
+   "name": "the disruptive product reaches the mainstream need at year 6"
+  },
+  {
+   "type": "order",
+   "a": "20+9*x",
+   "b": "50+4*x",
+   "rel": "<",
+   "x": 1,
+   "name": "it starts below what mainstream customers need"
+  },
+  {
+   "type": "order",
+   "a": "70+7*x",
+   "b": "50+4*x",
+   "rel": ">",
+   "x": 1,
+   "name": "incumbents start above the mainstream need and stay above"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "bus-process-types",
+ "renderer": "layers",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Process types and layouts",
+ "title": "Manufacturing process types",
+ "caption": "Moving down, volume rises and variety falls: from a one-off ship to oil refining that never stops. The process a firm uses follows from how many it makes and how much each differs.",
+ "alt": "Five stacked layers from low volume and high variety to very high volume: project, jobbing, batch, mass, continuous.",
+ "description": [
+  "Project: unique, large products, such as a bridge or ship.",
+  "Jobbing: low volume, high variety, such as a bespoke tailor.",
+  "Batch: groups of identical items, such as a bakery's loaves.",
+  "Mass: high volume, standardised, such as cars on an assembly line.",
+  "Continuous: very high volume, non-stop flow, such as oil refining."
+ ],
+ "terms": [
+  "Project",
+  "Jobbing",
+  "Batch",
+  "Mass",
+  "Continuous",
+  "bespoke tailor",
+  "oil refining"
+ ],
+ "shape": "stack",
+ "count": 5,
+ "arrowLabel": "volume rises, variety falls",
+ "expect": [
+  "Project",
+  "Jobbing",
+  "Batch",
+  "Mass",
+  "Continuous"
+ ],
+ "items": [
+  {
+   "label": "Project",
+   "detail": "unique, large: a bridge or ship",
+   "colour": "a5"
+  },
+  {
+   "label": "Jobbing",
+   "detail": "low volume, high variety: a bespoke tailor",
+   "colour": "a1"
+  },
+  {
+   "label": "Batch",
+   "detail": "groups of identical items: a bakery's loaves",
+   "colour": "a4"
+  },
+  {
+   "label": "Mass",
+   "detail": "high volume, standardised: cars on an assembly line",
+   "colour": "a3"
+  },
+  {
+   "label": "Continuous",
+   "detail": "very high volume, non-stop: oil refining",
+   "colour": "a2"
+  }
+ ]
+}

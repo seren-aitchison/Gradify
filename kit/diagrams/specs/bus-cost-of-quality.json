@@ -1,0 +1,80 @@
+{
+ "id": "bus-cost-of-quality",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Quality management",
+ "title": "The costs of quality at a manufacturer",
+ "caption": "Failure costs are £550,000 of the £700,000 total, about 79%. Money spent on prevention and appraisal is small beside what failures cost, which is the case for investing in prevention.",
+ "alt": "One stacked column of £700,000: prevention £50,000, appraisal £100,000, internal failure £200,000, external failure £350,000.",
+ "description": [
+  "Prevention £50,000 and appraisal £100,000.",
+  "Internal failure £200,000 and external failure £350,000.",
+  "Total cost of quality £700,000; failure costs £550,000, about 79%."
+ ],
+ "terms": [
+  "Prevention",
+  "appraisal",
+  "Internal failure",
+  "external failure",
+  "£700,000",
+  "£550,000",
+  "79%"
+ ],
+ "kind": "stacked",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  0,
+  760
+ ],
+ "stacks": [
+  {
+   "label": "Total cost of quality",
+   "parts": [
+    {
+     "id": "prevention",
+     "label": "Prevention",
+     "v": 50,
+     "colour": "good"
+    },
+    {
+     "id": "appraisal",
+     "label": "Appraisal",
+     "v": 100,
+     "colour": "a4"
+    },
+    {
+     "id": "internal",
+     "label": "Internal failure",
+     "v": 200,
+     "colour": "a3"
+    },
+    {
+     "id": "external",
+     "label": "External failure",
+     "v": 350,
+     "colour": "bad"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "prevention + appraisal + internal + external",
+   "equals": "700",
+   "name": "the four costs total £700,000"
+  },
+  {
+   "expr": "internal + external",
+   "equals": "550",
+   "name": "failure costs are £550,000"
+  },
+  {
+   "expr": "(internal + external) / (prevention + appraisal + internal + external)",
+   "equals": "0.79",
+   "tol": 0.005,
+   "name": "failure is about 79% of the total"
+  }
+ ]
+}

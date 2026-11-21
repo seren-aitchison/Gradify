@@ -1,0 +1,112 @@
+{
+ "id": "bus-diffusion-adopters",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "Product and the product life cycle",
+ "title": "Rogers's adopter categories",
+ "caption": "Adopters arrive in a bell shape: most people are in the two majorities. Marketing to the early adopters, often opinion leaders, can speed adoption; Moore's chasm sits between them and the early majority.",
+ "alt": "Columns of the share of adopters: innovators 2.5%, early adopters 13.5%, early majority 34%, late majority 34%, laggards 16%, adding to 100%.",
+ "description": [
+  "Innovators 2.5%.",
+  "Early adopters 13.5%.",
+  "Early majority 34%.",
+  "Late majority 34%.",
+  "Laggards 16%.",
+  "Together 100%."
+ ],
+ "terms": [
+  "Innovators",
+  "early adopters",
+  "early majority",
+  "late majority",
+  "laggards",
+  "2.5%",
+  "13.5%",
+  "34%",
+  "16%"
+ ],
+ "kind": "columns",
+ "suffix": "%",
+ "range": [
+  0,
+  42
+ ],
+ "series": [
+  {
+   "name": "Share of adopters",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Innovators",
+   "values": [
+    {
+     "id": "a0",
+     "v": 2.5,
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "label": "Early adopters",
+   "values": [
+    {
+     "id": "a1",
+     "v": 13.5,
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "label": "Early majority",
+   "values": [
+    {
+     "id": "a2",
+     "v": 34,
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "label": "Late majority",
+   "values": [
+    {
+     "id": "a3",
+     "v": 34,
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "label": "Laggards",
+   "values": [
+    {
+     "id": "a4",
+     "v": 16,
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "a0 + a1 + a2 + a3 + a4",
+   "equals": "100",
+   "name": "the five categories add up to 100%"
+  },
+  {
+   "expr": "a2 + a3",
+   "equals": "68",
+   "name": "the two majorities are 68% of adopters"
+  }
+ ],
+ "also": [
+  {
+   "course": "business",
+   "unit": "u09",
+   "lesson": "Diffusion of innovations"
+  }
+ ]
+}

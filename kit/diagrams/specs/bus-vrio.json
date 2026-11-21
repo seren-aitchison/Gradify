@@ -1,0 +1,52 @@
+{
+ "id": "bus-vrio",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "Core competences and the VRIO framework",
+ "title": "VRIO: four questions about a resource",
+ "caption": "A resource must pass all four tests to give a sustained competitive advantage. Fail the first and it is a disadvantage; fail the second, only parity; fail the third, an advantage that does not last.",
+ "alt": "Four boxes in order: valuable, rare, inimitable, organised, each with what failing it means, ending in sustained competitive advantage.",
+ "description": [
+  "Valuable? If not: competitive disadvantage.",
+  "Rare? If not: competitive parity.",
+  "Inimitable? If not: temporary advantage.",
+  "Organised to exploit it? If yes to all four: sustained competitive advantage."
+ ],
+ "terms": [
+  "Valuable",
+  "Rare",
+  "Inimitable",
+  "Organised",
+  "competitive disadvantage",
+  "competitive parity",
+  "temporary advantage",
+  "sustained competitive advantage"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Valuable?",
+  "Rare?",
+  "Inimitable?",
+  "Organised?"
+ ],
+ "steps": [
+  {
+   "label": "Valuable?",
+   "note": "if not: competitive disadvantage"
+  },
+  {
+   "label": "Rare?",
+   "note": "if not: competitive parity"
+  },
+  {
+   "label": "Inimitable?",
+   "note": "if not: temporary advantage"
+  },
+  {
+   "label": "Organised?",
+   "note": "if yes: exploited"
+  }
+ ],
+ "end": "Yes to all four: sustained competitive advantage"
+}

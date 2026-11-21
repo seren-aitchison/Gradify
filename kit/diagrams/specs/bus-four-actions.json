@@ -1,0 +1,65 @@
+{
+ "id": "bus-four-actions",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "Blue ocean strategy",
+ "title": "The four actions framework",
+ "caption": "Value innovation asks four questions about every factor the industry competes on. Cirque du Soleil eliminated animals and stars, reduced thrills, raised venue and artistry, and created themes and music.",
+ "alt": "Four boxes: eliminate (animal shows, star performers), reduce (thrills and danger), raise (a unique venue, artistic quality), create (themes, artistic music and dance).",
+ "description": [
+  "Eliminate: animal shows and star performers.",
+  "Reduce: thrills and danger.",
+  "Raise: a unique venue and artistic quality.",
+  "Create: themes, artistic music and dance, attracting theatre-goers as well as families."
+ ],
+ "terms": [
+  "eliminated",
+  "reduced",
+  "raised",
+  "created",
+  "Four actions framework",
+  "animal shows",
+  "Cirque du Soleil"
+ ],
+ "cols": 2,
+ "rows": 2,
+ "cover": true,
+ "rowH": 108,
+ "expect": [
+  "Eliminate",
+  "Reduce",
+  "Raise",
+  "Create"
+ ],
+ "blocks": [
+  {
+   "label": "Eliminate",
+   "col": 0,
+   "row": 0,
+   "note": "animal shows and star performers",
+   "colour": "bad"
+  },
+  {
+   "label": "Reduce",
+   "col": 1,
+   "row": 0,
+   "note": "thrills and danger",
+   "colour": "a3"
+  },
+  {
+   "label": "Raise",
+   "col": 0,
+   "row": 1,
+   "note": "a unique venue and artistic quality",
+   "colour": "a1"
+  },
+  {
+   "label": "Create",
+   "col": 1,
+   "row": 1,
+   "note": "themes, artistic music and dance for theatre-goers as well as families",
+   "colour": "good"
+  }
+ ]
+}

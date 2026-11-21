@@ -1,0 +1,144 @@
+{
+ "id": "bus-swot-tows",
+ "renderer": "matrix",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "SWOT analysis",
+ "title": "SWOT: inside the firm and outside it",
+ "caption": "Strengths and weaknesses come from inside the firm; opportunities and threats come from outside it. The regional bus company's four factors show which quadrant each belongs in.",
+ "alt": "A two by two grid. Internal helpful: strengths. Internal harmful: weaknesses. External helpful: opportunities. External harmful: threats. Each holds the bus company's example.",
+ "description": [
+  "Strengths (internal, helpful): a reliable network and loyal local customers.",
+  "Weaknesses (internal, harmful): an ageing diesel fleet.",
+  "Opportunities (external, helpful): government funding for zero-emission buses.",
+  "Threats (external, harmful): rising fuel costs and car use."
+ ],
+ "terms": [
+  "Strengths",
+  "Weaknesses",
+  "Opportunities",
+  "Threats",
+  "internal",
+  "external",
+  "reliable network",
+  "ageing diesel fleet",
+  "zero-emission buses",
+  "rising fuel costs"
+ ],
+ "cols": [
+  "Helpful",
+  "Harmful"
+ ],
+ "rows": [
+  "Internal",
+  "External"
+ ],
+ "axes": {
+  "x": {
+   "title": "effect on the objective",
+   "key": "effect",
+   "values": [
+    "helpful",
+    "harmful"
+   ]
+  },
+  "y": {
+   "title": "origin",
+   "key": "origin",
+   "values": [
+    "internal",
+    "external"
+   ]
+  }
+ },
+ "cells": [
+  [
+   {
+    "title": "Strengths",
+    "colour": "good"
+   },
+   {
+    "title": "Weaknesses",
+    "colour": "a3"
+   }
+  ],
+  [
+   {
+    "title": "Opportunities",
+    "colour": "a4"
+   },
+   {
+    "title": "Threats",
+    "colour": "bad"
+   }
+  ]
+ ],
+ "claims": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "title": "Strengths"
+  },
+  {
+   "cell": [
+    0,
+    1
+   ],
+   "title": "Weaknesses"
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "title": "Opportunities"
+  },
+  {
+   "cell": [
+    1,
+    1
+   ],
+   "title": "Threats"
+  }
+ ],
+ "items": [
+  {
+   "label": "a reliable network and loyal local customers",
+   "origin": "internal",
+   "effect": "helpful",
+   "cell": [
+    0,
+    0
+   ]
+  },
+  {
+   "label": "an ageing diesel fleet",
+   "origin": "internal",
+   "effect": "harmful",
+   "cell": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "funding for zero-emission buses",
+   "origin": "external",
+   "effect": "helpful",
+   "cell": [
+    1,
+    0
+   ]
+  },
+  {
+   "label": "rising fuel costs and car use",
+   "origin": "external",
+   "effect": "harmful",
+   "cell": [
+    1,
+    1
+   ]
+  }
+ ]
+}

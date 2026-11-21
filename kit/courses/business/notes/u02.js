@@ -121,6 +121,7 @@ O: Compare Mintzberg's findings with the classical functional view
 PRE: Classical management theory: Taylor and Fayol
 H: What managers really do
 P: For his doctoral research, published as *The Nature of Managerial Work* (1973), **Henry Mintzberg** observed five chief executives for a week each. He found their work was brief, varied and fragmented: half their activities lasted under nine minutes, they preferred talking to reading, and they were constantly interrupted.
+D: bus-mintzberg-roles
 H: The ten roles
 P: **Interpersonal roles** arise from formal authority:
 - **Figurehead**: symbolic and ceremonial duties.
@@ -231,6 +232,8 @@ X: A firm with 64 staff below the chief executive.
 > With a span of 8: 8 + 64 needs two levels.
 > Widening spans removes a layer of management.
 > This is the arithmetic behind delayering.
+D: bus-functional-structure
+D: bus-span-of-control
 H: Structural forms
 - **Functional**: grouped by specialism (marketing, finance, operations). Builds expertise; can create silos.
 - **Product or divisional**: grouped by product line, each division with its own functions. Focuses on markets; duplicates resources.
@@ -441,6 +444,8 @@ PRE: The human relations movement
 H: Maslow and Alderfer
 P: **Abraham Maslow** (1943) proposed five levels of need: **physiological**, **safety**, **love and belonging**, **esteem** and **self-actualisation**. Lower needs must be largely met before higher ones motivate; a satisfied need no longer motivates.
 P: **Clayton Alderfer** (1969) condensed this to three: **existence**, **relatedness** and **growth** (ERG). Several can operate at once, and frustration at a higher level can make people focus on a lower one.
+D: bus-herzberg
+D: bus-maslow
 H: Herzberg's two-factor theory
 P: **Frederick Herzberg** (1959) asked engineers and accountants about times they felt good or bad at work. He separated:
 - **Hygiene factors**: pay, working conditions, company policy, supervision, job security. If poor they cause dissatisfaction; if good they only prevent it.
@@ -602,6 +607,7 @@ H: The main styles
 - **Laissez-faire**: the leader leaves decisions to the group. Can suit highly skilled, self-motivated experts; often leads to drift.
 - **Paternalistic**: the leader decides but in what they see as staff's best interests, explaining and caring for welfare. Builds loyalty; can feel patronising.
 P: Lewin, Lippitt and White's 1939 experiments with groups of boys found democratic leadership produced better morale and more creative work; autocratic groups were productive while the leader was present; laissez-faire groups did worst.
+D: bus-leadership-styles
 H: The Tannenbaum–Schmidt continuum
 P: Tannenbaum and Schmidt (1958) placed styles on a line from **boss-centred** to **subordinate-centred** leadership: the manager tells, sells, presents ideas, presents a tentative decision, consults, sets limits for the group, or lets the group decide within limits. The choice depends on forces in the manager, the subordinates and the situation.
 X: Three decisions in one restaurant.
@@ -655,6 +661,7 @@ P: **Tuckman (1965)** proposed stages of development, with a fifth added in 1977
 - **Norming**: agreed ways of working and growing cohesion.
 - **Performing**: focus on the task, with high trust.
 - **Adjourning**: the group disbands.
+D: bus-tuckman
 H: Belbin's team roles
 P: **Meredith Belbin** (1981) found balanced teams outperform teams of clever individuals. His nine roles include the **plant** (creative ideas), **resource investigator** (contacts), **co-ordinator** (chairs and delegates), **shaper** (drives), **monitor evaluator** (judges options), **teamworker** (harmony), **implementer** (turns ideas into action), **completer finisher** (detail and deadlines) and **specialist** (expert knowledge).
 X: A product team keeps missing launch dates.
@@ -764,6 +771,8 @@ P: **Organisational culture** is the shared values, beliefs and assumptions that
 - **Espoused values**: stated values, strategies and goals.
 - **Basic underlying assumptions**: taken-for-granted beliefs that truly drive behaviour.
 P: Artefacts are easy to see but hard to interpret; assumptions are invisible but decisive. When espoused values and assumptions differ, behaviour follows the assumptions.
+D: bus-handy-cultures
+D: bus-schein-levels
 H: Handy's four cultures
 - **Power culture**: a central figure controls, like a spider's web. Fast but dependent on one person.
 - **Role culture**: rules, procedures and job descriptions, like a Greek temple. Stable but slow; typical of bureaucracies.
@@ -876,6 +885,7 @@ X: A hospital moving from paper notes to an electronic record.
 > Restraining forces: staff fear of technology (4), time to learn (3), cost (3): total 10.
 > Drivers narrowly outweigh restrainers, so change is fragile.
 > Training and protected learning time reduce two restrainers, making change more secure.
+D: bus-force-field
 H: Kotter's eight steps
 P: **John Kotter** (1995) studied failed change programmes and proposed eight steps: create **urgency**; form a guiding **coalition**; develop a **vision**; **communicate** it; **empower** others by removing obstacles; create **short-term wins**; **consolidate** gains; **anchor** changes in the culture.
 H: Resistance to change

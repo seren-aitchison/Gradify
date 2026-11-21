@@ -1,0 +1,52 @@
+{
+ "id": "bus-performance-cycle",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u06",
+ "lesson": "Performance management",
+ "title": "The performance management cycle",
+ "caption": "Performance management repeats: plan the objectives, act with support, monitor with regular feedback, then review and set the next plan.",
+ "alt": "A cycle of four boxes: plan, act, monitor, review, with the review leading back to the plan.",
+ "description": [
+  "Plan: agree objectives and development needs.",
+  "Act: carry out the work with support.",
+  "Monitor: regular check-ins and feedback.",
+  "Review: assess performance, recognise achievements and agree next steps.",
+  "Then the cycle repeats."
+ ],
+ "terms": [
+  "Plan",
+  "Act",
+  "Monitor",
+  "Review",
+  "objectives",
+  "check-ins"
+ ],
+ "kind": "cycle",
+ "loop": true,
+ "expect": [
+  "Plan",
+  "Act",
+  "Monitor",
+  "Review"
+ ],
+ "centre": "repeats",
+ "steps": [
+  {
+   "label": "Plan",
+   "note": "agree objectives and development needs"
+  },
+  {
+   "label": "Act",
+   "note": "do the work with support"
+  },
+  {
+   "label": "Monitor",
+   "note": "regular check-ins and feedback"
+  },
+  {
+   "label": "Review",
+   "note": "assess, recognise, agree next steps"
+  }
+ ]
+}

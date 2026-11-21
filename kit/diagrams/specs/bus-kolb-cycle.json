@@ -1,0 +1,46 @@
+{
+ "id": "bus-kolb-cycle",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u06",
+ "lesson": "Learning and development",
+ "title": "Kolb's learning cycle",
+ "caption": "Learning comes from experience that is reflected on, turned into ideas and then tried out; the trying out is the next experience. Training that stops at the course skips the cycle.",
+ "alt": "A cycle of four boxes: concrete experience, reflective observation, abstract conceptualisation, active experimentation, leading back to experience.",
+ "description": [
+  "Concrete experience.",
+  "Reflective observation.",
+  "Abstract conceptualisation.",
+  "Active experimentation, which creates the next experience."
+ ],
+ "terms": [
+  "Kolb's learning cycle",
+  "concrete experience",
+  "reflective observation",
+  "abstract conceptualisation",
+  "active experimentation"
+ ],
+ "kind": "cycle",
+ "loop": true,
+ "expect": [
+  "Concrete experience",
+  "Reflective observation",
+  "Abstract conceptualisation",
+  "Active experimentation"
+ ],
+ "centre": "Kolb, 1984",
+ "steps": [
+  {
+   "label": "Concrete experience"
+  },
+  {
+   "label": "Reflective observation"
+  },
+  {
+   "label": "Abstract conceptualisation"
+  },
+  {
+   "label": "Active experimentation"
+  }
+ ]
+}

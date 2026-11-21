@@ -1,0 +1,75 @@
+{
+ "id": "bus-materials-variance",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Variance analysis",
+ "title": "Materials variances: price and usage",
+ "caption": "Cheaper material gave a favourable price variance of £420, but 100 kg more was used than standard, an adverse usage variance of £500. Net, the materials cost £80 more than standard.",
+ "alt": "Waterfall: price variance +£420 favourable, usage variance −£500 adverse, net materials variance −£80 adverse.",
+ "description": [
+  "Price variance: (5.00 − 4.80) × 2,100 = £420 favourable.",
+  "Usage variance: (2,000 − 2,100) × 5 = £500 adverse.",
+  "Net materials variance £80 adverse."
+ ],
+ "terms": [
+  "Price variance",
+  "Usage variance",
+  "£420 F",
+  "£500 A",
+  "£80 A",
+  "favourable",
+  "adverse"
+ ],
+ "kind": "waterfall",
+ "prefix": "£",
+ "range": [
+  -160,
+  520
+ ],
+ "items": [
+  {
+   "id": "price",
+   "label": "Price variance (F)",
+   "short": "Price (F)",
+   "v": 420,
+   "type": "delta"
+  },
+  {
+   "id": "usage",
+   "label": "Usage variance (A)",
+   "short": "Usage (A)",
+   "v": -500,
+   "type": "delta"
+  },
+  {
+   "id": "net",
+   "label": "Net variance (A)",
+   "short": "Net (A)",
+   "v": -80,
+   "type": "total"
+  }
+ ],
+ "relations": [
+  {
+   "expr": "(5 - 4.8) * 2100",
+   "equals": "price",
+   "name": "price variance = (5.00 − 4.80) × 2,100 = £420"
+  },
+  {
+   "expr": "(2000 - 2100) * 5",
+   "equals": "usage",
+   "name": "usage variance = (2,000 − 2,100) × 5 = −£500"
+  },
+  {
+   "expr": "4.8 * 2100",
+   "equals": "10080",
+   "name": "actual cost 2,100 kg × £4.80 = £10,080"
+  },
+  {
+   "expr": "2000 * 5 - 10080",
+   "equals": "net",
+   "name": "standard cost £10,000 less actual £10,080 = −£80"
+  }
+ ]
+}

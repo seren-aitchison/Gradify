@@ -1,0 +1,101 @@
+{
+ "id": "bus-prisoners-dilemma",
+ "renderer": "matrix",
+ "course": "business",
+ "unit": "u08",
+ "lesson": "Oligopoly and game theory",
+ "title": "A pricing dilemma",
+ "caption": "Whatever the rival does, cutting price pays each firm more, so both cut and earn £6m. That is the Nash equilibrium, and it leaves both worse off than the £10m each they would earn by keeping prices high.",
+ "alt": "A payoff grid for two firms choosing a high or low price: both high £10m each; A low, B high A £12m and B £4m; A high, B low A £4m and B £12m; both low £6m each. Both low is the Nash equilibrium.",
+ "description": [
+  "Both price high: £10m each.",
+  "One prices low while the other stays high: the low-price firm earns £12m and the other £4m.",
+  "Both price low: £6m each.",
+  "Low is each firm's dominant strategy, so both price low: the Nash equilibrium, worse for both than £10m each."
+ ],
+ "terms": [
+  "high or low price",
+  "£10m",
+  "£6m",
+  "£12m",
+  "£4m",
+  "dominant strategy",
+  "Nash equilibrium"
+ ],
+ "cols": [
+  "Firm B: high price",
+  "Firm B: low price"
+ ],
+ "rows": [
+  "Firm A: high price",
+  "Firm A: low price"
+ ],
+ "prefix": "£",
+ "suffix": "m",
+ "payoffs": [
+  [
+   [
+    10,
+    10
+   ],
+   [
+    4,
+    12
+   ]
+  ],
+  [
+   [
+    12,
+    4
+   ],
+   [
+    6,
+    6
+   ]
+  ]
+ ],
+ "game": {
+  "nash": [
+   1,
+   1
+  ],
+  "dominant": [
+   1,
+   1
+  ],
+  "dilemma": [
+   0,
+   0
+  ]
+ },
+ "axes": {
+  "x": {
+   "title": "Firm B's choice"
+  },
+  "y": {
+   "title": "Firm A's choice"
+  }
+ },
+ "cells": [
+  [
+   {
+    "note": "best joint outcome",
+    "colour": "good"
+   },
+   {
+    "note": "B gains share",
+    "colour": "a1"
+   }
+  ],
+  [
+   {
+    "note": "A gains share",
+    "colour": "a1"
+   },
+   {
+    "note": "Nash equilibrium: both cut price",
+    "colour": "bad"
+   }
+  ]
+ ]
+}

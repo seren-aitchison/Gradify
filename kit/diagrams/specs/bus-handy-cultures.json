@@ -1,0 +1,66 @@
+{
+ "id": "bus-handy-cultures",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Organisational culture",
+ "title": "Handy's four cultures",
+ "caption": "Each culture has a picture and a trade-off: the power culture is fast but depends on one person, the role culture is stable but slow, the task culture is flexible but costly.",
+ "alt": "Four boxes: power culture (a spider's web), role culture (a Greek temple), task culture (a net), person culture (barristers' chambers).",
+ "description": [
+  "Power culture: a central figure controls, like a spider's web.",
+  "Role culture: rules and procedures, like a Greek temple.",
+  "Task culture: teams form around projects, like a net.",
+  "Person culture: the organisation serves individuals, such as a barristers' chambers."
+ ],
+ "terms": [
+  "Power culture",
+  "Role culture",
+  "Task culture",
+  "Person culture",
+  "spider's web",
+  "Greek temple",
+  "net",
+  "barristers' chambers"
+ ],
+ "cols": 2,
+ "rows": 2,
+ "cover": true,
+ "rowH": 112,
+ "expect": [
+  "Power culture",
+  "Role culture",
+  "Task culture",
+  "Person culture"
+ ],
+ "blocks": [
+  {
+   "label": "Power culture",
+   "col": 0,
+   "row": 0,
+   "note": "Spider's web: a central figure controls. Fast, but depends on one person.",
+   "colour": "a2"
+  },
+  {
+   "label": "Role culture",
+   "col": 1,
+   "row": 0,
+   "note": "Greek temple: rules and procedures. Stable but slow.",
+   "colour": "a1"
+  },
+  {
+   "label": "Task culture",
+   "col": 0,
+   "row": 1,
+   "note": "Net: teams form around projects. Flexible and expert-led; costly.",
+   "colour": "a4"
+  },
+  {
+   "label": "Person culture",
+   "col": 1,
+   "row": 1,
+   "note": "The organisation serves individuals, as in barristers' chambers.",
+   "colour": "a5"
+  }
+ ]
+}

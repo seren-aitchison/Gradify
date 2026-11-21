@@ -1,0 +1,122 @@
+{
+ "id": "bus-industry-life-cycle",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "The industry life cycle",
+ "title": "The industry life cycle",
+ "caption": "Industry sales rise, level off and fall. Growth attracts entrants, a shake-out removes weaker firms, maturity brings price competition, and decline leaves a few firms serving a niche.",
+ "alt": "Curve of industry sales over time divided into introduction, growth, shake-out, maturity and decline, with the peak of sales in maturity.",
+ "description": [
+  "Introduction: few firms and low sales.",
+  "Growth: sales rise quickly and new entrants arrive.",
+  "Shake-out: growth slows and weaker firms exit.",
+  "Maturity: sales at their highest, standardised products and price competition.",
+  "Decline: sales fall as substitutes take over."
+ ],
+ "terms": [
+  "Introduction",
+  "Growth",
+  "Shake-out",
+  "Maturity",
+  "Decline"
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   118
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "grid": [
+  2,
+  25
+ ],
+ "axisLabels": [
+  "time",
+  "industry sales"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "height": [
+  330,
+  290
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    1.4
+   ],
+   "label": "Intro",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    1.4,
+    3.4
+   ],
+   "label": "Growth",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    3.4,
+    5.1
+   ],
+   "label": "Shake-out",
+   "colour": "a3"
+  },
+  {
+   "x": [
+    5.1,
+    7.8
+   ],
+   "label": "Maturity",
+   "colour": "a5"
+  },
+  {
+   "x": [
+    7.8,
+    10
+   ],
+   "label": "Decline",
+   "colour": "a2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "100/(1+exp(-1.5*(x-2.4)))/(1+exp(x-9))",
+   "colour": "a1",
+   "width": 3.4
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "100/(1+exp(-1.5*(x-2.4)))/(1+exp(x-9))",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5.21,
+   "y": 96.367,
+   "name": "industry sales peak at x = 5.21, inside the maturity stage (5.1 to 7.8)"
+  },
+  {
+   "type": "order",
+   "a": "100/(1+exp(-1.5*(x-2.4)))/(1+exp(x-9))",
+   "b": "100",
+   "rel": "<",
+   "x": 5.21,
+   "name": "sales at the peak stay below the chart's top"
+  }
+ ]
+}

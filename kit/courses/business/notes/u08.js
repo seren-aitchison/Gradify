@@ -9,6 +9,7 @@ O: Distinguish a movement along the curve from a shift
 PRE: The cost of capital
 H: The law of demand
 P: Other things equal, as the price of a good rises, the quantity demanded falls. A **demand curve** therefore slopes downwards from left to right. Two effects explain this: higher prices reduce buyers' real purchasing power (the **income effect**), and buyers switch to relatively cheaper alternatives (the **substitution effect**). **Effective demand** means demand backed by the ability to pay.
+D: bus-demand-shift
 H: What shifts demand?
 - **Income**: for **normal goods**, demand rises with income; for **inferior goods**, such as some value-range products, it falls.
 - **Prices of related goods**: a rise in the price of a **substitute** increases demand; a rise in the price of a **complement** reduces it.
@@ -115,6 +116,7 @@ PRE: Supply and market equilibrium
 H: Measuring PED
 P: **PED = percentage change in quantity demanded ÷ percentage change in price.** It is usually negative, but often quoted as an absolute value. Demand is **price elastic** when the value exceeds 1 (quantity changes proportionately more than price), **inelastic** when it is below 1, and **unit elastic** at exactly 1.
 E: PED = %ΔQ_{d} ÷ %ΔP :: price elasticity of demand
+D: bus-gym-elasticity
 H: Determinants
 - **Availability of substitutes**: the more close substitutes, the more elastic.
 - **Necessity versus luxury**: necessities, such as basic food and energy, tend to be inelastic.
@@ -174,6 +176,7 @@ H: Causes of market failure
 - **Public goods**: non-rival and non-excludable goods, such as street lighting or national defence, which markets underprovide because of the **free-rider problem**.
 - **Information failure**: one party knows more than the other (**asymmetric information**), as in Akerlof's "market for lemons" in used cars.
 - **Merit goods** (such as healthcare) are underconsumed, and **demerit goods** (such as tobacco) overconsumed, partly because people misjudge their benefits or harms.
+D: bus-negative-externality
 H: Externalities
 P: When a negative externality exists, the market price reflects only **private costs**, so the good is overproduced compared with the socially optimal level, where **social cost** (private plus external cost) equals social benefit. With a positive externality the good is underproduced. The economist Arthur Pigou proposed taxes to make producers pay the external cost, now called **Pigouvian taxes**.
 H: Government responses
@@ -229,6 +232,7 @@ O: Compare the outcomes of monopoly and perfect competition
 PRE: Market failure
 H: Perfect competition
 P: Perfect competition assumes **many small firms**, **identical products**, **perfect information** and **free entry and exit**. Each firm is a **price taker**. If firms make supernormal profits, new firms enter, increasing supply and lowering price until only **normal profit** remains. In the long run, price equals minimum average cost and marginal cost, so resources are allocated efficiently. Real markets, such as some agricultural markets, only approximate these assumptions.
+D: bus-monopoly-output
 H: Monopoly
 - A **pure monopoly** is a single seller; in UK competition law, a firm with a large share, often around 40% or more, may be considered dominant.
 - **Barriers to entry**, such as patents, economies of scale, control of resources or network effects, protect it.
@@ -281,6 +285,7 @@ O: Apply the prisoner's dilemma to business decisions
 PRE: Perfect competition and monopoly
 H: Features of oligopoly
 P: An **oligopoly** is a market dominated by a few large firms, with barriers to entry and products that may be similar or differentiated. Its key feature is **interdependence**: each firm's best decision depends on how rivals respond. The **concentration ratio** measures dominance; a four-firm concentration ratio (CR4) is the combined market share of the four largest firms. UK grocery retail, energy supply and mobile networks are often described as oligopolies.
+D: bus-prisoners-dilemma
 H: Competition or collusion?
 - Firms may avoid price wars, because a price cut is quickly matched and everyone loses.
 - **Non-price competition** is common: advertising, loyalty schemes, product innovation and service.

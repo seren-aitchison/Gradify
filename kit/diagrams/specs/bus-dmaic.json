@@ -1,0 +1,55 @@
+{
+ "id": "bus-dmaic",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Six Sigma",
+ "title": "Six Sigma's DMAIC",
+ "caption": "Each stage depends on the one before: define the problem, measure performance, analyse for root causes, improve the process, then control it so that the gains last.",
+ "alt": "Five boxes in order: define, measure, analyse, improve, control.",
+ "description": [
+  "Define the problem, requirements and goals.",
+  "Measure current performance.",
+  "Analyse data to find root causes.",
+  "Improve the process to remove causes.",
+  "Control the improved process to sustain gains."
+ ],
+ "terms": [
+  "Define",
+  "Measure",
+  "Analyse",
+  "Improve",
+  "Control",
+  "root causes"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Define",
+  "Measure",
+  "Analyse",
+  "Improve",
+  "Control"
+ ],
+ "steps": [
+  {
+   "label": "Define",
+   "note": "the problem, requirements and goals"
+  },
+  {
+   "label": "Measure",
+   "note": "current performance"
+  },
+  {
+   "label": "Analyse",
+   "note": "data to find root causes"
+  },
+  {
+   "label": "Improve",
+   "note": "the process to remove causes"
+  },
+  {
+   "label": "Control",
+   "note": "the new process to sustain gains"
+  }
+ ]
+}

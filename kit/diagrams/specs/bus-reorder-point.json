@@ -1,0 +1,60 @@
+{
+ "id": "bus-reorder-point",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "Inventory management",
+ "title": "Setting a reorder point",
+ "caption": "Order when stock falls to the demand expected during the supplier's lead time plus a safety stock for variation: 200 + 60 = 260 units.",
+ "alt": "One stacked column of 260 units: 200 units of lead-time demand and 60 units of safety stock.",
+ "description": [
+  "Sales average 40 units a day and the lead time is 5 days.",
+  "Demand during the lead time is 40 × 5 = 200 units.",
+  "Safety stock covers variation: 60 units.",
+  "Reorder point 200 + 60 = 260 units."
+ ],
+ "terms": [
+  "Reorder point",
+  "lead time",
+  "Safety stock",
+  "260 units",
+  "200 units"
+ ],
+ "kind": "stacked",
+ "suffix": " units",
+ "range": [
+  0,
+  300
+ ],
+ "stacks": [
+  {
+   "label": "Reorder point",
+   "parts": [
+    {
+     "id": "lead",
+     "label": "Lead-time demand",
+     "v": 200,
+     "colour": "a1"
+    },
+    {
+     "id": "safety",
+     "label": "Safety stock",
+     "v": 60,
+     "colour": "a3"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "40 * 5",
+   "equals": "lead",
+   "name": "lead-time demand = 40 a day × 5 days = 200"
+  },
+  {
+   "expr": "lead + safety",
+   "equals": "260",
+   "name": "reorder point = 200 + 60 = 260 units"
+  }
+ ]
+}

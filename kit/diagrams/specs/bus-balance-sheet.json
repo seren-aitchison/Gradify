@@ -1,0 +1,92 @@
+{
+ "id": "bus-balance-sheet",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "The statement of financial position",
+ "title": "The statement of financial position balances",
+ "caption": "Everything the business has was paid for by owners or by creditors, so assets always equal equity plus liabilities. Equity is what is left: £400,000 − £200,000 = £200,000.",
+ "alt": "Two stacked columns of £400,000: assets (non-current £250,000, current £150,000) and equity £200,000 plus liabilities (non-current £100,000, current £100,000).",
+ "description": [
+  "Assets: non-current £250,000 and current £150,000, total £400,000.",
+  "Liabilities: current £100,000 and non-current £100,000, total £200,000.",
+  "Equity: £400,000 − £200,000 = £200,000.",
+  "The two columns are the same height: assets = equity + liabilities."
+ ],
+ "terms": [
+  "Non-current assets",
+  "current assets",
+  "Current liabilities",
+  "non-current liabilities",
+  "Equity",
+  "assets = equity + liabilities",
+  "£250,000",
+  "£200,000"
+ ],
+ "kind": "stacked",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  0,
+  470
+ ],
+ "stacks": [
+  {
+   "label": "Assets",
+   "parts": [
+    {
+     "id": "nca",
+     "label": "Non-current assets",
+     "v": 250,
+     "colour": "a1"
+    },
+    {
+     "id": "ca",
+     "label": "Current assets",
+     "v": 150,
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "label": "Equity + liabilities",
+   "parts": [
+    {
+     "id": "equity",
+     "label": "Equity",
+     "v": 200,
+     "colour": "good"
+    },
+    {
+     "id": "ncl",
+     "label": "Non-current liabilities",
+     "v": 100,
+     "colour": "a3"
+    },
+    {
+     "id": "cl",
+     "label": "Current liabilities",
+     "v": 100,
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "nca + ca",
+   "equals": "equity + ncl + cl",
+   "name": "assets = equity + liabilities"
+  },
+  {
+   "expr": "nca + ca - ncl - cl",
+   "equals": "equity",
+   "name": "equity = assets − liabilities = £200,000"
+  },
+  {
+   "expr": "nca + ca",
+   "equals": "400",
+   "name": "total assets are £400,000"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "bus-wacc",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "The cost of capital",
+ "title": "Estimating the weighted average cost of capital",
+ "caption": "Equity costs 10% and debt, after tax relief, 4.5%. Weighted 60:40 by market value, the firm's cost of capital is 7.8%, the discount rate for projects as risky as the business.",
+ "alt": "Columns: cost of equity 10%, after-tax cost of debt 4.5%, WACC 7.8%.",
+ "description": [
+  "Cost of equity: 4 + 1.2 × 5 = 10%.",
+  "Cost of debt after tax: 6 × 0.75 = 4.5%.",
+  "Finance is 60% equity and 40% debt.",
+  "WACC = 0.6 × 10 + 0.4 × 4.5 = 7.8%."
+ ],
+ "terms": [
+  "WACC",
+  "K_{e} = 4 + 1.2 × 5 = 10%",
+  "4.5%",
+  "60% equity and 40% debt",
+  "7.8%"
+ ],
+ "kind": "columns",
+ "suffix": "%",
+ "range": [
+  0,
+  12.5
+ ],
+ "series": [
+  {
+   "name": "Cost",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Cost of equity",
+   "short": "Equity",
+   "values": [
+    {
+     "id": "ke",
+     "v": 10,
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "label": "Cost of debt after tax",
+   "short": "Debt (after tax)",
+   "values": [
+    {
+     "id": "kd",
+     "v": 4.5,
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "label": "WACC",
+   "values": [
+    {
+     "id": "wacc",
+     "v": 7.8,
+     "colour": "a1"
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "4 + 1.2 * (9 - 4)",
+   "equals": "ke",
+   "name": "CAPM: Ke = 4 + 1.2 × (9 − 4) = 10%"
+  },
+  {
+   "expr": "6 * (1 - 0.25)",
+   "equals": "kd",
+   "name": "after-tax cost of debt = 6 × 0.75 = 4.5%"
+  },
+  {
+   "expr": "0.6 * ke + 0.4 * kd",
+   "equals": "wacc",
+   "name": "WACC = 0.6 × 10 + 0.4 × 4.5 = 7.8%"
+  }
+ ]
+}

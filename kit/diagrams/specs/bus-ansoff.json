@@ -1,0 +1,144 @@
+{
+ "id": "bus-ansoff",
+ "renderer": "matrix",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "The Ansoff matrix",
+ "title": "The Ansoff matrix",
+ "caption": "Risk rises as the firm moves away from what it knows: from market penetration, through product or market development, to diversification, where both the product and the market are new. The gym chain's four options fill the grid.",
+ "alt": "A two by two grid. Existing products in existing markets: market penetration. New products in existing markets: product development. Existing products in new markets: market development. New products in new markets: diversification.",
+ "description": [
+  "Existing products, existing markets: market penetration, a referral scheme.",
+  "New products, existing markets: product development, online classes.",
+  "Existing products, new markets: market development, gyms in Ireland.",
+  "New products, new markets: diversification, protein snacks, the riskiest."
+ ],
+ "terms": [
+  "Market penetration",
+  "Product development",
+  "Market development",
+  "Diversification",
+  "referral scheme",
+  "online classes",
+  "Ireland",
+  "protein snacks"
+ ],
+ "cols": [
+  "Existing products",
+  "New products"
+ ],
+ "rows": [
+  "Existing markets",
+  "New markets"
+ ],
+ "axes": {
+  "x": {
+   "title": "products",
+   "key": "product",
+   "values": [
+    "existing",
+    "new"
+   ]
+  },
+  "y": {
+   "title": "markets",
+   "key": "market",
+   "values": [
+    "existing",
+    "new"
+   ]
+  }
+ },
+ "cells": [
+  [
+   {
+    "title": "Market penetration",
+    "note": "lowest risk",
+    "colour": "good"
+   },
+   {
+    "title": "Product development",
+    "colour": "a1"
+   }
+  ],
+  [
+   {
+    "title": "Market development",
+    "colour": "a4"
+   },
+   {
+    "title": "Diversification",
+    "note": "highest risk",
+    "colour": "bad"
+   }
+  ]
+ ],
+ "claims": [
+  {
+   "cell": [
+    0,
+    0
+   ],
+   "title": "Market penetration"
+  },
+  {
+   "cell": [
+    0,
+    1
+   ],
+   "title": "Product development"
+  },
+  {
+   "cell": [
+    1,
+    0
+   ],
+   "title": "Market development"
+  },
+  {
+   "cell": [
+    1,
+    1
+   ],
+   "title": "Diversification"
+  }
+ ],
+ "items": [
+  {
+   "label": "referral scheme and off-peak pricing",
+   "product": "existing",
+   "market": "existing",
+   "cell": [
+    0,
+    0
+   ]
+  },
+  {
+   "label": "online classes for members",
+   "product": "new",
+   "market": "existing",
+   "cell": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "gyms in Ireland",
+   "product": "existing",
+   "market": "new",
+   "cell": [
+    1,
+    0
+   ]
+  },
+  {
+   "label": "protein snacks for supermarkets",
+   "product": "new",
+   "market": "new",
+   "cell": [
+    1,
+    1
+   ]
+  }
+ ]
+}

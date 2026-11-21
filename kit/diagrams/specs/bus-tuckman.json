@@ -1,0 +1,54 @@
+{
+ "id": "bus-tuckman",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Teams and group working",
+ "title": "Tuckman's stages of group development",
+ "caption": "Groups move from polite uncertainty through conflict to agreed ways of working, then performance; the fifth stage, added in 1977, is when the group disbands.",
+ "alt": "Five boxes in order: forming, storming, norming, performing, adjourning.",
+ "description": [
+  "Forming: polite, uncertain, dependent on the leader.",
+  "Storming: conflict over roles, goals and leadership.",
+  "Norming: agreed ways of working and growing cohesion.",
+  "Performing: focus on the task with high trust.",
+  "Adjourning: the group disbands."
+ ],
+ "terms": [
+  "Forming",
+  "Storming",
+  "Norming",
+  "Performing",
+  "Adjourning"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Forming",
+  "Storming",
+  "Norming",
+  "Performing",
+  "Adjourning"
+ ],
+ "steps": [
+  {
+   "label": "Forming",
+   "note": "polite, uncertain, leader-dependent"
+  },
+  {
+   "label": "Storming",
+   "note": "conflict over roles and goals"
+  },
+  {
+   "label": "Norming",
+   "note": "agreed ways of working"
+  },
+  {
+   "label": "Performing",
+   "note": "task focus, high trust"
+  },
+  {
+   "label": "Adjourning",
+   "note": "the group disbands"
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "id": "bus-demand-shift",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u08",
+ "lesson": "Demand",
+ "title": "Movement along the demand curve and a shift of it",
+ "caption": "A change in the good's own price moves buyers along the curve. A change in anything else, such as a rise in petrol prices, shifts the whole curve: at £60 buyers now want 60 cars, not 40.",
+ "alt": "Two downward-sloping demand curves. At a price of £60 the quantity demanded is 40 on the first and 60 on the shifted curve; a price rise to £80 moves along the first curve to 20.",
+ "description": [
+  "The first demand curve slopes down: at £60, 40 units; at £80, 20 units.",
+  "A rise in the price moves buyers up the curve to a lower quantity: a movement along.",
+  "A rise in the price of a substitute shifts the curve right: at £60, 60 units are now demanded."
+ ],
+ "terms": [
+  "movement along",
+  "shift",
+  "demand curve",
+  "substitute"
+ ],
+ "range": {
+  "x": [
+   0,
+   110
+  ],
+  "y": [
+   0,
+   125
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "grid": [
+  20,
+  20
+ ],
+ "axisLabels": [
+  "quantity",
+  "price (£)"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "curves": [
+  {
+   "expr": "100-x",
+   "colour": "a1",
+   "label": "D",
+   "labelAt": [
+    8,
+    98
+   ]
+  },
+  {
+   "expr": "120-x",
+   "colour": "a2",
+   "label": "D₂ (shifted right)",
+   "labelAt": [
+    70,
+    62
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 40,
+   "y": 60,
+   "colour": "a1",
+   "label": "40",
+   "dx": -8,
+   "dy": 18,
+   "anchor": "end"
+  },
+  {
+   "x": 60,
+   "y": 60,
+   "colour": "a2",
+   "label": "60",
+   "dx": 8,
+   "dy": -14
+  },
+  {
+   "x": 20,
+   "y": 80,
+   "colour": "a1",
+   "label": "20 at £80",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    40,
+    60
+   ],
+   "to": [
+    60,
+    60
+   ],
+   "colour": "a2",
+   "label": "shift",
+   "labelAt": [
+    47,
+    68
+   ],
+   "anchor": "middle"
+  },
+  {
+   "from": [
+    40,
+    60
+   ],
+   "to": [
+    21.5,
+    78.5
+   ],
+   "colour": "a1",
+   "label": "movement along",
+   "labelAt": [
+    41,
+    84
+   ],
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100-x",
+   "x": 40,
+   "y": 60,
+   "name": "(40, £60) lies on D"
+  },
+  {
+   "type": "point",
+   "expr": "100-x",
+   "x": 20,
+   "y": 80,
+   "name": "(20, £80) lies on D"
+  },
+  {
+   "type": "point",
+   "expr": "120-x",
+   "x": 60,
+   "y": 60,
+   "name": "(60, £60) lies on the shifted curve"
+  },
+  {
+   "type": "value",
+   "expr": "(120-x)-(100-x)",
+   "x": 30,
+   "between": [
+    20,
+    20
+   ],
+   "name": "the shifted curve is 20 units to the right at every price"
+  }
+ ]
+}

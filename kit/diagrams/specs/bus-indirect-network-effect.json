@@ -1,0 +1,44 @@
+{
+ "id": "bus-indirect-network-effect",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u10",
+ "lesson": "Platforms and network effects",
+ "title": "An indirect network effect",
+ "caption": "More drivers mean shorter waits; shorter waits attract more riders; more riders attract more drivers. Each side makes the platform more valuable to the other, which is why a platform must win both sides at launch.",
+ "alt": "A cycle of three boxes: more drivers, shorter waits, more riders, with more riders leading back to more drivers.",
+ "description": [
+  "The new app pays drivers bonuses, so more drivers join.",
+  "More drivers mean waits fall.",
+  "Shorter waits attract more riders.",
+  "More riders attract more drivers, and the loop repeats."
+ ],
+ "terms": [
+  "indirect network effect",
+  "drivers",
+  "waits",
+  "riders"
+ ],
+ "kind": "cycle",
+ "loop": true,
+ "expect": [
+  "More drivers",
+  "Shorter waits",
+  "More riders"
+ ],
+ "centre": "indirect network effect",
+ "steps": [
+  {
+   "label": "More drivers",
+   "note": "helped by bonuses at launch"
+  },
+  {
+   "label": "Shorter waits",
+   "note": "riders get a car sooner"
+  },
+  {
+   "label": "More riders",
+   "note": "attract still more drivers"
+  }
+ ]
+}

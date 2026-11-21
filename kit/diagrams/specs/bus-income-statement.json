@@ -1,0 +1,116 @@
+{
+ "id": "bus-income-statement",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "The income statement",
+ "title": "From revenue to profit for the year",
+ "caption": "Each line takes something away: cost of sales gives gross profit, expenses give operating profit, interest gives profit before tax and tax gives profit for the year. Only £52,500 of every £500,000 of sales is left.",
+ "alt": "Waterfall from revenue £500,000 down to profit for the year £52,500 through cost of sales, operating expenses, finance costs and tax.",
+ "description": [
+  "Revenue starts at £500,000.",
+  "Cost of sales of £300,000 leaves gross profit of £200,000.",
+  "Operating expenses of £120,000 leave operating profit of £80,000.",
+  "Finance costs of £10,000 leave profit before tax of £70,000.",
+  "Tax of £17,500 (25%) leaves profit for the year of £52,500."
+ ],
+ "terms": [
+  "Revenue",
+  "Cost of sales",
+  "gross profit",
+  "Operating expenses",
+  "operating profit",
+  "Finance costs",
+  "profit before tax",
+  "Tax",
+  "profit for the year"
+ ],
+ "kind": "waterfall",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  0,
+  560
+ ],
+ "items": [
+  {
+   "id": "revenue",
+   "label": "Revenue",
+   "v": 500,
+   "type": "start"
+  },
+  {
+   "id": "cost_of_sales",
+   "label": "Cost of sales",
+   "short": "Cost",
+   "v": -300,
+   "type": "delta"
+  },
+  {
+   "id": "gross_profit",
+   "label": "Gross profit",
+   "short": "Gross",
+   "v": 200,
+   "type": "total"
+  },
+  {
+   "id": "opex",
+   "label": "Operating expenses",
+   "short": "Exp.",
+   "v": -120,
+   "type": "delta"
+  },
+  {
+   "id": "operating_profit",
+   "label": "Operating profit",
+   "short": "Op. profit",
+   "v": 80,
+   "type": "total"
+  },
+  {
+   "id": "finance",
+   "label": "Finance costs",
+   "short": "Fin.",
+   "v": -10,
+   "type": "delta"
+  },
+  {
+   "id": "pbt",
+   "label": "Profit before tax",
+   "short": "Pre-tax",
+   "v": 70,
+   "type": "total"
+  },
+  {
+   "id": "tax",
+   "label": "Tax at 25%",
+   "short": "Tax",
+   "v": -17.5,
+   "type": "delta"
+  },
+  {
+   "id": "profit",
+   "label": "Profit for the year",
+   "short": "Profit",
+   "v": 52.5,
+   "type": "total"
+  }
+ ],
+ "relations": [
+  {
+   "expr": "revenue + cost_of_sales",
+   "equals": "gross_profit",
+   "name": "revenue − cost of sales = gross profit"
+  },
+  {
+   "expr": "pbt * 0.25 * -1",
+   "equals": "tax",
+   "name": "tax is 25% of profit before tax"
+  },
+  {
+   "expr": "profit / revenue",
+   "equals": "0.105",
+   "name": "profit for the year is 10.5% of revenue"
+  }
+ ]
+}

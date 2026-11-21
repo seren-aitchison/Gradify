@@ -1,0 +1,56 @@
+{
+ "id": "bus-maslow",
+ "renderer": "layers",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Motivation: content theories",
+ "title": "Maslow's hierarchy of needs",
+ "caption": "Lower needs must be largely met before higher ones motivate, and a satisfied need no longer motivates. Read from the base upwards.",
+ "alt": "A pyramid of five levels. From the base: physiological, safety, love and belonging, esteem, self-actualisation.",
+ "description": [
+  "Base: physiological needs.",
+  "Then safety.",
+  "Then love and belonging.",
+  "Then esteem.",
+  "At the top: self-actualisation."
+ ],
+ "terms": [
+  "physiological",
+  "safety",
+  "love and belonging",
+  "esteem",
+  "self-actualisation"
+ ],
+ "shape": "pyramid",
+ "count": 5,
+ "arrowLabel": "higher needs motivate once lower needs are largely met",
+ "expect": [
+  "Self-actualisation",
+  "Esteem",
+  "Love and belonging",
+  "Safety",
+  "Physiological"
+ ],
+ "items": [
+  {
+   "label": "Self-actualisation",
+   "colour": "a5"
+  },
+  {
+   "label": "Esteem",
+   "colour": "a1"
+  },
+  {
+   "label": "Love and belonging",
+   "colour": "a4"
+  },
+  {
+   "label": "Safety",
+   "colour": "a3"
+  },
+  {
+   "label": "Physiological",
+   "colour": "a2"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "id": "bus-esg-pillars",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u11",
+ "lesson": "ESG: environmental, social and governance",
+ "title": "The three pillars of ESG",
+ "caption": "Investors look at environmental, social and governance issues together. Materiality asks which matter most in a given industry: water for drinks makers, data privacy for banks.",
+ "alt": "Three boxes: environmental, social and governance, each with the issues it covers.",
+ "description": [
+  "Environmental: greenhouse gas emissions, energy use, pollution, water, waste and biodiversity.",
+  "Social: employee health and safety, pay and conditions, diversity, human rights in supply chains.",
+  "Governance: board independence and diversity, executive pay, shareholder rights, audit, bribery and tax practices."
+ ],
+ "terms": [
+  "Environmental",
+  "Social",
+  "Governance",
+  "greenhouse gas emissions",
+  "human rights",
+  "executive pay",
+  "Materiality"
+ ],
+ "cols": 3,
+ "rows": 1,
+ "cover": true,
+ "rowH": 170,
+ "expect": [
+  "Environmental",
+  "Social",
+  "Governance"
+ ],
+ "blocks": [
+  {
+   "label": "Environmental",
+   "col": 0,
+   "row": 0,
+   "note": "Greenhouse gas emissions, energy use, pollution, water, waste, biodiversity",
+   "colour": "good"
+  },
+  {
+   "label": "Social",
+   "col": 1,
+   "row": 0,
+   "note": "Health and safety, pay and conditions, diversity, human rights in supply chains",
+   "colour": "a1"
+  },
+  {
+   "label": "Governance",
+   "col": 2,
+   "row": 0,
+   "note": "Board independence, executive pay, shareholder rights, audit, bribery, tax",
+   "colour": "a5"
+  }
+ ]
+}

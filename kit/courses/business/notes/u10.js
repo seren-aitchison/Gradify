@@ -169,6 +169,7 @@ H: Platforms
 - A **platform** creates value by enabling interactions between two or more groups, such as buyers and sellers, drivers and riders, or app developers and phone users.
 - These are **multi-sided markets**: the platform must attract every side at once, which creates a **chicken-and-egg problem** at launch.
 - Platforms often **subsidise** one side, for example free accounts for users, and charge the other.
+D: bus-indirect-network-effect
 H: Network effects
 - A **direct network effect** occurs when a product becomes more valuable as more people use it, such as a messaging app.
 - An **indirect network effect** occurs when more users on one side attract more on the other, such as more shoppers attracting more sellers.
@@ -741,6 +742,7 @@ H: Waterfall and agile
 - **Waterfall** projects move through fixed, sequential stages: requirements, design, build, test and deploy. Scope is fixed early.
 - **Agile** delivers in short **iterations**, releasing working results often and adapting to feedback.
 - The **Agile Manifesto** (2001) values individuals and interactions, working software, customer collaboration and responding to change.
+D: bus-scrum-sprint
 H: Scrum and Kanban
 - **Scrum** works in **sprints** of usually two to four weeks.
 - Roles: the **product owner** (prioritises the product backlog), the **Scrum master** (removes obstacles and coaches the process) and the **developers**.

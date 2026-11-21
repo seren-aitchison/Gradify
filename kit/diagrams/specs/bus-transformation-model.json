@@ -1,0 +1,43 @@
+{
+ "id": "bus-transformation-model",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u05",
+ "lesson": "The transformation model and the four Vs",
+ "title": "The transformation model",
+ "caption": "Inputs of two kinds are changed by the process into outputs, usually a mix of products and services. The four Vs then explain why two operations that transform food and customers are designed so differently.",
+ "alt": "Three boxes: inputs (transformed resources and transforming resources), the transformation process, and outputs (products and services).",
+ "description": [
+  "Inputs: transformed resources (materials, information, customers) and transforming resources (facilities and staff).",
+  "Transformation process: changing physical properties, location, ownership, information or the state of customers.",
+  "Outputs: products and services, usually a mix."
+ ],
+ "terms": [
+  "Inputs",
+  "transformed resources",
+  "transforming resources",
+  "Transformation process",
+  "Outputs",
+  "products and services"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Inputs",
+  "Transformation process",
+  "Outputs"
+ ],
+ "steps": [
+  {
+   "label": "Inputs",
+   "note": "transformed resources (materials, information, customers) and transforming resources (facilities, staff)"
+  },
+  {
+   "label": "Transformation process",
+   "note": "changing properties, location, ownership, information or the state of customers"
+  },
+  {
+   "label": "Outputs",
+   "note": "products and services, usually a mix"
+  }
+ ]
+}

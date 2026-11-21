@@ -1,0 +1,45 @@
+{
+ "id": "bus-schein-levels",
+ "renderer": "layers",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Organisational culture",
+ "title": "Schein's three levels of culture",
+ "caption": "Artefacts are easy to see but hard to interpret; basic assumptions are invisible but decisive. When espoused values and assumptions differ, behaviour follows the assumptions.",
+ "alt": "Three stacked layers from the visible top to the hidden base: artefacts, espoused values, basic underlying assumptions.",
+ "description": [
+  "Top, visible: artefacts such as dress, office layout, stories and rituals.",
+  "Middle: espoused values, the stated values, strategies and goals.",
+  "Base, invisible: basic underlying assumptions, the taken-for-granted beliefs that truly drive behaviour."
+ ],
+ "terms": [
+  "Artefacts",
+  "Espoused values",
+  "Basic underlying assumptions"
+ ],
+ "shape": "stack",
+ "count": 3,
+ "arrowLabel": "from visible to invisible",
+ "expect": [
+  "Artefacts",
+  "Espoused values",
+  "Basic underlying assumptions"
+ ],
+ "items": [
+  {
+   "label": "Artefacts",
+   "detail": "visible: dress, office layout, stories, rituals",
+   "colour": "a4"
+  },
+  {
+   "label": "Espoused values",
+   "detail": "stated values, strategies and goals",
+   "colour": "a1"
+  },
+  {
+   "label": "Basic underlying assumptions",
+   "detail": "invisible, taken for granted, and decisive",
+   "colour": "a2"
+  }
+ ]
+}

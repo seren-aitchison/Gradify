@@ -1,0 +1,120 @@
+{
+ "id": "bus-cash-forecast",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Cash flow forecasting",
+ "title": "Three-month cash flow forecast",
+ "caption": "Cash is counted when it moves. March's new machine takes payments to £31,000, more than the receipts and the opening balance, so the forecast shows an overdraft of £2,000 in time to arrange one.",
+ "alt": "Columns of opening balance, receipts, payments and closing balance for January, February and March; closing balance £7,000, £9,000 and −£2,000.",
+ "description": [
+  "January: £5,000 opening, £20,000 receipts, £18,000 payments, £7,000 closing.",
+  "February: £7,000 opening, £20,000 receipts, £18,000 payments, £9,000 closing.",
+  "March: £9,000 opening, £20,000 receipts, £31,000 payments including a machine, −£2,000 closing."
+ ],
+ "terms": [
+  "opening balance",
+  "Receipts",
+  "Payments",
+  "Closing balance",
+  "overdraft",
+  "£31,000"
+ ],
+ "kind": "columns",
+ "prefix": "£",
+ "suffix": "k",
+ "range": [
+  -6,
+  36
+ ],
+ "series": [
+  {
+   "name": "Receipts",
+   "colour": "good"
+  },
+  {
+   "name": "Payments",
+   "colour": "bad"
+  },
+  {
+   "name": "Closing balance",
+   "colour": "a1"
+  }
+ ],
+ "categories": [
+  {
+   "label": "January",
+   "short": "Jan",
+   "values": [
+    {
+     "id": "r1",
+     "v": 20
+    },
+    {
+     "id": "p1",
+     "v": 18
+    },
+    {
+     "id": "c1",
+     "v": 7
+    }
+   ]
+  },
+  {
+   "label": "February",
+   "short": "Feb",
+   "values": [
+    {
+     "id": "r2",
+     "v": 20
+    },
+    {
+     "id": "p2",
+     "v": 18
+    },
+    {
+     "id": "c2",
+     "v": 9
+    }
+   ]
+  },
+  {
+   "label": "March",
+   "short": "Mar",
+   "values": [
+    {
+     "id": "r3",
+     "v": 20
+    },
+    {
+     "id": "p3",
+     "v": 31
+    },
+    {
+     "id": "c3",
+     "v": -2
+    }
+   ]
+  }
+ ],
+ "vars0": {
+  "open1": 5
+ },
+ "relations": [
+  {
+   "expr": "5 + r1 - p1",
+   "equals": "c1",
+   "name": "January closing = 5 + 20 − 18"
+  },
+  {
+   "expr": "c1 + r2 - p2",
+   "equals": "c2",
+   "name": "February closing = January closing + receipts − payments"
+  },
+  {
+   "expr": "c2 + r3 - p3",
+   "equals": "c3",
+   "name": "March closing = 9 + 20 − 31 = −2"
+  }
+ ]
+}

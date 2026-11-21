@@ -1,0 +1,66 @@
+{
+ "id": "bus-leadership-styles",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u02",
+ "lesson": "Leadership styles",
+ "title": "Four leadership styles",
+ "caption": "No style is best everywhere: the situation drives the choice. The same leader might tell everyone to leave in a fire alarm and let the team agree its own bank holiday rota.",
+ "alt": "Four boxes: autocratic, democratic, laissez-faire and paternalistic, each with its strength and weakness.",
+ "description": [
+  "Autocratic: the leader decides and tells; fast and clear, but can demotivate skilled staff.",
+  "Democratic: the leader involves staff; builds commitment, but slower.",
+  "Laissez-faire: decisions left to the group; suits skilled experts, often leads to drift.",
+  "Paternalistic: the leader decides in what they see as staff's best interests; builds loyalty, can feel patronising."
+ ],
+ "terms": [
+  "Autocratic",
+  "Democratic",
+  "Laissez-faire",
+  "Paternalistic",
+  "Fast, clear",
+  "Builds commitment",
+  "drift",
+  "patronising"
+ ],
+ "cols": 2,
+ "rows": 2,
+ "cover": true,
+ "rowH": 120,
+ "expect": [
+  "Autocratic",
+  "Democratic",
+  "Laissez-faire",
+  "Paternalistic"
+ ],
+ "blocks": [
+  {
+   "label": "Autocratic",
+   "col": 0,
+   "row": 0,
+   "note": "Decides and tells. Fast and clear; can demotivate skilled staff.",
+   "colour": "bad"
+  },
+  {
+   "label": "Democratic",
+   "col": 1,
+   "row": 0,
+   "note": "Involves staff. Builds commitment; slower.",
+   "colour": "good"
+  },
+  {
+   "label": "Laissez-faire",
+   "col": 0,
+   "row": 1,
+   "note": "Leaves decisions to the group. Suits skilled experts; can drift.",
+   "colour": "a1"
+  },
+  {
+   "label": "Paternalistic",
+   "col": 1,
+   "row": 1,
+   "note": "Decides in staff's best interests. Builds loyalty; can feel patronising.",
+   "colour": "a5"
+  }
+ ]
+}

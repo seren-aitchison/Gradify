@@ -1,0 +1,133 @@
+{
+ "id": "bus-product-life-cycle",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "Product and the product life cycle",
+ "title": "The product life cycle and an extension strategy",
+ "caption": "Sales are low at introduction, rise in growth, peak in maturity and fall in decline. An extension strategy, such as the Lucozade relaunch, lifts sales again instead of letting them fall.",
+ "alt": "Sales against time in four stages: introduction, growth, maturity, decline. A dashed second curve shows an extension strategy lifting sales late in maturity, so sales do not decline.",
+ "description": [
+  "Introduction: low sales and often losses.",
+  "Growth: sales and profits rise.",
+  "Maturity: sales peak and competition is intense.",
+  "Decline: sales fall.",
+  "Extension strategies in maturity (new uses, new markets, modifications, repackaging, promotion) keep sales above the declining curve."
+ ],
+ "terms": [
+  "Introduction",
+  "Growth",
+  "Maturity",
+  "Decline",
+  "Extension strategies",
+  "Lucozade"
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   135
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "grid": [
+  2,
+  25
+ ],
+ "axisLabels": [
+  "time",
+  "sales"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "height": [
+  330,
+  290
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    1.4
+   ],
+   "label": "Intro",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    1.4,
+    3.6
+   ],
+   "label": "Growth",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    3.6,
+    6.8
+   ],
+   "label": "Maturity",
+   "colour": "a5"
+  },
+  {
+   "x": [
+    6.8,
+    10
+   ],
+   "label": "Decline",
+   "colour": "a2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "100/(1+exp(-1.7*(x-2.2)))/(1+exp(x-7))",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "no action",
+   "labelAt": [
+    8.2,
+    28
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "100/(1+exp(-1.7*(x-2.2)))/(1+exp(x-7))+34/(1+exp(-3*(x-7.4)))",
+   "colour": "a2",
+   "dash": "7 5",
+   "width": 3,
+   "label": "extension strategy",
+   "labelAt": [
+    6.9,
+    120
+   ],
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "100/(1+exp(-1.7*(x-2.2)))/(1+exp(x-7))",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 4.18,
+   "y": 91.225,
+   "name": "sales peak at x = 4.18, inside maturity (3.6 to 6.8)"
+  },
+  {
+   "type": "order",
+   "a": "100/(1+exp(-1.7*(x-2.2)))/(1+exp(x-7))",
+   "b": "100/(1+exp(-1.7*(x-2.2)))/(1+exp(x-7))+34/(1+exp(-3*(x-7.4)))",
+   "rel": "<",
+   "x": 9,
+   "name": "with an extension strategy sales at x = 9 are higher than without"
+  }
+ ]
+}

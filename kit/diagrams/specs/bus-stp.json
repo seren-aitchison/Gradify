@@ -1,0 +1,47 @@
+{
+ "id": "bus-stp",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "Segmentation, targeting and positioning",
+ "title": "Segment, target, position",
+ "caption": "Marketing chooses who to serve before deciding what to say. Segments must be measurable, substantial, accessible and differentiable; positioning is the place the brand holds in customers' minds.",
+ "alt": "Three boxes in order: segmentation, targeting, positioning, each with its options.",
+ "description": [
+  "Segmentation: geographic, demographic, psychographic and behavioural bases.",
+  "Targeting: undifferentiated, differentiated, concentrated (niche) or micromarketing.",
+  "Positioning: the place a brand occupies in customers' minds relative to competitors."
+ ],
+ "terms": [
+  "Segmentation",
+  "Targeting",
+  "Positioning",
+  "Geographic",
+  "Demographic",
+  "Psychographic",
+  "Behavioural",
+  "Undifferentiated",
+  "Differentiated",
+  "Concentrated"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Segmentation",
+  "Targeting",
+  "Positioning"
+ ],
+ "steps": [
+  {
+   "label": "Segmentation",
+   "note": "geographic, demographic, psychographic, behavioural"
+  },
+  {
+   "label": "Targeting",
+   "note": "undifferentiated, differentiated, concentrated (niche)"
+  },
+  {
+   "label": "Positioning",
+   "note": "the place a brand holds in customers' minds"
+  }
+ ]
+}

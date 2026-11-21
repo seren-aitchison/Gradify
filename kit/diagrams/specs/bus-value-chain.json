@@ -1,0 +1,63 @@
+{
+ "id": "bus-value-chain",
+ "renderer": "process",
+ "course": "business",
+ "unit": "u03",
+ "lesson": "The value chain",
+ "title": "Porter's value chain",
+ "caption": "Five primary activities take a product from inputs to after-sales service; four support activities run beneath all of them. Margin is what customers pay for the value minus the cost of these activities.",
+ "alt": "A chain of five primary activities (inbound logistics, operations, outbound logistics, marketing and sales, service) with four support activities above, ending in margin.",
+ "description": [
+  "Support activities: firm infrastructure, human resource management, technology development and procurement.",
+  "Primary activities in order: inbound logistics, operations, outbound logistics, marketing and sales, service.",
+  "The difference between value and cost is the margin."
+ ],
+ "terms": [
+  "inbound logistics",
+  "operations",
+  "outbound logistics",
+  "marketing and sales",
+  "service",
+  "firm infrastructure",
+  "human resource management",
+  "technology development",
+  "procurement",
+  "margin"
+ ],
+ "kind": "chain",
+ "expect": [
+  "Inbound logistics",
+  "Operations",
+  "Outbound logistics",
+  "Marketing and sales",
+  "Service"
+ ],
+ "support": [
+  "Firm infrastructure",
+  "Human resource management",
+  "Technology development",
+  "Procurement"
+ ],
+ "steps": [
+  {
+   "label": "Inbound logistics",
+   "note": "receiving and storing inputs"
+  },
+  {
+   "label": "Operations",
+   "note": "turning inputs into products"
+  },
+  {
+   "label": "Outbound logistics",
+   "note": "distribution"
+  },
+  {
+   "label": "Marketing and sales"
+  },
+  {
+   "label": "Service",
+   "note": "after-sales support"
+  }
+ ],
+ "end": "Margin = value to customers − cost of the activities"
+}

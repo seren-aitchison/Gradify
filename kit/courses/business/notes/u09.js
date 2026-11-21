@@ -116,6 +116,7 @@ PRE: Opportunity recognition and the entrepreneurial mindset
 H: Effectuation
 - Saras Sarasvathy studied expert entrepreneurs and found they often use **effectual** reasoning: starting from the means they have and letting goals emerge, rather than **causal** reasoning, which starts from a fixed goal and plans the means.
 - Principles: **bird in hand** (start with who you are, what you know and whom you know); **affordable loss** (risk only what you can afford to lose); **crazy quilt** (build partnerships and pre-commitments); **lemonade** (use surprises); **pilot in the plane** (shape the future rather than predict it).
+D: bus-build-measure-learn
 H: The lean start-up
 - Eric Ries's **lean start-up** treats a new venture as a series of experiments.
 - The **build–measure–learn** loop: build a **minimum viable product (MVP)**, the simplest version that tests a key assumption; measure customer behaviour; learn whether to continue.
@@ -166,6 +167,7 @@ O: Use the canvas to analyse and compare business models
 PRE: Effectuation and the lean start-up
 H: What a business model is
 P: Osterwalder and Pigneur define a business model as the rationale of how an organisation **creates, delivers and captures value**. Two firms selling similar products can have very different models: one sells products outright, another rents them by subscription.
+D: bus-business-model-canvas
 H: The nine building blocks
 - **Customer segments**: the groups of people or organisations served.
 - **Value propositions**: the bundle of benefits that solves customers' problems.
@@ -439,6 +441,7 @@ O: Explain why firms balance different types of innovation
 PRE: What is entrepreneurship?
 H: Invention and innovation
 P: An **invention** is a new idea or device; **innovation** is the successful application of new ideas to create value, in the market or within an organisation. Many inventions never become innovations, and many innovations combine existing technologies in new ways.
+D: bus-four-ps-innovation
 H: The 4Ps of innovation
 - **Product** innovation: changes in what an organisation offers, such as a new phone.
 - **Process** innovation: changes in how it is made or delivered, such as automated warehouses.
@@ -495,6 +498,7 @@ H: The theory
 - A disruptive innovation starts as a simpler, cheaper or more convenient product that is **worse** on traditional measures and appeals to overlooked customers.
 - Leading firms rationally ignore it, because their best customers do not want it and margins are low: the **innovator's dilemma**.
 - The disruptive product improves until it is good enough for mainstream customers, who then switch, and incumbents lose their position.
+D: bus-disruptive-innovation
 H: Two forms
 - **Low-end disruption**: serves the least demanding customers of an existing market with a cheaper product, such as minimills in steel making.
 - **New-market disruption**: creates a market among people who previously could not use the product, such as personal computers for people who could not afford mainframes.
@@ -545,6 +549,7 @@ H: Adopter categories
 - Rogers divided adopters into **innovators** (2.5%), **early adopters** (13.5%), **early majority** (34%), **late majority** (34%) and **laggards** (16%).
 - Plotted over time, cumulative adoption forms an **S-curve**: slow at first, then rapid, then levelling off.
 - Early adopters are often opinion leaders whose example influences others.
+D: bus-diffusion-adopters
 H: What speeds adoption
 - **Relative advantage**: how much better it is than what it replaces.
 - **Compatibility**: how well it fits existing values, habits and systems.
@@ -652,6 +657,7 @@ H: Principles
 - **Iterative**: develop ideas through repeated cycles of prototyping and testing.
 - **Collaborative** and multidisciplinary, combining different perspectives.
 - Balances what is **desirable** to people, **feasible** technically and **viable** commercially (Tim Brown of IDEO).
+D: bus-design-thinking
 H: The process
 - A widely taught five-stage model: **empathise**, **define**, **ideate**, **prototype**, **test**.
 - The UK Design Council's **Double Diamond** (2005) has four phases: **discover** and **define** (the first diamond, understanding the right problem), then **develop** and **deliver** (the second diamond, finding the right solution). Each diamond **diverges** (opening up possibilities) then **converges** (narrowing down).

@@ -1,0 +1,100 @@
+{
+ "id": "bus-seven-ps",
+ "renderer": "blocks",
+ "course": "business",
+ "unit": "u04",
+ "lesson": "The extended marketing mix",
+ "title": "The seven Ps of a dental practice",
+ "caption": "The first four Ps are McCarthy's. People, process and physical evidence were added for services, because intangible services are judged on staff behaviour, a smooth process and physical surroundings.",
+ "alt": "Seven boxes: product, price, promotion and place on top; people, process and physical evidence below, each with the dental practice example.",
+ "description": [
+  "Product: check-ups, hygiene and cosmetic treatment.",
+  "Price: NHS bands and private fees.",
+  "Promotion: local advertising and reviews.",
+  "Place: a town-centre surgery with online booking.",
+  "People: friendly dentists and receptionists.",
+  "Process: reminders and short waits.",
+  "Physical evidence: a clean, modern waiting room."
+ ],
+ "terms": [
+  "product, price, promotion and place",
+  "People",
+  "Process",
+  "Physical evidence",
+  "NHS bands",
+  "online booking",
+  "reminders",
+  "waiting room"
+ ],
+ "cols": 12,
+ "rows": 2,
+ "cover": true,
+ "rowH": 118,
+ "expect": [
+  "Product",
+  "Price",
+  "Promotion",
+  "Place",
+  "People",
+  "Process",
+  "Physical evidence"
+ ],
+ "blocks": [
+  {
+   "label": "Product",
+   "col": 0,
+   "row": 0,
+   "cs": 3,
+   "note": "Check-ups, hygiene and cosmetic treatment",
+   "colour": "a1"
+  },
+  {
+   "label": "Price",
+   "col": 3,
+   "row": 0,
+   "cs": 3,
+   "note": "NHS bands and private fees",
+   "colour": "a1"
+  },
+  {
+   "label": "Promotion",
+   "col": 6,
+   "row": 0,
+   "cs": 3,
+   "note": "Local advertising and reviews",
+   "colour": "a1"
+  },
+  {
+   "label": "Place",
+   "col": 9,
+   "row": 0,
+   "cs": 3,
+   "note": "Town-centre surgery with online booking",
+   "colour": "a1"
+  },
+  {
+   "label": "People",
+   "col": 0,
+   "row": 1,
+   "cs": 4,
+   "note": "Friendly dentists and receptionists",
+   "colour": "a4"
+  },
+  {
+   "label": "Process",
+   "col": 4,
+   "row": 1,
+   "cs": 4,
+   "note": "Reminders and short waits",
+   "colour": "a4"
+  },
+  {
+   "label": "Physical evidence",
+   "col": 8,
+   "row": 1,
+   "cs": 4,
+   "note": "A clean, modern waiting room",
+   "colour": "a4"
+  }
+ ]
+}

@@ -97,3 +97,7 @@ Not connected in the build session, so not tested. Recommended role: art directi
 ## Scaling
 
 The renderer types cover the commonest technical diagrams. Next renderers by expected value: biology process and structure diagrams (labelled cells, organs, pathways; these need a curated, reviewed vector illustration library, which is where Figma helps most), physics field lines and waves, statistics distributions, timelines and maps for history and geography. Generate specs with Claude from the lesson text, but always through the checks and a human approval for high-risk subjects (chemistry mechanisms, clinical content, law).
+
+## Business
+
+BusinessGradify's diagrams are planned in `kit/diagrams/plans/business.mjs` (one file per school in `plans/business/`), written by `scripts/diagrams/business/uNN.py` and drawn by `kit/diagrams/business-renderers.js` (matrix, layers, orgchart, process, bars, network, blocks, radial) with the shared `graph`. The mathematics they recompute (NPV, payback, ARR, break-even, elasticity, the critical path, Nash equilibria, balance-sheet and cash-flow arithmetic) is `kit/diagrams/business-core.js`. Every spec also lists the terms it uses, and the build fails if the lesson does not contain them. See `kit/diagrams/business/HANDOVER.md` for status and what is left.

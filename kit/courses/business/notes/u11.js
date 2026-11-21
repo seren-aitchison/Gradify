@@ -102,6 +102,7 @@ O: Distinguish CSR from creating shared value
 PRE: Stakeholders
 H: What CSR means
 P: **Corporate social responsibility (CSR)** is the idea that businesses have responsibilities to society beyond their legal and economic obligations. Archie Carroll's **pyramid of CSR** (1991) sets out four layers: **economic** responsibilities (be profitable, the base on which everything else rests), **legal** responsibilities (obey the law), **ethical** responsibilities (do what is right and fair even where not required) and **philanthropic** responsibilities (be a good corporate citizen, for example through donations and community work). Carroll argued that a socially responsible firm meets all four at the same time, not one after another.
+D: bus-carroll-pyramid
 H: Arguments for and against
 - **For**: CSR can build reputation, customer loyalty and employee engagement, and help attract investors and staff.
 - **For**: it reduces risks such as boycotts, regulation and supply chain scandals, and supports a firm's **licence to operate**.
@@ -426,6 +427,7 @@ O: Evaluate criticisms of ESG ratings and claims
 PRE: Corporate social responsibility
 H: What ESG means
 P: The term **ESG** was popularised by the 2004 UN Global Compact report **Who Cares Wins**, which encouraged investors to consider environmental, social and governance issues. Whereas CSR focuses on a company's responsibilities, ESG is mainly an investor lens: it asks how these factors affect a company's **risks, returns and long-term value**, and how the company affects the world. The **Principles for Responsible Investment**, launched in 2006, commit signatory investors to incorporate ESG issues into analysis and ownership. In the UK the **Financial Conduct Authority** introduced an **anti-greenwashing rule** in 2024, requiring sustainability claims to be fair, clear and not misleading.
+D: bus-esg-pillars
 H: The three pillars
 - **Environmental**: greenhouse gas emissions, energy use, pollution, water, waste and biodiversity.
 - **Social**: employee health and safety, pay and conditions, diversity, human rights in supply chains, customers and communities.

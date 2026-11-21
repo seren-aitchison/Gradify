@@ -1,0 +1,55 @@
+{
+ "id": "bus-carroll-pyramid",
+ "renderer": "layers",
+ "course": "business",
+ "unit": "u11",
+ "lesson": "Corporate social responsibility",
+ "title": "Carroll's pyramid of corporate social responsibility",
+ "caption": "Economic responsibility is the base on which everything else rests. Carroll argued that a socially responsible firm meets all four layers at the same time, not one after another.",
+ "alt": "A pyramid of four layers. From the base: economic, legal, ethical, philanthropic.",
+ "description": [
+  "Economic: be profitable, the base of the pyramid.",
+  "Legal: obey the law.",
+  "Ethical: do what is right and fair even where not required.",
+  "Philanthropic: be a good corporate citizen, for example through donations and community work."
+ ],
+ "terms": [
+  "economic",
+  "legal",
+  "ethical",
+  "philanthropic",
+  "Carroll",
+  "at the same time"
+ ],
+ "shape": "pyramid",
+ "count": 4,
+ "arrowLabel": "all four are met at the same time",
+ "expect": [
+  "Philanthropic",
+  "Ethical",
+  "Legal",
+  "Economic"
+ ],
+ "items": [
+  {
+   "label": "Philanthropic",
+   "detail": "be a good corporate citizen: donations, community work",
+   "colour": "a5"
+  },
+  {
+   "label": "Ethical",
+   "detail": "do what is right and fair, even where not required",
+   "colour": "a4"
+  },
+  {
+   "label": "Legal",
+   "detail": "obey the law",
+   "colour": "a1"
+  },
+  {
+   "label": "Economic",
+   "detail": "be profitable: the base on which everything else rests",
+   "colour": "a2"
+  }
+ ]
+}

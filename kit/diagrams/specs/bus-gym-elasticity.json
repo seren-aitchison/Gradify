@@ -1,0 +1,101 @@
+{
+ "id": "bus-gym-elasticity",
+ "renderer": "bars",
+ "course": "business",
+ "unit": "u08",
+ "lesson": "Price elasticity of demand",
+ "title": "A 10% price rise meets a 25% fall in members",
+ "caption": "The percentage fall in members is 2.5 times the percentage rise in price, so demand is elastic (PED = −2.5) and total revenue falls. Indexed at 100, revenue drops from 10,000 to 8,250.",
+ "alt": "Columns before and after the price rise: price index 100 then 110, members index 100 then 75, revenue index 100 then 82.5.",
+ "description": [
+  "Price rises 10%: from index 100 to 110.",
+  "Members fall 25%: from index 100 to 75.",
+  "PED = −25 ÷ 10 = −2.5, so demand is elastic.",
+  "Revenue (price × members) falls from 10,000 to 8,250, down 17.5%."
+ ],
+ "terms": [
+  "10%",
+  "25%",
+  "PED = −25 ÷ 10 = −2.5",
+  "elastic",
+  "Total revenue falls"
+ ],
+ "kind": "columns",
+ "range": [
+  0,
+  135
+ ],
+ "series": [
+  {
+   "name": "Price",
+   "colour": "a1"
+  },
+  {
+   "name": "Members",
+   "colour": "a4"
+  },
+  {
+   "name": "Revenue",
+   "colour": "a2"
+  }
+ ],
+ "categories": [
+  {
+   "label": "Before",
+   "values": [
+    {
+     "id": "p0",
+     "v": 100
+    },
+    {
+     "id": "q0",
+     "v": 100
+    },
+    {
+     "id": "rev0",
+     "v": 100
+    }
+   ]
+  },
+  {
+   "label": "After the rise",
+   "short": "After",
+   "values": [
+    {
+     "id": "p1",
+     "v": 110
+    },
+    {
+     "id": "q1",
+     "v": 75
+    },
+    {
+     "id": "rev1",
+     "v": 82.5
+    }
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "expr": "((q1 - q0) / q0) / ((p1 - p0) / p0)",
+   "equals": "0 - 2.5",
+   "name": "PED = %ΔQ ÷ %ΔP = −25% ÷ 10% = −2.5"
+  },
+  {
+   "expr": "p1 * q1 / 100",
+   "equals": "rev1",
+   "name": "revenue index after = 110 × 75 ÷ 100 = 82.5"
+  },
+  {
+   "expr": "p0 * q0 / 100",
+   "equals": "rev0",
+   "name": "revenue index before = 100"
+  },
+  {
+   "expr": "rev1",
+   "equals": "82.5",
+   "name": "revenue falls because demand is elastic (below 100)"
+  }
+ ]
+}

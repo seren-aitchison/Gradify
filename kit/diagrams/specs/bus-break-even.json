@@ -1,0 +1,151 @@
+{
+ "id": "bus-break-even",
+ "renderer": "graph",
+ "course": "business",
+ "unit": "u07",
+ "lesson": "Costs and break-even analysis",
+ "title": "Break-even: where revenue meets total cost",
+ "caption": "Each unit sells for £50 against £30 of variable cost, so it adds £20 of contribution. Total cost starts at the £60,000 of fixed costs; the lines cross at 3,000 units. At the budgeted 4,000 units the gap is the £20,000 profit.",
+ "alt": "Graph of revenue and total cost against units sold. They cross at 3,000 units and £150,000; at 4,000 units revenue is £200,000 and total cost £180,000.",
+ "description": [
+  "Revenue is £50 a unit, a line from the origin.",
+  "Total cost is £60,000 fixed plus £30 a unit.",
+  "The lines meet at 3,000 units, £150,000: the break-even point.",
+  "Budgeted sales of 4,000 units are 1,000 units above break-even, the margin of safety, and earn £20,000 profit."
+ ],
+ "terms": [
+  "Fixed costs",
+  "break-even",
+  "Contribution per unit",
+  "margin of safety",
+  "£60,000",
+  "3,000 units",
+  "4,000 units"
+ ],
+ "range": {
+  "x": [
+   0,
+   5000
+  ],
+  "y": [
+   0,
+   260
+  ]
+ },
+ "ticks": [
+  [
+   1000,
+   2000,
+   3000,
+   4000,
+   5000
+  ],
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ]
+ ],
+ "grid": [
+  1000,
+  50
+ ],
+ "axisLabels": [
+  "units sold",
+  "£ thousand"
+ ],
+ "xLabelBelow": true,
+ "labelHalo": true,
+ "curves": [
+  {
+   "expr": "0.05*x",
+   "colour": "a1",
+   "label": "Revenue",
+   "labelAt": [
+    4250,
+    238
+   ]
+  },
+  {
+   "expr": "60+0.03*x",
+   "colour": "a2",
+   "label": "Total cost",
+   "labelAt": [
+    4150,
+    170
+   ]
+  },
+  {
+   "expr": "60",
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "Fixed costs £60k",
+   "labelAt": [
+    2200,
+    72
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3000,
+   "y": 150,
+   "label": "Break-even",
+   "colour": "ink",
+   "dx": -14,
+   "dy": -22,
+   "anchor": "end"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3000,
+   "to": 150
+  },
+  {
+   "x": 4000,
+   "label": "Budget 4,000",
+   "to": 236,
+   "dx": -62
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    3000,
+    4000
+   ],
+   "label": "margin of safety",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "0.05*x",
+   "b": "60+0.03*x",
+   "x": 3000,
+   "y": 150,
+   "name": "revenue equals total cost at 3,000 units (£150,000)"
+  },
+  {
+   "type": "value",
+   "expr": "0.05*x-(60+0.03*x)",
+   "x": 4000,
+   "between": [
+    20,
+    20
+   ],
+   "name": "profit at 4,000 units is £20,000"
+  },
+  {
+   "type": "slope",
+   "expr": "0.05*x-(0.03*x)",
+   "x": 100,
+   "value": 0.02,
+   "name": "contribution is £20 a unit (price £50 less variable cost £30)"
+  }
+ ]
+}

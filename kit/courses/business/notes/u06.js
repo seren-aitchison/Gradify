@@ -100,6 +100,7 @@ H: Recruitment
 - **Job analysis**: understanding what the role involves.
 - **Job description** (duties) and **person specification** (skills, knowledge, experience).
 - **Methods**: internal promotion, job boards, social media, agencies, referrals, graduate schemes.
+D: bus-recruitment-selection
 H: Selection methods
 P: Frank Schmidt and John Hunter's review (1998) of decades of research found that **work samples**, **general mental ability tests** and **structured interviews** best predict job performance, while **unstructured interviews**, references and years of experience predict less well. Assessment centres combine several methods.
 H: Legal requirements
@@ -186,6 +187,7 @@ O: Evaluate training using Kirkpatrick's four levels
 PRE: What is human resource management?
 H: Identifying needs
 P: A **learning needs analysis** compares the skills the organisation needs with those staff have, at organisational, team and individual levels, using appraisals, skills audits and performance data.
+D: bus-kolb-cycle
 H: Learning theory
 - **Kolb's learning cycle** (1984): concrete experience, reflective observation, abstract conceptualisation, active experimentation.
 - **70:20:10**: a rule of thumb that most learning comes from experience on the job (70%), some from others (20%) and a little from formal courses (10%); its evidence base is weak, but it highlights workplace learning.
@@ -230,6 +232,7 @@ H: The cycle
 - **Act**: carry out the work with support.
 - **Monitor**: regular check-ins and feedback.
 - **Review**: assess performance, recognise achievements and agree next steps.
+D: bus-performance-cycle
 H: Methods
 - **Rating scales** against objectives or competencies.
 - **360-degree feedback**: input from managers, peers, direct reports and sometimes customers; useful for development, but sensitive when linked to pay.
@@ -525,6 +528,7 @@ H: Disciplinary procedure
 - **Decide** and inform in writing; warnings for most first offences.
 - **Right of appeal**.
 P: **Gross misconduct**, such as theft or violence, may justify dismissal for a first offence, but a fair procedure is still needed.
+D: bus-disciplinary-procedure
 H: Grievances
 P: A **grievance** is a concern or complaint raised by an employee. The ACAS Code requires employers to hold a meeting, allow accompaniment, decide and inform, and offer an appeal.
 H: Tribunal consequences
