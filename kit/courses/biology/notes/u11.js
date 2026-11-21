@@ -309,6 +309,7 @@ H: Losses
 - Some is lost in **excretion**, such as urea.
 - Typically about 10% passes to the next level, though it varies.
 P: Efficiency = (energy transferred to next level ÷ energy available at previous level) × 100. Endotherms such as mammals lose more energy as heat than ectotherms such as insects, so transfer efficiency to the next level is lower. Livestock farming reduces losses by limiting movement and keeping animals warm, raising ethical questions.
+D: bio-energy-pyramid
 X: Calculating efficiency.
 > Grass contains 20,000 kJ per m² per year.
 > Rabbits eating it gain 2,000 kJ per m² per year.
@@ -351,6 +352,7 @@ H: Pyramids
 - **Pyramid of energy**: energy at each level over time; always upright.
 - Biomass is measured by drying samples to remove water.
 P: **Biomagnification** is the increasing concentration of persistent chemicals at higher trophic levels. DDT accumulated in birds of prey, causing thin eggshells and population crashes of peregrine falcons in the UK in the 1950s and 1960s. After DDT was banned, populations recovered. Mercury biomagnifies in large fish such as tuna and swordfish.
+D: bio-pyramid-numbers
 X: DDT and peregrines.
 > DDT was sprayed on crops and entered water.
 > Small organisms absorbed small amounts, which were stored in fat.
@@ -471,6 +473,7 @@ H: Processes
 - **Decomposition** releases CO₂ from dead matter.
 - **Combustion** of fuels releases CO₂.
 - **Feeding** passes carbon along food chains.
+D: bio-carbon-cycle
 H: Stores and humans
 - Stores: atmosphere, oceans, soils, living biomass, **fossil fuels** and rocks such as limestone.
 - Fossil fuels formed from ancient organisms that did not fully decompose.
@@ -513,6 +516,7 @@ H: Stages
 - **Nitrification**: *Nitrosomonas* converts ammonium to nitrite; *Nitrobacter* converts nitrite to nitrate.
 - **Assimilation**: plants absorb nitrate to make proteins and DNA.
 - **Denitrification**: anaerobic bacteria convert nitrate back to N₂.
+D: bio-nitrogen-cycle
 H: Human impacts
 - The **Haber process** fixes nitrogen industrially to make fertiliser.
 - Fertiliser runoff causes **eutrophication**.
@@ -597,6 +601,7 @@ H: Growth models
 - **Exponential growth**: J-shaped curve when resources are unlimited.
 - **Logistic growth**: S-shaped curve as growth slows near the **carrying capacity** (K).
 - Carrying capacity is the maximum population an environment can support.
+D: bio-logistic-growth
 H: Regulating factors
 - **Density-dependent factors** have stronger effects at higher density: competition, predation, disease.
 - **Density-independent factors** act regardless of density: weather, floods, fires.
@@ -804,6 +809,7 @@ H: Types and stages
 - **Pioneer species**, such as lichens and mosses, colonise first and begin forming soil.
 - Each stage changes conditions, allowing new species to establish.
 - The final stable community is the **climax community**, often woodland in the UK.
+D: bio-succession
 H: Changes and management
 - Soil depth, nutrients and water retention increase.
 - Biodiversity usually increases, then may fall slightly at climax.

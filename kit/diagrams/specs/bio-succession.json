@@ -1,0 +1,80 @@
+{
+ "id": "bio-succession",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Succession",
+ "title": "Primary succession",
+ "caption": "On bare ground pioneer species such as lichens and mosses colonise first and begin forming soil. Each stage changes conditions so that new species can establish: soil depth, nutrients and water retention increase, until a stable climax community, often woodland in the UK, forms. Grazing or burning can hold it back (deflected succession).",
+ "alt": "Five boxes in order: bare rock or sand, pioneer species, grasses and small plants, shrubs, and the climax community.",
+ "description": [
+  "Bare rock or sand: no soil.",
+  "Pioneer species: lichens and mosses colonise and begin to form soil.",
+  "Grasses and small plants: soil deepens and holds more water and nutrients.",
+  "Shrubs: more shade and soil: more species arrive.",
+  "Climax community: stable woodland in the UK."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 124,
+ "nodes": [
+  {
+   "id": "s0",
+   "label": "bare rock or sand",
+   "sub": "no soil",
+   "tone": "a2",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "s1",
+   "label": "pioneer species",
+   "sub": "lichens and mosses colonise and begin to form soil",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "s2",
+   "label": "grasses and small plants",
+   "sub": "soil deepens and holds more water and nutrients",
+   "tone": "a4",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "s3",
+   "label": "shrubs",
+   "sub": "more shade and soil: more species arrive",
+   "tone": "a5",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "s4",
+   "label": "climax community",
+   "sub": "stable woodland in the UK",
+   "tone": "a3",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "s0",
+   "to": "s1"
+  },
+  {
+   "from": "s1",
+   "to": "s2"
+  },
+  {
+   "from": "s2",
+   "to": "s3"
+  },
+  {
+   "from": "s3",
+   "to": "s4"
+  }
+ ]
+}

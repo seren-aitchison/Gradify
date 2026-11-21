@@ -1,0 +1,124 @@
+{
+ "id": "bio-logistic-growth",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Population dynamics",
+ "title": "Exponential and logistic growth",
+ "caption": "With unlimited resources a population grows exponentially, a J-shaped curve. In a real environment growth slows as the population nears the carrying capacity K, giving an S-shaped logistic curve. Growth is fastest when the population is K/2.",
+ "alt": "Two curves of population size against time: a J-shaped exponential curve that climbs off the top of the graph, and an S-shaped logistic curve that rises fastest at half the carrying capacity of 1,000 and levels off at 1,000.",
+ "description": [
+  "Exponential growth (unlimited resources): a J-shaped curve that keeps accelerating.",
+  "Logistic growth: slows as resources run short and levels off at the carrying capacity K = 1,000.",
+  "The logistic curve rises fastest when the population is K/2 = 500, at about 9 time units.",
+  "Carrying capacity is the maximum population the environment can support."
+ ],
+ "range": {
+  "x": [
+   0,
+   30
+  ],
+  "y": [
+   0,
+   1150
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ],
+  [
+   250,
+   500,
+   750,
+   1000
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time",
+  "population size"
+ ],
+ "curves": [
+  {
+   "expr": "10*exp(0.5*x)",
+   "colour": "a3",
+   "dash": "6 5"
+  },
+  {
+   "expr": "1000/(1+99*exp(-0.5*x))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1000,
+   "label": "carrying capacity, K"
+  }
+ ],
+ "legend": [
+  [
+   "exponential",
+   "a3",
+   "6 5"
+  ],
+  [
+   "logistic",
+   "a1"
+  ]
+ ],
+ "legendData": [
+  14,
+  330
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1000/(1+99*exp(-0.5*x))",
+   "x": 9.1902,
+   "y": 500,
+   "name": "the logistic curve passes through K/2 = 500 at about 9 time units"
+  },
+  {
+   "type": "slope",
+   "expr": "1000/(1+99*exp(-0.5*x))",
+   "x": 9.1902,
+   "value": 125,
+   "name": "growth is fastest there: rK/4 = 125 individuals per time unit"
+  },
+  {
+   "type": "value",
+   "expr": "1000/(1+99*exp(-0.5*x))",
+   "x": 30,
+   "between": [
+    990,
+    1000
+   ],
+   "name": "the logistic curve levels off at the carrying capacity, 1,000"
+  },
+  {
+   "type": "point",
+   "expr": "10*exp(0.5*x)",
+   "x": 4,
+   "y": 73.89056,
+   "name": "exponential growth: N = 10 e^(0.5t), 73.9 at t = 4"
+  },
+  {
+   "type": "order",
+   "a": "10*exp(0.5*x)",
+   "b": "1000/(1+99*exp(-0.5*x))",
+   "x": 14,
+   "rel": ">",
+   "name": "after the early stage, the exponential curve is far above the limited, logistic one"
+  }
+ ]
+}

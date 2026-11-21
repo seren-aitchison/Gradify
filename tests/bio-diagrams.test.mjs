@@ -260,3 +260,11 @@ test("the Calvin cycle: carbon is conserved at every step, so a miscounted step 
   spec.balance[0].out = [[6, 4]]; // 24 carbons out of 18 in
   assert.equal(allPass(spec), false);
 });
+
+test("nutrient cycles: each arrow must be a real process between the right stores, and no store is a dead end", () => {
+  const nodes = [{ id: "atmosphere", label: "air" }, { id: "producers", label: "plants" }, { id: "consumers", label: "animals" }];
+  const ok = { renderer: "biocycle", alt: "x", cycle: "carbon", nodes, edges: [{ from: "atmosphere", to: "producers", process: "photosynthesis" }, { from: "producers", to: "consumers", process: "feeding" }, { from: "consumers", to: "atmosphere", process: "respiration" }] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, edges: [{ ...ok.edges[0], from: "consumers" }, ok.edges[1], ok.edges[2]] }), false); // animals do not photosynthesise
+  assert.equal(allPass({ ...ok, edges: ok.edges.slice(0, 2) }), false); // animals would be a dead end: no way back to the air
+});

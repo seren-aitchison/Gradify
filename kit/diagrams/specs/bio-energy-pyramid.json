@@ -1,0 +1,61 @@
+{
+ "id": "bio-energy-pyramid",
+ "renderer": "pyramid",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Energy flow",
+ "title": "A pyramid of energy",
+ "caption": "Energy is lost at every step of a food chain as heat from respiration, uneaten parts, faeces and excretion, so typically only about 10% passes to the next trophic level. A pyramid of energy is therefore always upright, and food chains rarely have more than four or five links. The figures are illustrative.",
+ "alt": "A four-level pyramid on a log scale: producers 10,000, primary consumers 1,000, secondary consumers 100 and tertiary consumers 10 kilojoules per square metre per year, each level a tenth of the one below.",
+ "description": [
+  "Producers capture 10,000 kJ per m² per year (illustrative).",
+  "Primary consumers receive about 10% of that: 1,000.",
+  "Secondary consumers: 100. Tertiary consumers: 10.",
+  "At every step about 90% is lost as heat, in faeces or excretion, or left uneaten.",
+  "Energy is never recycled: it leaves the ecosystem as heat."
+ ],
+ "kind": "energy",
+ "qUnit": "kJ m⁻² year⁻¹",
+ "scale": "log",
+ "levels": [
+  {
+   "label": "producers",
+   "value": 10000
+  },
+  {
+   "label": "primary consumers",
+   "value": 1000
+  },
+  {
+   "label": "secondary consumers",
+   "value": 100
+  },
+  {
+   "label": "tertiary consumers",
+   "value": 10
+  }
+ ],
+ "claims": [
+  {
+   "type": "efficiency",
+   "from": 0,
+   "to": 1,
+   "value": 10,
+   "tol": 0.5
+  },
+  {
+   "type": "efficiency",
+   "from": 1,
+   "to": 2,
+   "value": 10,
+   "tol": 0.5
+  },
+  {
+   "type": "efficiency",
+   "from": 2,
+   "to": 3,
+   "value": 10,
+   "tol": 0.5
+  }
+ ]
+}

@@ -18,6 +18,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   biocycle   the carbon and nitrogen cycles: stores and processes, each arrow a real step, no dead ends
 //   carbonflow a pathway or cycle (drawn as a flow) whose carbon atoms balance at every step
 //   sarcomere  relaxed and contracted sarcomeres: band lengths worked out from the filament lengths
 //   cladogram  an evolutionary tree with the characters that define its clades, each character on one branch (parsimony)
@@ -224,7 +225,7 @@ function pyramidDraw(spec, W, narrow) {
       const y = top + (n - 1 - i) * bh, w = wOf(l.value);
       s += rect(cx - w / 2, y, w, bh - 6, { fill: tone(i), op: 0.22, stroke: tone(i), rx: 6 });
       s += text(labX, y + 12, l.label, { size: 14, weight: 700, anchor: "start" });
-      s += text(labX, y + 30, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.unit}`, { size: 12.5, anchor: "start", fill: C.soft });
+      s += text(labX, y + 30, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.qUnit ?? spec.unit}`, { size: 12.5, anchor: "start", fill: C.soft });
       if (i > 0 && spec.kind === "energy") s += text(118, y + bh - 3, `${f1(eff(spec, i - 1, i))}%`, { size: 13, weight: 700, anchor: "end", fill: C.a2 }) + arrow(124, y + bh + 8, 124, y + bh - 16, { stroke: C.a2, w: 1.6, head: 7 });
     });
     if (spec.kind === "energy") s += text(118, top + n * bh + 12, "passed on", { size: 11.5, anchor: "end", fill: C.soft });
@@ -235,7 +236,7 @@ function pyramidDraw(spec, W, narrow) {
   for (let i = n - 1; i >= 0; i--) {
     const l = L[i], w = wOf(l.value);
     s += text(20, y + 6, l.label, { size: 13.5, weight: 700, anchor: "start" });
-    s += text(20, y + 24, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.unit}`, { size: 12, anchor: "start", fill: C.soft });
+    s += text(20, y + 24, `${l.sub ? `${l.sub}: ` : ""}${fmtN(l.value)} ${spec.qUnit ?? spec.unit}`, { size: 12, anchor: "start", fill: C.soft });
     s += rect(W / 2 - w / 2, y + 34, w, 26, { fill: tone(i), op: 0.22, stroke: tone(i), rx: 6 });
     y += 64;
     if (i > 0 && spec.kind === "energy") { s += text(W / 2, y + 8, `↑ ${f1(eff(spec, i - 1, i))}% passed on`, { size: 12.5, weight: 700, fill: C.a2 }); y += 22; }
@@ -1204,6 +1205,65 @@ function carbonflowChecks(spec) {
   return out;
 }
 
+// ======================================================================== biocycle
+// A nutrient cycle: stores around a ring, each process an arrow between two of them.
+// spec: cycle: "carbon" | "nitrogen", nodes: [{id, label, tone}], edges: [{from, to, process, at}] (at: where along the arrow its label sits, 0–1)
+// Every process must join the stores it really joins, and no store may be a dead end (everything that goes in comes out).
+export const CYCLES = {
+  carbon: {
+    photosynthesis: [["atmosphere"], ["producers"]], feeding: [["producers", "consumers"], ["consumers"]], respiration: [["producers", "consumers", "decomposers"], ["atmosphere"]],
+    death: [["producers", "consumers"], ["decomposers"]], combustion: [["fossil fuels"], ["atmosphere"]], fossilisation: [["producers", "consumers"], ["fossil fuels"]],
+  },
+  nitrogen: {
+    "nitrogen fixation": [["atmosphere"], ["ammonium"]], ammonification: [["dead matter"], ["ammonium"]], nitrification: [["ammonium"], ["nitrate"]], assimilation: [["nitrate"], ["plants"]],
+    feeding: [["plants"], ["animals"]], "death and excretion": [["plants", "animals"], ["dead matter"]], denitrification: [["nitrate"], ["atmosphere"]],
+  },
+};
+function biocycleDraw(spec, W, narrow) {
+  const H = narrow ? 470 : 430, cx = W / 2, cy = H / 2, rx = W * (narrow ? 0.34 : 0.34), ry = H * (narrow ? 0.34 : 0.33), n = spec.nodes.length;
+  const tones = ["a1", "a4", "a5", "a3", "a2", "good"], pos = {}, box = {};
+  spec.nodes.forEach((nd, i) => {
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / n, w = Math.max(narrow ? 78 : 96, nd.label.length * (narrow ? 6.6 : 7.4) + 18);
+    pos[nd.id] = [cx + rx * Math.cos(a), cy + ry * Math.sin(a)]; box[nd.id] = { w, h: 34, tone: nd.tone || tones[i % tones.length] };
+  });
+  let s = "";
+  const clip = (id, ux, uy) => { const b = box[id]; return Math.min(Math.abs(ux) > 1e-6 ? b.w / 2 / Math.abs(ux) : 1e9, Math.abs(uy) > 1e-6 ? b.h / 2 / Math.abs(uy) : 1e9) + 5; };
+  const labels = [];
+  for (const e of spec.edges) {
+    const [x1, y1] = pos[e.from], [x2, y2] = pos[e.to], L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L, nx = -uy, ny = ux;
+    const bow = 0.2 * L, c = [(x1 + x2) / 2 + nx * bow, (y1 + y2) / 2 + ny * bow], a0 = clip(e.from, ux, uy), a1 = clip(e.to, ux, uy);
+    const p0 = [x1 + ux * a0, y1 + uy * a0], p2 = [x2 - ux * a1, y2 - uy * a1], colour = C[e.colour || tones[spec.edges.indexOf(e) % tones.length]];
+    // the curve ends heading along the line from the control point, so the arrow head sits on it
+    const dx = p2[0] - c[0], dy = p2[1] - c[1], dl = Math.hypot(dx, dy) || 1;
+    s += `<path d="M${f1(p0[0])} ${f1(p0[1])} Q${f1(c[0])} ${f1(c[1])} ${f1(p2[0] - (dx / dl) * 9)} ${f1(p2[1] - (dy / dl) * 9)}" fill="none" stroke="${colour}" stroke-width="2.2"/>` + arrow(p2[0] - (dx / dl) * 14, p2[1] - (dy / dl) * 14, p2[0], p2[1], { stroke: colour, w: 2.2, head: 10 });
+    const tt = e.at ?? 0.5, mid = [(1 - tt) ** 2 * p0[0] + 2 * tt * (1 - tt) * c[0] + tt * tt * p2[0], (1 - tt) ** 2 * p0[1] + 2 * tt * (1 - tt) * c[1] + tt * tt * p2[1]];
+    labels.push({ x: mid[0] + nx * 4, y: mid[1] + ny * 4, text: e.process, colour });
+  }
+  for (const id of Object.keys(pos)) {
+    const [x, y] = pos[id], b = box[id], nd = spec.nodes.find((q) => q.id === id);
+    s += rect(x - b.w / 2, y - b.h / 2, b.w, b.h, { fill: C[b.tone], op: 0.14, stroke: C[b.tone], sw: 1.8, rx: 10 }) + text(x, y, nd.label, { size: narrow ? 12 : 13, weight: 700, fill: C[b.tone] });
+  }
+  for (const l of labels) {
+    const lines = wrap(l.text, narrow ? 12 : 16), lh = 13.5;
+    lines.forEach((t, i) => { s += `<text x="${f1(l.x)}" y="${f1(l.y + (i - (lines.length - 1) / 2) * lh)}" font-size="${narrow ? 11 : 12}" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="${l.colour}" stroke="var(--vx-bg, #ffffff)" stroke-width="4" paint-order="stroke">${esc(t)}</text>`; });
+  }
+  return { s, H };
+}
+function biocycleChecks(spec) {
+  const table = CYCLES[spec.cycle], out = [check(`the ${spec.cycle} cycle is known`, !!table)];
+  if (!table) return out;
+  const ids = new Set(spec.nodes.map((n) => n.id));
+  for (const e of spec.edges) {
+    const t = table[e.process];
+    out.push(check(`${e.process}: ${e.from} → ${e.to} is a real step of the ${spec.cycle} cycle`, !!t && t[0].includes(e.from) && t[1].includes(e.to) && ids.has(e.from) && ids.has(e.to)));
+  }
+  for (const n of spec.nodes) {
+    const inn = spec.edges.some((e) => e.to === n.id), outt = spec.edges.some((e) => e.from === n.id);
+    out.push(check(`${n.label}: material both enters and leaves, so the store is part of a cycle`, inn && outt));
+  }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1222,6 +1282,7 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  biocycle: { draw: biocycleDraw, checks: biocycleChecks, widths: [700, 380] },
   carbonflow: { draw: flowDraw, checks: carbonflowChecks, widths: [700, 380] },
   sarcomere: { draw: sarcomereDraw, checks: sarcomereChecks, widths: [660, 380] },
 });

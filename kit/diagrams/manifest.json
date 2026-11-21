@@ -31026,5 +31026,447 @@
     "detail": "600px wide, shown at 118% (labels 17.7px)"
    }
   ]
+ },
+ "bio-carbon-cycle": {
+  "title": "The carbon cycle",
+  "caption": "Producers take CO₂ from the atmosphere by photosynthesis and pass carbon to consumers by feeding. Respiration by every organism, including decomposers, returns it, and dead matter feeds the decomposers. Combustion of fossil fuels returns carbon that was locked away for millions of years, adding CO₂ faster than it is removed.",
+  "alt": "A ring of five carbon stores: atmosphere, producers, consumers, decomposers and fossil fuels, joined by arrows for photosynthesis, feeding, respiration, death, fossilisation and combustion.",
+  "description": [
+   "Photosynthesis moves carbon from the atmosphere into producers.",
+   "Feeding passes it from producers to consumers.",
+   "Respiration by producers, consumers and decomposers returns it to the atmosphere.",
+   "Death passes carbon in dead matter to decomposers.",
+   "Fossilisation locks carbon into fossil fuels; combustion releases it again."
+  ],
+  "course": "biology",
+  "lesson": "Carbon cycle",
+  "also": [],
+  "renderer": "biocycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Carbon cycle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the carbon cycle is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "photosynthesis: atmosphere → producers is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "feeding: producers → consumers is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "respiration: consumers → atmosphere is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "death: producers → decomposers is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "respiration: decomposers → atmosphere is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "combustion: fossil fuels → atmosphere is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "fossilisation: consumers → fossil fuels is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "death: consumers → decomposers is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "respiration: producers → atmosphere is a real step of the carbon cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CO₂ in the atmosphere: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "producers: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "consumers: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "decomposers: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "fossil fuels: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-energy-pyramid": {
+  "title": "A pyramid of energy",
+  "caption": "Energy is lost at every step of a food chain as heat from respiration, uneaten parts, faeces and excretion, so typically only about 10% passes to the next trophic level. A pyramid of energy is therefore always upright, and food chains rarely have more than four or five links. The figures are illustrative.",
+  "alt": "A four-level pyramid on a log scale: producers 10,000, primary consumers 1,000, secondary consumers 100 and tertiary consumers 10 kilojoules per square metre per year, each level a tenth of the one below.",
+  "description": [
+   "Producers capture 10,000 kJ per m² per year (illustrative).",
+   "Primary consumers receive about 10% of that: 1,000.",
+   "Secondary consumers: 100. Tertiary consumers: 10.",
+   "At every step about 90% is lost as heat, in faeces or excretion, or left uneaten.",
+   "Energy is never recycled: it leaves the ecosystem as heat."
+  ],
+  "course": "biology",
+  "lesson": "Energy flow",
+  "also": [],
+  "renderer": "pyramid",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Energy flow"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every level has a positive value",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "energy falls at every level (some is lost as heat at each transfer)",
+    "ok": true,
+    "detail": "10 000 → 1000 → 100 → 10"
+   },
+   {
+    "name": "producers → primary consumers: 10% transferred",
+    "ok": true,
+    "detail": "10.00%"
+   },
+   {
+    "name": "primary consumers → secondary consumers: 10% transferred",
+    "ok": true,
+    "detail": "10.00%"
+   },
+   {
+    "name": "secondary consumers → tertiary consumers: 10% transferred",
+    "ok": true,
+    "detail": "10.00%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-logistic-growth": {
+  "title": "Exponential and logistic growth",
+  "caption": "With unlimited resources a population grows exponentially, a J-shaped curve. In a real environment growth slows as the population nears the carrying capacity K, giving an S-shaped logistic curve. Growth is fastest when the population is K/2.",
+  "alt": "Two curves of population size against time: a J-shaped exponential curve that climbs off the top of the graph, and an S-shaped logistic curve that rises fastest at half the carrying capacity of 1,000 and levels off at 1,000.",
+  "description": [
+   "Exponential growth (unlimited resources): a J-shaped curve that keeps accelerating.",
+   "Logistic growth: slows as resources run short and levels off at the carrying capacity K = 1,000.",
+   "The logistic curve rises fastest when the population is K/2 = 500, at about 9 time units.",
+   "Carrying capacity is the maximum population the environment can support."
+  ],
+  "course": "biology",
+  "lesson": "Population dynamics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Population dynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the logistic curve passes through K/2 = 500 at about 9 time units",
+    "ok": true,
+    "detail": "y(9.1902) = 499.995"
+   },
+   {
+    "name": "growth is fastest there: rK/4 = 125 individuals per time unit",
+    "ok": true,
+    "detail": "gradient 125.0000"
+   },
+   {
+    "name": "the logistic curve levels off at the carrying capacity, 1,000",
+    "ok": true,
+    "detail": "1000/(1+99*exp(-0.5*x)) at 30 = 999.97; expected 990–1000"
+   },
+   {
+    "name": "exponential growth: N = 10 e^(0.5t), 73.9 at t = 4",
+    "ok": true,
+    "detail": "y(4) = 73.8906"
+   },
+   {
+    "name": "after the early stage, the exponential curve is far above the limited, logistic one",
+    "ok": true,
+    "detail": "10966.33 > 917.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-nitrogen-cycle": {
+  "title": "The nitrogen cycle",
+  "caption": "Most organisms cannot use N₂ because its triple bond is so strong. Nitrogen-fixing bacteria turn it into ammonium; nitrifying bacteria turn ammonium into nitrate (by way of nitrite); plants assimilate nitrate into protein and DNA; decomposers return nitrogen from dead matter as ammonium; and denitrifying bacteria turn nitrate back into N₂ in waterlogged soil.",
+  "alt": "A ring of six nitrogen stores: atmospheric nitrogen, ammonium, nitrate, plants, animals and dead matter, joined by arrows for nitrogen fixation, nitrification, assimilation, feeding, death and excretion, ammonification and denitrification.",
+  "description": [
+   "Nitrogen fixation: bacteria (Rhizobium, Azotobacter) or lightning turn N₂ into ammonia, which forms ammonium.",
+   "Nitrification: Nitrosomonas turns ammonium into nitrite and Nitrobacter turns nitrite into nitrate.",
+   "Assimilation: plants absorb nitrate to make proteins and DNA; animals get nitrogen by feeding.",
+   "Death and excretion pass nitrogen to dead matter; ammonification by decomposers turns it back into ammonium.",
+   "Denitrification: anaerobic bacteria turn nitrate back into N₂."
+  ],
+  "course": "biology",
+  "lesson": "Nitrogen cycle",
+  "also": [],
+  "renderer": "biocycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Nitrogen cycle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the nitrogen cycle is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "nitrogen fixation: atmosphere → ammonium is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "nitrification: ammonium → nitrate is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "assimilation: nitrate → plants is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "feeding: plants → animals is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "death and excretion: animals → dead matter is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ammonification: dead matter → ammonium is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "denitrification: nitrate → atmosphere is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "death and excretion: plants → dead matter is a real step of the nitrogen cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N₂ in the atmosphere: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ammonium: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "nitrate: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "plants: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "animals: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dead matter: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-pyramid-numbers": {
+  "title": "A pyramid of numbers can be inverted",
+  "caption": "A pyramid of numbers counts organisms at each level, not their size or energy. One oak tree supports hundreds of caterpillars, so the second level is wider than the first, and the pyramid is inverted. A pyramid of energy is never inverted. The numbers are illustrative.",
+  "alt": "A four-level pyramid of numbers on a log scale: one oak tree, 500 caterpillars, 5 blue tits and 1 sparrowhawk, with the caterpillar level wider than the oak level.",
+  "description": [
+   "One oak tree (the producer).",
+   "About 500 caterpillars (primary consumers) feed on it: more organisms than at the level below, so the pyramid is inverted here.",
+   "5 blue tits (secondary consumers).",
+   "1 sparrowhawk (tertiary consumer).",
+   "A pyramid of numbers ignores the size of the organisms, which is why it can be inverted."
+  ],
+  "course": "biology",
+  "lesson": "Trophic levels",
+  "also": [],
+  "renderer": "pyramid",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Trophic levels"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every level has a positive value",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "caterpillars is larger than the level below",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-succession": {
+  "title": "Primary succession",
+  "caption": "On bare ground pioneer species such as lichens and mosses colonise first and begin forming soil. Each stage changes conditions so that new species can establish: soil depth, nutrients and water retention increase, until a stable climax community, often woodland in the UK, forms. Grazing or burning can hold it back (deflected succession).",
+  "alt": "Five boxes in order: bare rock or sand, pioneer species, grasses and small plants, shrubs, and the climax community.",
+  "description": [
+   "Bare rock or sand: no soil.",
+   "Pioneer species: lichens and mosses colonise and begin to form soil.",
+   "Grasses and small plants: soil deepens and holds more water and nutrients.",
+   "Shrubs: more shade and soil: more species arrive.",
+   "Climax community: stable woodland in the UK."
+  ],
+  "course": "biology",
+  "lesson": "Succession",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Succession"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

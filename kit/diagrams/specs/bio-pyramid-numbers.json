@@ -1,0 +1,44 @@
+{
+ "id": "bio-pyramid-numbers",
+ "renderer": "pyramid",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Trophic levels",
+ "title": "A pyramid of numbers can be inverted",
+ "caption": "A pyramid of numbers counts organisms at each level, not their size or energy. One oak tree supports hundreds of caterpillars, so the second level is wider than the first, and the pyramid is inverted. A pyramid of energy is never inverted. The numbers are illustrative.",
+ "alt": "A four-level pyramid of numbers on a log scale: one oak tree, 500 caterpillars, 5 blue tits and 1 sparrowhawk, with the caterpillar level wider than the oak level.",
+ "description": [
+  "One oak tree (the producer).",
+  "About 500 caterpillars (primary consumers) feed on it: more organisms than at the level below, so the pyramid is inverted here.",
+  "5 blue tits (secondary consumers).",
+  "1 sparrowhawk (tertiary consumer).",
+  "A pyramid of numbers ignores the size of the organisms, which is why it can be inverted."
+ ],
+ "kind": "numbers",
+ "qUnit": "individuals",
+ "scale": "log",
+ "levels": [
+  {
+   "label": "oak tree",
+   "value": 1
+  },
+  {
+   "label": "caterpillars",
+   "value": 500
+  },
+  {
+   "label": "blue tits",
+   "value": 5
+  },
+  {
+   "label": "sparrowhawk",
+   "value": 1
+  }
+ ],
+ "claims": [
+  {
+   "type": "inverted",
+   "level": 1
+  }
+ ]
+}

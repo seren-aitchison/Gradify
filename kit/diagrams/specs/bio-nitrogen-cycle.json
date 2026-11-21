@@ -1,0 +1,101 @@
+{
+ "id": "bio-nitrogen-cycle",
+ "renderer": "biocycle",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Nitrogen cycle",
+ "title": "The nitrogen cycle",
+ "caption": "Most organisms cannot use N₂ because its triple bond is so strong. Nitrogen-fixing bacteria turn it into ammonium; nitrifying bacteria turn ammonium into nitrate (by way of nitrite); plants assimilate nitrate into protein and DNA; decomposers return nitrogen from dead matter as ammonium; and denitrifying bacteria turn nitrate back into N₂ in waterlogged soil.",
+ "alt": "A ring of six nitrogen stores: atmospheric nitrogen, ammonium, nitrate, plants, animals and dead matter, joined by arrows for nitrogen fixation, nitrification, assimilation, feeding, death and excretion, ammonification and denitrification.",
+ "description": [
+  "Nitrogen fixation: bacteria (Rhizobium, Azotobacter) or lightning turn N₂ into ammonia, which forms ammonium.",
+  "Nitrification: Nitrosomonas turns ammonium into nitrite and Nitrobacter turns nitrite into nitrate.",
+  "Assimilation: plants absorb nitrate to make proteins and DNA; animals get nitrogen by feeding.",
+  "Death and excretion pass nitrogen to dead matter; ammonification by decomposers turns it back into ammonium.",
+  "Denitrification: anaerobic bacteria turn nitrate back into N₂."
+ ],
+ "cycle": "nitrogen",
+ "nodes": [
+  {
+   "id": "atmosphere",
+   "label": "N₂ in the atmosphere",
+   "tone": "a3"
+  },
+  {
+   "id": "ammonium",
+   "label": "ammonium",
+   "tone": "a1"
+  },
+  {
+   "id": "nitrate",
+   "label": "nitrate",
+   "tone": "a4"
+  },
+  {
+   "id": "plants",
+   "label": "plants",
+   "tone": "good"
+  },
+  {
+   "id": "animals",
+   "label": "animals",
+   "tone": "a5"
+  },
+  {
+   "id": "dead matter",
+   "label": "dead matter",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "atmosphere",
+   "to": "ammonium",
+   "process": "nitrogen fixation",
+   "colour": "a3"
+  },
+  {
+   "from": "ammonium",
+   "to": "nitrate",
+   "process": "nitrification",
+   "colour": "a1"
+  },
+  {
+   "from": "nitrate",
+   "to": "plants",
+   "process": "assimilation",
+   "colour": "good"
+  },
+  {
+   "from": "plants",
+   "to": "animals",
+   "process": "feeding",
+   "colour": "a5"
+  },
+  {
+   "from": "animals",
+   "to": "dead matter",
+   "process": "death and excretion",
+   "colour": "a2"
+  },
+  {
+   "from": "dead matter",
+   "to": "ammonium",
+   "process": "ammonification",
+   "colour": "a4"
+  },
+  {
+   "from": "nitrate",
+   "to": "atmosphere",
+   "process": "denitrification",
+   "colour": "a3",
+   "at": 0.3
+  },
+  {
+   "from": "plants",
+   "to": "dead matter",
+   "process": "death and excretion",
+   "colour": "a2"
+  }
+ ]
+}

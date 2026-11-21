@@ -1,0 +1,107 @@
+{
+ "id": "bio-carbon-cycle",
+ "renderer": "biocycle",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Carbon cycle",
+ "title": "The carbon cycle",
+ "caption": "Producers take CO₂ from the atmosphere by photosynthesis and pass carbon to consumers by feeding. Respiration by every organism, including decomposers, returns it, and dead matter feeds the decomposers. Combustion of fossil fuels returns carbon that was locked away for millions of years, adding CO₂ faster than it is removed.",
+ "alt": "A ring of five carbon stores: atmosphere, producers, consumers, decomposers and fossil fuels, joined by arrows for photosynthesis, feeding, respiration, death, fossilisation and combustion.",
+ "description": [
+  "Photosynthesis moves carbon from the atmosphere into producers.",
+  "Feeding passes it from producers to consumers.",
+  "Respiration by producers, consumers and decomposers returns it to the atmosphere.",
+  "Death passes carbon in dead matter to decomposers.",
+  "Fossilisation locks carbon into fossil fuels; combustion releases it again."
+ ],
+ "cycle": "carbon",
+ "nodes": [
+  {
+   "id": "atmosphere",
+   "label": "CO₂ in the atmosphere",
+   "tone": "a3"
+  },
+  {
+   "id": "producers",
+   "label": "producers",
+   "tone": "good"
+  },
+  {
+   "id": "consumers",
+   "label": "consumers",
+   "tone": "a1"
+  },
+  {
+   "id": "decomposers",
+   "label": "decomposers",
+   "tone": "a5"
+  },
+  {
+   "id": "fossil fuels",
+   "label": "fossil fuels",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "atmosphere",
+   "to": "producers",
+   "process": "photosynthesis",
+   "colour": "good",
+   "at": 0.4
+  },
+  {
+   "from": "producers",
+   "to": "consumers",
+   "process": "feeding",
+   "colour": "a1"
+  },
+  {
+   "from": "consumers",
+   "to": "atmosphere",
+   "process": "respiration",
+   "colour": "a3",
+   "at": 0.65
+  },
+  {
+   "from": "producers",
+   "to": "decomposers",
+   "process": "death",
+   "colour": "a5",
+   "at": 0.3
+  },
+  {
+   "from": "decomposers",
+   "to": "atmosphere",
+   "process": "respiration",
+   "colour": "a3",
+   "at": 0.3
+  },
+  {
+   "from": "fossil fuels",
+   "to": "atmosphere",
+   "process": "combustion",
+   "colour": "a2"
+  },
+  {
+   "from": "consumers",
+   "to": "fossil fuels",
+   "process": "fossilisation",
+   "colour": "a2",
+   "at": 0.72
+  },
+  {
+   "from": "consumers",
+   "to": "decomposers",
+   "process": "death",
+   "colour": "a5"
+  },
+  {
+   "from": "producers",
+   "to": "atmosphere",
+   "process": "respiration",
+   "colour": "a3",
+   "at": 0.62
+  }
+ ]
+}
