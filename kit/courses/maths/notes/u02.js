@@ -161,6 +161,7 @@ X: Find gcd(252, 198).
 > 252 = 1 × 198 + 54
 > 198 = 3 × 54 + 36; 54 = 1 × 36 + 18; 36 = 2 × 18 + 0
 > gcd(252, 198) = 18
+D: maths-u02-euclid-squares
 - Example: gcd(21, 13) takes 6 steps, because consecutive Fibonacci numbers are the worst case.
 K: Repeatedly replace (a, b) by (b, a mod b); the last non-zero remainder is the gcd; it's fast, with steps proportional to the number of digits.
 !: Stopping at the zero remainder and reporting 0 instead of the previous remainder.
@@ -248,6 +249,7 @@ X: Find all non-negative integer solutions of 3x + 5y = 47.
 > gcd(3, 5) = 1 divides 47; try y values: y = 7 gives 3x = 12, so x = 4
 > General solution: x = 4 + 5t, y = 7 − 3t
 > Non-negative: t = 0, 1, 2 give (4, 7), (9, 4), (14, 1)
+D: maths-u02-lattice-line
 K: ax + by = c is solvable iff gcd(a, b) | c; find one solution and add multiples of (b/d, −a/d); non-linear equations range from easy to undecidable.
 !: Giving one solution when the question asks for all of them.
 Q: Does 6x + 9y = 20 have integer solutions? | No: gcd(6, 9) = 3 doesn't divide 20.
@@ -292,6 +294,7 @@ X: Find d(72) and σ(72).
 > 72 = 2^{3} × 3^{2}
 > d(72) = (3 + 1)(2 + 1) = 12
 > σ(72) = (1 + 2 + 4 + 8)(1 + 3 + 9) = 15 × 13 = 195
+D: maths-u02-divisor-grid
 - Example: d(60) = 12, since 60 = 2^{2} × 3 × 5 gives 3 × 2 × 2.
 K: From n = Πp^{a}: d(n) = Π(a + 1) and σ(n) = Π(1 + p + … + p^{a}); both are multiplicative; d(n) is odd only for squares.
 !: Multiplying the exponents instead of the exponents plus one when counting divisors.
@@ -381,6 +384,7 @@ X: Use Binet's formula to check F₁₀.
 > φ^{10} ≈ 122.99
 > φ^{10}/√5 ≈ 122.99/2.236 ≈ 55.0
 > So F₁₀ = 55 (check: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55)
+D: maths-u02-fibonacci
 K: F_{n} = F_{n−1} + F_{n−2}; Binet's formula and φ; gcd(F_{m}, F_{n}) = F_{gcd(m, n)}; Cassini and Zeckendorf identities.
 !: Starting the sequence inconsistently (F₀ = 0, F₁ = 1 versus F₁ = F₂ = 1) and getting indices wrong.
 Q: What is F₁₂? | 144.
@@ -425,6 +429,7 @@ X: Find the continued fraction of 43/19.
 > 43/19 = 2 + 5/19; invert: 19/5 = 3 + 4/5
 > 5/4 = 1 + 1/4; 4 = 4 exactly
 > 43/19 = [2; 3, 1, 4]
+D: maths-u02-cf-squares
 K: Repeatedly take integer parts and invert; rationals terminate, quadratic surds repeat; convergents are best rational approximations.
 !: Forgetting to invert the fractional part at each step.
 Q: What is the continued fraction of √2? | [1; 2, 2, 2, …].
@@ -927,6 +932,7 @@ X: Factorise 13 in the Gaussian integers and check with the norm.
 > 13 = 4 + 9 = 2^{2} + 3^{2}
 > So 13 = (2 + 3i)(2 − 3i)
 > Norms: N(2 + 3i) = 13 and N(13) = 169 = 13 × 13 ✓
+D: maths-u02-gaussian-13
 K: Number fields have their own integers; norms are multiplicative; Gaussian integers explain sums of two squares; ideals repair failed unique factorisation.
 !: Assuming unique factorisation holds in every ring of algebraic integers.
 Q: What is N(1 + i)? | 2.
@@ -1014,6 +1020,7 @@ X: On y^{2} = x^{3} − 2x + 1, add P = (0, 1) and Q = (1, 0).
 > λ = (0 − 1)/(1 − 0) = −1
 > x₃ = 1 − 0 − 1 = 0; y₃ = −1(0 − 0) − 1 = −1
 > P + Q = (0, −1); check: (−1)^{2} = 0 − 0 + 1 ✓
+D: maths-u02-elliptic-add
 K: Points add by chords and tangents, with O as identity; over 𝔽_{p} there are about p + 1 points (Hasse); scalar multiplication is easy, its inverse hard.
 !: Forgetting to reflect the third intersection point in the x-axis.
 Q: What is the identity element of the elliptic curve group? | The point at infinity O.
@@ -1057,6 +1064,7 @@ X: Use the slope t = 1/2 on x^{2} + y^{2} = 1 to find a rational point and a Pyt
 > x = (1 − 1/4)/(1 + 1/4) = (3/4)/(5/4) = 3/5
 > y = (2 × 1/2)/(5/4) = 1/(5/4) = 4/5
 > (3/5, 4/5) is on the circle, giving the triple 3, 4, 5
+D: maths-u02-rational-circle
 K: Conics have none or infinitely many rational points, parametrised by slopes; genus 1 gives finitely generated groups; genus ≥ 2 gives finitely many (Faltings).
 !: Assuming every polynomial equation with real solutions has rational ones (x^{2} + y^{2} = 3 has none).
 Q: What genus does an elliptic curve have? | 1.

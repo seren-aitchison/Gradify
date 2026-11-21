@@ -32560,5 +32560,716 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u02-cf-squares": {
+  "title": "43/19 = [2; 3, 1, 4] as squares",
+  "caption": "Tile a 43 × 19 rectangle with the biggest squares possible: 2 squares of side 19, then 3 of side 5, then 1 of side 4, then 4 of side 1. Those counts, 2, 3, 1, 4, are the continued fraction [2; 3, 1, 4].",
+  "alt": "A rectangle 43 by 19 tiled by two 19 squares, three 5 squares, one 4 square and four unit squares.",
+  "description": [
+   "Take a rectangle 43 wide and 19 tall.",
+   "Two squares of side 19 fit (43 = 2 × 19 + 5), leaving a 5 × 19 strip.",
+   "Three squares of side 5 fit (19 = 3 × 5 + 4), leaving a 5 × 4 piece.",
+   "One square of side 4 fits (5 = 1 × 4 + 1), leaving a 1 × 4 piece.",
+   "Four unit squares finish it (4 = 4 × 1), so 43/19 = [2; 3, 1, 4]."
+  ],
+  "course": "maths",
+  "lesson": "Continued Fractions",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Continued Fractions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area of T0aT0bT0cT0d = 361",
+    "ok": true,
+    "detail": "shoelace 361"
+   },
+   {
+    "name": "area of T1aT1bT1cT1d = 361",
+    "ok": true,
+    "detail": "shoelace 361"
+   },
+   {
+    "name": "area of T2aT2bT2cT2d = 25",
+    "ok": true,
+    "detail": "shoelace 25"
+   },
+   {
+    "name": "area of T3aT3bT3cT3d = 25",
+    "ok": true,
+    "detail": "shoelace 25"
+   },
+   {
+    "name": "area of T4aT4bT4cT4d = 25",
+    "ok": true,
+    "detail": "shoelace 25"
+   },
+   {
+    "name": "area of T5aT5bT5cT5d = 16",
+    "ok": true,
+    "detail": "shoelace 16"
+   },
+   {
+    "name": "area of T6aT6bT6cT6d = 1",
+    "ok": true,
+    "detail": "shoelace 1"
+   },
+   {
+    "name": "area of T7aT7bT7cT7d = 1",
+    "ok": true,
+    "detail": "shoelace 1"
+   },
+   {
+    "name": "area of T8aT8bT8cT8d = 1",
+    "ok": true,
+    "detail": "shoelace 1"
+   },
+   {
+    "name": "area of T9aT9bT9cT9d = 1",
+    "ok": true,
+    "detail": "shoelace 1"
+   },
+   {
+    "name": "the squares fill the 43 × 19 rectangle exactly",
+    "ok": true,
+    "detail": "shoelace 817"
+   },
+   {
+    "name": "the lesson states \"43/19 = [2; 3, 1, 4]\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×250"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×230"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u02-divisor-grid": {
+  "title": "The 12 divisors of 72 as an area",
+  "caption": "Every divisor of 72 = 2³ × 3² is a power of 2 times a power of 3: the 4 × 3 = 12 cells of this grid. Widths 1, 2, 4, 8 add to 15 and heights 1, 3, 9 add to 13, so the cells add to 15 × 13 = 195.",
+  "alt": "A grid of 12 rectangles, widths 1, 2, 4, 8 and heights 1, 3, 9, each labelled with its area, a divisor of 72.",
+  "description": [
+   "Widths are the powers of 2 up to 2³: 1, 2, 4, 8, which add to 15.",
+   "Heights are the powers of 3 up to 3²: 1, 3, 9, which add to 13.",
+   "Each cell's area is a divisor of 72, and all 12 divisors appear: d(72) = 4 × 3 = 12.",
+   "The cells add up to the whole rectangle: σ(72) = 15 × 13 = 195."
+  ],
+  "course": "maths",
+  "lesson": "Divisor Functions",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Divisor Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area of T0aT0bT0cT0d = 1",
+    "ok": true,
+    "detail": "shoelace 1; label \"1\""
+   },
+   {
+    "name": "area of T1aT1bT1cT1d = 3",
+    "ok": true,
+    "detail": "shoelace 3; label \"3\""
+   },
+   {
+    "name": "area of T2aT2bT2cT2d = 9",
+    "ok": true,
+    "detail": "shoelace 9; label \"9\""
+   },
+   {
+    "name": "area of T3aT3bT3cT3d = 2",
+    "ok": true,
+    "detail": "shoelace 2; label \"2\""
+   },
+   {
+    "name": "area of T4aT4bT4cT4d = 6",
+    "ok": true,
+    "detail": "shoelace 6; label \"6\""
+   },
+   {
+    "name": "area of T5aT5bT5cT5d = 18",
+    "ok": true,
+    "detail": "shoelace 18; label \"18\""
+   },
+   {
+    "name": "area of T6aT6bT6cT6d = 4",
+    "ok": true,
+    "detail": "shoelace 4; label \"4\""
+   },
+   {
+    "name": "area of T7aT7bT7cT7d = 12",
+    "ok": true,
+    "detail": "shoelace 12; label \"12\""
+   },
+   {
+    "name": "area of T8aT8bT8cT8d = 36",
+    "ok": true,
+    "detail": "shoelace 36; label \"36\""
+   },
+   {
+    "name": "area of T9aT9bT9cT9d = 8",
+    "ok": true,
+    "detail": "shoelace 8; label \"8\""
+   },
+   {
+    "name": "area of T10aT10bT10cT10d = 24",
+    "ok": true,
+    "detail": "shoelace 24; label \"24\""
+   },
+   {
+    "name": "area of T11aT11bT11cT11d = 72",
+    "ok": true,
+    "detail": "shoelace 72; label \"72\""
+   },
+   {
+    "name": "the grid is 15 × 13 = σ(72) = 195",
+    "ok": true,
+    "detail": "shoelace 195"
+   },
+   {
+    "name": "the lesson states \"d(72) = (3 + 1)(2 + 1) = 12\", \"σ(72) = (1 + 2 + 4 + 8)(1 + 3 + 9) = 15 × 13 = 195\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×330"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u02-elliptic-add": {
+  "title": "Adding points on y² = x³ − 2x + 1",
+  "caption": "The line through P = (0, 1) and Q = (1, 0) has slope −1. It meets the curve again at P (it is tangent there), so the third point is P itself; reflecting it in the x-axis gives P + Q = (0, −1).",
+  "alt": "The elliptic curve y squared equals x cubed minus 2x plus 1, with the line y = 1 − x through (0, 1) and (1, 0), and the point (0, −1) marked as the sum.",
+  "description": [
+   "The curve has an oval for −1.6 ≤ x ≤ 0.6 and an open branch from x = 1.",
+   "The chord through P = (0, 1) and Q = (1, 0) is y = 1 − x, with slope λ = −1.",
+   "Substituting gives x²(x − 1) = 0, so the third intersection is at x = 0 again: the line touches the curve at P.",
+   "Reflect that point in the x-axis: P + Q = (0, −1)."
+  ],
+  "course": "maths",
+  "lesson": "Elliptic Curves",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Elliptic Curves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P = (0, 1) is on the curve: 1² = 0 − 0 + 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "Q = (1, 0) is on the curve: 0² = 1 − 2 + 1",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "P + Q = (0, −1) is on the curve: (−1)² = 0 − 0 + 1",
+    "ok": true,
+    "detail": "y(0) = -1"
+   },
+   {
+    "name": "the line y = 1 − x passes through P",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "the line y = 1 − x passes through Q",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u02-euclid-squares": {
+  "title": "Euclid's algorithm as squares",
+  "caption": "A 252 × 198 rectangle is cut into squares: one of side 198, three of side 54, one of 36 and two of side 18. The last square, 18, is gcd(252, 198), and it tiles the whole rectangle.",
+  "alt": "A rectangle 252 wide and 198 tall filled by a 198 square, three 54 squares, a 36 square and two 18 squares.",
+  "description": [
+   "Start with a rectangle 252 by 198, the numbers of the example.",
+   "Cut off the largest square, 198 × 198 (252 = 1 × 198 + 54): a strip 54 wide remains.",
+   "Three 54 squares fit in the strip (198 = 3 × 54 + 36), leaving a 54 × 36 piece.",
+   "A 36 square fits once (54 = 1 × 36 + 18), leaving 18 × 36, which is exactly two 18 squares (36 = 2 × 18 + 0).",
+   "The last square has side 18, so gcd(252, 198) = 18."
+  ],
+  "course": "maths",
+  "lesson": "Euclidean Algorithm",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Euclidean Algorithm"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area of T0aT0bT0cT0d = 39,204",
+    "ok": true,
+    "detail": "shoelace 39,204"
+   },
+   {
+    "name": "area of T1aT1bT1cT1d = 2,916",
+    "ok": true,
+    "detail": "shoelace 2,916"
+   },
+   {
+    "name": "area of T2aT2bT2cT2d = 2,916",
+    "ok": true,
+    "detail": "shoelace 2,916"
+   },
+   {
+    "name": "area of T3aT3bT3cT3d = 2,916",
+    "ok": true,
+    "detail": "shoelace 2,916"
+   },
+   {
+    "name": "area of T4aT4bT4cT4d = 1,296",
+    "ok": true,
+    "detail": "shoelace 1,296"
+   },
+   {
+    "name": "area of T5aT5bT5cT5d = 324",
+    "ok": true,
+    "detail": "shoelace 324"
+   },
+   {
+    "name": "area of T6aT6bT6cT6d = 324",
+    "ok": true,
+    "detail": "shoelace 324"
+   },
+   {
+    "name": "the rectangle is 252 × 198, and the squares fill it exactly",
+    "ok": true,
+    "detail": "shoelace 49,896"
+   },
+   {
+    "name": "the last square has side 18 = gcd(252, 198)",
+    "ok": true,
+    "detail": "measured 18"
+   },
+   {
+    "name": "the lesson states \"252 = 1 × 198 + 54\", \"gcd(252, 198) = 18\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u02-fibonacci": {
+  "title": "The first ten Fibonacci numbers",
+  "caption": "Each term is the sum of the two before it. Binet's formula gives φ¹⁰/√5 ≈ 55, which rounds to F₁₀ = 55.",
+  "alt": "The sequence 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 with each term the sum of the previous two.",
+  "description": [
+   "The first two terms are 1 and 1.",
+   "Each later term is the sum of the two before it: 1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, and so on.",
+   "The tenth term is 21 + 34 = 55, matching Binet's formula."
+  ],
+  "course": "maths",
+  "lesson": "Fibonacci Numbers",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Fibonacci Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (fibonacci)",
+    "ok": true,
+    "detail": "1, 1, 2, 3, 5, 8, 13, 21, 34, 55"
+   },
+   {
+    "name": "term 10 is 55",
+    "ok": true,
+    "detail": "55"
+   },
+   {
+    "name": "the lesson states \"1, 1, 2, 3, 5, 8, 13, 21, 34, 55\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 680×120"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 380×120"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u02-gaussian-13": {
+  "title": "13 splits as (2 + 3i)(2 − 3i)",
+  "caption": "2 + 3i and 2 − 3i are mirror images in the real axis, each at distance √13 from the origin. Multiplying them gives 13 = 4 + 9, and the norms agree: 13 × 13 = 169 = N(13).",
+  "alt": "The points 2 + 3i and 2 − 3i on the complex plane, each at distance √13 from the origin.",
+  "description": [
+   "Plot 2 + 3i at (2, 3) and its conjugate 2 − 3i at (2, −3).",
+   "Each lies at distance √(2² + 3²) = √13 from the origin, so its norm is 13.",
+   "(2 + 3i)(2 − 3i) = 4 + 9 = 13, so the prime 13 is no longer prime in the Gaussian integers."
+  ],
+  "course": "maths",
+  "lesson": "Algebraic Number Theory",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Algebraic Number Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|2 + 3i| = √13",
+    "ok": true,
+    "detail": "measured 3.60555"
+   },
+   {
+    "name": "|2 − 3i| = √13",
+    "ok": true,
+    "detail": "measured 3.60555"
+   },
+   {
+    "name": "the lesson states \"13 = (2 + 3i)(2 − 3i)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 380×330"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u02-lattice-line": {
+  "title": "Whole-number solutions of 3x + 5y = 47",
+  "caption": "Every point of the line 3x + 5y = 47 solves the equation, but only some have whole-number coordinates: (4, 7), (9, 4) and (14, 1), each step 5 across and 3 down.",
+  "alt": "The line 3x + 5y = 47 on a grid with the three points (4, 7), (9, 4) and (14, 1) marked.",
+  "description": [
+   "The line 3x + 5y = 47 crosses the axes at (0, 9.4) and (15.67, 0).",
+   "y = 7 gives 3x = 12, so (4, 7) is a solution.",
+   "Each step of t adds 5 to x and takes 3 from y: (9, 4), then (14, 1).",
+   "Another step would make y negative, so there are exactly three non-negative solutions."
+  ],
+  "course": "maths",
+  "lesson": "Diophantine Equations",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Diophantine Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(4, 7), (9, 4) and (14, 1) lie on the line through (0, 47/5) and (47/3, 0), 3x + 5y = 47",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"(4, 7), (9, 4), (14, 1)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×259"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u02-rational-circle": {
+  "title": "A rational point on the unit circle",
+  "caption": "The line of slope 1/2 through (−1, 0) meets the circle again at (3/5, 4/5). Both coordinates are fractions, and clearing denominators gives the Pythagorean triple 3, 4, 5.",
+  "alt": "The unit circle with a line of slope 1/2 from (−1, 0) through (0, 1/2) to the point (3/5, 4/5), and a right triangle with sides 3/5, 4/5 and 1.",
+  "description": [
+   "Start at the point (−1, 0) on the unit circle x² + y² = 1.",
+   "Draw the line of slope t = 1/2; it crosses the y-axis at (0, 1/2).",
+   "It meets the circle again at (3/5, 4/5), found from x = (1 − t²)/(1 + t²) and y = 2t/(1 + t²).",
+   "The right triangle with legs 3/5 and 4/5 and hypotenuse 1 scales to 3, 4, 5."
+  ],
+  "course": "maths",
+  "lesson": "Arithmetic Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u02.js: Arithmetic Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at R is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "OR = 0.6 u02",
+    "ok": true,
+    "detail": "measured 0.6"
+   },
+   {
+    "name": "RQ = 0.8 u02",
+    "ok": true,
+    "detail": "measured 0.8"
+   },
+   {
+    "name": "(−1, 0) and (3/5, 4/5) lie on x² + y² = 1",
+    "ok": true,
+    "detail": "1, 1"
+   },
+   {
+    "name": "(−1, 0), (0, 1/2) and (3/5, 4/5) are on the line of slope 1/2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"(3/5, 4/5)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×318"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

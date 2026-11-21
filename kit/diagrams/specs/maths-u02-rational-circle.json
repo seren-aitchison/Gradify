@@ -1,0 +1,163 @@
+{
+ "id": "maths-u02-rational-circle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Arithmetic Geometry",
+ "title": "A rational point on the unit circle",
+ "caption": "The line of slope 1/2 through (−1, 0) meets the circle again at (3/5, 4/5). Both coordinates are fractions, and clearing denominators gives the Pythagorean triple 3, 4, 5.",
+ "alt": "The unit circle with a line of slope 1/2 from (−1, 0) through (0, 1/2) to the point (3/5, 4/5), and a right triangle with sides 3/5, 4/5 and 1.",
+ "description": [
+  "Start at the point (−1, 0) on the unit circle x² + y² = 1.",
+  "Draw the line of slope t = 1/2; it crosses the y-axis at (0, 1/2).",
+  "It meets the circle again at (3/5, 4/5), found from x = (1 − t²)/(1 + t²) and y = 2t/(1 + t²).",
+  "The right triangle with legs 3/5 and 4/5 and hypotenuse 1 scales to 3, 4, 5."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "P": [
+   -1,
+   0
+  ],
+  "Q": [
+   0.6,
+   0.8
+  ],
+  "R": [
+   0.6,
+   0
+  ],
+  "Y": [
+   0,
+   0.5
+  ]
+ },
+ "grid": {
+  "step": 0.2,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1.4,
+   1.5
+  ],
+  "y": [
+   -1.15,
+   1.2
+  ]
+ },
+ "height": [
+  330,
+  320
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "ink"
+  }
+ ],
+ "segments": [
+  {
+   "a": "P",
+   "b": "Q",
+   "colour": "a2",
+   "w": 2.4
+  },
+  {
+   "a": "O",
+   "b": "Q",
+   "colour": "a1"
+  },
+  {
+   "a": "R",
+   "b": "Q",
+   "colour": "a1"
+  },
+  {
+   "a": "O",
+   "b": "R",
+   "colour": "a1"
+  }
+ ],
+ "angles": [
+  {
+   "at": "R",
+   "from": "O",
+   "to": "Q",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "hide": [
+  "O",
+  "Y"
+ ],
+ "labelAt": {
+  "P": [
+   -6,
+   -16
+  ],
+  "Q": [
+   14,
+   -10
+  ],
+  "R": [
+   0,
+   18
+  ]
+ },
+ "lengths": [
+  {
+   "a": "O",
+   "b": "R",
+   "value": 0.6,
+   "label": "3/5",
+   "side": -1
+  },
+  {
+   "a": "R",
+   "b": "Q",
+   "value": 0.8,
+   "label": "4/5",
+   "side": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0.2,
+    0.55
+   ],
+   "text": "1",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "P",
+    "Q"
+   ],
+   "name": "(−1, 0) and (3/5, 4/5) lie on x² + y² = 1"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "P",
+    "Y",
+    "Q"
+   ],
+   "name": "(−1, 0), (0, 1/2) and (3/5, 4/5) are on the line of slope 1/2"
+  }
+ ],
+ "fromLesson": [
+  "(3/5, 4/5)"
+ ]
+}

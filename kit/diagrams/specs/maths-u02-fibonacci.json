@@ -1,0 +1,40 @@
+{
+ "id": "maths-u02-fibonacci",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Fibonacci Numbers",
+ "title": "The first ten Fibonacci numbers",
+ "caption": "Each term is the sum of the two before it. Binet's formula gives φ¹⁰/√5 ≈ 55, which rounds to F₁₀ = 55.",
+ "alt": "The sequence 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 with each term the sum of the previous two.",
+ "description": [
+  "The first two terms are 1 and 1.",
+  "Each later term is the sum of the two before it: 1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, and so on.",
+  "The tenth term is 21 + 34 = 55, matching Binet's formula."
+ ],
+ "terms": [
+  1,
+  1,
+  2,
+  3,
+  5,
+  8,
+  13,
+  21,
+  34,
+  55
+ ],
+ "rule": {
+  "kind": "fibonacci"
+ },
+ "checks": [
+  {
+   "type": "nth",
+   "n": 10,
+   "value": 55
+  }
+ ],
+ "fromLesson": [
+  "1, 1, 2, 3, 5, 8, 13, 21, 34, 55"
+ ]
+}

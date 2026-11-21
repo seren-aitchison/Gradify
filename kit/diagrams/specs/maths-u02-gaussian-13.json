@@ -1,0 +1,133 @@
+{
+ "id": "maths-u02-gaussian-13",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Algebraic Number Theory",
+ "title": "13 splits as (2 + 3i)(2 − 3i)",
+ "caption": "2 + 3i and 2 − 3i are mirror images in the real axis, each at distance √13 from the origin. Multiplying them gives 13 = 4 + 9, and the norms agree: 13 × 13 = 169 = N(13).",
+ "alt": "The points 2 + 3i and 2 − 3i on the complex plane, each at distance √13 from the origin.",
+ "description": [
+  "Plot 2 + 3i at (2, 3) and its conjugate 2 − 3i at (2, −3).",
+  "Each lies at distance √(2² + 3²) = √13 from the origin, so its norm is 13.",
+  "(2 + 3i)(2 − 3i) = 4 + 9 = 13, so the prime 13 is no longer prime in the Gaussian integers."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   2,
+   3
+  ],
+  "B": [
+   2,
+   -3
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1.5,
+   4.5
+  ],
+  "y": [
+   -4.5,
+   4.5
+  ]
+ },
+ "height": [
+  320,
+  330
+ ],
+ "vectors": [
+  {
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    2,
+    3
+   ],
+   "colour": "a1"
+  },
+  {
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    2,
+    -3
+   ],
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "A": [
+   -30,
+   -2
+  ],
+  "B": [
+   -30,
+   4
+  ]
+ },
+ "notes": [
+  {
+   "at": [
+    3.6,
+    3
+   ],
+   "text": "2 + 3i",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    3.6,
+    -3
+   ],
+   "text": "2 − 3i",
+   "colour": "a2",
+   "size": 13
+  },
+  {
+   "at": [
+    0.45,
+    1.75
+   ],
+   "text": "√13",
+   "colour": "a1",
+   "size": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "A",
+   "value": "sqrt(13)",
+   "name": "|2 + 3i| = √13"
+  },
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "B",
+   "value": "sqrt(13)",
+   "name": "|2 − 3i| = √13"
+  }
+ ],
+ "fromLesson": [
+  "13 = (2 + 3i)(2 − 3i)"
+ ]
+}

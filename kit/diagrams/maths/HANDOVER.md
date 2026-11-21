@@ -41,3 +41,7 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 
 - b2450b4c (main): renderers, tests, tooling, Unit 1. Full `npm test` 1089/1089 pass; tests/renderer-names.test.mjs
   passes (maths renderer names are unique; do not reuse physics' `vectors`).
+
+## Unit rows
+
+- u02 (agent maths-a): 36 lessons assessed; 8 diagrams (geometry 6, graph 1, sequence 1), 10 lab rows (modular 8, sieve 3 incl. shared), 18 null with reasons. All checks pass. Needed renderers: none missing (lattice/Argand drawn with geometry+axes).

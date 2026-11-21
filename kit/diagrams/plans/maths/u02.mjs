@@ -1,2 +1,41 @@
-// Unit 2: not planned yet. Fill this per kit/diagrams/maths/UNIT-AGENT.md.
-export default [];
+// Unit 2, Number Theory and Cryptography. Rows: kit/diagrams/BUILDERS.md.
+const PROOF = "a proof or a written chain of congruences: the notes' worked steps carry it better than a picture";
+const CRYPTO = "a protocol or key calculation in modular arithmetic: the numbers are laid out step by step in the notes, and the modular lab covers the exponentiation";
+export default [
+  ["u02-01", null, PROOF],
+  ["u02-02", "lab", "modular", "the clock for last digits and remainders: powers of 3 cycle 3, 9, 7, 1 mod 10"],
+  ["u02-03", "lab", "modular", "inverses on the clock: 3 × 5 ≡ 1 (mod 7), so 3x ≡ 4 gives x ≡ 6"],
+  ["u02-04", "geometry", "maths-u02-euclid-squares", "gcd(252, 198) = 18 as the last square cut from a 252 × 198 rectangle"],
+  ["u02-05", null, "back-substitution through the Euclidean steps is a written chain; the equations in the notes are the content"],
+  ["u02-06", "geometry", "maths-u02-lattice-line", "the whole-number points (4, 7), (9, 4), (14, 1) on the line 3x + 5y = 47"],
+  ["u02-07", "geometry", "maths-u02-divisor-grid", "the 12 divisors of 72 as a 15 × 13 grid of area σ(72) = 195"],
+  ["u02-08", null, "the Euclid–Euler form is a factorisation and one multiplication; the notes' steps carry it"],
+  ["u02-09", "sequence", "maths-u02-fibonacci", "the first ten Fibonacci numbers, each the sum of the two before, ending at F₁₀ = 55"],
+  ["u02-10", "geometry", "maths-u02-cf-squares", "43/19 = [2; 3, 1, 4] as 2, 3, 1 and 4 squares tiling a 43 × 19 rectangle"],
+  ["u02-11", "lab", "sieve", "the sieve of Eratosthenes: count the primes below 200 and compare with x/ln x"],
+  ["u02-12", "lab", "modular", "powers mod a prime return to 1 after p − 1 steps: 2¹² ≡ 1 (mod 13)"],
+  ["u02-13", "lab", "modular", "the units of a modulus are the residues coprime to it, and there are φ(n) of them"],
+  ["u02-14", "lab", "modular", "powers mod 10 cycle with period dividing φ(10) = 4"],
+  ["u02-15", null, "the Chinese remainder construction is a sequence of substitutions, written out in the notes"],
+  ["u02-16", null, "the list of squares mod 11 is a short table in the notes; a picture would repeat it"],
+  ["u02-17", "lab", "modular", "powers of 3 mod 7 visit all six residues, powers of 2 only three"],
+  ["u02-18", null, "Pell's equation is a computation with (x + y√D)ⁿ; the notes show the algebra"],
+  ["u02-19", null, "the gap 2.7 × 10⁻⁷ between 355/113 and π is far too small to show on any drawing"],
+  ["u02-20", null, "ζ(2) = π²/6 is an infinite product and sum, not something a drawing can show"],
+  ["u02-21", "geometry", "maths-u02-gaussian-13", "2 + 3i and 2 − 3i on the complex plane, each at distance √13, with product 13"],
+  ["u02-22", "lab", "sieve", "run the sieve up to 30 and beyond, crossing out multiples of 2, 3, 5"],
+  ["u02-23", "graph", "maths-u02-elliptic-add", "the line through P = (0, 1) and Q = (1, 0) on y² = x³ − 2x + 1 and the sum P + Q = (0, −1)"],
+  ["u02-24", "geometry", "maths-u02-rational-circle", "the slope 1/2 line from (−1, 0) meets the unit circle at (3/5, 4/5): the triple 3, 4, 5"],
+  ["u02-25", null, "a Caesar shift is a letter substitution, shown letter by letter in the notes"],
+  ["u02-26", null, CRYPTO],
+  ["u02-27", "lab", "modular", "square-and-multiply: powers modulo n on the clock"],
+  ["u02-28", null, CRYPTO],
+  ["u02-29", "lab", "modular", "powers of 3 modulo 17: find x with 3ˣ ≡ 13 by listing them"],
+  ["u02-30", null, "an operation count (about 384 for a 256-bit scalar); no geometry to draw"],
+  ["u02-31", null, "a birthday probability from a long product; a bar chart would only restate one number"],
+  ["u02-32", null, "trial division by the primes up to √221 is a short written list"],
+  ["u02-33", "lab", "sieve", "factorise numbers up to 200 and see the factor pairs"],
+  ["u02-34", null, "Pollard's p − 1 is a modular computation followed by a gcd, written in the notes"],
+  ["u02-35", null, "a toy LWE sample is one arithmetic line; the lattice picture needs a renderer that does not exist"],
+  ["u02-36", null, "Grover's square-root saving is a statement about powers of 2, not a picture"],
+];
