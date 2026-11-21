@@ -225,7 +225,8 @@ function flow(spec, W, narrow) {
       if (Math.abs(i - j) === 1 && ![...direct].some((d) => (d.from === e.to && d.to === e.from) || (d.from === e.from && d.to === e.to))) direct.add(e);
       else lanes.set(e, lanes.size); }
     const laneLines = (e) => (e.label ? wrap(e.label, laneChars()).length : 0);
-    let y = 24;
+    // room above the first box for the labels of steps routed back to it
+    let y = 24 + [...lanes.keys()].filter((e) => at[e.to] === 0).reduce((t, e) => t + laneLines(e), 0) * 14;
     order.forEach((id, i) => {
       if (i) {
         const d = [...direct].find((e) => [e.from, e.to].includes(order[i - 1]) && [e.from, e.to].includes(id));

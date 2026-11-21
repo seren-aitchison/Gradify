@@ -550,7 +550,7 @@ function dotcross(spec, W, narrow) {
     if (m.bracket) { const minx = Math.min(...m.atoms.map((a) => P(a)[0])) - (m.style === "lewis" ? 30 : R + 8), maxx = Math.max(...m.atoms.map((a) => P(a)[0])) + (m.style === "lewis" ? 30 : R + 8), miny = Math.min(...m.atoms.map((a) => P(a)[1])) - (m.style === "lewis" ? 30 : R + 6), maxy = Math.max(...m.atoms.map((a) => P(a)[1])) + (m.style === "lewis" ? 30 : R + 6); s += `<path d="M${f1(minx + 6)} ${f1(miny)} h-6 v${f1(maxy - miny)} h6 M${f1(maxx - 6)} ${f1(miny)} h6 v${f1(maxy - miny)} h-6" fill="none" stroke="${C.ink}" stroke-width="2"/>` + text(maxx + 6, miny + 4, m.charge > 0 ? `${m.charge > 1 ? m.charge : ""}+` : `${-m.charge > 1 ? -m.charge : ""}−`, { size: 15, weight: 800, anchor: "start" }); }
     s += text(10 + col0 * cw + cw / 2, top + rowH - 12, fm(m.label || ""), { size: 13, weight: 700 });
     if (m.sub) s += text(10 + col0 * cw + cw / 2, top + rowH + 6, fm(m.sub), { size: 11.5, fill: C.soft });
-    H = Math.max(H, 20 + (row + 1) * rowH + (m.sub ? 20 : 4));
+    H = Math.max(H, top + rowH + (m.sub ? 20 : 4));
   });
   if (spec.arrowBetween && !narrow) s += arrow(W / 2 - 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, W / 2 + 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, { w: 2.4, head: 10 });
   const marks = [...new Set(spec.molecules.flatMap((m) => m.atoms.map((a) => a.mark || "dot")))];

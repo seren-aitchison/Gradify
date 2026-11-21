@@ -13,7 +13,7 @@ Renderers and what they check:
               mass and the fragment is part of the molecule; isotope peaks give the relative atomic mass
   ir          an infrared spectrum: each labelled band lies in its data-booklet range and the bond is present
 """
-import json, math, re, sys, os
+import decimal, json, math, re, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from rdkit import Chem, RDLogger
 from rdkit.Chem import rdDepictor, rdMolDescriptors, rdCIPLabeler, Descriptors
@@ -487,7 +487,8 @@ def ms(spec, W, narrow):
     # ticks by index, not by adding the step (0.01 steps drift: 27.990000000000002), with the step's decimals; on a
     # narrow axis every k-th label is kept so neighbours never touch
     step = spec.get("tick", 10)
-    dec = max(0, -math.floor(math.log10(step) + 1e-9)) if step < 1 else 0
+    # decimals from the step as written (0.25 → 2, 2.5 → 1, 0.01 → 2), not from its magnitude
+    dec = max(0, -decimal.Decimal(str(step)).normalize().as_tuple().exponent)
     first, n = math.ceil(lo / step - 1e-9), math.floor(hi / step + 1e-9)
     labw = max(len(f"{v * step:.{dec}f}") for v in (first, n)) * 6.6 + 8
     every = max(1, math.ceil(labw / max(1e-9, X(step) - X(0))))

@@ -43,7 +43,9 @@ function trendValues(spec) {
 }
 function trend(spec, W, narrow) {
   const H = spec.height?.[narrow ? 1 : 0] || (narrow ? 360 : 360);
-  const pad = { l: narrow ? 56 : 66, r: 18, t: 34, b: spec.kind === "ladder" ? 20 : 62 };
+  // a series key (point-labelled series) takes the bottom row; an x title then goes on the row above it
+  const keyBelow = spec.kind === "series" && spec.pointLabels && (spec.series || []).some((sr) => sr.label);
+  const pad = { l: narrow ? 56 : 66, r: 18, t: 34, b: spec.kind === "ladder" ? 20 : 62 + (keyBelow && spec.xTitle ? 20 : 0) };
   const vals = trendValues(spec), all = Object.values(vals);
   const log = !!spec.log;
   const [lo, hi] = spec.range || [Math.min(0, ...all), Math.max(...all) * 1.12];
@@ -72,7 +74,7 @@ function trend(spec, W, narrow) {
     if (turn) s += text(sx(i), H - pad.b + 14, lab, { size: lblSize, weight: narrow && n > 12 ? 500 : 600, fill: C.ink }).replace("<text", `<text transform="rotate(${turn} ${f1(sx(i))} ${f1(H - pad.b + 14)})" text-anchor="end"`).replace(/text-anchor="middle"/, "");
     else wrap(raw[i], cwid(raw[i]) > slot - 4 ? fitN : 99).forEach((l, k) => { s += text(sx(i), H - pad.b + 16 + k * 14, fm(l), { size: lblSize, weight: 600, fill: C.ink }); });
   });
-  if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - 14, spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
+  if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - (keyBelow ? 36 : 14), spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
   const pl = [], ends = []; let keyRow = false;
   if (spec.kind === "bars") {
     const bw = Math.min(46, slot * 0.66);
