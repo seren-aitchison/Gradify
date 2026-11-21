@@ -30,17 +30,17 @@ function lessons(course) {
 function report(name, course, plan) {
   const { ids, placed } = lessons(course);
   let covered = 0, skipped = 0, failed = 0, notPlaced = 0;
-  const missing = [];
+  const missing = [], distinct = new Set();
   for (const row of plan) {
     const [lid, renderer] = row, title = ids[lid], ds = placed[`${lid.slice(0, 3)} ${title}`] || [];
     const ok = ds.filter((d) => manifest[d] && manifest[d].status !== "failed");
     if (!renderer) { skipped++; if (list) console.log(`  ${lid} ${title}: no diagram (${row[2]})`); continue; }
-    if (ok.length) covered++;
+    if (ok.length) { covered++; ok.forEach((d) => distinct.add(d)); }
     else if (ds.length) { failed++; missing.push(`${lid} ${title}: placed but failing (${ds.join(", ")})`); }
     else { notPlaced++; missing.push(`${lid} ${title}: planned ${row[2]}, nothing placed`); }
     if (list && ok.length) console.log(`  ${lid} ${title}: ${ok.join(", ")}`);
   }
-  console.log(`${name}: ${plan.length} lessons · ${covered} with a passing diagram · ${skipped} without one by design · ${notPlaced} planned but not placed · ${failed} failing`);
+  console.log(`${name}: ${plan.length} lessons · ${covered} with a passing diagram (${distinct.size} distinct diagrams; one can serve several lessons) · ${skipped} without one by design · ${notPlaced} planned but not placed · ${failed} failing`);
   for (const m of missing) console.log(`  ✗ ${m}`);
   return missing.length;
 }

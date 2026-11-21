@@ -17,10 +17,15 @@ import { parseFormula, balanced, configuration, readConfig, sameConfig, configTe
 const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line: "var(--vx-line, #8a92a8)", grid: "var(--vx-grid, #e6e8f0)", panel: "var(--vx-panel, #f4f5fb)" };
 // subscript digits in formulae and superscript charges, written in the text() markup: H2O → H_{2}O, SO4^2- → SO_{4}^{2−}
 export function fm(s) {
-  // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too
+  // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too. A charge may be
+  // followed by "/" in a redox couple (Fe3+/Fe2+). One element: the digit is the charge (Fe3+). Several elements: the
+  // digits are counts and the sign is a charge of 1 (NH4+, MnO4−). A complex ion's charge follows "]" ([Cu(H2O)6]2+).
+  const q1 = (q) => (q === "+" ? "+" : "−"), END = "(?=$|[\\s(),;:/])";
   return ascii(s, true).replace(/\^([+-]\d+)/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
-    .replace(/(^|[\s(+])(\d*)([A-Z][a-z]?)(\d)([+−-])(?=$|[\s(),;:])/g, (_, b, c, el, n, q) => `${b}${c}${el}^{${n}${q === "+" ? "+" : "−"}}`)
-    .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:])/g, (_, a, q) => `${a}^{${q === "+" ? "+" : "−"}}`)
+    .replace(new RegExp(`(^|[\\s(+/])(\\d*)([A-Z][a-z]?)(\\d)([+−-])${END}`, "g"), (_, b, c, el, n, q) => `${b}${c}${el}^{${n}${q1(q)}}`)
+    .replace(new RegExp(`(^|[\\s(+/])((?:[A-Z][a-z]?\\d*|\\([^()\\s]*\\)\\d*){2,})([+−-])${END}`, "g"), (_, b, f, q) => `${b}${f}^{${q1(q)}}`)
+    .replace(new RegExp(`\\](\\d*)([+−-])${END}`, "g"), (_, n, q) => `]^{${n}${q1(q)}}`)
+    .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:/])/g, (_, a, q) => `${a}^{${q1(q)}}`)
     .replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
 const rng = (seed) => { let h = 2166136261; for (const c of String(seed)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; };

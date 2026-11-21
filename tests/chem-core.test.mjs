@@ -48,3 +48,15 @@ test("periodic table positions", () => {
   assert.deepEqual(position(Z.La), { period: 6, group: 3, block: "d" });
   assert.equal(position(Z.Lu).block, "f");
 });
+
+test("display formatter: charges after a slash, polyatomic and complex ions", async () => {
+  const { fm } = await import("../kit/diagrams/chem-renderers.js");
+  assert.equal(fm("Fe3+/Fe2+"), "Fe^{3+}/Fe^{2+}");
+  assert.equal(fm("MnO4-/Mn2+"), "MnO_{4}^{−}/Mn^{2+}");
+  assert.equal(fm("NH4+ + Br-"), "NH_{4}^{+} + Br^{−}");
+  assert.equal(fm("NO3- ions"), "NO_{3}^{−} ions");
+  assert.equal(fm("[Cu(H2O)6]2+"), "[Cu(H_{2}O)_{6}]^{2+}");
+  assert.equal(fm("Cr2O7^2-"), "Cr_{2}O_{7}^{2−}");
+  assert.equal(fm("2H2 + O2 → 2H2O"), "2H_{2} + O_{2} → 2H_{2}O");
+  assert.equal(fm("but-2-ene"), "but-2-ene");
+});
