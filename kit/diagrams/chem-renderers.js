@@ -544,19 +544,24 @@ function cycle(spec, W, narrow) {
   const cols = Math.max(...spec.steps.map((st) => st.col ?? 0)) + 1, colX = (c) => lx0 + 40 + (c + 0.5) * ((narrow ? W * 0.42 : W * 0.5) / cols);
   const labelX = narrow ? W * 0.5 : W * 0.6;
   const used = [];
+  let late = "";
   for (const st of spec.states) {
     let yy = y(h[st.id]); for (const u of used) if (Math.abs(u - yy) < 18) yy = u + (yy >= u ? 18 : -18); used.push(yy);
     const xs = spec.steps.filter((p) => p.from === st.id || p.to === st.id).map((p) => colX(p.col ?? 0));
     s += line(Math.min(...xs) - 26, y(h[st.id]), lx1, y(h[st.id]), { stroke: C.ink, w: 2 });
-    s += text(labelX, yy - 10, fm(st.label), { size: narrow ? 11.5 : 12.5, weight: 600, anchor: "start", fill: C.ink });
+    // a label pushed down by its neighbour's goes under its own line rather than between two close lines
+    s += text(labelX, yy > y(h[st.id]) ? y(h[st.id]) + 14 : yy - 10, fm(st.label), { size: narrow ? 11.5 : 12.5, weight: 600, anchor: "start", fill: C.ink });
   }
   for (const st of spec.steps) {
     const x = colX(st.col ?? 0), y1 = y(h[st.from]), y2 = y(h[st.to]), v = dhOf(st);
     s += arrow(x, y1, x, y2 + (y2 > y1 ? -2 : 2), { stroke: st === find ? col("a2") : v > 0 ? col("a3") : col("a1"), w: 2.2, head: 9 });
-    const lab = `${st.label}${narrow ? "" : `: ${st === find ? "?" : kj(v)}`}`;
-    s += text(x + 7, (y1 + y2) / 2, lab, { size: narrow ? 10.5 : 11.5, weight: 700, anchor: "start", fill: st === find ? col("a2") : C.ink });
-    if (narrow) s += text(x + 7, (y1 + y2) / 2 + 13, st === find ? "?" : kj(v), { size: 10.5, anchor: "start", fill: C.soft });
+    // labels on halos (a level line can cross a long arrow's label); a step too short to hold its label (ΔsolH
+    // between NaCl(s) and the hydrated ions) has it under the lower level, where the diagram is empty
+    const lab = `${st.label}${narrow ? "" : `: ${st === find ? "?" : kj(v)}`}`, short = Math.abs(y2 - y1) < 34, ly = short ? Math.max(y1, y2) + 14 : (y1 + y2) / 2;
+    late += text(x + 7, ly, lab, { size: narrow ? 10.5 : 11.5, weight: 700, anchor: "start", fill: st === find ? col("a2") : C.ink, halo: true });
+    if (narrow) late += text(x + 7, ly + 13, st === find ? "?" : kj(v), { size: 10.5, anchor: "start", fill: C.soft, halo: true });
   }
+  s += late;
   if (find) s += text(W - 12, H - 10, `${find.label} = ${kj(dhOf(find))}`, { size: 13, weight: 700, anchor: "end", fill: col("a2") });
   return { s, H };
 }
