@@ -55,3 +55,7 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 ## Unit u13 (Statistics) — agent maths-c
 
 75 lessons assessed · 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph, barchart, bar-model) · 5 lab rows (regression, clt) · 39 with a recorded reason. Renderers needed: two-way table (u13-34), Mahalanobis ellipse contours (u13-49), points-in-region Monte Carlo (u13-60), path diagram (u13-66), Kaplan-Meier step curve (u13-70). Content note for the author: u13-50 gives eigenvalues 4.2, 1.5, 0.2, 0.1 for four standardised variables, which sum to 6, not 4.
+
+## Content issues for the owner
+
+- u13-50 (Multivariate Analysis): the worked example gives eigenvalues 4.2, 1.5, 0.2 and 0.1 for four standardised variables; they sum to 6, but the eigenvalues of a 4 × 4 correlation matrix sum to 4. No diagram was made.
