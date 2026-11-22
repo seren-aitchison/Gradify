@@ -8,17 +8,17 @@
   "lessons": 10112,
   "written": 9979,
   "assessed": 1278,
-  "plannedVisual": 845,
-  "plannedDiagram": 767,
-  "plannedLab": 164,
-  "excluded": 433,
+  "plannedVisual": 853,
+  "plannedDiagram": 771,
+  "plannedLab": 271,
+  "excluded": 425,
   "notAssessed": 8701,
-  "withDiagram": 772,
+  "withDiagram": 776,
   "withLab": 846,
   "withBoth": 193,
-  "withAny": 1425,
+  "withAny": 1429,
   "plannedNotDelivered": 0,
-  "placements": 796,
+  "placements": 800,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
   "withLabActivity": 198
@@ -26,8 +26,8 @@
  "diagrams": {
   "manifest": 726,
   "uniquePlaced": 726,
-  "placements": 796,
-  "reused": 63,
+  "placements": 800,
+  "reused": 67,
   "byStatus": {"ai-reviewed":4,"approved":11,"validated":711},
   "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":711},
   "failing": [],
@@ -586,17 +586,17 @@
     "lessons": 2159,
     "written": 2109,
     "assessed": 977,
-    "plannedVisual": 632,
-    "plannedDiagram": 580,
-    "plannedLab": 113,
-    "excluded": 345,
+    "plannedVisual": 640,
+    "plannedDiagram": 584,
+    "plannedLab": 220,
+    "excluded": 337,
     "notAssessed": 1132,
-    "withDiagram": 584,
+    "withDiagram": 588,
     "withLab": 322,
     "withBoth": 167,
-    "withAny": 739,
+    "withAny": 743,
     "plannedNotDelivered": 0,
-    "placements": 604,
+    "placements": 608,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
     "withLabActivity": 9
@@ -4425,17 +4425,17 @@
     "lessons": 460,
     "written": 410,
     "assessed": 410,
-    "plannedVisual": 357,
-    "plannedDiagram": 357,
-    "plannedLab": 0,
-    "excluded": 53,
+    "plannedVisual": 365,
+    "plannedDiagram": 361,
+    "plannedLab": 107,
+    "excluded": 45,
     "notAssessed": 0,
-    "withDiagram": 357,
+    "withDiagram": 361,
     "withLab": 107,
     "withBoth": 103,
-    "withAny": 361,
+    "withAny": 365,
     "plannedNotDelivered": 0,
-    "placements": 358,
+    "placements": 362,
     "withInteractiveDiagram": 54,
     "withSimulation": 52,
     "withLabActivity": 1
@@ -4449,17 +4449,17 @@
       "lessons": 25,
       "written": 25,
       "assessed": 25,
-      "plannedVisual": 11,
-      "plannedDiagram": 11,
-      "plannedLab": 0,
-      "excluded": 14,
+      "plannedVisual": 14,
+      "plannedDiagram": 12,
+      "plannedLab": 6,
+      "excluded": 11,
       "notAssessed": 0,
-      "withDiagram": 11,
+      "withDiagram": 12,
       "withLab": 6,
       "withBoth": 4,
-      "withAny": 13,
+      "withAny": 14,
       "plannedNotDelivered": 0,
-      "placements": 11,
+      "placements": 12,
       "withInteractiveDiagram": 4,
       "withSimulation": 2,
       "withLabActivity": 0
@@ -4497,24 +4497,10 @@
        "written": true,
        "diagrams": [{"id":"chem-states-of-matter","status":"validated"}],
        "labs": ["imf"],
-       "plan": {"verdict":"diagram","diagrams":["chem-states-of-matter"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-states-of-matter"],"labs":["imf"]}
       },
-      {
-       "id": "u01-07",
-       "title": "Atomic theory",
-       "written": true,
-       "diagrams": [],
-       "labs": ["atom-builder"],
-       "plan": {"verdict":"none","reason":"a history of models; the GCSE atomic-model lesson carries the nuclear atom diagram"}
-      },
-      {
-       "id": "u01-08",
-       "title": "Chemical symbols",
-       "written": true,
-       "diagrams": [],
-       "labs": ["periodic-table"],
-       "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
-      },
+      {"id":"u01-07","title":"Atomic theory","written":true,"diagrams":[],"labs":["atom-builder"],"plan":{"verdict":"lab","labs":["atom-builder"]}},
+      {"id":"u01-08","title":"Chemical symbols","written":true,"diagrams":[],"labs":["periodic-table"],"plan":{"verdict":"lab","labs":["periodic-table"]}},
       {
        "id": "u01-09",
        "title": "Chemical formulae",
@@ -4538,7 +4524,7 @@
        "written": true,
        "diagrams": [{"id":"chem-ar-chlorine","status":"validated"}],
        "labs": ["atom-builder","mass-spec"],
-       "plan": {"verdict":"diagram","diagrams":["chem-ar-chlorine"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ar-chlorine"],"labs":["atom-builder","mass-spec"]}
       },
       {
        "id": "u01-13",
@@ -4579,7 +4565,7 @@
        "written": true,
        "diagrams": [{"id":"chem-limiting-reagent","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-limiting-reagent"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-limiting-reagent"],"labs":["equilibrium"]}
       },
       {
        "id": "u01-19",
@@ -4589,15 +4575,15 @@
        "labs": [],
        "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
       },
+      {"id":"u01-20","title":"Atom economy","written":true,"diagrams":[{"id":"chem-atom-economy-routes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-atom-economy-routes"]}},
       {
-       "id": "u01-20",
-       "title": "Atom economy",
+       "id": "u01-21",
+       "title": "Concentration",
        "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
+       "diagrams": [{"id":"chem-concentration","status":"validated"}],
+       "labs": ["titration"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-concentration"],"labs":["titration"]}
       },
-      {"id":"u01-21","title":"Concentration","written":true,"diagrams":[{"id":"chem-concentration","status":"validated"}],"labs":["titration"],"plan":{"verdict":"diagram","diagrams":["chem-concentration"]}},
       {"id":"u01-22","title":"Dilutions","written":true,"diagrams":[{"id":"chem-dilution","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-dilution"]}},
       {
        "id": "u01-23",
@@ -4635,7 +4621,7 @@
       "assessed": 20,
       "plannedVisual": 19,
       "plannedDiagram": 19,
-      "plannedLab": 0,
+      "plannedLab": 13,
       "excluded": 1,
       "notAssessed": 0,
       "withDiagram": 19,
@@ -4655,7 +4641,7 @@
        "written": true,
        "diagrams": [{"id":"chem-atom-structure","status":"validated"}],
        "labs": ["atom-builder"],
-       "plan": {"verdict":"diagram","diagrams":["chem-atom-structure"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-atom-structure"],"labs":["atom-builder"]}
       },
       {
        "id": "u02-02",
@@ -4663,7 +4649,7 @@
        "written": true,
        "diagrams": [{"id":"chem-atom-sodium-ion","status":"validated"}],
        "labs": ["atom-builder"],
-       "plan": {"verdict":"diagram","diagrams":["chem-atom-sodium-ion"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-atom-sodium-ion"],"labs":["atom-builder"]}
       },
       {
        "id": "u02-03",
@@ -4671,7 +4657,7 @@
        "written": true,
        "diagrams": [{"id":"chem-isotopes-chlorine","status":"validated"}],
        "labs": ["atom-builder","mass-spec"],
-       "plan": {"verdict":"diagram","diagrams":["chem-isotopes-chlorine"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-isotopes-chlorine"],"labs":["atom-builder","mass-spec"]}
       },
       {
        "id": "u02-04",
@@ -4679,7 +4665,7 @@
        "written": true,
        "diagrams": [{"id":"chem-nuclide-notation","status":"validated"}],
        "labs": ["atom-builder"],
-       "plan": {"verdict":"diagram","diagrams":["chem-nuclide-notation"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-nuclide-notation"],"labs":["atom-builder"]}
       },
       {"id":"u02-05","title":"Electron shells","written":true,"diagrams":[{"id":"chem-shells-period3","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-shells-period3"]}},
       {
@@ -4688,7 +4674,7 @@
        "written": true,
        "diagrams": [{"id":"chem-subshell-energies","status":"validated"}],
        "labs": ["orbitals"],
-       "plan": {"verdict":"diagram","diagrams":["chem-subshell-energies"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-subshell-energies"],"labs":["orbitals"]}
       },
       {
        "id": "u02-07",
@@ -4696,7 +4682,7 @@
        "written": true,
        "diagrams": [{"id":"chem-quantum-numbers","status":"validated"}],
        "labs": ["orbitals"],
-       "plan": {"verdict":"diagram","diagrams":["chem-quantum-numbers"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-quantum-numbers"],"labs":["orbitals"]}
       },
       {
        "id": "u02-08",
@@ -4704,7 +4690,7 @@
        "written": true,
        "diagrams": [{"id":"chem-config-cr-cu","status":"validated"}],
        "labs": ["electron-config"],
-       "plan": {"verdict":"diagram","diagrams":["chem-config-cr-cu"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-config-cr-cu"],"labs":["electron-config"]}
       },
       {
        "id": "u02-09",
@@ -4712,7 +4698,7 @@
        "written": true,
        "diagrams": [{"id":"chem-aufbau-order","status":"validated"}],
        "labs": ["electron-config"],
-       "plan": {"verdict":"diagram","diagrams":["chem-aufbau-order"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-aufbau-order"],"labs":["electron-config"]}
       },
       {
        "id": "u02-10",
@@ -4720,9 +4706,16 @@
        "written": true,
        "diagrams": [{"id":"chem-pauli","status":"validated"}],
        "labs": ["electron-config"],
-       "plan": {"verdict":"diagram","diagrams":["chem-pauli"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-pauli"],"labs":["electron-config"]}
       },
-      {"id":"u02-11","title":"Hund's rule","written":true,"diagrams":[{"id":"chem-hund-np","status":"validated"}],"labs":["electron-config"],"plan":{"verdict":"diagram","diagrams":["chem-hund-np"]}},
+      {
+       "id": "u02-11",
+       "title": "Hund's rule",
+       "written": true,
+       "diagrams": [{"id":"chem-hund-np","status":"validated"}],
+       "labs": ["electron-config"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-hund-np"],"labs":["electron-config"]}
+      },
       {"id":"u02-12","title":"Ionisation energy","written":true,"diagrams":[{"id":"chem-successive-ie-al","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-successive-ie-al"]}},
       {
        "id": "u02-13",
@@ -4755,7 +4748,7 @@
        "written": true,
        "diagrams": [{"id":"chem-radial-1s","status":"validated"}],
        "labs": ["orbitals"],
-       "plan": {"verdict":"diagram","diagrams":["chem-radial-1s"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-radial-1s"],"labs":["orbitals"]}
       },
       {
        "id": "u02-18",
@@ -4763,7 +4756,7 @@
        "written": true,
        "diagrams": [{"id":"chem-orbital-shapes","status":"validated"}],
        "labs": ["orbitals"],
-       "plan": {"verdict":"diagram","diagrams":["chem-orbital-shapes"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-orbital-shapes"],"labs":["orbitals"]}
       },
       {
        "id": "u02-19",
@@ -4771,7 +4764,7 @@
        "written": true,
        "diagrams": [{"id":"chem-ie-period-2-3","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-ie-period-2-3"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ie-period-2-3"],"labs":["periodic-table"]}
       },
       {
        "id": "u02-20",
@@ -4791,10 +4784,10 @@
       "lessons": 25,
       "written": 25,
       "assessed": 25,
-      "plannedVisual": 21,
+      "plannedVisual": 22,
       "plannedDiagram": 21,
-      "plannedLab": 0,
-      "excluded": 4,
+      "plannedLab": 6,
+      "excluded": 3,
       "notAssessed": 0,
       "withDiagram": 21,
       "withLab": 6,
@@ -4807,7 +4800,7 @@
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u03-01","title":"Development of the periodic table","written":true,"diagrams":[],"labs":["periodic-table"],"plan":{"verdict":"none","reason":"a history of the table, carried in the text"}},
+      {"id":"u03-01","title":"Development of the periodic table","written":true,"diagrams":[],"labs":["periodic-table"],"plan":{"verdict":"lab","labs":["periodic-table"]}},
       {"id":"u03-02","title":"Modern periodic law","written":true,"diagrams":[{"id":"chem-table-blocks","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-table-blocks"]}},
       {
        "id": "u03-03",
@@ -4815,7 +4808,7 @@
        "written": true,
        "diagrams": [{"id":"chem-table-periods-groups","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-table-periods-groups"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-table-periods-groups"],"labs":["periodic-table"]}
       },
       {"id":"u03-04","title":"s-block elements","written":true,"diagrams":[{"id":"chem-s-block-config","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-s-block-config"]}},
       {"id":"u03-05","title":"p-block elements","written":true,"diagrams":[{"id":"chem-p-block-config","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-p-block-config"]}},
@@ -4845,7 +4838,7 @@
        "written": true,
        "diagrams": [{"id":"chem-atomic-radius","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-atomic-radius"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-atomic-radius"],"labs":["periodic-table"]}
       },
       {"id":"u03-20","title":"Ionic radius","written":true,"diagrams":[{"id":"chem-ionic-radius","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-ionic-radius"]}},
       {
@@ -4854,7 +4847,7 @@
        "written": true,
        "diagrams": [{"id":"chem-ie-trend-table","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-ie-trend-table"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ie-trend-table"],"labs":["periodic-table"]}
       },
       {
        "id": "u03-22",
@@ -4862,7 +4855,7 @@
        "written": true,
        "diagrams": [{"id":"chem-electronegativity-trend","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-electronegativity-trend"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-electronegativity-trend"],"labs":["periodic-table"]}
       },
       {
        "id": "u03-23",
@@ -4879,7 +4872,7 @@
        "written": true,
        "diagrams": [{"id":"chem-diagonal-relationships","status":"validated"}],
        "labs": ["periodic-table"],
-       "plan": {"verdict":"diagram","diagrams":["chem-diagonal-relationships"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-diagonal-relationships"],"labs":["periodic-table"]}
       }
      ]
     },
@@ -4893,7 +4886,7 @@
       "assessed": 26,
       "plannedVisual": 26,
       "plannedDiagram": 26,
-      "plannedLab": 0,
+      "plannedLab": 15,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 26,
@@ -4913,16 +4906,23 @@
        "written": true,
        "diagrams": [{"id":"chem-bond-type","status":"validated"}],
        "labs": ["bonding"],
-       "plan": {"verdict":"diagram","diagrams":["chem-bond-type"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-bond-type"],"labs":["bonding"]}
       },
-      {"id":"u04-02","title":"Ionic bonding","written":true,"diagrams":[{"id":"chem-ionic-nacl","status":"validated"}],"labs":["bonding"],"plan":{"verdict":"diagram","diagrams":["chem-ionic-nacl"]}},
+      {
+       "id": "u04-02",
+       "title": "Ionic bonding",
+       "written": true,
+       "diagrams": [{"id":"chem-ionic-nacl","status":"validated"}],
+       "labs": ["bonding"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ionic-nacl"],"labs":["bonding"]}
+      },
       {
        "id": "u04-03",
        "title": "Covalent bonding",
        "written": true,
        "diagrams": [{"id":"chem-covalent-water","status":"validated"}],
        "labs": ["bonding"],
-       "plan": {"verdict":"diagram","diagrams":["chem-covalent-water"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-covalent-water"],"labs":["bonding"]}
       },
       {
        "id": "u04-04",
@@ -4939,7 +4939,7 @@
        "written": true,
        "diagrams": [{"id":"chem-lewis-examples","status":"validated"}],
        "labs": ["lewis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-lewis-examples"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-lewis-examples"],"labs":["lewis"]}
       },
       {
        "id": "u04-07",
@@ -4947,7 +4947,7 @@
        "written": true,
        "diagrams": [{"id":"chem-formal-charge-co2","status":"validated"}],
        "labs": ["lewis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-formal-charge-co2"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-formal-charge-co2"],"labs":["lewis"]}
       },
       {
        "id": "u04-08",
@@ -4955,25 +4955,39 @@
        "written": true,
        "diagrams": [{"id":"chem-resonance-carbonate","status":"validated"}],
        "labs": ["lewis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-resonance-carbonate"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-resonance-carbonate"],"labs":["lewis"]}
       },
-      {"id":"u04-09","title":"VSEPR theory","written":true,"diagrams":[{"id":"chem-vsepr-domains","status":"validated"}],"labs":["vsepr"],"plan":{"verdict":"diagram","diagrams":["chem-vsepr-domains"]}},
+      {
+       "id": "u04-09",
+       "title": "VSEPR theory",
+       "written": true,
+       "diagrams": [{"id":"chem-vsepr-domains","status":"validated"}],
+       "labs": ["vsepr"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-vsepr-domains"],"labs":["vsepr"]}
+      },
       {
        "id": "u04-10",
        "title": "Molecular geometry",
        "written": true,
        "diagrams": [{"id":"chem-vsepr-lone-pairs","status":"validated"}],
        "labs": ["vsepr"],
-       "plan": {"verdict":"diagram","diagrams":["chem-vsepr-lone-pairs"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-vsepr-lone-pairs"],"labs":["vsepr"]}
       },
-      {"id":"u04-11","title":"Bond polarity","written":true,"diagrams":[{"id":"chem-bond-polarity","status":"validated"}],"labs":["bonding"],"plan":{"verdict":"diagram","diagrams":["chem-bond-polarity"]}},
+      {
+       "id": "u04-11",
+       "title": "Bond polarity",
+       "written": true,
+       "diagrams": [{"id":"chem-bond-polarity","status":"validated"}],
+       "labs": ["bonding"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-bond-polarity"],"labs":["bonding"]}
+      },
       {
        "id": "u04-12",
        "title": "Molecular polarity",
        "written": true,
        "diagrams": [{"id":"chem-molecular-polarity","status":"validated"}],
        "labs": ["polarity"],
-       "plan": {"verdict":"diagram","diagrams":["chem-molecular-polarity"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-molecular-polarity"],"labs":["polarity"]}
       },
       {
        "id": "u04-13",
@@ -4981,17 +4995,31 @@
        "written": true,
        "diagrams": [{"id":"chem-electronegativity-p2","status":"validated"}],
        "labs": ["polarity"],
-       "plan": {"verdict":"diagram","diagrams":["chem-electronegativity-p2"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-electronegativity-p2"],"labs":["polarity"]}
       },
-      {"id":"u04-14","title":"Intermolecular forces","written":true,"diagrams":[{"id":"chem-imf-bp","status":"validated"}],"labs":["imf"],"plan":{"verdict":"diagram","diagrams":["chem-imf-bp"]}},
-      {"id":"u04-15","title":"London dispersion forces","written":true,"diagrams":[{"id":"chem-alkane-bp","status":"validated"}],"labs":["imf"],"plan":{"verdict":"diagram","diagrams":["chem-alkane-bp"]}},
+      {
+       "id": "u04-14",
+       "title": "Intermolecular forces",
+       "written": true,
+       "diagrams": [{"id":"chem-imf-bp","status":"validated"}],
+       "labs": ["imf"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-imf-bp"],"labs":["imf"]}
+      },
+      {
+       "id": "u04-15",
+       "title": "London dispersion forces",
+       "written": true,
+       "diagrams": [{"id":"chem-alkane-bp","status":"validated"}],
+       "labs": ["imf"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-alkane-bp"],"labs":["imf"]}
+      },
       {
        "id": "u04-16",
        "title": "Dipole-dipole interactions",
        "written": true,
        "diagrams": [{"id":"chem-dipole-dipole","status":"validated"}],
        "labs": ["imf"],
-       "plan": {"verdict":"diagram","diagrams":["chem-dipole-dipole"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-dipole-dipole"],"labs":["imf"]}
       },
       {
        "id": "u04-17",
@@ -4999,7 +5027,7 @@
        "written": true,
        "diagrams": [{"id":"chem-hydrogen-bond-water","status":"validated"}],
        "labs": ["imf"],
-       "plan": {"verdict":"diagram","diagrams":["chem-hydrogen-bond-water"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-hydrogen-bond-water"],"labs":["imf"]}
       },
       {
        "id": "u04-18",
@@ -5034,10 +5062,10 @@
       "lessons": 22,
       "written": 22,
       "assessed": 22,
-      "plannedVisual": 18,
+      "plannedVisual": 19,
       "plannedDiagram": 18,
-      "plannedLab": 0,
-      "excluded": 4,
+      "plannedLab": 1,
+      "excluded": 3,
       "notAssessed": 0,
       "withDiagram": 18,
       "withLab": 1,
@@ -5084,7 +5112,7 @@
       {"id":"u05-18","title":"Diffusion","written":true,"diagrams":[{"id":"chem-diffusion","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-diffusion"]}},
       {"id":"u05-19","title":"Surface tension","written":true,"diagrams":[{"id":"chem-surface-tension","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-surface-tension"]}},
       {"id":"u05-20","title":"Viscosity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"viscosity is carried in the text; no single picture improves on it"}},
-      {"id":"u05-21","title":"Intermolecular interactions","written":true,"diagrams":[],"labs":["imf"],"plan":{"verdict":"none","reason":"covered by the intermolecular forces diagrams in Chemical Bonding"}},
+      {"id":"u05-21","title":"Intermolecular interactions","written":true,"diagrams":[],"labs":["imf"],"plan":{"verdict":"lab","labs":["imf"]}},
       {"id":"u05-22","title":"Materials properties","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a survey lesson; the structures are drawn in the bonding and solids lessons"}}
      ]
     },
@@ -5098,7 +5126,7 @@
       "assessed": 20,
       "plannedVisual": 18,
       "plannedDiagram": 18,
-      "plannedLab": 0,
+      "plannedLab": 4,
       "excluded": 2,
       "notAssessed": 0,
       "withDiagram": 18,
@@ -5185,16 +5213,23 @@
        "written": true,
        "diagrams": [{"id":"chem-entropy-states","status":"validated"}],
        "labs": ["thermodynamics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-entropy-states"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-entropy-states"],"labs":["thermodynamics"]}
       },
-      {"id":"u06-13","title":"Gibbs free energy","written":true,"diagrams":[{"id":"chem-gibbs-T","status":"validated"}],"labs":["thermodynamics"],"plan":{"verdict":"diagram","diagrams":["chem-gibbs-T"]}},
+      {
+       "id": "u06-13",
+       "title": "Gibbs free energy",
+       "written": true,
+       "diagrams": [{"id":"chem-gibbs-T","status":"validated"}],
+       "labs": ["thermodynamics"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-gibbs-T"],"labs":["thermodynamics"]}
+      },
       {
        "id": "u06-14",
        "title": "Spontaneity",
        "written": true,
        "diagrams": [{"id":"chem-spontaneity-signs","status":"validated"}],
        "labs": ["thermodynamics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-spontaneity-signs"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-spontaneity-signs"],"labs":["thermodynamics"]}
       },
       {"id":"u06-15","title":"Thermodynamic equilibrium","written":true,"diagrams":[{"id":"chem-gibbs-extent","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-gibbs-extent"]}},
       {
@@ -5220,7 +5255,7 @@
        "written": true,
        "diagrams": [{"id":"chem-gibbs-T-lines","status":"validated"}],
        "labs": ["thermodynamics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-gibbs-T-lines"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-gibbs-T-lines"],"labs":["thermodynamics"]}
       },
       {
        "id": "u06-20",
@@ -5242,7 +5277,7 @@
       "assessed": 22,
       "plannedVisual": 22,
       "plannedDiagram": 22,
-      "plannedLab": 0,
+      "plannedLab": 10,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
@@ -5263,7 +5298,7 @@
        "written": true,
        "diagrams": [{"id":"chem-collision-ea","status":"validated"}],
        "labs": ["energy-profile"],
-       "plan": {"verdict":"diagram","diagrams":["chem-collision-ea"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-collision-ea"],"labs":["energy-profile"]}
       },
       {
        "id": "u07-03",
@@ -5271,7 +5306,7 @@
        "written": true,
        "diagrams": [{"id":"chem-activation-energy","status":"validated"}],
        "labs": ["energy-profile"],
-       "plan": {"verdict":"diagram","diagrams":["chem-activation-energy"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-activation-energy"],"labs":["energy-profile"]}
       },
       {
        "id": "u07-04",
@@ -5279,7 +5314,7 @@
        "written": true,
        "diagrams": [{"id":"chem-reaction-profile-steps","status":"validated"}],
        "labs": ["energy-profile"],
-       "plan": {"verdict":"diagram","diagrams":["chem-reaction-profile-steps"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-reaction-profile-steps"],"labs":["energy-profile"]}
       },
       {
        "id": "u07-05",
@@ -5287,7 +5322,7 @@
        "written": true,
        "diagrams": [{"id":"chem-catalysed-profile","status":"validated"}],
        "labs": ["catalysis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-catalysed-profile"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-catalysed-profile"],"labs":["catalysis"]}
       },
       {
        "id": "u07-06",
@@ -5303,7 +5338,7 @@
        "written": true,
        "diagrams": [{"id":"chem-heterogeneous-steps","status":"validated"}],
        "labs": ["catalysis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-heterogeneous-steps"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-heterogeneous-steps"],"labs":["catalysis"]}
       },
       {"id":"u07-08","title":"Enzyme catalysis","written":true,"diagrams":[{"id":"chem-michaelis-menten","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-michaelis-menten"]}},
       {
@@ -5312,7 +5347,7 @@
        "written": true,
        "diagrams": [{"id":"chem-rate-vs-conc-orders","status":"validated"}],
        "labs": ["kinetics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-rate-vs-conc-orders"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-rate-vs-conc-orders"],"labs":["kinetics"]}
       },
       {
        "id": "u07-10",
@@ -5320,7 +5355,7 @@
        "written": true,
        "diagrams": [{"id":"chem-orders-conc-time","status":"validated"}],
        "labs": ["kinetics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-orders-conc-time"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-orders-conc-time"],"labs":["kinetics"]}
       },
       {"id":"u07-11","title":"Zero-order reactions","written":true,"diagrams":[{"id":"chem-zero-order","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-zero-order"]}},
       {
@@ -5346,7 +5381,7 @@
        "written": true,
        "diagrams": [{"id":"chem-first-order-decay","status":"validated"}],
        "labs": ["kinetics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-first-order-decay"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-first-order-decay"],"labs":["kinetics"]}
       },
       {
        "id": "u07-16",
@@ -5354,7 +5389,7 @@
        "written": true,
        "diagrams": [{"id":"chem-ln-first-order","status":"validated"}],
        "labs": ["kinetics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-ln-first-order"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ln-first-order"],"labs":["kinetics"]}
       },
       {
        "id": "u07-17",
@@ -5362,7 +5397,7 @@
        "written": true,
        "diagrams": [{"id":"chem-arrhenius-plot","status":"validated"}],
        "labs": ["kinetics"],
-       "plan": {"verdict":"diagram","diagrams":["chem-arrhenius-plot"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-arrhenius-plot"],"labs":["kinetics"]}
       },
       {
        "id": "u07-18",
@@ -5395,7 +5430,7 @@
       "assessed": 15,
       "plannedVisual": 10,
       "plannedDiagram": 10,
-      "plannedLab": 0,
+      "plannedLab": 5,
       "excluded": 5,
       "notAssessed": 0,
       "withDiagram": 10,
@@ -5423,7 +5458,7 @@
        "written": true,
        "diagrams": [{"id":"chem-dynamic-equilibrium","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-dynamic-equilibrium"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-dynamic-equilibrium"],"labs":["equilibrium"]}
       },
       {
        "id": "u08-03",
@@ -5431,7 +5466,7 @@
        "written": true,
        "diagrams": [{"id":"chem-k-large-small","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-k-large-small"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-k-large-small"],"labs":["equilibrium"]}
       },
       {"id":"u08-04","title":"Kc","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}},
       {"id":"u08-05","title":"Kp","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}},
@@ -5442,7 +5477,7 @@
        "written": true,
        "diagrams": [{"id":"chem-le-chatelier-conc","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-le-chatelier-conc"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-le-chatelier-conc"],"labs":["equilibrium"]}
       },
       {
        "id": "u08-08",
@@ -5450,7 +5485,7 @@
        "written": true,
        "diagrams": [{"id":"chem-k-temperature","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-k-temperature"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-k-temperature"],"labs":["equilibrium"]}
       },
       {
        "id": "u08-09",
@@ -5458,7 +5493,7 @@
        "written": true,
        "diagrams": [{"id":"chem-pressure-equilibrium","status":"validated"}],
        "labs": ["equilibrium"],
-       "plan": {"verdict":"diagram","diagrams":["chem-pressure-equilibrium"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-pressure-equilibrium"],"labs":["equilibrium"]}
       },
       {
        "id": "u08-10",
@@ -5497,17 +5532,17 @@
       "lessons": 22,
       "written": 22,
       "assessed": 22,
-      "plannedVisual": 18,
-      "plannedDiagram": 18,
-      "plannedLab": 0,
-      "excluded": 4,
+      "plannedVisual": 19,
+      "plannedDiagram": 19,
+      "plannedLab": 8,
+      "excluded": 3,
       "notAssessed": 0,
-      "withDiagram": 18,
+      "withDiagram": 19,
       "withLab": 8,
       "withBoth": 8,
-      "withAny": 18,
+      "withAny": 19,
       "plannedNotDelivered": 0,
-      "placements": 18,
+      "placements": 19,
       "withInteractiveDiagram": 0,
       "withSimulation": 8,
       "withLabActivity": 0
@@ -5530,7 +5565,7 @@
        "written": true,
        "diagrams": [{"id":"chem-strong-weak-acid","status":"validated"}],
        "labs": ["ph"],
-       "plan": {"verdict":"diagram","diagrams":["chem-strong-weak-acid"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-strong-weak-acid"],"labs":["ph"]}
       },
       {
        "id": "u09-06",
@@ -5538,9 +5573,9 @@
        "written": true,
        "diagrams": [{"id":"chem-weak-acid-fraction","status":"validated"}],
        "labs": ["ph"],
-       "plan": {"verdict":"diagram","diagrams":["chem-weak-acid-fraction"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-weak-acid-fraction"],"labs":["ph"]}
       },
-      {"id":"u09-07","title":"pH","written":true,"diagrams":[{"id":"chem-ph-log","status":"validated"}],"labs":["ph"],"plan":{"verdict":"diagram","diagrams":["chem-ph-log"]}},
+      {"id":"u09-07","title":"pH","written":true,"diagrams":[{"id":"chem-ph-log","status":"validated"}],"labs":["ph"],"plan":{"verdict":"diagram+lab","diagrams":["chem-ph-log"],"labs":["ph"]}},
       {"id":"u09-08","title":"pOH","written":true,"diagrams":[{"id":"chem-ph-poh","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-ph-poh"]}},
       {"id":"u09-09","title":"Acid dissociation constants","written":true,"diagrams":[{"id":"chem-speciation","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-speciation"]}},
       {
@@ -5559,14 +5594,21 @@
        "labs": [],
        "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
       },
-      {"id":"u09-12","title":"Buffers","written":true,"diagrams":[{"id":"chem-buffer-region","status":"validated"}],"labs":["ph"],"plan":{"verdict":"diagram","diagrams":["chem-buffer-region"]}},
+      {
+       "id": "u09-12",
+       "title": "Buffers",
+       "written": true,
+       "diagrams": [{"id":"chem-buffer-region","status":"validated"}],
+       "labs": ["ph"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-buffer-region"],"labs":["ph"]}
+      },
       {
        "id": "u09-13",
        "title": "Henderson-Hasselbalch equation",
        "written": true,
        "diagrams": [{"id":"chem-half-equivalence","status":"validated"}],
        "labs": ["ph"],
-       "plan": {"verdict":"diagram","diagrams":["chem-half-equivalence"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-half-equivalence"],"labs":["ph"]}
       },
       {
        "id": "u09-14",
@@ -5574,7 +5616,7 @@
        "written": true,
        "diagrams": [{"id":"chem-titration-curves","status":"validated"}],
        "labs": ["titration"],
-       "plan": {"verdict":"diagram","diagrams":["chem-titration-curves"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-titration-curves"],"labs":["titration"]}
       },
       {
        "id": "u09-15",
@@ -5582,7 +5624,7 @@
        "written": true,
        "diagrams": [{"id":"chem-indicator-ranges","status":"validated"}],
        "labs": ["titration"],
-       "plan": {"verdict":"diagram","diagrams":["chem-indicator-ranges"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-indicator-ranges"],"labs":["titration"]}
       },
       {
        "id": "u09-16",
@@ -5590,7 +5632,7 @@
        "written": true,
        "diagrams": [{"id":"chem-equivalence-point","status":"validated"}],
        "labs": ["titration"],
-       "plan": {"verdict":"diagram","diagrams":["chem-equivalence-point"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-equivalence-point"],"labs":["titration"]}
       },
       {
        "id": "u09-17",
@@ -5600,7 +5642,7 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-solubility-equilibrium"]}
       },
-      {"id":"u09-18","title":"Ksp","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}},
+      {"id":"u09-18","title":"Ksp","written":true,"diagrams":[{"id":"chem-solubility-equilibrium","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-solubility-equilibrium"]}},
       {"id":"u09-19","title":"Common-ion effect","written":true,"diagrams":[{"id":"chem-common-ion","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-common-ion"]}},
       {"id":"u09-20","title":"Complex ion equilibria","written":true,"diagrams":[{"id":"chem-complex-ions","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-complex-ions"]}},
       {"id":"u09-21","title":"Amphoteric substances","written":true,"diagrams":[{"id":"chem-amphoteric-al","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-amphoteric-al"]}},
@@ -5617,7 +5659,7 @@
       "assessed": 20,
       "plannedVisual": 18,
       "plannedDiagram": 18,
-      "plannedLab": 0,
+      "plannedLab": 5,
       "excluded": 2,
       "notAssessed": 0,
       "withDiagram": 18,
@@ -5664,7 +5706,7 @@
        "written": true,
        "diagrams": [{"id":"chem-daniell-cell","status":"validated"}],
        "labs": ["electrochemical-cell"],
-       "plan": {"verdict":"diagram","diagrams":["chem-daniell-cell"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-daniell-cell"],"labs":["electrochemical-cell"]}
       },
       {
        "id": "u10-08",
@@ -5672,7 +5714,7 @@
        "written": true,
        "diagrams": [{"id":"chem-galvanic-cell","status":"validated"}],
        "labs": ["electrochemical-cell"],
-       "plan": {"verdict":"diagram","diagrams":["chem-galvanic-cell"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-galvanic-cell"],"labs":["electrochemical-cell"]}
       },
       {
        "id": "u10-09",
@@ -5688,7 +5730,7 @@
        "written": true,
        "diagrams": [{"id":"chem-she","status":"validated"}],
        "labs": ["electrochemical-cell"],
-       "plan": {"verdict":"diagram","diagrams":["chem-she"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-she"],"labs":["electrochemical-cell"]}
       },
       {
        "id": "u10-11",
@@ -5696,7 +5738,7 @@
        "written": true,
        "diagrams": [{"id":"chem-cell-potential","status":"validated"}],
        "labs": ["electrochemical-cell"],
-       "plan": {"verdict":"diagram","diagrams":["chem-cell-potential"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-cell-potential"],"labs":["electrochemical-cell"]}
       },
       {
        "id": "u10-12",
@@ -5706,7 +5748,14 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-electrochemical-series"]}
       },
-      {"id":"u10-13","title":"Nernst equation","written":true,"diagrams":[{"id":"chem-nernst","status":"validated"}],"labs":["electrochemical-cell"],"plan":{"verdict":"diagram","diagrams":["chem-nernst"]}},
+      {
+       "id": "u10-13",
+       "title": "Nernst equation",
+       "written": true,
+       "diagrams": [{"id":"chem-nernst","status":"validated"}],
+       "labs": ["electrochemical-cell"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-nernst"],"labs":["electrochemical-cell"]}
+      },
       {"id":"u10-14","title":"Electrolysis","written":true,"diagrams":[{"id":"chem-electrolysis-brine","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-electrolysis-brine"]}},
       {"id":"u10-15","title":"Faraday's laws","written":true,"diagrams":[{"id":"chem-faraday","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-faraday"]}},
       {"id":"u10-16","title":"Batteries","written":true,"diagrams":[{"id":"chem-lithium-ion","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-lithium-ion"]}},
@@ -5858,7 +5907,7 @@
       "assessed": 22,
       "plannedVisual": 22,
       "plannedDiagram": 22,
-      "plannedLab": 0,
+      "plannedLab": 10,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
@@ -5878,7 +5927,7 @@
        "written": true,
        "diagrams": [{"id":"chem-organic-formulae","status":"validated"}],
        "labs": ["molecule-viewer"],
-       "plan": {"verdict":"diagram","diagrams":["chem-organic-formulae"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-organic-formulae"],"labs":["molecule-viewer"]}
       },
       {"id":"u12-02","title":"Carbon bonding","written":true,"diagrams":[{"id":"chem-carbon-geometries","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-carbon-geometries"]}},
       {
@@ -5907,7 +5956,7 @@
        "written": true,
        "diagrams": [{"id":"chem-functional-groups","status":"validated"}],
        "labs": ["functional-groups"],
-       "plan": {"verdict":"diagram","diagrams":["chem-functional-groups"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-functional-groups"],"labs":["functional-groups"]}
       },
       {"id":"u12-10","title":"IUPAC nomenclature","written":true,"diagrams":[{"id":"chem-iupac-naming","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-iupac-naming"]}},
       {
@@ -5924,7 +5973,7 @@
        "written": true,
        "diagrams": [{"id":"chem-stereoisomers","status":"validated"}],
        "labs": ["chirality"],
-       "plan": {"verdict":"diagram","diagrams":["chem-stereoisomers"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-stereoisomers"],"labs":["chirality"]}
       },
       {
        "id": "u12-13",
@@ -5942,14 +5991,21 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-butane-conformations"]}
       },
-      {"id":"u12-15","title":"Chirality","written":true,"diagrams":[{"id":"chem-chirality","status":"validated"}],"labs":["chirality"],"plan":{"verdict":"diagram","diagrams":["chem-chirality"]}},
+      {
+       "id": "u12-15",
+       "title": "Chirality",
+       "written": true,
+       "diagrams": [{"id":"chem-chirality","status":"validated"}],
+       "labs": ["chirality"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-chirality"],"labs":["chirality"]}
+      },
       {
        "id": "u12-16",
        "title": "Enantiomers",
        "written": true,
        "diagrams": [{"id":"chem-enantiomers-alanine","status":"validated"}],
        "labs": ["chirality"],
-       "plan": {"verdict":"diagram","diagrams":["chem-enantiomers-alanine"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-enantiomers-alanine"],"labs":["chirality"]}
       },
       {"id":"u12-17","title":"Diastereomers","written":true,"diagrams":[{"id":"chem-diastereomers","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-diastereomers"]}},
       {
@@ -5958,17 +6014,17 @@
        "written": true,
        "diagrams": [{"id":"chem-optical-activity","status":"validated"}],
        "labs": ["chirality"],
-       "plan": {"verdict":"diagram","diagrams":["chem-optical-activity"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-optical-activity"],"labs":["chirality"]}
       },
-      {"id":"u12-19","title":"R and S nomenclature","written":true,"diagrams":[{"id":"chem-r-s","status":"validated"}],"labs":["rs"],"plan":{"verdict":"diagram","diagrams":["chem-r-s"]}},
-      {"id":"u12-20","title":"E and Z nomenclature","written":true,"diagrams":[{"id":"chem-e-z","status":"validated"}],"labs":["ez"],"plan":{"verdict":"diagram","diagrams":["chem-e-z"]}},
+      {"id":"u12-19","title":"R and S nomenclature","written":true,"diagrams":[{"id":"chem-r-s","status":"validated"}],"labs":["rs"],"plan":{"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}},
+      {"id":"u12-20","title":"E and Z nomenclature","written":true,"diagrams":[{"id":"chem-e-z","status":"validated"}],"labs":["ez"],"plan":{"verdict":"diagram+lab","diagrams":["chem-e-z"],"labs":["ez"]}},
       {
        "id": "u12-21",
        "title": "Functional group interconversion",
        "written": true,
        "diagrams": [{"id":"chem-fgi-map","status":"validated"}],
        "labs": ["synthesis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-fgi-map"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-fgi-map"],"labs":["synthesis"]}
       },
       {
        "id": "u12-22",
@@ -5976,7 +6032,7 @@
        "written": true,
        "diagrams": [{"id":"chem-reaction-classes","status":"validated"}],
        "labs": ["functional-groups"],
-       "plan": {"verdict":"diagram","diagrams":["chem-reaction-classes"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-reaction-classes"],"labs":["functional-groups"]}
       }
      ]
     },
@@ -5990,7 +6046,7 @@
       "assessed": 27,
       "plannedVisual": 27,
       "plannedDiagram": 27,
-      "plannedLab": 0,
+      "plannedLab": 10,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 27,
@@ -6010,7 +6066,7 @@
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-nucleophilic-addition"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
        "id": "u13-02",
@@ -6018,7 +6074,7 @@
        "written": true,
        "diagrams": [{"id":"chem-electrophiles-nucleophiles","status":"validated"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-electrophiles-nucleophiles"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-electrophiles-nucleophiles"],"labs":["curly-arrows"]}
       },
       {
        "id": "u13-03",
@@ -6034,7 +6090,7 @@
        "written": true,
        "diagrams": [{"id":"chem-carbocation-stability","status":"validated"}],
        "labs": ["sn1-sn2"],
-       "plan": {"verdict":"diagram","diagrams":["chem-carbocation-stability"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-carbocation-stability"],"labs":["sn1-sn2"]}
       },
       {"id":"u13-05","title":"Carbanions","written":true,"diagrams":[{"id":"chem-carbanions","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-carbanions"]}},
       {
@@ -6051,7 +6107,7 @@
        "written": true,
        "diagrams": [{"id":"chem-sn1-sn2-profiles","status":"approved"}],
        "labs": ["energy-profile"],
-       "plan": {"verdict":"diagram","diagrams":["chem-sn1-sn2-profiles"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-sn1-sn2-profiles"],"labs":["energy-profile"]}
       },
       {
        "id": "u13-08",
@@ -6059,7 +6115,7 @@
        "written": true,
        "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
        "labs": ["sn1-sn2"],
-       "plan": {"verdict":"diagram","diagrams":["chem-sn2-mechanism"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
       },
       {
        "id": "u13-09",
@@ -6067,9 +6123,16 @@
        "written": true,
        "diagrams": [{"id":"chem-sn1-mechanism","status":"ai-reviewed"}],
        "labs": ["sn1-sn2"],
-       "plan": {"verdict":"diagram","diagrams":["chem-sn1-mechanism"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-sn1-mechanism"],"labs":["sn1-sn2"]}
       },
-      {"id":"u13-10","title":"SN2 mechanisms","written":true,"diagrams":[{"id":"chem-sn2-mechanism","status":"approved"}],"labs":["sn1-sn2"],"plan":{"verdict":"diagram","diagrams":["chem-sn2-mechanism"]}},
+      {
+       "id": "u13-10",
+       "title": "SN2 mechanisms",
+       "written": true,
+       "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
+       "labs": ["sn1-sn2"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
+      },
       {"id":"u13-11","title":"Elimination reactions","written":true,"diagrams":[{"id":"chem-e2-mechanism","status":"ai-reviewed"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e2-mechanism"]}},
       {"id":"u13-12","title":"E1 mechanisms","written":true,"diagrams":[{"id":"chem-e1-mechanism","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e1-mechanism"]}},
       {
@@ -6078,7 +6141,7 @@
        "written": true,
        "diagrams": [{"id":"chem-e2-mechanism","status":"ai-reviewed"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-e2-mechanism"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-e2-mechanism"],"labs":["curly-arrows"]}
       },
       {"id":"u13-14","title":"Addition reactions","written":true,"diagrams":[{"id":"chem-hbr-propene","status":"approved"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-hbr-propene"]}},
       {
@@ -6087,7 +6150,7 @@
        "written": true,
        "diagrams": [{"id":"chem-hbr-propene","status":"approved"},{"id":"chem-br2-bromonium","status":"approved"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-hbr-propene","chem-br2-bromonium"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-hbr-propene","chem-br2-bromonium"],"labs":["curly-arrows"]}
       },
       {
        "id": "u13-16",
@@ -6095,7 +6158,7 @@
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-nucleophilic-addition"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
        "id": "u13-17",
@@ -6155,7 +6218,7 @@
       "assessed": 22,
       "plannedVisual": 22,
       "plannedDiagram": 22,
-      "plannedLab": 0,
+      "plannedLab": 2,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
@@ -6244,7 +6307,7 @@
        "written": true,
        "diagrams": [{"id":"chem-synthesis-map","status":"validated"}],
        "labs": ["synthesis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-synthesis-map"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-synthesis-map"],"labs":["synthesis"]}
       },
       {
        "id": "u14-22",
@@ -6252,7 +6315,7 @@
        "written": true,
        "diagrams": [{"id":"chem-multistep-route","status":"validated"}],
        "labs": ["synthesis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-multistep-route"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-multistep-route"],"labs":["synthesis"]}
       }
      ]
     },
@@ -6266,7 +6329,7 @@
       "assessed": 28,
       "plannedVisual": 26,
       "plannedDiagram": 26,
-      "plannedLab": 0,
+      "plannedLab": 9,
       "excluded": 2,
       "notAssessed": 0,
       "withDiagram": 26,
@@ -6312,7 +6375,7 @@
        "written": true,
        "diagrams": [{"id":"chem-titration-setup","status":"validated"}],
        "labs": ["titration"],
-       "plan": {"verdict":"diagram","diagrams":["chem-titration-setup"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-titration-setup"],"labs":["titration"]}
       },
       {"id":"u15-07","title":"Gravimetric analysis","written":true,"diagrams":[{"id":"chem-gravimetric","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-gravimetric"]}},
       {"id":"u15-08","title":"UV-visible spectroscopy","written":true,"diagrams":[{"id":"chem-uv-vis","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-uv-vis"]}},
@@ -6322,7 +6385,7 @@
        "written": true,
        "diagrams": [{"id":"chem-ir-ethanoic-acid","status":"validated"}],
        "labs": ["ir"],
-       "plan": {"verdict":"diagram","diagrams":["chem-ir-ethanoic-acid"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-ir-ethanoic-acid"],"labs":["ir"]}
       },
       {
        "id": "u15-10",
@@ -6330,27 +6393,48 @@
        "written": true,
        "diagrams": [{"id":"chem-nmr-principle","status":"validated"}],
        "labs": ["nmr"],
-       "plan": {"verdict":"diagram","diagrams":["chem-nmr-principle"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-nmr-principle"],"labs":["nmr"]}
       },
-      {"id":"u15-11","title":"Proton NMR","written":true,"diagrams":[{"id":"chem-h-nmr-ethanol","status":"validated"}],"labs":["nmr"],"plan":{"verdict":"diagram","diagrams":["chem-h-nmr-ethanol"]}},
+      {
+       "id": "u15-11",
+       "title": "Proton NMR",
+       "written": true,
+       "diagrams": [{"id":"chem-h-nmr-ethanol","status":"validated"}],
+       "labs": ["nmr"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-h-nmr-ethanol"],"labs":["nmr"]}
+      },
       {"id":"u15-12","title":"Carbon-13 NMR","written":true,"diagrams":[{"id":"chem-c13-nmr-propanol","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-c13-nmr-propanol"]}},
-      {"id":"u15-13","title":"NMR chemical shifts","written":true,"diagrams":[{"id":"chem-shift-ranges","status":"validated"}],"labs":["nmr"],"plan":{"verdict":"diagram","diagrams":["chem-shift-ranges"]}},
+      {
+       "id": "u15-13",
+       "title": "NMR chemical shifts",
+       "written": true,
+       "diagrams": [{"id":"chem-shift-ranges","status":"validated"}],
+       "labs": ["nmr"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-shift-ranges"],"labs":["nmr"]}
+      },
       {
        "id": "u15-14",
        "title": "Spin-spin coupling",
        "written": true,
        "diagrams": [{"id":"chem-splitting-ethyl","status":"validated"}],
        "labs": ["nmr"],
-       "plan": {"verdict":"diagram","diagrams":["chem-splitting-ethyl"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-splitting-ethyl"],"labs":["nmr"]}
       },
-      {"id":"u15-15","title":"Mass spectrometry","written":true,"diagrams":[{"id":"chem-mass-spec","status":"validated"}],"labs":["mass-spec"],"plan":{"verdict":"diagram","diagrams":["chem-mass-spec"]}},
+      {
+       "id": "u15-15",
+       "title": "Mass spectrometry",
+       "written": true,
+       "diagrams": [{"id":"chem-mass-spec","status":"validated"}],
+       "labs": ["mass-spec"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-mass-spec"],"labs":["mass-spec"]}
+      },
       {
        "id": "u15-16",
        "title": "Fragmentation patterns",
        "written": true,
        "diagrams": [{"id":"chem-fragmentation-butanone","status":"validated"}],
        "labs": ["mass-spec"],
-       "plan": {"verdict":"diagram","diagrams":["chem-fragmentation-butanone"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-fragmentation-butanone"],"labs":["mass-spec"]}
       },
       {"id":"u15-17","title":"High-resolution mass spectrometry","written":true,"diagrams":[{"id":"chem-hrms","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-hrms"]}},
       {"id":"u15-18","title":"Raman spectroscopy","written":true,"diagrams":[{"id":"chem-raman","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-raman"]}},
@@ -6375,7 +6459,7 @@
        "written": true,
        "diagrams": [{"id":"chem-structure-elucidation","status":"validated"}],
        "labs": ["spectroscopy-problems"],
-       "plan": {"verdict":"diagram","diagrams":["chem-structure-elucidation"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-structure-elucidation"],"labs":["spectroscopy-problems"]}
       },
       {
        "id": "u15-28",
@@ -6397,7 +6481,7 @@
       "assessed": 22,
       "plannedVisual": 22,
       "plannedDiagram": 22,
-      "plannedLab": 0,
+      "plannedLab": 1,
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
@@ -6420,7 +6504,14 @@
        "plan": {"verdict":"diagram","diagrams":["chem-vsepr-lone-pairs"]}
       },
       {"id":"u16-02","title":"Molecular orbitals","written":true,"diagrams":[{"id":"chem-mo-h2","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-mo-h2"]}},
-      {"id":"u16-03","title":"Quantum chemistry","written":true,"diagrams":[{"id":"chem-mo-n2","status":"validated"}],"labs":["orbitals"],"plan":{"verdict":"diagram","diagrams":["chem-mo-n2"]}},
+      {
+       "id": "u16-03",
+       "title": "Quantum chemistry",
+       "written": true,
+       "diagrams": [{"id":"chem-mo-n2","status":"validated"}],
+       "labs": ["orbitals"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-mo-n2"],"labs":["orbitals"]}
+      },
       {
        "id": "u16-04",
        "title": "Schrödinger equation",
@@ -6513,17 +6604,17 @@
       "lessons": 27,
       "written": 27,
       "assessed": 27,
-      "plannedVisual": 20,
-      "plannedDiagram": 20,
-      "plannedLab": 0,
-      "excluded": 7,
+      "plannedVisual": 21,
+      "plannedDiagram": 21,
+      "plannedLab": 1,
+      "excluded": 6,
       "notAssessed": 0,
-      "withDiagram": 20,
+      "withDiagram": 21,
       "withLab": 1,
       "withBoth": 1,
-      "withAny": 20,
+      "withAny": 21,
       "plannedNotDelivered": 0,
-      "placements": 20,
+      "placements": 21,
       "withInteractiveDiagram": 0,
       "withSimulation": 1,
       "withLabActivity": 0
@@ -6597,7 +6688,7 @@
        "written": true,
        "diagrams": [{"id":"chem-industrial-catalyst","status":"validated"}],
        "labs": ["catalysis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-industrial-catalyst"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-industrial-catalyst"],"labs":["catalysis"]}
       },
       {
        "id": "u17-22",
@@ -6608,7 +6699,14 @@
        "plan": {"verdict":"diagram","diagrams":["chem-fractionating-column"]}
       },
       {"id":"u17-23","title":"Fertilisers","written":true,"diagrams":[{"id":"chem-haber-ostwald","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-haber-ostwald"]}},
-      {"id":"u17-24","title":"Sustainable chemistry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"covered by Green chemistry"}},
+      {
+       "id": "u17-24",
+       "title": "Sustainable chemistry",
+       "written": true,
+       "diagrams": [{"id":"chem-green-synthesis","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["chem-green-synthesis"]}
+      },
       {
        "id": "u17-25",
        "title": "Green chemistry",
@@ -6687,17 +6785,17 @@
       "lessons": 23,
       "written": 23,
       "assessed": 23,
-      "plannedVisual": 16,
-      "plannedDiagram": 16,
-      "plannedLab": 0,
-      "excluded": 7,
+      "plannedVisual": 17,
+      "plannedDiagram": 17,
+      "plannedLab": 1,
+      "excluded": 6,
       "notAssessed": 0,
-      "withDiagram": 16,
+      "withDiagram": 17,
       "withLab": 1,
       "withBoth": 1,
-      "withAny": 16,
+      "withAny": 17,
       "plannedNotDelivered": 0,
-      "placements": 16,
+      "placements": 17,
       "withInteractiveDiagram": 1,
       "withSimulation": 0,
       "withLabActivity": 0
@@ -6743,14 +6841,7 @@
        "plan": {"verdict":"diagram","diagrams":["chem-paper-chromatography"]}
       },
       {"id":"u19-12","title":"Column chromatography","written":true,"diagrams":[{"id":"chem-column","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-column"]}},
-      {
-       "id": "u19-13",
-       "title": "Yield calculations",
-       "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
-      },
+      {"id":"u19-13","title":"Yield calculations","written":true,"diagrams":[{"id":"chem-multistep-yield","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-multistep-yield"]}},
       {"id":"u19-14","title":"Purity assessment","written":true,"diagrams":[{"id":"chem-melting-range","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-melting-range"]}},
       {
        "id": "u19-15",
@@ -6766,7 +6857,7 @@
        "written": true,
        "diagrams": [{"id":"chem-synthesis-plan","status":"validated"}],
        "labs": ["synthesis"],
-       "plan": {"verdict":"diagram","diagrams":["chem-synthesis-plan"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-synthesis-plan"],"labs":["synthesis"]}
       },
       {
        "id": "u19-17",

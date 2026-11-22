@@ -13,6 +13,13 @@
   "Step 3: 90%.",
   "Overall: 54%."
  ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u19",
+   "lesson": "Yield calculations"
+  }
+ ],
  "layout": "line",
  "nodes": [
   {

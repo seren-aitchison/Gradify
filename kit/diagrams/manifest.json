@@ -11877,7 +11877,13 @@
   ],
   "course": "chemistry",
   "lesson": "Solubility equilibria",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u09",
+    "lesson": "Ksp"
+   }
+  ],
   "renderer": "particles",
   "status": "validated",
   "review": null,
@@ -11890,6 +11896,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Ksp",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -17337,7 +17348,13 @@
   ],
   "course": "chemistry",
   "lesson": "Green chemistry",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u01",
+    "lesson": "Atom economy"
+   }
+  ],
   "renderer": "flow",
   "status": "validated",
   "review": null,
@@ -17350,6 +17367,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Atom economy",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -18162,7 +18184,13 @@
   ],
   "course": "chemistry",
   "lesson": "Green synthesis",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u17",
+    "lesson": "Sustainable chemistry"
+   }
+  ],
   "renderer": "trend",
   "status": "validated",
   "review": null,
@@ -18175,6 +18203,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Sustainable chemistry",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u17.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -18972,7 +19005,13 @@
   ],
   "course": "chemistry",
   "lesson": "Multi-step synthesis",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "unit": "u19",
+    "lesson": "Yield calculations"
+   }
+  ],
   "renderer": "flow",
   "status": "validated",
   "review": null,
@@ -18985,6 +19024,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Yield calculations",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u19.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",

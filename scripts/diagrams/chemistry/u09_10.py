@@ -118,7 +118,7 @@ mk("u09-17", "chem-solubility-equilibrium", "particles", "A saturated solution i
    ["Solid AgCl at the bottom, a lattice of Ag⁺ and Cl⁻.", "Only a few Ag⁺ and Cl⁻ ions dissolved in the water above, in equal numbers."],
    species={**SPS, "Ag": {"atoms": ["Ag"]}}, panelHeight=200,
    panels=[{"title": "saturated AgCl(aq)", "container": "beaker", "arrangement": "layer", "contents": [["Ag+", 7], ["Cl-", 7]], "overlay": []}],
-   claims=[{"type": "count", "panel": 0, "species": "Ag+", "n": 7}])
+   claims=[{"type": "count", "panel": 0, "species": "Ag+", "n": 7}], also=["chemistry:u09-18"])
 
 ks = "-9.745-x"
 mk("u09-19", "chem-common-ion", "graph", "The common-ion effect",

@@ -982,6 +982,7 @@ X: Calculating an E-factor.
 > It produces 250 kg of waste, including solvents.
 > E-factor = 250 ÷ 10 = 25.
 > Recycling solvent could greatly reduce the E-factor.
+D: chem-green-synthesis
 K: Sustainable chemistry uses renewable feedstocks and energy, designs safe and recyclable products and supports sustainable development, measured by atom economy, E-factor, process mass intensity and life-cycle assessment.
 !: Thinking high atom economy guarantees low waste. Solvents and reagents add waste too, captured by the E-factor.
 EV: established | The E-factor quantifies waste in chemical manufacturing (Sheldon, 1992).

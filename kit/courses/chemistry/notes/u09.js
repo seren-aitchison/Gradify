@@ -733,6 +733,7 @@ X: Will a precipitate form?
 > A mixture has [Ag⁺] = 1.0 × 10⁻⁴ and [Cl⁻] = 1.0 × 10⁻⁴ mol dm⁻³.
 > Q = (1.0 × 10⁻⁴)² = 1.0 × 10⁻⁸.
 > Q > Ksp, so AgCl precipitates.
+D: chem-solubility-equilibrium
 K: Ksp = product of ion concentrations raised to their formula powers in a saturated solution; it gives solubility through expressions such as s² or 4s³, and comparing the ionic product Q with Ksp predicts precipitation.
 !: Comparing Ksp values of salts with different formula types to rank solubility. The relationship depends on formula.
 EV: established | Ksp of silver chloride at 25 °C is about 1.8 × 10⁻¹⁰ mol² dm⁻⁶ (Harris, 2016).
