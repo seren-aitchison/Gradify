@@ -59,6 +59,7 @@
   <link rel="modulepreload" href="/kit/ui/feedback.js">
   <link rel="modulepreload" href="/kit/ui/resources.js">
   <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
   <link rel="modulepreload" href="/kit/ui/overlay.js">
   <!-- /module-preload -->
   <script type="module" src="assets/app.js"></script>
@@ -75,23 +76,50 @@
   <!-- the feature showcase (#features) and the Ultra comparison (#pro) are far below the first screen: they load when the
        page has gone idle, or sooner if their section is about to scroll into view or the link opened at one -->
   <script type="module">
-    let done = false;
-    const go = () => { if (done) return; done = true; import("./assets/features.js"); import("./assets/pro.js"); };
+    // load both once; if pro.js fails to load (a dropped connection), forget the failure so the next try loads it again.
+    // A retry asks for a fresh URL: some browsers (Safari) keep a failed module load and would fail the same URL again
+    let pro = null, tries = 0;
+    const go = () => pro || (import("./assets/features.js").catch(() => {}),
+      pro = import(`./assets/pro.js${tries ? `?retry=${tries}` : ""}`).catch((err) => { pro = null; tries++; throw err; }));
+    // loading ahead of time: a failure here is fine, the next try (or a submit, which reports it) loads again
+    const warm = () => { go().catch(() => {}); };
+    // the Ultra "Notify me" form gets its handler from pro.js: start loading it as soon as someone reaches the form, and
+    // if they submit before it's ready, hold the submit (no page reload, no lost email) and send it again once it is
+    const notify = document.getElementById("notify-pro");
+    let failedSubmits = 0;
+    if (notify) {
+      notify.addEventListener("focusin", warm);
+      notify.addEventListener("submit", (e) => {
+        if (notify.dataset.ready) return;
+        e.preventDefault(); e.stopImmediatePropagation();
+        if (notify.dataset.held) return;   // a second click while waiting sends nothing extra
+        notify.dataset.held = "1";
+        // resubmit on a fresh task: while this submit event is still being dispatched, the browser ignores requestSubmit
+        go().then(() => setTimeout(() => { notify.dataset.ready = "1"; notify.requestSubmit(); })).catch(() => {
+          delete notify.dataset.held;   // the next submit tries again
+          // if a second submit fails too, a part pro.js needs may be what failed: a reload loads everything afresh
+          const msg = document.getElementById("notify-msg"); failedSubmits++;
+          if (msg) msg.textContent = failedSubmits > 1 ? "Sorry, that didn't work. Please reload the page and try again." : "Sorry, that didn't work. Please try again in a moment.";
+        });
+      }, { capture: true });
+    }
     const secs = ["features", "pro"].map((id) => document.getElementById(id)).filter(Boolean);
-    if (secs.some((s) => location.hash === "#" + s.id)) go();
+    if (secs.some((s) => location.hash === "#" + s.id)) warm();
     else {
       if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); go(); } }, { rootMargin: "1200px 0px" });
+        const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); warm(); } }, { rootMargin: "1200px 0px" });
         secs.forEach((s) => io.observe(s));
       }
-      const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 4000 }) : setTimeout(go, 2000));
+      const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(warm, { timeout: 4000 }) : setTimeout(warm, 2000));
       document.readyState === "complete" ? idle() : addEventListener("load", idle);
     }
   </script>
   <script type="module">
     // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
     import { mountContinue } from "./kit/core/continue.js";
-    mountContinue(document.getElementById("continue"));
+    // someone coming back sees their shelf first, above the pitch they've already read (kit/ui/shelf.js)
+    const yours = document.getElementById("continue");
+    if (mountContinue(yours, { title: "Welcome back: your shelf", layout: "shelf" })) document.getElementById("top")?.before(yours);
   </script>
 </head>
 <body>
@@ -260,13 +288,14 @@
       <div class="section-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span><span id="feature-count"></span></span>
         <h2 id="features-title">Everything that makes Gradify work</h2>
-        <p>The same toolkit runs on every Gradify site and in the app. Tap a bubble to see what it does, then open it: every one is live in the app.</p>
+        <p>The same toolkit runs on every Gradify site and in the app. Pick one to see what it does.</p>
       </div>
       <div class="seg bubble-filter" id="bubble-filter" role="group" aria-label="Filter features"></div>
       <div class="bubble-stage">
         <div class="bubbles" id="bubbles"></div>
         <aside class="panel glass bubble-detail" id="bubble-detail" aria-live="polite"></aside>
       </div>
+      <p class="fold-more"><button type="button" class="btn btn-ghost lg" data-unfold="#features"><span>Show every feature</span></button></p>
     </section>
 
 
@@ -556,7 +585,12 @@
 
     <div class="toast lg" id="toast" role="status" aria-live="polite" hidden></div>
 
-    <main id="find">
+    <main id="find" aria-labelledby="find-title">
+      <div class="sec-head find-head">
+        <span class="eyebrow">Gradify sites</span>
+        <h2 id="find-title">Find your Gradify</h2>
+        <p>A site for every stage, profession and subject, all sharing the same app.</p>
+      </div>
       <div class="controls glass" role="search">
         <label class="search lg">
           <span class="sr-only">Search sites</span>
@@ -586,49 +620,50 @@
     <!-- Gradify Ultra -->
     <section class="pro" id="pro" aria-labelledby="pro-title">
       <div class="pro-hero">
-        <span class="pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro and Gradify Ultra</span>
+        <span class="pro-badge"><span class="pro-gem" aria-hidden="true"></span>Plans</span>
         <h2 id="pro-title">Learn free. <span class="grad">Let Gradify run the rest.</span></h2>
-        <p class="lede">Free is for learning with Gradify: flashcards, mind maps, every course and basic revision. <b>Gradify Pro</b> (<span data-price="plus"></span> a month) organises, optimises and manages your learning. <b>Gradify Ultra</b> (<span data-price="pro"></span> a month) is everything in Pro, with Gradify AI.</p>
         <p class="pro-status" id="pro-status" role="status"></p>
       </div>
-      <h3 class="pro-sub"><span class="tag ready">Gradify Pro</span> Gradify organises, optimises and manages your learning</h3>
-      <div class="pro-features">
-        <article class="pro-card glass"><span class="pro-ico" data-icon="sparkles" aria-hidden="true"></span><h3>Gradify Intelligence</h3><p>Smart Plan autopilot plans your week and keeps it on track. Readiness forecasts, cards ordered by what matters most, adaptive card suggestions and revision recommendations.</p></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="flame" aria-hidden="true"></span><h3>Exam preparation</h3><p>Timed exams over each part of a course and the whole course, with weak areas identified, and the complete question bank for every course.</p></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="calendar" aria-hidden="true"></span><h3>Calendar and reminders</h3><p>Plan around your Google, Apple or Outlook calendar and your timetable, export your plan, schedule study blocks automatically, and get reminders even when Gradify is closed.</p></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="layers" aria-hidden="true"></span><h3>Every device</h3><p>Notes, flashcards, mind maps, progress and revision history, up to date on every device you use. Free studies on one device at a time.</p></article>
+      <div class="plans">
+        <article class="plan glass">
+          <h3>Free</h3>
+          <p class="plan-price"><b>£0</b></p>
+          <p class="plan-line">Learn with Gradify.</p>
+          <ul class="plan-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Every course, lesson and lab on every Gradify site</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Flashcards and mind maps from your own notes</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Spaced revision, quizzes and basic progress</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Study on one device at a time</span></li>
+          </ul>
+          <a class="btn btn-ghost lg plan-cta" href="app.html"><span>Start free</span></a>
+        </article>
+        <article class="plan plan-pro glass">
+          <h3>Gradify Pro</h3>
+          <p class="plan-price"><b data-price="plus"></b> a month</p>
+          <p class="plan-line">Gradify organises, optimises and manages your learning.</p>
+          <ul class="plan-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Everything in Free</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Smart Plan autopilot and readiness forecasts</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Timed exams and the complete question bank</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Calendar sync and reminders, on every device</span></li>
+          </ul>
+          <a class="btn btn-pro lg plan-cta" href="pricing.html"><span class="pro-gem" aria-hidden="true"></span><span>Get Gradify Pro</span></a>
+        </article>
+        <article class="plan glass">
+          <h3>Gradify Ultra <span class="tag planned">Coming soon</span></h3>
+          <p class="plan-price"><b data-price="pro"></b> a month</p>
+          <p class="plan-line">Everything in Pro, with Gradify AI.</p>
+          <ul class="plan-list" id="ultra-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Everything in Pro</span></li>
+          </ul>
+          <form class="notify-pro" id="notify-pro" novalidate>
+            <label class="sr-only" for="notify-email">Email me when Gradify Ultra opens</label>
+            <div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-ghost lg" type="submit"><span>Notify me</span></button></div>
+            <p class="notify-msg" id="notify-msg" role="status" aria-live="polite">One email when it opens. <a href="privacy.html#launch-lists">What we keep</a>.</p>
+          </form>
+        </article>
       </div>
-      <h3 class="pro-sub"><span class="tag planned">Gradify Ultra · coming soon</span> Everything in Pro, with Gradify AI</h3>
-      <div class="pro-features">
-        <article class="pro-card glass"><span class="pro-ico" data-icon="sparkles" aria-hidden="true"></span><h3>An AI tutor for every lesson</h3><p>Talk a topic through, get questioned like a viva, or practise a client or patient conversation, grounded in the lesson's own notes.</p><b class="pro-n" data-allow="tutor"></b></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="book" aria-hidden="true"></span><h3>Explanations on demand</h3><p>Ask why something works and get an answer drawn from the lesson you're on, including what an interactive lab is showing you.</p><b class="pro-n" data-allow="explain"></b></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="layers" aria-hidden="true"></span><h3>Study packs from your notes</h3><p>Upload messy notes, slides or scans and get flashcards, each checked against what you wrote. Packs you've made reopen free.</p><b class="pro-n" data-allow="pack"></b></article>
-        <article class="pro-card glass"><span class="pro-ico" data-icon="trend" aria-hidden="true"></span><h3>Quizzes that make you think</h3><p>"Why" and "apply" questions written from your notes, so you practise using ideas, not only recalling them.</p><b class="pro-n" data-allow="quiz"></b></article>
-      </div>
-      <div class="pro-later glass">
-        <div>
-          <h3 class="pro-sub"><span class="tag planned">Planned</span> More AI-powered learning, for Ultra</h3>
-          <p>After launch, Ultra grows with more AI-powered learning across every Gradify site. It's being designed now, so we won't list it until it's real.</p>
-        </div>
-        <form class="notify-pro" id="notify-pro" novalidate>
-          <label for="notify-email">Get one email when Gradify Ultra opens</label>
-          <div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-pro lg" type="submit"><span class="pro-gem" aria-hidden="true"></span><span>Notify me</span></button></div>
-          <p class="notify-msg" id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="privacy.html#launch-lists">What we keep</a>.</p>
-        </form>
-      </div>
-      <div class="compare glass" aria-labelledby="compare-title">
-        <h3 id="compare-title">Free, Pro and Ultra, side by side</h3>
-        <div class="table-wrap" tabindex="0" role="region" aria-label="Plan comparison, scrolls sideways">
-          <table class="compare-table">
-            <thead><tr><th scope="col">What you get</th><th scope="col">Free</th><th scope="col" class="pro-col">Gradify Pro</th><th scope="col">Gradify Ultra</th></tr></thead>
-            <tbody id="compare-rows"></tbody>
-          </table>
-        </div>
-        <div class="compare-foot">
-          <p id="compare-price"></p>
-          <div class="row-actions"><a class="btn btn-pro lg" href="pricing.html"><span class="pro-gem" aria-hidden="true"></span><span>See the plans</span></a><a class="btn btn-ghost lg" href="app.html"><span>Start free</span></a></div>
-        </div>
-      </div>
+      <p class="plans-foot"><span id="compare-price"></span> <a href="pricing.html">Compare every feature <span aria-hidden="true">→</span></a></p>
     </section>
 
     <section class="orgs" id="organisations" hidden aria-labelledby="orgs-title">

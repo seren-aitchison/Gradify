@@ -36,9 +36,9 @@ export function recentLearning({ site = null, limit = 3 } = {}) {
   return myCourses({ site }).slice(0, limit);
 }
 
-export function mountContinue(el, { site = null, title = "Your learning" } = {}) {
+export function mountContinue(el, { site = null, title = "Your learning", layout = "cards" } = {}) {
   if (!el) return null;
-  resumeBar({ site });
-  const view = mountYourLearning(el, { site, title });
+  if (layout !== "shelf") resumeBar({ site });   // the shelf's first spine is already the way back in
+  const view = mountYourLearning(el, { site, title, layout });
   return el.hidden ? null : view;
 }

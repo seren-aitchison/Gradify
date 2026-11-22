@@ -416,7 +416,7 @@ export function mountCourse(root, cfg) {
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${PRIMARY.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "revise" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
-      <button type="button" class="cx-morebtn" aria-haspopup="true" aria-expanded="false">More ${ic("more")}</button>
+      <button type="button" class="cx-morebtn" aria-haspopup="true" aria-expanded="false" aria-label="More"><span class="cx-moret">More</span> ${ic("more")}</button>
       <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><kbd class="cx-kbd" title="Open the search from anywhere">${isMac ? "⌘K" : "/"}</kbd></label></nav>
     <div class="co-body"><aside class="cx-tree" aria-label="Course outline" hidden></aside><main class="co-main"></main><aside class="co-side"></aside></div>
     <div class="cx-scrim" hidden></div>
@@ -691,8 +691,8 @@ export function mountCourse(root, cfg) {
     const due = dueCards().length;
     const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
     dock.innerHTML = view === "lesson" && l
-      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open>${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
-      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-pal-open>${ic("search")}<span>Search</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
+      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
+      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open aria-label="Ask Gradify AI">${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
     if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
   }
   root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
@@ -1048,7 +1048,8 @@ export function mountCourse(root, cfg) {
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
     const ws = weekStart(), today = day();
     const week7 = Array.from({ length: 7 }, (_, i) => { const t = ws + i * DAY, d = day(t), v = byDay[d] || 0; return { t, d, v, p: Math.min(1, v / Math.max(1, S.goal)), future: d > today, today: d === today }; });
-    const weekHtml = `<nav class="cx-week" aria-label="This week">${week7.map((w) => { const dt = new Date(w.t), wd = dt.toLocaleDateString(undefined, { weekday: "short" });
+    // only once there's something to show: a brand-new learner would see a row of empty "0 XP" days
+    const weekHtml = !(S.log || []).length ? "" : `<nav class="cx-week" aria-label="This week">${week7.map((w) => { const dt = new Date(w.t), wd = dt.toLocaleDateString(undefined, { weekday: "short" });
       return `<a class="cx-wday${w.today ? " today" : ""}${w.future ? " future" : ""}${w.p >= 1 ? " met" : ""}" href="#/me" style="--p:${w.p}" aria-label="${dt.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" })}: ${w.v} XP${w.p >= 1 ? ", daily goal reached" : ""}"><small>${w.today ? "Today" : esc(wd)}</small><b>${dt.getDate()}</b><em>${w.future ? "" : `${w.v} XP`}</em>${w.p >= 1 ? `<i class="cx-wok" aria-hidden="true">${ic("check")}</i>` : ""}</a>`; }).join("")}</nav>`;
     // what's next, as a row of cards you can flick through (cover-flow): the one in the middle stands forward
     const flowList = nl ? [nl, ...lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 9)] : [];
@@ -1877,15 +1878,18 @@ export function mountCourse(root, cfg) {
   const RATE = ["again", "hard", "good", "easy"];
   const SURE = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], ["guess", "No idea", "L"]];
   let reviewCtl = null;   // the Review session in progress: its keys and clicks stop when another starts or the page moves on
-  async function viewReview() {
+  // unitId: review only that unit's cards (a card pocket in Revise)
+  async function viewReview(unitId = null) {
     reviewCtl?.abort();
     const ctl = reviewCtl = new AbortController();
     addEventListener("hashchange", () => ctl.abort(), { once: true, signal: ctl.signal });
     await reviewPool();
     if (ctl.signal.aborted) return;   // left (or re-rendered) while the notes loaded
     paintHud();
-    const due = shuffle(dueCards()).slice(0, 30);
+    const inUnit = (c) => !unitId || byId[c.lesson]?.unit.id === unitId;
+    const due = shuffle(dueCards().filter(inUnit)).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
+    if (!due.length && unitId && units.some((u) => u.id === unitId)) { toast(`${ic("check")} Nothing due in that topic right now`); go("revise"); return; }
     if (!due.length) {
       const nl = resumeLesson();
       main.innerHTML = `<div class="co-panel">${emptyState({ icon: total ? "check" : "cards", title: total ? "All caught up" : "No flashcards yet",
@@ -1963,6 +1967,20 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- Revise: every way to revise in one place, and the Target Test builder ----------
+  // Card pockets: each unit's flashcards fanned in a frosted pocket, with how many are due; one tap reviews that topic
+  function pocketsHtml() {
+    const by = new Map(); for (const c of cardPool || []) { const u = byId[c.lesson]?.unit; if (!u) continue; (by.get(u) || by.set(u, []).get(u)).push(c); }
+    if (!by.size) return "";
+    const dueSet = new Set(dueCards().map((c) => c.id));
+    const list = [...by].map(([u, cs]) => ({ u, cs, due: cs.filter((c) => dueSet.has(c.id)).length })).sort((a, b) => b.due - a.due || a.u.n - b.u.n);
+    const strip = (x) => String(x).replace(/\*\*|`|\$/g, "");
+    return `<section class="cx-pockets" aria-labelledby="cx-pk-h"><div class="cx-sech"><h3 id="cx-pk-h">${ic("cards")} Your card pockets</h3><p>One pocket per ${u1}. Tap one to review just that topic.</p></div>
+      <div class="cx-pgrid">${list.map(({ u, cs, due }) => { const t = trackOf(u);
+        return `<a class="cx-pocket${due ? "" : " calm"}" href="#/review/${u.id}" style="--a:${t.from};--b:${t.to}" aria-label="${esc(`${U} ${u.n}: ${u.title}. ${cs.length} cards, ${due ? `${due} due` : "none due"}`)}">
+          <span class="cx-pfan" aria-hidden="true">${cs.slice(0, 3).map((c, i) => `<span class="cx-pcard" style="--i:${i}"><small>${U} ${u.n}</small><b>${esc(strip(c.front)).slice(0, 70)}</b></span>`).join("")}</span>
+          <span class="cx-pglass" aria-hidden="true"><i></i><i></i><i></i><i></i>${due ? `<em>${due} due</em>` : `<em class="ok">${ic("check")} Caught up</em>`}</span>
+          <span class="cx-plabel"><b>${esc(u.title)}</b><small>${cs.length} card${cs.length === 1 ? "" : "s"}</small></span></a>`; }).join("")}</div></section>`;
+  }
   async function viewRevise() {
     await reviewPool(); paintHud();
     const due = dueCards().length, total = cardPool.length, rq = revisionQueue(S.attempts || [], { limit: 200 }).length, w = weakTargets(), studied = Object.keys(S.done).length;
@@ -1970,6 +1988,7 @@ export function mountCourse(root, cfg) {
     const T = S.ttPrefs || { minutes: 10, focus: "mixed", scope: w.length ? "weak" : studied ? "studied" : "units", units: [] };
     const card = (icon, kick, h, d, href, cta, n, off) => `<${off ? "div" : `a href="${href}"`} class="cx-rcard ${off ? "off" : ""}${icon === "cards" && n ? " cx-deck" : ""}" style="--n:${Math.min(3, Math.max(0, (n || 0) - 1))}"><span class="cx-rci">${ic(icon)}${n ? `<i>${n}</i>` : ""}</span><span class="co-kicker">${kick}</span><b>${h}</b><p>${d}</p><span class="cx-rgo">${cta} ${off ? "" : ic("right")}</span></${off ? "div" : "a"}>`;
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Revise</span><h2>Revise what matters most</h2><p>Learn → recall → apply → review → improve. Everything here comes from your own answers: what's due, what you got wrong, and what's slipping.</p></div>
+      ${pocketsHtml()}
       <div class="cx-rgrid">
         ${card("cards", "Spaced review", due ? `${due} flashcard${due === 1 ? "" : "s"} due` : total ? "All caught up" : "No cards yet", total ? `${Object.keys(S.cards).length} of ${total} cards seen. Each comes back just before you'd forget it.` : "Complete lessons and their flashcards join your review queue.", "#/review", due ? "Review now" : "Open", due, !due && !total)}
         ${card("clock", "Retrieval", rq ? `${rq} question${rq === 1 ? "" : "s"} to bring back` : "Nothing due", "Wrong answers return in hours; right ones at 1, 3, 7, 21 and 60 days.", "#/review/questions", "Revisit", rq, !rq)}
@@ -2621,7 +2640,7 @@ export function mountCourse(root, cfg) {
     else if (view === "revise") await viewRevise();
     else if (view === "target") await viewTarget(arg);
     else if (view === "quiz") await viewQuiz(arg);
-    else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
+    else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview(arg || null));
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     // exam preparation is Gradify Pro: timed exams and the complete question bank (unit quizzes and labs stay free)

@@ -35,7 +35,7 @@ import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focus
 import { goalData } from "../learning/goal-data.js";
 import { PLUS_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
-import { hydrate as glassIcons, cluster as glassCluster } from "../core/glass-icons.js";
+import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
 import { offerInstall, countVisit } from "../core/install.js";
@@ -111,20 +111,21 @@ async function stats() {
 
 // ---------- LifeOS sections ----------
 // One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
-// [route, label, short label for the phone tab bar, icon]
+// [route, label, short label for the phone tab bar, icon], in the order the sidebar and the More list show them:
+// what you do every day first, then where your learning lives, then everything else; Settings last.
 const NAV = [
   ["today", "Today", "Today", "home"],
-  ["intel", "Intelligence", "Intel", "sparkles"],
   ["plan", "Smart Plan", "Plan", "calendar"],
+  ["study", "Study", "Study", "layers"],
+  ["notes", "Notes", "Notes", "upload"],
+  ["learning", "Learn", "Learn", "book"],
   ["revise", "Revision Centre", "Revise", "checklist"],
   ["knowledge", "My Knowledge", "Knowledge", "brain"],
   ["progress", "Progress", "Progress", "trend"],
-  ["earth", "Earth", "Earth", "globe"],
   ["goals", "Path", "Path", "route"],
+  ["intel", "Intelligence", "Intel", "sparkles"],
   ["ai", "Gradify AI", "AI", "bulb"],
-  ["learning", "Learn", "Learn", "book"],
-  ["study", "Study", "Study", "layers"],
-  ["notes", "Notes", "Notes", "upload"],
+  ["earth", "Earth", "Earth", "globe"],
   ["tools", "Tools", "Tools", "forge"],
   ["community", "Community", "Community", "people"],
   ["account", "Settings", "Settings", "cog"],
@@ -133,16 +134,38 @@ const NAV = [
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
 const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+// the sidebar starts short: the everyday sections, then More. A section joins the list once it has been opened
+// (remembered on this device), and the open section always shows. The phone's More sheet still lists everything.
+const CORE_NAV = ["today", "notes", "study", "plan", "learning", "account"];
+const USED_KEY = "gradify.nav.used";
+const usedNav = () => { try { return JSON.parse(localStorage.getItem(USED_KEY) || "[]"); } catch { return []; } };
+function noteNavUse(section) {
+  if (!section || CORE_NAV.includes(section) || !NAV.some(([r]) => r === section)) return;
+  const u = usedNav(); if (u.includes(section)) return;
+  try { localStorage.setItem(USED_KEY, JSON.stringify([...u, section])); } catch { /* private mode */ }
+  const side = document.querySelector(".lo-side"); if (side) { paintSide(side); markLocks(); }
+}
+function paintSide(side) {
+  const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
+  const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
+  const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
+  side.innerHTML = `<span class="lo-side-title">Gradify</span>${main.map(link).join("")}
+    ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
+    ${settings ? link(settings) : ""}`;
+  side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
+  const cur = location.hash.replace(/^#\/?/, "").split("/")[0] || "today", sec = cur in SECTION_OF ? SECTION_OF[cur] : cur;
+  side.querySelectorAll("a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === sec)));
+}
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
   if (!side) {
     side = document.createElement("nav");
-    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "LifeOS");
+    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "Gradify sections");
     document.querySelector("#view")?.before(side);
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
-  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
+  paintSide(side);
   // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
@@ -169,7 +192,8 @@ const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/
 
 // ---------- Router ----------
 // the screens someone new can use before set-up: bring notes, see the pack, study it
-const TRY_FIRST = ["new", "deck", "study"];
+// (and the library of packs, which the pack page links back to)
+const TRY_FIRST = ["new", "deck", "study", "library"];
 const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
@@ -257,21 +281,25 @@ async function saveIntel(patch) {
 }
 const rerender = () => route();
 const apctx = () => ({ store, toast, rerender, saveIntel, intel: () => intelOf(learnerOf(profile)), saveProfile: async (p) => { profile = await store.saveProfile(p); } });
-// thin borders in the colours of the spectrum, one per box, and a gentle flow in as each screen opens
-const RAINBOW = ["#4641ff", "#8b3dff", "#f055dd", "#ff5a4d", "#ff8a00", "#ffc002", "#1fae8c", "#3c78d8"];
+// a gentle flow in as each screen opens. Boxes keep one quiet border, so colour is left for what matters on the screen.
 function decorate(root) {
   const boxes = root.querySelectorAll(".panel, .cp-card, .cp-mini, .wd:not(.wd-raw), .i-next, .i-dayplan, .i-resched, .k-card, .r-list > li > a, .ai-tool, .start-card:not(.primary)");
-  boxes.forEach((el, i) => { el.style.setProperty("--rb", RAINBOW[i % RAINBOW.length]); el.style.setProperty("--i", Math.min(i, 14)); el.classList.add("rb", "flow"); });
+  boxes.forEach((el, i) => { el.style.setProperty("--i", Math.min(i, 14)); el.classList.add("flow"); });
 }
 
 async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
   const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   // someone new can try Gradify first: add notes (or the sample), get a pack, study it. Set-up is offered after that.
+  // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes too
+  if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
   if (needsSetup(profile) && !["start", "account", ...TRY_FIRST].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
+  noteNavUse(section);
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
+  // a Pro prompt belongs to the screen that opened it: leaving the screen closes it
+  document.querySelector("dialog.plus-prompt")?.close();
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg, more); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
@@ -279,7 +307,6 @@ async function route() {
   sessionPill(name);
   // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
   glassIcons(view, profile.site || "Gradify").catch(() => {});
-  const ti = view.querySelector(".today-icons"); if (ti) glassCluster(ti, profile.site || "Gradify", { count: 3, size: 54, words: today() }).catch(() => {});
   // Google sign-in is offered only when the project has it switched on (see authProviders in kit/data/store.js)
   if (view.querySelector("#google, #save-google")) authProviders().then((p) => { if (!p.google) view.querySelectorAll("#google, #save-google").forEach((b) => { b.hidden = true; }); });
   view.focus({ preventScroll: true });
@@ -971,18 +998,20 @@ async function renderToday() {
   const M = await model();
   // course steps from every site; steps from the learner's own notes are already in "what to do next"
   const acrossNext = (L?.next || []).filter((x) => x.site);
+  // nothing to revise and no course yet: the welcome card is the whole job, so nothing else competes with it
+  const firstRun = !s.cards.length && !courses.length;
   view.innerHTML = `<section class="today">
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
-      <span class="today-icons g3d-cluster" aria-hidden="true"></span><a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
+      </div>
     ${offerCardHtml()}
-    ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
+    ${firstRun ? welcomeHtml(profile.display_name) : ""}
     ${ACCESS.has("calendar") ? notifyAskHtml(M) : ""}
     ${ACCESS.has("intelligence") ? `${briefingHtml(M, { made: M.made || [] })}
     ${catchUpHtml(M) || rescheduleHtml(M)}` : ""}
-    ${plannerHtml(M)}
-    ${nextHtml(M)}
+    ${firstRun ? "" : nextHtml(M)}
+    ${firstRun ? "" : plannerHtml(M)}
     ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id)))}
     ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
   </section>`;
@@ -1410,8 +1439,8 @@ async function renderPlan(arg) {
     <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Pro, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
     ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
-    ${smartPlanHtml(M, arg)}` : plusPanelHtml("intelligence", { pricing: PRICING })}
-    ${ACCESS.has("calendar") ? calendarPanelHtml(M, { signedIn: store.mode === "cloud" }) : plusPanelHtml("calendar", { pricing: PRICING, compact: true })}
+    ${smartPlanHtml(M, arg)}` : ""}
+    ${ACCESS.has("calendar") ? calendarPanelHtml(M, { signedIn: store.mode === "cloud" }) : ""}
     <div class="cal-top">
       <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
@@ -1437,6 +1466,8 @@ async function renderPlan(arg) {
           <button type="button" class="icon-btn" data-act="done" aria-label="${b.done ? "Mark not done" : "Mark done"}">${icon("check")}</button><button type="button" class="icon-btn" data-act="del" aria-label="Delete block">${icon("x")}</button></li>`).join("")}</ul>` : `<p class="sub">Free</p>`}
       </article>`;
     }).join("")}</div>
+    ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
+    ${ACCESS.has("calendar") ? "" : plusPanelHtml("calendar", { pricing: PRICING, compact: true })}
   </section>`;
   view.querySelector("#add-block").addEventListener("submit", async (e) => {
     e.preventDefault();

@@ -468,7 +468,7 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
    More sheet on phones. Drawn by drawNav() in main.js.
    ========================================================= */
 .lo-side { display: none; }
-.lo-side-title { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--faint); padding: 4px 12px 8px; }
+.lo-side-title { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--faint); padding: 4px 12px 6px; }
 .lo-side a { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 14px; color: var(--mute); text-decoration: none; font-size: 15px; font-weight: 500; }
 .lo-side a .ico, .lo-side a svg { width: 18px; height: 18px; flex: none; }
 .lo-side a:hover { color: var(--fg); background: rgba(var(--ink-rgb), .04); }
@@ -823,14 +823,18 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 
 /* My Knowledge */
 .k-funnel { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-.k-step { padding: 16px; border-radius: 18px; display: grid; gap: 2px; color: var(--fg); }
-.k-step b { font-size: 30px; letter-spacing: -.03em; }
-.k-step span { font-size: 13px; opacity: .85; }
-.k-step.s0 { background: #1a1a1f; background: light-dark(#ffffff, #1a1a1f); color: var(--mute); border: 1px solid var(--line); }
-.k-step.s1 { background: linear-gradient(135deg, #2a27a8, #4641ff); }
-.k-step.s2 { background: linear-gradient(135deg, #6a2cd6, #b83dff); }
-.k-step.s3 { background: linear-gradient(135deg, #c0359f, #f055dd); }
-.k-step.s4 { background: linear-gradient(135deg, #ff5600, #ffc002); color: #1a0b00; }
+/* the five stages as quiet tiles: each keeps its colour in a small bar and its number, not a full-bleed fill */
+.k-step { --k: var(--mute); position: relative; padding: 16px 16px 14px; border-radius: 18px; display: grid; gap: 2px; color: var(--fg); background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); overflow: hidden; }
+.k-step::before { content: ""; position: absolute; left: 16px; top: 0; width: 28px; height: 3px; border-radius: 0 0 3px 3px; background: var(--k); }
+.k-step b { font-size: 30px; letter-spacing: -.03em; color: var(--k); }
+.k-step span { font-size: 13px; color: var(--mute); }
+.k-step.s0 b { color: var(--fg); }
+.k-step.s0::before { display: none; }
+/* light mode takes deeper shades of each stage colour, so the counts keep at least 4:1 contrast on the pale tile */
+.k-step.s1 { --k: #6d6aff; --k: light-dark(#4641ff, #6d6aff); }
+.k-step.s2 { --k: #b06dff; --k: light-dark(#7b2fe0, #b06dff); }
+.k-step.s3 { --k: #f055dd; --k: light-dark(#b8239f, #f055dd); }
+.k-step.s4 { --k: #ff8a00; --k: light-dark(#b85a00, #ff8a00); }
 .k-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 .k-card { display: grid; gap: 8px; padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); color: var(--fg); text-decoration: none; }
 .k-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
@@ -1155,8 +1159,11 @@ a.wd-s:hover { transform: translateY(-3px); }
 .app-nav [data-tab]:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 .app-nav .tab-title { align-self: center; color: var(--fg); font: 600 16px var(--sans); padding: 0 6px; }
 @media (max-width: 860px) {
-  .app-bar { flex-wrap: wrap; }
-  .app-bar .app-nav { order: 3; flex-basis: 100%; margin: 6px -4px 0; }
+  /* a section's tabs take a second row of the bar, so the bar grows to hold them instead of spilling over the page;
+     a lone section title is left out, since the page's own heading says the same */
+  .app-bar { flex-wrap: wrap; height: auto; min-height: 56px; }
+  .app-bar .app-nav { order: 3; flex-basis: 100%; margin: 2px -4px 0; }
+  .app-bar .app-nav:not(:has([data-tab])) { display: none !important; }
   .app-nav [data-tab] { font-size: 14px; padding: 8px 12px 11px; }
 }
 
@@ -1423,4 +1430,20 @@ section[data-tab] { gap: 16px; }
 @media (max-width: 860px) {
   .app-bar.bar { height: auto; min-height: 58px; }
   .app-bar .app-nav:has(> .tab-title:only-child), .app-bar .app-nav:empty { display: none !important; }
+}
+
+/* the sidebar's More: the sections not yet used (kit/app/main.js paintSide) */
+.lo-more-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 12px; border: 0; border-radius: 14px; background: none; color: var(--mute); font: 500 15px var(--sans); text-align: left; cursor: pointer; }
+.lo-more-btn svg { width: 18px; height: 18px; flex: none; }
+.lo-more-btn:hover { color: var(--fg); background: rgba(var(--ink-rgb), .04); }
+.lo-more-btn em { margin-left: auto; font: 600 11.5px var(--mono); font-style: normal; color: var(--faint); }
+.lo-more-btn[aria-expanded="true"] em::after { content: " ▴"; }
+.lo-more-list { display: flex; flex-direction: column; gap: 2px; padding-left: 10px; margin-left: 8px; border-left: 1px solid var(--line); }
+.lo-more-list[hidden] { display: none; }
+/* the phone's More sheet lists every section at once */
+body.side-open .lo-more-btn { display: none; }
+body.side-open .lo-more-list, body.side-open .lo-more-list[hidden] { display: contents !important; }
+/* phones: set-up's Continue stays in reach at the foot of the screen, above the tab bar, as the form scrolls */
+@media (max-width: 860px) {
+  .setup-form > button[type="submit"] { position: sticky; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); z-index: 5; width: 100%; justify-content: center; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .55); }
 }
