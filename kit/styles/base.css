@@ -88,22 +88,24 @@ a { color: inherit; }
    Frosted, never magnified: a brand tint (indigo, pink, orange) over smoked glass, a 22px blur, bright inner edges and a
    thin spectrum rim drawn as a border-box background (no pseudo-elements, so it works on any element). */
 :root {
-  --gg-fill: rgba(18, 18, 28, .55);
-  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .2), rgba(240, 85, 221, .15) 55%, rgba(255, 138, 0, .13));
-  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .42), rgba(240, 85, 221, .32) 55%, rgba(255, 138, 0, .28));
-  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .7), rgba(240, 85, 221, .6) 35%, rgba(255, 86, 0, .5) 70%, rgba(255, 192, 2, .5));
-  --gg-rim-strong: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
-  --gg-blur: blur(22px) saturate(180%);
-  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .5), inset -1px -1px 0 -.5px rgba(255, 255, 255, .25);
-  --gg-shadow: 0 24px 60px -24px rgba(0, 0, 0, .6);
+  /* frosted, flat: a soft fill, a light blur, a hairline border. No tint, spectrum rim or specular edge (cheap to paint, calm to read). */
+  --gg-fill: rgba(18, 18, 28, .72);
+  --gg-tint: linear-gradient(transparent, transparent);
+  --gg-tint-strong: linear-gradient(transparent, transparent);
+  --gg-rim: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .12));
+  --gg-rim-strong: linear-gradient(rgba(255, 255, 255, .16), rgba(255, 255, 255, .16));
+  --gg-blur: blur(10px);
+  --gg-spec: 0 0 0 0 transparent;
+  --gg-shadow: 0 8px 24px -14px rgba(0, 0, 0, .5);
 }
 :root[data-theme="light"] {
-  --gg-fill: rgba(255, 255, 255, .66);
-  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .09), rgba(240, 85, 221, .07) 55%, rgba(255, 138, 0, .06));
-  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .16), rgba(240, 85, 221, .12) 55%, rgba(255, 138, 0, .1));
-  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .45), rgba(240, 85, 221, .4) 35%, rgba(255, 86, 0, .35) 70%, rgba(255, 192, 2, .4));
-  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .95), inset -1px -1px 0 -.5px rgba(255, 255, 255, .6);
-  --gg-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 18px 44px -22px rgba(22, 22, 48, .22);
+  --gg-fill: rgba(255, 255, 255, .8);
+  --gg-tint: linear-gradient(transparent, transparent);
+  --gg-tint-strong: linear-gradient(transparent, transparent);
+  --gg-rim: linear-gradient(rgba(22, 22, 48, .1), rgba(22, 22, 48, .1));
+  --gg-rim-strong: linear-gradient(rgba(22, 22, 48, .14), rgba(22, 22, 48, .14));
+  --gg-spec: 0 0 0 0 transparent;
+  --gg-shadow: 0 1px 2px rgba(22, 22, 48, .05), 0 8px 24px -16px rgba(22, 22, 48, .18);
 }
 .glass {
   background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;

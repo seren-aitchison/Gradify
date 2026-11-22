@@ -113,6 +113,8 @@ document.addEventListener("click", function (e) {
   var ipad = /iPad/.test(navigator.userAgent) || (/Mac/.test(navigator.platform || "") && navigator.maxTouchPoints > 1);
   var android = /Android/i.test(navigator.userAgent) || (navigator.userAgentData && navigator.userAgentData.platform === "Android");
   var desktop = !ipad && !android && !!(window.matchMedia && matchMedia("(pointer: fine) and (min-width: 1021px)").matches);
+  // GPU Liquid Glass is paused (laggy, too strong): frosted CSS glass everywhere. Opt back in with localStorage "gradify.glass" = "force".
+  if (pref !== "force") return;
   if (pref === "off" || !(desktop || /^(on|lite|force)$/.test(pref || ""))) return;
   var go = function () { import(src.replace(/core\/theme-boot\.js(\?.*)?$/, "ui/liquid-gl.js")).then(function (m) { m.start(); }).catch(function () { /* CSS glass stays */ }); };
   var later = function () { "requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300); };
