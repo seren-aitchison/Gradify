@@ -136,6 +136,7 @@ H: pH
 - pH 7 is neutral at 25 °C; below 7 is acidic; above 7 is alkaline.
 - Each pH unit is a **tenfold** change in [H⁺].
 - Human blood is kept at about pH 7.35–7.45.
+D: bio-ph-scale
 H: Buffers
 - A **buffer** is a solution of a weak acid and its conjugate base that resists pH change.
 - Added H⁺ combines with the base; added OH⁻ reacts with the acid.

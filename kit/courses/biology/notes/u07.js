@@ -262,6 +262,7 @@ H: The brain
 - **Cerebellum**: coordinates balance and fine movement.
 - **Brainstem** (medulla, pons, midbrain): controls breathing, heart rate and reflexes.
 - **Hypothalamus**: homeostasis and links to the pituitary gland.
+D: bio-central-nervous-system
 H: Spinal cord and protection
 - The **spinal cord** carries signals between brain and body and processes reflexes.
 - **Grey matter** contains cell bodies; **white matter** contains myelinated axons.
@@ -1097,6 +1098,7 @@ H: Skeleton and joints
 - The adult skeleton has 206 bones.
 - **Synovial joints** have cartilage, synovial fluid and a capsule; **ligaments** join bone to bone.
 - Types include **hinge** joints (elbow, knee) and **ball-and-socket** joints (hip, shoulder).
+D: bio-elbow-joint
 H: Muscles
 - Skeletal muscles are attached to bones by **tendons**.
 - Muscles can only pull, not push.

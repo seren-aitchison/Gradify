@@ -680,6 +680,7 @@ H: Activation
 - **Lectin pathway**: triggered by lectins binding sugars on microbes.
 - **Alternative pathway**: triggered directly on microbial surfaces.
 - All pathways converge on cleavage of **C3**.
+D: bio-complement-cascade
 H: Effects and regulation
 - **Opsonisation**: C3b coats pathogens for phagocytosis.
 - **Inflammation**: C3a and C5a attract and activate immune cells.

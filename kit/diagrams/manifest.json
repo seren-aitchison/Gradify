@@ -44186,5 +44186,527 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-central-nervous-system": {
+  "title": "The central nervous system",
+  "caption": "The cerebrum has four cortical lobes (frontal, parietal, temporal and occipital); the cerebellum coordinates balance and fine movement; the brainstem (midbrain, pons and medulla) controls breathing, heart rate and reflexes; the hypothalamus controls homeostasis and links to the pituitary gland. The spinal cord continues from the medulla, with grey matter (cell bodies) inside white matter (myelinated axons). The skull, vertebrae and meninges protect the CNS. A schematic section: positions are checked, not proportions.",
+  "alt": "A side view of the head, the front on the left. A large cerebrum divided into frontal, parietal, occipital and temporal lobes; a cerebellum at the back below it; the midbrain, pons and medulla stacked in the brainstem, with the spinal cord continuing down inside the vertebrae; a hypothalamus and pituitary gland above the brainstem; the meninges and the skull round the brain; and a small cross-section of the spinal cord with grey matter inside white matter.",
+  "description": [
+   "Cerebrum: cortex with frontal, parietal, temporal and occipital lobes (occipital: vision).",
+   "Cerebellum: balance and fine movement.",
+   "Brainstem (midbrain, pons, medulla): breathing, heart rate and reflexes.",
+   "Hypothalamus: homeostasis, and the link to the pituitary gland.",
+   "Spinal cord: carries signals between brain and body; grey matter has cell bodies, white matter myelinated axons.",
+   "Protected by the skull, vertebrae and meninges (and cerebrospinal fluid)."
+  ],
+  "course": "biology",
+  "lesson": "Central nervous system",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Central nervous system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"brain\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "16 parts"
+   },
+   {
+    "name": "the frontal, parietal and occipital lobes run from front to back",
+    "ok": true,
+    "detail": "lobesFrontToBack"
+   },
+   {
+    "name": "the temporal lobe lies below the parietal lobe",
+    "ok": true,
+    "detail": "temporalBelowParietal"
+   },
+   {
+    "name": "the cerebellum is behind and below the cerebrum",
+    "ok": true,
+    "detail": "cerebellumBehindAndBelow"
+   },
+   {
+    "name": "the brainstem runs midbrain, pons, medulla from top to bottom",
+    "ok": true,
+    "detail": "brainstemTopToBottom"
+   },
+   {
+    "name": "the spinal cord continues below the medulla",
+    "ok": true,
+    "detail": "cordBelowMedulla"
+   },
+   {
+    "name": "the hypothalamus is above the pituitary gland and the brainstem",
+    "ok": true,
+    "detail": "hypothalamusAboveBrainstemAndPituitary"
+   },
+   {
+    "name": "skull, then meninges, then brain, from the outside in",
+    "ok": true,
+    "detail": "protectionLayers"
+   },
+   {
+    "name": "grey matter lies inside white matter in the spinal cord",
+    "ok": true,
+    "detail": "greyInsideWhite"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-complement-cascade": {
+  "title": "The complement cascade",
+  "caption": "Complement proteins circulate inactive and are activated in a cascade by three pathways: the classical pathway by antibodies bound to antigen, the lectin pathway by lectins binding sugars on microbes, and the alternative pathway directly on microbial surfaces. All converge on cleavage of C3. C3b coats pathogens (opsonisation) so that phagocytes eat them; C3a and C5a attract and activate immune cells (inflammation); and C5b with C6, C7, C8 and many C9 forms the membrane attack complex, a pore that lyses the pathogen. Host cells carry regulatory proteins that block complement on their own surfaces.",
+  "alt": "Three pathway boxes on the left, classical, lectin and alternative, each with its trigger, all with arrows to C3. C3 splits into C3a and C3b. C3a leads to inflammation. C3b leads to opsonisation and to C5. C5 leads to inflammation as C5a and to lysis as C5b joined with C6 to C9.",
+  "description": [
+   "Classical pathway: triggered by antibodies bound to antigen.",
+   "Lectin pathway: triggered by lectins binding sugars on microbes.",
+   "Alternative pathway: triggered directly on microbial surfaces.",
+   "All pathways converge on cleavage of C3.",
+   "Opsonisation: C3b coats pathogens for phagocytosis. Inflammation: C3a and C5a attract and activate immune cells. Lysis: the membrane attack complex (C5b–C9) forms pores.",
+   "Host cells carry regulatory proteins that block complement on their surfaces."
+  ],
+  "course": "biology",
+  "lesson": "Complement system",
+  "also": [],
+  "renderer": "cascade",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u10.js: Complement system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the classical pathway is drawn, triggered by antibody bound to antigen",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lectin pathway is drawn, triggered by lectins binding sugars on microbes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the alternative pathway is drawn, triggered by directly on microbial surfaces",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "all three pathways converge on cleavage of C3",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "classical pathway → C3 is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "lectin pathway → C3 is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alternative pathway → C3 is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C3 → C3b is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C3 → C3a is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C3b → opsonisation is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C3b → C5 is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C3a → inflammation is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C5 → lysis (C5b–C9) is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C5 → inflammation (C5a) is a step of the cascade",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the three effects are all reached: opsonisation, inflammation and lysis",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-dna-repair": {
+  "title": "DNA repair: which pathway for which damage",
+  "caption": "Proofreading corrects errors as DNA polymerase works. After replication, mismatch repair corrects mismatched bases that were missed; base excision repair removes single damaged bases such as oxidised ones; nucleotide excision repair removes bulky damage such as the thymine dimers that UV light causes; double-strand breaks are repaired by homologous recombination, which uses a sister chromatid as a template, or by non-homologous end joining, which can lose bases. The right-hand panel works through nucleotide excision repair on a short sequence: the gap is refilled using the other strand as the template, so the original sequence is restored.",
+  "alt": "Left: four boxes of damage, each with an arrow to its repair pathway. Right: four steps of nucleotide excision repair on a twelve-base sequence: a thymine dimer joins two adjacent Ts, a section containing it is cut out, the gap is refilled using the opposite strand as the template, and ligase seals the strand with the original sequence restored.",
+  "description": [
+   "Mismatch repair corrects mismatched bases missed by proofreading.",
+   "Base excision repair removes single damaged bases, such as oxidised bases.",
+   "Nucleotide excision repair removes bulky damage, such as thymine dimers caused by UV light.",
+   "Double-strand breaks: homologous recombination (sister chromatid as the template) or non-homologous end joining (can lose bases).",
+   "Steps of nucleotide excision repair: detect the distortion, cut out a section of the damaged strand, DNA polymerase fills the gap using the other strand, ligase seals it."
+  ],
+  "course": "biology",
+  "lesson": "DNA repair",
+  "also": [],
+  "renderer": "repair",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: DNA repair"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "replication error missed by proofreading: repaired by mismatch repair",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "oxidised base: repaired by base excision repair",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "thymine dimer (UV light): repaired by nucleotide excision repair",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "double-strand break: repaired by homologous recombination",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "double-strand break: repaired by non-homologous end joining",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every kind of damage in the lesson has a pathway",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "homologous recombination uses a sister chromatid as a template",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "non-homologous end joining can lose bases",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the thymine dimer is two adjacent thymines",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the section cut out contains the dimer",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the gap is filled with the complement of the intact strand",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "after ligation the strand has its original sequence",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-elbow-joint": {
+  "title": "The elbow: a hinge joint and an antagonistic pair",
+  "caption": "A synovial joint has cartilage on the bone ends, synovial fluid and a capsule; ligaments join bone to bone. Muscles are attached to bones by tendons and can only pull. At the elbow, a hinge joint, the biceps and triceps are an antagonistic pair: when the biceps contracts and the triceps relaxes the forearm is pulled up; to straighten the arm the triceps contracts and the biceps relaxes. The bones act as levers with the joint as the pivot.",
+  "alt": "A side view of an arm bent at the elbow. The humerus is horizontal and the forearm points up to the right. A capsule round the joint holds synovial fluid, with cartilage on the bone ends and ligaments joining the bones. A thick, contracted biceps above is joined to the forearm by a tendon, and a thin, relaxed triceps below is joined by a tendon behind the elbow.",
+  "description": [
+   "Synovial joint: cartilage, synovial fluid and a capsule; ligaments join bone to bone.",
+   "Tendons join muscle to bone.",
+   "Muscles can only pull, so they work in antagonistic pairs: one contracts while the other relaxes.",
+   "Bending the elbow: the biceps contracts and shortens, the triceps relaxes and lengthens, and the forearm is pulled up about the hinge joint.",
+   "Bones act as levers, with the joint as the pivot."
+  ],
+  "course": "biology",
+  "lesson": "Musculoskeletal system",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Musculoskeletal system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"elbow\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "10 parts"
+   },
+   {
+    "name": "the biceps and triceps attach on opposite sides of the pivot",
+    "ok": true,
+    "detail": "musclesOnOppositeSides"
+   },
+   {
+    "name": "one muscle of the pair contracts while the other relaxes",
+    "ok": true,
+    "detail": "oneContractsOneRelaxes"
+   },
+   {
+    "name": "a tendon joins muscle to bone",
+    "ok": true,
+    "detail": "tendonJoinsMuscleToBone"
+   },
+   {
+    "name": "a ligament joins bone to bone",
+    "ok": true,
+    "detail": "ligamentJoinsBoneToBone"
+   },
+   {
+    "name": "the muscle pulls the bone toward itself",
+    "ok": true,
+    "detail": "musclePullsTowardItself"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-ph-scale": {
+  "title": "The pH scale: a tenfold step at every unit",
+  "caption": "pH = −log₁₀[H⁺], with [H⁺] in mol dm⁻³. Each unit of pH is a tenfold change in hydrogen ion concentration, so pH 3 has ten times the [H⁺] of pH 4, not twice. pH 7 is neutral at 25 °C, the stomach is about pH 2 and human blood is kept at pH 7.35 to 7.45.",
+  "alt": "A coloured bar from pH 0 on the left to pH 14 on the right, labelled acidic and alkaline, with the hydrogen ion concentration under each unit falling from 1 to 10 to the minus 14, markers for the stomach at about pH 2, neutral at pH 7 and blood at 7.35 to 7.45, and a worked example: a tenfold rise in [H⁺] from 10 to the minus 4 to 10 to the minus 3 lowers the pH from 4 to 3.",
+  "description": [
+   "pH = −log₁₀[H⁺], with [H⁺] in mol dm⁻³.",
+   "Each pH unit is a tenfold change in [H⁺].",
+   "pH 7 is neutral at 25 °C; below 7 is acidic and above 7 is alkaline.",
+   "Human blood is kept at about pH 7.35–7.45; the stomach is about pH 2.",
+   "Worked example: [H⁺] = 1 × 10⁻⁴ gives pH 4; a tenfold rise to 1 × 10⁻³ gives pH 3."
+  ],
+  "course": "biology",
+  "lesson": "pH and biological buffers",
+  "also": [],
+  "renderer": "phscale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: pH and biological buffers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "pH 0: [H⁺] = 10^−0 = 1e+0 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 1: [H⁺] = 10^−1 = 1e-1 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 2: [H⁺] = 10^−2 = 1e-2 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 3: [H⁺] = 10^−3 = 1e-3 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 4: [H⁺] = 10^−4 = 1e-4 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 5: [H⁺] = 10^−5 = 1e-5 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 6: [H⁺] = 10^−6 = 1e-6 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 7: [H⁺] = 10^−7 = 1e-7 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 8: [H⁺] = 10^−8 = 1e-8 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 9: [H⁺] = 10^−9 = 1e-9 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 10: [H⁺] = 10^−10 = 1e-10 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 11: [H⁺] = 10^−11 = 1e-11 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 12: [H⁺] = 10^−12 = 1e-12 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 13: [H⁺] = 10^−13 = 1e-13 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "pH 14: [H⁺] = 10^−14 = 1e-14 mol dm⁻³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each unit of pH is a tenfold change in [H⁺]",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "neutral is pH 7 at 25 °C: [H⁺] = 10⁻⁷ = [OH⁻]",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "stomach: pH about 2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "neutral (25 °C): pH about 7",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "human blood: pH 7.35–7.45",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "worked example: pH = −log₁₀(1 × 10^−4) = 4",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a tenfold rise in [H⁺] lowers the pH by 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

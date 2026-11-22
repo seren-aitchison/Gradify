@@ -1,0 +1,55 @@
+{
+ "id": "bio-dna-repair",
+ "renderer": "repair",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "DNA repair",
+ "title": "DNA repair: which pathway for which damage",
+ "caption": "Proofreading corrects errors as DNA polymerase works. After replication, mismatch repair corrects mismatched bases that were missed; base excision repair removes single damaged bases such as oxidised ones; nucleotide excision repair removes bulky damage such as the thymine dimers that UV light causes; double-strand breaks are repaired by homologous recombination, which uses a sister chromatid as a template, or by non-homologous end joining, which can lose bases. The right-hand panel works through nucleotide excision repair on a short sequence: the gap is refilled using the other strand as the template, so the original sequence is restored.",
+ "alt": "Left: four boxes of damage, each with an arrow to its repair pathway. Right: four steps of nucleotide excision repair on a twelve-base sequence: a thymine dimer joins two adjacent Ts, a section containing it is cut out, the gap is refilled using the opposite strand as the template, and ligase seals the strand with the original sequence restored.",
+ "description": [
+  "Mismatch repair corrects mismatched bases missed by proofreading.",
+  "Base excision repair removes single damaged bases, such as oxidised bases.",
+  "Nucleotide excision repair removes bulky damage, such as thymine dimers caused by UV light.",
+  "Double-strand breaks: homologous recombination (sister chromatid as the template) or non-homologous end joining (can lose bases).",
+  "Steps of nucleotide excision repair: detect the distortion, cut out a section of the damaged strand, DNA polymerase fills the gap using the other strand, ligase seals it."
+ ],
+ "rows": [
+  {
+   "damage": "replication error missed by proofreading",
+   "pathway": "mismatch repair",
+   "note": "corrects mismatched bases"
+  },
+  {
+   "damage": "oxidised base",
+   "pathway": "base excision repair",
+   "note": "removes single damaged bases"
+  },
+  {
+   "damage": "thymine dimer (UV light)",
+   "pathway": "nucleotide excision repair",
+   "note": "removes bulky damage"
+  },
+  {
+   "damage": "double-strand break",
+   "pathway": "homologous recombination",
+   "note": "sister chromatid as the template"
+  },
+  {
+   "damage": "double-strand break",
+   "pathway": "non-homologous end joining",
+   "note": "can lose bases"
+  }
+ ],
+ "ner": {
+  "strand": "GACTTGCATCAG",
+  "dimer": [
+   3,
+   4
+  ],
+  "excise": [
+   2,
+   7
+  ]
+ }
+}

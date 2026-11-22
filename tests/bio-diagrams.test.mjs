@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH, cleavageCells, cytometryData, karyotypeOf, digestFragments, landscapeStats, growNetwork } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH, cleavageCells, cytometryData, karyotypeOf, digestFragments, landscapeStats, growNetwork, hOfPh, phOfH, complementOf, nerSteps } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -483,4 +483,54 @@ test("water cycle: every arrow is a real step, and every store has water in and 
   const edges = [{ from: "oceans", to: "atmosphere", process: "evaporation" }, { from: "atmosphere", to: "land", process: "condensation and precipitation" }, { from: "land", to: "oceans", process: "river flow" }];
   assert.equal(allPass({ renderer: "biocycle", alt: "x", cycle: "water", nodes, edges: edges.slice(0, 2).concat([{ from: "land", to: "atmosphere", process: "evaporation" }]) }), false); // land is not a source of evaporation; the oceans get no water in
   assert.equal(allPass({ renderer: "biocycle", alt: "x", cycle: "water", nodes, edges: [edges[0], { from: "atmosphere", to: "land", process: "evaporation" }, edges[2]] }), false); // evaporation does not go from the air to the land
+});
+
+test("pH scale: [H+] is 10^-pH, each unit is tenfold, and the worked example holds", () => {
+  assert.equal(hOfPh(7), 1e-7); assert.ok(Math.abs(phOfH(1e-4) - 4) < 1e-12); assert.ok(Math.abs(hOfPh(3) / hOfPh(4) - 10) < 1e-9);
+  const ok = { renderer: "phscale", alt: "x", markers: [{ label: "stomach", ph: 2, text: "s" }, { label: "neutral (25 °C)", ph: 7, text: "n" }, { label: "human blood", ph: 7.35, ph2: 7.45, text: "b" }], example: { ph: 3 } };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, markers: [{ label: "stomach", ph: 5, text: "s" }] }), false); // the stomach is about pH 2
+  assert.equal(allPass({ ...ok, markers: [{ label: "human blood", ph: 7.0, ph2: 7.8, text: "b" }] }), false); // blood is 7.35 to 7.45
+  assert.equal(allPass({ ...ok, markers: [{ label: "lemon juice", ph: 2, text: "l" }] }), false); // not in the lesson
+  assert.equal(allPass({ ...ok, example: { ph: 4 } }), false); // 1 × 10^-4 gives pH 4, so the example starts one unit lower
+});
+
+test("DNA repair: pathways match their damage, and nucleotide excision repair restores the sequence", () => {
+  assert.equal(complementOf("GACT"), "CTGA");
+  const ner = { strand: "GACTTGCATCAG", dimer: [3, 4], excise: [2, 7] }, N = nerSteps(ner);
+  assert.equal(N.filled.join(""), "CTTGCA"); assert.equal(N.restored, ner.strand);
+  const rows = [{ damage: "replication error missed by proofreading", pathway: "mismatch repair" }, { damage: "oxidised base", pathway: "base excision repair" }, { damage: "thymine dimer (UV light)", pathway: "nucleotide excision repair" }, { damage: "double-strand break", pathway: "homologous recombination", note: "sister chromatid as the template" }, { damage: "double-strand break", pathway: "non-homologous end joining", note: "can lose bases" }];
+  const ok = { renderer: "repair", alt: "x", rows, ner };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, rows: [{ ...rows[0], pathway: "base excision repair" }, ...rows.slice(1)] }), false); // a mismatch is not an oxidised base
+  assert.equal(allPass({ ...ok, rows: rows.slice(1) }), false); // every kind of damage needs a pathway
+  assert.equal(allPass({ ...ok, ner: { ...ner, dimer: [2, 4] } }), false); // a dimer is two adjacent thymines
+  assert.equal(allPass({ ...ok, ner: { ...ner, excise: [5, 8] } }), false); // the cut must contain the dimer
+  assert.equal(allPass({ ...ok, ner: { ...ner, dimer: [0, 1] } }), false); // G and A are not thymines
+  assert.equal(allPass({ ...ok, rows: [...rows.slice(0, 3), { ...rows[3], note: "a random template" }, rows[4]] }), false);
+});
+
+test("complement cascade: triggers, convergence on C3, and every arrow a step of the cascade", () => {
+  const n = (id, is, extra = {}) => ({ id, label: is, sub: extra.sub || "", is, col: 0, row: 0, ...extra });
+  const nodes = [n("p1", "classical pathway", { sub: "antibody bound to antigen" }), n("p2", "lectin pathway", { sub: "lectins binding sugars on microbes" }), n("p3", "alternative pathway", { sub: "directly on microbial surfaces" }), n("c3", "C3"), n("c3a", "C3a"), n("c3b", "C3b"), n("c5", "C5"), n("ops", "opsonisation"), n("lys", "lysis"), n("inf", "inflammation")];
+  const edges = [["p1", "c3"], ["p2", "c3"], ["p3", "c3"], ["c3", "c3a"], ["c3", "c3b"], ["c3a", "inf"], ["c3b", "ops"], ["c3b", "c5"], ["c5", "lys", "C5b–C9"], ["c5", "inf", "C5a"]].map(([from, to, via]) => ({ from, to, via }));
+  const ok = { renderer: "cascade", alt: "x", note: "n", nodes, edges };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, edges: edges.filter((e) => e.from !== "p3") }), false); // all three pathways must converge on C3
+  assert.equal(allPass({ ...ok, edges: [...edges, { from: "c3a", to: "lys" }] }), false); // C3a does not lead to lysis
+  assert.equal(allPass({ ...ok, edges: edges.map((e) => (e.to === "inf" && e.from === "c5" ? { ...e, via: "C5b" } : e)) }), false); // C5a, not C5b, is the inflammatory fragment
+  assert.equal(allPass({ ...ok, nodes: nodes.map((x) => (x.is === "lectin pathway" ? { ...x, sub: "antibody bound to antigen" } : x)) }), false); // the lectin pathway is not triggered by antibody
+  assert.equal(allPass({ ...ok, nodes: nodes.filter((x) => x.is !== "lysis"), edges: edges.filter((e) => e.to !== "lys") }), false); // all three effects must appear
+});
+
+test("section: the brain and elbow templates check positions, order and what joins what", () => {
+  const base = { renderer: "section", alt: "x" };
+  const brain = ["skull", "meninges", "cerebral cortex", "frontal lobe", "parietal lobe", "temporal lobe", "occipital lobe", "cerebellum", "midbrain", "pons", "medulla", "hypothalamus", "pituitary gland", "spinal cord", "grey matter", "white matter"];
+  const bf = ["lobesFrontToBack", "temporalBelowParietal", "cerebellumBehindAndBelow", "brainstemTopToBottom", "cordBelowMedulla", "hypothalamusAboveBrainstemAndPituitary", "protectionLayers", "greyInsideWhite"];
+  assert.equal(allPass({ ...base, template: "brain", labels: brain, claims: bf.map((id) => ({ type: "fact", id })) }), true);
+  assert.equal(allPass({ ...base, template: "brain", labels: ["pituitary gland"], claims: [{ type: "fact", id: "cerebellumInFront" }] }), false);
+  const elbow = ["humerus", "radius and ulna", "biceps", "triceps", "tendon", "ligament", "cartilage", "synovial fluid", "joint capsule", "pivot"];
+  const ef = ["musclesOnOppositeSides", "oneContractsOneRelaxes", "tendonJoinsMuscleToBone", "ligamentJoinsBoneToBone", "musclePullsTowardItself"];
+  assert.equal(allPass({ ...base, template: "elbow", labels: elbow, claims: ef.map((id) => ({ type: "fact", id })) }), true);
+  assert.equal(allPass({ ...base, template: "elbow", labels: ["synovial fluid", "kneecap"] }), false); // not a part of this picture
 });

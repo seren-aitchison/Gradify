@@ -25,7 +25,11 @@ the rules the new renderers follow, and the completion report (Stage 6).
 | Networks | u13-18 | hubs and a heavy tail | `bionetwork` |
 | Microbes | u09-07, u09-08 | horizontal transfer, virion | `section` templates `hgt`, `virion` |
 | Evolution | u06-08 | gene flow | `graph` (two-population migration model) |
-| **Not built** | u03-04, u04-04, u07-07, u07-27, u10-17 | see Limitations | (reasons in the plan) |
+| pH | u03-04 | the pH scale and the tenfold step | `phscale` |
+| DNA repair | u04-04 | damage to pathway, and a worked repair | `repair` |
+| Complement | u10-17 | the cascade | `cascade` |
+| Brain, spinal cord | u07-07 | CNS regions and protection | `section` template `brain` |
+| Bones and joints | u07-27 | synovial joint, antagonistic pair | `section` template `elbow` |
 
 ## Rules every new renderer follows
 
@@ -59,39 +63,35 @@ nothing to vary, so a tooltip on each part is enough.
 
 ## Completion report
 
-**Renderers.** 13 new renderers: `bilayer`, `inducedfit`, `hbond`, `section` (11 templates: root, stem, leaf, xylem,
-phloem, flower, seed, junctions, virion, hgt, chromatin), `tract`, `fertilisation`, `cleavage`, `cytometry`, `karyotype`,
-`plasmidmap`, `fragment`, `bionetwork`; and a water cycle added to `biocycle`.
+**Renderers.** 16 new renderers: `bilayer`, `inducedfit`, `hbond`, `section` (13 templates: root, stem, leaf, xylem,
+phloem, flower, seed, junctions, virion, hgt, chromatin, brain, elbow), `tract`, `fertilisation`, `cleavage`, `cytometry`,
+`karyotype`, `plasmidmap`, `fragment`, `bionetwork`, `phscale`, `repair`, `cascade`; and a water cycle added to `biocycle`.
 
-**Diagrams and lessons.** 26 new diagram ids. 30 lessons newly covered (of 35 that were waiting): lessons with a passing
-diagram went from 137 to 167, and lessons with a lab from 95 to 100 (both from 53 to 57).
+**Diagrams and lessons.** 31 new diagram ids and every one of the 35 lessons that were waiting now has a checked
+diagram: lessons with a passing diagram went from 137 to 172, and lessons with a lab from 95 to 100 (both from 53 to 57).
+No biology plan row says "not yet built" any more.
 
-**Tests.** 1,094 at the start; 1,111 now, all passing (`npm test`). New tests: one per new renderer (accepting the correct
-spec and rejecting specs that claim something false), the `section` templates, the registration and unit-name checks, the
-two labs, and the interactive count (245). Inventory: 0 data problems and up to date; biology coverage: 0 planned but not
-placed, 0 failing. Legibility (`legibility.cjs bio-`, wide and narrow widths, all 148 biology diagram ids): no clipped or
-overprinted text. Regression across all 14 units: the full suite and the legibility sweep cover every biology diagram,
-not only the new ones.
+**Tests.** 1,094 at the start; all passing after this stage (`npm test`). New tests: one per new renderer (accepting the
+correct spec and rejecting specs that claim something false), the `section` templates, the registration and unit-name
+checks, the two labs, and the interactive count (245). Inventory: 0 data problems and up to date; biology coverage: 0
+planned but not placed, 0 failing. Legibility (`legibility.cjs bio-`, wide and narrow widths, every biology diagram id): no
+clipped or overprinted text. Regression across all 14 units: the full suite and the legibility sweep cover every biology
+diagram, not only the new ones.
 
-**Lessons still without a diagram, and why.**
-
-| Lesson | Why not |
-| --- | --- |
-| u07-07 (brain and spinal cord), u07-27 (bones and joints) | Accurate anatomy needs outline art that a check cannot verify; a hand-drawn approximation would be a decorative scientific claim. |
-| u10-17 (complement) | A cascade of many named proteins with several branches; the shared flow layout cannot draw its branching without crossing arrows, and an inexact cascade is worse than none. |
-| u04-04 (DNA repair) | The repair pathways are described step by step in words; no single picture carries the pathways without inventing detail the lesson does not give. |
-| u03-04 (pH) | The useful picture is a logarithmic-axis graph, which the graph renderer does not support yet; the worked example is in the text. |
+**Lessons still without a diagram.** None of the 35. (The brain and the elbow are schematic section drawings whose
+positions, order and what-joins-what are checked; they are not anatomical illustrations. The complement cascade draws only
+the steps the lesson names.)
 
 **Inventory problems.** None: the inventory reports 0 data problems. The only generated-file noise was the registry
 run stamping other courses' QA documents with today's date; those were left as on `main`.
 
 **Limitations.**
 
-* The `section` templates are schematic: their positions and orders are checked against the lesson, but they are not
-  anatomical drawings and make no claim about proportions.
+* The `section` templates (including the brain and the elbow) are schematic: their positions and orders are checked against
+  the lesson, but they are not anatomical drawings and make no claim about proportions.
+* The complement cascade shows only the steps and effects the lesson names; the full cascade has many more components.
 * Cleavage cells are equal-area sectors of one disc, a schematic cross-section; counts and the day numbers are the lesson's.
 * The flow-cytometry sample, the network and the landscape are simulated or hand-made illustrations and are labelled as such;
   the numbers in them are not measurements.
 * Plant and animal structures are drawn without scale bars except where the lesson gives a size (membrane thickness, bond
   lengths, chromosome lengths, virus size range).
-* Nothing has been pushed to `main`; the work is on the approved working branches only.

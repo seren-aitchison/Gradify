@@ -17,6 +17,9 @@
 //   plasmidmap a circular vector map: required features, no overlaps, unique cutters in the MCS, digest fragments add up
 //   fragment   habitat fragmentation on a grid: patches, edge and core cells counted from the grid
 //   bionetwork a seeded preferential-attachment network: hubs, degree counts and the heavy tail checked
+//   phscale    the pH scale: [H+] = 10^-pH at every unit, tenfold steps, the lesson's markers and worked example
+//   repair     which repair for which damage, and nucleotide excision repair worked on a real sequence
+//   cascade    the complement cascade: triggers, convergence on C3, and the three effects, every arrow a real step
 //   tract      the circulation, airway or gut as a route (drawn as a flow): every step is one blood, air or food really takes
 //   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
 //   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
@@ -1914,6 +1917,83 @@ const SECTION = {
       },
     };
   })(),
+  brain: (() => {
+    // a schematic sagittal section, front of the head on the left; positions, not proportions, are what is checked
+    const G = { skull: { cx: 200, cy: 122, rx: 178, ry: 112 }, mening: { rx: 166, ry: 100 }, cer: { cx: 190, cy: 112, rx: 146, ry: 84 }, cerebellum: { cx: 285, cy: 190, rx: 50, ry: 28 },
+      lobes: { frontal: [[0, 0], [195, 0], [165, 108], [100, 170], [0, 170]], parietal: [[195, 0], [268, 0], [292, 100], [165, 108]], occipital: [[268, 0], [400, 0], [400, 110], [292, 100]], temporal: [[100, 170], [165, 108], [292, 100], [400, 110], [400, 230], [100, 230]] },
+      lobeAt: { frontal: [95, 88], parietal: [228, 58], occipital: [310, 70], temporal: [205, 142] }, brainstem: { midbrain: [224, 165], pons: [228, 190], medulla: [234, 216] }, cord: { top: [236, 230], bottom: [262, 294] },
+      hypothalamus: [200, 158], pituitary: [196, 181], inset: { cx: 352, cy: 250, white: 30, grey: 15 } };
+    const lobeMid = (k) => G.lobeAt[k];
+    return {
+      parts: { skull: "The skull, with the vertebrae, protects the CNS.", meninges: "Membranes between the bone and the brain; cerebrospinal fluid fills the space under them.", "cerebral cortex": "The outer layer of the cerebrum, involved in higher functions.",
+        "frontal lobe": "Voluntary movement, decision-making and personality (as the case of Phineas Gage showed).", "parietal lobe": "A lobe of the cerebral cortex.", "temporal lobe": "A lobe of the cerebral cortex.", "occipital lobe": "Vision.",
+        cerebellum: "Coordinates balance and fine movement.", midbrain: "Part of the brainstem, which controls breathing, heart rate and reflexes.", pons: "Part of the brainstem.", medulla: "Part of the brainstem, continuous with the spinal cord.",
+        hypothalamus: "Homeostasis, and the link to the pituitary gland.", "pituitary gland": "The gland controlled by the hypothalamus.", "spinal cord": "Carries signals between the brain and the body and processes reflexes.", vertebra: "A bone of the vertebral column round the spinal cord.",
+        "grey matter": "Contains the nerve cell bodies.", "white matter": "Contains myelinated axons." },
+      order: ["skull", "meninges", "cerebrum"],
+      facts: { lobesFrontToBack: () => lobeMid("frontal")[0] < lobeMid("parietal")[0] && lobeMid("parietal")[0] < lobeMid("occipital")[0], temporalBelowParietal: () => lobeMid("temporal")[1] > lobeMid("parietal")[1],
+        cerebellumBehindAndBelow: () => G.cerebellum.cx > G.brainstem.pons[0] && G.cerebellum.cy > G.cer.cy, brainstemTopToBottom: () => G.brainstem.midbrain[1] < G.brainstem.pons[1] && G.brainstem.pons[1] < G.brainstem.medulla[1],
+        cordBelowMedulla: () => G.cord.top[1] > G.brainstem.medulla[1] && G.cord.bottom[1] > G.cord.top[1], hypothalamusAboveBrainstemAndPituitary: () => G.hypothalamus[1] < G.pituitary[1] && G.hypothalamus[1] < G.brainstem.midbrain[1] + 8,
+        protectionLayers: () => G.skull.rx > G.mening.rx && G.mening.rx > G.cer.rx && G.skull.ry > G.mening.ry && G.mening.ry > G.cer.ry, greyInsideWhite: () => G.inset.grey < G.inset.white },
+      draw() {
+        let s = "", m = [];
+        s += part("skull", this.parts.skull, `<ellipse cx="${G.skull.cx}" cy="${G.skull.cy}" rx="${G.skull.rx}" ry="${G.skull.ry}" fill="none" stroke="${C.a3}" stroke-width="9" stroke-opacity=".75"/>`); m.push(["skull", G.skull.cx - G.skull.rx, G.skull.cy - 20, "L"]);
+        s += part("meninges", this.parts.meninges, `<ellipse cx="${G.skull.cx}" cy="${G.skull.cy}" rx="${G.mening.rx}" ry="${G.mening.ry}" fill="${C.a1}" fill-opacity=".1" stroke="${C.a4}" stroke-width="3"/>`); m.push(["meninges", G.skull.cx - G.mening.rx, G.skull.cy + 30, "L"]);
+        const tone = { frontal: C.a1, parietal: C.a4, occipital: C.a5, temporal: C.a2 };
+        s += `<clipPath id="brain-cerebrum"><ellipse cx="${G.cer.cx}" cy="${G.cer.cy}" rx="${G.cer.rx}" ry="${G.cer.ry}"/></clipPath>`;
+        for (const k of Object.keys(G.lobes)) {
+          s += part(`${k} lobe`, this.parts[`${k} lobe`], `<g clip-path="url(#brain-cerebrum)"><path d="M${G.lobes[k].map((q) => q.join(" ")).join(" L")} Z" fill="${tone[k]}" fill-opacity=".3" stroke="${C.ink}" stroke-opacity=".55" stroke-width="1.6" stroke-linejoin="round"/></g>`);
+          const [mx, my] = lobeMid(k); m.push([`${k} lobe`, mx, my, k === "frontal" ? "L" : undefined]);
+        }
+        s += part("cerebral cortex", this.parts["cerebral cortex"], `<ellipse cx="${G.cer.cx}" cy="${G.cer.cy}" rx="${G.cer.rx}" ry="${G.cer.ry}" fill="none" stroke="${C.a4}" stroke-width="6" stroke-opacity=".7"/>`); m.push(["cerebral cortex", G.cer.cx + 30, G.cer.cy - G.cer.ry]);
+        s += part("vertebra", this.parts.vertebra, Array.from({ length: 5 }, (_, i) => { const t = i / 4, x = G.cord.top[0] + (G.cord.bottom[0] - G.cord.top[0]) * t, y = G.cord.top[1] + 6 + (G.cord.bottom[1] - G.cord.top[1] - 10) * t; return `<rect x="${f1(x - 16)}" y="${f1(y - 5)}" width="32" height="10" rx="4" fill="${C.a3}" fill-opacity=".45" stroke="${C.a3}" stroke-width="1.4" transform="rotate(14 ${f1(x)} ${f1(y)})"/>`; }).join(""));
+        s += part("spinal cord", this.parts["spinal cord"], `<path d="M${G.brainstem.medulla[0]} ${G.brainstem.medulla[1] + 8} L${G.cord.top[0]} ${G.cord.top[1]} L${G.cord.bottom[0]} ${G.cord.bottom[1]}" fill="none" stroke="${C.a5}" stroke-width="12" stroke-linecap="round" stroke-opacity=".8"/>`); m.push(["spinal cord", (G.cord.top[0] + G.cord.bottom[0]) / 2, (G.cord.top[1] + G.cord.bottom[1]) / 2], ["vertebra", G.cord.top[0] + 18, G.cord.top[1] + 10]);
+        s += part("cerebellum", this.parts.cerebellum, `<ellipse cx="${G.cerebellum.cx}" cy="${G.cerebellum.cy}" rx="${G.cerebellum.rx}" ry="${G.cerebellum.ry}" fill="${C.good}" fill-opacity=".35" stroke="${C.good}" stroke-width="2.4"/>` + [-14, -6, 2, 10].map((d) => `<path d="M${G.cerebellum.cx - 40 + Math.abs(d) * 0.4} ${G.cerebellum.cy + d} Q${G.cerebellum.cx} ${G.cerebellum.cy + d - 4} ${G.cerebellum.cx + 40 - Math.abs(d) * 0.4} ${G.cerebellum.cy + d}" fill="none" stroke="${C.good}" stroke-width="1.2"/>`).join("")); m.push(["cerebellum", G.cerebellum.cx + 20, G.cerebellum.cy + 10]);
+        for (const [k, tn] of [["midbrain", C.a3], ["pons", C.a2], ["medulla", C.a5]]) { const [x, y] = G.brainstem[k]; s += part(k, this.parts[k], `<rect x="${x - 14}" y="${y - 12}" width="28" height="24" rx="8" fill="${tn}" fill-opacity=".5" stroke="${tn}" stroke-width="1.8"/>`); m.push([k, x, y]); }
+        s += part("hypothalamus", this.parts.hypothalamus, `<ellipse cx="${G.hypothalamus[0]}" cy="${G.hypothalamus[1]}" rx="11" ry="8" fill="${C.a2}" fill-opacity=".7" stroke="${C.a2}" stroke-width="1.6"/>`); m.push(["hypothalamus", G.hypothalamus[0] - 8, G.hypothalamus[1], "L"]);
+        s += part("pituitary gland", this.parts["pituitary gland"], `<circle cx="${G.pituitary[0]}" cy="${G.pituitary[1]}" r="5" fill="${C.a3}" stroke="${C.a3}"/><path d="M${G.hypothalamus[0]} ${G.hypothalamus[1] + 8} L${G.pituitary[0]} ${G.pituitary[1] - 5}" stroke="${C.a3}" stroke-width="2"/>`); m.push(["pituitary gland", G.pituitary[0] - 5, G.pituitary[1] + 3, "L"]);
+        const I = G.inset;
+        s += `<g>` + part("white matter", this.parts["white matter"], `<circle cx="${I.cx}" cy="${I.cy}" r="${I.white}" fill="${C.panel}" stroke="${C.ink}" stroke-width="1.6" stroke-opacity=".7"/>`) + part("grey matter", this.parts["grey matter"], `<path d="M${I.cx} ${I.cy - 3} C${I.cx - 22} ${I.cy - 20} ${I.cx - 26} ${I.cy - 2} ${I.cx - 14} ${I.cy + 4} C${I.cx - 22} ${I.cy + 14} ${I.cx - 10} ${I.cy + 22} ${I.cx} ${I.cy + 8} C${I.cx + 10} ${I.cy + 22} ${I.cx + 22} ${I.cy + 14} ${I.cx + 14} ${I.cy + 4} C${I.cx + 26} ${I.cy - 2} ${I.cx + 22} ${I.cy - 20} ${I.cx} ${I.cy - 3} Z" fill="${C.a1}" fill-opacity=".45" stroke="${C.a1}" stroke-width="1.6"/>`) + text(I.cx, I.cy + I.white + 12, "spinal cord, cross-section", { size: 10, fill: C.soft }) + `</g>`;
+        m.push(["white matter", I.cx + I.white - 4, I.cy - 8], ["grey matter", I.cx + 8, I.cy + 6]);
+        return { s, m };
+      },
+    };
+  })(),
+  elbow: (() => {
+    // the elbow: a hinge joint worked by an antagonistic pair; the facts are computed from the drawn coordinates
+    const P = [200, 160], th = (-50 * Math.PI) / 180, fa = [Math.cos(th), Math.sin(th)], nf = [fa[1], -fa[0]];   // nf points to the upper (biceps) side of the forearm
+    const onFa = (d, off = 0) => [P[0] + d * fa[0] + off * nf[0], P[1] + d * fa[1] + off * nf[1]];
+    const G = { bicepsEnd: [172, 120], bicepsInsert: onFa(40, 9), tricepsEnd: [176, 186], tricepsInsert: onFa(-10, -13), biceps: { state: "contracted" }, triceps: { state: "relaxed" }, tendon: ["muscle", "bone"], ligament: ["bone", "bone"] };
+    const side = (pt) => Math.sign(fa[0] * (pt[1] - P[1]) - fa[1] * (pt[0] - P[0]));
+    return {
+      parts: { humerus: "The upper arm bone: fixed while the forearm moves.", "radius and ulna": "The forearm bones, which the muscles move as a lever about the elbow.", biceps: "Contracts and shortens to bend the elbow.", triceps: "Relaxes and lengthens as the elbow bends; it contracts to straighten it.",
+        tendon: "Joins muscle to bone.", ligament: "Joins bone to bone and holds the joint together.", cartilage: "Smooth tissue covering the bone ends, so they glide.", "synovial fluid": "Lubricates the joint.", "joint capsule": "The capsule round a synovial joint.", pivot: "The hinge joint is the pivot of the lever.", pull: "A muscle can only pull: it never pushes." },
+      order: ["humerus", "radius and ulna"],
+      facts: { musclesOnOppositeSides: () => side(G.bicepsInsert) !== side(G.tricepsInsert) && side(G.bicepsInsert) !== 0, oneContractsOneRelaxes: () => G.biceps.state !== G.triceps.state, tendonJoinsMuscleToBone: () => G.tendon[0] === "muscle" && G.tendon[1] === "bone",
+        ligamentJoinsBoneToBone: () => G.ligament[0] === "bone" && G.ligament[1] === "bone", musclePullsTowardItself: () => (G.bicepsEnd[0] - G.bicepsInsert[0]) * 1 + (G.bicepsEnd[1] - G.bicepsInsert[1]) * 1 !== 0 && Math.hypot(G.bicepsEnd[0] - G.bicepsInsert[0], G.bicepsEnd[1] - G.bicepsInsert[1]) > 0 },
+      draw() {
+        let s = "", m = [];
+        const [px, py] = P, tip = onFa(150), L = (a, b, w, col, op = 1) => `<path d="M${f1(a[0])} ${f1(a[1])} L${f1(b[0])} ${f1(b[1])}" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-opacity="${op}" fill="none"/>`;
+        s += part("synovial fluid", this.parts["synovial fluid"], `<ellipse cx="${px}" cy="${py}" rx="38" ry="30" fill="${C.a1}" fill-opacity=".22"/>`); m.push(["synovial fluid", px + 27, py + 15]);
+        s += part("humerus", this.parts.humerus, L([40, py], P, 22, C.a3, 0.4) + L([40, py], P, 22, C.a3, 0)); m.push(["humerus", 70, py + 4, "L"]);
+        s += part("radius and ulna", this.parts["radius and ulna"], L(P, tip, 18, C.a3, 0.4)); m.push(["radius and ulna", ...onFa(120, 0)]);
+        s += part("cartilage", this.parts.cartilage, `<circle cx="${px - 4}" cy="${py}" r="13" fill="${C.a4}" fill-opacity=".7" stroke="${C.a4}" stroke-width="1.6"/><circle cx="${f1(onFa(6)[0])}" cy="${f1(onFa(6)[1])}" r="10" fill="${C.a4}" fill-opacity=".7" stroke="${C.a4}" stroke-width="1.6"/>`); m.push(["cartilage", px - 22, py - 7, "L"]);
+        s += part("joint capsule", this.parts["joint capsule"], `<ellipse cx="${px}" cy="${py}" rx="38" ry="30" fill="none" stroke="${C.a2}" stroke-width="2.6" stroke-dasharray="5 3"/>`); m.push(["joint capsule", px + 36, py - 14]);
+        const l1 = [px - 20, py - 14], l2 = onFa(18, 10), l3 = [px - 18, py + 15], l4 = onFa(14, -11);
+        s += part("ligament", this.parts.ligament, L(l1, l2, 4, C.good) + L(l3, l4, 4, C.good)); m.push(["ligament", (l3[0] + l4[0]) / 2 - 6, (l3[1] + l4[1]) / 2 + 4, "L"]);
+        // biceps (contracted: thick) and triceps (relaxed: thin), each joined to bone by a tendon
+        const belly = (a, b, h, col, op) => { const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, ux = b[0] - a[0], uy = b[1] - a[1], d = Math.hypot(ux, uy), nx = -uy / d, ny = ux / d; return `<path d="M${f1(a[0])} ${f1(a[1])} Q${f1(mx + nx * h)} ${f1(my + ny * h)} ${f1(b[0])} ${f1(b[1])} Q${f1(mx - nx * h)} ${f1(my - ny * h)} ${f1(a[0])} ${f1(a[1])} Z" fill="${col}" fill-opacity="${op}" stroke="${col}" stroke-width="2"/>`; };
+        s += part("biceps", this.parts.biceps, belly([88, 148], G.bicepsEnd, 21, C.a2, 0.6)); m.push(["biceps", 130, 118]);
+        s += part("triceps", this.parts.triceps, belly([88, 172], G.tricepsEnd, 10, C.a1, 0.25)); m.push(["triceps", 130, 188, "L"]);
+        s += part("tendon", this.parts.tendon, L(G.bicepsEnd, G.bicepsInsert, 3, C.ink, 0.8) + L(G.tricepsEnd, G.tricepsInsert, 3, C.ink, 0.8)); m.push(["tendon", (G.bicepsEnd[0] + G.bicepsInsert[0]) / 2, (G.bicepsEnd[1] + G.bicepsInsert[1]) / 2]);
+        s += part("pull", this.parts.pull, arrowSvg(G.bicepsInsert[0] + 2, G.bicepsInsert[1] + 2, G.bicepsInsert[0] - 30, G.bicepsInsert[1] - 9, C.a2));
+        s += part("pivot", this.parts.pivot, `<circle cx="${px}" cy="${py}" r="4.2" fill="${C.ink}"/>`); m.push(["pivot", px, py]);
+        s += text(300, 244, "biceps contracts, triceps relaxes: the forearm is pulled up", { size: 10, fill: C.soft, anchor: "end" });
+        const K = 1.4, TX = -36, TY = -50;
+        return { s: `<g transform="translate(${TX} ${TY}) scale(${K})">${s}</g>`, m: m.map(([n, x, y, sd]) => [n, x * K + TX, y * K + TY, sd]) };
+      },
+    };
+  })(),
 };
 const arrowSvg = (x1, y1, x2, y2, stroke) => arrow(x1, y1, x2, y2, { stroke, w: 2.4, head: 9 });
 function sectionDraw(spec, W, narrow) {
@@ -2324,6 +2404,135 @@ function networkChecks(spec) {
   return out;
 }
 
+// ======================================================================== phscale
+// The pH scale and what a unit means. spec: markers [{label, ph, ph2?}], example {h, ph}, claims. [H⁺] is recomputed as 10^−pH
+// for every unit, neutral is pH 7 at 25 °C, each unit is a tenfold change, and the worked example is checked: pH = −log₁₀[H⁺].
+export const hOfPh = (ph) => 10 ** -ph;
+export const phOfH = (h) => -Math.log10(h);
+const PH_FACTS = { "stomach": [2, 2], "neutral (25 °C)": [7, 7], "human blood": [7.35, 7.45] };
+function phscaleDraw(spec, W, narrow) {
+  const x0 = narrow ? 24 : 40, x1 = W - (narrow ? 24 : 40), sx = (ph) => x0 + (ph / 14) * (x1 - x0), y0 = narrow ? 120 : 110, hb = 26;
+  let s = "";
+  const hue = (ph) => `hsl(${Math.round(8 + (ph / 14) * 250)} 72% 62%)`;
+  s += part("pH scale", "pH = −log₁₀[H⁺]: low pH is acidic, high pH is alkaline.", Array.from({ length: 14 }, (_, i) => `<rect x="${f1(sx(i))}" y="${y0}" width="${f1(sx(i + 1) - sx(i) + 0.5)}" height="${hb}" fill="${hue(i + 0.5)}" fill-opacity=".8"/>`).join(""));
+  for (let ph = 0; ph <= 14; ph++) {
+    s += `<path d="M${f1(sx(ph))} ${y0 + hb} v6" stroke="${C.soft}" stroke-width="1.2"/>` + text(sx(ph), y0 + hb + 17, String(ph), { size: 12, weight: 700 });
+    if (!narrow || ph % 2 === 0) s += text(sx(ph), y0 + hb + 36, ph === 0 ? "1" : `10^{-${ph}}`, { size: narrow ? 10.5 : 11.5, fill: C.soft });
+  }
+  s += text((x0 + x1) / 2, y0 + hb + 56, "pH, and [H^{+}] in mol dm^{-3}", { size: 11.5, fill: C.soft }) + text(x0, y0 + hb + 56, "← acidic", { size: 12, weight: 700, anchor: "start", fill: C.a2 }) + text(x1, y0 + hb + 56, "alkaline →", { size: 12, weight: 700, anchor: "end", fill: C.a1 });
+  // markers above the bar, on two tiers so neighbouring labels never meet
+  spec.markers.forEach((mk, i) => {
+    const a = sx(mk.ph), b = sx(mk.ph2 ?? mk.ph), mid = (a + b) / 2, tier = mk.tier || 0, top = y0 - 18 - tier * 18, al = mk.align || "middle";
+    s += part(mk.label, mk.note || mk.label, `<path d="M${f1(a)} ${y0 - 2} V${top} M${f1(b)} ${y0 - 2} V${top}" stroke="${C.ink}" stroke-width="2"/>` + (mk.ph2 != null ? `<rect x="${f1(a)}" y="${y0 - 8}" width="${f1(Math.max(2, b - a))}" height="${hb + 8}" fill="none" stroke="${C.ink}" stroke-width="2"/>` : ""));
+    s += text(al === "end" ? a - 6 : al === "start" ? b + 6 : mid, top - 4, mk.text, { size: 11.5, weight: 700, anchor: al });
+  });
+  // a tenfold step: pH 4 to pH 3 (the lesson's worked example)
+  const e = spec.example, yb = y0 + hb + 72;
+  const a = sx(e.ph + 1), b = sx(e.ph);
+  s += `<path d="M${f1(a)} ${yb - 14} q${f1((b - a) / 2)} 26 ${f1(b - a)} 0" fill="none" stroke="${C.a2}" stroke-width="2.2"/>`;
+  s += text((a + b) / 2, yb + 24, "× 10", { size: 13, weight: 700, fill: C.a2 });
+  const lines = [`[H^{+}] = 1 × 10^{-${e.ph + 1}} mol dm^{-3}  →  pH = −log_{10}(10^{-${e.ph + 1}}) = ${e.ph + 1}`, `[H^{+}] rises tenfold to 1 × 10^{-${e.ph}}  →  the pH falls to ${e.ph}`, `pH ${e.ph} has ten times the hydrogen ion concentration of pH ${e.ph + 1}, not twice`];
+  const ty = yb + 52; let ly = ty;
+  lines.forEach((l) => { const parts = narrow ? l.split("  →  ").flatMap((q, k) => wrap((k ? "→ " : "") + q, 46)) : [l]; parts.forEach((q) => { s += text(narrow ? 16 : x0, ly, q, { size: narrow ? 11.5 : 13, anchor: "start" }); ly += 19; }); ly += narrow ? 4 : 1; });
+  return { s, H: ly + 6 };
+}
+function phscaleChecks(spec) {
+  const out = [];
+  for (let ph = 0; ph <= 14; ph++) out.push(check(`pH ${ph}: [H⁺] = 10^−${ph} = ${hOfPh(ph).toExponential(0)} mol dm⁻³`, Math.abs(phOfH(hOfPh(ph)) - ph) < 1e-9));
+  out.push(check("each unit of pH is a tenfold change in [H⁺]", Math.abs(hOfPh(3) / hOfPh(4) - 10) < 1e-9 && Math.abs(hOfPh(8) / hOfPh(9) - 10) < 1e-9));
+  out.push(check("neutral is pH 7 at 25 °C: [H⁺] = 10⁻⁷ = [OH⁻]", hOfPh(7) === 1e-7));
+  for (const mk of spec.markers) { const f = PH_FACTS[mk.label]; out.push(check(`${mk.label}: pH ${f ? (f[0] === f[1] ? "about " + f[0] : f.join("–")) : "?"}`, !!f && mk.ph === f[0] && (mk.ph2 ?? mk.ph) === f[1], f ? "" : "not in the lesson")); }
+  const e = spec.example; out.push(check(`worked example: pH = −log₁₀(1 × 10^−${e.ph + 1}) = ${e.ph + 1}`, Math.abs(phOfH(hOfPh(e.ph + 1)) - (e.ph + 1)) < 1e-9 && e.ph === 3));
+  out.push(check("a tenfold rise in [H⁺] lowers the pH by 1", Math.abs(phOfH(10 * hOfPh(e.ph + 1)) - e.ph) < 1e-9));
+  return out;
+}
+
+// ======================================================================== repair
+// DNA repair. spec: rows [{damage, pathway, note?}] (which damage each pathway repairs) and ner: {strand, dimer: [i, i+1], excise: [a, b]},
+// the four steps of nucleotide excision repair drawn on a real sequence: the gap is refilled with the complement of the
+// intact strand, which must give back the original sequence, and the thymine dimer is two adjacent thymines.
+const REPAIR = { "replication error missed by proofreading": ["mismatch repair"], "oxidised base": ["base excision repair"], "thymine dimer (UV light)": ["nucleotide excision repair"], "double-strand break": ["homologous recombination", "non-homologous end joining"] };
+const COMP = { A: "T", T: "A", G: "C", C: "G" };
+export const complementOf = (s) => [...s].map((c) => COMP[c]).join("");
+export function nerSteps(n) {
+  const strand = [...n.strand], other = [...complementOf(n.strand)], [a, b] = n.excise, filled = other.slice(a, b + 1).map((c) => COMP[c]);
+  return { strand, other, a, b, filled, restored: [...strand.slice(0, a), ...filled, ...strand.slice(b + 1)].join("") };
+}
+function repairDraw(spec, W, narrow) {
+  const N = nerSteps(spec.ner), cs = narrow ? 24 : 22, rowH = 86;
+  let s = "", y = 10;
+  const ax = narrow ? 10 : 10, aw = narrow ? W - 20 : 330, bw = (aw - 36) / 2;
+  s += text(ax, y + 8, "Which repair for which damage", { size: 13, weight: 700, anchor: "start" }); y += 24;
+  spec.rows.forEach((r) => {
+    const bh = 66, dl = wrap(r.damage, narrow ? 22 : 19), pl = wrap(r.pathway, narrow ? 22 : 19), nl = wrap(r.note || "", narrow ? 26 : 22);
+    s += part(r.damage, "Damage to DNA.", `<rect x="${ax}" y="${y}" width="${f1(bw)}" height="${bh}" rx="10" fill="${C.a2}" fill-opacity=".12" stroke="${C.a2}" stroke-width="2"/>`) + dl.map((l, i) => text(ax + bw / 2, y + bh / 2 + (i - (dl.length - 1) / 2) * 14, l, { size: 11.5, weight: 700 })).join("");
+    s += arrow(ax + bw + 3, y + bh / 2, ax + bw + 33, y + bh / 2, { stroke: C.soft, w: 1.8, head: 8 });
+    const cx2 = ax + bw + 36 + bw / 2, top = y + 8, tot = pl.length * 14 + nl.length * 12 + 4, y1 = y + (bh - tot) / 2 + 7;
+    s += part(r.pathway, r.note || "A repair pathway.", `<rect x="${f1(ax + bw + 36)}" y="${y}" width="${f1(bw)}" height="${bh}" rx="10" fill="${C.a1}" fill-opacity=".12" stroke="${C.a1}" stroke-width="2"/>`) + pl.map((l, i) => text(cx2, y1 + i * 14, l, { size: 11.5, weight: 700 })).join("") + nl.map((l, i) => text(cx2, y1 + pl.length * 14 + 4 + i * 12, l, { size: 10, fill: C.soft })).join(""); void top;
+    y += bh + 10;
+  });
+  const endA = y;
+  let bx = narrow ? 10 : ax + aw + 26, by = narrow ? endA + 16 : 10;
+  s += text(bx, by + 8, "Nucleotide excision repair of a thymine dimer", { size: 13, weight: 700, anchor: "start" }); by += 26;
+  const cells = (row, top, mode) => row.map((c, i) => { const gap = mode === "gap" && i >= N.a && i <= N.b, dim = mode === "dimer" && i >= spec.ner.dimer[0] && i <= spec.ner.dimer[1], fill = mode === "gapfill" && i >= N.a && i <= N.b;
+    if (gap) return ""; return `<rect x="${f1(bx + i * cs)}" y="${top}" width="${cs - 2}" height="${cs - 2}" rx="4" fill="${dim ? C.a3 : fill ? C.a4 : C.panel}" fill-opacity="${dim ? 0.55 : fill ? 0.5 : 1}" stroke="${dim ? C.a3 : fill ? C.a4 : C.soft}" stroke-width="${dim || fill ? 2 : 1.2}"/>` + text(bx + i * cs + (cs - 2) / 2, top + (cs - 2) / 2 + 0.5, c, { size: 11.5, weight: 700 }); }).join("");
+  const steps = [["1  UV light bonds two adjacent thymines: a thymine dimer", "dimer", N.strand], ["2  Repair enzymes detect the distortion and cut out a section of the damaged strand", "gap", N.strand], ["3  DNA polymerase fills the gap using the other strand as the template", "gapfill", N.a >= 0 ? [...N.strand.slice(0, N.a), ...N.filled, ...N.strand.slice(N.b + 1)] : N.strand], ["4  Ligase seals the strand: the original sequence is restored", "plain", [...N.restored]]];
+  steps.forEach(([cap, mode, top]) => {
+    wrap(cap, narrow ? 52 : 44).forEach((l, k) => { s += text(bx, by + 6 + k * 15, l, { size: 11.5, weight: 700, anchor: "start" }); });
+    const ty = by + 28;
+    s += `<g data-step="${esc(mode)}">` + cells(top, ty, mode === "gapfill" || mode === "gap" ? mode : mode) + cells(N.other, ty + cs + 6, "plain") + (mode === "dimer" ? `<path d="M${f1(bx + spec.ner.dimer[0] * cs + cs / 2)} ${ty + cs - 1} q${cs / 2} -6 ${cs} 0" stroke="${C.a3}" stroke-width="2.4" fill="none"/>` : "") + `</g>`;
+    by += rowH;
+  });
+  return { s, H: Math.max(endA, by) + 8 };
+}
+function repairChecks(spec) {
+  const out = [], N = nerSteps(spec.ner), n = spec.ner;
+  for (const r of spec.rows) out.push(check(`${r.damage}: repaired by ${r.pathway}`, (REPAIR[r.damage] || []).includes(r.pathway)));
+  out.push(check("every kind of damage in the lesson has a pathway", Object.keys(REPAIR).every((d) => spec.rows.some((r) => r.damage === d))));
+  const hr = spec.rows.find((r) => r.pathway === "homologous recombination"), nh = spec.rows.find((r) => r.pathway === "non-homologous end joining");
+  if (hr) out.push(check("homologous recombination uses a sister chromatid as a template", /sister chromatid/.test(hr.note || "")));
+  if (nh) out.push(check("non-homologous end joining can lose bases", /lose/.test(nh.note || "")));
+  out.push(check("the thymine dimer is two adjacent thymines", n.dimer[1] === n.dimer[0] + 1 && n.strand[n.dimer[0]] === "T" && n.strand[n.dimer[1]] === "T"));
+  out.push(check("the section cut out contains the dimer", n.excise[0] <= n.dimer[0] && n.excise[1] >= n.dimer[1] && n.excise[0] >= 0 && n.excise[1] < n.strand.length));
+  out.push(check("the gap is filled with the complement of the intact strand", N.filled.join("") === n.strand.slice(n.excise[0], n.excise[1] + 1)));
+  out.push(check("after ligation the strand has its original sequence", N.restored === n.strand));
+  return out;
+}
+
+// ======================================================================== cascade
+// The complement cascade. spec: nodes [{id, label, sub, is, col, row, tone}], edges [{from, to, via?}], note. Three pathways,
+// each with its own trigger, converge on C3; C3b coats pathogens (opsonisation), C3a and C5a promote inflammation, and C5b with
+// C6–C9 makes the membrane attack complex that lyses the pathogen. Every arrow must be a step of the cascade.
+export const COMPLEMENT = {
+  next: { "classical pathway": ["C3"], "lectin pathway": ["C3"], "alternative pathway": ["C3"], C3: ["C3a", "C3b"], C3a: ["inflammation"], C3b: ["opsonisation", "C5"], C5: ["inflammation", "lysis"] },
+  via: { "C5>inflammation": "C5a", "C5>lysis": "C5b–C9" },
+  trigger: { "classical pathway": "antibody bound to antigen", "lectin pathway": "lectins binding sugars on microbes", "alternative pathway": "directly on microbial surfaces" },
+};
+function cascadeDraw(spec, W, narrow) {
+  const bw = narrow ? 112 : 124, bh = narrow ? 90 : 68, rows = 3.3;
+  const pos = (n) => (narrow ? [12 + (n.row / 2) * (W - 24 - bw), 14 + n.col * (bh + 36)] : [10 + n.col * ((W - 20 - bw) / 4), 14 + n.row * (bh + 30)]);
+  const N = Object.fromEntries(spec.nodes.map((n) => [n.id, { ...n, p: pos(n) }])), tone = (t) => C[t || "a1"];
+  let s = "";
+  const edge = (e) => { const a = N[e.from], b = N[e.to], ac = [a.p[0] + bw / 2, a.p[1] + bh / 2], bc = [b.p[0] + bw / 2, b.p[1] + bh / 2], dx = bc[0] - ac[0], dy = bc[1] - ac[1], clip = (c, sgn) => { const k = Math.min(Math.abs(dx) > 0 ? (bw / 2 + 4) / Math.abs(dx) : 9, Math.abs(dy) > 0 ? (bh / 2 + 4) / Math.abs(dy) : 9); return [c[0] + sgn * dx * k, c[1] + sgn * dy * k]; }; const p1 = clip(ac, 1), p2 = clip(bc, -1);
+    return arrow(p1[0], p1[1], p2[0], p2[1], { stroke: C.soft, w: 2, head: 9 });  };
+  s += spec.edges.map(edge).join("");
+  for (const n of Object.values(N)) {
+    s += part(n.label, n.sub || n.label, `<rect x="${f1(n.p[0])}" y="${f1(n.p[1])}" width="${bw}" height="${bh}" rx="10" fill="${tone(n.tone)}" fill-opacity=".14" stroke="${tone(n.tone)}" stroke-width="2"/>`) + text(n.p[0] + bw / 2, n.p[1] + 16, n.label, { size: 11.5, weight: 700 }) + wrap(n.sub || "", narrow ? 18 : 22).map((l, i) => text(n.p[0] + bw / 2, n.p[1] + 36 + i * 12.5, l, { size: 10, fill: C.soft })).join("");
+  }
+  const H = narrow ? 14 + 5 * (bh + 36) : 14 + rows * (bh + 30) + 10, nb = textBlock(W / 2, H + 6, spec.note, narrow ? 50 : 120, { size: 11, fill: C.soft });
+  return { s: s + nb.svg, H: H + 14 + nb.h };
+}
+function cascadeChecks(spec) {
+  const N = Object.fromEntries(spec.nodes.map((n) => [n.id, n])), out = [];
+  const paths = Object.keys(COMPLEMENT.trigger);
+  for (const p of paths) { const n = spec.nodes.find((x) => x.is === p); out.push(check(`the ${p} is drawn, triggered by ${COMPLEMENT.trigger[p]}`, !!n && (n.sub || "").includes(COMPLEMENT.trigger[p]))); }
+  out.push(check("all three pathways converge on cleavage of C3", paths.every((p) => spec.edges.some((e) => N[e.from]?.is === p && N[e.to]?.is === "C3"))));
+  for (const e of spec.edges) { const a = N[e.from]?.is, b = N[e.to]?.is, want = COMPLEMENT.via[`${a}>${b}`]; out.push(check(`${a} → ${b}${e.via ? ` (${e.via})` : ""} is a step of the cascade`, (COMPLEMENT.next[a] || []).includes(b) && (want ? e.via === want : true))); }
+  const reach = (from, seen = new Set()) => { for (const t of COMPLEMENT.next[from] || []) if (!seen.has(t)) { seen.add(t); reach(t, seen); } return seen; };
+  out.push(check("the three effects are all reached: opsonisation, inflammation and lysis", ["opsonisation", "inflammation", "lysis"].every((x) => spec.nodes.some((n) => n.is === x) && paths.every((p) => reach(p).has(x)))));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -2350,6 +2559,9 @@ register({
   plasmidmap: { draw: plasmidDraw, checks: plasmidChecks, widths: [700, 380] },
   fragment: { draw: fragmentDraw, checks: fragmentChecks, widths: [700, 380] },
   bionetwork: { draw: networkDraw, checks: networkChecks, widths: [700, 380] },
+  phscale: { draw: phscaleDraw, checks: phscaleChecks, widths: [700, 380] },
+  repair: { draw: repairDraw, checks: repairChecks, widths: [700, 380] },
+  cascade: { draw: cascadeDraw, checks: cascadeChecks, widths: [700, 380] },
   section: { draw: sectionDraw, checks: sectionChecks, widths: [700, 380] },
   bilayer: { draw: bilayerDraw, checks: bilayerChecks, widths: [700, 380] },
   inducedfit: { draw: inducedfitDraw, checks: inducedfitChecks, widths: [720, 380] },

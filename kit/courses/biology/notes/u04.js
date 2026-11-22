@@ -136,6 +136,7 @@ H: Repairing errors and damage
 - **Mismatch repair**: enzymes find and correct mismatched bases missed by proofreading.
 - **Base excision repair**: removes single damaged bases, such as oxidised bases.
 - **Nucleotide excision repair**: removes bulky damage, such as thymine dimers caused by UV light.
+D: bio-dna-repair
 H: Double-strand breaks and failures
 - **Double-strand breaks** are repaired by **homologous recombination**, using a sister chromatid as a template, or by **non-homologous end joining**, which can lose bases.
 - Defects in repair increase mutation rates and cancer risk.
