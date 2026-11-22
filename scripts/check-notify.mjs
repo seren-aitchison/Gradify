@@ -1,4 +1,4 @@
-// Browser check of the "Notify me" forms (homepage Pro section and pricing page), run on the working tree:
+// Browser check of the "Notify me" forms (homepage Ultra card and the pricing page's plans that aren't on sale yet), run on the working tree:
 //   node scripts/check-notify.mjs
 // Serves this folder on a free local port, opens each page in Chromium (Playwright), and tries every case: an invalid
 // address, success, already on the list (409), a server error (500), a network failure, and a double click. Every
@@ -28,7 +28,7 @@ const CASES = [
   { name: "network failure", reply: "abort", email: "a@b.co", sends: 1, hidden: false, msg: /didn't work/ },
 ];
 const failures = [];
-for (const [page, form] of [["index.html", "#notify-pro"], ["pricing.html", "#notify"]]) {
+for (const [page, form] of [["index.html", "#notify-pro"], ["pricing.html", "form.notify"]]) {
   for (const c of CASES) {
     const p = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     const errors = [], sent = [];

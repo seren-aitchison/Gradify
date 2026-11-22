@@ -75,8 +75,22 @@
   <!-- the feature showcase (#features) and the Ultra comparison (#pro) are far below the first screen: they load when the
        page has gone idle, or sooner if their section is about to scroll into view or the link opened at one -->
   <script type="module">
-    let done = false;
-    const go = () => { if (done) return; done = true; import("./assets/features.js"); import("./assets/pro.js"); };
+    let done = false, pro = null;
+    const go = () => { if (done) return pro; done = true; import("./assets/features.js"); return (pro = import("./assets/pro.js")); };
+    // the Ultra "Notify me" form gets its handler from pro.js: start loading it as soon as someone reaches the form, and
+    // if they submit before it's ready, hold the submit (no page reload, no lost email) and send it again once it is
+    const notify = document.getElementById("notify-pro");
+    if (notify) {
+      notify.addEventListener("focusin", go, { once: true });
+      notify.addEventListener("submit", (e) => {
+        if (notify.dataset.ready) return;
+        e.preventDefault(); e.stopImmediatePropagation();
+        if (notify.dataset.held) return;   // a second click while waiting sends nothing extra
+        notify.dataset.held = "1";
+        // resubmit on a fresh task: while this submit event is still being dispatched, the browser ignores requestSubmit
+        go().then(() => setTimeout(() => { notify.dataset.ready = "1"; notify.requestSubmit(); })).catch(() => { delete notify.dataset.held; });
+      }, { capture: true });
+    }
     const secs = ["features", "pro"].map((id) => document.getElementById(id)).filter(Boolean);
     if (secs.some((s) => location.hash === "#" + s.id)) go();
     else {
