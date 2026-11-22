@@ -1198,7 +1198,9 @@ a.cx-sess:hover { transform: translateY(-3px); border-color: color-mix(in srgb, 
 .cx-tip { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 26px 0 0; font-size: 13px; color: var(--mute); } .cx-tip .co-ic { width: 15px; height: 15px; }
 
 /* ---------- Syllabus ---------- */
-.cx-sylhead { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+/* a glass card like the units below it (the shared glass rules give it a border), so it keeps their inner space and
+   corners: without them the title and the "to revise" count ran into its edges */
+.cx-sylhead { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; padding: 20px 24px; border-radius: 24px; }
 .cx-sylhead h2 { margin: 4px 0 6px; font-size: 30px; letter-spacing: -.03em; } .cx-sylhead p { margin: 0; max-width: 620px; color: var(--mute); font-size: 14.5px; }
 .cx-sylstats { display: flex; align-items: center; gap: 18px; } .cx-sylstats > div { display: grid; } .cx-sylstats b { font-size: 22px; } .cx-sylstats small { font-size: 12px; color: var(--mute); }
 .cx-sylstats .warn b { color: var(--s-revise); }
@@ -1212,7 +1214,7 @@ a.cx-sess:hover { transform: translateY(-3px); border-color: color-mix(in srgb, 
 .cx-chips button[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); border-color: var(--line-strong); }
 .cx-chips button small { font: 500 11px var(--mono); color: var(--mute); }
 .cx-chips button:disabled { opacity: .45; cursor: not-allowed; }
-.cx-legend { margin-left: auto; position: relative; font-size: 13px; color: var(--mute); }
+.cx-legend { position: relative; font-size: 13px; color: var(--mute); }
 .cx-legend summary { cursor: pointer; list-style: none; padding: 7px 10px; border-radius: 9px; } .cx-legend summary::-webkit-details-marker { display: none; } .cx-legend summary:hover { color: var(--fg); }
 .cx-legend ul { position: absolute; right: 0; top: 100%; z-index: 30; width: 330px; list-style: none; margin: 4px 0 0; padding: 12px 14px; display: grid; gap: 8px; border-radius: 12px; background: light-dark(#fff, #141416); border: 1px solid var(--line-strong); box-shadow: 0 20px 50px -14px rgba(0, 0, 0, .6); }
 .cx-legend li { display: grid; grid-template-columns: 14px auto 1fr; gap: 8px; align-items: center; } .cx-legend li b { color: var(--fg); font-weight: 600; }
@@ -1419,7 +1421,8 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 /* Next up: the syllabus, simplified to what to do now */
 .cx-nextgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; align-items: start; }
 .cx-nextup .cx-ll + .cx-ll { margin-top: 4px; }
-.cx-sylall { margin-left: auto; }
+/* "Expand all" and the Key stay together at the right of the bar and wrap as one, so the Key never sits alone */
+.cx-sylend { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; flex-wrap: nowrap; }
 /* revision notes */
 .cx-rn { margin: 18px 0 6px; font: 600 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
 .cx-rn + ul { margin: 0; padding-left: 20px; line-height: 1.55; } .cx-rn + ul li + li { margin-top: 4px; }
