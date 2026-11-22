@@ -1,0 +1,92 @@
+{
+ "id": "phys-u13-brownian-msd",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Nonequilibrium statistical mechanics",
+ "title": "Brownian motion: mean square displacement",
+ "caption": "In three dimensions ⟨r²⟩ = 6Dt, so with D = 2 × 10⁻¹³ m² s⁻¹ the particle's mean square displacement grows linearly, 1.2 μm² per second, reaching 12.0 μm² (1.2e-11 m²) after 10 s: an rms distance of 3.5 μm. Linear growth in t (not t²) is what separates diffusion from steady drift.",
+ "alt": "Straight line through the origin: mean square displacement against time, reaching 12.0 square micrometres at 10 seconds.",
+ "description": [
+  "The horizontal axis is time in seconds; the vertical axis is ⟨r²⟩ in μm².",
+  "⟨r²⟩ = 6Dt is a straight line with gradient 6D = 1.2 μm² s⁻¹.",
+  "At t = 10 s: ⟨r²⟩ = 12.0 μm², so r_rms = 3.5 μm."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   15
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   3,
+   6,
+   9,
+   12,
+   15
+  ]
+ ],
+ "grid": [
+  2,
+  3
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / s",
+  "⟨r²⟩ / μm²"
+ ],
+ "curves": [
+  {
+   "expr": "1.2000000000000002*x",
+   "colour": "a1",
+   "label": "⟨r²⟩ = 6Dt",
+   "labelAt": [
+    1.2,
+    5.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 12,
+   "label": "12.0 μm² at 10 s",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1.2000000000000002*x",
+   "x": 10,
+   "y": 12,
+   "name": "⟨r²⟩ = 6Dt = 12.0 μm² at 10 s"
+  },
+  {
+   "type": "slope",
+   "expr": "1.2000000000000002*x",
+   "x": 3,
+   "value": 1.2000000000000002,
+   "name": "gradient 6D"
+  }
+ ]
+}

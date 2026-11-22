@@ -1,0 +1,101 @@
+{
+ "id": "phys-u13-fermi-sodium",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Fermi–Dirac statistics",
+ "title": "Fermi–Dirac occupation in sodium",
+ "caption": "For n = 2.5 × 10²⁸ m⁻³, E_F = (ħ²/2m)(3π²n)^{2/3} = 5.0 × 10⁻¹⁹ J = 3.1 eV. At 300 K, k_BT is only 0.026 eV, so f(E) = 1/(e^{(E−E_F)/k_BT} + 1) is almost a step: states below E_F are full, those above are empty, and only a sliver of width about a few k_BT, under 1% of E_F, is blurred.",
+ "alt": "Graph of occupation probability against energy: nearly a step from 1 to 0 at the Fermi energy of 3.1 eV, passing through 0.5 there.",
+ "description": [
+  "The horizontal axis is energy in eV; the vertical axis is the occupation probability f(E).",
+  "E_F = 3.1 eV is found from the electron density of sodium.",
+  "The curve falls from 1 to 0 across a width of order k_BT = 0.026 eV and equals exactly 0.5 at E = E_F."
+ ],
+ "range": {
+  "x": [
+   2.8,
+   3.4
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   2.8,
+   3,
+   3.2,
+   3.4
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  0.2,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "E / eV",
+  "f(E)"
+ ],
+ "curves": [
+  {
+   "expr": "1/(exp((x-3.118312701547206)/0.025851999)+1)",
+   "colour": "a1",
+   "width": 3.2,
+   "samples": 600,
+   "label": "300 K",
+   "labelAt": [
+    3.15,
+    0.8
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3.118312701547206,
+   "y": 0.5,
+   "label": "E_{F} = 3.1 eV",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(exp((x-3.118312701547206)/0.025851999)+1)",
+   "x": 3.118312701547206,
+   "y": 0.5,
+   "name": "f = ½ at E = E_F = 3.1 eV"
+  },
+  {
+   "type": "value",
+   "expr": "1/(exp((x-3.118312701547206)/0.025851999)+1)",
+   "x": 2.918312701547206,
+   "between": [
+    0.999,
+    1
+   ],
+   "name": "states 0.2 eV below E_F are full"
+  },
+  {
+   "type": "value",
+   "expr": "1/(exp((x-3.118312701547206)/0.025851999)+1)",
+   "x": 3.3183127015472063,
+   "between": [
+    0,
+    0.001
+   ],
+   "name": "states 0.2 eV above E_F are empty"
+  }
+ ]
+}
