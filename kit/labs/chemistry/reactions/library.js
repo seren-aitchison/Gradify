@@ -5,11 +5,12 @@
 //           [keyA, keyB] for "between these atoms". move: where atoms sit after the step (for the animation).
 //   mistakes  checks on a learner's (valid) result that recognise a common wrong turn, with the explanation
 // Conventions follow A-level and first-year courses. Tested in tests/mechanism.test.mjs.
-import { build, bondBetween } from "./electron-flow.js";
+import { build, bondBetween, normalize, applyStep, replay, sameState, atomOf, atomLabel, EN } from "./electron-flow.js";
 
 export const FAMILIES = {
   "nucleophilic-substitution": "Nucleophilic substitution", elimination: "Elimination", "electrophilic-addition": "Electrophilic addition",
-  "nucleophilic-addition": "Nucleophilic addition", radical: "Free-radical reactions",
+  "nucleophilic-addition": "Nucleophilic addition", "aromatic-substitution": "Electrophilic aromatic substitution",
+  "addition-elimination": "Nucleophilic addition–elimination", radical: "Free-radical reactions",
 };
 
 export const REACTIONS = [
@@ -91,6 +92,91 @@ export const REACTIONS = [
     mistakes: [],
   },
   {
+    id: "e1", family: "elimination", title: "E1: dehydration of 2-methylpropan-2-ol", lessons: ["u13-12", "u13-11"],
+    conditions: { above: "conc. H₃PO₄ (or H₂SO₄)", below: "heat" }, products: ["C4H8", "H2O", "H2O", "H3O+"],
+    overview: "Acid turns the poor leaving group –OH into a good one, –OH₂⁺. Water leaves on its own, giving a tertiary carbocation (the slow step), and a water molecule then removes a proton from a neighbouring carbon to form the C=C. Rate = k[R–OH₂⁺]: only one species in the slow step.",
+    start: { atoms: [["C", "C", 0, 0], ["M1", "C", 0, -1, 0, 2], ["M2", "C", -1, 0, 0, 3], ["M3", "C", 0, 1, 0, 3], ["O", "O", 1, 0, 0, 1], ["Hb", "H", -0.7, -1.7], ["Oa", "O", 3.5, -1.3, 1, 2], ["Ha", "H", 2.6, -0.85], ["Ob", "O", -1.9, -2.5, 0, 2]],
+      bonds: [["C", "M1"], ["C", "M2"], ["C", "M3"], ["C", "O"], ["M1", "Hb"], ["Oa", "Ha"]] },
+    steps: [
+      { arrows: [["lp", "O", "Ha"], ["bond", "Ha", "Oa", "Oa"]], label: "Protonated alcohol (–OH₂⁺) + water", move: { Ha: [1.45, -0.8], Oa: [3.9, -1.7] },
+        hint: "–OH is a poor leaving group (OH⁻ is a strong base). What can the acid do to the oxygen first?", explain: "A lone pair on the alcohol's oxygen takes a proton from H₃O⁺ (the acid catalyst). The oxygen now carries a + charge, and the group can leave as a neutral water molecule, which is stable." },
+      { arrows: [["bond", "C", "O", "O"]], label: "Tertiary carbocation + water", move: { O: [2.1, 0.35], Ha: [2.6, -0.3] },
+        hint: "The C–O bond is now weak. Which atom takes both of its electrons?", explain: "Heterolytic fission: the C–O bond breaks with both electrons going to oxygen, and water leaves. This is the slow, rate-determining step; it happens because the tertiary carbocation is stabilised by three electron-releasing methyl groups." },
+      { arrows: [["lp", "Ob", "Hb"], ["bond", "M1", "Hb", ["M1", "C"]]], label: "Products: 2-methylpropene + H₃O⁺", move: { Hb: [-1.25, -2.05] },
+        hint: "The carbocation loses a proton from a neighbouring carbon. Where do that C–H bond's electrons go?", explain: "A water molecule takes a β-hydrogen as H⁺, and the electrons of the C–H bond move between the two carbons, forming the C=C and cancelling the + charge. The acid is regenerated as H₃O⁺, so it's a catalyst." },
+    ],
+    outcome: "An alkene. If there are different β-hydrogens, the more substituted alkene forms most (Zaitsev's rule). E1 competes with SN1 because they share the carbocation; heat favours elimination.",
+    misconceptions: ["Letting OH⁻ leave directly: hydroxide is a poor leaving group, so the –OH must be protonated first.", "Removing the proton before water leaves (that would be one concerted E2 step).", "Forgetting that the acid is regenerated."],
+    mistakes: [{ test: (s, k) => !bondBetween(s, k.C, k.O) && !bondBetween(s, k.O, k.Ha), text: "You've broken the C–O bond before protonating the oxygen, so OH⁻ would have to leave. Hydroxide is a strong base and a poor leaving group: first use a lone pair on O to take H⁺ from the acid." }],
+  },
+  {
+    id: "br2-butene", family: "electrophilic-addition", title: "Electrophilic addition: bromine + but-2-ene", lessons: ["u13-14", "u13-15"],
+    conditions: { above: "Br₂", below: "room temperature" }, products: ["C4H8Br2"],
+    overview: "Br₂ is non-polar, but the electron-dense C=C repels electrons in the Br–Br bond, inducing a dipole: the nearer bromine becomes δ+. The π electrons attack it, the Br–Br bond breaks heterolytically, and bromide then attacks the carbocation. Orange bromine water decolourises: the test for C=C.",
+    start: { atoms: [["Ca", "C", 0, 0, 0, 1], ["Cb", "C", 1, 0, 0, 1], ["Me1", "C", -0.5, 0.87, 0, 3], ["Me2", "C", 1.5, 0.87, 0, 3], ["Br1", "Br", 0.5, -1.5], ["Br2", "Br", 0.5, -2.5]],
+      bonds: [["Ca", "Cb", 2], ["Ca", "Me1"], ["Cb", "Me2"], ["Br1", "Br2"]] },
+    steps: [
+      { arrows: [["bond", "Ca", "Cb", ["Ca", "Br1"]], ["bond", "Br1", "Br2", "Br2"]], label: "Carbocation + bromide", move: { Br1: [-0.5, -0.87], Br2: [2.3, -1.6] },
+        hint: "Bromine has no permanent dipole. What does the C=C do to it as it approaches, and which bromine becomes δ+?", explain: "The π electrons form a bond to the nearer, δ+ bromine, while the Br–Br bond's electrons move onto the far bromine, which leaves as Br⁻. The other carbon of the old C=C is left with a + charge (a secondary carbocation here)." },
+      { arrows: [["lp", "Br2", "Cb"]], label: "Product: 2,3-dibromobutane", move: { Br2: [1.5, -0.87] },
+        hint: "The bromide ion has lone pairs. Where is the positive charge?", explain: "The bromide's lone pair bonds to the carbocation, giving the 1,2-dibromo product: one bromine on each carbon of the old C=C." },
+    ],
+    outcome: "A dibromoalkane. At university level the intermediate is a bridged bromonium ion rather than an open carbocation, which explains why the two bromines add to opposite faces (anti addition).",
+    misconceptions: ["Saying Br₂ is polar: its dipole is induced by the C=C.", "Drawing the first arrow from bromine to the alkene: electrons flow from the electron-rich C=C to the δ+ Br.", "Putting both bromines on the same carbon."],
+    mistakes: [],
+  },
+  {
+    id: "nitration", family: "aromatic-substitution", title: "Electrophilic substitution: nitration of benzene", lessons: ["u13-17", "u14-15"],
+    conditions: { above: "conc. HNO₃ + conc. H₂SO₄", below: "below 55 °C" }, products: ["C6H5NO2", "H2O4S"],
+    overview: "The two acids make the nitronium ion, NO₂⁺ (HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻). It is attacked by the ring's delocalised π electrons, giving a positive intermediate that has lost aromaticity; losing H⁺ to HSO₄⁻ restores the stable ring. Substitution, not addition, because aromaticity is kept.",
+    start: { atoms: [["R1", "C", 0, -1], ["R2", "C", 0.87, -0.5, 0, 1], ["R3", "C", 0.87, 0.5, 0, 1], ["R4", "C", 0, 1, 0, 1], ["R5", "C", -0.87, 0.5, 0, 1], ["R6", "C", -0.87, -0.5, 0, 1], ["Hx", "H", -0.55, -1.85],
+      ["N", "N", 1.7, -2.3, 1], ["Oa", "O", 0.8, -2.7], ["Ob", "O", 2.6, -1.9], ["Ox", "O", -1.7, -2.9, -1], ["S", "S", -2.6, -3.3], ["Os1", "O", -3.2, -2.5], ["Os2", "O", -2.2, -4.1], ["Os3", "O", -3.4, -4.0, 0, 1]],
+      bonds: [["R1", "R2", 2], ["R2", "R3"], ["R3", "R4", 2], ["R4", "R5"], ["R5", "R6", 2], ["R6", "R1"], ["R1", "Hx"], ["N", "Oa", 2], ["N", "Ob", 2], ["S", "Ox"], ["S", "Os1", 2], ["S", "Os2", 2], ["S", "Os3"]] },
+    steps: [
+      { arrows: [["bond", "R1", "R2", ["R1", "N"]], ["bond", "N", "Oa", "Oa"]], label: "Intermediate: the ring has lost its aromaticity", move: { N: [0.6, -1.85], Oa: [0.3, -2.8], Ob: [1.6, -1.95] },
+        hint: "The electrophile is NO₂⁺. Where are the electrons in benzene that can attack it, and what must happen at nitrogen so it doesn't get five bonds?", explain: "Two of the ring's π electrons form a C–N bond. Nitrogen can't take a fifth bond, so one N=O π bond's electrons move onto oxygen (O⁻, with N⁺: a nitro group). The positive charge is left in the ring, delocalised over three carbons; the ring is no longer aromatic, so this step is slow." },
+      { arrows: [["lp", "Ox", "Hx"], ["bond", "R1", "Hx", ["R1", "R2"]]], label: "Products: nitrobenzene + H₂SO₄", move: { Hx: [-1.15, -2.45] },
+        hint: "The carbon that the nitro group joined still has its hydrogen. How does the ring get its aromaticity back?", explain: "HSO₄⁻ removes the H⁺, and the C–H bond's electrons go back into the ring, restoring the delocalised π system and regenerating H₂SO₄ (a catalyst)." },
+    ],
+    outcome: "Nitrobenzene. Substituents already on the ring change the rate and where NO₂ goes: –CH₃ and –OH direct to positions 2 and 4; –NO₂, –COOH and –CHO direct to position 3.",
+    misconceptions: ["Drawing the first arrow from NO₂⁺ to the ring: electrons flow from the ring to the electrophile.", "Adding the base to the ring (addition) instead of removing H⁺ (substitution keeps aromaticity).", "Drawing the arrow to remove H⁺ from the wrong carbon: it is the carbon that gained the nitro group."],
+    mistakes: [{ test: (s, k) => !!bondBetween(s, k.Ox, k.R2), text: "The base has bonded to the ring: that's addition, which would leave the ring non-aromatic. Benzene keeps its stable delocalised ring by losing H⁺ from the carbon that the NO₂ joined." }],
+  },
+  {
+    id: "nabh4-propanone", family: "nucleophilic-addition", title: "Reduction: NaBH₄ + propanone", lessons: ["u13-20", "u14-05"],
+    conditions: { above: "NaBH₄", below: "in water or methanol" }, products: ["C3H8O", "HO-"],
+    overview: "NaBH₄ delivers a hydride ion, H⁻, which is a nucleophile. It attacks the δ+ carbonyl carbon as the C=O π electrons move onto oxygen; the alkoxide then takes a proton from water. A ketone gives a secondary alcohol, an aldehyde a primary alcohol.",
+    start: { atoms: [["C", "C", 0, 0], ["O", "O", 0, -1], ["Me1", "C", -0.87, 0.5, 0, 3], ["Me2", "C", 0.87, 0.5, 0, 3], ["Hy", "H", -2.2, -0.6, -1], ["Hw", "H", 0.95, -1.75], ["Ow", "O", 1.8, -2.2, 0, 1]],
+      bonds: [["C", "O", 2], ["C", "Me1"], ["C", "Me2"], ["Hw", "Ow"]] },
+    steps: [
+      { arrows: [["lp", "Hy", "C"], ["bond", "C", "O", "O"]], label: "Alkoxide intermediate", move: { Hy: [0, 1] },
+        hint: "The hydride ion has a pair of electrons and a − charge. Which atom of the C=O is δ+?", explain: "H⁻ uses its electron pair to bond to the carbonyl carbon. Carbon can't keep four bonds plus a new one, so the C=O π electrons move onto oxygen, giving O⁻." },
+      { arrows: [["lp", "O", "Hw"], ["bond", "Hw", "Ow", "Ow"]], label: "Product: propan-2-ol + OH⁻", move: { Hw: [0.7, -1.55], Ow: [2.0, -2.4] },
+        hint: "The O⁻ is a strong base. Where can it get a proton from?", explain: "Proton transfer: a lone pair on the alkoxide oxygen takes H⁺ from water, giving the alcohol and a hydroxide ion." },
+    ],
+    outcome: "Propan-2-ol, a secondary alcohol. A planar C=O attacked from either face gives a racemic mixture when a stereocentre forms. NaBH₄ doesn't reduce C=C, carboxylic acids or esters.",
+    misconceptions: ["Writing H⁺ or H• as the nucleophile: it is the hydride ion, H⁻.", "Missing the π-bond arrow onto oxygen.", "Thinking NaBH₄ reduces C=C bonds (the electron-rich C=C doesn't attract a nucleophile)."],
+    mistakes: [],
+  },
+  {
+    id: "acyl-water", family: "addition-elimination", title: "Addition–elimination: water + ethanoyl chloride", lessons: ["u14-07", "u13-22"],
+    conditions: { above: "H₂O", below: "room temperature (vigorous; steamy fumes of HCl)" }, products: ["C2H4O2", "HCl"],
+    overview: "The carbonyl carbon of an acyl chloride is very δ+ (two electronegative atoms pull on it). Water adds to it, opening the C=O (addition); the C=O then re-forms and pushes out chloride (elimination); finally chloride takes a proton. The same pattern with alcohols gives esters, and with ammonia, amides.",
+    start: { atoms: [["C", "C", 0, 0], ["O", "O", 0, -1], ["Cl", "Cl", 0.87, 0.5], ["Me", "C", -0.87, 0.5, 0, 3], ["Ow", "O", 2.4, -0.6, 0, 1], ["Hw", "H", 3.0, -1.4]],
+      bonds: [["C", "O", 2], ["C", "Cl"], ["C", "Me"], ["Ow", "Hw"]] },
+    steps: [
+      { arrows: [["lp", "Ow", "C"], ["bond", "C", "O", "O"]], label: "Addition: tetrahedral intermediate", move: { Ow: [1, -0.3], Hw: [1.6, -1.0] },
+        hint: "Which atom of the acyl chloride is most δ+? What happens to the C=O when the nucleophile bonds?", explain: "A lone pair on water's oxygen bonds to the carbonyl carbon, and the C=O π electrons move onto oxygen (O⁻). The carbon is briefly tetrahedral, bonded to four groups." },
+      { arrows: [["lp", "O", ["O", "C"]], ["bond", "C", "Cl", "Cl"]], label: "Elimination: chloride leaves", move: { Cl: [1.6, 1.3] },
+        hint: "The O⁻ can push its electrons back down. Which group can leave so the carbon doesn't get five bonds?", explain: "A lone pair on O⁻ re-forms the C=O π bond, and the C–Cl bond breaks with both electrons going to chlorine, which leaves as Cl⁻ (a good leaving group)." },
+      { arrows: [["lp", "Cl", "Hw"], ["bond", "Hw", "Ow", "Ow"]], label: "Products: ethanoic acid + HCl", move: { Hw: [2.1, 0.6] },
+        hint: "The oxygen from the water still has three bonds and a + charge. What removes the extra proton?", explain: "Chloride uses a lone pair to take H⁺ from the positive oxygen, giving the carboxylic acid and HCl, seen as steamy fumes." },
+    ],
+    outcome: "Ethanoic acid and HCl. Acyl chlorides react much faster than carboxylic acids; with an alcohol the product is an ester, with NH₃ an amide.",
+    misconceptions: ["Drawing an SN2-style step where chloride leaves as water attacks: at a C=O the nucleophile adds first.", "Leaving the product with a positively charged oxygen.", "Missing the arrow that re-forms the C=O."],
+    mistakes: [{ test: (s, k) => !!bondBetween(s, k.Ow, k.C) && !bondBetween(s, k.C, k.Cl) && (bondBetween(s, k.C, k.O)?.e ?? 0) >= 4, text: "You've pushed chloride out at the same moment the water bonds, as in SN2. At a C=O carbon the nucleophile adds first and the π bond opens onto oxygen; chloride leaves in the next step, as the C=O re-forms (addition, then elimination)." }],
+  },
+  {
     id: "radical-chlorination", family: "radical", title: "Free-radical substitution: chlorine + methane", lessons: ["u13-06", "u13-03"],
     conditions: { above: "Cl₂", below: "UV light" }, products: ["CH3Cl", "HCl", "Cl•", "Cl•"],
     overview: "UV light splits Cl₂ into chlorine radicals (initiation). A chlorine radical takes H from methane, and the methyl radical takes Cl from another Cl₂, regenerating a chlorine radical (propagation, a chain reaction).",
@@ -120,4 +206,36 @@ export function instantiate(r) {
     return { type, from: { bond: b ? b.id : null, ends: [k[a[1]], k[a[2]]] }, to: tgt(a[3]) };
   };
   return { reaction: r, start: s, key: k, steps: r.steps.map((st) => ({ ...st, arrows: st.arrows.map(arrow), move: st.move ? Object.fromEntries(Object.entries(st.move).map(([kk, v]) => [k[kk], v])) : null })) };
+}
+
+/** The kind of each arrow in a step (what it does, not which atoms): for error-carried-forward marking. */
+export function arrowKinds(s, arrows) {
+  return arrows.map((a) => { const n = normalize(s, a); if (n.error) return "bad"; const src = n.src.atom != null ? "lp" : "bond", dst = n.dst.atom != null ? "atom" : bondBetween(s, ...n.dst.pair) ? "pi" : "new"; return `${n.e}${src}>${dst}`; }).sort();
+}
+
+/**
+ * "Spot the error": one arrow of a library step changed into a common wrong one, checked by the engine to really be
+ * wrong. Returns { arrows, wrong, kind, why } or null when no change of that step can be confirmed as an error.
+ */
+export function faultyStep(inst, k, seed = 0) {
+  const states = replay({ start: inst.start, steps: inst.steps }).states, s = states[k], st = inst.steps[k];
+  if (!s || !st) return null;
+  const good = applyStep(s, st.arrows).state, out = [], n0 = (a) => normalize(s, a);
+  st.arrows.forEach((a, i) => {
+    const swap = (b, kind) => { const arrows = st.arrows.map((x, j) => (j === i ? b : x)); out.push({ arrows, wrong: i, kind }); };
+    if (a.from.lp != null) swap({ ...a, from: { atom: a.from.lp } }, "from-atom");
+    const n = normalize(s, a);
+    if (!n.error && n.src.bond && n.dst.atom != null) { const otherEnd = n.src.bond.find((x) => x !== n.dst.atom); swap({ ...a, to: { atom: otherEnd } }, "wrong-end"); }
+    if (a.type === "single") swap({ ...a, type: "pair" }, "full-arrow");
+    if (!n.error && n.src.atom != null && n.dst.pair) { const tgt = n.dst.pair.find((x) => x !== n.src.atom), nb = s.bonds.filter((b) => b.a === tgt || b.b === tgt).map((b) => (b.a === tgt ? b.b : b.a)).filter((x) => x !== n.src.atom && atomOf(s, x).el !== "H").sort((x, y) => (atomOf(s, y).el === "C") - (atomOf(s, x).el === "C")); if (nb.length) swap({ ...a, to: { atom: nb[0] } }, "wrong-target"); }
+  });
+  const confirmed = out.map((f) => {
+    const r = applyStep(s, f.arrows);
+    if (r.ok && sameState(r.state, good)) return null;
+    const engine = r.ok ? "" : r.errors.find((e) => e.arrow === f.wrong)?.text || r.errors[0].text;
+    if (f.kind === "wrong-end" && n0(st.arrows[f.wrong]).e === 1) { const n = n0(st.arrows[f.wrong]), to = n.src.bond.find((x) => x !== n.dst.atom); return { ...f, why: `This fishhook sends its electron to ${atomLabel(s, to)}, so both electrons of the bond end up on ${atomLabel(s, to)}: that would be heterolysis, making ions. In homolytic fission one electron goes to each atom.` }; }
+    if (f.kind === "wrong-end") { const n = normalize(s, st.arrows[f.wrong]), to = n.src.bond.find((x) => x !== n.dst.atom); return { ...f, why: `This arrow sends both electrons of the ${atomLabel(s, n.src.bond[0])}–${atomLabel(s, n.src.bond[1])} bond to ${atomLabel(s, to)}. In this step they go to ${atomLabel(s, n.dst.atom)}${EN(atomOf(s, n.dst.atom).el) > EN(atomOf(s, to).el) ? ", the more electronegative atom" : ""}.${engine ? ` As drawn: ${engine}` : ""}` }; }
+    return { ...f, why: engine || "Every arrow is possible on its own, but this one gives a different intermediate from the real mechanism." };
+  }).filter(Boolean);
+  return confirmed.length ? confirmed[seed % confirmed.length] : null;
 }

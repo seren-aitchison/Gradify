@@ -133,3 +133,23 @@
 .mx-why { padding: 8px 10px; border-left: 3px solid var(--co-accent, #10b981); background: rgba(var(--ink-rgb), .03); border-radius: 0 8px 8px 0; }
 .mx-about ul { margin: 6px 0 0; padding-left: 18px; } .mx-about summary { cursor: pointer; font-weight: 600; }
 .m3-stage { min-width: 0; }
+/* Organic Chemistry Lab, Reaction mode */
+.rx-route:empty { display: none; }
+.rx-route { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 12.5px; }
+.rx-route i { font-style: normal; color: var(--mute); display: inline-flex; flex-direction: column; align-items: center; line-height: 1; } .rx-route i small { font-size: 10.5px; }
+.rx-chip { padding: 3px 9px; border-radius: 999px; background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); } .rx-chip.now { border-color: var(--co-accent, #10b981); }
+.rx-scheme { min-width: 0; }
+.rx-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.rx-prods { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; flex: 1 1 240px; }
+.rx-mol { margin: 0; flex: 0 1 240px; min-width: 0; max-width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.rx-mol svg { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
+.rx-mol figcaption { font-size: 13px; display: flex; flex-wrap: wrap; gap: 2px 6px; align-items: baseline; } .rx-mol figcaption span { color: var(--mute); } .rx-mol figcaption small { flex-basis: 100%; color: var(--mute); }
+.rx-mol.minor { opacity: .78; }
+.rx-role { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; padding: 1px 6px; border-radius: 6px; background: rgba(16, 185, 129, .16); color: #40d4b1; } .rx-role.minor { background: rgba(var(--ink-rgb), .07); color: var(--mute); }
+.rx-arrow { flex: 0 0 auto; max-width: 150px; text-align: center; }
+.rx-none { min-width: 120px; min-height: 90px; display: grid; place-items: center; border: 1px dashed var(--line-strong); border-radius: 12px; color: var(--mute); font-weight: 600; padding: 10px; }
+.rx-plus { color: var(--mute); font-size: 12px; } .rx-by { color: var(--mute); font-size: 13px; }
+.rx-choices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.rx-empty { padding: 24px; border: 1px dashed var(--line-strong); border-radius: 12px; color: var(--mute); }
+@media (max-width: 560px) { .rx-top .lab-sel { width: 100%; } .rx-top .lab-sel select { flex: 1; min-width: 0; } .rx-row { flex-direction: column; align-items: stretch; } .rx-arrow { max-width: none; } .rx-mol { flex-basis: auto; } }
+@media (max-width: 560px) { .osk-modes button { padding: 6px 9px; font-size: 13px; } }

@@ -1,5 +1,5 @@
-// Organic Chemistry Lab (docs/ORGANIC-LAB.md). Three modes: Structure (below), Mechanism (reactions/mechanism-ui.js)
-// and 3D (lab3d.js). Structure: draw skeletal formulae on hexagon paper and see the chemistry worked out as you draw.
+// Organic Chemistry Lab (docs/ORGANIC-LAB.md). Four modes: Structure (below), Mechanism (reactions/mechanism-ui.js),
+// Reaction (reactions/reaction-ui.js) and 3D (lab3d.js). Structure: draw skeletal formulae on hexagon paper and see the chemistry worked out as you draw.
 //   Draw: click an atom to add a bond in the best direction (zig-zag, 120°), click empty paper for a new bond, drag
 //         for a zig-zag chain (it counts the carbons), click a bond to cycle single → double → triple.
 //   Rings: click paper for a ring on the hexagon grid, an atom for a spiro ring, a bond to fuse a ring (⌬ adds
@@ -13,6 +13,7 @@ import { shell, challenges, toggle, button, describe, esc } from "../lab.js";
 import * as K from "./skeletal.js";
 import * as E from "./reactions/electron-flow.js";
 import { mountMechanism } from "./reactions/mechanism-ui.js";
+import { mountReaction } from "./reactions/reaction-ui.js";
 import { mount3d } from "./lab3d.js";
 
 const STORE = "gradify.organicLab", PAGES = "gradify.organicLab.pages", PREFS = "gradify.organicLab.prefs";
@@ -39,7 +40,7 @@ export const PROBLEMS = [
 
 export function mount(el, ctx = {}) {
   const $ = shell(el, `
-    <div class="lab-seg osk-modes" role="tablist" aria-label="Lab mode"><button type="button" role="tab" data-mode="structure" aria-pressed="true">Structure</button><button type="button" role="tab" data-mode="mechanism" aria-pressed="false">Mechanism</button><button type="button" role="tab" data-mode="3d" aria-pressed="false">3D</button></div>
+    <div class="lab-seg osk-modes" role="tablist" aria-label="Lab mode"><button type="button" role="tab" data-mode="structure" aria-pressed="true">Structure</button><button type="button" role="tab" data-mode="mechanism" aria-pressed="false">Mechanism</button><button type="button" role="tab" data-mode="reaction" aria-pressed="false">Reaction</button><button type="button" role="tab" data-mode="3d" aria-pressed="false">3D</button></div>
     <div class="osk-mode" data-pane="structure">
     <div class="osk-tools" role="toolbar" aria-label="Drawing tools"></div>
     <div class="lab-cols osk-cols">
@@ -49,6 +50,7 @@ export function mount(el, ctx = {}) {
     </div>
     </div>
     <div class="osk-mode" data-pane="mechanism" hidden></div>
+    <div class="osk-mode" data-pane="reaction" hidden></div>
     <div class="osk-mode" data-pane="3d" hidden></div>
     <div class="lab-cols osk-cols">
       <div class="lab-ctrl osk-probs"><div class="lab-info"><h4>Work it out</h4><select class="osk-prob" aria-label="Problem"></select><p class="osk-ptext"></p><div class="lab-row"><span class="osk-check"></span><span class="osk-phint"></span></div><p class="lab-msg osk-pmsg"></p></div></div>
@@ -340,6 +342,9 @@ export function mount(el, ctx = {}) {
   const mech = mountMechanism($('[data-pane="mechanism"]'), { ctx, palette, getDrawing: () => K.clone(m),
     onSave: (mx) => { pages.unshift({ id: Date.now().toString(36), kind: "mech", title: mx.title, mech: mx, at: new Date().toISOString().slice(0, 10) }); save(PAGES, pages); book(); } });
   const m3 = mount3d($('[data-pane="3d"]'), { getDrawing: () => m });
+  const rx = mountReaction($('[data-pane="reaction"]'), { ctx, palette, getDrawing: () => K.clone(m),
+    onMechanism: (id) => { setMode("mechanism"); mech.load(id); },
+    onEdit: (pm) => { snap(); m = pm; sel = null; commit(); setMode("structure"); fitView(); } });
   let mode = "structure";
   function setMode(k) {
     mode = k;
@@ -347,7 +352,7 @@ export function mount(el, ctx = {}) {
     $.all("[data-pane]").forEach((p) => { p.hidden = p.dataset.pane !== k; });
     $(".osk-probs").hidden = k !== "structure";
     if (k === "3d") m3.show(); else m3.stop();
-    if (k === "mechanism") mech.refresh(); else if (k === "structure") { resize(); paint(); }
+    if (k === "mechanism") mech.refresh(); else if (k === "reaction") rx.refresh(); else if (k === "structure") { resize(); paint(); }
   }
   $(".osk-modes").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); });
 
