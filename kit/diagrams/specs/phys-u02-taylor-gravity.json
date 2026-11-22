@@ -1,0 +1,98 @@
+{
+ "id": "phys-u02-taylor-gravity",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Taylor and Fourier series",
+ "title": "A Taylor step for g(h)",
+ "caption": "g(h)/g₀ = (1 + h/R)⁻² (curve) is replaced by its first Taylor step 1 − 2h/R (dashed line), whose gradient −2 matches the curve at h = 0. At h = 10 km, h/R = 0.0016 and g has fallen by only 0.3%, where line and curve are indistinguishable. Far above the surface (right of the graph) they part company.",
+ "alt": "Graph of g over g0 against h over R: a curve (1 + h/R)^-2 and its tangent line 1 − 2h/R, which agree near zero and separate as h/R grows.",
+ "description": [
+  "Horizontal axis: h/R, the height as a fraction of the Earth's radius; vertical axis: g/g₀.",
+  "The curve is g/g₀ = (1 + h/R)⁻². The dashed line is 1 − 2h/R, the first-order Taylor series about h = 0.",
+  "Near the surface the two are indistinguishable. At h = 10 km, h/R = 0.0016 and g/g₀ = 0.9969: a 0.3% fall.",
+  "At h/R = 0.3 the line has dropped to 0.4 but the true value is 0.59: the step is only valid for small h/R."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.4
+  ],
+  "y": [
+   0.3,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ],
+  [
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ ],
+ "grid": [
+  0.1,
+  0.2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "h / R",
+  "g / g₀"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+x)^2",
+   "colour": "a1",
+   "label": "(1 + h/R)⁻²",
+   "labelAt": [
+    0.2,
+    0.74
+   ]
+  },
+  {
+   "expr": "1-2*x",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2.2,
+   "label": "1 − 2h/R",
+   "labelAt": [
+    0.08,
+    0.56
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1/(1+x)^2",
+   "x": 0,
+   "value": -2,
+   "name": "the gradient of g/g₀ at h = 0 is −2 (the Taylor coefficient)"
+  },
+  {
+   "type": "point",
+   "expr": "1-2*x",
+   "x": 0.0015625,
+   "y": 0.996875,
+   "name": "at h = 10 km, the Taylor step gives 1 − 2h/R = 0.997 (0.3% lower)"
+  },
+  {
+   "type": "point",
+   "expr": "1-2*x",
+   "x": 0.3,
+   "y": 0.4,
+   "name": "the straight line gives 0.4 at h/R = 0.3 (the step fails there)"
+  }
+ ]
+}

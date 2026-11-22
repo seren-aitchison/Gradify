@@ -36766,5 +36766,747 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u02-activity-halvings": {
+  "title": "Three halvings in 30 days",
+  "caption": "Activity A = 800·e^{−λt} falls 800 → 400 → 200 → 100 Bq. That is 3 halvings in 30 days, so the half-life is 30/3 = 10 days and λ = ln 2/10 = 0.0693 day⁻¹.",
+  "alt": "Exponential decay curve of activity from 800 becquerel, passing 400 at 10 days, 200 at 20 days and 100 at 30 days.",
+  "description": [
+   "Activity in becquerels against time in days: a falling exponential that never reaches zero.",
+   "Each 10-day step cuts the activity in half: 800 at 0 days, 400 at 10, 200 at 20, 100 at 30.",
+   "Three equal steps cover the 30 days, so t½ = 10 days, and λ = ln 2 / t½ = 0.0693 day⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Exponential and logarithmic functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Exponential and logarithmic functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "activity at 10 days is 400 Bq",
+    "ok": true,
+    "detail": "y(10) = 400.0001"
+   },
+   {
+    "name": "activity at 20 days is 200 Bq",
+    "ok": true,
+    "detail": "y(20) = 200.0001"
+   },
+   {
+    "name": "activity at 30 days is 100 Bq",
+    "ok": true,
+    "detail": "y(30) = 100.0001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-ball-height-15": {
+  "title": "Two times for one height",
+  "caption": "Height h = 20t − 5t² of a ball thrown up at 20 m s⁻¹ (g = 10 m s⁻²). Setting h = 15 m gives a quadratic with two roots: t = 1 s on the way up and t = 3 s on the way down. The graph shows why: the line h = 15 m cuts the parabola twice, either side of the top at t = 2 s (20 m).",
+  "alt": "Parabola of height against time for a ball thrown up at 20 metres per second, peaking at 20 metres at 2 seconds, with a horizontal line at 15 metres crossing it at 1 and 3 seconds.",
+  "description": [
+   "Height h in metres against time t in seconds, from 0 to 4 s: h = 20t − 5t².",
+   "The curve rises to 20 m at t = 2 s and returns to the ground at t = 4 s.",
+   "The dashed line at h = 15 m meets the curve at t = 1 s (going up) and t = 3 s (coming down): the two roots of t² − 4t + 3 = 0."
+  ],
+  "course": "physics",
+  "lesson": "Equations and inequalities",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Equations and inequalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the ball is 15 m up at t = 1 s",
+    "ok": true,
+    "detail": "y(1) = 15"
+   },
+   {
+    "name": "the ball is 15 m up at t = 3 s",
+    "ok": true,
+    "detail": "y(3) = 15"
+   },
+   {
+    "name": "the top of the flight is 20 m at t = 2 s",
+    "ok": true,
+    "detail": "found (2, 20)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-collision-lines": {
+  "title": "Simultaneous equations as two lines",
+  "caption": "Each equation is a line in the (v₁, v₂) plane. Momentum, v₁ + 2v₂ = 6, and the elastic condition, v₂ − v₁ = 6, meet at one point: v₁ = -2 m s⁻¹, v₂ = 4 m s⁻¹. Only that point satisfies both laws, so the solution is where the lines cross.",
+  "alt": "Two straight lines in the plane of the final velocities v1 and v2 crossing at v1 equals minus 2, v2 equals 4 metres per second.",
+  "description": [
+   "Horizontal axis: v₁ (final velocity of the 1.0 kg ball); vertical axis: v₂ (the 2.0 kg ball), both in m s⁻¹.",
+   "Momentum conservation, 6 = v₁ + 2v₂, is the line v₂ = (6 − v₁)/2, sloping down.",
+   "Elastic collision (relative speed reverses), v₂ − v₁ = 6, is the line v₂ = v₁ + 6, sloping up.",
+   "They cross at (-2, 4): the 1.0 kg ball bounces back at 2 m s⁻¹ and the 2.0 kg ball moves off at 4 m s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Simultaneous equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Simultaneous equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the two lines meet at v₁ = −2.0, v₂ = 4.0 m s⁻¹",
+    "ok": true,
+    "detail": "(6-x)/2 → 4, x+6 → 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-derivative-tangent": {
+  "title": "The derivative is the gradient",
+  "caption": "For x = 5t² − 2t³ the velocity is v = dx/dt = 10t − 6t². At t = 1 s the position is 3 m and the tangent (dashed) has gradient v = 4 m s⁻¹. The acceleration there is a = dv/dt = 10 − 12t = -2 m s⁻²: the curve is already bending over.",
+  "alt": "Graph of x = 5t^2 − 2t^3, rising to a maximum near 1.7 seconds, with the tangent at t = 1 second having gradient 4 metres per second.",
+  "description": [
+   "Position x in metres against time t in seconds, 0 to 2.5 s.",
+   "At t = 1 s the curve passes through x = 3 m. The dashed tangent there rises 4 m for each second: v = 10(1) − 6(1)² = 4 m s⁻¹.",
+   "The curve peaks at t = 5/3 s, where v = 0, and then falls back. The curve is concave down at t = 1 s because a = 10 − 12(1) = -2 m s⁻² is negative."
+  ],
+  "course": "physics",
+  "lesson": "Differentiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Differentiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(1 s) = 3 m",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "the gradient at t = 1 s is v = 4 m s⁻¹",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "the gradient of v at t = 1 s is a = −2 m s⁻²",
+    "ok": true,
+    "detail": "gradient -2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-force-components": {
+  "title": "Resolving the 50 N force",
+  "caption": "The 50 N force at 30° above the horizontal resolves into 43.3 N along the motion and 25 N up. Only the horizontal component does work: W = 43.3 × 4.0 = 173 J; the vertical component, perpendicular to the displacement, does none.",
+  "alt": "A 50 newton force arrow at 30 degrees above the horizontal with its horizontal component of 43.3 newtons and vertical component of 25 newtons dashed.",
+  "description": [
+   "The force F = 50 N is drawn at 30° above the horizontal, the direction of the crate's motion.",
+   "Dashed components: F cos 30° = 43.3 N horizontally and F sin 30° = 25 N vertically.",
+   "Work is the component along the displacement times the distance: 43.3 N × 4.0 m = 173 J."
+  ],
+  "course": "physics",
+  "lesson": "Vectors and vector decomposition",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Vectors and vector decomposition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of F are 43.3, 25",
+    "ok": true,
+    "detail": "|v| cos θ = 43.3, |v| sin θ = 25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u02-guitar-string-modes": {
+  "title": "Fixed ends allow only some frequencies",
+  "caption": "With both ends fixed, only whole numbers of half-wavelengths fit: λₙ = 2L/n. For L = 0.65 m and v = 420 m s⁻¹, f = nv/(2L) gives 323 Hz, 646 Hz, 969 Hz for the first three modes.",
+  "alt": "Three standing waves on a 0.65 metre string fixed at both ends with one, two and three half-wavelengths, at 323, 646, 969 hertz.",
+  "description": [
+   "A string of length 0.65 m fixed at both ends, wave speed 420 m s⁻¹.",
+   "Mode 1: half a wavelength fits, λ = 2L = 1.3 m, f = 420/1.3 = 323 Hz.",
+   "Mode 2: one wavelength fits, λ = L = 0.65 m, f = 646 Hz, with a node in the middle.",
+   "Mode 3: λ = 2L/3 = 0.433 m, f = 969 Hz. Frequencies between these cannot satisfy the boundary conditions."
+  ],
+  "course": "physics",
+  "lesson": "Boundary and initial conditions",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Boundary and initial conditions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 1: λ = 1.3",
+    "ok": true,
+    "detail": "2L/n = 1.3"
+   },
+   {
+    "name": "n = 1: f = v/λ = 323 Hz",
+    "ok": true,
+    "detail": "323 Hz"
+   },
+   {
+    "name": "n = 2: λ = 0.65",
+    "ok": true,
+    "detail": "2L/n = 0.65"
+   },
+   {
+    "name": "n = 2: f = v/λ = 646 Hz",
+    "ok": true,
+    "detail": "646 Hz"
+   },
+   {
+    "name": "n = 3: λ = 0.4333",
+    "ok": true,
+    "detail": "2L/n = 0.433"
+   },
+   {
+    "name": "n = 3: f = v/λ = 969 Hz",
+    "ok": true,
+    "detail": "969 Hz"
+   },
+   {
+    "name": "harmonic 1 is allowed with fixed-fixed ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 2 is allowed with fixed-fixed ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 3 is allowed with fixed-fixed ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u02-impedance-plane": {
+  "title": "Impedance in the complex plane",
+  "caption": "A 30 Ω resistor in series with an inductor of reactance 40 Ω has Z = 30 + 40i Ω. The resistance lies along the real axis and the reactance along the imaginary axis, so |Z| = √(30² + 40²) = 50 Ω and the phase is arctan(40/30) = 53°, voltage leading current.",
+  "alt": "Phasor triangle: a 30 ohm arrow along the real axis, a 40 ohm arrow up from its tip, and the 50 ohm impedance at 53 degrees.",
+  "description": [
+   "The resistance R = 30 Ω is drawn along the real (horizontal) axis.",
+   "The reactance X_L = 40 Ω is drawn from its tip along the imaginary (vertical) axis.",
+   "The impedance Z runs from the origin to the tip: |Z| = √(30² + 40²) = 50 Ω.",
+   "Its angle above the real axis is the phase: tan φ = 40/30, φ = 53°."
+  ],
+  "course": "physics",
+  "lesson": "Complex numbers",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Complex numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of R are 30, 0",
+    "ok": true,
+    "detail": "|v| cos θ = 30, |v| sin θ = 0"
+   },
+   {
+    "name": "components of X_{L} are 0, 40",
+    "ok": true,
+    "detail": "|v| cos θ = 2.45 × 10^{-15}, |v| sin θ = 40"
+   },
+   {
+    "name": "Z = 50 at 53.1° from the summed components",
+    "ok": true,
+    "detail": "Σx = 30, Σy = 40: 50 at 53.1°"
+   },
+   {
+    "name": "the phase of Z is 53.1° from the resistance",
+    "ok": true,
+    "detail": "53.1°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u02-linear-drag-solution": {
+  "title": "Falling with linear drag",
+  "caption": "The solution v = (g/k)(1 − e^{−kt}) starts with slope g and levels off at the terminal velocity g/k. Shown for g = 9.8 m s⁻² and k = 0.5 s⁻¹ (an illustrative k): v_t = 19.6 m s⁻¹, and after one time constant 1/k = 2 s the velocity has reached 12.4 m s⁻¹, 63% of v_t.",
+  "alt": "Velocity against time curve rising from zero with initial slope 9.8 and levelling off at the terminal velocity of 19.6 metres per second.",
+  "description": [
+   "Velocity v against time t for dv/dt = g − kv with g = 9.8 and k = 0.5 (illustrative values).",
+   "At t = 0 the velocity is 0 and the slope is g = 9.8 m s⁻²: the drag is zero, so the ball falls freely.",
+   "As v grows the drag kv grows, the slope falls, and v approaches the terminal velocity g/k = 19.6 m s⁻¹ (dashed line), where drag balances weight.",
+   "After t = 1/k = 2 s the velocity is 12.4 m s⁻¹, 63% of the way there."
+  ],
+  "course": "physics",
+  "lesson": "Ordinary differential equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Ordinary differential equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the initial gradient is g = 9.8 m s⁻²",
+    "ok": true,
+    "detail": "gradient 9.8000"
+   },
+   {
+    "name": "v(1/k) = (1 − 1/e) g/k",
+    "ok": true,
+    "detail": "y(2) = 12.3896"
+   },
+   {
+    "name": "v approaches g/k",
+    "ok": true,
+    "detail": "19.6*(1-exp(-0.5*x)) at 10 = 19.47; expected 19.404–19.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-newton-raphson": {
+  "title": "Newton–Raphson for √2",
+  "caption": "Start at x₀ = 1 on f(x) = x² − 2. The tangent there (gradient 2) meets the axis at x₁ = 1.5; the tangent at x₁ (gradient 3) meets it at x₂ = 1.4167. Each tangent lands much closer to the root √2 = 1.41421.",
+  "alt": "Parabola x squared minus 2 with the tangent at x = 1 crossing the axis at 1.5, and the tangent there crossing at 1.4167, close to the root 1.41421.",
+  "description": [
+   "The curve is f(x) = x² − 2 for x from 0.9 to 1.7; it crosses zero at √2 = 1.41421.",
+   "At x₀ = 1, f = −1 and the gradient is 2. The tangent crosses zero at x₁ = 1 − (−1)/2 = 1.5.",
+   "At x₁ = 1.5, f = 0.25 and the gradient is 3. The tangent crosses zero at x₂ = 1.5 − 0.25/3 = 1.4167.",
+   "x₃ = 1.41422: the number of correct digits doubles each step."
+  ],
+  "course": "physics",
+  "lesson": "Numerical methods",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Numerical methods"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(1) = −1",
+    "ok": true,
+    "detail": "y(1) = -1"
+   },
+   {
+    "name": "f′(1) = 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the tangent at x₀ crosses zero at x₁ = 1.5",
+    "ok": true,
+    "detail": "y(1.5) = 0"
+   },
+   {
+    "name": "f(1.5) = 0.25",
+    "ok": true,
+    "detail": "y(1.5) = 0.25"
+   },
+   {
+    "name": "f′(1.5) = 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "the tangent at x₁ crosses zero at x₂ = 1.4167",
+    "ok": true,
+    "detail": "y(1.4166666666666667) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-oscillator-solution": {
+  "title": "y″ + 4y = 0 with y(0) = 1, y′(0) = 0",
+  "caption": "The characteristic equation λ² + 4 = 0 gives λ = ±2i, so the solutions oscillate. The initial conditions pick y = cos 2t: it starts at 1 with zero slope, and repeats every π s (ω = 2).",
+  "alt": "Graph of y = cos 2t from 0 to 2π: starts at 1 with zero slope, crosses zero at π/4, reaches −1 at π/2 and repeats with period π.",
+  "description": [
+   "y against t (the independent variable) from 0 to 2π.",
+   "y(0) = 1 and the curve starts flat, y′(0) = 0: the two conditions that fix A = 1, B = 0.",
+   "The curve falls to −1 at t = π/2 and is back at 1 at t = π: the period is 2π/ω = π."
+  ],
+  "course": "physics",
+  "lesson": "First- and second-order differential equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: First- and second-order differential equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y(0) = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "y′(0) = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the period is π",
+    "ok": true,
+    "detail": "y(3.14159265) = 1"
+   },
+   {
+    "name": "the first minimum is −1 at t = π/2",
+    "ok": true,
+    "detail": "found (1.571, -1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-poisson-counts": {
+  "title": "400 counts, ±20",
+  "caption": "For a mean of 400 counts the Poisson distribution is almost a bell curve with standard deviation σ = √400 = 20. About 68% of repeats fall within ±20 of 400, so the rate is 400 ± 20 per minute (5%).",
+  "alt": "Bell curve of the probability of each count centred on 400 with standard deviation 20, with the region from 380 to 420 shaded.",
+  "description": [
+   "Horizontal axis: the number of counts in one minute; vertical axis: probability per count. The curve is centred on the mean 400.",
+   "Its width is σ = √400 = 20 counts: the curve falls to 61% of its peak at 380 and 420.",
+   "The shaded area between 380 and 420 is 68% of all the probability.",
+   "Quoted result: 400 ± 20 counts, a 5% uncertainty."
+  ],
+  "course": "physics",
+  "lesson": "Probability distributions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Probability distributions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the distribution is normalised (area 1)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "68% of the area lies within one σ = 20 of the mean",
+    "ok": true,
+    "detail": "area 0.6827"
+   },
+   {
+    "name": "the peak is at the mean of 400 counts",
+    "ok": true,
+    "detail": "found (400, 0.02)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-rectangle-area": {
+  "title": "The largest rectangle of perimeter 20 m",
+  "caption": "With perimeter 20 m, a rectangle x by (10 − x) has area A = x(10 − x). The area is largest at x = 5 m, where the gradient dA/dx = 10 − 2x is zero, giving a square of area 25 m².",
+  "alt": "Parabola of area against side length x for a rectangle of perimeter 20 metres, with its maximum of 25 square metres at x = 5 metres.",
+  "description": [
+   "Horizontal axis: one side x in metres, from 0 to 10; the other side is 10 − x.",
+   "Vertical axis: area A = x(10 − x). It is 0 at x = 0 and x = 10 (a flat rectangle) and rises between.",
+   "The maximum is at x = 5 m, where dA/dx = 10 − 2x = 0: the rectangle is a square, A = 25 m²."
+  ],
+  "course": "physics",
+  "lesson": "Optimisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum area is 25 m² at x = 5 m",
+    "ok": true,
+    "detail": "found (5, 25)"
+   },
+   {
+    "name": "dA/dx = 0 at x = 5 m",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-sinusoid-sum": {
+  "title": "Two sinusoids make one",
+  "caption": "3 sin ωt and 4 cos ωt (thin curves) add to a single sinusoid of amplitude R = √(3² + 4²) = 5 (heavy curve), shifted by φ = 53.1° (tan φ = 4/3). The sum peaks at 5, as the worked example finds, at ωt = 0.644 rad.",
+  "alt": "Graph over one cycle of 3 sin ωt, 4 cos ωt and their sum, a sine wave of amplitude 5 that peaks at ωt = 0.644 radians.",
+  "description": [
+   "Horizontal axis: ωt in radians over one cycle, 0 to 2π; vertical axis: the value of each expression.",
+   "The thin curves are 3 sin ωt (amplitude 3) and 4 cos ωt (amplitude 4).",
+   "Their sum, the heavy curve, is again sinusoidal with amplitude R = √(3² + 4²) = 5 and phase φ = arctan(4/3) = 53.1°.",
+   "Its maximum is 5, reached when ωt + φ = π/2, that is at ωt = 0.644 rad."
+  ],
+  "course": "physics",
+  "lesson": "Trigonometry and circular functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Trigonometry and circular functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum of 3 sin ωt + 4 cos ωt is 5",
+    "ok": true,
+    "detail": "found (0.643, 5)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u02-taylor-gravity": {
+  "title": "A Taylor step for g(h)",
+  "caption": "g(h)/g₀ = (1 + h/R)⁻² (curve) is replaced by its first Taylor step 1 − 2h/R (dashed line), whose gradient −2 matches the curve at h = 0. At h = 10 km, h/R = 0.0016 and g has fallen by only 0.3%, where line and curve are indistinguishable. Far above the surface (right of the graph) they part company.",
+  "alt": "Graph of g over g0 against h over R: a curve (1 + h/R)^-2 and its tangent line 1 − 2h/R, which agree near zero and separate as h/R grows.",
+  "description": [
+   "Horizontal axis: h/R, the height as a fraction of the Earth's radius; vertical axis: g/g₀.",
+   "The curve is g/g₀ = (1 + h/R)⁻². The dashed line is 1 − 2h/R, the first-order Taylor series about h = 0.",
+   "Near the surface the two are indistinguishable. At h = 10 km, h/R = 0.0016 and g/g₀ = 0.9969: a 0.3% fall.",
+   "At h/R = 0.3 the line has dropped to 0.4 but the true value is 0.59: the step is only valid for small h/R."
+  ],
+  "course": "physics",
+  "lesson": "Taylor and Fourier series",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u02.js: Taylor and Fourier series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient of g/g₀ at h = 0 is −2 (the Taylor coefficient)",
+    "ok": true,
+    "detail": "gradient -2.0000"
+   },
+   {
+    "name": "at h = 10 km, the Taylor step gives 1 − 2h/R = 0.997 (0.3% lower)",
+    "ok": true,
+    "detail": "y(0.0015625) = 0.9969"
+   },
+   {
+    "name": "the straight line gives 0.4 at h/R = 0.3 (the step fails there)",
+    "ok": true,
+    "detail": "y(0.3) = 0.4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

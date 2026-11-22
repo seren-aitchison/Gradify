@@ -1,0 +1,113 @@
+{
+ "id": "phys-u02-ball-height-15",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Equations and inequalities",
+ "title": "Two times for one height",
+ "caption": "Height h = 20t − 5t² of a ball thrown up at 20 m s⁻¹ (g = 10 m s⁻²). Setting h = 15 m gives a quadratic with two roots: t = 1 s on the way up and t = 3 s on the way down. The graph shows why: the line h = 15 m cuts the parabola twice, either side of the top at t = 2 s (20 m).",
+ "alt": "Parabola of height against time for a ball thrown up at 20 metres per second, peaking at 20 metres at 2 seconds, with a horizontal line at 15 metres crossing it at 1 and 3 seconds.",
+ "description": [
+  "Height h in metres against time t in seconds, from 0 to 4 s: h = 20t − 5t².",
+  "The curve rises to 20 m at t = 2 s and returns to the ground at t = 4 s.",
+  "The dashed line at h = 15 m meets the curve at t = 1 s (going up) and t = 3 s (coming down): the two roots of t² − 4t + 3 = 0."
+ ],
+ "range": {
+  "x": [
+   0,
+   4.2
+  ],
+  "y": [
+   0,
+   24
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time t / s",
+  "height h / m"
+ ],
+ "curves": [
+  {
+   "expr": "20*x-5*x^2",
+   "colour": "a1",
+   "label": "h = 20t − 5t²",
+   "labelAt": [
+    2.45,
+    21
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 15,
+   "label": "h = 15 m"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 15,
+   "label": "t = 1 s",
+   "dx": -8,
+   "dy": 16,
+   "anchor": "end"
+  },
+  {
+   "x": 3,
+   "y": 15,
+   "label": "t = 3 s",
+   "dx": 8,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "20*x-5*x^2",
+   "x": 1,
+   "y": 15,
+   "name": "the ball is 15 m up at t = 1 s"
+  },
+  {
+   "type": "point",
+   "expr": "20*x-5*x^2",
+   "x": 3,
+   "y": 15,
+   "name": "the ball is 15 m up at t = 3 s"
+  },
+  {
+   "type": "max",
+   "expr": "20*x-5*x^2",
+   "domain": [
+    0,
+    4
+   ],
+   "x": 2,
+   "y": 20,
+   "name": "the top of the flight is 20 m at t = 2 s"
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "id": "phys-u02-sinusoid-sum",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Trigonometry and circular functions",
+ "title": "Two sinusoids make one",
+ "caption": "3 sin ωt and 4 cos ωt (thin curves) add to a single sinusoid of amplitude R = √(3² + 4²) = 5 (heavy curve), shifted by φ = 53.1° (tan φ = 4/3). The sum peaks at 5, as the worked example finds, at ωt = 0.644 rad.",
+ "alt": "Graph over one cycle of 3 sin ωt, 4 cos ωt and their sum, a sine wave of amplitude 5 that peaks at ωt = 0.644 radians.",
+ "description": [
+  "Horizontal axis: ωt in radians over one cycle, 0 to 2π; vertical axis: the value of each expression.",
+  "The thin curves are 3 sin ωt (amplitude 3) and 4 cos ωt (amplitude 4).",
+  "Their sum, the heavy curve, is again sinusoidal with amplitude R = √(3² + 4²) = 5 and phase φ = arctan(4/3) = 53.1°.",
+  "Its maximum is 5, reached when ωt + φ = π/2, that is at ωt = 0.644 rad."
+ ],
+ "range": {
+  "x": [
+   0,
+   6.4
+  ],
+  "y": [
+   -6,
+   6.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ωt / rad",
+  "value"
+ ],
+ "curves": [
+  {
+   "expr": "3*sin(x)",
+   "colour": "a4",
+   "width": 2,
+   "label": "3 sin ωt",
+   "labelAt": [
+    1.2,
+    -3.9
+   ]
+  },
+  {
+   "expr": "4*cos(x)",
+   "colour": "a3",
+   "width": 2,
+   "label": "4 cos ωt",
+   "labelAt": [
+    4.05,
+    4.4
+   ]
+  },
+  {
+   "expr": "3*sin(x)+4*cos(x)",
+   "colour": "a1",
+   "label": "sum = 5 sin(ωt + φ)",
+   "labelAt": [
+    2.6,
+    5.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6435011069983879,
+   "y": 5,
+   "label": "max 5",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "3*sin(x)+4*cos(x)",
+   "domain": [
+    0,
+    6.2832
+   ],
+   "x": 0.6435011069983879,
+   "y": 5,
+   "name": "the maximum of 3 sin ωt + 4 cos ωt is 5"
+  }
+ ]
+}

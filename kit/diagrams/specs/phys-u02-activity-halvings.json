@@ -1,0 +1,115 @@
+{
+ "id": "phys-u02-activity-halvings",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Exponential and logarithmic functions",
+ "title": "Three halvings in 30 days",
+ "caption": "Activity A = 800·e^{−λt} falls 800 → 400 → 200 → 100 Bq. That is 3 halvings in 30 days, so the half-life is 30/3 = 10 days and λ = ln 2/10 = 0.0693 day⁻¹.",
+ "alt": "Exponential decay curve of activity from 800 becquerel, passing 400 at 10 days, 200 at 20 days and 100 at 30 days.",
+ "description": [
+  "Activity in becquerels against time in days: a falling exponential that never reaches zero.",
+  "Each 10-day step cuts the activity in half: 800 at 0 days, 400 at 10, 200 at 20, 100 at 30.",
+  "Three equal steps cover the 30 days, so t½ = 10 days, and λ = ln 2 / t½ = 0.0693 day⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   36
+  ],
+  "y": [
+   0,
+   880
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30
+  ],
+  [
+   200,
+   400,
+   600,
+   800
+  ]
+ ],
+ "grid": [
+  10,
+  200
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / days",
+  "activity / Bq"
+ ],
+ "curves": [
+  {
+   "expr": "800*exp(-0.0693147*x)",
+   "colour": "a1",
+   "label": "A = 800e^{−λt}",
+   "labelAt": [
+    14,
+    620
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 800,
+   "label": "800",
+   "dx": 10,
+   "dy": -4
+  },
+  {
+   "x": 10,
+   "y": 400,
+   "label": "400",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 20,
+   "y": 200,
+   "label": "200",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 30,
+   "y": 100,
+   "label": "100",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "800*exp(-0.0693147*x)",
+   "x": 10,
+   "y": 400,
+   "name": "activity at 10 days is 400 Bq"
+  },
+  {
+   "type": "point",
+   "expr": "800*exp(-0.0693147*x)",
+   "x": 20,
+   "y": 200,
+   "name": "activity at 20 days is 200 Bq"
+  },
+  {
+   "type": "point",
+   "expr": "800*exp(-0.0693147*x)",
+   "x": 30,
+   "y": 100,
+   "name": "activity at 30 days is 100 Bq"
+  }
+ ]
+}

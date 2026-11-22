@@ -1,0 +1,123 @@
+{
+ "id": "phys-u02-poisson-counts",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Probability distributions",
+ "title": "400 counts, ±20",
+ "caption": "For a mean of 400 counts the Poisson distribution is almost a bell curve with standard deviation σ = √400 = 20. About 68% of repeats fall within ±20 of 400, so the rate is 400 ± 20 per minute (5%).",
+ "alt": "Bell curve of the probability of each count centred on 400 with standard deviation 20, with the region from 380 to 420 shaded.",
+ "description": [
+  "Horizontal axis: the number of counts in one minute; vertical axis: probability per count. The curve is centred on the mean 400.",
+  "Its width is σ = √400 = 20 counts: the curve falls to 61% of its peak at 380 and 420.",
+  "The shaded area between 380 and 420 is 68% of all the probability.",
+  "Quoted result: 400 ± 20 counts, a 5% uncertainty."
+ ],
+ "range": {
+  "x": [
+   330,
+   470
+  ],
+  "y": [
+   0,
+   0.024
+  ]
+ },
+ "ticks": [
+  [
+   340,
+   360,
+   380,
+   400,
+   420,
+   440,
+   460
+  ],
+  [
+   0.005,
+   0.01,
+   0.015,
+   0.02
+  ]
+ ],
+ "grid": [
+  20,
+  0.005
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "counts in one minute",
+  "probability per count"
+ ],
+ "areas": [
+  {
+   "expr": "exp(-(x-400)^2/800)/50.1325",
+   "from": 380,
+   "to": 420,
+   "colour": "a1"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-400)^2/800)/50.1325",
+   "colour": "a1",
+   "label": "mean 400",
+   "labelAt": [
+    408,
+    0.0225
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 380,
+   "y": 0.012098536232869462,
+   "label": "−σ",
+   "dx": -8,
+   "dy": -10,
+   "anchor": "end"
+  },
+  {
+   "x": 420,
+   "y": 0.012098536232869462,
+   "label": "+σ",
+   "dx": 8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-(x-400)^2/800)/50.1325",
+   "from": 300,
+   "to": 500,
+   "value": 1,
+   "tol": 0.005,
+   "name": "the distribution is normalised (area 1)"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-400)^2/800)/50.1325",
+   "from": 380,
+   "to": 420,
+   "value": 0.6827,
+   "tol": 0.005,
+   "name": "68% of the area lies within one σ = 20 of the mean"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-400)^2/800)/50.1325",
+   "domain": [
+    330,
+    470
+   ],
+   "x": 400,
+   "y": 0.01994711403146808,
+   "name": "the peak is at the mean of 400 counts"
+  }
+ ]
+}

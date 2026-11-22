@@ -34,6 +34,7 @@ H: Inequalities
 X: A ball is thrown up at 20 m s^{-1}. When is it 15 m above the launch point? (g = 10 m s^{-2})
 > 15 = 20t − 5t^{2}, so 5t^{2} − 20t + 15 = 0, t^{2} − 4t + 3 = 0
 > (t − 1)(t − 3) = 0: t = 1 s (going up) and t = 3 s (coming down). Both are physical.
+D: phys-u02-ball-height-15
 !: Don't divide both sides by an expression that could be zero; you can lose solutions (x^{2} = x gives x = 0 as well as x = 1).
 Q: What does a negative discriminant mean? | The quadratic has no real roots (two complex conjugate roots).
 Q: What happens to an inequality when you multiply both sides by −1? | It reverses direction.
@@ -50,6 +51,7 @@ H: Methods
 X: A 1.0 kg ball at 6.0 m s^{-1} collides elastically head-on with a stationary 2.0 kg ball. Find both final velocities.
 > Momentum: 6 = v_{1} + 2v_{2}. Elastic (relative speed reverses): v_{2} − v_{1} = 6
 > Adding: 3v_{2} = 12, v_{2} = 4.0 m s^{-1}; then v_{1} = −2.0 m s^{-1} (it bounces back)
+D: phys-u02-collision-lines
 H: Geometric view
 P: Two linear equations in x and y are two lines. One intersection = unique solution; parallel = none; identical = infinite. In three unknowns each equation is a plane.
 !: Check that equations are independent: three Kirchhoff loop equations in a two-loop circuit include one that's redundant.
@@ -75,6 +77,7 @@ E: sin θ ≈ tan θ ≈ θ, cos θ ≈ 1 − θ^{2}/2 :: θ in radians, θ ≪ 
 X: Find the maximum of 3 sin ωt + 4 cos ωt.
 > R = √(3^{2} + 4^{2}) = 5, so 3 sin ωt + 4 cos ωt = 5 sin(ωt + φ)
 > Maximum value 5
+D: phys-u02-sinusoid-sum
 !: Calculators default to degrees on many devices; calculus results like d(sin x)/dx = cos x only hold in radians.
 Q: Why are oscillations sinusoidal? | They are projections of uniform circular motion, and they solve ẍ = −ω^{2}x.
 Q: Express a sin ωt + b cos ωt as one sinusoid. | R sin(ωt + φ) with R = √(a^{2} + b^{2}) and tan φ = b/a.
@@ -96,6 +99,7 @@ P: Logarithmic scales compress huge ranges: decibels (10 log_{10}(I/I_{0})), pH,
 X: A source's activity falls from 800 Bq to 100 Bq in 30 days. Find the half-life.
 > 800 → 400 → 200 → 100: three halvings
 > t_{1/2} = 30/3 = 10 days
+D: phys-u02-activity-halvings
 !: ln is log base e; log on many calculators is base 10. ln x = 2.303 log_{10} x.
 Q: How do you test whether data follow y = Ae^{kx}? | Plot ln y against x; a straight line means yes, with gradient k and intercept ln A.
 Q: What fraction remains after one time constant? | 1/e ≈ 0.37.
@@ -117,6 +121,7 @@ P: Write an oscillation as the real part of A e^{iωt}. Then d/dt becomes multip
 X: Find |Z| and the phase for R = 30 Ω in series with an inductor of reactance 40 Ω.
 > Z = 30 + 40i Ω
 > |Z| = 50 Ω; phase φ = arctan(40/30) = 53°, voltage leading current
+D: phys-u02-impedance-plane
 !: When you use complex notation for real signals, take the real part only at the end, and never multiply two complex representations to get a physical product (like power) without care.
 Q: State Euler's formula. | e^{iθ} = cos θ + i sin θ.
 Q: What does multiplying two complex numbers do to their moduli and arguments? | Multiplies the moduli and adds the arguments.
@@ -138,6 +143,7 @@ E: |A × B| = AB sin θ, direction by the right-hand rule :: vector (cross) prod
 X: A 50 N force acts at 30° above the horizontal on a crate moving 4.0 m horizontally. Find the work done.
 > Horizontal component = 50 cos 30° = 43.3 N
 > W = 43.3 × 4.0 = 173 J ≈ 170 J (the vertical component does no work)
+D: phys-u02-force-components
 H: Choosing axes
 P: Choose axes to make components simple: along and perpendicular to a slope, along the motion, or along a symmetry axis. The physics doesn't depend on the choice, only the algebra does.
 !: The cross product is anticommutative: A × B = −B × A. Order matters for torque and the magnetic force.
@@ -223,6 +229,7 @@ H: Using derivatives
 X: x = 5t^{2} − 2t^{3} (m, s). Find the velocity and acceleration at t = 1 s.
 > v = 10t − 6t^{2} = 4 m s^{-1}
 > a = 10 − 12t = −2 m s^{-2}
+D: phys-u02-derivative-tangent
 !: The derivative of a constant is zero, and the gradient of a graph has units (y units per x units), not just a number.
 Q: How is force related to potential energy in 1D? | F = −dU/dx.
 Q: What is the chain rule? | dy/dx = (dy/du)(du/dx).
@@ -288,6 +295,7 @@ P: An nth-order ODE needs n constants, fixed by initial conditions. If an ODE ha
 X: Solve dv/dt = g − kv with v(0) = 0 (falling with linear drag).
 > Separate: dv/(g − kv) = dt ⇒ −(1/k) ln(g − kv) = t + C
 > With v(0) = 0: v(t) = (g/k)(1 − e^{−kt}); terminal velocity g/k
+D: phys-u02-linear-drag-solution
 !: A general solution of a second-order ODE has two arbitrary constants; quoting one solution with none is incomplete.
 Q: What makes an ODE linear? | The unknown and its derivatives appear only to the first power and are not multiplied together.
 Q: How many initial conditions does a second-order ODE need? | Two (e.g. initial position and velocity).
@@ -330,6 +338,7 @@ E: ay'' + by' + cy = 0; try e^{λt}: aλ^{2} + bλ + c = 0
 X: Solve y'' + 4y = 0 with y(0) = 1, y'(0) = 0.
 > λ^{2} + 4 = 0, λ = ±2i ⇒ y = A cos 2t + B sin 2t
 > y(0) = 1 ⇒ A = 1; y'(0) = 2B = 0 ⇒ B = 0. So y = cos 2t
+D: phys-u02-oscillator-solution
 !: For a driven oscillator the transient (complementary function) dies away, leaving the steady state; don't forget it at early times.
 Q: What is the integrating factor for dy/dx + P(x)y = Q(x)? | e^{∫P dx}.
 Q: What does the general solution of a driven linear ODE consist of? | The complementary function (homogeneous solution) plus a particular integral.
@@ -349,6 +358,7 @@ P: A string fixed at x = 0 and x = L only allows sin(nπx/L): wavelengths λ_{n}
 X: A guitar string is 0.65 m long with wave speed 420 m s^{-1}. Find its first three frequencies.
 > f_{n} = nv/(2L) = n × 420/1.3
 > 323 Hz, 646 Hz, 969 Hz
+D: phys-u02-guitar-string-modes
 !: An open pipe end is an antinode of displacement (a Neumann-type condition), not a node; get this wrong and the harmonics are wrong.
 Q: What is a Dirichlet boundary condition? | One that fixes the value of the solution on the boundary.
 Q: Why are energies in a box quantised? | Only standing waves that fit the boundary conditions (zero at the walls) are allowed.
@@ -372,6 +382,7 @@ E: a_{n} = (2/T)∫f(t) cos(nωt) dt; b_{n} = (2/T)∫f(t) sin(nωt) dt
 X: Use a Taylor step to find how g changes at a small height h above the Earth's surface.
 > g(h) = GM/(R + h)^{2} = g_{0}(1 + h/R)^{-2} ≈ g_{0}(1 − 2h/R)
 > At h = 10 km: g falls by 2 × 10/6400 ≈ 0.3%
+D: phys-u02-taylor-gravity
 !: A truncated Taylor series is only good near the expansion point; check the size of the next term.
 Q: Why are small oscillations about any equilibrium simple harmonic? | The Taylor expansion of the potential about a minimum is quadratic to leading order.
 Q: Which harmonics does a symmetric square wave contain? | Odd harmonics only, with amplitude ∝ 1/n.
@@ -566,6 +577,7 @@ P: The sum of many independent random variables tends to a Gaussian whatever the
 X: A detector records 400 counts in a minute. What is the uncertainty?
 > Poisson: σ = √400 = 20 counts
 > Rate = 400 ± 20 per minute (5%)
+D: phys-u02-poisson-counts
 !: The Poisson σ = √N applies to raw counts, not to rates or to counts after background subtraction (propagate those properly).
 Q: What is the standard deviation of a Poisson distribution with mean λ? | √λ.
 Q: What fraction of a normal distribution lies within ±2σ of the mean? | About 95%.
@@ -609,6 +621,7 @@ H: Errors and stability
 X: Use Newton–Raphson to find √2 from f(x) = x^{2} − 2, starting at x_{0} = 1.
 > x_{1} = 1 − (1 − 2)/2 = 1.5
 > x_{2} = 1.5 − 0.25/3 = 1.4167; x_{3} = 1.41422 (the digits double each step)
+D: phys-u02-newton-raphson
 !: A simulation that conserves energy badly (Euler for an orbit spirals outwards) can look plausible but be wrong. Always check conserved quantities.
 Q: Why is the Euler method poor for orbits? | It doesn't conserve energy, so orbits spiral outward over time.
 Q: How does the error of Simpson's rule scale with step size h? | As h^{4}.
@@ -626,6 +639,7 @@ P: At the optimum the level curves of f and the constraint touch, so their gradi
 X: Find the rectangle of perimeter 20 m with the largest area.
 > Maximise A = xy with 2x + 2y = 20
 > ∇A = (y, x) = λ(2, 2) ⇒ x = y = 5 m, A = 25 m^{2}
+D: phys-u02-rectangle-area
 H: Nature's optima
 - Fermat: light takes the path of least time, giving Snell's law.
 - Equilibrium: minimum potential energy (stable) or free energy (thermal).

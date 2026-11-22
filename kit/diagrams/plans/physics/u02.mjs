@@ -1,3 +1,40 @@
-// Physics unit 02 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u02-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 02, Mathematics for Physics. Specs are written by scripts/diagrams/physics/u02.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const ALG = "symbol manipulation and rules, taught by worked examples; a picture adds nothing";
+const ABS = "an abstract construction with no worked numbers to draw";
+export default [
+  ["u02-01", null, ALG],
+  ["u02-02", "graph", "phys-u02-ball-height-15", "h = 20t − 5t² cut by h = 15 m: the two roots t = 1 s and 3 s"],
+  ["u02-03", "graph", "phys-u02-collision-lines", "the momentum and elastic-collision equations as two lines meeting at v₁ = −2, v₂ = 4"],
+  ["u02-04", "graph", "phys-u02-sinusoid-sum", "3 sin ωt + 4 cos ωt = 5 sin(ωt + φ), maximum 5"],
+  ["u02-05", "graph", "phys-u02-activity-halvings", "800 Bq falling to 100 Bq in three halvings: half-life 10 days"],
+  ["u02-06", "vectors", "phys-u02-impedance-plane", "Z = 30 + 40i Ω in the complex plane: |Z| = 50 Ω, phase 53°"],
+  ["u02-07", "vectors", "phys-u02-force-components", "the 50 N force at 30° resolved: 43.3 N does the work, 25 N does none"],
+  ["u02-08", null, ALG],
+  ["u02-09", null, "a change of frame is a sum of two velocities (10 + 30 = 40 m s⁻¹); the picture would be a one-line addition"],
+  ["u02-10", null, "needs renderer coordinate-system diagrams: polar, cylindrical and spherical axes with a point's coordinates and the volume element"],
+  ["u02-11", "graph", "phys-u02-derivative-tangent", "x = 5t² − 2t³: the tangent at t = 1 s has gradient v = 4 m s⁻¹, and a = −2 m s⁻²"],
+  ["u02-12", null, "the integral as area under F = kx has only symbols, no numbers to check; area under graphs is drawn in u04"],
+  ["u02-13", null, ALG],
+  ["u02-14", "graph", "phys-u02-linear-drag-solution", "v = (g/k)(1 − e^{−kt}): initial slope g, terminal velocity g/k"],
+  ["u02-15", null, ABS],
+  ["u02-16", "graph", "phys-u02-oscillator-solution", "y″ + 4y = 0 with y(0) = 1, y′(0) = 0 gives y = cos 2t"],
+  ["u02-17", "wave", "phys-u02-guitar-string-modes", "the 0.65 m string: only 323, 646 and 969 Hz fit the fixed ends"],
+  ["u02-18", "graph", "phys-u02-taylor-gravity", "g(h)/g₀ against its first Taylor step 1 − 2h/R: good near the surface only"],
+  ["u02-19", null, "needs renderer Fourier pairs: a pulse and its spectrum, showing Δf Δt ≈ 1 (the radar pulse's 1 MHz bandwidth)"],
+  ["u02-20", null, ALG],
+  ["u02-21", null, ABS],
+  ["u02-22", null, "needs renderer vector-field plots (F = (x, y, 0) diverging, G = (−y, x, 0) curling) with divergence and curl checks"],
+  ["u02-23", null, "needs renderer surfaces and flux through a closed sphere; the field renderer cannot draw an arbitrary surface integral"],
+  ["u02-24", null, "needs renderer loops and surfaces for Ampère's law (circular path round a wire with B·dl)"],
+  ["u02-25", null, "needs renderer a linear map acting on vectors, showing eigenvectors of [[2, 1], [1, 2]] keep their direction"],
+  ["u02-26", null, ABS],
+  ["u02-27", "graph", "phys-u02-poisson-counts", "400 counts: the bell curve of σ = √400 = 20, 68% within one σ"],
+  ["u02-28", null, "propagation of uncertainty is a formula method; error-bar pictures are drawn in u03"],
+  ["u02-29", "graph", "phys-u02-newton-raphson", "tangents of x² − 2 from x₀ = 1 meet the axis at 1.5 then 1.4167"],
+  ["u02-30", "graph", "phys-u02-rectangle-area", "A = x(10 − x): maximum 25 m² at x = 5 m"],
+  ["u02-31", null, "dimensional analysis is a table of dimensions and exponents, not a picture"],
+  ["u02-32", null, ABS],
+  ["u02-33", null, ABS],
+  ["u02-34", null, ABS],
+];

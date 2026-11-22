@@ -1,0 +1,94 @@
+{
+ "id": "phys-u02-rectangle-area",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Optimisation",
+ "title": "The largest rectangle of perimeter 20 m",
+ "caption": "With perimeter 20 m, a rectangle x by (10 − x) has area A = x(10 − x). The area is largest at x = 5 m, where the gradient dA/dx = 10 − 2x is zero, giving a square of area 25 m².",
+ "alt": "Parabola of area against side length x for a rectangle of perimeter 20 metres, with its maximum of 25 square metres at x = 5 metres.",
+ "description": [
+  "Horizontal axis: one side x in metres, from 0 to 10; the other side is 10 − x.",
+  "Vertical axis: area A = x(10 − x). It is 0 at x = 0 and x = 10 (a flat rectangle) and rises between.",
+  "The maximum is at x = 5 m, where dA/dx = 10 − 2x = 0: the rectangle is a square, A = 25 m²."
+ ],
+ "range": {
+  "x": [
+   0,
+   10.4
+  ],
+  "y": [
+   0,
+   29
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25
+  ]
+ ],
+ "grid": [
+  2,
+  5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "side x / m",
+  "area A / m²"
+ ],
+ "curves": [
+  {
+   "expr": "x*(10-x)",
+   "colour": "a1",
+   "label": "A = x(10 − x)",
+   "labelAt": [
+    7,
+    22
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 25,
+   "label": "x = y = 5 m, A = 25 m²",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x*(10-x)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 25,
+   "name": "the maximum area is 25 m² at x = 5 m"
+  },
+  {
+   "type": "slope",
+   "expr": "x*(10-x)",
+   "x": 5,
+   "value": 0,
+   "name": "dA/dx = 0 at x = 5 m"
+  }
+ ]
+}
