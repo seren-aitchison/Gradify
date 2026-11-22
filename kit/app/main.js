@@ -1652,7 +1652,8 @@ async function boot() {
       route();
     } catch (e2) {
       console.error(e2);
-      view.innerHTML = `<div class="panel glass"><h3>Gradify couldn't start</h3><p class="sub">${esc(e2.message || String(e2))}</p><button class="btn btn-light btn-sm" type="button" onclick="location.reload()"><span>Try again</span></button></div>`;
+      view.innerHTML = `<div class="panel glass"><h3>Gradify couldn't start</h3><p class="sub">${esc(e2.message || String(e2))}</p><button class="btn btn-light btn-sm" type="button" data-reload><span>Try again</span></button></div>`;
+      view.querySelector("[data-reload]").addEventListener("click", () => location.reload());
     }
   }
 }

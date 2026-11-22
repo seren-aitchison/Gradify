@@ -5,9 +5,10 @@ import assert from "node:assert/strict";
 import { mkdtemp, rm, writeFile, mkdir, readFile, readdir } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { existsSync } from "node:fs";
-import { PUBLISH, EXCLUDE, classify, workingTree, build, verify, references } from "../scripts/build-site.mjs";
+import { existsSync, readFileSync } from "node:fs";
+import { PUBLISH, EXCLUDE, classify, workingTree, build, verify, references, cspFor, cspOf, withCsp, CSP_SCRIPT_HOSTS } from "../scripts/build-site.mjs";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 // the tests check the working tree (committed files plus new ones), so local changes are validated before a commit
 const tracked = () => workingTree();
@@ -104,4 +105,52 @@ test("local validation sees new files before they're committed, and not deleted 
   await writeFile(join(dir, "new.html"), "x"); await writeFile(join(dir, "secret.txt"), "x");
   assert.deepEqual(workingTree(dir), [".gitignore", "new.html", "old.html"]);
   await rm(dir, { recursive: true });
+});
+
+// ---------- Content-Security-Policy (written into every page by the build) ----------
+const hashOf = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
+
+test("the CSP allows a page's own inline scripts and handlers by hash, and nothing injected", () => {
+  const page = `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="x.css" media="print" onload="this.media='all'"><script type="module">import "./a.js";</script></head><body><script src="b.js"></script></body></html>`;
+  const csp = cspFor(page), script = csp.split("; ").find((d) => d.startsWith("script-src "));
+  assert.ok(script.includes(hashOf(`import "./a.js";`)), "the inline module is allowed by its hash");
+  assert.ok(script.includes(hashOf("this.media='all'")), "the onload handler is allowed by its hash");
+  assert.match(script, /'unsafe-hashes'/);
+  assert.doesNotMatch(script, /'unsafe-inline'/, "inline script is never allowed wholesale");
+  assert.equal(script.split(" ").filter((s) => s.startsWith("'sha256-")).length, 2, "b.js (an external script) adds no hash");
+  for (const d of ["object-src 'none'", "base-uri 'self'", "default-src 'self'"]) assert.ok(csp.includes(d), d);
+  // a page with no inline handlers doesn't need 'unsafe-hashes'
+  assert.doesNotMatch(cspFor(`<head><script>1</script></head>`), /'unsafe-hashes'/);
+  // pinned CDN packages only: a directory per exact version, never a whole host
+  for (const h of CSP_SCRIPT_HOSTS) assert.match(h, /^https:\/\/cdn\.jsdelivr\.net\/npm\/[^/]+@v?\d+\.\d+\.\d+\/$/);
+});
+
+test("the CSP meta goes right after <meta charset>, and a page that already has one stops the build", () => {
+  const out = withCsp(`<html><head><meta charset="utf-8"><title>t</title><script>go()</script></head></html>`);
+  assert.match(out, /<meta charset="utf-8">\n {2}<meta http-equiv="Content-Security-Policy" content="[^"]+">\n?<title>/);
+  assert.equal(cspOf(out), cspFor(out), "adding the meta doesn't change the policy the page needs");
+  assert.throws(() => withCsp(out), /already has a CSP/);
+  assert.throws(() => withCsp(`<p>no head</p>`), /no <head>/);
+});
+
+test("every built page carries a CSP that matches its inline scripts, and a page edited after the build is caught", async () => {
+  const out = await built();
+  try {
+    const pages = (await readdir(out, { recursive: true })).filter((f) => f.endsWith(".html"));
+    assert.ok(pages.length > 100);
+    for (const f of pages) { const html = await readFile(join(out, f), "utf8"); assert.equal(cspOf(html), cspFor(html), f); }
+    const f = join(out, "index.html");
+    await writeFile(f, (await readFile(f, "utf8")).replace("</body>", "<script>alert(1)</script></body>"));
+    const { problems } = await verify(out, { files: tracked() });
+    assert.ok(problems.some((p) => /index\.html: its Content-Security-Policy doesn't match/.test(p)), problems.join("\n"));
+  } finally { await rm(out, { recursive: true, force: true }); }
+});
+
+test("markup built in JavaScript has no inline event handlers (the CSP refuses them: use addEventListener)", () => {
+  const offenders = [];
+  for (const f of tracked().filter((x) => /^(kit|assets)\/.*\.js$/.test(x) && !x.startsWith("kit/vendor/"))) {
+    const text = readFileSync(new URL(`../${f}`, import.meta.url), "utf8");
+    for (const m of text.matchAll(/<[a-z][a-z0-9-]*\b[^<>`]*\son(click|load|error|change|input|submit|keydown|keyup|mouse[a-z]+|focus|blur)=["']/gi)) offenders.push(`${f}: ${m[0].slice(0, 80)}`);
+  }
+  assert.deepEqual(offenders, []);
 });

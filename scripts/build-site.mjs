@@ -100,6 +100,7 @@ export async function build(out, { root = REPO, files = tracked(root) } = {}) {
     await mkdir(dirname(join(out, f)), { recursive: true });
     await copyFile(join(root, f), join(out, f));
     await minifyFile(join(out, f), f);
+    if (f.endsWith(".html")) await writeFile(join(out, f), withCsp(await readFile(join(out, f), "utf8"), f));
     if (f !== "sw.js") digests.push([f, createHash("sha256").update(await readFile(join(out, f))).digest("hex")]);
   }
   await stampServiceWorker(out, deployVersion(digests));
@@ -118,6 +119,61 @@ async function minifyFile(path, name) {
     if (code.length < src.length) await writeFile(path, code);
   } catch { /* keep the original */ }
 }
+
+// ---------- Content-Security-Policy ----------
+// Every published page gets a CSP <meta> written here, at build time, because GitHub Pages can't send headers and the
+// hashes would churn on every edit if they lived in the source. Scripts run only from this site, the three pinned CDN
+// packages loaded on demand (Tesseract for reading images, KaTeX for maths), and the page's own inline scripts and
+// inline event handlers, each allowed by its SHA-256. So markup injected through innerHTML can't run script:
+// <img onerror=…> or javascript: links are refused. 'unsafe-eval' stays because the diagram renderers compile their
+// spec expressions with new Function (kit/diagrams/renderers.js, business-core.js) and pdf.js and Tesseract compile
+// code and WebAssembly. Styles, images and fetches stay broad: the policy is aimed at script injection.
+const { SUPABASE_URL } = await import(new URL("../gradify.config.js", import.meta.url));
+export const CSP_SCRIPT_HOSTS = [
+  "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/", // kit/notes/kb/view-blocks.js, kit/tools/handwriting.js
+  "https://cdn.jsdelivr.net/npm/tesseract.js@v5.1.1/", // the worker Tesseract starts (its default workerPath)
+  "https://cdn.jsdelivr.net/npm/tesseract.js-core@v5.1.1/", // the OCR engine the worker loads (its default corePath)
+  "https://cdn.jsdelivr.net/npm/katex@0.16.11/", // kit/notes/kb/view.js
+];
+const sha256 = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
+const decodeAttr = (s) => s.replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+const INLINE_SCRIPT = /<script\b(?![^>]*\ssrc=)[^>]*>([\s\S]*?)<\/script>/gi;
+
+export function cspFor(html) {
+  const scripts = new Set(), handlers = new Set();
+  for (const m of html.matchAll(INLINE_SCRIPT)) scripts.add(sha256(m[1]));
+  const markup = html.replace(INLINE_SCRIPT, "");
+  for (const m of markup.matchAll(/\son[a-z]+="([^"]*)"/gi)) handlers.add(sha256(decodeAttr(m[1])));
+  for (const m of markup.matchAll(/\son[a-z]+='([^']*)'/gi)) handlers.add(sha256(decodeAttr(m[1])));
+  const supabase = SUPABASE_URL ? ` wss://${new URL(SUPABASE_URL).host}` : "";
+  return [
+    "default-src 'self'",
+    `script-src 'self' 'unsafe-eval'${handlers.size ? " 'unsafe-hashes'" : ""} ${[...scripts, ...handlers].join(" ")} ${CSP_SCRIPT_HOSTS.join(" ")}`.replace(/\s+/g, " "),
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net/npm/katex@0.16.11/",
+    "font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net/npm/katex@0.16.11/",
+    "img-src 'self' data: blob: https:",
+    "media-src 'self' data: blob: https:",
+    `connect-src 'self' https:${supabase}`,
+    "frame-src 'self' https://www.youtube-nocookie.com https://player.vimeo.com",
+    "worker-src 'self' blob:",
+    "manifest-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+  ].join("; ");
+}
+
+// the page with its CSP <meta> first in <head> (after <meta charset>, which must stay within the first bytes)
+export function withCsp(html, name = "page") {
+  if (/http-equiv=["']Content-Security-Policy["']/i.test(html)) throw new Error(`${name}: already has a CSP <meta>; the build writes it`);
+  const meta = `<meta http-equiv="Content-Security-Policy" content="${cspFor(html)}">`;
+  if (/<meta charset[^>]*>/i.test(html)) return html.replace(/<meta charset[^>]*>/i, (m) => `${m}\n  ${meta}`);
+  if (/<head\b[^>]*>/i.test(html)) return html.replace(/<head\b[^>]*>/i, (m) => `${m}\n  ${meta}`);
+  throw new Error(`${name}: no <head> to put the Content-Security-Policy in`);
+}
+
+// the CSP a built page carries, or null
+export const cspOf = (html) => html.match(/<meta http-equiv="Content-Security-Policy" content="([^"]*)">/i)?.[1] ?? null;
 
 // the deploy's version: a hash of each published path with its own file's hash, sorted, so no two different sites share one
 export const deployVersion = (digests) =>
@@ -215,6 +271,12 @@ export async function verify(out, { root = REPO, files = tracked(root) } = {}) {
   for (const f of built.filter((x) => !BINARY.test(x))) {
     const text = await readFile(join(out, f), "utf8");
     for (const [name, re] of SECRET_PATTERNS) if (re.test(text)) problems.push(`${f}: looks like a ${name}`);
+  }
+  // 6. every page carries a Content-Security-Policy that allows exactly its own inline scripts and handlers
+  for (const f of built.filter((x) => x.endsWith(".html"))) {
+    const html = await readFile(join(out, f), "utf8"), csp = cspOf(html);
+    if (!csp) problems.push(`${f}: no Content-Security-Policy`);
+    else if (csp !== cspFor(html)) problems.push(`${f}: its Content-Security-Policy doesn't match its inline scripts`);
   }
   return { problems, files: built.length };
 }
