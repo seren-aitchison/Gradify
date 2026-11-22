@@ -105,6 +105,21 @@ test("chemistry: the 3D embedding keeps the cis/trans geometry written with / an
   }
 });
 
+test("chemistry: the 3D embedding doesn't leave substituents folded in or bonds crushed", () => {
+  // each of these seeds gave a distorted structure before: an H or halogen folded into the angle of the other two
+  // bonds (benzene at the default seed), or a squeezed C=C with splayed halogens (the crowded alkenes, caffeine)
+  const cases = [["c1ccccc1", 7], ["c1ccccc1", 6], ["BrC(Br)=C(Br)Br", 3], ["I/C(Br)=C(/Br)I", 2], ["I/C(Br)=C(\\Br)I", 23], ["IC(I)=C(I)I", 2], ["Cn1cnc2c1c(=O)n(C)c(=O)n2C", 7], ["CC(=O)Oc1ccccc1C(=O)O", 12]];
+  for (const [smi, seed] of cases) {
+    const m = molecule(smi, { seed }), P = m.pos, d = (a, b) => Math.hypot(...P[a].map((v, k) => v - P[b][k]));
+    for (const b of m.bonds) assert.ok(d(b.a, b.b) > 0.85 && d(b.a, b.b) < 2.4, `${smi} seed ${seed}: bond ${b.a}-${b.b} is ${d(b.a, b.b).toFixed(2)} Å`);
+    m.atoms.forEach((a, i) => {
+      if (a.nb.length !== 3 || !m.bonds.some((b) => (b.a === i || b.b === i) && (b.order === 2 || b.order === 1.5))) return;
+      const [x, y, z] = a.nb, ang = (p, q) => { const u = P[p].map((v, k) => v - P[i][k]), w = P[q].map((v, k) => v - P[i][k]); return (Math.acos((u[0] * w[0] + u[1] * w[1] + u[2] * w[2]) / Math.hypot(...u) / Math.hypot(...w)) * 180) / Math.PI; };
+      for (const A of [ang(x, y), ang(x, z), ang(y, z)]) assert.ok(A > 95 && A < 145, `${smi} seed ${seed}: an angle at atom ${i} is ${A.toFixed(0)}°`);
+    });
+  }
+});
+
 test("chemistry: Lewis checker", () => {
   assert.ok(lewisCheck(LEWIS[0], [1, 1], [2, 0, 0]).ok, "water");
   assert.ok(lewisCheck(LEWIS[2], [2, 2], [2, 0, 2]).ok, "carbon dioxide");

@@ -82,13 +82,14 @@ const ANG = { sp: Math.PI, sp2: (2 * Math.PI) / 3, sp3: 1.9106 };
 export const vol = (P, a, b, c, d) => { const v = (x) => [P[x][0] - P[a][0], P[x][1] - P[a][1], P[x][2] - P[a][2]], B = v(b), Cc = v(c), D = v(d); return B[0] * (Cc[1] * D[2] - Cc[2] * D[1]) - B[1] * (Cc[0] * D[2] - Cc[2] * D[0]) + B[2] * (Cc[0] * D[1] - Cc[1] * D[0]); };
 
 export function embed(m, { iters = 1500, seed = 7 } = {}) {
-  const { atoms, bonds } = m, n = atoms.length; let s = seed; const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296 - 0.5);
-  const P = atoms.map(() => [rnd() * 4, rnd() * 4, rnd() * 4]);
-  const terms = []; // [i, j, target distance, weight]
+  const { atoms, bonds } = m, n = atoms.length;
+  let P = [];
+  const terms = []; // [i, j, target distance, weight]: bonds first, then angles (as 1–3 distances), then cis/trans
   const blen = new Map();
   for (const b of bonds) { const L = bondLength(atoms[b.a].el, atoms[b.b].el, b.order); terms.push([b.a, b.b, L, 4]); blen.set(`${b.a},${b.b}`, L); blen.set(`${b.b},${b.a}`, L); }
   const LP = (i) => { const a = atoms[i], v = { N: 5, O: 6, S: 6, P: 5 }[a.el]; return v ? Math.max(0, (v - (a.charge || 0) - atoms[i].nb.length - bonds.filter((b) => (b.a === i || b.b === i) && b.order > 1).reduce((t, b) => t + Math.ceil(b.order) - 1, 0)) / 2) : 0; };
   for (let i = 0; i < n; i++) { const nb = atoms[i].nb, hy = hybrid(m, i), th = (ANG[hy] || ANG.sp3) - (hy === "sp3" ? LP(i) * 0.0436 : 0); /* each lone pair closes an sp³ angle by about 2.5° */ for (let x = 0; x < nb.length; x++) for (let y = x + 1; y < nb.length; y++) { const a = blen.get(`${i},${nb[x]}`), b = blen.get(`${i},${nb[y]}`); terms.push([nb[x], nb[y], Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(th)), 1.5]); } }
+  const nAngle = terms.length; // terms[bonds.length .. nAngle) are the angle terms
   // planarity and cis/trans across double and aromatic bonds
   const planes = [], geo = []; // geo: [p, a, b, q, trans] for each double bond with / or \ on both ends
   for (const b of bonds) if (b.order === 2 || b.order === 1.5) { const A = atoms[b.a].nb.filter((x) => x !== b.b), B = atoms[b.b].nb.filter((x) => x !== b.a); for (const p of A) for (const q of B) planes.push([p, b.a, b.b, q]); }
@@ -108,8 +109,28 @@ export function embed(m, { iters = 1500, seed = 7 } = {}) {
   // isomer, which the double bond then holds. So at checkpoints the signed geometry is read off and, where it is
   // wrong, everything on the b side of the double bond is turned 180° about the a=b axis (a proper rotation, so
   // stereocentres keep their sense) and the optimisation carries on from there.
+  // A substituent on an sp² atom can be caught folded inside the angle between the other two bonds, in the plane
+  // (benzene's H, a halogen on a crowded alkene): the angle terms are only distances, and the way out of the plane
+  // is blocked by the flattening term. Seen as the three angles summing well short of 360°; the folded substituent
+  // is the one inside the largest angle, and it is turned 180° about the plane normal through the centre.
+  const trig = atoms.map((a, i) => (a.nb.length === 3 && hybrid(m, i) === "sp2" ? i : -1)).filter((i) => i >= 0);
+  const unfold = () => {
+    let moved = false;
+    for (const c of trig) {
+      const nb = atoms[c].nb, r = nb.map((x) => P[x].map((v, k) => v - P[c][k])), u = r.map((v) => { const L = Math.hypot(...v) || 1e-6; return v.map((t) => t / L); });
+      const ang = (x, y) => Math.acos(Math.max(-1, Math.min(1, u[x][0] * u[y][0] + u[x][1] * u[y][1] + u[x][2] * u[y][2])));
+      const A = [ang(1, 2), ang(0, 2), ang(0, 1)]; // A[k] is the angle between the two neighbours other than k
+      if (A[0] + A[1] + A[2] > 2 * Math.PI - 0.25) continue;
+      const k = A.indexOf(Math.max(...A)), x = nb[k], side = sideOf(m, x, c); if (!side) continue; // ring member: leave it
+      const [y, z] = [0, 1, 2].filter((j) => j !== k), nrm = [u[y][1] * u[z][2] - u[y][2] * u[z][1], u[y][2] * u[z][0] - u[y][0] * u[z][2], u[y][0] * u[z][1] - u[y][1] * u[z][0]], L = Math.hypot(...nrm);
+      if (L < 1e-6) continue; const n_ = nrm.map((v) => v / L), o = P[c];
+      for (const i of side) { const q = P[i].map((v, j) => v - o[j]), t = q[0] * n_[0] + q[1] * n_[1] + q[2] * n_[2]; P[i] = q.map((v, j) => o[j] + 2 * t * n_[j] - v); }
+      moved = true;
+    }
+    return moved;
+  };
   const fix = () => {
-    let flipped = false;
+    let flipped = unfold();
     for (const [p, a, b, q, trans] of geo) {
       if (cisSign(P, p, a, b, q) > 0 === !trans) continue;
       const side = sideOf(m, b, a); if (!side) continue; // the bond is in a ring: no side can turn on its own
@@ -128,8 +149,35 @@ export function embed(m, { iters = 1500, seed = 7 } = {}) {
     for (const [c, ord, sign] of chir) { const V = vol(P, ord[0], ord[1], ord[2], ord[3]); if (V * sign > 0.4) continue; const h = 1e-3; for (const a of ord) for (let k = 0; k < 3; k++) { P[a][k] += h; const V2 = vol(P, ord[0], ord[1], ord[2], ord[3]); P[a][k] -= h; G[a][k] += 0.4 * sign * ((V2 - V) / h); } }
     for (let i = 0; i < n; i++) for (let k = 0; k < 3; k++) P[i][k] += lr * Math.max(-1, Math.min(1, G[i][k]));
   };
-  for (let it = 0; it < iters; it++) { if (it === Math.floor(iters * 0.3)) fix(); step(it < iters * 0.6 ? 0.05 : 0.02); }
-  for (let round = 0; round < 3 && fix(); round++) for (let it = 0; it < 400; it++) step(0.02);
+  const dist = (i, j) => Math.hypot(P[j][0] - P[i][0], P[j][1] - P[i][1], P[j][2] - P[i][2]);
+  // the energy the forces above descend (lowest wins between starts), and whether a result is visibly strained
+  const energy = () => {
+    let E = 0;
+    for (const [i, j, L, w] of terms) E += (w / 2) * (dist(i, j) - L) ** 2;
+    for (const [i, j] of pairs) { const min = atoms[i].el === "H" || atoms[j].el === "H" ? 2.0 : 2.8, r = dist(i, j); if (r < min) E += 0.3 * (r - min) ** 2; }
+    for (const q of planes) E += 0.15 * vol(P, ...q) ** 2;
+    return E;
+  };
+  const strained = () => terms.some(([i, j, L], t) => t < nAngle && Math.abs(dist(i, j) - L) > (t < bonds.length ? 0.15 : 0.35));
+  const run = (sd) => {
+    let s = sd; const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296 - 0.5);
+    P = atoms.map(() => [rnd() * 4, rnd() * 4, rnd() * 4]);
+    for (let it = 0; it < iters; it++) { if (it === Math.floor(iters * 0.3) || it === Math.floor(iters * 0.6)) fix(); step(it < iters * 0.6 ? 0.05 : 0.02); }
+    for (let round = 0; round < 4 && fix(); round++) for (let it = 0; it < 400; it++) step(0.02);
+  };
+  // Some starts settle in a strained local minimum (a squeezed C=C with the substituents splayed, seen with crowded
+  // halogens). Only then are up to four more starts tried, each derived from the seed, and the lowest energy kept.
+  run(seed);
+  if (strained()) {
+    let best = P, bestE = energy();
+    for (let k = 1; k <= 4; k++) {
+      run((seed * 7919 + k * 104729) >>> 0);
+      const E = energy();
+      if (!strained()) { best = P; break; } // an unstrained result wins outright
+      if (E < bestE) { best = P; bestE = E; }
+    }
+    P = best;
+  }
   const c = [0, 1, 2].map((k) => P.reduce((t, p) => t + p[k], 0) / n);
   m.pos = P.map((p) => p.map((v, k) => v - c[k]));
   return m;
