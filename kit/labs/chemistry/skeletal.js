@@ -23,7 +23,7 @@ import { parseSmiles } from "./mol.js";
 const R3 = Math.sqrt(3), DEG = Math.PI / 180;
 export const ELEMENTS = ["C", "H", "N", "O", "S", "P", "F", "Cl", "Br", "I", "B"];
 const HAL = new Set(["F", "Cl", "Br", "I"]);
-const VAL = { C: [4], H: [1], N: [3], O: [2], S: [2, 4, 6], P: [3, 5], F: [1], Cl: [1], Br: [1], I: [1], B: [3] };
+const VAL = { C: [4], H: [1], N: [3], O: [2], S: [2, 4, 6], P: [3, 5], F: [1], Cl: [1], Br: [1], I: [1], B: [3], Al: [3], Mg: [2], Na: [1] };
 
 /** The valences an atom may have, given its charge (a carbocation or carbanion makes three bonds). */
 export function valences(el, q = 0) {
@@ -31,7 +31,7 @@ export function valences(el, q = 0) {
   if (el === "C") return [3];
   if (el === "N" || el === "P") return q > 0 ? [4] : [2];
   if (el === "O" || el === "S") return q > 0 ? [3] : [1];
-  if (el === "B") return q < 0 ? [4] : [2];
+  if (el === "B" || el === "Al") return q < 0 ? [4] : [2];
   if (HAL.has(el)) return q < 0 ? [0] : [2];
   return [0];
 }
@@ -355,7 +355,7 @@ export function analyse(m) {
   });
   out.smiles = smiles(G);
   out.condensed = nc === 1 && out.ringCount === 0 ? condensed(G) : null;
-  out.name = nc === 1 && !problems.length && !charge ? nameOf(G, rs, out) : null;
+  out.name = nc === 1 && !problems.length ? (charge ? ionName(out) : nameOf(G, rs, out)) : null;
   return out;
 }
 
@@ -472,7 +472,18 @@ const LIBRARY = [
   ["COC(C)=O", "methyl ethanoate", "methyl acetate"], ["CCOC(C)=O", "ethyl ethanoate", "ethyl acetate"], ["CCOC(=O)CC", "ethyl propanoate"], ["COC(=O)CC", "methyl propanoate"], ["CCCOC(C)=O", "propyl ethanoate"], ["COC=O", "methyl methanoate"], ["CCOC=O", "ethyl methanoate"],
   ["CC(=O)OC(C)=O", "ethanoic anhydride", "acetic anhydride"], ["CC(Cl)=O", "ethanoyl chloride", "acetyl chloride"], ["CCC(Cl)=O", "propanoyl chloride"],
   ["CN", "methylamine", "methanamine"], ["CCN", "ethylamine", "ethanamine"], ["CCCN", "propylamine", "propan-1-amine"], ["CNC", "dimethylamine", "N-methylmethanamine"], ["CN(C)C", "trimethylamine", "N,N-dimethylmethanamine"], ["CC(C)N", "propan-2-amine"],
-  ["CC(N)=O", "ethanamide", "acetamide"], ["NC=O", "methanamide"], ["CNC(C)=O", "N-methylethanamide"], ["NC(N)=O", "urea", "carbamide"], ["CC#N", "ethanenitrile", "acetonitrile"], ["CCC#N", "propanenitrile"], ["CCCC#N", "butanenitrile"], ["CCC(C)C#N", "2-methylbutanenitrile"], ["CC(C)(C)C#N", "2,2-dimethylpropanenitrile"], ["CC(C)(C)N", "2-methylpropan-2-amine"], ["BrC1CCCCC1Br", "1,2-dibromocyclohexane"], ["CC(C)C#N", "2-methylpropanenitrile"], ["CCCCN", "butylamine", "butan-1-amine"], ["CCC(C)N", "butan-2-amine"], ["CCOC(=O)CCC", "ethyl butanoate"], ["CCOC(=O)c1ccccc1", "ethyl benzoate"],
+  ["CC(N)=O", "ethanamide", "acetamide"], ["NC=O", "methanamide"], ["CNC(C)=O", "N-methylethanamide"], ["NC(N)=O", "urea", "carbamide"], ["CC(=O)[O-]", "ethanoate ion", "acetate"], ["[O-]C=O", "methanoate ion", "formate"], ["CCC(=O)[O-]", "propanoate ion"], ["CCCC(=O)[O-]", "butanoate ion"], ["[O-]C(=O)c1ccccc1", "benzoate ion"], ["[NH4+]", "ammonium ion"],
+  ["CC(=O)c1ccc(C)cc1", "1-(4-methylphenyl)ethan-1-one"], ["CC(=O)c1ccccc1C", "1-(2-methylphenyl)ethan-1-one"], ["Clc1ccc(C)cc1", "1-chloro-4-methylbenzene"], ["Clc1ccccc1C", "1-chloro-2-methylbenzene"], ["Brc1ccc(C)cc1", "1-bromo-4-methylbenzene"], ["Brc1ccccc1C", "1-bromo-2-methylbenzene"],
+  ["Clc1cccc(c1)[N+](=O)[O-]", "1-chloro-3-nitrobenzene"], ["Brc1cccc(c1)[N+](=O)[O-]", "1-bromo-3-nitrobenzene"], ["OC(=O)c1cccc(Cl)c1", "3-chlorobenzoic acid"], ["OC(=O)c1cccc(Br)c1", "3-bromobenzoic acid"], ["Clc1ccc(Cl)cc1", "1,4-dichlorobenzene"], ["Clc1ccccc1Cl", "1,2-dichlorobenzene"], ["Brc1ccc(Br)cc1", "1,4-dibromobenzene"], ["Brc1ccccc1Br", "1,2-dibromobenzene"],
+  ["CC(=O)c1ccc(Cl)cc1", "1-(4-chlorophenyl)ethan-1-one"], ["CC(=O)c1ccccc1Cl", "1-(2-chlorophenyl)ethan-1-one"], ["CC(O)c1ccccc1", "1-phenylethan-1-ol"], ["Cc1ccc(C)c(c1)[N+](=O)[O-]", "1,4-dimethyl-2-nitrobenzene"],
+  ["Cc1ccc(cc1[N+](=O)[O-])[N+](=O)[O-]", "1-methyl-2,4-dinitrobenzene"], ["Oc1ccc(Br)cc1", "4-bromophenol"], ["OC1CCCCC1O", "cyclohexane-1,2-diol"], ["BrCC(Br)c1ccccc1", "(1,2-dibromoethyl)benzene"], ["CC(Br)c1ccccc1", "(1-bromoethyl)benzene"], ["BrCCc1ccccc1", "(2-bromoethyl)benzene"], ["OCCc1ccccc1", "2-phenylethan-1-ol"], ["OCC(O)c1ccccc1", "1-phenylethane-1,2-diol"], ["Oc1ccccc1Cl", "2-chlorophenol"], ["Oc1ccc(Cl)cc1", "4-chlorophenol"], ["COc1ccccc1Cl", "1-chloro-2-methoxybenzene"], ["COc1ccc(Cl)cc1", "1-chloro-4-methoxybenzene"], ["COc1ccccc1Br", "1-bromo-2-methoxybenzene"], ["COc1ccc(Br)cc1", "1-bromo-4-methoxybenzene"], ["COc1ccccc1C", "1-methoxy-2-methylbenzene"], ["COc1ccc(C)cc1", "1-methoxy-4-methylbenzene"], ["Clc1ccccc1Br", "1-bromo-2-chlorobenzene"], ["Clc1ccc(Br)cc1", "1-bromo-4-chlorobenzene"], ["Cc1ccc(C)c(Br)c1", "2-bromo-1,4-dimethylbenzene"], ["Cc1ccc(cc1)C(=O)[O-]", "4-methylbenzoate ion"], ["Cc1ccc(CO)cc1", "(4-methylphenyl)methanol"], ["CCOC(=O)c1ccc(C)cc1", "ethyl 4-methylbenzoate"], ["Cc1ccc(cc1Cl)C(=O)O", "3-chloro-4-methylbenzoic acid"], ["Cc1ccc(cc1Br)C(=O)O", "3-bromo-4-methylbenzoic acid"], ["CC(C)(C)CC#N", "3,3-dimethylbutanenitrile"], ["CC(C)(C)CN", "2,2-dimethylpropan-1-amine"], ["CCC(C)OC(C)=O", "butan-2-yl ethanoate"], ["COc1c(Br)cc(Br)cc1Br", "1,3,5-tribromo-2-methoxybenzene"], ["CCCOC(C)=O", "propyl ethanoate"], ["Oc1c(Br)cc(Br)cc1Br", "2,4,6-tribromophenol"], ["Nc1c(Br)cc(Br)cc1Br", "2,4,6-tribromophenylamine"], ["Oc1ccc(cc1)[N+](=O)[O-]", "4-nitrophenol"], ["Nc1ccc(cc1)[N+](=O)[O-]", "4-nitrophenylamine"], ["Nc1ccccc1[N+](=O)[O-]", "2-nitrophenylamine"], ["CC(=O)c1ccc(OC)cc1", "1-(4-methoxyphenyl)ethan-1-one"], ["CC(=O)c1ccccc1OC", "1-(2-methoxyphenyl)ethan-1-one"], ["Cc1ccc(C)c(Cl)c1", "2-chloro-1,4-dimethylbenzene"], ["Cc1ccc(C(=O)O)cc1[N+](=O)[O-]", "4-methyl-3-nitrobenzoic acid"], ["CC(=O)c1ccc(C)cc1C", "1-(2,4-dimethylphenyl)ethan-1-one"], ["Cc1ccc(C)c(C)c1", "1,2,4-trimethylbenzene"], ["Cc1ccc(C)c(C(C)=O)c1", "1-(2,5-dimethylphenyl)ethan-1-one"], ["Oc1ccccc1Br", "2-bromophenol"], ["Nc1ccc(Br)cc1", "4-bromophenylamine"], ["COc1ccccc1", "methoxybenzene", "anisole"], ["COc1ccc(cc1)[N+](=O)[O-]", "1-methoxy-4-nitrobenzene"], ["COc1ccccc1[N+](=O)[O-]", "1-methoxy-2-nitrobenzene"],
+  ["FC(F)(F)c1ccccc1", "(trifluoromethyl)benzene"], ["FC(F)(F)c1cccc(c1)[N+](=O)[O-]", "1-nitro-3-(trifluoromethyl)benzene"], ["CCc1ccccc1C", "1-ethyl-2-methylbenzene"], ["CC(C)(C)c1ccccc1", "(2-methylpropan-2-yl)benzene", "tert-butylbenzene"],
+  ["CCOCC", "ethoxyethane", "diethyl ether"], ["CCOC(C)(C)C", "2-ethoxy-2-methylpropane"], ["CCOC(C)CC", "2-ethoxybutane"], ["CC(C)(C)OCC", "2-ethoxy-2-methylpropane"], ["CCCOC(C)(C)C", "2-methyl-2-propoxypropane"],
+  ["CC(C)(O)C#N", "2-hydroxy-2-methylpropanenitrile"], ["OCC#N", "hydroxyethanenitrile"], ["N#CC(O)c1ccccc1", "2-hydroxy-2-phenylethanenitrile"], ["CCC(O)C#N", "2-hydroxybutanenitrile"], ["CC(O)C(=O)O", "2-hydroxypropanoic acid", "lactic acid"], ["CC(C)(O)C(=O)O", "2-hydroxy-2-methylpropanoic acid"],
+  ["CCC(N)=O", "propanamide"], ["CCN", "ethylamine", "ethanamine"], ["CCCCN", "butylamine", "butan-1-amine"], ["NCc1ccccc1", "phenylmethanamine", "benzylamine"], ["CC(=O)NC", "N-methylethanamide"], ["CCNC(C)=O", "N-ethylethanamide"],
+  ["CC(C)OC(C)=O", "propan-2-yl ethanoate", "isopropyl acetate"], ["CCCCOC(C)=O", "butyl ethanoate"], ["CC(=O)OC(C)(C)C", "tert-butyl ethanoate"], ["COC(C)=O", "methyl ethanoate", "methyl acetate"], ["CC(=O)OCc1ccccc1", "benzyl ethanoate"], ["CC(=O)Oc1ccccc1", "phenyl ethanoate"],
+  ["OCc1ccccc1", "phenylmethanol", "benzyl alcohol"], ["CC(C)(O)c1ccccc1", "2-phenylpropan-2-ol"], ["OC(c1ccccc1)C", "1-phenylethan-1-ol"], ["CC(C)(O)CC", "2-methylbutan-2-ol"], ["CCC(C)(C)O", "2-methylbutan-2-ol"],
+  ["CC#N", "ethanenitrile", "acetonitrile"], ["CCC#N", "propanenitrile"], ["CCCC#N", "butanenitrile"], ["CCC(C)C#N", "2-methylbutanenitrile"], ["CC(C)(C)C#N", "2,2-dimethylpropanenitrile"], ["CC(C)(C)N", "2-methylpropan-2-amine"], ["BrC1CCCCC1Br", "1,2-dibromocyclohexane"], ["CC(C)C#N", "2-methylpropanenitrile"], ["CCCCN", "butylamine", "butan-1-amine"], ["CCC(C)N", "butan-2-amine"], ["CCOC(=O)CCC", "ethyl butanoate"], ["CCOC(=O)c1ccccc1", "ethyl benzoate"],
   ["NCC(=O)O", "aminoethanoic acid", "glycine"], ["CC(N)C(=O)O", "2-aminopropanoic acid", "alanine"], ["CC(O)C#N", "2-hydroxypropanenitrile"], ["CCS", "ethanethiol"],
   ["CC(C)=O", null, "propanone, acetone"], ["CCC(C)=O", null, "butanone, methyl ethyl ketone"], ["CC(=O)O", null, "acetic acid"], ["C=O", null, "formaldehyde"], ["CC=O", null, "acetaldehyde"], ["OC=O", null, "formic acid"],
   ["C=CC", null, "propene"], ["C#CC", null, "propyne"], ["CC(O)C(=O)O", null, "lactic acid"], ["ClC(Cl)Cl", null, "chloroform"], ["ClCCl", null, "dichloromethane, DCM"], ["C=CC(C)=C", null, "isoprene"],
@@ -489,6 +500,8 @@ function library() {
 // the library's hashes come from the same analysis, without the name (which would recurse)
 function analyseQuiet(m) { const G = graph(m), rs = rings(G, 8), ar = aromatic(G, rs), counts = {}; for (let i = 0; i < G.n; i++) { counts[G.el[i]] = (counts[G.el[i]] || 0) + 1; if (G.h[i]) counts.H = (counts.H || 0) + G.h[i]; } const charge = G.q.reduce((a, b) => a + b, 0); return { hash: h53(`${hill(counts)}|${charge}|${refine(G, ar).slice().sort().join(".")}`) }; }
 
+// ions are named only from the library (systematic naming here is for neutral molecules)
+function ionName(A) { const lib = library().get(A.hash); return lib ? { name: lib.name || lib.aka.split(",")[0], aka: lib.name ? lib.aka : null, from: "library", steps: ["A common ion: named from the library."] } : null; }
 function nameOf(G, rs, A) {
   const lib = library().get(A.hash), sys = systematic(G, rs);
   if (sys.name) return { ...sys, aka: lib?.aka || null };

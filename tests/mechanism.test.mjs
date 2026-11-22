@@ -82,6 +82,16 @@ test("the library's products are the right molecules", () => {
   assert.deepEqual(named("nitration"), ["nitrobenzene"]);
   assert.deepEqual(named("nabh4-propanone"), ["propan-2-ol"]);
   assert.deepEqual(named("acyl-water"), ["ethanoic acid"]);
+  assert.deepEqual(named("chlorination"), ["chlorobenzene"]);
+  assert.deepEqual(named("fc-acylation"), ["1-phenylethan-1-one"]);
+  assert.deepEqual(named("ester-hydrolysis"), ["ethanol"]);
+  assert.deepEqual(named("acyl-ammonia"), ["ethanamide"]);
+  assert.deepEqual(named("grignard"), ["2-methylpropan-2-ol"]);
+  // the acylium ion is recognised as stabilised, not flagged as a primary carbocation
+  const fc = instantiate(REACTIONS.find((r) => r.id === "fc-acylation")), r1 = E.applyStep(fc.start, fc.steps[0].arrows);
+  assert.ok(r1.steps.some((x) => /acylium/.test(x))); assert.ok(!r1.warnings.some((w) => w.code === "unstable-cation"));
+  // every library reaction has a difficulty level
+  for (const r of REACTIONS) assert.ok(["foundation", "intermediate", "advanced", "university"].includes(r.level), r.id);
 });
 
 test("new families: E1 goes through a protonated alcohol and a carbocation; addition–elimination re-forms C=O", () => {
@@ -172,5 +182,5 @@ test("partial charges: δ+ carbon and δ− halogen in a polar bond", () => {
 test("registration: each mechanism challenge is evidence for a lesson the lab links to", () => {
   const x = INTERACTIVES_COURSE.interactives.find((i) => i.id === "organic-notes");
   for (const r of REACTIONS) { const l = EVIDENCE["organic-notes"][`mech-${r.id}`]; assert.ok(l, r.id); assert.ok(x.lessons.includes(l), `${r.id} → ${l}`); }
-  assert.ok(REACTIONS.length >= 11);
+  assert.ok(REACTIONS.length >= 16);
 });

@@ -2917,7 +2917,7 @@
    "title": "Organic Chemistry Lab: structures, mechanisms and reactions",
    "kind": "Tool",
    "sub": "Draw skeletal formulae on hexagon paper and see the name, formula, groups and stereochemistry worked out; push electrons with curly and fishhook arrows, checked step by step and animated; predict what a reagent does to your molecule; turn it in 3D.",
-   "note": "Mechanism checks come from electron counting (sources, valence, charges, conservation) and eleven reaction templates (SN1, SN2, E1, E2, HBr and Br₂ addition, HCN addition, NaBH₄ reduction, nitration, acyl chloride hydrolysis, radical chlorination); other mechanisms are checked for consistency only. Reaction mode predicts products from 15 rule templates (Markovnikov, Zaitsev, oxidation level, directing effects) and says when no rule applies. Names: chains with halogens, –OH, C=O, –COOH, C=C, C≡C (A-level chain rules); rings and others from a library.",
+   "note": "Mechanism checks come from electron counting (sources, valence, charges, conservation) and 16 reaction templates; other mechanisms are checked for consistency only, and exam-style attempts get a 10-mark breakdown with error carried forward. Reaction mode predicts products from 35 rule-based reagents (Markovnikov, Zaitsev and Hofmann, oxidation level, directing effects, chemoselectivity), ranks SN1/SN2/E1/E2 under chosen conditions, checks synthesis routes forwards and backwards, and says when no rule applies. Checked against a 300-reaction hand-written reference set. Names: chains with halogens, –OH, C=O, –COOH, C=C, C≡C (A-level chain rules); rings and others from a library.",
    "tasks": null,
    "lessons": [
     "u12-03",
@@ -2942,7 +2942,13 @@
     "u13-24",
     "u13-26",
     "u13-06",
+    "u13-08",
     "u14-07",
+    "u14-09",
+    "u14-10",
+    "u14-15",
+    "u14-17",
+    "u14-18",
     "u14-21",
     "u14-22"
    ],

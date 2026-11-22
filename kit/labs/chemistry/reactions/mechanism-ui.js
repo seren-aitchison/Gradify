@@ -6,16 +6,19 @@ import { button, toggle, challenges, esc } from "../../lab.js";
 import * as K from "../skeletal.js";
 import * as E from "./electron-flow.js";
 import { REACTIONS, FAMILIES, instantiate, arrowKinds, faultyStep } from "./library.js";
+import { breakdown } from "./marking.js";
+import { LEVELS, atLevel } from "./predictor.js";
 
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>").replace(/([+-]+)$/, (m) => `<sup>${m.replace(/-/g, "−")}</sup>`);
 const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 const COL = { pend: "#f59e0b", bad: "#ff4d6d", good: "#10b981", form: "rgba(16,185,129,.4)", brk: "rgba(255,77,109,.55)" };
 
-export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDrawing = () => null, onSave = null } = {}) {
+export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDrawing = () => null, onSave = null, prefs = { level: "university" }, onPrefs = () => {} } = {}) {
   host.innerHTML = `
     <div class="lab-row mx-top">
       <label class="lab-sel"><span>Mechanism</span><select class="mx-src"></select></label>
+      <label class="lab-sel"><span>Level</span><select class="mx-level">${Object.entries(LEVELS).map(([k, v]) => `<option value="${k}">up to ${v}</option>`).join("")}</select></label>
       <div class="lab-seg mx-type" role="group" aria-label="Arrow type"><button type="button" data-t="pair" aria-pressed="true" title="Curly arrow: a pair of electrons">↷ Curly (2e⁻)</button><button type="button" data-t="single" aria-pressed="false" title="Fishhook arrow: one electron">⇀ Fishhook (1e⁻)</button></div>
       <span class="mx-opts"></span>
     </div>
@@ -41,18 +44,24 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   let marks = { got: 0, total: 0, first: [] }, attempts = [], assisted = false, anim = null, speed = 1, finished = false;
   // ecf: the step from which the learner carried their own (valid but different) intermediate forward; spot: "spot the error"
   let ecf = null, spot = null, spotSeed = 0, spots = 0;
-  const ch = challenges(q(".mx-about").parentElement, ctx, REACTIONS.map((r) => ({ id: `mech-${r.id}`, text: `Draw the ${r.title.split(":")[0]} mechanism${r.title.includes(":") ? ` (${r.title.split(":")[1].trim()})` : ""} with no help`, test: (st) => st.done === r.id })).concat([{ id: "mech-spot", text: "Spot the wrong arrow five times (use “Spot the error”)", test: (st) => st.spots >= 5 }]));
+  // exam style: conditions question first, no help, a timer, an explanation question at the end, a 10-mark breakdown
+  let exam = false, xq = null, timer = null;
+  const ch = challenges(q(".mx-about").parentElement, ctx, REACTIONS.map((r) => ({ id: `mech-${r.id}`, text: `Draw the ${r.title.split(":")[0]} mechanism${r.title.includes(":") ? ` (${r.title.split(":")[1].trim()})` : ""} with no help`, test: (st) => st.done === r.id })).concat([{ id: "mech-spot", text: "Spot the wrong arrow five times (use “Spot the error”)", test: (st) => st.spots >= 5 }, { id: "mech-exam", text: "Score 8/10 or more on an exam-style mechanism", test: (st) => st.exam >= 8 }]));
 
   // ---------- sources ----------
   const sel = q(".mx-src");
-  sel.innerHTML = Object.entries(FAMILIES).map(([f, label]) => `<optgroup label="${esc(label)}">${REACTIONS.filter((r) => r.family === f).map((r) => `<option value="${r.id}">${esc(r.title)}</option>`).join("")}</optgroup>`).join("") + `<optgroup label="Your own"><option value="mine">My drawing (from Structure mode)</option></optgroup>`;
+  const lv = q(".mx-level"); lv.value = prefs.level || "university";
+  const fillSources = () => { sel.innerHTML = Object.entries(FAMILIES).map(([f, label]) => { const rs = REACTIONS.filter((r) => r.family === f && atLevel(r, lv.value)); return rs.length ? `<optgroup label="${esc(label)}">${rs.map((r) => `<option value="${r.id}">${esc(r.title)}</option>`).join("")}</optgroup>` : ""; }).join("") + `<optgroup label="Your own"><option value="mine">My drawing (from Structure mode)</option></optgroup>`; };
+  fillSources();
+  lv.addEventListener("change", () => { prefs.level = lv.value; onPrefs(prefs); fillSources(); load(REACTIONS.find((r) => r.id === src && atLevel(r, lv.value)) ? src : (REACTIONS.find((r) => atLevel(r, lv.value))?.id || "mine")); });
   sel.addEventListener("change", () => load(sel.value));
   q(".mx-type").addEventListener("click", (e) => { const b = e.target.closest("[data-t]"); if (!b) return; type = b.dataset.t; q(".mx-type").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); });
   toggle(q(".mx-opts"), "δ+ δ−", showDelta, (v) => { showDelta = v; paint(); });
   toggle(q(".mx-opts"), "Atom labels", showLabels, (v) => { showLabels = v; paint(); });
+  toggle(q(".mx-opts"), "Exam style", exam, (v) => { exam = v; load(src); });
 
   function load(id, mech = null) {
-    stopAnim(); src = id; sel.value = id; pending = []; done = []; viewK = null; fb = null; finished = false; assisted = false; attempts = []; ecf = null; spot = null;
+    stopAnim(); src = id; sel.value = id; pending = []; done = []; viewK = null; fb = null; finished = false; assisted = false; attempts = []; ecf = null; spot = null; stopTimer(); xq = null;
     if (mech) { inst = mech.reactionId ? instantiate(REACTIONS.find((r) => r.id === mech.reactionId)) : null; src = mech.reactionId || "mine"; sel.value = src; const rp = E.replay({ start: mech.start, steps: mech.steps }); states = rp.states; done = mech.steps.slice(0, rp.states.length - 1).map((s) => s.arrows); }
     else if (id === "mine") {
       inst = null; const m = getDrawing();
@@ -61,7 +70,25 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     } else { inst = instantiate(REACTIONS.find((r) => r.id === id)); states = [inst.start]; }
     marks = { got: 0, total: inst ? inst.steps.reduce((t, s) => t + s.arrows.length, 0) : 0, first: [] };
     if (inst) type = inst.steps[0].arrows[0].type; q(".mx-type").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.t === type)));
+    if (exam && inst) startExam();
     fitAll(); about(); actions(); refresh();
+  }
+  // ---------- exam style ----------
+  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+  const elapsed = () => { const t = Math.round(((xq?.end || Date.now()) - (xq?.t0 || Date.now())) / 1000); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; };
+  function pickN(list, n, seed) { const r = [...list]; let x = seed || 7; for (let i = r.length - 1; i > 0; i--) { x = (x * 9301 + 49297) % 233280; const j = Math.floor((x / 233280) * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r.slice(0, n); }
+  function startExam() {
+    const r = inst.reaction, seed = Date.now() % 1000, cond = (x) => `${x.conditions.above}; ${x.conditions.below}`;
+    const others = [...new Set(REACTIONS.filter((x) => x.id !== r.id).map(cond))].filter((c) => c !== cond(r));
+    const firstSentence = (t) => t.split(/(?<=\.)\s/)[0];
+    xq = { phase: "conditions", t0: Date.now(), cond: pickN([cond(r), ...pickN(others, 3, seed)], 4, seed + 1), condRight: cond(r),
+      expl: pickN([r.misconceptions[0], ...pickN([...new Set([...r.steps.map((st) => firstSentence(st.explain)), firstSentence(r.overview), firstSentence(r.outcome)])], 3, seed + 5)], 4, seed + 2), explRight: r.misconceptions[0] };
+    timer = setInterval(() => { if (xq && !xq.end) { const t = q(".mx-timer"); if (t) t.textContent = `⏱ ${elapsed()}`; } }, 1000);
+  }
+  function examPanel() {
+    if (xq.phase === "conditions") return `<h4>Exam question</h4><p>${esc(inst.reaction.title.split(":")[1]?.trim() || inst.reaction.title)}: first, which reagents and conditions are used?</p><div class="rx-choices">${xq.cond.map((c, i) => `<button type="button" class="lab-btn" data-xc="${i}">${esc(c)}</button>`).join("")}</div>`;
+    if (xq.phase === "explain") return `<h4>Last question</h4><p>Which of these would be a <b>mistake</b> in this mechanism?</p><div class="rx-choices mx-xpl">${xq.expl.map((c, i) => `<button type="button" class="lab-btn" data-xe="${i}">${esc(c)}</button>`).join("")}</div>`;
+    return "";
   }
   const cur = () => states[states.length - 1];
   const shown = () => (viewK != null ? states[viewK] : cur());
@@ -179,7 +206,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   }
   svgHost.addEventListener("pointerdown", (e) => {
     if (spot && spot.picked == null) { const [x, y] = world(e), D = dots(spot.state); let best = -1, bd = 0.6; spot.f.arrows.forEach((a, i) => { const pts = anchors(spot.state, a, D); if (pts) { const d = Math.hypot(pts[1][0] - x, pts[1][1] - y); if (d < bd) { bd = d; best = i; } } }); if (best >= 0) pickSpot(best); return; }
-    if (spot || !states.length || viewK != null || finished || anim) return; svgHost.focus({ preventScroll: true });
+    if (spot || !states.length || viewK != null || finished || anim || (exam && xq?.phase === "conditions")) return; svgHost.focus({ preventScroll: true });
     const [x, y] = world(e), h = pick(x, y, true); if (!h) return;
     // tapping the tail of an existing arrow removes it
     const D = dots(cur()), i = pending.findIndex((a) => { const pts = anchors(cur(), a, D); return pts && Math.hypot(pts[0][0] - x, pts[0][1] - y) < 0.2; });
@@ -271,9 +298,11 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   }
   function finish() {
     finished = true; marks.got = marks.first.reduce((t, x) => t + (x || 0), 0);
+    if (exam && xq) xq.phase = "explain";
     const unaided = !assisted && marks.got === marks.total;
     if (unaided) ch.check({ done: inst.reaction.id });
     fb = { ...(fb || {}), kind: "done", ecf };
+    feedback();
     play(done.map((_, i) => i).slice(-1));
   }
   function showNext(all = false) {
@@ -298,6 +327,8 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     const list = (xs, cls) => (xs?.length ? `<ul class="mx-list ${cls}">${xs.map((x) => `<li>${esc(typeof x === "string" ? x : x.text)}</li>`).join("")}</ul>` : "");
     const head = inst ? `<p class="osk-aka">Step ${Math.min(done.length + 1, inst.steps.length)} of ${inst.steps.length}${marks.total ? ` · marks ${marks.first.reduce((t, x) => t + (x || 0), 0)}/${marks.total}` : ""}</p>` : `<p class="osk-aka">Your own structure: each step is checked for chemical consistency (electron sources, valence, charges, electron count). There's no reaction template to compare it with.</p>`;
     let body = "";
+    const examHead = exam && xq ? `<p class="osk-aka mx-exam">Exam style · no hints · <span class="mx-timer">⏱ ${elapsed()}</span></p>` : "";
+    if (exam && xq && (xq.phase === "conditions" || xq.phase === "explain")) { box.innerHTML = head + examHead + examPanel(); return; }
     if (!fb) body = viewK != null ? "" : `<p>${inst ? esc(inst.steps[done.length]?.label ? `Next: draw the arrows that lead to “${inst.steps[done.length].label}”.` : "") : "Draw an arrow, then press Apply step."}</p>`;
     else if (fb.kind === "info") body = fb.html;
     else if (fb.kind === "arrow") body = `<h4 class="no">Check this arrow</h4>${list(fb.errors, "no")}`;
@@ -306,11 +337,16 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     else if (fb.kind === "good" || fb.kind === "shown") body = `<h4 class="ok">${esc(fb.title || "")}</h4>${list(fb.steps, "")}${list(fb.warnings, "warn")}${fb.explain ? `<p class="mx-why">${esc(fb.explain)}</p>` : ""}${checks(fb.checks)}`;
     else if (fb.kind === "done") {
       const sp = E.species(cur()), names = sp.map((x) => { if (x.radical || x.charge) return sub(x.formula); const sub2 = { atoms: cur().atoms.filter((a) => x.atoms.includes(a.id)), bonds: cur().bonds.filter((b) => x.atoms.includes(b.a)) }; const nm = K.analyse(E.toDrawing(sub2).m).name?.name; return nm ? `${esc(nm)} (${sub(x.formula)})` : sub(x.formula); });
-      body = `<h4 class="ok">Mechanism complete${inst ? `: ${marks.got}/${marks.total} marks${assisted ? " (with help)" : ""}` : ""}</h4>${fb.ecf != null ? `<p class="osk-aka">Error carried forward from step ${fb.ecf + 1}: the steps after it were marked on your own intermediate, so the products differ from the model answer. Use Full solution to compare.</p>` : ""}<p><small>Products</small><br>${names.join(" + ")}</p>${inst ? `<p class="mx-why">${esc(inst.reaction.outcome)}</p>` : ""}${list(fb.steps, "")}`;
+      const bd = inst ? breakdown({ arrows: inst.steps.map((st) => st.arrows.length), first: marks.first, ecf, conditions: exam && xq ? xq.condOK : null, explanation: exam && xq ? xq.explOK : null, assisted }) : null;
+      const table = bd ? `<table class="mx-marks"><caption>Mark breakdown${exam && xq ? ` · time ${elapsed()}` : ""}</caption>${bd.rows.map((r) => `<tr><td>${esc(r.label)}${r.note ? `<small>${esc(r.note)}</small>` : ""}</td><td>${r.max ? `${r.got}/${r.max}` : ""}</td></tr>`).join("")}<tr class="tot"><td>Total</td><td>${bd.got}/10</td></tr></table>` : "";
+      body = `<h4 class="ok">Mechanism complete${inst ? `: ${bd.got}/10${assisted ? " (with help)" : ""}` : ""}</h4>${table}${fb.ecf != null ? `<p class="osk-aka">Error carried forward from step ${fb.ecf + 1}: the steps after it were marked on your own intermediate, so the products differ from the model answer. Use Full solution to compare.</p>` : ""}<p><small>Products</small><br>${names.join(" + ")}</p>${inst ? `<p class="mx-why">${esc(inst.reaction.outcome)}</p>` : ""}${list(fb.steps, "")}`;
     }
-    box.innerHTML = head + body;
+    box.innerHTML = head + examHead + body;
   }
   q(".mx-fb").addEventListener("click", (e) => {
+    const xc = e.target.closest("[data-xc]"), xe = e.target.closest("[data-xe]");
+    if (xc && xq?.phase === "conditions") { xq.condOK = xq.cond[Number(xc.dataset.xc)] === xq.condRight; xq.phase = "draw"; fb = { kind: "info", html: `<p class="lab-msg ${xq.condOK ? "ok" : ""}">${xq.condOK ? "✓ Right." : `✗ It's ${esc(xq.condRight)}.`} Now draw the mechanism; there are no hints in exam style.</p>` }; about(); refresh(); return; }
+    if (xe && xq?.phase === "explain") { xq.explOK = xq.expl[Number(xe.dataset.xe)] === xq.explRight; xq.phase = "done"; xq.end = Date.now(); stopTimer(); const bd = breakdown({ arrows: inst.steps.map((st) => st.arrows.length), first: marks.first, ecf, conditions: xq.condOK, explanation: xq.explOK, assisted }); if (!assisted) ch.check({ exam: bd.got }); if (bd.got < 8) ctx.fail?.("mech-exam", inst.reaction.title); fb = { kind: "done" }; refresh(); return; }
     if (e.target.closest("[data-ecf]") && pending.length && inst) { const k = done.length, r = E.applyStep(cur(), pending); if (!r.ok) return; ecf = ecf ?? k; const prev = cur(); advance(pending.slice(), null); fb = { kind: "good", title: "Carried forward", steps: r.steps, warnings: r.warnings.filter((w) => w.code !== "assumed"), checks: r.checks, explain: "You're now working from your own intermediate. Later steps earn marks when they're valid and do what the mechanism needs at that point.", prev }; if (states.length - 1 === inst.steps.length) finish(); else play([k]); return; }
     const g = e.target.closest("[data-spot]"); if (g && spot && spot.picked == null) pickSpot(Number(g.dataset.spot));
     if (e.target.closest("[data-spot-next]")) startSpot();
@@ -336,7 +372,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   }
   function about() {
     const box = q(".mx-about"), r = inst?.reaction;
-    q(".mx-cond").innerHTML = r ? `<span class="mx-rxn">${esc(r.title.split(":")[1]?.trim() || r.title)}</span><span class="mx-arrow"><small>${esc(r.conditions.above)}</small><b>⟶</b><small>${esc(r.conditions.below)}</small></span><span class="mx-fam">${esc(FAMILIES[r.family])}</span>` : "";
+    q(".mx-cond").innerHTML = r && exam && xq?.phase === "conditions" ? `<span class="mx-rxn">${esc(r.title.split(":")[1]?.trim() || r.title)}</span><span class="mx-fam">Conditions hidden until you answer</span>` : r ? `<span class="mx-rxn">${esc(r.title.split(":")[1]?.trim() || r.title)}</span><span class="mx-arrow"><small>${esc(r.conditions.above)}</small><b>⟶</b><small>${esc(r.conditions.below)}</small></span><span class="mx-fam">${esc(FAMILIES[r.family])}</span>` : "";
     box.innerHTML = r ? `<h4>${esc(r.title)}</h4><p>${esc(r.overview)}</p><details><summary>Common mistakes</summary><ul>${r.misconceptions.map((m) => `<li>${esc(m)}</li>`).join("")}</ul></details>` : `<h4>Your own mechanism</h4><p>Curly arrows move two electrons, fishhooks one. Start each arrow at a lone pair, an unpaired electron or a bond, and end it at the atom (or the bond) where the electrons go. Charges update themselves from where the electrons end up.</p>`;
   }
   function actions() {
@@ -346,7 +382,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     button(a, "Clear arrows", () => { pending = []; fb = null; refresh(); });
     button(a, "Restart", () => load(src));
     if (onSave) button(a, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })) }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
-    if (!inst) return;
+    if (!inst || exam) return;
     button(h, "Hint", () => { if (finished) return; fb = { kind: "info", html: `<h4>Hint</h4><p>${esc(inst.steps[done.length].hint)}</p>` }; feedback(); });
     button(h, "Explain", () => { if (finished) return; fb = { kind: "info", html: `<h4>The idea</h4><p>${esc(inst.steps[done.length].explain)}</p>` }; feedback(); });
     button(h, "Show next step", () => showNext(false));
@@ -403,6 +439,6 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     load, refresh: () => { resize(); refresh(); },
     /** what an AI tutor would be given: the deterministic verdict and the structure, never a screenshot */
     context: () => (states.length ? E.tutorContext({ title: inst?.reaction.title || "My mechanism", reaction: inst?.reaction, state: cur(), arrows: pending, result: pending.length ? E.applyStep(cur(), pending) : null, stepIndex: done.length }) : null),
-    stop: () => { stopAnim(); ro?.disconnect(); },
+    stop: () => { stopAnim(); stopTimer(); ro?.disconnect(); },
   };
 }

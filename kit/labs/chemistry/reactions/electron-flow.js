@@ -92,7 +92,8 @@ export function normalize(s, arrow) {
 const carbocationKind = (s, id) => {
   const cn = bondsOf(s, id).filter((b) => atomOf(s, other(b, id)).el === "C").length;
   const allylic = bondsOf(s, id).some((b) => { const o = other(b, id); return atomOf(s, o).el === "C" && bondsOf(s, o).some((x) => other(x, o) !== id && x.e >= 4); });
-  return { cn, kind: ["methyl", "primary", "secondary", "tertiary"][Math.min(cn, 3)], allylic };
+  const oxo = bondsOf(s, id).some((b) => b.e >= 4 && ["O", "N"].includes(atomOf(s, other(b, id)).el));
+  return { cn, kind: ["methyl", "primary", "secondary", "tertiary"][Math.min(cn, 3)], allylic, oxo };
 };
 
 /** Applies one step's arrows together. Never throws; errors say what is wrong and which arrow. */
@@ -130,7 +131,8 @@ export function applyStep(before, arrows) {
   // intermediates worth commenting on
   for (const c of chargeChanges) {
     const a = atomOf(s, c.id);
-    if (a.el === "C" && c.to === 1) { const k = carbocationKind(s, c.id); steps.push(`${name(s, c.id)} becomes a ${k.kind} carbocation${k.allylic ? " (allylic, so stabilised by resonance)" : ""}.`); if (k.cn <= 1 && !k.allylic) warnings.push({ code: "unstable-cation", atom: c.id, text: `A ${k.kind} carbocation is very unstable and doesn't form in solution reactions; ${k.cn === 0 ? "methyl" : "primary"} substrates react by a concerted mechanism (SN2 or E2) instead.` }); }
+    if (a.el === "C" && c.to === 1 && carbocationKind(s, c.id).oxo) { steps.push(`${name(s, c.id)} becomes an acylium ion, R–C≡O⁺ ↔ R–C⁺=O: stabilised because the oxygen's lone pair can form a third bond to the carbon.`); continue; }
+    if (a.el === "C" && c.to === 1) { const k = carbocationKind(s, c.id); steps.push(`${name(s, c.id)} becomes a ${k.kind} carbocation${k.allylic ? " next to a C=C, so the positive charge is delocalised (resonance)" : ""}.`); if (k.cn <= 1 && !k.allylic) warnings.push({ code: "unstable-cation", atom: c.id, text: `A ${k.kind} carbocation is very unstable and doesn't form in solution reactions; ${k.cn === 0 ? "methyl" : "primary"} substrates react by a concerted mechanism (SN2 or E2) instead.` }); }
     if (a.el === "C" && c.to === -1) steps.push(`${name(s, c.id)} becomes a carbanion.`);
   }
   for (const a of s.atoms) if (a.n % 2 && !(atomOf(before, a.id).n % 2)) steps.push(`${name(s, a.id)} now has an unpaired electron: a radical.`);
@@ -165,7 +167,7 @@ export function describe(s0, s1, ns, changes) {
   const isH = (id) => atomOf(s0, id).el === "H";
   for (const n of ns) {
     if (n.src.atom != null && n.dst.pair) { const [A, C] = n.dst.pair, tgt = atomOf(s0, C); out.push(bondBetween(s0, A, C) ? `${N(A)}'s lone pair moves back in between ${N(A)} and ${N(C)}, re-forming the ${N(A)}=${N(C)} π bond.` : isH(C) ? `${N(A)} uses a lone pair to take a proton (H): it acts as a base (proton transfer).` : charge(s0, C) > 0 ? `${N(A)}'s lone pair forms a bond to the positive ${N(C)}: the nucleophile attacks the electrophile.` : tgt.el === "C" ? `${N(A)}'s lone pair attacks the δ+ carbon ${N(C)}: ${N(A)} acts as a nucleophile.` : `${N(A)}'s lone pair forms a new ${N(A)}–${N(C)} bond.`); }
-    else if (n.src.bond && n.dst.atom != null) { const [a, b] = n.src.bond, to = n.dst.atom, from = a === to ? b : a, pi = bondBetween(s0, a, b).e >= 4; out.push(pi ? `The ${N(from)}=${N(to)} π bond's electrons move onto ${N(to)}.` : `Heterolytic fission: the ${N(from)}–${N(to)} bond breaks and both electrons go to ${N(to)}${EN(atomOf(s0, to).el) > EN(atomOf(s0, from).el) ? ", the more electronegative atom" : ""}${charge(s1, to) < 0 ? `, which ${atomOf(s0, to).el === "C" ? "becomes an anion" : "leaves as an anion"}` : ""}.`); }
+    else if (n.src.bond && n.dst.atom != null) { const [a, b] = n.src.bond, to = n.dst.atom, from = a === to ? b : a, pi = bondBetween(s0, a, b).e >= 4; out.push(pi ? `The ${N(from)}=${N(to)} π bond's electrons move onto ${N(to)}.` : `Heterolytic fission: the ${N(from)}–${N(to)} bond breaks and both electrons go to ${N(to)}${EN(atomOf(s0, to).el) > EN(atomOf(s0, from).el) ? ", the more electronegative atom" : ""}${charge(s1, to) < 0 ? `, which ${atomOf(s0, to).el === "C" ? "becomes an anion" : s1.bonds.some((x) => (x.a === to || x.b === to) && x.e > 0) ? "keeps them and becomes negative" : "leaves as an anion"}` : ""}.`); }
     else if (n.src.bond && n.dst.pair) { const [a, b] = n.src.bond, [x, y] = n.dst.pair, pi = bondBetween(s0, a, b).e >= 4, newAtom = [x, y].find((i) => i !== a && i !== b); out.push(pi && newAtom != null ? `The π electrons of the ${N(a)}=${N(b)} bond form a bond to ${N(newAtom)}: the ${atomOf(s0, a).el === "C" && atomOf(s0, b).el === "C" ? "electron-rich C=C acts as a nucleophile" : "π bond attacks"}.` : `The ${N(a)}–${N(b)} bond's electrons move to form a ${N(x)}–${N(y)} ${bondBetween(s0, x, y) ? "π " : ""}bond.`); }
   }
   // patterns across arrows
