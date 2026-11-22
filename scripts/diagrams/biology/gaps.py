@@ -134,3 +134,33 @@ sec("u02-29", "bio-cell-junctions", "Tight junctions, desmosomes, gap junctions 
     [{"type": "fact", "id": "sealed", "text": "at a tight junction the gap between the cells is closed"}, {"type": "fact", "id": "cadherinSpansGap", "text": "the cadherins are long enough to reach across the gap"},
      {"type": "fact", "id": "anchoredToFilaments", "text": "each desmosome plaque is anchored to intermediate filaments in both cells"}, {"type": "fact", "id": "channelLinksCytoplasm", "text": "the gap junction channel reaches across the gap and is open"},
      {"type": "fact", "id": "plasmodesmaSpansWalls", "text": "the plasmodesma channel is long enough to cross both walls and the middle lamella"}])
+
+# ---------------------------------------------------------------- fertilisation, cleavage and the blastocyst
+mk("u05-16", "bio-fertilisation", "fertilisation", "Fertilisation in mammals",
+   "A capacitated sperm reaches the zona pellucida; the acrosome reaction releases enzymes that digest a path through it; the sperm and egg membranes fuse and the sperm nucleus enters; the cortical reaction hardens the zona so that no further sperm can enter (preventing polyspermy); the egg completes meiosis II and the two haploid nuclei combine. In humans 23 + 23 = 46 chromosomes.",
+   "Five small pictures of an egg inside its zona pellucida: a sperm at the zona; the acrosome reaction opening a gap in the zona; the sperm fused with the egg and its nucleus inside; the cortical granules releasing enzymes while a second sperm is blocked outside; and the two nuclei, 23 chromosomes each, combining.",
+   ["Capacitated sperm reach the egg's zona pellucida.", "The acrosome reaction releases enzymes that digest the zona pellucida.", "The sperm membrane fuses with the egg membrane and the sperm nucleus enters.", "The cortical reaction hardens the zona pellucida, so that no more sperm bind or enter: polyspermy is prevented.",
+    "The egg completes meiosis II and the two haploid nuclei combine: 23 + 23 = 46 chromosomes in humans.", "Schematic: the sizes are not to scale."],
+   species="human", haploid=23, diploid=46,
+   steps=[{"id": "approach", "title": "Sperm at the zona", "note": "a capacitated sperm binds the zona pellucida", "inside": 0, "blocked": 0},
+          {"id": "acrosome", "title": "Acrosome reaction", "note": "enzymes digest a path through the zona", "inside": 0, "blocked": 0},
+          {"id": "fusion", "title": "Fusion", "note": "the membranes fuse and the sperm nucleus enters", "inside": 1, "blocked": 0},
+          {"id": "cortical", "title": "Cortical reaction", "note": "the zona hardens: other sperm are blocked", "inside": 1, "blocked": 1},
+          {"id": "combine", "title": "Nuclei combine", "note": "two haploid nuclei form a diploid zygote", "inside": 1, "blocked": 0}])
+
+mk("u05-17", "bio-cleavage", "cleavage", "Cleavage: from zygote to blastocyst",
+   "The zygote divides by rapid mitosis without growing, so each division halves the size of the cells (blastomeres) while the embryo stays the same size. In humans there are two cells on day 1, a morula of about 16 cells on day 3 and a blastocyst on day 5, with an outer trophoblast, which forms part of the placenta, and an inner cell mass, which forms the embryo.",
+   "Six stages in a row inside the same size of zona pellucida: the zygote, then two, four, eight and about sixteen cells that get smaller at each division, then a blastocyst with an outer ring of trophoblast, a fluid-filled cavity and a small cluster of inner cell mass cells against one side.",
+   ["Cleavage is rapid mitosis without growth: the cells (blastomeres) get smaller at each division.", "Two cells on day 1; a solid morula of about 16 cells on day 3; a blastocyst on day 5.", "The blastocyst has an outer trophoblast, a fluid-filled cavity and an inner cell mass.", "The trophoblast forms part of the placenta; the inner cell mass forms the embryo.", "Schematic cross-sections: every cell in a stage is drawn with the same share of the area."],
+   R=36, stages=[{"name": "zygote", "n": 1}, {"name": "2 cells", "n": 2, "day": 1}, {"name": "4 cells", "n": 4}, {"name": "8 cells", "n": 8}, {"name": "morula", "n": 16, "day": 3}, {"name": "blastocyst", "n": 0, "kind": "blastocyst", "day": 5}])
+
+# ---------------------------------------------------------------- flow cytometry (seeded simulation)
+mk("u14-16", "bio-flow-cytometry", "cytometry", "Flow cytometry: gating and counting",
+   "Cells pass one at a time through a laser. Forward scatter (size) and side scatter (granularity) separate the populations of white blood cells; a gate on the scatter plot selects the lymphocytes; the gated cells are then counted for the fluorescent anti-CD4 label, using unstained cells as a control to set the threshold for a positive signal. The events are simulated from a fixed random seed, so the percentages are illustrative, not patient data.",
+   "Two plots. Left: a scatter plot of side scatter against forward scatter with three clusters of cells, lymphocytes at low size and low granularity, monocytes larger, and granulocytes the most granular, with a rectangular gate round the lymphocytes. Right: a histogram of anti-CD4 fluorescence for the gated cells beside the unstained control, with a dashed threshold and the percentage of CD4-positive cells to the right of it.",
+   ["Cells flow in single file past a laser.", "Forward scatter indicates cell size; side scatter indicates internal complexity or granularity.", "A gate selects a population of interest, here lymphocytes, as a percentage of all events.", "Fluorescent anti-CD4 antibody labels CD4-positive cells; unstained cells set the threshold for a positive signal.", "The data are simulated (a fixed random seed) and the values are illustrative."],
+   seed=14, n=1800,
+   populations=[{"name": "lymphocytes", "fsc": [300, 42], "ssc": [200, 38], "frac": 0.35}, {"name": "monocytes", "fsc": [500, 55], "ssc": [390, 55], "frac": 0.07}, {"name": "granulocytes", "fsc": [470, 65], "ssc": [690, 90], "frac": 0.58}],
+   gate={"fsc": [190, 420], "ssc": [90, 320], "population": "lymphocytes"},
+   cd4={"frac": 0.40, "neg": [1.2, 0.28], "pos": [2.9, 0.3]},
+   claims=[{"type": "gate", "percent": 35, "tol": 3}, {"type": "positive", "percent": 40, "tol": 4}])

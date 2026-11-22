@@ -1,0 +1,91 @@
+{
+ "id": "bio-flow-cytometry",
+ "renderer": "cytometry",
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "Flow cytometry",
+ "title": "Flow cytometry: gating and counting",
+ "caption": "Cells pass one at a time through a laser. Forward scatter (size) and side scatter (granularity) separate the populations of white blood cells; a gate on the scatter plot selects the lymphocytes; the gated cells are then counted for the fluorescent anti-CD4 label, using unstained cells as a control to set the threshold for a positive signal. The events are simulated from a fixed random seed, so the percentages are illustrative, not patient data.",
+ "alt": "Two plots. Left: a scatter plot of side scatter against forward scatter with three clusters of cells, lymphocytes at low size and low granularity, monocytes larger, and granulocytes the most granular, with a rectangular gate round the lymphocytes. Right: a histogram of anti-CD4 fluorescence for the gated cells beside the unstained control, with a dashed threshold and the percentage of CD4-positive cells to the right of it.",
+ "description": [
+  "Cells flow in single file past a laser.",
+  "Forward scatter indicates cell size; side scatter indicates internal complexity or granularity.",
+  "A gate selects a population of interest, here lymphocytes, as a percentage of all events.",
+  "Fluorescent anti-CD4 antibody labels CD4-positive cells; unstained cells set the threshold for a positive signal.",
+  "The data are simulated (a fixed random seed) and the values are illustrative."
+ ],
+ "seed": 14,
+ "n": 1800,
+ "populations": [
+  {
+   "name": "lymphocytes",
+   "fsc": [
+    300,
+    42
+   ],
+   "ssc": [
+    200,
+    38
+   ],
+   "frac": 0.35
+  },
+  {
+   "name": "monocytes",
+   "fsc": [
+    500,
+    55
+   ],
+   "ssc": [
+    390,
+    55
+   ],
+   "frac": 0.07
+  },
+  {
+   "name": "granulocytes",
+   "fsc": [
+    470,
+    65
+   ],
+   "ssc": [
+    690,
+    90
+   ],
+   "frac": 0.58
+  }
+ ],
+ "gate": {
+  "fsc": [
+   190,
+   420
+  ],
+  "ssc": [
+   90,
+   320
+  ],
+  "population": "lymphocytes"
+ },
+ "cd4": {
+  "frac": 0.4,
+  "neg": [
+   1.2,
+   0.28
+  ],
+  "pos": [
+   2.9,
+   0.3
+  ]
+ },
+ "claims": [
+  {
+   "type": "gate",
+   "percent": 35,
+   "tol": 3
+  },
+  {
+   "type": "positive",
+   "percent": 40,
+   "tol": 4
+  }
+ ]
+}

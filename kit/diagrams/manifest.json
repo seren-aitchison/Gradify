@@ -34900,5 +34900,370 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-cleavage": {
+  "title": "Cleavage: from zygote to blastocyst",
+  "caption": "The zygote divides by rapid mitosis without growing, so each division halves the size of the cells (blastomeres) while the embryo stays the same size. In humans there are two cells on day 1, a morula of about 16 cells on day 3 and a blastocyst on day 5, with an outer trophoblast, which forms part of the placenta, and an inner cell mass, which forms the embryo.",
+  "alt": "Six stages in a row inside the same size of zona pellucida: the zygote, then two, four, eight and about sixteen cells that get smaller at each division, then a blastocyst with an outer ring of trophoblast, a fluid-filled cavity and a small cluster of inner cell mass cells against one side.",
+  "description": [
+   "Cleavage is rapid mitosis without growth: the cells (blastomeres) get smaller at each division.",
+   "Two cells on day 1; a solid morula of about 16 cells on day 3; a blastocyst on day 5.",
+   "The blastocyst has an outer trophoblast, a fluid-filled cavity and an inner cell mass.",
+   "The trophoblast forms part of the placenta; the inner cell mass forms the embryo.",
+   "Schematic cross-sections: every cell in a stage is drawn with the same share of the area."
+  ],
+  "course": "biology",
+  "lesson": "Cleavage",
+  "also": [],
+  "renderer": "cleavage",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u05.js: Cleavage"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the first stage is the zygote: one cell",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "zygote: 1 cells drawn",
+    "ok": true,
+    "detail": "1 drawn"
+   },
+   {
+    "name": "zygote: every cell has 1/1 of the zygote's area (no growth between divisions)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "zygote: the embryo is no bigger than the zygote",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 cells: 2 cells drawn",
+    "ok": true,
+    "detail": "2 drawn"
+   },
+   {
+    "name": "2 cells: every cell has 1/2 of the zygote's area (no growth between divisions)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 cells: the embryo is no bigger than the zygote",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 cells: each division doubles the number of cells",
+    "ok": true,
+    "detail": "1 → 2"
+   },
+   {
+    "name": "2 cells: day 1 in the lesson's human timeline",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "4 cells: 4 cells drawn",
+    "ok": true,
+    "detail": "4 drawn"
+   },
+   {
+    "name": "4 cells: every cell has 1/4 of the zygote's area (no growth between divisions)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "4 cells: the embryo is no bigger than the zygote",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "4 cells: each division doubles the number of cells",
+    "ok": true,
+    "detail": "2 → 4"
+   },
+   {
+    "name": "8 cells: 8 cells drawn",
+    "ok": true,
+    "detail": "8 drawn"
+   },
+   {
+    "name": "8 cells: every cell has 1/8 of the zygote's area (no growth between divisions)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "8 cells: the embryo is no bigger than the zygote",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "8 cells: each division doubles the number of cells",
+    "ok": true,
+    "detail": "4 → 8"
+   },
+   {
+    "name": "morula: 16 cells drawn",
+    "ok": true,
+    "detail": "16 drawn"
+   },
+   {
+    "name": "morula: every cell has 1/16 of the zygote's area (no growth between divisions)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "morula: the embryo is no bigger than the zygote",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "morula: each division doubles the number of cells",
+    "ok": true,
+    "detail": "8 → 16"
+   },
+   {
+    "name": "morula: day 3 in the lesson's human timeline",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blastocyst: the inner cell mass lies inside the cavity, against the trophoblast",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blastocyst: the trophoblast is the outer layer",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blastocyst: day 5 in the lesson's human timeline",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-fertilisation": {
+  "title": "Fertilisation in mammals",
+  "caption": "A capacitated sperm reaches the zona pellucida; the acrosome reaction releases enzymes that digest a path through it; the sperm and egg membranes fuse and the sperm nucleus enters; the cortical reaction hardens the zona so that no further sperm can enter (preventing polyspermy); the egg completes meiosis II and the two haploid nuclei combine. In humans 23 + 23 = 46 chromosomes.",
+  "alt": "Five small pictures of an egg inside its zona pellucida: a sperm at the zona; the acrosome reaction opening a gap in the zona; the sperm fused with the egg and its nucleus inside; the cortical granules releasing enzymes while a second sperm is blocked outside; and the two nuclei, 23 chromosomes each, combining.",
+  "description": [
+   "Capacitated sperm reach the egg's zona pellucida.",
+   "The acrosome reaction releases enzymes that digest the zona pellucida.",
+   "The sperm membrane fuses with the egg membrane and the sperm nucleus enters.",
+   "The cortical reaction hardens the zona pellucida, so that no more sperm bind or enter: polyspermy is prevented.",
+   "The egg completes meiosis II and the two haploid nuclei combine: 23 + 23 = 46 chromosomes in humans.",
+   "Schematic: the sizes are not to scale."
+  ],
+  "course": "biology",
+  "lesson": "Fertilisation",
+  "also": [],
+  "renderer": "fertilisation",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u05.js: Fertilisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is a known stage of fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the acrosome reaction comes before membrane fusion",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the sperm reaches the zona pellucida first",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the cortical reaction comes after fusion",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the joining of the nuclei comes after fusion",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Sperm at the zona: no sperm is inside the egg yet",
+    "ok": true,
+    "detail": "0 inside"
+   },
+   {
+    "name": "Sperm at the zona: a step of mammalian fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Acrosome reaction: no sperm is inside the egg yet",
+    "ok": true,
+    "detail": "0 inside"
+   },
+   {
+    "name": "Acrosome reaction: a step of mammalian fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Fusion: exactly one sperm is inside the egg",
+    "ok": true,
+    "detail": "1 inside"
+   },
+   {
+    "name": "Fusion: a step of mammalian fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Cortical reaction: exactly one sperm is inside the egg",
+    "ok": true,
+    "detail": "1 inside"
+   },
+   {
+    "name": "the cortical reaction leaves other sperm blocked outside (polyspermy prevented)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Cortical reaction: a step of mammalian fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Nuclei combine: exactly one sperm is inside the egg",
+    "ok": true,
+    "detail": "1 inside"
+   },
+   {
+    "name": "Nuclei combine: a step of mammalian fertilisation",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "23 + 23 = 46: fertilisation restores the diploid number",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "humans: gametes carry 23 chromosomes, the zygote 46",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-flow-cytometry": {
+  "title": "Flow cytometry: gating and counting",
+  "caption": "Cells pass one at a time through a laser. Forward scatter (size) and side scatter (granularity) separate the populations of white blood cells; a gate on the scatter plot selects the lymphocytes; the gated cells are then counted for the fluorescent anti-CD4 label, using unstained cells as a control to set the threshold for a positive signal. The events are simulated from a fixed random seed, so the percentages are illustrative, not patient data.",
+  "alt": "Two plots. Left: a scatter plot of side scatter against forward scatter with three clusters of cells, lymphocytes at low size and low granularity, monocytes larger, and granulocytes the most granular, with a rectangular gate round the lymphocytes. Right: a histogram of anti-CD4 fluorescence for the gated cells beside the unstained control, with a dashed threshold and the percentage of CD4-positive cells to the right of it.",
+  "description": [
+   "Cells flow in single file past a laser.",
+   "Forward scatter indicates cell size; side scatter indicates internal complexity or granularity.",
+   "A gate selects a population of interest, here lymphocytes, as a percentage of all events.",
+   "Fluorescent anti-CD4 antibody labels CD4-positive cells; unstained cells set the threshold for a positive signal.",
+   "The data are simulated (a fixed random seed) and the values are illustrative."
+  ],
+  "course": "biology",
+  "lesson": "Flow cytometry",
+  "also": [],
+  "renderer": "cytometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Flow cytometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gate is a region of the plot",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the gate collects the lymphocytes: at least 90% of them are inside",
+    "ok": true,
+    "detail": "98% inside"
+   },
+   {
+    "name": "the gated cells are mostly lymphocytes: at least 90%",
+    "ok": true,
+    "detail": "100% pure"
+   },
+   {
+    "name": "the threshold is set from the unstained control: at least 98% of control cells are below it",
+    "ok": true,
+    "detail": "98.9%"
+   },
+   {
+    "name": "the population fractions add to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the gate holds 35% of the events (counted: 34.3%)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "40% of the gated cells are CD4-positive (counted: 40.8%)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

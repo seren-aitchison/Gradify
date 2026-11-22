@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH, cleavageCells, cytometryData } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -381,4 +381,42 @@ test("tract: every solid arrow is a step blood, air or food takes; the circulati
   const air = { renderer: "tract", alt: "x", tract: "airway", layout: "grid", nodes: ["nose", "pharynx", "larynx", "trachea", "bronchi", "bronchioles", "alveoli"].map((is, i) => ({ id: `a${i}`, label: is, is, col: i, row: 0 })), edges: [0, 1, 2, 3, 4, 5].map((i) => ({ from: `a${i}`, to: `a${i + 1}` })) };
   assert.equal(allPass(air), true);
   assert.equal(allPass({ ...air, edges: [{ from: "a0", to: "a3" }, ...air.edges.slice(1)] }), false); // air does not go from the nose to the trachea without the pharynx and larynx
+});
+
+test("cleavage: cells halve in size without growth; each stage's cell areas are recomputed", () => {
+  for (const n of [1, 2, 4, 8, 16]) { const cells = cleavageCells(n, 36); assert.equal(cells.length, n); const A = cells.map((c) => ((c.a1 - c.a0) / 360) * Math.PI * (c.r1 * c.r1 - c.r0 * c.r0)); assert.ok(A.every((a) => Math.abs(a - (Math.PI * 36 * 36) / n) < 1e-6), `${n} equal areas`); }
+  assert.deepEqual(cleavageCells(3, 36), []);
+  const stages = [{ name: "zygote", n: 1 }, { name: "2 cells", n: 2, day: 1 }, { name: "4 cells", n: 4 }, { name: "8 cells", n: 8 }, { name: "morula", n: 16, day: 3 }, { name: "blastocyst", n: 0, kind: "blastocyst", day: 5 }];
+  const ok = { renderer: "cleavage", alt: "x", R: 36, stages };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, stages: [stages[0], { name: "3 cells", n: 3 }] }), false); // not a doubling of 1
+  assert.equal(allPass({ ...ok, stages: [stages[0], { name: "2 cells", n: 2, R: 50 }] }), false); // the embryo grew
+  assert.equal(allPass({ ...ok, stages: [stages[0], { name: "2 cells", n: 2, day: 2 }] }), false); // two cells are on day 1
+  assert.equal(allPass({ ...ok, stages: [{ name: "2 cells", n: 2 }] }), false); // must start from the zygote
+  assert.equal(allPass({ ...ok, stages: [...stages.slice(0, 5), { ...stages[5], day: 3 }] }), false); // the blastocyst forms on day 5
+});
+
+test("fertilisation: the steps are in order, one sperm enters, 23 + 23 = 46", () => {
+  const steps = [{ id: "approach", title: "a", note: "n", inside: 0, blocked: 0 }, { id: "acrosome", title: "b", note: "n", inside: 0, blocked: 0 }, { id: "fusion", title: "c", note: "n", inside: 1, blocked: 0 }, { id: "cortical", title: "d", note: "n", inside: 1, blocked: 1 }, { id: "combine", title: "e", note: "n", inside: 1, blocked: 0 }];
+  const ok = { renderer: "fertilisation", alt: "x", species: "human", haploid: 23, diploid: 46, steps };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, steps: [steps[0], steps[2], steps[1], ...steps.slice(3)] }), false); // fusion before the acrosome reaction
+  assert.equal(allPass({ ...ok, steps: [...steps.slice(0, 3), { ...steps[3], inside: 2 }, steps[4]] }), false); // polyspermy
+  assert.equal(allPass({ ...ok, steps: [...steps.slice(0, 3), { ...steps[3], blocked: 0 }, steps[4]] }), false); // the block must stop another sperm
+  assert.equal(allPass({ ...ok, haploid: 23, diploid: 23 }), false); // fertilisation restores the diploid number
+  assert.equal(allPass({ ...ok, haploid: 22, diploid: 44 }), false); // humans: 23 and 46
+  assert.equal(allPass({ ...ok, steps: [{ ...steps[0], id: "teleport" }] }), false);
+});
+
+test("cytometry: the gate and the positive percentages are counted from the seeded events", () => {
+  const spec = { renderer: "cytometry", alt: "x", seed: 14, n: 1800, populations: [{ name: "lymphocytes", fsc: [300, 42], ssc: [200, 38], frac: 0.35 }, { name: "monocytes", fsc: [500, 55], ssc: [390, 55], frac: 0.07 }, { name: "granulocytes", fsc: [470, 65], ssc: [690, 90], frac: 0.58 }], gate: { fsc: [190, 420], ssc: [90, 320], population: "lymphocytes" }, cd4: { frac: 0.4, neg: [1.2, 0.28], pos: [2.9, 0.3] }, claims: [{ type: "gate", percent: 35, tol: 3 }, { type: "positive", percent: 40, tol: 4 }] };
+  const a = cytometryData(spec), b = cytometryData(spec);
+  assert.equal(a.gatePercent, b.gatePercent); assert.equal(a.threshold, b.threshold); // seeded: repeatable
+  assert.ok(a.purity > 0.9 && a.recall > 0.9 && a.controlBelow >= 0.98);
+  assert.equal(allPass(spec), true);
+  assert.equal(allPass({ ...spec, claims: [{ type: "gate", percent: 60, tol: 3 }] }), false); // the gate does not hold 60% of events
+  assert.equal(allPass({ ...spec, claims: [{ type: "positive", percent: 80, tol: 4 }] }), false);
+  assert.equal(allPass({ ...spec, gate: { ...spec.gate, fsc: [400, 700], ssc: [300, 800] } }), false); // a gate on the wrong cells
+  assert.equal(allPass({ ...spec, populations: spec.populations.map((p) => ({ ...p, frac: p.frac / 2 })) }), false); // fractions must add to 1
+  assert.notEqual(cytometryData({ ...spec, seed: 15 }).gatePercent, a.gatePercent); // another seed, another sample
 });

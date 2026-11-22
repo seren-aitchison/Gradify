@@ -1,0 +1,48 @@
+{
+ "id": "bio-cleavage",
+ "renderer": "cleavage",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Cleavage",
+ "title": "Cleavage: from zygote to blastocyst",
+ "caption": "The zygote divides by rapid mitosis without growing, so each division halves the size of the cells (blastomeres) while the embryo stays the same size. In humans there are two cells on day 1, a morula of about 16 cells on day 3 and a blastocyst on day 5, with an outer trophoblast, which forms part of the placenta, and an inner cell mass, which forms the embryo.",
+ "alt": "Six stages in a row inside the same size of zona pellucida: the zygote, then two, four, eight and about sixteen cells that get smaller at each division, then a blastocyst with an outer ring of trophoblast, a fluid-filled cavity and a small cluster of inner cell mass cells against one side.",
+ "description": [
+  "Cleavage is rapid mitosis without growth: the cells (blastomeres) get smaller at each division.",
+  "Two cells on day 1; a solid morula of about 16 cells on day 3; a blastocyst on day 5.",
+  "The blastocyst has an outer trophoblast, a fluid-filled cavity and an inner cell mass.",
+  "The trophoblast forms part of the placenta; the inner cell mass forms the embryo.",
+  "Schematic cross-sections: every cell in a stage is drawn with the same share of the area."
+ ],
+ "R": 36,
+ "stages": [
+  {
+   "name": "zygote",
+   "n": 1
+  },
+  {
+   "name": "2 cells",
+   "n": 2,
+   "day": 1
+  },
+  {
+   "name": "4 cells",
+   "n": 4
+  },
+  {
+   "name": "8 cells",
+   "n": 8
+  },
+  {
+   "name": "morula",
+   "n": 16,
+   "day": 3
+  },
+  {
+   "name": "blastocyst",
+   "n": 0,
+   "kind": "blastocyst",
+   "day": 5
+  }
+ ]
+}

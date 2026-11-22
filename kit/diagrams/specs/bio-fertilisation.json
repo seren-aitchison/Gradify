@@ -1,0 +1,58 @@
+{
+ "id": "bio-fertilisation",
+ "renderer": "fertilisation",
+ "course": "biology",
+ "unit": "u05",
+ "lesson": "Fertilisation",
+ "title": "Fertilisation in mammals",
+ "caption": "A capacitated sperm reaches the zona pellucida; the acrosome reaction releases enzymes that digest a path through it; the sperm and egg membranes fuse and the sperm nucleus enters; the cortical reaction hardens the zona so that no further sperm can enter (preventing polyspermy); the egg completes meiosis II and the two haploid nuclei combine. In humans 23 + 23 = 46 chromosomes.",
+ "alt": "Five small pictures of an egg inside its zona pellucida: a sperm at the zona; the acrosome reaction opening a gap in the zona; the sperm fused with the egg and its nucleus inside; the cortical granules releasing enzymes while a second sperm is blocked outside; and the two nuclei, 23 chromosomes each, combining.",
+ "description": [
+  "Capacitated sperm reach the egg's zona pellucida.",
+  "The acrosome reaction releases enzymes that digest the zona pellucida.",
+  "The sperm membrane fuses with the egg membrane and the sperm nucleus enters.",
+  "The cortical reaction hardens the zona pellucida, so that no more sperm bind or enter: polyspermy is prevented.",
+  "The egg completes meiosis II and the two haploid nuclei combine: 23 + 23 = 46 chromosomes in humans.",
+  "Schematic: the sizes are not to scale."
+ ],
+ "species": "human",
+ "haploid": 23,
+ "diploid": 46,
+ "steps": [
+  {
+   "id": "approach",
+   "title": "Sperm at the zona",
+   "note": "a capacitated sperm binds the zona pellucida",
+   "inside": 0,
+   "blocked": 0
+  },
+  {
+   "id": "acrosome",
+   "title": "Acrosome reaction",
+   "note": "enzymes digest a path through the zona",
+   "inside": 0,
+   "blocked": 0
+  },
+  {
+   "id": "fusion",
+   "title": "Fusion",
+   "note": "the membranes fuse and the sperm nucleus enters",
+   "inside": 1,
+   "blocked": 0
+  },
+  {
+   "id": "cortical",
+   "title": "Cortical reaction",
+   "note": "the zona hardens: other sperm are blocked",
+   "inside": 1,
+   "blocked": 1
+  },
+  {
+   "id": "combine",
+   "title": "Nuclei combine",
+   "note": "two haploid nuclei form a diploid zygote",
+   "inside": 1,
+   "blocked": 0
+  }
+ ]
+}

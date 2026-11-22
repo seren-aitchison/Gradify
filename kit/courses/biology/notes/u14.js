@@ -638,6 +638,7 @@ H: How it works
 - **Forward scatter** indicates cell size.
 - **Side scatter** indicates internal complexity or granularity.
 - **Fluorescent labels**, often antibodies, detect specific markers.
+D: bio-flow-cytometry
 H: Analysis
 - Data are shown as **histograms** or **dot plots**.
 - **Gating** selects populations of interest, such as live lymphocytes.

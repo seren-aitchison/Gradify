@@ -10,6 +10,9 @@
 //   tonicity   cells in solutions: water moves to the lower water potential, and the cell swells, bursts, crenates,
 //              becomes turgid or flaccid, or plasmolyses accordingly
 //   route      a path through the endomembrane system (drawn as a flow): every step is one cargo really takes
+//   cleavage   the zygote dividing without growing: each cell's area recomputed, doubling, the lesson's days
+//   fertilisation  the steps in order (acrosome, fusion, cortical reaction, nuclei), one sperm in, 23 + 23 = 46
+//   cytometry  a seeded flow-cytometry simulation: gate and positive percentages are counted from the events
 //   tract      the circulation, airway or gut as a route (drawn as a flow): every step is one blood, air or food really takes
 //   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
 //   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
@@ -1868,6 +1871,192 @@ function sectionChecks(spec) {
   return out;
 }
 
+// ======================================================================== cleavage
+// Early cleavage: the zygote divides without growing, so the cells get smaller while the embryo stays the same size.
+// spec: R, stages: [{name, n, day?, kind?: "blastocyst", R?}]. Each stage's cells are an equal-area partition of the same
+// disc (a cross-section drawn schematically); the checks recompute every cell's area from its geometry. The days are the
+// lesson's human timeline: two cells on day 1, a morula of about 16 cells on day 3, a blastocyst on day 5.
+const HUMAN_DAY = { 2: 1, 16: 3, blastocyst: 5 };
+const annularSector = (cx, cy, r0, r1, a0, a1) => {
+  const p = (r, a) => pol(cx, cy, r, a), [x0, y0] = p(r1, a0), [x1, y1] = p(r1, a1), [x2, y2] = p(r0, a1), [x3, y3] = p(r0, a0), big = a1 - a0 > 180 ? 1 : 0;
+  return r0 === 0 ? `M${f1(cx)} ${f1(cy)} L${f1(x0)} ${f1(y0)} A${r1} ${r1} 0 ${big} 1 ${f1(x1)} ${f1(y1)} Z` : `M${f1(x0)} ${f1(y0)} A${r1} ${r1} 0 ${big} 1 ${f1(x1)} ${f1(y1)} L${f1(x2)} ${f1(y2)} A${r0} ${r0} 0 ${big} 0 ${f1(x3)} ${f1(y3)} Z`;
+};
+const cellArea = (c) => ((c.a1 - c.a0) / 360) * Math.PI * (c.r1 * c.r1 - c.r0 * c.r0);
+export function cleavageCells(n, R) {
+  const ring = (k, r0, r1, off = 0) => Array.from({ length: k }, (_, i) => ({ r0, r1, a0: off + (i * 360) / k, a1: off + ((i + 1) * 360) / k }));
+  if (n === 1) return [{ r0: 0, r1: R, a0: 0, a1: 360 }];
+  if (n === 2) return ring(2, 0, R, -90);
+  if (n === 4 || n === 8) return ring(n, 0, R, 0);
+  if (n === 16) return [...ring(4, 0, R / 2, 45), ...ring(12, R / 2, R, 0)];
+  return [];
+}
+const BLASTO = { ring: 9, icmCell: 5.2, icmRing: 7.5 };
+function blastocystGeometry(R, angle) {
+  const inner = R - BLASTO.ring, extent = BLASTO.icmRing + BLASTO.icmCell, dist = inner - extent + 1.5;
+  return { inner, extent, dist, centre: pol(0, 0, dist, angle), cells: Array.from({ length: 5 }, (_, j) => pol(...pol(0, 0, dist, angle), BLASTO.icmRing, j * 72)) };
+}
+function cleavageDraw(spec, W, narrow) {
+  const R0 = spec.R || 36, st = spec.stages, cols = narrow ? 3 : st.length, cw = (W - 20) / cols, rh = 2 * R0 + 74;
+  let s = "";
+  st.forEach((g, i) => {
+    const col = i % cols, row = Math.floor(i / cols), cx = 10 + cw * (col + 0.5), cy = 12 + row * rh + R0 + 6, R = g.R || R0;
+    s += `<g data-stage="${esc(g.name)}">`;
+    s += part("zona pellucida", "The glycoprotein coat round the egg and the early embryo.", `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${R + 5}" fill="none" stroke="${C.a3}" stroke-width="3" stroke-opacity=".7"/>`);
+    if (g.kind === "blastocyst") {
+      const B = blastocystGeometry(R, g.icmAngle ?? -135);
+      s += part("trophoblast", "The outer layer of the blastocyst: it forms part of the placenta.", `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(R - BLASTO.ring / 2)}" fill="${C.a2}" fill-opacity=".1" stroke="${C.a2}" stroke-width="${BLASTO.ring}" stroke-opacity=".55"/>` + Array.from({ length: 18 }, (_, k) => { const [x1, y1] = pol(cx, cy, R - BLASTO.ring, k * 20), [x2, y2] = pol(cx, cy, R, k * 20); return `<path d="M${f1(x1)} ${f1(y1)} L${f1(x2)} ${f1(y2)}" stroke="${C.a2}" stroke-width="1.2"/>`; }).join(""));
+      s += part("blastocoel", "The fluid-filled cavity of the blastocyst.", `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(B.inner)}" fill="${C.a1}" fill-opacity=".08"/>`);
+      s += part("inner cell mass", "A cluster of cells inside the blastocyst that forms the embryo; embryonic stem cells come from it.", B.cells.map(([x, y]) => `<circle cx="${f1(cx + x)}" cy="${f1(cy + y)}" r="${BLASTO.icmCell}" fill="${C.a5}" fill-opacity=".5" stroke="${C.a5}" stroke-width="1.4"/>`).join(""));
+    } else {
+      const cells = cleavageCells(g.n, R);
+      s += part("blastomeres", "Cells made by cleavage: each division halves their volume because there is no growth between divisions.", cells.map((c, k) => (g.n === 1 ? `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${R}"` : `<path d="${annularSector(cx, cy, c.r0, c.r1, c.a0, c.a1)}"`) + ` fill="${C.a4}" fill-opacity="${k % 2 ? 0.34 : 0.2}" stroke="${C.a4}" stroke-width="1.6"/>`).join(""));
+    }
+    s += `</g>` + text(cx, cy + R + 22, g.name, { size: 12.5, weight: 700 }) + text(cx, cy + R + 38, g.kind === "blastocyst" ? "schematic" : g.n === 1 ? "1 cell" : `${g.n} cells`, { size: 11.5, fill: C.soft }) + (g.day != null ? text(cx, cy + R + 53, `day ${g.day}`, { size: 11.5, fill: C.soft }) : "");
+    if (col < cols - 1 && i < st.length - 1) s += arrow(cx + R + 10, cy, cx + cw - R - 10, cy, { stroke: C.soft, w: 1.6, head: 7 });
+  });
+  const rows = Math.ceil(st.length / cols), H = 12 + rows * rh + 8;
+  const note = textBlock(W / 2, H + 6, "Each cell is drawn with the same share of the area: dividing without growing makes cells smaller, not the embryo bigger.", narrow ? 46 : 200, { size: 11.5, fill: C.soft });
+  return { s: s + note.svg, H: H + 14 + note.h };
+}
+function cleavageChecks(spec) {
+  const R0 = spec.R || 36, out = [], cl = spec.stages.filter((g) => g.kind !== "blastocyst");
+  out.push(check("the first stage is the zygote: one cell", cl[0]?.n === 1));
+  const total0 = Math.PI * R0 * R0;
+  cl.forEach((g, i) => {
+    const cells = cleavageCells(g.n, g.R || R0), areas = cells.map(cellArea);
+    out.push(check(`${g.name}: ${g.n} cells drawn`, cells.length === g.n && g.n > 0, `${cells.length} drawn`));
+    out.push(check(`${g.name}: every cell has 1/${g.n} of the zygote's area (no growth between divisions)`, areas.length > 0 && areas.every((a) => Math.abs(a - total0 / g.n) / (total0 / g.n) < 0.005)));
+    out.push(check(`${g.name}: the embryo is no bigger than the zygote`, (g.R || R0) === R0));
+    if (i > 0) out.push(check(`${g.name}: each division doubles the number of cells`, g.n === 2 * cl[i - 1].n, `${cl[i - 1].n} → ${g.n}`));
+    if (g.day != null) out.push(check(`${g.name}: day ${g.day} in the lesson's human timeline`, HUMAN_DAY[g.n] === g.day));
+  });
+  for (const g of spec.stages.filter((q) => q.kind === "blastocyst")) {
+    const B = blastocystGeometry(g.R || R0, g.icmAngle ?? -135), d = Math.hypot(...B.centre);
+    out.push(check("blastocyst: the inner cell mass lies inside the cavity, against the trophoblast", d + B.extent <= B.inner + 2 && d + B.extent >= B.inner - 1));
+    out.push(check("blastocyst: the trophoblast is the outer layer", (g.R || R0) - BLASTO.ring > 0 && (g.R || R0) === R0));
+    if (g.day != null) out.push(check(`blastocyst: day ${g.day} in the lesson's human timeline`, HUMAN_DAY.blastocyst === g.day));
+  }
+  return out;
+}
+
+// ======================================================================== fertilisation
+// Fertilisation in mammals, as the lesson orders it. spec: species: "human", haploid, diploid, steps: [{id, title, note, inside, blocked}]
+// with id one of approach, acrosome, fusion, cortical, combine. The acrosome reaction comes before fusion, the cortical
+// reaction and the joining of the nuclei after it; no sperm is inside before fusion and exactly one afterwards; the
+// cortical reaction leaves at least one sperm blocked outside.
+const FERT_RANK = { approach: 0, acrosome: 1, fusion: 2, cortical: 3, combine: 3 };
+const FERT_DEF = { approach: "Capacitated sperm reaches the zona pellucida.", acrosome: "The acrosome reaction releases enzymes that digest a path through the zona pellucida.", fusion: "The sperm membrane fuses with the egg membrane and the sperm nucleus enters.", cortical: "Cortical granules release enzymes that harden the zona pellucida, blocking other sperm.", combine: "The egg completes meiosis II and the two haploid nuclei combine." };
+function fertPanel(step, hap) {
+  const Re = 34, Rz = 41, id = step.id, hard = id === "cortical" || id === "combine";
+  const head = (x, y, rot = 0, cap = true, tail = 64) => `<g transform="translate(${x} ${y}) rotate(${rot})"><path d="M0 -8 Q-3 ${-(tail - 24)} 0 ${-tail}" fill="none" stroke="${C.ink}" stroke-width="1.6"/><ellipse cx="0" cy="0" rx="6" ry="8" fill="${C.a1}" fill-opacity=".8" stroke="${C.a1}" stroke-width="1.6"/>${cap ? `<ellipse cx="0" cy="3" rx="4.6" ry="3.4" fill="${C.a2}" fill-opacity=".9"/>` : ""}</g>`;
+  let s = part("egg", "The egg cell, with its plasma membrane.", `<circle r="${Re}" fill="${C.a4}" fill-opacity=".14" stroke="${C.a4}" stroke-width="2.2"/>`);
+  // the zona pellucida; the acrosome reaction opens a path through it, and the cortical reaction hardens it
+  const notch = id === "acrosome" ? 12 : id === "fusion" ? 15 : 0, w = hard ? 9 : 6;
+  const arc = notch ? (() => { const [x0, y0] = pol(0, 0, Rz, -90 + notch), [x1, y1] = pol(0, 0, Rz, -90 - notch); return `<path d="M${f1(x0)} ${f1(y0)} A${Rz} ${Rz} 0 1 1 ${f1(x1)} ${f1(y1)}" fill="none" stroke="${C.a3}" stroke-width="${w}" stroke-opacity=".7"/>`; })() : `<circle r="${Rz}" fill="none" stroke="${C.a3}" stroke-width="${w}" stroke-opacity="${hard ? 0.95 : 0.7}"/>`;
+  s += part("zona pellucida", hard ? "The zona pellucida, now hardened by the cortical reaction so that no more sperm can bind." : "The glycoprotein layer round the egg.", arc);
+  if (id === "approach") s += part("sperm", "A capacitated sperm; the acrosome on its head holds digestive enzymes.", head(0, -57));
+  if (id === "acrosome") s += part("acrosomal enzymes", "Enzymes released from the acrosome digest the zona pellucida.", [[-9, -44], [9, -44], [-5, -37], [5, -37]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.4" fill="${C.a2}"/>`).join("")) + part("sperm", "The sperm head, its acrosome emptied.", head(0, -50, 0, false));
+  if (id === "fusion") s += part("sperm", "The sperm membrane fuses with the egg membrane.", head(0, -41, 0, false)) + part("sperm nucleus", `The sperm nucleus enters the egg, carrying ${hap} chromosomes.`, `<circle cx="0" cy="-22" r="6" fill="${C.a5}" fill-opacity=".6" stroke="${C.a5}" stroke-width="1.6"/>`);
+  if (id === "cortical") {
+    s += part("cortical granules", "Granules under the egg membrane release enzymes that harden the zona pellucida.", Array.from({ length: 10 }, (_, k) => { const [x, y] = pol(0, 0, Re - 5, k * 36 + 10), [x2, y2] = pol(0, 0, Re + 3.5, k * 36 + 10); return `<circle cx="${f1(x)}" cy="${f1(y)}" r="2.3" fill="${C.a2}" fill-opacity=".8"/><circle cx="${f1(x2)}" cy="${f1(y2)}" r="1.6" fill="${C.a2}"/>`; }).join(""));
+    s += part("sperm nucleus", "The nucleus of the one sperm that entered.", `<circle cx="0" cy="-14" r="6" fill="${C.a5}" fill-opacity=".6" stroke="${C.a5}" stroke-width="1.6"/>`);
+    if (step.blocked > 0) s += part("blocked sperm", "A second sperm cannot bind the hardened zona, so polyspermy is prevented.", head(40, -50, 25, true, 36) + `<path d="M28 -66 l12 12 M40 -66 l-12 12" stroke="${C.bad}" stroke-width="2"/>`);
+  }
+  if (id === "combine") s += part("pronuclei", `The two haploid nuclei (${hap} chromosomes each) combine.`, `<circle cx="-8" cy="0" r="12" fill="${C.a5}" fill-opacity=".4" stroke="${C.a5}" stroke-width="1.6"/><circle cx="8" cy="0" r="12" fill="${C.a4}" fill-opacity=".4" stroke="${C.a4}" stroke-width="1.6"/>` + text(-12, 0, String(hap), { size: 10.5, weight: 700 }) + text(12, 0, String(hap), { size: 10.5, weight: 700 }));
+  return s;
+}
+function fertilisationDraw(spec, W, narrow) {
+  const st = spec.steps, cols = narrow ? 2 : st.length, cw = (W - 20) / cols, rh = 232;
+  let s = "";
+  st.forEach((g, i) => {
+    const col = i % cols, row = Math.floor(i / cols), cx = 10 + cw * (col + 0.5), top = 10 + row * rh;
+    s += `<g transform="translate(${f1(cx)} ${f1(top + 96)})">${fertPanel(g, spec.haploid)}</g>`;
+    s += text(cx, top + 158, `${i + 1}  ${g.title}`, { size: 12.5, weight: 700 });
+    wrap(g.note, narrow ? 28 : 19).forEach((l, k) => { s += text(cx, top + 177 + k * 15, l, { size: 11.5, fill: C.soft }); });
+  });
+  const rows = Math.ceil(st.length / cols), H = 10 + rows * rh;
+  s += text(W / 2, H, `${spec.haploid} + ${spec.haploid} = ${spec.diploid}: two haploid gametes make a diploid zygote`, { size: 13, weight: 700 });
+  return { s, H: H + 20 };
+}
+function fertilisationChecks(spec) {
+  const out = [], st = spec.steps, ids = st.map((g) => g.id);
+  out.push(check("every step is a known stage of fertilisation", ids.every((i) => i in FERT_RANK), ids.filter((i) => !(i in FERT_RANK)).join(", ")));
+  const at = (id) => ids.indexOf(id);
+  if (at("acrosome") >= 0 && at("fusion") >= 0) out.push(check("the acrosome reaction comes before membrane fusion", at("acrosome") < at("fusion")));
+  if (at("approach") >= 0) out.push(check("the sperm reaches the zona pellucida first", at("approach") === 0));
+  for (const id of ["cortical", "combine"]) if (at(id) >= 0 && at("fusion") >= 0) out.push(check(`the ${id === "cortical" ? "cortical reaction" : "joining of the nuclei"} comes after fusion`, at(id) > at("fusion")));
+  for (const g of st) {
+    const afterFusion = FERT_RANK[g.id] >= 2;
+    out.push(check(`${g.title}: ${afterFusion ? "exactly one sperm is inside the egg" : "no sperm is inside the egg yet"}`, g.inside === (afterFusion ? 1 : 0), `${g.inside} inside`));
+    if (g.id === "cortical") out.push(check("the cortical reaction leaves other sperm blocked outside (polyspermy prevented)", g.blocked >= 1));
+    if (g.note !== undefined && FERT_DEF[g.id]) out.push(check(`${g.title}: a step of mammalian fertilisation`, true));
+  }
+  out.push(check(`${spec.haploid} + ${spec.haploid} = ${spec.diploid}: fertilisation restores the diploid number`, spec.haploid * 2 === spec.diploid));
+  if (spec.species === "human") out.push(check("humans: gametes carry 23 chromosomes, the zygote 46", spec.haploid === 23 && spec.diploid === 46));
+  return out;
+}
+
+// ======================================================================== cytometry
+// Flow cytometry from a seeded simulation. spec: seed, n, populations [{name, fsc:[mean, sd], ssc:[mean, sd], frac, cd4?}],
+// gate {fsc:[lo, hi], ssc:[lo, hi], population}, cd4: {frac, neg:[mean, sd], pos:[mean, sd]} (log10 units), claims [{type: "gate" | "positive", percent, tol}].
+// The events are generated here, so the percentages drawn are counted from them. Values are illustrative, not patient data.
+export function cytometryData(spec) {
+  const r = mulberry(spec.seed || 1), gauss = () => Math.sqrt(-2 * Math.log(1 - r())) * Math.cos(2 * Math.PI * r());
+  const ev = [];
+  for (const p of spec.populations) for (let i = 0, k = Math.round(spec.n * p.frac); i < k; i++) ev.push({ pop: p.name, fsc: Math.max(5, Math.min(995, p.fsc[0] + p.fsc[1] * gauss())), ssc: Math.max(5, Math.min(995, p.ssc[0] + p.ssc[1] * gauss())) });
+  const g = spec.gate, inGate = (e) => e.fsc >= g.fsc[0] && e.fsc <= g.fsc[1] && e.ssc >= g.ssc[0] && e.ssc <= g.ssc[1];
+  const gated = ev.filter(inGate), target = ev.filter((e) => e.pop === g.population);
+  const draw = (m) => m[0] + m[1] * gauss();
+  for (const e of ev) { e.cd4 = e.pop === g.population && r() < spec.cd4.frac; e.stained = draw(e.cd4 ? spec.cd4.pos : spec.cd4.neg); e.control = draw(spec.cd4.neg); }
+  const ctrl = gated.map((e) => e.control).sort((a, b) => a - b), threshold = ctrl[Math.floor(0.99 * (ctrl.length - 1))];
+  const positive = gated.filter((e) => e.stained > threshold);
+  return { events: ev, gated, inGate, threshold, gatePercent: (100 * gated.length) / ev.length, purity: gated.filter((e) => e.pop === g.population).length / gated.length, recall: gated.filter((e) => e.pop === g.population).length / target.length, positivePercent: (100 * positive.length) / gated.length, controlBelow: ctrl.filter((v) => v <= threshold).length / ctrl.length };
+}
+function cytometryDraw(spec, W, narrow) {
+  const D = cytometryData(spec), g = spec.gate, pw = narrow ? W - 80 : Math.min(290, (W - 150) / 2), ph = narrow ? 210 : 240;
+  const x1 = 56, y1 = 40, x2 = narrow ? 56 : x1 + pw + 74, y2 = narrow ? y1 + ph + 92 : y1;
+  const sx = (v) => x1 + (v / 1000) * pw, sy = (v) => y1 + ph - (v / 1000) * ph;
+  let s = text(x1 - 40, 14, "1  Gate on the scatter plot", { size: 13, weight: 700, anchor: "start" });
+  s += `<rect x="${x1}" y="${y1}" width="${pw}" height="${ph}" fill="none" stroke="${C.soft}" stroke-width="1.4"/>`;
+  for (const t of [0, 250, 500, 750, 1000]) s += text(sx(t), y1 + ph + 12, String(t), { size: 10.5, fill: C.soft }) + text(x1 - 6, sy(t), String(t), { size: 10.5, fill: C.soft, anchor: "end" });
+  s += text(x1 + pw / 2, y1 + ph + 29, "forward scatter (size), arbitrary units", { size: 11.5 }) + `<text transform="translate(${x1 - 40} ${y1 + ph / 2}) rotate(-90)" font-size="11.5" text-anchor="middle" dominant-baseline="middle" fill="${C.ink}">side scatter (granularity)</text>`;
+  const dots = (list) => "M" + list.map((e) => `${f1(sx(e.fsc))} ${f1(sy(e.ssc))}h0`).join("M");
+  const out = D.events.filter((e) => !D.inGate(e)), inn = D.gated;
+  s += part("events outside the gate", "Cells outside the gate are not counted in the next plot.", `<path d="${dots(out)}" stroke="${C.soft}" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round" fill="none"/>`);
+  s += part("events inside the gate", "Cells inside the gate: the population chosen for analysis.", `<path d="${dots(inn)}" stroke="${C.a1}" stroke-opacity=".75" stroke-width="2.4" stroke-linecap="round" fill="none"/>`);
+  s += part("gate", "A region drawn on the plot to select a population of cells.", `<rect x="${f1(sx(g.fsc[0]))}" y="${f1(sy(g.ssc[1]))}" width="${f1(sx(g.fsc[1]) - sx(g.fsc[0]))}" height="${f1(sy(g.ssc[0]) - sy(g.ssc[1]))}" fill="none" stroke="${C.a2}" stroke-width="2.2"/>`);
+  for (const p of spec.populations) s += text(sx(p.fsc[0]) + (p.name === g.population ? 8 : 0), sy(p.ssc[0]) - (p.name === g.population ? 62 : 38) , p.name, { size: 11.5, weight: 700, fill: p.name === g.population ? C.a2 : C.ink, halo: true });
+  s += text(sx(g.fsc[1]) + 4, sy(g.ssc[1]) + 4, `gate: ${D.gatePercent.toFixed(1)}% of events`, { size: 11.5, weight: 700, fill: C.a2, anchor: "start", halo: true });
+  // histogram of anti-CD4 fluorescence in the gated cells
+  const bins = 44, lo = 0, hi = 4, bw = pw / bins, count = (key) => { const b = new Array(bins).fill(0); for (const e of D.gated) { const k = Math.floor(((e[key] - lo) / (hi - lo)) * bins); if (k >= 0 && k < bins) b[k]++; } return b; };
+  const st = count("stained"), ct = count("control"), top = Math.max(...st, ...ct) * 1.12, hx = (v) => x2 + ((v - lo) / (hi - lo)) * pw, hy = (c) => y2 + ph - (c / top) * ph;
+  s += text(x2 - 40, narrow ? y2 - 26 : 14, "2  Count the labelled cells in the gate", { size: 13, weight: 700, anchor: "start" });
+  s += `<rect x="${x2}" y="${y2}" width="${pw}" height="${ph}" fill="none" stroke="${C.soft}" stroke-width="1.4"/>`;
+  [0, 1, 2, 3, 4].forEach((t) => { s += text(hx(t), y2 + ph + 12, t === 0 ? "1" : `10^{${t}}`, { size: 10.5, fill: C.soft }); });
+  s += text(x2 + pw / 2, y2 + ph + 29, "anti-CD4 fluorescence, arbitrary units (log)", { size: 11.5 }) + `<text transform="translate(${x2 - 14} ${y2 + ph / 2}) rotate(-90)" font-size="11.5" text-anchor="middle" dominant-baseline="middle" fill="${C.ink}">cells</text>`;
+  const bars = (b, fill, op, stroke) => b.map((c, i) => `<rect x="${f1(x2 + i * bw)}" y="${f1(hy(c))}" width="${f1(bw)}" height="${f1(y2 + ph - hy(c))}" fill="${fill}" fill-opacity="${op}" stroke="${stroke}" stroke-width=".8"/>`).join("");
+  s += part("stained gated cells", "Gated cells labelled with fluorescent anti-CD4 antibody.", bars(st, C.a1, 0.5, C.a1)) + part("unstained control", "Unstained cells show the background fluorescence and set the threshold for a positive signal.", bars(ct, "none", 0, C.ink));
+  s += part("threshold", "Set from the unstained control: only brighter cells count as positive.", `<path d="M${f1(hx(D.threshold))} ${y2} V${y2 + ph}" stroke="${C.a2}" stroke-width="2" stroke-dasharray="5 4"/>`);
+  s += text(hx(D.threshold) + 5, y2 + 12, `threshold from the control`, { size: 10.5, anchor: "start", fill: C.a2, weight: 700 }) + text(hx(3.1), y2 + 34, `CD4-positive: ${D.positivePercent.toFixed(1)}%`, { size: 12, weight: 700, fill: C.a1, halo: true });
+  const lx = hx(2.3);
+  s += `<path d="M${f1(lx)} ${y2 + 60} h16" stroke="${C.ink}" stroke-width="1.4"/>` + text(lx + 22, y2 + 60, "unstained control", { size: 10.5, anchor: "start" }) + `<rect x="${f1(lx)}" y="${y2 + 74}" width="16" height="8" fill="${C.a1}" fill-opacity=".5" stroke="${C.a1}"/>` + text(lx + 22, y2 + 78, "stained cells", { size: 10.5, anchor: "start" });
+  const H = (narrow ? y2 + ph : y1 + ph) + 44, note = textBlock(W / 2, H + 8, `Simulated data (${spec.n} events, illustrative values): not from a real patient.`, narrow ? 52 : 120, { size: 11, fill: C.soft });
+  return { s: s + note.svg, H: H + 16 + note.h };
+}
+function cytometryChecks(spec) {
+  const D = cytometryData(spec), out = [], g = spec.gate;
+  out.push(check("the gate is a region of the plot", g.fsc[0] < g.fsc[1] && g.ssc[0] < g.ssc[1] && g.fsc[0] >= 0 && g.fsc[1] <= 1000));
+  out.push(check(`the gate collects the ${g.population}: at least 90% of them are inside`, D.recall >= 0.9, `${(100 * D.recall).toFixed(0)}% inside`));
+  out.push(check(`the gated cells are mostly ${g.population}: at least 90%`, D.purity >= 0.9, `${(100 * D.purity).toFixed(0)}% pure`));
+  out.push(check("the threshold is set from the unstained control: at least 98% of control cells are below it", D.controlBelow >= 0.98, `${(100 * D.controlBelow).toFixed(1)}%`));
+  out.push(check("the population fractions add to 1", Math.abs(spec.populations.reduce((a, p) => a + p.frac, 0) - 1) < 1e-9));
+  for (const c of spec.claims || []) {
+    const v = c.type === "gate" ? D.gatePercent : D.positivePercent;
+    out.push(check(c.type === "gate" ? `the gate holds ${c.percent}% of the events (counted: ${v.toFixed(1)}%)` : `${c.percent}% of the gated cells are CD4-positive (counted: ${v.toFixed(1)}%)`, Math.abs(v - c.percent) <= (c.tol ?? 1)));
+  }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1887,6 +2076,9 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  cleavage: { draw: cleavageDraw, checks: cleavageChecks, widths: [700, 380] },
+  fertilisation: { draw: fertilisationDraw, checks: fertilisationChecks, widths: [700, 380] },
+  cytometry: { draw: cytometryDraw, checks: cytometryChecks, widths: [700, 380] },
   section: { draw: sectionDraw, checks: sectionChecks, widths: [700, 380] },
   bilayer: { draw: bilayerDraw, checks: bilayerChecks, widths: [700, 380] },
   inducedfit: { draw: inducedfitDraw, checks: inducedfitChecks, widths: [720, 380] },

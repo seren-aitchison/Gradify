@@ -639,6 +639,7 @@ H: Steps in mammals
 - At the egg, the **acrosome reaction** releases enzymes that digest the **zona pellucida**.
 - The sperm membrane fuses with the egg membrane, and the sperm nucleus enters.
 - The egg completes meiosis II, and the two haploid nuclei combine.
+D: bio-fertilisation
 H: Blocking polyspermy
 - The **cortical reaction**: cortical granules release enzymes that harden the zona pellucida.
 - This prevents more sperm from binding or entering.
@@ -679,6 +680,7 @@ H: Cleavage divisions
 - Cells (**blastomeres**) become smaller with each division.
 - The cell cycle is shortened, with little or no G₁ and G₂ in many species.
 - The pattern of cleavage depends on the amount of yolk.
+D: bio-cleavage
 H: Morula, blastula and blastocyst
 - A solid ball of cells, the **morula**, forms after several divisions.
 - In many animals, a fluid-filled cavity forms, giving a **blastula**.
