@@ -75,6 +75,7 @@ function loadLibs() {
     await Promise.all([css(vendor("mind-elixir/MindElixir.css")), css(vendor("liquid-glass/tokens.css")), css(vendor("liquid-glass/glass-toolbar.css")), css(vendor("liquid-glass/glass-segmented.css")), css(vendor("liquid-glass/glass-search.css")), css(vendor("liquid-glass/glass-surface.css")), css(new URL("maps.css", here).href)]);
     const { default: MindElixir } = await import(vendor("mind-elixir/MindElixir.js"));
     // refraction is a progressive enhancement (Chromium on desktop); everything works without it
+    document.documentElement.setAttribute("data-glass-refract", "off"); // flat frosted controls, no SVG refraction filters
     if (!document.querySelector("script[data-liquid-glass]")) { const s = document.createElement("script"); s.src = vendor("liquid-glass/liquid-glass.js"); s.defer = true; s.dataset.liquidGlass = ""; document.head.append(s); }
     return { MindElixir };
   })());

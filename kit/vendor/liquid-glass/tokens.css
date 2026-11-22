@@ -26,7 +26,7 @@
   --glass-rim: 0.6;                   /* specular rim intensity, 0–1 */
   --glass-blur: 2px;                  /* frost while refraction is active */
   --glass-blur-fallback: 8px;         /* frost when refraction is unavailable */
-  --glass-saturation: 180%;
+  --glass-saturation: 100%;
 
   /* Refraction (read by liquid-glass.js) */
   --glass-refraction: 48;             /* displacement strength, in px */
