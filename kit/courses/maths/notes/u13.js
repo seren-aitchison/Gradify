@@ -24,6 +24,7 @@ X: Data: 2, 4, 4, 5, 7, 9, 30. Find the mean, the median and the IQR, and check 
 > Mean = 61/7 ≈ 8.71; median = 5 (the 4th of 7 values)
 > Q1 = 4 and Q3 = 9 (medians of 2, 4, 4 and 7, 9, 30), so IQR = 5
 > Upper fence = 9 + 1.5 × 5 = 16.5, so 30 is an outlier, which is why the mean exceeds the median
+D: maths-u13-boxplot-outlier
 K: Use median and IQR for skewed data or outliers, mean and SD for symmetric data; flag outliers with the 1.5 × IQR rule; plot first.
 !: Reporting the mean alone for heavily skewed data.
 Q: Which measure of centre is resistant to outliers? | The median.
@@ -59,6 +60,7 @@ X: Find r for x = 1, 2, 3, 4, 5 and y = 2, 4, 5, 4, 5.
 > x̄ = 3, ȳ = 4; deviations: x: −2, −1, 0, 1, 2 and y: −2, 0, 1, 0, 1
 > S_{xy} = 4 + 0 + 0 + 0 + 2 = 6; S_{xx} = 10; S_{yy} = 6
 > r = 6/√60 ≈ 0.775: a fairly strong positive correlation
+D: maths-u13-correlation-r
 P: **Investigate with the lab.** Make r above 0.95, then below −0.9. Then load the curved data where r ≈ 0 although the relationship is strong.
 IX: regression
 K: r = S_{xy}/√(S_{xx}S_{yy}) measures linear association; r^{2} is variance explained; correlation isn't causation; plot the data.
@@ -167,6 +169,7 @@ X: In a random sample of 400 adults, 88 say they cycle weekly. Estimate the popu
 > p̂ = 88/400 = 0.22
 > SE = √(0.22 × 0.78/400) ≈ 0.0207
 > 0.22 ± 1.96 × 0.0207 ≈ 0.22 ± 0.041: about (0.179, 0.261)
+D: maths-u13-proportion-interval
 K: Samples estimate population parameters; report estimates with uncertainty; inference relies on random sampling and checked assumptions.
 !: Confusing the sample statistic with the population parameter.
 Q: Is the mean height of all UK adults a parameter or a statistic? | A parameter.
@@ -202,6 +205,7 @@ X: Estimator A is unbiased with variance 4; estimator B has bias 1 and variance 
 > MSE(A) = 4 + 0^{2} = 4
 > MSE(B) = 2 + 1^{2} = 3
 > B has smaller MSE: a little bias can be worth a big cut in variance
+D: maths-u13-mse-bars
 K: Judge estimators by bias, variance, MSE and consistency; s^{2} divides by n − 1 to remove bias; the frameworks differ in what probability means.
 !: Assuming an unbiased estimator is always best.
 Q: What is the MSE of an estimator with bias 2 and variance 5? | 9.
@@ -272,6 +276,7 @@ X: A population has μ = 50 and σ = 12. For samples of 36, find P(X̄ > 53).
 > SE = 12/√36 = 2
 > z = (53 − 50)/2 = 1.5
 > P(X̄ > 53) ≈ P(Z > 1.5) ≈ 0.0668
+D: maths-u13-sample-mean-tail
 P: **Investigate with the lab.** Plot sample means for n = 1, 4 and 30 and compare their spread with σ/√n each time.
 IX: clt
 K: X̄ has mean μ and SE σ/√n; p̂ has SE √(p(1 − p)/n); sampling distributions underpin all inference.
@@ -311,6 +316,7 @@ X: 1,000 customers are surveyed; 400 respond and 60% of them are satisfied. Boun
 > 240 respondents are satisfied
 > If all 600 non-respondents are dissatisfied: 240/1000 = 24%
 > If all are satisfied: 840/1000 = 84%; non-response leaves a wide range
+D: maths-u13-nonresponse-bounds
 K: Bias comes from how the sample is chosen; it doesn't shrink with n; random selection, follow-up and weighting reduce it.
 !: Believing a very large sample must be accurate.
 Q: Does doubling a biased sample remove the bias? | No: it only reduces random error.
@@ -344,6 +350,7 @@ X: A sample of 50 has x̄ = 12.4 with known σ = 3. Find a 95% confidence interv
 > SE = 3/√50 ≈ 0.424
 > Margin = 1.96 × 0.424 ≈ 0.832
 > Interval ≈ (11.57, 13.23)
+D: maths-u13-mean-interval
 K: Estimate ± critical value × SE; the confidence level describes the method's long-run success; width shrinks like 1/√n.
 !: Saying "there's a 95% probability that μ lies in this particular interval" in a frequentist analysis.
 Q: Which critical value is used for a 99% normal interval? | 2.576.
@@ -379,6 +386,7 @@ X: Waiting times 2, 3 and 5 minutes are modelled as exponential(λ). Find the ML
 > L(λ) = λ^{3}e^{−10λ}, so ln L = 3 ln λ − 10λ
 > d/dλ: 3/λ − 10 = 0
 > λ̂ = 0.3 per minute (= 1/x̄)
+D: maths-u13-exponential-likelihood
 K: Maximise ln L; standard results: p̂ = x/n, λ̂ = x̄ (Poisson), μ̂ = x̄; MLEs are consistent, efficient and invariant.
 !: Maximising L without taking logs and getting lost in product rule algebra.
 Q: What is the MLE of p after 7 successes in 20 trials? | 0.35.
@@ -447,6 +455,7 @@ X: A coin is tossed 20 times and gives 15 heads. Test at 5% whether it's biased 
 > H₀: p = 0.5, H₁: p > 0.5; X ~ B(20, 0.5) under H₀
 > P(X ≥ 15) = (15,504 + 4,845 + 1,140 + 190 + 20 + 1)/2^{20} = 21,700/1,048,576 ≈ 0.0207
 > 0.0207 < 0.05: reject H₀; there's evidence at the 5% level that the coin favours heads
+D: maths-u13-coin-test
 K: State H₀ and H₁, choose α, compute the p-value or critical region, and conclude in context without overclaiming.
 !: Writing "H₀ is true" when the test fails to reject it.
 Q: What is a two-tailed test? | One where H₁ allows a difference in either direction.
@@ -517,6 +526,7 @@ X: A two-sided z-test gives z = 2.3. Find the p-value.
 > P(Z ≥ 2.3) = 1 − Φ(2.3) ≈ 1 − 0.9893 = 0.0107
 > Two-sided: double it
 > p ≈ 0.0214: significant at 5% but not at 1%
+D: maths-u13-two-sided-p
 K: A p-value is P(this extreme or more ∣ H₀); double one tail for two-sided tests; it isn't P(H₀ true) or an effect size.
 !: Reading p = 0.03 as "a 3% chance the null hypothesis is true".
 Q: Which is larger for the same z, the one- or two-tailed p-value? | The two-tailed (double the one-tailed).
@@ -551,6 +561,7 @@ X: IQ scores have σ = 15. With n = 25, we test H₀: μ = 100 against H₁: μ 
 > SE = 15/5 = 3. α = P(X̄ > 105 | μ = 100) = P(Z > 1.667) ≈ 0.048
 > β = P(X̄ ≤ 105 | μ = 110) = P(Z ≤ −1.667) ≈ 0.048
 > So the power against μ = 110 is about 0.952
+D: maths-u13-type-errors
 K: Type I: false rejection (α); Type II: missed effect (β); reducing one raises the other unless n increases; weigh their costs.
 !: Thinking β is fixed by α: it depends on the true value and the sample size.
 Q: What is a Type I error in a fire alarm? | The alarm sounds with no fire.
@@ -620,6 +631,7 @@ X: Group means are 75 and 70 with pooled SD 10. In a trial, 20% of controls and 
 > d = (75 − 70)/10 = 0.5, a medium effect
 > ARR = 0.20 − 0.15 = 0.05
 > NNT = 1/0.05 = 20: treat 20 people to prevent one stroke
+D: maths-u13-cohens-d
 K: Effect sizes measure magnitude; report d, r, ARR, RR or OR with confidence intervals; NNT = 1/ARR.
 !: Reporting only a p-value with no effect size.
 Q: What is Cohen's d if the means differ by 3 and the pooled SD is 6? | 0.5.
@@ -654,6 +666,7 @@ X: A study tests 20 independent outcomes at the 5% level with no real effects. F
 > P(no false positives) = 0.95^{20} ≈ 0.358
 > P(at least one) ≈ 0.642
 > Bonferroni: test each at 0.05/20 = 0.0025
+D: maths-u13-twenty-tests
 K: Many tests inflate false positives: FWER = 1 − (1 − α)^{m}; Bonferroni uses α/m; Holm is a more powerful step-down version.
 !: Highlighting the one significant result out of 20 without any correction.
 Q: What is the Bonferroni threshold for 10 tests at α = 0.05? | 0.005.
@@ -758,6 +771,7 @@ X: Ten paired differences are 8 positive and 2 negative. Use a sign test, one-ta
 > Under H₀ the number of positives is B(10, 0.5)
 > P(X ≥ 8) = (C(10, 8) + C(10, 9) + C(10, 10))/1024 = (45 + 10 + 1)/1024 ≈ 0.0547
 > 0.0547 > 0.05: not significant, though close; a more powerful test might use the sizes of the differences
+D: maths-u13-sign-test
 K: Nonparametric tests use ranks or signs and few assumptions; they're robust to outliers and ordinal data, with only a small loss of power under normality.
 !: Assuming nonparametric tests need no assumptions at all: they still need independence.
 Q: Which nonparametric test compares two independent groups? | The Mann–Whitney U test.
@@ -792,6 +806,7 @@ X: A machine fills bags with σ = 20 g. A sample of 64 has mean 505 g. Test H₀
 > SE = 20/8 = 2.5
 > z = (505 − 500)/2.5 = 2
 > |z| = 2 > 1.96: reject H₀ (p ≈ 0.046); the mean appears to differ from 500 g
+D: maths-u13-z-test-bags
 K: z = (estimate − null value)/SE; use σ or p₀ in the SE; z-tests need known σ or large samples.
 !: Using p̂ instead of p₀ in the standard error of a one-proportion test.
 Q: What critical value is used for a one-sided 5% z-test? | 1.645.
@@ -860,6 +875,7 @@ X: A die is rolled 60 times, giving counts 8, 9, 12, 11, 6, 14. Test at 5% wheth
 > E = 10 for each face
 > X^{2} = (4 + 1 + 4 + 1 + 16 + 16)/10 = 4.2
 > 4.2 < 11.07: no evidence the die is unfair
+D: maths-u13-die-counts
 K: X^{2} = Σ(O − E)^{2}/E; degrees of freedom k − 1 − estimated parameters, or (r − 1)(c − 1); keep expected counts ≥ 5; use counts not percentages.
 !: Forgetting to subtract a degree of freedom for each parameter estimated from the data.
 Q: How do you find an expected count in a contingency table? | (Row total × column total)/grand total.
@@ -894,6 +910,7 @@ X: In the tea experiment, what is the probability that a guesser gets at least t
 > P(exactly 3 right) = C(4, 3)C(4, 1)/C(8, 4) = 16/70
 > P(all 4 right) = 1/70
 > P(at least 3) = 17/70 ≈ 0.243: three right isn't convincing evidence
+D: maths-u13-tea-hypergeometric
 K: Fisher's test fixes the margins and uses hypergeometric probabilities; it's exact for small tables.
 !: Using a chi-squared test when expected counts are very small.
 Q: Which distribution underlies Fisher's exact test? | The hypergeometric.
@@ -1065,6 +1082,7 @@ X: Groups A: 4, 5, 6; B: 6, 7, 8; C: 8, 9, 10. Carry out a one-way ANOVA (F(2, 6
 > Means 5, 7, 9; grand mean 7. SS_{B} = 3(4 + 0 + 4) = 24; SS_{W} = 2 + 2 + 2 = 6
 > MS_{B} = 24/2 = 12; MS_{W} = 6/6 = 1
 > F = 12 > 5.14: reject H₀; at least one mean differs
+D: maths-u13-anova-groups
 K: Total SS = between + within; F = MS_{B}/MS_{W} with (k − 1, N − k) degrees of freedom; follow up with post hoc tests.
 !: Running many t-tests instead of ANOVA, inflating the false positive rate.
 Q: What are the degrees of freedom for one-way ANOVA with 4 groups and 20 observations? | (3, 16).
@@ -1133,6 +1151,7 @@ X: Among 100 exposed people, 30 develop a disease; among 100 unexposed, 10 do. F
 > RR = 0.30/0.10 = 3
 > OR = (30 × 90)/(70 × 10) = 2700/700 ≈ 3.86
 > The outcome isn't rare, so the OR overstates the RR
+D: maths-u13-risk-bars
 K: Odds = p/(1 − p); RR and OR measure association; OR ≈ RR only for rare outcomes; match the method to nominal, ordinal or paired data.
 !: Reporting an odds ratio as if it were a relative risk for a common outcome.
 Q: What are the odds for a probability of 0.75? | 3 (3 to 1).
@@ -1203,6 +1222,7 @@ X: A model for children aged 2 to 10 gives height = 80 + 6 × age (cm). What doe
 > 80 + 6 × 40 = 320 cm
 > No one is 3.2 m tall: growth stops in adolescence
 > The model was fitted only for ages 2 to 10; extrapolating far outside that range is invalid
+D: maths-u13-extrapolation
 P: **Investigate with the lab.** Fit a line, then look at the residual pattern. A curve in the residuals means a straight line is the wrong model.
 IX: regression
 K: Regression models y from predictors for prediction, explanation and adjustment; choose the model by response type; beware extrapolation, overfitting and confounding.
@@ -1240,6 +1260,7 @@ X: For x = 1, 2, 3, 4, 5 and y = 2, 4, 5, 4, 5, find the least squares line and 
 > S_{xy} = 6, S_{xx} = 10, S_{yy} = 6; b = 0.6
 > a = 4 − 0.6 × 3 = 2.2, so ŷ = 2.2 + 0.6x
 > R^{2} = S_{xy}^{2}/(S_{xx}S_{yy}) = 36/60 = 0.6
+D: maths-u13-least-squares-line
 P: **Investigate with the lab.** Add points along a trend, then add one outlier that changes the gradient by more than 50% (the lab's challenge). Watch the residuals change too.
 IX: regression
 K: b = S_{xy}/S_{xx}, a = ȳ − b x̄; interpret b as change per unit x; R^{2} measures fit; always check residual plots.
@@ -1311,6 +1332,7 @@ X: A model gives logit(p) = −3 + 0.5x. Find the probability at x = 4 and the o
 > η = −3 + 0.5 × 4 = −1
 > p = 1/(1 + e^{1}) ≈ 0.269
 > Odds ratio per unit = e^{0.5} ≈ 1.65: each unit multiplies the odds by 1.65
+D: maths-u13-logistic-curve
 K: Logistic regression models log-odds linearly; e^{β} is an odds ratio; p = 1/(1 + e^{−η}); assess calibration and discrimination.
 !: Reading a coefficient as a change in probability rather than in log-odds.
 Q: What is p when η = 0? | 0.5.
@@ -1345,6 +1367,7 @@ X: A model gives log μ = 0.5 + 0.2x. Find the expected count at x = 5 and the r
 > η = 0.5 + 0.2 × 5 = 1.5
 > μ = e^{1.5} ≈ 4.48
 > Rate ratio = e^{0.2} ≈ 1.22: each unit raises the expected count by about 22%
+D: maths-u13-poisson-regression
 K: Poisson regression uses a log link; e^{β} is a rate ratio; use offsets for exposure; check for overdispersion.
 !: Ignoring overdispersion, which overstates the precision of the estimates.
 Q: What does an offset of log(person-years) do? | Turns the model into one for rates per person-year.
@@ -1378,6 +1401,7 @@ X: A Michaelis–Menten model has V_{max} = 10 and K_{m} = 2. Find V at S = 2 an
 > V = 10S/(2 + S)
 > At S = 2: 20/4 = 5 (half of V_{max}: that's what K_{m} means)
 > At S = 6: 60/8 = 7.5
+D: maths-u13-michaelis-menten
 K: Nonlinear-in-parameters models need iterative least squares with good starting values; polynomials are still linear models; avoid error-distorting linearisations.
 !: Fitting a linearised form and assuming the errors behave as in the original model.
 Q: Is y = a + bx + cx^{2} a nonlinear regression model? | No: it's linear in the parameters.
@@ -1412,6 +1436,7 @@ X: Points (1, 1), (2, 2), (3, 3), (4, 4), (5, 20). Compare the least squares slo
 > Least squares: S_{xy} = 40 and S_{xx} = 10, so b = 4
 > Theil–Sen: the six pairs among the first four points have slope 1; pairs with (5, 20) give 4.75, 6, 8.5 and 16
 > Median of the ten slopes = 1: the robust line follows the main pattern
+D: maths-u13-outlier-slopes
 P: **Investigate with the lab.** Add a single outlier and measure how far the least-squares line moves. This sensitivity is what robust methods are designed to reduce.
 IX: regression
 K: Least squares has zero breakdown; LAD, M-estimators and Theil–Sen resist outliers; compare robust and ordinary fits as a diagnostic.
@@ -1449,6 +1474,7 @@ X: For τ = 0.9, find the check loss for residuals of +2 and −2.
 > Positive residual: 0.9 × 2 = 1.8
 > Negative residual: (1 − 0.9) × 2 = 0.2
 > Under-prediction costs nine times as much, pushing the fit up to the 90th percentile
+D: maths-u13-check-loss
 K: Quantile regression fits conditional quantiles using the asymmetric check loss; τ = 0.5 is median regression; it shows effects across the whole distribution.
 !: Interpreting a 90th-percentile coefficient as an effect on the mean.
 Q: Which quantile regression is the same as least absolute deviations? | Median regression (τ = 0.5).
@@ -1517,6 +1543,7 @@ X: With orthonormal predictors, least squares estimates are 3, −0.5 and 1.2. F
 > Soft-threshold each by 1
 > 3 → 2; −0.5 → 0 (|−0.5| < 1); 1.2 → 0.2
 > Lasso estimates: 2, 0, 0.2; the second predictor is dropped
+D: maths-u13-soft-threshold
 K: The lasso's |β| penalty shrinks and selects; soft-thresholding shows how; elastic net helps with correlated predictors; choose λ by cross-validation.
 !: Treating the variables the lasso selects as proven to matter.
 Q: Which penalty can set coefficients exactly to zero, ridge or lasso? | The lasso.
@@ -1793,6 +1820,7 @@ X: Two classes have means 10 and 16 with common σ = 2. Find the boundary with e
 > Equal priors: the midpoint, x = 13
 > Unequal: x = 13 + σ^{2} ln(0.8/0.2)/(16 − 10) = 13 + 4 × 1.386/6
 > ≈ 13.92: the boundary moves towards the rarer class's mean
+D: maths-u13-discriminant-boundary
 K: LDA assumes normal classes with shared covariance (linear boundary); QDA allows different covariances; priors shift boundaries; validate by cross-validation.
 !: Reporting the classification accuracy on the same data used to fit the model.
 Q: What shape are LDA's decision boundaries? | Linear (straight lines or planes).
@@ -1932,6 +1960,7 @@ X: Prior μ ~ N(100, 10^{2}); 4 observations with σ = 10 have mean 110. Find th
 > Prior precision 1/100 = 0.01; data precision 4/100 = 0.04; total 0.05, so variance 20 (SD ≈ 4.47)
 > Mean = (0.01 × 100 + 0.04 × 110)/0.05 = 5.4/0.05 = 108
 > Posterior N(108, 20); 95% credible interval ≈ 108 ± 8.8
+D: maths-u13-normal-posterior
 K: Precisions add; the posterior mean is a precision-weighted average; summarise with means and credible intervals; check with posterior predictive simulations.
 !: Forgetting to weight prior and data by their precisions.
 Q: What happens to the prior's influence as n grows? | It shrinks: the data dominate.
@@ -2037,6 +2066,7 @@ X: Group A: 7, 9; group B: 1, 3. The difference in means is 6. Find the exact on
 > There are C(4, 2) = 6 ways to choose which two values are labelled A
 > The differences (A − B) are 6, 0, −2, 2, 0, −6
 > Only one arrangement (the observed one) gives 6 or more: p = 1/6 ≈ 0.167
+D: maths-u13-permutation-differences
 K: Shuffle labels, recompute the statistic, and count how often shuffles are as extreme; valid under exchangeability; works for any statistic.
 !: Using permutation tests when observations aren't exchangeable under H₀ (for example, very unequal variances).
 Q: What assumption does a permutation test need? | Exchangeability of labels under the null hypothesis.
@@ -2211,6 +2241,7 @@ X: A 2^{2} experiment gives responses: (A−, B−) 10, (A+, B−) 14, (A−, B+
 > A: (14 + 20)/2 − (10 + 12)/2 = 17 − 11 = 6
 > B: (12 + 20)/2 − (10 + 14)/2 = 16 − 12 = 4
 > AB: [(20 − 12) − (14 − 10)]/2 = (8 − 4)/2 = 2
+D: maths-u13-interaction-plot
 K: Factorial designs estimate main effects and interactions together; 2^{k} runs for k two-level factors; fractional designs trade aliasing for fewer runs.
 !: Changing one factor at a time, which can't detect interactions.
 Q: How many runs does a full 2^{4} factorial need? | 16.
@@ -2246,6 +2277,7 @@ X: A policy starts in town A. Mean accidents fall from 50 to 40 in A, and from 5
 > Change in A: 40 − 50 = −10
 > Change in B: 48 − 52 = −4
 > DiD estimate = −10 − (−4) = −6 accidents, assuming parallel trends without the policy
+D: maths-u13-diff-in-diff
 K: Causal effects compare potential outcomes; randomisation identifies them; observational methods (DAGs, propensity scores, IV, DiD, RD) need explicit assumptions.
 !: Adjusting for a collider, which can create a spurious association.
 Q: What is the fundamental problem of causal inference? | Only one potential outcome is observed for each unit.
@@ -2315,6 +2347,7 @@ X: Two studies estimate an effect as 2 (SE 1) and 4 (SE 2). Find the fixed-effec
 > Weights: 1/1^{2} = 1 and 1/2^{2} = 0.25
 > Pooled = (2 × 1 + 4 × 0.25)/1.25 = 3/1.25 = 2.4
 > SE = 1/√1.25 ≈ 0.894, smaller than either study's
+D: maths-u13-fixed-effect
 K: Pool with inverse-variance weights; check heterogeneity (Q, τ^{2}, I^{2}); use random effects when effects vary; look for publication bias.
 !: Pooling studies of very different quality or design without examining heterogeneity and bias.
 Q: Which study gets more weight in inverse-variance meta-analysis? | The more precise one (smaller SE).

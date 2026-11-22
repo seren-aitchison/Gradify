@@ -48880,5 +48880,1982 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u13-anova-groups": {
+  "title": "Three groups of three",
+  "caption": "Group means 5, 7 and 9 give a between-group sum of squares 24 on 2 df and a within-group sum of squares 6 on 6 df, so F = 12/1 = 12 > 5.14: the means differ.",
+  "alt": "Three box plots for groups A (4, 5, 6), B (6, 7, 8) and C (8, 9, 10), each of width 2, centred at 5, 7 and 9, touching at the ends.",
+  "description": [
+   "Each group has spread 2 (SS = 2 each, 6 in total within).",
+   "The group centres 5, 7, 9 are 2 apart, so the between-group SS is 3 × (4 + 0 + 4) = 24.",
+   "F = (24/2)/(6/6) = 12."
+  ],
+  "course": "maths",
+  "lesson": "Analysis of Variance (ANOVA)",
+  "also": [],
+  "renderer": "boxplot",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Analysis of Variance (ANOVA)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A: min, Q1, median, Q3, max = 4, 4, 5, 6, 6 (halves)",
+    "ok": true,
+    "detail": "from the data 4, 4, 5, 6, 6"
+   },
+   {
+    "name": "B: min, Q1, median, Q3, max = 6, 6, 7, 8, 8 (halves)",
+    "ok": true,
+    "detail": "from the data 6, 6, 7, 8, 8"
+   },
+   {
+    "name": "C: min, Q1, median, Q3, max = 8, 8, 9, 10, 10 (halves)",
+    "ok": true,
+    "detail": "from the data 8, 8, 9, 10, 10"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×314"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×296"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-boxplot-outlier": {
+  "title": "Seven values and one outlier",
+  "caption": "Median 5, quartiles 4 and 9, so IQR = 5 and the fences are 4 − 7.5 and 9 + 7.5 = 16.5: the value 30 lies beyond the upper fence and is drawn as an outlier.",
+  "alt": "A box plot of 2, 4, 4, 5, 7, 9, 30: box from 4 to 9 with median 5, whisker to 2 and 9, and the value 30 plotted separately as an outlier.",
+  "description": [
+   "The median is the middle value, 5; the quartiles are 4 and 9, so the box spans 4 to 9 (IQR 5).",
+   "The upper fence is 9 + 1.5 × 5 = 16.5; the lower fence is −3.5.",
+   "30 is beyond 16.5, so it is an outlier and the whisker stops at 9."
+  ],
+  "course": "maths",
+  "lesson": "Descriptive Statistics",
+  "also": [],
+  "renderer": "boxplot",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Descriptive Statistics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "data: min, Q1, median, Q3, max = 2, 4, 5, 9, 9 (halves)",
+    "ok": true,
+    "detail": "from the data 2, 4, 5, 9, 9"
+   },
+   {
+    "name": "data: outliers beyond 1.5 × IQR are 30",
+    "ok": true,
+    "detail": "found 30"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×146"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×140"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-check-loss": {
+  "title": "The check loss for τ = 0.9",
+  "caption": "ρ(u) = u(0.9 − 1{u < 0}): a positive residual costs 0.9u, a negative one 0.1|u|. So +2 costs 1.8 and −2 costs 0.2: under-prediction is penalised nine times as much.",
+  "alt": "A V-shaped graph, steep on the right (slope 0.9) and shallow on the left (slope −0.1), with the points (2, 1.8) and (−2, 0.2).",
+  "description": [
+   "For positive residuals the loss rises with slope 0.9.",
+   "For negative residuals it rises with slope 0.1 as the residual becomes more negative.",
+   "ρ(2) = 1.8 and ρ(−2) = 0.2."
+  ],
+  "course": "maths",
+  "lesson": "Quantile Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Quantile Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(2, 1.8) lies on y = 0.5*abs(x)+0.4*x",
+    "ok": true,
+    "detail": "y(2) = 1.8"
+   },
+   {
+    "name": "(-2, 0.2) lies on y = 0.5*abs(x)+0.4*x",
+    "ok": true,
+    "detail": "y(-2) = 0.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-cohens-d": {
+  "title": "Cohen's d = 0.5",
+  "caption": "Means 70 and 75 with pooled SD 10 differ by 5, which is half a standard deviation: d = 0.5. The curves overlap heavily even though the means differ.",
+  "alt": "Two normal curves with SD 10 centred at 70 and 75, overlapping, with the 5-unit gap marked.",
+  "description": [
+   "The difference in means is 75 − 70 = 5.",
+   "Dividing by the pooled SD 10 gives d = 0.5.",
+   "A medium effect: the two groups' distributions overlap a lot."
+  ],
+  "course": "maths",
+  "lesson": "Effect Sizes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Effect Sizes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum of exp(-(x-70)^2/(2*10^2))/(10*sqrt(2*3.141592653589793)) is at (70, 0.0399)",
+    "ok": true,
+    "detail": "found (69.999, 0.04)"
+   },
+   {
+    "name": "maximum of exp(-(x-75)^2/(2*10^2))/(10*sqrt(2*3.141592653589793)) is at (75, 0.0399)",
+    "ok": true,
+    "detail": "found (75.001, 0.04)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-coin-test": {
+  "title": "15 heads in 20 tosses of a fair coin",
+  "caption": "Under H₀ the number of heads is B(20, 0.5). P(X ≥ 15) = 0.0207, below 5%, so 15 heads is unusual enough to reject fairness.",
+  "alt": "Bar chart of B(20, 0.5) with bars 15 to 20 shaded, total 0.0207.",
+  "description": [
+   "Under H₀ the count is B(20, 0.5), centred at 10.",
+   "The shaded bars from 15 up add to 0.0207.",
+   "That is below 0.05, so reject H₀."
+  ],
+  "course": "maths",
+  "lesson": "Hypothesis Testing",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Hypothesis Testing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0207",
+    "ok": true,
+    "detail": "computed 0.020695"
+   },
+   {
+    "name": "mean 10",
+    "ok": true,
+    "detail": "10"
+   },
+   {
+    "name": "P(15 ≤ X ≤ 20) = 0.0207",
+    "ok": true,
+    "detail": "0.020695"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-correlation-r": {
+  "title": "r for five points",
+  "caption": "The points (1, 2) to (5, 5) have means 3 and 4, S_xy = 6, S_xx = 10, S_yy = 6, so r = 6/√60 ≈ 0.775 and the line of best fit is y = 2.2 + 0.6x.",
+  "alt": "Scatter plot of five points rising on average with the fitted line y = 2.2 + 0.6x through the mean point (3, 4).",
+  "description": [
+   "The points rise on average but with scatter.",
+   "The mean point (3, 4) lies on the best-fit line.",
+   "r = 6/√(10 × 6) ≈ 0.775."
+  ],
+  "course": "maths",
+  "lesson": "Correlation",
+  "also": [],
+  "renderer": "scatter",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Correlation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line is the least-squares line y = 2.2 + 0.6x",
+    "ok": true,
+    "detail": "from the data y = 2.2 + 0.6x"
+   },
+   {
+    "name": "r = 0.775",
+    "ok": true,
+    "detail": "r = 0.7746"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-die-counts": {
+  "title": "60 rolls of a die",
+  "caption": "A fair die would give 10 of each face. The observed counts 8, 9, 12, 11, 6, 14 differ from 10 by −2, −1, 2, 1, −4, 4, so χ² = (4 + 1 + 4 + 1 + 16 + 16)/10 = 4.2, below 11.07: no evidence of bias.",
+  "alt": "Bar chart of the face counts 8, 9, 12, 11, 6 and 14 for faces 1 to 6.",
+  "description": [
+   "The expected count for each face is 60/6 = 10.",
+   "Squared differences from 10 are 4, 1, 4, 1, 16, 16, which sum to 42.",
+   "χ² = 42/10 = 4.2, less than the critical value 11.07."
+  ],
+  "course": "maths",
+  "lesson": "Chi-Squared Tests",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Chi-Squared Tests"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 60",
+    "ok": true,
+    "detail": "computed 60"
+   },
+   {
+    "name": "mean = 11/3",
+    "ok": true,
+    "detail": "computed 3.6667"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-diff-in-diff": {
+  "title": "Difference in differences",
+  "caption": "Town A fell 10 (50 → 40); similar town B fell 4 (52 → 48) without the policy. A would have fallen to 46 without it, so the policy effect is 40 − 46 = −6 accidents.",
+  "alt": "Three lines from before to after: town A falling 50 to 40, town B falling 52 to 48, and a dashed counterfactual for A falling 50 to 46.",
+  "description": [
+   "A actually fell by 10; B, with no policy, fell by 4.",
+   "Assume A would have followed B's trend: 50 − 4 = 46.",
+   "The policy effect is 40 − 46 = −6."
+  ],
+  "course": "maths",
+  "lesson": "Causal Inference",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Causal Inference"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 40) lies on y = 50-10*x",
+    "ok": true,
+    "detail": "y(1) = 40"
+   },
+   {
+    "name": "(1, 48) lies on y = 52-4*x",
+    "ok": true,
+    "detail": "y(1) = 48"
+   },
+   {
+    "name": "(1, 46) lies on y = 50-4*x",
+    "ok": true,
+    "detail": "y(1) = 46"
+   },
+   {
+    "name": "town A falls 10",
+    "ok": true,
+    "detail": "gradient -10.0000"
+   },
+   {
+    "name": "town B falls 4",
+    "ok": true,
+    "detail": "gradient -4.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-discriminant-boundary": {
+  "title": "Two classes, equal priors: the boundary at 13",
+  "caption": "With equal priors and the same σ = 2 the densities cross halfway between the means 10 and 16, at x = 13. Classify to the nearer mean.",
+  "alt": "Two normal curves with SD 2 centred at 10 and 16 crossing at x = 13, with a dashed line there.",
+  "description": [
+   "The class densities are N(10, 2²) and N(16, 2²).",
+   "They are equal at the midpoint 13.",
+   "Left of 13 choose class 1, right of 13 class 2."
+  ],
+  "course": "maths",
+  "lesson": "Discriminant Analysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Discriminant Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the two densities cross at x = 13",
+    "ok": true,
+    "detail": "exp(-(x-10)^2/(2*2^2))/(2*sqrt(2*3.141592653589793)) → 0.065, exp(-(x-16)^2/(2*2^2))/(2*sqrt(2*3.141592653589793)) → 0.065"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-exponential-likelihood": {
+  "title": "The log-likelihood peaks at λ̂ = 0.3",
+  "caption": "For waiting times 2, 3, 5 the log-likelihood is 3 ln λ − 10λ, which is largest at λ = 3/10 = 0.3: the maximum likelihood estimate.",
+  "alt": "Graph of 3 ln λ − 10λ against λ, rising steeply, peaking at λ = 0.3 and then falling slowly.",
+  "description": [
+   "With n = 3 and total 10, ln L(λ) = 3 ln λ − 10λ.",
+   "Its derivative 3/λ − 10 is zero at λ = 0.3.",
+   "The curve has its maximum there."
+  ],
+  "course": "maths",
+  "lesson": "Maximum Likelihood Estimation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Maximum Likelihood Estimation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the log-likelihood is largest at λ = 0.3",
+    "ok": true,
+    "detail": "found (0.3, -6.612)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-extrapolation": {
+  "title": "A line fitted for ages 2 to 10 is used at 40",
+  "caption": "Within the data (ages 2 to 10) height = 80 + 6 × age is fine, but the same line at age 40 predicts 320 cm: extrapolation far outside the data is not trustworthy.",
+  "alt": "A solid line for ages 2 to 10 from 92 cm to 140 cm, continuing as a dashed line to age 40 where it reaches 320 cm.",
+  "description": [
+   "The fitted line height = 80 + 6 × age is solid over the data, ages 2 to 10.",
+   "Extended to age 40 it gives 80 + 240 = 320 cm.",
+   "No adult is 3.2 m tall: the linear pattern does not continue."
+  ],
+  "course": "maths",
+  "lesson": "Regression Analysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Regression Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(40, 320) lies on y = 80+6*x",
+    "ok": true,
+    "detail": "y(40) = 320"
+   },
+   {
+    "name": "(2, 92) lies on y = 80+6*x",
+    "ok": true,
+    "detail": "y(2) = 92"
+   },
+   {
+    "name": "(10, 140) lies on y = 80+6*x",
+    "ok": true,
+    "detail": "y(10) = 140"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-fixed-effect": {
+  "title": "Inverse-variance weighting of two studies",
+  "caption": "Weights 1/SE² are 1 and 1/4. The pooled effect is (1 × 2 + 0.25 × 4)/1.25 = 2.4, nearer the more precise first study, with SE = 1/√1.25 ≈ 0.894.",
+  "alt": "A number line from 1 to 5 with the studies at 2 and 4 and the pooled estimate 2.4 close to 2.",
+  "description": [
+   "The study with SE 1 gets weight 1; the one with SE 2 gets weight 1/4.",
+   "Pooled = 2.4.",
+   "SE = 0.894, smaller than either study's."
+  ],
+  "course": "maths",
+  "lesson": "Meta-Analysis",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Meta-Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1*2+0.25*4)/(1+0.25) = 2.4",
+    "ok": true,
+    "detail": "2.4"
+   },
+   {
+    "name": "1/sqrt(1.25) = 0.8944",
+    "ok": true,
+    "detail": "0.894427"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 680×112"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×112"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-interaction-plot": {
+  "title": "A 2² experiment: the interaction plot",
+  "caption": "A has main effect (14 + 20 − 10 − 12)/2 = 6 and B has 4. The lines for B− and B+ are not parallel: A raises the response by 4 when B is low but by 8 when B is high, so the interaction is (10 + 20 − 14 − 12)/2 = 2.",
+  "alt": "Two lines against the level of A (−1 and +1): B− from 10 to 14 and B+ from 12 to 20, the second steeper.",
+  "description": [
+   "At B−, moving A from − to + raises the response from 10 to 14.",
+   "At B+, it raises it from 12 to 20.",
+   "Different slopes mean an interaction: 2."
+  ],
+  "course": "maths",
+  "lesson": "Design of Experiments",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Design of Experiments"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(-1, 10) lies on y = 12+2*x",
+    "ok": true,
+    "detail": "y(-1) = 10"
+   },
+   {
+    "name": "(1, 14) lies on y = 12+2*x",
+    "ok": true,
+    "detail": "y(1) = 14"
+   },
+   {
+    "name": "(-1, 12) lies on y = 16+4*x",
+    "ok": true,
+    "detail": "y(-1) = 12"
+   },
+   {
+    "name": "(1, 20) lies on y = 16+4*x",
+    "ok": true,
+    "detail": "y(1) = 20"
+   },
+   {
+    "name": "A raises B− by 4 over its 2 units: slope 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "A raises B+ by 8 over its 2 units: slope 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-least-squares-line": {
+  "title": "The least-squares line and R²",
+  "caption": "S_xy = 6 and S_xx = 10 give slope 0.6 and intercept 4 − 0.6 × 3 = 2.2. With r = 0.775, R² = r² = 0.6: the line explains 60% of the variation in y.",
+  "alt": "Scatter plot of (1, 2), (2, 4), (3, 5), (4, 4), (5, 5) with the line y = 2.2 + 0.6x through the mean point (3, 4).",
+  "description": [
+   "Slope = S_xy/S_xx = 6/10 = 0.6.",
+   "The line passes through the means (3, 4), so intercept = 2.2.",
+   "R² = 0.6."
+  ],
+  "course": "maths",
+  "lesson": "Linear Regression",
+  "also": [],
+  "renderer": "scatter",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Linear Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line is the least-squares line y = 2.2 + 0.6x",
+    "ok": true,
+    "detail": "from the data y = 2.2 + 0.6x"
+   },
+   {
+    "name": "r = 0.775",
+    "ok": true,
+    "detail": "r = 0.7746"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-logistic-curve": {
+  "title": "p = 1/(1 + e^(3 − 0.5x))",
+  "caption": "At x = 4, logit(p) = −1, so p = 1/(1 + e) ≈ 0.269. The curve is S-shaped, crossing 0.5 at x = 6, and each unit of x multiplies the odds by e⁰·⁵ ≈ 1.65.",
+  "alt": "Graph of the logistic curve rising from 0 to 1 with the point (4, 0.269) and p = 0.5 at x = 6.",
+  "description": [
+   "logit(p) = −3 + 0.5x, so p = 1/(1 + e^(3 − 0.5x)).",
+   "At x = 4, p = 0.269.",
+   "p = 0.5 when logit = 0, at x = 6."
+  ],
+  "course": "maths",
+  "lesson": "Logistic Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Logistic Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(4, 0.2689) lies on y = 1/(1+exp(3-0.5*x))",
+    "ok": true,
+    "detail": "y(4) = 0.2689"
+   },
+   {
+    "name": "(6, 0.5) lies on y = 1/(1+exp(3-0.5*x))",
+    "ok": true,
+    "detail": "y(6) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-mean-interval": {
+  "title": "95% interval for μ with known σ",
+  "caption": "SE = 3/√50 ≈ 0.424, so x̄ ± 1.96 SE = 12.4 ± 0.83: 11.57 to 13.23.",
+  "alt": "A number line from 11 to 14 with the interval from 11.57 to 13.23 around 12.4.",
+  "description": [
+   "The standard error is 3/√50 ≈ 0.424.",
+   "The margin is 1.96 × 0.424 = 0.83.",
+   "The interval is 11.57 to 13.23."
+  ],
+  "course": "maths",
+  "lesson": "Confidence Intervals",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Confidence Intervals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "12.4+1.96*3/sqrt(50) = 13.23",
+    "ok": true,
+    "detail": "13.231558"
+   },
+   {
+    "name": "12.4-1.96*3/sqrt(50) = 11.57",
+    "ok": true,
+    "detail": "11.568442"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-michaelis-menten": {
+  "title": "V = 10S/(2 + S)",
+  "caption": "At S = Kₘ = 2 the rate is half of V_max: V = 5. At S = 6 it is 7.5, and the curve levels off towards 10.",
+  "alt": "Graph of V = 10S/(2 + S) rising and flattening toward 10, with the points (2, 5) and (6, 7.5).",
+  "description": [
+   "V = V_max S/(K_m + S) with V_max = 10 and K_m = 2.",
+   "S = 2 gives 20/4 = 5, half of V_max.",
+   "S = 6 gives 60/8 = 7.5."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Nonlinear Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(2, 5) lies on y = 10*x/(2+x)",
+    "ok": true,
+    "detail": "y(2) = 5"
+   },
+   {
+    "name": "(6, 7.5) lies on y = 10*x/(2+x)",
+    "ok": true,
+    "detail": "y(6) = 7.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-mse-bars": {
+  "title": "Mean squared error = bias² + variance",
+  "caption": "A is unbiased: MSE = 0 + 4 = 4. B is biased: MSE = 1² + 2 = 3. The biased estimator B has the smaller MSE.",
+  "alt": "Two bars: A of length 4 (variance 4) and B of length 3 made of bias² 1 and variance 2.",
+  "description": [
+   "MSE splits into bias squared plus variance.",
+   "A: 0 + 4 = 4.",
+   "B: 1 + 2 = 3, which is smaller."
+  ],
+  "course": "maths",
+  "lesson": "Statistical Inference",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Statistical Inference"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–1 is 4",
+    "ok": true,
+    "detail": "parts add to 4"
+   },
+   {
+    "name": "the bracket over 1–2 is 3",
+    "ok": true,
+    "detail": "parts add to 3"
+   },
+   {
+    "name": "1 : 2 of 3 is 1 and 2",
+    "ok": true,
+    "detail": "parts 1, 2"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×216"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×264"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-nonresponse-bounds": {
+  "title": "What non-response could hide",
+  "caption": "240 of the 1,000 customers are known satisfied. If none of the 600 non-respondents were satisfied the rate is 24%; if all were, it is 84%: the sample only pins it between 0.24 and 0.84.",
+  "alt": "A number line from 0 to 1 with an interval from 0.24 to 0.84, and the respondents' own rate 0.6 inside it.",
+  "description": [
+   "400 respondents × 60% = 240 satisfied.",
+   "Lowest possible rate: 240/1000 = 0.24.",
+   "Highest: (240 + 600)/1000 = 0.84."
+  ],
+  "course": "maths",
+  "lesson": "Sampling Bias",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Sampling Bias"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "400*0.6/1000 = 0.24",
+    "ok": true,
+    "detail": "0.24"
+   },
+   {
+    "name": "(400*0.6+600)/1000 = 0.84",
+    "ok": true,
+    "detail": "0.84"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-normal-posterior": {
+  "title": "Prior N(100, 10²) and data mean 110",
+  "caption": "The prior has precision 1/100 and the data 4/100, so the posterior has precision 0.05, variance 20 (SD ≈ 4.47) and mean (100 × 0.01 + 110 × 0.04)/0.05 = 108: pulled most of the way to the data.",
+  "alt": "Three normal curves: a broad prior centred at 100, the likelihood of the sample mean centred at 110 with SD 5, and a taller posterior between them at 108.",
+  "description": [
+   "Prior N(100, 100); data mean 110 has variance 100/4 = 25.",
+   "Precisions add: 0.01 + 0.04 = 0.05, so the posterior variance is 20.",
+   "The posterior mean is the precision-weighted average, 108."
+  ],
+  "course": "maths",
+  "lesson": "Bayesian Inference",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Bayesian Inference"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the posterior peaks at 108",
+    "ok": true,
+    "detail": "found (107.999, 0.089)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-outlier-slopes": {
+  "title": "One outlier moves the least-squares line",
+  "caption": "For (1, 1) to (4, 4) and (5, 20), least squares gives slope 4 and passes through the mean point (3, 6); the Theil–Sen slope, the median of pairwise slopes, is 1 and ignores the outlier.",
+  "alt": "Graph with a steep line y = 4x − 6 (least squares) pulled up by the outlier at (5, 20) and the line y = x (Theil–Sen) through the other four points.",
+  "description": [
+   "The least-squares slope is S_xy/S_xx = 40/10 = 4.",
+   "The Theil–Sen slope is the median of the pairwise slopes, which is 1.",
+   "The point (5, 20) drags the first line up but hardly moves the second."
+  ],
+  "course": "maths",
+  "lesson": "Robust Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Robust Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "least squares passes through the mean point (3, 6)",
+    "ok": true,
+    "detail": "y(3) = 6"
+   },
+   {
+    "name": "(4, 4) lies on y = x",
+    "ok": true,
+    "detail": "y(4) = 4"
+   },
+   {
+    "name": "least-squares slope 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "Theil–Sen slope 1",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-permutation-differences": {
+  "title": "All 6 ways to split 7, 9, 1, 3 into two pairs",
+  "caption": "Each way of choosing which two values form group A gives a difference in means: −6, −2, 0, 0, 2 and 6, each as likely as the others under H₀. Only 1 of the 6 reaches 6, so the one-sided p = 1/6.",
+  "alt": "Bar chart of the 6 permutations by difference in group means: −6 once, −2 once, 0 twice, 2 once and 6 once; the bar at 6 is highlighted.",
+  "description": [
+   "There are C(4, 2) = 6 ways to choose group A.",
+   "Their differences in means are −6, −2, 0, 0, 2, 6.",
+   "Only one is at least as large as the observed 6: p = 1/6."
+  ],
+  "course": "maths",
+  "lesson": "Permutation Tests",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Permutation Tests"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 6",
+    "ok": true,
+    "detail": "computed 6"
+   },
+   {
+    "name": "mean = 0",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-poisson-regression": {
+  "title": "log μ = 0.5 + 0.2x",
+  "caption": "At x = 5, μ = e^1.5 ≈ 4.48. The mean curves upward because each unit of x multiplies it by e⁰·² ≈ 1.22.",
+  "alt": "Graph of μ = e^(0.5 + 0.2x), increasing and curving upward, with the point (5, 4.48).",
+  "description": [
+   "The linear predictor is 0.5 + 0.2x; the mean is its exponential.",
+   "At x = 5 the predictor is 1.5 and μ = 4.48."
+  ],
+  "course": "maths",
+  "lesson": "Poisson Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Poisson Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(5, 4.482) lies on y = exp(0.5+0.2*x)",
+    "ok": true,
+    "detail": "y(5) = 4.4817"
+   },
+   {
+    "name": "(0, 1.649) lies on y = exp(0.5+0.2*x)",
+    "ok": true,
+    "detail": "y(0) = 1.6487"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-proportion-interval": {
+  "title": "95% interval for the cycling proportion",
+  "caption": "p̂ = 88/400 = 0.22 and SE = √(0.22 × 0.78/400) ≈ 0.0207, so the interval is 0.22 ± 1.96 × 0.0207: 0.179 to 0.261.",
+  "alt": "A number line from 0.15 to 0.30 with the interval from 0.179 to 0.261 centred on 0.22.",
+  "description": [
+   "The sample proportion is 88/400 = 0.22.",
+   "The margin is 1.96 × 0.0207 = 0.041.",
+   "The interval is 0.179 to 0.261."
+  ],
+  "course": "maths",
+  "lesson": "Inferential Statistics",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Inferential Statistics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.22+1.96*sqrt(0.22*0.78/400) = 0.261",
+    "ok": true,
+    "detail": "0.260596"
+   },
+   {
+    "name": "0.22-1.96*sqrt(0.22*0.78/400) = 0.179",
+    "ok": true,
+    "detail": "0.179404"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-risk-bars": {
+  "title": "30 in 100 exposed against 10 in 100 unexposed",
+  "caption": "The risk is 3/10 against 1/10, so RR = 3. The odds are 30/70 against 10/90, so OR = (3/7)/(1/9) = 27/7 ≈ 3.86, larger than the RR because the disease is not rare.",
+  "alt": "Two bars of ten cells: the exposed bar has 3 shaded, the unexposed bar 1.",
+  "description": [
+   "Exposed: 3 in 10 (30 in 100) develop the disease.",
+   "Unexposed: 1 in 10.",
+   "RR = 0.3/0.1 = 3; OR = (30/70)/(10/90) ≈ 3.86."
+  ],
+  "course": "maths",
+  "lesson": "Categorical Data Analysis",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Categorical Data Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "bar 1 shows 3/10",
+    "ok": true,
+    "detail": "shaded 3/10"
+   },
+   {
+    "name": "bar 2 shows 1/10",
+    "ok": true,
+    "detail": "shaded 1/10"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 680×148"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 380×196"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-sample-mean-tail": {
+  "title": "The mean of 36 observations",
+  "caption": "X̄ has mean 50 and SE 12/√36 = 2, so 53 is z = 1.5 above: P(X̄ > 53) = 0.0668.",
+  "alt": "A normal curve with mean 50 and SD 2 for the sample mean, with the tail beyond 53 shaded, area 0.0668.",
+  "description": [
+   "The standard error is 12/6 = 2.",
+   "53 is 1.5 standard errors above 50.",
+   "The shaded tail has area 0.0668."
+  ],
+  "course": "maths",
+  "lesson": "Sampling Distributions",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Sampling Distributions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0668",
+    "ok": true,
+    "detail": "computed 0.066807"
+   },
+   {
+    "name": "mean 50",
+    "ok": true,
+    "detail": "50"
+   },
+   {
+    "name": "P(53 ≤ X ≤ ∞) = 0.0668",
+    "ok": true,
+    "detail": "0.066807"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-sign-test": {
+  "title": "The sign test: 8 positive differences out of 10",
+  "caption": "Under H₀ each difference is positive with probability 1/2, so the count is B(10, 0.5). P(X ≥ 8) = 0.0547 > 0.05: not significant.",
+  "alt": "Bar chart of B(10, 0.5) with the bars for 8, 9 and 10 shaded, total 0.0547.",
+  "description": [
+   "Under H₀ the number of positive differences is B(10, 0.5).",
+   "The one-sided p-value is the shaded area, 0.0547.",
+   "It exceeds 0.05, so do not reject."
+  ],
+  "course": "maths",
+  "lesson": "Nonparametric Statistics",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Nonparametric Statistics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0547",
+    "ok": true,
+    "detail": "computed 0.054688"
+   },
+   {
+    "name": "mean 5",
+    "ok": true,
+    "detail": "5"
+   },
+   {
+    "name": "P(8 ≤ X ≤ 10) = 0.0547",
+    "ok": true,
+    "detail": "0.054688"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-soft-threshold": {
+  "title": "The lasso soft-thresholds each estimate",
+  "caption": "With orthonormal predictors and λ = 1 the lasso moves each estimate 1 towards zero and sets it to 0 if it is within 1: 3 → 2, −0.5 → 0, 1.2 → 0.2.",
+  "alt": "Graph of the soft-threshold function: zero between −1 and 1, then rising with slope 1; points (3, 2), (−0.5, 0) and (1.2, 0.2) are marked.",
+  "description": [
+   "Estimates with |b| ≤ 1 are set exactly to 0.",
+   "Larger ones are shrunk by 1: 3 → 2, 1.2 → 0.2.",
+   "−0.5 falls in the flat region and becomes 0."
+  ],
+  "course": "maths",
+  "lesson": "Lasso Regression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Lasso Regression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 2) lies on y = x/abs(x)*(abs(abs(x)-1)+abs(x)-1)/2",
+    "ok": true,
+    "detail": "y(3) = 2"
+   },
+   {
+    "name": "(-0.5, 0) lies on y = x/abs(x)*(abs(abs(x)-1)+abs(x)-1)/2",
+    "ok": true,
+    "detail": "y(-0.5) = 0"
+   },
+   {
+    "name": "(1.2, 0.2) lies on y = x/abs(x)*(abs(abs(x)-1)+abs(x)-1)/2",
+    "ok": true,
+    "detail": "y(1.2) = 0.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-tea-hypergeometric": {
+  "title": "The tea-tasting experiment",
+  "caption": "With 4 milk-first cups among 8, a guesser chooses 4 cups in one of C(8, 4) = 70 ways. 3 right can happen in 16 ways and 4 right in 1, so P(at least 3) = 17/70 ≈ 0.243.",
+  "alt": "Bar chart of the 70 equally likely choices by the number of correct cups: 1, 16, 36, 16, 1 for 0 to 4; the bars for 3 and 4 are highlighted.",
+  "description": [
+   "A guesser picks which 4 of the 8 cups were milk-first: 70 ways.",
+   "Exactly k right: C(4, k) × C(4, 4 − k) = 1, 16, 36, 16, 1.",
+   "At least 3 right: 16 + 1 = 17 of 70."
+  ],
+  "course": "maths",
+  "lesson": "Fisher's Exact Test",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Fisher's Exact Test"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 70",
+    "ok": true,
+    "detail": "computed 70"
+   },
+   {
+    "name": "mode = 2",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "mean = 2",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-twenty-tests": {
+  "title": "Twenty tests with no real effects",
+  "caption": "The number of false positives is B(20, 0.05). P(at least one) = 1 − 0.95²⁰ = 0.642: about two chances in three of a spurious finding.",
+  "alt": "Bar chart of B(20, 0.05); the bars for 1 to 20 false positives are shaded, total 0.642.",
+  "description": [
+   "Each test has a 5% chance of a false positive.",
+   "The bar at 0 is 0.95²⁰ ≈ 0.358.",
+   "Everything else, 0.642, is at least one false positive."
+  ],
+  "course": "maths",
+  "lesson": "Multiple Testing Correction",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Multiple Testing Correction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.642",
+    "ok": true,
+    "detail": "computed 0.64151"
+   },
+   {
+    "name": "mean 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "P(1 ≤ X ≤ 20) = 0.642",
+    "ok": true,
+    "detail": "0.641514"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-two-sided-p": {
+  "title": "The p-value for z = 2.3",
+  "caption": "The shaded tail beyond 2.3 has area 0.0107; a two-sided test doubles it: p = 0.0214.",
+  "alt": "Standard normal curve with the upper tail beyond z = 2.3 shaded, area 0.0107, to be doubled for the two-sided p-value.",
+  "description": [
+   "Under H₀ the statistic is standard normal.",
+   "The area beyond 2.3 is 0.0107.",
+   "Two-sided: double it, 0.0214."
+  ],
+  "course": "maths",
+  "lesson": "P-Values",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: P-Values"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0107",
+    "ok": true,
+    "detail": "computed 0.010724"
+   },
+   {
+    "name": "P(2.3 ≤ X ≤ ∞) = 0.0107",
+    "ok": true,
+    "detail": "0.010724"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u13-type-errors": {
+  "title": "Type I and Type II errors",
+  "caption": "Reject when x̄ > 105. Under H₀ (μ = 100, SE 3) the area beyond 105 is α ≈ 0.048; under μ = 110 the area below 105 is β ≈ 0.048, so power ≈ 0.952.",
+  "alt": "Two normal curves for the sample mean, centred at 100 and 110, each with SD 3, and a dashed line at 105; the tail of the left curve beyond 105 and of the right curve below 105 are shaded.",
+  "description": [
+   "Both distributions have standard error 15/5 = 3.",
+   "α is the area of the H₀ curve to the right of 105: 0.048.",
+   "β is the area of the μ = 110 curve to the left of 105: 0.048."
+  ],
+  "course": "maths",
+  "lesson": "Type I and Type II Errors",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Type I and Type II Errors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "α = P(X̄ > 105 | μ = 100) ≈ 0.048",
+    "ok": true,
+    "detail": "area 0.0478"
+   },
+   {
+    "name": "β = P(X̄ ≤ 105 | μ = 110) ≈ 0.048",
+    "ok": true,
+    "detail": "area 0.0478"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u13-z-test-bags": {
+  "title": "The sample mean 505 g in the null distribution",
+  "caption": "Under H₀ the mean of 64 bags is N(500, 2.5²). 505 g is z = 2 above, with tail area 0.0228 each side, so the two-sided p ≈ 0.0455 < 0.05: reject.",
+  "alt": "Normal curve with mean 500 and SD 2.5 for the sample mean; the tail beyond 505 is shaded, area 0.0228.",
+  "description": [
+   "SE = 20/√64 = 2.5.",
+   "z = (505 − 500)/2.5 = 2.",
+   "Upper tail 0.0228; two-sided p ≈ 0.0455."
+  ],
+  "course": "maths",
+  "lesson": "Z-Tests",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u13.js: Z-Tests"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0228",
+    "ok": true,
+    "detail": "computed 0.022750"
+   },
+   {
+    "name": "mean 500",
+    "ok": true,
+    "detail": "500"
+   },
+   {
+    "name": "P(505 ≤ X ≤ ∞) = 0.0228",
+    "ok": true,
+    "detail": "0.022750"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

@@ -1,0 +1,91 @@
+{
+ "id": "maths-u13-extrapolation",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Regression Analysis",
+ "title": "A line fitted for ages 2 to 10 is used at 40",
+ "caption": "Within the data (ages 2 to 10) height = 80 + 6 × age is fine, but the same line at age 40 predicts 320 cm: extrapolation far outside the data is not trustworthy.",
+ "alt": "A solid line for ages 2 to 10 from 92 cm to 140 cm, continuing as a dashed line to age 40 where it reaches 320 cm.",
+ "description": [
+  "The fitted line height = 80 + 6 × age is solid over the data, ages 2 to 10.",
+  "Extended to age 40 it gives 80 + 240 = 320 cm.",
+  "No adult is 3.2 m tall: the linear pattern does not continue."
+ ],
+ "range": {
+  "x": [
+   0,
+   45
+  ],
+  "y": [
+   0,
+   340
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   100,
+   200,
+   300
+  ]
+ ],
+ "axisLabels": [
+  "age (years)",
+  "height (cm)"
+ ],
+ "curves": [
+  {
+   "expr": "80+6*x",
+   "domain": [
+    2,
+    10
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "80+6*x",
+   "domain": [
+    10,
+    40
+   ],
+   "colour": "a1",
+   "dash": "6 5"
+  }
+ ],
+ "points": [
+  {
+   "x": 40,
+   "y": 320,
+   "label": "320 cm?",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "80+6*x",
+   "x": 40,
+   "y": 320
+  },
+  {
+   "type": "point",
+   "expr": "80+6*x",
+   "x": 2,
+   "y": 92
+  },
+  {
+   "type": "point",
+   "expr": "80+6*x",
+   "x": 10,
+   "y": 140
+  }
+ ]
+}

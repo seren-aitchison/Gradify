@@ -1,0 +1,55 @@
+{
+ "id": "maths-u13-boxplot-outlier",
+ "renderer": "boxplot",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Descriptive Statistics",
+ "title": "Seven values and one outlier",
+ "caption": "Median 5, quartiles 4 and 9, so IQR = 5 and the fences are 4 − 7.5 and 9 + 7.5 = 16.5: the value 30 lies beyond the upper fence and is drawn as an outlier.",
+ "alt": "A box plot of 2, 4, 4, 5, 7, 9, 30: box from 4 to 9 with median 5, whisker to 2 and 9, and the value 30 plotted separately as an outlier.",
+ "description": [
+  "The median is the middle value, 5; the quartiles are 4 and 9, so the box spans 4 to 9 (IQR 5).",
+  "The upper fence is 9 + 1.5 × 5 = 16.5; the lower fence is −3.5.",
+  "30 is beyond 16.5, so it is an outlier and the whisker stops at 9."
+ ],
+ "method": "halves",
+ "range": {
+  "x": [
+   0,
+   32
+  ]
+ },
+ "ticks": [
+  0,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30
+ ],
+ "plots": [
+  {
+   "label": "data",
+   "data": [
+    2,
+    4,
+    4,
+    5,
+    7,
+    9,
+    30
+   ],
+   "summary": [
+    2,
+    4,
+    5,
+    9,
+    9
+   ],
+   "outliers": [
+    30
+   ]
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "id": "maths-u13-mean-interval",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Confidence Intervals",
+ "title": "95% interval for μ with known σ",
+ "caption": "SE = 3/√50 ≈ 0.424, so x̄ ± 1.96 SE = 12.4 ± 0.83: 11.57 to 13.23.",
+ "alt": "A number line from 11 to 14 with the interval from 11.57 to 13.23 around 12.4.",
+ "description": [
+  "The standard error is 3/√50 ≈ 0.424.",
+  "The margin is 1.96 × 0.424 = 0.83.",
+  "The interval is 11.57 to 13.23."
+ ],
+ "range": [
+  11,
+  14
+ ],
+ "ticks": {
+  "step": 0.5
+ },
+ "points": [
+  {
+   "value": 11.57,
+   "label": "11.57"
+  },
+  {
+   "value": 12.4,
+   "label": "x̄ = 12.4",
+   "colour": "a4"
+  },
+  {
+   "value": 13.23,
+   "label": "13.23"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 11.57,
+   "to": 13.23,
+   "closed": [
+    true,
+    true
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "tol": 0.005,
+   "expr": "12.4+1.96*3/sqrt(50)",
+   "value": "13.23"
+  },
+  {
+   "type": "value",
+   "tol": 0.005,
+   "expr": "12.4-1.96*3/sqrt(50)",
+   "value": "11.57"
+  }
+ ]
+}

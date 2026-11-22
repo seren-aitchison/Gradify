@@ -1,0 +1,64 @@
+{
+ "id": "maths-u13-mse-bars",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Statistical Inference",
+ "title": "Mean squared error = bias² + variance",
+ "caption": "A is unbiased: MSE = 0 + 4 = 4. B is biased: MSE = 1² + 2 = 3. The biased estimator B has the smaller MSE.",
+ "alt": "Two bars: A of length 4 (variance 4) and B of length 3 made of bias² 1 and variance 2.",
+ "description": [
+  "MSE splits into bias squared plus variance.",
+  "A: 0 + 4 = 4.",
+  "B: 1 + 2 = 3, which is smaller."
+ ],
+ "bars": [
+  {
+   "label": "A",
+   "parts": [
+    {
+     "value": 4,
+     "label": "variance 4"
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "parts": [
+    {
+     "value": 1,
+     "label": "bias² 1"
+    },
+    {
+     "value": 2,
+     "label": "variance 2"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 0,
+   "value": 4
+  },
+  {
+   "bar": 1,
+   "from": 0,
+   "to": 1,
+   "value": 3
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 1,
+   "ratio": [
+    1,
+    2
+   ],
+   "total": 3
+  }
+ ]
+}

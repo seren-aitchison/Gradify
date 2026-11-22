@@ -1,0 +1,66 @@
+{
+ "id": "maths-u13-coin-test",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Hypothesis Testing",
+ "title": "15 heads in 20 tosses of a fair coin",
+ "caption": "Under H₀ the number of heads is B(20, 0.5). P(X ≥ 15) = 0.0207, below 5%, so 15 heads is unusual enough to reject fairness.",
+ "alt": "Bar chart of B(20, 0.5) with bars 15 to 20 shaded, total 0.0207.",
+ "description": [
+  "Under H₀ the count is B(20, 0.5), centred at 10.",
+  "The shaded bars from 15 up add to 0.0207.",
+  "That is below 0.05, so reject H₀."
+ ],
+ "dist": {
+  "dist": "binomial",
+  "n": 20,
+  "p": 0.5
+ },
+ "range": {
+  "x": [
+   -0.5,
+   20.5
+  ],
+  "y": [
+   0,
+   0.2
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ]
+ ],
+ "axisLabels": [
+  "heads",
+  "probability"
+ ],
+ "shade": [
+  15,
+  20
+ ],
+ "p": 0.0207,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 10
+  },
+  {
+   "type": "prob",
+   "from": 15,
+   "to": 20,
+   "p": 0.0207
+  }
+ ]
+}

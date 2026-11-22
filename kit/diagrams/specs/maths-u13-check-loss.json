@@ -1,0 +1,80 @@
+{
+ "id": "maths-u13-check-loss",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Quantile Regression",
+ "title": "The check loss for τ = 0.9",
+ "caption": "ρ(u) = u(0.9 − 1{u < 0}): a positive residual costs 0.9u, a negative one 0.1|u|. So +2 costs 1.8 and −2 costs 0.2: under-prediction is penalised nine times as much.",
+ "alt": "A V-shaped graph, steep on the right (slope 0.9) and shallow on the left (slope −0.1), with the points (2, 1.8) and (−2, 0.2).",
+ "description": [
+  "For positive residuals the loss rises with slope 0.9.",
+  "For negative residuals it rises with slope 0.1 as the residual becomes more negative.",
+  "ρ(2) = 1.8 and ρ(−2) = 0.2."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   0,
+   2,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "axisLabels": [
+  "residual u",
+  "loss ρ"
+ ],
+ "curves": [
+  {
+   "expr": "0.5*abs(x)+0.4*x"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1.8,
+   "label": "1.8",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": -2,
+   "y": 0.2,
+   "label": "0.2",
+   "dx": 0,
+   "dy": -16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*abs(x)+0.4*x",
+   "x": 2,
+   "y": 1.8
+  },
+  {
+   "type": "point",
+   "expr": "0.5*abs(x)+0.4*x",
+   "x": -2,
+   "y": 0.2
+  }
+ ]
+}
