@@ -75,14 +75,17 @@
   <!-- the feature showcase (#features) and the Ultra comparison (#pro) are far below the first screen: they load when the
        page has gone idle, or sooner if their section is about to scroll into view or the link opened at one -->
   <script type="module">
-    // load both once; if pro.js fails to load (a dropped connection), forget the failure so the next try loads it again
-    let pro = null;
-    const go = () => pro || (import("./assets/features.js").catch(() => {}), pro = import("./assets/pro.js").catch((err) => { pro = null; throw err; }));
+    // load both once; if pro.js fails to load (a dropped connection), forget the failure so the next try loads it again.
+    // A retry asks for a fresh URL: some browsers (Safari) keep a failed module load and would fail the same URL again
+    let pro = null, tries = 0;
+    const go = () => pro || (import("./assets/features.js").catch(() => {}),
+      pro = import(`./assets/pro.js${tries ? `?retry=${tries}` : ""}`).catch((err) => { pro = null; tries++; throw err; }));
     // loading ahead of time: a failure here is fine, the next try (or a submit, which reports it) loads again
     const warm = () => { go().catch(() => {}); };
     // the Ultra "Notify me" form gets its handler from pro.js: start loading it as soon as someone reaches the form, and
     // if they submit before it's ready, hold the submit (no page reload, no lost email) and send it again once it is
     const notify = document.getElementById("notify-pro");
+    let failedSubmits = 0;
     if (notify) {
       notify.addEventListener("focusin", warm);
       notify.addEventListener("submit", (e) => {
@@ -93,7 +96,9 @@
         // resubmit on a fresh task: while this submit event is still being dispatched, the browser ignores requestSubmit
         go().then(() => setTimeout(() => { notify.dataset.ready = "1"; notify.requestSubmit(); })).catch(() => {
           delete notify.dataset.held;   // the next submit tries again
-          const msg = document.getElementById("notify-msg"); if (msg) msg.textContent = "Sorry, that didn't work. Please try again in a moment.";
+          // if a second submit fails too, a part pro.js needs may be what failed: a reload loads everything afresh
+          const msg = document.getElementById("notify-msg"); failedSubmits++;
+          if (msg) msg.textContent = failedSubmits > 1 ? "Sorry, that didn't work. Please reload the page and try again." : "Sorry, that didn't work. Please try again in a moment.";
         });
       }, { capture: true });
     }

@@ -70,7 +70,7 @@ for (const c of LATE) {
   p.on("pageerror", (e) => errors.push(e.message));
   await p.route("**/rest/v1/waitlist", (r) => { sent.push(JSON.parse(r.request().postData()).email); r.fulfill({ status: 201, body: "" }); });
   await p.route(/supabase\.co\/(?!rest\/v1\/waitlist)/, (r) => r.fulfill({ status: 200, body: "{}" }));
-  await p.route("**/assets/pro.js", async (r) => {
+  await p.route("**/assets/pro.js*", async (r) => {   // a retry asks for pro.js?retry=n
     if (c.mode === "hold") { await held; return r.continue(); }
     return failing ? r.abort() : r.continue();
   });
