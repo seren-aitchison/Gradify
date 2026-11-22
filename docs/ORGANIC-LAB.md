@@ -197,7 +197,14 @@ topics) are part of what the review should confirm.
 * CIP priorities use mol.js's simplified ranking (first point of difference by atomic number, duplicated atoms for
   multiple bonds): no isotopes, no pseudo-asymmetric r/s centres, no like/unlike rules. When two groups tie, the lab
   gives no descriptor rather than a guess.
-* Aromatic substitution is predicted for one benzene ring only.
+* Aromatic substitution is predicted for one benzene ring only; heteroaromatic rings (pyridine) are declined.
+* Declined rather than guessed: HBr on a C=C whose benzylic carbon is less substituted than the other end (benzylic
+  against a more substituted cation); HBr on molecules with both C=C and C≡C; hydroxide with a halogen and an
+  aldehyde or ketone together.
+* SMILES starting materials must be one molecule, and bracket atoms must have at least the hydrogens their valence
+  implies: the drawing model fills valence with implicit hydrogens, so radicals such as `[O]` are refused.
+* Identity (the molecule hash) is exact: rings add a canonical certificate. A very large, highly symmetric molecule can
+  exhaust the canonical search (20,000 branches); it then falls back to colour refinement alone.
 * Synthesis search uses only the 35 reagents, follows major products and has a node limit, so a longer real-world
   route may exist that the planner doesn't find.
 
@@ -247,6 +254,22 @@ topics) are part of what the review should confirm.
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides
 chemical validity, and where the engine can't evaluate something it says so.
 
+## Release gate
+
+The lab ships only when all of these hold. Set after the review of PR #159 ([organic-review/REVIEW-FINDINGS.md](organic-review/REVIEW-FINDINGS.md)):
+
+1. No known Major scientific correctness defect (names, products, stereochemistry, valid structures).
+2. No known Major assessment or marking defect.
+3. No reproducible freeze or data-loss defect.
+4. Every confirmed finding has a regression test that fails without its fix.
+5. The reference chemistry tests pass (`tests/organic-reference.test.mjs`, with the other lab suites below).
+6. Browser checks pass at desktop, tablet and phone widths: `node scripts/check-organic-lab.cjs`, and
+   `node scripts/check-interactives.cjs --serve . --course chemistry`.
+7. CI passes against the latest `main`.
+
+A passing suite is not chemistry validation: the 302 reference cases are still `provisional` until the independent
+review (above) is done. Minor findings are tracked in [organic-review/BACKLOG.md](organic-review/BACKLOG.md).
+
 ## 4. Testing record
 
 | Suite | What it checks |
@@ -256,6 +279,9 @@ chemical validity, and where the engine can't evaluate something it says so.
 | `tests/predictor.test.mjs` | predictor behaviour on starting materials and learners' own drawings, every product a valid molecule |
 | `tests/organic-reference.test.mjs` | the 302-reaction reference set, with coverage of every reagent |
 | `tests/planner.test.mjs` | every synthesis challenge solvable in exactly its stated length, retrosynthesis, competition, mark breakdowns |
+| `tests/configuration.test.mjs` | R/S and E/Z from drawings against mol.js, isomer relations by definition, the 3D model's configuration |
+| `tests/stereo-outcome.test.mjs` | the stereochemical outcome of each prediction |
+| `scripts/check-organic-lab.cjs` | in Chromium: keyboard arrows and exam style, first-attempt marks, saved notes, declined cases in practice, the tutor's replies, and every mode at 1280, 820 and 390 px |
 
 Run the whole suite with `npm test`. In environments without `node_modules`, 17 tests fail because `@electric-sql/pglite`,
 `@anthropic-ai/sdk` and `ts-fsrs` aren't installed; those are environmental and unrelated to the lab, and are listed
