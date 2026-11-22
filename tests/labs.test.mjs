@@ -120,6 +120,14 @@ test("chemistry: the 3D embedding doesn't leave substituents folded in or bonds 
   }
 });
 
+test("chemistry: the 3D embedding is reproducible for a given seed, through its repairs and retries", () => {
+  // each case goes through a different path: caffeine at seed 7 and the tetrabromo alkene at seed 3 start strained
+  // and are retried, benzene at seed 7 has an H unfolded, and maleic acid at seed 7 has its cis geometry flipped
+  for (const [smi, seed] of [["Cn1cnc2c1c(=O)n(C)c(=O)n2C", 7], ["BrC(Br)=C(Br)Br", 3], ["c1ccccc1", 7], ["OC(=O)/C=C\\C(=O)O", 7]]) {
+    assert.deepStrictEqual(molecule(smi, { seed }).pos, molecule(smi, { seed }).pos, `${smi} seed ${seed}`);
+  }
+});
+
 test("chemistry: Lewis checker", () => {
   assert.ok(lewisCheck(LEWIS[0], [1, 1], [2, 0, 0]).ok, "water");
   assert.ok(lewisCheck(LEWIS[2], [2, 2], [2, 0, 2]).ok, "carbon dioxide");
