@@ -1436,3 +1436,7 @@ section[data-tab] { gap: 16px; }
 /* the phone's More sheet lists every section at once */
 body.side-open .lo-more-btn { display: none; }
 body.side-open .lo-more-list, body.side-open .lo-more-list[hidden] { display: contents !important; }
+/* phones: set-up's Continue stays in reach at the foot of the screen, above the tab bar, as the form scrolls */
+@media (max-width: 860px) {
+  .setup-form > button[type="submit"] { position: sticky; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); z-index: 5; width: 100%; justify-content: center; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .55); }
+}

@@ -59,6 +59,7 @@
   <link rel="modulepreload" href="/kit/ui/feedback.js">
   <link rel="modulepreload" href="/kit/ui/resources.js">
   <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/ui/shelf.js">
   <link rel="modulepreload" href="/kit/ui/overlay.js">
   <!-- /module-preload -->
   <script type="module" src="assets/app.js"></script>
@@ -91,7 +92,9 @@
   <script type="module">
     // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
     import { mountContinue } from "./kit/core/continue.js";
-    mountContinue(document.getElementById("continue"));
+    // someone coming back sees their shelf first, above the pitch they've already read (kit/ui/shelf.js)
+    const yours = document.getElementById("continue");
+    if (mountContinue(yours, { title: "Welcome back: your shelf", layout: "shelf" })) document.getElementById("top")?.before(yours);
   </script>
 </head>
 <body>
