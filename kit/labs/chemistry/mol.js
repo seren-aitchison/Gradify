@@ -203,7 +203,6 @@ export function ez(m, a, b) {
   const A = m.atoms[a].nb.filter((x) => x !== b), B = m.atoms[b].nb.filter((x) => x !== a);
   if (A.length < 2 || B.length < 2) return null;
   const ra = cipRank(m, a, A), rb = cipRank(m, b, B); if (ra.tie || rb.tie) return null;
-  const hi = ra.order[0], hj = rb.order[0], P = m.pos;
-  const d = Math.hypot(P[hi][0] - P[hj][0], P[hi][1] - P[hj][1], P[hi][2] - P[hj][2]);
-  return d < 3.35 ? "Z" : "E";
+  // read the side from the signed geometry, not a distance cut-off, which large cis substituents (I, Br) can exceed
+  return cisSign(m.pos, ra.order[0], a, b, rb.order[0]) > 0 ? "Z" : "E";
 }

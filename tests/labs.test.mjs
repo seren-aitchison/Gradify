@@ -93,6 +93,10 @@ test("chemistry: the 3D embedding keeps the cis/trans geometry written with / an
   all("CC/C=C(\\C)Cl", 2, 3, "E", "ethyl cis to methyl, so trans to Cl"); all("CC/C=C(/C)Cl", 2, 3, "Z", "ethyl trans to methyl");
   all("C/C=C/C", 1, 2, "E", "trans-but-2-ene"); all("C/C=C\\C", 1, 2, "Z", "cis-but-2-ene");
   all("F/C=C/F", 1, 2, "E", "trans-1,2-difluoroethene"); all("Cl/C(Br)=C(/I)C", 1, 3, "Z", "tetrasubstituted: Cl trans to I puts Br cis to I");
+  all("I/C=C\\I", 1, 2, "Z", "large cis substituents"); all("I/C=C/I", 1, 2, "E", "large trans substituents");
+  // the read-out follows the signed geometry even when cis atoms sit further apart than a distance cut-off would allow
+  const m = molecule("I/C=C\\I"); m.pos = [[-2, 2, 0], [-0.67, 0, 0], [0.67, 0, 0], [2, 2, 0], ...m.pos.slice(4)];
+  assert.equal(ez(m, 1, 2), "Z", "planar cis with the iodines 4.0 Å apart");
   // the E/Z exercise: up-left and up-right on the same side, written C(/ul)(dl)=C(/ur)dr (each fragment attached
   // by its first atom, as ezAnswer builds it), must give ezAnswer's descriptor
   const heavy = (f) => parseSmiles(f).atoms.length;
