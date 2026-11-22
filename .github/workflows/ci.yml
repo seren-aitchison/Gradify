@@ -122,6 +122,10 @@ jobs:
         with:
           node-version: 22
 
+      # the build minifies CSS and JS with esbuild (the one dev dependency it needs)
+      - name: Install esbuild
+        run: npm ci --no-audit --no-fund --ignore-scripts
+
       # only the allowlisted files the website needs (scripts/build-site.mjs); docs, scripts, migrations, server
       # functions, tests and package files stay in the repository. The build re-runs its checks and fails if any fails.
       - name: Assemble the site from the allowlist

@@ -4,10 +4,10 @@
 // straight from the cache (no round trip to the server for each of the ~100 files a course page uses), and they all
 // belong to the same deploy, so old and new code never mix. A new deploy is fetched in the background and used from
 // the next page load.
-// Everything in SHELL is kept for offline use, in two steps so a first visit stays light: installing fetches the
-// core (the pages, styles and what the app and homepage need to start, about a fifth of the bytes); the heavy rest
-// (the PDF reader, the 3D engine, each course's data, the labs, the search index) follows a few seconds later, a few
-// files at a time, and not at all on Data Saver or a 2G connection, where it's cached as it's used instead.
+// Everything in SHELL is kept for offline use, in two steps so a first visit stays light: installing fetches only the
+// pages and base styles; everything else (scripts, the PDF reader, the 3D engine, each course's data, the labs, the
+// search index) follows right after the page loads, six files at a time, and not at all on Data Saver or a 2G
+// connection, where it's cached as it's used instead.
 const CACHE = "gradify-v97";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
@@ -64,10 +64,11 @@ const SHELL = [
   "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
 ];
 
-// the heavy part of SHELL, cached after the core
-// (the Supabase client too: a signed-out visitor never needs it, and a signed-in one has it cached from their pages)
-const LATER_RE = /^kit\/(vendor\/(pdfjs|three|mind-elixir|supabase)\/|courses\/|notes\/mindmap\/|tools\/|interactive\/|labs\/|maps\/|models\/)|^kit\/data\/search-index\.json$/;
-const CORE = SHELL.filter((u) => !LATER_RE.test(u)), LATER = SHELL.filter((u) => LATER_RE.test(u));
+// installing fetches only the pages and the base styles (a few files, so the worker is ready at once and a first visit
+// isn't competing with its own page load); every script and the rest of the shell is cached in the background pass
+// below, which starts as soon as the page has loaded
+const CORE_RE = /^(\.\/|index\.html$|app\.html$|explore\.html$|manifest\.webmanifest$|gradify\.config\.js$|assets\/(styles\.css|favicon\.svg|icons\/)|kit\/styles\/(base|components)\.css$)/;
+const CORE = SHELL.filter((u) => CORE_RE.test(u)), LATER = SHELL.filter((u) => !CORE_RE.test(u));
 // fetched from the network, not the browser's HTTP cache, so a new version never stores a mix of old and new files
 const fresh = (u) => new Request(u, { cache: "reload" });
 self.addEventListener("install", (e) => {
@@ -76,7 +77,7 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()).then(() => { warm(); }));
 });
-// the rest of SHELL, in the background: after a pause (so it never competes with the page being opened), four files
+// the rest of SHELL, in the background: after a pause (so it never competes with the page being opened), six files
 // at a time, skipping what's already cached; once per worker, resumed if the worker was stopped part-way
 let warming = null, warmed = false;
 const slowLink = () => { const c = self.navigator?.connection; return !!c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || "")); };
@@ -84,12 +85,12 @@ function warm() {
   if (warmed) return Promise.resolve();
   if (warming || slowLink()) return warming || Promise.resolve();
   warming = (async () => {
-    await new Promise((r) => setTimeout(r, 5000));
+    await new Promise((r) => setTimeout(r, 1500));
     const cache = await caches.open(CACHE);
     let missing = 0;
-    for (let i = 0; i < LATER.length; i += 4) {
+    for (let i = 0; i < LATER.length; i += 6) {
       if (slowLink()) return;
-      await Promise.all(LATER.slice(i, i + 4).map(async (u) => {
+      await Promise.all(LATER.slice(i, i + 6).map(async (u) => {
         if (await cache.match(u)) return;
         try { const res = await fetch(fresh(u)); if (res.ok) await cache.put(u, res); else missing++; } catch { missing++; /* offline: tried again next time */ }
       }));
