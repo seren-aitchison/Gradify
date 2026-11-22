@@ -47689,5 +47689,256 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u14-coffee-cooling": {
+  "title": "Coffee cooling towards room temperature",
+  "caption": "T = T_a + (T₀ − T_a)e^{−kt} with T_a = 20 °C and T₀ = 90 °C. Falling to 60 °C in 10 min fixes k = ln(70/40)/10 = 0.056 min⁻¹. Then the coffee reaches 40 °C at t = ln(70/20)/k = 22.4 min. The curve flattens as it nears 20 °C: cooling is fastest when the difference from the room is largest.",
+  "alt": "Graph of coffee temperature against time: an exponential decay from 90 °C towards 20 °C, passing 60 °C at 10 minutes and 40 °C at 22.4 minutes.",
+  "description": [
+   "The horizontal axis is time in minutes; the vertical axis is the coffee temperature in °C.",
+   "The curve starts at 90 °C and decays towards the room temperature 20 °C with rate constant k = 0.056 min⁻¹.",
+   "At 10 min it is at 60 °C (this fixes k); it reaches 40 °C at 22.4 min."
+  ],
+  "course": "physics",
+  "lesson": "Newton's law of cooling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u14.js: Newton's law of cooling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "starts at 90 °C",
+    "ok": true,
+    "detail": "y(0) = 90"
+   },
+   {
+    "name": "60 °C after 10 min (the data)",
+    "ok": true,
+    "detail": "y(10) = 60"
+   },
+   {
+    "name": "40 °C after 22.4 min (the lesson's 22.4 min)",
+    "ok": true,
+    "detail": "y(22.38612625846667) = 40"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u14-copper-rod": {
+  "title": "Temperature along a conducting copper rod",
+  "caption": "In steady state the temperature falls linearly along the rod, 100 °C to 20 °C over 0.5 m: a gradient of 160 K m⁻¹. Heat flows down the gradient at P = κAΔT/L = 400 × 1 × 10⁻⁴ × 80/0.5 = 6.4 W. A straight line means the same heat flows through every cross-section.",
+  "alt": "Graph of temperature against distance along the rod: a straight line from 100 °C at 0 m to 20 °C at 0.5 m, gradient −160 K per metre.",
+  "description": [
+   "The horizontal axis is the distance along the rod in metres; the vertical axis is the temperature in °C.",
+   "The hot end is at 100 °C and the cold end at 20 °C, 0.5 m away.",
+   "The profile is a straight line of gradient −ΔT/L = −160 K m⁻¹, so P = κA × 160 = 400 × 1 × 10⁻⁴ × 160 = 6.4 W."
+  ],
+  "course": "physics",
+  "lesson": "Conduction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u14.js: Conduction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "hot end at 100 °C",
+    "ok": true,
+    "detail": "y(0) = 100"
+   },
+   {
+    "name": "cold end at 20 °C",
+    "ok": true,
+    "detail": "y(0.5) = 20"
+   },
+   {
+    "name": "gradient = −ΔT/L = −160 K/m, so P = κA|dT/dx| = 6.4 W",
+    "ok": true,
+    "detail": "gradient -160.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u14-counterflow": {
+  "title": "Counterflow heat exchanger: the log-mean temperature difference",
+  "caption": "Hot oil cools from 150 to 90 °C while water flowing the other way warms from 20 to 70 °C. The two ends see ΔT₁ = 150 − 70 = 80 K and ΔT₂ = 90 − 20 = 70 K. The driving difference is not their plain average: ΔT_lm = (ΔT₁ − ΔT₂)/ln(ΔT₁/ΔT₂) = 74.9 K, the value that goes in Q = UAΔT_lm.",
+  "alt": "Graph of fluid temperature along the exchanger: the hot oil line falling from 150 to 90 °C and the cold water line, running the other way, from 70 down to 20 °C, with the gap 80 K at one end and 70 K at the other.",
+  "description": [
+   "The horizontal axis is the fractional distance along the exchanger; the vertical axis is the temperature in °C.",
+   "Hot oil enters at x = 0 at 150 °C and leaves at x = 1 at 90 °C.",
+   "Water enters at x = 1 at 20 °C and leaves at x = 0 at 70 °C (counterflow).",
+   "The gap between them is 80 K at x = 0 and 70 K at x = 1; ΔT_lm = 10/ln(80/70) = 74.9 K."
+  ],
+  "course": "physics",
+  "lesson": "Heat exchangers",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u14.js: Heat exchangers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "oil enters at 150 °C",
+    "ok": true,
+    "detail": "y(0) = 150"
+   },
+   {
+    "name": "oil leaves at 90 °C",
+    "ok": true,
+    "detail": "y(1) = 90"
+   },
+   {
+    "name": "water leaves at 70 °C",
+    "ok": true,
+    "detail": "y(0) = 70"
+   },
+   {
+    "name": "water enters at 20 °C",
+    "ok": true,
+    "detail": "y(1) = 20"
+   },
+   {
+    "name": "ΔT_lm = 1/∫dx/ΔT = 74.9 K (ΔT falls 80 → 70 K)",
+    "ok": true,
+    "detail": "area 13.3531"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u14-penetration-depth": {
+  "title": "How deep a temperature cycle reaches into soil",
+  "caption": "The amplitude of a periodic surface temperature falls as e^{−z/δ} with δ = √(2α/ω). For soil (α = 5 × 10⁻⁷ m² s⁻¹) the daily cycle (ω = 7.3 × 10⁻⁵ s⁻¹) has δ = 0.12 m, so it has all but vanished by half a metre. A cycle 365 times longer has δ larger by √365 ≈ 19: 2.2 m (the lesson's ≈ 2.3 m uses the rounded 0.12 m).",
+  "alt": "Graph of relative temperature amplitude against depth in metres: a daily curve falling to 1/e at 0.12 m and an annual curve falling to 1/e at 2.2 m.",
+  "description": [
+   "The horizontal axis is depth below the surface in metres; the vertical axis is the temperature swing as a fraction of the surface swing.",
+   "Daily cycle: e^{−z/0.12}, falling to 1/e (0.37) at z = δ = 0.12 m.",
+   "Annual cycle: δ = 0.12 × √365 = 2.2 m, 19 times deeper."
+  ],
+  "course": "physics",
+  "lesson": "Fourier's law of heat conduction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u14.js: Fourier's law of heat conduction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "daily: amplitude falls to 1/e at δ = √(2α/ω) = 0.12 m",
+    "ok": true,
+    "detail": "y(0.11726460285670078) = 0.3679"
+   },
+   {
+    "name": "annual: δ = 0.12 × √365 = 2.2 m",
+    "ok": true,
+    "detail": "y(2.2403370919006833) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u14-wien-star": {
+  "title": "A star whose spectrum peaks at 290 nm",
+  "caption": "Wien's law, λ_maxT = 2.898 × 10⁻³ m K, gives T = 2.898 × 10⁻³/(2.9 × 10⁻⁷) = 9993 K ≈ 10 000 K. The Planck curve for 10 000 K does peak at 290 nm, in the ultraviolet; the visible band (400–700 nm) lies on the long-wavelength side, so the star looks blue-white.",
+  "alt": "Planck curve for 10000 K against wavelength: it rises to a peak near 290 nm in the ultraviolet and falls slowly through the visible band.",
+  "description": [
+   "The horizontal axis is wavelength in nm; the vertical axis is the relative spectral intensity, scaled so the peak is 1.",
+   "The Planck curve for T = 10 000 K peaks at 290 nm, as Wien's law predicts for 2.9 × 10⁻⁷ m.",
+   "The shaded band 400–700 nm is visible light: the star's output is already falling there, and most of it is in the ultraviolet."
+  ],
+  "course": "physics",
+  "lesson": "Wien's displacement law",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u14.js: Wien's displacement law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the 10 000 K Planck curve peaks at 290 nm (Wien: 2.898 × 10⁻³/10⁴ = 290 nm)",
+    "ok": true,
+    "detail": "found (289.777, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
