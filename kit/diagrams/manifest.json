@@ -33809,5 +33809,242 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-fluid-mosaic": {
+  "title": "The fluid mosaic membrane",
+  "caption": "Phospholipids form a bilayer with their hydrophilic heads towards the water on both sides and their hydrophobic tails inside, a core about 3.5 nm thick in a membrane about 5 nm thick here. Proteins float in it like tiles in a mosaic: integral proteins span it, peripheral proteins sit on one surface. Cholesterol sits between the phospholipids of animal membranes, and short carbohydrate chains on the outer surface form the glycocalyx. Drawn to scale.",
+  "alt": "A cross-section of a membrane: two layers of phospholipids with heads outwards and tails inwards, a channel protein, a carrier protein and a receptor protein spanning it, cholesterol between the lipids, a peripheral protein on the cytosol side and carbohydrate chains on the outer surface only.",
+  "description": [
+   "Phospholipids: heads (hydrophilic) face the water on both sides, tails (hydrophobic) face inwards.",
+   "The hydrophobic core is about 3.5 nm thick in a membrane about 5 nm thick, drawn to scale.",
+   "Integral proteins span the bilayer: a channel, a carrier and a receptor.",
+   "A peripheral protein sits on one surface.",
+   "Cholesterol sits between the phospholipids in animal membranes, restraining their movement.",
+   "Carbohydrate chains on proteins and lipids are on the outer surface only: the glycocalyx, used in recognition and adhesion."
+  ],
+  "course": "biology",
+  "lesson": "Membrane structure",
+  "also": [],
+  "renderer": "bilayer",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Membrane structure"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the whole membrane is 5–10 nm thick, to scale",
+    "ok": true,
+    "detail": "5.2 nm"
+   },
+   {
+    "name": "the hydrophobic core of the tails is 3–4 nm thick, to scale",
+    "ok": true,
+    "detail": "3.5 nm"
+   },
+   {
+    "name": "every phospholipid has its hydrophilic head towards the water and its hydrophobic tails towards the inside of the bilayer",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integral proteins (channels, carriers, receptors) span the whole bilayer",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "carbohydrate chains are on the outer surface only (the glycocalyx)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cholesterol is a feature of animal membranes",
+    "ok": true,
+    "detail": "animal"
+   },
+   {
+    "name": "every peripheral protein is on one surface, inner or outer",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 channel protein are drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 carrier protein are drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 receptor protein are drawn",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-induced-fit": {
+  "title": "Lock and key, and induced fit",
+  "caption": "In the lock-and-key model the active site already has exactly the substrate's shape. In the induced-fit model, now preferred, the active site is not a perfect fit until the substrate binds, and then it changes shape to close round it, straining the substrate towards the transition state. After the reaction the products leave and the enzyme returns to its original shape, ready to be used again. Schematic, not to scale.",
+  "alt": "Two rows of three pictures. Lock and key: a substrate fits an active site of the same width, which never changes. Induced fit: the active site is wider than the substrate, narrows round it when it binds, and widens again when the two products leave.",
+  "description": [
+   "Lock and key: the active site has the substrate's shape before, during and after.",
+   "Induced fit: the active site is wider than the substrate at first.",
+   "When the substrate binds, the active site changes shape and closes round it.",
+   "The substrate is split into two products, whose sizes add up to the substrate's.",
+   "The products leave and the enzyme returns to its original shape."
+  ],
+  "course": "biology",
+  "lesson": "Enzyme-substrate interactions",
+  "also": [],
+  "renderer": "inducedfit",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Enzyme-substrate interactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "lock and key: the substrate fits the active site once bound (site 40, substrate 40)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "lock and key: the active site already has the substrate's shape and does not change (40 = 40)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "induced fit: the substrate fits the active site once bound (site 40, substrate 40)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "induced fit: the active site is not a perfect fit before binding, and changes shape to fit (58 → 40)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "induced fit: the enzyme returns to its original shape after the reaction",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the products together contain what the substrate did: their sizes add up to the substrate's",
+    "ok": true,
+    "detail": "22 + 18 = 40"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-water-hbond": {
+  "title": "Water molecules and hydrogen bonds",
+  "caption": "Oxygen pulls the shared electrons harder than hydrogen, so each water molecule is polar: δ− on the oxygen, δ+ on each hydrogen, with the hydrogens 104.5° apart. A δ+ hydrogen is attracted to the oxygen of a neighbouring molecule: a hydrogen bond, longer (0.177 nm) than the covalent O–H bond (0.096 nm) and much weaker (5–30 kJ per mole, against about 350 for C–C). A molecule can donate two and accept two, so up to four.",
+  "alt": "Five water molecules: a central one donating two hydrogen bonds from its two hydrogens and accepting two from neighbours' hydrogens, drawn as dashed lines in line with the O–H bonds, with the 104.5 degree angle and the bond lengths given.",
+  "description": [
+   "A water molecule is bent: H–O–H 104.5°.",
+   "Oxygen is δ− and the hydrogens are δ+: the molecule is polar.",
+   "A hydrogen bond links a δ+ hydrogen to the oxygen of another molecule, in line with the O–H bond.",
+   "O–H covalent bond 0.096 nm; hydrogen bond 0.177 nm.",
+   "The central molecule donates two hydrogen bonds and accepts two: four in all.",
+   "Each is weak (5–30 kJ per mole) but together they give water its cohesion, high boiling point and solvent properties."
+  ],
+  "course": "biology",
+  "lesson": "Hydrogen bonding",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u03",
+    "lesson": "Water and biological systems"
+   }
+  ],
+  "renderer": "hbond",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Hydrogen bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Water and biological systems",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every water molecule has an H–O–H angle of 104.5°",
+    "ok": true,
+    "detail": "104.5, 104.5, 104.5, 104.5, 104.5"
+   },
+   {
+    "name": "every O–H covalent bond is 0.096 nm",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every hydrogen bond is a δ+ hydrogen to another molecule's oxygen, longer than a covalent O–H bond and nearly in line with it",
+    "ok": true,
+    "detail": "0.177 nm, 180°; 0.177 nm, 180°; 0.177 nm, 180°; 0.177 nm, 180°"
+   },
+   {
+    "name": "a water molecule can donate at most 2 hydrogen bonds (it has 2 hydrogens) and accept at most 2 (two lone pairs on oxygen)",
+    "ok": true,
+    "detail": "donors 2,0,0,1,1; acceptors 2,1,1,0,0"
+   },
+   {
+    "name": "the central molecule is in 4 hydrogen bonds: 2 donated, 2 accepted",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a hydrogen bond (5–30 kJ mol⁻¹) is far weaker than a C–C covalent bond (about 350)",
+    "ok": true,
+    "detail": "5–30 against 350"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

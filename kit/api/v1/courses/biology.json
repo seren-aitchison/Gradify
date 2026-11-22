@@ -2398,6 +2398,34 @@
    "url": "https://getgradify.com/scigradify/biology/#/practice/organelle-id"
   },
   {
+   "id": "membrane-explorer",
+   "title": "Membrane explorer",
+   "kind": "Explorer",
+   "sub": "Tap the phospholipids, proteins, cholesterol and carbohydrate chains of a cell membrane, and change temperature, cholesterol and tail saturation to see how fluidity responds.",
+   "note": "Illustrative cross-section, not to scale; fluidity is a qualitative model (heat and unsaturated tails loosen packing; cholesterol buffers it).",
+   "tasks": null,
+   "lessons": [
+    "u02-17",
+    "u02-18",
+    "u02-19",
+    "u02-22"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/membrane-explorer"
+  },
+  {
+   "id": "membrane-id",
+   "title": "Membrane component identification",
+   "kind": "Exercise",
+   "sub": "Find the component you're asked for in the membrane: channel, carrier, receptor, cholesterol, carbohydrate chain and more.",
+   "note": "Labelled diagram, not to scale.",
+   "tasks": null,
+   "lessons": [
+    "u02-18",
+    "u02-19"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/membrane-id"
+  },
+  {
    "id": "dna-helix",
    "title": "DNA double helix explorer",
    "kind": "Explorer",

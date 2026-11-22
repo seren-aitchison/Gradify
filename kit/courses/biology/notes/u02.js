@@ -597,6 +597,7 @@ O: Describe the roles of cholesterol, proteins and carbohydrates in membranes
 PRE: Cell membranes
 H: The phospholipid bilayer
 P: A phospholipid has a **hydrophilic** head (a phosphate group) and two **hydrophobic** fatty acid tails. In water, phospholipids arrange themselves into a bilayer with heads facing the water on both sides and tails hidden in the middle. The hydrophobic core, about 3–4 nm thick within a membrane of roughly 5–10 nm, is what blocks ions and polar molecules.
+D: bio-fluid-mosaic
 H: The fluid mosaic model
 P: In the **fluid mosaic model** (Singer and Nicolson, 1972), the bilayer is fluid: phospholipids and many proteins move sideways within it. Proteins are scattered through it like tiles in a mosaic.
 - **Integral (transmembrane) proteins** span the bilayer: channels, carriers, pumps and many receptors.

@@ -1,0 +1,68 @@
+{
+ "id": "bio-fluid-mosaic",
+ "renderer": "bilayer",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Membrane structure",
+ "title": "The fluid mosaic membrane",
+ "caption": "Phospholipids form a bilayer with their hydrophilic heads towards the water on both sides and their hydrophobic tails inside, a core about 3.5 nm thick in a membrane about 5 nm thick here. Proteins float in it like tiles in a mosaic: integral proteins span it, peripheral proteins sit on one surface. Cholesterol sits between the phospholipids of animal membranes, and short carbohydrate chains on the outer surface form the glycocalyx. Drawn to scale.",
+ "alt": "A cross-section of a membrane: two layers of phospholipids with heads outwards and tails inwards, a channel protein, a carrier protein and a receptor protein spanning it, cholesterol between the lipids, a peripheral protein on the cytosol side and carbohydrate chains on the outer surface only.",
+ "description": [
+  "Phospholipids: heads (hydrophilic) face the water on both sides, tails (hydrophobic) face inwards.",
+  "The hydrophobic core is about 3.5 nm thick in a membrane about 5 nm thick, drawn to scale.",
+  "Integral proteins span the bilayer: a channel, a carrier and a receptor.",
+  "A peripheral protein sits on one surface.",
+  "Cholesterol sits between the phospholipids in animal membranes, restraining their movement.",
+  "Carbohydrate chains on proteins and lipids are on the outer surface only: the glycocalyx, used in recognition and adhesion."
+ ],
+ "cell": "animal",
+ "scale": 14,
+ "proteins": [
+  {
+   "kind": "channel",
+   "at": 0.2
+  },
+  {
+   "kind": "carrier",
+   "at": 0.48
+  },
+  {
+   "kind": "receptor",
+   "at": 0.78,
+   "carb": true
+  }
+ ],
+ "cholesterol": [
+  0.1,
+  0.35,
+  0.64,
+  0.92
+ ],
+ "glycolipids": [
+  0.29,
+  0.62
+ ],
+ "peripheral": [
+  {
+   "at": 0.35,
+   "side": "inner"
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "kind": "channel",
+   "value": 1
+  },
+  {
+   "type": "count",
+   "kind": "carrier",
+   "value": 1
+  },
+  {
+   "type": "count",
+   "kind": "receptor",
+   "value": 1
+  }
+ ]
+}

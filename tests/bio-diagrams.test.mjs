@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -300,4 +300,31 @@ test("chromatography: Rf is the spot's distance over the solvent front's, and li
   assert.equal(allPass(spec), true);
   assert.equal(allPass({ ...spec, claims: [{ type: "rf", spot: "b", value: 0.5 }] }), false); // 32 ÷ 80 is 0.4
   assert.equal(allPass({ ...spec, spots: [{ label: "a", d: 90 }] }), false); // a spot beyond the solvent front
+});
+
+test("bilayer: drawn to scale, carbohydrate chains outside, cholesterol only in animal membranes", () => {
+  const N = bilayerNumbers(14); assert.ok(N.thickness >= 5 && N.thickness <= 10 && N.core >= 3 && N.core <= 4);
+  const ok = { renderer: "bilayer", alt: "x", cell: "animal", scale: 14, proteins: [{ kind: "channel", at: 0.3 }, { kind: "receptor", at: 0.7, carb: true }], cholesterol: [0.1], claims: [{ type: "count", kind: "channel", value: 1 }] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, cell: "bacterium" }), false); // bacterial membranes lack cholesterol
+  assert.equal(allPass({ ...ok, scale: 40 }), false); // at 40 px per nm the bilayer would be about 1.8 nm thick: not a membrane
+  assert.equal(allPass({ ...ok, proteins: [{ kind: "receptor", at: 0.7, carb: true, side: "inner" }] }), false); // sugars are on the outer surface only
+});
+
+test("induced fit: the active site changes shape to fit, and the products add up to the substrate", () => {
+  assert.equal(fitOk({ before: 58, after: 40 }, 40), true);
+  const ok = { renderer: "inducedfit", alt: "x", substrate: { w: 40, h: 46 }, products: [{ w: 22 }, { w: 18 }], models: [{ name: "lock and key", before: 40, after: 40 }, { name: "induced fit", before: 58, after: 40 }] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, models: [ok.models[0], { name: "induced fit", before: 40, after: 40 }] }), false); // no shape change is not induced fit
+  assert.equal(allPass({ ...ok, models: [{ name: "lock and key", before: 50, after: 40 }, ok.models[1]] }), false); // a lock-and-key site that changes shape
+  assert.equal(allPass({ ...ok, products: [{ w: 22 }, { w: 30 }] }), false); // products larger than the substrate
+});
+
+test("water: 104.5° molecules, hydrogen bonds longer than O–H and in line, at most 2 donated and 2 accepted", () => {
+  const mols = waterCluster(450), bonds = hydrogenBonds(mols, 450);
+  assert.equal(bonds.length, 4); assert.ok(bonds.every((b) => b.length > 0.096 && b.length < 0.2 && b.angle >= 150));
+  assert.equal(bonds.filter((b) => b.donor === 0).length, 2); assert.equal(bonds.filter((b) => b.acceptor === 0).length, 2);
+  assert.equal(HOH, 104.5);
+  assert.equal(allPass({ renderer: "hbond", alt: "x", scale: 450, energies: { hbond: [5, 30], cc: 350 } }), true);
+  assert.equal(allPass({ renderer: "hbond", alt: "x", scale: 450, energies: { hbond: [5, 300], cc: 350 } }), false); // not far weaker than a covalent bond
 });

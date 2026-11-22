@@ -52,6 +52,7 @@ H: Structure and polarity
 - The oxygen end is slightly negative (δ−) and the hydrogen ends slightly positive (δ+).
 - The bent shape (about 104.5°) makes the whole molecule **polar**.
 - Water molecules form **hydrogen bonds** with each other.
+D: bio-water-hbond
 H: Key properties
 - **Solvent**: dissolves ions and polar molecules, so reactions occur in solution and substances are transported.
 - **High specific heat capacity**: temperature changes slowly, stabilising cells and aquatic habitats.
@@ -93,6 +94,7 @@ H: What a hydrogen bond is
 - A **hydrogen bond** is an attraction between a δ+ hydrogen atom covalently bonded to an electronegative atom (O or N) and a lone pair on another electronegative atom.
 - Typical strength is roughly 5–30 kJ mol⁻¹, far weaker than a C–C covalent bond (about 350 kJ mol⁻¹).
 - They form and break easily at body temperature.
+D: bio-water-hbond
 H: Roles in biology
 - Between **water** molecules: cohesion and high boiling point.
 - In **proteins**: stabilise α-helices and β-sheets.
@@ -972,6 +974,7 @@ H: Binding and specificity
 - The reaction occurs, forming an **enzyme-product complex**.
 - Products are released and the enzyme is free to act again.
 - **Specificity** comes from the complementary shape and chemical properties of the active site.
+D: bio-induced-fit
 H: Two models
 - **Lock and key** (Fischer, 1894): the active site is a rigid shape that exactly fits the substrate.
 - **Induced fit** (Koshland, 1958): the active site changes shape slightly as the substrate binds.

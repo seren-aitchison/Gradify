@@ -8,6 +8,7 @@ import { chiSquareP } from "../kit/labs/lab.js";
 import { align } from "../kit/labs/biology/align.js";
 import { upgma, pdist, SEQS } from "../kit/labs/biology/phylo.js";
 import { simulate as heart } from "../kit/labs/biology/heart.js";
+import { COMPONENTS as MEMBRANE_PARTS, fluidity } from "../kit/labs/biology/membrane.js";
 import { capillary, alveolarPO2, sat } from "../kit/labs/biology/gas.js";
 import { gfr, glucose } from "../kit/labs/biology/kidney.js";
 import { amplify, ct } from "../kit/labs/biology/pcr.js";
@@ -98,4 +99,15 @@ test("chemistry: exact pH, cell potentials, isotope patterns, kinetics and orbit
   const br = isotopes({ C: 2, H: 5, Br: 1 }); near(br[2][1], 97, 2, "Br M+2 almost equal to M");
   near(fractionAbove(0, 298), 1, 1e-6, "all molecules have E ≥ 0"); near(halfLife(1, 1, Math.LN2), 1, 1e-12, "first-order half-life");
   for (const n of Object.keys(radial)) { let s = 0; for (let r = 0; r < 80; r += 0.002) s += r * r * radial[n](r) ** 2 * 0.002; near(s, 1, 1e-3, `${n} normalised`); }
+});
+
+test("membrane explorer: every component explains itself, and fluidity follows the lesson", () => {
+  for (const [id, c] of Object.entries(MEMBRANE_PARTS)) { assert.ok(c.name && c.fn && c.detail, id); }
+  assert.equal(Object.keys(MEMBRANE_PARTS).length, 8);
+  const f = (temp, cholesterol, unsaturated) => fluidity({ temp, cholesterol, unsaturated }).level;
+  assert.ok(f("cold", false, false) < f("body", false, false) && f("body", false, false) < f("warm", false, false)); // heat loosens packing
+  assert.ok(f("body", false, true) > f("body", false, false)); // unsaturated tails keep it fluid
+  assert.ok(f("cold", true, false) > f("cold", false, false)); // cholesterol stops tight packing in the cold
+  assert.ok(f("warm", true, false) < f("warm", false, false)); // and restrains movement when warm
+  assert.equal(fluidity({ temp: "cold", cholesterol: false, unsaturated: false }).label, "rigid, gel-like");
 });

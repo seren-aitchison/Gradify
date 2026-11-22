@@ -8,25 +8,25 @@
   "lessons": 10112,
   "written": 9979,
   "assessed": 940,
-  "plannedVisual": 648,
-  "plannedDiagram": 599,
-  "plannedLab": 108,
-  "excluded": 292,
+  "plannedVisual": 653,
+  "plannedDiagram": 603,
+  "plannedLab": 113,
+  "excluded": 287,
   "notAssessed": 9039,
-  "withDiagram": 605,
-  "withLab": 841,
-  "withBoth": 167,
-  "withAny": 1279,
+  "withDiagram": 609,
+  "withLab": 845,
+  "withBoth": 170,
+  "withAny": 1284,
   "plannedNotDelivered": 0,
-  "placements": 629
+  "placements": 633
  },
  "diagrams": {
-  "manifest": 563,
-  "uniquePlaced": 563,
-  "placements": 629,
-  "reused": 60,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":548},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":548},
+  "manifest": 566,
+  "uniquePlaced": 566,
+  "placements": 633,
+  "reused": 61,
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":551},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":551},
   "failing": [],
   "unplaced": []
  },
@@ -523,17 +523,17 @@
     "lessons": 2159,
     "written": 2109,
     "assessed": 820,
-    "plannedVisual": 542,
-    "plannedDiagram": 500,
-    "plannedLab": 95,
-    "excluded": 278,
+    "plannedVisual": 547,
+    "plannedDiagram": 504,
+    "plannedLab": 100,
+    "excluded": 273,
     "notAssessed": 1289,
-    "withDiagram": 504,
-    "withLab": 317,
-    "withBoth": 159,
-    "withAny": 662,
+    "withDiagram": 508,
+    "withLab": 321,
+    "withBoth": 162,
+    "withAny": 667,
     "plannedNotDelivered": 0,
-    "placements": 524
+    "placements": 528
    }
   },
   {
@@ -1293,22 +1293,22 @@
    "declaredSite": "SciGradify",
    "servedBy": ["SciGradify"],
    "plan": ["kit/diagrams/plans/biology.mjs"],
-   "labs": 30,
+   "labs": 32,
    "totals": {
     "lessons": 391,
     "written": 391,
     "assessed": 391,
-    "plannedVisual": 179,
-    "plannedDiagram": 137,
-    "plannedLab": 95,
-    "excluded": 212,
+    "plannedVisual": 184,
+    "plannedDiagram": 141,
+    "plannedLab": 100,
+    "excluded": 207,
     "notAssessed": 0,
-    "withDiagram": 138,
-    "withLab": 95,
-    "withBoth": 54,
-    "withAny": 179,
+    "withDiagram": 142,
+    "withLab": 99,
+    "withBoth": 57,
+    "withAny": 184,
     "plannedNotDelivered": 0,
-    "placements": 156
+    "placements": 160
    },
    "units": [
     {
@@ -1439,17 +1439,17 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 22,
-      "plannedDiagram": 17,
-      "plannedLab": 10,
-      "excluded": 8,
+      "plannedVisual": 24,
+      "plannedDiagram": 18,
+      "plannedLab": 14,
+      "excluded": 6,
       "notAssessed": 0,
-      "withDiagram": 17,
-      "withLab": 10,
-      "withBoth": 5,
-      "withAny": 22,
+      "withDiagram": 18,
+      "withLab": 14,
+      "withBoth": 8,
+      "withAny": 24,
       "plannedNotDelivered": 0,
-      "placements": 18
+      "placements": 19
      },
      "lessons": [
       {
@@ -1524,16 +1524,23 @@
        "labs": [],
        "plan": {"verdict":"none","reason":"three filament types and their motors: a list of properties a picture would not add to"}
       },
-      {"id":"u02-17","title":"Cell membranes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the functions of membranes: a list, drawn properly in the next lesson"}},
+      {"id":"u02-17","title":"Cell membranes","written":true,"diagrams":[],"labs":["membrane-explorer"],"plan":{"verdict":"lab","labs":["membrane-explorer"]}},
       {
        "id": "u02-18",
        "title": "Membrane structure",
        "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"the fluid mosaic structure: needs a cross-section drawing, not yet built (a bilayer renderer is planned)"}
+       "diagrams": [{"id":"bio-fluid-mosaic","status":"validated"}],
+       "labs": ["membrane-explorer","membrane-id"],
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-fluid-mosaic"],"labs":["membrane-explorer","membrane-id"]}
       },
-      {"id":"u02-19","title":"Membrane transport","written":true,"diagrams":[{"id":"bio-which-route","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-which-route"]}},
+      {
+       "id": "u02-19",
+       "title": "Membrane transport",
+       "written": true,
+       "diagrams": [{"id":"bio-which-route","status":"validated"}],
+       "labs": ["membrane-explorer","membrane-id"],
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-which-route"],"labs":["membrane-explorer"]}
+      },
       {"id":"u02-20","title":"Diffusion","written":true,"diagrams":[{"id":"bio-surface-area-volume","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-surface-area-volume"]}},
       {"id":"u02-21","title":"Osmosis","written":true,"diagrams":[{"id":"bio-osmosis-cells","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-osmosis-cells"]}},
       {
@@ -1541,8 +1548,8 @@
        "title": "Facilitated diffusion",
        "written": true,
        "diagrams": [{"id":"bio-facilitated-diffusion","status":"validated"},{"id":"bio-diffusion-saturation","status":"validated"}],
-       "labs": [],
-       "plan": {"verdict":"diagram","diagrams":["bio-facilitated-diffusion","bio-diffusion-saturation"]}
+       "labs": ["membrane-explorer"],
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-facilitated-diffusion","bio-diffusion-saturation"],"labs":["membrane-explorer"]}
       },
       {
        "id": "u02-23",
@@ -1597,36 +1604,22 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 21,
-      "plannedDiagram": 17,
-      "plannedLab": 11,
-      "excluded": 9,
+      "plannedVisual": 24,
+      "plannedDiagram": 20,
+      "plannedLab": 12,
+      "excluded": 6,
       "notAssessed": 0,
-      "withDiagram": 17,
+      "withDiagram": 20,
       "withLab": 11,
       "withBoth": 7,
-      "withAny": 21,
+      "withAny": 24,
       "plannedNotDelivered": 0,
-      "placements": 19
+      "placements": 22
      },
      "lessons": [
       {"id":"u03-01","title":"Chemistry of life","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of the elements and bonds of life: carried in the text"}},
-      {
-       "id": "u03-02",
-       "title": "Water and biological systems",
-       "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"water's properties need a hydrogen-bonded water drawing, not yet built (a bonding renderer is planned)"}
-      },
-      {
-       "id": "u03-03",
-       "title": "Hydrogen bonding",
-       "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"hydrogen bonding needs the same bonding drawing, not yet built (a bonding renderer is planned)"}
-      },
+      {"id":"u03-02","title":"Water and biological systems","written":true,"diagrams":[{"id":"bio-water-hbond","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-hbond"]}},
+      {"id":"u03-03","title":"Hydrogen bonding","written":true,"diagrams":[{"id":"bio-water-hbond","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-hbond"]}},
       {
        "id": "u03-04",
        "title": "pH and biological buffers",
@@ -1686,9 +1679,9 @@
        "id": "u03-24",
        "title": "Enzyme-substrate interactions",
        "written": true,
-       "diagrams": [],
+       "diagrams": [{"id":"bio-induced-fit","status":"validated"}],
        "labs": [],
-       "plan": {"verdict":"none","reason":"induced fit needs an active-site drawing, not yet built (an enzyme-substrate renderer is planned)"}
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-induced-fit"],"labs":["enzyme-kinetics"]}
       },
       {
        "id": "u03-25",

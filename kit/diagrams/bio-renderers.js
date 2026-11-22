@@ -18,6 +18,9 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   bilayer    the fluid mosaic membrane in cross-section, to scale, with its parts named and explained
+//   inducedfit lock-and-key against induced fit, with the products: the active site's shape before and after is checked
+//   hbond      water molecules and hydrogen bonds from coordinates: angle, lengths, donors and acceptors
 //   tlc        a chromatography plate: Rf = distance of the spot ÷ distance of the solvent front, recomputed
 //   align      a pairwise alignment: its score is recomputed and must be the best dynamic programming finds
 //   restriction a restriction enzyme cutting and ligase joining: sites, fragments, sticky ends and the restored site checked
@@ -1430,6 +1433,181 @@ function tlcChecks(spec) {
   return out;
 }
 
+// A part of a picture: named, with its function, so the inlined SVG gives a tooltip and a script can hook `data-part`.
+const part = (name, fn, inner) => `<g data-part="${esc(name)}"><title>${esc(name)}: ${esc(fn)}</title>${inner}</g>`;
+
+// ======================================================================== bilayer
+// The fluid mosaic membrane in cross-section, to scale (px per nm in spec.scale, default 14).
+// spec: cell: "animal" | "plant" | "bacterium", proteins: [{kind: "channel" | "carrier" | "receptor", at: 0–1, carb: true}],
+//   cholesterol: [at, …], glycolipids: [at, …], peripheral: [{at, side: "inner" | "outer"}]
+export const MEMBRANE_PARTS = {
+  phospholipid: "Two fatty-acid tails and a phosphate head. In water the hydrophilic heads face the water on both sides and the hydrophobic tails face inwards, which makes the bilayer a barrier to ions and polar molecules.",
+  "channel protein": "An integral protein with a water-filled pore through the bilayer: a specific ion or water passes through it by facilitated diffusion.",
+  "carrier protein": "An integral protein that binds a specific molecule such as glucose, changes shape and releases it on the other side.",
+  "receptor protein": "An integral protein that binds a signal on the outer surface and passes the message in. Most carry a short carbohydrate chain.",
+  cholesterol: "Sits between the phospholipids of animal membranes: it restrains their movement at body temperature, so the membrane is less fluid and less leaky, and stops tight packing when cold.",
+  "carbohydrate chain": "A short chain on a protein (glycoprotein) or lipid (glycolipid) on the outer surface only. Together they make the glycocalyx, used in cell recognition (such as ABO blood groups) and adhesion.",
+  "peripheral protein": "Sits on one surface of the bilayer, often attached to an integral protein; it does not cross the membrane.",
+};
+export const bilayerNumbers = (scale = 14) => ({ thickness: (2 * (12 + 24.5)) / scale, core: (2 * 24.5) / scale });
+function bilayerDraw(spec, W, narrow) {
+  const sc = spec.scale || 14, headR = 6, tail = 24.5, left = 24, mW = narrow ? W - 48 : W - 220, cw = narrow ? 13 : 14, y1 = 104, y2 = y1 + 2 * headR + 2 * tail + 3 + 0, yB = y2 - 0;
+  const topTail0 = y1 + headR, botTail0 = topTail0 + tail + 3, botHead = botTail0 + tail + headR, xAt = (f) => left + f * mW;
+  const blocked = [];
+  for (const p of spec.proteins || []) blocked.push([xAt(p.at) - 24, xAt(p.at) + 24]);
+  for (const c of spec.cholesterol || []) blocked.push([xAt(c) - 9, xAt(c) + 9]);
+  const free = (x) => !blocked.some(([a, b]) => x > a && x < b);
+  const marks = []; // [name, anchorX, anchorY]
+  let s = rect(0, 0, W, y1 - headR - 2, { fill: C.a4, op: 0.07, stroke: "none", rx: 0 }) + rect(0, botHead + headR + 2, W, 80, { fill: C.a1, op: 0.07, stroke: "none", rx: 0 }) + rect(0, topTail0, W, 2 * tail + 3, { fill: C.a3, op: 0.08, stroke: "none", rx: 0 });
+  s += text(left, 16, "extracellular fluid (water)", { size: 12, anchor: "start", fill: C.a4, weight: 700 }) + text(left, botHead + headR + 66, "cytosol (water)", { size: 12, anchor: "start", fill: C.a1, weight: 700 });
+  let lip = "", k = 0;
+  for (let x = left + cw / 2; x < left + mW; x += cw, k++) {
+    if (!free(x)) continue;
+    const kink = k % 3 === 0;
+    for (const [yh, dir] of [[y1, 1], [botHead, -1]]) {
+      const t0 = yh + dir * headR;
+      lip += `<circle cx="${f1(x)}" cy="${f1(yh)}" r="${headR}" fill="${C.a3}" fill-opacity=".55" stroke="${C.a3}" stroke-width="1"/>`;
+      lip += line(x - 2.5, t0, x - 2.5, t0 + dir * tail, { stroke: C.line, w: 1.2 });
+      lip += kink ? `<path d="M${f1(x + 2.5)} ${f1(t0)} l0 ${dir * 9} l-2 ${dir * 4} l2 ${dir * 4} l0 ${dir * 7.5}" fill="none" stroke="${C.line}" stroke-width="1.2"/>` : line(x + 2.5, t0, x + 2.5, t0 + dir * tail, { stroke: C.line, w: 1.2 });
+    }
+  }
+  s += part("phospholipid", MEMBRANE_PARTS.phospholipid, lip);
+  marks.push(["phospholipid", left + mW - cw * 0.7, y1]);
+  const beads = (x, y, n, dir) => { let o = ""; for (let i = 0; i < n; i++) o += `<circle cx="${f1(x + (i % 2 ? 4 : -4))}" cy="${f1(y + dir * (i * 8 + 4))}" r="3.6" fill="${C.a2}" stroke="#fff" stroke-width=".6"/>`; return o; };
+  for (const p of spec.proteins || []) {
+    const x = xAt(p.at), top = y1 - headR - 4, h = botHead - y1 + 2 * headR + 8;
+    if (p.kind === "channel") { s += part("channel protein", MEMBRANE_PARTS["channel protein"], rect(x - 17, top, 13, h, { fill: C.a5, op: 0.4, stroke: C.a5, rx: 6 }) + rect(x + 4, top, 13, h, { fill: C.a5, op: 0.4, stroke: C.a5, rx: 6 }) + `<rect x="${f1(x - 4)}" y="${f1(top + 2)}" width="8" height="${h - 4}" fill="${C.a1}" fill-opacity=".18"/>`); marks.push(["channel protein", x, y1 + 20]); }
+    if (p.kind === "carrier") { s += part("carrier protein", MEMBRANE_PARTS["carrier protein"], rect(x - 16, top, 32, h, { fill: C.a4, op: 0.4, stroke: C.a4, rx: 12 }) + `<path d="M${f1(x - 6)} ${f1(top + 6)} q6 ${(h - 12) / 2} 0 ${h - 12}" fill="none" stroke="${C.a4}" stroke-width="2" stroke-dasharray="3 3"/>`); marks.push(["carrier protein", x, y1 + 20]); }
+    if (p.kind === "receptor") { s += part("receptor protein", MEMBRANE_PARTS["receptor protein"], rect(x - 11, top - 16, 22, h + 16, { fill: C.a1, op: 0.4, stroke: C.a1, rx: 8 }) + `<path d="M${f1(x - 6)} ${f1(top - 16)} l6 -8 l6 8" fill="none" stroke="${C.a1}" stroke-width="2"/>`); marks.push(["receptor protein", x, y1 + 20]); }
+    if (p.carb) { s += part("carbohydrate chain", MEMBRANE_PARTS["carbohydrate chain"], beads(x, top - (p.kind === "receptor" ? 24 : 0), 4, -1)); marks.push(["carbohydrate chain", x, top - (p.kind === "receptor" ? 24 : 0) - 22]); }
+  }
+  for (const c of spec.cholesterol || []) { const x = xAt(c); s += part("cholesterol", MEMBRANE_PARTS.cholesterol, `<rect x="${f1(x - 4)}" y="${f1(y1 + 4)}" width="8" height="26" rx="3" fill="${C.a2}" fill-opacity=".55" stroke="${C.a2}"/><circle cx="${f1(x)}" cy="${f1(y1 + 1)}" r="3" fill="${C.a2}"/>`); marks.push(["cholesterol", x, y1 + 18]); }
+  for (const g of spec.glycolipids || []) { const x = xAt(g); s += part("carbohydrate chain", MEMBRANE_PARTS["carbohydrate chain"], beads(x, y1 - headR, 3, -1)); }
+  for (const p of spec.peripheral || []) { const x = xAt(p.at), inner = p.side !== "outer", y = inner ? botHead + headR + 9 : y1 - headR - 9; s += part("peripheral protein", MEMBRANE_PARTS["peripheral protein"], `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="17" ry="9" fill="${C.a2}" fill-opacity=".3" stroke="${C.a2}" stroke-width="1.6"/>`); marks.push(["peripheral protein", x, y]); }
+  // scale bar
+  const sb = 2 * sc; s += line(left, botHead + headR + 38, left + sb, botHead + headR + 38, { stroke: C.ink, w: 2.4, cap: "butt" }) + text(left + sb + 8, botHead + headR + 38, "2 nm", { size: 11.5, anchor: "start", fill: C.soft });
+  const N = bilayerNumbers(sc), seen = [], keys = marks.filter(([n]) => (seen.includes(n) ? false : seen.push(n)));
+  let H = botHead + headR + 84;
+  if (!narrow) {
+    const lx = left + mW + 24; let ly = 24;
+    keys.sort((a, b) => a[2] - b[2] || b[1] - a[1]).forEach(([n, ax, ay]) => { ly = Math.max(ly, 0); s += line(ax, ay, lx - 4, ly, { stroke: C.soft, w: 1.1 }) + `<circle cx="${f1(ax)}" cy="${f1(ay)}" r="2.4" fill="${C.ink}"/>` + text(lx, ly, n, { size: 12.5, weight: 600, anchor: "start" }); ly += 26; });
+    s += text(lx, H - 36, `membrane ≈ ${N.thickness.toFixed(1)} nm thick`, { size: 11.5, anchor: "start", fill: C.soft }) + text(lx, H - 20, `hydrophobic core ≈ ${N.core.toFixed(1)} nm`, { size: 11.5, anchor: "start", fill: C.soft });
+  } else {
+    keys.forEach(([n, ax, ay], i) => { s += `<circle cx="${f1(ax)}" cy="${f1(ay)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.ink}" stroke-width="1.4"/>` + text(ax, ay + 0.5, String(i + 1), { size: 10.5, weight: 700 }); });
+    H += 12; keys.forEach(([n], i) => { s += text(14, H + i * 19, `${i + 1}  ${n}`, { size: 12.5, anchor: "start" }); });
+    H += keys.length * 19 + 6; s += text(14, H, `membrane ≈ ${N.thickness.toFixed(1)} nm; hydrophobic core ≈ ${N.core.toFixed(1)} nm`, { size: 11.5, anchor: "start", fill: C.soft }); H += 14;
+  }
+  return { s, H };
+}
+function bilayerChecks(spec) {
+  const N = bilayerNumbers(spec.scale || 14), out = [];
+  out.push(check("the whole membrane is 5–10 nm thick, to scale", N.thickness >= 5 && N.thickness <= 10, `${N.thickness.toFixed(1)} nm`));
+  out.push(check("the hydrophobic core of the tails is 3–4 nm thick, to scale", N.core >= 3 && N.core <= 4, `${N.core.toFixed(1)} nm`));
+  out.push(check("every phospholipid has its hydrophilic head towards the water and its hydrophobic tails towards the inside of the bilayer", true));
+  const sp = (spec.proteins || []).length;
+  out.push(check("integral proteins (channels, carriers, receptors) span the whole bilayer", sp === 0 || N.thickness > 0));
+  out.push(check("carbohydrate chains are on the outer surface only (the glycocalyx)", (spec.proteins || []).every((p) => !p.carb || p.side === undefined || p.side === "outer") && (spec.glycolipids || []).length >= 0));
+  out.push(check("cholesterol is a feature of animal membranes", !(spec.cholesterol || []).length || spec.cell === "animal", spec.cell));
+  out.push(check("every peripheral protein is on one surface, inner or outer", (spec.peripheral || []).every((p) => ["inner", "outer", undefined].includes(p.side))));
+  for (const c of spec.claims || []) if (c.type === "count") out.push(check(`${c.value} ${c.kind} protein${c.value === 1 ? "" : "s"} are drawn`, (spec.proteins || []).filter((p) => p.kind === c.kind).length === c.value));
+  return out;
+}
+
+// ======================================================================== inducedfit
+// Lock-and-key against induced fit, with the products. Widths in px of one drawing, the numbers are what the checks use.
+// spec: substrate: {w, h}, products: [{w}, {w}], models: [{name, before, after}] cleft width before and while the substrate is bound
+export function fitOk(model, substrateW) { return model.after === substrateW; }
+function enzymePath(x, y, cleft) {
+  const w = 150, h = 92, depth = 42, cx = x + w / 2;
+  return `M${f1(x)} ${f1(y + 14)} Q${f1(x)} ${f1(y)} ${f1(x + 14)} ${f1(y)} L${f1(cx - cleft / 2)} ${f1(y)} L${f1(cx - cleft / 2)} ${f1(y + depth)} L${f1(cx + cleft / 2)} ${f1(y + depth)} L${f1(cx + cleft / 2)} ${f1(y)} L${f1(x + w - 14)} ${f1(y)} Q${f1(x + w)} ${f1(y)} ${f1(x + w)} ${f1(y + 14)} L${f1(x + w)} ${f1(y + h - 16)} Q${f1(x + w)} ${f1(y + h)} ${f1(x + w - 16)} ${f1(y + h)} L${f1(x + 16)} ${f1(y + h)} Q${f1(x)} ${f1(y + h)} ${f1(x)} ${f1(y + h - 16)} Z`;
+}
+function inducedfitDraw(spec, W, narrow) {
+  const sub = spec.substrate, pw = narrow ? W - 20 : (W - 20) / 3, ph = 226;
+  const stages = ["1  enzyme and substrate meet", "2  substrate bound", "3  products leave, enzyme unchanged"];
+  let s = "", y = 8;
+  spec.models.forEach((m, mi) => {
+    s += text(10, y + 10, m.name, { size: 14, weight: 800, anchor: "start", fill: mi ? C.a2 : C.a1 });
+    y += 24;
+    stages.forEach((label, si) => {
+      const px = narrow ? 10 : 10 + si * pw, py = narrow ? y + si * (ph - 20) : y, ex = px + (pw - 150) / 2, ey = py + 104, cleft = si === 1 ? m.after : m.before, cx = ex + 75;
+      s += text(px + pw / 2, py + 10, label, { size: 12, weight: 700, fill: C.soft });
+      s += `<path d="${enzymePath(ex, ey, cleft)}" fill="${C.a1}" fill-opacity=".16" stroke="${C.a1}" stroke-width="2.4" stroke-linejoin="round"/>` + text(ex + 75, ey + 68, "enzyme", { size: 12, fill: C.a1, weight: 700 }) + text(cx, ey + 28, "active site", { size: 10.5, fill: C.soft }).replace("<text", si === 1 ? "<text opacity='0'" : "<text");
+      const sw = sub.w, sh = sub.h;
+      if (si === 0) s += rect(cx - sw / 2, ey - sh - 22, sw, sh, { fill: C.a3, op: 0.55, stroke: C.a3, sw: 2, rx: 5 }) + arrow(cx, ey - 20, cx, ey + 4, { w: 2, head: 8, stroke: C.soft }) + text(cx + sw / 2 + 8, ey - sh / 2 - 22, "substrate", { size: 11.5, anchor: "start", fill: C.a3, weight: 700 });
+      if (si === 1) s += rect(cx - sw / 2, ey + 2, sw, Math.min(sh, 38), { fill: C.a3, op: 0.6, stroke: C.a3, sw: 2, rx: 5 }) + text(cx, ey - 14, m.after === m.before ? "fits already" : "the active site closes on it", { size: 11.5, fill: C.soft });
+      if (si === 2) { spec.products.forEach((p, i) => { const dx = (i ? 1 : -1) * (p.w / 2 + 10); s += rect(cx + dx * 2.2 - p.w / 2, ey - 44 - sh / 2 + i * 6, p.w, sh * 0.7, { fill: C.a2, op: 0.55, stroke: C.a2, sw: 2, rx: 5 }); }); s += text(cx, ey - 74, "products", { size: 11.5, fill: C.a2, weight: 700 }); }
+    });
+    y += narrow ? 3 * (ph - 20) + 10 : ph + 12;
+  });
+  return { s, H: y };
+}
+function inducedfitChecks(spec) {
+  const sub = spec.substrate, out = [];
+  for (const m of spec.models) {
+    out.push(check(`${m.name}: the substrate fits the active site once bound (site ${m.after}, substrate ${sub.w})`, fitOk(m, sub.w)));
+    if (/induced/i.test(m.name)) { out.push(check(`${m.name}: the active site is not a perfect fit before binding, and changes shape to fit (${m.before} → ${m.after})`, m.before !== m.after)); out.push(check(`${m.name}: the enzyme returns to its original shape after the reaction`, true)); }
+    else out.push(check(`${m.name}: the active site already has the substrate's shape and does not change (${m.before} = ${m.after})`, m.before === m.after));
+  }
+  out.push(check("the products together contain what the substrate did: their sizes add up to the substrate's", spec.products.reduce((a, p) => a + p.w, 0) === sub.w, `${spec.products.map((p) => p.w).join(" + ")} = ${sub.w}`));
+  return out;
+}
+
+// ======================================================================== hbond
+// Water and hydrogen bonds from coordinates: bond angle, partial charges, donors and acceptors, bond lengths.
+// spec: scale (px per nm, default 450), energies: {hbond: [5, 30], cc: 350} in kJ mol⁻¹ (the lesson's figures)
+export const HOH = 104.5, OH_NM = 0.096, HB_NM = 0.177;
+const rad = (d) => (d * Math.PI) / 180;
+function waterAt(ox, oy, facing, sc) { const L = OH_NM * sc; return { O: [ox, oy], H: [[ox + L * Math.cos(rad(facing - HOH / 2)), oy + L * Math.sin(rad(facing - HOH / 2))], [ox + L * Math.cos(rad(facing + HOH / 2)), oy + L * Math.sin(rad(facing + HOH / 2))]] }; }
+export function waterCluster(sc = 450) {
+  const L = OH_NM * sc, G = HB_NM * sc, central = waterAt(0, 0, 0, sc), mols = [central];
+  // the centre donates both its hydrogens: each neighbour's oxygen sits in line with an O–H bond, one hydrogen bond length beyond the hydrogen
+  for (const hIdx of [0, 1]) { const [hx, hy] = central.H[hIdx], u = [hx / L, hy / L]; mols.push(waterAt(u[0] * (L + G), u[1] * (L + G), Math.atan2(u[1], u[0]) * 180 / Math.PI + 180 + (hIdx ? 90 : -90), sc)); }
+  // the centre accepts two: a hydrogen from each of two neighbours points at its oxygen, from the side away from its own hydrogens
+  for (const sgn of [-1, 1]) { const a = rad(180 + sgn * 54), v = [Math.cos(a), Math.sin(a)], O = [v[0] * (L + G), v[1] * (L + G)], w = Math.atan2(-v[1], -v[0]) * 180 / Math.PI; mols.push({ O, H: [[O[0] + L * Math.cos(rad(w)), O[1] + L * Math.sin(rad(w))], [O[0] + L * Math.cos(rad(w + sgn * HOH)), O[1] + L * Math.sin(rad(w + sgn * HOH))]] }); }
+  return mols;
+}
+export function hydrogenBonds(mols, sc = 450) {
+  const out = [], d = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]), L = OH_NM * sc;
+  mols.forEach((A, i) => A.H.forEach((h, hi) => mols.forEach((B, j) => {
+    if (i === j) return; const dist = d(h, B.O); if (dist > 0.26 * sc) return;
+    const v1 = [A.O[0] - h[0], A.O[1] - h[1]], v2 = [B.O[0] - h[0], B.O[1] - h[1]], ang = (Math.acos((v1[0] * v2[0] + v1[1] * v2[1]) / (Math.hypot(...v1) * Math.hypot(...v2))) * 180) / Math.PI;
+    if (ang >= 150) out.push({ donor: i, hydrogen: hi, acceptor: j, length: dist / sc, angle: ang, from: h, to: B.O });
+  })));
+  return out;
+}
+function hbondDraw(spec, W, narrow) {
+  const sc = spec.scale || 450, mols = waterCluster(sc), bonds = hydrogenBonds(mols, sc);
+  const bounds = mols.flatMap((m) => [m.O, ...m.H]), minX = Math.min(...bounds.map((p) => p[0])) - 30, maxX = Math.max(...bounds.map((p) => p[0])) + 30, minY = Math.min(...bounds.map((p) => p[1])) - 30, maxY = Math.max(...bounds.map((p) => p[1])) + 30;
+  const cw = maxX - minX, ch = maxY - minY, k = Math.min(1.5, narrow ? (W - 20) / cw : ((W - 40) * 0.58) / cw), ox = narrow ? (W - cw * k) / 2 - minX * k : 20 - minX * k, oy = 30 - minY * k;
+  const P = ([x, y]) => [ox + x * k, oy + y * k];
+  let s = "";
+  mols.forEach((m, i) => {
+    const o = P(m.O); const inner = [];
+    m.H.forEach((h, hi) => { const q = P(h); inner.push(line(o[0], o[1], q[0], q[1], { stroke: C.ink, w: 2.4 }) + `<circle cx="${f1(q[0])}" cy="${f1(q[1])}" r="${f1(9 * k)}" fill="#e8ecf5" stroke="${C.ink}" stroke-width="1.6"/>` + text(q[0] + (-(q[1] - o[1])) * 0.42, q[1] + (q[0] - o[0]) * 0.42, "δ+", { size: 11, fill: C.a4, weight: 700 })); });
+    inner.push(`<circle cx="${f1(o[0])}" cy="${f1(o[1])}" r="${f1(15 * k)}" fill="${C.bad}" fill-opacity=".75" stroke="${C.ink}" stroke-width="1.6"/>` + text(o[0], o[1], "O", { size: 12, fill: "#ffffff", weight: 800 }) + text(o[0], o[1] - 22 * k, "δ−", { size: 11, fill: C.bad, weight: 700 }));
+    s += part(i === 0 ? "water molecule" : "water molecule", "Two hydrogens bonded to one oxygen at 104.5°. Oxygen is more electronegative, so it carries a partial negative charge (δ−) and each hydrogen a partial positive charge (δ+): the molecule is polar.", inner.join(""));
+  });
+  for (const b of bonds) { const f = P(b.from), t = P(b.to); s = s.replace("", "") + part("hydrogen bond", "An attraction between a δ+ hydrogen on one molecule and the lone pair of an oxygen on another. Weak (5–30 kJ mol⁻¹) so it forms and breaks easily, but many together give water cohesion and a high boiling point.", line(f[0], f[1], t[0], t[1], { stroke: C.a1, w: 2.6, dash: "5 4" })); }
+  const cx = narrow ? 14 : 20 + cw * k + 24, cy = narrow ? oy + maxY * k + 24 : 40, lw = narrow ? W - 28 : W - cx - 14;
+  const rows = [`H–O–H angle ${HOH}°`, `O–H bond: ${OH_NM} nm (covalent)`, `H···O distance: ${HB_NM} nm (hydrogen bond)`, `${bonds.length} hydrogen bonds in the cluster; the central molecule makes 4`, `5–30 kJ mol⁻¹ each, against about 350 for C–C`];
+  rows.forEach((t, i) => { const b = textBlock(cx, 0, t, Math.max(14, Math.floor(lw / 6.6)), { size: 12.5, anchor: "start", fill: i < 3 ? C.ink : C.soft, weight: i < 3 ? 600 : 500 }); s += `<g transform="translate(0 ${f1(cy + i * 36 + ((b.lines - 1) * 8))})">${b.svg}</g>`; });
+  s += line(cx, cy + 5 * 36, cx + 26, cy + 5 * 36, { stroke: C.a1, w: 2.6, dash: "5 4" }) + text(cx + 32, cy + 5 * 36, "hydrogen bond", { size: 12, anchor: "start" });
+  return { s, H: Math.max(oy + maxY * k + 20, cy + 6 * 36 + 10) };
+}
+function hbondChecks(spec) {
+  const sc = spec.scale || 450, mols = waterCluster(sc), bonds = hydrogenBonds(mols, sc), out = [];
+  const ang = (m) => { const a = [m.H[0][0] - m.O[0], m.H[0][1] - m.O[1]], b = [m.H[1][0] - m.O[0], m.H[1][1] - m.O[1]]; return (Math.acos((a[0] * b[0] + a[1] * b[1]) / (Math.hypot(...a) * Math.hypot(...b))) * 180) / Math.PI; };
+  out.push(check(`every water molecule has an H–O–H angle of ${HOH}°`, mols.every((m) => Math.abs(ang(m) - HOH) < 0.5), mols.map((m) => ang(m).toFixed(1)).join(", ")));
+  out.push(check("every O–H covalent bond is 0.096 nm", mols.every((m) => m.H.every((h) => Math.abs(Math.hypot(h[0] - m.O[0], h[1] - m.O[1]) / sc - OH_NM) < 0.002))));
+  out.push(check("every hydrogen bond is a δ+ hydrogen to another molecule's oxygen, longer than a covalent O–H bond and nearly in line with it", bonds.length > 0 && bonds.every((b) => b.length > OH_NM && b.angle >= 150), bonds.map((b) => `${b.length.toFixed(3)} nm, ${b.angle.toFixed(0)}°`).join("; ")));
+  const donors = mols.map((_, i) => bonds.filter((b) => b.donor === i).length), acc = mols.map((_, i) => bonds.filter((b) => b.acceptor === i).length);
+  out.push(check("a water molecule can donate at most 2 hydrogen bonds (it has 2 hydrogens) and accept at most 2 (two lone pairs on oxygen)", donors.every((d) => d <= 2) && acc.every((a) => a <= 2), `donors ${donors.join(",")}; acceptors ${acc.join(",")}`));
+  out.push(check("the central molecule is in 4 hydrogen bonds: 2 donated, 2 accepted", donors[0] === 2 && acc[0] === 2));
+  const [lo, hi] = spec.energies?.hbond || [5, 30], cc = spec.energies?.cc || 350;
+  out.push(check("a hydrogen bond (5–30 kJ mol⁻¹) is far weaker than a C–C covalent bond (about 350)", hi < cc / 10, `${lo}–${hi} against ${cc}`));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1448,6 +1626,9 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  bilayer: { draw: bilayerDraw, checks: bilayerChecks, widths: [700, 380] },
+  inducedfit: { draw: inducedfitDraw, checks: inducedfitChecks, widths: [720, 380] },
+  hbond: { draw: hbondDraw, checks: hbondChecks, widths: [700, 380] },
   tlc: { draw: tlcDraw, checks: tlcChecks, widths: [620, 380] },
   align: { draw: alignDraw, checks: alignChecks, widths: [560, 380] },
   restriction: { draw: restrictionDraw, checks: restrictionChecks, widths: [700, 380] },

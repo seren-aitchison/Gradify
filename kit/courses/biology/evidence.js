@@ -3,6 +3,8 @@
 // (the script keeps existing entries). Checked by tests/interactives.test.mjs and scripts/check-interactives.cjs.
 export const EVIDENCE = {
   "cell-explorer": { "both": "u02-04", "ten": "u02-08", "endo": "u02-08" },
+  "membrane-explorer": { "all": "u02-18", "fluid": "u02-18", "chol": "u02-18" },
+  "membrane-id": { "six": "u02-18", "streak": "u02-19" },
   "organelle-id": { "five": "u02-08", "plant": "u02-08", "streak": "u02-08" },
   "dna-helix": { "edit": "u04-02", "gc": "u04-02", "groove": "u04-02" },
   "replication": { "dir": "u04-03", "primer": "u04-03", "ligase": "u04-03" },
@@ -41,6 +43,7 @@ export const EXPLORATION = {
   "antibody": ["mat"],
   "bacterial-growth": ["log", "res"],
   "cell-explorer": ["both", "ten"],
+  "membrane-explorer": ["all", "fluid", "chol"],
   "division": ["mit", "mei", "two"],
   "dna-helix": ["groove"],
   "gel": ["run"],

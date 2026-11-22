@@ -1,0 +1,33 @@
+{
+ "id": "bio-water-hbond",
+ "renderer": "hbond",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Hydrogen bonding",
+ "title": "Water molecules and hydrogen bonds",
+ "caption": "Oxygen pulls the shared electrons harder than hydrogen, so each water molecule is polar: δ− on the oxygen, δ+ on each hydrogen, with the hydrogens 104.5° apart. A δ+ hydrogen is attracted to the oxygen of a neighbouring molecule: a hydrogen bond, longer (0.177 nm) than the covalent O–H bond (0.096 nm) and much weaker (5–30 kJ per mole, against about 350 for C–C). A molecule can donate two and accept two, so up to four.",
+ "alt": "Five water molecules: a central one donating two hydrogen bonds from its two hydrogens and accepting two from neighbours' hydrogens, drawn as dashed lines in line with the O–H bonds, with the 104.5 degree angle and the bond lengths given.",
+ "description": [
+  "A water molecule is bent: H–O–H 104.5°.",
+  "Oxygen is δ− and the hydrogens are δ+: the molecule is polar.",
+  "A hydrogen bond links a δ+ hydrogen to the oxygen of another molecule, in line with the O–H bond.",
+  "O–H covalent bond 0.096 nm; hydrogen bond 0.177 nm.",
+  "The central molecule donates two hydrogen bonds and accepts two: four in all.",
+  "Each is weak (5–30 kJ per mole) but together they give water its cohesion, high boiling point and solvent properties."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u03",
+   "lesson": "Water and biological systems"
+  }
+ ],
+ "scale": 450,
+ "energies": {
+  "hbond": [
+   5,
+   30
+  ],
+  "cc": 350
+ }
+}

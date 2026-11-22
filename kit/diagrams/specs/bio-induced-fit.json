@@ -1,0 +1,41 @@
+{
+ "id": "bio-induced-fit",
+ "renderer": "inducedfit",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Enzyme-substrate interactions",
+ "title": "Lock and key, and induced fit",
+ "caption": "In the lock-and-key model the active site already has exactly the substrate's shape. In the induced-fit model, now preferred, the active site is not a perfect fit until the substrate binds, and then it changes shape to close round it, straining the substrate towards the transition state. After the reaction the products leave and the enzyme returns to its original shape, ready to be used again. Schematic, not to scale.",
+ "alt": "Two rows of three pictures. Lock and key: a substrate fits an active site of the same width, which never changes. Induced fit: the active site is wider than the substrate, narrows round it when it binds, and widens again when the two products leave.",
+ "description": [
+  "Lock and key: the active site has the substrate's shape before, during and after.",
+  "Induced fit: the active site is wider than the substrate at first.",
+  "When the substrate binds, the active site changes shape and closes round it.",
+  "The substrate is split into two products, whose sizes add up to the substrate's.",
+  "The products leave and the enzyme returns to its original shape."
+ ],
+ "substrate": {
+  "w": 40,
+  "h": 46
+ },
+ "products": [
+  {
+   "w": 22
+  },
+  {
+   "w": 18
+  }
+ ],
+ "models": [
+  {
+   "name": "lock and key",
+   "before": 40,
+   "after": 40
+  },
+  {
+   "name": "induced fit",
+   "before": 58,
+   "after": 40
+  }
+ ]
+}
