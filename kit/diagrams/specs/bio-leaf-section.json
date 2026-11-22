@@ -1,0 +1,54 @@
+{
+ "id": "bio-leaf-section",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Leaves",
+ "title": "A leaf in cross-section",
+ "caption": "From the top: the waxy cuticle, the transparent upper epidermis, the palisade mesophyll (tightly packed, many chloroplasts), the spongy mesophyll (air spaces for gas diffusion) and the lower epidermis, which carries the stomata between pairs of guard cells. In a vein the xylem is on the upper side and the phloem below it.",
+ "alt": "A leaf section from top to bottom: a thin cuticle, a row of upper epidermis cells, tall palisade cells with green chloroplasts, loosely packed spongy cells with gaps, and a lower epidermis with a pore between two guard cells; a vein in the middle with xylem above and phloem below.",
+ "description": [
+  "Layers from the top: cuticle, upper epidermis, palisade mesophyll, spongy mesophyll, lower epidermis.",
+  "Palisade cells are tightly packed and contain most of the chloroplasts.",
+  "Spongy mesophyll has air spaces for gas diffusion.",
+  "Stomata are in the lower epidermis, each between two guard cells.",
+  "In a vein the xylem is on the upper side and the phloem on the lower side."
+ ],
+ "template": "leaf",
+ "labels": [
+  "cuticle",
+  "upper epidermis",
+  "palisade mesophyll",
+  "spongy mesophyll",
+  "lower epidermis",
+  "stoma",
+  "guard cell",
+  "xylem",
+  "phloem"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "cuticle",
+    "upper epidermis",
+    "palisade mesophyll",
+    "spongy mesophyll",
+    "lower epidermis"
+   ],
+   "from": "the top",
+   "to": "the bottom",
+   "text": "layers run from the top to the bottom"
+  },
+  {
+   "type": "fact",
+   "id": "xylemUpper",
+   "text": "in a vein the xylem is above the phloem"
+  },
+  {
+   "type": "fact",
+   "id": "stomataLower",
+   "text": "the stomata are in the lower epidermis"
+  }
+ ]
+}

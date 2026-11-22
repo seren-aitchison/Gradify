@@ -52,6 +52,7 @@ H: Tissue systems
 - **Dermal tissue**: the epidermis, covered by a waxy **cuticle**, with stomata and root hairs.
 - **Vascular tissue**: xylem and phloem for transport.
 - **Ground tissue**: everything else, used for photosynthesis, storage and support.
+D: bio-stem-section
 H: Ground tissue and meristems
 - **Parenchyma**: thin-walled living cells for storage and photosynthesis.
 - **Collenchyma**: unevenly thickened living cells giving flexible support.
@@ -94,6 +95,7 @@ H: Root structure
 - **Root hairs** in the maturation zone increase surface area.
 - Internal layers: epidermis, **cortex**, **endodermis** and the central **vascular cylinder**.
 - The endodermis has a **Casparian strip** that controls entry to the xylem.
+D: bio-root-section
 H: Root systems
 - **Tap root**: one main root with smaller branches, as in carrots and dandelions.
 - **Fibrous roots**: many similar roots, as in grasses.
@@ -135,6 +137,7 @@ H: Functions and structure
 - **Nodes** are where leaves attach; **internodes** are between them.
 - **Vascular bundles** contain xylem (inner) and phloem (outer).
 - In **eudicots**, bundles form a ring; in **monocots**, they are scattered.
+D: bio-stem-section
 H: Modified stems
 - **Tubers**: swollen underground stems storing starch, such as potatoes.
 - **Rhizomes**: horizontal underground stems, such as ginger.
@@ -178,6 +181,7 @@ H: Structure
 - **Spongy mesophyll**: air spaces for gas diffusion.
 - **Lower epidermis** with **stomata** surrounded by **guard cells**.
 - **Veins** contain xylem and phloem.
+D: bio-leaf-section
 H: Adaptations and stomata
 - Broad, thin leaves give a large surface area and short diffusion distance.
 - Stomata let CO₂ in and O₂ and water vapour out.
@@ -219,6 +223,7 @@ H: Xylem and phloem
 - **Phloem** carries sugars and other organic substances in both directions.
 - Xylem is mostly dead cells with lignified walls; phloem is living.
 - Together they form **vascular bundles**.
+D: bio-stem-section
 H: Arrangement
 - In **roots**, xylem forms a central star or cross, with phloem between its arms.
 - In **stems**, bundles form a ring (eudicots) or are scattered (monocots).
@@ -261,6 +266,7 @@ H: Structure
 - Walls are thickened with **lignin**, often in rings or spirals.
 - **Pits** in the walls allow water to move sideways between vessels.
 - Xylem also contains parenchyma and fibres.
+D: bio-xylem-vessel
 H: Structure and function
 - No cytoplasm or end walls means water flows without obstruction.
 - Lignin makes walls waterproof and strong, preventing collapse under tension.
@@ -302,6 +308,7 @@ H: Structure
 - They have few organelles and no nucleus.
 - **Companion cells**: connected by plasmodesmata, with many mitochondria, supporting the sieve tubes.
 - Phloem also contains parenchyma and fibres.
+D: bio-phloem-cells
 H: Translocation
 - **Translocation** is movement of sugars (mainly **sucrose**) and amino acids.
 - **Sources** produce or release sugars, such as leaves.
@@ -1137,6 +1144,7 @@ H: Types
 - **Self-pollination**: within the same flower or plant.
 - **Cross-pollination**: between different plants, increasing genetic variation.
 - Many plants have mechanisms to prevent self-pollination, such as **self-incompatibility**.
+D: bio-flower-section
 H: Insect versus wind
 - **Insect-pollinated**: large, coloured petals, scent, nectar, sticky or spiky pollen, anthers and stigmas inside the flower.
 - **Wind-pollinated**: small or no petals, no scent or nectar, large amounts of light smooth pollen, anthers and feathery stigmas hanging outside.
@@ -1177,6 +1185,7 @@ H: Pollen tube
 - The **pollen tube** grows down the style, guided by chemical signals.
 - It enters the ovule through the **micropyle**.
 - The tube carries two male nuclei.
+D: bio-flower-section
 H: Double fertilisation
 - One male nucleus fuses with the **egg cell**, forming a diploid **zygote**.
 - The other fuses with two **polar nuclei**, forming a triploid **endosperm** nucleus.
@@ -1218,6 +1227,7 @@ H: Seed structure
 - **Embryo**: **radicle** (young root), **plumule** (young shoot) and **cotyledons** (seed leaves).
 - **Food store**: in the endosperm or cotyledons.
 - Seeds dry out and become **dormant**.
+D: bio-seed-section
 H: Monocots, eudicots and dispersal
 - **Monocots** (such as maize) have one cotyledon and food in the endosperm.
 - **Eudicots** (such as beans) have two cotyledons that often store food.

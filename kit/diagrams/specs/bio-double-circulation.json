@@ -1,0 +1,137 @@
+{
+ "id": "bio-double-circulation",
+ "renderer": "tract",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Circulation",
+ "title": "The double circulation",
+ "caption": "Blood passes through the heart twice in each complete circuit. The pulmonary circuit takes oxygen-poor blood from the right heart to the lungs and back to the left heart; the systemic circuit takes oxygen-rich blood from the left heart to the body tissues and back to the right heart. Keeping the two circuits apart lets the systemic circuit run at high pressure without damaging the delicate lungs.",
+ "alt": "A loop of eight boxes: right heart, pulmonary artery, lungs, pulmonary vein, left heart, aorta, body tissues and vena cava, with the oxygen-poor boxes in blue, the oxygen-rich ones in red and the lungs and body tissues, where gases are exchanged, in green.",
+ "description": [
+  "Pulmonary circulation: right heart to lungs and back to the left heart.",
+  "Systemic circulation: left heart to body tissues and back to the right heart.",
+  "Blood passes through the heart twice in each complete circuit.",
+  "Blue boxes carry oxygen-poor blood and red boxes oxygen-rich blood; the lungs and the body tissues are where the exchange happens.",
+  "A double circulation allows high pressure in the systemic circuit while protecting the delicate lungs."
+ ],
+ "tract": "circulation",
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 130,
+ "nodes": [
+  {
+   "id": "c0",
+   "label": "right heart",
+   "sub": "receives blood from the body",
+   "is": "right heart",
+   "blood": "deoxygenated",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "c1",
+   "label": "pulmonary artery",
+   "sub": "carries it to the lungs",
+   "is": "pulmonary artery",
+   "blood": "deoxygenated",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "c2",
+   "label": "lungs",
+   "sub": "blood gains oxygen",
+   "is": "lungs",
+   "blood": "exchange",
+   "tone": "a4",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "c3",
+   "label": "pulmonary vein",
+   "sub": "carries it back",
+   "is": "pulmonary vein",
+   "blood": "oxygenated",
+   "tone": "a2",
+   "col": 3,
+   "row": 0
+  },
+  {
+   "id": "c4",
+   "label": "left heart",
+   "sub": "pumps it at high pressure",
+   "is": "left heart",
+   "blood": "oxygenated",
+   "tone": "a2",
+   "col": 3,
+   "row": 1
+  },
+  {
+   "id": "c5",
+   "label": "aorta",
+   "sub": "carries it to the body",
+   "is": "aorta",
+   "blood": "oxygenated",
+   "tone": "a2",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "c6",
+   "label": "body tissues",
+   "sub": "blood gives up oxygen",
+   "is": "body tissues",
+   "blood": "exchange",
+   "tone": "a4",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "c7",
+   "label": "vena cava",
+   "sub": "returns it to the heart",
+   "is": "vena cava",
+   "blood": "deoxygenated",
+   "tone": "a1",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "c0",
+   "to": "c1"
+  },
+  {
+   "from": "c1",
+   "to": "c2"
+  },
+  {
+   "from": "c2",
+   "to": "c3"
+  },
+  {
+   "from": "c3",
+   "to": "c4"
+  },
+  {
+   "from": "c4",
+   "to": "c5"
+  },
+  {
+   "from": "c5",
+   "to": "c6"
+  },
+  {
+   "from": "c6",
+   "to": "c7"
+  },
+  {
+   "from": "c7",
+   "to": "c0"
+  }
+ ]
+}

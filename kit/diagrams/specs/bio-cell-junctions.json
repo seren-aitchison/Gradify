@@ -1,0 +1,55 @@
+{
+ "id": "bio-cell-junctions",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Cell junctions",
+ "title": "Tight junctions, desmosomes, gap junctions and plasmodesmata",
+ "caption": "A tight junction seals the gap between animal cells so that nothing leaks between them; a desmosome joins two cells through cadherins anchored to intermediate filaments, so that pulling forces are spread through the tissue; a gap junction is a channel of connexins that joins the cytoplasm of the two cells. In plants, plasmodesmata are channels through the cell walls lined with plasma membrane. Drawn schematically: the sizes are not to scale.",
+ "alt": "Four panels, each with two neighbouring cells. Tight junction: the membranes meet at the top and a dashed arrow trying to pass between the cells is blocked. Desmosome: dense plates inside each cell joined across the gap by cadherin lines, with filaments running into each cell. Gap junction: a channel through both membranes joining the cytoplasm of the two cells. Plasmodesma: two plant cells with walls and a middle lamella joined by a membrane-lined channel.",
+ "description": [
+  "Tight junctions seal the gap, so substances must pass through the cells (gut lining, blood–brain barrier).",
+  "Desmosomes and adherens junctions link cells through cadherins attached to the cytoskeleton, spreading mechanical stress.",
+  "Gap junctions are channels of connexin that join the cytoplasm of neighbouring cells and let ions and small molecules (up to about 1 kDa) pass.",
+  "Plasmodesmata are channels through plant cell walls, lined with plasma membrane.",
+  "Schematic: the sizes are not to scale."
+ ],
+ "template": "junctions",
+ "labels": [
+  "claudin and occludin",
+  "cadherin",
+  "plaque",
+  "intermediate filament",
+  "connexin channel",
+  "plasmodesma",
+  "cell wall",
+  "middle lamella"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "sealed",
+   "text": "at a tight junction the gap between the cells is closed"
+  },
+  {
+   "type": "fact",
+   "id": "cadherinSpansGap",
+   "text": "the cadherins are long enough to reach across the gap"
+  },
+  {
+   "type": "fact",
+   "id": "anchoredToFilaments",
+   "text": "each desmosome plaque is anchored to intermediate filaments in both cells"
+  },
+  {
+   "type": "fact",
+   "id": "channelLinksCytoplasm",
+   "text": "the gap junction channel reaches across the gap and is open"
+  },
+  {
+   "type": "fact",
+   "id": "plasmodesmaSpansWalls",
+   "text": "the plasmodesma channel is long enough to cross both walls and the middle lamella"
+  }
+ ]
+}

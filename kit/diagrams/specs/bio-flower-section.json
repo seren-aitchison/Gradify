@@ -1,0 +1,59 @@
+{
+ "id": "bio-flower-section",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Pollination",
+ "title": "A flower in section",
+ "caption": "The anthers make pollen; the stigma receives it. The style leads down to the ovary, which contains the ovules. Petals attract insect pollinators. After fertilisation the ovule becomes the seed and the ovary the fruit.",
+ "alt": "A flower cut lengthways: two petals and two sepals round a central carpel with a stigma on top, a style below it, and an ovary at the base holding an ovule, with two anthers on filaments either side.",
+ "description": [
+  "Anthers on filaments make pollen.",
+  "The stigma receives pollen; the style connects it to the ovary.",
+  "The ovary contains ovules; each ovule contains an egg cell.",
+  "Petals attract pollinators; sepals protect the bud."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "Fertilisation"
+  }
+ ],
+ "template": "flower",
+ "labels": [
+  "petal",
+  "sepal",
+  "anther",
+  "filament",
+  "stigma",
+  "style",
+  "ovary",
+  "ovule",
+  "receptacle"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "stigma",
+    "style",
+    "ovary",
+    "ovule"
+   ],
+   "from": "the top of the carpel",
+   "to": "its base",
+   "text": "stigma, style, ovary, ovule from the top of the carpel"
+  },
+  {
+   "type": "fact",
+   "id": "pollenPath",
+   "text": "the pollen tube grows down from stigma through style to ovary"
+  },
+  {
+   "type": "fact",
+   "id": "ovuleInOvary",
+   "text": "the ovule is inside the ovary"
+  }
+ ]
+}

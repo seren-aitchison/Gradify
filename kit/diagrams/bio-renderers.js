@@ -10,6 +10,7 @@
 //   tonicity   cells in solutions: water moves to the lower water potential, and the cell swells, bursts, crenates,
 //              becomes turgid or flaccid, or plasmolyses accordingly
 //   route      a path through the endomembrane system (drawn as a flow): every step is one cargo really takes
+//   tract      the circulation, airway or gut as a route (drawn as a flow): every step is one blood, air or food really takes
 //   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
 //   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
 //   codontable the standard genetic code: 64 codons, 61 sense, 3 stop, start AUG, degeneracy claims
@@ -18,6 +19,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   section    plant structures in section from templates (root, stem, leaf, xylem, phloem, flower, seed): where parts sit is checked
 //   bilayer    the fluid mosaic membrane in cross-section, to scale, with its parts named and explained
 //   inducedfit lock-and-key against induced fit, with the products: the active site's shape before and after is checked
 //   hbond      water molecules and hydrogen bonds from coordinates: angle, lengths, donors and acceptors
@@ -1608,6 +1610,264 @@ function hbondChecks(spec) {
   return out;
 }
 
+// ======================================================================== tract
+// A route through the body drawn as a flow: the circulation, the airway or the gut. spec: tract: "circulation" | "airway" |
+// "gut", nodes [{id, label, sub, is, blood?}], edges [{from, to, dashed?}]. Every solid arrow must be a step the blood, air
+// or food really takes; the circulation closes into a loop that passes through the heart twice; the state of the blood at
+// each point is as it is; accessory organs of the gut are never on the food route (their dashed arrow is a secretion).
+export const TRACTS = {
+  circulation: { loop: true, next: { "right heart": ["pulmonary artery"], "pulmonary artery": ["lungs"], lungs: ["pulmonary vein"], "pulmonary vein": ["left heart"], "left heart": ["aorta"], aorta: ["body tissues"], "body tissues": ["vena cava"], "vena cava": ["right heart"] },
+    blood: { "right heart": "deoxygenated", "pulmonary artery": "deoxygenated", lungs: "exchange", "pulmonary vein": "oxygenated", "left heart": "oxygenated", aorta: "oxygenated", "body tissues": "exchange", "vena cava": "deoxygenated" }, hearts: ["right heart", "left heart"] },
+  airway: { next: { nose: ["pharynx"], mouth: ["pharynx"], pharynx: ["larynx"], larynx: ["trachea"], trachea: ["bronchi"], bronchi: ["bronchioles"], bronchioles: ["alveoli"] } },
+  gut: { next: { mouth: ["oesophagus"], oesophagus: ["stomach"], stomach: ["small intestine"], "small intestine": ["large intestine"], "large intestine": ["rectum"] }, accessory: ["liver", "gall bladder", "pancreas", "accessory organs"], secretesInto: "small intestine" },
+};
+function tractChecks(spec) {
+  const T = TRACTS[spec.tract], out = [check(`the tract "${spec.tract}" is known`, !!T)];
+  if (!T) return out;
+  const N = Object.fromEntries(spec.nodes.map((n) => [n.id, n])), known = new Set([...Object.keys(T.next), ...Object.values(T.next).flat(), ...(T.accessory || [])]);
+  out.push(check("every box is a part of this tract", spec.nodes.every((n) => known.has(n.is)), spec.nodes.filter((n) => !known.has(n.is)).map((n) => n.is).join(", ")));
+  for (const e of spec.edges) {
+    const a = N[e.from]?.is, b = N[e.to]?.is;
+    if (e.dashed) out.push(check(`${a} secretes into the ${b}: not a step on the route`, !!T.accessory?.includes(a) && b === T.secretesInto));
+    else out.push(check(`${spec.tract === "airway" ? "air" : spec.tract === "gut" ? "food" : "blood"} goes from the ${a} to the ${b}`, (T.next[a] || []).includes(b)));
+  }
+  if (T.accessory) out.push(check("food never passes through an accessory organ", !spec.edges.some((e) => !e.dashed && (T.accessory.includes(N[e.from]?.is) || T.accessory.includes(N[e.to]?.is)))));
+  if (T.loop) {
+    const solid = spec.edges.filter((e) => !e.dashed), starts = new Set(solid.map((e) => e.from)), ends = new Set(solid.map((e) => e.to));
+    out.push(check("the route closes into a loop: every box is entered once and left once", spec.nodes.every((n) => starts.has(n.id) && ends.has(n.id)) && solid.length === spec.nodes.length));
+    out.push(check("blood passes through the heart twice in each complete circuit", spec.nodes.filter((n) => T.hearts.includes(n.is)).length === 2, "right heart and left heart"));
+    for (const n of spec.nodes) out.push(check(`${n.is}: ${T.blood[n.is]}`, n.blood === T.blood[n.is], `drawn as ${n.blood}`));
+  }
+  return out;
+}
+
+// ======================================================================== section
+// Plant structures in section, from templates. Each template draws on a 420 × 300 canvas from numeric geometry, and its
+// facts (the lesson's statements about where things are) are computed from that same geometry.
+// spec: template, labels: [part names], claims: [{type: "fact", id} | {type: "order", value: [outer→inner or top→bottom]}]
+const rad2 = (d) => (d * Math.PI) / 180;
+const pol = (cx, cy, r, deg) => [cx + r * Math.cos(rad2(deg)), cy + r * Math.sin(rad2(deg))];
+const cellsIn = (cx, cy, r0, r1, n, fill, op = 0.5, cr = 7) => { let o = ""; for (let i = 0; i < n; i++) { const r = (r0 + r1) / 2 + ((i % 3) - 1) * (r1 - r0) / 5, [x, y] = pol(cx, cy, r, (i * 360) / n + (i % 2) * 3); o += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${cr}" fill="${fill}" fill-opacity="${op}" stroke="${fill}" stroke-width="1"/>`; } return o; };
+const SECTION = {
+  root: (() => {
+    const G = { cx: 210, cy: 150, epi: 113, cortex: 93, endo: 74, xyAngles: [0, 90, 180, 270], phAngles: [45, 135, 225, 315], arm: 50 };
+    return {
+      parts: { "root hair": "Extends from an epidermal cell in the maturation zone: it greatly increases the surface area for absorbing water by osmosis and minerals by active transport.", epidermis: "The outer layer of cells; some make root hairs.", cortex: "Packed storage cells; water crosses it by the apoplast and symplast pathways.", endodermis: "The innermost layer of the cortex, round the vascular cylinder.", "Casparian strip": "A waterproof band in the endodermal cell walls that blocks the apoplast pathway, so water must enter the symplast and its entry to the xylem is controlled.", xylem: "Water and mineral transport: forms a central star or cross.", phloem: "Sugar transport: sits between the arms of the xylem.", "vascular cylinder": "Everything inside the endodermis: the xylem, the phloem and the pericycle." },
+      order: ["epidermis", "cortex", "endodermis", "vascular cylinder"],
+      facts: { xylemStar: () => G.xyAngles.length >= 3, phloemBetweenArms: () => G.phAngles.every((a) => G.xyAngles.every((x) => ((((a - x) % 360) + 360) % 360) % 90 !== 0)), orderOutIn: () => G.epi > G.cortex && G.cortex > G.endo },
+      draw() {
+        let s = "", m = [];
+        s += part("root hair", this.parts["root hair"], [0, 40, 75, 110, 150, 190, 230, 265, 300, 335].map((a) => { const [x1, y1] = pol(G.cx, G.cy, G.epi + 6, a), [x2, y2] = pol(G.cx, G.cy, G.epi + 28, a + 4); return `<path d="M${f1(x1)} ${f1(y1)} Q${f1((x1 + x2) / 2 + 4)} ${f1((y1 + y2) / 2)} ${f1(x2)} ${f1(y2)}" fill="none" stroke="${C.a3}" stroke-width="2.4" stroke-linecap="round"/>`; }).join(""));
+        m.push(["root hair", ...pol(G.cx, G.cy, G.epi + 26, 40)]);
+        s += part("cortex", this.parts.cortex, `<circle cx="${G.cx}" cy="${G.cy}" r="${G.epi}" fill="${C.a4}" fill-opacity=".1" stroke="none"/>` + cellsIn(G.cx, G.cy, 78, 108, 34, C.a4, 0.28, 8)); m.push(["cortex", ...pol(G.cx, G.cy, G.cortex, -40)]);
+        s += part("epidermis", this.parts.epidermis, `<circle cx="${G.cx}" cy="${G.cy}" r="${G.epi + 3}" fill="none" stroke="${C.a3}" stroke-width="9"/>`); m.push(["epidermis", ...pol(G.cx, G.cy, G.epi + 3, -65)]);
+        s += part("endodermis", this.parts.endodermis, `<circle cx="${G.cx}" cy="${G.cy}" r="${G.endo}" fill="${C.panel}" stroke="${C.a5}" stroke-width="6"/>`); m.push(["endodermis", ...pol(G.cx, G.cy, G.endo, 30)]);
+        s += part("Casparian strip", this.parts["Casparian strip"], [15, 45, 75, 105, 135, 165, 195, 225, 255, 285, 315, 345].map((a) => { const [x, y] = pol(G.cx, G.cy, G.endo, a); return `<circle cx="${f1(x)}" cy="${f1(y)}" r="3.2" fill="${C.ink}"/>`; }).join("")); m.push(["Casparian strip", ...pol(G.cx, G.cy, G.endo, -15)]);
+        s += part("vascular cylinder", this.parts["vascular cylinder"], `<circle cx="${G.cx}" cy="${G.cy}" r="${G.endo - 4}" fill="${C.a5}" fill-opacity=".07" stroke="none"/>`); m.push(["vascular cylinder", ...pol(G.cx, G.cy, 62, 200)]);
+        s += part("xylem", this.parts.xylem, G.xyAngles.map((a) => { const [x, y] = pol(G.cx, G.cy, G.arm / 2, a); return `<rect x="${f1(x - G.arm / 2)}" y="${f1(y - 8)}" width="${G.arm}" height="16" rx="6" fill="${C.a1}" fill-opacity=".55" stroke="${C.a1}" stroke-width="1.6" transform="rotate(${a} ${f1(x)} ${f1(y)}) translate(0 0)"/>`; }).join("")); m.push(["xylem", ...pol(G.cx, G.cy, 40, 0)]);
+        s += part("phloem", this.parts.phloem, G.phAngles.map((a) => { const [x, y] = pol(G.cx, G.cy, 34, a); return `<circle cx="${f1(x)}" cy="${f1(y)}" r="11" fill="${C.a2}" fill-opacity=".5" stroke="${C.a2}" stroke-width="1.6"/>`; }).join("")); m.push(["phloem", ...pol(G.cx, G.cy, 34, 45)]);
+        return { s, m };
+      },
+    };
+  })(),
+  stem: (() => {
+    const G = { cx: 210, cy: 150, epi: 132, cortexIn: 104, ringR: 80, phloemR: 90, xylemR: 72, n: 8 };
+    return {
+      parts: { epidermis: "The outer protective layer.", cortex: "Ground tissue between the epidermis and the vascular bundles: support and storage.", "vascular bundle": "Xylem and phloem together. In eudicots the bundles form a ring; in monocots they are scattered.", xylem: "On the inner side of each bundle: carries water and minerals upwards.", phloem: "On the outer side of each bundle: carries sugars.", pith: "Ground tissue in the centre of a eudicot stem." },
+      order: ["epidermis", "cortex", "vascular bundles", "pith"],
+      facts: { xylemInner: () => G.xylemR < G.phloemR, ring: () => G.n >= 6, orderOutIn: () => G.epi > G.cortexIn && G.cortexIn > G.ringR },
+      draw() {
+        let s = "", m = [];
+        s += part("cortex", this.parts.cortex, `<circle cx="${G.cx}" cy="${G.cy}" r="${G.epi}" fill="${C.a4}" fill-opacity=".12" stroke="none"/>` + cellsIn(G.cx, G.cy, 100, 126, 30, C.a4, 0.25, 7)); m.push(["cortex", ...pol(G.cx, G.cy, 115, -38)]);
+        s += part("epidermis", this.parts.epidermis, `<circle cx="${G.cx}" cy="${G.cy}" r="${G.epi}" fill="none" stroke="${C.a3}" stroke-width="8"/>`); m.push(["epidermis", ...pol(G.cx, G.cy, G.epi, -62)]);
+        s += part("pith", this.parts.pith, `<circle cx="${G.cx}" cy="${G.cy}" r="60" fill="${C.panel}" stroke="none"/>` + cellsIn(G.cx, G.cy, 8, 50, 12, C.a5, 0.2, 13)); m.push(["pith", G.cx, G.cy]);
+        for (let i = 0; i < G.n; i++) { const a = (i * 360) / G.n + 22.5, [xx, xy] = pol(G.cx, G.cy, G.xylemR, a), [px, py] = pol(G.cx, G.cy, G.phloemR, a);
+          s += part("vascular bundle", this.parts["vascular bundle"], `<ellipse cx="${f1((xx + px) / 2)}" cy="${f1((xy + py) / 2)}" rx="19" ry="21" fill="${C.a1}" fill-opacity=".1" stroke="${C.a5}" stroke-width="1.6" transform="rotate(${a + 90} ${f1((xx + px) / 2)} ${f1((xy + py) / 2)})"/>`)
+            + part("xylem", this.parts.xylem, `<circle cx="${f1(xx)}" cy="${f1(xy)}" r="9" fill="${C.a1}" fill-opacity=".6" stroke="${C.a1}" stroke-width="1.6"/>`) + part("phloem", this.parts.phloem, `<circle cx="${f1(px)}" cy="${f1(py)}" r="7" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}" stroke-width="1.6"/>`); }
+        m.push(["vascular bundle", ...pol(G.cx, G.cy, 82, -22.5 + 10)], ["xylem", ...pol(G.cx, G.cy, G.xylemR, -22.5)], ["phloem", ...pol(G.cx, G.cy, G.phloemR, -22.5)]);
+        return { s, m };
+      },
+    };
+  })(),
+  leaf: (() => {
+    const G = { cuticle: 30, upper: [36, 62], palisade: [62, 120], spongy: [120, 214], lower: [214, 240], veinY: 168, xylemY: 156, phloemY: 180, stomaX: 120 };
+    return {
+      parts: { cuticle: "A waxy layer that reduces water loss.", "upper epidermis": "Transparent, so light passes through to the mesophyll.", "palisade mesophyll": "Tightly packed columnar cells with many chloroplasts: most photosynthesis.", "spongy mesophyll": "Loosely packed cells with air spaces for gas diffusion.", "lower epidermis": "Carries the stomata.", stoma: "A pore for CO₂ in and O₂ and water vapour out.", "guard cell": "A pair of cells round each stoma: they take up K⁺, water follows by osmosis, and they become turgid and open the pore.", xylem: "In the vein, on the upper side of the leaf.", phloem: "In the vein, on the lower side." },
+      order: ["cuticle", "upper epidermis", "palisade mesophyll", "spongy mesophyll", "lower epidermis"],
+      facts: { xylemUpper: () => G.xylemY < G.phloemY, orderTopBottom: () => G.cuticle < G.upper[0] && G.upper[1] <= G.palisade[0] && G.palisade[1] <= G.spongy[0] && G.spongy[1] <= G.lower[0], stomataLower: () => G.stomaX > 0 && G.lower[0] > G.spongy[0] },
+      draw() {
+        let s = "", m = [];
+        s += part("cuticle", this.parts.cuticle, `<rect x="30" y="${G.cuticle - 4}" width="360" height="5" fill="${C.a3}" fill-opacity=".8"/>`); m.push(["cuticle", 380, G.cuticle]);
+        s += part("upper epidermis", this.parts["upper epidermis"], Array.from({ length: 12 }, (_, i) => `<rect x="${30 + i * 30}" y="${G.upper[0]}" width="30" height="${G.upper[1] - G.upper[0]}" fill="${C.a4}" fill-opacity=".14" stroke="${C.a4}"/>`).join("")); m.push(["upper epidermis", 380, 50]);
+        s += part("palisade mesophyll", this.parts["palisade mesophyll"], Array.from({ length: 18 }, (_, i) => `<rect x="${31 + i * 20}" y="${G.palisade[0]}" width="19" height="${G.palisade[1] - G.palisade[0]}" rx="5" fill="${C.good}" fill-opacity=".2" stroke="${C.good}"/>` + [0, 1, 2].map((k) => `<circle cx="${40 + i * 20 + (k % 2) * 3}" cy="${G.palisade[0] + 12 + k * 15}" r="3" fill="${C.good}"/>`).join("")).join("")); m.push(["palisade mesophyll", 380, 92]);
+        let sp = ""; for (let r = 0; r < 4; r++) for (let c = 0; c < 10; c++) { const x = 48 + c * 36 + (r % 2) * 18, y = G.spongy[0] + 16 + r * 22; sp += `<ellipse cx="${x}" cy="${y}" rx="15" ry="9" fill="${C.good}" fill-opacity=".14" stroke="${C.good}" stroke-width="1.2"/>`; }
+        s += part("spongy mesophyll", this.parts["spongy mesophyll"], sp); m.push(["spongy mesophyll", 380, 196]);
+        s += part("lower epidermis", this.parts["lower epidermis"], Array.from({ length: 12 }, (_, i) => `<rect x="${30 + i * 30}" y="${G.lower[0]}" width="30" height="${G.lower[1] - G.lower[0]}" fill="${C.a4}" fill-opacity=".14" stroke="${C.a4}"/>`).join("")); m.push(["lower epidermis", 380, 232]);
+        s += part("guard cell", this.parts["guard cell"], `<path d="M${G.stomaX - 14} ${G.lower[0]} q-6 13 0 26 l11 0 q-5 -13 0 -26 Z M${G.stomaX + 14} ${G.lower[0]} q6 13 0 26 l-11 0 q5 -13 0 -26 Z" fill="${C.a2}" fill-opacity=".5" stroke="${C.a2}" stroke-width="1.6"/>`); m.push(["guard cell", G.stomaX - 12, G.lower[0] + 14, "L"]);
+        s += part("stoma", this.parts.stoma, `<rect x="${G.stomaX - 3}" y="${G.lower[0] + 1}" width="6" height="${G.lower[1] - G.lower[0] - 2}" fill="${C.panel}"/>`); m.push(["stoma", G.stomaX, G.lower[1] - 2, "L"]);
+        s += `<ellipse cx="270" cy="${G.veinY}" rx="36" ry="30" fill="${C.panel}" stroke="${C.a5}" stroke-width="1.6"/>`;
+        s += part("xylem", this.parts.xylem, `<circle cx="270" cy="${G.xylemY}" r="9" fill="${C.a1}" fill-opacity=".6" stroke="${C.a1}" stroke-width="1.6"/><circle cx="254" cy="${G.xylemY + 2}" r="6" fill="${C.a1}" fill-opacity=".6" stroke="${C.a1}"/>`); m.push(["xylem", 270, G.xylemY]);
+        s += part("phloem", this.parts.phloem, `<circle cx="272" cy="${G.phloemY}" r="8" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}" stroke-width="1.6"/><circle cx="288" cy="${G.phloemY - 2}" r="5" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}"/>`); m.push(["phloem", 272, G.phloemY]);
+        return { s, m };
+      },
+    };
+  })(),
+  xylem: (() => {
+    const G = { joins: [110, 190], endWallsDrawn: 0, lignified: true, nucleus: false, pitsPerPair: 3 };
+    return {
+      parts: { "vessel element": "A dead cell joined end to end with others into a continuous tube with no end walls, so water flows without obstruction.", lignin: "Thickens the wall, often in rings or spirals: waterproof and strong, so the vessel does not collapse under tension.", pit: "A thin gap in the lignin where the walls of two vessels meet: water moves sideways through it.", "no end wall": "Where two vessel elements meet, the cross-wall has gone, so the lumen is continuous." },
+      order: ["vessel element", "lignin", "pit"],
+      facts: { noEndWalls: () => G.endWallsDrawn === 0 && G.joins.length >= 1, deadCells: () => G.nucleus === false, lignified: () => G.lignified },
+      draw() {
+        let s = "", m = [];
+        const pits = [70, 150, 230], inPit = (y) => pits.some((p) => Math.abs(y - p) < 12);
+        // tube A: three vessel elements stacked end to end; tube B beside it, walls touching
+        for (const [x, w] of [[100, 76], [182, 76]]) {
+          s += part("vessel element", this.parts["vessel element"], `<rect x="${x}" y="30" width="${w}" height="240" rx="8" fill="${C.a1}" fill-opacity=".1" stroke="${C.a1}" stroke-width="2.4"/>`);
+          let bands = ""; for (let y = 38; y < 266; y += 16) { if (x === 100 && G.joins.some((j) => Math.abs(y - j) < 8)) continue; const gapR = inPit(y + 2); bands += `<rect x="${x + (gapR && x > 100 ? 12 : 0)}" y="${y}" width="${w - (gapR ? 12 : 0)}" height="5" fill="${C.a3}" fill-opacity=".75"/>`; }
+          s += part("lignin", this.parts.lignin, bands);
+        }
+        s += part("pit", this.parts.pit, pits.map((y) => `<ellipse cx="179" cy="${y}" rx="5" ry="10" fill="${C.panel}" stroke="${C.a1}" stroke-width="1.6"/>`).join(""));
+        s += part("no end wall", this.parts["no end wall"], G.joins.map((j) => `<path d="M104 ${j} h68" stroke="${C.ink}" stroke-width="1.6" stroke-dasharray="4 3"/>`).join(""));
+        m.push(["vessel element", 138, 242], ["lignin", 120, 56], ["pit", 179, 150], ["no end wall", 138, 110]);
+        return { s, m };
+      },
+    };
+  })(),
+  phloem: (() => {
+    const G = { sievePlates: 1, sieveNucleus: false, companionNucleus: true, companionMito: true, plasmodesmata: 2 };
+    return {
+      parts: { "sieve tube element": "A living cell joined end to end with others; few organelles and no nucleus.", "sieve plate": "A perforated cross-wall between sieve tube elements that lets sap pass.", "companion cell": "Has a nucleus and many mitochondria; it supports the sieve tube element and loads sucrose using ATP.", plasmodesma: "A channel through the wall linking a companion cell to its sieve tube element.", nucleus: "Present in the companion cell, which runs the sieve tube element too; the sieve tube element has none.", mitochondria: "Many in the companion cell: they make the ATP that loads sucrose into the sieve tube." },
+      order: ["sieve tube element", "sieve plate", "companion cell"],
+      facts: { sieveHasPlates: () => G.sievePlates >= 1, sieveNoNucleus: () => G.sieveNucleus === false, companionNucleus: () => G.companionNucleus, companionMitochondria: () => G.companionMito, linked: () => G.plasmodesmata >= 1 },
+      draw() {
+        let s = "", m = [];
+        for (let i = 0; i < 2; i++) { const y = 28 + i * 124; s += part("sieve tube element", this.parts["sieve tube element"], `<rect x="120" y="${y}" width="86" height="124" rx="6" fill="${C.a2}" fill-opacity=".1" stroke="${C.a2}" stroke-width="2.4"/>`);
+          s += part("companion cell", this.parts["companion cell"], `<rect x="228" y="${y + 6}" width="52" height="112" rx="14" fill="${C.a4}" fill-opacity=".16" stroke="${C.a4}" stroke-width="2.4"/>`)
+            + part("nucleus", this.parts.nucleus, `<circle cx="254" cy="${y + 40}" r="13" fill="${C.a5}" fill-opacity=".5" stroke="${C.a5}" stroke-width="1.6"/>`) + part("mitochondria", this.parts.mitochondria, [0, 1, 2].map((k) => `<ellipse cx="${242 + k * 12}" cy="${y + 82 + (k % 2) * 8}" rx="6" ry="3.4" fill="${C.a3}" fill-opacity=".75"/>`).join(""));
+          s += part("plasmodesma", this.parts.plasmodesma, [y + 28, y + 70].map((yy) => `<rect x="204" y="${yy}" width="26" height="6" fill="${C.a1}" fill-opacity=".7"/>`).join("")); }
+        s += part("sieve plate", this.parts["sieve plate"], `<rect x="118" y="148" width="90" height="8" rx="2" fill="${C.a3}" fill-opacity=".7"/>` + Array.from({ length: 6 }, (_, i) => `<circle cx="${130 + i * 14}" cy="152" r="2.2" fill="${C.panel}"/>`).join(""));
+        m.push(["sieve tube element", 160, 70, "L"], ["sieve plate", 124, 152, "L"], ["companion cell", 270, 100], ["plasmodesma", 217, 61], ["nucleus", 254, 68], ["mitochondria", 254, 112]);
+        return { s, m };
+      },
+    };
+  })(),
+  flower: (() => {
+    const G = { stigmaY: 62, styleY: 100, ovaryY: 168, ovuleY: 172, anthers: 2, petals: 2 };
+    return {
+      parts: { petal: "Large and coloured in an insect-pollinated flower, to attract pollinators.", sepal: "Protects the flower in bud.", anther: "Makes pollen. In an insect-pollinated flower it sits inside the flower.", filament: "The stalk that holds the anther.", stigma: "Receives pollen; sticky or feathery.", style: "The pollen tube grows down it towards the ovary.", ovary: "Contains the ovules; becomes the fruit.", ovule: "Contains the egg cell; becomes the seed after fertilisation.", receptacle: "The base of the flower, to which the other parts attach." },
+      order: ["stigma", "style", "ovary", "ovule"],
+      facts: { pollenPath: () => G.stigmaY < G.styleY && G.styleY < G.ovaryY, ovuleInOvary: () => Math.abs(G.ovuleY - G.ovaryY) < 40, twoSidesAnthers: () => G.anthers >= 2 },
+      draw() {
+        let s = "", m = [];
+        s += part("receptacle", this.parts.receptacle, `<path d="M170 262 q40 24 80 0 l-8 -24 h-64 Z" fill="${C.a4}" fill-opacity=".4" stroke="${C.a4}" stroke-width="2"/>`); m.push(["receptacle", 210, 264]);
+        s += part("sepal", this.parts.sepal, [-1, 1].map((d) => `<path d="M${210 + d * 30} 244 q${d * 70} 6 ${d * 90} -34 q${-d * 50} 8 ${-d * 90} 34" fill="${C.good}" fill-opacity=".5" stroke="${C.good}" stroke-width="2"/>`).join("")); m.push(["sepal", 120, 232]);
+        s += part("petal", this.parts.petal, [-1, 1].map((d) => `<path d="M${210 + d * 34} 236 C${210 + d * 120} 220 ${210 + d * 150} 120 ${210 + d * 112} 50 C${210 + d * 70} 110 ${210 + d * 50} 170 ${210 + d * 34} 236 Z" fill="${C.a2}" fill-opacity=".28" stroke="${C.a2}" stroke-width="2"/>`).join("")); m.push(["petal", 330, 104]);
+        s += part("filament", this.parts.filament, [-1, 1].map((d) => `<path d="M${210 + d * 24} 240 q${d * 16} -60 ${d * 28} -120" fill="none" stroke="${C.a3}" stroke-width="3"/>`).join("")); m.push(["filament", 186, 200]);
+        s += part("anther", this.parts.anther, [-1, 1].map((d) => `<ellipse cx="${210 + d * 54}" cy="116" rx="11" ry="18" fill="${C.a3}" fill-opacity=".7" stroke="${C.a3}" stroke-width="2" transform="rotate(${d * 12} ${210 + d * 54} 116)"/>`).join("")); m.push(["anther", 264, 116]);
+        s += part("ovary", this.parts.ovary, `<ellipse cx="210" cy="${G.ovaryY}" rx="40" ry="48" fill="${C.a5}" fill-opacity=".15" stroke="${C.a5}" stroke-width="2.4"/>`); m.push(["ovary", 246, G.ovaryY - 20]);
+        s += part("ovule", this.parts.ovule, `<ellipse cx="210" cy="${G.ovuleY}" rx="13" ry="20" fill="${C.a1}" fill-opacity=".5" stroke="${C.a1}" stroke-width="1.8"/><circle cx="210" cy="${G.ovuleY + 4}" r="4.5" fill="${C.ink}" fill-opacity=".7"/>`); m.push(["ovule", 210, G.ovuleY + 4]);
+        s += part("style", this.parts.style, `<rect x="205" y="${G.stigmaY + 10}" width="10" height="${G.ovaryY - G.stigmaY - 54}" rx="4" fill="${C.a5}" fill-opacity=".5" stroke="${C.a5}" stroke-width="1.6"/>`); m.push(["style", 215, G.styleY]);
+        s += part("stigma", this.parts.stigma, `<circle cx="210" cy="${G.stigmaY}" r="13" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}" stroke-width="2"/>`); m.push(["stigma", 222, G.stigmaY - 4]);
+        return { s, m };
+      },
+    };
+  })(),
+  seed: (() => {
+    const G = { bean: { cotyledons: 2, store: "cotyledons" }, maize: { cotyledons: 1, store: "endosperm" } };
+    return {
+      parts: { testa: "The seed coat: protects the embryo.", cotyledon: "A seed leaf. A eudicot has two, and they often store the food.", "single cotyledon": "A monocot has one cotyledon; the food is stored in the endosperm instead.", radicle: "The young root of the embryo.", plumule: "The young shoot of the embryo.", endosperm: "The food store of a monocot seed such as maize.", micropyle: "A small pore in the testa where the pollen tube entered; water enters here at germination." },
+      order: ["testa", "cotyledon", "radicle", "plumule"],
+      facts: { eudicotTwoCotyledons: () => G.bean.cotyledons === 2, monocotOneCotyledon: () => G.maize.cotyledons === 1, eudicotStoreInCotyledons: () => G.bean.store === "cotyledons", monocotStoreInEndosperm: () => G.maize.store === "endosperm" },
+      draw() {
+        let s = text(105, 18, "eudicot (bean)", { size: 12, weight: 700, fill: C.soft }) + text(315, 18, "monocot (maize)", { size: 12, weight: 700, fill: C.soft }), m = [];
+        s += part("testa", this.parts.testa, `<path d="M105 34 C160 40 168 200 105 270 C42 200 50 40 105 34 Z" fill="${C.a3}" fill-opacity=".08" stroke="${C.a3}" stroke-width="5"/>`); m.push(["testa", 149, 128, "L"]);
+        s += part("cotyledon", this.parts.cotyledon, `<path d="M104 52 C148 56 154 190 104 242 Z" fill="${C.a4}" fill-opacity=".4" stroke="${C.a4}" stroke-width="2"/><path d="M106 52 C62 56 56 190 106 242 Z" fill="${C.a4}" fill-opacity=".4" stroke="${C.a4}" stroke-width="2"/>`); m.push(["cotyledon", 134, 150, "L"]);
+        s += part("plumule", this.parts.plumule, `<path d="M105 70 q-9 -22 -2 -34 q10 12 2 34" fill="${C.good}" fill-opacity=".7" stroke="${C.good}" stroke-width="1.6"/>`); m.push(["plumule", 105, 54, "L"]);
+        s += part("radicle", this.parts.radicle, `<path d="M99 240 q6 20 6 26 q0 -6 6 -26 Z" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}" stroke-width="1.6"/>`); m.push(["radicle", 104, 256, "L"]);
+        s += part("micropyle", this.parts.micropyle, `<circle cx="121.7" cy="246.5" r="4.2" fill="${C.panel}" stroke="${C.ink}" stroke-width="1.6"/>`); m.push(["micropyle", 121.7, 246.5, "L"]);
+        s += part("endosperm", this.parts.endosperm, `<path d="M315 34 C372 40 380 200 315 270 C250 200 258 40 315 34 Z" fill="${C.a1}" fill-opacity=".18" stroke="${C.a3}" stroke-width="5"/>`); m.push(["endosperm", 345, 100]);
+        s += part("single cotyledon", this.parts["single cotyledon"], `<path d="M290 120 C270 130 270 200 300 238 C312 200 312 150 290 120 Z" fill="${C.a4}" fill-opacity=".5" stroke="${C.a4}" stroke-width="2"/>`); m.push(["single cotyledon", 283, 190]);
+        s += part("plumule", this.parts.plumule, `<path d="M297 128 q-3 -26 6 -40 q10 16 0 40" fill="${C.good}" fill-opacity=".7" stroke="${C.good}" stroke-width="1.6"/>`) + part("radicle", this.parts.radicle, `<path d="M294 236 q8 26 8 32 q0 -6 8 -32 Z" fill="${C.a2}" fill-opacity=".6" stroke="${C.a2}" stroke-width="1.6"/>`);
+        return { s, m };
+      },
+    };
+  })(),
+  junctions: (() => {
+    // illustrative sizes, not to scale: the gap between animal cells and the lengths of the proteins that cross it
+    const G = { gap: 24, tight: { gapAtJunction: 0 }, desmosome: { cadherin: 30, filamentsBothSides: true }, gapj: { channel: 30, open: true }, plasmo: { wall: 14, lamella: 6, channel: 34, lined: true } };
+    return {
+      parts: { "claudin and occludin": "Rows of claudin and occludin proteins stitch the membranes of neighbouring cells together and seal the gap: nothing leaks between the cells, so it must pass through them and their transporters (gut lining, blood–brain barrier).", cadherin: "Cadherin proteins reach across the gap and join the two cells.", plaque: "A dense plate inside each cell that anchors the cadherins to the filaments.", "intermediate filament": "A cytoskeleton filament that spreads the pulling force through the cell.", "connexin channel": "A channel of connexin proteins through both membranes, joining the cytoplasm of the two cells: ions and small molecules (up to about 1 kDa) pass.", plasmodesma: "A channel through the walls of neighbouring plant cells, lined with plasma membrane, so the cytoplasm is continuous.", "cell wall": "The cellulose wall of each plant cell.", "middle lamella": "The layer that holds neighbouring plant cells together." },
+      order: ["tight junction", "desmosome", "gap junction", "plasmodesma"],
+      facts: { sealed: () => G.tight.gapAtJunction === 0 && G.gap > 0, cadherinSpansGap: () => G.desmosome.cadherin >= G.gap, anchoredToFilaments: () => G.desmosome.filamentsBothSides, channelLinksCytoplasm: () => G.gapj.channel >= G.gap && G.gapj.open, plasmodesmaSpansWalls: () => G.plasmo.channel >= 2 * G.plasmo.wall + G.plasmo.lamella && G.plasmo.lined },
+      draw() {
+        let s = "", m = [];
+        const cells = (ox, oy, brk) => { // two animal cells with an extracellular gap between them; brk: [y0, y1] where the membranes are open
+          const fill = `<rect x="6" y="26" width="82" height="108" fill="${C.a4}" fill-opacity=".1"/><rect x="112" y="26" width="82" height="108" fill="${C.a4}" fill-opacity=".1"/>`;
+          const edge = (x) => brk ? `<path d="M${x} 26 V${brk[0]} M${x} ${brk[1]} V134" fill="none" stroke="${C.a4}" stroke-width="2.4"/>` : `<path d="M${x} 26 V134" fill="none" stroke="${C.a4}" stroke-width="2.4"/>`;
+          return fill + `<path d="M6 26 H88 M6 134 H88 M6 26 V134 M112 26 H194 M112 134 H194 M194 26 V134" fill="none" stroke="${C.a4}" stroke-width="2.4"/>` + edge(88) + edge(112); };
+        const T = (ox, oy, name, body) => `<g transform="translate(${ox} ${oy})">` + text(6, 12, name, { size: 13, weight: 700, anchor: "start" }) + body + `</g>`;
+        // tight junction: the membranes meet at the top of the gap, which stops anything leaking between the cells
+        s += T(10, 8, "tight junction", cells() + part("claudin and occludin", this.parts["claudin and occludin"], `<rect x="88" y="26" width="24" height="16" fill="${C.a2}" fill-opacity=".75" stroke="${C.a2}" stroke-width="1.6"/><circle cx="94" cy="34" r="3" fill="${C.ink}"/><circle cx="106" cy="34" r="3" fill="${C.ink}"/>`)
+          + `<path d="M100 8 V24" stroke="${C.bad}" stroke-width="2" stroke-dasharray="3 3"/><path d="M93 20 l14 -10 M93 10 l14 10" stroke="${C.bad}" stroke-width="2"/>`); m.push(["claudin and occludin", 10 + 100, 8 + 34]);
+        // desmosome: cadherins join two plaques, each anchored to intermediate filaments
+        s += T(215, 8, "desmosome", cells() + part("cadherin", this.parts.cadherin, [68, 80, 92].map((y) => `<path d="M88 ${y} H112" stroke="${C.a5}" stroke-width="2.2"/><circle cx="100" cy="${y}" r="2.2" fill="${C.a5}"/>`).join(""))
+          + part("plaque", this.parts.plaque, `<rect x="76" y="58" width="12" height="44" rx="3" fill="${C.a3}" fill-opacity=".8" stroke="${C.a3}" stroke-width="1.4"/><rect x="112" y="58" width="12" height="44" rx="3" fill="${C.a3}" fill-opacity=".8" stroke="${C.a3}" stroke-width="1.4"/>`)
+          + part("intermediate filament", this.parts["intermediate filament"], [[76, 68, 40, 52, 16, 76], [76, 80, 44, 80, 20, 100], [76, 92, 40, 108, 16, 120], [124, 68, 160, 52, 184, 76], [124, 80, 156, 80, 180, 100], [124, 92, 160, 108, 184, 120]].map(([x1, y1, cx, cy, x2, y2]) => `<path d="M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2}" fill="none" stroke="${C.good}" stroke-width="2"/>`).join(""))); m.push(["cadherin", 215 + 100, 8 + 80], ["plaque", 215 + 118, 8 + 60], ["intermediate filament", 215 + 160, 8 + 56]);
+        // gap junction: a channel through both membranes joins the two cytoplasms
+        s += T(10, 153, "gap junction", cells(0, 0, [62, 84]) + `<rect x="88" y="62" width="24" height="22" fill="${C.a4}" fill-opacity=".1"/>` + part("connexin channel", this.parts["connexin channel"], `<rect x="82" y="54" width="36" height="9" rx="2" fill="${C.a1}" fill-opacity=".8" stroke="${C.a1}" stroke-width="1.4"/><rect x="82" y="83" width="36" height="9" rx="2" fill="${C.a1}" fill-opacity=".8" stroke="${C.a1}" stroke-width="1.4"/><circle cx="76" cy="73" r="2.6" fill="${C.a2}"/><circle cx="100" cy="73" r="2.6" fill="${C.a2}"/><circle cx="124" cy="73" r="2.6" fill="${C.a2}"/>`)); m.push(["connexin channel", 10 + 100, 153 + 58]);
+        // plasmodesma: plant cells with walls and a middle lamella, joined by a channel lined with plasma membrane
+        const w = G.plasmo.wall, lam = G.plasmo.lamella, x1 = 80, x2 = x1 + 2 * w + lam;
+        s += T(215, 153, "plasmodesma", `<rect x="6" y="26" width="${x1 - 6}" height="108" fill="${C.good}" fill-opacity=".12"/><rect x="${x2}" y="26" width="${194 - x2}" height="108" fill="${C.good}" fill-opacity=".12"/>`
+          + part("cell wall", this.parts["cell wall"], [[26, 36], [84, 50]].map(([y, h]) => `<rect x="${x1}" y="${y}" width="${w}" height="${h}" fill="${C.a3}" fill-opacity=".4" stroke="${C.a3}" stroke-width="1.4"/><rect x="${x2 - w}" y="${y}" width="${w}" height="${h}" fill="${C.a3}" fill-opacity=".4" stroke="${C.a3}" stroke-width="1.4"/>`).join(""))
+          + part("middle lamella", this.parts["middle lamella"], [[26, 36], [84, 50]].map(([y, h]) => `<rect x="${x1 + w}" y="${y}" width="${lam}" height="${h}" fill="${C.a2}" fill-opacity=".6"/>`).join(""))
+          + `<rect x="${x1}" y="62" width="${x2 - x1}" height="22" fill="${C.good}" fill-opacity=".12"/>` + part("plasmodesma", this.parts.plasmodesma, `<path d="M${x1} 62 H${x2} M${x1} 84 H${x2}" stroke="${C.good}" stroke-width="2.6"/>`)
+          + `<path d="M${x1} 62 V26 H6 V134 H${x1} V84 M${x2} 62 V26 H194 V134 H${x2} V84" fill="none" stroke="${C.good}" stroke-width="2.4"/>`); m.push(["plasmodesma", 215 + (x1 + x2) / 2, 153 + 73], ["cell wall", 215 + x1 + w / 2, 153 + 40], ["middle lamella", 215 + x1 + w + lam / 2, 153 + 110]);
+        return { s, m };
+      },
+    };
+  })(),
+};
+function sectionDraw(spec, W, narrow) {
+  if (!SECTION[spec.template]) return { s: "", H: 40 }; // the checks report the unknown template
+  const T = SECTION[spec.template], { s: art, m } = T.draw.call(T), wanted = spec.labels.map((n) => m.find((q) => q[0] === n)).filter(Boolean);
+  const hasL = !narrow && wanted.some((q) => q[3] === "L"), leftW = hasL ? 150 : 0;
+  const k = narrow ? (W - 20) / 420 : Math.min(1, (W - 250 - leftW) / 420), ox = (narrow ? 10 : 14) + leftW, oy = 8;
+  let s = `<g transform="translate(${ox} ${oy}) scale(${k.toFixed(4)})">${art}</g>`;
+  const marks = wanted.map(([n, x, y, side]) => [n, ox + x * k, oy + y * k, side]);
+  let H = oy + 300 * k + 14;
+  if (!narrow) {
+    const figH = oy + 300 * k;
+    for (const side of ["L", "R"]) {
+      const group = marks.filter((q) => (q[3] === "L") === (side === "L")).sort((a, b) => a[2] - b[2] || b[1] - a[1]);
+      if (!group.length) continue;
+      const lx = side === "L" ? leftW - 4 : ox + 420 * k + 24, ys = group.map((q) => Math.max(24, q[2]));
+      for (let i = 1; i < ys.length; i++) ys[i] = Math.max(ys[i], ys[i - 1] + 26);
+      for (let i = ys.length - 2; i >= 0 && ys[ys.length - 1] > figH - 6; i--) ys[i] = Math.min(ys[i], ys[i + 1] - 26);
+      group.forEach(([n, ax, ay], i) => { const ly = ys[i];
+        s += line(ax, ay, side === "L" ? lx + 6 : lx - 4, ly, { stroke: C.soft, w: 1.1 }) + `<circle cx="${f1(ax)}" cy="${f1(ay)}" r="2.6" fill="${C.ink}"/>` + text(side === "L" ? lx : lx, ly, n, { size: 12.5, weight: 600, anchor: side === "L" ? "end" : "start" });
+        H = Math.max(H, ly + 12); });
+    }
+  } else {
+    marks.forEach(([n, ax, ay], i) => { s += `<circle cx="${f1(ax)}" cy="${f1(ay)}" r="9" fill="var(--vx-bg, #ffffff)" stroke="${C.ink}" stroke-width="1.4"/>` + text(ax, ay + 0.5, String(i + 1), { size: 10.5, weight: 700 }); });
+    marks.forEach(([n], i) => { s += text(14, H + 8 + i * 19, `${i + 1}  ${n}`, { size: 12.5, anchor: "start" }); });
+    H += marks.length * 19 + 14;
+  }
+  return { s, H };
+}
+function sectionChecks(spec) {
+  const T = SECTION[spec.template], out = [check(`the template "${spec.template}" is known`, !!T)];
+  if (!T) return out;
+  const { m } = T.draw.call(T), known = new Set(m.map((q) => q[0]));
+  const bad = spec.labels.filter((l) => !known.has(l) || !T.parts[l]);
+  out.push(check(`every labelled part is drawn, and has a name and a function`, !bad.length, bad.join(", ") || `${spec.labels.length} parts`));
+  for (const c of spec.claims || []) {
+    if (c.type === "fact") out.push(check(`${c.text || c.id}`, !!T.facts[c.id]?.(), c.id));
+    if (c.type === "order") { const idx = c.value.map((v) => T.order.indexOf(v)); out.push(check(`from ${c.from || "the outside"} to ${c.to || "the inside"}: ${c.value.join(", ")}`, idx.every((i) => i >= 0) && idx.every((v, i) => i === 0 || v > idx[i - 1]), `template order: ${T.order.join(" > ")}`)); }
+  }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1617,6 +1877,7 @@ register({
   membrane: { draw: membraneDraw, checks: membraneChecks, widths: [720, 380] },
   tonicity: { draw: tonicityDraw, checks: tonicityChecks, widths: [720, 380] },
   route: { draw: flowDraw, checks: routeChecks, widths: [700, 380] },
+  tract: { draw: flowDraw, checks: tractChecks, widths: [700, 380] },
   lineage: { draw: flowDraw, checks: lineageChecks, widths: [700, 380] },
   envelope: { draw: envelopeDraw, checks: envelopeChecks, widths: [700, 380] },
   codontable: { draw: codontableDraw, checks: codontableChecks, widths: [720, 380] },
@@ -1626,6 +1887,7 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  section: { draw: sectionDraw, checks: sectionChecks, widths: [700, 380] },
   bilayer: { draw: bilayerDraw, checks: bilayerChecks, widths: [700, 380] },
   inducedfit: { draw: inducedfitDraw, checks: inducedfitChecks, widths: [720, 380] },
   hbond: { draw: hbondDraw, checks: hbondChecks, widths: [700, 380] },

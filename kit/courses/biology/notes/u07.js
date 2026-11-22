@@ -635,6 +635,7 @@ H: Double circulation
 - **Systemic circulation**: left heart to body tissues and back to right heart.
 - Blood passes through the heart twice in each complete circuit.
 - This allows high pressure in the systemic circuit while protecting the delicate lungs.
+D: bio-double-circulation
 H: Pressure and regulation
 - **Blood pressure** is measured as systolic over diastolic, such as 120/80 mmHg.
 - **Hypertension** is persistently high blood pressure, often defined as 140/90 mmHg or above in clinic.
@@ -677,6 +678,7 @@ H: Structures
 - It divides into two **bronchi**, then many **bronchioles**.
 - Bronchioles end in **alveoli**, where gas exchange happens.
 - The lungs are surrounded by **pleural membranes** and protected by the ribcage.
+D: bio-airway
 H: Protection and disease
 - **Goblet cells** produce mucus that traps particles and microbes.
 - **Cilia** sweep mucus upwards to the throat.
@@ -845,6 +847,7 @@ H: Organs
 - **Small intestine**: main site of digestion and absorption.
 - **Large intestine**: absorbs water and forms faeces; **rectum** stores them.
 - Accessory organs: **liver**, **gall bladder** and **pancreas**.
+D: bio-gut
 H: Types of digestion
 - **Mechanical digestion**: physical breakdown by chewing and churning.
 - **Chemical digestion**: enzymes break large molecules into small soluble ones.

@@ -1,0 +1,48 @@
+{
+ "id": "bio-seed-section",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Seed formation",
+ "title": "Seeds: eudicot and monocot",
+ "caption": "A seed has a testa, an embryo (radicle and plumule) and a food store. A eudicot seed such as a bean has two cotyledons, which hold the food; a monocot seed such as maize has one cotyledon and stores food in the endosperm. The micropyle is where the pollen tube entered; water enters there at germination.",
+ "alt": "Two seeds side by side. A bean has a thick testa round two large cotyledons, with a plumule at the top and a radicle at the bottom. A maize grain has a testa round a large food store, the endosperm, with a single small cotyledon, plumule and radicle at one side.",
+ "description": [
+  "The testa protects the embryo.",
+  "The embryo is the radicle (young root) and plumule (young shoot) on the cotyledon(s).",
+  "Eudicot: two cotyledons that store food.",
+  "Monocot: one cotyledon; food stored in the endosperm."
+ ],
+ "template": "seed",
+ "labels": [
+  "testa",
+  "cotyledon",
+  "plumule",
+  "radicle",
+  "micropyle",
+  "endosperm",
+  "single cotyledon"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "eudicotTwoCotyledons",
+   "text": "a eudicot seed has two cotyledons"
+  },
+  {
+   "type": "fact",
+   "id": "monocotOneCotyledon",
+   "text": "a monocot seed has one cotyledon"
+  },
+  {
+   "type": "fact",
+   "id": "eudicotStoreInCotyledons",
+   "text": "a eudicot stores food in its cotyledons"
+  },
+  {
+   "type": "fact",
+   "id": "monocotStoreInEndosperm",
+   "text": "a monocot stores food in its endosperm"
+  }
+ ]
+}

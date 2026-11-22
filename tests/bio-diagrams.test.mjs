@@ -328,3 +328,57 @@ test("water: 104.5° molecules, hydrogen bonds longer than O–H and in line, at
   assert.equal(allPass({ renderer: "hbond", alt: "x", scale: 450, energies: { hbond: [5, 30], cc: 350 } }), true);
   assert.equal(allPass({ renderer: "hbond", alt: "x", scale: 450, energies: { hbond: [5, 300], cc: 350 } }), false); // not far weaker than a covalent bond
 });
+
+test("section: every template draws its labelled parts, and order and position claims are checked", () => {
+  const base = { renderer: "section", alt: "x" };
+  const all = {
+    root: ["root hair", "epidermis", "cortex", "endodermis", "Casparian strip", "vascular cylinder", "xylem", "phloem"],
+    stem: ["epidermis", "cortex", "vascular bundle", "xylem", "phloem", "pith"],
+    leaf: ["cuticle", "upper epidermis", "palisade mesophyll", "spongy mesophyll", "lower epidermis", "stoma", "guard cell", "xylem", "phloem"],
+    xylem: ["vessel element", "lignin", "pit", "no end wall"],
+    phloem: ["sieve tube element", "sieve plate", "companion cell", "plasmodesma", "nucleus", "mitochondria"],
+    flower: ["petal", "sepal", "anther", "filament", "stigma", "style", "ovary", "ovule", "receptacle"],
+    seed: ["testa", "cotyledon", "plumule", "radicle", "micropyle", "endosperm", "single cotyledon"],
+  };
+  for (const [template, labels] of Object.entries(all)) {
+    assert.equal(allPass({ ...base, template, labels }), true, template);
+    const r = render({ ...base, template, labels });
+    assert.ok(r.wide.includes("data-part") && r.narrow.includes("data-part"), `${template} parts carry data-part`);
+  }
+  assert.equal(allPass({ ...base, template: "leaf", labels: ["cuticle"], claims: [{ type: "order", value: ["cuticle", "upper epidermis", "palisade mesophyll", "spongy mesophyll", "lower epidermis"] }] }), true);
+  assert.equal(allPass({ ...base, template: "leaf", labels: ["cuticle"], claims: [{ type: "order", value: ["spongy mesophyll", "palisade mesophyll"] }] }), false); // palisade is above spongy
+  assert.equal(allPass({ ...base, template: "root", labels: ["xylem"], claims: [{ type: "order", value: ["cortex", "epidermis"] }] }), false); // the epidermis is outside the cortex
+  assert.equal(allPass({ ...base, template: "stem", labels: ["xylem"], claims: [{ type: "fact", id: "xylemInner" }, { type: "fact", id: "ring" }] }), true);
+  assert.equal(allPass({ ...base, template: "stem", labels: ["xylem"], claims: [{ type: "fact", id: "notAFact" }] }), false);
+  assert.equal(allPass({ ...base, template: "xylem", labels: ["vessel element", "lignin", "pit"], claims: [{ type: "fact", id: "noEndWalls" }, { type: "fact", id: "deadCells" }] }), true);
+  assert.equal(allPass({ ...base, template: "root", labels: ["not a part"] }), false);
+  assert.equal(allPass({ ...base, template: "nosuch", labels: [] }), false);
+});
+
+test("section: the cell-junctions template checks that each junction does its job geometrically", () => {
+  const base = { renderer: "section", alt: "x", template: "junctions", labels: ["claudin and occludin", "cadherin", "plaque", "intermediate filament", "connexin channel", "plasmodesma", "cell wall", "middle lamella"] };
+  const ids = ["sealed", "cadherinSpansGap", "anchoredToFilaments", "channelLinksCytoplasm", "plasmodesmaSpansWalls"];
+  assert.equal(allPass({ ...base, claims: ids.map((id) => ({ type: "fact", id })) }), true);
+  assert.equal(allPass({ ...base, claims: [{ type: "fact", id: "gapJunctionSealsTheGap" }] }), false); // not something the picture shows
+});
+
+test("tract: every solid arrow is a step blood, air or food takes; the circulation is a double loop", () => {
+  const circ = [["right heart", "deoxygenated"], ["pulmonary artery", "deoxygenated"], ["lungs", "exchange"], ["pulmonary vein", "oxygenated"], ["left heart", "oxygenated"], ["aorta", "oxygenated"], ["body tissues", "exchange"], ["vena cava", "deoxygenated"]];
+  const nodes = circ.map(([is, blood], i) => ({ id: `c${i}`, label: is, is, blood, col: i, row: 0 }));
+  const edges = circ.map((_, i) => ({ from: `c${i}`, to: `c${(i + 1) % 8}` }));
+  const ok = { renderer: "tract", alt: "x", tract: "circulation", layout: "grid", nodes, edges };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, edges: [{ from: "c0", to: "c2" }, ...edges.slice(1)] }), false); // the right heart does not feed the lungs directly
+  assert.equal(allPass({ ...ok, nodes: nodes.map((n) => (n.is === "pulmonary vein" ? { ...n, blood: "deoxygenated" } : n)) }), false); // the pulmonary vein carries oxygenated blood
+  assert.equal(allPass({ ...ok, edges: edges.slice(0, 7) }), false); // an open chain is not a circulation
+  const gut = ["mouth", "oesophagus", "stomach", "small intestine", "large intestine", "rectum"].map((is, i) => ({ id: `g${i}`, label: is, is, col: i, row: 0 }));
+  const route = gut.slice(1).map((_, i) => ({ from: `g${i}`, to: `g${i + 1}` }));
+  const acc = { id: "acc", label: "accessory organs", is: "accessory organs", col: 0, row: 1 };
+  const g = { renderer: "tract", alt: "x", tract: "gut", layout: "grid", nodes: [...gut, acc], edges: [...route, { from: "acc", to: "g3", dashed: true }] };
+  assert.equal(allPass(g), true);
+  assert.equal(allPass({ ...g, edges: [...route.slice(0, 2), { from: "g2", to: "acc" }, ...route.slice(3), { from: "acc", to: "g3", dashed: true }] }), false); // food does not pass through the liver or pancreas
+  assert.equal(allPass({ ...g, edges: [{ from: "g3", to: "g2" }, ...route.slice(1)] }), false); // food does not run backwards
+  const air = { renderer: "tract", alt: "x", tract: "airway", layout: "grid", nodes: ["nose", "pharynx", "larynx", "trachea", "bronchi", "bronchioles", "alveoli"].map((is, i) => ({ id: `a${i}`, label: is, is, col: i, row: 0 })), edges: [0, 1, 2, 3, 4, 5].map((i) => ({ from: `a${i}`, to: `a${i + 1}` })) };
+  assert.equal(allPass(air), true);
+  assert.equal(allPass({ ...air, edges: [{ from: "a0", to: "a3" }, ...air.edges.slice(1)] }), false); // air does not go from the nose to the trachea without the pharynx and larynx
+});

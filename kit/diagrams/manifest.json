@@ -34046,5 +34046,859 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-flower-section": {
+  "title": "A flower in section",
+  "caption": "The anthers make pollen; the stigma receives it. The style leads down to the ovary, which contains the ovules. Petals attract insect pollinators. After fertilisation the ovule becomes the seed and the ovary the fruit.",
+  "alt": "A flower cut lengthways: two petals and two sepals round a central carpel with a stigma on top, a style below it, and an ovary at the base holding an ovule, with two anthers on filaments either side.",
+  "description": [
+   "Anthers on filaments make pollen.",
+   "The stigma receives pollen; the style connects it to the ovary.",
+   "The ovary contains ovules; each ovule contains an egg cell.",
+   "Petals attract pollinators; sepals protect the bud."
+  ],
+  "course": "biology",
+  "lesson": "Pollination",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u08",
+    "lesson": "Fertilisation"
+   }
+  ],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Pollination"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Fertilisation",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"flower\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "9 parts"
+   },
+   {
+    "name": "from the top of the carpel to its base: stigma, style, ovary, ovule",
+    "ok": true,
+    "detail": "template order: stigma > style > ovary > ovule"
+   },
+   {
+    "name": "the pollen tube grows down from stigma through style to ovary",
+    "ok": true,
+    "detail": "pollenPath"
+   },
+   {
+    "name": "the ovule is inside the ovary",
+    "ok": true,
+    "detail": "ovuleInOvary"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-leaf-section": {
+  "title": "A leaf in cross-section",
+  "caption": "From the top: the waxy cuticle, the transparent upper epidermis, the palisade mesophyll (tightly packed, many chloroplasts), the spongy mesophyll (air spaces for gas diffusion) and the lower epidermis, which carries the stomata between pairs of guard cells. In a vein the xylem is on the upper side and the phloem below it.",
+  "alt": "A leaf section from top to bottom: a thin cuticle, a row of upper epidermis cells, tall palisade cells with green chloroplasts, loosely packed spongy cells with gaps, and a lower epidermis with a pore between two guard cells; a vein in the middle with xylem above and phloem below.",
+  "description": [
+   "Layers from the top: cuticle, upper epidermis, palisade mesophyll, spongy mesophyll, lower epidermis.",
+   "Palisade cells are tightly packed and contain most of the chloroplasts.",
+   "Spongy mesophyll has air spaces for gas diffusion.",
+   "Stomata are in the lower epidermis, each between two guard cells.",
+   "In a vein the xylem is on the upper side and the phloem on the lower side."
+  ],
+  "course": "biology",
+  "lesson": "Leaves",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Leaves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"leaf\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "9 parts"
+   },
+   {
+    "name": "from the top to the bottom: cuticle, upper epidermis, palisade mesophyll, spongy mesophyll, lower epidermis",
+    "ok": true,
+    "detail": "template order: cuticle > upper epidermis > palisade mesophyll > spongy mesophyll > lower epidermis"
+   },
+   {
+    "name": "in a vein the xylem is above the phloem",
+    "ok": true,
+    "detail": "xylemUpper"
+   },
+   {
+    "name": "the stomata are in the lower epidermis",
+    "ok": true,
+    "detail": "stomataLower"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-phloem-cells": {
+  "title": "Phloem: a sieve tube and its companion cells",
+  "caption": "Sieve tube elements are living cells joined end to end, with sieve plates between them; they have few organelles and no nucleus. Each is served by a companion cell, which has a nucleus and many mitochondria and loads sucrose using ATP; plasmodesmata link the two.",
+  "alt": "Two sieve tube elements stacked end to end with a perforated sieve plate between them, each with a companion cell beside it containing a nucleus and mitochondria, joined to it by narrow channels.",
+  "description": [
+   "Sieve tube elements are living, with few organelles and no nucleus.",
+   "Sieve plates are perforated cross-walls that let sap pass.",
+   "Companion cells have a nucleus and many mitochondria: they supply ATP and load sucrose.",
+   "Plasmodesmata link each companion cell to its sieve tube element."
+  ],
+  "course": "biology",
+  "lesson": "Phloem",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Phloem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"phloem\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "6 parts"
+   },
+   {
+    "name": "sieve plates lie between sieve tube elements",
+    "ok": true,
+    "detail": "sieveHasPlates"
+   },
+   {
+    "name": "sieve tube elements have no nucleus",
+    "ok": true,
+    "detail": "sieveNoNucleus"
+   },
+   {
+    "name": "companion cells have a nucleus",
+    "ok": true,
+    "detail": "companionNucleus"
+   },
+   {
+    "name": "companion cells have many mitochondria",
+    "ok": true,
+    "detail": "companionMitochondria"
+   },
+   {
+    "name": "plasmodesmata link the cells",
+    "ok": true,
+    "detail": "linked"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-root-section": {
+  "title": "A root in cross-section",
+  "caption": "From the outside in: the epidermis (some cells make root hairs), the cortex, the endodermis with its Casparian strip, and the vascular cylinder. The xylem forms a star or cross, with the phloem between its arms. The Casparian strip blocks the apoplast pathway, so water must cross the endodermal cell membranes into the symplast.",
+  "alt": "A circular root section: an outer epidermis with root hairs, a wide cortex of packed cells, a ring of endodermis with dark Casparian strip dots, and a centre where four xylem arms form a cross with four phloem patches between them.",
+  "description": [
+   "Layers from the outside in: epidermis, cortex, endodermis, vascular cylinder.",
+   "Root hairs are extensions of epidermal cells and increase the surface area for absorption.",
+   "The Casparian strip is a waterproof band in the endodermal walls: it forces water into the symplast, so entry to the xylem is controlled.",
+   "The xylem forms a star or cross in the centre, with the phloem between its arms."
+  ],
+  "course": "biology",
+  "lesson": "Roots and root systems",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Roots and root systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"root\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "8 parts"
+   },
+   {
+    "name": "from the outside to the inside: epidermis, cortex, endodermis, vascular cylinder",
+    "ok": true,
+    "detail": "template order: epidermis > cortex > endodermis > vascular cylinder"
+   },
+   {
+    "name": "the xylem forms a star in the centre",
+    "ok": true,
+    "detail": "xylemStar"
+   },
+   {
+    "name": "the phloem sits between the arms of the xylem",
+    "ok": true,
+    "detail": "phloemBetweenArms"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-seed-section": {
+  "title": "Seeds: eudicot and monocot",
+  "caption": "A seed has a testa, an embryo (radicle and plumule) and a food store. A eudicot seed such as a bean has two cotyledons, which hold the food; a monocot seed such as maize has one cotyledon and stores food in the endosperm. The micropyle is where the pollen tube entered; water enters there at germination.",
+  "alt": "Two seeds side by side. A bean has a thick testa round two large cotyledons, with a plumule at the top and a radicle at the bottom. A maize grain has a testa round a large food store, the endosperm, with a single small cotyledon, plumule and radicle at one side.",
+  "description": [
+   "The testa protects the embryo.",
+   "The embryo is the radicle (young root) and plumule (young shoot) on the cotyledon(s).",
+   "Eudicot: two cotyledons that store food.",
+   "Monocot: one cotyledon; food stored in the endosperm."
+  ],
+  "course": "biology",
+  "lesson": "Seed formation",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Seed formation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"seed\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "7 parts"
+   },
+   {
+    "name": "a eudicot seed has two cotyledons",
+    "ok": true,
+    "detail": "eudicotTwoCotyledons"
+   },
+   {
+    "name": "a monocot seed has one cotyledon",
+    "ok": true,
+    "detail": "monocotOneCotyledon"
+   },
+   {
+    "name": "a eudicot stores food in its cotyledons",
+    "ok": true,
+    "detail": "eudicotStoreInCotyledons"
+   },
+   {
+    "name": "a monocot stores food in its endosperm",
+    "ok": true,
+    "detail": "monocotStoreInEndosperm"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-stem-section": {
+  "title": "A eudicot stem in cross-section",
+  "caption": "In a eudicot stem the vascular bundles form a ring between the cortex and the pith. In each bundle the xylem is on the inner side and the phloem on the outer side. (In a monocot the bundles are scattered.)",
+  "alt": "A circular stem section: an epidermis, a cortex, a ring of eight vascular bundles each with a larger xylem circle on the inner side and a smaller phloem circle on the outer side, and a pith in the middle.",
+  "description": [
+   "Layers from the outside in: epidermis, cortex, a ring of vascular bundles, pith.",
+   "In each bundle xylem is on the inner side and phloem on the outer side.",
+   "In a monocot stem the vascular bundles are scattered instead of in a ring."
+  ],
+  "course": "biology",
+  "lesson": "Stems",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u08",
+    "lesson": "Plant tissues"
+   },
+   {
+    "course": "biology",
+    "unit": "u08",
+    "lesson": "Plant vascular tissue"
+   }
+  ],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Stems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Plant tissues",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js"
+   },
+   {
+    "name": "also placed in biology: Plant vascular tissue",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"stem\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "6 parts"
+   },
+   {
+    "name": "from the outside to the inside: epidermis, cortex, vascular bundles, pith",
+    "ok": true,
+    "detail": "template order: epidermis > cortex > vascular bundles > pith"
+   },
+   {
+    "name": "xylem is on the inner side of each bundle",
+    "ok": true,
+    "detail": "xylemInner"
+   },
+   {
+    "name": "the bundles form a ring",
+    "ok": true,
+    "detail": "ring"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-xylem-vessel": {
+  "title": "Xylem vessel elements",
+  "caption": "Xylem vessel elements are dead cells joined end to end with no cross-walls between them, forming a continuous tube. The walls are thickened with lignin, often in rings or spirals, which waterproofs and strengthens them against collapse under tension. Pits are thin gaps that let water move sideways.",
+  "alt": "Two vessel elements side by side, each a tall tube with horizontal bands of lignin along its wall and small oval pits, with the cross-wall between the upper and lower element open.",
+  "description": [
+   "Vessel elements are dead: no nucleus or cytoplasm, so nothing obstructs flow.",
+   "The end walls are gone, so the lumen is a continuous tube.",
+   "Lignin thickens the wall in rings or spirals: strong and waterproof.",
+   "Pits are gaps in the wall that let water move sideways between vessels."
+  ],
+  "course": "biology",
+  "lesson": "Xylem",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u08.js: Xylem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"xylem\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "4 parts"
+   },
+   {
+    "name": "no end walls: the lumen is continuous",
+    "ok": true,
+    "detail": "noEndWalls"
+   },
+   {
+    "name": "the cells are dead (no nucleus)",
+    "ok": true,
+    "detail": "deadCells"
+   },
+   {
+    "name": "the walls are lignified",
+    "ok": true,
+    "detail": "lignified"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-airway": {
+  "title": "The path of air to the alveoli",
+  "caption": "Air enters through the nose or mouth, then passes the pharynx and larynx into the trachea, which divides into two bronchi and then many bronchioles that end in the alveoli, where gas exchange happens. Mucus from goblet cells traps particles and cilia sweep it up to the throat.",
+  "alt": "A line of seven boxes in order: nose, pharynx, larynx, trachea, bronchi, bronchioles and alveoli, each with a short note on what it does.",
+  "description": [
+   "Air enters through the nose and mouth, then passes the pharynx and larynx.",
+   "The trachea is supported by C-shaped rings of cartilage.",
+   "It divides into two bronchi, then many bronchioles.",
+   "Bronchioles end in alveoli, where gas exchange happens.",
+   "Goblet cells make mucus that traps particles; cilia sweep it upwards."
+  ],
+  "course": "biology",
+  "lesson": "Respiratory system",
+  "also": [],
+  "renderer": "tract",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Respiratory system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the tract \"airway\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every box is a part of this tract",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the nose to the pharynx",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the pharynx to the larynx",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the larynx to the trachea",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the trachea to the bronchi",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the bronchi to the bronchioles",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air goes from the bronchioles to the alveoli",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-double-circulation": {
+  "title": "The double circulation",
+  "caption": "Blood passes through the heart twice in each complete circuit. The pulmonary circuit takes oxygen-poor blood from the right heart to the lungs and back to the left heart; the systemic circuit takes oxygen-rich blood from the left heart to the body tissues and back to the right heart. Keeping the two circuits apart lets the systemic circuit run at high pressure without damaging the delicate lungs.",
+  "alt": "A loop of eight boxes: right heart, pulmonary artery, lungs, pulmonary vein, left heart, aorta, body tissues and vena cava, with the oxygen-poor boxes in blue, the oxygen-rich ones in red and the lungs and body tissues, where gases are exchanged, in green.",
+  "description": [
+   "Pulmonary circulation: right heart to lungs and back to the left heart.",
+   "Systemic circulation: left heart to body tissues and back to the right heart.",
+   "Blood passes through the heart twice in each complete circuit.",
+   "Blue boxes carry oxygen-poor blood and red boxes oxygen-rich blood; the lungs and the body tissues are where the exchange happens.",
+   "A double circulation allows high pressure in the systemic circuit while protecting the delicate lungs."
+  ],
+  "course": "biology",
+  "lesson": "Circulation",
+  "also": [],
+  "renderer": "tract",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Circulation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the tract \"circulation\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every box is a part of this tract",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the right heart to the pulmonary artery",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the pulmonary artery to the lungs",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the lungs to the pulmonary vein",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the pulmonary vein to the left heart",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the left heart to the aorta",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the aorta to the body tissues",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the body tissues to the vena cava",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood goes from the vena cava to the right heart",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the route closes into a loop: every box is entered once and left once",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blood passes through the heart twice in each complete circuit",
+    "ok": true,
+    "detail": "right heart and left heart"
+   },
+   {
+    "name": "right heart: deoxygenated",
+    "ok": true,
+    "detail": "drawn as deoxygenated"
+   },
+   {
+    "name": "pulmonary artery: deoxygenated",
+    "ok": true,
+    "detail": "drawn as deoxygenated"
+   },
+   {
+    "name": "lungs: exchange",
+    "ok": true,
+    "detail": "drawn as exchange"
+   },
+   {
+    "name": "pulmonary vein: oxygenated",
+    "ok": true,
+    "detail": "drawn as oxygenated"
+   },
+   {
+    "name": "left heart: oxygenated",
+    "ok": true,
+    "detail": "drawn as oxygenated"
+   },
+   {
+    "name": "aorta: oxygenated",
+    "ok": true,
+    "detail": "drawn as oxygenated"
+   },
+   {
+    "name": "body tissues: exchange",
+    "ok": true,
+    "detail": "drawn as exchange"
+   },
+   {
+    "name": "vena cava: deoxygenated",
+    "ok": true,
+    "detail": "drawn as deoxygenated"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-gut": {
+  "title": "The path of food through the gut",
+  "caption": "Food passes from the mouth along the oesophagus to the stomach, the small intestine, the large intestine and the rectum. The liver, gall bladder and pancreas are accessory organs: food never passes through them, but they secrete into the small intestine. Most digestion and absorption of nutrients happens in the small intestine.",
+  "alt": "Six boxes in order: mouth, oesophagus, stomach, small intestine, large intestine and rectum; a separate box for the accessory organs (liver, gall bladder and pancreas) with a dashed arrow into the small intestine.",
+  "description": [
+   "Mouth: teeth chew food; saliva contains amylase.",
+   "Oesophagus: moves food by peristalsis.",
+   "Stomach: churns food; secretes hydrochloric acid and pepsin.",
+   "Small intestine: the main site of digestion and absorption.",
+   "Large intestine: absorbs water and forms faeces; the rectum stores them.",
+   "Accessory organs (liver, gall bladder, pancreas): food does not pass through them."
+  ],
+  "course": "biology",
+  "lesson": "Digestive system",
+  "also": [],
+  "renderer": "tract",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Digestive system"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the tract \"gut\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every box is a part of this tract",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food goes from the mouth to the oesophagus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food goes from the oesophagus to the stomach",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food goes from the stomach to the small intestine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food goes from the small intestine to the large intestine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food goes from the large intestine to the rectum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "accessory organs secretes into the small intestine: not a step on the route",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "food never passes through an accessory organ",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-cell-junctions": {
+  "title": "Tight junctions, desmosomes, gap junctions and plasmodesmata",
+  "caption": "A tight junction seals the gap between animal cells so that nothing leaks between them; a desmosome joins two cells through cadherins anchored to intermediate filaments, so that pulling forces are spread through the tissue; a gap junction is a channel of connexins that joins the cytoplasm of the two cells. In plants, plasmodesmata are channels through the cell walls lined with plasma membrane. Drawn schematically: the sizes are not to scale.",
+  "alt": "Four panels, each with two neighbouring cells. Tight junction: the membranes meet at the top and a dashed arrow trying to pass between the cells is blocked. Desmosome: dense plates inside each cell joined across the gap by cadherin lines, with filaments running into each cell. Gap junction: a channel through both membranes joining the cytoplasm of the two cells. Plasmodesma: two plant cells with walls and a middle lamella joined by a membrane-lined channel.",
+  "description": [
+   "Tight junctions seal the gap, so substances must pass through the cells (gut lining, blood–brain barrier).",
+   "Desmosomes and adherens junctions link cells through cadherins attached to the cytoskeleton, spreading mechanical stress.",
+   "Gap junctions are channels of connexin that join the cytoplasm of neighbouring cells and let ions and small molecules (up to about 1 kDa) pass.",
+   "Plasmodesmata are channels through plant cell walls, lined with plasma membrane.",
+   "Schematic: the sizes are not to scale."
+  ],
+  "course": "biology",
+  "lesson": "Cell junctions",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u02.js: Cell junctions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"junctions\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "8 parts"
+   },
+   {
+    "name": "at a tight junction the gap between the cells is closed",
+    "ok": true,
+    "detail": "sealed"
+   },
+   {
+    "name": "the cadherins are long enough to reach across the gap",
+    "ok": true,
+    "detail": "cadherinSpansGap"
+   },
+   {
+    "name": "each desmosome plaque is anchored to intermediate filaments in both cells",
+    "ok": true,
+    "detail": "anchoredToFilaments"
+   },
+   {
+    "name": "the gap junction channel reaches across the gap and is open",
+    "ok": true,
+    "detail": "channelLinksCytoplasm"
+   },
+   {
+    "name": "the plasmodesma channel is long enough to cross both walls and the middle lamella",
+    "ok": true,
+    "detail": "plasmodesmaSpansWalls"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

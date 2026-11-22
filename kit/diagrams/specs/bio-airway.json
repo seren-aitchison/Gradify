@@ -1,0 +1,112 @@
+{
+ "id": "bio-airway",
+ "renderer": "tract",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Respiratory system",
+ "title": "The path of air to the alveoli",
+ "caption": "Air enters through the nose or mouth, then passes the pharynx and larynx into the trachea, which divides into two bronchi and then many bronchioles that end in the alveoli, where gas exchange happens. Mucus from goblet cells traps particles and cilia sweep it up to the throat.",
+ "alt": "A line of seven boxes in order: nose, pharynx, larynx, trachea, bronchi, bronchioles and alveoli, each with a short note on what it does.",
+ "description": [
+  "Air enters through the nose and mouth, then passes the pharynx and larynx.",
+  "The trachea is supported by C-shaped rings of cartilage.",
+  "It divides into two bronchi, then many bronchioles.",
+  "Bronchioles end in alveoli, where gas exchange happens.",
+  "Goblet cells make mucus that traps particles; cilia sweep it upwards."
+ ],
+ "tract": "airway",
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "a0",
+   "label": "nose",
+   "sub": "warms, moistens and filters the air",
+   "is": "nose",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "a1",
+   "label": "pharynx",
+   "sub": "the throat, shared with the gut",
+   "is": "pharynx",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "a2",
+   "label": "larynx",
+   "sub": "the voice box",
+   "is": "larynx",
+   "tone": "a1",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "a3",
+   "label": "trachea",
+   "sub": "held open by C-shaped rings of cartilage",
+   "is": "trachea",
+   "tone": "a1",
+   "col": 3,
+   "row": 0
+  },
+  {
+   "id": "a4",
+   "label": "bronchi",
+   "sub": "two, one to each lung",
+   "is": "bronchi",
+   "tone": "a1",
+   "col": 3,
+   "row": 1
+  },
+  {
+   "id": "a5",
+   "label": "bronchioles",
+   "sub": "many; smooth muscle in their walls can constrict",
+   "is": "bronchioles",
+   "tone": "a1",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "a6",
+   "label": "alveoli",
+   "sub": "air sacs where gas exchange happens",
+   "is": "alveoli",
+   "tone": "a5",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "a0",
+   "to": "a1"
+  },
+  {
+   "from": "a1",
+   "to": "a2"
+  },
+  {
+   "from": "a2",
+   "to": "a3"
+  },
+  {
+   "from": "a3",
+   "to": "a4"
+  },
+  {
+   "from": "a4",
+   "to": "a5"
+  },
+  {
+   "from": "a5",
+   "to": "a6"
+  }
+ ]
+}

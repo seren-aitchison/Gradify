@@ -1,0 +1,58 @@
+{
+ "id": "bio-stem-section",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Stems",
+ "title": "A eudicot stem in cross-section",
+ "caption": "In a eudicot stem the vascular bundles form a ring between the cortex and the pith. In each bundle the xylem is on the inner side and the phloem on the outer side. (In a monocot the bundles are scattered.)",
+ "alt": "A circular stem section: an epidermis, a cortex, a ring of eight vascular bundles each with a larger xylem circle on the inner side and a smaller phloem circle on the outer side, and a pith in the middle.",
+ "description": [
+  "Layers from the outside in: epidermis, cortex, a ring of vascular bundles, pith.",
+  "In each bundle xylem is on the inner side and phloem on the outer side.",
+  "In a monocot stem the vascular bundles are scattered instead of in a ring."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "Plant tissues"
+  },
+  {
+   "course": "biology",
+   "unit": "u08",
+   "lesson": "Plant vascular tissue"
+  }
+ ],
+ "template": "stem",
+ "labels": [
+  "epidermis",
+  "cortex",
+  "vascular bundle",
+  "xylem",
+  "phloem",
+  "pith"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "epidermis",
+    "cortex",
+    "vascular bundles",
+    "pith"
+   ],
+   "text": "layers run epidermis, cortex, vascular bundles, pith"
+  },
+  {
+   "type": "fact",
+   "id": "xylemInner",
+   "text": "xylem is on the inner side of each bundle"
+  },
+  {
+   "type": "fact",
+   "id": "ring",
+   "text": "the bundles form a ring"
+  }
+ ]
+}

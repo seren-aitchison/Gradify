@@ -1,0 +1,52 @@
+{
+ "id": "bio-phloem-cells",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Phloem",
+ "title": "Phloem: a sieve tube and its companion cells",
+ "caption": "Sieve tube elements are living cells joined end to end, with sieve plates between them; they have few organelles and no nucleus. Each is served by a companion cell, which has a nucleus and many mitochondria and loads sucrose using ATP; plasmodesmata link the two.",
+ "alt": "Two sieve tube elements stacked end to end with a perforated sieve plate between them, each with a companion cell beside it containing a nucleus and mitochondria, joined to it by narrow channels.",
+ "description": [
+  "Sieve tube elements are living, with few organelles and no nucleus.",
+  "Sieve plates are perforated cross-walls that let sap pass.",
+  "Companion cells have a nucleus and many mitochondria: they supply ATP and load sucrose.",
+  "Plasmodesmata link each companion cell to its sieve tube element."
+ ],
+ "template": "phloem",
+ "labels": [
+  "sieve tube element",
+  "sieve plate",
+  "companion cell",
+  "plasmodesma",
+  "nucleus",
+  "mitochondria"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "sieveHasPlates",
+   "text": "sieve plates lie between sieve tube elements"
+  },
+  {
+   "type": "fact",
+   "id": "sieveNoNucleus",
+   "text": "sieve tube elements have no nucleus"
+  },
+  {
+   "type": "fact",
+   "id": "companionNucleus",
+   "text": "companion cells have a nucleus"
+  },
+  {
+   "type": "fact",
+   "id": "companionMitochondria",
+   "text": "companion cells have many mitochondria"
+  },
+  {
+   "type": "fact",
+   "id": "linked",
+   "text": "plasmodesmata link the cells"
+  }
+ ]
+}

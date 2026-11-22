@@ -1,0 +1,40 @@
+{
+ "id": "bio-xylem-vessel",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Xylem",
+ "title": "Xylem vessel elements",
+ "caption": "Xylem vessel elements are dead cells joined end to end with no cross-walls between them, forming a continuous tube. The walls are thickened with lignin, often in rings or spirals, which waterproofs and strengthens them against collapse under tension. Pits are thin gaps that let water move sideways.",
+ "alt": "Two vessel elements side by side, each a tall tube with horizontal bands of lignin along its wall and small oval pits, with the cross-wall between the upper and lower element open.",
+ "description": [
+  "Vessel elements are dead: no nucleus or cytoplasm, so nothing obstructs flow.",
+  "The end walls are gone, so the lumen is a continuous tube.",
+  "Lignin thickens the wall in rings or spirals: strong and waterproof.",
+  "Pits are gaps in the wall that let water move sideways between vessels."
+ ],
+ "template": "xylem",
+ "labels": [
+  "vessel element",
+  "lignin",
+  "pit",
+  "no end wall"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "noEndWalls",
+   "text": "no end walls: the lumen is continuous"
+  },
+  {
+   "type": "fact",
+   "id": "deadCells",
+   "text": "the cells are dead (no nucleus)"
+  },
+  {
+   "type": "fact",
+   "id": "lignified",
+   "text": "the walls are lignified"
+  }
+ ]
+}

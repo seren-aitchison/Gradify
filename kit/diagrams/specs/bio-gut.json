@@ -1,0 +1,115 @@
+{
+ "id": "bio-gut",
+ "renderer": "tract",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Digestive system",
+ "title": "The path of food through the gut",
+ "caption": "Food passes from the mouth along the oesophagus to the stomach, the small intestine, the large intestine and the rectum. The liver, gall bladder and pancreas are accessory organs: food never passes through them, but they secrete into the small intestine. Most digestion and absorption of nutrients happens in the small intestine.",
+ "alt": "Six boxes in order: mouth, oesophagus, stomach, small intestine, large intestine and rectum; a separate box for the accessory organs (liver, gall bladder and pancreas) with a dashed arrow into the small intestine.",
+ "description": [
+  "Mouth: teeth chew food; saliva contains amylase.",
+  "Oesophagus: moves food by peristalsis.",
+  "Stomach: churns food; secretes hydrochloric acid and pepsin.",
+  "Small intestine: the main site of digestion and absorption.",
+  "Large intestine: absorbs water and forms faeces; the rectum stores them.",
+  "Accessory organs (liver, gall bladder, pancreas): food does not pass through them."
+ ],
+ "tract": "gut",
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "g0",
+   "label": "mouth",
+   "sub": "teeth chew; saliva has amylase",
+   "is": "mouth",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "g1",
+   "label": "oesophagus",
+   "sub": "peristalsis moves the food",
+   "is": "oesophagus",
+   "tone": "a1",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "g2",
+   "label": "stomach",
+   "sub": "churns; hydrochloric acid and pepsin",
+   "is": "stomach",
+   "tone": "a1",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "g3",
+   "label": "small intestine",
+   "sub": "the main site of digestion and absorption",
+   "is": "small intestine",
+   "tone": "a5",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "g4",
+   "label": "large intestine",
+   "sub": "absorbs water; makes faeces",
+   "is": "large intestine",
+   "tone": "a1",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "g5",
+   "label": "rectum",
+   "sub": "stores the faeces",
+   "is": "rectum",
+   "tone": "a1",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "acc",
+   "label": "accessory organs",
+   "sub": "liver, gall bladder and pancreas",
+   "is": "accessory organs",
+   "tone": "a3",
+   "col": 1,
+   "row": 2
+  }
+ ],
+ "edges": [
+  {
+   "from": "g0",
+   "to": "g1"
+  },
+  {
+   "from": "g1",
+   "to": "g2"
+  },
+  {
+   "from": "g2",
+   "to": "g3"
+  },
+  {
+   "from": "g3",
+   "to": "g4"
+  },
+  {
+   "from": "g4",
+   "to": "g5"
+  },
+  {
+   "from": "acc",
+   "to": "g3",
+   "dashed": true,
+   "label": "secrete into"
+  }
+ ]
+}

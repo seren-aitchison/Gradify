@@ -968,6 +968,7 @@ H: Three kinds of junction in animals
 - **Tight junctions**: rows of proteins (claudins and occludin) stitch neighbouring membranes together, sealing the gap so substances can't leak between cells. They are vital in the gut lining and the blood–brain barrier, so that material has to pass through the cells and their transporters.
 - **Anchoring junctions**: **adherens junctions** and **desmosomes** link cells through cadherin proteins attached to the cytoskeleton inside each cell, spreading mechanical stress across a tissue. **Hemidesmosomes** anchor cells to the basement membrane with integrins. They are abundant in skin and heart muscle.
 - **Gap junctions**: channels made of **connexin** proteins join the cytoplasm of neighbouring cells, letting ions and small molecules (up to about 1 kDa) pass. In heart muscle they let the wave of electrical excitation spread so the cells contract together.
+D: bio-cell-junctions
 H: Plant connections
 P: Plant cells are held together by the middle lamella between their walls, and connected by **plasmodesmata**, channels through the walls lined with plasma membrane. Like gap junctions, they let small molecules and signals pass, but they can also carry some proteins and RNA.
 H: When junctions fail

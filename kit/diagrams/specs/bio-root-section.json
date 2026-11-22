@@ -1,0 +1,49 @@
+{
+ "id": "bio-root-section",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u08",
+ "lesson": "Roots and root systems",
+ "title": "A root in cross-section",
+ "caption": "From the outside in: the epidermis (some cells make root hairs), the cortex, the endodermis with its Casparian strip, and the vascular cylinder. The xylem forms a star or cross, with the phloem between its arms. The Casparian strip blocks the apoplast pathway, so water must cross the endodermal cell membranes into the symplast.",
+ "alt": "A circular root section: an outer epidermis with root hairs, a wide cortex of packed cells, a ring of endodermis with dark Casparian strip dots, and a centre where four xylem arms form a cross with four phloem patches between them.",
+ "description": [
+  "Layers from the outside in: epidermis, cortex, endodermis, vascular cylinder.",
+  "Root hairs are extensions of epidermal cells and increase the surface area for absorption.",
+  "The Casparian strip is a waterproof band in the endodermal walls: it forces water into the symplast, so entry to the xylem is controlled.",
+  "The xylem forms a star or cross in the centre, with the phloem between its arms."
+ ],
+ "template": "root",
+ "labels": [
+  "root hair",
+  "epidermis",
+  "cortex",
+  "endodermis",
+  "Casparian strip",
+  "vascular cylinder",
+  "xylem",
+  "phloem"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "epidermis",
+    "cortex",
+    "endodermis",
+    "vascular cylinder"
+   ],
+   "text": "layers run epidermis, cortex, endodermis, vascular cylinder"
+  },
+  {
+   "type": "fact",
+   "id": "xylemStar",
+   "text": "the xylem forms a star in the centre"
+  },
+  {
+   "type": "fact",
+   "id": "phloemBetweenArms",
+   "text": "the phloem sits between the arms of the xylem"
+  }
+ ]
+}
