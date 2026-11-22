@@ -27,7 +27,10 @@ kit/labs/chemistry/
   reactions/
     electron-flow.js           mechanism state, arrows, applying electron flow, validation, step classification
     library.js                 reaction templates as data (start structure, conditions, expected arrows per step)
-    mechanism-ui.js            Mechanism mode: arrow drawing, checking, help levels, animation, steps strip
+    mechanism-ui.js            Mechanism mode: arrow drawing, checking, help levels, animation, steps strip,
+                               spot the error, error-carried-forward marking
+    predictor.js               Reaction mode's rule templates: reagent + conditions → products, with reasons
+    reaction-ui.js             Reaction mode: starting material, reagent, products, predict-first, synthesis routes
   lab3d.js                     3D mode (mol.js embedding + molview.js)
 ```
 
@@ -67,15 +70,35 @@ A mechanism is a sequence of electron-flow operations, not a sequence of picture
 
 When a drawing isn't a library reaction, only the chemical-consistency checks run, and the lab says so.
 
+### Reaction mode (`predictor.js`)
+
+`predict(drawing, reagentId)` applies one of 15 reagent templates (H₂/Ni, Br₂, HBr, steam, NaOH(aq), KOH/ethanol,
+KCN, NH₃, dichromate distilled or refluxed, NaBH₄, hot conc. H₃PO₄, esterification, Br₂/UV, nitration) to the
+learner's own drawing. Products are built by editing the drawing graph, so hydrogens follow by valence and names come
+from `skeletal.js`. Selectivity is by stated rules: Markovnikov (carbocation class), Zaitsev (alkene substitution),
+oxidation level by alcohol class and conditions, and directing effects for one-substituent benzene rings. Every case it
+doesn't cover (several halogens, several ring substituents, radical substitution of anything but alkanes) returns a
+"why not" instead of a guess, as does every reagent that doesn't react (with the reason, e.g. benzene and Br₂).
+
+### Marking
+
+* Per arrow, first attempt, against the template (`arrowKey` makes differently drawn but equivalent arrows equal).
+* **Error carried forward**: when a wrong step is still chemically valid, the learner can carry on from it. Later steps
+  are credited when valid and when their arrows do the same kinds of electron movement (`arrowKinds`: lone pair →
+  new bond, bond → atom, bond → new bond, π re-forming; one or two electrons) as the model step at that point.
+* **Spot the error**: `faultyStep` changes one arrow of a real step (arrow from the atom instead of its lone pair,
+  heterolysis to the wrong end, a full arrow for a fishhook, attack on the wrong atom) and keeps it only if the engine
+  confirms the change is wrong; the explanation is the engine's own error text.
+
 ## 3. Roadmap
 
 | Phase | Content | Status |
 |---|---|---|
 | 1 Mechanism engine | electron-flow model, curly and fishhook arrows, lone pairs, charges, bond making/breaking, validation, step classification | **Built** (`reactions/electron-flow.js`, `tests/mechanism.test.mjs`) |
-| 2 Reaction library | SN2, SN1, E2, electrophilic addition (HBr + propene), nucleophilic addition (HCN + ethanal), free-radical substitution | **Built: 6 reactions**. Next: E1, Br₂ addition, nitration and other EAS, NaBH₄ reduction, alcohol oxidation, acyl substitution, hydrolysis |
+| 2 Reaction library | SN2, SN1, E1, E2, electrophilic addition (HBr + propene, Br₂ + but-2-ene), nucleophilic addition (HCN + ethanal, NaBH₄ + propanone), nitration of benzene, addition–elimination (water + ethanoyl chloride), free-radical substitution | **Built: 11 reactions**. Next: halogenation and Friedel–Crafts EAS, ester hydrolysis, amide formation, the NO₂⁺ generation step |
 | 3 Interactive teaching | animation from mechanism data (play/pause/step/speed), four help levels (hint, explain, show next step, full solution), error highlighting | **Built** (deterministic help from template data) |
-| 3 Modes | Structure, Mechanism, 3D | **Built**. Reaction mode (reagent + conditions → predicted product by rule templates) not built yet |
-| 4 Assessment | marks per arrow, attempts, outcomes recorded as lab evidence | **Built: per-arrow marks**. Next: error-carried-forward across steps, "find the wrong arrow", predict-the-product, difficulty levels |
+| 3 Modes | Structure, Mechanism, Reaction, 3D | **Built**. Reaction mode: 15 rule templates, predict-first quiz, multi-step routes, links to the matching mechanism |
+| 4 Assessment | marks per arrow, attempts, outcomes recorded as lab evidence | **Built**: per-arrow marks, error carried forward, spot the error, predict the product (Markovnikov, Zaitsev, directing effects, two-step routes as challenges). Next: difficulty levels, explain-in-words questions |
 | 5 Advanced | interactive R/S with CIP clicking, displayed formula view, bridged rings, wedges in 3D, synthesis planning | Not started (CIP routines exist in `mol.js`) |
 | 6 Integration | AI tutor receives `tutorContext()` from the engine; notes; flashcards; mindmaps; study plans | Mechanisms save to the lab notebook and copy as flashcards; `tutorContext()` exists. Tutor endpoint not wired |
 
