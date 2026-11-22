@@ -26,10 +26,10 @@
 .lab-read small { display: block; font-size: 11.5px; color: var(--mute); } .lab-read b { font: 600 15px var(--mono); }
 .lab-ch { padding: 10px 14px; border-radius: 12px; background: color-mix(in srgb, var(--co-accent, #10b981) 8%, transparent); border: 1px dashed color-mix(in srgb, var(--co-accent, #10b981) 45%, transparent); font-size: 13.5px; }
 .lab-ch > b { font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
-.lab-ch ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; } .lab-ch li.ok { color: #40d4b1; }
+.lab-ch ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; } .lab-ch li.ok { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); }
 .lab-try { margin-left: 4px; padding: 2px 9px; border-radius: 999px; font: 500 12px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); cursor: pointer; vertical-align: 1px; }
 .lab-try[aria-pressed="true"] { color: #000; background: var(--co-accent, #10b981); border-color: transparent; }
-.lab-msg { min-height: 1.4em; font-size: 13.5px; color: var(--mute); } .lab-msg.ok { color: #40d4b1; } .lab-msg.no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.lab-msg { min-height: 1.4em; font-size: 13.5px; color: var(--mute); } .lab-msg.ok { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); } .lab-msg.no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
 .lab-3d { position: relative; width: 100%; border-radius: 14px; overflow: hidden; background: #0b0c0e; background: light-dark(#ffffff, #0b0c0e); border: 1px solid var(--line); touch-action: none; }
 .lab-3d canvas { display: block; width: 100% !important; }
 .lab-3d .lab-hint { position: absolute; left: 10px; bottom: 8px; font-size: 11.5px; color: var(--mute); pointer-events: none; }
@@ -40,7 +40,7 @@
 .lab-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .lab-chips button { padding: 6px 10px; border-radius: 999px; font: 500 13px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); cursor: pointer; }
 .lab-chips button[aria-pressed="true"], .lab-chips button.on { color: #000; background: var(--co-accent, #10b981); border-color: transparent; }
-.lab-chips button.ok { border-color: #40d4b1; color: #40d4b1; } .lab-chips button.no { border-color: #ff3d6e; color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.lab-chips button.ok { border-color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); color: #40d4b1; } .lab-chips button.no { border-color: #ff3d6e; color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
 .lab-svg { width: 100%; height: auto; display: block; border-radius: 14px; background: #0b0c0e; background: light-dark(#ffffff, #0b0c0e); border: 1px solid var(--line); }
 .lab-svg .hot { cursor: pointer; transition: filter .15s; } .lab-svg .hot:hover, .lab-svg .hot.sel { filter: brightness(1.35) drop-shadow(0 0 6px rgba(255, 255, 255, .5)); }
 @media (max-width: 760px) { .lab-cols { grid-template-columns: 1fr; } .lab-sl { grid-template-columns: 1fr minmax(56px, auto); } .lab-sl span { grid-column: 1 / -1; } }
@@ -81,3 +81,103 @@
 .hx-num input { width: 7em; margin: 0 8px; }
 @media (max-width: 560px) { .hx-band span { display: none; } }
 .hx-band.tiny span { display: none; }
+/* Organic Notes Lab (kit/labs/chemistry/sketch.js): toolbar, hexagon-paper stage, notebook */
+.osk-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.osk-group { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border-radius: 11px; background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line); }
+.osk-tool { min-width: 34px; height: 32px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font: 600 13px var(--sans); color: var(--fg); background: none; border: 0; cursor: pointer; }
+.osk-tool:hover { background: rgba(var(--ink-rgb), .09); }
+.osk-tool[aria-pressed="true"] { color: #000; background: var(--co-accent, #10b981); }
+.osk-tool:focus-visible, .osk-stage:focus-visible { outline: 2px solid var(--co-accent, #10b981); outline-offset: 2px; }
+.osk-stage { position: relative; min-width: 0; border-radius: 14px; }
+.osk-svg { width: 100%; background: #0b0c0e; background: light-dark(#ffffff, #0b0c0e); overflow: hidden; border-radius: 14px; border: 1px solid var(--line); touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.osk-svg svg { display: block; width: 100%; height: 100%; }
+.osk-hint { margin: 6px 2px 0; font-size: 12px; color: var(--mute); }
+.osk-zoom { position: absolute; right: 8px; top: 8px; display: flex; gap: 4px; }
+.osk-zoom button { width: 30px; height: 30px; border-radius: 8px; font: 600 15px var(--sans); color: var(--fg); background: rgba(var(--sink-rgb), .55); border: 1px solid var(--line-strong); cursor: pointer; }
+.osk-opts { display: flex; flex-direction: column; gap: 4px; }
+.osk-name { font-size: 17px !important; overflow-wrap: anywhere; }
+.osk-aka { margin: 0 0 4px !important; font-size: 12.5px; color: var(--mute); }
+.osk-mono, .osk-smiles code { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; }
+.osk-groups { margin: 2px 0 8px; } .osk-groups button { font-size: 12px; padding: 4px 9px; }
+.osk-steps { margin-top: 6px; } .osk-steps summary { cursor: pointer; font-weight: 600; } .osk-steps ol { margin: 6px 0 0; padding-left: 18px; }
+.osk-atom { padding: 6px 8px; border-radius: 8px; background: rgba(var(--ink-rgb), .04); }
+.osk-book input[type="text"], .osk-book textarea { width: 100%; box-sizing: border-box; margin: 4px 0; font-family: var(--sans); }
+.osk-pages { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; max-height: 420px; overflow-y: auto; }
+.osk-page { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 10px; align-items: start; }
+.osk-page b { display: block; overflow-wrap: anywhere; } .osk-page small { display: block; color: var(--mute); } .osk-page p { margin: 4px 0; font-size: 12.5px; white-space: pre-wrap; }
+.osk-thumb { padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: none; cursor: pointer; } .osk-thumb svg { display: block; width: 132px; height: 88px; }
+.osk-prob { display: block; width: 100%; max-width: 100%; min-width: 0; padding: 7px 10px; border-radius: 10px; font: 14px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); text-overflow: ellipsis; }
+.osk-cols > * { min-width: 0; }
+@media (max-width: 560px) { .osk-tool { min-width: 30px; padding: 0 6px; } .osk-page { grid-template-columns: 96px minmax(0, 1fr); } .osk-thumb svg { width: 96px; height: 64px; } }
+/* Organic Chemistry Lab: modes, Mechanism mode (kit/labs/chemistry/reactions/mechanism-ui.js) and 3D mode */
+.osk-modes { align-self: flex-start; } .osk-modes button { font-weight: 600; padding: 7px 14px; }
+.osk-mode { display: flex; flex-direction: column; gap: 12px; } .osk-mode[hidden] { display: none; }
+.mx-top { justify-content: space-between; } .mx-top .lab-sel { min-width: 0; max-width: 100%; } .mx-top .lab-sel select { min-width: 0; max-width: min(420px, 100%); }
+@media (max-width: 560px) { .mx-top .lab-sel { width: 100%; } .mx-top .lab-sel select { flex: 1; } } .mx-opts { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.mx-cond:empty { display: none; }
+.mx-cond { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); }
+.mx-rxn { font-weight: 600; } .mx-fam { margin-left: auto; font-size: 12px; color: var(--mute); }
+.mx-arrow { display: inline-grid; grid-template-rows: auto auto auto; justify-items: center; line-height: 1.05; } .mx-arrow small { font-size: 11.5px; color: var(--mute); } .mx-arrow b { font-size: 22px; font-weight: 400; }
+.mx-stagewrap { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.mx-svg { cursor: crosshair; }
+.mx-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 12.5px; }
+.mx-steps button { padding: 4px 9px; border-radius: 999px; font: 500 12.5px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); cursor: pointer; }
+.mx-steps button b { font-family: var(--mono); color: var(--mute); margin-right: 2px; }
+.mx-steps button[aria-selected="true"] { border-color: var(--co-accent, #10b981); box-shadow: 0 0 0 1px var(--co-accent, #10b981) inset; }
+.mx-steps i { font-style: normal; color: var(--mute); } .mx-next { color: var(--mute); font-style: italic; }
+.mx-play { gap: 6px; } .mx-play .lab-btn { padding: 6px 11px; } .mx-play input[type="range"] { width: 110px; accent-color: var(--co-accent, #10b981); }
+.mx-kbd summary { cursor: pointer; font-size: 12.5px; color: var(--mute); } .mx-kbd select { max-width: 46vw; }
+.mx-fb h4.ok { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); } .mx-fb h4.no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.mx-list { margin: 6px 0; padding-left: 18px; } .mx-list li { margin: 2px 0; } .mx-list.no li { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); } .mx-list.warn li { color: #f5b84b; color: light-dark(#8a5a00, #f5b84b); }
+.mx-checks { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; } .mx-checks .ok { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); } .mx-checks .no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.mx-why { padding: 8px 10px; border-left: 3px solid var(--co-accent, #10b981); background: rgba(var(--ink-rgb), .03); border-radius: 0 8px 8px 0; }
+.mx-about ul { margin: 6px 0 0; padding-left: 18px; } .mx-about summary { cursor: pointer; font-weight: 600; }
+.m3-stage { min-width: 0; }
+/* Organic Chemistry Lab, Reaction mode */
+.rx-route:empty { display: none; }
+.rx-route { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 12.5px; }
+.rx-route i { font-style: normal; color: var(--mute); display: inline-flex; flex-direction: column; align-items: center; line-height: 1; } .rx-route i small { font-size: 10.5px; }
+.rx-chip { padding: 3px 9px; border-radius: 999px; background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); } .rx-chip.now { border-color: var(--co-accent, #10b981); }
+.rx-scheme { min-width: 0; }
+.rx-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.rx-prods { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; flex: 1 1 240px; }
+.rx-mol { margin: 0; flex: 0 1 240px; min-width: 0; max-width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.rx-mol svg { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
+.rx-mol figcaption { font-size: 13px; display: flex; flex-wrap: wrap; gap: 2px 6px; align-items: baseline; } .rx-mol figcaption span { color: var(--mute); } .rx-mol figcaption small { flex-basis: 100%; color: var(--mute); }
+.rx-mol.minor { opacity: .78; }
+.rx-role { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; padding: 1px 6px; border-radius: 6px; background: rgba(16, 185, 129, .16); color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); } .rx-role.minor { background: rgba(var(--ink-rgb), .07); color: var(--mute); }
+.rx-arrow { flex: 0 0 auto; max-width: 150px; text-align: center; }
+.rx-none { min-width: 120px; min-height: 90px; display: grid; place-items: center; border: 1px dashed var(--line-strong); border-radius: 12px; color: var(--mute); font-weight: 600; padding: 10px; }
+.rx-plus { color: var(--mute); font-size: 12px; } .rx-by { color: var(--mute); font-size: 13px; }
+.rx-choices { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.rx-empty { padding: 24px; border: 1px dashed var(--line-strong); border-radius: 12px; color: var(--mute); }
+@media (max-width: 560px) { .rx-top .lab-sel { width: 100%; } .rx-top .lab-sel select { flex: 1; min-width: 0; } .rx-row { flex-direction: column; align-items: stretch; } .rx-arrow { max-width: none; } .rx-mol { flex-basis: auto; } }
+@media (max-width: 560px) { .osk-modes button { padding: 6px 9px; font-size: 13px; } }
+/* Organic Chemistry Lab: Reaction mode views, conditions, synthesis; exam marks */
+.rx-view { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.rx-practice { align-items: center; gap: 10px; } .rx-score { font-size: 12.5px; } .rx-clock { font: 600 13px var(--mono); color: #f5b84b; color: light-dark(#8a5a00, #f5b84b); margin-left: 8px; }
+.cx-cols { align-items: stretch; } .cx-set .lab-sel { display: flex; margin: 4px 0; } .cx-set .lab-sel select { flex: 1; min-width: 0; max-width: 100%; }
+.cx-path { border-top: 1px solid var(--line); padding: 8px 0; } .cx-path em { font-style: normal; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--mute); margin-left: 6px; } .cx-path.major em { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); }
+.cx-bar { display: block; height: 6px; border-radius: 3px; background: rgba(var(--ink-rgb), .07); margin: 6px 0; } .cx-bar i { display: block; height: 100%; border-radius: 3px; background: var(--co-accent, #10b981); }
+.cx-path.minor .cx-bar i { background: var(--mute); }
+.cx-prods { display: flex; flex-wrap: wrap; gap: 6px; } .cx-prods .rx-mol { flex: 0 1 200px; } .cx-path > small { display: block; color: var(--mute); margin-top: 4px; }
+.mx-marks { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; } .mx-marks caption { text-align: left; font-weight: 600; padding-bottom: 4px; }
+.mx-marks td { padding: 4px 0; border-bottom: 1px solid var(--line); vertical-align: top; } .mx-marks td:last-child { text-align: right; font-family: var(--mono); white-space: nowrap; padding-left: 10px; }
+.mx-marks td small { display: block; color: var(--mute); } .mx-marks tr.tot td { font-weight: 700; border-bottom: 0; }
+.mx-exam { color: #f5b84b; color: light-dark(#8a5a00, #f5b84b); } .mx-xpl .lab-btn { text-align: left; white-space: normal; }
+.sy-dir button, .rx-views button { font-weight: 600; }
+@media (max-width: 560px) { .rx-views button { padding: 6px 9px; } .sy-task { max-width: 100%; } .rx-top .lab-seg { width: 100%; } }
+.rx-rule summary { cursor: pointer; font-weight: 600; font-size: 13px; } .rx-rule dl { margin: 6px 0 0; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; }
+.rx-rule dt { color: var(--mute); } .rx-rule dd { margin: 0; min-width: 0; } .rx-rule ul { margin: 0; padding-left: 16px; }
+@media (max-width: 560px) { .rx-rule dl { grid-template-columns: 1fr; } .rx-rule dt { margin-top: 4px; } }
+/* Organic Chemistry Lab: AI tutor panel (reactions/tutor-ui.js) */
+.ct-box summary { cursor: pointer; font-weight: 600; } .ct-box[open] summary { margin-bottom: 8px; }
+.ct-intents { gap: 6px; } .ct-level { margin: 6px 0; font-size: 12.5px; }
+.ct-log { display: flex; flex-direction: column; gap: 8px; margin: 6px 0; }
+.ct-msg { padding: 8px 12px; border-radius: 12px; font-size: 13.5px; line-height: 1.5; max-width: 100%; overflow-wrap: anywhere; }
+.ct-msg p { margin: 0 0 6px; } .ct-msg p:last-child { margin: 0; }
+.ct-msg.ai { background: rgba(var(--ink-rgb), .05); border-left: 3px solid var(--co-accent, #10b981); }
+.ct-msg.me { align-self: flex-end; background: rgba(16, 185, 129, .12); }
+.ct-msg.wait { color: var(--mute); font-style: italic; }
+.ct-reply { gap: 6px; } .ct-input { flex: 1; min-width: 0; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; }
+.ct-note { font-size: 12px; }
