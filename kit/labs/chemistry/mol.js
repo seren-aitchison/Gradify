@@ -90,7 +90,7 @@ export function embed(m, { iters = 1500, seed = 7 } = {}) {
   const LP = (i) => { const a = atoms[i], v = { N: 5, O: 6, S: 6, P: 5 }[a.el]; return v ? Math.max(0, (v - (a.charge || 0) - atoms[i].nb.length - bonds.filter((b) => (b.a === i || b.b === i) && b.order > 1).reduce((t, b) => t + Math.ceil(b.order) - 1, 0)) / 2) : 0; };
   for (let i = 0; i < n; i++) { const nb = atoms[i].nb, hy = hybrid(m, i), th = (ANG[hy] || ANG.sp3) - (hy === "sp3" ? LP(i) * 0.0436 : 0); /* each lone pair closes an sp³ angle by about 2.5° */ for (let x = 0; x < nb.length; x++) for (let y = x + 1; y < nb.length; y++) { const a = blen.get(`${i},${nb[x]}`), b = blen.get(`${i},${nb[y]}`); terms.push([nb[x], nb[y], Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(th)), 1.5]); } }
   // planarity and cis/trans across double and aromatic bonds
-  const planes = [], geo = []; // geo: [p, a, b, q, trans] for each double bond with / or \\ on both ends
+  const planes = [], geo = []; // geo: [p, a, b, q, trans] for each double bond with / or \ on both ends
   for (const b of bonds) if (b.order === 2 || b.order === 1.5) { const A = atoms[b.a].nb.filter((x) => x !== b.b), B = atoms[b.b].nb.filter((x) => x !== b.a); for (const p of A) for (const q of B) planes.push([p, b.a, b.b, q]); }
   for (const b of bonds) if (b.order === 2) {
     const dA = bonds.find((x) => x.dir && (x.a === b.a || x.b === b.a) && x !== b), dB = bonds.find((x) => x.dir && (x.a === b.b || x.b === b.b) && x !== b);
