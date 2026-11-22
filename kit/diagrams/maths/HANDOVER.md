@@ -60,3 +60,5 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 
 - u13-50 (Multivariate Analysis): the worked example gives eigenvalues 4.2, 1.5, 0.2 and 0.1 for four standardised variables; they sum to 6, but the eigenvalues of a 4 × 4 correlation matrix sum to 4. No diagram was made. FIXED 23 Nov: eigenvalues now 2.8, 1.0, 0.16, 0.04 (sum 4).
 - u05 (agent maths-a): 50 lessons assessed; 32 diagrams (geometry 22, graph 7, transform 1, number-line 1, plus...), labs on 6 rows (circles, practice, matrix), rest null with reasons. All checks pass. Missing renderers: 3D solids/nets/coordinates (u05-03, 20, 21, 23, 30), spherical (35, 36), hyperbolic (37), surfaces/torus (49), knot diagrams (50), Buffon's needle (44), curved-surface curvature (46).
+- u08 (Multivariable and Vector Calculus): 22 lessons assessed; 8 diagrams (`maths-u08-*`), lab `descent` on 2; rest null with reasons.
+  Lacks: 3D surfaces/fields (9 lessons), conics.

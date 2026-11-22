@@ -53305,5 +53305,575 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "maths-u08-curl-rotation": {
+  "title": "F = (−y, x) circulates about the origin",
+  "caption": "At (1, 0) the field is (0, 1), at (0, 1) it is (−1, 0), at (−1, 0) it is (0, −1) and at (0, −1) it is (1, 0): the arrows turn anticlockwise round the origin. The curl ∂F₂/∂x − ∂F₁/∂y = 1 − (−1) = 2 measures that spin.",
+  "alt": "Four arrows of the field F = (−y, x) at the points (1, 0), (0, 1), (−1, 0) and (0, −1), each pointing along the tangent of the unit circle, anticlockwise.",
+  "description": [
+   "At (1, 0), F = (0, 1): straight up.",
+   "At (0, 1), F = (−1, 0): to the left.",
+   "At (−1, 0), F = (0, −1): down; at (0, −1), F = (1, 0): to the right.",
+   "The arrows circulate anticlockwise: curl F = 2 in the z direction."
+  ],
+  "course": "maths",
+  "lesson": "Curl",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Curl"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "F(1, 0) = (0, 1)",
+    "ok": true,
+    "detail": "(0, 1)"
+   },
+   {
+    "name": "F(0, 1) = (-1, 0)",
+    "ok": true,
+    "detail": "(−1, 0)"
+   },
+   {
+    "name": "F(-1, 0) = (0, -1)",
+    "ok": true,
+    "detail": "(0, −1)"
+   },
+   {
+    "name": "F(0, -1) = (1, 0)",
+    "ok": true,
+    "detail": "(1, 0)"
+   },
+   {
+    "name": "the four points lie on the unit circle",
+    "ok": true,
+    "detail": "1, 1, 1, 1"
+   },
+   {
+    "name": "the lesson states \"curl\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×460"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×380"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u08-directional": {
+  "title": "The rate of change in the direction (3, 4)",
+  "caption": "At (1, 2) the gradient of f = x² + y² is (2, 4). The unit vector u = (3, 4)/5 = (0.6, 0.8) points the chosen way, and the rate of change is the dot product ∇f · u = 1.2 + 3.2 = 4.4 = 22/5, less than |∇f| = √20 ≈ 4.47.",
+  "alt": "From the point (1, 2): the gradient vector (2, 4) and a shorter unit vector (0.6, 0.8) in the direction (3, 4), slightly turned from the gradient.",
+  "description": [
+   "∇f = (2x, 2y) = (2, 4) at (1, 2).",
+   "The direction (3, 4) has length 5, so the unit vector is u = (0.6, 0.8).",
+   "D_u f = ∇f · u = 2 × 0.6 + 4 × 0.8 = 4.4."
+  ],
+  "course": "maths",
+  "lesson": "Directional Derivatives",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Directional Derivatives"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "∇f = (2, 4) = (2, 4)",
+    "ok": true,
+    "detail": "(2, 4)"
+   },
+   {
+    "name": "|u| = 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "u = 1u",
+    "ok": true,
+    "detail": "(0.6, 0.8)"
+   },
+   {
+    "name": "the lesson states \"(3, 4)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×480"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×420"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u08-gradient-level": {
+  "title": "The gradient is perpendicular to the level curve",
+  "caption": "For f = x²y + y³ at (1, 1), ∇f = (2xy, x² + 3y²) = (2, 4). The tangent line to the level curve there is 2(x − 1) + 4(y − 1) = 0, i.e. x + 2y = 3, with direction (2, −1); (2, 4) · (2, −1) = 0, so the gradient points straight across the contour, uphill.",
+  "alt": "From (1, 1) an arrow along the gradient (2, 4) and a dashed tangent line x + 2y = 3 with direction (2, −1), at a right angle.",
+  "description": [
+   "∇f(1, 1) = (2, 4).",
+   "The tangent to the level curve is x + 2y = 3, direction (2, −1), since 2 × 2 + 4 × (−1) = 0.",
+   "So the gradient is normal to the level curve and points in the direction of steepest increase."
+  ],
+  "course": "maths",
+  "lesson": "Gradient",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Gradient"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at P is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "∇f = (2, 4) = (2, 4)",
+    "ok": true,
+    "detail": "(2, 4)"
+   },
+   {
+    "name": "the gradient (2, 4) is perpendicular to the tangent direction (2, −1)",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the tangent line x + 2y = 3 passes through (1, 1)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"x + 2y = 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×480"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×407"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u08-green-circle": {
+  "title": "Green's theorem on the unit circle",
+  "caption": "Along the unit circle F = (−y, x) is a tangent vector of length 1, so ∮ (−y dx + x dy) = (length 1) × (circumference 2π) = 2π. Green's theorem gives the same: ∬ 2 dA = 2 × area π = 2π.",
+  "alt": "The unit circle with four tangent arrows of the field (−y, x), all of length 1 and pointing anticlockwise, enclosing area π.",
+  "description": [
+   "On the circle, F = (−y, x) is tangent to the circle and has length 1.",
+   "The circumference is 2π, so the line integral is 1 × 2π = 2π.",
+   "Green: ∬ (∂Q/∂x − ∂P/∂y) dA = ∬ 2 dA = 2π, the same value."
+  ],
+  "course": "maths",
+  "lesson": "Green's Theorem",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Green's Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|F| = 1 at (1, 0)",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "|F| = 1 at (0, 1)",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "|F| = 1 at (-1, 0)",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "|F| = 1 at (0, -1)",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "A, B, C, D lie on the circle",
+    "ok": true,
+    "detail": "1, 1, 1, 1"
+   },
+   {
+    "name": "the lesson states \"unit circle\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×460"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×380"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u08-half-derivative": {
+  "title": "Half-way between x and 1",
+  "caption": "D^½ x = 2√(x/π) sits between f = x and its ordinary derivative 1: it is 2 at x = π. Applying the half-derivative again gives 1, so two half-steps make one whole derivative.",
+  "alt": "Three graphs for x between 0 and 4: the line y = x, the square-root curve y = 2√(x/π) rising from 0, and the horizontal line y = 1.",
+  "description": [
+   "f(x) = x is the line through the origin.",
+   "D^½ f = 2√(x/π) is the curve between them; at x = π it equals 2.",
+   "D^½ applied to that curve gives the constant 1 = f′."
+  ],
+  "course": "maths",
+  "lesson": "Fractional Calculus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Fractional Calculus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "D^½ x = 2√(x/π) equals 2 at x = π",
+    "ok": true,
+    "detail": "y(3.141592653589793) = 2"
+   },
+   {
+    "name": "D^½ D^½ x = 1 = d/dx of x",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u08-jacobian-area": {
+  "title": "The Jacobian is the area scale factor",
+  "caption": "x = u + v, y = u − v sends the unit square in the (u, v) plane to a tilted square in the (x, y) plane. The Jacobian determinant is 1 × (−1) − 1 × 1 = −2: areas double (the minus sign records that orientation flips), so dA = 2 du dv.",
+  "alt": "The unit square with corners (0, 0), (1, 0), (1, 1), (0, 1) and its image with corners (0, 0), (1, 1), (2, 0), (1, −1), twice the area.",
+  "description": [
+   "The corners (u, v) of the unit square map to (u + v, u − v).",
+   "The image has corners (0, 0), (1, 1), (2, 0), (1, −1): a square rotated 45° and enlarged by √2.",
+   "Its area is 2, matching |J| = 2."
+  ],
+  "course": "maths",
+  "lesson": "Jacobians",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Jacobians"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(x, y) is the image of (u, v) under the matrix",
+    "ok": true,
+    "detail": "(0, 0) (1, 1) (2, 0) (1, −1)"
+   },
+   {
+    "name": "the image has 2 times the area: |J| = |1 × (−1) − 1 × 1| = 2",
+    "ok": true,
+    "detail": "area ratio 2, |det| = 2"
+   },
+   {
+    "name": "the lesson states \"x = u + v\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u08-partial-slice": {
+  "title": "A partial derivative is a slope of a slice",
+  "caption": "Hold y = 2 and f becomes the curve 2x² + 12x. At x = 1 it passes through (1, 14) with slope f_x(1, 2) = 2xy + 3y² = 16: the partial derivative is an ordinary gradient along the slice. (f_y(1, 2) = 13 is the same idea along y.)",
+  "alt": "The curve z = 2x² + 12x rising steeply, with its tangent line of slope 16 touching it at the point (1, 14).",
+  "description": [
+   "Fix y = 2: f(x, 2) = 2x² + 12x is a curve in one variable.",
+   "At x = 1 its height is f(1, 2) = 14.",
+   "Its slope there is 4x + 12 = 16, which equals f_x(1, 2).",
+   "The tangent line z = 14 + 16(x − 1) touches the curve at that point."
+  ],
+  "course": "maths",
+  "lesson": "Multivariable Calculus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Multivariable Calculus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 14) lies on y = 2*x^2+12*x",
+    "ok": true,
+    "detail": "y(1) = 14"
+   },
+   {
+    "name": "gradient of 2*x^2+12*x at x = 1 is 16",
+    "ok": true,
+    "detail": "gradient 16.0000"
+   },
+   {
+    "name": "the tangent passes through (1, 14)",
+    "ok": true,
+    "detail": "y(1) = 14"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u08-triangle-region": {
+  "title": "The region 0 ≤ y ≤ x ≤ 1",
+  "caption": "The triangle with corners (0, 0), (1, 0), (1, 1) has area ½. For each x from 0 to 1, y runs from 0 up to x, so ∬ xy dA = ∫₀¹ x · (x²/2) dx = 1/8.",
+  "alt": "A right triangle under the line y = x between x = 0 and x = 1, with a vertical strip at fixed x running from y = 0 up to y = x.",
+  "description": [
+   "The region is bounded by y = 0, x = 1 and the line y = x.",
+   "At a fixed x the strip runs from y = 0 to y = x.",
+   "Integrate over y first: ∫₀ˣ xy dy = x³/2; then over x: ∫₀¹ x³/2 dx = 1/8."
+  ],
+  "course": "maths",
+  "lesson": "Double Integrals",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u08.js: Double Integrals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area of OAB = 0.5",
+    "ok": true,
+    "detail": "shoelace 0.5; label \"area 0.5\""
+   },
+   {
+    "name": "the strip at x = 0.6 runs up to y = x = 0.6",
+    "ok": true,
+    "detail": "measured 0.6"
+   },
+   {
+    "name": "the lesson states \"0 ≤ y ≤ x ≤ 1\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×480"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×350"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

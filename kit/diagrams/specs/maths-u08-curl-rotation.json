@@ -1,0 +1,177 @@
+{
+ "id": "maths-u08-curl-rotation",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Curl",
+ "title": "F = (−y, x) circulates about the origin",
+ "caption": "At (1, 0) the field is (0, 1), at (0, 1) it is (−1, 0), at (−1, 0) it is (0, −1) and at (0, −1) it is (1, 0): the arrows turn anticlockwise round the origin. The curl ∂F₂/∂x − ∂F₁/∂y = 1 − (−1) = 2 measures that spin.",
+ "alt": "Four arrows of the field F = (−y, x) at the points (1, 0), (0, 1), (−1, 0) and (0, −1), each pointing along the tangent of the unit circle, anticlockwise.",
+ "description": [
+  "At (1, 0), F = (0, 1): straight up.",
+  "At (0, 1), F = (−1, 0): to the left.",
+  "At (−1, 0), F = (0, −1): down; at (0, −1), F = (1, 0): to the right.",
+  "The arrows circulate anticlockwise: curl F = 2 in the z direction."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   1,
+   0
+  ],
+  "B": [
+   0,
+   1
+  ],
+  "C": [
+   -1,
+   0
+  ],
+  "D": [
+   0,
+   -1
+  ]
+ },
+ "hide": [
+  "O",
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "a3"
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -2.2,
+   2.2
+  ],
+  "y": [
+   -2.2,
+   2.2
+  ]
+ },
+ "height": [
+  460,
+  400
+ ],
+ "vectors": [
+  {
+   "name": "F(1, 0)",
+   "from": [
+    1,
+    0
+   ],
+   "v": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  },
+  {
+   "name": "F(0, 1)",
+   "from": [
+    0,
+    1
+   ],
+   "v": [
+    -1,
+    0
+   ],
+   "colour": "a2",
+   "labelSide": 1
+  },
+  {
+   "name": "F(−1, 0)",
+   "from": [
+    -1,
+    0
+   ],
+   "v": [
+    0,
+    -1
+   ],
+   "colour": "a4",
+   "labelSide": 1
+  },
+  {
+   "name": "F(0, −1)",
+   "from": [
+    0,
+    -1
+   ],
+   "v": [
+    1,
+    0
+   ],
+   "colour": "a3",
+   "labelSide": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "components",
+   "vector": 0,
+   "v": [
+    0,
+    1
+   ],
+   "name": "F(1, 0) = (0, 1)"
+  },
+  {
+   "type": "components",
+   "vector": 1,
+   "v": [
+    -1,
+    0
+   ],
+   "name": "F(0, 1) = (-1, 0)"
+  },
+  {
+   "type": "components",
+   "vector": 2,
+   "v": [
+    0,
+    -1
+   ],
+   "name": "F(-1, 0) = (0, -1)"
+  },
+  {
+   "type": "components",
+   "vector": 3,
+   "v": [
+    1,
+    0
+   ],
+   "name": "F(0, -1) = (1, 0)"
+  },
+  {
+   "type": "onCircle",
+   "circle": 0,
+   "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "name": "the four points lie on the unit circle"
+  }
+ ],
+ "fromLesson": [
+  "curl"
+ ]
+}
