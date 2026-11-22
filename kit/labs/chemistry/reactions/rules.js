@@ -5,10 +5,13 @@
 // source pointers name the topic and are themselves marked unchecked until that review confirms them.
 //   RULES[reagentId] = { reactants, products, selectivity, limitations: [], sources: [{ id, topic }], confidence }
 
+import { REVIEWS } from "./reviews.js";
+
 export const CONFIDENCE = {
   provisional: "Written from standard textbook chemistry and tested against the lab's reference set; not yet reviewed by an independent chemist.",
   reviewed: "Checked by an independent chemist; minor corrections possible.",
   validated: "Reviewed, with every reference case confirmed against a cited source.",
+  disputed: "An independent reviewer disagreed with at least one of this rule's cases; treat its predictions as uncertain until it is fixed.",
 };
 export const SOURCES = {
   aqa: "AQA A-level Chemistry (7405) specification, 3.3 Organic chemistry",
@@ -61,4 +64,9 @@ export const RULES = {
   "fc-acyl": { reactants: "benzene rings (not deactivated, not –NH₂ or –OH)", products: "aryl ketones", selectivity: "para favoured for the bulky acylium ion", limitations: ["Only ethanoyl chloride is offered."], sources: s(["aqa", "3.3.10 Aromatic chemistry"], ["clayden", "Friedel–Crafts reactions"]), confidence: P },
 };
 /** The record for a reagent, with its reagent and conditions. */
-export function ruleFor(reagent) { const r = RULES[reagent.id]; return r ? { reagent: reagent.label, conditions: reagent.cond, level: reagent.level, mechanism: reagent.mechanism || null, ...r } : null; }
+export function ruleFor(reagent) {
+  const r = RULES[reagent.id]; if (!r) return null;
+  // a reviewer's "disagree" on any reference case for this reagent marks the rule disputed, with the notes
+  const disputes = Object.entries(REVIEWS).filter(([id, v]) => id.endsWith(`|${reagent.id}`) && v.verdict === "disagree").map(([id, v]) => ({ case: id.split("|")[0], correction: v.correction || "", note: v.note || "" }));
+  return { reagent: reagent.label, conditions: reagent.cond, level: reagent.level, mechanism: reagent.mechanism || null, ...r, ...(disputes.length ? { confidence: "disputed", disputes } : {}) };
+}

@@ -122,6 +122,36 @@ decoys checked not to work). The 12 synthesis challenges each have a stated shor
   heterolysis to the wrong end, a full arrow for a fishhook, attack on the wrong atom) and keeps it only if the engine
   confirms the change is wrong; the explanation is the engine's own error text.
 
+### The AI tutor (`tutor-ui.js`, `kit/assess/tutor.js` mode `chemistry`)
+
+The tutor teaches from the engine and never replaces it. The panel sends the engine's own data (a prediction from
+`explainContext()`, a mechanism check from `tutorContext()`, or a synthesis route with the routes the rules allow) to
+the existing `course-tutor` Edge Function, so the Claude key, sign-in, allowances and usage ledger are the course
+tutor's. The server builds the prompt (`chemistryRequest`); `chemistryAuthority()` fixes what the tutor may claim:
+
+| Evidence | What the tutor must do |
+|---|---|
+| reviewed / validated | may say an independent chemist reviewed the rule |
+| provisional (everything today) | say once that the lab's rule isn't yet independently reviewed; no settled-science claims |
+| disputed | say a reviewer disagreed, give the note, present the answer as uncertain |
+| declined | explain why the lab can't answer; never give or hint at a product |
+| always | never change, contradict or add to the verdict, products, major/minor labels, pathways, arrows or marks; never name anything not in the data; cite only the rule's own (unchecked) source pointers |
+
+Ways to use it: *Explain this reaction*, *Why this product, not another?*, *Guide me through it* (Socratic, one
+question at a time), *What did I get wrong?* (after a wrong prediction, with the learner's answer), *Help me understand
+this route* and *Guide me to the next step* (Synthesis), *Explain the verdict on my arrows* (Mechanism). The learner's
+recent mistake pattern (wrong answers by reaction family, attempts per mechanism step) goes with each request so the
+tutor can connect to it. Follow-ups continue one conversation (one use of the allowance). The tutor is hidden in exam
+style, and once used, the lab's challenges count as met with help. What the browser sends is the learner's own data:
+editing it only changes their own explanation, never a prediction, mark or evidence record, which are all decided in
+the lab.
+
+### Light mode
+
+The lab is drawn in the site's light theme too (it is marked `.lab-light`, which opts it out of the "dark island"
+rule in `kit/styles/base.css`): white card, the light drawing palette (`skeletal.js` `PALETTES.light`), and
+light-mode partners for every hard-coded colour. Every mode repaints when the theme changes. 3D stages stay dark.
+
 ## 3. Accuracy audit (this milestone)
 
 Before adding reactions, the existing rules were checked against hand-worked cases. Problems found and fixed:
@@ -151,7 +181,7 @@ test requires "no reaction" and "declined" cases to be told apart.
 **Nothing has been independently reviewed yet: every rule and case is `provisional`.** The review pack is in
 `docs/organic-review/` (a brief for the reviewer, `reference-review.csv` and `mechanisms-review.csv` with reviewer
 columns). `node scripts/organic-review.mjs import <csv>` brings the verdicts back into
-`tests/data/organic-review-results.mjs`; agreed cases become `reviewed`. Source pointers (AQA 7405 sections, Clayden
+`kit/labs/chemistry/reactions/reviews.js`; agreed cases become `reviewed`, and a rule with any disagreement is shown, and explained by the tutor, as `disputed` with the reviewer's note. Source pointers (AQA 7405 sections, Clayden
 topics) are part of what the review should confirm.
 
 ### Known limitations
@@ -179,6 +209,7 @@ topics) are part of what the review should confirm.
 | 5 Advanced | interactive R/S with CIP clicking, displayed formula view, bridged rings, wedges in 3D, synthesis planning | Not started (CIP routines exist in `mol.js`) |
 | 5b Validation | evidence records, confidence and status, reviewer pack and import | **Built**; the review itself is waiting for a qualified chemist |
 | 5c Stereochemistry | wedge/dash bonds, R/S and E/Z descriptors carried through reactions, isomer comparison | Not started (CIP routines exist in `mol.js`) |
+| 6a AI tutor | explanations, comparison, Socratic guidance, diagnosis, synthesis help, mechanism verdicts, all bound to the engine's evidence level | **Built** (needs a deploy of `course-tutor` and the migration `20261122120000_chemistry_tutor_mode.sql`) |
 | 6 Integration | AI tutor receives `tutorContext()` from the engine; notes; flashcards; mindmaps; study plans | Mechanisms save to the lab notebook and copy as flashcards; `tutorContext()` exists. Tutor endpoint not wired |
 
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides

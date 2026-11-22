@@ -13,6 +13,8 @@ import { competition, NUCLEOPHILES, SOLVENTS, TEMPS, halideSites } from "./compe
 import { TASKS, task, routes, explore, precursors, moves, hashOf } from "./planner.js";
 import { REACTIONS } from "./library.js";
 import { CONFIDENCE } from "./rules.js";
+import { explainContext } from "./predictor.js";
+import { mountTutor } from "./tutor-ui.js";
 
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>");
 const nameOf = (m) => { const A = K.analyse(m); return A.name?.name || A.formula; };
@@ -31,7 +33,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
       <div class="lab-row mx-top"><label class="lab-sel"><span>Start</span><select class="rx-src"></select></label><label class="lab-sel"><span>Reagent</span><select class="rx-reag"></select></label><span class="mx-opts rx-opts"></span></div>
       <div class="lab-row rx-practice"></div>
       <div class="rx-route" aria-live="polite"></div>
-      <div class="lab-cols osk-cols"><div class="rx-scheme" aria-live="polite"></div><div class="lab-ctrl"><div class="lab-info rx-info" aria-live="polite"></div><div class="lab-row rx-btns"></div></div></div>
+      <div class="lab-cols osk-cols"><div class="rx-scheme" aria-live="polite"></div><div class="lab-ctrl"><div class="lab-info rx-info" aria-live="polite"></div><div class="lab-row rx-btns"></div><div class="rx-tutor"></div></div></div>
     </div>
     <div class="rx-view" data-view="conditions" hidden></div>
     <div class="rx-view" data-view="synthesis" hidden></div>
@@ -144,6 +146,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     }); });
     if (onEdit) button(btns, "Edit in Structure mode", () => onEdit(K.clone(res.reacts ? res.products[0].m : start)));
     if (route.length) button(btns, "Start the route again", () => { route = []; srcKey = src.value; load(); });
+    tutor.refresh();
   }
 
   // ---------- conditions: substitution versus elimination ----------
@@ -211,6 +214,8 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     }
     if (done || bdone) { const b2 = document.createElement("div"); b2.className = "lab-row"; sHost.append(b2); button(b2, "Try again", () => { setTask(T.id); paintSynthesis(); }); }
     sHost.querySelectorAll("[data-b]").forEach((b) => b.addEventListener("click", () => pickBack(sHost._opts[Number(b.dataset.b)])));
+    const th = document.createElement("div"); sHost.append(th);
+    sTutor = mountTutor(th, { ask: ctx.ask || null, getContext: synthContext, learner: () => ({ mistakes: mistakes() }), intents: [["synthesis", "Help me understand this route"], ["guide", "Guide me to the next step", (c) => !c.reached]] });
   }
   function applyStep(rid) {
     const cur = path.at(-1), res = predict(cur.m, rid), r = reagentOf(rid);
@@ -250,7 +255,22 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     seed++; paintSynthesis();
   }
 
+  // ---------- the AI tutor: it is given the engine's own data, never asked to work the chemistry out ----------
+  const mistakes = () => Object.entries(hist).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([topic, count]) => ({ topic, count }));
+  const tutor = mountTutor(q(".rx-tutor"), { ask: ctx.ask || null, onUse: () => {},
+    getContext: () => { if (!start || (predictFirst && guess == null)) return null; const res = predict(start, reagent); return { kind: "prediction", ...explainContext(start, res) }; },
+    learner: () => { const res = start ? predict(start, reagent) : null, o = res ? options(res) : null; return { mistakes: mistakes(), ...(guess && o && !o.right.includes(guess) ? { answer: `I chose: ${guess}` } : {}) }; },
+    intents: [["explain", "Explain this reaction"], ["compare", "Why this product, not another?", (c) => c.status === "reacts" && (c.products.length > 1 || c.pathways)], ["guide", "Guide me through it", (c) => c.status === "reacts"], ["diagnose", "What did I get wrong?", () => { const res = predict(start, reagent), o = options(res); return guess != null && !o.right.includes(guess); }]] });
+  let sTutor = null, routeCache = null;
+  function synthContext() {
+    if (!T) return null;
+    const steps = path.slice(1).map((s, i) => { const res = predict(path[i].m, s.reagent), g = reagentOf(s.reagent); return { from: nameOf(path[i].m), reagent: g.label, conditions: g.cond, to: nameOf(s.m), why: res.why?.[0] || "", confidence: res.rule?.confidence || "provisional" }; });
+    const key = `${T.id}|${path.map((p) => p.hash).join(",")}`;
+    if (routeCache?.key !== key) { const rr = routes(T.start, T.targetHash, { depth: T.best, level: level(), max: 4 }); routeCache = { key, alt: rr.routes.map((rt) => rt.map((e) => `${reagentOf(e.reagent).label} → ${nameOf(rr.graph.nodes.get(e.to).m)}`).join("; ")) }; }
+    return { kind: "synthesis", start: nameOf(T.start), target: nameOf(T.target), routeSoFar: steps, reached: path.at(-1).hash === T.targetHash, shortestSteps: T.best, routesTheRulesAllow: routeCache.alt, confidence: steps.some((x) => x.confidence === "disputed") ? "disputed" : "provisional" };
+  }
+
   function paintView() { if (view === "predict") paint(); else if (view === "conditions") paintConditions(); else paintSynthesis(); }
   fillTasks(); load();
-  return { refresh: () => { if (view === "predict" && srcKey === "mine") load(); else paintView(); }, stop: () => stopClock() };
+  return { repaint: () => paintView(), refresh: () => { if (view === "predict" && srcKey === "mine") load(); else paintView(); }, stop: () => stopClock() };
 }

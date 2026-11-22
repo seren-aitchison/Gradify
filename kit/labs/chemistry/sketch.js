@@ -55,7 +55,7 @@ export function mount(el, ctx = {}) {
     <div class="lab-cols osk-cols">
       <div class="lab-ctrl osk-probs"><div class="lab-info"><h4>Work it out</h4><select class="osk-prob" aria-label="Problem"></select><p class="osk-ptext"></p><div class="lab-row"><span class="osk-check"></span><span class="osk-phint"></span></div><p class="lab-msg osk-pmsg"></p></div></div>
       <div class="lab-ctrl"><div class="lab-info osk-book"><h4>My organic notes</h4><input type="text" class="osk-title" placeholder="Title (the name, if blank)" aria-label="Note title"><textarea class="osk-note" rows="3" placeholder="Notes: reactions, conditions, mechanisms, mnemonics…" aria-label="Notes for this drawing"></textarea><div class="lab-row osk-bookbtns"></div><div class="osk-pages"></div></div></div>
-    </div>`, "osk-lab");
+    </div>`, "osk-lab lab-light");
   const stage = $(".osk-stage"), host = $(".osk-svg"), say = describe(host, "Skeletal formula drawing");
   const prefs = { grid: true, showC: false, showNums: true, showStereo: true, ...load(PREFS, {}) };
   let m = load(STORE, null) || K.empty(); if (!Array.isArray(m.atoms)) m = K.empty();
@@ -263,7 +263,7 @@ export function mount(el, ctx = {}) {
   }
   const resize = () => { const w = Math.max(260, Math.round(stage.clientWidth || 600)), h = Math.round(Math.max(300, Math.min(560, w * 0.64))); if (w === W && h === H) return; W = w; H = h; host.style.height = `${H}px`; paint(); };
   const ro = "ResizeObserver" in window ? new ResizeObserver(resize) : null; ro?.observe(stage);
-  const mo = new MutationObserver(paint); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  const mo = new MutationObserver(() => { paint(); if (mode === "mechanism") mech.refresh(); else if (mode === "reaction") rx.repaint(); }); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
   // ---------- problems ----------
   const psel = $(".osk-prob");

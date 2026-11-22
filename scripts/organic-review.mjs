@@ -3,7 +3,7 @@
 //                                                   reaction with the lab's own prediction) and mechanisms-review.csv
 //                                                   (every mechanism step), each with empty reviewer columns
 //   node scripts/organic-review.mjs import <csv>    reads a completed reference-review.csv and writes the verdicts to
-//                                                   tests/data/organic-review-results.mjs
+//                                                   kit/labs/chemistry/reactions/reviews.js
 // The CSVs open in any spreadsheet. Reviewers fill in: verdict (agree / disagree / unsure), correction, comment,
 // reviewer, date.
 import fs from "node:fs";
@@ -72,8 +72,8 @@ function importPack(file) {
     out[r[ix.id]] = { verdict: v, reviewer: r[ix.reviewer] || "", date: r[ix.date] || "", correction: r[ix.correction] || "", note: r[ix.comment] || "" };
   }
   if (bad.length) { console.error(`Not imported:\n  ${bad.join("\n  ")}`); process.exitCode = 1; }
-  const body = `// Verdicts from the independent chemistry review of tests/data/organic-reference.mjs, written by\n// \`node scripts/organic-review.mjs import <completed csv>\`.\n//   REVIEWS[id] = { verdict: "agree" | "disagree" | "unsure", reviewer, date, correction, note }\nexport const REVIEWS = ${JSON.stringify(out, null, 2)};\n`;
-  fs.writeFileSync(path.join(ROOT, "tests/data/organic-review-results.mjs"), body);
+  const body = `// Verdicts from the independent chemistry review of the lab's reference set (tests/data/organic-reference.mjs),\n// written by \`node scripts/organic-review.mjs import <completed csv>\`. Read by rules.js (disputed rules).\n//   REVIEWS[id] = { verdict: "agree" | "disagree" | "unsure", reviewer, date, correction, note }\nexport const REVIEWS = ${JSON.stringify(out, null, 2)};\n`;
+  fs.writeFileSync(path.join(ROOT, "kit/labs/chemistry/reactions/reviews.js"), body);
   const n = Object.values(out), c = (v) => n.filter((x) => x.verdict === v).length;
   console.log(`imported ${n.length} verdicts: ${c("agree")} agree, ${c("disagree")} disagree, ${c("unsure")} unsure`);
 }

@@ -7,6 +7,7 @@ import * as K from "../skeletal.js";
 import * as E from "./electron-flow.js";
 import { REACTIONS, FAMILIES, instantiate, arrowKinds, faultyStep } from "./library.js";
 import { breakdown } from "./marking.js";
+import { mountTutor } from "./tutor-ui.js";
 import { LEVELS, atLevel } from "./predictor.js";
 
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>").replace(/([+-]+)$/, (m) => `<sup>${m.replace(/-/g, "−")}</sup>`);
@@ -35,6 +36,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
         <div class="lab-info mx-fb" aria-live="polite"></div>
         <div class="lab-row mx-actions"></div>
         <div class="lab-row mx-help"></div>
+        <div class="mx-tutor"></div>
         <div class="lab-info mx-about"></div>
       </div>
     </div>`;
@@ -180,7 +182,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     if (extra?.free) { const [p0, p1] = extra.free; content += `<path d="M${X(p0[0])},${Y(p0[1])}Q${X((p0[0] + p1[0]) / 2) + 20},${Y((p0[1] + p1[1]) / 2) - 20} ${X(p1[0])},${Y(p1[1])}" stroke="${COL.pend}" stroke-width="2" stroke-dasharray="5 4" fill="none"/>`; }
     svgHost.innerHTML = frame(content);
   }
-  function refresh() { paint(); stepsStrip(); feedback(); kbd(); hint(); }
+  function refresh() { paint(); stepsStrip(); feedback(); kbd(); hint(); tutor?.refresh(); }
   const hint = () => { q(".mx-hint").textContent = spot ? "Spot the error: one of these arrows is wrong. Tap its number (or choose it in the panel)." : viewK != null ? "Viewing an earlier step. Choose the current step below to carry on drawing." : finished ? "Mechanism complete. Press Play to watch it, or choose another." : states.length ? `Drag from a lone pair (••) or a bond to an atom or a bond. Start a bond's arrow near one end to make the new bond from that end. Tap an arrow's tail again to remove it. ${type === "single" ? "Fishhook: one electron." : "Curly: two electrons."}` : ""; };
 
   // ---------- drawing arrows ----------
@@ -370,6 +372,11 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     fb = { kind: "spot", html: `<h4 class="${ok ? "ok" : "no"}">${ok ? `Yes: arrow ${f.wrong + 1} is wrong` : `Not that one: arrow ${f.wrong + 1} is wrong`}</h4>${right}<p class="mx-why">${esc(f.why)}</p><p class="osk-aka">${spots} spotted so far.</p><div class="lab-row"><button type="button" class="lab-btn pri" data-spot-next>Another</button><button type="button" class="lab-btn" data-spot-end>Back to the mechanism</button></div>` };
     refresh();
   }
+  // the AI tutor, given the engine's verdict on the learner's arrows (tutorContext); not offered in exam style
+  const tutor = mountTutor(q(".mx-tutor"), { ask: ctx.ask || null, onUse: () => { if (inst) assisted = true; },
+    getContext: () => { if (!states.length || exam || spot) return null; const s = cur(), r = pending.length ? E.applyStep(s, pending) : null; return { kind: "mechanism", confidence: "provisional", overview: inst?.reaction.overview || null, step: inst ? `${done.length + 1} of ${inst.steps.length}: towards “${inst.steps[done.length]?.label || "the products"}”` : null, ...E.tutorContext({ title: inst?.reaction.title || "My mechanism", reaction: inst?.reaction, state: s, arrows: pending, result: r, stepIndex: done.length, expected: inst && r ? E.sameState(r.state, E.applyStep(s, inst.steps[done.length].arrows).state) : null }) }; },
+    learner: () => ({ mistakes: attempts.map((n, k) => (n > 1 ? { topic: `${inst?.reaction.title || "mechanism"}, step ${k + 1}`, count: n - 1 } : null)).filter(Boolean) }),
+    intents: [["mechanism", "Explain the verdict on my arrows", (c) => c.arrows?.length], ["guide", "Guide me through this step"], ["explain", "Explain this mechanism"]] });
   function about() {
     const box = q(".mx-about"), r = inst?.reaction;
     q(".mx-cond").innerHTML = r && exam && xq?.phase === "conditions" ? `<span class="mx-rxn">${esc(r.title.split(":")[1]?.trim() || r.title)}</span><span class="mx-fam">Conditions hidden until you answer</span>` : r ? `<span class="mx-rxn">${esc(r.title.split(":")[1]?.trim() || r.title)}</span><span class="mx-arrow"><small>${esc(r.conditions.above)}</small><b>⟶</b><small>${esc(r.conditions.below)}</small></span><span class="mx-fam">${esc(FAMILIES[r.family])}</span>` : "";
