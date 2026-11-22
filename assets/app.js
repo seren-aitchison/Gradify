@@ -260,7 +260,18 @@ const q = $("#q");
 const liveOnly = $("#live-only");
 let active = "all";
 
+// The directory starts folded to its first row, so the homepage stays about notes in, flashcards out. It opens in
+// full for anyone who came for it: the Sites link (#find), a search, a filter, or "Show all".
+const find = $("#find"), dirTotal = document.querySelectorAll("#groups .card").length;
+find.insertAdjacentHTML("beforeend", `<div class="dir-more"><button type="button" class="btn btn-ghost lg" id="dir-all"><span>Show all ${dirTotal} sites</span></button><a class="text-link" href="/explore.html">Explore all 34 courses →</a></div>`);
+const unfold = () => { if (!find.classList.contains("folded")) return; find.classList.remove("folded"); $("#dir-all").parentElement.hidden = true; };
+if (location.hash !== "#find") find.classList.add("folded"); else $("#dir-all").parentElement.hidden = true;
+addEventListener("hashchange", () => { if (location.hash === "#find") unfold(); });
+$("#dir-all").addEventListener("click", () => { unfold(); $("#groups .card:nth-child(7) a, #groups .card a")?.focus({ preventScroll: true }); });
+document.querySelectorAll('a[href="/#find"], a[href="#find"]').forEach((a) => a.addEventListener("click", unfold));
+
 function apply() {
+  unfold();
   const term = q.value.trim().toLowerCase();
   let any = false;
   for (const sec of document.querySelectorAll(".group")) {

@@ -1424,3 +1424,15 @@ section[data-tab] { gap: 16px; }
   .app-bar.bar { height: auto; min-height: 58px; }
   .app-bar .app-nav:has(> .tab-title:only-child), .app-bar .app-nav:empty { display: none !important; }
 }
+
+/* the sidebar's More: the sections not yet used (kit/app/main.js paintSide) */
+.lo-more-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 12px; border: 0; border-radius: 14px; background: none; color: var(--mute); font: 500 15px var(--sans); text-align: left; cursor: pointer; }
+.lo-more-btn svg { width: 18px; height: 18px; flex: none; }
+.lo-more-btn:hover { color: var(--fg); background: rgba(var(--ink-rgb), .04); }
+.lo-more-btn em { margin-left: auto; font: 600 11.5px var(--mono); font-style: normal; color: var(--faint); }
+.lo-more-btn[aria-expanded="true"] em::after { content: " ▴"; }
+.lo-more-list { display: flex; flex-direction: column; gap: 2px; padding-left: 10px; margin-left: 8px; border-left: 1px solid var(--line); }
+.lo-more-list[hidden] { display: none; }
+/* the phone's More sheet lists every section at once */
+body.side-open .lo-more-btn { display: none; }
+body.side-open .lo-more-list, body.side-open .lo-more-list[hidden] { display: contents !important; }

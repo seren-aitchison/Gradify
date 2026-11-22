@@ -74,12 +74,10 @@
     if ((bar && bar.querySelector(".access-btn")) || document.querySelector(".access-float")) return;
     var b = document.createElement("button");
     b.type = "button"; b.className = bar ? "icon-btn access-btn" : "icon-btn access-btn access-float"; b.innerHTML = AA;
-    b.setAttribute("aria-label", "Reading and accessibility settings"); b.title = "Reading and accessibility settings";
+    b.setAttribute("aria-label", "Text and display settings"); b.title = "Text and display settings";
     b.setAttribute("aria-haspopup", "dialog");
-    // until it has been opened once, the button says what it is ("Reading"), so the settings are easy to find
-    var SEEN = "gradify.access.seen", seen = false; try { seen = !!localStorage.getItem(SEEN); } catch (e) { seen = true; }
-    if (!seen && bar) { b.classList.add("access-named"); b.insertAdjacentHTML("beforeend", '<span class="access-name">Reading</span>'); }
-    b.addEventListener("click", function () { try { localStorage.setItem(SEEN, "1"); } catch (e) { /* fine */ } b.classList.remove("access-named"); var n = b.querySelector(".access-name"); if (n) n.remove(); open(b); });
+    // icon only, like the theme button beside it: its name is in aria-label and title, and the phone menu spells it out
+    b.addEventListener("click", function () { open(b); });
     // pages without a top bar (terms, privacy, quality…) get the button in the corner, so the settings are on every page
     if (!bar) document.body.appendChild(b);
     else { var t = bar.querySelector(".theme-btn"); if (t) t.parentNode.insertBefore(b, t); else { var host = bar.querySelector(".right, .sub-right"); host ? host.insertBefore(b, host.firstChild) : bar.appendChild(b); } }
