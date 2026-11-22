@@ -64,8 +64,12 @@ async function plans() {
   return by;
 }
 
+// What a lab is, for the Diagram / Interactive diagram / Simulation / Lab distinction: an explorer or exercise is an interactive
+// diagram (select, reveal, compare, identify), a simulation or model takes parameters and shows the outcome, and a tool,
+// experiment or laboratory is an activity the student performs.
+const KIND_CLASS = { Explorer: "interactiveDiagram", "Graph explorer": "interactiveDiagram", Exercise: "interactiveDiagram", Simulation: "simulation", "Illustrative model": "simulation", Tool: "labActivity", Experiment: "labActivity", Laboratory: "labActivity", "Generated practice": "labActivity" };
 const zero = () => ({ lessons: 0, written: 0, assessed: 0, plannedVisual: 0, plannedDiagram: 0, plannedLab: 0, excluded: 0, notAssessed: 0,
-  withDiagram: 0, withLab: 0, withBoth: 0, withAny: 0, plannedNotDelivered: 0, placements: 0 });
+  withDiagram: 0, withLab: 0, withBoth: 0, withAny: 0, plannedNotDelivered: 0, placements: 0, withInteractiveDiagram: 0, withSimulation: 0, withLabActivity: 0 });
 const add = (a, b) => { for (const k of Object.keys(a)) a[k] += b[k]; return a; };
 
 export async function buildInventory() {
@@ -93,7 +97,7 @@ export async function buildInventory() {
   const courses = [];
   for (const slug of readdirSync(join(ROOT, "kit/courses")).filter((f) => existsSync(join(ROOT, `kit/courses/${f}/course.js`))).sort()) {
     const c = (await imp(`kit/courses/${slug}/course.js`)).default;
-    const plan = allPlans[slug], labs = c.interactives || [], labIds = new Set(labs.map((x) => x.id));
+    const plan = allPlans[slug], labs = c.interactives || [], labIds = new Set(labs.map((x) => x.id)), classOf = Object.fromEntries(labs.map((x) => [x.id, KIND_CLASS[x.kind] || "labActivity"]));
     const labsFor = {};
     for (const x of labs) for (const lid of x.lessons || []) (labsFor[lid] ||= []).push(x.id);
     const planFor = {};
@@ -151,6 +155,7 @@ export async function buildInventory() {
         if (pd.length) t.plannedDiagram++;
         if (pl.length) t.plannedLab++;
         if (missingPlanned.length) t.plannedNotDelivered++;
+        for (const cls of new Set(labsHere.map((x) => classOf[x]))) t[{ interactiveDiagram: "withInteractiveDiagram", simulation: "withSimulation", labActivity: "withLabActivity" }[cls]]++;
         if (hasD) t.withDiagram++; if (hasL) t.withLab++; if (hasD && hasL) t.withBoth++; if (hasD || hasL) t.withAny++;
         unit.lessons.push({ id: l.id, title: l.title, written: true, diagrams, labs: labsHere, plan: planEntry });
       }
@@ -212,7 +217,7 @@ export function renderMarkdown(inv) {
     ["… visual planned (diagram and/or lab)", `${T.plannedVisual} (${T.plannedDiagram} diagram, ${T.plannedLab} lab)`],
     ["… excluded with a reason", T.excluded], ["… planned but not yet delivered", T.plannedNotDelivered],
     ["**not yet assessed**", `**${T.notAssessed}** (${pct(T.notAssessed, T.written)})`],
-    ["written lessons with a static diagram shown", T.withDiagram], ["… with an interactive lab", T.withLab], ["… with both", T.withBoth], ["… with either", T.withAny],
+    ["written lessons with a static diagram shown", T.withDiagram], ["… with an interactive lab", T.withLab], ["… … of which an interactive diagram (explorer or exercise)", T.withInteractiveDiagram], ["… … of which a simulation (takes parameters)", T.withSimulation], ["… … of which a lab activity (tool, experiment or laboratory)", T.withLabActivity], ["… with both", T.withBoth], ["… with either", T.withAny],
     ["diagrams in the manifest", D.manifest], ["unique diagram ids placed / placements", `${D.uniquePlaced} / ${D.placements} (${D.reused} ids reused)`],
     ["diagrams failing validation", D.failing.length], ["diagrams in the manifest but not placed", D.unplaced.length],
     ["data quality problems", inv.problems.length],
