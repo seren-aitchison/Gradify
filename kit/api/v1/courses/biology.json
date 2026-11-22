@@ -2426,6 +2426,18 @@
    "url": "https://getgradify.com/scigradify/biology/#/practice/membrane-id"
   },
   {
+   "id": "flow-gating",
+   "title": "Flow cytometry gating",
+   "kind": "Simulation",
+   "sub": "Drag the edges of a gate on a simulated scatter plot to select the lymphocytes, and see how a loose or tight gate changes the percentage of CD4-positive cells.",
+   "note": "Simulated data from a fixed random seed: illustrative values, not a patient sample. Cell types can be revealed here but not in a real run.",
+   "tasks": null,
+   "lessons": [
+    "u14-16"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/flow-gating"
+  },
+  {
    "id": "dna-helix",
    "title": "DNA double helix explorer",
    "kind": "Explorer",

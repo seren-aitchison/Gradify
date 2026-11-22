@@ -9,6 +9,7 @@ import { align } from "../kit/labs/biology/align.js";
 import { upgma, pdist, SEQS } from "../kit/labs/biology/phylo.js";
 import { simulate as heart } from "../kit/labs/biology/heart.js";
 import { COMPONENTS as MEMBRANE_PARTS, fluidity } from "../kit/labs/biology/membrane.js";
+import { simulate as flowSample, gateStats } from "../kit/labs/biology/gating.js";
 import { capillary, alveolarPO2, sat } from "../kit/labs/biology/gas.js";
 import { gfr, glucose } from "../kit/labs/biology/kidney.js";
 import { amplify, ct } from "../kit/labs/biology/pcr.js";
@@ -110,4 +111,18 @@ test("membrane explorer: every component explains itself, and fluidity follows t
   assert.ok(f("cold", true, false) > f("cold", false, false)); // cholesterol stops tight packing in the cold
   assert.ok(f("warm", true, false) < f("warm", false, false)); // and restrains movement when warm
   assert.equal(fluidity({ temp: "cold", cholesterol: false, unsaturated: false }).label, "rigid, gel-like");
+});
+
+test("flow gating lab: a seeded sample, and a gate's share, purity, recall and CD4 percentage are counted from it", () => {
+  const ev = flowSample(), again = flowSample();
+  assert.equal(ev.length, again.length); assert.equal(ev[10].fsc, again[10].fsc); // seeded: repeatable
+  const good = gateStats(ev, { fsc: [190, 420], ssc: [90, 320] });
+  assert.ok(good.purity > 0.9 && good.recall > 0.9, "a gate round the lymphocyte cluster is pure and complete");
+  near(good.cd4, 40, 5, "about 40% of gated cells are CD4-positive");
+  const all = gateStats(ev, { fsc: [0, 1000], ssc: [0, 1000] });
+  assert.equal(all.percent, 100); assert.ok(all.purity < 0.5, "a gate round everything is mostly not lymphocytes"); near(all.recall, 1, 1e-9, "but it catches every lymphocyte");
+  assert.ok(all.cd4 < good.cd4 / 2, "a sloppy gate dilutes the CD4 percentage");
+  const tight = gateStats(ev, { fsc: [280, 320], ssc: [180, 220] });
+  assert.ok(tight.recall < 0.5 && tight.purity > 0.9, "a tight gate is pure but loses most lymphocytes");
+  assert.equal(gateStats(ev, { fsc: [900, 950], ssc: [0, 10] }).gated, 0);
 });
