@@ -30,6 +30,7 @@ kit/labs/chemistry/
     mechanism-ui.js            Mechanism mode: arrow drawing, checking, help levels, animation, steps strip,
                                spot the error, error-carried-forward marking
     predictor.js               Reaction mode's rule templates: 35 reagents → products, with reasons and stereo notes
+    rules.js                   the evidence record behind each rule: scope, selectivity, limitations, sources, confidence
     competition.js             SN1 / SN2 / E1 / E2 ranking from substrate, nucleophile/base, solvent, temperature
     planner.js                 synthesis search over the predictor's reactions; routes, retrosynthesis, challenges
     marking.js                 exam-style 10-mark breakdown with error carried forward
@@ -90,6 +91,13 @@ leaves alone), and selectivity comes from stated rules:
 | Aromatic substitution | nitration, Cl₂/AlCl₃, Br₂/FeBr₃, Friedel–Crafts alkylation and acylation; directing effects ranked (strong activators > alkyl > halogen > deactivators), the strongest activator controls, hindered positions between two groups avoided, para favoured for bulky acylium; FC fails on deactivated, –NH₂ and –OH rings; bromine water tribrominates phenol and phenylamine |
 | Radicals | Br₂/UV on alkanes, with bromine's selectivity (tertiary > secondary > primary) deciding the major product |
 
+Every result has a **status**: `reacts`, `no-reaction` (the chemistry doesn't happen, with the reason) or `declined`
+(outside the rules, ambiguous, or another reagent is meant), and carries the **evidence record** of the rule applied
+(`rules.js`): what it applies to, what it gives, its selectivity, what it doesn't cover, its sources and its
+confidence. `explainContext()` packages a prediction (verdict, rule, reasoning, pathways) as structured data for an
+explanation or a future AI tutor, which explains the record and never changes it. The Predict view shows the record
+under "The rule behind this".
+
 When a case is outside the rules the predictor declines and says why instead of guessing (examples: two halogens,
 a halogen plus a C=O, aldol reactions of aldehydes with NaOH, conjugated C=C with HX, nitrating phenylamine, rings
 with an extra C=C, several rings).
@@ -133,12 +141,18 @@ Before adding reactions, the existing rules were checked against hand-worked cas
 Passing electron-conservation checks is not treated as proof that a mechanism is right: the library mechanisms are
 each also compared with their stated products and names, and the predictor with the reference set below.
 
-### Reference set
+### Reference set and independent review
 
 `tests/data/organic-reference.mjs`: 302 reactions on 80 starting materials, written by hand from standard A-level and
-first-year textbook outcomes (not generated from the predictor), including 83 negative or declined cases and 53 with
-major/minor products or several products. **It has not yet been reviewed by an independent chemist**; that review is
-the next step before the set is called verified.
+first-year textbook outcomes (not generated from the predictor): 63 no-reaction cases, 20 the lab must decline, and 53
+with major/minor or several products. Each case has a stable id, its section's sources and a confidence level. The
+test requires "no reaction" and "declined" cases to be told apart.
+
+**Nothing has been independently reviewed yet: every rule and case is `provisional`.** The review pack is in
+`docs/organic-review/` (a brief for the reviewer, `reference-review.csv` and `mechanisms-review.csv` with reviewer
+columns). `node scripts/organic-review.mjs import <csv>` brings the verdicts back into
+`tests/data/organic-review-results.mjs`; agreed cases become `reviewed`. Source pointers (AQA 7405 sections, Clayden
+topics) are part of what the review should confirm.
 
 ### Known limitations
 
@@ -156,13 +170,15 @@ the next step before the set is called verified.
 | Phase | Content | Status |
 |---|---|---|
 | 1 Mechanism engine | electron-flow model, curly and fishhook arrows, lone pairs, charges, bond making/breaking, validation, step classification | **Built** (`reactions/electron-flow.js`, `tests/mechanism.test.mjs`) |
-| 2 Reaction library | mechanisms: SN2, SN1, E1, E2, HBr and Br₂ addition, HCN, NaBH₄ and Grignard addition, nitration, chlorination (AlCl₃), Friedel–Crafts acylation, water and ammonia with ethanoyl chloride, alkaline ester hydrolysis, radical chlorination | **Built: 16 mechanisms, 35 reagent rules**, each with a level. Next: acid-catalysed ester hydrolysis and esterification mechanisms, the NO₂⁺ generation step, alkyne mechanisms |
+| 2 Reaction library | mechanisms: SN2, SN1, E1, E2, HBr and Br₂ addition, HBr + propyne (vinyl cation), HCN, NaBH₄ and Grignard addition, nitronium formation, nitration, chlorination (AlCl₃), bromination (FeBr₃), Friedel–Crafts acylation, water and ammonia with ethanoyl chloride, acid- and base-catalysed ester hydrolysis, radical chlorination | **Built: 20 mechanisms, 35 reagent rules**, each with a level and an evidence record. Next: esterification, nitration of a substituted ring (why ortho/para), alkene hydration |
 | 3 Interactive teaching | animation from mechanism data (play/pause/step/speed), four help levels (hint, explain, show next step, full solution), error highlighting | **Built** (deterministic help from template data) |
 | 3 Modes | Structure, Mechanism, Reaction (Predict, Conditions, Synthesis), 3D | **Built** |
 | 3b Competition | SN1/SN2/E1/E2 under chosen conditions, two sets side by side, predict the main pathway | **Built** (`competition.js`) |
 | 4b Synthesis | forwards and backwards (retrosynthesis) challenges, hints from the shortest route, multiple routes accepted | **Built: 12 challenges** (`planner.js`). Next: learner-set targets, more challenges at advanced level |
 | 4 Assessment | marks per arrow, attempts, outcomes recorded as lab evidence | **Built**: per-arrow marks, error carried forward, spot the error, exam style with a 10-mark breakdown and timer, four difficulty levels, adaptive and timed practice, multiple acceptable answers. Next: exam-board-specific question styles, free-text explanations (needs the tutor) |
 | 5 Advanced | interactive R/S with CIP clicking, displayed formula view, bridged rings, wedges in 3D, synthesis planning | Not started (CIP routines exist in `mol.js`) |
+| 5b Validation | evidence records, confidence and status, reviewer pack and import | **Built**; the review itself is waiting for a qualified chemist |
+| 5c Stereochemistry | wedge/dash bonds, R/S and E/Z descriptors carried through reactions, isomer comparison | Not started (CIP routines exist in `mol.js`) |
 | 6 Integration | AI tutor receives `tutorContext()` from the engine; notes; flashcards; mindmaps; study plans | Mechanisms save to the lab notebook and copy as flashcards; `tutorContext()` exists. Tutor endpoint not wired |
 
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides

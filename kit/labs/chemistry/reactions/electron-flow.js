@@ -8,7 +8,7 @@
 import { graph } from "../skeletal.js";
 import { bySym } from "../elements.js";
 
-export const VALENCE_E = { H: 1, Li: 1, Na: 1, K: 1, Mg: 2, B: 3, Al: 3, C: 4, Si: 4, N: 5, P: 5, O: 6, S: 6, F: 7, Cl: 7, Br: 7, I: 7 };
+export const VALENCE_E = { H: 1, Li: 1, Na: 1, K: 1, Mg: 2, B: 3, Al: 3, Fe: 3, C: 4, Si: 4, N: 5, P: 5, O: 6, S: 6, F: 7, Cl: 7, Br: 7, I: 7 };
 const SHELL = (el) => (el === "H" || el === "Li" ? 2 : ["S", "P", "Cl", "Br", "I", "Si"].includes(el) ? 12 : 8);
 export const EN = (el) => bySym[el]?.en ?? 2.5;
 const clone = (s) => JSON.parse(JSON.stringify(s));
@@ -93,7 +93,8 @@ const carbocationKind = (s, id) => {
   const cn = bondsOf(s, id).filter((b) => atomOf(s, other(b, id)).el === "C").length;
   const allylic = bondsOf(s, id).some((b) => { const o = other(b, id); return atomOf(s, o).el === "C" && bondsOf(s, o).some((x) => other(x, o) !== id && x.e >= 4); });
   const oxo = bondsOf(s, id).some((b) => b.e >= 4 && ["O", "N"].includes(atomOf(s, other(b, id)).el));
-  return { cn, kind: ["methyl", "primary", "secondary", "tertiary"][Math.min(cn, 3)], allylic, oxo };
+  const vinyl = bondsOf(s, id).some((b) => b.e >= 4 && atomOf(s, other(b, id)).el === "C");
+  return { cn, kind: ["methyl", "primary", "secondary", "tertiary"][Math.min(cn, 3)], allylic, oxo, vinyl };
 };
 
 /** Applies one step's arrows together. Never throws; errors say what is wrong and which arrow. */
@@ -132,6 +133,7 @@ export function applyStep(before, arrows) {
   for (const c of chargeChanges) {
     const a = atomOf(s, c.id);
     if (a.el === "C" && c.to === 1 && carbocationKind(s, c.id).oxo) { steps.push(`${name(s, c.id)} becomes an acylium ion, R–C≡O⁺ ↔ R–C⁺=O: stabilised because the oxygen's lone pair can form a third bond to the carbon.`); continue; }
+    if (a.el === "C" && c.to === 1 && carbocationKind(s, c.id).vinyl) { const k = carbocationKind(s, c.id); steps.push(`${name(s, c.id)} becomes a ${k.kind} vinyl cation (the + carbon is part of a C=C): less stable than an alkyl cation, which is why alkynes add electrophiles more slowly than alkenes.`); continue; }
     if (a.el === "C" && c.to === 1) { const k = carbocationKind(s, c.id); steps.push(`${name(s, c.id)} becomes a ${k.kind} carbocation${k.allylic ? " next to a C=C, so the positive charge is delocalised (resonance)" : ""}.`); if (k.cn <= 1 && !k.allylic) warnings.push({ code: "unstable-cation", atom: c.id, text: `A ${k.kind} carbocation is very unstable and doesn't form in solution reactions; ${k.cn === 0 ? "methyl" : "primary"} substrates react by a concerted mechanism (SN2 or E2) instead.` }); }
     if (a.el === "C" && c.to === -1) steps.push(`${name(s, c.id)} becomes a carbanion.`);
   }
@@ -166,14 +168,14 @@ export function describe(s0, s1, ns, changes) {
   }
   const isH = (id) => atomOf(s0, id).el === "H";
   for (const n of ns) {
-    if (n.src.atom != null && n.dst.pair) { const [A, C] = n.dst.pair, tgt = atomOf(s0, C); out.push(bondBetween(s0, A, C) ? `${N(A)}'s lone pair moves back in between ${N(A)} and ${N(C)}, re-forming the ${N(A)}=${N(C)} π bond.` : isH(C) ? `${N(A)} uses a lone pair to take a proton (H): it acts as a base (proton transfer).` : charge(s0, C) > 0 ? `${N(A)}'s lone pair forms a bond to the positive ${N(C)}: the nucleophile attacks the electrophile.` : tgt.el === "C" ? `${N(A)}'s lone pair attacks the δ+ carbon ${N(C)}: ${N(A)} acts as a nucleophile.` : `${N(A)}'s lone pair forms a new ${N(A)}–${N(C)} bond.`); }
+    if (n.src.atom != null && n.dst.pair) { const [A, C] = n.dst.pair, tgt = atomOf(s0, C); out.push(bondBetween(s0, A, C) ? `${N(A)}'s lone pair moves in between ${N(A)} and ${N(C)}, making the ${N(A)}=${N(C)} double bond (a π bond).` : isH(C) ? `${N(A)} uses a lone pair to take a proton (H): it acts as a base (proton transfer).` : charge(s0, C) > 0 ? `${N(A)}'s lone pair forms a bond to the positive ${N(C)}: the nucleophile attacks the electrophile.` : tgt.el === "C" ? `${N(A)}'s lone pair attacks the δ+ carbon ${N(C)}: ${N(A)} acts as a nucleophile.` : `${N(A)}'s lone pair forms a new ${N(A)}–${N(C)} bond.`); }
     else if (n.src.bond && n.dst.atom != null) { const [a, b] = n.src.bond, to = n.dst.atom, from = a === to ? b : a, pi = bondBetween(s0, a, b).e >= 4; out.push(pi ? `The ${N(from)}=${N(to)} π bond's electrons move onto ${N(to)}.` : `Heterolytic fission: the ${N(from)}–${N(to)} bond breaks and both electrons go to ${N(to)}${EN(atomOf(s0, to).el) > EN(atomOf(s0, from).el) ? ", the more electronegative atom" : ""}${charge(s1, to) < 0 ? `, which ${atomOf(s0, to).el === "C" ? "becomes an anion" : s1.bonds.some((x) => (x.a === to || x.b === to) && x.e > 0) ? "keeps them and becomes negative" : "leaves as an anion"}` : ""}.`); }
-    else if (n.src.bond && n.dst.pair) { const [a, b] = n.src.bond, [x, y] = n.dst.pair, pi = bondBetween(s0, a, b).e >= 4, newAtom = [x, y].find((i) => i !== a && i !== b); out.push(pi && newAtom != null ? `The π electrons of the ${N(a)}=${N(b)} bond form a bond to ${N(newAtom)}: the ${atomOf(s0, a).el === "C" && atomOf(s0, b).el === "C" ? "electron-rich C=C acts as a nucleophile" : "π bond attacks"}.` : `The ${N(a)}–${N(b)} bond's electrons move to form a ${N(x)}–${N(y)} ${bondBetween(s0, x, y) ? "π " : ""}bond.`); }
+    else if (n.src.bond && n.dst.pair) { const [a, b] = n.src.bond, [x, y] = n.dst.pair, pi = bondBetween(s0, a, b).e >= 4, newAtom = [x, y].find((i) => i !== a && i !== b); out.push(pi && newAtom != null ? `The π electrons of the ${N(a)}${bondBetween(s0, a, b).e >= 6 ? "≡" : "="}${N(b)} bond form a bond to ${N(newAtom)}: the ${atomOf(s0, a).el === "C" && atomOf(s0, b).el === "C" ? `electron-rich C${bondBetween(s0, a, b).e >= 6 ? "≡" : "="}C acts as a nucleophile` : "π bond attacks"}.` : `The ${N(a)}–${N(b)} bond's electrons move to form a ${N(x)}–${N(y)} ${bondBetween(s0, x, y) ? "π " : ""}bond.`); }
   }
   // patterns across arrows
   const attack = ns.find((n) => n.src.atom != null && n.dst.pair && !isH(n.dst.pair[1]) && !bondBetween(s0, ...n.dst.pair)), leave = ns.find((n) => n.src.bond && n.dst.atom != null && bondBetween(s0, ...n.src.bond).e === 2);
   const reform = ns.find((n) => n.src.atom != null && n.dst.pair && bondBetween(s0, ...n.dst.pair));
-  if (reform && leave && leave.src.bond.includes(reform.dst.pair[1])) out.push("The C=O re-forms and pushes out the leaving group: the elimination half of addition–elimination.");
+  if (reform && leave && leave.src.bond.includes(reform.dst.pair[1])) out.push(atomOf(s0, reform.dst.pair[1]).el === "C" ? "The C=O re-forms and pushes out the leaving group: the elimination half of addition–elimination." : `As the leaving group departs, the new π bond keeps ${N(reform.dst.pair[1])} with a full outer shell.`);
   if (attack && leave && leave.src.bond.includes(attack.dst.pair[1])) out.push("Both happen at once on the same carbon: a concerted, one-step substitution (SN2). The nucleophile attacks from the side opposite the leaving group, so the configuration is inverted.");
   const base = ns.find((n) => n.src.atom != null && n.dst.pair && isH(n.dst.pair[1])), toPi = ns.find((n) => n.src.bond && n.dst.pair && n.src.bond.some(isH));
   if (base && toPi && leave) out.push("Proton removal, C=C formation and loss of the leaving group happen in one step: an E2 elimination.");
@@ -228,7 +230,7 @@ export function tutorContext({ title, reaction, state, arrows, result, stepIndex
     reaction: reaction ? { id: reaction.id, title: reaction.title, family: reaction.family, conditions: reaction.conditions } : null, title,
     step: stepIndex, atoms: state.atoms.map((a) => ({ id: a.id, label: name(state, a.id), el: a.el, charge: charge(state, a.id), lonePairs: lonePairs(state, a.id), radical: isRadical(state, a.id) })),
     bonds: state.bonds.map((b) => ({ a: name(state, b.a), b: name(state, b.b), order: b.e / 2 })),
-    arrows: arrows.map((a) => ({ type: a.type, from: a.from.lp != null ? `lone pair on ${name(state, a.from.lp)}` : a.from.bond != null ? `bond ${name(state, bondOf(state, a.from.bond)?.a)}–${name(state, bondOf(state, a.from.bond)?.b)}` : `atom ${name(state, a.from.atom)}`, to: a.to.atom != null ? name(state, a.to.atom) : a.to.between.map((i) => name(state, i)).join("–") })),
+    arrows: arrows.map((a) => ({ type: a.type, from: a.from.lp != null ? `lone pair on ${name(state, a.from.lp)}` : a.from.ends ? `bond ${name(state, a.from.ends[0])}–${name(state, a.from.ends[1])}` : a.from.bond != null && bondOf(state, a.from.bond) ? `bond ${name(state, bondOf(state, a.from.bond).a)}–${name(state, bondOf(state, a.from.bond).b)}` : `atom ${name(state, a.from.atom)}`, to: a.to.atom != null ? name(state, a.to.atom) : a.to.between.map((i) => name(state, i)).join("–") })),
     verdict: result ? { valid: result.ok, errors: result.errors.map((e) => e.text), warnings: result.warnings.map((w) => w.text), whatHappened: result.steps, matchesExpected: expected ?? null } : null,
   };
 }

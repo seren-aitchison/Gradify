@@ -167,3 +167,6 @@
 .mx-exam { color: #f5b84b; } .mx-xpl .lab-btn { text-align: left; white-space: normal; }
 .sy-dir button, .rx-views button { font-weight: 600; }
 @media (max-width: 560px) { .rx-views button { padding: 6px 9px; } .sy-task { max-width: 100%; } .rx-top .lab-seg { width: 100%; } }
+.rx-rule summary { cursor: pointer; font-weight: 600; font-size: 13px; } .rx-rule dl { margin: 6px 0 0; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; }
+.rx-rule dt { color: var(--mute); } .rx-rule dd { margin: 0; min-width: 0; } .rx-rule ul { margin: 0; padding-left: 16px; }
+@media (max-width: 560px) { .rx-rule dl { grid-template-columns: 1fr; } .rx-rule dt { margin-top: 4px; } }
