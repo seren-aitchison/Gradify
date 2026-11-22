@@ -22,7 +22,8 @@ import { cell } from "../kit/labs/chemistry/electrochem.js";
 import { isotopes } from "../kit/labs/chemistry/spectra.js";
 import { fractionAbove, halfLife } from "../kit/labs/chemistry/kinetics.js";
 import { R as radial } from "../kit/labs/chemistry/orbitals.js";
-import { ezAnswer } from "../kit/labs/chemistry/stereo.js";
+import { ezAnswer, EZ as EZ_CASES } from "../kit/labs/chemistry/stereo.js";
+import { parseSmiles } from "../kit/labs/chemistry/mol.js";
 import { check as lewisCheck, MOLS as LEWIS } from "../kit/labs/chemistry/lewis.js";
 
 const near = (a, b, tol, msg) => assert.ok(Math.abs(a - b) <= tol, `${msg}: ${a} vs ${b}`);
@@ -82,6 +83,22 @@ test("chemistry: SMILES, formulae, geometry and stereodescriptors", () => {
   const e = (smi) => { const m = molecule(smi); const b = m.bonds.find((x) => x.order === 2); return ez(m, b.a, b.b); };
   assert.equal(e("C/C=C/C"), "E"); assert.equal(e("C/C=C\\C"), "Z");
   assert.equal(ezAnswer(["C(=O)O", "CC", "Br", "F"]), "Z");
+});
+
+test("chemistry: the 3D embedding keeps the cis/trans geometry written with / and \\", () => {
+  // E/Z read off the embedded coordinates for the double bond between heavy atoms a and b, over several random starts
+  const ezAt = (smi, a, b) => [7, 1, 2, 3, 42, 2024].map((seed) => ez(molecule(smi, { seed }), a, b));
+  const all = (smi, a, b, want, msg) => assert.deepEqual(ezAt(smi, a, b), Array(6).fill(want), `${msg} (${smi})`);
+  all("OC(=O)/C=C\\C(=O)O", 3, 4, "Z", "maleic acid"); all("OC(=O)/C=C/C(=O)O", 3, 4, "E", "fumaric acid");
+  all("CC/C=C(\\C)Cl", 2, 3, "E", "ethyl cis to methyl, so trans to Cl"); all("CC/C=C(/C)Cl", 2, 3, "Z", "ethyl trans to methyl");
+  all("C/C=C/C", 1, 2, "E", "trans-but-2-ene"); all("C/C=C\\C", 1, 2, "Z", "cis-but-2-ene");
+  all("F/C=C/F", 1, 2, "E", "trans-1,2-difluoroethene"); all("Cl/C(Br)=C(/I)C", 1, 3, "Z", "tetrasubstituted: Cl trans to I puts Br cis to I");
+  // the E/Z exercise: up-left and up-right on the same side, written C(/ul)(dl)=C(/ur)dr (each fragment attached
+  // by its first atom, as ezAnswer builds it), must give ezAnswer's descriptor
+  const heavy = (f) => parseSmiles(f).atoms.length;
+  for (const [[ul, dl, ur, dr], label] of EZ_CASES) {
+    all(`C(/${ul})(${dl})=C(/${ur})${dr}`, 0, 1 + heavy(ul) + heavy(dl), ezAnswer([ul, dl, ur, dr]), `E/Z exercise: ${label.join(", ")}`);
+  }
 });
 
 test("chemistry: Lewis checker", () => {

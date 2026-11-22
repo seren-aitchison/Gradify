@@ -11,7 +11,7 @@ import { drawMolecule, frame } from "./molview.js";
 const CHIRAL = [["Bromochlorofluoromethane", "F[C@H](Cl)Br"], ["Butan-2-ol", "CC[C@@H](C)O"], ["L-Alanine", "C[C@@H](C(=O)O)N"], ["Lactic acid", "C[C@H](O)C(=O)O"], ["Propan-2-ol", "CC(C)O"], ["Glycine", "NCC(=O)O"], ["Dichlorofluoromethane", "FC(Cl)Cl"], ["2-Chlorobutane", "CC[C@H](C)Cl"]];
 const RS = [["F[C@H](Cl)Br"], ["F[C@@H](Cl)Br"], ["CC[C@@H](C)O"], ["CC[C@H](C)O"], ["C[C@@H](C(=O)O)N"], ["C[C@H](C(=O)O)N"], ["C[C@H](O)C(=O)O"], ["CC[C@H](C)Cl"], ["OC[C@@H](O)C=O"], ["OC[C@H](O)C=O"], ["C[C@H](Br)C=C"], ["CC[C@@H](Br)C(C)C"]];
 // E/Z cases: [up-left, down-left, up-right, down-right] substituents as SMILES fragments, with display labels
-const EZ = [
+export const EZ = [
   [["C", "[H]", "C", "[H]"], ["CH₃", "H", "CH₃", "H"]], [["C", "[H]", "[H]", "C"], ["CH₃", "H", "H", "CH₃"]],
   [["Br", "C", "Cl", "[H]"], ["Br", "CH₃", "Cl", "H"]], [["CC", "C", "C", "Cl"], ["C₂H₅", "CH₃", "CH₃", "Cl"]],
   [["CO", "C", "[H]", "C"], ["CH₂OH", "CH₃", "H", "CH₃"]], [["C(=O)O", "CC", "Br", "F"], ["COOH", "C₂H₅", "Br", "F"]],

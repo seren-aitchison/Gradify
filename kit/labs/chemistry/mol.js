@@ -90,7 +90,7 @@ export function embed(m, { iters = 1500, seed = 7 } = {}) {
   const LP = (i) => { const a = atoms[i], v = { N: 5, O: 6, S: 6, P: 5 }[a.el]; return v ? Math.max(0, (v - (a.charge || 0) - atoms[i].nb.length - bonds.filter((b) => (b.a === i || b.b === i) && b.order > 1).reduce((t, b) => t + Math.ceil(b.order) - 1, 0)) / 2) : 0; };
   for (let i = 0; i < n; i++) { const nb = atoms[i].nb, hy = hybrid(m, i), th = (ANG[hy] || ANG.sp3) - (hy === "sp3" ? LP(i) * 0.0436 : 0); /* each lone pair closes an sp³ angle by about 2.5° */ for (let x = 0; x < nb.length; x++) for (let y = x + 1; y < nb.length; y++) { const a = blen.get(`${i},${nb[x]}`), b = blen.get(`${i},${nb[y]}`); terms.push([nb[x], nb[y], Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(th)), 1.5]); } }
   // planarity and cis/trans across double and aromatic bonds
-  const planes = [];
+  const planes = [], geo = []; // geo: [p, a, b, q, trans] for each double bond with / or \\ on both ends
   for (const b of bonds) if (b.order === 2 || b.order === 1.5) { const A = atoms[b.a].nb.filter((x) => x !== b.b), B = atoms[b.b].nb.filter((x) => x !== b.a); for (const p of A) for (const q of B) planes.push([p, b.a, b.b, q]); }
   for (const b of bonds) if (b.order === 2) {
     const dA = bonds.find((x) => x.dir && (x.a === b.a || x.b === b.a) && x !== b), dB = bonds.find((x) => x.dir && (x.a === b.b || x.b === b.b) && x !== b);
@@ -99,22 +99,55 @@ export function embed(m, { iters = 1500, seed = 7 } = {}) {
       const sA = dA.b === b.a ? dA.dir : dA.dir === "/" ? "\\" : "/", sB = dB.a === b.b ? dB.dir : dB.dir === "/" ? "\\" : "/";
       const p = dA.a === b.a ? dA.b : dA.a, q = dB.a === b.b ? dB.b : dB.a, trans = sA === sB;
       terms.push([p, q, trans ? 3.8 : 2.95, 2]);
+      geo.push([p, b.a, b.b, q, trans]);
     }
   }
   const chir = atoms.map((a, i) => (a.chiral && a.order.length === 4 && a.order.every((x) => x != null && x !== "H") ? [i, a.order, a.chiral === "@" ? -1 : 1] : null)).filter(Boolean);
   const pairs = []; for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) if (!atoms[i].nb.includes(j) && !atoms[i].nb.some((k) => atoms[k].nb.includes(j))) pairs.push([i, j]);
-  for (let it = 0; it < iters; it++) {
-    const G = P.map(() => [0, 0, 0]), lr = it < iters * 0.6 ? 0.05 : 0.02;
+  // The distance term alone can lose: a random start that lands on the wrong side gets flattened into the wrong
+  // isomer, which the double bond then holds. So at checkpoints the signed geometry is read off and, where it is
+  // wrong, everything on the b side of the double bond is turned 180° about the a=b axis (a proper rotation, so
+  // stereocentres keep their sense) and the optimisation carries on from there.
+  const fix = () => {
+    let flipped = false;
+    for (const [p, a, b, q, trans] of geo) {
+      if (cisSign(P, p, a, b, q) > 0 === !trans) continue;
+      const side = sideOf(m, b, a); if (!side) continue; // the bond is in a ring: no side can turn on its own
+      const o = P[a], ax = P[b].map((v, k) => v - o[k]), L = Math.hypot(...ax) || 1e-6, u = ax.map((v) => v / L);
+      for (const i of side) { const r = P[i].map((v, k) => v - o[k]), t = r[0] * u[0] + r[1] * u[1] + r[2] * u[2]; P[i] = r.map((v, k) => o[k] + 2 * t * u[k] - v); }
+      flipped = true;
+    }
+    return flipped;
+  };
+  const step = (lr) => {
+    const G = P.map(() => [0, 0, 0]);
     for (const [i, j, L, w] of terms) { const d = [P[j][0] - P[i][0], P[j][1] - P[i][1], P[j][2] - P[i][2]], r = Math.hypot(...d) || 1e-6, f = (w * (r - L)) / r; for (let k = 0; k < 3; k++) { G[i][k] += f * d[k]; G[j][k] -= f * d[k]; } }
     for (const [i, j] of pairs) { const d = [P[j][0] - P[i][0], P[j][1] - P[i][1], P[j][2] - P[i][2]], r = Math.hypot(...d) || 1e-6, min = atoms[i].el === "H" || atoms[j].el === "H" ? 2.0 : 2.8; if (r < min) { const f = (0.6 * (r - min)) / r; for (let k = 0; k < 3; k++) { G[i][k] += f * d[k]; G[j][k] -= f * d[k]; } } }
     // flatten: push the end atoms towards the plane through the double bond and one end (numerical gradient of the volume)
     for (const q of planes) { const V = vol(P, ...q); if (Math.abs(V) < 1e-4) continue; const h = 1e-3; for (const a of q) for (let k = 0; k < 3; k++) { P[a][k] += h; const V2 = vol(P, ...q); P[a][k] -= h; G[a][k] -= 0.3 * V * ((V2 - V) / h); } }
     for (const [c, ord, sign] of chir) { const V = vol(P, ord[0], ord[1], ord[2], ord[3]); if (V * sign > 0.4) continue; const h = 1e-3; for (const a of ord) for (let k = 0; k < 3; k++) { P[a][k] += h; const V2 = vol(P, ord[0], ord[1], ord[2], ord[3]); P[a][k] -= h; G[a][k] += 0.4 * sign * ((V2 - V) / h); } }
     for (let i = 0; i < n; i++) for (let k = 0; k < 3; k++) P[i][k] += lr * Math.max(-1, Math.min(1, G[i][k]));
-  }
+  };
+  for (let it = 0; it < iters; it++) { if (it === Math.floor(iters * 0.3)) fix(); step(it < iters * 0.6 ? 0.05 : 0.02); }
+  for (let round = 0; round < 3 && fix(); round++) for (let it = 0; it < 400; it++) step(0.02);
   const c = [0, 1, 2].map((k) => P.reduce((t, p) => t + p[k], 0) / n);
   m.pos = P.map((p) => p.map((v, k) => v - c[k]));
   return m;
+}
+
+// > 0 when p (on a) and q (on b) sit on the same side of the a–b bond (cis), < 0 when on opposite sides
+export function cisSign(P, p, a, b, q) {
+  const ax = P[b].map((v, k) => v - P[a][k]), L2 = ax[0] ** 2 + ax[1] ** 2 + ax[2] ** 2 || 1e-12;
+  const perp = (x, o) => { const r = P[x].map((v, k) => v - P[o][k]), t = (r[0] * ax[0] + r[1] * ax[1] + r[2] * ax[2]) / L2; return r.map((v, k) => v - t * ax[k]); };
+  const u = perp(p, a), w = perp(q, b);
+  return u[0] * w[0] + u[1] * w[1] + u[2] * w[2];
+}
+// atoms reached from b without crossing the b–a bond; null if that leads back to a (the bond is in a ring)
+function sideOf(m, b, a) {
+  const seen = new Set([b]), stack = [b];
+  while (stack.length) for (const x of m.atoms[stack.pop()].nb) if (x !== a && !seen.has(x)) { seen.add(x); stack.push(x); }
+  for (const x of seen) if (x !== b && m.atoms[x].nb.includes(a)) return null;
+  return [...seen];
 }
 
 export function molecule(smiles, opts) { return embed(addHydrogens(parseSmiles(smiles)), opts); }
