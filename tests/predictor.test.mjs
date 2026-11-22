@@ -4,6 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import * as P from "../kit/labs/chemistry/reactions/predictor.js";
 import * as K from "../kit/labs/chemistry/skeletal.js";
+import { descriptor } from "../kit/labs/chemistry/reactions/configuration.js";
 import { REACTIONS } from "../kit/labs/chemistry/reactions/library.js";
 import { EVIDENCE } from "../kit/courses/chemistry/evidence.js";
 import COURSE from "../kit/courses/chemistry/course.js";
@@ -19,6 +20,8 @@ test("starting materials are laid out on the paper as valid, correctly named mol
     for (const a of m.atoms) for (const b of m.atoms) if (a !== b) assert.ok(Math.hypot(a.x - b.x, a.y - b.y) > 0.5, `${n}: atoms overlap`);
   }
   assert.equal(name(P.starter("2-bromo-2-methylpropane")), "2-bromo-2-methylpropane");
+  // stereoisomer starters are drawn as the isomer their name says
+  for (const [n] of P.STARTERS.filter(([x]) => x.startsWith("("))) { const m = P.starter(n), d = descriptor(m); assert.ok(n.startsWith(`${d}-`), `${n} is drawn as ${d}`); assert.equal(`${d}-${name(m)}`, n); }
   assert.equal(name(P.starter("methylbenzene")), "methylbenzene");
 });
 

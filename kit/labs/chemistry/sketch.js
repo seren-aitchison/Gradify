@@ -11,6 +11,7 @@
 // Drawings are saved as notes pages in this browser, exported as PNG or SVG, or copied as Gradify Notes flashcards.
 import { shell, challenges, toggle, button, describe, esc } from "../lab.js";
 import * as K from "./skeletal.js";
+import { configuration, descriptor, chiral } from "./reactions/configuration.js";
 import * as E from "./reactions/electron-flow.js";
 import { mountMechanism } from "./reactions/mechanism-ui.js";
 import { mountReaction } from "./reactions/reaction-ui.js";
@@ -35,8 +36,19 @@ export const PROBLEMS = [
   { id: "fg-isomers", text: "Draw an aldehyde and a ketone that both have formula C<sub>3</sub>H<sub>6</sub>O", hint: "Same formula, different functional group: put the C=O at the end of the chain, then in the middle.", set: (A) => (A.formula === "C3H6O" ? (A.groups.some((g) => g.key === "aldehyde") ? "ald" : A.groups.some((g) => g.key === "ketone") ? "one" : null) : null), need: 2 },
   { id: "ring-alkene", text: "Draw a C<sub>6</sub>H<sub>10</sub> molecule with one ring and one C=C", hint: "Degree of unsaturation 2: one ring plus one double bond. Try a hexagon, then click one of its bonds.", test: (A) => A.formula === "C6H10" && A.ringCount === 1 && A.groups.filter((g) => g.key === "alkene").length === 1 },
   { id: "naphthalene", text: "Fuse two benzene rings: draw naphthalene, C<sub>10</sub>H<sub>8</sub>", hint: "Pick ⌬ and click the paper, then click one of the ring's bonds.", want: "c1ccc2ccccc2c1" },
+  { id: "rs-draw", text: "Draw (R)-butan-2-ol, showing the configuration with a wedge or dash", hint: "Draw butan-2-ol, pick Wedge and click the C–O bond near carbon 2. Click again for a dash; the R or S beside the carbon updates as you go.", test: (A) => A.name?.name === "butan-2-ol" && A.cfg?.centres[0]?.label === "R" },
+  { id: "z-draw", text: "Draw (Z)-but-2-ene", hint: "With the C=C across the page, put both methyl groups on the same side of it. The E or Z beside the bond tells you which you have.", test: (A) => A.name?.name === "but-2-ene" && A.cfg?.bonds[0]?.label === "Z" },
+  { id: "meso", text: "Draw meso-2,3-dibromobutane: two stereocentres, but superimposable on its mirror image", hint: "Draw 2,3-dibromobutane, then make each C–Br bond a wedge or a dash. (2R,3R) and (2S,3S) are the chiral pair; meso is (2R,3S). On a zig-zag with the Br atoms on opposite sides, that is one wedge and one dash.", test: (A) => A.name?.name === "2,3-dibromobutane" && A.cfg?.chiral === false },
   { id: "ester", text: "Draw ethyl ethanoate, an ester", hint: "CH₃COOCH₂CH₃: a C=O whose carbon also bonds to an O that carries an ethyl group.", want: "CCOC(C)=O" },
 ];
+
+/** The analysis plus the configuration (R/S, E/Z, whether the drawn stereoisomer is chiral) as A.cfg. */
+function analyseAll(m) {
+  const A = K.analyse(m); if (A.empty) return A;
+  A.cfg = configuration(m, A); A.cfg.text = descriptor(m, A.cfg);
+  A.cfg.chiral = A.cfg.centres.length && A.cfg.centres.every((c) => c.label) ? chiral(m) : null;
+  return A;
+}
 
 export function mount(el, ctx = {}) {
   const $ = shell(el, `
@@ -59,7 +71,7 @@ export function mount(el, ctx = {}) {
   const stage = $(".osk-stage"), host = $(".osk-svg"), say = describe(host, "Skeletal formula drawing");
   const prefs = { grid: true, showC: false, showNums: true, showStereo: true, ...load(PREFS, {}) };
   let m = load(STORE, null) || K.empty(); if (!Array.isArray(m.atoms)) m = K.empty();
-  let A = K.analyse(m), undo = [], redo = [], view = { cx: 0, cy: 0, s: 38 }, W = 600, H = 380;
+  let A = analyseAll(m), undo = [], redo = [], view = { cx: 0, cy: 0, s: 38 }, W = 600, H = 380;
   let tool = { t: "draw" }, hover = null, ghost = null, ghostRing = false, drag = null, sel = null, hi = new Set(), msg = "";
   const sessionSets = Object.fromEntries(PROBLEMS.filter((p) => p.set).map((p) => [p.id, new Set()]));
   const targets = {}; const tget = (p) => (targets[p.id] ||= target(p.want));
@@ -69,7 +81,7 @@ export function mount(el, ctx = {}) {
   // ---------- the toolbar ----------
   const poly = (n, arom) => { const R = 9, pts = Array.from({ length: n }, (_, k) => { const t = -Math.PI / 2 + (n % 4 === 0 ? Math.PI / n : 0) + (k * 2 * Math.PI) / n; return `${(12 + R * Math.cos(t)).toFixed(1)},${(12 + R * Math.sin(t)).toFixed(1)}`; }).join(" "); return `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><polygon points="${pts}" fill="none" stroke="currentColor" stroke-width="1.6"/>${arom ? '<circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.3"/>' : ""}</svg>`; };
   const TOOLS = [
-    [["select", "Move", "Move atoms and pan (V)"], ["draw", "Draw", "Bonds and chains (D)"], ["erase", "Erase", "Delete atoms and bonds (E)"]],
+    [["select", "Move", "Move atoms and pan (V)"], ["draw", "Draw", "Bonds and chains (D)"], ["wedge", "Wedge", "Wedge and dash bonds (W): click a single bond near its stereocentre"], ["erase", "Erase", "Delete atoms and bonds (E)"]],
     [3, 4, 5, 6, "benz", 7, 8].map((n) => (n === "benz" ? ["ring:6:a", poly(6, true), "Benzene ring (A)"] : [`ring:${n}`, poly(n), `${n}-membered ring (${n})`])),
     ["C", "H", "N", "O", "S", "F", "Cl", "Br", "I", "P"].map((e) => [`atom:${e}`, e, `Element ${e}`]),
     [["charge:1", "+", "Positive charge (+)"], ["charge:-1", "−", "Negative charge (−)"]],
@@ -90,7 +102,7 @@ export function mount(el, ctx = {}) {
     else if (b.dataset.act === "undo") doUndo(); else if (b.dataset.act === "redo") doRedo();
     else if (b.dataset.act === "clear" && m.atoms.length) { snap(); m = K.empty(); sel = null; commit(); }
   });
-  const HINTS = { draw: "Click an atom to add a bond · drag for a zig-zag chain · click a bond for double/triple · click empty paper to start", select: "Drag an atom to move it · drag the paper to pan · click an atom to select it for the keyboard", erase: "Click an atom or a bond to delete it", ring: "Click the paper for a ring · an atom for a spiro ring · a bond to fuse a ring", atom: "Click an atom to change it · or the paper to place one", charge: "Click an atom to change its charge" };
+  const HINTS = { draw: "Click an atom to add a bond · drag for a zig-zag chain · click a bond for double/triple · click empty paper to start", select: "Drag an atom to move it · drag the paper to pan · click an atom to select it for the keyboard", erase: "Click an atom or a bond to delete it", ring: "Click the paper for a ring · an atom for a spiro ring · a bond to fuse a ring", atom: "Click an atom to change it · or the paper to place one", charge: "Click an atom to change its charge", wedge: "Click a single bond near the stereocentre: plain → wedge (towards you) → dash (away) → plain" };
   const hint = () => { $(".osk-hint").textContent = m.atoms.length || tool.t !== "draw" ? HINTS[tool.t] : "Click the paper to start, or drag across it to draw a chain. Hexagons snap to the grid."; };
 
   // ---------- coordinates and hit-testing ----------
@@ -120,6 +132,11 @@ export function mount(el, ctx = {}) {
       else return;
     } else if (t === "charge") {
       if (h?.type !== "atom") return; snap(); const a = K.atomOf(m, h.id); a.charge = Math.max(-2, Math.min(2, (a.charge || 0) + tool.d)); sel = h.id;
+    } else if (t === "wedge") {
+      if (h?.type !== "bond") return;
+      const b = K.bondOf(m, h.id); if (b.order !== 1) { flash("Only a single bond can be a wedge or a dash."); return; }
+      const p = K.atomOf(m, b.a), q = K.atomOf(m, b.b), from = Math.hypot(p.x - x, p.y - y) <= Math.hypot(q.x - x, q.y - y) ? p.id : q.id;
+      snap(); K.cycleStereo(m, h.id, from);
     } else if (t === "erase") {
       if (!h) return; snap(); if (h.type === "atom") K.removeAtom(m, h.id); else K.removeBond(m, h.id); hover = null; if (sel && !K.atomOf(m, sel)) sel = null;
     } else if (t === "select") { sel = h?.type === "atom" ? h.id : null; paint(); info(); return; }
@@ -149,7 +166,7 @@ export function mount(el, ctx = {}) {
       ghost = K.chainPath(m, sx, sy, x, y, a?.id ?? null); ghostRing = false; drag.pts = ghost;
     } else if (drag.mode === "move") {
       const a = K.atomOf(m, drag.h.id), [px, py] = prefs.grid ? K.snapPoint(x, y) : [x, y], near = Math.hypot(px - x, py - y) < 0.25;
-      a.x = near ? px : x; a.y = near ? py : y; A = K.analyse(m);
+      a.x = near ? px : x; a.y = near ? py : y; A = analyseAll(m);
     } else { view.cx = drag.vx - (e.clientX - drag.cx) / view.s; view.cy = drag.vy - (e.clientY - drag.cy) / view.s; }
     paint();
   });
@@ -187,19 +204,19 @@ export function mount(el, ctx = {}) {
     if (k === "Enter") { snap(); if (atomH) sel = K.grow(m, atomH).id; else { const a = K.placeAtom(m, ...start(view.cx, view.cy)); sel = K.grow(m, a.id).id; } return done(); }
     if ((k === "ArrowRight" || k === "ArrowLeft") && m.atoms.length) { e.preventDefault(); const i = m.atoms.findIndex((a) => a.id === sel); sel = m.atoms[(i + (k === "ArrowRight" ? 1 : m.atoms.length - 1) + (i < 0 ? 1 : 0)) % m.atoms.length].id; paint(); info(); return; }
     if (k === "Escape") { sel = null; ghost = null; drag = null; paint(); info(); return; }
-    const tk = { v: "select", d: "draw", e: "erase", r: "ring:6", a: "ring:6:a", 3: "ring:3", 4: "ring:4", 5: "ring:5", 6: "ring:6", 7: "ring:7", 8: "ring:8" }[k.toLowerCase()];
+    const tk = { v: "select", d: "draw", w: "wedge", e: "erase", r: "ring:6", a: "ring:6:a", 3: "ring:3", 4: "ring:4", 5: "ring:5", 6: "ring:6", 7: "ring:7", 8: "ring:8" }[k.toLowerCase()];
     if (tk) { e.preventDefault(); setTool(tk); }
   });
 
   // ---------- options and outputs ----------
   const opt = (label, key) => toggle($(".osk-opts"), label, prefs[key], (v) => { prefs[key] = v; save(PREFS, prefs); paint(); });
-  opt("Hexagon paper (snap to grid)", "grid"); opt("Show every C and H", "showC"); opt("Number the main chain", "showNums"); opt("Mark stereocentres (*)", "showStereo");
+  opt("Hexagon paper (snap to grid)", "grid"); opt("Show every C and H", "showC"); opt("Number the main chain", "showNums"); opt("Mark stereocentres (* or R/S, E/Z)", "showStereo");
   const out = $(".osk-out");
   button(out, "Copy SMILES", () => copy(A.smiles || "", "SMILES copied"));
   button(out, "PNG", () => exportPng());
   button(out, "SVG", () => download(`${fileName()}.svg`, new Blob([exportSvg()], { type: "image/svg+xml" })));
   const fileName = () => (A.name?.name || "molecule").replace(/[^\w,-]+/g, "-").slice(0, 60);
-  const exportSvg = () => { const size = [720, 480], v = K.fit(m, size, { max: 48, pad: 1.4 }); return K.render(m, A, v, size, { palette: "print", showC: prefs.showC, showNums: prefs.showNums, showStereo: prefs.showStereo, title: A.name?.name || A.formula }); };
+  const exportSvg = () => { const size = [720, 480], v = K.fit(m, size, { max: 48, pad: 1.4 }); return K.render(m, A, v, size, { palette: "print", showC: prefs.showC, showNums: prefs.showNums, showStereo: prefs.showStereo, descriptors: prefs.showStereo ? A.cfg : null, title: A.name?.name || A.formula }); };
   function exportPng() {
     const svg = exportSvg(), img = new Image(), url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
     img.onload = () => { const c = document.createElement("canvas"); c.width = 1440; c.height = 960; const g = c.getContext("2d"); g.drawImage(img, 0, 0, 1440, 960); URL.revokeObjectURL(url); c.toBlob((b) => b && download(`${fileName()}.png`, b), "image/png"); };
@@ -236,7 +253,10 @@ export function mount(el, ctx = {}) {
         <tr><td>sp³ / sp² / sp carbons</td><td class="num">${c.sp3} / ${c.sp2} / ${c.sp}</td></tr>
         <tr><td>Stereocentres</td><td class="num">${A.stereo.length}${A.stereo.length ? ` → up to ${2 ** A.stereo.length} stereoisomers` : ""}</td></tr>
         <tr><td>C=C with E/Z isomers</td><td class="num">${A.ez.length}</td></tr>
+        ${A.cfg && (A.cfg.centres.length || A.cfg.bonds.length) ? `<tr><td>Configuration</td><td class="num">${esc(A.cfg.text || "not shown")}${A.cfg.chiral === false ? " · meso (achiral)" : A.cfg.chiral ? " · chiral" : ""}</td></tr>` : ""}
       </tbody></table>
+      ${A.cfg?.centres.some((c) => !c.defined) ? `<p class="osk-note"><small>A stereocentre drawn without a wedge or dash could be either R or S: pick Wedge and click one of its bonds to fix it.</small></p>` : ""}
+      ${A.cfg?.centres.concat(A.cfg.bonds).filter((c) => c.defined !== false && !c.label && c.why).slice(0, 1).map((c) => `<p class="osk-note"><small>${esc(c.why)}</small></p>`).join("") || ""}
       ${atomInfo}
       ${nm?.steps?.length ? `<details class="osk-steps"><summary>How the name is worked out</summary><ol>${nm.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></details>` : ""}
       <p class="osk-smiles"><small>SMILES</small> <code>${esc(A.smiles)}</code></p>
@@ -252,11 +272,11 @@ export function mount(el, ctx = {}) {
   // light-dark(white, near-black), so its brightness says which
   const palette = () => { const c = getComputedStyle(host).backgroundColor.match(/\d+(\.\d+)?/g)?.map(Number) || [0, 0, 0]; return c[0] + c[1] + c[2] > 382 ? "light" : "dark"; };
   function paint() {
-    host.innerHTML = K.render(m, A, view, [W, H], { palette: palette(), grid: prefs.grid, showC: prefs.showC, showNums: prefs.showNums, showStereo: prefs.showStereo, highlight: hi, hover, ghost, ghostRing, sel, title: "Skeletal formula" });
+    host.innerHTML = K.render(m, A, view, [W, H], { palette: palette(), grid: prefs.grid, showC: prefs.showC, showNums: prefs.showNums, showStereo: prefs.showStereo, descriptors: prefs.showStereo ? A.cfg : null, highlight: hi, hover, ghost, ghostRing, sel, title: "Skeletal formula" });
     host.firstElementChild.setAttribute("aria-hidden", "true");
   }
   function commit() {
-    A = K.analyse(m); save(STORE, m);
+    A = analyseAll(m); save(STORE, m);
     for (const p of PROBLEMS) if (p.set && !A.problems.length) { const v = p.set(A); if (v) sessionSets[p.id].add(v); }
     ch.check({}); hint(); paint(); info(); probPaint(false);
     say(A.empty ? "Empty" : `${A.name?.name || "Unnamed molecule"}, ${A.formula}, ${A.atoms} heavy atoms${A.groups.length ? `, groups: ${[...new Set(A.groups.map((g) => g.label))].join(", ")}` : ""}`);

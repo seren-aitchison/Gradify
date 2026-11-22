@@ -10,6 +10,8 @@
 import * as K from "../skeletal.js";
 import { competition, halideSites, sprout, substitute } from "./competition.js";
 import { ruleFor } from "./rules.js";
+import { stereoFromSmiles, descriptor } from "./configuration.js";
+import { stereoOutcome } from "./stereo-outcome.js";
 
 export { sprout };
 export const LEVELS = { foundation: "Foundation", intermediate: "Intermediate", advanced: "Advanced", university: "University" };
@@ -97,8 +99,8 @@ function stereoNotes(m, prods, kind) {
   const before = K.analyse(m).stereo.length, out = new Set();
   for (const p of prods) {
     const A = K.analyse(p.m), gained = A.stereo.length - before;
-    if (gained > 0 && kind === "planar") out.add("A new stereocentre forms at a planar (sp²) carbon. The reagent attacks either face equally, so the product is a racemic mixture (no optical activity).");
-    if (gained > 1 && kind === "anti") out.add("Two stereocentres form. The two groups add to opposite faces (anti addition), so which stereoisomers form depends on whether the alkene was E or Z; a flat drawing doesn't fix that.");
+    if (gained > 0 && kind === "planar") out.add(`A new stereocentre forms at a planar (sp²) carbon, which is attacked from either face equally.${K.analyse(m).stereo.length ? " With another stereocentre already in the molecule, that gives diastereomers in unequal amounts." : " The product is a racemic mixture (no optical activity)."}`);
+    if (gained > 1 && kind === "anti") out.add("Two stereocentres form. The two groups add to opposite faces (anti addition), so which stereoisomers form depends on whether the alkene was E or Z: the lab reads that from your drawing.");
     if (gained > 1 && kind === "syn") out.add("Two stereocentres form. Both –OH groups add to the same face (syn addition).");
   }
   return [...out];
@@ -509,7 +511,7 @@ function fromCompetition(m, cond, byproducts) {
   if (wasStereo && main.mech === "SN2") stereo.push("The carbon carrying the halogen is a stereocentre: SN2 inverts its configuration (Walden inversion).");
   if (wasStereo && main.mech === "SN1") stereo.push("The carbon carrying the halogen is a stereocentre: the planar carbocation is attacked from either face, so the product is (nearly) racemic.");
   const why = [`${r.pathways.map((p) => `${p.mech} ${p.share === "major" ? "is the main pathway" : "competes (minor)"}`).join("; ")}. ${main.why}`, ...r.factors];
-  return { prods: prods.map(({ m: pm, role, note }) => ({ m: pm, role, note })), why, byproducts, stereo, mechanism: { SN2: "sn2", SN1: "sn1", E2: "e2", E1: "e1" }[main.mech], competition: r };
+  return { prods: prods.map(({ m: pm, role, note, mech }) => ({ m: pm, role, note, mech })), why, byproducts, stereo, mechanism: { SN2: "sn2", SN1: "sn1", E2: "e2", E1: "e1" }[main.mech], competition: r };
 }
 
 /** Oxidative cleavage of C=C: hot KMnO₄ (full: aldehydes on to acids, =CH₂ to CO₂) or ozonolysis (stops at C=O). */
@@ -539,6 +541,7 @@ export function predict(m, reagentId) {
   const out = predictRaw(m, reagentId);
   out.status = out.reacts ? "reacts" : statusOf(out.why?.[0] || "");
   out.rule = out.reagent ? ruleFor(out.reagent) : null;
+  if (out.reacts) { try { out.stereo = [...out.stereo, ...stereoOutcome(m, reagentId, out)]; } catch { for (const p of out.products) p.config = null; } }
   return out;
 }
 function predictRaw(m, reagentId) {
@@ -579,6 +582,8 @@ export function drawSmiles(smiles) {
       const a = sprout(m, nu, K.atomOf(g, n.atom.id).el, n.bond.order, dir); a.charge = K.atomOf(g, n.atom.id).charge || 0; map.set(n.atom.id, a.id); queue.push(n.atom.id);
     }
   }
+  // @, @@, / and \ become wedges, dashes and C=C geometry (graphFromSmiles numbers the SMILES atoms 1, 2, 3, ...)
+  if (/[@/\\]/.test(smiles)) stereoFromSmiles(m, new Map([...map].map(([old, id]) => [old - 1, id])), smiles);
   return m;
 }
 
@@ -591,6 +596,8 @@ export const STARTERS = [
   ["ethanal", "CC=O"], ["propanal", "CCC=O"], ["propanone", "CC(C)=O"], ["ethanoic acid", "CC(=O)O"], ["ethyl ethanoate", "CCOC(C)=O"], ["ethanoyl chloride", "CC(Cl)=O"], ["ethanamide", "CC(N)=O"], ["propanenitrile", "CCC#N"],
   ["propane", "CCC"], ["2-methylpropane", "CC(C)C"],
   ["benzene", "c1ccccc1"], ["methylbenzene", "Cc1ccccc1"], ["phenol", "Oc1ccccc1"], ["methoxybenzene", "COc1ccccc1"], ["benzoic acid", "OC(=O)c1ccccc1"], ["chlorobenzene", "Clc1ccccc1"], ["nitrobenzene", "[O-][N+](=O)c1ccccc1"], ["phenylamine", "Nc1ccccc1"], ["1,4-dimethylbenzene", "Cc1ccc(C)cc1"], ["4-methylbenzoic acid", "Cc1ccc(cc1)C(=O)O"],
+  // stereoisomers, drawn with wedges or fixed C=C geometry (the name's descriptor is checked in tests/predictor.test.mjs)
+  ["(E)-but-2-ene", "C/C=C/C"], ["(Z)-but-2-ene", "C/C=C\\C"], ["(S)-2-bromobutane", "CC[C@H](C)Br"], ["(R)-2-bromobutane", "CC[C@@H](C)Br"], ["(R)-butan-2-ol", "CC[C@@H](C)O"], ["(E)-pent-2-ene", "CC/C=C/C"], ["(Z)-pent-2-ene", "CC/C=C\\C"],
 ];
 export function starter(name) {
   const s = STARTERS.find((x) => x[0] === name); if (!s) return null;
@@ -606,10 +613,11 @@ export { nameOf, split as components };
 export function explainContext(m, res) {
   const A = K.analyse(m);
   return {
-    start: { name: A.name?.name || null, formula: A.formula, groups: A.groups.map((g) => g.label) },
+    start: { name: A.name?.name || null, formula: A.formula, groups: A.groups.map((g) => g.label), configuration: descriptor(m) || null },
     reagent: res.reagent ? { label: res.reagent.label, conditions: res.reagent.cond, type: res.type, level: res.reagent.level } : null,
     status: res.status,
-    products: (res.products || []).map((p) => ({ name: nameOf(p.m), formula: K.analyse(p.m).formula, role: p.role, note: p.note || null })),
+    products: (res.products || []).map((p) => ({ name: nameOf(p.m), formula: K.analyse(p.m).formula, role: p.role, note: p.note || null,
+      ...(p.config && (p.config.centres.length || p.config.bonds.length) ? { configuration: { descriptor: p.config.text || null, form: p.config.form, enantiomer: p.config.mirror, notes: p.config.notes } } : {}) })),
     byproducts: res.byproducts || [], reasoning: res.why || [], stereochemistry: res.stereo || [],
     pathways: res.competition ? res.competition.pathways.map((p) => ({ mechanism: p.mech, share: p.share })) : null,
     mechanism: res.mechanism || null, rule: res.rule,

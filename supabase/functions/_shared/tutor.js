@@ -363,6 +363,7 @@ export function chemistryAuthority(ctx) {
   if (st === "declined") lines.push("STATUS: declined. The lab can't reliably predict this case. Explain why, using its stated reason, and the general ideas that make the case hard; do NOT give, guess or hint at a product. Suggest what the learner could try instead (another reagent or a simpler molecule) only if the reason says so.");
   if (st === "no-reaction") lines.push("STATUS: no reaction. Explain why the reagent doesn't react with this molecule under these conditions, using the lab's reason.");
   if (st === "reacts" && (ctx.products || []).filter((p) => p.role !== "minor").length > 1) lines.push("Several main products form: say so, and explain why (e.g. similar stability, two equivalent positions).");
+  if (JSON.stringify(ctx?.products || []).includes('"configuration"') || ctx?.start?.configuration) lines.push("STEREOCHEMISTRY: the configuration data (R/S and E/Z descriptors, and whether a product is one stereoisomer, a racemate, meso or a mixture of diastereomers) is the engine's. Explain why, from the data's notes (syn or anti addition, inversion, a planar intermediate); never assign or change a descriptor yourself. Where the data gives none, say the lab doesn't predict it rather than supplying one.");
   if (ctx?.kind === "mechanism") lines.push("MECHANISM: the engine's verdict on each arrow (valid or not, and its error messages) is final; explain it, don't re-judge it.");
   return lines.join("\n");
 }

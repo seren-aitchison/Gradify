@@ -15,9 +15,14 @@ import { REACTIONS } from "./library.js";
 import { CONFIDENCE } from "./rules.js";
 import { explainContext } from "./predictor.js";
 import { mountTutor } from "./tutor-ui.js";
+import { configuration, descriptor } from "./configuration.js";
 
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>");
 const nameOf = (m) => { const A = K.analyse(m); return A.name?.name || A.formula; };
+// how a product's stereoisomers form (stereo-outcome.js), as shown under its name
+const FORM = { racemic: "racemate (±), 50:50", meso: "meso: one achiral stereoisomer", single: "one stereoisomer", diastereomers: "diastereomers, unequal amounts", stereoisomers: "mixture of stereoisomers", unspecified: "configuration not predicted", undrawn: "R/S not shown: draw the starting material with wedges" };
+/** The reaction's stereochemistry notes, then each product's own (no repeats). */
+const stereoNotes = (res) => [...new Set([...(res.stereo || []), ...(res.products || []).flatMap((p) => p.config?.notes || [])])];
 const shuffle = (a, seed) => { const r = [...a]; let x = seed || 1; for (let i = r.length - 1; i > 0; i--) { x = (x * 9301 + 49297) % 233280; const j = Math.floor((x / 233280) * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r; };
 const HIST = "gradify.organicLab.rxHistory";
 const loadH = () => { try { return JSON.parse(localStorage.getItem(HIST)) || {}; } catch { return {}; } };
@@ -108,8 +113,13 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     paint();
   }
   const pal = () => palette();
-  const mol = (m, w = 240, h = 150) => { const A = K.analyse(m); return K.render(m, A, K.fit(m, [w, h], { max: 30, pad: 0.8 }), [w, h], { palette: pal(), title: A.name?.name || A.formula }); };
-  const card = (m, role = "product", note = "", w, h) => { const A = K.analyse(m); return `<figure class="rx-mol ${role === "minor" ? "minor" : ""}">${mol(m, w, h)}<figcaption>${role !== "product" ? `<em class="rx-role ${role}">${role}</em> ` : ""}<b>${esc(A.name?.name || "")}</b> <span>${sub(A.formula)}${A.charge ? (A.charge < 0 ? "⁻" : "⁺") : ""}</span>${note ? `<small>${esc(note)}</small>` : ""}</figcaption></figure>`; };
+  const mol = (m, w = 240, h = 150) => { const A = K.analyse(m); return K.render(m, A, K.fit(m, [w, h], { max: 30, pad: 0.8 }), [w, h], { palette: pal(), title: A.name?.name || A.formula, descriptors: configuration(m, A) }); };
+  // config: the product's stereochemical outcome (stereo-outcome.js); for the starting material it is read from the drawing
+  const card = (m, role = "product", note = "", w, h, config = null) => {
+    const A = K.analyse(m), d = config ? config.text : descriptor(m), name = A.name?.name || "";
+    const form = config && FORM[config.form] ? `<small class="rx-config">${config.form === "racemic" && config.mirror ? `with ${esc(config.mirror)}: ` : ""}${esc(FORM[config.form])}</small>` : "";
+    return `<figure class="rx-mol ${role === "minor" ? "minor" : ""}">${mol(m, w, h)}<figcaption>${role !== "product" ? `<em class="rx-role ${role}">${role}</em> ` : ""}<b>${esc(d && name ? `${d}-${name}` : name)}</b> <span>${sub(A.formula)}${A.charge ? (A.charge < 0 ? "⁻" : "⁺") : ""}</span>${form}${note ? `<small>${esc(note)}</small>` : ""}</figcaption></figure>`;
+  };
   function options(res) {
     const right = res.reacts ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : ["No reaction"];
     const pool = new Set(res.reacts && res.join === "+" ? [right.join(" + ")] : right);
@@ -127,7 +137,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     const res = predict(start, reagent), r = res.reagent;
     const arrow = `<div class="mx-arrow rx-arrow"><small>${esc(r.label)}</small><b>⟶</b><small>${esc(r.cond)}</small></div>`;
     const opts = predictFirst ? options(res) : null, hidden = predictFirst && guess == null;
-    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.status === "declined" ? "Not predicted" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
+    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.status === "declined" ? "Not predicted" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note, undefined, undefined, p.config)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
     const by = res.reacts && !hidden && res.byproducts.length ? `<span class="rx-by">+ ${res.byproducts.map(sub).join(" + ")}</span>` : "";
     box.innerHTML = `<div class="rx-row">${card(start)}${arrow}<div class="rx-prods">${prods}${by}</div></div>`;
     if (hidden) {
@@ -138,7 +148,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     const verdict = guess == null ? "" : opts.right.includes(guess) ? `<p class="lab-msg ok">✓ Right: ${esc(guess)}.</p>` : `<p class="lab-msg">✗ ${guess === "(time ran out)" ? "Time ran out." : `You chose ${esc(guess)}.`} ${res.reacts ? `The answer: ${esc(opts.right.join(" or "))}.` : "There's no reaction."}</p>`;
     const comp = res.competition ? `<p class="osk-aka">${res.competition.pathways.map((p) => `${p.mech}: ${p.share}`).join(" · ")}. Explore other conditions in the <b>Conditions</b> view.</p>` : "";
     const rule = res.rule ? `<details class="rx-rule"><summary>The rule behind this</summary><dl><dt>Applies to</dt><dd>${esc(res.rule.reactants)}</dd><dt>Gives</dt><dd>${esc(res.rule.products)}</dd><dt>Selectivity</dt><dd>${esc(res.rule.selectivity)}</dd>${res.rule.limitations.length ? `<dt>Doesn't cover</dt><dd><ul>${res.rule.limitations.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></dd>` : ""}<dt>Sources</dt><dd>${res.rule.sources.map((x) => esc(`${x.id === "aqa" ? "AQA A-level (7405)" : x.id === "clayden" ? "Clayden, Organic Chemistry" : x.id === "ocr" ? "OCR A-level" : "March's Advanced Organic Chemistry"}: ${x.topic}`)).join("; ")}</dd><dt>Confidence</dt><dd>${esc(res.rule.confidence)}: ${esc(CONFIDENCE[res.rule.confidence])}</dd></dl></details>` : "";
-    info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : res.status === "declined" ? "Outside the lab's rules" : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && res.stereo?.length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${res.stereo.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
+    info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : res.status === "declined" ? "Outside the lab's rules" : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && stereoNotes(res).length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${stereoNotes(res).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
     if (practice) button(btns, "Next question", nextQuestion, "pri");
     if (res.reacts && res.mechanism && onMechanism && REACTIONS.some((x) => x.id === res.mechanism)) button(btns, "See the mechanism", () => onMechanism(res.mechanism), practice ? "" : "pri");
     if (res.reacts) res.products.forEach((p, i) => { if (K.analyse(p.m).charge) return; button(btns, res.products.length > 1 ? `Use ${p.role === "product" ? nameOf(p.m) : `the ${p.role} product`} next` : "Use as the next starting material", () => {

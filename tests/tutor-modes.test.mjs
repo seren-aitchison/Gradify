@@ -107,6 +107,14 @@ test("chemistry tutor: declined, no-reaction, reviewed and disputed evidence eac
   assert.match(chemistryAuthority({ kind: "mechanism", confidence: "provisional" }), /verdict on each arrow .* is final/);
 });
 
+test("chemistry tutor: the engine's stereochemistry is sent with the products, and only the engine assigns it", () => {
+  const ctx = chem("C/C=C/C", "br2"), p = ctx.products[0];
+  assert.equal(p.configuration.form, "meso"); assert.match(p.configuration.descriptor, /^\(2[RS],3[RS]\)$/);
+  assert.match(chemistryAuthority(ctx), /STEREOCHEMISTRY: .*never assign or change a descriptor yourself/);
+  assert.equal(chem("CC[C@H](C)Br", "naoh-aq").start.configuration, "(S)");
+  assert.doesNotMatch(chemistryAuthority(chem("CCC=O", "cr-reflux")), /STEREOCHEMISTRY/, "only when there is stereochemistry to explain");
+});
+
 test("chemistry tutor: requests are checked, conversations alternate, diagnosis needs the learner's answer", () => {
   const ctx = chem("CCBr", "naoh-aq");
   assert.throws(() => buildRequest({ mode: "chemistry", intent: "lecture", context: ctx }), /Unknown chemistry/);

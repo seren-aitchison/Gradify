@@ -200,7 +200,18 @@ function kekulise(m, bonds) {
 
 /** Sets an atom's element (charges reset). */
 export function setElement(m, id, el) { const a = atomOf(m, id); if (a) { a.el = el; a.charge = 0; } }
-export function cycleOrder(m, id) { const b = bondOf(m, id); if (b) b.order = (b.order % 3) + 1; }
+export function cycleOrder(m, id) { const b = bondOf(m, id); if (b) { b.order = (b.order % 3) + 1; if (b.order !== 1) delete b.stereo; } }
+/**
+ * Cycles a single bond plain → wedge → dash → plain, with the narrow end (bond.a) at `from`, the stereocentre. A
+ * bond whose narrow end is at the other atom is turned round and starts again as a wedge.
+ */
+export function cycleStereo(m, id, from) {
+  const b = bondOf(m, id); if (!b || b.order !== 1) return null;
+  if (from != null && b.a !== from && b.b === from) { [b.a, b.b] = [b.b, b.a]; b.stereo = "wedge"; return b.stereo; }
+  b.stereo = b.stereo === "wedge" ? "dash" : b.stereo === "dash" ? undefined : "wedge";
+  if (!b.stereo) delete b.stereo;
+  return b.stereo || null;
+}
 export function bounds(m) {
   if (!m.atoms.length) return { x0: -3, y0: -2, x1: 3, y1: 2 };
   const xs = m.atoms.map((a) => a.x), ys = m.atoms.map((a) => a.y);
@@ -352,6 +363,8 @@ export function analyse(m) {
     empirical: hill(emp), dou, ringCount: nBonds - n + nc, components: nc, aromaticRings: ar.rings.length, aromaticAtoms: [...ar.atoms].map((i) => G.id[i]),
     problems, hyb: Object.fromEntries(G.id.map((id, i) => [id, hyb[i]])), hcount: Object.fromEntries(G.id.map((id, i) => [id, G.hx[i]])),
     carbonClass: Object.fromEntries(G.id.map((id, i) => [id, cls[i]])), carbon, groups, stereo, ez, hash,
+    // constitutional class of each atom (equal for symmetry-equivalent atoms), for comparing stereoisomers
+    classOf: Object.fromEntries(G.id.map((id, i) => [id, lab[i]])),
   });
   out.smiles = smiles(G);
   out.condensed = nc === 1 && out.ringCount === 0 ? condensed(G) : null;
@@ -650,7 +663,9 @@ export function gridPath(x0, y0, x1, y1, X, Y) {
 /**
  * The drawing as an SVG string. view: { cx, cy, s } (world centre and pixels per bond), size: [W, H].
  * opts: { palette, grid, showC, showNums, showStereo, highlight: Set of atom ids, hover: { type, id },
- *         ghost: [[x, y], ...] with ghostRing (closed) or a chain, sel: atom id, title }
+ *         ghost: [[x, y], ...] with ghostRing (closed) or a chain, sel: atom id, title,
+ *         descriptors: configuration() from reactions/configuration.js, to print R/S by centres and E/Z by C=C bonds }
+ * Single bonds with stereo "wedge" or "dash" are drawn as wedges, narrow end at bond.a.
  */
 export function render(m, A, view, [W, H], opts = {}) {
   const P = PALETTES[opts.palette || "dark"], s = view.s, X = (x) => (x - view.cx) * s + W / 2, Y = (y) => (y - view.cy) * s + H / 2;
@@ -672,7 +687,12 @@ export function render(m, A, view, [W, H], opts = {}) {
     const dx = q.x - p.x, dy = q.y - p.y, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, nx = -uy, ny = ux;
     const t0 = labelled(p) ? 0.3 : 0, t1 = labelled(q) ? 0.3 : 0, x1 = p.x + ux * t0, y1 = p.y + uy * t0, x2 = q.x - ux * t1, y2 = q.y - uy * t1;
     const col = bad.has(b.a) && bad.has(b.b) ? P.warn : P.bond;
-    if (b.order === 1) seg(x1, y1, x2, y2, col);
+    if (b.order === 1 && (b.stereo === "wedge" || b.stereo === "dash")) {
+      // narrow end at b.a (the stereocentre); a solid wedge comes towards you, a hashed one goes away
+      const w = 0.13, ex = nx * w, ey = ny * w;
+      if (b.stereo === "wedge") out.push(`<path d="M${f2(X(x1))},${f2(Y(y1))}L${f2(X(x2 + ex))},${f2(Y(y2 + ey))}L${f2(X(x2 - ex))},${f2(Y(y2 - ey))}Z" fill="${col}" stroke="${col}" stroke-width="${f2(sw * 0.5)}" stroke-linejoin="round"/>`);
+      else { const k = 7; for (let i = 1; i <= k; i++) { const t = i / k, cx = x1 + (x2 - x1) * t, cy = y1 + (y2 - y1) * t, h = w * t; seg(cx - nx * h, cy - ny * h, cx + nx * h, cy + ny * h, col); } }
+    } else if (b.order === 1) seg(x1, y1, x2, y2, col);
     else if (b.order === 3) { seg(x1, y1, x2, y2, col); for (const o of [-0.14, 0.14]) seg(x1 + nx * o, y1 + ny * o, x2 + nx * o, y2 + ny * o, col); }
     else {
       const key = `${Math.min(b.a, b.b)}-${Math.max(b.a, b.b)}`, rc = ringOf.get(key);
@@ -687,6 +707,14 @@ export function render(m, A, view, [W, H], opts = {}) {
       else { seg(x1, y1, x2, y2, col); const o = 0.17 * side, sh = 0.16; seg(x1 + nx * o + ux * (t0 ? 0 : sh), y1 + ny * o + uy * (t0 ? 0 : sh), x2 + nx * o - ux * (t1 ? 0 : sh), y2 + ny * o - uy * (t1 ? 0 : sh), col); }
     }
   }
+  // E/Z beside each C=C whose geometry the drawing defines
+  for (const d of opts.descriptors?.bonds || []) {
+    if (!d.label) continue; const p = byId.get(d.atoms[0]), q = byId.get(d.atoms[1]); if (!p || !q) continue;
+    const L = Math.hypot(q.x - p.x, q.y - p.y) || 1, nx = -(q.y - p.y) / L, ny = (q.x - p.x) / L, mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2;
+    // the side with fewer atoms nearby
+    const crowd = (sg) => m.atoms.reduce((t, a) => t + Math.max(0, 1.2 - Math.hypot(a.x - (mx + sg * nx * 0.5), a.y - (my + sg * ny * 0.5))), 0), sg = crowd(1) <= crowd(-1) ? 1 : -1;
+    out.push(`<text x="${f2(X(mx + sg * nx * 0.5))}" y="${f2(Y(my + sg * ny * 0.5) + fs * 0.25)}" text-anchor="middle" font-size="${f2(fs * 0.72)}" font-weight="700" font-style="italic" fill="${P.accent}" font-family="Geist, system-ui, sans-serif">${d.label}</text>`);
+  }
   // atom labels
   for (const a of m.atoms) {
     const x = X(a.x), y = Y(a.y), nb = m.bonds.filter((b) => b.a === a.id || b.b === a.id).map((b) => byId.get(b.a === a.id ? b.b : b.a));
@@ -699,7 +727,18 @@ export function render(m, A, view, [W, H], opts = {}) {
       if (hs) out.push(left ? `<text x="${f2(x - ew / 2 - fs * 0.04)}" y="${f2(y + fs * 0.36)}" text-anchor="end" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>` : `<text x="${f2(x + ew / 2 + fs * 0.02)}" y="${f2(y + fs * 0.36)}" text-anchor="start" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>`);
     }
     if (a.charge) out.push(`<text x="${f2(x + fs * 0.62)}" y="${f2(y - fs * 0.35)}" text-anchor="middle" font-size="${f2(fs * 0.75)}" font-weight="700" fill="${P.el[a.el] || P.bond}" font-family="Geist, system-ui, sans-serif">${Math.abs(a.charge) > 1 ? Math.abs(a.charge) : ""}${a.charge > 0 ? "+" : "−"}</text>`);
-    if (opts.showStereo && A.stereo?.includes(a.id)) out.push(`<text x="${f2(x - fs * 0.55)}" y="${f2(y - fs * 0.3)}" text-anchor="middle" font-size="${f2(fs * 0.9)}" font-weight="700" fill="${P.accent}">*</text>`);
+    const rs = opts.descriptors?.centres?.find((c) => c.atom === a.id && c.label);
+    if (rs) {
+      // the direction furthest from every bond and from where the main-chain number goes (opposite the bonds)
+      const nbs = m.bonds.filter((b) => b.a === a.id || b.b === a.id).map((b) => byId.get(b.a === a.id ? b.b : b.a)).filter(Boolean);
+      const taken = nbs.map((o) => Math.atan2(o.y - a.y, o.x - a.x));
+      if (opts.showNums) { const vx = -nbs.reduce((t, o) => t + (o.x - a.x), 0), vy = -nbs.reduce((t, o) => t + (o.y - a.y), 0); taken.push(Math.hypot(vx, vy) < 0.2 ? -Math.PI / 2 : Math.atan2(vy, vx)); }
+      const gap = (t) => Math.min(...taken.map((u) => Math.abs(Math.atan2(Math.sin(t - u), Math.cos(t - u)))), Math.PI);
+      let best = -Math.PI / 2; for (let k = 0; k < 24; k++) { const t = (k * Math.PI) / 12; if (gap(t) > gap(best) + 1e-6) best = t; }
+      const r = labelled(a) ? 0.62 : 0.48;
+      out.push(`<text x="${f2(X(a.x + Math.cos(best) * r))}" y="${f2(Y(a.y + Math.sin(best) * r) + fs * 0.25)}" text-anchor="middle" font-size="${f2(fs * 0.72)}" font-weight="700" font-style="italic" fill="${P.accent}" font-family="Geist, system-ui, sans-serif">${rs.label}</text>`);
+    }
+    else if (opts.showStereo && A.stereo?.includes(a.id)) out.push(`<text x="${f2(x - fs * 0.55)}" y="${f2(y - fs * 0.3)}" text-anchor="middle" font-size="${f2(fs * 0.9)}" font-weight="700" fill="${P.accent}">*</text>`);
     if (opts.sel === a.id) out.push(`<circle cx="${f2(x)}" cy="${f2(y)}" r="${f2(s * 0.36)}" fill="none" stroke="${P.accent}" stroke-width="2"/>`);
   }
   // main-chain numbering from the name
