@@ -1,0 +1,116 @@
+{
+ "id": "maths-u03-vieta-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Vieta's Formulas",
+ "title": "Roots α and β of 2x² − 6x + 1",
+ "caption": "The roots sum to 3 and multiply to 1/2, so they sit symmetrically about x = 3/2 and α² + β² = 3² − 2 × 1/2 = 8 without finding them.",
+ "alt": "A parabola y = 2x squared minus 6x plus 1 crossing the x-axis at α, about 0.18, and β, about 2.82, symmetric about x = 1.5.",
+ "description": [
+  "The parabola 2x² − 6x + 1 meets the x-axis at α and β.",
+  "Their sum is 6/2 = 3, so their midpoint is x = 3/2, the axis of symmetry.",
+  "Their product is 1/2, so α² + β² = (α + β)² − 2αβ = 9 − 1 = 8."
+ ],
+ "range": {
+  "x": [
+   -1,
+   4
+  ],
+  "y": [
+   -5,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2*x^2-6*x+1",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.5,
+   "label": "x = 3/2"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.17712434446770464,
+   "y": 0,
+   "label": "α",
+   "colour": "a2",
+   "dx": 6,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 2.8228756555322954,
+   "y": 0,
+   "label": "β",
+   "colour": "a2",
+   "dx": -6,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x^2-6*x+1",
+   "x": 0.17712434446770464,
+   "y": 0,
+   "name": "α = (3 − √7)/2 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "2*x^2-6*x+1",
+   "x": 2.8228756555322954,
+   "y": 0,
+   "name": "β = (3 + √7)/2 is a root"
+  },
+  {
+   "type": "min",
+   "expr": "2*x^2-6*x+1",
+   "domain": [
+    -1,
+    4
+   ],
+   "x": 1.5,
+   "y": -3.5,
+   "name": "the axis of symmetry is x = (α + β)/2 = 3/2"
+  }
+ ],
+ "fromLesson": [
+  "= 8"
+ ]
+}

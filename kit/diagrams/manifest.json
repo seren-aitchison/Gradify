@@ -37508,5 +37508,1658 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u03-absolute-value": {
+  "title": "|x| = 2x − 3 has one solution",
+  "caption": "y = |x| and y = 2x − 3 meet only at (3, 3). The other case, x = 1, would need −x = 2x − 3 with x < 0, and the lines do not meet there.",
+  "alt": "The V-shaped graph y = |x| and the line y = 2x − 3 crossing once at (3, 3).",
+  "description": [
+   "Draw y = |x|, a V with its point at the origin.",
+   "Draw y = 2x − 3, a line with gradient 2 crossing the y-axis at −3.",
+   "They meet once, at (3, 3); x = 1 is not a solution because |1| = 1 but 2(1) − 3 = −1."
+  ],
+  "course": "maths",
+  "lesson": "Absolute Value Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Absolute Value Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|3| = 3 = 2(3) − 3",
+    "ok": true,
+    "detail": "abs(x) → 3, 2*x-3 → 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-binomial-sqrt": {
+  "title": "√(1 − 2x) and its three-term expansion",
+  "caption": "1 − x − x²/2 hugs √(1 − 2x) near x = 0 and the two drift apart towards the edge of validity at |x| = 1/2, where the expansion stops being reliable.",
+  "alt": "The curve y = the square root of 1 minus 2x and the dashed parabola y = 1 − x − x squared over 2, almost identical near x = 0.",
+  "description": [
+   "The expansion is 1 − x − ½x² + …, valid for |x| < ½.",
+   "Near x = 0 the parabola and the curve are almost the same.",
+   "Further from 0 they separate; the curve exists only for x ≤ ½."
+  ],
+  "course": "maths",
+  "lesson": "Advanced Algebra",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Advanced Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "√(1 − 2x) = 1 at x = 0",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "the expansion is 1 at x = 0",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "the curve ends at x = 1/2",
+    "ok": true,
+    "detail": "y(0.5) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-boolean-venn": {
+  "title": "A + Ā·B covers the same region as A + B",
+  "caption": "In the Venn diagram A together with the part of B outside A is the same region as A ∪ B: the shaded regions agree, so A·B + A·B̄ + Ā·B = A + B.",
+  "alt": "A two-set Venn diagram with sets A and B; A together with B-not-A covers the same three regions as A or B.",
+  "description": [
+   "The four regions of the diagram are A only, both, B only and neither.",
+   "A + Ā·B takes all of A and the part of B outside A.",
+   "Together that is A only, both and B only: exactly A ∪ B."
+  ],
+  "course": "maths",
+  "lesson": "Boolean Algebra",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Boolean Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A + Ā·B covers 3 regions",
+    "ok": true,
+    "detail": "counted 3"
+   },
+   {
+    "name": "A + B covers the same 3 regions",
+    "ok": true,
+    "detail": "counted 3"
+   },
+   {
+    "name": "the lesson states \"A + B\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u03-complete-square": {
+  "title": "The vertex and roots of x² − 8x + 5",
+  "caption": "Completing the square gives y = (x − 4)² − 11: the lowest point is (4, −11) and the roots are 4 ± √11, equally either side of x = 4.",
+  "alt": "A parabola y = x squared minus 8x plus 5 with minimum (4, −11) and roots at about 0.68 and 7.32.",
+  "description": [
+   "x² − 8x + 5 = (x − 4)² − 11.",
+   "The squared term is never negative, so the minimum is −11 at x = 4.",
+   "The graph crosses the x-axis where (x − 4)² = 11, at x = 4 ± √11 ≈ 0.68 and 7.32."
+  ],
+  "course": "maths",
+  "lesson": "Completing the Square",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Completing the Square"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the minimum of x² − 8x + 5 is (4, −11)",
+    "ok": true,
+    "detail": "found (4, -11)"
+   },
+   {
+    "name": "4 − √11 is a root",
+    "ok": true,
+    "detail": "y(0.6833752096446002) = 0"
+   },
+   {
+    "name": "4 + √11 is a root",
+    "ok": true,
+    "detail": "y(7.3166247903554) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-complex-roots": {
+  "title": "The roots 3 ± 5i of z² − 6z + 34 = 0",
+  "caption": "The roots are a conjugate pair, mirror images in the real axis, and each has modulus √(9 + 25) = √34 ≈ 5.83.",
+  "alt": "The points 3 + 5i and 3 − 5i on the complex plane, mirror images in the real axis, each at distance square root of 34 from the origin.",
+  "description": [
+   "The formula gives z = (6 ± √−100)/2 = 3 ± 5i.",
+   "Plot 3 + 5i at (3, 5) and 3 − 5i at (3, −5): mirror images in the real axis.",
+   "Each is √(3² + 5²) = √34 from the origin."
+  ],
+  "course": "maths",
+  "lesson": "Complex Numbers",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Complex Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|3 + 5i| = √34",
+    "ok": true,
+    "detail": "measured 5.83095"
+   },
+   {
+    "name": "|3 − 5i| = √34",
+    "ok": true,
+    "detail": "measured 5.83095"
+   },
+   {
+    "name": "the lesson states \"3 ± 5i\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "25 labels in 640×350"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "25 labels in 380×360"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u03-composite": {
+  "title": "gf(x) = 1/(3x − 2) meets 1/5 at x = 7/3",
+  "caption": "gf has a break at x = 2/3, where 3x − 2 = 0, so that value is excluded from the domain. The curve meets y = 1/5 at x = 7/3.",
+  "alt": "The two branches of y = 1/(3x − 2) either side of x = 2/3, and the horizontal line y = 0.2 meeting the right branch at x = 7/3.",
+  "description": [
+   "gf(x) = g(3x − 4) = 1/(3x − 2).",
+   "At x = 2/3 the denominator is zero: the graph has a break and the domain excludes it.",
+   "1/(3x − 2) = 1/5 gives 3x − 2 = 5, so x = 7/3, where the right branch meets y = 1/5."
+  ],
+  "course": "maths",
+  "lesson": "Composite Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Composite Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gf(7/3) = 1/5",
+    "ok": true,
+    "detail": "1/(3*x-2) → 0.2, 0.2 → 0.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-compound-growth": {
+  "title": "£1,000 at 4% passes £1,500 in year 11",
+  "caption": "The curve 1000 × 1.04ⁿ meets £1,500 at n = ln 1.5 / ln 1.04 ≈ 10.34, so the first whole year above £1,500 is year 11, with £1539.45.",
+  "alt": "A rising curve for money against years, crossing the line at 1,500 pounds between 10 and 11 years.",
+  "description": [
+   "The balance after n years is 1000 × 1.04ⁿ.",
+   "The dashed line is £1,500.",
+   "The curve meets it at n ≈ 10.34, so the balance first exceeds £1,500 after 11 years."
+  ],
+  "course": "maths",
+  "lesson": "Exponential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Exponential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1000 × 1.04ⁿ = 1500 at n = ln 1.5 / ln 1.04",
+    "ok": true,
+    "detail": "1000*1.04^x → 1500, 1500 → 1500"
+   },
+   {
+    "name": "after 11 years the balance is £1,539.45",
+    "ok": true,
+    "detail": "y(11) = 1539.4541"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-cubic-roots": {
+  "title": "The cubic x³ − 6x² + 11x − 6",
+  "caption": "Once (x − 1) is a factor, the rest factorises as (x − 2)(x − 3): the graph crosses the x-axis at 1, 2 and 3.",
+  "alt": "The graph of y = x cubed minus 6x squared plus 11x minus 6 crossing the x-axis at 1, 2 and 3.",
+  "description": [
+   "f(1) = 0, so (x − 1) is a factor.",
+   "Dividing leaves x² − 5x + 6 = (x − 2)(x − 3).",
+   "So the graph crosses the x-axis at x = 1, 2 and 3."
+  ],
+  "course": "maths",
+  "lesson": "Cubic Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Cubic Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(1) = 0",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "f(2) = 0",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "f(3) = 0",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-cubic-shape": {
+  "title": "A cubic with negative leading coefficient",
+  "caption": "With leading term −2x³ the graph rises on the left and falls on the right; it crosses the y-axis at (0, 4), and a cubic can turn at most twice.",
+  "alt": "The graph of y = −2x cubed plus 5x squared minus x plus 4, rising on the left and falling on the right, crossing the y-axis at (0, 4).",
+  "description": [
+   "The leading term −2x³ dominates for large |x|: the graph is up on the left and down on the right.",
+   "At x = 0, y = 4: the y-intercept.",
+   "A cubic has at most 2 turning points; this one has a minimum then a maximum."
+  ],
+  "course": "maths",
+  "lesson": "Polynomials",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Polynomials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the y-intercept is (0, 4)",
+    "ok": true,
+    "detail": "y(0) = 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-cubic-through-12": {
+  "title": "The cubic with roots −1, 2, 3 through (0, 12)",
+  "caption": "The roots fix the shape k(x + 1)(x − 2)(x − 3); passing through (0, 12) fixes k = 2, so f(x) = 2x³ − 8x² + 2x + 12.",
+  "alt": "The graph of y = 2(x + 1)(x − 2)(x − 3) crossing the x-axis at −1, 2 and 3 and the y-axis at 12.",
+  "description": [
+   "The roots −1, 2, 3 give f(x) = k(x + 1)(x − 2)(x − 3).",
+   "At x = 0 the value is 6k, and the curve must pass through (0, 12), so k = 2.",
+   "The graph crosses the x-axis at −1, 2 and 3 and the y-axis at 12."
+  ],
+  "course": "maths",
+  "lesson": "Roots of Polynomials",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Roots of Polynomials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(0) = 12",
+    "ok": true,
+    "detail": "y(0) = 12"
+   },
+   {
+    "name": "f(−1) = 0",
+    "ok": true,
+    "detail": "y(-1) = 0"
+   },
+   {
+    "name": "f(2) = 0",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "f(3) = 0",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "the expanded form 2x³ − 8x² + 2x + 12 agrees: f(1) = 8",
+    "ok": true,
+    "detail": "y(1) = 8"
+   },
+   {
+    "name": "the factored form gives f(1) = 8",
+    "ok": true,
+    "detail": "y(1) = 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-domain-range": {
+  "title": "Domain x ≥ 1 and range h ≥ 3",
+  "caption": "The curve starts at (1, 3) and has no points to the left of x = 1 (the root needs x − 1 ≥ 0). It rises from 3 upwards: the range is h(x) ≥ 3.",
+  "alt": "The graph of h(x) = 3 plus the square root of x minus 1, starting at the point (1, 3) and rising to the right.",
+  "description": [
+   "The root needs x − 1 ≥ 0, so the curve exists only for x ≥ 1.",
+   "The first point is (1, 3), the lowest point of the graph.",
+   "The curve rises without limit, so the range is every value from 3 upwards."
+  ],
+  "course": "maths",
+  "lesson": "Domain and Range",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Domain and Range"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the lowest value is h(1) = 3",
+    "ok": true,
+    "detail": "found (1, 3)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-ellipse-line": {
+  "title": "The ellipse x² + 2y² = 18 and the line y = x",
+  "caption": "Putting y = x gives 3x² = 18, so x = ±√6: the line meets the ellipse at (√6, √6) and (−√6, −√6).",
+  "alt": "An ellipse x squared plus 2y squared equals 18 and the line y = x crossing it at (2.45, 2.45) and (−2.45, −2.45).",
+  "description": [
+   "Solve the ellipse for y: y = ±√((18 − x²)/2), the upper and lower halves.",
+   "The line y = x enters at x = −√6 and leaves at x = √6.",
+   "The meeting points are (√6, √6) and (−√6, −√6), about (2.45, 2.45) and (−2.45, −2.45)."
+  ],
+  "course": "maths",
+  "lesson": "Implicit Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Implicit Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(√6, √6) is on both",
+    "ok": true,
+    "detail": "sqrt((18-x^2)/2) → 2.449, x → 2.449"
+   },
+   {
+    "name": "(−√6, −√6) is on both",
+    "ok": true,
+    "detail": "-sqrt((18-x^2)/2) → -2.449, x → -2.449"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-factor-theorem": {
+  "title": "Roots of 2x³ − 5x² − x + 6",
+  "caption": "f(2) = 0 makes (x − 2) a factor; the quadratic left over gives (2x − 3)(x + 1). The graph crosses the axis at −1, 3/2 and 2.",
+  "alt": "The graph of y = 2x cubed minus 5x squared minus x plus 6 crossing the x-axis at −1, 1.5 and 2.",
+  "description": [
+   "f(2) = 16 − 20 − 2 + 6 = 0, so (x − 2) is a factor.",
+   "The other factors are (2x − 3) and (x + 1).",
+   "The roots are x = −1, 3/2 and 2, where the graph meets the x-axis."
+  ],
+  "course": "maths",
+  "lesson": "Factor Theorem",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Factor Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(-1) = 0",
+    "ok": true,
+    "detail": "y(-1) = 0"
+   },
+   {
+    "name": "f(1.5) = 0",
+    "ok": true,
+    "detail": "y(1.5) = 0"
+   },
+   {
+    "name": "f(2) = 0",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-factorised-cubic": {
+  "title": "Factors show where the graph crosses the axis",
+  "caption": "y = 3x³ − 12x = 3x(x − 2)(x + 2) crosses the x-axis exactly where a factor is zero: at x = −2, 0 and 2.",
+  "alt": "The graph of y = 3x³ − 12x crossing the x-axis at −2, 0 and 2.",
+  "description": [
+   "The graph of y = 3x³ − 12x is an S-shaped cubic.",
+   "It crosses the x-axis where 3x(x − 2)(x + 2) = 0.",
+   "Each factor gives one crossing: x = 0, x = 2 and x = −2."
+  ],
+  "course": "maths",
+  "lesson": "Factorisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Factorisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3x³ − 12x is zero at x = -2",
+    "ok": true,
+    "detail": "y(-2) = 0"
+   },
+   {
+    "name": "3x³ − 12x is zero at x = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "3x³ − 12x is zero at x = 2",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-function-values": {
+  "title": "f(x) = x² − 4x takes the value 5 twice",
+  "caption": "f(−1) = 5, and f(x) = 5 has two solutions, x = −1 and x = 5, where the curve meets the line y = 5.",
+  "alt": "The parabola y = x squared minus 4x and the line y = 5 meeting at x = −1 and x = 5.",
+  "description": [
+   "Plot f(x) = x² − 4x.",
+   "f(−1) = 1 + 4 = 5, so (−1, 5) is on the curve.",
+   "The line y = 5 meets the curve again at x = 5, the second solution of f(x) = 5."
+  ],
+  "course": "maths",
+  "lesson": "Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(−1) = 5",
+    "ok": true,
+    "detail": "x^2-4*x → 5, 5 → 5"
+   },
+   {
+    "name": "f(5) = 5",
+    "ok": true,
+    "detail": "x^2-4*x → 5, 5 → 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-inequality-region": {
+  "title": "The region x ≥ 1, y > x, x + y ≤ 6",
+  "caption": "The three inequalities enclose a triangle with corners (1, 1), (1, 5) and (3, 3). The six whole-number points inside it, (1, 2) to (2, 4), are the answers.",
+  "alt": "A triangle on a grid with corners (1, 1), (1, 5) and (3, 3) and six marked lattice points inside or on its edge.",
+  "description": [
+   "x ≥ 1 gives the left edge x = 1.",
+   "y > x lies above the line y = x, and x + y ≤ 6 lies below the line x + y = 6.",
+   "The three boundary lines make the triangle.",
+   "The whole-number points in it are (1, 2), (1, 3), (1, 4), (1, 5), (2, 3) and (2, 4)."
+  ],
+  "course": "maths",
+  "lesson": "Simultaneous Inequalities",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Simultaneous Inequalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the triangle has area 4: base 4 and height 2",
+    "ok": true,
+    "detail": "shoelace 4"
+   },
+   {
+    "name": "the lesson states \"(1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u03-inverse": {
+  "title": "f and f⁻¹ are reflections in y = x",
+  "caption": "f(x) = √(x − 2) for x ≥ 2 and f⁻¹(x) = x² + 2 for x ≥ 0 swap their coordinates: (3, 1) on f matches (1, 3) on f⁻¹, a reflection in the line y = x.",
+  "alt": "The curve y = square root of x minus 2, the curve y = x squared plus 2 for x at least 0, and the line y = x, with the points (3, 1) and (1, 3).",
+  "description": [
+   "f(x) = √(x − 2) starts at (2, 0).",
+   "f⁻¹(x) = x² + 2 is its reflection in y = x, so it starts at (0, 2) and exists only for x ≥ 0.",
+   "The point (3, 1) on f reflects to (1, 3) on f⁻¹."
+  ],
+  "course": "maths",
+  "lesson": "Inverse Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Inverse Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(3) = 1",
+    "ok": true,
+    "detail": "y(3) = 1"
+   },
+   {
+    "name": "f⁻¹(1) = 3",
+    "ok": true,
+    "detail": "y(1) = 3"
+   },
+   {
+    "name": "f starts at (2, 0)",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "f⁻¹ starts at (0, 2)",
+    "ok": true,
+    "detail": "y(0) = 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-line-circle": {
+  "title": "The line y = x + 1 meets the circle x² + y² = 13",
+  "caption": "Substituting gives x² + x − 6 = 0, so x = −3 or 2: the line cuts the circle at (−3, −2) and (2, 3), both at distance √13 from the centre.",
+  "alt": "A circle of radius √13 centred at the origin and the line y = x + 1 meeting it at (−3, −2) and (2, 3).",
+  "description": [
+   "The circle x² + y² = 13 has centre O and radius √13 ≈ 3.61.",
+   "The line y = x + 1 crosses the y-axis at (0, 1).",
+   "Solving gives the two points (−3, −2) and (2, 3), each on both the circle and the line."
+  ],
+  "course": "maths",
+  "lesson": "Intermediate Algebra",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Intermediate Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(−3, −2) and (2, 3) satisfy x² + y² = 13",
+    "ok": true,
+    "detail": "3.6056, 3.6056"
+   },
+   {
+    "name": "(−3, −2), (0, 1) and (2, 3) lie on y = x + 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"Points: (−3, −2) and (2, 3)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u03-linear-solution": {
+  "title": "The solution of a linear equation",
+  "caption": "x = 14/5 = 2.8 is where (2x + 1)/3 − (x − 2)/4 reaches 2: substituting it gives 11.6/3 − 0.8/4 = 2.",
+  "alt": "A number line from 0 to 5 with the point 14/5 = 2.8 marked.",
+  "description": [
+   "The number line runs from 0 to 5.",
+   "The solution x = 14/5 = 2.8 sits between 2 and 3.",
+   "Substituting 14/5 into the left side gives exactly 2, the right side."
+  ],
+  "course": "maths",
+  "lesson": "Linear Equations",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Linear Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = 14/5 = 2.8 is at 2.8",
+    "ok": true,
+    "detail": "14/5 = 2.8"
+   },
+   {
+    "name": "at x = 14/5 the left side (2x + 1)/3 − (x − 2)/4 equals 2",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "the lesson states \"x = 14/5 = 2.8\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×90"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×90"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-parametric": {
+  "title": "x = 2t + 1, y = t² − 3 traces a parabola",
+  "caption": "Each value of t gives a point (2t + 1, t² − 3), and every such point lies on y = (x − 1)²/4 − 3, the Cartesian equation.",
+  "alt": "A parabola y = (x − 1) squared over 4 minus 3 with points marked for t from −1 to 3.",
+  "description": [
+   "Eliminating t: t = (x − 1)/2.",
+   "Substituting gives y = (x − 1)²/4 − 3, a parabola with vertex (1, −3).",
+   "The marked points are t = −1, 0, 1, 2, 3, and each lies on it."
+  ],
+  "course": "maths",
+  "lesson": "Parametric Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Parametric Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "t = -1 gives (-1, -2), on the curve",
+    "ok": true,
+    "detail": "y(-1) = -2"
+   },
+   {
+    "name": "t = 0 gives (1, -3), on the curve",
+    "ok": true,
+    "detail": "y(1) = -3"
+   },
+   {
+    "name": "t = 1 gives (3, -2), on the curve",
+    "ok": true,
+    "detail": "y(3) = -2"
+   },
+   {
+    "name": "t = 2 gives (5, 1), on the curve",
+    "ok": true,
+    "detail": "y(5) = 1"
+   },
+   {
+    "name": "t = 3 gives (7, 6), on the curve",
+    "ok": true,
+    "detail": "y(7) = 6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-piecewise": {
+  "title": "The pieces meet at (2, 1) when k = 0",
+  "caption": "At x = 2 the right piece gives 2² − 3 = 1 and the left piece gives 2k + 1; they agree when k = 0, and the graph has no jump.",
+  "alt": "A horizontal line y = 1 for x below 2 joined at (2, 1) to the curve y = x squared minus 3 for x from 2 upwards.",
+  "description": [
+   "For x ≥ 2 the curve is x² − 3, which is 1 at x = 2.",
+   "For x < 2 the line is kx + 1, which is 2k + 1 at x = 2.",
+   "Setting 2k + 1 = 1 gives k = 0: the pieces join at (2, 1)."
+  ],
+  "course": "maths",
+  "lesson": "Piecewise Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Piecewise Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the left piece kx + 1 with k = 0 gives 1 at x = 2",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "the right piece gives 4 − 3 = 1 at x = 2",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-pond-recurrence": {
+  "title": "The pond population settles at 300",
+  "caption": "From 200 fish, each year the population is 0.9 of last year's plus 30: P₁ = 210, P₂ = 219, 227.1, … The terms climb towards 300, the value where 0.9L + 30 = L.",
+  "alt": "The sequence 210, 219, 227.1, 234.39 and onwards, rising towards 300.",
+  "description": [
+   "The population starts at 200 and each year is 0.9 × the previous value + 30.",
+   "P₁ = 0.9 × 200 + 30 = 210 and P₂ = 0.9 × 210 + 30 = 219.",
+   "The terms increase by less each year and approach 300, where 0.9L + 30 = L."
+  ],
+  "course": "maths",
+  "lesson": "Recurrence Relations",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Recurrence Relations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (recurrence 0.9*x+30)",
+    "ok": true,
+    "detail": "210, 219, 227.1, 234.39"
+   },
+   {
+    "name": "the lesson states \"P_{2} = 0.9 × 210 + 30 = 219\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×120"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×120"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-quadratic-formula": {
+  "title": "Where 3x² + 5x − 1 crosses the axis",
+  "caption": "The discriminant 25 + 12 = 37 is positive, so the parabola crosses the x-axis twice: at (−5 ± √37)/6, which is x ≈ 0.180 and x ≈ −1.85.",
+  "alt": "A parabola y = 3x squared plus 5x minus 1 crossing the x-axis at about −1.85 and 0.18.",
+  "description": [
+   "a = 3, b = 5, c = −1 give discriminant b² − 4ac = 37 > 0, so there are two roots.",
+   "x = (−5 ± √37)/6.",
+   "The roots are x ≈ 0.180 and x ≈ −1.85, where the graph meets the x-axis."
+  ],
+  "course": "maths",
+  "lesson": "The Quadratic Formula",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: The Quadratic Formula"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = (−5 + √37)/6 ≈ 0.180 is a root",
+    "ok": true,
+    "detail": "y(0.1804604217163699) = 0"
+   },
+   {
+    "name": "x = (−5 − √37)/6 ≈ −1.85 is a root",
+    "ok": true,
+    "detail": "y(-1.8471270883830364) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-quadratic-inequality": {
+  "title": "Where 2x² − 5x − 3 ≥ 0",
+  "caption": "The roots −1/2 and 3 split the line; the parabola opens upwards, so the expression is non-negative outside them: x ≤ −1/2 or x ≥ 3.",
+  "alt": "A number line with the solution set x at most −1/2 and x at least 3 shaded, with closed ends.",
+  "description": [
+   "The critical values are x = −1/2 and x = 3, where 2x² − 5x − 3 = 0.",
+   "An upward parabola is above the axis outside its roots.",
+   "Both ends are included because the inequality is ≥."
+  ],
+  "course": "maths",
+  "lesson": "Inequalities",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Inequalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "−1/2 is at −0.5",
+    "ok": true,
+    "detail": "-1/2 = −0.5"
+   },
+   {
+    "name": "the interval drawn is x <= -0.5",
+    "ok": true,
+    "detail": "drawn −∞)…-0.5; inequality gives {\"from\":null,\"to\":-0.5,\"closed\":[false,true]}"
+   },
+   {
+    "name": "the interval drawn is x >= 3",
+    "ok": true,
+    "detail": "drawn 3]…∞; inequality gives {\"from\":3,\"to\":null,\"closed\":[true,false]}"
+   },
+   {
+    "name": "2x² − 5x − 3 = 0 at x = −1/2",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "2x² − 5x − 3 = 0 at x = 3",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the lesson states \"x ≤ −1/2 or x ≥ 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 680×146"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×146"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-quartic-roots": {
+  "title": "Four roots from a quadratic in x²",
+  "caption": "With u = x² the equation is (u − 4)(u − 9) = 0, so x² = 4 or 9. Each gives two roots, and the graph crosses the axis four times, at −3, −2, 2 and 3.",
+  "alt": "The graph of y = x to the fourth minus 13x squared plus 36, a W shape crossing the x-axis at −3, −2, 2 and 3.",
+  "description": [
+   "Let u = x²: u² − 13u + 36 = 0 gives u = 4 or u = 9.",
+   "x² = 4 gives x = ±2 and x² = 9 gives x = ±3.",
+   "The W-shaped graph crosses the x-axis at all four values."
+  ],
+  "course": "maths",
+  "lesson": "Polynomial Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Polynomial Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x = -3 is a root",
+    "ok": true,
+    "detail": "y(-3) = 0"
+   },
+   {
+    "name": "x = -2 is a root",
+    "ok": true,
+    "detail": "y(-2) = 0"
+   },
+   {
+    "name": "x = 2 is a root",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "x = 3 is a root",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-rectangle-5-by-8": {
+  "title": "The rectangle with area 40",
+  "caption": "Width w and length w + 3 give area w(w + 3) = 40. The root w = 5 gives the 5 cm by 8 cm rectangle, area 40 cm²; the root w = −8 has no meaning as a length.",
+  "alt": "A rectangle 5 cm wide and 8 cm long with area 40 square centimetres.",
+  "description": [
+   "A rectangle has width w and length w + 3.",
+   "Its area is w(w + 3) = 40, which factorises as (w + 8)(w − 5) = 0.",
+   "Only w = 5 is a possible width, so the rectangle is 5 cm by 8 cm.",
+   "Check: 5 × 8 = 40 cm²."
+  ],
+  "course": "maths",
+  "lesson": "Quadratic Equations",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Quadratic Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "AB = 8 u03",
+    "ok": true,
+    "detail": "measured 8"
+   },
+   {
+    "name": "BC = 5 u03",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "5 × 8 = 40",
+    "ok": true,
+    "detail": "shoelace 40; label \"40 cm²\""
+   },
+   {
+    "name": "the lesson states \"5 cm by 8 cm\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 380×280"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u03-remainder-values": {
+  "title": "Remainders are values of f",
+  "caption": "The remainder on dividing by (x − 1) is f(1) and by (x + 1) is f(−1). With a = 2 and b = 3 the curve passes through (1, 4) and (−1, −6), as the question requires.",
+  "alt": "The graph of f(x) = 2x cubed plus 2x squared plus 3x minus 3 through the points (1, 4) and (−1, −6).",
+  "description": [
+   "The remainder theorem says dividing by (x − 1) leaves f(1) and dividing by (x + 1) leaves f(−1).",
+   "The equations f(1) = 4 and f(−1) = −6 give a = 2 and b = 3.",
+   "The curve f(x) = 2x³ + 2x² + 3x − 3 passes through (1, 4) and (−1, −6)."
+  ],
+  "course": "maths",
+  "lesson": "Remainder Theorem",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Remainder Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(1) = 4",
+    "ok": true,
+    "detail": "y(1) = 4"
+   },
+   {
+    "name": "f(−1) = −6",
+    "ok": true,
+    "detail": "y(-1) = -6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-taxi-fare": {
+  "title": "A taxi fare as a straight line",
+  "caption": "The expression 3 + 1.8m is a line: £3 at 0 miles and 1.8 more for each mile. At m = 12 it is 3 + 21.6 = £24.60.",
+  "alt": "A straight-line graph of cost against miles, starting at 3 pounds and rising 1.80 per mile, with the point (12, 24.60) marked.",
+  "description": [
+   "The cost in pounds is 3 + 1.8m, where m is the number of miles.",
+   "At 0 miles the fare is £3, the fixed charge.",
+   "Each extra mile adds £1.80, so the graph is a straight line of gradient 1.8.",
+   "At 12 miles the cost is 3 + 1.8 × 12 = £24.60."
+  ],
+  "course": "maths",
+  "lesson": "Basic Algebra",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Basic Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0 miles costs £3",
+    "ok": true,
+    "detail": "y(0) = 3"
+   },
+   {
+    "name": "12 miles costs 3 + 1.8 × 12 = £24.60",
+    "ok": true,
+    "detail": "y(12) = 24.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-ticket-lines": {
+  "title": "Two ticket equations cross at (9, 6)",
+  "caption": "Each equation is a line in (adult price a, child price c). 2a + 3c = 36 and a + 4c = 33 cross at a = 9, c = 6: the only prices that fit both.",
+  "alt": "Two straight lines, 2a + 3c = 36 and a + 4c = 33, crossing at the point (9, 6).",
+  "description": [
+   "Plot 2a + 3c = 36 as c = (36 − 2a)/3.",
+   "Plot a + 4c = 33 as c = (33 − a)/4.",
+   "The lines cross at (9, 6): adult £9, child £6, matching the elimination."
+  ],
+  "course": "maths",
+  "lesson": "Simultaneous Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Simultaneous Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the lines meet at (9, 6): 18 + 18 = 36 and 9 + 24 = 33",
+    "ok": true,
+    "detail": "(36-2*x)/3 → 6, (33-x)/4 → 6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u03-vieta-roots": {
+  "title": "Roots α and β of 2x² − 6x + 1",
+  "caption": "The roots sum to 3 and multiply to 1/2, so they sit symmetrically about x = 3/2 and α² + β² = 3² − 2 × 1/2 = 8 without finding them.",
+  "alt": "A parabola y = 2x squared minus 6x plus 1 crossing the x-axis at α, about 0.18, and β, about 2.82, symmetric about x = 1.5.",
+  "description": [
+   "The parabola 2x² − 6x + 1 meets the x-axis at α and β.",
+   "Their sum is 6/2 = 3, so their midpoint is x = 3/2, the axis of symmetry.",
+   "Their product is 1/2, so α² + β² = (α + β)² − 2αβ = 9 − 1 = 8."
+  ],
+  "course": "maths",
+  "lesson": "Vieta's Formulas",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Vieta's Formulas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "α = (3 − √7)/2 is a root",
+    "ok": true,
+    "detail": "y(0.17712434446770464) = 0"
+   },
+   {
+    "name": "β = (3 + √7)/2 is a root",
+    "ok": true,
+    "detail": "y(2.8228756555322954) = 0"
+   },
+   {
+    "name": "the axis of symmetry is x = (α + β)/2 = 3/2",
+    "ok": true,
+    "detail": "found (1.5, -3.5)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

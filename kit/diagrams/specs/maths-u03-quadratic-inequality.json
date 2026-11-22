@@ -1,0 +1,76 @@
+{
+ "id": "maths-u03-quadratic-inequality",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Inequalities",
+ "title": "Where 2x² − 5x − 3 ≥ 0",
+ "caption": "The roots −1/2 and 3 split the line; the parabola opens upwards, so the expression is non-negative outside them: x ≤ −1/2 or x ≥ 3.",
+ "alt": "A number line with the solution set x at most −1/2 and x at least 3 shaded, with closed ends.",
+ "description": [
+  "The critical values are x = −1/2 and x = 3, where 2x² − 5x − 3 = 0.",
+  "An upward parabola is above the axis outside its roots.",
+  "Both ends are included because the inequality is ≥."
+ ],
+ "range": [
+  -3,
+  5
+ ],
+ "ticks": {
+  "step": 1
+ },
+ "minor": 0.5,
+ "points": [
+  {
+   "value": -0.5,
+   "expr": "-1/2",
+   "label": "−1/2",
+   "below": true
+  },
+  {
+   "value": 3,
+   "label": "3",
+   "below": true
+  }
+ ],
+ "intervals": [
+  {
+   "from": null,
+   "to": -0.5,
+   "closed": [
+    false,
+    true
+   ],
+   "inequality": "x <= -0.5",
+   "label": "x ≤ −1/2",
+   "colour": "a1"
+  },
+  {
+   "from": 3,
+   "to": null,
+   "closed": [
+    true,
+    false
+   ],
+   "inequality": "x >= 3",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "2*(-1/2)^2-5*(-1/2)-3",
+   "value": "0",
+   "name": "2x² − 5x − 3 = 0 at x = −1/2"
+  },
+  {
+   "type": "value",
+   "expr": "2*3^2-5*3-3",
+   "value": "0",
+   "name": "2x² − 5x − 3 = 0 at x = 3"
+  }
+ ],
+ "fromLesson": [
+  "x ≤ −1/2 or x ≥ 3"
+ ]
+}

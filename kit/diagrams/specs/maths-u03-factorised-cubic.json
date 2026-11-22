@@ -1,0 +1,114 @@
+{
+ "id": "maths-u03-factorised-cubic",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Factorisation",
+ "title": "Factors show where the graph crosses the axis",
+ "caption": "y = 3x³ − 12x = 3x(x − 2)(x + 2) crosses the x-axis exactly where a factor is zero: at x = −2, 0 and 2.",
+ "alt": "The graph of y = 3x³ − 12x crossing the x-axis at −2, 0 and 2.",
+ "description": [
+  "The graph of y = 3x³ − 12x is an S-shaped cubic.",
+  "It crosses the x-axis where 3x(x − 2)(x + 2) = 0.",
+  "Each factor gives one crossing: x = 0, x = 2 and x = −2."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   -20,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -20,
+   -10,
+   10,
+   20
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "3*x^3-12*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -2,
+   "y": 0,
+   "label": "x = −2",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": 0,
+   "label": "x = 0",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "label": "x = 2",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3*x^3-12*x",
+   "x": -2,
+   "y": 0,
+   "name": "3x³ − 12x is zero at x = -2"
+  },
+  {
+   "type": "point",
+   "expr": "3*x^3-12*x",
+   "x": 0,
+   "y": 0,
+   "name": "3x³ − 12x is zero at x = 0"
+  },
+  {
+   "type": "point",
+   "expr": "3*x^3-12*x",
+   "x": 2,
+   "y": 0,
+   "name": "3x³ − 12x is zero at x = 2"
+  }
+ ],
+ "fromLesson": [
+  "3x(x − 2)(x + 2)"
+ ]
+}

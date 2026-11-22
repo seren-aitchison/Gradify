@@ -1,0 +1,113 @@
+{
+ "id": "maths-u03-cubic-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Cubic Equations",
+ "title": "The cubic x³ − 6x² + 11x − 6",
+ "caption": "Once (x − 1) is a factor, the rest factorises as (x − 2)(x − 3): the graph crosses the x-axis at 1, 2 and 3.",
+ "alt": "The graph of y = x cubed minus 6x squared plus 11x minus 6 crossing the x-axis at 1, 2 and 3.",
+ "description": [
+  "f(1) = 0, so (x − 1) is a factor.",
+  "Dividing leaves x² − 5x + 6 = (x − 2)(x − 3).",
+  "So the graph crosses the x-axis at x = 1, 2 and 3."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   -3,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^3-6*x^2+11*x-6",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "label": "1",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "label": "2",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "label": "3",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^3-6*x^2+11*x-6",
+   "x": 1,
+   "y": 0,
+   "name": "f(1) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "x^3-6*x^2+11*x-6",
+   "x": 2,
+   "y": 0,
+   "name": "f(2) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "x^3-6*x^2+11*x-6",
+   "x": 3,
+   "y": 0,
+   "name": "f(3) = 0"
+  }
+ ],
+ "fromLesson": [
+  "Roots: x = 1, 2, 3"
+ ]
+}

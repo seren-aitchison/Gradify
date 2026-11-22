@@ -21,6 +21,7 @@ X: A taxi charges £3 plus £1.80 per mile. Write an expression for the cost of 
 > Cost = 3 + 1.8m pounds
 > For m = 12: 3 + 1.8 × 12 = 3 + 21.6
 > = £24.60
+D: maths-u03-taxi-fare
 K: Letters stand for numbers; 3x means 3 × x; translate words carefully and check with a simple value.
 !: Writing "5 less than n" as 5 − n: it's n − 5.
 Q: What does 4xy mean? | 4 × x × y.
@@ -182,6 +183,7 @@ X: Factorise fully 3x^{3} − 12x.
 > Common factor 3x: 3x(x^{2} − 4)
 > x^{2} − 4 is a difference of two squares: (x − 2)(x + 2)
 > 3x(x − 2)(x + 2)
+D: maths-u03-factorised-cubic
 P: **Investigate with the lab.** Build a quadratic with roots −1 and 3 and compare the factorised form shown with the expanded one. Then try to factorise one with no real roots.
 IX: quadratics
 K: Common factor first; then two numbers for quadratics; spot differences of two squares; check by expanding.
@@ -273,6 +275,7 @@ X: Solve (2x + 1)/3 − (x − 2)/4 = 2.
 > Multiply every term by 12: 4(2x + 1) − 3(x − 2) = 24
 > Expand: 8x + 4 − 3x + 6 = 24, so 5x + 10 = 24
 > 5x = 14, so x = 14/5 = 2.8
+D: maths-u03-linear-solution
 P: **Investigate with the lab.** Choose Linear equations and solve each problem by doing the same operation to both sides, line by line.
 IX: practice
 K: Expand, clear fractions with the LCM, collect, divide, and check by substitution.
@@ -307,6 +310,7 @@ X: Two adult tickets and three child tickets cost £36; one adult and four child
 > 2a + 3c = 36 and a + 4c = 33
 > Double the second: 2a + 8c = 66; subtract the first: 5c = 30, so c = 6
 > a + 24 = 33, so a = 9: adults £9, children £6 (check: 18 + 18 = 36 ✓)
+D: maths-u03-ticket-lines
 P: **Investigate with the lab.** Choose Simultaneous equations and solve each pair by elimination, then check both equations with your answer.
 IX: practice
 K: Match coefficients and add or subtract to eliminate, or substitute; the solution is the intersection of the graphs.
@@ -340,6 +344,7 @@ X: A rectangle has length 3 cm more than its width and area 40 cm^{2}. Find its 
 > w(w + 3) = 40, so w^{2} + 3w − 40 = 0
 > (w + 8)(w − 5) = 0, so w = −8 or w = 5
 > A width can't be negative, so the rectangle is 5 cm by 8 cm
+D: maths-u03-rectangle-5-by-8
 P: **Investigate with the lab.** Choose Quadratic equations. Try factorising first, and use the formula when it won't factorise.
 IX: practice
 P: **Investigate with the lab.** Set b and c so the roots are −1 and 3, then change a: the roots stay put while the parabola stretches. What does a change, and what doesn't it?
@@ -375,6 +380,7 @@ X: Solve x^{2} − 8x + 5 = 0 by completing the square, leaving your answer in s
 > x^{2} − 8x = (x − 4)^{2} − 16
 > (x − 4)^{2} − 16 + 5 = 0, so (x − 4)^{2} = 11
 > x − 4 = ±√11, so x = 4 ± √11
+D: maths-u03-complete-square
 - For a negative leading coefficient, −x^{2} + 4x + 1 = −(x − 2)^{2} + 5 has a maximum at (2, 5).
 P: **Investigate with the lab.** Move the vertex to (2, −3) and read the completed-square form beneath the graph. Check that the numbers in a(x − p)² + q are the vertex coordinates.
 IX: quadratics
@@ -409,6 +415,7 @@ X: Solve 3x^{2} + 5x − 1 = 0, giving answers to 3 significant figures.
 > a = 3, b = 5, c = −1; discriminant = 25 + 12 = 37
 > x = (−5 ± √37)/6
 > x ≈ 0.180 or x ≈ −1.85
+D: maths-u03-quadratic-formula
 P: **Investigate with the lab.** Watch the discriminant as you change c. Find the value where the graph just touches the x-axis, then go past it and see the roots become complex.
 IX: quadratics
 K: Read off a, b, c with signs; b^{2} − 4ac decides the number of roots.
@@ -442,6 +449,7 @@ X: Solve x^{3} − 6x^{2} + 11x − 6 = 0.
 > f(1) = 1 − 6 + 11 − 6 = 0, so (x − 1) is a factor
 > Dividing: x^{3} − 6x^{2} + 11x − 6 = (x − 1)(x^{2} − 5x + 6) = (x − 1)(x − 2)(x − 3)
 > Roots: x = 1, 2, 3
+D: maths-u03-cubic-roots
 K: Take out common factors; find one root with the factor theorem; divide to a quadratic; sketch from the roots and the sign of a.
 !: Assuming a cubic with a positive constant has no negative roots: test negative divisors too.
 Q: How many real roots must a cubic have? | At least one.
@@ -471,6 +479,7 @@ X: Solve x^{4} − 13x^{2} + 36 = 0.
 > Let u = x^{2}: u^{2} − 13u + 36 = 0
 > (u − 4)(u − 9) = 0, so u = 4 or u = 9
 > x^{2} = 4 or 9, so x = ±2 or ±3
+D: maths-u03-quartic-roots
 - Graphs show how many real roots to expect before you solve.
 K: Factorise or substitute to reach a quadratic; degree n means at most n roots; use numerical methods when exact ones run out.
 !: Forgetting the negative square roots when returning from u = x^{2} to x.
@@ -503,6 +512,7 @@ X: Solve 2x^{2} − 5x − 3 ≥ 0.
 > Critical values: (2x + 1)(x − 3) = 0 gives x = −1/2 or x = 3
 > The parabola opens upwards, so it's above or on the axis outside the roots
 > x ≤ −1/2 or x ≥ 3
+D: maths-u03-quadratic-inequality
 K: Reverse the inequality when multiplying or dividing by a negative; for quadratics, find the roots and sketch.
 !: Writing −2 > x > 3 for "x < −2 or x > 3": no number satisfies it.
 Q: Solve 5 − 2x > 1. | x < 2.
@@ -534,6 +544,7 @@ X: List the integer points (x, y) satisfying x ≥ 1, y > x and x + y ≤ 6.
 > x = 1: y > 1 and y ≤ 5, so y = 2, 3, 4, 5
 > x = 2: y > 2 and y ≤ 4, so y = 3, 4; x = 3: y > 3 and y ≤ 3: none
 > Points: (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4)
+D: maths-u03-inequality-region
 K: Find the overlap of all conditions; in 2D, draw boundaries (solid or dashed) and test a point to choose the side.
 !: Drawing y > x with a solid line, which includes points on the line.
 Q: What does a dashed boundary line mean? | Points on the line aren't included (strict inequality).
@@ -563,6 +574,7 @@ X: Solve |x| = 2x − 3.
 > Case x ≥ 0: x = 2x − 3, so x = 3 (valid, since 3 ≥ 0)
 > Case x < 0: −x = 2x − 3, so x = 1 (invalid, since 1 isn't negative)
 > Check x = 3: |3| = 3 and 2(3) − 3 = 3 ✓. The only solution is x = 3
+D: maths-u03-absolute-value
 - |x| = −3 has no solution, because a modulus is never negative.
 - |a × b| = |a| × |b|, but |a + b| ≤ |a| + |b| (the triangle inequality).
 K: Split into cases (or square both sides), then check every solution in the original equation.
@@ -698,6 +710,7 @@ X: £1,000 is invested at 4% compound interest. After how many whole years does 
 > 1000 × 1.04^{n} > 1500, so 1.04^{n} > 1.5
 > n > ln 1.5/ln 1.04 = 10.34
 > It first exceeds £1,500 after 11 years
+D: maths-u03-compound-growth
 P: **Investigate with the lab.** Find the base that doubles every 2 units, then the base that halves every unit. Compare your bases with √2 and 0.5.
 IX: explog
 K: Match bases where possible, otherwise take logs; substitute u = a^{x} for hidden quadratics and reject u ≤ 0.
@@ -766,6 +779,7 @@ X: Describe the graph of y = −2x^{3} + 5x^{2} − x + 4.
 > Degree 3 with leading coefficient −2: up on the left, down on the right
 > At most 3 roots and at most 2 turning points
 > It crosses the y-axis at (0, 4)
+D: maths-u03-cubic-shape
 K: Degree and leading coefficient set the end behaviour; the constant term is the y-intercept; at most n roots.
 !: Calling 3/x^{2} + 1 a polynomial: negative powers aren't allowed.
 Q: What is the degree of 5 − x^{3} + 2x^{6}? | 6.
@@ -855,6 +869,7 @@ X: When f(x) = 2x^{3} + ax^{2} + bx − 3 is divided by (x − 1) the remainder 
 > f(1) = 2 + a + b − 3 = 4, so a + b = 5
 > f(−1) = −2 + a − b − 3 = −6, so a − b = −1
 > Adding: 2a = 4, so a = 2 and b = 3
+D: maths-u03-remainder-values
 - A quick check: the remainder on dividing by (x − 1) is the sum of the coefficients.
 - The remainder on dividing by a quadratic is linear (ax + b), found from two substitutions.
 - If the remainder is zero, the divisor is a factor: this is the factor theorem.
@@ -888,6 +903,7 @@ X: Show that (x − 2) is a factor of 2x^{3} − 5x^{2} − x + 6 and factorise 
 > f(2) = 16 − 20 − 2 + 6 = 0, so (x − 2) is a factor
 > Dividing: 2x^{3} − 5x^{2} − x + 6 = (x − 2)(2x^{2} − x − 3)
 > 2x^{2} − x − 3 = (2x − 3)(x + 1), so the answer is (x − 2)(2x − 3)(x + 1)
+D: maths-u03-factor-theorem
 - Graphs help: a sketch or calculator plot suggests which values to test first.
 - Fractional roots: for 2x^{3} + … try ±1/2 and ±3/2 too.
 K: f(a) = 0 ⇔ (x − a) is a factor; try divisors of the constant; then divide and factorise the quadratic.
@@ -920,6 +936,7 @@ X: Find the cubic with roots −1, 2 and 3 that passes through (0, 12).
 > f(x) = k(x + 1)(x − 2)(x − 3)
 > f(0) = k(1)(−2)(−3) = 6k = 12, so k = 2
 > f(x) = 2(x + 1)(x − 2)(x − 3) = 2x^{3} − 8x^{2} + 2x + 12
+D: maths-u03-cubic-through-12
 P: **Investigate with the lab.** Do the cubic-roots challenge. Move b and c and watch the x-intercepts follow them: each factor (x − r) puts a root at r.
 IX: grapher
 K: Roots give factors; multiplicity shapes the graph; complex roots of real polynomials come in conjugate pairs.
@@ -952,6 +969,7 @@ X: The roots of 2x^{2} − 6x + 1 = 0 are α and β. Find α^{2} + β^{2}.
 > α + β = 6/2 = 3 and αβ = 1/2
 > α^{2} + β^{2} = (α + β)^{2} − 2αβ = 9 − 1
 > = 8
+D: maths-u03-vieta-roots
 - The sum and product don't depend on the roots being real: x^{2} + 2x + 5 = 0 has complex roots with sum −2 and product 5.
 - They generalise: for degree n, the sum of the roots is −a_{n−1}/a_{n}.
 - Check: the roots of x^{2} − 5x + 6 are 2 and 3, with sum 5 and product 6.
@@ -1046,6 +1064,7 @@ X: f(x) = x^{2} − 4x. Find f(−1), solve f(x) = 5, and find f(2a).
 > f(−1) = 1 + 4 = 5
 > x^{2} − 4x = 5 → (x − 5)(x + 1) = 0, so x = 5 or x = −1
 > f(2a) = 4a^{2} − 8a
+D: maths-u03-function-values
 - Functions can have many inputs: the area of a rectangle is a function of its length and width, A(l, w) = lw.
 - A function's graph is the set of points (x, f(x)).
 P: **Investigate with the lab.** Plot y = x^{2} − 4 and read off its domain, range and roots. Then complete the straight-line challenge by matching a target line.
@@ -1083,6 +1102,7 @@ X: Find the domain and range of h(x) = 3 + √(x − 1).
 > Need x − 1 ≥ 0, so the domain is x ≥ 1
 > √(x − 1) takes every value ≥ 0
 > So the range is h(x) ≥ 3
+D: maths-u03-domain-range
 K: Domains exclude zero denominators, negative roots and non-positive logs; ranges come from the graph over the domain.
 !: Finding the range of a quadratic on an interval from the endpoints only, missing the turning point.
 Q: What is the domain of f(x) = 1/(x^{2} − 4)? | All real x except ±2.
@@ -1112,6 +1132,7 @@ X: f(x) = 3x − 4 and g(x) = 1/(x + 2). Find gf(x) and its domain, and solve gf
 > gf(x) = g(3x − 4) = 1/(3x − 2)
 > Domain: 3x − 2 ≠ 0, so x ≠ 2/3
 > 1/(3x − 2) = 1/5 gives 3x − 2 = 5, so x = 7/3
+D: maths-u03-composite
 - Composition is associative: f(g(h(x))) is the same whichever pair you compose first.
 - A function composed with its inverse gives the identity: ff^{−1}(x) = x.
 K: fg means g first; composition order matters; the inner output must lie in the outer function's domain.
@@ -1144,6 +1165,7 @@ X: f(x) = √(x − 2) for x ≥ 2. Find f^{−1}(x) and its domain.
 > y = √(x − 2); swap: x = √(y − 2), so x^{2} = y − 2
 > f^{−1}(x) = x^{2} + 2
 > The range of f is f(x) ≥ 0, so the domain of f^{−1} is x ≥ 0
+D: maths-u03-inverse
 - Self-inverse functions are symmetric in y = x: their graphs are unchanged by the reflection.
 P: **Investigate with the lab.** Compare bˣ and log_b x with the line y = x: each point on one graph has a mirror image on the other. Change the base and see the pair move together.
 IX: explog
@@ -1213,6 +1235,7 @@ X: f(x) = kx + 1 for x < 2, and x^{2} − 3 for x ≥ 2. Find k so that f is con
 > At x = 2 the right piece gives 4 − 3 = 1
 > The left piece gives 2k + 1
 > 2k + 1 = 1, so k = 0
+D: maths-u03-piecewise
 - The floor function ⌊x⌋ gives the greatest integer ≤ x: ⌊3.7⌋ = 3 and ⌊−1.2⌋ = −2.
 K: Use the right rule for each input; check that pieces meet at boundaries for continuity.
 !: Applying the wrong piece at a boundary point (check ≤ versus <).
@@ -1244,6 +1267,7 @@ X: Find the Cartesian equation of x = 2t + 1, y = t^{2} − 3.
 > From x: t = (x − 1)/2
 > Substitute: y = ((x − 1)/2)^{2} − 3
 > y = (x − 1)^{2}/4 − 3, a parabola
+D: maths-u03-parametric
 K: Eliminate the parameter to get a Cartesian equation; use trigonometric identities for circles and ellipses.
 !: Forgetting that the parameter's range can restrict the curve to only part of the Cartesian graph.
 Q: What curve is x = 3 cos θ, y = 3 sin θ? | A circle of radius 3 centred at the origin.
@@ -1274,6 +1298,7 @@ X: Find the points where x^{2} + 2y^{2} = 18 meets the line y = x.
 > Substitute y = x: x^{2} + 2x^{2} = 18, so 3x^{2} = 18
 > x^{2} = 6, so x = ±√6
 > Points: (√6, √6) and (−√6, −√6)
+D: maths-u03-ellipse-line
 K: Implicit equations link x and y directly; substitute to test points, find coordinates or intersections.
 !: Assuming an implicit curve gives one y for each x.
 Q: Does (1, 2) lie on x^{2} + y^{2} − 2x = 4? | No: 1 + 4 − 2 = 3, not 4.
@@ -1305,6 +1330,7 @@ X: A pond has 200 fish. Each year the population falls by 10% and 30 fish are ad
 > P_{1} = 0.9 × 200 + 30 = 210
 > P_{2} = 0.9 × 210 + 30 = 219
 > Limit: L = 0.9L + 30, so 0.1L = 30 and L = 300 fish
+D: maths-u03-pond-recurrence
 K: Generate terms by repeated substitution; for u_{n+1} = au_{n} + b with |a| < 1, the limit is b/(1 − a).
 !: Assuming every recurrence has a limit: u_{n+1} = 2u_{n} + 3 grows without bound.
 Q: What is u_{3} if u_{1} = 4 and u_{n+1} = 3u_{n} − 5? | u_{2} = 7, u_{3} = 16.
@@ -1335,6 +1361,7 @@ X: Find where the line y = x + 1 meets the circle x^{2} + y^{2} = 13.
 > Substitute: x^{2} + (x + 1)^{2} = 13, so 2x^{2} + 2x − 12 = 0, so x^{2} + x − 6 = 0
 > (x + 3)(x − 2) = 0, so x = −3 or x = 2
 > Points: (−3, −2) and (2, 3)
+D: maths-u03-line-circle
 K: Chain techniques deliberately; use the discriminant for tangency; substitute linear into quadratic.
 !: Losing track of signs across several steps: check each line.
 Q: How do you show a line is a tangent to a curve? | Substitute and show the resulting quadratic has a repeated root (discriminant 0).
@@ -1363,6 +1390,7 @@ X: Find the first three terms of (1 − 2x)^{1/2} in ascending powers of x, and 
 > 1 + (½)(−2x) + (½)(−½)(−2x)^{2}/2
 > = 1 − x − ½x^{2} + …
 > Valid for |2x| < 1, so |x| < ½
+D: maths-u03-binomial-sqrt
 K: Use nCr for whole-number powers and the general series for others (with its validity range); prove "for all n" statements by induction.
 !: Forgetting to raise the coefficient inside the bracket to the power, as in (2x)^{2} = 4x^{2}.
 Q: What is 5C2? | 10.
@@ -1393,6 +1421,7 @@ X: Solve z^{2} − 6z + 34 = 0 and find the modulus of each root.
 > z = (6 ± √(36 − 136))/2 = (6 ± √−100)/2
 > z = (6 ± 10i)/2 = 3 ± 5i
 > |3 ± 5i| = √(9 + 25) = √34
+D: maths-u03-complex-roots
 P: **Investigate with the lab.** Multiply z by i and watch it turn 90°, then multiply z by its conjugate and see the product land on the real axis.
 IX: complex
 P: **Investigate with the lab.** Show the 6th roots of unity, then solve z⁴ = −16. Notice the roots always form a regular polygon centred on the origin.
@@ -1431,6 +1460,7 @@ X: Simplify A·B + A·B̄ + Ā·B.
 > A·B + A·B̄ = A·(B + B̄) = A·1 = A
 > So the expression is A + Ā·B
 > A + Ā·B = (A + Ā)·(A + B) = A + B
+D: maths-u03-boolean-venn
 - Logic gates (AND, OR, NOT, NAND, NOR, XOR) are physical circuits for these operations; NAND alone can build all the others.
 K: AND, OR and NOT follow their own laws; De Morgan's laws flip AND and OR under NOT; truth tables check any simplification.
 !: Using ordinary arithmetic: in Boolean algebra 1 + 1 = 1.

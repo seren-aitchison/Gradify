@@ -1,0 +1,133 @@
+{
+ "id": "maths-u03-complex-roots",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Complex Numbers",
+ "title": "The roots 3 ± 5i of z² − 6z + 34 = 0",
+ "caption": "The roots are a conjugate pair, mirror images in the real axis, and each has modulus √(9 + 25) = √34 ≈ 5.83.",
+ "alt": "The points 3 + 5i and 3 − 5i on the complex plane, mirror images in the real axis, each at distance square root of 34 from the origin.",
+ "description": [
+  "The formula gives z = (6 ± √−100)/2 = 3 ± 5i.",
+  "Plot 3 + 5i at (3, 5) and 3 − 5i at (3, −5): mirror images in the real axis.",
+  "Each is √(3² + 5²) = √34 from the origin."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   3,
+   5
+  ],
+  "B": [
+   3,
+   -5
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1.5,
+   5.5
+  ],
+  "y": [
+   -6.5,
+   6.5
+  ]
+ },
+ "height": [
+  350,
+  360
+ ],
+ "vectors": [
+  {
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    3,
+    5
+   ],
+   "colour": "a1"
+  },
+  {
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    3,
+    -5
+   ],
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "A": [
+   -30,
+   -2
+  ],
+  "B": [
+   -30,
+   4
+  ]
+ },
+ "notes": [
+  {
+   "at": [
+    4.6,
+    5
+   ],
+   "text": "3 + 5i",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    4.6,
+    -5
+   ],
+   "text": "3 − 5i",
+   "colour": "a2",
+   "size": 13
+  },
+  {
+   "at": [
+    0.6,
+    2.9
+   ],
+   "text": "√34",
+   "colour": "a1",
+   "size": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "A",
+   "value": "sqrt(34)",
+   "name": "|3 + 5i| = √34"
+  },
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "B",
+   "value": "sqrt(34)",
+   "name": "|3 − 5i| = √34"
+  }
+ ],
+ "fromLesson": [
+  "3 ± 5i"
+ ]
+}

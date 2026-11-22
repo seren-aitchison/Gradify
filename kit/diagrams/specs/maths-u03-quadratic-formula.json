@@ -1,0 +1,99 @@
+{
+ "id": "maths-u03-quadratic-formula",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "The Quadratic Formula",
+ "title": "Where 3x² + 5x − 1 crosses the axis",
+ "caption": "The discriminant 25 + 12 = 37 is positive, so the parabola crosses the x-axis twice: at (−5 ± √37)/6, which is x ≈ 0.180 and x ≈ −1.85.",
+ "alt": "A parabola y = 3x squared plus 5x minus 1 crossing the x-axis at about −1.85 and 0.18.",
+ "description": [
+  "a = 3, b = 5, c = −1 give discriminant b² − 4ac = 37 > 0, so there are two roots.",
+  "x = (−5 ± √37)/6.",
+  "The roots are x ≈ 0.180 and x ≈ −1.85, where the graph meets the x-axis."
+ ],
+ "range": {
+  "x": [
+   -3,
+   2
+  ],
+  "y": [
+   -4,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   -2,
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "3*x^2+5*x-1",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1804604217163699,
+   "y": 0,
+   "label": "0.180",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": -1.8471270883830364,
+   "y": 0,
+   "label": "−1.85",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3*x^2+5*x-1",
+   "x": 0.1804604217163699,
+   "y": 0,
+   "name": "x = (−5 + √37)/6 ≈ 0.180 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "3*x^2+5*x-1",
+   "x": -1.8471270883830364,
+   "y": 0,
+   "name": "x = (−5 − √37)/6 ≈ −1.85 is a root"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ 0.180 or x ≈ −1.85"
+ ]
+}

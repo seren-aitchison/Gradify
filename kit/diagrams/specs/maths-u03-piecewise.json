@@ -1,0 +1,103 @@
+{
+ "id": "maths-u03-piecewise",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Piecewise Functions",
+ "title": "The pieces meet at (2, 1) when k = 0",
+ "caption": "At x = 2 the right piece gives 2² − 3 = 1 and the left piece gives 2k + 1; they agree when k = 0, and the graph has no jump.",
+ "alt": "A horizontal line y = 1 for x below 2 joined at (2, 1) to the curve y = x squared minus 3 for x from 2 upwards.",
+ "description": [
+  "For x ≥ 2 the curve is x² − 3, which is 1 at x = 2.",
+  "For x < 2 the line is kx + 1, which is 2k + 1 at x = 2.",
+  "Setting 2k + 1 = 1 gives k = 0: the pieces join at (2, 1)."
+ ],
+ "range": {
+  "x": [
+   -2,
+   4
+  ],
+  "y": [
+   -3,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -2,
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "0*x+1",
+   "colour": "a1",
+   "domain": [
+    -2,
+    2
+   ]
+  },
+  {
+   "expr": "x^2-3",
+   "colour": "a2",
+   "domain": [
+    2,
+    3.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1,
+   "label": "(2, 1)",
+   "colour": "a4",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0*x+1",
+   "x": 2,
+   "y": 1,
+   "name": "the left piece kx + 1 with k = 0 gives 1 at x = 2"
+  },
+  {
+   "type": "point",
+   "expr": "x^2-3",
+   "x": 2,
+   "y": 1,
+   "name": "the right piece gives 4 − 3 = 1 at x = 2"
+  }
+ ],
+ "fromLesson": [
+  "k = 0"
+ ]
+}

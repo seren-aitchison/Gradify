@@ -1,0 +1,81 @@
+{
+ "id": "maths-u03-cubic-shape",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Polynomials",
+ "title": "A cubic with negative leading coefficient",
+ "caption": "With leading term −2x³ the graph rises on the left and falls on the right; it crosses the y-axis at (0, 4), and a cubic can turn at most twice.",
+ "alt": "The graph of y = −2x cubed plus 5x squared minus x plus 4, rising on the left and falling on the right, crossing the y-axis at (0, 4).",
+ "description": [
+  "The leading term −2x³ dominates for large |x|: the graph is up on the left and down on the right.",
+  "At x = 0, y = 4: the y-intercept.",
+  "A cubic has at most 2 turning points; this one has a minimum then a maximum."
+ ],
+ "range": {
+  "x": [
+   -2,
+   3
+  ],
+  "y": [
+   -10,
+   45
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   10,
+   20,
+   30,
+   40
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "-2*x^3+5*x^2-x+4",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 4,
+   "label": "(0, 4)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -10,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-2*x^3+5*x^2-x+4",
+   "x": 0,
+   "y": 4,
+   "name": "the y-intercept is (0, 4)"
+  }
+ ],
+ "fromLesson": [
+  "It crosses the y-axis at (0, 4)"
+ ]
+}

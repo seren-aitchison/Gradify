@@ -1,0 +1,147 @@
+{
+ "id": "maths-u03-parametric",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Parametric Equations",
+ "title": "x = 2t + 1, y = t² − 3 traces a parabola",
+ "caption": "Each value of t gives a point (2t + 1, t² − 3), and every such point lies on y = (x − 1)²/4 − 3, the Cartesian equation.",
+ "alt": "A parabola y = (x − 1) squared over 4 minus 3 with points marked for t from −1 to 3.",
+ "description": [
+  "Eliminating t: t = (x − 1)/2.",
+  "Substituting gives y = (x − 1)²/4 − 3, a parabola with vertex (1, −3).",
+  "The marked points are t = −1, 0, 1, 2, 3, and each lies on it."
+ ],
+ "range": {
+  "x": [
+   -3,
+   8
+  ],
+  "y": [
+   -4,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(x-1)^2/4-3",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": -2,
+   "label": "t = −1",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 1,
+   "y": -3,
+   "label": "t = 0",
+   "colour": "a2",
+   "dx": 0,
+   "dy": 20,
+   "anchor": "middle"
+  },
+  {
+   "x": 3,
+   "y": -2,
+   "label": "t = 1",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 5,
+   "y": 1,
+   "label": "t = 2",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 7,
+   "y": 6,
+   "label": "t = 3",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x-1)^2/4-3",
+   "x": -1,
+   "y": -2,
+   "name": "t = -1 gives (-1, -2), on the curve"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)^2/4-3",
+   "x": 1,
+   "y": -3,
+   "name": "t = 0 gives (1, -3), on the curve"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)^2/4-3",
+   "x": 3,
+   "y": -2,
+   "name": "t = 1 gives (3, -2), on the curve"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)^2/4-3",
+   "x": 5,
+   "y": 1,
+   "name": "t = 2 gives (5, 1), on the curve"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)^2/4-3",
+   "x": 7,
+   "y": 6,
+   "name": "t = 3 gives (7, 6), on the curve"
+  }
+ ],
+ "fromLesson": [
+  "y = (x − 1)^{2}/4 − 3"
+ ]
+}

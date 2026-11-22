@@ -1,0 +1,99 @@
+{
+ "id": "maths-u03-ticket-lines",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Simultaneous Equations",
+ "title": "Two ticket equations cross at (9, 6)",
+ "caption": "Each equation is a line in (adult price a, child price c). 2a + 3c = 36 and a + 4c = 33 cross at a = 9, c = 6: the only prices that fit both.",
+ "alt": "Two straight lines, 2a + 3c = 36 and a + 4c = 33, crossing at the point (9, 6).",
+ "description": [
+  "Plot 2a + 3c = 36 as c = (36 − 2a)/3.",
+  "Plot a + 4c = 33 as c = (33 − a)/4.",
+  "The lines cross at (9, 6): adult £9, child £6, matching the elimination."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   8,
+   12,
+   16,
+   20
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ]
+ ],
+ "grid": [
+  4,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "a (£)",
+  "c (£)"
+ ],
+ "curves": [
+  {
+   "expr": "(36-2*x)/3",
+   "colour": "a1",
+   "label": "2a + 3c = 36",
+   "labelAt": [
+    3,
+    11.8
+   ]
+  },
+  {
+   "expr": "(33-x)/4",
+   "colour": "a2",
+   "label": "a + 4c = 33",
+   "labelAt": [
+    13,
+    6.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 9,
+   "y": 6,
+   "label": "(9, 6)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": -12,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "(36-2*x)/3",
+   "b": "(33-x)/4",
+   "x": 9,
+   "y": 6,
+   "name": "the lines meet at (9, 6): 18 + 18 = 36 and 9 + 24 = 33"
+  }
+ ],
+ "fromLesson": [
+  "2a + 3c = 36 and a + 4c = 33"
+ ]
+}
