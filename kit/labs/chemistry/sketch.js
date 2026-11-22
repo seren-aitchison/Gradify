@@ -339,10 +339,10 @@ export function mount(el, ctx = {}) {
   });
 
   // ---------- modes: Structure, Mechanism, 3D ----------
-  const mech = mountMechanism($('[data-pane="mechanism"]'), { ctx, palette, getDrawing: () => K.clone(m),
+  const mech = mountMechanism($('[data-pane="mechanism"]'), { ctx, palette, getDrawing: () => K.clone(m), prefs, onPrefs: () => save(PREFS, prefs),
     onSave: (mx) => { pages.unshift({ id: Date.now().toString(36), kind: "mech", title: mx.title, mech: mx, at: new Date().toISOString().slice(0, 10) }); save(PAGES, pages); book(); } });
   const m3 = mount3d($('[data-pane="3d"]'), { getDrawing: () => m });
-  const rx = mountReaction($('[data-pane="reaction"]'), { ctx, palette, getDrawing: () => K.clone(m),
+  const rx = mountReaction($('[data-pane="reaction"]'), { ctx, palette, getDrawing: () => K.clone(m), prefs, onPrefs: () => save(PREFS, prefs),
     onMechanism: (id) => { setMode("mechanism"); mech.load(id); },
     onEdit: (pm) => { snap(); m = pm; sel = null; commit(); setMode("structure"); fitView(); } });
   let mode = "structure";
@@ -357,6 +357,6 @@ export function mount(el, ctx = {}) {
   $(".osk-modes").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); });
 
   setTool("draw"); resize(); fitView(); commit(); book(); probPaint(false);
-  return () => { ro?.disconnect(); mo.disconnect(); mech.stop(); m3.stop(); };
+  return () => { ro?.disconnect(); mo.disconnect(); mech.stop(); m3.stop(); rx.stop(); };
 }
 export default mount;
