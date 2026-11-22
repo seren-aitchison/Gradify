@@ -101,6 +101,7 @@ H: Typical fields
 X: An electron enters a 2 × 10^{4} V m^{-1} field, travelling 2 × 10^{7} m s^{-1} perpendicular to it, for 5 cm. Deflection?
 > t = 0.05/2 × 10^{7} = 2.5 × 10^{-9} s; a = eE/m = 3.5 × 10^{15} m s^{-2}
 > y = ½at^{2} = 1.1 cm
+D: phys-u15-electron-deflection
 !: Field direction is the direction of force on a positive charge; electrons accelerate against the field.
 P: **Investigate with the lab.** Move the test charge around a single charge and watch the field arrow change direction and size.
 IX: efield
@@ -127,6 +128,7 @@ H: Equipotentials
 P: Equipotential surfaces are always perpendicular to field lines. No work is done moving a charge along an equipotential. Contour maps of potential, like height contours, show field strength by how close the lines are.
 X: Two charges +2q and −q. How many field lines end on −q if 20 leave +2q?
 > 10 end on −q; the other 10 go to infinity (the net charge +q)
+D: phys-u15-field-lines-2q-q
 !: Field lines aren't paths of charges in general; a charge's velocity isn't always along the line.
 P: **Investigate with the lab.** Draw the field lines for two like charges and for a dipole. Compare where the lines are closest together.
 IX: efield
@@ -153,6 +155,7 @@ E: 1 eV = 1.602 × 10^{-19} J :: energy gained by e through 1 V
 - Atomic energies ~eV; nuclear ~MeV; LHC protons 6.8 TeV.
 X: Potential midway between +4 nC and −2 nC charges 0.2 m apart?
 > V = k(4 × 10^{-9} − 2 × 10^{-9})/0.1 = 8.99 × 10^{9} × 2 × 10^{-8} = 180 V
+D: phys-u15-potential-midpoint
 !: Zero potential doesn't mean zero field (midway between equal and opposite charges, V = 0 but E ≠ 0).
 P: **Investigate with the lab.** Turn on the equipotentials and check that they always cross field lines at right angles.
 IX: efield
@@ -267,6 +270,7 @@ H: Consequences
 X: Field inside a uniformly charged solid sphere (charge Q, radius R) at r < R?
 > Q_{enc} = Q(r/R)^{3}
 > E = Qr/(4πε_{0}R^{3}), rising linearly from zero
+D: phys-u15-sphere-field
 !: Gauss's law is always true, but it only gives the field easily when symmetry makes E constant over the surface.
 Q: State Gauss's law. | The net electric flux through a closed surface equals the enclosed charge divided by ε_{0}.
 Q: What Gaussian surface suits a long charged wire? | A coaxial cylinder.
@@ -286,6 +290,7 @@ H: Multipole expansion
 P: Far from any distribution, V ≈ (1/4πε_{0})[Q/r + p·r̂/r^{2} + quadrupole/r^{3} + …]. The net charge dominates; if it's zero, the dipole moment does; and so on. Molecules and nuclei are characterised by their dipole and quadrupole moments.
 X: Field on the axis of a ring (Q = 10 nC, a = 0.1 m) at z = 0.1 m?
 > E = 8.99 × 10^{9} × 10^{-8} × 0.1/(0.02)^{3/2} = 3.2 × 10^{3} N C^{-1}
+D: phys-u15-ring-axis
 !: Integrate field vectors component by component; symmetry often cancels components but don't assume it without checking.
 Q: What is the field on the axis of a charged ring at its centre? | Zero, by symmetry.
 Q: What is the multipole expansion? | Writing a distribution's distant potential as monopole, dipole, quadrupole… terms falling as successively higher powers of 1/r.
@@ -504,6 +509,7 @@ P: In a p–n junction, Poisson's equation with the ionised dopant charge gives 
 X: Uniform charge density ρ between x = 0 and x = d with V = 0 at both ends. Find V(x).
 > d^{2}V/dx^{2} = −ρ/ε_{0} ⇒ V = (ρ/2ε_{0})x(d − x)
 > Maximum ρd^{2}/(8ε_{0}) at the centre
+D: phys-u15-poisson-slab
 !: Poisson's equation alone has infinitely many solutions; it's the boundary conditions that make the answer unique.
 Q: State Poisson's equation. | ∇^{2}V = −ρ/ε_{0}.
 Q: Where does Poisson's equation appear in semiconductor devices? | In finding the potential across depletion regions of p–n junctions.

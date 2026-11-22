@@ -1,0 +1,119 @@
+{
+ "id": "phys-u15-sphere-field",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Gauss's law",
+ "title": "Field of a uniformly charged solid sphere",
+ "caption": "Gauss's law with Q_enc = Q(r/R)³ inside gives E = Qr/(4πε₀R³), rising linearly from zero at the centre; outside, the sphere acts like a point charge, E = Q/(4πε₀r²), falling as 1/r². The two meet at the surface, r = R, where E reaches its maximum. Here E is in units of Q/(4πε₀R²) and r in units of R.",
+ "alt": "Graph of field against distance from the centre: a straight line rising from zero to a peak at the sphere's surface, then a curve falling as one over r squared.",
+ "description": [
+  "The horizontal axis is r/R; the vertical axis is E in units of Q/(4πε₀R²).",
+  "Inside (r < R): the enclosed charge is Q(r/R)³, so E = (r/R) in these units: a straight line from 0.",
+  "At the surface E = 1 (the peak).",
+  "Outside (r > R): E = 1/(r/R)², the point-charge field."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.2
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / R",
+  "E / (Q/4πε₀R²)"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "∝ r",
+   "labelAt": [
+    0.2,
+    0.34
+   ]
+  },
+  {
+   "expr": "1/(x*x)",
+   "domain": [
+    1,
+    3.2
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "∝ 1/r²",
+   "labelAt": [
+    1.6,
+    0.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "label": "surface, r = R",
+   "dx": 8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x",
+   "x": 1,
+   "y": 1,
+   "name": "inside field reaches the surface value E = Q/(4πε₀R²)"
+  },
+  {
+   "type": "point",
+   "expr": "1/(x*x)",
+   "x": 1,
+   "y": 1,
+   "name": "outside field equals the same value at r = R (continuous)"
+  },
+  {
+   "type": "slope",
+   "expr": "x",
+   "x": 0.5,
+   "value": 1,
+   "name": "inside, E rises linearly with r"
+  },
+  {
+   "type": "point",
+   "expr": "1/(x*x)",
+   "x": 2,
+   "y": 0.25,
+   "name": "outside, E falls as 1/r² (a quarter at 2R)"
+  }
+ ]
+}
