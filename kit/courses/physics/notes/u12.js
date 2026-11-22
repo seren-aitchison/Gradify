@@ -78,6 +78,7 @@ P: Heat a known mass electrically (Q = VIt), record ΔT, correct for heat losses
 X: A 2.0 kW kettle heats 1.0 kg of water from 20 °C to 100 °C. Minimum time?
 > Q = 1.0 × 4180 × 80 = 334 kJ
 > t = 334 000/2000 = 167 s ≈ 2.8 min
+D: phys-u12-kettle-heating
 !: Specific heat capacity isn't constant; it changes with temperature, especially at low temperatures.
 Q: Why does water moderate coastal climates? | Its high specific heat capacity means it warms and cools slowly.
 Q: Why is c_{p} larger than c_{V} for a gas? | At constant pressure, some heat goes into work as the gas expands.
@@ -100,6 +101,7 @@ X: How much energy turns 0.5 kg of ice at −10 °C into steam at 100 °C? (c_{i
 > Ice −10 → 0: 0.5 × 2100 × 10 = 10.5 kJ; melt: 167 kJ
 > Water 0 → 100: 209 kJ; boil: 1130 kJ
 > Total ≈ 1517 kJ: boiling dominates
+D: phys-u12-heating-curve
 !: During a phase change, adding heat doesn't raise the temperature; a pan of boiling water stays at 100 °C (at 1 atm) however high the flame.
 Q: What is specific latent heat? | The energy per kg to change phase at constant temperature.
 Q: Why is steam at 100 °C more dangerous than water at 100 °C? | Condensing steam releases a large latent heat onto the skin.
@@ -142,6 +144,7 @@ H: Perpetual motion
 P: A perpetual motion machine of the first kind would produce work without consuming energy, violating the first law. None has ever worked, and patent offices refuse to examine them.
 X: A gas absorbs 500 J of heat and does 200 J of work. Change in internal energy?
 > ΔU = 500 − 200 = +300 J
+D: phys-u12-first-law
 !: Sign conventions are the main source of error; write the law with the convention you're using and stick to it.
 Q: State the first law of thermodynamics. | ΔU = Q − W: internal energy change equals heat supplied minus work done by the system.
 Q: What happens to an ideal gas's temperature in a free expansion? | It stays the same (no heat, no work, so ΔU = 0).
@@ -161,6 +164,7 @@ H: Other work
 - Stretching a wire: dW = F dL; magnetising: dW = μ_{0}H dM; charging a capacitor: dW = V dQ; surface: γ dA.
 X: 2 mol of ideal gas expand isothermally at 300 K from 10 L to 30 L. Work done?
 > W = 2 × 8.31 × 300 × ln 3 = 5.5 kJ
+D: phys-u12-isothermal-work
 !: Work against zero external pressure (free expansion) is zero even if the gas expands a lot.
 Q: How is work represented on a p–V diagram? | As the area under the process curve.
 Q: Why is work path-dependent? | Different paths between the same states enclose different areas on a p–V diagram.
@@ -182,6 +186,7 @@ H: Related diagrams
 P: Engineers also use T–S diagrams (area = heat) and p–h diagrams for refrigerants. Each makes particular quantities easy to read off.
 X: A gas goes round a rectangle on a p–V diagram: p from 1 to 3 × 10^{5} Pa, V from 1 to 2 L, clockwise. Net work per cycle?
 > Area = 2 × 10^{5} × 10^{-3} = 200 J done by the gas
+D: phys-u12-pv-rectangle
 !: On p–V diagrams only quasi-static (slow, near-equilibrium) processes can be drawn as lines; rapid irreversible processes have no well-defined path.
 Q: Which way round does an engine cycle go on a p–V diagram? | Clockwise.
 Q: Which curve is steeper through a point: an isotherm or an adiabat? | The adiabat.
@@ -224,6 +229,7 @@ H: Real-world adiabats
 - **Foehn winds**: air descending a mountain warms adiabatically.
 X: Air (γ = 1.4) at 300 K is compressed adiabatically by a factor of 20. Final temperature?
 > T_{2} = 300 × 20^{0.4} = 300 × 3.31 = 994 K (721 °C)
+D: phys-u12-adiabat-isotherm
 !: Adiabatic isn't the same as isothermal: temperature changes even though no heat flows.
 Q: Why does air cool when it rises? | It expands adiabatically as pressure falls, doing work at the expense of internal energy.
 Q: How does a diesel engine ignite its fuel? | Rapid adiabatic compression heats the air above the fuel's ignition temperature.
@@ -246,6 +252,7 @@ P: The difference is exactly the work done at constant pressure per kelvin per m
 X: 2 mol of diatomic gas (C_{V} = 5R/2) are heated by 50 K at constant pressure. Find Q, W, ΔU.
 > ΔU = 2 × 2.5 × 8.31 × 50 = 2.08 kJ
 > W = nRΔT = 0.83 kJ; Q = 2.91 kJ
+D: phys-u12-isobaric-split
 !: Aerosol cans warn against heating because isochoric heating raises pressure in proportion to absolute temperature.
 Q: Why does heating at constant pressure need more heat than at constant volume? | Some of the heat goes into work as the gas expands.
 Q: State Charles's law. | At constant pressure, V/T is constant.
@@ -267,6 +274,7 @@ P: Carnot (1824) asked how much work a steam engine could get from heat, decades
 X: A power station takes in 2500 MW of heat and outputs 1000 MW of electricity. Efficiency and heat rejected?
 > η = 40%
 > Q_{c} = 1500 MW to cooling towers or a river
+D: phys-u12-power-station
 !: The "waste" heat isn't a design failure that better engineering can eliminate; the second law requires some.
 Q: Why must a heat engine reject heat? | The second law forbids converting heat entirely into work in a cycle.
 Q: Define the efficiency of a heat engine. | η = W/Q_{h}, the useful work divided by heat taken in.
@@ -289,6 +297,7 @@ P: A heat pump with COP 3 delivers 3 kWh of heat per kWh of electricity: 300% "e
 X: A heat pump moves heat from 0 °C outdoors to 35 °C radiators. Maximum COP?
 > T_{h}/(T_{h} − T_{c}) = 308/35 = 8.8
 > Real systems reach ~3–4
+D: phys-u12-heat-pump
 !: A fridge with its door open heats the kitchen: it rejects Q_{c} + W, more than it removes.
 Q: What is the coefficient of performance of a heat pump? | Heat delivered divided by work input.
 Q: Why can a heat pump's COP exceed 1? | It moves heat rather than creating it; the heat delivered includes heat taken from outside.
@@ -397,6 +406,7 @@ H: Carnot's theorem
 P: All reversible engines between the same two reservoirs have the same efficiency, and no engine is more efficient. If one were, running it with a reversed Carnot engine would move heat from cold to hot for free. This lets us define the thermodynamic temperature scale independent of any substance.
 X: Maximum efficiency of an engine between 500 °C and 20 °C?
 > η = 1 − 293/773 = 62%
+D: phys-u12-carnot-cycle
 !: Use kelvin, not Celsius, in Carnot's formula.
 Q: What are the four steps of the Carnot cycle? | Isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression.
 Q: State Carnot's theorem. | No engine operating between two reservoirs can be more efficient than a reversible one, and all reversible engines between them are equally efficient.
@@ -486,6 +496,7 @@ H: Life
 P: Cells drive unfavourable reactions (building proteins, ΔG > 0) by coupling them to ATP hydrolysis (ΔG ≈ −50 kJ mol^{-1} in the cell). Batteries and fuel cells turn ΔG directly into electrical work.
 X: At what temperature does ice melt, given ΔH = 6.01 kJ mol^{-1}, ΔS = 22.0 J mol^{-1} K^{-1}?
 > ΔG = 0 ⇒ T = ΔH/ΔS = 6010/22.0 = 273 K
+D: phys-u12-gibbs-melting
 !: ΔG < 0 tells you a reaction can happen, not how fast. Diamond turning into graphite is spontaneous but immeasurably slow.
 Q: What sign of ΔG means a reaction is spontaneous? | Negative.
 Q: How is ΔG related to cell voltage? | ΔG = −nFE.
@@ -570,6 +581,7 @@ H: Refrigeration cycles
 X: Ideal Otto efficiency for r = 10, γ = 1.4?
 > η = 1 − 10^{−0.4} = 1 − 0.398 = 60%
 > Real engines reach ~35%: friction, heat loss, incomplete combustion
+D: phys-u12-otto-cycle
 !: Raising the compression ratio in petrol engines is limited by knocking (premature ignition), not by thermodynamics.
 Q: What determines ideal Otto cycle efficiency? | The compression ratio (and γ): η = 1 − r^{1−γ}.
 Q: Which cycle do steam power stations use? | The Rankine cycle.
@@ -595,6 +607,7 @@ H: Other equations of state
 X: 1 mol of CO_{2} in 1 L at 300 K: compare ideal and van der Waals pressures (a = 0.364 Pa m^{6} mol^{-2}, b = 4.27 × 10^{-5} m^{3} mol^{-1}).
 > Ideal: 8.31 × 300/10^{-3} = 24.9 bar
 > VdW: 2493/(0.957 × 10^{-3}) − 0.364/10^{-6} = 26.0 − 3.6 = 22.4 bar
+D: phys-u12-vdw-co2
 !: The ideal gas law fails near condensation and at high pressures; check Z before trusting it.
 P: **Investigate with the lab.** Change volume and temperature in turn and check that pV/T stays constant for the gas in the box.
 IX: gas
@@ -619,6 +632,7 @@ H: Supercritical fluids
 P: Supercritical CO_{2} dissolves substances like a liquid but flows like a gas: used to decaffeinate coffee, dry-clean, and as a power-cycle working fluid.
 X: Using van der Waals constants for CO_{2}, estimate T_{c}.
 > T_{c} = 8 × 0.364/(27 × 8.31 × 4.27 × 10^{-5}) = 304 K
+D: phys-u12-critical-isotherms
 !: Near critical points mean-field theories (like van der Waals) give wrong exponents; fluctuations dominate.
 Q: What happens above the critical temperature? | Liquid and gas phases can no longer be distinguished; a gas can't be liquefied by pressure.
 Q: What is universality in critical phenomena? | Very different systems share the same critical exponents near their critical points.

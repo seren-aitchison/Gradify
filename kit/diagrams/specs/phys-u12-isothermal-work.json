@@ -1,0 +1,111 @@
+{
+ "id": "phys-u12-isothermal-work",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Work done by thermodynamic systems",
+ "title": "Work done as the area under the isotherm",
+ "caption": "For 2 mol at 300 K, p = nRT/V = 4986/V (p in kPa, V in L). The shaded area between V = 10 L and 30 L is W = ∫p dV = nRT ln(V₂/V₁) = 2 × 8.31 × 300 × ln 3 = 5.5 kJ. The gas starts at 499 kPa and ends at 166 kPa.",
+ "alt": "p–V graph: a falling hyperbola from 499 kPa at 10 L to 166 kPa at 30 L, with the area under it shaded: 5.5 kJ.",
+ "description": [
+  "The horizontal axis is volume in litres, the vertical axis pressure in kPa.",
+  "The isotherm p = 4986/V falls from 499 kPa at 10 L to 166 kPa at 30 L.",
+  "The area under it between the two volumes is the work done by the gas: 2 × 8.31 × 300 × ln 3 = 5.5 kJ."
+ ],
+ "range": {
+  "x": [
+   0,
+   35
+  ],
+  "y": [
+   0,
+   600
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30
+  ],
+  [
+   100,
+   200,
+   300,
+   400,
+   500
+  ]
+ ],
+ "grid": [
+  10,
+  100
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / L",
+  "p / kPa"
+ ],
+ "areas": [
+  {
+   "expr": "4986/x",
+   "from": 10,
+   "to": 30,
+   "colour": "a1",
+   "opacity": 0.25
+  }
+ ],
+ "curves": [
+  {
+   "expr": "4986/x",
+   "domain": [
+    7,
+    35
+   ],
+   "colour": "a1",
+   "label": "300 K",
+   "labelAt": [
+    22,
+    260
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 498.6,
+   "label": "499 kPa",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 30,
+   "y": 166.2,
+   "label": "166 kPa",
+   "dx": -4,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "4986/x",
+   "from": 10,
+   "to": 30,
+   "value": 5477.680871299194,
+   "tol": 0.5,
+   "name": "area under the isotherm = nRT ln 3 = 5478 J (kPa × L = J)"
+  },
+  {
+   "type": "point",
+   "expr": "4986/x",
+   "x": 10,
+   "y": 498.6,
+   "name": "pV = nRT at 10 L"
+  }
+ ]
+}

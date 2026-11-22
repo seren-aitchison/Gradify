@@ -1,0 +1,116 @@
+{
+ "id": "phys-u12-gibbs-melting",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Gibbs free energy",
+ "title": "Free energy of melting against temperature",
+ "caption": "For ice → water, ΔG = ΔH − TΔS = 6.01 − 0.022 T (kJ mol⁻¹). Below T = ΔH/ΔS = 6010/22 = 273 K, ΔG > 0 and melting does not happen on its own; above it ΔG < 0. At ΔG = 0 the two phases are in equilibrium: the melting point, 273 K.",
+ "alt": "Graph of ΔG against temperature: a straight line falling from 6.01 kJ per mole at 0 K through zero at 273 K.",
+ "description": [
+  "The horizontal axis is temperature in kelvin, the vertical axis ΔG for melting in kJ mol⁻¹.",
+  "ΔG = ΔH − TΔS is a straight line of gradient −ΔS = −0.022 kJ mol⁻¹ K⁻¹, starting at ΔH = +6.01 kJ mol⁻¹.",
+  "It crosses zero at T = 273 K: ice and water coexist. Left of this ice is stable, right of it water is."
+ ],
+ "range": {
+  "x": [
+   0,
+   400
+  ],
+  "y": [
+   -3,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400
+  ],
+  [
+   -2,
+   0,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  100,
+  2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "T / K",
+  "ΔG / kJ mol^{-1}"
+ ],
+ "curves": [
+  {
+   "expr": "6.01-0.022*x",
+   "colour": "a1",
+   "label": "ΔG = ΔH − TΔS",
+   "labelAt": [
+    20,
+    3.4
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 273.1818181818182,
+   "y": 0,
+   "label": "273 K",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    273.1818181818182
+   ],
+   "label": "ice stable",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    273.1818181818182,
+    400
+   ],
+   "label": "water stable",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "6.01-0.022*x",
+   "x": 273.1818181818182,
+   "y": 0,
+   "name": "ΔG = 0 at T = ΔH/ΔS = 273 K"
+  },
+  {
+   "type": "point",
+   "expr": "6.01-0.022*x",
+   "x": 0,
+   "y": 6.01,
+   "name": "ΔG = ΔH at 0 K"
+  },
+  {
+   "type": "slope",
+   "expr": "6.01-0.022*x",
+   "x": 100,
+   "value": -0.022,
+   "name": "gradient = −ΔS"
+  }
+ ]
+}

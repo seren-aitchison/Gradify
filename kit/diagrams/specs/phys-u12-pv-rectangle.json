@@ -1,0 +1,147 @@
+{
+ "id": "phys-u12-pv-rectangle",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Pressure-volume diagrams",
+ "title": "A clockwise rectangle on a p–V diagram",
+ "caption": "The gas expands at 300 kPa (area under the top edge 300 J) and is compressed at 100 kPa (100 J given back), so the net work done by the gas is the enclosed area: 300 − 100 = 200 J. A clockwise cycle on p–V gives positive net work. This is the lesson's 1–3 × 10⁵ Pa, 1–2 L example.",
+ "alt": "p–V rectangle with corners at (1 L, 100 kPa), (1 L, 300 kPa), (2 L, 300 kPa) and (2 L, 100 kPa) traversed clockwise; enclosed area 200 J.",
+ "description": [
+  "The horizontal axis is volume in litres, the vertical axis pressure in kPa.",
+  "Clockwise from the bottom left: heated at constant volume from 100 to 300 kPa, expands at 300 kPa from 1 to 2 L, cooled at constant volume, compressed at 100 kPa.",
+  "Work done by the gas on the way across the top: 300 × (2 − 1) = 300 J; work done on it on the way back: 100 J.",
+  "Net work done per cycle = enclosed area = 200 J."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   400
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2
+  ],
+  [
+   100,
+   200,
+   300
+  ]
+ ],
+ "grid": [
+  1,
+  100
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / L",
+  "p / kPa"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     1,
+     100
+    ],
+    [
+     1,
+     300
+    ],
+    [
+     2,
+     300
+    ],
+    [
+     2,
+     100
+    ],
+    [
+     1,
+     100
+    ]
+   ],
+   "colour": "a1",
+   "width": 3
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    1.35,
+    300
+   ],
+   "to": [
+    1.7,
+    300
+   ],
+   "colour": "a1",
+   "label": "expansion",
+   "dy": -14
+  },
+  {
+   "from": [
+    1.7,
+    100
+   ],
+   "to": [
+    1.35,
+    100
+   ],
+   "colour": "a1",
+   "label": "compression",
+   "dy": 18
+  }
+ ],
+ "points": [
+  {
+   "x": 1.5,
+   "y": 200,
+   "label": "area = 200 J",
+   "colour": "a2",
+   "anchor": "middle",
+   "dx": 0,
+   "dy": 24
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "300+0*x",
+   "from": 1,
+   "to": 2,
+   "value": 300,
+   "tol": 0.01,
+   "name": "work done by the gas on expansion = 300 J"
+  },
+  {
+   "type": "area",
+   "expr": "100+0*x",
+   "from": 1,
+   "to": 2,
+   "value": 100,
+   "tol": 0.01,
+   "name": "work done on the gas on compression = 100 J"
+  },
+  {
+   "type": "value",
+   "expr": "300-100",
+   "x": 0,
+   "between": [
+    200,
+    200
+   ],
+   "name": "net work = (300 − 100) kPa × (2 − 1) L = 200 J"
+  }
+ ]
+}

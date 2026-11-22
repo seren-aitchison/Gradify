@@ -1,0 +1,32 @@
+{
+ "id": "phys-u12-power-station",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Heat engines",
+ "title": "A power station as a heat engine",
+ "caption": "The station takes in Q_h = 2500 MW of heat, outputs W = 1000 MW of electricity and rejects Q_c = Q_h − W = 1500 MW to the cooling towers or a river. Efficiency η = W/Q_h = 40%. The rejected heat cannot be avoided entirely: the second law forbids η = 100%.",
+ "alt": "Energy flow: 2500 MW of heat in, 1000 MW of electricity out and 1500 MW of waste heat; efficiency 40 percent.",
+ "description": [
+  "2500 MW of heat enters the engine from the hot source.",
+  "1000 MW leaves as electrical work.",
+  "1500 MW is rejected to the cold sink. Efficiency = 1000 ÷ 2500 = 40%."
+ ],
+ "units": "MW",
+ "input": {
+  "label": "heat in Q_{h}",
+  "value": 2500
+ },
+ "outputs": [
+  {
+   "label": "electricity W",
+   "value": 1000,
+   "useful": true
+  },
+  {
+   "label": "heat rejected Q_{c}",
+   "value": 1500
+  }
+ ],
+ "efficiency": 0.4
+}

@@ -1,0 +1,31 @@
+{
+ "id": "phys-u12-first-law",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "First law of thermodynamics",
+ "title": "The first law: where 500 J of heat goes",
+ "caption": "The gas absorbs Q = 500 J. Of it, W = 200 J leaves as work done by the gas and the other ΔU = Q − W = +300 J stays as internal energy. Energy is conserved: the two outputs add up to the heat put in.",
+ "alt": "Energy flow: 500 J of heat in splits into 200 J of work done by the gas and 300 J of increased internal energy.",
+ "description": [
+  "500 J of heat flows into the gas.",
+  "200 J leaves as work done by the gas on its surroundings.",
+  "ΔU = 500 − 200 = +300 J remains in the gas as internal energy, so its temperature rises."
+ ],
+ "units": "J",
+ "input": {
+  "label": "heat absorbed Q",
+  "value": 500
+ },
+ "outputs": [
+  {
+   "label": "work done by gas W",
+   "value": 200,
+   "useful": true
+  },
+  {
+   "label": "rise in internal energy ΔU",
+   "value": 300
+  }
+ ]
+}

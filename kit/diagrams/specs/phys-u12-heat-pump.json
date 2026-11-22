@@ -1,0 +1,33 @@
+{
+ "id": "phys-u12-heat-pump",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Refrigerators and heat pumps",
+ "title": "A heat pump at its Carnot limit",
+ "caption": "Moving heat from 0 °C (273.15 K) to 35 °C radiators (308.15 K): COP_max = T_h/(T_h − T_c) = 308/35 = 8.8. Each 1.0 kW of electrical work delivers 8.8 kW of heat to the house, because 7.8 kW is simply carried in from the outdoor air. A real machine reaches about 3–4.",
+ "alt": "Energy flow: 1.0 kW of electricity plus 7.8 kW of heat from outdoors give 8.8 kW of heat to the radiators; COP 8.8.",
+ "description": [
+  "Work input W = 1.0 kW (the compressor).",
+  "Heat taken from the cold outdoors: Q_c = Q_h − W = 7.8 kW.",
+  "Heat delivered at 35 °C: Q_h = COP × W = 8.8 × 1.0 = 8.8 kW. Energy is conserved: Q_h = W + Q_c."
+ ],
+ "units": "kW",
+ "inputs": [
+  {
+   "label": "electrical work W",
+   "value": 1
+  },
+  {
+   "label": "heat from outdoors Q_{c}",
+   "value": 7.804285714285713
+  }
+ ],
+ "outputs": [
+  {
+   "label": "heat to radiators Q_{h}",
+   "value": 8.804285714285713,
+   "useful": true
+  }
+ ]
+}
