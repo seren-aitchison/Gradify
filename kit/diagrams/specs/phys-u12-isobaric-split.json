@@ -1,0 +1,31 @@
+{
+ "id": "phys-u12-isobaric-split",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Isobaric and isochoric processes",
+ "title": "Heating a diatomic gas at constant pressure",
+ "caption": "Heating 2 mol by 50 K at constant pressure takes Q = nC_pΔT = 2909 J. Of this ΔU = nC_VΔT = 2078 J raises the internal energy and W = nRΔT = 831 J is the work of expanding: C_p = C_V + R, so 29% of the heat becomes work (γ = 7/5).",
+ "alt": "Energy flow: 2909 J of heat in, 2078 J to internal energy and 831 J to work done by the gas.",
+ "description": [
+  "Heat supplied at constant pressure: Q = 2 × (5R/2 + R) × 50 = 2909 J.",
+  "Internal energy: ΔU = 2 × 5R/2 × 50 = 2078 J.",
+  "Work: W = pΔV = nRΔT = 2 × 8.31 × 50 = 831 J. ΔU + W = Q."
+ ],
+ "units": "J",
+ "input": {
+  "label": "heat Q",
+  "value": 2908.5
+ },
+ "outputs": [
+  {
+   "label": "internal energy ΔU",
+   "value": 2077.5
+  },
+  {
+   "label": "work done by gas W",
+   "value": 831,
+   "useful": true
+  }
+ ]
+}

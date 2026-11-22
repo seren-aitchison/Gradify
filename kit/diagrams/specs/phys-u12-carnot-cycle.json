@@ -1,0 +1,213 @@
+{
+ "id": "phys-u12-carnot-cycle",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Carnot cycle",
+ "title": "The Carnot cycle between 500 °C and 20 °C",
+ "caption": "1 mol of monatomic gas runs A→B isothermally at T_h = 773 K (500 °C), B→C adiabatically, C→D isothermally at T_c = 293 K (20 °C), D→A adiabatically. Heat in Q_h = nRT_h ln(V_B/V_A) = 4.5 kJ, heat out Q_c = 1.7 kJ, so Q_c/Q_h = T_c/T_h and η = 1 − 293/773 = 62%. Net work (enclosed area) 2.8 kJ.",
+ "alt": "p–V diagram of a Carnot cycle: a hot isotherm A to B, an adiabat B to C, a cold isotherm C to D and an adiabat D to A; efficiency 62 percent.",
+ "description": [
+  "Axes: volume in litres, pressure in MPa, for 1 mol.",
+  "A→B: isothermal expansion at 773 K from 1 L to 2 L, absorbing Q_h = 4.5 kJ.",
+  "B→C: adiabatic expansion to 8.6 L, cooling to 293 K (TV^(γ−1) is constant, γ = 5/3).",
+  "C→D: isothermal compression at 293 K to 4.3 L, rejecting Q_c = 1.7 kJ.",
+  "D→A: adiabatic compression back to A. η = W/Q_h = 2.8/4.5 = 62% = 1 − T_c/T_h."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   7.5
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  2,
+  2
+ ],
+ "height": [
+  350,
+  330
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / L",
+  "p / MPa"
+ ],
+ "curves": [
+  {
+   "expr": "6.4248765/x",
+   "domain": [
+    1,
+    2
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "T_{h}",
+   "labelAt": [
+    1.35,
+    5.3
+   ],
+   "anchor": "middle"
+  },
+  {
+   "expr": "3.21243825*(2/x)^1.6666666666666667",
+   "domain": [
+    2,
+    8.566250855844416
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "expr": "2.4360765/x",
+   "domain": [
+    4.283125427922208,
+    8.566250855844416
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "T_{c}",
+   "labelAt": [
+    6,
+    0.9
+   ],
+   "anchor": "middle"
+  },
+  {
+   "expr": "0.568761419901207*(4.283125427922208/x)^1.6666666666666667",
+   "domain": [
+    1,
+    4.283125427922208
+   ],
+   "colour": "a1",
+   "width": 3.4
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 6.4248765,
+   "label": "A",
+   "dx": -10,
+   "dy": -8,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 3.21243825,
+   "label": "B",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 8.566250855844416,
+   "y": 0.2843807099506035,
+   "label": "C",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 4.283125427922208,
+   "y": 0.568761419901207,
+   "label": "D",
+   "dx": 0,
+   "dy": -14,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "6.4248765/x",
+   "x": 1,
+   "y": 6.4248765,
+   "name": "A lies on the hot isotherm"
+  },
+  {
+   "type": "point",
+   "expr": "6.4248765/x",
+   "x": 2,
+   "y": 3.21243825,
+   "name": "B lies on the hot isotherm"
+  },
+  {
+   "type": "intersect",
+   "a": "6.4248765/x",
+   "b": "6.4248765*(1/x)^0",
+   "x": 1,
+   "y": 6.4248765,
+   "name": "pV = nRT_h at A"
+  },
+  {
+   "type": "point",
+   "expr": "3.21243825*(2/x)^1.6666666666666667",
+   "x": 2,
+   "y": 3.21243825,
+   "name": "the adiabat B→C starts at B"
+  },
+  {
+   "type": "point",
+   "expr": "3.21243825*(2/x)^1.6666666666666667",
+   "x": 8.566250855844416,
+   "y": 0.2843807099506035,
+   "name": "the adiabat B→C reaches the cold isotherm at C (T = 293 K)"
+  },
+  {
+   "type": "point",
+   "expr": "2.4360765/x",
+   "x": 8.566250855844416,
+   "y": 0.2843807099506035,
+   "name": "C lies on the cold isotherm"
+  },
+  {
+   "type": "point",
+   "expr": "2.4360765/x",
+   "x": 4.283125427922208,
+   "y": 0.568761419901207,
+   "name": "D lies on the cold isotherm"
+  },
+  {
+   "type": "point",
+   "expr": "0.568761419901207*(4.283125427922208/x)^1.6666666666666667",
+   "x": 1,
+   "y": 6.4248765,
+   "name": "the adiabat D→A ends at A (V_C/V_B = V_D/V_A)"
+  },
+  {
+   "type": "area",
+   "expr": "6.4248765/x",
+   "from": 1,
+   "to": 2,
+   "value": 4.453385031420849,
+   "tol": 0.01,
+   "name": "Q_h = nRT_h ln(V_B/V_A) = 4.5 kJ"
+  },
+  {
+   "type": "area",
+   "expr": "2.4360765/x",
+   "from": 4.283125427922208,
+   "to": 8.566250855844416,
+   "value": 1.6885595576033396,
+   "tol": 0.01,
+   "name": "Q_c = nRT_c ln(V_C/V_D) = 1.7 kJ, so Q_c/Q_h = T_c/T_h"
+  }
+ ]
+}

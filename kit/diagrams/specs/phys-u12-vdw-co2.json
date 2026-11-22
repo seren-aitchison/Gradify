@@ -1,0 +1,112 @@
+{
+ "id": "phys-u12-vdw-co2",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Equations of state",
+ "title": "CO₂: ideal gas against van der Waals",
+ "caption": "1 mol of CO₂ at 300 K in 1.0 L. Ideal gas: p = RT/V = 24.9 bar. Van der Waals, with a = 0.364 Pa m⁶ mol⁻² and b = 4.27 × 10⁻⁵ m³ mol⁻¹: p = RT/(V − b) − a/V² = 26.0 − 3.6 = 22.4 bar. The excluded volume b raises p; the attraction term a/V² lowers it, and here the attraction wins.",
+ "alt": "Graph of pressure against volume for CO2 at 300 K: the ideal hyperbola and the lower van der Waals curve; at 1 litre they read 24.9 and 22.4 bar.",
+ "description": [
+  "The horizontal axis is volume in litres, the vertical axis pressure in bar.",
+  "The ideal-gas curve p = 24.9/V passes through 24.9 bar at 1.0 L.",
+  "The van der Waals curve lies below it at moderate volumes (attraction), 22.4 bar at 1.0 L.",
+  "The two curves agree at large volume, where the molecules are far apart."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   3
+  ],
+  "y": [
+   0,
+   60
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "grid": [
+  0.5,
+  10
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / L",
+  "p / bar"
+ ],
+ "curves": [
+  {
+   "expr": "24.93/x",
+   "colour": "a1",
+   "label": "ideal",
+   "labelAt": [
+    0.55,
+    52
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "24.93/(x-0.0427)-3.64/(x*x)",
+   "colour": "a2",
+   "label": "van der Waals",
+   "labelAt": [
+    1.5,
+    8
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 24.93,
+   "label": "24.9 bar",
+   "colour": "a1",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 1,
+   "y": 22.401993105609527,
+   "label": "22.4 bar",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "24.93/x",
+   "x": 1,
+   "y": 24.93,
+   "name": "ideal gas: 24.9 bar at 1.0 L"
+  },
+  {
+   "type": "point",
+   "expr": "24.93/(x-0.0427)-3.64/(x*x)",
+   "x": 1,
+   "y": 22.401993105609527,
+   "name": "van der Waals: 22.4 bar at 1.0 L"
+  }
+ ]
+}

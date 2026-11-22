@@ -1,0 +1,113 @@
+{
+ "id": "phys-u12-kettle-heating",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Specific heat capacity",
+ "title": "Heating 1.0 kg of water with a 2.0 kW kettle",
+ "caption": "With Q = mcΔT = 1 × 4180 × 80 = 334 kJ and a power of 2 kW, the water reaches 100 °C after t = Q/P = 167.2 s (about 2.8 min). The line is straight because c is taken as constant and all the power goes into the water, so 0.48 K rise every second: the stated time is a minimum.",
+ "alt": "Graph of water temperature against time: a straight line from 20 °C at 0 s to 100 °C at 167.2 s.",
+ "description": [
+  "The horizontal axis is time in seconds, the vertical axis is the water temperature in °C.",
+  "The temperature rises at P/(mc) = 2000 ÷ (1 × 4180) = 0.48 K s⁻¹, starting at 20 °C.",
+  "The line reaches 100 °C at t = 167.2 s, the lesson's answer of about 167 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   200
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "grid": [
+  50,
+  20
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / s",
+  "T / °C"
+ ],
+ "curves": [
+  {
+   "expr": "20+0.4784688995215311*x",
+   "colour": "a1",
+   "domain": [
+    0,
+    167.2
+   ],
+   "label": "T = 20 + 0.478 t",
+   "labelAt": [
+    20,
+    52
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 20,
+   "label": "20 °C",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 167.2,
+   "y": 100,
+   "label": "167.2 s",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "marks": [
+  {
+   "y": 100
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "20+0.4784688995215311*x",
+   "x": 0,
+   "y": 20,
+   "name": "starts at 20 °C"
+  },
+  {
+   "type": "point",
+   "expr": "20+0.4784688995215311*x",
+   "x": 167.2,
+   "y": 100,
+   "name": "reaches 100 °C at t = Q/P = 167.2 s"
+  },
+  {
+   "type": "slope",
+   "expr": "20+0.4784688995215311*x",
+   "x": 50,
+   "value": 0.4784688995215311,
+   "name": "the gradient is P/(mc) = 0.48 K per second"
+  }
+ ]
+}

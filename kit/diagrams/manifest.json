@@ -39161,5 +39161,707 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u12-adiabat-isotherm": {
+  "title": "Adiabatic compression of air is steeper than isothermal",
+  "caption": "Compressing air (γ = 1.4) to 1/20 of its volume: along the isotherm pV = constant the pressure rises 20-fold (T stays 300 K); along the adiabat pV^γ = constant it rises 66.3-fold, because the gas also heats up. T₂ = 300 × 20^0.3999999999999999 = 994 K, which is 994 K from the pressure ratio 66.3/20. At any point the adiabat is 1.4 times as steep.",
+  "alt": "p–V graph with pressure and volume as ratios to the start: the isotherm and the steeper adiabat both start at (1, 1); at V = 0.05 the isotherm is at 20 and the adiabat at 66.3.",
+  "description": [
+   "Both axes are ratios to the starting state: V/V₁ (from 1 down to 1/20) and p/p₁.",
+   "Isotherm p = 1/V reaches 20 when V = 1/20.",
+   "Adiabat p = V^−1.4 reaches 20^1.4 = 66.3 there, and starts 1.4 times as steep: dp/dV = −γp/V against −p/V.",
+   "The temperature ratio is the pressure ratio ÷ 20: 3.31, so T₂ = 994 K."
+  ],
+  "course": "physics",
+  "lesson": "Adiabatic processes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Adiabatic processes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "isotherm: p rises 20-fold",
+    "ok": true,
+    "detail": "y(0.05) = 20"
+   },
+   {
+    "name": "adiabat: p rises 20^1.4 = 66.3-fold",
+    "ok": true,
+    "detail": "y(0.05) = 66.2891"
+   },
+   {
+    "name": "at the start the adiabat gradient is −γ = −1.4",
+    "ok": true,
+    "detail": "gradient -1.4000"
+   },
+   {
+    "name": "at the start the isotherm gradient is −1",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-carnot-cycle": {
+  "title": "The Carnot cycle between 500 °C and 20 °C",
+  "caption": "1 mol of monatomic gas runs A→B isothermally at T_h = 773 K (500 °C), B→C adiabatically, C→D isothermally at T_c = 293 K (20 °C), D→A adiabatically. Heat in Q_h = nRT_h ln(V_B/V_A) = 4.5 kJ, heat out Q_c = 1.7 kJ, so Q_c/Q_h = T_c/T_h and η = 1 − 293/773 = 62%. Net work (enclosed area) 2.8 kJ.",
+  "alt": "p–V diagram of a Carnot cycle: a hot isotherm A to B, an adiabat B to C, a cold isotherm C to D and an adiabat D to A; efficiency 62 percent.",
+  "description": [
+   "Axes: volume in litres, pressure in MPa, for 1 mol.",
+   "A→B: isothermal expansion at 773 K from 1 L to 2 L, absorbing Q_h = 4.5 kJ.",
+   "B→C: adiabatic expansion to 8.6 L, cooling to 293 K (TV^(γ−1) is constant, γ = 5/3).",
+   "C→D: isothermal compression at 293 K to 4.3 L, rejecting Q_c = 1.7 kJ.",
+   "D→A: adiabatic compression back to A. η = W/Q_h = 2.8/4.5 = 62% = 1 − T_c/T_h."
+  ],
+  "course": "physics",
+  "lesson": "Carnot cycle",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Carnot cycle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A lies on the hot isotherm",
+    "ok": true,
+    "detail": "y(1) = 6.4249"
+   },
+   {
+    "name": "B lies on the hot isotherm",
+    "ok": true,
+    "detail": "y(2) = 3.2124"
+   },
+   {
+    "name": "pV = nRT_h at A",
+    "ok": true,
+    "detail": "6.4248765/x → 6.425, 6.4248765*(1/x)^0 → 6.425"
+   },
+   {
+    "name": "the adiabat B→C starts at B",
+    "ok": true,
+    "detail": "y(2) = 3.2124"
+   },
+   {
+    "name": "the adiabat B→C reaches the cold isotherm at C (T = 293 K)",
+    "ok": true,
+    "detail": "y(8.566250855844416) = 0.2844"
+   },
+   {
+    "name": "C lies on the cold isotherm",
+    "ok": true,
+    "detail": "y(8.566250855844416) = 0.2844"
+   },
+   {
+    "name": "D lies on the cold isotherm",
+    "ok": true,
+    "detail": "y(4.283125427922208) = 0.5688"
+   },
+   {
+    "name": "the adiabat D→A ends at A (V_C/V_B = V_D/V_A)",
+    "ok": true,
+    "detail": "y(1) = 6.4249"
+   },
+   {
+    "name": "Q_h = nRT_h ln(V_B/V_A) = 4.5 kJ",
+    "ok": true,
+    "detail": "area 4.4534"
+   },
+   {
+    "name": "Q_c = nRT_c ln(V_C/V_D) = 1.7 kJ, so Q_c/Q_h = T_c/T_h",
+    "ok": true,
+    "detail": "area 1.6886"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-critical-isotherms": {
+  "title": "van der Waals isotherms around the critical point",
+  "caption": "In reduced units (p, V, T divided by their critical values) the van der Waals isotherms are p = 8T/(3V − 1) − 3/V². Above T_c (here T = 1.1) the curve is smooth; at T_c it has a flat inflection exactly at (1, 1), the critical point; below T_c (T = 0.9) it has a wiggle where liquid and gas coexist. For CO₂, T_c = 8a/(27Rb) = 304 K.",
+  "alt": "Three reduced van der Waals isotherms: a smooth one above the critical temperature, one with a flat inflection at the point (1, 1), and one below with a dip and a hump.",
+  "description": [
+   "Axes: reduced volume V/V_c and reduced pressure p/p_c.",
+   "T = 1.1 T_c: pressure falls monotonically with volume.",
+   "T = T_c: the curve is flat (gradient 0) as it passes through (1, 1): the critical point where liquid and gas become identical.",
+   "T = 0.9 T_c: the curve has a minimum and a maximum; the equal-area construction replaces that part by a horizontal line. CO₂: T_c = 8 × 0.364/(27 × 8.31 × 4.27 × 10⁻⁵) = 304 K."
+  ],
+  "course": "physics",
+  "lesson": "Critical points",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Critical points"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the T = T_c isotherm passes through (1, 1)",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "its gradient there is zero: dp/dV = 0",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "above T_c the gradient is still negative (no wiggle)",
+    "ok": true,
+    "detail": "gradient -0.6000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-first-law": {
+  "title": "The first law: where 500 J of heat goes",
+  "caption": "The gas absorbs Q = 500 J. Of it, W = 200 J leaves as work done by the gas and the other ΔU = Q − W = +300 J stays as internal energy. Energy is conserved: the two outputs add up to the heat put in.",
+  "alt": "Energy flow: 500 J of heat in splits into 200 J of work done by the gas and 300 J of increased internal energy.",
+  "description": [
+   "500 J of heat flows into the gas.",
+   "200 J leaves as work done by the gas on its surroundings.",
+   "ΔU = 500 − 200 = +300 J remains in the gas as internal energy, so its temperature rises."
+  ],
+  "course": "physics",
+  "lesson": "First law of thermodynamics",
+  "also": [],
+  "renderer": "sankey",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: First law of thermodynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "energy is conserved: the outputs add up to the input",
+    "ok": true,
+    "detail": "in 500, out 500 J"
+   },
+   {
+    "name": "every transfer is positive and something is useful",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-gibbs-melting": {
+  "title": "Free energy of melting against temperature",
+  "caption": "For ice → water, ΔG = ΔH − TΔS = 6.01 − 0.022 T (kJ mol⁻¹). Below T = ΔH/ΔS = 6010/22 = 273 K, ΔG > 0 and melting does not happen on its own; above it ΔG < 0. At ΔG = 0 the two phases are in equilibrium: the melting point, 273 K.",
+  "alt": "Graph of ΔG against temperature: a straight line falling from 6.01 kJ per mole at 0 K through zero at 273 K.",
+  "description": [
+   "The horizontal axis is temperature in kelvin, the vertical axis ΔG for melting in kJ mol⁻¹.",
+   "ΔG = ΔH − TΔS is a straight line of gradient −ΔS = −0.022 kJ mol⁻¹ K⁻¹, starting at ΔH = +6.01 kJ mol⁻¹.",
+   "It crosses zero at T = 273 K: ice and water coexist. Left of this ice is stable, right of it water is."
+  ],
+  "course": "physics",
+  "lesson": "Gibbs free energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Gibbs free energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ΔG = 0 at T = ΔH/ΔS = 273 K",
+    "ok": true,
+    "detail": "y(273.1818181818182) = 0"
+   },
+   {
+    "name": "ΔG = ΔH at 0 K",
+    "ok": true,
+    "detail": "y(0) = 6.01"
+   },
+   {
+    "name": "gradient = −ΔS",
+    "ok": true,
+    "detail": "gradient -0.0220"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-heating-curve": {
+  "title": "Heating curve: ice at −10 °C to steam at 100 °C",
+  "caption": "For 0.5 kg: warming the ice takes 10.5 kJ, melting 167 kJ, warming the water 209 kJ and boiling 1130 kJ, a total of 1517 kJ. The sloping parts have gradient 1/(mc); the flat plateaus are the latent heats, where energy goes into the bonds and the temperature stays put. Boiling alone is 75% of the total.",
+  "alt": "Graph of temperature against energy supplied: a short slope from −10 to 0 °C, a plateau at 0 °C to 178 kJ, a slope to 100 °C at 387 kJ, then a long plateau at 100 °C ending at 1517 kJ.",
+  "description": [
+   "The horizontal axis is the energy supplied in kJ; the vertical axis is the temperature in °C.",
+   "Ice warms from −10 to 0 °C: Q = 0.5 × 2100 × 10 = 10.5 kJ.",
+   "Melting at 0 °C: Q = mL = 0.5 × 334 = 167 kJ, a flat plateau.",
+   "Water warms 0 to 100 °C: 0.5 × 4180 × 100 = 209 kJ.",
+   "Boiling at 100 °C: 0.5 × 2260 = 1130 kJ, the longest plateau. Total ≈ 1517 kJ."
+  ],
+  "course": "physics",
+  "lesson": "Latent heat",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Latent heat"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ice reaches 0 °C after 10.5 kJ",
+    "ok": true,
+    "detail": "y(10.5) = 0"
+   },
+   {
+    "name": "the water starts at 0 °C after 178 kJ (melting took 167 kJ)",
+    "ok": true,
+    "detail": "y(177.5) = 0"
+   },
+   {
+    "name": "the water reaches 100 °C after 387 kJ",
+    "ok": true,
+    "detail": "y(386.5) = 100"
+   },
+   {
+    "name": "the water gradient is 1/(mc)",
+    "ok": true,
+    "detail": "gradient 0.4785"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-isobaric-split": {
+  "title": "Heating a diatomic gas at constant pressure",
+  "caption": "Heating 2 mol by 50 K at constant pressure takes Q = nC_pΔT = 2909 J. Of this ΔU = nC_VΔT = 2078 J raises the internal energy and W = nRΔT = 831 J is the work of expanding: C_p = C_V + R, so 29% of the heat becomes work (γ = 7/5).",
+  "alt": "Energy flow: 2909 J of heat in, 2078 J to internal energy and 831 J to work done by the gas.",
+  "description": [
+   "Heat supplied at constant pressure: Q = 2 × (5R/2 + R) × 50 = 2909 J.",
+   "Internal energy: ΔU = 2 × 5R/2 × 50 = 2078 J.",
+   "Work: W = pΔV = nRΔT = 2 × 8.31 × 50 = 831 J. ΔU + W = Q."
+  ],
+  "course": "physics",
+  "lesson": "Isobaric and isochoric processes",
+  "also": [],
+  "renderer": "sankey",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Isobaric and isochoric processes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "energy is conserved: the outputs add up to the input",
+    "ok": true,
+    "detail": "in 2910, out 2910 J"
+   },
+   {
+    "name": "every transfer is positive and something is useful",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-isothermal-work": {
+  "title": "Work done as the area under the isotherm",
+  "caption": "For 2 mol at 300 K, p = nRT/V = 4986/V (p in kPa, V in L). The shaded area between V = 10 L and 30 L is W = ∫p dV = nRT ln(V₂/V₁) = 2 × 8.31 × 300 × ln 3 = 5.5 kJ. The gas starts at 499 kPa and ends at 166 kPa.",
+  "alt": "p–V graph: a falling hyperbola from 499 kPa at 10 L to 166 kPa at 30 L, with the area under it shaded: 5.5 kJ.",
+  "description": [
+   "The horizontal axis is volume in litres, the vertical axis pressure in kPa.",
+   "The isotherm p = 4986/V falls from 499 kPa at 10 L to 166 kPa at 30 L.",
+   "The area under it between the two volumes is the work done by the gas: 2 × 8.31 × 300 × ln 3 = 5.5 kJ."
+  ],
+  "course": "physics",
+  "lesson": "Work done by thermodynamic systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Work done by thermodynamic systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area under the isotherm = nRT ln 3 = 5478 J (kPa × L = J)",
+    "ok": true,
+    "detail": "area 5477.6809"
+   },
+   {
+    "name": "pV = nRT at 10 L",
+    "ok": true,
+    "detail": "y(10) = 498.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-kettle-heating": {
+  "title": "Heating 1.0 kg of water with a 2.0 kW kettle",
+  "caption": "With Q = mcΔT = 1 × 4180 × 80 = 334 kJ and a power of 2 kW, the water reaches 100 °C after t = Q/P = 167.2 s (about 2.8 min). The line is straight because c is taken as constant and all the power goes into the water, so 0.48 K rise every second: the stated time is a minimum.",
+  "alt": "Graph of water temperature against time: a straight line from 20 °C at 0 s to 100 °C at 167.2 s.",
+  "description": [
+   "The horizontal axis is time in seconds, the vertical axis is the water temperature in °C.",
+   "The temperature rises at P/(mc) = 2000 ÷ (1 × 4180) = 0.48 K s⁻¹, starting at 20 °C.",
+   "The line reaches 100 °C at t = 167.2 s, the lesson's answer of about 167 s."
+  ],
+  "course": "physics",
+  "lesson": "Specific heat capacity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Specific heat capacity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "starts at 20 °C",
+    "ok": true,
+    "detail": "y(0) = 20"
+   },
+   {
+    "name": "reaches 100 °C at t = Q/P = 167.2 s",
+    "ok": true,
+    "detail": "y(167.2) = 100"
+   },
+   {
+    "name": "the gradient is P/(mc) = 0.48 K per second",
+    "ok": true,
+    "detail": "gradient 0.4785"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-otto-cycle": {
+  "title": "The ideal Otto cycle, compression ratio 10",
+  "caption": "1→2 adiabatic compression from V to V/10 (pressure × 25.1), 2→3 heat in at constant volume, 3→4 adiabatic expansion, 4→1 heat out at constant volume. With γ = 1.4, η = 1 − r^(1−γ) = 1 − 10^−0.4 = 60.2%, found here also from heat in ∝ p₃ − p₂ and heat out ∝ p₄ − p₁ (60.2%). Real engines reach about 35%.",
+  "alt": "p–V diagram of the Otto cycle: two adiabats joined by two vertical constant-volume lines, volume ratio 10; efficiency 60 percent.",
+  "description": [
+   "Axes: volume as a multiple of the clearance volume, pressure as a multiple of the intake pressure p₁.",
+   "1→2: adiabatic compression from V = 10 to 1: p rises from 1 to 25.1 (pV^1.4 constant).",
+   "2→3: combustion at constant volume, p to 75.4. 3→4: adiabatic expansion back to V = 10, p = 3.0. 4→1: exhaust heat at constant volume.",
+   "Heat in ∝ 75.4 − 25.1, heat out ∝ 3.0 − 1 (times V/(γ−1)): η = 60.2%."
+  ],
+  "course": "physics",
+  "lesson": "Thermodynamic cycles",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Thermodynamic cycles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "compression to 1/10 the volume raises p 25.1-fold",
+    "ok": true,
+    "detail": "y(1) = 25.1189"
+   },
+   {
+    "name": "expansion returns to the full volume at p₄",
+    "ok": true,
+    "detail": "y(10) = 3"
+   },
+   {
+    "name": "work from the expansion adiabat",
+    "ok": true,
+    "detail": "area 113.3915"
+   },
+   {
+    "name": "net work 75.6 = η × heat in (60.2% = 1 − r^(1−γ))",
+    "ok": true,
+    "detail": "area 37.7972"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-power-station": {
+  "title": "A power station as a heat engine",
+  "caption": "The station takes in Q_h = 2500 MW of heat, outputs W = 1000 MW of electricity and rejects Q_c = Q_h − W = 1500 MW to the cooling towers or a river. Efficiency η = W/Q_h = 40%. The rejected heat cannot be avoided entirely: the second law forbids η = 100%.",
+  "alt": "Energy flow: 2500 MW of heat in, 1000 MW of electricity out and 1500 MW of waste heat; efficiency 40 percent.",
+  "description": [
+   "2500 MW of heat enters the engine from the hot source.",
+   "1000 MW leaves as electrical work.",
+   "1500 MW is rejected to the cold sink. Efficiency = 1000 ÷ 2500 = 40%."
+  ],
+  "course": "physics",
+  "lesson": "Heat engines",
+  "also": [],
+  "renderer": "sankey",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Heat engines"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "energy is conserved: the outputs add up to the input",
+    "ok": true,
+    "detail": "in 2500, out 2500 MW"
+   },
+   {
+    "name": "every transfer is positive and something is useful",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "efficiency = 40%",
+    "ok": true,
+    "detail": "useful ÷ input = 40%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-pv-rectangle": {
+  "title": "A clockwise rectangle on a p–V diagram",
+  "caption": "The gas expands at 300 kPa (area under the top edge 300 J) and is compressed at 100 kPa (100 J given back), so the net work done by the gas is the enclosed area: 300 − 100 = 200 J. A clockwise cycle on p–V gives positive net work. This is the lesson's 1–3 × 10⁵ Pa, 1–2 L example.",
+  "alt": "p–V rectangle with corners at (1 L, 100 kPa), (1 L, 300 kPa), (2 L, 300 kPa) and (2 L, 100 kPa) traversed clockwise; enclosed area 200 J.",
+  "description": [
+   "The horizontal axis is volume in litres, the vertical axis pressure in kPa.",
+   "Clockwise from the bottom left: heated at constant volume from 100 to 300 kPa, expands at 300 kPa from 1 to 2 L, cooled at constant volume, compressed at 100 kPa.",
+   "Work done by the gas on the way across the top: 300 × (2 − 1) = 300 J; work done on it on the way back: 100 J.",
+   "Net work done per cycle = enclosed area = 200 J."
+  ],
+  "course": "physics",
+  "lesson": "Pressure-volume diagrams",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Pressure-volume diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "work done by the gas on expansion = 300 J",
+    "ok": true,
+    "detail": "area 300.0000"
+   },
+   {
+    "name": "work done on the gas on compression = 100 J",
+    "ok": true,
+    "detail": "area 100.0000"
+   },
+   {
+    "name": "net work = (300 − 100) kPa × (2 − 1) L = 200 J",
+    "ok": true,
+    "detail": "300-100 at 0 = 200; expected 200–200"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u12-vdw-co2": {
+  "title": "CO₂: ideal gas against van der Waals",
+  "caption": "1 mol of CO₂ at 300 K in 1.0 L. Ideal gas: p = RT/V = 24.9 bar. Van der Waals, with a = 0.364 Pa m⁶ mol⁻² and b = 4.27 × 10⁻⁵ m³ mol⁻¹: p = RT/(V − b) − a/V² = 26.0 − 3.6 = 22.4 bar. The excluded volume b raises p; the attraction term a/V² lowers it, and here the attraction wins.",
+  "alt": "Graph of pressure against volume for CO2 at 300 K: the ideal hyperbola and the lower van der Waals curve; at 1 litre they read 24.9 and 22.4 bar.",
+  "description": [
+   "The horizontal axis is volume in litres, the vertical axis pressure in bar.",
+   "The ideal-gas curve p = 24.9/V passes through 24.9 bar at 1.0 L.",
+   "The van der Waals curve lies below it at moderate volumes (attraction), 22.4 bar at 1.0 L.",
+   "The two curves agree at large volume, where the molecules are far apart."
+  ],
+  "course": "physics",
+  "lesson": "Equations of state",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u12.js: Equations of state"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ideal gas: 24.9 bar at 1.0 L",
+    "ok": true,
+    "detail": "y(1) = 24.93"
+   },
+   {
+    "name": "van der Waals: 22.4 bar at 1.0 L",
+    "ok": true,
+    "detail": "y(1) = 22.402"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
