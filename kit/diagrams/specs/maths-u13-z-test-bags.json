@@ -1,0 +1,65 @@
+{
+ "id": "maths-u13-z-test-bags",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Z-Tests",
+ "title": "The sample mean 505 g in the null distribution",
+ "caption": "Under H₀ the mean of 64 bags is N(500, 2.5²). 505 g is z = 2 above, with tail area 0.0228 each side, so the two-sided p ≈ 0.0455 < 0.05: reject.",
+ "alt": "Normal curve with mean 500 and SD 2.5 for the sample mean; the tail beyond 505 is shaded, area 0.0228.",
+ "description": [
+  "SE = 20/√64 = 2.5.",
+  "z = (505 − 500)/2.5 = 2.",
+  "Upper tail 0.0228; two-sided p ≈ 0.0455."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 500,
+  "sigma": 2.5
+ },
+ "range": {
+  "x": [
+   490,
+   510
+  ],
+  "y": [
+   0,
+   0.18
+  ]
+ },
+ "ticks": [
+  [
+   490,
+   495,
+   500,
+   505,
+   510
+  ],
+  [
+   0.05,
+   0.1,
+   0.15
+  ]
+ ],
+ "axisLabels": [
+  "sample mean (g)",
+  "density"
+ ],
+ "shade": [
+  505,
+  null
+ ],
+ "p": 0.0228,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 500
+  },
+  {
+   "type": "prob",
+   "from": 505,
+   "to": null,
+   "p": 0.0228
+  }
+ ]
+}

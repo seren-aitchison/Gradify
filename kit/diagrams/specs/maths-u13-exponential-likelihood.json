@@ -1,0 +1,74 @@
+{
+ "id": "maths-u13-exponential-likelihood",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Maximum Likelihood Estimation",
+ "title": "The log-likelihood peaks at λ̂ = 0.3",
+ "caption": "For waiting times 2, 3, 5 the log-likelihood is 3 ln λ − 10λ, which is largest at λ = 3/10 = 0.3: the maximum likelihood estimate.",
+ "alt": "Graph of 3 ln λ − 10λ against λ, rising steeply, peaking at λ = 0.3 and then falling slowly.",
+ "description": [
+  "With n = 3 and total 10, ln L(λ) = 3 ln λ − 10λ.",
+  "Its derivative 3/λ − 10 is zero at λ = 0.3.",
+  "The curve has its maximum there."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   -12,
+   -6
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   -11,
+   -10,
+   -9,
+   -8,
+   -7
+  ]
+ ],
+ "axisLabels": [
+  "λ",
+  "ln L"
+ ],
+ "curves": [
+  {
+   "expr": "3*log(x)-10*x",
+   "domain": [
+    0.05,
+    1
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.3,
+   "label": "λ̂ = 0.3",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "3*log(x)-10*x",
+   "domain": [
+    0.05,
+    1
+   ],
+   "x": 0.3,
+   "y": -6.6119,
+   "name": "the log-likelihood is largest at λ = 0.3"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "maths-u13-fixed-effect",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Meta-Analysis",
+ "title": "Inverse-variance weighting of two studies",
+ "caption": "Weights 1/SE² are 1 and 1/4. The pooled effect is (1 × 2 + 0.25 × 4)/1.25 = 2.4, nearer the more precise first study, with SE = 1/√1.25 ≈ 0.894.",
+ "alt": "A number line from 1 to 5 with the studies at 2 and 4 and the pooled estimate 2.4 close to 2.",
+ "description": [
+  "The study with SE 1 gets weight 1; the one with SE 2 gets weight 1/4.",
+  "Pooled = 2.4.",
+  "SE = 0.894, smaller than either study's."
+ ],
+ "range": [
+  1,
+  5
+ ],
+ "ticks": {
+  "step": 0.5
+ },
+ "points": [
+  {
+   "value": 2,
+   "label": "study 1: 2"
+  },
+  {
+   "value": 4,
+   "label": "study 2: 4"
+  },
+  {
+   "value": 2.4,
+   "label": "pooled 2.4",
+   "colour": "a4",
+   "below": true
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "(1*2+0.25*4)/(1+0.25)",
+   "value": "2.4"
+  },
+  {
+   "type": "value",
+   "tol": 0.001,
+   "expr": "1/sqrt(1.25)",
+   "value": "0.8944"
+  }
+ ]
+}

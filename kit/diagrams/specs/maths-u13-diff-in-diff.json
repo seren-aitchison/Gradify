@@ -1,0 +1,121 @@
+{
+ "id": "maths-u13-diff-in-diff",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Causal Inference",
+ "title": "Difference in differences",
+ "caption": "Town A fell 10 (50 → 40); similar town B fell 4 (52 → 48) without the policy. A would have fallen to 46 without it, so the policy effect is 40 − 46 = −6 accidents.",
+ "alt": "Three lines from before to after: town A falling 50 to 40, town B falling 52 to 48, and a dashed counterfactual for A falling 50 to 46.",
+ "description": [
+  "A actually fell by 10; B, with no policy, fell by 4.",
+  "Assume A would have followed B's trend: 50 − 4 = 46.",
+  "The policy effect is 40 − 46 = −6."
+ ],
+ "range": {
+  "x": [
+   -0.3,
+   1.5
+  ],
+  "y": [
+   36,
+   56
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1
+  ],
+  [
+   40,
+   44,
+   48,
+   52,
+   56
+  ]
+ ],
+ "axisLabels": [
+  "before (0) and after (1)",
+  "accidents"
+ ],
+ "legend": [
+  [
+   "town A",
+   "a2"
+  ],
+  [
+   "town B",
+   "a1"
+  ],
+  [
+   "A without the policy",
+   "a4"
+  ]
+ ],
+ "legendData": [
+  0.5,
+  55.5
+ ],
+ "curves": [
+  {
+   "expr": "50-10*x",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a2"
+  },
+  {
+   "expr": "52-4*x",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "50-4*x",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a4",
+   "dash": "6 5"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "50-10*x",
+   "x": 1,
+   "y": 40
+  },
+  {
+   "type": "point",
+   "expr": "52-4*x",
+   "x": 1,
+   "y": 48
+  },
+  {
+   "type": "point",
+   "expr": "50-4*x",
+   "x": 1,
+   "y": 46
+  },
+  {
+   "type": "slope",
+   "expr": "50-10*x",
+   "x": 0.5,
+   "value": -10,
+   "name": "town A falls 10"
+  },
+  {
+   "type": "slope",
+   "expr": "52-4*x",
+   "x": 0.5,
+   "value": -4,
+   "name": "town B falls 4"
+  }
+ ]
+}

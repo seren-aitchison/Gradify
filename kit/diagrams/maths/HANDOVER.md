@@ -50,3 +50,7 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 ## Unit u12 (Probability) — agent maths-c
 
 50 lessons assessed · 36 diagrams (graph/distribution/barchart/venn/prob-tree/number-line/bar-model) · 7 lab rows (lln, clt, practice) · 12 with a recorded reason, 5 of them needing renderers: two-way table (u12-17), negative binomial in `distribution` (u12-24), 2D density (u12-43), matrix-variate (u12-45), empirical CDF step function (u12-47). Continuous families (gamma, beta, chi-squared, Weibull, log-normal, Pareto, Cauchy, Gumbel) are drawn with `graph` + area checks.
+
+## Unit u13 (Statistics) — agent maths-c
+
+75 lessons assessed · 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph, barchart, bar-model) · 5 lab rows (regression, clt) · 39 with a recorded reason. Renderers needed: two-way table (u13-34), Mahalanobis ellipse contours (u13-49), points-in-region Monte Carlo (u13-60), path diagram (u13-66), Kaplan-Meier step curve (u13-70). Content note for the author: u13-50 gives eigenvalues 4.2, 1.5, 0.2, 0.1 for four standardised variables, which sum to 6, not 4.

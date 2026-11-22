@@ -1,0 +1,57 @@
+{
+ "id": "maths-u13-die-counts",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Chi-Squared Tests",
+ "title": "60 rolls of a die",
+ "caption": "A fair die would give 10 of each face. The observed counts 8, 9, 12, 11, 6, 14 differ from 10 by −2, −1, 2, 1, −4, 4, so χ² = (4 + 1 + 4 + 1 + 16 + 16)/10 = 4.2, below 11.07: no evidence of bias.",
+ "alt": "Bar chart of the face counts 8, 9, 12, 11, 6 and 14 for faces 1 to 6.",
+ "description": [
+  "The expected count for each face is 60/6 = 10.",
+  "Squared differences from 10 are 4, 1, 4, 1, 16, 16, which sum to 42.",
+  "χ² = 42/10 = 4.2, less than the critical value 11.07."
+ ],
+ "categories": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "values": [
+  8,
+  9,
+  12,
+  11,
+  6,
+  14
+ ],
+ "range": {
+  "y": [
+   0,
+   16
+  ]
+ },
+ "ticks": [
+  4,
+  8,
+  12,
+  16
+ ],
+ "axisLabels": [
+  "face",
+  "count"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 60
+  },
+  {
+   "type": "mean",
+   "value": "11/3"
+  }
+ ]
+}

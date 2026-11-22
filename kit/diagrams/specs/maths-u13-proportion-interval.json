@@ -1,0 +1,68 @@
+{
+ "id": "maths-u13-proportion-interval",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Inferential Statistics",
+ "title": "95% interval for the cycling proportion",
+ "caption": "p̂ = 88/400 = 0.22 and SE = √(0.22 × 0.78/400) ≈ 0.0207, so the interval is 0.22 ± 1.96 × 0.0207: 0.179 to 0.261.",
+ "alt": "A number line from 0.15 to 0.30 with the interval from 0.179 to 0.261 centred on 0.22.",
+ "description": [
+  "The sample proportion is 88/400 = 0.22.",
+  "The margin is 1.96 × 0.0207 = 0.041.",
+  "The interval is 0.179 to 0.261."
+ ],
+ "range": [
+  0.15,
+  0.3
+ ],
+ "ticks": {
+  "step": 0.05
+ },
+ "minor": 0.01,
+ "tickLabels": {
+  "0.15": "0.15",
+  "0.2": "0.2",
+  "0.25": "0.25",
+  "0.3": "0.3"
+ },
+ "points": [
+  {
+   "value": 0.179,
+   "label": "0.179"
+  },
+  {
+   "value": 0.22,
+   "label": "p̂ = 0.22",
+   "colour": "a4"
+  },
+  {
+   "value": 0.261,
+   "label": "0.261"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 0.179,
+   "to": 0.261,
+   "closed": [
+    true,
+    true
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "tol": 0.0005,
+   "expr": "0.22+1.96*sqrt(0.22*0.78/400)",
+   "value": "0.261"
+  },
+  {
+   "type": "value",
+   "tol": 0.0005,
+   "expr": "0.22-1.96*sqrt(0.22*0.78/400)",
+   "value": "0.179"
+  }
+ ]
+}

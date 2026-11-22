@@ -1,0 +1,79 @@
+{
+ "id": "maths-u13-logistic-curve",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Logistic Regression",
+ "title": "p = 1/(1 + e^(3 − 0.5x))",
+ "caption": "At x = 4, logit(p) = −1, so p = 1/(1 + e) ≈ 0.269. The curve is S-shaped, crossing 0.5 at x = 6, and each unit of x multiplies the odds by e⁰·⁵ ≈ 1.65.",
+ "alt": "Graph of the logistic curve rising from 0 to 1 with the point (4, 0.269) and p = 0.5 at x = 6.",
+ "description": [
+  "logit(p) = −3 + 0.5x, so p = 1/(1 + e^(3 − 0.5x)).",
+  "At x = 4, p = 0.269.",
+  "p = 0.5 when logit = 0, at x = 6."
+ ],
+ "range": {
+  "x": [
+   -4,
+   16
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   4,
+   8,
+   12,
+   16
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "p"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+exp(3-0.5*x))"
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 0.2689,
+   "label": "0.269",
+   "dx": 10,
+   "dy": 16
+  },
+  {
+   "x": 6,
+   "y": 0.5,
+   "label": "0.5",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(1+exp(3-0.5*x))",
+   "x": 4,
+   "y": 0.2689
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+exp(3-0.5*x))",
+   "x": 6,
+   "y": 0.5
+  }
+ ]
+}
