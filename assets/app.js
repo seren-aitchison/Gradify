@@ -40,6 +40,7 @@ const groupLabel = (g) => g.title.replace(/^By /, "").replace(/^./, (c) => c.toU
 
 const ICON = {
   chev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>',
+  out: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg>',
   clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg>',
 };
 
@@ -67,36 +68,37 @@ for (const g of GROUPS) {
   sec.className = "group";
   sec.id = g.id;
   sec.dataset.group = g.id;
-  sec.innerHTML = `<h2>${esc(g.title)}</h2><p>${esc(g.blurb)}</p><div class="grid"></div>`;
+  sec.innerHTML = `<div class="group-head"><h2>${esc(g.title)}</h2><span class="group-n">${g.items.length}</span></div><p>${esc(g.blurb)}</p><div class="grid"></div>`;
   const grid = $(".grid", sec);
 
   for (const s of g.items) {
     const live = canVisit(s), st = statusOf(s);
     const featured = s.n.includes("ForgeLab");
-    const card = document.createElement("article");
-    card.className = `card glass ${isLive(s) || st === "beta" ? "live" : "soon"}${featured ? " featured" : ""}`;
+    // One compact tile per site: icon, name, who it's for, and a chevron. The whole tile is the link,
+    // so there's one obvious thing to do; a status shows only when it isn't simply "live".
+    const card = document.createElement(live ? "a" : "article");
+    card.className = `card ${isLive(s) || st === "beta" ? "live" : "soon"}${featured ? " featured" : ""}`;
     card.id = slug(s.n);
     colour(card, s);
     card.dataset.search = `${s.n} ${s.d} ${s.who || ""} ${g.title} ${KEYWORDS[s.n] || ""}`.toLowerCase();
-    const badge = featured ? '<span class="badge"><span class="spark" aria-hidden="true"></span>The future of TechGradify</span>' : "";
     // what it does, without repeating the "For …:" lead-in that some descriptions have
     const what = s.d.replace(/^For [^:]+:\s*/, "").replace(/^./, (c) => c.toUpperCase());
-    const study = s.n === "Klerio" ? "" : `<a class="study-link" href="${s.built ? `${pathOf(s)}app.html` : `app.html?site=${encodeURIComponent(s.n)}`}">Study ${esc(s.n.replace(" · ForgeLab", "").replace(/Gradify$/, "") || s.n)} in Gradify ${ICON.chev}</a>`;
+    const line = s.who || what;
+    const status = isLive(s) ? "" : `<span class="status is-${st}">${STATUS_LABEL[st]}</span>`;
+    if (live) {
+      card.href = siteHref(s);
+      if (!s.built) { card.target = "_blank"; card.rel = "noopener"; }
+      card.title = what;
+    }
     card.innerHTML = `
-      ${glassMark(s)}
+      ${glassMark(s, 40)}
       <span class="body">
-        <span class="status is-${st === "external" ? "live" : st}">${STATUS_LABEL[st]}</span>
-        <h3>${nameOf(s)}${badge}</h3>
-        ${s.who ? `<p class="card-who"><b>For:</b> ${esc(s.who)}</p>` : ""}
-        <p>${esc(what)}</p>
-        <span class="actions-row">
-          ${live
-            ? `<a class="btn ${st === "soon" ? "btn-ghost" : "btn-light"} lg btn-sm visit" href="${siteHref(s)}"${newTab(s)} title="${s.built ? `Go to ${esc(s.n)}` : `Opens ${domainOf(s)} in a new tab`}"><span>${st === "soon" ? "Preview" : "Visit site"}</span> <span aria-hidden="true">${s.built ? "→" : "↗"}</span></a>${s.built ? "" : `<span class="domain soon-domain">${domainOf(s)}</span>`}`
-            : `<button type="button" class="btn btn-ghost lg btn-sm notify" data-site="${esc(s.n)}"><span>Notify me</span></button>${s.u ? `<span class="domain soon-domain">${domainOf(s)}</span>` : ""}`}
-          ${study}
-        </span>
-        <form class="notify-form" hidden><label class="sr-only" for="nf-${card.id}">Email for ${esc(s.n)} launch news</label><input id="nf-${card.id}" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn-light lg btn-sm" type="submit"><span>Join</span></button></form>
-      </span>`;
+        <h3>${nameOf(s)}${status}</h3>
+        <p>${esc(line)}</p>
+        ${live ? "" : `<button type="button" class="notify" data-site="${esc(s.n)}">Notify me</button>
+        <form class="notify-form" hidden><label class="sr-only" for="nf-${card.id}">Email for ${esc(s.n)} launch news</label><input id="nf-${card.id}" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn-light lg btn-sm" type="submit"><span>Join</span></button></form>`}
+      </span>
+      ${live ? `<span class="go" aria-hidden="true">${s.built ? ICON.chev : ICON.out}</span>` : ""}`;
     grid.appendChild(card);
   }
   groupsEl.appendChild(sec);
@@ -258,6 +260,8 @@ restart();
 // ---------- Search + filter ----------
 const q = $("#q");
 const liveOnly = $("#live-only");
+// "Live only" filters nothing while every site is live, so it only shows once some aren't
+if (ALL.every(isLive)) liveOnly.closest(".switch").style.display = "none";
 let active = "all";
 
 function apply() {
