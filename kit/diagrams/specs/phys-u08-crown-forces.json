@@ -1,0 +1,54 @@
+{
+ "id": "phys-u08-crown-forces",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u08",
+ "lesson": "Buoyancy and Archimedes' principle",
+ "title": "The crown hanging in water",
+ "caption": "In water the crown hangs in equilibrium: the tension 6.86 N plus the buoyant force 0.98 N balance the weight 7.84 N. The buoyant force is the weight of displaced water, so V = 0.98/(1000 × 9.8) = 1 × 10⁻⁴ m³ and ρ = 8000 kg m⁻³, far below gold's 19 300.",
+ "alt": "Free-body diagram of the crown in water: weight 7.84 N down, tension 6.86 N up and buoyant force 0.98 N up, with zero net force.",
+ "description": [
+  "Weight: 7.84 N down (the reading in air).",
+  "Tension (the scale reading in water): 6.86 N up.",
+  "Buoyant force: 7.84 − 6.86 = 0.98 N up; the two upward forces add to the weight, so the net force is zero.",
+  "Then V = F_B/(ρ_w g) = 1 × 10⁻⁴ m³, m = 0.8 kg, ρ = 8000 kg m⁻³."
+ ],
+ "mode": "body",
+ "units": "N",
+ "showResultant": true,
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 7.84,
+   "angle": 270,
+   "source": "Earth's gravity",
+   "text": "7.84 N, down"
+  },
+  {
+   "label": "T",
+   "mag": 6.86,
+   "angle": 90,
+   "colour": "a4",
+   "source": "string",
+   "text": "6.86 N, up"
+  },
+  {
+   "label": "F_{B}",
+   "mag": 0.98,
+   "angle": 90,
+   "colour": "a2",
+   "source": "displaced water",
+   "text": "0.98 N, up"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 0,
+  "angle": 90,
+  "text": "0 N"
+ },
+ "notes": [
+  "F_{B} = 0.98 N, V = 1 × 10^{-4} m^{3}",
+  "ρ = 8000 kg m^{-3}"
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "phys-u08-pressure-depth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u08",
+ "lesson": "Hydrostatic equilibrium",
+ "title": "Pressure rises linearly with depth",
+ "caption": "Gauge pressure in a liquid is p = ρgh: a straight line from zero at the surface. With ρ = 1030 kg m⁻³ it gains 10.09 MPa for every kilometre, about 1 atm per 10 m. At the bottom of the Mariana Trench (10.9 km) it reaches 110 MPa, about 1100 atm.",
+ "alt": "Graph of gauge pressure in megapascals against depth in kilometres: a straight line from the origin rising 10.1 megapascals per kilometre to 110 megapascals at 10.9 kilometres.",
+ "description": [
+  "The horizontal axis is depth in km; the vertical axis is gauge pressure ρgh in MPa.",
+  "The slope is ρg = 1030 × 9.8 = 10094 Pa per m = 10.09 MPa per km, the same whatever the container's shape.",
+  "At h = 10.9 km: p = 1030 × 9.8 × 10900 = 110 MPa, about 1100 atm (1 atm ≈ 0.1 MPa)."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   125
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   25,
+   50,
+   75,
+   100,
+   125
+  ]
+ ],
+ "grid": [
+  2,
+  25
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth h / km",
+  "ρgh / MPa"
+ ],
+ "curves": [
+  {
+   "expr": "10.094*x",
+   "colour": "a1",
+   "label": "p = ρgh",
+   "labelAt": [
+    3,
+    40
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10.9,
+   "y": 110.02,
+   "label": "Mariana: 110 MPa",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10.094*x",
+   "x": 10.9,
+   "y": 110.02,
+   "name": "ρgh at 10.9 km is 110 MPa"
+  },
+  {
+   "type": "slope",
+   "expr": "10.094*x",
+   "x": 5,
+   "value": 10.094,
+   "name": "the gradient is ρg = 10.09 MPa per km"
+  }
+ ]
+}

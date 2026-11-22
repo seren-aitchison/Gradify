@@ -1,0 +1,110 @@
+{
+ "id": "phys-u08-gate-pressure",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u08",
+ "lesson": "Fluid statics",
+ "title": "Force on a gate from the pressure triangle",
+ "caption": "Pressure on the gate grows from 0 at the surface to 29.4 kPa at 3 m. The area under the line, 44.1 kN per metre of width, times the 2 m width is the total force 88.2 kN: the same as ρg h_c A with the centroid depth 1.5 m. It acts at the triangle's centroid, 2/3 of the way down (2 m).",
+ "alt": "Graph of water pressure in kilopascals against depth from 0 to 3 metres, a straight line to 29.4 kilopascals, with the triangle underneath shaded; its area is 44.1 kilonewtons per metre.",
+ "description": [
+  "The horizontal axis is depth in m; the vertical axis is gauge pressure ρgh in kPa.",
+  "The line p = 9.8h kPa reaches 29.4 kPa at 3 m.",
+  "The shaded triangle has area ½ × 3 × 29.4 = 44.1 kN per metre of gate width.",
+  "Times the width 2 m: F = 88.2 kN (the lesson's 88 kN), acting at depth 2/3 × 3 = 2 m."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.5
+  ],
+  "y": [
+   0,
+   35
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   10,
+   20,
+   30
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth h / m",
+  "ρgh / kPa"
+ ],
+ "curves": [
+  {
+   "expr": "9.8*x",
+   "domain": [
+    0,
+    3
+   ],
+   "colour": "a1",
+   "label": "p = ρgh",
+   "labelAt": [
+    0.5,
+    12
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "9.8*x",
+   "from": 0,
+   "to": 3,
+   "colour": "a1",
+   "opacity": 0.2
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 29.400000000000002,
+   "label": "29.4 kPa",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 19.6,
+   "label": "force acts at 2 m",
+   "dx": 12,
+   "dy": 26
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "9.8*x",
+   "from": 0,
+   "to": 3,
+   "value": 44.1,
+   "tol": 0.01,
+   "name": "area under the line is 44.1 kN per metre of width"
+  },
+  {
+   "type": "point",
+   "expr": "9.8*x",
+   "x": 3,
+   "y": 29.4,
+   "name": "pressure at 3 m is 29.4 kPa"
+  }
+ ]
+}

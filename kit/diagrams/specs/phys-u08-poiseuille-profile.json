@@ -1,0 +1,109 @@
+{
+ "id": "phys-u08-poiseuille-profile",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u08",
+ "lesson": "Poiseuille flow",
+ "title": "Laminar flow in the needle",
+ "caption": "Laminar flow in a tube has a parabolic velocity profile, fastest on the axis (v_max = Δp R²/4ηL = 16.7 m s⁻¹) and zero at the wall. The mean speed is half of that, 8.3 m s⁻¹, and the flow through the area πR² is Q = 1.05 × 10⁻⁶ m³ s⁻¹ = 1 mL s⁻¹.",
+ "alt": "Graph of fluid speed against radius in the needle: a parabola from 16.7 metres per second on the axis down to zero at the wall at 0.2 millimetres.",
+ "description": [
+  "The horizontal axis is distance from the axis in mm, from 0 to the wall at R = 0.2 mm; the vertical axis is speed v(r).",
+  "v(r) = v_max(1 − r²/R²) with v_max = Δp R²/4ηL = 16.7 m s⁻¹.",
+  "Adding up v × 2πr dr over the cross-section gives Q = πR⁴Δp/8ηL = 1.05 × 10⁻⁶ m³ s⁻¹, equal to the mean speed 8.3 m s⁻¹ times πR²."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.22
+  ],
+  "y": [
+   0,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  0.05,
+  5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / mm",
+  "v / m s^{-1}"
+ ],
+ "curves": [
+  {
+   "expr": "16.6667*(1-(x/0.2)^2)",
+   "domain": [
+    0,
+    0.2
+   ],
+   "colour": "a1",
+   "label": "v(r) = v_max(1 − r²/R²)",
+   "labelAt": [
+    0.07,
+    17.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 16.67,
+   "label": "axis 16.7",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 0.2,
+   "y": 0,
+   "label": "wall: v = 0",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "16.6667*(1-(x/0.2)^2)",
+   "x": 0,
+   "y": 16.67,
+   "name": "v_max = 16.7 m/s on the axis"
+  },
+  {
+   "type": "point",
+   "expr": "16.6667*(1-(x/0.2)^2)",
+   "x": 0.2,
+   "y": 0,
+   "name": "no slip: v = 0 at the wall"
+  },
+  {
+   "type": "area",
+   "expr": "16.6667*(1-(x/0.2)^2)*2*3.14159265*x*0.000001",
+   "from": 0,
+   "to": 0.2,
+   "value": 0.0000010471975511965978,
+   "tol": 2e-8,
+   "name": "∫ v 2πr dr = 1.05 × 10⁻⁶ m³/s, the Poiseuille flow rate"
+  }
+ ]
+}

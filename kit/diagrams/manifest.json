@@ -36529,5 +36529,242 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u08-crown-forces": {
+  "title": "The crown hanging in water",
+  "caption": "In water the crown hangs in equilibrium: the tension 6.86 N plus the buoyant force 0.98 N balance the weight 7.84 N. The buoyant force is the weight of displaced water, so V = 0.98/(1000 × 9.8) = 1 × 10⁻⁴ m³ and ρ = 8000 kg m⁻³, far below gold's 19 300.",
+  "alt": "Free-body diagram of the crown in water: weight 7.84 N down, tension 6.86 N up and buoyant force 0.98 N up, with zero net force.",
+  "description": [
+   "Weight: 7.84 N down (the reading in air).",
+   "Tension (the scale reading in water): 6.86 N up.",
+   "Buoyant force: 7.84 − 6.86 = 0.98 N up; the two upward forces add to the weight, so the net force is zero.",
+   "Then V = F_B/(ρ_w g) = 1 × 10⁻⁴ m³, m = 0.8 kg, ρ = 8000 kg m⁻³."
+  ],
+  "course": "physics",
+  "lesson": "Buoyancy and Archimedes' principle",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u08.js: Buoyancy and Archimedes' principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the forces balance (equilibrium)",
+    "ok": true,
+    "detail": "sum of components (-9.6 × 10^{-16}, 4.44 × 10^{-16})"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "W: Earth's gravity; T: string; F_{B}: displaced water"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u08-free-vortex": {
+  "title": "Speed around a free vortex",
+  "caption": "Outside the core a vortex of circulation Γ = 2 m² s⁻¹ has v = Γ/2πr: the speed falls as 1/r, so the product v × r stays at 0.318 m² s⁻¹. At r = 0.1 m the speed is 3.2 m s⁻¹; at 0.2 m it halves to 1.6.",
+  "alt": "Graph of speed against distance from the vortex axis, a 1/r curve passing through 3.2 metres per second at 0.1 metres.",
+  "description": [
+   "The horizontal axis is distance r from the axis in m; the vertical axis is the speed v in m s⁻¹.",
+   "v = Γ/2πr = 2/(2πr). At r = 0.1 m, v = 3.2 m s⁻¹.",
+   "At r = 0.2 m, v = 1.59 m s⁻¹: doubling r halves v, so the circulation round every circle is the same."
+  ],
+  "course": "physics",
+  "lesson": "Vorticity and circulation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u08.js: Vorticity and circulation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v = 3.2 m/s at 0.1 m",
+    "ok": true,
+    "detail": "y(0.1) = 3.1831"
+   },
+   {
+    "name": "v halves when r doubles",
+    "ok": true,
+    "detail": "y(0.2) = 1.5915"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u08-gate-pressure": {
+  "title": "Force on a gate from the pressure triangle",
+  "caption": "Pressure on the gate grows from 0 at the surface to 29.4 kPa at 3 m. The area under the line, 44.1 kN per metre of width, times the 2 m width is the total force 88.2 kN: the same as ρg h_c A with the centroid depth 1.5 m. It acts at the triangle's centroid, 2/3 of the way down (2 m).",
+  "alt": "Graph of water pressure in kilopascals against depth from 0 to 3 metres, a straight line to 29.4 kilopascals, with the triangle underneath shaded; its area is 44.1 kilonewtons per metre.",
+  "description": [
+   "The horizontal axis is depth in m; the vertical axis is gauge pressure ρgh in kPa.",
+   "The line p = 9.8h kPa reaches 29.4 kPa at 3 m.",
+   "The shaded triangle has area ½ × 3 × 29.4 = 44.1 kN per metre of gate width.",
+   "Times the width 2 m: F = 88.2 kN (the lesson's 88 kN), acting at depth 2/3 × 3 = 2 m."
+  ],
+  "course": "physics",
+  "lesson": "Fluid statics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u08.js: Fluid statics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area under the line is 44.1 kN per metre of width",
+    "ok": true,
+    "detail": "area 44.1000"
+   },
+   {
+    "name": "pressure at 3 m is 29.4 kPa",
+    "ok": true,
+    "detail": "y(3) = 29.4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u08-poiseuille-profile": {
+  "title": "Laminar flow in the needle",
+  "caption": "Laminar flow in a tube has a parabolic velocity profile, fastest on the axis (v_max = Δp R²/4ηL = 16.7 m s⁻¹) and zero at the wall. The mean speed is half of that, 8.3 m s⁻¹, and the flow through the area πR² is Q = 1.05 × 10⁻⁶ m³ s⁻¹ = 1 mL s⁻¹.",
+  "alt": "Graph of fluid speed against radius in the needle: a parabola from 16.7 metres per second on the axis down to zero at the wall at 0.2 millimetres.",
+  "description": [
+   "The horizontal axis is distance from the axis in mm, from 0 to the wall at R = 0.2 mm; the vertical axis is speed v(r).",
+   "v(r) = v_max(1 − r²/R²) with v_max = Δp R²/4ηL = 16.7 m s⁻¹.",
+   "Adding up v × 2πr dr over the cross-section gives Q = πR⁴Δp/8ηL = 1.05 × 10⁻⁶ m³ s⁻¹, equal to the mean speed 8.3 m s⁻¹ times πR²."
+  ],
+  "course": "physics",
+  "lesson": "Poiseuille flow",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u08.js: Poiseuille flow"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v_max = 16.7 m/s on the axis",
+    "ok": true,
+    "detail": "y(0) = 16.6667"
+   },
+   {
+    "name": "no slip: v = 0 at the wall",
+    "ok": true,
+    "detail": "y(0.2) = 0"
+   },
+   {
+    "name": "∫ v 2πr dr = 1.05 × 10⁻⁶ m³/s, the Poiseuille flow rate",
+    "ok": true,
+    "detail": "area 0.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u08-pressure-depth": {
+  "title": "Pressure rises linearly with depth",
+  "caption": "Gauge pressure in a liquid is p = ρgh: a straight line from zero at the surface. With ρ = 1030 kg m⁻³ it gains 10.09 MPa for every kilometre, about 1 atm per 10 m. At the bottom of the Mariana Trench (10.9 km) it reaches 110 MPa, about 1100 atm.",
+  "alt": "Graph of gauge pressure in megapascals against depth in kilometres: a straight line from the origin rising 10.1 megapascals per kilometre to 110 megapascals at 10.9 kilometres.",
+  "description": [
+   "The horizontal axis is depth in km; the vertical axis is gauge pressure ρgh in MPa.",
+   "The slope is ρg = 1030 × 9.8 = 10094 Pa per m = 10.09 MPa per km, the same whatever the container's shape.",
+   "At h = 10.9 km: p = 1030 × 9.8 × 10900 = 110 MPa, about 1100 atm (1 atm ≈ 0.1 MPa)."
+  ],
+  "course": "physics",
+  "lesson": "Hydrostatic equilibrium",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u08.js: Hydrostatic equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ρgh at 10.9 km is 110 MPa",
+    "ok": true,
+    "detail": "y(10.9) = 110.0246"
+   },
+   {
+    "name": "the gradient is ρg = 10.09 MPa per km",
+    "ok": true,
+    "detail": "gradient 10.0940"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
