@@ -90,6 +90,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
       const w = list.map((r) => 1 + 2 * (hist[r.type.split(" (")[0]] || 0)), tot = w.reduce((a, b) => a + b, 0);
       let x = Math.random() * tot, r = list[0]; for (let i = 0; i < list.length; i++) { x -= w[i]; if (x <= 0) { r = list[i]; break; } }
       const [n] = STARTERS[Math.floor(Math.random() * STARTERS.length)], m = starter(n), res = predict(m, r.id);
+      if (res.status === "declined") continue; // the lab doesn't predict it, so there's no right answer to ask for
       if (!res.reacts && Math.random() > 0.2) continue;
       start = m; srcKey = n; src.value = n; reagent = r.id; rg.value = r.id; route = []; guess = null; seed++;
       predictFirst = true; pfToggle.checked = true; practice = { family: r.type.split(" (")[0] };
@@ -121,10 +122,10 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     return `<figure class="rx-mol ${role === "minor" ? "minor" : ""}">${mol(m, w, h)}<figcaption>${role !== "product" ? `<em class="rx-role ${role}">${role}</em> ` : ""}<b>${esc(d && name ? `${d}-${name}` : name)}</b> <span>${sub(A.formula)}${A.charge ? (A.charge < 0 ? "⁻" : "⁺") : ""}</span>${form}${note ? `<small>${esc(note)}</small>` : ""}</figcaption></figure>`;
   };
   function options(res) {
-    const right = res.reacts ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : ["No reaction"];
+    const right = res.reacts ? (res.products.length ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : [res.byproducts.join(" + ")]) : ["No reaction"];
     const pool = new Set(res.reacts && res.join === "+" ? [right.join(" + ")] : right);
     if (res.reacts) res.products.filter((p) => p.role === "minor").forEach((p) => pool.add(nameOf(p.m)));
-    for (const r of shuffle(REAGENTS, seed)) { if (pool.size >= 4) break; if (r.id === reagent) continue; const o = predict(start, r.id); if (o.reacts) { const n = nameOf(o.products[0].m); if (!right.includes(n)) pool.add(n); } }
+    for (const r of shuffle(REAGENTS, seed)) { if (pool.size >= 4) break; if (r.id === reagent) continue; const o = predict(start, r.id); if (o.reacts && o.products.length) { const n = nameOf(o.products[0].m); if (!right.includes(n)) pool.add(n); } }
     if (pool.size < 4) pool.add(right.includes("No reaction") ? nameOf(start) : "No reaction");
     const accepted = res.reacts && res.join === "+" ? [right.join(" + ")] : right;
     return { right: accepted, list: shuffle([...pool].slice(0, 4), seed + 7) };
@@ -136,8 +137,8 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     if (!start) { box.innerHTML = `<div class="rx-empty"><p>Draw a starting material in <b>Structure</b> mode, choose a common compound above, or press <b>Practice question</b>.</p></div>`; info.innerHTML = ""; return; }
     const res = predict(start, reagent), r = res.reagent;
     const arrow = `<div class="mx-arrow rx-arrow"><small>${esc(r.label)}</small><b>⟶</b><small>${esc(r.cond)}</small></div>`;
-    const opts = predictFirst ? options(res) : null, hidden = predictFirst && guess == null;
-    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.status === "declined" ? "Not predicted" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note, undefined, undefined, p.config)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
+    const askable = res.status !== "declined", opts = predictFirst && askable ? options(res) : null, hidden = predictFirst && askable && guess == null;
+    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.status === "declined" ? "Not predicted" : "No reaction"}</div>` : !res.products.length ? `<div class="rx-none">No organic product</div>` : res.products.map((p) => card(p.m, p.role, p.note, undefined, undefined, p.config)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
     const by = res.reacts && !hidden && res.byproducts.length ? `<span class="rx-by">+ ${res.byproducts.map(sub).join(" + ")}</span>` : "";
     box.innerHTML = `<div class="rx-row">${card(start)}${arrow}<div class="rx-prods">${prods}${by}</div></div>`;
     if (hidden) {
@@ -145,7 +146,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
       info.querySelectorAll("[data-g]").forEach((b) => b.addEventListener("click", () => answer(opts.list[Number(b.dataset.g)])));
       return;
     }
-    const verdict = guess == null ? "" : opts.right.includes(guess) ? `<p class="lab-msg ok">✓ Right: ${esc(guess)}.</p>` : `<p class="lab-msg">✗ ${guess === "(time ran out)" ? "Time ran out." : `You chose ${esc(guess)}.`} ${res.reacts ? `The answer: ${esc(opts.right.join(" or "))}.` : "There's no reaction."}</p>`;
+    const verdict = guess == null || !opts ? "" : opts.right.includes(guess) ? `<p class="lab-msg ok">✓ Right: ${esc(guess)}.</p>` : `<p class="lab-msg">✗ ${guess === "(time ran out)" ? "Time ran out." : `You chose ${esc(guess)}.`} ${res.reacts ? `The answer: ${esc(opts.right.join(" or "))}.` : "There's no reaction."}</p>`;
     const comp = res.competition ? `<p class="osk-aka">${res.competition.pathways.map((p) => `${p.mech}: ${p.share}`).join(" · ")}. Explore other conditions in the <b>Conditions</b> view.</p>` : "";
     const rule = res.rule ? `<details class="rx-rule"><summary>The rule behind this</summary><dl><dt>Applies to</dt><dd>${esc(res.rule.reactants)}</dd><dt>Gives</dt><dd>${esc(res.rule.products)}</dd><dt>Selectivity</dt><dd>${esc(res.rule.selectivity)}</dd>${res.rule.limitations.length ? `<dt>Doesn't cover</dt><dd><ul>${res.rule.limitations.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></dd>` : ""}<dt>Sources</dt><dd>${res.rule.sources.map((x) => esc(`${x.id === "aqa" ? "AQA A-level (7405)" : x.id === "clayden" ? "Clayden, Organic Chemistry" : x.id === "ocr" ? "OCR A-level" : "March's Advanced Organic Chemistry"}: ${x.topic}`)).join("; ")}</dd><dt>Confidence</dt><dd>${esc(res.rule.confidence)}: ${esc(CONFIDENCE[res.rule.confidence])}</dd></dl></details>` : "";
     info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : res.status === "declined" ? "Outside the lab's rules" : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && stereoNotes(res).length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${stereoNotes(res).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
@@ -154,7 +155,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     if (res.reacts) res.products.forEach((p, i) => { if (K.analyse(p.m).charge) return; button(btns, res.products.length > 1 ? `Use ${p.role === "product" ? nameOf(p.m) : `the ${p.role} product`} next` : "Use as the next starting material", () => {
       route.push({ from: nameOf(start), reagent: r.label }); start = K.clone(p.m); srcKey = "route"; guess = null; seed++; practice = null; check({}); paint();
     }); });
-    if (onEdit) button(btns, "Edit in Structure mode", () => onEdit(K.clone(res.reacts ? res.products[0].m : start)));
+    if (onEdit) button(btns, "Edit in Structure mode", () => onEdit(K.clone(res.reacts && res.products.length ? res.products[0].m : start)));
     if (route.length) button(btns, "Start the route again", () => { route = []; srcKey = src.value; load(); });
     tutor.refresh();
   }

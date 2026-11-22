@@ -189,3 +189,16 @@ test("registration: each mechanism challenge is evidence for a lesson the lab li
   for (const r of REACTIONS) { const l = EVIDENCE["organic-notes"][`mech-${r.id}`]; assert.ok(l, r.id); assert.ok(x.lessons.includes(l), `${r.id} → ${l}`); }
   assert.ok(REACTIONS.length >= 20);
 });
+
+test("first-attempt credit: full only for a valid step that matches the model; a rejected step never earns full marks", async () => {
+  const { stepCredit, breakdown } = await import("../kit/labs/chemistry/reactions/marking.js");
+  assert.equal(stepCredit({ valid: true, matches: true, found: 2, submitted: 2, expected: 2 }), 2);
+  // SN2 with each expected arrow submitted twice: the engine rejects it, so no full credit despite every arrow appearing
+  assert.equal(stepCredit({ valid: false, matches: false, found: 2, submitted: 4, expected: 2 }), 0);
+  assert.equal(stepCredit({ valid: false, matches: false, found: 2, submitted: 2, expected: 2 }), 1, "all arrows present but rejected: capped below full");
+  assert.equal(stepCredit({ valid: true, matches: false, found: 1, submitted: 2, expected: 2 }), 0, "a wrong extra arrow cancels a right one");
+  assert.equal(stepCredit({ valid: true, matches: false, found: 1, submitted: 1, expected: 2 }), 1);
+  // a step that wasn't fully right first time can't earn the product mark or 10/10
+  const one = breakdown({ arrows: [2], first: [stepCredit({ valid: false, matches: false, found: 2, submitted: 4, expected: 2 })] });
+  assert.ok(one.got < 10); assert.equal(breakdown({ arrows: [2], first: [2] }).got, 10);
+});

@@ -18,13 +18,17 @@ const paras = (t) => esc(String(t || "")).split(/\n{2,}/).map((p) => `<p>${p.rep
 
 export function mountTutor(host, { ask = null, getContext, intents, learner = () => ({}), onUse = () => {} }) {
   host.classList.add("ct-tutor");
-  let intent = null, turns = [], conv = null, busy = false, lastCtx = null;
+  // gen: the conversation's generation. Replacing the conversation (another reaction, a reset, a new question) starts a
+  // new one, and a reply that arrives for an older generation is dropped: it can't land in the new conversation, under
+  // its evidence label, or keep the new question from being sent.
+  let intent = null, turns = [], conv = null, busy = false, lastCtx = null, gen = 0;
   if (!ask) { host.innerHTML = `<details class="ct-box"><summary>Ask the AI tutor</summary><p class="osk-aka">The AI tutor works inside the SciGradify Chemistry course, with a Gradify account. It explains what the lab works out; it never changes the lab's answers.</p></details>`; return { refresh() {}, reset() {} }; }
   host.innerHTML = `<details class="ct-box"><summary>Ask the AI tutor</summary>
     <div class="lab-row ct-intents"></div><div class="ct-level osk-aka" aria-live="polite"></div><div class="ct-log" aria-live="polite"></div>
     <form class="lab-row ct-reply" hidden><input type="text" class="ct-input" maxlength="600" placeholder="Reply to the tutor…" aria-label="Your reply"><button type="submit" class="lab-btn">Send</button></form>
     <p class="osk-aka ct-note">Gradify AI explains the lab's own result and can be wrong in how it explains it; the lab's answer is what counts. Using the tutor marks later challenges here as done with help.</p></details>`;
   const q = (s) => host.querySelector(s), log = q(".ct-log"), form = q(".ct-reply"), input = q(".ct-input");
+  const replace = () => { gen++; busy = false; intent = null; turns = []; conv = null; log.innerHTML = ""; form.hidden = true; };
   function paintIntents() {
     const ctx = getContext(), box = q(".ct-intents"); lastCtx = ctx;
     box.innerHTML = ctx ? intents.filter(([k, , when]) => !when || when(ctx)).map(([k, label]) => `<button type="button" class="lab-btn${k === intent ? " pri" : ""}" data-i="${k}">${esc(label)}</button>`).join("") : `<p class="osk-aka">Choose a reaction, mechanism or route first.</p>`;
@@ -33,27 +37,30 @@ export function mountTutor(host, { ask = null, getContext, intents, learner = ()
   }
   async function send(text = null) {
     if (busy) return; const ctx = getContext(); if (!ctx) return;
-    if (text) turns.push({ role: "learner", text });
+    const mine = gen, myTurns = turns;
+    if (text) myTurns.push({ role: "learner", text });
     busy = true; log.insertAdjacentHTML("beforeend", `${text ? `<div class="ct-msg me">${esc(text)}</div>` : ""}<div class="ct-msg wait">Thinking…</div>`);
     try {
-      const out = await ask({ mode: "chemistry", intent, context: ctx, learner: learner(), turns, conversationId: conv });
+      const out = await ask({ mode: "chemistry", intent, context: ctx, learner: learner(), turns: myTurns.slice(), conversationId: conv });
+      if (mine !== gen) return; // the conversation was replaced while this was pending
       onUse();
       log.querySelector(".wait")?.remove();
-      turns.push({ role: "tutor", text: out.reply || "" });
+      myTurns.push({ role: "tutor", text: out.reply || "" });
       log.insertAdjacentHTML("beforeend", `<div class="ct-msg ai">${paras(out.reply)}</div>`);
       form.hidden = false;
     } catch (e) {
+      if (mine !== gen) return;
       log.querySelector(".wait")?.remove();
-      if (text) turns.pop();
+      if (text) myTurns.pop();
       log.insertAdjacentHTML("beforeend", `<p class="lab-msg">${esc(e?.message || "The tutor isn't available right now.")}</p>`);
-    } finally { busy = false; }
+    } finally { if (mine === gen) busy = false; }
   }
-  q(".ct-intents").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (!b) return; intent = b.dataset.i; turns = []; conv = newId(); log.innerHTML = ""; form.hidden = true; paintIntents(); send(); });
+  q(".ct-intents").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (!b) return; const next = b.dataset.i; replace(); intent = next; conv = newId(); paintIntents(); send(); });
   form.addEventListener("submit", (e) => { e.preventDefault(); const t = input.value.trim(); if (!t || !intent) return; input.value = ""; send(t); });
   paintIntents();
   return {
     // the lab's data changed (another reaction, step or route): the conversation starts again
-    refresh() { const ctx = getContext(); if (JSON.stringify(ctx) !== JSON.stringify(lastCtx)) { intent = null; turns = []; conv = null; log.innerHTML = ""; form.hidden = true; } paintIntents(); },
-    reset() { intent = null; turns = []; conv = null; log.innerHTML = ""; form.hidden = true; paintIntents(); },
+    refresh() { const ctx = getContext(); if (JSON.stringify(ctx) !== JSON.stringify(lastCtx)) replace(); paintIntents(); },
+    reset() { replace(); paintIntents(); },
   };
 }
