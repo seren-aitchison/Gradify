@@ -8,25 +8,25 @@
   "lessons": 10112,
   "written": 9979,
   "assessed": 940,
-  "plannedVisual": 653,
-  "plannedDiagram": 603,
+  "plannedVisual": 679,
+  "plannedDiagram": 629,
   "plannedLab": 113,
-  "excluded": 287,
+  "excluded": 261,
   "notAssessed": 9039,
-  "withDiagram": 609,
-  "withLab": 845,
-  "withBoth": 170,
-  "withAny": 1284,
+  "withDiagram": 635,
+  "withLab": 846,
+  "withBoth": 171,
+  "withAny": 1310,
   "plannedNotDelivered": 0,
-  "placements": 633
+  "placements": 659
  },
  "diagrams": {
-  "manifest": 566,
-  "uniquePlaced": 566,
-  "placements": 633,
-  "reused": 61,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":551},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":551},
+  "manifest": 589,
+  "uniquePlaced": 589,
+  "placements": 659,
+  "reused": 63,
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":574},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":574},
   "failing": [],
   "unplaced": []
  },
@@ -523,17 +523,17 @@
     "lessons": 2159,
     "written": 2109,
     "assessed": 820,
-    "plannedVisual": 547,
-    "plannedDiagram": 504,
+    "plannedVisual": 573,
+    "plannedDiagram": 530,
     "plannedLab": 100,
-    "excluded": 273,
+    "excluded": 247,
     "notAssessed": 1289,
-    "withDiagram": 508,
-    "withLab": 321,
-    "withBoth": 162,
-    "withAny": 667,
+    "withDiagram": 534,
+    "withLab": 322,
+    "withBoth": 163,
+    "withAny": 693,
     "plannedNotDelivered": 0,
-    "placements": 528
+    "placements": 554
    }
   },
   {
@@ -1293,22 +1293,22 @@
    "declaredSite": "SciGradify",
    "servedBy": ["SciGradify"],
    "plan": ["kit/diagrams/plans/biology.mjs"],
-   "labs": 32,
+   "labs": 33,
    "totals": {
     "lessons": 391,
     "written": 391,
     "assessed": 391,
-    "plannedVisual": 184,
-    "plannedDiagram": 141,
+    "plannedVisual": 210,
+    "plannedDiagram": 167,
     "plannedLab": 100,
-    "excluded": 207,
+    "excluded": 181,
     "notAssessed": 0,
-    "withDiagram": 142,
-    "withLab": 99,
-    "withBoth": 57,
-    "withAny": 184,
+    "withDiagram": 168,
+    "withLab": 100,
+    "withBoth": 58,
+    "withAny": 210,
     "plannedNotDelivered": 0,
-    "placements": 160
+    "placements": 186
    },
    "units": [
     {
@@ -1439,17 +1439,17 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 24,
-      "plannedDiagram": 18,
+      "plannedVisual": 25,
+      "plannedDiagram": 19,
       "plannedLab": 14,
-      "excluded": 6,
+      "excluded": 5,
       "notAssessed": 0,
-      "withDiagram": 18,
+      "withDiagram": 19,
       "withLab": 14,
       "withBoth": 8,
-      "withAny": 24,
+      "withAny": 25,
       "plannedNotDelivered": 0,
-      "placements": 19
+      "placements": 20
      },
      "lessons": [
       {
@@ -1578,14 +1578,7 @@
        "plan": {"verdict":"none","reason":"gene regulation in outline: an argument about the same genome used differently"}
       },
       {"id":"u02-28","title":"Cell signalling","written":true,"diagrams":[{"id":"bio-adrenaline-cascade","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-adrenaline-cascade"]}},
-      {
-       "id": "u02-29",
-       "title": "Cell junctions",
-       "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"three animal junctions and plant plasmodesmata: needs a tissue drawing, not yet built"}
-      },
+      {"id":"u02-29","title":"Cell junctions","written":true,"diagrams":[{"id":"bio-cell-junctions","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-cell-junctions"]}},
       {
        "id": "u02-30",
        "title": "Cellular organisation",
@@ -1741,17 +1734,17 @@
       "lessons": 35,
       "written": 35,
       "assessed": 35,
-      "plannedVisual": 22,
-      "plannedDiagram": 19,
+      "plannedVisual": 24,
+      "plannedDiagram": 21,
       "plannedLab": 14,
-      "excluded": 13,
+      "excluded": 11,
       "notAssessed": 0,
-      "withDiagram": 19,
+      "withDiagram": 21,
       "withLab": 14,
       "withBoth": 11,
-      "withAny": 22,
+      "withAny": 24,
       "plannedNotDelivered": 0,
-      "placements": 24
+      "placements": 26
      },
      "lessons": [
       {"id":"u04-01","title":"Introduction to genetics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of genetics and inheritance: carried in the text"}},
@@ -1818,7 +1811,7 @@
        "plan": {"verdict":"none","reason":"levels of control listed in words; the lac operon in the next lessons is the worked example"}
       },
       {"id":"u04-15","title":"Operons","written":true,"diagrams":[{"id":"bio-lac-operon","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-lac-operon"]}},
-      {"id":"u04-16","title":"Epigenetics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"chromatin marks need a nucleosome drawing, not yet built"}},
+      {"id":"u04-16","title":"Epigenetics","written":true,"diagrams":[{"id":"bio-chromatin-marks","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-chromatin-marks"]}},
       {"id":"u04-17","title":"Mutations","written":true,"diagrams":[],"labs":["transcription"],"plan":{"verdict":"lab","labs":["transcription"]}},
       {
        "id": "u04-18",
@@ -1902,7 +1895,14 @@
       {"id":"u04-29","title":"Population genetics","written":true,"diagrams":[{"id":"bio-hardy-weinberg","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-hardy-weinberg"]}},
       {"id":"u04-30","title":"Genetic linkage","written":true,"diagrams":[{"id":"bio-crossover-linkage","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-crossover-linkage"]}},
       {"id":"u04-31","title":"Recombination","written":true,"diagrams":[{"id":"bio-crossover-linkage","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-crossover-linkage"]}},
-      {"id":"u04-32","title":"Chromosomal abnormalities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"chromosomal abnormalities need a karyotype drawing, not yet built"}},
+      {
+       "id": "u04-32",
+       "title": "Chromosomal abnormalities",
+       "written": true,
+       "diagrams": [{"id":"bio-karyotype-counts","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-karyotype-counts"]}
+      },
       {"id":"u04-33","title":"Genomics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"genomics is a survey of methods and results: carried in the text"}},
       {"id":"u04-34","title":"Human genetic variation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"human variation is a survey: carried in the text"}},
       {
@@ -1923,17 +1923,17 @@
       "lessons": 23,
       "written": 23,
       "assessed": 23,
-      "plannedVisual": 14,
-      "plannedDiagram": 12,
+      "plannedVisual": 16,
+      "plannedDiagram": 14,
       "plannedLab": 4,
-      "excluded": 9,
+      "excluded": 7,
       "notAssessed": 0,
-      "withDiagram": 12,
+      "withDiagram": 14,
       "withLab": 4,
       "withBoth": 2,
-      "withAny": 14,
+      "withAny": 16,
       "plannedNotDelivered": 0,
-      "placements": 13
+      "placements": 15
      },
      "lessons": [
       {
@@ -1993,8 +1993,8 @@
        "labs": [],
        "plan": {"verdict":"none","reason":"an overview of development: each stage is drawn in its own lesson where a picture helps"}
       },
-      {"id":"u05-16","title":"Fertilisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the steps of fertilisation need a gamete-fusion drawing, not yet built"}},
-      {"id":"u05-17","title":"Cleavage","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"morula, blastula and blastocyst need an embryo drawing, not yet built"}},
+      {"id":"u05-16","title":"Fertilisation","written":true,"diagrams":[{"id":"bio-fertilisation","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-fertilisation"]}},
+      {"id":"u05-17","title":"Cleavage","written":true,"diagrams":[{"id":"bio-cleavage","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-cleavage"]}},
       {"id":"u05-18","title":"Gastrulation","written":true,"diagrams":[{"id":"bio-germ-layers","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-germ-layers"]}},
       {
        "id": "u05-19",
@@ -2032,17 +2032,17 @@
       "lessons": 24,
       "written": 24,
       "assessed": 24,
-      "plannedVisual": 13,
-      "plannedDiagram": 9,
+      "plannedVisual": 14,
+      "plannedDiagram": 10,
       "plannedLab": 8,
-      "excluded": 11,
+      "excluded": 10,
       "notAssessed": 0,
-      "withDiagram": 10,
+      "withDiagram": 11,
       "withLab": 8,
       "withBoth": 5,
-      "withAny": 13,
+      "withAny": 14,
       "plannedNotDelivered": 0,
-      "placements": 13
+      "placements": 14
      },
      "lessons": [
       {
@@ -2099,7 +2099,7 @@
        "labs": ["natural-selection"],
        "plan": {"verdict":"diagram+lab","diagrams":["bio-genetic-drift"],"labs":["natural-selection"]}
       },
-      {"id":"u06-08","title":"Gene flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"gene flow is an idea that needs a two-population simulation, not yet built"}},
+      {"id":"u06-08","title":"Gene flow","written":true,"diagrams":[{"id":"bio-gene-flow","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-gene-flow"]}},
       {"id":"u06-09","title":"Sexual selection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"sexual selection is a set of examples carried in the text"}},
       {"id":"u06-10","title":"Selection pressures","written":true,"diagrams":[],"labs":["natural-selection"],"plan":{"verdict":"lab","labs":["natural-selection"]}},
       {"id":"u06-11","title":"Fitness","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"fitness is a definition and a calculation: carried in the text"}},
@@ -2175,17 +2175,17 @@
       "lessons": 34,
       "written": 34,
       "assessed": 34,
-      "plannedVisual": 16,
-      "plannedDiagram": 6,
+      "plannedVisual": 19,
+      "plannedDiagram": 9,
       "plannedLab": 12,
-      "excluded": 18,
+      "excluded": 15,
       "notAssessed": 0,
-      "withDiagram": 6,
+      "withDiagram": 9,
       "withLab": 12,
       "withBoth": 2,
-      "withAny": 16,
+      "withAny": 19,
       "plannedNotDelivered": 0,
-      "placements": 6
+      "placements": 9
      },
      "lessons": [
       {"id":"u07-01","title":"Organisation of the human body","written":true,"diagrams":[],"labs":["organ-systems"],"plan":{"verdict":"lab","labs":["organ-systems"]}},
@@ -2238,8 +2238,8 @@
       {"id":"u07-13","title":"Cardiac cycle","written":true,"diagrams":[],"labs":["heart"],"plan":{"verdict":"lab","labs":["heart"]}},
       {"id":"u07-14","title":"Blood vessels","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"arteries, veins and capillaries are a comparison: carried in the text"}},
       {"id":"u07-15","title":"Blood composition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"blood composition is a list of components: carried in the text"}},
-      {"id":"u07-16","title":"Circulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the circuits of circulation need an anatomy drawing, not yet built"}},
-      {"id":"u07-17","title":"Respiratory system","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the parts of the respiratory system need an anatomy drawing, not yet built"}},
+      {"id":"u07-16","title":"Circulation","written":true,"diagrams":[{"id":"bio-double-circulation","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-double-circulation"]}},
+      {"id":"u07-17","title":"Respiratory system","written":true,"diagrams":[{"id":"bio-airway","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-airway"]}},
       {"id":"u07-18","title":"Ventilation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"ventilation is described by pressure and volume changes: carried in the text"}},
       {"id":"u07-19","title":"Gas exchange","written":true,"diagrams":[],"labs":["gas-exchange"],"plan":{"verdict":"lab","labs":["gas-exchange"]}},
       {
@@ -2250,7 +2250,7 @@
        "labs": ["gas-exchange"],
        "plan": {"verdict":"diagram+lab","diagrams":["bio-oxygen-dissociation"],"labs":["gas-exchange"]}
       },
-      {"id":"u07-21","title":"Digestive system","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the organs of the digestive system need an anatomy drawing, not yet built"}},
+      {"id":"u07-21","title":"Digestive system","written":true,"diagrams":[{"id":"bio-gut","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-gut"]}},
       {
        "id": "u07-22",
        "title": "Digestion and absorption",
@@ -2295,27 +2295,27 @@
       "lessons": 34,
       "written": 34,
       "assessed": 34,
-      "plannedVisual": 10,
-      "plannedDiagram": 8,
+      "plannedVisual": 20,
+      "plannedDiagram": 18,
       "plannedLab": 4,
-      "excluded": 24,
+      "excluded": 14,
       "notAssessed": 0,
-      "withDiagram": 8,
+      "withDiagram": 18,
       "withLab": 4,
       "withBoth": 2,
-      "withAny": 10,
+      "withAny": 20,
       "plannedNotDelivered": 0,
-      "placements": 9
+      "placements": 19
      },
      "lessons": [
       {"id":"u08-01","title":"Plant cell structure","written":true,"diagrams":[{"id":"bio-plant-cell","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-plant-cell"]}},
-      {"id":"u08-02","title":"Plant tissues","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"plant tissues need a stem cross-section drawing, not yet built"}},
-      {"id":"u08-03","title":"Roots and root systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"root structure needs a section drawing, not yet built"}},
-      {"id":"u08-04","title":"Stems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"stem structure needs a section drawing, not yet built"}},
-      {"id":"u08-05","title":"Leaves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"leaf structure needs a section drawing, not yet built"}},
-      {"id":"u08-06","title":"Plant vascular tissue","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"vascular bundles need a section drawing, not yet built"}},
-      {"id":"u08-07","title":"Xylem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"xylem structure needs a vessel drawing, not yet built"}},
-      {"id":"u08-08","title":"Phloem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"phloem structure and mass flow need a sieve-tube drawing, not yet built"}},
+      {"id":"u08-02","title":"Plant tissues","written":true,"diagrams":[{"id":"bio-stem-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-stem-section"]}},
+      {"id":"u08-03","title":"Roots and root systems","written":true,"diagrams":[{"id":"bio-root-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-root-section"]}},
+      {"id":"u08-04","title":"Stems","written":true,"diagrams":[{"id":"bio-stem-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-stem-section"]}},
+      {"id":"u08-05","title":"Leaves","written":true,"diagrams":[{"id":"bio-leaf-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-leaf-section"]}},
+      {"id":"u08-06","title":"Plant vascular tissue","written":true,"diagrams":[{"id":"bio-stem-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-stem-section"]}},
+      {"id":"u08-07","title":"Xylem","written":true,"diagrams":[{"id":"bio-xylem-vessel","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-xylem-vessel"]}},
+      {"id":"u08-08","title":"Phloem","written":true,"diagrams":[{"id":"bio-phloem-cells","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-phloem-cells"]}},
       {"id":"u08-09","title":"Water transport","written":true,"diagrams":[{"id":"bio-water-pathway","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-pathway"]}},
       {
        "id": "u08-10",
@@ -2363,9 +2363,9 @@
       {"id":"u08-25","title":"Tropisms","written":true,"diagrams":[{"id":"bio-phototropism","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-phototropism"]}},
       {"id":"u08-26","title":"Photoperiodism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"photoperiodism is described by day length: carried in the text"}},
       {"id":"u08-27","title":"Flowering","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"flowering is a sequence of signals: carried in the text"}},
-      {"id":"u08-28","title":"Pollination","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"pollination needs a flower drawing, not yet built"}},
-      {"id":"u08-29","title":"Fertilisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"plant fertilisation needs a flower drawing, not yet built"}},
-      {"id":"u08-30","title":"Seed formation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"seed formation needs a seed drawing, not yet built"}},
+      {"id":"u08-28","title":"Pollination","written":true,"diagrams":[{"id":"bio-flower-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-flower-section"]}},
+      {"id":"u08-29","title":"Fertilisation","written":true,"diagrams":[{"id":"bio-flower-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-flower-section"]}},
+      {"id":"u08-30","title":"Seed formation","written":true,"diagrams":[{"id":"bio-seed-section","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-seed-section"]}},
       {"id":"u08-31","title":"Germination","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"germination is a sequence of conditions and events: carried in the text"}},
       {
        "id": "u08-32",
@@ -2387,17 +2387,17 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 7,
-      "plannedDiagram": 7,
+      "plannedVisual": 9,
+      "plannedDiagram": 9,
       "plannedLab": 2,
-      "excluded": 23,
+      "excluded": 21,
       "notAssessed": 0,
-      "withDiagram": 7,
+      "withDiagram": 9,
       "withLab": 2,
       "withBoth": 2,
-      "withAny": 7,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 8
+      "placements": 10
      },
      "lessons": [
       {"id":"u09-01","title":"Introduction to microbiology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of the microbial world: carried in the text"}},
@@ -2431,11 +2431,11 @@
        "id": "u09-07",
        "title": "Horizontal gene transfer",
        "written": true,
-       "diagrams": [],
+       "diagrams": [{"id":"bio-horizontal-transfer","status":"validated"}],
        "labs": [],
-       "plan": {"verdict":"none","reason":"the three mechanisms of horizontal transfer need a comparison drawing, not yet built"}
+       "plan": {"verdict":"diagram","diagrams":["bio-horizontal-transfer"]}
       },
-      {"id":"u09-08","title":"Viral structure","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"viral structure needs a virion drawing, not yet built"}},
+      {"id":"u09-08","title":"Viral structure","written":true,"diagrams":[{"id":"bio-virion","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-virion"]}},
       {
        "id": "u09-09",
        "title": "Viral replication",
@@ -2581,17 +2581,17 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 10,
-      "plannedDiagram": 6,
+      "plannedVisual": 12,
+      "plannedDiagram": 8,
       "plannedLab": 7,
-      "excluded": 20,
+      "excluded": 18,
       "notAssessed": 0,
-      "withDiagram": 6,
+      "withDiagram": 8,
       "withLab": 7,
       "withBoth": 3,
-      "withAny": 10,
+      "withAny": 12,
       "plannedNotDelivered": 0,
-      "placements": 6
+      "placements": 8
      },
      "lessons": [
       {"id":"u11-01","title":"Introduction to ecology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of ecology: carried in the text"}},
@@ -2635,7 +2635,7 @@
       {"id":"u11-11","title":"Nutrient cycles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"nutrient cycles are drawn in the carbon and nitrogen lessons"}},
       {"id":"u11-12","title":"Carbon cycle","written":true,"diagrams":[{"id":"bio-carbon-cycle","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-carbon-cycle"]}},
       {"id":"u11-13","title":"Nitrogen cycle","written":true,"diagrams":[{"id":"bio-nitrogen-cycle","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-nitrogen-cycle"]}},
-      {"id":"u11-14","title":"Water cycle","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the water cycle needs a landscape drawing, not yet built"}},
+      {"id":"u11-14","title":"Water cycle","written":true,"diagrams":[{"id":"bio-water-cycle","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-cycle"]}},
       {
        "id": "u11-15",
        "title": "Population dynamics",
@@ -2652,7 +2652,14 @@
       {"id":"u11-21","title":"Biodiversity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"biodiversity is a definition and an index calculation: carried in the text"}},
       {"id":"u11-22","title":"Species richness","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"species richness is a count: carried in the text"}},
       {"id":"u11-23","title":"Conservation biology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"conservation biology is a set of strategies: carried in the text"}},
-      {"id":"u11-24","title":"Habitat fragmentation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"habitat fragmentation needs a landscape drawing, not yet built"}},
+      {
+       "id": "u11-24",
+       "title": "Habitat fragmentation",
+       "written": true,
+       "diagrams": [{"id":"bio-habitat-fragmentation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-habitat-fragmentation"]}
+      },
       {"id":"u11-25","title":"Invasive species","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"invasive species are a set of examples: carried in the text"}},
       {
        "id": "u11-26",
@@ -2676,17 +2683,17 @@
       "lessons": 25,
       "written": 25,
       "assessed": 25,
-      "plannedVisual": 8,
-      "plannedDiagram": 7,
+      "plannedVisual": 9,
+      "plannedDiagram": 8,
       "plannedLab": 5,
-      "excluded": 17,
+      "excluded": 16,
       "notAssessed": 0,
-      "withDiagram": 7,
+      "withDiagram": 8,
       "withLab": 5,
       "withBoth": 4,
-      "withAny": 8,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 8
+      "placements": 9
      },
      "lessons": [
       {"id":"u12-01","title":"Foundations of biotechnology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of biotechnology: carried in the text"}},
@@ -2700,7 +2707,7 @@
        "plan": {"verdict":"diagram+lab","diagrams":["bio-restriction-cloning"],"labs":["gel"]}
       },
       {"id":"u12-04","title":"DNA ligase","written":true,"diagrams":[{"id":"bio-restriction-cloning","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-restriction-cloning"]}},
-      {"id":"u12-05","title":"Plasmids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a plasmid map needs a circular-map drawing, not yet built"}},
+      {"id":"u12-05","title":"Plasmids","written":true,"diagrams":[{"id":"bio-plasmid-map","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-plasmid-map"]}},
       {"id":"u12-06","title":"Cloning vectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"cloning vectors are a comparison of capacities and uses: carried in the text"}},
       {
        "id": "u12-07",
@@ -2766,17 +2773,17 @@
       "lessons": 25,
       "written": 25,
       "assessed": 25,
-      "plannedVisual": 8,
-      "plannedDiagram": 6,
+      "plannedVisual": 9,
+      "plannedDiagram": 7,
       "plannedLab": 6,
-      "excluded": 17,
+      "excluded": 16,
       "notAssessed": 0,
-      "withDiagram": 6,
+      "withDiagram": 7,
       "withLab": 6,
       "withBoth": 4,
-      "withAny": 8,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 6
+      "placements": 7
      },
      "lessons": [
       {"id":"u13-01","title":"Introduction to bioinformatics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of bioinformatics: carried in the text"}},
@@ -2859,7 +2866,14 @@
        "plan": {"verdict":"none","reason":"structure prediction is a set of methods and a confidence score: carried in the text"}
       },
       {"id":"u13-17","title":"Molecular visualisation","written":true,"diagrams":[],"labs":["protein-viewer"],"plan":{"verdict":"lab","labs":["protein-viewer"]}},
-      {"id":"u13-18","title":"Biological networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"biological networks need a node-and-edge drawing, not yet built"}},
+      {
+       "id": "u13-18",
+       "title": "Biological networks",
+       "written": true,
+       "diagrams": [{"id":"bio-scale-free-network","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-scale-free-network"]}
+      },
       {"id":"u13-19","title":"Systems biology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"systems biology is an approach: carried in the text"}},
       {"id":"u13-20","title":"Population genomics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"population genomics is a set of methods: carried in the text"}},
       {"id":"u13-21","title":"Variant analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"variant calling and classes are a workflow and a table: carried in the text"}},
@@ -2884,17 +2898,17 @@
       "lessons": 24,
       "written": 24,
       "assessed": 24,
-      "plannedVisual": 10,
-      "plannedDiagram": 10,
+      "plannedVisual": 11,
+      "plannedDiagram": 11,
       "plannedLab": 2,
-      "excluded": 14,
+      "excluded": 13,
       "notAssessed": 0,
-      "withDiagram": 10,
-      "withLab": 2,
-      "withBoth": 2,
-      "withAny": 10,
+      "withDiagram": 11,
+      "withLab": 3,
+      "withBoth": 3,
+      "withAny": 11,
       "plannedNotDelivered": 0,
-      "placements": 12
+      "placements": 13
      },
      "lessons": [
       {
@@ -2968,7 +2982,14 @@
        "labs": [],
        "plan": {"verdict":"none","reason":"sequencing is covered by the Sanger diagram and the sequencing lessons in the biotechnology unit"}
       },
-      {"id":"u14-16","title":"Flow cytometry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"flow cytometry needs a dot-plot drawing, not yet built"}},
+      {
+       "id": "u14-16",
+       "title": "Flow cytometry",
+       "written": true,
+       "diagrams": [{"id":"bio-flow-cytometry","status":"validated"}],
+       "labs": ["flow-gating"],
+       "plan": {"verdict":"diagram","diagrams":["bio-flow-cytometry"]}
+      },
       {"id":"u14-17","title":"Statistical analysis","written":true,"diagrams":[{"id":"bio-choosing-a-test","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-choosing-a-test"]}},
       {
        "id": "u14-18",
