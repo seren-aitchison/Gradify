@@ -1,0 +1,107 @@
+{
+ "id": "phys-u09-hooke-spring",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Hooke's law",
+ "title": "Hooke's law for the spring",
+ "caption": "Extension is proportional to force up to the limit of proportionality, so F against x is a straight line through the origin whose gradient is the stiffness k = 2.0/4 cm = 50 N m⁻¹ (0.5 N per cm). Then 5.0 N stretches it 10 cm.",
+ "alt": "Graph of force in newtons against extension in centimetres: a straight line through the origin passing through (4, 2.0) and (10, 5.0).",
+ "description": [
+  "The horizontal axis is the extension x in cm; the vertical axis is the force F in N.",
+  "The line passes through the origin and the measured point (4 cm, 2.0 N): its gradient is k = 50 N m⁻¹.",
+  "Reading across at 5.0 N gives x = 5.0/50 = 10 cm, as long as the spring stays inside its limit."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   6.5
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "grid": [
+  2,
+  1
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "extension x / cm",
+  "force F / N"
+ ],
+ "curves": [
+  {
+   "expr": "0.5*x",
+   "colour": "a1",
+   "label": "F = kx, k = 50 N/m",
+   "labelAt": [
+    1,
+    3.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 2,
+   "label": "4.0 cm, 2.0 N",
+   "dx": 10,
+   "dy": 22
+  },
+  {
+   "x": 10,
+   "y": 5,
+   "label": "10 cm, 5.0 N",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*x",
+   "x": 4,
+   "y": 2,
+   "name": "the line passes through (4 cm, 2.0 N)"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*x",
+   "x": 10,
+   "y": 5,
+   "name": "5.0 N gives 10 cm"
+  },
+  {
+   "type": "slope",
+   "expr": "0.5*x",
+   "x": 3,
+   "value": 0.5,
+   "name": "gradient k = 50 N/m"
+  }
+ ]
+}

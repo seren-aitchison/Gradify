@@ -1,0 +1,109 @@
+{
+ "id": "phys-u09-spring-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Elastic energy",
+ "title": "Energy stored in the spring",
+ "caption": "The force grows from 0 to 40 N as the spring is compressed 5 cm, so the work done is the area of the triangle under the line: ½ × 40 × 0.05 = 1.0 J, not F × x. That energy launches the 20 g ball at √(2 × 1.0/0.02) = 10 m s⁻¹.",
+ "alt": "Graph of force against compression for a spring of stiffness 800 newtons per metre: a straight line to 40 newtons at 5 centimetres, with the triangle under it shaded and labelled 1.0 joule.",
+ "description": [
+  "The horizontal axis is compression x in m; the vertical axis is force F in N.",
+  "F = 800x reaches 40 N at x = 0.05 m.",
+  "The shaded triangle has area ½Fx = ½ × 40 × 0.05 = 1.0 J: the stored elastic energy.",
+  "All of it becomes kinetic energy: ½ × 0.02 × v² = 1.0 J, so v = 10 m s⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.06
+  ],
+  "y": [
+   0,
+   50
+  ]
+ },
+ "ticks": [
+  [
+   0.01,
+   0.02,
+   0.03,
+   0.04,
+   0.05,
+   0.06
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "grid": [
+  0.01,
+  10
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "compression x / m",
+  "force F / N"
+ ],
+ "curves": [
+  {
+   "expr": "800*x",
+   "domain": [
+    0,
+    0.05
+   ],
+   "colour": "a1",
+   "label": "F = kx",
+   "labelAt": [
+    0.008,
+    22
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "800*x",
+   "from": 0,
+   "to": 0.05,
+   "colour": "a1",
+   "opacity": 0.2
+  }
+ ],
+ "points": [
+  {
+   "x": 0.05,
+   "y": 40,
+   "label": "40 N at 5 cm",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "marks": [],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "800*x",
+   "from": 0,
+   "to": 0.05,
+   "value": 1,
+   "tol": 0.002,
+   "name": "area under F–x is 1.0 J"
+  },
+  {
+   "type": "point",
+   "expr": "800*x",
+   "x": 0.05,
+   "y": 40,
+   "name": "40 N at 5 cm"
+  }
+ ]
+}

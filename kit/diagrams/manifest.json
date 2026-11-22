@@ -40254,5 +40254,290 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u09-critical-crack": {
+  "title": "When a crack becomes critical",
+  "caption": "The stress intensity K = Yσ√(πa) rises with the crack length a. At σ = 200 MPa it reaches the steel's toughness K_IC = 50 MPa √m when a = 15.9 mm: any longer and the plate fractures. At half the crack length K is only 35 MPa √m.",
+  "alt": "Graph of stress intensity against crack length in millimetres: a rising square-root curve crossing the horizontal toughness line at 50 MPa root metre at a crack length of 15.9 millimetres.",
+  "description": [
+   "The horizontal axis is the edge-crack length a in mm; the vertical axis is K in MPa √m.",
+   "K = Yσ√(πa) with Y = 1.12 and σ = 200 MPa rises as the square root of a.",
+   "The dashed line is the toughness K_IC = 50 MPa √m.",
+   "They cross at a_c = (K_IC/Yσ)²/π = (50/224.00000000000003)²/π = 15.9 mm."
+  ],
+  "course": "physics",
+  "lesson": "Fatigue and fracture mechanics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Fatigue and fracture mechanics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "K reaches K_IC at a = 15.9 mm",
+    "ok": true,
+    "detail": "224.00000000000003*sqrt(3.14159265*x/1000) → 50.001, 50 → 50"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u09-hooke-spring": {
+  "title": "Hooke's law for the spring",
+  "caption": "Extension is proportional to force up to the limit of proportionality, so F against x is a straight line through the origin whose gradient is the stiffness k = 2.0/4 cm = 50 N m⁻¹ (0.5 N per cm). Then 5.0 N stretches it 10 cm.",
+  "alt": "Graph of force in newtons against extension in centimetres: a straight line through the origin passing through (4, 2.0) and (10, 5.0).",
+  "description": [
+   "The horizontal axis is the extension x in cm; the vertical axis is the force F in N.",
+   "The line passes through the origin and the measured point (4 cm, 2.0 N): its gradient is k = 50 N m⁻¹.",
+   "Reading across at 5.0 N gives x = 5.0/50 = 10 cm, as long as the spring stays inside its limit."
+  ],
+  "course": "physics",
+  "lesson": "Hooke's law",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Hooke's law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line passes through (4 cm, 2.0 N)",
+    "ok": true,
+    "detail": "y(4) = 2"
+   },
+   {
+    "name": "5.0 N gives 10 cm",
+    "ok": true,
+    "detail": "y(10) = 5"
+   },
+   {
+    "name": "gradient k = 50 N/m",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u09-maxwell-relaxation": {
+  "title": "Stress relaxation of a Maxwell material",
+  "caption": "Held at fixed strain, a Maxwell material's stress decays as σ = σ₀e^{−t/τ} with relaxation time τ = η/E = 1 s. After one τ the stress is 1/e = 0.368 of its starting value, after 3 τ only 0.050.",
+  "alt": "Graph of stress divided by initial stress against time in seconds: an exponential decay falling to 0.368 at 1 second.",
+  "description": [
+   "The horizontal axis is time in s after the strain is applied; the vertical axis is σ/σ₀.",
+   "τ = η/E = 10⁶ Pa s / 10⁶ Pa = 1 s.",
+   "σ/σ₀ = e^{−t/τ}: 0.368 at t = 1 s, 0.135 at 2 s, 0.050 at 3 s."
+  ],
+  "course": "physics",
+  "lesson": "Viscoelasticity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Viscoelasticity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stress falls to 1/e after one relaxation time",
+    "ok": true,
+    "detail": "y(1) = 0.3679"
+   },
+   {
+    "name": "0.050 of the stress is left after 3τ",
+    "ok": true,
+    "detail": "y(3) = 0.0498"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u09-shelf-sag": {
+  "title": "The shelf's sag along its span",
+  "caption": "A simply supported 2 m shelf under a uniform load of 150 N m⁻¹ sags most at the middle: δ = 5wL⁴/384EI = 1.87 cm (the lesson's 1.9 cm), with no sag at the two supports. The curve is symmetrical about the midpoint.",
+  "alt": "Graph of sag in centimetres against position along the shelf from 0 to 2 metres: a smooth symmetrical arch zero at both ends and 1.87 centimetres at the middle.",
+  "description": [
+   "The horizontal axis is position along the shelf in m; the vertical axis is the sag in cm (downward).",
+   "I = bh³/12 = 1.67e-7 m⁴, so EI = 1667 N m².",
+   "δ(x) = w x (L³ − 2Lx² + x³)/24EI is zero at x = 0 and x = 2 m.",
+   "At the middle (x = 1 m) δ = 5wL⁴/384EI = 1.87 cm."
+  ],
+  "course": "physics",
+  "lesson": "Beam deflection",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Beam deflection"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum sag 1.87 cm at the midpoint",
+    "ok": true,
+    "detail": "found (1, 1.875)"
+   },
+   {
+    "name": "no sag at the right support",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u09-spring-energy": {
+  "title": "Energy stored in the spring",
+  "caption": "The force grows from 0 to 40 N as the spring is compressed 5 cm, so the work done is the area of the triangle under the line: ½ × 40 × 0.05 = 1.0 J, not F × x. That energy launches the 20 g ball at √(2 × 1.0/0.02) = 10 m s⁻¹.",
+  "alt": "Graph of force against compression for a spring of stiffness 800 newtons per metre: a straight line to 40 newtons at 5 centimetres, with the triangle under it shaded and labelled 1.0 joule.",
+  "description": [
+   "The horizontal axis is compression x in m; the vertical axis is force F in N.",
+   "F = 800x reaches 40 N at x = 0.05 m.",
+   "The shaded triangle has area ½Fx = ½ × 40 × 0.05 = 1.0 J: the stored elastic energy.",
+   "All of it becomes kinetic energy: ½ × 0.02 × v² = 1.0 J, so v = 10 m s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Elastic energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Elastic energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area under F–x is 1.0 J",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "40 N at 5 cm",
+    "ok": true,
+    "detail": "y(0.05) = 40"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u09-unloading": {
+  "title": "Loading past the elastic limit and unloading",
+  "caption": "Up to the elastic limit (here 110 MPa at 0.1% strain; illustrative values) the line has gradient E. Past it the wire deforms plastically. Unloading from 250 MPa follows a line parallel to the original one, so stress reaches zero at a permanent strain of 0.37%.",
+  "alt": "Stress–strain graph: a steep straight line to the elastic limit, a flatter curve beyond it, and an unloading line parallel to the first that meets the strain axis at a permanent strain of 0.37 percent.",
+  "description": [
+   "The horizontal axis is strain in %; the vertical axis is stress in MPa. The values are illustrative.",
+   "Loading: σ = Eε with gradient 1100 MPa per % strain (E = 110 GPa) up to the elastic limit at (0.1%, 110 MPa).",
+   "Plastic region: the curve flattens as dislocations move, up to (0.6%, 250 MPa) where the load is removed.",
+   "Unloading: a line with the same gradient 1100, reaching zero stress at 0.37% strain. That offset is the permanent plastic strain."
+  ],
+  "course": "physics",
+  "lesson": "Elastic and plastic deformation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u09.js: Elastic and plastic deformation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "loading gradient E = 1100 MPa per %",
+    "ok": true,
+    "detail": "gradient 1100.0000"
+   },
+   {
+    "name": "the unloading line is parallel to the elastic line",
+    "ok": true,
+    "detail": "gradient 1100.0000"
+   },
+   {
+    "name": "unloading reaches zero stress at 0.37% strain",
+    "ok": true,
+    "detail": "y(0.3727272727272727) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
