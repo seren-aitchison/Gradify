@@ -1,0 +1,157 @@
+{
+ "id": "maths-u05-goat-locus",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Loci",
+ "title": "The goat's grazing region",
+ "caption": "The rope sweeps a circle of radius 4 m about the corner, but the shed blocks one quarter. The grazing region is three quarters of the circle, ¾ × π × 4² = 12π ≈ 37.7 m².",
+ "alt": "A 10 by 6 shed with a goat tied at one corner by a 4 metre rope; the circle of radius 4 about the corner is blocked by the shed in one quarter.",
+ "description": [
+  "The goat is tied to the corner O of the shed with a 4 m rope.",
+  "The rope can sweep a circle of radius 4 m about O.",
+  "The shed fills one quarter of that circle, so the goat reaches three quarters.",
+  "Area = ¾ × π × 4² = 12π ≈ 37.7 m²."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   10,
+   0
+  ],
+  "B": [
+   10,
+   6
+  ],
+  "C": [
+   0,
+   6
+  ],
+  "P": [
+   4,
+   0
+  ],
+  "Q": [
+   0,
+   4
+  ],
+  "N": [
+   -4,
+   0
+  ],
+  "S": [
+   0,
+   -4
+  ]
+ },
+ "hide": [
+  "O",
+  "A",
+  "B",
+  "C",
+  "P",
+  "Q",
+  "N",
+  "S"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a3",
+   "opacity": 0.35
+  }
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 4,
+   "colour": "a1"
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "P",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "P",
+   "value": 4,
+   "label": "4 m",
+   "side": -1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    6,
+    3
+   ],
+   "text": "shed 10 m × 6 m",
+   "colour": "ink",
+   "size": 13
+  },
+  {
+   "at": [
+    1,
+    -4.5
+   ],
+   "text": "grazes ¾ of the circle",
+   "colour": "a1",
+   "size": 12
+  }
+ ],
+ "view": {
+  "x": [
+   -5.5,
+   11.5
+  ],
+  "y": [
+   -5,
+   7.5
+  ]
+ },
+ "height": [
+  300,
+  280
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "P",
+    "Q",
+    "N",
+    "S"
+   ],
+   "name": "the rope's reach is 4 m in every direction",
+   "circle": 0
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "O",
+    "A",
+    "B",
+    "C"
+   ],
+   "value": 60,
+   "name": "the shed is 10 × 6 = 60 m²"
+  }
+ ],
+ "fromLesson": [
+  "12π"
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "id": "maths-u05-point-line-distance",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Analytic Geometry",
+ "title": "Distance from (2, 3) to 3x + 4y − 8 = 0",
+ "caption": "The shortest distance is along the perpendicular. The formula |3(2) + 4(3) − 8| / √(3² + 4²) = 10/5 = 2 matches the drawn foot of the perpendicular F = (0.8, 1.4), 2 units from P.",
+ "alt": "The line 3x + 4y = 8 and the point P(2, 3), with the perpendicular from P to the line of length 2 ending at F(0.8, 1.4).",
+ "description": [
+  "The line 3x + 4y − 8 = 0 passes through (4, −1) and (−4, 5).",
+  "The perpendicular from P(2, 3) meets it at F(0.8, 1.4).",
+  "The formula gives |6 + 12 − 8| ÷ 5 = 2, the length PF."
+ ],
+ "points": {
+  "P": [
+   2,
+   3
+  ],
+  "F": [
+   0.8,
+   1.4
+  ],
+  "L1": [
+   4,
+   -1
+  ],
+  "L2": [
+   -4,
+   5
+  ]
+ },
+ "hide": [
+  "L1",
+  "L2"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "segments": [
+  {
+   "a": "L1",
+   "b": "L2",
+   "colour": "a1"
+  },
+  {
+   "a": "P",
+   "b": "F",
+   "colour": "a2",
+   "w": 3
+  }
+ ],
+ "angles": [
+  {
+   "at": "F",
+   "from": "P",
+   "to": "L1",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "P",
+   "b": "F",
+   "value": 2,
+   "label": "2",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "view": {
+  "x": [
+   -4.5,
+   5.5
+  ],
+  "y": [
+   -2,
+   5.5
+  ]
+ },
+ "height": [
+  330,
+  320
+ ],
+ "labelAt": {
+  "P": [
+   10,
+   -10
+  ],
+  "F": [
+   -14,
+   10
+  ]
+ },
+ "checks": [
+  {
+   "type": "perpendicular",
+   "a": [
+    "P",
+    "F"
+   ],
+   "b": [
+    "L1",
+    "L2"
+   ],
+   "name": "PF is perpendicular to the line"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "L1",
+    "F",
+    "L2"
+   ],
+   "name": "F is on the line 3x + 4y = 8"
+  }
+ ],
+ "fromLesson": [
+  "Distance = 2"
+ ]
+}

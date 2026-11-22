@@ -1,0 +1,155 @@
+{
+ "id": "maths-u05-chord-radius",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Chords and Tangents",
+ "title": "A chord 6 cm from the centre",
+ "caption": "The perpendicular from the centre bisects the chord, so half-chord 8 and distance 6 are the legs of a right triangle; the radius is the hypotenuse, √(36 + 64) = 10 cm.",
+ "alt": "A circle with centre O and a horizontal chord AB of length 16, whose midpoint M is 6 above O, with OA = 10 as the radius.",
+ "description": [
+  "The chord AB is 16 cm long and 6 cm from the centre O.",
+  "The perpendicular from O meets the chord at its midpoint M, so AM = 8 cm.",
+  "Triangle OMA has a right angle at M with legs 6 and 8.",
+  "The radius OA = √(36 + 64) = 10 cm."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   -8,
+   6
+  ],
+  "B": [
+   8,
+   6
+  ],
+  "M": [
+   0,
+   6
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 10,
+   "colour": "ink"
+  }
+ ],
+ "segments": [
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "a2",
+   "w": 2.6
+  },
+  {
+   "a": "O",
+   "b": "M",
+   "colour": "a1"
+  },
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a1"
+  }
+ ],
+ "angles": [
+  {
+   "at": "M",
+   "from": "O",
+   "to": "A",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 16,
+   "label": "16",
+   "side": 1
+  },
+  {
+   "a": "O",
+   "b": "M",
+   "value": 6,
+   "label": "6",
+   "side": 1
+  },
+  {
+   "a": "O",
+   "b": "A",
+   "value": 10,
+   "label": "r = 10",
+   "side": -1
+  }
+ ],
+ "labelAt": {
+  "O": [
+   0,
+   16
+  ],
+  "A": [
+   -14,
+   -6
+  ],
+  "B": [
+   14,
+   -6
+  ],
+  "M": [
+   12,
+   14
+  ]
+ },
+ "view": {
+  "x": [
+   -12,
+   12
+  ],
+  "y": [
+   -11.5,
+   11.5
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "A",
+    "B"
+   ],
+   "name": "A and B are on the circle of radius 10"
+  },
+  {
+   "type": "midpoint",
+   "m": "M",
+   "a": "A",
+   "b": "B",
+   "name": "M is the midpoint of the chord"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "O",
+    "M"
+   ],
+   "b": [
+    "A",
+    "B"
+   ],
+   "name": "OM is perpendicular to the chord"
+  }
+ ],
+ "fromLesson": [
+  "r = √(36 + 64) = 10 cm"
+ ]
+}

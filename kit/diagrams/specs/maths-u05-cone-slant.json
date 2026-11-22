@@ -1,0 +1,130 @@
+{
+ "id": "maths-u05-cone-slant",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Surface Area",
+ "title": "The cone's slant height",
+ "caption": "Radius 6 and height 8 are the legs of a right triangle; the slant height is its hypotenuse, √(36 + 64) = 10. Then curved surface πrl = 60π, base πr² = 36π, total 96π cm².",
+ "alt": "A right triangle with legs 6 (radius) and 8 (height) and hypotenuse 10 (slant height), the cross-section of the cone.",
+ "description": [
+  "The cone has radius 6 cm and perpendicular height 8 cm.",
+  "A cross-section through the axis gives a right triangle with legs 8 and 6.",
+  "The slant height is √(36 + 64) = 10 cm.",
+  "Curved surface = π × 6 × 10 = 60π; base = π × 6² = 36π; total = 96π cm²."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   6,
+   0
+  ],
+  "C": [
+   0,
+   8
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a1",
+   "opacity": 0.12
+  }
+ ],
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  [
+   "A",
+   "C"
+  ],
+  {
+   "a": "B",
+   "b": "C",
+   "colour": "a2",
+   "w": 3
+  }
+ ],
+ "angles": [
+  {
+   "at": "A",
+   "from": "B",
+   "to": "C",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 6,
+   "label": "r = 6",
+   "side": -1
+  },
+  {
+   "a": "A",
+   "b": "C",
+   "value": 8,
+   "label": "h = 8",
+   "side": -1
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "value": 10,
+   "label": "l = 10",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "labelAt": {
+  "A": [
+   -12,
+   12
+  ],
+  "B": [
+   12,
+   10
+  ],
+  "C": [
+   0,
+   -14
+  ]
+ },
+ "view": {
+  "x": [
+   -3,
+   9
+  ],
+  "y": [
+   -1.8,
+   9.8
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "B",
+   "b": "C",
+   "value": "sqrt(36+64)",
+   "name": "slant height = √(36 + 64) = 10"
+  }
+ ],
+ "fromLesson": [
+  "Total = 96π cm"
+ ]
+}

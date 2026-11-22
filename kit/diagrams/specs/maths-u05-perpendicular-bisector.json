@@ -1,0 +1,118 @@
+{
+ "id": "maths-u05-perpendicular-bisector",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Coordinate Geometry",
+ "title": "The perpendicular bisector of AB",
+ "caption": "The midpoint of AB is (4, 1) and the gradient of AB is −2, so the bisector has gradient ½ through (4, 1): y = ½x − 1.",
+ "alt": "The segment from A(2, 5) to B(6, −3), its midpoint M(4, 1) and the perpendicular line y = x/2 − 1 through M.",
+ "description": [
+  "A = (2, 5) and B = (6, −3) have midpoint (4, 1).",
+  "The gradient of AB is −8/4 = −2, so the perpendicular gradient is 1/2.",
+  "The line through (4, 1) with gradient 1/2 is y = ½x − 1."
+ ],
+ "points": {
+  "A": [
+   2,
+   5
+  ],
+  "B": [
+   6,
+   -3
+  ],
+  "M": [
+   4,
+   1
+  ],
+  "P": [
+   -2,
+   -2
+  ],
+  "Q": [
+   10,
+   4
+  ]
+ },
+ "hide": [
+  "P",
+  "Q"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 2
+ },
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  {
+   "a": "P",
+   "b": "Q",
+   "colour": "a2"
+  }
+ ],
+ "view": {
+  "x": [
+   -3,
+   11
+  ],
+  "y": [
+   -4.5,
+   6.5
+  ]
+ },
+ "height": [
+  330,
+  320
+ ],
+ "labelAt": {
+  "A": [
+   -12,
+   -8
+  ],
+  "B": [
+   12,
+   8
+  ],
+  "M": [
+   12,
+   14
+  ]
+ },
+ "checks": [
+  {
+   "type": "midpoint",
+   "m": "M",
+   "a": "A",
+   "b": "B",
+   "name": "M(4, 1) is the midpoint of AB"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "A",
+    "B"
+   ],
+   "b": [
+    "P",
+    "Q"
+   ],
+   "name": "the line y = ½x − 1 is perpendicular to AB"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "P",
+    "M",
+    "Q"
+   ],
+   "name": "(−2, −2), (4, 1) and (10, 4) lie on y = ½x − 1"
+  }
+ ],
+ "fromLesson": [
+  "y = ½x − 1"
+ ]
+}

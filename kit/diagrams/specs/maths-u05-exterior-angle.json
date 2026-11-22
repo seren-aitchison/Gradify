@@ -1,0 +1,127 @@
+{
+ "id": "maths-u05-exterior-angle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Triangles",
+ "title": "The exterior angle equals the two opposite angles",
+ "caption": "In triangle PQR the exterior angle at R, 115°, equals P + Q = 48° + Q, so Q = 67°.",
+ "alt": "Triangle PQR with angle P 48 degrees, angle Q 67 degrees and the side QR extended past R, making an exterior angle of 115 degrees.",
+ "description": [
+  "Triangle PQR has P = 48°.",
+  "Extend QR beyond R; the exterior angle at R is 115°.",
+  "The exterior angle equals the sum of the two opposite interior angles: 115 = 48 + Q.",
+  "So Q = 67°."
+ ],
+ "points": {
+  "P": [
+   0,
+   0
+  ],
+  "Q": [
+   6,
+   0
+  ],
+  "R": [
+   4.07767413823619,
+   4.528715929320457
+  ],
+  "E": [
+   3.0203949142660935,
+   7.019509690446709
+  ]
+ },
+ "hide": [
+  "E"
+ ],
+ "segments": [
+  [
+   "P",
+   "Q"
+  ],
+  [
+   "Q",
+   "R"
+  ],
+  [
+   "R",
+   "P"
+  ],
+  {
+   "a": "R",
+   "b": "E",
+   "colour": "a2"
+  }
+ ],
+ "angles": [
+  {
+   "at": "P",
+   "from": "Q",
+   "to": "R",
+   "deg": 48,
+   "label": "48°",
+   "colour": "a1",
+   "r": 30
+  },
+  {
+   "at": "Q",
+   "from": "P",
+   "to": "R",
+   "deg": 67,
+   "label": "Q = 67°",
+   "colour": "a3",
+   "r": 26
+  },
+  {
+   "at": "R",
+   "from": "P",
+   "to": "E",
+   "deg": 115,
+   "label": "115°",
+   "colour": "a2",
+   "r": 28
+  }
+ ],
+ "labelAt": {
+  "R": [
+   -14,
+   -8
+  ]
+ },
+ "view": {
+  "x": [
+   -1.5,
+   8
+  ],
+  "y": [
+   -1.2,
+   6.2
+  ]
+ },
+ "height": [
+  320,
+  300
+ ],
+ "checks": [
+  {
+   "type": "collinear",
+   "points": [
+    "Q",
+    "R",
+    "E"
+   ],
+   "name": "E lies on QR extended"
+  },
+  {
+   "type": "angle",
+   "at": "R",
+   "from": "P",
+   "to": "E",
+   "deg": 115,
+   "name": "the exterior angle is 115° = 48° + 67°"
+  }
+ ],
+ "fromLesson": [
+  "Q = 67°"
+ ]
+}
