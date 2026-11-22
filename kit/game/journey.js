@@ -14,6 +14,7 @@ import { parseNotes } from "../course/notes.js";
 import { renderQuestion, wireQuestions } from "../assess/questions.js";
 import { icon } from "../core/icons.js";
 import { esc } from "../core/text.js";
+import { mountHabits } from "./habits-view.js";
 import { CloudStore, LocalStore } from "../data/store.js";
 
 const GAME_KEY = "gradify.game";
@@ -113,6 +114,7 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
         <article class="gj-card"><span class="gj-label">${ic("checklist")} Quests</span><b class="gj-big">${Q.filter((q) => !q.paid).length}<small> active</small></b><span class="gj-sub">${ready.length ? `<em>${ready.length} ready to claim</em>` : "Progress updates as you learn"}</span></article>
       </section>
       ${steps.length ? `<section class="gj-next" aria-label="What to do next">${steps.slice(0, 2).map((x) => `<a class="gj-card gj-step ${x.kind}" href="${x.lesson ? href(x.lesson.course, x.lesson.id) : x.unit ? `${COURSES[x.unit.course]}#/quiz/${x.unit.id}` : "#challenge"}"><span class="gj-label">${{ return: "Gently back", recover: "Recover", next: "Next", stretch: "Stretch", continue: "Continue" }[x.kind]}</span><b>${esc(x.title)}</b><span class="gj-sub">${esc(x.text)}</span></a>`).join("")}</section>` : ""}
+      <section class="hb-board" id="habits" aria-label="Your habits"></section>
       <div class="gj-cols">
         <div>
           ${questsHtml("Today's quests", Q.filter((q) => q.kind === "daily"))}
@@ -134,6 +136,13 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
         </div>
       </div>
       <section class="gj-card gj-collection" aria-label="Achievement collection"><h2>Collection</h2>${groups(A)}</section>`;
+    // the habits board: learning habits from the same events, each linked to where it's done (kit/game/habits-view.js)
+    mountHabits(root.querySelector("#habits"), { events: s.events, goal: H.goal, actFor: (id) => {
+      const c = recent(); if (!c) return { label: "Pick a course", href: "/explore.html" };
+      const base = COURSES[c.slug], studied = Object.keys(c.S?.done || {}).length > 0;
+      return { learn: { label: "Start a lesson", href: `${base}#/home` }, recall: { label: "Review cards", href: `${base}#/review` },
+        practise: { label: "Answer questions", href: studied ? `${base}#/target/m5_fmixed_sstudied` : `${base}#/home` }, goal: { label: "Keep going", href: `${base}#/home` } }[id];
+    } });
     root.querySelector("[data-goal]")?.addEventListener("change", (e) => { game = { ...game, goal: Number(e.target.value) }; write(GAME_KEY, game); paint(); });
     root.querySelectorAll("[data-claim]").forEach((b) => b.addEventListener("click", () => { const q = Q.find((x) => x.key === b.dataset.claim); if (q) pay(q, q.title); }));
     paintChallenge(s);
