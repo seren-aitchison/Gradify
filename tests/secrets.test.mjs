@@ -44,7 +44,8 @@ test("the site config holds only the public project URL and anon key", async () 
 // The AI functions use it only for the Gradify AI usage ledger (ai_claim_for / ai_settle_for / the response cache), which
 // learners must not be able to write: everything else they do (sign-in, saved packs) uses the learner's own token.
 const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts",
-  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts"]);
+  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts",
+  "supabase/functions/youtube-notes/index.ts"]);
 
 test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
@@ -68,6 +69,12 @@ test("server functions act as the signed-in learner, never with the service role
       // the one function it may call: plus_allowed_for(), a read-only check that the learner's plan includes reminders
       assert.doesNotMatch(src.replace(/\.rpc\("plus_allowed_for", \{ uid: userId \}\)/g, ""), /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
       for (const m of src.matchAll(/\.from\("(\w+)"\)\.(update|delete)\(/g)) assert.equal(m[1], "push_subscriptions", `${f} may only change push_subscriptions`);
+    }
+    // youtube-notes runs signed out: the service role is only for its rate limit, one call to youtube_take (which
+    // records a keyed hash of the caller and nothing else); it reads and writes no table
+    if (f.includes("youtube-notes")) {
+      assert.deepEqual([...src.matchAll(/\.rpc\("(\w+)"/g)].map((m) => m[1]), ["youtube_take"], `${f} may only call youtube_take`);
+      assert.doesNotMatch(src, /\.from\(/, `${f} must not touch any table`);
     }
     if (f.includes("tutor") || f.includes("study-pack")) {
       assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
