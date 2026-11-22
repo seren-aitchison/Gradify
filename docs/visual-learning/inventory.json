@@ -8,28 +8,28 @@
   "lessons": 10112,
   "written": 9979,
   "assessed": 1278,
-  "plannedVisual": 853,
-  "plannedDiagram": 771,
+  "plannedVisual": 858,
+  "plannedDiagram": 776,
   "plannedLab": 271,
-  "excluded": 425,
+  "excluded": 420,
   "notAssessed": 8701,
-  "withDiagram": 776,
-  "withLab": 846,
-  "withBoth": 193,
-  "withAny": 1429,
+  "withDiagram": 781,
+  "withLab": 867,
+  "withBoth": 214,
+  "withAny": 1434,
   "plannedNotDelivered": 0,
-  "placements": 800,
+  "placements": 805,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
-  "withLabActivity": 198
+  "withLabActivity": 232
  },
  "diagrams": {
-  "manifest": 726,
-  "uniquePlaced": 726,
-  "placements": 800,
+  "manifest": 731,
+  "uniquePlaced": 731,
+  "placements": 805,
   "reused": 67,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":711},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":711},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":716},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":716},
   "failing": [],
   "unplaced": []
  },
@@ -586,20 +586,20 @@
     "lessons": 2159,
     "written": 2109,
     "assessed": 977,
-    "plannedVisual": 640,
-    "plannedDiagram": 584,
+    "plannedVisual": 645,
+    "plannedDiagram": 589,
     "plannedLab": 220,
-    "excluded": 337,
+    "excluded": 332,
     "notAssessed": 1132,
-    "withDiagram": 588,
-    "withLab": 322,
-    "withBoth": 167,
-    "withAny": 743,
+    "withDiagram": 593,
+    "withLab": 343,
+    "withBoth": 188,
+    "withAny": 748,
     "plannedNotDelivered": 0,
-    "placements": 608,
+    "placements": 613,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
-    "withLabActivity": 9
+    "withLabActivity": 43
    }
   },
   {
@@ -1436,17 +1436,17 @@
     "lessons": 391,
     "written": 391,
     "assessed": 391,
-    "plannedVisual": 210,
-    "plannedDiagram": 167,
+    "plannedVisual": 215,
+    "plannedDiagram": 172,
     "plannedLab": 100,
-    "excluded": 181,
+    "excluded": 176,
     "notAssessed": 0,
-    "withDiagram": 168,
+    "withDiagram": 173,
     "withLab": 100,
     "withBoth": 58,
-    "withAny": 210,
+    "withAny": 215,
     "plannedNotDelivered": 0,
-    "placements": 186,
+    "placements": 191,
     "withInteractiveDiagram": 31,
     "withSimulation": 61,
     "withLabActivity": 8
@@ -1744,17 +1744,17 @@
       "lessons": 30,
       "written": 30,
       "assessed": 30,
-      "plannedVisual": 24,
-      "plannedDiagram": 20,
+      "plannedVisual": 25,
+      "plannedDiagram": 21,
       "plannedLab": 12,
-      "excluded": 6,
+      "excluded": 5,
       "notAssessed": 0,
-      "withDiagram": 20,
+      "withDiagram": 21,
       "withLab": 11,
       "withBoth": 7,
-      "withAny": 24,
+      "withAny": 25,
       "plannedNotDelivered": 0,
-      "placements": 22,
+      "placements": 23,
       "withInteractiveDiagram": 6,
       "withSimulation": 5,
       "withLabActivity": 0
@@ -1763,14 +1763,7 @@
       {"id":"u03-01","title":"Chemistry of life","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of the elements and bonds of life: carried in the text"}},
       {"id":"u03-02","title":"Water and biological systems","written":true,"diagrams":[{"id":"bio-water-hbond","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-hbond"]}},
       {"id":"u03-03","title":"Hydrogen bonding","written":true,"diagrams":[{"id":"bio-water-hbond","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-water-hbond"]}},
-      {
-       "id": "u03-04",
-       "title": "pH and biological buffers",
-       "written": true,
-       "diagrams": [],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"a definition and a calculation: the pH scale needs a logarithmic-axis graph, not yet built"}
-      },
+      {"id":"u03-04","title":"pH and biological buffers","written":true,"diagrams":[{"id":"bio-ph-scale","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-ph-scale"]}},
       {"id":"u03-05","title":"Carbohydrates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of the carbohydrate classes: each is drawn in its own lesson"}},
       {
        "id": "u03-06",
@@ -1884,17 +1877,17 @@
       "lessons": 35,
       "written": 35,
       "assessed": 35,
-      "plannedVisual": 24,
-      "plannedDiagram": 21,
+      "plannedVisual": 25,
+      "plannedDiagram": 22,
       "plannedLab": 14,
-      "excluded": 11,
+      "excluded": 10,
       "notAssessed": 0,
-      "withDiagram": 21,
+      "withDiagram": 22,
       "withLab": 14,
       "withBoth": 11,
-      "withAny": 24,
+      "withAny": 25,
       "plannedNotDelivered": 0,
-      "placements": 26,
+      "placements": 27,
       "withInteractiveDiagram": 1,
       "withSimulation": 8,
       "withLabActivity": 5
@@ -1917,7 +1910,7 @@
        "labs": ["replication"],
        "plan": {"verdict":"diagram+lab","diagrams":["bio-meselson-stahl"],"labs":["replication"]}
       },
-      {"id":"u04-04","title":"DNA repair","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"repair pathways are described step by step in words; a repair drawing is not yet built"}},
+      {"id":"u04-04","title":"DNA repair","written":true,"diagrams":[{"id":"bio-dna-repair","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-dna-repair"]}},
       {"id":"u04-05","title":"Chromosomes","written":true,"diagrams":[{"id":"bio-chromatin-packing","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-chromatin-packing"]}},
       {"id":"u04-06","title":"Genes and alleles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"genes and alleles are definitions, illustrated by the crosses later in the unit"}},
       {
@@ -2334,17 +2327,17 @@
       "lessons": 34,
       "written": 34,
       "assessed": 34,
-      "plannedVisual": 19,
-      "plannedDiagram": 9,
+      "plannedVisual": 21,
+      "plannedDiagram": 11,
       "plannedLab": 12,
-      "excluded": 15,
+      "excluded": 13,
       "notAssessed": 0,
-      "withDiagram": 9,
+      "withDiagram": 11,
       "withLab": 12,
       "withBoth": 2,
-      "withAny": 19,
+      "withAny": 21,
       "plannedNotDelivered": 0,
-      "placements": 9,
+      "placements": 11,
       "withInteractiveDiagram": 1,
       "withSimulation": 11,
       "withLabActivity": 0
@@ -2374,9 +2367,9 @@
        "id": "u07-07",
        "title": "Central nervous system",
        "written": true,
-       "diagrams": [],
+       "diagrams": [{"id":"bio-central-nervous-system","status":"validated"}],
        "labs": [],
-       "plan": {"verdict":"none","reason":"the regions of the brain and spinal cord need an anatomy drawing, not yet built"}
+       "plan": {"verdict":"diagram","diagrams":["bio-central-nervous-system"]}
       },
       {
        "id": "u07-08",
@@ -2425,7 +2418,7 @@
       {"id":"u07-24","title":"Renal system","written":true,"diagrams":[],"labs":["kidney"],"plan":{"verdict":"lab","labs":["kidney"]}},
       {"id":"u07-25","title":"Kidney function","written":true,"diagrams":[],"labs":["kidney"],"plan":{"verdict":"lab","labs":["kidney"]}},
       {"id":"u07-26","title":"Urine formation","written":true,"diagrams":[],"labs":["kidney"],"plan":{"verdict":"lab","labs":["kidney"]}},
-      {"id":"u07-27","title":"Musculoskeletal system","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the bones and joints need an anatomy drawing, not yet built"}},
+      {"id":"u07-27","title":"Musculoskeletal system","written":true,"diagrams":[{"id":"bio-elbow-joint","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-elbow-joint"]}},
       {"id":"u07-28","title":"Bone physiology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"bone remodelling is a process described in words"}},
       {"id":"u07-29","title":"Muscle contraction","written":true,"diagrams":[{"id":"bio-sarcomere","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-sarcomere"]}},
       {"id":"u07-30","title":"Immune system","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the immune system is drawn in the immunology unit"}},
@@ -2657,17 +2650,17 @@
       "lessons": 27,
       "written": 27,
       "assessed": 27,
-      "plannedVisual": 8,
-      "plannedDiagram": 6,
+      "plannedVisual": 9,
+      "plannedDiagram": 7,
       "plannedLab": 5,
-      "excluded": 19,
+      "excluded": 18,
       "notAssessed": 0,
-      "withDiagram": 6,
+      "withDiagram": 7,
       "withLab": 5,
       "withBoth": 3,
-      "withAny": 8,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 6,
+      "placements": 7,
       "withInteractiveDiagram": 0,
       "withSimulation": 5,
       "withLabActivity": 0
@@ -2710,7 +2703,14 @@
       {"id":"u10-14","title":"Antigen presentation","written":true,"diagrams":[{"id":"bio-mhc-pathways","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-mhc-pathways"]}},
       {"id":"u10-15","title":"MHC molecules","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"MHC molecules are covered by the antigen presentation diagram"}},
       {"id":"u10-16","title":"Cytokines","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"cytokines are a table of signals and effects: carried in the text"}},
-      {"id":"u10-17","title":"Complement system","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the complement cascade needs a pathway drawing, not yet built"}},
+      {
+       "id": "u10-17",
+       "title": "Complement system",
+       "written": true,
+       "diagrams": [{"id":"bio-complement-cascade","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-complement-cascade"]}
+      },
       {"id":"u10-18","title":"Inflammation","written":true,"diagrams":[{"id":"bio-inflammation","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-inflammation"]}},
       {
        "id": "u10-19",
@@ -4420,7 +4420,7 @@
    "declaredSite": "SciGradify",
    "servedBy": ["SciGradify"],
    "plan": ["kit/diagrams/plans/chemistry.mjs"],
-   "labs": 30,
+   "labs": 31,
    "totals": {
     "lessons": 460,
     "written": 410,
@@ -4431,14 +4431,14 @@
     "excluded": 45,
     "notAssessed": 0,
     "withDiagram": 361,
-    "withLab": 107,
-    "withBoth": 103,
+    "withLab": 128,
+    "withBoth": 124,
     "withAny": 365,
     "plannedNotDelivered": 0,
     "placements": 362,
     "withInteractiveDiagram": 54,
     "withSimulation": 52,
-    "withLabActivity": 1
+    "withLabActivity": 35
    },
    "units": [
     {
@@ -5911,14 +5911,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
-      "withLab": 10,
-      "withBoth": 10,
+      "withLab": 18,
+      "withBoth": 18,
       "withAny": 22,
       "plannedNotDelivered": 0,
       "placements": 22,
       "withInteractiveDiagram": 9,
       "withSimulation": 0,
-      "withLabActivity": 1
+      "withLabActivity": 13
      },
      "lessons": [
       {
@@ -5935,19 +5935,26 @@
        "title": "Hydrocarbons",
        "written": true,
        "diagrams": [{"id":"chem-hydrocarbon-families","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-hydrocarbon-families"]}
       },
       {"id":"u12-04","title":"Alkanes","written":true,"diagrams":[{"id":"chem-alkanes-series","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkanes-series"]}},
       {"id":"u12-05","title":"Alkenes","written":true,"diagrams":[{"id":"chem-alkenes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkenes"]}},
-      {"id":"u12-06","title":"Alkynes","written":true,"diagrams":[{"id":"chem-alkynes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkynes"]}},
-      {"id":"u12-07","title":"Aromatic compounds","written":true,"diagrams":[{"id":"chem-aromatics","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-aromatics"]}},
+      {"id":"u12-06","title":"Alkynes","written":true,"diagrams":[{"id":"chem-alkynes","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-alkynes"]}},
+      {
+       "id": "u12-07",
+       "title": "Aromatic compounds",
+       "written": true,
+       "diagrams": [{"id":"chem-aromatics","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-aromatics"]}
+      },
       {
        "id": "u12-08",
        "title": "Benzene structure",
        "written": true,
        "diagrams": [{"id":"chem-benzene-structure","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-benzene-structure"]}
       },
       {
@@ -5955,16 +5962,23 @@
        "title": "Functional groups",
        "written": true,
        "diagrams": [{"id":"chem-functional-groups","status":"validated"}],
-       "labs": ["functional-groups"],
+       "labs": ["functional-groups","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-functional-groups"],"labs":["functional-groups"]}
       },
-      {"id":"u12-10","title":"IUPAC nomenclature","written":true,"diagrams":[{"id":"chem-iupac-naming","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-iupac-naming"]}},
+      {
+       "id": "u12-10",
+       "title": "IUPAC nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-iupac-naming","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-iupac-naming"]}
+      },
       {
        "id": "u12-11",
        "title": "Structural isomerism",
        "written": true,
        "diagrams": [{"id":"chem-structural-isomers","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-structural-isomers"]}
       },
       {
@@ -5980,7 +5994,7 @@
        "title": "Constitutional isomers",
        "written": true,
        "diagrams": [{"id":"chem-constitutional-c3h8o","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-constitutional-c3h8o"]}
       },
       {
@@ -5996,7 +6010,7 @@
        "title": "Chirality",
        "written": true,
        "diagrams": [{"id":"chem-chirality","status":"validated"}],
-       "labs": ["chirality"],
+       "labs": ["chirality","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-chirality"],"labs":["chirality"]}
       },
       {
@@ -6007,7 +6021,14 @@
        "labs": ["chirality"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-enantiomers-alanine"],"labs":["chirality"]}
       },
-      {"id":"u12-17","title":"Diastereomers","written":true,"diagrams":[{"id":"chem-diastereomers","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-diastereomers"]}},
+      {
+       "id": "u12-17",
+       "title": "Diastereomers",
+       "written": true,
+       "diagrams": [{"id":"chem-diastereomers","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-diastereomers"]}
+      },
       {
        "id": "u12-18",
        "title": "Optical activity",
@@ -6016,8 +6037,22 @@
        "labs": ["chirality"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-optical-activity"],"labs":["chirality"]}
       },
-      {"id":"u12-19","title":"R and S nomenclature","written":true,"diagrams":[{"id":"chem-r-s","status":"validated"}],"labs":["rs"],"plan":{"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}},
-      {"id":"u12-20","title":"E and Z nomenclature","written":true,"diagrams":[{"id":"chem-e-z","status":"validated"}],"labs":["ez"],"plan":{"verdict":"diagram+lab","diagrams":["chem-e-z"],"labs":["ez"]}},
+      {
+       "id": "u12-19",
+       "title": "R and S nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-r-s","status":"validated"}],
+       "labs": ["organic-notes","rs"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}
+      },
+      {
+       "id": "u12-20",
+       "title": "E and Z nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-e-z","status":"validated"}],
+       "labs": ["ez","organic-notes"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-e-z"],"labs":["ez"]}
+      },
       {
        "id": "u12-21",
        "title": "Functional group interconversion",
@@ -6050,14 +6085,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 27,
-      "withLab": 10,
-      "withBoth": 10,
+      "withLab": 17,
+      "withBoth": 17,
       "withAny": 27,
       "plannedNotDelivered": 0,
       "placements": 28,
       "withInteractiveDiagram": 5,
       "withSimulation": 5,
-      "withLabActivity": 0
+      "withLabActivity": 14
      },
      "lessons": [
       {
@@ -6065,7 +6100,7 @@
        "title": "Curly arrow notation",
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
@@ -6098,7 +6133,7 @@
        "title": "Radical intermediates",
        "written": true,
        "diagrams": [{"id":"chem-radical-chlorination","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-radical-chlorination"]}
       },
       {
@@ -6114,7 +6149,7 @@
        "title": "Substitution reactions",
        "written": true,
        "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
       },
       {
@@ -6122,7 +6157,7 @@
        "title": "SN1 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-sn1-mechanism","status":"ai-reviewed"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn1-mechanism"],"labs":["sn1-sn2"]}
       },
       {
@@ -6130,26 +6165,40 @@
        "title": "SN2 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
       },
       {"id":"u13-11","title":"Elimination reactions","written":true,"diagrams":[{"id":"chem-e2-mechanism","status":"ai-reviewed"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e2-mechanism"]}},
-      {"id":"u13-12","title":"E1 mechanisms","written":true,"diagrams":[{"id":"chem-e1-mechanism","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e1-mechanism"]}},
+      {
+       "id": "u13-12",
+       "title": "E1 mechanisms",
+       "written": true,
+       "diagrams": [{"id":"chem-e1-mechanism","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-e1-mechanism"]}
+      },
       {
        "id": "u13-13",
        "title": "E2 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-e2-mechanism","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-e2-mechanism"],"labs":["curly-arrows"]}
       },
-      {"id":"u13-14","title":"Addition reactions","written":true,"diagrams":[{"id":"chem-hbr-propene","status":"approved"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-hbr-propene"]}},
+      {
+       "id": "u13-14",
+       "title": "Addition reactions",
+       "written": true,
+       "diagrams": [{"id":"chem-hbr-propene","status":"approved"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-hbr-propene"]}
+      },
       {
        "id": "u13-15",
        "title": "Electrophilic addition",
        "written": true,
        "diagrams": [{"id":"chem-hbr-propene","status":"approved"},{"id":"chem-br2-bromonium","status":"approved"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-hbr-propene","chem-br2-bromonium"],"labs":["curly-arrows"]}
       },
       {
@@ -6157,7 +6206,7 @@
        "title": "Nucleophilic addition",
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
@@ -6165,7 +6214,7 @@
        "title": "Electrophilic aromatic substitution",
        "written": true,
        "diagrams": [{"id":"chem-nitration","status":"ai-reviewed"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-nitration"]}
       },
       {"id":"u13-18","title":"Nucleophilic aromatic substitution","written":true,"diagrams":[{"id":"chem-snar","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-snar"]}},
@@ -6177,7 +6226,14 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-oxidation-alcohols"]}
       },
-      {"id":"u13-20","title":"Reduction reactions","written":true,"diagrams":[{"id":"chem-nabh4-reduction","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nabh4-reduction"]}},
+      {
+       "id": "u13-20",
+       "title": "Reduction reactions",
+       "written": true,
+       "diagrams": [{"id":"chem-nabh4-reduction","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-nabh4-reduction"]}
+      },
       {
        "id": "u13-21",
        "title": "Condensation reactions",
@@ -6193,11 +6249,18 @@
        "title": "Reaction selectivity",
        "written": true,
        "diagrams": [{"id":"chem-selectivity-overview","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-selectivity-overview"]}
       },
       {"id":"u13-25","title":"Chemoselectivity","written":true,"diagrams":[{"id":"chem-chemoselectivity","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-chemoselectivity"]}},
-      {"id":"u13-26","title":"Regioselectivity","written":true,"diagrams":[{"id":"chem-regioselectivity","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-regioselectivity"]}},
+      {
+       "id": "u13-26",
+       "title": "Regioselectivity",
+       "written": true,
+       "diagrams": [{"id":"chem-regioselectivity","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-regioselectivity"]}
+      },
       {
        "id": "u13-27",
        "title": "Stereoselectivity",
@@ -6222,14 +6285,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
-      "withLab": 2,
-      "withBoth": 2,
+      "withLab": 8,
+      "withBoth": 8,
       "withAny": 22,
       "plannedNotDelivered": 0,
       "placements": 22,
       "withInteractiveDiagram": 2,
       "withSimulation": 0,
-      "withLabActivity": 0
+      "withLabActivity": 8
      },
      "lessons": [
       {"id":"u14-01","title":"Alcohols","written":true,"diagrams":[{"id":"chem-alcohol-classes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alcohol-classes"]}},
@@ -6250,7 +6313,7 @@
        "title": "Acyl chlorides",
        "written": true,
        "diagrams": [{"id":"chem-acyl-chloride-water","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-acyl-chloride-water"]}
       },
       {
@@ -6261,8 +6324,8 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-anhydride-acylation"]}
       },
-      {"id":"u14-09","title":"Esters","written":true,"diagrams":[{"id":"chem-esters","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-esters"]}},
-      {"id":"u14-10","title":"Amides","written":true,"diagrams":[{"id":"chem-amides","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-amides"]}},
+      {"id":"u14-09","title":"Esters","written":true,"diagrams":[{"id":"chem-esters","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-esters"]}},
+      {"id":"u14-10","title":"Amides","written":true,"diagrams":[{"id":"chem-amides","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-amides"]}},
       {"id":"u14-11","title":"Amines","written":true,"diagrams":[{"id":"chem-amine-classes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-amine-classes"]}},
       {"id":"u14-12","title":"Nitriles","written":true,"diagrams":[{"id":"chem-nitriles","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nitriles"]}},
       {"id":"u14-13","title":"Nitro compounds","written":true,"diagrams":[{"id":"chem-nitro-reduction","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nitro-reduction"]}},
@@ -6274,14 +6337,21 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-halogenoalkane-ammonia"]}
       },
-      {"id":"u14-15","title":"Aromatic compounds","written":true,"diagrams":[{"id":"chem-friedel-crafts","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-friedel-crafts"]}},
+      {
+       "id": "u14-15",
+       "title": "Aromatic compounds",
+       "written": true,
+       "diagrams": [{"id":"chem-friedel-crafts","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-friedel-crafts"]}
+      },
       {"id":"u14-16","title":"Thiols and sulfides","written":true,"diagrams":[{"id":"chem-thiols","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-thiols"]}},
       {
        "id": "u14-17",
        "title": "Organohalogen compounds",
        "written": true,
        "diagrams": [{"id":"chem-organohalogens","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-organohalogens"]}
       },
       {
@@ -6289,7 +6359,7 @@
        "title": "Carbonyl chemistry",
        "written": true,
        "diagrams": [{"id":"chem-carbonyl-reactivity","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-carbonyl-reactivity"]}
       },
       {
@@ -6306,7 +6376,7 @@
        "title": "Functional group synthesis",
        "written": true,
        "diagrams": [{"id":"chem-synthesis-map","status":"validated"}],
-       "labs": ["synthesis"],
+       "labs": ["organic-notes","synthesis"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-synthesis-map"],"labs":["synthesis"]}
       },
       {
@@ -6314,7 +6384,7 @@
        "title": "Multi-step synthesis",
        "written": true,
        "diagrams": [{"id":"chem-multistep-route","status":"validated"}],
-       "labs": ["synthesis"],
+       "labs": ["organic-notes","synthesis"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-multistep-route"],"labs":["synthesis"]}
       }
      ]

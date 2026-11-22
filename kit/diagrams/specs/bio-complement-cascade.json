@@ -1,0 +1,155 @@
+{
+ "id": "bio-complement-cascade",
+ "renderer": "cascade",
+ "course": "biology",
+ "unit": "u10",
+ "lesson": "Complement system",
+ "title": "The complement cascade",
+ "caption": "Complement proteins circulate inactive and are activated in a cascade by three pathways: the classical pathway by antibodies bound to antigen, the lectin pathway by lectins binding sugars on microbes, and the alternative pathway directly on microbial surfaces. All converge on cleavage of C3. C3b coats pathogens (opsonisation) so that phagocytes eat them; C3a and C5a attract and activate immune cells (inflammation); and C5b with C6, C7, C8 and many C9 forms the membrane attack complex, a pore that lyses the pathogen. Host cells carry regulatory proteins that block complement on their own surfaces.",
+ "alt": "Three pathway boxes on the left, classical, lectin and alternative, each with its trigger, all with arrows to C3. C3 splits into C3a and C3b. C3a leads to inflammation. C3b leads to opsonisation and to C5. C5 leads to inflammation as C5a and to lysis as C5b joined with C6 to C9.",
+ "description": [
+  "Classical pathway: triggered by antibodies bound to antigen.",
+  "Lectin pathway: triggered by lectins binding sugars on microbes.",
+  "Alternative pathway: triggered directly on microbial surfaces.",
+  "All pathways converge on cleavage of C3.",
+  "Opsonisation: C3b coats pathogens for phagocytosis. Inflammation: C3a and C5a attract and activate immune cells. Lysis: the membrane attack complex (C5b–C9) forms pores.",
+  "Host cells carry regulatory proteins that block complement on their surfaces."
+ ],
+ "note": "Host cells carry regulatory proteins that block complement on their own surfaces. Simplified: only the steps named in the lesson are drawn.",
+ "nodes": [
+  {
+   "id": "p1",
+   "label": "classical pathway",
+   "sub": "antibody bound to antigen",
+   "is": "classical pathway",
+   "col": 0,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "p2",
+   "label": "lectin pathway",
+   "sub": "lectins binding sugars on microbes",
+   "is": "lectin pathway",
+   "col": 0,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "p3",
+   "label": "alternative pathway",
+   "sub": "directly on microbial surfaces",
+   "is": "alternative pathway",
+   "col": 0,
+   "row": 2,
+   "tone": "a1"
+  },
+  {
+   "id": "c3",
+   "label": "C3 cleaved",
+   "sub": "all pathways converge",
+   "is": "C3",
+   "col": 1,
+   "row": 1,
+   "tone": "a5"
+  },
+  {
+   "id": "c3b",
+   "label": "C3b",
+   "sub": "coats the pathogen",
+   "is": "C3b",
+   "col": 2,
+   "row": 0,
+   "tone": "a3"
+  },
+  {
+   "id": "c3a",
+   "label": "C3a",
+   "sub": "signals to immune cells",
+   "is": "C3a",
+   "col": 2,
+   "row": 2,
+   "tone": "a3"
+  },
+  {
+   "id": "c5",
+   "label": "C5",
+   "sub": "cleaved after C3b",
+   "is": "C5",
+   "col": 3,
+   "row": 1,
+   "tone": "a3"
+  },
+  {
+   "id": "ops",
+   "label": "opsonisation",
+   "sub": "phagocytes ingest the coated pathogen",
+   "is": "opsonisation",
+   "col": 4,
+   "row": 0,
+   "tone": "good"
+  },
+  {
+   "id": "lys",
+   "label": "lysis",
+   "sub": "C5b–C9: the membrane attack complex forms pores",
+   "is": "lysis",
+   "col": 4,
+   "row": 1,
+   "tone": "a2"
+  },
+  {
+   "id": "inf",
+   "label": "inflammation",
+   "sub": "C3a and C5a attract and activate immune cells",
+   "is": "inflammation",
+   "col": 4,
+   "row": 2,
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "p1",
+   "to": "c3"
+  },
+  {
+   "from": "p2",
+   "to": "c3"
+  },
+  {
+   "from": "p3",
+   "to": "c3"
+  },
+  {
+   "from": "c3",
+   "to": "c3b"
+  },
+  {
+   "from": "c3",
+   "to": "c3a"
+  },
+  {
+   "from": "c3b",
+   "to": "ops"
+  },
+  {
+   "from": "c3b",
+   "to": "c5"
+  },
+  {
+   "from": "c3a",
+   "to": "inf"
+  },
+  {
+   "from": "c5",
+   "to": "lys",
+   "via": "C5b–C9"
+  },
+  {
+   "from": "c5",
+   "to": "inf",
+   "via": "C5a"
+  }
+ ]
+}

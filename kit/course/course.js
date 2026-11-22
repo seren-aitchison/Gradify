@@ -1490,7 +1490,6 @@ export function mountCourse(root, cfg) {
         <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
-        ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
@@ -1507,6 +1506,7 @@ export function mountCourse(root, cfg) {
         ${N ? `<details class="co-deeper cx-acc" id="co-deeper"><summary>${ic("sparkles")} Go deeper: ask the AI tutor, mind maps<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody"><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</div></details>` : ""}
         ${resourceSwitcher({ kicker: `${U} ${u.n} · ${u.title} · ${l.title}`, items: res, id: "co-next" })}
         ${N && F.refs ? `<details class="co-refsec cx-acc" id="co-refs"><summary>${ic("book")} Sources and further reading<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody">${F.refs}</div></details>` : ""}
+        ${N && isDraft(u) ? `<p class="co-draft" role="note">This ${u1}'s content is still going through expert review, which is rolling out course by course. Check anything important against your course materials.</p>` : ""}
         <footer class="co-finish">
           <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">

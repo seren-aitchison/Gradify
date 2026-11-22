@@ -1,0 +1,79 @@
+{
+ "id": "bio-central-nervous-system",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Central nervous system",
+ "title": "The central nervous system",
+ "caption": "The cerebrum has four cortical lobes (frontal, parietal, temporal and occipital); the cerebellum coordinates balance and fine movement; the brainstem (midbrain, pons and medulla) controls breathing, heart rate and reflexes; the hypothalamus controls homeostasis and links to the pituitary gland. The spinal cord continues from the medulla, with grey matter (cell bodies) inside white matter (myelinated axons). The skull, vertebrae and meninges protect the CNS. A schematic section: positions are checked, not proportions.",
+ "alt": "A side view of the head, the front on the left. A large cerebrum divided into frontal, parietal, occipital and temporal lobes; a cerebellum at the back below it; the midbrain, pons and medulla stacked in the brainstem, with the spinal cord continuing down inside the vertebrae; a hypothalamus and pituitary gland above the brainstem; the meninges and the skull round the brain; and a small cross-section of the spinal cord with grey matter inside white matter.",
+ "description": [
+  "Cerebrum: cortex with frontal, parietal, temporal and occipital lobes (occipital: vision).",
+  "Cerebellum: balance and fine movement.",
+  "Brainstem (midbrain, pons, medulla): breathing, heart rate and reflexes.",
+  "Hypothalamus: homeostasis, and the link to the pituitary gland.",
+  "Spinal cord: carries signals between brain and body; grey matter has cell bodies, white matter myelinated axons.",
+  "Protected by the skull, vertebrae and meninges (and cerebrospinal fluid)."
+ ],
+ "template": "brain",
+ "labels": [
+  "skull",
+  "meninges",
+  "cerebral cortex",
+  "frontal lobe",
+  "parietal lobe",
+  "temporal lobe",
+  "occipital lobe",
+  "cerebellum",
+  "midbrain",
+  "pons",
+  "medulla",
+  "hypothalamus",
+  "pituitary gland",
+  "spinal cord",
+  "grey matter",
+  "white matter"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "lobesFrontToBack",
+   "text": "the frontal, parietal and occipital lobes run from front to back"
+  },
+  {
+   "type": "fact",
+   "id": "temporalBelowParietal",
+   "text": "the temporal lobe lies below the parietal lobe"
+  },
+  {
+   "type": "fact",
+   "id": "cerebellumBehindAndBelow",
+   "text": "the cerebellum is behind and below the cerebrum"
+  },
+  {
+   "type": "fact",
+   "id": "brainstemTopToBottom",
+   "text": "the brainstem runs midbrain, pons, medulla from top to bottom"
+  },
+  {
+   "type": "fact",
+   "id": "cordBelowMedulla",
+   "text": "the spinal cord continues below the medulla"
+  },
+  {
+   "type": "fact",
+   "id": "hypothalamusAboveBrainstemAndPituitary",
+   "text": "the hypothalamus is above the pituitary gland and the brainstem"
+  },
+  {
+   "type": "fact",
+   "id": "protectionLayers",
+   "text": "skull, then meninges, then brain, from the outside in"
+  },
+  {
+   "type": "fact",
+   "id": "greyInsideWhite",
+   "text": "grey matter lies inside white matter in the spinal cord"
+  }
+ ]
+}

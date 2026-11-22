@@ -1,0 +1,57 @@
+{
+ "id": "bio-elbow-joint",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u07",
+ "lesson": "Musculoskeletal system",
+ "title": "The elbow: a hinge joint and an antagonistic pair",
+ "caption": "A synovial joint has cartilage on the bone ends, synovial fluid and a capsule; ligaments join bone to bone. Muscles are attached to bones by tendons and can only pull. At the elbow, a hinge joint, the biceps and triceps are an antagonistic pair: when the biceps contracts and the triceps relaxes the forearm is pulled up; to straighten the arm the triceps contracts and the biceps relaxes. The bones act as levers with the joint as the pivot.",
+ "alt": "A side view of an arm bent at the elbow. The humerus is horizontal and the forearm points up to the right. A capsule round the joint holds synovial fluid, with cartilage on the bone ends and ligaments joining the bones. A thick, contracted biceps above is joined to the forearm by a tendon, and a thin, relaxed triceps below is joined by a tendon behind the elbow.",
+ "description": [
+  "Synovial joint: cartilage, synovial fluid and a capsule; ligaments join bone to bone.",
+  "Tendons join muscle to bone.",
+  "Muscles can only pull, so they work in antagonistic pairs: one contracts while the other relaxes.",
+  "Bending the elbow: the biceps contracts and shortens, the triceps relaxes and lengthens, and the forearm is pulled up about the hinge joint.",
+  "Bones act as levers, with the joint as the pivot."
+ ],
+ "template": "elbow",
+ "labels": [
+  "humerus",
+  "radius and ulna",
+  "biceps",
+  "triceps",
+  "tendon",
+  "ligament",
+  "cartilage",
+  "synovial fluid",
+  "joint capsule",
+  "pivot"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "musclesOnOppositeSides",
+   "text": "the biceps and triceps attach on opposite sides of the pivot"
+  },
+  {
+   "type": "fact",
+   "id": "oneContractsOneRelaxes",
+   "text": "one muscle of the pair contracts while the other relaxes"
+  },
+  {
+   "type": "fact",
+   "id": "tendonJoinsMuscleToBone",
+   "text": "a tendon joins muscle to bone"
+  },
+  {
+   "type": "fact",
+   "id": "ligamentJoinsBoneToBone",
+   "text": "a ligament joins bone to bone"
+  },
+  {
+   "type": "fact",
+   "id": "musclePullsTowardItself",
+   "text": "the muscle pulls the bone toward itself"
+  }
+ ]
+}

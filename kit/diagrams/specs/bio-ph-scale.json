@@ -1,0 +1,44 @@
+{
+ "id": "bio-ph-scale",
+ "renderer": "phscale",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "pH and biological buffers",
+ "title": "The pH scale: a tenfold step at every unit",
+ "caption": "pH = −log₁₀[H⁺], with [H⁺] in mol dm⁻³. Each unit of pH is a tenfold change in hydrogen ion concentration, so pH 3 has ten times the [H⁺] of pH 4, not twice. pH 7 is neutral at 25 °C, the stomach is about pH 2 and human blood is kept at pH 7.35 to 7.45.",
+ "alt": "A coloured bar from pH 0 on the left to pH 14 on the right, labelled acidic and alkaline, with the hydrogen ion concentration under each unit falling from 1 to 10 to the minus 14, markers for the stomach at about pH 2, neutral at pH 7 and blood at 7.35 to 7.45, and a worked example: a tenfold rise in [H⁺] from 10 to the minus 4 to 10 to the minus 3 lowers the pH from 4 to 3.",
+ "description": [
+  "pH = −log₁₀[H⁺], with [H⁺] in mol dm⁻³.",
+  "Each pH unit is a tenfold change in [H⁺].",
+  "pH 7 is neutral at 25 °C; below 7 is acidic and above 7 is alkaline.",
+  "Human blood is kept at about pH 7.35–7.45; the stomach is about pH 2.",
+  "Worked example: [H⁺] = 1 × 10⁻⁴ gives pH 4; a tenfold rise to 1 × 10⁻³ gives pH 3."
+ ],
+ "markers": [
+  {
+   "label": "stomach",
+   "ph": 2,
+   "tier": 1,
+   "text": "stomach: about pH 2",
+   "note": "The stomach is at about pH 2."
+  },
+  {
+   "label": "neutral (25 °C)",
+   "ph": 7,
+   "align": "end",
+   "text": "neutral: pH 7",
+   "note": "pH 7 is neutral at 25 °C."
+  },
+  {
+   "label": "human blood",
+   "ph": 7.35,
+   "ph2": 7.45,
+   "align": "start",
+   "text": "blood: 7.35–7.45",
+   "note": "Human blood is kept at about pH 7.35–7.45."
+  }
+ ],
+ "example": {
+  "ph": 3
+ }
+}

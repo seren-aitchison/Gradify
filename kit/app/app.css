@@ -1405,3 +1405,22 @@ section[data-tab] { gap: 16px; }
   box-shadow: var(--gg-spec), var(--gg-shadow);
 }
 :root body .tabbar { background: var(--gg-tint-strong) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim-strong) border-box; }
+
+/* trying Gradify before set-up (kit/app/main.js TRY_FIRST): the sample at the top of Bring your notes, and the
+   offer to plan revision once the first pack is made */
+.try-sample { margin: 4px 0 18px; }
+.try-sample .btn svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: 4px; }
+.setup-nudge { display: flex; align-items: center; gap: 14px; margin: 12px 0 18px; padding: 16px 18px; }
+.setup-nudge .sn-ico { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--inset); }
+.setup-nudge .sn-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.setup-nudge > div { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.setup-nudge > div span { font-size: 14px; color: var(--mute); }
+.setup-nudge .btn { flex: none; }
+@media (max-width: 640px) { .setup-nudge { flex-wrap: wrap; } .setup-nudge .btn { width: 100%; justify-content: center; } }
+.site-pick em small { display: block; margin-top: 2px; font-size: 11.5px; opacity: .8; }
+/* phones: the top bar grows to hold its tabs, instead of letting them spill over the page; a bare page name is
+   left out there, since the dock along the bottom already shows where you are */
+@media (max-width: 860px) {
+  .app-bar.bar { height: auto; min-height: 58px; }
+  .app-bar .app-nav:has(> .tab-title:only-child), .app-bar .app-nav:empty { display: none !important; }
+}
