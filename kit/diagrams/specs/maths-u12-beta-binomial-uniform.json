@@ -1,0 +1,48 @@
+{
+ "id": "maths-u12-beta-binomial-uniform",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Beta-Binomial Distribution",
+ "title": "Beta-binomial with α = β = 1 and n = 2",
+ "caption": "With a uniform prior on p, the number of successes in 2 trials is equally likely to be 0, 1 or 2: each has probability 1/3, mean 1.",
+ "alt": "Bar chart with three equal bars at X = 0, 1, 2, each one third.",
+ "description": [
+  "Averaging the binomial probabilities over a uniform p gives P(X = k) = 1/(n + 1) for every k.",
+  "With n = 2, each of 0, 1, 2 has probability 1/3."
+ ],
+ "categories": [
+  0,
+  1,
+  2
+ ],
+ "values": [
+  1,
+  1,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   1.5
+  ]
+ },
+ "ticks": [
+  0.5,
+  1
+ ],
+ "axisLabels": [
+  "successes",
+  "probability (thirds)"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 3
+  },
+  {
+   "type": "mean",
+   "value": 1
+  }
+ ]
+}

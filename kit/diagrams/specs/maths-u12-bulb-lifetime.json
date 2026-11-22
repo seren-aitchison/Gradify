@@ -1,0 +1,69 @@
+{
+ "id": "maths-u12-bulb-lifetime",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Exponential Distribution",
+ "title": "Bulb lifetimes: exponential with mean 1,000 h",
+ "caption": "The rate is 1/1,000 per hour, so P(lasts > 1,500) = e⁻¹·⁵ = 0.2231 (the shaded tail). The median is 1,000 ln 2 ≈ 693 hours.",
+ "alt": "Exponential density with mean 1,000 hours, decaying from 0.001; the tail beyond 1,500 hours is shaded, area 0.2231.",
+ "description": [
+  "The density starts at the rate λ = 0.001 and decays.",
+  "The shaded tail beyond 1,500 hours has area e⁻¹·⁵ = 0.2231."
+ ],
+ "dist": {
+  "dist": "exponential",
+  "lambda": 0.001
+ },
+ "range": {
+  "x": [
+   0,
+   4000
+  ],
+  "y": [
+   0,
+   0.0011
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1000,
+   2000,
+   3000,
+   4000
+  ],
+  [
+   0.0005,
+   0.001
+  ]
+ ],
+ "axisLabels": [
+  "lifetime (hours)",
+  "density"
+ ],
+ "shade": [
+  1500,
+  null
+ ],
+ "p": 0.2231,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 1000
+  },
+  {
+   "type": "prob",
+   "from": 1500,
+   "to": null,
+   "p": 0.2231
+  },
+  {
+   "type": "prob",
+   "from": 0,
+   "to": 693.147,
+   "p": 0.5,
+   "name": "the median 693 hours leaves 0.5 below"
+  }
+ ]
+}

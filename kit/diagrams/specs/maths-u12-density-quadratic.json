@@ -1,0 +1,87 @@
+{
+ "id": "maths-u12-density-quadratic",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Probability Density Functions",
+ "title": "The density kx(2 − x) with k = 3/4",
+ "caption": "The area under kx(2 − x) from 0 to 2 is 4k/3, which must be 1, so k = 3/4. The curve is symmetric about 1, so P(X < 1) = 1/2.",
+ "alt": "Graph of f(x) = 0.75x(2 − x) on [0, 2], a dome with maximum 0.75 at x = 1; the area left of 1 is shaded.",
+ "description": [
+  "Total area ∫ kx(2 − x) dx over [0, 2] = 4k/3 = 1 gives k = 3/4.",
+  "The dome peaks at x = 1 with height 0.75.",
+  "By symmetry the shaded half has area 1/2."
+ ],
+ "range": {
+  "x": [
+   -0.2,
+   2.3
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.25,
+   0.5,
+   0.75
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "f(x)"
+ ],
+ "curves": [
+  {
+   "expr": "0.75*x*(2-x)",
+   "domain": [
+    0,
+    2
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "0.75*x*(2-x)",
+   "from": 0,
+   "to": 1,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "0.75*x*(2-x)",
+   "from": 0,
+   "to": 2,
+   "value": 1,
+   "name": "total area 1 with k = 3/4"
+  },
+  {
+   "type": "area",
+   "expr": "0.75*x*(2-x)",
+   "from": 0,
+   "to": 1,
+   "value": 0.5,
+   "name": "P(X < 1) = 1/2"
+  },
+  {
+   "type": "max",
+   "expr": "0.75*x*(2-x)",
+   "domain": [
+    0,
+    2
+   ],
+   "x": 1,
+   "y": 0.75
+  }
+ ]
+}

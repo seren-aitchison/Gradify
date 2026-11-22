@@ -1,0 +1,72 @@
+{
+ "id": "maths-u12-standard-normal-band",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Standard Normal Distribution",
+ "title": "P(−1.5 < Z < 1)",
+ "caption": "Φ(1) − Φ(−1.5) = 0.8413 − 0.0668 = 0.7745: the shaded band between −1.5 and 1 under the standard normal curve.",
+ "alt": "Standard normal curve with the area between z = −1.5 and z = 1 shaded, 0.7745.",
+ "description": [
+  "Φ(1) = 0.8413 is the area to the left of 1.",
+  "Φ(−1.5) = 0.0668 is the area to the left of −1.5.",
+  "The band between has area 0.7745."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 0,
+  "sigma": 1
+ },
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   0.45
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "z",
+  "density"
+ ],
+ "shade": [
+  -1.5,
+  1
+ ],
+ "p": 0.7745,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 0
+  },
+  {
+   "type": "variance",
+   "value": 1
+  },
+  {
+   "type": "prob",
+   "from": -1.5,
+   "to": 1,
+   "p": 0.7745
+  }
+ ]
+}

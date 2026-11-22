@@ -1,0 +1,69 @@
+{
+ "id": "maths-u12-gamma-poisson",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Gamma Distribution",
+ "title": "T > 1 means at most 2 calls in the first minute",
+ "caption": "The 3rd call comes after time 1 exactly when the count N of calls in the first minute is 0, 1 or 2, where N ~ Poisson(2): P(T > 1) = e⁻²(1 + 2 + 2) = 0.6767.",
+ "alt": "Bar chart of the Poisson distribution with mean 2; the bars at 0, 1 and 2 are shaded, total 0.6767.",
+ "description": [
+  "In one minute the number of calls is Poisson with mean 2.",
+  "T > 1 minute means fewer than 3 calls have arrived.",
+  "The three shaded bars add to 5e⁻² = 0.6767."
+ ],
+ "dist": {
+  "dist": "poisson",
+  "lambda": 2
+ },
+ "range": {
+  "x": [
+   -0.5,
+   9.5
+  ],
+  "y": [
+   0,
+   0.3
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  [
+   0.1,
+   0.2,
+   0.3
+  ]
+ ],
+ "axisLabels": [
+  "calls in the first minute",
+  "probability"
+ ],
+ "shade": [
+  0,
+  2
+ ],
+ "p": 0.6767,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 2
+  },
+  {
+   "type": "prob",
+   "from": 0,
+   "to": 2,
+   "p": 0.6767
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "id": "maths-u12-t-interval",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Student's T-Distribution",
+ "title": "A 95% t interval",
+ "caption": "With t₉ = 2.262 the margin is 2.262 × 4/√10 ≈ 2.86, so the interval is 49.14 to 54.86 around x̄ = 52.",
+ "alt": "A number line from 48 to 56 with the interval from 49.14 to 54.86 and the sample mean 52 at its centre.",
+ "description": [
+  "The sample mean 52 is the centre.",
+  "The margin is 2.262 × 4/√10 ≈ 2.86.",
+  "The interval runs from 49.14 to 54.86."
+ ],
+ "range": [
+  48,
+  56
+ ],
+ "ticks": {
+  "step": 1
+ },
+ "points": [
+  {
+   "value": 49.14,
+   "label": "49.14"
+  },
+  {
+   "value": 52,
+   "label": "x̄ = 52",
+   "colour": "a4"
+  },
+  {
+   "value": 54.86,
+   "label": "54.86"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 49.14,
+   "to": 54.86,
+   "closed": [
+    true,
+    true
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "52+2.262*4/sqrt(10)",
+   "value": "54.8612",
+   "name": "52 + 2.262 × 4/√10 = 54.86"
+  },
+  {
+   "type": "value",
+   "expr": "52-2.262*4/sqrt(10)",
+   "value": "49.1388",
+   "name": "52 − 2.262 × 4/√10 = 49.14"
+  }
+ ]
+}

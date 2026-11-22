@@ -1,0 +1,70 @@
+{
+ "id": "maths-u12-calls-poisson",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Probability Distributions",
+ "title": "Calls per minute: Poisson with mean 3",
+ "caption": "Calls arrive at random at an average rate of 3 a minute, so the count is Poisson(3). P(no calls) = e⁻³ = 0.0498.",
+ "alt": "Bar chart of the Poisson distribution with mean 3 for 0 to 10 calls; the bar for 0 is shaded.",
+ "description": [
+  "Random arrivals at a steady average rate suggest a Poisson model with λ = 3.",
+  "The bar at 0 has height e⁻³ ≈ 0.0498."
+ ],
+ "dist": {
+  "dist": "poisson",
+  "lambda": 3
+ },
+ "range": {
+  "x": [
+   -0.5,
+   10.5
+  ],
+  "y": [
+   0,
+   0.25
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25
+  ]
+ ],
+ "axisLabels": [
+  "calls",
+  "probability"
+ ],
+ "shade": [
+  0,
+  0
+ ],
+ "p": 0.0498,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 3
+  },
+  {
+   "type": "variance",
+   "value": 3
+  },
+  {
+   "type": "prob",
+   "from": 0,
+   "to": 0,
+   "p": 0.0498
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "id": "maths-u12-poisson-emails",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Poisson Distribution",
+ "title": "Emails per hour: Poisson(2.5)",
+ "caption": "P(exactly 3) = e⁻²·⁵ × 2.5³/3! = 0.2138, the shaded bar; P(at least 1) = 1 − e⁻²·⁵ = 0.9179.",
+ "alt": "Bar chart of the Poisson distribution with mean 2.5 for 0 to 10 emails; the bar at 3 is shaded with height 0.2138.",
+ "description": [
+  "The bars give P(X = k) for a Poisson distribution with mean 2.5.",
+  "The bar at 3 reaches 0.2138."
+ ],
+ "dist": {
+  "dist": "poisson",
+  "lambda": 2.5
+ },
+ "range": {
+  "x": [
+   -0.5,
+   10.5
+  ],
+  "y": [
+   0,
+   0.3
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.1,
+   0.2,
+   0.3
+  ]
+ ],
+ "axisLabels": [
+  "emails in an hour",
+  "probability"
+ ],
+ "shade": [
+  3,
+  3
+ ],
+ "p": 0.2138,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 2.5
+  },
+  {
+   "type": "prob",
+   "from": 3,
+   "to": 3,
+   "p": 0.2138
+  },
+  {
+   "type": "prob",
+   "from": 1,
+   "to": 60,
+   "p": 0.9179
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "maths-u12-mixture-density",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Mixture Distributions",
+ "title": "A 50:50 mixture of N(0, 1) and N(4, 1)",
+ "caption": "The mixture has two peaks. Its mean is 0.5 × 0 + 0.5 × 4 = 2, and its variance is 1 + 4 = 5: the within-component variance plus the spread of the component means.",
+ "alt": "A curve with two bumps centred at 0 and 4, each of height about 0.2; the mean 2 is marked between them.",
+ "description": [
+  "The density is the average of the two normal densities.",
+  "The mean is 2, halfway between, where there is little probability.",
+  "Variance = average component variance 1 + variance of the means 4 = 5."
+ ],
+ "range": {
+  "x": [
+   -4,
+   8
+  ],
+  "y": [
+   0,
+   0.25
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   0,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   0.1,
+   0.2
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "0.5*exp(-x^2/2)/sqrt(2*3.141592653589793)+0.5*exp(-(x-4)^2/2)/sqrt(2*3.141592653589793)",
+   "samples": 400
+  }
+ ],
+ "marks": [
+  {
+   "x": 2,
+   "label": "mean 2",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "0.5*exp(-x^2/2)/sqrt(2*3.141592653589793)+0.5*exp(-(x-4)^2/2)/sqrt(2*3.141592653589793)",
+   "from": -12,
+   "to": 16,
+   "value": 1,
+   "name": "the mixture density has area 1"
+  },
+  {
+   "type": "area",
+   "expr": "x*(0.5*exp(-x^2/2)/sqrt(2*3.141592653589793)+0.5*exp(-(x-4)^2/2)/sqrt(2*3.141592653589793))",
+   "from": -12,
+   "to": 16,
+   "value": 2,
+   "name": "the mean is 2"
+  },
+  {
+   "type": "area",
+   "expr": "(x-2)^2*(0.5*exp(-x^2/2)/sqrt(2*3.141592653589793)+0.5*exp(-(x-4)^2/2)/sqrt(2*3.141592653589793))",
+   "from": -12,
+   "to": 16,
+   "value": 5,
+   "tol": 0.01,
+   "name": "the variance is 5"
+  }
+ ]
+}

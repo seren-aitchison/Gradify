@@ -1,0 +1,94 @@
+{
+ "id": "maths-u12-pareto-density",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Pareto Distribution",
+ "title": "Pareto with xₘ = 1 and α = 2",
+ "caption": "The density 2/x³ starts at 2 and falls steeply. P(X > 4) = 1/16, the median is √2 ≈ 1.41 and the mean is α xₘ/(α − 1) = 2.",
+ "alt": "Graph of the density 2/x³ for x ≥ 1 with the tail beyond 4 shaded.",
+ "description": [
+  "The density is 2/x³ for x ≥ 1.",
+  "The tail beyond 4 has area 1/4² = 1/16.",
+  "The area from 1 to √2 is 1/2, so the median is √2."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   0,
+   2.4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   1,
+   2
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "2/x^3",
+   "domain": [
+    1,
+    8
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "2/x^3",
+   "from": 4,
+   "to": 8,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.414,
+   "label": "median √2",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "2/x^3",
+   "from": 4,
+   "to": 3000,
+   "value": 0.0625,
+   "tol": 0.002,
+   "name": "P(X > 4) = 1/16"
+  },
+  {
+   "type": "area",
+   "expr": "2/x^3",
+   "from": 1,
+   "to": 1.4142135623730951,
+   "value": 0.5,
+   "name": "half the area lies below √2"
+  },
+  {
+   "type": "area",
+   "expr": "x*2/x^3",
+   "from": 1,
+   "to": 3000,
+   "value": 2,
+   "tol": 0.01,
+   "name": "the mean is 2"
+  }
+ ]
+}

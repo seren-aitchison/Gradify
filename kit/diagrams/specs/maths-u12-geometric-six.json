@@ -1,0 +1,61 @@
+{
+ "id": "maths-u12-geometric-six",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Geometric Distribution",
+ "title": "Waiting for a six",
+ "caption": "The first six on the 4th roll means three non-sixes then a six: (5/6)³ × 1/6 = 125/1296 ≈ 0.0965. The mean wait is 1/p = 6 rolls.",
+ "alt": "Bar chart of the geometric distribution with p = 1/6 for rolls 1 to 20; the bar at 4 is shaded.",
+ "description": [
+  "Each bar is P(first six on roll k), falling by a factor 5/6 each step.",
+  "The bar at k = 4 has height (5/6)³ × 1/6 ≈ 0.0965."
+ ],
+ "dist": {
+  "dist": "geometric",
+  "p": 0.16666666666666666,
+  "kMax": 40
+ },
+ "range": {
+  "x": [
+   0.5,
+   20.5
+  ],
+  "y": [
+   0,
+   0.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ]
+ ],
+ "axisLabels": [
+  "roll of the first six",
+  "probability"
+ ],
+ "shade": [
+  4,
+  4
+ ],
+ "p": 0.0965,
+ "checks": [
+  {
+   "type": "prob",
+   "from": 4,
+   "to": 4,
+   "p": 0.0965
+  }
+ ]
+}
