@@ -36,8 +36,6 @@
   <link rel="modulepreload" href="/assets/app.js">
   <link rel="modulepreload" href="/assets/proof.js">
   <link rel="modulepreload" href="/assets/nav.js">
-  <link rel="modulepreload" href="/assets/features.js">
-  <link rel="modulepreload" href="/assets/pro.js">
   <link rel="modulepreload" href="/kit/core/continue.js">
   <link rel="modulepreload" href="/kit/core/hubnav.js">
   <link rel="modulepreload" href="/kit/core/sites.js">
@@ -50,14 +48,11 @@
   <link rel="modulepreload" href="/kit/core/glass-icons.js">
   <link rel="modulepreload" href="/kit/data/waitlist.js">
   <link rel="modulepreload" href="/kit/core/install.js">
-  <link rel="modulepreload" href="/kit/data/billing.js">
-  <link rel="modulepreload" href="/kit/data/plan.js">
   <link rel="modulepreload" href="/kit/ui/global-nav.js">
   <link rel="modulepreload" href="/kit/ui/store.js">
   <link rel="modulepreload" href="/kit/core/menu-set.js">
   <link rel="modulepreload" href="/gradify.config.js">
   <link rel="modulepreload" href="/kit/core/subnav.js">
-  <link rel="modulepreload" href="/kit/data/functions.js">
   <link rel="modulepreload" href="/kit/ui/icons.js">
   <link rel="modulepreload" href="/kit/ui/palette.js">
   <link rel="modulepreload" href="/kit/ui/places.js">
@@ -77,8 +72,22 @@
     if (os && !os.hidden) go();
     else if (os) new MutationObserver((_, mo) => { if (!os.hidden) { mo.disconnect(); go(); } }).observe(os, { attributes: true, attributeFilter: ["hidden"] });
   </script>
-  <script type="module" src="assets/features.js"></script>
-  <script type="module" src="assets/pro.js"></script>
+  <!-- the feature showcase (#features) and the Ultra comparison (#pro) are far below the first screen: they load when the
+       page has gone idle, or sooner if their section is about to scroll into view or the link opened at one -->
+  <script type="module">
+    let done = false;
+    const go = () => { if (done) return; done = true; import("./assets/features.js"); import("./assets/pro.js"); };
+    const secs = ["features", "pro"].map((id) => document.getElementById(id)).filter(Boolean);
+    if (secs.some((s) => location.hash === "#" + s.id)) go();
+    else {
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); go(); } }, { rootMargin: "1200px 0px" });
+        secs.forEach((s) => io.observe(s));
+      }
+      const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 4000 }) : setTimeout(go, 2000));
+      document.readyState === "complete" ? idle() : addEventListener("load", idle);
+    }
+  </script>
   <script type="module">
     // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
     import { mountContinue } from "./kit/core/continue.js";
