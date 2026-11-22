@@ -111,12 +111,23 @@ export function mirror(m, atoms = null) {
   return p;
 }
 
-/** A stereo fingerprint: constitution plus each descriptor tied to its atom's symmetry class. */
+/**
+ * A stereo fingerprint: the constitution, plus every descriptor placed by one whole-molecule mapping onto the canonical
+ * atom order, taking the smallest over the molecule's symmetries. One mapping for all centres at once matters: sorting
+ * each symmetry class separately would let 2,3,4,5-tetrafluorohexane's (2R,3R,4S,5S) and (2R,3S,4R,5S) match, though no
+ * symmetry of the chain turns one into the other. R/S and E/Z are properties of each atom, so they move with it.
+ */
 function stereoKey(m) {
   const A = K.analyse(m), cfg = configuration(m, A);
   if (cfg.centres.some((c) => !c.label) || cfg.bonds.some((b) => !b.label)) return null;
-  const cls = A.classOf, parts = [...cfg.centres.map((c) => `${cls[c.atom]}:${c.label}`), ...cfg.bonds.map((b) => `${b.atoms.map((x) => cls[x]).sort().join("=")}:${b.label}`)];
-  return `${A.hash}|${parts.sort().join(".")}`;
+  const G = K.graph(m), can = K.canonical(G, K.aromatic(G));
+  if (!can) return null; // too symmetric to search: say "undefined" rather than guess
+  const ix = new Map(G.id.map((id, i) => [id, i]));
+  const keys = can.orders.map((order) => {
+    const pos = new Map(order.map((i, k) => [i, k])), at = (id) => pos.get(ix.get(id));
+    return [...cfg.centres.map((c) => `${String(at(c.atom)).padStart(4, "0")}:${c.label}`), ...cfg.bonds.map((b) => `${b.atoms.map(at).sort((x, y) => x - y).map((k) => String(k).padStart(4, "0")).join("=")}:${b.label}`)].sort().join(".");
+  });
+  return `${A.hash}|${keys.sort()[0]}`;
 }
 
 /**
@@ -147,13 +158,22 @@ function side(m, from, to) {
   return seen;
 }
 const ezLabel = (m, bondId) => configuration(m).bonds.find((b) => b.bond === bondId)?.label ?? null;
+/**
+ * Reflects the atoms in `set` across the line through P0 and P1. A reflection in the page is a mirror image, so every
+ * wedge or dash whose narrow end (the stereocentre, bond.a) is in the set is swapped too: the branch changes shape on
+ * the page but each stereocentre keeps its R/S.
+ */
+function reflect(m, set, P0, P1) {
+  const dx = P1.x - P0.x, dy = P1.y - P0.y, L2 = dx * dx + dy * dy;
+  for (const id of set) { const g = K.atomOf(m, id), t = ((g.x - P0.x) * dx + (g.y - P0.y) * dy) / L2, fx = P0.x + t * dx, fy = P0.y + t * dy; g.x = 2 * fx - g.x; g.y = 2 * fy - g.y; }
+  for (const b of m.bonds) if ((b.stereo === "wedge" || b.stereo === "dash") && set.has(b.a)) b.stereo = b.stereo === "wedge" ? "dash" : "wedge";
+}
 
 /** Reflects the groups on one end of a C=C across its axis, if needed, so the drawing shows `want` ("E" or "Z"). */
 export function setEZ(m, bondId, want) {
   const now = ezLabel(m, bondId); if (!now || now === want) return now === want;
   const b = K.bondOf(m, bondId), set = side(m, b.b, b.a); if (!set) return false;
-  const p = K.atomOf(m, b.a), q = K.atomOf(m, b.b), dx = q.x - p.x, dy = q.y - p.y, L2 = dx * dx + dy * dy;
-  for (const id of set) { const a = K.atomOf(m, id), t = ((a.x - p.x) * dx + (a.y - p.y) * dy) / L2, fx = p.x + t * dx, fy = p.y + t * dy; a.x = 2 * fx - a.x; a.y = 2 * fy - a.y; }
+  reflect(m, set, K.atomOf(m, b.a), K.atomOf(m, b.b));
   return ezLabel(m, bondId) === want;
 }
 
@@ -211,6 +231,5 @@ export function setSides(m, bondId, a, p, q, same) {
   const sd = (id) => { const g = K.atomOf(m, id); return Math.sign((P1.x - P0.x) * (g.y - P0.y) - (P1.y - P0.y) * (g.x - P0.x)); };
   if (!sd(p) || !sd(q) || (sd(p) === sd(q)) === same) return;
   const set = side(m, y, x); if (!set) return;
-  const dx = P1.x - P0.x, dy = P1.y - P0.y, L2 = dx * dx + dy * dy;
-  for (const id of set) { const g = K.atomOf(m, id), t = ((g.x - P0.x) * dx + (g.y - P0.y) * dy) / L2, fx = P0.x + t * dx, fy = P0.y + t * dy; g.x = 2 * fx - g.x; g.y = 2 * fy - g.y; }
+  reflect(m, set, P0, P1);
 }

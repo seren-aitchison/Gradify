@@ -46,7 +46,9 @@ export function split(m) {
   return out;
 }
 /** Small inorganic pieces left after a hydrolysis or cleavage are reported as by-products, not drawn. */
-const SMALL = { H2O: "H₂O", CH2O2: "HCOOH", CO2: "CO₂", NH3: "NH₃", "H4N+": "NH₄⁺", CH2O: "HCHO" };
+// (Methanoic acid is not in this list: hydrolysis of a methanoate ester gives it as a product. Hot permanganate oxidises it
+// on to CO₂ and water, which cleave() handles itself.)
+const SMALL = { H2O: "H₂O", CO2: "CO₂", NH3: "NH₃", "H4N+": "NH₄⁺", CH2O: "HCHO" };
 function pieces(p, role = "product") {
   const prods = [], by = [];
   for (const q of split(p)) { const A = K.analyse(q), f = A.formula + (A.charge ? (A.charge > 0 ? "+" : "-") : ""); if (q.atoms.length === 1 && q.atoms[0].el === "N") by.push(q.atoms[0].charge > 0 ? "NH₄⁺" : "NH₃"); else if (SMALL[f] && q.atoms.length <= 3 && f !== "CH2O") by.push(SMALL[f]); else prods.push({ m: q, role }); }
@@ -86,8 +88,14 @@ function carbonyls(m, c) {
   }
   return out;
 }
-const nitriles = (m) => m.bonds.filter((b) => b.order === 3 && [b.a, b.b].some((i) => K.atomOf(m, i).el === "N")).map((b) => { const n = K.atomOf(m, b.a).el === "N" ? b.a : b.b; return { n, c: n === b.a ? b.b : b.a }; });
-const sixRings = (m, c) => K.rings(c.G, 6).filter((r) => r.length === 6 && r.every((i) => c.arom(c.G.id[i]))).map((r) => r.map((i) => c.G.id[i]));
+// a nitrile is a C≡N triple bond: one carbon end and one nitrogen end (N≡N is dinitrogen, not a nitrile)
+const nitriles = (m) => m.bonds.filter((b) => b.order === 3 && [K.atomOf(m, b.a).el, K.atomOf(m, b.b).el].sort().join("") === "CN").map((b) => { const n = K.atomOf(m, b.a).el === "N" ? b.a : b.b; return { n, c: n === b.a ? b.b : b.a }; });
+// benzene rings: six aromatic atoms, all carbon. skeletal.js also counts rings with nitrogen as aromatic (pyridine),
+// but the substitution rules here are benzene's; a heteroaromatic ring is declined (heteroRings) rather than treated as one
+const aromSix = (c) => K.rings(c.G, 6).filter((r) => r.length === 6 && r.every((i) => c.arom(c.G.id[i])));
+const sixRings = (m, c) => aromSix(c).filter((r) => r.every((i) => c.G.el[i] === "C")).map((r) => r.map((i) => c.G.id[i]));
+const heteroRings = (m, c) => aromSix(c).filter((r) => r.some((i) => c.G.el[i] !== "C"));
+const HETERO = "This is a heteroaromatic ring (it contains a ring nitrogen, like pyridine). Its substitution chemistry differs from benzene's (pyridine resists electrophilic substitution and reacts at the 3-position only under harsh conditions), and the lab's rules cover benzene rings only.";
 const list = (a) => (a.length < 2 ? a.join("") : `${a.slice(0, -1).join(", ")} and ${a.at(-1)}`);
 function none(m, need) {
   const have = [...new Set(K.analyse(m).groups.map((g) => g.label.toLowerCase().replace(/\s*\(.*\)/, "")))].map((g) => (/^[aeiou]/.test(g) ? `an ${g}` : `a ${g}`));
@@ -113,18 +121,30 @@ function markovnikov(m, X0, label) {
   if (!sites.length) return null;
   if (sites.some((b) => [b.a, b.b].some((i) => heavy(m, i).some((n) => n.atom.el === "C" && nb(m, n.atom.id).some((x) => x.bond.order >= 2 && ["O", "N"].includes(x.atom.el)))))) return { fail: "This C=C is conjugated with a C=O (or C≡N). A carbocation next to that group is destabilised, so addition goes the other way (conjugate addition, X on the carbon further from the C=O). That is outside the Markovnikov rule the lab uses, so it makes no prediction." };
   const deg = (id) => cCount(m, id);
-  const make = (choose) => { const p = K.clone(m); for (const b of sites) { const [, xC] = choose(b); setOrder(p, b.a, b.b, 1); sprout(p, xC, X0); } return p; };
-  const major = make((b) => (deg(b.a) >= deg(b.b) ? [b.b, b.a] : [b.a, b.b]));
+  // a carbon of the C=C bonded to a benzene ring gives a benzylic cation, stabilised by the ring. The X goes there when
+  // that carbon is at least as substituted as the other end (styrene, 1-phenylpropene). When the other end is more
+  // substituted (Ph–CH=C(CH₃)₂: benzylic secondary against tertiary), the two effects pull opposite ways and the rules
+  // here can't say which wins, so the prediction is declined rather than guessed.
+  const benzylic = (b, id) => nb(m, id).some((n) => n.atom.id !== b.a && n.atom.id !== b.b && c.arom(n.atom.id));
+  const choice = (b) => {
+    const [ba, bb] = [benzylic(b, b.a), benzylic(b, b.b)];
+    if (ba !== bb) { const bz = ba ? b.a : b.b, other = ba ? b.b : b.a; return deg(bz) >= deg(other) ? { x: bz, h: other, by: "benzylic" } : { conflict: true }; }
+    return deg(b.a) >= deg(b.b) ? { x: b.a, h: b.b, by: deg(b.a) === deg(b.b) ? "tie" : "degree" } : { x: b.b, h: b.a, by: "degree" };
+  };
+  const picks = sites.map(choice);
+  if (picks.some((x) => x.conflict)) return { fail: "Not predicted: one carbon of this C=C is next to a benzene ring (a benzylic cation) and the other carries more carbon groups (a more substituted cation). The two effects favour different products, and the lab's rules can't rank them reliably." };
+  const make = (flip) => { const p = K.clone(m); sites.forEach((b, k) => { const t = picks[k], xC = flip ? t.h : t.x; setOrder(p, b.a, b.b, 1); sprout(p, xC, X0); }); return p; };
+  const major = make(false);
   const why = [], prods = [{ m: major, role: "product" }];
   if (sites.length === 1) {
-    const b = sites[0], minor = make((b2) => (deg(b2.a) >= deg(b2.b) ? [b2.a, b2.b] : [b2.b, b2.a]));
+    const b = sites[0], minor = make(true);
     if (key(minor) !== key(major)) {
       const [da, db] = [deg(b.a), deg(b.b)].sort((x, y) => y - x);
-      if (da === db) { prods.push({ m: minor, role: "product" }); why.push(`Both carbons of the C=C carry the same number of carbon groups, so either carbocation is equally stable (${CLASS[da]}): two products form in similar amounts.`); }
+      if (picks[0].by === "benzylic") { prods[0].role = "major"; prods.push({ m: minor, role: "minor" }); why.push("The H adds to the carbon away from the ring, leaving the positive charge on the carbon next to the benzene ring: a benzylic cation, stabilised by the ring's delocalised electrons. So the X goes on the carbon next to the ring, giving the major product."); }
+      else if (da === db) { prods.push({ m: minor, role: "product" }); why.push(`Both carbons of the C=C carry the same number of carbon groups, so either carbocation is equally stable (${CLASS[da]}): two products form in similar amounts.`); }
       else { prods[0].role = "major"; prods.push({ m: minor, role: "minor" }); why.push(`Markovnikov's rule: H adds to the C=C carbon that already has more hydrogens, leaving the positive charge on the carbon with more carbon groups (a ${CLASS[da]} rather than ${CLASS[db]} carbocation). The more stable carbocation gives the major product.`); }
     } else why.push("The alkene is symmetrical, so there is only one product.");
-  } else why.push(`Each of the ${sites.length} C=C bonds reacts (reagent in excess), each following Markovnikov's rule.`);
-  if (sites.some((b) => [b.a, b.b].some((i) => nb(m, i).some((n) => n.atom.id !== b.a && n.atom.id !== b.b && c.arom(n.atom.id))))) why.push("Next to a benzene ring the cation is benzylic, stabilised by the ring's delocalised electrons, so the X goes on the carbon next to the ring.");
+  } else why.push(`Each of the ${sites.length} C=C bonds reacts (reagent in excess), each following Markovnikov's rule${picks.some((x) => x.by === "benzylic") ? " (next to a benzene ring, the X goes on the benzylic carbon)" : ""}.`);
   return { prods, why, stereo: stereoNotes(m, prods, "planar"), label };
 }
 /** HX across C≡C twice (excess): both X on the more substituted carbon (a geminal dihalide). */
@@ -171,6 +191,7 @@ function aromaticSites(m, c, r) {
 }
 function aromatic(m, kind) {
   const c = ctx(m), rs = sixRings(m, c);
+  if (heteroRings(m, c).length) return { fail: HETERO };
   if (!rs.length) return null;
   if (rs.length > 1) return { fail: "The lab predicts aromatic substitution for one benzene ring; molecules with several rings need directing rules it doesn't cover." };
   if (alkenes(m, c).length) return { fail: "This molecule also has a C=C outside the ring, which reacts with the electrophile first (addition, or polymerisation with AlCl₃), so the lab doesn't predict ring substitution here." };
@@ -205,7 +226,8 @@ function oxidise(m, full) {
     return none(m, "acidified dichromate oxidises primary and secondary alcohols (and aldehydes)");
   }
   const p = K.clone(m), why = [];
-  for (const a of ox) { dropDrawnH(p, a.c); setOrder(p, a.c, a.o, 2); if (a.cls === 1 && full) sprout(p, a.c, "O"); }
+  // each new bond to oxygen replaces a hydrogen on that carbon (a drawn one is removed; an implicit one simply goes)
+  for (const a of ox) { dropDrawnH(p, a.c); setOrder(p, a.c, a.o, 2); if (a.cls === 1 && full) { dropDrawnH(p, a.c); sprout(p, a.c, "O"); } }
   for (const x of ald) sprout(p, x.c, "O");
   if (ox.some((a) => a.cls === 1)) why.push(full ? "A primary alcohol is oxidised first to an aldehyde and then, under reflux (the aldehyde can't escape), on to a carboxylic acid." : "A primary alcohol is oxidised to an aldehyde. Distilling it off as it forms stops it being oxidised further to a carboxylic acid.");
   if (ox.some((a) => a.cls === 2)) why.push("A secondary alcohol is oxidised to a ketone, which isn't oxidised further.");
@@ -251,7 +273,7 @@ function hydrolyse(m, mode, { esters = true, amides = true, nitrile = true } = {
   const asAcid = (cId) => { const o = sprout(p, cId, "O"); if (mode === "alkali") o.charge = -1; };
   for (const x of cos) {
     if (x.kind === "ester" && esters) { cut(p, x.c, x.x); asAcid(x.c); seen.add("ester"); }
-    if (x.kind === "anhydride" && esters && !used.has(x.x)) { used.add(x.x); cut(p, x.c, x.x); asAcid(x.c); seen.add("anhydride"); }
+    if (x.kind === "anhydride" && esters && !used.has(x.x)) { used.add(x.x); cut(p, x.c, x.x); asAcid(x.c); if (mode === "alkali") K.atomOf(p, x.x).charge = -1; seen.add("anhydride"); }
     if (x.kind === "amide" && amides) { const N = K.atomOf(p, x.x); cut(p, x.c, x.x); asAcid(x.c); if (mode === "acid") N.charge = 1; seen.add("amide"); }
     if (x.kind === "acyl-halide") { K.atomOf(p, x.x).el = "O"; if (mode === "alkali") K.atomOf(p, x.x).charge = -1; seen.add("acyl"); }
     if (x.kind === "acid" && mode === "alkali") { K.atomOf(p, x.x).charge = -1; seen.add("acid"); }
@@ -260,7 +282,7 @@ function hydrolyse(m, mode, { esters = true, amides = true, nitrile = true } = {
   if (nitrile) for (const n of nitriles(m)) { K.removeAtom(p, n.n); sprout(p, n.c, "O", 2); asAcid(n.c); seen.add("nitrile"); extra.push(mode === "acid" ? "NH₄⁺" : "NH₃"); }
   if (!seen.size) return null;
   if (seen.has("ester")) why.push(mode === "acid" ? "The ester is hydrolysed to a carboxylic acid and an alcohol. With an acid catalyst the reaction is reversible (the reverse of esterification), so it doesn't go to completion." : "Saponification: hydroxide hydrolyses the ester to the carboxylate ion (as its sodium salt) and the alcohol. It goes to completion because the carboxylate can't react back.");
-  if (seen.has("anhydride")) why.push("The anhydride is hydrolysed to two carboxylic acid molecules.");
+  if (seen.has("anhydride")) why.push(mode === "alkali" ? "The anhydride is hydrolysed to two carboxylate ions (as their sodium salts)." : "The anhydride is hydrolysed to two carboxylic acid molecules.");
   if (seen.has("amide")) why.push(mode === "acid" ? "The amide is hydrolysed to the carboxylic acid; the nitrogen ends up as an ammonium ion in the acid." : "The amide is hydrolysed to the carboxylate ion and ammonia (or an amine), which is given off.");
   if (seen.has("nitrile")) why.push(mode === "acid" ? "The nitrile is hydrolysed to a carboxylic acid (via an amide), and the nitrogen becomes NH₄⁺." : "The nitrile is hydrolysed to the carboxylate ion, giving off ammonia.");
   if (seen.has("acyl")) why.push(mode === "acid" ? "The acyl chloride is hydrolysed to the carboxylic acid (and HCl)." : "The acyl chloride is hydrolysed to the carboxylate ion.");
@@ -305,8 +327,12 @@ export const REAGENTS = [
       const c = ctx(m), s = alkenes(m, c), t = alkynes(m), rs = sixRings(m, c);
       if (!s.length && !t.length) {
         if (rs.length === 1) {
-          const { sites, subs } = aromaticSites(m, c, rs[0]);
-          if (subs.some((x) => ["–OH", "–O⁻"].includes(x.d.label) || x.d.label.startsWith("–NH₂")) && sites.length) {
+          // the crowding rule in aromaticSites is for choosing between positions; bromine water is so reactive with
+          // –OH and –NH₂ that it fills every free 2-, 4- and 6-position, crowded or not (3-methylphenol gives
+          // 2,4,6-tribromo-3-methylphenol)
+          const { subs } = aromaticSites(m, c, rs[0]), r0 = rs[0], strong = subs.filter((x) => ["–OH", "–O⁻"].includes(x.d.label) || x.d.label.startsWith("–NH₂"));
+          const op = new Set(strong.flatMap((x) => [1, 3, 5].map((d) => (x.i + d) % 6))), sites = r0.map((id, i) => ({ i, id })).filter((f) => op.has(f.i) && c.H(f.id) > 0);
+          if (strong.length && sites.length) {
             const p = K.clone(m), r0 = rs[0], cx = r0.reduce((q, k) => q + K.atomOf(m, k).x, 0) / 6, cy = r0.reduce((q, k) => q + K.atomOf(m, k).y, 0) / 6;
             for (const f of sites) { dropDrawnH(p, f.id); const a = K.atomOf(p, f.id); sprout(p, f.id, "Br", 1, Math.atan2(a.y - cy, a.x - cx)); }
             return { prods: [{ m: p, role: "product" }], type: "Electrophilic aromatic substitution (no catalyst needed)", why: ["An –OH or –NH₂ group activates the ring so strongly that bromine water substitutes at every free 2-, 4- and 6-position without a catalyst: orange bromine is decolourised and a white precipitate forms (the test for phenol)."], byproducts: ["HBr"], mechanism: null };
@@ -320,7 +346,10 @@ export const REAGENTS = [
       return { prods: [{ m: p, role: "product" }], why, byproducts: [], stereo: stereoNotes(m, [{ m: p }], "anti") };
     } },
   { id: "hbr", label: "HBr", cond: "room temperature", type: "Electrophilic addition", mechanism: "hbr-propene", level: "foundation",
-    run(m) { const r = markovnikov(m, "Br", "hydrogen bromide") || alkyneHX(m, "Br"); if (r?.fail) return r; return r ? { ...r, byproducts: [] } : none(m, "hydrogen bromide adds across C=C (and C≡C) bonds"); } },
+    run(m) {
+      if (alkenes(m, ctx(m)).length && alkynes(m).length) return { fail: "Not predicted: this molecule has both a C=C and a C≡C. HBr can add to either, and which reacts first (and how far, with excess HBr) depends on the conditions; the lab's rules don't rank them." };
+      const r = markovnikov(m, "Br", "hydrogen bromide") || alkyneHX(m, "Br"); if (r?.fail) return r; return r ? { ...r, byproducts: [] } : none(m, "hydrogen bromide adds across C=C (and C≡C) bonds");
+    } },
   { id: "steam", label: "H₂O(g), H₃PO₄ catalyst", cond: "300 °C, 60 atm", type: "Electrophilic addition (hydration)", level: "foundation",
     run(m) { const r = markovnikov(m, "O", "steam"); if (r?.fail) return r; if (!r) return alkynes(m).length ? { fail: "Alkynes are hydrated with dilute H₂SO₄ and an HgSO₄ catalyst instead (choose that reagent)." } : none(m, "steam adds across C=C bonds"); return { ...r, byproducts: [], why: [...r.why, "Industrially this makes ethanol from ethene. The acid protonates the alkene first, so the same carbocation rule applies."] }; } },
   { id: "hg-hydration", label: "H₂O, dilute H₂SO₄, HgSO₄ catalyst", cond: "warm", type: "Electrophilic addition (hydration of an alkyne)", level: "advanced",
@@ -344,7 +373,9 @@ export const REAGENTS = [
   { id: "naoh-aq", label: "NaOH(aq)", cond: "warm, under reflux", type: "Nucleophilic substitution and hydrolysis", level: "foundation",
     run(m) {
       const hs = halideSites(m), hyd = hydrolyse(m, "alkali"), cx = ctx(m);
-      if (!hyd && !hs.length && carbonyls(m, cx).some((x) => (x.kind === "aldehyde" || x.kind === "ketone") && heavy(m, x.c).some((n) => n.atom.el === "C" && cx.H(n.atom.id) > 0))) return { fail: "Not predicted: hydroxide with an aldehyde or ketone that has a hydrogen on the next carbon starts aldol reactions (C–C bond formation via an enolate), which are outside this model's rules." };
+      const enolisable = carbonyls(m, cx).some((x) => (x.kind === "aldehyde" || x.kind === "ketone") && heavy(m, x.c).some((n) => n.atom.el === "C" && cx.H(n.atom.id) > 0));
+      if (hs.length && carbonyls(m, cx).some((x) => x.kind === "aldehyde" || x.kind === "ketone")) return { fail: "This molecule has a halogen and an aldehyde or ketone group. Hydroxide can substitute the halogen, but it also reacts at the C=O (aldol reactions when there's a hydrogen on the next carbon), and predicting the combined outcome is outside this model. Try one group at a time." };
+      if (!hyd && !hs.length && enolisable) return { fail: "Not predicted: hydroxide with an aldehyde or ketone that has a hydrogen on the next carbon starts aldol reactions (C–C bond formation via an enolate), which are outside this model's rules." };
       if (hs.length && hyd) return { fail: "This molecule has a halogen and a C=O group that both react with hydroxide; predicting the combined product reliably is outside this model. Try one group at a time." };
       if (hyd) return { ...hyd, mechanism: carbonyls(m, ctx(m)).some((x) => x.kind === "ester") ? "ester-hydrolysis" : null, type: "Hydrolysis (alkaline)" };
       if (!hs.length) return none(m, "hydroxide substitutes the halogen of a halogenoalkane and hydrolyses esters, amides and acyl chlorides");
@@ -400,7 +431,7 @@ export const REAGENTS = [
   { id: "grignard", label: "CH₃MgBr in dry ether, then dilute acid", cond: "room temperature", type: "Nucleophilic addition (Grignard)", mechanism: "grignard", level: "advanced",
     run(m) {
       const c = ctx(m), cos = carbonyls(m, c), s = cos.filter((x) => ["aldehyde", "ketone", "ester"].includes(x.kind));
-      if (cos.some((x) => x.kind === "acid") || alcohols(m, c).length) return { fail: "No addition: a Grignard reagent is a very strong base, and an O–H group (alcohol, acid or water) protonates it first, giving methane. The O–H must be protected, or the Grignard used in excess." };
+      if (m.atoms.some((o) => o.el === "O" && c.H(o.id) > 0)) return { fail: "No addition: a Grignard reagent is a very strong base, and an O–H group (alcohol, phenol, acid or water) protonates it first, giving methane. The O–H must be protected, or the Grignard used in excess." };
       if (!s.length) return none(m, "a Grignard reagent adds to the C=O of aldehydes, ketones and esters");
       const p = K.clone(m), why = ["The C–Mg bond is polarised C^δ−–Mg^δ+, so the methyl carbon acts as a carbanion nucleophile, attacking the δ+ carbonyl carbon and forming a new C–C bond. Acid then protonates the alkoxide."];
       for (const x of s) {
@@ -521,9 +552,11 @@ function cleave(m, full) {
   const p = K.clone(m);
   for (const b of s) { cut(p, b.a, b.b); sprout(p, b.a, "O", 2); sprout(p, b.b, "O", 2); }
   if (full) { const c2 = ctx(p); for (const b of s) for (const i of [b.a, b.b]) if (c2.H(i) >= 1) sprout(p, i, "O"); }
-  const { prods, by: by0 } = pieces(p), why = ["The C=C bond is broken completely and each carbon becomes a C=O."];
-  const by = full ? by0.map((b) => (b === "HCOOH" ? "CO₂ + H₂O" : b)) : by0;
-  if (!prods.length) return { fail: "Ethene is oxidised completely, to CO₂ and water: there is no organic product." };
+  const { prods: all, by: by0 } = pieces(p), why = ["The C=C bond is broken completely and each carbon becomes a C=O."];
+  // hot permanganate oxidises a methanoic acid fragment (from a =CH₂ end) on to CO₂ and water
+  const formic = (q) => K.analyse(q.m).formula === "CH2O2" && !K.analyse(q.m).charge;
+  const prods = full ? all.filter((q) => !formic(q)) : all, by = [...by0, ...(full && all.some(formic) ? ["CO₂ + H₂O"] : [])];
+  if (!prods.length) return { prods: [], organicFree: true, why: ["Each carbon of the C=C is oxidised all the way: ethene is oxidised completely to CO₂ and water, so there is no organic product."], byproducts: ["CO₂", "H₂O"], join: "+" };
   if (full) why.push("Hot acidified permanganate oxidises further: a =CH– end becomes a carboxylic acid and a =CH₂ end becomes CO₂; a =CR₂ end stays a ketone.");
   else why.push("Ozonolysis with a zinc work-up stops at the C=O stage: =CH– ends become aldehydes (=CH₂ gives methanal), =CR₂ ends ketones. The pieces show where the C=C was, which made it a classic way of locating double bonds.");
   return { prods, why, byproducts: [...new Set(by)], join: "+" };
@@ -544,6 +577,21 @@ export function predict(m, reagentId) {
   if (out.reacts) { try { out.stereo = [...out.stereo, ...stereoOutcome(m, reagentId, out)]; } catch { for (const p of out.products) p.config = null; } }
   return out;
 }
+/**
+ * The drawing with its drawn hydrogens made implicit, which is what the rules work on: they change bonds between heavy
+ * atoms and let the hydrogen count follow. A drawn O–H (or the H of an aldehyde) would otherwise stay attached when the
+ * rule changes that atom's bonds. Drawn H on an sp³ carbon is kept: it may carry a wedge or dash.
+ */
+function implicitH(m) {
+  const p = K.clone(m), drop = [];
+  for (const h of p.atoms) {
+    if (h.el !== "H") continue; const n = nb(p, h.id); if (n.length !== 1) continue;
+    const a = n[0].atom, wedge = n[0].bond.stereo && n[0].bond.stereo !== "none";
+    if (a.el !== "C" || (!wedge && multiple(p, a.id))) drop.push(h.id);
+  }
+  for (const id of drop) K.removeAtom(p, id);
+  return p;
+}
 function predictRaw(m, reagentId) {
   const r = reagentOf(reagentId);
   if (!r) return { reacts: false, why: ["Unknown reagent."] };
@@ -552,15 +600,20 @@ function predictRaw(m, reagentId) {
   if (A.problems.length) return { reacts: false, reagent: r, why: [`Fix the structure first: ${A.problems[0].text}`] };
   if (A.components > 1) return { reacts: false, reagent: r, why: ["Draw one starting molecule: the reagent comes from the list."] };
   let out;
-  try { out = r.run(K.clone(m)); } catch (e) { out = { fail: "The lab couldn't apply this reaction's rules to this molecule, so it makes no prediction." }; }
+  try { out = r.run(implicitH(m)); } catch (e) { out = { fail: "The lab couldn't apply this reaction's rules to this molecule, so it makes no prediction." }; }
   if (!out || out.fail) return { reacts: false, reagent: r, type: r.type, why: [out?.fail || "No reaction."], products: [], competition: out?.competition };
-  if (!out.prods.length) return { reacts: false, reagent: r, type: r.type, why: ["The rules give no organic product here."], products: [] };
+  if (!out.prods.length && !out.organicFree) return { reacts: false, reagent: r, type: r.type, why: ["The rules give no organic product here."], products: [] };
+  // a rule that built an impossible structure has a bug for this molecule: say so rather than show it
+  if (out.prods.some((p) => K.analyse(p.m).problems.length)) return { reacts: false, reagent: r, type: r.type, why: ["The lab couldn't build a valid product for this molecule with its rules, so it makes no prediction."], products: [] };
   return { reacts: true, reagent: r, type: out.type || r.type, products: out.prods, join: out.join || "or", byproducts: out.byproducts || [], why: out.why, stereo: out.stereo || [], competition: out.competition || null,
     mechanism: out.mechanism !== undefined ? out.mechanism : r.mechanism || null };
 }
 
 /** Lays out a molecule from SMILES on the hexagon paper (for starting materials): chains zig-zag, a ring is a hexagon. */
 export function drawSmiles(smiles) {
+  // the layout below grows one molecule from a single starting atom, so a mixture ("CCO.CCBr") would silently lose
+  // every piece but the first; it is refused instead (the lab draws one starting material at a time)
+  if (smiles.includes(".")) throw new Error(`"${smiles}" is a mixture of separate molecules; draw one starting material at a time.`);
   const g = K.graphFromSmiles(smiles), G = K.graph(g), rs = K.rings(G, 6).filter((r) => r.length === 6);
   const m = K.empty(), map = new Map();
   const ringIds = rs.length ? rs[0].map((i) => G.id[i]) : [];

@@ -24,7 +24,8 @@ export function check({ start: smiles, reagent, expect: want }) {
   const main = new Set(r.products.filter((p) => p.role !== "minor").map((p) => K.analyse(p.m).hash)), minor = new Set(r.products.filter((p) => p.role === "minor").map((p) => K.analyse(p.m).hash)), all = new Set([...main, ...minor]);
   const same = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
   if (typeof want === "string") return main.has(hash(want)) ? null : fail(`expected ${want} as a main product`);
-  if (want.products) return same(all, new Set(want.products.map(hash))) ? null : fail(`expected exactly ${want.products.join(" + ")}`);
+  if (want.byproducts && !want.byproducts.every((b) => r.byproducts.includes(b))) return fail(`expected by-products ${want.byproducts.join(" + ")}`);
+  if (want.products) return same(all, new Set(want.products.map(hash))) ? null : fail(`expected exactly ${want.products.join(" + ") || "no organic product"}`);
   if (!same(main, new Set(want.major.map(hash)))) return fail(`expected major ${want.major.join(", ")}`);
   if (!same(minor, new Set(want.minor.map(hash)))) return fail(`expected minor ${want.minor.join(", ") || "none"}`);
   return null;
@@ -50,10 +51,32 @@ test("every reference case records its sources and confidence, and every rule ha
   for (const r of REFERENCE) {
     assert.ok(!ids.has(r.id), `duplicate case ${r.id}`); ids.add(r.id);
     assert.ok(r.sources.length && r.sources.every((x) => x.id && x.topic), r.id);
-    assert.ok(["provisional", "reviewed", "validated"].includes(r.confidence), r.id);
+    // "disputed" is what a reviewer's disagree verdict produces (data/organic-reference.mjs, docs/organic-review): the
+    // case stays in the set, and still has to match the predictor, until it is fixed
+    assert.ok(["provisional", "reviewed", "validated", "disputed"].includes(r.confidence), r.id);
   }
   for (const g of P.REAGENTS) {
     const rule = P.predict(P.drawSmiles("C=C"), g.id).rule;
     assert.ok(rule && rule.reactants && rule.products && rule.selectivity && Array.isArray(rule.limitations) && rule.sources.length && rule.confidence, `${g.id}: evidence record`);
   }
+});
+
+test("review import: cumulative, blank rows keep earlier verdicts, and an invalid row means nothing is written", async () => {
+  const { mergeReviews } = await import("../scripts/organic-review.mjs");
+  const known = new Set(REFERENCE.map((r) => r.id)), [a, b] = [...known];
+  const head = "id,start,reagent,expected,verdict,correction,comment,reviewer,date";
+  const csv = (rows) => [head, ...rows.map(([id, v, note = ""]) => `${id},x,y,z,${v},,${note},Dr R,2026-12-01`)].join("\n");
+  const first = mergeReviews({}, csv([[a, "disagree", "wrong major product"]]), known);
+  assert.deepEqual(first.bad, []); assert.equal(first.reviews[a].verdict, "disagree");
+  // a later, partial return reviewing only b keeps a's unresolved disagreement
+  const second = mergeReviews(first.reviews, csv([[a, ""], [b, "agree"]]), known);
+  assert.equal(second.reviews[a].verdict, "disagree"); assert.equal(second.reviews[a].note, "wrong major product"); assert.equal(second.reviews[b].verdict, "agree");
+  assert.ok(!("" in second.reviews));
+  // removing a verdict is explicit
+  assert.ok(!(a in mergeReviews(second.reviews, csv([[a, "clear"]]), known).reviews));
+  // a mistyped verdict or an unknown case is reported, so the caller writes nothing
+  assert.equal(mergeReviews(second.reviews, csv([[a, "disagreee"]]), known).bad.length, 1);
+  assert.equal(mergeReviews(second.reviews, csv([["no-such-case", "agree"]]), known).bad.length, 1);
+  // a disputed case (what "disagree" produces) still passes the reference check when the predictor matches it
+  const row = { ...REFERENCE[0], confidence: "disputed" }; assert.equal(check(row), null);
 });

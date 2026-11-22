@@ -14,7 +14,7 @@ const RAW = [
   // ---------- alkenes ----------
   SECTION, { topic: "alkenes", sources: [["aqa", "3.3.4 Alkenes"], ["clayden", "electrophilic addition to alkenes"]] },
   ["C=C", "h2-ni", "CC"], ["C=C", "br2", "BrCCBr"], ["C=C", "hbr", "CCBr"], ["C=C", "steam", "CCO"], ["C=C", "kmno4-cold", "OCCO"],
-  ["C=C", "kmno4-hot", null, "oxidised completely to CO₂"], ["C=C", "ozone", { products: ["C=O"] }], ["C=C", "lindlar", null], ["C=C", "nabh4", null], ["C=C", "naoh-aq", null],
+  ["C=C", "kmno4-hot", { products: [], byproducts: ["CO₂", "H₂O"] }, "oxidised completely to CO₂ and water: a reaction (purple decolourised) with no organic product, not “no reaction”"], ["C=C", "ozone", { products: ["C=O"] }], ["C=C", "lindlar", null], ["C=C", "nabh4", null], ["C=C", "naoh-aq", null],
   ["C=C", "cl2-alcl3", DECLINE], ["C=C", "nitration", null], ["C=C", "tollens", null], ["C=C", "hg-hydration", null], ["C=C", "br2-uv", DECLINE], ["C=C", "grignard", null],
   ["C=CC", "h2-ni", "CCC"], ["C=CC", "br2", "CC(Br)CBr"], ["C=CC", "hbr", { major: ["CC(C)Br"], minor: ["CCCBr"] }], ["C=CC", "steam", { major: ["CC(C)O"], minor: ["CCCO"] }],
   ["C=CC", "kmno4-cold", "CC(O)CO"], ["C=CC", "kmno4-hot", { products: ["CC(=O)O"] }], ["C=CC", "ozone", { products: ["C=O", "CC=O"] }], ["C=CC", "nabh4", null], ["C=CC", "cr-reflux", null],

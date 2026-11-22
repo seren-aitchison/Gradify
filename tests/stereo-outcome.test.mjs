@@ -68,3 +68,13 @@ test("every reaction in the library either records a configuration or reports no
     for (const p of out.products) assert.ok(p.config && typeof p.config.form === "string", `${s} + ${r}`);
   }
 });
+
+test("several independent addition units give a mixture of stereoisomers, not one racemate or a meso compound", () => {
+  // C=CCC/C=C/CC + Br₂: a lone new centre (C2) and an anti-added pair (C5, C6), two units: four stereoisomers
+  assert.equal(run("C=CCC/C=C/CC", "br2").products[0].config.form, "stereoisomers");
+  assert.equal(run("C/C=C/CC/C=C/C", "br2").products[0].config.form, "stereoisomers", "two anti-added pairs");
+  // single units keep their textbook outcomes
+  assert.equal(run("C/C=C/C", "br2").products[0].config.form, "meso"); assert.equal(run("C/C=C\\C", "br2").products[0].config.form, "racemic");
+  assert.equal(run("C/C=C/C", "kmno4-cold").products[0].config.form, "racemic"); assert.equal(run("C/C=C\\C", "kmno4-cold").products[0].config.form, "meso");
+  assert.equal(run("C=CC", "br2").products[0].config.form, "racemic");
+});

@@ -5,7 +5,8 @@
 //   node scripts/organic-review.mjs import <csv>    reads a completed reference-review.csv and writes the verdicts to
 //                                                   kit/labs/chemistry/reactions/reviews.js
 // The CSVs open in any spreadsheet. Reviewers fill in: verdict (agree / disagree / unsure), correction, comment,
-// reviewer, date.
+// reviewer, date. An import adds to the verdicts already recorded: a blank row leaves its case as it was, the verdict
+// "clear" removes a recorded one, and any invalid row stops the import before anything is written.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,6 +16,7 @@ import { REFERENCE, DECLINE } from "../tests/data/organic-reference.mjs";
 import { SOURCES } from "../kit/labs/chemistry/reactions/rules.js";
 import { REACTIONS, instantiate } from "../kit/labs/chemistry/reactions/library.js";
 import * as E from "../kit/labs/chemistry/reactions/electron-flow.js";
+import { REVIEWS } from "../kit/labs/chemistry/reactions/reviews.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "docs/organic-review");
@@ -27,7 +29,7 @@ function expected(e) {
   if (e === null) return "No reaction";
   if (e === DECLINE) return "Lab should decline (outside its rules)";
   if (typeof e === "string") return nameOfSmiles(e);
-  if (e.products) return e.products.map(nameOfSmiles).join(" + ");
+  if (e.products) return e.products.length ? e.products.map(nameOfSmiles).join(" + ") : `No organic product${e.byproducts?.length ? ` (${e.byproducts.join(" + ")})` : ""}`;
   return `major: ${e.major.map(nameOfSmiles).join("; ")}${e.minor.length ? ` | minor: ${e.minor.map(nameOfSmiles).join("; ")}` : ""}`;
 }
 function exportPack() {
@@ -35,7 +37,7 @@ function exportPack() {
   const rows = [["id", "topic", "starting material", "reagent", "conditions", "level", "reference outcome", "lab prediction", "lab reasoning (first point)", "reference note", "sources (unchecked pointers)", "confidence", ...REVIEW_COLS]];
   for (const r of REFERENCE) {
     const m = P.drawSmiles(r.start), res = P.predict(m, r.reagent), g = P.reagentOf(r.reagent);
-    const pred = res.reacts ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.status === "declined" ? "Declined" : "No reaction";
+    const pred = res.reacts ? (res.products.length ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") : "No organic product") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.status === "declined" ? "Declined" : "No reaction";
     rows.push([r.id, r.topic, nameOfSmiles(r.start), g.label, g.cond, g.level, expected(r.expect), pred, res.why?.[0] || "", r.note, r.sources.map((x) => `${SOURCES[x.id] || x.id}: ${x.topic}`).join(" / "), r.confidence, ...(r.review ? [r.review.verdict, r.review.correction, r.review.note, r.review.reviewer, r.review.date] : ["", "", "", "", ""])]);
   }
   fs.writeFileSync(path.join(OUT, "reference-review.csv"), csv(rows));
@@ -60,25 +62,39 @@ function parseCsv(text) {
   if (f || row.length) { row.push(f); rows.push(row); }
   return rows.filter((r) => r.some((x) => x.trim()));
 }
-function importPack(file) {
-  const [head, ...rows] = parseCsv(fs.readFileSync(file, "utf8")), col = (n) => head.findIndex((h) => h.startsWith(n));
+/**
+ * The verdicts after importing a completed CSV over the ones already recorded: { reviews, bad, changed }. A row with a
+ * verdict replaces that case's record; "clear" removes it; a blank row changes nothing (a partial return keeps earlier
+ * verdicts, and a recorded disagreement stays disputed until it is resolved). `bad` lists invalid rows: when it isn't
+ * empty the caller must not write anything.
+ */
+export function mergeReviews(existing, csvText, known) {
+  const [head = [], ...rows] = parseCsv(csvText), col = (n) => head.findIndex((h) => h.startsWith(n));
   const ix = { id: col("id"), verdict: col("verdict"), correction: col("correction"), comment: col("comment"), reviewer: col("reviewer"), date: col("date") };
   if (Object.values(ix).some((i) => i < 0)) throw new Error("This doesn't look like reference-review.csv (missing columns).");
-  const known = new Set(REFERENCE.map((r) => r.id)), out = {}, bad = [];
+  const reviews = { ...existing }, bad = [], changed = [];
   for (const r of rows) {
-    const v = (r[ix.verdict] || "").trim().toLowerCase(); if (!v) continue;
-    if (!["agree", "disagree", "unsure"].includes(v)) { bad.push(`${r[ix.id]}: verdict “${v}”`); continue; }
-    if (!known.has(r[ix.id])) { bad.push(`${r[ix.id]}: not in the reference set`); continue; }
-    out[r[ix.id]] = { verdict: v, reviewer: r[ix.reviewer] || "", date: r[ix.date] || "", correction: r[ix.correction] || "", note: r[ix.comment] || "" };
+    const id = r[ix.id], v = (r[ix.verdict] || "").trim().toLowerCase(); if (!v) continue;
+    if (!known.has(id)) { bad.push(`${id}: not in the reference set`); continue; }
+    if (v === "clear") { if (id in reviews) { delete reviews[id]; changed.push(id); } continue; }
+    if (!["agree", "disagree", "unsure"].includes(v)) { bad.push(`${id}: verdict “${v}” (use agree, disagree, unsure or clear)`); continue; }
+    reviews[id] = { verdict: v, reviewer: r[ix.reviewer] || "", date: r[ix.date] || "", correction: r[ix.correction] || "", note: r[ix.comment] || "" }; changed.push(id);
   }
-  if (bad.length) { console.error(`Not imported:\n  ${bad.join("\n  ")}`); process.exitCode = 1; }
+  return { reviews, bad, changed };
+}
+function importPack(file) {
+  const { reviews: out, bad, changed } = mergeReviews(REVIEWS, fs.readFileSync(file, "utf8"), new Set(REFERENCE.map((r) => r.id)));
+  if (bad.length) { console.error(`Nothing imported: fix these rows and import again (reviews.js is unchanged).\n  ${bad.join("\n  ")}`); process.exitCode = 1; return; }
   const body = `// Verdicts from the independent chemistry review of the lab's reference set (tests/data/organic-reference.mjs),\n// written by \`node scripts/organic-review.mjs import <completed csv>\`. Read by rules.js (disputed rules).\n//   REVIEWS[id] = { verdict: "agree" | "disagree" | "unsure", reviewer, date, correction, note }\nexport const REVIEWS = ${JSON.stringify(out, null, 2)};\n`;
   fs.writeFileSync(path.join(ROOT, "kit/labs/chemistry/reactions/reviews.js"), body);
   const n = Object.values(out), c = (v) => n.filter((x) => x.verdict === v).length;
-  console.log(`imported ${n.length} verdicts: ${c("agree")} agree, ${c("disagree")} disagree, ${c("unsure")} unsure`);
+  console.log(`imported ${changed.length} change${changed.length === 1 ? "" : "s"}; ${n.length} verdicts recorded: ${c("agree")} agree, ${c("disagree")} disagree, ${c("unsure")} unsure`);
 }
 
-const [cmd, file] = process.argv.slice(2);
-if (cmd === "export") exportPack();
-else if (cmd === "import" && file) importPack(file);
-else { console.log("usage: node scripts/organic-review.mjs export | import <completed reference-review.csv>"); process.exitCode = 1; }
+// run as a command (tests import mergeReviews without running it)
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const [cmd, file] = process.argv.slice(2);
+  if (cmd === "export") exportPack();
+  else if (cmd === "import" && file) importPack(file);
+  else { console.log("usage: node scripts/organic-review.mjs export | import <completed reference-review.csv>"); process.exitCode = 1; }
+}

@@ -39,7 +39,10 @@ Send back the completed `reference-review.csv`. It is imported with
 node scripts/organic-review.mjs import reference-review.csv
 ```
 
-which writes the verdicts to `kit/labs/chemistry/reactions/reviews.js`. A case marked `agree` becomes *reviewed*; a
+which adds the verdicts to `kit/labs/chemistry/reactions/reviews.js`. Imports are cumulative: a row left blank keeps
+whatever verdict that case already has (so a partial review can be returned in parts), and the verdict `clear` removes
+a recorded one. If any row is invalid (an unknown case id or a verdict other than agree, disagree, unsure or clear),
+nothing is written: fix the rows and import again. A case marked `agree` becomes *reviewed*; a
 `disagree` marks the case and its rule *disputed* (the lab and its tutor then show the reviewer's note) until it is fixed (to the reference set, the predictor, or both). Regenerate the
 pack after changes with `node scripts/organic-review.mjs export`.
 

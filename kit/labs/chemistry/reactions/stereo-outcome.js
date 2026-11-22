@@ -92,7 +92,10 @@ export function stereoOutcome(m, reagentId, res) {
     const racemised = cfg.centres.some((c) => how.get(c.atom) === "racemised");
     if (!cfg.centres.length) form = "achiral";
     else if ((newOnes || racemised) && otherDefined) { for (const id of fromPlanar) strip(pm, id); form = "diastereomers"; }
-    else if (newOnes && lone.length > 1) { for (const id of fromPlanar) strip(pm, id); form = "stereoisomers"; }
+    // independent addition units: each syn or anti pair across one C=C counts once, each lone new centre once. With more
+    // than one unit their relative arrangement isn't fixed, so a mixture of stereoisomers forms (C=CCC/C=C/CC + Br₂:
+    // a lone centre and an anti pair, four stereoisomers in two racemic pairs, not one racemate)
+    else if (newOnes && lone.length + done.size / 2 > 1) { for (const id of fromPlanar) strip(pm, id); form = "stereoisomers"; }
     else if (racemised) form = "racemic";
     else if (cfg.centres.some((c) => !c.label)) form = cfg.centres.some((c) => how.get(c.atom) === "unknown") ? "unspecified" : "undrawn";
     else if (!startDefined) form = chiral(pm) ? "racemic" : "meso";

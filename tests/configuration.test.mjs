@@ -86,3 +86,37 @@ test("meso, chiral and how stereoisomers relate", () => {
   assert.equal(C.descriptor(rr), "(2R,3R)");
   assert.equal(C.chiral(drawSmiles("CC(C)O")), false, "no stereocentre");
 });
+
+// Regressions from the PR #159 review, checked against mol.js's independent 3D CIP assignment or against the definition
+const molRS = (s) => { const mm = M.molecule(s); return M.stereocentres(mm).filter((i) => i < M.parseSmiles(s).atoms.length).map((i) => M.chirality(mm, i)).sort().join(""); };
+
+test("relation: stereoisomers are compared under one whole-molecule mapping (2,3,4,5-tetrafluorohexane)", () => {
+  const iso = []; for (let k = 0; k < 16; k++) { const s = "C" + [0, 1, 2, 3].map((i) => `[C${(k >> i) & 1 ? "@@" : "@"}H](F)`).join("") + "C", m = drawSmiles(s); iso.push({ m, lab: C.descriptor(m).replace(/[^RS]/g, "") }); }
+  // by definition: the same molecule iff equal or equal read from the other end; enantiomers iff the mirror is
+  const inv = (x) => [...x].map((c) => (c === "R" ? "S" : "R")).join(""), rev = (x) => [...x].reverse().join("");
+  const truth = (a, b) => (a === b || a === rev(b) ? "identical" : inv(a) === b || inv(a) === rev(b) ? "enantiomers" : "diastereomers");
+  for (const a of iso) for (const b of iso) assert.equal(C.relation(a.m, b.m), truth(a.lab, b.lab), `${a.lab} vs ${b.lab}`);
+  const rrss = iso.find((x) => x.lab === "RRSS"), rsrs = iso.find((x) => x.lab === "RSRS");
+  assert.equal(C.relation(rrss.m, rsrs.m), "diastereomers");
+  assert.equal(C.chiral(drawSmiles("C[C@H](Br)[C@@H](C)Br")), false, "meso-2,3-dibromobutane is still achiral");
+});
+
+test("setting C=C geometry keeps every stereocentre's R/S (a reflected branch swaps its wedges and dashes)", () => {
+  for (const core of ["[C@H](F)Cl", "[C@@H](F)Cl", "[C@H](C)Br", "[C@@H](O)CC"]) for (const [l, r] of [["/", "/"], ["/", "\\"], ["\\", "/"], ["\\", "\\"]]) {
+    const s = `C${l}C=C${r}${core}`, m = drawSmiles(s);
+    assert.equal(C.configuration(m).centres.map((c) => c.label).sort().join(""), molRS(s), `${s}: drawn R/S matches the SMILES`);
+    const before = C.configuration(m).centres.map((c) => c.label).join(""), b = C.configuration(m).bonds[0];
+    assert.ok(C.setEZ(m, b.bond, b.label === "E" ? "Z" : "E"));
+    assert.equal(C.configuration(m).centres.map((c) => c.label).join(""), before, `${s}: setEZ changes only E/Z`);
+  }
+});
+
+test("the 3D model has the configuration drawn with wedges and dashes, and its mirror image when they're swapped", async () => {
+  const { build3d } = await import("../kit/labs/chemistry/lab3d.js");
+  for (const s of ["F[C@H](Cl)Br", "CC[C@@H](C)O", "C[C@H](Br)[C@@H](C)Br", "C[C@H]1CCCC[C@@H]1C", "CC[C@@](C)(Br)Cl", "C/C=C/[C@H](F)Cl"]) for (const flip of [false, true]) {
+    const m = flip ? C.mirror(drawSmiles(s)) : drawSmiles(s), want = C.configuration(m).centres.filter((c) => c.label).map((c) => c.label).sort().join("");
+    const { mol, drawn } = build3d(m);
+    assert.equal(M.stereocentres(mol).filter((i) => drawn.has(i)).map((i) => M.chirality(mol, i)).sort().join(""), want, `${s}${flip ? " (mirrored)" : ""}`);
+  }
+  assert.equal(build3d(drawSmiles("CC(Br)CC")).drawn.size, 0, "a flat drawing fixes no configuration");
+});
