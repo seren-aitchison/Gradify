@@ -2217,3 +2217,19 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 /* phones: a unit's lesson bar is too fine to tap (a dot is ~9px wide with 25 lessons), so it shows progress only;
    moving between lessons is Previous / Next and the Outline, which are full-size. Screen readers still get the links. */
 @media (max-width: 760px) { .co-steps a { pointer-events: none; } }
+
+/* Phones: the dock along the bottom has Home, Syllabus, Revise and Progress, and Ask AI in place of the floating orb
+   (which covered the text). So the course's tab bar shows only what the dock doesn't (Exams, Lab, the course's own
+   workspace, More) and the search, which then all fit without sideways scrolling. */
+@media (max-width: 760px) {
+  body:has(.co) .gai-fab:not([aria-expanded="true"]) { display: none; }
+  .co-tabs > a:is([data-v="home"], [data-v="learn"], [data-v="revise"], [data-v="me"]) { display: none; }
+}
+@media (max-width: 760px) {
+  .co-tabs .co-search { cursor: pointer; }
+  .co-tabs .co-search .cx-kbd { display: none; }
+  .co-tabs .co-search input { width: 0; }
+  .co-tabs .co-search:focus-within input, .co-tabs .co-search input:not(:placeholder-shown) { width: min(190px, 46vw); }
+}
+@media (max-width: 760px) { .co-tabs > a, .co-tabs .cx-morebtn { padding: 8px 10px; } .co-tabs { gap: 2px; } }
+@media (max-width: 760px) { .co-tabs .cx-moret { display: none; } .co-tabs .cx-morebtn .co-ic { width: 20px; height: 20px; } }
