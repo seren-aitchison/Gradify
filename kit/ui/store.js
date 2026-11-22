@@ -2,6 +2,8 @@
 // site data blocked or with storage full, the interface still works for the visit and simply forgets afterwards.
 //
 // Tests pass their own storage (anything with getItem/setItem) to the pure functions instead.
+import { esc } from "../core/text.js";
+export { esc };
 
 const mem = new Map();
 const fallback = { getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, String(v)), removeItem: (k) => mem.delete(k) };
@@ -16,8 +18,6 @@ export function readJson(key, dflt, store = local()) {
 export function writeJson(key, value, store = local()) {
   try { store.setItem(key, JSON.stringify(value)); return true; } catch { return false; }
 }
-
-export const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 export const isMac = () => /Mac|iPhone|iPad/.test(globalThis.navigator?.platform || globalThis.navigator?.userAgent || "");
 
 // the shared stylesheet loads itself the first time any component is used, from next to this file, so a page needs

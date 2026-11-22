@@ -4,7 +4,8 @@
 // The course engine (kit/course/course.js) loads labs lazily, embeds them in lessons and lists them in the Lab.
 export const C = { bg: "#0b0c0e", grid: "rgba(255,255,255,.07)", axis: "rgba(255,255,255,.35)", text: "#e8eaed", mute: "#9aa0a6",
   green: "#10b981", teal: "#14d4c4", lime: "#84cc16", amber: "#f59e0b", orange: "#f97316", gold: "#fbbf24", red: "#ff4d6d", blue: "#5aa0ff", violet: "#a78bfa", pink: "#f472b6", white: "#ffffff" };
-export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+import { esc } from "../core/text.js";
+export { esc };
 export const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 export const lerp = (a, b, t) => a + (b - a) * t;
 export const fmt = (v, d = 2) => (v == null || Number.isNaN(v) ? "–" : Math.abs(v) >= 1e4 || (Math.abs(v) < 1e-2 && v !== 0) ? v.toExponential(Math.max(1, d - 1)).replace("e", " × 10^").replace(/\^\+?(-?)(\d+)/, (m, s, n) => `^${s}${n}`) : (+v.toFixed(d)).toLocaleString());

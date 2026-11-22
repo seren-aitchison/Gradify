@@ -19,7 +19,7 @@ import { courseProgress } from "../ui/explore.js";
 import { masteryMap, LEVEL } from "../learning/mastery-map.js";
 
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+import { esc } from "../core/text.js";
 const CENTRES = [[50, 12], [6, 20], [24, 78], [-14, -58], [40, -98], [-25, 134]];
 const MINE = [60, 100];   // northern Asia: clear of the six areas
 // where pins sit around an area's centre: three subtopics, then extra topics of the learner's

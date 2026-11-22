@@ -8,7 +8,7 @@ import { glassSymbol } from "../kit/core/glass-icons.js";
 import { joinWaitlist, PRO_LIST } from "../kit/data/waitlist.js";
 
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+import { esc } from "../kit/core/text.js";
 const yes = `<span class="ck" aria-label="Included">✓</span>`, no = `<span class="no" aria-label="Not included">–</span>`;
 
 // each feature's symbol as a glass icon, its tile stepping along the Ultra gradient (--pro in assets/styles.css)

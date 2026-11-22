@@ -19,8 +19,7 @@ let manifest = null;
 // Gradify's ownership mark, on its own line at the foot of every diagram and lab, so it never covers a label
 // or a control. Hidden from screen readers (it would be read out under every diagram) and from pointer events.
 export const MARK = `<small class="gx-mark" aria-hidden="true">© Property of Gradify</small>`;
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
+import { esc } from "../core/text.js";
 export function previewMode() {
   try {
     if (/[?&#]diagrams=preview\b/.test(location.search + location.hash)) { localStorage.setItem("gradify:diagrams", "preview"); return true; }

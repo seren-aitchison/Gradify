@@ -34,7 +34,7 @@ const PAIRS = [["#4641ff", "#8b3dff"], ["#f055dd", "#ff6aa8"], ["#ff5600", "#ffc
 const INK = ["#6366f1", "#ec4899", "#f97316", "#14b8a6", "#8b5cf6", "#eab308", "#3b82f6", "#f43f5e"];
 const GOOD = "#16a34a", BAD = "#ef4444", WARN = "#d97706";
 const hash = (s) => { let h = 2166136261; for (const ch of String(s)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return h >>> 0; };
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+import { esc } from "./text.js";
 const plain = (s) => String(s ?? "").replace(/\*\*|__|`/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\^\{([^}]*)\}/g, "^$1").replace(/_\{([^}]*)\}/g, "_$1").replace(/\s+/g, " ").trim();
 
 /** A short label from a line of notes: its bold lead if it has one, else its first clause, cut to `n` characters. */

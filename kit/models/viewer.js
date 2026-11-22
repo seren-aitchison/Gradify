@@ -23,7 +23,7 @@ import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+import { esc } from "../core/text.js";
 const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
 
 // ---------- surface detail: small generated textures used as bump maps ----------

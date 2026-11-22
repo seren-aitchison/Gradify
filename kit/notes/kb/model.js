@@ -35,8 +35,8 @@ const DAY = 864e5;
 export const uid = (p = "r") => `${p}${Date.now().toString(36).slice(-5)}${Math.random().toString(36).slice(2, 9)}`;
 const now = () => Date.now();
 const tidy = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
-export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
+import { esc } from "../../core/text.js";
+export { esc };
 // ---------- the knowledge base ----------
 export function emptyKb() {
   return { v: 1, rems: {}, roots: [], gone: {}, tagDefs: {}, exams: {}, visits: {}, recent: [], pinned: [], cardMap: {}, docMap: {}, settings: {}, u: now() };

@@ -1,13 +1,12 @@
 // Notifications on screen: the settings panel (Intelligence and Settings), the gentle "turn on reminders" ask, and
 // the summary the open app's reminders work from. Rules: kit/intel/nudges.js. Delivery: kit/core/push.js.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { complete } from "../core/complete.js";
 import { haptic } from "../core/haptics.js";
 import { KINDS, prefsOf } from "../intel/nudges.js";
 import { status, enable, disable, savePrefs, startLocalReminders } from "../core/push.js";
 import { dayKey, DAY } from "../intel/memory.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const hhmm = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 
 /** The summary nudges are decided from, built from the live model (same shape the server builds from rows). */

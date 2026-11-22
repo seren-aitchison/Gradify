@@ -7,7 +7,7 @@
 //
 // All of it honours reduced motion: the learner's own setting (kit/data/profile.js, html[data-motion="reduce"]) or
 // the system's.
-import { ensureStyles } from "./store.js";
+import { ensureStyles, esc } from "./store.js";
 import { uiIcon } from "./icons.js";
 import { toast } from "./feedback.js";
 
@@ -50,5 +50,5 @@ export function mountToTop({ after = 1.5 } = {}) {
 export async function copyLink(url, message = "Link copied") {
   const href = new URL(url, location.href).href;
   try { await navigator.clipboard.writeText(href); toast(message, { tone: "ok", key: "gx-copy", icon: "link" }); return true; }
-  catch { toast({ html: `Couldn't copy automatically. The link: <code>${href.replace(/</g, "&lt;")}</code>` }, { tone: "warn", key: "gx-copy", timeout: 9000 }); return false; }
+  catch { toast({ html: `Couldn't copy automatically. The link: <code>${esc(href)}</code>` }, { tone: "warn", key: "gx-copy", timeout: 9000 }); return false; }
 }

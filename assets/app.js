@@ -15,7 +15,7 @@ trackView("Gradify");
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
 const slug = (n) => n.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
-const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+import { esc } from "../kit/core/text.js";
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // A site's icon, falling back to its first letters ("MedGradify" -> "Me") if it has none

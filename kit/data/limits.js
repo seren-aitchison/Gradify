@@ -17,8 +17,7 @@ export const TOOLS = { search: "Lesson search", map: "Mind map creator", cards: 
 const KEY = "gradify.limits", PREVIEW = "gradify.limits.preview";
 const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
 const write = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch { /* private mode: nothing counted */ } };
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
+import { esc } from "../core/text.js";
 // ?limits=preview / ?limits=off, remembered in this browser
 try {
   const q = new URLSearchParams(location.search).get("limits");

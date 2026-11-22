@@ -21,7 +21,7 @@ export const PLUS_FEATURES = {
 
 // £10, or £10.50: no ".00" in running text
 export const pounds = (pence) => (pence % 100 ? money(pence) : `£${pence / 100}`);
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+import { esc } from "../core/text.js";
 let cached = null;
 
 /**

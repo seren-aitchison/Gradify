@@ -1,8 +1,7 @@
 // One way to show a six-dimension mastery profile (kit/learning/mastery.js sixProfile), used by the
 // app's topic pages and every course's My progress. Styles: .mx-six in kit/styles/components.css.
+import { esc } from "../core/text.js";
 import { SIX, ENOUGH } from "./mastery.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const pct = (v) => `${Math.round(v * 100)}%`;
 const CERTAINTY = { low: "low certainty", medium: "medium certainty", high: "high certainty" };
 

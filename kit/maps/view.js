@@ -14,8 +14,7 @@ import { gate } from "../data/limits.js";
 
 const here = new URL(".", import.meta.url);
 const vendor = (p) => new URL(`../vendor/${p}`, here).href;
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
+import { esc } from "../core/text.js";
 // a branch colour for each main branch: Gradify's spectrum, readable on light and dark
 export const PALETTE = ["#4641ff", "#e5307a", "#ff6a00", "#13a37a", "#8c27ca", "#2f7fd8", "#d99a00", "#e04848"];
 const KIND = { gap: "Not in the notes yet", term: "Term", step: "Step", example: "Example", equation: "Formula", key: "Key point", pitfall: "Common mistake", case: "Case", law: "Legislation",
@@ -360,7 +359,7 @@ export function toMarkdown(m, lesson) {
 }
 /** A map as OPML 2.0, the outline format most outliners and mind map apps import (minder does too). */
 export function toOpml(m, lesson) {
-  const x = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const x = esc; // XML needs the same five escapes
   const node = (n, d) => `${"  ".repeat(d)}<outline text="${x(n.topic)}"${n.detail && plain(n.detail) !== n.topic ? ` _note="${x(n.detail)}"` : ""}${n.children.length ? `>\n${n.children.map((c) => node(c, d + 1)).join("\n")}\n${"  ".repeat(d)}</outline>` : "/>"}`;
   return `<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n  <head><title>${x(lesson)}: ${x(m.title)}</title></head>\n  <body>\n${node(m.root, 2)}\n  </body>\n</opml>\n`;
 }
