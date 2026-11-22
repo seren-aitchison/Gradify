@@ -133,6 +133,28 @@ const NAV = [
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
 const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+// the sidebar starts short: the everyday sections, then More. A section joins the list once it has been opened
+// (remembered on this device), and the open section always shows. The phone's More sheet still lists everything.
+const CORE_NAV = ["today", "notes", "study", "plan", "learning", "account"];
+const USED_KEY = "gradify.nav.used";
+const usedNav = () => { try { return JSON.parse(localStorage.getItem(USED_KEY) || "[]"); } catch { return []; } };
+function noteNavUse(section) {
+  if (!section || CORE_NAV.includes(section) || !NAV.some(([r]) => r === section)) return;
+  const u = usedNav(); if (u.includes(section)) return;
+  try { localStorage.setItem(USED_KEY, JSON.stringify([...u, section])); } catch { /* private mode */ }
+  const side = document.querySelector(".lo-side"); if (side) { paintSide(side); markLocks(); }
+}
+function paintSide(side) {
+  const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
+  const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
+  const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
+  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${main.map(link).join("")}
+    ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
+    ${settings ? link(settings) : ""}`;
+  side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
+  const cur = location.hash.replace(/^#\/?/, "").split("/")[0] || "today", sec = cur in SECTION_OF ? SECTION_OF[cur] : cur;
+  side.querySelectorAll("a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === sec)));
+}
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
@@ -142,7 +164,7 @@ function drawNav() {
     document.querySelector("#view")?.before(side);
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
-  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
+  paintSide(side);
   // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
@@ -270,6 +292,7 @@ async function route() {
   // someone new can try Gradify first: add notes (or the sample), get a pack, study it. Set-up is offered after that.
   if (needsSetup(profile) && !["start", "account", ...TRY_FIRST].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
+  noteNavUse(section);
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
