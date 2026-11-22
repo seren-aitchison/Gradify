@@ -262,6 +262,7 @@ H: Three mechanisms
 - **Transduction**: transfer of DNA by a **bacteriophage** (virus).
 - **Conjugation**: direct transfer, usually of a plasmid, through a **pilus**.
 - In contrast, **vertical** transfer passes genes from parent to offspring.
+D: bio-horizontal-transfer
 H: Importance
 - Spreads **antibiotic resistance** between species.
 - Spreads genes for toxins and virulence.
@@ -304,6 +305,7 @@ H: Structure
 - Some have a lipid **envelope** from the host membrane, with **glycoproteins**.
 - Sizes are typically 20–300 nm, much smaller than bacteria.
 - Shapes include **helical**, **icosahedral** and complex (such as bacteriophages).
+D: bio-virion
 H: Living or not
 - Viruses have no cells, no ribosomes and no metabolism.
 - They can only replicate inside host cells.

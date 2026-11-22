@@ -1,0 +1,19 @@
+{
+ "id": "bio-scale-free-network",
+ "renderer": "bionetwork",
+ "course": "biology",
+ "unit": "u13",
+ "lesson": "Biological networks",
+ "title": "A network with hubs",
+ "caption": "In a network, nodes are molecules and edges are interactions. The number of connections of a node is its degree. In a scale-free network most nodes have few connections and a few hubs have many. This one is simulated by adding each new node to a network with a preference for nodes that already have many links; many biological networks look like this, which is why removing a hub (as with p53 in the lesson) can disrupt so much.",
+ "alt": "A network of 36 circles joined by lines, with a few large orange hubs each joined to many small blue circles. A bar chart on the right shows many nodes with 2 or 3 links and a long tail up to the largest hub.",
+ "description": [
+  "Nodes are molecules; edges are interactions.",
+  "Degree: the number of connections of a node.",
+  "Hubs are highly connected nodes; most nodes have few links.",
+  "Simulated by preferential attachment: not real interaction data."
+ ],
+ "seed": 5,
+ "n": 36,
+ "m": 2
+}

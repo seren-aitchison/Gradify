@@ -164,3 +164,94 @@ mk("u14-16", "bio-flow-cytometry", "cytometry", "Flow cytometry: gating and coun
    gate={"fsc": [190, 420], "ssc": [90, 320], "population": "lymphocytes"},
    cd4={"frac": 0.40, "neg": [1.2, 0.28], "pos": [2.9, 0.3]},
    claims=[{"type": "gate", "percent": 35, "tol": 3}, {"type": "positive", "percent": 40, "tol": 4}])
+
+# ================================================================ extras: other lessons that were waiting on a renderer
+# ---------------------------------------------------------------- gene flow (two populations, symmetric migration)
+GF1, GF2 = "0.5+0.4*exp(x*log(0.9))", "0.5-0.4*exp(x*log(0.9))"
+mk("u06-08", "bio-gene-flow", "graph", "Gene flow makes populations more alike",
+   "Two populations start with different allele frequencies (0.9 and 0.1). Without gene flow the difference stays. If 5% of each population is replaced by migrants from the other every generation, the difference shrinks by a factor of 0.9 each generation (1 − 2m) and the two frequencies converge on 0.5. A simple model with no selection or drift: the migration rate is illustrative.",
+   "A graph of allele frequency over 40 generations. Two dashed reference lines at 0.9 and 0.1 show where the populations would stay with no gene flow. Two curves start at 0.9 and 0.1 and converge towards 0.5 with gene flow.",
+   ["Gene flow transfers alleles between populations, making them more similar.", "Without gene flow the populations can stay different, and may diverge.", "Model: migration m = 0.05 each way each generation; the difference falls by a factor (1 − 2m) = 0.9 per generation.", "No selection or drift in this model; the rate is illustrative."],
+   range={"x": [0, 40], "y": [0, 1]}, ticks=[[0, 10, 20, 30, 40], [0, 0.5, 1]], height=[340, 320], xLabelBelow=True, axisLabels=["generation", "frequency of allele A"],
+   curves=[{"expr": GF1, "colour": "a1"}, {"expr": GF2, "colour": "a2"}],
+   marks=[{"y": 0.9, "label": "no gene flow: stays 0.9"}, {"y": 0.1, "label": "no gene flow: stays 0.1"}],
+   legend=[["population 1", "a1"], ["population 2", "a2"]], legendData=[24, 0.62],
+   checks=[{"type": "point", "expr": GF1, "x": 0, "y": 0.9, "name": "population 1 starts at 0.9"}, {"type": "point", "expr": GF2, "x": 0, "y": 0.1, "name": "population 2 starts at 0.1"},
+           {"type": "value", "expr": GF1, "x": 40, "between": [0.5, 0.52], "name": "after 40 generations population 1 has almost reached 0.5"}, {"type": "value", "expr": GF2, "x": 40, "between": [0.48, 0.5], "name": "and population 2 has almost reached 0.5"},
+           {"type": "slope", "expr": GF1, "x": 5, "value": -0.0249, "name": "population 1 is falling towards 0.5: gradient 0.4 × ln 0.9 × 0.9^5 = −0.025 per generation at generation 5"}])
+
+# ---------------------------------------------------------------- the water cycle
+WN = [{"id": "atmosphere", "label": "water vapour and clouds", "tone": "a3"}, {"id": "oceans", "label": "oceans", "tone": "a1"}, {"id": "rivers and lakes", "label": "rivers and lakes", "tone": "a1"},
+      {"id": "land", "label": "land surface", "tone": "a5"}, {"id": "soil", "label": "soil water", "tone": "a2"}, {"id": "plants", "label": "plants", "tone": "good"}]
+mk("u11-14", "bio-water-cycle", "biocycle", "The water cycle",
+   "Water evaporates from oceans, lakes and soil, and plants return it to the air by transpiration. Water vapour condenses to form clouds, and precipitation (rain, snow and hail) returns it to the oceans and the land. On land it infiltrates into the soil or runs off into rivers, and roots take up soil water for the plants to transpire. Groundwater and ice are also stores, but they are not drawn here.",
+   "A ring of six stores joined by arrows: oceans to the atmosphere by evaporation; the atmosphere back to the oceans and to the land by condensation and precipitation; land to rivers and lakes by runoff and to soil by infiltration; rivers and lakes to the oceans; soil to plants by root uptake; and plants to the atmosphere by transpiration.",
+   ["Evaporation from oceans, lakes and soil; transpiration from plants.", "Condensation forms clouds; precipitation returns water to the oceans and the land.", "Infiltration into the soil, runoff into rivers; rivers flow to the sea.", "Plants take up soil water through their roots and return it to the air by transpiration."],
+   cycle="water", nodes=WN,
+   edges=[{"from": "oceans", "to": "atmosphere", "process": "evaporation", "colour": "a3"}, {"from": "atmosphere", "to": "oceans", "process": "condensation and precipitation", "colour": "a1"}, {"from": "atmosphere", "to": "land", "process": "condensation and precipitation", "colour": "a4"},
+          {"from": "land", "to": "rivers and lakes", "process": "runoff", "colour": "a5"}, {"from": "rivers and lakes", "to": "oceans", "process": "river flow", "colour": "a1"}, {"from": "land", "to": "soil", "process": "infiltration", "colour": "a2"},
+          {"from": "soil", "to": "plants", "process": "root uptake", "colour": "good"}, {"from": "plants", "to": "atmosphere", "process": "transpiration", "colour": "good"}])
+
+# ---------------------------------------------------------------- chromosomal abnormalities (numbers)
+mk("u04-32", "bio-karyotype-counts", "karyotype", "Counting chromosomes: aneuploidy",
+   "A typical human cell has 46 chromosomes: 44 autosomes and two sex chromosomes. Non-disjunction gives gametes with an extra or a missing chromosome, so the offspring have, for example, three copies of chromosome 21 (trisomy 21, Down syndrome, 47,XX,+21 or 47,XY,+21), only one sex chromosome (Turner syndrome, 45,X) or an extra X (Klinefelter syndrome, 47,XXY). Aneuploidy is an abnormal number of one chromosome.",
+   "Four rows. Typical: two copies of chromosome 21 and either XX or XY, 46 chromosomes. Down syndrome: three copies of chromosome 21, 47. Turner syndrome: a single X, 45. Klinefelter syndrome: XXY, 47.",
+   ["Typical: 46 chromosomes (46,XX or 46,XY).", "Down syndrome: trisomy 21, three copies of chromosome 21: 47,XX,+21.", "Turner syndrome: 45,X.", "Klinefelter syndrome: 47,XXY.", "Aneuploidy is an abnormal number of one chromosome; non-disjunction in meiosis is its usual cause."],
+   cases=[{"name": "typical female", "sex": "XX", "extra": {}, "total": 46, "notation": "46,XX"}, {"name": "Down syndrome", "sex": "XX", "extra": {"21": 1}, "total": 47, "notation": "47,XX,+21"},
+          {"name": "Turner syndrome", "sex": "X", "extra": {}, "total": 45, "notation": "45,X"}, {"name": "Klinefelter syndrome", "sex": "XXY", "extra": {}, "total": 47, "notation": "47,XXY"}])
+
+# ---------------------------------------------------------------- a plasmid vector map
+mk("u12-05", "bio-plasmid-map", "plasmidmap", "An engineered plasmid vector",
+   "An engineered vector is a small circular DNA molecule with an origin of replication (so it is copied in the host), a selectable marker such as an ampicillin resistance gene, a multiple cloning site with unique restriction sites for inserting a gene, and sometimes a promoter to drive its expression. This map is illustrative, not a named plasmid.",
+   "A circle labelled 3,000 base pairs with four coloured arcs: an origin of replication, an ampicillin resistance gene, a promoter and a short multiple cloning site with three unique cutting sites, EcoRI, BamHI and HindIII.",
+   ["Origin of replication: the plasmid is copied independently in the host.", "Selectable marker (here an ampicillin resistance gene): only cells that took up the plasmid grow on antibiotic.", "Multiple cloning site: unique restriction sites for inserting a gene.", "Promoter: drives expression of the inserted gene.", "Digesting with two enzymes cuts out a small fragment; the fragments add up to the plasmid's length."],
+   name="illustrative vector", length=3000,
+   features=[{"name": "ori", "type": "ori", "start": 100, "end": 700}, {"name": "AmpR", "type": "marker", "start": 1100, "end": 1961}, {"name": "promoter", "type": "promoter", "start": 2250, "end": 2350}, {"name": "MCS", "type": "mcs", "start": 2400, "end": 2460}],
+   sites=[{"enzyme": "EcoRI", "pos": 2410}, {"enzyme": "BamHI", "pos": 2430}, {"enzyme": "HindIII", "pos": 2450}], digest=["EcoRI", "HindIII"])
+
+# ---------------------------------------------------------------- habitat fragmentation on a grid
+def grid(rows, cols, blocks):
+    g = [["." for _ in range(cols)] for _ in range(rows)]
+    for r0, r1, c0, c1 in blocks:
+        for r in range(r0, r1 + 1):
+            for c in range(c0, c1 + 1): g[r][c] = "#"
+    return ["".join(r) for r in g]
+FRAG4 = [(1, 4, 1, 6), (1, 4, 9, 14), (6, 9, 1, 6), (6, 9, 9, 14)]
+mk("u11-24", "bio-habitat-fragmentation", "fragment", "Habitat fragmentation and edge effects",
+   "The same area of habitat as one block or as four small patches. Fragmenting it turns interior habitat into edge: the proportion of core habitat falls from about 63% to about 33%, although the habitat area is the same, and the patches are isolated. A narrow corridor joins the patches again, though corridor cells are all edge. An illustrative grid, not a real landscape.",
+   "Three small maps. One block of 96 habitat cells with a large dark core; the same 96 cells split into four patches, most of them now edge; and the four patches joined by narrow corridors into one connected patch.",
+   ["One block of habitat has a large core and a small share of edge.", "The same area split into four patches is mostly edge: edge effects (light, temperature, wind and predators) reach most of it, so species that need the interior decline.", "Corridors reconnect the patches, but they are all edge and add only a little habitat.", "Illustrative grid: 96 habitat cells in each of the first two maps."],
+   panels=[{"name": "continuous", "grid": grid(11, 16, [(1, 8, 2, 13)])}, {"name": "fragmented", "grid": grid(11, 16, FRAG4)}, {"name": "joined by corridors", "grid": grid(11, 16, FRAG4 + [(2, 2, 7, 8), (7, 7, 7, 8), (5, 5, 3, 3), (5, 5, 11, 11)])}],
+   claims=[{"type": "sameArea", "a": 0, "b": 1}, {"type": "patches", "panel": 0, "value": 1}, {"type": "patches", "panel": 1, "value": 4}, {"type": "moreEdge", "a": 0, "b": 1}, {"type": "lessCore", "a": 0, "b": 1}, {"type": "connected", "panel": 2}])
+
+# ---------------------------------------------------------------- scale-free biological networks
+mk("u13-18", "bio-scale-free-network", "bionetwork", "A network with hubs",
+   "In a network, nodes are molecules and edges are interactions. The number of connections of a node is its degree. In a scale-free network most nodes have few connections and a few hubs have many. This one is simulated by adding each new node to a network with a preference for nodes that already have many links; many biological networks look like this, which is why removing a hub (as with p53 in the lesson) can disrupt so much.",
+   "A network of 36 circles joined by lines, with a few large orange hubs each joined to many small blue circles. A bar chart on the right shows many nodes with 2 or 3 links and a long tail up to the largest hub.",
+   ["Nodes are molecules; edges are interactions.", "Degree: the number of connections of a node.", "Hubs are highly connected nodes; most nodes have few links.", "Simulated by preferential attachment: not real interaction data."],
+   seed=5, n=36, m=2)
+
+# ---------------------------------------------------------------- templates: virion, horizontal transfer, chromatin
+sec("u09-08", "bio-virion", "Virion structure",
+    "A virion has a genome of DNA or RNA inside a protein coat, the capsid, which is made of capsomeres. Some viruses also have a lipid envelope from the host membrane, with glycoproteins that stick out of it. A virus has no cell, no ribosomes and no metabolism. Typical sizes are 20–300 nm; the drawing is not to scale.",
+    "Two virions. A non-enveloped one: a hexagonal capsid enclosing a coiled genome. An enveloped one: a round lipid envelope with spikes of glycoprotein, enclosing a capsid and a coiled genome.",
+    ["Genome of DNA or RNA, single- or double-stranded.", "A protein capsid made of capsomeres.", "Some viruses have a lipid envelope from the host membrane, with glycoproteins.", "No cell, ribosomes or metabolism: viruses replicate only inside host cells."],
+    "virion", ["genome", "capsid", "envelope", "glycoprotein"],
+    [{"type": "order", "value": ["envelope", "capsid", "genome"], "from": "the outside", "to": "the centre", "text": "envelope, capsid, genome from the outside in"},
+     {"type": "fact", "id": "capsidEnclosesGenome", "text": "the capsid encloses the genome"}, {"type": "fact", "id": "envelopeEnclosesCapsid", "text": "the envelope encloses the capsid"},
+     {"type": "fact", "id": "glycoproteinsInEnvelope", "text": "the glycoproteins stick out of the envelope"}, {"type": "fact", "id": "noCellularMachinery", "text": "no ribosomes or other cell machinery are drawn"}])
+
+sec("u09-07", "bio-horizontal-transfer", "Three ways bacteria exchange genes",
+    "In transformation a bacterium takes up free DNA from its surroundings. In transduction a bacteriophage carries DNA from one bacterium to another. In conjugation two bacteria join through a pilus and usually pass a plasmid through it. All three are horizontal transfer, unlike vertical transfer from parent to offspring.",
+    "Three panels. Transformation: free DNA fragments above a bacterium and an arrow into it. Transduction: a bacteriophage between two bacteria with an arrow to the lower one. Conjugation: two bacteria joined by a pilus, a plasmid shown between them.",
+    ["Transformation: uptake of free DNA from the environment.", "Transduction: transfer of DNA by a bacteriophage.", "Conjugation: direct transfer, usually of a plasmid, through a pilus.", "These spread antibiotic resistance and virulence genes between bacteria."],
+    "hgt", ["free DNA", "recipient cell", "bacteriophage", "pilus", "plasmid"],
+    [{"type": "order", "value": ["transformation", "transduction", "conjugation"], "from": "the left", "to": "the right", "text": "transformation, transduction, conjugation from left to right"},
+     {"type": "fact", "id": "transformationNeedsNoContact", "text": "transformation takes up free DNA and needs no donor cell"}, {"type": "fact", "id": "transductionUsesPhage", "text": "transduction uses a bacteriophage"}, {"type": "fact", "id": "conjugationUsesPilus", "text": "conjugation needs contact through a pilus"}])
+
+sec("u04-16", "bio-chromatin-marks", "Chromatin marks and gene expression",
+    "Histone acetylation loosens chromatin, which usually activates genes: the promoter is open to RNA polymerase. DNA methylation (methyl groups on cytosine, often near a promoter) and some histone methylation usually silence genes: the chromatin is tight and RNA polymerase cannot reach the promoter. These marks can be reversed and are copied when cells divide.",
+    "Two rows of nucleosomes on DNA. The upper row is spread out, the histone tails carry acetyl groups and RNA polymerase sits on the promoter. The lower row is packed tightly, the DNA near the promoter carries methyl groups, and RNA polymerase is crossed out.",
+    ["Histone acetylation loosens chromatin and usually activates genes.", "DNA methylation, often near promoters, usually silences genes.", "Deacetylation and some methylation tighten chromatin, silencing genes.", "Marks can be reversed, so drugs that block DNA methyltransferases or histone deacetylases are used in some cancers."],
+    "chromatin", ["nucleosome", "histone tail", "acetyl group", "methyl group", "promoter", "RNA polymerase"],
+    [{"type": "fact", "id": "acetylationLoosens", "text": "the acetylated chromatin is more open than the silenced chromatin"}, {"type": "fact", "id": "methylationOnSilenced", "text": "methyl groups are on the silenced gene only"}, {"type": "fact", "id": "polymeraseOnlyOnOpen", "text": "RNA polymerase reaches the promoter only on the open chromatin"}])

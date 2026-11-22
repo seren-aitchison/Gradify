@@ -560,6 +560,7 @@ H: Processes
 - **Precipitation**: rain, snow and hail.
 - **Infiltration** into soil and **runoff** into rivers.
 - Water is stored in oceans, ice, groundwater, lakes and the atmosphere.
+D: bio-water-cycle
 H: Living things and humans
 - Plants return large amounts of water to the air by transpiration.
 - Forests influence local rainfall and reduce runoff.
@@ -975,6 +976,7 @@ H: Fragmentation
 - Small patches support fewer species and smaller populations.
 - **Edge effects**: edges have different light, temperature, wind and predators from the interior.
 - Species needing interior conditions decline.
+D: bio-habitat-fragmentation
 H: Isolation and solutions
 - **Island biogeography theory**: larger, closer patches support more species.
 - Isolated populations lose genetic diversity through drift and inbreeding.

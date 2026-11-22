@@ -13,6 +13,10 @@
 //   cleavage   the zygote dividing without growing: each cell's area recomputed, doubling, the lesson's days
 //   fertilisation  the steps in order (acrosome, fusion, cortical reaction, nuclei), one sperm in, 23 + 23 = 46
 //   cytometry  a seeded flow-cytometry simulation: gate and positive percentages are counted from the events
+//   karyotype  chromosome numbers worked out from copies; the notation rebuilt (47,XX,+21) and syndromes checked
+//   plasmidmap a circular vector map: required features, no overlaps, unique cutters in the MCS, digest fragments add up
+//   fragment   habitat fragmentation on a grid: patches, edge and core cells counted from the grid
+//   bionetwork a seeded preferential-attachment network: hubs, degree counts and the heavy tail checked
 //   tract      the circulation, airway or gut as a route (drawn as a flow): every step is one blood, air or food really takes
 //   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
 //   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
@@ -1230,6 +1234,10 @@ export const CYCLES = {
     "nitrogen fixation": [["atmosphere"], ["ammonium"]], ammonification: [["dead matter"], ["ammonium"]], nitrification: [["ammonium"], ["nitrate"]], assimilation: [["nitrate"], ["plants"]],
     feeding: [["plants"], ["animals"]], "death and excretion": [["plants", "animals"], ["dead matter"]], denitrification: [["nitrate"], ["atmosphere"]],
   },
+  water: {
+    evaporation: [["oceans", "rivers and lakes", "soil"], ["atmosphere"]], transpiration: [["plants"], ["atmosphere"]],
+    "condensation and precipitation": [["atmosphere"], ["oceans", "land", "rivers and lakes"]], infiltration: [["land"], ["soil"]], runoff: [["land"], ["rivers and lakes"]], "river flow": [["rivers and lakes"], ["oceans"]], "root uptake": [["soil"], ["plants"]],
+  },
 };
 function biocycleDraw(spec, W, narrow) {
   const H = narrow ? 470 : 430, cx = W / 2, cy = H / 2, rx = W * (narrow ? 0.34 : 0.34), ry = H * (narrow ? 0.34 : 0.33), n = spec.nodes.length;
@@ -1830,7 +1838,84 @@ const SECTION = {
       },
     };
   })(),
+  virion: (() => {
+    // two virions drawn in the same units: a non-enveloped one (capsid and genome) and an enveloped one with glycoproteins
+    const G = { plain: { capsid: 46, genome: 22 }, enveloped: { envelope: 70, capsid: 40, genome: 19, spikes: 14, spikeLen: 13 }, organelles: [] };
+    return {
+      parts: { genome: "DNA or RNA, single- or double-stranded.", capsid: "The protein coat, made of repeating units called capsomeres.", capsomere: "One of the repeating protein units that make up the capsid.", envelope: "A lipid layer taken from the host cell membrane (only some viruses have one).", glycoprotein: "A protein with sugar chains that sticks out of the envelope; it is used to bind a host cell." },
+      order: ["envelope", "capsid", "genome"],
+      facts: { capsidEnclosesGenome: () => G.plain.capsid > G.plain.genome && G.enveloped.capsid > G.enveloped.genome, envelopeEnclosesCapsid: () => G.enveloped.envelope > G.enveloped.capsid, glycoproteinsInEnvelope: () => G.enveloped.spikes > 0 && G.enveloped.spikeLen > 0, noCellularMachinery: () => G.organelles.length === 0 },
+      draw() {
+        let s = text(105, 18, "non-enveloped", { size: 12, weight: 700, fill: C.soft }) + text(315, 18, "enveloped", { size: 12, weight: 700, fill: C.soft }), m = [];
+        const hex = (cx, cy, r) => Array.from({ length: 6 }, (_, i) => pol(cx, cy, r, 30 + i * 60).map(f1).join(" ")).join(" L"), squiggle = (cx, cy, r) => `<path d="M${cx - r} ${cy} q${r / 3} ${-r} ${r / 1.5} 0 t${r / 1.5} 0 t${r / 1.5} 0" fill="none" stroke="${C.a5}" stroke-width="2.6" stroke-linecap="round"/><path d="M${cx - r * 0.6} ${cy + r * 0.5} q${r / 3} ${-r * 0.8} ${r / 1.2} 0 t${r / 1.2} 0" fill="none" stroke="${C.a5}" stroke-width="2.6" stroke-linecap="round"/>`;
+        const capsid = (cx, cy, r) => `<path d="M${hex(cx, cy, r)} Z" fill="${C.a3}" fill-opacity=".25" stroke="${C.a3}" stroke-width="3"/>` + Array.from({ length: 6 }, (_, i) => { const [x, y] = pol(cx, cy, r, 30 + i * 60); return `<path d="M${cx} ${cy} L${f1(x)} ${f1(y)}" stroke="${C.a3}" stroke-width="1.4"/>`; }).join("");
+        const P = G.plain, cx1 = 105, cy = 150;
+        s += part("capsid", this.parts.capsid, capsid(cx1, cy, P.capsid + 30)) + part("genome", this.parts.genome, squiggle(cx1, cy, P.genome + 12));
+        m.push(["capsid", ...pol(cx1, cy, P.capsid + 30, 150), "L"], ["genome", cx1 - 10, cy, "L"]);
+        const E = G.enveloped, cx2 = 315;
+        s += part("envelope", this.parts.envelope, `<circle cx="${cx2}" cy="${cy}" r="${E.envelope + 28}" fill="${C.a4}" fill-opacity=".12" stroke="${C.a4}" stroke-width="5"/>`) + part("capsid", this.parts.capsid, capsid(cx2, cy, E.capsid + 20)) + part("genome", this.parts.genome, squiggle(cx2, cy, E.genome + 8));
+        s += part("glycoprotein", this.parts.glycoprotein, Array.from({ length: E.spikes }, (_, i) => { const a = i * (360 / E.spikes), [x1, y1] = pol(cx2, cy, E.envelope + 28, a), [x2, y2] = pol(cx2, cy, E.envelope + 28 + E.spikeLen + 10, a); return `<path d="M${f1(x1)} ${f1(y1)} L${f1(x2)} ${f1(y2)}" stroke="${C.a2}" stroke-width="3"/><circle cx="${f1(x2)}" cy="${f1(y2)}" r="3.6" fill="${C.a2}"/>`; }).join(""));
+        m.push(["envelope", ...pol(cx2, cy, E.envelope + 28, 60)], ["glycoprotein", ...pol(cx2, cy, E.envelope + 28 + E.spikeLen + 10, -2 * (360 / E.spikes))]);
+        s += text(210, 292, "typically 20–300 nm; not to scale", { size: 11, fill: C.soft });
+        return { s, m };
+      },
+    };
+  })(),
+  hgt: (() => {
+    // the three ways bacteria exchange genes: what carries the DNA, and whether the cells must touch
+    const G = { transformation: { carrier: "free DNA", contact: false }, transduction: { carrier: "bacteriophage", contact: false }, conjugation: { carrier: "pilus", contact: true } };
+    return {
+      parts: { "free DNA": "DNA released into the environment by a dead cell, taken up by another bacterium: transformation.", bacteriophage: "A virus that carries a piece of bacterial DNA from one cell to the next: transduction.", pilus: "A thin tube joining two bacteria through which a plasmid is passed from one to the other: conjugation.", plasmid: "A small circular DNA molecule, usually the DNA transferred in conjugation.", "recipient cell": "The bacterium that receives the new genes." },
+      order: ["transformation", "transduction", "conjugation"],
+      facts: { transformationNeedsNoContact: () => !G.transformation.contact && G.transformation.carrier === "free DNA", transductionUsesPhage: () => G.transduction.carrier === "bacteriophage", conjugationUsesPilus: () => G.conjugation.contact && G.conjugation.carrier === "pilus" },
+      draw() {
+        let s = "", m = [];
+        const cell = (x, y, w = 70, h = 40, fill = C.a4) => `<rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="${h / 2}" fill="${fill}" fill-opacity=".18" stroke="${fill}" stroke-width="2.2"/>`;
+        const ring = (x, y, r = 9, col = C.a5) => `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${col}" stroke-width="2.4"/>`;
+        const title = (x, t) => text(x, 18, t, { size: 12.5, weight: 700 });
+        // transformation: DNA fragments float free; one is taken up
+        s += title(70, "transformation") + cell(70, 214) + ring(70, 214, 9, C.a4) + part("free DNA", this.parts["free DNA"], `<path d="M30 70 q8 -12 16 0 t16 0 t16 0" fill="none" stroke="${C.a2}" stroke-width="3"/><path d="M60 118 q8 -12 16 0 t16 0" fill="none" stroke="${C.a2}" stroke-width="3"/>` + arrowSvg(70, 138, 70, 186, C.a2));
+        m.push(["free DNA", 40, 70, "L"], ["recipient cell", 40, 214, "L"]);
+        // transduction: a phage carries bacterial DNA from a donor to a recipient
+        s += title(210, "transduction") + cell(210, 62) + ring(210, 62, 9, C.a4) + cell(210, 214) + ring(210, 214, 9, C.a4) + part("bacteriophage", this.parts.bacteriophage, `<g transform="translate(210 108)"><path d="M0 -14 l10 6 v11 l-10 6 l-10 -6 v-11 Z" fill="${C.a3}" fill-opacity=".4" stroke="${C.a3}" stroke-width="2.2"/><path d="M0 9 V30 M-8 35 L0 30 L8 35" stroke="${C.a3}" stroke-width="2.4" fill="none"/><path d="M-5 -5 q2.5 -5 5 0 t5 0" fill="none" stroke="${C.a5}" stroke-width="2"/></g>` + arrowSvg(210, 150, 210, 190, C.a3));
+        m.push(["bacteriophage", 222, 108]);
+        // conjugation: a pilus joins two cells and a plasmid passes through it
+        s += title(350, "conjugation") + cell(350, 62) + ring(350, 62, 9, C.a4) + cell(350, 214) + ring(350, 214, 9, C.a4) + part("pilus", this.parts.pilus, `<path d="M350 82 V194" stroke="${C.a1}" stroke-width="7" stroke-linecap="round" opacity=".8"/><path d="M350 82 V194" stroke="${C.panel}" stroke-width="2.4"/>`) + part("plasmid", this.parts.plasmid, `<circle cx="372" cy="62" r="5.5" fill="none" stroke="${C.a5}" stroke-width="2.2"/><circle cx="350" cy="138" r="5.5" fill="none" stroke="${C.a5}" stroke-width="2.2"/><circle cx="372" cy="214" r="5.5" fill="none" stroke="${C.a5}" stroke-width="2.2"/>`);
+        m.push(["pilus", 354, 108], ["plasmid", 350, 138]);
+        return { s, m };
+      },
+    };
+  })(),
+  chromatin: (() => {
+    // chromatin in two states: open (histone tails acetylated) and closed (DNA methylated at the promoter)
+    const G = { open: { gap: 18, acetyl: 10, methyl: 0, access: true }, closed: { gap: 2, acetyl: 0, methyl: 4, access: false }, nucleosomes: 5 };
+    return {
+      parts: { nucleosome: "DNA wound round a core of eight histone proteins.", "histone tail": "A protein tail sticking out of the nucleosome, where chemical groups can be added.", "acetyl group": "Histone acetylation loosens the chromatin, which usually activates genes.", "methyl group": "Methyl groups on cytosine, often near a promoter, usually silence the gene.", promoter: "The DNA sequence where transcription starts.", "RNA polymerase": "The enzyme that transcribes the gene: it can reach the promoter only if the chromatin is open." },
+      order: ["open", "closed"],
+      facts: { acetylationLoosens: () => G.open.gap > G.closed.gap && G.open.acetyl > 0 && G.closed.acetyl === 0, methylationOnSilenced: () => G.closed.methyl > 0 && G.open.methyl === 0, polymeraseOnlyOnOpen: () => G.open.access && !G.closed.access },
+      draw() {
+        let s = text(210, 18, "active gene: acetylated histone tails", { size: 12, weight: 700, fill: C.soft }) + text(210, 168, "silenced gene: methylated DNA, tight chromatin", { size: 12, weight: 700, fill: C.soft }), m = [];
+        const row = (y, S, open) => {
+          let o = "", x = 40; const r = 17, pos = [];
+          for (let i = 0; i < G.nucleosomes; i++) { pos.push(x + r); o += part("nucleosome", this.parts.nucleosome, `<circle cx="${x + r}" cy="${y}" r="${r}" fill="${C.a4}" fill-opacity=".28" stroke="${C.a4}" stroke-width="2.4"/><circle cx="${x + r}" cy="${y}" r="9" fill="${C.a4}" fill-opacity=".4"/>`); x += 2 * r + S.gap; }
+          o = `<path d="M24 ${y + 24} H${x + 24}" stroke="${C.ink}" stroke-width="3" stroke-opacity=".7"/>` + o;   // the linker DNA under the nucleosomes
+          o += part("histone tail", this.parts["histone tail"], pos.map((px) => `<path d="M${px - 8} ${y - 15} q-8 -14 -2 -24 M${px + 8} ${y - 15} q8 -14 2 -24" fill="none" stroke="${C.a3}" stroke-width="2"/>`).join(""));
+          if (S.acetyl) o += part("acetyl group", this.parts["acetyl group"], pos.flatMap((px) => [[px - 12, y - 41], [px + 12, y - 41]]).slice(0, S.acetyl).map(([ax, ay]) => `<circle cx="${ax}" cy="${ay}" r="5.2" fill="${C.a2}" stroke="${C.a2}"/>`).join(""));
+          if (S.methyl) o += part("methyl group", this.parts["methyl group"], Array.from({ length: S.methyl }, (_, i) => `<circle cx="${x - 70 + i * 14}" cy="${y + 33}" r="4.4" fill="${C.a5}"/><path d="M${x - 70 + i * 14} ${y + 28.6} V${y + 24}" stroke="${C.a5}" stroke-width="1.6"/>`).join(""));
+          o += part("promoter", this.parts.promoter, `<rect x="${x + 6}" y="${y + 20}" width="34" height="9" fill="${C.good}" fill-opacity=".7" stroke="${C.good}" stroke-width="1.4"/>`);
+          if (S.access) o += part("RNA polymerase", this.parts["RNA polymerase"], `<ellipse cx="${x + 23}" cy="${y + 6}" rx="18" ry="12" fill="${C.a1}" fill-opacity=".6" stroke="${C.a1}" stroke-width="2"/>`);
+          else o += `<path d="M${x + 5} ${y + 5} l36 16 M${x + 41} ${y + 5} l-36 16" stroke="${C.bad}" stroke-width="2.4" opacity=".75"/>`;
+          return { o, x, pos };
+        };
+        const a = row(80, G.open, true), b = row(230, G.closed, false);
+        s += a.o + b.o;
+        m.push(["acetyl group", a.pos[1] + 12, 39], ["RNA polymerase", a.x + 23, 86], ["nucleosome", a.pos[0], 80], ["histone tail", a.pos[2] - 8, 55], ["methyl group", b.x - 56, 263], ["promoter", b.x + 23, 250]);
+        return { s, m };
+      },
+    };
+  })(),
 };
+const arrowSvg = (x1, y1, x2, y2, stroke) => arrow(x1, y1, x2, y2, { stroke, w: 2.4, head: 9 });
 function sectionDraw(spec, W, narrow) {
   if (!SECTION[spec.template]) return { s: "", H: 40 }; // the checks report the unknown template
   const T = SECTION[spec.template], { s: art, m } = T.draw.call(T), wanted = spec.labels.map((n) => m.find((q) => q[0] === n)).filter(Boolean);
@@ -2057,6 +2142,188 @@ function cytometryChecks(spec) {
   return out;
 }
 
+// ======================================================================== karyotype
+// Chromosome numbers worked out from copies. spec: cases [{name, sex: "XX"|"XY"|"X"|"XXY", extra: {chromosome: copies added}}, ...].
+// The total is 44 autosomes + the sex chromosomes + extras; the standard notation is rebuilt from it ("47,XX,+21") and must match
+// the one stated; named syndromes must be what the lesson says: Down 47 with an extra 21, Turner 45,X, Klinefelter 47,XXY.
+// Lengths are the approximate sizes of human chromosomes 21, X and Y in the reference genome (megabases), drawn to one scale.
+export const CHR_MB = { 21: 46.7, X: 156.0, Y: 57.2 };
+export function karyotypeOf(c) {
+  const extras = Object.entries(c.extra || {}).filter(([, n]) => n), total = 44 + c.sex.length + extras.reduce((a, [, n]) => a + n, 0);
+  const ex = extras.map(([k, n]) => (n > 0 ? `+${k}` : `-${k}`)).join(",");
+  return { total, notation: `${total},${c.sex}${ex ? "," + ex : ""}`, aneuploid: total !== 46 };
+}
+const SYNDROME = { "Down syndrome": (c) => (c.extra?.[21] === 1) && Object.keys(c.extra).length === 1, "Turner syndrome": (c) => c.sex === "X" && !Object.values(c.extra || {}).some(Boolean), "Klinefelter syndrome": (c) => c.sex === "XXY" && !Object.values(c.extra || {}).some(Boolean), typical: (c) => (c.sex === "XX" || c.sex === "XY") && !Object.values(c.extra || {}).some(Boolean) };
+function karyotypeDraw(spec, W, narrow) {
+  const k = 0.55, colour = { 21: C.a4, X: C.a2, Y: C.a5 }, rodH = CHR_MB.X * k, rowH = narrow ? rodH + 92 : rodH + 46;
+  let s = "";
+  const rod = (x, y, mb, col) => `<rect x="${f1(x)}" y="${f1(y - mb * k)}" width="12" height="${f1(mb * k)}" rx="6" fill="${col}" fill-opacity=".55" stroke="${col}" stroke-width="1.8"/>`;
+  spec.cases.forEach((c, i) => {
+    const K = karyotypeOf(c), y0 = 10 + i * rowH, n21 = 2 + (c.extra?.[21] || 0), tx = 14;
+    s += `<g data-case="${esc(c.name)}">` + text(tx, y0 + 14, c.name, { size: 13.5, weight: 700, anchor: "start" });
+    let base;
+    if (narrow) { s += text(tx, y0 + 34, `${K.notation}  ·  ${K.total} chromosomes${K.aneuploid ? ": aneuploid" : ""}`, { size: 12, anchor: "start", fill: C.a1, weight: 700 }); base = y0 + 50 + rodH; }
+    else { s += text(tx, y0 + 34, K.notation, { size: 13, anchor: "start", fill: C.a1, weight: 700 }) + text(tx, y0 + 52, `${K.total} chromosomes${K.aneuploid ? ": aneuploid" : ""}`, { size: 11.5, anchor: "start", fill: C.soft }); base = y0 + 8 + rodH; }
+    const gx = narrow ? 40 : 250, sx0 = gx + 100 + (narrow ? 20 : 60);
+    for (let j = 0; j < n21; j++) s += part("chromosome 21", "The smallest autosome (about 47 Mb).", rod(gx + j * 22, base, CHR_MB[21], colour[21]));
+    [...c.sex].forEach((ch, j) => { s += part(`${ch} chromosome`, ch === "X" ? "The X chromosome (about 156 Mb)." : "The Y chromosome (about 57 Mb).", rod(sx0 + j * 22, base, CHR_MB[ch], colour[ch])); });
+    s += text(gx, base + 16, `21 × ${n21}`, { size: 11.5, anchor: "start", fill: C.soft }) + text(sx0, base + 16, c.sex, { size: 11.5, anchor: "start", fill: C.soft }) + `</g>`;
+    if (i < spec.cases.length - 1) s += `<path d="M10 ${y0 + rowH - 8} H${W - 10}" stroke="${C.line}" stroke-width="1"/>`;
+  });
+  const H = 10 + spec.cases.length * rowH, nb = textBlock(W / 2, H + 8, "Chromosomes 21, X and Y are drawn to one scale; all other chromosomes are present in pairs.", narrow ? 46 : 120, { size: 11, fill: C.soft });
+  return { s: s + nb.svg, H: H + 16 + nb.h };
+}
+function karyotypeChecks(spec) {
+  const out = [];
+  for (const c of spec.cases) {
+    const K = karyotypeOf(c);
+    out.push(check(`${c.name}: ${K.total} chromosomes in total`, K.total === c.total, `counted ${K.total}`));
+    out.push(check(`${c.name}: the notation is ${K.notation}`, K.notation === c.notation, `stated ${c.notation}`));
+    const known = SYNDROME[c.name === "typical" || /^typical/.test(c.name) ? "typical" : c.name];
+    out.push(check(`${c.name}: matches the chromosome change that name means`, !!known && known(c), known ? "" : "unknown name"));
+    out.push(check(`${c.name}: aneuploid exactly when the count is not 46`, K.aneuploid === (c.total !== 46)));
+  }
+  return out;
+}
+
+// ======================================================================== plasmidmap
+// A circular map of an engineered vector. spec: name, length (bp), features [{name, type: "ori"|"marker"|"promoter"|"mcs", start, end}],
+// sites [{enzyme, pos}], digest: [enzymes]. An engineered vector needs an origin, a selectable marker and a multiple cloning site;
+// features must lie on the plasmid and not overlap; every site cuts once and inside the MCS; fragment sizes of a digest add up to the length.
+const FEATURE_COLOUR = { ori: "a3", marker: "a2", promoter: "good", mcs: "a1" };
+export function digestFragments(length, positions) {
+  const p = [...positions].sort((a, b) => a - b);
+  if (!p.length) return [length];
+  return p.map((x, i) => (i === p.length - 1 ? p[0] + length - x : p[i + 1] - x));
+}
+function plasmidDraw(spec, W, narrow) {
+  const size = narrow ? 340 : 400, R = narrow ? 84 : size / 2 - 78, cx = narrow ? W / 2 : 14 + size / 2 + 60, cy = size / 2 + 6, ang = (bp) => (360 * bp) / spec.length - 90;
+  let s = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${C.line}" stroke-width="2"/>`;
+  const labels = [];
+  for (const f of spec.features) {
+    const a0 = ang(f.start), a1 = ang(f.end), big = a1 - a0 > 180 ? 1 : 0, [x0, y0] = pol(cx, cy, R, a0), [x1, y1] = pol(cx, cy, R, a1), col = C[FEATURE_COLOUR[f.type]] || C.a1;
+    s += part(f.name, FEATURE_FN[f.type], `<path d="M${f1(x0)} ${f1(y0)} A${R} ${R} 0 ${big} 1 ${f1(x1)} ${f1(y1)}" fill="none" stroke="${col}" stroke-width="${f.type === "mcs" ? 20 : 15}" stroke-linecap="butt"/>`);
+    labels.push([f.name, f.start, f.end, a0 + (a1 - a0) / 2]);
+  }
+  for (const t of spec.sites) { const [x0, y0] = pol(cx, cy, R - 14, ang(t.pos)), [x1, y1] = pol(cx, cy, R + 14, ang(t.pos)); s += `<path d="M${f1(x0)} ${f1(y0)} L${f1(x1)} ${f1(y1)}" stroke="${C.ink}" stroke-width="1.8"/>`; }
+  for (const [name, a, b, ang0] of labels) { const [x, y] = pol(cx, cy, R + (narrow ? 30 : 40), ang0), a2 = ((ang0 % 360) + 360) % 360, right = a2 < 90 || a2 > 270; s += text(x + (right ? 4 : -4), y, name, { size: 12.5, weight: 700, anchor: right ? "start" : "end" }) + text(x + (right ? 4 : -4), y + 15, `${a}–${b}`, { size: 10.5, fill: C.soft, anchor: right ? "start" : "end" }); }
+  s += text(cx, cy - 22, spec.name, { size: 13, weight: 700 }) + text(cx, cy - 4, `${spec.length.toLocaleString("en")} bp`, { size: 12 }) + text(cx, cy + 14, "illustrative: not a named plasmid", { size: 10.5, fill: C.soft });
+  const sites = [...spec.sites].sort((a, b) => a.pos - b.pos).map((t) => `${t.enzyme} ${t.pos}`).join("  ·  ");
+  let H = size + 8;
+  const sb = textBlock(narrow ? W / 2 : cx, H + 12, `Unique cutters in the MCS: ${sites}`, narrow ? 44 : 70, { size: 11.5 }); s += sb.svg; H += 12 + sb.h;
+  if (spec.digest?.length) { const pos = spec.sites.filter((t) => spec.digest.includes(t.enzyme)).map((t) => t.pos), fr = digestFragments(spec.length, pos), tb = textBlock(narrow ? W / 2 : cx, H + 14, `${spec.digest.join(" + ")} gives fragments of ${fr.sort((a, b) => a - b).map((n) => n.toLocaleString("en")).join(" bp and ")} bp`, narrow ? 44 : 70, { size: 11.5, weight: 700 }); s += tb.svg; H += 14 + tb.h; }
+  return { s, H: H + 10 };
+}
+const FEATURE_FN = { ori: "Origin of replication: where copying of the plasmid starts, so it replicates independently in the host.", marker: "Selectable marker (an antibiotic resistance gene): only cells that took up the plasmid survive on antibiotic agar.", promoter: "Drives expression of the inserted gene.", mcs: "Multiple cloning site (polylinker): many unique restriction sites where a gene can be inserted." };
+function plasmidChecks(spec) {
+  const out = [], F = spec.features, L = spec.length;
+  out.push(check("the vector has an origin of replication, a selectable marker and a multiple cloning site", ["ori", "marker", "mcs"].every((t) => F.some((f) => f.type === t))));
+  out.push(check("every feature lies on the plasmid", F.every((f) => f.start >= 0 && f.end <= L && f.end > f.start)));
+  const overlap = F.some((a, i) => F.some((b, j) => j > i && a.start < b.end && b.start < a.end));
+  out.push(check("no two features overlap", !overlap));
+  const mcs = F.find((f) => f.type === "mcs"), cuts = {};
+  for (const t of spec.sites) cuts[t.enzyme] = (cuts[t.enzyme] || 0) + 1;
+  out.push(check("every enzyme in the MCS cuts the plasmid once", spec.sites.every((t) => cuts[t.enzyme] === 1)));
+  out.push(check("every cutting site lies inside the multiple cloning site", !!mcs && spec.sites.every((t) => t.pos >= mcs.start && t.pos <= mcs.end)));
+  if (spec.digest?.length) {
+    const pos = spec.sites.filter((t) => spec.digest.includes(t.enzyme)).map((t) => t.pos);
+    out.push(check("every enzyme of the digest cuts this plasmid", pos.length === spec.digest.length));
+    out.push(check(`the fragments of the ${spec.digest.join(" + ")} digest add up to ${L} bp`, digestFragments(L, pos).reduce((a, b) => a + b, 0) === L));
+  }
+  return out;
+}
+
+// ======================================================================== fragment
+// Habitat fragmentation on a grid. spec: panels [{name, grid: [rows of "#" habitat and "." other]}], claims. The patches (4-connected
+// habitat), edge cells (habitat next to a non-habitat cell or the map's edge) and core cells are counted from the grid.
+export function landscapeStats(grid) {
+  const h = grid.length, w = grid[0].length, at = (r, c) => r >= 0 && r < h && c >= 0 && c < w && grid[r][c] === "#", seen = new Set();
+  let area = 0, edge = 0, patches = 0;
+  for (let r = 0; r < h; r++) for (let c = 0; c < w; c++) {
+    if (!at(r, c)) continue; area++;
+    if (!at(r - 1, c) || !at(r + 1, c) || !at(r, c - 1) || !at(r, c + 1)) edge++;
+    if (!seen.has(r * w + c)) { patches++; const q = [[r, c]]; seen.add(r * w + c); while (q.length) { const [a, b] = q.pop(); for (const [da, db] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const x = a + da, y = b + db; if (at(x, y) && !seen.has(x * w + y)) { seen.add(x * w + y); q.push([x, y]); } } } }
+  }
+  return { area, edge, core: area - edge, patches, edgeShare: area ? edge / area : 0 };
+}
+function fragmentDraw(spec, W, narrow) {
+  const cols = narrow ? 1 : spec.panels.length, cw = (W - 20) / cols, g0 = spec.panels[0].grid, cell = Math.min(Math.floor((cw - 20) / g0[0].length), 16), gw = cell * g0[0].length, gh = cell * g0.length, rh = gh + 74;
+  let s = "";
+  spec.panels.forEach((p, i) => {
+    const col = i % cols, row = Math.floor(i / cols), x0 = 10 + col * cw + (cw - gw) / 2, y0 = 10 + row * rh, S = landscapeStats(p.grid);
+    s += `<rect x="${f1(x0)}" y="${f1(y0)}" width="${gw}" height="${gh}" fill="${C.a3}" fill-opacity=".14" stroke="${C.line}"/>`;
+    const at = (r, c) => r >= 0 && r < p.grid.length && c >= 0 && c < p.grid[0].length && p.grid[r][c] === "#";
+    let hab = "", cor = "";
+    p.grid.forEach((line, r) => [...line].forEach((ch, c) => { if (ch !== "#") return; const isEdge = !at(r - 1, c) || !at(r + 1, c) || !at(r, c - 1) || !at(r, c + 1); const rect = `<rect x="${f1(x0 + c * cell)}" y="${f1(y0 + r * cell)}" width="${cell}" height="${cell}" fill="${C.good}" fill-opacity="${isEdge ? 0.4 : 0.85}" stroke="${C.panel}" stroke-width=".6"/>`; if (isEdge) hab += rect; else cor += rect; }));
+    s += part("edge habitat", "Habitat next to a different land use: more light, wind and predators, so interior species decline.", hab) + part("core habitat", "Interior habitat, away from any edge.", cor);
+    s += text(x0 + gw / 2, y0 + gh + 16, p.name, { size: 12.5, weight: 700 }) + text(x0 + gw / 2, y0 + gh + 33, `${S.area} habitat cells · ${S.patches} patch${S.patches === 1 ? "" : "es"}`, { size: 11.5, fill: C.soft }) + text(x0 + gw / 2, y0 + gh + 49, `core ${S.core} (${Math.round(100 * (1 - S.edgeShare))}%) · edge ${S.edge}`, { size: 11.5, fill: C.soft });
+  });
+  const rows = Math.ceil(spec.panels.length / cols), H = 10 + rows * rh;
+  const nb = textBlock(W / 2, H + 8, "Dark green: core habitat. Light green: edge habitat. Brown: other land use. An illustrative grid, not a real landscape.", narrow ? 50 : 120, { size: 10.5, fill: C.soft });
+  return { s: s + nb.svg, H: H + 16 + nb.h };
+}
+function fragmentChecks(spec) {
+  const out = [], S = spec.panels.map((p) => landscapeStats(p.grid));
+  for (const c of spec.claims || []) {
+    if (c.type === "sameArea") out.push(check(`${spec.panels[c.a].name} and ${spec.panels[c.b].name} have the same habitat area (${S[c.a].area} and ${S[c.b].area} cells)`, S[c.a].area === S[c.b].area));
+    if (c.type === "patches") out.push(check(`${spec.panels[c.panel].name}: ${c.value} patch${c.value === 1 ? "" : "es"}`, S[c.panel].patches === c.value, `counted ${S[c.panel].patches}`));
+    if (c.type === "moreEdge") out.push(check(`${spec.panels[c.b].name} has a larger share of edge habitat than ${spec.panels[c.a].name} (${(100 * S[c.b].edgeShare).toFixed(0)}% against ${(100 * S[c.a].edgeShare).toFixed(0)}%)`, S[c.b].edgeShare > S[c.a].edgeShare));
+    if (c.type === "lessCore") out.push(check(`${spec.panels[c.b].name} has less core habitat than ${spec.panels[c.a].name} (${S[c.b].core} against ${S[c.a].core} cells)`, S[c.b].core < S[c.a].core));
+    if (c.type === "connected") out.push(check(`${spec.panels[c.panel].name}: the habitat is one connected patch`, S[c.panel].patches === 1));
+  }
+  out.push(check("every panel has the same size", spec.panels.every((p) => p.grid.length === spec.panels[0].grid.length && p.grid.every((r) => r.length === spec.panels[0].grid[0].length))));
+  return out;
+}
+
+// ======================================================================== network
+// A network grown by preferential attachment (seeded): most nodes have few links and a few hubs have many. spec: seed, n, m.
+// Degrees are counted from the edges; checks: the edge count, a single connected network, a hub well above the average
+// degree and most nodes at or below it. Simulated: not real interaction data.
+export function growNetwork(n, m, seed) {
+  const r = mulberry(seed), edges = [[0, 1]], deg = new Array(n).fill(0); deg[0] = deg[1] = 1;
+  for (let v = 2; v < n; v++) {
+    const pick = new Set();
+    while (pick.size < Math.min(m, v)) { let t = r() * deg.slice(0, v).reduce((a, b) => a + b, 0), u = 0; while (u < v - 1 && t >= deg[u]) { t -= deg[u]; u++; } pick.add(u); }
+    for (const u of pick) { edges.push([u, v]); deg[u]++; deg[v]++; }
+  }
+  return { edges, deg };
+}
+function layoutNetwork(n, edges, seed) {
+  const r = mulberry(seed + 7), P = Array.from({ length: n }, (_, i) => [Math.cos((i * 2 * Math.PI) / n) * 0.4 + (r() - 0.5) * 0.1, Math.sin((i * 2 * Math.PI) / n) * 0.4 + (r() - 0.5) * 0.1]), k = 0.9 / Math.sqrt(n);
+  for (let it = 0; it < 260; it++) {
+    const D = P.map(() => [0, 0]), temp = 0.08 * (1 - it / 260);
+    for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { const dx = P[i][0] - P[j][0], dy = P[i][1] - P[j][1], d = Math.max(0.001, Math.hypot(dx, dy)), f = (k * k) / d; D[i][0] += (dx / d) * f; D[i][1] += (dy / d) * f; D[j][0] -= (dx / d) * f; D[j][1] -= (dy / d) * f; }
+    for (const [a, b] of edges) { const dx = P[a][0] - P[b][0], dy = P[a][1] - P[b][1], d = Math.max(0.001, Math.hypot(dx, dy)), f = (d * d) / k; D[a][0] -= (dx / d) * f; D[a][1] -= (dy / d) * f; D[b][0] += (dx / d) * f; D[b][1] += (dy / d) * f; }
+    for (let i = 0; i < n; i++) { const d = Math.hypot(D[i][0], D[i][1]) || 1, s = Math.min(d, temp) / d; P[i][0] += D[i][0] * s - P[i][0] * 0.01; P[i][1] += D[i][1] * s - P[i][1] * 0.01; }
+  }
+  const xs = P.map((p) => p[0]), ys = P.map((p) => p[1]), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  return P.map(([x, y]) => [(x - x0) / (x1 - x0 || 1), (y - y0) / (y1 - y0 || 1)]);
+}
+const netStats = (spec) => { const { edges, deg } = growNetwork(spec.n, spec.m, spec.seed), mean = (2 * edges.length) / spec.n, adj = Array.from({ length: spec.n }, () => []); for (const [a, b] of edges) { adj[a].push(b); adj[b].push(a); } const seen = new Set([0]), q = [0]; while (q.length) { const u = q.pop(); for (const v of adj[u]) if (!seen.has(v)) { seen.add(v); q.push(v); } } return { edges, deg, mean, connected: seen.size === spec.n, max: Math.max(...deg), low: deg.filter((d) => d <= mean).length / spec.n }; };
+function networkDraw(spec, W, narrow) {
+  const N = netStats(spec), pw = narrow ? W - 20 : Math.min(400, W - 270), ph = narrow ? 300 : 320, pos = layoutNetwork(spec.n, N.edges, spec.seed), hub = (d) => d >= Math.max(5, 2 * N.mean);
+  const px = (p) => 10 + 14 + p[0] * (pw - 28), py = (p) => 14 + p[1] * (ph - 28);
+  let s = N.edges.map(([a, b]) => `<path d="M${f1(px(pos[a]))} ${f1(py(pos[a]))} L${f1(px(pos[b]))} ${f1(py(pos[b]))}" stroke="${C.soft}" stroke-width="1" stroke-opacity=".7"/>`).join("");
+  s += part("edges", "An edge is an interaction between two molecules.", "");
+  pos.forEach((p, i) => { s += part(hub(N.deg[i]) ? "hub" : "node", hub(N.deg[i]) ? "A hub: a highly connected node." : "A node (a molecule) with few connections.", `<circle cx="${f1(px(p))}" cy="${f1(py(p))}" r="${(3.4 + 1.9 * Math.sqrt(N.deg[i])).toFixed(1)}" fill="${hub(N.deg[i]) ? C.a2 : C.a1}" fill-opacity="${hub(N.deg[i]) ? 0.85 : 0.6}" stroke="${hub(N.deg[i]) ? C.a2 : C.a1}" stroke-width="1.6"/>`); });
+  // degree histogram
+  const bx = narrow ? 24 : pw + 50, by = narrow ? ph + 40 : 40, bw = narrow ? W - 60 : W - bx - 24, bh = narrow ? 120 : 200, maxD = N.max, counts = Array.from({ length: maxD + 1 }, (_, d) => N.deg.filter((x) => x === d).length), cmax = Math.max(...counts), step = bw / (maxD + 1);
+  s += text(bx, by - 16, "nodes with each number of links", { size: 12, weight: 700, anchor: "start" }) + `<path d="M${bx} ${by + bh} H${bx + bw}" stroke="${C.soft}" stroke-width="1.4"/>`;
+  counts.forEach((c, d) => { if (c) s += `<rect x="${f1(bx + d * step + 1)}" y="${f1(by + bh - (c / cmax) * bh)}" width="${f1(step - 2)}" height="${f1((c / cmax) * bh)}" fill="${hub(d) ? C.a2 : C.a1}" fill-opacity=".6" stroke="${hub(d) ? C.a2 : C.a1}"/>`; });
+  [1, Math.round(maxD / 2), maxD].forEach((d) => { s += text(bx + d * step + step / 2, by + bh + 14, String(d), { size: 10.5, fill: C.soft }); });
+  s += text(bx + bw / 2, by + bh + 32, "number of links (degree)", { size: 11.5 });
+  const H = narrow ? by + bh + 58 : ph + 20, nb = textBlock(W / 2, H + 12, `Simulated network of ${spec.n} nodes grown by preferential attachment: ${N.max} links at the largest hub, ${N.mean.toFixed(1)} on average. Illustrative, not real interaction data.`, narrow ? 50 : 110, { size: 11, fill: C.soft });
+  return { s: s + nb.svg, H: H + 20 + nb.h };
+}
+function networkChecks(spec) {
+  const N = netStats(spec), out = [];
+  out.push(check(`the network has ${1 + (spec.n - 2) * spec.m} edges (each new node adds ${spec.m})`, N.edges.length === 1 + (spec.n - 2) * spec.m, `counted ${N.edges.length}`));
+  out.push(check("the network is one connected component", N.connected));
+  out.push(check(`a hub has many more links than average: ${N.max} against ${N.mean.toFixed(1)} (at least 3 times)`, N.max >= 3 * N.mean));
+  out.push(check(`most nodes have no more than the average number of links (${(100 * N.low).toFixed(0)}% at or below ${N.mean.toFixed(1)})`, N.low >= 0.6));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -2079,6 +2346,10 @@ register({
   cleavage: { draw: cleavageDraw, checks: cleavageChecks, widths: [700, 380] },
   fertilisation: { draw: fertilisationDraw, checks: fertilisationChecks, widths: [700, 380] },
   cytometry: { draw: cytometryDraw, checks: cytometryChecks, widths: [700, 380] },
+  karyotype: { draw: karyotypeDraw, checks: karyotypeChecks, widths: [700, 380] },
+  plasmidmap: { draw: plasmidDraw, checks: plasmidChecks, widths: [700, 380] },
+  fragment: { draw: fragmentDraw, checks: fragmentChecks, widths: [700, 380] },
+  bionetwork: { draw: networkDraw, checks: networkChecks, widths: [700, 380] },
   section: { draw: sectionDraw, checks: sectionChecks, widths: [700, 380] },
   bilayer: { draw: bilayerDraw, checks: bilayerChecks, widths: [700, 380] },
   inducedfit: { draw: inducedfitDraw, checks: inducedfitChecks, widths: [720, 380] },

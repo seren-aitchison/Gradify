@@ -1,0 +1,126 @@
+{
+ "id": "bio-gene-flow",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u06",
+ "lesson": "Gene flow",
+ "title": "Gene flow makes populations more alike",
+ "caption": "Two populations start with different allele frequencies (0.9 and 0.1). Without gene flow the difference stays. If 5% of each population is replaced by migrants from the other every generation, the difference shrinks by a factor of 0.9 each generation (1 − 2m) and the two frequencies converge on 0.5. A simple model with no selection or drift: the migration rate is illustrative.",
+ "alt": "A graph of allele frequency over 40 generations. Two dashed reference lines at 0.9 and 0.1 show where the populations would stay with no gene flow. Two curves start at 0.9 and 0.1 and converge towards 0.5 with gene flow.",
+ "description": [
+  "Gene flow transfers alleles between populations, making them more similar.",
+  "Without gene flow the populations can stay different, and may diverge.",
+  "Model: migration m = 0.05 each way each generation; the difference falls by a factor (1 − 2m) = 0.9 per generation.",
+  "No selection or drift in this model; the rate is illustrative."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   0,
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "generation",
+  "frequency of allele A"
+ ],
+ "curves": [
+  {
+   "expr": "0.5+0.4*exp(x*log(0.9))",
+   "colour": "a1"
+  },
+  {
+   "expr": "0.5-0.4*exp(x*log(0.9))",
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.9,
+   "label": "no gene flow: stays 0.9"
+  },
+  {
+   "y": 0.1,
+   "label": "no gene flow: stays 0.1"
+  }
+ ],
+ "legend": [
+  [
+   "population 1",
+   "a1"
+  ],
+  [
+   "population 2",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  24,
+  0.62
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5+0.4*exp(x*log(0.9))",
+   "x": 0,
+   "y": 0.9,
+   "name": "population 1 starts at 0.9"
+  },
+  {
+   "type": "point",
+   "expr": "0.5-0.4*exp(x*log(0.9))",
+   "x": 0,
+   "y": 0.1,
+   "name": "population 2 starts at 0.1"
+  },
+  {
+   "type": "value",
+   "expr": "0.5+0.4*exp(x*log(0.9))",
+   "x": 40,
+   "between": [
+    0.5,
+    0.52
+   ],
+   "name": "after 40 generations population 1 has almost reached 0.5"
+  },
+  {
+   "type": "value",
+   "expr": "0.5-0.4*exp(x*log(0.9))",
+   "x": 40,
+   "between": [
+    0.48,
+    0.5
+   ],
+   "name": "and population 2 has almost reached 0.5"
+  },
+  {
+   "type": "slope",
+   "expr": "0.5+0.4*exp(x*log(0.9))",
+   "x": 5,
+   "value": -0.0249,
+   "name": "population 1 is falling towards 0.5: gradient 0.4 × ln 0.9 × 0.9^5 = −0.025 per generation at generation 5"
+  }
+ ]
+}

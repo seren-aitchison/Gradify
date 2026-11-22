@@ -631,6 +631,7 @@ H: Mechanisms
 - **DNA methylation**: methyl groups added to cytosine, often near promoters, usually **silence** genes.
 - **Histone acetylation**: loosens chromatin, usually **activating** genes.
 - **Histone deacetylation** and some methylation tighten chromatin, silencing genes.
+D: bio-chromatin-marks
 H: Examples
 - **X-inactivation**: in female mammals, one X chromosome is silenced in each cell.
 - **Genomic imprinting**: some genes are expressed only from the maternal or paternal copy.
@@ -1301,6 +1302,7 @@ H: Number changes
 - **Down syndrome**: trisomy 21 (three copies of chromosome 21); risk increases with maternal age.
 - **Turner syndrome**: 45,X; **Klinefelter syndrome**: 47,XXY.
 - **Polyploidy**: whole extra sets, common in plants such as wheat.
+D: bio-karyotype-counts
 H: Structural changes
 - **Deletion**: loss of a section.
 - **Duplication**: repeated section.

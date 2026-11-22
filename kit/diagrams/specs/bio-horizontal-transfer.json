@@ -1,0 +1,52 @@
+{
+ "id": "bio-horizontal-transfer",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Horizontal gene transfer",
+ "title": "Three ways bacteria exchange genes",
+ "caption": "In transformation a bacterium takes up free DNA from its surroundings. In transduction a bacteriophage carries DNA from one bacterium to another. In conjugation two bacteria join through a pilus and usually pass a plasmid through it. All three are horizontal transfer, unlike vertical transfer from parent to offspring.",
+ "alt": "Three panels. Transformation: free DNA fragments above a bacterium and an arrow into it. Transduction: a bacteriophage between two bacteria with an arrow to the lower one. Conjugation: two bacteria joined by a pilus, a plasmid shown between them.",
+ "description": [
+  "Transformation: uptake of free DNA from the environment.",
+  "Transduction: transfer of DNA by a bacteriophage.",
+  "Conjugation: direct transfer, usually of a plasmid, through a pilus.",
+  "These spread antibiotic resistance and virulence genes between bacteria."
+ ],
+ "template": "hgt",
+ "labels": [
+  "free DNA",
+  "recipient cell",
+  "bacteriophage",
+  "pilus",
+  "plasmid"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "transformation",
+    "transduction",
+    "conjugation"
+   ],
+   "from": "the left",
+   "to": "the right",
+   "text": "transformation, transduction, conjugation from left to right"
+  },
+  {
+   "type": "fact",
+   "id": "transformationNeedsNoContact",
+   "text": "transformation takes up free DNA and needs no donor cell"
+  },
+  {
+   "type": "fact",
+   "id": "transductionUsesPhage",
+   "text": "transduction uses a bacteriophage"
+  },
+  {
+   "type": "fact",
+   "id": "conjugationUsesPilus",
+   "text": "conjugation needs contact through a pilus"
+  }
+ ]
+}

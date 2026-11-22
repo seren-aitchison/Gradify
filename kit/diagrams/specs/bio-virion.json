@@ -1,0 +1,56 @@
+{
+ "id": "bio-virion",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Viral structure",
+ "title": "Virion structure",
+ "caption": "A virion has a genome of DNA or RNA inside a protein coat, the capsid, which is made of capsomeres. Some viruses also have a lipid envelope from the host membrane, with glycoproteins that stick out of it. A virus has no cell, no ribosomes and no metabolism. Typical sizes are 20–300 nm; the drawing is not to scale.",
+ "alt": "Two virions. A non-enveloped one: a hexagonal capsid enclosing a coiled genome. An enveloped one: a round lipid envelope with spikes of glycoprotein, enclosing a capsid and a coiled genome.",
+ "description": [
+  "Genome of DNA or RNA, single- or double-stranded.",
+  "A protein capsid made of capsomeres.",
+  "Some viruses have a lipid envelope from the host membrane, with glycoproteins.",
+  "No cell, ribosomes or metabolism: viruses replicate only inside host cells."
+ ],
+ "template": "virion",
+ "labels": [
+  "genome",
+  "capsid",
+  "envelope",
+  "glycoprotein"
+ ],
+ "claims": [
+  {
+   "type": "order",
+   "value": [
+    "envelope",
+    "capsid",
+    "genome"
+   ],
+   "from": "the outside",
+   "to": "the centre",
+   "text": "envelope, capsid, genome from the outside in"
+  },
+  {
+   "type": "fact",
+   "id": "capsidEnclosesGenome",
+   "text": "the capsid encloses the genome"
+  },
+  {
+   "type": "fact",
+   "id": "envelopeEnclosesCapsid",
+   "text": "the envelope encloses the capsid"
+  },
+  {
+   "type": "fact",
+   "id": "glycoproteinsInEnvelope",
+   "text": "the glycoproteins stick out of the envelope"
+  },
+  {
+   "type": "fact",
+   "id": "noCellularMachinery",
+   "text": "no ribosomes or other cell machinery are drawn"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "id": "bio-chromatin-marks",
+ "renderer": "section",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Epigenetics",
+ "title": "Chromatin marks and gene expression",
+ "caption": "Histone acetylation loosens chromatin, which usually activates genes: the promoter is open to RNA polymerase. DNA methylation (methyl groups on cytosine, often near a promoter) and some histone methylation usually silence genes: the chromatin is tight and RNA polymerase cannot reach the promoter. These marks can be reversed and are copied when cells divide.",
+ "alt": "Two rows of nucleosomes on DNA. The upper row is spread out, the histone tails carry acetyl groups and RNA polymerase sits on the promoter. The lower row is packed tightly, the DNA near the promoter carries methyl groups, and RNA polymerase is crossed out.",
+ "description": [
+  "Histone acetylation loosens chromatin and usually activates genes.",
+  "DNA methylation, often near promoters, usually silences genes.",
+  "Deacetylation and some methylation tighten chromatin, silencing genes.",
+  "Marks can be reversed, so drugs that block DNA methyltransferases or histone deacetylases are used in some cancers."
+ ],
+ "template": "chromatin",
+ "labels": [
+  "nucleosome",
+  "histone tail",
+  "acetyl group",
+  "methyl group",
+  "promoter",
+  "RNA polymerase"
+ ],
+ "claims": [
+  {
+   "type": "fact",
+   "id": "acetylationLoosens",
+   "text": "the acetylated chromatin is more open than the silenced chromatin"
+  },
+  {
+   "type": "fact",
+   "id": "methylationOnSilenced",
+   "text": "methyl groups are on the silenced gene only"
+  },
+  {
+   "type": "fact",
+   "id": "polymeraseOnlyOnOpen",
+   "text": "RNA polymerase reaches the promoter only on the open chromatin"
+  }
+ ]
+}

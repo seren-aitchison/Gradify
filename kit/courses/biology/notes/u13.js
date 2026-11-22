@@ -717,6 +717,7 @@ H: Types
 - **Gene regulatory** networks of transcription factors and targets.
 - **Metabolic** networks of reactions and metabolites.
 - **Signalling** networks of pathways.
+D: bio-scale-free-network
 H: Properties
 - **Nodes** are molecules; **edges** are interactions.
 - **Degree**: the number of connections of a node.

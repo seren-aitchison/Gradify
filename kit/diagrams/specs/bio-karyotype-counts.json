@@ -1,0 +1,49 @@
+{
+ "id": "bio-karyotype-counts",
+ "renderer": "karyotype",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Chromosomal abnormalities",
+ "title": "Counting chromosomes: aneuploidy",
+ "caption": "A typical human cell has 46 chromosomes: 44 autosomes and two sex chromosomes. Non-disjunction gives gametes with an extra or a missing chromosome, so the offspring have, for example, three copies of chromosome 21 (trisomy 21, Down syndrome, 47,XX,+21 or 47,XY,+21), only one sex chromosome (Turner syndrome, 45,X) or an extra X (Klinefelter syndrome, 47,XXY). Aneuploidy is an abnormal number of one chromosome.",
+ "alt": "Four rows. Typical: two copies of chromosome 21 and either XX or XY, 46 chromosomes. Down syndrome: three copies of chromosome 21, 47. Turner syndrome: a single X, 45. Klinefelter syndrome: XXY, 47.",
+ "description": [
+  "Typical: 46 chromosomes (46,XX or 46,XY).",
+  "Down syndrome: trisomy 21, three copies of chromosome 21: 47,XX,+21.",
+  "Turner syndrome: 45,X.",
+  "Klinefelter syndrome: 47,XXY.",
+  "Aneuploidy is an abnormal number of one chromosome; non-disjunction in meiosis is its usual cause."
+ ],
+ "cases": [
+  {
+   "name": "typical female",
+   "sex": "XX",
+   "extra": {},
+   "total": 46,
+   "notation": "46,XX"
+  },
+  {
+   "name": "Down syndrome",
+   "sex": "XX",
+   "extra": {
+    "21": 1
+   },
+   "total": 47,
+   "notation": "47,XX,+21"
+  },
+  {
+   "name": "Turner syndrome",
+   "sex": "X",
+   "extra": {},
+   "total": 45,
+   "notation": "45,X"
+  },
+  {
+   "name": "Klinefelter syndrome",
+   "sex": "XXY",
+   "extra": {},
+   "total": 47,
+   "notation": "47,XXY"
+  }
+ ]
+}

@@ -35265,5 +35265,700 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-chromatin-marks": {
+  "title": "Chromatin marks and gene expression",
+  "caption": "Histone acetylation loosens chromatin, which usually activates genes: the promoter is open to RNA polymerase. DNA methylation (methyl groups on cytosine, often near a promoter) and some histone methylation usually silence genes: the chromatin is tight and RNA polymerase cannot reach the promoter. These marks can be reversed and are copied when cells divide.",
+  "alt": "Two rows of nucleosomes on DNA. The upper row is spread out, the histone tails carry acetyl groups and RNA polymerase sits on the promoter. The lower row is packed tightly, the DNA near the promoter carries methyl groups, and RNA polymerase is crossed out.",
+  "description": [
+   "Histone acetylation loosens chromatin and usually activates genes.",
+   "DNA methylation, often near promoters, usually silences genes.",
+   "Deacetylation and some methylation tighten chromatin, silencing genes.",
+   "Marks can be reversed, so drugs that block DNA methyltransferases or histone deacetylases are used in some cancers."
+  ],
+  "course": "biology",
+  "lesson": "Epigenetics",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Epigenetics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"chromatin\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "6 parts"
+   },
+   {
+    "name": "the acetylated chromatin is more open than the silenced chromatin",
+    "ok": true,
+    "detail": "acetylationLoosens"
+   },
+   {
+    "name": "methyl groups are on the silenced gene only",
+    "ok": true,
+    "detail": "methylationOnSilenced"
+   },
+   {
+    "name": "RNA polymerase reaches the promoter only on the open chromatin",
+    "ok": true,
+    "detail": "polymeraseOnlyOnOpen"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-gene-flow": {
+  "title": "Gene flow makes populations more alike",
+  "caption": "Two populations start with different allele frequencies (0.9 and 0.1). Without gene flow the difference stays. If 5% of each population is replaced by migrants from the other every generation, the difference shrinks by a factor of 0.9 each generation (1 − 2m) and the two frequencies converge on 0.5. A simple model with no selection or drift: the migration rate is illustrative.",
+  "alt": "A graph of allele frequency over 40 generations. Two dashed reference lines at 0.9 and 0.1 show where the populations would stay with no gene flow. Two curves start at 0.9 and 0.1 and converge towards 0.5 with gene flow.",
+  "description": [
+   "Gene flow transfers alleles between populations, making them more similar.",
+   "Without gene flow the populations can stay different, and may diverge.",
+   "Model: migration m = 0.05 each way each generation; the difference falls by a factor (1 − 2m) = 0.9 per generation.",
+   "No selection or drift in this model; the rate is illustrative."
+  ],
+  "course": "biology",
+  "lesson": "Gene flow",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u06.js: Gene flow"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "population 1 starts at 0.9",
+    "ok": true,
+    "detail": "y(0) = 0.9"
+   },
+   {
+    "name": "population 2 starts at 0.1",
+    "ok": true,
+    "detail": "y(0) = 0.1"
+   },
+   {
+    "name": "after 40 generations population 1 has almost reached 0.5",
+    "ok": true,
+    "detail": "0.5+0.4*exp(x*log(0.9)) at 40 = 0.51; expected 0.5–0.52"
+   },
+   {
+    "name": "and population 2 has almost reached 0.5",
+    "ok": true,
+    "detail": "0.5-0.4*exp(x*log(0.9)) at 40 = 0.49; expected 0.48–0.5"
+   },
+   {
+    "name": "population 1 is falling towards 0.5: gradient 0.4 × ln 0.9 × 0.9^5 = −0.025 per generation at generation 5",
+    "ok": true,
+    "detail": "gradient -0.0249"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-habitat-fragmentation": {
+  "title": "Habitat fragmentation and edge effects",
+  "caption": "The same area of habitat as one block or as four small patches. Fragmenting it turns interior habitat into edge: the proportion of core habitat falls from about 63% to about 33%, although the habitat area is the same, and the patches are isolated. A narrow corridor joins the patches again, though corridor cells are all edge. An illustrative grid, not a real landscape.",
+  "alt": "Three small maps. One block of 96 habitat cells with a large dark core; the same 96 cells split into four patches, most of them now edge; and the four patches joined by narrow corridors into one connected patch.",
+  "description": [
+   "One block of habitat has a large core and a small share of edge.",
+   "The same area split into four patches is mostly edge: edge effects (light, temperature, wind and predators) reach most of it, so species that need the interior decline.",
+   "Corridors reconnect the patches, but they are all edge and add only a little habitat.",
+   "Illustrative grid: 96 habitat cells in each of the first two maps."
+  ],
+  "course": "biology",
+  "lesson": "Habitat fragmentation",
+  "also": [],
+  "renderer": "fragment",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Habitat fragmentation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "continuous and fragmented have the same habitat area (96 and 96 cells)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "continuous: 1 patch",
+    "ok": true,
+    "detail": "counted 1"
+   },
+   {
+    "name": "fragmented: 4 patches",
+    "ok": true,
+    "detail": "counted 4"
+   },
+   {
+    "name": "fragmented has a larger share of edge habitat than continuous (67% against 38%)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "fragmented has less core habitat than continuous (32 against 60 cells)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "joined by corridors: the habitat is one connected patch",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every panel has the same size",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-horizontal-transfer": {
+  "title": "Three ways bacteria exchange genes",
+  "caption": "In transformation a bacterium takes up free DNA from its surroundings. In transduction a bacteriophage carries DNA from one bacterium to another. In conjugation two bacteria join through a pilus and usually pass a plasmid through it. All three are horizontal transfer, unlike vertical transfer from parent to offspring.",
+  "alt": "Three panels. Transformation: free DNA fragments above a bacterium and an arrow into it. Transduction: a bacteriophage between two bacteria with an arrow to the lower one. Conjugation: two bacteria joined by a pilus, a plasmid shown between them.",
+  "description": [
+   "Transformation: uptake of free DNA from the environment.",
+   "Transduction: transfer of DNA by a bacteriophage.",
+   "Conjugation: direct transfer, usually of a plasmid, through a pilus.",
+   "These spread antibiotic resistance and virulence genes between bacteria."
+  ],
+  "course": "biology",
+  "lesson": "Horizontal gene transfer",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u09.js: Horizontal gene transfer"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"hgt\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "5 parts"
+   },
+   {
+    "name": "from the left to the right: transformation, transduction, conjugation",
+    "ok": true,
+    "detail": "template order: transformation > transduction > conjugation"
+   },
+   {
+    "name": "transformation takes up free DNA and needs no donor cell",
+    "ok": true,
+    "detail": "transformationNeedsNoContact"
+   },
+   {
+    "name": "transduction uses a bacteriophage",
+    "ok": true,
+    "detail": "transductionUsesPhage"
+   },
+   {
+    "name": "conjugation needs contact through a pilus",
+    "ok": true,
+    "detail": "conjugationUsesPilus"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-karyotype-counts": {
+  "title": "Counting chromosomes: aneuploidy",
+  "caption": "A typical human cell has 46 chromosomes: 44 autosomes and two sex chromosomes. Non-disjunction gives gametes with an extra or a missing chromosome, so the offspring have, for example, three copies of chromosome 21 (trisomy 21, Down syndrome, 47,XX,+21 or 47,XY,+21), only one sex chromosome (Turner syndrome, 45,X) or an extra X (Klinefelter syndrome, 47,XXY). Aneuploidy is an abnormal number of one chromosome.",
+  "alt": "Four rows. Typical: two copies of chromosome 21 and either XX or XY, 46 chromosomes. Down syndrome: three copies of chromosome 21, 47. Turner syndrome: a single X, 45. Klinefelter syndrome: XXY, 47.",
+  "description": [
+   "Typical: 46 chromosomes (46,XX or 46,XY).",
+   "Down syndrome: trisomy 21, three copies of chromosome 21: 47,XX,+21.",
+   "Turner syndrome: 45,X.",
+   "Klinefelter syndrome: 47,XXY.",
+   "Aneuploidy is an abnormal number of one chromosome; non-disjunction in meiosis is its usual cause."
+  ],
+  "course": "biology",
+  "lesson": "Chromosomal abnormalities",
+  "also": [],
+  "renderer": "karyotype",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Chromosomal abnormalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "typical female: 46 chromosomes in total",
+    "ok": true,
+    "detail": "counted 46"
+   },
+   {
+    "name": "typical female: the notation is 46,XX",
+    "ok": true,
+    "detail": "stated 46,XX"
+   },
+   {
+    "name": "typical female: matches the chromosome change that name means",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "typical female: aneuploid exactly when the count is not 46",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Down syndrome: 47 chromosomes in total",
+    "ok": true,
+    "detail": "counted 47"
+   },
+   {
+    "name": "Down syndrome: the notation is 47,XX,+21",
+    "ok": true,
+    "detail": "stated 47,XX,+21"
+   },
+   {
+    "name": "Down syndrome: matches the chromosome change that name means",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Down syndrome: aneuploid exactly when the count is not 46",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Turner syndrome: 45 chromosomes in total",
+    "ok": true,
+    "detail": "counted 45"
+   },
+   {
+    "name": "Turner syndrome: the notation is 45,X",
+    "ok": true,
+    "detail": "stated 45,X"
+   },
+   {
+    "name": "Turner syndrome: matches the chromosome change that name means",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Turner syndrome: aneuploid exactly when the count is not 46",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Klinefelter syndrome: 47 chromosomes in total",
+    "ok": true,
+    "detail": "counted 47"
+   },
+   {
+    "name": "Klinefelter syndrome: the notation is 47,XXY",
+    "ok": true,
+    "detail": "stated 47,XXY"
+   },
+   {
+    "name": "Klinefelter syndrome: matches the chromosome change that name means",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Klinefelter syndrome: aneuploid exactly when the count is not 46",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-plasmid-map": {
+  "title": "An engineered plasmid vector",
+  "caption": "An engineered vector is a small circular DNA molecule with an origin of replication (so it is copied in the host), a selectable marker such as an ampicillin resistance gene, a multiple cloning site with unique restriction sites for inserting a gene, and sometimes a promoter to drive its expression. This map is illustrative, not a named plasmid.",
+  "alt": "A circle labelled 3,000 base pairs with four coloured arcs: an origin of replication, an ampicillin resistance gene, a promoter and a short multiple cloning site with three unique cutting sites, EcoRI, BamHI and HindIII.",
+  "description": [
+   "Origin of replication: the plasmid is copied independently in the host.",
+   "Selectable marker (here an ampicillin resistance gene): only cells that took up the plasmid grow on antibiotic.",
+   "Multiple cloning site: unique restriction sites for inserting a gene.",
+   "Promoter: drives expression of the inserted gene.",
+   "Digesting with two enzymes cuts out a small fragment; the fragments add up to the plasmid's length."
+  ],
+  "course": "biology",
+  "lesson": "Plasmids",
+  "also": [],
+  "renderer": "plasmidmap",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Plasmids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the vector has an origin of replication, a selectable marker and a multiple cloning site",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every feature lies on the plasmid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two features overlap",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every enzyme in the MCS cuts the plasmid once",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every cutting site lies inside the multiple cloning site",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every enzyme of the digest cuts this plasmid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the fragments of the EcoRI + HindIII digest add up to 3000 bp",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-scale-free-network": {
+  "title": "A network with hubs",
+  "caption": "In a network, nodes are molecules and edges are interactions. The number of connections of a node is its degree. In a scale-free network most nodes have few connections and a few hubs have many. This one is simulated by adding each new node to a network with a preference for nodes that already have many links; many biological networks look like this, which is why removing a hub (as with p53 in the lesson) can disrupt so much.",
+  "alt": "A network of 36 circles joined by lines, with a few large orange hubs each joined to many small blue circles. A bar chart on the right shows many nodes with 2 or 3 links and a long tail up to the largest hub.",
+  "description": [
+   "Nodes are molecules; edges are interactions.",
+   "Degree: the number of connections of a node.",
+   "Hubs are highly connected nodes; most nodes have few links.",
+   "Simulated by preferential attachment: not real interaction data."
+  ],
+  "course": "biology",
+  "lesson": "Biological networks",
+  "also": [],
+  "renderer": "bionetwork",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: Biological networks"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the network has 69 edges (each new node adds 2)",
+    "ok": true,
+    "detail": "counted 69"
+   },
+   {
+    "name": "the network is one connected component",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a hub has many more links than average: 17 against 3.8 (at least 3 times)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "most nodes have no more than the average number of links (67% at or below 3.8)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-virion": {
+  "title": "Virion structure",
+  "caption": "A virion has a genome of DNA or RNA inside a protein coat, the capsid, which is made of capsomeres. Some viruses also have a lipid envelope from the host membrane, with glycoproteins that stick out of it. A virus has no cell, no ribosomes and no metabolism. Typical sizes are 20–300 nm; the drawing is not to scale.",
+  "alt": "Two virions. A non-enveloped one: a hexagonal capsid enclosing a coiled genome. An enveloped one: a round lipid envelope with spikes of glycoprotein, enclosing a capsid and a coiled genome.",
+  "description": [
+   "Genome of DNA or RNA, single- or double-stranded.",
+   "A protein capsid made of capsomeres.",
+   "Some viruses have a lipid envelope from the host membrane, with glycoproteins.",
+   "No cell, ribosomes or metabolism: viruses replicate only inside host cells."
+  ],
+  "course": "biology",
+  "lesson": "Viral structure",
+  "also": [],
+  "renderer": "section",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u09.js: Viral structure"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template \"virion\" is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every labelled part is drawn, and has a name and a function",
+    "ok": true,
+    "detail": "4 parts"
+   },
+   {
+    "name": "from the outside to the centre: envelope, capsid, genome",
+    "ok": true,
+    "detail": "template order: envelope > capsid > genome"
+   },
+   {
+    "name": "the capsid encloses the genome",
+    "ok": true,
+    "detail": "capsidEnclosesGenome"
+   },
+   {
+    "name": "the envelope encloses the capsid",
+    "ok": true,
+    "detail": "envelopeEnclosesCapsid"
+   },
+   {
+    "name": "the glycoproteins stick out of the envelope",
+    "ok": true,
+    "detail": "glycoproteinsInEnvelope"
+   },
+   {
+    "name": "no ribosomes or other cell machinery are drawn",
+    "ok": true,
+    "detail": "noCellularMachinery"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-water-cycle": {
+  "title": "The water cycle",
+  "caption": "Water evaporates from oceans, lakes and soil, and plants return it to the air by transpiration. Water vapour condenses to form clouds, and precipitation (rain, snow and hail) returns it to the oceans and the land. On land it infiltrates into the soil or runs off into rivers, and roots take up soil water for the plants to transpire. Groundwater and ice are also stores, but they are not drawn here.",
+  "alt": "A ring of six stores joined by arrows: oceans to the atmosphere by evaporation; the atmosphere back to the oceans and to the land by condensation and precipitation; land to rivers and lakes by runoff and to soil by infiltration; rivers and lakes to the oceans; soil to plants by root uptake; and plants to the atmosphere by transpiration.",
+  "description": [
+   "Evaporation from oceans, lakes and soil; transpiration from plants.",
+   "Condensation forms clouds; precipitation returns water to the oceans and the land.",
+   "Infiltration into the soil, runoff into rivers; rivers flow to the sea.",
+   "Plants take up soil water through their roots and return it to the air by transpiration."
+  ],
+  "course": "biology",
+  "lesson": "Water cycle",
+  "also": [],
+  "renderer": "biocycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Water cycle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the water cycle is known",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "evaporation: oceans → atmosphere is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "condensation and precipitation: atmosphere → oceans is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "condensation and precipitation: atmosphere → land is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "runoff: land → rivers and lakes is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "river flow: rivers and lakes → oceans is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "infiltration: land → soil is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "root uptake: soil → plants is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "transpiration: plants → atmosphere is a real step of the water cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "water vapour and clouds: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "oceans: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "rivers and lakes: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "land surface: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "soil water: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "plants: material both enters and leaves, so the store is part of a cycle",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
  }
 }

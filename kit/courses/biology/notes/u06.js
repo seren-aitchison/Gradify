@@ -304,6 +304,7 @@ H: What gene flow is
 - Examples: animals migrating and breeding, pollen carried by wind or insects.
 - It introduces new alleles into a population.
 - It makes populations more **similar** to each other.
+D: bio-gene-flow
 H: Effects
 - Increases variation within a population.
 - Reduces differences between populations, opposing divergence.

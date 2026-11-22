@@ -1,0 +1,99 @@
+{
+ "id": "bio-water-cycle",
+ "renderer": "biocycle",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Water cycle",
+ "title": "The water cycle",
+ "caption": "Water evaporates from oceans, lakes and soil, and plants return it to the air by transpiration. Water vapour condenses to form clouds, and precipitation (rain, snow and hail) returns it to the oceans and the land. On land it infiltrates into the soil or runs off into rivers, and roots take up soil water for the plants to transpire. Groundwater and ice are also stores, but they are not drawn here.",
+ "alt": "A ring of six stores joined by arrows: oceans to the atmosphere by evaporation; the atmosphere back to the oceans and to the land by condensation and precipitation; land to rivers and lakes by runoff and to soil by infiltration; rivers and lakes to the oceans; soil to plants by root uptake; and plants to the atmosphere by transpiration.",
+ "description": [
+  "Evaporation from oceans, lakes and soil; transpiration from plants.",
+  "Condensation forms clouds; precipitation returns water to the oceans and the land.",
+  "Infiltration into the soil, runoff into rivers; rivers flow to the sea.",
+  "Plants take up soil water through their roots and return it to the air by transpiration."
+ ],
+ "cycle": "water",
+ "nodes": [
+  {
+   "id": "atmosphere",
+   "label": "water vapour and clouds",
+   "tone": "a3"
+  },
+  {
+   "id": "oceans",
+   "label": "oceans",
+   "tone": "a1"
+  },
+  {
+   "id": "rivers and lakes",
+   "label": "rivers and lakes",
+   "tone": "a1"
+  },
+  {
+   "id": "land",
+   "label": "land surface",
+   "tone": "a5"
+  },
+  {
+   "id": "soil",
+   "label": "soil water",
+   "tone": "a2"
+  },
+  {
+   "id": "plants",
+   "label": "plants",
+   "tone": "good"
+  }
+ ],
+ "edges": [
+  {
+   "from": "oceans",
+   "to": "atmosphere",
+   "process": "evaporation",
+   "colour": "a3"
+  },
+  {
+   "from": "atmosphere",
+   "to": "oceans",
+   "process": "condensation and precipitation",
+   "colour": "a1"
+  },
+  {
+   "from": "atmosphere",
+   "to": "land",
+   "process": "condensation and precipitation",
+   "colour": "a4"
+  },
+  {
+   "from": "land",
+   "to": "rivers and lakes",
+   "process": "runoff",
+   "colour": "a5"
+  },
+  {
+   "from": "rivers and lakes",
+   "to": "oceans",
+   "process": "river flow",
+   "colour": "a1"
+  },
+  {
+   "from": "land",
+   "to": "soil",
+   "process": "infiltration",
+   "colour": "a2"
+  },
+  {
+   "from": "soil",
+   "to": "plants",
+   "process": "root uptake",
+   "colour": "good"
+  },
+  {
+   "from": "plants",
+   "to": "atmosphere",
+   "process": "transpiration",
+   "colour": "good"
+  }
+ ]
+}

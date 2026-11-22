@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH, cleavageCells, cytometryData } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf, bilayerNumbers, fitOk, waterCluster, hydrogenBonds, HOH, cleavageCells, cytometryData, karyotypeOf, digestFragments, landscapeStats, growNetwork } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -419,4 +419,68 @@ test("cytometry: the gate and the positive percentages are counted from the seed
   assert.equal(allPass({ ...spec, gate: { ...spec.gate, fsc: [400, 700], ssc: [300, 800] } }), false); // a gate on the wrong cells
   assert.equal(allPass({ ...spec, populations: spec.populations.map((p) => ({ ...p, frac: p.frac / 2 })) }), false); // fractions must add to 1
   assert.notEqual(cytometryData({ ...spec, seed: 15 }).gatePercent, a.gatePercent); // another seed, another sample
+});
+
+test("section: virion, horizontal-transfer and chromatin templates check what each picture shows", () => {
+  const base = { renderer: "section", alt: "x" };
+  const all = {
+    virion: [["genome", "capsid", "envelope", "glycoprotein"], ["capsidEnclosesGenome", "envelopeEnclosesCapsid", "glycoproteinsInEnvelope", "noCellularMachinery"]],
+    hgt: [["free DNA", "recipient cell", "bacteriophage", "pilus", "plasmid"], ["transformationNeedsNoContact", "transductionUsesPhage", "conjugationUsesPilus"]],
+    chromatin: [["nucleosome", "histone tail", "acetyl group", "methyl group", "promoter", "RNA polymerase"], ["acetylationLoosens", "methylationOnSilenced", "polymeraseOnlyOnOpen"]],
+  };
+  for (const [template, [labels, facts]] of Object.entries(all)) assert.equal(allPass({ ...base, template, labels, claims: facts.map((id) => ({ type: "fact", id })) }), true, template);
+  assert.equal(allPass({ ...base, template: "virion", labels: ["genome"], claims: [{ type: "order", value: ["capsid", "envelope"] }] }), false); // the envelope is outside the capsid
+  assert.equal(allPass({ ...base, template: "chromatin", labels: ["histone tail"], claims: [{ type: "fact", id: "methylationActivates" }] }), false);
+});
+
+test("karyotype: counts and notation are worked out, and syndromes are what their names mean", () => {
+  assert.deepEqual(karyotypeOf({ sex: "XX", extra: { 21: 1 } }), { total: 47, notation: "47,XX,+21", aneuploid: true });
+  assert.equal(karyotypeOf({ sex: "X", extra: {} }).notation, "45,X"); assert.equal(karyotypeOf({ sex: "XXY", extra: {} }).notation, "47,XXY"); assert.equal(karyotypeOf({ sex: "XY", extra: {} }).aneuploid, false);
+  const cases = [{ name: "typical female", sex: "XX", extra: {}, total: 46, notation: "46,XX" }, { name: "Down syndrome", sex: "XX", extra: { 21: 1 }, total: 47, notation: "47,XX,+21" }, { name: "Turner syndrome", sex: "X", extra: {}, total: 45, notation: "45,X" }, { name: "Klinefelter syndrome", sex: "XXY", extra: {}, total: 47, notation: "47,XXY" }];
+  assert.equal(allPass({ renderer: "karyotype", alt: "x", cases }), true);
+  assert.equal(allPass({ renderer: "karyotype", alt: "x", cases: [{ ...cases[1], total: 46 }] }), false); // trisomy 21 is 47
+  assert.equal(allPass({ renderer: "karyotype", alt: "x", cases: [{ ...cases[2], sex: "XX", notation: "46,XX" }] }), false); // Turner is a single X
+  assert.equal(allPass({ renderer: "karyotype", alt: "x", cases: [{ ...cases[3], notation: "47,XYY" }] }), false);
+});
+
+test("plasmid map: required features, no overlap, unique cutters, fragments add up", () => {
+  assert.deepEqual(digestFragments(3000, [2410, 2450]).sort((a, b) => a - b), [40, 2960]); assert.deepEqual(digestFragments(3000, []), [3000]);
+  const ok = { renderer: "plasmidmap", alt: "x", name: "v", length: 3000, features: [{ name: "ori", type: "ori", start: 100, end: 700 }, { name: "AmpR", type: "marker", start: 1100, end: 1961 }, { name: "MCS", type: "mcs", start: 2400, end: 2460 }], sites: [{ enzyme: "EcoRI", pos: 2410 }, { enzyme: "HindIII", pos: 2450 }], digest: ["EcoRI", "HindIII"] };
+  assert.equal(allPass(ok), true);
+  assert.equal(allPass({ ...ok, features: ok.features.slice(0, 2) }), false); // no multiple cloning site
+  assert.equal(allPass({ ...ok, features: [ok.features[0], { ...ok.features[1], start: 600 }, ok.features[2]] }), false); // overlapping features
+  assert.equal(allPass({ ...ok, sites: [...ok.sites, { enzyme: "EcoRI", pos: 2430 }] }), false); // a site that cuts twice is not unique
+  assert.equal(allPass({ ...ok, sites: [{ enzyme: "EcoRI", pos: 100 }, ok.sites[1]] }), false); // outside the MCS
+  assert.equal(allPass({ ...ok, features: [ok.features[0], { ...ok.features[1], end: 3500 }, ok.features[2]] }), false); // off the plasmid
+  assert.equal(allPass({ ...ok, digest: ["EcoRI", "NotI"] }), false);
+});
+
+test("habitat fragmentation: patches, edge and core are counted from the grid", () => {
+  const block = ["######", "######", "######", "######"], S = landscapeStats(block);
+  assert.deepEqual([S.area, S.patches, S.edge, S.core], [24, 1, 16, 8]);
+  const two = ["###.###", "###.###", "###.###"], T = landscapeStats(two);
+  assert.equal(T.patches, 2); assert.ok(T.edgeShare > landscapeStats(["######", "######", "######"]).edgeShare);
+  const panels = [{ name: "a", grid: ["########", "########", "########", "########", "########", "########"] }, { name: "b", grid: ["###..###", "###..###", "###..###", "###..###", "###..###", "###..###"] }, { name: "c", grid: ["###..###", "###..###", "########", "########", "###..###", "###..###"] }];
+  const claims = [{ type: "sameArea", a: 0, b: 0 }, { type: "patches", panel: 1, value: 2 }, { type: "moreEdge", a: 0, b: 1 }, { type: "lessCore", a: 0, b: 1 }, { type: "connected", panel: 2 }];
+  assert.equal(allPass({ renderer: "fragment", alt: "x", panels, claims }), true);
+  assert.equal(allPass({ renderer: "fragment", alt: "x", panels, claims: [{ type: "patches", panel: 1, value: 3 }] }), false);
+  assert.equal(allPass({ renderer: "fragment", alt: "x", panels, claims: [{ type: "connected", panel: 1 }] }), false); // two separate patches
+  assert.equal(allPass({ renderer: "fragment", alt: "x", panels, claims: [{ type: "moreEdge", a: 1, b: 0 }] }), false); // the continuous block has less edge
+  assert.equal(allPass({ renderer: "fragment", alt: "x", panels: [panels[0], { name: "x", grid: ["###", "###"] }], claims: [] }), false); // panels must be the same size
+});
+
+test("network: preferential attachment grows a connected network with a hub and a heavy tail", () => {
+  const { edges, deg } = growNetwork(36, 2, 5);
+  assert.equal(edges.length, 1 + 34 * 2); assert.equal(deg.reduce((a, b) => a + b, 0), 2 * edges.length);
+  assert.ok(Math.max(...deg) >= 3 * ((2 * edges.length) / 36));
+  assert.deepEqual(growNetwork(36, 2, 5).edges, edges); // seeded
+  assert.equal(allPass({ renderer: "bionetwork", alt: "x", seed: 5, n: 36, m: 2 }), true);
+  assert.equal(allPass({ renderer: "bionetwork", alt: "x", seed: 5, n: 8, m: 3 }), false); // a few nodes with many links each have no heavy tail
+});
+
+test("water cycle: every arrow is a real step, and every store has water in and out", () => {
+  const nodes = ["atmosphere", "oceans", "land"].map((id) => ({ id, label: id }));
+  const edges = [{ from: "oceans", to: "atmosphere", process: "evaporation" }, { from: "atmosphere", to: "land", process: "condensation and precipitation" }, { from: "land", to: "oceans", process: "river flow" }];
+  assert.equal(allPass({ renderer: "biocycle", alt: "x", cycle: "water", nodes, edges: edges.slice(0, 2).concat([{ from: "land", to: "atmosphere", process: "evaporation" }]) }), false); // land is not a source of evaporation; the oceans get no water in
+  assert.equal(allPass({ renderer: "biocycle", alt: "x", cycle: "water", nodes, edges: [edges[0], { from: "atmosphere", to: "land", process: "evaporation" }, edges[2]] }), false); // evaporation does not go from the air to the land
 });

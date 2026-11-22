@@ -179,6 +179,7 @@ H: Natural plasmids
 - Replicate independently using an **origin of replication** (ori).
 - Carry useful genes, such as antibiotic resistance, toxin production or metabolism of unusual compounds.
 - Can be transferred between bacteria by conjugation.
+D: bio-plasmid-map
 H: Engineered vectors
 - **Origin of replication** for copying in the host.
 - **Selectable marker**, such as an ampicillin resistance gene.

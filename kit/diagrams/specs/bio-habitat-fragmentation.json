@@ -1,0 +1,97 @@
+{
+ "id": "bio-habitat-fragmentation",
+ "renderer": "fragment",
+ "course": "biology",
+ "unit": "u11",
+ "lesson": "Habitat fragmentation",
+ "title": "Habitat fragmentation and edge effects",
+ "caption": "The same area of habitat as one block or as four small patches. Fragmenting it turns interior habitat into edge: the proportion of core habitat falls from about 63% to about 33%, although the habitat area is the same, and the patches are isolated. A narrow corridor joins the patches again, though corridor cells are all edge. An illustrative grid, not a real landscape.",
+ "alt": "Three small maps. One block of 96 habitat cells with a large dark core; the same 96 cells split into four patches, most of them now edge; and the four patches joined by narrow corridors into one connected patch.",
+ "description": [
+  "One block of habitat has a large core and a small share of edge.",
+  "The same area split into four patches is mostly edge: edge effects (light, temperature, wind and predators) reach most of it, so species that need the interior decline.",
+  "Corridors reconnect the patches, but they are all edge and add only a little habitat.",
+  "Illustrative grid: 96 habitat cells in each of the first two maps."
+ ],
+ "panels": [
+  {
+   "name": "continuous",
+   "grid": [
+    "................",
+    "..############..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "..############..",
+    "................",
+    "................"
+   ]
+  },
+  {
+   "name": "fragmented",
+   "grid": [
+    "................",
+    ".######..######.",
+    ".######..######.",
+    ".######..######.",
+    ".######..######.",
+    "................",
+    ".######..######.",
+    ".######..######.",
+    ".######..######.",
+    ".######..######.",
+    "................"
+   ]
+  },
+  {
+   "name": "joined by corridors",
+   "grid": [
+    "................",
+    ".######..######.",
+    ".##############.",
+    ".######..######.",
+    ".######..######.",
+    "...#.......#....",
+    ".######..######.",
+    ".##############.",
+    ".######..######.",
+    ".######..######.",
+    "................"
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "sameArea",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "type": "patches",
+   "panel": 0,
+   "value": 1
+  },
+  {
+   "type": "patches",
+   "panel": 1,
+   "value": 4
+  },
+  {
+   "type": "moreEdge",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "type": "lessCore",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "type": "connected",
+   "panel": 2
+  }
+ ]
+}

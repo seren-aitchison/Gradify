@@ -1,0 +1,63 @@
+{
+ "id": "bio-plasmid-map",
+ "renderer": "plasmidmap",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Plasmids",
+ "title": "An engineered plasmid vector",
+ "caption": "An engineered vector is a small circular DNA molecule with an origin of replication (so it is copied in the host), a selectable marker such as an ampicillin resistance gene, a multiple cloning site with unique restriction sites for inserting a gene, and sometimes a promoter to drive its expression. This map is illustrative, not a named plasmid.",
+ "alt": "A circle labelled 3,000 base pairs with four coloured arcs: an origin of replication, an ampicillin resistance gene, a promoter and a short multiple cloning site with three unique cutting sites, EcoRI, BamHI and HindIII.",
+ "description": [
+  "Origin of replication: the plasmid is copied independently in the host.",
+  "Selectable marker (here an ampicillin resistance gene): only cells that took up the plasmid grow on antibiotic.",
+  "Multiple cloning site: unique restriction sites for inserting a gene.",
+  "Promoter: drives expression of the inserted gene.",
+  "Digesting with two enzymes cuts out a small fragment; the fragments add up to the plasmid's length."
+ ],
+ "name": "illustrative vector",
+ "length": 3000,
+ "features": [
+  {
+   "name": "ori",
+   "type": "ori",
+   "start": 100,
+   "end": 700
+  },
+  {
+   "name": "AmpR",
+   "type": "marker",
+   "start": 1100,
+   "end": 1961
+  },
+  {
+   "name": "promoter",
+   "type": "promoter",
+   "start": 2250,
+   "end": 2350
+  },
+  {
+   "name": "MCS",
+   "type": "mcs",
+   "start": 2400,
+   "end": 2460
+  }
+ ],
+ "sites": [
+  {
+   "enzyme": "EcoRI",
+   "pos": 2410
+  },
+  {
+   "enzyme": "BamHI",
+   "pos": 2430
+  },
+  {
+   "enzyme": "HindIII",
+   "pos": 2450
+  }
+ ],
+ "digest": [
+  "EcoRI",
+  "HindIII"
+ ]
+}
