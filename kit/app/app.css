@@ -468,7 +468,10 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
    More sheet on phones. Drawn by drawNav() in main.js.
    ========================================================= */
 .lo-side { display: none; }
-.lo-side-title { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--faint); padding: 4px 12px 8px; }
+.lo-side-title { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--faint); padding: 4px 12px 6px; }
+/* the sidebar's groups: daily sections, your learning, more, then Settings on its own */
+.lo-group { display: flex; flex-direction: column; gap: 2px; }
+.lo-group + .lo-group { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
 .lo-side a { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 14px; color: var(--mute); text-decoration: none; font-size: 15px; font-weight: 500; }
 .lo-side a .ico, .lo-side a svg { width: 18px; height: 18px; flex: none; }
 .lo-side a:hover { color: var(--fg); background: rgba(var(--ink-rgb), .04); }
@@ -487,7 +490,12 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
 @media (max-width: 1099px) {
   body.side-open .lo-side { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; position: fixed; z-index: 29; left: 12px; right: 12px; bottom: calc(80px + env(safe-area-inset-bottom, 0px));
     padding: 12px; border-radius: 22px; border: 1px solid var(--line-strong); background: rgba(var(--surface-rgb), .97); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  body.side-open .lo-side { display: flex; flex-direction: column; gap: 0; max-height: calc(100dvh - 120px); overflow-y: auto; }
+  body.side-open .lo-group { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 4px; }
   body.side-open .lo-side-title { grid-column: 1 / -1; }
+  /* the phone's tab bar already holds the daily sections */
+  body.side-open .lo-group-daily { display: none; }
+  body.side-open .lo-group-daily + .lo-group { margin-top: 0; padding-top: 0; border-top: 0; }
 }
 @media (min-width: 861px) and (max-width: 1099px) { body.side-open .lo-side { bottom: auto; top: 84px; left: auto; width: 420px; } }
 @media (min-width: 861px) and (max-width: 1099px) { .app-nav { overflow-x: auto; } }
@@ -823,14 +831,17 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 
 /* My Knowledge */
 .k-funnel { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
-.k-step { padding: 16px; border-radius: 18px; display: grid; gap: 2px; color: var(--fg); }
-.k-step b { font-size: 30px; letter-spacing: -.03em; }
-.k-step span { font-size: 13px; opacity: .85; }
-.k-step.s0 { background: #1a1a1f; background: light-dark(#ffffff, #1a1a1f); color: var(--mute); border: 1px solid var(--line); }
-.k-step.s1 { background: linear-gradient(135deg, #2a27a8, #4641ff); }
-.k-step.s2 { background: linear-gradient(135deg, #6a2cd6, #b83dff); }
-.k-step.s3 { background: linear-gradient(135deg, #c0359f, #f055dd); }
-.k-step.s4 { background: linear-gradient(135deg, #ff5600, #ffc002); color: #1a0b00; }
+/* the five stages as quiet tiles: each keeps its colour in a small bar and its number, not a full-bleed fill */
+.k-step { --k: var(--mute); position: relative; padding: 16px 16px 14px; border-radius: 18px; display: grid; gap: 2px; color: var(--fg); background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); overflow: hidden; }
+.k-step::before { content: ""; position: absolute; left: 16px; top: 0; width: 28px; height: 3px; border-radius: 0 0 3px 3px; background: var(--k); }
+.k-step b { font-size: 30px; letter-spacing: -.03em; color: var(--k); }
+.k-step span { font-size: 13px; color: var(--mute); }
+.k-step.s0 b { color: var(--fg); }
+.k-step.s0::before { display: none; }
+.k-step.s1 { --k: #6d6aff; }
+.k-step.s2 { --k: #b06dff; }
+.k-step.s3 { --k: #f055dd; }
+.k-step.s4 { --k: #ff8a00; }
 .k-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 .k-card { display: grid; gap: 8px; padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); color: var(--fg); text-decoration: none; }
 .k-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
@@ -1155,8 +1166,11 @@ a.wd-s:hover { transform: translateY(-3px); }
 .app-nav [data-tab]:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 .app-nav .tab-title { align-self: center; color: var(--fg); font: 600 16px var(--sans); padding: 0 6px; }
 @media (max-width: 860px) {
-  .app-bar { flex-wrap: wrap; }
-  .app-bar .app-nav { order: 3; flex-basis: 100%; margin: 6px -4px 0; }
+  /* a section's tabs take a second row of the bar, so the bar grows to hold them instead of spilling over the page;
+     a lone section title is left out, since the page's own heading says the same */
+  .app-bar { flex-wrap: wrap; height: auto; min-height: 56px; }
+  .app-bar .app-nav { order: 3; flex-basis: 100%; margin: 2px -4px 0; }
+  .app-bar .app-nav:not(:has([data-tab])) { display: none !important; }
   .app-nav [data-tab] { font-size: 14px; padding: 8px 12px 11px; }
 }
 

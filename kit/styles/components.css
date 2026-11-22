@@ -1486,8 +1486,18 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
 .plus-lock { position: relative; display: grid; gap: 8px; justify-items: start; padding: 22px; margin: 12px 0; }
 .plus-lock h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
 .plus-lock .sub { margin: 0; max-width: 46em; }
-.plus-lock.compact { padding: 16px 18px; }
-.plus-lock.compact h3 { font-size: 16px; }
+/* compact: one quiet strip (badge, name and what it does, then the button), so it never outweighs the screen's own work */
+.plus-lock.compact { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 14px; row-gap: 2px; padding: 14px 16px; }
+.plus-lock.compact .plus-badge { grid-row: 1 / span 2; }
+.plus-lock.compact h3 { font-size: 15px; grid-column: 2; }
+.plus-lock.compact .sub { grid-column: 2; justify-self: stretch; min-width: 0; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: none; }
+.plus-lock.compact .sub + .sub { display: none; }
+.plus-lock.compact .btn { grid-column: 3; grid-row: 1 / span 2; }
+@media (max-width: 560px) {
+  .plus-lock.compact { grid-template-columns: auto minmax(0, 1fr); }
+  .plus-lock.compact .sub { white-space: normal; }
+  .plus-lock.compact .btn { grid-column: 1 / -1; grid-row: auto; margin-top: 10px; }
+}
 .plus-badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font: 600 12px/1.4 var(--sans, inherit); letter-spacing: .02em; color: var(--invert-fg); background: var(--spectrum); }
 .device-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; margin: 0 0 14px; }
 .device-banner .row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
