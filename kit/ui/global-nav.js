@@ -16,6 +16,8 @@ import { toast } from "./feedback.js";
 import { courseCard } from "./resources.js";
 import { shortcuts } from "./keys.js";
 import { SITES, pathOf } from "../core/site.js";
+import { shelfHtml, wireShelf } from "./shelf.js";
+const siteColour = (n) => { const s = SITES.find((x) => x.n === n); return s ? `#${s.c}` : "#6c63ff"; };
 
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
 const INDEX_URL = new URL("../data/search-index.json", import.meta.url).href;
@@ -119,7 +121,8 @@ export function mountGlobalNav({ site = null, button = null } = {}) {
  * "Your learning": pinned items (reorderable, Undo on unpin) and a card per course in progress with its
  * recommended next step. Hidden for someone who hasn't started anything, so a first visit looks unchanged.
  */
-export function mountYourLearning(el, { site = null, title = "Your learning" } = {}) {
+// layout "shelf": the courses as a stack of 3D spines (kit/ui/shelf.js) instead of cards; pins are unchanged
+export function mountYourLearning(el, { site = null, title = "Your learning", layout = "cards" } = {}) {
   if (!el) return null;
   ensureStyles();
   const draw = () => {
@@ -130,13 +133,15 @@ export function mountYourLearning(el, { site = null, title = "Your learning" } =
     const pinnedHrefs = new Set(mine.map((p) => p.href));
     el.innerHTML = `<div class="gx-yhead"><h2><i aria-hidden="true"></i>${esc(title)}</h2><button type="button" class="gx-link" data-pal>${uiIcon("search")}Find anything <kbd>${isMac() ? "⌘K" : "/"}</kbd></button></div>
       ${mine.length ? `<ul class="gx-pins" aria-label="Pinned">${mine.map((p, i) => `<li draggable="true" data-i="${i}"><a href="${esc(p.href)}">${uiIcon("pinned")}<span><b>${esc(p.title)}</b><small>${esc(p.sub || "")}</small></span></a><button type="button" class="gx-ib" data-unpin="${i}" aria-label="Unpin ${esc(p.title)}" title="Unpin">${uiIcon("close")}</button></li>`).join("")}</ul>` : ""}
-      ${courses.length ? `<div class="gx-cards">${courses.slice(0, 6).map((r) => {
+      ${courses.length && layout === "shelf" ? shelfHtml(courses.slice(0, 6), { colourOf: siteColour }) : ""}
+      ${courses.length && layout !== "shelf" ? `<div class="gx-cards">${courses.slice(0, 6).map((r) => {
         const courseHref = r.href.split("#")[0];
         return courseCard({ site: site ? r.unit || "" : r.site, course: r.course, status: r.course_pct >= 1 ? "done" : r.status || "started", pct: r.course_pct || 0, done: r.done_n || 0, total: r.total || 0,
           next: r.next ? { ...r.next, href: r.next.href } : { label: `Carry on with “${r.title}”`, href: r.href, go: "Continue learning" }, href: courseHref, pinned: pinnedHrefs.has(courseHref), pinHref: courseHref });
       }).join("")}</div>` : ""}`;
   };
   draw();
+  if (layout === "shelf") wireShelf(el);
   el.addEventListener("click", (e) => {
     if (e.target.closest("[data-pal]")) { document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: isMac(), ctrlKey: !isMac(), bubbles: true })); return; }
     const un = e.target.closest("[data-unpin]");

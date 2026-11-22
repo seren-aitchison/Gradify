@@ -191,7 +191,8 @@ const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/
 
 // ---------- Router ----------
 // the screens someone new can use before set-up: bring notes, see the pack, study it
-const TRY_FIRST = ["new", "deck", "study"];
+// (and the library of packs, which the pack page links back to)
+const TRY_FIRST = ["new", "deck", "study", "library"];
 const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
