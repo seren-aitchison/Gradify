@@ -12,6 +12,7 @@ import { REAGENTS, STARTERS, predict, starter, reagentOf, LEVELS, atLevel } from
 import { competition, NUCLEOPHILES, SOLVENTS, TEMPS, halideSites } from "./competition.js";
 import { TASKS, task, routes, explore, precursors, moves, hashOf } from "./planner.js";
 import { REACTIONS } from "./library.js";
+import { CONFIDENCE } from "./rules.js";
 
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>");
 const nameOf = (m) => { const A = K.analyse(m); return A.name?.name || A.formula; };
@@ -124,7 +125,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     const res = predict(start, reagent), r = res.reagent;
     const arrow = `<div class="mx-arrow rx-arrow"><small>${esc(r.label)}</small><b>⟶</b><small>${esc(r.cond)}</small></div>`;
     const opts = predictFirst ? options(res) : null, hidden = predictFirst && guess == null;
-    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
+    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.status === "declined" ? "Not predicted" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
     const by = res.reacts && !hidden && res.byproducts.length ? `<span class="rx-by">+ ${res.byproducts.map(sub).join(" + ")}</span>` : "";
     box.innerHTML = `<div class="rx-row">${card(start)}${arrow}<div class="rx-prods">${prods}${by}</div></div>`;
     if (hidden) {
@@ -134,7 +135,8 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     }
     const verdict = guess == null ? "" : opts.right.includes(guess) ? `<p class="lab-msg ok">✓ Right: ${esc(guess)}.</p>` : `<p class="lab-msg">✗ ${guess === "(time ran out)" ? "Time ran out." : `You chose ${esc(guess)}.`} ${res.reacts ? `The answer: ${esc(opts.right.join(" or "))}.` : "There's no reaction."}</p>`;
     const comp = res.competition ? `<p class="osk-aka">${res.competition.pathways.map((p) => `${p.mech}: ${p.share}`).join(" · ")}. Explore other conditions in the <b>Conditions</b> view.</p>` : "";
-    info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && res.stereo?.length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${res.stereo.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}`;
+    const rule = res.rule ? `<details class="rx-rule"><summary>The rule behind this</summary><dl><dt>Applies to</dt><dd>${esc(res.rule.reactants)}</dd><dt>Gives</dt><dd>${esc(res.rule.products)}</dd><dt>Selectivity</dt><dd>${esc(res.rule.selectivity)}</dd>${res.rule.limitations.length ? `<dt>Doesn't cover</dt><dd><ul>${res.rule.limitations.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></dd>` : ""}<dt>Sources</dt><dd>${res.rule.sources.map((x) => esc(`${x.id === "aqa" ? "AQA A-level (7405)" : x.id === "clayden" ? "Clayden, Organic Chemistry" : x.id === "ocr" ? "OCR A-level" : "March's Advanced Organic Chemistry"}: ${x.topic}`)).join("; ")}</dd><dt>Confidence</dt><dd>${esc(res.rule.confidence)}: ${esc(CONFIDENCE[res.rule.confidence])}</dd></dl></details>` : "";
+    info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : res.status === "declined" ? "Outside the lab's rules" : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && res.stereo?.length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${res.stereo.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
     if (practice) button(btns, "Next question", nextQuestion, "pri");
     if (res.reacts && res.mechanism && onMechanism && REACTIONS.some((x) => x.id === res.mechanism)) button(btns, "See the mechanism", () => onMechanism(res.mechanism), practice ? "" : "pri");
     if (res.reacts) res.products.forEach((p, i) => { if (K.analyse(p.m).charge) return; button(btns, res.products.length > 1 ? `Use ${p.role === "product" ? nameOf(p.m) : `the ${p.role} product`} next` : "Use as the next starting material", () => {

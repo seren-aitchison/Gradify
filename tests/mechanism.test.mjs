@@ -87,6 +87,11 @@ test("the library's products are the right molecules", () => {
   assert.deepEqual(named("ester-hydrolysis"), ["ethanol"]);
   assert.deepEqual(named("acyl-ammonia"), ["ethanamide"]);
   assert.deepEqual(named("grignard"), ["2-methylpropan-2-ol"]);
+  assert.deepEqual(named("bromination"), ["bromobenzene"]);
+  assert.deepEqual(named("hbr-propyne"), ["2-bromoprop-1-ene"]);
+  assert.deepEqual(named("ester-acid"), ["ethanoic acid", "ethanol"]);
+  const ny = instantiate(REACTIONS.find((r) => r.id === "hbr-propyne")), rv = E.applyStep(ny.start, ny.steps[0].arrows);
+  assert.ok(rv.steps.some((x) => /vinyl cation/.test(x)), "a vinyl cation is named as one");
   // the acylium ion is recognised as stabilised, not flagged as a primary carbocation
   const fc = instantiate(REACTIONS.find((r) => r.id === "fc-acylation")), r1 = E.applyStep(fc.start, fc.steps[0].arrows);
   assert.ok(r1.steps.some((x) => /acylium/.test(x))); assert.ok(!r1.warnings.some((w) => w.code === "unstable-cation"));
@@ -182,5 +187,5 @@ test("partial charges: δ+ carbon and δ− halogen in a polar bond", () => {
 test("registration: each mechanism challenge is evidence for a lesson the lab links to", () => {
   const x = INTERACTIVES_COURSE.interactives.find((i) => i.id === "organic-notes");
   for (const r of REACTIONS) { const l = EVIDENCE["organic-notes"][`mech-${r.id}`]; assert.ok(l, r.id); assert.ok(x.lessons.includes(l), `${r.id} → ${l}`); }
-  assert.ok(REACTIONS.length >= 16);
+  assert.ok(REACTIONS.length >= 20);
 });

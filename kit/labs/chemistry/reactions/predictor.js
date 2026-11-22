@@ -9,6 +9,7 @@
 //                             join: "or" | "+", byproducts, why: [reasoning], stereo: [notes], mechanism | null }
 import * as K from "../skeletal.js";
 import { competition, halideSites, sprout, substitute } from "./competition.js";
+import { ruleFor } from "./rules.js";
 
 export { sprout };
 export const LEVELS = { foundation: "Foundation", intermediate: "Intermediate", advanced: "Advanced", university: "University" };
@@ -198,7 +199,7 @@ function oxidise(m, full) {
   const ox = alc.filter((a) => a.cls < 3);
   if (!ox.length && !ald.length) {
     if (alc.length) return { fail: "No reaction: a tertiary alcohol has no hydrogen on the carbon carrying the –OH, so it can't be oxidised. The dichromate stays orange (this is how tertiary alcohols are told apart)." };
-    if (!full && carbonyls(m, c).some((x) => x.kind === "aldehyde")) return { fail: "Distilling removes an aldehyde before it can react; to oxidise an aldehyde to a carboxylic acid, heat under reflux with excess oxidising agent." };
+    if (!full && carbonyls(m, c).some((x) => x.kind === "aldehyde")) return { fail: "No reaction: distilling removes an aldehyde before it can react; to oxidise an aldehyde to a carboxylic acid, heat under reflux with excess oxidising agent." };
     return none(m, "acidified dichromate oxidises primary and secondary alcohols (and aldehydes)");
   }
   const p = K.clone(m), why = [];
@@ -417,7 +418,7 @@ export const REAGENTS = [
       if (!s.length) return none(m, "hot concentrated acid dehydrates alcohols");
       if (s.length > 1) return { fail: "This molecule has more than one –OH: dehydrating them all gives a mixture the lab won't predict reliably. Try a molecule with one –OH." };
       const list2 = eliminateAll(m, s[0].o, s[0].c);
-      if (!list2) return { fail: "The carbon carrying the –OH has no neighbouring carbon with a hydrogen (no β-hydrogen), so no C=C can form." };
+      if (!list2) return { fail: "No reaction: the carbon carrying the –OH has no neighbouring carbon with a hydrogen (no β-hydrogen), so no C=C can form." };
       return { ...list2, why: [`The acid protonates the –OH, which leaves as water. ${s[0].cls === 3 ? "A tertiary alcohol forms a stable tertiary carbocation, which loses H⁺ (E1)." : s[0].cls === 2 ? "A secondary alcohol reacts by E1 through a secondary carbocation." : "A primary alcohol reacts by E2: a primary carbocation is too unstable to form."}`, ...list2.why], byproducts: ["H₂O"], mechanism: s[0].cls >= 2 ? "e1" : null };
     } },
   { id: "esterify", label: "ethanol, conc. H₂SO₄ catalyst", cond: "warm under reflux", type: "Esterification (condensation)", level: "foundation",
@@ -526,8 +527,21 @@ function cleave(m, full) {
   return { prods, why, byproducts: [...new Set(by)], join: "+" };
 }
 
-/** The prediction for a reagent on a drawing. */
+/**
+ * Whether a refusal means the chemistry says "no reaction" or the lab's rules don't cover the case ("declined").
+ * No-reaction messages start with "No reaction", "No significant reaction" or "No addition"; everything else is a
+ * decline (outside the model, ambiguous, or needs another reagent).
+ */
+export const statusOf = (text) => (/^(No reaction|No significant reaction|No addition|Ethene is oxidised completely)/.test(text) ? "no-reaction" : "declined");
+
+/** The prediction for a reagent on a drawing: { status: "reacts" | "no-reaction" | "declined", rule, ... }. */
 export function predict(m, reagentId) {
+  const out = predictRaw(m, reagentId);
+  out.status = out.reacts ? "reacts" : statusOf(out.why?.[0] || "");
+  out.rule = out.reagent ? ruleFor(out.reagent) : null;
+  return out;
+}
+function predictRaw(m, reagentId) {
   const r = reagentOf(reagentId);
   if (!r) return { reacts: false, why: ["Unknown reagent."] };
   if (!m?.atoms?.length) return { reacts: false, reagent: r, why: ["Draw a starting material first."] };
@@ -584,3 +598,20 @@ export function starter(name) {
   const m = K.empty(); K.addRing(m, K.ringPath(m, 6, { type: "paper", x: 0, y: 0 })); m.bonds[0].order = 2; return m; // cyclohexene
 }
 export { nameOf, split as components };
+
+/**
+ * A prediction as structured data for an explanation (or a future AI tutor): the deterministic verdict, the rule
+ * applied with its limitations and sources, and the reasoning steps. The tutor explains this; it never changes it.
+ */
+export function explainContext(m, res) {
+  const A = K.analyse(m);
+  return {
+    start: { name: A.name?.name || null, formula: A.formula, groups: A.groups.map((g) => g.label) },
+    reagent: res.reagent ? { label: res.reagent.label, conditions: res.reagent.cond, type: res.type, level: res.reagent.level } : null,
+    status: res.status,
+    products: (res.products || []).map((p) => ({ name: nameOf(p.m), formula: K.analyse(p.m).formula, role: p.role, note: p.note || null })),
+    byproducts: res.byproducts || [], reasoning: res.why || [], stereochemistry: res.stereo || [],
+    pathways: res.competition ? res.competition.pathways.map((p) => ({ mechanism: p.mech, share: p.share })) : null,
+    mechanism: res.mechanism || null, rule: res.rule,
+  };
+}
