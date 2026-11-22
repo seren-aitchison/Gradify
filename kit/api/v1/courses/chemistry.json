@@ -2914,10 +2914,10 @@
   },
   {
    "id": "organic-notes",
-   "title": "Organic Notes Lab: draw skeletal formulae",
+   "title": "Organic Chemistry Lab: structures and mechanisms",
    "kind": "Tool",
-   "sub": "Draw on hexagon paper (bonds snap to 120° zig-zags, rings fuse onto bonds) and see the IUPAC name with its reasoning, formula, Mr, functional groups, stereocentres and E/Z worked out; save drawings as notes.",
-   "note": "Systematic names for chains with halogens, –OH, C=O, –COOH, C=C and C≡C (A-level chain rules); rings, esters and amines from a library of common compounds. Stereocentres and E/Z from the graph, not 3D.",
+   "sub": "Draw skeletal formulae on hexagon paper and see the name, formula, groups and stereochemistry worked out; push electrons with curly and fishhook arrows, checked step by step and animated; turn the molecule in 3D.",
+   "note": "Mechanism checks come from electron counting (sources, valence, charges, conservation) and six reaction templates (SN1, SN2, E2, HBr addition, HCN addition, radical chlorination); other mechanisms are checked for consistency only. Names: chains with halogens, –OH, C=O, –COOH, C=C, C≡C (A-level chain rules); rings and others from a library.",
    "tasks": null,
    "lessons": [
     "u12-03",
@@ -2928,7 +2928,13 @@
     "u12-11",
     "u12-13",
     "u12-15",
-    "u12-20"
+    "u12-20",
+    "u13-10",
+    "u13-09",
+    "u13-13",
+    "u13-15",
+    "u13-16",
+    "u13-06"
    ],
    "url": "https://getgradify.com/scigradify/chemistry/#/practice/organic-notes"
   },

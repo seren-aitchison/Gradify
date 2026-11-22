@@ -109,3 +109,27 @@
 .osk-prob { display: block; width: 100%; max-width: 100%; min-width: 0; padding: 7px 10px; border-radius: 10px; font: 14px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); text-overflow: ellipsis; }
 .osk-cols > * { min-width: 0; }
 @media (max-width: 560px) { .osk-tool { min-width: 30px; padding: 0 6px; } .osk-page { grid-template-columns: 96px minmax(0, 1fr); } .osk-thumb svg { width: 96px; height: 64px; } }
+/* Organic Chemistry Lab: modes, Mechanism mode (kit/labs/chemistry/reactions/mechanism-ui.js) and 3D mode */
+.osk-modes { align-self: flex-start; } .osk-modes button { font-weight: 600; padding: 7px 14px; }
+.osk-mode { display: flex; flex-direction: column; gap: 12px; } .osk-mode[hidden] { display: none; }
+.mx-top { justify-content: space-between; } .mx-top .lab-sel { min-width: 0; max-width: 100%; } .mx-top .lab-sel select { min-width: 0; max-width: min(420px, 100%); }
+@media (max-width: 560px) { .mx-top .lab-sel { width: 100%; } .mx-top .lab-sel select { flex: 1; } } .mx-opts { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.mx-cond:empty { display: none; }
+.mx-cond { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .035); border: 1px solid var(--line); }
+.mx-rxn { font-weight: 600; } .mx-fam { margin-left: auto; font-size: 12px; color: var(--mute); }
+.mx-arrow { display: inline-grid; grid-template-rows: auto auto auto; justify-items: center; line-height: 1.05; } .mx-arrow small { font-size: 11.5px; color: var(--mute); } .mx-arrow b { font-size: 22px; font-weight: 400; }
+.mx-stagewrap { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.mx-svg { cursor: crosshair; }
+.mx-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 12.5px; }
+.mx-steps button { padding: 4px 9px; border-radius: 999px; font: 500 12.5px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); cursor: pointer; }
+.mx-steps button b { font-family: var(--mono); color: var(--mute); margin-right: 2px; }
+.mx-steps button[aria-selected="true"] { border-color: var(--co-accent, #10b981); box-shadow: 0 0 0 1px var(--co-accent, #10b981) inset; }
+.mx-steps i { font-style: normal; color: var(--mute); } .mx-next { color: var(--mute); font-style: italic; }
+.mx-play { gap: 6px; } .mx-play .lab-btn { padding: 6px 11px; } .mx-play input[type="range"] { width: 110px; accent-color: var(--co-accent, #10b981); }
+.mx-kbd summary { cursor: pointer; font-size: 12.5px; color: var(--mute); } .mx-kbd select { max-width: 46vw; }
+.mx-fb h4.ok { color: #40d4b1; } .mx-fb h4.no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.mx-list { margin: 6px 0; padding-left: 18px; } .mx-list li { margin: 2px 0; } .mx-list.no li { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); } .mx-list.warn li { color: #f5b84b; color: light-dark(#8a5a00, #f5b84b); }
+.mx-checks { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; } .mx-checks .ok { color: #40d4b1; } .mx-checks .no { color: #ff8aa5; color: light-dark(#b8002a, #ff8aa5); }
+.mx-why { padding: 8px 10px; border-left: 3px solid var(--co-accent, #10b981); background: rgba(var(--ink-rgb), .03); border-radius: 0 8px 8px 0; }
+.mx-about ul { margin: 6px 0 0; padding-left: 18px; } .mx-about summary { cursor: pointer; font-weight: 600; }
+.m3-stage { min-width: 0; }

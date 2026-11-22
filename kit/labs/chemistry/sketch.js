@@ -1,4 +1,5 @@
-// Organic Notes Lab: draw skeletal formulae on hexagon paper and see the chemistry worked out as you draw.
+// Organic Chemistry Lab (docs/ORGANIC-LAB.md). Three modes: Structure (below), Mechanism (reactions/mechanism-ui.js)
+// and 3D (lab3d.js). Structure: draw skeletal formulae on hexagon paper and see the chemistry worked out as you draw.
 //   Draw: click an atom to add a bond in the best direction (zig-zag, 120°), click empty paper for a new bond, drag
 //         for a zig-zag chain (it counts the carbons), click a bond to cycle single → double → triple.
 //   Rings: click paper for a ring on the hexagon grid, an atom for a spiro ring, a bond to fuse a ring (⌬ adds
@@ -10,6 +11,9 @@
 // Drawings are saved as notes pages in this browser, exported as PNG or SVG, or copied as Gradify Notes flashcards.
 import { shell, challenges, toggle, button, describe, esc } from "../lab.js";
 import * as K from "./skeletal.js";
+import * as E from "./reactions/electron-flow.js";
+import { mountMechanism } from "./reactions/mechanism-ui.js";
+import { mount3d } from "./lab3d.js";
 
 const STORE = "gradify.organicLab", PAGES = "gradify.organicLab.pages", PREFS = "gradify.organicLab.prefs";
 const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } };
@@ -35,12 +39,17 @@ export const PROBLEMS = [
 
 export function mount(el, ctx = {}) {
   const $ = shell(el, `
+    <div class="lab-seg osk-modes" role="tablist" aria-label="Lab mode"><button type="button" role="tab" data-mode="structure" aria-pressed="true">Structure</button><button type="button" role="tab" data-mode="mechanism" aria-pressed="false">Mechanism</button><button type="button" role="tab" data-mode="3d" aria-pressed="false">3D</button></div>
+    <div class="osk-mode" data-pane="structure">
     <div class="osk-tools" role="toolbar" aria-label="Drawing tools"></div>
     <div class="lab-cols osk-cols">
       <div class="osk-stage" tabindex="0" aria-label="Drawing area"><div class="osk-svg"></div><p class="osk-hint"></p>
         <div class="osk-zoom"><button type="button" data-z="-1" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Fit drawing">⤢</button><button type="button" data-z="1" aria-label="Zoom in">+</button></div></div>
       <div class="lab-ctrl"><div class="lab-info osk-info" aria-live="polite"></div><div class="osk-opts"></div><div class="lab-row osk-out"></div></div>
     </div>
+    </div>
+    <div class="osk-mode" data-pane="mechanism" hidden></div>
+    <div class="osk-mode" data-pane="3d" hidden></div>
     <div class="lab-cols osk-cols">
       <div class="lab-ctrl osk-probs"><div class="lab-info"><h4>Work it out</h4><select class="osk-prob" aria-label="Problem"></select><p class="osk-ptext"></p><div class="lab-row"><span class="osk-check"></span><span class="osk-phint"></span></div><p class="lab-msg osk-pmsg"></p></div></div>
       <div class="lab-ctrl"><div class="lab-info osk-book"><h4>My organic notes</h4><input type="text" class="osk-title" placeholder="Title (the name, if blank)" aria-label="Note title"><textarea class="osk-note" rows="3" placeholder="Notes: reactions, conditions, mechanisms, mnemonics…" aria-label="Notes for this drawing"></textarea><div class="lab-row osk-bookbtns"></div><div class="osk-pages"></div></div></div>
@@ -297,6 +306,13 @@ export function mount(el, ctx = {}) {
     copy(list.map(cards).join("\n\n"), "Copied: paste into Gradify Notes and the >> lines become flashcards");
   });
   function cards(p) {
+    if (p.kind === "mech") {
+      const rp = E.replay(p.mech), lines = [`- Mechanism: ${p.title}`];
+      if (p.mech.conditions) lines.push(`  - Conditions for ${p.title} >> ${p.mech.conditions.above}, ${p.mech.conditions.below}`);
+      rp.results.forEach((r, k) => { if (r.steps.length) lines.push(`  - ${p.title}: what happens in step ${k + 1}? >> ${r.steps.join(" ")}`); });
+      lines.push(`  - Products of ${p.title} >> ${E.species(rp.states.at(-1)).map((x) => x.formula).join(" + ")}`);
+      return lines.join("\n");
+    }
     const a = K.analyse(p.mol), lines = [`- ${p.title}`];
     if (a.name?.name && a.condensed) lines.push(`  - Name ${a.condensed} >> ${a.name.name}`);
     if (a.name?.name) lines.push(`  - Molecular formula of ${a.name.name} >> ${a.formula}`);
@@ -310,15 +326,32 @@ export function mount(el, ctx = {}) {
     const box = $(".osk-pages");
     if (!pages.length) { box.innerHTML = `<p class="osk-aka">Saved drawings appear here with your notes. They stay in this browser.</p>`; return; }
     const pal = palette();
-    box.innerHTML = pages.map((p, i) => { const a = K.analyse(p.mol), size = [132, 88]; return `<div class="osk-page"><button type="button" class="osk-thumb" data-open="${i}" aria-label="Open ${esc(p.title)}">${K.render(p.mol, a, K.fit(p.mol, size, { max: 22, pad: 0.8 }), size, { palette: pal })}</button><div><b>${esc(p.title)}</b><small>${sub(p.formula || a.formula)} · ${esc(p.at || "")}</small>${p.note ? `<p>${esc(p.note)}</p>` : ""}<button type="button" class="lab-try" data-del="${i}">Delete</button></div></div>`; }).join("");
+    box.innerHTML = pages.map((p, i) => { if (p.kind === "mech") { const end = E.replay(p.mech).states.at(-1), d = E.toDrawing(end), size = [132, 88]; return `<div class="osk-page"><button type="button" class="osk-thumb" data-open="${i}" aria-label="Open the mechanism ${esc(p.title)}">${K.render(d.m, { hcount: d.hcount, problems: [], stereo: [] }, K.fit(d.m, size, { max: 22, pad: 0.8 }), size, { palette: pal })}</button><div><b>${esc(p.title)}</b><small>Mechanism · ${p.mech.steps.length} step${p.mech.steps.length === 1 ? "" : "s"} · ${esc(p.at || "")}</small><button type="button" class="lab-try" data-del="${i}">Delete</button></div></div>`; }
+      const a = K.analyse(p.mol), size = [132, 88]; return `<div class="osk-page"><button type="button" class="osk-thumb" data-open="${i}" aria-label="Open ${esc(p.title)}">${K.render(p.mol, a, K.fit(p.mol, size, { max: 22, pad: 0.8 }), size, { palette: pal })}</button><div><b>${esc(p.title)}</b><small>${sub(p.formula || a.formula)} · ${esc(p.at || "")}</small>${p.note ? `<p>${esc(p.note)}</p>` : ""}<button type="button" class="lab-try" data-del="${i}">Delete</button></div></div>`; }).join("");
   }
   $(".osk-pages").addEventListener("click", (e) => {
     const o = e.target.closest("[data-open]"), d = e.target.closest("[data-del]");
+    if (o && pages[Number(o.dataset.open)].kind === "mech") { setMode("mechanism"); mech.load(null, pages[Number(o.dataset.open)].mech); return; }
     if (o) { const p = pages[Number(o.dataset.open)]; snap(); m = K.clone(p.mol); sel = null; $(".osk-title").value = p.title; $(".osk-note").value = p.note || ""; commit(); fitView(); stage.scrollIntoView?.({ block: "nearest", behavior: "smooth" }); }
     if (d && confirm("Delete this page from your organic notes?")) { pages.splice(Number(d.dataset.del), 1); save(PAGES, pages); book(); }
   });
 
+  // ---------- modes: Structure, Mechanism, 3D ----------
+  const mech = mountMechanism($('[data-pane="mechanism"]'), { ctx, palette, getDrawing: () => K.clone(m),
+    onSave: (mx) => { pages.unshift({ id: Date.now().toString(36), kind: "mech", title: mx.title, mech: mx, at: new Date().toISOString().slice(0, 10) }); save(PAGES, pages); book(); } });
+  const m3 = mount3d($('[data-pane="3d"]'), { getDrawing: () => m });
+  let mode = "structure";
+  function setMode(k) {
+    mode = k;
+    $(".osk-modes").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === k)));
+    $.all("[data-pane]").forEach((p) => { p.hidden = p.dataset.pane !== k; });
+    $(".osk-probs").hidden = k !== "structure";
+    if (k === "3d") m3.show(); else m3.stop();
+    if (k === "mechanism") mech.refresh(); else if (k === "structure") { resize(); paint(); }
+  }
+  $(".osk-modes").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); });
+
   setTool("draw"); resize(); fitView(); commit(); book(); probPaint(false);
-  return () => { ro?.disconnect(); mo.disconnect(); };
+  return () => { ro?.disconnect(); mo.disconnect(); mech.stop(); m3.stop(); };
 }
 export default mount;
