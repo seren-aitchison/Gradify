@@ -87,7 +87,7 @@ h1 {
 .bubble-filter { max-width: 100%; overflow-x: auto; scrollbar-width: none; margin-bottom: 18px; }
 .bubble-stage { display: grid; grid-template-columns: 1fr 320px; gap: 16px; align-items: start; }
 /* each feature is one uniform tile: its glass icon (kit/core/glass-icons.js) and its name */
-.bubbles { display: grid; grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); gap: 10px; align-content: start; }
+.bubbles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(196px, 100%), 1fr)); gap: 10px; align-content: start; }
 .bubble {
   position: relative; cursor: pointer; padding: 10px 12px 10px 10px; border-radius: 16px; min-height: 64px;
   display: flex; align-items: center; gap: 12px; text-align: left; font: inherit; color: var(--fg);
@@ -99,7 +99,7 @@ h1 {
 .bubble:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 .bubble.sel { background: color-mix(in srgb, var(--c) 12%, transparent); border-color: color-mix(in srgb, var(--c) 60%, transparent); }
 .b-ico { position: relative; display: grid; place-items: center; flex: none; }
-.b-name { font-size: 14px; font-weight: 600; line-height: 1.25; color: var(--mute); }
+.b-name { min-width: 0; overflow-wrap: break-word; font-size: 14px; font-weight: 600; line-height: 1.25; color: var(--mute); }
 .bubble.sel .b-name, .bubble:hover .b-name { color: var(--fg); }
 .bubble-detail { position: sticky; top: 90px; gap: 10px; }
 .b-ico.big { align-self: flex-start; }
@@ -309,7 +309,7 @@ footer b { color: var(--fg); font-weight: 600; }
   .hero { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
-  .bubbles { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .bubbles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .bubble { padding: 8px 10px 8px 8px; gap: 10px; }
   .b-name { font-size: 13px; }
   .ai-fab .fab-txt { display: none; }
@@ -327,6 +327,10 @@ footer b { color: var(--fg); font-weight: 600; }
   .group h2 { font-size: 22px; }
   .grid { grid-template-columns: 1fr; gap: 8px; }
   .card { padding: 12px 12px 12px 14px; border-radius: 16px; }
+}
+/* the narrowest phones: one tile a row, so long names stay whole instead of breaking mid-word */
+@media (max-width: 380px) {
+  .bubbles { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

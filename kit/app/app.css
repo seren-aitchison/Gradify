@@ -838,10 +838,11 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 .k-step span { font-size: 13px; color: var(--mute); }
 .k-step.s0 b { color: var(--fg); }
 .k-step.s0::before { display: none; }
-.k-step.s1 { --k: #6d6aff; }
-.k-step.s2 { --k: #b06dff; }
-.k-step.s3 { --k: #f055dd; }
-.k-step.s4 { --k: #ff8a00; }
+/* light mode takes deeper shades of each stage colour, so the counts keep at least 4:1 contrast on the pale tile */
+.k-step.s1 { --k: #6d6aff; --k: light-dark(#4641ff, #6d6aff); }
+.k-step.s2 { --k: #b06dff; --k: light-dark(#7b2fe0, #b06dff); }
+.k-step.s3 { --k: #f055dd; --k: light-dark(#b8239f, #f055dd); }
+.k-step.s4 { --k: #ff8a00; --k: light-dark(#b85a00, #ff8a00); }
 .k-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 .k-card { display: grid; gap: 8px; padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); color: var(--fg); text-decoration: none; }
 .k-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
