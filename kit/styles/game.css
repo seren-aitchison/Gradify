@@ -74,3 +74,5 @@
 .skip-link { position: absolute; left: 16px; top: -48px; z-index: 70; padding: 8px 14px; border-radius: 10px; background: var(--fg); color: #000; }
 .skip-link:focus { top: 12px; }
 @media (min-width: 1100px) { .gj-stats { grid-template-columns: 1.7fr repeat(4, 1fr); } .gj-level { grid-column: auto; } }
+/* light mode: the level ring is a light disc with dark text, so the level number shows (it was dark on dark) */
+:root[data-theme="light"] .gj-ring { background: radial-gradient(closest-side, #ffffff 79%, transparent 80% 100%), conic-gradient(var(--gold) var(--p), rgba(13, 13, 24, .1) 0); box-shadow: 0 6px 18px -10px rgba(13, 13, 24, .35); }
