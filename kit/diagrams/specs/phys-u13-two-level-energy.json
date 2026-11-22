@@ -1,0 +1,104 @@
+{
+ "id": "phys-u13-two-level-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Microcanonical, canonical and grand canonical ensembles",
+ "title": "Mean energy of a two-level system",
+ "caption": "For levels 0 and ε the Boltzmann factor gives ⟨E⟩ = ε/(e^{ε/k_BT} + 1). At k_BT = ε it is 0.269 ε. At low T almost every system is in the ground state (⟨E⟩ → 0); at high T the two levels become equally likely and ⟨E⟩ approaches ε/2 and no higher: a two-level system can never have more than half its excitation.",
+ "alt": "Graph of mean energy over epsilon against k_B T over epsilon: it rises from 0 and levels off at 0.5; at k_B T = ε it is 0.269.",
+ "description": [
+  "The horizontal axis is k_BT/ε; the vertical axis is ⟨E⟩/ε.",
+  "⟨E⟩/ε = 1/(e^{ε/k_BT} + 1): close to 0 at low temperature, with the excited state hardly populated.",
+  "At k_BT = ε it is 1/(e + 1) = 0.269.",
+  "At high temperature both levels are equally likely, so ⟨E⟩ → ε/2 (dashed line)."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "k_{B}T/ε",
+  "⟨E⟩/ε"
+ ],
+ "marks": [
+  {
+   "y": 0.5,
+   "label": "ε/2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "1/(exp(1/x)+1)",
+   "domain": [
+    0.05,
+    5
+   ],
+   "colour": "a1",
+   "label": "⟨E⟩",
+   "labelAt": [
+    3.2,
+    0.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.2689414213699951,
+   "label": "0.269",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(exp(1/x)+1)",
+   "x": 1,
+   "y": 0.2689414213699951,
+   "name": "⟨E⟩ = ε/(e + 1) = 0.269 ε at k_BT = ε"
+  },
+  {
+   "type": "value",
+   "expr": "1/(exp(1/x)+1)",
+   "x": 5000,
+   "between": [
+    0.499,
+    0.5
+   ],
+   "name": "⟨E⟩ → ε/2 at high temperature"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "maths-u12-bernoulli-kick",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Bernoulli Distribution",
+ "title": "A free kick: Bernoulli(0.3)",
+ "caption": "Out of 10 equally likely shares, 7 are misses (X = 0) and 3 are goals (X = 1), so the mean is 0.3 and the SD is √(0.3 × 0.7) ≈ 0.458.",
+ "alt": "Bar chart with X = 0 at height 7 and X = 1 at height 3, in tenths.",
+ "description": [
+  "P(X = 1) = 0.3 and P(X = 0) = 0.7.",
+  "The mean of an indicator variable is the probability of the 1: E(X) = 0.3."
+ ],
+ "categories": [
+  0,
+  1
+ ],
+ "values": [
+  7,
+  3
+ ],
+ "range": {
+  "y": [
+   0,
+   8
+  ]
+ },
+ "ticks": [
+  2,
+  4,
+  6,
+  8
+ ],
+ "axisLabels": [
+  "X",
+  "probability (tenths)"
+ ],
+ "highlight": [
+  1
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 10
+  },
+  {
+   "type": "mean",
+   "value": "3/10"
+  }
+ ]
+}

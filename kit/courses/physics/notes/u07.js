@@ -42,6 +42,7 @@ E: ∯g·dA = −4πGM_{enc}
 P: The same law as electrostatics with a sign change (masses attract). It gives the shell theorem in one line and generalises to ∇·g = −4πGρ.
 X: Find g at half the Earth's radius (uniform density assumed).
 > g = g_{0} × (r/R) = 9.8/2 = 4.9 N kg^{-1}
+D: phys-u07-g-inside-outside
 !: The real Earth isn't uniform: its dense core makes g increase slightly with depth at first, peaking at the core–mantle boundary.
 Q: How does g vary inside a uniform solid sphere? | Proportionally to distance from the centre.
 Q: What is the gravitational field inside a hollow spherical shell? | Zero.
@@ -101,6 +102,7 @@ P: A planet sits in a potential well. To escape you must climb out: at Earth's s
 X: How much energy lifts a 1000 kg satellite from the surface to 400 km?
 > ΔU = GMm(1/R − 1/(R + h)) = 6.67 × 10^{-11} × 6 × 10^{24} × 1000 × (1/6.37 × 10^{6} − 1/6.77 × 10^{6})
 > ≈ 3.7 × 10^{9} J (mgh with g = 9.8 would give 3.9 × 10^{9} J)
+D: phys-u07-potential-well
 !: Potential is negative and becomes less negative (increases) with height. "Higher potential" means closer to zero.
 Q: Why is gravitational potential negative? | Zero is defined at infinity, and gravity is attractive, so work must be done to move away.
 Q: How is field related to potential? | g = −dV/dr: the field points down the potential gradient.
@@ -228,6 +230,7 @@ P: Kepler's third law measures masses: the Sun's from Earth's orbit, Jupiter's f
 X: Jupiter is 5.2 AU from the Sun. Find its period.
 > T^{2} = a^{3} (years, AU) = 140.6
 > T = 11.9 years
+D: phys-u07-kepler-period
 !: The third law in its simple form T^{2} ∝ a^{3} compares bodies orbiting the same central mass; Earth's satellites and the planets have different constants.
 P: **Investigate with the lab.** Try orbits of two sizes and compare T² with a³. Then check equal areas in equal times on an eccentric orbit.
 IX: orbits
@@ -295,6 +298,7 @@ P: To raise a circular orbit you add energy (fire forward), but at the new, high
 X: A 500 kg satellite moves from r = 7000 km to 8000 km (circular). Find ΔE, ΔKE and ΔU.
 > GMm = 3.99 × 10^{14} × 500 = 2.0 × 10^{17}
 > E: −14.25 GJ → −12.47 GJ, ΔE = +1.78 GJ; ΔKE = −1.78 GJ; ΔU = +3.56 GJ
+D: phys-u07-orbit-energies
 !: Total orbital energy is negative for bound orbits; "more energy" means less negative.
 P: **Investigate with the lab.** On an eccentric orbit, watch the kinetic and potential energy exchange while the total stays constant. Then give the planet escape velocity and note the total energy reaches zero.
 IX: orbits

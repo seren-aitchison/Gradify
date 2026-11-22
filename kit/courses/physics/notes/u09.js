@@ -91,6 +91,7 @@ P: Near the equilibrium spacing r_{0}, the interatomic potential is approximatel
 X: A spring stretches 4.0 cm under 2.0 N. How far under 5.0 N (within the limit)?
 > k = 2.0/0.04 = 50 N m^{-1}
 > x = 5.0/50 = 10 cm
+D: phys-u09-hooke-spring
 !: Rubber doesn't obey Hooke's law beyond small strains; its stiffness comes from entropy of tangled polymer chains, not bond stretching.
 Q: State Hooke's law. | Extension is proportional to force, F = kx, up to the limit of proportionality.
 Q: Why do most solids obey Hooke's law for small strains? | Interatomic potentials are approximately quadratic near equilibrium.
@@ -113,6 +114,7 @@ P: Ductile materials (copper, gold, mild steel) deform plastically a lot before 
 X: A copper wire loaded past its elastic limit and unloaded.
 > The unloading line is parallel to the original elastic line
 > It doesn't return to zero: the offset is the permanent plastic strain
+D: phys-u09-unloading
 !: Elastic limit and limit of proportionality are different: a material can be non-linear yet still elastic (rubber).
 Q: What carries plastic deformation in metals? | The movement of dislocations.
 Q: What is work hardening? | Strengthening by plastic deformation, as dislocations multiply and tangle.
@@ -152,6 +154,7 @@ P: Plates lock at faults and strain energy builds for decades. When the stress e
 X: A spring (k = 800 N m^{-1}) is compressed 5 cm. Find the energy stored and the launch speed of a 20 g ball.
 > E = ½ × 800 × 0.0025 = 1.0 J
 > v = √(2 × 1.0/0.02) = 10 m s^{-1} (ignoring the spring's own mass)
+D: phys-u09-spring-energy
 !: Energy stored isn't F × x but ½Fx, because the force grows from zero as the spring stretches.
 Q: What is the elastic energy per unit volume? | ½σε = σ^{2}/(2E).
 Q: What does the area of a hysteresis loop represent? | Energy dissipated per cycle as heat.
@@ -193,6 +196,7 @@ H: Uses
 X: A 2 m shelf (simply supported) of E = 10 GPa, b = 0.25 m, h = 0.02 m carries 300 N spread evenly. Sag?
 > I = 0.25 × 0.02^{3}/12 = 1.67 × 10^{-7} m^{4}; w = 150 N m^{-1}
 > δ = 5 × 150 × 16/(384 × 10^{10} × 1.67 × 10^{-7}) = 1.9 cm
+D: phys-u09-shelf-sag
 !: Beam theory assumes small deflections and slender beams; deep, short beams need shear corrections (Timoshenko theory).
 Q: How does a cantilever's tip deflection depend on its length? | ∝ L^{3} for a point load at the tip.
 Q: How do atomic force microscopes measure forces? | From the tiny deflection of a cantilever, F = kδ.
@@ -255,6 +259,7 @@ H: Examples
 P: Silly putty bounces (fast loading, elastic) but flows into a puddle over hours. The pitch-drop experiment (Queensland, since 1927) has dropped nine times. The mantle is solid to seismic waves but flows at cm per year over millions of years, driving plate tectonics.
 X: A material with E = 1 MPa and η = 10^{6} Pa s (Maxwell). What is its relaxation time?
 > τ = η/E = 1 s: stress falls to 1/e in about a second at fixed strain
+D: phys-u09-maxwell-relaxation
 !: Whether a material counts as "solid" or "liquid" depends on the timescale compared with its relaxation time (the Deborah number).
 Q: What is creep? | Gradual increase of strain under constant stress.
 Q: Why does the mantle behave as a solid for earthquakes but a fluid for plate tectonics? | Its relaxation time is long: short loading gives an elastic response, long loading lets it flow.
@@ -379,6 +384,7 @@ P: Damage-tolerant design assumes cracks exist. Regular inspection (ultrasound, 
 X: A steel plate (K_{IC} = 50 MPa √m) has an edge crack, Y ≈ 1.12, under 200 MPa. Critical crack length?
 > a_{c} = (K_{IC}/(Yσ))^{2}/π = (50/224)^{2}/π
 > a_{c} ≈ 16 mm
+D: phys-u09-critical-crack
 !: A part can pass a static strength test and still fail by fatigue in service: cycles, not peak load, matter.
 Q: What is the endurance limit? | The stress amplitude below which a material (like steel) can survive indefinitely many cycles.
 Q: What does fracture toughness K_{IC} measure? | A material's resistance to fast crack propagation.

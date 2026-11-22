@@ -1,0 +1,103 @@
+{
+ "id": "maths-u03-line-circle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Intermediate Algebra",
+ "title": "The line y = x + 1 meets the circle x² + y² = 13",
+ "caption": "Substituting gives x² + x − 6 = 0, so x = −3 or 2: the line cuts the circle at (−3, −2) and (2, 3), both at distance √13 from the centre.",
+ "alt": "A circle of radius √13 centred at the origin and the line y = x + 1 meeting it at (−3, −2) and (2, 3).",
+ "description": [
+  "The circle x² + y² = 13 has centre O and radius √13 ≈ 3.61.",
+  "The line y = x + 1 crosses the y-axis at (0, 1).",
+  "Solving gives the two points (−3, −2) and (2, 3), each on both the circle and the line."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   -3,
+   -2
+  ],
+  "B": [
+   2,
+   3
+  ],
+  "L": [
+   0,
+   1
+  ]
+ },
+ "hide": [
+  "O",
+  "L"
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 3.605551275463989,
+   "colour": "ink"
+  }
+ ],
+ "segments": [
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "a2",
+   "w": 2.4
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -5,
+   5
+  ],
+  "y": [
+   -4.5,
+   4.5
+  ]
+ },
+ "height": [
+  330,
+  320
+ ],
+ "labelAt": {
+  "A": [
+   -14,
+   14
+  ],
+  "B": [
+   14,
+   -10
+  ]
+ },
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "A",
+    "B"
+   ],
+   "name": "(−3, −2) and (2, 3) satisfy x² + y² = 13"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "A",
+    "L",
+    "B"
+   ],
+   "name": "(−3, −2), (0, 1) and (2, 3) lie on y = x + 1"
+  }
+ ],
+ "fromLesson": [
+  "Points: (−3, −2) and (2, 3)"
+ ]
+}

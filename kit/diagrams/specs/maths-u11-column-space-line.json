@@ -1,0 +1,126 @@
+{
+ "id": "maths-u11-column-space-line",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Column Space",
+ "title": "The column space is the line y = 2x",
+ "caption": "Both columns of [[1, 2], [2, 4]] lie along (1, 2), so col(A) is a line. (3, 6) = 3(1, 2) is on it, so Ax = (3, 6) is solvable; (1, 0) is off it, so Ax = (1, 0) has no solution.",
+ "alt": "A line through the origin with direction (1, 2). Vectors (1, 2), (2, 4) and (3, 6) lie along it; the vector (1, 0) does not.",
+ "description": [
+  "The columns (1, 2) and (2, 4) point the same way, so they span only a line.",
+  "b = (3, 6) = 3(1, 2) lies on that line.",
+  "b = (1, 0) is not a multiple of (1, 2): it is off the line, so no x solves Ax = b."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "P": [
+   -1.5,
+   -3
+  ],
+  "Q": [
+   3.4,
+   6.8
+  ]
+ },
+ "hide": [
+  "O",
+  "P",
+  "Q"
+ ],
+ "segments": [
+  {
+   "a": "P",
+   "b": "Q",
+   "colour": "a3",
+   "dash": "6 5",
+   "w": 1.8
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -2,
+   5
+  ],
+  "y": [
+   -3.5,
+   7.5
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "vectors": [
+  {
+   "name": "(1, 2)",
+   "v": [
+    1,
+    2
+   ],
+   "colour": "a1",
+   "labelSide": -1,
+   "dx": 16,
+   "dy": -6
+  },
+  {
+   "name": "(3, 6)",
+   "v": [
+    3,
+    6
+   ],
+   "colour": "a2",
+   "labelSide": -1
+  },
+  {
+   "name": "(1, 0)",
+   "v": [
+    1,
+    0
+   ],
+   "colour": "a4",
+   "labelSide": 1,
+   "dx": 22,
+   "dy": 8
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    -1.8,
+    -2.4
+   ],
+   "text": "col(A)",
+   "colour": "a3"
+  }
+ ],
+ "checks": [
+  {
+   "type": "multiple",
+   "vector": 1,
+   "of": 0,
+   "k": 3
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "O",
+    "P",
+    "Q"
+   ],
+   "name": "the line through (1, 2) is the column space"
+  }
+ ],
+ "fromLesson": [
+  "(3, 6) = 3(1, 2)",
+  "col(A) = span{(1, 2)}"
+ ]
+}

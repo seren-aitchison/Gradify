@@ -1,0 +1,51 @@
+{
+ "id": "maths-u03-boolean-venn",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Boolean Algebra",
+ "title": "A + Ā·B covers the same region as A + B",
+ "caption": "In the Venn diagram A together with the part of B outside A is the same region as A ∪ B: the shaded regions agree, so A·B + A·B̄ + Ā·B = A + B.",
+ "alt": "A two-set Venn diagram with sets A and B; A together with B-not-A covers the same three regions as A or B.",
+ "description": [
+  "The four regions of the diagram are A only, both, B only and neither.",
+  "A + Ā·B takes all of A and the part of B outside A.",
+  "Together that is A only, both and B only: exactly A ∪ B."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "A"
+  },
+  {
+   "name": "B",
+   "label": "B"
+  }
+ ],
+ "regions": {
+  "A": 1,
+  "AB": 1,
+  "B": 1,
+  "": 1
+ },
+ "universe": {
+  "label": "all inputs"
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "A∪(A′∩B)",
+   "n": 3,
+   "name": "A + Ā·B covers 3 regions"
+  },
+  {
+   "type": "count",
+   "event": "A∪B",
+   "n": 3,
+   "name": "A + B covers the same 3 regions"
+  }
+ ],
+ "fromLesson": [
+  "A + B"
+ ]
+}

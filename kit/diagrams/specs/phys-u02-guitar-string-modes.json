@@ -1,0 +1,44 @@
+{
+ "id": "phys-u02-guitar-string-modes",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Boundary and initial conditions",
+ "title": "Fixed ends allow only some frequencies",
+ "caption": "With both ends fixed, only whole numbers of half-wavelengths fit: λₙ = 2L/n. For L = 0.65 m and v = 420 m s⁻¹, f = nv/(2L) gives 323 Hz, 646 Hz, 969 Hz for the first three modes.",
+ "alt": "Three standing waves on a 0.65 metre string fixed at both ends with one, two and three half-wavelengths, at 323, 646, 969 hertz.",
+ "description": [
+  "A string of length 0.65 m fixed at both ends, wave speed 420 m s⁻¹.",
+  "Mode 1: half a wavelength fits, λ = 2L = 1.3 m, f = 420/1.3 = 323 Hz.",
+  "Mode 2: one wavelength fits, λ = L = 0.65 m, f = 646 Hz, with a node in the middle.",
+  "Mode 3: λ = 2L/3 = 0.433 m, f = 969 Hz. Frequencies between these cannot satisfy the boundary conditions."
+ ],
+ "kind": "standing",
+ "L": 0.65,
+ "n": [
+  1,
+  2,
+  3
+ ],
+ "ends": "fixed-fixed",
+ "v": 420,
+ "claims": {
+  "harmonics": [
+   {
+    "n": 1,
+    "lambda": 1.3,
+    "f": 323
+   },
+   {
+    "n": 2,
+    "lambda": 0.65,
+    "f": 646
+   },
+   {
+    "n": 3,
+    "lambda": 0.4333,
+    "f": 969
+   }
+  ]
+ }
+}

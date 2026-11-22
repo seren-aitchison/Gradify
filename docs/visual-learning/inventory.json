@@ -7,26 +7,26 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 940,
-  "plannedVisual": 679,
-  "plannedDiagram": 629,
-  "plannedLab": 113,
-  "excluded": 261,
-  "notAssessed": 9039,
-  "withDiagram": 635,
+  "assessed": 1278,
+  "plannedVisual": 845,
+  "plannedDiagram": 767,
+  "plannedLab": 164,
+  "excluded": 433,
+  "notAssessed": 8701,
+  "withDiagram": 772,
   "withLab": 846,
-  "withBoth": 171,
-  "withAny": 1310,
+  "withBoth": 193,
+  "withAny": 1425,
   "plannedNotDelivered": 0,
-  "placements": 659
+  "placements": 796
  },
  "diagrams": {
-  "manifest": 589,
-  "uniquePlaced": 589,
-  "placements": 659,
+  "manifest": 726,
+  "uniquePlaced": 726,
+  "placements": 796,
   "reused": 63,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":574},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":574},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":711},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":711},
   "failing": [],
   "unplaced": []
  },
@@ -498,18 +498,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 29,
-    "plannedVisual": 22,
-    "plannedDiagram": 17,
-    "plannedLab": 11,
-    "excluded": 7,
-    "notAssessed": 1048,
-    "withDiagram": 18,
+    "assessed": 210,
+    "plannedVisual": 129,
+    "plannedDiagram": 105,
+    "plannedLab": 49,
+    "excluded": 81,
+    "notAssessed": 867,
+    "withDiagram": 105,
     "withLab": 102,
-    "withBoth": 8,
-    "withAny": 112,
+    "withBoth": 26,
+    "withAny": 181,
     "plannedNotDelivered": 0,
-    "placements": 18
+    "placements": 105
    }
   },
   {
@@ -522,18 +522,18 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 820,
-    "plannedVisual": 573,
-    "plannedDiagram": 530,
-    "plannedLab": 100,
-    "excluded": 247,
-    "notAssessed": 1289,
-    "withDiagram": 534,
+    "assessed": 977,
+    "plannedVisual": 632,
+    "plannedDiagram": 580,
+    "plannedLab": 113,
+    "excluded": 345,
+    "notAssessed": 1132,
+    "withDiagram": 584,
     "withLab": 322,
-    "withBoth": 163,
-    "withAny": 693,
+    "withBoth": 167,
+    "withAny": 739,
     "plannedNotDelivered": 0,
-    "placements": 554
+    "placements": 604
    }
   },
   {
@@ -13492,18 +13492,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 29,
-    "plannedVisual": 22,
-    "plannedDiagram": 17,
-    "plannedLab": 11,
-    "excluded": 7,
-    "notAssessed": 1048,
-    "withDiagram": 18,
+    "assessed": 210,
+    "plannedVisual": 129,
+    "plannedDiagram": 105,
+    "plannedLab": 49,
+    "excluded": 81,
+    "notAssessed": 867,
+    "withDiagram": 105,
     "withLab": 102,
-    "withBoth": 8,
-    "withAny": 112,
+    "withBoth": 26,
+    "withAny": 181,
     "plannedNotDelivered": 0,
-    "placements": 18
+    "placements": 105
    },
    "units": [
     {
@@ -13691,56 +13691,189 @@
      "totals": {
       "lessons": 36,
       "written": 36,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 36,
-      "withDiagram": 0,
+      "assessed": 36,
+      "plannedVisual": 19,
+      "plannedDiagram": 8,
+      "plannedLab": 11,
+      "excluded": 17,
+      "notAssessed": 0,
+      "withDiagram": 8,
       "withLab": 8,
       "withBoth": 0,
-      "withAny": 8,
+      "withAny": 16,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 8
      },
      "lessons": [
-      {"id":"u02-01","title":"Elementary Number Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-02","title":"Modular Arithmetic","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-03","title":"Congruences","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-04","title":"Euclidean Algorithm","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-05","title":"Extended Euclidean Algorithm","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-06","title":"Diophantine Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-07","title":"Divisor Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-08","title":"Perfect Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-09","title":"Fibonacci Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-10","title":"Continued Fractions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-11","title":"Prime Number Theory","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-12","title":"Fermat's Little Theorem","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-13","title":"Euler's Totient Function","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-14","title":"Euler's Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-15","title":"Chinese Remainder Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-16","title":"Quadratic Residues","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-17","title":"Primitive Roots","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-18","title":"Pell's Equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-19","title":"Diophantine Approximation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-20","title":"Analytic Number Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-21","title":"Algebraic Number Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-22","title":"Computational Number Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-23","title":"Elliptic Curves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-24","title":"Arithmetic Geometry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-25","title":"Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-26","title":"Public-Key Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-27","title":"Modular Exponentiation","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-28","title":"RSA Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-29","title":"Discrete Logarithm Problem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-30","title":"Elliptic Curve Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-31","title":"Cryptographic Hash Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-32","title":"Primality Testing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-33","title":"Integer Factorisation","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-34","title":"Prime Factorisation Algorithms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-35","title":"Lattice-Based Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-36","title":"Post-Quantum Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u02-01",
+       "title": "Elementary Number Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a proof or a written chain of congruences: the notes' worked steps carry it better than a picture"}
+      },
+      {"id":"u02-02","title":"Modular Arithmetic","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {"id":"u02-03","title":"Congruences","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {
+       "id": "u02-04",
+       "title": "Euclidean Algorithm",
+       "written": true,
+       "diagrams": [{"id":"maths-u02-euclid-squares","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u02-euclid-squares"]}
+      },
+      {
+       "id": "u02-05",
+       "title": "Extended Euclidean Algorithm",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"back-substitution through the Euclidean steps is a written chain; the equations in the notes are the content"}
+      },
+      {
+       "id": "u02-06",
+       "title": "Diophantine Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u02-lattice-line","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u02-lattice-line"]}
+      },
+      {
+       "id": "u02-07",
+       "title": "Divisor Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u02-divisor-grid","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u02-divisor-grid"]}
+      },
+      {
+       "id": "u02-08",
+       "title": "Perfect Numbers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the Euclid–Euler form is a factorisation and one multiplication; the notes' steps carry it"}
+      },
+      {"id":"u02-09","title":"Fibonacci Numbers","written":true,"diagrams":[{"id":"maths-u02-fibonacci","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u02-fibonacci"]}},
+      {"id":"u02-10","title":"Continued Fractions","written":true,"diagrams":[{"id":"maths-u02-cf-squares","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u02-cf-squares"]}},
+      {"id":"u02-11","title":"Prime Number Theory","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {"id":"u02-12","title":"Fermat's Little Theorem","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {"id":"u02-13","title":"Euler's Totient Function","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {"id":"u02-14","title":"Euler's Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"lab","labs":["modular"]}},
+      {
+       "id": "u02-15",
+       "title": "Chinese Remainder Theorem",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the Chinese remainder construction is a sequence of substitutions, written out in the notes"}
+      },
+      {
+       "id": "u02-16",
+       "title": "Quadratic Residues",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the list of squares mod 11 is a short table in the notes; a picture would repeat it"}
+      },
+      {"id":"u02-17","title":"Primitive Roots","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {"id":"u02-18","title":"Pell's Equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"Pell's equation is a computation with (x + y√D)ⁿ; the notes show the algebra"}},
+      {
+       "id": "u02-19",
+       "title": "Diophantine Approximation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the gap 2.7 × 10⁻⁷ between 355/113 and π is far too small to show on any drawing"}
+      },
+      {
+       "id": "u02-20",
+       "title": "Analytic Number Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"ζ(2) = π²/6 is an infinite product and sum, not something a drawing can show"}
+      },
+      {
+       "id": "u02-21",
+       "title": "Algebraic Number Theory",
+       "written": true,
+       "diagrams": [{"id":"maths-u02-gaussian-13","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u02-gaussian-13"]}
+      },
+      {"id":"u02-22","title":"Computational Number Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {"id":"u02-23","title":"Elliptic Curves","written":true,"diagrams":[{"id":"maths-u02-elliptic-add","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u02-elliptic-add"]}},
+      {
+       "id": "u02-24",
+       "title": "Arithmetic Geometry",
+       "written": true,
+       "diagrams": [{"id":"maths-u02-rational-circle","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u02-rational-circle"]}
+      },
+      {"id":"u02-25","title":"Cryptography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a Caesar shift is a letter substitution, shown letter by letter in the notes"}},
+      {
+       "id": "u02-26",
+       "title": "Public-Key Cryptography",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a protocol or key calculation in modular arithmetic: the numbers are laid out step by step in the notes, and the modular lab covers the exponentiation"}
+      },
+      {"id":"u02-27","title":"Modular Exponentiation","written":true,"diagrams":[],"labs":["modular"],"plan":{"verdict":"lab","labs":["modular"]}},
+      {
+       "id": "u02-28",
+       "title": "RSA Cryptography",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a protocol or key calculation in modular arithmetic: the numbers are laid out step by step in the notes, and the modular lab covers the exponentiation"}
+      },
+      {"id":"u02-29","title":"Discrete Logarithm Problem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"lab","labs":["modular"]}},
+      {
+       "id": "u02-30",
+       "title": "Elliptic Curve Cryptography",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an operation count (about 384 for a 256-bit scalar); no geometry to draw"}
+      },
+      {
+       "id": "u02-31",
+       "title": "Cryptographic Hash Functions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a birthday probability from a long product; a bar chart would only restate one number"}
+      },
+      {"id":"u02-32","title":"Primality Testing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"trial division by the primes up to √221 is a short written list"}},
+      {"id":"u02-33","title":"Integer Factorisation","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {
+       "id": "u02-34",
+       "title": "Prime Factorisation Algorithms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Pollard's p − 1 is a modular computation followed by a gcd, written in the notes"}
+      },
+      {
+       "id": "u02-35",
+       "title": "Lattice-Based Cryptography",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a toy LWE sample is one arithmetic line; the lattice picture needs a renderer that does not exist"}
+      },
+      {
+       "id": "u02-36",
+       "title": "Post-Quantum Cryptography",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Grover's square-root saving is a statement about powers of 2, not a picture"}
+      }
      ]
     },
     {
@@ -13750,65 +13883,303 @@
      "totals": {
       "lessons": 45,
       "written": 45,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 45,
-      "withDiagram": 1,
+      "assessed": 45,
+      "plannedVisual": 33,
+      "plannedDiagram": 31,
+      "plannedLab": 14,
+      "excluded": 12,
+      "notAssessed": 0,
+      "withDiagram": 31,
       "withLab": 14,
-      "withBoth": 1,
-      "withAny": 14,
+      "withBoth": 12,
+      "withAny": 33,
       "plannedNotDelivered": 0,
-      "placements": 1
+      "placements": 31
      },
      "lessons": [
-      {"id":"u03-01","title":"Basic Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-02","title":"Elementary Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-03","title":"Algebraic Expressions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-04","title":"Simplifying Expressions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-05","title":"Expanding Brackets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-06","title":"Factorisation","written":true,"diagrams":[],"labs":["quadratics"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-07","title":"Algebraic Manipulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-08","title":"Algebraic Fractions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-09","title":"Linear Equations","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-10","title":"Simultaneous Equations","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-11","title":"Quadratic Equations","written":true,"diagrams":[],"labs":["practice","quadratics"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-12","title":"Completing the Square","written":true,"diagrams":[],"labs":["quadratics"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-13","title":"The Quadratic Formula","written":true,"diagrams":[],"labs":["quadratics"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-14","title":"Cubic Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-15","title":"Polynomial Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-16","title":"Inequalities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-17","title":"Simultaneous Inequalities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-18","title":"Absolute Value Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-19","title":"Rational Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-20","title":"Surds","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-21","title":"Logarithms","written":true,"diagrams":[],"labs":["explog","practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-22","title":"Exponential Equations","written":true,"diagrams":[],"labs":["explog"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-23","title":"Logarithmic Equations","written":true,"diagrams":[],"labs":["explog"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-24","title":"Polynomials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-25","title":"Polynomial Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-26","title":"Polynomial Division","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-27","title":"Remainder Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-28","title":"Factor Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-29","title":"Roots of Polynomials","written":true,"diagrams":[],"labs":["grapher"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-30","title":"Vieta's Formulas","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-31","title":"Symmetric Polynomials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-32","title":"Partial Fractions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-33","title":"Functions","written":true,"diagrams":[],"labs":["grapher"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-34","title":"Domain and Range","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-35","title":"Composite Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-36","title":"Inverse Functions","written":true,"diagrams":[],"labs":["explog"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-37","title":"Transformations of Functions","written":true,"diagrams":[{"id":"maths-transformations","status":"approved"}],"labs":["grapher"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-38","title":"Piecewise Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-39","title":"Parametric Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-40","title":"Implicit Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-41","title":"Recurrence Relations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-42","title":"Intermediate Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-43","title":"Advanced Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-44","title":"Complex Numbers","written":true,"diagrams":[],"labs":["complex","unity"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u03-45","title":"Boolean Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u03-01","title":"Basic Algebra","written":true,"diagrams":[{"id":"maths-u03-taxi-fare","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-taxi-fare"]}},
+      {
+       "id": "u03-02",
+       "title": "Elementary Algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a classification of statements by their form (expression, equation, formula, identity); no picture shows that"}
+      },
+      {
+       "id": "u03-03",
+       "title": "Algebraic Expressions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-04",
+       "title": "Simplifying Expressions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-05",
+       "title": "Expanding Brackets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-06",
+       "title": "Factorisation",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-factorised-cubic","status":"validated"}],
+       "labs": ["quadratics"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-factorised-cubic"],"labs":["quadratics"]}
+      },
+      {
+       "id": "u03-07",
+       "title": "Algebraic Manipulation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-08",
+       "title": "Algebraic Fractions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-09",
+       "title": "Linear Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-linear-solution","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-linear-solution"],"labs":["practice"]}
+      },
+      {
+       "id": "u03-10",
+       "title": "Simultaneous Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-ticket-lines","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-ticket-lines"],"labs":["practice"]}
+      },
+      {
+       "id": "u03-11",
+       "title": "Quadratic Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-rectangle-5-by-8","status":"validated"}],
+       "labs": ["practice","quadratics"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-rectangle-5-by-8"],"labs":["quadratics"]}
+      },
+      {
+       "id": "u03-12",
+       "title": "Completing the Square",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-complete-square","status":"validated"}],
+       "labs": ["quadratics"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-complete-square"],"labs":["quadratics"]}
+      },
+      {
+       "id": "u03-13",
+       "title": "The Quadratic Formula",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-quadratic-formula","status":"validated"}],
+       "labs": ["quadratics"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-quadratic-formula"],"labs":["quadratics"]}
+      },
+      {"id":"u03-14","title":"Cubic Equations","written":true,"diagrams":[{"id":"maths-u03-cubic-roots","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-cubic-roots"]}},
+      {
+       "id": "u03-15",
+       "title": "Polynomial Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-quartic-roots","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-quartic-roots"]}
+      },
+      {
+       "id": "u03-16",
+       "title": "Inequalities",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-quadratic-inequality","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-quadratic-inequality"]}
+      },
+      {
+       "id": "u03-17",
+       "title": "Simultaneous Inequalities",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-inequality-region","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-inequality-region"]}
+      },
+      {
+       "id": "u03-18",
+       "title": "Absolute Value Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-absolute-value","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-absolute-value"]}
+      },
+      {
+       "id": "u03-19",
+       "title": "Rational Equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a rational equation reduces to x² = 10; the excluded values and check are the content and read best as written steps"}
+      },
+      {
+       "id": "u03-20",
+       "title": "Surds",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {"id":"u03-21","title":"Logarithms","written":true,"diagrams":[],"labs":["explog","practice"],"plan":{"verdict":"lab","labs":["explog","practice"]}},
+      {
+       "id": "u03-22",
+       "title": "Exponential Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-compound-growth","status":"validated"}],
+       "labs": ["explog"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-compound-growth"],"labs":["explog"]}
+      },
+      {"id":"u03-23","title":"Logarithmic Equations","written":true,"diagrams":[],"labs":["explog"],"plan":{"verdict":"lab","labs":["explog"]}},
+      {"id":"u03-24","title":"Polynomials","written":true,"diagrams":[{"id":"maths-u03-cubic-shape","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-cubic-shape"]}},
+      {
+       "id": "u03-25",
+       "title": "Polynomial Algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-26",
+       "title": "Polynomial Division",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"long division of polynomials is a layout of subtractions; the notes' steps are the picture"}
+      },
+      {
+       "id": "u03-27",
+       "title": "Remainder Theorem",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-remainder-values","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-remainder-values"]}
+      },
+      {
+       "id": "u03-28",
+       "title": "Factor Theorem",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-factor-theorem","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-factor-theorem"]}
+      },
+      {
+       "id": "u03-29",
+       "title": "Roots of Polynomials",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-cubic-through-12","status":"validated"}],
+       "labs": ["grapher"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-cubic-through-12"],"labs":["grapher"]}
+      },
+      {"id":"u03-30","title":"Vieta's Formulas","written":true,"diagrams":[{"id":"maths-u03-vieta-roots","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-vieta-roots"]}},
+      {
+       "id": "u03-31",
+       "title": "Symmetric Polynomials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-32",
+       "title": "Partial Fractions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a symbolic manipulation: the worked steps in the notes are the content, and a picture would only decorate them"}
+      },
+      {
+       "id": "u03-33",
+       "title": "Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-function-values","status":"validated"}],
+       "labs": ["grapher"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-function-values"],"labs":["grapher"]}
+      },
+      {"id":"u03-34","title":"Domain and Range","written":true,"diagrams":[{"id":"maths-u03-domain-range","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-domain-range"]}},
+      {"id":"u03-35","title":"Composite Functions","written":true,"diagrams":[{"id":"maths-u03-composite","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-composite"]}},
+      {
+       "id": "u03-36",
+       "title": "Inverse Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-inverse","status":"validated"}],
+       "labs": ["explog"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-inverse"],"labs":["explog"]}
+      },
+      {
+       "id": "u03-37",
+       "title": "Transformations of Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-transformations","status":"approved"}],
+       "labs": ["grapher"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-transformations"],"labs":["grapher"]}
+      },
+      {"id":"u03-38","title":"Piecewise Functions","written":true,"diagrams":[{"id":"maths-u03-piecewise","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-piecewise"]}},
+      {"id":"u03-39","title":"Parametric Equations","written":true,"diagrams":[{"id":"maths-u03-parametric","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-parametric"]}},
+      {
+       "id": "u03-40",
+       "title": "Implicit Equations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-ellipse-line","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-ellipse-line"]}
+      },
+      {
+       "id": "u03-41",
+       "title": "Recurrence Relations",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-pond-recurrence","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-pond-recurrence"]}
+      },
+      {
+       "id": "u03-42",
+       "title": "Intermediate Algebra",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-line-circle","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-line-circle"]}
+      },
+      {
+       "id": "u03-43",
+       "title": "Advanced Algebra",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-binomial-sqrt","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u03-binomial-sqrt"]}
+      },
+      {
+       "id": "u03-44",
+       "title": "Complex Numbers",
+       "written": true,
+       "diagrams": [{"id":"maths-u03-complex-roots","status":"validated"}],
+       "labs": ["complex","unity"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u03-complex-roots"],"labs":["complex"]}
+      },
+      {"id":"u03-45","title":"Boolean Algebra","written":true,"diagrams":[{"id":"maths-u03-boolean-venn","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u03-boolean-venn"]}}
      ]
     },
     {
@@ -14207,70 +14578,364 @@
      "totals": {
       "lessons": 50,
       "written": 50,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 50,
-      "withDiagram": 0,
+      "assessed": 50,
+      "plannedVisual": 17,
+      "plannedDiagram": 13,
+      "plannedLab": 6,
+      "excluded": 33,
+      "notAssessed": 0,
+      "withDiagram": 13,
       "withLab": 7,
-      "withBoth": 0,
-      "withAny": 7,
+      "withBoth": 2,
+      "withAny": 18,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 13
      },
      "lessons": [
-      {"id":"u11-01","title":"Vectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-02","title":"Vector Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-03","title":"Vector Spaces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-04","title":"Subspaces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-05","title":"Linear Combinations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-06","title":"Span","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-07","title":"Linear Independence","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-08","title":"Basis and Dimension","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-09","title":"Matrices","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-10","title":"Matrix Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-11","title":"Matrix Operations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-12","title":"Matrix Multiplication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-13","title":"Matrix Transposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-14","title":"Matrix Inversion","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-15","title":"Determinants","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-16","title":"Rank of a Matrix","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-17","title":"Column Space","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-18","title":"Row Space","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-19","title":"Null Space","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-20","title":"Systems of Linear Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-21","title":"Linear Transformations","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-22","title":"Change of Basis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-23","title":"Similarity Transformations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-24","title":"Eigenvalues","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-25","title":"Eigenvectors","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-26","title":"Eigenspaces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-27","title":"Characteristic Polynomials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-28","title":"Diagonalisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-29","title":"Jordan Normal Form","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-30","title":"Symmetric Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-31","title":"Hermitian Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-32","title":"Positive Definite Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-33","title":"Inner Product Spaces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-34","title":"Norms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-35","title":"Orthogonality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-36","title":"Orthogonal Projections","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-37","title":"Gram–Schmidt Process","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-38","title":"Matrix Decomposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-39","title":"LU Decomposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-40","title":"QR Decomposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-41","title":"Cholesky Decomposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-42","title":"Singular Value Decomposition (SVD)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-43","title":"Principal Component Analysis (PCA)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-44","title":"Sparse Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-45","title":"Block Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-46","title":"Numerical Linear Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-47","title":"Multilinear Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-48","title":"Tensor Products","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-49","title":"Tensor Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u11-50","title":"Exterior Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u11-01",
+       "title": "Vectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-02",
+       "title": "Vector Algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-03",
+       "title": "Vector Spaces",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the axioms of a vector space are checked algebraically on 2 × 2 symmetric matrices, which cannot be drawn"}
+      },
+      {
+       "id": "u11-04",
+       "title": "Subspaces",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-05",
+       "title": "Linear Combinations",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-linear-combination","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-linear-combination"]}
+      },
+      {
+       "id": "u11-06",
+       "title": "Span",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-07",
+       "title": "Linear Independence",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-08",
+       "title": "Basis and Dimension",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-09",
+       "title": "Matrices",
+       "written": true,
+       "diagrams": [],
+       "labs": ["matrix"],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {
+       "id": "u11-10",
+       "title": "Matrix Algebra",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-ab-ne-ba","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u11-ab-ne-ba"],"labs":["matrix"]}
+      },
+      {
+       "id": "u11-11",
+       "title": "Matrix Operations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {
+       "id": "u11-12",
+       "title": "Matrix Multiplication",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-13",
+       "title": "Matrix Transposition",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {"id":"u11-14","title":"Matrix Inversion","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"lab","labs":["matrix"]}},
+      {"id":"u11-15","title":"Determinants","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"lab","labs":["matrix"]}},
+      {
+       "id": "u11-16",
+       "title": "Rank of a Matrix",
+       "written": true,
+       "diagrams": [],
+       "labs": ["matrix"],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-17",
+       "title": "Column Space",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-column-space-line","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-column-space-line"]}
+      },
+      {
+       "id": "u11-18",
+       "title": "Row Space",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-19",
+       "title": "Null Space",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-20",
+       "title": "Systems of Linear Equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a 3 × 3 system solved by elimination; the planes meeting at a point are three-dimensional"}
+      },
+      {
+       "id": "u11-21",
+       "title": "Linear Transformations",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-rotation-matrix","status":"validated"}],
+       "labs": ["matrix"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u11-rotation-matrix"],"labs":["matrix"]}
+      },
+      {
+       "id": "u11-22",
+       "title": "Change of Basis",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-change-of-basis","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-change-of-basis"]}
+      },
+      {
+       "id": "u11-23",
+       "title": "Similarity Transformations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {"id":"u11-24","title":"Eigenvalues","written":true,"diagrams":[],"labs":["matrix"],"plan":{"verdict":"lab","labs":["matrix"]}},
+      {
+       "id": "u11-25",
+       "title": "Eigenvectors",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-eigenvectors","status":"validated"}],
+       "labs": ["matrix"],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-eigenvectors"]}
+      },
+      {"id":"u11-26","title":"Eigenspaces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the eigenspaces of diag(2, 2, 3) are a plane and a line in three dimensions"}},
+      {
+       "id": "u11-27",
+       "title": "Characteristic Polynomials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {"id":"u11-28","title":"Diagonalisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"lab","labs":["matrix"]}},
+      {
+       "id": "u11-29",
+       "title": "Jordan Normal Form",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {
+       "id": "u11-30",
+       "title": "Symmetric Matrices",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-symmetric-orthogonal","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-symmetric-orthogonal"]}
+      },
+      {
+       "id": "u11-31",
+       "title": "Hermitian Matrices",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the eigenvalues of a complex Hermitian matrix are found algebraically; there is no real picture of the example"}
+      },
+      {
+       "id": "u11-32",
+       "title": "Positive Definite Matrices",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the example is a quadratic form in two variables whose level curves are ellipses; the maths renderers draw no ellipses (needs renderer: conics)"}
+      },
+      {
+       "id": "u11-33",
+       "title": "Inner Product Spaces",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-inner-product-areas","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-inner-product-areas"]}
+      },
+      {
+       "id": "u11-34",
+       "title": "Norms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-35",
+       "title": "Orthogonality",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-orthonormal-coordinates","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-orthonormal-coordinates"]}
+      },
+      {
+       "id": "u11-36",
+       "title": "Orthogonal Projections",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-37",
+       "title": "Gram–Schmidt Process",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"its worked example is in three dimensions and the maths renderers draw the plane only (needs renderer: 3D vectors and planes)"}
+      },
+      {
+       "id": "u11-38",
+       "title": "Matrix Decomposition",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {
+       "id": "u11-39",
+       "title": "LU Decomposition",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-40",
+       "title": "QR Decomposition",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-qr-gram-schmidt","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-qr-gram-schmidt"]}
+      },
+      {
+       "id": "u11-41",
+       "title": "Cholesky Decomposition",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-42",
+       "title": "Singular Value Decomposition (SVD)",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-svd-area","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-svd-area"]}
+      },
+      {
+       "id": "u11-43",
+       "title": "Principal Component Analysis (PCA)",
+       "written": true,
+       "diagrams": [{"id":"maths-u11-pca-axes","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u11-pca-axes"]}
+      },
+      {"id":"u11-44","title":"Sparse Matrices","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a count of stored entries for a tridiagonal matrix; arithmetic, no figure"}},
+      {
+       "id": "u11-45",
+       "title": "Block Matrices",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"exact arithmetic on an array of numbers: the notes' worked steps carry it and no picture shows more"}
+      },
+      {
+       "id": "u11-46",
+       "title": "Numerical Linear Algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the convergence factor 9/11 is a single number; a decay curve would not use the lesson's own example beyond it"}
+      },
+      {"id":"u11-47","title":"Multilinear Algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"scaling columns of a determinant is multiplication of numbers, 2 × 5 × det A"}},
+      {
+       "id": "u11-48",
+       "title": "Tensor Products",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {
+       "id": "u11-49",
+       "title": "Tensor Algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a procedure or notation laid out line by line in the notes' worked steps; a picture would only repeat them"}
+      },
+      {"id":"u11-50","title":"Exterior Algebra","written":true,"diagrams":[{"id":"maths-u11-wedge-area","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u11-wedge-area"]}}
      ]
     },
     {
@@ -14280,70 +14945,329 @@
      "totals": {
       "lessons": 50,
       "written": 50,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 50,
-      "withDiagram": 0,
+      "assessed": 50,
+      "plannedVisual": 38,
+      "plannedDiagram": 36,
+      "plannedLab": 7,
+      "excluded": 12,
+      "notAssessed": 0,
+      "withDiagram": 36,
       "withLab": 7,
-      "withBoth": 0,
-      "withAny": 7,
+      "withBoth": 5,
+      "withAny": 38,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 36
      },
      "lessons": [
-      {"id":"u12-01","title":"Probability Theory","written":true,"diagrams":[],"labs":["lln"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-02","title":"Foundations of Probability","written":true,"diagrams":[],"labs":["lln"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-03","title":"Independent Events","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-04","title":"Conditional Probability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-05","title":"Joint Probability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-06","title":"Bayes' Theorem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-07","title":"Random Variables","written":true,"diagrams":[],"labs":["clt"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-08","title":"Discrete Random Variables","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-09","title":"Continuous Random Variables","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-10","title":"Probability Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-11","title":"Probability Mass Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-12","title":"Probability Density Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-13","title":"Cumulative Distribution Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-14","title":"Expected Value","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-15","title":"Variance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-16","title":"Standard Deviation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-17","title":"Covariance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-18","title":"Moments and Moment-Generating Functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-19","title":"Law of Large Numbers","written":true,"diagrams":[],"labs":["lln"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-20","title":"Central Limit Theorem","written":true,"diagrams":[],"labs":["clt"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-21","title":"Bernoulli Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-22","title":"Binomial Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-23","title":"Geometric Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-24","title":"Negative Binomial Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-25","title":"Hypergeometric Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-26","title":"Poisson Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-27","title":"Multinomial Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-28","title":"Beta-Binomial Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-29","title":"Uniform Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-30","title":"Normal Distribution","written":true,"diagrams":[],"labs":["clt"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-31","title":"Standard Normal Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-32","title":"Exponential Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-33","title":"Gamma Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-34","title":"Beta Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-35","title":"Chi-Squared Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-36","title":"Student's T-Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-37","title":"F-Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-38","title":"Weibull Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-39","title":"Log-Normal Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-40","title":"Pareto Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-41","title":"Cauchy Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-42","title":"Multivariate Normal Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-43","title":"Student's T Multivariate Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-44","title":"Dirichlet Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-45","title":"Wishart Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-46","title":"Mixture Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-47","title":"Empirical Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-48","title":"Heavy-Tailed Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-49","title":"Stable Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-50","title":"Extreme Value Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u12-01",
+       "title": "Probability Theory",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-two-dice-totals","status":"validated"}],
+       "labs": ["lln"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u12-two-dice-totals"],"labs":["lln"]}
+      },
+      {
+       "id": "u12-02",
+       "title": "Foundations of Probability",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-addition-rule","status":"validated"}],
+       "labs": ["lln"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u12-addition-rule"],"labs":["lln"]}
+      },
+      {"id":"u12-03","title":"Independent Events","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"lab","labs":["practice"]}},
+      {"id":"u12-04","title":"Conditional Probability","written":true,"diagrams":[{"id":"maths-u12-bag-tree","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u12-bag-tree"]}},
+      {
+       "id": "u12-05",
+       "title": "Joint Probability",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-joint-independence","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-joint-independence"]}
+      },
+      {"id":"u12-06","title":"Bayes' Theorem","written":true,"diagrams":[{"id":"maths-u12-bayes-tree","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u12-bayes-tree"]}},
+      {
+       "id": "u12-07",
+       "title": "Random Variables",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-larger-of-two-dice","status":"validated"}],
+       "labs": ["clt"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u12-larger-of-two-dice"],"labs":["clt"]}
+      },
+      {"id":"u12-08","title":"Discrete Random Variables","written":true,"diagrams":[{"id":"maths-u12-pmf-kx","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u12-pmf-kx"]}},
+      {
+       "id": "u12-09",
+       "title": "Continuous Random Variables",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-density-3x2","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-density-3x2"]}
+      },
+      {
+       "id": "u12-10",
+       "title": "Probability Distributions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-calls-poisson","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-calls-poisson"]}
+      },
+      {
+       "id": "u12-11",
+       "title": "Probability Mass Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-pmf-c-over-x","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-pmf-c-over-x"]}
+      },
+      {
+       "id": "u12-12",
+       "title": "Probability Density Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-density-quadratic","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-density-quadratic"]}
+      },
+      {
+       "id": "u12-13",
+       "title": "Cumulative Distribution Functions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-cdf-exponential","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-cdf-exponential"]}
+      },
+      {"id":"u12-14","title":"Expected Value","written":true,"diagrams":[{"id":"maths-u12-expected-gain","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u12-expected-gain"]}},
+      {"id":"u12-15","title":"Variance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the variance of a die is one short calculation, 35/12, laid out in the notes"}},
+      {"id":"u12-16","title":"Standard Deviation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"Chebyshev's bound holds for every distribution; one drawn curve would mislead"}},
+      {"id":"u12-17","title":"Covariance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"needs renderer two-way table: the joint table P(x, y) with row and column totals"}},
+      {
+       "id": "u12-18",
+       "title": "Moments and Moment-Generating Functions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the moment-generating function is algebra, worked in the notes"}
+      },
+      {"id":"u12-19","title":"Law of Large Numbers","written":true,"diagrams":[],"labs":["lln"],"plan":{"verdict":"lab","labs":["lln"]}},
+      {
+       "id": "u12-20",
+       "title": "Central Limit Theorem",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-clt-dice-total","status":"validated"}],
+       "labs": ["clt"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u12-clt-dice-total"],"labs":["clt"]}
+      },
+      {
+       "id": "u12-21",
+       "title": "Bernoulli Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-bernoulli-kick","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-bernoulli-kick"]}
+      },
+      {
+       "id": "u12-22",
+       "title": "Binomial Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-binomial-10-0-2","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-binomial-10-0-2"]}
+      },
+      {
+       "id": "u12-23",
+       "title": "Geometric Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-geometric-six","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-geometric-six"]}
+      },
+      {
+       "id": "u12-24",
+       "title": "Negative Binomial Distribution",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: negative binomial in the distribution renderer (it has binomial, Poisson, geometric only)"}
+      },
+      {
+       "id": "u12-25",
+       "title": "Hypergeometric Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-hypergeometric-ways","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-hypergeometric-ways"]}
+      },
+      {
+       "id": "u12-26",
+       "title": "Poisson Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-poisson-emails","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-poisson-emails"]}
+      },
+      {"id":"u12-27","title":"Multinomial Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a single multinomial probability, 6!/6^6, with no useful picture"}},
+      {
+       "id": "u12-28",
+       "title": "Beta-Binomial Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-beta-binomial-uniform","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-beta-binomial-uniform"]}
+      },
+      {"id":"u12-29","title":"Uniform Distribution","written":true,"diagrams":[{"id":"maths-u12-bus-wait","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u12-bus-wait"]}},
+      {
+       "id": "u12-30",
+       "title": "Normal Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-heights-normal","status":"validated"}],
+       "labs": ["clt"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u12-heights-normal"],"labs":["clt"]}
+      },
+      {
+       "id": "u12-31",
+       "title": "Standard Normal Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-standard-normal-band","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-standard-normal-band"]}
+      },
+      {
+       "id": "u12-32",
+       "title": "Exponential Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-bulb-lifetime","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-bulb-lifetime"]}
+      },
+      {
+       "id": "u12-33",
+       "title": "Gamma Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-gamma-poisson","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-gamma-poisson"]}
+      },
+      {
+       "id": "u12-34",
+       "title": "Beta Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-beta-posterior","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-beta-posterior"]}
+      },
+      {
+       "id": "u12-35",
+       "title": "Chi-Squared Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-chi-squared-critical","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-chi-squared-critical"]}
+      },
+      {
+       "id": "u12-36",
+       "title": "Student's T-Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-t-interval","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-t-interval"]}
+      },
+      {"id":"u12-37","title":"F-Distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the F statistic is one ratio, 25/10; the notes carry it"}},
+      {
+       "id": "u12-38",
+       "title": "Weibull Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-weibull-survival","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-weibull-survival"]}
+      },
+      {
+       "id": "u12-39",
+       "title": "Log-Normal Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-lognormal-density","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-lognormal-density"]}
+      },
+      {
+       "id": "u12-40",
+       "title": "Pareto Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-pareto-density","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-pareto-density"]}
+      },
+      {
+       "id": "u12-41",
+       "title": "Cauchy Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-cauchy-density","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-cauchy-density"]}
+      },
+      {
+       "id": "u12-42",
+       "title": "Multivariate Normal Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-heights-regression","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-heights-regression"]}
+      },
+      {
+       "id": "u12-43",
+       "title": "Student's T Multivariate Distribution",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: bivariate t surface or contours (no 2D density renderer)"}
+      },
+      {
+       "id": "u12-44",
+       "title": "Dirichlet Distribution",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-dirichlet-posterior","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-dirichlet-posterior"]}
+      },
+      {
+       "id": "u12-45",
+       "title": "Wishart Distribution",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: matrix-variate distribution; for p = 1 it is a scaled chi-squared, worked in the notes"}
+      },
+      {
+       "id": "u12-46",
+       "title": "Mixture Distributions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-mixture-density","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-mixture-density"]}
+      },
+      {
+       "id": "u12-47",
+       "title": "Empirical Distributions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: empirical CDF step function (graph draws curves, not steps)"}
+      },
+      {
+       "id": "u12-48",
+       "title": "Heavy-Tailed Distributions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a comparison of two tail probabilities, 1/100 against 1/10,000, laid out in the notes"}
+      },
+      {"id":"u12-49","title":"Stable Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"stability is an algebraic property of sums, shown in the notes' working"}},
+      {
+       "id": "u12-50",
+       "title": "Extreme Value Distributions",
+       "written": true,
+       "diagrams": [{"id":"maths-u12-gumbel-return-level","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u12-gumbel-return-level"]}
+      }
      ]
     },
     {
@@ -18122,18 +19046,18 @@
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 19,
-    "plannedVisual": 6,
-    "plannedDiagram": 6,
-    "plannedLab": 0,
-    "excluded": 13,
-    "notAssessed": 1289,
-    "withDiagram": 9,
+    "assessed": 176,
+    "plannedVisual": 65,
+    "plannedDiagram": 56,
+    "plannedLab": 13,
+    "excluded": 111,
+    "notAssessed": 1132,
+    "withDiagram": 59,
     "withLab": 115,
-    "withBoth": 2,
-    "withAny": 122,
+    "withBoth": 6,
+    "withAny": 168,
     "plannedNotDelivered": 0,
-    "placements": 10
+    "placements": 60
    },
    "units": [
     {
@@ -18297,54 +19221,236 @@
      "totals": {
       "lessons": 34,
       "written": 34,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 34,
+      "plannedVisual": 14,
+      "plannedDiagram": 14,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 34,
-      "withDiagram": 0,
+      "excluded": 20,
+      "notAssessed": 0,
+      "withDiagram": 14,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 14,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 14
      },
      "lessons": [
-      {"id":"u02-01","title":"Algebraic manipulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-02","title":"Equations and inequalities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-03","title":"Simultaneous equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-04","title":"Trigonometry and circular functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-05","title":"Exponential and logarithmic functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-06","title":"Complex numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-07","title":"Vectors and vector decomposition","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-08","title":"Matrices and linear algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-09","title":"Coordinate systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-10","title":"Cartesian, polar, cylindrical and spherical coordinates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-11","title":"Differentiation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-12","title":"Integration","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-13","title":"Partial derivatives","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-14","title":"Ordinary differential equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-15","title":"Partial differential equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-16","title":"First- and second-order differential equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-17","title":"Boundary and initial conditions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-18","title":"Taylor and Fourier series","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-19","title":"Fourier transforms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-20","title":"Laplace transforms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-21","title":"Multivariable calculus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-22","title":"Gradient, divergence and curl","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-23","title":"Line, surface and volume integrals","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-24","title":"Vector calculus theorems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-25","title":"Linear algebra eigenvalues and eigenvectors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-26","title":"Tensor algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-27","title":"Probability distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-28","title":"Statistics and error propagation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-29","title":"Numerical methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-30","title":"Optimisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-31","title":"Dimensional analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-32","title":"Complex analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-33","title":"Group theory and mathematical symmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u02-34","title":"Variational calculus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u02-01",
+       "title": "Algebraic manipulation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"symbol manipulation and rules, taught by worked examples; a picture adds nothing"}
+      },
+      {
+       "id": "u02-02",
+       "title": "Equations and inequalities",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-ball-height-15","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-ball-height-15"]}
+      },
+      {
+       "id": "u02-03",
+       "title": "Simultaneous equations",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-collision-lines","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-collision-lines"]}
+      },
+      {
+       "id": "u02-04",
+       "title": "Trigonometry and circular functions",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-sinusoid-sum","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-sinusoid-sum"]}
+      },
+      {
+       "id": "u02-05",
+       "title": "Exponential and logarithmic functions",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-activity-halvings","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-activity-halvings"]}
+      },
+      {
+       "id": "u02-06",
+       "title": "Complex numbers",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-impedance-plane","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-impedance-plane"]}
+      },
+      {
+       "id": "u02-07",
+       "title": "Vectors and vector decomposition",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-force-components","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-force-components"]}
+      },
+      {
+       "id": "u02-08",
+       "title": "Matrices and linear algebra",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"symbol manipulation and rules, taught by worked examples; a picture adds nothing"}
+      },
+      {
+       "id": "u02-09",
+       "title": "Coordinate systems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a change of frame is a sum of two velocities (10 + 30 = 40 m s⁻¹); the picture would be a one-line addition"}
+      },
+      {
+       "id": "u02-10",
+       "title": "Cartesian, polar, cylindrical and spherical coordinates",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer coordinate-system diagrams: polar, cylindrical and spherical axes with a point's coordinates and the volume element"}
+      },
+      {
+       "id": "u02-11",
+       "title": "Differentiation",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-derivative-tangent","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-derivative-tangent"]}
+      },
+      {
+       "id": "u02-12",
+       "title": "Integration",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the integral as area under F = kx has only symbols, no numbers to check; area under graphs is drawn in u04"}
+      },
+      {
+       "id": "u02-13",
+       "title": "Partial derivatives",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"symbol manipulation and rules, taught by worked examples; a picture adds nothing"}
+      },
+      {
+       "id": "u02-14",
+       "title": "Ordinary differential equations",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-linear-drag-solution","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-linear-drag-solution"]}
+      },
+      {"id":"u02-15","title":"Partial differential equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}},
+      {
+       "id": "u02-16",
+       "title": "First- and second-order differential equations",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-oscillator-solution","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-oscillator-solution"]}
+      },
+      {
+       "id": "u02-17",
+       "title": "Boundary and initial conditions",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-guitar-string-modes","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-guitar-string-modes"]}
+      },
+      {
+       "id": "u02-18",
+       "title": "Taylor and Fourier series",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-taylor-gravity","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-taylor-gravity"]}
+      },
+      {
+       "id": "u02-19",
+       "title": "Fourier transforms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer Fourier pairs: a pulse and its spectrum, showing Δf Δt ≈ 1 (the radar pulse's 1 MHz bandwidth)"}
+      },
+      {
+       "id": "u02-20",
+       "title": "Laplace transforms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"symbol manipulation and rules, taught by worked examples; a picture adds nothing"}
+      },
+      {"id":"u02-21","title":"Multivariable calculus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}},
+      {
+       "id": "u02-22",
+       "title": "Gradient, divergence and curl",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer vector-field plots (F = (x, y, 0) diverging, G = (−y, x, 0) curling) with divergence and curl checks"}
+      },
+      {
+       "id": "u02-23",
+       "title": "Line, surface and volume integrals",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer surfaces and flux through a closed sphere; the field renderer cannot draw an arbitrary surface integral"}
+      },
+      {
+       "id": "u02-24",
+       "title": "Vector calculus theorems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer loops and surfaces for Ampère's law (circular path round a wire with B·dl)"}
+      },
+      {
+       "id": "u02-25",
+       "title": "Linear algebra eigenvalues and eigenvectors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer a linear map acting on vectors, showing eigenvectors of [[2, 1], [1, 2]] keep their direction"}
+      },
+      {"id":"u02-26","title":"Tensor algebra","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}},
+      {
+       "id": "u02-27",
+       "title": "Probability distributions",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-poisson-counts","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-poisson-counts"]}
+      },
+      {
+       "id": "u02-28",
+       "title": "Statistics and error propagation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"propagation of uncertainty is a formula method; error-bar pictures are drawn in u03"}
+      },
+      {
+       "id": "u02-29",
+       "title": "Numerical methods",
+       "written": true,
+       "diagrams": [{"id":"phys-u02-newton-raphson","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u02-newton-raphson"]}
+      },
+      {"id":"u02-30","title":"Optimisation","written":true,"diagrams":[{"id":"phys-u02-rectangle-area","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u02-rectangle-area"]}},
+      {"id":"u02-31","title":"Dimensional analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"dimensional analysis is a table of dimensions and exponents, not a picture"}},
+      {"id":"u02-32","title":"Complex analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}},
+      {"id":"u02-33","title":"Group theory and mathematical symmetry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}},
+      {"id":"u02-34","title":"Variational calculus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an abstract construction with no worked numbers to draw"}}
      ]
     },
     {
@@ -18550,42 +19656,154 @@
      "totals": {
       "lessons": 22,
       "written": 22,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 22,
-      "withDiagram": 0,
+      "assessed": 22,
+      "plannedVisual": 9,
+      "plannedDiagram": 4,
+      "plannedLab": 7,
+      "excluded": 13,
+      "notAssessed": 0,
+      "withDiagram": 4,
       "withLab": 7,
-      "withBoth": 0,
-      "withAny": 7,
+      "withBoth": 2,
+      "withAny": 9,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 4
      },
      "lessons": [
-      {"id":"u07-01","title":"Newton's law of universal gravitation","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-02","title":"Gravitational fields","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-03","title":"Gravitational field strength","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-04","title":"Gravitational potential and potential energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-05","title":"Escape velocity","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-06","title":"Orbital velocity","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-07","title":"Circular and elliptical orbits","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-08","title":"Kepler's laws","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-09","title":"Satellite motion","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-10","title":"Orbital energy and angular momentum","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-11","title":"Two-body gravitational problem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-12","title":"Tidal forces","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-13","title":"Roche limits","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-14","title":"Lagrange points","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-15","title":"Restricted three-body problem","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-16","title":"Orbital transfers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-17","title":"Hohmann transfers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-18","title":"Gravitational perturbations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-19","title":"Precession of orbits","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-20","title":"General relativistic corrections","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-21","title":"Gravitational lensing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u07-22","title":"Gravitational waves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u07-01","title":"Newton's law of universal gravitation","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"lab","labs":["orbits"]}},
+      {
+       "id": "u07-02",
+       "title": "Gravitational fields",
+       "written": true,
+       "diagrams": [{"id":"phys-u07-g-inside-outside","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u07-g-inside-outside"]}
+      },
+      {
+       "id": "u07-03",
+       "title": "Gravitational field strength",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u07-04",
+       "title": "Gravitational potential and potential energy",
+       "written": true,
+       "diagrams": [{"id":"phys-u07-potential-well","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u07-potential-well"]}
+      },
+      {"id":"u07-05","title":"Escape velocity","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"lab","labs":["orbits"]}},
+      {"id":"u07-06","title":"Orbital velocity","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"lab","labs":["orbits"]}},
+      {"id":"u07-07","title":"Circular and elliptical orbits","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"lab","labs":["orbits"]}},
+      {
+       "id": "u07-08",
+       "title": "Kepler's laws",
+       "written": true,
+       "diagrams": [{"id":"phys-u07-kepler-period","status":"validated"}],
+       "labs": ["orbits"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u07-kepler-period"],"labs":["orbits"]}
+      },
+      {"id":"u07-09","title":"Satellite motion","written":true,"diagrams":[],"labs":["orbits"],"plan":{"verdict":"lab","labs":["orbits"]}},
+      {
+       "id": "u07-10",
+       "title": "Orbital energy and angular momentum",
+       "written": true,
+       "diagrams": [{"id":"phys-u07-orbit-energies","status":"validated"}],
+       "labs": ["orbits"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u07-orbit-energies"],"labs":["orbits"]}
+      },
+      {
+       "id": "u07-11",
+       "title": "Two-body gravitational problem",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u07-12",
+       "title": "Tidal forces",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the tidal acceleration is a formula 2GMr/d³ and a comparison of two numbers; the bulges need a two-body geometry renderer that does not exist yet"}
+      },
+      {"id":"u07-13","title":"Roche limits","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a calculation method or set of rules, taught by worked examples rather than a picture"}},
+      {
+       "id": "u07-14",
+       "title": "Lagrange points",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer lagrange: the rotating-frame map of the five points with the Sun–Earth L2 distance (Hill-sphere estimate) computed from the masses"}
+      },
+      {
+       "id": "u07-15",
+       "title": "Restricted three-body problem",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the restricted three-body problem is a qualitative account of chaos; a trajectory picture would need a numerical integrator renderer"}
+      },
+      {
+       "id": "u07-16",
+       "title": "Orbital transfers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method or set of rules, taught by worked examples rather than a picture"}
+      },
+      {
+       "id": "u07-17",
+       "title": "Hohmann transfers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer transfer-orbit: the Hohmann ellipse between circles of 1 AU and 1.52 AU, checking a = (r1+r2)/2 and the transfer time from Kepler's third law"}
+      },
+      {
+       "id": "u07-18",
+       "title": "Gravitational perturbations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"perturbations are listed with their sources; a picture of an inclination formula adds nothing"}
+      },
+      {
+       "id": "u07-19",
+       "title": "Precession of orbits",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u07-20",
+       "title": "General relativistic corrections",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u07-21",
+       "title": "Gravitational lensing",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer lens-geometry: a deflection-angle diagram with the Einstein radius computed from the lens mass and distances"}
+      },
+      {
+       "id": "u07-22",
+       "title": "Gravitational waves",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"properties and detection are descriptive; the strain example is a one-line product"}
+      }
      ]
     },
     {
@@ -18595,45 +19813,192 @@
      "totals": {
       "lessons": 25,
       "written": 25,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 25,
+      "plannedVisual": 5,
+      "plannedDiagram": 5,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 25,
-      "withDiagram": 0,
+      "excluded": 20,
+      "notAssessed": 0,
+      "withDiagram": 5,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 5,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 5
      },
      "lessons": [
-      {"id":"u08-01","title":"Density and pressure","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-02","title":"Hydrostatic equilibrium","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-03","title":"Pascal's principle","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-04","title":"Buoyancy and Archimedes' principle","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-05","title":"Fluid statics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-06","title":"Fluid dynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-07","title":"Continuity equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-08","title":"Conservation of mass in fluid flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-09","title":"Bernoulli's equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-10","title":"Viscosity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-11","title":"Laminar and turbulent flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-12","title":"Reynolds number","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-13","title":"Poiseuille flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-14","title":"Drag and lift","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-15","title":"Boundary layers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-16","title":"Surface tension","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-17","title":"Capillary action","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-18","title":"Compressible and incompressible fluids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-19","title":"Navier–Stokes equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-20","title":"Euler equations for fluids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-21","title":"Vorticity and circulation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-22","title":"Flow instabilities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-23","title":"Shock waves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-24","title":"Turbulence modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u08-25","title":"Computational fluid dynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u08-01",
+       "title": "Density and pressure",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-02",
+       "title": "Hydrostatic equilibrium",
+       "written": true,
+       "diagrams": [{"id":"phys-u08-pressure-depth","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u08-pressure-depth"]}
+      },
+      {
+       "id": "u08-03",
+       "title": "Pascal's principle",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-04",
+       "title": "Buoyancy and Archimedes' principle",
+       "written": true,
+       "diagrams": [{"id":"phys-u08-crown-forces","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u08-crown-forces"]}
+      },
+      {"id":"u08-05","title":"Fluid statics","written":true,"diagrams":[{"id":"phys-u08-gate-pressure","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u08-gate-pressure"]}},
+      {
+       "id": "u08-06",
+       "title": "Fluid dynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a qualitative description of steady flow; needs a streamline renderer that does not exist, and no number to check"}
+      },
+      {
+       "id": "u08-07",
+       "title": "Continuity equation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-08",
+       "title": "Conservation of mass in fluid flow",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-09",
+       "title": "Bernoulli's equation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {"id":"u08-10","title":"Viscosity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}},
+      {
+       "id": "u08-11",
+       "title": "Laminar and turbulent flow",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"laminar and turbulent flow are shown best by streamline pictures: needs renderer streamlines (a flow field with a Reynolds-number regime)"}
+      },
+      {
+       "id": "u08-12",
+       "title": "Reynolds number",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-13",
+       "title": "Poiseuille flow",
+       "written": true,
+       "diagrams": [{"id":"phys-u08-poiseuille-profile","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u08-poiseuille-profile"]}
+      },
+      {
+       "id": "u08-14",
+       "title": "Drag and lift",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-15",
+       "title": "Boundary layers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer boundary-layer: the growing layer along a plate with δ ∝ √x computed from ν and U"}
+      },
+      {
+       "id": "u08-16",
+       "title": "Surface tension",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-17",
+       "title": "Capillary action",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u08-18",
+       "title": "Compressible and incompressible fluids",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short list of properties that a picture would not teach"}
+      },
+      {
+       "id": "u08-19",
+       "title": "Navier–Stokes equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an advanced, equation-led topic with no lesson number a picture could recompute"}
+      },
+      {
+       "id": "u08-20",
+       "title": "Euler equations for fluids",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an advanced, equation-led topic with no lesson number a picture could recompute"}
+      },
+      {
+       "id": "u08-21",
+       "title": "Vorticity and circulation",
+       "written": true,
+       "diagrams": [{"id":"phys-u08-free-vortex","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u08-free-vortex"]}
+      },
+      {"id":"u08-22","title":"Flow instabilities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a qualitative account of instabilities; no number to recompute"}},
+      {"id":"u08-23","title":"Shock waves","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"needs renderer mach-cone: the Mach cone with sin μ = 1/Ma, 30° at Ma = 2"}},
+      {
+       "id": "u08-24",
+       "title": "Turbulence modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an advanced, equation-led topic with no lesson number a picture could recompute"}
+      },
+      {
+       "id": "u08-25",
+       "title": "Computational fluid dynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a computational workflow (mesh refinement); a picture would only decorate"}
+      }
      ]
     },
     {
@@ -18643,39 +20008,144 @@
      "totals": {
       "lessons": 19,
       "written": 19,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 19,
+      "plannedVisual": 6,
+      "plannedDiagram": 6,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 19,
-      "withDiagram": 0,
+      "excluded": 13,
+      "notAssessed": 0,
+      "withDiagram": 6,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 6,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 6
      },
      "lessons": [
-      {"id":"u09-01","title":"Stress and strain","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-02","title":"Young's modulus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-03","title":"Shear modulus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-04","title":"Bulk modulus","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-05","title":"Hooke's law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-06","title":"Elastic and plastic deformation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-07","title":"Poisson's ratio","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-08","title":"Elastic energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-09","title":"Bending and torsion","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-10","title":"Beam deflection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-11","title":"Pressure and material deformation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-12","title":"Fracture and failure","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-13","title":"Viscoelasticity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-14","title":"Crystal elasticity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-15","title":"Mechanical waves in solids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-16","title":"Stress tensors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-17","title":"Continuum mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-18","title":"Material stability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u09-19","title":"Fatigue and fracture mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u09-01",
+       "title": "Stress and strain",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u09-02",
+       "title": "Young's modulus",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u09-03",
+       "title": "Shear modulus",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u09-04",
+       "title": "Bulk modulus",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {"id":"u09-05","title":"Hooke's law","written":true,"diagrams":[{"id":"phys-u09-hooke-spring","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u09-hooke-spring"]}},
+      {
+       "id": "u09-06",
+       "title": "Elastic and plastic deformation",
+       "written": true,
+       "diagrams": [{"id":"phys-u09-unloading","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u09-unloading"]}
+      },
+      {
+       "id": "u09-07",
+       "title": "Poisson's ratio",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {"id":"u09-08","title":"Elastic energy","written":true,"diagrams":[{"id":"phys-u09-spring-energy","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u09-spring-energy"]}},
+      {
+       "id": "u09-09",
+       "title": "Bending and torsion",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {"id":"u09-10","title":"Beam deflection","written":true,"diagrams":[{"id":"phys-u09-shelf-sag","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u09-shelf-sag"]}},
+      {
+       "id": "u09-11",
+       "title": "Pressure and material deformation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u09-12",
+       "title": "Fracture and failure",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a qualitative account of why a flaw concentrates stress; the numbers belong to u09-19"}
+      },
+      {
+       "id": "u09-13",
+       "title": "Viscoelasticity",
+       "written": true,
+       "diagrams": [{"id":"phys-u09-maxwell-relaxation","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u09-maxwell-relaxation"]}
+      },
+      {
+       "id": "u09-14",
+       "title": "Crystal elasticity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an advanced, equation-led topic; a picture would not recompute any number in the lesson"}
+      },
+      {
+       "id": "u09-15",
+       "title": "Mechanical waves in solids",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a worked numerical example in a formula; a picture would only restate the substitution"}
+      },
+      {
+       "id": "u09-16",
+       "title": "Stress tensors",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer mohr-circle: an equal-aspect Mohr circle for σxx = 80, σyy = 20, σxy = 40 MPa checking the principal stresses 100 and 0 MPa"}
+      },
+      {
+       "id": "u09-17",
+       "title": "Continuum mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"an advanced, equation-led topic; a picture would not recompute any number in the lesson"}
+      },
+      {"id":"u09-18","title":"Material stability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a qualitative account of buckling and snap-through; no number to recompute"}},
+      {
+       "id": "u09-19",
+       "title": "Fatigue and fracture mechanics",
+       "written": true,
+       "diagrams": [{"id":"phys-u09-critical-crack","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u09-critical-crack"]}
+      }
      ]
     },
     {
@@ -18777,51 +20247,194 @@
      "totals": {
       "lessons": 31,
       "written": 31,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 31,
-      "withDiagram": 0,
+      "assessed": 31,
+      "plannedVisual": 14,
+      "plannedDiagram": 13,
+      "plannedLab": 2,
+      "excluded": 17,
+      "notAssessed": 0,
+      "withDiagram": 13,
       "withLab": 2,
-      "withBoth": 0,
-      "withAny": 2,
+      "withBoth": 1,
+      "withAny": 14,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 13
      },
      "lessons": [
-      {"id":"u12-01","title":"Temperature and thermal equilibrium","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-02","title":"Zeroth law of thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-03","title":"Heat and internal energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-04","title":"Specific heat capacity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-05","title":"Latent heat","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-06","title":"Thermal expansion","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-07","title":"First law of thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-08","title":"Work done by thermodynamic systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-09","title":"Pressure-volume diagrams","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-10","title":"Isothermal processes","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-11","title":"Adiabatic processes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-12","title":"Isobaric and isochoric processes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-13","title":"Heat engines","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-14","title":"Refrigerators and heat pumps","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-15","title":"Thermal efficiency","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-16","title":"Second law of thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-17","title":"Entropy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-18","title":"Reversible and irreversible processes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-19","title":"Carnot cycle","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-20","title":"Thermodynamic potentials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-21","title":"Enthalpy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-22","title":"Helmholtz free energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-23","title":"Gibbs free energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-24","title":"Chemical and phase equilibrium","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-25","title":"Maxwell relations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-26","title":"Third law of thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-27","title":"Thermodynamic cycles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-28","title":"Equations of state","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-29","title":"Critical points","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-30","title":"Phase transitions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u12-31","title":"Non-equilibrium thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u12-01",
+       "title": "Temperature and thermal equilibrium",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"temperature scales are two conversion formulas; the microscopic meaning is a single equation, ⟨KE⟩ = 3/2 k_B T"}
+      },
+      {
+       "id": "u12-02",
+       "title": "Zeroth law of thermodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the zeroth law is a statement about transitivity, not a quantity to plot"}
+      },
+      {
+       "id": "u12-03",
+       "title": "Heat and internal energy",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"three transfer mechanisms are drawn in detail in u14 (conduction, convection, radiation)"}
+      },
+      {
+       "id": "u12-04",
+       "title": "Specific heat capacity",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-kettle-heating","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-kettle-heating"]}
+      },
+      {"id":"u12-05","title":"Latent heat","written":true,"diagrams":[{"id":"phys-u12-heating-curve","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u12-heating-curve"]}},
+      {"id":"u12-06","title":"Thermal expansion","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"ΔL = αLΔT is a one-line formula; the worked example is a single multiplication"}},
+      {
+       "id": "u12-07",
+       "title": "First law of thermodynamics",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-first-law","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-first-law"]}
+      },
+      {
+       "id": "u12-08",
+       "title": "Work done by thermodynamic systems",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-isothermal-work","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-isothermal-work"]}
+      },
+      {
+       "id": "u12-09",
+       "title": "Pressure-volume diagrams",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-pv-rectangle","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-pv-rectangle"]}
+      },
+      {"id":"u12-10","title":"Isothermal processes","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"lab","labs":["gas"]}},
+      {
+       "id": "u12-11",
+       "title": "Adiabatic processes",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-adiabat-isotherm","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-adiabat-isotherm"]}
+      },
+      {
+       "id": "u12-12",
+       "title": "Isobaric and isochoric processes",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-isobaric-split","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-isobaric-split"]}
+      },
+      {"id":"u12-13","title":"Heat engines","written":true,"diagrams":[{"id":"phys-u12-power-station","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u12-power-station"]}},
+      {
+       "id": "u12-14",
+       "title": "Refrigerators and heat pumps",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer: a heat-pump energy flow (work plus heat from the cold side, one useful output, no waste band); the sankey renderer lays out the narrow version badly without a waste output"
+       }
+      },
+      {"id":"u12-15","title":"Thermal efficiency","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {
+       "id": "u12-16",
+       "title": "Second law of thermodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the second law is stated in words (Kelvin–Planck, Clausius); no quantity to draw"}
+      },
+      {"id":"u12-17","title":"Entropy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {
+       "id": "u12-18",
+       "title": "Reversible and irreversible processes",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"reversibility is a condition list; the free-expansion entropy example is one formula, ΔS = R ln 2"}
+      },
+      {"id":"u12-19","title":"Carnot cycle","written":true,"diagrams":[{"id":"phys-u12-carnot-cycle","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u12-carnot-cycle"]}},
+      {
+       "id": "u12-20",
+       "title": "Thermodynamic potentials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the four potentials and their natural variables are a table of definitions"}
+      },
+      {"id":"u12-21","title":"Enthalpy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {"id":"u12-22","title":"Helmholtz free energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an argument about energy versus entropy terms, not a picture"}},
+      {
+       "id": "u12-23",
+       "title": "Gibbs free energy",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-gibbs-melting","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-gibbs-melting"]}
+      },
+      {
+       "id": "u12-24",
+       "title": "Chemical and phase equilibrium",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}
+      },
+      {
+       "id": "u12-25",
+       "title": "Maxwell relations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Maxwell relations are partial-derivative identities; no picture adds to the derivation"}
+      },
+      {"id":"u12-26","title":"Third law of thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the third law is a statement about T → 0; no numbers to draw"}},
+      {"id":"u12-27","title":"Thermodynamic cycles","written":true,"diagrams":[{"id":"phys-u12-otto-cycle","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u12-otto-cycle"]}},
+      {
+       "id": "u12-28",
+       "title": "Equations of state",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-vdw-co2","status":"validated"}],
+       "labs": ["gas"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u12-vdw-co2"],"labs":["gas"]}
+      },
+      {
+       "id": "u12-29",
+       "title": "Critical points",
+       "written": true,
+       "diagrams": [{"id":"phys-u12-critical-isotherms","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u12-critical-isotherms"]}
+      },
+      {
+       "id": "u12-30",
+       "title": "Phase transitions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a p–T phase diagram with coexistence curves, triple point and Clausius–Clapeyron slopes"}
+      },
+      {
+       "id": "u12-31",
+       "title": "Non-equilibrium thermodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"linear-response relations (Onsager, Peltier–Seebeck); no worked numbers to plot"}
+      }
      ]
     },
     {
@@ -18831,46 +20444,137 @@
      "totals": {
       "lessons": 26,
       "written": 26,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 26,
-      "withDiagram": 0,
+      "assessed": 26,
+      "plannedVisual": 11,
+      "plannedDiagram": 8,
+      "plannedLab": 4,
+      "excluded": 15,
+      "notAssessed": 0,
+      "withDiagram": 8,
       "withLab": 4,
-      "withBoth": 0,
-      "withAny": 4,
+      "withBoth": 1,
+      "withAny": 11,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 8
      },
      "lessons": [
-      {"id":"u13-01","title":"Microstates and macrostates","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-02","title":"Statistical ensembles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-03","title":"Microcanonical, canonical and grand canonical ensembles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-04","title":"Boltzmann distribution","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-05","title":"Maxwell–Boltzmann distribution","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-06","title":"Partition functions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-07","title":"Entropy and probability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-08","title":"Multiplicity and state counting","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-09","title":"Equipartition theorem","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-10","title":"Classical ideal gases","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-11","title":"Mean free path","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-12","title":"Molecular speed distributions","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-13","title":"Chemical potential","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-14","title":"Fermi–Dirac statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-15","title":"Bose–Einstein statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-16","title":"Quantum gases","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-17","title":"Degenerate matter","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-18","title":"Blackbody radiation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-19","title":"Fluctuations and correlations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-20","title":"Phase transitions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-21","title":"Critical phenomena","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-22","title":"Ising model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-23","title":"Renormalisation group","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-24","title":"Statistical field theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-25","title":"Monte Carlo methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-26","title":"Nonequilibrium statistical mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u13-01",
+       "title": "Microstates and macrostates",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a bar chart of counts (the 4-coin microstates 1, 4, 6, 4, 1) with a binomial check; the graph renderer has no bars"}
+      },
+      {"id":"u13-02","title":"Statistical ensembles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition or list of results that a picture would not teach"}},
+      {
+       "id": "u13-03",
+       "title": "Microcanonical, canonical and grand canonical ensembles",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-two-level-energy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-two-level-energy"]}
+      },
+      {
+       "id": "u13-04",
+       "title": "Boltzmann distribution",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-boltzmann-balmer","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-boltzmann-balmer"]}
+      },
+      {
+       "id": "u13-05",
+       "title": "Maxwell–Boltzmann distribution",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-maxwell-o2-h2","status":"validated"}],
+       "labs": ["gas"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u13-maxwell-o2-h2"],"labs":["gas"]}
+      },
+      {
+       "id": "u13-06",
+       "title": "Partition functions",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-oscillator-energy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-oscillator-energy"]}
+      },
+      {
+       "id": "u13-07",
+       "title": "Entropy and probability",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}
+      },
+      {
+       "id": "u13-08",
+       "title": "Multiplicity and state counting",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}
+      },
+      {"id":"u13-09","title":"Equipartition theorem","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"lab","labs":["gas"]}},
+      {"id":"u13-10","title":"Classical ideal gases","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"lab","labs":["gas"]}},
+      {"id":"u13-11","title":"Mean free path","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {"id":"u13-12","title":"Molecular speed distributions","written":true,"diagrams":[],"labs":["gas"],"plan":{"verdict":"lab","labs":["gas"]}},
+      {"id":"u13-13","title":"Chemical potential","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {
+       "id": "u13-14",
+       "title": "Fermi–Dirac statistics",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-fermi-sodium","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-fermi-sodium"]}
+      },
+      {"id":"u13-15","title":"Bose–Einstein statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a short argument that photon number is not conserved; no number to draw"}},
+      {"id":"u13-16","title":"Quantum gases","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {"id":"u13-17","title":"Degenerate matter","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {"id":"u13-18","title":"Blackbody radiation","written":true,"diagrams":[{"id":"phys-u13-planck-sun","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u13-planck-sun"]}},
+      {
+       "id": "u13-19",
+       "title": "Fluctuations and correlations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}
+      },
+      {
+       "id": "u13-20",
+       "title": "Phase transitions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Landau free-energy plots need a symbolic order-parameter graph; the lesson's example is a power-law exponent, not a numeric plot"}
+      },
+      {"id":"u13-21","title":"Critical phenomena","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a table of critical exponents and universality classes"}},
+      {"id":"u13-22","title":"Ising model","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a derivation or calculation taught by the worked example rather than a picture"}},
+      {
+       "id": "u13-23",
+       "title": "Renormalisation group",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the decimation example is a single identity, tanh K′ = tanh²K; flow diagrams need a dedicated renderer"}
+      },
+      {"id":"u13-24","title":"Statistical field theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a dimension-counting argument, not a picture"}},
+      {
+       "id": "u13-25",
+       "title": "Monte Carlo methods",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-metropolis-acceptance","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-metropolis-acceptance"]}
+      },
+      {
+       "id": "u13-26",
+       "title": "Nonequilibrium statistical mechanics",
+       "written": true,
+       "diagrams": [{"id":"phys-u13-brownian-msd","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u13-brownian-msd"]}
+      }
      ]
     },
     {

@@ -1,0 +1,94 @@
+{
+ "id": "phys-u09-shelf-sag",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Beam deflection",
+ "title": "The shelf's sag along its span",
+ "caption": "A simply supported 2 m shelf under a uniform load of 150 N m⁻¹ sags most at the middle: δ = 5wL⁴/384EI = 1.87 cm (the lesson's 1.9 cm), with no sag at the two supports. The curve is symmetrical about the midpoint.",
+ "alt": "Graph of sag in centimetres against position along the shelf from 0 to 2 metres: a smooth symmetrical arch zero at both ends and 1.87 centimetres at the middle.",
+ "description": [
+  "The horizontal axis is position along the shelf in m; the vertical axis is the sag in cm (downward).",
+  "I = bh³/12 = 1.67e-7 m⁴, so EI = 1667 N m².",
+  "δ(x) = w x (L³ − 2Lx² + x³)/24EI is zero at x = 0 and x = 2 m.",
+  "At the middle (x = 1 m) δ = 5wL⁴/384EI = 1.87 cm."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   2.4
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "position x / m",
+  "sag δ / cm"
+ ],
+ "curves": [
+  {
+   "expr": "0.375000*x*(8-4*x*x+x*x*x)",
+   "colour": "a1",
+   "label": "sag",
+   "labelAt": [
+    0.2,
+    1.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1.875,
+   "label": "1.87 cm",
+   "dx": 0,
+   "dy": -14,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "0.375000*x*(8-4*x*x+x*x*x)",
+   "domain": [
+    0,
+    2
+   ],
+   "x": 1,
+   "y": 1.875,
+   "name": "maximum sag 1.87 cm at the midpoint"
+  },
+  {
+   "type": "point",
+   "expr": "0.375000*x*(8-4*x*x+x*x*x)",
+   "x": 2,
+   "y": 0,
+   "name": "no sag at the right support"
+  }
+ ]
+}

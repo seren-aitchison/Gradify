@@ -1,0 +1,178 @@
+{
+ "id": "phys-u12-otto-cycle",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Thermodynamic cycles",
+ "title": "The ideal Otto cycle, compression ratio 10",
+ "caption": "1→2 adiabatic compression from V to V/10 (pressure × 25.1), 2→3 heat in at constant volume, 3→4 adiabatic expansion, 4→1 heat out at constant volume. With γ = 1.4, η = 1 − r^(1−γ) = 1 − 10^−0.4 = 60.2%, found here also from heat in ∝ p₃ − p₂ and heat out ∝ p₄ − p₁ (60.2%). Real engines reach about 35%.",
+ "alt": "p–V diagram of the Otto cycle: two adiabats joined by two vertical constant-volume lines, volume ratio 10; efficiency 60 percent.",
+ "description": [
+  "Axes: volume as a multiple of the clearance volume, pressure as a multiple of the intake pressure p₁.",
+  "1→2: adiabatic compression from V = 10 to 1: p rises from 1 to 25.1 (pV^1.4 constant).",
+  "2→3: combustion at constant volume, p to 75.4. 3→4: adiabatic expansion back to V = 10, p = 3.0. 4→1: exhaust heat at constant volume.",
+  "Heat in ∝ 75.4 − 25.1, heat out ∝ 3.0 − 1 (times V/(γ−1)): η = 60.2%."
+ ],
+ "range": {
+  "x": [
+   0,
+   11
+  ],
+  "y": [
+   0,
+   85
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   5,
+   10
+  ],
+  [
+   20,
+   40,
+   60,
+   80
+  ]
+ ],
+ "grid": [
+  5,
+  20
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / V_{min}",
+  "p / p₁"
+ ],
+ "curves": [
+  {
+   "expr": "25.118864315095795*x^(-1.4)",
+   "domain": [
+    1,
+    10
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "compression",
+   "labelAt": [
+    3.4,
+    8
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "75.35659294528739*x^(-1.4)",
+   "domain": [
+    1,
+    10
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "expansion",
+   "labelAt": [
+    4.5,
+    30
+   ],
+   "anchor": "start"
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     1,
+     25.118864315095795
+    ],
+    [
+     1,
+     75.35659294528739
+    ]
+   ],
+   "colour": "a3",
+   "width": 3.4
+  },
+  {
+   "points": [
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     1
+    ]
+   ],
+   "colour": "a3",
+   "width": 3.4
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 1,
+   "label": "1",
+   "dx": 8,
+   "dy": 14
+  },
+  {
+   "x": 1,
+   "y": 25.118864315095795,
+   "label": "2",
+   "dx": 10,
+   "dy": 4
+  },
+  {
+   "x": 1,
+   "y": 75.35659294528739,
+   "label": "3",
+   "dx": 10,
+   "dy": 4
+  },
+  {
+   "x": 10,
+   "y": 3,
+   "label": "4",
+   "dx": 8,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "25.118864315095795*x^(-1.4)",
+   "x": 1,
+   "y": 25.118864315095795,
+   "name": "compression to 1/10 the volume raises p 25.1-fold"
+  },
+  {
+   "type": "point",
+   "expr": "75.35659294528739*x^(-1.4)",
+   "x": 10,
+   "y": 3,
+   "name": "expansion returns to the full volume at p₄"
+  },
+  {
+   "type": "area",
+   "expr": "75.35659294528739*x^(-1.4)",
+   "from": 1,
+   "to": 10,
+   "value": 113.3914823632185,
+   "tol": 0.01,
+   "name": "work from the expansion adiabat"
+  },
+  {
+   "type": "area",
+   "expr": "25.118864315095795*x^(-1.4)",
+   "from": 1,
+   "to": 10,
+   "value": 37.79716078773949,
+   "tol": 0.01,
+   "name": "net work 75.6 = η × heat in (60.2% = 1 − r^(1−γ))"
+  }
+ ]
+}

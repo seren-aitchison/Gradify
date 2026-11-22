@@ -1,0 +1,92 @@
+{
+ "id": "maths-u12-heights-regression",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Multivariate Normal Distribution",
+ "title": "Predicting a son's height from his father's",
+ "caption": "With ρ = 0.5 and equal SDs the best prediction is 175 + 0.5(189 − 175) = 182 cm: halfway back towards the mean, below the line y = x.",
+ "alt": "Graph with the dashed line y = x and the regression line y = 175 + 0.5(x − 175); the point (189, 182) lies on the regression line.",
+ "description": [
+  "A father of 189 cm is 14 cm above the mean.",
+  "The expected son's height moves only ρ = 0.5 of that: 7 cm above the mean.",
+  "The prediction (189, 182) lies on the regression line, below y = x."
+ ],
+ "range": {
+  "x": [
+   155,
+   195
+  ],
+  "y": [
+   155,
+   195
+  ]
+ },
+ "ticks": [
+  [
+   160,
+   170,
+   180,
+   190
+  ],
+  [
+   160,
+   170,
+   180,
+   190
+  ]
+ ],
+ "axisLabels": [
+  "father (cm)",
+  "son (cm)"
+ ],
+ "legend": [
+  [
+   "y = x",
+   "a1"
+  ],
+  [
+   "E(son ∣ father)",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  157,
+  192
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "colour": "a1",
+   "dash": "6 5"
+  },
+  {
+   "expr": "175+0.5*(x-175)",
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": 189,
+   "y": 182,
+   "label": "(189, 182)",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "175+0.5*(x-175)",
+   "x": 189,
+   "y": 182
+  },
+  {
+   "type": "point",
+   "expr": "175+0.5*(x-175)",
+   "x": 175,
+   "y": 175,
+   "name": "the line passes through the mean point (175, 175)"
+  }
+ ]
+}

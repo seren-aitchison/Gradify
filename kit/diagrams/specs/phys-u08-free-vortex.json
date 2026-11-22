@@ -1,0 +1,93 @@
+{
+ "id": "phys-u08-free-vortex",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u08",
+ "lesson": "Vorticity and circulation",
+ "title": "Speed around a free vortex",
+ "caption": "Outside the core a vortex of circulation Γ = 2 m² s⁻¹ has v = Γ/2πr: the speed falls as 1/r, so the product v × r stays at 0.318 m² s⁻¹. At r = 0.1 m the speed is 3.2 m s⁻¹; at 0.2 m it halves to 1.6.",
+ "alt": "Graph of speed against distance from the vortex axis, a 1/r curve passing through 3.2 metres per second at 0.1 metres.",
+ "description": [
+  "The horizontal axis is distance r from the axis in m; the vertical axis is the speed v in m s⁻¹.",
+  "v = Γ/2πr = 2/(2πr). At r = 0.1 m, v = 3.2 m s⁻¹.",
+  "At r = 0.2 m, v = 1.59 m s⁻¹: doubling r halves v, so the circulation round every circle is the same."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.5
+  ],
+  "y": [
+   0,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  0.1,
+  2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / m",
+  "v / m s^{-1}"
+ ],
+ "curves": [
+  {
+   "expr": "0.3183/x",
+   "domain": [
+    0.04,
+    0.5
+   ],
+   "colour": "a1",
+   "label": "v = Γ/2πr",
+   "labelAt": [
+    0.2,
+    4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 3.18,
+   "label": "0.1 m: 3.2 m/s",
+   "dx": 12,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.318310/x",
+   "x": 0.1,
+   "y": 3.18,
+   "name": "v = 3.2 m/s at 0.1 m"
+  },
+  {
+   "type": "point",
+   "expr": "0.318310/x",
+   "x": 0.2,
+   "y": 1.59,
+   "name": "v halves when r doubles"
+  }
+ ]
+}

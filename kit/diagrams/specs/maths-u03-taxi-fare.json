@@ -1,0 +1,102 @@
+{
+ "id": "maths-u03-taxi-fare",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Basic Algebra",
+ "title": "A taxi fare as a straight line",
+ "caption": "The expression 3 + 1.8m is a line: £3 at 0 miles and 1.8 more for each mile. At m = 12 it is 3 + 21.6 = £24.60.",
+ "alt": "A straight-line graph of cost against miles, starting at 3 pounds and rising 1.80 per mile, with the point (12, 24.60) marked.",
+ "description": [
+  "The cost in pounds is 3 + 1.8m, where m is the number of miles.",
+  "At 0 miles the fare is £3, the fixed charge.",
+  "Each extra mile adds £1.80, so the graph is a straight line of gradient 1.8.",
+  "At 12 miles the cost is 3 + 1.8 × 12 = £24.60."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   0,
+   30
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ]
+ ],
+ "grid": [
+  2,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "miles m",
+  "cost (£)"
+ ],
+ "curves": [
+  {
+   "expr": "3+1.8*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 3,
+   "label": "£3",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 20,
+   "anchor": "start"
+  },
+  {
+   "x": 12,
+   "y": 24.6,
+   "label": "£24.60 at 12 miles",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3+1.8*x",
+   "x": 0,
+   "y": 3,
+   "name": "0 miles costs £3"
+  },
+  {
+   "type": "point",
+   "expr": "3+1.8*x",
+   "x": 12,
+   "y": 24.6,
+   "name": "12 miles costs 3 + 1.8 × 12 = £24.60"
+  }
+ ],
+ "fromLesson": [
+  "£24.60"
+ ]
+}

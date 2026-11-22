@@ -55,6 +55,7 @@ P: Put a small system in contact with a huge reservoir. The probability of the s
 X: Two-level system (energies 0 and ε) at temperature T. Mean energy?
 > Z = 1 + e^{−βε}
 > ⟨E⟩ = ε/(e^{βε} + 1): 0 at low T, ε/2 at high T
+D: phys-u13-two-level-energy
 !: The partition function sums over states, not energy levels; degenerate levels count once per state.
 Q: How is free energy obtained from the canonical partition function? | F = −k_{B}T ln Z.
 Q: Why is the grand canonical ensemble convenient for quantum gases? | Particle number fluctuates, so occupation of each state can be treated independently.
@@ -75,6 +76,7 @@ H: Applications
 X: What fraction of hydrogen atoms in a star at 10 000 K are in n = 2 (ΔE = 10.2 eV, g_{2}/g_{1} = 4)?
 > k_{B}T = 0.862 eV
 > N_{2}/N_{1} = 4e^{−11.8} = 3 × 10^{-5}: small, but enough to give strong Balmer lines
+D: phys-u13-boltzmann-balmer
 !: The Boltzmann factor compares individual states; with degeneracies, higher levels can hold more particles if they have many more states.
 Q: What is k_{B}T at room temperature in eV? | About 0.025 eV (1/40 eV).
 Q: Why can't lasers work in thermal equilibrium? | The Boltzmann distribution always has fewer particles in higher levels; lasing needs population inversion.
@@ -96,6 +98,7 @@ P: Rotating-disc velocity selectors and time-of-flight molecular beams (Stern, M
 X: Compare v_{rms} of O_{2} and H_{2} at the same temperature.
 > v_{rms} ∝ 1/√m: ratio √(32/2) = 4
 > Hydrogen molecules are 4 times faster
+D: phys-u13-maxwell-o2-h2
 !: The average speed isn't the speed of the average kinetic energy; v_{rms} relates to ⟨KE⟩.
 P: **Investigate with the lab.** Start every particle at the same speed and watch the speeds spread into the Maxwell–Boltzmann curve.
 IX: gas
@@ -121,6 +124,7 @@ E: Z_{rot} ≈ k_{B}T/(hcB) :: linear rotor at high T
 X: Find ⟨E⟩ for a quantum harmonic oscillator.
 > Z = e^{−βħω/2}/(1 − e^{−βħω})
 > ⟨E⟩ = ħω/2 + ħω/(e^{βħω} − 1): k_{B}T at high T, ħω/2 at low T
+D: phys-u13-oscillator-energy
 !: The N! for indistinguishable particles is essential: without it, entropy isn't extensive (the Gibbs paradox).
 Q: How do you get mean energy from Z? | ⟨E⟩ = −∂ln Z/∂β.
 Q: Why divide by N! for identical particles? | Swapping identical particles doesn't create a new state; omitting it gives the Gibbs paradox.
@@ -295,6 +299,7 @@ P: Fermi pressure (degeneracy pressure) resists compression even at T = 0. It ho
 X: E_{F} for sodium (n = 2.5 × 10^{28} m^{-3})?
 > E_{F} = (1.05 × 10^{-34})^{2}/(2 × 9.11 × 10^{-31}) × (3π^{2} × 2.5 × 10^{28})^{2/3}
 > ≈ 5.0 × 10^{-19} J ≈ 3.1 eV
+D: phys-u13-fermi-sodium
 !: Electrons at the Fermi level move fast (~10^{6} m s^{-1}) even at T = 0; "cold" fermions are far from still.
 Q: What is the Fermi energy? | The energy of the highest occupied state at absolute zero.
 Q: Why is the electronic heat capacity of metals small? | Only electrons within ~k_{B}T of the Fermi energy can be excited.
@@ -387,6 +392,7 @@ H: Real blackbodies
 - Cavity with a small hole; carbon black; furnaces.
 X: The Sun's spectrum peaks at about 500 nm. Estimate its surface temperature.
 > T = 2.898 × 10^{-3}/5 × 10^{-7} = 5800 K
+D: phys-u13-planck-sun
 !: A blackbody isn't black when hot: it glows. "Black" refers to perfect absorption.
 Q: What problem did Planck's quantum hypothesis solve? | The ultraviolet catastrophe in the classical theory of blackbody radiation.
 Q: State Wien's displacement law. | λ_{max}T = 2.9 × 10^{-3} m K.
@@ -535,6 +541,7 @@ H: Beyond statistical physics
 P: Monte Carlo integrates in many dimensions (error independent of dimension), designs radiotherapy doses, prices financial options, and underpins Bayesian inference (Markov chain Monte Carlo). It originated at Los Alamos in the 1940s (Ulam, von Neumann, Metropolis).
 X: A proposed spin flip raises energy by 2J at k_{B}T = J. Acceptance probability?
 > e^{−2} = 0.135
+D: phys-u13-metropolis-acceptance
 !: A Monte Carlo run that hasn't equilibrated, or whose samples are strongly correlated, gives misleadingly small error bars.
 Q: What is the Metropolis acceptance rule? | Accept downhill moves; accept uphill moves with probability e^{−ΔE/k_{B}T}.
 Q: What is critical slowing down? | The divergence of correlation times near critical points, making local Monte Carlo updates inefficient.
@@ -558,6 +565,7 @@ H: Linear response and beyond
 X: Mean square displacement of a Brownian particle (D = 2 × 10^{-13} m^{2} s^{-1}) in 10 s (3D)?
 > ⟨r^{2}⟩ = 6Dt = 1.2 × 10^{-11} m^{2}
 > rms ≈ 3.5 μm
+D: phys-u13-brownian-msd
 !: The H-theorem's irreversibility comes from the molecular chaos assumption, not from the reversible microscopic laws themselves (Loschmidt's paradox).
 Q: What is the Langevin equation? | An equation of motion with a friction force plus a random fluctuating force, describing Brownian motion.
 Q: What do Green–Kubo relations give? | Transport coefficients from time integrals of equilibrium correlation functions.

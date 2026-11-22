@@ -1,3 +1,38 @@
-// Physics unit 12 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u12-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 12, Thermodynamics. Specs are written by scripts/diagrams/physics/u12.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const DEF = "a definition, statement or list of properties that a picture would not teach";
+const METHOD = "a derivation or calculation taught by the worked example rather than a picture";
+export default [
+  ["u12-01", null, "temperature scales are two conversion formulas; the microscopic meaning is a single equation, ⟨KE⟩ = 3/2 k_B T"],
+  ["u12-02", null, "the zeroth law is a statement about transitivity, not a quantity to plot"],
+  ["u12-03", null, "three transfer mechanisms are drawn in detail in u14 (conduction, convection, radiation)"],
+  ["u12-04", "graph", "phys-u12-kettle-heating", "the kettle example: 1.0 kg of water from 20 to 100 °C at 2.0 kW takes 167 s, a straight line of gradient P/(mc)"],
+  ["u12-05", "graph", "phys-u12-heating-curve", "the ice-to-steam example as a heating curve: slopes 1/(mc) and plateaus mL, total about 1517 kJ"],
+  ["u12-06", null, "ΔL = αLΔT is a one-line formula; the worked example is a single multiplication"],
+  ["u12-07", "sankey", "phys-u12-first-law", "500 J of heat splits into 200 J of work and 300 J of internal energy"],
+  ["u12-08", "graph", "phys-u12-isothermal-work", "the isothermal expansion example: work as the area under p = nRT/V, 5.5 kJ"],
+  ["u12-09", "graph", "phys-u12-pv-rectangle", "the clockwise rectangle: net work is the enclosed area, 200 J"],
+  ["u12-10", "lab", "gas", "compress and heat a gas and watch p, V, T; the lesson's isothermal compression"],
+  ["u12-11", "graph", "phys-u12-adiabat-isotherm", "air compressed 20 times: the adiabat reaches p × 66 (T = 994 K) against × 20 for the isotherm, γ times steeper"],
+  ["u12-12", "sankey", "phys-u12-isobaric-split", "the diatomic-gas example: Q = 2.91 kJ splits into ΔU = 2.08 kJ and W = 0.83 kJ"],
+  ["u12-13", "sankey", "phys-u12-power-station", "the power station: 2500 MW in, 1000 MW electricity, 1500 MW rejected, η = 40%"],
+  ["u12-14", null, "needs renderer: a heat-pump energy flow (work plus heat from the cold side, one useful output, no waste band); the sankey renderer lays out the narrow version badly without a waste output"],
+  ["u12-15", null, METHOD],
+  ["u12-16", null, "the second law is stated in words (Kelvin–Planck, Clausius); no quantity to draw"],
+  ["u12-17", null, METHOD],
+  ["u12-18", null, "reversibility is a condition list; the free-expansion entropy example is one formula, ΔS = R ln 2"],
+  ["u12-19", "graph", "phys-u12-carnot-cycle", "the Carnot cycle between 500 °C and 20 °C on a p–V diagram, with Q_c/Q_h = T_c/T_h and η = 62%"],
+  ["u12-20", null, "the four potentials and their natural variables are a table of definitions"],
+  ["u12-21", null, METHOD],
+  ["u12-22", null, "an argument about energy versus entropy terms, not a picture"],
+  ["u12-23", "graph", "phys-u12-gibbs-melting", "ΔG = ΔH − TΔS for melting ice crosses zero at 273 K"],
+  ["u12-24", null, METHOD],
+  ["u12-25", null, "Maxwell relations are partial-derivative identities; no picture adds to the derivation"],
+  ["u12-26", null, "the third law is a statement about T → 0; no numbers to draw"],
+  ["u12-27", "graph", "phys-u12-otto-cycle", "the ideal Otto cycle for r = 10, γ = 1.4 on a p–V diagram: η = 60%"],
+  ["u12-28", "graph", "phys-u12-vdw-co2", "the CO₂ example: ideal and van der Waals pressure against volume, 24.9 against 22.4 bar at 1 L"],
+  ["u12-28", "lab", "gas", "vary the volume and temperature of a gas and compare with the ideal-gas law"],
+  ["u12-29", "graph", "phys-u12-critical-isotherms", "reduced van der Waals isotherms: flat inflection at (1, 1) at T_c, a wiggle below it"],
+  ["u12-30", null, "needs renderer: a p–T phase diagram with coexistence curves, triple point and Clausius–Clapeyron slopes"],
+  ["u12-31", null, "linear-response relations (Onsager, Peltier–Seebeck); no worked numbers to plot"],
+];

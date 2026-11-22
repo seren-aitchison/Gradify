@@ -1,0 +1,60 @@
+{
+ "id": "phys-u02-impedance-plane",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Complex numbers",
+ "title": "Impedance in the complex plane",
+ "caption": "A 30 Ω resistor in series with an inductor of reactance 40 Ω has Z = 30 + 40i Ω. The resistance lies along the real axis and the reactance along the imaginary axis, so |Z| = √(30² + 40²) = 50 Ω and the phase is arctan(40/30) = 53°, voltage leading current.",
+ "alt": "Phasor triangle: a 30 ohm arrow along the real axis, a 40 ohm arrow up from its tip, and the 50 ohm impedance at 53 degrees.",
+ "description": [
+  "The resistance R = 30 Ω is drawn along the real (horizontal) axis.",
+  "The reactance X_L = 40 Ω is drawn from its tip along the imaginary (vertical) axis.",
+  "The impedance Z runs from the origin to the tip: |Z| = √(30² + 40²) = 50 Ω.",
+  "Its angle above the real axis is the phase: tan φ = 40/30, φ = 53°."
+ ],
+ "mode": "add",
+ "units": "Ω",
+ "vectors": [
+  {
+   "label": "R",
+   "mag": 30,
+   "angle": 0,
+   "text": "30 Ω (real axis)",
+   "comps": [
+    30,
+    0
+   ]
+  },
+  {
+   "label": "X_{L}",
+   "mag": 40,
+   "angle": 90,
+   "colour": "a4",
+   "text": "40 Ω (imaginary axis)",
+   "comps": [
+    0,
+    40
+   ]
+  }
+ ],
+ "resultant": {
+  "label": "Z",
+  "mag": 50,
+  "angle": 53.13,
+  "text": "50 Ω at 53°"
+ },
+ "notes": [
+  "|Z| = √(30^{2} + 40^{2}) = 50 Ω",
+  "φ = arctan(40/30) = 53°"
+ ],
+ "claims": [
+  {
+   "type": "angleBetween",
+   "a": "R",
+   "b": "Z",
+   "value": 53.1,
+   "name": "the phase of Z is 53.1° from the resistance"
+  }
+ ]
+}

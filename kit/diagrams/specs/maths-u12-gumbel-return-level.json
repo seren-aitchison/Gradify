@@ -1,0 +1,75 @@
+{
+ "id": "maths-u12-gumbel-return-level",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Extreme Value Distributions",
+ "title": "The 100-year return level",
+ "caption": "A level exceeded once in 100 years has cdf 0.99: μ − β ln(−ln 0.99) = 3 + 0.5 × 4.6 ≈ 5.3 m.",
+ "alt": "Graph of the Gumbel cdf with μ = 3 and β = 0.5 rising from 0 to 1; the point (5.3, 0.99) marks the 100-year level.",
+ "description": [
+  "The cdf rises steeply near the typical maximum 3 m and creeps up towards 1.",
+  "It reaches 0.99 at 5.3 m."
+ ],
+ "range": {
+  "x": [
+   1,
+   7
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "axisLabels": [
+  "annual maximum level (m)",
+  "cdf"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-exp(-(x-3)/0.5))"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.99,
+   "label": "0.99",
+   "dx": 0
+  }
+ ],
+ "points": [
+  {
+   "x": 5.3,
+   "y": 0.99,
+   "label": "5.3 m",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-exp(-(x-3)/0.5))",
+   "x": 5.3,
+   "y": 0.99,
+   "name": "F(5.3) = 0.99"
+  }
+ ]
+}

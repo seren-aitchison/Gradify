@@ -32,6 +32,7 @@ P: Stars are held up by hydrostatic equilibrium: inward gravity balanced by the 
 X: Find the pressure at the bottom of the Mariana Trench (10 900 m, ρ ≈ 1030 kg m^{-3}).
 > ρgh = 1030 × 9.8 × 10 900 ≈ 1.1 × 10^{8} Pa
 > About 1100 atm
+D: phys-u08-pressure-depth
 !: The pressure on a dam depends on the water depth, not on how far the reservoir stretches behind it.
 Q: Why does pressure in a liquid not depend on the container's shape? | Pressure at a depth is set by ρgh plus surface pressure; walls supply whatever extra force balance is needed.
 Q: What is the scale height of Earth's atmosphere? | About 8 km.
@@ -71,6 +72,7 @@ H: Applications
 X: A crown weighs 7.84 N in air and 6.86 N in water. What's its density?
 > F_{B} = 0.98 N ⇒ V = 0.98/(1000 × 9.8) = 10^{-4} m^{3}
 > m = 0.8 kg ⇒ ρ = 8000 kg m^{-3}: not pure gold (19 300)
+D: phys-u08-crown-forces
 !: Buoyant force depends on the displaced volume, not on the object's weight or depth (for incompressible fluids).
 Q: State Archimedes' principle. | The buoyant force equals the weight of fluid displaced.
 Q: What fraction of a floating object is submerged? | The ratio of its density to the fluid's density.
@@ -92,6 +94,7 @@ P: A floating body is stable if its metacentre lies above its centre of gravity.
 X: A rectangular gate 2 m wide holds water 3 m deep. Find the total force.
 > h_{c} = 1.5 m; A = 6 m^{2}
 > F = 1000 × 9.8 × 1.5 × 6 = 88 kN, acting at 2 m depth (2/3 of the way down)
+D: phys-u08-gate-pressure
 !: The force on a vertical wall isn't ρghA with the full depth; use the centroid depth.
 Q: What does a U-tube manometer measure? | A pressure difference, Δp = ρgΔh.
 Q: When is a floating ship stable? | When its metacentre is above its centre of gravity.
@@ -252,6 +255,7 @@ P: Narrowing an artery's radius by 20% cuts flow by 59% at the same pressure (0.
 X: A needle (R = 0.2 mm, L = 3 cm) delivers water (η = 10^{-3} Pa s) at Δp = 50 kPa. Flow rate?
 > Q = π(2 × 10^{-4})^{4} × 5 × 10^{4}/(8 × 10^{-3} × 0.03)
 > = 1.0 × 10^{-6} m^{3} s^{-1} = 1 mL s^{-1}
+D: phys-u08-poiseuille-profile
 !: Poiseuille's law only holds for laminar, fully developed flow of a Newtonian fluid; blood in large arteries is pulsatile and non-Newtonian.
 Q: How does flow rate depend on pipe radius in laminar flow? | Q ∝ R^{4}.
 Q: What is the velocity profile in Poiseuille flow? | Parabolic, maximum at the centre, zero at the wall.
@@ -418,6 +422,7 @@ H: Examples
 - Kármán vortex streets behind cylinders: alternating vortices that can shake chimneys and power lines (Strouhal number ~0.2).
 X: A vortex has Γ = 2 m^{2} s^{-1}. Find the speed 0.1 m from its axis.
 > v = Γ/(2πr) = 2/(0.628) = 3.2 m s^{-1}
+D: phys-u08-free-vortex
 !: A fluid moving in circles needn't have vorticity, and a fluid moving in straight lines can (shear flow has vorticity).
 Q: What is vorticity? | The curl of the velocity field, measuring local rotation of fluid elements.
 Q: What does Kelvin's circulation theorem state? | In an ideal barotropic fluid, circulation around a material loop is conserved.

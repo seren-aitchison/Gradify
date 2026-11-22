@@ -1,0 +1,105 @@
+{
+ "id": "maths-u03-compound-growth",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Exponential Equations",
+ "title": "£1,000 at 4% passes £1,500 in year 11",
+ "caption": "The curve 1000 × 1.04ⁿ meets £1,500 at n = ln 1.5 / ln 1.04 ≈ 10.34, so the first whole year above £1,500 is year 11, with £1539.45.",
+ "alt": "A rising curve for money against years, crossing the line at 1,500 pounds between 10 and 11 years.",
+ "description": [
+  "The balance after n years is 1000 × 1.04ⁿ.",
+  "The dashed line is £1,500.",
+  "The curve meets it at n ≈ 10.34, so the balance first exceeds £1,500 after 11 years."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   0,
+   1800
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   400,
+   800,
+   1200,
+   1600
+  ]
+ ],
+ "grid": [
+  2,
+  400
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "years n",
+  "balance (£)"
+ ],
+ "curves": [
+  {
+   "expr": "1000*1.04^x",
+   "colour": "a1"
+  },
+  {
+   "expr": "1500",
+   "colour": "a2",
+   "dash": "6 4"
+  }
+ ],
+ "points": [
+  {
+   "x": 10.338035071507665,
+   "y": 1500,
+   "label": "n ≈ 10.34",
+   "colour": "a4",
+   "dx": -12,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 11,
+   "y": 1539.4540563150783,
+   "label": "£1,539",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 22,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "1000*1.04^x",
+   "b": "1500",
+   "x": 10.338035071507665,
+   "y": 1500,
+   "name": "1000 × 1.04ⁿ = 1500 at n = ln 1.5 / ln 1.04"
+  },
+  {
+   "type": "point",
+   "expr": "1000*1.04^x",
+   "x": 11,
+   "y": 1539.4540563150783,
+   "name": "after 11 years the balance is £1,539.45"
+  }
+ ],
+ "fromLesson": [
+  "11 years"
+ ]
+}

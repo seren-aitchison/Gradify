@@ -1,0 +1,30 @@
+{
+ "id": "maths-u03-pond-recurrence",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Recurrence Relations",
+ "title": "The pond population settles at 300",
+ "caption": "From 200 fish, each year the population is 0.9 of last year's plus 30: P₁ = 210, P₂ = 219, 227.1, … The terms climb towards 300, the value where 0.9L + 30 = L.",
+ "alt": "The sequence 210, 219, 227.1, 234.39 and onwards, rising towards 300.",
+ "description": [
+  "The population starts at 200 and each year is 0.9 × the previous value + 30.",
+  "P₁ = 0.9 × 200 + 30 = 210 and P₂ = 0.9 × 210 + 30 = 219.",
+  "The terms increase by less each year and approach 300, where 0.9L + 30 = L."
+ ],
+ "terms": [
+  210,
+  219,
+  227.1,
+  234.39
+ ],
+ "rule": {
+  "kind": "recurrence",
+  "a": 210,
+  "expr": "0.9*x+30"
+ },
+ "more": true,
+ "fromLesson": [
+  "P_{2} = 0.9 × 210 + 30 = 219"
+ ]
+}

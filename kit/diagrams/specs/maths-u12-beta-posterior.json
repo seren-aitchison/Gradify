@@ -1,0 +1,103 @@
+{
+ "id": "maths-u12-beta-posterior",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Beta Distribution",
+ "title": "Beta(2, 2) prior and Beta(9, 5) posterior",
+ "caption": "Seven heads and three tails add 7 to α and 3 to β: Beta(2, 2) becomes Beta(9, 5), narrower and shifted right, with mean 9/14 ≈ 0.643.",
+ "alt": "Two curves on [0, 1]: a broad Beta(2, 2) prior centred at 0.5 and a taller, narrower Beta(9, 5) posterior peaking near 0.67.",
+ "description": [
+  "The prior 6x(1 − x) is symmetric about 0.5.",
+  "After 7 heads and 3 tails the density is proportional to x⁸(1 − x)⁴, which is Beta(9, 5).",
+  "Its peak is at 8/12 = 2/3 and its mean 9/14."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   3.6
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "axisLabels": [
+  "p",
+  "density"
+ ],
+ "legend": [
+  [
+   "prior Beta(2, 2)",
+   "a1"
+  ],
+  [
+   "posterior Beta(9, 5)",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  0.03,
+  3.4
+ ],
+ "curves": [
+  {
+   "expr": "6*x*(1-x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "6435*x^8*(1-x)^4",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "6*x*(1-x)",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "the prior has area 1"
+  },
+  {
+   "type": "area",
+   "expr": "6435*x^8*(1-x)^4",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "the posterior 6435x⁸(1 − x)⁴ has area 1"
+  },
+  {
+   "type": "max",
+   "expr": "6435*x^8*(1-x)^4",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.67,
+   "y": 3.1,
+   "name": "the posterior peaks at 2/3"
+  },
+  {
+   "type": "area",
+   "expr": "x*6435*x^8*(1-x)^4",
+   "from": 0,
+   "to": 1,
+   "value": 0.6429,
+   "name": "the posterior mean is 9/14"
+  }
+ ]
+}

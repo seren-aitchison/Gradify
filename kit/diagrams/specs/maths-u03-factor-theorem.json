@@ -1,0 +1,111 @@
+{
+ "id": "maths-u03-factor-theorem",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Factor Theorem",
+ "title": "Roots of 2x³ − 5x² − x + 6",
+ "caption": "f(2) = 0 makes (x − 2) a factor; the quadratic left over gives (2x − 3)(x + 1). The graph crosses the axis at −1, 3/2 and 2.",
+ "alt": "The graph of y = 2x cubed minus 5x squared minus x plus 6 crossing the x-axis at −1, 1.5 and 2.",
+ "description": [
+  "f(2) = 16 − 20 − 2 + 6 = 0, so (x − 2) is a factor.",
+  "The other factors are (2x − 3) and (x + 1).",
+  "The roots are x = −1, 3/2 and 2, where the graph meets the x-axis."
+ ],
+ "range": {
+  "x": [
+   -1.5,
+   3
+  ],
+  "y": [
+   -12,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -10,
+   -5,
+   5,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2*x^3-5*x^2-x+6",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 0,
+   "label": "−1",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 1.5,
+   "y": 0,
+   "label": "3/2",
+   "colour": "a2",
+   "dx": 0,
+   "dy": 22
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "label": "2",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -14,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x^3-5*x^2-x+6",
+   "x": -1,
+   "y": 0,
+   "name": "f(-1) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "2*x^3-5*x^2-x+6",
+   "x": 1.5,
+   "y": 0,
+   "name": "f(1.5) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "2*x^3-5*x^2-x+6",
+   "x": 2,
+   "y": 0,
+   "name": "f(2) = 0"
+  }
+ ],
+ "fromLesson": [
+  "(x − 2)(2x − 3)(x + 1)"
+ ]
+}

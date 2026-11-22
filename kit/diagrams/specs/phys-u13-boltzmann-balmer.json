@@ -1,0 +1,86 @@
+{
+ "id": "phys-u13-boltzmann-balmer",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Boltzmann distribution",
+ "title": "Hydrogen atoms in n = 2 against stellar temperature",
+ "caption": "N₂/N₁ = (g₂/g₁)e^{−ΔE/k_BT} with ΔE = 10.2 eV and g₂/g₁ = 4. At 10 000 K, k_BT = 0.862 eV and N₂/N₁ = 4e^{−11.8} = 2.9 × 10⁻⁵: tiny, yet enough to show Balmer lines. The curve is steep: doubling the temperature to 20 000 K multiplies the fraction by 372.",
+ "alt": "Graph of N2/N1 in units of 10^-5 against temperature in thousands of kelvin: a very steep rising curve, 2.9 at 10 000 K.",
+ "description": [
+  "The horizontal axis is temperature in thousands of kelvin; the vertical axis is N₂/N₁ in units of 10⁻⁵.",
+  "The curve is 4 e^{−ΔE/k_BT}; the activation-like energy ΔE/k_B = 118366 K, so it is extremely sensitive to T.",
+  "At 10 000 K the fraction is 2.9 × 10⁻⁵ = 2.9e-5."
+ ],
+ "range": {
+  "x": [
+   4,
+   20
+  ],
+  "y": [
+   0,
+   1200
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   300,
+   600,
+   900,
+   1200
+  ]
+ ],
+ "grid": [
+  5,
+  300
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "T / 10³ K",
+  "N₂/N₁ / 10^{-5}"
+ ],
+ "curves": [
+  {
+   "expr": "400000*exp(-118.36608844058829/x)",
+   "domain": [
+    4,
+    20
+   ],
+   "colour": "a1",
+   "label": "4e^{−ΔE/kT}",
+   "labelAt": [
+    10.5,
+    760
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 2.893917099148266,
+   "label": "2.9 × 10^{-5} at 10 000 K",
+   "dx": -6,
+   "dy": -26,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "400000*exp(-118.36608844058829/x)",
+   "x": 10,
+   "y": 2.893917099148266,
+   "name": "N₂/N₁ = 4e^{−11.8} = 2.9 × 10⁻⁵ at 10 000 K"
+  }
+ ]
+}

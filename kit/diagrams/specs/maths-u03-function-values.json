@@ -1,0 +1,104 @@
+{
+ "id": "maths-u03-function-values",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Functions",
+ "title": "f(x) = x² − 4x takes the value 5 twice",
+ "caption": "f(−1) = 5, and f(x) = 5 has two solutions, x = −1 and x = 5, where the curve meets the line y = 5.",
+ "alt": "The parabola y = x squared minus 4x and the line y = 5 meeting at x = −1 and x = 5.",
+ "description": [
+  "Plot f(x) = x² − 4x.",
+  "f(−1) = 1 + 4 = 5, so (−1, 5) is on the curve.",
+  "The line y = 5 meets the curve again at x = 5, the second solution of f(x) = 5."
+ ],
+ "range": {
+  "x": [
+   -2,
+   7
+  ],
+  "y": [
+   -6,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   2,
+   4,
+   6
+  ],
+  [
+   -5,
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  2,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2-4*x",
+   "colour": "a1"
+  },
+  {
+   "expr": "5",
+   "colour": "a2",
+   "dash": "6 4"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 5,
+   "label": "(−1, 5)",
+   "colour": "a4",
+   "dx": 8,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 5,
+   "y": 5,
+   "label": "(5, 5)",
+   "colour": "a4",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "x^2-4*x",
+   "b": "5",
+   "x": -1,
+   "y": 5,
+   "name": "f(−1) = 5"
+  },
+  {
+   "type": "intersect",
+   "a": "x^2-4*x",
+   "b": "5",
+   "x": 5,
+   "y": 5,
+   "name": "f(5) = 5"
+  }
+ ],
+ "fromLesson": [
+  "x = 5 or x = −1"
+ ]
+}

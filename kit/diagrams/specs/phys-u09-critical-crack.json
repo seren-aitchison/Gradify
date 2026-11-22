@@ -1,0 +1,95 @@
+{
+ "id": "phys-u09-critical-crack",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Fatigue and fracture mechanics",
+ "title": "When a crack becomes critical",
+ "caption": "The stress intensity K = Yσ√(πa) rises with the crack length a. At σ = 200 MPa it reaches the steel's toughness K_IC = 50 MPa √m when a = 15.9 mm: any longer and the plate fractures. At half the crack length K is only 35 MPa √m.",
+ "alt": "Graph of stress intensity against crack length in millimetres: a rising square-root curve crossing the horizontal toughness line at 50 MPa root metre at a crack length of 15.9 millimetres.",
+ "description": [
+  "The horizontal axis is the edge-crack length a in mm; the vertical axis is K in MPa √m.",
+  "K = Yσ√(πa) with Y = 1.12 and σ = 200 MPa rises as the square root of a.",
+  "The dashed line is the toughness K_IC = 50 MPa √m.",
+  "They cross at a_c = (K_IC/Yσ)²/π = (50/224.00000000000003)²/π = 15.9 mm."
+ ],
+ "range": {
+  "x": [
+   0,
+   30
+  ],
+  "y": [
+   0,
+   80
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ],
+  [
+   20,
+   40,
+   60,
+   80
+  ]
+ ],
+ "grid": [
+  5,
+  20
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "crack length a / mm",
+  "K / MPa m^{1/2}"
+ ],
+ "curves": [
+  {
+   "expr": "224.00000000000003*sqrt(3.14159265*x/1000)",
+   "colour": "a1",
+   "label": "K = Yσ√(πa)",
+   "labelAt": [
+    20,
+    66
+   ]
+  },
+  {
+   "expr": "50",
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "K_IC = 50",
+   "labelAt": [
+    1,
+    54
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 15.86,
+   "y": 50,
+   "label": "a_c = 15.9 mm",
+   "dx": 12,
+   "dy": 28
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "224.00000000000003*sqrt(3.14159265*x/1000)",
+   "b": "50",
+   "x": 15.86,
+   "y": 50,
+   "name": "K reaches K_IC at a = 15.9 mm"
+  }
+ ]
+}

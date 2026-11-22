@@ -1,0 +1,117 @@
+{
+ "id": "phys-u13-oscillator-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Partition functions",
+ "title": "Mean energy of a quantum harmonic oscillator",
+ "caption": "From Z = e^{−ħω/2k_BT}/(1 − e^{−ħω/k_BT}): ⟨E⟩ = ħω(½ + 1/(e^{ħω/k_BT} − 1)). At low T it stays at the zero-point energy ½ħω; at high T it approaches the classical value k_BT (dashed). At k_BT = ħω it is 1.082 ħω, already within 8% of k_BT.",
+ "alt": "Graph of mean energy over hbar omega against k_B T over hbar omega: a curve starting at 0.5 and joining the straight line E = k_B T at high temperature.",
+ "description": [
+  "The horizontal axis is k_BT/ħω; the vertical axis is ⟨E⟩/ħω.",
+  "The solid curve is ½ + 1/(e^{ħω/k_BT} − 1): it starts at the zero-point energy ½ and rises.",
+  "The dashed line is the classical equipartition value ⟨E⟩ = k_BT; the quantum curve joins it once k_BT ≫ ħω.",
+  "At k_BT = ħω, ⟨E⟩ = 1.082 ħω."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   4.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "k_{B}T/ħω",
+  "⟨E⟩/ħω"
+ ],
+ "curves": [
+  {
+   "expr": "0.5+1/(exp(1/x)-1)",
+   "domain": [
+    0.05,
+    4
+   ],
+   "colour": "a1",
+   "label": "quantum",
+   "labelAt": [
+    0.9,
+    2.5
+   ]
+  },
+  {
+   "expr": "x",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2,
+   "label": "classical k_{B}T",
+   "labelAt": [
+    2.6,
+    3.3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1.0819767068693265,
+   "label": "1.082",
+   "dx": 10,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5+1/(exp(1/x)-1)",
+   "x": 1,
+   "y": 1.0819767068693265,
+   "name": "⟨E⟩ = ħω(½ + 1/(e − 1)) = 1.082 ħω at k_BT = ħω"
+  },
+  {
+   "type": "value",
+   "expr": "0.5+1/(exp(1/x)-1)",
+   "x": 0.05,
+   "between": [
+    0.5,
+    0.5001
+   ],
+   "name": "zero-point energy ½ħω at low T"
+  },
+  {
+   "type": "value",
+   "expr": "(0.5+1/(exp(1/x)-1))/x",
+   "x": 4,
+   "between": [
+    0.99,
+    1.05
+   ],
+   "name": "⟨E⟩ → k_BT at high T (equipartition)"
+  }
+ ]
+}

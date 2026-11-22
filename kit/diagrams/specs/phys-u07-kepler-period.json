@@ -1,0 +1,106 @@
+{
+ "id": "phys-u07-kepler-period",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u07",
+ "lesson": "Kepler's laws",
+ "title": "Kepler's third law: T² = a³",
+ "caption": "With a in AU and T in years, T = a^{3/2} for every planet. Earth (1 AU) has T = 1 year; Jupiter at 5.2 AU has T = 5.2^{3/2} = 11.86 years. Doubling the orbit radius multiplies the period by 2^{3/2} ≈ 2.8, not 2.",
+ "alt": "Graph of orbital period in years against semi-major axis in astronomical units: a curve T equals a to the power 3 over 2, through Earth at (1, 1) and Jupiter at (5.2, 11.9).",
+ "description": [
+  "The horizontal axis is the semi-major axis a in AU; the vertical axis is the period T in years.",
+  "The curve is T = a^{3/2}, which is T² = a³ in these units.",
+  "Earth sits at (1, 1) by definition of the AU and the year.",
+  "Jupiter: a = 5.2 AU gives T = 11.86 years."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "a / AU",
+  "T / years"
+ ],
+ "curves": [
+  {
+   "expr": "x^1.5",
+   "domain": [
+    0,
+    6
+   ],
+   "colour": "a1",
+   "label": "T = a^{3/2}",
+   "labelAt": [
+    2.6,
+    6.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "label": "Earth",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 5.2,
+   "y": 11.86,
+   "label": "Jupiter 11.86 yr",
+   "dx": -12,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^1.5",
+   "x": 1,
+   "y": 1,
+   "name": "Earth: T = 1 year at 1 AU"
+  },
+  {
+   "type": "point",
+   "expr": "x^1.5",
+   "x": 5.2,
+   "y": 11.858,
+   "name": "Jupiter: T = 11.86 years at 5.2 AU"
+  }
+ ]
+}

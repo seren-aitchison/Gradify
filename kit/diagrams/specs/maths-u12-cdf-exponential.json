@@ -1,0 +1,106 @@
+{
+ "id": "maths-u12-cdf-exponential",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Cumulative Distribution Functions",
+ "title": "The CDF 1 − e⁻²ˣ",
+ "caption": "P(1 < X ≤ 2) = F(2) − F(1) = e⁻² − e⁻⁴ = 0.117: the rise of the curve between x = 1 and 2. The median solves F(m) = 0.5, m = ln 2 / 2 ≈ 0.347.",
+ "alt": "Graph of F(x) = 1 − e⁻²ˣ rising from 0 towards 1, with points F(1) = 0.8647, F(2) = 0.9817 and the median at height 0.5.",
+ "description": [
+  "F(x) climbs from 0 and approaches 1 but never reaches it.",
+  "F(1) = 0.8647 and F(2) = 0.9817; the probability of landing in (1, 2] is the difference, 0.117.",
+  "F reaches 0.5 at x = ln 2 / 2 ≈ 0.347, the median."
+ ],
+ "range": {
+  "x": [
+   -0.2,
+   3
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "F(x)"
+ ],
+ "curves": [
+  {
+   "expr": "1-exp(-2*x)",
+   "domain": [
+    0,
+    3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.8647,
+   "label": "F(1) = 0.865",
+   "dx": 10,
+   "dy": 16
+  },
+  {
+   "x": 2,
+   "y": 0.9817,
+   "label": "F(2) = 0.982",
+   "dx": 8,
+   "dy": 18
+  },
+  {
+   "x": 0.3466,
+   "y": 0.5,
+   "label": "median",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-exp(-2*x)",
+   "x": 1,
+   "y": 0.8647
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-2*x)",
+   "x": 2,
+   "y": 0.9817
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-2*x)",
+   "x": 0.3466,
+   "y": 0.5,
+   "name": "F(ln 2 / 2) = 0.5"
+  },
+  {
+   "type": "area",
+   "expr": "2*exp(-2*x)",
+   "from": 1,
+   "to": 2,
+   "value": 0.117,
+   "name": "the density 2e⁻²ˣ has area 0.117 between 1 and 2"
+  }
+ ]
+}

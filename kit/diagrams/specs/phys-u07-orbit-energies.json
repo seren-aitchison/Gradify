@@ -1,0 +1,127 @@
+{
+ "id": "phys-u07-orbit-energies",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u07",
+ "lesson": "Orbital energy and angular momentum",
+ "title": "Energies of a circular orbit",
+ "caption": "In a circular orbit K = GMm/2r, U = −GMm/r and E = −GMm/2r = −K. Raising the 500 kg satellite from 7000 to 8000 km changes E by +1.78 GJ: the potential energy rises by 3.56 GJ but the kinetic energy falls by 1.78 GJ.",
+ "alt": "Graph of energy in gigajoules against orbital radius in thousands of kilometres: U falls steeply, K is positive and half its size, and the total E is minus K. Values at 7000 and 8000 km are marked.",
+ "description": [
+  "The horizontal axis is the orbit radius in thousands of km; the vertical axis is energy in GJ for the 500 kg satellite.",
+  "U = −GMm/r = −199.3/r (r in 10³ km) is the lowest curve; K = +99.7/r is half its size and opposite in sign; E = K + U = −99.7/r lies between them.",
+  "At 7000 km E = -14.24 GJ; at 8000 km E = -12.46 GJ, so ΔE = +1.78 GJ.",
+  "ΔK = -1.78 GJ and ΔU = +3.56 GJ add to ΔE: -1.78 + 3.56 = 1.78."
+ ],
+ "range": {
+  "x": [
+   6,
+   12
+  ],
+  "y": [
+   -35,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  [
+   -30,
+   -20,
+   -10,
+   0,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / 10³ km",
+  "energy / GJ"
+ ],
+ "curves": [
+  {
+   "expr": "99.65/x",
+   "colour": "a2",
+   "label": "K",
+   "labelAt": [
+    6.8,
+    19
+   ]
+  },
+  {
+   "expr": "-199.3/x",
+   "colour": "a1",
+   "label": "U",
+   "labelAt": [
+    10.2,
+    -26
+   ]
+  },
+  {
+   "expr": "-99.65/x",
+   "colour": "a4",
+   "label": "E = K + U",
+   "labelAt": [
+    9.3,
+    -15.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 7,
+   "y": -14.24,
+   "label": "E = -14.24",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 8,
+   "y": -12.46,
+   "label": "E = -12.46",
+   "dx": 8,
+   "dy": -16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-99.65/x",
+   "x": 7,
+   "y": -14.24,
+   "name": "E = -14.24 GJ at 7000 km",
+   "tol": 0.02
+  },
+  {
+   "type": "point",
+   "expr": "-99.65/x",
+   "x": 8,
+   "y": -12.46,
+   "name": "E = -12.46 GJ at 8000 km",
+   "tol": 0.02
+  },
+  {
+   "type": "point",
+   "expr": "-199.3/x",
+   "x": 8,
+   "y": -24.91,
+   "name": "U = -24.91 GJ at 8000 km, twice E",
+   "tol": 0.02
+  }
+ ]
+}

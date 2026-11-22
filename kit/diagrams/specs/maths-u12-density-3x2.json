@@ -1,0 +1,99 @@
+{
+ "id": "maths-u12-density-3x2",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Continuous Random Variables",
+ "title": "The density 3x² on [0, 1]",
+ "caption": "P(X < 0.5) is the area under 3x² from 0 to 0.5, which is 0.5³ = 0.125; the median m has m³ = 0.5, so m ≈ 0.794. The whole area is 1.",
+ "alt": "Graph of f(x) = 3x² from 0 to 1 with the area from 0 to 0.5 shaded, and a dashed line at the median 0.794.",
+ "description": [
+  "The density rises from 0 to 3 at x = 1, and the total area under it is 1.",
+  "The shaded area from 0 to 0.5 is [x³] = 0.125 = P(X < 0.5).",
+  "Half the area lies left of x = 0.794 because 0.794³ = 0.5."
+ ],
+ "range": {
+  "x": [
+   -0.1,
+   1.2
+  ],
+  "y": [
+   0,
+   3.5
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "f(x)"
+ ],
+ "curves": [
+  {
+   "expr": "3*x^2",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 0.5,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.7937,
+   "label": "median 0.794",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "the density has total area 1"
+  },
+  {
+   "type": "area",
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 0.5,
+   "value": 0.125,
+   "name": "P(X < 0.5) = 0.125"
+  },
+  {
+   "type": "area",
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 0.7937005259840998,
+   "value": 0.5,
+   "name": "half the area lies below x = 0.5^(1/3) ≈ 0.794"
+  },
+  {
+   "type": "area",
+   "expr": "x*3*x^2",
+   "from": 0,
+   "to": 1,
+   "value": 0.75,
+   "name": "E(X) = 3/4"
+  }
+ ]
+}

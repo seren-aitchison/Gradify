@@ -1,0 +1,91 @@
+{
+ "id": "maths-u12-bayes-tree",
+ "renderer": "prob-tree",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Bayes' Theorem",
+ "title": "A positive test for a rare disease",
+ "caption": "Of every 1,000 people, 9 are ill and test positive but 49.5 healthy people also test positive: P(disease ∣ positive) = 0.009 / 0.0585 = 2/13, only about 15%.",
+ "alt": "Probability tree: disease 1/100 then positive 9/10 or negative 1/10; healthy 99/100 then positive 1/20 or negative 19/20.",
+ "description": [
+  "The first split is disease (1%) against healthy (99%).",
+  "Among the diseased, the test is positive with probability 0.9; among the healthy it is positive with probability 0.05.",
+  "Both positive paths: 0.9 × 0.01 = 0.009 and 0.05 × 0.99 = 0.0495, together 0.0585.",
+  "The diseased share of the positives is 0.009 / 0.0585 = 2/13 ≈ 0.154."
+ ],
+ "tree": {
+  "children": [
+   {
+    "label": "D",
+    "p": "1/100",
+    "children": [
+     {
+      "label": "+",
+      "p": "9/10"
+     },
+     {
+      "label": "−",
+      "p": "1/10"
+     }
+    ]
+   },
+   {
+    "label": "H",
+    "p": "99/100",
+    "children": [
+     {
+      "label": "+",
+      "p": "1/20"
+     },
+     {
+      "label": "−",
+      "p": "19/20"
+     }
+    ]
+   }
+  ]
+ },
+ "stages": [
+  "Status",
+  "Test"
+ ],
+ "outcomes": true,
+ "checks": [
+  {
+   "type": "outcome",
+   "path": [
+    "D",
+    "+"
+   ],
+   "p": "9/1000"
+  },
+  {
+   "type": "outcome",
+   "path": [
+    "H",
+    "+"
+   ],
+   "p": "99/2000"
+  },
+  {
+   "type": "event",
+   "paths": [
+    [
+     "D",
+     "+"
+    ],
+    [
+     "H",
+     "+"
+    ]
+   ],
+   "p": "117/2000"
+  },
+  {
+   "type": "value",
+   "expr": "(9/1000)/(117/2000)",
+   "value": "2/13",
+   "name": "P(D ∣ +) = 0.009 / 0.0585 = 2/13"
+  }
+ ]
+}

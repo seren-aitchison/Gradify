@@ -1,0 +1,103 @@
+{
+ "id": "maths-u11-inner-product-areas",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Inner Product Spaces",
+ "title": "Inner products as areas",
+ "caption": "With ⟨f, g⟩ = ∫₀¹ f g dx, the inner product is an area: ⟨x, x²⟩ is the area under x³, which is ¼, and ‖x‖² = ⟨x, x⟩ is the area under x², which is ⅓, so ‖x‖ = 1/√3 ≈ 0.577.",
+ "alt": "Graphs of y = x³ and y = x² between 0 and 1, with the area under x³ shaded (¼) and the larger area under x² (⅓).",
+ "description": [
+  "The curve y = x² is the product x · x; the area under it from 0 to 1 is ⅓, so ‖x‖² = ⅓.",
+  "The curve y = x³ is the product x · x²; the area under it is ¼, so ⟨x, x²⟩ = ¼.",
+  "‖x‖ = √(⅓) = 1/√3 ≈ 0.577."
+ ],
+ "range": {
+  "x": [
+   -0.1,
+   1.2
+  ],
+  "y": [
+   -0.1,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.25
+ ],
+ "height": [
+  360,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1"
+  },
+  {
+   "expr": "x^3",
+   "colour": "a2"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "x^3",
+   "from": 0,
+   "to": 1,
+   "colour": "a2",
+   "opacity": 0.3
+  }
+ ],
+ "legend": [
+  [
+   "y = x² (area ⅓)",
+   "a1"
+  ],
+  [
+   "y = x³ (area ¼)",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  0.05,
+  1.15
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "x^3",
+   "from": 0,
+   "to": 1,
+   "value": 0.25,
+   "tol": 0.0001,
+   "name": "⟨x, x²⟩ = ∫₀¹ x³ dx = ¼"
+  },
+  {
+   "type": "area",
+   "expr": "x^2",
+   "from": 0,
+   "to": 1,
+   "value": 0.3333333333333333,
+   "tol": 0.0001,
+   "name": "‖x‖² = ∫₀¹ x² dx = ⅓"
+  }
+ ],
+ "fromLesson": [
+  "‖x‖ = 1/√3"
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "id": "phys-u02-derivative-tangent",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Differentiation",
+ "title": "The derivative is the gradient",
+ "caption": "For x = 5t² − 2t³ the velocity is v = dx/dt = 10t − 6t². At t = 1 s the position is 3 m and the tangent (dashed) has gradient v = 4 m s⁻¹. The acceleration there is a = dv/dt = 10 − 12t = -2 m s⁻²: the curve is already bending over.",
+ "alt": "Graph of x = 5t^2 − 2t^3, rising to a maximum near 1.7 seconds, with the tangent at t = 1 second having gradient 4 metres per second.",
+ "description": [
+  "Position x in metres against time t in seconds, 0 to 2.5 s.",
+  "At t = 1 s the curve passes through x = 3 m. The dashed tangent there rises 4 m for each second: v = 10(1) − 6(1)² = 4 m s⁻¹.",
+  "The curve peaks at t = 5/3 s, where v = 0, and then falls back. The curve is concave down at t = 1 s because a = 10 − 12(1) = -2 m s⁻² is negative."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.6
+  ],
+  "y": [
+   -1,
+   6.5
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time t / s",
+  "position x / m"
+ ],
+ "curves": [
+  {
+   "expr": "5*x^2-2*x^3",
+   "colour": "a1",
+   "label": "x = 5t² − 2t³",
+   "labelAt": [
+    1.75,
+    2.2
+   ]
+  },
+  {
+   "expr": "3+4*(x-1)",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2.2,
+   "domain": [
+    0.3,
+    1.7
+   ],
+   "label": "gradient 4",
+   "labelAt": [
+    0.3,
+    1.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 3,
+   "label": "t = 1 s",
+   "dx": 10,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5*x^2-2*x^3",
+   "x": 1,
+   "y": 3,
+   "name": "x(1 s) = 3 m"
+  },
+  {
+   "type": "slope",
+   "expr": "5*x^2-2*x^3",
+   "x": 1,
+   "value": 4,
+   "name": "the gradient at t = 1 s is v = 4 m s⁻¹"
+  },
+  {
+   "type": "slope",
+   "expr": "10*x-6*x^2",
+   "x": 1,
+   "value": -2,
+   "name": "the gradient of v at t = 1 s is a = −2 m s⁻²"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "phys-u02-force-components",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Vectors and vector decomposition",
+ "title": "Resolving the 50 N force",
+ "caption": "The 50 N force at 30° above the horizontal resolves into 43.3 N along the motion and 25 N up. Only the horizontal component does work: W = 43.3 × 4.0 = 173 J; the vertical component, perpendicular to the displacement, does none.",
+ "alt": "A 50 newton force arrow at 30 degrees above the horizontal with its horizontal component of 43.3 newtons and vertical component of 25 newtons dashed.",
+ "description": [
+  "The force F = 50 N is drawn at 30° above the horizontal, the direction of the crate's motion.",
+  "Dashed components: F cos 30° = 43.3 N horizontally and F sin 30° = 25 N vertically.",
+  "Work is the component along the displacement times the distance: 43.3 N × 4.0 m = 173 J."
+ ],
+ "mode": "resolve",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "F",
+   "mag": 50,
+   "angle": 30,
+   "text": "50 N at 30° above horizontal",
+   "comps": [
+    43.3,
+    25
+   ],
+   "compLabels": [
+    "43.3 N",
+    "25 N"
+   ]
+  }
+ ],
+ "notes": [
+  "W = F cos θ × d = 43.3 × 4.0 = 173 J"
+ ]
+}

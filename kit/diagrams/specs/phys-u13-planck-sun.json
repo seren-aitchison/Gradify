@@ -1,0 +1,116 @@
+{
+ "id": "phys-u13-planck-sun",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Blackbody radiation",
+ "title": "Planck spectra: the Sun peaks near 500 nm",
+ "caption": "Planck's law at 5000, 5800 and 6500 K (intensity per unit wavelength, relative). Wien's law λ_maxT = 2.898 × 10⁻³ m K puts the peak at 500 nm for 5800 K, matching the Sun's observed 500 nm, so T ≈ 2.898 × 10⁻³/(5 × 10⁻⁷) = 5796 K. Hotter bodies are brighter at every wavelength and peak at shorter ones.",
+ "alt": "Three Planck curves against wavelength with peaks near 446, 500 and 580 nm; the hotter curve is higher and peaks further left.",
+ "description": [
+  "The horizontal axis is wavelength in nm, the vertical axis relative spectral intensity.",
+  "Each curve is ∝ λ⁻⁵/(e^{hc/λk_BT} − 1). Peaks: 6500 K at 446 nm, 5800 K at 500 nm, 5000 K at 580 nm (Wien's law).",
+  "A peak at 500 nm gives T = 5796 K, the Sun's surface temperature, about 5800 K.",
+  "The curve of the hotter body lies above the cooler one at every wavelength."
+ ],
+ "range": {
+  "x": [
+   100,
+   2000
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   500,
+   1000,
+   1500,
+   2000
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  500,
+  0.5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / nm",
+  "relative intensity"
+ ],
+ "curves": [
+  {
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*6500))-1)",
+   "colour": "a2",
+   "label": "6500 K",
+   "labelAt": [
+    560,
+    1.03
+   ]
+  },
+  {
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*5800))-1)",
+   "colour": "a1",
+   "width": 3.6,
+   "label": "5800 K",
+   "labelAt": [
+    820,
+    0.82
+   ]
+  },
+  {
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*5000))-1)",
+   "colour": "a4",
+   "label": "5000 K",
+   "labelAt": [
+    900,
+    0.5
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*5000))-1)",
+   "domain": [
+    574.5544180874533,
+    584.5544180874533
+   ],
+   "x": 579.5544180874533,
+   "y": 0.26932907434290443,
+   "name": "peak at λ_max = 2.898 × 10⁻³/5000 = 580 nm"
+  },
+  {
+   "type": "max",
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*5800))-1)",
+   "domain": [
+    494.61587766159766,
+    504.61587766159766
+   ],
+   "x": 499.61587766159766,
+   "y": 0.5656830744452497,
+   "name": "peak at λ_max = 2.898 × 10⁻³/5800 = 500 nm"
+  },
+  {
+   "type": "max",
+   "expr": "2506312354552196*x^(-5)/(exp(14387768.775039338/(x*6500))-1)",
+   "domain": [
+    440.81109083650256,
+    450.81109083650256
+   ],
+   "x": 445.81109083650256,
+   "y": 1,
+   "name": "peak at λ_max = 2.898 × 10⁻³/6500 = 446 nm"
+  }
+ ]
+}

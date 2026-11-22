@@ -1,0 +1,88 @@
+{
+ "id": "phys-u09-maxwell-relaxation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Viscoelasticity",
+ "title": "Stress relaxation of a Maxwell material",
+ "caption": "Held at fixed strain, a Maxwell material's stress decays as σ = σ₀e^{−t/τ} with relaxation time τ = η/E = 1 s. After one τ the stress is 1/e = 0.368 of its starting value, after 3 τ only 0.050.",
+ "alt": "Graph of stress divided by initial stress against time in seconds: an exponential decay falling to 0.368 at 1 second.",
+ "description": [
+  "The horizontal axis is time in s after the strain is applied; the vertical axis is σ/σ₀.",
+  "τ = η/E = 10⁶ Pa s / 10⁶ Pa = 1 s.",
+  "σ/σ₀ = e^{−t/τ}: 0.368 at t = 1 s, 0.135 at 2 s, 0.050 at 3 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time t / s",
+  "σ/σ₀"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/1)",
+   "colour": "a1",
+   "label": "e^{−t/τ}",
+   "labelAt": [
+    1.6,
+    0.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.3679,
+   "label": "t = τ: 0.368",
+   "dx": 12,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/1)",
+   "x": 1,
+   "y": 0.3679,
+   "name": "stress falls to 1/e after one relaxation time"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/1)",
+   "x": 3,
+   "y": 0.0498,
+   "name": "0.050 of the stress is left after 3τ"
+  }
+ ]
+}

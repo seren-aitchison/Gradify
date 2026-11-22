@@ -1,0 +1,94 @@
+{
+ "id": "maths-u03-remainder-values",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Remainder Theorem",
+ "title": "Remainders are values of f",
+ "caption": "The remainder on dividing by (x − 1) is f(1) and by (x + 1) is f(−1). With a = 2 and b = 3 the curve passes through (1, 4) and (−1, −6), as the question requires.",
+ "alt": "The graph of f(x) = 2x cubed plus 2x squared plus 3x minus 3 through the points (1, 4) and (−1, −6).",
+ "description": [
+  "The remainder theorem says dividing by (x − 1) leaves f(1) and dividing by (x + 1) leaves f(−1).",
+  "The equations f(1) = 4 and f(−1) = −6 give a = 2 and b = 3.",
+  "The curve f(x) = 2x³ + 2x² + 3x − 3 passes through (1, 4) and (−1, −6)."
+ ],
+ "range": {
+  "x": [
+   -2,
+   1.5
+  ],
+  "y": [
+   -20,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1
+  ],
+  [
+   -20,
+   -10,
+   10
+  ]
+ ],
+ "grid": [
+  2,
+  20
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2*x^3+2*x^2+3*x-3",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 4,
+   "label": "(1, 4)",
+   "colour": "a2",
+   "dx": -12,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": -1,
+   "y": -6,
+   "label": "(−1, −6)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 20,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x^3+2*x^2+3*x-3",
+   "x": 1,
+   "y": 4,
+   "name": "f(1) = 4"
+  },
+  {
+   "type": "point",
+   "expr": "2*x^3+2*x^2+3*x-3",
+   "x": -1,
+   "y": -6,
+   "name": "f(−1) = −6"
+  }
+ ],
+ "fromLesson": [
+  "a = 2 and b = 3"
+ ]
+}

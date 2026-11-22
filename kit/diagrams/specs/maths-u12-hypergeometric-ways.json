@@ -1,0 +1,63 @@
+{
+ "id": "maths-u12-hypergeometric-ways",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Hypergeometric Distribution",
+ "title": "Choosing 4 balls from 5 red and 7 blue",
+ "caption": "The 495 equally likely choices split by number of reds as 35, 175, 210, 70, 5. Exactly 2 red: 210/495 = 14/33.",
+ "alt": "Bar chart of the number of the 495 ways to choose 4 balls that contain 0 to 4 red: 35, 175, 210, 70, 5; the bar for 2 is highlighted.",
+ "description": [
+  "There are C(12, 4) = 495 ways to choose 4 balls.",
+  "With k red, there are C(5, k) × C(7, 4 − k) ways: 35, 175, 210, 70, 5.",
+  "Exactly 2 red: 210 of 495, which is 14/33."
+ ],
+ "categories": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "values": [
+  35,
+  175,
+  210,
+  70,
+  5
+ ],
+ "range": {
+  "y": [
+   0,
+   250
+  ]
+ },
+ "ticks": [
+  50,
+  100,
+  150,
+  200,
+  250
+ ],
+ "axisLabels": [
+  "red balls chosen",
+  "ways (of 495)"
+ ],
+ "highlight": [
+  2
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 495
+  },
+  {
+   "type": "mode",
+   "value": 2
+  },
+  {
+   "type": "mean",
+   "value": "5/3"
+  }
+ ]
+}

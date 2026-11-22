@@ -1,0 +1,117 @@
+{
+ "id": "maths-u03-ellipse-line",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Implicit Equations",
+ "title": "The ellipse x² + 2y² = 18 and the line y = x",
+ "caption": "Putting y = x gives 3x² = 18, so x = ±√6: the line meets the ellipse at (√6, √6) and (−√6, −√6).",
+ "alt": "An ellipse x squared plus 2y squared equals 18 and the line y = x crossing it at (2.45, 2.45) and (−2.45, −2.45).",
+ "description": [
+  "Solve the ellipse for y: y = ±√((18 − x²)/2), the upper and lower halves.",
+  "The line y = x enters at x = −√6 and leaves at x = √6.",
+  "The meeting points are (√6, √6) and (−√6, −√6), about (2.45, 2.45) and (−2.45, −2.45)."
+ ],
+ "range": {
+  "x": [
+   -5,
+   5
+  ],
+  "y": [
+   -4,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4
+  ],
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  2,
+  1
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt((18-x^2)/2)",
+   "colour": "a1",
+   "domain": [
+    -4.24,
+    4.24
+   ]
+  },
+  {
+   "expr": "-sqrt((18-x^2)/2)",
+   "colour": "a1",
+   "domain": [
+    -4.24,
+    4.24
+   ]
+  },
+  {
+   "expr": "x",
+   "colour": "a2",
+   "dash": "6 4"
+  }
+ ],
+ "points": [
+  {
+   "x": 2.449489742783178,
+   "y": 2.449489742783178,
+   "label": "(√6, √6)",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": -2.449489742783178,
+   "y": -2.449489742783178,
+   "label": "(−√6, −√6)",
+   "colour": "a4",
+   "dx": -10,
+   "dy": 20,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "sqrt((18-x^2)/2)",
+   "b": "x",
+   "x": 2.449489742783178,
+   "y": 2.449489742783178,
+   "name": "(√6, √6) is on both"
+  },
+  {
+   "type": "intersect",
+   "a": "-sqrt((18-x^2)/2)",
+   "b": "x",
+   "x": -2.449489742783178,
+   "y": -2.449489742783178,
+   "name": "(−√6, −√6) is on both"
+  }
+ ],
+ "fromLesson": [
+  "Points: (√6, √6) and (−√6, −√6)"
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "id": "maths-u02-lattice-line",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Diophantine Equations",
+ "title": "Whole-number solutions of 3x + 5y = 47",
+ "caption": "Every point of the line 3x + 5y = 47 solves the equation, but only some have whole-number coordinates: (4, 7), (9, 4) and (14, 1), each step 5 across and 3 down.",
+ "alt": "The line 3x + 5y = 47 on a grid with the three points (4, 7), (9, 4) and (14, 1) marked.",
+ "description": [
+  "The line 3x + 5y = 47 crosses the axes at (0, 9.4) and (15.67, 0).",
+  "y = 7 gives 3x = 12, so (4, 7) is a solution.",
+  "Each step of t adds 5 to x and takes 3 from y: (9, 4), then (14, 1).",
+  "Another step would make y negative, so there are exactly three non-negative solutions."
+ ],
+ "points": {
+  "X": [
+   0,
+   9.4
+  ],
+  "Y": [
+   15.666666666666666,
+   0
+  ],
+  "P": [
+   4,
+   7
+  ],
+  "Q": [
+   9,
+   4
+  ],
+  "R": [
+   14,
+   1
+  ]
+ },
+ "hide": [
+  "X",
+  "Y",
+  "P",
+  "Q",
+  "R"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 2
+ },
+ "view": {
+  "x": [
+   -1,
+   18
+  ],
+  "y": [
+   -1,
+   11
+  ]
+ },
+ "height": [
+  330,
+  300
+ ],
+ "segments": [
+  {
+   "a": "X",
+   "b": "Y",
+   "colour": "a2",
+   "w": 2.4
+  }
+ ],
+ "circles": [
+  {
+   "centre": "P",
+   "r": 0.2,
+   "colour": "a1"
+  },
+  {
+   "centre": "Q",
+   "r": 0.2,
+   "colour": "a1"
+  },
+  {
+   "centre": "R",
+   "r": 0.2,
+   "colour": "a1"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    4.2,
+    7.9
+   ],
+   "text": "(4, 7)",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    9.2,
+    4.9
+   ],
+   "text": "(9, 4)",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    14.2,
+    1.9
+   ],
+   "text": "(14, 1)",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "fromLesson": [
+  "(4, 7), (9, 4), (14, 1)"
+ ],
+ "checks": [
+  {
+   "type": "collinear",
+   "points": [
+    "X",
+    "Y",
+    "P",
+    "Q",
+    "R"
+   ],
+   "name": "(4, 7), (9, 4) and (14, 1) lie on the line through (0, 47/5) and (47/3, 0), 3x + 5y = 47"
+  }
+ ]
+}

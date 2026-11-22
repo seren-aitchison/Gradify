@@ -1,0 +1,120 @@
+{
+ "id": "phys-u02-oscillator-solution",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "First- and second-order differential equations",
+ "title": "y″ + 4y = 0 with y(0) = 1, y′(0) = 0",
+ "caption": "The characteristic equation λ² + 4 = 0 gives λ = ±2i, so the solutions oscillate. The initial conditions pick y = cos 2t: it starts at 1 with zero slope, and repeats every π s (ω = 2).",
+ "alt": "Graph of y = cos 2t from 0 to 2π: starts at 1 with zero slope, crosses zero at π/4, reaches −1 at π/2 and repeats with period π.",
+ "description": [
+  "y against t (the independent variable) from 0 to 2π.",
+  "y(0) = 1 and the curve starts flat, y′(0) = 0: the two conditions that fix A = 1, B = 0.",
+  "The curve falls to −1 at t = π/2 and is back at 1 at t = π: the period is 2π/ω = π."
+ ],
+ "range": {
+  "x": [
+   0,
+   6.5
+  ],
+  "y": [
+   -1.4,
+   1.5
+  ]
+ },
+ "ticks": [
+  [
+   1.5708,
+   3.1416,
+   4.7124,
+   6.2832
+  ],
+  [
+   -1,
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1.5708,
+  1
+ ],
+ "height": [
+  340,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "cos(2*x)",
+   "colour": "a1",
+   "label": "y = cos 2t",
+   "labelAt": [
+    4.4,
+    1.22
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "y(0) = 1",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 1.570796325,
+   "y": -1,
+   "label": "−1 at π/2",
+   "dx": 0,
+   "dy": 20,
+   "anchor": "middle"
+  },
+  {
+   "x": 3.14159265,
+   "y": 1,
+   "label": "period π",
+   "dx": 8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(2*x)",
+   "x": 0,
+   "y": 1,
+   "name": "y(0) = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "cos(2*x)",
+   "x": 0,
+   "value": 0,
+   "name": "y′(0) = 0"
+  },
+  {
+   "type": "point",
+   "expr": "cos(2*x)",
+   "x": 3.14159265,
+   "y": 1,
+   "name": "the period is π"
+  },
+  {
+   "type": "min",
+   "expr": "cos(2*x)",
+   "domain": [
+    0,
+    3
+   ],
+   "x": 1.570796325,
+   "y": -1,
+   "name": "the first minimum is −1 at t = π/2"
+  }
+ ]
+}

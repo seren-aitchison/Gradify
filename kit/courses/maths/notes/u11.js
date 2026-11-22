@@ -165,6 +165,7 @@ X: Write (5, 5) as a combination of (1, 2) and (3, 1).
 > a(1, 2) + b(3, 1) = (5, 5) gives a + 3b = 5 and 2a + b = 5
 > From the second, b = 5 − 2a; then a + 15 − 6a = 5, so a = 2
 > b = 1: (5, 5) = 2(1, 2) + (3, 1)
+D: maths-u11-linear-combination
 K: Linear combinations add scaled vectors; find coefficients by solving the system [v₁ … v_{k}]c = b; solutions may be unique, many or none.
 !: Assuming every vector can be written as a combination of any given vectors.
 Q: Is (0, 0) a linear combination of any vectors? | Yes: take all coefficients 0.
@@ -341,6 +342,7 @@ X: For A = [[1, 1], [0, 1]] and B = [[1, 0], [1, 1]], compare AB and BA.
 > AB = [[2, 1], [1, 1]]
 > BA = [[1, 1], [1, 2]]
 > AB ≠ BA: matrix multiplication isn't commutative
+D: maths-u11-ab-ne-ba
 - Example: A = [[0, 1], [0, 0]] satisfies A^{2} = 0, though A ≠ 0.
 K: Addition is commutative, multiplication is associative and distributive but not commutative; zero divisors exist; cancellation needs invertibility; expand (A + B)^{2} carefully.
 !: Writing (A + B)^{2} = A^{2} + 2AB + B^{2} for matrices that don't commute.
@@ -593,6 +595,7 @@ X: For A = [[1, 2], [2, 4]], describe col(A) and test b = (3, 6) and b = (1, 0).
 > The second column is twice the first, so col(A) = span{(1, 2)}, a line
 > (3, 6) = 3(1, 2) lies on it: solvable
 > (1, 0) isn't a multiple of (1, 2): Ax = (1, 0) has no solution
+D: maths-u11-column-space-line
 - Example: an invertible n × n matrix has column space all of ℝⁿ.
 - The column space of AB lies inside the column space of A.
 K: col(A) = span of the columns = all Ax; Ax = b solvable iff b ∈ col(A); basis from the original pivot columns; dimension = rank.
@@ -731,6 +734,7 @@ X: Find the matrix of the anticlockwise rotation by 90° in ℝ^{2}.
 > e₁ = (1, 0) goes to (0, 1)
 > e₂ = (0, 1) goes to (−1, 0)
 > Matrix [[0, −1], [1, 0]]
+D: maths-u11-rotation-matrix
 P: **Investigate with the lab.** Build a rotation by 90° anticlockwise (the lab's challenge), then a reflection, and compare their determinants.
 IX: matrix
 K: Linear maps preserve + and scaling; their matrices have T(e_{i}) as columns; kernel and image satisfy rank–nullity; translations aren't linear.
@@ -768,6 +772,7 @@ X: With new basis b₁ = (2, 1), b₂ = (1, 1), find the new coordinates of v = 
 > P = [[2, 1], [1, 1]], det 1, so P^{−1} = [[1, −1], [−1, 2]]
 > [v]_{new} = P^{−1}(4, 3) = (4 − 3, −4 + 6) = (1, 2)
 > Check: 1 × (2, 1) + 2 × (1, 1) = (4, 3) ✓
+D: maths-u11-change-of-basis
 - Example: in the eigenvector basis of a diagonalisable A, the matrix is diagonal.
 K: P's columns are new basis vectors; old = P × new, new = P^{−1} × old; maps transform as P^{−1}AP; choose bases to simplify.
 !: Using P instead of P^{−1} when converting old coordinates to new.
@@ -876,6 +881,7 @@ X: Find eigenvectors of A = [[4, 1], [2, 3]] for λ = 5 and λ = 2.
 > λ = 5: A − 5I = [[−1, 1], [2, −2]], so −x + y = 0 and v = (1, 1)
 > λ = 2: A − 2I = [[2, 1], [2, 1]], so 2x + y = 0 and v = (1, −2)
 > Check: A(1, 1) = (5, 5) ✓ and A(1, −2) = (2, −4) ✓
+D: maths-u11-eigenvectors
 P: **Investigate with the lab.** Set a diagonal matrix such as [[2, 0], [0, 3]] and find the directions that are only stretched. Then add a non-zero off-diagonal entry and track how they move.
 IX: matrix
 K: Solve (A − λI)v = 0 for each λ; eigenvectors are defined up to scaling; distinct eigenvalues give independent eigenvectors; dominant eigenvectors describe long-run behaviour.
@@ -1046,6 +1052,7 @@ X: Diagonalise A = [[2, 1], [1, 2]] orthogonally.
 > Eigenvalues: (2 − λ)^{2} − 1 = 0, so λ = 1 and λ = 3
 > Unit eigenvectors: (1, −1)/√2 for 1 and (1, 1)/√2 for 3, which are orthogonal
 > A = QΛQᵀ with Q = [[1/√2, 1/√2], [−1/√2, 1/√2]] and Λ = diag(1, 3)
+D: maths-u11-symmetric-orthogonal
 K: Symmetric real matrices have real eigenvalues and orthonormal eigenvectors; A = QΛQᵀ; rotating to eigenvectors diagonalises quadratic forms.
 !: Assuming a non-symmetric real matrix has real eigenvalues.
 Q: Are the eigenvalues of a real symmetric matrix always real? | Yes.
@@ -1150,6 +1157,7 @@ X: With ⟨f, g⟩ = ∫₀¹ f(x)g(x) dx, find ⟨x, x^{2}⟩ and ‖x‖.
 > ⟨x, x^{2}⟩ = ∫₀¹ x^{3} dx = ¼
 > ‖x‖^{2} = ∫₀¹ x^{2} dx = ⅓
 > ‖x‖ = 1/√3 ≈ 0.577
+D: maths-u11-inner-product-areas
 - Example: on [−π, π], ‖sin x‖^{2} = π, so sin x/√π is a unit vector.
 - Gram–Schmidt (later in this school) builds orthonormal bases in any inner product space.
 K: Inner products give length, angle and orthogonality in any vector space; functions use ∫fg; Cauchy–Schwarz bounds inner products.
@@ -1223,6 +1231,7 @@ X: Find the coordinates of v = (3, 1) in the orthonormal basis q₁ = (1, 1)/√
 > c₁ = v · q₁ = (3 + 1)/√2 = 2√2
 > c₂ = v · q₂ = (3 − 1)/√2 = √2
 > Check: c₁^{2} + c₂^{2} = 8 + 2 = 10 = ‖v‖^{2} ✓
+D: maths-u11-orthonormal-coordinates
 K: Orthonormal bases give coordinates by inner products; orthogonal matrices satisfy QᵀQ = I and preserve length and angle; complements split the space.
 !: Using the inner-product formula for coordinates in a basis that isn't orthonormal.
 Q: What is the determinant of an orthogonal matrix? | +1 or −1.
@@ -1394,6 +1403,7 @@ X: Find the QR decomposition of A = [[3, 0], [4, 5]] (columns a₁ = (3, 4), a�
 > r₁₁ = ‖a₁‖ = 5, q₁ = (0.6, 0.8); r₁₂ = q₁ · a₂ = 4
 > a₂ − 4q₁ = (−2.4, 1.8), of length 3: r₂₂ = 3, q₂ = (−0.8, 0.6)
 > Q = [[0.6, −0.8], [0.8, 0.6]] and R = [[5, 4], [0, 3]]
+D: maths-u11-qr-gram-schmidt
 K: A = QR with orthonormal Q and triangular R; compute by Gram–Schmidt or Householder; solve least squares by Rx = Qᵀb; the QR algorithm finds eigenvalues.
 !: Solving least squares via AᵀA when A is ill-conditioned, losing accuracy.
 Q: How is least squares solved with QR? | Solve Rx = Qᵀb.
@@ -1462,6 +1472,7 @@ X: Find the singular values of A = [[3, 0], [4, 5]].
 > AᵀA = [[25, 20], [20, 25]], with eigenvalues 45 and 5
 > σ₁ = √45 ≈ 6.708, σ₂ = √5 ≈ 2.236
 > Check: σ₁σ₂ = √225 = 15 = |det A| ✓
+D: maths-u11-svd-area
 K: A = UΣVᵀ for every matrix; σ_{i} = √eig(AᵀA); rank and norm from Σ; truncation gives the best low-rank approximation; pseudoinverse via Σ⁺.
 !: Confusing singular values with eigenvalues (they differ for non-symmetric matrices).
 Q: What is the 2-norm of A in terms of its SVD? | The largest singular value σ₁.
@@ -1496,6 +1507,7 @@ X: Data have covariance matrix [[5, 2], [2, 2]]. Find the principal components a
 > Eigenvalues: λ^{2} − 7λ + 6 = 0, so λ = 6 and λ = 1
 > PC1 for λ = 6: (5 − 6)x + 2y = 0, so direction (2, 1)/√5; PC2 is (−1, 2)/√5
 > PC1 explains 6/7 ≈ 85.7% of the variance
+D: maths-u11-pca-axes
 K: Centre (and usually standardise), find covariance eigenvectors or the SVD, keep components with most variance; loadings and scores interpret them.
 !: Running PCA on variables with very different units without standardising, so the largest-unit variable dominates.
 Q: What do PCA's eigenvalues represent? | The variance along each principal component.
@@ -1734,6 +1746,7 @@ X: Compute (2e₁ + 3e₂) ∧ (e₁ + 4e₂) in ℝ^{2}.
 > Expand: 2e₁ ∧ e₁ + 8e₁ ∧ e₂ + 3e₂ ∧ e₁ + 12e₂ ∧ e₂
 > e₁ ∧ e₁ = e₂ ∧ e₂ = 0 and e₂ ∧ e₁ = −e₁ ∧ e₂
 > Result: (8 − 3)e₁ ∧ e₂ = 5e₁ ∧ e₂, matching det [[2, 1], [3, 4]] = 5
+D: maths-u11-wedge-area
 K: Wedge products are antisymmetric; their coefficients are determinants; dim Λᵏ = C(n, k); forms and the generalised Stokes theorem build on them.
 !: Forgetting the sign change when reordering factors in a wedge product.
 Q: What is v ∧ v? | 0.

@@ -1,0 +1,98 @@
+{
+ "id": "phys-u07-potential-well",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u07",
+ "lesson": "Gravitational potential and potential energy",
+ "title": "Earth's potential well",
+ "caption": "φ = −GM/r is negative everywhere and rises towards 0 at infinity. At the surface φ = −62.56 MJ kg⁻¹; at 400 km it is −58.87. The difference, 3.70 MJ kg⁻¹, times 1000 kg is the 3.7 GJ needed to lift the satellite.",
+ "alt": "Graph of gravitational potential against distance from Earth's centre: a curve rising from minus 62.6 megajoules per kilogram at the surface towards zero. Points at the surface and 400 kilometres up are marked.",
+ "description": [
+  "The horizontal axis is distance from Earth's centre in thousands of km; the vertical axis is potential φ in MJ kg⁻¹.",
+  "φ = −GM/r with GM = 3.986 × 10¹⁴ m³ s⁻². At r = R = 6371 km, φ = −62.56 MJ kg⁻¹.",
+  "At r = R + 400 km = 6771 km, φ = −58.87 MJ kg⁻¹.",
+  "Work to lift 1000 kg = m Δφ = 1000 × 3.70 × 10⁶ J = 3.7 GJ."
+ ],
+ "range": {
+  "x": [
+   6,
+   30
+  ],
+  "y": [
+   -70,
+   0
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   15,
+   20,
+   25,
+   30
+  ],
+  [
+   -60,
+   -40,
+   -20
+  ]
+ ],
+ "grid": [
+  5,
+  20
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / 10³ km",
+  "φ / MJ kg^{-1}"
+ ],
+ "curves": [
+  {
+   "expr": "-398.6/x",
+   "colour": "a1",
+   "label": "φ = −GM/r",
+   "labelAt": [
+    14,
+    -30
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 6.371,
+   "y": -62.56,
+   "label": "surface -62.56",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 6.771,
+   "y": -58.87,
+   "label": "400 km: -58.87",
+   "dx": 14,
+   "dy": 26
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-398.6/x",
+   "x": 6.371,
+   "y": -62.56,
+   "name": "φ at the surface is −62.56 MJ/kg",
+   "tol": 0.01
+  },
+  {
+   "type": "point",
+   "expr": "-398.6/x",
+   "x": 6.771,
+   "y": -58.87,
+   "name": "φ at 400 km is −58.87 MJ/kg",
+   "tol": 0.01
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "id": "maths-u12-joint-independence",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Joint Probability",
+ "title": "Joint probabilities and independence",
+ "caption": "Reading the table in percentage points: P(X = 1) = 0.5 and P(Y = 1) = 0.6, so independence would need P(1, 1) = 0.3. The table has 0.4, so X and Y are dependent.",
+ "alt": "Two overlapping circles, X = 1 and Y = 1: X only 10, both 40, Y only 20, neither 30, out of 100.",
+ "description": [
+  "The cell P(1, 1) = 0.4 is the overlap of X = 1 and Y = 1.",
+  "P(1, 0) = 0.1 is X = 1 only, and P(0, 1) = 0.2 is Y = 1 only; P(0, 0) = 0.3 is neither.",
+  "The circles' totals are P(X = 1) = 0.5 and P(Y = 1) = 0.6; 0.5 × 0.6 = 0.3 is not the overlap 0.4."
+ ],
+ "sets": [
+  {
+   "name": "X",
+   "label": "X = 1"
+  },
+  {
+   "name": "Y",
+   "label": "Y = 1"
+  }
+ ],
+ "regions": {
+  "X": 10,
+  "XY": 40,
+  "Y": 20,
+  "": 30
+ },
+ "universe": {
+  "n": 100
+ },
+ "checks": [
+  {
+   "type": "prob",
+   "event": "X",
+   "p": "1/2"
+  },
+  {
+   "type": "prob",
+   "event": "Y",
+   "p": "3/5"
+  },
+  {
+   "type": "prob",
+   "event": "X∩Y",
+   "p": "2/5"
+  },
+  {
+   "type": "prob",
+   "event": "X∩Y′",
+   "p": "1/10"
+  }
+ ]
+}

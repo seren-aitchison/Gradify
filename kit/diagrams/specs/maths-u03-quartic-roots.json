@@ -1,0 +1,131 @@
+{
+ "id": "maths-u03-quartic-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Polynomial Equations",
+ "title": "Four roots from a quadratic in x²",
+ "caption": "With u = x² the equation is (u − 4)(u − 9) = 0, so x² = 4 or 9. Each gives two roots, and the graph crosses the axis four times, at −3, −2, 2 and 3.",
+ "alt": "The graph of y = x to the fourth minus 13x squared plus 36, a W shape crossing the x-axis at −3, −2, 2 and 3.",
+ "description": [
+  "Let u = x²: u² − 13u + 36 = 0 gives u = 4 or u = 9.",
+  "x² = 4 gives x = ±2 and x² = 9 gives x = ±3.",
+  "The W-shaped graph crosses the x-axis at all four values."
+ ],
+ "range": {
+  "x": [
+   -3.5,
+   3.5
+  ],
+  "y": [
+   -10,
+   40
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -10,
+   10,
+   20,
+   30,
+   40
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^4-13*x^2+36",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -3,
+   "y": 0,
+   "label": "−3",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": -2,
+   "y": 0,
+   "label": "−2",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "label": "2",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12,
+   "anchor": "start"
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "label": "3",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^4-13*x^2+36",
+   "x": -3,
+   "y": 0,
+   "name": "x = -3 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^4-13*x^2+36",
+   "x": -2,
+   "y": 0,
+   "name": "x = -2 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^4-13*x^2+36",
+   "x": 2,
+   "y": 0,
+   "name": "x = 2 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "x^4-13*x^2+36",
+   "x": 3,
+   "y": 0,
+   "name": "x = 3 is a root"
+  }
+ ],
+ "fromLesson": [
+  "x = ±2 or ±3"
+ ]
+}

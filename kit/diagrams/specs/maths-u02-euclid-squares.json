@@ -1,0 +1,421 @@
+{
+ "id": "maths-u02-euclid-squares",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Euclidean Algorithm",
+ "title": "Euclid's algorithm as squares",
+ "caption": "A 252 × 198 rectangle is cut into squares: one of side 198, three of side 54, one of 36 and two of side 18. The last square, 18, is gcd(252, 198), and it tiles the whole rectangle.",
+ "alt": "A rectangle 252 wide and 198 tall filled by a 198 square, three 54 squares, a 36 square and two 18 squares.",
+ "description": [
+  "Start with a rectangle 252 by 198, the numbers of the example.",
+  "Cut off the largest square, 198 × 198 (252 = 1 × 198 + 54): a strip 54 wide remains.",
+  "Three 54 squares fit in the strip (198 = 3 × 54 + 36), leaving a 54 × 36 piece.",
+  "A 36 square fits once (54 = 1 × 36 + 18), leaving 18 × 36, which is exactly two 18 squares (36 = 2 × 18 + 0).",
+  "The last square has side 18, so gcd(252, 198) = 18."
+ ],
+ "points": {
+  "T0a": [
+   0,
+   0
+  ],
+  "T0b": [
+   198,
+   0
+  ],
+  "T0c": [
+   198,
+   198
+  ],
+  "T0d": [
+   0,
+   198
+  ],
+  "T1a": [
+   198,
+   0
+  ],
+  "T1b": [
+   252,
+   0
+  ],
+  "T1c": [
+   252,
+   54
+  ],
+  "T1d": [
+   198,
+   54
+  ],
+  "T2a": [
+   198,
+   54
+  ],
+  "T2b": [
+   252,
+   54
+  ],
+  "T2c": [
+   252,
+   108
+  ],
+  "T2d": [
+   198,
+   108
+  ],
+  "T3a": [
+   198,
+   108
+  ],
+  "T3b": [
+   252,
+   108
+  ],
+  "T3c": [
+   252,
+   162
+  ],
+  "T3d": [
+   198,
+   162
+  ],
+  "T4a": [
+   198,
+   162
+  ],
+  "T4b": [
+   234,
+   162
+  ],
+  "T4c": [
+   234,
+   198
+  ],
+  "T4d": [
+   198,
+   198
+  ],
+  "T5a": [
+   234,
+   162
+  ],
+  "T5b": [
+   252,
+   162
+  ],
+  "T5c": [
+   252,
+   180
+  ],
+  "T5d": [
+   234,
+   180
+  ],
+  "T6a": [
+   234,
+   180
+  ],
+  "T6b": [
+   252,
+   180
+  ],
+  "T6c": [
+   252,
+   198
+  ],
+  "T6d": [
+   234,
+   198
+  ],
+  "W0": [
+   0,
+   0
+  ],
+  "W1": [
+   252,
+   0
+  ],
+  "W2": [
+   252,
+   198
+  ],
+  "W3": [
+   0,
+   198
+  ]
+ },
+ "hide": [
+  "T0a",
+  "T0b",
+  "T0c",
+  "T0d",
+  "T1a",
+  "T1b",
+  "T1c",
+  "T1d",
+  "T2a",
+  "T2b",
+  "T2c",
+  "T2d",
+  "T3a",
+  "T3b",
+  "T3c",
+  "T3d",
+  "T4a",
+  "T4b",
+  "T4c",
+  "T4d",
+  "T5a",
+  "T5b",
+  "T5c",
+  "T5d",
+  "T6a",
+  "T6b",
+  "T6c",
+  "T6d",
+  "W0",
+  "W1",
+  "W2",
+  "W3"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "T0a",
+    "T0b",
+    "T0c",
+    "T0d"
+   ],
+   "colour": "a1",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T1a",
+    "T1b",
+    "T1c",
+    "T1d"
+   ],
+   "colour": "a2",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T2a",
+    "T2b",
+    "T2c",
+    "T2d"
+   ],
+   "colour": "a2",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T3a",
+    "T3b",
+    "T3c",
+    "T3d"
+   ],
+   "colour": "a2",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T4a",
+    "T4b",
+    "T4c",
+    "T4d"
+   ],
+   "colour": "a3",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T5a",
+    "T5b",
+    "T5c",
+    "T5d"
+   ],
+   "colour": "a4",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "T6a",
+    "T6b",
+    "T6c",
+    "T6d"
+   ],
+   "colour": "a4",
+   "opacity": 0.16
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    99,
+    99
+   ],
+   "text": "198 × 198",
+   "colour": "a1"
+  },
+  {
+   "at": [
+    225,
+    27
+   ],
+   "text": "54",
+   "colour": "a2"
+  },
+  {
+   "at": [
+    225,
+    81
+   ],
+   "text": "54",
+   "colour": "a2"
+  },
+  {
+   "at": [
+    225,
+    135
+   ],
+   "text": "54",
+   "colour": "a2"
+  },
+  {
+   "at": [
+    216,
+    180
+   ],
+   "text": "36",
+   "colour": "a3"
+  },
+  {
+   "at": [
+    243,
+    171
+   ],
+   "text": "18",
+   "colour": "a4",
+   "size": 12
+  },
+  {
+   "at": [
+    243,
+    189
+   ],
+   "text": "18",
+   "colour": "a4",
+   "size": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "T0a",
+    "T0b",
+    "T0c",
+    "T0d"
+   ],
+   "value": 39204
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T1a",
+    "T1b",
+    "T1c",
+    "T1d"
+   ],
+   "value": 2916
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T2a",
+    "T2b",
+    "T2c",
+    "T2d"
+   ],
+   "value": 2916
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T3a",
+    "T3b",
+    "T3c",
+    "T3d"
+   ],
+   "value": 2916
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T4a",
+    "T4b",
+    "T4c",
+    "T4d"
+   ],
+   "value": 1296
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T5a",
+    "T5b",
+    "T5c",
+    "T5d"
+   ],
+   "value": 324
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "T6a",
+    "T6b",
+    "T6c",
+    "T6d"
+   ],
+   "value": 324
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "W0",
+    "W1",
+    "W2",
+    "W3"
+   ],
+   "value": 49896,
+   "name": "the rectangle is 252 × 198, and the squares fill it exactly"
+  },
+  {
+   "type": "distance",
+   "a": "T5a",
+   "b": "T5b",
+   "value": 18,
+   "name": "the last square has side 18 = gcd(252, 198)"
+  }
+ ],
+ "view": {
+  "x": [
+   -4,
+   256
+  ],
+  "y": [
+   -6,
+   204
+  ]
+ },
+ "height": [
+  330,
+  300
+ ],
+ "fromLesson": [
+  "252 = 1 × 198 + 54",
+  "gcd(252, 198) = 18"
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "id": "phys-u12-adiabat-isotherm",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u12",
+ "lesson": "Adiabatic processes",
+ "title": "Adiabatic compression of air is steeper than isothermal",
+ "caption": "Compressing air (γ = 1.4) to 1/20 of its volume: along the isotherm pV = constant the pressure rises 20-fold (T stays 300 K); along the adiabat pV^γ = constant it rises 66.3-fold, because the gas also heats up. T₂ = 300 × 20^0.3999999999999999 = 994 K, which is 994 K from the pressure ratio 66.3/20. At any point the adiabat is 1.4 times as steep.",
+ "alt": "p–V graph with pressure and volume as ratios to the start: the isotherm and the steeper adiabat both start at (1, 1); at V = 0.05 the isotherm is at 20 and the adiabat at 66.3.",
+ "description": [
+  "Both axes are ratios to the starting state: V/V₁ (from 1 down to 1/20) and p/p₁.",
+  "Isotherm p = 1/V reaches 20 when V = 1/20.",
+  "Adiabat p = V^−1.4 reaches 20^1.4 = 66.3 there, and starts 1.4 times as steep: dp/dV = −γp/V against −p/V.",
+  "The temperature ratio is the pressure ratio ÷ 20: 3.31, so T₂ = 994 K."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.1
+  ],
+  "y": [
+   0,
+   75
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   20,
+   40,
+   60
+  ]
+ ],
+ "grid": [
+  0.25,
+  20
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / V₁",
+  "p / p₁"
+ ],
+ "curves": [
+  {
+   "expr": "1/x",
+   "colour": "a1",
+   "domain": [
+    0.045,
+    1.1
+   ],
+   "label": "isotherm",
+   "labelAt": [
+    0.3,
+    8
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "x^(-1.4)",
+   "colour": "a2",
+   "domain": [
+    0.045,
+    1.1
+   ],
+   "label": "adiabat",
+   "labelAt": [
+    0.1,
+    58
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "label": "start",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 0.05,
+   "y": 20,
+   "colour": "a1",
+   "label": "20",
+   "dx": 10,
+   "dy": 0
+  },
+  {
+   "x": 0.05,
+   "y": 66.28908034679972,
+   "colour": "a2",
+   "label": "66.3",
+   "dx": 10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/x",
+   "x": 0.05,
+   "y": 20,
+   "name": "isotherm: p rises 20-fold"
+  },
+  {
+   "type": "point",
+   "expr": "x^(-1.4)",
+   "x": 0.05,
+   "y": 66.28908034679972,
+   "name": "adiabat: p rises 20^1.4 = 66.3-fold"
+  },
+  {
+   "type": "slope",
+   "expr": "x^(-1.4)",
+   "x": 1,
+   "value": -1.4,
+   "name": "at the start the adiabat gradient is −γ = −1.4"
+  },
+  {
+   "type": "slope",
+   "expr": "1/x",
+   "x": 1,
+   "value": -1,
+   "name": "at the start the isotherm gradient is −1"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "id": "maths-u12-weibull-survival",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Weibull Distribution",
+ "title": "Weibull survival, λ = 1,000 h and k = 2",
+ "caption": "The survival function S(x) = e^(−(x/1000)²) gives P(survive 500 h) = e⁻⁰·²⁵ = 0.7788. It falls to 0.5 at the median 1,000√(ln 2) ≈ 832.6 hours.",
+ "alt": "Graph of S(x) = exp(−(x/1000)²) falling from 1, with points (500, 0.779) and the median at height 0.5.",
+ "description": [
+  "S(x) is the probability of lasting beyond x hours.",
+  "At 500 hours, S = 0.7788.",
+  "S = 0.5 at x ≈ 832.6."
+ ],
+ "range": {
+  "x": [
+   0,
+   2000
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   500,
+   1000,
+   1500,
+   2000
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "axisLabels": [
+  "hours",
+  "S(x)"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x/1000)^2)"
+  }
+ ],
+ "points": [
+  {
+   "x": 500,
+   "y": 0.7788,
+   "label": "0.779",
+   "dx": 10,
+   "dy": -14
+  },
+  {
+   "x": 832.55,
+   "y": 0.5,
+   "label": "median 832.6 h",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-(x/1000)^2)",
+   "x": 500,
+   "y": 0.7788
+  },
+  {
+   "type": "point",
+   "expr": "exp(-(x/1000)^2)",
+   "x": 832.55,
+   "y": 0.5,
+   "name": "S(832.55) = 0.5"
+  }
+ ]
+}

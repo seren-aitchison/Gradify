@@ -1,0 +1,112 @@
+{
+ "id": "maths-u11-eigenvectors",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Eigenvectors",
+ "title": "Eigenvectors stay on their own line",
+ "caption": "A = [[4, 1], [2, 3]] sends (1, 1) to (5, 5) = 5(1, 1) and (1, −2) to (2, −4) = 2(1, −2): each eigenvector is only stretched, by its eigenvalue, and keeps its direction.",
+ "alt": "The vector (1, 1) and its image (5, 5) along the same direction; the vector (1, −2) and its image (2, −4) along the same direction.",
+ "description": [
+  "v = (1, 1) is mapped to Av = (5, 5), five times as long and pointing the same way (λ = 5).",
+  "w = (1, −2) is mapped to Aw = (2, −4), twice as long and pointing the same way (λ = 2).",
+  "Other vectors would be turned off their line; eigenvectors are the exceptions."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1.5,
+   6
+  ],
+  "y": [
+   -5,
+   6
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "vectors": [
+  {
+   "name": "Av = 5v",
+   "v": [
+    5,
+    5
+   ],
+   "colour": "a2",
+   "labelSide": -1,
+   "dx": -26
+  },
+  {
+   "name": "v",
+   "v": [
+    1,
+    1
+   ],
+   "colour": "a1",
+   "labelSide": -1,
+   "dx": -4
+  },
+  {
+   "name": "Aw = 2w",
+   "v": [
+    2,
+    -4
+   ],
+   "colour": "a4",
+   "labelSide": -1,
+   "dx": 14
+  },
+  {
+   "name": "w",
+   "v": [
+    1,
+    -2
+   ],
+   "colour": "a3",
+   "labelSide": 1,
+   "dx": 4
+  }
+ ],
+ "checks": [
+  {
+   "type": "multiple",
+   "vector": 0,
+   "of": 1,
+   "k": 5
+  },
+  {
+   "type": "multiple",
+   "vector": 2,
+   "of": 3,
+   "k": 2
+  },
+  {
+   "type": "components",
+   "vector": 0,
+   "v": [
+    5,
+    5
+   ],
+   "name": "A(1, 1) = (5, 5) recomputed from the matrix"
+  }
+ ],
+ "fromLesson": [
+  "A(1, 1) = (5, 5)",
+  "A(1, −2) = (2, −4)"
+ ]
+}

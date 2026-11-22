@@ -1,0 +1,97 @@
+{
+ "id": "maths-u11-change-of-basis",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Change of Basis",
+ "title": "v = (4, 3) in the basis b₁, b₂",
+ "caption": "In the new basis b₁ = (2, 1), b₂ = (1, 1) the vector v = (4, 3) has coordinates (1, 2): one step of b₁ then two steps of b₂ reach the same point.",
+ "alt": "A grid with b₁ = (2, 1) from the origin, then two copies of b₂ = (1, 1) tip to tail to reach (4, 3), and v drawn straight from the origin to (4, 3).",
+ "description": [
+  "b₁ = (2, 1) takes you from the origin to (2, 1).",
+  "Two steps of b₂ = (1, 1) go from (2, 1) to (4, 3).",
+  "So v = 1·b₁ + 2·b₂, coordinates (1, 2) in the new basis, and (4, 3) in the standard basis."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1,
+   5.5
+  ],
+  "y": [
+   -1,
+   4.5
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "vectors": [
+  {
+   "name": "b₁",
+   "v": [
+    2,
+    1
+   ],
+   "colour": "a1",
+   "labelSide": -1
+  },
+  {
+   "name": "2b₂",
+   "from": [
+    2,
+    1
+   ],
+   "v": [
+    2,
+    2
+   ],
+   "colour": "a2",
+   "labelSide": -1
+  },
+  {
+   "name": "v = (4, 3)",
+   "v": [
+    4,
+    3
+   ],
+   "colour": "a4",
+   "labelSide": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "components",
+   "vector": 2,
+   "v": [
+    4,
+    3
+   ]
+  },
+  {
+   "type": "vecsum",
+   "vectors": [
+    0,
+    1
+   ],
+   "is": 2
+  }
+ ],
+ "fromLesson": [
+  "1 × (2, 1) + 2 × (1, 1) = (4, 3)"
+ ]
+}

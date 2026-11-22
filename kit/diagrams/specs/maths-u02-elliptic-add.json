@@ -1,0 +1,159 @@
+{
+ "id": "maths-u02-elliptic-add",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u02",
+ "lesson": "Elliptic Curves",
+ "title": "Adding points on y² = x³ − 2x + 1",
+ "caption": "The line through P = (0, 1) and Q = (1, 0) has slope −1. It meets the curve again at P (it is tangent there), so the third point is P itself; reflecting it in the x-axis gives P + Q = (0, −1).",
+ "alt": "The elliptic curve y squared equals x cubed minus 2x plus 1, with the line y = 1 − x through (0, 1) and (1, 0), and the point (0, −1) marked as the sum.",
+ "description": [
+  "The curve has an oval for −1.6 ≤ x ≤ 0.6 and an open branch from x = 1.",
+  "The chord through P = (0, 1) and Q = (1, 0) is y = 1 − x, with slope λ = −1.",
+  "Substituting gives x²(x − 1) = 0, so the third intersection is at x = 0 again: the line touches the curve at P.",
+  "Reflect that point in the x-axis: P + Q = (0, −1)."
+ ],
+ "range": {
+  "x": [
+   -2,
+   3
+  ],
+  "y": [
+   -3,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  360
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(x^3-2*x+1)",
+   "colour": "a1",
+   "domain": [
+    -1.618,
+    0.618
+   ]
+  },
+  {
+   "expr": "-sqrt(x^3-2*x+1)",
+   "colour": "a1",
+   "domain": [
+    -1.618,
+    0.618
+   ]
+  },
+  {
+   "expr": "sqrt(x^3-2*x+1)",
+   "colour": "a1",
+   "domain": [
+    1,
+    2.9
+   ]
+  },
+  {
+   "expr": "-sqrt(x^3-2*x+1)",
+   "colour": "a1",
+   "domain": [
+    1,
+    2.9
+   ]
+  },
+  {
+   "expr": "1-x",
+   "colour": "a2",
+   "dash": "6 4"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "P (0, 1)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -16
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "label": "Q (1, 0)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 22,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": -1,
+   "label": "P + Q (0, −1)",
+   "colour": "a4",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(x^3-2*x+1)",
+   "x": 0,
+   "y": 1,
+   "name": "P = (0, 1) is on the curve: 1² = 0 − 0 + 1"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(x^3-2*x+1)",
+   "x": 1,
+   "y": 0,
+   "name": "Q = (1, 0) is on the curve: 0² = 1 − 2 + 1"
+  },
+  {
+   "type": "point",
+   "expr": "-sqrt(x^3-2*x+1)",
+   "x": 0,
+   "y": -1,
+   "name": "P + Q = (0, −1) is on the curve: (−1)² = 0 − 0 + 1"
+  },
+  {
+   "type": "point",
+   "expr": "1-x",
+   "x": 0,
+   "y": 1,
+   "name": "the line y = 1 − x passes through P"
+  },
+  {
+   "type": "point",
+   "expr": "1-x",
+   "x": 1,
+   "y": 0,
+   "name": "the line y = 1 − x passes through Q"
+  }
+ ],
+ "fromLesson": [
+  "P + Q = (0, −1)"
+ ]
+}

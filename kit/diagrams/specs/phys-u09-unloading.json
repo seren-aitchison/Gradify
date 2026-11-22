@@ -1,0 +1,135 @@
+{
+ "id": "phys-u09-unloading",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u09",
+ "lesson": "Elastic and plastic deformation",
+ "title": "Loading past the elastic limit and unloading",
+ "caption": "Up to the elastic limit (here 110 MPa at 0.1% strain; illustrative values) the line has gradient E. Past it the wire deforms plastically. Unloading from 250 MPa follows a line parallel to the original one, so stress reaches zero at a permanent strain of 0.37%.",
+ "alt": "Stress–strain graph: a steep straight line to the elastic limit, a flatter curve beyond it, and an unloading line parallel to the first that meets the strain axis at a permanent strain of 0.37 percent.",
+ "description": [
+  "The horizontal axis is strain in %; the vertical axis is stress in MPa. The values are illustrative.",
+  "Loading: σ = Eε with gradient 1100 MPa per % strain (E = 110 GPa) up to the elastic limit at (0.1%, 110 MPa).",
+  "Plastic region: the curve flattens as dislocations move, up to (0.6%, 250 MPa) where the load is removed.",
+  "Unloading: a line with the same gradient 1100, reaching zero stress at 0.37% strain. That offset is the permanent plastic strain."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.7
+  ],
+  "y": [
+   0,
+   300
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7
+  ],
+  [
+   50,
+   100,
+   150,
+   200,
+   250,
+   300
+  ]
+ ],
+ "grid": [
+  0.1,
+  50
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "strain / %",
+  "stress / MPa"
+ ],
+ "curves": [
+  {
+   "expr": "1100*x",
+   "domain": [
+    0,
+    0.1
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "expr": "110+197.99*sqrt((x-0.1)/1)",
+   "domain": [
+    0.1,
+    0.6
+   ],
+   "colour": "a2",
+   "label": "plastic",
+   "labelAt": [
+    0.3,
+    215
+   ]
+  },
+  {
+   "expr": "250+1100*(x-0.6)",
+   "domain": [
+    0.3727272727272727,
+    0.6
+   ],
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "unloading",
+   "labelAt": [
+    0.5,
+    130
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 110,
+   "label": "elastic limit",
+   "dx": 12,
+   "dy": 18
+  },
+  {
+   "x": 0.3727272727272727,
+   "y": 0,
+   "label": "permanent strain 0.37%",
+   "dx": 0,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1100*x",
+   "x": 0.05,
+   "value": 1100,
+   "name": "loading gradient E = 1100 MPa per %"
+  },
+  {
+   "type": "slope",
+   "expr": "250+1100*(x-0.6)",
+   "x": 0.5,
+   "value": 1100,
+   "name": "the unloading line is parallel to the elastic line"
+  },
+  {
+   "type": "point",
+   "expr": "250+1100*(x-0.6)",
+   "x": 0.3727272727272727,
+   "y": 0,
+   "name": "unloading reaches zero stress at 0.37% strain"
+  }
+ ]
+}

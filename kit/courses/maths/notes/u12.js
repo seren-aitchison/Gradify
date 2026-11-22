@@ -24,6 +24,7 @@ X: Two fair dice are rolled. Find the probability that the total is 7, and that 
 > There are 6 × 6 = 36 equally likely outcomes
 > Totals of 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), six outcomes, so P = 6/36 = 1/6
 > P(not 7) = 1 − 1/6 = 5/6
+D: maths-u12-two-dice-totals
 P: **Investigate with the lab.** Compare long-run proportions for a coin and a die. The proportions approach the probabilities, which is why probability can be read as long-run frequency.
 IX: lln
 K: Probabilities run from 0 to 1 and sum to 1 over the sample space; for equally likely outcomes, count; use complements.
@@ -61,6 +62,7 @@ X: P(A) = 0.5, P(B) = 0.4 and P(A ∩ B) = 0.2. Find P(A ∪ B) and the probabil
 > P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7
 > Neither is the complement of A ∪ B
 > P(neither) = 1 − 0.7 = 0.3
+D: maths-u12-addition-rule
 P: **Investigate with the lab.** Run small and large numbers of trials. Small runs can be far from the probability, which is why probabilities are long-run statements, not guarantees.
 IX: lln
 K: Three axioms imply every rule; P(A ∪ B) = P(A) + P(B) − P(A ∩ B); draw Venn diagrams from the centre out.
@@ -134,6 +136,7 @@ X: A bag has 5 red and 3 blue counters. Two are taken without replacement. Find 
 > P(first red) = 5/8, then P(second red | first red) = 4/7
 > P(both red) = 5/8 × 4/7 = 20/56 = 5/14 ≈ 0.357
 > After a blue is taken, 5 red of 7 remain: P(second red | first blue) = 5/7
+D: maths-u12-bag-tree
 K: P(A ∣ B) = P(A ∩ B)/P(B); multiply along tree branches; don't swap the order of conditioning.
 !: Using the same probabilities for the second draw when sampling without replacement.
 Q: What is P(A ∣ B) if P(A ∩ B) = 0.12 and P(B) = 0.4? | 0.3.
@@ -168,6 +171,7 @@ X: X and Y take values 0 and 1, with P(0,0) = 0.3, P(0,1) = 0.2, P(1,0) = 0.1 an
 > Marginals: P(X = 1) = 0.1 + 0.4 = 0.5; P(Y = 1) = 0.2 + 0.4 = 0.6
 > If independent, P(1,1) would be 0.5 × 0.6 = 0.3
 > It's 0.4, so X and Y are dependent (they tend to agree)
+D: maths-u12-joint-independence
 K: Sum out a variable for its marginal; divide by a marginal for a conditional; independence needs every cell to factorise.
 !: Checking only one cell and concluding independence: every cell must factorise.
 Q: How do you find P(X = 2) from a joint table? | Add the row (or column) for X = 2.
@@ -204,6 +208,7 @@ X: A disease affects 1% of people. A test detects 90% of cases but also gives po
 > P(positive) = 0.9 × 0.01 + 0.05 × 0.99 = 0.009 + 0.0495 = 0.0585
 > P(disease | positive) = 0.009/0.0585
 > ≈ 0.154: only about 15% of positives have the disease
+D: maths-u12-bayes-tree
 K: Bayes' theorem reverses conditioning; always include the base rate; posterior ∝ likelihood × prior.
 !: Assuming a 90%-accurate test means a positive result is 90% likely to be right.
 Q: What is the prior in a diagnostic test problem? | The prevalence: P(disease) before testing.
@@ -238,6 +243,7 @@ X: Two dice are rolled and X is the larger score. Find P(X = 6).
 > P(X ≤ 5) means both dice are at most 5: (5/6)^{2} = 25/36
 > P(X ≤ 6) = 1
 > P(X = 6) = 1 − 25/36 = 11/36
+D: maths-u12-larger-of-two-dice
 P: **Investigate with the lab.** Treat each sample mean as a random variable: run the simulation twice with the same settings and compare the two histograms.
 IX: clt
 K: A random variable turns outcomes into numbers; list values and probabilities; indicators have expectation equal to the probability.
@@ -274,6 +280,7 @@ X: P(X = x) = kx for x = 1, 2, 3, 4. Find k and E(X).
 > k(1 + 2 + 3 + 4) = 10k = 1, so k = 0.1
 > E(X) = Σ x × 0.1x = 0.1(1 + 4 + 9 + 16)
 > = 0.1 × 30 = 3
+D: maths-u12-pmf-kx
 K: Probabilities sum to 1, which fixes unknown constants; E(X) = Σ x P(X = x); watch < versus ≤ for discrete variables.
 !: Treating P(X < 3) and P(X ≤ 3) as the same for a discrete variable.
 Q: If P(X = 0) = 0.2 and P(X = 1) = 0.5 and X takes only 0, 1, 2, what is P(X = 2)? | 0.3.
@@ -308,6 +315,7 @@ X: X has density f(x) = 3x^{2} for 0 ≤ x ≤ 1. Find P(X < 0.5), E(X) and the 
 > P(X < 0.5) = [x^{3}]_{0}^{0.5} = 0.125
 > E(X) = ∫_{0}^{1} 3x^{3} dx = 3/4
 > Median: m^{3} = 0.5, so m = 0.5^{1/3} ≈ 0.794
+D: maths-u12-density-3x2
 K: Probabilities are areas under the density; single values have probability zero; integrate for means and solve for medians.
 !: Evaluating f(x) at a point and calling it a probability.
 Q: What is P(X = 2) for a continuous random variable? | 0.
@@ -343,6 +351,7 @@ X: A call centre receives an average of 3 calls per minute, at random. Choose a 
 > Events occur randomly at a constant average rate: Poisson with λ = 3
 > P(X = 0) = e^{−3} × 3^{0}/0!
 > = e^{−3} ≈ 0.0498
+D: maths-u12-calls-poisson
 K: Match the story to the family (counts, waits, sums, extremes); parameters select the member; check assumptions against data.
 !: Using a binomial model when trials aren't independent or p changes.
 Q: Which distribution models the number of sixes in 20 rolls? | Binomial with n = 20, p = 1/6.
@@ -376,6 +385,7 @@ X: P(X = x) = c/x for x = 1, 2, 3. Find c and P(X = 1).
 > c(1 + 1/2 + 1/3) = c × 11/6 = 1
 > c = 6/11
 > P(X = 1) = 6/11 ≈ 0.545
+D: maths-u12-pmf-c-over-x
 - Software and calculators give binomial and Poisson pmfs directly, but writing out a small table is the best check.
 K: A pmf is non-negative and sums to 1; add masses for probabilities; cumulative sums give the step-shaped CDF.
 !: Forgetting to check that the masses sum to 1 when a constant is involved.
@@ -411,6 +421,7 @@ X: f(x) = kx(2 − x) for 0 ≤ x ≤ 2. Find k and P(X < 1).
 > ∫_{0}^{2} kx(2 − x) dx = k[x^{2} − x^{3}/3]_{0}^{2} = k(4 − 8/3) = 4k/3 = 1, so k = 3/4
 > P(X < 1) = (3/4)[x^{2} − x^{3}/3]_{0}^{1} = (3/4)(2/3)
 > = 1/2 (as expected by symmetry about x = 1)
+D: maths-u12-density-quadratic
 K: A pdf is non-negative with total area 1; it can exceed 1; integrate to get probabilities and to fix constants.
 !: Thinking a density value above 1 means something went wrong.
 Q: Can a probability density be greater than 1? | Yes, as long as the total area is 1.
@@ -445,6 +456,7 @@ X: X has CDF F(x) = 1 − e^{−2x} for x ≥ 0. Find P(1 < X ≤ 2) and the med
 > P(1 < X ≤ 2) = F(2) − F(1) = e^{−2} − e^{−4}
 > ≈ 0.1353 − 0.0183 = 0.1170
 > Median: 1 − e^{−2m} = 0.5, so m = (ln 2)/2 ≈ 0.347
+D: maths-u12-cdf-exponential
 K: F(x) = P(X ≤ x); differences give interval probabilities; solve F = p for quantiles; F^{−1}(U) simulates X.
 !: Forgetting that F must reach 1 and never decrease when checking a proposed CDF.
 Q: How do you get the pdf from a continuous CDF? | Differentiate: f(x) = F′(x).
@@ -479,6 +491,7 @@ X: You pay £2 to roll a die and win £10 if it shows a six. Find your expected 
 > P(six) = 1/6, so expected winnings = 10 × 1/6 = £1.67 (to the nearest penny)
 > Expected gain = 10/6 − 2 = −1/3
 > About −£0.33 per game: on average you lose 33p
+D: maths-u12-expected-gain
 K: E(X) is the probability-weighted mean; expectation is linear for any variables; E(XY) = E(X)E(Y) only under independence.
 !: Assuming E(X^{2}) = [E(X)]^{2}.
 Q: What is E(X + Y) if E(X) = 3 and E(Y) = 5? | 8, whether or not they're independent.
@@ -688,6 +701,7 @@ X: A fair die is rolled 100 times. Estimate the probability that the total excee
 > Each roll has μ = 3.5 and σ^{2} = 35/12; the total has mean 350 and variance 291.7, SD ≈ 17.08
 > With continuity correction: z = (370.5 − 350)/17.08 ≈ 1.20
 > P(Z > 1.20) ≈ 0.115
+D: maths-u12-clt-dice-total
 P: **Investigate with the lab.** With n = 30 from the skewed population, plot 1,000 sample means and see a bell curve (the lab's challenge). Then check the spread is close to σ/√n.
 IX: clt
 K: Sums and means are approximately normal for large n; the standard error is σ/√n; use continuity corrections for discrete sums.
@@ -725,6 +739,7 @@ X: A free kick is scored with probability 0.3. Let X = 1 if scored. Find the mea
 > E(X) = p = 0.3
 > Var(X) = 0.3 × 0.7 = 0.21
 > SD = √0.21 ≈ 0.458
+D: maths-u12-bernoulli-kick
 K: Bernoulli: one trial, P(1) = p; mean p, variance p(1 − p), largest at p = 0.5; sums give the binomial.
 !: Using Var(X) = p instead of p(1 − p).
 Q: What is the variance of a Bernoulli(0.5) variable? | 0.25.
@@ -760,6 +775,7 @@ X: X ~ B(10, 0.2). Find P(X = 2) and P(X ≤ 1).
 > P(X = 2) = C(10, 2)(0.2)^{2}(0.8)^{8} = 45 × 0.04 × 0.1678 ≈ 0.302
 > P(X = 0) = 0.8^{10} ≈ 0.1074; P(X = 1) = 10 × 0.2 × 0.8^{9} ≈ 0.2684
 > P(X ≤ 1) ≈ 0.376
+D: maths-u12-binomial-10-0-2
 K: Binomial needs fixed n, two outcomes, independence and constant p; mean np, variance np(1 − p); use the CDF for ranges.
 !: Using a binomial model for sampling without replacement from a small group.
 Q: What are the mean and variance of B(20, 0.25)? | Mean 5, variance 3.75.
@@ -795,6 +811,7 @@ X: A die is rolled until a six appears. Find P(the first six is on the 4th roll)
 > Three failures then a success: (5/6)^{3} × (1/6) = 125/1296
 > ≈ 0.0965
 > E(X) = 1/p = 6 rolls
+D: maths-u12-geometric-six
 K: P(X = k) = (1 − p)^{k−1}p; mean 1/p; P(X > k) = (1 − p)^{k}; it's memoryless.
 !: Mixing up the "trials" and "failures" conventions, which shift the mean by 1.
 Q: What is the mean number of tosses of a fair coin until the first head? | 2.
@@ -862,6 +879,7 @@ X: A box has 5 red and 7 blue balls. Four are chosen without replacement. Find P
 > C(5, 2) × C(7, 2) = 10 × 21 = 210
 > C(12, 4) = 495
 > P = 210/495 ≈ 0.424
+D: maths-u12-hypergeometric-ways
 K: Hypergeometric = sampling without replacement; mean nK/N; smaller variance than the binomial; binomial approximates it for large N.
 !: Using the binomial with p = K/N for a small population without replacement.
 Q: What is the mean number of aces in a 5-card hand? | 5 × 4/52 ≈ 0.385.
@@ -897,6 +915,7 @@ X: Emails arrive at a rate of 2.5 per hour. Find P(exactly 3 in an hour) and P(a
 > P(X = 3) = e^{−2.5} × 2.5^{3}/3! = 0.0821 × 15.625/6
 > ≈ 0.214
 > P(X ≥ 1) = 1 − e^{−2.5} ≈ 0.918
+D: maths-u12-poisson-emails
 K: Poisson models random events at a constant rate; mean = variance = λ; rates scale with the interval; it approximates rare binomials.
 !: Forgetting to rescale λ when the interval changes.
 Q: What are the mean and variance of Po(4)? | Both 4.
@@ -965,6 +984,7 @@ X: With α = β = 1 and n = 2, find the distribution of X.
 > p is uniform on (0, 1); P(X = 0) = ∫₀¹ (1 − p)^{2} dp = 1/3
 > P(X = 2) = ∫₀¹ p^{2} dp = 1/3
 > So P(X = 1) = 1/3: X is uniform on {0, 1, 2}
+D: maths-u12-beta-binomial-uniform
 K: Beta-binomial: binomial with a beta-distributed p; same mean as the binomial, larger variance; it's the Bayesian predictive distribution.
 !: Using a plain binomial for clustered data, which understates the variability.
 Q: What is the mean of a beta-binomial with n = 10, α = 2, β = 3? | 10 × 2/5 = 4.
@@ -999,6 +1019,7 @@ X: A bus arrives every 12 minutes and you turn up at a random time. Find P(wait 
 > W ~ U(0, 12): P(W > 8) = 4/12 = 1/3
 > Mean = 6 minutes
 > SD = 12/√12 = √12 ≈ 3.46 minutes
+D: maths-u12-bus-wait
 K: Uniform probabilities are proportional to length; mean is the midpoint; variance (b − a)^{2}/12; U(0, 1) drives simulation.
 !: Using (b − a)/12 for the variance instead of (b − a)^{2}/12.
 Q: What is the mean of U(2, 10)? | 6.
@@ -1034,6 +1055,7 @@ X: Adult heights are N(170, 8^{2}) cm. Find P(height > 180) and the 90th percent
 > z = (180 − 170)/8 = 1.25, so P(X > 180) = 1 − Φ(1.25) ≈ 1 − 0.8944 = 0.1056
 > The 90th percentile of Z is 1.2816
 > x = 170 + 1.2816 × 8 ≈ 180.3 cm
+D: maths-u12-heights-normal
 P: **Investigate with the lab.** Increase n and watch the histogram of sample means become symmetric and bell-shaped, even though the population is skewed.
 IX: clt
 K: Standardise with z = (x − μ)/σ; reverse with x = μ + zσ; independent normals combine with means and variances adding.
@@ -1073,6 +1095,7 @@ X: Find P(−1.5 < Z < 1).
 > Φ(1) ≈ 0.8413
 > Φ(−1.5) = 1 − Φ(1.5) ≈ 1 − 0.9332 = 0.0668
 > P = 0.8413 − 0.0668 = 0.7745
+D: maths-u12-standard-normal-band
 - Example: a test score with z = 1.5 is higher, relative to its group, than one with z = 1.2 in another group.
 - Before calculators, Φ was read from printed tables, still given in exam formula booklets.
 K: Φ(−z) = 1 − Φ(z); interval probabilities are differences of Φ; know 1.645, 1.96 and 2.576.
@@ -1109,6 +1132,7 @@ X: Bulbs have exponential lifetimes with mean 1,000 hours. Find P(a bulb lasts m
 > λ = 1/1000 per hour
 > P(X > 1500) = e^{−1.5} ≈ 0.223
 > Median = 1000 ln 2 ≈ 693 hours
+D: maths-u12-bulb-lifetime
 K: P(X > x) = e^{−λx}; mean 1/λ; median ln 2/λ; memoryless; gaps in a Poisson process.
 !: Using λ as the mean instead of the rate (the mean is 1/λ).
 Q: What is the variance of Exp(2)? | 1/4.
@@ -1143,6 +1167,7 @@ X: Calls arrive at 2 per minute. Let T be the time until the 3rd call. Find E(T)
 > T ~ Gamma(3, 2): E(T) = 3/2 = 1.5 minutes
 > T > 1 means fewer than 3 calls in the first minute, with N ~ Po(2)
 > P(N ≤ 2) = e^{−2}(1 + 2 + 2) = 5e^{−2} ≈ 0.677
+D: maths-u12-gamma-poisson
 K: Gamma(k, λ): mean k/λ, variance k/λ^{2}; sums of exponentials; links to Poisson counts; conjugate prior for Poisson rates.
 !: Mixing up the rate and scale parameterisations.
 Q: What is Γ(5)? | 4! = 24.
@@ -1177,6 +1202,7 @@ X: A prior Beta(2, 2) is used for a coin's probability of heads. In 10 tosses th
 > Posterior: Beta(2 + 7, 2 + 3) = Beta(9, 5)
 > Mean = 9/14
 > ≈ 0.643, between the prior mean 0.5 and the data's 0.7
+D: maths-u12-beta-posterior
 K: Beta lives on [0, 1]; mean α/(α + β); prior Beta(α, β) plus s successes and f failures gives Beta(α + s, β + f).
 !: Adding the number of trials, rather than the number of failures, to β.
 Q: What is Beta(1, 1)? | The uniform distribution on [0, 1].
@@ -1212,6 +1238,7 @@ X: Find the mean and variance of χ^{2}₁₀, and explain why χ^{2}₁ has 5% 
 > Mean ν = 10; variance 2ν = 20
 > χ^{2}₁ = Z^{2}, and Z^{2} > c exactly when |Z| > √c
 > P(|Z| > 1.96) = 0.05 and 1.96^{2} ≈ 3.841
+D: maths-u12-chi-squared-critical
 K: χ^{2}_{ν} is a sum of ν squared standard normals; mean ν, variance 2ν; used for counts, tables and variances.
 !: Using the number of categories as the degrees of freedom without subtracting constraints.
 Q: What are the mean and variance of χ^{2}₄? | 4 and 8.
@@ -1246,6 +1273,7 @@ X: A sample of 10 has x̄ = 52 and s = 4. Find a 95% confidence interval for μ 
 > Standard error = 4/√10 ≈ 1.265
 > Margin = 2.262 × 1.265 ≈ 2.86
 > Interval ≈ (49.14, 54.86)
+D: maths-u12-t-interval
 K: t has heavier tails than the normal and tends to it as ν grows; use t_{n−1} when σ is estimated by s.
 !: Using normal critical values with a small sample and unknown σ.
 Q: How many degrees of freedom does a one-sample t-interval with n = 15 use? | 14.
@@ -1315,6 +1343,7 @@ X: Bearings have Weibull lifetimes with λ = 1,000 hours and k = 2. Find P(a bea
 > S(500) = exp(−(0.5)^{2}) = e^{−0.25} ≈ 0.779
 > Median = 1000 × (ln 2)^{1/2}
 > ≈ 1000 × 0.8326 ≈ 833 hours
+D: maths-u12-weibull-survival
 K: Weibull survival is exp(−(x/λ)^{k}); k < 1, = 1 or > 1 means falling, constant or rising hazard.
 !: Assuming constant failure rates (exponential) for parts that wear out.
 Q: Which Weibull shape gives the exponential distribution? | k = 1.
@@ -1349,6 +1378,7 @@ X: ln X ~ N(0, 1). Find the median, the mean and P(X > e).
 > Median = e^{0} = 1
 > Mean = e^{0 + 1/2} = e^{0.5} ≈ 1.649
 > P(X > e) = P(ln X > 1) = P(Z > 1) ≈ 0.159
+D: maths-u12-lognormal-density
 - Example: incubation periods of many infectious diseases are well described by log-normal distributions.
 K: Log-normal means ln X is normal; median e^{μ}, mean e^{μ + σ^{2}/2}; take logs to calculate.
 !: Using e^{μ} as the mean (it's the median).
@@ -1385,6 +1415,7 @@ X: X is Pareto with x_{m} = 1 and α = 2. Find P(X > 4), the mean and the median
 > P(X > 4) = (1/4)^{2} = 1/16
 > Mean = 2 × 1/(2 − 1) = 2
 > Median = 2^{1/2} ≈ 1.414
+D: maths-u12-pareto-density
 K: Pareto tails fall as x^{−α}; mean finite only for α > 1 and variance only for α > 2; straight lines on log–log plots.
 !: Computing a sample variance for Pareto data with α ≤ 2 and treating it as meaningful.
 Q: Which Pareto distributions have a finite variance? | Those with α > 2.
@@ -1420,6 +1451,7 @@ X: For the standard Cauchy, find P(X > 1) and P(|X| < 1).
 > F(1) = 1/2 + arctan(1)/π = 1/2 + 1/4 = 3/4
 > P(X > 1) = 1/4
 > P(|X| < 1) = F(1) − F(−1) = 3/4 − 1/4 = 1/2
+D: maths-u12-cauchy-density
 K: Cauchy has a median but no mean or variance; averaging doesn't reduce its spread; it's t₁ and a ratio of normals.
 !: Reporting a sample mean for Cauchy-like data and expecting it to settle.
 Q: What is the median of the standard Cauchy? | 0.
@@ -1455,6 +1487,7 @@ X: Fathers' and sons' heights are bivariate normal with both means 175 cm, both 
 > The father is (189 − 175)/7 = 2 SDs above the mean
 > E(son | father = 189) = 175 + 0.5 × 7 × 2 = 182 cm
 > Only 1 SD above average: regression to the mean
+D: maths-u12-heights-regression
 K: N(μ, Σ) has normal marginals and linear combinations; conditionals are linear in x with reduced variance; uncorrelated jointly normal variables are independent.
 !: Assuming uncorrelated variables are independent when they aren't jointly normal.
 Q: What shape are the density contours of a bivariate normal? | Ellipses.
@@ -1526,6 +1559,7 @@ X: A prior Dir(1, 1, 1) is used for a three-sided die. Rolls give counts (5, 3, 
 > Posterior: Dir(1 + 5, 1 + 3, 1 + 2) = Dir(6, 4, 3)
 > α₀ = 13
 > E(p₁) = 6/13 ≈ 0.462
+D: maths-u12-dirichlet-posterior
 K: Dirichlet is a distribution on probability vectors; mean α_{i}/α₀; add observed counts to update; k = 2 gives the beta.
 !: Forgetting that the components are constrained to add to 1, so they're negatively related.
 Q: What is the Dirichlet with two categories? | The beta distribution.
@@ -1594,6 +1628,7 @@ X: X is a 50:50 mixture of N(0, 1) and N(4, 1). Find its mean and variance.
 > Mean = 0.5 × 0 + 0.5 × 4 = 2
 > E(X^{2}) = 0.5(1 + 0) + 0.5(1 + 16) = 9
 > Var(X) = 9 − 4 = 5 (within-group 1 plus between-group 4)
+D: maths-u12-mixture-density
 K: Mixture density = weighted sum; mean = weighted mean; variance = within plus between; fitted by EM.
 !: Averaging the component variances and ignoring the spread between their means.
 Q: What does the law of total variance split variance into? | Within-group (average conditional variance) and between-group (variance of conditional means).
@@ -1733,6 +1768,7 @@ X: Annual maximum river levels are Gumbel with μ = 3 m and β = 0.5 m. Find the
 > Solve F(x) = 0.99: x = 3 − 0.5 ln(−ln 0.99)
 > −ln 0.99 ≈ 0.01005, and ln(0.01005) ≈ −4.600
 > x ≈ 3 + 0.5 × 4.600 ≈ 5.30 m
+D: maths-u12-gumbel-return-level
 K: Maxima converge to the GEV (Gumbel, Fréchet or reversed Weibull); return levels are high quantiles; a T-year event has probability 1/T each year.
 !: Thinking a 100-year flood can only happen once in a century.
 Q: What is the probability of a 50-year event in any given year? | 1/50 = 2%.

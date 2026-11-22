@@ -1,0 +1,106 @@
+{
+ "id": "phys-u02-linear-drag-solution",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u02",
+ "lesson": "Ordinary differential equations",
+ "title": "Falling with linear drag",
+ "caption": "The solution v = (g/k)(1 − e^{−kt}) starts with slope g and levels off at the terminal velocity g/k. Shown for g = 9.8 m s⁻² and k = 0.5 s⁻¹ (an illustrative k): v_t = 19.6 m s⁻¹, and after one time constant 1/k = 2 s the velocity has reached 12.4 m s⁻¹, 63% of v_t.",
+ "alt": "Velocity against time curve rising from zero with initial slope 9.8 and levelling off at the terminal velocity of 19.6 metres per second.",
+ "description": [
+  "Velocity v against time t for dv/dt = g − kv with g = 9.8 and k = 0.5 (illustrative values).",
+  "At t = 0 the velocity is 0 and the slope is g = 9.8 m s⁻²: the drag is zero, so the ball falls freely.",
+  "As v grows the drag kv grows, the slope falls, and v approaches the terminal velocity g/k = 19.6 m s⁻¹ (dashed line), where drag balances weight.",
+  "After t = 1/k = 2 s the velocity is 12.4 m s⁻¹, 63% of the way there."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   23
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  2,
+  5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time t / s",
+  "velocity v / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "19.6*(1-exp(-0.5*x))",
+   "colour": "a1",
+   "label": "v(t)",
+   "labelAt": [
+    5.2,
+    17.2
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 19.6,
+   "label": "terminal velocity g/k = 19.6 m s⁻¹"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 12.38956295303973,
+   "label": "63% at t = 1/k",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "19.6*(1-exp(-0.5*x))",
+   "x": 0,
+   "value": 9.8,
+   "name": "the initial gradient is g = 9.8 m s⁻²"
+  },
+  {
+   "type": "point",
+   "expr": "19.6*(1-exp(-0.5*x))",
+   "x": 2,
+   "y": 12.38956295303973,
+   "name": "v(1/k) = (1 − 1/e) g/k"
+  },
+  {
+   "type": "value",
+   "expr": "19.6*(1-exp(-0.5*x))",
+   "x": 10,
+   "between": [
+    19.404,
+    19.6
+   ],
+   "name": "v approaches g/k"
+  }
+ ]
+}

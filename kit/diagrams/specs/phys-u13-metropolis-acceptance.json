@@ -1,0 +1,104 @@
+{
+ "id": "phys-u13-metropolis-acceptance",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u13",
+ "lesson": "Monte Carlo methods",
+ "title": "Metropolis acceptance probability",
+ "caption": "A move that lowers the energy is always accepted; one that raises it by ΔE is accepted with probability e^{−ΔE/k_BT}. For the lesson's spin flip, ΔE = 2J at k_BT = J, so ΔE/k_BT = 2 and the probability is e^{−2} = 0.135, about 14%.",
+ "alt": "Graph of acceptance probability against energy increase over k_B T: flat at 1 for negative values, then an exponential decay through 0.135 at 2.",
+ "description": [
+  "The horizontal axis is ΔE/k_BT; the vertical axis is the acceptance probability.",
+  "For ΔE ≤ 0 the move is always accepted (probability 1).",
+  "For ΔE > 0 the probability is e^{−ΔE/k_BT}; at ΔE/k_BT = 2 it is 0.135."
+ ],
+ "range": {
+  "x": [
+   -1,
+   5
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ΔE/k_{B}T",
+  "P(accept)"
+ ],
+ "curves": [
+  {
+   "expr": "1+0*x",
+   "domain": [
+    -1,
+    0
+   ],
+   "colour": "a1",
+   "width": 3.2
+  },
+  {
+   "expr": "exp(-x)",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "label": "e^{−ΔE/kT}",
+   "labelAt": [
+    2.6,
+    0.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0.1353352832366127,
+   "colour": "a2",
+   "label": "0.135",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x)",
+   "x": 2,
+   "y": 0.1353352832366127,
+   "name": "e^{−2} = 0.135"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x)",
+   "x": 0,
+   "y": 1,
+   "name": "ΔE = 0 is accepted with probability 1 (continuous at 0)"
+  }
+ ]
+}

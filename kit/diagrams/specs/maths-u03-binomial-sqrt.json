@@ -1,0 +1,117 @@
+{
+ "id": "maths-u03-binomial-sqrt",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u03",
+ "lesson": "Advanced Algebra",
+ "title": "√(1 − 2x) and its three-term expansion",
+ "caption": "1 − x − x²/2 hugs √(1 − 2x) near x = 0 and the two drift apart towards the edge of validity at |x| = 1/2, where the expansion stops being reliable.",
+ "alt": "The curve y = the square root of 1 minus 2x and the dashed parabola y = 1 − x − x squared over 2, almost identical near x = 0.",
+ "description": [
+  "The expansion is 1 − x − ½x² + …, valid for |x| < ½.",
+  "Near x = 0 the parabola and the curve are almost the same.",
+  "Further from 0 they separate; the curve exists only for x ≤ ½."
+ ],
+ "range": {
+  "x": [
+   -1,
+   1
+  ],
+  "y": [
+   0,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(1-2*x)^0.5",
+   "colour": "a1",
+   "domain": [
+    -1,
+    0.5
+   ]
+  },
+  {
+   "expr": "1-x-0.5*x^2",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    -1,
+    1
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": -0.5,
+   "label": "−1/2"
+  },
+  {
+   "x": 0.5,
+   "label": "1/2"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "(0, 1)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": -12,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(1-2*x)^0.5",
+   "x": 0,
+   "y": 1,
+   "name": "√(1 − 2x) = 1 at x = 0"
+  },
+  {
+   "type": "point",
+   "expr": "1-x-0.5*x^2",
+   "x": 0,
+   "y": 1,
+   "name": "the expansion is 1 at x = 0"
+  },
+  {
+   "type": "point",
+   "expr": "(1-2*x)^0.5",
+   "x": 0.5,
+   "y": 0,
+   "name": "the curve ends at x = 1/2"
+  }
+ ],
+ "fromLesson": [
+  "|x| < ½"
+ ]
+}
