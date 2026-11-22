@@ -1,0 +1,73 @@
+{
+ "id": "maths-u12-heights-normal",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Normal Distribution",
+ "title": "Adult heights N(170, 8²)",
+ "caption": "180 cm is z = 1.25 above the mean, so P(height > 180) = 0.1056. The 90th percentile is 170 + 1.2816 × 8 ≈ 180.3 cm.",
+ "alt": "A normal curve with mean 170 and SD 8, shaded to the right of 180 cm, area 0.1056.",
+ "description": [
+  "The curve is centred at 170 with SD 8.",
+  "180 is 1.25 standard deviations above the mean.",
+  "The tail above 180 has area 0.1056."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 170,
+  "sigma": 8
+ },
+ "range": {
+  "x": [
+   140,
+   200
+  ],
+  "y": [
+   0,
+   0.055
+  ]
+ },
+ "ticks": [
+  [
+   146,
+   154,
+   162,
+   170,
+   178,
+   186,
+   194
+  ],
+  [
+   0.02,
+   0.04
+  ]
+ ],
+ "axisLabels": [
+  "height (cm)",
+  "density"
+ ],
+ "shade": [
+  180,
+  null
+ ],
+ "p": 0.1056,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 170
+  },
+  {
+   "type": "prob",
+   "from": 180,
+   "to": null,
+   "p": 0.1056
+  },
+  {
+   "type": "prob",
+   "from": null,
+   "to": 180.252,
+   "p": 0.9,
+   "name": "the 90th percentile 180.25 cm leaves 0.9 below"
+  }
+ ]
+}

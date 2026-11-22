@@ -1,0 +1,78 @@
+{
+ "id": "maths-u12-chi-squared-critical",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Chi-Squared Distribution",
+ "title": "χ²₁ and its 5% upper tail",
+ "caption": "χ²₁ is the square of a standard normal, so χ²₁ > 3.841 exactly when |Z| > 1.96: the shaded tail beyond 3.841 has area 0.05.",
+ "alt": "Graph of the χ² density with 1 degree of freedom, very tall near 0 and falling; the tail beyond 3.841 is shaded.",
+ "description": [
+  "The χ²₁ density is e^(−x/2)/√(2πx): unbounded at 0 and decreasing.",
+  "The area to the right of 3.841 is 0.05, the 5% critical value."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.2,
+   0.4,
+   0.6
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/2)/sqrt(2*3.141592653589793*x)",
+   "domain": [
+    0.04,
+    10
+   ],
+   "samples": 400
+  }
+ ],
+ "areas": [
+  {
+   "expr": "exp(-x/2)/sqrt(2*3.141592653589793*x)",
+   "from": 3.841,
+   "to": 10,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3.841,
+   "label": "3.841",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-x/2)/sqrt(2*3.141592653589793*x)",
+   "from": 3.841,
+   "to": 60,
+   "value": 0.05,
+   "tol": 0.001,
+   "name": "the tail beyond 3.841 has area 0.05"
+  }
+ ]
+}

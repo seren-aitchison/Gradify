@@ -1,0 +1,73 @@
+{
+ "id": "maths-u12-two-dice-totals",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Probability Theory",
+ "title": "Two dice: the 36 outcomes by total",
+ "caption": "Of the 36 equally likely outcomes, 6 have total 7, so P(7) = 6/36 = 1/6 and P(not 7) = 5/6. No other total is as likely.",
+ "alt": "Bar chart of the number of the 36 outcomes giving each total from 2 to 12: 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1; the bar for 7 is highlighted.",
+ "description": [
+  "Each of the 6 × 6 = 36 outcomes of two dice has a total from 2 to 12.",
+  "The bar heights count how many outcomes give each total.",
+  "Total 7 has the tallest bar: 6 outcomes, so P = 6/36 = 1/6."
+ ],
+ "categories": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "values": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  5,
+  4,
+  3,
+  2,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   7
+  ]
+ },
+ "ticks": [
+  2,
+  4,
+  6
+ ],
+ "axisLabels": [
+  "total",
+  "outcomes (of 36)"
+ ],
+ "highlight": [
+  5
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 36
+  },
+  {
+   "type": "mode",
+   "value": 7
+  },
+  {
+   "type": "mean",
+   "value": 7
+  }
+ ]
+}

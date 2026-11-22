@@ -1,0 +1,100 @@
+{
+ "id": "maths-u12-lognormal-density",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Log-Normal Distribution",
+ "title": "Log-normal density with ln X ~ N(0, 1)",
+ "caption": "The median is e⁰ = 1, the mean is e^½ ≈ 1.649 (pulled right by the long tail) and P(X > e) = P(Z > 1) = 0.1587.",
+ "alt": "Graph of the log-normal density rising sharply to a peak below 1 and then falling with a long right tail; the area beyond e is shaded.",
+ "description": [
+  "The curve is skewed right: the mean exceeds the median.",
+  "The shaded tail beyond e ≈ 2.718 has area 0.1587."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   0,
+   0.8
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-log(x)^2/2)/(x*sqrt(2*3.141592653589793))",
+   "domain": [
+    0.02,
+    8
+   ],
+   "samples": 400
+  }
+ ],
+ "areas": [
+  {
+   "expr": "exp(-log(x)^2/2)/(x*sqrt(2*3.141592653589793))",
+   "from": 2.718281828459045,
+   "to": 8,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "label": "median 1",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-log(x)^2/2)/(x*sqrt(2*3.141592653589793))",
+   "from": 0.006737946999085467,
+   "to": 148.4131591025766,
+   "value": 1,
+   "tol": 0.01,
+   "name": "the density has area 1"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-log(x)^2/2)/(x*sqrt(2*3.141592653589793))",
+   "from": 2.718281828459045,
+   "to": 150,
+   "value": 0.1587,
+   "tol": 0.005,
+   "name": "P(X > e) = P(Z > 1) = 0.1587"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-log(x)^2/2)/(x*sqrt(2*3.141592653589793))",
+   "from": 0.006737946999085467,
+   "to": 1,
+   "value": 0.5,
+   "tol": 0.01,
+   "name": "half the area lies below the median 1"
+  }
+ ]
+}

@@ -47,3 +47,6 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 - u02 (agent maths-a): 36 lessons assessed; 8 diagrams (geometry 6, graph 1, sequence 1), 10 lab rows (modular 8, sieve 3 incl. shared), 18 null with reasons. All checks pass. Needed renderers: none missing (lattice/Argand drawn with geometry+axes).
 - u11 (Linear Algebra): 50 lessons assessed; 13 diagrams (`maths-u11-*`: geometry vectors, transform, graph), lab `matrix` on 6 lessons;
   rest null with reasons. Lacks: 3D vectors/planes (10 lessons), conics (u11-32).
+## Unit u12 (Probability) — agent maths-c
+
+50 lessons assessed · 36 diagrams (graph/distribution/barchart/venn/prob-tree/number-line/bar-model) · 7 lab rows (lln, clt, practice) · 12 with a recorded reason, 5 of them needing renderers: two-way table (u12-17), negative binomial in `distribution` (u12-24), 2D density (u12-43), matrix-variate (u12-45), empirical CDF step function (u12-47). Continuous families (gamma, beta, chi-squared, Weibull, log-normal, Pareto, Cauchy, Gumbel) are drawn with `graph` + area checks.

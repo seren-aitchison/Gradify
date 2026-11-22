@@ -34221,5 +34221,2313 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "maths-u12-addition-rule": {
+  "title": "The addition rule in a Venn diagram",
+  "caption": "Out of 100 percentage points: A alone 30, both 20, B alone 20, neither 30. P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7, so P(neither) = 0.3: the overlap is counted once, not twice.",
+  "alt": "Two overlapping circles: A only 30, both 20, B only 20, and 30 outside both, out of 100.",
+  "description": [
+   "Read probabilities as percentages of one whole of 100.",
+   "The overlap A ∩ B holds 20; A has 50 in total, so A alone holds 30; B has 40, so B alone holds 20.",
+   "A ∪ B is 30 + 20 + 20 = 70, so the outside region holds 100 − 70 = 30."
+  ],
+  "course": "maths",
+  "lesson": "Foundations of Probability",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Foundations of Probability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the regions add up to 100",
+    "ok": true,
+    "detail": "total 100"
+   },
+   {
+    "name": "P(A∪B) = 7/10",
+    "ok": true,
+    "detail": "70/100 = 7/10"
+   },
+   {
+    "name": "P((A∪B)′) = 3/10",
+    "ok": true,
+    "detail": "30/100 = 3/10"
+   },
+   {
+    "name": "P(A∩B) = 1/5",
+    "ok": true,
+    "detail": "20/100 = 1/5"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u12-bag-tree": {
+  "title": "Two counters without replacement",
+  "caption": "After the first pick the bag has 7 counters. P(both red) = 5/8 × 4/7 = 5/14; if the first is blue, 5 of the remaining 7 are red, so P(second red ∣ first blue) = 5/7.",
+  "alt": "A probability tree: first pick red 5/8 or blue 3/8; then after red, red 4/7 or blue 3/7; after blue, red 5/7 or blue 2/7.",
+  "description": [
+   "First pick: red with probability 5/8, blue with 3/8.",
+   "If the first was red, 4 red remain in 7: red 4/7, blue 3/7.",
+   "If the first was blue, 5 red remain in 7: red 5/7, blue 2/7.",
+   "Multiply along a path: red, red = 5/8 × 4/7 = 5/14."
+  ],
+  "course": "maths",
+  "lesson": "Conditional Probability",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Conditional Probability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "P(R, R) = 5/14",
+    "ok": true,
+    "detail": "multiplied: 5/14"
+   },
+   {
+    "name": "P(B, R) = 15/56",
+    "ok": true,
+    "detail": "multiplied: 15/56"
+   },
+   {
+    "name": "P = 5/8",
+    "ok": true,
+    "detail": "added: 5/8"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 680×218"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×202"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-bayes-tree": {
+  "title": "A positive test for a rare disease",
+  "caption": "Of every 1,000 people, 9 are ill and test positive but 49.5 healthy people also test positive: P(disease ∣ positive) = 0.009 / 0.0585 = 2/13, only about 15%.",
+  "alt": "Probability tree: disease 1/100 then positive 9/10 or negative 1/10; healthy 99/100 then positive 1/20 or negative 19/20.",
+  "description": [
+   "The first split is disease (1%) against healthy (99%).",
+   "Among the diseased, the test is positive with probability 0.9; among the healthy it is positive with probability 0.05.",
+   "Both positive paths: 0.9 × 0.01 = 0.009 and 0.05 × 0.99 = 0.0495, together 0.0585.",
+   "The diseased share of the positives is 0.009 / 0.0585 = 2/13 ≈ 0.154."
+  ],
+  "course": "maths",
+  "lesson": "Bayes' Theorem",
+  "also": [],
+  "renderer": "prob-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Bayes' Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the branches from every point add up to 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "P(D, +) = 9/1000",
+    "ok": true,
+    "detail": "multiplied: 9/1000"
+   },
+   {
+    "name": "P(H, +) = 99/2000",
+    "ok": true,
+    "detail": "multiplied: 99/2000"
+   },
+   {
+    "name": "P = 117/2000",
+    "ok": true,
+    "detail": "added: 117/2000"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 680×218"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×202"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-bernoulli-kick": {
+  "title": "A free kick: Bernoulli(0.3)",
+  "caption": "Out of 10 equally likely shares, 7 are misses (X = 0) and 3 are goals (X = 1), so the mean is 0.3 and the SD is √(0.3 × 0.7) ≈ 0.458.",
+  "alt": "Bar chart with X = 0 at height 7 and X = 1 at height 3, in tenths.",
+  "description": [
+   "P(X = 1) = 0.3 and P(X = 0) = 0.7.",
+   "The mean of an indicator variable is the probability of the 1: E(X) = 0.3."
+  ],
+  "course": "maths",
+  "lesson": "Bernoulli Distribution",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Bernoulli Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 10",
+    "ok": true,
+    "detail": "computed 10"
+   },
+   {
+    "name": "mean = 3/10",
+    "ok": true,
+    "detail": "computed 0.3"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-beta-binomial-uniform": {
+  "title": "Beta-binomial with α = β = 1 and n = 2",
+  "caption": "With a uniform prior on p, the number of successes in 2 trials is equally likely to be 0, 1 or 2: each has probability 1/3, mean 1.",
+  "alt": "Bar chart with three equal bars at X = 0, 1, 2, each one third.",
+  "description": [
+   "Averaging the binomial probabilities over a uniform p gives P(X = k) = 1/(n + 1) for every k.",
+   "With n = 2, each of 0, 1, 2 has probability 1/3."
+  ],
+  "course": "maths",
+  "lesson": "Beta-Binomial Distribution",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Beta-Binomial Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 3",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "mean = 1",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-beta-posterior": {
+  "title": "Beta(2, 2) prior and Beta(9, 5) posterior",
+  "caption": "Seven heads and three tails add 7 to α and 3 to β: Beta(2, 2) becomes Beta(9, 5), narrower and shifted right, with mean 9/14 ≈ 0.643.",
+  "alt": "Two curves on [0, 1]: a broad Beta(2, 2) prior centred at 0.5 and a taller, narrower Beta(9, 5) posterior peaking near 0.67.",
+  "description": [
+   "The prior 6x(1 − x) is symmetric about 0.5.",
+   "After 7 heads and 3 tails the density is proportional to x⁸(1 − x)⁴, which is Beta(9, 5).",
+   "Its peak is at 8/12 = 2/3 and its mean 9/14."
+  ],
+  "course": "maths",
+  "lesson": "Beta Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Beta Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the prior has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the posterior 6435x⁸(1 − x)⁴ has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the posterior peaks at 2/3",
+    "ok": true,
+    "detail": "found (0.667, 3.1)"
+   },
+   {
+    "name": "the posterior mean is 9/14",
+    "ok": true,
+    "detail": "area 0.6429"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-binomial-10-0-2": {
+  "title": "B(10, 0.2): at most one success",
+  "caption": "P(X = 2) = 0.302 and P(X ≤ 1) = 0.1074 + 0.2684 = 0.3758: the two shaded bars at 0 and 1.",
+  "alt": "Bar chart of the binomial distribution B(10, 0.2); the bars at 0 and 1 are shaded, total 0.3758.",
+  "description": [
+   "The bars give P(X = k) for k = 0 to 10; the mean is 2 and the tallest bars are at 1 and 2.",
+   "The shaded bars at 0 and 1 add to 0.3758 = P(X ≤ 1)."
+  ],
+  "course": "maths",
+  "lesson": "Binomial Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Binomial Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.3758",
+    "ok": true,
+    "detail": "computed 0.375810"
+   },
+   {
+    "name": "mean 2",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "variance 1.6",
+    "ok": true,
+    "detail": "1.6"
+   },
+   {
+    "name": "P(0 ≤ X ≤ 1) = 0.3758",
+    "ok": true,
+    "detail": "0.375810"
+   },
+   {
+    "name": "P(2 ≤ X ≤ 2) = 0.302",
+    "ok": true,
+    "detail": "0.301990"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-bulb-lifetime": {
+  "title": "Bulb lifetimes: exponential with mean 1,000 h",
+  "caption": "The rate is 1/1,000 per hour, so P(lasts > 1,500) = e⁻¹·⁵ = 0.2231 (the shaded tail). The median is 1,000 ln 2 ≈ 693 hours.",
+  "alt": "Exponential density with mean 1,000 hours, decaying from 0.001; the tail beyond 1,500 hours is shaded, area 0.2231.",
+  "description": [
+   "The density starts at the rate λ = 0.001 and decays.",
+   "The shaded tail beyond 1,500 hours has area e⁻¹·⁵ = 0.2231."
+  ],
+  "course": "maths",
+  "lesson": "Exponential Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Exponential Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.2231",
+    "ok": true,
+    "detail": "computed 0.223130"
+   },
+   {
+    "name": "mean 1000",
+    "ok": true,
+    "detail": "1,000"
+   },
+   {
+    "name": "P(1500 ≤ X ≤ ∞) = 0.2231",
+    "ok": true,
+    "detail": "0.223130"
+   },
+   {
+    "name": "the median 693 hours leaves 0.5 below",
+    "ok": true,
+    "detail": "0.500000"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-bus-wait": {
+  "title": "A bus every 12 minutes",
+  "caption": "Your wait is uniform on 0 to 12 minutes: P(wait > 8) = 4/12 = 1/3, mean 6 and SD 12/√12 ≈ 3.46 minutes.",
+  "alt": "A flat density of height 1/12 from 0 to 12 minutes with the part from 8 to 12 shaded.",
+  "description": [
+   "The density is flat at 1/12 over 0 to 12.",
+   "The shaded rectangle from 8 to 12 has area 4 × 1/12 = 1/3."
+  ],
+  "course": "maths",
+  "lesson": "Uniform Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Uniform Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.3333",
+    "ok": true,
+    "detail": "computed 0.333333"
+   },
+   {
+    "name": "mean 6",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "variance 12",
+    "ok": true,
+    "detail": "12"
+   },
+   {
+    "name": "P(8 ≤ X ≤ 12) = 0.3333",
+    "ok": true,
+    "detail": "0.333333"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-calls-poisson": {
+  "title": "Calls per minute: Poisson with mean 3",
+  "caption": "Calls arrive at random at an average rate of 3 a minute, so the count is Poisson(3). P(no calls) = e⁻³ = 0.0498.",
+  "alt": "Bar chart of the Poisson distribution with mean 3 for 0 to 10 calls; the bar for 0 is shaded.",
+  "description": [
+   "Random arrivals at a steady average rate suggest a Poisson model with λ = 3.",
+   "The bar at 0 has height e⁻³ ≈ 0.0498."
+  ],
+  "course": "maths",
+  "lesson": "Probability Distributions",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Probability Distributions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0498",
+    "ok": true,
+    "detail": "computed 0.049787"
+   },
+   {
+    "name": "mean 3",
+    "ok": true,
+    "detail": "3"
+   },
+   {
+    "name": "variance 3",
+    "ok": true,
+    "detail": "3"
+   },
+   {
+    "name": "P(0 ≤ X ≤ 0) = 0.0498",
+    "ok": true,
+    "detail": "0.049787"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-cauchy-density": {
+  "title": "The standard Cauchy density",
+  "caption": "The density 1/(π(1 + x²)) has area 1/2 between −1 and 1, so P(|X| < 1) = 1/2, and P(X > 1) = 1/4. Its tails are so heavy that the mean does not exist.",
+  "alt": "A bell-shaped curve with a heavy tail on each side; the area between −1 and 1 is shaded.",
+  "description": [
+   "The curve peaks at 1/π ≈ 0.318 at 0 and falls only like 1/x² in the tails.",
+   "The area between −1 and 1 is 1/2.",
+   "The area to the right of 1 is 1/4."
+  ],
+  "course": "maths",
+  "lesson": "Cauchy Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Cauchy Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P(|X| < 1) = 1/2",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "P(0 < X < 1) = 1/4, so P(X > 1) = 1/2 − 1/4 = 1/4",
+    "ok": true,
+    "detail": "area 0.2500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-cdf-exponential": {
+  "title": "The CDF 1 − e⁻²ˣ",
+  "caption": "P(1 < X ≤ 2) = F(2) − F(1) = e⁻² − e⁻⁴ = 0.117: the rise of the curve between x = 1 and 2. The median solves F(m) = 0.5, m = ln 2 / 2 ≈ 0.347.",
+  "alt": "Graph of F(x) = 1 − e⁻²ˣ rising from 0 towards 1, with points F(1) = 0.8647, F(2) = 0.9817 and the median at height 0.5.",
+  "description": [
+   "F(x) climbs from 0 and approaches 1 but never reaches it.",
+   "F(1) = 0.8647 and F(2) = 0.9817; the probability of landing in (1, 2] is the difference, 0.117.",
+   "F reaches 0.5 at x = ln 2 / 2 ≈ 0.347, the median."
+  ],
+  "course": "maths",
+  "lesson": "Cumulative Distribution Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Cumulative Distribution Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 0.8647) lies on y = 1-exp(-2*x)",
+    "ok": true,
+    "detail": "y(1) = 0.8647"
+   },
+   {
+    "name": "(2, 0.9817) lies on y = 1-exp(-2*x)",
+    "ok": true,
+    "detail": "y(2) = 0.9817"
+   },
+   {
+    "name": "F(ln 2 / 2) = 0.5",
+    "ok": true,
+    "detail": "y(0.3466) = 0.5"
+   },
+   {
+    "name": "the density 2e⁻²ˣ has area 0.117 between 1 and 2",
+    "ok": true,
+    "detail": "area 0.1170"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-chi-squared-critical": {
+  "title": "χ²₁ and its 5% upper tail",
+  "caption": "χ²₁ is the square of a standard normal, so χ²₁ > 3.841 exactly when |Z| > 1.96: the shaded tail beyond 3.841 has area 0.05.",
+  "alt": "Graph of the χ² density with 1 degree of freedom, very tall near 0 and falling; the tail beyond 3.841 is shaded.",
+  "description": [
+   "The χ²₁ density is e^(−x/2)/√(2πx): unbounded at 0 and decreasing.",
+   "The area to the right of 3.841 is 0.05, the 5% critical value."
+  ],
+  "course": "maths",
+  "lesson": "Chi-Squared Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Chi-Squared Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the tail beyond 3.841 has area 0.05",
+    "ok": true,
+    "detail": "area 0.0500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-clt-dice-total": {
+  "title": "The total of 100 dice is nearly normal",
+  "caption": "The total has mean 350 and SD 17.08. With the continuity correction, P(total > 370) = P(total ≥ 371) ≈ P(Z > 1.2) ≈ 0.115.",
+  "alt": "A normal curve with mean 350 and standard deviation 17.08, shaded to the right of 370.5, area about 0.115.",
+  "description": [
+   "Each roll has mean 3.5 and variance 35/12, so 100 rolls total 350 with variance 291.7.",
+   "The central limit theorem makes the total approximately normal.",
+   "Shade the tail above 370.5 (continuity correction): z ≈ 1.20, area ≈ 0.115."
+  ],
+  "course": "maths",
+  "lesson": "Central Limit Theorem",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Central Limit Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.115",
+    "ok": true,
+    "detail": "computed 0.11500"
+   },
+   {
+    "name": "mean 350",
+    "ok": true,
+    "detail": "350"
+   },
+   {
+    "name": "P(370.5 ≤ X ≤ ∞) = 0.115",
+    "ok": true,
+    "detail": "0.115000"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-density-3x2": {
+  "title": "The density 3x² on [0, 1]",
+  "caption": "P(X < 0.5) is the area under 3x² from 0 to 0.5, which is 0.5³ = 0.125; the median m has m³ = 0.5, so m ≈ 0.794. The whole area is 1.",
+  "alt": "Graph of f(x) = 3x² from 0 to 1 with the area from 0 to 0.5 shaded, and a dashed line at the median 0.794.",
+  "description": [
+   "The density rises from 0 to 3 at x = 1, and the total area under it is 1.",
+   "The shaded area from 0 to 0.5 is [x³] = 0.125 = P(X < 0.5).",
+   "Half the area lies left of x = 0.794 because 0.794³ = 0.5."
+  ],
+  "course": "maths",
+  "lesson": "Continuous Random Variables",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Continuous Random Variables"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the density has total area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "P(X < 0.5) = 0.125",
+    "ok": true,
+    "detail": "area 0.1250"
+   },
+   {
+    "name": "half the area lies below x = 0.5^(1/3) ≈ 0.794",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "E(X) = 3/4",
+    "ok": true,
+    "detail": "area 0.7500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-density-quadratic": {
+  "title": "The density kx(2 − x) with k = 3/4",
+  "caption": "The area under kx(2 − x) from 0 to 2 is 4k/3, which must be 1, so k = 3/4. The curve is symmetric about 1, so P(X < 1) = 1/2.",
+  "alt": "Graph of f(x) = 0.75x(2 − x) on [0, 2], a dome with maximum 0.75 at x = 1; the area left of 1 is shaded.",
+  "description": [
+   "Total area ∫ kx(2 − x) dx over [0, 2] = 4k/3 = 1 gives k = 3/4.",
+   "The dome peaks at x = 1 with height 0.75.",
+   "By symmetry the shaded half has area 1/2."
+  ],
+  "course": "maths",
+  "lesson": "Probability Density Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Probability Density Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total area 1 with k = 3/4",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "P(X < 1) = 1/2",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "maximum of 0.75*x*(2-x) is at (1, 0.75)",
+    "ok": true,
+    "detail": "found (1, 0.75)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-dirichlet-posterior": {
+  "title": "Dir(1, 1, 1) plus counts (5, 3, 2)",
+  "caption": "Adding the counts to the prior parameters gives Dir(6, 4, 3), total 13; the posterior mean of p₁ is its share, 6/13 ≈ 0.46.",
+  "alt": "A single bar split into three parts of sizes 6, 4 and 3, for p₁, p₂ and p₃, total 13.",
+  "description": [
+   "Prior parameters (1, 1, 1) plus counts (5, 3, 2) give (6, 4, 3).",
+   "The posterior mean of each pᵢ is its parameter over the total 13; for p₁ that is 6/13."
+  ],
+  "course": "maths",
+  "lesson": "Dirichlet Distribution",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Dirichlet Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 13",
+    "ok": true,
+    "detail": "parts add to 13"
+   },
+   {
+    "name": "6 : 4 : 3 of 13 is 6 and 4 and 3",
+    "ok": true,
+    "detail": "parts 6, 4, 3"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-expected-gain": {
+  "title": "A £2 game with a £10 prize",
+  "caption": "In six equally likely rolls the player wins £8 net once and loses £2 five times: (8 − 5 × 2)/6 = −1/3, so about −33p a game.",
+  "alt": "Bar chart of six equally likely rolls: five bars of net −£2 and one of net +£8, with mean −1/3.",
+  "description": [
+   "Net result is −£2 on five of the six faces and £10 − £2 = +£8 on a six.",
+   "Weighting by frequency, the mean is (5 × (−2) + 1 × 8)/6 = −1/3."
+  ],
+  "course": "maths",
+  "lesson": "Expected Value",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Expected Value"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 6",
+    "ok": true,
+    "detail": "computed 6"
+   },
+   {
+    "name": "mean = -1/3",
+    "ok": true,
+    "detail": "computed −0.3333"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-gamma-poisson": {
+  "title": "T > 1 means at most 2 calls in the first minute",
+  "caption": "The 3rd call comes after time 1 exactly when the count N of calls in the first minute is 0, 1 or 2, where N ~ Poisson(2): P(T > 1) = e⁻²(1 + 2 + 2) = 0.6767.",
+  "alt": "Bar chart of the Poisson distribution with mean 2; the bars at 0, 1 and 2 are shaded, total 0.6767.",
+  "description": [
+   "In one minute the number of calls is Poisson with mean 2.",
+   "T > 1 minute means fewer than 3 calls have arrived.",
+   "The three shaded bars add to 5e⁻² = 0.6767."
+  ],
+  "course": "maths",
+  "lesson": "Gamma Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Gamma Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.6767",
+    "ok": true,
+    "detail": "computed 0.676676"
+   },
+   {
+    "name": "mean 2",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "P(0 ≤ X ≤ 2) = 0.6767",
+    "ok": true,
+    "detail": "0.676676"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "15 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-geometric-six": {
+  "title": "Waiting for a six",
+  "caption": "The first six on the 4th roll means three non-sixes then a six: (5/6)³ × 1/6 = 125/1296 ≈ 0.0965. The mean wait is 1/p = 6 rolls.",
+  "alt": "Bar chart of the geometric distribution with p = 1/6 for rolls 1 to 20; the bar at 4 is shaded.",
+  "description": [
+   "Each bar is P(first six on roll k), falling by a factor 5/6 each step.",
+   "The bar at k = 4 has height (5/6)³ × 1/6 ≈ 0.0965."
+  ],
+  "course": "maths",
+  "lesson": "Geometric Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Geometric Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.0965",
+    "ok": true,
+    "detail": "computed 0.096451"
+   },
+   {
+    "name": "P(4 ≤ X ≤ 4) = 0.0965",
+    "ok": true,
+    "detail": "0.096451"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-gumbel-return-level": {
+  "title": "The 100-year return level",
+  "caption": "A level exceeded once in 100 years has cdf 0.99: μ − β ln(−ln 0.99) = 3 + 0.5 × 4.6 ≈ 5.3 m.",
+  "alt": "Graph of the Gumbel cdf with μ = 3 and β = 0.5 rising from 0 to 1; the point (5.3, 0.99) marks the 100-year level.",
+  "description": [
+   "The cdf rises steeply near the typical maximum 3 m and creeps up towards 1.",
+   "It reaches 0.99 at 5.3 m."
+  ],
+  "course": "maths",
+  "lesson": "Extreme Value Distributions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Extreme Value Distributions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "F(5.3) = 0.99",
+    "ok": true,
+    "detail": "y(5.3) = 0.99"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-heights-normal": {
+  "title": "Adult heights N(170, 8²)",
+  "caption": "180 cm is z = 1.25 above the mean, so P(height > 180) = 0.1056. The 90th percentile is 170 + 1.2816 × 8 ≈ 180.3 cm.",
+  "alt": "A normal curve with mean 170 and SD 8, shaded to the right of 180 cm, area 0.1056.",
+  "description": [
+   "The curve is centred at 170 with SD 8.",
+   "180 is 1.25 standard deviations above the mean.",
+   "The tail above 180 has area 0.1056."
+  ],
+  "course": "maths",
+  "lesson": "Normal Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Normal Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.1056",
+    "ok": true,
+    "detail": "computed 0.105650"
+   },
+   {
+    "name": "mean 170",
+    "ok": true,
+    "detail": "170"
+   },
+   {
+    "name": "P(180 ≤ X ≤ ∞) = 0.1056",
+    "ok": true,
+    "detail": "0.105650"
+   },
+   {
+    "name": "the 90th percentile 180.25 cm leaves 0.9 below",
+    "ok": true,
+    "detail": "0.899991"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-heights-regression": {
+  "title": "Predicting a son's height from his father's",
+  "caption": "With ρ = 0.5 and equal SDs the best prediction is 175 + 0.5(189 − 175) = 182 cm: halfway back towards the mean, below the line y = x.",
+  "alt": "Graph with the dashed line y = x and the regression line y = 175 + 0.5(x − 175); the point (189, 182) lies on the regression line.",
+  "description": [
+   "A father of 189 cm is 14 cm above the mean.",
+   "The expected son's height moves only ρ = 0.5 of that: 7 cm above the mean.",
+   "The prediction (189, 182) lies on the regression line, below y = x."
+  ],
+  "course": "maths",
+  "lesson": "Multivariate Normal Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Multivariate Normal Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(189, 182) lies on y = 175+0.5*(x-175)",
+    "ok": true,
+    "detail": "y(189) = 182"
+   },
+   {
+    "name": "the line passes through the mean point (175, 175)",
+    "ok": true,
+    "detail": "y(175) = 175"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-hypergeometric-ways": {
+  "title": "Choosing 4 balls from 5 red and 7 blue",
+  "caption": "The 495 equally likely choices split by number of reds as 35, 175, 210, 70, 5. Exactly 2 red: 210/495 = 14/33.",
+  "alt": "Bar chart of the number of the 495 ways to choose 4 balls that contain 0 to 4 red: 35, 175, 210, 70, 5; the bar for 2 is highlighted.",
+  "description": [
+   "There are C(12, 4) = 495 ways to choose 4 balls.",
+   "With k red, there are C(5, k) × C(7, 4 − k) ways: 35, 175, 210, 70, 5.",
+   "Exactly 2 red: 210 of 495, which is 14/33."
+  ],
+  "course": "maths",
+  "lesson": "Hypergeometric Distribution",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Hypergeometric Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 495",
+    "ok": true,
+    "detail": "computed 495"
+   },
+   {
+    "name": "mode = 2",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "mean = 5/3",
+    "ok": true,
+    "detail": "computed 1.6667"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-joint-independence": {
+  "title": "Joint probabilities and independence",
+  "caption": "Reading the table in percentage points: P(X = 1) = 0.5 and P(Y = 1) = 0.6, so independence would need P(1, 1) = 0.3. The table has 0.4, so X and Y are dependent.",
+  "alt": "Two overlapping circles, X = 1 and Y = 1: X only 10, both 40, Y only 20, neither 30, out of 100.",
+  "description": [
+   "The cell P(1, 1) = 0.4 is the overlap of X = 1 and Y = 1.",
+   "P(1, 0) = 0.1 is X = 1 only, and P(0, 1) = 0.2 is Y = 1 only; P(0, 0) = 0.3 is neither.",
+   "The circles' totals are P(X = 1) = 0.5 and P(Y = 1) = 0.6; 0.5 × 0.6 = 0.3 is not the overlap 0.4."
+  ],
+  "course": "maths",
+  "lesson": "Joint Probability",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Joint Probability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the regions add up to 100",
+    "ok": true,
+    "detail": "total 100"
+   },
+   {
+    "name": "P(X) = 1/2",
+    "ok": true,
+    "detail": "50/100 = 1/2"
+   },
+   {
+    "name": "P(Y) = 3/5",
+    "ok": true,
+    "detail": "60/100 = 3/5"
+   },
+   {
+    "name": "P(X∩Y) = 2/5",
+    "ok": true,
+    "detail": "40/100 = 2/5"
+   },
+   {
+    "name": "P(X∩Y′) = 1/10",
+    "ok": true,
+    "detail": "10/100 = 1/10"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u12-larger-of-two-dice": {
+  "title": "The larger of two dice",
+  "caption": "Of the 36 outcomes, 2m − 1 have larger score m, so 11 of them give 6: P(X = 6) = 11/36, the same as 1 − (5/6)² = 11/36.",
+  "alt": "Bar chart of how many of 36 outcomes give each larger score 1 to 6: 1, 3, 5, 7, 9, 11, with 6 highlighted.",
+  "description": [
+   "Larger score 1 happens only for (1, 1): one outcome.",
+   "Each step up adds two outcomes: 1, 3, 5, 7, 9, 11, which total 36.",
+   "Larger score 6 has 11 outcomes, so P(X = 6) = 11/36."
+  ],
+  "course": "maths",
+  "lesson": "Random Variables",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Random Variables"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 36",
+    "ok": true,
+    "detail": "computed 36"
+   },
+   {
+    "name": "mode = 6",
+    "ok": true,
+    "detail": "computed 6"
+   },
+   {
+    "name": "mean = 161/36",
+    "ok": true,
+    "detail": "computed 4.4722"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-lognormal-density": {
+  "title": "Log-normal density with ln X ~ N(0, 1)",
+  "caption": "The median is e⁰ = 1, the mean is e^½ ≈ 1.649 (pulled right by the long tail) and P(X > e) = P(Z > 1) = 0.1587.",
+  "alt": "Graph of the log-normal density rising sharply to a peak below 1 and then falling with a long right tail; the area beyond e is shaded.",
+  "description": [
+   "The curve is skewed right: the mean exceeds the median.",
+   "The shaded tail beyond e ≈ 2.718 has area 0.1587."
+  ],
+  "course": "maths",
+  "lesson": "Log-Normal Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Log-Normal Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the density has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "P(X > e) = P(Z > 1) = 0.1587",
+    "ok": true,
+    "detail": "area 0.1587"
+   },
+   {
+    "name": "half the area lies below the median 1",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-mixture-density": {
+  "title": "A 50:50 mixture of N(0, 1) and N(4, 1)",
+  "caption": "The mixture has two peaks. Its mean is 0.5 × 0 + 0.5 × 4 = 2, and its variance is 1 + 4 = 5: the within-component variance plus the spread of the component means.",
+  "alt": "A curve with two bumps centred at 0 and 4, each of height about 0.2; the mean 2 is marked between them.",
+  "description": [
+   "The density is the average of the two normal densities.",
+   "The mean is 2, halfway between, where there is little probability.",
+   "Variance = average component variance 1 + variance of the means 4 = 5."
+  ],
+  "course": "maths",
+  "lesson": "Mixture Distributions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Mixture Distributions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the mixture density has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the mean is 2",
+    "ok": true,
+    "detail": "area 2.0000"
+   },
+   {
+    "name": "the variance is 5",
+    "ok": true,
+    "detail": "area 5.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-pareto-density": {
+  "title": "Pareto with xₘ = 1 and α = 2",
+  "caption": "The density 2/x³ starts at 2 and falls steeply. P(X > 4) = 1/16, the median is √2 ≈ 1.41 and the mean is α xₘ/(α − 1) = 2.",
+  "alt": "Graph of the density 2/x³ for x ≥ 1 with the tail beyond 4 shaded.",
+  "description": [
+   "The density is 2/x³ for x ≥ 1.",
+   "The tail beyond 4 has area 1/4² = 1/16.",
+   "The area from 1 to √2 is 1/2, so the median is √2."
+  ],
+  "course": "maths",
+  "lesson": "Pareto Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Pareto Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P(X > 4) = 1/16",
+    "ok": true,
+    "detail": "area 0.0625"
+   },
+   {
+    "name": "half the area lies below √2",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "the mean is 2",
+    "ok": true,
+    "detail": "area 1.9956"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-pmf-c-over-x": {
+  "title": "P(X = x) = c/x",
+  "caption": "Heights in elevenths are 6, 3, 2 (that is 6/x), total 11, so c = 6/11 and P(X = 1) = 6/11 ≈ 0.545.",
+  "alt": "Bar chart for x = 1, 2, 3 with heights 6, 3, 2 elevenths.",
+  "description": [
+   "The probabilities are proportional to 1, 1/2, 1/3, that is 6 : 3 : 2.",
+   "They total 11 parts, so each part is 1/11 and P(X = 1) = 6/11."
+  ],
+  "course": "maths",
+  "lesson": "Probability Mass Functions",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Probability Mass Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 11",
+    "ok": true,
+    "detail": "computed 11"
+   },
+   {
+    "name": "mode = 1",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-pmf-kx": {
+  "title": "P(X = x) = kx",
+  "caption": "The probabilities are in the ratio 1 : 2 : 3 : 4, so 10k = 1 and k = 0.1; the balance point of the bars is E(X) = 0.1 × 30 = 3.",
+  "alt": "Bar chart of x = 1 to 4 with heights 1, 2, 3, 4 tenths: probabilities 0.1, 0.2, 0.3, 0.4.",
+  "description": [
+   "Heights are in tenths: 1, 2, 3, 4, which add to 10, so k = 1/10.",
+   "E(X) = 0.1 × 1 + 0.2 × 2 + 0.3 × 3 + 0.4 × 4 = 3."
+  ],
+  "course": "maths",
+  "lesson": "Discrete Random Variables",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Discrete Random Variables"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 10",
+    "ok": true,
+    "detail": "computed 10"
+   },
+   {
+    "name": "mean = 3",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-poisson-emails": {
+  "title": "Emails per hour: Poisson(2.5)",
+  "caption": "P(exactly 3) = e⁻²·⁵ × 2.5³/3! = 0.2138, the shaded bar; P(at least 1) = 1 − e⁻²·⁵ = 0.9179.",
+  "alt": "Bar chart of the Poisson distribution with mean 2.5 for 0 to 10 emails; the bar at 3 is shaded with height 0.2138.",
+  "description": [
+   "The bars give P(X = k) for a Poisson distribution with mean 2.5.",
+   "The bar at 3 reaches 0.2138."
+  ],
+  "course": "maths",
+  "lesson": "Poisson Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Poisson Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.2138",
+    "ok": true,
+    "detail": "computed 0.213763"
+   },
+   {
+    "name": "mean 2.5",
+    "ok": true,
+    "detail": "2.5"
+   },
+   {
+    "name": "P(3 ≤ X ≤ 3) = 0.2138",
+    "ok": true,
+    "detail": "0.213763"
+   },
+   {
+    "name": "P(1 ≤ X ≤ 60) = 0.9179",
+    "ok": true,
+    "detail": "0.917915"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-standard-normal-band": {
+  "title": "P(−1.5 < Z < 1)",
+  "caption": "Φ(1) − Φ(−1.5) = 0.8413 − 0.0668 = 0.7745: the shaded band between −1.5 and 1 under the standard normal curve.",
+  "alt": "Standard normal curve with the area between z = −1.5 and z = 1 shaded, 0.7745.",
+  "description": [
+   "Φ(1) = 0.8413 is the area to the left of 1.",
+   "Φ(−1.5) = 0.0668 is the area to the left of −1.5.",
+   "The band between has area 0.7745."
+  ],
+  "course": "maths",
+  "lesson": "Standard Normal Distribution",
+  "also": [],
+  "renderer": "distribution",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Standard Normal Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the shaded probability is 0.7745",
+    "ok": true,
+    "detail": "computed 0.774538"
+   },
+   {
+    "name": "mean 0",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "variance 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "P(-1.5 ≤ X ≤ 1) = 0.7745",
+    "ok": true,
+    "detail": "0.774538"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-t-interval": {
+  "title": "A 95% t interval",
+  "caption": "With t₉ = 2.262 the margin is 2.262 × 4/√10 ≈ 2.86, so the interval is 49.14 to 54.86 around x̄ = 52.",
+  "alt": "A number line from 48 to 56 with the interval from 49.14 to 54.86 and the sample mean 52 at its centre.",
+  "description": [
+   "The sample mean 52 is the centre.",
+   "The margin is 2.262 × 4/√10 ≈ 2.86.",
+   "The interval runs from 49.14 to 54.86."
+  ],
+  "course": "maths",
+  "lesson": "Student's T-Distribution",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Student's T-Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "52 + 2.262 × 4/√10 = 54.86",
+    "ok": true,
+    "detail": "54.861229"
+   },
+   {
+    "name": "52 − 2.262 × 4/√10 = 49.14",
+    "ok": true,
+    "detail": "49.138771"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u12-two-dice-totals": {
+  "title": "Two dice: the 36 outcomes by total",
+  "caption": "Of the 36 equally likely outcomes, 6 have total 7, so P(7) = 6/36 = 1/6 and P(not 7) = 5/6. No other total is as likely.",
+  "alt": "Bar chart of the number of the 36 outcomes giving each total from 2 to 12: 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1; the bar for 7 is highlighted.",
+  "description": [
+   "Each of the 6 × 6 = 36 outcomes of two dice has a total from 2 to 12.",
+   "The bar heights count how many outcomes give each total.",
+   "Total 7 has the tallest bar: 6 outcomes, so P = 6/36 = 1/6."
+  ],
+  "course": "maths",
+  "lesson": "Probability Theory",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Probability Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 36",
+    "ok": true,
+    "detail": "computed 36"
+   },
+   {
+    "name": "mode = 7",
+    "ok": true,
+    "detail": "computed 7"
+   },
+   {
+    "name": "mean = 7",
+    "ok": true,
+    "detail": "computed 7"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u12-weibull-survival": {
+  "title": "Weibull survival, λ = 1,000 h and k = 2",
+  "caption": "The survival function S(x) = e^(−(x/1000)²) gives P(survive 500 h) = e⁻⁰·²⁵ = 0.7788. It falls to 0.5 at the median 1,000√(ln 2) ≈ 832.6 hours.",
+  "alt": "Graph of S(x) = exp(−(x/1000)²) falling from 1, with points (500, 0.779) and the median at height 0.5.",
+  "description": [
+   "S(x) is the probability of lasting beyond x hours.",
+   "At 500 hours, S = 0.7788.",
+   "S = 0.5 at x ≈ 832.6."
+  ],
+  "course": "maths",
+  "lesson": "Weibull Distribution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u12.js: Weibull Distribution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(500, 0.7788) lies on y = exp(-(x/1000)^2)",
+    "ok": true,
+    "detail": "y(500) = 0.7788"
+   },
+   {
+    "name": "S(832.55) = 0.5",
+    "ok": true,
+    "detail": "y(832.55) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

@@ -1,0 +1,51 @@
+{
+ "id": "maths-u12-addition-rule",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Foundations of Probability",
+ "title": "The addition rule in a Venn diagram",
+ "caption": "Out of 100 percentage points: A alone 30, both 20, B alone 20, neither 30. P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7, so P(neither) = 0.3: the overlap is counted once, not twice.",
+ "alt": "Two overlapping circles: A only 30, both 20, B only 20, and 30 outside both, out of 100.",
+ "description": [
+  "Read probabilities as percentages of one whole of 100.",
+  "The overlap A ∩ B holds 20; A has 50 in total, so A alone holds 30; B has 40, so B alone holds 20.",
+  "A ∪ B is 30 + 20 + 20 = 70, so the outside region holds 100 − 70 = 30."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "A (0.5)"
+  },
+  {
+   "name": "B",
+   "label": "B (0.4)"
+  }
+ ],
+ "regions": {
+  "A": 30,
+  "AB": 20,
+  "B": 20,
+  "": 30
+ },
+ "universe": {
+  "n": 100
+ },
+ "checks": [
+  {
+   "type": "prob",
+   "event": "A∪B",
+   "p": "7/10"
+  },
+  {
+   "type": "prob",
+   "event": "(A∪B)′",
+   "p": "3/10"
+  },
+  {
+   "type": "prob",
+   "event": "A∩B",
+   "p": "1/5"
+  }
+ ]
+}

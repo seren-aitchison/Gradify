@@ -1,0 +1,52 @@
+{
+ "id": "maths-u12-pmf-c-over-x",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Probability Mass Functions",
+ "title": "P(X = x) = c/x",
+ "caption": "Heights in elevenths are 6, 3, 2 (that is 6/x), total 11, so c = 6/11 and P(X = 1) = 6/11 ≈ 0.545.",
+ "alt": "Bar chart for x = 1, 2, 3 with heights 6, 3, 2 elevenths.",
+ "description": [
+  "The probabilities are proportional to 1, 1/2, 1/3, that is 6 : 3 : 2.",
+  "They total 11 parts, so each part is 1/11 and P(X = 1) = 6/11."
+ ],
+ "categories": [
+  1,
+  2,
+  3
+ ],
+ "values": [
+  6,
+  3,
+  2
+ ],
+ "range": {
+  "y": [
+   0,
+   7
+  ]
+ },
+ "ticks": [
+  2,
+  4,
+  6
+ ],
+ "axisLabels": [
+  "x",
+  "probability (elevenths)"
+ ],
+ "highlight": [
+  0
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 11
+  },
+  {
+   "type": "mode",
+   "value": 1
+  }
+ ]
+}

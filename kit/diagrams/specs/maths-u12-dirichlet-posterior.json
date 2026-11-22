@@ -1,0 +1,53 @@
+{
+ "id": "maths-u12-dirichlet-posterior",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Dirichlet Distribution",
+ "title": "Dir(1, 1, 1) plus counts (5, 3, 2)",
+ "caption": "Adding the counts to the prior parameters gives Dir(6, 4, 3), total 13; the posterior mean of p₁ is its share, 6/13 ≈ 0.46.",
+ "alt": "A single bar split into three parts of sizes 6, 4 and 3, for p₁, p₂ and p₃, total 13.",
+ "description": [
+  "Prior parameters (1, 1, 1) plus counts (5, 3, 2) give (6, 4, 3).",
+  "The posterior mean of each pᵢ is its parameter over the total 13; for p₁ that is 6/13."
+ ],
+ "bars": [
+  {
+   "label": "posterior parameters",
+   "parts": [
+    {
+     "value": 6,
+     "label": "p₁: 6"
+    },
+    {
+     "value": 4,
+     "label": "p₂: 4"
+    },
+    {
+     "value": 3,
+     "label": "p₃: 3"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 2,
+   "value": 13
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    6,
+    4,
+    3
+   ],
+   "total": 13
+  }
+ ]
+}

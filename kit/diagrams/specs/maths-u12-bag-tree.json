@@ -1,0 +1,85 @@
+{
+ "id": "maths-u12-bag-tree",
+ "renderer": "prob-tree",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Conditional Probability",
+ "title": "Two counters without replacement",
+ "caption": "After the first pick the bag has 7 counters. P(both red) = 5/8 × 4/7 = 5/14; if the first is blue, 5 of the remaining 7 are red, so P(second red ∣ first blue) = 5/7.",
+ "alt": "A probability tree: first pick red 5/8 or blue 3/8; then after red, red 4/7 or blue 3/7; after blue, red 5/7 or blue 2/7.",
+ "description": [
+  "First pick: red with probability 5/8, blue with 3/8.",
+  "If the first was red, 4 red remain in 7: red 4/7, blue 3/7.",
+  "If the first was blue, 5 red remain in 7: red 5/7, blue 2/7.",
+  "Multiply along a path: red, red = 5/8 × 4/7 = 5/14."
+ ],
+ "tree": {
+  "children": [
+   {
+    "label": "R",
+    "p": "5/8",
+    "children": [
+     {
+      "label": "R",
+      "p": "4/7"
+     },
+     {
+      "label": "B",
+      "p": "3/7"
+     }
+    ]
+   },
+   {
+    "label": "B",
+    "p": "3/8",
+    "children": [
+     {
+      "label": "R",
+      "p": "5/7"
+     },
+     {
+      "label": "B",
+      "p": "2/7"
+     }
+    ]
+   }
+  ]
+ },
+ "stages": [
+  "First pick",
+  "Second pick"
+ ],
+ "outcomes": true,
+ "checks": [
+  {
+   "type": "outcome",
+   "path": [
+    "R",
+    "R"
+   ],
+   "p": "5/14"
+  },
+  {
+   "type": "outcome",
+   "path": [
+    "B",
+    "R"
+   ],
+   "p": "15/56"
+  },
+  {
+   "type": "event",
+   "paths": [
+    [
+     "R",
+     "R"
+    ],
+    [
+     "B",
+     "R"
+    ]
+   ],
+   "p": "5/8"
+  }
+ ]
+}

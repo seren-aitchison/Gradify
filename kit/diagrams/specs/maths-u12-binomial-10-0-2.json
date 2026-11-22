@@ -1,0 +1,76 @@
+{
+ "id": "maths-u12-binomial-10-0-2",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Binomial Distribution",
+ "title": "B(10, 0.2): at most one success",
+ "caption": "P(X = 2) = 0.302 and P(X ≤ 1) = 0.1074 + 0.2684 = 0.3758: the two shaded bars at 0 and 1.",
+ "alt": "Bar chart of the binomial distribution B(10, 0.2); the bars at 0 and 1 are shaded, total 0.3758.",
+ "description": [
+  "The bars give P(X = k) for k = 0 to 10; the mean is 2 and the tallest bars are at 1 and 2.",
+  "The shaded bars at 0 and 1 add to 0.3758 = P(X ≤ 1)."
+ ],
+ "dist": {
+  "dist": "binomial",
+  "n": 10,
+  "p": 0.2
+ },
+ "range": {
+  "x": [
+   -0.5,
+   10.5
+  ],
+  "y": [
+   0,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "successes",
+  "probability"
+ ],
+ "shade": [
+  0,
+  1
+ ],
+ "p": 0.3758,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 2
+  },
+  {
+   "type": "variance",
+   "value": 1.6
+  },
+  {
+   "type": "prob",
+   "from": 0,
+   "to": 1,
+   "p": 0.3758
+  },
+  {
+   "type": "prob",
+   "from": 2,
+   "to": 2,
+   "p": 0.302
+  }
+ ]
+}

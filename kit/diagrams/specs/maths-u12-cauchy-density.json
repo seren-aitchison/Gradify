@@ -1,0 +1,75 @@
+{
+ "id": "maths-u12-cauchy-density",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Cauchy Distribution",
+ "title": "The standard Cauchy density",
+ "caption": "The density 1/(π(1 + x²)) has area 1/2 between −1 and 1, so P(|X| < 1) = 1/2, and P(X > 1) = 1/4. Its tails are so heavy that the mean does not exist.",
+ "alt": "A bell-shaped curve with a heavy tail on each side; the area between −1 and 1 is shaded.",
+ "description": [
+  "The curve peaks at 1/π ≈ 0.318 at 0 and falls only like 1/x² in the tails.",
+  "The area between −1 and 1 is 1/2.",
+  "The area to the right of 1 is 1/4."
+ ],
+ "range": {
+  "x": [
+   -6,
+   6
+  ],
+  "y": [
+   0,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   0,
+   2,
+   4
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "curves": [
+  {
+   "expr": "1/(3.141592653589793*(1+x^2))"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "1/(3.141592653589793*(1+x^2))",
+   "from": -1,
+   "to": 1,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "1/(3.141592653589793*(1+x^2))",
+   "from": -1,
+   "to": 1,
+   "value": 0.5,
+   "name": "P(|X| < 1) = 1/2"
+  },
+  {
+   "type": "area",
+   "expr": "1/(3.141592653589793*(1+x^2))",
+   "from": 0,
+   "to": 1,
+   "value": 0.25,
+   "name": "P(0 < X < 1) = 1/4, so P(X > 1) = 1/2 − 1/4 = 1/4"
+  }
+ ]
+}

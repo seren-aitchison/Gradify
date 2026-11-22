@@ -1,0 +1,66 @@
+{
+ "id": "maths-u12-clt-dice-total",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Central Limit Theorem",
+ "title": "The total of 100 dice is nearly normal",
+ "caption": "The total has mean 350 and SD 17.08. With the continuity correction, P(total > 370) = P(total ≥ 371) ≈ P(Z > 1.2) ≈ 0.115.",
+ "alt": "A normal curve with mean 350 and standard deviation 17.08, shaded to the right of 370.5, area about 0.115.",
+ "description": [
+  "Each roll has mean 3.5 and variance 35/12, so 100 rolls total 350 with variance 291.7.",
+  "The central limit theorem makes the total approximately normal.",
+  "Shade the tail above 370.5 (continuity correction): z ≈ 1.20, area ≈ 0.115."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 350,
+  "sigma": 17.078251
+ },
+ "range": {
+  "x": [
+   290,
+   410
+  ],
+  "y": [
+   0,
+   0.03
+  ]
+ },
+ "ticks": [
+  [
+   300,
+   325,
+   350,
+   375,
+   400
+  ],
+  [
+   0.01,
+   0.02,
+   0.03
+  ]
+ ],
+ "axisLabels": [
+  "total of 100 rolls",
+  "density"
+ ],
+ "shade": [
+  370.5,
+  null
+ ],
+ "p": 0.115,
+ "dp": 3,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 350
+  },
+  {
+   "type": "prob",
+   "from": 370.5,
+   "to": null,
+   "p": 0.115
+  }
+ ]
+}

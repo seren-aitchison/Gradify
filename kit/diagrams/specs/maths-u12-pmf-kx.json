@@ -1,0 +1,52 @@
+{
+ "id": "maths-u12-pmf-kx",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u12",
+ "lesson": "Discrete Random Variables",
+ "title": "P(X = x) = kx",
+ "caption": "The probabilities are in the ratio 1 : 2 : 3 : 4, so 10k = 1 and k = 0.1; the balance point of the bars is E(X) = 0.1 × 30 = 3.",
+ "alt": "Bar chart of x = 1 to 4 with heights 1, 2, 3, 4 tenths: probabilities 0.1, 0.2, 0.3, 0.4.",
+ "description": [
+  "Heights are in tenths: 1, 2, 3, 4, which add to 10, so k = 1/10.",
+  "E(X) = 0.1 × 1 + 0.2 × 2 + 0.3 × 3 + 0.4 × 4 = 3."
+ ],
+ "categories": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "values": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "range": {
+  "y": [
+   0,
+   5
+  ]
+ },
+ "ticks": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "axisLabels": [
+  "x",
+  "probability (tenths)"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 10
+  },
+  {
+   "type": "mean",
+   "value": 3
+  }
+ ]
+}
