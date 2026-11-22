@@ -1,0 +1,103 @@
+{
+ "id": "phys-u16-rl-growth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "RL circuits",
+ "title": "Current growth in an RL circuit",
+ "caption": "With L = 0.5 H, R = 10 Ω and ε = 12 V, the time constant is τ = L/R = 0.05 s and the final current ε/R = 1.2 A. The current rises as I = I_max(1 − e^{−t/τ}): after one τ (0.05 s) it is 1.2 × (1 − e⁻¹) = 0.76 A, 63% of the way. The inductor opposes the change, so the current cannot jump.",
+ "alt": "Graph of current against time: a rise from 0 towards 1.2 A, reaching 0.76 A at 0.05 s.",
+ "description": [
+  "The horizontal axis is time in seconds; the vertical axis is the current in amperes.",
+  "The current starts at 0 (the inductor opposes sudden change) and approaches ε/R = 1.2 A.",
+  "τ = L/R = 0.05 s. At t = τ: I = 1.2(1 − e⁻¹) = 0.76 A."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.3
+  ],
+  "y": [
+   0,
+   1.4
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3
+  ],
+  [
+   0.4,
+   0.8,
+   1.2
+  ]
+ ],
+ "grid": [
+  0.05,
+  0.4
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / s",
+  "I / A"
+ ],
+ "marks": [
+  {
+   "y": 1.2,
+   "label": "I_{max} = 1.2 A"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "1.2*(1-exp(-x/0.05))",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "I(t)",
+   "labelAt": [
+    0.13,
+    0.62
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.05,
+   "y": 0.7585446705942692,
+   "label": "0.76 A at τ",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1.2*(1-exp(-x/0.05))",
+   "x": 0,
+   "y": 0,
+   "name": "I = 0 at t = 0"
+  },
+  {
+   "type": "point",
+   "expr": "1.2*(1-exp(-x/0.05))",
+   "x": 0.05,
+   "y": 0.7585446705942692,
+   "name": "I = 1.2(1 − e⁻¹) = 0.76 A after τ = 0.05 s"
+  },
+  {
+   "type": "slope",
+   "expr": "1.2*(1-exp(-x/0.05))",
+   "x": 0,
+   "value": 24,
+   "name": "initial rate of rise = ε/L = 24 A/s"
+  }
+ ]
+}

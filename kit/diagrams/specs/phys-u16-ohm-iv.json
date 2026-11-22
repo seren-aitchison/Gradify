@@ -1,0 +1,110 @@
+{
+ "id": "phys-u16-ohm-iv",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Ohm's law",
+ "title": "I–V line of a 15 Ω resistor",
+ "caption": "A resistor with 4.5 V across it and 0.3 A through it has R = V/I = 15 Ω. Its I–V line is straight through the origin, with gradient 1/R = 0.067 A V⁻¹: doubling the voltage to 9 V doubles the current to 0.60 A. A steeper line would mean a smaller resistance.",
+ "alt": "Graph of current against voltage: a straight line through the origin through (4.5 V, 0.3 A) and (9 V, 0.60 A).",
+ "description": [
+  "The horizontal axis is the voltage in volts; the vertical axis is the current in amperes.",
+  "The measured point (4.5 V, 0.3 A) gives R = 4.5/0.3 = 15 Ω.",
+  "The line is I = V/15: through the origin, so I ∝ V (Ohm's law). At 9 V, I = 9/15 = 0.60 A."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   0.7
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.2,
+   0.4,
+   0.6
+  ]
+ ],
+ "grid": [
+  2,
+  0.2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / V",
+  "I / A"
+ ],
+ "curves": [
+  {
+   "expr": "x/15",
+   "domain": [
+    0,
+    10
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "R = 15 Ω",
+   "labelAt": [
+    6.2,
+    0.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 4.5,
+   "y": 0.3,
+   "label": "4.5 V, 0.30 A",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 9,
+   "y": 0.6,
+   "colour": "a2",
+   "label": "9.0 V, 0.60 A",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/15",
+   "x": 4.5,
+   "y": 0.3,
+   "name": "the measured point lies on the line, R = 15 Ω"
+  },
+  {
+   "type": "point",
+   "expr": "x/15",
+   "x": 9,
+   "y": 0.6,
+   "name": "at 9.0 V the current is 0.60 A"
+  },
+  {
+   "type": "slope",
+   "expr": "x/15",
+   "x": 3,
+   "value": 0.06666666666666667,
+   "name": "gradient = 1/R"
+  }
+ ]
+}

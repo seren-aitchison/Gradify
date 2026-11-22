@@ -48296,5 +48296,589 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u16-heater-power": {
+  "title": "Power in a 46 Ω heater on 230 V rms",
+  "caption": "I_rms = 230/46 = 5 A, the peak current is 5 × √2 = 7.1 A, and the average power is V_rmsI_rms = 1150 W. The instantaneous power p = v²/R swings between 0 and 2300.0000000000005 W, twice per cycle, and its average is exactly half the peak, 1150.0000000000002 W: that is why rms values work for power.",
+  "alt": "Graph of instantaneous power against time: a curve that is never negative, between 0 and 2300.0000000000005 watts, repeating every 10 ms, with its average at 1150 W.",
+  "description": [
+   "The horizontal axis is time in milliseconds; the vertical axis is the power in watts.",
+   "p = v²/R = 325² sin²(ωt)/46 = 2300.0000000000005 sin²(ωt) W: never negative, peaking at 2300.0000000000005 W.",
+   "Its average over a cycle is half the peak: 1150 W = V_rms × I_rms = 230 V × 5 A.",
+   "The peak current is 7.1 A."
+  ],
+  "course": "physics",
+  "lesson": "Root-mean-square values",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Root-mean-square values"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "average power over a cycle = 1150 W (area over one 20 ms period = 23000 W ms)",
+    "ok": true,
+    "detail": "area 23000.0000"
+   },
+   {
+    "name": "peak power = V₀²/R = 2300.0000000000005 W",
+    "ok": true,
+    "detail": "found (5, 2300)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-impedance-triangle": {
+  "title": "Impedance of a series RLC circuit",
+  "caption": "Resistance R = 30 Ω lies along the horizontal, the inductive reactance X_L = 80 Ω points up and X_C = 40 Ω points down, so the net reactance is X = 40 Ω. Z = √(30² + 40²) = 50 Ω, the current is 100/50 = 2 A, and the voltage leads the current by φ = 53.1° (tan φ = 40/30).",
+  "alt": "Phasor-style diagram: R = 30 ohms to the right, X_L = 80 up and X_C = 40 down, with the resultant impedance 50 ohms at 53.1 degrees above R.",
+  "description": [
+   "R = 30 Ω is drawn to the right.",
+   "X_L = 80 Ω is drawn up (voltage leads current in an inductor) and X_C = 40 Ω down (it lags).",
+   "Net reactance X = 80 − 40 = 40 Ω up.",
+   "The resultant is Z = √(30² + 40²) = 50 Ω at φ = 53.1° above R. I = 100/50 = 2 A, lagging the voltage."
+  ],
+  "course": "physics",
+  "lesson": "Impedance and reactance",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Impedance and reactance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of R are 30, 0",
+    "ok": true,
+    "detail": "|v| cos θ = 30, |v| sin θ = 0"
+   },
+   {
+    "name": "components of X_{L} are 0, 80",
+    "ok": true,
+    "detail": "|v| cos θ = 4.9 × 10^{-15}, |v| sin θ = 80"
+   },
+   {
+    "name": "components of X_{C} are 0, −40",
+    "ok": true,
+    "detail": "|v| cos θ = -7.35 × 10^{-15}, |v| sin θ = −40"
+   },
+   {
+    "name": "Z = 50 at 53.1° from the summed components",
+    "ok": true,
+    "detail": "Σx = 30, Σy = 40: 50 at 53.1°"
+   },
+   {
+    "name": "tan φ = (X_L − X_C)/R gives φ = 53.1°",
+    "ok": true,
+    "detail": "53.1°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u16-mains-waveform": {
+  "title": "Mains voltage: peak and period",
+  "caption": "A 230 V rms supply swings between ±V₀ with V₀ = 230√2 = 325 V. At 50 Hz the period is T = 1/50 = 20 ms, so the voltage completes a full cycle every 20 ms and passes through zero twice in each. The rms value, 230 V, is lower than the peak because the voltage spends time near zero.",
+  "alt": "Graph of mains voltage against time: a sine wave with peaks of ±325 V and a period of 20 ms.",
+  "description": [
+   "The horizontal axis is time in milliseconds; the vertical axis is the voltage in volts.",
+   "The voltage is V₀ sin(2πft) with V₀ = 325 V and f = 50 Hz.",
+   "It peaks at 325 V at 5 ms, is zero again at 10 ms, reaches −325 V at 15 ms and finishes the cycle at 20 ms."
+  ],
+  "course": "physics",
+  "lesson": "Alternating current",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Alternating current"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "peak 325 V at a quarter of the period (5 ms)",
+    "ok": true,
+    "detail": "found (5, 325.269)"
+   },
+   {
+    "name": "back to zero after one period, 20 ms",
+    "ok": true,
+    "detail": "y(20) = 0"
+   },
+   {
+    "name": "zero after half a period",
+    "ok": true,
+    "detail": "y(10) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-ohm-iv": {
+  "title": "I–V line of a 15 Ω resistor",
+  "caption": "A resistor with 4.5 V across it and 0.3 A through it has R = V/I = 15 Ω. Its I–V line is straight through the origin, with gradient 1/R = 0.067 A V⁻¹: doubling the voltage to 9 V doubles the current to 0.60 A. A steeper line would mean a smaller resistance.",
+  "alt": "Graph of current against voltage: a straight line through the origin through (4.5 V, 0.3 A) and (9 V, 0.60 A).",
+  "description": [
+   "The horizontal axis is the voltage in volts; the vertical axis is the current in amperes.",
+   "The measured point (4.5 V, 0.3 A) gives R = 4.5/0.3 = 15 Ω.",
+   "The line is I = V/15: through the origin, so I ∝ V (Ohm's law). At 9 V, I = 9/15 = 0.60 A."
+  ],
+  "course": "physics",
+  "lesson": "Ohm's law",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Ohm's law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the measured point lies on the line, R = 15 Ω",
+    "ok": true,
+    "detail": "y(4.5) = 0.3"
+   },
+   {
+    "name": "at 9.0 V the current is 0.60 A",
+    "ok": true,
+    "detail": "y(9) = 0.6"
+   },
+   {
+    "name": "gradient = 1/R",
+    "ok": true,
+    "detail": "gradient 0.0667"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-rc-discharge": {
+  "title": "Discharging a 470 μF capacitor through 10 kΩ",
+  "caption": "V = V₀e^{−t/RC} with RC = 10.0 kΩ × 470 μF = 4.7 s. After one time constant the voltage has fallen to 37% (3.31 V); after 10 s, 2.13 time constants, V = 9e^{−2.13} = 1.07 V. The curve never reaches zero, and its steepness is greatest at the start.",
+  "alt": "Graph of capacitor voltage against time: an exponential decay from 9 V with time constant 4.7 s, reaching 1.07 V at 10 s.",
+  "description": [
+   "The horizontal axis is time in seconds; the vertical axis is the capacitor voltage in volts.",
+   "The voltage starts at 9 V and decays exponentially with τ = RC = 4.7 s.",
+   "At t = τ = 4.7 s, V = 3.31 V (37% of the start).",
+   "At t = 10 s: V = 1.07 V."
+  ],
+  "course": "physics",
+  "lesson": "Capacitor charging and discharging",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Capacitor charging and discharging"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "starts at 9 V",
+    "ok": true,
+    "detail": "y(0) = 9"
+   },
+   {
+    "name": "37% of V₀ after one time constant, τ = RC = 4.7 s",
+    "ok": true,
+    "detail": "y(4.7) = 3.3109"
+   },
+   {
+    "name": "V = 9e^{−10/4.7} = 1.07 V at 10 s",
+    "ok": true,
+    "detail": "y(10) = 1.072"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-rc-lowpass": {
+  "title": "RC low-pass filter with f_c = 1 kHz",
+  "caption": "With C = 100 nF the cutoff frequency f_c = 1/(2πRC) = 1 kHz needs R = 1/(2π × 1000 × 10⁻⁷) = 1.59 kΩ ≈ 1.6 kΩ. The output fraction |V_out/V_in| = 1/√(1 + (f/f_c)²) is 0.707 (−3 dB) at f = f_c, close to 1 well below it and about f_c/f above it.",
+  "alt": "Graph of output over input amplitude against frequency over cutoff frequency: it starts at 1, falls through 0.707 at 1 and keeps falling.",
+  "description": [
+   "The horizontal axis is f/f_c; the vertical axis is the amplitude ratio |V_out/V_in|.",
+   "At low frequency the capacitor passes nothing, so the output equals the input (ratio 1).",
+   "At f = f_c the ratio is 1/√2 = 0.707, the −3 dB point; R = 1.59 kΩ for C = 100 nF.",
+   "At high frequency the ratio falls as f_c/f: high frequencies are blocked."
+  ],
+  "course": "physics",
+  "lesson": "RC circuits",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: RC circuits"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ratio 1/√2 at f = f_c",
+    "ok": true,
+    "detail": "y(1) = 0.7071"
+   },
+   {
+    "name": "ratio 1 at low frequency",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-rc-step": {
+  "title": "Closing a switch on an uncharged capacitor",
+  "caption": "Just after closing, V_C = 0, so the whole 10 V is across the 1 kΩ and I = 10 mA. As the capacitor charges, V_C = 10(1 − e^{−t/τ}) rises and the current I = 10e^{−t/τ} mA falls, with τ = RC = 1 ms. After a long time I = 0 and V_C = 10 V. At t = τ, V_C = 6.32 V and I = 3.68 mA.",
+  "alt": "Graph with time in milliseconds: the capacitor voltage rising from 0 to 10 V and the current falling from 10 mA to 0, crossing at 5.00 at 0.69 ms.",
+  "description": [
+   "The horizontal axis is time in milliseconds; the vertical axis shows V_C in volts and I in milliamperes on the same numbers.",
+   "Just after closing: V_C = 0, I = V/R = 10 mA.",
+   "The time constant is τ = RC = 1 ms; V_C = 10(1 − e^{−t/τ}) rises and I = 10e^{−t/τ} falls.",
+   "After a long time: I = 0 and V_C = 10 V."
+  ],
+  "course": "physics",
+  "lesson": "Transient responses",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Transient responses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "I = V/R = 10 mA just after closing",
+    "ok": true,
+    "detail": "y(0) = 10"
+   },
+   {
+    "name": "V_C = 0 just after closing",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "after a long time V_C = 10 V",
+    "ok": true,
+    "detail": "y(20) = 10"
+   },
+   {
+    "name": "after a long time I = 0",
+    "ok": true,
+    "detail": "10*exp(-x) at 20 = 0; expected 0–0.001"
+   },
+   {
+    "name": "V_C = 6.32 V at t = τ",
+    "ok": true,
+    "detail": "y(1) = 6.3212"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-rl-growth": {
+  "title": "Current growth in an RL circuit",
+  "caption": "With L = 0.5 H, R = 10 Ω and ε = 12 V, the time constant is τ = L/R = 0.05 s and the final current ε/R = 1.2 A. The current rises as I = I_max(1 − e^{−t/τ}): after one τ (0.05 s) it is 1.2 × (1 − e⁻¹) = 0.76 A, 63% of the way. The inductor opposes the change, so the current cannot jump.",
+  "alt": "Graph of current against time: a rise from 0 towards 1.2 A, reaching 0.76 A at 0.05 s.",
+  "description": [
+   "The horizontal axis is time in seconds; the vertical axis is the current in amperes.",
+   "The current starts at 0 (the inductor opposes sudden change) and approaches ε/R = 1.2 A.",
+   "τ = L/R = 0.05 s. At t = τ: I = 1.2(1 − e⁻¹) = 0.76 A."
+  ],
+  "course": "physics",
+  "lesson": "RL circuits",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: RL circuits"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "I = 0 at t = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "I = 1.2(1 − e⁻¹) = 0.76 A after τ = 0.05 s",
+    "ok": true,
+    "detail": "y(0.05) = 0.7585"
+   },
+   {
+    "name": "initial rate of rise = ε/L = 24 A/s",
+    "ok": true,
+    "detail": "gradient 24.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-series-phasors": {
+  "title": "Phasor sum of the three series voltages",
+  "caption": "In a series circuit the current is common. V_R (6 V) is in phase with it, V_L (12 V) leads by 90° and V_C (4 V) lags by 90°, so V_L and V_C point opposite ways and partly cancel to 8 V. The supply voltage is the vector sum: √(6² + 8²) = 10 V, ahead of the current by 53.1°, not the plain sum 22 V.",
+  "alt": "Phasor diagram: V_R = 6 V to the right, V_L = 12 V up and V_C = 4 V down, with the supply voltage 10 V at 53.1 degrees above the current direction.",
+  "description": [
+   "V_R = 6 V is drawn along the reference direction (the current).",
+   "V_L = 12 V is drawn up, 90° ahead; V_C = 4 V is drawn down, 90° behind.",
+   "Their sum is 12 − 4 = 8 V up.",
+   "Supply voltage = √(6² + 8²) = 10 V at 53.1° ahead of the current."
+  ],
+  "course": "physics",
+  "lesson": "Phasor diagrams",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Phasor diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of V_{R} are 6, 0",
+    "ok": true,
+    "detail": "|v| cos θ = 6, |v| sin θ = 0"
+   },
+   {
+    "name": "components of V_{L} are 0, 12",
+    "ok": true,
+    "detail": "|v| cos θ = 7.35 × 10^{-16}, |v| sin θ = 12"
+   },
+   {
+    "name": "components of V_{C} are 0, −4",
+    "ok": true,
+    "detail": "|v| cos θ = -7.35 × 10^{-16}, |v| sin θ = −4"
+   },
+   {
+    "name": "V_{s} = 10 at 53.1° from the summed components",
+    "ok": true,
+    "detail": "Σx = 6, Σy = 8: 10 at 53.1°"
+   },
+   {
+    "name": "the supply leads the current by 53.1°",
+    "ok": true,
+    "detail": "53.1°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u16-terminal-voltage": {
+  "title": "Terminal voltage of a cell with internal resistance",
+  "caption": "The cell's terminal voltage falls with the current drawn, V = ε − Ir = 1.5 − 0.5I. The 2.5 Ω lamp needs V = 2.5I. Where the two lines cross is the operating point: I = 1.5/(2.5 + 0.5) = 0.5 A and V = 1.5 − 0.5 × 0.5 = 1.25 V. The 0.25 V missing from 1.5 V is the 'lost volts' across r.",
+  "alt": "Graph of voltage against current: a falling line from 1.5 V at zero current and a rising line V = 2.5 I for the lamp, crossing at (0.5 A, 1.25 V).",
+  "description": [
+   "The horizontal axis is the current in amperes; the vertical axis is the voltage in volts.",
+   "The cell's line V = ε − Ir starts at ε = 1.5 V with no current and falls by r = 0.5 V for each ampere.",
+   "The lamp's line V = IR_L = 2.5 I rises through the origin.",
+   "They cross at I = 0.5 A, V = 1.25 V: the terminal voltage across the lamp. The gap 0.25 V is Ir inside the cell."
+  ],
+  "course": "physics",
+  "lesson": "Internal resistance",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Internal resistance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cell and lamp lines meet at I = 0.5 A, V = 1.25 V",
+    "ok": true,
+    "detail": "1.5-0.5*x → 1.25, 2.5*x → 1.25"
+   },
+   {
+    "name": "open-circuit terminal voltage = ε",
+    "ok": true,
+    "detail": "y(0) = 1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u16-thevenin-load-line": {
+  "title": "Thevenin equivalent of a 12 V divider",
+  "caption": "A 12 V source with 4 Ω and 6 Ω in a divider, output across the 6 Ω: open-circuit voltage V_th = 12 × 6/10 = 7.2 V, and R_th = 4 ∥ 6 = 2.4 Ω (source shorted). Any load then sees V = V_th − I R_th: a straight line from 7.2 V at no load to the short-circuit (Norton) current I_N = V_th/R_th = 3 A at V = 0.",
+  "alt": "Graph of output voltage against load current: a straight line from 7.2 V at zero current to 3 A at zero volts, gradient −2.4 ohms.",
+  "description": [
+   "The horizontal axis is the current drawn by the load in amperes; the vertical axis is the output voltage in volts.",
+   "With no load (I = 0) the output is the open-circuit voltage V_th = 7.2 V.",
+   "The line falls by R_th = 2.4 V per ampere: it is the Thevenin source's V = V_th − I R_th.",
+   "Shorting the output gives the Norton current 3 A."
+  ],
+  "course": "physics",
+  "lesson": "Thevenin and Norton equivalents",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Thevenin and Norton equivalents"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "open-circuit voltage 12 × 6/10 = 7.2 V",
+    "ok": true,
+    "detail": "y(0) = 7.2"
+   },
+   {
+    "name": "short-circuit (Norton) current V_th/R_th = 3 A",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "R_th = 4 ∥ 6 = 2.4 Ω is the gradient",
+    "ok": true,
+    "detail": "gradient -2.4000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

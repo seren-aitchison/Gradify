@@ -1,0 +1,95 @@
+{
+ "id": "phys-u16-rc-lowpass",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "RC circuits",
+ "title": "RC low-pass filter with f_c = 1 kHz",
+ "caption": "With C = 100 nF the cutoff frequency f_c = 1/(2πRC) = 1 kHz needs R = 1/(2π × 1000 × 10⁻⁷) = 1.59 kΩ ≈ 1.6 kΩ. The output fraction |V_out/V_in| = 1/√(1 + (f/f_c)²) is 0.707 (−3 dB) at f = f_c, close to 1 well below it and about f_c/f above it.",
+ "alt": "Graph of output over input amplitude against frequency over cutoff frequency: it starts at 1, falls through 0.707 at 1 and keeps falling.",
+ "description": [
+  "The horizontal axis is f/f_c; the vertical axis is the amplitude ratio |V_out/V_in|.",
+  "At low frequency the capacitor passes nothing, so the output equals the input (ratio 1).",
+  "At f = f_c the ratio is 1/√2 = 0.707, the −3 dB point; R = 1.59 kΩ for C = 100 nF.",
+  "At high frequency the ratio falls as f_c/f: high frequencies are blocked."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "f / f_{c}",
+  "|V_{out}/V_{in}|"
+ ],
+ "marks": [
+  {
+   "y": 0.7071067811865475,
+   "label": "0.707"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt(1+x*x)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "low-pass",
+   "labelAt": [
+    2.6,
+    0.55
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.7071067811865475,
+   "label": "f_{c}",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/sqrt(1+x*x)",
+   "x": 1,
+   "y": 0.7071067811865475,
+   "name": "ratio 1/√2 at f = f_c"
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt(1+x*x)",
+   "x": 0,
+   "y": 1,
+   "name": "ratio 1 at low frequency"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": "phys-u16-series-phasors",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Phasor diagrams",
+ "title": "Phasor sum of the three series voltages",
+ "caption": "In a series circuit the current is common. V_R (6 V) is in phase with it, V_L (12 V) leads by 90° and V_C (4 V) lags by 90°, so V_L and V_C point opposite ways and partly cancel to 8 V. The supply voltage is the vector sum: √(6² + 8²) = 10 V, ahead of the current by 53.1°, not the plain sum 22 V.",
+ "alt": "Phasor diagram: V_R = 6 V to the right, V_L = 12 V up and V_C = 4 V down, with the supply voltage 10 V at 53.1 degrees above the current direction.",
+ "description": [
+  "V_R = 6 V is drawn along the reference direction (the current).",
+  "V_L = 12 V is drawn up, 90° ahead; V_C = 4 V is drawn down, 90° behind.",
+  "Their sum is 12 − 4 = 8 V up.",
+  "Supply voltage = √(6² + 8²) = 10 V at 53.1° ahead of the current."
+ ],
+ "mode": "add",
+ "units": "V",
+ "vectors": [
+  {
+   "label": "V_{R}",
+   "mag": 6,
+   "angle": 0,
+   "text": "6 V",
+   "comps": [
+    6,
+    0
+   ]
+  },
+  {
+   "label": "V_{L}",
+   "mag": 12,
+   "angle": 90,
+   "colour": "a4",
+   "text": "12 V",
+   "comps": [
+    0,
+    12
+   ]
+  },
+  {
+   "label": "V_{C}",
+   "mag": 4,
+   "angle": 270,
+   "colour": "a2",
+   "text": "4 V",
+   "comps": [
+    0,
+    -4
+   ]
+  }
+ ],
+ "resultant": {
+  "label": "V_{s}",
+  "mag": 10,
+  "angle": 53.13,
+  "text": "10 V at 53.1°"
+ },
+ "claims": [
+  {
+   "type": "angleBetween",
+   "a": "V_{R}",
+   "b": "V_{s}",
+   "value": 53.1,
+   "name": "the supply leads the current by 53.1°"
+  }
+ ]
+}

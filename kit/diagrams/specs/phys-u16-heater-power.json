@@ -1,0 +1,92 @@
+{
+ "id": "phys-u16-heater-power",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Root-mean-square values",
+ "title": "Power in a 46 Ω heater on 230 V rms",
+ "caption": "I_rms = 230/46 = 5 A, the peak current is 5 × √2 = 7.1 A, and the average power is V_rmsI_rms = 1150 W. The instantaneous power p = v²/R swings between 0 and 2300.0000000000005 W, twice per cycle, and its average is exactly half the peak, 1150.0000000000002 W: that is why rms values work for power.",
+ "alt": "Graph of instantaneous power against time: a curve that is never negative, between 0 and 2300.0000000000005 watts, repeating every 10 ms, with its average at 1150 W.",
+ "description": [
+  "The horizontal axis is time in milliseconds; the vertical axis is the power in watts.",
+  "p = v²/R = 325² sin²(ωt)/46 = 2300.0000000000005 sin²(ωt) W: never negative, peaking at 2300.0000000000005 W.",
+  "Its average over a cycle is half the peak: 1150 W = V_rms × I_rms = 230 V × 5 A.",
+  "The peak current is 7.1 A."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   2600
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   500,
+   1150,
+   2300
+  ]
+ ],
+ "grid": [
+  10,
+  500
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / ms",
+  "p / W"
+ ],
+ "marks": [
+  {
+   "y": 1150,
+   "label": "average 1150 W"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "2300.0000000000005*sin(0.3141592653589793*x)^2",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "p = v²/R",
+   "labelAt": [
+    11,
+    2480
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "2300.0000000000005*sin(0.3141592653589793*x)^2",
+   "from": 0,
+   "to": 20,
+   "value": 23000,
+   "tol": 5,
+   "name": "average power over a cycle = 1150 W (area over one 20 ms period = 23000 W ms)"
+  },
+  {
+   "type": "max",
+   "expr": "2300.0000000000005*sin(0.3141592653589793*x)^2",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 2300.0000000000005,
+   "name": "peak power = V₀²/R = 2300.0000000000005 W"
+  }
+ ]
+}
