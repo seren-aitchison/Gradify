@@ -39,8 +39,8 @@ Send back the completed `reference-review.csv`. It is imported with
 node scripts/organic-review.mjs import reference-review.csv
 ```
 
-which writes the verdicts to `tests/data/organic-review-results.mjs`. A case marked `agree` becomes *reviewed*; a
-`disagree` stays *provisional* and is listed for a fix (to the reference set, the predictor, or both). Regenerate the
+which writes the verdicts to `kit/labs/chemistry/reactions/reviews.js`. A case marked `agree` becomes *reviewed*; a
+`disagree` marks the case and its rule *disputed* (the lab and its tutor then show the reviewer's note) until it is fixed (to the reference set, the predictor, or both). Regenerate the
 pack after changes with `node scripts/organic-review.mjs export`.
 
 ## Confidence levels

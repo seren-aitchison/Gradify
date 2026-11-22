@@ -7,7 +7,7 @@
 //   null                     no reaction: the chemistry doesn't happen under these conditions (with a stated reason)
 //   DECLINE                  the lab must decline: outside its rules, ambiguous, or another reagent is meant
 // Tested by tests/organic-reference.test.mjs.
-import { REVIEWS } from "./organic-review-results.mjs";
+import { REVIEWS } from "../../kit/labs/chemistry/reactions/reviews.js";
 export const DECLINE = { declined: true };
 const SECTION = Symbol("section");
 const RAW = [
@@ -118,6 +118,6 @@ export const REFERENCE = [];
     if (RAW[i] === SECTION) { meta = RAW[++i]; continue; }
     const [start, reagent, expect, note] = RAW[i], id = `${start}|${reagent}`;
     const review = REVIEWS[id];
-    REFERENCE.push({ id, start, reagent, expect, note: note || "", topic: meta.topic, sources: meta.sources.map(([src, topic]) => ({ id: src, topic })), confidence: review?.verdict === "agree" ? "reviewed" : "provisional", review: review || null });
+    REFERENCE.push({ id, start, reagent, expect, note: note || "", topic: meta.topic, sources: meta.sources.map(([src, topic]) => ({ id: src, topic })), confidence: review?.verdict === "agree" ? "reviewed" : review?.verdict === "disagree" ? "disputed" : "provisional", review: review || null });
   }
 }

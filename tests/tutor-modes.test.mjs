@@ -11,7 +11,7 @@ const NEW = ["diagnose", "socratic", "challenge", "connect", "examiner", "direct
 test("every mode has a daily limit, and the usage table accepts every mode", async () => {
   for (const m of NEW) assert.ok(DAILY[m] > 0, m);
   // the latest migration that sets the usage table's allowed modes
-  const sql = await readFile(new URL("../supabase/migrations/20261113130000_coach_mode.sql", import.meta.url), "utf8");
+  const sql = await readFile(new URL("../supabase/migrations/20261122120000_chemistry_tutor_mode.sql", import.meta.url), "utf8");
   for (const m of Object.keys(DAILY)) assert.match(sql, new RegExp(`'${m}'`), `${m} missing from the migration`);
 });
 
@@ -78,4 +78,55 @@ test("coach answers from the learner summary and can only point to actions it wa
   assert.deepEqual(out.actions.map((a) => a.id), ["fix:d1|Systole"]);
   assert.throws(() => buildRequest({ mode: "coach", subject: "law", profile }), /Ask a question/);
   assert.throws(() => buildRequest({ mode: "coach", subject: "law", question: "hi" }), /learner summary/);
+});
+
+// ---------- the Organic Chemistry Lab's tutor (mode "chemistry") ----------
+import { chemistryAuthority, CHEM_INTENTS } from "../kit/assess/tutor.js";
+import * as P from "../kit/labs/chemistry/reactions/predictor.js";
+
+const chem = (smiles, reagent) => ({ kind: "prediction", ...P.explainContext(P.drawSmiles(smiles), P.predict(P.drawSmiles(smiles), reagent)) });
+
+test("chemistry tutor: it receives the engine's own verdict and may only explain it", () => {
+  const ctx = chem("C=CC", "hbr"), r = buildRequest({ mode: "chemistry", subject: "chemistry", intent: "compare", context: ctx });
+  assert.equal(r.mode, "chemistry"); assert.equal(r.schema, null);
+  assert.match(r.system, /2-bromopropane/); assert.match(r.system, /"role":"minor"/, "major/minor labels are in the data");
+  assert.match(r.system, /Never change, contradict or add to its verdict/);
+  assert.match(r.system, /Never invent a reference/);
+  assert.match(r.system, /CONFIDENCE: provisional/); assert.match(r.system, /hasn't yet been reviewed by an independent chemist/);
+  for (const k of Object.keys(CHEM_INTENTS)) assert.ok(CHEM_INTENTS[k].length > 40, k);
+});
+
+test("chemistry tutor: declined, no-reaction, reviewed and disputed evidence each change what it may say", () => {
+  const declined = chemistryAuthority(chem("CC=O", "naoh-aq"));
+  assert.match(declined, /STATUS: declined/); assert.match(declined, /do NOT give, guess or hint at a product/);
+  assert.match(chemistryAuthority(chem("CCC", "naoh-aq")), /STATUS: no reaction/);
+  assert.match(chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "reviewed" }, products: [] }), /independent chemist has reviewed this rule/);
+  const disputed = chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "disputed", disputes: [{ note: "x" }] }, products: [] });
+  assert.match(disputed, /A reviewer has disagreed/); assert.doesNotMatch(disputed, /has reviewed this rule/);
+  assert.match(chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "provisional" }, products: [{ role: "major" }, { role: "major" }] }), /Several main products/);
+  assert.match(chemistryAuthority({ kind: "mechanism", confidence: "provisional" }), /verdict on each arrow .* is final/);
+});
+
+test("chemistry tutor: requests are checked, conversations alternate, diagnosis needs the learner's answer", () => {
+  const ctx = chem("CCBr", "naoh-aq");
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "lecture", context: ctx }), /Unknown chemistry/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain" }), /Missing the lab's data/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "essay" } }), /Unknown kind/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { ...ctx, rule: { confidence: "certain" } } }), /Unknown confidence/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "prediction", status: "reacts", junk: "x".repeat(10000) } }), /too long/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "diagnose", context: ctx }), /learner's answer/);
+  const g = buildRequest({ mode: "chemistry", intent: "guide", context: ctx, turns: [{ role: "tutor", text: "What is δ+ here?" }, { role: "learner", text: "The carbon" }], learner: { mistakes: [{ topic: "Nucleophilic substitution", count: 3 }] } });
+  assert.deepEqual(g.messages.map((m) => m.role), ["user", "assistant", "user"]); assert.equal(g.effort, "low");
+  assert.match(g.system, /Nucleophilic substitution \(3 wrong\)/, "the learner's mistake patterns are passed on");
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "guide", context: ctx, turns: [{ role: "tutor", text: "Q?" }] }), /learner's turn/);
+});
+
+test("disputed rules: a reviewer's disagreement reaches the rule record the tutor is given", async () => {
+  const R = await import("../kit/labs/chemistry/reactions/reviews.js");
+  R.REVIEWS["C=CC|hbr"] = { verdict: "disagree", reviewer: "T", date: "2026-11-22", correction: "test", note: "a test dispute" };
+  try {
+    const rule = P.predict(P.drawSmiles("C=CC"), "hbr").rule;
+    assert.equal(rule.confidence, "disputed"); assert.equal(rule.disputes[0].note, "a test dispute");
+    assert.equal(P.predict(P.drawSmiles("C=CC"), "steam").rule.confidence, "provisional", "other rules unaffected");
+  } finally { delete R.REVIEWS["C=CC|hbr"]; }
 });
