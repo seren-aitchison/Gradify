@@ -91,3 +91,17 @@ test("browser code never reads server-only secrets", async () => {
     assert.doesNotMatch(src, /ANTHROPIC_API_KEY|Deno\.env|process\.env\.(ANTHROPIC|SUPABASE_SERVICE)/, `${f} references a server-only secret`);
   }
 });
+
+test("push-send compares the scheduler's secret in constant time, and refuses everything when none is set", async () => {
+  const src = await readFile(new URL("supabase/functions/push-send/index.ts", root), "utf8");
+  const body = src.slice(src.indexOf("Deno.serve"));
+  assert.match(body, /if \(!await sameSecret\(req\.headers\.get\("x-cron-secret"\), Deno\.env\.get\("PUSH_CRON_SECRET"\)\)\) return new Response\("Forbidden", \{ status: 403 \}\);/);
+  assert.doesNotMatch(src, /get\("x-cron-secret"\)\s*[!=]==/, "no plain string comparison of the secret");
+  // the real sameSecret, compiled from the TypeScript
+  const { transform } = await import("esbuild");
+  const { code } = await transform(src.match(/export async function sameSecret[\s\S]*?\n\}/)[0], { loader: "ts", format: "esm" });
+  const { sameSecret } = await import(`data:text/javascript,${encodeURIComponent(code)}`);
+  assert.equal(await sameSecret("s3cret-value", "s3cret-value"), true);
+  for (const [given, expected] of [["s3cret-valuX", "s3cret-value"], ["s3cret", "s3cret-value"], ["", "s3cret-value"], [null, "s3cret-value"], [null, undefined], ["", ""], ["anything", undefined], ["anything", ""]])
+    assert.equal(await sameSecret(given, expected), false, `${JSON.stringify(given)} vs ${JSON.stringify(expected)}`);
+});
