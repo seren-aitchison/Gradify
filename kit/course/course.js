@@ -963,8 +963,8 @@ export function mountCourse(root, cfg) {
         <div class="cx-sylstats">${ring(all.coverage, 64, 7)}<div><b>${pc(all.coverage)}</b><small>complete</small></div><div><b>${all.counts.mastered}</b><small>mastered</small></div><div class="${all.counts.revise ? "warn" : ""}"><b>${all.counts.revise}</b><small>to revise</small></div></div>
       </header>
       <div class="cx-sylbar">${viewSwitch()}<div class="cx-chips" role="group" aria-label="Show lessons">${FILTERS.map(([k, t]) => `<button type="button" data-sf="${k}" aria-pressed="${f === k}">${k === "all" ? "" : dot(k)}${t}${k === "all" ? "" : ` <small>${all.counts[k]}</small>`}</button>`).join("")}</div>
-        <button type="button" class="gx-link cx-sylall" data-sylall>${units.every((u) => open.has(u.id)) ? "Collapse all" : "Expand all"}</button>
-        <details class="cx-legend"><summary>Key</summary><ul>${STATUSES.map((x) => `<li>${dot(x.key)}<b>${x.label}</b> ${esc(x.what)}</li>`).join("")}</ul></details></div>
+        <span class="cx-sylend"><button type="button" class="gx-link cx-sylall" data-sylall>${units.every((u) => open.has(u.id)) ? "Collapse all" : "Expand all"}</button>
+        <details class="cx-legend"><summary>Key</summary><ul>${STATUSES.map((x) => `<li>${dot(x.key)}<b>${x.label}</b> ${esc(x.what)}</li>`).join("")}</ul></details></span></div>
       ${path ? `<div class="co-pathnote">Following <b>${esc(path.name)}</b>. <button class="co-link" data-unpath>Show the whole course</button></div>` : ""}
       ${navGroups().map((g) => { const us = g.list.filter(unitHasMatch); if (!us.length) return ""; const gr = roll(g.list.flatMap(idsOf)); const t = g.list[0] && trackOf(g.list[0]);
         return `<section class="cx-stage" style="--a:${t?.from};--b:${t?.to}"><header><h3>${esc(g.name)}</h3><span>${pc(gr.coverage)} · ${gr.done}/${gr.total} lessons</span><div class="co-bar"><i style="width:${gr.coverage * 100}%"></i></div></header>
