@@ -13,6 +13,7 @@ import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import { join, dirname, resolve, relative, sep, posix } from "node:path";
 import { fileURLToPath } from "node:url";
+import { transform } from "esbuild";
 
 const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -98,10 +99,24 @@ export async function build(out, { root = REPO, files = tracked(root) } = {}) {
   for (const f of publish) {
     await mkdir(dirname(join(out, f)), { recursive: true });
     await copyFile(join(root, f), join(out, f));
+    await minifyFile(join(out, f), f);
     if (f !== "sw.js") digests.push([f, createHash("sha256").update(await readFile(join(out, f))).digest("hex")]);
   }
   await stampServiceWorker(out, deployVersion(digests));
   return publish;
+}
+
+// Published CSS and JS are minified (whitespace, comments, local names; no bundling, no top-level renames, so scripts that
+// share globals and ES modules behave the same). Smaller files mean fewer bytes over the wire and in the service worker's
+// cache. sw.js stays as written (its cache name is stamped by text), and a file esbuild can't parse is published unchanged.
+async function minifyFile(path, name) {
+  const loader = name.endsWith(".css") ? "css" : name.endsWith(".js") ? "js" : null;
+  if (!loader || name === "sw.js" || /\.min\.(js|css)$/.test(name)) return;
+  try {
+    const src = await readFile(path, "utf8");
+    const { code } = await transform(src, { loader, minify: true, legalComments: "none", target: "es2020" });
+    if (code.length < src.length) await writeFile(path, code);
+  } catch { /* keep the original */ }
 }
 
 // the deploy's version: a hash of each published path with its own file's hash, sorted, so no two different sites share one
