@@ -668,6 +668,7 @@ X: Calculate the atom economy for making ethanol by fermentation: C₆H₁₂O�
 > Total mass of reactants = 180.2.
 > Atom economy = 92.14 ÷ 180.2 × 100 = 51.1%.
 > By contrast, hydration of ethene, C₂H₄ + H₂O → C₂H₅OH, has 100% atom economy.
+D: chem-atom-economy-routes
 H: Atom economy and green chemistry
 P: Atom economy, introduced by Barry Trost in 1991, is one of the principles of green chemistry. Unlike percentage yield, it is fixed by the equation, not the practical work: a reaction can have a 100% yield but a low atom economy if it makes a lot of by-product. Useful by-products (CO₂ can be captured, a by-product can be sold) make a low atom economy less wasteful.
 K: Atom economy is set by the balanced equation; addition reactions reach 100%.
