@@ -2214,3 +2214,6 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 }
 /* the review note sits quietly at the end of a lesson, above the finish panel, rather than at the top */
 .co-read .co-draft, .co-reading .co-draft { display: block; margin: 18px 0 14px; padding: 0; border: 0; background: none; font-size: 12.5px; color: var(--mute); }
+/* phones: a unit's lesson bar is too fine to tap (a dot is ~9px wide with 25 lessons), so it shows progress only;
+   moving between lessons is Previous / Next and the Outline, which are full-size. Screen readers still get the links. */
+@media (max-width: 760px) { .co-steps a { pointer-events: none; } }
