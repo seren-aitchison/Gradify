@@ -1,0 +1,86 @@
+/* The Gradify Design System: foundations (kit/design/tokens.json is the source; tests/design-tokens.test.mjs keeps this
+   file in step with it) and the editorial components pages are built from. The look is Apple-first: generous space,
+   large confident type, one accent, calm motion. Richer moments (glass, 3D, gradients, rewards) are used selectively
+   on top, never as the base. A page opts in with <body class="ds">; nothing here applies elsewhere.
+   docs/DESIGN-SYSTEM.md describes the system; docs/NEXTJS-MIGRATION.md maps these tokens onto Tailwind. */
+
+/* ---------- Foundations (tokens) ---------- */
+:root {
+  --ds-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Geist", "Inter", system-ui, sans-serif;
+  --ds-font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Geist", "Inter", system-ui, sans-serif;
+  --ds-font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ds-hero: clamp(48px, 7.2vw, 96px); --ds-hero-line: 1.04; --ds-hero-track: -0.03em;
+  --ds-title: clamp(36px, 5vw, 64px); --ds-title-line: 1.07; --ds-title-track: -0.025em;
+  --ds-heading: clamp(24px, 2.6vw, 32px); --ds-heading-line: 1.15; --ds-heading-track: -0.015em;
+  --ds-lead: clamp(19px, 1.9vw, 24px); --ds-lead-line: 1.42;
+  --ds-body: 17px; --ds-body-line: 1.53;
+  --ds-eyebrow: clamp(17px, 1.6vw, 21px);
+  --ds-caption: 14px;
+  --ds-space-1: 4px; --ds-space-2: 8px; --ds-space-3: 12px; --ds-space-4: 16px; --ds-space-5: 24px; --ds-space-6: 32px;
+  --ds-space-7: 48px; --ds-space-8: 64px; --ds-space-9: 96px; --ds-space-10: 128px; --ds-space-section: clamp(88px, 11vw, 160px);
+  --ds-radius-sm: 12px; --ds-radius-md: 18px; --ds-radius-lg: 28px; --ds-radius-pill: 980px;
+  --ds-width-text: 760px; --ds-width-content: 1080px; --ds-width-wide: 1360px;
+  --ds-ease: cubic-bezier(0.28, 0.11, 0.32, 1); --ds-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-fast: 180ms; --ds-base: 320ms; --ds-slow: 700ms; --ds-reveal-distance: 28px;
+  /* colour: dark (Gradify's default theme) */
+  --ds-bg: #000000; --ds-bg-alt: #161617; --ds-fg: #f5f5f7; --ds-fg-2: #a1a1a6; --ds-line: #424245;
+  --ds-accent: #5b55ff; --ds-accent-fg: #ffffff; --ds-link: #a29fff; --ds-tile-dark: #161617;
+}
+:root[data-theme="light"] {
+  --ds-bg: #ffffff; --ds-bg-alt: #f5f5f7; --ds-fg: #1d1d1f; --ds-fg-2: #6e6e73; --ds-line: #d2d2d7;
+  --ds-accent: #4641ff; --ds-accent-fg: #ffffff; --ds-link: #3c35f0; --ds-tile-dark: #000000;
+}
+
+/* ---------- The page ---------- */
+body.ds { background: var(--ds-bg); color: var(--ds-fg); font-family: var(--ds-font-text); font-size: var(--ds-body); line-height: var(--ds-body-line); letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
+
+/* ---------- Components ---------- */
+/* a section: full width, centred, generous vertical space; .alt is the soft grey band; .dark a black tile band */
+.ds-section { padding-block: var(--ds-space-section); text-align: center; }
+.ds-section.alt { background: var(--ds-bg-alt); }
+.ds-section.tight { padding-block: calc(var(--ds-space-section) * .6); }
+.ds-eyebrow { display: block; margin: 0 0 var(--ds-space-3); font-size: var(--ds-eyebrow); font-weight: 600; letter-spacing: -0.01em; color: var(--ds-fg-2); }
+.ds-eyebrow.accent { color: var(--ds-link); }
+.ds-hero { margin: 0 auto; max-width: 14em; font-size: var(--ds-hero); line-height: var(--ds-hero-line); letter-spacing: var(--ds-hero-track); font-weight: 700; color: var(--ds-fg); text-wrap: balance; }
+.ds-title { margin: 0 auto; max-width: 16em; font-size: var(--ds-title); line-height: var(--ds-title-line); letter-spacing: var(--ds-title-track); font-weight: 700; color: var(--ds-fg); text-wrap: balance; }
+.ds-heading { margin: 0; font-size: var(--ds-heading); line-height: var(--ds-heading-line); letter-spacing: var(--ds-heading-track); font-weight: 600; color: var(--ds-fg); text-wrap: balance; }
+.ds-lead { margin: var(--ds-space-5) auto 0; max-width: 32em; font-size: var(--ds-lead); line-height: var(--ds-lead-line); color: var(--ds-fg-2); text-wrap: pretty; }
+.ds-lead b, .ds-lead strong { color: var(--ds-fg); font-weight: 600; }
+/* the brand spectrum on one phrase at most per page: the moment of colour, not the wallpaper */
+.ds-spectrum { background: linear-gradient(90deg, #4641ff, #8c27ca 25%, #f055dd 50%, #ff5600 78%, #ffc002); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ds-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--ds-space-4) var(--ds-space-6); margin-top: var(--ds-space-7); }
+.ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: var(--ds-radius-pill); border: 1px solid transparent;
+  font: 500 17px/1 var(--ds-font-text); letter-spacing: -0.01em; text-decoration: none; cursor: pointer; color: var(--ds-accent-fg); background: var(--ds-accent);
+  transition: background var(--ds-fast) var(--ds-ease), transform var(--ds-fast) var(--ds-ease); }
+.ds-btn:hover { background: color-mix(in srgb, var(--ds-accent) 88%, #fff); }
+.ds-btn:active { transform: scale(.98); }
+.ds-btn.secondary { color: var(--ds-accent); background: transparent; border-color: var(--ds-accent); }
+.ds-btn.secondary:hover { color: var(--ds-accent-fg); background: var(--ds-accent); }
+.ds-btn:focus-visible, .ds-more:focus-visible { outline: 3px solid color-mix(in srgb, var(--ds-accent) 55%, transparent); outline-offset: 3px; }
+.ds-more { display: inline-flex; align-items: center; min-height: 44px; gap: 2px; font-size: 19px; color: var(--ds-link); text-decoration: none; }
+.ds-more::after { content: "›"; font-size: 1.25em; line-height: 1; margin-left: 4px; transition: transform var(--ds-fast) var(--ds-ease); }
+.ds-more:hover { text-decoration: underline; } .ds-more:hover::after { transform: translateX(3px); }
+/* tiles: the rounded panels features sit in */
+.ds-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--ds-space-5); max-width: var(--ds-width-wide); margin: var(--ds-space-8) auto 0; padding-inline: var(--ds-space-5); text-align: left; }
+.ds-tile { position: relative; display: flex; flex-direction: column; gap: var(--ds-space-3); padding: clamp(28px, 3.4vw, 48px); border-radius: var(--ds-radius-lg); background: var(--ds-bg-alt); color: var(--ds-fg); overflow: hidden; }
+.ds-section.alt .ds-tile { background: var(--ds-bg); }
+.ds-tile p { margin: 0; color: var(--ds-fg-2); font-size: var(--ds-body); }
+/* a product shot: big, rounded, softly shadowed; it opens up as it scrolls into view (.ds-zoom) */
+.ds-shot { display: block; margin: var(--ds-space-8) auto 0; max-width: var(--ds-width-wide); padding-inline: var(--ds-space-5); }
+.ds-shot img { display: block; width: 100%; height: auto; border-radius: var(--ds-radius-lg); box-shadow: 0 40px 100px -40px rgba(0, 0, 0, .55), 0 0 0 1px var(--ds-line); }
+.ds-shot figcaption { margin-top: var(--ds-space-4); font-size: var(--ds-caption); color: var(--ds-fg-2); }
+.ds-zoom img { transform: scale(var(--ds-zoom, .9)); transition: transform 80ms linear; transform-origin: 50% 0; }
+/* big numbers */
+.ds-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-7) var(--ds-space-9); margin: var(--ds-space-8) auto 0; max-width: var(--ds-width-content); padding: 0; list-style: none; }
+.ds-stats div { display: grid; gap: var(--ds-space-1); }
+.ds-stats dd, .ds-stats b { order: -1; margin: 0; font-family: var(--ds-font-display); font-size: clamp(40px, 5vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--ds-fg); }
+.ds-stats dt, .ds-stats small { font-size: 17px; color: var(--ds-fg-2); }
+/* calm reveal on scroll (kit/ui/reveal.js adds .in); nothing moves for reduced motion */
+.ds-reveal { opacity: 0; transform: translateY(var(--ds-reveal-distance)); transition: opacity var(--ds-slow) var(--ds-ease-out), transform var(--ds-slow) var(--ds-ease-out); }
+.ds-reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1; transform: none; transition: none; } .ds-zoom img { transform: none; transition: none; } .ds-btn, .ds-more::after { transition: none; } }
+:root[data-motion="reduce"] .ds-reveal { opacity: 1; transform: none; transition: none; }
+:root[data-motion="reduce"] .ds-zoom img { transform: none; }
+@media (max-width: 640px) { .ds-actions { flex-direction: column; gap: var(--ds-space-3); } .ds-tiles { padding-inline: var(--ds-space-4); } .ds-stats { gap: var(--ds-space-6) var(--ds-space-7); } }

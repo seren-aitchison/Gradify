@@ -7,6 +7,36 @@ Journey page. They live in `kit/ui/` with their styles in `kit/styles/ui.css`, a
 
 The aim: a learner never has to ask "Where do I find that?", "Where was I?" or "What should I do next?".
 
+## Foundations: the Gradify Design System
+
+**Apple-first.** Generous whitespace, large confident type, one accent colour, calm motion and very clear navigation
+are the base for every page. The other influences are used selectively, where they earn their place:
+
+| Where | Approach |
+| --- | --- |
+| Marketing homepage, subject landing pages | Apple editorial: centred headlines, white and soft-grey bands, big product shots, one cinematic moment per page |
+| LifeOS dashboard, the study app | Apple + Linear: dense but calm; cards, sidebars, hairline borders, keyboard-first |
+| Progress and analytics | Stripe-style charts: clear axes, one highlight colour, animated only on first view |
+| Flashcards, quizzes, habits | Duolingo-style feedback: instant, rewarding, never noisy |
+| 3D anatomy, 3D Earth, the course shelf | Three.js and 3D CSS, used for memorable moments only |
+| Course content | Minimal and highly readable |
+
+**Tokens.** `kit/design/tokens.json` is the source: fonts (the system San Francisco on Apple devices, Geist elsewhere),
+a seven-step type scale (hero, title, heading, lead, body, eyebrow, caption), spacing (4 → 128px and a fluid section
+gap), radii, content widths, colour for both themes, and motion (Apple's ease, 180 / 320 / 700ms). `kit/styles/system.css`
+is the same values as CSS custom properties (`--ds-*`), and `tests/design-tokens.test.mjs` fails if the two drift. The
+accent is Gradify indigo (#4641ff light, #5b55ff dark), checked for WCAG AA with white text. The brand spectrum is
+used on one phrase per page at most.
+
+**Components** (`kit/styles/system.css`, opt in with `<body class="ds">`): `.ds-section` (`.alt` for the grey band),
+`.ds-eyebrow`, `.ds-hero`, `.ds-title`, `.ds-heading`, `.ds-lead`, `.ds-spectrum`, `.ds-actions`, `.ds-btn`
+(`.secondary`), `.ds-more` ("Learn more ›"), `.ds-tiles` / `.ds-tile`, `.ds-shot` (`.ds-zoom` opens up as it
+scrolls), `.ds-stats`, and `.ds-reveal` (a calm fade-up, `kit/ui/reveal.js`). Everything still for reduced motion.
+
+**Rollout.** The Gradify homepage is on the system now. Next: subject site homepages (`kit/core/subsite-home.js`),
+pricing, Explore and Journey, then the study app and courses, one surface at a time. The same tokens become the
+Tailwind theme if Gradify moves to Next.js (`docs/NEXTJS-MIGRATION.md`).
+
 ## The rules
 
 1. **No unnecessary reloads.** Courses are single pages (hash routes); moving around keeps the outline, the header
