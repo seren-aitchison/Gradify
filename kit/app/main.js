@@ -111,40 +111,61 @@ async function stats() {
 
 // ---------- LifeOS sections ----------
 // One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
-// [route, label, short label for the phone tab bar, icon, group]. Grouped so the sidebar reads as a few short lists:
-// what you do every day first, then where your learning lives, then everything else; Settings sits on its own.
+// [route, label, short label for the phone tab bar, icon], in the order the sidebar and the More list show them:
+// what you do every day first, then where your learning lives, then everything else; Settings last.
 const NAV = [
-  ["today", "Today", "Today", "home", "daily"],
-  ["plan", "Smart Plan", "Plan", "calendar", "daily"],
-  ["study", "Study", "Study", "layers", "daily"],
-  ["notes", "Notes", "Notes", "upload", "daily"],
-  ["learning", "Learn", "Learn", "book", "learning"],
-  ["revise", "Revision Centre", "Revise", "checklist", "learning"],
-  ["knowledge", "My Knowledge", "Knowledge", "brain", "learning"],
-  ["progress", "Progress", "Progress", "trend", "learning"],
-  ["goals", "Path", "Path", "route", "learning"],
-  ["intel", "Intelligence", "Intel", "sparkles", "more"],
-  ["ai", "Gradify AI", "AI", "bulb", "more"],
-  ["earth", "Earth", "Earth", "globe", "more"],
-  ["tools", "Tools", "Tools", "forge", "more"],
-  ["community", "Community", "Community", "people", "more"],
-  ["account", "Settings", "Settings", "cog", "settings"],
+  ["today", "Today", "Today", "home"],
+  ["plan", "Smart Plan", "Plan", "calendar"],
+  ["study", "Study", "Study", "layers"],
+  ["notes", "Notes", "Notes", "upload"],
+  ["learning", "Learn", "Learn", "book"],
+  ["revise", "Revision Centre", "Revise", "checklist"],
+  ["knowledge", "My Knowledge", "Knowledge", "brain"],
+  ["progress", "Progress", "Progress", "trend"],
+  ["goals", "Path", "Path", "route"],
+  ["intel", "Intelligence", "Intel", "sparkles"],
+  ["ai", "Gradify AI", "AI", "bulb"],
+  ["earth", "Earth", "Earth", "globe"],
+  ["tools", "Tools", "Tools", "forge"],
+  ["community", "Community", "Community", "people"],
+  ["account", "Settings", "Settings", "cog"],
 ];
-const NAV_GROUPS = [["daily", ""], ["learning", "Your learning"], ["more", "More"], ["settings", ""]];
 // the phone tab bar has room for five: the rest are under More
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
 const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+// the sidebar starts short: the everyday sections, then More. A section joins the list once it has been opened
+// (remembered on this device), and the open section always shows. The phone's More sheet still lists everything.
+const CORE_NAV = ["today", "notes", "study", "plan", "learning", "account"];
+const USED_KEY = "gradify.nav.used";
+const usedNav = () => { try { return JSON.parse(localStorage.getItem(USED_KEY) || "[]"); } catch { return []; } };
+function noteNavUse(section) {
+  if (!section || CORE_NAV.includes(section) || !NAV.some(([r]) => r === section)) return;
+  const u = usedNav(); if (u.includes(section)) return;
+  try { localStorage.setItem(USED_KEY, JSON.stringify([...u, section])); } catch { /* private mode */ }
+  const side = document.querySelector(".lo-side"); if (side) { paintSide(side); markLocks(); }
+}
+function paintSide(side) {
+  const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
+  const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
+  const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
+  side.innerHTML = `<span class="lo-side-title">Gradify</span>${main.map(link).join("")}
+    ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
+    ${settings ? link(settings) : ""}`;
+  side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
+  const cur = location.hash.replace(/^#\/?/, "").split("/")[0] || "today", sec = cur in SECTION_OF ? SECTION_OF[cur] : cur;
+  side.querySelectorAll("a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === sec)));
+}
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
   if (!side) {
     side = document.createElement("nav");
-    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "LifeOS");
+    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "Gradify sections");
     document.querySelector("#view")?.before(side);
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
-  side.innerHTML = NAV_GROUPS.map(([g, title]) => `<div class="lo-group lo-group-${g}">${title ? `<span class="lo-side-title">${title}</span>` : ""}${NAV.filter((n) => n[4] === g).map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}</div>`).join("");
+  paintSide(side);
   // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
@@ -170,6 +191,8 @@ function markLocks() {
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
 // ---------- Router ----------
+// the screens someone new can use before set-up: bring notes, see the pack, study it
+const TRY_FIRST = ["new", "deck", "study"];
 const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
@@ -266,8 +289,12 @@ function decorate(root) {
 async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
   const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
-  if (needsSetup(profile) && !["start", "account"].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
+  // someone new can try Gradify first: add notes (or the sample), get a pack, study it. Set-up is offered after that.
+  // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes too
+  if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
+  if (needsSetup(profile) && !["start", "account", ...TRY_FIRST].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
+  noteNavUse(section);
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
   // a Pro prompt belongs to the screen that opened it: leaving the screen closes it
@@ -301,8 +328,21 @@ const prefsFields = (pr) => `<fieldset class="setup-prefs"><legend>Display</lege
 // appearance is a choice for this device (kit/core/theme-boot.js), so it's applied here rather than saved to the account
 const prefsFrom = (f) => { if (f.get("theme")) globalThis.gradifyTheme?.set(f.get("theme")); return { motion: f.get("motion") ? "reduce" : "auto", text: f.get("text") ? "large" : "normal" }; };
 // the subjects most learners pick, shown first in set-up; the rest are one tap (or a search) away
+// what learners call each site's subject: set-up asks about subjects, not site names
+const SUBJECT = {
+  UnderGradify: "Any university subject", PostGradify: "Postgraduate study and research", ProGradify: "Professional skills and CPD",
+  EduGradify: "Teaching", YouthGradify: "School and GCSEs (13 to 18)", JuniorGradify: "Primary school (5 to 12)",
+  LawGradify: "Law", BusinessGradify: "Business and management", FinanceGradify: "Finance and accounting", InvestorGradify: "Investing",
+  MedGradify: "Medicine", DentalGradify: "Dentistry", VetGradify: "Veterinary science", NurseGradify: "Nursing and midwifery",
+  PharmaGradify: "Pharmacy", HealthGradify: "Health and wellbeing", PsychGradify: "Psychology", InternshipGradify: "Internships and work experience",
+  EngineerGradify: "Engineering", MathGradify: "Maths", SciGradify: "Biology, chemistry and physics", EcoGradify: "Ecology and environment",
+  SocGradify: "Sociology", HistoryGradify: "History", LitGradify: "English and literature", LanguageGradify: "Languages",
+  ArtGradify: "Art and design", MusicGradify: "Music", SportGradify: "Sport and exercise science", CreateGradify: "Design and creativity",
+  "TechGradify · ForgeLab": "Coding, data science and AI",
+};
+const subjectOf = (n) => SUBJECT[n] || String(n || "").replace(" · ForgeLab", "");
 const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
-const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(s.n.replace(" · ForgeLab", ""))}</b><em>${esc(s.d.split(/[:.]/)[0])}</em></span></button>`;
+const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((subjectOf(s.n) + " " + s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(subjectOf(s.n))}</b><em>${esc(s.who || s.d.split(/[:.]/)[0])}<small>on ${esc(s.n.replace(" · ForgeLab", ""))}</small></em></span></button>`;
 
 // ---------- Save your work: the sign-up ask, shown once a learner has something worth keeping ----------
 function savePanel(title, line) {
@@ -421,7 +461,7 @@ async function renderStart(stepArg) {
     const picked = p.site || "";
     const groups = GROUPS.filter((g) => g.id !== "tech").concat(GROUPS.filter((g) => g.id === "tech"));
     view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
-      <h1>What are you studying?</h1><p class="sub">Pick the Gradify site that fits. Your notes, cards and progress will be tagged with it.</p>
+      <h1>What are you studying?</h1><p class="sub">Pick your subject. Your notes, cards, courses and progress are organised around it.</p>
       <label class="search-field"><span class="sr-only">Search subjects</span><input id="site-q" type="search" placeholder="Search, e.g. medicine, law, maths" autocomplete="off"></label>
       <h3 class="setup-group">Most popular</h3><div class="site-grid">${POPULAR.map((n) => SITES.find((s) => s.n === n)).filter(Boolean).map(pickBtn).join("")}</div>
       <p class="setup-more"><button type="button" class="btn btn-ghost btn-sm" id="all-subjects" aria-expanded="false" aria-controls="more-subjects"><span>Show all subjects</span></button></p>
@@ -452,7 +492,7 @@ async function renderStart(stepArg) {
       <label><span>How long can you study on a normal day?</span>
         <select name="daily_minutes">${[10, 20, 30, 45, 60, 90].map((m) => `<option value="${m}" ${Number(p.daily_minutes || 20) === m ? "selected" : ""}>${m} minutes</option>`).join("")}</select></label>
       <label><span>Level</span><select name="level">${[["school", "School"], ["undergraduate", "University"], ["postgraduate", "Postgraduate"], ["professional", "Professional"]].map(([v, l]) => `<option value="${v}" ${p.level === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
-      <label><span>How much do you already know? <em class="hint">${esc(siteOf(site).n)}: ${esc((siteOf(site).d || "").split(/[:.]/)[0].toLowerCase())}</em></span><select name="prior">${PRIOR.map(([v, l]) => `<option value="${v}" ${(learnerOf(p).prior[site] || "new") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+      <label><span>How much do you already know? <em class="hint">${esc(subjectOf(site))}</em></span><select name="prior">${PRIOR.map(([v, l]) => `<option value="${v}" ${(learnerOf(p).prior[site] || "new") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
       <label><span>Your first name (optional)</span><input name="display_name" autocomplete="given-name" value="${esc(p.display_name || "")}"></label>
       ${prefsFields(learnerOf(p).prefs)}
       <button class="btn btn-primary lg" type="submit"><span>Next: add your notes</span></button>
@@ -475,9 +515,10 @@ async function renderNew(arg) {
   const user = store.mode === "cloud" && (await store.user());
   const ai = user && (await myAllowance(store).catch(() => [])).some((u) => u.feature === "pack" && u.enabled);
   view.innerHTML = `<section class="new">
-    <span class="kicker">${esc(s.n)}</span>
+    ${needsSetup(profile) ? "" : `<span class="kicker">${esc(s.n)}</span>`}
     <h1>Bring your notes</h1>
     <p class="sub">Upload a PDF of your notes or paste them. Gradify turns them into flashcards checked against what you wrote, in about a minute.</p>
+    ${needsSetup(profile) ? `<p class="try-sample"><button type="button" class="btn btn-ghost lg" data-sample-top><span>${icon("sparkles")} No notes to hand? Try it with sample notes</span></button></p>` : ""}
     <div class="engine-note ${ai ? "ai" : ""}">${ai ? `${icon("sparkles")}<span><b>Gradify AI</b> (Claude) will read your notes. Every flashcard is checked against them.</span>` : `${icon("lock")}<span><b>Working on this device.</b> The quick extractor runs in your browser. It works best on notes written in full sentences or as “term: definition” lines. ${user ? "Gradify AI, for messy notes and scans, isn't switched on yet." : cloudConfigured() ? '<a href="#/account">Sign in</a> to keep your packs on every device.' : ""}</span>`}</div>
     <form id="upload" class="upload panel glass">
       <label class="dropzone" id="drop"><input type="file" id="file" accept=".pdf,.txt,.md,application/pdf,text/plain"><span class="dz-ico">${icon("upload")}</span><span><b>Drop a PDF here or choose a file</b><em>PDF, .txt or .md · one lecture or topic works best</em></span></label>
@@ -514,6 +555,8 @@ async function renderNew(arg) {
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); take(e.dataTransfer.files[0]); });
   $("#sample").addEventListener("click", () => { $("#text").value = SAMPLE; $("#title").value = "Cardiac cycle"; status.textContent = "Sample notes added. Press “Make my study pack”."; });
   if (arg === "sample") $("#sample").click();
+  // the sample, from the top of the page: fill it in and make the pack straight away
+  view.querySelector("[data-sample-top]")?.addEventListener("click", () => { $("#sample").click(); $("#upload").requestSubmit(); });
   // a quick note sent here to become flashcards (kit/notes/jot.js)
   { const d = takePackDraft(); if (d) { $("#text").value = d.text; $("#title").value = d.title; status.textContent = "Your note is ready. Press “Make my study pack”."; } }
   $("#upload").addEventListener("submit", async (e) => {
@@ -570,7 +613,7 @@ async function renderDeck(id) {
   view.innerHTML = `<section class="deck">
     <a class="back" href="#/library">← Your library</a>
     <div class="deck-head">
-      <div><span class="kicker">${esc(doc.site || profile.site)} · ${fmtDate(doc.created_at)}</span><h1>${esc(doc.title)}</h1>
+      <div><span class="kicker">${[doc.site || profile.site, fmtDate(doc.created_at)].filter(Boolean).map(esc).join(" · ")}</span><h1>${esc(doc.title)}</h1>
         <span class="engine-badge ${pack?.engine === "claude" ? "ai" : ""}">${pack?.engine === "claude" ? `${icon("sparkles")}Made by Gradify AI` : `${icon("lock")}Made on this device`}</span></div>
       <a class="btn btn-primary lg" href="#/study/${id}"><span>${due.length ? `Revise ${due.length} ${due.length === 1 ? "card" : "cards"}` : "Practise anyway"}</span></a>
     </div>
@@ -580,6 +623,7 @@ async function renderDeck(id) {
       <div class="${flagged.length ? "warn" : ""}"><b>${flagged.length}</b><span>to check</span></div>
       <div><b>${cards.filter(isLearned).length}</b><span>learned</span></div>
     </div>
+    ${needsSetup(profile) ? `<aside class="setup-nudge panel glass" role="note"><span class="sn-ico">${icon("calendar")}</span><div><b>Want Gradify to plan your revision?</b><span>Tell it your goal and exam date, and it schedules these cards and your next ones around it. About a minute.</span></div><a class="btn btn-primary lg btn-sm" href="#/start"><span>Plan my revision</span></a></aside>` : ""}
     ${store.mode !== "cloud" && cloudConfigured() ? savePanel(`Save these ${cards.length} cards to your free account`, "Keep this pack on every device, and let Gradify plan your revision around your exam.") : ""}
     ${store.mode === "cloud" ? sharePanel() : ""}
     ${(pack?.pack?.unclear || []).length ? `<div class="unclear panel glass"><b>${icon("bell")}Gradify AI noticed</b><ul>${pack.pack.unclear.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></div>` : ""}

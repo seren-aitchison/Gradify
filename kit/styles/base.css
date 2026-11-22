@@ -461,3 +461,12 @@ header.bar.glass, header.sub-nav.glass {
 .access-name { font: 600 13.5px var(--sans); }
 @media (max-width: 760px) { .access-btn.access-named { width: 36px !important; padding: 0; justify-content: center; } .access-name { display: none; } }
 @media (prefers-reduced-transparency: reduce) { .glass { background: linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box, var(--gg-rim) border-box; -webkit-backdrop-filter: none; backdrop-filter: none; } }
+
+/* Phones: every control a finger can hit is at least 44px tall (WCAG 2.5.5 / Apple HIG). Dense data grids (the
+   periodic table, the course progress dots) keep their size: they're maps to look at, with lists alongside. */
+@media (max-width: 760px) {
+  .gx-ex-site header a, .gx-ex-crumbs a, .co-link.co-pathlink, .co-more { display: inline-flex; align-items: center; min-height: 44px; }
+  .gx-searchbtn, .icon-btn { min-height: 44px; min-width: 44px; }
+  .gj select, .gj-sub select, .lab-seg button, .lab-chips button, .lab-try { min-height: 44px; }
+  .lab-try { display: inline-flex; align-items: center; padding: 0 14px; }
+}

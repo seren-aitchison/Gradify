@@ -22,7 +22,8 @@ import { cell } from "../kit/labs/chemistry/electrochem.js";
 import { isotopes } from "../kit/labs/chemistry/spectra.js";
 import { fractionAbove, halfLife } from "../kit/labs/chemistry/kinetics.js";
 import { R as radial } from "../kit/labs/chemistry/orbitals.js";
-import { ezAnswer } from "../kit/labs/chemistry/stereo.js";
+import { ezAnswer, EZ as EZ_CASES } from "../kit/labs/chemistry/stereo.js";
+import { parseSmiles } from "../kit/labs/chemistry/mol.js";
 import { check as lewisCheck, MOLS as LEWIS } from "../kit/labs/chemistry/lewis.js";
 
 const near = (a, b, tol, msg) => assert.ok(Math.abs(a - b) <= tol, `${msg}: ${a} vs ${b}`);
@@ -82,6 +83,49 @@ test("chemistry: SMILES, formulae, geometry and stereodescriptors", () => {
   const e = (smi) => { const m = molecule(smi); const b = m.bonds.find((x) => x.order === 2); return ez(m, b.a, b.b); };
   assert.equal(e("C/C=C/C"), "E"); assert.equal(e("C/C=C\\C"), "Z");
   assert.equal(ezAnswer(["C(=O)O", "CC", "Br", "F"]), "Z");
+});
+
+test("chemistry: the 3D embedding keeps the cis/trans geometry written with / and \\", () => {
+  // E/Z read off the embedded coordinates for the double bond between heavy atoms a and b, over several random starts
+  const ezAt = (smi, a, b) => [7, 1, 2, 3, 42, 2024].map((seed) => ez(molecule(smi, { seed }), a, b));
+  const all = (smi, a, b, want, msg) => assert.deepEqual(ezAt(smi, a, b), Array(6).fill(want), `${msg} (${smi})`);
+  all("OC(=O)/C=C\\C(=O)O", 3, 4, "Z", "maleic acid"); all("OC(=O)/C=C/C(=O)O", 3, 4, "E", "fumaric acid");
+  all("CC/C=C(\\C)Cl", 2, 3, "E", "ethyl cis to methyl, so trans to Cl"); all("CC/C=C(/C)Cl", 2, 3, "Z", "ethyl trans to methyl");
+  all("C/C=C/C", 1, 2, "E", "trans-but-2-ene"); all("C/C=C\\C", 1, 2, "Z", "cis-but-2-ene");
+  all("F/C=C/F", 1, 2, "E", "trans-1,2-difluoroethene"); all("Cl/C(Br)=C(/I)C", 1, 3, "Z", "tetrasubstituted: Cl trans to I puts Br cis to I");
+  all("I/C=C\\I", 1, 2, "Z", "large cis substituents"); all("I/C=C/I", 1, 2, "E", "large trans substituents");
+  // the read-out follows the signed geometry even when cis atoms sit further apart than a distance cut-off would allow
+  const m = molecule("I/C=C\\I"); m.pos = [[-2, 2, 0], [-0.67, 0, 0], [0.67, 0, 0], [2, 2, 0], ...m.pos.slice(4)];
+  assert.equal(ez(m, 1, 2), "Z", "planar cis with the iodines 4.0 Å apart");
+  // the E/Z exercise: up-left and up-right on the same side, written C(/ul)(dl)=C(/ur)dr (each fragment attached
+  // by its first atom, as ezAnswer builds it), must give ezAnswer's descriptor
+  const heavy = (f) => parseSmiles(f).atoms.length;
+  for (const [[ul, dl, ur, dr], label] of EZ_CASES) {
+    all(`C(/${ul})(${dl})=C(/${ur})${dr}`, 0, 1 + heavy(ul) + heavy(dl), ezAnswer([ul, dl, ur, dr]), `E/Z exercise: ${label.join(", ")}`);
+  }
+});
+
+test("chemistry: the 3D embedding doesn't leave substituents folded in or bonds crushed", () => {
+  // each of these seeds gave a distorted structure before: an H or halogen folded into the angle of the other two
+  // bonds (benzene at the default seed), or a squeezed C=C with splayed halogens (the crowded alkenes, caffeine)
+  const cases = [["c1ccccc1", 7], ["c1ccccc1", 6], ["BrC(Br)=C(Br)Br", 3], ["I/C(Br)=C(/Br)I", 2], ["I/C(Br)=C(\\Br)I", 23], ["IC(I)=C(I)I", 2], ["Cn1cnc2c1c(=O)n(C)c(=O)n2C", 7], ["CC(=O)Oc1ccccc1C(=O)O", 12]];
+  for (const [smi, seed] of cases) {
+    const m = molecule(smi, { seed }), P = m.pos, d = (a, b) => Math.hypot(...P[a].map((v, k) => v - P[b][k]));
+    for (const b of m.bonds) assert.ok(d(b.a, b.b) > 0.85 && d(b.a, b.b) < 2.4, `${smi} seed ${seed}: bond ${b.a}-${b.b} is ${d(b.a, b.b).toFixed(2)} Å`);
+    m.atoms.forEach((a, i) => {
+      if (a.nb.length !== 3 || !m.bonds.some((b) => (b.a === i || b.b === i) && (b.order === 2 || b.order === 1.5))) return;
+      const [x, y, z] = a.nb, ang = (p, q) => { const u = P[p].map((v, k) => v - P[i][k]), w = P[q].map((v, k) => v - P[i][k]); return (Math.acos((u[0] * w[0] + u[1] * w[1] + u[2] * w[2]) / Math.hypot(...u) / Math.hypot(...w)) * 180) / Math.PI; };
+      for (const A of [ang(x, y), ang(x, z), ang(y, z)]) assert.ok(A > 95 && A < 145, `${smi} seed ${seed}: an angle at atom ${i} is ${A.toFixed(0)}°`);
+    });
+  }
+});
+
+test("chemistry: the 3D embedding is reproducible for a given seed, through its repairs and retries", () => {
+  // each case goes through a different path: caffeine at seed 7 and the tetrabromo alkene at seed 3 start strained
+  // and are retried, benzene at seed 7 has an H unfolded, and maleic acid at seed 7 has its cis geometry flipped
+  for (const [smi, seed] of [["Cn1cnc2c1c(=O)n(C)c(=O)n2C", 7], ["BrC(Br)=C(Br)Br", 3], ["c1ccccc1", 7], ["OC(=O)/C=C\\C(=O)O", 7]]) {
+    assert.deepStrictEqual(molecule(smi, { seed }).pos, molecule(smi, { seed }).pos, `${smi} seed ${seed}`);
+  }
 });
 
 test("chemistry: Lewis checker", () => {

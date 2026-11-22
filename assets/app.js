@@ -264,7 +264,26 @@ const liveOnly = $("#live-only");
 if (ALL.every(isLive)) liveOnly.closest(".switch").style.display = "none";
 let active = "all";
 
+// The directory starts folded to its first row, so the homepage stays about notes in, flashcards out. It opens in
+// full for anyone who came for it: the Sites link (#find), a search, a filter, or "Show all".
+const find = $("#find"), dirTotal = document.querySelectorAll("#groups .card").length;
+find.insertAdjacentHTML("beforeend", `<div class="dir-more"><button type="button" class="btn btn-ghost lg" id="dir-all"><span>Show all ${dirTotal} sites</span></button><a class="text-link" href="/explore.html">Explore all 34 courses →</a></div>`);
+const unfold = () => { if (!find.classList.contains("folded")) return; find.classList.remove("folded"); $("#dir-all").parentElement.hidden = true; };
+if (location.hash !== "#find") find.classList.add("folded"); else $("#dir-all").parentElement.hidden = true;
+addEventListener("hashchange", () => { if (location.hash === "#find") unfold(); });
+$("#dir-all").addEventListener("click", () => { unfold(); ($("#groups .group:nth-child(2) a.card") || $("#groups a.card"))?.focus({ preventScroll: true }); });
+document.querySelectorAll('a[href="/#find"], a[href="#find"]').forEach((a) => a.addEventListener("click", unfold));
+
+// on phones, the feature cloud and the plan comparison start folded too: "Show every feature" or a filter opens the
+// cloud; "Compare … in full" opens the table (assets/styles.css .fold-more)
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-unfold]");
+  const el = b ? document.querySelector(b.dataset.unfold) : e.target.closest("#bubble-filter") ? $("#features") : null;
+  if (el) el.classList.add("open");
+});
+
 function apply() {
+  unfold();
   const term = q.value.trim().toLowerCase();
   let any = false;
   for (const sec of document.querySelectorAll(".group")) {

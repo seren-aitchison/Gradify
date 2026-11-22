@@ -416,7 +416,7 @@ export function mountCourse(root, cfg) {
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${PRIMARY.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "revise" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
-      <button type="button" class="cx-morebtn" aria-haspopup="true" aria-expanded="false">More ${ic("more")}</button>
+      <button type="button" class="cx-morebtn" aria-haspopup="true" aria-expanded="false" aria-label="More"><span class="cx-moret">More</span> ${ic("more")}</button>
       <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><kbd class="cx-kbd" title="Open the search from anywhere">${isMac ? "⌘K" : "/"}</kbd></label></nav>
     <div class="co-body"><aside class="cx-tree" aria-label="Course outline" hidden></aside><main class="co-main"></main><aside class="co-side"></aside></div>
     <div class="cx-scrim" hidden></div>
@@ -692,7 +692,7 @@ export function mountCourse(root, cfg) {
     const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
     dock.innerHTML = view === "lesson" && l
       ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-ai-open>${ic("ai")}<span>Ask AI</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
-      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-pal-open>${ic("search")}<span>Search</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
+      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-ai-open>${ic("ai")}<span>Ask AI</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
     if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
   }
   root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
@@ -1048,7 +1048,8 @@ export function mountCourse(root, cfg) {
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
     const ws = weekStart(), today = day();
     const week7 = Array.from({ length: 7 }, (_, i) => { const t = ws + i * DAY, d = day(t), v = byDay[d] || 0; return { t, d, v, p: Math.min(1, v / Math.max(1, S.goal)), future: d > today, today: d === today }; });
-    const weekHtml = `<nav class="cx-week" aria-label="This week">${week7.map((w) => { const dt = new Date(w.t), wd = dt.toLocaleDateString(undefined, { weekday: "short" });
+    // only once there's something to show: a brand-new learner would see a row of empty "0 XP" days
+    const weekHtml = !(S.log || []).length ? "" : `<nav class="cx-week" aria-label="This week">${week7.map((w) => { const dt = new Date(w.t), wd = dt.toLocaleDateString(undefined, { weekday: "short" });
       return `<a class="cx-wday${w.today ? " today" : ""}${w.future ? " future" : ""}${w.p >= 1 ? " met" : ""}" href="#/me" style="--p:${w.p}" aria-label="${dt.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" })}: ${w.v} XP${w.p >= 1 ? ", daily goal reached" : ""}"><small>${w.today ? "Today" : esc(wd)}</small><b>${dt.getDate()}</b><em>${w.future ? "" : `${w.v} XP`}</em>${w.p >= 1 ? `<i class="cx-wok" aria-hidden="true">${ic("check")}</i>` : ""}</a>`; }).join("")}</nav>`;
     // what's next, as a row of cards you can flick through (cover-flow): the one in the middle stands forward
     const flowList = nl ? [nl, ...lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 9)] : [];
@@ -1490,7 +1491,6 @@ export function mountCourse(root, cfg) {
         <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
-        ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
@@ -1507,6 +1507,7 @@ export function mountCourse(root, cfg) {
         ${N ? `<details class="co-deeper cx-acc" id="co-deeper"><summary>${ic("sparkles")} Go deeper: ask the AI tutor, mind maps<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody"><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</div></details>` : ""}
         ${resourceSwitcher({ kicker: `${U} ${u.n} · ${u.title} · ${l.title}`, items: res, id: "co-next" })}
         ${N && F.refs ? `<details class="co-refsec cx-acc" id="co-refs"><summary>${ic("book")} Sources and further reading<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody">${F.refs}</div></details>` : ""}
+        ${N && isDraft(u) ? `<p class="co-draft" role="note">This ${u1}'s content is still going through expert review, which is rolling out course by course. Check anything important against your course materials.</p>` : ""}
         <footer class="co-finish">
           <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">
