@@ -148,7 +148,7 @@ function paintSide(side) {
   const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
   const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
   const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
-  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${main.map(link).join("")}
+  side.innerHTML = `<span class="lo-side-title">Gradify</span>${main.map(link).join("")}
     ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
     ${settings ? link(settings) : ""}`;
   side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
@@ -160,7 +160,7 @@ function drawNav() {
   let side = document.querySelector(".lo-side");
   if (!side) {
     side = document.createElement("nav");
-    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "LifeOS");
+    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "Gradify sections");
     document.querySelector("#view")?.before(side);
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
@@ -290,6 +290,8 @@ async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
   const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   // someone new can try Gradify first: add notes (or the sample), get a pack, study it. Set-up is offered after that.
+  // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes too
+  if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
   if (needsSetup(profile) && !["start", "account", ...TRY_FIRST].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   noteNavUse(section);
