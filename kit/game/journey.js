@@ -60,6 +60,16 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
   const graphs = Object.fromEntries(courses.filter((c) => c.cfg.concepts).map((c) => [c.slug, conceptGraph(c.units, c.cfg.concepts)]));
   let challenge = null, challengeState = null;
   const href = (slug, lesson) => `${COURSES[slug]}#/lesson/${lesson}`;
+  // where to do a quest: the course used most recently (its own screen for the quest), the weak lesson itself for a
+  // weak-topic quest, and Explore for someone who hasn't started a course yet
+  const recent = () => [...courses].filter((c) => COURSES[c.slug]).sort((a, b) => Math.max(0, ...(b.S?.log || []).map((e) => e.t || 0)) - Math.max(0, ...(a.S?.log || []).map((e) => e.t || 0)))[0];
+  function questLink(q) {
+    if (q.lesson?.lesson && COURSES[q.lesson.course]) return [href(q.lesson.course, q.lesson.lesson), "Revise it"];
+    const c = recent(); if (!c) return ["/explore.html", "Pick a course"];
+    const base = COURSES[c.slug], studied = Object.keys(c.S?.done || {}).length > 0;
+    return ({ questions: [studied ? `${base}#/target/m10_fmixed_sstudied` : `${base}#/home`, "Answer questions"], review: [`${base}#/review`, "Review cards"],
+      lab: [`${base}#/practice`, "Open a lab"], mock: [`${base}#/exams`, "Take a mock"], lessons: [`${base}#/home`, "Continue"], goal: [`${base}#/home`, "Continue"] })[q.id] || [`${base}#/home`, "Continue"];
+  }
   const state = () => gameState(courses, game, { now: Date.now(), extra });
 
   // pay a finished reward once, then celebrate it
@@ -134,8 +144,8 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
   function questsHtml(title, list) {
     if (!list.length) return "";
     return `<section class="gj-card"><h2>${title}</h2><ul class="gj-quests">${list.map((q) => `<li class="${q.paid ? "paid" : q.done ? "ready" : ""}">
-      <div><b>${esc(q.title)}</b><span class="gj-sub">${esc(q.why || "")}</span><div class="gj-bar" role="img" aria-label="${q.n} of ${q.of}"><i style="width:${(100 * q.n) / q.of}%"></i></div></div>
-      ${q.paid ? `<span class="gj-xp done">${ic("check")} +${q.xp}</span>` : q.done ? `<button class="gj-claim" data-claim="${esc(q.key)}">Claim +${q.xp} XP</button>` : `<span class="gj-xp">${q.n} / ${q.of} · +${q.xp} XP</span>`}</li>`).join("")}</ul></section>`;
+      <div><b>${q.done ? esc(q.title) : `<a class="gj-qlink" href="${esc(questLink(q)[0])}">${esc(q.title)}</a>`}</b><span class="gj-sub">${esc(q.why || "")}</span><div class="gj-bar" role="img" aria-label="${q.n} of ${q.of}"><i style="width:${(100 * q.n) / q.of}%"></i></div></div>
+      ${q.paid ? `<span class="gj-xp done">${ic("check")} +${q.xp}</span>` : q.done ? `<button class="gj-claim" data-claim="${esc(q.key)}">Claim +${q.xp} XP</button>` : `<span class="gj-qgo"><span class="gj-xp">${q.n} / ${q.of} · +${q.xp} XP</span><a class="gj-go" href="${esc(questLink(q)[0])}" tabindex="-1" aria-hidden="true">${esc(questLink(q)[1])} →</a></span>`}</li>`).join("")}</ul></section>`;
   }
   const badge = (a) => `<span class="gj-badge ${a.tier} ${a.done ? "on" : ""}">${ic(a.icon)}</span>`;
   function groups(A) {
