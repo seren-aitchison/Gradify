@@ -85,7 +85,7 @@ for (const c of LATE) {
   if (sent.length) problems.push(`sent ${sent.length} request(s) before pro.js loaded`);
   if (c.mode === "fail" && !/didn't work/.test(await msgOf())) problems.push(`no failure message ("${await msgOf()}")`);
   if (c.mode === "hold") release(); else { failing = false; await p.click(`${form} button`); }
-  await p.waitForFunction((s) => document.querySelector(s).hidden, `${form} .notify-row`, { timeout: 5000 }).catch(() => {});
+  await p.waitForFunction((s) => document.querySelector(s).hidden, `${form} .notify-row`, { timeout: 5000 }).catch(() => problems.push("form row still shown after submission"));
   if (sent.length !== 1) problems.push(`sent ${sent.length} request(s), expected 1`);
   if (!/when Gradify Pro opens/.test(await msgOf())) problems.push(`message "${await msgOf()}"`);
   if (navigations) problems.push("the page reloaded");
