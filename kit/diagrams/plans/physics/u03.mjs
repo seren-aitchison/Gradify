@@ -1,3 +1,37 @@
-// Physics unit 03 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u03-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 03, Measurement, Experimental Physics and Uncertainty. Specs are written by scripts/diagrams/physics/u03.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const METHOD = "a calculation method or set of rules, taught by worked examples rather than a picture";
+const PRACT = "good practice described in words; a picture would only decorate it";
+export default [
+  ["u03-01", "graph", "phys-u03-thermometer-calibration", "the two fixed points define a calibration line: a reading of 50.0 °C is a true 50.3 °C"],
+  ["u03-02", null, "needs renderer accuracy and precision: repeated readings as dots against a true value and spread (the graph stats check exists, but no dot-plot of readings is drawn)"],
+  ["u03-03", "graph", "phys-u03-zero-error-spring", "a zero error shifts the extension line by 3 mm and leaves the gradient unchanged"],
+  ["u03-04", null, METHOD],
+  ["u03-05", null, METHOD],
+  ["u03-06", null, "rules for rounding a result to its uncertainty; a worked example, not a picture"],
+  ["u03-07", null, METHOD],
+  ["u03-08", null, "needs renderer confidence intervals: a mean with error bars and the 95% interval 12.40 ± 0.14"],
+  ["u03-09", null, "a distinction between repeating in one lab and across labs; a concept, no numbers to draw"],
+  ["u03-10", null, PRACT],
+  ["u03-11", null, PRACT],
+  ["u03-12", null, PRACT],
+  ["u03-13", "graph", "phys-u03-thermistor-interpolation", "the thermistor calibration line, a reading of 2.20 kΩ interpolated to 23.0 °C"],
+  ["u03-14", null, "the worked example gives no data; plotting E against V² is described in the text"],
+  ["u03-15", null, "needs renderer least-squares fit through the origin: m = Σxy/Σx² = 2.04 for the three points (the fit renderer fits a free intercept)"],
+  ["u03-16", null, METHOD],
+  ["u03-17", null, "the example describes residuals qualitatively with no data; a U-shaped residual plot would need invented numbers"],
+  ["u03-18", "graph", "phys-u03-z-test-g", "z = 2.75 on the normal curve: the two tails hold p ≈ 0.006, so 9.70 ± 0.04 is inconsistent with 9.81"],
+  ["u03-19", null, "significance and the five-sigma convention are stated in words; the normal-curve picture is drawn in u03-18"],
+  ["u03-20", "graph", "phys-u03-thermocouple-response", "1 − e^{−t/τ} with τ = 0.5 s: 63% at τ, within 1% at 2.3 s"],
+  ["u03-21", null, METHOD],
+  ["u03-22", null, METHOD],
+  ["u03-23", null, METHOD],
+  ["u03-24", null, "a table of sensors and the strain-gauge formula; a one-line product"],
+  ["u03-25", "graph", "phys-u03-oscilloscope-trace", "the scope trace: 6 divisions at 0.5 V/div and 4 divisions at 2 ms/div give V₀ = 1.5 V, 125 Hz"],
+  ["u03-26", null, METHOD],
+  ["u03-27", null, METHOD],
+  ["u03-28", null, "descriptive: why low temperature helps and how it is reached"],
+  ["u03-29", null, "safety rules and a one-line energy calculation (½CV² = 8 J)"],
+  ["u03-30", null, PRACT],
+  ["u03-31", null, "the damped pendulum model is drawn in u06; this lesson is about the validation procedure"],
+];

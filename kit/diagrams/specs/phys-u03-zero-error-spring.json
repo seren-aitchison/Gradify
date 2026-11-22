@@ -1,0 +1,109 @@
+{
+ "id": "phys-u03-zero-error-spring",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Random and systematic errors",
+ "title": "A zero error shifts the line",
+ "caption": "Hooke's law predicts an extension through the origin (lower line). A line crossing the extension axis at 3 mm (upper line) points to a constant systematic offset, a zero error such as measuring the length from the wrong point. The two lines are parallel, so the gradient (the stiffness) is unaffected. The gradient used here, 2 mm per N, is only illustrative.",
+ "alt": "Two parallel straight lines of extension against load: one through the origin and one crossing the extension axis at 3 millimetres.",
+ "description": [
+  "Horizontal axis: the load in newtons; vertical axis: the measured extension in millimetres.",
+  "The expected line e = kF passes through the origin.",
+  "The measured line crosses the extension axis at 3 mm: every reading is 3 mm too large, a constant (systematic) offset.",
+  "The two lines have the same gradient, so a fit to the slope still gives the right stiffness, while the intercept reveals the error."
+ ],
+ "range": {
+  "x": [
+   0,
+   5.2
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "load / N",
+  "extension / mm"
+ ],
+ "curves": [
+  {
+   "expr": "2*x",
+   "colour": "a4",
+   "label": "expected: through origin",
+   "labelAt": [
+    2.6,
+    3.4
+   ]
+  },
+  {
+   "expr": "3+2*x",
+   "colour": "a2",
+   "label": "measured: 3 mm offset",
+   "labelAt": [
+    0.2,
+    9.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 3,
+   "label": "3 mm",
+   "dx": 10,
+   "dy": -8,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3+2*x",
+   "x": 0,
+   "y": 3,
+   "name": "the measured line crosses the extension axis at 3 mm"
+  },
+  {
+   "type": "slope",
+   "expr": "3+2*x",
+   "x": 2,
+   "value": 2,
+   "name": "the offset line has the same gradient as the true line"
+  },
+  {
+   "type": "slope",
+   "expr": "2*x",
+   "x": 2,
+   "value": 2,
+   "name": "the expected line has gradient 2 mm per N"
+  }
+ ]
+}

@@ -37508,5 +37508,299 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u03-oscilloscope-trace": {
+  "title": "Reading the oscilloscope trace",
+  "caption": "The trace spans 6 divisions at 0.5 V/div, so V_pp = 3 V and V₀ = 1.5 V (V_rms = 1.06 V). One cycle spans 4 divisions at 2 ms/div, so T = 8 ms and f = 125 Hz.",
+  "alt": "Sine trace of amplitude 1.5 volts and period 8 milliseconds on a grid of 0.5 volts and 2 milliseconds per division.",
+  "description": [
+   "Screen grid: one vertical division is 0.5 V and one horizontal division is 2 ms.",
+   "The trace goes 1.5 V above and below zero: 6 divisions peak to peak = 3 V, so V₀ = 1.5 V and V_rms = V₀/√2 = 1.06 V.",
+   "One full cycle covers 4 divisions: T = 4 × 2 = 8 ms, so f = 1/T = 125 Hz."
+  ],
+  "course": "physics",
+  "lesson": "Oscilloscopes and signal generators",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Oscilloscopes and signal generators"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the peak is 1.5 V (3.0 V peak to peak)",
+    "ok": true,
+    "detail": "found (2, 1.5)"
+   },
+   {
+    "name": "one cycle takes 8 ms (125 Hz)",
+    "ok": true,
+    "detail": "y(8) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-thermistor-interpolation": {
+  "title": "Reading a calibration line",
+  "caption": "Two calibration points, 2.5 kΩ at 20 °C and 2 kΩ at 25 °C, give a gradient of -0.1 kΩ per °C. A resistance of 2.2 kΩ lies between them, so T = 20 + (2.5 − 2.2)/0.1 = 23 °C. Interpolation is safe only inside the calibrated range.",
+  "alt": "Straight calibration line of thermistor resistance against temperature through (20, 2.50) and (25, 2.00), with a reading of 2.20 kilohms read across to 23.0 degrees.",
+  "description": [
+   "Horizontal axis: temperature in °C; vertical axis: thermistor resistance in kΩ.",
+   "The calibration line joins (20 °C, 2.5 kΩ) and (25 °C, 2 kΩ); its gradient is -0.1 kΩ per °C.",
+   "Reading across from R = 2.2 kΩ to the line and down to the axis gives 23 °C."
+  ],
+  "course": "physics",
+  "lesson": "Calibration curves",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Calibration curves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient is −0.10 kΩ per °C",
+    "ok": true,
+    "detail": "gradient -0.1000"
+   },
+   {
+    "name": "2.20 kΩ corresponds to 23.0 °C on the line",
+    "ok": true,
+    "detail": "y(23) = 2.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-thermocouple-response": {
+  "title": "A thermocouple catching up",
+  "caption": "After a sudden temperature step a thermocouple with τ = 0.5 s closes the gap as 1 − e^{−t/τ}. It is within 1% when e^{−t/τ} = 0.01, that is t = τ ln 100 = 4.6τ = 2.3 s. After one τ it has covered only 63%.",
+  "alt": "Curve of the fraction of the final reading against time, rising to 63 percent at 0.5 seconds and reaching 99 percent at 2.3 seconds.",
+  "description": [
+   "Horizontal axis: time since the step in seconds; vertical axis: the fraction of the new temperature that the thermocouple reads.",
+   "The curve is 1 − e^{−t/τ} with τ = 0.5 s: 63% at t = 0.5 s.",
+   "The reading is within 1% (0.99, dashed line) at t = τ ln 100 = 2.3 s ≈ 2.3 s."
+  ],
+  "course": "physics",
+  "lesson": "Instrument response and sensitivity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Instrument response and sensitivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "63% after one time constant",
+    "ok": true,
+    "detail": "y(0.5) = 0.6321"
+   },
+   {
+    "name": "within 1% at t = τ ln 100 = 2.3 s",
+    "ok": true,
+    "detail": "y(2.302585092994046) = 0.99"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-thermometer-calibration": {
+  "title": "Calibrating the thermometer",
+  "caption": "The thermometer reads 1.5 °C at the ice point and 98 °C at the steam point, so true temperatures are spread over 96.5 instead of 100 scale divisions: a scale factor of 100/(98 − 1.5) = 1.0363. A reading of 50 °C therefore means a true 50.3 °C.",
+  "alt": "Straight line of true temperature against thermometer reading through (1.5, 0) and (98.0, 100); a reading of 50.0 degrees corresponds to a true 50.3 degrees.",
+  "description": [
+   "Horizontal axis: what the thermometer reads; vertical axis: the true temperature, both in °C.",
+   "Two fixed points anchor the calibration line: reading 1.5 ↔ true 0 °C (melting ice) and reading 98 ↔ true 100 °C (boiling water).",
+   "The slope is 1.0363, so true T = (reading − 1.5) × 1.0363.",
+   "At a reading of 50 °C the line gives 50.3 °C, about 0.3 °C above the reading."
+  ],
+  "course": "physics",
+  "lesson": "Measurement instruments and calibration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Measurement instruments and calibration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a reading of 1.5 °C is 0 °C",
+    "ok": true,
+    "detail": "y(1.5) = 0"
+   },
+   {
+    "name": "a reading of 98.0 °C is 100 °C",
+    "ok": true,
+    "detail": "y(98) = 100"
+   },
+   {
+    "name": "a reading of 50.0 °C is 50.26 °C",
+    "ok": true,
+    "detail": "y(50) = 50.2591"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-z-test-g": {
+  "title": "Is 9.70 ± 0.04 consistent with 9.81?",
+  "caption": "The measured g is 2.75000000000003 standard uncertainties from 9.81 m s⁻²: z = (9.81 − 9.7)/0.04 = 2.75000000000003. If 9.81 were right, chance alone would put the result this far away (in either direction) only about 0.6% of the time (the shaded tails), so at the 5% level the result is inconsistent: look for a systematic error.",
+  "alt": "Standard normal curve with both tails beyond 2.75 standard deviations shaded; together they hold about 0.6 percent of the area.",
+  "description": [
+   "Horizontal axis: z, the distance from the expected value in units of the standard uncertainty; the curve is the standard normal distribution.",
+   "The measurement lies at z = (9.81 − 9.7)/0.04 = 2.75000000000003.",
+   "The two shaded tails, beyond z = ±2.75, together hold p ≈ 0.006 of the area (two-sided).",
+   "p is below 0.05, so the difference is statistically significant: the measurement and 9.81 are inconsistent."
+  ],
+  "course": "physics",
+  "lesson": "Hypothesis testing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Hypothesis testing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the upper tail beyond z = 2.75 is about 0.3%",
+    "ok": true,
+    "detail": "area 0.0030"
+   },
+   {
+    "name": "the lower tail beyond z = −2.75 is about 0.3% (p ≈ 0.006 in all)",
+    "ok": true,
+    "detail": "area 0.0030"
+   },
+   {
+    "name": "the distribution is normalised",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-zero-error-spring": {
+  "title": "A zero error shifts the line",
+  "caption": "Hooke's law predicts an extension through the origin (lower line). A line crossing the extension axis at 3 mm (upper line) points to a constant systematic offset, a zero error such as measuring the length from the wrong point. The two lines are parallel, so the gradient (the stiffness) is unaffected. The gradient used here, 2 mm per N, is only illustrative.",
+  "alt": "Two parallel straight lines of extension against load: one through the origin and one crossing the extension axis at 3 millimetres.",
+  "description": [
+   "Horizontal axis: the load in newtons; vertical axis: the measured extension in millimetres.",
+   "The expected line e = kF passes through the origin.",
+   "The measured line crosses the extension axis at 3 mm: every reading is 3 mm too large, a constant (systematic) offset.",
+   "The two lines have the same gradient, so a fit to the slope still gives the right stiffness, while the intercept reveals the error."
+  ],
+  "course": "physics",
+  "lesson": "Random and systematic errors",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Random and systematic errors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the measured line crosses the extension axis at 3 mm",
+    "ok": true,
+    "detail": "y(0) = 3"
+   },
+   {
+    "name": "the offset line has the same gradient as the true line",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the expected line has gradient 2 mm per N",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

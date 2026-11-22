@@ -1,0 +1,120 @@
+{
+ "id": "phys-u03-z-test-g",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Hypothesis testing",
+ "title": "Is 9.70 ± 0.04 consistent with 9.81?",
+ "caption": "The measured g is 2.75000000000003 standard uncertainties from 9.81 m s⁻²: z = (9.81 − 9.7)/0.04 = 2.75000000000003. If 9.81 were right, chance alone would put the result this far away (in either direction) only about 0.6% of the time (the shaded tails), so at the 5% level the result is inconsistent: look for a systematic error.",
+ "alt": "Standard normal curve with both tails beyond 2.75 standard deviations shaded; together they hold about 0.6 percent of the area.",
+ "description": [
+  "Horizontal axis: z, the distance from the expected value in units of the standard uncertainty; the curve is the standard normal distribution.",
+  "The measurement lies at z = (9.81 − 9.7)/0.04 = 2.75000000000003.",
+  "The two shaded tails, beyond z = ±2.75, together hold p ≈ 0.006 of the area (two-sided).",
+  "p is below 0.05, so the difference is statistically significant: the measurement and 9.81 are inconsistent."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   0.45
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "grid": [
+  1,
+  0.1
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "z (standard uncertainties from 9.81)",
+  "probability density"
+ ],
+ "areas": [
+  {
+   "expr": "exp(-x^2/2)/2.5066283",
+   "from": 2.75000000000003,
+   "to": 4,
+   "colour": "a2",
+   "opacity": 0.5
+  },
+  {
+   "expr": "exp(-x^2/2)/2.5066283",
+   "from": -4,
+   "to": -2.75000000000003,
+   "colour": "a2",
+   "opacity": 0.5
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x^2/2)/2.5066283",
+   "colour": "a1",
+   "label": "if 9.81 is true",
+   "labelAt": [
+    0.3,
+    0.38
+   ],
+   "anchor": "start"
+  }
+ ],
+ "marks": [
+  {
+   "x": 2.75000000000003,
+   "label": "z = 2.75",
+   "dx": 0,
+   "to": 0.12
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/2.5066283",
+   "from": 2.75000000000003,
+   "to": 8,
+   "value": 0.003,
+   "tol": 0.0004,
+   "name": "the upper tail beyond z = 2.75 is about 0.3%"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/2.5066283",
+   "from": -8,
+   "to": -2.75000000000003,
+   "value": 0.003,
+   "tol": 0.0004,
+   "name": "the lower tail beyond z = −2.75 is about 0.3% (p ≈ 0.006 in all)"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/2.5066283",
+   "from": -8,
+   "to": 8,
+   "value": 1,
+   "tol": 0.003,
+   "name": "the distribution is normalised"
+  }
+ ]
+}

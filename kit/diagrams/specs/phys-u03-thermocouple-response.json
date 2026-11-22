@@ -1,0 +1,105 @@
+{
+ "id": "phys-u03-thermocouple-response",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Instrument response and sensitivity",
+ "title": "A thermocouple catching up",
+ "caption": "After a sudden temperature step a thermocouple with τ = 0.5 s closes the gap as 1 − e^{−t/τ}. It is within 1% when e^{−t/τ} = 0.01, that is t = τ ln 100 = 4.6τ = 2.3 s. After one τ it has covered only 63%.",
+ "alt": "Curve of the fraction of the final reading against time, rising to 63 percent at 0.5 seconds and reaching 99 percent at 2.3 seconds.",
+ "description": [
+  "Horizontal axis: time since the step in seconds; vertical axis: the fraction of the new temperature that the thermocouple reads.",
+  "The curve is 1 − e^{−t/τ} with τ = 0.5 s: 63% at t = 0.5 s.",
+  "The reading is within 1% (0.99, dashed line) at t = τ ln 100 = 2.3 s ≈ 2.3 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.2
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.25
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "fraction of the final reading"
+ ],
+ "curves": [
+  {
+   "expr": "1-exp(-x/0.5)",
+   "colour": "a1",
+   "label": "1 − e^{−t/τ}",
+   "labelAt": [
+    1.3,
+    0.5
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.99,
+   "label": "within 1%",
+   "to": 2.302585092994046
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.6321205588285577,
+   "label": "63% at τ",
+   "dx": 10,
+   "dy": 16
+  },
+  {
+   "x": 2.302585092994046,
+   "y": 0.99,
+   "label": "t = 2.3 s",
+   "dx": 6,
+   "dy": 20,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-exp(-x/0.5)",
+   "x": 0.5,
+   "y": 0.6321205588285577,
+   "name": "63% after one time constant"
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-x/0.5)",
+   "x": 2.302585092994046,
+   "y": 0.99,
+   "name": "within 1% at t = τ ln 100 = 2.3 s"
+  }
+ ]
+}

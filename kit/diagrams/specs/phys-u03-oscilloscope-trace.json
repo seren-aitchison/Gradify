@@ -1,0 +1,107 @@
+{
+ "id": "phys-u03-oscilloscope-trace",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Oscilloscopes and signal generators",
+ "title": "Reading the oscilloscope trace",
+ "caption": "The trace spans 6 divisions at 0.5 V/div, so V_pp = 3 V and V₀ = 1.5 V (V_rms = 1.06 V). One cycle spans 4 divisions at 2 ms/div, so T = 8 ms and f = 125 Hz.",
+ "alt": "Sine trace of amplitude 1.5 volts and period 8 milliseconds on a grid of 0.5 volts and 2 milliseconds per division.",
+ "description": [
+  "Screen grid: one vertical division is 0.5 V and one horizontal division is 2 ms.",
+  "The trace goes 1.5 V above and below zero: 6 divisions peak to peak = 3 V, so V₀ = 1.5 V and V_rms = V₀/√2 = 1.06 V.",
+  "One full cycle covers 4 divisions: T = 4 × 2 = 8 ms, so f = 1/T = 125 Hz."
+ ],
+ "range": {
+  "x": [
+   0,
+   16
+  ],
+  "y": [
+   -2,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  [
+   -1.5,
+   -1,
+   -0.5,
+   0.5,
+   1,
+   1.5
+  ]
+ ],
+ "grid": [
+  2,
+  0.5
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / ms (2 ms per division)",
+  "voltage / V (0.5 V per division)"
+ ],
+ "curves": [
+  {
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "colour": "a1",
+   "label": "6 div p–p, 4 div per cycle",
+   "labelAt": [
+    8.4,
+    1.75
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 1.5,
+   "label": "V₀ = 1.5 V",
+   "dx": 10,
+   "dy": -4
+  },
+  {
+   "x": 8,
+   "y": 0,
+   "label": "T = 8 ms",
+   "dx": -6,
+   "dy": -14,
+   "anchor": "end",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "domain": [
+    0,
+    8
+   ],
+   "x": 2,
+   "y": 1.5,
+   "name": "the peak is 1.5 V (3.0 V peak to peak)"
+  },
+  {
+   "type": "point",
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "x": 8,
+   "y": 0,
+   "name": "one cycle takes 8 ms (125 Hz)"
+  }
+ ]
+}

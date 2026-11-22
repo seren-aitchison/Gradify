@@ -15,6 +15,7 @@ H: Calibration
 X: A thermometer reads 1.5 °C in melting ice and 98.0 °C in boiling water at 1 atm. What is the true temperature when it reads 50.0 °C?
 > Scale factor = 100/(98.0 − 1.5) = 1.0363
 > T = (50.0 − 1.5) × 1.0363 = 50.26 ≈ 50.3 °C
+D: phys-u03-thermometer-calibration
 !: A high-resolution digital display doesn't make an instrument accurate; an uncalibrated 6-digit meter can be wrong in the second digit.
 Q: What is traceability? | An unbroken chain of calibrations linking a measurement back to national standards and the SI.
 Q: What is a zero error? | A non-zero reading when the true value is zero; it offsets every reading.
@@ -76,6 +77,7 @@ X: A plot of extension against load for a spring gives a straight line that cros
 > Hooke's law predicts a line through the origin
 > A constant 3 mm offset is a systematic (zero) error, perhaps from measuring length from the wrong point
 > The gradient (stiffness) is unaffected
+D: phys-u03-zero-error-spring
 !: Taking more repeats only reduces random error. If your result disagrees with an accepted value by many standard errors, look for a systematic error.
 Q: How can a graph reveal a systematic error? | A straight line that should pass through the origin has a non-zero intercept.
 Q: Why doesn't averaging remove systematic error? | Every reading is shifted the same way, so the mean is shifted too.
@@ -380,6 +382,7 @@ X: A thermistor's calibration gives 2.50 kΩ at 20.0 °C and 2.00 kΩ at 25.0 °
 > Over this small range, interpolate linearly: the slope is −0.10 kΩ per °C
 > T = 20.0 + (2.50 − 2.20)/0.10 = 23.0 °C
 > Over wider ranges, fit the proper curve (ln R against 1/T is close to linear for a thermistor)
+D: phys-u03-thermistor-interpolation
 !: Extrapolating a calibration curve beyond the measured standards is risky: many sensors become non-linear outside their calibrated range.
 Q: What is a calibration curve? | A graph of instrument response against known standard values, used to convert readings to true values.
 Q: Why avoid extrapolating calibration curves? | The response may be non-linear outside the calibrated range.
@@ -533,6 +536,7 @@ H: Errors
 X: A measured g = 9.70 ± 0.04 m s^{-2}. Is it consistent with 9.81?
 > z = (9.81 − 9.70)/0.04 = 2.75
 > p ≈ 0.006 (two-sided): inconsistent at 5%; look for a systematic error
+D: phys-u03-z-test-g
 !: The p-value is not the probability that H_{0} is true. It's the probability of the data (or more extreme) given H_{0}.
 Q: What is a p-value? | The probability, if the null hypothesis is true, of getting data at least as extreme as observed.
 Q: What is a Type I error? | Rejecting a null hypothesis that is actually true (a false positive).
@@ -593,6 +597,7 @@ E: f_{−3dB} = 1/(2πτ) :: bandwidth of a first-order system
 X: A thermocouple has τ = 0.5 s. How long until it reads within 1% of a sudden new temperature?
 > e^{−t/τ} = 0.01 ⇒ t = τ ln 100 = 4.6τ
 > t ≈ 2.3 s
+D: phys-u03-thermocouple-response
 !: High sensitivity often comes with a smaller range and more noise; the most sensitive instrument isn't always the best choice.
 Q: What is the time constant of a first-order sensor? | The time to reach 63% of a step change.
 Q: What is hysteresis in an instrument? | Different outputs for the same input depending on whether the input is rising or falling.
@@ -749,6 +754,7 @@ H: Signal generators
 X: A sine wave spans 6 divisions peak to peak at 0.5 V/div, and one cycle spans 4 divisions at 2 ms/div.
 > V_{pp} = 3.0 V ⇒ V_{0} = 1.5 V, V_{rms} = 1.06 V
 > T = 8 ms ⇒ f = 125 Hz
+D: phys-u03-oscilloscope-trace
 !: A scope's bandwidth must be well above the signal frequency (rule of thumb 5×), or fast edges look rounded and amplitudes read low.
 Q: What does triggering do on an oscilloscope? | Starts each sweep at the same point on the waveform so the display is stable.
 Q: How do you measure phase difference on a scope? | Δφ = 360° × (time shift)/(period).
