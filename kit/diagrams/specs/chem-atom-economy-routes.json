@@ -11,6 +11,13 @@
   "C₂H₄ + H₂O → C₂H₅OH: 100%.",
   "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂: 2 × 46.07 ÷ 180.16 = 51.1%."
  ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u01",
+   "lesson": "Atom economy"
+  }
+ ],
  "layout": "grid",
  "rowHeight": 96,
  "boxWidth": 150,

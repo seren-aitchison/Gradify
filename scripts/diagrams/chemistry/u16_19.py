@@ -395,7 +395,7 @@ mk("u17-25", "chem-atom-economy-routes", "flow", "Comparing routes by atom econo
    nodes=[{"id": "a", "label": "ethene + steam", "col": 0, "row": 0}, {"id": "b", "label": "ethanol", "sub": "atom economy 100%", "col": 1, "row": 0, "tone": "a4"},
           {"id": "c", "label": "glucose (fermentation)", "col": 0, "row": 1}, {"id": "d", "label": "ethanol + CO₂", "sub": "atom economy 51.1%", "col": 1, "row": 1, "tone": "a3"}],
    edges=[{"from": "a", "to": "b", "label": "H₃PO₄, 300 °C"}, {"from": "c", "to": "d", "label": "yeast, 35 °C"}],
-   claims=[{"type": "atomEconomy", "eq": "C2H4 + H2O → C2H5OH", "product": "C2H5OH", "value": 100}, {"type": "atomEconomy", "eq": "C6H12O6 → 2C2H5OH + 2CO2", "product": "C2H5OH", "value": 51.1}])
+   claims=[{"type": "atomEconomy", "eq": "C2H4 + H2O → C2H5OH", "product": "C2H5OH", "value": 100}, {"type": "atomEconomy", "eq": "C6H12O6 → 2C2H5OH + 2CO2", "product": "C2H5OH", "value": 51.1}], also=["chemistry:u01-20"])
 
 mk("u17-26", "chem-circular", "flow", "A circular economy for materials",
    "Instead of take, make, use and throw away, materials are kept in use: products are designed to be repaired, reused and finally recycled into new feedstock, so less virgin raw material is needed and less waste is produced.",
@@ -510,11 +510,11 @@ mk("u19-19", "chem-multistep-yield", "flow", "Overall yield of a multi-step synt
    ["Step 1: 85%.", "Step 2: 70%.", "Step 3: 90%.", "Overall: 54%."],
    layout="line", nodes=[{"id": "a", "label": "A"}, {"id": "b", "label": "B"}, {"id": "c", "label": "C"}, {"id": "d", "label": "D", "sub": "overall 54%", "tone": "a4"}],
    edges=[{"from": "a", "to": "b", "label": "85%"}, {"from": "b", "to": "c", "label": "70%"}, {"from": "c", "to": "d", "label": "90%"}],
-   claims=[{"type": "yield", "steps": [0.85, 0.70, 0.90], "overall": 0.54}])
+   claims=[{"type": "yield", "steps": [0.85, 0.70, 0.90], "overall": 0.54}], also=["chemistry:u19-13"])
 
 mk("u19-20", "chem-green-synthesis", "trend", "Waste by industry: the E-factor",
    "The E-factor is the mass of waste per mass of product. Oil refining makes very little waste per tonne; fine chemicals and pharmaceuticals can make 50 to over 100 kg of waste per kg, mostly solvents, because they use many steps. Upper ends of Sheldon's typical ranges.",
    "Bar chart on a logarithmic scale of E-factor: oil refining 0.1, bulk chemicals 5, fine chemicals 50, pharmaceuticals 100.",
    ["Oil refining: up to 0.1.", "Bulk chemicals: up to 5.", "Fine chemicals: up to 50.", "Pharmaceuticals: 100 and above."],
    kind="bars", dataset="eFactor", log=True, range=[0.05, 200], ticks=[0.1, 1, 10, 100], yLabel="E-factor / kg waste per kg product (log scale)", colour="a3",
-   items=[{"key": k, "value": v} for k, v in [("oil refining", 0.1), ("bulk chemicals", 5), ("fine chemicals", 50), ("pharmaceuticals", 100)]], claims=[{"type": "increasing"}])
+   items=[{"key": k, "value": v} for k, v in [("oil refining", 0.1), ("bulk chemicals", 5), ("fine chemicals", 50), ("pharmaceuticals", 100)]], claims=[{"type": "increasing"}], also=["chemistry:u17-24"])

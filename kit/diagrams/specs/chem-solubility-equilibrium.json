@@ -11,6 +11,13 @@
   "Solid AgCl at the bottom, a lattice of Ag⁺ and Cl⁻.",
   "Only a few Ag⁺ and Cl⁻ ions dissolved in the water above, in equal numbers."
  ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u09",
+   "lesson": "Ksp"
+  }
+ ],
  "species": {
   "Ag+": {
    "atoms": [

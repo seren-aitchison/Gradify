@@ -13,6 +13,13 @@
   "Fine chemicals: up to 50.",
   "Pharmaceuticals: 100 and above."
  ],
+ "also": [
+  {
+   "course": "chemistry",
+   "unit": "u17",
+   "lesson": "Sustainable chemistry"
+  }
+ ],
  "kind": "bars",
  "dataset": "eFactor",
  "log": true,

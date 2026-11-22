@@ -512,6 +512,7 @@ H: Calculations
 - **Theoretical yield** = moles of product possible × molar mass.
 - **Percentage yield** = actual ÷ theoretical × 100.
 - Multi-step overall yield = product of step yields.
+D: chem-multistep-yield
 H: Why yields fall short
 - **Incomplete reaction** or equilibrium.
 - **Side reactions** forming by-products.
