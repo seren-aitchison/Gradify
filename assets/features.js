@@ -6,7 +6,7 @@ import { glassSymbol } from "../kit/core/glass-icons.js";
 const $ = (s, el = document) => el.querySelector(s);
 
 // where: web, app or both. href: where it works now (the app, a course), which "Open it" goes to.
-// try: a LifeOS view or element to open in the preview, for the ones the preview also shows.
+// try: a LifeOS view or element the preview also shows (the preview is hidden on the homepage for now).
 // c: the category's colour; c2: the second colour of its glass tile's gradient
 const CATS = {
   learn: { name: "Learn", c: "4641ff", c2: "8b3dff" },
@@ -65,23 +65,24 @@ export const FEATURES = [
 const WHERE = { web: "Website", app: "App", both: "Website and app" };
 
 // each feature's own line symbol, set in the same 3D glass icon as the lessons and site headings (kit/core/glass-icons.js)
-const GLASS_SIZE = { 1: 52, 2: 66, 3: 84 };
 const glass = (f, size) => glassSymbol(ICONS[f.i], { size, seed: f.n, colours: [`#${CATS[f.cat].c}`, `#${CATS[f.cat].c2}`] });
 
-function renderBubbles(filter) {
+// one uniform tile per feature: its glass icon and its name. Every feature is live, so no "live" marker on each.
+function renderBubbles(filter, selected) {
   const list = FEATURES.filter((f) => filter === "all" || f.cat === filter);
-  $("#bubbles").innerHTML = list.map((f) => `<button type="button" class="bubble s${f.size}" data-n="${f.n}" style="--c:#${CATS[f.cat].c}">
-      <span class="b-ico">${glass(f, GLASS_SIZE[f.size])}${f.live ? '<i class="b-live" title="Live: try it now"></i>' : ""}</span><span class="b-name">${f.n}</span></button>`).join("");
+  $("#bubbles").innerHTML = list.map((f) => `<button type="button" class="bubble${f.n === selected ? " sel" : ""}" data-n="${f.n}" aria-pressed="${f.n === selected}" style="--c:#${CATS[f.cat].c}">
+      <span class="b-ico">${glass(f, 40)}</span><span class="b-name">${f.n}</span></button>`).join("");
+  return list;
 }
 // features that come with a paid plan (pricing.html); everything else is in Free
 const PLAN_LABEL = { plus: "Gradify Pro", pro: "Gradify Ultra" };
 function showDetail(f) {
   $("#bubble-detail").innerHTML = `
-    <span class="b-ico big">${glass(f, 72)}</span>
+    <span class="b-ico big">${glass(f, 56)}</span>
     <span class="kicker">${CATS[f.cat].name} · ${WHERE[f.where]}${f.plan ? ` · <a href="pricing.html">${PLAN_LABEL[f.plan]}</a>` : ""}</span>
     <h3>${f.n}</h3>
     <p>${f.d}</p>
-    <div class="row-actions">${f.href ? `<a class="btn btn-light lg btn-sm" href="${f.href}"><span>Open it</span></a>` : ""}${f.try ? `<a class="btn btn-ghost lg btn-sm" href="#${f.try}"><span>See it in the LifeOS preview</span></a>` : ""}${!f.href && !f.try ? `<span class="pill-dark">Coming soon</span>` : ""}</div>`;
+    <div class="row-actions">${f.href ? `<a class="btn btn-light lg btn-sm" href="${f.href}"><span>Open ${f.n}</span> <span aria-hidden="true">→</span></a>` : `<span class="pill-dark">Coming soon</span>`}</div>`;
 }
 
 // ---------- The Gradify road ----------
@@ -203,25 +204,30 @@ function initRoad() {
 }
 
 export function initFeatures() {
-  let filter = "all";
-  $("#bubble-filter").innerHTML = [`<button type="button" class="chip" data-cat="all" aria-pressed="true">All ${FEATURES.length}</button>`,
-    ...Object.entries(CATS).map(([k, v]) => `<button type="button" class="chip" data-cat="${k}" aria-pressed="false">${v.name}</button>`)].join("");
+  // open on one category, so the first look is a handful of tools rather than all of them at once
+  let filter = "create", selected = "Notes Studio";
+  $("#bubble-filter").innerHTML = [...Object.entries(CATS).map(([k, v]) => `<button type="button" class="chip" data-cat="${k}" aria-pressed="${k === filter}">${v.name}</button>`),
+    `<button type="button" class="chip" data-cat="all" aria-pressed="false">All ${FEATURES.length}</button>`].join("");
   $("#bubble-filter").addEventListener("click", (e) => {
     const c = e.target.closest("[data-cat]");
     if (!c) return;
     filter = c.dataset.cat;
     $("#bubble-filter").querySelectorAll(".chip").forEach((b) => b.setAttribute("aria-pressed", String(b === c)));
-    renderBubbles(filter);
+    // keep the open feature if it's still shown; otherwise open the first one in this category
+    const shown = FEATURES.filter((f) => filter === "all" || f.cat === filter);
+    if (!shown.some((f) => f.n === selected)) selected = shown[0].n;
+    renderBubbles(filter, selected);
+    showDetail(FEATURES.find((f) => f.n === selected));
   });
   $("#bubbles").addEventListener("click", (e) => {
     const b = e.target.closest(".bubble");
     if (!b) return;
-    $("#bubbles").querySelectorAll(".bubble").forEach((x) => x.classList.toggle("sel", x === b));
-    showDetail(FEATURES.find((f) => f.n === b.dataset.n));
+    selected = b.dataset.n;
+    $("#bubbles").querySelectorAll(".bubble").forEach((x) => { x.classList.toggle("sel", x === b); x.setAttribute("aria-pressed", String(x === b)); });
+    showDetail(FEATURES.find((f) => f.n === selected));
   });
-  renderBubbles(filter);
-  showDetail(FEATURES.find((f) => f.n === "Notes Studio"));
-  $("#bubbles").querySelector('[data-n="Notes Studio"]')?.classList.add("sel");
+  renderBubbles(filter, selected);
+  showDetail(FEATURES.find((f) => f.n === selected));
   $("#feature-count").textContent = FEATURES.every((f) => f.live) ? `${FEATURES.length} features · every one live` : `${FEATURES.length} features · ${FEATURES.filter((f) => f.live).length} to try now`;
   initRoad();
 

@@ -1,4 +1,4 @@
-// Browser check of the "Notify me" forms (homepage Pro section and pricing page), run on the working tree:
+// Browser check of the "Notify me" forms (homepage Ultra card and the pricing page's plans that aren't on sale yet), run on the working tree:
 //   node scripts/check-notify.mjs
 // Serves this folder on a free local port, opens each page in Chromium (Playwright), and tries every case: an invalid
 // address, success, already on the list (409), a server error (500), a network failure, and a double click. Every
@@ -28,7 +28,7 @@ const CASES = [
   { name: "network failure", reply: "abort", email: "a@b.co", sends: 1, hidden: false, msg: /didn't work/ },
 ];
 const failures = [];
-for (const [page, form] of [["index.html", "#notify-pro"], ["pricing.html", "#notify"]]) {
+for (const [page, form] of [["index.html", "#notify-pro"], ["pricing.html", "form.notify"]]) {
   for (const c of CASES) {
     const p = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     const errors = [], sent = [];
@@ -53,6 +53,46 @@ for (const [page, form] of [["index.html", "#notify-pro"], ["pricing.html", "#no
     if (problems.length) failures.push(`${page} ${c.name}`);
     await p.close();
   }
+}
+// The homepage's form gets its handler from assets/pro.js, which loads lazily: check a submit that arrives before it
+// has loaded (held, then sent once, with no page reload), and a load that fails and then works on the next try.
+const LATE = [
+  { name: "submitted while pro.js is still loading", mode: "hold" },
+  { name: "pro.js fails to load, then the next try works", mode: "fail" },
+];
+for (const c of LATE) {
+  // no service worker: it would fetch pro.js itself (it takes over the page and warms its cache), out of the route's reach
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: "block" });
+  const p = await ctx.newPage();
+  const errors = [], sent = [];
+  let release, failing = true, navigations = 0;
+  const held = new Promise((r) => { release = r; });
+  p.on("pageerror", (e) => errors.push(e.message));
+  await p.route("**/rest/v1/waitlist", (r) => { sent.push(JSON.parse(r.request().postData()).email); r.fulfill({ status: 201, body: "" }); });
+  await p.route(/supabase\.co\/(?!rest\/v1\/waitlist)/, (r) => r.fulfill({ status: 200, body: "{}" }));
+  await p.route("**/assets/pro.js*", async (r) => {   // a retry asks for pro.js?retry=n
+    if (c.mode === "hold") { await held; return r.continue(); }
+    return failing ? r.abort() : r.continue();
+  });
+  await p.goto(`${base}/index.html`, { waitUntil: "load" });
+  p.on("framenavigated", (f) => { if (f === p.mainFrame()) navigations++; });
+  const form = "#notify-pro", msgOf = async () => (await p.textContent(`${form} [role=status]`)).trim();
+  await p.fill(`${form} input`, "learner@example.com");
+  await p.click(`${form} button`);
+  await p.click(`${form} button`, { timeout: 150 }).catch(() => {});   // a second click while waiting
+  await p.waitForTimeout(600);
+  const problems = [];
+  if (sent.length) problems.push(`sent ${sent.length} request(s) before pro.js loaded`);
+  if (c.mode === "fail" && !/didn't work/.test(await msgOf())) problems.push(`no failure message ("${await msgOf()}")`);
+  if (c.mode === "hold") release(); else { failing = false; await p.click(`${form} button`); }
+  await p.waitForFunction((s) => document.querySelector(s).hidden, `${form} .notify-row`, { timeout: 5000 }).catch(() => problems.push("form row still shown after submission"));
+  if (sent.length !== 1) problems.push(`sent ${sent.length} request(s), expected 1`);
+  if (!/when Gradify Pro opens/.test(await msgOf())) problems.push(`message "${await msgOf()}"`);
+  if (navigations) problems.push("the page reloaded");
+  if (errors.length) problems.push(`page errors: ${errors.join("; ")}`);
+  console.log(`${problems.length ? "✗" : "✓"} index.html · ${c.name}${problems.length ? `: ${problems.join(", ")}` : ""}`);
+  if (problems.length) failures.push(`index.html ${c.name}`);
+  await ctx.close();
 }
 await browser.close(); server.close();
 if (failures.length) { console.error(`\n${failures.length} case(s) failed`); process.exitCode = 1; }
