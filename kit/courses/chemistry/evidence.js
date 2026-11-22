@@ -8,7 +8,7 @@ export const EVIDENCE = {
   "orbitals": { "all3": "u02-06", "nodes": "u02-18", "n3d": "u02-06", "rad": "u02-06" },
   "bonding": { "all": "u04-01", "mgo": "u04-02", "n2": "u04-03" },
   "lewis": { "five": "u04-06", "res": "u04-08" },
-  "organic-notes": { "ethanol": "u12-09", "toluene": "u12-08", "pentanes": "u12-11", "tertiary": "u12-09", "named": "u12-10", "chiral": "u12-15", "ez": "u12-20", "fg-isomers": "u12-13", "ring-alkene": "u12-03", "naphthalene": "u12-07", "ester": "u12-09" },
+  "organic-notes": { "ethanol": "u12-09", "toluene": "u12-08", "pentanes": "u12-11", "tertiary": "u12-09", "named": "u12-10", "chiral": "u12-15", "ez": "u12-20", "fg-isomers": "u12-13", "ring-alkene": "u12-03", "naphthalene": "u12-07", "ester": "u12-09", "mech-sn2": "u13-10", "mech-sn1": "u13-09", "mech-e2": "u13-13", "mech-hbr-propene": "u13-15", "mech-hcn-ethanal": "u13-16", "mech-radical-chlorination": "u13-06" },
   "vsepr": { "ten": "u04-09", "nh3": "u04-09", "xef4": "u04-09" },
   "polarity": { "pol": "u04-12", "np": "u04-12", "co2": "u04-12" },
   "imf": { "hb": "u04-17", "all": "u04-14" },
