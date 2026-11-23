@@ -66746,5 +66746,196 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u30-main-sequence-lifetime": {
+  "title": "Massive stars live fast",
+  "caption": "Fuel grows with mass but luminosity grows much faster (L ∝ M^3.5), so lifetime falls as t ∝ M/L ∝ M^(−2.5). With the Sun at 10 Gyr, a 2 M☉ star lasts about 1.8 Gyr; that is also the age of a cluster whose main-sequence turn-off is at 2 M☉.",
+  "alt": "Main-sequence lifetime in billions of years against mass in solar masses, falling steeply from 10 at one solar mass to 1.8 at two.",
+  "description": [
+   "Lifetime = 10 Gyr × (M/M☉)^(−2.5).",
+   "1 M☉: 10 Gyr. 2 M☉: 1.77 Gyr. 5 M☉: 0.18 Gyr.",
+   "A cluster's turn-off mass therefore dates it: stars above that mass have already left the main sequence."
+  ],
+  "course": "physics",
+  "lesson": "Stellar structure and evolution",
+  "also": [
+   {
+    "course": "physics",
+    "unit": "u30",
+    "lesson": "Star clusters"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u30.js: Stellar structure and evolution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in physics: Star clusters",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u30.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the Sun lives 10 Gyr",
+    "ok": true,
+    "detail": "y(1) = 10"
+   },
+   {
+    "name": "a 2 M☉ star lives 1.77 Gyr",
+    "ok": true,
+    "detail": "y(2) = 1.7678"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u30-mass-luminosity": {
+  "title": "The mass–luminosity relation",
+  "caption": "On the main sequence L ≈ L☉(M/M☉)^3.5, so a small change in mass makes a large change in brightness: a 0.5 M☉ star shines at only 0.09 L☉, and a 2 M☉ star at 11.3 L☉.",
+  "alt": "Luminosity in solar units against mass in solar units, a steep power-law curve, with 0.09 at 0.5 and 11.3 at 2 marked.",
+  "description": [
+   "L/L☉ = (M/M☉)^3.5, roughly, for main-sequence stars near a solar mass.",
+   "0.5 M☉: 0.088 L☉.",
+   "2 M☉: 11.31 L☉."
+  ],
+  "course": "physics",
+  "lesson": "Main-sequence stars",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u30.js: Main-sequence stars"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.088 L☉ at 0.5 M☉",
+    "ok": true,
+    "detail": "y(0.5) = 0.0884"
+   },
+   {
+    "name": "the Sun",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u30-rotation-curve": {
+  "title": "A flat rotation curve needs dark matter",
+  "caption": "If a galaxy's mass were all in its visible disc, orbital speeds beyond the disc would fall as 1/√r (dashed). Instead they stay flat at about 200 km s⁻¹. Then M(r) = v²r/G grows in proportion to r: unseen mass keeps adding up, with density falling as 1/r².",
+  "alt": "Orbital speed against radius: an observed flat line at 200 kilometres per second, and a dashed Keplerian curve falling from 200 at 8 kiloparsecs to 100 at 32.",
+  "description": [
+   "Observed: v ≈ 200 km s⁻¹ out to large radius.",
+   "Expected from visible mass alone (beyond 8 kpc): v = 200√(8/r), half as fast at 32 kpc.",
+   "Flat v means M(r) = v²r/G ∝ r: a halo of dark matter with ρ ∝ 1/r²."
+  ],
+  "course": "physics",
+  "lesson": "Dark matter in galaxies",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u30.js: Dark matter in galaxies"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Keplerian speed halves at four times the radius",
+    "ok": true,
+    "detail": "y(32) = 100"
+   },
+   {
+    "name": "M(r) = v²r/G grows linearly with r for flat v",
+    "ok": true,
+    "detail": "gradient 40000.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u30-transit": {
+  "title": "A transit light curve",
+  "caption": "As the planet crosses its star it blocks a fraction (R_p/R_*)² of the light. A Jupiter (0.1 R☉) in front of a Sun-like star dims it by 1%; an Earth would dim it by only about 0.008%.",
+  "alt": "Relative brightness against time: flat at 1, dipping by 1 percent for the duration of the transit with sloping ingress and egress, then back to 1.",
+  "description": [
+   "Brightness relative to the star alone.",
+   "During the transit it falls to 0.99: a 1% dip, since (0.1)² = 0.01.",
+   "The sloping edges are ingress and egress, while the planet's disc is only partly in front of the star.",
+   "The time axis is illustrative; the depth is from the lesson."
+  ],
+  "course": "physics",
+  "lesson": "Exoplanets",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u30.js: Exoplanets"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "depth (R_p/R_*)² = 1%",
+    "ok": true,
+    "detail": "y(0) = 0.99"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

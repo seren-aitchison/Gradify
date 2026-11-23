@@ -1,0 +1,95 @@
+{
+ "id": "phys-u30-mass-luminosity",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u30",
+ "lesson": "Main-sequence stars",
+ "title": "The mass–luminosity relation",
+ "caption": "On the main sequence L ≈ L☉(M/M☉)^3.5, so a small change in mass makes a large change in brightness: a 0.5 M☉ star shines at only 0.09 L☉, and a 2 M☉ star at 11.3 L☉.",
+ "alt": "Luminosity in solar units against mass in solar units, a steep power-law curve, with 0.09 at 0.5 and 11.3 at 2 marked.",
+ "description": [
+  "L/L☉ = (M/M☉)^3.5, roughly, for main-sequence stars near a solar mass.",
+  "0.5 M☉: 0.088 L☉.",
+  "2 M☉: 11.31 L☉."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.2
+  ],
+  "y": [
+   0,
+   16
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   4,
+   8,
+   12,
+   16
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mass / M☉",
+  "luminosity / L☉"
+ ],
+ "curves": [
+  {
+   "expr": "x^3.5",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.08839,
+   "colour": "a2",
+   "label": "0.09 L☉",
+   "anchor": "end",
+   "dx": -4,
+   "dy": -14
+  },
+  {
+   "x": 1,
+   "y": 1,
+   "colour": "a4"
+  },
+  {
+   "x": 2,
+   "y": 11.3137,
+   "colour": "a2",
+   "label": "11.3 L☉",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^3.5",
+   "x": 0.5,
+   "y": 0.08838835,
+   "name": "0.088 L☉ at 0.5 M☉"
+  },
+  {
+   "type": "point",
+   "expr": "x^3.5",
+   "x": 1,
+   "y": 1,
+   "name": "the Sun"
+  }
+ ]
+}
