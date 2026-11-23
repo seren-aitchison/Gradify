@@ -76012,5 +76012,934 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u25-arx-step": {
+  "title": "Step response of y_t = 0.8y_{t−1} + 2u_{t−1}",
+  "caption": "Fed a unit step, the model's output creeps from 0 towards 10 as 10(1 − 0.8^t): the first step gives 2, and the DC gain is b/(1 − a) = 2/0.2 = 10.",
+  "alt": "A curve rising from 0 by 2 at t = 1 and levelling off at 10, with a dashed line at 10.",
+  "description": [
+   "The model has a₁ = −0.8 and b₁ = 2.",
+   "A unit step gives y₁ = 2, y₂ = 3.6, … following 10(1 − 0.8^t).",
+   "At steady state y = 0.8y + 2u, so the DC gain is 2/0.2 = 10."
+  ],
+  "course": "maths",
+  "lesson": "System Identification",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: System Identification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y₁ = 2 from the recursion",
+    "ok": true,
+    "detail": "y(1) = 2"
+   },
+   {
+    "name": "y₂ = 3.6 from the recursion",
+    "ok": true,
+    "detail": "y(2) = 3.6"
+   },
+   {
+    "name": "the output approaches the DC gain 10",
+    "ok": true,
+    "detail": "10*(1-0.8^x) at 20 = 9.88; expected 9.8–10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-bode-gain": {
+  "title": "Bode gain of G(s) = 100/(s + 10)",
+  "caption": "The gain is 20 dB at low frequency, about 17 dB at the corner ω = 10 (3 dB down) and about 0 dB a decade later, falling 20 dB per decade.",
+  "alt": "Gain in decibels against log of frequency: flat at 20 dB, then falling; marked values 20 dB at ω = 1, 17 dB at ω = 10 and 0 dB at ω = 100.",
+  "description": [
+   "The low-frequency gain is G(0) = 10, which is 20 dB.",
+   "At the corner ω = 10 the gain is 3 dB lower: about 17 dB.",
+   "One decade later, at ω = 100, it has fallen about 20 dB to roughly 0 dB."
+  ],
+  "course": "maths",
+  "lesson": "Bode Plots",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Bode Plots"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ω = 1: 20 dB",
+    "ok": true,
+    "detail": "y(0) = 19.9568"
+   },
+   {
+    "name": "ω = 10: 17 dB",
+    "ok": true,
+    "detail": "y(1) = 16.9897"
+   },
+   {
+    "name": "ω = 100: 0 dB",
+    "ok": true,
+    "detail": "y(2) = -0.0432"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-bounce-heights": {
+  "title": "Bounce heights with e = 0.5",
+  "caption": "Each bounce keeps e² = 0.25 of the previous height: 1, 0.25, 0.0625, 0.015625, … infinitely many bounces, yet a finite total time (Zeno behaviour).",
+  "alt": "Bounce heights 1, 0.25, 0.0625, 0.015625 metres with the constant ratio 0.25 between them.",
+  "description": [
+   "The ball is dropped from 1 m.",
+   "Each impact multiplies the speed by e = 0.5, so the height by e² = 0.25.",
+   "Heights 1, 0.25, 0.0625, …: a geometric sequence with ratio 0.25, and infinitely many bounces."
+  ],
+  "course": "maths",
+  "lesson": "Hybrid Systems",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Hybrid Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (geometric)",
+    "ok": true,
+    "detail": "1, 0.25, 0.063, 0.016"
+   },
+   {
+    "name": "term 4 is 0.015625",
+    "ok": true,
+    "detail": "0.015625"
+   },
+   {
+    "name": "the lesson states \"0.0625\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-closed-loop-step": {
+  "title": "Proportional control leaves a steady-state error",
+  "caption": "With C = 4 the loop gain is L(0) = 8, so the closed-loop step response settles at 8/9 ≈ 0.889 and misses the reference 1 by 1/(1 + 8) = 1/9 ≈ 0.111.",
+  "alt": "A step response rising quickly and levelling at 0.889, below the dashed reference line at 1.",
+  "description": [
+   "The loop gain at zero frequency is L(0) = 2 × 4 = 8.",
+   "The closed loop is T(s) = 8/(s + 9), so T(0) = 8/9 ≈ 0.889.",
+   "The step ends short of the reference by 1/(1 + 8) = 1/9 ≈ 0.111."
+  ],
+  "course": "maths",
+  "lesson": "Closed-Loop Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Closed-Loop Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the response settles at T(0) = 8/9 ≈ 0.889",
+    "ok": true,
+    "detail": "0.888888889*(1-exp(-9*x)) at 0.8 = 0.89; expected 0.888–0.8889"
+   },
+   {
+    "name": "y(0) = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-consensus-three": {
+  "title": "Three agents agree on the average",
+  "caption": "Each agent moves towards its neighbours: x₁ = 3 − 3e^{−t}, x₂ = 3, x₃ = 3 + 3e^{−t}. All three meet at (0 + 3 + 6)/3 = 3.",
+  "alt": "Three curves starting at 0, 3 and 6 and converging to 3: the middle agent stays at 3, the others approach it.",
+  "description": [
+   "Agents 1–2–3 start at 0, 3 and 6.",
+   "The graph is connected and undirected, so the states converge to the average.",
+   "(0 + 3 + 6)/3 = 3: every agent ends at 3."
+  ],
+  "course": "maths",
+  "lesson": "Distributed Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Distributed Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "agent 1 starts at 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "agent 3 starts at 6",
+    "ok": true,
+    "detail": "y(0) = 6"
+   },
+   {
+    "name": "agent 1's initial rate x₂ − x₁ = 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "agent 3's initial rate x₂ − x₃ = −3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "agent 1 approaches 3",
+    "ok": true,
+    "detail": "3-3*exp(-x) at 5 = 2.98; expected 2.97–3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-decay": {
+  "title": "ẋ = −2x: the time constant",
+  "caption": "The solution 5e^{−2t} falls by a factor e each time constant τ = 1/2 s: after one τ it is 5 × 0.368 ≈ 1.84.",
+  "alt": "Exponential decay from 5 at t = 0 towards 0; at t = 0.5 s the value is about 1.84, marked.",
+  "description": [
+   "Start at x(0) = 5.",
+   "The eigenvalue λ = −2 gives x(t) = 5e^{−2t}.",
+   "After one time constant τ = 1/2 s the value is 5 × 0.368 ≈ 1.84."
+  ],
+  "course": "maths",
+  "lesson": "Linear Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Linear Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 5",
+    "ok": true,
+    "detail": "y(0) = 5"
+   },
+   {
+    "name": "x(1/2) = 5e⁻¹ ≈ 1.84",
+    "ok": true,
+    "detail": "y(0.5) = 1.8394"
+   },
+   {
+    "name": "the slope at 0 is λx(0) = −10",
+    "ok": true,
+    "detail": "gradient -10.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-gain-first-order": {
+  "title": "Gain of G(s) = 10/(s + 10)",
+  "caption": "At ω = 10 rad/s, G(10i) = 1/(1 + i): the gain is 1/√2 ≈ 0.707 (−3 dB) and the phase −45°. The gain falls away at higher frequencies.",
+  "alt": "A curve starting at gain 1 and falling; at ω = 10 rad/s the gain is 0.707, marked.",
+  "description": [
+   "Substitute s = iω: G(iω) = 10/(10 + iω).",
+   "Its gain is |G| = 10/√(100 + ω²).",
+   "At ω = 10: |G| = 10/√200 = 1/√2 ≈ 0.707, which is −3 dB."
+  ],
+  "course": "maths",
+  "lesson": "Frequency Response",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Frequency Response"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|G(10i)| = 1/√2 ≈ 0.707",
+    "ok": true,
+    "detail": "y(10) = 0.7071"
+   },
+   {
+    "name": "the DC gain is 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-kalman-fixed-point": {
+  "title": "Steady-state predicted variance as a fixed point",
+  "caption": "The predicted variance repeats P⁻ → P⁻/(P⁻ + 1) + 1. The curve meets the line y = x at P⁻ = (1 + √5)/2 ≈ 1.618, giving gain 1.618/2.618 ≈ 0.618.",
+  "alt": "The curve y = P/(P + 1) + 1 and the diagonal y = x cross at 1.618, marked.",
+  "description": [
+   "Update with R = 1: P = P⁻/(P⁻ + 1); predict with Q = 1: next P⁻ = P + 1.",
+   "At steady state P⁻ = P⁻/(P⁻ + 1) + 1, so P⁻² − P⁻ − 1 = 0.",
+   "P⁻ = (1 + √5)/2 ≈ 1.618 and the gain is K = 1.618/2.618 ≈ 0.618."
+  ],
+  "course": "maths",
+  "lesson": "Kalman Filtering",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Kalman Filtering"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the fixed point is (1 + √5)/2 ≈ 1.618",
+    "ok": true,
+    "detail": "x/(x+1)+1 → 1.618, x → 1.618"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-lqr-riccati": {
+  "title": "The scalar Riccati equation 9 − P² = 0",
+  "caption": "With A = 0, B = 1, Q = 9 and R = 1 the Riccati equation is −P² + 9 = 0. The positive root P = 3 gives the gain K = 3 and the closed loop ẋ = −3x.",
+  "alt": "The downward parabola 9 − P² crossing the horizontal axis at P = 3, marked.",
+  "description": [
+   "For ẋ = u the Riccati equation reads −P² + Q = 0, that is 9 − P² = 0.",
+   "The positive root is P = 3.",
+   "K = R⁻¹BP = 3, and the closed loop is ẋ = −3x."
+  ],
+  "course": "maths",
+  "lesson": "Linear Quadratic Regulation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Linear Quadratic Regulation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P = 3 solves the Riccati equation",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "the constant term is Q = 9",
+    "ok": true,
+    "detail": "y(0) = 9"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-lyapunov-v": {
+  "title": "V = x² and its rate −2x⁴",
+  "caption": "V = x² is positive away from 0 and V̇ = 2x(−x³) = −2x⁴ is negative away from 0, so the energy-like V always decreases: the origin is asymptotically stable.",
+  "alt": "Two curves: V = x², a parabola above the axis, and V̇ = −2x⁴, a flat-bottomed curve below the axis, both touching zero only at x = 0.",
+  "description": [
+   "Take V = x², positive for every x ≠ 0.",
+   "Along ẋ = −x³: V̇ = 2x·ẋ = −2x⁴.",
+   "V̇ < 0 for every x ≠ 0, so V falls to 0 and the origin is globally asymptotically stable."
+  ],
+  "course": "maths",
+  "lesson": "Lyapunov Stability",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Lyapunov Stability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "V(1) = 1 > 0",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "V̇(1) = −2 < 0",
+    "ok": true,
+    "detail": "y(1) = -2"
+   },
+   {
+    "name": "V̇ ≤ 0, with 0 only at x = 0",
+    "ok": true,
+    "detail": "found (0, 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-nyquist-gain-margin": {
+  "title": "Critical gain for K/(s + 1)³",
+  "caption": "The phase is −180° at ω = √3, where |L| = K/8. At the critical K = 8 the gain there is exactly 1, so the locus passes through −1; any K < 8 keeps it clear.",
+  "alt": "The gain curve 8/(1 + ω²)^{3/2} falling from 8; it crosses the level 1 at ω = √3 ≈ 1.73.",
+  "description": [
+   "The phase of 1/(s + 1)³ is −3 arctan ω; it equals −180° when ω = √3.",
+   "There |L| = K/(1 + 3)^{3/2} = K/8.",
+   "The locus touches −1 when K/8 = 1: stable for K < 8."
+  ],
+  "course": "maths",
+  "lesson": "Nyquist Stability Criterion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Nyquist Stability Criterion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|L(i√3)| = 8/8 = 1 at K = 8",
+    "ok": true,
+    "detail": "y(1.7320508075688772) = 1"
+   },
+   {
+    "name": "|L(0)| = K = 8",
+    "ok": true,
+    "detail": "y(0) = 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-observer-error": {
+  "title": "Estimation error with and without correction",
+  "caption": "With L = 4 the error obeys ė = −5e and shrinks five times faster than the plain model's e^{−t}: after 0.2 s it has fallen to 1/e.",
+  "alt": "Two decaying curves from error 1: the slow one e^{−t} with no correction and the fast one e^{−5t} with L = 4.",
+  "description": [
+   "The error dynamics are ė = (A − LC)e = (−1 − L)e.",
+   "Rate 5 needs −1 − L = −5, so L = 4.",
+   "The error e^{−5t} dies out five times faster than e^{−t}."
+  ],
+  "course": "maths",
+  "lesson": "State Estimation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: State Estimation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "L = 0: rate −1",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "L = 4: rate −1 − L = −5",
+    "ok": true,
+    "detail": "gradient -5.0000"
+   },
+   {
+    "name": "after 1/5 s the error is 1/e",
+    "ok": true,
+    "detail": "y(0.2) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-open-loop-gain": {
+  "title": "Open-loop heating with the wrong gain",
+  "caption": "Planned with 5 °C per kW, 3 kW should give 15 °C. If the true gain is 4 °C per kW the rise is only 12 °C, and open-loop control cannot notice the 3 °C shortfall.",
+  "alt": "Two lines of temperature rise against power: the assumed 5 °C per kW and the true 4 °C per kW; at 3 kW they read 15 and 12, a gap of 3.",
+  "description": [
+   "Assume the room warms 5 °C per kW: for 15 °C choose u = 15/5 = 3 kW.",
+   "If the real gain is 4 °C per kW, the same 3 kW gives 4 × 3 = 12 °C.",
+   "The 3 °C error is never detected: there is no feedback."
+  ],
+  "course": "maths",
+  "lesson": "Open-Loop Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Open-Loop Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "5 × 3 = 15 °C",
+    "ok": true,
+    "detail": "y(3) = 15"
+   },
+   {
+    "name": "4 × 3 = 12 °C",
+    "ok": true,
+    "detail": "y(3) = 12"
+   },
+   {
+    "name": "both lines start at 0",
+    "ok": true,
+    "detail": "5*x → 0, 4*x → 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-pendulum": {
+  "title": "Pendulum: the restoring term −sin θ",
+  "caption": "The restoring term −sin θ is zero at θ = 0 and θ = π. Its slope there is −1 (restoring: a centre) and +1 (pushing away: a saddle).",
+  "alt": "The curve −sin θ crosses zero at θ = 0 with slope −1 and at θ = π with slope +1; the two tangent lines are dashed.",
+  "description": [
+   "Plot the right-hand side −sin θ.",
+   "It is zero at θ = 0 and θ = π: the equilibria.",
+   "At 0 the slope is −1, so θ̈ ≈ −θ: eigenvalues ±i.",
+   "At π the slope is +1, so θ̈ ≈ +(θ − π): eigenvalues ±1, a saddle."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Nonlinear Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "θ = 0 is an equilibrium",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "θ = π is an equilibrium",
+    "ok": true,
+    "detail": "y(3.141592653589793) = 0"
+   },
+   {
+    "name": "slope −1 at 0 (a centre)",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "slope +1 at π (a saddle)",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-pole-placement": {
+  "title": "Feedback moves the pole from +2 to −3",
+  "caption": "Without control ẋ = 2x grows like e^{2t}. With u = −5x the closed loop is ẋ = −3x and x(t) = e^{−3t} decays with time constant 1/3 s.",
+  "alt": "From x(0) = 1, one curve grows rapidly (open loop e^{2t}) and one decays (closed loop e^{−3t}); the decaying one is at 0.368 at t = 1/3.",
+  "description": [
+   "Open loop: ẋ = 2x, pole at +2, so x = e^{2t} grows.",
+   "Choose u = −Kx: ẋ = (2 − K)x, and 2 − K = −3 needs K = 5.",
+   "Closed loop x = e^{−3t}: it reaches 1/e ≈ 0.368 at t = 1/3 s."
+  ],
+  "course": "maths",
+  "lesson": "Feedback Control",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Feedback Control"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "open-loop slope at 0 is +2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "closed-loop slope at 0 is 2 − K = −3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "after τ = 1/3 the value is e⁻¹",
+    "ok": true,
+    "detail": "y(0.3333333333333333) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-poles": {
+  "title": "The characteristic polynomial λ² + 3λ + 2",
+  "caption": "The eigenvalues of A = [[0, 1], [−2, −3]] are the roots of λ² + 3λ + 2 = 0: the curve crosses zero at the poles −1 and −2.",
+  "alt": "A parabola λ² + 3λ + 2 crossing the horizontal axis at −2 and −1, with minimum −0.25 at −1.5.",
+  "description": [
+   "Write the state equations with x₁ = x and x₂ = ẋ.",
+   "det(λI − A) = λ² + 3λ + 2.",
+   "Its roots are the poles −1 and −2, both negative: stable."
+  ],
+  "course": "maths",
+  "lesson": "State-Space Representation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: State-Space Representation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "λ = −1 is a root",
+    "ok": true,
+    "detail": "y(-1) = 0"
+   },
+   {
+    "name": "λ = −2 is a root",
+    "ok": true,
+    "detail": "y(-2) = 0"
+   },
+   {
+    "name": "the sum of the roots is −3 = trace A",
+    "ok": true,
+    "detail": "found (-1.5, -0.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-root-locus-real": {
+  "title": "Closed-loop poles of 1/(s(s + 2)) as K grows",
+  "caption": "For K ≤ 1 the poles −1 ± √(1 − K) are real and move together; they meet at −1 when K = 1 (critical damping). Beyond K = 1 they are complex with real part −1.",
+  "alt": "Real parts of the two poles against K: two branches from 0 and −2 meeting at −1 when K = 1, then a single line at −1 for K above 1.",
+  "description": [
+   "The characteristic equation is s² + 2s + K = 0, with poles −1 ± √(1 − K).",
+   "At K = 0 they are 0 and −2; as K grows they approach each other.",
+   "At K = 1 they meet at −1: critical damping. For K > 1 they are −1 ± i√(K − 1), real part −1."
+  ],
+  "course": "maths",
+  "lesson": "Root Locus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Root Locus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the poles meet at −1 when K = 1",
+    "ok": true,
+    "detail": "y(1) = -1"
+   },
+   {
+    "name": "(the other branch too)",
+    "ok": true,
+    "detail": "y(1) = -1"
+   },
+   {
+    "name": "K = 0 gives the open-loop pole 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "K = 0 gives the open-loop pole −2",
+    "ok": true,
+    "detail": "y(0) = -2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u25-step-4-over-s2": {
+  "title": "Step response of G(s) = 4/(s + 2)",
+  "caption": "The step response is 2(1 − e^{−2t}); it settles at the DC gain G(0) = 4/2 = 2, as the final value theorem predicts.",
+  "alt": "A curve rising from 0 and levelling off at 2, with a dashed line at the final value 2.",
+  "description": [
+   "The output transform is Y(s) = G(s)/s.",
+   "Inverting gives y(t) = 2(1 − e^{−2t}).",
+   "The final value is lim s·Y(s) = 4/2 = 2, the DC gain."
+  ],
+  "course": "maths",
+  "lesson": "Transfer Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u25.js: Transfer Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y(0) = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "y settles at the DC gain 2",
+    "ok": true,
+    "detail": "2*(1-exp(-2*x)) at 3 = 2; expected 1.99–2"
+   },
+   {
+    "name": "the initial slope is G(∞)-free: 4",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
