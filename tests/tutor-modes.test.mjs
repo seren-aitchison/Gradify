@@ -98,12 +98,12 @@ test("chemistry tutor: it receives the engine's own verdict and may only explain
 
 test("chemistry tutor: declined, no-reaction, reviewed and disputed evidence each change what it may say", () => {
   const declined = chemistryAuthority(chem("CC=O", "naoh-aq"));
-  assert.match(declined, /STATUS: declined/); assert.match(declined, /do NOT give, guess or hint at a product/);
-  assert.match(chemistryAuthority(chem("CCC", "naoh-aq")), /STATUS: no reaction/);
-  assert.match(chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "reviewed" }, products: [] }), /independent chemist has reviewed this rule/);
-  const disputed = chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "disputed", disputes: [{ note: "x" }] }, products: [] });
+  assert.match(declined, /OUTCOME: unsupported/); assert.match(declined, /never say or imply that there is no reaction/); assert.match(declined, /do NOT give, guess or hint at a product/);
+  assert.match(chemistryAuthority(chem("CCC", "naoh-aq")), /OUTCOME: no reaction/);
+  assert.match(chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "reviewed" }, products: [] }), /independent chemist has reviewed this rule/);
+  const disputed = chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "disputed", disputes: [{ note: "x" }] }, products: [] });
   assert.match(disputed, /A reviewer has disagreed/); assert.doesNotMatch(disputed, /has reviewed this rule/);
-  assert.match(chemistryAuthority({ kind: "prediction", status: "reacts", rule: { confidence: "provisional" }, products: [{ role: "major" }, { role: "major" }] }), /Several main products/);
+  assert.match(chemistryAuthority({ kind: "prediction", outcome: "reaction", rule: { confidence: "provisional" }, products: [{ role: "major" }, { role: "major" }] }), /Several main products/);
   assert.match(chemistryAuthority({ kind: "mechanism", confidence: "provisional" }), /verdict on each arrow .* is final/);
 });
 
@@ -113,7 +113,7 @@ test("chemistry tutor: requests are checked, conversations alternate, diagnosis 
   assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain" }), /Missing the lab's data/);
   assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "essay" } }), /Unknown kind/);
   assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { ...ctx, rule: { confidence: "certain" } } }), /Unknown confidence/);
-  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "prediction", status: "reacts", junk: "x".repeat(10000) } }), /too long/);
+  assert.throws(() => buildRequest({ mode: "chemistry", intent: "explain", context: { kind: "prediction", outcome: "reaction", junk: "x".repeat(10000) } }), /too long/);
   assert.throws(() => buildRequest({ mode: "chemistry", intent: "diagnose", context: ctx }), /learner's answer/);
   const g = buildRequest({ mode: "chemistry", intent: "guide", context: ctx, turns: [{ role: "tutor", text: "What is δ+ here?" }, { role: "learner", text: "The carbon" }], learner: { mistakes: [{ topic: "Nucleophilic substitution", count: 3 }] } });
   assert.deepEqual(g.messages.map((m) => m.role), ["user", "assistant", "user"]); assert.equal(g.effort, "low");

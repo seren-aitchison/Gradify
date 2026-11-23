@@ -350,7 +350,7 @@ export const CHEM_INTENTS = {
   diagnose: "Diagnose the learner's mistake: compare their answer with the lab's, name the most likely misconception in one or two sentences, explain the idea that fixes it, then set one practice question of the same kind (without its answer). At most 200 words.",
   mechanism: "Explain the lab's verdict on the learner's curly arrows: what each arrow does, what the engine found wrong (if anything) and the electron-pushing principle behind it, without drawing the remaining arrows for them. At most 180 words.",
 };
-const CHEM_STATUS = ["reacts", "no-reaction", "declined"], CHEM_CONF = ["provisional", "reviewed", "validated", "disputed"];
+const CHEM_OUTCOMES = ["reaction", "no_reaction", "unsupported"], CHEM_CONF = ["provisional", "reviewed", "validated", "disputed"];
 /** The rules of authority for one piece of lab data (exported for tests). */
 export function chemistryAuthority(ctx) {
   const lines = ["AUTHORITY: the lab's chemistry engine computed the data below with deterministic rules. Teach from it. Never change, contradict or add to its verdict, products, major/minor labels, pathways, arrows or marks. Never name a product, intermediate, reagent or outcome that isn't in the data. If the learner (or you) doubts the lab's answer, give the lab's answer, say they can check \"The rule behind this\" and ask their teacher; don't substitute your own."];
@@ -359,10 +359,10 @@ export function chemistryAuthority(ctx) {
   if (conf === "provisional") lines.push("CONFIDENCE: provisional. Say once, briefly and plainly, that the lab's rule for this hasn't yet been reviewed by an independent chemist, so it is the lab's prediction from standard textbook rules. Don't present it as a settled scientific conclusion.");
   if (conf === "reviewed" || conf === "validated") lines.push(`CONFIDENCE: ${conf}. You may say an independent chemist has reviewed this rule${conf === "validated" ? " and its cases were checked against sources" : ""}.`);
   if (conf === "disputed") lines.push("CONFIDENCE: disputed. A reviewer has disagreed with this rule. Say so clearly, give the reviewer's note from the data, and present the lab's prediction as uncertain; don't choose a side yourself.");
-  const st = ctx?.status;
-  if (st === "declined") lines.push("STATUS: declined. The lab can't reliably predict this case. Explain why, using its stated reason, and the general ideas that make the case hard; do NOT give, guess or hint at a product. Suggest what the learner could try instead (another reagent or a simpler molecule) only if the reason says so.");
-  if (st === "no-reaction") lines.push("STATUS: no reaction. Explain why the reagent doesn't react with this molecule under these conditions, using the lab's reason.");
-  if (st === "reacts" && (ctx.products || []).filter((p) => p.role !== "minor").length > 1) lines.push("Several main products form: say so, and explain why (e.g. similar stability, two equivalent positions).");
+  const st = ctx?.outcome;
+  if (st === "unsupported") lines.push("OUTCOME: unsupported. The lab can't reliably predict this case: something may well happen, so never say or imply that there is no reaction. Explain why, using its stated reason, and the general ideas that make the case hard; do NOT give, guess or hint at a product. Suggest what the learner could try instead (another reagent or a simpler molecule) only if the reason says so.");
+  if (st === "no_reaction") lines.push("OUTCOME: no reaction. The lab has checked every group in the molecule against this reagent's conditions. Explain why the reagent doesn't react with this molecule under these conditions, using the lab's reason.");
+  if (st === "reaction" && (ctx.products || []).filter((p) => p.role !== "minor").length > 1) lines.push("Several main products form: say so, and explain why (e.g. similar stability, two equivalent positions).");
   if (ctx?.kind === "mechanism") lines.push("MECHANISM: the engine's verdict on each arrow (valid or not, and its error messages) is final; explain it, don't re-judge it.");
   return lines.join("\n");
 }
@@ -372,7 +372,7 @@ function chemistryRequest(body) {
   const ctx = body.context;
   if (!ctx || typeof ctx !== "object" || Array.isArray(ctx)) throw bad("Missing the lab's data.");
   if (!["prediction", "mechanism", "synthesis"].includes(ctx.kind)) throw bad("Unknown kind of lab data.");
-  if (ctx.kind === "prediction" && !CHEM_STATUS.includes(ctx.status)) throw bad("The prediction needs a status.");
+  if (ctx.kind === "prediction" && !CHEM_OUTCOMES.includes(ctx.outcome)) throw bad("The prediction needs an outcome.");
   const conf = ctx.rule?.confidence ?? ctx.confidence;
   if (conf != null && !CHEM_CONF.includes(conf)) throw bad("Unknown confidence level.");
   const data = JSON.stringify(ctx);
