@@ -86,7 +86,7 @@
       <li>progress in each course (<code>gradify.course.…</code>)</li>
       <li>your set-up answers and display settings (<code>gradify.learner</code>)</li>
     </ul>
-    <p>Gradify itself doesn't set cookies. The only cookies are Google Analytics ones, and only if you choose “Accept analytics” (<a href="#analytics">below</a>). Clearing this site's data in your browser deletes all of it.</p>
+    <p>Gradify itself doesn't set cookies. The only cookies are Google's, for analytics and advertising measurement, and only if you accept them (<a href="#analytics">below</a>). Clearing this site's data in your browser deletes all of it.</p>
 
     <h2>With a Gradify account</h2>
     <p>When accounts are switched on and you sign in, the same things are saved to your account so they follow you between devices:</p>
@@ -144,20 +144,26 @@
     <p>It records no name, account, cookie or identifier of any kind, and no time of day, so counts can't be linked to you or to each other. Nothing is counted if your browser sends Do Not Track or Global Privacy Control, or if you turn counting off here.</p>
     <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="opt"><span>…</span></button><span id="opt-state" aria-live="polite"></span></div>
 
-    <h2 id="analytics">Google Analytics (only if you accept)</h2>
-    <p>Gradify asks before using Google Analytics. Until you choose “Accept analytics”, no Google Analytics code loads and no analytics cookie is set. “Reject analytics”, or not choosing, keeps it that way. It's used to see which pages and features help people study, and to find what's broken or confusing. It isn't used for advertising, and Gradify doesn't sell or share it.</p>
-    <p><b>Where it never runs.</b> Not on JuniorGradify or YouthGradify, whatever you choose. Not if your browser sends Do Not Track or Global Privacy Control: Gradify treats those as a no and doesn't ask. Not if you've turned off the usage counts above.</p>
-    <p><b>What it collects, if you accept.</b> Google Analytics sets cookies named <code>_ga</code> and <code>_ga_…</code> holding a random identifier for this browser. With them, Google Analytics records:</p>
+    <h2 id="analytics">Google Analytics and Google Ads measurement (only if you accept)</h2>
+    <p>Gradify asks before using Google's cookies, with two separate choices, both off until you say yes:</p>
+    <ul>
+      <li><b>Analytics</b> (Google Analytics): to see which pages and features help people study, and to find what's broken or confusing.</li>
+      <li><b>Advertising measurement</b> (Google Ads): to see whether Gradify's own ads on Google led to a sign-up or a purchase, so Gradify spends less on ads that don't help anyone. It is never used to show you personalised ads or to follow you round other sites (remarketing).</li>
+    </ul>
+    <p>“Accept all” turns both on; “Reject all”, or not choosing, keeps both off; “Manage preferences” lets you pick one. Until you accept one, no Google code loads and no Google cookie is set. Gradify doesn't sell this data.</p>
+    <p><b>Where neither ever runs.</b> Not on JuniorGradify or YouthGradify, whatever you choose. Not if your browser sends Do Not Track or Global Privacy Control: Gradify treats those as a no and doesn't ask. Not if you've turned off the usage counts above.</p>
+    <p><b>What analytics collects, if you accept it.</b> Google Analytics sets cookies named <code>_ga</code> and <code>_ga_…</code> holding a random identifier for this browser. With them, Google Analytics records:</p>
     <ul>
       <li>the pages you visit, without anything after <code>?</code> except campaign tags (<code>utm_…</code>), and without sign-in codes after <code>#</code></li>
       <li>the website that linked to Gradify (its address only, not the full link)</li>
       <li>your device type, browser, screen size, language and approximate location (country and city, worked out by Google from your IP address, which Google Analytics 4 doesn't store)</li>
       <li>study events: a lesson started or finished, a quiz or exam started or finished (passed or not, never your score or answers), a flashcard session started or finished (how many cards), the tutor opened, a free tool used, sharing, printing or exporting, a planned study block finished, and signing up or signing in (only whether by email or Google)</li>
-      <li>on the pricing page, starting checkout and a new subscription (the plan, never payment details)</li>
+      <li>on the pricing page, starting checkout and a new subscription (the plan and its price, never payment details)</li>
     </ul>
-    <p>It never receives your name, email address, password, payment details, notes, flashcards, answers or scores. Advertising features, Google signals and ad personalisation are off.</p>
-    <p><b>Why Gradify can use it:</b> you agreed (your consent). <b>How long it's kept:</b> the cookies last up to 13 months, and Google Analytics keeps the detailed records for 2 months before deleting them; totals (such as visits per page per month) are kept. <b>Google's role:</b> Google Ireland Limited and Google LLC process this for Gradify under Google's data processing terms, and the data can be handled in the United States. That transfer is covered by the UK safeguards described below.</p>
-    <p><b>Change your mind any time.</b> Use the button here or “Cookie settings” at the bottom of the site's pages. Withdrawing deletes the Google Analytics cookies in this browser and stops Google Analytics from the next page. Your choice is kept in this browser (<code>gradify.consent</code>), so you'll be asked again in another browser or if you clear this site's data.</p>
+    <p>It never receives your name, email address, password, payment details, notes, flashcards, answers or scores. Google signals and ad personalisation are off.</p>
+    <p><b>What advertising measurement adds, if you accept it.</b> When you arrive from one of Gradify's Google ads, Google's click identifier is kept in a cookie named <code>_gcl_…</code> (for up to 90 days), and Google is told when that visit leads to a sign-up, a checkout or a new subscription (with the plan and price). Google matches this to the ad click in its own systems. Nothing about your studying is used, and ad personalisation stays off, whatever you choose.</p>
+    <p><b>Why Gradify can use them:</b> you agreed (your consent), separately for each. <b>How long it's kept:</b> the analytics cookies last up to 13 months, and Google Analytics keeps the detailed records for 2 months before deleting them; totals (such as visits per page per month) are kept. <b>Google's role:</b> for analytics, Google Ireland Limited and Google LLC process this for Gradify under Google's data processing terms. For advertising measurement, Google uses the ad-click data under its own controller terms and privacy policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). The data can be handled in the United States. That transfer is covered by the UK safeguards described below.</p>
+    <p><b>Change your mind any time.</b> Use the button here or “Cookie settings” at the bottom of the site's pages. Turning a choice off deletes its Google cookies in this browser and stops it from the next page. Your choice is kept in this browser (<code>gradify.consent</code>), so you'll be asked again in another browser or if you clear this site's data.</p>
     <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="ga-opt" data-cookie-settings><span>Cookie settings</span></button><span id="ga-state" aria-live="polite"></span></div>
 
     <h2>Who else handles your data</h2>
@@ -165,7 +171,7 @@
     <ul>
       <li><b>Supabase</b> stores accounts, study data and launch lists, and handles sign-in.</li>
       <li><b>Google</b> signs you in, only if you choose “Sign in with Google”.</li>
-      <li><b>Google Analytics</b> counts visits and feature use, only if you accept analytics, as described <a href="#analytics">above</a>.</li>
+      <li><b>Google Analytics</b> counts visits and feature use, and <b>Google Ads</b> measures whether Gradify's ads lead to sign-ups and purchases, each only if you accept it, as described <a href="#analytics">above</a>.</li>
       <li><b>Google Fonts</b> supplies the fonts on every page, so Google sees your device's IP address when a page loads.</li>
       <li><b>GitHub Pages</b> serves the website itself, and sees your IP address like any web host.</li>
       <li><b>Anthropic</b> (Claude) writes Gradify AI's answers, once Gradify AI is switched on, as described above. Anthropic is in the United States.</li>
@@ -180,9 +186,9 @@
     <ul>
       <li><b>Download</b> your data, or <b>delete</b> your notes, cards and progress, from Account in the Gradify app. Your sign-in and set-up answers stay so you can still sign in; to close your account completely, email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>.</li>
       <li>Ask about, correct or remove anything Gradify holds about you: <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>.</li>
-      <li>Use Gradify without an account, and nothing leaves this browser except the anonymous counts above, and Google Analytics if you accept it.</li>
-      <li>Turn the counts off on this page (that turns Google Analytics off too).</li>
-      <li>Accept, reject or withdraw Google Analytics with “Cookie settings”.</li>
+      <li>Use Gradify without an account, and nothing leaves this browser except the anonymous counts above, and Google analytics or advertising measurement if you accept them.</li>
+      <li>Turn the counts off on this page (that turns Google analytics and advertising measurement off too).</li>
+      <li>Accept, reject or withdraw analytics and advertising measurement with “Cookie settings”.</li>
     </ul>
     <p>Under UK data protection law you can ask for a copy of your data, ask for it to be corrected or deleted, object to how it's used, and withdraw consent you've given. If you're unhappy with how Gradify has handled your data, please tell Gradify first; you can also complain to the Information Commissioner's Office (<a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>).</p>
   </main>
@@ -216,7 +222,7 @@
       const c = window.gradifyConsent;
       if (!c || c.stub) return;
       const why = c.blocked();
-      gaState.textContent = why === "browser-signal" ? "Off: your browser asks not to be tracked." : why === "counting-off" ? "Off: counting is turned off in this browser." : why ? "Off on this address." : c.allowed() ? "Google Analytics is on in this browser." : c.state() === false ? "Google Analytics is off (you rejected it)." : "Google Analytics is off (you haven't chosen).";
+      gaState.textContent = why === "browser-signal" ? "Off: your browser asks not to be tracked." : why === "counting-off" ? "Off: counting is turned off in this browser." : why ? "Off on this address." : (() => { const p = c.prefs(), w = (v) => v === true ? "on" : v === false ? "off" : "off (not chosen)"; return `In this browser: analytics ${w(p.analytics)}, advertising measurement ${w(p.ads)}.`; })();
     };
     document.addEventListener("gradify:consent", paintGa);
     addEventListener("load", paintGa); setTimeout(paintGa, 500);

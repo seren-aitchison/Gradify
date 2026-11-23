@@ -74,7 +74,7 @@ const settle = (page) => page.waitForTimeout(700);
     check("accept: banner closes", !(await page.locator(".gc-banner").count()));
     const dl = await page.evaluate(() => JSON.parse(JSON.stringify(window.dataLayer.map((x) => (x && x.length !== undefined && typeof x !== "string" ? Array.from(x) : x)))));
     const consent = dl.find((x) => Array.isArray(x) && x[0] === "consent" && x[1] === "default");
-    check("accept: Consent Mode default sets analytics granted, ads denied", consent && consent[2].analytics_storage === "granted" && consent[2].ad_storage === "denied" && consent[2].ad_user_data === "denied" && consent[2].ad_personalization === "denied");
+    check("accept all: analytics and ad measurement granted, ad personalisation denied", consent && consent[2].analytics_storage === "granted" && consent[2].ad_storage === "granted" && consent[2].ad_user_data === "granted" && consent[2].ad_personalization === "denied");
     const set = dl.find((x) => Array.isArray(x) && x[0] === "set" && x[1] && x[1].page_location);
     const config = dl.find((x) => Array.isArray(x) && x[0] === "config");
     check("accept: cleaned page location set", set && set[1].page_location === BASE + "/");
@@ -86,21 +86,31 @@ const settle = (page) => page.waitForTimeout(700);
 
     // returning visitor, another page with a query string and a sign-in hash
     hits.length = 0;
-    await page.goto(BASE + "/pricing.html?checkout=success&utm_source=news&email=a%40b.c#access_token=abc"); await settle(page);
+    await page.goto(BASE + "/pricing.html?checkout=success&utm_source=news&gclid=TeSt123&email=a%40b.c#access_token=abc"); await settle(page);
     const loc = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).find((x) => x[0] === "set" && x[1] && x[1].page_location)?.[1].page_location);
     check("returning visitor: Google tag loads with no banner", hits.filter((u) => /gtag\/js/.test(u)).length === 1 && !(await page.locator(".gc-banner").count()));
-    check("page location drops query, sign-in hash, keeps utm", loc === `${BASE}/pricing.html?utm_source=news`, loc);
+    check("page location drops query and sign-in hash, keeps utm and gclid (ads accepted)", loc === `${BASE}/pricing.html?utm_source=news&gclid=TeSt123`, loc);
     const tags = await page.locator("script[src*='googletagmanager.com']").count();
     check("exactly one Google tag on the page, no GTM container", tags === 1 && !(await page.locator("script[src*='gtm.js']").count()), String(tags));
 
-    // withdraw from the privacy page
+    // withdraw advertising only: its cookie goes, analytics carries on
     await page.goto(BASE + "/privacy.html"); await settle(page);
+    await page.evaluate(() => { document.cookie = "_gcl_au=1.1.1; path=/"; });
+    await page.click("#ga-opt"); await page.uncheck("#gc-ad");
+    hits.length = 0;
+    await Promise.all([page.waitForNavigation(), page.click(".gc-dialog [data-gc=save]")]); await settle(page);
+    const names = (await ctx.cookies()).map((c) => c.name);
+    const after = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).find((x) => x[0] === "consent" && x[1] === "default")?.[2]);
+    check("withdraw ads only: _gcl cookie deleted, analytics still on", !names.some((n) => /^_gcl_/.test(n)) && after && after.analytics_storage === "granted" && after.ad_storage === "denied", names.join(","));
+    check("withdraw ads only: privacy page shows the split", /analytics on, advertising measurement off/.test(await page.locator("#ga-state").textContent()));
+
+    // withdraw analytics too
     check("withdraw: _ga cookie present before", await gaCookie(ctx));
     await page.click("#ga-opt"); await page.uncheck("#gc-an");
     hits.length = 0;
     await Promise.all([page.waitForNavigation(), page.click(".gc-dialog [data-gc=save]")]); await settle(page);
     check("withdraw: _ga cookie deleted, nothing loaded after reload", !(await gaCookie(ctx)) && hits.length === 0, `${hits.length} requests`);
-    check("withdraw: privacy page says it's off", /off \(you rejected it\)/.test(await page.locator("#ga-state").textContent()));
+    check("withdraw: privacy page says both are off", /analytics off, advertising measurement off/.test(await page.locator("#ga-state").textContent()));
     await page.goto(BASE + "/"); await settle(page);
     check("withdraw: no banner, nothing loaded on the next page", !(await page.locator(".gc-banner").count()) && hits.length === 0);
     await ctx.close();
@@ -121,9 +131,36 @@ const settle = (page) => page.waitForTimeout(700);
     const { ctx, hits } = await context(browser);
     const page = await ctx.newPage(); await page.goto(BASE + "/"); await settle(page);
     await page.click(".gc-banner [data-gc=manage]");
-    check("manage: analytics not preselected", !(await page.isChecked("#gc-an")));
+    check("manage: analytics and advertising not preselected", !(await page.isChecked("#gc-an")) && !(await page.isChecked("#gc-ad")));
     await page.click(".gc-dialog [data-gc=save]"); await settle(page);
     check("manage: saving without ticking loads nothing", hits.length === 0 && (await page.evaluate(() => window.gradifyConsent.state())) === false);
+    await ctx.close();
+  }
+
+  // 5b. one choice without the other
+  for (const [name, an, ad] of [["analytics only", true, false], ["advertising only", false, true]]) {
+    const { ctx, hits } = await context(browser);
+    const page = await ctx.newPage(); await page.goto(BASE + "/?gclid=AbC"); await settle(page);
+    await page.click(".gc-banner [data-gc=manage]");
+    if (an) await page.check("#gc-an"); if (ad) await page.check("#gc-ad");
+    await page.click(".gc-dialog [data-gc=save]"); await settle(page);
+    const dl = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)));
+    const c = dl.find((x) => x[0] === "consent" && x[1] === "default")?.[2] || {};
+    const loc = dl.find((x) => x[0] === "set" && x[1] && x[1].page_location)?.[1].page_location;
+    check(`${name}: tag loads with exactly that consent`, hits.some((u) => /gtag\/js/.test(u)) && c.analytics_storage === (an ? "granted" : "denied") && c.ad_storage === (ad ? "granted" : "denied") && c.ad_user_data === (ad ? "granted" : "denied") && c.ad_personalization === "denied", JSON.stringify(c));
+    check(`${name}: gclid kept only with advertising consent`, loc === (ad ? `${BASE}/?gclid=AbC` : `${BASE}/`), loc);
+    await ctx.close();
+  }
+
+  // 5c. someone who answered before advertising was asked about: analytics kept, asked about advertising
+  {
+    const { ctx, hits } = await context(browser, { storage: { "gradify.consent": JSON.stringify({ v: 1, analytics: true, at: "2026-11-23" }) } });
+    const page = await ctx.newPage(); await page.goto(BASE + "/"); await settle(page);
+    const c = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).find((x) => x[0] === "consent" && x[1] === "default")?.[2]);
+    check("earlier answer: analytics still on, ads off, banner asks again", (await page.locator(".gc-banner").count()) === 1 && c && c.analytics_storage === "granted" && c.ad_storage === "denied");
+    await page.click(".gc-banner [data-gc=accept]"); await settle(page);
+    const u = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).filter((x) => x[0] === "consent" && x[1] === "update").pop()?.[2]);
+    check("earlier answer then Accept all: ads granted on the same page, one tag", u && u.ad_storage === "granted" && hits.filter((h) => /gtag\/js/.test(h)).length === 1);
     await ctx.close();
   }
 

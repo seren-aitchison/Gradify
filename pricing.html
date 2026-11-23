@@ -360,8 +360,8 @@
       }
       renderCta();
       const plan = planOf(sub);
-      // Google Analytics, with consent (kit/core/consent.js): once per checkout return, not on a refresh of this page
-      if (plan !== "free") { try { if (!sessionStorage.getItem("gradify.ga.sub")) { sessionStorage.setItem("gradify.ga.sub", "1"); globalThis.gradifyConsent?.event("subscription_start", { plan }); } } catch { /* storage blocked */ } }
+      // Google Analytics and Google Ads, with consent (kit/core/consent.js): a purchase once per checkout return, not on a refresh
+      if (plan !== "free") { try { if (!sessionStorage.getItem("gradify.ga.sub")) { sessionStorage.setItem("gradify.ga.sub", "1"); globalThis.gradifyConsent?.event("purchase", { plan, currency: "GBP", value: (PLAN_PRICES[plan]?.month || 0) / 100 }); } } catch { /* storage blocked */ } }
       if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}.`, describePlan(sub).line);
       else notice("warn", "Your payment went through, but your plan isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }
