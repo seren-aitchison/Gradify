@@ -59,7 +59,7 @@ test("new stereocentres: racemic from achiral starting materials, diastereomers 
 test("C=C geometry: Lindlar gives Z, an elimination is drawn as the major E isomer", () => {
   let { c } = only("CC#CC", "lindlar", "but-2-ene"); assert.equal(c.text, "(Z)"); assert.equal(c.bonds[0].how, "formed-Z");
   ({ c } = only("CCC(C)Br", "koh-eth", "but-2-ene")); assert.equal(c.text, "(E)"); assert.equal(c.bonds[0].how, "formed-E");
-  ({ c } = only("C/C=C\\C(C)O", "cr-reflux")); assert.equal(c.bonds[0].how, "kept"); assert.equal(c.text, "(Z)", "an untouched C=C keeps its geometry");
+  ({ c } = only("C/C=C\\C(C)O", "socl2")); assert.equal(c.bonds[0].how, "kept"); assert.equal(c.text, "(Z)", "an untouched C=C keeps its geometry");
 });
 
 test("every reaction in the library either records a configuration or reports none", () => {

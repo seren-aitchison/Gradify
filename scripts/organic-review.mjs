@@ -32,7 +32,7 @@ const REVIEW_COLS = ["verdict (agree / disagree / unsure)", "correction", "comme
 
 function expected(e) {
   if (e === null) return "No reaction";
-  if (e === DECLINE) return "Lab should decline (outside its rules)";
+  if (e === DECLINE) return "Not supported: the lab should decline";
   if (typeof e === "string") return nameOfSmiles(e);
   if (e.products) return e.products.length ? e.products.map(nameOfSmiles).join(" + ") : `No organic product${e.byproducts?.length ? ` (${e.byproducts.join(" + ")})` : ""}`;
   return `major: ${e.major.map(nameOfSmiles).join("; ")}${e.minor.length ? ` | minor: ${e.minor.map(nameOfSmiles).join("; ")}` : ""}`;
@@ -44,7 +44,7 @@ export function referenceRows(cases = REFERENCE) {
   const rows = [["id", "topic", "starting material", "reagent", "conditions", "level", "reference outcome", "lab prediction", "lab reasoning (first point)", "reference note", "sources (unchecked pointers)", "confidence", "recorded review (read-only)", "expectation key (do not edit)", ...REVIEW_COLS]];
   for (const r of cases) {
     const m = P.drawSmiles(r.start), res = P.predict(m, r.reagent), g = P.reagentOf(r.reagent);
-    const pred = res.reacts ? (res.products.length ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") : "No organic product") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.status === "declined" ? "Declined" : "No reaction";
+    const pred = res.reacts ? (res.products.length ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") : "No organic product") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.outcome === "unsupported" ? "Not supported (declined)" : "No reaction";
     const recorded = r.review ? `${r.review.verdict}${r.review.reviewer ? ` by ${r.review.reviewer}` : ""}${r.review.date ? `, ${r.review.date}` : ""}${r.review.note ? `: ${r.review.note}` : ""}${r.stale ? " (the expected outcome has changed since: please review again)" : ""}` : "";
     rows.push([r.id, r.topic, nameOfSmiles(r.start), g.label, g.cond, g.level, expected(r.expect), pred, res.why?.[0] || "", r.note, r.sources.map((x) => `${SOURCES[x.id] || x.id}: ${x.topic}`).join(" / "), r.confidence, recorded, expectKey(r.expect), "", "", "", "", ""]);
   }

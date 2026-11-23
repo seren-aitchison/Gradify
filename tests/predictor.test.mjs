@@ -104,7 +104,7 @@ test("products: methanoic acid from a methanoate ester is a product, and ethene 
   const h = pred("COC=O", "acid-hydrolysis");
   assert.ok(has(h, "OC=O") && has(h, "CO"), "methyl methanoate → methanoic acid + methanol"); assert.ok(!h.byproducts.includes("HCOOH"));
   const e = pred("C=C", "kmno4-hot");
-  assert.equal(e.status, "reacts"); assert.equal(e.products.length, 0); assert.deepEqual([...e.byproducts].sort(), ["CO₂", "H₂O"]);
+  assert.equal(e.outcome, "reaction"); assert.equal(e.products.length, 0); assert.deepEqual([...e.byproducts].sort(), ["CO₂", "H₂O"]);
   const p = pred("C=CC", "kmno4-hot"); assert.ok(has(p, "CC(=O)O") && p.byproducts.includes("CO₂ + H₂O"), "propene → ethanoic acid + CO₂");
   assert.ok(has(pred("C=C", "ozone"), "C=O"), "ozonolysis stops at methanal");
 });
@@ -112,16 +112,16 @@ test("products: methanoic acid from a methanoate ester is a product, and ethene 
 test("site recognition: N≡N is not a nitrile, and a pyridine ring is not given benzene's substitution rules", () => {
   const n = pred("N#N", "acid-hydrolysis"); assert.equal(n.reacts, false); assert.equal(n.products.length, 0);
   assert.ok(has(pred("CCC#N", "acid-hydrolysis"), "CCC(=O)O"), "propanenitrile → propanoic acid");
-  for (const g of ["nitration", "br2-febr3", "cl2-alcl3", "fc-acyl"]) { const r = pred("c1ccncc1", g); assert.equal(r.status, "declined", g); assert.match(r.why[0], /heteroaromatic/); }
+  for (const g of ["nitration", "br2-febr3", "cl2-alcl3", "fc-acyl"]) { const r = pred("c1ccncc1", g); assert.equal(r.outcome, "unsupported", g); assert.match(r.why[0], /heteroaromatic/); }
   assert.ok(has(pred("c1ccccc1", "nitration"), "[O-][N+](=O)c1ccccc1"), "benzene is still nitrated");
 });
 
 test("HBr: the benzylic cation decides, and conflicting effects are declined rather than contradicted", () => {
   const sty = pred("C=Cc1ccccc1", "hbr"); assert.ok(has(sty, "CC(Br)c1ccccc1", "major"), "styrene → (1-bromoethyl)benzene");
   const pp = pred("CC=Cc1ccccc1", "hbr"); assert.ok(has(pp, "CCC(Br)c1ccccc1", "major"), "1-phenylpropene → (1-bromopropyl)benzene, not a 50:50 mixture");
-  const cf = pred("CC(C)=Cc1ccccc1", "hbr"); assert.equal(cf.status, "declined", "benzylic secondary against tertiary");
+  const cf = pred("CC(C)=Cc1ccccc1", "hbr"); assert.equal(cf.outcome, "unsupported", "benzylic secondary against tertiary");
   assert.ok(has(pred("C=CC", "hbr"), "CC(C)Br", "major"), "propene is unchanged: Markovnikov");
-  assert.equal(pred("C=CCC#C", "hbr").status, "declined", "an enyne is declined until C=C/C≡C selectivity is modelled");
+  assert.equal(pred("C=CCC#C", "hbr").outcome, "unsupported", "an enyne is declined until C=C/C≡C selectivity is modelled");
   assert.ok(has(pred("C#CC", "hbr"), "CC(C)(Br)Br"), "an alkyne alone still gives the geminal dibromide");
 });
 
@@ -142,7 +142,7 @@ test("drawn hydrogens: an explicit O–H gives the same, valid product as an imp
 test("hydrolysis and hydroxide: alkaline anhydride hydrolysis gives two carboxylates; halogen + C=O is declined", () => {
   const an = pred("CC(=O)OC(C)=O", "naoh-aq"); assert.equal(an.products.length, 2); assert.ok(an.products.every((p) => K.analyse(p.m).charge === -1), "two ethanoate ions");
   const ac = pred("CC(=O)OC(C)=O", "acid-hydrolysis"); assert.ok(ac.products.every((p) => K.analyse(p.m).charge === 0), "acid hydrolysis gives two neutral acids");
-  for (const s of ["CC(Cl)C=O", "CC(=O)CBr", "BrCC=O"]) assert.equal(pred(s, "naoh-aq").status, "declined", s);
+  for (const s of ["CC(Cl)C=O", "CC(=O)CBr", "BrCC=O"]) assert.equal(pred(s, "naoh-aq").outcome, "unsupported", s);
   assert.ok(has(pred("CCBr", "naoh-aq"), "CCO"), "bromoethane still gives ethanol");
 });
 
@@ -166,7 +166,7 @@ test("alkynes: equally substituted ends give both products whichever way the SMI
     const a = pred("CC#CCC", g), b = pred("CCC#CC", g);
     assert.deepEqual(names(a), names(b), `${g}: pent-2-yne is the same reaction written either way`);
     assert.equal(a.products.length, 2, `${g}: both products form`);
-    assert.equal(pred("CC#CCCCC#CCC", g).status, "declined", `${g}: two tied sites`);
+    assert.equal(pred("CC#CCCCC#CCC", g).outcome, "unsupported", `${g}: two tied sites`);
   }
   assert.ok(has(pred("CC#CCC", "hbr"), "CC(Br)(Br)CCC") && has(pred("CC#CCC", "hbr"), "CCC(Br)(Br)CC"));
   assert.ok(has(pred("C#CC", "hbr"), "CC(C)(Br)Br") && pred("C#CC", "hbr").products.length === 1, "propyne: one product");

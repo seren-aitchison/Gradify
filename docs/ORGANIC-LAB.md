@@ -93,8 +93,23 @@ leaves alone), and selectivity comes from stated rules:
 | Aromatic substitution | nitration, Cl₂/AlCl₃, Br₂/FeBr₃, Friedel–Crafts alkylation and acylation; directing effects ranked (strong activators > alkyl > halogen > deactivators), the strongest activator controls, hindered positions between two groups avoided, para favoured for bulky acylium; FC fails on deactivated, –NH₂ and –OH rings; bromine water tribrominates phenol and phenylamine |
 | Radicals | Br₂/UV on alkanes, with bromine's selectivity (tertiary > secondary > primary) deciding the major product |
 
-Every result has a **status**: `reacts`, `no-reaction` (the chemistry doesn't happen, with the reason) or `declined`
-(outside the rules, ambiguous, or another reagent is meant), and carries the **evidence record** of the rule applied
+Every result has one of three **outcomes**, and the lab never treats them as the same thing:
+
+| Outcome | Meaning | When the engine may give it |
+|---|---|---|
+| `reaction` | the rule applies, with products (or, e.g. ethene + hot KMnO₄, only inorganic ones) | the rule fired **and** every other feature of the molecule is known inert to this reagent |
+| `no_reaction` | nothing happens under these conditions | the rule says so **and** every feature of the molecule is either handled by the rule or known inert |
+| `unsupported` | something may happen, but the rules can't reliably predict it | anything else; the reason names the feature that couldn't be accounted for |
+
+A molecule's **features** (`predictor.js` `features()`: C=C, benzylic C–H, primary alcohol, methanoyl H–C(=O)–O,
+thiol, strained ring and so on) are checked against each reagent's **coverage** (`rules.js` `COVERAGE`: the features
+its rule handles, and those that are standard knowledge to be inert under its conditions; the lists are deliberately
+conservative). So a "no reaction" is never just "the group this rule handles is missing": ethanol with HBr, ethanal
+with H₂/Ni, a thiol with dichromate and cyclopropane with bromine are all `unsupported`, not "no reaction". Rules that
+go through a carbocation decline when a 1,2-hydride or alkyl shift would give a more stable cation (`shiftPossible`),
+instead of giving the unrearranged product.
+
+Each result also carries the **evidence record** of the rule applied
 (`rules.js`): what it applies to, what it gives, its selectivity, what it doesn't cover, its sources and its
 confidence. `explainContext()` packages a prediction (verdict, rule, reasoning, pathways) as structured data for an
 explanation or a future AI tutor, which explains the record and never changes it. The Predict view shows the record
@@ -176,7 +191,7 @@ each also compared with their stated products and names, and the predictor with 
 ### Reference set and independent review
 
 `tests/data/organic-reference.mjs`: 302 reactions on 80 starting materials, written by hand from standard A-level and
-first-year textbook outcomes (not generated from the predictor): 63 no-reaction cases, 20 the lab must decline, and 53
+first-year textbook outcomes (not generated from the predictor): 42 `no_reaction` cases, 43 `unsupported`, and 53
 with major/minor or several products. Each case has a stable id, its section's sources and a confidence level. The
 test requires "no reaction" and "declined" cases to be told apart.
 
@@ -189,8 +204,11 @@ topics) are part of what the review should confirm.
 ### Known limitations
 
 * Selectivity is ranked by rules, not measured ratios: "major" and "minor" are qualitative.
-* Rearrangements (hydride and alkyl shifts in carbocations), 1,4-addition to dienes, conjugate addition, aldol and
-  other enolate chemistry, and anti-Markovnikov (peroxide) HBr addition are not modelled.
+* Rearrangements (hydride and alkyl shifts in carbocations) are detected and declined, not predicted; 1,4-addition to
+  dienes, conjugate addition, aldol and other enolate chemistry, and anti-Markovnikov (peroxide) HBr addition are not
+  modelled (declined where detected).
+* "Unsupported" is deliberately broad: the inert lists only include what is standard knowledge, so some reactions an
+  expert would call safe to predict are declined until a reviewer confirms them.
 * Stereochemistry (see "Stereochemistry" below) follows textbook rules; amounts of diastereomers aren't predicted, E2 from a
   single diastereomer isn't yet worked through anti-periplanar geometry, and SOCl₂ and other substitutions at a
   stereocentre outside SN1/SN2 aren't followed stereochemically (the lab says so instead of guessing).
@@ -255,6 +273,18 @@ topics) are part of what the review should confirm.
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides
 chemical validity, and where the engine can't evaluate something it says so.
 
+### Correctness fixes after the second audit (2026-11-23)
+
+Forty fresh probes found 9 false or unsafe "no reaction" claims and 2 confident wrong products. Fixed by the three
+outcomes above, plus: hot KMnO₄ oxidises alkyl side chains with a benzylic H to –COOH; methanoic acid reduces Tollens'
+reagent (methanoate esters are declined); Grignard reagents add to acyl chlorides (twice) and nitriles (to a ketone),
+and an O–H destroying the reagent is reported as unsupported, not as no reaction; phenol in concentrated nitrating
+mixture gives 2,4,6-trinitrophenol; NaOH(aq) turns phenol into phenoxide; carbocation rearrangements are declined
+(HBr and steam additions, acid dehydration, SN1/E1). `tests/organic-outcomes.test.mjs` holds the regression cases; run
+against the code before the fix, all six of its tests fail. In the reference set, 21 "no reaction" or product
+expectations became `unsupported` (each with its chemistry in the case's note), 1 became a reaction with no organic
+product, 2 changed product (phenol and 4-methylphenol nitration), and 2 neopentyl cases became `unsupported`.
+
 ## Release gate
 
 The lab ships only when all of these hold. Set after the review of PR #159 ([organic-review/REVIEW-FINDINGS.md](organic-review/REVIEW-FINDINGS.md)):
@@ -279,7 +309,8 @@ chemistry is provisional until an independent chemist has reviewed it. Minor fin
 | `tests/skeletal.test.mjs` | drawing model, naming, analysis |
 | `tests/mechanism.test.mjs` | electron flow, validation, all 16 mechanisms replayed to named products, spot the error, error carried forward, registration |
 | `tests/predictor.test.mjs` | predictor behaviour on starting materials and learners' own drawings, every product a valid molecule |
-| `tests/organic-reference.test.mjs` | the 302-reaction reference set, with coverage of every reagent |
+| `tests/organic-reference.test.mjs` | the 302-reaction reference set, with coverage of every reagent; every `no_reaction` case passes the coverage rule |
+| `tests/organic-outcomes.test.mjs` | the three outcomes: the audit's regression cases, rearrangements, true negatives, and a check over every starter × reagent pair |
 | `tests/planner.test.mjs` | every synthesis challenge solvable in exactly its stated length, retrosynthesis, competition, mark breakdowns |
 | `tests/configuration.test.mjs` | R/S and E/Z from drawings against mol.js, isomer relations by definition, the 3D model's configuration |
 | `tests/stereo-outcome.test.mjs` | the stereochemical outcome of each prediction |

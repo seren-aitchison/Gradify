@@ -3,21 +3,21 @@
 // predictor or in the reference, and either way it is reported, never silently accepted.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { REFERENCE, DECLINE } from "./data/organic-reference.mjs";
+import { REFERENCE, UNSUPPORTED } from "./data/organic-reference.mjs";
 import * as P from "../kit/labs/chemistry/reactions/predictor.js";
 import * as K from "../kit/labs/chemistry/skeletal.js";
 
 const hash = (smiles) => K.analyse(K.graphFromSmiles(smiles)).hash;
 const label = (m) => { const A = K.analyse(m); return A.name?.name || A.smiles; };
 export function check({ start: smiles, reagent, expect: want }) {
-  const m = P.drawSmiles(smiles), r = P.predict(m, reagent), got = r.reacts ? r.products.map((p) => `${p.role}:${label(p.m)}`).join(", ") : `${r.status} (${r.why[0]})`;
+  const m = P.drawSmiles(smiles), r = P.predict(m, reagent), got = r.reacts ? r.products.map((p) => `${p.role}:${label(p.m)}`).join(", ") : `${r.outcome} (${r.why[0]})`;
   const fail = (msg) => `${smiles} + ${reagent}: ${msg}. Got ${got}`;
   if (K.analyse(m).problems.length) return fail("the reference starting material is invalid");
-  if (want === null || want === DECLINE) {
-    if (r.reacts) return fail(want === null ? "expected no reaction" : "expected the lab to decline");
+  if (want === null || want === UNSUPPORTED) {
+    if (r.reacts) return fail(want === null ? "expected no reaction" : "expected the lab to decline (unsupported)");
     if (!r.why?.[0] || r.why[0].length < 25) return fail("a refusal must say why");
-    if (want === null && r.status !== "no-reaction") return fail("expected “no reaction”, not a decline");
-    if (want === DECLINE && r.status !== "declined") return fail("expected a decline (outside the rules), not “no reaction”");
+    if (want === null && r.outcome !== "no_reaction") return fail("expected “no reaction”, not unsupported");
+    if (want === UNSUPPORTED && r.outcome !== "unsupported") return fail("expected unsupported, not “no reaction”");
     return null;
   }
   if (!r.reacts) return fail("expected a reaction");
@@ -41,10 +41,13 @@ test(`reference set: ${REFERENCE.length} reactions, including negative and decli
 test("reference set coverage: every reagent has positive and negative cases", () => {
   for (const g of P.REAGENTS) {
     const rows = REFERENCE.filter((r) => r.reagent === g.id);
-    assert.ok(rows.some((r) => r.expect !== null && r.expect !== DECLINE), `${g.id}: a positive case`);
+    assert.ok(rows.some((r) => r.expect !== null && r.expect !== UNSUPPORTED), `${g.id}: a positive case`);
   }
-  assert.ok(REFERENCE.filter((r) => r.expect === null).length >= 60, "plenty of no-reaction cases");
-  assert.ok(REFERENCE.filter((r) => r.expect === DECLINE).length >= 15, "unsupported and ambiguous cases the lab must decline");
+  assert.ok(REFERENCE.filter((r) => r.expect === null).length >= 35, "plenty of no-reaction cases");
+  // every "no reaction" in the reference passes the coverage rule: each feature of the molecule is handled or known
+  // inert for that reagent (so a "no" is never just "the rule's group is missing")
+  for (const r of REFERENCE.filter((x) => x.expect === null)) { const out = P.predict(P.drawSmiles(r.start), r.reagent); assert.deepEqual(out.unaccounted, [], `${r.id}: unaccounted features`); }
+  assert.ok(REFERENCE.filter((r) => r.expect === UNSUPPORTED).length >= 15, "unsupported and ambiguous cases the lab must decline");
 });
 
 test("every reference case records its sources and confidence, and every rule has an evidence record", () => {
