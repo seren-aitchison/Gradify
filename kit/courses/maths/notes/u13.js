@@ -1748,9 +1748,9 @@ H: Uses
 - Reducing many correlated measurements to a few indices (deprivation indices, body shape).
 - Visualising genetic population structure.
 - Pre-processing for regression and machine learning (School 24).
-X: The covariance matrix of four standardised variables has eigenvalues 4.2, 1.5, 0.2 and 0.1. How much variance do the first two components explain?
-> Total variance = 4.2 + 1.5 + 0.2 + 0.1 = 6
-> PC1: 4.2/6 = 70%; PC2: 1.5/6 = 25%
+X: The covariance matrix of four standardised variables has eigenvalues 2.8, 1.0, 0.16 and 0.04. How much variance do the first two components explain?
+> Total variance = 2.8 + 1.0 + 0.16 + 0.04 = 4 (four standardised variables, each of variance 1)
+> PC1: 2.8/4 = 70%; PC2: 1.0/4 = 25%
 > Together 95%: two components summarise the data well
 K: PCA finds directions of maximum variance; eigenvalues give variance explained; standardise mixed-unit variables; other methods map tables and dissimilarities.
 !: Running PCA on unstandardised variables measured in different units, so one variable dominates.

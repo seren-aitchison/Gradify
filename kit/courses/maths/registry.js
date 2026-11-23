@@ -488,7 +488,7 @@ export const LESSONS = {
   "u13-47":{"v":2,"hash":"f6fac10eac6e","updated":"2026-11-06"},
   "u13-48":{"v":2,"hash":"50f85c164b75","updated":"2026-11-06"},
   "u13-49":{"v":2,"hash":"20ea91579d3a","updated":"2026-11-06"},
-  "u13-50":{"v":1,"hash":"ad0d95fee9cc","updated":"2026-11-06"},
+  "u13-50":{"v":2,"hash":"6a59e9470806","updated":"2026-11-23"},
   "u13-51":{"v":2,"hash":"bb8cb52e5ae9","updated":"2026-11-06"},
   "u13-52":{"v":3,"hash":"d5187c784715","updated":"2026-11-22"},
   "u13-53":{"v":1,"hash":"edb4eb58a617","updated":"2026-11-06"},
