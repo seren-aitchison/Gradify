@@ -14,6 +14,8 @@ export function Course() {
       ]);
       if (live && el.current) mountCourse(el.current, course);
     })();
+    // KNOWN LIMITATION (docs/NEXTJS-MIGRATION.md, limitation 8): mountCourse returns no dispose(), so its listeners,
+    // timer and body-level assistant UI outlive this component. Fine for the PoC; courses can't move until it does.
     return () => { live = false; };
   }, []);
   return <div className="wrap"><div id="course" ref={el} /></div>;

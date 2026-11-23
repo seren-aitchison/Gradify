@@ -108,14 +108,30 @@ published (`scripts/build-site.mjs` lists `poc/` as excluded) and changes nothin
 routes: a React homepage on the design-system tokens, `/privacy.html` (a content page that must keep its `.html` URL),
 and `/lawgradify/course/`, the real Law course (19 schools, 480 lessons) mounted by the existing engine.
 
-Run it: `cd poc/nextjs && npm install && npm run build && npm run verify`. The verify scripts serve `out/` the way
-GitHub Pages does and drive Chromium with Playwright.
+Run it, from a fresh checkout:
+
+```bash
+npm ci
+```
+
+```bash
+npx playwright install chromium
+```
+
+```bash
+cd poc/nextjs && npm install && npm run build && npm run verify
+```
+
+The first two install the repository's development tools, including Playwright, which the verify scripts load from
+the root `node_modules`, and its Chromium browser. (Skip the second where Chromium is already installed for
+Playwright.) The verify scripts serve `out/` the way GitHub Pages does and drive Chromium. Each result is a pass/fail
+check, and any failure makes `npm run verify` exit non-zero: 27 checks in `verify.cjs`, 4 in `parity.cjs`.
 
 | Question | Result |
 | --- | --- |
 | **Asset paths** | Pass. `public/` links to the repository's `kit/`, `assets/`, `sw.js`, `manifest.webmanifest` and `gradify.config.js`, and `next build` copies them into `out/` at their current paths. Stylesheets and `theme-boot.js` load from `/kit/…` exactly as the static pages load them; `--ds-*` tokens and the device theme apply. No failed requests. |
-| **Course notes** | Pass. The course engine and the Law curriculum are loaded at runtime with `import(/* webpackIgnore: true */ "/kit/…")`, not bundled: no Next chunk contains the notes or the engine, and the whole `_next/` folder is 616 KB uncompressed for every page together. The course renders 388 elements, opens lessons by its own hash routes (`#/learn/u01`), and navigating to it from the React homepage is client-side (no reload). |
-| **Saved progress** | Pass. Progress is the same `localStorage` keys (`gradify.course.law`, `gradify.ui`) on the same origin. With the saved state from the current static course, the Next.js course home renders identically (first 600 characters of the course compared). |
+| **Course notes** | Pass. The course engine and the Law curriculum are loaded at runtime with `import(/* webpackIgnore: true */ "/kit/…")`, not bundled: no Next chunk contains the notes or the engine, and the whole `_next/` folder is 616 KB uncompressed for every page together. The course renders 388 elements, opens a real lesson by its own hash route (`#/lesson/u01-01`) with its notes, and navigating to it from the React homepage is client-side (no reload). |
+| **Saved progress** | Pass. Progress is the same `localStorage` keys (`gradify.course.law`, `gradify.ui`) on the same origin. With the saved state from the current static course, the Next.js course home and the lesson `#/lesson/u01-01` render identically (the first 600 characters of each compared). |
 | **Offline** | Pass, **with a generated service worker**. Used as it is, the existing `sw.js` would fail to install, because its list names pages the Next build doesn't produce (`app.html`, `explore.html`) and it doesn't know Next's chunk files. `postbuild.mjs` rewrites `SHELL` from the build output: the built pages (as `privacy/`, not `privacy/index.html`, so the cached key matches the URL the browser asks for), the kit files that exist and Next's `_next/static` chunks. Offline, the homepage, the Law course (fully working), `/privacy.html` and `/privacy/` all load. |
 | **Existing `.html` URLs** | Pass, **with a post-build step**. No single Next setting keeps every URL. Without trailing slashes, `privacy.html` survives but the course becomes `lawgradify/course.html` (the current URL `/lawgradify/course/` would 404). With `trailingSlash: true`, folders survive but `/privacy.html` 404s. GitHub Pages can't redirect. The fix that worked: `trailingSlash: true`, then `postbuild.mjs` copies `privacy/index.html` to `privacy.html` for each legacy page. All 10 URLs checked return 200 (or GitHub Pages' usual 301 to add a slash). |
 
@@ -137,6 +153,12 @@ GitHub Pages does and drive Chromium with Playwright.
    Firefox, Android, screen readers, and load time on a deployed host. Chromium only.
 7. **Build time and size.** `next build` copies the 97 MB `kit/` folder into `out/`; fine for CI, but the deploy should
    publish from `out/` instead of building the site twice.
+8. **The course engine can't be unmounted.** `mountCourse` adds window listeners, a timer and the assistant's UI on
+   `document.body`, and returns no way to remove them. On today's static pages that's fine: leaving the course is a full
+   page load. In a React app that navigates without reloading, leaving and reopening the course would leave the old
+   engine running beside a new one. Before courses move (phase 4), `mountCourse` needs to return a `dispose()` that
+   removes all of it, and the React wrapper must call it on unmount. Not changed in the PoC, because that's a change to
+   the production course engine.
 
 ## Decisions for you
 
