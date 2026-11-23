@@ -145,9 +145,9 @@
     <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="opt"><span>…</span></button><span id="opt-state" aria-live="polite"></span></div>
 
     <h2 id="analytics">Google Analytics (only if you accept)</h2>
-    <p>Gradify asks before using Google Analytics. Until you choose “Accept analytics”, no Google Analytics or Google Tag Manager code loads and no analytics cookie is set. “Reject analytics”, or not choosing, keeps it that way. It's used to see which pages and features help people study, and to find what's broken or confusing. It isn't used for advertising, and Gradify doesn't sell or share it.</p>
+    <p>Gradify asks before using Google Analytics. Until you choose “Accept analytics”, no Google Analytics code loads and no analytics cookie is set. “Reject analytics”, or not choosing, keeps it that way. It's used to see which pages and features help people study, and to find what's broken or confusing. It isn't used for advertising, and Gradify doesn't sell or share it.</p>
     <p><b>Where it never runs.</b> Not on JuniorGradify or YouthGradify, whatever you choose. Not if your browser sends Do Not Track or Global Privacy Control: Gradify treats those as a no and doesn't ask. Not if you've turned off the usage counts above.</p>
-    <p><b>What it collects, if you accept.</b> Google Tag Manager loads Google Analytics, which sets cookies named <code>_ga</code> and <code>_ga_…</code> holding a random identifier for this browser. With them, Google Analytics records:</p>
+    <p><b>What it collects, if you accept.</b> Google Analytics sets cookies named <code>_ga</code> and <code>_ga_…</code> holding a random identifier for this browser. With them, Google Analytics records:</p>
     <ul>
       <li>the pages you visit, without anything after <code>?</code> except campaign tags (<code>utm_…</code>), and without sign-in codes after <code>#</code></li>
       <li>the website that linked to Gradify (its address only, not the full link)</li>
@@ -165,7 +165,7 @@
     <ul>
       <li><b>Supabase</b> stores accounts, study data and launch lists, and handles sign-in.</li>
       <li><b>Google</b> signs you in, only if you choose “Sign in with Google”.</li>
-      <li><b>Google Tag Manager and Google Analytics</b> count visits and feature use, only if you accept analytics, as described <a href="#analytics">above</a>.</li>
+      <li><b>Google Analytics</b> counts visits and feature use, only if you accept analytics, as described <a href="#analytics">above</a>.</li>
       <li><b>Google Fonts</b> supplies the fonts on every page, so Google sees your device's IP address when a page loads.</li>
       <li><b>GitHub Pages</b> serves the website itself, and sees your IP address like any web host.</li>
       <li><b>Anthropic</b> (Claude) writes Gradify AI's answers, once Gradify AI is switched on, as described above. Anthropic is in the United States.</li>

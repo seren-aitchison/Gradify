@@ -1,4 +1,4 @@
-// Browser check for the analytics consent banner and Google Tag Manager loading (kit/core/consent.js).
+// Browser check for the analytics consent banner and Google Analytics loading (kit/core/consent.js).
 // Google's servers are stubbed: every request to a Google tag host is recorded and answered with a tiny script that
 // sets a fake _ga cookie, so the check can see whether anything would have reached Google, and when.
 //   node scripts/check-consent.cjs         serves this folder to the browser itself, at http://localhost:8080
@@ -65,30 +65,33 @@ const settle = (page) => page.waitForTimeout(700);
     await ctx.close();
   }
 
-  // 3. accept: GTM loads once, events reach the dataLayer, returning visitor keeps it; withdraw stops it
+  // 3. accept: the Google tag loads once, events reach the dataLayer, returning visitor keeps it; withdraw stops it
   {
     const { ctx, hits } = await context(browser);
     const page = await ctx.newPage(); await page.goto(BASE + "/"); await settle(page);
     await page.click(".gc-banner [data-gc=accept]"); await settle(page);
-    check("accept: GTM requested", hits.some((u) => /gtm\.js\?id=GTM-5GF2NFNH/.test(u)), hits[0] || "none");
+    check("accept: Google tag G-CPR5LJB35L requested", hits.some((u) => /gtag\/js\?id=G-CPR5LJB35L/.test(u)), hits[0] || "none");
     check("accept: banner closes", !(await page.locator(".gc-banner").count()));
     const dl = await page.evaluate(() => JSON.parse(JSON.stringify(window.dataLayer.map((x) => (x && x.length !== undefined && typeof x !== "string" ? Array.from(x) : x)))));
     const consent = dl.find((x) => Array.isArray(x) && x[0] === "consent" && x[1] === "default");
     check("accept: Consent Mode default sets analytics granted, ads denied", consent && consent[2].analytics_storage === "granted" && consent[2].ad_storage === "denied" && consent[2].ad_user_data === "denied" && consent[2].ad_personalization === "denied");
-    check("accept: cleaned page location in dataLayer", dl.some((x) => x && x.gradify_page_location === BASE + "/"));
-    check("dev traffic marked internal", dl.some((x) => x && x.traffic_type === "internal"));
+    const set = dl.find((x) => Array.isArray(x) && x[0] === "set" && x[1] && x[1].page_location);
+    const config = dl.find((x) => Array.isArray(x) && x[0] === "config");
+    check("accept: cleaned page location set", set && set[1].page_location === BASE + "/");
+    check("accept: config G-CPR5LJB35L with Google signals and ad personalisation off", config && config[1] === "G-CPR5LJB35L" && config[2].allow_google_signals === false && config[2].allow_ad_personalization_signals === false);
+    check("dev traffic marked internal", config && config[2].traffic_type === "internal");
     await page.evaluate(() => window.gradifyConsent.event("lesson_start", { email: "a@b.c", plan: "x@y", ok: 1 }));
-    const last = await page.evaluate(() => window.dataLayer[window.dataLayer.length - 1]);
-    check("events: personal-looking fields dropped", last.event === "lesson_start" && !("email" in last) && !("plan" in last) && last.ok === 1, JSON.stringify(last));
+    const last = await page.evaluate(() => Array.from(window.dataLayer[window.dataLayer.length - 1]));
+    check("events: personal-looking fields dropped", last[0] === "event" && last[1] === "lesson_start" && !("email" in last[2]) && !("plan" in last[2]) && last[2].ok === 1, JSON.stringify(last));
 
     // returning visitor, another page with a query string and a sign-in hash
     hits.length = 0;
     await page.goto(BASE + "/pricing.html?checkout=success&utm_source=news&email=a%40b.c#access_token=abc"); await settle(page);
-    const loc = await page.evaluate(() => window.dataLayer.find((x) => x && x.gradify_page_location)?.gradify_page_location);
-    check("returning visitor: GTM loads with no banner", hits.filter((u) => /gtm\.js/.test(u)).length === 1 && !(await page.locator(".gc-banner").count()));
+    const loc = await page.evaluate(() => Array.from(window.dataLayer).map((x) => Array.from(x)).find((x) => x[0] === "set" && x[1] && x[1].page_location)?.[1].page_location);
+    check("returning visitor: Google tag loads with no banner", hits.filter((u) => /gtag\/js/.test(u)).length === 1 && !(await page.locator(".gc-banner").count()));
     check("page location drops query, sign-in hash, keeps utm", loc === `${BASE}/pricing.html?utm_source=news`, loc);
-    const gtmScripts = await page.locator("script[src*='googletagmanager.com/gtm.js']").count();
-    check("one GTM container on the page", gtmScripts === 1, String(gtmScripts));
+    const tags = await page.locator("script[src*='googletagmanager.com']").count();
+    check("exactly one Google tag on the page, no GTM container", tags === 1 && !(await page.locator("script[src*='gtm.js']").count()), String(tags));
 
     // withdraw from the privacy page
     await page.goto(BASE + "/privacy.html"); await settle(page);

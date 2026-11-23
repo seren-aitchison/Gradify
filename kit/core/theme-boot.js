@@ -119,7 +119,7 @@ document.addEventListener("click", function (e) {
   if (document.readyState === "complete") later(); else addEventListener("load", later);
 })();
 
-// Analytics consent and Google Analytics (kit/core/consent.js): the cookie banner, and Google Tag Manager only after
+// Analytics consent and Google Analytics (kit/core/consent.js): the cookie banner, and Google Analytics only after
 // "Accept analytics". Loaded from here so every page that has this script gets it.
 (function () {
   var src = (document.currentScript && document.currentScript.src) || "";

@@ -1,4 +1,4 @@
-// Analytics consent, and Google Analytics through Google Tag Manager, on every Gradify page that loads
+// Analytics consent, and Google Analytics (gtag.js, G-CPR5LJB35L), on every Gradify page that loads
 // kit/core/theme-boot.js (it loads this file). A classic script with no imports, so it works on every page.
 //
 // Nothing from Google loads until a visitor chooses "Accept analytics". Until then no Google script, cookie or request.
@@ -16,11 +16,12 @@
 //   localStorage "gradify.consent" = {"v":1,"analytics":true|false,"at":"YYYY-MM-DD"}
 //   window.gradifyConsent: { state(), blocked(), accept(), reject(), open(), event(name, params) }
 //
-// GA4 (G-CPR5LJB35L) is configured inside the GTM container, not here: docs/ANALYTICS.md has the container set-up.
+// Google's own gtag.js snippet for GA4 (G-CPR5LJB35L), loaded here after consent instead of pasted into each <head>, so it
+// can't run before a visitor accepts. One Google tag per page: no GTM container is loaded alongside it.
 (function () {
   var stub = window.gradifyConsent && window.gradifyConsent.stub ? window.gradifyConsent : null;
   if (window.gradifyConsent && !stub) return;
-  var GTM_ID = "GTM-5GF2NFNH";
+  var GA4_ID = "G-CPR5LJB35L";
   var KEY = "gradify.consent", VERSION = 1;
   var CHILD_SITES = /^\/(juniorgradify|youthgradify)(\/|$)/i;
   var PROD_HOST = /(^|\.)getgradify\.com$/i;
@@ -49,7 +50,7 @@
   var allowed = function () { return !blocked() && choice() === true; };
 
   // The address and referrer Google may see: no query string (sign-in codes, emails, Stripe ids) except utm_ tags,
-  // and only app routes after "#" (#/lesson/…), never a sign-in token. The GTM Google tag sends these as
+  // and only app routes after "#" (#/lesson/…), never a sign-in token. These are sent as
   // page_location and page_referrer (docs/ANALYTICS.md).
   function cleanLocation() {
     var q = new URLSearchParams(location.search), keep = new URLSearchParams();
@@ -73,12 +74,17 @@
     gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", functionality_storage: "denied", personalization_storage: "denied", security_storage: "granted" });
     gtag("set", "ads_data_redaction", true);
     gtag("set", "url_passthrough", false);
-    window.dataLayer.push({ gradify_site: siteName(), gradify_page_location: cleanLocation(), gradify_page_referrer: cleanReferrer(), traffic_type: internal() ? "internal" : undefined });
-    window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+    // what Google sees as the page: the cleaned address and referrer, not the raw ones
+    gtag("set", { page_location: cleanLocation(), page_referrer: cleanReferrer() });
+    // Google's snippet: gtag("js", new Date()); gtag("config", "G-CPR5LJB35L"), with privacy settings added
+    gtag("js", new Date());
+    var cfg = { gradify_site: siteName(), cookie_expires: 33696000, allow_google_signals: false, allow_ad_personalization_signals: false };
+    if (internal()) cfg.traffic_type = "internal";
+    gtag("config", GA4_ID, cfg);
+    var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
     document.head.appendChild(s);
     // app pages route by "#": keep the cleaned address current for events sent after a route change
-    addEventListener("hashchange", function () { window.dataLayer.push({ gradify_page_location: cleanLocation() }); });
+    addEventListener("hashchange", function () { gtag("set", { page_location: cleanLocation() }); });
   }
 
   // remove Google Analytics cookies (_ga, _ga_<id>, _gid, _gat…) for this host and its parent domains
@@ -94,7 +100,7 @@
   var SAFE_NAME = /^[a-z][a-z0-9_]{0,39}$/, BAD_KEY = /(email|name|phone|password|token|card|address|user|uid|id_token|answer|note|text)/i;
   function event(name, params) {
     if (!loaded || !SAFE_NAME.test(name || "")) return;
-    var out = { event: name, gradify_site: siteName() };
+    var out = { gradify_site: siteName() };
     if (params) for (var k in params) {
       if (!Object.prototype.hasOwnProperty.call(params, k) || BAD_KEY.test(k) || !/^[a-z][a-z0-9_]{0,39}$/.test(k)) continue;
       var v = params[k];
@@ -102,7 +108,7 @@
       else if (typeof v === "boolean") out[k] = v;
       else if (typeof v === "string" && !/@/.test(v)) out[k] = v.slice(0, 100);
     }
-    window.dataLayer.push(out);
+    gtag("event", name, out);
   }
 
   // ---------- the banner and the preferences dialog ----------
