@@ -1,0 +1,90 @@
+{
+ "id": "phys-u33-lapse-rate",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u33",
+ "lesson": "Atmospheric structure",
+ "title": "Temperature falling with height",
+ "caption": "In the troposphere the air cools by about 6.5 K for every kilometre of height. From 15 °C at the surface it reaches −37 °C at 8 km, close to where airliners cruise.",
+ "alt": "Temperature against height, a straight line falling from 15 degrees at the surface to minus 37 degrees at 8 kilometres.",
+ "description": [
+  "Lapse rate 6.5 K km⁻¹; surface 15 °C.",
+  "T = 15 − 6.5h.",
+  "At 8 km: 15 − 52 = −37 °C.",
+  "Above the tropopause (about 11 km) the temperature stops falling."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   -60,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   -60,
+   -40,
+   -20,
+   0,
+   20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "height / km",
+  "temperature / °C"
+ ],
+ "curves": [
+  {
+   "expr": "15-6.5*x",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 8,
+   "to": -37
+  }
+ ],
+ "points": [
+  {
+   "x": 8,
+   "y": -37,
+   "colour": "a2",
+   "label": "−37 °C at 8 km",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "15-6.5*x",
+   "x": 8,
+   "y": -37,
+   "name": "−37 °C at 8 km"
+  },
+  {
+   "type": "slope",
+   "expr": "15-6.5*x",
+   "x": 3,
+   "value": -6.5,
+   "name": "−6.5 K per km"
+  }
+ ]
+}

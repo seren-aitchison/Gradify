@@ -1,0 +1,90 @@
+{
+ "id": "phys-u33-saturation-vapour",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u33",
+ "lesson": "Cloud formation and microphysics",
+ "title": "Warm air holds much more water vapour",
+ "caption": "The saturation vapour pressure rises roughly exponentially with temperature, about 7% per kelvin. At 20 °C it is 2340 Pa; at 30 °C nearly twice that. This is why a warmer climate brings heavier rain.",
+ "alt": "Saturation vapour pressure in pascals against temperature, rising ever more steeply, with 2340 pascals at 20 degrees marked.",
+ "description": [
+  "e_s = 611 Pa × exp(17.27T / (T + 237.3)), T in °C.",
+  "T = 0 °C: 611 Pa. T = 20 °C: 2339 Pa. T = 30 °C: 4244 Pa.",
+  "Cooling air towards this curve brings it to saturation: cloud forms."
+ ],
+ "range": {
+  "x": [
+   -10,
+   35
+  ],
+  "y": [
+   0,
+   6000
+  ]
+ },
+ "ticks": [
+  [
+   -10,
+   0,
+   10,
+   20,
+   30
+  ],
+  [
+   1000,
+   2000,
+   3000,
+   4000,
+   5000,
+   6000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "temperature / °C",
+  "saturation vapour pressure / Pa"
+ ],
+ "curves": [
+  {
+   "expr": "611*exp(17.27*x/(x+237.3))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 20,
+   "to": 2339.0469163992625
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 2339.047,
+   "colour": "a2",
+   "label": "2340 Pa at 20 °C",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "611*exp(17.27*x/(x+237.3))",
+   "x": 20,
+   "y": 2339.046916,
+   "name": "2339 Pa at 20 °C"
+  },
+  {
+   "type": "point",
+   "expr": "611*exp(17.27*x/(x+237.3))",
+   "x": 0,
+   "y": 611,
+   "name": "611 Pa at 0 °C"
+  }
+ ]
+}

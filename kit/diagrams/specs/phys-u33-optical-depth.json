@@ -1,0 +1,81 @@
+{
+ "id": "phys-u33-optical-depth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u33",
+ "lesson": "Radiative transfer",
+ "title": "Transmission through an optical depth",
+ "caption": "Light is attenuated exponentially: the fraction transmitted is e^(−τ). An atmosphere of optical depth 0.3 lets through 74% of the beam; at τ = 1, 37%.",
+ "alt": "Fraction transmitted against optical depth, an exponential decay from 1, with 0.74 marked at 0.3.",
+ "description": [
+  "Transmitted fraction = e^(−τ).",
+  "τ = 0.3: 0.741.",
+  "τ = 1: 0.368. τ = 3: 0.050."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "optical depth τ",
+  "fraction transmitted"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.3,
+   "to": 0.7408182206817179
+  }
+ ],
+ "points": [
+  {
+   "x": 0.3,
+   "y": 0.74082,
+   "colour": "a2",
+   "label": "74% at τ = 0.3",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x)",
+   "x": 0.3,
+   "y": 0.74081822,
+   "name": "74.1% transmitted at τ = 0.3"
+  }
+ ]
+}

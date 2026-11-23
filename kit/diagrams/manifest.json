@@ -67339,5 +67339,231 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u33-lapse-rate": {
+  "title": "Temperature falling with height",
+  "caption": "In the troposphere the air cools by about 6.5 K for every kilometre of height. From 15 °C at the surface it reaches −37 °C at 8 km, close to where airliners cruise.",
+  "alt": "Temperature against height, a straight line falling from 15 degrees at the surface to minus 37 degrees at 8 kilometres.",
+  "description": [
+   "Lapse rate 6.5 K km⁻¹; surface 15 °C.",
+   "T = 15 − 6.5h.",
+   "At 8 km: 15 − 52 = −37 °C.",
+   "Above the tropopause (about 11 km) the temperature stops falling."
+  ],
+  "course": "physics",
+  "lesson": "Atmospheric structure",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u33.js: Atmospheric structure"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "−37 °C at 8 km",
+    "ok": true,
+    "detail": "y(8) = -37"
+   },
+   {
+    "name": "−6.5 K per km",
+    "ok": true,
+    "detail": "gradient -6.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u33-optical-depth": {
+  "title": "Transmission through an optical depth",
+  "caption": "Light is attenuated exponentially: the fraction transmitted is e^(−τ). An atmosphere of optical depth 0.3 lets through 74% of the beam; at τ = 1, 37%.",
+  "alt": "Fraction transmitted against optical depth, an exponential decay from 1, with 0.74 marked at 0.3.",
+  "description": [
+   "Transmitted fraction = e^(−τ).",
+   "τ = 0.3: 0.741.",
+   "τ = 1: 0.368. τ = 3: 0.050."
+  ],
+  "course": "physics",
+  "lesson": "Radiative transfer",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u33.js: Radiative transfer"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "74.1% transmitted at τ = 0.3",
+    "ok": true,
+    "detail": "y(0.3) = 0.7408"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u33-pressure-height": {
+  "title": "Pressure falls exponentially with height",
+  "caption": "With a scale height H = 8 km, p = p₀e^(−h/H). At 3000 m the pressure is 1013 × e^(−3/8) ≈ 700 hPa; it halves about every 5.5 km.",
+  "alt": "Pressure in hectopascals against height, an exponential decay from 1013 at sea level through 700 at 3 kilometres.",
+  "description": [
+   "p = 1013 hPa × e^(−h / 8 km).",
+   "h = 3 km: 696 hPa.",
+   "Halves every 8 ln 2 = 5.55 km."
+  ],
+  "course": "physics",
+  "lesson": "Atmospheric pressure and temperature",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u33.js: Atmospheric pressure and temperature"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "696 hPa at 3 km",
+    "ok": true,
+    "detail": "y(3) = 696.224"
+   },
+   {
+    "name": "half the sea-level pressure at 8 ln 2 km",
+    "ok": true,
+    "detail": "y(5.54517744) = 506.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u33-saturation-vapour": {
+  "title": "Warm air holds much more water vapour",
+  "caption": "The saturation vapour pressure rises roughly exponentially with temperature, about 7% per kelvin. At 20 °C it is 2340 Pa; at 30 °C nearly twice that. This is why a warmer climate brings heavier rain.",
+  "alt": "Saturation vapour pressure in pascals against temperature, rising ever more steeply, with 2340 pascals at 20 degrees marked.",
+  "description": [
+   "e_s = 611 Pa × exp(17.27T / (T + 237.3)), T in °C.",
+   "T = 0 °C: 611 Pa. T = 20 °C: 2339 Pa. T = 30 °C: 4244 Pa.",
+   "Cooling air towards this curve brings it to saturation: cloud forms."
+  ],
+  "course": "physics",
+  "lesson": "Cloud formation and microphysics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u33.js: Cloud formation and microphysics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2339 Pa at 20 °C",
+    "ok": true,
+    "detail": "y(20) = 2339.0469"
+   },
+   {
+    "name": "611 Pa at 0 °C",
+    "ok": true,
+    "detail": "y(0) = 611"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u33-wind-profile": {
+  "title": "Wind speed grows with height",
+  "caption": "Near the ground the wind follows a logarithmic profile, u ∝ ln(z/z₀). Over grass (z₀ = 0.03 m), 5 m s⁻¹ at 10 m becomes 7 m s⁻¹ at 100 m, which is why wind turbines are tall.",
+  "alt": "Wind speed against height on a linear axis: rising quickly near the ground then slowly, from 5 metres per second at 10 metres to 7 at 100 metres.",
+  "description": [
+   "u(z) = 5 m s⁻¹ × ln(z / 0.03) / ln(10 / 0.03).",
+   "At 100 m: 5 × 8.11 / 5.81 = 6.98 m s⁻¹.",
+   "The profile holds for neutral stability; on calm nights or sunny afternoons it changes."
+  ],
+  "course": "physics",
+  "lesson": "Turbulence and boundary layers",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u33.js: Turbulence and boundary layers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "6.98 m s⁻¹ at 100 m",
+    "ok": true,
+    "detail": "y(100) = 6.9819"
+   },
+   {
+    "name": "5 m s⁻¹ at 10 m",
+    "ok": true,
+    "detail": "y(10) = 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

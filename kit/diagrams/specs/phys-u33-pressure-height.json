@@ -1,0 +1,86 @@
+{
+ "id": "phys-u33-pressure-height",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u33",
+ "lesson": "Atmospheric pressure and temperature",
+ "title": "Pressure falls exponentially with height",
+ "caption": "With a scale height H = 8 km, p = p₀e^(−h/H). At 3000 m the pressure is 1013 × e^(−3/8) ≈ 700 hPa; it halves about every 5.5 km.",
+ "alt": "Pressure in hectopascals against height, an exponential decay from 1013 at sea level through 700 at 3 kilometres.",
+ "description": [
+  "p = 1013 hPa × e^(−h / 8 km).",
+  "h = 3 km: 696 hPa.",
+  "Halves every 8 ln 2 = 5.55 km."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   1100
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   250,
+   500,
+   750,
+   1000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "height / km",
+  "pressure / hPa"
+ ],
+ "curves": [
+  {
+   "expr": "1013*exp(-x/8)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3,
+   "to": 696.2240394152548
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 696.224,
+   "colour": "a2",
+   "label": "700 hPa at 3 km",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1013*exp(-x/8)",
+   "x": 3,
+   "y": 696.224039,
+   "name": "696 hPa at 3 km"
+  },
+  {
+   "type": "point",
+   "expr": "1013*exp(-x/8)",
+   "x": 5.54517744,
+   "y": 506.5,
+   "name": "half the sea-level pressure at 8 ln 2 km"
+  }
+ ]
+}
