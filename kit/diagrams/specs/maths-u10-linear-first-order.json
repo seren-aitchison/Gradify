@@ -1,0 +1,93 @@
+{
+ "id": "maths-u10-linear-first-order",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Linear Differential Equations",
+ "title": "y = 2 − 2e^(−2x) levels off at 2",
+ "caption": "The integrating factor e²ˣ gives (e²ˣy)′ = 4e²ˣ, so y = 2 + Ce^(−2x); y(0) = 0 makes C = −2. The transient dies away and y tends to 2.",
+ "alt": "The curve y = 2 − 2e^(−2x) rising from (0, 0) towards the horizontal line y = 2.",
+ "description": [
+  "Multiply by e²ˣ: (e²ˣy)′ = 4e²ˣ.",
+  "Integrate: y = 2 + Ce^(−2x).",
+  "y(0) = 0 gives C = −2."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  4,
+  2
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2-2*exp(-2*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "y = 2"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "(0, 0)",
+   "colour": "a2",
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2-2*exp(-2*x)",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "type": "point",
+   "expr": "2-2*exp(-2*x)",
+   "x": 1,
+   "y": 1.729
+  },
+  {
+   "type": "point",
+   "expr": "(2-2*exp(-2*(x+0.0001))-(2-2*exp(-2*x)))/0.0001+2*(2-2*exp(-2*x))",
+   "x": 1,
+   "y": 4,
+   "name": "y′ + 2y = 4 at x = 1"
+  }
+ ]
+}

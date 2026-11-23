@@ -1,0 +1,101 @@
+{
+ "id": "maths-u10-box-states",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Schrödinger Equation",
+ "title": "Particle in a box (L = 1): ψ₁ and ψ₂",
+ "caption": "Normalising φ = A sin(πx/L) gives A = √(2/L) (here √2). The second state sin(2πx/L) has twice the wave number, so E₂/E₁ = 4.",
+ "alt": "Two curves on 0 to 1: ψ₁ a single hump with peak √2 at x = ½, and ψ₂ with one positive and one negative hump.",
+ "description": [
+  "∫ A² sin²(πx/L) dx = A²L/2 = 1 gives A = √(2/L).",
+  "Eₙ ∝ n², so E₂/E₁ = 4.",
+  "ψ₂ has a node at x = L/2."
+ ],
+ "range": {
+  "x": [
+   -0.1,
+   1.1
+  ],
+  "y": [
+   -1.8,
+   1.8
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(2)*sin(3.141592653589793*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ],
+   "label": "ψ₁",
+   "labelAt": [
+    0.1,
+    1
+   ]
+  },
+  {
+   "expr": "sqrt(2)*sin(6.283185307179586*x)",
+   "colour": "a2",
+   "domain": [
+    0,
+    1
+   ],
+   "label": "ψ₂",
+   "labelAt": [
+    0.62,
+    -1.6
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "sqrt(2)*sin(3.141592653589793*x)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 1.414
+  },
+  {
+   "type": "area",
+   "expr": "2*sin(3.141592653589793*x)^2",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "ψ₁² has total area 1"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(2)*sin(6.283185307179586*x)",
+   "x": 0.5,
+   "y": 0
+  }
+ ]
+}
