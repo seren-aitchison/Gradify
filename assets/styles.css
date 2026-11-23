@@ -601,3 +601,8 @@ body.ds .pro h2 .grad { background: none; -webkit-text-fill-color: currentColor;
 @media (max-width: 640px) { body.ds .ds-hero-sec .hero-proof { flex-direction: column; align-items: flex-start; width: fit-content; margin-inline: auto; text-align: left; gap: 8px; } }
 /* the directory search can shrink on the narrowest phones (it was 12px too wide at 320px) */
 #find .controls .search { min-width: 0; flex-basis: 220px; }
+
+/* the homepage's who-it's-for line and "pick up where you left off" strip (assets/memory.js) */
+.hero-who { font-size: 14px; color: var(--mute); margin: 14px 0 0; } .hero-who a { color: var(--fg); }
+.resume-home .resume { margin-top: 14px; font-size: 14px; border: 1px solid var(--line-strong); border-radius: 14px; padding: 10px 14px; }
+.resume-home .resume p { margin: 3px 0; } .resume-home .resume a { color: var(--fg); }

@@ -1,7 +1,10 @@
 // Comparison pages, the study glossary, printable templates, and the About and Ambassadors pages.
 import { faq, related, optIn, esc, ORG } from "./shell.mjs";
+import { ALTS } from "./guides2.mjs";
 
 const U = "2026-11-23";
+// the founder's own words for the About page, and their LinkedIn profile (also the Person's sameAs). Empty = not shown.
+export const FOUNDER = { bio: "", linkedin: "" };
 
 // ---------- comparisons: honest, table first, saying where the other tool wins ----------
 export const COMPARE = [
@@ -48,7 +51,7 @@ export function comparePages() {
     };
   });
   pages.push({ path: "compare/index.html", title: "Compare Study Tools: Gradify vs Quizlet, Anki and More · Gradify", description: "Honest comparisons of Gradify with Quizlet, Anki and other study tools, with where each one wins.", crumbs: [["Compare", "compare/"]], ogType: "website",
-    body: `<h1>Compare study tools</h1><p class="lead">Honest comparisons, including where the other tool is better.</p><ul class="cards">${COMPARE.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}<li><a href="/guides/best-study-tools-for-university-students/">The 7 best study tools for university students</a><span>Anki, Quizlet, Notion, RemNote, Forest, NotebookLM and Gradify.</span></li></ul>` });
+    body: `<h1>Compare study tools</h1><p class="lead">Honest comparisons, including where the other tool is better.</p><ul class="cards">${COMPARE.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}${ALTS.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}<li><a href="/guides/best-study-tools-for-university-students/">The 7 best study tools for university students</a><span>Anki, Quizlet, Notion, RemNote, Forest, NotebookLM and Gradify.</span></li></ul>` });
   return pages;
 }
 
@@ -113,10 +116,10 @@ export function templatePages() {
 export function aboutPages() {
   return [{
     path: "about.html", title: "About Gradify: Who Builds It and How Lessons Are Checked", description: "About Gradify: who builds it, why, and how every lesson and flashcard is checked. Turn your notes into flashcards checked against what you wrote.", crumbs: [["About", "about.html"]], ogType: "website", updated: U,
-    schema: [{ "@type": "AboutPage", name: "About Gradify", about: { "@id": "https://getgradify.com/#org" } }, { ...ORG, founder: { "@type": "Person", name: "Seren Aitchison" } }],
+    schema: [{ "@type": "AboutPage", name: "About Gradify", about: { "@id": "https://getgradify.com/#org" } }, { ...ORG, founder: { "@type": "Person", name: "Seren Aitchison", ...(FOUNDER.linkedin ? { sameAs: [FOUNDER.linkedin] } : {}) } }],
     body: `<h1>About Gradify</h1><p class="answer">Gradify turns your notes into flashcards and mind maps checked against what you wrote, and schedules your revision with spaced repetition. It also has free courses in more than 30 subjects, from GCSE to postgraduate study.</p>
     <h2>Why we built it</h2><p>Students spend hours making study material and then revise it the least effective way: re-reading. AI tools can make cards in seconds, but they invent things that aren't in your course. Gradify does the making for you and shows you the evidence for every card, so you can trust what you revise and spend your time on recall.</p>
-    <h2>Who builds Gradify</h2><p>Gradify was started by <b>Seren Aitchison</b> and is built by a small team in the UK. The same team makes BioFrontier, Eirova, Erya and Vizeon.</p>
+    <h2>Who builds Gradify</h2><p>Gradify was started by <b>Seren Aitchison</b> and is built by a small team in the UK. The same team makes BioFrontier, Eirova, Erya and Vizeon.</p>${FOUNDER.bio ? `<p>${esc(FOUNDER.bio)}</p>` : ""}${FOUNDER.linkedin ? `<p><a href="${esc(FOUNDER.linkedin)}" rel="me noopener">Seren on LinkedIn</a></p>` : ""}
     <h2>How lessons and cards are checked</h2><ul><li>Every flashcard made from your notes links to the line it came from; cards that don't fully match are marked <em>to check</em>.</li><li>Every course lesson is audited on nine dimensions of teaching quality on every change: see <a href="/quality.html">Quality and coverage</a>.</li><li>We only claim to cover a qualification after checking it against the official specification, outcome by outcome.</li></ul>
     <h2>Contact</h2><p><a href="mailto:hello@getgradify.com">hello@getgradify.com</a>. Every message is read.</p>`,
   }, {

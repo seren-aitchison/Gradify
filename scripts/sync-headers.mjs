@@ -62,7 +62,7 @@ export function hubFooter() {
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b>${HUB_LINKS.map(([, href, label]) => `<a href="${href}">${label}</a>`).join("")}<a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/glossary/">Glossary</a><a href="/templates/">Templates</a><a href="/compare/">Compare</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/vs/">Concept comparisons</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
         <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
@@ -141,9 +141,19 @@ export function subHeader({ name, courses, extras }, { up = "", current = "", co
 
 // the site footer: which family the site belongs to, and the same links on every page of every site
 const SFOOT_START = "<!-- sub-footer: written by scripts/sync-headers.mjs; edit it there -->", SFOOT_END = "<!-- /sub-footer -->";
-export function subFooter({ name }) {
+// each course folder → its free topic pages (getgradify.com/topics/<slug>/), so a subject site passes its visitors
+// (and its search authority) to the free topics, study plans and tools
+import { readFileSync } from "node:fs";
+const CATALOGUE = (() => { try { return JSON.parse(readFileSync(new URL("kit/api/v1/catalogue.json", ROOT), "utf8")).courses; } catch { return []; } })();
+export function topicSlug(href, dir) {
+  const want = `/${dir}/${String(href).replace(/^\/|\/$/g, "")}/`;
+  const c = CATALOGUE.find((x) => ["live", "beta"].includes(x.status) && x.page === want);
+  return c && existsSync(new URL(`topics/${c.slug}/index.html`, ROOT)) ? c.slug : null;
+}
+export function subFooter({ name, courses = [], dir = "" }) {
+  const topics = courses.map((c) => [topicSlug(c.href, dir), c.label]).filter(([s]) => s).slice(0, 4);
   return `${SFOOT_START}
-    <footer class="sub-foot"><p><span data-site-name>${esc(name)}</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="${esc(name)} footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
+    <footer class="sub-foot"><p><span data-site-name>${esc(name)}</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="Free study resources">${topics.map(([s, l]) => `<a href="/topics/${s}/">${esc(l === "Course" ? name : l)} topics and flashcards</a>`).join("")}<a href="/study-plan/">Free study plans</a><a href="/tools/">Free study tools</a><a href="/guides/">Study guides</a></nav><nav aria-label="${esc(name)} footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
     ${SFOOT_END}`;
 }
 export function withSubFooter(html, items) {
@@ -174,7 +184,7 @@ export async function sitePages(root = ROOT) {
   const out = [];
   for (const dir of (await readdir(root)).filter((d) => /gradify$/.test(d)).sort()) {
     const index = new URL(`${dir}/index.html`, root); if (!existsSync(index)) continue;
-    const items = siteItems(await readFile(index, "utf8")); if (!items.name) continue;
+    const items = { ...siteItems(await readFile(index, "utf8")), dir }; if (!items.name) continue;
     for (const f of (await readdir(new URL(`${dir}/`, root))).sort()) {
       // pages with the site header, and the LifeOS tour (which had none); not the app, or a stub that only forwards
       const page = f.endsWith(".html") && f !== "app.html" && (f === "lifeos.html" || /class="sub-nav/.test(await readFile(new URL(`${dir}/${f}`, root), "utf8")));

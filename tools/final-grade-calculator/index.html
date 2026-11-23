@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Final Exam Grade Calculator: What Do I Need on My Final? · Gradify</title>
-  <meta name="description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final exam.">
+  <title>Final Exam Grade Calculator: What Do I Need on My Final?</title>
+  <meta name="description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final…">
   <link rel="canonical" href="https://getgradify.com/tools/final-grade-calculator/">
-  <meta property="og:title" content="Final Exam Grade Calculator: What Do I Need on My Final? · Gradify">
-  <meta property="og:description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final exam.">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="https://getgradify.com/feed.xml">
+  <meta property="og:title" content="Final Exam Grade Calculator: What Do I Need on My Final?">
+  <meta property="og:description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final…">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://getgradify.com/tools/final-grade-calculator/">
   <meta property="og:site_name" content="Gradify">
@@ -17,8 +18,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Final Exam Grade Calculator: What Do I Need on My Final? · Gradify">
-  <meta name="twitter:description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final exam.">
+  <meta name="twitter:title" content="Final Exam Grade Calculator: What Do I Need on My Final?">
+  <meta name="twitter:description" content="Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final…">
   <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
   <meta property="article:modified_time" content="2026-11-23">
   <meta name="theme-color" content="#000000">
@@ -34,6 +35,7 @@
   <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
   <link rel="modulepreload" href="/assets/seo.js">
   <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/assets/memory.js">
   <link rel="modulepreload" href="/kit/ui/global-nav.js">
   <link rel="modulepreload" href="/kit/core/menu-set.js">
   <link rel="modulepreload" href="/kit/ui/store.js">
@@ -78,19 +80,20 @@
     <p class="updated">Last updated <time datetime="2026-11-23">23 November 2026</time></p>
     <h1>What do I need on my final exam?</h1>
     <p class="answer">Enter your current grade, the final's weight and the grade you want. The mark you need is (target − current × (1 − weight)) ÷ weight.</p>
-    <div class="tool" data-tool="needed">
+    <p class="tool-tools no-print"><button type="button" class="mini" data-pin>☆ Pin this tool</button> <button type="button" class="mini" data-focus>Focus mode</button> <span class="best">Best the week before a final</span></p>
+    <div class="tool" data-tool="needed" data-example='{"f":{"current":"65","weight":"40","target":"70"}}'>
       <div class="grid"><div><label for="current">Current grade %</label><input id="current" name="current" type="number" min="0" max="100" step="0.1" value="65" inputmode="decimal"></div><div><label for="weight">Final exam weight %</label><input id="weight" name="weight" type="number" min="1" max="100" step="1" value="40" inputmode="numeric"></div><div><label for="target">Target overall %</label><input id="target" name="target" type="number" min="0" max="100" step="0.1" value="70" inputmode="decimal"></div></div>
       <div class="result" role="status" aria-live="polite"></div>
     </div>
     <h2>Worked example</h2>
-    <p>You have 65% going into a final worth 40%, and you want 70% overall. (70 − 65 × 0.6) ÷ 0.4 = (70 − 39) ÷ 0.4 = <b>77.5%</b>.</p>
+    <p>You have 65% going into a final worth 40%, and you want 70% overall. (70 − 65 × 0.6) ÷ 0.4 = (70 − 39) ÷ 0.4 = <b>77.5%</b>.</p><p class="no-print"><button type="button" class="mini" data-load-example>Load an example into the calculator</button></p>
     <h2>Got a high number? Plan the revision, not the panic</h2>
     <p>The fastest way to raise an exam mark is to test yourself rather than re-read. Turn your lecture notes into flashcards, revise them with <a href="/glossary/spaced-repetition/">spaced repetition</a>, and do past papers under timed conditions in the final week. <a href="/guides/active-recall/">Our active recall guide</a> shows how.</p><section class="faq-block" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2><details><summary>How do I calculate what I need on my final?</summary><p>Subtract your current grade multiplied by the share of the course already done from your target, then divide by the final's weight. With 65% so far, a 40% final and a 70% target: (70 − 65 × 0.6) ÷ 0.4 = 77.5%.</p></details><details><summary>What if I need more than 100%?</summary><p>Then the target can't be reached through the final alone. Ask whether any coursework can still be resubmitted or improved, and aim for the highest grade that is reachable.</p></details></section><form class="optin" data-optin>
       <h2>Get our free 7-day active recall exam plan, and one short study tip a week</h2>
       <p>One email a week, written by the Gradify team. Unsubscribe any time by replying "stop". The plan is also <a href="/templates/7-day-exam-plan/">here, free, with no email</a>.</p>
       <div class="optin-row"><label class="sr-only" for="optin-email">Email address</label><input id="optin-email" type="email" name="email" autocomplete="email" required placeholder="you@uni.ac.uk"><button type="submit" class="btn btn-primary lg"><span>Send it</span></button></div>
       <p class="optin-msg" role="status" aria-live="polite"></p>
-    </form><section class="related" aria-label="More free study tools"><h2>More free study tools</h2><ul><li><a href="/tools/degree-classification-calculator/">UK degree classification calculator</a><span>Work out a 1st, 2:1, 2:2 or 3rd from your module marks.</span></li><li><a href="/tools/weighted-grade-calculator/">Weighted grade calculator</a><span>Your module average from assessments of different weights.</span></li><li><a href="/tools/gpa-calculator/">GPA calculator (4.0 scale)</a><span>Your grade point average from letter grades and credits.</span></li><li><a href="/tools/exam-countdown/">Exam countdown and revision hours</a><span>Days to go, real study hours left, and a story card to share.</span></li><li><a href="/tools/spaced-repetition-schedule/">Spaced repetition schedule generator</a><span>Review dates for any topic, as a calendar file.</span></li></ul></section>
+    </form><section class="related" aria-label="More free study tools"><h2>More free study tools</h2><ul><li><a href="/tools/degree-classification-calculator/">UK degree classification calculator</a><span>Work out a 1st, 2:1, 2:2 or 3rd from your module marks.</span></li><li><a href="/tools/weighted-grade-calculator/">Weighted grade calculator</a><span>Your module average from assessments of different weights.</span></li><li><a href="/tools/gpa-calculator/">GPA calculator (4.0 scale)</a><span>Your grade point average from letter grades and credits.</span></li><li><a href="/tools/exam-countdown/">Exam countdown and revision hours</a><span>Days to go, real study hours left, and a story card to share.</span></li><li><a href="/tools/spaced-repetition-schedule/">Spaced repetition schedule generator</a><span>Review dates for any topic, as a calendar file.</span></li><li><a href="/tools/">All free study tools</a><span>35 calculators, planners and timers</span></li></ul></section><p class="hub-back"><a href="/tools/">← All free study tools</a></p>
     <p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>
     <aside class="cta-box">
       <h2>Turn your own notes into checked flashcards</h2>
@@ -104,7 +107,7 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/glossary/">Glossary</a><a href="/templates/">Templates</a><a href="/compare/">Compare</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/vs/">Concept comparisons</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
         <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>

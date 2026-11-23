@@ -19,13 +19,17 @@ import { toolPages, TOOLS, LANDINGS, landingPages } from "./seo/tools.mjs";
 import { guidePages, GUIDES } from "./seo/guides.mjs";
 import { comparePages, COMPARE, glossaryPages, TERMS, templatePages, TEMPLATES, aboutPages } from "./seo/pages.mjs";
 import { programmaticPages } from "./seo/programmatic.mjs";
+import { TOOLS2, tools2Pages } from "./seo/tools2.mjs";
+import { CHECKLISTS, checklistPages } from "./seo/checklists.mjs";
+import { GUIDES2, GROUPS, VS, ALTS, guides2Pages } from "./seo/guides2.mjs";
+import { hubPages, feedXml, CHANGES } from "./seo/hubs.mjs";
 import { SITES, slugOf } from "../kit/core/site.js";
 import { withPreloads } from "./preload-modules.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = new URL("../", import.meta.url);
-import { SEO_FOLDERS, SEO_FILES, INDEXNOW_KEY } from "./seo/folders.mjs";
-export { SEO_FOLDERS, SEO_FILES, INDEXNOW_KEY };
+import { SEO_FOLDERS, SEO_FILES, SEO_SUBSITE_FILES, INDEXNOW_KEY } from "./seo/folders.mjs";
+export { SEO_FOLDERS, SEO_FILES, SEO_SUBSITE_FILES, INDEXNOW_KEY };
 
 function siteMapPage(pages, courses) {
   const list = (items) => `<ul>${items.map(([h, l]) => `<li><a href="/${h}">${esc(l)}</a></li>`).join("")}</ul>`;
@@ -35,9 +39,12 @@ function siteMapPage(pages, courses) {
     body: `<h1>Site map</h1>
     <h2>Gradify</h2>${list([["", "Home"], ["app.html", "The Gradify app"], ["explore.html", "Explore"], ["journey.html", "Journey"], ["pricing.html", "Pricing"], ["about.html", "About"], ["quality.html", "Quality and coverage"], ["ambassadors.html", "Campus ambassadors"], ["privacy.html", "Privacy"], ["terms.html", "Terms"]])}
     <h2>Subject sites</h2>${list(live.map((s) => [`${slugOf(s)}/`, s.n]))}
-    <h2>Free study tools</h2>${list([...TOOLS.map((t) => [`tools/${t.slug}/`, t.name]), ...LANDINGS.map((l) => [`${l.slug}/`, l.name])])}
-    <h2>Study guides</h2>${list(GUIDES.map((g) => [`guides/${g.slug}/`, g.h1]))}
-    <h2>Comparisons</h2>${list(COMPARE.map((c) => [`compare/${c.slug}/`, c.name]))}
+    <h2>Free study tools</h2>${list([...TOOLS.map((t) => [`tools/${t.slug}/`, t.name]), ...TOOLS2.map((t) => [`tools/${t.slug}/`, t.name]), ["tools/bookmarklet/", "Send to Gradify bookmarklet"], ["investorgradify/tools/", "Compound interest and fund fee calculator"], ...LANDINGS.map((l) => [`${l.slug}/`, l.name])])}
+    <h2>Checklists</h2>${list(CHECKLISTS.map(([s, n]) => [`checklists/${s}/`, n]))}
+    <h2>Study guides</h2>${list([...GUIDES.map((g) => [`guides/${g.slug}/`, g.h1]), ...GUIDES2.map((g) => [`guides/${g.slug}/`, g.h1])])}
+    <h2>Concept comparisons</h2>${list(VS.map(([s, a, b]) => [`vs/${s}/`, `${a} vs ${b}`]))}
+    <h2>Comparisons</h2>${list([...COMPARE.map((c) => [`compare/${c.slug}/`, c.name]), ...ALTS.map((c) => [`compare/${c.slug}/`, c.name])])}
+    <h2>Practice and exams</h2>${list([["questions/", "Practice questions"], ["exam-traps/", "Exam traps"], ["exam-boards/", "Exam boards and qualifications"], ["creategradify/briefs/", "Design briefs"], ["changelog/", "What's new"]])}
     <h2>Glossary</h2>${list(TERMS.map(([s, n]) => [`glossary/${s}/`, n]))}
     <h2>Templates</h2>${list(TEMPLATES.map(([s, n]) => [`templates/${s}/`, n]))}
     <h2>Topics by subject</h2>${list(courses.map((p) => [p.path.replace(/index\.html$/, ""), p.title.replace(/ Revision:.*$/, "")]))}
@@ -50,7 +57,7 @@ function llmsTxt(courses) {
   const l = (h, n, d) => `- [${n}](https://getgradify.com/${h})${d ? `: ${d}` : ""}`;
   return `# Gradify
 
-> Gradify turns your notes into flashcards and mind maps checked against what you wrote, and schedules revision with spaced repetition (FSRS) up to your exam. Upload a PDF or paste notes in Notes Studio with no account; every card links to the line in your notes it came from, and cards that don't fully match are marked "to check". Free, with free courses in 30+ subjects from GCSE to postgraduate.
+> Gradify turns your notes into flashcards and mind maps checked against what you wrote, and schedules revision with spaced repetition (FSRS) up to your exam. Its headline feature is Notes Studio: upload a PDF or paste notes with no account (zero sign-up); every card links to the line in your notes it came from, and cards that don't fully match are marked "to check". Free, with free courses in 30+ subjects from GCSE to postgraduate.
 
 Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and removes limits. Specialist sites live in folders of getgradify.com, one account across all of them.
 
@@ -67,17 +74,27 @@ ${l("about.html", "About Gradify", "who builds it and how content is checked")}
 ${SITES.filter((s) => ["live", "beta"].includes(s.status) && s.built).map((s) => l(`${slugOf(s)}/`, s.n, s.d || s.desc || "")).join("\n")}
 
 ## Free tools
-${TOOLS.map((t) => l(`tools/${t.slug}/`, t.name, t.line)).join("\n")}
+${[...TOOLS, ...TOOLS2].map((t) => l(`tools/${t.slug}/`, t.name, t.line)).join("\n")}
+
+## Checklists
+${CHECKLISTS.map(([s, n, line]) => l(`checklists/${s}/`, n, line)).join("\n")}
 
 ## Guides
-${GUIDES.map((g) => l(`guides/${g.slug}/`, g.h1, g.answer.split(". ")[0])).join("\n")}
+${[...GUIDES, ...GUIDES2].map((g) => l(`guides/${g.slug}/`, g.h1, g.answer.split(". ")[0])).join("\n")}
+
+## Concept comparisons
+${VS.map(([s, a, b]) => l(`vs/${s}/`, `${a} vs ${b}`, "")).join("\n")}
 
 ## Comparisons
-${COMPARE.map((c) => l(`compare/${c.slug}/`, c.name, "")).join("\n")}
+${[...COMPARE, ...ALTS].map((c) => l(`compare/${c.slug}/`, c.name, "")).join("\n")}
 
 ## Reference
 ${l("glossary/", "Study glossary", "active recall, spaced repetition, FSRS and more")}
-${l("topics/", "Revision topics", `every unit of ${courses.length} free courses with key terms and sample flashcards`)}
+${l("topics/", "Revision topics", `every unit of ${courses.length} free courses with key terms, sample flashcards, a quick quiz and a mind map`)}
+${l("questions/", "Practice questions", "multiple-choice questions with answers and explanations, by subject")}
+${l("exam-traps/", "Exam traps", "the common mistakes in each subject")}
+${l("exam-boards/", "Exam boards and qualifications", "which qualifications the courses serve, and how strong each claim is")}
+${l("changelog/", "What's new", "")}
 ${l("study-plan/", "Study plans", "week-by-week plans for GCSE, A level, university and professional paths")}
 ${l("templates/", "Printable templates", "revision timetable, Cornell notes, trackers")}
 
@@ -112,7 +129,7 @@ async function headTagged() {
   const out = new Map();
   for (const u of await sitemapUrls()) {
     let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html";
-    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p)) continue;
+    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p) || SEO_SUBSITE_FILES.includes(p)) continue;
     const html = await readFile(new URL(p, root), "utf8").catch(() => null); if (html === null) continue;
     const next = withHeadTags(html, u); if (next !== html) out.set(p, next);
   }
@@ -121,11 +138,15 @@ async function headTagged() {
 
 export async function outputs() {
   const prog = await programmaticPages();
-  const specs = [...toolPages(), ...landingPages(), ...guidePages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
+  const specs = [...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
   const files = new Map(specs.map((s) => [s.path, s.raw ? s.html : page(s)]));
   const courses = prog.filter((p) => /^topics\/[^/]+\/index\.html$/.test(p.path));
   files.set("site-map.html", siteMapPage(specs, courses));
   files.set("llms.txt", llmsTxt(courses));
+  // the RSS feed: changelog entries, then every guide, tool and checklist (newest first)
+  const feed = [...CHANGES.map(([d, h, items]) => ({ path: "changelog/", date: d, title: `What's new: ${h}`, description: items.join(". ") })),
+    ...specs.filter((x) => !x.raw && /^(guides|tools|checklists|vs|compare)\/[^/]+\/index\.html$/.test(x.path)).map((x) => ({ path: x.path.replace(/index\.html$/, ""), date: x.updated || "2026-11-23", title: x.title.replace(/ · Gradify$/, ""), description: x.description }))];
+  files.set("feed.xml", feedXml(feed.slice(0, 60)));
   // each page lists the modules it loads, like every other page (scripts/preload-modules.mjs)
   for (const [p, html] of files) if (p.endsWith(".html")) files.set(p, withPreloads(fileURLToPath(new URL(p, root)), html));
   files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);

@@ -70,38 +70,55 @@ const ymd = (d) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0"
 /** an iCalendar file with one all-day event per review */
 export function ics(topic, dates, stamp = new Date()) {
   const clean = String(topic || "Revision").replace(/[\r\n,;\\]/g, " ").slice(0, 80);
-  const ev = dates.map((d, i) => ["BEGIN:VEVENT", `UID:gradify-${ymd(d)}-${i}@getgradify.com`, `DTSTAMP:${stamp.toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "")}`, `DTSTART;VALUE=DATE:${ymd(d)}`, `SUMMARY:Review: ${clean} (${i + 1} of ${dates.length})`, "DESCRIPTION:Test yourself from memory first\\, then check. Made with getgradify.com", "END:VEVENT"].join("\r\n"));
+  const ev = dates.map((d, i) => ["BEGIN:VEVENT", `UID:gradify-${ymd(d)}-${i}@getgradify.com`, `DTSTAMP:${stamp.toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "")}`, `DTSTART;VALUE=DATE:${ymd(d)}`, `SUMMARY:Review: ${clean} (${i + 1} of ${dates.length})`, "DESCRIPTION:Test yourself from memory first\\, then check. Free spaced repetition schedules: search GetGradify or visit getgradify.com", "END:VEVENT"].join("\r\n"));
   return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Gradify//Spaced repetition//EN", "CALSCALE:GREGORIAN", ...ev, "END:VCALENDAR", ""].join("\r\n");
 }
 
-// ---------- on the page ----------
-const fmt = (n, dp = 1) => (Math.round(n * 10 ** dp) / 10 ** dp).toLocaleString("en-GB");
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const longDay = (d) => d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
-function download(name, text, type) {
+// ---------- on the page (shared by assets/tools-plan.js and assets/tools-write.js) ----------
+export const fmt = (n, dp = 1) => (Math.round(n * 10 ** dp) / 10 ** dp).toLocaleString("en-GB");
+export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+export const longDay = (d) => d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+export function download(name, text, type) {
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  import("./seo.js").then((m) => m.act("export")).catch(() => {});
 }
 const KEY = (id) => `gradify.tool.${id}`;
-const save = (id, v) => { try { localStorage.setItem(KEY(id), JSON.stringify(v)); } catch { /* private mode */ } };
-const load = (id) => { try { return JSON.parse(localStorage.getItem(KEY(id))); } catch { return null; } };
+export const save = (id, v) => { try { localStorage.setItem(KEY(id), JSON.stringify(v)); } catch { /* private mode */ } };
+export const load = (id) => { try { return JSON.parse(localStorage.getItem(KEY(id))); } catch { return null; } };
+/** a tool's fixed inputs as { name: value }, and a helper to read one as a number */
+export const fields = (root) => Object.fromEntries([...root.querySelectorAll("[name]")].filter((el) => !el.closest(".row")).map((el) => [el.name, el.type === "checkbox" ? el.checked : el.value]));
+export const num = (root, n) => Number(root.querySelector(`[name="${n}"]`)?.value);
+/** a fixed-field tool: restore saved values, run on every change, save */
+export function formTool(root, id, run) {
+  const s = load(id); if (s) for (const [k, v] of Object.entries(s)) { const el = root.querySelector(`[name="${k}"]`); if (el && !el.closest(".row")) { if (el.type === "checkbox") el.checked = v; else el.value = v; } }
+  const go = () => { run(fields(root)); save(id, fields(root)); };
+  root.addEventListener("input", go); root.addEventListener("change", go); go();
+}
+/** the next step after a result: one contextual link under it (cross-tool loops) */
+export function setNext(root, html) {
+  let el = root.querySelector(".next-action");
+  if (!el) { el = document.createElement("p"); el.className = "next-action"; root.querySelector(".result")?.after(el); }
+  el.innerHTML = html ? `<b>Next:</b> ${html}` : ""; el.hidden = !html;
+}
+export const NOTES = '<a href="/app.html#/new">turn your lecture notes into checked flashcards</a> (free, no account)';
 
-/** repeating rows (module mark + credits, assessment + weight, grade + credits) */
-function rowsTool(root, id, makeRow, read, compute) {
-  const list = root.querySelector(".rows"), add = () => { list.insertAdjacentHTML("beforeend", makeRow()); };
+/** repeating rows (module mark + credits, assessment + weight, grade + credits, topics …) */
+export function rowsTool(root, id, makeRow, read, compute) {
+  const list = root.querySelector(".rows"), add = (v) => { list.insertAdjacentHTML("beforeend", makeRow()); if (v) list.lastElementChild.querySelectorAll("[name]").forEach((el) => { if (v[el.name] !== undefined) { if (el.type === "checkbox") el.checked = v[el.name]; else el.value = v[el.name]; } }); };
+  root.loadRows = (rows) => { list.innerHTML = ""; (rows.length ? rows : [{}, {}, {}]).forEach((r) => add(r)); };
   const saved = load(id);
-  if (saved?.length) saved.forEach((v) => { add(); const r = list.lastElementChild; r.querySelectorAll("[name]").forEach((el) => { if (v[el.name] !== undefined) el.value = v[el.name]; }); });
-  else for (let i = 0; i < 4; i++) add();
+  if (saved?.length) saved.forEach((v) => add(v)); else for (let i = 0; i < 4; i++) add();
   const run = () => { const rows = [...list.children].map(read); save(id, rows); compute(rows); };
-  root.addEventListener("input", run);
+  root.addEventListener("input", run); root.addEventListener("change", run);
   root.addEventListener("click", (e) => {
     if (e.target.closest("[data-add]")) { add(); run(); }
-    const del = e.target.closest("[data-del]"); if (del) { del.closest(".row").remove(); run(); }
+    const d = e.target.closest("[data-del]"); if (d) { d.closest(".row").remove(); run(); }
   });
   run();
 }
-const val = (r) => Object.fromEntries([...r.querySelectorAll("[name]")].map((el) => [el.name, el.value]));
-const del = '<button type="button" class="icon" data-del aria-label="Remove this row">✕</button>';
+export const val = (r) => Object.fromEntries([...r.querySelectorAll("[name]")].map((el) => [el.name, el.type === "checkbox" ? el.checked : el.value]));
+export const del = '<button type="button" class="icon" data-del aria-label="Remove this row">✕</button>';
 
 const TOOLS = {
   degree(root) {
@@ -112,6 +129,7 @@ const TOOLS = {
       const avg = degreeAverage(y2, y3, Number(w.value));
       if (avg === null) { out.innerHTML = "Add at least one final-year module mark to see your classification."; return; }
       const c = classify(avg);
+      setNext(root, c.borderline || avg < 70 ? `you're ${fmt((c.next ?? 70) - avg)} marks off the next class. <a href="/tools/module-grade-calculator/">Work out the exam mark each module needs</a>, then ${NOTES}.` : `protect it: <a href="/guides/active-recall-schedule-before-finals/">use the 6-week schedule before finals</a>.`);
       out.innerHTML = `<span class="big">${fmt(avg)}%</span>${esc(c.label)}<br><small>Year 2 average: ${y2 === null ? "none entered" : `${fmt(y2)}%`} · Final year average: ${fmt(y3)}%</small>${c.borderline ? `<br><b>Borderline:</b> you're within ${fmt(c.next - avg)} marks of the ${c.next}% boundary. Many universities review borderline cases (often 1 to 2 marks), for example by the share of your credits above the boundary. Check your own regulations.` : ""}`;
     });
     w.addEventListener("change", () => root.dispatchEvent(new Event("input")));
@@ -121,6 +139,7 @@ const TOOLS = {
     const run = () => {
       const need = neededOnFinal(f("current"), f("weight"), f("target"));
       if (need === null || !Number.isFinite(need)) { out.textContent = "Enter the final's weight (more than 0%)."; return; }
+      setNext(root, need > 85 ? `that's a stretch. <a href="/tools/cram-planner/">Make a triage plan with the cram planner</a> and ${NOTES}.` : need > 60 ? `<a href="/tools/exam-countdown/">count your real revision hours</a>, then ${NOTES}.` : `bank it early: <a href="/tools/spaced-repetition-schedule/">schedule spaced reviews</a>.`);
       out.innerHTML = need <= 0 ? `<span class="big">0%</span>You've already reached ${f("target")}%, even with a zero on the final.` : need > 100 ? `<span class="big">${fmt(need)}%</span>That's more than 100%, so ${f("target")}% isn't reachable through the final alone. The highest overall you can reach is ${fmt(f("current") * (1 - f("weight") / 100) + f("weight"))}%.` : `<span class="big">${fmt(need)}%</span>is what you need on the final to finish on ${f("target")}%.`;
       save("needed", { current: f("current"), weight: f("weight"), target: f("target") });
     };
@@ -132,6 +151,7 @@ const TOOLS = {
     const row = () => `<div class="row two"><div><label>Score %</label><input name="score" type="number" min="0" max="100" step="0.1" inputmode="decimal"></div><div><label>Weight %</label><input name="weight" type="number" min="0" max="100" step="1" inputmode="numeric"></div>${del}</div>`;
     rowsTool(root, "weighted", row, val, (rows) => {
       const r = weighted(rows);
+      setNext(root, r && r.done < 100 ? `<a href="/tools/final-grade-calculator/">see what you need on what's left</a>.` : "");
       out.innerHTML = r ? `<span class="big">${fmt(r.avg)}%</span>average across the ${fmt(r.done, 0)}% of the module you've entered.<br><small>Banked so far: ${fmt(r.contribution)} of the 100 marks available.${r.done < 100 ? ` ${fmt(100 - r.done, 0)}% of the module is still to come.` : ""}</small>` : "Enter a score and its weight.";
     });
   },
@@ -143,18 +163,19 @@ const TOOLS = {
   },
   countdown(root) {
     const out = root.querySelector(".result"), q = (n) => root.querySelector(`[name=${n}]`), embed = root.querySelector("[data-embed]");
-    const s = load("countdown"); if (s) for (const k in s) if (q(k)) q(k).value = s[k];
+    const K = root.dataset.key || "countdown", s = load(K); if (s) for (const k in s) if (q(k)) q(k).value = s[k];
     if (!q("exam").value) q("exam").value = new Date(Date.now() + 42 * DAY).toISOString().slice(0, 10);
     const run = () => {
       const c = countdown(new Date(`${q("exam").value}T00:00`), new Date(), Number(q("hours").value), Number(q("rest").value));
       const name = q("label").value || "My exam";
+      setNext(root, c.days >= 0 && c.days <= 7 ? `<a href="/tools/cram-planner/">turn the hours you have into a triage plan</a>.` : `<a href="/tools/spaced-repetition-schedule/">schedule spaced reviews for each topic</a> and ${NOTES}.`);
       out.innerHTML = c.days < 0 ? "That date has passed." : `<span class="big">${c.days} days</span>until ${esc(name)}. That's ${c.studyDays} study days and about <b>${c.hours} hours</b> of revision at ${q("hours").value} hours a day. Divide them between your topics, and keep the last week for past papers.`;
       embed.value = `<iframe src="https://getgradify.com/tools/exam-countdown/embed.html?date=${q("exam").value}&label=${encodeURIComponent(name)}" title="Exam countdown" width="320" height="170" style="border:0;border-radius:14px" loading="lazy"></iframe><p style="font:12px sans-serif">Exam countdown by <a href="https://getgradify.com/tools/exam-countdown/">Gradify</a></p>`;
-      save("countdown", { exam: q("exam").value, label: q("label").value, hours: q("hours").value, rest: q("rest").value });
+      save(K, { exam: q("exam").value, label: q("label").value, hours: q("hours").value, rest: q("rest").value });
       return { c, name };
     };
     root.addEventListener("input", run); run();
-    root.querySelector("[data-copy]").addEventListener("click", async (e) => { try { await navigator.clipboard.writeText(embed.value); e.target.textContent = "Copied"; } catch { embed.select(); } });
+    root.querySelector("[data-copy-embed]").addEventListener("click", async (e) => { try { await navigator.clipboard.writeText(embed.value); e.target.textContent = "Copied"; } catch { embed.select(); } });
     root.querySelector("[data-card]").addEventListener("click", () => { const { c, name } = run(); storyCard(c.days, name); });
   },
   spaced(root) {
@@ -165,6 +186,7 @@ const TOOLS = {
       const start = new Date(`${q("start").value}T00:00`), exam = q("exam").value ? new Date(`${q("exam").value}T00:00`) : null;
       if (isNaN(start)) { out.textContent = "Choose the day you first learn the topic."; return; }
       dates = reviewDates(start, exam);
+      setNext(root, `${NOTES}, and Gradify schedules every card for you.`);
       out.innerHTML = `<b>Review ${esc(q("topic").value || "this topic")} on:</b><ol>${dates.map((d) => `<li>${longDay(d)}</li>`).join("")}</ol>`;
     };
     root.addEventListener("input", run); run();
@@ -187,6 +209,4 @@ function storyCard(days, name) {
   c.toBlob((b) => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "exam-countdown.png"; a.click(); });
 }
 
-export function mount(doc = document) {
-  for (const el of doc.querySelectorAll("[data-tool]")) TOOLS[el.dataset.tool]?.(el);
-}
+export function mount(root) { TOOLS[root.dataset.tool]?.(root); }

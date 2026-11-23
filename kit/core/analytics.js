@@ -16,6 +16,12 @@ export const EVENTS = ["view", "lesson_complete", "exam_finish", "tutor"];
 export const RHYTHM_LIVE = false;
 export const RHYTHM_EVENTS = ["autonext_on", "autonext_off", "autonext_go", "autonext_stay", "break_shown", "break_taken", "part2_open"];
 
+// what visitors do on the free tools, guides and topic pages (scripts/build-seo.mjs): use a tool, finish a quiz, open the
+// app from a call to action, share, print, export. Counted the same anonymous way, once docs/sql/action-events.sql has
+// been run; set ACTIONS_LIVE to true then.
+export const ACTIONS_LIVE = false;
+export const ACTION_EVENTS = ["tool_use", "quiz_finish", "cta_click", "share", "print", "export"];
+
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {
   const nav = env.navigator || {}, loc = env.location || {};
   if (!configured) return false;
@@ -36,7 +42,7 @@ export function eventRow(event, site, env = globalThis) {
 }
 
 export function track(event, site) {
-  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event))) || !analyticsAllowed()) return;
+  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
   fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site)) }).catch(() => {});

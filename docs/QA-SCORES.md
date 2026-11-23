@@ -38,8 +38,8 @@ These scores are evidence-based proxies, not judgements:
 | ArtGradify | live | **76** | 20/20 | 15.3/20 | 9/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6, content −4.7 |
 | LanguageGradify | live | **75.9** | 20/20 | 20/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.1 |
 | PostGradify | live | **75** | 20/20 | 15.9/20 | 11.7/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.6, content −4.1 |
+| CreateGradify | live | **74.6** | 20/20 | 14.9/20 | 8/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.1 |
 | JuniorGradify | live | **74.4** | 20/20 | 14.7/20 | 8/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.3 |
-| CreateGradify | live | **74.3** | 20/20 | 14.9/20 | 8/15 | 13.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.1 |
 | YouthGradify | live | **73.7** | 20/20 | 14/20 | 8/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6 |
 | EduGradify | live | **73.5** | 20/20 | 17.1/20 | 9/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6, engineering −5.6 |
 | HealthGradify | live | **73** | 20/20 | 15/20 | 10.3/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.3, content −5 |
@@ -48,8 +48,8 @@ These scores are evidence-based proxies, not judgements:
 | DentalGradify | live | **72** | 20/20 | 16/20 | 8.3/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6.7, engineering −5.3 |
 | FinanceGradify | live | **71.5** | 20/20 | 16.1/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | UnderGradify | live | **71** | 20/20 | 15.6/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
+| InvestorGradify | live | **71** | 20/20 | 15.3/20 | 8/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.3 |
 | BusinessGradify | live | **70.8** | 20/20 | 15.1/20 | 8.3/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6.7, engineering −5.6 |
-| InvestorGradify | live | **70.7** | 20/20 | 15.3/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | LitGradify | live | **70.3** | 20/20 | 14.6/20 | 8/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.4 |
 | ProGradify | live | **70.2** | 20/20 | 14.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | InternshipGradify | live | **69.2** | 20/20 | 13.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6.2 |
