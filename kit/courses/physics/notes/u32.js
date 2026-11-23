@@ -85,6 +85,7 @@ H: Power generation
 P: Dry steam, flash and binary-cycle plants convert geothermal heat to electricity; efficiency is limited by low temperature (Carnot). Iceland gets ~25% of electricity and ~90% of heating from geothermal. Global capacity ~16 GW; advanced drilling (borrowed from oil and gas) is expanding its reach.
 X: Temperature at 5 km depth with a 30 °C km^{-1} gradient and 10 °C surface?
 > T = 10 + 30 × 5 = 160 °C
+D: phys-u32-geotherm
 !: Geothermal heat flow per square metre is tiny (~0.1 W) compared with sunlight (~200 W average); useful only where concentrated or extracted over large volumes.
 Q: Where does Earth's internal heat come from? | Radioactive decay and primordial heat from formation.
 Q: How do ground-source heat pumps work? | They use the stable shallow ground temperature as a heat source or sink.
@@ -109,6 +110,7 @@ H: Seismic imaging
 P: Seismic tomography uses millions of travel times to map 3D velocity variations: subducting slabs, mantle plumes, large low-shear-velocity provinces under Africa and the Pacific. Normal modes ("ringing" of the whole Earth after large quakes) constrain density. Seismometers on the Moon and Mars (InSight, 2018–22) revealed their cores.
 X: S arrives 30 s after P. Distance?
 > d ≈ 8 km s^{-1} × 30 s ≈ 240 km
+D: phys-u32-travel-times
 !: The Richter scale saturates for large earthquakes; moment magnitude is used for big events.
 Q: How do seismologists locate an earthquake? | Using S–P time differences at several stations to triangulate.
 Q: What is seismic moment? | M_{0} = μAD: rigidity times fault area times average slip.
@@ -160,6 +162,7 @@ H: Induced seismicity
 - Reservoir loading, wastewater injection (Oklahoma 2010s), geothermal stimulation, mining.
 X: Gutenberg–Richter with b = 1: how many M5 quakes per M6?
 > 10 times as many
+D: phys-u32-gutenberg-richter
 !: Earthquake prediction (specific time, place, size) isn't currently possible; forecasting gives probabilities.
 Q: What is elastic rebound theory? | Strain builds up in rocks across a locked fault until it slips suddenly, releasing energy.
 Q: What does the Gutenberg–Richter law describe? | The number of earthquakes falls tenfold for each unit increase in magnitude.
@@ -249,6 +252,7 @@ P: Paleointensity measurements show Earth has had a magnetic field for at least 
 X: A lava's remanent inclination is 30°. Its latitude when formed (dipole field: tan I = 2 tan λ)?
 > tan λ = tan 30°/2 = 0.289
 > λ ≈ 16°
+D: phys-u32-inclination-latitude
 !: Rocks record the field direction at the time they formed, not today's field; that's what makes them useful.
 Q: How do lavas record Earth's magnetic field? | Magnetic minerals align with the field as they cool through their Curie temperature.
 Q: What is apparent polar wander? | The apparent movement of ancient magnetic poles over time, actually showing continental drift.
@@ -467,6 +471,7 @@ H: Landslides and others
 X: A tsunami in 4000 m deep ocean: speed and time to cross 3000 km?
 > v = √(9.8 × 4000) = 198 m s^{-1}
 > t ≈ 4.2 hours
+D: phys-u32-tsunami-speed
 !: Monitoring reduces risk only when linked to preparedness: warnings, evacuation routes, building codes and public education.
 Q: What signs precede volcanic eruptions? | Earthquake swarms, ground deformation, gas emission changes and heating.
 Q: How fast do tsunamis travel in the deep ocean? | Around 700 km h^{-1}, v = √(gd).

@@ -67117,5 +67117,227 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u32-geotherm": {
+  "title": "Temperature rising with depth",
+  "caption": "In the upper crust temperature rises by about 30 °C per kilometre. Starting from 10 °C at the surface, rock at 5 km is about 160 °C: hot enough to drive a geothermal power plant.",
+  "alt": "Temperature against depth, a straight line from 10 degrees at the surface to 160 at 5 kilometres.",
+  "description": [
+   "Gradient: 30 °C km⁻¹; surface 10 °C.",
+   "T = 10 + 30 × depth (km).",
+   "At 5 km: 10 + 150 = 160 °C.",
+   "The gradient is not constant all the way down; it flattens in the mantle."
+  ],
+  "course": "physics",
+  "lesson": "Geothermal energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u32.js: Geothermal energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "160 °C at 5 km",
+    "ok": true,
+    "detail": "y(5) = 160"
+   },
+   {
+    "name": "30 °C per km",
+    "ok": true,
+    "detail": "gradient 30.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u32-gutenberg-richter": {
+  "title": "Small earthquakes are far more common",
+  "caption": "The Gutenberg–Richter law, log₁₀ N = a − bM, with b ≈ 1, means each step down in magnitude brings ten times as many earthquakes: for every M6 there are about ten M5s and a hundred M4s.",
+  "alt": "Bar chart on a log scale of earthquake counts by magnitude: 10 000 at M4, 1000 at M5, 100 at M6, 10 at M7 (illustrative).",
+  "description": [
+   "Counts for a region and time span chosen so that M7 has 10 (illustrative).",
+   "M6: 100. M5: 1000. M4: 10 000.",
+   "Each magnitude step is a factor of ten in number (b = 1), while each step up releases about 32 times more energy."
+  ],
+  "course": "physics",
+  "lesson": "Earthquake mechanisms",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u32.js: Earthquake mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "M = 4 → M = 7: decreasing",
+    "ok": true,
+    "detail": "M = 4 10000, M = 5 1000, M = 6 100, M = 7 10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u32-inclination-latitude": {
+  "title": "Magnetic inclination records latitude",
+  "caption": "In a dipole field the dip of the field lines depends on latitude: tan I = 2 tan λ. A lava that froze in a 30° inclination formed at λ = tan⁻¹(tan 30°/2) ≈ 16°, so the rock has moved if it now lies elsewhere.",
+  "alt": "Magnetic inclination against latitude, rising from zero at the equator to 90 degrees at the pole, with 30 degrees of inclination at 16 degrees of latitude marked.",
+  "description": [
+   "tan I = 2 tan λ: horizontal field at the equator (I = 0), vertical at the poles (I = 90°).",
+   "I = 30°: tan λ = tan 30° / 2 = 0.289, so λ = 16.1°.",
+   "Rocks of different ages from one continent give different latitudes: evidence of drift."
+  ],
+  "course": "physics",
+  "lesson": "Paleomagnetism",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u32.js: Paleomagnetism"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "I = 30° at λ = 16.1°",
+    "ok": true,
+    "detail": "y(16.10211375) = 30"
+   },
+   {
+    "name": "tan I = 2 at 45° latitude",
+    "ok": true,
+    "detail": "y(45) = 63.4349"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u32-travel-times": {
+  "title": "Locating an earthquake from the S–P delay",
+  "caption": "P waves (about 6 km s⁻¹) outrun S waves (about 3.4 km s⁻¹), so the gap between their arrivals grows with distance: about 1 s for every 8 km. An S wave 30 s behind the P wave puts the quake about 240 km away; three stations fix the epicentre.",
+  "alt": "Arrival time against distance for P and S waves, two straight lines from the origin that spread apart, with a 30 second gap at 240 kilometres marked.",
+  "description": [
+   "P arrival: t = d / 6. S arrival: t = d / 3.43.",
+   "The gap grows as d (1/v_S − 1/v_P) = d / 8 s per km.",
+   "A 30 s gap: d = 8 × 30 = 240 km (P at 40 s, S at 70 s)."
+  ],
+  "course": "physics",
+  "lesson": "Seismology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u32.js: Seismology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a 30 s gap at 240 km",
+    "ok": true,
+    "detail": "y(240) = 30"
+   },
+   {
+    "name": "the gap grows 1 s per 8 km",
+    "ok": true,
+    "detail": "gradient 0.1250"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u32-tsunami-speed": {
+  "title": "Tsunami speed depends on ocean depth",
+  "caption": "A tsunami's wavelength is far longer than the ocean is deep, so it travels as a shallow-water wave at v = √(gd). Over 4000 m of ocean that is 198 m s⁻¹ (about 710 km h⁻¹), crossing 3000 km in about 4.2 hours; it slows and grows taller as the water shallows.",
+  "alt": "Wave speed against ocean depth, a square-root curve, with 198 metres per second at 4000 metres marked.",
+  "description": [
+   "v = √(g d), g = 9.8 m s⁻².",
+   "d = 4000 m: v = 198 m s⁻¹.",
+   "3000 km takes 15152 s ≈ 4.2 h.",
+   "At 10 m depth near the coast: about 10 m s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Natural hazard monitoring",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u32.js: Natural hazard monitoring"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "198 m s⁻¹ at 4000 m",
+    "ok": true,
+    "detail": "y(4000) = 197.9899"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
