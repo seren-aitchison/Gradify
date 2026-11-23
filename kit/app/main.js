@@ -110,54 +110,55 @@ async function stats() {
 }
 
 // ---------- LifeOS sections ----------
-// One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
-// [route, label, short label for the phone tab bar, icon], in the order the sidebar and the More list show them:
-// what you do every day first, then where your learning lives, then everything else; Settings last.
-const NAV = [
-  ["today", "Today", "Today", "home"],
-  ["plan", "Smart Plan", "Plan", "calendar"],
-  ["study", "Study", "Study", "layers"],
-  ["notes", "Notes", "Notes", "upload"],
-  ["learning", "Learn", "Learn", "book"],
-  ["revise", "Revision Centre", "Revise", "checklist"],
-  ["knowledge", "My Knowledge", "Knowledge", "brain"],
-  ["progress", "Progress", "Progress", "trend"],
-  ["goals", "Path", "Path", "route"],
-  ["intel", "Intelligence", "Intel", "sparkles"],
-  ["ai", "Gradify AI", "AI", "bulb"],
-  ["earth", "Earth", "Earth", "globe"],
-  ["tools", "Tools", "Tools", "forge"],
-  ["community", "Community", "Community", "people"],
-  ["account", "Settings", "Settings", "cog"],
+// One navigation for every Gradify site's app, drawn here so the 33 app pages share it. Five sections, each a plain
+// group of the screens it holds, so every screen is one click from anywhere and nothing waits behind a "More":
+//   Today     what to do now and when        Learn     what you study from
+//   Study     what you practise with         Library   what you keep        Progress  how it's going
+// Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL.
+// [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
+const SECTIONS = [
+  ["today", "Today", "home", [["today", "Today", "home"], ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
+  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
+  ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
+  ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
+  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"]]],
 ];
-// the phone tab bar has room for five: the rest are under More
-const TABS = ["today", "study", "notes", "plan"];
-// screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
-// the sidebar starts short: the everyday sections, then More. A section joins the list once it has been opened
-// (remembered on this device), and the open section always shows. The phone's More sheet still lists everything.
-const CORE_NAV = ["today", "notes", "study", "plan", "learning", "account"];
-const USED_KEY = "gradify.nav.used";
-const usedNav = () => { try { return JSON.parse(localStorage.getItem(USED_KEY) || "[]"); } catch { return []; } };
-function noteNavUse(section) {
-  if (!section || CORE_NAV.includes(section) || !NAV.some(([r]) => r === section)) return;
-  const u = usedNav(); if (u.includes(section)) return;
-  try { localStorage.setItem(USED_KEY, JSON.stringify([...u, section])); } catch { /* private mode */ }
-  const side = document.querySelector(".lo-side"); if (side) { paintSide(side); markLocks(); }
-}
+const SETTINGS = ["account", "Settings", "cog"];
+// screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
+const SCREEN_OF = { deck: "library", jot: "notes", topic: "progress", goal: "goals", session: "study" };
+const screenOf = (route) => SCREEN_OF[route] || route;
+const sectionOf = (route) => SECTIONS.find(([, , , screens]) => screens.some(([r]) => r === screenOf(route)))?.[0] || null;
+const screenLabel = (route) => (route === "account" ? SETTINGS[1] : SECTIONS.flatMap(([, , , x]) => x).find(([r]) => r === screenOf(route))?.[1]) || "";
+const currentRoute = () => location.hash.replace(/^#\/?/, "").split("/")[0] || "today";
 function paintSide(side) {
-  const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
-  const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
-  const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
-  side.innerHTML = `<span class="lo-side-title">Gradify</span>${main.map(link).join("")}
-    ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
-    ${settings ? link(settings) : ""}`;
-  side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
-  const cur = location.hash.replace(/^#\/?/, "").split("/")[0] || "today", sec = cur in SECTION_OF ? SECTION_OF[cur] : cur;
-  side.querySelectorAll("a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === sec)));
+  const link = ([r, label, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
+  side.innerHTML = `<span class="lo-side-title">Gradify</span>
+    ${SECTIONS.map(([id, label, , screens]) => `<div class="lo-sec" data-section="${id}" role="group" aria-labelledby="lo-sec-${id}"><span class="lo-sec-label" id="lo-sec-${id}">${label}</span>${screens.map(link).join("")}</div>`).join("")}
+    <div class="lo-sec lo-sec-end">${link(SETTINGS)}</div>`;
+  markCurrent();
+}
+// which screen and section are open: the screen's link, the section's tab, and the phone's screen row
+function markCurrent() {
+  const route = currentRoute(), screen = screenOf(route), section = sectionOf(route);
+  document.querySelectorAll(".lo-side a, .sec-screens a").forEach((a) => a.setAttribute("aria-current", a.dataset.route === screen ? "page" : "false"));
+  document.querySelectorAll(".tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.section === section)));
+  document.querySelectorAll(".lo-sec[data-section]").forEach((g) => g.classList.toggle("open", g.dataset.section === section));
+  paintScreens(section);
+}
+// below the sidebar's width: the open section's screens as a row of pills above the page, so a sibling screen is one tap
+function paintScreens(section) {
+  let row = document.querySelector(".sec-screens");
+  if (!row) {
+    row = document.createElement("nav"); row.className = "sec-screens"; row.setAttribute("aria-label", "This section");
+    document.querySelector("#view")?.before(row);
+    row.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
+  }
+  const sec = SECTIONS.find(([id]) => id === section), screen = screenOf(currentRoute());
+  row.hidden = !sec || sec[3].length < 2;
+  row.innerHTML = sec ? sec[3].map(([r, label]) => `<a class="chip" href="#/${r}" data-route="${r}" aria-current="${r === screen ? "page" : "false"}">${label}</a>`).join("") : "";
 }
 function drawNav() {
-  // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
+  // the LifeOS sidebar (wide screens); the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
   if (!side) {
     side = document.createElement("nav");
@@ -166,15 +167,13 @@ function drawNav() {
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
   paintSide(side);
-  // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
+  // phones and tablets: the five sections in the tab bar (each opens its first screen) and the section's screens above the page
   for (const nav of document.querySelectorAll(".tabbar")) {
-    nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
-      + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span></button>`;
-    const more = nav.querySelector(".tab-more");
-    more.addEventListener("click", () => { const open = !document.body.classList.contains("side-open"); document.body.classList.toggle("side-open", open); more.setAttribute("aria-expanded", String(open)); });
+    nav.innerHTML = SECTIONS.map(([id, label, ic, screens]) => `<a href="#/${screens[0][0]}" data-section="${id}">${icon(ic)}<span>${label}</span></a>`).join("");
   }
-  side.addEventListener("click", (e) => { if (e.target.closest("a")) { haptic("tap"); document.body.classList.remove("side-open"); } });
+  side.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
   document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
+  markCurrent();
 }
 drawNav();
 // a small lock on the sections that need Gradify Pro, once the learner's plan is known (only while Pro is on sale)
@@ -211,7 +210,7 @@ const activeTab = new Map();
 function tabify(name) {
   const bar = document.querySelector(".app-nav");
   const tabs = SECTION_TABS[name], root = view.querySelector(":scope > section") || view;
-  const label = NAV.find(([r]) => r === (name in SECTION_OF ? SECTION_OF[name] : name))?.[1] || "";
+  const label = screenLabel(name);
   if (!tabs) { if (bar) bar.innerHTML = label ? `<span class="tab-title">${esc(label)}</span>` : ""; return; }
   const ids = tabs.map(([id]) => id);
   const paneOf = (el) => {
@@ -292,9 +291,7 @@ async function route() {
   // Any screen they ask for opens directly: set-up (#/start, "What do you want to achieve?") is never put in front of
   // a destination. It's offered instead, as a card on Today and from Account (docs/product/UX-SPEC.md, onboarding).
   if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
-  const section = name in SECTION_OF ? SECTION_OF[name] : name;
-  noteNavUse(section);
-  document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
+  markCurrent();
   document.body.classList.remove("side-open");
   // a Pro prompt belongs to the screen that opened it: leaving the screen closes it
   document.querySelector("dialog.plus-prompt")?.close();
