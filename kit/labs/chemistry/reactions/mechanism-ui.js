@@ -2,7 +2,8 @@
 // the mechanism engine (electron-flow.js), get help at four levels, and play the mechanism back as an animation
 // generated from its data. Two sources: a reaction from the library (guided and marked against the template) or
 // the learner's own drawing from Structure mode (checked for chemical consistency only, and the lab says so).
-import { button, toggle, challenges, esc } from "../../lab.js";
+import { button, toggle, esc } from "../../lab.js";
+import { challengePanel } from "../ui.js";
 import * as K from "../skeletal.js";
 import * as E from "./electron-flow.js";
 import { REACTIONS, FAMILIES, instantiate, arrowKinds, faultyStep } from "./library.js";
@@ -49,7 +50,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
       <label class="lab-sel"><span>Mechanism</span><select class="mx-src"></select></label>
       <label class="lab-sel"><span>Level</span><select class="mx-level">${Object.entries(LEVELS).map(([k, v]) => `<option value="${k}">up to ${v}</option>`).join("")}</select></label>
       <div class="lab-seg mx-type" role="group" aria-label="Arrow type"><button type="button" data-t="pair" aria-pressed="true" title="Curly arrow: a pair of electrons">↷ Curly (2e⁻)</button><button type="button" data-t="single" aria-pressed="false" title="Fishhook arrow: one electron">⇀ Fishhook (1e⁻)</button></div>
-      <span class="mx-opts"></span>
+      <span class="mx-opts" role="group" aria-label="Display options"></span>
     </div>
     <div class="mx-cond" aria-live="polite"></div>
     <div class="lab-cols osk-cols">
@@ -63,7 +64,8 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
       <div class="lab-ctrl">
         <div class="lab-info mx-fb" aria-live="polite"></div>
         <div class="lab-row mx-actions"></div>
-        <div class="lab-row mx-help"></div>
+        <div class="lab-row mx-help" role="group" aria-label="Help"></div>
+        <div class="lab-row mx-more" role="group" aria-label="More"></div>
         <div class="mx-tutor"></div>
         <div class="lab-info mx-about"></div>
       </div>
@@ -76,7 +78,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   let ecf = null, spot = null, spotSeed = 0, spots = 0;
   // exam style: conditions question first, no help, a timer, an explanation question at the end, a 10-mark breakdown
   let exam = false, xq = null, timer = null;
-  const ch = challenges(q(".mx-about").parentElement, ctx, REACTIONS.map((r) => ({ id: `mech-${r.id}`, text: `Draw the ${r.title.split(":")[0]} mechanism${r.title.includes(":") ? ` (${r.title.split(":")[1].trim()})` : ""} with no help`, test: (st) => st.done === r.id })).concat([{ id: "mech-spot", text: "Spot the wrong arrow five times (use “Spot the error”)", test: (st) => st.spots >= 5 }, { id: "mech-exam", text: "Score 8/10 or more on an exam-style mechanism", test: (st) => st.exam >= 8 }]));
+  const ch = challengePanel(q(".mx-about").parentElement, ctx, REACTIONS.map((r) => ({ id: `mech-${r.id}`, text: `Draw the ${r.title.split(":")[0]} mechanism${r.title.includes(":") ? ` (${r.title.split(":")[1].trim()})` : ""} with no help`, test: (st) => st.done === r.id })).concat([{ id: "mech-spot", text: "Spot the wrong arrow five times (use “Spot the error”)", test: (st) => st.spots >= 5 }, { id: "mech-exam", text: "Score 8/10 or more on an exam-style mechanism", test: (st) => st.exam >= 8 }]));
 
   // ---------- sources ----------
   const sel = q(".mx-src");
@@ -439,18 +441,20 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     box.innerHTML = r ? `<h4>${esc(r.title)}</h4><p>${esc(r.overview)}</p><details><summary>Common mistakes</summary><ul>${r.misconceptions.map((m) => `<li>${esc(m)}</li>`).join("")}</ul></details>` : `<h4>Your own mechanism</h4><p>Curly arrows move two electrons, fishhooks one. Start each arrow at a lone pair, an unpaired electron or a bond, and end it at the atom (or the bond) where the electrons go. Charges update themselves from where the electrons end up.</p>`;
   }
   function actions() {
-    const a = q(".mx-actions"), h = q(".mx-help"); a.innerHTML = h.innerHTML = "";
+    const a = q(".mx-actions"), h = q(".mx-help"), more = q(".mx-more"); a.innerHTML = h.innerHTML = more.innerHTML = "";
     button(a, inst ? "Check step" : "Apply step", check, "pri");
     button(a, "Undo arrow", () => { pending.pop(); fb = null; refresh(); });
     button(a, "Clear arrows", () => { pending = []; fb = null; refresh(); });
-    button(a, "Restart", () => load(src));
-    if (onSave) button(a, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })), ecf }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
+    more.insertAdjacentHTML("beforeend", `<span class="osk-label">More</span>`);
+    if (inst && !exam) button(more, "Spot the error", startSpot);
+    button(more, "Restart", () => load(src));
+    if (onSave) button(more, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })), ecf }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
     if (!inst || exam) return;
+    h.insertAdjacentHTML("beforeend", `<span class="osk-label">Help</span>`);
     button(h, "Hint", () => { if (finished) return; fb = { kind: "info", html: `<h4>Hint</h4><p>${esc(inst.steps[done.length].hint)}</p>` }; feedback(); });
     button(h, "Explain", () => { if (finished) return; fb = { kind: "info", html: `<h4>The idea</h4><p>${esc(inst.steps[done.length].explain)}</p>` }; feedback(); });
     button(h, "Show next step", () => showNext(false));
     button(h, "Full solution", () => showNext(true));
-    button(h, "Spot the error", startSpot);
   }
 
   // ---------- steps strip and playback ----------

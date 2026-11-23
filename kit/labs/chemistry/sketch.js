@@ -16,6 +16,7 @@ import * as E from "./reactions/electron-flow.js";
 import { mountMechanism, restoreNote } from "./reactions/mechanism-ui.js";
 import { mountReaction } from "./reactions/reaction-ui.js";
 import { mount3d } from "./lab3d.js";
+import { challengePanel } from "./ui.js";
 
 const STORE = "gradify.organicLab", PAGES = "gradify.organicLab.pages", PREFS = "gradify.organicLab.prefs";
 const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } };
@@ -69,16 +70,19 @@ export function mount(el, ctx = {}) {
     <div class="lab-cols osk-cols">
       <div class="osk-stage" tabindex="0" aria-label="Drawing area"><div class="osk-svg"></div><p class="osk-hint"></p>
         <div class="osk-zoom"><button type="button" data-z="-1" aria-label="Zoom out">−</button><button type="button" data-z="0" aria-label="Fit drawing">⤢</button><button type="button" data-z="1" aria-label="Zoom in">+</button></div></div>
-      <div class="lab-ctrl"><div class="lab-info osk-info" aria-live="polite"></div><div class="osk-opts"></div><div class="lab-row osk-out"></div></div>
+      <div class="lab-ctrl"><div class="lab-info osk-info" aria-live="polite"></div><div class="lab-row osk-go" aria-label="Use this molecule"></div><div class="osk-opts" role="group" aria-label="Display options"><span class="osk-label">Display</span></div><div class="lab-row osk-out"><span class="osk-label">Export</span></div></div>
     </div>
     </div>
     <div class="osk-mode" data-pane="mechanism" hidden></div>
     <div class="osk-mode" data-pane="reaction" hidden></div>
     <div class="osk-mode" data-pane="3d" hidden></div>
-    <div class="lab-cols osk-cols">
-      <div class="lab-ctrl osk-probs"><div class="lab-info"><h4>Work it out</h4><select class="osk-prob" aria-label="Problem"></select><p class="osk-ptext"></p><div class="lab-row"><span class="osk-check"></span><span class="osk-phint"></span></div><p class="lab-msg osk-pmsg"></p></div></div>
-      <div class="lab-ctrl"><div class="lab-info osk-book"><h4>My organic notes</h4><input type="text" class="osk-title" placeholder="Title (the name, if blank)" aria-label="Note title"><textarea class="osk-note" rows="3" placeholder="Notes: reactions, conditions, mechanisms, mnemonics…" aria-label="Notes for this drawing"></textarea><div class="lab-row osk-bookbtns"></div><div class="osk-pages"></div></div></div>
-    </div>`, "osk-lab lab-light");
+    <div class="lab-cols osk-cols osk-probs">
+      <div class="lab-ctrl"><div class="lab-info"><h4>Work it out</h4><select class="osk-prob" aria-label="Problem"></select><p class="osk-ptext"></p><div class="lab-row"><span class="osk-check"></span><span class="osk-phint"></span></div><p class="lab-msg osk-pmsg"></p></div></div>
+      <div class="lab-ctrl osk-chalhost"></div>
+    </div>
+    <details class="osk-saved"><summary><span>Saved work</span><span class="osk-saved-n"></span></summary>
+      <div class="osk-book"><div class="osk-saveform"><input type="text" class="osk-title" placeholder="Title (the name, if blank)" aria-label="Note title"><textarea class="osk-note" rows="2" placeholder="Notes: reactions, conditions, mechanisms, mnemonics…" aria-label="Notes for this drawing"></textarea><div class="lab-row osk-bookbtns"></div></div><div class="osk-pages"></div></div>
+    </details>`, "osk-lab lab-light");
   const stage = $(".osk-stage"), host = $(".osk-svg"), say = describe(host, "Skeletal formula drawing");
   const prefs = { grid: true, showC: false, showNums: true, showStereo: true, ...load(PREFS, {}) };
   // saved work is checked field by field before it is drawn: a tampered or corrupted save is dropped, not rendered
@@ -88,7 +92,7 @@ export function mount(el, ctx = {}) {
   const sessionSets = Object.fromEntries(PROBLEMS.filter((p) => p.set).map((p) => [p.id, new Set()]));
   const targets = {}; const tget = (p) => (targets[p.id] ||= target(p.want));
   const solves = (p) => (p.want ? A.hash === tget(p).hash : p.name ? A.name?.name === p.name : p.set ? sessionSets[p.id].size >= p.need : p.test(A));
-  const ch = challenges($(".osk-probs"), ctx, PROBLEMS.map((p) => ({ id: p.id, text: p.text, test: () => !A.empty && !A.problems.length && solves(p) })));
+  const ch = challengePanel($(".osk-chalhost"), ctx, PROBLEMS.map((p) => ({ id: p.id, text: p.text, test: () => !A.empty && !A.problems.length && solves(p) })));
 
   // ---------- the toolbar ----------
   const poly = (n, arom) => { const R = 9, pts = Array.from({ length: n }, (_, k) => { const t = -Math.PI / 2 + (n % 4 === 0 ? Math.PI / n : 0) + (k * 2 * Math.PI) / n; return `${(12 + R * Math.cos(t)).toFixed(1)},${(12 + R * Math.sin(t)).toFixed(1)}`; }).join(" "); return `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><polygon points="${pts}" fill="none" stroke="currentColor" stroke-width="1.6"/>${arom ? '<circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="1.3"/>' : ""}</svg>`; };
@@ -100,6 +104,7 @@ export function mount(el, ctx = {}) {
   ];
   const bar = $(".osk-tools");
   bar.innerHTML = TOOLS.map((g) => `<div class="osk-group">${g.map(([k, lab, title]) => `<button type="button" class="osk-tool" data-tool="${k}" title="${esc(title)}" aria-label="${esc(title)}">${lab}</button>`).join("")}</div>`).join("") +
+    `<div class="osk-group"><button type="button" class="osk-tool" data-act="rot-l" title="Rotate 60° anticlockwise" aria-label="Rotate 60° anticlockwise">⟲</button><button type="button" class="osk-tool" data-act="rot-r" title="Rotate 60° clockwise" aria-label="Rotate 60° clockwise">⟳</button><button type="button" class="osk-tool" data-act="flip" title="Flip left to right" aria-label="Flip left to right">⇋</button></div>` +
     `<div class="osk-group"><button type="button" class="osk-tool" data-act="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button><button type="button" class="osk-tool" data-act="redo" title="Redo (Ctrl+Y)" aria-label="Redo">↷</button><button type="button" class="osk-tool" data-act="clear" title="Clear the drawing" aria-label="Clear the drawing">Clear</button></div>`;
   const toolKey = () => (tool.t === "ring" ? `ring:${tool.n}${tool.arom ? ":a" : ""}` : tool.t === "atom" ? `atom:${tool.el}` : tool.t === "charge" ? `charge:${tool.d}` : tool.t);
   const setTool = (k) => {
@@ -113,7 +118,20 @@ export function mount(el, ctx = {}) {
     if (b.dataset.tool) setTool(b.dataset.tool);
     else if (b.dataset.act === "undo") doUndo(); else if (b.dataset.act === "redo") doRedo();
     else if (b.dataset.act === "clear" && m.atoms.length) { snap(); m = K.empty(); sel = null; commit(); }
+    else if (b.dataset.act === "rot-l" || b.dataset.act === "rot-r" || b.dataset.act === "flip") transform(b.dataset.act);
   });
+  // rotate by 60° or flip about the hexagon nearest the molecule's centre, so the drawing stays on the paper's grid
+  function transform(kind) {
+    if (!m.atoms.length) return; snap();
+    const mx = m.atoms.reduce((t, a) => t + a.x, 0) / m.atoms.length, my = m.atoms.reduce((t, a) => t + a.y, 0) / m.atoms.length;
+    const [cx, cy] = prefs.grid ? K.snapCentre(mx, my) : [mx, my], t = (kind === "rot-l" ? -60 : 60) * Math.PI / 180;
+    for (const a of m.atoms) {
+      const dx = a.x - cx, dy = a.y - cy;
+      if (kind === "flip") a.x = cx - dx; else { a.x = cx + dx * Math.cos(t) - dy * Math.sin(t); a.y = cy + dx * Math.sin(t) + dy * Math.cos(t); }
+      if (prefs.grid) { const [sx, sy] = K.snapPoint(a.x, a.y); if (Math.hypot(sx - a.x, sy - a.y) < 0.05) { a.x = sx; a.y = sy; } }
+    }
+    commit(); paint();
+  }
   const HINTS = { draw: "Click an atom to add a bond · drag for a zig-zag chain · click a bond for double/triple · click empty paper to start", select: "Drag an atom to move it · drag the paper to pan · click an atom to select it for the keyboard", erase: "Click an atom or a bond to delete it", ring: "Click the paper for a ring · an atom for a spiro ring · a bond to fuse a ring", atom: "Click an atom to change it · or the paper to place one", charge: "Click an atom to change its charge", wedge: "Click a single bond near the stereocentre: plain → wedge (towards you) → dash (away) → plain" };
   const hint = () => { $(".osk-hint").textContent = m.atoms.length || tool.t !== "draw" ? HINTS[tool.t] : "Click the paper to start, or drag across it to draw a chain. Hexagons snap to the grid."; };
 
@@ -197,7 +215,7 @@ export function mount(el, ctx = {}) {
   host.addEventListener("pointerleave", () => { if (!drag) { hover = null; ghost = null; paint(); } });
   host.addEventListener("wheel", (e) => { if (!e.ctrlKey && !e.metaKey) return; e.preventDefault(); const [x, y] = world(e); zoom(e.deltaY < 0 ? 1.12 : 1 / 1.12, x, y); }, { passive: false });
   const zoom = (f, x = view.cx, y = view.cy) => { const s = Math.max(14, Math.min(90, view.s * f)), k = s / view.s; view.cx = x - (x - view.cx) / k; view.cy = y - (y - view.cy) / k; view.s = s; paint(); };
-  const fitView = () => { view = m.atoms.length ? K.fit(m, [W, H], { max: 46, pad: 1.6 }) : { cx: 0, cy: 0, s: 38 }; paint(); };
+  const fitView = () => { view = m.atoms.length ? K.fit(m, [W, H], { max: 56, pad: 1.6 }) : { cx: 0, cy: 0, s: 38 }; paint(); };
   $(".osk-zoom").addEventListener("click", (e) => { const z = e.target.closest("[data-z]")?.dataset.z; if (z === "0") fitView(); else if (z) zoom(z === "1" ? 1.2 : 1 / 1.2); });
 
   // ---------- keyboard ----------
@@ -273,11 +291,19 @@ export function mount(el, ctx = {}) {
       ${nm?.steps?.length ? `<details class="osk-steps"><summary>How the name is worked out</summary><ol>${nm.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></details>` : ""}
       <p class="osk-smiles"><small>SMILES</small> <code>${esc(A.smiles)}</code></p>
       <p class="lab-msg ok">${esc(msg)}</p>`;
+    goRow();
     box.querySelectorAll("[data-hi]").forEach((b) => {
       const on = () => { hi = new Set(b.dataset.hi.split(",").map(Number)); paint(); }, off = () => { hi = new Set(); paint(); };
       b.addEventListener("pointerenter", on); b.addEventListener("pointerleave", off); b.addEventListener("focus", on); b.addEventListener("blur", off);
     });
   }
+
+  // the molecule is shared by every mode: offer the next things to do with it
+  function goRow() {
+    const row = $(".osk-go"), ready = !A.empty && !A.problems.length && A.components === 1;
+    row.innerHTML = ready ? `<span class="osk-label">Use this molecule</span><button type="button" class="lab-btn" data-go="reaction">Predict a reaction</button><button type="button" class="lab-btn" data-go="mechanism">Push electrons</button><button type="button" class="lab-btn" data-go="3d">See it in 3D</button>` : "";
+  }
+  $(".osk-go").addEventListener("click", (e) => { const g = e.target.closest("[data-go]")?.dataset.go; if (!g) return; setMode(g); if (g === "reaction") rx.useDrawing(); if (g === "mechanism") mech.load("mine"); $.root.scrollIntoView?.({ block: "start", behavior: "smooth" }); });
 
   // ---------- drawing ----------
   // follow the colour scheme the lab is shown in (a lab card can be dark on a light page): .osk-svg's background is
@@ -332,7 +358,7 @@ export function mount(el, ctx = {}) {
     if (A.empty) return flash("Draw something to save");
     const title = $(".osk-title").value.trim() || A.name?.name || A.formula;
     pages.unshift({ id: Date.now().toString(36), title, note: $(".osk-note").value.trim(), mol: K.clone(m), at: new Date().toISOString().slice(0, 10), name: A.name?.name || null, formula: A.formula, smiles: A.smiles });
-    save(PAGES, pages); $(".osk-title").value = ""; $(".osk-note").value = ""; book(); flash("Saved to your organic notes");
+    save(PAGES, pages); $(".osk-title").value = ""; $(".osk-note").value = ""; book(); $(".osk-saved").open = true; flash("Saved to your organic notes");
   }, "pri");
   button(bb, "Copy as flashcards", () => {
     const list = pages.length ? pages : A.empty ? [] : [{ title: A.name?.name || A.formula, mol: m, note: "" }];
@@ -357,6 +383,7 @@ export function mount(el, ctx = {}) {
     return lines.join("\n");
   }
   function book() {
+    $(".osk-saved-n").textContent = pages.length ? `${pages.length} saved` : "";
     const box = $(".osk-pages");
     if (!pages.length) { box.innerHTML = `<p class="osk-aka">Saved drawings appear here with your notes. They stay in this browser.</p>`; return; }
     const pal = palette();
@@ -372,7 +399,7 @@ export function mount(el, ctx = {}) {
 
   // ---------- modes: Structure, Mechanism, 3D ----------
   const mech = mountMechanism($('[data-pane="mechanism"]'), { ctx, palette, getDrawing: () => K.clone(m), prefs, onPrefs: () => save(PREFS, prefs),
-    onSave: (mx) => { pages.unshift({ id: Date.now().toString(36), kind: "mech", title: mx.title, mech: mx, at: new Date().toISOString().slice(0, 10) }); save(PAGES, pages); book(); } });
+    onSave: (mx) => { pages.unshift({ id: Date.now().toString(36), kind: "mech", title: mx.title, mech: mx, at: new Date().toISOString().slice(0, 10) }); save(PAGES, pages); book(); $(".osk-saved").open = true; } });
   const m3 = mount3d($('[data-pane="3d"]'), { getDrawing: () => m });
   const rx = mountReaction($('[data-pane="reaction"]'), { ctx, palette, getDrawing: () => K.clone(m), prefs, onPrefs: () => save(PREFS, prefs),
     onMechanism: (id) => { setMode("mechanism"); mech.load(id); },
@@ -383,12 +410,15 @@ export function mount(el, ctx = {}) {
     $(".osk-modes").querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === k)));
     $.all("[data-pane]").forEach((p) => { p.hidden = p.dataset.pane !== k; });
     $(".osk-probs").hidden = k !== "structure";
+    $(".osk-saveform").hidden = k !== "structure";
+    prefs.mode = k; save(PREFS, prefs);
     if (k === "3d") m3.show(); else m3.stop();
     if (k === "mechanism") mech.refresh(); else if (k === "reaction") rx.refresh(); else if (k === "structure") { resize(); paint(); }
   }
   $(".osk-modes").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); });
 
   setTool("draw"); resize(); fitView(); commit(); book(); probPaint(false);
+  if (prefs.mode && prefs.mode !== "structure" && ["mechanism", "reaction", "3d"].includes(prefs.mode)) setMode(prefs.mode);
   return () => { ro?.disconnect(); mo.disconnect(); mech.stop(); m3.stop(); rx.stop(); };
 }
 export default mount;

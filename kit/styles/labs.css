@@ -184,3 +184,34 @@
 .ct-msg.wait { color: var(--mute); font-style: italic; }
 .ct-reply { gap: 6px; } .ct-input { flex: 1; min-width: 0; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; }
 .ct-note { font-size: 12px; }
+/* Organic Chemistry Lab: shared panels and the outcome headline (kit/labs/chemistry/ui.js) */
+.osk-label { font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); align-self: center; margin-right: 2px; }
+.osk-opts { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .025); }
+.osk-opts .osk-label { flex-basis: 100%; }
+.osk-out, .osk-go { gap: 8px; align-items: center; } .osk-go:empty { display: none; }
+.osk-go { padding: 10px 12px; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--co-accent, #10b981) 40%, var(--line)); background: color-mix(in srgb, var(--co-accent, #10b981) 7%, transparent); }
+.osk-go .osk-label { flex-basis: 100%; color: var(--fg); }
+.osk-chal, .osk-saved { border-radius: 14px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .025); }
+.osk-chal > summary, .osk-saved > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; font-weight: 600; }
+.osk-chal > summary::-webkit-details-marker, .osk-saved > summary::-webkit-details-marker { display: none; }
+.osk-chal > summary::after, .osk-saved > summary::after { content: "▾"; color: var(--mute); transition: transform .15s; } .osk-chal[open] > summary::after, .osk-saved[open] > summary::after { transform: rotate(180deg); }
+.osk-chal > summary > span:first-child::before { content: "★ "; color: var(--co-accent, #10b981); }
+.osk-chal-n, .osk-saved-n { margin-left: auto; font: 500 12px var(--mono); color: var(--mute); }
+.osk-chal.all .osk-chal-n { color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); }
+.osk-chal .lab-ch { margin: 0 12px 12px; } .osk-chal .lab-ch > b { display: none; }
+.osk-saved .osk-book { padding: 0 14px 14px; } .osk-saveform { display: grid; gap: 4px; margin-bottom: 6px; }
+.osk-outcome { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; margin-bottom: 10px; border-radius: 12px; border: 1px solid var(--line); border-left-width: 4px; }
+.osk-outcome b { display: block; font-size: 15px; } .osk-outcome p { margin: 2px 0 0; font-size: 13px; color: var(--mute); }
+.osk-outcome-tag { flex: none; font: 700 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; }
+.osk-outcome.ok { border-left-color: #10b981; background: rgba(16, 185, 129, .08); } .osk-outcome.ok .osk-outcome-tag { background: rgba(16, 185, 129, .18); color: #40d4b1; color: light-dark(#0b6e57, #40d4b1); }
+.osk-outcome.none { border-left-color: var(--mute); background: rgba(var(--ink-rgb), .04); } .osk-outcome.none .osk-outcome-tag { background: rgba(var(--ink-rgb), .1); color: var(--fg); }
+.osk-outcome.warn { border-left-color: #f59e0b; background: rgba(245, 158, 11, .09); } .osk-outcome.warn .osk-outcome-tag { background: rgba(245, 158, 11, .2); color: #f5b84b; color: light-dark(#8a5a00, #f5b84b); }
+.rx-practice { gap: 8px 12px; align-items: center; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .025); }
+.mx-help, .mx-more { gap: 6px; align-items: center; } .mx-more .lab-btn, .mx-help .lab-btn { font-size: 13px; padding: 6px 11px; }
+.mx-actions .lab-btn.pri { min-width: 120px; }
+/* the drawing toolbar: on a phone each group stays on one line (the bar scrolls sideways inside itself), so tools never break apart */
+@media (max-width: 560px) {
+  .osk-tools { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .osk-group { flex-wrap: nowrap; flex: none; }
+  .osk-opts .osk-label, .osk-go .osk-label { flex-basis: 100%; }
+}

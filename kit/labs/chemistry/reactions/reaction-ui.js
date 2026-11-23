@@ -6,7 +6,8 @@
 //   Conditions  substitution versus elimination: two sets of conditions side by side (competition.js).
 //   Synthesis   reach a target from a starting material, forwards or backwards (planner.js); every step is checked
 //               by the same rules, so any route they support is accepted.
-import { toggle, button, challenges, esc } from "../../lab.js";
+import { toggle, button, esc } from "../../lab.js";
+import { challengePanel, outcomeBanner } from "../ui.js";
 import * as K from "../skeletal.js";
 import { REAGENTS, STARTERS, predict, starter, reagentOf, LEVELS, atLevel } from "./predictor.js";
 import { competition, NUCLEOPHILES, SOLVENTS, TEMPS, halideSites } from "./competition.js";
@@ -35,20 +36,20 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
       <label class="lab-sel"><span>Level</span><select class="rx-level">${Object.entries(LEVELS).map(([k, v]) => `<option value="${k}">up to ${v}</option>`).join("")}</select></label>
     </div>
     <div class="rx-view" data-view="predict">
-      <div class="lab-row mx-top"><label class="lab-sel"><span>Start</span><select class="rx-src"></select></label><label class="lab-sel"><span>Reagent</span><select class="rx-reag"></select></label><span class="mx-opts rx-opts"></span></div>
-      <div class="lab-row rx-practice"></div>
+      <div class="lab-row mx-top"><label class="lab-sel"><span>Start</span><select class="rx-src"></select></label><label class="lab-sel"><span>Reagent and conditions</span><select class="rx-reag"></select></label></div>
+      <div class="lab-row rx-practice" role="group" aria-label="Practice"><span class="osk-label">Practice</span></div>
       <div class="rx-route" aria-live="polite"></div>
       <div class="lab-cols osk-cols"><div class="rx-scheme" aria-live="polite"></div><div class="lab-ctrl"><div class="lab-info rx-info" aria-live="polite"></div><div class="lab-row rx-btns"></div><div class="rx-tutor"></div></div></div>
     </div>
     <div class="rx-view" data-view="conditions" hidden></div>
     <div class="rx-view" data-view="synthesis" hidden></div>
-    <div class="lab-ctrl"><div class="lab-info rx-about"></div></div>`;
+    <div class="rx-about"></div>`;
   const q = (s) => host.querySelector(s);
   let view = "predict", start = null, srcKey = "mine", reagent = REAGENTS[0].id, guess = null, predictFirst = false, seed = 1, route = [];
   let stats = { right: 0, asked: 0, comp: 0 }, practice = null, timed = false, clock = null, hist = loadH();
   const lv = q(".rx-level"); lv.value = prefs.level || "university";
   const level = () => lv.value;
-  const ch = challenges(q(".rx-about"), ctx, [
+  const ch = challengePanel(q(".rx-about"), ctx, [
     { id: "rx-predict", text: "Predict five products correctly, with “Predict first” on", test: (s) => s.right >= 5 },
     { id: "rx-markovnikov", text: "Predict the major product when HBr or steam adds to an unsymmetrical alkene", test: (s) => s.ok && ["hbr", "steam"].includes(s.reagent) && s.minor },
     { id: "rx-zaitsev", text: "Predict the major alkene from an elimination that can give two", test: (s) => s.ok && ["koh-eth", "h3po4", "tbuok"].includes(s.reagent) && s.minor },
@@ -60,13 +61,15 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
   ]);
   const check = (x) => ch.check({ right: stats.right, comp: stats.comp, routeSteps: route.length, ...x });
 
-  q(".rx-views").addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (!b) return; view = b.dataset.v; q(".rx-views").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); host.querySelectorAll("[data-view]").forEach((p) => { p.hidden = p.dataset.view !== view; }); paintView(); });
+  const remember = () => { prefs.rx = { view, src: srcKey === "route" ? prefs.rx?.src || "mine" : srcKey, reagent }; onPrefs(prefs); };
+  function showView(v) { view = v; q(".rx-views").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.v === v))); host.querySelectorAll("[data-view]").forEach((p) => { p.hidden = p.dataset.view !== view; }); remember(); paintView(); }
+  q(".rx-views").addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (b) showView(b.dataset.v); });
   lv.addEventListener("change", () => { prefs.level = lv.value; onPrefs(prefs); fillReagents(); fillTasks(); paintView(); });
 
   // ---------- predict ----------
   const src = q(".rx-src");
   src.innerHTML = `<option value="mine">My drawing (from Structure mode)</option><optgroup label="Common compounds">${STARTERS.map(([n]) => `<option value="${esc(n)}">${esc(n)}</option>`).join("")}</optgroup>`;
-  src.addEventListener("change", () => { srcKey = src.value; route = []; practice = null; stopClock(); load(); });
+  src.addEventListener("change", () => { srcKey = src.value; route = []; practice = null; stopClock(); remember(); load(); });
   const rg = q(".rx-reag");
   function fillReagents() {
     const list = REAGENTS.filter((r) => atLevel(r, level())), groups = [...new Set(list.map((r) => r.type.split(" (")[0]))];
@@ -75,11 +78,12 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     rg.value = reagent;
   }
   fillReagents();
-  rg.addEventListener("change", () => { reagent = rg.value; guess = null; seed++; practice = null; stopClock(); paint(); });
-  const pfToggle = toggle(q(".rx-opts"), "Predict first", predictFirst, (v) => { predictFirst = v; guess = null; paint(); });
-  toggle(q(".rx-opts"), "Timed (45 s)", timed, (v) => { timed = v; });
+  rg.addEventListener("change", () => { reagent = rg.value; guess = null; seed++; practice = null; stopClock(); remember(); paint(); });
   const pr = q(".rx-practice");
   button(pr, "Practice question", nextQuestion, "pri");
+  const opts0 = document.createElement("span"); opts0.className = "mx-opts rx-opts"; pr.append(opts0);
+  const pfToggle = toggle(opts0, "Predict first", predictFirst, (v) => { predictFirst = v; guess = null; paint(); });
+  toggle(opts0, "Timed (45 s)", timed, (v) => { timed = v; });
   const score = document.createElement("span"); score.className = "osk-aka rx-score"; pr.append(score);
 
   // practice: a random starting material and reagent at the chosen level, weighted towards reagent families the
@@ -90,8 +94,9 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
       const w = list.map((r) => 1 + 2 * (hist[r.type.split(" (")[0]] || 0)), tot = w.reduce((a, b) => a + b, 0);
       let x = Math.random() * tot, r = list[0]; for (let i = 0; i < list.length; i++) { x -= w[i]; if (x <= 0) { r = list[i]; break; } }
       const [n] = STARTERS[Math.floor(Math.random() * STARTERS.length)], m = starter(n), res = predict(m, r.id);
-      if (res.outcome === "unsupported") continue; // the lab doesn't predict it, so there's no right answer to ask for
-      if (!res.reacts && Math.random() > 0.2) continue;
+      // only questions with a definite answer: a predicted reaction, or (sometimes) a checked "no reaction"; never a
+      // case the lab can't predict, whose honest answer isn't "no reaction"
+      if (res.outcome === "unsupported" || (res.outcome === "no_reaction" && Math.random() > 0.2)) continue;
       start = m; srcKey = n; src.value = n; reagent = r.id; rg.value = r.id; route = []; guess = null; seed++;
       predictFirst = true; pfToggle.checked = true; practice = { family: r.type.split(" (")[0] };
       stopClock(); if (timed) { practice.end = Date.now() + 45000; clock = setInterval(() => { const left = Math.ceil((practice.end - Date.now()) / 1000); const t = q(".rx-clock"); if (t) t.textContent = `⏱ ${Math.max(0, left)} s`; if (left <= 0) { stopClock(); answer(null); } }, 250); }
@@ -122,7 +127,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     return `<figure class="rx-mol ${role === "minor" ? "minor" : ""}">${mol(m, w, h)}<figcaption>${role !== "product" ? `<em class="rx-role ${role}">${role}</em> ` : ""}<b>${esc(d && name ? `${d}-${name}` : name)}</b> <span>${sub(A.formula)}${A.charge ? (A.charge < 0 ? "⁻" : "⁺") : ""}</span>${form}${note ? `<small>${esc(note)}</small>` : ""}</figcaption></figure>`;
   };
   function options(res) {
-    const right = res.reacts ? (res.products.length ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : [res.byproducts.join(" + ")]) : ["No reaction"];
+    const right = res.reacts ? (res.products.length ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : ["No organic product"]) : ["No reaction"];
     const pool = new Set(res.reacts && res.join === "+" ? [right.join(" + ")] : right);
     if (res.reacts) res.products.filter((p) => p.role === "minor").forEach((p) => pool.add(nameOf(p.m)));
     for (const r of shuffle(REAGENTS, seed)) { if (pool.size >= 4) break; if (r.id === reagent) continue; const o = predict(start, r.id); if (o.reacts && o.products.length) { const n = nameOf(o.products[0].m); if (!right.includes(n)) pool.add(n); } }
@@ -137,8 +142,8 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     if (!start) { box.innerHTML = `<div class="rx-empty"><p>Draw a starting material in <b>Structure</b> mode, choose a common compound above, or press <b>Practice question</b>.</p></div>`; info.innerHTML = ""; return; }
     const res = predict(start, reagent), r = res.reagent;
     const arrow = `<div class="mx-arrow rx-arrow"><small>${esc(r.label)}</small><b>⟶</b><small>${esc(r.cond)}</small></div>`;
-    const askable = res.outcome !== "unsupported", opts = predictFirst && askable ? options(res) : null, hidden = predictFirst && askable && guess == null;
-    const prods = !res.reacts || hidden ? `<div class="rx-none">${hidden ? "?" : res.outcome === "unsupported" ? "Not predicted" : "No reaction"}</div>` : !res.products.length ? `<div class="rx-none">No organic product</div>` : res.products.map((p) => card(p.m, p.role, p.note, undefined, undefined, p.config)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
+    const quiz = predictFirst && res.outcome !== "unsupported", opts = quiz ? options(res) : null, hidden = quiz && guess == null;
+    const prods = !res.reacts || hidden || !res.products.length ? `<div class="rx-none">${hidden ? "?" : res.reacts ? "No organic product" : res.outcome === "unsupported" ? "Not predicted" : "No reaction"}</div>` : res.products.map((p) => card(p.m, p.role, p.note, undefined, undefined, p.config)).join(`<span class="rx-plus">${res.join === "+" ? "+" : "or"}</span>`);
     const by = res.reacts && !hidden && res.byproducts.length ? `<span class="rx-by">+ ${res.byproducts.map(sub).join(" + ")}</span>` : "";
     box.innerHTML = `<div class="rx-row">${card(start)}${arrow}<div class="rx-prods">${prods}${by}</div></div>`;
     if (hidden) {
@@ -149,10 +154,16 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
     const verdict = guess == null || !opts ? "" : opts.right.includes(guess) ? `<p class="lab-msg ok">✓ Right: ${esc(guess)}.</p>` : `<p class="lab-msg">✗ ${guess === "(time ran out)" ? "Time ran out." : `You chose ${esc(guess)}.`} ${res.reacts ? `The answer: ${esc(opts.right.join(" or "))}.` : "There's no reaction."}</p>`;
     const comp = res.competition ? `<p class="osk-aka">${res.competition.pathways.map((p) => `${p.mech}: ${p.share}`).join(" · ")}. Explore other conditions in the <b>Conditions</b> view.</p>` : "";
     const rule = res.rule ? `<details class="rx-rule"><summary>The rule behind this</summary><dl><dt>Applies to</dt><dd>${esc(res.rule.reactants)}</dd><dt>Gives</dt><dd>${esc(res.rule.products)}</dd><dt>Selectivity</dt><dd>${esc(res.rule.selectivity)}</dd>${res.rule.limitations.length ? `<dt>Doesn't cover</dt><dd><ul>${res.rule.limitations.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></dd>` : ""}<dt>Sources</dt><dd>${res.rule.sources.map((x) => esc(`${x.id === "aqa" ? "AQA A-level (7405)" : x.id === "clayden" ? "Clayden, Organic Chemistry" : x.id === "ocr" ? "OCR A-level" : "March's Advanced Organic Chemistry"}: ${x.topic}`)).join("; ")}</dd><dt>Confidence</dt><dd>${esc(res.rule.confidence)}: ${esc(CONFIDENCE[res.rule.confidence])}</dd></dl></details>` : "";
-    info.innerHTML = `${verdict}<h4 class="${res.reacts ? "ok" : "no"}">${res.reacts ? esc(res.type) : res.outcome === "unsupported" ? "Not supported by the lab's rules" : "No reaction"}</h4><ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && stereoNotes(res).length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${stereoNotes(res).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
+    const mains = res.reacts ? res.products.filter((p) => p.role !== "minor").map((p) => nameOf(p.m)) : [];
+    const head = res.outcome === "reaction" ? outcomeBanner("reaction", res.type, mains.length ? `${res.products.some((p) => p.role === "major") ? "Major product" : mains.length > 1 ? "Products" : "Product"}: ${mains.join(res.join === "+" ? " + " : " or ")}${res.products.some((p) => p.role === "minor") ? " (minor products shown too)" : ""}` : "No organic product: see below.")
+      : res.outcome === "no_reaction" ? outcomeBanner("no_reaction", "No reaction under these conditions", "Every group in this molecule was checked against this reagent.")
+      : outcomeBanner("unsupported", "Not supported by the lab's rules", "Something may happen, but the lab can't reliably predict it. It says why below; try another reagent or a simpler molecule, or ask the tutor.");
+    box.insertAdjacentHTML("afterbegin", head);
+    info.innerHTML = `${verdict}<ul class="mx-list">${res.why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>${res.reacts && stereoNotes(res).length ? `<p><b>Stereochemistry</b></p><ul class="mx-list">${stereoNotes(res).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}${comp}${res.reacts ? `<p class="osk-aka">Predicted by rule templates (${esc(r.type.toLowerCase())}). Real reactions can also give side products the rules don't list.</p>` : ""}${rule}`;
     if (practice) button(btns, "Next question", nextQuestion, "pri");
     if (res.reacts && res.mechanism && onMechanism && REACTIONS.some((x) => x.id === res.mechanism)) button(btns, "See the mechanism", () => onMechanism(res.mechanism), practice ? "" : "pri");
-    if (res.reacts) res.products.forEach((p, i) => { if (K.analyse(p.m).charge) return; button(btns, res.products.length > 1 ? `Use ${p.role === "product" ? nameOf(p.m) : `the ${p.role} product`} next` : "Use as the next starting material", () => {
+    const named = new Set();
+    if (res.reacts) res.products.forEach((p) => { const nm = nameOf(p.m); if (K.analyse(p.m).charge || named.has(nm)) return; named.add(nm); button(btns, `Continue with ${nm}`, () => {
       route.push({ from: nameOf(start), reagent: r.label }); start = K.clone(p.m); srcKey = "route"; guess = null; seed++; practice = null; check({}); paint();
     }); });
     if (onEdit) button(btns, "Edit in Structure mode", () => onEdit(K.clone(res.reacts && res.products.length ? res.products[0].m : start)));
@@ -269,7 +280,7 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
   // ---------- the AI tutor: it is given the engine's own data, never asked to work the chemistry out ----------
   const mistakes = () => Object.entries(hist).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([topic, count]) => ({ topic, count }));
   const tutor = mountTutor(q(".rx-tutor"), { ask: ctx.ask || null, onUse: () => {},
-    getContext: () => { if (!start || (predictFirst && guess == null)) return null; const res = predict(start, reagent); return { kind: "prediction", ...explainContext(start, res) }; },
+    getContext: () => { if (!start) return null; const res0 = predict(start, reagent); if (predictFirst && guess == null && res0.outcome !== "unsupported") return null; const res = predict(start, reagent); return { kind: "prediction", ...explainContext(start, res) }; },
     learner: () => { const res = start ? predict(start, reagent) : null, o = res ? options(res) : null; return { mistakes: mistakes(), ...(guess && o && !o.right.includes(guess) ? { answer: `I chose: ${guess}` } : {}) }; },
     intents: [["explain", "Explain this reaction"], ["compare", "Why this product, not another?", (c) => c.outcome === "reaction" && (c.products.length > 1 || c.pathways)], ["guide", "Guide me through it", (c) => c.outcome === "reaction"], ["diagnose", "What did I get wrong?", () => { const res = predict(start, reagent), o = options(res); return guess != null && !o.right.includes(guess); }]] });
   let sTutor = null, routeCache = null;
@@ -282,6 +293,9 @@ export function mountReaction(host, { ctx = {}, palette = () => "dark", getDrawi
   }
 
   function paintView() { if (view === "predict") paint(); else if (view === "conditions") paintConditions(); else paintSynthesis(); }
+  // restore the learner's last view, starting material and reagent
+  if (prefs.rx) { if (REAGENTS.some((g) => g.id === prefs.rx.reagent && atLevel(g, level()))) { reagent = prefs.rx.reagent; rg.value = reagent; } if (prefs.rx.src && (prefs.rx.src === "mine" || STARTERS.some(([n]) => n === prefs.rx.src))) { srcKey = prefs.rx.src; src.value = srcKey; } }
   fillTasks(); load();
-  return { repaint: () => paintView(), refresh: () => { if (view === "predict" && srcKey === "mine") load(); else paintView(); }, stop: () => stopClock() };
+  if (prefs.rx?.view && prefs.rx.view !== "predict") showView(prefs.rx.view);
+  return { useDrawing() { srcKey = "mine"; src.value = "mine"; route = []; practice = null; guess = null; stopClock(); if (view !== "predict") showView("predict"); else load(); remember(); }, repaint: () => paintView(), refresh: () => { if (view === "predict" && srcKey === "mine") load(); else paintView(); }, stop: () => stopClock() };
 }
