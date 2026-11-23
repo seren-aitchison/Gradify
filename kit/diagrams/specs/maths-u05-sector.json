@@ -1,0 +1,124 @@
+{
+ "id": "maths-u05-sector",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Arc Length",
+ "title": "The sector with radius 9 cm and perimeter 30 cm",
+ "caption": "The two radii use 18 cm, so the arc is 30 − 18 = 12 cm and θ = arc/radius = 12/9 = 4/3 radians ≈ 1.33, which is 76.4°.",
+ "alt": "A circle of radius 9 centred at O with a sector bounded by radii OA and OB, angle 76.4 degrees at the centre and arc length 12.",
+ "description": [
+  "The sector has radius 9 cm and perimeter 30 cm.",
+  "Perimeter = 2 × 9 + arc, so the arc is 12 cm.",
+  "θ = 12/9 = 4/3 radians.",
+  "In degrees: (4/3) × 180/π ≈ 76.4°."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   9,
+   0
+  ],
+  "B": [
+   2.117138159726905,
+   8.747441112269815
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 9,
+   "colour": "a3"
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "O",
+   "b": "B",
+   "colour": "a1",
+   "w": 3
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "A",
+   "to": "B",
+   "deg": 76.4,
+   "label": "76.4°",
+   "colour": "a2",
+   "r": 30,
+   "labelR": 24
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "A",
+   "value": 9,
+   "label": "9",
+   "side": -1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    8.33040496423565,
+    6.554719912539212
+   ],
+   "text": "arc 12",
+   "colour": "a2",
+   "size": 13
+  }
+ ],
+ "labelAt": {
+  "O": [
+   -14,
+   12
+  ],
+  "A": [
+   14,
+   10
+  ],
+  "B": [
+   10,
+   -10
+  ]
+ },
+ "view": {
+  "x": [
+   -11,
+   13
+  ],
+  "y": [
+   -11,
+   11
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "A",
+    "B"
+   ],
+   "name": "A and B are on the circle"
+  }
+ ],
+ "fromLesson": [
+  "θ = 12/9 = 4/3 ≈ 1.33 radians"
+ ]
+}

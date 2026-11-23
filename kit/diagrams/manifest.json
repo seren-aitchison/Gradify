@@ -50857,5 +50857,2453 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "maths-u05-angle-at-centre": {
+  "title": "Angle at the centre is twice the angle at the circumference",
+  "caption": "The arc AC makes an angle of 140° at the centre O and half of that, 70°, at B on the major arc.",
+  "alt": "A circle with centre O and points A, B, C on it; angle AOC is 140 degrees and angle ABC is 70 degrees.",
+  "description": [
+   "A, B and C lie on a circle with centre O, and angle AOC = 140°.",
+   "B is on the major arc, opposite the 140° angle.",
+   "The angle at the circumference is half the angle at the centre: ABC = 140 ÷ 2 = 70°."
+  ],
+  "course": "maths",
+  "lesson": "Circle Theorems",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Circle Theorems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle AOC = 140°",
+    "ok": true,
+    "detail": "measured 140°"
+   },
+   {
+    "name": "angle ABC = 70°",
+    "ok": true,
+    "detail": "measured 70°"
+   },
+   {
+    "name": "A, B and C are on the circle",
+    "ok": true,
+    "detail": "5, 5, 5"
+   },
+   {
+    "name": "the lesson states \"Angle ABC = 140 ÷ 2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-bearing-plane": {
+  "title": "The plane's bearing is 036.9°",
+  "caption": "After 300 km east and 400 km north the plane is 500 km from the start. The angle from north is θ with tan θ = 300/400, so θ = 36.9° and the bearing is 037°.",
+  "alt": "A right triangle from the start O, 300 km east to A and 400 km north to B, with the angle from north at O marked 36.9 degrees.",
+  "description": [
+   "The plane flies 300 km due east, then 400 km due north.",
+   "The direct line from the start makes angle θ with north, where tan θ = 300/400.",
+   "θ = 36.9°, so the bearing is 036.9°, about 037°."
+  ],
+  "course": "maths",
+  "lesson": "Bearings",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Bearings"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle NOB = 36.9°",
+    "ok": true,
+    "detail": "measured 36.87°"
+   },
+   {
+    "name": "the angle at A is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "OA = 300 u05",
+    "ok": true,
+    "detail": "measured 300"
+   },
+   {
+    "name": "AB = 400 u05",
+    "ok": true,
+    "detail": "measured 400"
+   },
+   {
+    "name": "OB = 500 u05",
+    "ok": true,
+    "detail": "measured 500"
+   },
+   {
+    "name": "the lesson states \"Bearing = 036.9° ≈ 037°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×380"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-bezout": {
+  "title": "The circle x² + y² = 25 and the parabola y = x² − 5",
+  "caption": "Bézout allows up to 4 intersections. Substituting gives y² + y − 20 = 0, so y = 4 or −5: the points (3, 4), (−3, 4) and (0, −5), where the parabola touches the circle's bottom.",
+  "alt": "A circle of radius 5 and the parabola y = x squared minus 5 meeting at (3, 4), (−3, 4) and (0, −5).",
+  "description": [
+   "The circle has degree 2 and the parabola degree 2, so Bézout allows at most 4 common points.",
+   "Substitute x² = y + 5: y² + y − 20 = 0, so y = 4 or y = −5.",
+   "y = 4 gives x = ±3; y = −5 gives x = 0 (a touching point)."
+  ],
+  "course": "maths",
+  "lesson": "Algebraic Geometry",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Algebraic Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 4) is on both",
+    "ok": true,
+    "detail": "sqrt(25-x^2) → 4, x^2-5 → 4"
+   },
+   {
+    "name": "(−3, 4) is on both",
+    "ok": true,
+    "detail": "sqrt(25-x^2) → 4, x^2-5 → 4"
+   },
+   {
+    "name": "(0, −5) is on both",
+    "ok": true,
+    "detail": "-sqrt(25-x^2) → -5, x^2-5 → -5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-cantor-set": {
+  "title": "The Cantor set: 2 pieces, each 1/3 the size",
+  "caption": "Each step removes the middle third of every interval: 1 piece, then 2 of length 1/3, 4 of 1/9, 8 of 1/27. With N = 2 pieces scaled by r = 1/3, D = log 2 / log 3 ≈ 0.631.",
+  "alt": "Four rows of bars: one interval of length 27, then 2 of 9, 4 of 3 and 8 of 1, each row removing the middle third of the row above.",
+  "description": [
+   "Start with one interval, here of length 27.",
+   "Remove the middle third of every interval, leaving 2, then 4, then 8 pieces.",
+   "Each step keeps N = 2 pieces scaled by r = 1/3, so D = log 2 / log 3 ≈ 0.631."
+  ],
+  "course": "maths",
+  "lesson": "Fractal Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Fractal Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "step 0 is one interval of length 27",
+    "ok": true,
+    "detail": "shoelace 32.4"
+   },
+   {
+    "name": "step 3 has pieces of length 1",
+    "ok": true,
+    "detail": "shoelace 1.2"
+   },
+   {
+    "name": "the lesson states \"D = log 2 / log 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "1 labels in 640×267"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "1 labels in 380×167"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-chord-radius": {
+  "title": "A chord 6 cm from the centre",
+  "caption": "The perpendicular from the centre bisects the chord, so half-chord 8 and distance 6 are the legs of a right triangle; the radius is the hypotenuse, √(36 + 64) = 10 cm.",
+  "alt": "A circle with centre O and a horizontal chord AB of length 16, whose midpoint M is 6 above O, with OA = 10 as the radius.",
+  "description": [
+   "The chord AB is 16 cm long and 6 cm from the centre O.",
+   "The perpendicular from O meets the chord at its midpoint M, so AM = 8 cm.",
+   "Triangle OMA has a right angle at M with legs 6 and 8.",
+   "The radius OA = √(36 + 64) = 10 cm."
+  ],
+  "course": "maths",
+  "lesson": "Chords and Tangents",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Chords and Tangents"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at M is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AB = 16 u05",
+    "ok": true,
+    "detail": "measured 16"
+   },
+   {
+    "name": "OM = 6 u05",
+    "ok": true,
+    "detail": "measured 6"
+   },
+   {
+    "name": "OA = 10 u05",
+    "ok": true,
+    "detail": "measured 10"
+   },
+   {
+    "name": "A and B are on the circle of radius 10",
+    "ok": true,
+    "detail": "10, 10"
+   },
+   {
+    "name": "M is the midpoint of the chord",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "OM is perpendicular to the chord",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the lesson states \"r = √(36 + 64) = 10 cm\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-co-interior": {
+  "title": "Co-interior angles add to 180°",
+  "caption": "Between two parallel lines, the angles on the same side of the transversal add to 180°: (2x + 30) + (x + 15) = 180 gives x = 45, so the angles are 120° and 60°.",
+  "alt": "Two parallel lines crossed by a transversal, with the two co-interior angles marked 120 degrees and 60 degrees.",
+  "description": [
+   "Two parallel lines are cut by a transversal.",
+   "The co-interior angles 2x + 30 and x + 15 add to 180°, so 3x + 45 = 180 and x = 45.",
+   "The angles are 120° (2x + 30) and 60° (x + 15)."
+  ],
+  "course": "maths",
+  "lesson": "Parallel and Perpendicular Lines",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Parallel and Perpendicular Lines"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle BXY = 60°",
+    "ok": true,
+    "detail": "measured 60°"
+   },
+   {
+    "name": "angle XYD = 120°",
+    "ok": true,
+    "detail": "measured 120°"
+   },
+   {
+    "name": "the segments marked with 1 arrows are parallel",
+    "ok": true,
+    "detail": "AB 12, CD 12"
+   },
+   {
+    "name": "the lines are parallel",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "co-interior angles add to 180°",
+    "ok": true,
+    "detail": "measured 60 + 120"
+   },
+   {
+    "name": "the lesson states \"The angles are 120° and 60°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 640×303"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 380×188"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-cone-slant": {
+  "title": "The cone's slant height",
+  "caption": "Radius 6 and height 8 are the legs of a right triangle; the slant height is its hypotenuse, √(36 + 64) = 10. Then curved surface πrl = 60π, base πr² = 36π, total 96π cm².",
+  "alt": "A right triangle with legs 6 (radius) and 8 (height) and hypotenuse 10 (slant height), the cross-section of the cone.",
+  "description": [
+   "The cone has radius 6 cm and perpendicular height 8 cm.",
+   "A cross-section through the axis gives a right triangle with legs 8 and 6.",
+   "The slant height is √(36 + 64) = 10 cm.",
+   "Curved surface = π × 6 × 10 = 60π; base = π × 6² = 36π; total = 96π cm²."
+  ],
+  "course": "maths",
+  "lesson": "Surface Area",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Surface Area"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at A is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AB = 6 u05",
+    "ok": true,
+    "detail": "measured 6"
+   },
+   {
+    "name": "AC = 8 u05",
+    "ok": true,
+    "detail": "measured 8"
+   },
+   {
+    "name": "BC = 10 u05",
+    "ok": true,
+    "detail": "measured 10"
+   },
+   {
+    "name": "slant height = √(36 + 64) = 10",
+    "ok": true,
+    "detail": "measured 10"
+   },
+   {
+    "name": "the lesson states \"Total = 96π cm\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-cross-ratio": {
+  "title": "The cross-ratio (A, B; C, D) = 9/8",
+  "caption": "With A, B, C, D at 0, 1, 3, 4 the distances are AC = 3, BD = 3, BC = 2, AD = 4, so (A, B; C, D) = (3 × 3)/(2 × 4) = 9/8.",
+  "alt": "A number line with the four points A, B, C, D at 0, 1, 3 and 4.",
+  "description": [
+   "The points A, B, C, D sit at 0, 1, 3 and 4.",
+   "AC = 3, BD = 3, BC = 2 and AD = 4.",
+   "The cross-ratio is (3 × 3)/(2 × 4) = 9/8, unchanged by any projection of the line."
+  ],
+  "course": "maths",
+  "lesson": "Projective Geometry",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Projective Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(AC × BD)/(BC × AD) = 9/8",
+    "ok": true,
+    "detail": "1.125"
+   },
+   {
+    "name": "the lesson states \"9/8\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×90"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×90"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-crossing-lines": {
+  "title": "Two crossing lines: 76° and 104°",
+  "caption": "Adjacent angles on a straight line add to 180°: (3x + 10) + (5x − 6) = 180 gives x = 22, so the angles are 76° and 104°, and each is repeated opposite.",
+  "alt": "Two straight lines crossing, making angles 76, 104, 76 and 104 degrees.",
+  "description": [
+   "Two lines cross at O.",
+   "The angle 3x + 10 and its neighbour 5x − 6 lie on a straight line: 8x = 176, so x = 22.",
+   "The angles are 76° and 104°.",
+   "Vertically opposite angles are equal, so the other two are also 76° and 104°."
+  ],
+  "course": "maths",
+  "lesson": "Angles",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Angles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle POR = 76°",
+    "ok": true,
+    "detail": "measured 76°"
+   },
+   {
+    "name": "angle ROQ = 104°",
+    "ok": true,
+    "detail": "measured 104°"
+   },
+   {
+    "name": "angle QOS = 76°",
+    "ok": true,
+    "detail": "measured 76°"
+   },
+   {
+    "name": "angle SOP = 104°",
+    "ok": true,
+    "detail": "measured 104°"
+   },
+   {
+    "name": "the four angles add up to 360°",
+    "ok": true,
+    "detail": "measured 76 + 104 + 76 + 104"
+   },
+   {
+    "name": "76° + 104° = 180° on a straight line",
+    "ok": true,
+    "detail": "measured 76 + 104"
+   },
+   {
+    "name": "the lesson states \"76°, 104°, 76°, 104°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-cuboid-diagonal": {
+  "title": "The cuboid's diagonal as two right triangles",
+  "caption": "Use Pythagoras twice: the base diagonal of a 3 × 4 base is √(9 + 16) = 5, then the space diagonal with height 12 is √(25 + 144) = 13.",
+  "alt": "Two right triangles: one with legs 3 and 4 and hypotenuse 5, then one with legs 5 and 12 and hypotenuse 13.",
+  "description": [
+   "The base is 3 cm by 4 cm, so its diagonal is √(3² + 4²) = 5 cm.",
+   "That diagonal and the height 12 cm are the legs of a second right triangle.",
+   "The longest diagonal of the cuboid is √(5² + 12²) = 13 cm."
+  ],
+  "course": "maths",
+  "lesson": "Pythagorean Theorem",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Pythagorean Theorem"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at B is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "the angle at D is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AB = 4 u05",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "BC = 3 u05",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "AC = 5 u05",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "FD = 5 u05",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "DE = 12 u05",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "FE = 13 u05",
+    "ok": true,
+    "detail": "measured 13"
+   },
+   {
+    "name": "base diagonal = √(9 + 16) = 5",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "space diagonal = √(9 + 16 + 144) = 13",
+    "ok": true,
+    "detail": "measured 13"
+   },
+   {
+    "name": "the lesson states \"= √169 = 13 cm\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×376"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-curvature": {
+  "title": "Curvature of y = x² at the origin",
+  "caption": "At x = 0 the curvature is κ = 2, so the circle that best fits the parabola has radius 1/κ = ½: it touches at (0, 0) and its top is at (0, 1).",
+  "alt": "The parabola y = x squared and the circle of radius one half centred at (0, 1/2), touching it at the origin.",
+  "description": [
+   "y′ = 2x and y″ = 2, so at x = 0 the curvature is κ = 2/(1 + 0)^(3/2) = 2.",
+   "The osculating circle has radius 1/κ = ½ and centre (0, ½).",
+   "It hugs the parabola at the origin; at x = 1 the curvature is lower, 2/5^(3/2) ≈ 0.179."
+  ],
+  "course": "maths",
+  "lesson": "Differential Geometry",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Differential Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the parabola passes through the origin",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "the circle of radius 1/2 touches at the origin",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "the circle's top is (0, 1)",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-ellipse-4-9": {
+  "title": "The ellipse 4x² + 9y² = 36",
+  "caption": "Dividing by 36 gives x²/9 + y²/4 = 1: semi-axes a = 3 and b = 2, area πab = 6π. The foci are at (±√5, 0), since c = √(9 − 4), so e = √5/3 ≈ 0.745.",
+  "alt": "An ellipse crossing the x-axis at ±3 and the y-axis at ±2, with its two foci at plus and minus root 5 on the x-axis.",
+  "description": [
+   "x²/9 + y²/4 = 1 gives a = 3 and b = 2.",
+   "The ellipse crosses the axes at (±3, 0) and (0, ±2).",
+   "The foci are c = √(9 − 4) = √5 from the centre, so e = √5/3 ≈ 0.745."
+  ],
+  "course": "maths",
+  "lesson": "Ellipses",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Ellipses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 2) is on 4x² + 9y² = 36",
+    "ok": true,
+    "detail": "y(0) = 2"
+   },
+   {
+    "name": "(3, 0) is on the ellipse",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "(√5, 4/3): the point above a focus satisfies 20 + 16 = 36",
+    "ok": true,
+    "detail": "y(2.23606797749979) = 1.3333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-enlarge-minus-2": {
+  "title": "Enlargement by scale factor −2",
+  "caption": "Each coordinate is multiplied by −2: (1, 1) → (−2, −2), (3, 1) → (−6, −2), (1, 2) → (−2, −4). The image is twice the size, on the other side of the origin and turned through 180°.",
+  "alt": "Triangle A with vertices (1, 1), (3, 1), (1, 2) and its image B, twice the size on the opposite side of the origin.",
+  "description": [
+   "Triangle A has vertices (1, 1), (3, 1) and (1, 2).",
+   "Enlarging by −2 about the origin multiplies every coordinate by −2.",
+   "The image B has vertices (−2, −2), (−6, −2) and (−2, −4): twice as big, inverted through the origin."
+  ],
+  "course": "maths",
+  "lesson": "Geometric Transformations",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Geometric Transformations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "B is the image of A under the enlarge",
+    "ok": true,
+    "detail": "(−2, −2) (−6, −2) (−2, −4)"
+   },
+   {
+    "name": "the area of B is 4 times the original",
+    "ok": true,
+    "detail": "area ratio 4"
+   },
+   {
+    "name": "the lesson states \"(1, 1) → (−2, −2); (3, 1) → (−6, −2); (1, 2) → (−2, −4)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 380×286"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-exterior-angle": {
+  "title": "The exterior angle equals the two opposite angles",
+  "caption": "In triangle PQR the exterior angle at R, 115°, equals P + Q = 48° + Q, so Q = 67°.",
+  "alt": "Triangle PQR with angle P 48 degrees, angle Q 67 degrees and the side QR extended past R, making an exterior angle of 115 degrees.",
+  "description": [
+   "Triangle PQR has P = 48°.",
+   "Extend QR beyond R; the exterior angle at R is 115°.",
+   "The exterior angle equals the sum of the two opposite interior angles: 115 = 48 + Q.",
+   "So Q = 67°."
+  ],
+  "course": "maths",
+  "lesson": "Triangles",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Triangles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle QPR = 48°",
+    "ok": true,
+    "detail": "measured 48°"
+   },
+   {
+    "name": "angle PQR = 67°",
+    "ok": true,
+    "detail": "measured 67°"
+   },
+   {
+    "name": "angle PRE = 115°",
+    "ok": true,
+    "detail": "measured 115°"
+   },
+   {
+    "name": "E lies on QR extended",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the exterior angle is 115° = 48° + 67°",
+    "ok": true,
+    "detail": "measured 115°"
+   },
+   {
+    "name": "the lesson states \"Q = 67°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-focus-directrix": {
+  "title": "(3, 6) is equidistant from the focus and directrix",
+  "caption": "For y² = 12x, a = 3: the focus is (3, 0) and the directrix is x = −3. The point (3, 6) is 6 from the focus and 3 − (−3) = 6 from the directrix.",
+  "alt": "The parabola y squared equals 12x with focus (3, 0), directrix x = −3 and the point (3, 6), which is 6 from both.",
+  "description": [
+   "y² = 12x has 4a = 12, so a = 3.",
+   "The focus is (3, 0) and the directrix is the line x = −3.",
+   "The point (3, 6) is on the curve: 36 = 12 × 3.",
+   "Its distance to the focus is 6, and to the directrix 6: equal."
+  ],
+  "course": "maths",
+  "lesson": "Parabolas",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Parabolas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 6) is on y² = 12x",
+    "ok": true,
+    "detail": "y(3) = 6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-garden-pond": {
+  "title": "The garden around the pond",
+  "caption": "The garden is 12 × 8 = 96 m² and the pond takes π × 1.5² ≈ 7.07 m², leaving 88.93 m² of turf, which costs 88.93 × £6.50 ≈ £578.05.",
+  "alt": "A 12 metre by 8 metre rectangular garden with a circular pond of radius 1.5 metres in it.",
+  "description": [
+   "The garden is a 12 m by 8 m rectangle, area 96 m².",
+   "The pond is a circle of radius 1.5 m, area π × 1.5² ≈ 7.07 m².",
+   "Turf area ≈ 96 − 7.07 = 88.93 m², costing ≈ £578.05."
+  ],
+  "course": "maths",
+  "lesson": "Area",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Area"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "AB = 12 u05",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "BC = 8 u05",
+    "ok": true,
+    "detail": "measured 8"
+   },
+   {
+    "name": "PQ = 1.5 u05",
+    "ok": true,
+    "detail": "measured 1.5"
+   },
+   {
+    "name": "the garden is 12 × 8 = 96 m²",
+    "ok": true,
+    "detail": "shoelace 96"
+   },
+   {
+    "name": "the radius PQ is 1.5 m",
+    "ok": true,
+    "detail": "1.5"
+   },
+   {
+    "name": "the lesson states \"88.93 m\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×278"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-goat-locus": {
+  "title": "The goat's grazing region",
+  "caption": "The rope sweeps a circle of radius 4 m about the corner, but the shed blocks one quarter. The grazing region is three quarters of the circle, ¾ × π × 4² = 12π ≈ 37.7 m².",
+  "alt": "A 10 by 6 shed with a goat tied at one corner by a 4 metre rope; the circle of radius 4 about the corner is blocked by the shed in one quarter.",
+  "description": [
+   "The goat is tied to the corner O of the shed with a 4 m rope.",
+   "The rope can sweep a circle of radius 4 m about O.",
+   "The shed fills one quarter of that circle, so the goat reaches three quarters.",
+   "Area = ¾ × π × 4² = 12π ≈ 37.7 m²."
+  ],
+  "course": "maths",
+  "lesson": "Loci",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Loci"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "OP = 4 u05",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "the rope's reach is 4 m in every direction",
+    "ok": true,
+    "detail": "4, 4, 4, 4"
+   },
+   {
+    "name": "the shed is 10 × 6 = 60 m²",
+    "ok": true,
+    "detail": "shoelace 60"
+   },
+   {
+    "name": "the lesson states \"12π\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 380×280"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-hexagon-symmetry": {
+  "title": "The six lines of symmetry of a regular hexagon",
+  "caption": "Three lines of symmetry join opposite vertices and three join the midpoints of opposite sides: 6 in all. A turn of 60° maps the hexagon onto itself, so its rotational symmetry has order 6.",
+  "alt": "A regular hexagon with six dashed lines of symmetry through its centre: three through opposite corners and three through midpoints of opposite sides.",
+  "description": [
+   "A regular hexagon has six equal sides and angles.",
+   "Three lines of symmetry join opposite vertices.",
+   "Three more join the midpoints of opposite sides.",
+   "Rotating by 60° maps the hexagon onto itself, so the order of rotational symmetry is 6."
+  ],
+  "course": "maths",
+  "lesson": "Transformations and Symmetry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Transformations and Symmetry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "V0, the centre and V3 are on one line of symmetry",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "V1, the centre and V4 are on one line of symmetry",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "V2, the centre and V5 are on one line of symmetry",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"Order of rotational symmetry 6\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "0 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "0 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-hyperbola-classify": {
+  "title": "4x² − 9y² = 36 is a hyperbola",
+  "caption": "Dividing by 36 gives x²/9 − y²/4 = 1: the squares have opposite signs, so the conic is a hyperbola with vertices (±3, 0) and two branches.",
+  "alt": "A hyperbola with two branches, vertices at (3, 0) and (−3, 0), opening left and right.",
+  "description": [
+   "Divide 4x² − 9y² = 36 by 36 to get x²/9 − y²/4 = 1.",
+   "Opposite signs on x² and y²: a hyperbola.",
+   "The vertices are at (±3, 0), and the branches open left and right."
+  ],
+  "course": "maths",
+  "lesson": "Conic Sections",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Conic Sections"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 0) is on 4x² − 9y² = 36",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "(5, 8/3): 100 − 64 = 36",
+    "ok": true,
+    "detail": "y(5) = 2.6667"
+   },
+   {
+    "name": "(−3, 0) is on the curve",
+    "ok": true,
+    "detail": "y(-3) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-hyperbola-foci": {
+  "title": "9x² − 16y² = 144: foci and asymptotes",
+  "caption": "Dividing by 144 gives x²/16 − y²/9 = 1, so a = 4, b = 3 and c² = 16 + 9 = 25: the foci are (±5, 0). The branches approach the asymptotes y = ±(3/4)x.",
+  "alt": "A hyperbola with vertices at (4, 0) and (−4, 0), foci at (5, 0) and (−5, 0), and the dashed asymptotes y = 3/4 x and y = −3/4 x.",
+  "description": [
+   "x²/16 − y²/9 = 1 gives a = 4 and b = 3.",
+   "c² = a² + b² = 25, so the foci are (±5, 0).",
+   "The branches approach the dashed asymptotes y = ±(3/4)x."
+  ],
+  "course": "maths",
+  "lesson": "Hyperbolas",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Hyperbolas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(4, 0) is on 9x² − 16y² = 144",
+    "ok": true,
+    "detail": "y(4) = 0"
+   },
+   {
+    "name": "(5, 9/4): 225 − 81 = 144",
+    "ok": true,
+    "detail": "y(5) = 2.25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u05-kite": {
+  "title": "The kite ABCD",
+  "caption": "The four angles of a quadrilateral add up to 360°. With A = 110° and C = 70°, B + D = 180°, and as B = D the kite has B = D = 90°.",
+  "alt": "A kite ABCD with angle A = 110 degrees, angle C = 70 degrees and angles B and D both 90 degrees.",
+  "description": [
+   "The kite has angle A = 110° and angle C = 70°.",
+   "Angles in a quadrilateral add to 360°, so B + D = 360 − 110 − 70 = 180°.",
+   "B and D are equal, so each is 90°, marked as right angles."
+  ],
+  "course": "maths",
+  "lesson": "Plane Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Plane Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle DAB = 110°",
+    "ok": true,
+    "detail": "measured 110°"
+   },
+   {
+    "name": "the angle at B is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "angle BCD = 70°",
+    "ok": true,
+    "detail": "measured 70°"
+   },
+   {
+    "name": "the angle at D is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "the segments marked with 1 ticks are equal",
+    "ok": true,
+    "detail": "AB 5.736, AD 5.736"
+   },
+   {
+    "name": "the segments marked with 2 ticks are equal",
+    "ok": true,
+    "detail": "CB 8.192, CD 8.192"
+   },
+   {
+    "name": "the four angles add up to 360°",
+    "ok": true,
+    "detail": "measured 110 + 90 + 70 + 90"
+   },
+   {
+    "name": "the lesson states \"B = D = 90°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-left-turn": {
+  "title": "Left or right turn: the cross product is 10",
+  "caption": "The cross product (4 × 3) − (1 × 2) = 10 is positive, so a → b → c turns left. It is also twice the area of triangle abc: 10/2 = 5.",
+  "alt": "The path from a(0, 0) to b(4, 1) to c(2, 3), turning anticlockwise.",
+  "description": [
+   "a = (0, 0), b = (4, 1), c = (2, 3).",
+   "Cross product = 4 × 3 − 1 × 2 = 10, positive: a left turn (anticlockwise).",
+   "Half of it, 5, is the area of the triangle abc."
+  ],
+  "course": "maths",
+  "lesson": "Computational Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Computational Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the triangle has area 10/2 = 5",
+    "ok": true,
+    "detail": "shoelace 5"
+   },
+   {
+    "name": "the lesson states \"Positive, so a → b → c turns left (anticlockwise)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "17 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-midpoint-theorem": {
+  "title": "MN is parallel to AB and half its length",
+  "caption": "With M and N the midpoints of OA and OB, MN = ½b − ½a = ½(b − a) = ½AB, so MN is parallel to AB and half as long.",
+  "alt": "Triangle OAB with midpoints M of OA and N of OB; MN is parallel to AB and half its length.",
+  "description": [
+   "OA = a and OB = b; M and N are the midpoints of OA and OB.",
+   "MN = ON − OM = ½b − ½a = ½(b − a).",
+   "AB = b − a, so MN = ½AB: parallel, and half the length."
+  ],
+  "course": "maths",
+  "lesson": "Vectors in Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Vectors in Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the segments marked with 1 arrows are parallel",
+    "ok": true,
+    "detail": "MN 4.243, AB 8.485"
+   },
+   {
+    "name": "MN is parallel to AB",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "M is the midpoint of OA",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N is the midpoint of OB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "MN = √18",
+    "ok": true,
+    "detail": "measured 4.24264"
+   },
+   {
+    "name": "AB = √72 = 2 × √18",
+    "ok": true,
+    "detail": "measured 8.48528"
+   },
+   {
+    "name": "the lesson states \"MN = ½AB\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-octagon-square": {
+  "title": "Octagons and squares fit round a point",
+  "caption": "A regular octagon has interior angle 135°, and 360 ÷ 135 is not a whole number, so octagons cannot tessellate alone. But 135° + 135° + 90° = 360°: two octagons and a square fit round a point.",
+  "alt": "Two regular octagons and a square meeting at a point, with angles 135, 90 and 135 degrees filling the full turn.",
+  "description": [
+   "Each interior angle of a regular octagon is 135°.",
+   "360 ÷ 135 is not a whole number, so octagons alone leave gaps.",
+   "Two octagons and a square meet at a vertex: 135 + 135 + 90 = 360°, with no gap.",
+   "So octagons tessellate together with squares."
+  ],
+  "course": "maths",
+  "lesson": "Tessellations",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Tessellations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the sides are equal: 3",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "the square's side is 3, the same",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "0 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "0 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-perpendicular-bisector": {
+  "title": "The perpendicular bisector of AB",
+  "caption": "The midpoint of AB is (4, 1) and the gradient of AB is −2, so the bisector has gradient ½ through (4, 1): y = ½x − 1.",
+  "alt": "The segment from A(2, 5) to B(6, −3), its midpoint M(4, 1) and the perpendicular line y = x/2 − 1 through M.",
+  "description": [
+   "A = (2, 5) and B = (6, −3) have midpoint (4, 1).",
+   "The gradient of AB is −8/4 = −2, so the perpendicular gradient is 1/2.",
+   "The line through (4, 1) with gradient 1/2 is y = ½x − 1."
+  ],
+  "course": "maths",
+  "lesson": "Coordinate Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Coordinate Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "M(4, 1) is the midpoint of AB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the line y = ½x − 1 is perpendicular to AB",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "(−2, −2), (4, 1) and (10, 4) lie on y = ½x − 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"y = ½x − 1\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×310"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-picks-theorem": {
+  "title": "Pick's theorem on the 3-4-5 triangle",
+  "caption": "The triangle has B = 8 lattice points on its boundary and I = 3 inside. Pick's theorem gives area = I + B/2 − 1 = 3 + 4 − 1 = 6, the same as ½ × 4 × 3.",
+  "alt": "A right triangle with vertices (0, 0), (4, 0), (0, 3) on a grid, with 8 boundary lattice points and 3 interior ones marked.",
+  "description": [
+   "The triangle has vertices (0, 0), (4, 0) and (0, 3).",
+   "There are 8 lattice points on its boundary and 3 inside, at (1, 1), (2, 1) and (1, 2).",
+   "Area = I + B/2 − 1 = 3 + 4 − 1 = 6, which agrees with ½ × 4 × 3."
+  ],
+  "course": "maths",
+  "lesson": "Discrete Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Discrete Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area is 3 + 8/2 − 1 = 6",
+    "ok": true,
+    "detail": "shoelace 6"
+   },
+   {
+    "name": "the lesson states \"Area = 3 + 4 − 1 = 6\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×280"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-point-line-distance": {
+  "title": "Distance from (2, 3) to 3x + 4y − 8 = 0",
+  "caption": "The shortest distance is along the perpendicular. The formula |3(2) + 4(3) − 8| / √(3² + 4²) = 10/5 = 2 matches the drawn foot of the perpendicular F = (0.8, 1.4), 2 units from P.",
+  "alt": "The line 3x + 4y = 8 and the point P(2, 3), with the perpendicular from P to the line of length 2 ending at F(0.8, 1.4).",
+  "description": [
+   "The line 3x + 4y − 8 = 0 passes through (4, −1) and (−4, 5).",
+   "The perpendicular from P(2, 3) meets it at F(0.8, 1.4).",
+   "The formula gives |6 + 12 − 8| ÷ 5 = 2, the length PF."
+  ],
+  "course": "maths",
+  "lesson": "Analytic Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Analytic Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at F is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "PF = 2 u05",
+    "ok": true,
+    "detail": "measured 2"
+   },
+   {
+    "name": "PF is perpendicular to the line",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "F is on the line 3x + 4y = 8",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"Distance = 2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "21 labels in 380×298"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-regular-15-gon": {
+  "title": "A regular polygon with interior angle 156°",
+  "caption": "Interior and exterior angles make a straight line, so the exterior angle is 180 − 156 = 24°. The exterior angles of any polygon total 360°, so there are 360 ÷ 24 = 15 sides.",
+  "alt": "A regular 15-sided polygon with an interior angle of 156 degrees and an exterior angle of 24 degrees marked at one corner.",
+  "description": [
+   "Each interior angle is 156°, so each exterior angle is 180 − 156 = 24°.",
+   "The exterior angles of a polygon add to 360°.",
+   "The number of sides is 360 ÷ 24 = 15."
+  ],
+  "course": "maths",
+  "lesson": "Polygons",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Polygons"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle V0V1V2 = 156°",
+    "ok": true,
+    "detail": "measured 156°"
+   },
+   {
+    "name": "angle XV1V2 = 24°",
+    "ok": true,
+    "detail": "measured 24°"
+   },
+   {
+    "name": "each interior angle is 156°",
+    "ok": true,
+    "detail": "measured 156°"
+   },
+   {
+    "name": "the exterior angle is 24°",
+    "ok": true,
+    "detail": "measured 24°"
+   },
+   {
+    "name": "the exterior angle is on the extended side",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"n = 360/24\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "2 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-rhombus": {
+  "title": "A rhombus with diagonals 10 cm and 24 cm",
+  "caption": "The diagonals bisect at right angles, cutting the rhombus into four right triangles with legs 5 and 12, so the side is 13 cm and the area ½ × 10 × 24 = 120 cm².",
+  "alt": "A rhombus with horizontal diagonal 24 cm and vertical diagonal 10 cm meeting at right angles, with side length 13 cm.",
+  "description": [
+   "The diagonals are 24 cm and 10 cm and cross at right angles at the centre.",
+   "Each quarter is a right triangle with legs 12 and 5.",
+   "The side is √(144 + 25) = 13 cm.",
+   "The area is ½ × 10 × 24 = 120 cm²."
+  ],
+  "course": "maths",
+  "lesson": "Quadrilaterals",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Quadrilaterals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at O is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AD = 13 u05",
+    "ok": true,
+    "detail": "measured 13"
+   },
+   {
+    "name": "OC = 12 u05",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "OD = 5 u05",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "the segments marked with 1 ticks are equal",
+    "ok": true,
+    "detail": "AB 13, BC 13, CD 13, DA 13"
+   },
+   {
+    "name": "area = ½ × 10 × 24 = 120",
+    "ok": true,
+    "detail": "shoelace 120; label \"120 cm²\""
+   },
+   {
+    "name": "the diagonals cross at right angles",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the lesson states \"Side = √(25 + 144) = 13 cm\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×216"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-sector": {
+  "title": "The sector with radius 9 cm and perimeter 30 cm",
+  "caption": "The two radii use 18 cm, so the arc is 30 − 18 = 12 cm and θ = arc/radius = 12/9 = 4/3 radians ≈ 1.33, which is 76.4°.",
+  "alt": "A circle of radius 9 centred at O with a sector bounded by radii OA and OB, angle 76.4 degrees at the centre and arc length 12.",
+  "description": [
+   "The sector has radius 9 cm and perimeter 30 cm.",
+   "Perimeter = 2 × 9 + arc, so the arc is 12 cm.",
+   "θ = 12/9 = 4/3 radians.",
+   "In degrees: (4/3) × 180/π ≈ 76.4°."
+  ],
+  "course": "maths",
+  "lesson": "Arc Length",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Arc Length"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle AOB = 76.4°",
+    "ok": true,
+    "detail": "measured 76.394°"
+   },
+   {
+    "name": "OA = 9 u05",
+    "ok": true,
+    "detail": "measured 9"
+   },
+   {
+    "name": "A and B are on the circle",
+    "ok": true,
+    "detail": "9, 9"
+   },
+   {
+    "name": "the lesson states \"θ = 12/9 = 4/3 ≈ 1.33 radians\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-similar-bottles": {
+  "title": "Similar bottles: lengths ×1.5, volume ×3.375",
+  "caption": "The bottles are similar with length scale factor 1.5. Areas scale by 1.5² and volumes by 1.5³ = 3.375, so 400 ml becomes 400 × 3.375 = 1,350 ml.",
+  "alt": "Two similar rectangles, 12 tall and 18 tall, standing for the bottles, with length scale factor 1.5.",
+  "description": [
+   "The heights are 12 cm and 18 cm, so the length scale factor is 18/12 = 1.5.",
+   "Volumes scale by the cube of the length scale factor: 1.5³ = 3.375.",
+   "The larger bottle holds 400 × 3.375 = 1,350 ml."
+  ],
+  "course": "maths",
+  "lesson": "Congruence and Similarity",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Congruence and Similarity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "AD = 12 u05",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "FG = 18 u05",
+    "ok": true,
+    "detail": "measured 18"
+   },
+   {
+    "name": "the larger bottle is the smaller scaled by 1.5",
+    "ok": true,
+    "detail": "side ratios 1.5, 1.5, 1.5, 1.5"
+   },
+   {
+    "name": "the lesson states \"400 × 3.375 = 1,350 ml\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 640×350"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u05-triangle-angle-sum": {
+  "title": "Why a triangle's angles make 180°",
+  "caption": "The line through A parallel to BC makes alternate angles equal to B and C. Those two angles and the angle at A fill a straight line, so A + B + C = 180°.",
+  "alt": "A triangle ABC with a line through A parallel to BC; the angles on the line either side of A equal B and C, and the three angles at A make a straight line.",
+  "description": [
+   "Draw triangle ABC.",
+   "Draw a line through A parallel to BC.",
+   "The angle between the line and AB, on the left, equals angle B (alternate angles); the angle between AC and the line, on the right, equals angle C.",
+   "The three angles at A lie along a straight line, so together they are 180°: A + B + C = 180°."
+  ],
+  "course": "maths",
+  "lesson": "Euclidean Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u05.js: Euclidean Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle LAB = 50.2°",
+    "ok": true,
+    "detail": "measured 50.194°"
+   },
+   {
+    "name": "angle BAC = 96.1°",
+    "ok": true,
+    "detail": "measured 96.116°"
+   },
+   {
+    "name": "angle CAR = 33.7°",
+    "ok": true,
+    "detail": "measured 33.69°"
+   },
+   {
+    "name": "angle ABC = 50.2°",
+    "ok": true,
+    "detail": "measured 50.194°"
+   },
+   {
+    "name": "angle BCA = 33.7°",
+    "ok": true,
+    "detail": "measured 33.69°"
+   },
+   {
+    "name": "the segments marked with 1 arrows are parallel",
+    "ok": true,
+    "detail": "LR 10, BC 7"
+   },
+   {
+    "name": "the line through A is parallel to BC",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "the three angles along the line add up to 180°",
+    "ok": true,
+    "detail": "measured 50.19 + 96.12 + 33.69"
+   },
+   {
+    "name": "the angles of the triangle add up to 180°",
+    "ok": true,
+    "detail": "measured 96.12 + 50.19 + 33.69"
+   },
+   {
+    "name": "the lesson states \"A + B + C = 180°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×213"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

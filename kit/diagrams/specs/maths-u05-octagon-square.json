@@ -1,0 +1,182 @@
+{
+ "id": "maths-u05-octagon-square",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Tessellations",
+ "title": "Octagons and squares fit round a point",
+ "caption": "A regular octagon has interior angle 135°, and 360 ÷ 135 is not a whole number, so octagons cannot tessellate alone. But 135° + 135° + 90° = 360°: two octagons and a square fit round a point.",
+ "alt": "Two regular octagons and a square meeting at a point, with angles 135, 90 and 135 degrees filling the full turn.",
+ "description": [
+  "Each interior angle of a regular octagon is 135°.",
+  "360 ÷ 135 is not a whole number, so octagons alone leave gaps.",
+  "Two octagons and a square meet at a vertex: 135 + 135 + 90 = 360°, with no gap.",
+  "So octagons tessellate together with squares."
+ ],
+ "points": {
+  "V": [
+   0,
+   0
+  ],
+  "A1": [
+   3,
+   0
+  ],
+  "A2": [
+   5.121320343559643,
+   2.1213203435596424
+  ],
+  "A3": [
+   5.121320343559643,
+   5.121320343559642
+  ],
+  "A4": [
+   3.0000000000000004,
+   7.242640687119285
+  ],
+  "A5": [
+   4.440892098500626e-16,
+   7.242640687119285
+  ],
+  "A6": [
+   -2.1213203435596424,
+   5.121320343559642
+  ],
+  "A7": [
+   -2.121320343559643,
+   2.121320343559642
+  ],
+  "S1": [
+   -2.1213203435596424,
+   2.121320343559643
+  ],
+  "S2": [
+   -4.242640687119286,
+   4.440892098500626e-16
+  ],
+  "S3": [
+   -2.1213203435596437,
+   -2.1213203435596424
+  ],
+  "B1": [
+   -2.121320343559643,
+   -2.1213203435596424
+  ],
+  "B2": [
+   -2.1213203435596433,
+   -5.121320343559642
+  ],
+  "B3": [
+   -1.3322676295501878e-15,
+   -7.242640687119285
+  ],
+  "B4": [
+   2.9999999999999987,
+   -7.242640687119286
+  ],
+  "B5": [
+   5.121320343559642,
+   -5.121320343559644
+  ],
+  "B6": [
+   5.121320343559643,
+   -2.1213203435596437
+  ],
+  "B7": [
+   2.999999999999999,
+   -2.220446049250313e-15
+  ]
+ },
+ "hide": [
+  "V",
+  "A1",
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "A7",
+  "S1",
+  "S2",
+  "S3",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "B7"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "V",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7"
+   ],
+   "colour": "a1",
+   "opacity": 0.16
+  },
+  {
+   "pts": [
+    "V",
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "colour": "a2",
+   "opacity": 0.22
+  },
+  {
+   "pts": [
+    "V",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7"
+   ],
+   "colour": "a1",
+   "opacity": 0.16
+  }
+ ],
+ "angles": [],
+ "notes": [],
+ "view": {
+  "x": [
+   -9,
+   6
+  ],
+  "y": [
+   -7,
+   8
+  ]
+ },
+ "height": [
+  360,
+  340
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "V",
+   "b": "A1",
+   "value": 3,
+   "name": "the sides are equal: 3"
+  },
+  {
+   "type": "distance",
+   "a": "V",
+   "b": "S1",
+   "value": 3,
+   "name": "the square's side is 3, the same"
+  }
+ ]
+}

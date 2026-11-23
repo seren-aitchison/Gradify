@@ -1,0 +1,213 @@
+{
+ "id": "maths-u05-hexagon-symmetry",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Transformations and Symmetry",
+ "title": "The six lines of symmetry of a regular hexagon",
+ "caption": "Three lines of symmetry join opposite vertices and three join the midpoints of opposite sides: 6 in all. A turn of 60° maps the hexagon onto itself, so its rotational symmetry has order 6.",
+ "alt": "A regular hexagon with six dashed lines of symmetry through its centre: three through opposite corners and three through midpoints of opposite sides.",
+ "description": [
+  "A regular hexagon has six equal sides and angles.",
+  "Three lines of symmetry join opposite vertices.",
+  "Three more join the midpoints of opposite sides.",
+  "Rotating by 60° maps the hexagon onto itself, so the order of rotational symmetry is 6."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "V0": [
+   3.061616997868383e-16,
+   5
+  ],
+  "V1": [
+   -4.330127018922194,
+   2.4999999999999996
+  ],
+  "V2": [
+   -4.330127018922193,
+   -2.5000000000000004
+  ],
+  "V3": [
+   -9.184850993605148e-16,
+   -5
+  ],
+  "V4": [
+   4.330127018922192,
+   -2.500000000000002
+  ],
+  "V5": [
+   4.330127018922193,
+   2.5
+  ],
+  "M0": [
+   -2.165063509461096,
+   3.7500000000000004
+  ],
+  "M1": [
+   -4.330127018922194,
+   5.302876193624535e-16
+  ],
+  "M2": [
+   -2.1650635094610986,
+   -3.7499999999999996
+  ],
+  "M3": [
+   2.1650635094610973,
+   -3.75
+  ],
+  "M4": [
+   4.330127018922194,
+   -1.060575238724907e-15
+  ],
+  "M5": [
+   2.1650635094610955,
+   3.750000000000001
+  ]
+ },
+ "hide": [
+  "O",
+  "V0",
+  "V1",
+  "V2",
+  "V3",
+  "V4",
+  "V5",
+  "M0",
+  "M1",
+  "M2",
+  "M3",
+  "M4",
+  "M5"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "V0",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5"
+   ],
+   "colour": "a3",
+   "opacity": 0.1
+  }
+ ],
+ "segments": [
+  {
+   "a": "V0",
+   "b": "V1",
+   "colour": "ink"
+  },
+  {
+   "a": "V1",
+   "b": "V2",
+   "colour": "ink"
+  },
+  {
+   "a": "V2",
+   "b": "V3",
+   "colour": "ink"
+  },
+  {
+   "a": "V3",
+   "b": "V4",
+   "colour": "ink"
+  },
+  {
+   "a": "V4",
+   "b": "V5",
+   "colour": "ink"
+  },
+  {
+   "a": "V5",
+   "b": "V0",
+   "colour": "ink"
+  },
+  {
+   "a": "V0",
+   "b": "V3",
+   "colour": "a2",
+   "dash": "6 4"
+  },
+  {
+   "a": "M0",
+   "b": "M3",
+   "colour": "a1",
+   "dash": "6 4"
+  },
+  {
+   "a": "V1",
+   "b": "V4",
+   "colour": "a2",
+   "dash": "6 4"
+  },
+  {
+   "a": "M1",
+   "b": "M4",
+   "colour": "a1",
+   "dash": "6 4"
+  },
+  {
+   "a": "V2",
+   "b": "V5",
+   "colour": "a2",
+   "dash": "6 4"
+  },
+  {
+   "a": "M2",
+   "b": "M5",
+   "colour": "a1",
+   "dash": "6 4"
+  }
+ ],
+ "view": {
+  "x": [
+   -6.2,
+   6.2
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "collinear",
+   "points": [
+    "V0",
+    "O",
+    "V3"
+   ],
+   "name": "V0, the centre and V3 are on one line of symmetry"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "V1",
+    "O",
+    "V4"
+   ],
+   "name": "V1, the centre and V4 are on one line of symmetry"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "V2",
+    "O",
+    "V5"
+   ],
+   "name": "V2, the centre and V5 are on one line of symmetry"
+  }
+ ],
+ "fromLesson": [
+  "Order of rotational symmetry 6"
+ ]
+}

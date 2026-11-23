@@ -1,0 +1,91 @@
+{
+ "id": "maths-u05-enlarge-minus-2",
+ "renderer": "transform",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Geometric Transformations",
+ "title": "Enlargement by scale factor −2",
+ "caption": "Each coordinate is multiplied by −2: (1, 1) → (−2, −2), (3, 1) → (−6, −2), (1, 2) → (−2, −4). The image is twice the size, on the other side of the origin and turned through 180°.",
+ "alt": "Triangle A with vertices (1, 1), (3, 1), (1, 2) and its image B, twice the size on the opposite side of the origin.",
+ "description": [
+  "Triangle A has vertices (1, 1), (3, 1) and (1, 2).",
+  "Enlarging by −2 about the origin multiplies every coordinate by −2.",
+  "The image B has vertices (−2, −2), (−6, −2) and (−2, −4): twice as big, inverted through the origin."
+ ],
+ "view": {
+  "x": [
+   -7,
+   4
+  ],
+  "y": [
+   -5,
+   3
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "object": {
+  "name": "A",
+  "pts": [
+   [
+    1,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    1,
+    2
+   ]
+  ],
+  "colour": "a1"
+ },
+ "images": [
+  {
+   "name": "B",
+   "t": {
+    "kind": "enlarge",
+    "centre": [
+     0,
+     0
+    ],
+    "k": -2
+   },
+   "pts": [
+    [
+     -2,
+     -2
+    ],
+    [
+     -6,
+     -2
+    ],
+    [
+     -2,
+     -4
+    ]
+   ],
+   "colour": "a2",
+   "rays": true
+  }
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "checks": [
+  {
+   "type": "areaScale",
+   "image": "B",
+   "value": 4
+  }
+ ],
+ "fromLesson": [
+  "(1, 1) → (−2, −2); (3, 1) → (−6, −2); (1, 2) → (−2, −4)"
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "id": "maths-u05-kite",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Plane Geometry",
+ "title": "The kite ABCD",
+ "caption": "The four angles of a quadrilateral add up to 360°. With A = 110° and C = 70°, B + D = 180°, and as B = D the kite has B = D = 90°.",
+ "alt": "A kite ABCD with angle A = 110 degrees, angle C = 70 degrees and angles B and D both 90 degrees.",
+ "description": [
+  "The kite has angle A = 110° and angle C = 70°.",
+  "Angles in a quadrilateral add to 360°, so B + D = 360 − 110 − 70 = 180°.",
+  "B and D are equal, so each is 90°, marked as right angles."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   3.2898992833716556,
+   4.698463103929542
+  ],
+  "C": [
+   10,
+   0
+  ],
+  "D": [
+   3.2898992833716556,
+   -4.698463103929542
+  ]
+ },
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  [
+   "B",
+   "C"
+  ],
+  [
+   "C",
+   "D"
+  ],
+  [
+   "D",
+   "A"
+  ]
+ ],
+ "ticks": [
+  {
+   "seg": [
+    "A",
+    "B"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "A",
+    "D"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "C",
+    "B"
+   ],
+   "n": 2
+  },
+  {
+   "seg": [
+    "C",
+    "D"
+   ],
+   "n": 2
+  }
+ ],
+ "angles": [
+  {
+   "at": "A",
+   "from": "D",
+   "to": "B",
+   "deg": 110,
+   "label": "110°",
+   "colour": "a1"
+  },
+  {
+   "at": "B",
+   "from": "A",
+   "to": "C",
+   "right": true,
+   "colour": "a2"
+  },
+  {
+   "at": "C",
+   "from": "B",
+   "to": "D",
+   "deg": 70,
+   "label": "70°",
+   "colour": "a1",
+   "r": 24
+  },
+  {
+   "at": "D",
+   "from": "C",
+   "to": "A",
+   "right": true,
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "A": [
+   -14,
+   0
+  ],
+  "B": [
+   0,
+   -16
+  ],
+  "C": [
+   14,
+   0
+  ],
+  "D": [
+   0,
+   16
+  ]
+ },
+ "view": {
+  "x": [
+   -2,
+   12
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "height": [
+  320,
+  260
+ ],
+ "checks": [
+  {
+   "type": "angleSum",
+   "angles": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "total": 360,
+   "name": "the four angles add up to 360°"
+  }
+ ],
+ "fromLesson": [
+  "B = D = 90°"
+ ]
+}
