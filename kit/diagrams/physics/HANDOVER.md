@@ -83,7 +83,7 @@ A unit listed here is being built; don't start it in another session. Remove the
 | Units | Claimed by |
 |---|---|
 | u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
-| u34, u35, u36 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
+| u37, u38, u39 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
 
 ## Unit notes
 
@@ -118,6 +118,9 @@ Commit, diagrams and lessons per unit; "lacks" lists renderers its null rows ask
 - **u31** Cosmology (3f3d9c2c): 4 diagrams. Lacks the distance ladder, scale factor against time.
 - **u32** Geophysics (2757f997): 5 diagrams. Lacks an Earth cross-section.
 - **u33** Atmospheric physics (c1f09341): 5 diagrams. Lacks circulation cells.
+- **u34** Biophysics (3abe8cb7): 4 diagrams. Lacks beam (forearm lever).
+- **u35** Medical physics (4b4ad31d): 3 diagrams.
+- **u36** Photonics (932b8c1d): 3 diagrams. Lacks LED escape-cone rays.
 
 ## Lesson errors
 
