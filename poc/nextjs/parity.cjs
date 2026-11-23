@@ -4,7 +4,10 @@ const serve = (ROOT) => new Promise((ok) => { const s = http.createServer((q, r)
 // Saved progress carries over: open a real lesson on the current static course, carry its saved state to the Next.js
 // course (same origin in production, so the same localStorage), and compare what both show. Exits non-zero on failure.
 const checks = []; const check = (name, ok, detail) => checks.push({ name, ok: Boolean(ok), detail });
-const text = (p) => p.$eval("#course", (e) => e.innerText.replace(/\s+/g, " ").trim().slice(0, 600));
+// the whole course view as displayed, normalised for whitespace (never a sample: a sample hid a styling difference once)
+const text = (p) => p.$eval("#course", (e) => e.innerText.replace(/\s+/g, " ").trim());
+// where two texts first differ, for the failure message
+const firstDiff = (a, b) => { let i = 0; while (i < a.length && a[i] === b[i]) i++; return `${a.length} vs ${b.length} characters; first difference at ${i}: static "…${a.slice(Math.max(0, i - 60), i + 80)}" | next "…${b.slice(Math.max(0, i - 60), i + 80)}"`; };
 // a lesson's own notes, once they've rendered (not the previous view, not the "notes coming soon" placeholder)
 // the kit stylesheets a page actually has once the course has mounted (the engine adds some itself)
 const sheets = (p) => p.$$eval('link[rel="stylesheet"]', (l) => l.map((x) => new URL(x.href).pathname).filter((h) => h.startsWith("/kit/") && h !== "/kit/styles/system.css"));
@@ -34,10 +37,10 @@ const notes = async (p, hash) => { await p.waitForFunction((h) => location.hash 
     const nextHome = await text(p);
     const nextSheets = await sheets(p);
     check("same kit stylesheets as the static course, in the same order", JSON.stringify(staticSheets) === JSON.stringify(nextSheets), `static ${staticSheets.join(", ")} | next ${nextSheets.join(", ")}`);
-    check("course home identical with the same saved progress", staticHome === nextHome, staticHome === nextHome ? undefined : `static: ${staticHome.slice(0, 160)} | next: ${nextHome.slice(0, 160)}`);
+    check("course home identical with the same saved progress", staticHome === nextHome, staticHome === nextHome ? `${staticHome.length} characters` : firstDiff(staticHome, nextHome));
     await p.goto(B + "/lawgradify/course/" + lesson);
     const nextLesson = await notes(p, lesson);
-    check(`lesson ${lesson} notes identical`, staticLesson === nextLesson, staticLesson === nextLesson ? `${staticLesson.length} characters` : (() => { let i = 0; while (i < staticLesson.length && staticLesson[i] === nextLesson[i]) i++; return `${staticLesson.length} vs ${nextLesson.length} characters; first difference at ${i}: static "…${staticLesson.slice(Math.max(0, i - 60), i + 80)}" | next "…${nextLesson.slice(Math.max(0, i - 60), i + 80)}"`; })());
+    check(`lesson ${lesson} notes identical`, staticLesson === nextLesson, staticLesson === nextLesson ? `${staticLesson.length} characters` : firstDiff(staticLesson, nextLesson));
     await p.screenshot({ path: "out-lesson.png" });
   } catch (e) {
     check("parity check ran to the end", false, e.message.split("\n")[0]);
