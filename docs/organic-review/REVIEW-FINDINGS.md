@@ -1,7 +1,8 @@
 # Organic Chemistry Lab: Major review findings (PR #159)
 
 CodeRabbit's first two reviews of PR #159 raised 30 **Major** findings (none Critical) and 34 Minor ones; its review of
-the fixes raised 12 more Major findings and 20 Minor ones (section 5). The Major findings block the merge; the Minor
+the fixes raised 12 more Major findings and 20 Minor ones (section 5), and its review of those fixes one more Major
+finding and 2 Minor ones (section 6). The Major findings block the merge; the Minor
 ones are tracked in [BACKLOG.md](BACKLOG.md).
 
 Every Major finding was verified before any code changed, by reproducing it (a probe on the PR's head, `fd37323`) or,
@@ -78,4 +79,10 @@ given a regression test that fails on `f2e983f1`. **All 12 were real; none was a
 | 37 | `scripts/organic-review.mjs` CSV | A file ending inside a quoted field was imported, truncated last row included. | Refused, nothing imported. | `organic-reference`: review pack |
 | 40 | `scripts/organic-review.mjs` write | `reviews.js` was rewritten in place, so a failed write could leave it truncated and break the next import. | Written to a temporary file beside it, then renamed over it. | code path (a disk failure can't be staged in a test) |
 | 42 | `tests/data/organic-reference.mjs` | An "agree" stayed attached when a case's expected outcome was later edited, so the case still showed as reviewed. | A verdict records the outcome it was given for; an edited case goes back to provisional (flagged in the pack) until reviewed again. A "disagree" stays disputed. | `organic-reference`: review pack |
+
+## 6. The review of the second round of fixes (head `5e082af5`)
+
+| # | Where | Finding, as verified | Fix | Test |
+|---|---|---|---|---|
+| 43 | `scripts/organic-review.mjs` import | The #42 fix recorded each verdict against the case's outcome *at import time*, so an agreement returned on a sheet exported before the case changed still counted as reviewed, though the chemist saw the old outcome. | The exported sheet carries a machine-readable expectation key; the import records the key from the sheet, so an agreement on an older outcome stays provisional and is reported. A sheet without the column records no key (its agreements can't count as reviewed). | `organic-reference`: review pack, including an export → CSV → import round trip |
 

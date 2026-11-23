@@ -84,22 +84,36 @@ test("review import: cumulative, blank rows keep earlier verdicts, and an invali
 
 test("review pack: exact products count repeats, a truncated CSV is refused, old sheets can't restore verdicts, and edited cases need review again", async () => {
   const { mergeReviews, referenceRows } = await import("../scripts/organic-review.mjs");
-  const { expectKey } = await import("./data/organic-reference.mjs");
+  const { expectKey, confidenceOf: confidenceOfFn } = await import("./data/organic-reference.mjs");
   // one ethanoic acid where two form is a mismatch
   assert.ok(check({ start: "CC(=O)OC(C)=O", reagent: "water", expect: { products: ["CC(=O)O"] } }));
   assert.equal(check({ start: "CC(=O)OC(C)=O", reagent: "water", expect: { products: ["CC(=O)O", "CC(=O)O"] } }), null);
   const known = new Map(REFERENCE.map((r) => [r.id, expectKey(r.expect)])), [a] = known.keys();
   const head = "id,start,reagent,expected,verdict,correction,comment,reviewer,date";
   assert.throws(() => mergeReviews({}, `${head}\n${a},x,y,z,agree,,"cut off here`, known), /quoted field/);
-  // a verdict records the outcome it was given for; editing that outcome makes the agreement stale
-  const { reviews } = mergeReviews({}, `${head}\n${a},x,y,z,agree,,,Dr R,2026-12-01`, known);
+  // a verdict records the outcome on the reviewer's sheet; editing that outcome later makes the agreement stale
+  const q = (x) => `"${String(x).replace(/"/g, '""')}"`, kh = `${head},expectation key (do not edit)`;
+  const { reviews } = mergeReviews({}, `${kh}\n${a},x,y,z,agree,,,Dr R,2026-12-01,${q(known.get(a))}`, known);
   assert.equal(reviews[a].expect, known.get(a));
-  const { confidenceOf } = await import("./data/organic-reference.mjs");
+  // an agreement returned on a sheet exported before the case changed is bound to the old outcome: provisional, and reported
+  const old = mergeReviews({}, `${kh}\n${a},x,y,z,agree,,,Dr R,2026-12-01,${q(expectKey({ products: ["CCO"] }))}`, known);
+  assert.deepEqual(old.stale, [a]); assert.equal(confidenceOfFn(old.reviews[a], known.get(a)).confidence, "provisional");
+  // a sheet from before the key column records no outcome, so its agreement can't count as reviewed
+  assert.equal(confidenceOfFn(mergeReviews({}, `${head}\n${a},x,y,z,agree,,,Dr R,2026-12-01`, known).reviews[a], known.get(a)).confidence, "provisional");
+  const confidenceOf = confidenceOfFn;
   assert.equal(confidenceOf(reviews[a], known.get(a)).confidence, "reviewed", "agreed to this outcome");
   assert.deepEqual(confidenceOf(reviews[a], expectKey({ products: ["CCO"] })), { stale: true, confidence: "provisional" }, "the outcome was edited after the agreement");
   assert.equal(confidenceOf({ ...reviews[a], verdict: "disagree" }, expectKey({ products: ["CCO"] })).confidence, "disputed", "a disagreement stays disputed");
   // the exported sheet leaves the verdict columns empty and shows the recorded review read-only
   const [hdr, ...rows] = referenceRows([{ ...REFERENCE[0], review: { verdict: "disagree", reviewer: "Dr R", note: "wrong product" }, stale: false }]);
   const at = (n) => hdr.findIndex((h) => h.startsWith(n));
+  assert.equal(rows[0][at("expectation key")], expectKey(REFERENCE[0].expect), "the sheet carries the outcome shown");
+  // round trip through the real export: a reviewer fills in "agree" on an unchanged sheet, and it imports as reviewed
+  const { csv } = await import("../scripts/organic-review.mjs");
+  const cases = REFERENCE.filter((r) => r.expect && typeof r.expect === "object").slice(0, 3), sheet = referenceRows(cases);
+  sheet.slice(1).forEach((row) => { row[at("verdict")] = "agree"; row[at("reviewer")] = "Dr R"; });
+  const back = mergeReviews({}, csv(sheet), known);
+  assert.deepEqual(back.bad, []); assert.deepEqual(back.stale, []);
+  for (const c of cases) assert.equal(confidenceOfFn(back.reviews[c.id], known.get(c.id)).confidence, "reviewed", c.id);
   assert.equal(rows[0][at("verdict")], ""); assert.equal(rows[0][at("comment")], ""); assert.match(rows[0][at("recorded review")], /disagree by Dr R: wrong product/);
 });

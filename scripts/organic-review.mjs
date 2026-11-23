@@ -21,7 +21,7 @@ import { REVIEWS } from "../kit/labs/chemistry/reactions/reviews.js";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "docs/organic-review");
 const cell = (v) => { const t = String(v ?? ""); return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t; };
-const csv = (rows) => rows.map((r) => r.map(cell).join(",")).join("\n") + "\n";
+export const csv = (rows) => rows.map((r) => r.map(cell).join(",")).join("\n") + "\n";
 const nameOfSmiles = (s) => { const A = K.analyse(K.graphFromSmiles(s)); return A.name?.name ? `${A.name.name} (${s})` : s; };
 const REVIEW_COLS = ["verdict (agree / disagree / unsure)", "correction", "comment", "reviewer", "date"];
 
@@ -36,12 +36,12 @@ function expected(e) {
 export function referenceRows(cases = REFERENCE) {
   // the reviewer columns start empty every time: a recorded verdict is shown read-only beside them, so returning an old
   // sheet can't quietly restore a verdict that has since been replaced (only what the reviewer types is imported)
-  const rows = [["id", "topic", "starting material", "reagent", "conditions", "level", "reference outcome", "lab prediction", "lab reasoning (first point)", "reference note", "sources (unchecked pointers)", "confidence", "recorded review (read-only)", ...REVIEW_COLS]];
+  const rows = [["id", "topic", "starting material", "reagent", "conditions", "level", "reference outcome", "lab prediction", "lab reasoning (first point)", "reference note", "sources (unchecked pointers)", "confidence", "recorded review (read-only)", "expectation key (do not edit)", ...REVIEW_COLS]];
   for (const r of cases) {
     const m = P.drawSmiles(r.start), res = P.predict(m, r.reagent), g = P.reagentOf(r.reagent);
     const pred = res.reacts ? (res.products.length ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") : "No organic product") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.status === "declined" ? "Declined" : "No reaction";
     const recorded = r.review ? `${r.review.verdict}${r.review.reviewer ? ` by ${r.review.reviewer}` : ""}${r.review.date ? `, ${r.review.date}` : ""}${r.review.note ? `: ${r.review.note}` : ""}${r.stale ? " (the expected outcome has changed since: please review again)" : ""}` : "";
-    rows.push([r.id, r.topic, nameOfSmiles(r.start), g.label, g.cond, g.level, expected(r.expect), pred, res.why?.[0] || "", r.note, r.sources.map((x) => `${SOURCES[x.id] || x.id}: ${x.topic}`).join(" / "), r.confidence, recorded, "", "", "", "", ""]);
+    rows.push([r.id, r.topic, nameOfSmiles(r.start), g.label, g.cond, g.level, expected(r.expect), pred, res.why?.[0] || "", r.note, r.sources.map((x) => `${SOURCES[x.id] || x.id}: ${x.topic}`).join(" / "), r.confidence, recorded, expectKey(r.expect), "", "", "", "", ""]);
   }
   return rows;
 }
@@ -82,24 +82,32 @@ export function mergeReviews(existing, csvText, known) {
   const [head = [], ...rows] = parseCsv(csvText), col = (n) => head.findIndex((h) => h.startsWith(n));
   const ix = { id: col("id"), verdict: col("verdict"), correction: col("correction"), comment: col("comment"), reviewer: col("reviewer"), date: col("date") };
   if (Object.values(ix).some((i) => i < 0)) throw new Error("This doesn't look like reference-review.csv (missing columns).");
-  const reviews = { ...existing }, bad = [], changed = [];
+  // the outcome the reviewer was shown travels with the sheet; an older sheet without the column records none
+  const keyCol = col("expectation key");
+  const reviews = { ...existing }, bad = [], changed = [], stale = [];
   for (const r of rows) {
     const id = r[ix.id], v = (r[ix.verdict] || "").trim().toLowerCase(); if (!v) continue;
     if (!known.has(id)) { bad.push(`${id}: not in the reference set`); continue; }
     if (v === "clear") { if (id in reviews) { delete reviews[id]; changed.push(id); } continue; }
     if (!["agree", "disagree", "unsure"].includes(v)) { bad.push(`${id}: verdict “${v}” (use agree, disagree, unsure or clear)`); continue; }
-    reviews[id] = { verdict: v, reviewer: r[ix.reviewer] || "", date: r[ix.date] || "", correction: r[ix.correction] || "", note: r[ix.comment] || "", expect: known instanceof Map ? known.get(id) : undefined }; changed.push(id);
+    // the verdict is bound to the outcome on the reviewer's sheet, not today's: if the case has changed since the sheet
+    // was exported, an agreement stays provisional (confidenceOf sees the keys differ) until the new outcome is reviewed
+    const seen = keyCol >= 0 ? r[keyCol] || undefined : undefined;
+    reviews[id] = { verdict: v, reviewer: r[ix.reviewer] || "", date: r[ix.date] || "", correction: r[ix.correction] || "", note: r[ix.comment] || "", expect: seen };
+    if (v === "agree" && known instanceof Map && seen !== known.get(id)) stale.push(id);
+    changed.push(id);
   }
-  return { reviews, bad, changed };
+  return { reviews, bad, changed, stale };
 }
 function importPack(file) {
-  const { reviews: out, bad, changed } = mergeReviews(REVIEWS, fs.readFileSync(file, "utf8"), new Map(REFERENCE.map((r) => [r.id, expectKey(r.expect)])));
+  const { reviews: out, bad, changed, stale } = mergeReviews(REVIEWS, fs.readFileSync(file, "utf8"), new Map(REFERENCE.map((r) => [r.id, expectKey(r.expect)])));
   if (bad.length) { console.error(`Nothing imported: fix these rows and import again (reviews.js is unchanged).\n  ${bad.join("\n  ")}`); process.exitCode = 1; return; }
   const body = `// Verdicts from the independent chemistry review of the lab's reference set (tests/data/organic-reference.mjs),\n// written by \`node scripts/organic-review.mjs import <completed csv>\`. Read by rules.js (disputed rules).\n//   REVIEWS[id] = { verdict: "agree" | "disagree" | "unsure", reviewer, date, correction, note, expect (the outcome reviewed) }\nexport const REVIEWS = ${JSON.stringify(out, null, 2)};\n`;
   // written whole to a temporary file beside it, then renamed over it: a failed write leaves the old reviews.js intact
   const dest = path.join(ROOT, "kit/labs/chemistry/reactions/reviews.js"), tmp = `${dest}.${process.pid}.tmp`;
   try { fs.writeFileSync(tmp, body); fs.renameSync(tmp, dest); } catch (e) { try { fs.rmSync(tmp, { force: true }); } catch { /* nothing to remove */ } throw e; }
   const n = Object.values(out), c = (v) => n.filter((x) => x.verdict === v).length;
+  if (stale.length) console.warn(`${stale.length} agreement${stale.length === 1 ? " was" : "s were"} given on an older outcome and stay provisional until reviewed again: ${stale.join(", ")}`);
   console.log(`imported ${changed.length} change${changed.length === 1 ? "" : "s"}; ${n.length} verdicts recorded: ${c("agree")} agree, ${c("disagree")} disagree, ${c("unsure")} unsure`);
 }
 
