@@ -83,6 +83,7 @@ A unit listed here is being built; don't start it in another session. Remove the
 | Units | Claimed by |
 |---|---|
 | u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
+| u21, u22, u23 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
 
 ## Unit notes
 
