@@ -18,6 +18,14 @@ const DIMS = {
 };
 const LEVELS = [["mastered", "Mastered"], ["strong", "Strong"], ["fading", "Fading"], ["learning", "Learning"]];
 
+// A topic card opens that topic: a course unit, a lesson, a specific tool, or another Gradify site's course
+// (kit/core/site-content.js, third field). A topic with no real destination yet (null) is shown, not linked: it never
+// falls back to the generic app. tests/topic-cards.test.mjs keeps every destination real.
+function topicCard(t, d, href) {
+  const inner = `<span class="sm-tico" data-g3d="${esc(`${t} ${d}`)}" data-g3d-size="54" data-g3d-unique></span><b>${esc(t)}</b><span>${esc(d)}</span>`;
+  return href ? `<a class="sm-topic glass" href="${esc(href)}">${inner}<span class="go" aria-hidden="true">→</span></a>` : `<div class="sm-topic glass static">${inner}</div>`;
+}
+
 export function renderHome(el, siteName) {
   const site = SITES.find((s) => s.n === siteName), c = SITES_CONTENT[siteName];
   if (!site || !c) return;
@@ -43,7 +51,7 @@ export function renderHome(el, siteName) {
     // sites with a 3D model get a section for it
     model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",
 
-    section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><span class="sm-tico" data-g3d="${esc(`${t} ${d}`)}" data-g3d-size="54" data-g3d-unique></span><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
+    section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d, href]) => topicCard(t, d, href)).join("")}</div>`),
 
     section("features", fillName(k.featuresTitle), "", `<div class="sm-features">${k.features.map(([i, t, d]) => `<article class="sm-feature glass"><span class="sm-ico">${icon(i)}</span><b>${fill(t)}</b><p>${fill(d)}</p></article>`).join("")}</div>`),
 
