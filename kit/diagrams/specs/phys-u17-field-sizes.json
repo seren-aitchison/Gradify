@@ -1,0 +1,61 @@
+{
+ "id": "phys-u17-field-sizes",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Magnetic fields",
+ "title": "How strong are magnetic fields?",
+ "caption": "Magnetic flux density runs from tens of microtesla (Earth, ~50 μT) to ~10¹¹ T (a magnetar), about 15 orders of magnitude. A 1.5 T MRI field is 1.5/(5 × 10⁻⁵) = 30000 times Earth's field, 4.5 orders of magnitude up.",
+ "alt": "A logarithmic scale of magnetic flux density in tesla from 10^-6 to 10^12, with Earth's field, a fridge magnet, an MRI, the strongest steady laboratory field, a neutron star and a magnetar marked.",
+ "description": [
+  "A horizontal logarithmic scale of magnetic flux density in tesla.",
+  "Marked from weakest to strongest: Earth's field at the surface about 50 μT, a fridge magnet about 5 mT, an MRI 1.5 T, the strongest steady laboratory field about 45 T, a neutron star about 10⁸ T and a magnetar up to about 10¹¹ T.",
+  "The MRI field is 30000 times Earth's field: 4.5 orders of magnitude."
+ ],
+ "quantity": "magnetic flux density",
+ "units": "T",
+ "min": -6,
+ "max": 12,
+ "markers": [
+  {
+   "label": "Earth",
+   "value": 0.00005
+  },
+  {
+   "label": "fridge magnet",
+   "value": 0.005
+  },
+  {
+   "label": "MRI",
+   "value": 1.5
+  },
+  {
+   "label": "lab record",
+   "value": 45
+  },
+  {
+   "label": "neutron star",
+   "value": 100000000
+  },
+  {
+   "label": "magnetar",
+   "value": 100000000000
+  }
+ ],
+ "claims": [
+  {
+   "type": "span",
+   "value": 15,
+   "tol": 1,
+   "name": "the markers span about 15 orders of magnitude"
+  },
+  {
+   "type": "orders",
+   "a": "Earth",
+   "b": "MRI",
+   "value": 4.5,
+   "tol": 0.1,
+   "name": "an MRI is 30000 (10^4.5) times Earth's field"
+  }
+ ]
+}

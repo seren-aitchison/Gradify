@@ -1,0 +1,89 @@
+{
+ "id": "phys-u17-flux-linkage",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Magnetic flux",
+ "title": "Flux linkage depends on the angle to the normal",
+ "caption": "For the 50-turn coil (A = 0.01 m², B = 0.4 T) the flux linkage is NΦ = NBA cos θ with θ the angle between B and the coil's normal. At θ = 0° it is 0.2 Wb-turns, at 60° it is 0.2 × cos 60° = 0.1 Wb-turns (Φ = 2 × 10⁻³ Wb per turn), and at 90° the field lies in the coil's plane and nothing links it.",
+ "alt": "Graph of flux linkage against angle: a cosine falling from 0.2 Wb-turns at 0° through 0.1 at 60° to zero at 90°.",
+ "description": [
+  "The horizontal axis is the angle θ between the field and the coil's normal in degrees; the vertical axis is the flux linkage in Wb-turns.",
+  "NBA = 50 × 0.4 × 0.01 = 0.2 Wb-turns is the largest linkage, at θ = 0°.",
+  "At θ = 60°, NΦ = 0.2 × cos 60° = 0.1 Wb-turns.",
+  "At 90° the field is parallel to the coil's plane and the linkage is zero."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   0.25
+  ]
+ },
+ "ticks": [
+  [
+   30,
+   60,
+   90
+  ],
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ]
+ ],
+ "grid": [
+  30,
+  0.05
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "NΦ / Wb-turns"
+ ],
+ "curves": [
+  {
+   "expr": "0.2*cos(x*0.017453292519943295)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "NBA cos θ",
+   "labelAt": [
+    14,
+    0.14
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 0.1,
+   "label": "0.1 Wb-turns at 60°",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.2*cos(x*0.017453292519943295)",
+   "x": 60,
+   "y": 0.1,
+   "name": "NΦ = 50 × 0.4 × 0.01 × cos 60° = 0.1 Wb-turns"
+  },
+  {
+   "type": "point",
+   "expr": "0.2*cos(x*0.017453292519943295)",
+   "x": 90,
+   "y": 0,
+   "name": "no flux linkage when B lies in the coil's plane"
+  }
+ ]
+}

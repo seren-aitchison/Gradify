@@ -1,0 +1,97 @@
+{
+ "id": "maths-u10-cosine-ivp",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Initial Value Problems",
+ "title": "y = cos x solves y″ + y = 0, y(0) = 1, y′(0) = 0",
+ "caption": "The general solution is A cos x + B sin x. y(0) = 1 gives A = 1 and y′(0) = B = 0, so y = cos x: starts at 1 with zero slope.",
+ "alt": "The cosine curve starting at its maximum (0, 1) with a horizontal tangent.",
+ "description": [
+  "Characteristic roots ±i: y = A cos x + B sin x.",
+  "y(0) = A = 1.",
+  "y′(0) = B = 0, so y = cos x."
+ ],
+ "range": {
+  "x": [
+   -1,
+   7
+  ],
+  "y": [
+   -1.5,
+   1.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  [
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  7,
+  1
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "cos(x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    7
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "(0, 1)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(x)",
+   "x": 0,
+   "y": 1
+  },
+  {
+   "type": "max",
+   "expr": "cos(x)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0,
+   "y": 1
+  },
+  {
+   "type": "point",
+   "expr": "-cos(x)-(cos(x+0.001)-2*cos(x)+cos(x-0.001))/0.000001",
+   "x": 1,
+   "y": 0,
+   "name": "y″ + y = 0 at x = 1"
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "id": "maths-u10-separable",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Separable Differential Equations",
+ "title": "y = 2e^(x²/2) solves dy/dx = xy",
+ "caption": "Separating, dy/y = x dx gives ln y = x²/2 + c, so y = Ce^(x²/2); y(0) = 2 makes C = 2. At x = 1, y = 2e^½ ≈ 3.297.",
+ "alt": "The curve y = 2e^(x²/2), symmetric about the y axis, through (0, 2).",
+ "description": [
+  "Separate: dy/y = x dx.",
+  "Integrate: ln y = x²/2 + c, so y = Ce^(x²/2).",
+  "y(0) = 2 gives C = 2."
+ ],
+ "range": {
+  "x": [
+   -2.5,
+   2.5
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   2,
+   4,
+   8,
+   12
+  ]
+ ],
+ "grid": [
+  2,
+  12
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2*exp(x^2/2)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 2,
+   "label": "(0, 2)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*exp(x^2/2)",
+   "x": 0,
+   "y": 2
+  },
+  {
+   "type": "point",
+   "expr": "2*exp(x^2/2)",
+   "x": 1,
+   "y": 3.297
+  },
+  {
+   "type": "point",
+   "expr": "(2*exp((x+0.0001)^2/2)-2*exp(x^2/2))/0.0001",
+   "x": 1,
+   "y": 3.297,
+   "name": "dy/dx = xy at x = 1"
+  }
+ ]
+}

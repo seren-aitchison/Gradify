@@ -1,0 +1,92 @@
+{
+ "id": "maths-u10-greens-solution",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Green's Functions",
+ "title": "−u″ = 1 on [0, 1]: u = x(1 − x)/2",
+ "caption": "Integrating the Green's function G(x, s) against f = 1 gives u(x) = x(1 − x)/2: zero at both ends, with maximum 1/8 at the midpoint.",
+ "alt": "A parabola u = x(1 − x)/2 over 0 to 1, zero at both ends with its peak 0.125 at x = 0.5.",
+ "description": [
+  "u(x) = ∫ G(x, s) · 1 ds with G built from the two boundary conditions.",
+  "The integral gives u = x(1 − x)/2.",
+  "Peak at x = ½: u = 1/8."
+ ],
+ "range": {
+  "x": [
+   -0.2,
+   1.2
+  ],
+  "y": [
+   -0.05,
+   0.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   0.05,
+   0.1,
+   0.15
+  ]
+ ],
+ "grid": [
+  1,
+  0.15
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*(1-x)/2",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.125,
+   "label": "(½, 1/8)",
+   "colour": "a2",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x*(1-x)/2",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 0.125
+  },
+  {
+   "type": "point",
+   "expr": "x*(1-x)/2",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "type": "point",
+   "expr": "-(((x+0.001)*(1-x-0.001)/2)-2*(x*(1-x)/2)+((x-0.001)*(1-x+0.001)/2))/0.000001",
+   "x": 0.3,
+   "y": 1,
+   "name": "−u″ = 1"
+  }
+ ]
+}
