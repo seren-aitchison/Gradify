@@ -1,0 +1,167 @@
+// Specification Mastery (kit/learning/spec-mastery.js, kit/specs/): every specification maps onto real lessons, and a
+// point's estimate comes only from answers, with coverage and confidence kept apart from it.
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { SPECS, specsFor, specById, pointsOf, checkSpec } from "../kit/specs/index.js";
+import { specMastery, bandOf, confidenceOf, basisText, weakestPoints, BANDS, UNASSESSED } from "../kit/learning/spec-mastery.js";
+import { sixProfile, evidenceFromAttempts } from "../kit/learning/mastery.js";
+
+const DAY = 864e5, NOW = Date.parse("2026-11-20T12:00:00Z");
+let seq = 0;
+// one attempt record (kit/assess/attempts.js schema 1)
+const att = (lesson, score, { q = `${lesson}#q${seq++ % 5}`, d = 2, type = "sba", ago = 1, attempt = 1, context = "lesson", confidence = null } = {}) => ({
+  schema: 1, id: `a${seq++}`, at: new Date(NOW - ago * DAY).toISOString(), site: "SciGradify", subject: "biology", context,
+  question: { id: q, v: 1, type, d, objectives: [] }, lesson, unit: lesson.slice(0, 3), score, correct: score >= 1, attempt, confidence, marking: { method: "auto", status: "final" },
+});
+// a small spec over two lessons for one point, one lesson for another, and one point Gradify doesn't teach
+const MINI = { id: "t", board: "B", qualification: "GCSE", subject: "S", title: "Test", course: "biology", version: "1", wording: "paraphrased", topics: [
+  { id: "1", title: "Topic one", groups: [{ id: "1.1", title: "G", points: [
+    { id: "1.1.1", title: "Transport", text: "Explain diffusion and active transport.", lessons: ["u02-20", "u02-23"], partial: [], ht: false, sep: false },
+    { id: "1.1.2", title: "Osmosis", text: "Explain osmosis.", lessons: ["u02-21"], partial: [], ht: true, sep: false },
+    { id: "1.1.3", title: "The eye", text: "Describe the eye.", lessons: [], partial: [], ht: false, sep: true },
+  ] }] },
+] };
+const titles = { "u02-20": "Diffusion", "u02-23": "Active transport", "u02-21": "Osmosis" };
+const run = (attempts, o = {}) => specMastery(MINI, { attempts, now: NOW, titleOf: (id) => titles[id] || id, ...o });
+
+test("every specification is well formed and maps onto lessons that exist", async () => {
+  assert.ok(SPECS.length >= 1);
+  for (const spec of SPECS) {
+    const { UNITS } = await import(`../kit/courses/${spec.course}/syllabus.js`);
+    const ids = new Set(UNITS.flatMap((u) => u.lessons.map((l) => l.id)));
+    assert.deepEqual(checkSpec(spec, ids), [], `${spec.id}: ${checkSpec(spec, ids).join("; ")}`);
+    assert.ok(specsFor(spec.course).includes(spec) && specById(spec.id) === spec);
+    // until someone checks the wording against the published specification, it's labelled as Gradify's paraphrase
+    if (!spec.verified) assert.equal(spec.wording, "paraphrased", `${spec.id} claims verbatim wording without a verification record`);
+  }
+});
+
+test("AQA GCSE Biology covers the whole subject content, and is honest about its gaps", () => {
+  const spec = specById("aqa-gcse-biology-8461"), pts = pointsOf(spec);
+  assert.deepEqual(spec.topics.map((t) => t.id), ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]);
+  assert.ok(pts.length >= 70, `${pts.length} points`);
+  const none = pts.filter((p) => !p.lessons.length && !p.partial.length).map((p) => p.id);
+  assert.deepEqual(none, ["4.5.2.3"], "only the eye has no lesson at all");
+  assert.ok(pts.find((p) => p.id === "4.1.3.3").lessons.includes("u02-23"), "active transport maps to its lesson");
+  assert.ok(pts.filter((p) => p.ht).every((p) => ["4.5.3.6", "4.5.3.7", "4.5.4.2", "4.7.2.4"].includes(p.id)));
+});
+
+test("checkSpec catches the mistakes a mapping can make", () => {
+  const bad = structuredClone(MINI); bad.topics[0].groups[0].points.push({ ...bad.topics[0].groups[0].points[0] });
+  bad.topics[0].groups[0].points[1].partial = ["u02-21"];
+  const p = checkSpec(bad, new Set(["u02-20", "u02-23"]));
+  assert.ok(p.some((x) => x.includes("duplicate point 1.1.1")));
+  assert.ok(p.some((x) => x.includes("names lesson u02-21")));
+  assert.ok(p.some((x) => x.includes("both full and partial")));
+  assert.ok(checkSpec({ ...MINI, wording: "verbatim" }).some((x) => x.includes("verified")), "verbatim needs a verification record");
+});
+
+test("bands follow the percentage the learner sees, and no evidence is never 0%", () => {
+  assert.deepEqual(BANDS.map((b) => b.label), ["Emerging", "Building", "Developing", "Secure", "Strong"]);
+  assert.equal(bandOf(null), UNASSESSED);
+  assert.equal(bandOf(0).key, "emerging");
+  assert.equal(bandOf(0.195).key, "building", "rounds to 20%");
+  assert.equal(bandOf(0.59).key, "developing");
+  assert.equal(bandOf(0.6).key, "secure");
+  assert.equal(bandOf(0.796).key, "strong", "shown as 80%, so Strong");
+  assert.equal(bandOf(1).key, "strong");
+  const m = run([]);
+  for (const p of m.points) { assert.equal(p.estimate, null); assert.equal(p.band.key, "unassessed"); assert.equal(p.confidence.level, "none"); }
+  assert.equal(m.overall.estimate, null);
+  assert.equal(m.overall.assessed, 0);
+});
+
+test("completing lessons is coverage, not mastery", () => {
+  const m = run([], { done: { "u02-20": true, "u02-23": true } });
+  const p = m.points[0];
+  assert.deepEqual(p.coverage, { gradify: "full", done: 2, total: 2 });
+  assert.equal(p.estimate, null, "finished every lesson, answered nothing: still not assessed");
+  assert.match(p.next, /hasn't seen you answer/);
+  assert.equal(m.points[2].coverage.gradify, "none");
+  assert.match(m.points[2].next, /doesn't teach this point yet/);
+});
+
+test("answers alone, without completing lessons, are evidence", () => {
+  const a = []; for (let i = 0; i < 6; i++) a.push(att("u02-20", 1, { q: `u02-20#q${i}`, d: 1 + (i % 3), ago: 1 + i }));
+  const p = run(a).points[0];
+  assert.ok(p.estimate > 0.6, `estimate ${p.estimate}`);
+  assert.equal(p.coverage.done, 0);
+});
+
+test("two easy right answers are a provisional estimate with low confidence; varied evidence over days earns high", () => {
+  const thin = run([att("u02-20", 1, { d: 1, q: "x1" }), att("u02-20", 1, { d: 1, q: "x2" })]).points[0];
+  assert.ok(thin.estimate != null && thin.provisional, "shown, but as an estimate");
+  assert.equal(thin.confidence.level, "low");
+  assert.match(basisText(thin.confidence), /2 answers to 2 different questions, all on one day, all of them easier questions/);
+  const many = [];
+  for (let i = 0; i < 20; i++) many.push(att(i % 2 ? "u02-20" : "u02-23", i % 7 ? 1 : 0, { q: `q${i % 10}`, d: 1 + (i % 3), type: ["sba", "short", "card", "num"][i % 4], ago: 30 - i, context: i % 3 ? "lesson" : "review" }));
+  const rich = run(many).points[0];
+  assert.equal(rich.provisional, false);
+  assert.equal(rich.confidence.level, "high", JSON.stringify(rich.confidence));
+  assert.ok(rich.confidence.questions >= 6 && rich.confidence.days >= 2);
+});
+
+test("old evidence still counts but drops a step of confidence", () => {
+  const ev = evidenceFromAttempts(Array.from({ length: 20 }, (_, i) => att("u02-20", 1, { q: `q${i % 8}`, d: 1 + (i % 3), type: ["sba", "short", "card"][i % 3], ago: 90 + i })));
+  const c = confidenceOf(ev, sixProfile(ev, { now: NOW }), NOW);
+  assert.equal(c.stale, true);
+  assert.notEqual(c.level, "high");
+  assert.match(basisText(c), /may have faded/);
+});
+
+test("a point says what's strong, what's inconsistent, and what to practise", () => {
+  const a = [];
+  for (let i = 0; i < 6; i++) a.push(att("u02-20", 1, { q: `d${i}`, ago: 10 - i }));               // diffusion: right every time
+  for (let i = 0; i < 6; i++) a.push(att("u02-23", i % 2 ? 1 : 0, { q: `t${i}`, ago: 10 - i }));    // active transport: right, wrong, right…
+  const p = run(a).points[0];
+  assert.equal(p.byLesson["u02-20"].state, "strong");
+  assert.equal(p.byLesson["u02-23"].state, "inconsistent");
+  assert.match(p.next, /confident on Diffusion, but your answers on Active transport are inconsistent/);
+  assert.equal(p.practise[0], "u02-23", "the shaky lesson is practised first");
+  assert.ok(p.can.some((x) => x.includes("Diffusion")) && p.struggle.some((x) => x.includes("Active transport")));
+});
+
+test("Foundation tier hides Higher-only points; combined hides separate-science points", () => {
+  assert.equal(run([]).points.length, 3);
+  assert.deepEqual(run([], { tier: "foundation" }).points.map((p) => p.id), ["1.1.1", "1.1.3"]);
+  assert.deepEqual(run([], { combined: true }).points.map((p) => p.id), ["1.1.1", "1.1.2"]);
+});
+
+test("lessons that aren't written yet don't count as Gradify covering a point", () => {
+  const p = run([], { available: (id) => id !== "u02-21" }).points[1];
+  assert.equal(p.coverage.gradify, "none");
+});
+
+test("topics and the headline use assessed points only, weighted by confidence", () => {
+  const a = [];
+  for (let i = 0; i < 20; i++) a.push(att(i % 2 ? "u02-20" : "u02-23", 1, { q: `q${i % 10}`, d: 1 + (i % 3), type: ["sba", "short", "card", "num"][i % 4], ago: 20 - i }));
+  a.push(att("u02-21", 0, { q: "o1", d: 1 }));
+  const m = run(a);
+  assert.equal(m.overall.total, 3);
+  assert.equal(m.overall.assessed, 2, "the eye isn't assessed, and isn't counted as 0");
+  const [hi, lo] = m.points;
+  assert.ok(Math.abs(m.overall.estimate - (hi.estimate * 3 + lo.estimate * 1) / 4) < 1e-9, "high confidence counts three times a low one");
+  assert.equal(m.topics[0].status, "Strong overall · 1 to work on", "the topic's standing, and the one point still emerging");
+  assert.deepEqual(weakestPoints(m).map((p) => p.id), ["1.1.2"], "a Strong point isn't offered as weak");
+  assert.equal(m.overall.covered, 2);
+});
+
+test("a learner whose recent answers are clearly worse is told the point is slipping", () => {
+  const a = [];
+  for (let i = 0; i < 5; i++) a.push(att("u02-20", 1, { q: `e${i}`, ago: 30 + i }));
+  for (let i = 0; i < 5; i++) a.push(att("u02-20", 0, { q: `l${i}`, ago: 1 + i }));
+  const m = run(a), p = m.points[0];
+  assert.equal(p.trend, "slipping");
+  assert.equal(m.topics[0].attention, true);
+  assert.equal(p.series.length, 8);
+  assert.equal(p.series.at(-1), 0);
+});
+
+test("the real specification runs end to end on a few answers", () => {
+  const spec = specById("aqa-gcse-biology-8461");
+  const m = specMastery(spec, { attempts: [att("u02-20", 1, { q: "a" }), att("u02-20", 1, { q: "b" }), att("u02-23", 0, { q: "c" })], now: NOW });
+  const assessed = m.points.filter((p) => p.estimate != null).map((p) => p.id);
+  assert.ok(assessed.includes("4.1.3.1") && assessed.includes("4.1.3.3"));
+  assert.equal(m.points.find((p) => p.id === "4.5.2.3").coverage.gradify, "none");
+  assert.equal(m.topics.length, 7);
+});

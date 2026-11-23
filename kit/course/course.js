@@ -71,6 +71,9 @@ import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
+import { specsFor } from "../specs/index.js";
+import { specMastery } from "../learning/spec-mastery.js";
+import { specPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -387,7 +390,9 @@ export function mountCourse(root, cfg) {
   // ---------- layout ----------
   // the tabs: a few that matter, always visible (Home, Syllabus, Revise, the course's own workspace, Exams, Lab,
   // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
-  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
+  // the examination specifications this course is mapped onto (kit/specs/), for Specification Mastery (#/spec)
+  const SPECS = specsFor(cfg.slug);
+  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(SPECS.length ? [["spec", "Specification"]] : []), ["me", "Progress"]];
   const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
   const VIEWS = [...PRIMARY, ...MORE];
   // which tab a view belongs to
@@ -2252,6 +2257,44 @@ export function mountCourse(root, cfg) {
       ${weak.length ? `<a class="btn btn-light lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Target test on my weak topics</span></a>` : ""}</section>`;
   }
 
+  // ---------- specification mastery (kit/learning/spec-mastery.js, docs/SPEC-MASTERY.md) ----------
+  // which specification and tier the learner is sitting, remembered per course on this device
+  const SPK = `gradify.spec.${cfg.slug}`;
+  const specPref = () => { let v = {}; try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ } const spec = SPECS.find((x) => x.id === v.id) || SPECS[0]; return { spec, tier: spec?.tiers && v.tier === "foundation" ? "foundation" : "higher" }; };
+  const setSpecPref = ({ id, tier }) => { const cur = specPref(); try { localStorage.setItem(SPK, JSON.stringify({ id: id || cur.spec.id, tier: tier || cur.tier })); } catch { /* storage blocked: the choice isn't remembered */ } };
+  let specMemo = { key: "", model: null };
+  function specModel() {
+    const { spec, tier } = specPref(), key = `${spec.id}|${tier}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}`;
+    if (specMemo.key !== key) specMemo = { key, model: specMastery(spec, { attempts: S.attempts || [], levels: cfg.levels || null, exploration: EXPLORE, done: S.done, tier,
+      available: (id) => Boolean(byId[id]) && (!cfg.written || cfg.written.includes(byId[id].unit.id)), titleOf: (id) => byId[id]?.title || id }) };
+    return specMemo.model;
+  }
+  const specPractise = (p) => `#/target/${encodeTest({ minutes: 5, focus: p.focus, scope: "lessons", lessons: p.practise })}`;
+  async function viewSpec(pointId) {
+    const m = specModel(), { tier } = specPref();
+    if (pointId) {
+      const p = m.points.find((x) => x.id === decodeURIComponent(pointId));
+      if (!p) { main.innerHTML = `<div class="co-panel"><h2>That point isn't in this specification</h2><p>It may be Higher tier only, or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to the specification</span></a></div>`; return; }
+      main.innerHTML = pointPageHtml(p, { spec: m.spec, titleOf: (id) => byId[id]?.title || id, statusOf: (id) => (byId[id] ? STATUS[statusOf(id)].label : null), practiseHref: specPractise });
+      // what each lesson offers to practise this point with: its check questions and flashcards
+      const ids = [...p.lessons, ...p.partial], need = new Set(ids.map((id) => byId[id]?.unit.id).filter(Boolean));
+      const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+      for (const id of ids) {
+        const L = notes[id], el = main.querySelector(`[data-res="${CSS.escape(id)}"]`); if (!L || !el) continue;
+        const q = (L.items || []).filter((it) => QTYPES[it.Q.type]?.auto).length, c = (L.cards || []).length;
+        el.textContent = [q && `${q} check ${q === 1 ? "question" : "questions"}`, c && `${c} ${c === 1 ? "flashcard" : "flashcards"}`].filter(Boolean).join(" · ");
+      }
+      return;
+    }
+    main.innerHTML = specPageHtml(m, { specs: SPECS, tier, practiseHref: specPractise });
+    const tip = main.querySelector(".sm-tipline");
+    const show = (e) => { const a = e.target.closest?.(".sm-tiles > a"); if (a && tip) tip.textContent = a.dataset.tip; };
+    main.querySelector(".sm-topics")?.addEventListener("mouseover", show);
+    main.querySelector(".sm-topics")?.addEventListener("focusin", show);
+    main.querySelector("[data-spec]")?.addEventListener("change", (e) => { setSpecPref({ id: e.target.value }); route(); });
+    main.querySelectorAll("[data-tier]").forEach((b) => b.addEventListener("click", () => { setSpecPref({ tier: b.dataset.tier }); route(); }));
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -2262,6 +2305,7 @@ export function mountCourse(root, cfg) {
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
       <section class="co-panel cx-mmwrap" id="mastery-map"></section>
+      ${SPECS.length ? specSummaryHtml(specModel()) : ""}
       ${topicMapHtml()}
       ${masteryHtml()}
       ${insightHtml()}
@@ -2606,7 +2650,7 @@ export function mountCourse(root, cfg) {
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
     showTab(); closeMore(); drawer(false);
-    const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
+    const wide = ["home", "me", "spec", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
     showTree(view === "lesson" || view === "quiz");
@@ -2653,6 +2697,7 @@ export function mountCourse(root, cfg) {
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();
+    else if (view === "spec") await viewSpec(arg);
     else viewFeatures();
     paintSide();
     // what this place is called (for "Back to …"), then where to put the page
