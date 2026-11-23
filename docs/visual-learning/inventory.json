@@ -23470,7 +23470,7 @@
        "written": true,
        "diagrams": [],
        "labs": [],
-       "plan": {"verdict":"none","reason":"the worked example's selective-surface result (634 K) does not follow from 0.1σT⁴ = 950 (640 K), so no diagram can recompute it; reported for the notes owner"}
+       "plan": {"verdict":"none","reason":"the worked example is two one-line substitutions (black 364 K, selective 640 K; corrected from 634 K on 23 Nov 2026); a picture would only restate them"}
       },
       {
        "id": "u14-12",

@@ -229,7 +229,7 @@ H: Selective surfaces
 - Snow: white in the visible, almost black in the infrared.
 X: Equilibrium temperature of a flat plate in sunlight (1000 W m^{-2}), insulated behind: black (ε = α = 1) vs selective (α = 0.95, ε = 0.1)?
 > Black: σT^{4} = 1000 ⇒ T = 364 K
-> Selective: 0.1σT^{4} = 950 ⇒ T = 634 K
+> Selective: 0.1σT^{4} = 950 ⇒ T = 640 K
 !: White paint isn't low emissivity in the infrared; it's a good emitter of thermal radiation while reflecting sunlight.
 Q: What is a greybody? | A surface with emissivity less than 1 but the same at all wavelengths.
 Q: How does low-e glass save energy? | It transmits visible light but reflects thermal infrared back into the room.
