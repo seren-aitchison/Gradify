@@ -1,0 +1,111 @@
+{
+ "id": "phys-u03-oscilloscope-trace",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Oscilloscopes and signal generators",
+ "title": "Reading an oscilloscope trace",
+ "caption": "6 divisions peak to peak at 0.5 V/div is V_pp = 3.0 V, so the amplitude is 1.5 V and V_rms = 1.06 V. One cycle spans 4 divisions at 2 ms/div: T = 8 ms, f = 125 Hz.",
+ "alt": "A sine wave of amplitude 1.5 volts and period 8 milliseconds on a grid of 2 millisecond and 0.5 volt divisions.",
+ "description": [
+  "Grid: 2 ms per division across, 0.5 V per division up.",
+  "Peak to peak: 6 divisions = 3.0 V; amplitude 1.5 V; V_rms = 1.5/√2 = 1.06 V.",
+  "One cycle: 4 divisions = 8 ms, so f = 1/8 ms = 125 Hz."
+ ],
+ "range": {
+  "x": [
+   0,
+   16
+  ],
+  "y": [
+   -2,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  [
+   -1.5,
+   -1,
+   -0.5,
+   0.5,
+   1,
+   1.5
+  ]
+ ],
+ "grid": [
+  2,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / ms",
+  "voltage / V"
+ ],
+ "curves": [
+  {
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "colour": "a1"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    8,
+    1.75
+   ],
+   "to": [
+    16,
+    1.75
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "T = 8 ms",
+   "labelAt": [
+    12,
+    1.9
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 1.5
+  },
+  {
+   "y": -1.5
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "domain": [
+    0,
+    8
+   ],
+   "x": 2,
+   "y": 1.5,
+   "name": "amplitude 1.5 V at a quarter period"
+  },
+  {
+   "type": "point",
+   "expr": "1.5*sin(2*3.14159265*x/8)",
+   "x": 8,
+   "y": 0,
+   "name": "one cycle takes 8 ms"
+  }
+ ]
+}

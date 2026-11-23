@@ -1,0 +1,60 @@
+{
+ "id": "phys-u03-zero-error",
+ "renderer": "fit",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Random and systematic errors",
+ "title": "A systematic zero error",
+ "caption": "Extension against load should pass through the origin. This line crosses the extension axis at 3 mm: a constant offset, a zero error, perhaps from measuring length from the wrong point. The gradient, 4 mm N⁻¹, is unaffected.",
+ "alt": "Five points of extension against load with error bars, the best-fit line meeting the extension axis at about 3 millimetres instead of zero.",
+ "description": [
+  "Load 1 to 5 N; extensions 7.1, 10.9, 15.2, 18.8, 23.1 mm, each ± 0.3 mm.",
+  "Least-squares line: gradient 3.99 mm N⁻¹, intercept 3.05 mm.",
+  "Hooke's law predicts zero extension at zero load, so the intercept is a systematic error; it shifts every reading by the same amount and leaves the gradient unchanged."
+ ],
+ "points": [
+  [
+   1,
+   7.1,
+   0.3
+  ],
+  [
+   2,
+   10.9,
+   0.3
+  ],
+  [
+   3,
+   15.2,
+   0.3
+  ],
+  [
+   4,
+   18.8,
+   0.3
+  ],
+  [
+   5,
+   23.1,
+   0.3
+  ]
+ ],
+ "axisLabels": [
+  "load / N",
+  "extension / mm"
+ ],
+ "xr": [
+  0,
+  5.5
+ ],
+ "yr": [
+  0,
+  26
+ ],
+ "fit": {
+  "m": 3.99,
+  "c": 3.05,
+  "throughOrigin": false,
+  "withinErrors": true
+ }
+}

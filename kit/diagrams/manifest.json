@@ -44708,5 +44708,588 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "phys-u03-accuracy-precision": {
+  "title": "Accuracy and precision",
+  "caption": "Four groups measure g five times each. A and C are accurate (means near 9.81 m s⁻²); A and B are precise (repeats close together). B's tight cluster is consistently low: a systematic error that more repeats cannot remove.",
+  "alt": "Dot plot of five measurements of g by each of four groups against a dashed true value of 9.81.",
+  "description": [
+   "A: 9.80 to 9.82, mean 9.81: accurate and precise.",
+   "B: 9.62 to 9.65, mean 9.63: precise but not accurate.",
+   "C: 9.55 to 10.05, mean 9.82: accurate on average but not precise.",
+   "D: 9.35 to 9.95, mean 9.60: neither."
+  ],
+  "course": "physics",
+  "lesson": "Accuracy, precision and resolution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Accuracy, precision and resolution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "group A: accurate, precise",
+    "ok": true,
+    "detail": "mean 9.810, standard deviation 0.010"
+   },
+   {
+    "name": "group B: not accurate, precise",
+    "ok": true,
+    "detail": "mean 9.634, standard deviation 0.011"
+   },
+   {
+    "name": "group C: accurate, not precise",
+    "ok": true,
+    "detail": "mean 9.820, standard deviation 0.199"
+   },
+   {
+    "name": "group D: not accurate, not precise",
+    "ok": true,
+    "detail": "mean 9.600, standard deviation 0.250"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-damped-model": {
+  "title": "The model to be validated: x = A e^(−γt) cos ωt",
+  "caption": "With A = 0.1 m, γ = 0.05 s⁻¹ and a 2 s period, the envelope A e^(−γt) falls to 0.037 m (1/e of A) at t = 1/γ = 20 s. Fitting γ and ω from one run, then predicting a different run and measuring it, tests the model.",
+  "alt": "Damped oscillation of displacement against time inside a dashed exponential envelope that falls from 0.10 metres.",
+  "description": [
+   "Displacement x = 0.1 e^(−0.05t) cos(πt) metres, period 2 s.",
+   "The dashed envelope ±0.1 e^(−0.05t) bounds the swings.",
+   "At t = 1/γ = 20 s the envelope is A/e = 0.037 m.",
+   "If γ depended on the amplitude, the model would fail: air drag proportional to v² would show up this way."
+  ],
+  "course": "physics",
+  "lesson": "Experimental validation of physical models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Experimental validation of physical models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "starts at A = 0.1 m",
+    "ok": true,
+    "detail": "y(0) = 0.1"
+   },
+   {
+    "name": "the envelope is A/e at t = 1/γ",
+    "ok": true,
+    "detail": "y(20) = 0.0368"
+   },
+   {
+    "name": "back to a positive peak after one 2 s period",
+    "ok": true,
+    "detail": "y(2) = 0.0905"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-first-order-response": {
+  "title": "How fast a thermocouple responds",
+  "caption": "After a sudden change, a first-order sensor approaches the new value as 1 − e^(−t/τ). With τ = 0.5 s it reaches 63% after one τ and is within 1% after τ ln 100 = 4.6τ ≈ 2.3 s.",
+  "alt": "Percentage of the final reading against time, rising steeply and levelling at 100%, with marks at 0.5 seconds (63%) and 2.3 seconds (99%).",
+  "description": [
+   "Reading as a percentage of the step: 100(1 − e^(−t/τ)), τ = 0.5 s.",
+   "At t = τ = 0.5 s it is 63% of the way.",
+   "Within 1% when e^(−t/τ) = 0.01: t = τ ln 100 = 2.30 s."
+  ],
+  "course": "physics",
+  "lesson": "Instrument response and sensitivity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Instrument response and sensitivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "63.2% after one time constant",
+    "ok": true,
+    "detail": "y(0.5) = 63.2121"
+   },
+   {
+    "name": "99% at τ ln 100 = 2.30 s",
+    "ok": true,
+    "detail": "y(2.302585) = 99"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-hypothesis-test": {
+  "title": "Is 9.70 ± 0.04 consistent with 9.81?",
+  "caption": "The difference is z = (9.81 − 9.70) / 0.04 = 2.75 standard uncertainties. The two tails beyond ±2.75, too thin to see, hold p ≈ 0.006 of the distribution, far below 0.05, so the result is inconsistent: look for a systematic error.",
+  "alt": "Standard normal curve with a line at z = 2.75 and dashed lines at ±1.96.",
+  "description": [
+   "The curve is the standard normal distribution of z, the difference in units of the standard uncertainty.",
+   "Dashed lines at ±1.96 mark the 5% two-sided threshold.",
+   "The measurement sits at z = 2.75; the tails beyond ±2.75 together hold p ≈ 0.006.",
+   "Since p < 0.05, reject the hypothesis that the measurement agrees with 9.81 m s⁻²."
+  ],
+  "course": "physics",
+  "lesson": "Hypothesis testing",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Hypothesis testing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "each tail beyond z = 2.75 holds about 0.00298",
+    "ok": true,
+    "detail": "area 0.0030"
+   },
+   {
+    "name": "±1.96 encloses 95%",
+    "ok": true,
+    "detail": "area 0.9500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-least-squares-origin": {
+  "title": "A least-squares line through the origin",
+  "caption": "For y = mx the best gradient is m = Σxy / Σx² = 28.5 / 14 = 2.04. It makes the sum of the squared vertical distances from the points to the line as small as possible.",
+  "alt": "Three points, (1, 2.1), (2, 3.9) and (3, 6.2), with the line y = 2.04x through the origin and short vertical residual lines.",
+  "description": [
+   "Points (1, 2.1), (2, 3.9) and (3, 6.2).",
+   "Σxy = 2.1 + 7.8 + 18.6 = 28.5; Σx² = 1 + 4 + 9 = 14.",
+   "m = 28.5 / 14 = 2.036.",
+   "The short vertical lines are the residuals: the line minimises the sum of their squares."
+  ],
+  "course": "physics",
+  "lesson": "Least-squares fitting",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Least-squares fitting"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line at x = 1",
+    "ok": true,
+    "detail": "y(1) = 2.0357"
+   },
+   {
+    "name": "the line at x = 2",
+    "ok": true,
+    "detail": "y(2) = 4.0714"
+   },
+   {
+    "name": "the line at x = 3",
+    "ok": true,
+    "detail": "y(3) = 6.1071"
+   },
+   {
+    "name": "gradient Σxy/Σx² = 2.036",
+    "ok": true,
+    "detail": "gradient 2.0357"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-linearise-capacitor": {
+  "title": "Linearising E = ½CV²",
+  "caption": "Plotting E against V² turns the curve into a straight line through the origin. Its gradient is C/2 = 0.235 mJ V⁻², so C = 2 × gradient = 470 μF.",
+  "alt": "Five points of stored energy in millijoules against voltage squared, on a straight line through the origin.",
+  "description": [
+   "V = 2, 4, 6, 8, 10 V, so V² = 4, 16, 36, 64, 100 V².",
+   "E = 0.97, 3.71, 8.54, 14.98, 23.55 mJ.",
+   "Least-squares gradient 0.2352 mJ V⁻², intercept 0 mJ, close to zero as the model predicts.",
+   "C = 2 × 0.2352 mJ V⁻² = 470 μF."
+  ],
+  "course": "physics",
+  "lesson": "Linearisation of experimental relationships",
+  "also": [],
+  "renderer": "fit",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Linearisation of experimental relationships"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at least three data points",
+    "ok": true,
+    "detail": "5 points"
+   },
+   {
+    "name": "least-squares gradient is 0.2352",
+    "ok": true,
+    "detail": "least squares: 0.2352"
+   },
+   {
+    "name": "least-squares intercept is 0.001",
+    "ok": true,
+    "detail": "0.001471"
+   },
+   {
+    "name": "the line passes through the origin",
+    "ok": true,
+    "detail": "intercept 0.00147"
+   },
+   {
+    "name": "the line passes through every error bar",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u03-oscilloscope-trace": {
+  "title": "Reading an oscilloscope trace",
+  "caption": "6 divisions peak to peak at 0.5 V/div is V_pp = 3.0 V, so the amplitude is 1.5 V and V_rms = 1.06 V. One cycle spans 4 divisions at 2 ms/div: T = 8 ms, f = 125 Hz.",
+  "alt": "A sine wave of amplitude 1.5 volts and period 8 milliseconds on a grid of 2 millisecond and 0.5 volt divisions.",
+  "description": [
+   "Grid: 2 ms per division across, 0.5 V per division up.",
+   "Peak to peak: 6 divisions = 3.0 V; amplitude 1.5 V; V_rms = 1.5/√2 = 1.06 V.",
+   "One cycle: 4 divisions = 8 ms, so f = 1/8 ms = 125 Hz."
+  ],
+  "course": "physics",
+  "lesson": "Oscilloscopes and signal generators",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Oscilloscopes and signal generators"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "amplitude 1.5 V at a quarter period",
+    "ok": true,
+    "detail": "found (2, 1.5)"
+   },
+   {
+    "name": "one cycle takes 8 ms",
+    "ok": true,
+    "detail": "y(8) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-residual-pattern": {
+  "title": "Residuals that reveal the wrong model",
+  "caption": "A straight line fitted to a cooling curve leaves residuals that are positive at both ends and negative in the middle (+ − − − − + +). A systematic pattern like this says the model is wrong: the data follow T = T_room + ΔT e^(−kt).",
+  "alt": "Temperature against time for a cooling object with a straight best-fit line, and a residual plot below showing a U shape.",
+  "description": [
+   "Temperatures 80, 56.4, 42.1, 33.4, 28.1, 24.9, 23 °C at 10-minute intervals from 0 to 60 minutes.",
+   "Straight-line fit: gradient -0.89 °C per minute, intercept 67.7 °C.",
+   "Residuals in order: + − − − − + +. Random scatter would mix signs; a U shape means curvature the line cannot follow."
+  ],
+  "course": "physics",
+  "lesson": "Residual analysis",
+  "also": [],
+  "renderer": "fit",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Residual analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at least three data points",
+    "ok": true,
+    "detail": "7 points"
+   },
+   {
+    "name": "least-squares gradient is -0.886",
+    "ok": true,
+    "detail": "least squares: −0.8857"
+   },
+   {
+    "name": "least-squares intercept is 67.7",
+    "ok": true,
+    "detail": "67.7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u03-thermistor-calibration": {
+  "title": "Reading a calibration curve",
+  "caption": "Between the calibration points 2.50 kΩ at 20.0 °C and 2.00 kΩ at 25.0 °C the curve is close to a straight line, with slope -0.10 kΩ per °C. A reading of 2.20 kΩ is 23.0 °C.",
+  "alt": "Resistance against temperature: a falling straight segment between two calibration points, with the reading 2.20 kilohms traced across to 23.0 degrees.",
+  "description": [
+   "Calibration points: (20.0 °C, 2.50 kΩ) and (25.0 °C, 2.00 kΩ).",
+   "Slope = (2.00 − 2.50) / (25 − 20) = -0.10 kΩ per °C.",
+   "Reading 2.20 kΩ: T = 20.0 + (2.50 − 2.20) / 0.10 = 23.0 °C.",
+   "Over a wider range a thermistor is far from linear: ln R against 1/T is the curve to fit."
+  ],
+  "course": "physics",
+  "lesson": "Calibration curves",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Calibration curves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the line passes through both calibration points",
+    "ok": true,
+    "detail": "y(25) = 2"
+   },
+   {
+    "name": "2.2 kΩ corresponds to 23.0 °C",
+    "ok": true,
+    "detail": "y(23) = 2.2"
+   },
+   {
+    "name": "slope −0.10 kΩ per °C",
+    "ok": true,
+    "detail": "gradient -0.1000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-two-point-calibration": {
+  "title": "A two-point calibration",
+  "caption": "The thermometer reads 1.5 °C in melting ice (true 0 °C) and 98 °C in boiling water (true 100 °C). The straight line through those two points converts any reading: 50 °C read is 50.3 °C true.",
+  "alt": "Graph of true temperature against reading, a straight line through (1.5, 0) and (98.0, 100), with the reading 50.0 marked at a true value of 50.3.",
+  "description": [
+   "Horizontal axis: the thermometer's reading. Vertical axis: the true temperature.",
+   "Fixed points: reading 1.5 at 0 °C (melting ice) and reading 98 at 100 °C (boiling water at 1 atm).",
+   "Scale factor = 100 / (98 − 1.5) = 1.0363.",
+   "A reading of 50 gives T = (50 − 1.5) × 1.0363 = 50.26 ≈ 50.3 °C."
+  ],
+  "course": "physics",
+  "lesson": "Measurement instruments and calibration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Measurement instruments and calibration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the ice-point reading maps to 0 °C",
+    "ok": true,
+    "detail": "y(1.5) = 0"
+   },
+   {
+    "name": "the steam-point reading maps to 100 °C",
+    "ok": true,
+    "detail": "y(98) = 100"
+   },
+   {
+    "name": "a reading of 50 is 50.26 °C",
+    "ok": true,
+    "detail": "y(50) = 50.2591"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u03-zero-error": {
+  "title": "A systematic zero error",
+  "caption": "Extension against load should pass through the origin. This line crosses the extension axis at 3 mm: a constant offset, a zero error, perhaps from measuring length from the wrong point. The gradient, 4 mm N⁻¹, is unaffected.",
+  "alt": "Five points of extension against load with error bars, the best-fit line meeting the extension axis at about 3 millimetres instead of zero.",
+  "description": [
+   "Load 1 to 5 N; extensions 7.1, 10.9, 15.2, 18.8, 23.1 mm, each ± 0.3 mm.",
+   "Least-squares line: gradient 3.99 mm N⁻¹, intercept 3.05 mm.",
+   "Hooke's law predicts zero extension at zero load, so the intercept is a systematic error; it shifts every reading by the same amount and leaves the gradient unchanged."
+  ],
+  "course": "physics",
+  "lesson": "Random and systematic errors",
+  "also": [],
+  "renderer": "fit",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u03.js: Random and systematic errors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at least three data points",
+    "ok": true,
+    "detail": "5 points"
+   },
+   {
+    "name": "least-squares gradient is 3.99",
+    "ok": true,
+    "detail": "least squares: 3.99"
+   },
+   {
+    "name": "least-squares intercept is 3.05",
+    "ok": true,
+    "detail": "3.05"
+   },
+   {
+    "name": "the line does not pass through the origin",
+    "ok": true,
+    "detail": "intercept 3.05"
+   },
+   {
+    "name": "the line passes through every error bar",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

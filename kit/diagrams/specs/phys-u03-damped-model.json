@@ -1,0 +1,99 @@
+{
+ "id": "phys-u03-damped-model",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Experimental validation of physical models",
+ "title": "The model to be validated: x = A e^(−γt) cos ωt",
+ "caption": "With A = 0.1 m, γ = 0.05 s⁻¹ and a 2 s period, the envelope A e^(−γt) falls to 0.037 m (1/e of A) at t = 1/γ = 20 s. Fitting γ and ω from one run, then predicting a different run and measuring it, tests the model.",
+ "alt": "Damped oscillation of displacement against time inside a dashed exponential envelope that falls from 0.10 metres.",
+ "description": [
+  "Displacement x = 0.1 e^(−0.05t) cos(πt) metres, period 2 s.",
+  "The dashed envelope ±0.1 e^(−0.05t) bounds the swings.",
+  "At t = 1/γ = 20 s the envelope is A/e = 0.037 m.",
+  "If γ depended on the amplitude, the model would fail: air drag proportional to v² would show up this way."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   -0.11,
+   0.11
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   -0.1,
+   -0.05,
+   0.05,
+   0.1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "displacement / m"
+ ],
+ "curves": [
+  {
+   "expr": "0.1*exp(-0.05*x)*cos(2*3.14159265/2*x)",
+   "colour": "a1",
+   "width": 1.8,
+   "samples": 1600
+  },
+  {
+   "expr": "0.1*exp(-0.05*x)",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2
+  },
+  {
+   "expr": "-0.1*exp(-0.05*x)",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2
+  }
+ ],
+ "marks": [
+  {
+   "x": 20,
+   "to": 0.036787944117144235,
+   "label": "t = 1/γ"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.1*exp(-0.05*x)*cos(2*3.14159265/2*x)",
+   "x": 0,
+   "y": 0.1,
+   "name": "starts at A = 0.1 m"
+  },
+  {
+   "type": "point",
+   "expr": "0.1*exp(-0.05*x)",
+   "x": 20,
+   "y": 0.036788,
+   "name": "the envelope is A/e at t = 1/γ"
+  },
+  {
+   "type": "point",
+   "expr": "0.1*exp(-0.05*x)*cos(2*3.14159265/2*x)",
+   "x": 2,
+   "y": 0.090484,
+   "name": "back to a positive peak after one 2 s period"
+  }
+ ]
+}

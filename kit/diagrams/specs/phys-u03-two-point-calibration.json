@@ -1,0 +1,118 @@
+{
+ "id": "phys-u03-two-point-calibration",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Measurement instruments and calibration",
+ "title": "A two-point calibration",
+ "caption": "The thermometer reads 1.5 °C in melting ice (true 0 °C) and 98 °C in boiling water (true 100 °C). The straight line through those two points converts any reading: 50 °C read is 50.3 °C true.",
+ "alt": "Graph of true temperature against reading, a straight line through (1.5, 0) and (98.0, 100), with the reading 50.0 marked at a true value of 50.3.",
+ "description": [
+  "Horizontal axis: the thermometer's reading. Vertical axis: the true temperature.",
+  "Fixed points: reading 1.5 at 0 °C (melting ice) and reading 98 at 100 °C (boiling water at 1 atm).",
+  "Scale factor = 100 / (98 − 1.5) = 1.0363.",
+  "A reading of 50 gives T = (50 − 1.5) × 1.0363 = 50.26 ≈ 50.3 °C."
+ ],
+ "range": {
+  "x": [
+   0,
+   105
+  ],
+  "y": [
+   0,
+   105
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "reading / °C",
+  "true temperature / °C"
+ ],
+ "curves": [
+  {
+   "expr": "(x-1.5)*1.0362694300518134",
+   "colour": "a1",
+   "domain": [
+    1.5,
+    104
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 50,
+   "to": 50.25906735751295
+  },
+  {
+   "y": 50.25906735751295,
+   "to": 50
+  }
+ ],
+ "points": [
+  {
+   "x": 1.5,
+   "y": 0,
+   "colour": "a4"
+  },
+  {
+   "x": 98,
+   "y": 100,
+   "colour": "a4",
+   "label": "fixed points (green)",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 0
+  },
+  {
+   "x": 50,
+   "y": 50.25906735751295,
+   "colour": "a2",
+   "label": "50.3 °C",
+   "dx": 10,
+   "dy": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x-1.5)*1.0362694300518134",
+   "x": 1.5,
+   "y": 0,
+   "name": "the ice-point reading maps to 0 °C"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1.5)*1.0362694300518134",
+   "x": 98,
+   "y": 100,
+   "name": "the steam-point reading maps to 100 °C"
+  },
+  {
+   "type": "point",
+   "expr": "(x-1.5)*1.0362694300518134",
+   "x": 50,
+   "y": 50.2591,
+   "name": "a reading of 50 is 50.26 °C"
+  }
+ ]
+}

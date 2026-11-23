@@ -1,0 +1,111 @@
+{
+ "id": "phys-u03-hypothesis-test",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Hypothesis testing",
+ "title": "Is 9.70 ± 0.04 consistent with 9.81?",
+ "caption": "The difference is z = (9.81 − 9.70) / 0.04 = 2.75 standard uncertainties. The two tails beyond ±2.75, too thin to see, hold p ≈ 0.006 of the distribution, far below 0.05, so the result is inconsistent: look for a systematic error.",
+ "alt": "Standard normal curve with a line at z = 2.75 and dashed lines at ±1.96.",
+ "description": [
+  "The curve is the standard normal distribution of z, the difference in units of the standard uncertainty.",
+  "Dashed lines at ±1.96 mark the 5% two-sided threshold.",
+  "The measurement sits at z = 2.75; the tails beyond ±2.75 together hold p ≈ 0.006.",
+  "Since p < 0.05, reject the hypothesis that the measurement agrees with 9.81 m s⁻²."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   0.45
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "z",
+  "probability density"
+ ],
+ "areas": [
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": 2.75000000000003,
+   "to": 4,
+   "colour": "a2",
+   "opacity": 0.5
+  },
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -4,
+   "to": -2.75000000000003,
+   "colour": "a2",
+   "opacity": 0.5
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.96,
+   "to": 0.3,
+   "label": "1.96"
+  },
+  {
+   "x": -1.96,
+   "to": 0.3,
+   "label": "−1.96"
+  },
+  {
+   "x": 2.75000000000003,
+   "to": 0.12,
+   "label": "z = 2.75"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": 2.75000000000003,
+   "to": 12,
+   "value": 0.00298,
+   "tol": 0.0002,
+   "name": "each tail beyond z = 2.75 holds about 0.00298"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -1.96,
+   "to": 1.96,
+   "value": 0.95,
+   "tol": 0.001,
+   "name": "±1.96 encloses 95%"
+  }
+ ]
+}
