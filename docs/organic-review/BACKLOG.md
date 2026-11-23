@@ -1,14 +1,14 @@
 # Organic Chemistry Lab: Minor findings backlog
 
 The findings CodeRabbit marked **Minor** (or Trivial) in its reviews of PR #159 (Organic Chemistry Lab), recorded here so
-none is lost: M1–M34 from its first two reviews, M35–M54 from its review of the fixes, M55–M56 from its review of the second round of fixes, M57–M58 from its review of the third, M59 from its review of `e03bcad8`. They didn't block the merge: the Major findings did, and are resolved in
+none is lost: M1–M34 from its first two reviews, M35–M54 from its review of the fixes, M55–M56 from its review of the second round of fixes, M57–M58 from its review of the third, M59 from its review of `e03bcad8`, M60–M62 from its review of `18954c29`. They didn't block the merge: the Major findings did, and are resolved in
 [REVIEW-FINDINGS.md](REVIEW-FINDINGS.md).
 
 None of these has been verified yet. Each must be checked against the code and the chemistry before it is changed,
 exactly as the Major findings were: reproduce it, fix the cause rather than the reported example, add a regression
 test, and record a false positive with the reason instead of changing working code.
 
-Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f1` for M35–M54, `5e082af5` for M55–M56, `b8069a30` for M57–M58, `e03bcad8` for M59); later edits may have moved them.
+Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f1` for M35–M54, `5e082af5` for M55–M56, `b8069a30` for M57–M58, `e03bcad8` for M59, `18954c29` for M60–M62); later edits may have moved them.
 
 | # | Where | Kind | Finding (CodeRabbit's wording, abridged) | Status |
 |---|---|---|---|---|
@@ -71,3 +71,6 @@ Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f
 | M57 | `scripts/organic-review.mjs:23` | Data Integrity & Integration | **Quote fields that contain a carriage return.** The CSV writer quotes fields containing commas, quotes or newlines but not a bare carriage return, which `parseCsv` treats as a record boundary: a comment with `first\rsecond` would split its row on the next export. Quote `\r` too, with a round-trip test. | Open Note: the S2 fix (REVIEW-FINDINGS.md section 7) also makes a carriage return force quoting; left listed until the backlog is triaged. |
 | M58 | `scripts/organic-review.mjs:82` | Data Integrity & Integration | **Accept a leading UTF-8 BOM in returned sheets.** A sheet saved by a spreadsheet program with a byte-order mark makes the first header `\uFEFFid`, so the importer reports missing columns. Strip one leading BOM before parsing. | Open |
 | M59 | `kit/labs/chemistry/reactions/mechanism-ui.js:26` | Data Integrity & Integration | **Apply the step limit before accepting unsavable work.** The S1 fix limited a restored note to 40 steps, but "My drawing" accepted more, so a longer note saved and was then dropped on reload. **Verified and fixed**, although Minor, because the S1 fix introduced it and it lost saved work (the release gate allows no data-loss defect): the editor stops at the same limits (40 steps, 12 arrows a step) with a message, and the size caps on restored drawings and states, which the editor never had, were removed. Tests: `saved-work`, browser check S4. |
+| M60 | `kit/labs/chemistry/skeletal.js:67` | Stability & Availability | **Compute the maximum ID without argument spreading.** `restore` finds the next free ID with `Math.max(...ids, ...bondIds)`; with the size cap removed (M59), a drawing with enough atoms could exceed the engine's argument limit and fail to restore. Track the maximum in the existing validation loops instead. (The same spread is in `E.restoreState` in `reactions/electron-flow.js`.) |
+| M61 | `kit/labs/chemistry/reactions/mechanism-ui.js:135` | Stability & Availability | **Replace the spread extrema in `fitAll` with a loop.** `fitAll` spreads every atom coordinate of every replayed state into `Math.min`/`Math.max`; a very large note could throw `RangeError` and fail to reopen. Compute the extrema in one pass, keeping the padding and the empty-view default. |
+| M62 | `scripts/ix-manifest.mjs:22` | Data Integrity & Integration | **Include transitive imports in the interactive fingerprint.** The fingerprint hashes a module and its direct relative imports only, so a change to `reactions/rules.js` (imported through `reaction-ui.js` and `predictor.js`) wouldn't change the organic lab's fingerprint, and a recorded expert review would still read as current. No review is recorded yet, so nothing is shown wrongly today. Traverse the whole reachable import graph (with cycle handling) and regenerate `kit/course/ix-manifest.js`. |
