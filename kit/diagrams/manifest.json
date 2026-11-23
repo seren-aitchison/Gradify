@@ -55873,5 +55873,598 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u04-clock-subgroup": {
+  "title": "The subgroup ⟨4⟩ on the clock ℤ₁₂",
+  "caption": "Adding 4 repeatedly moves round the clock 0 → 4 → 8 → 12 ≡ 0: three equally spaced points, so 4 has order 3 and generates the subgroup ⟨4⟩ = {0, 4, 8} of order 3 (a divisor of 12).",
+  "alt": "A clock face with 12 points marked 0 to 11. The points 0, 4 and 8 are joined into an equilateral triangle.",
+  "description": [
+   "The twelve elements of ℤ₁₂ sit round a clock, 0 at the top.",
+   "Adding 4 jumps four places: 0, then 4, then 8, then 12 ≡ 0 again.",
+   "Those three points form an equilateral triangle, so 4 has order 3 and ⟨4⟩ = {0, 4, 8}."
+  ],
+  "course": "maths",
+  "lesson": "Group Theory",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Group Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the segments marked with 1 ticks are equal",
+    "ok": true,
+    "detail": "04 1.732, 48 1.732, 80 1.732"
+   },
+   {
+    "name": "the 12 clock points lie on the circle",
+    "ok": true,
+    "detail": "1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
+   },
+   {
+    "name": "the sides 0–4 and 4–8 are equal: the steps are 4 places each",
+    "ok": true,
+    "detail": "measured 1.73205"
+   },
+   {
+    "name": "the sides 0–4 and 8–0 are equal: the steps are 4 places each",
+    "ok": true,
+    "detail": "measured 1.73205"
+   },
+   {
+    "name": "the lesson states \"4, 8, 12 ≡ 0\", \"the order of 4 is 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u04-cosets-clock": {
+  "title": "The four cosets of ⟨4⟩ in ℤ₁₂",
+  "caption": "Adding 1, 2 or 3 to ⟨4⟩ = {0, 4, 8} turns the triangle round the clock. The four triangles use every number exactly once, so there are 12 ÷ 3 = 4 cosets, and 1 + ⟨4⟩ has order 4 in the quotient: ℤ₁₂/⟨4⟩ ≅ ℤ₄.",
+  "alt": "A clock face with 12 points. Four equilateral triangles, {0, 4, 8}, {1, 5, 9}, {2, 6, 10} and {3, 7, 11}, in four colours, each point in exactly one triangle.",
+  "description": [
+   "The subgroup ⟨4⟩ = {0, 4, 8} is a triangle on the clock.",
+   "Adding 1 turns it to {1, 5, 9}, adding 2 to {2, 6, 10} and adding 3 to {3, 7, 11}.",
+   "The four triangles are the cosets: congruent, with no point shared, and together they use all 12 numbers.",
+   "Adding 1 four times (0 → 1 → 2 → 3 → 4) returns to ⟨4⟩, so the quotient has order 4: ℤ₁₂/⟨4⟩ ≅ ℤ₄."
+  ],
+  "course": "maths",
+  "lesson": "Quotient Structures",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Quotient Structures"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the 12 clock points lie on the circle",
+    "ok": true,
+    "detail": "1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
+   },
+   {
+    "name": "the coset 1 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock",
+    "ok": true,
+    "detail": "side ratios 1, 1, 1"
+   },
+   {
+    "name": "the coset 2 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock",
+    "ok": true,
+    "detail": "side ratios 1, 1, 1"
+   },
+   {
+    "name": "the coset 3 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock",
+    "ok": true,
+    "detail": "side ratios 1, 1, 1"
+   },
+   {
+    "name": "the lesson states \"2 + ⟨4⟩\", \"12/3 = 4 cosets\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u04-d4-dimensions": {
+  "title": "Squares of dimensions add to |D₄| = 8",
+  "caption": "D₄ has five conjugacy classes, so five irreducible representations, and the squares of their dimensions must add to the order 8. The only way is 1² + 1² + 1² + 1² + 2² = 1 + 1 + 1 + 1 + 4 = 8: four 1-dimensional and one 2-dimensional.",
+  "alt": "One bar of 8 units split into five parts: four parts of 1 labelled 1² and one part of 4 labelled 2².",
+  "description": [
+   "Five classes give five irreducible representations.",
+   "Each contributes the square of its dimension to the total 8.",
+   "Four of dimension 1 give four parts of 1; one of dimension 2 gives a part of 4.",
+   "1 + 1 + 1 + 1 + 4 = 8, the order of the group."
+  ],
+  "course": "maths",
+  "lesson": "Group Representations",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Group Representations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–5 is 8",
+    "ok": true,
+    "detail": "parts add to 8"
+   },
+   {
+    "name": "the bracket label \"1 + 1 + 1 + 1 + 4 = 8\" states 8",
+    "ok": true,
+    "detail": "1 + 1 + 1 + 1 + 4 = 8"
+   },
+   {
+    "name": "the squares of the dimensions 1, 1, 1, 1, 2 are 1, 1, 1, 1, 4, adding to 8",
+    "ok": true,
+    "detail": "parts 1, 1, 1, 1, 4"
+   },
+   {
+    "name": "the lesson states \"1 + 1 + 1 + 1 + 4 = 8\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u04-kernel-fibres": {
+  "title": "The kernel of n ↦ n mod 5",
+  "caption": "The homomorphism φ(n) = n mod 5 sends the multiples of 5 (the kernel 5ℤ) to 0. Every other value has its own fibre, a copy of the kernel shifted along: the integers sent to 3 are …, −7, −2, 3, 8, ….",
+  "alt": "A number line from −10 to 10. The multiples of 5 are marked as the kernel and the integers −7, −2, 3 and 8, which all map to 3, are marked as a second set, each five apart.",
+  "description": [
+   "The line shows the integers from −10 to 10.",
+   "The kernel, the integers that φ sends to 0, is the multiples of 5: −10, −5, 0, 5, 10.",
+   "The integers that φ sends to 3 are −7, −2, 3, 8: the kernel shifted by 3.",
+   "Each fibre is a coset of the kernel, so ℤ/5ℤ has five elements and is isomorphic to ℤ₅."
+  ],
+  "course": "maths",
+  "lesson": "Homomorphisms",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Homomorphisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "-10 is a multiple of 5, so φ(-10) = 0",
+    "ok": true,
+    "detail": "−2"
+   },
+   {
+    "name": "-5 is a multiple of 5, so φ(-5) = 0",
+    "ok": true,
+    "detail": "−1"
+   },
+   {
+    "name": "0 is a multiple of 5, so φ(0) = 0",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "5 is a multiple of 5, so φ(5) = 0",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "10 is a multiple of 5, so φ(10) = 0",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "-7 − 3 is a multiple of 5, so φ(-7) = 3",
+    "ok": true,
+    "detail": "−2"
+   },
+   {
+    "name": "-2 − 3 is a multiple of 5, so φ(-2) = 3",
+    "ok": true,
+    "detail": "−1"
+   },
+   {
+    "name": "3 − 3 is a multiple of 5, so φ(3) = 3",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "8 − 3 is a multiple of 5, so φ(8) = 3",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the lesson states \"ker φ = 5ℤ\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×112"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×112"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u04-rotation-rep": {
+  "title": "ℤ₄ as four rotations",
+  "caption": "Sending k ∈ ℤ₄ to Rᵏ, the quarter turn R = [[0, −1], [1, 0]] applied k times, turns the shape through 0°, 90°, 180° and 270°. A fourth quarter turn returns it to the start, since R⁴ = I, which is why the exponent can be added mod 4.",
+  "alt": "A small triangle in the first quadrant and its images under R, R² and R³: the same triangle turned through 90°, 180° and 270° about the origin.",
+  "description": [
+   "Start with a triangle I in the first quadrant: the image of k = 0.",
+   "R turns it a quarter turn anticlockwise into the second quadrant.",
+   "R² = −I turns it through 180° into the third quadrant, and R³ through 270° into the fourth.",
+   "Another quarter turn is R⁴ = I: back to the start, matching 4 ≡ 0 in ℤ₄."
+  ],
+  "course": "maths",
+  "lesson": "Representation Theory",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Representation Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "R is the image of I under the matrix",
+    "ok": true,
+    "detail": "(−0.5, 1) (−0.5, 3) (−1.5, 1)"
+   },
+   {
+    "name": "R² is the image of I under the matrix",
+    "ok": true,
+    "detail": "(−1, −0.5) (−3, −0.5) (−1, −1.5)"
+   },
+   {
+    "name": "R³ is the image of I under the matrix",
+    "ok": true,
+    "detail": "(0.5, −1) (0.5, −3) (1.5, −1)"
+   },
+   {
+    "name": "the area of R is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the area of R² is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the area of R³ is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the lesson states \"R^{2} = −I\", \"R^{4} = I\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "20 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u04-s3-algebra": {
+  "title": "ℂ[S₃] ≅ ℂ × ℂ × M₂(ℂ) has dimension 6",
+  "caption": "Each factor of the Artin–Wedderburn decomposition contributes the square of an irreducible's dimension: ℂ gives 1, ℂ gives 1 and M₂(ℂ) gives 4. They add to 6 = |S₃|, the dimension of the group algebra.",
+  "alt": "One bar of 6 units split into three parts: 1 for ℂ, 1 for ℂ and 4 for M₂(ℂ).",
+  "description": [
+   "S₃ has irreducible representations of dimensions 1, 1 and 2.",
+   "A d-dimensional irreducible gives a block M_d(ℂ) of dimension d².",
+   "The blocks have dimensions 1, 1 and 4.",
+   "Together 1 + 1 + 4 = 6 = |S₃|, the dimension of ℂ[S₃]."
+  ],
+  "course": "maths",
+  "lesson": "Ring Representations",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Ring Representations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 6",
+    "ok": true,
+    "detail": "parts add to 6"
+   },
+   {
+    "name": "the bracket label \"1 + 1 + 4 = 6\" states 6",
+    "ok": true,
+    "detail": "1 + 1 + 4 = 6"
+   },
+   {
+    "name": "block dimensions 1², 1², 2² = 1, 1, 4 add to 6 = |S₃|",
+    "ok": true,
+    "detail": "parts 1, 1, 4"
+   },
+   {
+    "name": "the lesson states \"1 + 1 + 4 = 6\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u04-units-zero-divisors": {
+  "title": "Units and zero divisors of ℤ₁₂",
+  "caption": "Of the 12 residues, 0 is the zero, 4 are units (1, 5, 7, 11, those coprime to 12) and the other 7 (2, 3, 4, 6, 8, 9, 10) are zero divisors, for example 3 × 4 = 0. Every non-zero element is one or the other.",
+  "alt": "One bar of 12 equal units split into three parts: 1 for the zero, 4 for the units 1, 5, 7 and 11, and 7 for the zero divisors 2, 3, 4, 6, 8, 9 and 10.",
+  "description": [
+   "There are 12 residues, 0 to 11.",
+   "The zero element 0 is one part.",
+   "The units, coprime to 12, are 1, 5, 7 and 11: four of them.",
+   "The remaining seven, 2, 3, 4, 6, 8, 9 and 10, share a factor with 12, so each is a zero divisor."
+  ],
+  "course": "maths",
+  "lesson": "Ring Theory",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u04.js: Ring Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 12",
+    "ok": true,
+    "detail": "parts add to 12"
+   },
+   {
+    "name": "the bracket label \"12 residues\" states 12",
+    "ok": true,
+    "detail": "12 residues"
+   },
+   {
+    "name": "1 zero + 4 units + 7 zero divisors = 12 residues",
+    "ok": true,
+    "detail": "parts 1, 4, 7"
+   },
+   {
+    "name": "the lesson states \"1, 5, 7, 11\", \"2, 3, 4, 6, 8, 9, 10\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

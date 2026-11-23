@@ -1,2 +1,26 @@
-// Unit 4: not planned yet. Fill this per kit/diagrams/maths/UNIT-AGENT.md.
-export default [];
+// Unit 4, Abstract Algebra. Rows: kit/diagrams/BUILDERS.md.
+const PROOF = "an axiom check or a proof from the definitions: the notes' worked steps carry it better than a picture";
+export default [
+  ["u04-01", null, PROOF],
+  ["u04-02", null, "a counterexample to associativity is one line of arithmetic, written in the notes"],
+  ["u04-03", "geometry", "maths-u04-clock-subgroup", "ℤ₁₂ as a clock: 4, 8, 12 ≡ 0 are an equilateral triangle, so the order of 4 is 3"],
+  ["u04-04", "number-line", "maths-u04-kernel-fibres", "n ↦ n mod 5 on a number line: the kernel 5ℤ and the fibre over 3 are evenly spaced sets of integers"],
+  ["u04-05", null, "comparing element orders in ℤ₄ and ℤ₂ × ℤ₂ is a short list of orders in the notes; needs renderer: a Cayley table or group diagram"],
+  ["u04-06", null, "the four automorphisms of ℤ₈ are the maps x ↦ 3x, 5x, 7x, listed in the notes; needs renderer: a group diagram"],
+  ["u04-07", "geometry", "maths-u04-cosets-clock", "the four cosets of ⟨4⟩ in ℤ₁₂ as four congruent triangles tiling the clock"],
+  ["u04-08", null, "orders in a product and partitions of 3 are lists in the notes; needs renderer: a Young diagram or product table"],
+  ["u04-09", null, "reducing a word by cancelling adjacent inverse pairs is a written chain in the notes"],
+  ["u04-10", "bar-model", "maths-u04-units-zero-divisors", "the 12 residues mod 12: 0, four units and seven zero divisors"],
+  ["u04-11", null, "the tower law is one multiplication of degrees; needs renderer: a tower or lattice of fields"],
+  ["u04-12", null, PROOF],
+  ["u04-13", null, "the quaternion product is an expansion using ij = k, written in the notes"],
+  ["u04-14", null, "primality and maximality of an ideal are checked by quotient rings in the notes; needs renderer: a lattice of ideals"],
+  ["u04-15", null, "the five intermediate fields form a subgroup lattice; needs renderer: a Hasse diagram with subgroup and subfield checks"],
+  ["u04-16", null, "exactness is checked at each term of the sequence in the notes; needs renderer: a chain of maps (commutative diagram)"],
+  ["u04-17", null, PROOF],
+  ["u04-18", "transform", "maths-u04-rotation-rep", "the representation k ↦ Rᵏ of ℤ₄: a shape turned by 0°, 90°, 180°, 270° and back to itself after 4 turns"],
+  ["u04-19", "bar-model", "maths-u04-d4-dimensions", "the squares of the dimensions of the irreducibles of D₄ add to 8: 1 + 1 + 1 + 1 + 4"],
+  ["u04-20", "bar-model", "maths-u04-s3-algebra", "the dimensions of ℂ × ℂ × M₂(ℂ) add to 1 + 1 + 4 = 6 = |S₃|"],
+  ["u04-21", null, "counting the parameters of a rotation is a sentence in the notes"],
+  ["u04-22", null, "the commutator [h, e] is a matrix product written in the notes"],
+];

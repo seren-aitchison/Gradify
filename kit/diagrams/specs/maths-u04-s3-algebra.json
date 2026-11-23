@@ -1,0 +1,63 @@
+{
+ "id": "maths-u04-s3-algebra",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Ring Representations",
+ "title": "ℂ[S₃] ≅ ℂ × ℂ × M₂(ℂ) has dimension 6",
+ "caption": "Each factor of the Artin–Wedderburn decomposition contributes the square of an irreducible's dimension: ℂ gives 1, ℂ gives 1 and M₂(ℂ) gives 4. They add to 6 = |S₃|, the dimension of the group algebra.",
+ "alt": "One bar of 6 units split into three parts: 1 for ℂ, 1 for ℂ and 4 for M₂(ℂ).",
+ "description": [
+  "S₃ has irreducible representations of dimensions 1, 1 and 2.",
+  "A d-dimensional irreducible gives a block M_d(ℂ) of dimension d².",
+  "The blocks have dimensions 1, 1 and 4.",
+  "Together 1 + 1 + 4 = 6 = |S₃|, the dimension of ℂ[S₃]."
+ ],
+ "bars": [
+  {
+   "label": "ℂ[S₃]",
+   "parts": [
+    {
+     "value": 1,
+     "text": "ℂ",
+     "colour": "a1"
+    },
+    {
+     "value": 1,
+     "text": "ℂ",
+     "colour": "a1"
+    },
+    {
+     "value": 4,
+     "text": "M₂(ℂ)",
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 2,
+   "value": 6,
+   "text": "1 + 1 + 4 = 6"
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    1,
+    1,
+    4
+   ],
+   "total": 6,
+   "name": "block dimensions 1², 1², 2² = 1, 1, 4 add to 6 = |S₃|"
+  }
+ ],
+ "fromLesson": [
+  "1 + 1 + 4 = 6"
+ ]
+}
