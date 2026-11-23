@@ -495,7 +495,7 @@ footer b { color: var(--fg); font-weight: 600; }
 .plans-foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .find-head { margin-top: clamp(64px, 9vw, 112px); margin-bottom: 0; }
 .find-head p { margin: 14px auto 0; color: var(--mute); font-size: 17px; max-width: 34em; }
-@media (max-width: 960px) { .plans { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .plans { grid-template-columns: minmax(0, 1fr); } }   /* minmax: a wide child (the email row) can't stretch the column past the screen */
 @media (max-width: 640px) { .plan { padding: 20px; } .find-head { text-align: left; } .find-head p { margin-left: 0; } }
 .compare-table .no { color: var(--faint); }
 
@@ -549,7 +549,7 @@ body.ds .sec-head h2, body.ds .section-head h2 { margin: 0 auto; max-width: 16em
 body.ds .sec-head p, body.ds .section-head p { margin: var(--ds-space-5) auto 0; max-width: 32em; font-size: var(--ds-lead); line-height: var(--ds-lead-line); color: var(--ds-fg-2); }
 body.ds .sec-head .grad, body.ds .section-head .grad, body.ds .closing .grad { background: none; -webkit-text-fill-color: currentColor; color: var(--ds-fg-2); }
 /* the bands: full width, alternating white and soft grey */
-body.ds :is(.how, .proof, .showcase, #find, .pro, .faq) { margin-inline: calc(50% - 50vw); padding: var(--ds-space-section) max(var(--gutter), calc(50vw - 50% + var(--gutter))); }
+body.ds :is(.how, .proof, .showcase, #find, .pro, .faq) { margin-inline: calc(50% - 50vw); padding: var(--ds-space-section) max(var(--gutter), calc(50vw - 50%)); }   /* content lines up with the rest of the page */
 body.ds :is(.how, .showcase, .pro) { background: var(--ds-bg-alt); }
 body.ds :is(.proof, #find, .faq) { background: var(--ds-bg); }
 /* glass becomes flat tiles on this page */
@@ -599,3 +599,5 @@ body.ds .plan-cta.btn-ghost { background: transparent !important; color: var(--d
 body.ds .plan-cta.btn-ghost::before, body.ds .plan-cta.btn-ghost::after { display: none !important; }
 body.ds .pro h2 .grad { background: none; -webkit-text-fill-color: currentColor; color: var(--ds-fg-2); }
 @media (max-width: 640px) { body.ds .ds-hero-sec .hero-proof { flex-direction: column; align-items: flex-start; width: fit-content; margin-inline: auto; text-align: left; gap: 8px; } }
+/* the directory search can shrink on the narrowest phones (it was 12px too wide at 320px) */
+#find .controls .search { min-width: 0; flex-basis: 220px; }

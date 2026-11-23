@@ -6,6 +6,9 @@ export function mountReveal(root = document) {
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.motion === "reduce";
   const items = [...root.querySelectorAll(".ds-reveal")];
   if (still || !("IntersectionObserver" in window)) { items.forEach((el) => el.classList.add("in")); return; }
+  // anything already on screen shows straight away; only what's further down waits to fade up
+  for (const el of items) if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in");
+  document.documentElement.classList.add("ds-js");
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
   items.forEach((el) => io.observe(el));
   const zooms = [...root.querySelectorAll(".ds-zoom")]; if (!zooms.length) return;
