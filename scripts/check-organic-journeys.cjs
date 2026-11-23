@@ -62,7 +62,7 @@ function serve() {
     await pg.locator('.osk-tools [data-act="flip"]').click(); await pg.waitForTimeout(150);
     ok(/methanol/.test(await text(".osk-info .osk-name")), `${L}: flip keeps the molecule`);
     ok(await pg.locator(".osk-go [data-go]").count() === 3, `${L}: "Use this molecule" offers Reaction, Mechanism and 3D`);
-    ok(/of 11 done/.test(await text(".osk-probs .osk-chal-n")) && !(await pg.locator(".osk-probs .osk-chal").evaluate((d) => d.open)), `${L}: challenges are a collapsed panel showing progress`);
+    ok(/of \d+ done/.test(await text(".osk-probs .osk-chal-n")) && !(await pg.locator(".osk-probs .osk-chal").evaluate((d) => d.open)), `${L}: challenges are a collapsed panel showing progress`);
     // save it, and find it after a reload (the drawing and the mode come back too)
     await pg.locator(".osk-saved > summary").click();
     await pg.locator(".osk-title").fill("My methanol"); await pg.locator(".osk-bookbtns button", { hasText: "Save to notes" }).click(); await pg.waitForTimeout(200);

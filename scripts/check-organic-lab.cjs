@@ -131,7 +131,7 @@ async function examToggle(p, on) {
     await p.evaluate(() => { const lab = [...document.querySelectorAll('[data-pane="reaction"] label')].find((l) => /Predict first/.test(l.textContent)); const i = lab?.querySelector("input"); if (i && !i.checked) i.click(); });
     await pick(p, ".rx-src", "ethene"); await pick(p, ".rx-reag", "br2-uv"); await p.waitForTimeout(400);
     const t = await p.evaluate(() => document.querySelector('[data-pane="reaction"]').innerText);
-    ok("#25 predict-first doesn't ask (or grade) a case the lab declines", !/Predict the product/.test(t) && /Outside the lab's rules/.test(t), t.match(/Outside the lab's rules|Predict the product/)?.[0] || "");
+    ok("#25 predict-first doesn't ask (or grade) a case the lab declines", !/Predict the product/.test(t) && /Not supported by the lab's rules/.test(t), t.match(/Not supported by the lab's rules|Predict the product/)?.[0] || "");
     await pick(p, ".rx-reag", "kmno4-hot"); await p.waitForTimeout(300);
     await p.evaluate(() => { const lab = [...document.querySelectorAll('[data-pane="reaction"] label')].find((l) => /Predict first/.test(l.textContent)); const i = lab?.querySelector("input"); if (i && i.checked) i.click(); });
     await p.waitForTimeout(300);
