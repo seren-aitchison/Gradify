@@ -22,7 +22,7 @@ for (const f of $$("[data-optin]")) f.addEventListener("submit", async (e) => {
   try {
     const { joinWaitlist } = await import("/kit/data/waitlist.js");
     await joinWaitlist(email, "Study tips");
-    msg.textContent = "Done. Your plan is on its way, then one tip a week.";
+    msg.innerHTML = 'You\'re on the list. Your plan is ready now: <a href="/templates/7-day-exam-plan/">open the 7-day exam plan</a>.';
     f.querySelector("button").disabled = true;
   } catch (err) { msg.textContent = err?.invalid ? err.message : "That didn't send. Try again in a moment."; }
 });
