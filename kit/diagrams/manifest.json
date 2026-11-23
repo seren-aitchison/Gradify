@@ -66503,5 +66503,201 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u28-diode-iv": {
+  "title": "A diode's exponential current",
+  "caption": "Forward current grows as e^(V/V_T), with V_T = kT/e ≈ 25.9 mV at 300 K. A diode passing 1 mA at 0.60 V passes 10.2 mA at 0.66 V: each extra 60 mV multiplies the current by about ten.",
+  "alt": "Diode current in milliamps against voltage: almost zero below 0.5 volts, then rising steeply, through 1 milliamp at 0.60 volts and 10 milliamps at 0.66.",
+  "description": [
+   "I = I_s(e^(V/V_T) − 1), V_T = 25.9 mV at 300 K (n = 1).",
+   "At 0.60 V: 1.0 mA.",
+   "At 0.66 V: 1.0 × e^(0.06/0.0259) = 10.18 mA.",
+   "Below about 0.5 V the current is too small to see on this scale: the familiar 'turn-on voltage'."
+  ],
+  "course": "physics",
+  "lesson": "Diodes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u28.js: Diodes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 mA at 0.60 V",
+    "ok": true,
+    "detail": "y(0.6) = 1"
+   },
+   {
+    "name": "10.18 mA at 0.66 V",
+    "ok": true,
+    "detail": "y(0.66) = 10.1849"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u28-mosfet-output": {
+  "title": "MOSFET output characteristic",
+  "caption": "With V_GS = 1.5 V and V_T = 0.5 V the overdrive is 1.0 V. The drain current rises with V_DS until V_DS = V_GS − V_T, then saturates at I_D = ½(μC_ox W/L)(V_GS − V_T)² = ½ × 2 × 1² = 1.0 mA.",
+  "alt": "Drain current against drain–source voltage, rising in a curve to 1 milliamp at 1 volt and staying flat beyond it.",
+  "description": [
+   "Triode region (V_DS < 1 V): I_D = k[(V_GS − V_T)V_DS − V_DS²/2].",
+   "At V_DS = 1 V the channel pinches off.",
+   "Saturation (V_DS > 1 V): I_D = 1 mA, independent of V_DS (channel-length modulation ignored)."
+  ],
+  "course": "physics",
+  "lesson": "MOSFETs",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u28.js: MOSFETs"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the triode curve meets saturation at 1 mA",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "the triode current peaks exactly at pinch-off",
+    "ok": true,
+    "detail": "found (1, 1)"
+   },
+   {
+    "name": "½k(V_GS − V_T)² = 1.0 mA",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u28-photodiode-responsivity": {
+  "title": "Responsivity of a silicon photodiode",
+  "caption": "Each absorbed photon gives at most one electron, so the current per watt, R = ηλe/hc, grows with wavelength (longer-wavelength photons each carry less energy). With η = 0.8, R = 0.55 A W⁻¹ at 850 nm. Beyond λ = hc/E_g = 1107 nm photons cannot cross silicon's band gap and the response stops.",
+  "alt": "Responsivity in amps per watt against wavelength, a straight line rising from 400 nanometres to a cut-off at about 1100 nanometres, with 0.55 at 850 marked.",
+  "description": [
+   "R = η × λ (nm) / 1240 A W⁻¹, with η = 0.8.",
+   "At 850 nm: 0.548 A W⁻¹.",
+   "Cut-off: 1240 / 1.12 eV = 1107 nm; no response beyond it.",
+   "Real silicon diodes fall off before the cut-off because absorption becomes weak near the gap (not shown)."
+  ],
+  "course": "physics",
+  "lesson": "Photodiodes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u28.js: Photodiodes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.548 A W⁻¹ at 850 nm",
+    "ok": true,
+    "detail": "y(850) = 0.5485"
+   },
+   {
+    "name": "cut-off at 1107 nm",
+    "ok": true,
+    "detail": "y(0) = 1107"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u28-solar-panel": {
+  "title": "Energy through a solar panel",
+  "caption": "The panel receives 1.6 m² × 1000 W m⁻² = 1600 W of sunlight. At 22% efficiency it delivers 352 W of electrical power; the other 1248 W (about 1250 W) is reflected or becomes heat, mostly because photons above the band gap waste their excess energy and those below it are not absorbed.",
+  "alt": "Energy flow diagram: 1600 watts of sunlight in, 352 watts of electrical power out and 1248 watts lost as heat and reflection.",
+  "description": [
+   "Input: 1600 W of sunlight.",
+   "Electrical output: 0.22 × 1600 = 352 W.",
+   "Losses: 1248 W."
+  ],
+  "course": "physics",
+  "lesson": "Solar cells",
+  "also": [],
+  "renderer": "sankey",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u28.js: Solar cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "energy is conserved: the outputs add up to the input",
+    "ok": true,
+    "detail": "in 1600, out 1600 W"
+   },
+   {
+    "name": "every transfer is positive and something is useful",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "efficiency = 22%",
+    "ok": true,
+    "detail": "useful ÷ input = 22%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

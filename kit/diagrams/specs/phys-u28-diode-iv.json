@@ -1,0 +1,109 @@
+{
+ "id": "phys-u28-diode-iv",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u28",
+ "lesson": "Diodes",
+ "title": "A diode's exponential current",
+ "caption": "Forward current grows as e^(V/V_T), with V_T = kT/e ≈ 25.9 mV at 300 K. A diode passing 1 mA at 0.60 V passes 10.2 mA at 0.66 V: each extra 60 mV multiplies the current by about ten.",
+ "alt": "Diode current in milliamps against voltage: almost zero below 0.5 volts, then rising steeply, through 1 milliamp at 0.60 volts and 10 milliamps at 0.66.",
+ "description": [
+  "I = I_s(e^(V/V_T) − 1), V_T = 25.9 mV at 300 K (n = 1).",
+  "At 0.60 V: 1.0 mA.",
+  "At 0.66 V: 1.0 × e^(0.06/0.0259) = 10.18 mA.",
+  "Below about 0.5 V the current is too small to see on this scale: the familiar 'turn-on voltage'."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   0.7
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   0.45,
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "voltage / V",
+  "current / mA"
+ ],
+ "curves": [
+  {
+   "expr": "exp((x-0.6)/0.025852)",
+   "domain": [
+    0.4,
+    0.675
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.6,
+   "to": 1
+  },
+  {
+   "x": 0.66,
+   "to": 10.184873253130057
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6,
+   "y": 1,
+   "colour": "a4",
+   "label": "1 mA at 0.60 V",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  },
+  {
+   "x": 0.66,
+   "y": 10.1849,
+   "colour": "a2",
+   "label": "10.2 mA at 0.66 V",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -6
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp((x-0.6)/0.025852)",
+   "x": 0.6,
+   "y": 1,
+   "name": "1 mA at 0.60 V"
+  },
+  {
+   "type": "point",
+   "expr": "exp((x-0.6)/0.025852)",
+   "x": 0.66,
+   "y": 10.184873,
+   "name": "10.18 mA at 0.66 V"
+  }
+ ]
+}
