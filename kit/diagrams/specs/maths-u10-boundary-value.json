@@ -1,0 +1,102 @@
+{
+ "id": "maths-u10-boundary-value",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Boundary Value Problems",
+ "title": "y = x³ − x meets both boundary conditions",
+ "caption": "Integrating twice gives y = x³ + Ax + B. y(0) = 0 gives B = 0 and y(1) = 1 + A = 0 gives A = −1, so y = x³ − x, zero at both ends.",
+ "alt": "The curve y = x³ − x on 0 to 1, starting and ending at zero and dipping below the axis in between.",
+ "description": [
+  "Integrate y″ = 6x twice: y = x³ + Ax + B.",
+  "y(0) = 0 gives B = 0.",
+  "y(1) = 0 gives A = −1."
+ ],
+ "range": {
+  "x": [
+   -0.2,
+   1.2
+  ],
+  "y": [
+   -0.5,
+   0.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   -0.4,
+   -0.2,
+   0.2
+  ]
+ ],
+ "grid": [
+  1,
+  0.2
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^3-x",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "y(0) = 0",
+   "colour": "a2",
+   "dy": -10
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "label": "y(1) = 0",
+   "colour": "a2",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^3-x",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "type": "point",
+   "expr": "x^3-x",
+   "x": 1,
+   "y": 0
+  },
+  {
+   "type": "min",
+   "expr": "x^3-x",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.577,
+   "y": null,
+   "tol": 0.01,
+   "name": "lowest point at x = 1/√3"
+  }
+ ]
+}

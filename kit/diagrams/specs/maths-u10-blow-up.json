@@ -1,0 +1,100 @@
+{
+ "id": "maths-u10-blow-up",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Nonlinear Differential Equations",
+ "title": "y = 1/(½ − x) blows up at x = ½",
+ "caption": "Separating, −1/y = x + c, so y = 1/(½ − x) from y(0) = 2. The denominator vanishes at x = ½: the solution goes to infinity in finite time.",
+ "alt": "The curve y = 1/(0.5 − x) through (0, 2), rising without bound as x approaches 0.5.",
+ "description": [
+  "Separate: dy/y² = dx.",
+  "Integrate: −1/y = x + c; y(0) = 2 gives c = −½.",
+  "y = 1/(½ − x), undefined at x = ½."
+ ],
+ "range": {
+  "x": [
+   -1,
+   0.6
+  ],
+  "y": [
+   0,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   -0.5,
+   0,
+   0.5
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ]
+ ],
+ "grid": [
+  0.5,
+  12
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "1/(0.5-x)",
+   "colour": "a1",
+   "domain": [
+    -1,
+    0.45
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.5,
+   "label": "x = ½"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 2,
+   "label": "(0, 2)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(0.5-x)",
+   "x": 0,
+   "y": 2
+  },
+  {
+   "type": "point",
+   "expr": "1/(0.5-x)",
+   "x": 0.4,
+   "y": 10
+  },
+  {
+   "type": "point",
+   "expr": "(1/(0.5-(x+0.0001))-1/(0.5-(x-0.0001)))/0.0002-(1/(0.5-x))^2",
+   "x": 0.25,
+   "y": 0,
+   "name": "y′ = y² at x = 0.25"
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "id": "maths-u10-poisson-disc",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Poisson Equation",
+ "title": "∇²u = 1 in the unit disc: u = (r² − 1)/4",
+ "caption": "By symmetry u depends on r only: (1/r)(ru′)′ = 1 gives u = r²/4 + c, and u(1) = 0 gives c = −1/4. The minimum is u(0) = −1/4 at the centre.",
+ "alt": "A parabola u = (r² − 1)/4 against r from 0 to 1, from −0.25 at the centre up to 0 at the boundary r = 1.",
+ "description": [
+  "Radial form: (1/r) d/dr (r du/dr) = 1.",
+  "u = r²/4 + c.",
+  "u(1) = 0 gives c = −¼."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.2
+  ],
+  "y": [
+   -0.3,
+   0.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   -0.2,
+   -0.1,
+   0
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.1
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "r",
+  "u"
+ ],
+ "curves": [
+  {
+   "expr": "(x^2-1)/4",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": -0.25,
+   "label": "u(0) = −¼",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "label": "u(1) = 0",
+   "colour": "a2",
+   "anchor": "end",
+   "dx": -8,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x^2-1)/4",
+   "x": 0,
+   "y": -0.25
+  },
+  {
+   "type": "point",
+   "expr": "(x^2-1)/4",
+   "x": 1,
+   "y": 0
+  },
+  {
+   "type": "min",
+   "expr": "(x^2-1)/4",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0,
+   "y": -0.25
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "id": "maths-u10-fem-hat",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Finite Element Methods",
+ "title": "Two linear elements for −u″ = 1",
+ "caption": "With one interior node at ½, the finite-element solution is the piecewise-linear 'tent' with u(½) = 1/8, which is exact at the node; the true solution x(1 − x)/2 curves above the straight pieces between nodes.",
+ "alt": "The parabola x(1 − x)/2 and the straight-line tent through (0, 0), (0.5, 0.125) and (1, 0).",
+ "description": [
+  "Stiffness: 2/h × u₁ = ∫ φ₁ = h = ½ with h = ½, so u₁ = 1/8.",
+  "u_h is linear on [0, ½] and [½, 1].",
+  "It matches the exact solution at the nodes."
+ ],
+ "range": {
+  "x": [
+   -0.2,
+   1.2
+  ],
+  "y": [
+   -0.05,
+   0.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   0.05,
+   0.1,
+   0.15
+  ]
+ ],
+ "grid": [
+  1,
+  0.15
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*(1-x)/2",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ],
+   "label": "exact",
+   "labelAt": [
+    0.6,
+    0.17
+   ]
+  },
+  {
+   "expr": "x/4",
+   "colour": "a2",
+   "domain": [
+    0,
+    0.5
+   ],
+   "label": "FEM",
+   "labelAt": [
+    0.1,
+    0
+   ]
+  },
+  {
+   "expr": "(1-x)/4",
+   "colour": "a2",
+   "domain": [
+    0.5,
+    1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.125,
+   "label": "1/8",
+   "colour": "a2",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x*(1-x)/2",
+   "x": 0.5,
+   "y": 0.125
+  },
+  {
+   "type": "point",
+   "expr": "x/4",
+   "x": 0.5,
+   "y": 0.125
+  },
+  {
+   "type": "point",
+   "expr": "(1-x)/4",
+   "x": 0.5,
+   "y": 0.125
+  }
+ ]
+}

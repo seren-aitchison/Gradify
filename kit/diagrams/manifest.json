@@ -54672,5 +54672,770 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u10-advected-peak": {
+  "title": "The peak of e^(−x²) moves from 0 to 6 at speed 3",
+  "caption": "Advection with c = 3 slides the profile unchanged: u(x, t) = e^(−(x − 3t)²). At t = 2 the peak is at x = 6.",
+  "alt": "Two identical bell curves: one peaked at x = 0 (t = 0) and one at x = 6 (t = 2).",
+  "description": [
+   "u(x, t) = u₀(x − ct).",
+   "At t = 2 the argument is x − 6.",
+   "The peak, where x − 6 = 0, is at x = 6."
+  ],
+  "course": "maths",
+  "lesson": "Advection Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Advection Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum of exp(-(x-3*2)^2) is at (6, 1)",
+    "ok": true,
+    "detail": "found (6, 1)"
+   },
+   {
+    "name": "maximum of exp(-x^2) is at (0, 1)",
+    "ok": true,
+    "detail": "found (0, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-blow-up": {
+  "title": "y = 1/(½ − x) blows up at x = ½",
+  "caption": "Separating, −1/y = x + c, so y = 1/(½ − x) from y(0) = 2. The denominator vanishes at x = ½: the solution goes to infinity in finite time.",
+  "alt": "The curve y = 1/(0.5 − x) through (0, 2), rising without bound as x approaches 0.5.",
+  "description": [
+   "Separate: dy/y² = dx.",
+   "Integrate: −1/y = x + c; y(0) = 2 gives c = −½.",
+   "y = 1/(½ − x), undefined at x = ½."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Differential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Nonlinear Differential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 2) lies on y = 1/(0.5-x)",
+    "ok": true,
+    "detail": "y(0) = 2"
+   },
+   {
+    "name": "(0.4, 10) lies on y = 1/(0.5-x)",
+    "ok": true,
+    "detail": "y(0.4) = 10"
+   },
+   {
+    "name": "y′ = y² at x = 0.25",
+    "ok": true,
+    "detail": "y(0.25) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-boundary-value": {
+  "title": "y = x³ − x meets both boundary conditions",
+  "caption": "Integrating twice gives y = x³ + Ax + B. y(0) = 0 gives B = 0 and y(1) = 1 + A = 0 gives A = −1, so y = x³ − x, zero at both ends.",
+  "alt": "The curve y = x³ − x on 0 to 1, starting and ending at zero and dipping below the axis in between.",
+  "description": [
+   "Integrate y″ = 6x twice: y = x³ + Ax + B.",
+   "y(0) = 0 gives B = 0.",
+   "y(1) = 0 gives A = −1."
+  ],
+  "course": "maths",
+  "lesson": "Boundary Value Problems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Boundary Value Problems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 0) lies on y = x^3-x",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "(1, 0) lies on y = x^3-x",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "lowest point at x = 1/√3",
+    "ok": true,
+    "detail": "found (0.577, -0.3849)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-box-states": {
+  "title": "Particle in a box (L = 1): ψ₁ and ψ₂",
+  "caption": "Normalising φ = A sin(πx/L) gives A = √(2/L) (here √2). The second state sin(2πx/L) has twice the wave number, so E₂/E₁ = 4.",
+  "alt": "Two curves on 0 to 1: ψ₁ a single hump with peak √2 at x = ½, and ψ₂ with one positive and one negative hump.",
+  "description": [
+   "∫ A² sin²(πx/L) dx = A²L/2 = 1 gives A = √(2/L).",
+   "Eₙ ∝ n², so E₂/E₁ = 4.",
+   "ψ₂ has a node at x = L/2."
+  ],
+  "course": "maths",
+  "lesson": "Schrödinger Equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Schrödinger Equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum of sqrt(2)*sin(3.141592653589793*x) is at (0.5, 1.414)",
+    "ok": true,
+    "detail": "found (0.5, 1.414)"
+   },
+   {
+    "name": "ψ₁² has total area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "(0.5, 0) lies on y = sqrt(2)*sin(6.283185307179586*x)",
+    "ok": true,
+    "detail": "y(0.5) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-coffee-cooling": {
+  "title": "Coffee cooling from 90°C towards 20°C",
+  "caption": "T = 20 + 70e^(−kt) with k = ln(7/4)/10 ≈ 0.0560 per minute: 90°C at t = 0 and 60°C at t = 10. The room's 20°C is the asymptote.",
+  "alt": "A decaying curve from 90 at t = 0 to 60 at t = 10, levelling off towards 20.",
+  "description": [
+   "T − 20 decays exponentially: T = 20 + 70e^(−kt).",
+   "T(10) = 60 gives e^(−10k) = 40/70, so k = ln(7/4)/10.",
+   "T falls towards 20°C and never goes below it."
+  ],
+  "course": "maths",
+  "lesson": "First-Order Differential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: First-Order Differential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 90) lies on y = 20+70*exp(-0.055961578793542265*x)",
+    "ok": true,
+    "detail": "y(0) = 90"
+   },
+   {
+    "name": "(10, 60) lies on y = 20+70*exp(-0.055961578793542265*x)",
+    "ok": true,
+    "detail": "y(10) = 60"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-cosine-ivp": {
+  "title": "y = cos x solves y″ + y = 0, y(0) = 1, y′(0) = 0",
+  "caption": "The general solution is A cos x + B sin x. y(0) = 1 gives A = 1 and y′(0) = B = 0, so y = cos x: starts at 1 with zero slope.",
+  "alt": "The cosine curve starting at its maximum (0, 1) with a horizontal tangent.",
+  "description": [
+   "Characteristic roots ±i: y = A cos x + B sin x.",
+   "y(0) = A = 1.",
+   "y′(0) = B = 0, so y = cos x."
+  ],
+  "course": "maths",
+  "lesson": "Initial Value Problems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Initial Value Problems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 1) lies on y = cos(x)",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "maximum of cos(x) is at (0, 1)",
+    "ok": true,
+    "detail": "found (0, 1)"
+   },
+   {
+    "name": "y″ + y = 0 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-delay-steps": {
+  "title": "x′(t) = −x(t − 1) solved step by step",
+  "caption": "On 0 ≤ t ≤ 1 the delayed value is 1, so x = 1 − t. On 1 ≤ t ≤ 2 the delayed value is 1 − (t − 1), giving x = (t − 1)(t − 3)/2, so x(2) = −½.",
+  "alt": "A line falling from 1 to 0 on 0 to 1, then a curved piece dipping to −0.5 at t = 2.",
+  "description": [
+   "0 ≤ t ≤ 1: x′ = −1 and x(0) = 1, so x = 1 − t.",
+   "1 ≤ t ≤ 2: x′ = t − 2, with x(1) = 0.",
+   "x(t) = (t − 1)(t − 3)/2; x(2) = −½."
+  ],
+  "course": "maths",
+  "lesson": "Delay Differential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Delay Differential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 0) lies on y = 1-x",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "(1, 0) lies on y = (x-1)*(x-3)/2",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "(2, -0.5) lies on y = (x-1)*(x-3)/2",
+    "ok": true,
+    "detail": "y(2) = -0.5"
+   },
+   {
+    "name": "x′(t) = −x(t − 1) at t = 1.5",
+    "ok": true,
+    "detail": "y(1.5) = 0.0001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-exponential-solution": {
+  "title": "y = Ce²ˣ with y(0) = 3",
+  "caption": "y = Ce²ˣ has y′ = 2Ce²ˣ = 2y for every C. The condition y(0) = 3 picks C = 3: the curve y = 3e²ˣ through (0, 3).",
+  "alt": "The curve y = 3e^(2x) rising steeply through the point (0, 3).",
+  "description": [
+   "Differentiate y = Ce²ˣ: y′ = 2Ce²ˣ = 2y.",
+   "Put x = 0: C = 3.",
+   "The solution is y = 3e²ˣ."
+  ],
+  "course": "maths",
+  "lesson": "Ordinary Differential Equations (ODEs)",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Ordinary Differential Equations (ODEs)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 3) lies on y = 3*exp(2*x)",
+    "ok": true,
+    "detail": "y(0) = 3"
+   },
+   {
+    "name": "(1, 22.167) lies on y = 3*exp(2*x)",
+    "ok": true,
+    "detail": "y(1) = 22.1672"
+   },
+   {
+    "name": "slope at x = 0 is 2y = 6",
+    "ok": true,
+    "detail": "y(0) = 6.006"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-fem-hat": {
+  "title": "Two linear elements for −u″ = 1",
+  "caption": "With one interior node at ½, the finite-element solution is the piecewise-linear 'tent' with u(½) = 1/8, which is exact at the node; the true solution x(1 − x)/2 curves above the straight pieces between nodes.",
+  "alt": "The parabola x(1 − x)/2 and the straight-line tent through (0, 0), (0.5, 0.125) and (1, 0).",
+  "description": [
+   "Stiffness: 2/h × u₁ = ∫ φ₁ = h = ½ with h = ½, so u₁ = 1/8.",
+   "u_h is linear on [0, ½] and [½, 1].",
+   "It matches the exact solution at the nodes."
+  ],
+  "course": "maths",
+  "lesson": "Finite Element Methods",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Finite Element Methods"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0.5, 0.125) lies on y = x*(1-x)/2",
+    "ok": true,
+    "detail": "y(0.5) = 0.125"
+   },
+   {
+    "name": "(0.5, 0.125) lies on y = x/4",
+    "ok": true,
+    "detail": "y(0.5) = 0.125"
+   },
+   {
+    "name": "(0.5, 0.125) lies on y = (1-x)/4",
+    "ok": true,
+    "detail": "y(0.5) = 0.125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-greens-solution": {
+  "title": "−u″ = 1 on [0, 1]: u = x(1 − x)/2",
+  "caption": "Integrating the Green's function G(x, s) against f = 1 gives u(x) = x(1 − x)/2: zero at both ends, with maximum 1/8 at the midpoint.",
+  "alt": "A parabola u = x(1 − x)/2 over 0 to 1, zero at both ends with its peak 0.125 at x = 0.5.",
+  "description": [
+   "u(x) = ∫ G(x, s) · 1 ds with G built from the two boundary conditions.",
+   "The integral gives u = x(1 − x)/2.",
+   "Peak at x = ½: u = 1/8."
+  ],
+  "course": "maths",
+  "lesson": "Green's Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Green's Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum of x*(1-x)/2 is at (0.5, 0.125)",
+    "ok": true,
+    "detail": "found (0.5, 0.125)"
+   },
+   {
+    "name": "(0, 0) lies on y = x*(1-x)/2",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "−u″ = 1",
+    "ok": true,
+    "detail": "y(0.3) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-heat-smoothing": {
+  "title": "The heat equation damps the high mode faster",
+  "caption": "u = 3e^(−t) sin x + e^(−4t) sin 2x: the sin 2x part decays four times as fast. At t = 0.5 the profile is already close to a single smooth hump.",
+  "alt": "Two curves on 0 to π: the initial profile 3 sin x + sin 2x with a skewed peak, and the profile at t = 0.5, lower and smoother.",
+  "description": [
+   "Each mode sin(nx) decays as e^(−n²t).",
+   "At t = 0: u = 3 sin x + sin 2x.",
+   "At t = 0.5: u = 3e^(−0.5) sin x + e^(−2) sin 2x."
+  ],
+  "course": "maths",
+  "lesson": "Heat Equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Heat Equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1.5707963267948966, 3) lies on y = 3*exp(-0*1)*sin(x)+exp(-0)*sin(2*x)",
+    "ok": true,
+    "detail": "y(1.5707963267948966) = 3"
+   },
+   {
+    "name": "(1.5707963267948966, 1.82) lies on y = 3*exp(-0.5*1)*sin(x)+exp(-2)*sin(2*x)",
+    "ok": true,
+    "detail": "y(1.5707963267948966) = 1.8196"
+   },
+   {
+    "name": "(0, 0) lies on y = 3*exp(-0*1)*sin(x)+exp(-0)*sin(2*x)",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "(3.141592653589793, 0) lies on y = 3*exp(-0.5*1)*sin(x)+exp(-2)*sin(2*x)",
+    "ok": true,
+    "detail": "y(3.141592653589793) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-linear-first-order": {
+  "title": "y = 2 − 2e^(−2x) levels off at 2",
+  "caption": "The integrating factor e²ˣ gives (e²ˣy)′ = 4e²ˣ, so y = 2 + Ce^(−2x); y(0) = 0 makes C = −2. The transient dies away and y tends to 2.",
+  "alt": "The curve y = 2 − 2e^(−2x) rising from (0, 0) towards the horizontal line y = 2.",
+  "description": [
+   "Multiply by e²ˣ: (e²ˣy)′ = 4e²ˣ.",
+   "Integrate: y = 2 + Ce^(−2x).",
+   "y(0) = 0 gives C = −2."
+  ],
+  "course": "maths",
+  "lesson": "Linear Differential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Linear Differential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 0) lies on y = 2-2*exp(-2*x)",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "(1, 1.729) lies on y = 2-2*exp(-2*x)",
+    "ok": true,
+    "detail": "y(1) = 1.7293"
+   },
+   {
+    "name": "y′ + 2y = 4 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 3.9999"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-poisson-disc": {
+  "title": "∇²u = 1 in the unit disc: u = (r² − 1)/4",
+  "caption": "By symmetry u depends on r only: (1/r)(ru′)′ = 1 gives u = r²/4 + c, and u(1) = 0 gives c = −1/4. The minimum is u(0) = −1/4 at the centre.",
+  "alt": "A parabola u = (r² − 1)/4 against r from 0 to 1, from −0.25 at the centre up to 0 at the boundary r = 1.",
+  "description": [
+   "Radial form: (1/r) d/dr (r du/dr) = 1.",
+   "u = r²/4 + c.",
+   "u(1) = 0 gives c = −¼."
+  ],
+  "course": "maths",
+  "lesson": "Poisson Equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Poisson Equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, -0.25) lies on y = (x^2-1)/4",
+    "ok": true,
+    "detail": "y(0) = -0.25"
+   },
+   {
+    "name": "(1, 0) lies on y = (x^2-1)/4",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "minimum of (x^2-1)/4 is at x = 0",
+    "ok": true,
+    "detail": "found (0, -0.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-saddle-node": {
+  "title": "x′ = r + x²: equilibria x = ±√(−r)",
+  "caption": "Equilibria satisfy x² = −r. For r < 0 there are two, x = ±√(−r); they merge at r = 0 and vanish for r > 0. The lower branch is stable, the upper unstable.",
+  "alt": "A sideways parabola of equilibria x = ±√(−r) against r, opening to the left and ending at the origin.",
+  "description": [
+   "Set r + x² = 0.",
+   "r < 0: two equilibria ±√(−r).",
+   "r = 0: one; r > 0: none."
+  ],
+  "course": "maths",
+  "lesson": "Bifurcation Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Bifurcation Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(-4, 2) lies on y = sqrt(-x)",
+    "ok": true,
+    "detail": "y(-4) = 2"
+   },
+   {
+    "name": "(-1, -1) lies on y = -sqrt(-x)",
+    "ok": true,
+    "detail": "y(-1) = -1"
+   },
+   {
+    "name": "r + x² = 0 on the upper branch",
+    "ok": true,
+    "detail": "y(-2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u10-separable": {
+  "title": "y = 2e^(x²/2) solves dy/dx = xy",
+  "caption": "Separating, dy/y = x dx gives ln y = x²/2 + c, so y = Ce^(x²/2); y(0) = 2 makes C = 2. At x = 1, y = 2e^½ ≈ 3.297.",
+  "alt": "The curve y = 2e^(x²/2), symmetric about the y axis, through (0, 2).",
+  "description": [
+   "Separate: dy/y = x dx.",
+   "Integrate: ln y = x²/2 + c, so y = Ce^(x²/2).",
+   "y(0) = 2 gives C = 2."
+  ],
+  "course": "maths",
+  "lesson": "Separable Differential Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u10.js: Separable Differential Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0, 2) lies on y = 2*exp(x^2/2)",
+    "ok": true,
+    "detail": "y(0) = 2"
+   },
+   {
+    "name": "(1, 3.297) lies on y = 2*exp(x^2/2)",
+    "ok": true,
+    "detail": "y(1) = 3.2974"
+   },
+   {
+    "name": "dy/dx = xy at x = 1",
+    "ok": true,
+    "detail": "y(1) = 3.2978"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

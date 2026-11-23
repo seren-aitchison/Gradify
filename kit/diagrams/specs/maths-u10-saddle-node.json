@@ -1,0 +1,101 @@
+{
+ "id": "maths-u10-saddle-node",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Bifurcation Theory",
+ "title": "x′ = r + x²: equilibria x = ±√(−r)",
+ "caption": "Equilibria satisfy x² = −r. For r < 0 there are two, x = ±√(−r); they merge at r = 0 and vanish for r > 0. The lower branch is stable, the upper unstable.",
+ "alt": "A sideways parabola of equilibria x = ±√(−r) against r, opening to the left and ending at the origin.",
+ "description": [
+  "Set r + x² = 0.",
+  "r < 0: two equilibria ±√(−r).",
+  "r = 0: one; r > 0: none."
+ ],
+ "range": {
+  "x": [
+   -4,
+   1
+  ],
+  "y": [
+   -2.5,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -3,
+   -2,
+   -1
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "r",
+  "x"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(-x)",
+   "colour": "a1",
+   "domain": [
+    -4,
+    0
+   ]
+  },
+  {
+   "expr": "-sqrt(-x)",
+   "colour": "a2",
+   "dash": true,
+   "domain": [
+    -4,
+    0
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "r = 0",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(-x)",
+   "x": -4,
+   "y": 2
+  },
+  {
+   "type": "point",
+   "expr": "-sqrt(-x)",
+   "x": -1,
+   "y": -1
+  },
+  {
+   "type": "point",
+   "expr": "x+(sqrt(-x))^2",
+   "x": -2,
+   "y": 0,
+   "name": "r + x² = 0 on the upper branch"
+  }
+ ]
+}
