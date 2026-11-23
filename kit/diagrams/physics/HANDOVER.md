@@ -7,7 +7,8 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 
 1. Check the claims table below; the units in it may have landed since this was written:
    `git log origin/main --oneline -- kit/diagrams/plans/physics/` and `node scripts/diagrams/unit-status.mjs physics`.
-2. Units not started and not claimed, in order: u24 (a draft plan is on `wip/phys-u24`), u25 … u54.
+2. Units not started and not claimed, in order: u24 (draft on `wip/phys-u24`), u40 … u54. (u21–u23 and u25–u39 landed 23–24 Nov.)
+   Previously listed: u24 (a draft plan is on `wip/phys-u24`), u25 … u54.
    Give one agent three at a time (the owner's instruction: one maths agent and one physics agent, three units each,
    push after every unit).
 3. The course has **54 units**; until 23 Nov the plan scaffold covered only u01–u32, so older notes that say "u02–u32"
@@ -83,7 +84,6 @@ A unit listed here is being built; don't start it in another session. Remove the
 | Units | Claimed by |
 |---|---|
 | u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
-| u37, u38, u39 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
 
 ## Unit notes
 
@@ -121,6 +121,9 @@ Commit, diagrams and lessons per unit; "lacks" lists renderers its null rows ask
 - **u34** Biophysics (3abe8cb7): 4 diagrams. Lacks beam (forearm lever).
 - **u35** Medical physics (4b4ad31d): 3 diagrams.
 - **u36** Photonics (932b8c1d): 3 diagrams. Lacks LED escape-cone rays.
+- **u37** Quantum information (2d436481): 4 diagrams. Lacks the Bloch sphere, quantum circuits.
+- **u38** Nonlinear dynamics (ab628d3c, label fix e5872c2f): 5 diagrams, 3 lab lessons. Lacks phase portraits, bifurcation diagrams, attractors.
+- **u39** Computational physics (fc61238d): 5 diagrams.
 
 ## Lesson errors
 
