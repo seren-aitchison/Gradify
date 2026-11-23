@@ -35,7 +35,7 @@ export const SUGGESTIONS = [
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const A = () => window.gradifyAccess;
-let panel = null, opener = null;
+let panel = null, opener = null, offTheme = null;
 
 // Appearance: follow the device (the default for everyone, kit/core/theme-boot.js), or a light or dark choice for
 // this device. The sun/moon button picks light or dark; this is where "follow my device" can be chosen again.
@@ -48,6 +48,7 @@ function appearanceHtml() {
 
 export function openAccessPanel(from = null) {
   opener = from || document.activeElement;
+  offTheme?.();
   panel?.remove();
   const p = A().get();
   panel = document.createElement("div");
@@ -65,7 +66,11 @@ export function openAccessPanel(from = null) {
     </section>`;
   document.body.append(panel);
   const dlg = panel.querySelector(".a-panel");
-  const close = () => { panel?.remove(); panel = null; document.removeEventListener("keydown", onKey, true); opener?.focus?.(); };
+  // another tab, the sun/moon button or the device can change the theme while the panel is open: keep the choice shown
+  const onTheme = (e) => { const c = e.detail?.choice || window.gradifyTheme?.get?.() || "system"; panel?.querySelectorAll('input[name="a-theme"]').forEach((i) => { i.checked = i.value === c; }); };
+  document.addEventListener("gradify:theme", onTheme);
+  offTheme = () => { document.removeEventListener("gradify:theme", onTheme); offTheme = null; };
+  const close = () => { panel?.remove(); panel = null; document.removeEventListener("keydown", onKey, true); offTheme?.(); opener?.focus?.(); };
   const onKey = (e) => {
     if (e.key === "Escape") { e.preventDefault(); close(); return; }
     if (e.key !== "Tab") return;

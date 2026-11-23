@@ -38,7 +38,8 @@ scrolls), `.ds-stats`, and `.ds-reveal` (a calm fade-up, `kit/ui/reveal.js`). Ev
 `.ds-cards` (a `.ds-card-link` makes the whole card clickable, with the focus ring on the card), `.ds-badge`
 (`.accent`, `.success`, `.warning`, `.danger`), `.ds-field` / `.ds-input` / `.ds-hint` / `.ds-error` / `.ds-search`,
 `.ds-stat` / `.ds-stat-row`, `.ds-notice` (`.info`, `.success`, `.warning`, `.danger`) and `.ds-empty`. Every colour
-comes from a token (status colours are AA on their own backgrounds in both themes) and nothing uses `!important`;
+comes from a token (status colours are AA on their own backgrounds in both themes; input borders use `--ds-field` and
+focus rings `--ds-focus`, both at least 3:1 against every surface; `--ds-line` is for decorative separators only) and nothing uses `!important`;
 `tests/design-tokens.test.mjs` checks both. Homepage-only overrides in `assets/styles.css` are not part of the system
 and are never copied into subject sites. The review page is `labs/design-system/` (never published).
 

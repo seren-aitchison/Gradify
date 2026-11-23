@@ -33,6 +33,11 @@ test("status colours pass WCAG AA on their own backgrounds, and secondary text o
     for (const s of ["success", "warning", "danger"]) assert.ok(ratio(c[s], c[`${s}-bg`]) >= 4.5, `${t} ${s}`);
     for (const bg of ["bg", "bg-alt", "surface"]) assert.ok(ratio(c["fg-2"], c[bg]) >= 4.5, `${t} fg-2 on ${bg}`);
     for (const bg of ["bg", "surface"]) assert.ok(ratio(c.link, c[bg]) >= 4.5, `${t} link on ${bg}`);
+    // non-text contrast (WCAG 1.4.11): input borders and the focus ring against every surface an input sits on
+    for (const bg of ["bg", "bg-alt", "surface"]) {
+      assert.ok(ratio(c.field, c[bg]) >= 3, `${t} input border on ${bg}`);
+      assert.ok(ratio(c.focus, c[bg]) >= 3, `${t} focus ring on ${bg}`);
+    }
   }
 });
 

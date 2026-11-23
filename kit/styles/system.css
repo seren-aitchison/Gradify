@@ -25,12 +25,12 @@
   /* colour: dark (Gradify's default theme) */
   --ds-bg: #000000; --ds-bg-alt: #161617; --ds-fg: #f5f5f7; --ds-fg-2: #a1a1a6; --ds-line: #424245;
   --ds-accent: #5b55ff; --ds-accent-fg: #ffffff; --ds-link: #a29fff; --ds-tile-dark: #161617;
-  --ds-surface: #1d1d1f; --ds-success: #5fd39a; --ds-success-bg: #11291d; --ds-warning: #f0b24a; --ds-warning-bg: #2c2210; --ds-danger: #ff7b93; --ds-danger-bg: #2d1218; --ds-focus: #a29fff;
+  --ds-surface: #1d1d1f; --ds-success: #5fd39a; --ds-success-bg: #11291d; --ds-warning: #f0b24a; --ds-warning-bg: #2c2210; --ds-danger: #ff7b93; --ds-danger-bg: #2d1218; --ds-focus: #a29fff; --ds-field: #7c7c80;
 }
 :root[data-theme="light"] {
   --ds-bg: #ffffff; --ds-bg-alt: #f5f5f7; --ds-fg: #1d1d1f; --ds-fg-2: #6e6e73; --ds-line: #d2d2d7;
   --ds-accent: #4641ff; --ds-accent-fg: #ffffff; --ds-link: #3c35f0; --ds-tile-dark: #000000;
-  --ds-surface: #ffffff; --ds-success: #0f7b47; --ds-success-bg: #e6f5ec; --ds-warning: #8a5300; --ds-warning-bg: #fdf1dc; --ds-danger: #b4233c; --ds-danger-bg: #fbe8ec; --ds-focus: #4641ff;
+  --ds-surface: #ffffff; --ds-success: #0f7b47; --ds-success-bg: #e6f5ec; --ds-warning: #8a5300; --ds-warning-bg: #fdf1dc; --ds-danger: #b4233c; --ds-danger-bg: #fbe8ec; --ds-focus: #4641ff; --ds-field: #86868b;
 }
 
 /* ---------- The page ---------- */
@@ -141,13 +141,13 @@ body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
 .ds-field > label, .ds-label { font-size: 14px; font-weight: 600; color: var(--ds-fg); }
 .ds-hint { margin: 0; font-size: 13px; color: var(--ds-fg-2); }
 .ds-error { margin: 0; font-size: 13px; color: var(--ds-danger); }
-.ds-input { box-sizing: border-box; width: 100%; min-height: 48px; padding: 0 var(--ds-space-4); border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-line); background: var(--ds-surface); color: var(--ds-fg);
+.ds-input { box-sizing: border-box; width: 100%; min-height: 48px; padding: 0 var(--ds-space-4); border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-field); background: var(--ds-surface); color: var(--ds-fg);
   font: inherit; font-size: 17px; transition: border-color var(--ds-fast) var(--ds-ease), box-shadow var(--ds-fast) var(--ds-ease); }
 .ds-input::placeholder { color: var(--ds-fg-2); }
-.ds-input:focus { outline: none; border-color: var(--ds-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-focus) 35%, transparent); }
+.ds-input:focus { outline: 2px solid var(--ds-focus); outline-offset: 2px; border-color: var(--ds-focus); }
 .ds-input[aria-invalid="true"] { border-color: var(--ds-danger); }
 .ds-search { position: relative; display: block; }
-.ds-search .ds-input { padding-left: 44px; border-radius: var(--ds-radius-pill); background: var(--ds-bg-alt); border-color: transparent; }
+.ds-search .ds-input { padding-left: 44px; border-radius: var(--ds-radius-pill); background: var(--ds-bg-alt); }
 .ds-search svg { position: absolute; left: 16px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--ds-fg-2); pointer-events: none; }
 
 /* stat: one number and what it means; .ds-stat-row lays several out */
