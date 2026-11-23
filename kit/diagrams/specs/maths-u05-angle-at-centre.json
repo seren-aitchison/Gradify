@@ -1,0 +1,125 @@
+{
+ "id": "maths-u05-angle-at-centre",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Circle Theorems",
+ "title": "Angle at the centre is twice the angle at the circumference",
+ "caption": "The arc AC makes an angle of 140° at the centre O and half of that, 70°, at B on the major arc.",
+ "alt": "A circle with centre O and points A, B, C on it; angle AOC is 140 degrees and angle ABC is 70 degrees.",
+ "description": [
+  "A, B and C lie on a circle with centre O, and angle AOC = 140°.",
+  "B is on the major arc, opposite the 140° angle.",
+  "The angle at the circumference is half the angle at the centre: ABC = 140 ÷ 2 = 70°."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   4.698463103929543,
+   1.7101007166283435
+  ],
+  "B": [
+   -9.184850993605148e-16,
+   -5
+  ],
+  "C": [
+   -4.698463103929542,
+   1.7101007166283444
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 5,
+   "colour": "ink"
+  }
+ ],
+ "segments": [
+  [
+   "O",
+   "A"
+  ],
+  [
+   "O",
+   "C"
+  ],
+  [
+   "B",
+   "A"
+  ],
+  [
+   "B",
+   "C"
+  ]
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "A",
+   "to": "C",
+   "deg": 140,
+   "label": "140°",
+   "colour": "a1",
+   "r": 26
+  },
+  {
+   "at": "B",
+   "from": "A",
+   "to": "C",
+   "deg": 70,
+   "label": "70°",
+   "colour": "a2",
+   "r": 40,
+   "labelR": 10
+  }
+ ],
+ "labelAt": {
+  "O": [
+   0,
+   18
+  ],
+  "A": [
+   12,
+   -10
+  ],
+  "C": [
+   -12,
+   -10
+  ],
+  "B": [
+   0,
+   16
+  ]
+ },
+ "view": {
+  "x": [
+   -6.6,
+   6.6
+  ],
+  "y": [
+   -6.2,
+   6.2
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "A",
+    "B",
+    "C"
+   ],
+   "name": "A, B and C are on the circle"
+  }
+ ],
+ "fromLesson": [
+  "Angle ABC = 140 ÷ 2"
+ ]
+}

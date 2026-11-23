@@ -1,0 +1,52 @@
+{
+ "id": "maths-u05-cross-ratio",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Projective Geometry",
+ "title": "The cross-ratio (A, B; C, D) = 9/8",
+ "caption": "With A, B, C, D at 0, 1, 3, 4 the distances are AC = 3, BD = 3, BC = 2, AD = 4, so (A, B; C, D) = (3 × 3)/(2 × 4) = 9/8.",
+ "alt": "A number line with the four points A, B, C, D at 0, 1, 3 and 4.",
+ "description": [
+  "The points A, B, C, D sit at 0, 1, 3 and 4.",
+  "AC = 3, BD = 3, BC = 2 and AD = 4.",
+  "The cross-ratio is (3 × 3)/(2 × 4) = 9/8, unchanged by any projection of the line."
+ ],
+ "range": [
+  -0.5,
+  4.5
+ ],
+ "ticks": {
+  "step": 1
+ },
+ "minor": 0.5,
+ "points": [
+  {
+   "value": 0,
+   "label": "A"
+  },
+  {
+   "value": 1,
+   "label": "B"
+  },
+  {
+   "value": 3,
+   "label": "C"
+  },
+  {
+   "value": 4,
+   "label": "D"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "((3-0)*(4-1))/((3-1)*(4-0))",
+   "value": "9/8",
+   "name": "(AC × BD)/(BC × AD) = 9/8"
+  }
+ ],
+ "fromLesson": [
+  "9/8"
+ ]
+}

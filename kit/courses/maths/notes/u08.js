@@ -23,6 +23,7 @@ X: For f(x, y) = x^{2}y + 3xy^{2}, find f_{x}, f_{y} and the tangent plane at (1
 > f_{x} = 2xy + 3y^{2} = 4 + 12 = 16 at (1, 2); f_{y} = x^{2} + 6xy = 1 + 12 = 13
 > f(1, 2) = 2 + 12 = 14
 > Tangent plane: z = 14 + 16(x − 1) + 13(y − 2)
+D: maths-u08-partial-slice
 K: Partial derivatives hold other variables fixed; mixed partials agree when continuous; the tangent plane gives Δf ≈ f_{x}Δx + f_{y}Δy.
 !: Concluding a limit exists after checking only one or two paths.
 Q: Find ∂/∂y of x^{3}y^{2}. | 2x^{3}y.
@@ -67,6 +68,7 @@ X: For f(x, y) = x^{2} + y^{2}, find the rate of change at (1, 2) in the directi
 > ∇f = (2x, 2y) = (2, 4)
 > Unit vector u = (3, 4)/5
 > D_{u}f = (2 × 3 + 4 × 4)/5 = 22/5 = 4.4
+D: maths-u08-directional
 - In 3D the same formula works with ∇f = (f_{x}, f_{y}, f_{z}) and a unit vector in space.
 K: D_{u}f = ∇f · u with u a unit vector; the maximum rate is |∇f| in the direction of ∇f; along level curves the rate is zero.
 !: Forgetting to normalise the direction vector to length 1.
@@ -112,6 +114,7 @@ X: For f(x, y) = x^{2}y + y^{3}, find ∇f at (1, 1) and the tangent line to the
 > ∇f = (2xy, x^{2} + 3y^{2}) = (2, 4) at (1, 1)
 > The gradient is normal to the level curve
 > Tangent line: 2(x − 1) + 4(y − 1) = 0, or x + 2y = 3
+D: maths-u08-gradient-level
 K: ∇f points uphill, perpendicular to level sets; it gives normals to curves and surfaces; conservative fields are gradients; ∇f = 0 at smooth extrema.
 !: Using the gradient as a tangent direction instead of a normal to the level curve.
 Q: What is ∇ of f = xyz? | (yz, xz, xy).
@@ -199,6 +202,7 @@ X: Evaluate ∬ xy dA over the triangle 0 ≤ y ≤ x ≤ 1.
 > Type I: x from 0 to 1, y from 0 to x
 > Inner: ∫₀^{x} xy dy = x^{3}/2
 > Outer: ∫₀¹ x^{3}/2 dx = 1/8
+D: maths-u08-triangle-region
 K: Sketch regions to set limits; swap the order when the inner integral is hard; polar coordinates use dA = r dr dθ; the Gaussian integral is √π.
 !: Leaving out the factor r in the polar area element.
 Q: What is ∫_{−∞}^{∞} e^{−x^{2}} dx? | √π.
@@ -290,6 +294,7 @@ X: Find the Jacobian determinant of x = u + v, y = u − v.
 > J = [[∂x/∂u, ∂x/∂v], [∂y/∂u, ∂y/∂v]] = [[1, 1], [1, −1]]
 > det J = (1)(−1) − (1)(1) = −2
 > Areas are doubled (|det J| = 2) and orientation is reversed
+D: maths-u08-jacobian-area
 K: The Jacobian holds all first partials; |det J| scales areas and volumes; det J ≠ 0 guarantees a local inverse.
 !: Using det J itself (possibly negative) instead of |det J| when changing variables in integrals.
 Q: What is the Jacobian determinant for polar coordinates? | r.
@@ -466,6 +471,7 @@ X: Find the curl of F = (−y, x, 0).
 > i: ∂0/∂y − ∂x/∂z = 0; j: ∂(−y)/∂z − ∂0/∂x = 0
 > k: ∂x/∂x − ∂(−y)/∂y = 1 + 1 = 2
 > curl F = (0, 0, 2): rotation about the z-axis
+D: maths-u08-curl-rotation
 K: Expand the curl determinant; in 2D use ∂Q/∂x − ∂P/∂y; curl measures local rotation; zero curl on simply connected regions means conservative.
 !: Thinking a field with curved streamlines must have non-zero curl.
 Q: What is the curl of a gradient field? | Zero.
@@ -687,6 +693,7 @@ X: Use Green's theorem to find ∮ (−y dx + x dy) around the unit circle.
 > P = −y, Q = x, so ∂Q/∂x − ∂P/∂y = 1 + 1 = 2
 > ∬_{D} 2 dA = 2 × area = 2π
 > Equivalently, half of this integral, π, is the area of the disc
+D: maths-u08-green-circle
 K: ∮ P dx + Q dy = ∬ (Q_{x} − P_{y}) dA anticlockwise; area = ½∮(x dy − y dx); Green is Stokes in the plane.
 !: Traversing the curve clockwise, which flips the sign.
 Q: Give a line integral formula for area. | ½∮ (x dy − y dx).
@@ -954,6 +961,7 @@ X: Find the half-derivative of f(x) = x, and check that applying it twice gives 
 > D^{½}x = Γ(2)/Γ(3/2) x^{½} = 1/(√π/2) × √x = 2√x/√π
 > Apply again: (2/√π) D^{½}x^{½} = (2/√π) × Γ(3/2)/Γ(1) x^{0}
 > = (2/√π)(√π/2) = 1, the ordinary derivative of x ✓
+D: maths-u08-half-derivative
 K: Fractional operators use the gamma function; D^{α}x^{k} = Γ(k + 1)/Γ(k − α + 1) x^{k−α}; they're non-local, modelling memory in materials and diffusion.
 !: Assuming fractional derivatives are local like ordinary ones.
 Q: What is Γ(3/2)? | √π/2.

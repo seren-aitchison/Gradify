@@ -1,0 +1,124 @@
+{
+ "id": "maths-u08-triangle-region",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Double Integrals",
+ "title": "The region 0 ≤ y ≤ x ≤ 1",
+ "caption": "The triangle with corners (0, 0), (1, 0), (1, 1) has area ½. For each x from 0 to 1, y runs from 0 up to x, so ∬ xy dA = ∫₀¹ x · (x²/2) dx = 1/8.",
+ "alt": "A right triangle under the line y = x between x = 0 and x = 1, with a vertical strip at fixed x running from y = 0 up to y = x.",
+ "description": [
+  "The region is bounded by y = 0, x = 1 and the line y = x.",
+  "At a fixed x the strip runs from y = 0 to y = x.",
+  "Integrate over y first: ∫₀ˣ xy dy = x³/2; then over x: ∫₀¹ x³/2 dx = 1/8."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   1,
+   0
+  ],
+  "B": [
+   1,
+   1
+  ],
+  "S": [
+   0.6,
+   0
+  ],
+  "U": [
+   0.6,
+   0.6
+  ]
+ },
+ "hide": [
+  "O",
+  "A",
+  "B",
+  "S",
+  "U"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "A",
+    "B"
+   ],
+   "colour": "a1",
+   "opacity": 0.15
+  }
+ ],
+ "segments": [
+  {
+   "a": "S",
+   "b": "U",
+   "colour": "a2",
+   "w": 3
+  }
+ ],
+ "grid": {
+  "step": 0.5,
+  "axes": true,
+  "labels": 0.5
+ },
+ "view": {
+  "x": [
+   -0.25,
+   1.4
+  ],
+  "y": [
+   -0.25,
+   1.25
+  ]
+ },
+ "height": [
+  480,
+  400
+ ],
+ "notes": [
+  {
+   "at": [
+    0.64,
+    0.3
+   ],
+   "text": "y from 0 to x",
+   "colour": "a2",
+   "size": 13
+  },
+  {
+   "at": [
+    0.12,
+    0.22
+   ],
+   "text": "area 0.5",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "O",
+    "A",
+    "B"
+   ],
+   "value": 0.5,
+   "note": 1
+  },
+  {
+   "type": "distance",
+   "a": "S",
+   "b": "U",
+   "value": 0.6,
+   "name": "the strip at x = 0.6 runs up to y = x = 0.6"
+  }
+ ],
+ "fromLesson": [
+  "0 ≤ y ≤ x ≤ 1"
+ ]
+}

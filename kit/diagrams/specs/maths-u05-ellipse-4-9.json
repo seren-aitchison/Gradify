@@ -1,0 +1,134 @@
+{
+ "id": "maths-u05-ellipse-4-9",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Ellipses",
+ "title": "The ellipse 4x² + 9y² = 36",
+ "caption": "Dividing by 36 gives x²/9 + y²/4 = 1: semi-axes a = 3 and b = 2, area πab = 6π. The foci are at (±√5, 0), since c = √(9 − 4), so e = √5/3 ≈ 0.745.",
+ "alt": "An ellipse crossing the x-axis at ±3 and the y-axis at ±2, with its two foci at plus and minus root 5 on the x-axis.",
+ "description": [
+  "x²/9 + y²/4 = 1 gives a = 3 and b = 2.",
+  "The ellipse crosses the axes at (±3, 0) and (0, ±2).",
+  "The foci are c = √(9 − 4) = √5 from the centre, so e = √5/3 ≈ 0.745."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   -3,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(2/3)*sqrt(9-x^2)",
+   "colour": "a1",
+   "domain": [
+    -3,
+    3
+   ]
+  },
+  {
+   "expr": "-(2/3)*sqrt(9-x^2)",
+   "colour": "a1",
+   "domain": [
+    -3,
+    3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 0,
+   "label": "(3, 0)",
+   "colour": "a2",
+   "dx": -4,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": 2,
+   "label": "(0, 2)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -4
+  },
+  {
+   "x": 2.23606797749979,
+   "y": 0,
+   "label": "focus",
+   "colour": "a4",
+   "dx": -8,
+   "dy": 22,
+   "anchor": "end"
+  },
+  {
+   "x": -2.23606797749979,
+   "y": 0,
+   "label": "focus",
+   "colour": "a4",
+   "dx": 8,
+   "dy": 22,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(9-x^2)",
+   "x": 0,
+   "y": 2,
+   "name": "(0, 2) is on 4x² + 9y² = 36"
+  },
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(9-x^2)",
+   "x": 3,
+   "y": 0,
+   "name": "(3, 0) is on the ellipse"
+  },
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(9-x^2)",
+   "x": 2.23606797749979,
+   "y": 1.3333333333333333,
+   "name": "(√5, 4/3): the point above a focus satisfies 20 + 16 = 36"
+  }
+ ],
+ "fromLesson": [
+  "a = 3 and b = 2"
+ ]
+}

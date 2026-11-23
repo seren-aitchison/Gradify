@@ -1,0 +1,51 @@
+{
+ "id": "maths-u14-partitions-of-5",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u14",
+ "lesson": "Enumerative Combinatorics",
+ "title": "The 7 partitions of 5 by largest part",
+ "caption": "The partitions of 5 are 5, 4+1, 3+2, 3+1+1, 2+2+1, 2+1+1+1 and 1+1+1+1+1: p(5) = 7. Counting by the size of the largest part gives 1, 2, 2, 1, 1.",
+ "alt": "Bar chart of how many partitions of 5 have largest part 1 to 5: 1, 2, 2, 1, 1.",
+ "description": [
+  "Largest part 5: just 5.",
+  "Largest part 4: 4+1. Largest part 3: 3+2, 3+1+1.",
+  "Largest part 2: 2+2+1, 2+1+1+1. Largest part 1: 1+1+1+1+1.",
+  "In total 7."
+ ],
+ "categories": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "values": [
+  1,
+  2,
+  2,
+  1,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  1,
+  2,
+  3
+ ],
+ "axisLabels": [
+  "largest part",
+  "partitions"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 7
+  }
+ ]
+}

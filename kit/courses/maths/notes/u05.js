@@ -19,6 +19,7 @@ X: Prove that the angles in a triangle add up to 180°.
 > Draw triangle ABC and a line through A parallel to BC
 > The angles either side of A on the line equal angles B and C (alternate angles)
 > Together with angle A they make a straight line, 180°, so A + B + C = 180°
+D: maths-u05-triangle-angle-sum
 K: Euclidean geometry deduces theorems from axioms; the parallel postulate distinguishes it from other geometries.
 !: Treating a diagram as a proof: a diagram can mislead, while reasoning from axioms can't.
 Q: What does the parallel postulate say (Playfair's form)? | Through a point not on a line there is exactly one line parallel to it.
@@ -50,6 +51,7 @@ X: In a kite ABCD, angle A = 110°, angle C = 70° and angles B and D are equal.
 > Angles in a quadrilateral add to 360°
 > B + D = 360 − 110 − 70 = 180
 > B = D = 90°
+D: maths-u05-kite
 K: Plane geometry studies 2D shapes; combine shape properties and angle facts, giving reasons.
 !: Assuming a shape has a property (equal sides, right angles) because it looks that way in a diagram.
 Q: What is a polygon? | A closed plane figure with straight sides.
@@ -112,6 +114,7 @@ X: Two straight lines cross. One of the angles is 3x + 10 and the angle next to 
 > Adjacent angles on a straight line: 3x + 10 + 5x − 6 = 180, so 8x = 176 and x = 22
 > The angles are 76° and 104°
 > Vertically opposite angles are equal, so the four angles are 76°, 104°, 76°, 104°
+D: maths-u05-crossing-lines
 P: **Investigate with the lab.** In the cyclic quadrilateral, drag one vertex and watch the angle at A and the opposite angle change together, always adding to 180°.
 IX: circles
 K: Straight line 180°, around a point 360°, vertically opposite angles equal; name angles by three letters with the vertex in the middle.
@@ -145,6 +148,7 @@ X: Two parallel lines are crossed by a transversal. One co-interior angle is 2x 
 > Co-interior angles add to 180°: 3x + 45 = 180
 > x = 45
 > The angles are 120° and 60°
+D: maths-u05-co-interior
 K: Alternate and corresponding angles are equal, co-interior angles add to 180°; parallel lines share a gradient and perpendicular gradients multiply to −1.
 !: Calling co-interior angles equal: they add to 180°.
 Q: What is the gradient of a line perpendicular to y = 4x − 1? | −1/4.
@@ -176,6 +180,7 @@ X: In triangle PQR, angle P = 48° and the exterior angle at R is 115°. Find an
 > The exterior angle at R equals P + Q
 > 115 = 48 + Q
 > Q = 67°
+D: maths-u05-exterior-angle
 K: Angles add to 180°, the exterior angle equals the two opposite interior angles, and sides must satisfy the triangle inequality.
 !: Assuming a triangle is isosceles because two sides look equal.
 Q: What is each angle in an equilateral triangle? | 60°.
@@ -206,6 +211,7 @@ X: Two similar bottles have heights 12 cm and 18 cm. The smaller holds 400 ml. H
 > Length scale factor k = 18/12 = 1.5
 > Volume scale factor k^{3} = 3.375
 > 400 × 3.375 = 1,350 ml
+D: maths-u05-similar-bottles
 K: Congruence needs SSS, SAS, ASA/AAS or RHS; similar shapes scale lengths by k, areas by k^{2} and volumes by k^{3}.
 !: Using the length scale factor for areas or volumes.
 Q: Why isn't AAA a congruence condition? | Equal angles only guarantee the same shape, not the same size.
@@ -239,6 +245,7 @@ X: A rhombus has diagonals 10 cm and 24 cm. Find its area and side length.
 > Area = ½ × 10 × 24 = 120 cm^{2}
 > The diagonals bisect at right angles, making four right-angled triangles with legs 5 and 12
 > Side = √(25 + 144) = 13 cm
+D: maths-u05-rhombus
 K: Learn each quadrilateral's sides, angles, diagonals and symmetry; squares are special rectangles and rhombuses.
 !: Saying a rhombus's diagonals are equal (they're only equal in a square).
 Q: Which quadrilaterals have diagonals that bisect at right angles? | Rhombuses and squares (and a kite's diagonals are perpendicular).
@@ -270,6 +277,7 @@ X: Each interior angle of a regular polygon is 156°. How many sides does it hav
 > Each exterior angle = 180 − 156 = 24°
 > n = 360/24
 > n = 15 sides
+D: maths-u05-regular-15-gon
 - Concave polygons still have interior angle sum (n − 2) × 180°, though one angle is reflex.
 - Diagonals: an n-sided polygon has n(n − 3)/2 diagonals.
 K: Interior sum (n − 2) × 180°; exterior sum 360°; for regular polygons use 360/n for each exterior angle.
@@ -303,6 +311,7 @@ X: A cuboid measures 3 cm by 4 cm by 12 cm. Find the length of its longest diago
 > The base diagonal is √(3^{2} + 4^{2}) = 5 cm
 > The space diagonal is √(5^{2} + 12^{2})
 > = √169 = 13 cm (or directly √(9 + 16 + 144))
+D: maths-u05-cuboid-diagonal
 P: **Investigate with the lab.** Choose Pythagoras' theorem. Decide first whether you're finding the hypotenuse (add squares) or a shorter side (subtract).
 IX: practice
 K: a^{2} + b^{2} = c^{2} with c the hypotenuse; subtract to find a shorter side; extends to distances and 3D.
@@ -370,6 +379,7 @@ X: A chord of length 16 cm is 6 cm from the centre of a circle. Find the radius.
 > The perpendicular from the centre bisects the chord into 8 cm halves
 > The radius is the hypotenuse of a right-angled triangle with legs 6 and 8
 > r = √(36 + 64) = 10 cm
+D: maths-u05-chord-radius
 P: **Investigate with the lab.** Make AB a diameter in the semicircle view and move C anywhere on the arc: the chords AC and BC always meet at 90°.
 IX: circles
 K: Tangent ⟂ radius; tangents from a point are equal; the centre's perpendicular bisects a chord.
@@ -404,6 +414,7 @@ X: A, B and C lie on a circle with centre O, and angle AOC = 140°. B is on the 
 > The angle at the centre is twice the angle at the circumference
 > Angle ABC = 140 ÷ 2
 > = 70°
+D: maths-u05-angle-at-centre
 P: **Investigate with the lab.** Work through all four views. For each theorem, try to break it by moving the points, then explain from the readouts why you can't.
 IX: circles
 K: Centre angle = 2 × circumference angle; semicircle 90°; same segment equal; cyclic opposite angles 180°; alternate segment.
@@ -468,6 +479,7 @@ X: A goat is tied to a corner of a 10 m by 6 m shed (outside it) with a 4 m rope
 > From the corner, the rope sweeps three quarters of a circle of radius 4 m (the shed blocks the other quarter)
 > Its area is ¾ × π × 4^{2} = 12π
 > ≈ 37.7 m^{2}
+D: maths-u05-goat-locus
 K: Points at a fixed distance from a point form a circle; equidistant from two points is the perpendicular bisector; combine loci to find regions.
 !: Drawing a locus from a line segment with square corners instead of semicircular ends.
 Q: What is the locus of points 2 cm from a point P? | A circle of radius 2 cm centred on P.
@@ -497,6 +509,7 @@ X: A plane flies 300 km due east, then 400 km due north. Find its bearing from t
 > The angle at the start between north and the plane's position: tan θ = 300/400
 > θ = 36.9°
 > Bearing = 036.9° ≈ 037°
+D: maths-u05-bearing-plane
 - Bearings are given to the nearest degree unless stated.
 K: Bearings are clockwise from north with three figures; back bearings differ by 180°; use parallel north lines and trigonometry.
 !: Measuring anticlockwise, or from the wrong point.
@@ -560,6 +573,7 @@ X: A garden is a 12 m by 8 m rectangle with a circular pond of radius 1.5 m. Tur
 > Garden area = 96 m^{2}; pond area = π × 1.5^{2} ≈ 7.07 m^{2}
 > Turf area ≈ 96 − 7.07 = 88.93 m^{2}
 > Cost ≈ 88.93 × 6.50 ≈ £578.05
+D: maths-u05-garden-pond
 - Estimating irregular areas: count squares on a grid.
 K: Use the perpendicular height; split or subtract compound shapes; 1 m^{2} = 10,000 cm^{2}.
 !: Converting 1 m^{2} to 100 cm^{2} instead of 10,000 cm^{2}.
@@ -592,6 +606,7 @@ X: A sector has radius 9 cm and perimeter 30 cm. Find the angle at the centre, i
 > Arc = 30 − 2 × 9 = 12 cm
 > θ = 12/9 = 4/3 ≈ 1.33 radians
 > In degrees: (4/3) × 180/π ≈ 76.4°
+D: maths-u05-sector
 - Major and minor arcs: a 60° arc and the 300° arc make the whole circle.
 - Segment area = sector area − triangle area (½r^{2}(θ − sin θ) in radians).
 - Radians: π/3 is 60° and 2π/3 is 120°.
@@ -688,6 +703,7 @@ X: Find the total surface area of a cone with radius 6 cm and perpendicular heig
 > Slant height l = √(36 + 64) = 10 cm
 > Curved surface = πrl = 60π cm^{2}; base = πr^{2} = 36π cm^{2}
 > Total = 96π cm^{2}
+D: maths-u05-cone-slant
 - Composite solids: add the outer surfaces and leave out hidden joins, such as where a hemisphere sits on a cylinder.
 - A cuboid's net has three pairs of equal rectangles.
 K: Add all faces (nets help); use slant height for cones; sphere 4πr^{2}; check for open faces.
@@ -755,6 +771,7 @@ X: Triangle A has vertices (1, 1), (3, 1), (1, 2). Enlarge it by scale factor �
 > Multiply each coordinate by −2
 > (1, 1) → (−2, −2); (3, 1) → (−6, −2); (1, 2) → (−2, −4)
 > The image is twice the size, on the opposite side of the origin and turned through 180°
+D: maths-u05-enlarge-minus-2
 P: **Investigate with the lab.** Build matrices for a rotation, a reflection and an enlargement, and note each one's determinant.
 IX: matrix
 K: Describe every transformation fully (vector; mirror line; angle, direction and centre; scale factor and centre).
@@ -787,6 +804,7 @@ X: State the lines of symmetry and order of rotational symmetry of a regular hex
 > It has 6 lines of symmetry: 3 through opposite vertices and 3 through midpoints of opposite sides
 > It fits onto itself after rotations of 60°, 120°, …, 360°
 > Order of rotational symmetry 6
+D: maths-u05-hexagon-symmetry
 K: Count mirror lines and the turns that map a shape onto itself; a regular n-gon has n of each.
 !: Saying a parallelogram has lines of symmetry: it has rotational symmetry of order 2 but no mirror lines (unless it's a rhombus or rectangle).
 Q: What is the order of rotational symmetry of an equilateral triangle? | 3.
@@ -817,6 +835,7 @@ X: Can regular octagons tessellate on their own? Can they with squares?
 > Each interior angle of a regular octagon is 135°; 360/135 isn't a whole number, so not alone
 > Two octagons and a square at a vertex: 135 + 135 + 90 = 360
 > So octagons tessellate with squares (as on many bathroom floors)
+D: maths-u05-octagon-square
 K: Angles at each vertex must total 360°; only equilateral triangles, squares and regular hexagons tile alone among regular polygons.
 !: Assuming every regular polygon tessellates.
 Q: Why don't regular pentagons tessellate? | Their 108° angles can't add to exactly 360° at a vertex.
@@ -847,6 +866,7 @@ X: Find the equation of the perpendicular bisector of A(2, 5) and B(6, −3).
 > Midpoint (4, 1); gradient of AB = −8/4 = −2
 > Perpendicular gradient = 1/2
 > y − 1 = ½(x − 4), so y = ½x − 1 (or x − 2y − 2 = 0)
+D: maths-u05-perpendicular-bisector
 - Area of a triangle from coordinates: ½|x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|.
 - Collinear points have equal gradients between them.
 K: Gradient, midpoint and distance formulas; y − y₁ = m(x − x₁) for lines; parallel and perpendicular through gradients.
@@ -879,6 +899,7 @@ X: Find the distance from (2, 3) to the line 3x + 4y − 8 = 0.
 > Substitute: |3(2) + 4(3) − 8| = |6 + 12 − 8| = 10
 > Divide by √(9 + 16) = 5
 > Distance = 2
+D: maths-u05-point-line-distance
 - Tangent to a circle at P: perpendicular to the radius CP.
 K: Complete the square to read off circles; use the discriminant for line–circle intersections; use the point–line distance formula.
 !: Forgetting the absolute value (or the square root) in the distance formula.
@@ -911,6 +932,7 @@ X: In triangle OAB, OA = a and OB = b. M is the midpoint of OA and N the midpoin
 > MN = ON − OM = ½b − ½a = ½(b − a)
 > AB = b − a
 > MN = ½AB, so MN is parallel to AB and half its length
+D: maths-u05-midpoint-theorem
 - Unit vectors i and j: (3, 4) = 3i + 4j.
 - The zero vector has magnitude 0 and no direction.
 - Vectors are equal if they have the same magnitude and direction, wherever they start.
@@ -979,6 +1001,7 @@ X: Classify the conic 4x^{2} − 9y^{2} = 36.
 > Divide by 36: x^{2}/9 − y^{2}/4 = 1
 > The x^{2} and y^{2} terms have opposite signs
 > It's a hyperbola, with vertices at (±3, 0)
+D: maths-u05-hyperbola-classify
 K: Slicing a cone gives circles, ellipses, parabolas and hyperbolas; eccentricity and the signs of the squared terms classify them.
 !: Confusing a parabola (one squared term) with a hyperbola (two squared terms of opposite sign).
 Q: What is the eccentricity of a circle? | 0.
@@ -1009,6 +1032,7 @@ X: Find the focus and directrix of y^{2} = 12x, and check that (3, 6) is equidis
 > 4a = 12, so a = 3: focus (3, 0), directrix x = −3
 > Distance from (3, 6) to the focus is √(0 + 36) = 6
 > Distance to the directrix is 3 − (−3) = 6 ✓
+D: maths-u05-focus-directrix
 K: y^{2} = 4ax has focus (a, 0) and directrix x = −a; parabolas reflect parallel rays to the focus.
 !: Mixing up a and 4a when reading the focus from y^{2} = 4ax.
 Q: What is the focus of y^{2} = 8x? | (2, 0).
@@ -1040,6 +1064,7 @@ X: Find the area and eccentricity of the ellipse 4x^{2} + 9y^{2} = 36.
 > Divide by 36: x^{2}/9 + y^{2}/4 = 1, so a = 3 and b = 2
 > Area = π × 3 × 2 = 6π
 > c = √(9 − 4) = √5, so e = √5/3 ≈ 0.745
+D: maths-u05-ellipse-4-9
 - An ellipse's eccentricity lies strictly between 0 and 1.
 K: x^{2}/a^{2} + y^{2}/b^{2} = 1; c^{2} = a^{2} − b^{2}; e = c/a; area πab; distances to the foci add to 2a.
 !: Using c^{2} = a^{2} + b^{2} (that's for hyperbolas).
@@ -1072,6 +1097,7 @@ X: Find the foci and asymptotes of 9x^{2} − 16y^{2} = 144.
 > Divide by 144: x^{2}/16 − y^{2}/9 = 1, so a = 4, b = 3
 > c^{2} = 16 + 9 = 25, so the foci are (±5, 0)
 > Asymptotes y = ±(3/4)x
+D: maths-u05-hyperbola-foci
 - The closer e is to 1, the narrower the hyperbola's branches.
 K: x^{2}/a^{2} − y^{2}/b^{2} = 1; c^{2} = a^{2} + b^{2}; asymptotes y = ±(b/a)x; e > 1.
 !: Using c^{2} = a^{2} − b^{2} as for ellipses.
@@ -1226,6 +1252,7 @@ X: Points A, B, C, D on a line have coordinates 0, 1, 3 and 4. Find the cross-ra
 > AC = 3, BD = 3, BC = 2, AD = 4
 > (A, B; C, D) = (3 × 3)/(2 × 4)
 > = 9/8 (and any projection of the line keeps this value)
+D: maths-u05-cross-ratio
 K: The projective plane adds points at infinity so any two lines meet; projections preserve incidence and the cross-ratio.
 !: Expecting projections to preserve ratios of lengths: only the cross-ratio survives.
 Q: Where do parallel lines meet in the projective plane? | At a point at infinity.
@@ -1257,6 +1284,7 @@ X: Find the similarity dimension of the Cantor set.
 > Each step keeps N = 2 pieces, each scaled by r = 1/3
 > D = log 2 / log 3
 > ≈ 0.631: less than a line, more than a point
+D: maths-u05-cantor-set
 K: Fractals repeat their structure at every scale; similarity dimension D = log N / log(1/r) is often not a whole number.
 !: Assuming every irregular shape is a fractal: fractals have structure repeating across scales.
 Q: What is the dimension of the Koch curve? | log 4/log 3 ≈ 1.26.
@@ -1287,6 +1315,7 @@ X: Find the area of the triangle with vertices (0, 0), (4, 0) and (0, 3) using P
 > Boundary points: 5 on the base, 4 on the vertical side, and the hypotenuse adds none besides its ends: B = 4 + 3 + 1 = 8
 > Interior points: (1, 1), (2, 1), (1, 2): I = 3
 > Area = 3 + 4 − 1 = 6, matching ½ × 4 × 3 = 6
+D: maths-u05-picks-theorem
 K: Pick's theorem: area = I + B/2 − 1 for lattice polygons; packing problems ask for the densest arrangements.
 !: Applying Pick's theorem to a polygon whose vertices aren't lattice points.
 Q: What is the densest packing of equal circles in the plane? | The hexagonal packing (about 90.7%).
@@ -1347,6 +1376,7 @@ X: Do the points a(0, 0), b(4, 1), c(2, 3) make a left or right turn?
 > (b_{x} − a_{x})(c_{y} − a_{y}) − (b_{y} − a_{y})(c_{x} − a_{x}) = 4 × 3 − 1 × 2
 > = 12 − 2 = 10
 > Positive, so a → b → c turns left (anticlockwise)
+D: maths-u05-left-turn
 K: The orientation test is the basic primitive; convex hulls take O(n log n); Voronoi diagrams partition by nearest site.
 !: Using exact equality tests with floating-point coordinates.
 Q: What does a zero orientation value mean? | The three points are collinear.
@@ -1407,6 +1437,7 @@ X: Find the curvature of y = x^{2} at x = 0 and at x = 1.
 > y′ = 2x and y″ = 2
 > At x = 0: κ = 2/(1 + 0)^{3/2} = 2 (osculating circle radius ½)
 > At x = 1: κ = 2/(1 + 4)^{3/2} = 2/5^{3/2} ≈ 0.179
+D: maths-u05-curvature
 K: κ = |y″|/(1 + y′^{2})^{3/2}, circle 1/R; Gaussian curvature is intrinsic, so spheres can't be mapped flat without distortion.
 !: Thinking a cylinder is curved in Gauss's sense: its Gaussian curvature is zero.
 Q: What is the curvature of a circle of radius 4? | 1/4.
@@ -1496,6 +1527,7 @@ X: At most how many points can the circle x^{2} + y^{2} = 25 and the parabola y 
 > Degrees 2 and 2, so Bézout allows at most 4
 > Substitute x^{2} = y + 5: y + 5 + y^{2} = 25, so y^{2} + y − 20 = 0 and y = 4 or −5
 > y = 4: x = ±3; y = −5: x = 0. Points (3, 4), (−3, 4) and (0, −5) (the last counts twice: a tangency)
+D: maths-u05-bezout
 K: Varieties are polynomial solution sets; Bézout counts intersections (mn, with multiplicity, over the complex projective plane).
 !: Expecting exactly mn real intersection points: some may be complex, at infinity or repeated.
 Q: In how many points can two conics meet? | At most 4 (exactly 4 counting complex, infinite and repeated points).
