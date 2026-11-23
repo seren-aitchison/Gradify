@@ -46,7 +46,8 @@ s.listen(0, "127.0.0.1", async () => {
     if (link) {
       const href = await link.getAttribute("href"), title = (await link.innerText()).trim().split("\n")[0];
       await link.click();
-      const opened = await p.waitForFunction((h) => location.hash === h && document.querySelector("#course")?.innerText.length > 400, href, { timeout: 15000 }).then(() => true).catch(() => false);
+      // the lesson's own notes, not text left from the previous view and not the "notes coming soon" placeholder
+      const opened = await p.waitForFunction((h) => location.hash === h && !document.querySelector("#course .co-lesson .co-empty") && (document.querySelector("#course .co-lesson .co-prose")?.innerText.trim().length || 0) > 200, href, { timeout: 15000 }).then(() => true).catch(() => false);
       check("lesson opens and its notes load", opened, `${href} "${title}"`);
       // the course saves on its own schedule: allow it a few seconds
       const saved = await p.waitForFunction(() => localStorage.getItem("gradify.course.law") !== null, null, { timeout: 5000 }).then(() => true).catch(() => false);

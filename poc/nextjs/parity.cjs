@@ -5,6 +5,10 @@ const serve = (ROOT) => new Promise((ok) => { const s = http.createServer((q, r)
 // course (same origin in production, so the same localStorage), and compare what both show. Exits non-zero on failure.
 const checks = []; const check = (name, ok, detail) => checks.push({ name, ok: Boolean(ok), detail });
 const text = (p) => p.$eval("#course", (e) => e.innerText.replace(/\s+/g, " ").trim().slice(0, 600));
+// a lesson's own notes, once they've rendered (not the previous view, not the "notes coming soon" placeholder)
+// the kit stylesheets a page actually has once the course has mounted (the engine adds some itself)
+const sheets = (p) => p.$$eval('link[rel="stylesheet"]', (l) => l.map((x) => new URL(x.href).pathname).filter((h) => h.startsWith("/kit/") && h !== "/kit/styles/system.css"));
+const notes = async (p, hash) => { await p.waitForFunction((h) => location.hash === h && !document.querySelector("#course .co-lesson .co-empty") && (document.querySelector("#course .co-lesson .co-prose")?.innerText.trim().length || 0) > 200, hash, { timeout: 15000 }); return p.$eval("#course .co-lesson .co-prose", (e) => e.innerText.replace(/\s+/g, " ").trim()); };
 (async () => {
   let b; const servers = [];
   try {
@@ -17,21 +21,23 @@ const text = (p) => p.$eval("#course", (e) => e.innerText.replace(/\s+/g, " ").t
     if (!lesson) { await p.click('#course a[href^="#/learn/"]'); await p.waitForTimeout(1000); lesson = await p.$$eval('#course a[href^="#/lesson/"]', (a) => a[0]?.getAttribute("href")); }
     check("a lesson link exists on the static course", lesson, lesson);
     if (!lesson) throw new Error("no lesson to compare");
-    await p.goto(B + "/lawgradify/course/" + lesson); await p.waitForTimeout(2500);
-    const staticLesson = await text(p);
+    await p.goto(B + "/lawgradify/course/" + lesson);
+    const staticLesson = await notes(p, lesson); await p.waitForTimeout(1000);
     const ls = await p.evaluate(() => Object.fromEntries(Object.keys(localStorage).filter((k) => k.startsWith("gradify")).map((k) => [k, localStorage.getItem(k)])));
     check("the static course saved progress", "gradify.course.law" in ls, Object.keys(ls).join(", "));
-    await p.goto(B + "/lawgradify/course/"); await p.waitForTimeout(1500); const staticHome = await text(p);
+    await p.goto(B + "/lawgradify/course/"); await p.waitForTimeout(1500); const staticHome = await text(p); const staticSheets = await sheets(p);
     await c.close();
     // 2. the Next.js course, same saved state
     ({ c, B } = await page(path.resolve("out")));
     await c.addInitScript((d) => { if (!sessionStorage.seeded) { for (const [k, v] of Object.entries(d)) localStorage.setItem(k, v); sessionStorage.seeded = 1; } }, ls);
     p = await c.newPage(); await p.goto(B + "/lawgradify/course/"); await p.waitForSelector("#course *"); await p.waitForTimeout(1500);
     const nextHome = await text(p);
+    const nextSheets = await sheets(p);
+    check("same kit stylesheets as the static course, in the same order", JSON.stringify(staticSheets) === JSON.stringify(nextSheets), `static ${staticSheets.join(", ")} | next ${nextSheets.join(", ")}`);
     check("course home identical with the same saved progress", staticHome === nextHome, staticHome === nextHome ? undefined : `static: ${staticHome.slice(0, 160)} | next: ${nextHome.slice(0, 160)}`);
-    await p.goto(B + "/lawgradify/course/" + lesson); await p.waitForTimeout(2500);
-    const nextLesson = await text(p);
-    check(`lesson ${lesson} identical`, staticLesson === nextLesson && staticLesson.length > 200, staticLesson === nextLesson ? `${staticLesson.length} characters` : `static: ${staticLesson.slice(0, 160)} | next: ${nextLesson.slice(0, 160)}`);
+    await p.goto(B + "/lawgradify/course/" + lesson);
+    const nextLesson = await notes(p, lesson);
+    check(`lesson ${lesson} notes identical`, staticLesson === nextLesson, staticLesson === nextLesson ? `${staticLesson.length} characters` : (() => { let i = 0; while (i < staticLesson.length && staticLesson[i] === nextLesson[i]) i++; return `${staticLesson.length} vs ${nextLesson.length} characters; first difference at ${i}: static "…${staticLesson.slice(Math.max(0, i - 60), i + 80)}" | next "…${nextLesson.slice(Math.max(0, i - 60), i + 80)}"`; })());
     await p.screenshot({ path: "out-lesson.png" });
   } catch (e) {
     check("parity check ran to the end", false, e.message.split("\n")[0]);

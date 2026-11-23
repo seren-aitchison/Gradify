@@ -6,8 +6,8 @@ export default function Root({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <script src="/kit/core/theme-boot.js" />
-        <link rel="stylesheet" href="/kit/styles/base.css" />
-        <link rel="stylesheet" href="/kit/styles/system.css" />
+        <link rel="stylesheet" href="/kit/styles/base.css" precedence="base" />
+        <link rel="stylesheet" href="/kit/styles/system.css" precedence="base" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </head>
       <body>{children}</body>
