@@ -1,0 +1,38 @@
+{
+ "id": "phys-u04-banked-curve",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Centripetal acceleration and force",
+ "title": "A banked curve with no friction",
+ "caption": "On a 15° bank the normal force tilts towards the centre. Its vertical part balances the weight and its horizontal part, mg tan 15°, is the centripetal force. Then v = √(gr tan θ) = 16.2 m s⁻¹ for r = 100 m.",
+ "alt": "Free-body diagram of a car on a banked curve: weight down and a normal force tilted 15 degrees towards the centre, with the net force horizontal, towards the centre.",
+ "description": [
+  "For a 1000 kg car: weight 9800 N down.",
+  "Normal force N = mg / cos 15° = 10146 N, tilted 15° from vertical towards the centre.",
+  "Net force: N sin 15° = mg tan 15° = 2626 N, horizontal, towards the centre.",
+  "mv²/r = mg tan θ, so v = √(9.8 × 100 × tan 15°) = 16.2 m s⁻¹."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 9800,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "N",
+   "mag": 10145.71,
+   "angle": 105,
+   "source": "the banked road"
+  }
+ ],
+ "resultant": {
+  "label": "net (towards centre)",
+  "mag": 2625.9,
+  "angle": 180
+ },
+ "showResultant": true
+}

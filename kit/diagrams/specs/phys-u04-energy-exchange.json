@@ -1,0 +1,103 @@
+{
+ "id": "phys-u04-energy-exchange",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Kinetic and potential energy",
+ "title": "Potential energy becomes kinetic energy",
+ "caption": "As the ball falls, every joule of gravitational potential energy lost becomes kinetic energy, so the total stays at mgh = 98 J. At the ground all 98 J is kinetic: v = √(2gh) = 19.8 m s⁻¹.",
+ "alt": "Energy against distance fallen: potential energy falling from 98 joules to zero, kinetic energy rising from zero to 98, and total energy a flat line at 98.",
+ "description": [
+  "Total energy mgh = 0.5 × 9.8 × 20 = 98 J.",
+  "Potential energy falls in a straight line with distance fallen; kinetic energy rises by the same amount.",
+  "They cross at 10 m, where each is 49 J.",
+  "At the ground: ½mv² = 98 J, v = 19.8 m s⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   115
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance fallen / m",
+  "energy / J"
+ ],
+ "curves": [
+  {
+   "expr": "98-4.9*x",
+   "colour": "a1",
+   "label": "potential",
+   "labelAt": [
+    1,
+    86
+   ]
+  },
+  {
+   "expr": "4.9*x",
+   "colour": "a2",
+   "label": "kinetic",
+   "labelAt": [
+    15.5,
+    64
+   ]
+  },
+  {
+   "expr": "98+0*x",
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "total",
+   "labelAt": [
+    1,
+    106
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "98-4.9*x",
+   "b": "4.9*x",
+   "x": 10,
+   "y": 49,
+   "name": "equal halves at half the height"
+  },
+  {
+   "type": "point",
+   "expr": "4.9*x",
+   "x": 20,
+   "y": 98,
+   "name": "all 98 J is kinetic at the ground"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*0.5*19.79898987^2+0*x",
+   "x": 0,
+   "y": 98,
+   "name": "½mv² = 98 J at v = 19.8 m s⁻¹"
+  }
+ ]
+}

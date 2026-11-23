@@ -1,0 +1,37 @@
+{
+ "id": "phys-u04-atwood-light-mass",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Normal force and tension",
+ "title": "Forces on the lighter mass of an Atwood machine",
+ "caption": "The masses accelerate at a = (m₁ − m₂)g / (m₁ + m₂) = 1.96 m s⁻². For the 2.0 kg mass, rising, tension T = 23.5 N exceeds its weight 19.6 N by m₂a = 3.92 N.",
+ "alt": "Free-body diagram of the 2 kilogram mass: tension 23.5 newtons up and weight 19.6 newtons down, net 3.9 newtons up.",
+ "description": [
+  "a = (3 − 2) × 9.8 / 5 = 1.96 m s⁻².",
+  "T = 2m₁m₂g / (m₁ + m₂) = 23.52 N.",
+  "On the 2 kg mass: T = 23.52 N up, weight 19.6 N down, net 3.92 N up = m₂a."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "T",
+   "mag": 23.52,
+   "angle": 90,
+   "source": "the string"
+  },
+  {
+   "label": "W",
+   "mag": 19.6,
+   "angle": 270,
+   "source": "Earth's gravity"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 3.92,
+  "angle": 90
+ },
+ "showResultant": true
+}

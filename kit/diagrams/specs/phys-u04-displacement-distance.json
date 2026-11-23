@@ -1,0 +1,68 @@
+{
+ "id": "phys-u04-displacement-distance",
+ "renderer": "motion",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Motion in one dimension",
+ "title": "Displacement against distance",
+ "caption": "With v = 6 − 2t the object moves forward until t = 3 s, then back. The signed area under the v–t graph gives the displacement, 5 m; adding the areas as positive gives the distance, 13 m.",
+ "alt": "Position–time and velocity–time graphs for v = 6 − 2t: the velocity line crosses zero at 3 seconds and the position peaks at 9 metres before falling back to 5.",
+ "description": [
+  "v = 6 − 2t: positive until t = 3 s, negative after.",
+  "Area from 0 to 3 s: +9 m. Area from 3 to 5 s: −4 m.",
+  "Displacement = 9 − 4 = 5 m. Distance = 9 + 4 = 13 m.",
+  "The position graph peaks at 9 m where v = 0, then falls back to 5 m."
+ ],
+ "u": 6,
+ "segments": [
+  {
+   "dt": 5,
+   "a": -2
+  }
+ ],
+ "show": [
+  "x",
+  "v"
+ ],
+ "claims": [
+  {
+   "type": "v",
+   "t": 3,
+   "value": 0,
+   "mark": false
+  },
+  {
+   "type": "displacement",
+   "from": 0,
+   "to": 3,
+   "value": 9,
+   "label": "+9 m"
+  },
+  {
+   "type": "displacement",
+   "from": 3,
+   "to": 5,
+   "value": -4,
+   "label": "−4 m"
+  },
+  {
+   "type": "displacement",
+   "from": 0,
+   "to": 5,
+   "value": 5,
+   "shade": false
+  },
+  {
+   "type": "distance",
+   "from": 0,
+   "to": 5,
+   "value": 13,
+   "shade": false
+  },
+  {
+   "type": "x",
+   "t": 3,
+   "value": 9
+  }
+ ]
+}

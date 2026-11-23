@@ -1,0 +1,90 @@
+{
+ "id": "phys-u04-rocket-equation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Variable-mass systems",
+ "title": "The rocket equation",
+ "caption": "Δv = u ln(m₀/m) grows only logarithmically with the mass ratio. Burning from 100 t to 25 t (ratio 4) gives Δv = 3000 ln 4 = 4160 m s⁻¹; doubling the ratio to 8 adds only another 2080 m s⁻¹.",
+ "alt": "Graph of change in velocity against mass ratio, a logarithmic curve, with the point at ratio 4 and 4160 metres per second marked.",
+ "description": [
+  "Exhaust speed u = 3000 m s⁻¹.",
+  "Δv = u ln(m₀/m): at ratio 2, 2080 m s⁻¹; at ratio 4, 4159 m s⁻¹; at ratio 8, 6240 m s⁻¹.",
+  "Each doubling of the mass ratio adds the same Δv, which is why rockets use stages."
+ ],
+ "range": {
+  "x": [
+   1,
+   10
+  ],
+  "y": [
+   0,
+   7500
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   2000,
+   4000,
+   6000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mass ratio m₀/m",
+  "Δv / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "3000*log(x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 4,
+   "to": 4158.883083359672
+  },
+  {
+   "y": 4158.883083359672,
+   "to": 4
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 4158.88,
+   "colour": "a2",
+   "label": "4160 m s⁻¹",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3000*log(x)",
+   "x": 4,
+   "y": 4158.883083,
+   "name": "Δv = 3000 ln 4 = 4159 m s⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "3000*log(x)",
+   "x": 1,
+   "y": 0,
+   "name": "no fuel burnt, no Δv"
+  }
+ ]
+}

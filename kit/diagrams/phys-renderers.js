@@ -106,7 +106,7 @@ function vectorsDraw(spec, W, narrow) {
   const [xmin, xmax, ymin, ymax] = [Math.min(0, ...xs), Math.max(0, ...xs), Math.min(0, ...ys), Math.max(0, ...ys)];
   // the drawing box, then the text panel beside (wide) or under (narrow) it
   const notes = [...vs.map((v) => `${v.label} = ${v.text || `${fmt(v.mag)}${unit}${v.dir ? `, ${v.dir}` : ` at ${fmt(v.angle)}°`}`}`)];
-  if (spec.resultant) notes.push(spec.resultant.mag === 0 ? `${spec.resultant.label || "net force"} = 0 (in equilibrium)` : `${spec.resultant.label} = ${spec.resultant.text || `${fmt(spec.resultant.mag)}${unit}${spec.resultant.dir ? `, ${spec.resultant.dir}` : ` at ${fmt(spec.resultant.angle)}°`}`}`);
+  if (spec.resultant) notes.push(spec.resultant.mag === 0 ? `${spec.resultant.label || "net force"} = 0${spec.units === "N" ? " (in equilibrium)" : ""}` : `${spec.resultant.label} = ${spec.resultant.text || `${fmt(spec.resultant.mag)}${unit}${spec.resultant.dir ? `, ${spec.resultant.dir}` : ` at ${fmt(spec.resultant.angle)}°`}`}`);
   for (const n of spec.notes || []) notes.push(n);
   const dw = narrow ? W - 40 : W * 0.56, dh = narrow ? 260 : 330, ox = 20, oy = 36;
   const k = Math.min(dw / (xmax - xmin || 1), dh / (ymax - ymin || 1)) * (mode === "body" ? 0.72 : 0.82);

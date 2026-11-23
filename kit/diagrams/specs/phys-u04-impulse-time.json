@@ -1,0 +1,113 @@
+{
+ "id": "phys-u04-impulse-time",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Momentum and impulse",
+ "title": "The same impulse, spread over more time",
+ "caption": "Stopping the 0.15 kg ball needs an impulse of 4.5 N s, the area under each force–time curve. Over 0.05 s the average force is 90 N; letting the hands move back so it takes 0.20 s cuts it to 22.5 N.",
+ "alt": "Force against time: a tall narrow pulse lasting 0.05 seconds and a low wide pulse lasting 0.20 seconds, enclosing the same area.",
+ "description": [
+  "Change of momentum: 0.15 × 30 = 4.5 kg m s⁻¹.",
+  "Stopped in 0.05 s: average force 4.5 / 0.05 = 90 N (peak about 141 N for this pulse shape).",
+  "Stopped in 0.2 s: average force 22.5 N (peak about 35 N).",
+  "Both pulses enclose the same area, 4.5 N s."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.22
+  ],
+  "y": [
+   0,
+   160
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2
+  ],
+  [
+   40,
+   80,
+   120,
+   160
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "force / N"
+ ],
+ "areas": [
+  {
+   "expr": "141.3716694115407*sin(3.14159265*x/0.05)",
+   "from": 0,
+   "to": 0.05,
+   "colour": "a2",
+   "opacity": 0.2
+  },
+  {
+   "expr": "35.34291735288517*sin(3.14159265*x/0.2)",
+   "from": 0,
+   "to": 0.2,
+   "colour": "a1",
+   "opacity": 0.16
+  }
+ ],
+ "curves": [
+  {
+   "expr": "141.3716694115407*sin(3.14159265*x/0.05)",
+   "domain": [
+    0,
+    0.05
+   ],
+   "colour": "a2",
+   "label": "0.05 s: average 90 N",
+   "labelAt": [
+    0.056,
+    140
+   ]
+  },
+  {
+   "expr": "35.34291735288517*sin(3.14159265*x/0.2)",
+   "domain": [
+    0,
+    0.2
+   ],
+   "colour": "a1",
+   "label": "0.20 s: average 22.5 N",
+   "labelAt": [
+    0.13,
+    52
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "141.3716694115407*sin(3.14159265*x/0.05)",
+   "from": 0,
+   "to": 0.05,
+   "value": 4.5,
+   "tol": 0.005,
+   "name": "0.05 s pulse: impulse 4.5 N s"
+  },
+  {
+   "type": "area",
+   "expr": "35.34291735288517*sin(3.14159265*x/0.2)",
+   "from": 0,
+   "to": 0.2,
+   "value": 4.5,
+   "tol": 0.005,
+   "name": "0.2 s pulse: impulse 4.5 N s"
+  }
+ ]
+}

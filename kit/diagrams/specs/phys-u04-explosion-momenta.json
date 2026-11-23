@@ -1,0 +1,37 @@
+{
+ "id": "phys-u04-explosion-momenta",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Collisions and explosions",
+ "title": "An explosion from rest",
+ "caption": "Momentum before is zero, so the two pieces carry equal and opposite momenta of 28.3 kg m s⁻¹. Sharing the 600 J between them gives the 1.0 kg piece 28.3 m s⁻¹ and the 2.0 kg piece 14.1 m s⁻¹.",
+ "alt": "Two momentum arrows of 28.3 kilogram metres per second pointing in opposite directions from the explosion point, adding to zero.",
+ "description": [
+  "Momentum: 1v₁ = 2v₂, so v₁ = 2v₂.",
+  "Energy: ½(1)v₁² + ½(2)v₂² = 600 J, so 3v₂² = 600 and v₂ = 14.14 m s⁻¹, v₁ = 28.28 m s⁻¹.",
+  "Each piece has momentum 28.28 kg m s⁻¹, in opposite directions; the total stays zero."
+ ],
+ "mode": "body",
+ "units": "kg m s^{-1}",
+ "vectors": [
+  {
+   "label": "p_{1}",
+   "mag": 28.284,
+   "angle": 180,
+   "source": "1.0 kg piece, 28.3 m s^{-1}"
+  },
+  {
+   "label": "p_{2}",
+   "mag": 28.284,
+   "angle": 0,
+   "source": "2.0 kg piece, 14.1 m s^{-1}",
+   "colour": "a4"
+  }
+ ],
+ "resultant": {
+  "label": "total momentum",
+  "mag": 0,
+  "angle": 0
+ }
+}

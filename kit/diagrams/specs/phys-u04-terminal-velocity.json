@@ -1,0 +1,83 @@
+{
+ "id": "phys-u04-terminal-velocity",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Terminal velocity",
+ "title": "Reaching terminal velocity",
+ "caption": "Drag grows with speed until it balances weight minus upthrust. For the steel ball in glycerol, v_t = 2r²(ρ_s − ρ_f)g / 9η = 10.2 mm s⁻¹, reached within a few milliseconds (time constant 1.24 ms).",
+ "alt": "Speed against time rising steeply then levelling off at the terminal velocity of about 10 millimetres per second.",
+ "description": [
+  "r = 1.0 mm, ρ_s = 7800 kg m⁻³, ρ_f = 1260 kg m⁻³, η = 1.4 Pa s.",
+  "v_t = 2 × (10⁻³)² × 6540 × 9.8 / (9 × 1.4) = 0.01017 m s⁻¹ = 10.2 mm s⁻¹.",
+  "With linear drag the approach is exponential, time constant v_t ρ_s / ((ρ_s − ρ_f) g) = 1.24 ms.",
+  "Measuring v_t is how a falling-ball viscometer finds η."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / ms",
+  "speed / mm s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "10.173333333333332*(1-exp(-x/1.2380952380952377))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 10.173333333333332,
+   "label": "terminal velocity 10.2 mm s⁻¹"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "10.173333333333332*(1-exp(-x/1.2380952380952377))",
+   "x": 6,
+   "between": [
+    10.071599999999998,
+    10.173333333333332
+   ],
+   "name": "the speed levels off at the terminal velocity"
+  },
+  {
+   "type": "point",
+   "expr": "2*0.001^2*6540*9.8/(9*1.4)*1000+0*x",
+   "x": 0,
+   "y": 10.17333333,
+   "name": "Stokes: v_t = 10.17 mm s⁻¹"
+  }
+ ]
+}
