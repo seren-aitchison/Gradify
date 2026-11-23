@@ -84,6 +84,7 @@ H: The Hubble tension
 P: The ~5σ disagreement between early-universe and local measurements is one of cosmology's biggest puzzles. Possible explanations include unrecognised systematics in distance measurements or new physics (early dark energy, extra relativistic species, modified gravity). JWST observations of Cepheids have so far confirmed the local measurements' calibration.
 X: Recession speed of a galaxy 100 Mpc away (H_{0} = 70)?
 > v = 70 × 100 = 7000 km s^{-1}
+D: phys-u31-hubble-law
 !: Hubble's law is linear only at small distances; at high redshift, the relation depends on the expansion history.
 Q: State Hubble's law. | Recession velocity is proportional to distance: v = H_{0}d.
 Q: What is the Hubble tension? | The disagreement between early-universe (~67) and local (~73) measurements of H_{0}.
@@ -180,6 +181,7 @@ H: Anisotropies
 X: Number density of CMB photons from T = 2.725 K?
 > n ≈ 2 × 10^{7}T^{3} m^{-3} = 2 × 10^{7} × 20.2 ≈ 4.1 × 10^{8} m^{-3}
 > ≈ 410 per cm^{3}
+D: phys-u31-cmb-spectrum
 !: The CMB isn't from the Big Bang "moment" itself; it was released 380 000 years later when atoms formed.
 Q: Why is the CMB a blackbody? | The early universe was in thermal equilibrium, and expansion preserves the blackbody shape while lowering the temperature.
 Q: What does the first acoustic peak's position tell us? | The universe is spatially flat.
@@ -273,6 +275,7 @@ P: DESI's BAO measurements (2024–25), combined with supernovae and the CMB, hi
 X: How does dark energy density compare with matter density at z = 1 (Ω_{Λ} = 0.69, Ω_{m} = 0.31 today, w = −1)?
 > Matter ∝ (1 + z)^{3}: 0.31 × 8 = 2.48; Λ stays 0.69
 > Matter dominated by ~3.6× at z = 1
+D: phys-u31-matter-vs-lambda
 !: Dark energy's effects are only significant on cosmic scales; it doesn't affect the Solar System measurably.
 Q: What is dark energy? | The component causing the accelerating expansion, with negative pressure.
 Q: What equation of state does a cosmological constant have? | w = −1.
@@ -474,6 +477,7 @@ H: The Hubble parameter h
 X: Matter density fraction at z = 3 (Ω_{m} = 0.31, Ω_{Λ} = 0.69 today)?
 > Matter: 0.31 × 64 = 19.8; Λ: 0.69
 > Ω_{m}(z = 3) = 19.8/20.5 ≈ 0.97: matter dominated
+D: phys-u31-matter-fraction
 !: Density parameters change with time; quoted values are today's.
 Q: What is a density parameter? | A component's density divided by the critical density.
 Q: Where are most of the universe's baryons? | In hot, diffuse gas around and between galaxies.

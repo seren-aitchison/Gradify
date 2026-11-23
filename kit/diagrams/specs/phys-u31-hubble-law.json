@@ -1,0 +1,85 @@
+{
+ "id": "phys-u31-hubble-law",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u31",
+ "lesson": "Hubble's law",
+ "title": "Hubble's law",
+ "caption": "Recession speed is proportional to distance: v = H₀d. With H₀ = 70 km s⁻¹ Mpc⁻¹ a galaxy 100 Mpc away recedes at 7000 km s⁻¹. The gradient's inverse, 1/H₀, is roughly the age of the universe (about 14 Gyr).",
+ "alt": "Recession speed against distance, a straight line through the origin with gradient 70, passing 7000 kilometres per second at 100 megaparsecs.",
+ "description": [
+  "v = 70 km s⁻¹ Mpc⁻¹ × d.",
+  "d = 100 Mpc: v = 7000 km s⁻¹.",
+  "1/H₀ = 14.0 × 10⁹ years: the Hubble time."
+ ],
+ "range": {
+  "x": [
+   0,
+   200
+  ],
+  "y": [
+   0,
+   15000
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200
+  ],
+  [
+   5000,
+   10000,
+   15000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance / Mpc",
+  "recession speed / km s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "70*x",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 100,
+   "to": 7000
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 7000,
+   "colour": "a2",
+   "label": "7000 km s⁻¹ at 100 Mpc",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "70*x",
+   "x": 100,
+   "y": 7000,
+   "name": "7000 km s⁻¹ at 100 Mpc"
+  },
+  {
+   "type": "slope",
+   "expr": "70*x",
+   "x": 50,
+   "value": 70,
+   "name": "gradient H₀ = 70"
+  }
+ ]
+}

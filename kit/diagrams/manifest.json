@@ -66937,5 +66937,185 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u31-cmb-spectrum": {
+  "title": "The cosmic microwave background spectrum",
+  "caption": "The CMB is the most perfect blackbody known, at T = 2.725 K. Wien's law puts its peak at λ = 2.898 mm K / 2.725 K = 1.06 mm, in the microwave band. It was emitted at about 3000 K and stretched by expansion (z ≈ 1100).",
+  "alt": "Blackbody spectrum of the cosmic microwave background against wavelength in millimetres, peaking at 1.06 millimetres.",
+  "description": [
+   "Planck curve for T = 2.725 K, scaled to peak at 1.",
+   "Peak: 1.063 mm.",
+   "Shorter wavelengths fall off steeply; longer ones slowly (the Rayleigh–Jeans tail)."
+  ],
+  "course": "physics",
+  "lesson": "Cosmic microwave background",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u31.js: Cosmic microwave background"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the peak at 1.06 mm (Wien's law)",
+    "ok": true,
+    "detail": "found (1.063, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u31-hubble-law": {
+  "title": "Hubble's law",
+  "caption": "Recession speed is proportional to distance: v = H₀d. With H₀ = 70 km s⁻¹ Mpc⁻¹ a galaxy 100 Mpc away recedes at 7000 km s⁻¹. The gradient's inverse, 1/H₀, is roughly the age of the universe (about 14 Gyr).",
+  "alt": "Recession speed against distance, a straight line through the origin with gradient 70, passing 7000 kilometres per second at 100 megaparsecs.",
+  "description": [
+   "v = 70 km s⁻¹ Mpc⁻¹ × d.",
+   "d = 100 Mpc: v = 7000 km s⁻¹.",
+   "1/H₀ = 14.0 × 10⁹ years: the Hubble time."
+  ],
+  "course": "physics",
+  "lesson": "Hubble's law",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u31.js: Hubble's law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "7000 km s⁻¹ at 100 Mpc",
+    "ok": true,
+    "detail": "y(100) = 7000"
+   },
+   {
+    "name": "gradient H₀ = 70",
+    "ok": true,
+    "detail": "gradient 70.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u31-matter-fraction": {
+  "title": "The matter fraction in the past",
+  "caption": "Ω_m(z) = Ω_m(1 + z)³ / [Ω_m(1 + z)³ + Ω_Λ]. Today it is 0.31; at z = 3 it was 0.966: the early universe was almost entirely matter-dominated (radiation aside), which is why structure could grow.",
+  "alt": "Matter fraction of the total density against redshift, rising from 0.31 today towards 1, reaching 0.97 at z = 3.",
+  "description": [
+   "Today (z = 0): 0.31.",
+   "z = 1: 0.782.",
+   "z = 3: 0.966.",
+   "Radiation, important only above z of a few thousand, is left out."
+  ],
+  "course": "physics",
+  "lesson": "Matter-energy density parameters",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u31.js: Matter-energy density parameters"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.31 today",
+    "ok": true,
+    "detail": "y(0) = 0.31"
+   },
+   {
+    "name": "0.966 at z = 3",
+    "ok": true,
+    "detail": "y(3) = 0.9664"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u31-matter-vs-lambda": {
+  "title": "Matter thins out; dark energy does not",
+  "caption": "Matter density scales as (1 + z)³ while a cosmological constant stays fixed. With Ω_m = 0.31 and Ω_Λ = 0.69 today they were equal at z = 0.31. At z = 1 matter was 3.6 times denser than dark energy, so dark energy dominates only recently.",
+  "alt": "Density in units of today's critical density against redshift: matter rising steeply as one plus z cubed from 0.31, dark energy flat at 0.69, crossing at z = 0.31.",
+  "description": [
+   "Matter: 0.31(1 + z)³. Dark energy (w = −1): 0.69, constant.",
+   "Equal when (1 + z)³ = 0.69/0.31: z = 0.306.",
+   "At z = 1: matter 2.48 against dark energy 0.69, a ratio of 3.59."
+  ],
+  "course": "physics",
+  "lesson": "Dark energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u31.js: Dark energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "equal at z = 0.31",
+    "ok": true,
+    "detail": "0.31*(1+x)^3 → 0.69, 0.69+0*x → 0.69"
+   },
+   {
+    "name": "eight times denser at z = 1",
+    "ok": true,
+    "detail": "y(1) = 2.48"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
