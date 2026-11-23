@@ -33,7 +33,22 @@ used on one phrase per page at most.
 (`.secondary`), `.ds-more` ("Learn more ›"), `.ds-tiles` / `.ds-tile`, `.ds-shot` (`.ds-zoom` opens up as it
 scrolls), `.ds-stats`, and `.ds-reveal` (a calm fade-up, `kit/ui/reveal.js`). Everything still for reduced motion.
 
-**Rollout.** The Gradify homepage is on the system now. Next: subject site homepages (`kit/core/subsite-home.js`),
+**Interface components** (same file, plain class names that work on any page, with or without `body.ds`):
+`.ds-header` (translucent sticky bar; on phones the links get their own scrolling row), `.ds-footer`, `.ds-card` /
+`.ds-cards` (a `.ds-card-link` makes the whole card clickable, with the focus ring on the card), `.ds-badge`
+(`.accent`, `.success`, `.warning`, `.danger`), `.ds-field` / `.ds-input` / `.ds-hint` / `.ds-error` / `.ds-search`,
+`.ds-stat` / `.ds-stat-row`, `.ds-notice` (`.info`, `.success`, `.warning`, `.danger`) and `.ds-empty`. Every colour
+comes from a token (status colours are AA on their own backgrounds in both themes) and nothing uses `!important`;
+`tests/design-tokens.test.mjs` checks both. Homepage-only overrides in `assets/styles.css` are not part of the system
+and are never copied into subject sites. The review page is `labs/design-system/` (never published).
+
+**Appearance.** Every page follows the device's light or dark setting by default (`kit/core/theme-boot.js`). The
+sun/moon button picks light or dark for this device, and **Reading and accessibility → Appearance** offers
+"Match my device", Light and Dark, so following the device can always be chosen again. "Reset everything" returns to
+matching the device.
+
+**Rollout.** The Gradify homepage is on the system now. Subject sites move only after the shared components are
+reviewed and approved. Next: subject site homepages (`kit/core/subsite-home.js`),
 pricing, Explore and Journey, then the study app and courses, one surface at a time. The same tokens become the
 Tailwind theme if Gradify moves to Next.js (`docs/NEXTJS-MIGRATION.md`).
 

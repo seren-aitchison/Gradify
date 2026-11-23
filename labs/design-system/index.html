@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gradify Design System · Components</title>
+<meta name="robots" content="noindex">
+<!--
+  The Gradify Design System component gallery: every shared component in kit/styles/system.css, in both themes, for
+  review before any subject site uses them. labs/ is never published (scripts/build-site.mjs). Open it from a local
+  server at the repository root, e.g. http://localhost:8000/labs/design-system/.
+-->
+<script>
+  // the same rule as kit/core/theme-boot.js: follow the device unless a light or dark choice was made
+  (function () { var q = new URLSearchParams(location.search).get("theme"); var t = q === "light" || q === "dark" ? q : matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; document.documentElement.dataset.theme = t; })();
+</script>
+<link rel="stylesheet" href="../../kit/styles/system.css">
+<style>
+  body { margin: 0; }
+  .g-wrap { max-width: var(--ds-width-content); margin: 0 auto; padding: var(--ds-space-7) var(--ds-space-5); }
+  .g-wrap > h2 { margin: var(--ds-space-8) 0 var(--ds-space-2); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-fg-2); }
+  .g-wrap > h2 + p { margin: 0 0 var(--ds-space-5); color: var(--ds-fg-2); font-size: 15px; }
+  .g-row { display: flex; flex-wrap: wrap; gap: var(--ds-space-3); align-items: center; }
+  .g-grid { display: grid; gap: var(--ds-space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .g-swatches { display: grid; gap: var(--ds-space-3); grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .g-sw { border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-line); overflow: hidden; font-size: 12px; }
+  .g-sw i { display: block; height: 56px; }
+  .g-sw span { display: block; padding: 6px 8px; color: var(--ds-fg-2); font-family: var(--ds-font-mono); }
+  .g-theme { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--ds-radius-pill); background: var(--ds-bg-alt); }
+  .g-theme a { padding: 6px 12px; border-radius: var(--ds-radius-pill); color: var(--ds-fg-2); text-decoration: none; font-size: 13px; }
+  .g-theme a[aria-current] { background: var(--ds-surface); color: var(--ds-fg); }
+</style>
+</head>
+<body class="ds">
+<header class="ds-header">
+  <a class="ds-brand" href="#top">Gradify</a>
+  <nav aria-label="Example navigation"><a href="#top" aria-current="page">Components</a><a href="#colour">Colour</a><a href="#editorial">Editorial</a><a href="#states">States</a></nav>
+  <a class="ds-btn" href="#top">Start free</a>
+</header>
+
+<main class="g-wrap" id="top">
+  <span class="ds-eyebrow accent">Gradify Design System</span>
+  <h1 class="ds-title" style="margin:0;text-align:left">Shared components</h1>
+  <p class="ds-lead" style="margin-left:0;text-align:left">The foundation every Gradify page will share. Each part uses only the design tokens, so light and dark come for free. Nothing here is on a subject site yet.</p>
+  <p class="g-theme" role="group" aria-label="Theme"><a href="?">Device</a><a href="?theme=light">Light</a><a href="?theme=dark">Dark</a></p>
+
+  <h2 id="colour">Colour</h2>
+  <p>One accent: Gradify indigo. Status colours always come with a word, never colour alone.</p>
+  <div class="g-swatches">
+    <div class="g-sw"><i style="background:var(--ds-bg)"></i><span>bg</span></div>
+    <div class="g-sw"><i style="background:var(--ds-bg-alt)"></i><span>bg-alt</span></div>
+    <div class="g-sw"><i style="background:var(--ds-surface)"></i><span>surface</span></div>
+    <div class="g-sw"><i style="background:var(--ds-fg)"></i><span>fg</span></div>
+    <div class="g-sw"><i style="background:var(--ds-fg-2)"></i><span>fg-2</span></div>
+    <div class="g-sw"><i style="background:var(--ds-accent)"></i><span>accent</span></div>
+    <div class="g-sw"><i style="background:var(--ds-success)"></i><span>success</span></div>
+    <div class="g-sw"><i style="background:var(--ds-warning)"></i><span>warning</span></div>
+    <div class="g-sw"><i style="background:var(--ds-danger)"></i><span>danger</span></div>
+  </div>
+
+  <h2>Buttons and links</h2>
+  <p>One primary action per view. The secondary outline is for a real alternative; "Learn more ›" for going deeper.</p>
+  <div class="g-row"><a class="ds-btn" href="#top">Turn my notes into a course</a><a class="ds-btn secondary" href="#top">See pricing</a><a class="ds-more" href="#top">Learn more</a></div>
+
+  <h2>Badges</h2>
+  <p>Short labels on cards and rows.</p>
+  <div class="g-row"><span class="ds-badge">GCSE</span><span class="ds-badge accent">New</span><span class="ds-badge success">Mastered</span><span class="ds-badge warning">Due today</span><span class="ds-badge danger">Needs review</span></div>
+
+  <h2>Cards</h2>
+  <p>A surface with a hairline. A card with one link is clickable as a whole, with the focus ring around the card.</p>
+  <div class="ds-cards">
+    <article class="ds-card"><span class="ds-badge accent" style="align-self:start">Live</span><h3><a class="ds-card-link" href="#top">A-level Biology</a></h3><p>Cells, genetics, ecosystems and the practical endorsement.</p></article>
+    <article class="ds-card"><span class="ds-badge success" style="align-self:start">74% mastered</span><h3><a class="ds-card-link" href="#top">GCSE Maths</a></h3><p>Higher tier, every topic with worked examples and exam questions.</p></article>
+    <article class="ds-card"><span class="ds-badge" style="align-self:start">Coming soon</span><h3>Law</h3><p>A card without a link stays still.</p></article>
+  </div>
+
+  <h2>Fields and search</h2>
+  <p>Labels above, hints below; an error replaces the hint and is linked to the input.</p>
+  <div class="g-grid">
+    <div class="ds-field"><label for="g-email">Email</label><input class="ds-input" id="g-email" type="email" placeholder="you@example.com" aria-describedby="g-email-hint"><p class="ds-hint" id="g-email-hint">We'll send one link, nothing else.</p></div>
+    <div class="ds-field"><label for="g-name">Course name</label><input class="ds-input" id="g-name" value="" aria-invalid="true" aria-describedby="g-name-err"><p class="ds-error" id="g-name-err">Give the course a name.</p></div>
+    <div class="ds-field"><span class="ds-label" id="g-search-l">Search</span><label class="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="ds-input" type="search" placeholder="Search subjects" aria-labelledby="g-search-l"></label></div>
+  </div>
+
+  <h2>Stats</h2>
+  <p>One number and what it means.</p>
+  <div class="ds-stat-row"><div class="ds-stat"><b>12</b><span>day streak</span></div><div class="ds-stat"><b>340</b><span>cards reviewed</span></div><div class="ds-stat"><b>A*</b><span>predicted grade</span></div></div>
+
+  <h2 id="states">Notices</h2>
+  <p>Inline messages. <code>role="status"</code> for news; <code>role="alert"</code> only for errors that need attention now.</p>
+  <div style="display:grid;gap:var(--ds-space-3)">
+    <div class="ds-notice info" role="status"><p><b>Saved.</b> Your progress syncs with your account.</p></div>
+    <div class="ds-notice success" role="status"><p><b>Unit complete.</b> You mastered every topic in Cells.</p></div>
+    <div class="ds-notice warning" role="status"><p><b>You're offline.</b> Everything you do is saved on this device and syncs when you're back.</p></div>
+    <div class="ds-notice danger" role="alert"><p><b>Couldn't sign in.</b> The link has expired. Request a new one.</p></div>
+  </div>
+
+  <h2>Empty state</h2>
+  <p>Says why there's nothing here and offers the next step.</p>
+  <div class="ds-empty"><h3>No bookmarks yet</h3><p>Bookmark any page in a course and it'll wait for you here.</p><a class="ds-btn secondary" href="#top">Browse courses</a></div>
+
+  <h2 id="editorial">Editorial (already on the homepage)</h2>
+  <p>Hero, lead, spectrum phrase, tiles and stats from the reviewed homepage.</p>
+</main>
+<section class="ds-section alt">
+  <span class="ds-eyebrow">Study smarter</span>
+  <h2 class="ds-hero">Your notes. <span class="ds-spectrum">A full course.</span></h2>
+  <p class="ds-lead">Large confident type, generous space and one accent.</p>
+  <div class="ds-actions"><a class="ds-btn" href="#top">Start free</a><a class="ds-more" href="#top">How it works</a></div>
+  <div class="ds-tiles"><div class="ds-tile"><h3 class="ds-heading">Flat tiles</h3><p>On the grey band they turn white.</p></div><div class="ds-tile"><h3 class="ds-heading">Calm motion</h3><p>Still for reduced motion.</p></div></div>
+</section>
+
+<footer class="ds-footer">
+  <div class="ds-footer-cols">
+    <div><h3>Study</h3><ul><li><a href="#top">Explore subjects</a></li><li><a href="#top">Journey</a></li></ul></div>
+    <div><h3>Gradify</h3><ul><li><a href="#top">Pricing</a></li><li><a href="#top">Status</a></li></ul></div>
+    <div><h3>Legal</h3><ul><li><a href="#top">Privacy</a></li><li><a href="#top">Terms</a></li></ul></div>
+  </div>
+  <p class="ds-legal">Gradify Design System review page. Not published.</p>
+</footer>
+<script>
+  var q = new URLSearchParams(location.search).get("theme") || "";
+  document.querySelectorAll(".g-theme a").forEach(function (a) { if (a.getAttribute("href") === (q ? "?theme=" + q : "?")) a.setAttribute("aria-current", "true"); });
+</script>
+</body>
+</html>
