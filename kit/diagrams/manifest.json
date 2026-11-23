@@ -64904,5 +64904,355 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u21-balmer-series": {
+  "title": "The Balmer series of hydrogen",
+  "caption": "Electrons falling to n = 2 emit the visible Balmer lines: Hα 656.3 nm (red), Hβ 486 nm (blue-green) and Hγ 434 nm (violet); Hδ, from n = 6, is at 410.1 nm. In a quasar Hα arrives at 984 nm, so its redshift is z = 984/656.3 − 1 = 0.5.",
+  "alt": "Hydrogen energy levels n = 1 to 6 with downward arrows from n = 3, 4 and 5 to n = 2, and a line spectrum of three visible lines.",
+  "description": [
+   "Levels E_n = −13.6/n² eV.",
+   "3 → 2: 656.3 nm.",
+   "4 → 2: 486 nm.",
+   "5 → 2: 434 nm.",
+   "Transitions to n = 1 (Lyman) are ultraviolet; to n = 3 (Paschen) infrared."
+  ],
+  "course": "physics",
+  "lesson": "Atomic spectra",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Atomic spectra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "hydrogen levels follow E_{n} = −13.6 eV / n^{2}",
+    "ok": true,
+    "detail": "6 levels"
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3 → 2: λ = hc/ΔE = 656.3 nm",
+    "ok": true,
+    "detail": "656.3 nm"
+   },
+   {
+    "name": "3 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "3 → 2 is in the visible",
+    "ok": true,
+    "detail": "656 nm is visible"
+   },
+   {
+    "name": "4 → 2: λ = hc/ΔE = 486 nm",
+    "ok": true,
+    "detail": "486 nm"
+   },
+   {
+    "name": "4 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "4 → 2 is in the visible",
+    "ok": true,
+    "detail": "486 nm is visible"
+   },
+   {
+    "name": "5 → 2: λ = hc/ΔE = 434 nm",
+    "ok": true,
+    "detail": "434 nm"
+   },
+   {
+    "name": "5 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "5 → 2 is in the visible",
+    "ok": true,
+    "detail": "434 nm is visible"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u21-bohr-radii": {
+  "title": "Bohr orbits grow as n²",
+  "caption": "In the Bohr model r_n = n²a₀ with a₀ = 0.0529 nm. The n = 2 orbit is four times the ground-state radius, 0.212 nm, and the electron there moves at half the speed (v ∝ 1/n).",
+  "alt": "Bar chart of Bohr orbit radii: 0.053, 0.212, 0.476 and 0.846 nanometres for n = 1 to 4.",
+  "description": [
+   "n = 1: r = 1 × 0.0529 = 0.053 nm.",
+   "n = 2: r = 4 × 0.0529 = 0.212 nm.",
+   "n = 3: r = 9 × 0.0529 = 0.476 nm.",
+   "n = 4: r = 16 × 0.0529 = 0.846 nm.",
+   "The speed falls as 1/n: 2.19 × 10⁶ m s⁻¹ for n = 1, 1.09 × 10⁶ m s⁻¹ for n = 2."
+  ],
+  "course": "physics",
+  "lesson": "Bohr model",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Bohr model"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 1 → n = 4: increasing",
+    "ok": true,
+    "detail": "n = 1 0.053, n = 2 0.212, n = 3 0.476, n = 4 0.846"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u21-lithium-ion": {
+  "title": "Hydrogen-like Li²⁺",
+  "caption": "With one electron and Z = 3, the energies are Z² = 9 times hydrogen's: E_n = −13.6 × 9 / n² eV. The n = 2 → 1 photon carries 91.8 eV, so λ = 13.5 nm, one ninth of hydrogen's 121.5 nm Lyman-α, deep in the ultraviolet.",
+  "alt": "Energy levels of the lithium 2+ ion at minus 122.4, minus 30.6, minus 13.6 and minus 7.7 electronvolts, with the 2 to 1 transition at 13.5 nanometres.",
+  "description": [
+   "E₁ = -122.451 eV, E₂ = -30.613 eV, E₃ = -13.606 eV, E₄ = -7.653 eV.",
+   "ΔE(2 → 1) = 91.84 eV.",
+   "λ = 1239.84 / 91.84 = 13.5 nm."
+  ],
+  "course": "physics",
+  "lesson": "Hydrogen and hydrogen-like atoms",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Hydrogen and hydrogen-like atoms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 → 1: photon energy 91.84 eV",
+    "ok": true,
+    "detail": "ΔE = 91.84 eV"
+   },
+   {
+    "name": "2 → 1: λ = hc/ΔE = 13.5 nm",
+    "ok": true,
+    "detail": "13.5 nm"
+   },
+   {
+    "name": "2 → 1 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "2 → 1 is in the ultraviolet",
+    "ok": true,
+    "detail": "13.5 nm is ultraviolet"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u21-moseley": {
+  "title": "Moseley's law",
+  "caption": "A Kα X-ray comes from an L electron filling a K vacancy; the K electron left behind screens one unit of charge, so E ≈ 10.2 eV × (Z − 1)². For copper (Z = 29): 10.2 × 28² eV = 8 keV. Moseley used this to order the elements by atomic number.",
+  "alt": "Kα energy against atomic number, a curve rising as Z minus 1 squared, with copper marked at 8.0 kiloelectronvolts.",
+  "description": [
+   "E(Kα) = (3/4) × 13.6 eV × (Z − 1)² = 10.2 eV × (Z − 1)².",
+   "Copper, Z = 29: 7.997 keV.",
+   "√E against Z is a straight line: each element's place in the table is fixed by its nuclear charge."
+  ],
+  "course": "physics",
+  "lesson": "Multi-electron atoms",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Multi-electron atoms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "copper Kα = 8 keV",
+    "ok": true,
+    "detail": "y(29) = 7.9968"
+   },
+   {
+    "name": "√E is linear in Z",
+    "ok": true,
+    "detail": "y(29) = 2.8279"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u21-natural-linewidth": {
+  "title": "Natural linewidth",
+  "caption": "A state that lives τ = 16 ns cannot have a perfectly sharp energy: the line has a Lorentzian shape with full width at half maximum Δν = 1/(2πτ) = 9.9 MHz. Shorter-lived states give broader lines.",
+  "alt": "A Lorentzian line shape centred on the transition frequency, with its full width at half maximum of about 10 megahertz marked.",
+  "description": [
+   "Horizontal axis: detuning from the line centre in MHz.",
+   "Lifetime τ = 16 ns: Δν = 1 / (2π × 16 × 10⁻⁹ s) = 9.95 MHz.",
+   "The intensity falls to half at ±Δν/2 from the centre."
+  ],
+  "course": "physics",
+  "lesson": "Atomic transitions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Atomic transitions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half maximum at Δν/2",
+    "ok": true,
+    "detail": "y(4.9736) = 0.5"
+   },
+   {
+    "name": "peak at the line centre",
+    "ok": true,
+    "detail": "found (0, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u21-sodium-d": {
+  "title": "Sodium's yellow line",
+  "caption": "The 3p level lies 2.105 eV above the 3s ground state. An electron falling between them emits a photon of λ = hc/ΔE = 589 nm, the yellow of sodium street lamps.",
+  "alt": "Energy levels of sodium: 3s at minus 5.14 electronvolts and 3p at minus 3.03, with a downward arrow emitting 589 nanometre yellow light.",
+  "description": [
+   "3s (ground state): -5.139 eV. 3p: -3.034 eV.",
+   "ΔE = 2.105 eV.",
+   "λ = 1239.84 eV nm / 2.105 eV = 589 nm, in the visible (yellow)."
+  ],
+  "course": "physics",
+  "lesson": "Atomic energy levels",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u21.js: Atomic energy levels"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 → 0: photon energy 2.105 eV",
+    "ok": true,
+    "detail": "ΔE = 2.105 eV"
+   },
+   {
+    "name": "1 → 0: λ = hc/ΔE = 589 nm",
+    "ok": true,
+    "detail": "589 nm"
+   },
+   {
+    "name": "1 → 0 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "1 → 0 is in the visible",
+    "ok": true,
+    "detail": "589 nm is visible"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

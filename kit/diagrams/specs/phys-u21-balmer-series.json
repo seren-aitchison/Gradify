@@ -1,0 +1,69 @@
+{
+ "id": "phys-u21-balmer-series",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Atomic spectra",
+ "title": "The Balmer series of hydrogen",
+ "caption": "Electrons falling to n = 2 emit the visible Balmer lines: Hα 656.3 nm (red), Hβ 486 nm (blue-green) and Hγ 434 nm (violet); Hδ, from n = 6, is at 410.1 nm. In a quasar Hα arrives at 984 nm, so its redshift is z = 984/656.3 − 1 = 0.5.",
+ "alt": "Hydrogen energy levels n = 1 to 6 with downward arrows from n = 3, 4 and 5 to n = 2, and a line spectrum of three visible lines.",
+ "description": [
+  "Levels E_n = −13.6/n² eV.",
+  "3 → 2: 656.3 nm.",
+  "4 → 2: 486 nm.",
+  "5 → 2: 434 nm.",
+  "Transitions to n = 1 (Lyman) are ultraviolet; to n = 3 (Paschen) infrared."
+ ],
+ "atom": "H",
+ "scale": "sqrt",
+ "spectrum": true,
+ "levels": [
+  {
+   "n": 1,
+   "E": -13.606
+  },
+  {
+   "n": 2,
+   "E": -3.401
+  },
+  {
+   "n": 3,
+   "E": -1.512
+  },
+  {
+   "n": 4,
+   "E": -0.85
+  },
+  {
+   "n": 5,
+   "E": -0.544
+  },
+  {
+   "n": 6,
+   "E": -0.378
+  }
+ ],
+ "transitions": [
+  {
+   "from": 3,
+   "to": 2,
+   "lambda": 656.3,
+   "kind": "emission",
+   "region": "visible"
+  },
+  {
+   "from": 4,
+   "to": 2,
+   "lambda": 486,
+   "kind": "emission",
+   "region": "visible"
+  },
+  {
+   "from": 5,
+   "to": 2,
+   "lambda": 434,
+   "kind": "emission",
+   "region": "visible"
+  }
+ ]
+}

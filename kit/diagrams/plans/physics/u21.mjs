@@ -1,3 +1,30 @@
 // Physics unit 21 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u21-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u21.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u21-01", null, CALC],
+  ["u21-02", null, "needs renderer: alpha trajectories bending round a nucleus, with the closest approach recomputed"],
+  ["u21-03", "trend", "phys-u21-bohr-radii", "Bohr radii n²a₀ for n = 1 to 4"],
+  ["u21-04", null, "why 2s lies below 2p in lithium is an argument about penetration and screening, carried in the text"],
+  ["u21-05", null, "needs renderer: radial probability densities with their nodes counted"],
+  ["u21-06", null, "an electron configuration is a written rule; the chemistry course draws orbital boxes"],
+  ["u21-07", "transitions", "phys-u21-sodium-d", "sodium's 3p → 3s transition emitting 589 nm"],
+  ["u21-08", "transitions", "phys-u21-lithium-ion", "Li²⁺ levels at 9 × hydrogen's; the 2 → 1 line at 13.5 nm"],
+  ["u21-09", "graph", "phys-u21-moseley", "Kα energy 10.2 eV × (Z − 1)²: 8.0 keV for copper"],
+  ["u21-10", null, CALC],
+  ["u21-11", null, CALC],
+  ["u21-12", null, CALC],
+  ["u21-13", null, CALC],
+  ["u21-14", null, "needs renderer: a level splitting into components in a magnetic field, with Δm_l rules applied"],
+  ["u21-15", null, CALC],
+  ["u21-16", "transitions", "phys-u21-balmer-series", "the Balmer lines 656, 486 and 434 nm with their spectrum"],
+  ["u21-17", null, "selection rules are stated and applied in the text"],
+  ["u21-18", null, "why X-ray lasers are hard is an argument about lifetimes, carried in the text"],
+  ["u21-19", "graph", "phys-u21-natural-linewidth", "a Lorentzian line of width 1/2πτ = 9.9 MHz for τ = 16 ns"],
+  ["u21-20", null, "needs renderer: a four-level laser scheme with pumping and lasing transitions"],
+  ["u21-21", null, CALC],
+  ["u21-22", null, CALC],
+  ["u21-23", null, "how a magneto-optical trap works is described in the text; it needs a beam-and-coil diagram"],
+  ["u21-24", null, "evaporative cooling is an argument about the energy distribution, carried in the text"],
+  ["u21-25", null, "Doppler-free two-photon spectroscopy is an argument, carried in the text"],
+];

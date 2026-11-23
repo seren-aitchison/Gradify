@@ -1,0 +1,94 @@
+{
+ "id": "phys-u21-natural-linewidth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Atomic transitions",
+ "title": "Natural linewidth",
+ "caption": "A state that lives τ = 16 ns cannot have a perfectly sharp energy: the line has a Lorentzian shape with full width at half maximum Δν = 1/(2πτ) = 9.9 MHz. Shorter-lived states give broader lines.",
+ "alt": "A Lorentzian line shape centred on the transition frequency, with its full width at half maximum of about 10 megahertz marked.",
+ "description": [
+  "Horizontal axis: detuning from the line centre in MHz.",
+  "Lifetime τ = 16 ns: Δν = 1 / (2π × 16 × 10⁻⁹ s) = 9.95 MHz.",
+  "The intensity falls to half at ±Δν/2 from the centre."
+ ],
+ "range": {
+  "x": [
+   -30,
+   30
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   -30,
+   -20,
+   -10,
+   0,
+   10,
+   20,
+   30
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "detuning / MHz",
+  "intensity (relative)"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+(2*x/9.9472)^2)",
+   "colour": "a1"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    -4.97359197162173,
+    0.5
+   ],
+   "to": [
+    4.97359197162173,
+    0.5
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "Δν = 9.9 MHz",
+   "labelAt": [
+    6.97359197162173,
+    0.58
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(1+(2*x/9.9472)^2)",
+   "x": 4.9736,
+   "y": 0.5,
+   "name": "half maximum at Δν/2"
+  },
+  {
+   "type": "max",
+   "expr": "1/(1+(2*x/9.9472)^2)",
+   "domain": [
+    -30,
+    30
+   ],
+   "x": 0,
+   "y": 1,
+   "name": "peak at the line centre"
+  }
+ ]
+}
