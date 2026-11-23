@@ -1,0 +1,91 @@
+{
+ "id": "phys-u38-error-growth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u38",
+ "lesson": "Sensitivity to initial conditions",
+ "title": "How fast a tiny error grows",
+ "caption": "In a chaotic system errors grow exponentially, δ = δ₀e^(λt). For the double pendulum, λ ≈ 2 s⁻¹: an error of 10⁻⁶ rad reaches 1 rad after ln(10⁶)/2 ≈ 7 s. On a log scale the growth is a straight line; a thousand times better measurement buys only another 3.5 s.",
+ "alt": "Base-10 logarithm of the error against time, a straight line rising from minus 6 at time zero to zero at about 7 seconds.",
+ "description": [
+  "log₁₀ δ = −6 + λt / ln 10, λ = 2 s⁻¹.",
+  "δ = 1 rad (log₁₀ δ = 0) at t = ln(10⁶)/2 = 6.91 s.",
+  "Each factor of 10 costs ln 10 / 2 ≈ 1.15 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   -7,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  [
+   -6,
+   -4,
+   -2,
+   0
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "log₁₀ (error / rad)"
+ ],
+ "curves": [
+  {
+   "expr": "-6+2*x/log(10)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 6.907755278982137,
+   "to": 0
+  }
+ ],
+ "points": [
+  {
+   "x": 6.9078,
+   "y": 0,
+   "colour": "a2",
+   "label": "1 rad after 6.9 s",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-6+2*x/log(10)",
+   "x": 6.90775528,
+   "y": 0,
+   "name": "the error reaches 1 rad at 6.91 s"
+  },
+  {
+   "type": "point",
+   "expr": "-6+2*x/log(10)",
+   "x": 0,
+   "y": -6,
+   "name": "starts at 10⁻⁶ rad"
+  }
+ ]
+}

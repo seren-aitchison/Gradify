@@ -68202,5 +68202,247 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u38-error-growth": {
+  "title": "How fast a tiny error grows",
+  "caption": "In a chaotic system errors grow exponentially, δ = δ₀e^(λt). For the double pendulum, λ ≈ 2 s⁻¹: an error of 10⁻⁶ rad reaches 1 rad after ln(10⁶)/2 ≈ 7 s. On a log scale the growth is a straight line; a thousand times better measurement buys only another 3.5 s.",
+  "alt": "Base-10 logarithm of the error against time, a straight line rising from minus 6 at time zero to zero at about 7 seconds.",
+  "description": [
+   "log₁₀ δ = −6 + λt / ln 10, λ = 2 s⁻¹.",
+   "δ = 1 rad (log₁₀ δ = 0) at t = ln(10⁶)/2 = 6.91 s.",
+   "Each factor of 10 costs ln 10 / 2 ≈ 1.15 s."
+  ],
+  "course": "physics",
+  "lesson": "Sensitivity to initial conditions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u38.js: Sensitivity to initial conditions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the error reaches 1 rad at 6.91 s",
+    "ok": true,
+    "detail": "y(6.90775528) = 0"
+   },
+   {
+    "name": "starts at 10⁻⁶ rad",
+    "ok": true,
+    "detail": "y(0) = -6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u38-fixed-points": {
+  "title": "Fixed points and their stability",
+  "caption": "Plot ẋ = f(x) against x: fixed points are where the curve crosses zero, at x = −1, 0 and 1. Where f is positive x grows, where negative it shrinks. At x = 0 the slope is +1, so it is unstable; at x = ±1 the slope is −2, so they are stable.",
+  "alt": "Graph of x minus x cubed against x, crossing zero at minus 1, 0 and 1, with arrows on the axis showing flow away from 0 and towards plus and minus 1.",
+  "description": [
+   "f(x) = x − x³ = x(1 − x)(1 + x).",
+   "Zeros (fixed points): x = −1, 0, 1.",
+   "f′(x) = 1 − 3x²: f′(0) = 1 > 0, unstable; f′(±1) = −2 < 0, stable.",
+   "Arrows on the x-axis show the flow: away from 0, towards ±1."
+  ],
+  "course": "physics",
+  "lesson": "Fixed points and stability",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u38.js: Fixed points and stability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "fixed point at x = 1",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "f′(0) = 1: unstable",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "f′(1) = −2: stable",
+    "ok": true,
+    "detail": "gradient -2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u38-herd-immunity": {
+  "title": "The herd immunity threshold",
+  "caption": "An infection spreads while each case infects more than one other. If a fraction p is immune, the effective reproduction number is R₀(1 − p), so spread stops once p > 1 − 1/R₀. For R₀ = 3 that is about 67%; more contagious diseases need far higher coverage.",
+  "alt": "Herd immunity threshold against basic reproduction number, rising from zero at 1 and levelling towards 1, with 67 percent at 3 marked.",
+  "description": [
+   "Threshold p_c = 1 − 1/R₀.",
+   "R₀ = 3: 0.667. R₀ = 6: 0.833. R₀ = 15 (measles-like): 0.933.",
+   "Below R₀ = 1 an outbreak dies out on its own."
+  ],
+  "course": "physics",
+  "lesson": "Complex systems and emergent behaviour",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u38.js: Complex systems and emergent behaviour"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "two thirds for R₀ = 3",
+    "ok": true,
+    "detail": "y(3) = 0.6667"
+   },
+   {
+    "name": "no immunity needed at R₀ = 1",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u38-logistic-fixed-point": {
+  "title": "The logistic map's fixed point",
+  "caption": "A fixed point of x_{n+1} = rx_n(1 − x_n) is where the parabola meets the line y = x. For r = 2.5, x* = 1 − 1/r = 0.6. The slope there is f′(x*) = 2 − r = -0.5; since |f′| < 1 iterates spiral in and it is stable. For r = 3.2 the slope is −1.2 and a 2-cycle takes over.",
+  "alt": "The parabola 2.5x(1 − x) and the diagonal y = x crossing at x = 0.6.",
+  "description": [
+   "f(x) = 2.5x(1 − x), peak 0.625 at x = 0.5.",
+   "Fixed point: f(x) = x at x* = 0.6.",
+   "f′(x*) = r(1 − 2x*) = -0.5: |f′| < 1, so stable."
+  ],
+  "course": "physics",
+  "lesson": "Logistic map",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u38.js: Logistic map"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "fixed point x* = 0.6",
+    "ok": true,
+    "detail": "2.5*x*(1-x) → 0.6, x → 0.6"
+   },
+   {
+    "name": "f′(x*) = −0.5: stable",
+    "ok": true,
+    "detail": "gradient -0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u38-saddle-node": {
+  "title": "A saddle-node bifurcation",
+  "caption": "For ẋ = r + x² the fixed points are x = ±√(−r). At r = −4 they are x = −2 (stable, f′ = −4) and x = +2 (unstable, f′ = +4). As r rises they move together, merge at r = 0, and for r > 0 there are none.",
+  "alt": "Bifurcation diagram: fixed points against r, a sideways parabola for r below zero, the lower branch solid (stable) and the upper dashed (unstable), meeting at the origin.",
+  "description": [
+   "Fixed points: r + x² = 0, so x = ±√(−r), only for r ≤ 0.",
+   "Stability from f′(x) = 2x: the negative branch is stable, the positive unstable.",
+   "r = −4: x = −2 (stable) and +2 (unstable).",
+   "At r = 0 they collide and annihilate."
+  ],
+  "course": "physics",
+  "lesson": "Bifurcation theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u38.js: Bifurcation theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x* = +2 at r = −4",
+    "ok": true,
+    "detail": "y(-4) = 2"
+   },
+   {
+    "name": "x* = −2 at r = −4",
+    "ok": true,
+    "detail": "y(-4) = -2"
+   },
+   {
+    "name": "f′(−2) = −4 < 0: the lower branch is stable",
+    "ok": true,
+    "detail": "y(-2) = -4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
