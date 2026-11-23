@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 2416,
-  "plannedVisual": 1330,
-  "plannedDiagram": 1197,
+  "assessed": 2460,
+  "plannedVisual": 1331,
+  "plannedDiagram": 1198,
   "plannedLab": 400,
-  "excluded": 1086,
-  "notAssessed": 7563,
-  "withDiagram": 1199,
+  "excluded": 1129,
+  "notAssessed": 7519,
+  "withDiagram": 1200,
   "withLab": 846,
   "withBoth": 280,
-  "withAny": 1765,
+  "withAny": 1766,
   "plannedNotDelivered": 0,
-  "placements": 1224,
+  "placements": 1225,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
   "withLabActivity": 198
  },
  "diagrams": {
-  "manifest": 1148,
-  "uniquePlaced": 1148,
-  "placements": 1224,
+  "manifest": 1149,
+  "uniquePlaced": 1149,
+  "placements": 1225,
   "reused": 69,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1133},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1133},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1134},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1134},
   "failing": [],
   "unplaced": []
  },
@@ -558,18 +558,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 558,
-    "plannedVisual": 328,
-    "plannedDiagram": 298,
+    "assessed": 602,
+    "plannedVisual": 329,
+    "plannedDiagram": 299,
     "plannedLab": 76,
-    "excluded": 230,
-    "notAssessed": 519,
-    "withDiagram": 298,
+    "excluded": 273,
+    "notAssessed": 475,
+    "withDiagram": 299,
     "withLab": 102,
     "withBoth": 58,
-    "withAny": 342,
+    "withAny": 343,
     "plannedNotDelivered": 0,
-    "placements": 298,
+    "placements": 299,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -14426,18 +14426,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 558,
-    "plannedVisual": 328,
-    "plannedDiagram": 298,
+    "assessed": 602,
+    "plannedVisual": 329,
+    "plannedDiagram": 299,
     "plannedLab": 76,
-    "excluded": 230,
-    "notAssessed": 519,
-    "withDiagram": 298,
+    "excluded": 273,
+    "notAssessed": 475,
+    "withDiagram": 299,
     "withLab": 102,
     "withBoth": 58,
-    "withAny": 342,
+    "withAny": 343,
     "plannedNotDelivered": 0,
-    "placements": 298,
+    "placements": 299,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -17848,67 +17848,371 @@
      "totals": {
       "lessons": 44,
       "written": 44,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 44,
+      "plannedVisual": 1,
+      "plannedDiagram": 1,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 44,
-      "withDiagram": 0,
+      "excluded": 43,
+      "notAssessed": 0,
+      "withDiagram": 1,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 1,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 1,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u15-01","title":"Graph Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-02","title":"Undirected Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-03","title":"Directed Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-04","title":"Weighted Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-05","title":"Degree Sequences","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-06","title":"Paths and Cycles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-07","title":"Graph Connectivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-08","title":"Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-09","title":"Trees and Forests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-10","title":"Spanning Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-11","title":"Directed Acyclic Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-12","title":"Bipartite Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-13","title":"Planar Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-14","title":"Planarity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-15","title":"Eulerian Paths","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-16","title":"Hamiltonian Paths","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-17","title":"Graph Colouring","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-18","title":"Chromatic Polynomials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-19","title":"Matching Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-20","title":"Matching and Vertex Covers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-21","title":"Shortest Path Algorithms","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-22","title":"Shortest Path Problems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-23","title":"Minimum Spanning Trees","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-24","title":"Network Flows","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-25","title":"Maximum Flow","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-26","title":"Minimum Cut","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-27","title":"Weighted Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-28","title":"Network Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-29","title":"Betweenness Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-30","title":"Closeness Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-31","title":"Eigenvector Centrality","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-32","title":"PageRank Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-33","title":"Community Detection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-34","title":"Network Clustering","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-35","title":"Spectral Graph Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-36","title":"Random Graphs","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-37","title":"Small-World Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-38","title":"Scale-Free Networks","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-39","title":"Network Science","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-40","title":"Percolation Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-41","title":"Social Network Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-42","title":"Biological Network Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-43","title":"Network Epidemiology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-44","title":"Graph Neural Network Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u15-01",
+       "title": "Graph Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a small graph with the degrees 3, 3, 2, 2, 2 beside the handshake count"}
+      },
+      {
+       "id": "u15-02",
+       "title": "Undirected Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): K₆ and its complement"}
+      },
+      {
+       "id": "u15-03",
+       "title": "Directed Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the digraph with arcs 1→2, 1→3, 2→3, 3→1"}
+      },
+      {
+       "id": "u15-04",
+       "title": "Weighted Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph with routes A–B–D and A–C–D"}
+      },
+      {
+       "id": "u15-05",
+       "title": "Degree Sequences",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a graph realising the degree sequence (3, 3, 2, 2, 2)"}
+      },
+      {
+       "id": "u15-06",
+       "title": "Paths and Cycles",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the cycle C₆ and a 10-vertex path with their diameters"}
+      },
+      {
+       "id": "u15-07",
+       "title": "Graph Connectivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): two triangles sharing a vertex, with the cut vertex marked"}
+      },
+      {
+       "id": "u15-08",
+       "title": "Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the labelled trees on 4 vertices"}
+      },
+      {
+       "id": "u15-09",
+       "title": "Trees and Forests",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a forest of 3 components"}
+      },
+      {
+       "id": "u15-10",
+       "title": "Spanning Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the spanning trees of C₄ and K₄"}
+      },
+      {
+       "id": "u15-11",
+       "title": "Directed Acyclic Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the task network A, B → C → D with its critical path"}
+      },
+      {
+       "id": "u15-12",
+       "title": "Bipartite Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): C₅ and the cube graph with a two-colouring"}
+      },
+      {
+       "id": "u15-13",
+       "title": "Planar Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a planar drawing of the cube graph with its 6 faces"}
+      },
+      {
+       "id": "u15-14",
+       "title": "Planarity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): K₃,₃ drawn with its crossing"}
+      },
+      {
+       "id": "u15-15",
+       "title": "Eulerian Paths",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a graph with degrees 4, 3, 2, 3, 2 and its Eulerian path"}
+      },
+      {
+       "id": "u15-16",
+       "title": "Hamiltonian Paths",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the Hamiltonian cycles of K₅"}
+      },
+      {
+       "id": "u15-17",
+       "title": "Graph Colouring",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the five-course conflict cycle with colours"}
+      },
+      {
+       "id": "u15-18",
+       "title": "Chromatic Polynomials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path P₃ and cycle C₄ with their 3-colourings"}
+      },
+      {
+       "id": "u15-19",
+       "title": "Matching Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the bipartite applicants-and-jobs graph"}
+      },
+      {
+       "id": "u15-20",
+       "title": "Matching and Vertex Covers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star K₁,₅ and path P₄ with a matching and a vertex cover"}
+      },
+      {
+       "id": "u15-21",
+       "title": "Shortest Path Algorithms",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph A, B, C, D with the shortest-path tree from A"}
+      },
+      {
+       "id": "u15-22",
+       "title": "Shortest Path Problems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "the exchange rates 1.4 × 0.9 × 0.8 = 1.008 are a three-term product set out in the notes; the cycle needs a network renderer and a picture of three arrows would only decorate it"
+       }
+      },
+      {
+       "id": "u15-23",
+       "title": "Minimum Spanning Trees",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the weighted graph AB 1, AC 2, BC 3, CD 4, BD 5 with its minimum spanning tree"}
+      },
+      {
+       "id": "u15-24",
+       "title": "Network Flows",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the capacitated routes s–a–t and s–b–t"}
+      },
+      {
+       "id": "u15-25",
+       "title": "Maximum Flow",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the flow network s, a, b, t with capacities and the maximum flow"}
+      },
+      {
+       "id": "u15-26",
+       "title": "Minimum Cut",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the same network with the cuts {s} and {s, a}"}
+      },
+      {
+       "id": "u15-27",
+       "title": "Weighted Networks",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-28",
+       "title": "Network Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star with centre and 5 leaves sized by centrality"}
+      },
+      {
+       "id": "u15-29",
+       "title": "Betweenness Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path 1–2–3–4–5 with betweenness"}
+      },
+      {
+       "id": "u15-30",
+       "title": "Closeness Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path 1–2–3–4–5 with closeness"}
+      },
+      {
+       "id": "u15-31",
+       "title": "Eigenvector Centrality",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the star K₁,₃ with eigenvector scores"}
+      },
+      {
+       "id": "u15-32",
+       "title": "PageRank Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-33",
+       "title": "Community Detection",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): two triangles joined by an edge, split into two communities"}
+      },
+      {
+       "id": "u15-34",
+       "title": "Network Clustering",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): a node with 4 neighbours and 2 links among them"}
+      },
+      {
+       "id": "u15-35",
+       "title": "Spectral Graph Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the path a–b–c beside its Laplacian"}
+      },
+      {
+       "id": "u15-36",
+       "title": "Random Graphs",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-37",
+       "title": "Small-World Networks",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {"id":"u15-38","title":"Scale-Free Networks","written":true,"diagrams":[{"id":"maths-u15-power-law","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u15-power-law"]}},
+      {
+       "id": "u15-39",
+       "title": "Network Science",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-40",
+       "title": "Percolation Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-41",
+       "title": "Social Network Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the 12-person team with 22 ties"}
+      },
+      {
+       "id": "u15-42",
+       "title": "Biological Network Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): the feed-forward loop X → Y → Z with X → Z"}
+      },
+      {
+       "id": "u15-43",
+       "title": "Network Epidemiology",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a short calculation set out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u15-44",
+       "title": "Graph Neural Network Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer graph/network (vertices joined by edges, with labels, weights or arrows): node v with three neighbours for the mean aggregation"}
+      }
      ]
     },
     {

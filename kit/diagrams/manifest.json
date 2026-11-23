@@ -68681,5 +68681,62 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u15-power-law": {
+  "title": "A power law is a straight line on log-log axes",
+  "caption": "With P(k) ∝ k^−2.5, log₁₀ P(k)/P(10) falls by 2.5 for each tenfold rise in k. From degree 10 to degree 100 it falls by 2.5, so P(100)/P(10) = 10^−2.5 ≈ 0.0032: about 316 times rarer.",
+  "alt": "A straight line of gradient minus 2.5 on log-log axes from degree 10 (x = 1, y = 0) to degree 100 (x = 2, y = minus 2.5).",
+  "description": [
+   "Take P(k) ∝ k^−2.5 and measure everything against degree 10.",
+   "On log axes, log₁₀ P(k)/P(10) = −2.5 (log₁₀ k − 1), a straight line of gradient −2.5.",
+   "At degree 100, log₁₀ k = 2, so the line is at −2.5.",
+   "That is a ratio of 10^−2.5 ≈ 0.0032: degree 100 is about 316 times rarer than degree 10."
+  ],
+  "course": "maths",
+  "lesson": "Scale-Free Networks",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u15.js: Scale-Free Networks"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "degree 10 is the reference: ratio 1, log 0",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "degree 100 sits 2.5 below",
+    "ok": true,
+    "detail": "y(2) = -2.5"
+   },
+   {
+    "name": "the gradient is −γ = −2.5",
+    "ok": true,
+    "detail": "gradient -2.5000"
+   },
+   {
+    "name": "10^−2.5 ≈ 0.0032",
+    "ok": true,
+    "detail": "10^(-2.5) at 0 = 0; expected 0.0030622776601683796–0.0032622776601683792"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
