@@ -13,7 +13,7 @@ import { shell, challenges, toggle, button, describe, esc } from "../lab.js";
 import * as K from "./skeletal.js";
 import { configuration, descriptor, chiral } from "./reactions/configuration.js";
 import * as E from "./reactions/electron-flow.js";
-import { mountMechanism } from "./reactions/mechanism-ui.js";
+import { mountMechanism, restoreNote } from "./reactions/mechanism-ui.js";
 import { mountReaction } from "./reactions/reaction-ui.js";
 import { mount3d } from "./lab3d.js";
 
@@ -21,6 +21,16 @@ const STORE = "gradify.organicLab", PAGES = "gradify.organicLab.pages", PREFS = 
 const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage may be off */ } };
 const EL_KEYS = { c: "C", h: "H", n: "N", o: "O", s: "S", f: "F", p: "P", i: "I", l: "Cl", b: "Br" };
+/** A notebook page read back from storage, checked and copied field by field, or null (see K.restore, restoreNote). */
+export function restorePage(p) {
+  if (p === null || typeof p !== "object" || Array.isArray(p) || typeof p.title !== "string") return null;
+  const str = (v) => (typeof v === "string" ? v : null), id = typeof p.id === "string" && /^[0-9a-z]{1,20}$/.test(p.id) ? p.id : null;
+  const at = typeof p.at === "string" && /^\d{4}-\d{2}-\d{2}$/.test(p.at) ? p.at : "";
+  if (p.kind === "mech") { const mech = restoreNote(p.mech); return mech ? { id, kind: "mech", title: p.title, mech, at } : null; }
+  if (p.kind != null) return null;
+  const mol = K.restore(p.mol); if (!mol || !mol.atoms.length) return null;
+  return { id, title: p.title, note: str(p.note) ?? "", mol, at, name: str(p.name), formula: str(p.formula) ?? "", smiles: str(p.smiles) ?? "" };
+}
 const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>");
 const target = (s) => K.analyse(K.graphFromSmiles(s));
 
@@ -53,6 +63,7 @@ function analyseAll(m) {
 export function mount(el, ctx = {}) {
   const $ = shell(el, `
     <div class="lab-seg osk-modes" role="tablist" aria-label="Lab mode"><button type="button" role="tab" data-mode="structure" aria-pressed="true">Structure</button><button type="button" role="tab" data-mode="mechanism" aria-pressed="false">Mechanism</button><button type="button" role="tab" data-mode="reaction" aria-pressed="false">Reaction</button><button type="button" role="tab" data-mode="3d" aria-pressed="false">3D</button></div>
+    <p class="osk-provisional" role="note"><b>Provisional chemistry.</b> The lab's reaction rules, predicted products and mechanism marking are written from standard textbook chemistry and tested, but haven't yet been reviewed by an independent chemist. If the lab disagrees with your teacher or textbook, go with them.</p>
     <div class="osk-mode" data-pane="structure">
     <div class="osk-tools" role="toolbar" aria-label="Drawing tools"></div>
     <div class="lab-cols osk-cols">
@@ -70,7 +81,8 @@ export function mount(el, ctx = {}) {
     </div>`, "osk-lab lab-light");
   const stage = $(".osk-stage"), host = $(".osk-svg"), say = describe(host, "Skeletal formula drawing");
   const prefs = { grid: true, showC: false, showNums: true, showStereo: true, ...load(PREFS, {}) };
-  let m = load(STORE, null) || K.empty(); if (!Array.isArray(m.atoms)) m = K.empty();
+  // saved work is checked field by field before it is drawn: a tampered or corrupted save is dropped, not rendered
+  let m = K.restore(load(STORE, null)) || K.empty();
   let A = analyseAll(m), undo = [], redo = [], view = { cx: 0, cy: 0, s: 38 }, W = 600, H = 380;
   let tool = { t: "draw" }, hover = null, ghost = null, ghostRing = false, drag = null, sel = null, hi = new Set(), msg = "";
   const sessionSets = Object.fromEntries(PROBLEMS.filter((p) => p.set).map((p) => [p.id, new Set()]));
@@ -314,7 +326,7 @@ export function mount(el, ctx = {}) {
   }
 
   // ---------- the notebook ----------
-  let pages = load(PAGES, []); if (!Array.isArray(pages)) pages = [];
+  let pages = load(PAGES, []); pages = Array.isArray(pages) ? pages.map(restorePage).filter(Boolean) : [];
   const bb = $(".osk-bookbtns");
   button(bb, "Save to notes", () => {
     if (A.empty) return flash("Draw something to save");

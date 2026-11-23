@@ -16,6 +16,18 @@ const newId = () => globalThis.crypto?.randomUUID?.() ?? `c-${Date.now().toStrin
 // the reply is model text: escaped, then paragraphs
 const paras = (t) => esc(String(t || "")).split(/\n{2,}/).map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`).join("");
 
+/**
+ * What the learner reads when the tutor can't answer. A refusal that says why (sign-in, an allowance used up, busy) is
+ * shown as it is; a request the server doesn't support yet (a 400 or 404, as when the site is updated before the
+ * backend, which answers "Unknown mode.", or a ledger without the chemistry mode, "Unknown request.") becomes a plain "not available" message rather than a raw server error.
+ */
+export function failureText(e) {
+  if (e?.reason === "unknown_mode") return UNAVAILABLE;
+  if (e?.signin || e?.expired || e?.reason) return e.message || UNAVAILABLE;
+  if (e?.status === 400 || e?.status === 404) return UNAVAILABLE;
+  return e?.message || UNAVAILABLE;
+}
+const UNAVAILABLE = "The tutor isn't available for this lab right now. The lab's own working still stands, and nothing is marked as done with help.";
 export function mountTutor(host, { ask = null, getContext, intents, learner = () => ({}), onUse = () => {} }) {
   host.classList.add("ct-tutor");
   // gen: the conversation's generation. Replacing the conversation (another reaction, a reset, a new question) starts a
@@ -52,7 +64,7 @@ export function mountTutor(host, { ask = null, getContext, intents, learner = ()
       if (mine !== gen) return;
       log.querySelector(".wait")?.remove();
       if (text) myTurns.pop();
-      log.insertAdjacentHTML("beforeend", `<p class="lab-msg">${esc(e?.message || "The tutor isn't available right now.")}</p>`);
+      log.insertAdjacentHTML("beforeend", `<p class="lab-msg">${esc(failureText(e))}</p>`);
     } finally { if (mine === gen) busy = false; }
   }
   q(".ct-intents").addEventListener("click", (e) => { const b = e.target.closest("[data-i]"); if (!b) return; const next = b.dataset.i; replace(); intent = next; conv = newId(); paintIntents(); send(); });

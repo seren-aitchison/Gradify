@@ -15,6 +15,32 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 const COL = { pend: "#f59e0b", bad: "#ff4d6d", good: "#10b981", form: "rgba(16,185,129,.4)", brk: "rgba(255,77,109,.55)" };
 
+const plainObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const shortText = (v, max = 300) => typeof v === "string" && v.length <= max;
+/**
+ * A mechanism note read back from storage, checked and copied field by field: a known reaction (or none, for the
+ * learner's own drawing), a valid start state, steps of valid arrows, and an error-carried-forward step inside the
+ * note. Null when anything is off, or when the note no longer replays, so a tampered note is never opened or drawn.
+ */
+export function restoreNote(v) {
+  if (!plainObj(v) || !shortText(v.title) || !Array.isArray(v.steps) || v.steps.length > 40) return null;
+  const reactionId = v.reactionId ?? null;
+  if (reactionId !== null && !REACTIONS.some((r) => r.id === reactionId)) return null;
+  const start = E.restoreState(v.start); if (!start) return null;
+  const steps = [];
+  for (const st of v.steps) {
+    if (!plainObj(st) || !Array.isArray(st.arrows) || !st.arrows.length || st.arrows.length > 12) return null;
+    const arrows = st.arrows.map(E.restoreArrow); if (arrows.some((a) => !a)) return null;
+    steps.push({ arrows });
+  }
+  let conditions = null;
+  if (v.conditions != null) { if (!plainObj(v.conditions) || !shortText(v.conditions.above) || !shortText(v.conditions.below)) return null; conditions = { above: v.conditions.above, below: v.conditions.below }; }
+  const ecf = v.ecf ?? null; if (ecf !== null && !(Number.isInteger(ecf) && ecf >= 0 && ecf <= steps.length)) return null;
+  const note = { v: 1, title: v.title, reactionId, conditions, start, steps, ecf };
+  try { if (!E.replay(note).ok) return null; } catch { return null; }
+  return note;
+}
+
 export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDrawing = () => null, onSave = null, prefs = { level: "university" }, onPrefs = () => {} } = {}) {
   host.innerHTML = `
     <div class="lab-row mx-top">

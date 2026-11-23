@@ -7,7 +7,9 @@
 // can't be drawn or checked from the keyboard before the conditions question; a rejected first attempt can't earn
 // full marks; a finished saved mechanism reopens complete and unmarked; Reaction mode never asks or grades a case
 // the lab declines, and shows a reaction with no organic product as one; a tutor reply for a replaced conversation is
-// dropped; and no page error or sideways scroll in any mode at 1280, 820 and 390 px.
+// dropped; an unsupported tutor request (site released before the backend) fails with a plain message and no use;
+// tampered saved work in localStorage is dropped, never drawn; and in every mode at 1280, 820 and 390 px, no page
+// error, no sideways scroll, and the provisional-chemistry notice is visible.
 const { chromium } = require("playwright");
 const fs = require("fs"), path = require("path"), http = require("http");
 const ROOT = fs.realpathSync(path.resolve(__dirname, ".."));
@@ -170,18 +172,64 @@ async function examToggle(p, on) {
     ok("#27 no page errors", !errs.length, errs.join(" | "));
     await p.close();
   }
+  // ---------- the tutor when the backend doesn't support the lab yet (site released before the functions) ----------
+  {
+    const { p, errs } = await open(b);
+    const r = await p.evaluate(async () => {
+      const { mountTutor } = await import("/kit/labs/chemistry/reactions/tutor-ui.js");
+      const host = document.createElement("div"); document.body.append(host); let uses = 0;
+      const ask = () => Promise.reject(Object.assign(new Error("Unknown mode."), { status: 400 }));
+      mountTutor(host, { ask, getContext: () => ({ kind: "prediction", status: "reacts", id: "A", rule: { confidence: "provisional" } }), intents: [["explain", "Explain"]], onUse: () => uses++ });
+      host.querySelector("details").open = true; host.querySelector('[data-i="explain"]').click();
+      await new Promise((r) => setTimeout(r, 50));
+      return { log: host.querySelector(".ct-log").innerText, level: host.querySelector(".ct-level").innerText, uses };
+    });
+    ok("S3 an unsupported tutor request shows a plain message, not the raw server error", /isn't available for this lab right now/.test(r.log) && !/Unknown mode/.test(r.log), JSON.stringify(r.log));
+    ok("S3 a failed tutor request doesn't count as tutor use", r.uses === 0, `uses ${r.uses}`);
+    ok("S3 the tutor says its answers rest on provisional rules", /provisional rules/.test(r.level), r.level);
+    ok("S3 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- tampered saved work in localStorage is dropped, never drawn ----------
+  {
+    const p = await b.newPage({ viewport: { width: 1280, height: 900 } }), errs = [];
+    p.on("pageerror", (e) => errs.push(e.message)); p.on("console", (m) => { if (m.type() === "error" && !/favicon|Failed to load resource/.test(m.text())) errs.push(m.text()); });
+    await p.addInitScript(() => {
+      if (sessionStorage.getItem("seeded")) return; sessionStorage.setItem("seeded", "1");
+      const X = '<img src=x onerror="window.__pwned=(window.__pwned||0)+1">';
+      const atoms = (el) => [{ id: 1, x: 0, y: 0, el: "C", charge: 0 }, { id: 2, x: 0.87, y: 0.5, el: "C", charge: 0 }, { id: 3, x: 1.73, y: 0, el, charge: 0 }];
+      const mol = (el) => ({ atoms: atoms(el), bonds: [{ id: 4, a: 1, b: 2, order: 1 }, { id: 5, a: 2, b: 3, order: 1 }], next: 6 });
+      localStorage.setItem("gradify.organicLab", JSON.stringify(mol(X)));
+      localStorage.setItem("gradify.organicLab.pages", JSON.stringify([
+        { id: "a1", title: "tampered drawing", mol: mol(X), at: "2026-11-20", formula: "C3" },
+        { id: "a2", kind: "mech", title: "tampered mechanism", mech: { v: 1, title: "t", reactionId: null, conditions: null, start: { atoms: [{ id: 1, el: X, x: 0, y: 0, n: 0, h: 0 }], bonds: [], next: 2 }, steps: [], ecf: null }, at: "2026-11-20" },
+        { id: "a3", title: "genuine propan-1-ol", mol: mol("O"), at: "2026-11-20", formula: "C3H8O", note: "kept" },
+      ]));
+    });
+    await p.goto(PAGE, { waitUntil: "load" }); await p.waitForSelector(".osk-modes", { timeout: 15000 }); await p.waitForTimeout(800);
+    await p.evaluate(() => document.querySelector('[data-open="0"]')?.click()); await p.waitForTimeout(300);
+    const r = await p.evaluate(() => ({ pwned: window.__pwned || 0, imgs: document.querySelectorAll(".osk-lab img, .osk-lab svg img").length, pages: [...document.querySelectorAll(".osk-page b")].map((x) => x.textContent), info: document.querySelector(".osk-info, .lab-info")?.innerText || "" }));
+    ok("S1 a tampered element symbol in saved work never reaches the page", r.pwned === 0 && r.imgs === 0, `pwned ${r.pwned}, img elements ${r.imgs}`);
+    ok("S1 tampered notebook pages are dropped and the genuine one is kept", r.pages.join("|") === "genuine propan-1-ol", r.pages.join("|"));
+    ok("S1 the genuine page still opens", (await p.evaluate(() => document.querySelectorAll(".osk-svg text").length)) > 0);
+    ok("S1 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
   // ---------- every mode at desktop, tablet and phone: no page error, no sideways scroll ----------
   if (shots) fs.mkdirSync(shots, { recursive: true });
   for (const [label, w, h] of [["desktop", 1280, 900], ["tablet", 820, 1180], ["phone", 390, 844]]) {
-    const { p, errs } = await open(b, w, h), wide = [];
+    const { p, errs } = await open(b, w, h), wide = [], hidden = [];
     for (const m of ["structure", "mechanism", "reaction", "3d"]) {
       await mode(p, m); await p.waitForTimeout(m === "3d" ? 1500 : 500);
       const over = await p.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       if (over > 1) wide.push(`${m} +${over}px`);
+      const note = await p.evaluate(() => { const e = document.querySelector(".osk-provisional"), r = e?.getBoundingClientRect(); return e && r.width > 0 && r.height > 0 && r.right <= window.innerWidth + 1 && getComputedStyle(e).visibility !== "hidden" ? e.innerText : ""; });
+      if (!/Provisional chemistry/.test(note) || !/independent chemist/.test(note)) hidden.push(m);
       if (shots) await p.screenshot({ path: `${shots}/${label}-${m}.png` });
     }
     ok(`${label} (${w}px): every mode loads without a page error`, !errs.length, errs.join(" | "));
     ok(`${label} (${w}px): no sideways scroll in any mode`, !wide.length, wide.join(", "));
+    ok(`${label} (${w}px): the provisional-chemistry notice is visible in every mode`, !hidden.length, hidden.join(", "));
     await p.close();
   }
   await b.close(); server?.close();

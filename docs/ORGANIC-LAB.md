@@ -249,7 +249,7 @@ topics) are part of what the review should confirm.
 | 5 Advanced | interactive R/S with CIP clicking, displayed formula view, bridged rings, wedges in 3D, synthesis planning | Not started (CIP routines exist in `mol.js`) |
 | 5b Validation | evidence records, confidence and status, reviewer pack and import | **Built**; the review itself is waiting for a qualified chemist |
 | 5c Stereochemistry | wedge/dash bonds, R/S and E/Z descriptors carried through reactions, isomer comparison | **Built** (see "Stereochemistry" above) |
-| 6a AI tutor | explanations, comparison, Socratic guidance, diagnosis, synthesis help, mechanism verdicts, all bound to the engine's evidence level | **Built** (needs a deploy of `course-tutor` and the migration `20261122120000_chemistry_tutor_mode.sql`) |
+| 6a AI tutor | explanations, comparison, Socratic guidance, diagnosis, synthesis help, mechanism verdicts, all bound to the engine's evidence level | **Built**. Release order: apply the migration `20261122120000_chemistry_tutor_mode.sql`, redeploy `course-tutor` and `study-pack`, then merge. If either backend step is late, the tutor answers "isn't available for this lab right now" with no Claude call and no use counted (`tests/chemistry-tutor-rollout.test.mjs`) |
 | 6 Integration | AI tutor receives `tutorContext()` from the engine; notes; flashcards; mindmaps; study plans | Mechanisms save to the lab notebook and copy as flashcards; `tutorContext()` exists. Tutor endpoint not wired |
 
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides
@@ -269,7 +269,8 @@ The lab ships only when all of these hold. Set after the review of PR #159 ([org
 7. CI passes against the latest `main`.
 
 A passing suite is not chemistry validation: the 302 reference cases are still `provisional` until the independent
-review (above) is done. Minor findings are tracked in [organic-review/BACKLOG.md](organic-review/BACKLOG.md).
+review (above) is done. The lab says so to learners: a notice above the mode tabs, visible in every mode, says the
+chemistry is provisional until an independent chemist has reviewed it. Minor findings are tracked in [organic-review/BACKLOG.md](organic-review/BACKLOG.md).
 
 ## 4. Testing record
 
@@ -282,7 +283,10 @@ review (above) is done. Minor findings are tracked in [organic-review/BACKLOG.md
 | `tests/planner.test.mjs` | every synthesis challenge solvable in exactly its stated length, retrosynthesis, competition, mark breakdowns |
 | `tests/configuration.test.mjs` | R/S and E/Z from drawings against mol.js, isomer relations by definition, the 3D model's configuration |
 | `tests/stereo-outcome.test.mjs` | the stereochemical outcome of each prediction |
-| `scripts/check-organic-lab.cjs` | in Chromium: keyboard arrows and exam style, first-attempt marks, saved notes, declined cases in practice, the tutor's replies, and every mode at 1280, 820 and 390 px |
+| `tests/saved-work.test.mjs` | saved drawings, notebook pages and mechanism notes read back from storage: genuine ones round-trip, tampered ones are dropped, atom labels are escaped |
+| `tests/chemistry-tutor-rollout.test.mjs` | the tutor at each stage of the backend release (old functions; functions without the migration, against the real ledger; both deployed): no Claude call or counted use until both are live, and a plain message for the learner |
+| `tests/organic-review-csv.test.mjs` | the review pack's CSV: formula-like text neutralised, numbers and ordinary text unchanged |
+| `scripts/check-organic-lab.cjs` | in Chromium: keyboard arrows and exam style, first-attempt marks, saved notes, declined cases in practice, the tutor's replies and its message when the backend doesn't support the lab yet, tampered saved work, and every mode at 1280, 820 and 390 px (including the provisional-chemistry notice) |
 
 Run the whole suite with `npm test`. In environments without `node_modules`, 17 tests fail because `@electric-sql/pglite`,
 `@anthropic-ai/sdk` and `ts-fsrs` aren't installed; those are environmental and unrelated to the lab, and are listed

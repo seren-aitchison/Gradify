@@ -2,7 +2,8 @@
 
 CodeRabbit's first two reviews of PR #159 raised 30 **Major** findings (none Critical) and 34 Minor ones; its review of
 the fixes raised 12 more Major findings and 20 Minor ones (section 5), and its review of those fixes one more Major
-finding and 2 Minor ones (section 6). The Major findings block the merge; the Minor
+finding and 2 Minor ones (section 6). An independent review of head `b8069a30`, requested by the repository owner,
+raised two security findings and the backend release question (section 7). The Major findings block the merge; the Minor
 ones are tracked in [BACKLOG.md](BACKLOG.md).
 
 Every Major finding was verified before any code changed, by reproducing it (a probe on the PR's head, `fd37323`) or,
@@ -85,4 +86,22 @@ given a regression test that fails on `f2e983f1`. **All 12 were real; none was a
 | # | Where | Finding, as verified | Fix | Test |
 |---|---|---|---|---|
 | 43 | `scripts/organic-review.mjs` import | The #42 fix recorded each verdict against the case's outcome *at import time*, so an agreement returned on a sheet exported before the case changed still counted as reviewed, though the chemist saw the old outcome. | The exported sheet carries a machine-readable expectation key; the import records the key from the sheet, so an agreement on an older outcome stays provisional and is reported. A sheet without the column records no key (its agreements can't count as reviewed). | `organic-reference`: review pack, including an export → CSV → import round trip |
+
+## 7. Independent review of head `b8069a30`: security and the backend release
+
+Both security findings were reproduced on `b8069a30` before any change: in the browser check, a tampered save ran the
+injected script nine times (`window.__pwned = 9`) and put four `<img>` elements into the lab.
+
+| # | Where | Finding, as verified | Fix | Test |
+|---|---|---|---|---|
+| S1 | `skeletal.js` `render`, `sketch.js` restore | Saved work in `localStorage` (the current drawing, notebook drawings and mechanism notes) was restored after only an `Array.isArray` check, and each atom's element symbol was written into the SVG `<text>` unescaped, so a tampered save injected markup and ran script when drawn (the thumbnail, the drawing, the mechanism view). SMILES input can't do this (mol.js only reads 1–2 letter symbols), so storage was the route. | At the cause: saved work is checked and copied field by field before anything uses it (`K.restore` for drawings, `E.restoreState`/`restoreArrow` and `restoreNote` for mechanism notes, `restorePage` for notebook pages). Element symbols must be in the lab's own list (`KNOWN_ELEMENTS`, from the valence table; the mechanism engine's `VALENCE_E` for notes), charges small integers, coordinates finite numbers, bonds between existing atoms with order 1–3, the reaction a known one, and a note must still replay. Anything else drops that save whole; only known fields are kept. As defence in depth, the renderer now escapes atom labels too. | `saved-work` (7 tests); browser check S1 |
+| S2 | `scripts/organic-review.mjs` `cell` | The review pack quoted only `" , newline`, so text starting with `= + - @` (or after leading spaces or control characters, or a leading tab/CR) would run as a spreadsheet formula when a reviewer opened the CSV. | `neutralise()`: such text gets a leading apostrophe, so spreadsheets show it as text; plain numbers (`-3`, `+1.5`, `-2.5e3`) and ordinary text are unchanged, and CR now forces quoting. The current pack has no such cells, so the exported files are unchanged. | `organic-review-csv` (4 tests) |
+| S3 | the tutor while the backend catches up | Merging deploys the site at once; the lab's tutor sends mode `chemistry`, which the deployed `course-tutor` doesn't know. Verified against `main`'s own `_shared/tutor.js`: `buildRequest` answers 400 "Unknown mode." before `runAi`, so before any usage claim, cache lookup or Claude call, and the lab's challenges aren't marked as done with help (that happens only after a reply). Safe, but the learner saw the raw "Unknown mode.". With the functions redeployed but the migration not applied, the real ledger refuses the mode (400 `unknown_mode`, "Unknown request.") and Claude isn't called either. | The tutor shows a plain "isn't available for this lab right now" message for an unsupported request (400, 404 or `unknown_mode`); refusals that explain themselves (sign-in, allowance, busy) are shown as they are. The release order stays: migration, then `course-tutor` and `study-pack`, then the merge; every stage fails safely if it's delayed. | `chemistry-tutor-rollout` (4 tests: old functions, functions without the migration against the real ledger, both deployed, the messages); browser check S3 |
+
+The independent review also asked for the chemistry to be shown as provisional wherever learners use it. It was said
+only in the tutor and inside Reaction mode's collapsed "The rule behind this"; Mechanism and Structure modes said
+nothing. A notice now sits above the mode tabs, visible in every mode: "Provisional chemistry. The lab's reaction rules,
+predicted products and mechanism marking are written from standard textbook chemistry and tested, but haven't yet been
+reviewed by an independent chemist. If the lab disagrees with your teacher or textbook, go with them." The browser check
+confirms it is visible in all four modes at 1280, 820 and 390 px.
 

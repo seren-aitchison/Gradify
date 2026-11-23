@@ -33,6 +33,40 @@ export function fromDrawing(m) {
   for (const a of s.atoms) { const src = m.atoms.find((x) => x.id === a.id); a.n = Math.max(0, (VALENCE_E[a.el] ?? 0) - (src.charge || 0) - bondsOf(s, a.id).reduce((t, b) => t + b.e / 2, 0) - a.h); }
   return s;
 }
+const plain = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const isId = (v) => Number.isSafeInteger(v) && v > 0;
+const isCount = (v, max) => Number.isInteger(v) && v >= 0 && v <= max;
+const isCoord = (v) => typeof v === "number" && Number.isFinite(v) && Math.abs(v) <= 1e4;
+/**
+ * A state read back from a saved note, checked and copied field by field: atoms { id, el, x, y, n, h } with el one of
+ * the elements this module knows (VALENCE_E), bonds { id, a, b, e } with e = 2, 4 or 6. Null when anything is off.
+ */
+export function restoreState(v) {
+  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds) || v.atoms.length > 500 || v.bonds.length > 1000) return null;
+  const atoms = [], bonds = [], ids = new Set(), bondIds = new Set();
+  for (const a of v.atoms) {
+    if (!plain(a) || !isId(a.id) || ids.has(a.id) || typeof a.el !== "string" || !Object.hasOwn(VALENCE_E, a.el) || !isCoord(a.x) || !isCoord(a.y) || !isCount(a.n, 8) || !isCount(a.h, 4)) return null;
+    ids.add(a.id); atoms.push({ id: a.id, el: a.el, x: a.x, y: a.y, n: a.n, h: a.h });
+  }
+  for (const b of v.bonds) {
+    if (!plain(b) || !isId(b.id) || bondIds.has(b.id) || !ids.has(b.a) || !ids.has(b.b) || b.a === b.b || ![2, 4, 6].includes(b.e)) return null;
+    bondIds.add(b.id); bonds.push({ id: b.id, a: b.a, b: b.b, e: b.e });
+  }
+  const top = Math.max(0, ...ids, ...bondIds);
+  return { atoms, bonds, next: isId(v.next) && v.next > top ? v.next : top + 1 };
+}
+/** One curly arrow read back from a saved note, copied field by field, or null. */
+export function restoreArrow(v) {
+  if (!plain(v) || (v.type !== "pair" && v.type !== "single") || !plain(v.from) || !plain(v.to)) return null;
+  const from = {}, to = {}, pair = (x) => Array.isArray(x) && x.length === 2 && x.every(isId);
+  for (const k of ["lp", "atom"]) if (v.from[k] != null) { if (!isId(v.from[k])) return null; from[k] = v.from[k]; }
+  if (v.from.bond != null) { if (!Number.isSafeInteger(v.from.bond)) return null; from.bond = v.from.bond; }
+  if (v.from.ends != null) { if (!pair(v.from.ends)) return null; from.ends = [...v.from.ends]; }
+  if (v.to.atom != null) { if (!isId(v.to.atom)) return null; to.atom = v.to.atom; }
+  if (v.to.between != null) { if (!pair(v.to.between)) return null; to.between = [...v.to.between]; }
+  if (!Object.keys(from).length || !Object.keys(to).length) return null;
+  return { type: v.type, from, to };
+}
 /** Builds a state by hand: atoms [key, el, x, y, charge = 0, undrawn H = 0], bonds [keyA, keyB, order]. */
 export function build(atoms, bonds) {
   const s = { atoms: [], bonds: [], next: 1 }, key = {};

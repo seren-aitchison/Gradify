@@ -39,6 +39,34 @@ export function valences(el, q = 0) {
 // ---------- the drawing ----------
 export const empty = () => ({ atoms: [], bonds: [], next: 1 });
 export const clone = (m) => JSON.parse(JSON.stringify(m));
+/** Every element symbol a drawing can hold: the drawable ones (ELEMENTS) and the few more the valence table knows. */
+export const KNOWN_ELEMENTS = new Set(Object.keys(VAL));
+const plain = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const isId = (v) => Number.isSafeInteger(v) && v > 0;
+const isCoord = (v) => typeof v === "number" && Number.isFinite(v) && Math.abs(v) <= 1e4;
+/**
+ * A drawing read back from storage (or anywhere else outside the lab), checked and copied field by field: atoms
+ * { id, x, y, el, charge }, bonds { id, a, b, order, stereo? }. Returns null when anything in it is not what the lab
+ * itself writes (an unknown element symbol, a non-integer charge, a bond to a missing atom...), so a tampered or
+ * corrupted save is dropped whole rather than drawn.
+ */
+export function restore(v, elements = KNOWN_ELEMENTS) {
+  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds) || v.atoms.length > 1000 || v.bonds.length > 2000) return null;
+  const atoms = [], bonds = [], ids = new Set(), bondIds = new Set(), pairs = new Set();
+  for (const a of v.atoms) {
+    if (!plain(a) || !isId(a.id) || ids.has(a.id) || !isCoord(a.x) || !isCoord(a.y) || typeof a.el !== "string" || !elements.has(a.el)) return null;
+    const charge = a.charge ?? 0; if (!Number.isInteger(charge) || Math.abs(charge) > 3) return null;
+    ids.add(a.id); atoms.push({ id: a.id, x: a.x, y: a.y, el: a.el, charge });
+  }
+  for (const b of v.bonds) {
+    if (!plain(b) || !isId(b.id) || bondIds.has(b.id) || !ids.has(b.a) || !ids.has(b.b) || b.a === b.b || ![1, 2, 3].includes(b.order)) return null;
+    if (b.stereo != null && b.stereo !== "wedge" && b.stereo !== "dash") return null;
+    const pair = `${Math.min(b.a, b.b)}-${Math.max(b.a, b.b)}`; if (pairs.has(pair)) return null;
+    bondIds.add(b.id); pairs.add(pair); bonds.push(b.stereo ? { id: b.id, a: b.a, b: b.b, order: b.order, stereo: b.stereo } : { id: b.id, a: b.a, b: b.b, order: b.order });
+  }
+  const top = Math.max(0, ...ids, ...bondIds);
+  return { atoms, bonds, next: isId(v.next) && v.next > top ? v.next : top + 1 };
+}
 export const atomOf = (m, id) => m.atoms.find((a) => a.id === id);
 export const bondOf = (m, id) => m.bonds.find((b) => b.id === id);
 export const bondBetween = (m, a, b) => m.bonds.find((x) => (x.a === a && x.b === b) || (x.a === b && x.b === a));
@@ -718,6 +746,8 @@ export const PALETTES = {
   print: { bg: "#ffffff", bond: "#000000", grid: "rgba(0,0,0,.08)", mute: "#555555", accent: "#047857", hi: "rgba(16,185,129,.22)", warn: "#c8102e", hover: "transparent", ghost: "transparent", el: { N: "#1d4ed8", O: "#c81e1e", S: "#a16207", P: "#c2410c", F: "#15803d", Cl: "#15803d", Br: "#92400e", I: "#7e22ce", B: "#be185d", H: "#000", C: "#000" } },
 };
 const f2 = (v) => Math.round(v * 10) / 10;
+// text placed in the SVG is escaped even when it should only ever be an element symbol (see restore above)
+const escText = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 /** The honeycomb covering a world rectangle, as one SVG path (each edge once). */
 export function gridPath(x0, y0, x1, y1, X, Y) {
@@ -796,7 +826,7 @@ export function render(m, A, view, [W, H], opts = {}) {
     if (labelled(a)) {
       const h = hc[a.id] ?? 0, col = P.el[a.el] || P.bond, hs = h ? `H${h > 1 ? `<tspan font-size="${f2(fs * 0.7)}" dy="${f2(fs * 0.25)}">${h}</tspan>` : ""}` : "";
       const left = h && mx > 0.2 && nb.length === 1, ew = fs * 0.62 * a.el.length;
-      out.push(`<text x="${f2(x)}" y="${f2(y + fs * 0.36)}" text-anchor="middle" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${a.el}</text>`);
+      out.push(`<text x="${f2(x)}" y="${f2(y + fs * 0.36)}" text-anchor="middle" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${escText(a.el)}</text>`);
       if (hs) out.push(left ? `<text x="${f2(x - ew / 2 - fs * 0.04)}" y="${f2(y + fs * 0.36)}" text-anchor="end" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>` : `<text x="${f2(x + ew / 2 + fs * 0.02)}" y="${f2(y + fs * 0.36)}" text-anchor="start" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>`);
     }
     if (a.charge) out.push(`<text x="${f2(x + fs * 0.62)}" y="${f2(y - fs * 0.35)}" text-anchor="middle" font-size="${f2(fs * 0.75)}" font-weight="700" fill="${P.el[a.el] || P.bond}" font-family="Geist, system-ui, sans-serif">${Math.abs(a.charge) > 1 ? Math.abs(a.charge) : ""}${a.charge > 0 ? "+" : "−"}</text>`);

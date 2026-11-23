@@ -51,7 +51,8 @@ copy of the sheet can't bring back a verdict that has since been replaced. Each 
 for (the pack's *expectation key* column, which must not be edited, says which outcome that sheet showed): if a case's expected outcome is edited later, an earlier *agree* no longer counts (the case goes back to
 *provisional*, marked "please review again" in the pack); a *disagree* keeps the case disputed until a new verdict. A case marked `agree` becomes *reviewed*; a
 `disagree` marks the case and its rule *disputed* (the lab and its tutor then show the reviewer's note) until it is fixed (to the reference set, the predictor, or both). Regenerate the
-pack after changes with `node scripts/organic-review.mjs export`.
+pack after changes with `node scripts/organic-review.mjs export`. Text in the pack that a spreadsheet would read as a formula (starting with `=`, `+`, `-` or `@`)
+is written with a leading apostrophe so it shows as text; numbers are written as they are.
 
 ## Confidence levels
 

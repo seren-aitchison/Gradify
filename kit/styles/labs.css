@@ -111,6 +111,9 @@
 @media (max-width: 560px) { .osk-tool { min-width: 30px; padding: 0 6px; } .osk-page { grid-template-columns: 96px minmax(0, 1fr); } .osk-thumb svg { width: 96px; height: 64px; } }
 /* Organic Chemistry Lab: modes, Mechanism mode (kit/labs/chemistry/reactions/mechanism-ui.js) and 3D mode */
 .osk-modes { align-self: flex-start; } .osk-modes button { font-weight: 600; padding: 7px 14px; }
+/* always visible in every mode: the lab's chemistry is provisional until it has been independently reviewed */
+.osk-provisional { margin: 0; padding: 8px 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; border: 1px solid #e0b04a; border-color: light-dark(#a86f00, #e0b04a); background: rgba(224, 176, 74, .1); }
+.osk-provisional b { color: #e0b04a; color: light-dark(#7a5100, #e0b04a); }
 .osk-mode { display: flex; flex-direction: column; gap: 12px; } .osk-mode[hidden] { display: none; }
 .mx-top { justify-content: space-between; } .mx-top .lab-sel { min-width: 0; max-width: 100%; } .mx-top .lab-sel select { min-width: 0; max-width: min(420px, 100%); }
 @media (max-width: 560px) { .mx-top .lab-sel { width: 100%; } .mx-top .lab-sel select { flex: 1; } } .mx-opts { display: inline-flex; gap: 12px; flex-wrap: wrap; }

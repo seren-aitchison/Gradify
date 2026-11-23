@@ -20,7 +20,12 @@ import { REVIEWS } from "../kit/labs/chemistry/reactions/reviews.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "docs/organic-review");
-const cell = (v) => { const t = String(v ?? ""); return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t; };
+// A spreadsheet treats a cell starting with = + - @ as a formula, also after leading spaces or control characters, and
+// a leading tab or CR can smuggle one in. Such text (from the reference set or a recorded review) is neutralised
+// with a leading apostrophe, which spreadsheets show as plain text; a plain number such as -3 or +1.5 is left as it is.
+const NUMBER = /^[+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i;
+export const neutralise = (t) => (NUMBER.test(t) || !/^[\s\0-\x1f\x7f]*[=+\-@\uff1d\uff0b\uff0d\uff20]|^[\t\r]/.test(t) ? t : `'${t}`);
+export const cell = (v) => { const t = neutralise(String(v ?? "")); return /[",\n\r]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t; };
 export const csv = (rows) => rows.map((r) => r.map(cell).join(",")).join("\n") + "\n";
 const nameOfSmiles = (s) => { const A = K.analyse(K.graphFromSmiles(s)); return A.name?.name ? `${A.name.name} (${s})` : s; };
 const REVIEW_COLS = ["verdict (agree / disagree / unsure)", "correction", "comment", "reviewer", "date"];
