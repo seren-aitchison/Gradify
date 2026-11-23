@@ -10,9 +10,9 @@
  },
  "counts": {
   "requirements": 903,
-  "judged": 738,
-  "pending": 165,
-  "links": 1382
+  "judged": 903,
+  "pending": 0,
+  "links": 1651
  },
  "requirements": {
   "eng-nc-y1-plants-01": {
@@ -5121,6 +5121,1147 @@
    "confidence": "high",
    "note": null,
    "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-eduqas-1.1a": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Cell diagrams are shown and labelled; drawing and labelling cells is not practised.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Laser (confocal) imaging is in u14-05.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP1.1": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "The microscope and scientific drawing are described; the practical is not carried out.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3c": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Respiration supplying ATP is taught; respiration as a continuous exothermic process in all cells is not drawn together.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3d": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Anaerobic respiration in plants and yeast is taught; in humans (lactic acid, oxygen debt) it is not.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3e": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Aerobic and anaerobic respiration are compared for plants only.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-1.3g": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP1.3A": {
+   "status": "full",
+   "confidence": "medium",
+   "note": "How to investigate enzyme activity is described.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP1.3B": {
+   "status": "uncovered",
+   "note": "Food tests (iodine, Benedict's, biuret) are not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-2.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Visking tubing as a model gut is not used.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.1f": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP2.1": {
+   "status": "full",
+   "confidence": "medium",
+   "note": "Osmosis in plant tissue is described.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.2h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP2.2": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Vessel structure and histology are taught; examining an artery and vein under the microscope is not carried out.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-2.3g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.1a": {
+   "status": "uncovered",
+   "note": "No lesson defines health or relates it to disease.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-3.1b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Influenza and cardiovascular disease are each taught; the categories are not contrasted.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.1c": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Immunodeficiency and UV damage to DNA are taught; disease interactions are not drawn together.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Spread in plants is barely covered.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Several named diseases are covered across lessons; not taught as a set with agent, effect and control.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2e": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2f": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Diagnostic uses are taught; pregnancy testing and the specific examples given are not.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2g": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Physical plant defences against pathogens are not taught as such.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2h": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Chemical plant defences are not taught as such.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.2i": {
+   "status": "uncovered",
+   "note": "Detecting and identifying plant diseases is not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-3.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.3b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Herd immunity and vaccine safety are taught; factors in parents' vaccination decisions are not discussed.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.3f": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Preclinical and clinical testing phases are not drawn together.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP3.3": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Antibiotic sensitivity testing is described in outline.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.4a": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.4b": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Lifestyle factors and incidence at local, national and global levels are not taught as a topic.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-3.4c": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Statins are mentioned; treatments for cardiovascular disease (angioplasty, lifestyle change) are not evaluated.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1a": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Sensory receptors are taught; sense organs and their stimuli are not taught as a topic.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1f": {
+   "status": "uncovered",
+   "note": "No lesson teaches the structure of the eye.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-4.1g": {
+   "status": "uncovered",
+   "note": "Eye defects and their correction are not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-4.1h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1i": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Methods of studying brain function are touched on only.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.1j": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Limits to treating nervous-system damage are not drawn out.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP4.1": {
+   "status": "uncovered",
+   "note": "Investigating reaction times is not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-4.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.2i": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3k": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3l": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.3m": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP4.3": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Kidney structure is taught; dissection is not.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.4a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.4b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-4.4c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-5a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-5b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-5c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.1j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2e": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Factors affecting the rate of decomposition are not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.2f": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP6.2": {
+   "status": "uncovered",
+   "note": "Investigating factors affecting decomposition is not taught.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology"
+  },
+  "eng-eduqas-6.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.3h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP6.3": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Field sampling methods are described; the investigation is not carried out.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.4a": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Sustainability is taught; balancing food production and economic development with wildlife is only touched on.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.4b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Food security factors are not drawn together as a topic.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-6.4c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1h": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Gel electrophoresis and DNA profiling are mentioned; genetic profiling and its uses are not taught as a topic.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.1j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-SP7.1": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Nucleic acid extraction is described as a technique; simple DNA extraction from living material is not.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2e": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3a": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3g": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Warfarin resistance in rats is not mentioned.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.3i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.4a": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.4b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.4c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
+   "above": false
+  },
+  "eng-eduqas-7.4d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 7: WJEC Eduqas GCSE Biology",
    "above": false
   }
  },
@@ -17562,173 +18703,2428 @@
    "evidence": "Objective: \"Evaluate trade-offs between conservation and human needs\"",
    "evidenceOverlap": 1,
    "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1a",
+   "lesson": "u02-04",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Then find the three structures a plant cell has that an animal cell lacks.\"",
+   "evidenceOverlap": 3,
+   "note": "Cell diagrams are shown and labelled; drawing and labelling cells is not practised."
+  },
+  {
+   "requirement": "eng-eduqas-1.1a",
+   "lesson": "u02-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Plant cells also have a nucleus, mitochondria, ER, Golgi and ribosomes, like animal cells.\"",
+   "evidenceOverlap": 3,
+   "note": "Cell diagrams are shown and labelled; drawing and labelling cells is not practised."
+  },
+  {
+   "requirement": "eng-eduqas-1.1b",
+   "lesson": "u02-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structures found in a prokaryotic cell\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1b",
+   "lesson": "u02-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare eukaryotic and prokaryotic cells\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1c",
+   "lesson": "u02-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Animal cells have a nucleus, mitochondria, ER, Golgi, lysosomes and centrioles, but no wall or chloroplasts.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1c",
+   "lesson": "u02-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how the wall and vacuole keep a plant cell turgid\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1c",
+   "lesson": "u02-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of a bacterial cell wall and its function\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1c",
+   "lesson": "u02-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Energy: mitochondria (respiration) and, in plants and algae, chloroplasts (photosynthesis).\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.1d",
+   "lesson": "u02-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cell theory rests on three principles: cells make up all organisms, are their basic unit, and come from existing cells.\"",
+   "evidenceOverlap": 4,
+   "note": "Laser (confocal) imaging is in u14-05."
+  },
+  {
+   "requirement": "eng-eduqas-1.1d",
+   "lesson": "u09-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare light and electron microscopes\"",
+   "evidenceOverlap": 3,
+   "note": "Laser (confocal) imaging is in u14-05."
+  },
+  {
+   "requirement": "eng-eduqas-1.1d",
+   "lesson": "u14-05",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Use a light microscope correctly\"",
+   "evidenceOverlap": 2,
+   "note": "Laser (confocal) imaging is in u14-05."
+  },
+  {
+   "requirement": "eng-eduqas-SP1.1",
+   "lesson": "u14-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Use a light microscope correctly\"",
+   "evidenceOverlap": 2,
+   "note": "The microscope and scientific drawing are described; the practical is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-SP1.1",
+   "lesson": "u01-14",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Light microscopes resolve detail down to about 0.2 µm; electron microscopes resolve down to about 0.1–1 nm in practice for biological samples.\"",
+   "evidenceOverlap": 2,
+   "note": "The microscope and scientific drawing are described; the practical is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-1.2a",
+   "lesson": "u05-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The cell cycle allows growth of multicellular organisms, replacement of worn-out cells, such as skin and gut lining, and repair of wounds.\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2a",
+   "lesson": "u05-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mitosis produces two nuclei with identical chromosome sets, so it is used for growth, repair and asexual reproduction.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2b",
+   "lesson": "u02-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Differentiation is usually stable, but it can be reversed in the laboratory, as with iPSCs, and it fails in some cancers, where cells lose their specialised features and divide uncontrollably.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2b",
+   "lesson": "u02-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Specialisation brings efficiency but dependence, and many specialised cells can't divide.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2c",
+   "lesson": "u05-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cancer develops from mutations that accumulate in a single cell lineage.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2d",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pluripotent: can form all the body's cell types, but not the placenta: the inner cell mass of the blastocyst, the source of embryonic stem cells.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2d",
+   "lesson": "u05-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plants have meristems, regions of stem cells that allow growth throughout life.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2d",
+   "lesson": "u08-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Unlike animals, plants grow throughout their lives from meristems.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2e",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe medical uses of stem cells and the issues they raise\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2e",
+   "lesson": "u12-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethical concerns about embryonic stem cells.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2e",
+   "lesson": "u12-25",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Apply ethical principles to biotechnology issues\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.2f",
+   "lesson": "u05-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Meiosis I separates homologous pairs after pairing and crossing over, and meiosis II separates sister chromatids, producing four genetically different haploid cells; halving the chromosome number lets fertilisation…\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3a",
+   "lesson": "u03-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Enzymes are mostly globular proteins that act as biological catalysts with specific active sites, lowering activation energy without being used up or changing equilibrium; they work inside or outside cells and often…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3a",
+   "lesson": "u03-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Substrates bind active sites to form enzyme-substrate complexes and then products; specificity comes from complementary shape and chemistry, and the induced fit model, in which the active site moulds around the…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3b",
+   "lesson": "u03-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Enzyme activity rises with temperature to an optimum, then falls as the enzyme denatures; each enzyme has an optimum pH; rate rises with substrate concentration to saturation and with enzyme concentration when…\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3c",
+   "lesson": "u03-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain how ATP hydrolysis releases energy for cellular processes\"",
+   "evidenceOverlap": 4,
+   "note": "Respiration supplying ATP is taught; respiration as a continuous exothermic process in all cells is not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-1.3c",
+   "lesson": "u02-10",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Pyruvate then enters the matrix, where the link reaction and the Krebs cycle oxidise it, releasing carbon dioxide and loading carriers (NADH and FADH₂) with electrons.\"",
+   "evidenceOverlap": 4,
+   "note": "Respiration supplying ATP is taught; respiration as a continuous exothermic process in all cells is not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-1.3d",
+   "lesson": "u08-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Aerobic respiration: glucose + oxygen → carbon dioxide + water, releasing ATP.\"",
+   "evidenceOverlap": 8,
+   "note": "Anaerobic respiration in plants and yeast is taught; in humans (lactic acid, oxygen debt) it is not."
+  },
+  {
+   "requirement": "eng-eduqas-1.3d",
+   "lesson": "u09-29",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Products: antibiotics (penicillin), enzymes (for detergents), insulin, citric acid, mycoprotein and ethanol.\"",
+   "evidenceOverlap": 2,
+   "note": "Anaerobic respiration in plants and yeast is taught; in humans (lactic acid, oxygen debt) it is not."
+  },
+  {
+   "requirement": "eng-eduqas-1.3e",
+   "lesson": "u08-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe anaerobic respiration in plants\"",
+   "evidenceOverlap": 2,
+   "note": "Aerobic and anaerobic respiration are compared for plants only."
+  },
+  {
+   "requirement": "eng-eduqas-1.3f",
+   "lesson": "u07-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Carbohydrates, proteins and lipids are digested by amylase, proteases and lipase with bile; villi and microvilli provide a large surface area, glucose and amino acids are absorbed by sodium co-transport and lipids…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3f",
+   "lesson": "u03-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Triglycerides are glycerol joined to three fatty acids by ester bonds formed in condensation reactions, hydrolysed by lipase; they store about twice the energy per gram of carbohydrates, are insoluble and compact and…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3f",
+   "lesson": "u03-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Starch is a mixture of amylose and amylopectin, made of α-glucose.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3g",
+   "lesson": "u07-22",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Carbohydrates, proteins and lipids are digested by amylase, proteases and lipase with bile; villi and microvilli provide a large surface area, glucose and amino acids are absorbed by sodium co-transport and lipids…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-1.3g",
+   "lesson": "u03-15",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"There are 20 amino acids commonly used in proteins, differing only in their R groups.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP1.3A",
+   "lesson": "u03-27",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Lesson: \"Factors affecting enzyme activity\"",
+   "evidenceOverlap": 3,
+   "note": "How to investigate enzyme activity is described."
+  },
+  {
+   "requirement": "eng-eduqas-2.1a",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A cell's needs depend on its volume, but its supply comes through its surface, so large organisms can't rely on diffusion across their outer surface and need specialised exchange surfaces and transport systems.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1a",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Passive transport needs no energy from the cell: substances move down their concentration gradient.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1b",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Where there are more particles, more move away than arrive, so there is a net movement down the concentration gradient until concentrations are equal.\"",
+   "evidenceOverlap": 4,
+   "note": "Visking tubing as a model gut is not used."
+  },
+  {
+   "requirement": "eng-eduqas-2.1c",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Osmosis is water diffusing down a water potential gradient across a partially permeable membrane.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1d",
+   "lesson": "u02-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In active transport, a carrier protein binds the substance, and energy from ATP hydrolysis changes the protein's shape so the substance is released on the other side, against its gradient.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1e",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Larger organisms have smaller surface area to volume ratios, so they need exchange surfaces.\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1e",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"About 480 million alveoli give a surface area of about 70 m².\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1f",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Small, non-polar molecules (oxygen, carbon dioxide, steroid hormones) diffuse straight through the lipid.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1f",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Alveolar and capillary walls are each one cell thick, so the diffusion distance is about 0.5 µm.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.1f",
+   "lesson": "u07-22",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Oral rehydration solutions use sodium-glucose co-transport to help absorb water in diarrhoeal disease.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP2.1",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Water moves by osmosis from higher to lower water potential; solutes lower ψ, and pressure from a cell wall raises it.\"",
+   "evidenceOverlap": 2,
+   "note": "Osmosis in plant tissue is described."
+  },
+  {
+   "requirement": "eng-eduqas-2.2a",
+   "lesson": "u07-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Blood passes through the heart twice in each complete circuit.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2a",
+   "lesson": "u07-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The cardiovascular system of heart, vessels and blood transports substances, defends the body and regulates temperature; cardiovascular disease, often from atherosclerosis, has modifiable risk factors such as smoking…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2b",
+   "lesson": "u07-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Atrioventricular valves (tricuspid on the right, bicuspid or mitral on the left) prevent backflow into the atria.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2c",
+   "lesson": "u07-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the chambers and major vessels of the heart\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2d",
+   "lesson": "u07-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The heart has four chambers, with the right side pumping to the lungs and the left to the body; atrioventricular and semilunar valves prevent backflow, coronary arteries supply the muscle and the left ventricle is…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2d",
+   "lesson": "u07-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Diastole: the heart relaxes and fills with blood.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2e",
+   "lesson": "u07-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of arteries, capillaries and veins\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2f",
+   "lesson": "u07-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of arteries, capillaries and veins\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2g",
+   "lesson": "u07-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Capillaries: walls one cell thick, very narrow; allow exchange of substances with tissues.\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.2h",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Blood consists of plasma, red cells carrying oxygen with haemoglobin, white cells for defence and platelets for clotting via fibrin;\"",
+   "evidenceOverlap": 10,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP2.2",
+   "lesson": "u07-14",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the structure of arteries, capillaries and veins\"",
+   "evidenceOverlap": 2,
+   "note": "Vessel structure and histology are taught; examining an artery and vein under the microscope is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-SP2.2",
+   "lesson": "u14-06",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Lesson: \"Histology\"",
+   "evidenceOverlap": 0,
+   "note": "Vessel structure and histology are taught; examining an artery and vein under the microscope is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-2.3a",
+   "lesson": "u08-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Xylem vessels and tracheids are dead, lignified cells forming tubes without cytoplasm or end walls; lignin waterproofs and strengthens them against tension, pits allow sideways flow, and wood is secondary xylem.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3b",
+   "lesson": "u08-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Translocation is movement of sugars (mainly sucrose) and amino acids.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3c",
+   "lesson": "u08-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Root hairs greatly increase surface area for absorbing water by osmosis and minerals by active transport.\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3c",
+   "lesson": "u08-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Water enters root hairs by osmosis, moving down a water potential gradient.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3d",
+   "lesson": "u08-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Leaves have a cuticle, epidermis, palisade and spongy mesophyll, veins and stomata; they are broad and thin for light and gas exchange, and guard cells open stomata by taking up K⁺ and water and close them in…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3e",
+   "lesson": "u08-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Leaves have a cuticle, epidermis, palisade and spongy mesophyll, veins and stomata; they are broad and thin for light and gas exchange, and guard cells open stomata by taking up K⁺ and water and close them in…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3e",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transpiration is evaporation of water from leaves, mainly through stomata.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3f",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transpiration is evaporation of water from leaves, mainly through stomata.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-2.3g",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how environmental factors affect transpiration rate\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.1b",
+   "lesson": "u09-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Communicable diseases spread between people; non-communicable diseases do not.\"",
+   "evidenceOverlap": 3,
+   "note": "Influenza and cardiovascular disease are each taught; the categories are not contrasted."
+  },
+  {
+   "requirement": "eng-eduqas-3.1b",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe major risk factors for cardiovascular disease\"",
+   "evidenceOverlap": 2,
+   "note": "Influenza and cardiovascular disease are each taught; the categories are not contrasted."
+  },
+  {
+   "requirement": "eng-eduqas-3.1c",
+   "lesson": "u10-24",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"HIV infection destroys helper T cells, leading to AIDS when CD4 counts fall below 200 cells per mm³.\"",
+   "evidenceOverlap": 2,
+   "note": "Immunodeficiency and UV damage to DNA are taught; disease interactions are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.1c",
+   "lesson": "u04-19",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe common types of DNA damage\"",
+   "evidenceOverlap": 1,
+   "note": "Immunodeficiency and UV damage to DNA are taught; disease interactions are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.2a",
+   "lesson": "u09-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bacteria, viruses, fungi, protozoa, prions.\"",
+   "evidenceOverlap": 3,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-eduqas-3.2a",
+   "lesson": "u09-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Faecal-oral: contaminated food or water, such as cholera and norovirus.\"",
+   "evidenceOverlap": 3,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-eduqas-3.2b",
+   "lesson": "u09-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Communicable diseases spread between people; non-communicable diseases do not.\"",
+   "evidenceOverlap": 2,
+   "note": "Several named diseases are covered across lessons; not taught as a set with agent, effect and control."
+  },
+  {
+   "requirement": "eng-eduqas-3.2b",
+   "lesson": "u09-12",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Plasmodium causes malaria, spread by mosquitoes and infecting liver and red blood cells.\"",
+   "evidenceOverlap": 3,
+   "note": "Several named diseases are covered across lessons; not taught as a set with agent, effect and control."
+  },
+  {
+   "requirement": "eng-eduqas-3.2b",
+   "lesson": "u10-24",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe how HIV causes AIDS\"",
+   "evidenceOverlap": 2,
+   "note": "Several named diseases are covered across lessons; not taught as a set with agent, effect and control."
+  },
+  {
+   "requirement": "eng-eduqas-3.2c",
+   "lesson": "u10-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Physical barriers such as skin, mucous membranes, mucus and cilia, chemical barriers such as lysozyme, stomach acid and antimicrobial peptides, and protective microbiota prevent most pathogens entering the body.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2c",
+   "lesson": "u10-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Non-specific: recognises broad groups of pathogens.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2d",
+   "lesson": "u10-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Specific: each lymphocyte recognises one antigen.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2d",
+   "lesson": "u10-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"B cells develop in bone marrow with unique receptors, are activated by antigen and helper T cells, undergo clonal expansion and become antibody-secreting plasma cells and memory B cells, with antibodies improved in…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2d",
+   "lesson": "u10-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Helper T cells (CD4⁺): release cytokines that activate B cells, macrophages and cytotoxic T cells.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2d",
+   "lesson": "u10-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Each antibody binds a specific epitope, a small region of an antigen.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2e",
+   "lesson": "u12-21",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Biopharmaceuticals are large molecules made in living cells, including recombinant proteins, monoclonal antibodies, vaccines, nucleic acid therapies and cell and gene therapies; most are injected, production must be…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2e",
+   "lesson": "u10-10",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"B cells develop in bone marrow with unique receptors, are activated by antigen and helper T cells, undergo clonal expansion and become antibody-secreting plasma cells and memory B cells, with antibodies improved in…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2f",
+   "lesson": "u12-21",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Monoclonal antibodies are among the best-selling medicines worldwide, used for cancer, autoimmune diseases and infections.\"",
+   "evidenceOverlap": 5,
+   "note": "Diagnostic uses are taught; pregnancy testing and the specific examples given are not."
+  },
+  {
+   "requirement": "eng-eduqas-3.2f",
+   "lesson": "u12-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Lateral flow tests detect antigens using antibodies on a strip.\"",
+   "evidenceOverlap": 1,
+   "note": "Diagnostic uses are taught; pregnancy testing and the specific examples given are not."
+  },
+  {
+   "requirement": "eng-eduqas-3.2g",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Plants respond to drought, cold, salt and flooding with hormonal and physiological changes, defend against herbivores and pathogens with physical and chemical defences, and use hypersensitive responses and systemic…\"",
+   "evidenceOverlap": 6,
+   "note": "Physical plant defences against pathogens are not taught as such."
+  },
+  {
+   "requirement": "eng-eduqas-3.2h",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"When caterpillars chew leaves, jasmonic acid signalling induces defences and some plants release volatile chemicals that attract parasitic wasps, which attack the caterpillars.\"",
+   "evidenceOverlap": 4,
+   "note": "Chemical plant defences are not taught as such."
+  },
+  {
+   "requirement": "eng-eduqas-3.3a",
+   "lesson": "u10-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Vaccines contain antigens, or instructions to make antigens, from a pathogen.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3a",
+   "lesson": "u10-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Memory B cells rapidly produce high-affinity antibodies on re-exposure.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3b",
+   "lesson": "u10-20",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Herd immunity occurs when enough people are immune that a pathogen cannot spread easily, protecting those who cannot be vaccinated, such as babies and immunosuppressed people.\"",
+   "evidenceOverlap": 1,
+   "note": "Herd immunity and vaccine safety are taught; factors in parents' vaccination decisions are not discussed."
+  },
+  {
+   "requirement": "eng-eduqas-3.3c",
+   "lesson": "u09-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bactericidal antibiotics kill bacteria; bacteriostatic ones stop them multiplying.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3c",
+   "lesson": "u09-29",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Products: antibiotics (penicillin), enzymes (for detergents), insulin, citric acid, mycoprotein and ethanol.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3d",
+   "lesson": "u09-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bacteriophage therapy, using viruses that kill specific bacteria, is being explored as an alternative treatment.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3d",
+   "lesson": "u06-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The antibiotic kills susceptible bacteria, leaving resistant ones.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3e",
+   "lesson": "u09-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Microbes are grown in broth or on agar, including selective and differential media; aseptic technique prevents contamination, streak plating gives pure colonies and serial dilution with plate counts estimates numbers…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3e",
+   "lesson": "u09-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sterilisation underpins safe surgery, laboratory work and food canning.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.3f",
+   "lesson": "u13-23",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the stages of drug discovery\"",
+   "evidenceOverlap": 3,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.3f",
+   "lesson": "u01-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Positive control: a treatment known to give an effect, showing that the method can detect one (a known antibiotic in an antibiotic test).\"",
+   "evidenceOverlap": 3,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-SP3.3",
+   "lesson": "u09-25",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Lesson: \"Microbial culture\"",
+   "evidenceOverlap": 0,
+   "note": "Antibiotic sensitivity testing is described in outline."
+  },
+  {
+   "requirement": "eng-eduqas-SP3.3",
+   "lesson": "u09-21",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Antibiotics are selectively toxic, targeting bacterial features not found in human cells.\"",
+   "evidenceOverlap": 2,
+   "note": "Antibiotic sensitivity testing is described in outline."
+  },
+  {
+   "requirement": "eng-eduqas-3.4a",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe major risk factors for cardiovascular disease\"",
+   "evidenceOverlap": 3,
+   "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.4a",
+   "lesson": "u05-12",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Identify risk factors for cancer\"",
+   "evidenceOverlap": 2,
+   "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.4a",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Emphysema destroys alveolar walls, reducing surface area and causing breathlessness.\"",
+   "evidenceOverlap": 2,
+   "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.4a",
+   "lesson": "u07-23",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the effects of liver disease and diabetes\"",
+   "evidenceOverlap": 2,
+   "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together."
+  },
+  {
+   "requirement": "eng-eduqas-3.4b",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Many risk factors are modifiable, so prevention focuses on not smoking, healthy diet, exercise and control of blood pressure.\"",
+   "evidenceOverlap": 4,
+   "note": "Lifestyle factors and incidence at local, national and global levels are not taught as a topic."
+  },
+  {
+   "requirement": "eng-eduqas-3.4c",
+   "lesson": "u07-11",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Treatments include lifestyle change, statins, antihypertensives and stents.\"",
+   "evidenceOverlap": 4,
+   "note": "Statins are mentioned; treatments for cardiovascular disease (angioplasty, lifestyle change) are not evaluated."
+  },
+  {
+   "requirement": "eng-eduqas-4.1a",
+   "lesson": "u07-04",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Sensory neurones carry impulses from receptors to the CNS.\"",
+   "evidenceOverlap": 3,
+   "note": "Sensory receptors are taught; sense organs and their stimuli are not taught as a topic."
+  },
+  {
+   "requirement": "eng-eduqas-4.1b",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nervous system provides sensory input, integration and motor output through the CNS (brain and spinal cord) and the PNS; reflex arcs from receptor to effector via sensory, relay and motor neurones produce rapid…\"",
+   "evidenceOverlap": 9,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1b",
+   "lesson": "u07-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish sensory, relay and motor neurones\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1b",
+   "lesson": "u07-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure and roles of the spinal cord\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1c",
+   "lesson": "u07-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sensory neurones carry impulses from receptors to the CNS.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1c",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nervous system provides sensory input, integration and motor output through the CNS (brain and spinal cord) and the PNS; reflex arcs from receptor to effector via sensory, relay and motor neurones produce rapid…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1d",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A reflex is a rapid, automatic response to a stimulus.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1e",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A reflex arc: receptor, sensory neurone, relay neurone (in the spinal cord), motor neurone, effector.\"",
+   "evidenceOverlap": 10,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1h",
+   "lesson": "u07-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cerebrum: the largest part, with two hemispheres and the cerebral cortex, responsible for thought, memory, language and voluntary movement.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.1i",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Brain imaging, such as functional MRI, and studies of patients with brain damage show that functions are localised but also distributed across networks.\"",
+   "evidenceOverlap": 6,
+   "note": "Methods of studying brain function are touched on only."
+  },
+  {
+   "requirement": "eng-eduqas-4.1j",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Lesson: \"Central nervous system\"",
+   "evidenceOverlap": 2,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-eduqas-4.1j",
+   "lesson": "u12-20",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Trials are testing stem cell-derived cells for Parkinson's disease, macular degeneration and type 1 diabetes.\"",
+   "evidenceOverlap": 2,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-eduqas-4.2a",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The endocrine system includes the hypothalamus, pituitary, thyroid, adrenals, pancreas and gonads, whose hormones travel in the blood to target cells; the hypothalamus controls the pituitary, negative feedback…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2b",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Glands release hormones into blood.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2b",
+   "lesson": "u07-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how peptide hormones act via second messengers\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2c",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Homeostasis maintains a stable internal environment using receptors, coordinators and effectors around set points; negative feedback reverses changes, as with insulin and glucose, while positive feedback amplifies…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2d",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many endocrine pathways use negative feedback: for example, thyroxine inhibits release of TSH, keeping levels stable.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2e",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the role of the hypothalamus and pituitary gland\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2f",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The testes and ovaries produce gametes and sex hormones; the menstrual cycle is controlled by FSH, LH, oestrogen and progesterone, with ovulation around day 14, and contraception and IVF work by manipulating these…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2g",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The testes and ovaries produce gametes and sex hormones; the menstrual cycle is controlled by FSH, LH, oestrogen and progesterone, with ovulation around day 14, and contraception and IVF work by manipulating these…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2h",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe methods of contraception and fertility treatment\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.2i",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the male and female reproductive organs\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3a",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Homeostasis is maintaining a stable internal environment despite external changes.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3b",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The liver makes bile, stores glycogen, deaminates amino acids to urea, detoxifies substances and makes plasma proteins; the pancreas secretes digestive enzymes and, from the islets, insulin and glucagon; liver…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3b",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Example: rising blood glucose triggers insulin release, which lowers glucose.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3c",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Insulin lowers blood glucose; glucagon raises it.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3c",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many variables are controlled by more than one effector working in opposite directions, which gives finer control, as with insulin and glucagon.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3d",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Type 1 diabetes is autoimmune destruction of beta cells, treated with insulin.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3d",
+   "lesson": "u10-23",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"T cells destroy insulin-producing beta cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3e",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Dermis: contains blood vessels, sweat glands, hair follicles and nerve endings.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3f",
+   "lesson": "u07-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The renal system of kidneys, ureters, bladder and urethra excretes urea, controls water, salt and pH, and makes EPO; kidney failure is treated by dialysis or transplant.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3g",
+   "lesson": "u07-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The renal system of kidneys, ureters, bladder and urethra excretes urea, controls water, salt and pH, and makes EPO; kidney failure is treated by dialysis or transplant.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3g",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ultrafiltration: high pressure in the glomerulus forces water, glucose, salts and urea into Bowman's capsule; cells and proteins stay in the blood.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3g",
+   "lesson": "u07-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Relate urine concentration to body water balance\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3h",
+   "lesson": "u07-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The kidney has an outer cortex, inner medulla and pelvis.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3i",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bowman's capsule surrounds a knot of capillaries called the glomerulus.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3j",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Selective reabsorption: in the PCT, all glucose and most water and salts return to the blood.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3j",
+   "lesson": "u07-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The loop of Henle builds a medullary salt gradient by countercurrent multiplication, allowing concentrated urine under ADH; urine composition reveals hydration and disease, such as glucose in diabetes and protein in…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3k",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nephron filters blood at the glomerulus by ultrafiltration, reabsorbs glucose, water and salts in the PCT, uses the loop of Henle to concentrate urine and adjusts water reabsorption in the collecting duct under…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3k",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"ADH increases water reabsorption in the kidneys.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3l",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Predict the effects of different solutions on animal and plant cells\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3l",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Body fluids and electrolytes\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3m",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how the body responds to overheating\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.3m",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the distribution of body water\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP4.3",
+   "lesson": "u07-24",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe the main functions of the kidneys\"",
+   "evidenceOverlap": 1,
+   "note": "Kidney structure is taught; dissection is not."
+  },
+  {
+   "requirement": "eng-eduqas-4.4a",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Shoots and roots respond differently to the same auxin concentration, which explains their opposite responses to gravity.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4a",
+   "lesson": "u08-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Tropisms are directional growth responses; in phototropism, auxin moves to the shaded side and shoots bend towards light, and in gravitropism auxin collects on the lower side, causing shoots to bend up and roots…\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4b",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4b",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the effects of gibberellins on stems\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4b",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethylene (ethene, C₂H₄) is a gas made by most plant tissues.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4c",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4c",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"They can induce flowering in some plants.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-4.4c",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Commercial control\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-5a",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Photosynthesis converts CO₂ and water into glucose and oxygen in chloroplasts, with light-dependent reactions in thylakoids and the Calvin cycle in the stroma; its rate is limited by light, CO₂ or temperature,…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-5a",
+   "lesson": "u08-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In the light-dependent reactions, light excites electrons in photosystems II and I; photolysis of water replaces them and releases oxygen, the electron transport chain builds a proton gradient that drives ATP…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-5a",
+   "lesson": "u08-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The cycle is called light-independent but depends on ATP and NADPH from the light reactions, so it stops soon after the light is removed.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-5b",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Light intensity, CO₂ concentration and temperature limit the rate.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-5c",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain limiting factors of photosynthesis\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1a",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ecology studies interactions at the levels of individual, population, community, ecosystem and biosphere, shaped by abiotic and biotic factors, with limiting factors restricting populations.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1b",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Abiotic factors: non-living, such as temperature, light, water, pH and soil type.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1b",
+   "lesson": "u06-10",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Abiotic: temperature, water availability, light, pH and pollutants.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1c",
+   "lesson": "u11-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Predation\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1c",
+   "lesson": "u11-16",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1c",
+   "lesson": "u11-19",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Parasites can regulate host populations and affect food webs.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1d",
+   "lesson": "u11-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Food webs combine interlinked food chains, showing interdependence; removing species causes direct and indirect effects and trophic cascades, and keystone species such as sea otters have large effects on community…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1d",
+   "lesson": "u11-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1e",
+   "lesson": "u11-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gross primary productivity is the total rate of photosynthetic energy capture and net primary productivity is GPP minus respiration, the energy available to consumers; productivity depends on light, temperature,…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1f",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Trophic levels place organisms from producers to top consumers; pyramids of numbers can be inverted, biomass pyramids are usually upright and energy pyramids are always upright, and persistent chemicals biomagnify at…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1f",
+   "lesson": "u11-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Primary consumers (herbivores) eat producers.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1g",
+   "lesson": "u11-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Food webs combine interlinked food chains, showing interdependence; removing species causes direct and indirect effects and trophic cascades, and keystone species such as sea otters have large effects on community…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1g",
+   "lesson": "u11-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Removing one organism from a food chain can affect all others.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1h",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare pyramids of numbers, biomass and energy\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1i",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pyramid of biomass: dry mass at each level; usually upright.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1i",
+   "lesson": "u11-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Energy enters ecosystems as sunlight captured by producers, flows along food chains and leaves as heat; at each level energy is lost through respiration, uneaten material, faeces and excretion, so transfer is…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.1j",
+   "lesson": "u11-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Calculate the efficiency of energy transfer\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2a",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nutrients must be recycled because their quantity is fixed; decomposers and detritivores break down dead matter, releasing nutrients, and phosphorus cycles from rocks through organisms and back to soil and sediments…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2b",
+   "lesson": "u11-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Carbon moves by photosynthesis, respiration, decomposition, combustion and feeding between stores in the atmosphere, oceans, soils, biomass, fossil fuels and rocks; burning fossil fuels and deforestation raise…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2c",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Decomposers (bacteria and fungi) break down dead matter and wastes, releasing nutrients.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2c",
+   "lesson": "u09-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Quorum sensing: bacteria release signal molecules and change behaviour when numbers are high.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2d",
+   "lesson": "u11-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the processes of the water cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2e",
+   "lesson": "u11-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Decomposition is faster in warm, moist, aerobic conditions.\"",
+   "evidenceOverlap": 2,
+   "note": "Factors affecting the rate of decomposition are not taught."
+  },
+  {
+   "requirement": "eng-eduqas-6.2f",
+   "lesson": "u11-26",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the causes of current climate change\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2f",
+   "lesson": "u11-27",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe air, water and land pollution\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.2f",
+   "lesson": "u11-28",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Environmental DNA (eDNA) detects species from DNA in water or soil.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3a",
+   "lesson": "u01-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transects: lines along which quadrats are placed at intervals (belt transect) or species touching the line are recorded (line transect).\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3a",
+   "lesson": "u11-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Key term: \"Quadrat\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3b",
+   "lesson": "u01-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Systematic sampling: samples taken at regular intervals, for example along a transect, useful where conditions change across an area (from a hedge into a field).\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3c",
+   "lesson": "u01-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Estimate population size using quadrats and mark–release–recapture\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3c",
+   "lesson": "u14-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sampling bias occurs when the sample does not represent the population.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3c",
+   "lesson": "u14-17",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Choose an appropriate statistical test\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3d",
+   "lesson": "u11-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Biodiversity hotspots are areas with very high numbers of endemic species under threat.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3d",
+   "lesson": "u11-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Species richness: the number of different species.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3e",
+   "lesson": "u11-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Microplastics have been found in the deepest ocean trenches and in human blood; larger plastics entangle and are swallowed by wildlife.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3e",
+   "lesson": "u11-29",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Conservation strategies\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3e",
+   "lesson": "u11-24",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Lesson: \"Habitat fragmentation\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3f",
+   "lesson": "u11-29",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Protecting species in their natural habitats.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3f",
+   "lesson": "u11-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Conservation protects genetic, species and ecosystem diversity.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3g",
+   "lesson": "u11-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe methods of controlling invasive species\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3h",
+   "lesson": "u11-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain why biodiversity is important\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.3h",
+   "lesson": "u11-29",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Lesson: \"Conservation strategies\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP6.3",
+   "lesson": "u01-19",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Transects: lines along which quadrats are placed at intervals (belt transect) or species touching the line are recorded (line transect).\"",
+   "evidenceOverlap": 1,
+   "note": "Field sampling methods are described; the investigation is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-SP6.3",
+   "lesson": "u11-02",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe population size, density and distribution\"",
+   "evidenceOverlap": 1,
+   "note": "Field sampling methods are described; the investigation is not carried out."
+  },
+  {
+   "requirement": "eng-eduqas-6.4a",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Evaluate trade-offs between conservation and human needs\"",
+   "evidenceOverlap": 2,
+   "note": "Sustainability is taught; balancing food production and economic development with wildlife is only touched on."
+  },
+  {
+   "requirement": "eng-eduqas-6.4b",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Balancing food security, livelihoods, biodiversity and climate.\"",
+   "evidenceOverlap": 2,
+   "note": "Food security factors are not drawn together as a topic."
+  },
+  {
+   "requirement": "eng-eduqas-6.4c",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genetic modification: genes are inserted, often using *Agrobacterium tumefaciens* to carry DNA into plant cells.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-6.4c",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Evaluate trade-offs between conservation and human needs\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1a",
+   "lesson": "u04-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe how DNA is packaged into chromosomes in eukaryotes\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1a",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A gene is a DNA sequence that codes for a product.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1b",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Evidence for the double helix\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1c",
+   "lesson": "u03-28",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nucleotides consist of a pentose sugar, a phosphate group and a nitrogenous base; they join by condensation into polynucleotides with phosphodiester bonds and a sugar-phosphate backbone with 5′ and 3′ ends; purines…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1c",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA stores information in its base sequence, is stabilised by covalent backbones and hydrogen bonds, and can be copied accurately because each strand is a template for complementary pairing.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1d",
+   "lesson": "u04-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Summarise the stages of protein synthesis from gene to protein\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1d",
+   "lesson": "u04-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the triplet nature of the genetic code\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1e",
+   "lesson": "u04-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The genetic code is a triplet, degenerate, non-overlapping and nearly universal code of 64 codons, with AUG as start and three stop codons, read in a fixed frame, so insertions and deletions cause frameshifts.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1e",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA stores information in its base sequence, is stabilised by covalent backbones and hydrogen bonds, and can be copied accurately because each strand is a template for complementary pairing.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1f",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genes are DNA sequences at specific loci, alleles are different versions of a gene arising by mutation, diploid organisms carry two alleles per gene, homozygous genotypes have identical alleles and heterozygous ones…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1f",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A mutation is a change in the base sequence of DNA.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1g",
+   "lesson": "u04-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Most DNA does not code protein.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1g",
+   "lesson": "u04-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Gene regulation lets cells with identical DNA express different genes; it acts on chromatin, transcription through transcription factors and enhancers, RNA through interference and proteins through modifications such…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1h",
+   "lesson": "u12-08",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Gel electrophoresis is used in DNA profiling, checking PCR products, analysing restriction digests and diagnosing genetic conditions.\"",
+   "evidenceOverlap": 5,
+   "note": "Gel electrophoresis and DNA profiling are mentioned; genetic profiling and its uses are not taught as a topic."
+  },
+  {
+   "requirement": "eng-eduqas-7.1h",
+   "lesson": "u04-34",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Short tandem repeats: used in DNA profiling.\"",
+   "evidenceOverlap": 4,
+   "note": "Gel electrophoresis and DNA profiling are mentioned; genetic profiling and its uses are not taught as a topic."
+  },
+  {
+   "requirement": "eng-eduqas-7.1i",
+   "lesson": "u04-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The genome is the complete set of DNA in an organism, including genes and non-coding DNA.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1j",
+   "lesson": "u04-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sequencing a human genome now costs a few hundred pounds and takes days, compared with about 13 years for the original project.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.1j",
+   "lesson": "u13-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define precision medicine\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-SP7.1",
+   "lesson": "u14-08",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe DNA extraction\"",
+   "evidenceOverlap": 2,
+   "note": "Nucleic acid extraction is described as a technique; simple DNA extraction from living material is not."
+  },
+  {
+   "requirement": "eng-eduqas-7.2a",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genes are DNA sequences at specific loci, alleles are different versions of a gene arising by mutation, diploid organisms carry two alleles per gene, homozygous genotypes have identical alleles and heterozygous ones…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2a",
+   "lesson": "u04-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define dominant and recessive alleles\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2a",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2b",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genes are DNA sequences at specific loci, alleles are different versions of a gene arising by mutation, diploid organisms carry two alleles per gene, homozygous genotypes have identical alleles and heterozygous ones…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2c",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2d",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2e",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Genotype: the alleles an organism has for a gene, such as Aa.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2e",
+   "lesson": "u04-35",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Interpret GWAS results, including Manhattan plots\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2f",
+   "lesson": "u04-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In humans, sex is determined at fertilisation by the sperm: every egg carries an X chromosome, and a sperm carries either an X (giving an XX, female, embryo) or a Y (giving an XY, male, embryo), so the two are about…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.2g",
+   "lesson": "u04-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"His work, published in 1866, was largely ignored until it was rediscovered in 1900.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3a",
+   "lesson": "u08-32",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Compare sexual and asexual reproduction in plants\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3a",
+   "lesson": "u06-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Key term: \"Heterozygote advantage\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3b",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3c",
+   "lesson": "u06-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how genetic variation can be measured in populations\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3d",
+   "lesson": "u06-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mutation rates per base are low, but genomes and populations are large.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3d",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mutation rates are low because of proofreading and repair, but across large genomes and populations, many new mutations arise each generation: each human carries roughly 50 to 100 new mutations not found in either…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3e",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Natural selection acts on phenotypes but changes allele frequencies in populations; individuals do not evolve.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3f",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Variation: individuals in a population differ.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3f",
+   "lesson": "u06-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Individuals with features that better suit the environment survive and reproduce more.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3g",
+   "lesson": "u06-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe how resistance genes spread between bacteria\"",
+   "evidenceOverlap": 2,
+   "note": "Warfarin resistance in rats is not mentioned."
+  },
+  {
+   "requirement": "eng-eduqas-7.3g",
+   "lesson": "u09-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe global responses to antimicrobial resistance\"",
+   "evidenceOverlap": 2,
+   "note": "Warfarin resistance in rats is not mentioned."
+  },
+  {
+   "requirement": "eng-eduqas-7.3h",
+   "lesson": "u01-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain why modern classification is based on evolutionary relationships\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3h",
+   "lesson": "u01-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Eukarya: organisms whose cells have a nucleus and membrane-bound organelles: animals, plants, fungi and protists.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3h",
+   "lesson": "u06-16",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Carl Woese used ribosomal RNA sequences in the 1970s to identify the archaea as a separate domain.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.3i",
+   "lesson": "u06-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare Lamarck's ideas with Darwin and Wallace's theory\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4a",
+   "lesson": "u12-01",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Key term: \"Selective breeding\"",
+   "evidenceOverlap": 2,
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it."
+  },
+  {
+   "requirement": "eng-eduqas-7.4b",
+   "lesson": "u12-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Recombinant DNA is used to make medicines, research tools, GM organisms and vaccines.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4b",
+   "lesson": "u12-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Gene editing\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4c",
+   "lesson": "u12-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how restriction enzymes are used in genetic engineering\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4c",
+   "lesson": "u12-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the use of ligase in genetic engineering\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4c",
+   "lesson": "u12-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the features of an engineered plasmid vector\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4d",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Evaluate the benefits and risks of plant biotechnology\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-7.4d",
+   "lesson": "u12-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Apply ethical principles to biotechnology issues\"",
+   "evidenceOverlap": 1,
+   "note": null
   }
  ],
- "pending": [
-  "eng-eduqas-1.1a",
-  "eng-eduqas-1.1b",
-  "eng-eduqas-1.1c",
-  "eng-eduqas-1.1d",
-  "eng-eduqas-SP1.1",
-  "eng-eduqas-1.2a",
-  "eng-eduqas-1.2b",
-  "eng-eduqas-1.2c",
-  "eng-eduqas-1.2d",
-  "eng-eduqas-1.2e",
-  "eng-eduqas-1.2f",
-  "eng-eduqas-1.3a",
-  "eng-eduqas-1.3b",
-  "eng-eduqas-1.3c",
-  "eng-eduqas-1.3d",
-  "eng-eduqas-1.3e",
-  "eng-eduqas-1.3f",
-  "eng-eduqas-1.3g",
-  "eng-eduqas-SP1.3A",
-  "eng-eduqas-SP1.3B",
-  "eng-eduqas-2.1a",
-  "eng-eduqas-2.1b",
-  "eng-eduqas-2.1c",
-  "eng-eduqas-2.1d",
-  "eng-eduqas-2.1e",
-  "eng-eduqas-2.1f",
-  "eng-eduqas-SP2.1",
-  "eng-eduqas-2.2a",
-  "eng-eduqas-2.2b",
-  "eng-eduqas-2.2c",
-  "eng-eduqas-2.2d",
-  "eng-eduqas-2.2e",
-  "eng-eduqas-2.2f",
-  "eng-eduqas-2.2g",
-  "eng-eduqas-2.2h",
-  "eng-eduqas-SP2.2",
-  "eng-eduqas-2.3a",
-  "eng-eduqas-2.3b",
-  "eng-eduqas-2.3c",
-  "eng-eduqas-2.3d",
-  "eng-eduqas-2.3e",
-  "eng-eduqas-2.3f",
-  "eng-eduqas-2.3g",
-  "eng-eduqas-3.1a",
-  "eng-eduqas-3.1b",
-  "eng-eduqas-3.1c",
-  "eng-eduqas-3.2a",
-  "eng-eduqas-3.2b",
-  "eng-eduqas-3.2c",
-  "eng-eduqas-3.2d",
-  "eng-eduqas-3.2e",
-  "eng-eduqas-3.2f",
-  "eng-eduqas-3.2g",
-  "eng-eduqas-3.2h",
-  "eng-eduqas-3.2i",
-  "eng-eduqas-3.3a",
-  "eng-eduqas-3.3b",
-  "eng-eduqas-3.3c",
-  "eng-eduqas-3.3d",
-  "eng-eduqas-3.3e",
-  "eng-eduqas-3.3f",
-  "eng-eduqas-SP3.3",
-  "eng-eduqas-3.4a",
-  "eng-eduqas-3.4b",
-  "eng-eduqas-3.4c",
-  "eng-eduqas-4.1a",
-  "eng-eduqas-4.1b",
-  "eng-eduqas-4.1c",
-  "eng-eduqas-4.1d",
-  "eng-eduqas-4.1e",
-  "eng-eduqas-4.1f",
-  "eng-eduqas-4.1g",
-  "eng-eduqas-4.1h",
-  "eng-eduqas-4.1i",
-  "eng-eduqas-4.1j",
-  "eng-eduqas-SP4.1",
-  "eng-eduqas-4.2a",
-  "eng-eduqas-4.2b",
-  "eng-eduqas-4.2c",
-  "eng-eduqas-4.2d",
-  "eng-eduqas-4.2e",
-  "eng-eduqas-4.2f",
-  "eng-eduqas-4.2g",
-  "eng-eduqas-4.2h",
-  "eng-eduqas-4.2i",
-  "eng-eduqas-4.3a",
-  "eng-eduqas-4.3b",
-  "eng-eduqas-4.3c",
-  "eng-eduqas-4.3d",
-  "eng-eduqas-4.3e",
-  "eng-eduqas-4.3f",
-  "eng-eduqas-4.3g",
-  "eng-eduqas-4.3h",
-  "eng-eduqas-4.3i",
-  "eng-eduqas-4.3j",
-  "eng-eduqas-4.3k",
-  "eng-eduqas-4.3l",
-  "eng-eduqas-4.3m",
-  "eng-eduqas-SP4.3",
-  "eng-eduqas-4.4a",
-  "eng-eduqas-4.4b",
-  "eng-eduqas-4.4c",
-  "eng-eduqas-5a",
-  "eng-eduqas-5b",
-  "eng-eduqas-5c",
-  "eng-eduqas-6.1a",
-  "eng-eduqas-6.1b",
-  "eng-eduqas-6.1c",
-  "eng-eduqas-6.1d",
-  "eng-eduqas-6.1e",
-  "eng-eduqas-6.1f",
-  "eng-eduqas-6.1g",
-  "eng-eduqas-6.1h",
-  "eng-eduqas-6.1i",
-  "eng-eduqas-6.1j",
-  "eng-eduqas-6.2a",
-  "eng-eduqas-6.2b",
-  "eng-eduqas-6.2c",
-  "eng-eduqas-6.2d",
-  "eng-eduqas-6.2e",
-  "eng-eduqas-6.2f",
-  "eng-eduqas-SP6.2",
-  "eng-eduqas-6.3a",
-  "eng-eduqas-6.3b",
-  "eng-eduqas-6.3c",
-  "eng-eduqas-6.3d",
-  "eng-eduqas-6.3e",
-  "eng-eduqas-6.3f",
-  "eng-eduqas-6.3g",
-  "eng-eduqas-6.3h",
-  "eng-eduqas-SP6.3",
-  "eng-eduqas-6.4a",
-  "eng-eduqas-6.4b",
-  "eng-eduqas-6.4c",
-  "eng-eduqas-7.1a",
-  "eng-eduqas-7.1b",
-  "eng-eduqas-7.1c",
-  "eng-eduqas-7.1d",
-  "eng-eduqas-7.1e",
-  "eng-eduqas-7.1f",
-  "eng-eduqas-7.1g",
-  "eng-eduqas-7.1h",
-  "eng-eduqas-7.1i",
-  "eng-eduqas-7.1j",
-  "eng-eduqas-SP7.1",
-  "eng-eduqas-7.2a",
-  "eng-eduqas-7.2b",
-  "eng-eduqas-7.2c",
-  "eng-eduqas-7.2d",
-  "eng-eduqas-7.2e",
-  "eng-eduqas-7.2f",
-  "eng-eduqas-7.2g",
-  "eng-eduqas-7.3a",
-  "eng-eduqas-7.3b",
-  "eng-eduqas-7.3c",
-  "eng-eduqas-7.3d",
-  "eng-eduqas-7.3e",
-  "eng-eduqas-7.3f",
-  "eng-eduqas-7.3g",
-  "eng-eduqas-7.3h",
-  "eng-eduqas-7.3i",
-  "eng-eduqas-7.4a",
-  "eng-eduqas-7.4b",
-  "eng-eduqas-7.4c",
-  "eng-eduqas-7.4d"
- ]
+ "pending": []
 }
