@@ -233,8 +233,8 @@ One product roadmap, independent workstreams. Each workstream has one branch at 
 | Workstream | Branch | Scope | Status (23 Nov 2026) |
 |---|---|---|---|
 | Roadmap | `claude/nifty-pascal-noklf9` | This document | v1.1 |
-| Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | Built, unmerged. Priority 1: CI and release-readiness checks for its pull request (#170, as reported by the owner) |
-| Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | Built, unmerged; its own release review runs alongside the three priorities (0b) |
+| Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | **One release candidate, PR #170.** PR #159 (`claude/modest-lovelace-fdehae`: 43 review fixes, security fixes S1–S3, stereochemistry, provisional notice) is merged into it with its history, so #159 is superseded and can be closed. Up to date with main at `07a51009`. Blocked on the owner's approval and the §3.1 release requirements (tutor migration and function deployment, independent chemistry review) |
+| Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | **PR #169, release-checked (0b).** Up to date with main; five review findings verified and fixed (`35ddc818`). Wording is Gradify's paraphrase, labelled "not official wording" on every view and linked to AQA, so open question 2 doesn't block release. 97 requirements map onto 176 existing lessons; one (4.5.2.3 The eye) is honestly shown as not taught yet. The point-by-point check against AQA's published specification is still to do and is labelled as such. **Awaiting the owner's approval to merge** |
 | Maths Lab | `claude/maths-lab-step-rules` | §3.2 | Priority 2. Step rules release: implemented, tested and browser-verified (§10); **awaiting the owner's approval** for a pull request. Graph mode and MathLive not started, by decision |
 | Past Papers | — | §4 | Priority 3: the first complete specification-linked question set. Not started |
 | **Ultra / Capture** | **unknown** | §5, the Ultra plan's AI features | **Reconciliation pending.** A separate conversation reports Ultra work, but no Ultra or Capture branch exists on the remote as of this version (checked all branches for "ultra", "capture" and "extension"). The only Ultra code in the repository is on main: plan names and switches, the homepage Ultra section and its waitlist. That workstream must push its branch, add its row here and report against §5 |
@@ -255,8 +255,8 @@ Implemented, merged and available to students are different milestones, so each 
 
 | Feature | Branch | Implemented | Tests passed | PR opened | Approved for merge | Merged | Deployed | Live verification |
 |---|---|---|---|---|---|---|---|---|
-| Organic Chemistry Lab | `claude/organic-chemistry-lab` | ✓ | To confirm against current main | #170 (owner) | — | — | — | — |
-| Specification Mastery (AQA 8461) | `claude/epic-meitner-yb9cad` | ✓ | To confirm against current main | — | — | — | — | — |
+| Organic Chemistry Lab | `claude/organic-chemistry-lab` (`07a51009`) | ✓ (with #159 merged in) | ✓ Lab units 118/118; `check-organic-lab.cjs` 41/41; `check-organic-journeys.cjs` all journeys; CI `test` and `signed-in` pass on `0f4d86ad`; full suite has only main's environment failures | #170 (draft) | — | — | — (needs the tutor migration and `course-tutor`/`study-pack` deploy first, §3.1) | — |
+| Specification Mastery (AQA 8461) | `claude/epic-meitner-yb9cad` (`35ddc818`) | ✓ | ✓ 20/20 spec tests (one new); full suite has only main's failures; browser: `#/spec`, a topic, a requirement and Progress at 1280 and 390 px in both themes and at 320 px, no page errors or sideways scroll; Foundation works with storage blocked | #169 | — | — | — (no migration or function needed) | — |
 | Maths Lab: step rules, named mistakes, Show the next step | `claude/maths-lab-step-rules` (`c48734f3`) | ✓ 23 Nov | ✓ Unit: 13 step-rules tests; step checker, maths tools and interactives suites pass; full suite has the same 21 failures as main. **Browser-verified:** `scripts/check-maths-steps.cjs --serve .`, 24 of 24 (desktop, iPhone 13, offline, evidence records, keyboard, screen-reader announcements) | — (awaiting approval) | — | — | — | — |
 | Past Papers v1 | — | — | — | — | — | — | — | — |
 | Capture backend | — | — | — | — | — | — | — | — |
