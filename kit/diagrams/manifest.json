@@ -56466,5 +56466,894 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u17-annulus-retraction": {
+  "title": "The annulus retracts onto |z| = 1.5",
+  "caption": "H(z, t) = (1 − t)z + t · 1.5 z/|z| slides every point along its own radius to the circle |z| = 1.5: P at |z| = 2 moves in, Q at |z| = 1 moves out, and R, already on the circle, never moves.",
+  "alt": "Three concentric circles of radius 1, 1.5 and 2. An arrow from P on the outer circle points inward to P′ on the middle circle; an arrow from Q on the inner circle points outward to Q′; R on the middle circle stays put.",
+  "description": [
+   "The annulus lies between the circles |z| = 1 and |z| = 2.",
+   "P (|z| = 2) is pushed along its radius in to P′ on |z| = 1.5.",
+   "Q (|z| = 1) is pushed out along its radius to Q′ on |z| = 1.5.",
+   "R is already on the circle, so H(R, t) = R for every t."
+  ],
+  "course": "maths",
+  "lesson": "Homotopy Theory",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Homotopy Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P is on the circle |z| = 2",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "Q is on the circle |z| = 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "P′, Q′ and R are on the circle |z| = 1.5",
+    "ok": true,
+    "detail": "1.5, 1.5, 1.5"
+   },
+   {
+    "name": "P moves along its radius",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Q moves along its radius",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"1.5 z/|z|\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×400"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×360"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u17-dtheta-circle": {
+  "title": "dθ along the unit circle",
+  "caption": "On the unit circle dθ = −y dx + x dy points along the tangent with length 1 per unit of arc, so one full circuit gives ∮ dθ = 2π. If dθ were exact, a closed loop would give 0.",
+  "alt": "The unit circle with a unit tangent arrow at (1, 0), (0, 1), (−1, 0) and (0, −1), each pointing anticlockwise, perpendicular to its radius.",
+  "description": [
+   "On the circle x = cos t and y = sin t.",
+   "At (1, 0) the form −y dx + x dy points straight up; at (0, 1) it points left.",
+   "The arrows follow the circle anticlockwise, always tangent.",
+   "Integrating dt from 0 to 2π gives 2π, not 0, so dθ is not exact."
+  ],
+  "course": "maths",
+  "lesson": "Cohomology",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Cohomology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "AA2 is a tangent at A (perpendicular to the radius)",
+    "ok": true,
+    "detail": "cos = 0.0e+0"
+   },
+   {
+    "name": "BB2 is a tangent at B (perpendicular to the radius)",
+    "ok": true,
+    "detail": "cos = 0.0e+0"
+   },
+   {
+    "name": "CC2 is a tangent at C (perpendicular to the radius)",
+    "ok": true,
+    "detail": "cos = 0.0e+0"
+   },
+   {
+    "name": "DD2 is a tangent at D (perpendicular to the radius)",
+    "ok": true,
+    "detail": "cos = 0.0e+0"
+   },
+   {
+    "name": "the circuit integral ∫₀^{2π} dt = 2π",
+    "ok": true,
+    "detail": "6.283185"
+   },
+   {
+    "name": "the lesson states \"∮ dθ = ∫₀^{2π} dt = 2π\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u17-four-components": {
+  "title": "ℝ minus {0, 1, 2} has four components",
+  "caption": "Removing the points 0, 1 and 2 cuts the line into (−∞, 0), (0, 1), (1, 2) and (2, ∞). Each is connected, and nothing joins one to the next.",
+  "alt": "A number line from −1 to 3 with four open intervals on separate rows: x < 0, 0 < x < 1, 1 < x < 2 and x > 2.",
+  "description": [
+   "Start with the real line and delete 0, 1 and 2.",
+   "What remains is four open intervals.",
+   "Each interval is connected, but the deleted points separate them.",
+   "So there are 4 components."
+  ],
+  "course": "maths",
+  "lesson": "Connectedness",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Connectedness"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is x < 0",
+    "ok": true,
+    "detail": "drawn −∞)…0; inequality gives {\"from\":null,\"to\":0,\"closed\":[false,false]}"
+   },
+   {
+    "name": "the interval drawn is 0 < x < 1",
+    "ok": true,
+    "detail": "drawn 0)…1; inequality gives {\"from\":0,\"to\":1,\"closed\":[false,false]}"
+   },
+   {
+    "name": "the interval drawn is 1 < x < 2",
+    "ok": true,
+    "detail": "drawn 1)…2; inequality gives {\"from\":1,\"to\":2,\"closed\":[false,false]}"
+   },
+   {
+    "name": "the interval drawn is x > 2",
+    "ok": true,
+    "detail": "drawn 2)…∞; inequality gives {\"from\":2,\"to\":null,\"closed\":[false,false]}"
+   },
+   {
+    "name": "the lesson states \"4 components\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 680×192"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×192"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-interior-closure": {
+  "title": "Interior, closure and boundary of [0, 1)",
+  "caption": "The set [0, 1) has interior (0, 1) (every point has room around it), closure [0, 1] (the limit point 1 is added) and boundary {0, 1} (the two points where the set meets its complement).",
+  "alt": "Three number-line rows from −1 to 2: the set [0, 1), its interior (0, 1) and its closure [0, 1], with the boundary points 0 and 1 marked.",
+  "description": [
+   "The set is [0, 1): 0 is included, 1 is not.",
+   "Interior: remove 0, because no interval around 0 stays inside the set: (0, 1).",
+   "Closure: add the limit point 1: [0, 1].",
+   "Boundary: closure minus interior is {0, 1}."
+  ],
+  "course": "maths",
+  "lesson": "Point-Set Topology",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Point-Set Topology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 0 <= x < 1",
+    "ok": true,
+    "detail": "drawn 0]…1; inequality gives {\"from\":0,\"to\":1,\"closed\":[true,false]}"
+   },
+   {
+    "name": "the interval drawn is 0 < x < 1",
+    "ok": true,
+    "detail": "drawn 0)…1; inequality gives {\"from\":0,\"to\":1,\"closed\":[false,false]}"
+   },
+   {
+    "name": "the interval drawn is 0 <= x <= 1",
+    "ok": true,
+    "detail": "drawn 0]…1; inequality gives {\"from\":0,\"to\":1,\"closed\":[true,true]}"
+   },
+   {
+    "name": "the lesson states \"Interior: (0, 1)\", \"Closure: [0, 1]\", \"Boundary: {0, 1}\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-no-finite-subcover": {
+  "title": "Covers of (0, 1) that always miss a gap",
+  "caption": "Each U_n = (1/n, 1) is open and together they cover (0, 1), but any finite choice stops at its largest n = N and misses (0, 1/N]. Here N = 5: the points up to 1/5 are left uncovered.",
+  "alt": "A number line from 0 to 1 with four overlapping open intervals (1/2, 1), (1/3, 1), (1/4, 1) and (1/5, 1), and a gap (0, 1/5] under them that no finite subcollection covers.",
+  "description": [
+   "The sets U₂ = (½, 1), U₃ = (⅓, 1), U₄ = (¼, 1) and U₅ = (⅕, 1) are drawn as rows.",
+   "Every point of (0, 1) lies in some U_n if n is large enough.",
+   "A finite subcollection has a largest n, here N = 5, and covers only (1/5, 1).",
+   "The points between 0 and 1/5 are missed, so there is no finite subcover."
+  ],
+  "course": "maths",
+  "lesson": "Compactness",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Compactness"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 0 < x <= 0.2",
+    "ok": true,
+    "detail": "drawn 0)…0.2; inequality gives {\"from\":0,\"to\":0.2,\"closed\":[false,true]}"
+   },
+   {
+    "name": "1/N = 1/5 is the left end of the largest set U₅",
+    "ok": true,
+    "detail": "0.2"
+   },
+   {
+    "name": "the lesson states \"no finite subcover\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 680×226"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×226"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-plane-curve-genus": {
+  "title": "Genus of a smooth plane curve of degree d",
+  "caption": "The genus (d − 1)(d − 2)/2 grows quadratically with the degree: lines and conics have genus 0, a cubic has genus 1 (a torus, an elliptic curve) and a quartic has genus 3.",
+  "alt": "The parabola g = (d − 1)(d − 2)/2 with dots at the whole-number degrees: 0, 0, 1, 3, 6, 10 for d = 1 to 6, the cubic (1) and the quartic (3) labelled.",
+  "description": [
+   "Plot g = (d − 1)(d − 2)/2 against the degree d.",
+   "The cubic, d = 3, gives 2 × 1/2 = 1: a torus.",
+   "The quartic, d = 4, gives 3 × 2/2 = 3.",
+   "Lines (d = 1) and conics (d = 2) both give genus 0."
+  ],
+  "course": "maths",
+  "lesson": "Riemann Surfaces",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Riemann Surfaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 1) lies on y = (x-1)*(x-2)/2",
+    "ok": true,
+    "detail": "y(3) = 1"
+   },
+   {
+    "name": "(4, 3) lies on y = (x-1)*(x-2)/2",
+    "ok": true,
+    "detail": "y(4) = 3"
+   },
+   {
+    "name": "(2, 0) lies on y = (x-1)*(x-2)/2",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-preimage-square": {
+  "title": "The preimage of (1, 4) under x²",
+  "caption": "The open interval (1, 4) on the y-axis pulls back to two open intervals, (−2, −1) and (1, 2): the points whose square lies strictly between 1 and 4. A union of open intervals is open, as continuity requires.",
+  "alt": "The parabola y = x² with a horizontal band between y = 1 and y = 4, and the two x-intervals (−2, −1) and (1, 2) where the curve lies inside the band.",
+  "description": [
+   "Plot y = x² and mark the open interval (1, 4) on the y-axis.",
+   "The curve is inside the band when 1 < x² < 4.",
+   "That happens for x in (−2, −1) and for x in (1, 2).",
+   "Both pieces are open intervals, so the preimage is open."
+  ],
+  "course": "maths",
+  "lesson": "Continuity in Topology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Continuity in Topology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 1) lies on y = x^2",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "(2, 4) lies on y = x^2",
+    "ok": true,
+    "detail": "y(2) = 4"
+   },
+   {
+    "name": "(-1, 1) lies on y = x^2",
+    "ok": true,
+    "detail": "y(-1) = 1"
+   },
+   {
+    "name": "(-2, 4) lies on y = x^2",
+    "ok": true,
+    "detail": "y(-2) = 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-stereographic-charts": {
+  "title": "Two stereographic charts cover the sphere",
+  "caption": "Projecting from the north pole N sends P to Q = (3, 0) but cannot reach N itself; projecting from the south pole S sends P to Q′ = (1/3, 0) and cannot reach S. Together the two charts cover every point, and neither chart alone can, since a sphere is compact and a plane is not. The same picture shows ℂP¹ as the plane plus one point at infinity.",
+  "alt": "A circle (the sphere seen edge-on) with north pole N and south pole S. A line from N through P on the circle meets the horizontal axis at Q; a line from S through P meets it at Q′.",
+  "description": [
+   "The circle stands for the sphere, the horizontal axis for the plane.",
+   "The line from N through P = (0.6, 0.8) meets the axis at Q = (3, 0): this is the chart missing N.",
+   "The line from S through P meets the axis at Q′ = (⅓, 0): this is the chart missing S.",
+   "Every point of the sphere is covered by at least one chart, but N is never in the first."
+  ],
+  "course": "maths",
+  "lesson": "Manifold Theory",
+  "also": [
+   {
+    "course": "maths",
+    "unit": "u17",
+    "lesson": "Complex Manifolds"
+   }
+  ],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Manifold Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in maths: Complex Manifolds",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "N, S and P are on the sphere",
+    "ok": true,
+    "detail": "1, 1, 1"
+   },
+   {
+    "name": "N, P and Q are on one line",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "S, P and Q′ are on one line",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the two chart images satisfy |Q| · |Q′| = 1",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the lesson states \"stereographic projections from both poles\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×231"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u17-stokes-square": {
+  "title": "∮ x dy around the unit square",
+  "caption": "Going anticlockwise round the unit square, only the right edge contributes to ∮ x dy: there x = 1 and y rises by 1, giving 1. The left edge has x = 0, and the top and bottom have dy = 0. Stokes' theorem says the same: ∬ dx ∧ dy is the area, 1.",
+  "alt": "The unit square with anticlockwise arrows on its four edges. The right edge is labelled x = 1 and contributes 1; the left edge is labelled x = 0 and contributes 0; the area inside is 1.",
+  "description": [
+   "ω = x dy, so dω = dx ∧ dy.",
+   "On the right edge x = 1 and ∫ dy = 1, so it contributes 1.",
+   "On the left edge x = 0, so it contributes 0; top and bottom have dy = 0.",
+   "The boundary integral is 1, equal to the area ∬ dx ∧ dy."
+  ],
+  "course": "maths",
+  "lesson": "Differential Forms",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Differential Forms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the square has area 1, so ∬ dx ∧ dy = 1",
+    "ok": true,
+    "detail": "shoelace 1; label \"area = 1\""
+   },
+   {
+    "name": "the lesson states \"∮ x dy = 1\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×267"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u17-tan-homeomorphism": {
+  "title": "(0, 1) is homeomorphic to ℝ",
+  "caption": "f(x) = tan(π(x − ½)) stretches the interval (0, 1) over the whole real line: f(½) = 0, f(¾) = 1, f(¼) = −1, and f grows without bound towards both ends. It is a continuous bijection with continuous inverse.",
+  "alt": "The curve y = tan(π(x − ½)) for x between 0 and 1, rising through (¼, −1), (½, 0) and (¾, 1), and running off to −∞ and +∞ at the ends.",
+  "description": [
+   "Shift (0, 1) to (−½, ½) with x − ½, then scale by π to (−π/2, π/2).",
+   "tan maps (−π/2, π/2) onto all of ℝ.",
+   "The curve passes through (¼, −1), (½, 0), (¾, 1).",
+   "The inverse ½ + arctan(y)/π is also continuous."
+  ],
+  "course": "maths",
+  "lesson": "Homeomorphisms",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Homeomorphisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(0.5, 0) lies on y = tan(3.141592653589793*(x-0.5))",
+    "ok": true,
+    "detail": "y(0.5) = 0"
+   },
+   {
+    "name": "(0.75, 1) lies on y = tan(3.141592653589793*(x-0.5))",
+    "ok": true,
+    "detail": "y(0.75) = 1"
+   },
+   {
+    "name": "(0.25, -1) lies on y = tan(3.141592653589793*(x-0.5))",
+    "ok": true,
+    "detail": "y(0.25) = -1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u17-three-metrics": {
+  "title": "Three distances from (0, 0) to (3, 4)",
+  "caption": "The same two points are 7 apart in the taxicab metric d₁ (along the grid), 5 apart in the Euclidean metric d₂ (straight line) and 4 apart in the maximum metric d∞ (the larger coordinate gap). Different metrics, different distances, and different open balls.",
+  "alt": "A right triangle with legs 3 and 4 and hypotenuse 5 from (0, 0) to (3, 4), labelled with the three distances 7, 5 and 4.",
+  "description": [
+   "Go from (0, 0) to (3, 0) and up to (3, 4): the taxicab distance is 3 + 4 = 7.",
+   "The straight line has length √(9 + 16) = 5.",
+   "The maximum metric keeps only the larger gap, max(3, 4) = 4."
+  ],
+  "course": "maths",
+  "lesson": "Metric Spaces",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Metric Spaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at B is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "OB = 3 u17",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "BA = 4 u17",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "OA = 5 u17",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "d₂((0, 0), (3, 4)) = √(9 + 16) = 5",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "d₁ = 3 + 4 = 7",
+    "ok": true,
+    "detail": "7"
+   },
+   {
+    "name": "d∞ = the larger gap, 4",
+    "ok": true,
+    "detail": "4"
+   },
+   {
+    "name": "the lesson states \"d₁ = 3 + 4 = 7\", \"d₂ = √(9 + 16) = 5\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u17-winding-sum": {
+  "title": "Winding numbers add: 3 − 1 = 2",
+  "caption": "A loop's class in π₁(circle) ≅ ℤ is its net winding number: three anticlockwise turns count +3, one clockwise turn counts −1, so the loop is homotopic to going round twice.",
+  "alt": "A number line from −1 to 4: a jump of +3 from 0 to 3 for the anticlockwise turns, then a jump of −1 back to 2 for the clockwise turn.",
+  "description": [
+   "Each anticlockwise circuit counts +1 and each clockwise circuit counts −1.",
+   "Three anticlockwise circuits: 0 → 3.",
+   "One clockwise circuit: 3 → 2.",
+   "The class of the loop is 2 in ℤ."
+  ],
+  "course": "maths",
+  "lesson": "Fundamental Groups",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u17.js: Fundamental Groups"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0 +3 −1 = 2",
+    "ok": true,
+    "detail": "jumps end at 2"
+   },
+   {
+    "name": "the lesson states \"3 − 1 = 2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 680×168"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×168"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
