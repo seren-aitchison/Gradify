@@ -1,0 +1,48 @@
+{
+ "id": "maths-u14-committees",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u14",
+ "lesson": "Combinations",
+ "title": "Committees of 3 from 6 men and 4 women",
+ "caption": "C(10, 3) = 120 committees in all. All-men committees number C(6, 3) = 20, so 120 − 20 = 100 include at least one woman.",
+ "alt": "One bar of 120 split into 20 all-male committees and 100 with at least one woman.",
+ "description": [
+  "Any 3 of 10 people: C(10, 3) = 120.",
+  "No women: C(6, 3) = 20.",
+  "At least one woman: 120 − 20 = 100."
+ ],
+ "bars": [
+  {
+   "parts": [
+    {
+     "value": 20,
+     "label": "all men: 20"
+    },
+    {
+     "value": 100,
+     "label": "at least one woman: 100"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 120
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    20,
+    100
+   ],
+   "total": 120
+  }
+ ]
+}

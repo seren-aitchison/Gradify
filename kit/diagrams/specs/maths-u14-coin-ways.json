@@ -1,0 +1,50 @@
+{
+ "id": "maths-u14-coin-ways",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u14",
+ "lesson": "Generating Functions",
+ "title": "Ways to make 10p from 1p, 2p and 5p",
+ "caption": "Split by the number of 5p coins: none leaves 10p for 1p and 2p (6 ways), one leaves 5p (3 ways), two leaves 0p (1 way): 10 in all, the coefficient of x¹⁰ in the generating function.",
+ "alt": "Bar chart of ways by number of 5p coins used: 0 gives 6, 1 gives 3, 2 gives 1.",
+ "description": [
+  "With k fives, the rest 10 − 5k is made from 1p and 2p: ⌊(10 − 5k)/2⌋ + 1 ways.",
+  "k = 0, 1, 2 give 6, 3, 1.",
+  "Total 10."
+ ],
+ "categories": [
+  0,
+  1,
+  2
+ ],
+ "values": [
+  6,
+  3,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   7
+  ]
+ },
+ "ticks": [
+  2,
+  4,
+  6
+ ],
+ "axisLabels": [
+  "number of 5p coins",
+  "ways"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 10
+  },
+  {
+   "type": "mode",
+   "value": 0
+  }
+ ]
+}

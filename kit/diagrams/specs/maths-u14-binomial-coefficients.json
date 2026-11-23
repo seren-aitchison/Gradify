@@ -1,0 +1,60 @@
+{
+ "id": "maths-u14-binomial-coefficients",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u14",
+ "lesson": "Binomial Theorem",
+ "title": "The terms of (2 + x)⁵",
+ "caption": "The coefficient of xᵏ is C(5, k) × 2⁵⁻ᵏ: 32, 80, 80, 40, 10, 1. For x³ it is C(5, 3) × 2² = 40. They add to 3⁵ = 243, the value at x = 1.",
+ "alt": "Bar chart of the coefficients of x⁰ to x⁵ in (2 + x)⁵: 32, 80, 80, 40, 10, 1; the bar for x³ is highlighted.",
+ "description": [
+  "The term in xᵏ is C(5, k) × 2⁵⁻ᵏ × xᵏ.",
+  "The coefficients are 32, 80, 80, 40, 10, 1.",
+  "For x³: C(5, 3) × 4 = 40."
+ ],
+ "categories": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "values": [
+  32,
+  80,
+  80,
+  40,
+  10,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   90
+  ]
+ },
+ "ticks": [
+  20,
+  40,
+  60,
+  80
+ ],
+ "axisLabels": [
+  "power of x",
+  "coefficient"
+ ],
+ "highlight": [
+  3
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 243
+  },
+  {
+   "type": "mode",
+   "value": 1
+  }
+ ]
+}

@@ -111,6 +111,7 @@ X: How many 4-digit PINs (digits 0–9) have at least one repeated digit?
 > Total PINs: 10^{4} = 10,000
 > All digits different: 10 × 9 × 8 × 7 = 5,040
 > At least one repeat: 10,000 − 5,040 = 4,960
+D: maths-u14-pin-repeats
 - Example: a restaurant's 4 starters, 6 mains and 3 desserts give 4 × 6 × 3 = 72 three-course meals.
 K: Add for disjoint alternatives, multiply for successive stages, subtract complements, divide out overcounting; decide whether order and repetition matter.
 !: Adding counts of overlapping cases.
@@ -201,6 +202,7 @@ X: A committee of 3 is chosen from 6 men and 4 women. How many committees includ
 > All committees: C(10, 3) = 120
 > All-men committees: C(6, 3) = 20
 > At least one woman: 120 − 20 = 100
+D: maths-u14-committees
 - Example: the UK Lotto chooses 6 of 59 numbers: C(59, 6) = 45,057,474 possible tickets.
 - C(n, r) also counts lattice paths and binary strings with r ones.
 - Check by a small case: C(4, 2) = 6 pairs from {a, b, c, d}.
@@ -248,6 +250,7 @@ X: Find the coefficient of x^{3} in (2 + x)^{5}.
 > The term with x^{3} has k = 3: C(5, 3) × 2^{5−3} × x^{3}
 > = 10 × 4 × x^{3}
 > The coefficient is 40
+D: maths-u14-binomial-coefficients
 - The middle coefficient C(2n, n) is the largest in row 2n.
 K: (a + b)ⁿ = Σ C(n, k)a^{n−k}b^{k}; coefficients come from Pascal's triangle; the general series extends to any power for |x| < 1.
 !: Forgetting to raise the constant term to its power (writing C(5, 3) × 2 instead of × 2^{2}).
@@ -335,6 +338,7 @@ X: How many integers from 1 to 100 are divisible by 2, 3 or 5?
 > Singles: 50 + 33 + 20 = 103
 > Pairs: divisible by 6, 10, 15: 16 + 10 + 6 = 32; triple: divisible by 30: 3
 > Total: 103 − 32 + 3 = 74
+D: maths-u14-divisible-2-3-5
 - Example: surjections from a 4-set onto a 2-set number 2^{4} − 2 = 14 (subtracting the 2 constant maps).
 - Venn diagrams make the two- and three-set cases visible.
 K: Add singles, subtract pairs, add triples, alternating; use it for divisibility, derangements and surjections; derangement probability tends to 1/e.
@@ -381,6 +385,7 @@ X: How many ways can 10p be made from 1p, 2p and 5p coins?
 > Count solutions of a + 2b + 5c = 10 (the coefficient of x^{10})
 > c = 0: b = 0 to 5 (6 ways); c = 1: a + 2b = 5 gives b = 0 to 2 (3 ways); c = 2: 1 way
 > Total 6 + 3 + 1 = 10
+D: maths-u14-coin-ways
 K: Encode sequences as power series; products combine choices; coefficients count; rational generating functions solve linear recurrences.
 !: Multiplying generating functions for choices that aren't independent.
 Q: What is the generating function of the sequence 1, 1, 1, …? | 1/(1 − x).
@@ -425,6 +430,7 @@ X: Find p(5) and S(4, 2).
 > List partitions of 5: 5, 4+1, 3+2, 3+1+1, 2+2+1, 2+1+1+1, 1+1+1+1+1: p(5) = 7
 > Split {1, 2, 3, 4} into 2 blocks: 4 ways with a single element apart, 3 ways as two pairs
 > S(4, 2) = 4 + 3 = 7
+D: maths-u14-partitions-of-5
 K: p(n) counts number partitions, S(n, k) set partitions into k blocks, Bell numbers all set partitions; recurrences and generating functions organise them.
 !: Counting 3 + 2 and 2 + 3 as different partitions.
 Q: What is the Bell number B₃? | 5.
