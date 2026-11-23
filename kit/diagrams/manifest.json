@@ -67878,5 +67878,149 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u36-fibre-loss": {
+  "title": "Power along an optical fibre",
+  "caption": "In decibels, fibre loss is a straight line: 0.2 dB km⁻¹ over 100 km is 20 dB, a factor of 100. Launched at 1 mW (0 dBm), the signal arrives at −20 dBm = 10 μW.",
+  "alt": "Power in dBm against distance, a straight line falling from 0 at the start to minus 20 at 100 kilometres.",
+  "description": [
+   "Power in dBm = 10 log₁₀(P / 1 mW).",
+   "Loss 0.2 dB km⁻¹: after 50 km, −10 dBm (100 μW); after 100 km, −20 dBm (10 μW).",
+   "On a linear power axis the same fall would be an exponential."
+  ],
+  "course": "physics",
+  "lesson": "Fibre-optic communications",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u36.js: Fibre-optic communications"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "20 dB lost in 100 km",
+    "ok": true,
+    "detail": "y(100) = -20"
+   },
+   {
+    "name": "−20 dBm is 10 μW",
+    "ok": true,
+    "detail": "y(100) = -20"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u36-mzm-transfer": {
+  "title": "Transfer curve of a Mach–Zehnder modulator",
+  "caption": "The voltage shifts the phase in one arm, so the two arms interfere: T = cos²(πV/2V_π). With V_π = 3 V, the output is fully on at 0 V, half at 1.5 V (the quadrature point, where modulation is most linear) and off at 3 V.",
+  "alt": "Transmitted fraction against voltage, a cosine-squared curve from 1 at 0 volts through 0.5 at 1.5 volts to 0 at 3 volts and back up.",
+  "description": [
+   "T = cos²(πV / (2 × 3 V)).",
+   "V = 0: T = 1. V = 1.5 V: cos²(π/4) = 0.5. V = 3 V: T = 0.",
+   "Around 1.5 V the curve is steepest and nearly straight, the usual bias point."
+  ],
+  "course": "physics",
+  "lesson": "Optical modulators",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u36.js: Optical modulators"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half transmitted at 1.5 V",
+    "ok": true,
+    "detail": "y(1.5) = 0.5"
+   },
+   {
+    "name": "fully off at V_π",
+    "ok": true,
+    "detail": "y(3) = 0"
+   },
+   {
+    "name": "steepest at the quadrature point",
+    "ok": true,
+    "detail": "gradient -0.5236"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u36-pulse-broadening": {
+  "title": "A femtosecond pulse spreads in glass",
+  "caption": "A short pulse has a wide spectrum, and glass delays its colours by different amounts. A 20 fs pulse through 1 cm of glass (GDD = 360 fs²) leaves about 54 fs long: τ = τ₀√(1 + (4 ln 2 GDD/τ₀²)²). Shorter pulses broaden far more.",
+  "alt": "Output pulse duration against group-delay dispersion, rising from 20 femtoseconds and becoming nearly a straight line, with 54 femtoseconds at 360 square femtoseconds marked.",
+  "description": [
+   "τ₀ = 20 fs (Gaussian, FWHM).",
+   "τ = τ₀ √(1 + (4 ln 2 × GDD / τ₀²)²).",
+   "GDD = 360 fs²: 4 ln 2 × 360 / 400 = 2.5, so τ ≈ 53.8 fs.",
+   "Chirped mirrors or prism pairs add opposite GDD to undo it."
+  ],
+  "course": "physics",
+  "lesson": "Femtosecond optics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u36.js: Femtosecond optics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "53.8 fs at 360 fs²",
+    "ok": true,
+    "detail": "y(360) = 53.7649"
+   },
+   {
+    "name": "unchanged with no dispersion",
+    "ok": true,
+    "detail": "y(0) = 20"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

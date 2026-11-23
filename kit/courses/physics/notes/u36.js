@@ -127,6 +127,7 @@ H: Advanced formats
 P: Coherent systems encode data in both amplitude and phase on two polarisations: QPSK, 16-QAM, 64-QAM. IQ modulators, nested Mach–Zehnders, reach >100 GBd. Thin-film lithium niobate gives low V_{π} and bandwidths beyond 100 GHz. Ring modulators in silicon are tiny and power-efficient but sensitive to temperature.
 X: An MZM has V_{π} = 3 V. What fraction of light is transmitted at V = 1.5 V?
 > cos^{2}(π × 1.5/6) = cos^{2}(π/4) = 0.5
+D: phys-u36-mzm-transfer
 X: A 16-QAM signal on two polarisations at 64 GBd carries how many bits per second (raw)?
 > 16-QAM = 4 bits per symbol; × 2 polarisations = 8 bits
 > 64 × 10^{9} × 8 = 512 Gb s^{-1}
@@ -206,6 +207,7 @@ P: Erbium-doped fibre amplifiers (EDFAs) boost all channels in the C-band (1530�
 X: A 100 km link at 0.2 dB km^{-1} starts at 1 mW. What arrives?
 > Loss = 20 dB ⇒ factor 10^{-2}
 > P = 0.01 mW = 10 μW
+D: phys-u36-fibre-loss
 X: A source has 0.1 nm linewidth over 80 km with D = 17 ps nm^{-1} km^{-1}. Pulse spread?
 > Δτ = 17 × 80 × 0.1 = 136 ps
 K: Fibre wins through ultra-low loss and huge bandwidth, with amplifiers and DSP handling loss and dispersion.
@@ -319,6 +321,7 @@ P: Pulse shapers with spatial light modulators sculpt spectral phase to control 
 X: A 20 fs pulse passes 1 cm of glass with GDD 360 fs^{2}. Roughly how long is it afterwards?
 > 4 ln2 × 360/400 ≈ 2.5
 > τ ≈ 20 × √(1 + 6.2) ≈ 20 × 2.7 ≈ 54 fs
+D: phys-u36-pulse-broadening
 K: At femtosecond scales, even a few millimetres of glass reshape a pulse, so dispersion management is essential.
 !: An autocorrelation width is not the pulse width; it must be divided by a shape factor (√2 for a Gaussian).
 Q: How do frequency combs work as rulers? | Each line is at n × f_{rep} + f_{ceo}; measuring both pins every line's frequency.
