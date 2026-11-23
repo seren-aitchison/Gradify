@@ -40,3 +40,10 @@ test("the real export neutralises a malicious recorded review but keeps the expe
   for (const [k, row] of all.slice(1).entries()) assert.equal(cell(row[at("expectation key")]).replace(/^"|"$/g, "").replace(/""/g, '"'), expectKey(REFERENCE[k].expect));
   assert.ok(text.length > 0);
 });
+
+test("a field with a carriage return keeps its boundaries through export and import (M57)", () => {
+  const id = REFERENCE[0].id;
+  const text = csv([["id", "verdict (agree / disagree / unsure)", "correction", "comment", "reviewer", "date"], [id, "disagree", "", "first\rsecond", "Dr R", ""]]);
+  const back = mergeReviews({}, text, new Set([id]));
+  assert.deepEqual(back.bad, []); assert.equal(back.reviews[id].note, "first\rsecond"); assert.equal(back.reviews[id].date, "");
+});

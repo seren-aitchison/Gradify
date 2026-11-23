@@ -51,7 +51,7 @@ const isCoord = (v) => typeof v === "number" && Number.isFinite(v) && Math.abs(v
  * corrupted save is dropped whole rather than drawn.
  */
 export function restore(v, elements = KNOWN_ELEMENTS) {
-  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds) || v.atoms.length > 1000 || v.bonds.length > 2000) return null;
+  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds)) return null;
   const atoms = [], bonds = [], ids = new Set(), bondIds = new Set(), pairs = new Set();
   for (const a of v.atoms) {
     if (!plain(a) || !isId(a.id) || ids.has(a.id) || !isCoord(a.x) || !isCoord(a.y) || typeof a.el !== "string" || !elements.has(a.el)) return null;

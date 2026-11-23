@@ -8,7 +8,7 @@
 // full marks; a finished saved mechanism reopens complete and unmarked; Reaction mode never asks or grades a case
 // the lab declines, and shows a reaction with no organic product as one; a tutor reply for a replaced conversation is
 // dropped; an unsupported tutor request (site released before the backend) fails with a plain message and no use;
-// tampered saved work in localStorage is dropped, never drawn; and in every mode at 1280, 820 and 390 px, no page
+// tampered saved work in localStorage is dropped, never drawn; My drawing stops at the steps a saved note can hold; and in every mode at 1280, 820 and 390 px, no page
 // error, no sideways scroll, and the provisional-chemistry notice is visible.
 const { chromium } = require("playwright");
 const fs = require("fs"), path = require("path"), http = require("http");
@@ -188,6 +188,40 @@ async function examToggle(p, on) {
     ok("S3 a failed tutor request doesn't count as tutor use", r.uses === 0, `uses ${r.uses}`);
     ok("S3 the tutor says its answers rest on provisional rules", /provisional rules/.test(r.level), r.level);
     ok("S3 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- My drawing: the editor stops at the step limit a saved note can hold, so every save reopens ----------
+  {
+    const { p, errs } = await open(b);
+    const r = await p.evaluate(async () => {
+      const K = await import("/kit/labs/chemistry/skeletal.js"), { mountMechanism, restoreNote, MAX_STEPS } = await import("/kit/labs/chemistry/reactions/mechanism-ui.js");
+      const m = K.empty(), h = K.addAtom(m, 0, 0, "H"), cl = K.addAtom(m, 1, 0, "Cl"); K.addBond(m, h.id, cl.id, 1);
+      const host = document.createElement("div"); host.style.width = "900px"; document.body.append(host); let saved = null;
+      const mx = mountMechanism(host, { getDrawing: () => K.clone(m), onSave: (n) => { saved = n; } });
+      mx.load("mine"); host.querySelector(".mx-kbd").open = true;
+      const q = (s) => host.querySelector(s), wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const choose = (sel, pred) => { const o = [...q(sel).options].find(pred); if (!o) return false; q(sel).value = o.value; q(sel).dispatchEvent(new Event("change")); return true; };
+      const btn = (t) => [...host.querySelectorAll("button")].find((x) => x.textContent.trim() === t);
+      let applied = 0;
+      for (let i = 0; i <= MAX_STEPS; i++) {
+        for (let k = 0; k < 40 && !q(".mx-from").options.length; k++) await wait(25);
+        const ok = i % 2 ? choose(".mx-from", (o) => o.value === `lp:${cl.id}`) && choose(".mx-to", (o) => o.value === `atom:${h.id}`)
+                         : choose(".mx-from", (o) => o.value.startsWith("bond:")) && choose(".mx-to", (o) => o.value === `atom:${cl.id}`);
+        if (!ok) break;
+        btn("Add arrow").click(); btn("Apply step").click();
+        const landed = () => [...host.querySelectorAll("button")].some((x) => x.textContent.trim().startsWith(`${i + 1} After step`));
+        for (let k = 0; k < 120 && !landed() && !/limit of \d+ steps/.test(host.innerText); k++) await wait(25);
+        if (landed()) applied = i + 1;
+        if (/limit of \d+ steps/.test(host.innerText)) break;
+        btn("Clear arrows")?.click();
+      }
+      const limitShown = /reached the limit of 40 steps/.test(host.innerText);
+      btn("Save to notes").click();
+      return { applied, limitShown, steps: saved?.steps.length, reopens: !!restoreNote(JSON.parse(JSON.stringify(saved))) };
+    });
+    ok("S4 My drawing accepts steps up to the saved-note limit, then stops with a message", r.applied === 40 && r.limitShown, `applied ${r.applied}, message ${r.limitShown}`);
+    ok("S4 the saved note holds every applied step and reopens", r.steps === 40 && r.reopens, `steps ${r.steps}, reopens ${r.reopens}`);
+    ok("S4 no page errors", !errs.length, errs.join(" | "));
     await p.close();
   }
   // ---------- tampered saved work in localStorage is dropped, never drawn ----------

@@ -42,10 +42,10 @@ const isCoord = (v) => typeof v === "number" && Number.isFinite(v) && Math.abs(v
  * the elements this module knows (VALENCE_E), bonds { id, a, b, e } with e = 2, 4 or 6. Null when anything is off.
  */
 export function restoreState(v) {
-  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds) || v.atoms.length > 500 || v.bonds.length > 1000) return null;
+  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds)) return null;
   const atoms = [], bonds = [], ids = new Set(), bondIds = new Set();
   for (const a of v.atoms) {
-    if (!plain(a) || !isId(a.id) || ids.has(a.id) || typeof a.el !== "string" || !Object.hasOwn(VALENCE_E, a.el) || !isCoord(a.x) || !isCoord(a.y) || !isCount(a.n, 8) || !isCount(a.h, 4)) return null;
+    if (!plain(a) || !isId(a.id) || ids.has(a.id) || typeof a.el !== "string" || !Object.hasOwn(VALENCE_E, a.el) || !isCoord(a.x) || !isCoord(a.y) || !isCount(a.n, 12) || !isCount(a.h, 6)) return null;
     ids.add(a.id); atoms.push({ id: a.id, el: a.el, x: a.x, y: a.y, n: a.n, h: a.h });
   }
   for (const b of v.bonds) {

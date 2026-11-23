@@ -15,6 +15,8 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 const COL = { pend: "#f59e0b", bad: "#ff4d6d", good: "#10b981", form: "rgba(16,185,129,.4)", brk: "rgba(255,77,109,.55)" };
 
+// the most a saved note may hold; the editor stops at the same limits, so every note it saves can be reopened
+export const MAX_STEPS = 40, MAX_ARROWS = 12;
 const plainObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
 const shortText = (v, max = 300) => typeof v === "string" && v.length <= max;
 /**
@@ -23,13 +25,13 @@ const shortText = (v, max = 300) => typeof v === "string" && v.length <= max;
  * note. Null when anything is off, or when the note no longer replays, so a tampered note is never opened or drawn.
  */
 export function restoreNote(v) {
-  if (!plainObj(v) || !shortText(v.title) || !Array.isArray(v.steps) || v.steps.length > 40) return null;
+  if (!plainObj(v) || !shortText(v.title) || !Array.isArray(v.steps) || v.steps.length > MAX_STEPS) return null;
   const reactionId = v.reactionId ?? null;
   if (reactionId !== null && !REACTIONS.some((r) => r.id === reactionId)) return null;
   const start = E.restoreState(v.start); if (!start) return null;
   const steps = [];
   for (const st of v.steps) {
-    if (!plainObj(st) || !Array.isArray(st.arrows) || !st.arrows.length || st.arrows.length > 12) return null;
+    if (!plainObj(st) || !Array.isArray(st.arrows) || !st.arrows.length || st.arrows.length > MAX_ARROWS) return null;
     const arrows = st.arrows.map(E.restoreArrow); if (arrows.some((a) => !a)) return null;
     steps.push({ arrows });
   }
@@ -310,6 +312,8 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     if (!pending.length) { fb = { kind: "info", html: "<p>Draw the arrows for this step first.</p>" }; refresh(); return; }
     const s = cur(), r = E.applyStep(s, pending), k = done.length;
     if (!inst) {
+      if (k >= MAX_STEPS) { fb = { kind: "info", html: `<p>This mechanism has reached the limit of ${MAX_STEPS} steps. Save it to your notes, or start again.</p>` }; refresh(); return; }
+      if (pending.length > MAX_ARROWS) { fb = { kind: "info", html: `<p>One step can have at most ${MAX_ARROWS} arrows. Split it into smaller steps.</p>` }; refresh(); return; }
       if (!r.ok) { fb = { kind: "bad", errors: r.errors, warnings: r.warnings, checks: r.checks, steps: [] }; refresh(); return; }
       const prev = s; advance(pending.slice(), null); fb = { kind: "good", result: r, title: `Step ${k + 1} applied`, prev, steps: r.steps, warnings: r.warnings, checks: r.checks }; play([k]); return;
     }

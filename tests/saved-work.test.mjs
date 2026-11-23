@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import * as K from "../kit/labs/chemistry/skeletal.js";
 import * as E from "../kit/labs/chemistry/reactions/electron-flow.js";
 import { REACTIONS, instantiate } from "../kit/labs/chemistry/reactions/library.js";
-import { restoreNote } from "../kit/labs/chemistry/reactions/mechanism-ui.js";
+import { restoreNote, MAX_STEPS } from "../kit/labs/chemistry/reactions/mechanism-ui.js";
 import { restorePage } from "../kit/labs/chemistry/sketch.js";
 
 const PAYLOAD = '<img src=x onerror="alert(1)">';
@@ -84,4 +84,17 @@ test("notebook pages: genuine drawings and mechanisms are kept, tampered ones dr
   assert.equal(restorePage({ ...draw, kind: "other" }), null); assert.equal(restorePage({ ...draw, title: 3 }), null); assert.equal(restorePage({ ...draw, mol: K.empty() }), null);
   const odd = restorePage(roundTrip({ ...draw, id: '"><x', at: "<script>", extra: PAYLOAD }));
   assert.equal(odd.id, null); assert.equal(odd.at, ""); assert.equal(odd.extra, undefined);
+});
+
+test("the limits on a restored note are the editor's own: a learner's 40-step mechanism reopens; a large drawing too", () => {
+  // H–Cl broken and re-formed, step after step: valid chemistry the editor accepts up to MAX_STEPS (browser check S4)
+  const m = K.empty(), h = K.addAtom(m, 0, 0, "H"), cl = K.addAtom(m, 1, 0, "Cl"); K.addBond(m, h.id, cl.id, 1);
+  const brk = { type: "pair", from: { ends: [h.id, cl.id] }, to: { atom: cl.id } }, mk = { type: "pair", from: { lp: cl.id }, to: { atom: h.id } };
+  const note = (n) => roundTrip({ v: 1, title: "My mechanism", reactionId: null, conditions: null, start: E.fromDrawing(m), steps: Array.from({ length: n }, (_, i) => ({ arrows: [i % 2 ? mk : brk] })), ecf: null });
+  assert.equal(MAX_STEPS, 40);
+  assert.ok(restoreNote(note(MAX_STEPS)), "a note at the limit reopens");
+  assert.equal(restoreNote(note(MAX_STEPS + 1)), null, "past it (which the editor no longer allows) it doesn't");
+  // the drawing editor has no size limit, so neither does restore: a 1500-atom chain comes back whole
+  const big = K.empty(); let prev = K.addAtom(big, 0, 0); for (let i = 1; i < 1500; i++) { const a = K.addAtom(big, i * 0.87, i % 2 ? 0.5 : 0); K.addBond(big, prev.id, a.id, 1); prev = a; }
+  assert.equal(K.restore(roundTrip(big))?.atoms.length, 1500);
 });

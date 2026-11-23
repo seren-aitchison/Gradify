@@ -105,3 +105,8 @@ predicted products and mechanism marking are written from standard textbook chem
 reviewed by an independent chemist. If the lab disagrees with your teacher or textbook, go with them." The browser check
 confirms it is visible in all four modes at 1280, 820 and 390 px.
 
+CodeRabbit's review of `e03bcad8` raised no Major findings and one Minor one, M59 in [BACKLOG.md](BACKLOG.md): the S1
+fix's 40-step limit on a restored note wasn't enforced by the editor, so a longer mechanism of the learner's own would
+save and then be dropped on reload. It was verified and fixed (the editor now stops at the same limit) because it was a
+data-loss defect introduced by S1.
+
