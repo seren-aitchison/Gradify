@@ -1388,10 +1388,15 @@ async function progressCard(s, forecast) {
   g.fillStyle = "#fff"; g.font = "700 64px Geist, system-ui, sans-serif"; g.fillText("My study progress", 70, 130);
   g.font = "500 36px Geist, system-ui, sans-serif"; g.globalAlpha = .8;
   g.fillText(`${Object.keys(s.byDay).length} active days · ${forecast.reduce((a, b) => a + b, 0)} reviews due this week`, 70, 190); g.globalAlpha = 1;
-  // the tree, if it has drawn
-  const svg = document.querySelector("#lo-tree-svg svg");
+  // the tree: drawn flat (SVG) off-screen, because on screen it may be the 3D island, which a canvas can't copy
+  const { drawTreeFlat } = await import("../lifeos/tree.js"), { sites, bars } = treeData(s.acts), tmp = document.createElement("div");
+  let seed = 7; const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  try { drawTreeFlat(tmp, { sites: sites.length ? sites : [{ n: "Gradify", c: "4641ff", act: 0, k: 0, creds: [], leaves: { lesson: 0, flashcard: 0, quiz: 0 } }], bars, rand }); } catch (e) { console.warn("Tree for the card", e); }
+  const svg = tmp.querySelector("svg");
   if (svg) {
-    const img = new Image(); img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(svg))}`;
+    // an SVG without its own size draws at zero size, and page CSS doesn't reach the image: size and namespace it
+    const copy = svg.cloneNode(true); copy.setAttribute("width", "600"); copy.setAttribute("height", "420"); copy.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const img = new Image(); img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(copy))}`;
     await new Promise((r) => { img.onload = r; img.onerror = r; });
     try { g.drawImage(img, 240, 230, 600, 420); } catch { /* skip the tree */ }
   }
