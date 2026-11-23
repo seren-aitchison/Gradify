@@ -13,7 +13,7 @@
 // Everything is decided deterministically, from the structure of the two lines and from evaluating them at many
 // points, never by AI. `prev` is the previous valid line, or the problem's start. Rule and mistake texts explain
 // the mathematics; they never give the answer to the problem being worked.
-import { parse, parseEquation, compile, equivalent, samplePoints, variables, clean, numbersFrom, form as FORM } from "./mathexpr.js";
+import { parse, parseEquation, compile, equivalent, samplePoints, variables, clean, numbersFrom, form as FORM, plusMinus } from "./mathexpr.js";
 
 // ---------- trees ----------
 const strip = (n) => (n && n.k === "()" ? strip(n.a) : n);
@@ -51,6 +51,17 @@ function openBrackets(n) {
   walk(n, null);
   return c;
 }
+// how many terms a full expansion has before anything is collected: 2(3(x + 1) − 1) → 6x + 6 − 2, three
+function rawTerms(n) {
+  n = strip(n);
+  if (n.k === "+" || n.k === "-") return rawTerms(n.a) + rawTerms(n.b);
+  if (n.k === "neg") return rawTerms(n.a);
+  if (n.k === "*") return rawTerms(n.a) * rawTerms(n.b);
+  if (n.k === "^" && strip(n.b).k === "num" && Number.isInteger(strip(n.b).v) && strip(n.b).v > 0) return rawTerms(n.a) ** strip(n.b).v;
+  return 1;
+}
+// + and − signs anywhere, inside brackets too: collecting inside a bracket reduces it
+const plusCount = (n) => { let c = 0; const w = (x) => { if (!x || typeof x !== "object") return; if (x.k === "+" || x.k === "-") c++; w(x.a); w(x.b); }; w(n); return c; };
 const squaredBrackets = (n) => { let c = 0; const w = (x) => { if (!x || typeof x !== "object") return; if (x.k === "^" && isBracket(x.a) && strip(x.b).k === "num" && strip(x.b).v === 2) c++; w(x.a); w(x.b); }; w(n); return c; };
 const sumOf = (ts) => ts.reduce((acc, t) => (acc ? { k: t.s < 0 ? "-" : "+", a: acc, b: t.n } : t.s < 0 ? { k: "neg", a: t.n } : t.n), null) || { k: "num", v: 0 };
 const mul = (a, b) => ({ k: "*", a, b });
@@ -128,7 +139,7 @@ function opWords(cs, v) {
   const parts = [];
   for (let j = cs.length - 1; j >= 0; j--) {
     const c = cs[j]; if (Math.abs(c) < 1e-9) continue;
-    const mag = Math.abs(c), m = j === 0 ? nice(mag) : `${mag === 1 ? "" : nice(mag)}${v}${j > 1 ? (j === 2 ? "²" : j === 3 ? "³" : `^${j}`) : ""}`;
+    const mag = Math.abs(c), k = nice(mag), m = j === 0 ? k : `${mag === 1 ? "" : k.includes("/") ? `(${k})` : k}${v}${j > 1 ? (j === 2 ? "²" : j === 3 ? "³" : `^${j}`) : ""}`;
     parts.push([c > 0 ? "added" : "subtracted", m]);
   }
   if (!parts.length) return "";
@@ -151,6 +162,9 @@ function isAnswer(line, v) {
   const parts = s.split(/,|;|\bor\b|\band\b/i).map((x) => x.trim()).filter(Boolean);
   return parts.length > 0 && parts.every((q, i) => { const m = q.match(new RegExp(`^(?:${v}\\s*=)?\\s*([^=]+)$`)); return m && (i > 0 || new RegExp(`^${v}\\s*=`).test(q)) && !new RegExp(`\\b${v}\\b`).test(m[1].replace(/sqrt/g, "")); });
 }
+// "x − 1 = 3 or x − 1 = −3": two or more equations, not yet a finished answer
+const partsOf = (line) => clean(plusMinus(line)).split(/\bor\b|,|;/i).map((x) => x.trim()).filter(Boolean);
+const isDisjunction = (line, v) => { const ps = partsOf(line); return ps.length > 1 && ps.every((x) => x.includes("=")) && !isAnswer(plusMinus(line), v); };
 const startOf = (p) => (p.kind === "derivative" || p.kind === "integral" ? p.fn : p.start);
 
 // ---------- rules ----------
@@ -176,7 +190,12 @@ export const RULES = {
   "zero-product": { title: "Zero-product rule", text: "If two things multiply to give zero, at least one of them must be zero. So set each bracket equal to zero and solve each one: (x − 2)(x − 3) = 0 gives x − 2 = 0 or x − 3 = 0." },
   "square-root": { title: "Square-rooted both sides", text: "If something squared equals k, it equals √k or −√k. Keep both: forgetting the negative root loses a solution." },
   "quadratic-formula": { title: "Used the quadratic formula", text: "For ax² + bx + c = 0, x = (−b ± √(b² − 4ac)) ÷ 2a. Rearrange to = 0 first, and read a, b and c with their signs." },
-  "rewrite": { title: "Rewrote it in an equivalent form", text: "This line is equal to the one before. Each line of working should do one clear thing, so whoever reads it (including you) can follow it." },
+  "rewrite": { title: "Agrees with the line before", text: "The checker found that this line agrees with the one before at many test values, but it can't name a single rule for this step. That's a strong check, not a proof. Writing one clear step per line makes working easier to follow, for you and for an examiner." },
+  "rewrite-equation": { title: "Same solutions as the line before", text: "The checker found that this equation is still true for the solutions and gains no new ones at many test values, but it can't name a single rule for this step. That's a strong check, not a proof. Writing one clear step per line makes working easier to follow, for you and for an examiner." },
+  "expand-collect": { title: "Expanded and collected like terms", text: "Multiply every term inside each bracket by the term outside it, then add together terms with the same letter and power. Doing both in one line saves time but makes sign slips harder to spot: write the expansion first if you're unsure." },
+  "distribute-bracket": { title: "Multiplied the second bracket by each term of the first", text: "(a + b)(c + d) = a(c + d) + b(c + d). Each term of the first bracket multiplies the whole of the second; expanding these two gives the four products." },
+  "multiply-expression": { title: "Multiplied both sides by an expression", text: "Multiplying both sides by an expression containing x is allowed, but only where that expression isn't zero, and it can add solutions that don't fit the original equation. Check your answers in the original." },
+  "solve-each": { title: "Solved each equation", text: "Each of the equations gives one solution. Solve them separately, the same way as any linear equation." },
   "index-form": { title: "Rewrote with powers", text: "Write roots and fractions as powers of x before differentiating or integrating: √x = x^(1/2), 1/x² = x^(−2), 3/x² = 3x^(−2)." },
   "power-rule": { title: "Differentiated term by term", text: "The derivative of axⁿ is naxⁿ⁻¹: multiply by the power, then reduce the power by one. A constant term differentiates to 0." },
   "standard-derivatives": { title: "Differentiated term by term", text: "Differentiate each term separately using the standard results: xⁿ → nxⁿ⁻¹, eˣ → eˣ, ln x → 1/x, sin x → cos x, cos x → −sin x." },
@@ -199,6 +218,7 @@ export const MISTAKES = {
   "square-of-sum": { title: "(a + b)² isn't a² + b²", text: "Squaring a bracket gives three terms: (a + b)² = a² + 2ab + b². Write it as (a + b)(a + b) and multiply out all four products." },
   "missing-cross": { title: "Missing products", text: "Two brackets of two terms give four products, not two: (a + b)(c + d) = ac + ad + bc + bd." },
   "factor-signs": { title: "The signs in the brackets", text: "The numbers in the brackets must multiply to give the number term and add to give the x coefficient. Yours do one but not the other: check the signs." },
+  "factor-check": { title: "The brackets don't expand back", text: "Expand your brackets to check them: they should give back the expression you started with. For x² + bx + c, the numbers in the brackets must multiply to c and add to b." },
   "sign-error": { title: "Sign error", text: "Everything matches except the sign of one term. Check the step that made it: a minus outside a bracket, or subtracting a negative." },
   "term-error": { title: "One term is wrong", text: "Everything matches except one term. Re-check how that term was made, or how it was collected with others." },
   "move-sign": { title: "Moved a term without changing its sign", text: "Moving a term across the equals sign is really subtracting (or adding) it on both sides, so its sign changes: x − 6 = 5 gives x = 5 + 6." },
@@ -235,6 +255,7 @@ function expressionRule(p, a, b, v) {
     if (pc && pc.length === 3 && pc[1] === 0 && pc[2] * pc[0] < 0 && brB.length >= 2) return rule("difference-of-squares");
     // from a sum of bracketed terms that share a bracket: 2x(x + 3) − (x + 3)
     if (nA === 2 && termsOf(ta).every((t) => withBracket(t.n))) return rule("common-bracket");
+    if (brB.length >= 2 && monoB.length) return rule("factorise-quadratic", "Took out the common factor and factorised");
     if (brB.length >= 2) return rule("factorise-quadratic");
     return rule("common-factor");
   }
@@ -254,14 +275,23 @@ function expressionRule(p, a, b, v) {
     if (oB >= 2 && oB > oA - 1 && factorsOf(tb).filter((f) => isBracket(f)).length >= 2) return rule("square-as-product");
     if (oB < oA || oB === 0) return rule("expand-square");
   }
+  if (oB < oA && oB === 0 && pc) {
+    // expanded and collected at once: fewer terms than the expansion has before collecting
+    const raw = rawTerms(ta);
+    const cb = polyCoeffs(tb, v);
+    if (cb && nB < raw && nB === cb.filter((c) => Math.abs(c) > 1e-9).length) return rule("expand-collect");
+  }
   if (oB < oA) {
     // a product of two bracketed sums somewhere in the previous line → double brackets
     const dbl = variants(ta, (n) => (n.k === "*" && isBracket(strip(n.a).k === "()" ? n.a : n.a) && isBracket(n.b) ? [n] : [])).length
       || variants(ta, (n) => { if (n.k !== "*") return []; const fs = factorsOf(n); return fs.filter((f) => isBracket(f)).length >= 2 ? [n] : []; }).length;
     return rule(dbl ? "expand-double" : "expand-single", dbl ? undefined : oA - oB > 1 ? "Expanded the brackets" : undefined);
   }
-  if (oA === oB && nB < nA) return rule("collect");
-  if (oA === oB && nB === nA + 1 && pc && pc.length === 3) return rule("split-middle");
+  // (a + b)(c + d) → a(c + d) + b(c + d)
+  const twoBr = factorsOf(ta).filter((f) => isBracket(f));
+  if (nA === 1 && twoBr.length === 2 && nB === termsOf(twoBr[0].a).length && termsOf(tb).every((t) => withBracket(t.n))) return rule("distribute-bracket");
+  if (oA === oB && (nB < nA || plusCount(tb) < plusCount(ta))) return rule("collect");
+  if (oA === 0 && oB === 0 && nB === nA + 1 && pc && pc.length === 3) return rule("split-middle");
   return rule("rewrite");
 }
 
@@ -306,8 +336,19 @@ export function explainStep(p, prev, line) {
     }
     if (kind === "equation") {
       const a = prev == null ? p.start : prev;
+      if (isDisjunction(a, v)) return rule("solve-each");
+      if (isDisjunction(line, v)) {
+        const e = safeEq(a); if (!e) return rule("rewrite-equation");
+        const [L, R] = [strip(e.lhs), strip(e.rhs)];
+        const zero = (n) => isConst(n) && Math.abs(compile(n)({})) < 1e-12;
+        const prodSide = zero(R) ? L : zero(L) ? R : null;
+        if (prodSide && factorsOf(prodSide).filter((f) => hasVar(f)).length >= 2) return rule("zero-product");
+        if ([L, R].some((n) => n.k === "^" && isBracket(n.a) && strip(n.b).v === 2) && [L, R].some((n) => isConst(n))) return rule("square-root");
+        return rule("rewrite-equation");
+      }
+      line = plusMinus(line);
       if (isAnswer(line, v) && (/\bor\b|,|±/i.test(line) || numbersFrom(line).length > 1)) {
-        const e = safeEq(a); if (!e) return rule("rewrite");
+        const e = safeEq(a); if (!e) return rule("rewrite-equation");
         const [L, R] = [strip(e.lhs), strip(e.rhs)];
         const zero = (n) => isConst(n) && Math.abs(compile(n)({})) < 1e-12;
         const prodSide = zero(R) ? L : zero(L) ? R : null;
@@ -316,10 +357,10 @@ export function explainStep(p, prev, line) {
         if (sqSide && [L, R].some((n) => isConst(n))) return rule("square-root");
         if (prodSide && /sqrt|√/.test(line)) return rule("quadratic-formula");
         if (prodSide && polyCoeffs(prodSide, v)?.length === 3) return rule(/sqrt|√/.test(line) ? "quadratic-formula" : "zero-product");
-        return rule("rewrite");
+        return rule("rewrite-equation");
       }
       const pe = safeEq(a), ne = safeEq(line);
-      if (!pe || !ne) return rule("rewrite");
+      if (!pe || !ne) return rule("rewrite-equation");
       const pL = compile(pe.lhs), pR = compile(pe.rhs), nL = compile(ne.lhs), nR = compile(ne.rhs);
       const sameL = same(p, nL, pL), sameR = same(p, nR, pR);
       if (sameL && sameR) {
@@ -327,7 +368,7 @@ export function explainStep(p, prev, line) {
         const sides = [[a.split("=")[0], line.split("=")[0]], [a.split("=")[1], line.split("=")[1]]];
         const changed = sides.filter(([x, y]) => clean(x) !== clean(y));
         const rs = changed.map(([x, y]) => expressionRule(p, x, y, v)).filter((r) => r.id !== "rewrite");
-        if (!rs.length) return rule("rewrite");
+        if (!rs.length) return rule("rewrite-equation");
         const r = rs[0];
         return changed.length === 2 && rs.length === 2 && rs[0].id === rs[1].id ? { ...r, title: `${r.title} on both sides` } : r;
       }
@@ -348,7 +389,22 @@ export function explainStep(p, prev, line) {
         }
         return null;
       };
-      return op(pL, pR, false) || op(pR, pL, true) || rule("rewrite");
+      const r = op(pL, pR, false) || op(pR, pL, true);
+      if (r && r.id === "same-add") {
+        // also factorised or expanded a side in the same line
+        const fac = (t) => { try { return FORM.factorised(t) && /\(/.test(t); } catch { return false; } };
+        const [aL, aR] = a.split("="), [bL, bR] = line.split("=");
+        if ((fac(bL) && !fac(aL) && !isConst(parse(bL))) || (fac(bR) && !fac(aR) && !isConst(parse(bR)))) r.title += ", then factorised";
+        else if (openBrackets(parse(aL)) + openBrackets(parse(aR)) > openBrackets(parse(bL)) + openBrackets(parse(bR))) r.title = `Expanded the bracket, then ${r.title.charAt(0).toLowerCase()}${r.title.slice(1)}`;
+      }
+      if (r) return r;
+      // multiplied both sides by the same expression in x: 6/x = 2 → 6 = 2x
+      const g = (o) => nL(o) / pL(o), h = (o) => nR(o) / pR(o);
+      if (same(p, g, h, 1e-6) && constRatio(p, g, () => 1) == null) {
+        const cs = polyCoeffs(g, v), mono = cs && cs.filter((c) => Math.abs(c) > 1e-9).length === 1 && cs.length > 1;
+        return rule("multiply-expression", mono ? `Multiplied both sides by ${Math.abs(cs.at(-1)) === 1 ? "" : nice(cs.at(-1))}${v}${cs.length > 2 ? (cs.length === 3 ? "²" : `^${cs.length - 1}`) : ""}` : undefined);
+      }
+      return rule("rewrite-equation");
     }
     // expressions
     const a = prev == null ? p.start : bodyOf(prev, kind), b = bodyOf(line, kind);
@@ -363,7 +419,7 @@ const MUTATIONS = [
   ["bracket-sign", (n) => {
     if (n.k !== "-" && n.k !== "neg") return [];
     const side = n.k === "-" ? "b" : "a", inner = n[side];
-    const fs = factorsOf(inner), br = fs.find((f) => isBracket(f));
+    const fs = isBracket(inner) ? [inner] : factorsOf(inner), br = fs.find((f) => isBracket(f));
     if (!br) return [];
     const ts = termsOf(br.a); if (ts.length < 2) return [];
     const flipped = { k: "()", a: sumOf(ts.map((t, i) => (i ? { ...t, s: -t.s } : t))) };
@@ -404,6 +460,13 @@ function coeffMistake(p, target, wrong, factorised) {
   if (!t || !w) return null;
   const n = Math.max(t.length, w.length), T = [...t, ...Array(n - t.length).fill(0)], W = [...w, ...Array(n - w.length).fill(0)];
   const diff = T.map((c, j) => (Math.abs(c - W[j]) > 1e-7 ? j : -1)).filter((j) => j >= 0);
+  // a factorised quadratic with the right leading term: one of "multiply to c" and "add to b" right, or neither
+  if (factorised && n === 3 && near(T[2], W[2]) && diff.length) {
+    if (diff.length > 1) return mistake("factor-check");
+    return diff[0] === 1
+      ? mistake("factor-signs", undefined, "The numbers in your brackets multiply to give the number term, but don't add to give the x coefficient: check their signs.")
+      : mistake("factor-signs", "The numbers in the brackets", "The numbers in your brackets add to give the x coefficient, but don't multiply to give the number term: try another pair.");
+  }
   if (diff.length !== 1) return null;
   const j = diff[0];
   if (factorised && n === 3 && j === 1) return mistake("factor-signs");
@@ -456,6 +519,11 @@ export function diagnose(p, prev, line) {
     if (kind === "equation") {
       const a = prev == null ? p.start : prev, pe = safeEq(a);
       if (!pe) return null;
+      if (isDisjunction(line, v)) {
+        const sqSide = [strip(pe.lhs), strip(pe.rhs)].some((n) => n.k === "^" && isBracket(n.a));
+        return sqSide ? mistake("negative-root") : null;
+      }
+      line = plusMinus(line);
       if (isAnswer(line, v)) {
         const got = numbersFrom(line.replace(/±/g, "+")), sols = p.solutions || [];
         const has = (x) => got.some((g) => Math.abs(g - x) < 1e-6);
@@ -484,13 +552,16 @@ export function diagnose(p, prev, line) {
       const sides = [[sameR, pe.lhs, nL], [sameL, pe.rhs, nR]];
       for (const [ok, pt, nw] of sides) if (ok) { const m = mutationOf(p, pt, nw); if (m) return m; }
       if (oneSide) return mistake("one-side");
-      for (const [ok, pt, nw] of sides) if (ok) { const c = coeffMistake(p, compile(pt), nw, false); if (c) return c; }
+      const [lineL, lineR] = line.split("=");
+      for (const [ok, pt, nw, txt] of sides.map((x, i) => [...x, i ? lineR : lineL])) if (ok) {
+        let f = false; try { f = FORM.factorised(txt) && /\(/.test(txt); } catch { /* unreadable side */ }
+        const c = coeffMistake(p, compile(pt), nw, f); if (c) return c;
+      }
       const dL = (o) => nL(o) - pL(o), dR = (o) => nR(o) - pR(o);
       if (!same(p, dL, () => 0) && same(p, dL, (o) => -dR(o), 1e-6)) return mistake("move-sign");
       const rL = constRatio(p, nL, pL), rR = constRatio(p, nR, pR);
       if (rL != null && !near(rL, 1) && rR == null) return mistake("divide-not-all");
       if (rR != null && !near(rR, 1) && rL == null) return mistake("divide-not-all");
-      if ((sameL && !sameR) || (sameR && !sameL)) return mistake("one-side");
       return null;
     }
     const a = prev == null ? p.start : bodyOf(prev, kind), wrong = compile(bodyOf(line, kind));
@@ -520,6 +591,8 @@ function sameStage(p, x, y) {
 /** The model solution's next line after the furthest point the student's valid lines have reached. */
 export function nextStep(p, lines = []) {
   const sol = p.solution || [];
+  // after "x − 1 = 3 or x − 1 = −3" the only step left is solving each: the model's final line
+  if (lines.length && (p.kind || "expression") === "equation" && isDisjunction(lines[lines.length - 1], p.var || "x")) return sol[sol.length - 1] ?? null;
   let k = -1;
   sol.forEach((s, i) => { if (lines.some((l) => sameStage(p, l, s))) k = Math.max(k, i); });
   return sol[Math.min(k + 1, sol.length - 1)] ?? null;
