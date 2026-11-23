@@ -131,7 +131,7 @@ test("visits from AI assistants are recognised", () => {
 test("titles fit a search result (≤ 60 characters) and descriptions aren't cut off (≤ 155)", () => {
   for (const [p, html] of files) {
     if (!p.endsWith(".html") || /<meta name="robots" content="noindex">/.test(html)) continue;
-    const t = html.match(/<title>([^<]*)<\/title>/)?.[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"'), d = html.match(/<meta name="description" content="([^"]*)"/)?.[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'");
+    const t = html.match(/<title>([^<]*)<\/title>/)?.[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"'), d = html.match(/<meta name="description" content="([^"]*)"/)?.[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
     if (t) assert.ok(t.length <= 60, `${p}: title is ${t.length} characters: ${t}`);
     if (d) assert.ok(d.length <= 155, `${p}: description is ${d.length} characters`);
   }
@@ -161,4 +161,22 @@ test("the feed, security.txt and the bookmarklet hand-off are generated", () => 
   assert.match(files.get("feed.xml"), /<rss version="2.0"[\s\S]*<item>/);
   assert.match(files.get(".well-known/security.txt"), /^Contact: mailto:/m);
   assert.match(files.get("send.html"), /gradify\.jot\.pack/);
+});
+
+test("key-term pages, cross-subject links, topic FAQs, auto-links and the research page", async () => {
+  const { termKey, termSlug } = await import("../scripts/seo/programmatic.mjs");
+  const { autoLink } = await import("../scripts/build-seo.mjs");
+  assert.equal(termKey("**Saturation** (colour)"), "saturation");
+  assert.equal(termSlug("café au lait"), "cafe-au-lait");
+  const terms = [...files].filter(([p]) => /^terms\/[^/]+\/index\.html$/.test(p));
+  assert.ok(terms.length > 300);
+  assert.ok(terms.some(([, h]) => !/noindex/.test(h)) && terms.some(([, h]) => /noindex, follow/.test(h)), "only substantial term pages are indexed");
+  assert.ok([...files].some(([p, h]) => p.startsWith("topics/") && /The same ideas in other subjects/.test(h)));
+  assert.ok([...files].some(([p, h]) => p.startsWith("topics/") && /"@type":"FAQPage"/.test(h)));
+  const linked = autoLink('<main><h2>Spaced repetition</h2><p>Use spaced repetition and <a href="/x">active recall</a>, then active recall again.</p></main>', "/guides/x/");
+  assert.match(linked, /<h2>Spaced repetition<\/h2>/, "never inside headings");
+  assert.match(linked, /<p>Use <a href="\/glossary\/spaced-repetition\/">spaced repetition<\/a>/);
+  assert.match(linked, /then <a href="\/glossary\/active-recall\/">active recall<\/a> again/, "not inside an existing link, but the next mention");
+  assert.match(files.get("research/index.html"), /"@type":"Dataset"/);
+  const sm = await read("sitemap.xml"); assert.match(sm, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
 });

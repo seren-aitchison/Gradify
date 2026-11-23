@@ -183,3 +183,6 @@ html.focus main.seo { padding-top: 16px; }
 .before-after { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .before-after > div { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; background: var(--panel); }
 .before-after > div:last-child { border-color: #f055dd; } a.chip { text-decoration: none; }
+.term-list { columns: 3 180px; padding-left: 18px; } .term-list li { break-inside: avoid; }
+.rbars { list-style: none; padding: 0; } .rbars li { display: grid; grid-template-columns: minmax(120px, 34%) 1fr 48px; gap: 10px; align-items: center; padding: 4px 0; font-size: 14px; }
+.rb { height: 12px; background: var(--line); border-radius: 99px; overflow: hidden; } .rb i { display: block; height: 100%; background: linear-gradient(90deg, #4641ff, #f055dd); } .rb-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--fg); }

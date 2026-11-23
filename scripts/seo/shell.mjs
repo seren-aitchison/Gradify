@@ -39,6 +39,9 @@ export function fitDesc(d, max = 155) {
   return `${cut.slice(0, max - 1).replace(/[\s,;:·–-]+\S*$/, "")}…`;
 }
 
+// a link-preview image per section, so a shared tool, topic or guide doesn't look like every other page
+const OG_SECTIONS = ["tools", "topics", "guides", "checklists", "compare", "vs", "terms", "questions", "study-plan"];
+export const ogFor = (path) => { const s = String(path).split("/")[0]; const k = s === "vs" ? "compare" : s === "exam-traps" ? "questions" : s; return OG_SECTIONS.includes(k) ? `${ORIGIN}/assets/og/${k}.png` : `${ORIGIN}/assets/og.png`; };
 export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, ogType = "article", noindex = false, head = "", share = true, cta = true }) {
   const title = fitTitle(rawTitle), description = fitDesc(rawDesc);
   const canonical = url(path);
@@ -55,6 +58,8 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   <meta name="description" content="${esc(description)}">
   ${noindex ? '<meta name="robots" content="noindex, follow">' : ""}
   <link rel="canonical" href="${canonical}">
+  <link rel="alternate" hreflang="en-GB" href="${canonical}">
+  <link rel="alternate" hreflang="x-default" href="${canonical}">
   <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="${ORIGIN}/feed.xml">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
@@ -62,14 +67,14 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   <meta property="og:url" content="${canonical}">
   <meta property="og:site_name" content="Gradify">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:image" content="${ORIGIN}/assets/og.png">
+  <meta property="og:image" content="${ogFor(path)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
-  <meta name="twitter:image" content="${ORIGIN}/assets/og.png">
+  <meta name="twitter:image" content="${ogFor(path)}">
   ${updated ? `<meta property="article:modified_time" content="${updated}">` : ""}
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">

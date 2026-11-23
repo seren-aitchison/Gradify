@@ -30,10 +30,17 @@ export async function sitemapUrls() {
   return urls.map((u) => `${ORIGIN}/${u.replace(/(^|\/)index\.html$/, "$1")}`);
 }
 
+// the date a page says it was last changed (its article:modified_time, which the visible "Last updated" date matches);
+// pages without one get no lastmod rather than a guessed date
+async function lastmod(u) {
+  let p = u.replace(`${ORIGIN}/`, ""); if (p === "" || p.endsWith("/")) p += "index.html";
+  const html = await readFile(new URL(p, root), "utf8").catch(() => "");
+  return html.match(/<meta property="article:modified_time" content="(\d{4}-\d{2}-\d{2})/)?.[1] || null;
+}
 export async function sitemapXml() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${(await sitemapUrls()).map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}
+${(await Promise.all((await sitemapUrls()).map(async (u) => { const d = await lastmod(u); return `  <url><loc>${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`; }))).join("\n")}
 </urlset>
 `;
 }

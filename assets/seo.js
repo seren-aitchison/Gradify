@@ -31,6 +31,9 @@ document.addEventListener("click", (e) => {
   copy(`${src}\n(from ${location.origin}${location.pathname})`).then((ok) => { if (ok) { b.textContent = "Copied"; setTimeout(() => { b.textContent = old; }, 1500); } });
 });
 
+// ---------- calls to action into the app (counted, so we can see which pages send people to study) ----------
+document.addEventListener("click", (e) => { const a = e.target.closest('a[href^="/app.html"], a[href*="lifeos.html"]'); if (a) act("cta_click"); });
+
 // ---------- share with a study group ----------
 for (const b of $$("[data-share]")) b.addEventListener("click", async () => {
   const msg = b.parentElement.querySelector(".share-msg");

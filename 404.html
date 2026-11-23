@@ -69,6 +69,9 @@
     <h1>This page doesn't exist</h1>
     <p>The address may have a typo, or the page may have moved.</p>
     <div class="guess" id="guess" hidden></div>
+    <div class="guess" id="near" hidden></div>
+    <h2>Free, no sign-up</h2>
+    <ul><li><a href="/tools/">Free study tools</a>: grade calculators, planners, a study timer</li><li><a href="/topics/">Revision topics</a> with quick quizzes in 30+ subjects</li><li><a href="/guides/">Study guides</a> and <a href="/checklists/">checklists</a></li><li><a href="/terms/">Key terms A to Z</a></li></ul>
     <h2>Courses you can take now</h2>
     <ul id="sites"><li><a href="/lawgradify/">LawGradify</a></li><li><a href="/scigradify/">SciGradify</a></li><li><a href="/nursegradify/">NurseGradify</a></li></ul>
     <div class="row"><a class="btn btn-light btn-sm" href="/"><span>Go to getgradify.com</span></a><a class="btn btn-ghost btn-sm" href="/app.html"><span>Open the Gradify app</span></a></div>
@@ -79,7 +82,7 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/vs/">Concept comparisons</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
         <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
@@ -96,6 +99,17 @@
     const dist = (a, b) => { const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]); for (let j = 1; j <= b.length; j++) d[0][j] = j; for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); return d[a.length][b.length]; };
     const best = first && SITES.filter((s) => s.built).map((s) => ({ s, d: dist(first, slugOf(s)) })).sort((a, b) => a.d - b.d)[0];
     if (best && best.d > 0 && best.d <= 3) { const g = document.getElementById("guess"); g.hidden = false; g.innerHTML = `Did you mean <a href="/${slugOf(best.s)}/">${best.s.n}</a>?`; }
+    // otherwise, the closest pages in the sitemap by the words in the address (getgradify.com/tools/gpa-calc → the GPA calculator)
+    const words = (p) => new Set(p.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 1 && !["html", "index", "www", "https", "getgradify", "com"].includes(w)));
+    const want = words(location.pathname);
+    if (want.size) fetch("/sitemap.xml").then((r) => (r.ok ? r.text() : "")).then((xml) => {
+      const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+      const score = (u) => { const w = words(new URL(u).pathname); let n = 0; for (const x of want) if (w.has(x) || [...w].some((y) => y.startsWith(x) || x.startsWith(y))) n++; return n / Math.max(want.size, 1); };
+      const top = urls.map((u) => [u, score(u)]).filter(([, x]) => x >= 0.5).sort((a, b) => b[1] - a[1] || a[0].length - b[0].length).slice(0, 3);
+      if (!top.length) return;
+      const g = document.getElementById("near"); g.hidden = false;
+      g.innerHTML = `Were you looking for: ${top.map(([u]) => `<a href="/${new URL(u).pathname.slice(1)}">${new URL(u).pathname}</a>`).join(" · ")}`;
+    }).catch(() => {});
   </script>
 </body>
 </html>

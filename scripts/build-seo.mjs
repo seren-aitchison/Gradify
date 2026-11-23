@@ -44,7 +44,7 @@ function siteMapPage(pages, courses) {
     <h2>Study guides</h2>${list([...GUIDES.map((g) => [`guides/${g.slug}/`, g.h1]), ...GUIDES2.map((g) => [`guides/${g.slug}/`, g.h1])])}
     <h2>Concept comparisons</h2>${list(VS.map(([s, a, b]) => [`vs/${s}/`, `${a} vs ${b}`]))}
     <h2>Comparisons</h2>${list([...COMPARE.map((c) => [`compare/${c.slug}/`, c.name]), ...ALTS.map((c) => [`compare/${c.slug}/`, c.name])])}
-    <h2>Practice and exams</h2>${list([["questions/", "Practice questions"], ["exam-traps/", "Exam traps"], ["exam-boards/", "Exam boards and qualifications"], ["creategradify/briefs/", "Design briefs"], ["changelog/", "What's new"]])}
+    <h2>Practice and exams</h2>${list([["questions/", "Practice questions"], ["exam-traps/", "Exam traps"], ["exam-boards/", "Exam boards and qualifications"], ["terms/", "Key terms A to Z"], ["research/", "Research: common mistakes across subjects"], ["creategradify/briefs/", "Design briefs"], ["changelog/", "What's new"]])}
     <h2>Glossary</h2>${list(TERMS.map(([s, n]) => [`glossary/${s}/`, n]))}
     <h2>Templates</h2>${list(TEMPLATES.map(([s, n]) => [`templates/${s}/`, n]))}
     <h2>Topics by subject</h2>${list(courses.map((p) => [p.path.replace(/index\.html$/, ""), p.title.replace(/ Revision:.*$/, "")]))}
@@ -94,6 +94,8 @@ ${l("topics/", "Revision topics", `every unit of ${courses.length} free courses 
 ${l("questions/", "Practice questions", "multiple-choice questions with answers and explanations, by subject")}
 ${l("exam-traps/", "Exam traps", "the common mistakes in each subject")}
 ${l("exam-boards/", "Exam boards and qualifications", "which qualifications the courses serve, and how strong each claim is")}
+${l("terms/", "Key terms A to Z", "plain-English definitions, and how meanings change between subjects")}
+${l("research/", "Research: where students slip up", "counts of common-mistake warnings per subject, CC BY 4.0")}
 ${l("changelog/", "What's new", "")}
 ${l("study-plan/", "Study plans", "week-by-week plans for GCSE, A level, university and professional paths")}
 ${l("templates/", "Printable templates", "revision timetable, Cornell notes, trackers")}
@@ -136,6 +138,33 @@ async function headTagged() {
   return out;
 }
 
+// The first mention of a study-glossary term or concept comparison in a page's prose links to it, so guides, topics,
+// checklists and comparisons form one web of links (at most five per page; never inside links, headings, buttons,
+// summaries, scripts or the page's own term).
+const AUTO = [
+  ...TERMS.map(([slug, name]) => [`glossary/${slug}/`, [name.replace(/ \(.*\)$/, ""), ...(slug === "fsrs" ? ["FSRS"] : []), ...(slug === "pomodoro-technique" ? ["Pomodoro"] : []), ...(slug === "retrieval-practice" ? ["testing effect"] : [])]]),
+  ["vs/correlation-vs-causation/", ["correlation", "causation"]], ["vs/accuracy-vs-precision/", ["precision"]], ["vs/validity-vs-reliability/", ["reliability", "validity"]],
+  ["vs/molarity-vs-molality/", ["molality"]], ["vs/mitosis-vs-meiosis/", ["meiosis"]], ["guides/blurting-method/", ["blurting"]], ["guides/command-words/", ["command word", "command words"]],
+];
+export function autoLink(html, here, max = 5) {
+  const m = html.match(/<main[\s\S]*<\/main>/); if (!m) return html;
+  const used = new Set(), skip = /^<(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt)\b/i, close = /^<\/(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt)>/i;
+  let depth = 0, n = 0;
+  const parts = m[0].split(/(<[^>]+>)/).map((part) => {
+    if (part.startsWith("<")) { if (skip.test(part) && !part.endsWith("/>")) depth++; else if (close.test(part)) depth = Math.max(0, depth - 1); return part; }
+    if (depth || n >= max || !part.trim()) return part;
+    for (const [href, words] of AUTO) {
+      if (n >= max || used.has(href) || `/${href}` === here) continue;
+      for (const w of words) {
+        const re = new RegExp(`(^|[^\\w-])(${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?![\\w-])`, "i"), hit = part.match(re);
+        if (hit) { const i = hit.index + hit[1].length; part = `${part.slice(0, i)}<a href="/${href}">${hit[2]}</a>${part.slice(i + hit[2].length)}`; used.add(href); n++; break; }
+      }
+    }
+    return part;
+  });
+  return html.replace(m[0], parts.join(""));
+}
+
 export async function outputs() {
   const prog = await programmaticPages();
   const specs = [...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
@@ -147,6 +176,7 @@ export async function outputs() {
   const feed = [...CHANGES.map(([d, h, items]) => ({ path: "changelog/", date: d, title: `What's new: ${h}`, description: items.join(". ") })),
     ...specs.filter((x) => !x.raw && /^(guides|tools|checklists|vs|compare)\/[^/]+\/index\.html$/.test(x.path)).map((x) => ({ path: x.path.replace(/index\.html$/, ""), date: x.updated || "2026-11-23", title: x.title.replace(/ · Gradify$/, ""), description: x.description }))];
   files.set("feed.xml", feedXml(feed.slice(0, 60)));
+  for (const [p, html] of files) if (/^(guides|topics|vs|checklists|terms|compare)\/.+\.html$/.test(p) && !html.startsWith("<!doctype html>\n<html lang=\"en-GB\"><head><meta charset")) files.set(p, autoLink(html, `/${p.replace(/index\.html$/, "")}`));
   // each page lists the modules it loads, like every other page (scripts/preload-modules.mjs)
   for (const [p, html] of files) if (p.endsWith(".html")) files.set(p, withPreloads(fileURLToPath(new URL(p, root)), html));
   files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
