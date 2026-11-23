@@ -63,7 +63,7 @@ body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
 .ds-btn:active { transform: scale(.98); }
 .ds-btn.secondary { color: var(--ds-link); background: transparent; border-color: var(--ds-link); }
 .ds-btn.secondary:hover { color: var(--ds-accent-fg); background: var(--ds-accent); }
-.ds-btn:focus-visible, .ds-more:focus-visible { outline: 3px solid color-mix(in srgb, var(--ds-accent) 55%, transparent); outline-offset: 3px; }
+.ds-btn:focus-visible, .ds-more:focus-visible { outline: 3px solid var(--ds-focus); outline-offset: 3px; }
 .ds-more { display: inline-flex; align-items: center; min-height: 44px; gap: 2px; font-size: 19px; color: var(--ds-link); text-decoration: none; }
 .ds-more::after { content: "›"; font-size: 1.25em; line-height: 1; margin-left: 4px; transition: transform var(--ds-fast) var(--ds-ease); }
 .ds-more:hover { text-decoration: underline; } .ds-more:hover::after { transform: translateX(3px); }
@@ -88,9 +88,10 @@ body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
 .ds-js .ds-reveal:not(.in) { opacity: 0; }
 .ds-js .ds-reveal { transform: translateY(var(--ds-reveal-distance)); transition: opacity var(--ds-slow) var(--ds-ease-out), transform var(--ds-slow) var(--ds-ease-out); }
 .ds-reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1; transform: none; transition: none; } .ds-zoom img { transform: none; transition: none; } .ds-btn, .ds-more::after { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .ds-reveal { opacity: 1; transform: none; transition: none; } .ds-zoom img { transform: none; transition: none; } .ds-btn, .ds-more::after { transition: none; } .ds-btn:active { transform: none; } }
 :root[data-motion="reduce"] .ds-reveal { opacity: 1; transform: none; transition: none; }
 :root[data-motion="reduce"] .ds-zoom img { transform: none; }
+:root[data-motion="reduce"] .ds-btn:active { transform: none; }
 @media (max-width: 640px) { .ds-actions { flex-direction: column; gap: var(--ds-space-3); } .ds-tiles { padding-inline: var(--ds-space-4); } .ds-stats { gap: var(--ds-space-6) var(--ds-space-7); } }
 
 /* ---------- Interface components (shared foundation, for review before any subject site uses them) ----------

@@ -47,14 +47,17 @@ test("components take every colour from the tokens and never need !important", (
   // the only literal colours left are the brand spectrum (one phrase per page) and shadows
   const literal = rules.split("\n").filter((l) => /#[0-9a-f]{3,8}\b/i.test(l) && !/ds-spectrum|box-shadow|color-mix\(in srgb, var\(--ds-[a-z-]+\) \d+%, #fff\)/.test(l));
   assert.deepEqual(literal, []);
+  // every visible focus outline is the focus token (tested above at 3:1 or more on every surface), never a mix of it
+  const outlines = [...rules.matchAll(/outline:\s*([^;}]+)/g)].map((m) => m[1].trim()).filter((v) => !/^(none|0)$/.test(v));
+  assert.deepEqual(outlines.filter((v) => !/^\d+px solid var\(--ds-focus\)$/.test(v)), []);
 });
 
 test("every component class is in the usage guide", async () => {
   const guide = await readFile(new URL("../docs/DESIGN-SYSTEM-COMPONENTS.md", import.meta.url), "utf8");
   // .ds-js is the switch kit/ui/reveal.js sets on <html>, not a component
   const classes = [...new Set(css.replace(/\/\*[\s\S]*?\*\//g, "").match(/\.ds-[a-z0-9-]+/g))].filter((c) => c !== ".ds-js");
-  // documented means named in code (`.ds-card`) or used in an example's class attribute (class="ds-card …")
-  const documented = (c) => guide.includes("`" + c) || new RegExp(`class="([^"]* )?${c.slice(1)}( [^"]*)?"`).test(guide);
+  // documented means named in code (`.ds-card`, but not only as `.ds-cards`) or used in an example's class attribute (class="ds-card …")
+  const documented = (c) => new RegExp("`" + c.replace(/[.]/g, "\\.") + "(?![a-z0-9-])").test(guide) || new RegExp(`class="([^"]* )?${c.slice(1)}( [^"]*)?"`).test(guide);
   const missing = classes.filter((c) => !documented(c));
   assert.deepEqual(missing, []);
 });
