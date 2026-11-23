@@ -34,7 +34,7 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 | u15 | Electricity and Electrostatics | done | 24 | 24 | 6 | 9 | 12 | 0 |
 | u16 | Electric Circuits | done | 28 | 28 | 12 | 12 | 11 | 0 |
 | u17 | Magnetism and Electromagnetism | done | 29 | 29 | 8 | 6 | 17 | 0 |
-| u18 | Electromagnetic Waves | not started | 27 | 0 | 0 | 0 | 0 | 0 |
+| u18 | Electromagnetic Waves | done | 27 | 27 | 17 | 0 | 11 | 0 |
 | u19 | Optics | not started | 30 | 0 | 0 | 0 | 0 | 0 |
 | u20 | Quantum Mechanics | not started | 42 | 0 | 0 | 0 | 0 | 0 |
 | u21 | Atomic Physics | not started | 25 | 0 | 0 | 0 | 0 | 0 |
@@ -71,7 +71,7 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 | u52 | Advanced Problem-Solving Skills | not started | 17 | 0 | 0 | 0 | 0 | 0 |
 | u53 | Interdisciplinary Physics | not started | 22 | 0 | 0 | 0 | 0 | 0 |
 | u54 | Research and Professional Physics Skills | not started | 20 | 0 | 0 | 0 | 0 | 0 |
-| all | | 17 of 54 done | 1308 | 427 | 147 | 74 | 240 | 0 |
+| all | | 18 of 54 done | 1308 | 454 | 164 | 74 | 251 | 0 |
 
 Diagram counts exclude reused older diagrams (u16 also places `phys-kirchhoff-loop`). Every diagram is `validated`
 (its checks pass); none has had a subject review yet.
@@ -82,7 +82,7 @@ A unit listed here is being built; don't start it in another session. Remove the
 
 | Units | Claimed by |
 |---|---|
-| u18, u19, u20 | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
+| u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
 
 ## Unit notes
 
@@ -104,6 +104,7 @@ Commit, diagrams and lessons per unit; "lacks" lists renderers its null rows ask
   boundary, image charges, circuit networks, RLC damping and resonance, rectifier ripple, Bode plot, diode curves.
 - **u17** Magnetism and electromagnetism (e52d0b06, lead session 01H1szfk): 8 diagrams, 6 lab lessons. Lacks charged
   particle paths, 3D wire forces, loop fields, induction, hysteresis, Poynting vector.
+- **u18** Electromagnetic waves (3bef501e, agent P1): 17 diagrams; full note to follow from the agent's report.
 
 ## Lesson errors
 

@@ -20,9 +20,9 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 | u01 | Number and Arithmetic | done | 29 | 29 | 17 | 11 | 7 | 0 |
 | u02 | Number Theory and Cryptography | done | 36 | 36 | 8 | 11 | 17 | 0 |
 | u03 | Algebra | done | 45 | 45 | 31 | 14 | 12 | 0 |
-| u04 | Abstract Algebra | not started | 22 | 0 | 0 | 0 | 0 | 0 |
+| u04 | Abstract Algebra | done | 22 | 22 | 7 | 0 | 15 | 0 |
 | u05 | Geometry | done | 50 | 50 | 32 | 6 | 16 | 0 |
-| u06 | Trigonometry | not started | 30 | 0 | 0 | 0 | 0 | 0 |
+| u06 | Trigonometry | done | 30 | 30 | 29 | 0 | 1 | 0 |
 | u07 | Calculus | not started | 44 | 0 | 0 | 0 | 0 | 0 |
 | u08 | Multivariable and Vector Calculus | done | 22 | 22 | 8 | 2 | 13 | 0 |
 | u09 | Analysis | done | 14 | 14 | 8 | 0 | 6 | 0 |
@@ -33,7 +33,7 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 | u14 | Discrete Mathematics and Combinatorics | done | 23 | 23 | 6 | 0 | 17 | 0 |
 | u15 | Graph Theory and Networks | not started | 44 | 0 | 0 | 0 | 0 | 0 |
 | u16 | Logic, Sets and Foundations | not started | 52 | 0 | 0 | 0 | 0 | 0 |
-| u17 | Topology and Advanced Pure Mathematics | not started | 22 | 0 | 0 | 0 | 0 | 0 |
+| u17 | Topology and Advanced Pure Mathematics | done | 22 | 22 | 12 | 0 | 9 | 0 |
 | u18 | Optimisation and Operations Research | not started | 43 | 0 | 0 | 0 | 0 | 0 |
 | u19 | Numerical Analysis and Scientific Computing | not started | 37 | 0 | 0 | 0 | 0 | 0 |
 | u20 | Mathematical Modelling and Applied Mathematics | not started | 51 | 0 | 0 | 0 | 0 | 0 |
@@ -46,7 +46,7 @@ landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the 
 | u27 | Mathematical Software and Tools | not started | 50 | 0 | 0 | 0 | 0 | 0 |
 | u28 | School and Examination Mathematics | not started | 25 | 0 | 0 | 0 | 0 | 0 |
 | u29 | Everyday and Practical Mathematics | not started | 28 | 0 | 0 | 0 | 0 | 0 |
-| all | | 11 of 29 done | 1077 | 440 | 207 | 64 | 204 | 0 |
+| all | | 14 of 29 done | 1077 | 514 | 255 | 64 | 229 | 0 |
 
 Every diagram is `validated` (its checks pass); none has had a subject review yet.
 
@@ -56,8 +56,7 @@ A unit listed here is being built; don't start it in another session. Remove the
 
 | Units | Claimed by |
 |---|---|
-| u04, u06, u07 | lead session 01PJjzVE, agent M1 (worktree /home/user/wt-m1, branch diagrams/m1) |
-| u17 | lead session 01PJjzVE, agent M3 (landing; M3 stops after it) |
+| u07 (u04 and u06 landed) | lead session 01PJjzVE, agent M1 (worktree /home/user/wt-m1, branch diagrams/m1) |
 
 ## Unit notes
 
@@ -66,8 +65,10 @@ A unit listed here is being built; don't start it in another session. Remove the
   drawn with geometry + axes. No renderer lacked.
 - **u03** Algebra (agent maths-a): 30 diagrams (graph 21, geometry 5, number-line 2, sequence, venn) plus the existing
   `maths-transformations`; labs quadratics, practice, explog, grapher, complex. No renderer lacked.
+- **u04** Abstract algebra (ae57d642, agent M1): 7 diagrams; full note to follow from the agent's report.
 - **u05** Geometry (agent maths-a): 32 diagrams (geometry 22, graph 7, transform, number-line); labs circles, practice,
   matrix. Lacks 3D solids/nets/coordinates, spherical and hyperbolic geometry, surfaces, knots, Buffon's needle.
+- **u06** Trigonometry (be069979, agent M1): 29 diagrams; full note to follow from the agent's report.
 - **u08** Multivariable and vector calculus: 8 diagrams; lab descent on 2 lessons. Lacks 3D surfaces/fields (9
   lessons) and conics.
 - **u09** Analysis (df08995a, agent M2): 8 diagrams (graph 7, bar-model), 6 lessons without; no renderer lacked.
@@ -81,6 +82,10 @@ A unit listed here is being built; don't start it in another session. Remove the
 - **u13** Statistics (agent maths-c): 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph,
   barchart, bar-model); labs regression, clt.
 - **u14** Discrete mathematics and combinatorics (lead session 01H1szfk): 6 diagrams; 17 lessons without, mostly for lack of a network renderer.
+- **u17** Topology and advanced pure mathematics (20ac813d, agent M3): 11 diagrams in 12 lessons
+  (`maths-u17-stereographic-charts` is placed in u17-16 and u17-19; `place.mjs` ignores `also`, so the second D: line
+  was added by hand), 10 lessons without. Lacks surfaces/polyhedra (u17-01, 09, 14, 18), knot diagrams (u17-15),
+  category diagrams (u17-22).
 
 ## Scouting notes for unbuilt units
 

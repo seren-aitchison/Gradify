@@ -105,3 +105,5 @@ unfinished work as `git push origin HEAD:wip/<subject>-uNN` and record the branc
 - **Git stash is shared across worktrees**; don't use it.
 - **Container resets** delete worktrees, `/tmp` and anything outside the repo. Everything durable is in the repo:
   this file, the handovers, `land-unit.sh`, `unit-status.mjs`.
+- **One diagram in two maths lessons**: `scripts/diagrams/maths/place.mjs` places a diagram in its own lesson only and
+  ignores `also`; add the second `D:` line by hand (done for `maths-u17-stereographic-charts`).
