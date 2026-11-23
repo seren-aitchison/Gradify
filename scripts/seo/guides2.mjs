@@ -317,7 +317,7 @@ export const VS = [
 function vsPage([slug, a, b, answer, rows, when, mix, links]) {
   const f = faq([[`What's the difference between ${a.toLowerCase()} and ${b.toLowerCase()}?`, answer]]);
   return {
-    path: `vs/${slug}/index.html`, title: `${a} vs ${b}: The Difference Explained · Gradify`, description: `${answer.split(". ")[0]}. A side-by-side table, when to use each and the common exam mix-ups.`, updated: U,
+    path: `vs/${slug}/index.html`, cite: `${a} vs ${b}`, title: `${a} vs ${b}: The Difference Explained · Gradify`, description: `${answer.split(". ")[0]}. A side-by-side table, when to use each and the common exam mix-ups.`, updated: U,
     crumbs: [["Concept comparisons", "vs/"], [`${a} vs ${b}`, `vs/${slug}/`]],
     schema: [{ "@type": "Article", headline: `${a} vs ${b}`, dateModified: U, author: AUTHOR, publisher: ORG, description: answer }, f.schema],
     body: `<h1>${esc(a)} vs ${esc(b)}</h1><p class="answer">${answer}</p>
@@ -361,7 +361,7 @@ export function guide2Page(g) {
   const f = faq(g.faq), ids = g.sections.map((s) => slugId(s.h));
   const article = { "@type": "Article", headline: g.h1, description: g.description, dateModified: U, datePublished: U, author: AUTHOR, publisher: { ...ORG }, mainEntityOfPage: `https://getgradify.com/guides/${g.slug}/`, image: "https://getgradify.com/assets/og.png", inLanguage: "en-GB" };
   return {
-    path: `guides/${g.slug}/index.html`, title: g.title, description: g.description, updated: U, crumbs: [["Study guides", "guides/"], [g.h1.replace(/:.*$/, ""), `guides/${g.slug}/`]],
+    path: `guides/${g.slug}/index.html`, cite: g.h1.replace(/<[^>]+>/g, ""), title: g.title, description: g.description, updated: U, crumbs: [["Study guides", "guides/"], [g.h1.replace(/:.*$/, ""), `guides/${g.slug}/`]],
     schema: [article, f.schema],
     body: `<h1>${g.h1}</h1>${byline}<p class="answer">${g.answer}</p>
     ${coreRule(g.sections.find((s) => s.take)?.take || "")}${toolCallout(GUIDE_EXTRA[g.slug]?.tools || [])}

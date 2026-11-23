@@ -116,13 +116,13 @@ jobs:
     needs: [test, signed-in]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       pages: write
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     concurrency:
       group: pages
       cancel-in-progress: false
@@ -142,14 +142,42 @@ jobs:
       - name: Assemble the site from the allowlist
         run: node scripts/build-site.mjs "$RUNNER_TEMP/site"
 
+      # which commit this build is, so the step after the deploy can check the live site really serves it
+      - name: Stamp the build
+        run: echo "${{ github.sha }}" > "$RUNNER_TEMP/site/build.txt"
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ runner.temp }}/site
 
+      # GitHub Pages sometimes fails to find the bundle it was just given ("Found 0 artifacts"). Re-running the whole
+      # run then fails for good (two bundles), so the retry happens here, in the same job, with the same bundle.
       - id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before retrying the deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+
+      # the deploy step reporting success isn't proof: check getgradify.com serves this build (or a newer one, if
+      # another deploy landed first). Fails the run loudly instead of leaving the site on an older version unnoticed.
+      - name: Check the live site serves this build
+        run: |
+          for i in $(seq 1 20); do
+            live=$(curl -fsS "https://getgradify.com/build.txt?nocache=$RANDOM$i" 2>/dev/null | tr -d '[:space:]')
+            if [ "$live" = "${{ github.sha }}" ]; then echo "Live: ${live}"; exit 0; fi
+            if [ -n "$live" ] && git fetch -q --depth=100 origin main && git merge-base --is-ancestor "${{ github.sha }}" "$live" 2>/dev/null; then echo "Live is a newer build (${live}); fine."; exit 0; fi
+            sleep 30
+          done
+          echo "::error::getgradify.com still serves ${live:-nothing} 10 minutes after deploying ${{ github.sha }}. Start a fresh run: Actions → Test and deploy → Run workflow (don't re-run this run)."
+          exit 1
 
       # tell Bing (and the AI search engines that use its index) which pages this deploy changed, via IndexNow
       # (scripts/indexnow.mjs). Best effort: a failure here never fails the deploy.
