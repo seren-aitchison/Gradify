@@ -2277,3 +2277,14 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 }
 /* phones: Revise opens on what to do (the pockets and what's due), not a paragraph about it */
 @media (max-width: 760px) { .co[data-view="revise"] .co-intro p { display: none; } .co[data-view="revise"] .co-intro h2 { font-size: 26px; margin-bottom: 0; } }
+/* step rules (kit/interactive/steprules.js): the rule behind each valid line, and named mistakes */
+.mx-rule { flex-basis: 100%; font-size: 13.5px; color: var(--mute); }
+.mx-rule summary { cursor: pointer; width: fit-content; list-style: none; }
+.mx-rule summary::-webkit-details-marker { display: none; }
+.mx-rule summary::before { content: "ⓘ "; }
+.mx-rule[open] summary { color: var(--fg); font-weight: 600; }
+.mx-rule p { margin: 4px 0 2px; line-height: 1.45; max-width: 62ch; }
+.mx-mistake b { color: var(--fg); }
+.mx-lines li.shown { border-color: rgba(255, 192, 2, .7); border-left-style: dashed; }
+.mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
+.mx-solution .mx-rule { margin: 2px 0 6px; }

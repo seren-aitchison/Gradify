@@ -5,7 +5,9 @@
 //   equations: each line must still be true for every solution, and mustn't gain new ones
 // so the feedback points to the exact line where an error crept in, not just "wrong answer". The final
 // line must also be in the form asked for (expanded, factorised, x = …). Hints cost a little; the worked
-// solution can be revealed. Each problem becomes an attempt record (ctx.record) for the mastery engine.
+// solution can be revealed, all at once or one step at a time. Every valid line names the rule that takes the
+// previous line to it, and a wrong line names the mistake when it matches a common one (kit/interactive/
+// steprules.js). Each problem becomes an attempt record (ctx.record) for the mastery engine.
 //
 // set = { id, title, level, intro, lessons: [lesson ids], problems: [{ id, prompt, kind, start, target, form,
 //   solutions, var, d, hints: [], solution: [lines], why }] }
@@ -16,6 +18,7 @@
 //   kind "equation": start "3(x − 2) = 2x + 5", solutions [11], var "x"
 import { parse, parseEquation, equivalent, satisfies, numbersFrom, sameSet, form as FORM, clean, samplePoints, variables, pretty } from "./mathexpr.js";
 import { esc, inline } from "../core/text.js";
+import { explainStep, diagnose, nextStep } from "./steprules.js";
 
 // counting terms (a + b − c has 3) and non-constant factors (3(x − 2)(x + 2) has 2; (x − 1)^2 has 2) at the top
 const strip = (n) => (n.k === "()" ? strip(n.a) : n);
@@ -84,17 +87,21 @@ export function mount(el, set, ctx = {}) {
   const fresh = () => ({ lines: [], hints: 0, revealed: false, solved: false, bad: 0 });
   let st = fresh();
 
+  // the rule behind a valid line: its name, opened for the explanation
+  const ruleHtml = (r) => `<details class="mx-rule"><summary>${esc(r.title)}</summary><p>${esc(pretty(r.text))}</p></details>`;
+  const lastValid = () => [...st.lines].reverse().find((l) => l.ok)?.text ?? null;
+
   const paint = (focus = true) => {
     if (i >= set.problems.length) return summary();
     const p = set.problems[i];
     el.innerHTML = `<div class="mx">${set.banner ? `<p class="sx-banner" role="note">${inline(set.banner)}</p>` : ""}
       <div class="mx-head"><span class="co-kicker">Step by step · ${esc(set.level || "")}</span><h2>${esc(set.title)}</h2><p>Problem ${i + 1} of ${set.problems.length}</p></div>
       <div class="mx-problem"><p class="mx-prompt">${inline(p.prompt)}</p><p class="mx-start"><code>${esc(pretty(p.start))}</code></p></div>
-      <ol class="mx-lines">${st.lines.map((l, k) => `<li class="${l.ok ? (l.final ? "final" : "ok") : "no"}"><code>${esc(pretty(l.text))}</code><span class="mx-mark" aria-label="${l.ok ? "valid step" : "error"}">${l.ok ? (l.final ? "✓ answer" : "✓") : "✗"}</span>${l.why ? `<small>${esc(l.why)}</small>` : ""}${k === st.lines.length - 1 && !st.solved && !st.revealed ? ` <button type="button" class="mx-undo" data-undo aria-label="Remove this line">Remove</button>` : ""}</li>`).join("")}</ol>
+      <ol class="mx-lines">${st.lines.map((l, k) => `<li class="${l.ok ? (l.final ? "final" : "ok") : "no"}${l.shown ? " shown" : ""}"><code>${esc(pretty(l.text))}</code><span class="mx-mark" aria-label="${l.shown ? "step shown" : l.ok ? "valid step" : "error"}">${l.shown ? "shown" : l.ok ? (l.final ? "✓ answer" : "✓") : "✗"}</span>${l.ok && l.rule ? ruleHtml(l.rule) : ""}${!l.ok && l.mistake ? `<small class="mx-mistake"><b>${esc(l.mistake.title)}.</b> ${esc(pretty(l.mistake.text))}</small>` : l.why ? `<small>${esc(l.why)}</small>` : ""}${k === st.lines.length - 1 && !st.solved && !st.revealed && !l.shown ? ` <button type="button" class="mx-undo" data-undo aria-label="Remove this line">Remove</button>` : ""}</li>`).join("")}</ol>
       ${st.solved || st.revealed ? done(p) : `<form class="mx-input" data-add><label for="mx-line">${st.lines.length ? "Next line" : "First line of your working"}</label>
         <div class="mx-row"><input id="mx-line" autocomplete="off" spellcheck="false" placeholder="${esc(p.placeholder || (p.kind === "equation" ? "e.g. 3x − 6 = 2x + 5" : "e.g. 2x^2 + 6x"))}"><button class="btn btn-light lg btn-sm"><span>Check line</span></button></div>
         <p class="mx-help">Type maths as you would on a calculator: 2x^2, (x+1)(x−3), sqrt(x), sin(x), e^x, ln(x), 3/4. ${p.kind === "equation" ? "Finish with the answer, like x = 4 or x = 2 or x = −3." : ""}</p></form>
-        <div class="mx-tools"><button type="button" class="btn btn-ghost lg btn-sm" data-hint ${st.hints >= (p.hints || []).length ? "disabled" : ""}><span>Hint${(p.hints || []).length ? ` (${(p.hints || []).length - st.hints} left)` : ""}</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-reveal><span>Show a worked solution</span></button></div>
+        <div class="mx-tools"><button type="button" class="btn btn-ghost lg btn-sm" data-step><span>Show the next step</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-hint ${st.hints >= (p.hints || []).length ? "disabled" : ""}><span>Hint${(p.hints || []).length ? ` (${(p.hints || []).length - st.hints} left)` : ""}</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-reveal><span>Show a worked solution</span></button></div>
         ${st.hints ? `<ul class="mx-hints">${p.hints.slice(0, st.hints).map((h) => `<li>${esc(pretty(h))}</li>`).join("")}</ul>` : ""}`}
       <p class="mx-progress">${results.map((r) => `<span class="${r.score >= 0.99 ? "ok" : r.score > 0 ? "part" : "no"}" title="${esc(r.id)}"></span>`).join("")}${set.problems.slice(results.length).map(() => "<span></span>").join("")}</p></div>`;
     wire();
@@ -104,7 +111,7 @@ export function mount(el, set, ctx = {}) {
     const sc = scoreProblem({ solved: st.solved, badLines: st.bad, hints: st.hints, revealed: st.revealed });
     return `<div class="sx-feedback ${sc >= 0.99 ? "ok" : sc > 0 ? "part" : "no"}" role="status"><b>${st.revealed ? "Worked solution" : sc >= 0.99 ? "Solved, with every step valid" : "Solved"}</b>
       ${!st.revealed && st.bad ? `<p>You fixed ${st.bad === 1 ? "an error" : `${st.bad} errors`} along the way: look back at ${st.bad === 1 ? "the line marked ✗" : "the lines marked ✗"} to see what went wrong.</p>` : ""}
-      <ol class="mx-solution">${p.solution.map((x) => `<li><code>${esc(pretty(x))}</code></li>`).join("")}</ol>${p.why ? `<p>${inline(p.why)}</p>` : ""}</div>
+      <ol class="mx-solution">${p.solution.map((x, k) => `<li><code>${esc(pretty(x))}</code>${ruleHtml(explainStep(p, k ? p.solution[k - 1] : null, x))}</li>`).join("")}</ol>${p.why ? `<p>${inline(p.why)}</p>` : ""}</div>
       <button type="button" class="btn btn-light lg btn-sm" data-next><span>${i + 1 < set.problems.length ? "Next problem →" : "See your summary"}</span></button>`;
   };
   function finishProblem() {
@@ -128,13 +135,25 @@ export function mount(el, set, ctx = {}) {
       e.preventDefault(); const input = e.target.querySelector("input"), text = input.value.trim(); if (!text) return;
       const r = checkLine(p, text);
       if (r.unreadable) { el.querySelector(".mx-help").innerHTML = `<span class="mx-err">${esc(r.why)}</span> Type maths as you would on a calculator: 2x^2, (x+1)(x−3), sqrt(x), 3/4.`; input.focus(); return; }
-      st.lines.push({ text, ok: r.ok, final: r.ok && r.final, why: r.ok ? (r.final ? "" : r.why || "") : r.why });
+      const prev = lastValid();
+      st.lines.push({ text, ok: r.ok, final: r.ok && r.final, why: r.ok ? (r.final ? "" : r.why || "") : r.why,
+        rule: r.ok ? explainStep(p, prev, text) : null, mistake: r.ok ? null : diagnose(p, prev, text) });
       if (!r.ok) st.bad++;
       if (r.ok && r.final && (p.kind !== "equation" || true)) { st.solved = true; finishProblem(); }
       paint();
     });
     el.querySelector("[data-undo]")?.addEventListener("click", () => { st.lines.pop(); paint(); });
     el.querySelector("[data-hint]")?.addEventListener("click", () => { st.hints++; paint(false); });
+    // one step of the model solution, from the furthest point the student's working has reached. It counts as a
+    // hint; showing the final line counts as seeing the worked solution.
+    el.querySelector("[data-step]")?.addEventListener("click", () => {
+      const text = nextStep(p, st.lines.filter((l) => l.ok).map((l) => l.text)); if (!text) return;
+      const r = checkLine(p, text), prev = lastValid();
+      st.lines.push({ text, ok: true, final: !!r.final, shown: true, why: "", rule: explainStep(p, prev, text) });
+      st.hints++;
+      if (r.final) { st.solved = true; st.revealed = true; finishProblem(); }
+      paint();
+    });
     el.querySelector("[data-reveal]")?.addEventListener("click", () => { st.revealed = true; finishProblem(); paint(false); });
     el.querySelector("[data-next]")?.addEventListener("click", () => { i++; st = fresh(); paint(); });
   }
