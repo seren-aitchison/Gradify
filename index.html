@@ -32,11 +32,13 @@
   <script src="kit/core/theme-boot.js"></script>
   <link rel="stylesheet" href="kit/styles/components.css">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="kit/styles/system.css">
   <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
   <link rel="modulepreload" href="/assets/app.js">
   <link rel="modulepreload" href="/assets/proof.js">
   <link rel="modulepreload" href="/assets/nav.js">
   <link rel="modulepreload" href="/kit/core/continue.js">
+  <link rel="modulepreload" href="/kit/ui/reveal.js">
   <link rel="modulepreload" href="/kit/core/hubnav.js">
   <link rel="modulepreload" href="/kit/core/sites.js">
   <link rel="modulepreload" href="/kit/core/icons.js">
@@ -117,12 +119,14 @@
   <script type="module">
     // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
     import { mountContinue } from "./kit/core/continue.js";
+    import { mountReveal } from "./kit/ui/reveal.js";
+    mountReveal();
     // someone coming back sees their shelf first, above the pitch they've already read (kit/ui/shelf.js)
     const yours = document.getElementById("continue");
     if (mountContinue(yours, { title: "Welcome back: your shelf", layout: "shelf" })) document.getElementById("top")?.before(yours);
   </script>
 </head>
-<body>
+<body class="ds">
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
 
   <div class="wrap">
@@ -141,14 +145,14 @@
     <script type="module" src="/kit/core/hubnav.js"></script>
     <!-- /hub-header -->
 
-    <section class="hero hero-v2" id="top">
+    <section class="hero hero-v2 ds-hero-sec" id="top">
       <div class="hero-copy">
-        <a class="badge" href="app.html"><span class="spark" aria-hidden="true"></span><span>Free · no card · works on your phone</span></a>
-        <h1>Turn your notes into flashcards <span class="grad">that are checked against what you wrote.</span></h1>
-        <p class="lede">Upload a PDF of your lecture notes or paste them in, shorthand and all. Gradify makes a study pack in about a minute, then schedules your revision around your exam date.</p>
-        <div class="actions">
-          <a class="btn btn-primary lg" href="app.html#/new"><span>Turn my notes into flashcards</span> <span aria-hidden="true">→</span></a>
-          <a class="text-link" href="#how">See how it works</a>
+        <span class="ds-eyebrow accent">Free · no card · works on your phone</span>
+        <h1 class="ds-hero">Turn your notes into flashcards. <span class="ds-spectrum">Checked against what you wrote.</span></h1>
+        <p class="ds-lead">Upload a PDF of your lecture notes or paste them in, shorthand and all. Gradify makes a study pack in about a minute, then schedules your revision around your exam date.</p>
+        <div class="ds-actions">
+          <a class="ds-btn" href="app.html#/new">Turn my notes into flashcards</a>
+          <a class="ds-more" href="#how">See how it works</a>
         </div>
         <ul class="hero-proof" aria-label="What's included">
           <li><span aria-hidden="true">✓</span> Every card shows where it came from in your notes</li>
@@ -156,11 +160,8 @@
           <li><span aria-hidden="true">✓</span> Try it without an account</li>
         </ul>
       </div>
-      <figure class="hero-shot">
-        <div class="shot-frame">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · Study pack</span></div>
-          <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high"></picture>
-        </div>
+      <figure class="ds-shot ds-zoom">
+        <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high"></picture>
         <figcaption>A real study pack, made from the sample notes in the app.</figcaption>
       </figure>
     </section>
@@ -169,11 +170,11 @@
 
     <!-- How Gradify works -->
     <section class="how" id="how" aria-labelledby="how-title">
-      <div class="sec-head">
+      <div class="sec-head ds-reveal">
         <span class="eyebrow">How it works</span>
         <h2 id="how-title">Notes in. Flashcards out. <span class="grad">Revision planned.</span></h2>
       </div>
-      <ol class="how-steps">
+      <ol class="how-steps ds-reveal">
         <li class="how-step glass">
           <span class="how-n">1</span>
           <span class="how-g3d" data-g3d="upload notes file" data-g3d-size="60"></span><h3>Bring your notes</h3>
@@ -199,11 +200,11 @@
     <!-- What's on Gradify: counted from the courses (kit/api/v1/stats.json), a real lesson's mind map, and learners'
          own words once they've agreed to share them (assets/quotes.json, docs/PROOF.md) -->
     <section class="proof" id="proof" aria-labelledby="proof-title">
-      <div class="sec-head">
+      <div class="sec-head ds-reveal">
         <span class="eyebrow">What's inside</span>
         <h2 id="proof-title">Every lesson, mapped, carded and <span class="grad">checked.</span></h2>
       </div>
-      <dl class="proof-nums">
+      <dl class="proof-nums ds-reveal">
         <div class="proof-num glass"><dt>Subjects</dt><dd data-stat="subjects">34</dd></div>
         <div class="proof-num glass"><dt>Lessons written</dt><dd data-stat="lessons">9,979</dd></div>
         <div class="proof-num glass"><dt>Interactive mind maps</dt><dd data-stat="mindMaps">49,895</dd></div>
