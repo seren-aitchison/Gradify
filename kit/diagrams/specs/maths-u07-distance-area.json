@@ -1,0 +1,100 @@
+{
+ "id": "maths-u07-distance-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Integral Calculus",
+ "title": "Distance as area under a velocity graph",
+ "caption": "The distance travelled is the area under the velocity graph v = 3t² from t = 0 to 4. An antiderivative is t³, so the area is 4³ − 0³ = 64 m.",
+ "alt": "The parabola v = 3t² from 0 to 4 s, rising to 48 m/s, with the area under it shaded and labelled 64 m.",
+ "description": [
+  "Velocity is 3t² m/s.",
+  "Distance is the area under the velocity–time graph from 0 to 4.",
+  "An antiderivative of 3t² is t³.",
+  "4³ − 0³ = 64 m."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   55
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (s)",
+  "v (m/s)"
+ ],
+ "curves": [
+  {
+   "expr": "3*x^2",
+   "colour": "a1",
+   "domain": [
+    0,
+    4.2
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 4,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 4
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 48,
+   "label": "(4, 48)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "notes": [],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "3*x^2",
+   "from": 0,
+   "to": 4,
+   "value": 64,
+   "tol": 0.01,
+   "name": "the area under 3t² from 0 to 4 is 4³ = 64 m"
+  }
+ ],
+ "fromLesson": []
+}

@@ -1,0 +1,47 @@
+{
+ "id": "maths-u07-sigma-terms",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Sequences and Series",
+ "title": "The ten terms of 2r² − 3",
+ "caption": "The terms of Σ(2r² − 3) for r = 1 to 10 are −1, 5, 15, 29, 47, 69, 95, 125, 159, 197. They add to 740, matching 2Σr² − Σ3 = 770 − 30.",
+ "alt": "Ten boxes holding −1, 5, 15, 29, 47, 69, 95, 125, 159 and 197, with their sum 740.",
+ "description": [
+  "The rth term is 2r² − 3.",
+  "For r = 1 to 10 the terms are −1, 5, 15, …, 197.",
+  "2Σr² = 2 × 10 × 11 × 21/6 = 770 and Σ3 = 30.",
+  "The total is 770 − 30 = 740."
+ ],
+ "terms": [
+  -1,
+  5,
+  15,
+  29,
+  47,
+  69,
+  95,
+  125,
+  159,
+  197
+ ],
+ "rule": {
+  "kind": "nth",
+  "expr": "2*n^2-3"
+ },
+ "show": "differences",
+ "ruleText": "sum of the ten terms = 740",
+ "checks": [
+  {
+   "type": "sum",
+   "n": 10,
+   "value": 740
+  },
+  {
+   "type": "nth",
+   "n": 10,
+   "value": 197
+  }
+ ],
+ "fromLesson": []
+}

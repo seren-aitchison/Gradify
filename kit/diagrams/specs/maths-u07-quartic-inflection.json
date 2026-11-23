@@ -1,0 +1,115 @@
+{
+ "id": "maths-u07-quartic-inflection",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Local Maxima and Minima",
+ "title": "x⁴ − 4x³: flat at 0, minimum at 3",
+ "caption": "f′(x) = 4x²(x − 3) is zero at x = 0 and x = 3. Near 0 the gradient is negative on both sides, so the curve flattens but keeps falling (no extremum); at x = 3 it goes from − to +, a minimum at (3, −27).",
+ "alt": "The curve y = x⁴ − 4x³ falling through a flat point at the origin and reaching a minimum at (3, −27) before rising.",
+ "description": [
+  "f′(x) = 4x³ − 12x² = 4x²(x − 3).",
+  "f′ = 0 at x = 0 and x = 3.",
+  "At x = 0, f′ is negative on both sides: no extremum.",
+  "At x = 3, f′ changes from − to +: a local minimum at (3, −27)."
+ ],
+ "range": {
+  "x": [
+   -1.5,
+   4.5
+  ],
+  "y": [
+   -30,
+   30
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -20,
+   -10,
+   10,
+   20,
+   30
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^4-4*x^3",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "(0, 0) flat",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -16
+  },
+  {
+   "x": 3,
+   "y": -27,
+   "label": "min (3, −27)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "x^4-4*x^3",
+   "domain": [
+    1,
+    4.5
+   ],
+   "x": 3,
+   "y": -27,
+   "name": "the local minimum is (3, −27)"
+  },
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^3",
+   "x": 0,
+   "value": 0,
+   "name": "the gradient is 0 at x = 0"
+  },
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^3",
+   "x": -0.5,
+   "value": -3.5,
+   "name": "f′(−0.5) = −3.5 < 0 just left of 0"
+  },
+  {
+   "type": "slope",
+   "expr": "x^4-4*x^3",
+   "x": 0.5,
+   "value": -2.5,
+   "name": "f′(0.5) = −2.5 < 0 just right of 0"
+  }
+ ],
+ "fromLesson": [
+  "(3, −27)"
+ ]
+}

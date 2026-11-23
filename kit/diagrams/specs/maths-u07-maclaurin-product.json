@@ -1,0 +1,125 @@
+{
+ "id": "maths-u07-maclaurin-product",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Maclaurin Series",
+ "title": "e²ˣ cos x and its quadratic",
+ "caption": "Multiplying the series gives e²ˣ cos x = 1 + 2x + (3/2)x² + …. The quadratic 1 + 2x + 1.5x² and the curve both pass through (0, 1) with slope 2, and stay close near x = 0.",
+ "alt": "The curve y = e²ˣ cos x and the parabola 1 + 2x + 1.5x², which touch at (0, 1) with the same gradient 2 and nearly coincide for small x.",
+ "description": [
+  "e²ˣ = 1 + 2x + 2x² + … and cos x = 1 − x²/2 + ….",
+  "Multiply, keeping terms up to x².",
+  "The x² coefficient is 2 − ½ = 3/2.",
+  "e²ˣ cos x ≈ 1 + 2x + (3/2)x²."
+ ],
+ "range": {
+  "x": [
+   -1,
+   1
+  ],
+  "y": [
+   -1,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(2*x)*cos(x)",
+   "colour": "a1",
+   "label": "e²ˣ cos x",
+   "labelAt": [
+    0.3,
+    3.4
+   ]
+  },
+  {
+   "expr": "1+2*x+1.5*x^2",
+   "colour": "a2",
+   "dash": "6 4",
+   "label": "1 + 2x + 1.5x²",
+   "labelAt": [
+    -0.95,
+    1.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "(0, 1)",
+   "colour": "a4",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "exp(2*x)*cos(x)",
+   "b": "1+2*x+1.5*x^2",
+   "x": 0,
+   "y": 1,
+   "name": "both curves pass through (0, 1)"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(2*x)*cos(x)",
+   "x": 0,
+   "value": 2,
+   "name": "e²ˣ cos x has gradient 2 at 0"
+  },
+  {
+   "type": "slope",
+   "expr": "1+2*x+1.5*x^2",
+   "x": 0,
+   "value": 2,
+   "name": "the quadratic has gradient 2 at 0"
+  },
+  {
+   "type": "point",
+   "expr": "exp(2*x)*cos(x)",
+   "x": 0.1,
+   "y": 1.215300831851438,
+   "name": "at x = 0.1 the curve is 1.2153"
+  },
+  {
+   "type": "point",
+   "expr": "1+2*x+1.5*x^2",
+   "x": 0.1,
+   "y": 1.215,
+   "name": "at x = 0.1 the quadratic is 1.215"
+  }
+ ],
+ "fromLesson": [
+  "(3/2)x^{2}"
+ ]
+}

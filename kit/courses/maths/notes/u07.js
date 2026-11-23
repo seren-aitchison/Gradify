@@ -61,6 +61,7 @@ X: Explain informally why the area of a circle is πr^{2}, using thin rings.
 > Split the disc into thin rings of radius x and width dx; each has area about circumference × width = 2πx dx
 > Add them all from x = 0 to x = r: ∫ 2πx dx
 > = πr^{2}: the integral adds up infinitely many thin pieces
+D: maths-u07-circle-rings
 K: Differentiation finds rates, integration finds accumulations, and they're inverses; limits made the infinitesimal ideas rigorous.
 !: Treating dy/dx as an ordinary fraction in every situation: it's a limit, though it often behaves like a fraction.
 Q: Who independently invented calculus? | Isaac Newton and Gottfried Leibniz.
@@ -101,6 +102,7 @@ X: Find lim_{x→4} (√x − 2)/(x − 4).
 > Substituting gives 0/0, so rewrite x − 4 = (√x − 2)(√x + 2)
 > (√x − 2)/((√x − 2)(√x + 2)) = 1/(√x + 2)
 > As x → 4, this approaches 1/(2 + 2) = 1/4
+D: maths-u07-limit-hole
 - Limits needn't equal the function's value: f could even be undefined at a.
 P: **Investigate with the lab.** Shrink h towards 0 from both sides and watch the secant gradient approach a single value. Then try |x| at x = 0, where the two sides disagree.
 IX: tangent
@@ -145,6 +147,7 @@ X: Show that x^{5} + 3x = 7 has a solution between 1 and 2.
 > Let f(x) = x^{5} + 3x − 7, which is continuous (a polynomial)
 > f(1) = 1 + 3 − 7 = −3 < 0 and f(2) = 32 + 6 − 7 = 31 > 0
 > f changes sign, so by the intermediate value theorem there's a root between 1 and 2
+D: maths-u07-ivt-quintic
 K: Continuous means the limit equals the value; a sign change of a continuous function guarantees a root.
 !: Using a sign change to claim a root when the function has an asymptote in the interval.
 Q: Is f(x) = 1/(x − 2) continuous at x = 2? | No: it isn't defined there (an infinite discontinuity).
@@ -186,6 +189,7 @@ X: f(x) = x^{2} for x ≤ 1 and ax + b for x > 1. Find a and b so that f is diff
 > Continuity: 1 = a + b
 > Slopes must match: 2x = 2 at x = 1, so a = 2
 > Then b = −1: f(x) = 2x − 1 for x > 1
+D: maths-u07-smooth-join
 P: **Investigate with the lab.** Choose |x| and set the point to 0. Shrink h with positive and negative values and see the secant gradients refuse to agree.
 IX: tangent
 K: Differentiable means a unique tangent slope; corners, jumps and vertical tangents fail; differentiable implies continuous, not conversely.
@@ -273,6 +277,7 @@ X: Differentiate x^{2} − 3x from first principles.
 > f(x + h) − f(x) = (x + h)^{2} − 3(x + h) − x^{2} + 3x = 2xh + h^{2} − 3h
 > Divide by h: 2x + h − 3
 > As h → 0: f′(x) = 2x − 3
+D: maths-u07-first-principles
 - A derivative is itself a function: f′(x) gives the gradient at every x.
 - Differentiation is linear: the derivative of a sum is the sum of the derivatives, which is why polynomials are differentiated term by term.
 P: **Investigate with the lab.** Choose Differentiation (A level) and differentiate each expression term by term. Compare with the tangent lab: the derivative is the gradient you watched the secant approach.
@@ -320,6 +325,7 @@ X: Find the equation of the normal to y = 2x^{2} − 5x + 1 at x = 2.
 > y(2) = 8 − 10 + 1 = −1; dy/dx = 4x − 5 = 3 at x = 2
 > Normal gradient = −1/3
 > y + 1 = −1/3(x − 2), so y = −x/3 − 1/3 (or x + 3y + 1 = 0)
+D: maths-u07-normal-line
 - Finding where a curve has a given gradient: y = x^{2} − 4x has gradient 2 where 2x − 4 = 2, at x = 3.
 P: **Investigate with the lab.** Find a point where the tangent is horizontal (the lab's challenge) and check it's where the first derivative is zero.
 IX: tangent
@@ -364,6 +370,7 @@ X: A particle's displacement is s = t^{3} − 6t^{2} + 9t metres. Find its accel
 > v = ds/dt = 3t^{2} − 12t + 9 = 3(t − 1)(t − 3), so v = 0 first at t = 1
 > a = dv/dt = 6t − 12
 > At t = 1: a = −6 m s^{−2}
+D: maths-u07-displacement-velocity-acceleration
 K: Differentiate repeatedly; f″ is the rate of change of the gradient: acceleration, or concavity.
 !: Confusing f″(x) with (f′(x))^{2}.
 Q: What is the second derivative of x^{5}? | 20x^{3}.
@@ -405,6 +412,7 @@ X: Differentiate y = √(x^{2} + 4x).
 > Write y = (x^{2} + 4x)^{1/2}
 > Outer derivative: ½(x^{2} + 4x)^{−1/2}; inner derivative: 2x + 4
 > dy/dx = (2x + 4)/(2√(x^{2} + 4x)) = (x + 2)/√(x^{2} + 4x)
+D: maths-u07-chain-rule-root
 - In Leibniz notation the chain rule looks like cancelling fractions, dy/du × du/dx, which helps you remember it (though it's a theorem, not cancellation).
 - It underlies implicit, parametric and logarithmic differentiation.
 K: Differentiate the outside, keep the inside, then multiply by the derivative of the inside.
@@ -448,6 +456,7 @@ X: Find the x-coordinates of the stationary points of y = x^{2}e^{−x}.
 > dy/dx = 2xe^{−x} + x^{2}(−e^{−x}) = xe^{−x}(2 − x)
 > e^{−x} is never zero, so xe^{−x}(2 − x) = 0 gives x = 0 or x = 2
 > Stationary points at x = 0 and x = 2
+D: maths-u07-product-rule-stationary
 - Why it works: (u + Δu)(v + Δv) − uv = vΔu + uΔv + ΔuΔv; dividing by Δx and letting Δx → 0 leaves u′v + uv′.
 - Check by expanding when possible: (x^{2})(x^{3}) has derivative 2x × x^{3} + x^{2} × 3x^{2} = 5x^{4}, the same as d/dx x^{5}.
 - The product rule is symmetric: u′v + uv′ = uv′ + u′v.
@@ -493,6 +502,7 @@ X: Differentiate y = e^{x}/(x^{2} + 1).
 > u = e^{x}, u′ = e^{x}; v = x^{2} + 1, v′ = 2x
 > dy/dx = ((x^{2} + 1)e^{x} − e^{x}(2x))/(x^{2} + 1)^{2}
 > = e^{x}(x − 1)^{2}/(x^{2} + 1)^{2}
+D: maths-u07-quotient-rule-flat
 - Check: the quotient rule on 1/x gives (0 × x − 1 × 1)/x^{2} = −1/x^{2}, matching the power rule.
 K: (u/v)′ = (vu′ − uv′)/v^{2}; keep the order in the numerator; divide first when you can.
 !: Reversing the order in the numerator, which flips the sign.
@@ -533,6 +543,7 @@ X: Find dy/dx for x^{2} + 3xy + y^{2} = 11, and the gradient at (1, 2).
 > 2x + 3y + 3x dy/dx + 2y dy/dx = 0
 > dy/dx(3x + 2y) = −(2x + 3y), so dy/dx = −(2x + 3y)/(3x + 2y)
 > At (1, 2): −(2 + 6)/(3 + 4) = −8/7
+D: maths-u07-implicit-curve
 - Second derivatives can be found implicitly too: differentiate dy/dx again, remembering y is a function of x.
 - Stationary points of implicit curves occur where the numerator of dy/dx is zero.
 K: Differentiate every term in x; each y term gains a dy/dx factor; collect and solve.
@@ -574,6 +585,7 @@ X: Differentiate y = (sin x)^{x} for 0 < x < π.
 > ln y = x ln(sin x)
 > (1/y) dy/dx = ln(sin x) + x cos x/sin x = ln(sin x) + x cot x
 > dy/dx = (sin x)^{x}(ln(sin x) + x cot x)
+D: maths-u07-log-differentiation
 - It's often faster than repeated product and quotient rules for expressions with many factors.
 - It works only where y > 0, but the result usually extends to other x.
 - It also proves the power rule for any real n: ln y = n ln x gives dy/dx = ny/x = nx^{n−1}.
@@ -619,6 +631,7 @@ X: Find the equation of the tangent to x = 2t + 1, y = t^{2} − 3t at t = 2.
 > At t = 2: x = 5, y = −2
 > dx/dt = 2 and dy/dt = 2t − 3 = 1, so dy/dx = 1/2
 > Tangent: y + 2 = ½(x − 5), so y = ½x − 9/2
+D: maths-u07-parametric-tangent
 - Second derivatives: d^{2}y/dx^{2} = (d/dt (dy/dx))/(dx/dt), not (d^{2}y/dt^{2})/(d^{2}x/dt^{2}).
 - Speed along the curve is √((dx/dt)^{2} + (dy/dt)^{2}).
 K: dy/dx = (dy/dt)/(dx/dt); horizontal tangents where dy/dt = 0, vertical where dx/dt = 0.
@@ -662,6 +675,7 @@ X: Water drains so the depth is h = (10 − 0.5t)^{2} cm after t minutes (0 ≤ 
 > dh/dt = 2(10 − 0.5t) × (−0.5) = −(10 − 0.5t)
 > At t = 6: dh/dt = −7
 > The depth is falling at 7 cm per minute
+D: maths-u07-draining-depth
 K: A rate of change is a derivative; check its units and sign, and distinguish average from instantaneous rates.
 !: Giving a rate without units, or with the wrong sign for a decrease.
 Q: What are the units of dV/dt if V is in cm^{3} and t in seconds? | cm^{3} s^{−1}.
@@ -703,6 +717,7 @@ X: A 5 m ladder leans against a wall. Its foot slides away at 0.3 m s^{−1}. Ho
 > x^{2} + y^{2} = 25, so 2x dx/dt + 2y dy/dt = 0
 > When x = 3, y = 4; so 2(3)(0.3) + 2(4) dy/dt = 0
 > dy/dt = −1.8/8 = −0.225: the top slides down at 0.225 m s^{−1}
+D: maths-u07-sliding-ladder
 K: Link the variables with an equation, differentiate with respect to t, then substitute the instant's values.
 !: Substituting numbers before differentiating, which freezes quantities that are changing.
 Q: What links dA/dt and dr/dt for a circle? | dA/dt = 2πr dr/dt.
@@ -744,6 +759,7 @@ X: Find lim_{x→0} (e^{x} − 1 − x)/x^{2}.
 > Substituting gives 0/0; differentiate top and bottom: (e^{x} − 1)/(2x), still 0/0
 > Again: e^{x}/2
 > As x → 0 this tends to 1/2
+D: maths-u07-lhopital-limit
 - Algebra or standard limits are often quicker: check them first.
 - It also works for one-sided limits and limits at infinity.
 K: Only for 0/0 or ∞/∞; differentiate numerator and denominator separately; repeat if needed; rewrite other forms first.
@@ -785,6 +801,7 @@ X: Find and classify the stationary points of y = x^{3} − 12x.
 > dy/dx = 3x^{2} − 12 = 0 gives x = ±2, so points (2, −16) and (−2, 16)
 > d^{2}y/dx^{2} = 6x: at x = 2 it's 12 > 0, a minimum; at x = −2 it's −12 < 0, a maximum
 > Minimum (2, −16), maximum (−2, 16)
+D: maths-u07-cubic-stationary
 K: Solve f′ = 0; classify with f″ (positive: minimum, negative: maximum), or by the gradient's sign either side if f″ = 0.
 !: Concluding that f″ = 0 means a point of inflection: x^{4} has a minimum where f″ = 0.
 Q: What does f″(a) < 0 at a stationary point mean? | A local maximum.
@@ -825,6 +842,7 @@ X: Find the critical points of f(x) = x^{2/3}(x − 5).
 > f(x) = x^{5/3} − 5x^{2/3}, so f′(x) = (5/3)x^{2/3} − (10/3)x^{−1/3} = (5/3)x^{−1/3}(x − 2)
 > f′ = 0 at x = 2
 > f′ is undefined at x = 0 (in the domain), so the critical points are x = 0 and x = 2
+D: maths-u07-critical-cusp
 K: Critical points are where f′ = 0 or f′ is undefined; every interior extremum is at one, but not every one is an extremum.
 !: Ignoring points where the derivative doesn't exist, such as corners and cusps.
 Q: Is x = 0 a critical point of f(x) = |x|? | Yes: the derivative doesn't exist there (and it's a minimum).
@@ -863,6 +881,7 @@ X: Classify the stationary points of f(x) = x^{4} − 4x^{3}.
 > f′(x) = 4x^{3} − 12x^{2} = 4x^{2}(x − 3) = 0 at x = 0 and x = 3
 > Near x = 0: f′ is negative on both sides, so no extremum (a stationary inflection)
 > Near x = 3: f′ goes from − to +, so a local minimum at (3, −27)
+D: maths-u07-quartic-inflection
 K: + to − is a maximum, − to + a minimum; local extrema needn't be global.
 !: Assuming a local maximum is the largest value of the function.
 Q: What does the first derivative test check? | Whether f′ changes sign at the point, and how.
@@ -901,6 +920,7 @@ X: A farmer has 200 m of fencing to make a rectangular pen against a wall (three
 > Let the sides perpendicular to the wall be x: the third side is 200 − 2x, so A = x(200 − 2x) = 200x − 2x^{2}
 > A′ = 200 − 4x = 0 at x = 50; A″ = −4 < 0, a maximum
 > Largest area = 50 × 100 = 5,000 m^{2}
+D: maths-u07-fence-area
 K: Check critical points and endpoints; in modelling, build a one-variable function from the constraint first.
 !: Forgetting the endpoints of a closed interval, where the global extremum may lie.
 Q: Where can the global maximum of a continuous function on [a, b] occur? | At a critical point or an endpoint.
@@ -943,6 +963,7 @@ X: Find where f(x) = x^{4} − 6x^{2} is convex.
 > f′(x) = 4x^{3} − 12x, f″(x) = 12x^{2} − 12 = 12(x − 1)(x + 1)
 > f″ > 0 when x < −1 or x > 1
 > f is convex for x < −1 and x > 1, and concave for −1 < x < 1
+D: maths-u07-convex-concave
 K: Convex where f″ > 0, concave where f″ < 0; convex functions have only global minima.
 !: Confusing "concave" with "decreasing": a concave function can be increasing.
 Q: Is e^{x} convex or concave? | Convex everywhere.
@@ -982,6 +1003,7 @@ X: Find the point of inflection of y = xe^{x}.
 > y′ = e^{x}(x + 1), y″ = e^{x}(x + 2)
 > y″ = 0 at x = −2, and changes sign there (e^{x} > 0, x + 2 changes sign)
 > Inflection at (−2, −2e^{−2}) ≈ (−2, −0.271)
+D: maths-u07-inflection-xex
 - At a non-stationary inflection, the tangent crosses the curve.
 K: Solve f″ = 0 and check that f″ changes sign; an inflection is where the gradient is steepest locally.
 !: Calling every point with f″ = 0 an inflection, without checking the sign change.
@@ -1025,6 +1047,7 @@ X: Sketch y = (x + 1)/(x − 2), stating its asymptotes and intercepts.
 > Vertical asymptote x = 2; as x → ±∞, y → 1, so horizontal asymptote y = 1
 > Intercepts: (−1, 0) and (0, −1/2)
 > y′ = −3/(x − 2)^{2} < 0: decreasing on each branch, a hyperbola in the regions above-right and below-left of the asymptotes' crossing
+D: maths-u07-sketch-hyperbola
 P: **Investigate with the lab.** Do the cubic-roots and shifted-reciprocal challenges. Sketch each curve on paper first, then check your roots and asymptotes against the plot.
 IX: grapher
 K: Work through domain, symmetry, intercepts, asymptotes, stationary points and end behaviour; label key points.
@@ -1068,6 +1091,7 @@ X: A car's velocity is v = 3t^{2} m s^{−1}. How far does it travel from t = 0 
 > Distance = ∫_{0}^{4} 3t^{2} dt
 > An antiderivative is t^{3}
 > 4^{3} − 0^{3} = 64 m
+D: maths-u07-distance-area
 - Not every function has an elementary antiderivative: e^{−x^{2}} doesn't, though its definite integrals can still be computed.
 P: **Investigate with the lab.** Switch between left, right, midpoint and trapezium rules for the same n and rank them by error.
 IX: riemann
@@ -1113,6 +1137,7 @@ X: Find ∫ (x^{3} + 2)/x^{2} dx.
 > Split: ∫ (x + 2x^{−2}) dx
 > = x^{2}/2 + 2x^{−1}/(−1) + c
 > = x^{2}/2 − 2/x + c
+D: maths-u07-constant-of-integration
 - Integrate expanded forms: ∫ (x + 1)^{2} dx = ∫ (x^{2} + 2x + 1) dx = x^{3}/3 + x^{2} + x + c.
 - ∫ a^{x} dx = a^{x}/ln a + c.
 - There's no product rule for integrals: ∫ fg dx isn't ∫ f dx × ∫ g dx.
@@ -1158,6 +1183,7 @@ X: Estimate ∫_{0}^{2} x^{2} dx with four strips and right endpoints.
 > Δx = 0.5; right endpoints 0.5, 1, 1.5, 2
 > Heights 0.25, 1, 2.25, 4, which sum to 7.5
 > Estimate = 7.5 × 0.5 = 3.75 (the exact value is 8/3 ≈ 2.67: an overestimate, since x^{2} is increasing)
+D: maths-u07-right-endpoint-strips
 - Midpoint sums are usually much more accurate than left or right sums.
 - Riemann sums are how computers estimate integrals (School 19).
 P: **Investigate with the lab.** Approximate the area with left rectangles and increase n until you're within 1% (the lab's challenge). Compare how fast left and midpoint sums improve.
@@ -1204,6 +1230,7 @@ X: Find the area enclosed by y = x^{2} and y = 2x.
 > Intersections: x^{2} = 2x gives x = 0 and x = 2
 > On [0, 2], 2x is on top: area = ∫_{0}^{2} (2x − x^{2}) dx = [x^{2} − x^{3}/3]_{0}^{2}
 > = 4 − 8/3 = 4/3
+D: maths-u07-area-between-curves
 - Even functions: ∫_{−a}^{a} f = 2∫_{0}^{a} f; odd functions: ∫_{−a}^{a} f = 0.
 - The average value of f on [a, b] is (1/(b − a)) ∫_{a}^{b} f(x) dx.
 P: **Investigate with the lab.** Integrate over a region where f is negative and see the sum come out negative: definite integrals measure signed area.
@@ -1251,6 +1278,7 @@ X: Find d/dx ∫_{1}^{3x} ln t dt.
 > By part 1 with the chain rule, the derivative is ln(3x) × d/dx (3x)
 > = 3 ln(3x)
 > (Check: ∫ ln t dt = t ln t − t, and differentiating 3x ln(3x) − 3x gives 3 ln(3x) + 3 − 3)
+D: maths-u07-ftc-slope
 P: **Investigate with the lab.** Compare the strip sums with the exact value the lab computes from an antiderivative. As n grows, the sums converge to F(b) − F(a).
 IX: riemann
 K: Differentiating an accumulated integral returns the integrand; evaluating a definite integral uses any antiderivative.
@@ -1293,6 +1321,7 @@ X: Evaluate ∫_{0}^{1} x√(1 − x^{2}) dx using u = 1 − x^{2}.
 > du = −2x dx, so x dx = −½ du; limits: x = 0 → u = 1, x = 1 → u = 0
 > ∫_{1}^{0} −½ u^{1/2} du = ½ ∫_{0}^{1} u^{1/2} du
 > = ½ × [⅔u^{3/2}]_{0}^{1} = 1/3
+D: maths-u07-substitution-area
 - Sometimes the substitution is given as x = g(u) instead: then dx = g′(u) du.
 - Always check by differentiating the final answer.
 K: Choose u, convert dx and the limits, integrate in u; spot f′/f and f′e^{f} patterns.
@@ -1335,6 +1364,7 @@ X: Find ∫ x cos x dx.
 > u = x, dv/dx = cos x, so du/dx = 1 and v = sin x
 > ∫ x cos x dx = x sin x − ∫ sin x dx
 > = x sin x + cos x + c
+D: maths-u07-parts-antiderivative
 - It comes from integrating the product rule: (uv)′ = u′v + uv′, so uv = ∫ u′v + ∫ uv′.
 - Inverse trig functions: ∫ arctan x dx = x arctan x − ½ ln(1 + x^{2}) + c, with u = arctan x.
 - Tabular integration speeds up repeated parts with a polynomial times e^{x} or sin x.
@@ -1378,6 +1408,7 @@ X: Evaluate ∫_{2}^{3} 5/((x − 1)(x + 4)) dx.
 > 5/((x − 1)(x + 4)) = 1/(x − 1) − 1/(x + 4)
 > ∫ = [ln|x − 1| − ln|x + 4|]_{2}^{3} = (ln 2 − ln 7) − (ln 1 − ln 6)
 > = ln(12/7) ≈ 0.539
+D: maths-u07-partial-fractions-area
 - Improper example: (x^{2} + 1)/(x − 1) = x + 1 + 2/(x − 1), which integrates to x^{2}/2 + x + 2 ln|x − 1| + c.
 - The answer can be checked by differentiating.
 K: Split into partial fractions, integrate each term to a log or power, and combine logs.
@@ -1420,6 +1451,7 @@ X: Evaluate ∫_{0}^{π/2} cos^{2} x dx.
 > cos^{2} x = ½(1 + cos 2x)
 > ∫ = [x/2 + (sin 2x)/4]_{0}^{π/2}
 > = π/4 + 0 − 0 = π/4
+D: maths-u07-cos-squared-area
 - Products of different angles: sin 3x cos x = ½(sin 4x + sin 2x), using the product-to-sum identities.
 - Integrals of trig functions over a full period are often zero, which is used in Fourier series (School 6).
 K: Know the standard trig integrals; lower powers with double angle identities; use substitution for odd powers.
@@ -1464,6 +1496,7 @@ X: Evaluate ∫_{0}^{∞} x e^{−x^{2}} dx.
 > With u = x^{2}: ∫ x e^{−x^{2}} dx = −½e^{−x^{2}}
 > ∫_{0}^{b} = −½e^{−b^{2}} + ½
 > As b → ∞ this tends to ½, so the integral converges to ½
+D: maths-u07-improper-area
 - The Gaussian integral ∫_{−∞}^{∞} e^{−x^{2}} dx = √π converges, underpinning the normal distribution.
 - Comparison tests decide convergence when the antiderivative is unknown.
 K: Replace the problem point by a variable, integrate, take the limit; 1/x^{p} converges at ∞ for p > 1 and at 0 for p < 1.
@@ -1506,6 +1539,7 @@ X: Use the trapezium rule with 4 strips to estimate ∫_{0}^{2} e^{x} dx.
 > h = 0.5; y-values at 0, 0.5, 1, 1.5, 2: 1, 1.6487, 2.7183, 4.4817, 7.3891
 > Estimate = 0.25 × [1 + 2(1.6487 + 2.7183 + 4.4817) + 7.3891] = 0.25 × 26.0865
 > ≈ 6.52 (exact: e^{2} − 1 ≈ 6.39; an overestimate, since e^{x} is convex)
+D: maths-u07-trapezium-exp
 P: **Investigate with the lab.** Beat 0.1% error with midpoints and at most 10 strips (the lab's challenge). Then double n and check the error falls by about four.
 IX: riemann
 K: Trapezium: (h/2)[ends + 2 × middles]; overestimates convex curves; Simpson's rule is more accurate.
@@ -1551,6 +1585,7 @@ X: Find the length of the parametric curve x = t^{2}, y = (2/3)t^{3} for 0 ≤ t
 > dx/dt = 2t, dy/dt = 2t^{2}, so √(4t^{2} + 4t^{4}) = 2t√(1 + t^{2})
 > L = ∫_{0}^{1} 2t√(1 + t^{2}) dt = [(2/3)(1 + t^{2})^{3/2}]_{0}^{1}
 > = (2/3)(2√2 − 1) ≈ 1.22
+D: maths-u07-arc-length-integrand
 K: Arc length integrates √(1 + (dy/dx)^{2}); surface area adds the factor 2πy; parametric forms use √((dx/dt)^{2} + (dy/dt)^{2}).
 !: Forgetting the square root, or integrating (dy/dx)^{2} alone.
 Q: What is the arc length element? | ds = √(1 + (dy/dx)^{2}) dx.
@@ -1592,6 +1627,7 @@ X: The region between y = x^{2} and y = 2x is rotated about the x-axis. Find the
 > The curves meet at x = 0 and x = 2; on [0, 2], 2x is the outer curve
 > V = π ∫_{0}^{2} (4x^{2} − x^{4}) dx = π[4x^{3}/3 − x^{5}/5]_{0}^{2}
 > = π(32/3 − 32/5) = 64π/15
+D: maths-u07-revolution-volume
 K: V = π ∫ y^{2} dx; for washers subtract the inner radius squared; about the y-axis integrate x^{2} dy.
 !: Squaring the difference of radii, (f − g)^{2}, instead of subtracting the squares, f^{2} − g^{2}.
 Q: What is the volume when y = 2 from x = 0 to 3 is rotated about the x-axis? | 12π (a cylinder).
@@ -1633,6 +1669,7 @@ X: Find Σ_{r=1}^{10} (2r^{2} − 3).
 > 2Σ r^{2} = 2 × 10 × 11 × 21/6 = 770
 > Σ 3 over 10 terms = 30
 > 770 − 30 = 740
+D: maths-u07-sigma-terms
 - Geometric series grow or decay quickly: compound interest and loan repayments are geometric series.
 - The sum of a series can be found from its partial sums S_{n} by u_{n} = S_{n} − S_{n−1}.
 P: **Investigate with the lab.** Choose the Geometric series topic and work through 10 problems. Check that |r| < 1 before using S∞ = a ÷ (1 − r), and read the worked method on any you get wrong.
@@ -1679,6 +1716,7 @@ X: A ball dropped from 10 m rebounds to 60% of its previous height each time. Fi
 > Down 10, then up and down 6, 3.6, … each twice
 > Total = 10 + 2(6 + 3.6 + 2.16 + …) = 10 + 2 × 6/(1 − 0.6)
 > = 10 + 30 = 40 m
+D: maths-u07-bouncing-ball
 - Changing the first few terms changes the sum but not whether it converges.
 - Recurring decimals are geometric series, which is why they're rational.
 K: S_{∞} = a/(1 − r) when |r| < 1; a series' sum is the limit of its partial sums; terms tending to 0 isn't enough.
@@ -1722,6 +1760,7 @@ X: Does Σ_{n=1}^{∞} n/2^{n} converge?
 > Ratio: (n + 1)/2^{n+1} ÷ n/2^{n} = (n + 1)/(2n)
 > As n → ∞ this tends to ½
 > ½ < 1, so the series converges (its sum is 2)
+D: maths-u07-ratio-test-terms
 K: Check the divergence test first; then compare with p-series or geometric series, or use the ratio or integral test.
 !: Concluding a series converges because its terms tend to zero.
 Q: Does Σ 1/n^{3} converge? | Yes: it's a p-series with p = 3 > 1.
@@ -1761,6 +1800,7 @@ X: Find the radius of convergence of Σ_{n=0}^{∞} (2x)^{n}/(n + 1).
 > Ratio: |2x|(n + 1)/(n + 2)
 > As n → ∞ this tends to |2x|
 > Converges when |2x| < 1, so R = 1/2
+D: maths-u07-radius-half
 - A power series is continuous and infinitely differentiable inside its radius.
 - Two power series that agree near c are identical, term by term (uniqueness).
 K: Find R with the ratio test, check endpoints separately, and differentiate or integrate term by term inside R.
@@ -1803,6 +1843,7 @@ X: Use a Taylor polynomial of degree 2 about a = 4 to estimate √4.1.
 > f(x) = √x: f(4) = 2, f′(4) = 1/(2√4) = 1/4, f″(4) = −1/(4 × 4^{3/2}) = −1/32
 > √x ≈ 2 + (x − 4)/4 − (x − 4)^{2}/64
 > √4.1 ≈ 2 + 0.025 − 0.000156 = 2.024844 (true value 2.024846…)
+D: maths-u07-taylor-sqrt
 K: The Taylor series uses derivatives at a; truncate it for polynomial approximations, which are most accurate near a.
 !: Forgetting the factorials in the denominators.
 Q: What is the first-order Taylor polynomial of f about a? | f(a) + f′(a)(x − a): the tangent line.
@@ -1844,6 +1885,7 @@ X: Find the Maclaurin series of e^{2x} cos x up to the x^{2} term.
 > e^{2x} = 1 + 2x + 2x^{2} + …; cos x = 1 − x^{2}/2 + …
 > Multiply, keeping terms up to x^{2}: 1 + 2x + 2x^{2} − x^{2}/2
 > = 1 + 2x + (3/2)x^{2} + …
+D: maths-u07-maclaurin-product
 K: Learn the series for e^{x}, sin x, cos x, ln(1 + x) and (1 + x)^{n}, with their validity, and combine them algebraically.
 !: Using ln(1 + x) or (1 + x)^{n} series outside their ranges of validity.
 Q: What is the Maclaurin series of cos x up to x^{4}? | 1 − x^{2}/2 + x^{4}/24.

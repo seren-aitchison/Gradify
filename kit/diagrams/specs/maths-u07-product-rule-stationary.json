@@ -1,0 +1,118 @@
+{
+ "id": "maths-u07-product-rule-stationary",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Product Rule",
+ "title": "Stationary points of x²e⁻ˣ",
+ "caption": "dy/dx = xe⁻ˣ(2 − x) is zero at x = 0 and x = 2. The curve touches the axis at (0, 0), a minimum, and peaks at (2, 4e⁻² ≈ 0.54).",
+ "alt": "The curve y = x²e⁻ˣ, with a minimum at the origin, a maximum at (2, 0.54), then decaying towards zero.",
+ "description": [
+  "The product rule gives dy/dx = 2xe⁻ˣ − x²e⁻ˣ = xe⁻ˣ(2 − x).",
+  "e⁻ˣ is never zero, so dy/dx = 0 when x = 0 or x = 2.",
+  "The curve has a minimum at (0, 0) and a maximum at (2, 4e⁻²)."
+ ],
+ "range": {
+  "x": [
+   -1,
+   6
+  ],
+  "y": [
+   -0.2,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2*exp(-x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "label": "(0, 0)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -14
+  },
+  {
+   "x": 2,
+   "y": 0.5413411329464508,
+   "label": "(2, 0.54)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "x^2*exp(-x)",
+   "domain": [
+    -0.5,
+    1
+   ],
+   "x": 0,
+   "y": 0,
+   "name": "a minimum at x = 0"
+  },
+  {
+   "type": "max",
+   "expr": "x^2*exp(-x)",
+   "domain": [
+    0.5,
+    6
+   ],
+   "x": 2,
+   "y": 0.5413411329464508,
+   "name": "a maximum at (2, 4e⁻²)"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2*exp(-x)",
+   "x": 0,
+   "value": 0,
+   "name": "gradient 0 at x = 0"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2*exp(-x)",
+   "x": 2,
+   "value": 0,
+   "name": "gradient 0 at x = 2"
+  }
+ ],
+ "fromLesson": [
+  "x = 0 or x = 2"
+ ]
+}

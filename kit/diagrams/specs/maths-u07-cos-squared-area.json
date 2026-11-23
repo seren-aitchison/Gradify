@@ -1,0 +1,86 @@
+{
+ "id": "maths-u07-cos-squared-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Trigonometric Integration",
+ "title": "The area under cos²x",
+ "caption": "Using cos²x = ½(1 + cos 2x), ∫₀^(π/2) cos²x dx = [x/2 + sin 2x/4] = π/4 ≈ 0.785. The curve cos²x falls from 1 to 0, and the shaded area is exactly π/4.",
+ "alt": "The curve y = cos²x falling from 1 at x = 0 to 0 at x = π/2, with the area under it shaded.",
+ "description": [
+  "cos²x = ½(1 + cos 2x).",
+  "The antiderivative is x/2 + (sin 2x)/4.",
+  "At π/2 it is π/4; at 0 it is 0.",
+  "The area is π/4."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "cos(x)^2",
+   "colour": "a1",
+   "domain": [
+    0,
+    1.9
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "cos(x)^2",
+   "from": 0,
+   "to": 1.5707963267948966,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.5707963267948966,
+   "label": "π/2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "cos(x)^2",
+   "from": 0,
+   "to": 1.5707963267948966,
+   "value": 0.7853981633974483,
+   "tol": 0.0005,
+   "name": "the area under cos²x from 0 to π/2 is π/4"
+  }
+ ],
+ "fromLesson": []
+}

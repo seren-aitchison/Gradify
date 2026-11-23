@@ -1,0 +1,156 @@
+{
+ "id": "maths-u07-trapezium-exp",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Numerical Integration",
+ "title": "Four trapezia under eˣ",
+ "caption": "Joining the points on y = eˣ at x = 0, 0.5, 1, 1.5, 2 with straight lines makes four trapezia of total area 6.52. The exact area is e² − 1 ≈ 6.39: the chords lie above the convex curve, so the estimate is too big.",
+ "alt": "The curve y = eˣ from 0 to 2 with a straight-edged polygon of four trapezia under it, whose top edges lie just above the curve.",
+ "description": [
+  "h = 0.5; the y-values are 1, 1.6487, 2.7183, 4.4817 and 7.3891.",
+  "Trapezium rule: ½h[y₀ + 2(y₁ + y₂ + y₃) + y₄] = 0.25 × 26.0865.",
+  "The estimate is ≈ 6.52.",
+  "The exact value e² − 1 ≈ 6.39 is smaller, since eˣ is convex."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.4
+  ],
+  "y": [
+   0,
+   8.5
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  0.5,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0.5,
+     1.6487212707001282
+    ],
+    [
+     1,
+     2.718281828459045
+    ],
+    [
+     1.5,
+     4.4816890703380645
+    ],
+    [
+     2,
+     7.38905609893065
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "colour": "a2",
+   "width": 2
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    2.2
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "exp(x)",
+   "from": 0,
+   "to": 2,
+   "colour": "a4",
+   "opacity": 0.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(x)",
+   "from": 0,
+   "to": 2,
+   "value": 6.3890560989306495,
+   "tol": 0.001,
+   "name": "the exact area is e² − 1 ≈ 6.389"
+  },
+  {
+   "type": "point",
+   "expr": "exp(x)",
+   "x": 0,
+   "y": 1,
+   "name": "eˣ at x = 0 is 1"
+  },
+  {
+   "type": "point",
+   "expr": "exp(x)",
+   "x": 0.5,
+   "y": 1.6487212707001282,
+   "name": "eˣ at x = 0.5 is 1.649"
+  },
+  {
+   "type": "point",
+   "expr": "exp(x)",
+   "x": 1,
+   "y": 2.718281828459045,
+   "name": "eˣ at x = 1 is 2.718"
+  },
+  {
+   "type": "point",
+   "expr": "exp(x)",
+   "x": 1.5,
+   "y": 4.4816890703380645,
+   "name": "eˣ at x = 1.5 is 4.482"
+  },
+  {
+   "type": "point",
+   "expr": "exp(x)",
+   "x": 2,
+   "y": 7.38905609893065,
+   "name": "eˣ at x = 2 is 7.389"
+  }
+ ],
+ "fromLesson": [
+  "26.0865"
+ ]
+}

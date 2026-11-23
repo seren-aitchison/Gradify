@@ -1,0 +1,105 @@
+{
+ "id": "maths-u07-log-differentiation",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Logarithmic Differentiation",
+ "title": "y = (sin x)ˣ and its tangent at x = 1",
+ "caption": "Taking logs gives dy/dx = (sin x)ˣ(ln(sin x) + x cot x). At x = 1 this is sin 1 × (ln sin 1 + cot 1) ≈ 0.395, the gradient of the tangent shown at (1, sin 1 ≈ 0.841).",
+ "alt": "The curve y = (sin x)ˣ on (0, π), rising from 0 and falling back to 0, with its tangent of gradient 0.395 at x = 1.",
+ "description": [
+  "ln y = x ln(sin x).",
+  "Differentiate both sides: (1/y)y′ = ln(sin x) + x cot x.",
+  "Multiply by y = (sin x)ˣ.",
+  "At x = 1 the gradient is ≈ 0.395."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.2
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(x*log(sin(x)))",
+   "colour": "a1",
+   "domain": [
+    0.001,
+    3.14
+   ]
+  },
+  {
+   "expr": "0.8414709848078965+0.3950612615135548*(x-1)",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    0.2,
+    2.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.8414709848078965,
+   "label": "(1, sin 1)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(x*log(sin(x)))",
+   "x": 1,
+   "y": 0.8414709848078965,
+   "name": "y = (sin 1)¹ at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(x*log(sin(x)))",
+   "x": 1,
+   "value": 0.3950612615135548,
+   "name": "the gradient at x = 1 is sin 1 (ln sin 1 + cot 1)"
+  },
+  {
+   "type": "slope",
+   "expr": "0.8414709848078965+0.3950612615135548*(x-1)",
+   "x": 1,
+   "value": 0.3950612615135548,
+   "name": "the tangent has the same gradient"
+  }
+ ],
+ "fromLesson": [
+  "ln y = x ln(sin x)"
+ ]
+}

@@ -61125,5 +61125,2382 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u07-arc-length-integrand": {
+  "title": "Arc length as an area under the speed",
+  "caption": "For x = t², y = ⅔t³ the speed is √((dx/dt)² + (dy/dt)²) = 2t√(1 + t²). The curve's length for 0 ≤ t ≤ 1 is the area under this speed graph: (2/3)(2√2 − 1) ≈ 1.219.",
+  "alt": "The speed curve 2t√(1 + t²) rising from 0 at t = 0 to 2.83 at t = 1, with the area under it shaded.",
+  "description": [
+   "dx/dt = 2t and dy/dt = 2t².",
+   "Speed = √(4t² + 4t⁴) = 2t√(1 + t²).",
+   "Length = ∫₀¹ 2t√(1 + t²) dt = [(2/3)(1 + t²)^(3/2)]₀¹.",
+   "= (2/3)(2√2 − 1) ≈ 1.219."
+  ],
+  "course": "maths",
+  "lesson": "Arc Length and Surface Area",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Arc Length and Surface Area"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under 2t√(1 + t²) from 0 to 1 is (2/3)(2√2 − 1) ≈ 1.219",
+    "ok": true,
+    "detail": "area 1.2190"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-area-between-curves": {
+  "title": "The area between y = x² and y = 2x",
+  "caption": "The curves meet at x = 0 and x = 2, with 2x above x². The area between them is ∫₀² (2x − x²) dx = [x² − x³/3]₀² = 4 − 8/3 = 4/3.",
+  "alt": "A parabola y = x² and a line y = 2x meeting at (0, 0) and (2, 4), with the lens-shaped region between them shaded.",
+  "description": [
+   "Solve x² = 2x: x = 0 or x = 2.",
+   "On [0, 2] the line 2x is above the parabola.",
+   "Area = ∫₀² (2x − x²) dx = [x² − x³/3]₀².",
+   "= 4 − 8/3 = 4/3."
+  ],
+  "course": "maths",
+  "lesson": "Definite Integrals",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Definite Integrals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curves meet at (0, 0)",
+    "ok": true,
+    "detail": "x^2 → 0, 2*x → 0"
+   },
+   {
+    "name": "the curves meet at (2, 4)",
+    "ok": true,
+    "detail": "x^2 → 4, 2*x → 4"
+   },
+   {
+    "name": "the area between them is 4/3",
+    "ok": true,
+    "detail": "area 1.3333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-bouncing-ball": {
+  "title": "The ball's total distance",
+  "caption": "The ball falls 10 m, then rises and falls 6, 3.6, 2.16, … each twice. The bounces add to 2 × 6/(1 − 0.6) = 30 m, so the total distance is 10 + 30 = 40 m.",
+  "alt": "One bar of 40 m split into a part of 10 m for the first drop and a part of 30 m for all the bounces.",
+  "description": [
+   "The first drop is 10 m.",
+   "Each rebound is 60% of the previous height: 6, 3.6, 2.16, …, travelled up and down.",
+   "The bounces: 2 × 6/(1 − 0.6) = 30 m.",
+   "Total = 10 + 30 = 40 m."
+  ],
+  "course": "maths",
+  "lesson": "Infinite Series",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Infinite Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 40",
+    "ok": true,
+    "detail": "parts add to 40"
+   },
+   {
+    "name": "the bracket label \"40 m\" states 40",
+    "ok": true,
+    "detail": "40 m"
+   },
+   {
+    "name": "10 m + 30 m = 40 m",
+    "ok": true,
+    "detail": "parts 10, 30"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×142"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-chain-rule-root": {
+  "title": "The chain rule on y = √(x² + 4x)",
+  "caption": "dy/dx = (x + 2)/√(x² + 4x). At x = 1 this is 3/√5 ≈ 1.342, the slope of the tangent drawn at (1, √5).",
+  "alt": "The curve y = √(x² + 4x) for x ≥ 0 rising from the origin, with its tangent at (1, √5 ≈ 2.236), a line of gradient 1.342.",
+  "description": [
+   "Write y = (x² + 4x)^½: an outer power ½ of an inner function x² + 4x.",
+   "Outer derivative ½(x² + 4x)^(−½), inner derivative 2x + 4.",
+   "Multiplying: dy/dx = (x + 2)/√(x² + 4x).",
+   "At x = 1 it is 3/√5 ≈ 1.342."
+  ],
+  "course": "maths",
+  "lesson": "Chain Rule",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Chain Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y = √5 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 2.2361"
+   },
+   {
+    "name": "the gradient at x = 1 is (1 + 2)/√5 = 3/√5",
+    "ok": true,
+    "detail": "gradient 1.3416"
+   },
+   {
+    "name": "the tangent has the same gradient",
+    "ok": true,
+    "detail": "gradient 1.3416"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-circle-rings": {
+  "title": "Adding up thin rings",
+  "caption": "A ring at distance x from the centre has circumference 2πx, so its area is about 2πx × dx. The graph of 2πx against x is a straight line, and the total area under it from 0 to r = 3 is a triangle of area ½ × 3 × 6π = 9π = πr².",
+  "alt": "A straight line y = 2πx from 0 to 3 with the triangle under it shaded, labelled with area 9π.",
+  "description": [
+   "A thin ring of radius x and width dx has area about 2πx dx.",
+   "Plot the circumference 2πx against x: a straight line through the origin.",
+   "Adding the rings from x = 0 to x = r is the area under this line.",
+   "For r = 3 the area is 9π = πr²."
+  ],
+  "course": "maths",
+  "lesson": "Infinitesimal Calculus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Infinitesimal Calculus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under 2πx from 0 to 3 is 9π = π × 3²",
+    "ok": true,
+    "detail": "area 28.2743"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-constant-of-integration": {
+  "title": "Every value of c gives the same slopes",
+  "caption": "∫(x + 2x⁻²) dx = x²/2 − 2/x + c. Changing c slides the whole curve up or down, but the gradient at each x is still x + 2/x²: at x = 1 it is 3 on every curve.",
+  "alt": "Two copies of y = x²/2 − 2/x, one shifted 3 units above the other, with parallel tangent-slopes at x = 1 and x = 2.",
+  "description": [
+   "Split (x³ + 2)/x² into x + 2x⁻².",
+   "Integrate each term: x²/2 and −2x⁻¹.",
+   "Add the constant c.",
+   "Differentiating any of these curves gives back x + 2/x²."
+  ],
+  "course": "maths",
+  "lesson": "Indefinite Integrals",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Indefinite Integrals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope of F at x = 1 is x + 2/x² = 3 (c = 0)",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "the same slope 3 with c = 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "the slope of F at x = 2 is x + 2/x² = 2.5 (c = 0)",
+    "ok": true,
+    "detail": "gradient 2.5000"
+   },
+   {
+    "name": "the same slope 2.5 with c = 3",
+    "ok": true,
+    "detail": "gradient 2.5000"
+   },
+   {
+    "name": "the slope of F at x = 3 is x + 2/x² = 3.222 (c = 0)",
+    "ok": true,
+    "detail": "gradient 3.2222"
+   },
+   {
+    "name": "the same slope 3.222 with c = 3",
+    "ok": true,
+    "detail": "gradient 3.2222"
+   },
+   {
+    "name": "F(1) = ½ − 2 = −1.5 for c = 0, and 1.5 for c = 3",
+    "ok": true,
+    "detail": "y(1) = 1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-convex-concave": {
+  "title": "Where x⁴ − 6x² bends up and down",
+  "caption": "f″(x) = 12(x − 1)(x + 1) is positive for x < −1 and x > 1 (convex: the curve bends up) and negative between (concave: it bends down). The bends change at (±1, −5).",
+  "alt": "The W-shaped curve y = x⁴ − 6x², with the left and right parts marked convex and the middle part marked concave, changing at x = −1 and x = 1.",
+  "description": [
+   "f′(x) = 4x³ − 12x.",
+   "f″(x) = 12x² − 12 = 12(x − 1)(x + 1).",
+   "f″ > 0 outside −1 < x < 1: convex there.",
+   "Between −1 and 1, f″ < 0: concave."
+  ],
+  "course": "maths",
+  "lesson": "Concavity and Convexity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Concavity and Convexity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(1) = −5",
+    "ok": true,
+    "detail": "y(1) = -5"
+   },
+   {
+    "name": "f(−1) = −5",
+    "ok": true,
+    "detail": "y(-1) = -5"
+   },
+   {
+    "name": "f″(1) = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "f″(−1) = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "f″(2) = 36 > 0: convex",
+    "ok": true,
+    "detail": "gradient 36.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-cos-squared-area": {
+  "title": "The area under cos²x",
+  "caption": "Using cos²x = ½(1 + cos 2x), ∫₀^(π/2) cos²x dx = [x/2 + sin 2x/4] = π/4 ≈ 0.785. The curve cos²x falls from 1 to 0, and the shaded area is exactly π/4.",
+  "alt": "The curve y = cos²x falling from 1 at x = 0 to 0 at x = π/2, with the area under it shaded.",
+  "description": [
+   "cos²x = ½(1 + cos 2x).",
+   "The antiderivative is x/2 + (sin 2x)/4.",
+   "At π/2 it is π/4; at 0 it is 0.",
+   "The area is π/4."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Integration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Trigonometric Integration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under cos²x from 0 to π/2 is π/4",
+    "ok": true,
+    "detail": "area 0.7854"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-critical-cusp": {
+  "title": "A critical point where f′ is undefined",
+  "caption": "f(x) = x^(2/3)(x − 5) has f′(x) = (5/3)x^(−1/3)(x − 2). f′ = 0 at x = 2 (a minimum) and f′ is undefined at x = 0, where the graph has a sharp point: both are critical points.",
+  "alt": "The curve y = x^(2/3)(x − 5): a sharp upward cusp at the origin, then falling to a minimum at (2, −4.76) and rising to cross the axis at x = 5.",
+  "description": [
+   "f(x) = x^(5/3) − 5x^(2/3).",
+   "f′(x) = (5/3)x^(−1/3)(x − 2).",
+   "f′ = 0 at x = 2.",
+   "f′ is undefined at x = 0, which is in the domain: that is critical too."
+  ],
+  "course": "maths",
+  "lesson": "Critical Points",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Critical Points"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cusp at x = 0 is a local maximum",
+    "ok": true,
+    "detail": "found (0, 0)"
+   },
+   {
+    "name": "a local minimum at x = 2",
+    "ok": true,
+    "detail": "found (2, -4.7622)"
+   },
+   {
+    "name": "f′(2) = 0",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-cubic-stationary": {
+  "title": "Maximum and minimum of x³ − 12x",
+  "caption": "dy/dx = 3x² − 12 = 0 at x = ±2. The second derivative 6x is −12 at x = −2 (a maximum, (−2, 16)) and +12 at x = 2 (a minimum, (2, −16)).",
+  "alt": "The S-shaped cubic y = x³ − 12x with a maximum at (−2, 16) and a minimum at (2, −16).",
+  "description": [
+   "dy/dx = 3x² − 12 = 0 gives x = ±2.",
+   "The points are (2, −16) and (−2, 16).",
+   "d²y/dx² = 6x: negative at x = −2, so a maximum.",
+   "Positive at x = 2, so a minimum."
+  ],
+  "course": "maths",
+  "lesson": "Stationary Points",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Stationary Points"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the local maximum is (−2, 16)",
+    "ok": true,
+    "detail": "found (-2, 16)"
+   },
+   {
+    "name": "the local minimum is (2, −16)",
+    "ok": true,
+    "detail": "found (2, -16)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-displacement-velocity-acceleration": {
+  "title": "Displacement, velocity and acceleration",
+  "caption": "Each curve is the slope of the one before. s = t³ − 6t² + 9t has a maximum where v = 3t² − 12t + 9 is zero, first at t = 1; there a = 6t − 12 = −6, negative because v is falling through zero.",
+  "alt": "Three curves against t: the cubic s, the parabola v which crosses zero at t = 1 and t = 3, and the line a which is −6 at t = 1.",
+  "description": [
+   "s = t³ − 6t² + 9t is the displacement.",
+   "v = ds/dt = 3t² − 12t + 9 = 3(t − 1)(t − 3), zero at t = 1 and t = 3.",
+   "a = dv/dt = 6t − 12.",
+   "At t = 1: a = −6 m s⁻²."
+  ],
+  "course": "maths",
+  "lesson": "Higher-Order Derivatives",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Higher-Order Derivatives"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v = 0 at t = 1",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "a = −6 at t = 1",
+    "ok": true,
+    "detail": "y(1) = -6"
+   },
+   {
+    "name": "the slope of s at t = 1 is v = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the slope of v at t = 1 is a = −6",
+    "ok": true,
+    "detail": "gradient -6.0000"
+   },
+   {
+    "name": "the slope of v at t = 3 is a = 6",
+    "ok": true,
+    "detail": "gradient 6.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-distance-area": {
+  "title": "Distance as area under a velocity graph",
+  "caption": "The distance travelled is the area under the velocity graph v = 3t² from t = 0 to 4. An antiderivative is t³, so the area is 4³ − 0³ = 64 m.",
+  "alt": "The parabola v = 3t² from 0 to 4 s, rising to 48 m/s, with the area under it shaded and labelled 64 m.",
+  "description": [
+   "Velocity is 3t² m/s.",
+   "Distance is the area under the velocity–time graph from 0 to 4.",
+   "An antiderivative of 3t² is t³.",
+   "4³ − 0³ = 64 m."
+  ],
+  "course": "maths",
+  "lesson": "Integral Calculus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Integral Calculus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under 3t² from 0 to 4 is 4³ = 64 m",
+    "ok": true,
+    "detail": "area 64.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-draining-depth": {
+  "title": "How fast the depth falls at t = 6",
+  "caption": "h = (10 − 0.5t)² has gradient dh/dt = −(10 − 0.5t). At t = 6, h = 49 cm and the gradient is −7: the tangent drawn falls 7 cm for every minute.",
+  "alt": "A falling parabola of depth against time from 100 cm at t = 0 to 0 at t = 20, with its tangent at (6, 49) of gradient −7.",
+  "description": [
+   "h = (10 − 0.5t)²: depth in cm after t minutes.",
+   "dh/dt = 2(10 − 0.5t)(−0.5) = −(10 − 0.5t).",
+   "At t = 6: dh/dt = −7.",
+   "The depth is falling at 7 cm per minute."
+  ],
+  "course": "maths",
+  "lesson": "Rates of Change",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Rates of Change"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "h(6) = 7² = 49",
+    "ok": true,
+    "detail": "y(6) = 49"
+   },
+   {
+    "name": "dh/dt = −7 at t = 6",
+    "ok": true,
+    "detail": "gradient -7.0000"
+   },
+   {
+    "name": "the tangent has gradient −7",
+    "ok": true,
+    "detail": "gradient -7.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-fence-area": {
+  "title": "The largest pen",
+  "caption": "With 200 m of fence and a wall on one side, the area is A = x(200 − 2x). It is a downward parabola with its maximum at x = 50: 50 × 100 = 5,000 m².",
+  "alt": "The parabola A = 200x − 2x² for x between 0 and 100, peaking at (50, 5,000).",
+  "description": [
+   "Sides perpendicular to the wall are x, the third side is 200 − 2x.",
+   "A = x(200 − 2x) = 200x − 2x².",
+   "A′ = 200 − 4x = 0 at x = 50 and A″ = −4 < 0.",
+   "The largest area is 50 × 100 = 5,000 m²."
+  ],
+  "course": "maths",
+  "lesson": "Global Optimisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Global Optimisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum area is 5,000 m² at x = 50",
+    "ok": true,
+    "detail": "found (50, 5000)"
+   },
+   {
+    "name": "no pen at x = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "no pen at x = 100",
+    "ok": true,
+    "detail": "y(100) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-first-principles": {
+  "title": "f(x) = x² − 3x and its gradient 2x − 3",
+  "caption": "From first principles f′(x) = 2x − 3. The graph shows it: f has a flat bottom at x = 1.5, where 2x − 3 = 0; to the left f falls (negative gradient) and to the right it rises (positive gradient), with slope 3 at x = 3.",
+  "alt": "The parabola y = x² − 3x with its minimum at x = 1.5 and the straight line y = 2x − 3, which is zero at x = 1.5.",
+  "description": [
+   "Dividing the change in f by h and letting h → 0 gives f′(x) = 2x − 3.",
+   "The parabola f has its minimum at x = 1.5.",
+   "The gradient line crosses zero at the same place.",
+   "Where f is steepest on the right, at x = 3, the gradient line reads 3."
+  ],
+  "course": "maths",
+  "lesson": "Derivatives",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Derivatives"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope of f at x = -1 is 2x − 3 = −5",
+    "ok": true,
+    "detail": "gradient -5.0000"
+   },
+   {
+    "name": "the slope of f at x = 0 is 2x − 3 = −3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "the slope of f at x = 1.5 is 2x − 3 = 0",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "the slope of f at x = 3 is 2x − 3 = 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-ftc-slope": {
+  "title": "The area function F(x) = ∫₁^{3x} ln t dt",
+  "caption": "F(x) = 3x ln(3x) − 3x + 1 is the area under ln t from 1 to 3x. Its slope at each x is 3 ln(3x), the height of the integrand at 3x times the rate 3 at which 3x moves: F′ is the dashed curve.",
+  "alt": "The curve F(x) = 3x ln 3x − 3x + 1, which is zero at x = 1/3, rising steeply, with the curve 3 ln(3x) for its gradient; the slopes match at x = 0.5, 1 and 2.",
+  "description": [
+   "F(x) is the area under ln t between t = 1 and t = 3x.",
+   "By part 1 with the chain rule, F′(x) = ln(3x) × 3 = 3 ln(3x).",
+   "Check: differentiating 3x ln(3x) − 3x + 1 gives 3 ln(3x) + 3 − 3.",
+   "At x = 1/3 the limits coincide, so F = 0 there."
+  ],
+  "course": "maths",
+  "lesson": "Fundamental Theorem of Calculus",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Fundamental Theorem of Calculus"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "F(1/3) = 0: the limits meet",
+    "ok": true,
+    "detail": "y(0.3333333333333333) = 0"
+   },
+   {
+    "name": "the slope of F at x = 0.5 is 3 ln(3x) = 1.216",
+    "ok": true,
+    "detail": "gradient 1.2164"
+   },
+   {
+    "name": "the slope of F at x = 1 is 3 ln(3x) = 3.296",
+    "ok": true,
+    "detail": "gradient 3.2958"
+   },
+   {
+    "name": "the slope of F at x = 2 is 3 ln(3x) = 5.375",
+    "ok": true,
+    "detail": "gradient 5.3753"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-implicit-curve": {
+  "title": "The curve x² + 3xy + y² = 11",
+  "caption": "Solving for y gives two branches. The point (1, 2) is on the upper one, and implicit differentiation gives dy/dx = −(2x + 3y)/(3x + 2y) = −8/7 there: the tangent drawn slopes down gently.",
+  "alt": "The curve x² + 3xy + y² = 11 as an upper and lower branch, with the tangent of gradient −8/7 at (1, 2).",
+  "description": [
+   "Differentiate both sides with respect to x, treating y as a function of x.",
+   "Collect dy/dx: dy/dx = −(2x + 3y)/(3x + 2y).",
+   "At (1, 2): −(2 + 6)/(3 + 4) = −8/7.",
+   "The tangent at (1, 2) has gradient −8/7."
+  ],
+  "course": "maths",
+  "lesson": "Implicit Differentiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Implicit Differentiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(1, 2) lies on the upper branch",
+    "ok": true,
+    "detail": "y(1) = 2"
+   },
+   {
+    "name": "the lower branch passes through (1, −5)",
+    "ok": true,
+    "detail": "y(1) = -5"
+   },
+   {
+    "name": "the gradient at (1, 2) is −8/7",
+    "ok": true,
+    "detail": "gradient -1.1429"
+   },
+   {
+    "name": "the tangent has gradient −8/7",
+    "ok": true,
+    "detail": "gradient -1.1429"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-improper-area": {
+  "title": "A finite area that never ends",
+  "caption": "The curve y = xe^(−x²) never reaches the axis, yet the area under it from 0 to b is ½ − ½e^(−b²), which tends to ½: the improper integral converges to ½. By x = 3 the curve is already almost flat on the axis.",
+  "alt": "The curve y = xe^(−x²) rising to a peak of about 0.43 at x = 0.71 and then decaying towards zero, with the area under it from 0 to 4 shaded.",
+  "description": [
+   "∫ x e^(−x²) dx = −½e^(−x²).",
+   "From 0 to b: ½ − ½e^(−b²).",
+   "As b → ∞, e^(−b²) → 0.",
+   "The area tends to ½."
+  ],
+  "course": "maths",
+  "lesson": "Improper Integrals",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Improper Integrals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area from 0 to 6 is already ½ − ½e⁻³⁶ ≈ ½",
+    "ok": true,
+    "detail": "area 0.5000"
+   },
+   {
+    "name": "the peak is at x = 1/√2",
+    "ok": true,
+    "detail": "found (0.707, 0.429)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-inflection-xex": {
+  "title": "The inflection of xeˣ",
+  "caption": "y″ = eˣ(x + 2) changes sign at x = −2, so (−2, −2e⁻² ≈ −0.271) is a point of inflection: the curve changes from bending down to bending up. The gradient eˣ(x + 1) is at its lowest there.",
+  "alt": "The curve y = xeˣ dipping to a minimum near x = −1 and rising, with the inflection marked at (−2, −0.271) on its left-hand arm.",
+  "description": [
+   "y′ = eˣ(x + 1) and y″ = eˣ(x + 2).",
+   "y″ = 0 at x = −2.",
+   "eˣ > 0 and x + 2 changes sign there, so y″ changes sign.",
+   "The inflection is at (−2, −2e⁻²) ≈ (−2, −0.271)."
+  ],
+  "course": "maths",
+  "lesson": "Points of Inflection",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Points of Inflection"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y = −2e⁻² at x = −2",
+    "ok": true,
+    "detail": "y(-2) = -0.2707"
+   },
+   {
+    "name": "the gradient y′ is smallest at x = −2, where y″ = 0",
+    "ok": true,
+    "detail": "found (-2, -0.1353)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-ivt-quintic": {
+  "title": "A sign change forces a root",
+  "caption": "f(x) = x⁵ + 3x − 7 is continuous, with f(1) = −3 below the axis and f(2) = 31 above it. A continuous curve cannot jump, so it crosses y = 0 between: here at x ≈ 1.263.",
+  "alt": "The curve y = x⁵ + 3x − 7 for x from 0.5 to 2 passing from (1, −3) below the axis up through zero near x = 1.263 to (2, 31).",
+  "description": [
+   "f is a polynomial, so it is continuous everywhere.",
+   "f(1) = 1 + 3 − 7 = −3 is negative.",
+   "f(2) = 32 + 6 − 7 = 31 is positive.",
+   "By the intermediate value theorem the curve crosses zero somewhere between x = 1 and x = 2."
+  ],
+  "course": "maths",
+  "lesson": "Continuity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Continuity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f(1) = −3",
+    "ok": true,
+    "detail": "y(1) = -3"
+   },
+   {
+    "name": "f(2) = 31",
+    "ok": true,
+    "detail": "y(2) = 31"
+   },
+   {
+    "name": "f(1.263) = 0: the root lies between 1 and 2",
+    "ok": true,
+    "detail": "y(1.2628228600865303) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-lhopital-limit": {
+  "title": "(eˣ − 1 − x)/x² near 0",
+  "caption": "Direct substitution gives 0/0. L'Hôpital's rule (twice) gives eˣ/2 → ½. The graph agrees: the curve passes through heights close to ½ on both sides of the hole at x = 0.",
+  "alt": "The curve y = (eˣ − 1 − x)/x² rising from left to right with a gap at x = 0, where the height is ½.",
+  "description": [
+   "At x = 0 the fraction is 0/0.",
+   "Differentiate top and bottom: (eˣ − 1)/(2x), still 0/0.",
+   "Again: eˣ/2, which tends to ½.",
+   "The graph approaches height ½ at the hole x = 0."
+  ],
+  "course": "maths",
+  "lesson": "L'Hôpital's Rule",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: L'Hôpital's Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "just right of 0 the value is ≈ ½",
+    "ok": true,
+    "detail": "y(0.001) = 0.5002"
+   },
+   {
+    "name": "just left of 0 the value is ≈ ½",
+    "ok": true,
+    "detail": "y(-0.001) = 0.4998"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-limit-hole": {
+  "title": "A limit where the function is undefined",
+  "caption": "At x = 4 the fraction is 0/0 and so undefined, but away from 4 it equals 1/(√x + 2). The graph has a hole at (4, ¼): values on both sides approach ¼, which is the limit.",
+  "alt": "The curve y = (√x − 2)/(x − 4) falling gently from left to right with a gap at x = 4, where the height is ¼.",
+  "description": [
+   "The function (√x − 2)/(x − 4) is not defined at x = 4.",
+   "Rewriting x − 4 = (√x − 2)(√x + 2) gives 1/(√x + 2) for x ≠ 4.",
+   "As x approaches 4 from either side, the height approaches 1/4: the hole is at (4, ¼)."
+  ],
+  "course": "maths",
+  "lesson": "Limits",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Limits"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "just left of 4 the value is ≈ ¼",
+    "ok": true,
+    "detail": "y(3.9999) = 0.25"
+   },
+   {
+    "name": "just right of 4 the value is ≈ ¼",
+    "ok": true,
+    "detail": "y(4.0001) = 0.25"
+   },
+   {
+    "name": "1/(√4 + 2) = ¼",
+    "ok": true,
+    "detail": "y(4) = 0.25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-log-differentiation": {
+  "title": "y = (sin x)ˣ and its tangent at x = 1",
+  "caption": "Taking logs gives dy/dx = (sin x)ˣ(ln(sin x) + x cot x). At x = 1 this is sin 1 × (ln sin 1 + cot 1) ≈ 0.395, the gradient of the tangent shown at (1, sin 1 ≈ 0.841).",
+  "alt": "The curve y = (sin x)ˣ on (0, π), rising from 0 and falling back to 0, with its tangent of gradient 0.395 at x = 1.",
+  "description": [
+   "ln y = x ln(sin x).",
+   "Differentiate both sides: (1/y)y′ = ln(sin x) + x cot x.",
+   "Multiply by y = (sin x)ˣ.",
+   "At x = 1 the gradient is ≈ 0.395."
+  ],
+  "course": "maths",
+  "lesson": "Logarithmic Differentiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Logarithmic Differentiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y = (sin 1)¹ at x = 1",
+    "ok": true,
+    "detail": "y(1) = 0.8415"
+   },
+   {
+    "name": "the gradient at x = 1 is sin 1 (ln sin 1 + cot 1)",
+    "ok": true,
+    "detail": "gradient 0.3951"
+   },
+   {
+    "name": "the tangent has the same gradient",
+    "ok": true,
+    "detail": "gradient 0.3951"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-maclaurin-product": {
+  "title": "e²ˣ cos x and its quadratic",
+  "caption": "Multiplying the series gives e²ˣ cos x = 1 + 2x + (3/2)x² + …. The quadratic 1 + 2x + 1.5x² and the curve both pass through (0, 1) with slope 2, and stay close near x = 0.",
+  "alt": "The curve y = e²ˣ cos x and the parabola 1 + 2x + 1.5x², which touch at (0, 1) with the same gradient 2 and nearly coincide for small x.",
+  "description": [
+   "e²ˣ = 1 + 2x + 2x² + … and cos x = 1 − x²/2 + ….",
+   "Multiply, keeping terms up to x².",
+   "The x² coefficient is 2 − ½ = 3/2.",
+   "e²ˣ cos x ≈ 1 + 2x + (3/2)x²."
+  ],
+  "course": "maths",
+  "lesson": "Maclaurin Series",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Maclaurin Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "both curves pass through (0, 1)",
+    "ok": true,
+    "detail": "exp(2*x)*cos(x) → 1, 1+2*x+1.5*x^2 → 1"
+   },
+   {
+    "name": "e²ˣ cos x has gradient 2 at 0",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the quadratic has gradient 2 at 0",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "at x = 0.1 the curve is 1.2153",
+    "ok": true,
+    "detail": "y(0.1) = 1.2153"
+   },
+   {
+    "name": "at x = 0.1 the quadratic is 1.215",
+    "ok": true,
+    "detail": "y(0.1) = 1.215"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-normal-line": {
+  "title": "The tangent and normal at (2, −1)",
+  "caption": "At x = 2 the curve y = 2x² − 5x + 1 is at (2, −1) with gradient 4x − 5 = 3. The normal is perpendicular to the tangent, with gradient −1/3, giving y = −x/3 − 1/3.",
+  "alt": "The parabola y = 2x² − 5x + 1 with a tangent of gradient 3 and a perpendicular normal of gradient −1/3, both through the point (2, −1).",
+  "description": [
+   "At x = 2: y = 8 − 10 + 1 = −1, so the point is (2, −1).",
+   "The gradient is dy/dx = 4x − 5 = 3.",
+   "The normal gradient is −1/3, since 3 × (−1/3) = −1.",
+   "The normal is y + 1 = −⅓(x − 2), that is y = −x/3 − 1/3."
+  ],
+  "course": "maths",
+  "lesson": "First Derivatives",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: First Derivatives"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve passes through (2, −1)",
+    "ok": true,
+    "detail": "y(2) = -1"
+   },
+   {
+    "name": "the gradient at x = 2 is 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "the tangent has gradient 3",
+    "ok": true,
+    "detail": "gradient 3.0000"
+   },
+   {
+    "name": "the normal has gradient −1/3, and 3 × (−1/3) = −1",
+    "ok": true,
+    "detail": "gradient -0.3333"
+   },
+   {
+    "name": "tangent and normal meet at (2, −1)",
+    "ok": true,
+    "detail": "3*x-7 → -1, -x/3-1/3 → -1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-parametric-tangent": {
+  "title": "The tangent to x = 2t + 1, y = t² − 3t at t = 2",
+  "caption": "Eliminating t gives y = (x − 1)²/4 − 3(x − 1)/2, a parabola. At t = 2 the point is (5, −2) and dy/dx = (dy/dt)/(dx/dt) = 1/2, so the tangent is y = ½x − 9/2.",
+  "alt": "A parabola opening upwards with its minimum near x = 4 and the tangent of gradient ½ touching it at (5, −2).",
+  "description": [
+   "At t = 2: x = 2(2) + 1 = 5 and y = 4 − 6 = −2.",
+   "dx/dt = 2 and dy/dt = 2t − 3 = 1.",
+   "dy/dx = (dy/dt)/(dx/dt) = ½.",
+   "Tangent: y + 2 = ½(x − 5), that is y = ½x − 9/2."
+  ],
+  "course": "maths",
+  "lesson": "Parametric Differentiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Parametric Differentiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve passes through (5, −2) at t = 2",
+    "ok": true,
+    "detail": "y(5) = -2"
+   },
+   {
+    "name": "dy/dx = 1/2 at t = 2",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "the tangent passes through (5, −2)",
+    "ok": true,
+    "detail": "y(5) = -2"
+   },
+   {
+    "name": "the tangent has gradient ½",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-partial-fractions-area": {
+  "title": "The area under 5/((x − 1)(x + 4))",
+  "caption": "Splitting into 1/(x − 1) − 1/(x + 4) gives ∫₂³ = ln(12/7) ≈ 0.539. The shaded area under the curve between x = 2 and x = 3 has exactly this size.",
+  "alt": "The curve y = 5/((x − 1)(x + 4)) falling from x = 1.3, with the area between x = 2 and x = 3 shaded.",
+  "description": [
+   "5/((x − 1)(x + 4)) = 1/(x − 1) − 1/(x + 4).",
+   "Integrate: ln|x − 1| − ln|x + 4|.",
+   "Evaluate from 2 to 3: (ln 2 − ln 7) − (ln 1 − ln 6) = ln(12/7).",
+   "The area is ≈ 0.539."
+  ],
+  "course": "maths",
+  "lesson": "Partial Fraction Integration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Partial Fraction Integration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area from 2 to 3 is ln(12/7) ≈ 0.539",
+    "ok": true,
+    "detail": "area 0.5390"
+   },
+   {
+    "name": "y = 5/6 at x = 2",
+    "ok": true,
+    "detail": "y(2) = 0.8333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-parts-antiderivative": {
+  "title": "x cos x and its antiderivative",
+  "caption": "Integration by parts gives ∫x cos x dx = x sin x + cos x + c. The dashed curve x cos x is the slope of the solid curve at every point: where x cos x is zero, F has a turning point.",
+  "alt": "The curve F(x) = x sin x + cos x and, dashed, its gradient x cos x, which crosses zero where F turns.",
+  "description": [
+   "Take u = x and dv/dx = cos x, so v = sin x.",
+   "∫x cos x dx = x sin x − ∫sin x dx.",
+   "= x sin x + cos x + c.",
+   "Differentiating x sin x + cos x gives x cos x back."
+  ],
+  "course": "maths",
+  "lesson": "Integration by Parts",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Integration by Parts"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the slope of F at x = 1 is x cos x = 0.54",
+    "ok": true,
+    "detail": "gradient 0.5403"
+   },
+   {
+    "name": "the slope of F at x = 2 is x cos x = -0.832",
+    "ok": true,
+    "detail": "gradient -0.8323"
+   },
+   {
+    "name": "the slope of F at x = 4 is x cos x = -2.615",
+    "ok": true,
+    "detail": "gradient -2.6146"
+   },
+   {
+    "name": "the slope of F at x = 5 is x cos x = 1.418",
+    "ok": true,
+    "detail": "gradient 1.4183"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-product-rule-stationary": {
+  "title": "Stationary points of x²e⁻ˣ",
+  "caption": "dy/dx = xe⁻ˣ(2 − x) is zero at x = 0 and x = 2. The curve touches the axis at (0, 0), a minimum, and peaks at (2, 4e⁻² ≈ 0.54).",
+  "alt": "The curve y = x²e⁻ˣ, with a minimum at the origin, a maximum at (2, 0.54), then decaying towards zero.",
+  "description": [
+   "The product rule gives dy/dx = 2xe⁻ˣ − x²e⁻ˣ = xe⁻ˣ(2 − x).",
+   "e⁻ˣ is never zero, so dy/dx = 0 when x = 0 or x = 2.",
+   "The curve has a minimum at (0, 0) and a maximum at (2, 4e⁻²)."
+  ],
+  "course": "maths",
+  "lesson": "Product Rule",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Product Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a minimum at x = 0",
+    "ok": true,
+    "detail": "found (0, 0)"
+   },
+   {
+    "name": "a maximum at (2, 4e⁻²)",
+    "ok": true,
+    "detail": "found (2, 0.541)"
+   },
+   {
+    "name": "gradient 0 at x = 0",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "gradient 0 at x = 2",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-quartic-inflection": {
+  "title": "x⁴ − 4x³: flat at 0, minimum at 3",
+  "caption": "f′(x) = 4x²(x − 3) is zero at x = 0 and x = 3. Near 0 the gradient is negative on both sides, so the curve flattens but keeps falling (no extremum); at x = 3 it goes from − to +, a minimum at (3, −27).",
+  "alt": "The curve y = x⁴ − 4x³ falling through a flat point at the origin and reaching a minimum at (3, −27) before rising.",
+  "description": [
+   "f′(x) = 4x³ − 12x² = 4x²(x − 3).",
+   "f′ = 0 at x = 0 and x = 3.",
+   "At x = 0, f′ is negative on both sides: no extremum.",
+   "At x = 3, f′ changes from − to +: a local minimum at (3, −27)."
+  ],
+  "course": "maths",
+  "lesson": "Local Maxima and Minima",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Local Maxima and Minima"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the local minimum is (3, −27)",
+    "ok": true,
+    "detail": "found (3, -27)"
+   },
+   {
+    "name": "the gradient is 0 at x = 0",
+    "ok": true,
+    "detail": "gradient -0.0000"
+   },
+   {
+    "name": "f′(−0.5) = −3.5 < 0 just left of 0",
+    "ok": true,
+    "detail": "gradient -3.5000"
+   },
+   {
+    "name": "f′(0.5) = −2.5 < 0 just right of 0",
+    "ok": true,
+    "detail": "gradient -2.5000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-quotient-rule-flat": {
+  "title": "A flat point that is not a turning point",
+  "caption": "dy/dx = eˣ(x − 1)²/(x² + 1)² is never negative: the curve only rises. At x = 1 the numerator (x − 1)² is zero, so the curve flattens at (1, e/2) for a moment and then carries on upwards.",
+  "alt": "The curve y = eˣ/(x² + 1) rising from left to right with a momentary flat point at (1, e/2 ≈ 1.36).",
+  "description": [
+   "Quotient rule with u = eˣ and v = x² + 1.",
+   "dy/dx = eˣ(x − 1)²/(x² + 1)².",
+   "A square is never negative, so the gradient is ≥ 0 everywhere.",
+   "It is zero at x = 1, where the curve flattens but does not turn."
+  ],
+  "course": "maths",
+  "lesson": "Quotient Rule",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Quotient Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "y = e/2 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 1.3591"
+   },
+   {
+    "name": "the gradient is zero at x = 1",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the gradient at 0 is e⁰(0 − 1)²/1 = 1",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "the gradient at 2 is e²/25 > 0: still rising",
+    "ok": true,
+    "detail": "gradient 0.2956"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-radius-half": {
+  "title": "The interval of convergence",
+  "caption": "The ratio of successive terms tends to |2x|, so the series converges for |2x| < 1, that is −½ < x < ½. The radius of convergence is R = ½.",
+  "alt": "A number line from −1 to 1 with the interval from −½ to ½ shaded, open at both ends, and centre 0.",
+  "description": [
+   "The ratio test gives |2x|(n + 1)/(n + 2) → |2x|.",
+   "The series converges when |2x| < 1.",
+   "That is −½ < x < ½: an interval centred at 0.",
+   "The radius of convergence is ½."
+  ],
+  "course": "maths",
+  "lesson": "Power Series",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Power Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is -0.5 < x < 0.5",
+    "ok": true,
+    "detail": "drawn -0.5)…0.5; inequality gives {\"from\":-0.5,\"to\":0.5,\"closed\":[false,false]}"
+   },
+   {
+    "name": "|2x| < 1 gives |x| < 1/2",
+    "ok": true,
+    "detail": "0.5"
+   },
+   {
+    "name": "the lesson states \"R = 1/2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 680×90"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×90"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-ratio-test-terms": {
+  "title": "n/2ⁿ and the ratio test",
+  "caption": "The terms of Σ n/2ⁿ are ½, ½, ⅜, ¼, 5/32, … Each term divided by the one before is (n + 1)/(2n), which falls towards ½ and is below 1 from the second term on, so the terms shrink geometrically and the series converges (to 2).",
+  "alt": "Five boxes ½, ½, ⅜, ¼, 5/32 with the ratios of consecutive terms 1, ¾, ⅔, ⅝ beneath.",
+  "description": [
+   "The nth term is n/2ⁿ: 0.5, 0.5, 0.375, 0.25, …",
+   "The ratio of consecutive terms is (n + 1)/(2n).",
+   "It tends to ½ as n grows.",
+   "½ < 1, so the series converges."
+  ],
+  "course": "maths",
+  "lesson": "Convergence and Divergence",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Convergence and Divergence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth n/2^n)",
+    "ok": true,
+    "detail": "0.5, 0.5, 0.375, 0.25, 0.156"
+   },
+   {
+    "name": "term 5 is 0.15625",
+    "ok": true,
+    "detail": "0.15625"
+   },
+   {
+    "name": "the lesson states \"(n + 1)/(2n)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-revolution-volume": {
+  "title": "Volume as area under the cross-section",
+  "caption": "Each slice at x is a washer of area π((2x)² − (x²)²) = π(4x² − x⁴). The volume is the area under this graph from 0 to 2, 64π/15 ≈ 13.404.",
+  "alt": "The curve A(x) = π(4x² − x⁴) rising from 0 to a peak of about 12.6 at x = √2 and falling back to 0 at x = 2, with the area under it shaded.",
+  "description": [
+   "The curves meet at x = 0 and x = 2, with 2x outside.",
+   "A slice has area π((2x)² − (x²)²) = π(4x² − x⁴).",
+   "V = π∫₀² (4x² − x⁴) dx = π[4x³/3 − x⁵/5]₀².",
+   "= π(32/3 − 32/5) = 64π/15."
+  ],
+  "course": "maths",
+  "lesson": "Volumes of Revolution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Volumes of Revolution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under π(4x² − x⁴) from 0 to 2 is 64π/15",
+    "ok": true,
+    "detail": "area 13.4041"
+   },
+   {
+    "name": "the slice shrinks to nothing at x = 2",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-right-endpoint-strips": {
+  "title": "Four right-endpoint strips under x²",
+  "caption": "Each strip has width 0.5 and its height is x² at its right edge: 0.25, 1, 2.25, 4. They add to 7.5, so the estimate is 7.5 × 0.5 = 3.75. The true area is 8/3 ≈ 2.67: every strip pokes above the curve because x² is increasing.",
+  "alt": "The curve y = x² from 0 to 2 with four rectangles of width 0.5, each with its top-right corner on the curve, standing above the curve.",
+  "description": [
+   "Divide [0, 2] into 4 strips of width Δx = 0.5.",
+   "The right endpoints are 0.5, 1, 1.5 and 2, with heights 0.25, 1, 2.25 and 4.",
+   "The heights sum to 7.5; times 0.5 gives 3.75.",
+   "The exact area 8/3 is smaller: an overestimate."
+  ],
+  "course": "maths",
+  "lesson": "Riemann Sums",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Riemann Sums"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the exact area under x² from 0 to 2 is 8/3 ≈ 2.67",
+    "ok": true,
+    "detail": "area 2.6667"
+   },
+   {
+    "name": "strip 1 has height 0.25 at x = 0.5",
+    "ok": true,
+    "detail": "y(0.5) = 0.25"
+   },
+   {
+    "name": "strip 2 has height 1 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "strip 3 has height 2.25 at x = 1.5",
+    "ok": true,
+    "detail": "y(1.5) = 2.25"
+   },
+   {
+    "name": "strip 4 has height 4 at x = 2",
+    "ok": true,
+    "detail": "y(2) = 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-sigma-terms": {
+  "title": "The ten terms of 2r² − 3",
+  "caption": "The terms of Σ(2r² − 3) for r = 1 to 10 are −1, 5, 15, 29, 47, 69, 95, 125, 159, 197. They add to 740, matching 2Σr² − Σ3 = 770 − 30.",
+  "alt": "Ten boxes holding −1, 5, 15, 29, 47, 69, 95, 125, 159 and 197, with their sum 740.",
+  "description": [
+   "The rth term is 2r² − 3.",
+   "For r = 1 to 10 the terms are −1, 5, 15, …, 197.",
+   "2Σr² = 2 × 10 × 11 × 21/6 = 770 and Σ3 = 30.",
+   "The total is 770 − 30 = 740."
+  ],
+  "course": "maths",
+  "lesson": "Sequences and Series",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Sequences and Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth 2*n^2-3)",
+    "ok": true,
+    "detail": "−1, 5, 15, 29, 47, 69, 95, 125, 159, 197"
+   },
+   {
+    "name": "the first 10 terms sum to 740",
+    "ok": true,
+    "detail": "740"
+   },
+   {
+    "name": "term 10 is 197",
+    "ok": true,
+    "detail": "197"
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "30 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "30 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-sketch-hyperbola": {
+  "title": "y = (x + 1)/(x − 2)",
+  "caption": "The vertical asymptote is x = 2 and the horizontal asymptote is y = 1. The curve crosses the axes at (−1, 0) and (0, −½), and y′ = −3/(x − 2)² < 0 so it falls on each branch.",
+  "alt": "A hyperbola in two branches: the left branch below y = 1 through (−1, 0) and (0, −½) falling towards x = 2, the right branch above y = 1 falling towards y = 1.",
+  "description": [
+   "As x → 2 the denominator → 0: vertical asymptote x = 2.",
+   "As x → ±∞ the value tends to 1: horizontal asymptote y = 1.",
+   "The intercepts are (−1, 0) and (0, −½).",
+   "y′ = −3/(x − 2)² < 0: decreasing on each branch."
+  ],
+  "course": "maths",
+  "lesson": "Curve Sketching",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Curve Sketching"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(−1, 0) is on the curve",
+    "ok": true,
+    "detail": "y(-1) = 0"
+   },
+   {
+    "name": "(0, −½) is on the curve",
+    "ok": true,
+    "detail": "y(0) = -0.5"
+   },
+   {
+    "name": "y′ = −3/(3 − 2)² = −3 at x = 3",
+    "ok": true,
+    "detail": "gradient -3.0000"
+   },
+   {
+    "name": "y′ = −3/4 at x = 0: falling",
+    "ok": true,
+    "detail": "gradient -0.7500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-sliding-ladder": {
+  "title": "The 5 m ladder at one instant",
+  "caption": "When the foot is 3 m from the wall the 5 m ladder reaches 4 m up (3² + 4² = 5²). Differentiating x² + y² = 25 gives 2x dx/dt + 2y dy/dt = 0, so with dx/dt = 0.3 the top slides down at 1.8/8 = 0.225 m s⁻¹.",
+  "alt": "A right-angled triangle: the wall 4 m high, the floor 3 m, and the ladder 5 m long as the hypotenuse.",
+  "description": [
+   "The ladder, wall and ground form a right-angled triangle, so x² + y² = 25.",
+   "When x = 3, y = 4.",
+   "Differentiating: 2x dx/dt + 2y dy/dt = 0.",
+   "2(3)(0.3) + 2(4) dy/dt = 0 gives dy/dt = −0.225 m s⁻¹."
+  ],
+  "course": "maths",
+  "lesson": "Related Rates",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Related Rates"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at F is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "FB = 3 u07",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "FW = 4 u07",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "WB = 5 u07",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "ladder = √(3² + 4²) = 5",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "dy/dt = −(2 × 3 × 0.3)/(2 × 4) = −0.225",
+    "ok": true,
+    "detail": "−0.225"
+   },
+   {
+    "name": "the lesson states \"x^{2} + y^{2} = 25\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u07-smooth-join": {
+  "title": "Joining x² to a straight line smoothly",
+  "caption": "For f to be differentiable at x = 1 the two pieces must meet (1 = a + b) and have the same slope (2x = 2 gives a = 2). So b = −1 and the line 2x − 1 touches the parabola at (1, 1) without a corner.",
+  "alt": "The parabola y = x² on the left and the line y = 2x − 1 on the right, meeting at (1, 1) with the same gradient 2.",
+  "description": [
+   "For x ≤ 1, f(x) = x²; for x > 1, f(x) = ax + b.",
+   "Continuity at 1 needs a + b = 1.",
+   "Equal slopes at 1 need a = 2x = 2.",
+   "So b = −1 and the pieces join smoothly at (1, 1)."
+  ],
+  "course": "maths",
+  "lesson": "Differentiability",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Differentiability"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the parabola gives 1 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "the line 2x − 1 gives 1 at x = 1",
+    "ok": true,
+    "detail": "y(1) = 1"
+   },
+   {
+    "name": "the parabola has gradient 2 at x = 1",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "the line has gradient a = 2",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-substitution-area": {
+  "title": "The area under x√(1 − x²)",
+  "caption": "With u = 1 − x² the integral becomes ½∫₀¹ u^½ du = ⅓. The graph shows the same area directly: the region under y = x√(1 − x²) from 0 to 1 is exactly 1/3.",
+  "alt": "The curve y = x√(1 − x²) rising from the origin to a peak of 0.5 near x = 0.71 and returning to zero at x = 1, with the area under it shaded.",
+  "description": [
+   "u = 1 − x² gives du = −2x dx, so x dx = −½ du.",
+   "The limits x = 0 → 1 become u = 1 → 0.",
+   "The integral becomes ½∫₀¹ u^½ du = ½ × ⅔ = ⅓.",
+   "The shaded area under the original curve is 1/3."
+  ],
+  "course": "maths",
+  "lesson": "Integration by Substitution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Integration by Substitution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under x√(1 − x²) from 0 to 1 is 1/3",
+    "ok": true,
+    "detail": "area 0.3333"
+   },
+   {
+    "name": "the peak is ½ at x = 1/√2",
+    "ok": true,
+    "detail": "found (0.707, 0.5)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-taylor-sqrt": {
+  "title": "A quadratic that hugs √x at x = 4",
+  "caption": "The degree-2 Taylor polynomial 2 + (x − 4)/4 − (x − 4)²/64 touches √x at (4, 2) with the same slope ¼ and the same bending. Near x = 4 the curves are indistinguishable: at x = 4.1 they give 2.024844 and 2.024846.",
+  "alt": "The square root curve and the parabola 2 + (x − 4)/4 − (x − 4)²/64, which touch at (4, 2) and stay close for a while either side before separating.",
+  "description": [
+   "f(4) = 2, f′(4) = ¼ and f″(4) = −1/32.",
+   "√x ≈ 2 + (x − 4)/4 − (x − 4)²/64.",
+   "At x = 4.1 the polynomial gives 2.024844.",
+   "The true √4.1 is 2.024846…, very close."
+  ],
+  "course": "maths",
+  "lesson": "Taylor Series",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Taylor Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "√4 = 2",
+    "ok": true,
+    "detail": "y(4) = 2"
+   },
+   {
+    "name": "the polynomial is 2 at x = 4",
+    "ok": true,
+    "detail": "y(4) = 2"
+   },
+   {
+    "name": "f′(4) = ¼",
+    "ok": true,
+    "detail": "gradient 0.2500"
+   },
+   {
+    "name": "the polynomial has the same slope ¼",
+    "ok": true,
+    "detail": "gradient 0.2500"
+   },
+   {
+    "name": "√4.1 ≈ 2.024844",
+    "ok": true,
+    "detail": "y(4.1) = 2.0248"
+   },
+   {
+    "name": "the polynomial at 4.1 is 2.024844",
+    "ok": true,
+    "detail": "y(4.1) = 2.0248"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u07-trapezium-exp": {
+  "title": "Four trapezia under eˣ",
+  "caption": "Joining the points on y = eˣ at x = 0, 0.5, 1, 1.5, 2 with straight lines makes four trapezia of total area 6.52. The exact area is e² − 1 ≈ 6.39: the chords lie above the convex curve, so the estimate is too big.",
+  "alt": "The curve y = eˣ from 0 to 2 with a straight-edged polygon of four trapezia under it, whose top edges lie just above the curve.",
+  "description": [
+   "h = 0.5; the y-values are 1, 1.6487, 2.7183, 4.4817 and 7.3891.",
+   "Trapezium rule: ½h[y₀ + 2(y₁ + y₂ + y₃) + y₄] = 0.25 × 26.0865.",
+   "The estimate is ≈ 6.52.",
+   "The exact value e² − 1 ≈ 6.39 is smaller, since eˣ is convex."
+  ],
+  "course": "maths",
+  "lesson": "Numerical Integration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u07.js: Numerical Integration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the exact area is e² − 1 ≈ 6.389",
+    "ok": true,
+    "detail": "area 6.3891"
+   },
+   {
+    "name": "eˣ at x = 0 is 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "eˣ at x = 0.5 is 1.649",
+    "ok": true,
+    "detail": "y(0.5) = 1.6487"
+   },
+   {
+    "name": "eˣ at x = 1 is 2.718",
+    "ok": true,
+    "detail": "y(1) = 2.7183"
+   },
+   {
+    "name": "eˣ at x = 1.5 is 4.482",
+    "ok": true,
+    "detail": "y(1.5) = 4.4817"
+   },
+   {
+    "name": "eˣ at x = 2 is 7.389",
+    "ok": true,
+    "detail": "y(2) = 7.3891"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

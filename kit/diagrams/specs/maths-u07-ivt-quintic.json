@@ -1,0 +1,114 @@
+{
+ "id": "maths-u07-ivt-quintic",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Continuity",
+ "title": "A sign change forces a root",
+ "caption": "f(x) = x⁵ + 3x − 7 is continuous, with f(1) = −3 below the axis and f(2) = 31 above it. A continuous curve cannot jump, so it crosses y = 0 between: here at x ≈ 1.263.",
+ "alt": "The curve y = x⁵ + 3x − 7 for x from 0.5 to 2 passing from (1, −3) below the axis up through zero near x = 1.263 to (2, 31).",
+ "description": [
+  "f is a polynomial, so it is continuous everywhere.",
+  "f(1) = 1 + 3 − 7 = −3 is negative.",
+  "f(2) = 32 + 6 − 7 = 31 is positive.",
+  "By the intermediate value theorem the curve crosses zero somewhere between x = 1 and x = 2."
+ ],
+ "range": {
+  "x": [
+   0.5,
+   2.2
+  ],
+  "y": [
+   -10,
+   36
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2
+  ],
+  [
+   -10,
+   10,
+   20,
+   30
+  ]
+ ],
+ "grid": [
+  0.5,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^5+3*x-7",
+   "colour": "a1",
+   "domain": [
+    0.5,
+    2.1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": -3,
+   "label": "(1, −3)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 20
+  },
+  {
+   "x": 2,
+   "y": 31,
+   "label": "(2, 31)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 6,
+   "anchor": "end"
+  },
+  {
+   "x": 1.2628228600865303,
+   "y": 0,
+   "label": "root ≈ 1.263",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^5+3*x-7",
+   "x": 1,
+   "y": -3,
+   "name": "f(1) = −3"
+  },
+  {
+   "type": "point",
+   "expr": "x^5+3*x-7",
+   "x": 2,
+   "y": 31,
+   "name": "f(2) = 31"
+  },
+  {
+   "type": "point",
+   "expr": "x^5+3*x-7",
+   "x": 1.2628228600865303,
+   "y": 0,
+   "name": "f(1.263) = 0: the root lies between 1 and 2"
+  }
+ ],
+ "fromLesson": [
+  "f(1) = 1 + 3 − 7 = −3 < 0"
+ ]
+}
