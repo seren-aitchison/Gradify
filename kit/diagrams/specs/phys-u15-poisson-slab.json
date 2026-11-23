@@ -1,0 +1,118 @@
+{
+ "id": "phys-u15-poisson-slab",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Poisson's equation",
+ "title": "Potential across a uniformly charged slab",
+ "caption": "With ρ uniform between x = 0 and x = d and V = 0 at both ends, Poisson's equation V″ = −ρ/ε₀ integrates twice to V = (ρ/2ε₀)x(d − x). The potential is a parabola, symmetric about the middle, with its maximum ρd²/8ε₀ at x = d/2 (where the field is zero). Drawn in units of ρd²/2ε₀ against x/d: V = u(1 − u), maximum ¼.",
+ "alt": "Graph of potential across the slab: a downward-opening parabola that is zero at both ends and peaks at one quarter in the middle.",
+ "description": [
+  "The horizontal axis is x/d across the slab; the vertical axis is V in units of ρd²/(2ε₀).",
+  "V″ = −ρ/ε₀ is constant and negative, so V is a parabola opening downwards.",
+  "The boundary conditions V(0) = V(d) = 0 give V = u(1 − u).",
+  "The maximum, at u = 1/2, is 1/4 of the unit, that is ρd²/8ε₀, and E = −dV/dx is zero there."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.1
+  ],
+  "y": [
+   0,
+   0.32
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.1,
+   0.2,
+   0.3
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x/d",
+  "V / (ρd²/2ε₀)"
+ ],
+ "curves": [
+  {
+   "expr": "x*(1-x)",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "V = u(1 − u)",
+   "labelAt": [
+    0.62,
+    0.12
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0.25,
+   "label": "ρd²/8ε₀",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x*(1-x)",
+   "x": 0,
+   "y": 0,
+   "name": "V = 0 at x = 0"
+  },
+  {
+   "type": "point",
+   "expr": "x*(1-x)",
+   "x": 1,
+   "y": 0,
+   "name": "V = 0 at x = d"
+  },
+  {
+   "type": "max",
+   "expr": "x*(1-x)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 0.25,
+   "name": "maximum ρd²/8ε₀ at the middle"
+  },
+  {
+   "type": "slope",
+   "expr": "x*(1-x)",
+   "x": 0.5,
+   "value": 0,
+   "name": "E = 0 at the middle"
+  },
+  {
+   "type": "slope",
+   "expr": "x*(1-x)",
+   "x": 0.25,
+   "value": 0.5,
+   "name": "V'' = −ρ/ε₀ (gradient falls 2 per unit: 0.5 at 0.25, −0.5 at 0.75)"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": "phys-u16-impedance-triangle",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Impedance and reactance",
+ "title": "Impedance of a series RLC circuit",
+ "caption": "Resistance R = 30 Ω lies along the horizontal, the inductive reactance X_L = 80 Ω points up and X_C = 40 Ω points down, so the net reactance is X = 40 Ω. Z = √(30² + 40²) = 50 Ω, the current is 100/50 = 2 A, and the voltage leads the current by φ = 53.1° (tan φ = 40/30).",
+ "alt": "Phasor-style diagram: R = 30 ohms to the right, X_L = 80 up and X_C = 40 down, with the resultant impedance 50 ohms at 53.1 degrees above R.",
+ "description": [
+  "R = 30 Ω is drawn to the right.",
+  "X_L = 80 Ω is drawn up (voltage leads current in an inductor) and X_C = 40 Ω down (it lags).",
+  "Net reactance X = 80 − 40 = 40 Ω up.",
+  "The resultant is Z = √(30² + 40²) = 50 Ω at φ = 53.1° above R. I = 100/50 = 2 A, lagging the voltage."
+ ],
+ "mode": "add",
+ "units": "Ω",
+ "vectors": [
+  {
+   "label": "R",
+   "mag": 30,
+   "angle": 0,
+   "text": "30 Ω",
+   "comps": [
+    30,
+    0
+   ]
+  },
+  {
+   "label": "X_{L}",
+   "mag": 80,
+   "angle": 90,
+   "colour": "a4",
+   "text": "80 Ω",
+   "comps": [
+    0,
+    80
+   ]
+  },
+  {
+   "label": "X_{C}",
+   "mag": 40,
+   "angle": 270,
+   "colour": "a2",
+   "text": "40 Ω",
+   "comps": [
+    0,
+    -40
+   ]
+  }
+ ],
+ "resultant": {
+  "label": "Z",
+  "mag": 50,
+  "angle": 53.13,
+  "text": "50 Ω at 53.1°"
+ },
+ "claims": [
+  {
+   "type": "angleBetween",
+   "a": "R",
+   "b": "Z",
+   "value": 53.1,
+   "name": "tan φ = (X_L − X_C)/R gives φ = 53.1°"
+  }
+ ]
+}

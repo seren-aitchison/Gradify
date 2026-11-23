@@ -1,0 +1,39 @@
+{
+ "id": "phys-u10-closed-pipe",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Boundary conditions",
+ "title": "Resonances of a pipe closed at one end",
+ "caption": "A closed end must be a displacement node and an open end an antinode, so only odd quarter-wavelengths fit: λ = 4L/n with n = 1, 3, 5. For L = 0.3 m, the lowest two resonances are 286 Hz and 858 Hz.",
+ "alt": "Displacement envelopes in a pipe closed at the left: a quarter wavelength for the first harmonic and three quarters for the third.",
+ "description": [
+  "Fundamental: L = λ/4, λ = 1.2 m, f = 343 / 1.2 = 285.8 Hz.",
+  "Next: L = 3λ/4, λ = 0.4 m, f = 857.5 Hz, three times the fundamental.",
+  "Even harmonics cannot fit: they would need an antinode at the closed end."
+ ],
+ "kind": "standing",
+ "L": 0.3,
+ "n": [
+  1,
+  3
+ ],
+ "ends": "closed-open",
+ "v": 343,
+ "claims": {
+  "harmonics": [
+   {
+    "n": 1,
+    "lambda": 1.2,
+    "f": 285.833,
+    "nodes": [
+     0
+    ]
+   },
+   {
+    "n": 3,
+    "f": 857.5
+   }
+  ]
+ }
+}

@@ -1,3 +1,36 @@
 // Physics unit 03 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u03-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u03.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u03-01", "graph", "phys-u03-two-point-calibration", "the calibration line through the ice and steam points, converting a reading of 50.0 °C"],
+  ["u03-02", "graph", "phys-u03-accuracy-precision", "the dartboard picture as data: four groups measuring g, accurate and/or precise"],
+  ["u03-03", "fit", "phys-u03-zero-error", "a Hooke's-law line offset by a 3 mm zero error, gradient unaffected"],
+  ["u03-04", null, CALC],
+  ["u03-05", null, CALC],
+  ["u03-06", null, "rounding rules: a convention, not a picture"],
+  ["u03-07", null, CALC],
+  ["u03-08", null, "error bars appear on the fits in u03-03 and u03-14; the confidence interval is a calculation"],
+  ["u03-09", null, "the difference between repeatability and reproducibility is a definition, carried in the text"],
+  ["u03-10", null, "kinds of control are listed with an example; a picture would not teach them"],
+  ["u03-11", null, "variable roles are definitions, carried in the text"],
+  ["u03-12", null, "the design process is a sequence of decisions, carried in the text and worked example"],
+  ["u03-13", "graph", "phys-u03-thermistor-calibration", "interpolating a thermistor calibration: 2.20 kΩ read as 23.0 °C"],
+  ["u03-14", "fit", "phys-u03-linearise-capacitor", "E against V² is a straight line through the origin with gradient C/2"],
+  ["u03-15", "graph", "phys-u03-least-squares-origin", "y = mx through three points, m = Σxy/Σx², with the residuals drawn"],
+  ["u03-16", null, "comparing fits by χ² is a calculation, carried by the worked example"],
+  ["u03-17", "fit", "phys-u03-residual-pattern", "a straight line fitted to a cooling curve leaves U-shaped residuals"],
+  ["u03-18", "graph", "phys-u03-hypothesis-test", "z = 2.75 against the ±1.96 threshold on the normal curve"],
+  ["u03-19", null, "sigma levels and the look-elsewhere effect are argued from the normal curve drawn in u03-18"],
+  ["u03-20", "graph", "phys-u03-first-order-response", "a first-order sensor reaching 63% at τ and 99% at 4.6τ"],
+  ["u03-21", null, CALC],
+  ["u03-22", null, CALC],
+  ["u03-23", null, "the acquisition chain is a list of stages and an ADC resolution calculation"],
+  ["u03-24", null, "sensor types are a catalogue; the strain-gauge example is a calculation"],
+  ["u03-25", "graph", "phys-u03-oscilloscope-trace", "reading amplitude and period from divisions: 1.5 V, 8 ms, 125 Hz"],
+  ["u03-26", null, "how a lock-in works is described in steps; its benefit is a bandwidth calculation"],
+  ["u03-27", null, "pressure ranges and pumps are described; the mean free path is a calculation"],
+  ["u03-28", null, "cooling methods and thermometers are described, not drawn"],
+  ["u03-29", null, "hazards and controls are a safety list"],
+  ["u03-30", null, "notebook practice is a checklist"],
+  ["u03-31", "graph", "phys-u03-damped-model", "the damped-pendulum model with its exponential envelope, the model under test"],
+];

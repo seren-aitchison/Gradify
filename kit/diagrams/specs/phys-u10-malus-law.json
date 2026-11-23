@@ -1,0 +1,97 @@
+{
+ "id": "phys-u10-malus-law",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Polarisation",
+ "title": "Malus's law through two polarisers",
+ "caption": "The first polariser passes half of unpolarised light. The second passes cos²θ of what reaches it, so at 60° the final intensity is ½ × cos² 60° = 0.125 I₀: one eighth.",
+ "alt": "Final intensity as a fraction of the original against the angle between the polarisers, falling from 0.5 at 0 degrees to 0.125 at 60 degrees and zero at 90.",
+ "description": [
+  "After the first polariser: ½I₀, whatever its orientation.",
+  "After the second, at angle θ: ½I₀ cos²θ.",
+  "θ = 60°: ½ × 0.25 = 0.125 I₀.",
+  "At 90° (crossed polarisers) no light gets through."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   0.125,
+   0.25,
+   0.375,
+   0.5
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "angle between polarisers / °",
+  "final intensity / I₀"
+ ],
+ "curves": [
+  {
+   "expr": "0.5*cos(x*3.14159265/180)^2",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 60,
+   "to": 0.125
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 0.125,
+   "colour": "a2",
+   "label": "0.125 I₀ at 60°",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.5*cos(x*3.14159265/180)^2",
+   "x": 60,
+   "y": 0.125,
+   "name": "I₀/8 at 60°"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*cos(x*3.14159265/180)^2",
+   "x": 0,
+   "y": 0.5,
+   "name": "half the light passes when aligned"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*cos(x*3.14159265/180)^2",
+   "x": 90,
+   "y": 0,
+   "name": "none when crossed"
+  }
+ ]
+}

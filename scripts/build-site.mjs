@@ -44,6 +44,7 @@ export const EXCLUDE = {
     "supabase": "database migrations and server function source",
     "tests": "automated tests",
     "labs": "design research prototypes (the Liquid Glass material lab), opened locally and never published",
+    "poc": "proofs of concept (the Next.js migration test), built and checked locally, never published",
     "package.json": "development tooling",
     "package-lock.json": "development tooling",
   },

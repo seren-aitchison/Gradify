@@ -1,0 +1,106 @@
+{
+ "id": "maths-u08-directional",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Directional Derivatives",
+ "title": "The rate of change in the direction (3, 4)",
+ "caption": "At (1, 2) the gradient of f = x² + y² is (2, 4). The unit vector u = (3, 4)/5 = (0.6, 0.8) points the chosen way, and the rate of change is the dot product ∇f · u = 1.2 + 3.2 = 4.4 = 22/5, less than |∇f| = √20 ≈ 4.47.",
+ "alt": "From the point (1, 2): the gradient vector (2, 4) and a shorter unit vector (0.6, 0.8) in the direction (3, 4), slightly turned from the gradient.",
+ "description": [
+  "∇f = (2x, 2y) = (2, 4) at (1, 2).",
+  "The direction (3, 4) has length 5, so the unit vector is u = (0.6, 0.8).",
+  "D_u f = ∇f · u = 2 × 0.6 + 4 × 0.8 = 4.4."
+ ],
+ "points": {
+  "P": [
+   1,
+   2
+  ]
+ },
+ "hide": [
+  "P"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   0,
+   4.5
+  ],
+  "y": [
+   1,
+   7
+  ]
+ },
+ "height": [
+  480,
+  420
+ ],
+ "vectors": [
+  {
+   "name": "∇f = (2, 4)",
+   "from": [
+    1,
+    2
+   ],
+   "v": [
+    2,
+    4
+   ],
+   "colour": "a1",
+   "labelSide": -1
+  },
+  {
+   "name": "u",
+   "from": [
+    1,
+    2
+   ],
+   "v": [
+    0.6,
+    0.8
+   ],
+   "colour": "a2",
+   "labelSide": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "components",
+   "vector": 0,
+   "v": [
+    2,
+    4
+   ]
+  },
+  {
+   "type": "magnitude",
+   "vector": 1,
+   "value": 1
+  },
+  {
+   "type": "multiple",
+   "vector": 1,
+   "of": 1,
+   "k": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    2.6,
+    3
+   ],
+   "text": "D_u f = ∇f · u = 4.4",
+   "colour": "a2",
+   "size": 13
+  }
+ ],
+ "fromLesson": [
+  "(3, 4)"
+ ]
+}

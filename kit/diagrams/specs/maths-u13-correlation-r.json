@@ -1,0 +1,73 @@
+{
+ "id": "maths-u13-correlation-r",
+ "renderer": "scatter",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Correlation",
+ "title": "r for five points",
+ "caption": "The points (1, 2) to (5, 5) have means 3 and 4, S_xy = 6, S_xx = 10, S_yy = 6, so r = 6/√60 ≈ 0.775 and the line of best fit is y = 2.2 + 0.6x.",
+ "alt": "Scatter plot of five points rising on average with the fitted line y = 2.2 + 0.6x through the mean point (3, 4).",
+ "description": [
+  "The points rise on average but with scatter.",
+  "The mean point (3, 4) lies on the best-fit line.",
+  "r = 6/√(10 × 6) ≈ 0.775."
+ ],
+ "points": [
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "line": {
+  "a": 2.2,
+  "b": 0.6
+ },
+ "r": 0.775,
+ "meanPoint": true,
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ]
+}

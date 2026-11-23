@@ -147,8 +147,8 @@
 .sm-topic b { font-size: 17px; }
 .sm-topic span { font-size: 14.5px; color: var(--mute); line-height: 1.5; }
 .sm-topic .go { position: absolute; top: 18px; right: 20px; color: var(--faint); transition: transform .2s, color .2s; }
-.sm-topic:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
-.sm-topic:hover .go { color: var(--fg); transform: translateX(3px); }
+a.sm-topic:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+a.sm-topic:hover .go { color: var(--fg); transform: translateX(3px); }
 .sm-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .sm-feature { padding: 24px; border-radius: 14px; display: grid; grid-template-columns: 48px 1fr; gap: 6px 16px; align-items: start; }
 .sm-feature .sm-ico { grid-row: span 2; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: var(--accent-ink, #fff); background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 75%, #fff), var(--accent)); box-shadow: 0 10px 24px -10px var(--accent); }

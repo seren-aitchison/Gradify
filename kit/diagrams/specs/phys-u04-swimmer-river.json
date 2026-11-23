@@ -1,0 +1,55 @@
+{
+ "id": "phys-u04-swimmer-river",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Relative motion",
+ "title": "Swimming across a flowing river",
+ "caption": "Aiming straight across at 1.5 m s⁻¹ while the river flows at 0.9 m s⁻¹, the swimmer moves at 1.75 m s⁻¹, 31° downstream of straight across. Crossing 60 m takes 40 s, so the river carries them 36 m downstream.",
+ "alt": "Vector triangle: 1.5 metres per second across, 0.9 downstream, and a resultant of 1.75 at 31 degrees downstream.",
+ "description": [
+  "The swimmer's velocity relative to the water: 1.5 m s⁻¹ straight across.",
+  "The water's velocity: 0.9 m s⁻¹ downstream, drawn from the tip.",
+  "Resultant: √(1.5² + 0.9²) = 1.75 m s⁻¹, at tan⁻¹(0.9/1.5) = 31° downstream.",
+  "Time across = 60 / 1.5 = 40 s; drift = 0.9 × 40 = 36 m."
+ ],
+ "mode": "add",
+ "units": "m s^{-1}",
+ "vectors": [
+  {
+   "label": "v_{swim}",
+   "mag": 1.5,
+   "angle": 90,
+   "text": "1.5 m s^{-1} across",
+   "comps": [
+    0,
+    1.5
+   ]
+  },
+  {
+   "label": "v_{river}",
+   "mag": 0.9,
+   "angle": 0,
+   "text": "0.9 m s^{-1} downstream",
+   "colour": "a4",
+   "comps": [
+    0.9,
+    0
+   ]
+  }
+ ],
+ "resultant": {
+  "label": "v",
+  "mag": 1.749,
+  "angle": 59.04,
+  "text": "1.75 m s^{-1}"
+ },
+ "claims": [
+  {
+   "type": "angleBetween",
+   "a": "v_{swim}",
+   "b": "v",
+   "value": 31
+  }
+ ]
+}

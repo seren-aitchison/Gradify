@@ -191,9 +191,6 @@ function markLocks() {
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
 // ---------- Router ----------
-// the screens someone new can use before set-up: bring notes, see the pack, study it
-// (and the library of packs, which the pack page links back to)
-const TRY_FIRST = ["new", "deck", "study", "library"];
 const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
@@ -290,10 +287,11 @@ function decorate(root) {
 async function route() {
   // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
   const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
-  // someone new can try Gradify first: add notes (or the sample), get a pack, study it. Set-up is offered after that.
-  // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes too
+  // someone new can try Gradify first: add notes (or the sample), get a pack, study it.
+  // Opening the app itself ("Open Gradify", "Start free": no screen named) lands someone new on Bring your notes.
+  // Any screen they ask for opens directly: set-up (#/start, "What do you want to achieve?") is never put in front of
+  // a destination. It's offered instead, as a card on Today and from Account (docs/product/UX-SPEC.md, onboarding).
   if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
-  if (needsSetup(profile) && !["start", "account", ...TRY_FIRST].includes(name) && !location.hash.startsWith("#/notes/shared/")) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   noteNavUse(section);
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
@@ -624,7 +622,7 @@ async function renderDeck(id) {
       <div class="${flagged.length ? "warn" : ""}"><b>${flagged.length}</b><span>to check</span></div>
       <div><b>${cards.filter(isLearned).length}</b><span>learned</span></div>
     </div>
-    ${needsSetup(profile) ? `<aside class="setup-nudge panel glass" role="note"><span class="sn-ico">${icon("calendar")}</span><div><b>Want Gradify to plan your revision?</b><span>Tell it your goal and exam date, and it schedules these cards and your next ones around it. About a minute.</span></div><a class="btn btn-primary lg btn-sm" href="#/start"><span>Plan my revision</span></a></aside>` : ""}
+    ${needsSetup(profile) ? setupNudgeHtml("Tell it your goal and exam date, and it schedules these cards and your next ones around it. About a minute.") : ""}
     ${store.mode !== "cloud" && cloudConfigured() ? savePanel(`Save these ${cards.length} cards to your free account`, "Keep this pack on every device, and let Gradify plan your revision around your exam.") : ""}
     ${store.mode === "cloud" ? sharePanel() : ""}
     ${(pack?.pack?.unclear || []).length ? `<div class="unclear panel glass"><b>${icon("bell")}Gradify AI noticed</b><ul>${pack.pack.unclear.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></div>` : ""}
@@ -955,6 +953,12 @@ function heatmap(byDay, weeks = 16) {
   }
   return `<div class="hm" style="--weeks:${Math.ceil(((+end - +start) / DAY + 1) / 7)}">${cells}</div>`;
 }
+// Set-up, offered and never imposed: someone who hasn't said what they're working towards sees this card (on Today and
+// under a new study pack); nothing is put in front of the screen they asked for (route()).
+function setupNudgeHtml(why) {
+  return `<aside class="setup-nudge panel glass" role="note"><span class="sn-ico">${icon("calendar")}</span><div><b>Want Gradify to plan your revision?</b><span>${why}</span></div><a class="btn btn-primary lg btn-sm" href="#/start"><span>Plan my revision</span></a></aside>`;
+}
+
 async function renderToday() {
   const [s, L, sub, G, GO] = await Promise.all([stats(), learnerAcross(), store.mode === "cloud" ? mySubscription(store).catch(() => null) : null, journeySummary({ store }).catch(() => null), loadGoals().catch(() => ({ goals: [], progress: {}, unavailable: "x" }))]);
   const blocks = (await ensureReviewBlock(s)).sort((a, b) => a.start_min - b.start_min);
@@ -1006,6 +1010,7 @@ async function renderToday() {
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
       </div>
     ${offerCardHtml()}
+    ${needsSetup(profile) ? setupNudgeHtml("Tell it your goal and exam date, and it plans your study around them. About a minute, whenever you like.") : ""}
     ${firstRun ? welcomeHtml(profile.display_name) : ""}
     ${ACCESS.has("calendar") ? notifyAskHtml(M) : ""}
     ${ACCESS.has("intelligence") ? `${briefingHtml(M, { made: M.made || [] })}

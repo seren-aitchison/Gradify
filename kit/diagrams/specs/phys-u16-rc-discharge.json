@@ -1,0 +1,104 @@
+{
+ "id": "phys-u16-rc-discharge",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Capacitor charging and discharging",
+ "title": "Discharging a 470 μF capacitor through 10 kΩ",
+ "caption": "V = V₀e^{−t/RC} with RC = 10.0 kΩ × 470 μF = 4.7 s. After one time constant the voltage has fallen to 37% (3.31 V); after 10 s, 2.13 time constants, V = 9e^{−2.13} = 1.07 V. The curve never reaches zero, and its steepness is greatest at the start.",
+ "alt": "Graph of capacitor voltage against time: an exponential decay from 9 V with time constant 4.7 s, reaching 1.07 V at 10 s.",
+ "description": [
+  "The horizontal axis is time in seconds; the vertical axis is the capacitor voltage in volts.",
+  "The voltage starts at 9 V and decays exponentially with τ = RC = 4.7 s.",
+  "At t = τ = 4.7 s, V = 3.31 V (37% of the start).",
+  "At t = 10 s: V = 1.07 V."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   3,
+   6,
+   9
+  ]
+ ],
+ "grid": [
+  5,
+  3
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / s",
+  "V / V"
+ ],
+ "curves": [
+  {
+   "expr": "9*exp(-x/4.7)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "V = V₀e^{−t/RC}",
+   "labelAt": [
+    8,
+    6.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 4.7,
+   "y": 3.310914970542981,
+   "label": "τ = 4.7 s: 3.31 V",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 10,
+   "y": 1.072041744728099,
+   "colour": "a2",
+   "label": "1.07 V at 10 s",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "9*exp(-x/4.7)",
+   "x": 0,
+   "y": 9,
+   "name": "starts at 9 V"
+  },
+  {
+   "type": "point",
+   "expr": "9*exp(-x/4.7)",
+   "x": 4.7,
+   "y": 3.310914970542981,
+   "name": "37% of V₀ after one time constant, τ = RC = 4.7 s"
+  },
+  {
+   "type": "point",
+   "expr": "9*exp(-x/4.7)",
+   "x": 10,
+   "y": 1.072041744728099,
+   "name": "V = 9e^{−10/4.7} = 1.07 V at 10 s"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "maths-u13-discriminant-boundary",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Discriminant Analysis",
+ "title": "Two classes, equal priors: the boundary at 13",
+ "caption": "With equal priors and the same σ = 2 the densities cross halfway between the means 10 and 16, at x = 13. Classify to the nearer mean.",
+ "alt": "Two normal curves with SD 2 centred at 10 and 16 crossing at x = 13, with a dashed line there.",
+ "description": [
+  "The class densities are N(10, 2²) and N(16, 2²).",
+  "They are equal at the midpoint 13.",
+  "Left of 13 choose class 1, right of 13 class 2."
+ ],
+ "range": {
+  "x": [
+   4,
+   22
+  ],
+  "y": [
+   0,
+   0.3
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   7,
+   10,
+   13,
+   16,
+   19,
+   22
+  ],
+  [
+   0.1,
+   0.2,
+   0.3
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "density"
+ ],
+ "legend": [
+  [
+   "class 1, mean 10",
+   "a1"
+  ],
+  [
+   "class 2, mean 16",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  4.5,
+  0.285
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-10)^2/(2*2^2))/(2*sqrt(2*3.141592653589793))",
+   "colour": "a1"
+  },
+  {
+   "expr": "exp(-(x-16)^2/(2*2^2))/(2*sqrt(2*3.141592653589793))",
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 13,
+   "label": "boundary 13",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "exp(-(x-10)^2/(2*2^2))/(2*sqrt(2*3.141592653589793))",
+   "b": "exp(-(x-16)^2/(2*2^2))/(2*sqrt(2*3.141592653589793))",
+   "x": 13,
+   "y": 0.0648,
+   "name": "the two densities cross at x = 13"
+  }
+ ]
+}

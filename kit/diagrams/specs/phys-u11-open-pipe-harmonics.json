@@ -1,0 +1,45 @@
+{
+ "id": "phys-u11-open-pipe-harmonics",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u11",
+ "lesson": "Harmonics and overtones",
+ "title": "Harmonics of an open pipe",
+ "caption": "Open at both ends, a pipe has antinodes at each end and supports every harmonic: f_n = n v / 2L. With a fundamental of 220 Hz the first three overtones are 440, 660 and 880 Hz.",
+ "alt": "Displacement envelopes in an open pipe for harmonics 1 to 4, each with antinodes at both ends.",
+ "description": [
+  "Fundamental 220 Hz: L = λ/2, so for v = 343 m s⁻¹ the pipe is 0.78 m long.",
+  "Overtones: 440 Hz (n = 2), 660 Hz (n = 3), 880 Hz (n = 4).",
+  "Each harmonic adds one more node inside the pipe."
+ ],
+ "kind": "standing",
+ "L": 0.7795,
+ "n": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "ends": "open-open",
+ "v": 343,
+ "claims": {
+  "harmonics": [
+   {
+    "n": 1,
+    "f": 220.013
+   },
+   {
+    "n": 2,
+    "f": 440.026
+   },
+   {
+    "n": 3,
+    "f": 660.038
+   },
+   {
+    "n": 4,
+    "f": 880.051
+   }
+  ]
+ }
+}

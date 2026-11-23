@@ -1,0 +1,117 @@
+{
+ "id": "phys-u06-resonance-curves",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Resonance",
+ "title": "Resonance: amplitude against driving frequency",
+ "caption": "Driven near its natural frequency, an oscillator's amplitude peaks. The lighter the damping, the taller and narrower the peak: with γ = 0.2ω₀ the amplitude reaches about 5 times its low-frequency value. A singer's note matched to a wine glass's frequency can build up enough to break it.",
+ "alt": "Amplitude against driving frequency for three damping levels, each peaking near the natural frequency; the lightest damping gives the tallest, sharpest peak.",
+ "description": [
+  "Horizontal axis: driving frequency as a fraction of the natural frequency ω₀.",
+  "Vertical axis: amplitude relative to its value at very low frequency.",
+  "γ = 0.2ω₀: a sharp peak of about 5 near ω₀. γ = 0.5ω₀: about 2. γ = 1.0ω₀: a low, broad hump.",
+  "Far above ω₀ the amplitude falls towards zero whatever the damping."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.5
+  ],
+  "y": [
+   0,
+   5.6
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "driving frequency / ω₀",
+  "amplitude (relative)"
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt((1-x^2)^2+(0.2*x)^2)",
+   "colour": "a2",
+   "label": "γ = 0.2ω₀",
+   "labelAt": [
+    1.12,
+    4.6
+   ]
+  },
+  {
+   "expr": "1/sqrt((1-x^2)^2+(0.5*x)^2)",
+   "colour": "a1",
+   "label": "γ = 0.5ω₀",
+   "labelAt": [
+    1.22,
+    1.9
+   ]
+  },
+  {
+   "expr": "1/sqrt((1-x^2)^2+(1*x)^2)",
+   "colour": "a4",
+   "label": "γ = ω₀",
+   "labelAt": [
+    1.6,
+    0.75
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 5.1
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "1/sqrt((1-x^2)^2+(0.2*x)^2)",
+   "domain": [
+    0.2,
+    2.5
+   ],
+   "x": 0.99,
+   "y": 5.0252,
+   "name": "light damping peaks near ω₀ at about 5"
+  },
+  {
+   "type": "value",
+   "expr": "1/sqrt((1-x^2)^2+(0.5*x)^2)",
+   "x": 1,
+   "between": [
+    1.9,
+    2.1
+   ],
+   "name": "γ = 0.5ω₀: amplitude 2 at ω₀"
+  },
+  {
+   "type": "order",
+   "a": "1/sqrt((1-x^2)^2+(0.2*x)^2)",
+   "b": "1/sqrt((1-x^2)^2+(1*x)^2)",
+   "x": 1,
+   "rel": ">",
+   "name": "lighter damping, taller peak"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "id": "phys-u03-residual-pattern",
+ "renderer": "fit",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Residual analysis",
+ "title": "Residuals that reveal the wrong model",
+ "caption": "A straight line fitted to a cooling curve leaves residuals that are positive at both ends and negative in the middle (+ − − − − + +). A systematic pattern like this says the model is wrong: the data follow T = T_room + ΔT e^(−kt).",
+ "alt": "Temperature against time for a cooling object with a straight best-fit line, and a residual plot below showing a U shape.",
+ "description": [
+  "Temperatures 80, 56.4, 42.1, 33.4, 28.1, 24.9, 23 °C at 10-minute intervals from 0 to 60 minutes.",
+  "Straight-line fit: gradient -0.89 °C per minute, intercept 67.7 °C.",
+  "Residuals in order: + − − − − + +. Random scatter would mix signs; a U shape means curvature the line cannot follow."
+ ],
+ "points": [
+  [
+   0,
+   80
+  ],
+  [
+   10,
+   56.4
+  ],
+  [
+   20,
+   42.1
+  ],
+  [
+   30,
+   33.4
+  ],
+  [
+   40,
+   28.1
+  ],
+  [
+   50,
+   24.9
+  ],
+  [
+   60,
+   23
+  ]
+ ],
+ "axisLabels": [
+  "time / min",
+  "temperature / °C"
+ ],
+ "xr": [
+  0,
+  64
+ ],
+ "yr": [
+  0,
+  90
+ ],
+ "residuals": true,
+ "fit": {
+  "m": -0.886,
+  "c": 67.7
+ }
+}

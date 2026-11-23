@@ -1,0 +1,136 @@
+{
+ "id": "maths-u08-gradient-level",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Gradient",
+ "title": "The gradient is perpendicular to the level curve",
+ "caption": "For f = x²y + y³ at (1, 1), ∇f = (2xy, x² + 3y²) = (2, 4). The tangent line to the level curve there is 2(x − 1) + 4(y − 1) = 0, i.e. x + 2y = 3, with direction (2, −1); (2, 4) · (2, −1) = 0, so the gradient points straight across the contour, uphill.",
+ "alt": "From (1, 1) an arrow along the gradient (2, 4) and a dashed tangent line x + 2y = 3 with direction (2, −1), at a right angle.",
+ "description": [
+  "∇f(1, 1) = (2, 4).",
+  "The tangent to the level curve is x + 2y = 3, direction (2, −1), since 2 × 2 + 4 × (−1) = 0.",
+  "So the gradient is normal to the level curve and points in the direction of steepest increase."
+ ],
+ "points": {
+  "P": [
+   1,
+   1
+  ],
+  "T1": [
+   -1,
+   2
+  ],
+  "T2": [
+   3,
+   0
+  ],
+  "G": [
+   3,
+   5
+  ]
+ },
+ "hide": [
+  "P",
+  "T1",
+  "T2",
+  "G"
+ ],
+ "segments": [
+  {
+   "a": "T1",
+   "b": "T2",
+   "colour": "a3",
+   "dash": "7 5",
+   "w": 2
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1.5,
+   4.5
+  ],
+  "y": [
+   -1,
+   5.5
+  ]
+ },
+ "height": [
+  480,
+  420
+ ],
+ "angles": [
+  {
+   "at": "P",
+   "from": "G",
+   "to": "T2",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "vectors": [
+  {
+   "name": "∇f = (2, 4)",
+   "from": [
+    1,
+    1
+   ],
+   "v": [
+    2,
+    4
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    2.4,
+    0.9
+   ],
+   "text": "tangent x + 2y = 3",
+   "colour": "a3",
+   "size": 13
+  }
+ ],
+ "checks": [
+  {
+   "type": "components",
+   "vector": 0,
+   "v": [
+    2,
+    4
+   ]
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "P",
+    "G"
+   ],
+   "b": [
+    "T1",
+    "T2"
+   ],
+   "name": "the gradient (2, 4) is perpendicular to the tangent direction (2, −1)"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "P",
+    "T1",
+    "T2"
+   ],
+   "name": "the tangent line x + 2y = 3 passes through (1, 1)"
+  }
+ ],
+ "fromLesson": [
+  "x + 2y = 3"
+ ]
+}

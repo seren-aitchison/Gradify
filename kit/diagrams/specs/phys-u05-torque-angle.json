@@ -1,0 +1,100 @@
+{
+ "id": "phys-u05-torque-angle",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u05",
+ "lesson": "Torque and moment of force",
+ "title": "Torque depends on the angle of the push",
+ "caption": "τ = rF sin θ. Pushing the 0.25 m spanner with 30 N at 60° to the handle gives τ = 6.5 N m; pushing at 90° gives the most, 7.5 N m, and pushing along the handle gives none.",
+ "alt": "Torque against the angle between force and spanner, a sine curve rising from zero to 7.5 newton metres at 90 degrees, with 6.5 marked at 60 degrees.",
+ "description": [
+  "r = 0.25 m, F = 30 N, so rF = 7.5 N m.",
+  "At 60°: τ = 7.5 × sin 60° = 6.5 N m.",
+  "At 90° the whole force is perpendicular to the handle and the torque is greatest; at 0° and 180° it is zero."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   0,
+   8.5
+  ]
+ },
+ "ticks": [
+  [
+   30,
+   60,
+   90,
+   120,
+   150,
+   180
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "angle between force and handle / °",
+  "torque / N m"
+ ],
+ "curves": [
+  {
+   "expr": "7.5*sin(x*3.14159265/180)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 60,
+   "to": 6.495190528383289
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 6.4952,
+   "colour": "a2",
+   "label": "6.5 N m",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  },
+  {
+   "x": 90,
+   "y": 7.5,
+   "colour": "a4",
+   "label": "7.5 N m",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "7.5*sin(x*3.14159265/180)",
+   "x": 60,
+   "y": 6.49519,
+   "name": "τ at 60° = 6.5 N m"
+  },
+  {
+   "type": "max",
+   "expr": "7.5*sin(x*3.14159265/180)",
+   "domain": [
+    0,
+    180
+   ],
+   "x": 90,
+   "y": 7.5,
+   "name": "greatest torque at 90°"
+  }
+ ]
+}

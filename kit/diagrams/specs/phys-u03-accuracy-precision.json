@@ -1,0 +1,217 @@
+{
+ "id": "phys-u03-accuracy-precision",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Accuracy, precision and resolution",
+ "title": "Accuracy and precision",
+ "caption": "Four groups measure g five times each. A and C are accurate (means near 9.81 m s⁻²); A and B are precise (repeats close together). B's tight cluster is consistently low: a systematic error that more repeats cannot remove.",
+ "alt": "Dot plot of five measurements of g by each of four groups against a dashed true value of 9.81.",
+ "description": [
+  "A: 9.80 to 9.82, mean 9.81: accurate and precise.",
+  "B: 9.62 to 9.65, mean 9.63: precise but not accurate.",
+  "C: 9.55 to 10.05, mean 9.82: accurate on average but not precise.",
+  "D: 9.35 to 9.95, mean 9.60: neither."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   4.6
+  ],
+  "y": [
+   9.2,
+   10.2
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   9.4,
+   9.6,
+   9.8,
+   10
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "group A, B, C, D",
+  "g / m s⁻² (dashed: 9.81)"
+ ],
+ "marks": [
+  {
+   "y": 9.81
+  }
+ ],
+ "points": [
+  {
+   "x": 0.84,
+   "y": 9.8,
+   "colour": "a4"
+  },
+  {
+   "x": 0.92,
+   "y": 9.82,
+   "colour": "a4"
+  },
+  {
+   "x": 1,
+   "y": 9.81,
+   "colour": "a4"
+  },
+  {
+   "x": 1.08,
+   "y": 9.8,
+   "colour": "a4"
+  },
+  {
+   "x": 1.16,
+   "y": 9.82,
+   "colour": "a4"
+  },
+  {
+   "x": 1.84,
+   "y": 9.62,
+   "colour": "a1"
+  },
+  {
+   "x": 1.92,
+   "y": 9.64,
+   "colour": "a1"
+  },
+  {
+   "x": 2,
+   "y": 9.63,
+   "colour": "a1"
+  },
+  {
+   "x": 2.08,
+   "y": 9.65,
+   "colour": "a1"
+  },
+  {
+   "x": 2.16,
+   "y": 9.63,
+   "colour": "a1"
+  },
+  {
+   "x": 2.84,
+   "y": 9.55,
+   "colour": "a3"
+  },
+  {
+   "x": 2.92,
+   "y": 10.05,
+   "colour": "a3"
+  },
+  {
+   "x": 3,
+   "y": 9.7,
+   "colour": "a3"
+  },
+  {
+   "x": 3.08,
+   "y": 9.95,
+   "colour": "a3"
+  },
+  {
+   "x": 3.16,
+   "y": 9.85,
+   "colour": "a3"
+  },
+  {
+   "x": 3.84,
+   "y": 9.4,
+   "colour": "a2"
+  },
+  {
+   "x": 3.92,
+   "y": 9.95,
+   "colour": "a2"
+  },
+  {
+   "x": 4,
+   "y": 9.55,
+   "colour": "a2"
+  },
+  {
+   "x": 4.08,
+   "y": 9.75,
+   "colour": "a2"
+  },
+  {
+   "x": 4.16,
+   "y": 9.35,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "stats",
+   "values": [
+    9.8,
+    9.82,
+    9.81,
+    9.8,
+    9.82
+   ],
+   "truth": 9.81,
+   "tolMean": 0.05,
+   "tolSd": 0.02,
+   "accurate": true,
+   "precise": true,
+   "name": "group A: accurate, precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    9.62,
+    9.64,
+    9.63,
+    9.65,
+    9.63
+   ],
+   "truth": 9.81,
+   "tolMean": 0.05,
+   "tolSd": 0.02,
+   "accurate": false,
+   "precise": true,
+   "name": "group B: not accurate, precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    9.55,
+    10.05,
+    9.7,
+    9.95,
+    9.85
+   ],
+   "truth": 9.81,
+   "tolMean": 0.05,
+   "tolSd": 0.02,
+   "accurate": true,
+   "precise": false,
+   "name": "group C: accurate, not precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    9.4,
+    9.95,
+    9.55,
+    9.75,
+    9.35
+   ],
+   "truth": 9.81,
+   "tolMean": 0.05,
+   "tolSd": 0.02,
+   "accurate": false,
+   "precise": false,
+   "name": "group D: not accurate, not precise"
+  }
+ ]
+}

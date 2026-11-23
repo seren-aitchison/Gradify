@@ -1,0 +1,148 @@
+{
+ "id": "maths-u05-focus-directrix",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Parabolas",
+ "title": "(3, 6) is equidistant from the focus and directrix",
+ "caption": "For y² = 12x, a = 3: the focus is (3, 0) and the directrix is x = −3. The point (3, 6) is 6 from the focus and 3 − (−3) = 6 from the directrix.",
+ "alt": "The parabola y squared equals 12x with focus (3, 0), directrix x = −3 and the point (3, 6), which is 6 from both.",
+ "description": [
+  "y² = 12x has 4a = 12, so a = 3.",
+  "The focus is (3, 0) and the directrix is the line x = −3.",
+  "The point (3, 6) is on the curve: 36 = 12 × 3.",
+  "Its distance to the focus is 6, and to the directrix 6: equal."
+ ],
+ "range": {
+  "x": [
+   -5,
+   8
+  ],
+  "y": [
+   -9,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   -8,
+   -4,
+   4,
+   8
+  ]
+ ],
+ "grid": [
+  2,
+  4
+ ],
+ "height": [
+  360,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(12*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    8
+   ]
+  },
+  {
+   "expr": "-sqrt(12*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    8
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": -3,
+   "label": "directrix x = −3",
+   "dx": 4
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    3,
+    6
+   ],
+   "to": [
+    3,
+    0.3
+   ],
+   "colour": "a2",
+   "dash": "5 4",
+   "label": "6",
+   "labelAt": [
+    3.2,
+    3
+   ],
+   "anchor": "start"
+  },
+  {
+   "from": [
+    3,
+    6
+   ],
+   "to": [
+    -2.8,
+    6
+   ],
+   "colour": "a4",
+   "dash": "5 4",
+   "label": "6",
+   "labelAt": [
+    0,
+    6.6
+   ],
+   "anchor": "middle"
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 0,
+   "label": "focus (3, 0)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  },
+  {
+   "x": 3,
+   "y": 6,
+   "label": "(3, 6)",
+   "colour": "a1",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(12*x)",
+   "x": 3,
+   "y": 6,
+   "name": "(3, 6) is on y² = 12x"
+  }
+ ],
+ "fromLesson": [
+  "focus (3, 0), directrix x = −3"
+ ]
+}

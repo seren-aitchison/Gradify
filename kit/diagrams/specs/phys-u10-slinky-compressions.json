@@ -1,0 +1,34 @@
+{
+ "id": "phys-u10-slinky-compressions",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Transverse and longitudinal waves",
+ "title": "Coils of a slinky",
+ "caption": "The coils bunch into compressions and spread into rarefactions. Compressions 30 cm apart give λ = 0.3 m; 4 pass each second, so f = 4 Hz and v = fλ = 1.2 m s⁻¹.",
+ "alt": "A row of coils along a line, bunched together every 0.30 metres (compressions) and spread out halfway between (rarefactions).",
+ "description": [
+  "Coils bunch at compressions every 0.3 m; rarefactions lie halfway between.",
+  "λ = distance from one compression to the next = 0.3 m.",
+  "f = 4 Hz, so v = 4 × 0.3 = 1.2 m s⁻¹.",
+  "Each coil only moves back and forth along the line; the pattern travels."
+ ],
+ "kind": "longitudinal",
+ "A": 0.025,
+ "lambda": 0.3,
+ "xmax": 0.9,
+ "showLambda": true,
+ "claims": {
+  "compressions": [
+   0.15,
+   0.45,
+   0.75
+  ],
+  "rarefactions": [
+   0,
+   0.3,
+   0.6,
+   0.9
+  ]
+ }
+}

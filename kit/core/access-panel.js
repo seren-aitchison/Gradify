@@ -35,10 +35,20 @@ export const SUGGESTIONS = [
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const A = () => window.gradifyAccess;
-let panel = null, opener = null;
+let panel = null, opener = null, offTheme = null;
+
+// Appearance: follow the device (the default for everyone, kit/core/theme-boot.js), or a light or dark choice for
+// this device. The sun/moon button picks light or dark; this is where "follow my device" can be chosen again.
+const THEMES = [["system", "Match my device"], ["light", "Light"], ["dark", "Dark"]];
+function appearanceHtml() {
+  const cur = window.gradifyTheme?.get?.() || "system";
+  return `<fieldset class="a-set"><legend>Appearance</legend><p class="a-why" id="a-why-theme">Light or dark. Matching your device switches with it, by day and night if your device does.</p>
+    <div class="a-opts" role="radiogroup" aria-describedby="a-why-theme">${THEMES.map(([v, t]) => `<label class="a-opt"><input type="radio" name="a-theme" value="${v}" ${cur === v ? "checked" : ""}><span>${esc(t)}</span></label>`).join("")}</div></fieldset>`;
+}
 
 export function openAccessPanel(from = null) {
   opener = from || document.activeElement;
+  offTheme?.();
   panel?.remove();
   const p = A().get();
   panel = document.createElement("div");
@@ -48,6 +58,7 @@ export function openAccessPanel(from = null) {
       <div class="a-head"><h2 id="a-title">Reading and accessibility</h2><button type="button" class="a-x" data-close aria-label="Close">×</button></div>
       <p class="a-lead">Change anything, see it straight away. Every setting is separate, kept on this device, and works on every Gradify page.</p>
       <div class="a-suggest"><span>Starting points some people like:</span>${SUGGESTIONS.map(([t], i) => `<button type="button" class="a-chip" data-suggest="${i}">${esc(t)}</button>`).join("")}</div>
+      ${appearanceHtml()}
       ${SETTINGS.map((s) => `<fieldset class="a-set"><legend>${esc(s.label)}</legend><p class="a-why" id="a-why-${s.k}">${esc(s.why)}</p>
         <div class="a-opts" role="radiogroup" aria-describedby="a-why-${s.k}">${s.opts.map(([v, t]) => `<label class="a-opt"><input type="radio" name="a-${s.k}" value="${v}" ${(p[s.k] || "default") === v ? "checked" : ""}><span>${esc(t)}</span></label>`).join("")}</div></fieldset>`).join("")}
       <div class="a-foot"><button type="button" class="a-reset">Reset everything</button><button type="button" class="a-done" data-close>Done</button></div>
@@ -55,7 +66,11 @@ export function openAccessPanel(from = null) {
     </section>`;
   document.body.append(panel);
   const dlg = panel.querySelector(".a-panel");
-  const close = () => { panel?.remove(); panel = null; document.removeEventListener("keydown", onKey, true); opener?.focus?.(); };
+  // another tab, the sun/moon button or the device can change the theme while the panel is open: keep the choice shown
+  const onTheme = (e) => { const c = e.detail?.choice || window.gradifyTheme?.get?.() || "system"; panel?.querySelectorAll('input[name="a-theme"]').forEach((i) => { i.checked = i.value === c; }); };
+  document.addEventListener("gradify:theme", onTheme);
+  offTheme = () => { document.removeEventListener("gradify:theme", onTheme); offTheme = null; };
+  const close = () => { panel?.remove(); panel = null; document.removeEventListener("keydown", onKey, true); offTheme?.(); opener?.focus?.(); };
   const onKey = (e) => {
     if (e.key === "Escape") { e.preventDefault(); close(); return; }
     if (e.key !== "Tab") return;
@@ -69,12 +84,14 @@ export function openAccessPanel(from = null) {
   panel.addEventListener("click", (e) => { if (e.target.closest("[data-close]")) close(); });
   panel.addEventListener("change", (e) => {
     const r = e.target.closest("input[type=radio]"); if (!r) return;
+    if (r.name === "a-theme") { window.gradifyTheme?.set(r.value); return; }
     const k = r.name.slice(2); A().set(k, r.value);
     if (k === "readaloud" && r.value === "on") readAloud();
   });
   panel.querySelector(".a-reset").addEventListener("click", () => {
     for (const s of SETTINGS) A().set(s.k, null);
-    panel.querySelectorAll(".a-opt input").forEach((i) => { i.checked = i.value === "default"; });
+    window.gradifyTheme?.set("system");
+    panel.querySelectorAll(".a-opt input").forEach((i) => { i.checked = i.name === "a-theme" ? i.value === "system" : i.value === "default"; });
   });
   panel.querySelector(".a-suggest").addEventListener("click", (e) => {
     const b = e.target.closest("[data-suggest]"); if (!b) return;

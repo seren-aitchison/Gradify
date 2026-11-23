@@ -1,0 +1,40 @@
+{
+ "id": "phys-u04-braking-vt",
+ "renderer": "motion",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Acceleration",
+ "title": "Slowing to a stop",
+ "caption": "The velocity falls steadily from 30 m s⁻¹ to 0 in 5.0 s, so the acceleration is the gradient, -6 m s⁻². The area under the line, 75 m, is the distance travelled while braking.",
+ "alt": "Velocity–time graph falling in a straight line from 30 metres per second to zero at 5 seconds, above a constant acceleration of minus 6.",
+ "description": [
+  "v falls linearly from 30 m s⁻¹ at t = 0 to 0 at t = 5 s.",
+  "Gradient: a = (0 − 30) / 5 = -6 m s⁻², constant.",
+  "Area under the v–t line: ½ × 5 × 30 = 75 m."
+ ],
+ "u": 30,
+ "segments": [
+  {
+   "dt": 5,
+   "a": -6
+  }
+ ],
+ "show": [
+  "v",
+  "a"
+ ],
+ "claims": [
+  {
+   "type": "v",
+   "t": 5,
+   "value": 0,
+   "mark": false
+  },
+  {
+   "type": "displacement",
+   "from": 0,
+   "to": 5,
+   "value": 75
+  }
+ ]
+}

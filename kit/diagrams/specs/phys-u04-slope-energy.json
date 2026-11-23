@@ -1,0 +1,32 @@
+{
+ "id": "phys-u04-slope-energy",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Conservative and non-conservative forces",
+ "title": "Where the energy goes on a rough slope",
+ "caption": "Sliding 5.0 m down the 30° slope, the block loses 49 J of potential energy. Friction (a non-conservative force) turns 20 J into heat; the remaining 29 J is kinetic energy, giving v = 5.39 m s⁻¹.",
+ "alt": "Energy flow diagram: 49 joules of potential energy in, 29 joules out as kinetic energy and 20 joules as heat from friction.",
+ "description": [
+  "Height lost: 5 × sin 30° = 2.4999999999999996 m; potential energy lost: 2 × 9.8 × 2.4999999999999996 = 49 J.",
+  "Work against friction: 4.0 × 5 = 20 J, becoming heat.",
+  "Kinetic energy gained: 49 − 20 = 29 J, so v = √(2 × 29 / 2) = 5.39 m s⁻¹."
+ ],
+ "units": "J",
+ "input": {
+  "label": "potential energy lost",
+  "value": 49
+ },
+ "outputs": [
+  {
+   "label": "kinetic energy",
+   "value": 29,
+   "useful": true
+  },
+  {
+   "label": "heat (friction)",
+   "value": 20
+  }
+ ],
+ "efficiency": 0.5918
+}

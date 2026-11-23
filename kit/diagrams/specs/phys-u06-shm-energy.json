@@ -1,0 +1,125 @@
+{
+ "id": "phys-u06-shm-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Energy in oscillatory systems",
+ "title": "Energy in a mass–spring oscillator",
+ "caption": "The total energy is fixed at ½kA² = 1.0 J. At x = 0.06 m the spring holds ½kx² = 0.36 J, so the mass has 0.64 J of kinetic energy: v = 1.6 m s⁻¹.",
+ "alt": "Energy against displacement: a parabola of potential energy, an inverted parabola of kinetic energy, and a flat total line at 1 joule.",
+ "description": [
+  "E = ½ × 200 × 0.1² = 1 J.",
+  "Potential energy ½kx² is a parabola, zero at the centre; kinetic energy is E minus it.",
+  "At x = 0.06 m: potential 0.36 J, kinetic 0.64 J, v = √(2 × 0.64 / 0.5) = 1.6 m s⁻¹."
+ ],
+ "range": {
+  "x": [
+   -0.1,
+   0.1
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   -0.1,
+   -0.05,
+   0.05,
+   0.1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "displacement / m",
+  "energy / J"
+ ],
+ "curves": [
+  {
+   "expr": "100*x^2",
+   "colour": "a1",
+   "label": "potential",
+   "labelAt": [
+    -0.098,
+    0.75
+   ]
+  },
+  {
+   "expr": "1-100*x^2",
+   "colour": "a2",
+   "label": "kinetic",
+   "labelAt": [
+    0.012,
+    0.6
+   ]
+  },
+  {
+   "expr": "1+0*x",
+   "colour": "a4",
+   "dash": "6 5",
+   "label": "total",
+   "labelAt": [
+    0.07,
+    1.08
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.06,
+   "to": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 0.06,
+   "y": 0.36,
+   "colour": "a1",
+   "label": "0.36 J",
+   "dx": 10,
+   "dy": 0
+  },
+  {
+   "x": 0.06,
+   "y": 0.64,
+   "colour": "a2",
+   "label": "0.64 J",
+   "dx": 10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*x^2",
+   "x": 0.06,
+   "y": 0.36,
+   "name": "½kx² = 0.36 J at 0.06 m"
+  },
+  {
+   "type": "point",
+   "expr": "1-100*x^2",
+   "x": 0.06,
+   "y": 0.64,
+   "name": "kinetic energy 0.64 J at 0.06 m"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*0.5*1.6^2+0*x",
+   "x": 0,
+   "y": 0.64,
+   "name": "v = 1.6 m s⁻¹"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "id": "maths-u13-permutation-differences",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Permutation Tests",
+ "title": "All 6 ways to split 7, 9, 1, 3 into two pairs",
+ "caption": "Each way of choosing which two values form group A gives a difference in means: −6, −2, 0, 0, 2 and 6, each as likely as the others under H₀. Only 1 of the 6 reaches 6, so the one-sided p = 1/6.",
+ "alt": "Bar chart of the 6 permutations by difference in group means: −6 once, −2 once, 0 twice, 2 once and 6 once; the bar at 6 is highlighted.",
+ "description": [
+  "There are C(4, 2) = 6 ways to choose group A.",
+  "Their differences in means are −6, −2, 0, 0, 2, 6.",
+  "Only one is at least as large as the observed 6: p = 1/6."
+ ],
+ "categories": [
+  -6,
+  -2,
+  0,
+  2,
+  6
+ ],
+ "values": [
+  1,
+  1,
+  2,
+  1,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  1,
+  2,
+  3
+ ],
+ "axisLabels": [
+  "difference in means",
+  "arrangements (of 6)"
+ ],
+ "highlight": [
+  4
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 6
+  },
+  {
+   "type": "mean",
+   "value": 0
+  }
+ ]
+}

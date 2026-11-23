@@ -1,0 +1,105 @@
+{
+ "id": "phys-u14-penetration-depth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u14",
+ "lesson": "Fourier's law of heat conduction",
+ "title": "How deep a temperature cycle reaches into soil",
+ "caption": "The amplitude of a periodic surface temperature falls as e^{−z/δ} with δ = √(2α/ω). For soil (α = 5 × 10⁻⁷ m² s⁻¹) the daily cycle (ω = 7.3 × 10⁻⁵ s⁻¹) has δ = 0.12 m, so it has all but vanished by half a metre. A cycle 365 times longer has δ larger by √365 ≈ 19: 2.2 m (the lesson's ≈ 2.3 m uses the rounded 0.12 m).",
+ "alt": "Graph of relative temperature amplitude against depth in metres: a daily curve falling to 1/e at 0.12 m and an annual curve falling to 1/e at 2.2 m.",
+ "description": [
+  "The horizontal axis is depth below the surface in metres; the vertical axis is the temperature swing as a fraction of the surface swing.",
+  "Daily cycle: e^{−z/0.12}, falling to 1/e (0.37) at z = δ = 0.12 m.",
+  "Annual cycle: δ = 0.12 × √365 = 2.2 m, 19 times deeper."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth z / m",
+  "swing / surface swing"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/0.11726460285670078)",
+   "colour": "a1",
+   "label": "daily",
+   "labelAt": [
+    0.5,
+    0.35
+   ]
+  },
+  {
+   "expr": "exp(-x/2.2403370919006833)",
+   "colour": "a2",
+   "label": "annual",
+   "labelAt": [
+    1.9,
+    0.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.11726460285670078,
+   "y": 0.36787944117144233,
+   "colour": "a1",
+   "label": "δ = 0.12 m",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 2.2403370919006833,
+   "y": 0.36787944117144233,
+   "colour": "a2",
+   "label": "δ = 2.2 m",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/0.11726460285670078)",
+   "x": 0.11726460285670078,
+   "y": 0.36787944117144233,
+   "name": "daily: amplitude falls to 1/e at δ = √(2α/ω) = 0.12 m"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/2.2403370919006833)",
+   "x": 2.2403370919006833,
+   "y": 0.36787944117144233,
+   "name": "annual: δ = 0.12 × √365 = 2.2 m"
+  }
+ ]
+}

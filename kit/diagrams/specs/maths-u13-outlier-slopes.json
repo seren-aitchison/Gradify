@@ -1,0 +1,128 @@
+{
+ "id": "maths-u13-outlier-slopes",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Robust Regression",
+ "title": "One outlier moves the least-squares line",
+ "caption": "For (1, 1) to (4, 4) and (5, 20), least squares gives slope 4 and passes through the mean point (3, 6); the Theil–Sen slope, the median of pairwise slopes, is 1 and ignores the outlier.",
+ "alt": "Graph with a steep line y = 4x − 6 (least squares) pulled up by the outlier at (5, 20) and the line y = x (Theil–Sen) through the other four points.",
+ "description": [
+  "The least-squares slope is S_xy/S_xx = 40/10 = 4.",
+  "The Theil–Sen slope is the median of the pairwise slopes, which is 1.",
+  "The point (5, 20) drags the first line up but hardly moves the second."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   -4,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0,
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "legend": [
+  [
+   "least squares, slope 4",
+   "a1"
+  ],
+  [
+   "Theil–Sen, slope 1",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  0.2,
+  20.5
+ ],
+ "curves": [
+  {
+   "expr": "4*x-6",
+   "colour": "a1"
+  },
+  {
+   "expr": "x",
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "label": ""
+  },
+  {
+   "x": 2,
+   "y": 2,
+   "label": ""
+  },
+  {
+   "x": 3,
+   "y": 3,
+   "label": ""
+  },
+  {
+   "x": 4,
+   "y": 4,
+   "label": ""
+  },
+  {
+   "x": 5,
+   "y": 20,
+   "label": "(5, 20)",
+   "dx": -10,
+   "dy": 0,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "4*x-6",
+   "x": 3,
+   "y": 6,
+   "name": "least squares passes through the mean point (3, 6)"
+  },
+  {
+   "type": "point",
+   "expr": "x",
+   "x": 4,
+   "y": 4
+  },
+  {
+   "type": "slope",
+   "expr": "4*x-6",
+   "x": 3,
+   "value": 4,
+   "name": "least-squares slope 4"
+  },
+  {
+   "type": "slope",
+   "expr": "x",
+   "x": 3,
+   "value": 1,
+   "name": "Theil–Sen slope 1"
+  }
+ ]
+}

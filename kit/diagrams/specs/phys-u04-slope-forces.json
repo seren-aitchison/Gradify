@@ -1,0 +1,45 @@
+{
+ "id": "phys-u04-slope-forces",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Inclined planes",
+ "title": "Sliding down a rough slope",
+ "caption": "Per kilogram: the weight's component down the slope is g sin 30° = 4.9 N; friction μₖg cos 30° = 1.7 N opposes it, leaving a = 3.2 m s⁻². After 4.0 m from rest, v = √(2as) = 5.06 m s⁻¹.",
+ "alt": "Free-body diagram for 1 kilogram on a 30 degree slope: weight down, normal force perpendicular to the slope, friction up the slope, net force down the slope.",
+ "description": [
+  "Weight 9.8 N straight down; normal force 8.49 N perpendicular to the slope.",
+  "Friction 1.7 N up the slope (μₖN).",
+  "Net: 3.2 N down the slope, so a = 3.2 m s⁻².",
+  "v² = 2 × 3.2 × 4.0, v = 5.06 m s⁻¹."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 9.8,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "N",
+   "mag": 8.487,
+   "angle": 60,
+   "source": "the slope"
+  },
+  {
+   "label": "f",
+   "mag": 1.6974,
+   "angle": 150,
+   "source": "friction",
+   "colour": "a2"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 3.203,
+  "angle": 330
+ },
+ "showResultant": true
+}

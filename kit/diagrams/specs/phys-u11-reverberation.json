@@ -1,0 +1,93 @@
+{
+ "id": "phys-u11-reverberation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u11",
+ "lesson": "Reverberation",
+ "title": "Reverberation time",
+ "caption": "Sabine's formula RT₆₀ = 0.161V/A gives 1.61 s for 2000 m³ and 200 m² of absorption: the time for the sound to fall by 60 dB after the source stops. For 1.0 s the hall needs 322 m² of absorption.",
+ "alt": "Sound level relative to the start, falling in a straight line from 0 to minus 60 decibels at 1.61 seconds.",
+ "description": [
+  "After the source stops, the level falls at a steady rate in decibels per second.",
+  "RT₆₀ = 0.161 × 2000 / 200 = 1.61 s.",
+  "To get 1.0 s: A = 0.161 × 2000 / 1.0 = 322 m²."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   -70,
+   0
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   -60,
+   -40,
+   -20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time after the source stops / s",
+  "level / dB"
+ ],
+ "curves": [
+  {
+   "expr": "-60*x/1.61",
+   "domain": [
+    0,
+    2
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": -60
+  },
+  {
+   "x": 1.61,
+   "to": -60
+  }
+ ],
+ "points": [
+  {
+   "x": 1.61,
+   "y": -60,
+   "colour": "a2",
+   "label": "RT₆₀ = 1.61 s",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-60*x/1.61",
+   "x": 1.61,
+   "y": -60,
+   "name": "60 dB down after 1.61 s"
+  },
+  {
+   "type": "point",
+   "expr": "0.161*2000/200+0*x",
+   "x": 0,
+   "y": 1.61,
+   "name": "Sabine: 0.161V/A"
+  }
+ ]
+}

@@ -70,6 +70,7 @@ H: Typical sizes
 X: A car slows from 30 m s^{-1} to rest in 5.0 s. Find its acceleration.
 > a = (0 − 30)/5.0 = −6.0 m s^{-2}
 > Magnitude 6.0 m s^{-2}, opposite to the motion (about 0.6g)
+D: phys-u04-braking-vt
 !: Zero velocity doesn't mean zero acceleration: a ball at the top of its flight has v = 0 but a = g downward.
 Q: What does the area under a velocity–time graph represent? | Displacement.
 Q: What are the tangential and normal components of acceleration? | Tangential dv/dt changes speed; normal v^{2}/r changes direction.
@@ -98,6 +99,7 @@ H: Reading graphs
 X: v(t) = 6 − 2t m s^{-1} from t = 0 to 5 s. Find the displacement and distance.
 > x(t) = 6t − t^{2}; displacement at 5 s = 30 − 25 = 5 m
 > Reverses at t = 3 s (x = 9 m), then back to 5 m: distance = 9 + 4 = 13 m
+D: phys-u04-displacement-distance
 !: Area under the time axis on a v–t graph is negative displacement; add magnitudes only when you want distance.
 Q: When is a = v dv/dx useful? | When acceleration is given as a function of position rather than time.
 Q: How do you find when an object reverses direction? | Find when v = 0 (and changes sign).
@@ -161,6 +163,7 @@ H: Using them
 X: A car at 25 m s^{-1} brakes at 5.0 m s^{-2}. Find the stopping distance.
 > Missing t: v^{2} = u^{2} + 2as with v = 0, a = −5.0
 > s = 625/10 = 62.5 m
+D: phys-u04-stopping-distance
 H: Derivation
 P: From a = constant, integrate: v = u + at; integrate again: s = ut + ½at^{2}. Eliminate t to get v^{2} = u^{2} + 2as. The "no a" equation says the average velocity is the mean of u and v, true only when a is constant.
 !: Don't use suvat for non-constant acceleration (drag, springs): use calculus or energy instead.
@@ -197,6 +200,7 @@ P: Drag shortens range and height, makes the descent steeper than the ascent, an
 X: A ball is kicked at 20 m s^{-1} at 30° (g = 9.8). Find its range and maximum height.
 > R = 400 × sin 60°/9.8 = 35 m
 > H = 400 × 0.25/19.6 = 5.1 m
+D: phys-u04-projectile-path
 !: The horizontal velocity doesn't change during flight (no drag); only the vertical component is affected by g.
 P: **Investigate with the lab.** Turn air resistance off and launch at several angles at the same speed. Find the angle that gives the greatest range, then check that 30° and 60° land in the same place.
 IX: projectile
@@ -230,6 +234,7 @@ H: Classic problems
 X: A swimmer (1.5 m s^{-1} in still water) crosses a 60 m river flowing at 0.9 m s^{-1}. Aiming straight across, where does she land, and how long does it take?
 > Time = 60/1.5 = 40 s (the current doesn't change the across-component)
 > Drift = 0.9 × 40 = 36 m downstream
+D: phys-u04-swimmer-river
 !: Galilean addition fails near c: no object can be seen moving faster than light. Use relativistic velocity addition there.
 Q: State the Galilean velocity addition rule. | v_{AC} = v_{AB} + v_{BC}.
 Q: To cross a river in the shortest time, which way should you aim? | Straight across (perpendicular to the bank).
@@ -290,6 +295,7 @@ H: Using the second law
 X: A 2.0 kg block is pulled by a 10 N horizontal force on a surface with 4.0 N of friction. Find a.
 > ΣF = 10 − 4 = 6 N
 > a = 6/2 = 3.0 m s^{-2}
+D: phys-u04-second-law-block
 !: Third-law pairs act on different bodies, so they never cancel each other in one body's free-body diagram. Weight and the normal force on a book are not a third-law pair.
 Q: State Newton's second law in terms of momentum. | The net force equals the rate of change of momentum, F = dp/dt.
 Q: What is the third-law partner of the Earth's gravitational pull on you? | Your gravitational pull on the Earth.
@@ -320,6 +326,7 @@ H: Examples
 X: A 60 kg person stands on scales in a lift accelerating upward at 2.0 m s^{-2}. What do the scales read?
 > R − mg = ma ⇒ R = 60(9.8 + 2.0) = 708 N
 > In the lift's frame: an extra downward fictitious force of 120 N
+D: phys-u04-lift-scales
 !: In an inertial frame, "centrifugal force" doesn't exist: an object in circular motion is pulled inward and has no outward force acting on it.
 Q: What is a fictitious force? | An apparent force needed to apply Newton's laws in a non-inertial frame; it has no physical source or reaction partner.
 Q: What do scales read in a freely falling lift? | Zero (apparent weightlessness).
@@ -381,6 +388,7 @@ H: Tension
 X: Two masses, 3.0 kg and 2.0 kg, hang over a frictionless pulley (Atwood machine). Find a and T.
 > a = (m_{1} − m_{2})g/(m_{1} + m_{2}) = (1/5)(9.8) = 1.96 m s^{-2}
 > T = 2m_{1}m_{2}g/(m_{1} + m_{2}) = 2 × 6 × 9.8/5 = 23.5 N
+D: phys-u04-atwood-light-mass
 !: Ropes can't push; if a calculation gives negative tension, the string has gone slack and the model changes.
 Q: What is the normal force on a block on a slope of angle θ? | mg cos θ (if no other forces have perpendicular components).
 Q: When does a car lose contact going over a hump of radius r? | When v^{2}/r ≥ g, so N would have to be negative.
@@ -412,6 +420,7 @@ E: F_{D} = ½ρC_{d}Av^{2} :: high speed, turbulent: most everyday objects
 X: A 20 kg box on a floor with μ_{s} = 0.5, μ_{k} = 0.4. What force starts it moving, and what keeps it moving at constant speed? (g = 9.8)
 > Start: μ_{s}mg = 98 N
 > Keep moving: μ_{k}mg = 78 N
+D: phys-u04-friction-graph
 !: Static friction isn't always μ_{s}N; that's only its maximum. On a stationary box pushed with 30 N, static friction is exactly 30 N.
 P: **Investigate with the lab.** Switch air resistance on and off for the same launch and compare the paths. Then find the best angle with drag, which is below 45°.
 IX: projectile
@@ -441,6 +450,7 @@ E: tan θ = μ_{s} :: angle at which a block starts to slip
 X: A block slides from rest down a 30° slope with μ_{k} = 0.2. Find its speed after 4.0 m (g = 9.8).
 > a = 9.8(0.5 − 0.2 × 0.866) = 3.2 m s^{-2}
 > v = √(2 × 3.2 × 4.0) = 5.1 m s^{-1}
+D: phys-u04-slope-forces
 H: Measuring μ
 P: Tilt the slope until the block just slips: μ_{s} = tan θ_{c}. Then find the angle at which it slides at constant speed once started: μ_{k} = tan θ.
 !: The normal force on a slope isn't mg; it's mg cos θ (plus any other perpendicular forces).
@@ -474,6 +484,7 @@ H: Vertical circles
 X: A 0.2 kg ball whirls on a 0.5 m string in a vertical circle. What is the minimum speed at the top, and the tension at the bottom?
 > v_{top} = √(9.8 × 0.5) = 2.21 m s^{-1}
 > v_{bottom}^{2} = 4.9 + 19.6 = 24.5; T = mg + mv^{2}/r = 1.96 + 9.8 = 11.8 N
+D: phys-u04-vertical-circle-bottom
 !: Circular motion at constant speed is still accelerated motion; there must be a net force.
 Q: What is the minimum speed at the top of a vertical circle of radius r? | √(gr).
 Q: How are v and ω related? | v = ωr.
@@ -503,6 +514,7 @@ H: Examples
 - Charged particle in B: qvB = mv^{2}/r, so r = mv/(qB).
 X: At what speed does a 15° banked curve of radius 100 m need no friction?
 > v = √(rg tan θ) = √(100 × 9.8 × 0.268) = 16 m s^{-1} (58 km h^{-1})
+D: phys-u04-banked-curve
 !: Don't add mv^{2}/r as an extra force on the free-body diagram; set the sum of real inward forces equal to mv^{2}/r.
 Q: What provides the centripetal force for a satellite? | Gravity.
 Q: What is the design speed of a frictionless banked curve? | v = √(rg tan θ).
@@ -560,6 +572,7 @@ H: Potential energy curves
 - A particle with total energy E is confined where U(x) ≤ E; turning points are where U = E.
 X: A 0.5 kg ball is dropped from 20 m. Find its speed just before landing (no drag, g = 9.8).
 > mgh = ½mv^{2} ⇒ v = √(2gh) = √392 = 19.8 m s^{-1}
+D: phys-u04-energy-exchange
 !: Only changes in potential energy matter; the zero point is a free choice, but use the same one throughout a problem.
 Q: How is force related to the potential energy curve? | F = −dU/dx: force points downhill on the U(x) curve.
 Q: What is the elastic energy stored in a spring stretched by x? | ½kx^{2}.
@@ -587,6 +600,7 @@ E: ΔKE + ΔU = W_{nc} :: mechanical energy changes only by the work of non-cons
 X: A 2.0 kg block slides 5.0 m down a 30° slope with friction 4.0 N, starting from rest. Find its final speed.
 > mgh = 2 × 9.8 × 2.5 = 49 J; friction work = −20 J
 > ½mv^{2} = 29 J ⇒ v = 5.4 m s^{-1}
+D: phys-u04-slope-energy
 P: Even friction is conservative at the atomic level; mechanical energy isn't lost, it spreads into many microscopic degrees of freedom (heat) where we can't easily recover it.
 !: Magnetic forces do no work (F ⊥ v) but aren't described by a potential energy in the usual sense; "zero work" and "conservative" are different properties.
 Q: How can you tell if a force is conservative? | The work round any closed path is zero (equivalently its curl is zero).
@@ -644,6 +658,7 @@ E: F_{avg} = Δp/Δt
 X: A 0.15 kg ball at 30 m s^{-1} is caught and stopped in 0.05 s. Find the average force. If the catcher's hands move back to stop it in 0.20 s?
 > Δp = 4.5 kg m s^{-1}
 > F = 4.5/0.05 = 90 N; with 0.20 s, F = 22.5 N
+D: phys-u04-impulse-time
 !: Bouncing back produces a larger momentum change (and force) than stopping: Δp = m(v_{f} − v_{i}) with signs.
 P: **Investigate with the lab.** Run a sticky collision and read the momentum of each glider before and after. Work out the impulse on each glider: it is the change in its momentum.
 IX: collisions
@@ -707,6 +722,7 @@ P: The lighter fragment gets more of the kinetic energy. In alpha decay the alph
 X: A 3.0 kg shell at rest explodes into 1.0 kg and 2.0 kg pieces, releasing 600 J. Find their speeds.
 > 1.0v_{1} = 2.0v_{2}; ½(1.0)v_{1}^{2} + ½(2.0)v_{2}^{2} = 600
 > v_{1} = 2v_{2}: 2v_{2}^{2} + v_{2}^{2} = 600 ⇒ v_{2} = 14.1 m s^{-1}, v_{1} = 28.3 m s^{-1}
+D: phys-u04-explosion-momenta
 !: Momentum is conserved in every type of collision; only kinetic energy behaves differently between types.
 P: **Investigate with the lab.** Start both gliders at rest and set off the explosion. Check that total momentum stays zero while kinetic energy appears from nowhere in the lab's bookkeeping.
 IX: collisions
@@ -832,6 +848,7 @@ H: Other examples
 - Falling raindrop gathering mass, chains falling off tables.
 X: A rocket with u = 3000 m s^{-1} burns from 100 t to 25 t. Find Δv (no gravity).
 > Δv = 3000 ln 4 = 4160 m s^{-1}
+D: phys-u04-rocket-equation
 !: F = d(mv)/dt = m dv/dt + v dm/dt only applies when the added or lost mass is at rest in your frame; in general, use momentum conservation directly.
 Q: State the Tsiolkovsky rocket equation. | Δv = u ln(m_{0}/m_{f}).
 Q: What is rocket thrust? | Exhaust speed (relative to the rocket) times mass flow rate.
@@ -891,6 +908,7 @@ H: Millikan and viscometers
 P: Millikan measured oil drops' terminal speeds to find their radii (Stokes' law), then balanced them with an electric field to find the charge: always a multiple of e. Falling-ball viscometers use the same law to measure η.
 X: A steel ball (r = 1.0 mm, ρ = 7800 kg m^{-3}) falls in glycerol (ρ = 1260, η = 1.4 Pa s). Find v_{t}.
 > v_{t} = 2 × 10^{-6} × 6540 × 9.8/(9 × 1.4) = 0.010 m s^{-1}
+D: phys-u04-terminal-velocity
 !: At terminal velocity the object still moves; it's the acceleration that's zero.
 P: **Investigate with the lab.** Launch straight down from a height with drag on and watch the vertical speed level off. Compare the terminal speed on Earth and on Jupiter.
 IX: projectile
@@ -955,6 +973,7 @@ H: Examples
 X: A 4-rope pulley system lifts 800 N with an effort of 250 N. Find MA and efficiency.
 > MA = 800/250 = 3.2; VR = 4
 > η = 3.2/4 = 80%
+D: phys-u04-pulley-efficiency
 !: A large mechanical advantage means you move the effort through a large distance; the work is never less than the useful work out.
 Q: What is velocity ratio? | Distance moved by the effort divided by distance moved by the load.
 Q: How are MA, VR and efficiency related? | η = MA/VR.

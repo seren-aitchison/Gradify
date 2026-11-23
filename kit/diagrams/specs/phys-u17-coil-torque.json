@@ -1,0 +1,93 @@
+{
+ "id": "phys-u17-coil-torque",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Magnetic dipoles",
+ "title": "Torque on a current coil in a field",
+ "caption": "The 100-turn coil has magnetic moment m = NIA = 100 × 0.5 × 4 × 10⁻⁴ = 0.02 A m². In 0.2 T the torque τ = mB sin θ is largest when the moment is perpendicular to the field (θ = 90°): τ = 0.02 × 0.2 = 4 × 10⁻³ N m. It falls to zero when m is aligned (0°) or opposed (180°) to B.",
+ "alt": "Graph of torque against the angle between the moment and the field: a sine curve from zero, peaking at 4 mN m at 90° and back to zero at 180°.",
+ "description": [
+  "The horizontal axis is the angle θ between the coil's moment and the field in degrees; the vertical axis is the torque in millinewton metres.",
+  "The torque is τ = mB sin θ with m = 0.02 A m² and B = 0.2 T, so the amplitude is 4 mN m.",
+  "It is zero at 0° and 180°, and a maximum at 90° where the moment is perpendicular to B."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   0,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   45,
+   90,
+   135,
+   180
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  45,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "τ / mN m"
+ ],
+ "curves": [
+  {
+   "expr": "4*sin(x*0.017453292519943295)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "τ = mB sin θ",
+   "labelAt": [
+    110,
+    2.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 90,
+   "y": 4,
+   "label": "4 mN m at 90°",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "4*sin(x*0.017453292519943295)",
+   "domain": [
+    0,
+    180
+   ],
+   "x": 90,
+   "y": 4,
+   "name": "maximum τ = NIAB = 4 mN m at 90°"
+  },
+  {
+   "type": "point",
+   "expr": "4*sin(x*0.017453292519943295)",
+   "x": 180,
+   "y": 0,
+   "name": "zero torque when the moment is anti-parallel to B"
+  }
+ ]
+}

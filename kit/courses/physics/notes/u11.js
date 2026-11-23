@@ -52,6 +52,7 @@ P: dB(A) weights frequencies like the ear at moderate levels, reducing low and v
 X: One machine gives 80 dB. What do four identical machines give?
 > Intensity × 4 ⇒ +10 log_{10} 4 = +6 dB
 > 86 dB
+D: phys-u11-adding-decibels
 !: Decibels don't add arithmetically: 80 dB + 80 dB = 83 dB.
 Q: What intensity change does +10 dB represent? | A tenfold increase.
 Q: What does two equal sources add to the level? | 3 dB.
@@ -116,6 +117,7 @@ E: f_{n} = nf_{1}: 100, 200, 300, 400, 500 Hz…
 P: The 7th harmonic sounds noticeably flat compared with equal temperament; piano strings are slightly stiff, so their overtones are stretched sharper than true harmonics (inharmonicity), and tuners "stretch" octaves to match.
 X: An open pipe has fundamental 220 Hz. List its first three overtones.
 > Harmonics 2, 3, 4: 440, 660, 880 Hz
+D: phys-u11-open-pipe-harmonics
 !: For a closed pipe, the first overtone is the 3rd harmonic, not the 2nd.
 Q: What is the difference between a harmonic and an overtone? | Harmonics are integer multiples of the fundamental; overtones are any resonances above it.
 Q: Why are octaves and fifths consonant? | Their harmonics coincide frequently (ratios 2:1 and 3:2).
@@ -180,6 +182,7 @@ H: Uses
 X: An ambulance siren (700 Hz) approaches at 30 m s^{-1}. What do you hear? And after it passes?
 > Approaching: 700 × 343/(343 − 30) = 767 Hz
 > Receding: 700 × 343/(343 + 30) = 644 Hz
+D: phys-u11-doppler-pass
 !: The pitch heard from an approaching source is constant (higher), not rising; it drops as the source passes.
 Q: Why is the Doppler formula for sound asymmetric between moving source and moving observer? | Sound travels through a medium, so motion relative to the medium matters.
 Q: How is the Doppler effect used in medicine? | Doppler ultrasound measures blood flow speed from frequency shifts of echoes.
@@ -200,6 +203,7 @@ E: f_{beat} = |f_{1} − f_{2}|
 X: Two speakers 2 m apart play 343 Hz in phase. You stand 4 m from one and 4.5 m from the other. Loud or quiet?
 > λ = 1 m; path difference 0.5 m = λ/2
 > Destructive: quiet spot
+D: phys-u11-path-difference
 !: Noise cancellation removes energy at your ear by redirecting it, not by destroying it; other places get louder.
 Q: Why does active noise cancellation work best at low frequencies? | Long wavelengths make the anti-noise easy to align in time and space.
 Q: What happens if stereo speakers are wired out of phase? | Bass cancels, especially between them.
@@ -265,6 +269,7 @@ P: Wallace Sabine developed his formula (1895) to fix Harvard's Fogg lecture hal
 X: A 2000 m^{3} hall has total absorption 200 m^{2} (sabins). Find RT_{60}. How much absorption gives 1.0 s for speech?
 > RT_{60} = 0.161 × 2000/200 = 1.6 s
 > For 1.0 s: A = 322 m^{2}: add ~120 m^{2} of absorption
+D: phys-u11-reverberation
 !: People absorb sound: an empty hall can sound very different from a full one, so seats are designed to absorb like audiences.
 Q: What does RT_{60} measure? | The time for sound to decay by 60 dB after the source stops.
 Q: State Sabine's formula. | RT_{60} = 0.161V/A.
@@ -394,6 +399,7 @@ H: Control
 X: A worker experiences 94 dB(A). How long is the daily safe limit (85 dB for 8 h, 3 dB exchange)?
 > 94 − 85 = 9 dB = 3 halvings
 > 8 h/8 = 1 hour
+D: phys-u11-noise-exposure
 !: Hearing damage is cumulative and painless at first; by the time it's noticed, it's permanent.
 Q: What is the 3 dB exchange rate? | Each 3 dB increase halves the permissible exposure time.
 Q: Name non-auditory effects of chronic noise. | Sleep disturbance, stress, raised blood pressure, cardiovascular disease, learning impairment.

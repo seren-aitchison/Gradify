@@ -1,0 +1,33 @@
+{
+ "id": "phys-u04-pulley-efficiency",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Mechanical advantage",
+ "title": "Energy through a pulley system",
+ "caption": "With 4 supporting ropes the effort moves 4 m for every 1 m the load rises (VR = 4). MA = 800 / 250 = 3.2, so efficiency = MA/VR = 80%: of 1000 J put in per metre of lift, 800 J raises the load.",
+ "alt": "Energy flow diagram: 1000 joules of work in, 800 joules raising the load and 200 joules wasted.",
+ "description": [
+  "Per metre the load rises: work in = 250 N × 4 m = 1000 J.",
+  "Useful work = 800 N × 1 m = 800 J.",
+  "Wasted: 200 J, against friction and in lifting the lower pulley block.",
+  "Efficiency 800 / 1000 = 80% = MA / VR = 3.2 / 4."
+ ],
+ "units": "J",
+ "input": {
+  "label": "work done by effort",
+  "value": 1000
+ },
+ "outputs": [
+  {
+   "label": "raising the load",
+   "value": 800,
+   "useful": true
+  },
+  {
+   "label": "friction, pulley block",
+   "value": 200
+  }
+ ],
+ "efficiency": 0.8
+}

@@ -1,0 +1,176 @@
+{
+ "id": "maths-u05-cuboid-diagonal",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Pythagorean Theorem",
+ "title": "The cuboid's diagonal as two right triangles",
+ "caption": "Use Pythagoras twice: the base diagonal of a 3 × 4 base is √(9 + 16) = 5, then the space diagonal with height 12 is √(25 + 144) = 13.",
+ "alt": "Two right triangles: one with legs 3 and 4 and hypotenuse 5, then one with legs 5 and 12 and hypotenuse 13.",
+ "description": [
+  "The base is 3 cm by 4 cm, so its diagonal is √(3² + 4²) = 5 cm.",
+  "That diagonal and the height 12 cm are the legs of a second right triangle.",
+  "The longest diagonal of the cuboid is √(5² + 12²) = 13 cm."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   4,
+   0
+  ],
+  "C": [
+   4,
+   3
+  ],
+  "F": [
+   7,
+   0
+  ],
+  "D": [
+   12,
+   0
+  ],
+  "E": [
+   12,
+   12
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a1",
+   "opacity": 0.14
+  },
+  {
+   "pts": [
+    "F",
+    "D",
+    "E"
+   ],
+   "colour": "a2",
+   "opacity": 0.1
+  }
+ ],
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  [
+   "B",
+   "C"
+  ],
+  [
+   "C",
+   "A"
+  ],
+  [
+   "F",
+   "D"
+  ],
+  [
+   "D",
+   "E"
+  ],
+  [
+   "E",
+   "F"
+  ]
+ ],
+ "angles": [
+  {
+   "at": "B",
+   "from": "A",
+   "to": "C",
+   "right": true,
+   "colour": "ink"
+  },
+  {
+   "at": "D",
+   "from": "F",
+   "to": "E",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 4,
+   "label": "4"
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "value": 3,
+   "label": "3"
+  },
+  {
+   "a": "A",
+   "b": "C",
+   "value": 5,
+   "label": "5",
+   "side": 1
+  },
+  {
+   "a": "F",
+   "b": "D",
+   "value": 5,
+   "label": "5"
+  },
+  {
+   "a": "D",
+   "b": "E",
+   "value": 12,
+   "label": "12"
+  },
+  {
+   "a": "F",
+   "b": "E",
+   "value": 13,
+   "label": "13",
+   "side": 1
+  }
+ ],
+ "view": {
+  "x": [
+   -1.5,
+   14
+  ],
+  "y": [
+   -1.8,
+   13.5
+  ]
+ },
+ "height": [
+  380,
+  380
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "A",
+   "b": "C",
+   "value": "sqrt(3^2+4^2)",
+   "name": "base diagonal = √(9 + 16) = 5"
+  },
+  {
+   "type": "distance",
+   "a": "F",
+   "b": "E",
+   "value": "sqrt(9+16+144)",
+   "name": "space diagonal = √(9 + 16 + 144) = 13"
+  }
+ ],
+ "fromLesson": [
+  "= √169 = 13 cm"
+ ]
+}

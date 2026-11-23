@@ -1,0 +1,109 @@
+{
+ "id": "phys-u06-rc-low-pass",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Frequency response",
+ "title": "Frequency response of a low-pass filter",
+ "caption": "f_c = 1/(2πRC) = 159 Hz. Low frequencies pass almost unchanged; at f_c the gain is 1/√2 = 0.707 (−3 dB); at 10 f_c it is 1/√101 = 0.1, about −20 dB.",
+ "alt": "Gain against frequency in multiples of the cut-off frequency, falling from 1 through 0.707 at 1 to about 0.1 at 10.",
+ "description": [
+  "R = 10 kΩ, C = 100 nF: f_c = 1 / (2π × 10⁴ × 10⁻⁷) = 159 Hz.",
+  "Gain = 1 / √(1 + (f/f_c)²).",
+  "At f = f_c: 0.707. At f = 10f_c (1590 Hz): 0.1."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "frequency / f_c",
+  "gain"
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt(1+x^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 0.7071067811865476
+  },
+  {
+   "y": 0.7071067811865476,
+   "to": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.707107,
+   "colour": "a1",
+   "label": "0.707 (−3 dB) at f_c",
+   "dx": 12,
+   "dy": -4
+  },
+  {
+   "x": 10,
+   "y": 0.0995,
+   "colour": "a2",
+   "label": "0.1 at 10f_c",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/sqrt(1+x^2)",
+   "x": 1,
+   "y": 0.70710678,
+   "name": "gain 1/√2 at the cut-off"
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt(1+x^2)",
+   "x": 10,
+   "y": 0.09950372,
+   "name": "gain 0.0995 at 10f_c"
+  },
+  {
+   "type": "point",
+   "expr": "1/(2*3.14159265*10000*0.0000001)+0*x",
+   "x": 0,
+   "y": 159.1549,
+   "name": "f_c = 159.2 Hz"
+  }
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "id": "maths-u08-green-circle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Green's Theorem",
+ "title": "Green's theorem on the unit circle",
+ "caption": "Along the unit circle F = (−y, x) is a tangent vector of length 1, so ∮ (−y dx + x dy) = (length 1) × (circumference 2π) = 2π. Green's theorem gives the same: ∬ 2 dA = 2 × area π = 2π.",
+ "alt": "The unit circle with four tangent arrows of the field (−y, x), all of length 1 and pointing anticlockwise, enclosing area π.",
+ "description": [
+  "On the circle, F = (−y, x) is tangent to the circle and has length 1.",
+  "The circumference is 2π, so the line integral is 1 × 2π = 2π.",
+  "Green: ∬ (∂Q/∂x − ∂P/∂y) dA = ∬ 2 dA = 2π, the same value."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   1,
+   0
+  ],
+  "B": [
+   0,
+   1
+  ],
+  "C": [
+   -1,
+   0
+  ],
+  "D": [
+   0,
+   -1
+  ]
+ },
+ "hide": [
+  "O",
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "a3"
+  }
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -2,
+   2
+  ],
+  "y": [
+   -2,
+   2
+  ]
+ },
+ "height": [
+  460,
+  400
+ ],
+ "vectors": [
+  {
+   "from": [
+    1,
+    0
+   ],
+   "v": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "name": "|F| = 1",
+   "labelSide": 1
+  },
+  {
+   "from": [
+    0,
+    1
+   ],
+   "v": [
+    -1,
+    0
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  },
+  {
+   "from": [
+    -1,
+    0
+   ],
+   "v": [
+    0,
+    -1
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  },
+  {
+   "from": [
+    0,
+    -1
+   ],
+   "v": [
+    1,
+    0
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    -0.7,
+    0.1
+   ],
+   "text": "area π",
+   "colour": "a3",
+   "size": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "magnitude",
+   "vector": 0,
+   "value": 1,
+   "name": "|F| = 1 at (1, 0)"
+  },
+  {
+   "type": "magnitude",
+   "vector": 1,
+   "value": 1,
+   "name": "|F| = 1 at (0, 1)"
+  },
+  {
+   "type": "magnitude",
+   "vector": 2,
+   "value": 1,
+   "name": "|F| = 1 at (-1, 0)"
+  },
+  {
+   "type": "magnitude",
+   "vector": 3,
+   "value": 1,
+   "name": "|F| = 1 at (0, -1)"
+  },
+  {
+   "type": "onCircle",
+   "circle": 0,
+   "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  }
+ ],
+ "fromLesson": [
+  "unit circle"
+ ]
+}

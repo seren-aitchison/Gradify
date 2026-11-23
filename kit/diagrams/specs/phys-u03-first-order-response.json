@@ -1,0 +1,101 @@
+{
+ "id": "phys-u03-first-order-response",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Instrument response and sensitivity",
+ "title": "How fast a thermocouple responds",
+ "caption": "After a sudden change, a first-order sensor approaches the new value as 1 − e^(−t/τ). With τ = 0.5 s it reaches 63% after one τ and is within 1% after τ ln 100 = 4.6τ ≈ 2.3 s.",
+ "alt": "Percentage of the final reading against time, rising steeply and levelling at 100%, with marks at 0.5 seconds (63%) and 2.3 seconds (99%).",
+ "description": [
+  "Reading as a percentage of the step: 100(1 − e^(−t/τ)), τ = 0.5 s.",
+  "At t = τ = 0.5 s it is 63% of the way.",
+  "Within 1% when e^(−t/τ) = 0.01: t = τ ln 100 = 2.30 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   105
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "% of final reading"
+ ],
+ "curves": [
+  {
+   "expr": "100*(1-exp(-x/0.5))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.5,
+   "to": 63.2
+  },
+  {
+   "x": 2.302585092994046,
+   "to": 99,
+   "label": "4.6τ"
+  },
+  {
+   "y": 99
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 63.2,
+   "colour": "a2",
+   "label": "63% at t = τ"
+  },
+  {
+   "x": 2.302585092994046,
+   "y": 99,
+   "colour": "a2",
+   "label": "99%",
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*(1-exp(-x/0.5))",
+   "x": 0.5,
+   "y": 63.2121,
+   "name": "63.2% after one time constant"
+  },
+  {
+   "type": "point",
+   "expr": "100*(1-exp(-x/0.5))",
+   "x": 2.302585,
+   "y": 99,
+   "name": "99% at τ ln 100 = 2.30 s"
+  }
+ ]
+}

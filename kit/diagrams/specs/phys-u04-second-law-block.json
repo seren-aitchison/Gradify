@@ -1,0 +1,51 @@
+{
+ "id": "phys-u04-second-law-block",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Newton's laws of motion",
+ "title": "Forces on a pulled block",
+ "caption": "Weight and the normal force cancel. Horizontally, 10 N forward and 4.0 N of friction leave a net 6 N, so a = F/m = 6 / 2.0 = 3.0 m s⁻².",
+ "alt": "Free-body diagram of a block: weight down and normal force up, equal; a 10 newton pull to the right and 4 newtons of friction to the left; net 6 newtons to the right.",
+ "description": [
+  "Weight: mg = 2 × 9.8 = 19.6 N down. Normal force: 19.6 N up.",
+  "Pull: 10 N to the right. Friction: 4 N to the left.",
+  "Net force: 6 N to the right, so a = 3 m s⁻²."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 19.6,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "N",
+   "mag": 19.6,
+   "angle": 90,
+   "source": "the surface"
+  },
+  {
+   "label": "P",
+   "mag": 10,
+   "angle": 0,
+   "source": "the pull",
+   "colour": "a3"
+  },
+  {
+   "label": "f",
+   "mag": 4,
+   "angle": 180,
+   "source": "friction",
+   "colour": "a2"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 6,
+  "angle": 0
+ },
+ "showResultant": true
+}

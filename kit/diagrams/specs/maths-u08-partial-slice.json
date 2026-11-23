@@ -1,0 +1,113 @@
+{
+ "id": "maths-u08-partial-slice",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Multivariable Calculus",
+ "title": "A partial derivative is a slope of a slice",
+ "caption": "Hold y = 2 and f becomes the curve 2x² + 12x. At x = 1 it passes through (1, 14) with slope f_x(1, 2) = 2xy + 3y² = 16: the partial derivative is an ordinary gradient along the slice. (f_y(1, 2) = 13 is the same idea along y.)",
+ "alt": "The curve z = 2x² + 12x rising steeply, with its tangent line of slope 16 touching it at the point (1, 14).",
+ "description": [
+  "Fix y = 2: f(x, 2) = 2x² + 12x is a curve in one variable.",
+  "At x = 1 its height is f(1, 2) = 14.",
+  "Its slope there is 4x + 12 = 16, which equals f_x(1, 2).",
+  "The tangent line z = 14 + 16(x − 1) touches the curve at that point."
+ ],
+ "range": {
+  "x": [
+   -0.5,
+   2.5
+  ],
+  "y": [
+   -6,
+   50
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   10,
+   20,
+   30,
+   40
+  ]
+ ],
+ "grid": [
+  0.5,
+  10
+ ],
+ "height": [
+  380,
+  360
+ ],
+ "axisLabels": [
+  "x",
+  "f(x, 2)"
+ ],
+ "curves": [
+  {
+   "expr": "2*x^2+12*x",
+   "colour": "a1"
+  },
+  {
+   "expr": "16*x-2",
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2.2
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 14,
+   "label": "(1, 14), slope 16",
+   "colour": "a4",
+   "dx": 12,
+   "dy": 16
+  }
+ ],
+ "legend": [
+  [
+   "z = f(x, 2) = 2x² + 12x",
+   "a1"
+  ],
+  [
+   "tangent, slope f_x = 16",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  -0.4,
+  47
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x^2+12*x",
+   "x": 1,
+   "y": 14
+  },
+  {
+   "type": "slope",
+   "expr": "2*x^2+12*x",
+   "x": 1,
+   "value": 16
+  },
+  {
+   "type": "point",
+   "expr": "16*x-2",
+   "x": 1,
+   "y": 14,
+   "name": "the tangent passes through (1, 14)"
+  }
+ ],
+ "fromLesson": [
+  "f(x, y) = x"
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "gradify-nextjs-poc",
+  "private": true,
+  "description": "Proof of concept only: can Gradify run on Next.js static export without changing URLs, offline use, course notes or saved progress? See docs/NEXTJS-MIGRATION.md.",
+  "scripts": {
+    "build": "node link-public.mjs && rm -rf out && TS=1 next build && rm -f out/sw.js && node postbuild.mjs",
+    "verify": "node verify.cjs && node parity.cjs"
+  },
+  "dependencies": { "next": "16.4.6", "react": "19.3.1", "react-dom": "19.3.1" },
+  "devDependencies": { "typescript": "7.0.2", "@types/react": "19.3.0", "@types/node": "26.6.6" }
+}

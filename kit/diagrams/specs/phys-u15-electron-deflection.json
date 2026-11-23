@@ -1,0 +1,95 @@
+{
+ "id": "phys-u15-electron-deflection",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Electric fields",
+ "title": "An electron deflected by a uniform field",
+ "caption": "The electron crosses the field at constant speed 2 × 10⁷ m s⁻¹, taking t = 0.05/(2 × 10⁷) = 2.5 ns, while the field accelerates it sideways at a = eE/m = 3.5 × 10¹⁵ m s⁻². Its path is a parabola, y = ½at² ∝ x², and after 5 cm it has moved 1.1 cm sideways.",
+ "alt": "Graph of sideways deflection against distance travelled: a parabola reaching 1.1 cm at 5 cm.",
+ "description": [
+  "The horizontal axis is the distance travelled through the field in cm; the vertical axis is the sideways deflection in cm.",
+  "Constant speed along the field: x = vt. Uniform acceleration across it: a = eE/m = 3.5 × 10¹⁵ m s⁻².",
+  "So y = ½a(x/v)², a parabola. At x = 5 cm (t = 2.5 ns) the deflection is 1.1 cm."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   1.6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.5,
+   1,
+   1.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / cm",
+  "y / cm"
+ ],
+ "curves": [
+  {
+   "expr": "0.0439705002765445*x^2",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "y = ½a(x/v)²",
+   "labelAt": [
+    0.4,
+    0.9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 1.0992625069136126,
+   "label": "1.1 cm",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.0439705002765445*x^2",
+   "x": 5,
+   "y": 1.0992625069136126,
+   "name": "y = ½at² = 1.1 cm after 5 cm"
+  },
+  {
+   "type": "point",
+   "expr": "0.0439705002765445*x^2",
+   "x": 2.5,
+   "y": 0.27481562672840315,
+   "name": "the path is a parabola: half the distance, a quarter of the deflection"
+  }
+ ]
+}

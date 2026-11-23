@@ -1,0 +1,78 @@
+{
+ "id": "maths-u14-divisible-2-3-5",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u14",
+ "lesson": "Inclusion–Exclusion Principle",
+ "title": "Integers 1 to 100 divisible by 2, 3 or 5",
+ "caption": "Adding 50 + 33 + 20 counts overlaps twice, so subtract 16 + 10 + 6 and add back 3: 74. The remaining 26 numbers are divisible by none of 2, 3, 5.",
+ "alt": "Three overlapping circles for multiples of 2, 3 and 5 among 1 to 100, with region counts; 74 numbers lie inside at least one circle and 26 outside.",
+ "description": [
+  "Each circle holds the multiples of 2, 3 or 5.",
+  "Overlaps hold multiples of 6, 10, 15 and the centre multiples of 30.",
+  "Inclusion–exclusion gives 74; 26 lie outside all three."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "÷2"
+  },
+  {
+   "name": "B",
+   "label": "÷3"
+  },
+  {
+   "name": "C",
+   "label": "÷5"
+  }
+ ],
+ "regions": {
+  "ABC": 3,
+  "AB": 13,
+  "AC": 7,
+  "BC": 3,
+  "A": 27,
+  "B": 14,
+  "C": 7,
+  "": 26
+ },
+ "universe": {
+  "n": 100
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "A",
+   "n": 50
+  },
+  {
+   "type": "count",
+   "event": "B",
+   "n": 33
+  },
+  {
+   "type": "count",
+   "event": "C",
+   "n": 20
+  },
+  {
+   "type": "count",
+   "event": "A∩B",
+   "n": 16
+  },
+  {
+   "type": "count",
+   "event": "A∩B∩C",
+   "n": 3
+  },
+  {
+   "type": "count",
+   "event": "A∪B∪C",
+   "n": 74
+  },
+  {
+   "type": "total",
+   "n": 100
+  }
+ ]
+}

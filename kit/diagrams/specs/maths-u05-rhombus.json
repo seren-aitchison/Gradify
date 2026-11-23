@@ -1,0 +1,199 @@
+{
+ "id": "maths-u05-rhombus",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Quadrilaterals",
+ "title": "A rhombus with diagonals 10 cm and 24 cm",
+ "caption": "The diagonals bisect at right angles, cutting the rhombus into four right triangles with legs 5 and 12, so the side is 13 cm and the area ½ × 10 × 24 = 120 cm².",
+ "alt": "A rhombus with horizontal diagonal 24 cm and vertical diagonal 10 cm meeting at right angles, with side length 13 cm.",
+ "description": [
+  "The diagonals are 24 cm and 10 cm and cross at right angles at the centre.",
+  "Each quarter is a right triangle with legs 12 and 5.",
+  "The side is √(144 + 25) = 13 cm.",
+  "The area is ½ × 10 × 24 = 120 cm²."
+ ],
+ "points": {
+  "A": [
+   -12,
+   0
+  ],
+  "B": [
+   0,
+   -5
+  ],
+  "C": [
+   12,
+   0
+  ],
+  "D": [
+   0,
+   5
+  ],
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "colour": "a1",
+   "opacity": 0.12
+  }
+ ],
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  [
+   "B",
+   "C"
+  ],
+  [
+   "C",
+   "D"
+  ],
+  [
+   "D",
+   "A"
+  ],
+  {
+   "a": "A",
+   "b": "C",
+   "colour": "a2",
+   "dash": "6 4"
+  },
+  {
+   "a": "B",
+   "b": "D",
+   "colour": "a2",
+   "dash": "6 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "C",
+   "to": "D",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "D",
+   "value": 13,
+   "label": "13 cm",
+   "side": 1
+  },
+  {
+   "a": "O",
+   "b": "C",
+   "value": 12,
+   "label": "12",
+   "side": -1
+  },
+  {
+   "a": "O",
+   "b": "D",
+   "value": 5,
+   "label": "5",
+   "side": -1
+  }
+ ],
+ "ticks": [
+  {
+   "seg": [
+    "A",
+    "B"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "B",
+    "C"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "C",
+    "D"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "D",
+    "A"
+   ],
+   "n": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0,
+    -2
+   ],
+   "text": "120 cm²",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -15,
+   15
+  ],
+  "y": [
+   -7.5,
+   7.5
+  ]
+ },
+ "height": [
+  300,
+  240
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "value": 120,
+   "note": 0,
+   "name": "area = ½ × 10 × 24 = 120"
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "A",
+    "C"
+   ],
+   "b": [
+    "B",
+    "D"
+   ],
+   "name": "the diagonals cross at right angles"
+  }
+ ],
+ "fromLesson": [
+  "Side = √(25 + 144) = 13 cm"
+ ]
+}

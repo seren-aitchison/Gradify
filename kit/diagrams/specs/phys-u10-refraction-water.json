@@ -1,0 +1,55 @@
+{
+ "id": "phys-u10-refraction-water",
+ "renderer": "refraction",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Refraction",
+ "title": "Refraction into water, and back out",
+ "caption": "Entering water at 50°, light bends towards the normal: sin r = sin 50° / 1.33, so r = 35.2°. Going the other way, from water to air, any ray beyond the critical angle 48.8° is totally internally reflected.",
+ "alt": "Three ray diagrams: air to water at 50 degrees refracting to 35.2 degrees; water to air at 30 degrees refracting away from the normal; water to air at 60 degrees totally internally reflected.",
+ "description": [
+  "Air (n = 1) to water (n = 1.33) at 50°: r = sin⁻¹(sin 50° / 1.33) = 35.2°.",
+  "Water to air at 30°: the ray bends away from the normal, to 41.7°.",
+  "Critical angle sin⁻¹(1/1.33) = 48.8°; at 60° the ray cannot leave and reflects totally."
+ ],
+ "panels": [
+  {
+   "n1": 1,
+   "n2": 1.33,
+   "i": 50,
+   "media": [
+    "air",
+    "water"
+   ],
+   "expect": {
+    "r": 35.17
+   }
+  },
+  {
+   "n1": 1.33,
+   "n2": 1,
+   "i": 30,
+   "media": [
+    "water",
+    "air"
+   ],
+   "expect": {
+    "r": 41.68,
+    "critical": 48.75,
+    "tir": false
+   }
+  },
+  {
+   "n1": 1.33,
+   "n2": 1,
+   "i": 60,
+   "media": [
+    "water",
+    "air"
+   ],
+   "expect": {
+    "tir": true
+   }
+  }
+ ]
+}

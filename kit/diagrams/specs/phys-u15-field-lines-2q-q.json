@@ -1,0 +1,65 @@
+{
+ "id": "phys-u15-field-lines-2q-q",
+ "renderer": "field",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Electric field lines",
+ "title": "Field lines of +2q and −q",
+ "caption": "Line counts are proportional to charge: 20 lines leave +2q and 10 end on −q. The other 10 run off to infinity, as for a net charge of +q. Far away the field looks like that of a single +q. Between the charges the field points from + to −, and a null point, where the two fields cancel, lies on the axis beyond −q at 3.41 separations from +2q (2/s² = 1/(s − 1)² gives s = 1/(1 − 1/√2)).",
+ "alt": "Field lines from a charge +2q on the left and a charge −q on the right: twice as many lines leave +2q as end on −q, and the rest spread outwards; a null point lies beyond −q.",
+ "description": [
+  "Two point charges on a line: +2q on the left and −q on the right.",
+  "20 lines leave +2q; 10 of them curve round and end on −q.",
+  "The other 10 escape to infinity: the net charge is +q.",
+  "Beyond −q on the axis, at 3.41 separations from +2q, the two fields cancel exactly: a null point."
+ ],
+ "kind": "electric",
+ "range": {
+  "x": [
+   -2,
+   9
+  ],
+  "y": [
+   -3.5,
+   3.5
+  ]
+ },
+ "charges": [
+  {
+   "x": 0,
+   "y": 0,
+   "q": 2e-9,
+   "label": "+2q",
+   "start": 9
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "q": -1e-9,
+   "label": "−q"
+  }
+ ],
+ "linesPerUnit": 10000000000,
+ "claims": [
+  {
+   "type": "lines",
+   "charge": 0,
+   "count": 20,
+   "name": "20 lines leave +2q"
+  },
+  {
+   "type": "lines",
+   "charge": 1,
+   "count": 10,
+   "name": "10 lines end on −q"
+  },
+  {
+   "type": "null",
+   "at": [
+    6.828427124746192,
+    0
+   ],
+   "name": "the fields cancel at the null point beyond −q"
+  }
+ ]
+}

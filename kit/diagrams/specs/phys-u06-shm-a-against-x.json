@@ -1,0 +1,94 @@
+{
+ "id": "phys-u06-shm-a-against-x",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Simple harmonic motion",
+ "title": "SHM: acceleration proportional to displacement, and opposite",
+ "caption": "In SHM a = −ω²x: a straight line through the origin with gradient −ω². At 2.0 Hz, ω = 12.57 rad s⁻¹, so at the amplitude 0.05 m the acceleration is a_max = ω²A = 7.9 m s⁻² (and v_max = ωA = 0.63 m s⁻¹ at x = 0).",
+ "alt": "Acceleration against displacement: a straight line with negative gradient through the origin, from plus 7.9 at minus 0.05 metres to minus 7.9 at plus 0.05.",
+ "description": [
+  "ω = 2π × 2 = 12.57 rad s⁻¹; ω² = 157.9 s⁻².",
+  "The line a = −157.9x runs between x = ±0.05 m.",
+  "At x = +0.05 m, a = −7.9 m s⁻²; at x = −0.05 m, a = +7.9 m s⁻².",
+  "The minus sign means the acceleration always points back towards equilibrium."
+ ],
+ "range": {
+  "x": [
+   -0.06,
+   0.06
+  ],
+  "y": [
+   -9,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   -0.05,
+   -0.025,
+   0.025,
+   0.05
+  ],
+  [
+   -8,
+   -4,
+   4,
+   8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "displacement x / m",
+  "acceleration a / m s⁻²"
+ ],
+ "curves": [
+  {
+   "expr": "-157.91367041742973*x",
+   "domain": [
+    -0.05,
+    0.05
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.05,
+   "y": -7.8957,
+   "colour": "a2",
+   "label": "−7.9 m s⁻²",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 0
+  },
+  {
+   "x": -0.05,
+   "y": 7.8957,
+   "colour": "a2",
+   "label": "+7.9 m s⁻²",
+   "dx": 10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "-157.91367041742973*x",
+   "x": 0,
+   "value": -157.91367,
+   "name": "gradient −ω² = −157.9 s⁻²"
+  },
+  {
+   "type": "point",
+   "expr": "-157.91367041742973*x",
+   "x": 0.05,
+   "y": -7.895684,
+   "name": "a_max = ω²A = 7.9 m s⁻²"
+  }
+ ]
+}

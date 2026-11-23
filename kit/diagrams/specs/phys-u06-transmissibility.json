@@ -1,0 +1,94 @@
+{
+ "id": "phys-u06-transmissibility",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Mechanical vibration analysis",
+ "title": "Isolating a vibrating machine",
+ "caption": "A 1500 rpm machine shakes at 25 Hz; its mounts resonate at 5 Hz, a frequency ratio of 5. Above r = √2 the mounts transmit less force than they receive; at r = 5 only 1/(r² − 1) = 0.042 (4.2%) gets through.",
+ "alt": "Transmissibility against frequency ratio: a spike at 1, falling below 1 beyond the square root of 2, and down to about 0.04 at a ratio of 5.",
+ "description": [
+  "Forcing 25 Hz, natural 5 Hz: r = 5.",
+  "Transmissibility (undamped) = 1 / |1 − r²|: it blows up at r = 1 (resonance) and equals 1 at r = √2.",
+  "At r = 5: 1 / 24 = 0.0417."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "frequency ratio r = f / f₀",
+  "transmissibility"
+ ],
+ "curves": [
+  {
+   "expr": "1/abs(1-x^2)",
+   "colour": "a1",
+   "samples": 1200
+  }
+ ],
+ "marks": [
+  {
+   "y": 1
+  },
+  {
+   "x": 1.4142135623730951,
+   "to": 1,
+   "label": "√2"
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 0.04167,
+   "colour": "a2",
+   "label": "4.2% at r = 5",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/abs(1-x^2)",
+   "x": 5,
+   "y": 0.041667,
+   "name": "transmissibility 0.0417 at r = 5"
+  },
+  {
+   "type": "point",
+   "expr": "1/abs(1-x^2)",
+   "x": 1.41421356,
+   "y": 1,
+   "name": "isolation starts at r = √2"
+  }
+ ]
+}

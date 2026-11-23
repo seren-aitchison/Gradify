@@ -1,0 +1,78 @@
+{
+ "id": "maths-u13-least-squares-line",
+ "renderer": "scatter",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Linear Regression",
+ "title": "The least-squares line and R²",
+ "caption": "S_xy = 6 and S_xx = 10 give slope 0.6 and intercept 4 − 0.6 × 3 = 2.2. With r = 0.775, R² = r² = 0.6: the line explains 60% of the variation in y.",
+ "alt": "Scatter plot of (1, 2), (2, 4), (3, 5), (4, 4), (5, 5) with the line y = 2.2 + 0.6x through the mean point (3, 4).",
+ "description": [
+  "Slope = S_xy/S_xx = 6/10 = 0.6.",
+  "The line passes through the means (3, 4), so intercept = 2.2.",
+  "R² = 0.6."
+ ],
+ "points": [
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   4
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   5,
+   5
+  ]
+ ],
+ "line": {
+  "a": 2.2,
+  "b": 0.6
+ },
+ "r": 0.775,
+ "meanPoint": true,
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "lineLabel": "y = 2.2 + 0.6x",
+ "lineLabelAt": [
+  0.4,
+  3.2
+ ]
+}

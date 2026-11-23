@@ -1,0 +1,134 @@
+{
+ "id": "phys-u16-rc-step",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Transient responses",
+ "title": "Closing a switch on an uncharged capacitor",
+ "caption": "Just after closing, V_C = 0, so the whole 10 V is across the 1 kΩ and I = 10 mA. As the capacitor charges, V_C = 10(1 − e^{−t/τ}) rises and the current I = 10e^{−t/τ} mA falls, with τ = RC = 1 ms. After a long time I = 0 and V_C = 10 V. At t = τ, V_C = 6.32 V and I = 3.68 mA.",
+ "alt": "Graph with time in milliseconds: the capacitor voltage rising from 0 to 10 V and the current falling from 10 mA to 0, crossing at 5.00 at 0.69 ms.",
+ "description": [
+  "The horizontal axis is time in milliseconds; the vertical axis shows V_C in volts and I in milliamperes on the same numbers.",
+  "Just after closing: V_C = 0, I = V/R = 10 mA.",
+  "The time constant is τ = RC = 1 ms; V_C = 10(1 − e^{−t/τ}) rises and I = 10e^{−t/τ} falls.",
+  "After a long time: I = 0 and V_C = 10 V."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / ms",
+  "V_{C} / V,  I / mA"
+ ],
+ "curves": [
+  {
+   "expr": "10*(1-exp(-x))",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "V_{C}",
+   "labelAt": [
+    3.2,
+    9.2
+   ]
+  },
+  {
+   "expr": "10*exp(-x)",
+   "colour": "a2",
+   "width": 3.4,
+   "label": "I",
+   "labelAt": [
+    1.4,
+    4.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 10,
+   "colour": "a2",
+   "label": "10 mA",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 1,
+   "y": 6.321205588285577,
+   "label": "6.32 V at τ",
+   "dx": 10,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*exp(-x)",
+   "x": 0,
+   "y": 10,
+   "name": "I = V/R = 10 mA just after closing"
+  },
+  {
+   "type": "point",
+   "expr": "10*(1-exp(-x))",
+   "x": 0,
+   "y": 0,
+   "name": "V_C = 0 just after closing"
+  },
+  {
+   "type": "point",
+   "expr": "10*(1-exp(-x))",
+   "x": 20,
+   "y": 10,
+   "name": "after a long time V_C = 10 V"
+  },
+  {
+   "type": "value",
+   "expr": "10*exp(-x)",
+   "x": 20,
+   "between": [
+    0,
+    0.001
+   ],
+   "name": "after a long time I = 0"
+  },
+  {
+   "type": "point",
+   "expr": "10*(1-exp(-x))",
+   "x": 1,
+   "y": 6.321205588285577,
+   "name": "V_C = 6.32 V at t = τ"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "phys-u04-vertical-circle-bottom",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Circular motion",
+ "title": "At the bottom of a vertical circle",
+ "caption": "At the lowest point the string must supply the weight and the centripetal force: T = mg + mv²/r = 1.96 + 9.8 = 11.8 N. The net force, 9.8 N, points up to the centre.",
+ "alt": "Free-body diagram of the ball at the bottom: tension 11.8 newtons up, weight 1.96 newtons down, net 9.8 newtons up towards the centre.",
+ "description": [
+  "v at the top is √(gr) = 2.21 m s⁻¹, the slowest that keeps the string taut.",
+  "Falling 2r = 1.0 m adds 2g(2r): v² at the bottom = 4.9 + 19.6 = 24.5 m² s⁻².",
+  "T = 1.96 + 0.2 × 24.5 / 0.5 = 11.8 N."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "T",
+   "mag": 11.76,
+   "angle": 90,
+   "source": "the string"
+  },
+  {
+   "label": "W",
+   "mag": 1.96,
+   "angle": 270,
+   "source": "Earth's gravity"
+  }
+ ],
+ "resultant": {
+  "label": "net (centripetal)",
+  "mag": 9.8,
+  "angle": 90
+ },
+ "showResultant": true
+}

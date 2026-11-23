@@ -1,3 +1,33 @@
 // Physics unit 10 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u10-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u10.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u10-01", null, "what a wave carries is argued from everyday examples, carried in the text"],
+  ["u10-02", "wave", "phys-u10-slinky-compressions", "compressions 0.30 m apart on a slinky: λ, f and v"],
+  ["u10-03", "lab", "waves", "change frequency and see the wavelength change"],
+  ["u10-04", null, CALC],
+  ["u10-05", "graph", "phys-u10-spreading-loss", "80 dB at 2 m falling 6 dB per doubling to 60 dB at 20 m"],
+  ["u10-06", null, "a derivation from a dispersion relation, carried in the text"],
+  ["u10-07", "lab", "waves", "add two waves and watch them superpose"],
+  ["u10-08", "graph", "phys-u10-double-slit-fringes", "fringes 1.2 mm apart giving λ = 600 nm"],
+  ["u10-08", "lab", "interference", "change the slit spacing and wavelength"],
+  ["u10-09", "lab", "waves", "set two waves in and out of phase"],
+  ["u10-10", "wave", "phys-u10-microwave-standing", "nodes 6 cm apart: λ = 12 cm, f = 2.5 GHz"],
+  ["u10-10", "lab", "waves", "make standing waves"],
+  ["u10-11", null, CALC],
+  ["u10-12", "refraction", "phys-u10-refraction-water", "air to water at 50° (r = 35.2°), and total internal reflection from water"],
+  ["u10-13", "lab", "interference", "watch the diffraction pattern widen as the slit narrows"],
+  ["u10-14", null, "the rainbow's order is argued from n depending on wavelength; the refraction diagram in u10-12 shows the bending"],
+  ["u10-15", "graph", "phys-u10-malus-law", "½I₀cos²θ through two polarisers: I₀/8 at 60°"],
+  ["u10-16", null, CALC],
+  ["u10-17", "lab", "waves", "hear beats from two close frequencies"],
+  ["u10-18", "wave", "phys-u10-closed-pipe", "a 0.30 m closed pipe: odd harmonics at 286 Hz and 858 Hz"],
+  ["u10-18", "lab", "waves", "change the ends of the medium"],
+  ["u10-19", "lab", "waves", "find the resonant modes"],
+  ["u10-20", null, CALC],
+  ["u10-21", null, "why waves break is argued from speed depending on amplitude and depth"],
+  ["u10-22", null, CALC],
+  ["u10-23", null, CALC],
+  ["u10-24", null, "needs renderer: Huygens wavelets building a new wavefront round an obstacle"],
+  ["u10-25", "trend", "phys-u10-plucked-harmonics", "a string plucked at its middle has no even harmonics; odd ones fall as 1/n²"],
+];

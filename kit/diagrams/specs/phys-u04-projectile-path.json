@@ -1,0 +1,97 @@
+{
+ "id": "phys-u04-projectile-path",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Projectile motion",
+ "title": "A projectile's path",
+ "caption": "Kicked at 20 m s⁻¹ and 30°, the ball follows a parabola. Range R = u² sin 2θ / g = 35.3 m; maximum height H = u² sin²θ / 2g = 5.1 m, reached halfway.",
+ "alt": "Parabolic trajectory of height against horizontal distance, peaking at 5.1 metres at 17.7 metres and landing at 35.3 metres.",
+ "description": [
+  "Horizontal velocity is constant; vertical velocity changes at g, so the path is a parabola.",
+  "Range: 20² × sin 60° / 9.8 = 35.35 m.",
+  "Maximum height: (20 sin 30°)² / (2 × 9.8) = 5.1 m at x = 17.7 m.",
+  "No air resistance; with drag the path is shorter and steeper coming down."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "height": [
+  300,
+  280
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "horizontal distance / m",
+  "height / m"
+ ],
+ "curves": [
+  {
+   "expr": "x*0.5773502691896257-9.8*x^2/(2*300.00000000000006)",
+   "domain": [
+    0,
+    35.34797566467096
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 17.67398783233548,
+   "to": 5.102040816326529,
+   "label": "H = 5.1 m"
+  }
+ ],
+ "points": [
+  {
+   "x": 35.34797566467096,
+   "y": 0,
+   "colour": "a2",
+   "label": "R = 35.3 m",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x*0.5773502691896257-9.8*x^2/(2*300.00000000000006)",
+   "domain": [
+    0,
+    35.34797566467096
+   ],
+   "x": 17.674,
+   "y": 5.102,
+   "name": "maximum height 5.1 m at half the range"
+  },
+  {
+   "type": "point",
+   "expr": "x*0.5773502691896257-9.8*x^2/(2*300.00000000000006)",
+   "x": 35.347976,
+   "y": 0,
+   "name": "lands at R = 35.35 m"
+  }
+ ]
+}

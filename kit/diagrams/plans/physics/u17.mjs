@@ -1,3 +1,41 @@
-// Physics unit 17 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u17-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 17, Magnetism and Electromagnetism. Specs are written by scripts/diagrams/physics/u17.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const DEF = "a definition, list of properties or classification that a picture would not teach";
+const FORMULA = "a one-line formula whose worked example is a single substitution; a picture would add nothing";
+const THEORY = "formal theory: equations and statements, with no number or geometry in the lesson that a picture would check";
+export default [
+  ["u17-01", "scale", "phys-u17-field-sizes", "the lesson's comparison: Earth's 50 μT, a fridge magnet, a 1.5 T MRI (30 000 ×) up to a magnetar on one log scale"],
+  ["u17-01", "lab", "lorentz", "see a magnetic field bend a charged particle's path"],
+  ["u17-02", null, "needs renderer: a charged-particle path in a magnetic field (force perpendicular to v, in/out-of-page field) with F = qvB checked"],
+  ["u17-02", "lab", "lorentz", "vary v and B and watch the force"],
+  ["u17-03", "graph", "phys-u17-velocity-selector", "the velocity selector: qE flat against qvB rising, crossing at v = E/B = 2 × 10⁵ m s⁻¹"],
+  ["u17-03", "lab", "lorentz", "set E and B and find the undeflected speed"],
+  ["u17-04", null, "needs renderer: three-dimensional force on a wire (F = IL × B) and parallel-wire attraction with the current directions"],
+  ["u17-05", null, "needs renderer: a circular orbit of a charged particle in B (r = mv/qB for the 1 keV electron in 1 mT)"],
+  ["u17-05", "lab", "lorentz", "see the circle's radius change with speed and field"],
+  ["u17-06", null, "needs renderer: field of a current loop on its axis and Helmholtz coils (the lesson's centre-field example is one substitution)"],
+  ["u17-07", null, FORMULA],
+  ["u17-08", "graph", "phys-u17-coil-torque", "the 100-turn coil: τ = mB sin θ with m = 0.02 A m², peak 4 mN m at 90°"],
+  ["u17-09", "graph", "phys-u17-flux-linkage", "the 50-turn coil: NΦ = NBA cos θ, 0.1 Wb-turns at 60° to the normal"],
+  ["u17-10", null, FORMULA],
+  ["u17-11", "graph", "phys-u17-generator-emf", "the 200-turn generator coil: ε = NBAω sin ωt, peak 314 V, period 20 ms"],
+  ["u17-12", null, "needs renderer: a magnet approaching a coil with the induced current and pole directions"],
+  ["u17-13", "lab", "transients", "watch an inductor oppose a change in current"],
+  ["u17-13", null, FORMULA],
+  ["u17-14", "lab", "transients", "see an EMF induced by a changing current"],
+  ["u17-15", null, FORMULA],
+  ["u17-16", null, DEF],
+  ["u17-17", null, DEF],
+  ["u17-18", "graph", "phys-u17-curie-law", "the paramagnet: χ = C/T, 2 × 10⁻⁴ at 300 K rising tenfold to 2 × 10⁻³ at 30 K"],
+  ["u17-19", null, DEF],
+  ["u17-20", null, "needs renderer: a B–H hysteresis loop with coercivity, remanence and the enclosed area as the loss per cycle"],
+  ["u17-21", null, FORMULA],
+  ["u17-22", null, FORMULA],
+  ["u17-23", "graph", "phys-u17-motor-back-emf", "the 2 Ω motor on 24 V: current (24 − ε_b)/2 falls from 12 A at start to 3 A with 18 V back EMF"],
+  ["u17-24", null, THEORY],
+  ["u17-25", null, FORMULA],
+  ["u17-26", null, THEORY],
+  ["u17-27", null, THEORY],
+  ["u17-28", "graph", "phys-u17-skin-depth-copper", "the copper example: field amplitude e^{−z/δ} with δ = 65 μm at 1 MHz"],
+  ["u17-29", null, "needs renderer: the Poynting vector S = E × H round a battery–resistor circuit (field directions and flow into the resistor)"],
+];

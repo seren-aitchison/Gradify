@@ -1,0 +1,35 @@
+{
+ "id": "phys-u11-path-difference",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u11",
+ "lesson": "Beats and interference",
+ "title": "Half a wavelength apart: quiet",
+ "caption": "At 343 Hz, λ = 343/343 = 1 m. Your distances to the speakers differ by 0.5 m = λ/2, so the two waves arrive half a cycle apart and cancel: you hear a quiet spot.",
+ "alt": "Two equal waves half a wavelength out of step, adding to a flat line.",
+ "description": [
+  "λ = 1 m; path difference 0.5 m = ½λ, a phase difference of 180°.",
+  "The two waves arriving are equal and opposite at every moment, so they sum to zero.",
+  "A path difference of a whole number of wavelengths would give a loud spot."
+ ],
+ "kind": "superposition",
+ "xmax": 2,
+ "waves": [
+  {
+   "A": 1,
+   "lambda": 1,
+   "phase": 0,
+   "label": "from speaker 1"
+  },
+  {
+   "A": 1,
+   "lambda": 1,
+   "phase": 180,
+   "label": "from speaker 2"
+  }
+ ],
+ "claims": {
+  "amplitude": 0,
+  "interference": "destructive"
+ }
+}

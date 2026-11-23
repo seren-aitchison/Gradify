@@ -1,0 +1,38 @@
+{
+ "id": "phys-u04-lift-scales",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Inertial and non-inertial frames",
+ "title": "Weighing yourself in an accelerating lift",
+ "caption": "To accelerate upward at 2.0 m s⁻² the scales must push up harder than the weight: R = m(g + a) = 60 × 11.8 = 708 N, against a weight of 588 N. The scales read the push, 708 N, as if the mass were 72.2 kg.",
+ "alt": "Free-body diagram of a person in a lift: weight 588 newtons down, normal force 708 newtons up, net 120 newtons up.",
+ "description": [
+  "Weight: 60 × 9.8 = 588 N down.",
+  "Normal force from the scales: R, up.",
+  "Newton's second law upward: R − 588 = 60 × 2, so R = 708 N.",
+  "Net force 120 N up."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 588,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "R",
+   "mag": 708,
+   "angle": 90,
+   "source": "the scales"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 120,
+  "angle": 90
+ },
+ "showResultant": true
+}

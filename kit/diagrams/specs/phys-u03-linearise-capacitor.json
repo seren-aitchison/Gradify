@@ -1,0 +1,61 @@
+{
+ "id": "phys-u03-linearise-capacitor",
+ "renderer": "fit",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Linearisation of experimental relationships",
+ "title": "Linearising E = ½CV²",
+ "caption": "Plotting E against V² turns the curve into a straight line through the origin. Its gradient is C/2 = 0.235 mJ V⁻², so C = 2 × gradient = 470 μF.",
+ "alt": "Five points of stored energy in millijoules against voltage squared, on a straight line through the origin.",
+ "description": [
+  "V = 2, 4, 6, 8, 10 V, so V² = 4, 16, 36, 64, 100 V².",
+  "E = 0.97, 3.71, 8.54, 14.98, 23.55 mJ.",
+  "Least-squares gradient 0.2352 mJ V⁻², intercept 0 mJ, close to zero as the model predicts.",
+  "C = 2 × 0.2352 mJ V⁻² = 470 μF."
+ ],
+ "points": [
+  [
+   4,
+   0.97,
+   0.15
+  ],
+  [
+   16,
+   3.71,
+   0.15
+  ],
+  [
+   36,
+   8.54,
+   0.15
+  ],
+  [
+   64,
+   14.98,
+   0.15
+  ],
+  [
+   100,
+   23.55,
+   0.15
+  ]
+ ],
+ "axisLabels": [
+  "V² / V²",
+  "E / mJ"
+ ],
+ "xr": [
+  0,
+  108
+ ],
+ "yr": [
+  0,
+  26
+ ],
+ "fit": {
+  "m": 0.2352,
+  "c": 0.001,
+  "throughOrigin": true,
+  "withinErrors": true
+ }
+}

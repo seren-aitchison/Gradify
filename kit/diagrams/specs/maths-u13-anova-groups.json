@@ -1,0 +1,77 @@
+{
+ "id": "maths-u13-anova-groups",
+ "renderer": "boxplot",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Analysis of Variance (ANOVA)",
+ "title": "Three groups of three",
+ "caption": "Group means 5, 7 and 9 give a between-group sum of squares 24 on 2 df and a within-group sum of squares 6 on 6 df, so F = 12/1 = 12 > 5.14: the means differ.",
+ "alt": "Three box plots for groups A (4, 5, 6), B (6, 7, 8) and C (8, 9, 10), each of width 2, centred at 5, 7 and 9, touching at the ends.",
+ "description": [
+  "Each group has spread 2 (SS = 2 each, 6 in total within).",
+  "The group centres 5, 7, 9 are 2 apart, so the between-group SS is 3 × (4 + 0 + 4) = 24.",
+  "F = (24/2)/(6/6) = 12."
+ ],
+ "method": "halves",
+ "range": {
+  "x": [
+   2,
+   12
+  ]
+ },
+ "ticks": [
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "plots": [
+  {
+   "label": "A",
+   "data": [
+    4,
+    5,
+    6
+   ],
+   "summary": [
+    4,
+    4,
+    5,
+    6,
+    6
+   ]
+  },
+  {
+   "label": "B",
+   "data": [
+    6,
+    7,
+    8
+   ],
+   "summary": [
+    6,
+    6,
+    7,
+    8,
+    8
+   ]
+  },
+  {
+   "label": "C",
+   "data": [
+    8,
+    9,
+    10
+   ],
+   "summary": [
+    8,
+    8,
+    9,
+    10,
+    10
+   ]
+  }
+ ]
+}

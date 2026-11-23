@@ -1,0 +1,40 @@
+{
+ "id": "phys-u04-stopping-distance",
+ "renderer": "motion",
+ "course": "physics",
+ "unit": "u04",
+ "lesson": "Kinematic equations",
+ "title": "Stopping distance from v² = u² + 2as",
+ "caption": "Braking at 5.0 m s⁻² from 25 m s⁻¹, the car stops after 5 s. Setting v = 0 in v² = u² + 2as gives s = 25² ÷ (2 × 5) = 62.5 m: the area under the velocity line.",
+ "alt": "Position and velocity against time for a car braking from 25 metres per second to rest in 5 seconds, covering 62.5 metres.",
+ "description": [
+  "Velocity falls from 25 to 0 m s⁻¹ in 5 s.",
+  "Position rises along a curve that flattens as the car slows, reaching 62.5 m.",
+  "s = u² / 2|a| = 625 / 10 = 62.5 m."
+ ],
+ "u": 25,
+ "segments": [
+  {
+   "dt": 5,
+   "a": -5
+  }
+ ],
+ "show": [
+  "x",
+  "v"
+ ],
+ "claims": [
+  {
+   "type": "v",
+   "t": 5,
+   "value": 0,
+   "mark": false
+  },
+  {
+   "type": "displacement",
+   "from": 0,
+   "to": 5,
+   "value": 62.5
+  }
+ ]
+}

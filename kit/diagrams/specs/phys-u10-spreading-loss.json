@@ -1,0 +1,107 @@
+{
+ "id": "phys-u10-spreading-loss",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Wave propagation",
+ "title": "Sound level falling with distance",
+ "caption": "Spreading over a sphere, intensity falls as 1/r², so the level drops 20 log₁₀(r₂/r₁) dB: 6 dB for each doubling of distance. Ten times further, from 2 m to 20 m, the 80 dB falls by 20 dB to 60 dB.",
+ "alt": "Sound level in decibels against distance: falling quickly near the speaker and more slowly further away, from 80 at 2 metres to 60 at 20 metres.",
+ "description": [
+  "Level L = 80 − 20 log₁₀(r / 2 m) dB, for spherical spreading only.",
+  "At 4 m: 74 dB. At 8 m: 68 dB. Each doubling of distance costs 6 dB.",
+  "At 20 m: 60 dB."
+ ],
+ "range": {
+  "x": [
+   0,
+   24
+  ],
+  "y": [
+   50,
+   90
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   8,
+   12,
+   16,
+   20,
+   24
+  ],
+  [
+   55,
+   60,
+   65,
+   70,
+   75,
+   80,
+   85
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance / m",
+  "sound level / dB"
+ ],
+ "curves": [
+  {
+   "expr": "80-20*log(x/2)/log(10)",
+   "domain": [
+    1.2,
+    24
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 80,
+   "colour": "a2",
+   "label": "80 dB at 2 m",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 4,
+   "y": 73.9794,
+   "colour": "a4",
+   "label": "74 dB at 4 m",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 20,
+   "y": 60,
+   "colour": "a2",
+   "label": "60 dB at 20 m",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "80-20*log(x/2)/log(10)",
+   "x": 20,
+   "y": 60,
+   "name": "20 dB lower ten times further away"
+  },
+  {
+   "type": "point",
+   "expr": "80-20*log(x/2)/log(10)",
+   "x": 4,
+   "y": 73.9794,
+   "name": "about 6 dB lower at twice the distance"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "id": "phys-u03-thermistor-calibration",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u03",
+ "lesson": "Calibration curves",
+ "title": "Reading a calibration curve",
+ "caption": "Between the calibration points 2.50 kΩ at 20.0 °C and 2.00 kΩ at 25.0 °C the curve is close to a straight line, with slope -0.10 kΩ per °C. A reading of 2.20 kΩ is 23.0 °C.",
+ "alt": "Resistance against temperature: a falling straight segment between two calibration points, with the reading 2.20 kilohms traced across to 23.0 degrees.",
+ "description": [
+  "Calibration points: (20.0 °C, 2.50 kΩ) and (25.0 °C, 2.00 kΩ).",
+  "Slope = (2.00 − 2.50) / (25 − 20) = -0.10 kΩ per °C.",
+  "Reading 2.20 kΩ: T = 20.0 + (2.50 − 2.20) / 0.10 = 23.0 °C.",
+  "Over a wider range a thermistor is far from linear: ln R against 1/T is the curve to fit."
+ ],
+ "range": {
+  "x": [
+   18,
+   27
+  ],
+  "y": [
+   1.8,
+   2.7
+  ]
+ },
+ "ticks": [
+  [
+   18,
+   20,
+   22,
+   24,
+   26
+  ],
+  [
+   1.8,
+   2,
+   2.2,
+   2.4,
+   2.6
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "temperature / °C",
+  "resistance / kΩ"
+ ],
+ "curves": [
+  {
+   "expr": "2.5+(-0.1)*(x-20)",
+   "colour": "a1",
+   "domain": [
+    20,
+    25
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 2.2,
+   "to": 23
+  },
+  {
+   "x": 23,
+   "to": 2.2
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 2.5,
+   "colour": "a4",
+   "label": "calibration",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 25,
+   "y": 2,
+   "colour": "a4"
+  },
+  {
+   "x": 23,
+   "y": 2.2,
+   "colour": "a2",
+   "label": "23.0 °C",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2.5+(-0.1)*(x-20)",
+   "x": 25,
+   "y": 2,
+   "name": "the line passes through both calibration points"
+  },
+  {
+   "type": "point",
+   "expr": "2.5+(-0.1)*(x-20)",
+   "x": 23,
+   "y": 2.2,
+   "name": "2.2 kΩ corresponds to 23.0 °C"
+  },
+  {
+   "type": "slope",
+   "expr": "2.5+(-0.1)*(x-20)",
+   "x": 22,
+   "value": -0.1,
+   "name": "slope −0.10 kΩ per °C"
+  }
+ ]
+}

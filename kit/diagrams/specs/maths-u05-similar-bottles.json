@@ -1,0 +1,152 @@
+{
+ "id": "maths-u05-similar-bottles",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Congruence and Similarity",
+ "title": "Similar bottles: lengths ×1.5, volume ×3.375",
+ "caption": "The bottles are similar with length scale factor 1.5. Areas scale by 1.5² and volumes by 1.5³ = 3.375, so 400 ml becomes 400 × 3.375 = 1,350 ml.",
+ "alt": "Two similar rectangles, 12 tall and 18 tall, standing for the bottles, with length scale factor 1.5.",
+ "description": [
+  "The heights are 12 cm and 18 cm, so the length scale factor is 18/12 = 1.5.",
+  "Volumes scale by the cube of the length scale factor: 1.5³ = 3.375.",
+  "The larger bottle holds 400 × 3.375 = 1,350 ml."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   4,
+   0
+  ],
+  "C": [
+   4,
+   12
+  ],
+  "D": [
+   0,
+   12
+  ],
+  "E": [
+   7,
+   0
+  ],
+  "F": [
+   13,
+   0
+  ],
+  "G": [
+   13,
+   18
+  ],
+  "H": [
+   7,
+   18
+  ]
+ },
+ "hide": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "colour": "a1",
+   "opacity": 0.14
+  },
+  {
+   "pts": [
+    "E",
+    "F",
+    "G",
+    "H"
+   ],
+   "colour": "a2",
+   "opacity": 0.14
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "D",
+   "value": 12,
+   "label": "12 cm",
+   "side": -1
+  },
+  {
+   "a": "F",
+   "b": "G",
+   "value": 18,
+   "label": "18 cm"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    2,
+    6
+   ],
+   "text": "400 ml",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    10,
+    9
+   ],
+   "text": "1,350 ml",
+   "colour": "a2",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -3,
+   15.5
+  ],
+  "y": [
+   -1.6,
+   19.5
+  ]
+ },
+ "height": [
+  350,
+  340
+ ],
+ "checks": [
+  {
+   "type": "similar",
+   "a": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "b": [
+    "E",
+    "F",
+    "G",
+    "H"
+   ],
+   "k": 1.5,
+   "name": "the larger bottle is the smaller scaled by 1.5"
+  }
+ ],
+ "fromLesson": [
+  "400 × 3.375 = 1,350 ml"
+ ]
+}

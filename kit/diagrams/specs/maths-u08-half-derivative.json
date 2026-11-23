@@ -1,0 +1,114 @@
+{
+ "id": "maths-u08-half-derivative",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u08",
+ "lesson": "Fractional Calculus",
+ "title": "Half-way between x and 1",
+ "caption": "D^½ x = 2√(x/π) sits between f = x and its ordinary derivative 1: it is 2 at x = π. Applying the half-derivative again gives 1, so two half-steps make one whole derivative.",
+ "alt": "Three graphs for x between 0 and 4: the line y = x, the square-root curve y = 2√(x/π) rising from 0, and the horizontal line y = 1.",
+ "description": [
+  "f(x) = x is the line through the origin.",
+  "D^½ f = 2√(x/π) is the curve between them; at x = π it equals 2.",
+  "D^½ applied to that curve gives the constant 1 = f′."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   4.4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  360,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "colour": "a1"
+  },
+  {
+   "expr": "2*sqrt(x/3.14159265358979)",
+   "colour": "a2",
+   "samples": 400
+  },
+  {
+   "expr": "1+0*x",
+   "colour": "a4",
+   "dash": "6 5"
+  }
+ ],
+ "points": [
+  {
+   "x": 3.141592653589793,
+   "y": 2,
+   "label": "(π, 2)",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 18
+  }
+ ],
+ "legend": [
+  [
+   "f = x",
+   "a1"
+  ],
+  [
+   "D^½ f = 2√(x/π)",
+   "a2"
+  ],
+  [
+   "D^½ D^½ f = 1",
+   "a4"
+  ]
+ ],
+ "legendData": [
+  0.15,
+  4.25
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*sqrt(x/3.14159265358979)",
+   "x": 3.141592653589793,
+   "y": 2,
+   "name": "D^½ x = 2√(x/π) equals 2 at x = π"
+  },
+  {
+   "type": "point",
+   "expr": "1+0*x",
+   "x": 2,
+   "y": 1,
+   "name": "D^½ D^½ x = 1 = d/dx of x"
+  }
+ ],
+ "fromLesson": [
+  "half-derivative"
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "phys-u10-double-slit-fringes",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Interference",
+ "title": "Double-slit fringes",
+ "caption": "Bright fringes form where the path difference is a whole number of wavelengths, 1.2 mm apart on the screen. λ = d × fringe spacing / D = 0.5 mm × 1.2 mm / 1.0 m = 600 nm.",
+ "alt": "Intensity across the screen: equally spaced bright peaks every 1.2 millimetres with dark minima halfway between.",
+ "description": [
+  "Intensity on the screen against position, measured from the central bright fringe.",
+  "Bright fringes at 0, ±1.2, ±2.4 mm; dark fringes halfway, at ±0.6, ±1.8 mm.",
+  "λ = (0.5 × 10⁻³ m × 1.2 × 10⁻³ m) / 1 m = 600 nm.",
+  "Real fringes fade away from the centre because each slit also diffracts; that envelope is left out here."
+ ],
+ "range": {
+  "x": [
+   -3.6,
+   3.6
+  ],
+  "y": [
+   0,
+   1.25
+  ]
+ },
+ "ticks": [
+  [
+   -3.6,
+   -2.4,
+   -1.2,
+   0,
+   1.2,
+   2.4,
+   3.6
+  ],
+  []
+ ],
+ "height": [
+  300,
+  280
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "position on screen / mm",
+  "intensity"
+ ],
+ "curves": [
+  {
+   "expr": "cos(3.14159265*x/1.2)^2",
+   "colour": "a1",
+   "samples": 600
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    1.1
+   ],
+   "to": [
+    1.2,
+    1.1
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "1.2 mm",
+   "labelAt": [
+    0.6,
+    1.19
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/1.2)^2",
+   "x": 1.2,
+   "y": 1,
+   "name": "the next bright fringe is 1.2 mm from the centre"
+  },
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/1.2)^2",
+   "x": 0.6,
+   "y": 0,
+   "name": "dark halfway between"
+  },
+  {
+   "type": "point",
+   "expr": "0.0005*0.0012/1*1000000000+0*x",
+   "x": 0,
+   "y": 600,
+   "name": "λ = dy/D = 600 nm"
+  }
+ ]
+}

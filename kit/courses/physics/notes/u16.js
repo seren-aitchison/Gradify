@@ -55,6 +55,7 @@ P: Measure V across and I through the component at several values, plot V agains
 X: A resistor has 4.5 V across it and 0.30 A through it. R? What current at 9.0 V?
 > R = 15 Ω
 > I = 9.0/15 = 0.60 A
+D: phys-u16-ohm-iv
 !: V = IR defines resistance for any component at a point; Ohm's law is the claim that R stays constant.
 P: **Investigate with the lab.** Set up a single resistor and change the voltage, recording the current each time. Check that V/I stays constant.
 IX: circuits
@@ -173,6 +174,7 @@ E: P_{load} = ε^{2}R/(R + r)^{2}, maximum when R = r
 X: A cell (ε = 1.5 V, r = 0.5 Ω) drives a 2.5 Ω lamp. Current and terminal voltage?
 > I = 1.5/3.0 = 0.5 A
 > V = 1.5 − 0.25 = 1.25 V
+D: phys-u16-terminal-voltage
 !: A battery's internal resistance rises as it ages and as it gets cold, which is why old batteries fail under load though they read the full voltage unloaded.
 P: **Investigate with the lab.** Increase the internal resistance and see the terminal voltage drop as the current rises. Then find the load that takes the most power: it matches r.
 IX: circuits
@@ -243,6 +245,7 @@ P: Record V against time during discharge; plot ln V against t. The gradient is 
 X: A 470 μF capacitor discharges through 10 kΩ from 9 V. Voltage after 10 s?
 > τ = 4.7 s
 > V = 9e^{−10/4.7} = 1.07 V
+D: phys-u16-rc-discharge
 !: The current during charging is largest at the start, not the end, and it falls to zero as the capacitor fills.
 P: **Investigate with the lab.** Charge the capacitor and stop the clock at one time constant (63%). Then discharge it and find the half-life: τ ln 2.
 IX: transients
@@ -271,6 +274,7 @@ H: Uses
 - Integrator and differentiator circuits (with op-amps).
 X: Design an RC low-pass filter with f_{c} = 1 kHz using C = 100 nF.
 > R = 1/(2πf_{c}C) = 1/(2π × 1000 × 10^{-7}) = 1.6 kΩ
+D: phys-u16-rc-lowpass
 !: A high-pass RC filter blocks DC completely; an RC low-pass passes it.
 P: **Investigate with the lab.** Double R and see the charging take twice as long. Then double C instead and compare.
 IX: transients
@@ -298,6 +302,7 @@ E: X_{L} = ωL
 X: L = 0.5 H, R = 10 Ω, ε = 12 V. Time constant and final current? Current after 0.05 s?
 > τ = 0.05 s; I_{max} = 1.2 A
 > I = 1.2(1 − e^{−1}) = 0.76 A
+D: phys-u16-rl-growth
 !: Inductors resist changes in current, not current itself; a steady DC current flows through an ideal inductor with no voltage across it.
 P: **Investigate with the lab.** Switch to the inductor and watch the current rise to E/R while the inductor's voltage dies away.
 IX: transients
@@ -347,6 +352,7 @@ H: Practical examples
 X: A switch connects 10 V to an uncharged 1 μF capacitor through 1 kΩ. Current just after closing? After a long time?
 > Just after: V_{C} = 0, so I = 10/1000 = 10 mA
 > Long after: I = 0, V_{C} = 10 V
+D: phys-u16-rc-step
 !: Capacitor voltage and inductor current are continuous; capacitor current and inductor voltage can jump.
 P: **Investigate with the lab.** Compare the RC charging curve and the RL current curve: both approach their final values exponentially with a time constant.
 IX: transients
@@ -370,6 +376,7 @@ H: Three-phase power
 X: Mains peak and period?
 > V_{0} = 230√2 = 325 V
 > T = 1/50 = 20 ms
+D: phys-u16-mains-waveform
 !: An oscilloscope shows peak values; meters show rms values. The "230 V" of mains is rms.
 Q: Why is AC used for power distribution? | Transformers can efficiently step its voltage up and down.
 Q: What is three-phase power? | Three AC supplies 120° apart, giving constant total power and efficient motors.
@@ -392,6 +399,7 @@ P: When current and voltage aren't in phase (inductive loads like motors), part 
 X: A 230 V rms supply feeds a 46 Ω heater. I_{rms}, peak current, average power?
 > I_{rms} = 5 A; I_{0} = 7.07 A
 > P = 230 × 5 = 1150 W
+D: phys-u16-heater-power
 !: Average voltage of a sine over a cycle is zero; rms is the meaningful measure for power.
 Q: Define the rms value of an AC voltage. | The square root of the mean of the squared voltage; the DC equivalent for heating.
 Q: What is the power factor? | cos φ, the fraction of apparent power that's real power.
@@ -413,6 +421,7 @@ E: V_{rms} = I_{rms}|Z|
 X: R = 30 Ω, X_{L} = 80 Ω, X_{C} = 40 Ω in series at 100 V rms. Current and phase?
 > |Z| = √(900 + 1600) = 50 Ω
 > I = 2 A; φ = arctan(40/30) = 53°, current lagging
+D: phys-u16-impedance-triangle
 !: Impedances don't add as plain numbers unless they're in phase; use complex numbers or phasors.
 Q: What is the reactance of a capacitor? | X_{C} = 1/(ωC).
 Q: Which component makes current lead the voltage? | A capacitor.
@@ -434,6 +443,7 @@ H: Parallel circuits
 X: V_{R} = 6 V, V_{L} = 12 V, V_{C} = 4 V in a series circuit. Supply voltage?
 > V = √(36 + 64) = 10 V
 > Note V_{L} and V_{C} individually can exceed the supply voltage
+D: phys-u16-series-phasors
 !: Individual component voltages in an AC circuit can exceed the supply; they don't add arithmetically.
 Q: What is a phasor? | A complex number (rotating vector) representing a sinusoid's amplitude and phase.
 Q: In a series circuit, which phasor is used as the reference? | The current, since it's common to all components.
@@ -591,6 +601,7 @@ H: Uses
 X: A 12 V source with a 4 Ω and 6 Ω potential divider; output across the 6 Ω. Thevenin equivalent?
 > V_{Th} = 12 × 6/10 = 7.2 V
 > R_{Th} = 4 ∥ 6 = 2.4 Ω
+D: phys-u16-thevenin-load-line
 !: Thevenin equivalents only describe behaviour at the terminals; they don't tell you the power dissipated inside the original network.
 Q: How do you find the Thevenin resistance? | Turn off all independent sources and find the resistance between the terminals (or V_{oc}/I_{sc}).
 Q: How are Thevenin and Norton equivalents related? | Same resistance; V_{Th} = I_{N}R_{Th}.

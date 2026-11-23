@@ -1,0 +1,63 @@
+{
+ "id": "maths-u13-tea-hypergeometric",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Fisher's Exact Test",
+ "title": "The tea-tasting experiment",
+ "caption": "With 4 milk-first cups among 8, a guesser chooses 4 cups in one of C(8, 4) = 70 ways. 3 right can happen in 16 ways and 4 right in 1, so P(at least 3) = 17/70 ≈ 0.243.",
+ "alt": "Bar chart of the 70 equally likely choices by the number of correct cups: 1, 16, 36, 16, 1 for 0 to 4; the bars for 3 and 4 are highlighted.",
+ "description": [
+  "A guesser picks which 4 of the 8 cups were milk-first: 70 ways.",
+  "Exactly k right: C(4, k) × C(4, 4 − k) = 1, 16, 36, 16, 1.",
+  "At least 3 right: 16 + 1 = 17 of 70."
+ ],
+ "categories": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "values": [
+  1,
+  16,
+  36,
+  16,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   40
+  ]
+ },
+ "ticks": [
+  10,
+  20,
+  30,
+  40
+ ],
+ "axisLabels": [
+  "cups right",
+  "ways (of 70)"
+ ],
+ "highlight": [
+  3,
+  4
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 70
+  },
+  {
+   "type": "mode",
+   "value": 2
+  },
+  {
+   "type": "mean",
+   "value": 2
+  }
+ ]
+}
