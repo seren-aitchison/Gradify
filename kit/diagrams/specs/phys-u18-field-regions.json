@@ -1,0 +1,68 @@
+{
+ "id": "phys-u18-field-regions",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Near-field and far-field behaviour",
+ "title": "Field regions of a 1 m antenna at 10 GHz",
+ "caption": "For λ = c/f = 3 cm and antenna size D = 1 m the reactive near field ends at λ/2π = 4.8 mm, the radiating near field extends to 2D²/λ = 67 m, and beyond that the far field has plane-wave behaviour with intensity ∝ 1/r². Antenna patterns must be measured beyond 67 m.",
+ "alt": "A logarithmic distance scale from 1 millimetre to 1 kilometre with three regions: the reactive near field out to 4.8 mm, the radiating near field out to 67 m, and the far field beyond.",
+ "description": [
+  "A horizontal logarithmic scale of distance from the antenna in metres.",
+  "λ = 3 × 10⁸/10¹⁰ = 3 cm. The reactive near field, where fields store energy and E and B are not in the ratio c, ends at λ/2π = 4.8 mm.",
+  "The radiating near field extends to the far-field distance 2D²/λ = 2 × 1²/0.03 = 67 m.",
+  "Beyond that is the far field: plane-wave-like, E/B = c, intensity falling as 1/r²."
+ ],
+ "quantity": "distance from the antenna",
+ "units": "m",
+ "min": -3,
+ "max": 3,
+ "regions": [
+  {
+   "label": "reactive near field",
+   "from": 0.001,
+   "to": 0.00477464829275686,
+   "colour": "a5"
+  },
+  {
+   "label": "radiating near field",
+   "from": 0.00477464829275686,
+   "to": 66.66666666666667,
+   "colour": "a4"
+  },
+  {
+   "label": "far field",
+   "from": 66.66666666666667,
+   "to": 1000,
+   "colour": "a1"
+  }
+ ],
+ "markers": [
+  {
+   "label": "λ/2π = 4.8 mm",
+   "value": 0.00477464829275686
+  },
+  {
+   "label": "λ = 3 cm",
+   "value": 0.03
+  },
+  {
+   "label": "D = 1 m",
+   "value": 1
+  },
+  {
+   "label": "2D²/λ = 67 m",
+   "value": 66.66666666666667
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "D = 1 m",
+   "b": "2D²/λ = 67 m",
+   "value": 1.82,
+   "tol": 0.05,
+   "name": "the far-field distance is 67 times the antenna size"
+  }
+ ]
+}

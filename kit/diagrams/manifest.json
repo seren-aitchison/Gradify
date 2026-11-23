@@ -57355,5 +57355,906 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u18-beer-lambert": {
+  "title": "A solution that absorbs half the light per centimetre",
+  "caption": "Each centimetre of the solution passes half of the light that reaches it, so the fraction through x cm is I/I₀ = 0.5^x = e^{−αx} with α = ln 2 = 0.693 cm⁻¹. After 3 cm: 0.5³ = 0.125 = 12.5%.",
+  "alt": "Graph of transmitted fraction against path length from 0 to 4 centimetres: an exponential decay through 0.5 at 1 cm, 0.25 at 2 cm and 0.125 at 3 cm.",
+  "description": [
+   "The horizontal axis is the path length in centimetres; the vertical axis is the fraction of light transmitted.",
+   "The curve is e^{−αx} with α = ln 2 per cm, equal to 0.5^x.",
+   "At 1 cm the fraction is 0.5, at 2 cm 0.25 and at 3 cm 0.5³ = 0.125: 12.5% gets through."
+  ],
+  "course": "physics",
+  "lesson": "Absorption",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Absorption"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 cm passes 50%",
+    "ok": true,
+    "detail": "y(1) = 0.5"
+   },
+   {
+    "name": "3 cm passes 0.5³ = 12.5%",
+    "ok": true,
+    "detail": "y(3) = 0.125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-field-regions": {
+  "title": "Field regions of a 1 m antenna at 10 GHz",
+  "caption": "For λ = c/f = 3 cm and antenna size D = 1 m the reactive near field ends at λ/2π = 4.8 mm, the radiating near field extends to 2D²/λ = 67 m, and beyond that the far field has plane-wave behaviour with intensity ∝ 1/r². Antenna patterns must be measured beyond 67 m.",
+  "alt": "A logarithmic distance scale from 1 millimetre to 1 kilometre with three regions: the reactive near field out to 4.8 mm, the radiating near field out to 67 m, and the far field beyond.",
+  "description": [
+   "A horizontal logarithmic scale of distance from the antenna in metres.",
+   "λ = 3 × 10⁸/10¹⁰ = 3 cm. The reactive near field, where fields store energy and E and B are not in the ratio c, ends at λ/2π = 4.8 mm.",
+   "The radiating near field extends to the far-field distance 2D²/λ = 2 × 1²/0.03 = 67 m.",
+   "Beyond that is the far field: plane-wave-like, E/B = c, intensity falling as 1/r²."
+  ],
+  "course": "physics",
+  "lesson": "Near-field and far-field behaviour",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Near-field and far-field behaviour"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the far-field distance is 67 times the antenna size",
+    "ok": true,
+    "detail": "1.82 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u18-gamma-lead": {
+  "title": "Gamma rays through lead",
+  "caption": "With μ = 0.77 cm⁻¹ the transmitted fraction is I/I₀ = e^{−μx}. After 3 cm it is e^{−2.31} = 0.10: about 10% gets through. Every 0.90 cm (the half-value thickness ln 2/μ) halves the beam, in line with the lesson's ~9 mm for 1 MeV.",
+  "alt": "Graph of transmitted fraction against thickness of lead from 0 to 6 cm: an exponential fall passing 0.5 at 0.90 cm and 0.10 at 3 cm.",
+  "description": [
+   "The horizontal axis is the thickness of lead in centimetres; the vertical axis is the fraction of the beam transmitted.",
+   "The curve is e^{−0.77x}, from I = I₀e^{−μx} with μ = 0.77 cm⁻¹.",
+   "It reaches 0.5 at x = ln 2/μ = 0.90 cm.",
+   "At 3 cm the exponent is 2.31 and the fraction is 0.10, about 10%."
+  ],
+  "course": "physics",
+  "lesson": "Gamma rays",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Gamma rays"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3 cm of lead transmits e^{−2.31} = 0.10",
+    "ok": true,
+    "detail": "y(3) = 0.0993"
+   },
+   {
+    "name": "the half-value thickness is ln 2/μ = 0.90 cm",
+    "ok": true,
+    "detail": "y(0.9001911435843445) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-lens-transmission": {
+  "title": "Light left after many uncoated surfaces",
+  "caption": "Each uncoated air–glass surface transmits 96%, so N surfaces transmit 0.96^N. For the lens with 10 surfaces that is 0.96¹⁰ = 0.66: about 34% of the light is lost, much of it as stray reflections that cause flare, which is why lenses are coated.",
+  "alt": "Graph of transmitted fraction against the number of air–glass surfaces from 0 to 12: a decaying curve passing 0.66 at 10 surfaces.",
+  "description": [
+   "The horizontal axis is the number of uncoated air–glass surfaces N; the vertical axis is the fraction of light transmitted.",
+   "Each surface transmits 96%, so the fraction is 0.96^N, drawn as a smooth curve.",
+   "At N = 10 it is 0.96¹⁰ = 0.66, so 34% is lost."
+  ],
+  "course": "physics",
+  "lesson": "Reflection and transmission",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Reflection and transmission"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ten surfaces transmit 0.96^10 = 0.66",
+    "ok": true,
+    "detail": "y(10) = 0.6648"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-person-thermal": {
+  "title": "Thermal emission of a person at 310 K",
+  "caption": "A body at 310 K radiates a smooth spectrum that peaks at λ = 2.9 × 10⁻³ m K/310 K = 9.3 μm, in the thermal infrared (8–15 μm), far beyond the red end of the visible band (0.7 μm). That is why thermal cameras work at room temperature and the person is invisible to the eye in the dark.",
+  "alt": "Graph of relative emitted power against wavelength from 2 to 40 micrometres: a skewed peak at 9.3 micrometres, with the visible range far to the left of the picture.",
+  "description": [
+   "The horizontal axis is wavelength in micrometres; the vertical axis is the emitted power per unit wavelength relative to its peak.",
+   "The curve is Planck's law for T = 310 K. It rises steeply from the short-wavelength side, peaks at 9.3 μm (Wien: λ_max = 2.9 × 10⁻³/310) and falls slowly on the long side.",
+   "The peak lies in the thermal infrared band 8–15 μm; visible light (0.4–0.7 μm) is to the left of the drawn range, where the emission is negligible."
+  ],
+  "course": "physics",
+  "lesson": "Infrared radiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Infrared radiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve peaks at 9.3 μm (Wien's law at 310 K)",
+    "ok": true,
+    "detail": "found (9.347, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-plasma-dispersion": {
+  "title": "Waves in the ionosphere plasma",
+  "caption": "In a plasma ω² = ω_p² + c²k², so for a wave of frequency f the wavenumber is real only above the plasma frequency. For the ionosphere (n = 10¹² m⁻³) f_p ≈ 9√n Hz = 9 MHz: the curve starts at 9 MHz and climbs towards the vacuum line f = ck/2π. Shortwave below 9 MHz has no propagating solution and reflects; FM at 100 MHz is far above the curve's start and passes through.",
+  "alt": "Graph of frequency in megahertz against ck/2π in megahertz: a hyperbola starting at 9 MHz when k is zero and approaching the straight line f = ck/2π, which is the vacuum relation.",
+  "description": [
+   "The horizontal axis is ck/2π in megahertz (the frequency a wave of that wavenumber would have in vacuum); the vertical axis is the frequency f in megahertz.",
+   "The plasma curve is f = √(f_p² + (ck/2π)²) with f_p = 9 MHz, from the lesson's ionosphere example.",
+   "At k = 0 it starts at f_p = 9 MHz: no wave of lower frequency propagates, so shortwave radio below this reflects. At ck/2π = 12 MHz, f = 15 MHz.",
+   "Far above f_p the curve approaches the dashed vacuum line f = ck/2π, so VHF and FM waves pass through."
+  ],
+  "course": "physics",
+  "lesson": "Electromagnetic wave equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Electromagnetic wave equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve starts at the plasma frequency, 9 MHz, at k = 0",
+    "ok": true,
+    "detail": "y(0) = 9"
+   },
+   {
+    "name": "ω² = ω_p² + c²k²: 15 MHz at ck/2π = 12 MHz",
+    "ok": true,
+    "detail": "y(12) = 15"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-rayleigh": {
+  "title": "Rayleigh scattering across the visible",
+  "caption": "Scattering by air molecules goes as 1/λ⁴. Taking 700 nm light as 1, 450 nm light is scattered (700/450)⁴ = 5.9 times as strongly and violet (400 nm) over nine times, so scattered blue fills the sky while the unscattered red and orange remain at sunset.",
+  "alt": "Graph of relative scattering against wavelength from 400 to 700 nanometres: a curve falling from about 9.4 at 400 nm through 5.9 at 450 nm to 1 at 700 nm.",
+  "description": [
+   "The horizontal axis is wavelength in nanometres across the visible band; the vertical axis is the scattered intensity relative to that of 700 nm light.",
+   "The curve is (700/λ)⁴, from the Rayleigh law I ∝ 1/λ⁴.",
+   "At 450 nm it is (700/450)⁴ = 5.9; at 700 nm it is 1; at 400 nm it is 9.4.",
+   "Short wavelengths are scattered out of the beam far more than long ones."
+  ],
+  "course": "physics",
+  "lesson": "Visible light",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Visible light"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "450 nm is scattered 5.9 times as strongly as 700 nm",
+    "ok": true,
+    "detail": "y(450) = 5.8552"
+   },
+   {
+    "name": "the reference, 700 nm, is 1",
+    "ok": true,
+    "detail": "y(700) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-reflectance-n": {
+  "title": "Reflection at an air–material surface",
+  "caption": "At normal incidence R = ((n₁ − n₂)/(n₁ + n₂))². Air to water reflects 2%, to glass 4%, to diamond 17% (its sparkle) and to silicon 31%, rising steeply with the refractive index.",
+  "alt": "Graph of the fraction reflected against refractive index from 1 to 3.8: a rising curve through water 2%, glass 4%, diamond 17% and silicon 31%.",
+  "description": [
+   "The horizontal axis is the refractive index n of the second material (the first is air, n = 1); the vertical axis is the fraction of light reflected at normal incidence.",
+   "The curve is R = ((n − 1)/(n + 1))².",
+   "Marked points: water (n = 1.33) 2%, glass (1.5) 4%, diamond (2.42) 17%, silicon (about 3.5) 31%.",
+   "The more the index differs from 1, the more light is reflected."
+  ],
+  "course": "physics",
+  "lesson": "Reflection and transmission",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Reflection and transmission"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "air to water (n = 1.33) reflects 2%",
+    "ok": true,
+    "detail": "y(1.33) = 0.0201"
+   },
+   {
+    "name": "air to glass (n = 1.5) reflects 4%",
+    "ok": true,
+    "detail": "y(1.5) = 0.04"
+   },
+   {
+    "name": "air to diamond (n = 2.42) reflects 17%",
+    "ok": true,
+    "detail": "y(2.42) = 0.1724"
+   },
+   {
+    "name": "air to silicon (n = 3.5) reflects 31%",
+    "ok": true,
+    "detail": "y(3.5) = 0.3086"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-reflection-coefficient": {
+  "title": "Reflection from a mismatched load on a 50 Ω line",
+  "caption": "The reflection coefficient Γ = (Z_L − Z₀)/(Z_L + Z₀) is zero for a matched load (Z_L = 50 Ω) and the power reflected is Γ². For the 75 Ω antenna Γ = (75 − 50)/125 = 0.2, so Γ² = 0.04: 4% of the power is reflected.",
+  "alt": "Graph of |Γ| and Γ² against load impedance from 10 to 150 ohms: both reach zero at 50 ohms; at 75 ohms |Γ| is 0.2 and the reflected power fraction is 0.04.",
+  "description": [
+   "The horizontal axis is the load impedance Z_L in ohms for a line of Z₀ = 50 Ω; the vertical axis is the size of the reflection coefficient |Γ| and the fraction of power reflected, Γ².",
+   "Both curves touch zero at Z_L = 50 Ω: a matched load reflects nothing.",
+   "At Z_L = 75 Ω, |Γ| = 25/125 = 0.2 and the reflected power is Γ² = 0.04, 4%.",
+   "The power curve lies below |Γ| because Γ² is smaller than |Γ| when |Γ| < 1."
+  ],
+  "course": "physics",
+  "lesson": "Microwave engineering",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Microwave engineering"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Γ = 0.2 for a 75 Ω load on 50 Ω",
+    "ok": true,
+    "detail": "y(75) = 0.2"
+   },
+   {
+    "name": "4% of the power is reflected",
+    "ok": true,
+    "detail": "y(75) = 0.04"
+   },
+   {
+    "name": "a matched load (50 Ω) reflects nothing",
+    "ok": true,
+    "detail": "y(50) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-skin-depth-aluminium": {
+  "title": "Field inside aluminium at 100 MHz",
+  "caption": "In a conductor the field decays as e^{−z/δ}. For aluminium (σ = 3.5 × 10⁷ S m⁻¹) at 100 MHz, δ = √(2/ωμσ) = 8.5 μm. After one skin depth the amplitude is 1/e = 0.37; household foil (about 16 μm) is about 1.9 skin depths thick and leaves only 0.15 of the amplitude, so it attenuates strongly.",
+  "alt": "Graph of field amplitude relative to the surface against depth in aluminium from 0 to 30 micrometres: an exponential decay through 0.37 at 8.5 micrometres and 0.15 at 16 micrometres.",
+  "description": [
+   "The horizontal axis is the depth into the metal in micrometres; the vertical axis is the field amplitude relative to its value at the surface.",
+   "The curve is e^{−z/δ} with δ = 8.5 μm, the skin depth of aluminium at 100 MHz.",
+   "At z = δ the amplitude is 1/e = 0.37.",
+   "At 16 μm, the thickness of foil, it is 0.15."
+  ],
+  "course": "physics",
+  "lesson": "Electromagnetic shielding",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Electromagnetic shielding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the amplitude is 1/e at one skin depth, 8.5 μm",
+    "ok": true,
+    "detail": "y(8.507189549448235) = 0.3679"
+   },
+   {
+    "name": "16 μm of aluminium leaves 0.15 of the amplitude",
+    "ok": true,
+    "detail": "y(16) = 0.1525"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-spectrum": {
+  "title": "The electromagnetic spectrum",
+  "caption": "The bands run from radio (λ > 1 m) to gamma rays (λ < 0.01 nm), all the same kind of wave. Photon energy E = hf = hc/λ with hc ≈ 1240 eV nm: green light (520 nm) carries 2.4 eV, a 254 nm ultraviolet photon 4.9 eV and the 50 kV X-ray limit (0.025 nm) 50 keV.",
+  "alt": "A logarithmic wavelength scale from 10^-13 m to 10^4 m with the bands radio, microwave, infrared, visible, ultraviolet, X-rays and gamma rays in order, and an FM signal, a microwave oven, a person's thermal glow, green light, a 254 nm ultraviolet lamp and an X-ray tube limit marked.",
+  "description": [
+   "A horizontal logarithmic scale of wavelength in metres, long wavelengths (radio) on the right and short (gamma rays) on the left.",
+   "Bands from the lesson: radio λ > 1 m; microwaves 1 mm–1 m; infrared 700 nm–1 mm; visible 400–700 nm; ultraviolet 10–400 nm; X-rays 0.01–10 nm; gamma rays below 0.01 nm.",
+   "Markers: FM radio 3 m, microwave oven 12 cm, a person's thermal peak 9.4 μm, green light 520 nm (2.4 eV), a 254 nm UV lamp (4.9 eV), and the 0.025 nm limit of a 50 kV tube.",
+   "Higher frequency and photon energy lie to the left; the bands meet with no gaps."
+  ],
+  "course": "physics",
+  "lesson": "Electromagnetic spectrum",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Electromagnetic spectrum"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "FM radio, 3 m is in the radio region",
+    "ok": true,
+    "detail": "3 against 1–10000"
+   },
+   {
+    "name": "microwave oven, 12 cm is in the microwave region",
+    "ok": true,
+    "detail": "0.122 against 0.001–1"
+   },
+   {
+    "name": "person, 9.4 μm is in the infrared region",
+    "ok": true,
+    "detail": "9.4 × 10^{-6} against 7 × 10^{-7}–0.001"
+   },
+   {
+    "name": "green light, 2.4 eV is in the visible region",
+    "ok": true,
+    "detail": "5.2 × 10^{-7} against 4 × 10^{-7}–7 × 10^{-7}"
+   },
+   {
+    "name": "UV lamp, 4.9 eV is in the ultraviolet region",
+    "ok": true,
+    "detail": "2.54 × 10^{-7} against 1 × 10^{-8}–4 × 10^{-7}"
+   },
+   {
+    "name": "50 kV X-ray limit is in the X-rays region",
+    "ok": true,
+    "detail": "2.5 × 10^{-11} against 1 × 10^{-11}–1 × 10^{-8}"
+   },
+   {
+    "name": "EM bands are in the standard order (gamma rays have the shortest wavelength)",
+    "ok": true,
+    "detail": "gamma rays < X-rays < ultraviolet < visible < infrared < microwave < radio"
+   },
+   {
+    "name": "adjacent bands meet (no gaps or overlaps on the scale)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "FM radio, 3 m: f = c/λ = 1 × 10^{8} Hz",
+    "ok": true,
+    "detail": "9.99 × 10^{7} Hz"
+   },
+   {
+    "name": "microwave oven, 12 cm: f = c/λ = 2.45 × 10^{9} Hz",
+    "ok": true,
+    "detail": "2.46 × 10^{9} Hz"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u18-spreading": {
+  "title": "Spreading from a point source",
+  "caption": "From a point source the intensity falls as 1/r² (the same power spread over a sphere of area 4πr²) while the field amplitude falls only as 1/r, because intensity goes as the amplitude squared. Doubling the distance halves the amplitude (0.5) and quarters the intensity (0.25).",
+  "alt": "Graph of relative amplitude (1/r) and relative intensity (1/r²) against distance from 1 to 4 times the first distance: both start at 1, the amplitude curve falls more slowly, and at twice the distance they are 0.5 and 0.25.",
+  "description": [
+   "The horizontal axis is the distance r in units of the first distance r₀; the vertical axis is the value relative to its size at r₀.",
+   "The field amplitude falls as 1/r: at r = 2r₀ it is 0.5.",
+   "The intensity, proportional to amplitude squared, falls as 1/r²: at r = 2r₀ it is 0.25.",
+   "Intensity falls faster than amplitude: the same power spreads over four times the area."
+  ],
+  "course": "physics",
+  "lesson": "Electromagnetic wave propagation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Electromagnetic wave propagation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the amplitude is halved at twice the distance",
+    "ok": true,
+    "detail": "y(2) = 0.5"
+   },
+   {
+    "name": "the intensity is quartered at twice the distance",
+    "ok": true,
+    "detail": "y(2) = 0.25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-three-polarisers": {
+  "title": "A third polariser between crossed polarisers",
+  "caption": "Unpolarised light through a polariser at 0° loses half its intensity. If an analyser at 90° follows, nothing passes. Place a polariser at angle θ between them and the fraction transmitted is ½cos²θ cos²(90° − θ) = ⅛ sin²2θ, which is zero at 0° and 90° and largest, 1/8, at 45°: the lesson's example.",
+  "alt": "Graph of the fraction of unpolarised light transmitted against the angle of the middle polariser from 0 to 90 degrees: a curve that is zero at both ends and peaks at 0.125 at 45 degrees.",
+  "description": [
+   "The horizontal axis is the angle θ of the middle polariser, measured from the first polariser (the last is at 90°); the vertical axis is the fraction of the unpolarised input transmitted.",
+   "The first polariser passes ½; Malus's law gives cos²θ for the middle one and cos²(90° − θ) for the last.",
+   "Multiplying: ½ × cos²θ × sin²θ = ⅛ sin²2θ.",
+   "At 0° or 90° the fraction is zero (without the middle polariser, none passes); at 45° it is ½ × ½ × ½ = ⅛ = 0.125."
+  ],
+  "course": "physics",
+  "lesson": "Polarisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Polarisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum is 1/8 at 45°",
+    "ok": true,
+    "detail": "found (45, 0.125)"
+   },
+   {
+    "name": "crossed polarisers pass nothing (θ = 0°)",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "crossed polarisers pass nothing (θ = 90°)",
+    "ok": true,
+    "detail": "y(90) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-uv-bands": {
+  "title": "The ultraviolet bands",
+  "caption": "Ultraviolet runs from 400 nm down to 10 nm: UVA (315–400 nm) reaches the ground, UVB (280–315 nm) is mostly absorbed by ozone, UVC (100–280 nm) is fully absorbed and extreme UV (10–100 nm) is absorbed by air. A germicidal 254 nm lamp (UVC) carries 4.9 eV per photon; the 13.5 nm EUV used in chip lithography carries 92 eV, from a wavelength 19 times shorter.",
+  "alt": "A logarithmic wavelength scale from 1 to 1000 nanometres with extreme UV, UVC, UVB, UVA and the visible band marked, and the 13.5 nm lithography wavelength and the 254 nm germicidal lamp placed in their bands.",
+  "description": [
+   "A horizontal logarithmic scale of wavelength in nanometres.",
+   "The bands from the lesson: extreme UV 10–100 nm, UVC 100–280 nm, UVB 280–315 nm, UVA 315–400 nm, then visible light from 400 nm.",
+   "A 254 nm germicidal lamp lies in UVC (photon energy 4.9 eV); 13.5 nm chip-lithography light lies in the extreme UV (92 eV).",
+   "Shorter wavelength means more energetic photons, so the lower bands are more damaging."
+  ],
+  "course": "physics",
+  "lesson": "Ultraviolet radiation",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Ultraviolet radiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "13.5 nm lithography, 92 eV is in the extreme UV region",
+    "ok": true,
+    "detail": "13.5 against 10–100"
+   },
+   {
+    "name": "254 nm lamp, 4.9 eV is in the UVC region",
+    "ok": true,
+    "detail": "254 against 100–280"
+   },
+   {
+    "name": "254 nm is about 19 times 13.5 nm",
+    "ok": true,
+    "detail": "1.27 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u18-water-surface": {
+  "title": "A ray in water meeting the surface",
+  "caption": "Going from water (n = 1.33) to air the ray bends away from the normal. The critical angle is sin θ_c = 1/1.33, θ_c = 48.8°. At 45°, below θ_c, the ray escapes at sin⁻¹(1.33 sin 45°) = 70°; at 60° it is above θ_c and is totally reflected.",
+  "alt": "Two ray diagrams at a water–air surface: a ray at 45° leaves into the air at 70° from the normal, and a ray at 60° is totally internally reflected.",
+  "description": [
+   "The lesson's ray in water (n = 1.33) hits the surface at 45°. The critical angle is sin⁻¹(1/1.33) = 48.8°.",
+   "45° is less than 48.8°, so the ray escapes, bending away from the normal to 70°: n₁ sin 45° = n₂ sin r.",
+   "A second ray at 60° is greater than the critical angle: nothing escapes and the ray is totally internally reflected."
+  ],
+  "course": "physics",
+  "lesson": "Refraction",
+  "also": [],
+  "renderer": "refraction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Refraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "45°: escapes, i = 45°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "45°"
+   },
+   {
+    "name": "45°: escapes, i = 45°: refracted",
+    "ok": true,
+    "detail": "critical angle 48.8°"
+   },
+   {
+    "name": "45°: escapes, i = 45°: Snell's law gives r = 70.1°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 70.13°"
+   },
+   {
+    "name": "45°: escapes, i = 45°: critical angle 48.8°",
+    "ok": true,
+    "detail": "sin⁻¹(n₂/n₁) = 48.75°"
+   },
+   {
+    "name": "45°: escapes, i = 45°: the ray bends away from the normal",
+    "ok": true,
+    "detail": "45° → 70.1°"
+   },
+   {
+    "name": "60°: totally reflected, i = 60°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "60°"
+   },
+   {
+    "name": "60°: totally reflected, i = 60°: totally internally reflected",
+    "ok": true,
+    "detail": "critical angle 48.8°"
+   },
+   {
+    "name": "60°: totally reflected, i = 60°: critical angle 48.8°",
+    "ok": true,
+    "detail": "sin⁻¹(n₂/n₁) = 48.75°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "840px wide, shown at 84% (labels 12.6px)"
+   }
+  ]
+ },
+ "phys-u18-wr90-velocities": {
+  "title": "Group and phase velocity in WR-90 waveguide",
+  "caption": "The TE₁₀ cut-off of WR-90 (a = 2.29 cm) is f_c = c/2a = 6.6 GHz. Above it v_g = c√(1 − (f_c/f)²) rises from zero while v_p = c/√(1 − (f_c/f)²) falls from infinity; at 10 GHz, inside X-band, v_g = 0.76c and v_p = 1.32c. The product v_g v_p = c² always, so the phase velocity exceeds c while the signal travels slower than c.",
+  "alt": "Graph of velocity relative to c against frequency from 6.5 to 12 gigahertz: the group velocity rising from zero at 6.6 GHz towards 1, and the phase velocity falling from a large value towards 1, with the X-band range 8 to 12 GHz shaded.",
+  "description": [
+   "The horizontal axis is frequency in gigahertz; the vertical axis is velocity in units of c.",
+   "Below f_c = 3 × 10⁸/(2 × 0.0229) = 6.6 GHz nothing propagates.",
+   "The group velocity starts at zero at cut-off and rises towards c; at 10 GHz it is 0.76c.",
+   "The phase velocity starts very large at cut-off and falls towards c; at 10 GHz it is 1.32c. The two multiply to c².",
+   "X-band, 8–12 GHz, is shaded."
+  ],
+  "course": "physics",
+  "lesson": "Waveguides",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: Waveguides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v_g = 0.76c at 10 GHz",
+    "ok": true,
+    "detail": "y(10) = 0.7556"
+   },
+   {
+    "name": "v_p = 1.32c at 10 GHz",
+    "ok": true,
+    "detail": "y(10) = 1.3234"
+   },
+   {
+    "name": "v_g v_p = c²",
+    "ok": true,
+    "detail": "y(10) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u18-xray-continuum": {
+  "title": "X-ray tube: the short-wavelength limit",
+  "caption": "The bremsstrahlung spectrum of a tube is continuous but has a sharp short-wavelength limit λ_min = hc/eV (Duane–Hunt). At 50 kV, λ_min = 1240 eV nm/50 000 eV = 0.025 nm; at 30 kV it is 0.041 nm. A higher voltage moves the limit to shorter wavelength and raises the whole curve. (Characteristic lines of the target are not drawn.)",
+  "alt": "Graph of relative X-ray intensity against wavelength from 0 to 0.3 nanometres: two curves that start at zero at 0.025 nm (50 kV) and 0.041 nm (30 kV), rise to a peak and fall away, the 50 kV curve higher and starting further left.",
+  "description": [
+   "The horizontal axis is wavelength in nanometres; the vertical axis is relative intensity (arbitrary units).",
+   "Each curve is a continuous spectrum that is zero below its limit: 50 kV gives λ_min = 1240/50 000 = 0.025 nm and 30 kV gives 0.041 nm.",
+   "Above the limit the intensity rises steeply to a peak at twice λ_min and then falls off.",
+   "Raising the tube voltage moves λ_min to shorter wavelength and increases the intensity."
+  ],
+  "course": "physics",
+  "lesson": "X-rays",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u18.js: X-rays"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "no X-rays below λ_min = hc/eV = 0.025 nm at 50 kV",
+    "ok": true,
+    "detail": "y(0.0248) = 0"
+   },
+   {
+    "name": "no X-rays below 0.041 nm at 30 kV",
+    "ok": true,
+    "detail": "y(0.04133333333333333) = 0"
+   },
+   {
+    "name": "the 50 kV spectrum peaks at 2λ_min",
+    "ok": true,
+    "detail": "found (0.05, 4.065)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

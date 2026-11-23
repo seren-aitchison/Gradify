@@ -1,0 +1,116 @@
+{
+ "id": "phys-u18-reflection-coefficient",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Microwave engineering",
+ "title": "Reflection from a mismatched load on a 50 Ω line",
+ "caption": "The reflection coefficient Γ = (Z_L − Z₀)/(Z_L + Z₀) is zero for a matched load (Z_L = 50 Ω) and the power reflected is Γ². For the 75 Ω antenna Γ = (75 − 50)/125 = 0.2, so Γ² = 0.04: 4% of the power is reflected.",
+ "alt": "Graph of |Γ| and Γ² against load impedance from 10 to 150 ohms: both reach zero at 50 ohms; at 75 ohms |Γ| is 0.2 and the reflected power fraction is 0.04.",
+ "description": [
+  "The horizontal axis is the load impedance Z_L in ohms for a line of Z₀ = 50 Ω; the vertical axis is the size of the reflection coefficient |Γ| and the fraction of power reflected, Γ².",
+  "Both curves touch zero at Z_L = 50 Ω: a matched load reflects nothing.",
+  "At Z_L = 75 Ω, |Γ| = 25/125 = 0.2 and the reflected power is Γ² = 0.04, 4%.",
+  "The power curve lies below |Γ| because Γ² is smaller than |Γ| when |Γ| < 1."
+ ],
+ "range": {
+  "x": [
+   10,
+   150
+  ],
+  "y": [
+   0,
+   0.75
+  ]
+ },
+ "ticks": [
+  [
+   25,
+   50,
+   75,
+   100,
+   125,
+   150
+  ],
+  [
+   0.2,
+   0.4,
+   0.6
+  ]
+ ],
+ "grid": [
+  25,
+  0.2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "Z_L / Ω",
+  "reflected"
+ ],
+ "curves": [
+  {
+   "expr": "abs((x-50)/(x+50))",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "|Γ|",
+   "labelAt": [
+    20,
+    0.5
+   ]
+  },
+  {
+   "expr": "((x-50)/(x+50))^2",
+   "colour": "a2",
+   "width": 3.4,
+   "label": "power Γ²",
+   "labelAt": [
+    100,
+    0.1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 75,
+   "y": 0.2,
+   "label": "0.2",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 75,
+   "y": 0.04,
+   "colour": "a2",
+   "label": "0.04",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "abs((x-50)/(x+50))",
+   "x": 75,
+   "y": 0.2,
+   "name": "Γ = 0.2 for a 75 Ω load on 50 Ω"
+  },
+  {
+   "type": "point",
+   "expr": "((x-50)/(x+50))^2",
+   "x": 75,
+   "y": 0.04,
+   "name": "4% of the power is reflected"
+  },
+  {
+   "type": "point",
+   "expr": "abs((x-50)/(x+50))",
+   "x": 50,
+   "y": 0,
+   "name": "a matched load (50 Ω) reflects nothing"
+  }
+ ]
+}

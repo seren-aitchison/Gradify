@@ -1,0 +1,103 @@
+{
+ "id": "phys-u18-rayleigh",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Visible light",
+ "title": "Rayleigh scattering across the visible",
+ "caption": "Scattering by air molecules goes as 1/λ⁴. Taking 700 nm light as 1, 450 nm light is scattered (700/450)⁴ = 5.9 times as strongly and violet (400 nm) over nine times, so scattered blue fills the sky while the unscattered red and orange remain at sunset.",
+ "alt": "Graph of relative scattering against wavelength from 400 to 700 nanometres: a curve falling from about 9.4 at 400 nm through 5.9 at 450 nm to 1 at 700 nm.",
+ "description": [
+  "The horizontal axis is wavelength in nanometres across the visible band; the vertical axis is the scattered intensity relative to that of 700 nm light.",
+  "The curve is (700/λ)⁴, from the Rayleigh law I ∝ 1/λ⁴.",
+  "At 450 nm it is (700/450)⁴ = 5.9; at 700 nm it is 1; at 400 nm it is 9.4.",
+  "Short wavelengths are scattered out of the beam far more than long ones."
+ ],
+ "range": {
+  "x": [
+   400,
+   700
+  ],
+  "y": [
+   0,
+   10.5
+  ]
+ },
+ "ticks": [
+  [
+   400,
+   450,
+   500,
+   550,
+   600,
+   650,
+   700
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  50,
+  2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / nm",
+  "scattering relative to 700 nm"
+ ],
+ "curves": [
+  {
+   "expr": "(700/x)^4",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "(700/λ)⁴",
+   "labelAt": [
+    520,
+    4.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 450,
+   "y": 5.855,
+   "label": "5.9 at 450 nm",
+   "dx": 12,
+   "dy": -6
+  },
+  {
+   "x": 700,
+   "y": 1,
+   "colour": "a2",
+   "label": "1 at 700 nm",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(700/x)^4",
+   "x": 450,
+   "y": 5.855,
+   "name": "450 nm is scattered 5.9 times as strongly as 700 nm"
+  },
+  {
+   "type": "point",
+   "expr": "(700/x)^4",
+   "x": 700,
+   "y": 1,
+   "name": "the reference, 700 nm, is 1"
+  }
+ ]
+}

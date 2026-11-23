@@ -1,0 +1,102 @@
+{
+ "id": "phys-u18-three-polarisers",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Polarisation",
+ "title": "A third polariser between crossed polarisers",
+ "caption": "Unpolarised light through a polariser at 0° loses half its intensity. If an analyser at 90° follows, nothing passes. Place a polariser at angle θ between them and the fraction transmitted is ½cos²θ cos²(90° − θ) = ⅛ sin²2θ, which is zero at 0° and 90° and largest, 1/8, at 45°: the lesson's example.",
+ "alt": "Graph of the fraction of unpolarised light transmitted against the angle of the middle polariser from 0 to 90 degrees: a curve that is zero at both ends and peaks at 0.125 at 45 degrees.",
+ "description": [
+  "The horizontal axis is the angle θ of the middle polariser, measured from the first polariser (the last is at 90°); the vertical axis is the fraction of the unpolarised input transmitted.",
+  "The first polariser passes ½; Malus's law gives cos²θ for the middle one and cos²(90° − θ) for the last.",
+  "Multiplying: ½ × cos²θ × sin²θ = ⅛ sin²2θ.",
+  "At 0° or 90° the fraction is zero (without the middle polariser, none passes); at 45° it is ½ × ½ × ½ = ⅛ = 0.125."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   0.15
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   0.05,
+   0.1,
+   0.15
+  ]
+ ],
+ "grid": [
+  15,
+  0.05
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "fraction transmitted"
+ ],
+ "curves": [
+  {
+   "expr": "0.125*sin(2*x*0.017453292519943295)^2",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "⅛ sin²2θ",
+   "labelAt": [
+    58,
+    0.09
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 45,
+   "y": 0.125,
+   "label": "1/8 at 45°",
+   "dx": 12,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "0.125*sin(2*x*0.017453292519943295)^2",
+   "domain": [
+    0,
+    90
+   ],
+   "x": 45,
+   "y": 0.125,
+   "name": "the maximum is 1/8 at 45°"
+  },
+  {
+   "type": "point",
+   "expr": "0.125*sin(2*x*0.017453292519943295)^2",
+   "x": 0,
+   "y": 0,
+   "name": "crossed polarisers pass nothing (θ = 0°)"
+  },
+  {
+   "type": "point",
+   "expr": "0.125*sin(2*x*0.017453292519943295)^2",
+   "x": 90,
+   "y": 0,
+   "name": "crossed polarisers pass nothing (θ = 90°)"
+  }
+ ]
+}

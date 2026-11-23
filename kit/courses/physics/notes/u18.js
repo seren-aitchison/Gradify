@@ -15,6 +15,7 @@ H: Spreading and attenuation
 - In conductors waves decay within a skin depth; in plasmas below the plasma frequency they reflect.
 X: Light from the Sun takes how long to reach Earth (1.5 × 10^{11} m)?
 > t = 1.5 × 10^{11}/3 × 10^{8} = 500 s ≈ 8.3 min
+D: phys-u18-spreading
 !: EM waves don't need a medium; the 19th-century "luminiferous ether" was abandoned after Michelson–Morley and special relativity.
 Q: What produces electromagnetic waves? | Accelerating charges.
 Q: Why does light travel slower in glass? | The field drives bound electrons to re-radiate, and the superposed wave advances more slowly.
@@ -77,6 +78,7 @@ P: The wave speed came out as a combination of electrical constants measured on 
 X: Ionosphere electron density 10^{12} m^{-3}. Plasma frequency?
 > f_{p} ≈ 9√n Hz = 9 × 10^{6} Hz = 9 MHz
 > Shortwave below this reflects; FM (100 MHz) passes through
+D: phys-u18-plasma-dispersion
 !: The wave equation in vacuum is non-dispersive: all frequencies travel at c.
 Q: What wave speed comes from Maxwell's equations? | c = 1/√(μ_{0}ε_{0}).
 Q: Why do AM/shortwave signals reflect off the ionosphere while FM doesn't? | Frequencies below the plasma frequency reflect; FM frequencies are above it.
@@ -100,6 +102,7 @@ H: Atmospheric windows
 P: Earth's atmosphere transmits visible light, some infrared and radio waves, but blocks most UV, X-rays, gamma rays and much infrared. That's why X-ray and gamma-ray telescopes, and many infrared ones, must fly in space.
 X: Photon energy of green light (λ = 520 nm)?
 > E = 1240/520 = 2.4 eV
+D: phys-u18-spectrum
 !: All EM waves travel at c in vacuum; only frequency and wavelength differ.
 Q: List the EM spectrum from longest to shortest wavelength. | Radio, microwave, infrared, visible, ultraviolet, X-ray, gamma.
 Q: Why must X-ray telescopes be in space? | The atmosphere absorbs X-rays.
@@ -165,6 +168,7 @@ H: Discovery
 P: William Herschel (1800) placed a thermometer beyond the red end of a prism's spectrum and found it heated more than in the visible: the first discovery of invisible light.
 X: Peak emission of a person at 310 K?
 > λ = 2.9 × 10^{-3}/310 = 9.4 μm (thermal infrared)
+D: phys-u18-person-thermal
 !: Glass is transparent to visible but opaque to thermal infrared; thermal cameras use germanium or chalcogenide lenses.
 Q: Who discovered infrared radiation and how? | William Herschel, by finding a thermometer heated beyond the red end of the spectrum.
 Q: Why does JWST observe in infrared? | It sees through dust and detects light from distant galaxies redshifted from visible to infrared.
@@ -185,6 +189,7 @@ H: Interaction with matter
 - Electronic transitions in molecules absorb particular wavelengths, giving colours to dyes, leaves (chlorophyll absorbs red and blue) and gems.
 X: How much more strongly is 450 nm light scattered than 700 nm?
 > (700/450)^{4} = 5.9 times
+D: phys-u18-rayleigh
 !: An object's colour depends on the light illuminating it; a red apple under blue light looks dark.
 Q: Why is the sky blue? | Air molecules scatter shorter (blue) wavelengths much more strongly (Rayleigh, ∝ 1/λ^{4}).
 Q: How do screens make colours? | Additive mixing of red, green and blue light.
@@ -207,6 +212,7 @@ H: Ozone layer
 P: Stratospheric ozone absorbs most UVB and all UVC. CFCs destroyed ozone, creating the Antarctic ozone hole; the 1987 Montreal Protocol banned them, and the layer is slowly recovering, a rare global environmental success.
 X: Photon energy at 254 nm?
 > E = 1240/254 = 4.9 eV, enough to break many organic bonds
+D: phys-u18-uv-bands
 !: Clouds don't block much UV; you can burn on cloudy days.
 Q: Why is UVC used for sterilisation? | Its photons damage microbial DNA.
 Q: What does the ozone layer absorb? | Most UVB and all UVC.
@@ -231,6 +237,7 @@ H: Uses
 - Ionising: doses kept as low as reasonably achievable.
 X: Minimum wavelength from a 50 kV X-ray tube?
 > λ_{min} = 1240 eV nm/50 000 eV = 0.025 nm
+D: phys-u18-xray-continuum
 !: The continuous X-ray spectrum's cut-off depends only on the tube voltage, not the target material.
 Q: How are X-rays produced in a tube? | Fast electrons decelerate in a metal target (bremsstrahlung) and knock out inner electrons (characteristic lines).
 Q: Why does bone show up on X-rays? | Calcium's higher atomic number absorbs X-rays far more (photoelectric effect ∝ Z^{3}).
@@ -253,6 +260,7 @@ H: Uses
 - Gamma spectroscopy identifies isotopes; Mössbauer spectroscopy probes tiny energy shifts.
 X: A gamma beam passes through lead with μ = 0.77 cm^{-1}. Fraction transmitted through 3 cm?
 > e^{−2.31} = 0.10: 10% gets through
+D: phys-u18-gamma-lead
 !: Gamma rays and X-rays overlap in energy; the name reflects the source (nuclear vs electronic), not a sharp energy boundary.
 Q: Where do gamma rays come from? | Nuclear transitions, particle annihilation and high-energy astrophysical processes.
 Q: How do PET scanners work? | Positrons from a tracer annihilate with electrons; detectors catch the back-to-back 511 keV gamma pairs.
@@ -279,6 +287,7 @@ H: Uses
 X: Three polarisers at 0°, 45° and 90°. Fraction of unpolarised light transmitted?
 > ½ × cos^{2}45° × cos^{2}45° = ½ × ½ × ½ = 1/8
 > Without the middle polariser, none would pass
+D: phys-u18-three-polarisers
 !: Polarisation applies to transverse waves only; it was key evidence that light is transverse.
 Q: What does a quarter-wave plate do? | Introduces a 90° phase shift between two polarisation components, turning linear into circular polarisation (at 45°).
 Q: What is Faraday rotation? | Rotation of the plane of polarisation by a magnetic field along the propagation direction.
@@ -301,6 +310,8 @@ H: Coatings and metals
 X: Reflection loss from a camera lens with 10 uncoated air–glass surfaces?
 > Each transmits 96%: 0.96^{10} = 0.66
 > 34% lost, and stray reflections cause flare: hence coatings
+D: phys-u18-reflectance-n
+D: phys-u18-lens-transmission
 !: Total internal reflection isn't perfectly "total" when another medium comes within a wavelength: light can tunnel across.
 Q: What fraction of light reflects from glass at normal incidence? | About 4%.
 Q: What is an evanescent wave? | An exponentially decaying field beyond a totally internally reflecting surface.
@@ -323,6 +334,7 @@ H: Atmospheric refraction
 X: A ray in water hits the surface at 45°. Does it escape?
 > Critical angle: sin θ_{c} = 1/1.33 ⇒ θ_{c} = 48.8°
 > 45° < 48.8°: it escapes, bending to sin^{-1}(1.33 sin 45°) = 70°
+D: phys-u18-water-surface
 !: Light doesn't bend because it "chooses" a shorter path; Fermat's principle describes the result, but the cause is the change of speed at the interface.
 Q: What is refractive index? | The ratio of the speed of light in vacuum to its speed in the medium.
 Q: Why do stars twinkle? | Turbulent air with varying refractive index deflects their light randomly.
@@ -365,6 +377,7 @@ H: Why water is transparent
 P: Water absorbs strongly in the infrared and microwaves but has a narrow transparency window in the visible, where sunlight peaks. Life evolved to see in that window. Water's slight absorption of red makes deep water and glaciers look blue.
 X: A solution absorbs 50% of light in 1 cm. What fraction passes through 3 cm?
 > (0.5)^{3} = 12.5%
+D: phys-u18-beer-lambert
 !: Absorption and scattering both remove light from a beam; only absorption converts it to heat or chemical energy.
 Q: State the Beer–Lambert law. | Intensity decays exponentially with path length: I = I_{0}e^{−αx}.
 Q: How does a pulse oximeter work? | It compares red and infrared absorption of blood, which differ for oxygenated and deoxygenated haemoglobin.
@@ -456,6 +469,7 @@ H: Numerical aperture
 E: NA = √(n_{core}^{2} − n_{clad}^{2}) = sin θ_{max}
 X: Cut-off of a waveguide with a = 2.29 cm (WR-90)?
 > f_{c} = 3 × 10^{8}/(2 × 0.0229) = 6.6 GHz; used for X-band (8–12 GHz)
+D: phys-u18-wr90-velocities
 !: Waveguides don't carry DC or frequencies below cut-off at all, unlike two-conductor lines.
 Q: What is a waveguide's cut-off frequency? | The lowest frequency a mode can propagate at; below it the wave is evanescent.
 Q: Why use single-mode fibres for long distances? | They avoid modal dispersion, which spreads pulses.
@@ -500,6 +514,7 @@ P: Antenna patterns must be measured in the far field, which for large dishes ca
 X: Far-field distance for a 1 m antenna at 10 GHz?
 > λ = 3 cm
 > r > 2D^{2}/λ = 2/0.03 ≈ 67 m
+D: phys-u18-field-regions
 !: Near-field exposure limits and measurements can't use far-field formulas like I = E^{2}/(377 Ω).
 Q: What characterises the far field? | Radiating fields with E/B = c, intensity ∝ 1/r^{2}, and a fixed angular pattern.
 Q: Why does NFC work only at short range? | It uses near-field magnetic coupling that falls off steeply with distance.
@@ -548,6 +563,7 @@ H: Examples
 X: Skin depth in aluminium (σ = 3.5 × 10^{7} S m^{-1}) at 100 MHz?
 > δ = √(2/(2π × 10^{8} × 4π × 10^{-7} × 3.5 × 10^{7})) = 8.5 μm
 > Household foil (~16 μm) attenuates strongly at these frequencies
+D: phys-u18-skin-depth-aluminium
 !: A shield with a long slit can be almost useless at frequencies where the slit is half a wavelength long.
 Q: Why is low-frequency magnetic shielding difficult? | Skin depths are large and reflection is weak; it needs high-permeability materials to divert flux.
 Q: What limits a shield's effectiveness in practice? | Holes, seams and cable penetrations.
@@ -571,6 +587,7 @@ P: Radar, satellite links, 5G and 6G, microwave ovens, particle accelerator cavi
 X: A 75 Ω antenna is connected to a 50 Ω line. Reflection coefficient and power reflected?
 > Γ = (75 − 50)/(125) = 0.2
 > Power reflected = Γ^{2} = 4%
+D: phys-u18-reflection-coefficient
 !: At microwave frequencies, a few millimetres of wire is a significant fraction of a wavelength; ordinary circuit rules break down.
 Q: What is characteristic impedance? | The ratio of voltage to current for a wave travelling along a transmission line.
 Q: What does a VSWR of 1 mean? | Perfect matching: no reflected wave.

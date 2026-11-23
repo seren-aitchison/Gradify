@@ -1,0 +1,126 @@
+{
+ "id": "phys-u18-xray-continuum",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "X-rays",
+ "title": "X-ray tube: the short-wavelength limit",
+ "caption": "The bremsstrahlung spectrum of a tube is continuous but has a sharp short-wavelength limit λ_min = hc/eV (Duane–Hunt). At 50 kV, λ_min = 1240 eV nm/50 000 eV = 0.025 nm; at 30 kV it is 0.041 nm. A higher voltage moves the limit to shorter wavelength and raises the whole curve. (Characteristic lines of the target are not drawn.)",
+ "alt": "Graph of relative X-ray intensity against wavelength from 0 to 0.3 nanometres: two curves that start at zero at 0.025 nm (50 kV) and 0.041 nm (30 kV), rise to a peak and fall away, the 50 kV curve higher and starting further left.",
+ "description": [
+  "The horizontal axis is wavelength in nanometres; the vertical axis is relative intensity (arbitrary units).",
+  "Each curve is a continuous spectrum that is zero below its limit: 50 kV gives λ_min = 1240/50 000 = 0.025 nm and 30 kV gives 0.041 nm.",
+  "Above the limit the intensity rises steeply to a peak at twice λ_min and then falls off.",
+  "Raising the tube voltage moves λ_min to shorter wavelength and increases the intensity."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.3
+  ],
+  "y": [
+   0,
+   4.4
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3
+  ],
+  []
+ ],
+ "grid": [
+  0.05,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / nm",
+  "relative intensity"
+ ],
+ "curves": [
+  {
+   "expr": "(x/0.0248-1)/x^2/100",
+   "domain": [
+    0.0248,
+    0.3
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "50 kV",
+   "labelAt": [
+    0.08,
+    3.9
+   ],
+   "samples": 400
+  },
+  {
+   "expr": "(x/0.04133333333333333-1)/x^2/100",
+   "domain": [
+    0.04133333333333333,
+    0.3
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "30 kV",
+   "labelAt": [
+    0.14,
+    1.9
+   ],
+   "samples": 400
+  }
+ ],
+ "points": [
+  {
+   "x": 0.0248,
+   "y": 0,
+   "label": "λ_min = 0.025 nm",
+   "dx": 8,
+   "dy": -16
+  },
+  {
+   "x": 0.0413,
+   "y": 0,
+   "colour": "a2",
+   "label": "0.041 nm",
+   "dx": 8,
+   "dy": -32
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x/0.0248-1)/x^2/100",
+   "x": 0.0248,
+   "y": 0,
+   "name": "no X-rays below λ_min = hc/eV = 0.025 nm at 50 kV"
+  },
+  {
+   "type": "point",
+   "expr": "(x/0.04133333333333333-1)/x^2/100",
+   "x": 0.04133333333333333,
+   "y": 0,
+   "name": "no X-rays below 0.041 nm at 30 kV"
+  },
+  {
+   "type": "max",
+   "expr": "(x/0.0248-1)/x^2/100",
+   "domain": [
+    0.0248,
+    0.3
+   ],
+   "x": 0.0496,
+   "y": 4.064776274713839,
+   "name": "the 50 kV spectrum peaks at 2λ_min"
+  }
+ ]
+}
