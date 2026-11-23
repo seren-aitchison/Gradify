@@ -1,0 +1,94 @@
+{
+ "id": "phys-u11-noise-exposure",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u11",
+ "lesson": "Noise pollution",
+ "title": "How long is safe at each sound level?",
+ "caption": "With an 85 dB limit for 8 hours and a 3 dB exchange rate, each 3 dB more halves the safe time. At 94 dB, 9 dB over, the limit is 8 ÷ 2³ = 1 hour.",
+ "alt": "Permitted daily hours against sound level, halving every 3 decibels from 8 hours at 85 decibels to 1 hour at 94.",
+ "description": [
+  "Safe time = 8 h ÷ 2^((L − 85)/3).",
+  "88 dB: 4 h. 91 dB: 2 h.",
+  "94 dB: 1 h. 100 dB: 15 minutes."
+ ],
+ "range": {
+  "x": [
+   84,
+   101
+  ],
+  "y": [
+   0,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   85,
+   88,
+   91,
+   94,
+   97,
+   100
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "sound level / dB(A)",
+  "safe exposure per day / h"
+ ],
+ "curves": [
+  {
+   "expr": "8/2^((x-85)/3)",
+   "domain": [
+    85,
+    101
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 85,
+   "y": 8,
+   "colour": "a4",
+   "label": "8 h at 85 dB",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 94,
+   "y": 1,
+   "colour": "a2",
+   "label": "1 h at 94 dB",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "8/2^((x-85)/3)",
+   "x": 94,
+   "y": 1,
+   "name": "1 hour at 94 dB"
+  },
+  {
+   "type": "point",
+   "expr": "8/2^((x-85)/3)",
+   "x": 88,
+   "y": 4,
+   "name": "each 3 dB halves the time"
+  }
+ ]
+}

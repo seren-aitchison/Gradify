@@ -36,6 +36,7 @@ H: Key differences
 X: A slinky shows compressions 30 cm apart, passing 4 per second. Find λ, f and v.
 > λ = 0.30 m, f = 4 Hz
 > v = fλ = 1.2 m s^{-1}
+D: phys-u10-slinky-compressions
 !: Don't confuse a graph of displacement against position with a picture of the wave; for sound, the "peaks" are where molecules are displaced most, not where pressure is highest (pressure peaks are 90° out of phase).
 Q: What is a longitudinal wave? | A wave in which the oscillations are parallel to the direction of energy transfer.
 Q: Why can't sound waves be polarised? | They're longitudinal: there's only one direction of oscillation.
@@ -100,6 +101,7 @@ P: Waves can be trapped in layers where speed is lowest: the ocean's SOFAR chann
 X: A speaker produces 80 dB at 2 m. What level at 20 m, assuming spherical spreading only?
 > Intensity falls by (20/2)^{2} = 100
 > Level falls by 20 dB: 60 dB
+D: phys-u10-spreading-loss
 !: Inverse-square spreading assumes a point source and no reflections; indoors or near large sources it doesn't hold.
 Q: How does intensity fall with distance from a point source? | As 1/r^{2}.
 Q: What is the SOFAR channel? | A layer in the ocean where sound speed is lowest, trapping and guiding low-frequency sound over huge distances.
@@ -169,6 +171,7 @@ H: Applications
 - Noise-cancelling headphones; radio antenna arrays steering beams.
 X: Light through slits 0.5 mm apart gives fringes 1.2 mm apart on a screen 1.0 m away. Find λ.
 > λ = xd/D = 1.2 × 10^{-3} × 5 × 10^{-4}/1.0 = 600 nm
+D: phys-u10-double-slit-fringes
 !: Two separate light bulbs don't produce visible interference: they aren't coherent with each other.
 P: **Investigate with the lab.** Vary the phase difference between two waves from 0° to 360° and watch the combined amplitude rise and fall.
 IX: waves
@@ -219,6 +222,7 @@ H: Comparison with travelling waves
 X: Microwaves in an oven form standing waves with nodes 6 cm apart. Find f.
 > λ/2 = 6 cm ⇒ λ = 12 cm
 > f = 3 × 10^{8}/0.12 = 2.5 GHz (hence the turntable: food at nodes wouldn't heat)
+D: phys-u10-microwave-standing
 !: The distance between adjacent nodes is λ/2, not λ.
 P: **Investigate with the lab.** Send two equal waves in opposite directions and get a standing wave. Find the nodes, where the string never moves.
 IX: waves
@@ -265,6 +269,7 @@ H: Other waves
 P: Sound refracts in temperature gradients (sound carries further on cold evenings when air near the ground is cooler). Ocean waves refract as they slow in shallow water, so they arrive nearly parallel to the shore. Seismic waves curve through Earth's layers.
 X: Light enters water (n = 1.33) at 50° from the normal. Find the refraction angle.
 > sin θ_{2} = sin 50°/1.33 = 0.576 ⇒ θ_{2} = 35°
+D: phys-u10-refraction-water
 !: Angles in Snell's law are measured from the normal, not from the surface.
 Q: State Snell's law. | n_{1} sin θ_{1} = n_{2} sin θ_{2}.
 Q: When does total internal reflection occur? | When light goes from a higher to a lower index medium at an angle greater than the critical angle.
@@ -336,6 +341,7 @@ H: Applications
 X: Unpolarised light (I_{0}) passes through two polarisers at 60°. Final intensity?
 > After the first: I_{0}/2
 > After the second: (I_{0}/2) cos^{2}60° = I_{0}/8
+D: phys-u10-malus-law
 !: Only transverse waves can be polarised; polarisation of light was key evidence that light is transverse.
 Q: State Malus's law. | I = I_{0} cos^{2}θ.
 Q: What is Brewster's angle? | The angle of incidence at which reflected light is completely polarised: tan θ_{B} = n_{2}/n_{1}.
@@ -403,6 +409,7 @@ P: At a perfect conductor the tangential electric field must vanish. That's why 
 X: A pipe 0.30 m long, closed at one end. Lowest two resonances (v = 343 m s^{-1})?
 > f_{1} = v/(4L) = 286 Hz
 > Next: 3f_{1} = 858 Hz (no even harmonics)
+D: phys-u10-closed-pipe
 !: For sound in pipes, a closed end is a displacement node but a pressure antinode. Be clear which quantity you mean.
 P: **Investigate with the lab.** Make standing waves on the string and check that both fixed ends are always nodes.
 IX: waves
@@ -559,6 +566,7 @@ H: Spectral analysis
 X: A guitar string plucked at its midpoint. Which harmonics are missing?
 > Even harmonics have a node at the midpoint
 > Plucking there can't excite them: the sound has only odd harmonics, giving a hollow tone
+D: phys-u10-plucked-harmonics
 !: A Fourier spectrum shows which frequencies are present over the whole record; it hides when they occur. Use a spectrogram for changing signals.
 Q: Why does plucking a string at its middle remove even harmonics? | Even harmonics have a node at the midpoint, so they can't be excited there.
 Q: How does Fourier decomposition help with dispersion? | Each frequency component travels at its own speed; recombining them shows how the wave changes shape.

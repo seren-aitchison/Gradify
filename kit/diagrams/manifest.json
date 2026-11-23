@@ -46926,5 +46926,768 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u10-closed-pipe": {
+  "title": "Resonances of a pipe closed at one end",
+  "caption": "A closed end must be a displacement node and an open end an antinode, so only odd quarter-wavelengths fit: λ = 4L/n with n = 1, 3, 5. For L = 0.3 m, the lowest two resonances are 286 Hz and 858 Hz.",
+  "alt": "Displacement envelopes in a pipe closed at the left: a quarter wavelength for the first harmonic and three quarters for the third.",
+  "description": [
+   "Fundamental: L = λ/4, λ = 1.2 m, f = 343 / 1.2 = 285.8 Hz.",
+   "Next: L = 3λ/4, λ = 0.4 m, f = 857.5 Hz, three times the fundamental.",
+   "Even harmonics cannot fit: they would need an antinode at the closed end."
+  ],
+  "course": "physics",
+  "lesson": "Boundary conditions",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Boundary conditions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 1: nodes at 0",
+    "ok": true,
+    "detail": "from L = 0.3: 0"
+   },
+   {
+    "name": "n = 1: λ = 1.2",
+    "ok": true,
+    "detail": "4L/n = 1.2"
+   },
+   {
+    "name": "n = 1: f = v/λ = 285.833 Hz",
+    "ok": true,
+    "detail": "286 Hz"
+   },
+   {
+    "name": "n = 3: f = v/λ = 857.5 Hz",
+    "ok": true,
+    "detail": "858 Hz"
+   },
+   {
+    "name": "harmonic 1 is allowed with closed-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 3 is allowed with closed-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u10-double-slit-fringes": {
+  "title": "Double-slit fringes",
+  "caption": "Bright fringes form where the path difference is a whole number of wavelengths, 1.2 mm apart on the screen. λ = d × fringe spacing / D = 0.5 mm × 1.2 mm / 1.0 m = 600 nm.",
+  "alt": "Intensity across the screen: equally spaced bright peaks every 1.2 millimetres with dark minima halfway between.",
+  "description": [
+   "Intensity on the screen against position, measured from the central bright fringe.",
+   "Bright fringes at 0, ±1.2, ±2.4 mm; dark fringes halfway, at ±0.6, ±1.8 mm.",
+   "λ = (0.5 × 10⁻³ m × 1.2 × 10⁻³ m) / 1 m = 600 nm.",
+   "Real fringes fade away from the centre because each slit also diffracts; that envelope is left out here."
+  ],
+  "course": "physics",
+  "lesson": "Interference",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Interference"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the next bright fringe is 1.2 mm from the centre",
+    "ok": true,
+    "detail": "y(1.2) = 1"
+   },
+   {
+    "name": "dark halfway between",
+    "ok": true,
+    "detail": "y(0.6) = 0"
+   },
+   {
+    "name": "λ = dy/D = 600 nm",
+    "ok": true,
+    "detail": "y(0) = 600"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u10-malus-law": {
+  "title": "Malus's law through two polarisers",
+  "caption": "The first polariser passes half of unpolarised light. The second passes cos²θ of what reaches it, so at 60° the final intensity is ½ × cos² 60° = 0.125 I₀: one eighth.",
+  "alt": "Final intensity as a fraction of the original against the angle between the polarisers, falling from 0.5 at 0 degrees to 0.125 at 60 degrees and zero at 90.",
+  "description": [
+   "After the first polariser: ½I₀, whatever its orientation.",
+   "After the second, at angle θ: ½I₀ cos²θ.",
+   "θ = 60°: ½ × 0.25 = 0.125 I₀.",
+   "At 90° (crossed polarisers) no light gets through."
+  ],
+  "course": "physics",
+  "lesson": "Polarisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Polarisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "I₀/8 at 60°",
+    "ok": true,
+    "detail": "y(60) = 0.125"
+   },
+   {
+    "name": "half the light passes when aligned",
+    "ok": true,
+    "detail": "y(0) = 0.5"
+   },
+   {
+    "name": "none when crossed",
+    "ok": true,
+    "detail": "y(90) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u10-microwave-standing": {
+  "title": "Standing microwaves in an oven",
+  "caption": "Neighbouring nodes are half a wavelength apart, so nodes 6 cm apart mean λ = 12 cm and f = c/λ = 2.5 GHz. Food at a node barely heats, which is why ovens use a turntable.",
+  "alt": "A standing wave with nodes every 6 centimetres across a 24 centimetre span, antinodes halfway between.",
+  "description": [
+   "Nodes every 6 cm: λ/2 = 0.06 m, so λ = 0.12 m.",
+   "f = 3.00 × 10⁸ / 0.12 = 2.5 × 10⁹ Hz.",
+   "Antinodes, where the field and the heating are strongest, lie halfway between nodes."
+  ],
+  "course": "physics",
+  "lesson": "Standing waves",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Standing waves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 4: nodes at 0, 0.06, 0.12, 0.18, 0.24",
+    "ok": true,
+    "detail": "from L = 0.24: 0, 0.06, 0.12, 0.18, 0.24"
+   },
+   {
+    "name": "n = 4: antinodes at 0.03, 0.09, 0.15, 0.21",
+    "ok": true,
+    "detail": "0.03, 0.09, 0.15, 0.21"
+   },
+   {
+    "name": "n = 4: λ = 0.12",
+    "ok": true,
+    "detail": "2L/n = 0.12"
+   },
+   {
+    "name": "n = 4: f = v/λ = 2500000000 Hz",
+    "ok": true,
+    "detail": "2.5 × 10^{9} Hz"
+   },
+   {
+    "name": "harmonic 4 is allowed with fixed-fixed ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u10-plucked-harmonics": {
+  "title": "Harmonics of a string plucked at its middle",
+  "caption": "Plucking at the midpoint puts an antinode there, so every harmonic with a node at the middle (the even ones) is missing. The odd harmonics fall off as 1/n²: the third has 1/9 of the fundamental's amplitude, the fifth 1/25.",
+  "alt": "Bar chart of harmonic amplitudes 1 to 7 relative to the fundamental: 1, 0, 0.11, 0, 0.04, 0, 0.02.",
+  "description": [
+   "Amplitude of harmonic n ∝ sin(nπ/2) / n² for a pluck at the centre.",
+   "n = 1: 1. n = 3: 1/9 ≈ 0.111. n = 5: 1/25 = 0.04. n = 7: 1/49 ≈ 0.020.",
+   "n = 2, 4, 6: zero, because each has a node at the plucked point."
+  ],
+  "course": "physics",
+  "lesson": "Fourier decomposition of waves",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Fourier decomposition of waves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 has the highest value",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "1 → 7: decreasing",
+    "ok": true,
+    "detail": "1 1, 3 0.1111, 5 0.04, 7 0.0204"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u10-refraction-water": {
+  "title": "Refraction into water, and back out",
+  "caption": "Entering water at 50°, light bends towards the normal: sin r = sin 50° / 1.33, so r = 35.2°. Going the other way, from water to air, any ray beyond the critical angle 48.8° is totally internally reflected.",
+  "alt": "Three ray diagrams: air to water at 50 degrees refracting to 35.2 degrees; water to air at 30 degrees refracting away from the normal; water to air at 60 degrees totally internally reflected.",
+  "description": [
+   "Air (n = 1) to water (n = 1.33) at 50°: r = sin⁻¹(sin 50° / 1.33) = 35.2°.",
+   "Water to air at 30°: the ray bends away from the normal, to 41.7°.",
+   "Critical angle sin⁻¹(1/1.33) = 48.8°; at 60° the ray cannot leave and reflects totally."
+  ],
+  "course": "physics",
+  "lesson": "Refraction",
+  "also": [],
+  "renderer": "refraction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Refraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n 1 → 1.33, i = 50°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "50°"
+   },
+   {
+    "name": "n 1 → 1.33, i = 50°: Snell's law gives r = 35.17°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 35.17°"
+   },
+   {
+    "name": "n 1 → 1.33, i = 50°: the ray bends towards the normal",
+    "ok": true,
+    "detail": "50° → 35.2°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 30°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "30°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 30°: refracted",
+    "ok": true,
+    "detail": "critical angle 48.8°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 30°: Snell's law gives r = 41.68°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 41.68°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 30°: critical angle 48.75°",
+    "ok": true,
+    "detail": "sin⁻¹(n₂/n₁) = 48.75°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 30°: the ray bends away from the normal",
+    "ok": true,
+    "detail": "30° → 41.7°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 60°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "60°"
+   },
+   {
+    "name": "n 1.33 → 1, i = 60°: totally internally reflected",
+    "ok": true,
+    "detail": "critical angle 48.8°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "840px wide, shown at 84% (labels 12.6px)"
+   }
+  ]
+ },
+ "phys-u10-slinky-compressions": {
+  "title": "Coils of a slinky",
+  "caption": "The coils bunch into compressions and spread into rarefactions. Compressions 30 cm apart give λ = 0.3 m; 4 pass each second, so f = 4 Hz and v = fλ = 1.2 m s⁻¹.",
+  "alt": "A row of coils along a line, bunched together every 0.30 metres (compressions) and spread out halfway between (rarefactions).",
+  "description": [
+   "Coils bunch at compressions every 0.3 m; rarefactions lie halfway between.",
+   "λ = distance from one compression to the next = 0.3 m.",
+   "f = 4 Hz, so v = 4 × 0.3 = 1.2 m s⁻¹.",
+   "Each coil only moves back and forth along the line; the pattern travels."
+  ],
+  "course": "physics",
+  "lesson": "Transverse and longitudinal waves",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Transverse and longitudinal waves"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "compressions at 0.15, 0.45, 0.75",
+    "ok": true,
+    "detail": "0.15, 0.45, 0.75"
+   },
+   {
+    "name": "rarefactions at 0, 0.3, 0.6, 0.9",
+    "ok": true,
+    "detail": "0, 0.3, 0.6, 0.9"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u10-spreading-loss": {
+  "title": "Sound level falling with distance",
+  "caption": "Spreading over a sphere, intensity falls as 1/r², so the level drops 20 log₁₀(r₂/r₁) dB: 6 dB for each doubling of distance. Ten times further, from 2 m to 20 m, the 80 dB falls by 20 dB to 60 dB.",
+  "alt": "Sound level in decibels against distance: falling quickly near the speaker and more slowly further away, from 80 at 2 metres to 60 at 20 metres.",
+  "description": [
+   "Level L = 80 − 20 log₁₀(r / 2 m) dB, for spherical spreading only.",
+   "At 4 m: 74 dB. At 8 m: 68 dB. Each doubling of distance costs 6 dB.",
+   "At 20 m: 60 dB."
+  ],
+  "course": "physics",
+  "lesson": "Wave propagation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u10.js: Wave propagation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "20 dB lower ten times further away",
+    "ok": true,
+    "detail": "y(20) = 60"
+   },
+   {
+    "name": "about 6 dB lower at twice the distance",
+    "ok": true,
+    "detail": "y(4) = 73.9794"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u11-adding-decibels": {
+  "title": "Adding identical machines",
+  "caption": "Intensities add, not decibels. N identical machines give N times the intensity, so the level rises by 10 log₁₀ N: four 80 dB machines make 86 dB, not 320 dB. Each doubling adds only 3 dB.",
+  "alt": "Bar chart of sound level: one machine 80 dB, two 83.0, four 86.0, eight 89.0.",
+  "description": [
+   "1 machine: 80 + 10 log₁₀ 1 = 80 dB.",
+   "2 machines: 80 + 10 log₁₀ 2 = 83 dB.",
+   "4 machines: 80 + 10 log₁₀ 4 = 86 dB.",
+   "8 machines: 80 + 10 log₁₀ 8 = 89 dB."
+  ],
+  "course": "physics",
+  "lesson": "Decibel scale",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Decibel scale"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 machine → 8 machines: increasing",
+    "ok": true,
+    "detail": "1 machine 80, 2 machines 83, 4 machines 86, 8 machines 89"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u11-doppler-pass": {
+  "title": "The pitch of a passing siren",
+  "caption": "Approaching at 30 m s⁻¹, the 700 Hz siren sounds at f = f₀v/(v − v_s) = 767 Hz; receding, f₀v/(v + v_s) = 644 Hz. The drop happens as it passes, quickly if it passes close by.",
+  "alt": "Heard frequency against time: steady near 767 hertz while the ambulance approaches, dropping through 700 as it passes, then steady near 644.",
+  "description": [
+   "Approaching: 700 × 343 / (343 − 30) = 767.1 Hz.",
+   "Receding: 700 × 343 / (343 + 30) = 643.7 Hz.",
+   "At the moment of passing (10 m away) the siren moves across the line of sight, so you hear the true 700 Hz."
+  ],
+  "course": "physics",
+  "lesson": "Doppler effect",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Doppler effect"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "approaching tends to 767.1 Hz",
+    "ok": true,
+    "detail": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100)) at 0 = 766.98; expected 766.0926517571885–767.0926517571885"
+   },
+   {
+    "name": "receding tends to 643.7 Hz",
+    "ok": true,
+    "detail": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100)) at 12 = 643.78; expected 643.6997319034853–644.6997319034853"
+   },
+   {
+    "name": "the true frequency as it passes",
+    "ok": true,
+    "detail": "y(6) = 700"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u11-noise-exposure": {
+  "title": "How long is safe at each sound level?",
+  "caption": "With an 85 dB limit for 8 hours and a 3 dB exchange rate, each 3 dB more halves the safe time. At 94 dB, 9 dB over, the limit is 8 ÷ 2³ = 1 hour.",
+  "alt": "Permitted daily hours against sound level, halving every 3 decibels from 8 hours at 85 decibels to 1 hour at 94.",
+  "description": [
+   "Safe time = 8 h ÷ 2^((L − 85)/3).",
+   "88 dB: 4 h. 91 dB: 2 h.",
+   "94 dB: 1 h. 100 dB: 15 minutes."
+  ],
+  "course": "physics",
+  "lesson": "Noise pollution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Noise pollution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 hour at 94 dB",
+    "ok": true,
+    "detail": "y(94) = 1"
+   },
+   {
+    "name": "each 3 dB halves the time",
+    "ok": true,
+    "detail": "y(88) = 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u11-open-pipe-harmonics": {
+  "title": "Harmonics of an open pipe",
+  "caption": "Open at both ends, a pipe has antinodes at each end and supports every harmonic: f_n = n v / 2L. With a fundamental of 220 Hz the first three overtones are 440, 660 and 880 Hz.",
+  "alt": "Displacement envelopes in an open pipe for harmonics 1 to 4, each with antinodes at both ends.",
+  "description": [
+   "Fundamental 220 Hz: L = λ/2, so for v = 343 m s⁻¹ the pipe is 0.78 m long.",
+   "Overtones: 440 Hz (n = 2), 660 Hz (n = 3), 880 Hz (n = 4).",
+   "Each harmonic adds one more node inside the pipe."
+  ],
+  "course": "physics",
+  "lesson": "Harmonics and overtones",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Harmonics and overtones"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 1: f = v/λ = 220.013 Hz",
+    "ok": true,
+    "detail": "220 Hz"
+   },
+   {
+    "name": "n = 2: f = v/λ = 440.026 Hz",
+    "ok": true,
+    "detail": "440 Hz"
+   },
+   {
+    "name": "n = 3: f = v/λ = 660.038 Hz",
+    "ok": true,
+    "detail": "660 Hz"
+   },
+   {
+    "name": "n = 4: f = v/λ = 880.051 Hz",
+    "ok": true,
+    "detail": "880 Hz"
+   },
+   {
+    "name": "harmonic 1 is allowed with open-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 2 is allowed with open-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 3 is allowed with open-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "harmonic 4 is allowed with open-open ends",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u11-path-difference": {
+  "title": "Half a wavelength apart: quiet",
+  "caption": "At 343 Hz, λ = 343/343 = 1 m. Your distances to the speakers differ by 0.5 m = λ/2, so the two waves arrive half a cycle apart and cancel: you hear a quiet spot.",
+  "alt": "Two equal waves half a wavelength out of step, adding to a flat line.",
+  "description": [
+   "λ = 1 m; path difference 0.5 m = ½λ, a phase difference of 180°.",
+   "The two waves arriving are equal and opposite at every moment, so they sum to zero.",
+   "A path difference of a whole number of wavelengths would give a loud spot."
+  ],
+  "course": "physics",
+  "lesson": "Beats and interference",
+  "also": [],
+  "renderer": "wave",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Beats and interference"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the sum has amplitude 0",
+    "ok": true,
+    "detail": "largest |y| of the sum = 1.03 × 10^{-15}"
+   },
+   {
+    "name": "the waves interfere destructively",
+    "ok": true,
+    "detail": "same wavelength: true; phase difference 180.0°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u11-reverberation": {
+  "title": "Reverberation time",
+  "caption": "Sabine's formula RT₆₀ = 0.161V/A gives 1.61 s for 2000 m³ and 200 m² of absorption: the time for the sound to fall by 60 dB after the source stops. For 1.0 s the hall needs 322 m² of absorption.",
+  "alt": "Sound level relative to the start, falling in a straight line from 0 to minus 60 decibels at 1.61 seconds.",
+  "description": [
+   "After the source stops, the level falls at a steady rate in decibels per second.",
+   "RT₆₀ = 0.161 × 2000 / 200 = 1.61 s.",
+   "To get 1.0 s: A = 0.161 × 2000 / 1.0 = 322 m²."
+  ],
+  "course": "physics",
+  "lesson": "Reverberation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u11.js: Reverberation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "60 dB down after 1.61 s",
+    "ok": true,
+    "detail": "y(1.61) = -60"
+   },
+   {
+    "name": "Sabine: 0.161V/A",
+    "ok": true,
+    "detail": "y(0) = 1.61"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

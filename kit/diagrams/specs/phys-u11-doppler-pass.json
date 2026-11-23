@@ -1,0 +1,114 @@
+{
+ "id": "phys-u11-doppler-pass",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u11",
+ "lesson": "Doppler effect",
+ "title": "The pitch of a passing siren",
+ "caption": "Approaching at 30 m s⁻¹, the 700 Hz siren sounds at f = f₀v/(v − v_s) = 767 Hz; receding, f₀v/(v + v_s) = 644 Hz. The drop happens as it passes, quickly if it passes close by.",
+ "alt": "Heard frequency against time: steady near 767 hertz while the ambulance approaches, dropping through 700 as it passes, then steady near 644.",
+ "description": [
+  "Approaching: 700 × 343 / (343 − 30) = 767.1 Hz.",
+  "Receding: 700 × 343 / (343 + 30) = 643.7 Hz.",
+  "At the moment of passing (10 m away) the siren moves across the line of sight, so you hear the true 700 Hz."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   620,
+   790
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   650,
+   700,
+   750
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s (passes at 6 s)",
+  "frequency heard / Hz"
+ ],
+ "curves": [
+  {
+   "expr": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 767.0926517571885
+  },
+  {
+   "y": 700
+  },
+  {
+   "y": 643.6997319034853
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 767.09,
+   "colour": "a2",
+   "label": "approaching: 767 Hz",
+   "dx": 0,
+   "dy": 16
+  },
+  {
+   "x": 10.5,
+   "y": 643.7,
+   "colour": "a4",
+   "label": "receding: 644 Hz",
+   "anchor": "end",
+   "dx": 0,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100))",
+   "x": 0,
+   "between": [
+    766.0926517571885,
+    767.0926517571885
+   ],
+   "name": "approaching tends to 767.1 Hz"
+  },
+  {
+   "type": "value",
+   "expr": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100))",
+   "x": 12,
+   "between": [
+    643.6997319034853,
+    644.6997319034853
+   ],
+   "name": "receding tends to 643.7 Hz"
+  },
+  {
+   "type": "point",
+   "expr": "700*343/(343+30*(30*(x-6))/sqrt((30*(x-6))^2+100))",
+   "x": 6,
+   "y": 700,
+   "name": "the true frequency as it passes"
+  }
+ ]
+}

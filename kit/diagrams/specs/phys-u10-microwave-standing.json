@@ -1,0 +1,42 @@
+{
+ "id": "phys-u10-microwave-standing",
+ "renderer": "wave",
+ "course": "physics",
+ "unit": "u10",
+ "lesson": "Standing waves",
+ "title": "Standing microwaves in an oven",
+ "caption": "Neighbouring nodes are half a wavelength apart, so nodes 6 cm apart mean λ = 12 cm and f = c/λ = 2.5 GHz. Food at a node barely heats, which is why ovens use a turntable.",
+ "alt": "A standing wave with nodes every 6 centimetres across a 24 centimetre span, antinodes halfway between.",
+ "description": [
+  "Nodes every 6 cm: λ/2 = 0.06 m, so λ = 0.12 m.",
+  "f = 3.00 × 10⁸ / 0.12 = 2.5 × 10⁹ Hz.",
+  "Antinodes, where the field and the heating are strongest, lie halfway between nodes."
+ ],
+ "kind": "standing",
+ "L": 0.24,
+ "n": 4,
+ "ends": "fixed-fixed",
+ "v": 300000000,
+ "claims": {
+  "harmonics": [
+   {
+    "n": 4,
+    "nodes": [
+     0,
+     0.06,
+     0.12,
+     0.18,
+     0.24
+    ],
+    "antinodes": [
+     0.03,
+     0.09,
+     0.15,
+     0.21
+    ],
+    "lambda": 0.12,
+    "f": 2500000000
+   }
+  ]
+ }
+}
