@@ -1,0 +1,91 @@
+{
+ "id": "phys-u22-lennard-jones",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u22",
+ "lesson": "Molecular bonding from a physical perspective",
+ "title": "The Lennard-Jones potential",
+ "caption": "V = 4ε[(σ/r)¹² − (σ/r)⁶]: steep repulsion at short range, weak attraction further out. Setting dV/dr = 0 gives the equilibrium separation r₀ = 2^{1/6}σ = 1.122σ, where the well depth is ε.",
+ "alt": "Potential energy against separation: a steep wall below 1 sigma, a minimum of minus epsilon at 1.12 sigma, rising towards zero at large separation.",
+ "description": [
+  "Separation in units of σ; energy in units of ε.",
+  "V = 0 at r = σ.",
+  "The minimum is at r₀ = 2^{1/6}σ = 1.1225σ, with V = −ε.",
+  "At r < σ the (σ/r)¹² repulsion dominates; beyond r₀ the −(σ/r)⁶ attraction fades."
+ ],
+ "range": {
+  "x": [
+   0.9,
+   3
+  ],
+  "y": [
+   -1.3,
+   1.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / σ",
+  "V / ε"
+ ],
+ "curves": [
+  {
+   "expr": "4*((1/x)^12-(1/x)^6)",
+   "domain": [
+    0.96,
+    3
+   ],
+   "colour": "a1",
+   "samples": 600
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.122462048309373,
+   "to": -1,
+   "label": "r₀"
+  },
+  {
+   "y": -1
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "4*((1/x)^12-(1/x)^6)",
+   "domain": [
+    1,
+    3
+   ],
+   "x": 1.1225,
+   "y": -1,
+   "name": "minimum −ε at r₀ = 1.122σ"
+  },
+  {
+   "type": "point",
+   "expr": "4*((1/x)^12-(1/x)^6)",
+   "x": 1,
+   "y": 0,
+   "name": "V = 0 at r = σ"
+  }
+ ]
+}

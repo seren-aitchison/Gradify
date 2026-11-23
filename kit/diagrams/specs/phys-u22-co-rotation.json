@@ -1,0 +1,60 @@
+{
+ "id": "phys-u22-co-rotation",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u22",
+ "lesson": "Rotational spectra",
+ "title": "The rotational ladder of CO",
+ "caption": "Rotational energies go as E_J = hBJ(J + 1), so the gaps grow: a J → J − 1 photon has f = 2BJ. The lines are evenly spaced by 2B = 115 GHz: 115, 230, 345 GHz: microwaves, with 345 GHz (0.87 mm) already in the far infrared.",
+ "alt": "Rotational energy levels of carbon monoxide for J = 0 to 3, with gaps growing upward and transitions at 115, 230 and 345 gigahertz.",
+ "description": [
+  "B = 57.5 GHz (in frequency units).",
+  "E_J = hBJ(J + 1): J = 1 at 0.0004756 eV, J = 2 at 0.0014268 eV, J = 3 at 0.0028536 eV.",
+  "Transitions J → J − 1: 115 GHz, 230 GHz, 345 GHz, spaced by 2B.",
+  "From the spacing, the moment of inertia and then the bond length (about 0.113 nm) follow."
+ ],
+ "levels": [
+  {
+   "E": 0,
+   "label": "J = 0"
+  },
+  {
+   "E": 0.0004756,
+   "label": "J = 1"
+  },
+  {
+   "E": 0.0014268,
+   "label": "J = 2"
+  },
+  {
+   "E": 0.0028536,
+   "label": "J = 3"
+  }
+ ],
+ "transitions": [
+  {
+   "from": 1,
+   "to": 0,
+   "f": 115000000000,
+   "label": "115 GHz",
+   "kind": "emission",
+   "region": "microwave"
+  },
+  {
+   "from": 2,
+   "to": 1,
+   "f": 230000000000,
+   "label": "230 GHz",
+   "kind": "emission",
+   "region": "microwave"
+  },
+  {
+   "from": 3,
+   "to": 2,
+   "f": 345000000000,
+   "label": "345 GHz",
+   "kind": "emission",
+   "region": "infrared"
+  }
+ ]
+}

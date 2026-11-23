@@ -15,6 +15,7 @@ H: Scales from ratios
 X: At room temperature (k_{B}T ≈ 0.025 eV), which modes are excited in N_{2}?
 > Rotations (~0.0005 eV spacing): many levels populated
 > Vibration (0.29 eV): almost all in ground state; electronic: ground state
+D: phys-u22-n2-modes
 !: Vibrational and rotational energies aren't independent exactly; vibration changes the bond length and so the rotational constant.
 Q: Why are molecular rotational energies so much smaller than electronic ones? | They scale with the electron-to-nucleus mass ratio; nuclei are heavy and rotate slowly.
 Q: What is the Born–Oppenheimer approximation? | Treating electron motion separately from the much slower nuclear motion.
@@ -38,6 +39,7 @@ H: Applications
 X: CO's lines are spaced by 115 GHz (2B/h). Bond length?
 > B/h = 57.6 GHz, and B = ħ^{2}/(2I), so I = h/(8π^{2} × 57.6 × 10^{9}) = 1.46 × 10^{-46} kg m^{2}
 > μ = 1.14 × 10^{-26} kg ⇒ r = √(I/μ) = 0.113 nm
+D: phys-u22-co-rotation
 !: Homonuclear molecules (N_{2}, O_{2}, H_{2}) have no permanent dipole, so no pure rotational absorption spectrum; they're seen by Raman spectroscopy.
 Q: What is the rotational energy of a rigid rotor? | E_{J} = BJ(J + 1), with B = ħ^{2}/(2I).
 Q: Why can't N_{2} show a pure rotational absorption spectrum? | It has no permanent electric dipole moment.
@@ -102,6 +104,7 @@ H: Why H_{2} binds
 P: In the bonding orbital, the electrons spread over both nuclei: their wavefunction is less confined, lowering kinetic energy, and they spend time between the nuclei, attracting both. Antisymmetry requires the two electrons to have opposite spins (singlet). H_{2}^{+}, with one electron, already binds (2.65 eV).
 X: Lennard-Jones: equilibrium separation in terms of σ?
 > dV/dr = 0 ⇒ r_{min} = 2^{1/6}σ ≈ 1.12σ
+D: phys-u22-lennard-jones
 !: Covalent bonds aren't "two electrons sitting between atoms"; they're delocalised quantum states with lower total energy.
 Q: Why does sharing electrons lower energy in a covalent bond? | Delocalisation lowers kinetic energy and electrons attract both nuclei.
 Q: How do van der Waals forces depend on distance? | Attractive potential ∝ 1/r^{6}.
@@ -282,6 +285,7 @@ H: Lasers
 X: FRET efficiency at r = R_{0}? At 2R_{0}?
 > r = R_{0}: 50%
 > r = 2R_{0}: 1/(1 + 64) ≈ 1.5%: a sensitive molecular ruler
+D: phys-u22-fret
 !: FRET doesn't involve emitting and reabsorbing a photon; it's a direct near-field coupling.
 Q: How does FRET efficiency depend on distance? | As 1/(1 + (r/R_{0})^{6}), falling steeply beyond the Förster radius.
 Q: How does nitrogen help a CO_{2} laser? | Excited N_{2} vibrations transfer energy efficiently to the CO_{2} upper laser level.

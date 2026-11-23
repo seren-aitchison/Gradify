@@ -65254,5 +65254,226 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "phys-u22-co-rotation": {
+  "title": "The rotational ladder of CO",
+  "caption": "Rotational energies go as E_J = hBJ(J + 1), so the gaps grow: a J → J − 1 photon has f = 2BJ. The lines are evenly spaced by 2B = 115 GHz: 115, 230, 345 GHz: microwaves, with 345 GHz (0.87 mm) already in the far infrared.",
+  "alt": "Rotational energy levels of carbon monoxide for J = 0 to 3, with gaps growing upward and transitions at 115, 230 and 345 gigahertz.",
+  "description": [
+   "B = 57.5 GHz (in frequency units).",
+   "E_J = hBJ(J + 1): J = 1 at 0.0004756 eV, J = 2 at 0.0014268 eV, J = 3 at 0.0028536 eV.",
+   "Transitions J → J − 1: 115 GHz, 230 GHz, 345 GHz, spaced by 2B.",
+   "From the spacing, the moment of inertia and then the bond length (about 0.113 nm) follow."
+  ],
+  "course": "physics",
+  "lesson": "Rotational spectra",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u22.js: Rotational spectra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 → 0: f = ΔE/h = 1.15 × 10^{11} Hz",
+    "ok": true,
+    "detail": "1.15 × 10^{11} Hz"
+   },
+   {
+    "name": "1 → 0 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "1 → 0 is in the microwave",
+    "ok": true,
+    "detail": "2.61 × 10^{6} nm is microwave"
+   },
+   {
+    "name": "2 → 1: f = ΔE/h = 2.3 × 10^{11} Hz",
+    "ok": true,
+    "detail": "2.3 × 10^{11} Hz"
+   },
+   {
+    "name": "2 → 1 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "2 → 1 is in the microwave",
+    "ok": true,
+    "detail": "1.3 × 10^{6} nm is microwave"
+   },
+   {
+    "name": "3 → 2: f = ΔE/h = 3.45 × 10^{11} Hz",
+    "ok": true,
+    "detail": "3.45 × 10^{11} Hz"
+   },
+   {
+    "name": "3 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "3 → 2 is in the infrared",
+    "ok": true,
+    "detail": "8.69 × 10^{5} nm is infrared"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u22-fret": {
+  "title": "FRET efficiency against distance",
+  "caption": "Energy transfer falls as the sixth power of distance: E = 1/(1 + (r/R₀)⁶). At r = R₀ it is exactly 50%; at 2R₀ only 1/65 = 1.5%. That steepness makes FRET a ruler for distances of a few nanometres.",
+  "alt": "Transfer efficiency against distance in units of R zero, a steep sigmoid falling from 1 through 0.5 at 1 to 0.015 at 2.",
+  "description": [
+   "Distance r in units of the Förster radius R₀.",
+   "E = 1 / (1 + (r/R₀)⁶).",
+   "r = R₀: E = 0.5. r = 2R₀: E = 1/65 = 0.0154."
+  ],
+  "course": "physics",
+  "lesson": "Energy transfer",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u22.js: Energy transfer"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "50% at R₀",
+    "ok": true,
+    "detail": "y(1) = 0.5"
+   },
+   {
+    "name": "1/65 at 2R₀",
+    "ok": true,
+    "detail": "y(2) = 0.0154"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u22-lennard-jones": {
+  "title": "The Lennard-Jones potential",
+  "caption": "V = 4ε[(σ/r)¹² − (σ/r)⁶]: steep repulsion at short range, weak attraction further out. Setting dV/dr = 0 gives the equilibrium separation r₀ = 2^{1/6}σ = 1.122σ, where the well depth is ε.",
+  "alt": "Potential energy against separation: a steep wall below 1 sigma, a minimum of minus epsilon at 1.12 sigma, rising towards zero at large separation.",
+  "description": [
+   "Separation in units of σ; energy in units of ε.",
+   "V = 0 at r = σ.",
+   "The minimum is at r₀ = 2^{1/6}σ = 1.1225σ, with V = −ε.",
+   "At r < σ the (σ/r)¹² repulsion dominates; beyond r₀ the −(σ/r)⁶ attraction fades."
+  ],
+  "course": "physics",
+  "lesson": "Molecular bonding from a physical perspective",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u22.js: Molecular bonding from a physical perspective"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "minimum −ε at r₀ = 1.122σ",
+    "ok": true,
+    "detail": "found (1.123, -1)"
+   },
+   {
+    "name": "V = 0 at r = σ",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u22-n2-modes": {
+  "title": "Which modes of N₂ are excited at room temperature?",
+  "caption": "Rotational levels are spaced far below k_BT ≈ 0.025 eV, so many are populated. The vibrational quantum, 0.29 eV, is more than ten times k_BT, so almost every molecule stays in its vibrational ground state; electronic excitation (several eV) is further still.",
+  "alt": "Bar chart on a log scale: rotational spacing 0.5 meV, thermal energy 25 meV, vibrational quantum 290 meV.",
+  "description": [
+   "Rotational spacing of N₂: about 0.0005 eV, 50 times smaller than k_BT: many rotational levels are occupied.",
+   "k_BT at room temperature: about 0.025 eV.",
+   "Vibrational quantum: 0.29 eV, about 12 k_BT: the Boltzmann factor e^(−12) leaves almost all molecules in v = 0."
+  ],
+  "course": "physics",
+  "lesson": "Molecular energy levels",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u22.js: Molecular energy levels"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "rotational spacing → vibrational quantum: increasing",
+    "ok": true,
+    "detail": "rotational spacing 0.5, k_{B}T at 300 K 25, vibrational quantum 290"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
