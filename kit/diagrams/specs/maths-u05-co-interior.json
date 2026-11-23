@@ -1,0 +1,152 @@
+{
+ "id": "maths-u05-co-interior",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Parallel and Perpendicular Lines",
+ "title": "Co-interior angles add to 180°",
+ "caption": "Between two parallel lines, the angles on the same side of the transversal add to 180°: (2x + 30) + (x + 15) = 180 gives x = 45, so the angles are 120° and 60°.",
+ "alt": "Two parallel lines crossed by a transversal, with the two co-interior angles marked 120 degrees and 60 degrees.",
+ "description": [
+  "Two parallel lines are cut by a transversal.",
+  "The co-interior angles 2x + 30 and x + 15 add to 180°, so 3x + 45 = 180 and x = 45.",
+  "The angles are 120° (2x + 30) and 60° (x + 15)."
+ ],
+ "points": {
+  "A": [
+   -3,
+   0
+  ],
+  "B": [
+   9,
+   0
+  ],
+  "C": [
+   -1.2679491924311221,
+   3
+  ],
+  "D": [
+   10.732050807568879,
+   3
+  ],
+  "X": [
+   0,
+   0
+  ],
+  "Y": [
+   1.7320508075688779,
+   3
+  ],
+  "T": [
+   -0.5196152422706634,
+   -0.9
+  ],
+  "U": [
+   2.251666049839541,
+   3.9
+  ]
+ },
+ "hide": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "X",
+  "Y",
+  "T",
+  "U"
+ ],
+ "segments": [
+  [
+   "A",
+   "B"
+  ],
+  [
+   "C",
+   "D"
+  ],
+  {
+   "a": "T",
+   "b": "U",
+   "colour": "a2"
+  }
+ ],
+ "parallels": [
+  {
+   "seg": [
+    "A",
+    "B"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "C",
+    "D"
+   ],
+   "n": 1
+  }
+ ],
+ "angles": [
+  {
+   "at": "X",
+   "from": "B",
+   "to": "Y",
+   "deg": 60,
+   "label": "x + 15 = 60°",
+   "colour": "a1",
+   "r": 24,
+   "labelR": 20
+  },
+  {
+   "at": "Y",
+   "from": "X",
+   "to": "D",
+   "deg": 120,
+   "label": "2x + 30 = 120°",
+   "colour": "a2",
+   "r": 24,
+   "labelR": 20
+  }
+ ],
+ "view": {
+  "x": [
+   -4,
+   10
+  ],
+  "y": [
+   -1.4,
+   4.4
+  ]
+ },
+ "height": [
+  320,
+  280
+ ],
+ "checks": [
+  {
+   "type": "parallel",
+   "a": [
+    "A",
+    "B"
+   ],
+   "b": [
+    "C",
+    "D"
+   ],
+   "name": "the lines are parallel"
+  },
+  {
+   "type": "angleSum",
+   "angles": [
+    0,
+    1
+   ],
+   "total": 180,
+   "name": "co-interior angles add to 180°"
+  }
+ ],
+ "fromLesson": [
+  "The angles are 120° and 60°"
+ ]
+}

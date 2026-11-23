@@ -1,0 +1,112 @@
+{
+ "id": "maths-u13-type-errors",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Type I and Type II Errors",
+ "title": "Type I and Type II errors",
+ "caption": "Reject when x̄ > 105. Under H₀ (μ = 100, SE 3) the area beyond 105 is α ≈ 0.048; under μ = 110 the area below 105 is β ≈ 0.048, so power ≈ 0.952.",
+ "alt": "Two normal curves for the sample mean, centred at 100 and 110, each with SD 3, and a dashed line at 105; the tail of the left curve beyond 105 and of the right curve below 105 are shaded.",
+ "description": [
+  "Both distributions have standard error 15/5 = 3.",
+  "α is the area of the H₀ curve to the right of 105: 0.048.",
+  "β is the area of the μ = 110 curve to the left of 105: 0.048."
+ ],
+ "range": {
+  "x": [
+   90,
+   120
+  ],
+  "y": [
+   0,
+   0.16
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   95,
+   100,
+   105,
+   110,
+   115,
+   120
+  ],
+  [
+   0.05,
+   0.1,
+   0.15
+  ]
+ ],
+ "axisLabels": [
+  "sample mean",
+  "density"
+ ],
+ "legend": [
+  [
+   "H₀: μ = 100",
+   "a1"
+  ],
+  [
+   "μ = 110",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  91,
+  0.15
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-100)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "colour": "a1"
+  },
+  {
+   "expr": "exp(-(x-110)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "colour": "a2"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "exp(-(x-100)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "from": 105,
+   "to": 120,
+   "colour": "a1",
+   "opacity": 0.4
+  },
+  {
+   "expr": "exp(-(x-110)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "from": 90,
+   "to": 105,
+   "colour": "a2",
+   "opacity": 0.4
+  }
+ ],
+ "marks": [
+  {
+   "x": 105,
+   "label": "reject beyond 105",
+   "dx": 6
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-(x-100)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "from": 105,
+   "to": 140,
+   "value": 0.0478,
+   "tol": 0.001,
+   "name": "α = P(X̄ > 105 | μ = 100) ≈ 0.048"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-110)^2/(2*3^2))/(3*sqrt(2*3.141592653589793))",
+   "from": 80,
+   "to": 105,
+   "value": 0.0478,
+   "tol": 0.001,
+   "name": "β = P(X̄ ≤ 105 | μ = 110) ≈ 0.048"
+  }
+ ]
+}

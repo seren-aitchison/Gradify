@@ -1,0 +1,70 @@
+{
+ "id": "phys-u15-potential-midpoint",
+ "renderer": "field",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Electric potential",
+ "title": "Potential midway between +4 nC and −2 nC",
+ "caption": "Potential is a scalar, so the contributions add with their signs: V = k(4 × 10⁻⁹ − 2 × 10⁻⁹)/0.1 = 180 V. The field there, in contrast, is a vector: both charges push the same way, from + towards −, so E = k(4 + 2) × 10⁻⁹/0.1² = 5393 V m⁻¹, not the difference.",
+ "alt": "Two point charges 0.2 m apart, +4 nC and −2 nC, with field lines and equipotentials; the midpoint is at 180 V and the field there points from the positive to the negative charge.",
+ "description": [
+  "Two point charges 0.2 m apart: +4 nC on the left and −2 nC on the right, with field lines and equipotential lines.",
+  "At the midpoint, 0.1 m from each, the potentials add as numbers: k × 4 nC/0.1 + k × (−2 nC)/0.1 = 180 V.",
+  "The fields add as vectors: both point from + to −, so E = 5393 V m⁻¹ towards the −2 nC charge."
+ ],
+ "kind": "electric",
+ "range": {
+  "x": [
+   -0.1,
+   0.3
+  ],
+  "y": [
+   -0.15,
+   0.15
+  ]
+ },
+ "charges": [
+  {
+   "x": 0,
+   "y": 0,
+   "q": 4e-9,
+   "label": "+4"
+  },
+  {
+   "x": 0.2,
+   "y": 0,
+   "q": -2e-9,
+   "label": "−2"
+  }
+ ],
+ "equipotentials": true,
+ "claims": [
+  {
+   "type": "V",
+   "at": [
+    0.1,
+    0
+   ],
+   "value": 179.75103584599998,
+   "name": "V = 180 V at the midpoint"
+  },
+  {
+   "type": "E",
+   "at": [
+    0.1,
+    0
+   ],
+   "value": 5392.5310753799995,
+   "name": "E = 5393 V/m at the midpoint"
+  },
+  {
+   "type": "direction",
+   "at": [
+    0.1,
+    0
+   ],
+   "angle": 0,
+   "name": "the field points from + towards −"
+  }
+ ]
+}

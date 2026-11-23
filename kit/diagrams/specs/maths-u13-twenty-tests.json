@@ -1,0 +1,68 @@
+{
+ "id": "maths-u13-twenty-tests",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Multiple Testing Correction",
+ "title": "Twenty tests with no real effects",
+ "caption": "The number of false positives is B(20, 0.05). P(at least one) = 1 − 0.95²⁰ = 0.642: about two chances in three of a spurious finding.",
+ "alt": "Bar chart of B(20, 0.05); the bars for 1 to 20 false positives are shaded, total 0.642.",
+ "description": [
+  "Each test has a 5% chance of a false positive.",
+  "The bar at 0 is 0.95²⁰ ≈ 0.358.",
+  "Everything else, 0.642, is at least one false positive."
+ ],
+ "dist": {
+  "dist": "binomial",
+  "n": 20,
+  "p": 0.05
+ },
+ "range": {
+  "x": [
+   -0.5,
+   8.5
+  ],
+  "y": [
+   0,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "false positives",
+  "probability"
+ ],
+ "shade": [
+  1,
+  20
+ ],
+ "p": 0.642,
+ "dp": 3,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 1
+  },
+  {
+   "type": "prob",
+   "from": 1,
+   "to": 20,
+   "p": 0.642,
+   "dp": 3
+  }
+ ]
+}

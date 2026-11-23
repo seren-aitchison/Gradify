@@ -1,0 +1,59 @@
+{
+ "id": "maths-u13-nonresponse-bounds",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Sampling Bias",
+ "title": "What non-response could hide",
+ "caption": "240 of the 1,000 customers are known satisfied. If none of the 600 non-respondents were satisfied the rate is 24%; if all were, it is 84%: the sample only pins it between 0.24 and 0.84.",
+ "alt": "A number line from 0 to 1 with an interval from 0.24 to 0.84, and the respondents' own rate 0.6 inside it.",
+ "description": [
+  "400 respondents × 60% = 240 satisfied.",
+  "Lowest possible rate: 240/1000 = 0.24.",
+  "Highest: (240 + 600)/1000 = 0.84."
+ ],
+ "range": [
+  0,
+  1
+ ],
+ "ticks": {
+  "step": 0.2
+ },
+ "points": [
+  {
+   "value": 0.24,
+   "label": "0.24"
+  },
+  {
+   "value": 0.6,
+   "label": "respondents 0.6",
+   "colour": "a4"
+  },
+  {
+   "value": 0.84,
+   "label": "0.84"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 0.24,
+   "to": 0.84,
+   "closed": [
+    true,
+    true
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "400*0.6/1000",
+   "value": "0.24"
+  },
+  {
+   "type": "value",
+   "expr": "(400*0.6+600)/1000",
+   "value": "0.84"
+  }
+ ]
+}

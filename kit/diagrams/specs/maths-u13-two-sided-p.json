@@ -1,0 +1,65 @@
+{
+ "id": "maths-u13-two-sided-p",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "P-Values",
+ "title": "The p-value for z = 2.3",
+ "caption": "The shaded tail beyond 2.3 has area 0.0107; a two-sided test doubles it: p = 0.0214.",
+ "alt": "Standard normal curve with the upper tail beyond z = 2.3 shaded, area 0.0107, to be doubled for the two-sided p-value.",
+ "description": [
+  "Under H₀ the statistic is standard normal.",
+  "The area beyond 2.3 is 0.0107.",
+  "Two-sided: double it, 0.0214."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 0,
+  "sigma": 1
+ },
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   0.45
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "axisLabels": [
+  "z",
+  "density"
+ ],
+ "shade": [
+  2.3,
+  null
+ ],
+ "p": 0.0107,
+ "dp": 4,
+ "checks": [
+  {
+   "type": "prob",
+   "from": 2.3,
+   "to": null,
+   "p": 0.0107
+  }
+ ]
+}

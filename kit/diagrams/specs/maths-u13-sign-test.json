@@ -1,0 +1,66 @@
+{
+ "id": "maths-u13-sign-test",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Nonparametric Statistics",
+ "title": "The sign test: 8 positive differences out of 10",
+ "caption": "Under H₀ each difference is positive with probability 1/2, so the count is B(10, 0.5). P(X ≥ 8) = 0.0547 > 0.05: not significant.",
+ "alt": "Bar chart of B(10, 0.5) with the bars for 8, 9 and 10 shaded, total 0.0547.",
+ "description": [
+  "Under H₀ the number of positive differences is B(10, 0.5).",
+  "The one-sided p-value is the shaded area, 0.0547.",
+  "It exceeds 0.05, so do not reject."
+ ],
+ "dist": {
+  "dist": "binomial",
+  "n": 10,
+  "p": 0.5
+ },
+ "range": {
+  "x": [
+   -0.5,
+   10.5
+  ],
+  "y": [
+   0,
+   0.3
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.1,
+   0.2,
+   0.3
+  ]
+ ],
+ "axisLabels": [
+  "positive differences",
+  "probability"
+ ],
+ "shade": [
+  8,
+  10
+ ],
+ "p": 0.0547,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 5
+  },
+  {
+   "type": "prob",
+   "from": 8,
+   "to": 10,
+   "p": 0.0547
+  }
+ ]
+}

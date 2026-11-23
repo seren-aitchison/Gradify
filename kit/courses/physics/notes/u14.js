@@ -11,6 +11,7 @@ E: P = κAΔT/L
 - Composite walls: thermal resistances add in series, R = L/(κA).
 X: A copper rod (L = 0.5 m, A = 1 cm^{2}) has ends at 100 °C and 20 °C. Heat flow?
 > P = 400 × 10^{-4} × 80/0.5 = 6.4 W
+D: phys-u14-copper-rod
 !: Materials that feel cold (metal, stone) aren't colder; they conduct heat away from your hand faster.
 Q: Why are metals good thermal conductors? | Free electrons carry heat efficiently, as well as lattice vibrations.
 Q: What is the Wiedemann–Franz law? | The ratio of thermal to electrical conductivity in metals is proportional to temperature: κ/σ = LT.
@@ -75,6 +76,7 @@ P: Fourier (1822) developed his law and, to solve the heat equation, invented Fo
 X: How deep does a daily temperature cycle penetrate soil (α = 5 × 10^{-7} m^{2} s^{-1})?
 > Penetration depth δ = √(2α/ω), ω = 7.3 × 10^{-5} s^{-1}
 > δ ≈ 0.12 m; annual cycle: √365 ≈ 19× deeper, ~2.3 m
+D: phys-u14-penetration-depth
 !: Fourier's law assumes local equilibrium; it fails at nanoscales or very short times (ballistic phonons, second sound).
 Q: State Fourier's law. | Heat flux is proportional to and opposite the temperature gradient: q = −κ∇T.
 Q: What equation results from Fourier's law plus energy conservation? | The heat (diffusion) equation.
@@ -97,6 +99,7 @@ H: Applications
 X: Coffee at 90 °C in a 20 °C room cools to 60 °C in 10 min. When does it reach 40 °C?
 > e^{−10k} = 40/70 ⇒ k = 0.056 min^{-1}
 > e^{−kt} = 20/70 ⇒ t = 22.4 min
+D: phys-u14-coffee-cooling
 !: Newton's law is an empirical approximation, not a fundamental law; it fails for large temperature differences and for objects with internal temperature gradients.
 Q: State Newton's law of cooling. | The rate of cooling is proportional to the temperature difference with the surroundings.
 Q: What does the Biot number test? | Whether an object can be treated as having uniform internal temperature (Bi < 0.1).
@@ -138,6 +141,7 @@ H: Colour temperature
 P: Light sources are described by colour temperature: incandescent bulbs ~2700 K (warm), daylight ~5500–6500 K (cool). Stellar spectral classes O, B, A, F, G, K, M run from hot to cool.
 X: A star's spectrum peaks at 290 nm. Its surface temperature?
 > T = 2.898 × 10^{-3}/2.9 × 10^{-7} = 10 000 K
+D: phys-u14-wien-star
 !: The peak in wavelength and the peak in frequency don't correspond to the same photon energy; specify which you mean.
 Q: State Wien's displacement law. | λ_{max}T ≈ 2.9 × 10^{-3} m K.
 Q: Why do thermal cameras work at 8–14 μm? | Objects near room and body temperature emit most strongly there.
@@ -180,6 +184,7 @@ P: Arctic birds' and mammals' legs use countercurrent exchange: warm arterial bl
 X: Counterflow: hot oil 150 → 90 °C; water 20 → 70 °C. Find ΔT_{lm}.
 > ΔT_{1} = 150 − 70 = 80; ΔT_{2} = 90 − 20 = 70
 > ΔT_{lm} = 10/ln(80/70) = 74.9 K
+D: phys-u14-counterflow
 !: Using the arithmetic mean temperature difference instead of the log mean overestimates heat transfer when the end differences are very unequal.
 Q: Why is counterflow more effective than parallel flow? | It maintains a larger temperature difference along the whole length.
 Q: What is the log mean temperature difference? | (ΔT_{1} − ΔT_{2})/ln(ΔT_{1}/ΔT_{2}), the effective driving difference in an exchanger.

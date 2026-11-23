@@ -1,3 +1,43 @@
-// Physics unit 16 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u16-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 16, Electric Circuits. Specs are written by scripts/diagrams/physics/u16.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const DEF = "a definition or list of properties that a picture would not teach";
+const FORMULA = "a one-line formula whose worked example is a single substitution; a picture would add nothing";
+export default [
+  ["u16-01", null, "the worked example is one division (I/e); drift velocity is a formula"],
+  ["u16-02", null, FORMULA],
+  ["u16-03", "graph", "phys-u16-ohm-iv", "the resistor example: a straight I–V line through the origin, R = 15 Ω, 0.60 A at 9.0 V"],
+  ["u16-03", "lab", "circuits", "build a circuit and measure I and V"],
+  ["u16-04", null, FORMULA],
+  ["u16-05", null, "needs renderer: a circuit network with series and parallel resistors and the current and voltage on each branch (the lesson's 6 Ω ∥ 3 Ω + 4 Ω across 12 V)"],
+  ["u16-05", "lab", "circuits", "build series and parallel circuits and measure each branch"],
+  ["u16-06", "circuit", "phys-kirchhoff-loop", "two opposing cells in one loop: ΣEMF = ΣIR gives 1 A (existing approved diagram)"],
+  ["u16-06", "lab", "circuits", "apply the loop and junction laws on a built circuit"],
+  ["u16-07", "lab", "circuits", "measure the EMF and terminal voltage of a cell"],
+  ["u16-08", "graph", "phys-u16-terminal-voltage", "the cell and lamp example: V = ε − Ir meets the lamp's line at 0.5 A and 1.25 V"],
+  ["u16-08", "lab", "circuits", "measure ε and r from the V–I line"],
+  ["u16-09", "lab", "circuits", "measure the power in a resistor"],
+  ["u16-10", null, "needs renderer: resistor networks, including the 12-resistor cube between opposite corners (5/6 Ω) and bridge circuits"],
+  ["u16-10", "lab", "circuits", "build a resistor network and measure its resistance"],
+  ["u16-11", "graph", "phys-u16-rc-discharge", "the 470 μF example: V = 9e^{−t/RC}, τ = 4.7 s, 1.07 V after 10 s"],
+  ["u16-11", "lab", "transients", "charge and discharge a capacitor and read the time constant"],
+  ["u16-12", "graph", "phys-u16-rc-lowpass", "the 1 kHz low-pass example: |V_out/V_in| = 1/√(1 + (f/f_c)²), 0.707 at f_c with R = 1.6 kΩ"],
+  ["u16-12", "lab", "transients", "see the RC response in the time domain"],
+  ["u16-13", "graph", "phys-u16-rl-growth", "the RL example: current rises to 1.2 A with τ = 0.05 s, 0.76 A after one τ"],
+  ["u16-13", "lab", "transients", "switch an RL circuit and watch the current"],
+  ["u16-14", null, "needs renderer: damped oscillation of an RLC circuit (underdamped, critical, overdamped) with ω₀ from L and C; the lesson's example is only ω₀ = 10⁴ rad s⁻¹"],
+  ["u16-15", "graph", "phys-u16-rc-step", "the switch-on example: V_C rises from 0 to 10 V while I falls from 10 mA to 0, τ = 1 ms"],
+  ["u16-15", "lab", "transients", "step response of a circuit"],
+  ["u16-16", "graph", "phys-u16-mains-waveform", "the mains example: ±325 V peak, 20 ms period"],
+  ["u16-17", "graph", "phys-u16-heater-power", "the 46 Ω heater: instantaneous power 0 to 2300 W with average 1150 W"],
+  ["u16-18", "vectors", "phys-u16-impedance-triangle", "the R = 30 Ω, X_L = 80 Ω, X_C = 40 Ω example: Z = 50 Ω at 53°, I = 2 A"],
+  ["u16-19", "vectors", "phys-u16-series-phasors", "the V_R = 6 V, V_L = 12 V, V_C = 4 V example: supply 10 V at 53° ahead of the current"],
+  ["u16-20", null, "needs renderer: a resonance curve (current or impedance against frequency, with Q); the lesson's example is only C = 1/(4π²f²L) = 1.3 pF"],
+  ["u16-21", null, FORMULA],
+  ["u16-22", null, "needs renderer: a rectified and smoothed waveform with the ripple"],
+  ["u16-23", null, "needs renderer: a log-frequency Bode plot (gain in dB against frequency); the graph renderer has linear axes only"],
+  ["u16-24", null, FORMULA],
+  ["u16-25", "lab", "circuits", "check superposition on a built circuit"],
+  ["u16-26", "graph", "phys-u16-thevenin-load-line", "the divider example: V = V_th − I R_th, 7.2 V open-circuit, 3 A short-circuit, R_th = 2.4 Ω"],
+  ["u16-27", null, FORMULA],
+  ["u16-28", null, "needs renderer: diode and transistor characteristics; the LED example is one resistor value, (5 − 2.0)/20 mA = 150 Ω"],
+];

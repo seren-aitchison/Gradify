@@ -1,0 +1,133 @@
+{
+ "id": "maths-u05-bezout",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Algebraic Geometry",
+ "title": "The circle x² + y² = 25 and the parabola y = x² − 5",
+ "caption": "Bézout allows up to 4 intersections. Substituting gives y² + y − 20 = 0, so y = 4 or −5: the points (3, 4), (−3, 4) and (0, −5), where the parabola touches the circle's bottom.",
+ "alt": "A circle of radius 5 and the parabola y = x squared minus 5 meeting at (3, 4), (−3, 4) and (0, −5).",
+ "description": [
+  "The circle has degree 2 and the parabola degree 2, so Bézout allows at most 4 common points.",
+  "Substitute x² = y + 5: y² + y − 20 = 0, so y = 4 or y = −5.",
+  "y = 4 gives x = ±3; y = −5 gives x = 0 (a touching point)."
+ ],
+ "range": {
+  "x": [
+   -6,
+   6
+  ],
+  "y": [
+   -7,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4
+  ],
+  [
+   -6,
+   -3,
+   3,
+   6
+  ]
+ ],
+ "grid": [
+  2,
+  3
+ ],
+ "height": [
+  360,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(25-x^2)",
+   "colour": "a1",
+   "domain": [
+    -5,
+    5
+   ]
+  },
+  {
+   "expr": "-sqrt(25-x^2)",
+   "colour": "a1",
+   "domain": [
+    -5,
+    5
+   ]
+  },
+  {
+   "expr": "x^2-5",
+   "colour": "a2",
+   "domain": [
+    -3.4,
+    3.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 4,
+   "label": "(3, 4)",
+   "colour": "a4",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": -3,
+   "y": 4,
+   "label": "(−3, 4)",
+   "colour": "a4",
+   "dx": -8,
+   "dy": -10,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": -5,
+   "label": "(0, −5)",
+   "colour": "a4",
+   "dx": 12,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "sqrt(25-x^2)",
+   "b": "x^2-5",
+   "x": 3,
+   "y": 4,
+   "name": "(3, 4) is on both"
+  },
+  {
+   "type": "intersect",
+   "a": "sqrt(25-x^2)",
+   "b": "x^2-5",
+   "x": -3,
+   "y": 4,
+   "name": "(−3, 4) is on both"
+  },
+  {
+   "type": "intersect",
+   "a": "-sqrt(25-x^2)",
+   "b": "x^2-5",
+   "x": 0,
+   "y": -5,
+   "name": "(0, −5) is on both"
+  }
+ ],
+ "fromLesson": [
+  "Points (3, 4), (−3, 4) and (0, −5)"
+ ]
+}

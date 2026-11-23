@@ -51,3 +51,27 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 
 50 lessons assessed · 36 diagrams (graph/distribution/barchart/venn/prob-tree/number-line/bar-model) · 7 lab rows (lln, clt, practice) · 12 with a recorded reason, 5 of them needing renderers: two-way table (u12-17), negative binomial in `distribution` (u12-24), 2D density (u12-43), matrix-variate (u12-45), empirical CDF step function (u12-47). Continuous families (gamma, beta, chi-squared, Weibull, log-normal, Pareto, Cauchy, Gumbel) are drawn with `graph` + area checks.
 - u03 (agent maths-a): 45 lessons assessed; 30 diagrams (graph 21, geometry 5, number-line 2, sequence, venn; plus the existing maths-transformations), labs on 16 rows (quadratics, practice, explog, grapher, complex), 14 null with reasons. All checks pass. No missing renderer.
+
+## Unit u13 (Statistics) — agent maths-c
+
+75 lessons assessed · 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph, barchart, bar-model) · 5 lab rows (regression, clt) · 39 with a recorded reason. Renderers needed: two-way table (u13-34), Mahalanobis ellipse contours (u13-49), points-in-region Monte Carlo (u13-60), path diagram (u13-66), Kaplan-Meier step curve (u13-70). Content note for the author: u13-50 gives eigenvalues 4.2, 1.5, 0.2, 0.1 for four standardised variables, which sum to 6, not 4. FIXED 23 Nov: eigenvalues now 2.8, 1.0, 0.16, 0.04 (sum 4).
+
+## Content issues for the owner
+
+- u13-50 (Multivariate Analysis): the worked example gives eigenvalues 4.2, 1.5, 0.2 and 0.1 for four standardised variables; they sum to 6, but the eigenvalues of a 4 × 4 correlation matrix sum to 4. No diagram was made. FIXED 23 Nov: eigenvalues now 2.8, 1.0, 0.16, 0.04 (sum 4).
+- u05 (agent maths-a): 50 lessons assessed; 32 diagrams (geometry 22, graph 7, transform 1, number-line 1, plus...), labs on 6 rows (circles, practice, matrix), rest null with reasons. All checks pass. Missing renderers: 3D solids/nets/coordinates (u05-03, 20, 21, 23, 30), spherical (35, 36), hyperbolic (37), surfaces/torus (49), knot diagrams (50), Buffon's needle (44), curved-surface curvature (46).
+- u08 (Multivariable and Vector Calculus): 22 lessons assessed; 8 diagrams (`maths-u08-*`), lab `descent` on 2; rest null with reasons.
+  Lacks: 3D surfaces/fields (9 lessons), conics.
+
+## Unit claims (read before starting a unit)
+
+A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
+Claimed 23 Nov 2026.
+
+| Units | Claimed by |
+|---|---|
+| u04, u06, u07 | lead session 01H1szfk, agent M1 |
+| u09, u10, u14 (WIP on branch wip/maths-u14) | lead session 01H1szfk, agent M2 |
+| u15, u16, u17, u18, u19 | lead session 01H1szfk, agent M3 |
+| u20-u24 | lead session 01H1szfk, agent M4 |
+| u25-u29 | lead session 01H1szfk, agent M5 |

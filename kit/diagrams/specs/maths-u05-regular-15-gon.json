@@ -1,0 +1,196 @@
+{
+ "id": "maths-u05-regular-15-gon",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Polygons",
+ "title": "A regular polygon with interior angle 156°",
+ "caption": "Interior and exterior angles make a straight line, so the exterior angle is 180 − 156 = 24°. The exterior angles of any polygon total 360°, so there are 360 ÷ 24 = 15 sides.",
+ "alt": "A regular 15-sided polygon with an interior angle of 156 degrees and an exterior angle of 24 degrees marked at one corner.",
+ "description": [
+  "Each interior angle is 156°, so each exterior angle is 180 − 156 = 24°.",
+  "The exterior angles of a polygon add to 360°.",
+  "The number of sides is 360 ÷ 24 = 15."
+ ],
+ "points": {
+  "V0": [
+   3.061616997868383e-16,
+   5
+  ],
+  "V1": [
+   -2.033683215379001,
+   4.567727288213004
+  ],
+  "V2": [
+   -3.7157241273869706,
+   3.3456530317942916
+  ],
+  "V3": [
+   -4.755282581475767,
+   1.5450849718747375
+  ],
+  "V4": [
+   -4.972609476841367,
+   -0.5226423163382675
+  ],
+  "V5": [
+   -4.330127018922193,
+   -2.5000000000000004
+  ],
+  "V6": [
+   -2.9389262614623664,
+   -4.045084971874736
+  ],
+  "V7": [
+   -1.039558454088799,
+   -4.890738003669028
+  ],
+  "V8": [
+   1.0395584540887972,
+   -4.890738003669028
+  ],
+  "V9": [
+   2.9389262614623646,
+   -4.045084971874738
+  ],
+  "V10": [
+   4.330127018922192,
+   -2.500000000000002
+  ],
+  "V11": [
+   4.972609476841367,
+   -0.5226423163382671
+  ],
+  "V12": [
+   4.755282581475768,
+   1.545084971874736
+  ],
+  "V13": [
+   3.71572412738697,
+   3.345653031794292
+  ],
+  "V14": [
+   2.033683215379001,
+   4.567727288213004
+  ],
+  "X": [
+   -4.067366430758003,
+   4.135454576426008
+  ]
+ },
+ "hide": [
+  "V0",
+  "V1",
+  "V2",
+  "V3",
+  "V4",
+  "V5",
+  "V6",
+  "V7",
+  "V8",
+  "V9",
+  "V10",
+  "V11",
+  "V12",
+  "V13",
+  "V14",
+  "X"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "V0",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "segments": [
+  {
+   "a": "V1",
+   "b": "X",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "V1",
+   "from": "V0",
+   "to": "V2",
+   "deg": 156,
+   "label": "156°",
+   "colour": "a1",
+   "r": 22,
+   "labelR": 4
+  },
+  {
+   "at": "V1",
+   "from": "X",
+   "to": "V2",
+   "deg": 24,
+   "label": "24°",
+   "colour": "a2",
+   "r": 52,
+   "labelR": 8
+  }
+ ],
+ "view": {
+  "x": [
+   -6,
+   8
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "angle",
+   "at": "V1",
+   "from": "V0",
+   "to": "V2",
+   "deg": 156,
+   "name": "each interior angle is 156°"
+  },
+  {
+   "type": "angle",
+   "at": "V1",
+   "from": "X",
+   "to": "V2",
+   "deg": 24,
+   "name": "the exterior angle is 24°"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "V0",
+    "V1",
+    "X"
+   ],
+   "name": "the exterior angle is on the extended side"
+  }
+ ],
+ "fromLesson": [
+  "n = 360/24"
+ ]
+}

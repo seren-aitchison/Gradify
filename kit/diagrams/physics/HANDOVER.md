@@ -12,6 +12,7 @@ State as of 2026-11-21. Read `kit/diagrams/BUILDERS.md`, then `UNIT-AGENT.md` in
 - Unit 1 complete: 19 lessons assessed; 6 with a diagram (7 diagrams, 7 placements, 0 reused), 0 labs, 13 without a visual
   by design (reasons in the plan); all 7 validated, none failing; all 7 await a subject review (none recorded).
 - Coverage: `node scripts/diagrams/coverage.mjs physics` → 19 lessons assessed · 6 with a passing diagram · 13 by design · 0 missing.
+- Units 12–16 complete (agent phys-c): u12 12 diagrams/31 lessons, u13 8/26, u14 5/20, u15 6/24, u16 11/28 (incl. existing phys-kirchhoff-loop); renderers still needed (planned as null rows): circuit networks (u16-05, u16-10), RLC damping and resonance curves (u16-14, u16-20), Bode plot with log axis (u16-23), rectifier ripple (u16-22), capacitor networks (u15-17), dielectric boundary and image charges (u15-20, u15-22), p–T phase diagram (u12-30), bar chart with counting check (u13-01), layered-wall profile (u14-10). Lesson error: u14-11 selective plate is 640 K, not 634 K.
 
 ## Not done / next
 1. Units u02–u32: one agent per 4–5 units following `UNIT-AGENT.md` (each owns its plan file, batch script, specs, svgs, notes).
@@ -32,3 +33,15 @@ State as of 2026-11-21. Read `kit/diagrams/BUILDERS.md`, then `UNIT-AGENT.md` in
 
 ## Last release
 See `git log -- kit/diagrams/physics/HANDOVER.md` on main for the commit; tests: full `npm test` before each push.
+
+## Unit claims (read before starting a unit)
+
+A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
+Claimed 23 Nov 2026.
+
+| Units | Claimed by |
+|---|---|
+| u17-u20 | lead session 01H1szfk, agent P1 |
+| u21-u24 | lead session 01H1szfk, agent P2 |
+| u25-u28 | lead session 01H1szfk, agent P3 |
+| u29-u32 | lead session 01H1szfk, agent P4 |

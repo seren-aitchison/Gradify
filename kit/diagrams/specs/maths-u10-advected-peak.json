@@ -1,0 +1,93 @@
+{
+ "id": "maths-u10-advected-peak",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Advection Equations",
+ "title": "The peak of e^(−x²) moves from 0 to 6 at speed 3",
+ "caption": "Advection with c = 3 slides the profile unchanged: u(x, t) = e^(−(x − 3t)²). At t = 2 the peak is at x = 6.",
+ "alt": "Two identical bell curves: one peaked at x = 0 (t = 0) and one at x = 6 (t = 2).",
+ "description": [
+  "u(x, t) = u₀(x − ct).",
+  "At t = 2 the argument is x − 6.",
+  "The peak, where x − 6 = 0, is at x = 6."
+ ],
+ "range": {
+  "x": [
+   -3,
+   9
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   0,
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  8,
+  1
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x^2)",
+   "colour": "a1",
+   "label": "t = 0",
+   "labelAt": [
+    -2.2,
+    0.2
+   ]
+  },
+  {
+   "expr": "exp(-(x-6)^2)",
+   "colour": "a2",
+   "label": "t = 2",
+   "labelAt": [
+    7,
+    0.5
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "exp(-(x-3*2)^2)",
+   "domain": [
+    -3,
+    9
+   ],
+   "x": 6,
+   "y": 1
+  },
+  {
+   "type": "max",
+   "expr": "exp(-x^2)",
+   "domain": [
+    -3,
+    9
+   ],
+   "x": 0,
+   "y": 1
+  }
+ ]
+}

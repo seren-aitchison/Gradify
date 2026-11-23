@@ -1,0 +1,101 @@
+{
+ "id": "phys-u17-curie-law",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Paramagnetism",
+ "title": "Curie's law for a paramagnet",
+ "caption": "Susceptibility χ = C/T. With χ = 2 × 10⁻⁴ at 300 K, C = 0.060000000000000005 K; cooling tenfold to 30 K raises χ tenfold to 2 × 10⁻³. Thermal motion fights the alignment of moments, so the response grows as the temperature falls.",
+ "alt": "Graph of susceptibility (units of 10⁻⁴) against temperature: a falling hyperbola passing through 2 at 300 K and 20 at 30 K.",
+ "description": [
+  "The horizontal axis is the temperature in kelvin; the vertical axis is the susceptibility in units of 10⁻⁴.",
+  "The curve is χ = C/T with C = 0.060000000000000005 K.",
+  "At 300 K, χ = 2 × 10⁻⁴; at 30 K, χ = 20 × 10⁻⁴ = 2 × 10⁻³: ten times larger for a tenth of the temperature."
+ ],
+ "range": {
+  "x": [
+   0,
+   320
+  ],
+  "y": [
+   0,
+   24
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  100,
+  5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "T / K",
+  "χ / 10⁻⁴"
+ ],
+ "curves": [
+  {
+   "expr": "600/x",
+   "domain": [
+    25,
+    320
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "χ = C/T",
+   "labelAt": [
+    120,
+    11
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 300,
+   "y": 2,
+   "label": "2 at 300 K",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  },
+  {
+   "x": 30,
+   "y": 20,
+   "colour": "a2",
+   "label": "20 at 30 K",
+   "dx": 12,
+   "dy": -6
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "600/x",
+   "x": 300,
+   "y": 2,
+   "name": "χ = 2 × 10⁻⁴ at 300 K"
+  },
+  {
+   "type": "point",
+   "expr": "600/x",
+   "x": 30,
+   "y": 20,
+   "name": "χ = 2 × 10⁻³ at 30 K (χ ∝ 1/T)"
+  }
+ ]
+}

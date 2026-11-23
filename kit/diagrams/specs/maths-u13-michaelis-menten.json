@@ -1,0 +1,84 @@
+{
+ "id": "maths-u13-michaelis-menten",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Nonlinear Regression",
+ "title": "V = 10S/(2 + S)",
+ "caption": "At S = Kₘ = 2 the rate is half of V_max: V = 5. At S = 6 it is 7.5, and the curve levels off towards 10.",
+ "alt": "Graph of V = 10S/(2 + S) rising and flattening toward 10, with the points (2, 5) and (6, 7.5).",
+ "description": [
+  "V = V_max S/(K_m + S) with V_max = 10 and K_m = 2.",
+  "S = 2 gives 20/4 = 5, half of V_max.",
+  "S = 6 gives 60/8 = 7.5."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   2.5,
+   5,
+   7.5,
+   10
+  ]
+ ],
+ "axisLabels": [
+  "S",
+  "V"
+ ],
+ "curves": [
+  {
+   "expr": "10*x/(2+x)"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 5,
+   "label": "(2, 5)",
+   "dx": 10,
+   "dy": 18
+  },
+  {
+   "x": 6,
+   "y": 7.5,
+   "label": "(6, 7.5)",
+   "dx": 10,
+   "dy": 18
+  }
+ ],
+ "marks": [
+  {
+   "y": 10,
+   "label": "V_max = 10"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*x/(2+x)",
+   "x": 2,
+   "y": 5
+  },
+  {
+   "type": "point",
+   "expr": "10*x/(2+x)",
+   "x": 6,
+   "y": 7.5
+  }
+ ]
+}

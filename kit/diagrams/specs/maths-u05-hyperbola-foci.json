@@ -1,0 +1,153 @@
+{
+ "id": "maths-u05-hyperbola-foci",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Hyperbolas",
+ "title": "9x² − 16y² = 144: foci and asymptotes",
+ "caption": "Dividing by 144 gives x²/16 − y²/9 = 1, so a = 4, b = 3 and c² = 16 + 9 = 25: the foci are (±5, 0). The branches approach the asymptotes y = ±(3/4)x.",
+ "alt": "A hyperbola with vertices at (4, 0) and (−4, 0), foci at (5, 0) and (−5, 0), and the dashed asymptotes y = 3/4 x and y = −3/4 x.",
+ "description": [
+  "x²/16 − y²/9 = 1 gives a = 4 and b = 3.",
+  "c² = a² + b² = 25, so the foci are (±5, 0).",
+  "The branches approach the dashed asymptotes y = ±(3/4)x."
+ ],
+ "range": {
+  "x": [
+   -9,
+   9
+  ],
+  "y": [
+   -7,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   -8,
+   -4,
+   4,
+   8
+  ],
+  [
+   -6,
+   -3,
+   3,
+   6
+  ]
+ ],
+ "grid": [
+  4,
+  3
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "0.75*sqrt(x^2-16)",
+   "colour": "a1",
+   "domain": [
+    4,
+    9
+   ]
+  },
+  {
+   "expr": "-0.75*sqrt(x^2-16)",
+   "colour": "a1",
+   "domain": [
+    4,
+    9
+   ]
+  },
+  {
+   "expr": "0.75*sqrt(x^2-16)",
+   "colour": "a1",
+   "domain": [
+    -9,
+    -4
+   ]
+  },
+  {
+   "expr": "-0.75*sqrt(x^2-16)",
+   "colour": "a1",
+   "domain": [
+    -9,
+    -4
+   ]
+  },
+  {
+   "expr": "0.75*x",
+   "colour": "a4",
+   "dash": "5 4",
+   "domain": [
+    -9,
+    9
+   ]
+  },
+  {
+   "expr": "-0.75*x",
+   "colour": "a4",
+   "dash": "5 4",
+   "domain": [
+    -9,
+    9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 0,
+   "label": "(5, 0)",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 20
+  },
+  {
+   "x": -5,
+   "y": 0,
+   "label": "(−5, 0)",
+   "colour": "a2",
+   "dx": -8,
+   "dy": 20,
+   "anchor": "end"
+  },
+  {
+   "x": 4,
+   "y": 0,
+   "label": "",
+   "colour": "a1"
+  },
+  {
+   "x": -4,
+   "y": 0,
+   "label": "",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.75*sqrt(x^2-16)",
+   "x": 4,
+   "y": 0,
+   "name": "(4, 0) is on 9x² − 16y² = 144"
+  },
+  {
+   "type": "point",
+   "expr": "0.75*sqrt(x^2-16)",
+   "x": 5,
+   "y": 2.25,
+   "name": "(5, 9/4): 225 − 81 = 144"
+  }
+ ],
+ "fromLesson": [
+  "Asymptotes y = ±(3/4)x"
+ ]
+}

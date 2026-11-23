@@ -1,0 +1,145 @@
+{
+ "id": "maths-u13-interaction-plot",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Design of Experiments",
+ "title": "A 2² experiment: the interaction plot",
+ "caption": "A has main effect (14 + 20 − 10 − 12)/2 = 6 and B has 4. The lines for B− and B+ are not parallel: A raises the response by 4 when B is low but by 8 when B is high, so the interaction is (10 + 20 − 14 − 12)/2 = 2.",
+ "alt": "Two lines against the level of A (−1 and +1): B− from 10 to 14 and B+ from 12 to 20, the second steeper.",
+ "description": [
+  "At B−, moving A from − to + raises the response from 10 to 14.",
+  "At B+, it raises it from 12 to 20.",
+  "Different slopes mean an interaction: 2."
+ ],
+ "range": {
+  "x": [
+   -1.5,
+   1.5
+  ],
+  "y": [
+   8,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1
+  ],
+  [
+   10,
+   14,
+   18,
+   22
+  ]
+ ],
+ "axisLabels": [
+  "level of A",
+  "response"
+ ],
+ "legend": [
+  [
+   "B−",
+   "a1"
+  ],
+  [
+   "B+",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  -1.4,
+  21
+ ],
+ "curves": [
+  {
+   "expr": "12+2*x",
+   "domain": [
+    -1,
+    1
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "16+4*x",
+   "domain": [
+    -1,
+    1
+   ],
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 10,
+   "label": "10",
+   "dx": -8,
+   "dy": 14,
+   "anchor": "end"
+  },
+  {
+   "x": 1,
+   "y": 14,
+   "label": "14",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": -1,
+   "y": 12,
+   "label": "12",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 1,
+   "y": 20,
+   "label": "20",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "12+2*x",
+   "x": -1,
+   "y": 10
+  },
+  {
+   "type": "point",
+   "expr": "12+2*x",
+   "x": 1,
+   "y": 14
+  },
+  {
+   "type": "point",
+   "expr": "16+4*x",
+   "x": -1,
+   "y": 12
+  },
+  {
+   "type": "point",
+   "expr": "16+4*x",
+   "x": 1,
+   "y": 20
+  },
+  {
+   "type": "slope",
+   "expr": "12+2*x",
+   "x": 0,
+   "value": 2,
+   "name": "A raises B− by 4 over its 2 units: slope 2"
+  },
+  {
+   "type": "slope",
+   "expr": "16+4*x",
+   "x": 0,
+   "value": 4,
+   "name": "A raises B+ by 8 over its 2 units: slope 4"
+  }
+ ]
+}

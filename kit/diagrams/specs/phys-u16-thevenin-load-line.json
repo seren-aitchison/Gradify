@@ -1,0 +1,113 @@
+{
+ "id": "phys-u16-thevenin-load-line",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Thevenin and Norton equivalents",
+ "title": "Thevenin equivalent of a 12 V divider",
+ "caption": "A 12 V source with 4 Ω and 6 Ω in a divider, output across the 6 Ω: open-circuit voltage V_th = 12 × 6/10 = 7.2 V, and R_th = 4 ∥ 6 = 2.4 Ω (source shorted). Any load then sees V = V_th − I R_th: a straight line from 7.2 V at no load to the short-circuit (Norton) current I_N = V_th/R_th = 3 A at V = 0.",
+ "alt": "Graph of output voltage against load current: a straight line from 7.2 V at zero current to 3 A at zero volts, gradient −2.4 ohms.",
+ "description": [
+  "The horizontal axis is the current drawn by the load in amperes; the vertical axis is the output voltage in volts.",
+  "With no load (I = 0) the output is the open-circuit voltage V_th = 7.2 V.",
+  "The line falls by R_th = 2.4 V per ampere: it is the Thevenin source's V = V_th − I R_th.",
+  "Shorting the output gives the Norton current 3 A."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.6
+  ],
+  "y": [
+   0,
+   8.4
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3,
+   3.5
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "I / A",
+  "V / V"
+ ],
+ "curves": [
+  {
+   "expr": "7.2-2.4*x",
+   "domain": [
+    0,
+    3
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "V = V_{th} − IR_{th}",
+   "labelAt": [
+    1.2,
+    5.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 7.2,
+   "label": "V_{th} = 7.2 V",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "colour": "a2",
+   "label": "I_{N} = 3 A",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "7.2-2.4*x",
+   "x": 0,
+   "y": 7.2,
+   "name": "open-circuit voltage 12 × 6/10 = 7.2 V"
+  },
+  {
+   "type": "point",
+   "expr": "7.2-2.4*x",
+   "x": 3,
+   "y": 0,
+   "name": "short-circuit (Norton) current V_th/R_th = 3 A"
+  },
+  {
+   "type": "slope",
+   "expr": "7.2-2.4*x",
+   "x": 1,
+   "value": -2.4,
+   "name": "R_th = 4 ∥ 6 = 2.4 Ω is the gradient"
+  }
+ ]
+}

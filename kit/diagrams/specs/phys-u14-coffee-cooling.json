@@ -1,0 +1,109 @@
+{
+ "id": "phys-u14-coffee-cooling",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u14",
+ "lesson": "Newton's law of cooling",
+ "title": "Coffee cooling towards room temperature",
+ "caption": "T = T_a + (T₀ − T_a)e^{−kt} with T_a = 20 °C and T₀ = 90 °C. Falling to 60 °C in 10 min fixes k = ln(70/40)/10 = 0.056 min⁻¹. Then the coffee reaches 40 °C at t = ln(70/20)/k = 22.4 min. The curve flattens as it nears 20 °C: cooling is fastest when the difference from the room is largest.",
+ "alt": "Graph of coffee temperature against time: an exponential decay from 90 °C towards 20 °C, passing 60 °C at 10 minutes and 40 °C at 22.4 minutes.",
+ "description": [
+  "The horizontal axis is time in minutes; the vertical axis is the coffee temperature in °C.",
+  "The curve starts at 90 °C and decays towards the room temperature 20 °C with rate constant k = 0.056 min⁻¹.",
+  "At 10 min it is at 60 °C (this fixes k); it reaches 40 °C at 22.4 min."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   100
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   20,
+   40,
+   60,
+   80
+  ]
+ ],
+ "grid": [
+  10,
+  20
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / min",
+  "T / °C"
+ ],
+ "marks": [
+  {
+   "y": 20,
+   "label": "room 20 °C"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "20+70*exp(-0.055961578793542265*x)",
+   "colour": "a1",
+   "label": "T(t)",
+   "labelAt": [
+    3,
+    84
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 60,
+   "label": "60 °C at 10 min",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 22.38612625846667,
+   "y": 40,
+   "colour": "a2",
+   "label": "40 °C at 22.4 min",
+   "dx": 8,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "20+70*exp(-0.055961578793542265*x)",
+   "x": 0,
+   "y": 90,
+   "name": "starts at 90 °C"
+  },
+  {
+   "type": "point",
+   "expr": "20+70*exp(-0.055961578793542265*x)",
+   "x": 10,
+   "y": 60,
+   "name": "60 °C after 10 min (the data)"
+  },
+  {
+   "type": "point",
+   "expr": "20+70*exp(-0.055961578793542265*x)",
+   "x": 22.38612625846667,
+   "y": 40,
+   "name": "40 °C after 22.4 min (the lesson's 22.4 min)"
+  }
+ ]
+}

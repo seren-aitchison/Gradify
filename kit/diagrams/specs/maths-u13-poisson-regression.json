@@ -1,0 +1,71 @@
+{
+ "id": "maths-u13-poisson-regression",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Poisson Regression",
+ "title": "log μ = 0.5 + 0.2x",
+ "caption": "At x = 5, μ = e^1.5 ≈ 4.48. The mean curves upward because each unit of x multiplies it by e⁰·² ≈ 1.22.",
+ "alt": "Graph of μ = e^(0.5 + 0.2x), increasing and curving upward, with the point (5, 4.48).",
+ "description": [
+  "The linear predictor is 0.5 + 0.2x; the mean is its exponential.",
+  "At x = 5 the predictor is 1.5 and μ = 4.48."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   4,
+   8,
+   12
+  ]
+ ],
+ "axisLabels": [
+  "x",
+  "expected count"
+ ],
+ "curves": [
+  {
+   "expr": "exp(0.5+0.2*x)"
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 4.482,
+   "label": "4.48",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(0.5+0.2*x)",
+   "x": 5,
+   "y": 4.482
+  },
+  {
+   "type": "point",
+   "expr": "exp(0.5+0.2*x)",
+   "x": 0,
+   "y": 1.649
+  }
+ ]
+}

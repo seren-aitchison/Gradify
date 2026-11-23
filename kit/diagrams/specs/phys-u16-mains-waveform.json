@@ -1,0 +1,104 @@
+{
+ "id": "phys-u16-mains-waveform",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Alternating current",
+ "title": "Mains voltage: peak and period",
+ "caption": "A 230 V rms supply swings between ±V₀ with V₀ = 230√2 = 325 V. At 50 Hz the period is T = 1/50 = 20 ms, so the voltage completes a full cycle every 20 ms and passes through zero twice in each. The rms value, 230 V, is lower than the peak because the voltage spends time near zero.",
+ "alt": "Graph of mains voltage against time: a sine wave with peaks of ±325 V and a period of 20 ms.",
+ "description": [
+  "The horizontal axis is time in milliseconds; the vertical axis is the voltage in volts.",
+  "The voltage is V₀ sin(2πft) with V₀ = 325 V and f = 50 Hz.",
+  "It peaks at 325 V at 5 ms, is zero again at 10 ms, reaches −325 V at 15 ms and finishes the cycle at 20 ms."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   -380,
+   380
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   -325,
+   0,
+   325
+  ]
+ ],
+ "grid": [
+  10,
+  325
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "axisLabels": [
+  "t / ms",
+  "V / V"
+ ],
+ "curves": [
+  {
+   "expr": "325.2691193458119*sin(0.3141592653589793*x)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "230 V rms",
+   "labelAt": [
+    31,
+    180
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    -350
+   ],
+   "to": [
+    20,
+    -350
+   ],
+   "colour": "a2",
+   "both": true,
+   "label": "T = 20 ms"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "325.2691193458119*sin(0.3141592653589793*x)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 325.2691193458119,
+   "name": "peak 325 V at a quarter of the period (5 ms)"
+  },
+  {
+   "type": "point",
+   "expr": "325.2691193458119*sin(0.3141592653589793*x)",
+   "x": 20,
+   "y": 0,
+   "name": "back to zero after one period, 20 ms"
+  },
+  {
+   "type": "point",
+   "expr": "325.2691193458119*sin(0.3141592653589793*x)",
+   "x": 10,
+   "y": 0,
+   "name": "zero after half a period"
+  }
+ ]
+}

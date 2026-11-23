@@ -1,0 +1,104 @@
+{
+ "id": "maths-u10-heat-smoothing",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u10",
+ "lesson": "Heat Equation",
+ "title": "The heat equation damps the high mode faster",
+ "caption": "u = 3e^(−t) sin x + e^(−4t) sin 2x: the sin 2x part decays four times as fast. At t = 0.5 the profile is already close to a single smooth hump.",
+ "alt": "Two curves on 0 to π: the initial profile 3 sin x + sin 2x with a skewed peak, and the profile at t = 0.5, lower and smoother.",
+ "description": [
+  "Each mode sin(nx) decays as e^(−n²t).",
+  "At t = 0: u = 3 sin x + sin 2x.",
+  "At t = 0.5: u = 3e^(−0.5) sin x + e^(−2) sin 2x."
+ ],
+ "range": {
+  "x": [
+   -0.3,
+   3.6
+  ],
+  "y": [
+   -1,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  3,
+  4
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "3*exp(-0*1)*sin(x)+exp(-0)*sin(2*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    3.141592653589793
+   ],
+   "label": "t = 0",
+   "labelAt": [
+    1,
+    3.7
+   ]
+  },
+  {
+   "expr": "3*exp(-0.5*1)*sin(x)+exp(-2)*sin(2*x)",
+   "colour": "a2",
+   "domain": [
+    0,
+    3.141592653589793
+   ],
+   "label": "t = 0.5",
+   "labelAt": [
+    1,
+    2
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3*exp(-0*1)*sin(x)+exp(-0)*sin(2*x)",
+   "x": 1.5707963267948966,
+   "y": 3
+  },
+  {
+   "type": "point",
+   "expr": "3*exp(-0.5*1)*sin(x)+exp(-2)*sin(2*x)",
+   "x": 1.5707963267948966,
+   "y": 1.82
+  },
+  {
+   "type": "point",
+   "expr": "3*exp(-0*1)*sin(x)+exp(-0)*sin(2*x)",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "type": "point",
+   "expr": "3*exp(-0.5*1)*sin(x)+exp(-2)*sin(2*x)",
+   "x": 3.141592653589793,
+   "y": 0
+  }
+ ]
+}

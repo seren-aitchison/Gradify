@@ -1,0 +1,140 @@
+{
+ "id": "maths-u05-bearing-plane",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Bearings",
+ "title": "The plane's bearing is 036.9°",
+ "caption": "After 300 km east and 400 km north the plane is 500 km from the start. The angle from north is θ with tan θ = 300/400, so θ = 36.9° and the bearing is 037°.",
+ "alt": "A right triangle from the start O, 300 km east to A and 400 km north to B, with the angle from north at O marked 36.9 degrees.",
+ "description": [
+  "The plane flies 300 km due east, then 400 km due north.",
+  "The direct line from the start makes angle θ with north, where tan θ = 300/400.",
+  "θ = 36.9°, so the bearing is 036.9°, about 037°."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   300,
+   0
+  ],
+  "B": [
+   300,
+   400
+  ],
+  "N": [
+   0,
+   300
+  ]
+ },
+ "hide": [
+  "N"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "A",
+    "B"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "segments": [
+  [
+   "O",
+   "A"
+  ],
+  [
+   "A",
+   "B"
+  ],
+  [
+   "O",
+   "B"
+  ],
+  {
+   "a": "O",
+   "b": "N",
+   "dash": "5 4",
+   "colour": "ink"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "N",
+   "to": "B",
+   "deg": 36.9,
+   "label": "36.9°",
+   "colour": "a2",
+   "r": 70,
+   "labelR": 6
+  },
+  {
+   "at": "A",
+   "from": "O",
+   "to": "B",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "A",
+   "value": 300,
+   "label": "300 km",
+   "side": -1
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "value": 400,
+   "label": "400 km"
+  },
+  {
+   "a": "O",
+   "b": "B",
+   "value": 500,
+   "label": "500 km",
+   "side": 1
+  }
+ ],
+ "labelAt": {
+  "O": [
+   -14,
+   8
+  ],
+  "A": [
+   12,
+   12
+  ],
+  "B": [
+   12,
+   -4
+  ]
+ },
+ "view": {
+  "x": [
+   -70,
+   380
+  ],
+  "y": [
+   -60,
+   450
+  ]
+ },
+ "height": [
+  380,
+  380
+ ],
+ "checks": [],
+ "fromLesson": [
+  "Bearing = 036.9° ≈ 037°"
+ ]
+}

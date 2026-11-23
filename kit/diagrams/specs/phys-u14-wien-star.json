@@ -1,0 +1,95 @@
+{
+ "id": "phys-u14-wien-star",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u14",
+ "lesson": "Wien's displacement law",
+ "title": "A star whose spectrum peaks at 290 nm",
+ "caption": "Wien's law, λ_maxT = 2.898 × 10⁻³ m K, gives T = 2.898 × 10⁻³/(2.9 × 10⁻⁷) = 9993 K ≈ 10 000 K. The Planck curve for 10 000 K does peak at 290 nm, in the ultraviolet; the visible band (400–700 nm) lies on the long-wavelength side, so the star looks blue-white.",
+ "alt": "Planck curve for 10000 K against wavelength: it rises to a peak near 290 nm in the ultraviolet and falls slowly through the visible band.",
+ "description": [
+  "The horizontal axis is wavelength in nm; the vertical axis is the relative spectral intensity, scaled so the peak is 1.",
+  "The Planck curve for T = 10 000 K peaks at 290 nm, as Wien's law predicts for 2.9 × 10⁻⁷ m.",
+  "The shaded band 400–700 nm is visible light: the star's output is already falling there, and most of it is in the ultraviolet."
+ ],
+ "range": {
+  "x": [
+   100,
+   1000
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   200,
+   400,
+   600,
+   800,
+   1000
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  200,
+  0.5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / nm",
+  "relative intensity"
+ ],
+ "bands": [
+  {
+   "x": [
+    400,
+    700
+   ],
+   "label": "visible",
+   "colour": "a4"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "290805072830858.9*x^(-5)/(exp(14387768.775039338/(x*10000))-1)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "10 000 K",
+   "labelAt": [
+    520,
+    0.78
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 289.77720904372666,
+   "y": 1,
+   "label": "290 nm",
+   "dx": 10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "290805072830858.9*x^(-5)/(exp(14387768.775039338/(x*10000))-1)",
+   "domain": [
+    284.77720904372666,
+    294.77720904372666
+   ],
+   "x": 289.77720904372666,
+   "y": 1,
+   "name": "the 10 000 K Planck curve peaks at 290 nm (Wien: 2.898 × 10⁻³/10⁴ = 290 nm)"
+  }
+ ]
+}

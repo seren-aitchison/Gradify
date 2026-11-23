@@ -1,0 +1,145 @@
+{
+ "id": "maths-u05-garden-pond",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Area",
+ "title": "The garden around the pond",
+ "caption": "The garden is 12 × 8 = 96 m² and the pond takes π × 1.5² ≈ 7.07 m², leaving 88.93 m² of turf, which costs 88.93 × £6.50 ≈ £578.05.",
+ "alt": "A 12 metre by 8 metre rectangular garden with a circular pond of radius 1.5 metres in it.",
+ "description": [
+  "The garden is a 12 m by 8 m rectangle, area 96 m².",
+  "The pond is a circle of radius 1.5 m, area π × 1.5² ≈ 7.07 m².",
+  "Turf area ≈ 96 − 7.07 = 88.93 m², costing ≈ £578.05."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   12,
+   0
+  ],
+  "C": [
+   12,
+   8
+  ],
+  "D": [
+   0,
+   8
+  ],
+  "P": [
+   6,
+   4
+  ],
+  "Q": [
+   7.5,
+   4
+  ]
+ },
+ "hide": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "P",
+  "Q"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "colour": "a4",
+   "opacity": 0.14
+  }
+ ],
+ "circles": [
+  {
+   "centre": "P",
+   "r": 1.5,
+   "colour": "a1"
+  }
+ ],
+ "segments": [
+  {
+   "a": "P",
+   "b": "Q",
+   "colour": "a1"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 12,
+   "label": "12 m",
+   "side": -1
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "value": 8,
+   "label": "8 m"
+  },
+  {
+   "a": "P",
+   "b": "Q",
+   "value": 1.5,
+   "label": "1.5",
+   "side": -1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    2.5,
+    6.6
+   ],
+   "text": "turf 88.93 m²",
+   "colour": "a4",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -1.5,
+   14.5
+  ],
+  "y": [
+   -1.6,
+   9.4
+  ]
+ },
+ "height": [
+  300,
+  280
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "value": 96,
+   "name": "the garden is 12 × 8 = 96 m²"
+  },
+  {
+   "type": "onCircle",
+   "points": [
+    "Q"
+   ],
+   "name": "the radius PQ is 1.5 m"
+  }
+ ],
+ "fromLesson": [
+  "88.93 m"
+ ]
+}

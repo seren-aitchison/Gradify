@@ -1,0 +1,64 @@
+{
+ "id": "maths-u13-sample-mean-tail",
+ "renderer": "distribution",
+ "course": "maths",
+ "unit": "u13",
+ "lesson": "Sampling Distributions",
+ "title": "The mean of 36 observations",
+ "caption": "X̄ has mean 50 and SE 12/√36 = 2, so 53 is z = 1.5 above: P(X̄ > 53) = 0.0668.",
+ "alt": "A normal curve with mean 50 and SD 2 for the sample mean, with the tail beyond 53 shaded, area 0.0668.",
+ "description": [
+  "The standard error is 12/6 = 2.",
+  "53 is 1.5 standard errors above 50.",
+  "The shaded tail has area 0.0668."
+ ],
+ "dist": {
+  "dist": "normal",
+  "mu": 50,
+  "sigma": 2
+ },
+ "range": {
+  "x": [
+   42,
+   58
+  ],
+  "y": [
+   0,
+   0.22
+  ]
+ },
+ "ticks": [
+  [
+   44,
+   47,
+   50,
+   53,
+   56
+  ],
+  [
+   0.1,
+   0.2
+  ]
+ ],
+ "axisLabels": [
+  "sample mean",
+  "density"
+ ],
+ "shade": [
+  53,
+  null
+ ],
+ "p": 0.0668,
+ "checks": [
+  {
+   "type": "mean",
+   "value": 50
+  },
+  {
+   "type": "prob",
+   "from": 53,
+   "to": null,
+   "p": 0.0668
+  }
+ ]
+}

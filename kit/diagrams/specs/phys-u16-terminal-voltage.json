@@ -1,0 +1,111 @@
+{
+ "id": "phys-u16-terminal-voltage",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u16",
+ "lesson": "Internal resistance",
+ "title": "Terminal voltage of a cell with internal resistance",
+ "caption": "The cell's terminal voltage falls with the current drawn, V = ε − Ir = 1.5 − 0.5I. The 2.5 Ω lamp needs V = 2.5I. Where the two lines cross is the operating point: I = 1.5/(2.5 + 0.5) = 0.5 A and V = 1.5 − 0.5 × 0.5 = 1.25 V. The 0.25 V missing from 1.5 V is the 'lost volts' across r.",
+ "alt": "Graph of voltage against current: a falling line from 1.5 V at zero current and a rising line V = 2.5 I for the lamp, crossing at (0.5 A, 1.25 V).",
+ "description": [
+  "The horizontal axis is the current in amperes; the vertical axis is the voltage in volts.",
+  "The cell's line V = ε − Ir starts at ε = 1.5 V with no current and falls by r = 0.5 V for each ampere.",
+  "The lamp's line V = IR_L = 2.5 I rises through the origin.",
+  "They cross at I = 0.5 A, V = 1.25 V: the terminal voltage across the lamp. The gap 0.25 V is Ir inside the cell."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.2
+  ],
+  "y": [
+   0,
+   1.7
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   0.5,
+   1,
+   1.5
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "I / A",
+  "V / V"
+ ],
+ "curves": [
+  {
+   "expr": "1.5-0.5*x",
+   "domain": [
+    0,
+    3
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "cell: ε − Ir",
+   "labelAt": [
+    1.4,
+    0.95
+   ]
+  },
+  {
+   "expr": "2.5*x",
+   "domain": [
+    0,
+    0.68
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "lamp: IR",
+   "labelAt": [
+    0.1,
+    1.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 1.25,
+   "colour": "ink",
+   "label": "0.5 A, 1.25 V",
+   "dx": 12,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "1.5-0.5*x",
+   "b": "2.5*x",
+   "x": 0.5,
+   "y": 1.25,
+   "name": "the cell and lamp lines meet at I = 0.5 A, V = 1.25 V"
+  },
+  {
+   "type": "point",
+   "expr": "1.5-0.5*x",
+   "x": 0,
+   "y": 1.5,
+   "name": "open-circuit terminal voltage = ε"
+  }
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "phys-u15-ring-axis",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u15",
+ "lesson": "Charge distributions",
+ "title": "Field on the axis of a charged ring",
+ "caption": "For a ring of charge Q = 10 nC and radius a = 0.1 m, E_z = kQz/(z² + a²)^{3/2}. At z = 0.1 m this is 3.2 kN C⁻¹ (the lesson's 3.2 × 10³). It is zero at the centre by symmetry, peaks at z = a/√2 = 0.071 m with 3.46 kN C⁻¹, and for z ≫ a falls as 1/z², like a point charge.",
+ "alt": "Graph of the axial field against distance z: zero at the ring's centre, a peak of 3.46 kilonewtons per coulomb at z = 0.071 m, then a slow fall.",
+ "description": [
+  "The horizontal axis is the distance z along the axis from the ring's centre in metres; the vertical axis is E in kN C⁻¹.",
+  "At z = 0 the contributions of opposite sides cancel: E = 0.",
+  "The field peaks at z = a/√2 = 0.071 m with 3.46 kN C⁻¹.",
+  "At z = 0.1 m: E = 3.2 kN C⁻¹ ≈ 3.2 × 10³ N C⁻¹.",
+  "Far away it falls as kQ/z²."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.5
+  ],
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  0.1,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "z / m",
+  "E / kN C^{-1}"
+ ],
+ "curves": [
+  {
+   "expr": "0.08987551792299998*x/(x*x+0.010000000000000002)^1.5",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "E_{z}",
+   "labelAt": [
+    0.3,
+    2.6
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 3.1775794093003187,
+   "label": "3.2 kN/C at 0.1 m",
+   "dx": 12,
+   "dy": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.08987551792299998*x/(x*x+0.010000000000000002)^1.5",
+   "x": 0.1,
+   "y": 3.1775794093003187,
+   "name": "E = kQz/(z² + a²)^{3/2} = 3178 N/C at z = 0.1 m"
+  },
+  {
+   "type": "max",
+   "expr": "0.08987551792299998*x/(x*x+0.010000000000000002)^1.5",
+   "domain": [
+    0.01,
+    0.5
+   ],
+   "x": 0.07071067811865475,
+   "y": 3.459310297760071,
+   "name": "peak at z = a/√2 = 0.071 m"
+  },
+  {
+   "type": "point",
+   "expr": "0.08987551792299998*x/(x*x+0.010000000000000002)^1.5",
+   "x": 0,
+   "y": 0,
+   "name": "E = 0 at the centre of the ring"
+  }
+ ]
+}

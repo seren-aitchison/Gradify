@@ -1,0 +1,130 @@
+{
+ "id": "maths-u05-hyperbola-classify",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u05",
+ "lesson": "Conic Sections",
+ "title": "4x² − 9y² = 36 is a hyperbola",
+ "caption": "Dividing by 36 gives x²/9 − y²/4 = 1: the squares have opposite signs, so the conic is a hyperbola with vertices (±3, 0) and two branches.",
+ "alt": "A hyperbola with two branches, vertices at (3, 0) and (−3, 0), opening left and right.",
+ "description": [
+  "Divide 4x² − 9y² = 36 by 36 to get x²/9 − y²/4 = 1.",
+  "Opposite signs on x² and y²: a hyperbola.",
+  "The vertices are at (±3, 0), and the branches open left and right."
+ ],
+ "range": {
+  "x": [
+   -8,
+   8
+  ],
+  "y": [
+   -5,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   -6,
+   -3,
+   3,
+   6
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  3,
+  2
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(2/3)*sqrt(x^2-9)",
+   "colour": "a1",
+   "domain": [
+    3,
+    8
+   ]
+  },
+  {
+   "expr": "-(2/3)*sqrt(x^2-9)",
+   "colour": "a1",
+   "domain": [
+    3,
+    8
+   ]
+  },
+  {
+   "expr": "(2/3)*sqrt(x^2-9)",
+   "colour": "a1",
+   "domain": [
+    -8,
+    -3
+   ]
+  },
+  {
+   "expr": "-(2/3)*sqrt(x^2-9)",
+   "colour": "a1",
+   "domain": [
+    -8,
+    -3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 0,
+   "label": "(3, 0)",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12
+  },
+  {
+   "x": -3,
+   "y": 0,
+   "label": "(−3, 0)",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(x^2-9)",
+   "x": 3,
+   "y": 0,
+   "name": "(3, 0) is on 4x² − 9y² = 36"
+  },
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(x^2-9)",
+   "x": 5,
+   "y": 2.6666666666666665,
+   "name": "(5, 8/3): 100 − 64 = 36"
+  },
+  {
+   "type": "point",
+   "expr": "(2/3)*sqrt(x^2-9)",
+   "x": -3,
+   "y": 0,
+   "name": "(−3, 0) is on the curve"
+  }
+ ],
+ "fromLesson": [
+  "hyperbola, with vertices at (±3, 0)"
+ ]
+}

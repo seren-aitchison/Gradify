@@ -23,6 +23,7 @@ X: Check that y = Ce^{2x} solves y′ = 2y, and find the solution with y(0) = 3.
 > y′ = 2Ce^{2x} = 2y ✓
 > y(0) = C = 3
 > The particular solution is y = 3e^{2x}
+D: maths-u10-exponential-solution
 P: **Investigate with the lab.** Draw the slope field and click to set initial values. Each click traces the unique solution through that point.
 IX: ode
 K: Classify by order and linearity; verify by substitution; n constants for order n, fixed by conditions; existence and uniqueness need f Lipschitz in y.
@@ -61,6 +62,7 @@ X: Coffee at 90°C cools in a 20°C room to 60°C in 10 minutes. Find T(t).
 > T = 20 + 70e^{−kt}, from the cooling law with T(0) = 90
 > 60 = 20 + 70e^{−10k}, so e^{−10k} = 4/7 and k = ln(7/4)/10 ≈ 0.056 per minute
 > T(t) = 20 + 70(4/7)^{t/10}
+D: maths-u10-coffee-cooling
 P: **Investigate with the lab.** Use dy/dx = y and compare the numerical solutions with the exact curve y = y₀eˣ.
 IX: ode
 K: Identify the type (separable, linear, exact, homogeneous, Bernoulli) and apply its method; model with rates in minus out; use direction fields for insight.
@@ -99,6 +101,7 @@ X: Solve dy/dx = xy with y(0) = 2.
 > Separate: dy/y = x dx
 > Integrate: ln|y| = x^{2}/2 + c, so y = Ae^{x^{2}/2}
 > y(0) = A = 2, so y = 2e^{x^{2}/2}
+D: maths-u10-separable
 - Always check the answer by differentiating it and substituting back.
 K: Separate, integrate both sides, solve and apply conditions; check for lost constant solutions; the logistic solution is K/(1 + Ae^{−rt}).
 !: Dividing by h(y) and losing the solution where h(y) = 0.
@@ -134,6 +137,7 @@ X: Solve y′ + 2y = 4 with y(0) = 0.
 > μ = e^{2x}; (e^{2x}y)′ = 4e^{2x}
 > e^{2x}y = 2e^{2x} + C, so y = 2 + Ce^{−2x}
 > y(0) = 0 gives C = −2: y = 2 − 2e^{−2x} (steady state 2, transient −2e^{−2x})
+D: maths-u10-linear-first-order
 K: Standard form, multiply by e^{∫P}, integrate the product; solution = transient + steady state.
 !: Forgetting to put the equation in standard form (coefficient of y′ equal to 1) before finding μ.
 Q: What is the integrating factor for y′ + 3y = x? | e^{3x}.
@@ -342,6 +346,7 @@ X: Solve y′ = y^{2} with y(0) = 2 and find where the solution blows up.
 > Separate: −1/y = x + C; y(0) = 2 gives C = −½
 > y = 1/(½ − x) = 2/(1 − 2x)
 > y → ∞ as x → ½: the solution exists only for x < ½
+D: maths-u10-blow-up
 K: Nonlinear ODEs lack superposition, can blow up, and are studied by linearisation, phase planes and numerics; the small-angle pendulum is the classic linearisation.
 !: Assuming solutions of nonlinear ODEs exist for all time.
 Q: What is the period of a small-angle pendulum of length L? | 2π√(L/g).
@@ -447,6 +452,7 @@ X: Solve y″ + y = 0 with y(0) = 1, y′(0) = 0.
 > General solution: y = A cos x + B sin x
 > y(0) = A = 1; y′(0) = B = 0
 > y = cos x, unique since the equation is linear with constant coefficients
+D: maths-u10-cosine-ivp
 P: **Investigate with the lab.** Click different starting points on the same slope field and see that each initial value gives a different solution curve.
 IX: ode
 K: IVPs specify values at one point; Picard–Lindelöf gives uniqueness for Lipschitz f; non-Lipschitz cases like y′ = 3y^{2/3} can have many solutions.
@@ -484,6 +490,7 @@ X: Solve y″ = 6x with y(0) = 0 and y(1) = 0.
 > Integrate twice: y = x^{3} + Cx + D
 > y(0) = D = 0; y(1) = 1 + C = 0, so C = −1
 > y = x^{3} − x
+D: maths-u10-boundary-value
 K: BVPs fix conditions at different points; they may have no, one or infinitely many solutions; eigenvalue problems have non-zero solutions only for special λ.
 !: Assuming a BVP has a unique solution because an IVP would.
 Q: For what λ does y″ + λy = 0, y(0) = y(π) = 0 have non-zero solutions? | λ = n^{2} for n = 1, 2, 3, …
@@ -622,6 +629,7 @@ X: Use G(x, s) to solve −u″ = 1 on [0, 1] with u(0) = u(1) = 0.
 > u(x) = ∫₀^{x} s(1 − x) ds + ∫ₓ¹ x(1 − s) ds
 > = (1 − x)x^{2}/2 + x(1 − x)^{2}/2
 > = x(1 − x)/2 (check: −u″ = 1 and u(0) = u(1) = 0 ✓)
+D: maths-u10-greens-solution
 K: G solves LG = δ with the boundary conditions; u = ∫Gf ds for any f; G is continuous with a derivative jump at the source; free-space G in 3D is 1/(4πr).
 !: Forgetting that G must satisfy the same boundary conditions as u.
 Q: What equation does a Green's function satisfy? | LG = δ(x − s), with the boundary conditions.
@@ -723,6 +731,7 @@ X: Solve u_{t} = u_{xx} on 0 ≤ x ≤ π with u = 0 at both ends and u(x, 0) = 
 > Each sine mode evolves independently: sin nx decays like e^{−n^{2}t}
 > u = 3e^{−t} sin x + e^{−4t} sin 2x
 > The sin 2x part dies out four times faster
+D: maths-u10-heat-smoothing
 K: Separate variables to get sine modes decaying like e^{−k(nπ/L)^{2}t}; solutions smooth out; the maximum principle holds.
 !: Forgetting to square n in the exponential decay rate.
 Q: Which mode decays slowest in the heat equation on a rod? | The first (n = 1).
@@ -826,6 +835,7 @@ X: Solve ∇^{2}u = 1 in the unit disc with u = 0 on the boundary.
 > Particular solution: u_{p} = r^{2}/4 (since ∇^{2}(x^{2} + y^{2}) = 4)
 > On r = 1, u_{p} = ¼, so subtract the constant ¼ (which is harmonic)
 > u = (r^{2} − 1)/4
+D: maths-u10-poisson-disc
 K: Poisson = Laplace plus sources; find a particular solution and add a harmonic function; it governs gravity, electrostatics and heated bodies.
 !: Forgetting that Neumann problems need the compatibility condition between source and boundary flux.
 Q: What is ∇^{2}(x^{2} + y^{2})? | 4.
@@ -963,6 +973,7 @@ X: A profile u(x, 0) = e^{−x^{2}} is advected with c = 3. Where is the peak at
 > u(x, t) = e^{−(x − 3t)^{2}}
 > At t = 2: u = e^{−(x − 6)^{2}}
 > The peak has moved from x = 0 to x = 6, unchanged in shape
+D: maths-u10-advected-peak
 K: u = f(x − ct) moves profiles unchanged along characteristics; numerically use upwind schemes and respect |c|Δt/Δx ≤ 1.
 !: Using a time step that violates the CFL condition, giving exploding numerical solutions.
 Q: What is the solution of u_{t} + 2u_{x} = 0 with u(x, 0) = sin x? | u = sin(x − 2t).
@@ -1101,6 +1112,7 @@ X: Normalise φ = A sin(πx/L) on [0, L] and find E₂/E₁ for a particle in a 
 > ∫₀^{L} A^{2} sin^{2}(πx/L) dx = A^{2}L/2 = 1, so A = √(2/L)
 > E_{n} ∝ n^{2}
 > E₂/E₁ = 4
+D: maths-u10-box-states
 K: iħψ_{t} = Ĥψ; |ψ|^{2} is probability density; stationary states solve Ĥφ = Eφ; box energies grow like n^{2} with non-zero ground state.
 !: Treating ψ itself as a probability rather than |ψ|^{2}.
 Q: What does |ψ|^{2} represent? | The probability density for the particle's position.
@@ -1242,6 +1254,7 @@ X: Solve −u″ = 1 on [0, 1], u(0) = u(1) = 0, with two linear elements (one i
 > h = 0.5; the stiffness entry is 2/h = 4; the load is ∫φ₁ × 1 dx = h = 0.5
 > 4u₁ = 0.5, so u₁ = 0.125
 > The exact value u(0.5) = 0.5 × 0.5/2 = 0.125 matches (linear elements are exact at nodes for this 1D problem)
+D: maths-u10-fem-hat
 K: FEM uses the weak form, piecewise basis functions and a stiffness matrix; it handles complex geometry and gives best approximations in the energy norm.
 !: Using a mesh too coarse to capture stress concentrations near corners or holes.
 Q: What does integration by parts achieve in the weak form? | It moves a derivative onto the test function, needing less smoothness of u.
@@ -1412,6 +1425,7 @@ X: For x′ = r + x^{2}, describe the equilibria as r changes.
 > r < 0: x = ±√(−r); f′(x) = 2x, so −√(−r) is stable and +√(−r) unstable
 > r = 0: they merge at x = 0
 > r > 0: no equilibria; x increases without limit (a saddle-node bifurcation)
+D: maths-u10-saddle-node
 K: Saddle-node, transcritical and pitchfork bifurcations change equilibria; Hopf creates cycles; saddle-nodes cause tipping points with hysteresis.
 !: Assuming systems always respond gradually to gradual parameter changes.
 Q: Which bifurcation creates a limit cycle from an equilibrium? | A Hopf bifurcation.
@@ -1513,6 +1527,7 @@ X: Solve x′(t) = −x(t − 1) with x(t) = 1 for t ≤ 0, up to t = 2.
 > On [0, 1]: x′ = −1, so x = 1 − t (x(1) = 0)
 > On [1, 2]: x′ = −(1 − (t − 1)) = −(2 − t), so x = −(2t − t^{2}/2) + 1.5
 > At t = 2: x = −(4 − 2) + 1.5 = −0.5: the solution overshoots below zero
+D: maths-u10-delay-steps
 K: DDEs depend on past states, need history functions and are infinite-dimensional; delays cause oscillations; the method of steps solves them piece by piece.
 !: Giving only an initial value x(0) for a DDE instead of a history on [−τ, 0].
 Q: What extra data does a DDE need compared with an ODE? | A history function over the delay interval.
