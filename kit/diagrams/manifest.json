@@ -67565,5 +67565,180 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u34-cell-survival": {
+  "title": "Cell survival after a dose of radiation",
+  "caption": "In the linear-quadratic model the surviving fraction is S = e^(−αD − βD²). With α = 0.3 Gy⁻¹ and β = 0.03 Gy⁻², a 2 Gy dose leaves 0.49 of cells surviving. The βD² term bends the curve down at high doses, which is why radiotherapy is split into many small fractions.",
+  "alt": "Surviving fraction against dose in grays, falling from 1, with 0.49 at 2 gray marked, curving downward more steeply at higher doses.",
+  "description": [
+   "S = exp(−0.3D − 0.03D²).",
+   "D = 2 Gy: exponent −0.6 − 0.12 = −0.72, S = 0.487.",
+   "D = 6 Gy: S = 0.056."
+  ],
+  "course": "physics",
+  "lesson": "Radiation biology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u34.js: Radiation biology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S(2 Gy) = 0.487",
+    "ok": true,
+    "detail": "y(2) = 0.4868"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u34-diffusion-time": {
+  "title": "Diffusion is fast over microns, slow over millimetres",
+  "caption": "The time to diffuse a distance x grows as x²/2D. Oxygen (D = 2 × 10⁻⁹ m² s⁻¹) crosses 1 mm in about 250 s, but 10 μm in about 25 ms. Beyond a fraction of a millimetre, organisms need circulation.",
+  "alt": "Diffusion time against distance, a parabola rising to 250 seconds at 1 millimetre and 1000 seconds at 2 millimetres.",
+  "description": [
+   "t ≈ x² / (2D), D = 2 × 10⁻⁹ m² s⁻¹ = 0.002 mm² s⁻¹.",
+   "x = 1 mm: 1 / 0.004 = 250 s.",
+   "x = 2 mm: 1000 s. Doubling the distance quadruples the time.",
+   "x = 10 μm: 0.025 s."
+  ],
+  "course": "physics",
+  "lesson": "Diffusion and transport",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u34.js: Diffusion and transport"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "250 s to diffuse 1 mm",
+    "ok": true,
+    "detail": "y(1) = 250"
+   },
+   {
+    "name": "twice the distance, four times the time",
+    "ok": true,
+    "detail": "y(2) = 1000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u34-nernst": {
+  "title": "The Nernst potential for potassium",
+  "caption": "With 140 mM K⁺ inside, the membrane potential at which K⁺ stops flowing is E = (26.7 mV) ln(c_out/140) at 310 K. At the usual 5 mM outside it is -89 mV, close to a neuron's resting potential; raising outside K⁺ depolarises the cell.",
+  "alt": "Nernst potential in millivolts against outside potassium concentration, a logarithmic curve rising from about minus 130 at 1 millimolar through minus 89 at 5 to zero at 140.",
+  "description": [
+   "E_K = (RT/F) ln(c_out / c_in), RT/F = 26.7 mV at 310 K, c_in = 140 mM.",
+   "c_out = 5 mM: 26.7 × ln(5/140) = -89 mV.",
+   "c_out = 140 mM: 0 mV (no gradient)."
+  ],
+  "course": "physics",
+  "lesson": "Electrophysiology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u34.js: Electrophysiology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "-89 mV at 5 mM outside",
+    "ok": true,
+    "detail": "y(5) = -88.9699"
+   },
+   {
+    "name": "no potential with equal concentrations",
+    "ok": true,
+    "detail": "y(140) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u34-poiseuille": {
+  "title": "Flow through a narrowed artery",
+  "caption": "At the same pressure difference, Poiseuille flow goes as the fourth power of the radius. Narrowing an artery to 75% of its radius cuts the flow to 0.75⁴ = 0.32, about a third.",
+  "alt": "Relative flow against relative radius, a steep fourth-power curve, with 0.32 at 0.75 marked.",
+  "description": [
+   "Q ∝ r⁴ (Poiseuille), at fixed pressure difference, length and viscosity.",
+   "r = 0.75 r₀: Q = 0.316 Q₀.",
+   "r = 0.5 r₀: Q = 0.0625 Q₀. Small narrowings matter a great deal."
+  ],
+  "course": "physics",
+  "lesson": "Biological fluid dynamics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u34.js: Biological fluid dynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.75⁴ = 0.316",
+    "ok": true,
+    "detail": "y(0.75) = 0.3164"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

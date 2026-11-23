@@ -1,0 +1,91 @@
+{
+ "id": "phys-u34-nernst",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u34",
+ "lesson": "Electrophysiology",
+ "title": "The Nernst potential for potassium",
+ "caption": "With 140 mM K⁺ inside, the membrane potential at which K⁺ stops flowing is E = (26.7 mV) ln(c_out/140) at 310 K. At the usual 5 mM outside it is -89 mV, close to a neuron's resting potential; raising outside K⁺ depolarises the cell.",
+ "alt": "Nernst potential in millivolts against outside potassium concentration, a logarithmic curve rising from about minus 130 at 1 millimolar through minus 89 at 5 to zero at 140.",
+ "description": [
+  "E_K = (RT/F) ln(c_out / c_in), RT/F = 26.7 mV at 310 K, c_in = 140 mM.",
+  "c_out = 5 mM: 26.7 × ln(5/140) = -89 mV.",
+  "c_out = 140 mM: 0 mV (no gradient)."
+ ],
+ "range": {
+  "x": [
+   0,
+   150
+  ],
+  "y": [
+   -140,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   50,
+   100,
+   150
+  ],
+  [
+   -120,
+   -90,
+   -60,
+   -30,
+   0
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "K⁺ outside / mM",
+  "Nernst potential / mV"
+ ],
+ "curves": [
+  {
+   "expr": "26.7*log(x/140)",
+   "domain": [
+    1,
+    150
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 5,
+   "to": -88.96986042167794
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": -88.9699,
+   "colour": "a2",
+   "label": "-89 mV at 5 mM",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "26.7*log(x/140)",
+   "x": 5,
+   "y": -88.96986,
+   "name": "-89 mV at 5 mM outside"
+  },
+  {
+   "type": "point",
+   "expr": "26.7*log(x/140)",
+   "x": 140,
+   "y": 0,
+   "name": "no potential with equal concentrations"
+  }
+ ]
+}
