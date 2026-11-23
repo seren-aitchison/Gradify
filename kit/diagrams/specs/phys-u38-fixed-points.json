@@ -116,9 +116,8 @@
    "y": 0,
    "colour": "a4",
    "label": "1: stable",
-   "anchor": "end",
-   "dx": -6,
-   "dy": 16
+   "dx": 6,
+   "dy": -28
   }
  ],
  "checks": [

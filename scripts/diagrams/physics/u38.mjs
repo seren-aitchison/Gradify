@@ -14,7 +14,7 @@ const r = (x, d = 2) => (d < 0 ? Math.round(x / 10 ** -d) * 10 ** -d : +(+x).toF
     range: { x: [-1.6, 1.6], y: [-1.2, 1.2] }, ticks: [[], [-1, -0.5, 0.5, 1]], height: [320, 300], xLabelBelow: true, axisLabels: ["x", "ẋ = f(x)"],
     curves: [{ expr: f, colour: "a1" }],
     arrows: [{ from: [0.15, 0.08], to: [0.8, 0.08], colour: "a2" }, { from: [-0.15, 0.08], to: [-0.8, 0.08], colour: "a2" }, { from: [1.55, 0.08], to: [1.15, 0.08], colour: "a2" }, { from: [-1.55, 0.08], to: [-1.15, 0.08], colour: "a2" }],
-    points: [{ x: -1, y: 0, colour: "a4", label: "−1: stable", anchor: "end", dx: -6, dy: 16 }, { x: 0, y: 0, colour: "a2", label: "0: unstable", dx: 6, dy: 16 }, { x: 1, y: 0, colour: "a4", label: "1: stable", anchor: "end", dx: -6, dy: 16 }],
+    points: [{ x: -1, y: 0, colour: "a4", label: "−1: stable", anchor: "end", dx: -6, dy: 16 }, { x: 0, y: 0, colour: "a2", label: "0: unstable", dx: 6, dy: 16 }, { x: 1, y: 0, colour: "a4", label: "1: stable", dx: 6, dy: -28 }],
     checks: [{ type: "point", expr: f, x: 1, y: 0, name: "fixed point at x = 1" }, { type: "slope", expr: f, x: 0, value: 1, name: "f′(0) = 1: unstable" }, { type: "slope", expr: f, x: 1, value: -2, name: "f′(1) = −2: stable" }],
   }); }
 
