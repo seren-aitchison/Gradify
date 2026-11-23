@@ -1,0 +1,108 @@
+{
+ "id": "phys-u19-fabry-perot-peaks",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Fabry–Pérot interferometer",
+ "title": "Fabry–Pérot transmission, d = 5 mm, R = 0.95",
+ "caption": "The transmission has sharp peaks at every resonance, spaced by the free spectral range c/2nd = 30 GHz. Mirrors of R = 0.95 give finesse π√R/(1 − R) ≈ 61, so each peak is only FSR/F ≈ 0.49 GHz wide: the pattern resolves frequencies about 60 times finer than the peak spacing.",
+ "alt": "Graph of transmission against frequency offset from -15 to 45 gigahertz: very narrow peaks of height 1 every 30 GHz, each about 0.49 GHz wide.",
+ "description": [
+  "The horizontal axis is frequency in gigahertz (measured from one resonance); the vertical axis is the transmitted fraction.",
+  "Peaks of full transmission occur every FSR = 3 × 10⁸/(2 × 0.005) = 30 GHz.",
+  "With R = 0.95 the finesse is π√0.95/0.05 ≈ 61, so each peak has full width at half maximum FSR/F ≈ 0.49 GHz.",
+  "Between peaks almost nothing is transmitted."
+ ],
+ "range": {
+  "x": [
+   -15,
+   45
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   -15,
+   0,
+   15,
+   30,
+   45
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  15,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "f offset / GHz",
+  "transmission"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+1519.9999999999973*sin(3.14159265*x/30)^2)",
+   "colour": "a1",
+   "width": 2.6,
+   "samples": 6000
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    1.08
+   ],
+   "to": [
+    30,
+    1.08
+   ],
+   "both": true,
+   "label": "FSR = 30 GHz",
+   "dy": -12
+  }
+ ],
+ "points": [
+  {
+   "x": 0.245,
+   "y": 0.5,
+   "colour": "a2",
+   "label": "width 0.49 GHz",
+   "dx": 12,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(1+1519.9999999999973*sin(3.14159265*x/30)^2)",
+   "x": 0,
+   "y": 1,
+   "name": "full transmission at resonance"
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+1519.9999999999973*sin(3.14159265*x/30)^2)",
+   "x": 30,
+   "y": 1,
+   "name": "the next resonance is one FSR = 30 GHz away"
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+1519.9999999999973*sin(3.14159265*x/30)^2)",
+   "x": 0.24496115414356798,
+   "y": 0.5,
+   "name": "half maximum at ±0.24 GHz: width FSR/F ≈ 0.49 GHz"
+  }
+ ]
+}

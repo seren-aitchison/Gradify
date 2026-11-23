@@ -1,0 +1,33 @@
+{
+ "id": "phys-u19-projector-lens",
+ "renderer": "rays",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Lens equations",
+ "title": "Between F and 2F: the projector",
+ "caption": "For f = 10 cm an object at 15 cm (between F and 2F) gives a real, inverted image at 30 cm, magnified 2×. Moving the object to 12 cm pushes the image to 60 cm and 5×. A projector puts the slide just beyond F: for a screen 5 m away, 1/u = 1/10 − 1/500 gives u = 10.2 cm, magnification 49.",
+ "alt": "Two ray diagrams for a converging lens of focal length 10 cm: an object at 15 cm forms a real inverted image 30 cm away, twice the size; an object at 12 cm forms one 60 cm away, five times the size.",
+ "description": [
+  "Each panel shows a converging lens of focal length 10 cm with F and 2F marked, and the three ray rules for an object between F and 2F.",
+  "Object at 15 cm: 1/v = 1/10 − 1/15, so v = 30 cm; the image is real, inverted and 2 times the object's height.",
+  "Object at 12 cm: v = 60 cm and the image is 5 times as tall.",
+  "The closer the object is to F, the farther away and larger the image: the lesson's projector has u = 10.2 cm and v = 500 cm, magnification 49."
+ ],
+ "f": 10,
+ "panels": [
+  {
+   "title": "Object at 15 cm",
+   "u": 15,
+   "h": 2,
+   "expect": "real, inverted, magnified",
+   "result": "image at 30 cm, 2× larger"
+  },
+  {
+   "title": "Object at 12 cm",
+   "u": 12,
+   "h": 1,
+   "expect": "real, inverted, magnified",
+   "result": "image at 60 cm, 5× larger"
+  }
+ ]
+}

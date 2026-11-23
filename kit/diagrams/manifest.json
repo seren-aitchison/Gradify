@@ -60202,5 +60202,928 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "phys-u19-brewster-diamond": {
+  "title": "Reflection from diamond (n = 2.42) for both polarisations",
+  "caption": "Light reflects differently by polarisation. The component in the plane of incidence (p) has no reflection at Brewster's angle θ_B = tan⁻¹ 2.42 = 67.5°, so reflected light there is purely s-polarised. At normal incidence both reflect 17%; at grazing incidence both tend to 100%.",
+  "alt": "Graph of reflectance against angle of incidence from 0 to 90 degrees for diamond: the p curve falls from 17 percent to zero at 67.5 degrees then rises to 100 percent, while the s curve rises steadily from 17 percent to 100 percent.",
+  "description": [
+   "The horizontal axis is the angle of incidence in degrees; the vertical axis is the fraction of light reflected.",
+   "At 0° both polarisations reflect ((2.42 − 1)/(2.42 + 1))² = 0.17.",
+   "The s curve (E perpendicular to the plane of incidence) rises steadily to 1 at 90°.",
+   "The p curve falls to zero at θ_B = tan⁻¹ 2.42 = 67.5°, where the reflected and refracted rays are 90° apart, and then rises to 1."
+  ],
+  "course": "physics",
+  "lesson": "Brewster's angle",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Brewster's angle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "no p reflection at θ_B = tan⁻¹ 2.42 = 67.5°",
+    "ok": true,
+    "detail": "y(67.54845354399613) = 0"
+   },
+   {
+    "name": "s-polarisation is still partly reflected at θ_B",
+    "ok": true,
+    "detail": "y(67.54845354399613) = 0.5017"
+   },
+   {
+    "name": "normal-incidence reflectance 0.17",
+    "ok": true,
+    "detail": "y(0.2) = 0.1724"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-cavity-modes": {
+  "title": "Longitudinal modes of a 30 cm HeNe cavity",
+  "caption": "Standing waves fit the cavity when f = qc/2L, spaced by Δf = c/2L = 500 MHz for L = 30 cm. Under a gain curve 1.5 GHz wide, three modes (centre and ±500 MHz) lie above half gain; the next ones, ±1000 MHz, fall outside it. Real lasers use the modes that reach threshold.",
+  "alt": "Graph of gain against frequency from -1100 to 1100 megahertz: a bell-shaped gain curve 1500 megahertz wide with three vertical lines at -500, 0 and 500 megahertz marking the cavity modes.",
+  "description": [
+   "The horizontal axis is frequency relative to the centre of the gain curve in megahertz; the vertical axis is the relative gain.",
+   "The bell curve is the gain, 1.5 GHz wide at half maximum (it is 0.5 at ±750 MHz).",
+   "The cavity modes are the vertical lines, spaced by c/2L = 3 × 10⁸/0.6 = 500 MHz: at −500, 0 and +500 MHz.",
+   "About 3 modes fit within the gain bandwidth."
+  ],
+  "course": "physics",
+  "lesson": "Optical cavities",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Optical cavities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gain is half its peak at ±750 MHz (1.5 GHz wide)",
+    "ok": true,
+    "detail": "y(750) = 0.5"
+   },
+   {
+    "name": "the mode at +500 MHz sees gain 0.73",
+    "ok": true,
+    "detail": "y(500) = 0.7349"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-coherence-lengths": {
+  "title": "Coherence lengths of light sources",
+  "caption": "Fringes need path differences shorter than the coherence length l_c ≈ λ²/Δλ. For the LED, l_c = (630 nm)²/20 nm ≈ 20 μm; white light manages about 1 μm, a sodium lamp about 1 mm, a HeNe laser 0.1–1 m and stabilised lasers kilometres: 9 orders of magnitude across the range.",
+  "alt": "A logarithmic scale of coherence length in metres from 10^-7 to 10^4 with white light at about 1 micrometre, an LED at 20 micrometres, a sodium lamp at 1 millimetre, a HeNe laser at tenths of a metre and stabilised lasers at kilometres.",
+  "description": [
+   "A horizontal logarithmic scale of coherence length in metres.",
+   "Marked from shortest to longest: white light ~1 μm, the lesson's LED 20 μm, sodium lamp ~1 mm, HeNe laser 0.1–1 m, stabilised laser ~1 km.",
+   "The longer the coherence length, the larger the path difference over which clear fringes appear: white light shows fringes only from thin films, lasers from interferometers many metres across."
+  ],
+  "course": "physics",
+  "lesson": "Interference and coherence",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Interference and coherence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a sodium lamp is about 50 times the LED's coherence length",
+    "ok": true,
+    "detail": "1.70 orders"
+   },
+   {
+    "name": "the sources span 9 orders of magnitude",
+    "ok": true,
+    "detail": "9.0 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u19-double-slit-fringes": {
+  "title": "Double-slit fringes: 633 nm, slits 0.25 mm apart, screen 2.0 m away",
+  "caption": "Bright fringes lie where d sin θ = nλ, spaced by x = λD/d = 633 × 10⁻⁹ × 2.0/(2.5 × 10⁻⁴) = 5.1 mm. The intensity I = 4I₀cos²(πdx/λD) varies smoothly between 4I₀ and zero (the single-slit envelope is ignored here). Halving d would double the spacing.",
+  "alt": "Graph of relative intensity against position on the screen from -15 to 15 millimetres: equally spaced bright fringes 5.1 millimetres apart with dark fringes halfway between.",
+  "description": [
+   "The horizontal axis is position on the screen in millimetres from the centre; the vertical axis is the intensity as a fraction of the maximum, 4I₀.",
+   "The curve is cos²(πx/5.1 mm): a bright fringe at the centre and at every 5.1 mm, a dark fringe halfway between them.",
+   "The spacing is x = λD/d = 5.1 mm."
+  ],
+  "course": "physics",
+  "lesson": "Young's double-slit experiment",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Young's double-slit experiment"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a bright fringe at the centre",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "the next bright fringe is x = λD/d = 5.1 mm away",
+    "ok": true,
+    "detail": "y(5.064) = 1"
+   },
+   {
+    "name": "a dark fringe halfway between",
+    "ok": true,
+    "detail": "y(2.532) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-fabry-perot-peaks": {
+  "title": "Fabry–Pérot transmission, d = 5 mm, R = 0.95",
+  "caption": "The transmission has sharp peaks at every resonance, spaced by the free spectral range c/2nd = 30 GHz. Mirrors of R = 0.95 give finesse π√R/(1 − R) ≈ 61, so each peak is only FSR/F ≈ 0.49 GHz wide: the pattern resolves frequencies about 60 times finer than the peak spacing.",
+  "alt": "Graph of transmission against frequency offset from -15 to 45 gigahertz: very narrow peaks of height 1 every 30 GHz, each about 0.49 GHz wide.",
+  "description": [
+   "The horizontal axis is frequency in gigahertz (measured from one resonance); the vertical axis is the transmitted fraction.",
+   "Peaks of full transmission occur every FSR = 3 × 10⁸/(2 × 0.005) = 30 GHz.",
+   "With R = 0.95 the finesse is π√0.95/0.05 ≈ 61, so each peak has full width at half maximum FSR/F ≈ 0.49 GHz.",
+   "Between peaks almost nothing is transmitted."
+  ],
+  "course": "physics",
+  "lesson": "Fabry–Pérot interferometer",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Fabry–Pérot interferometer"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "full transmission at resonance",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "the next resonance is one FSR = 30 GHz away",
+    "ok": true,
+    "detail": "y(30) = 1"
+   },
+   {
+    "name": "half maximum at ±0.24 GHz: width FSR/F ≈ 0.49 GHz",
+    "ok": true,
+    "detail": "y(0.24496115414356798) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-fibre-critical": {
+  "title": "A fibre core meeting its cladding",
+  "caption": "Core n = 1.48 against cladding n = 1.46 gives sin θ_c = 1.46/1.48, so θ_c = 80.6° from the normal. A ray meeting the boundary at 75° is below it and leaks into the cladding (bending to 78.3°); at 85° it is totally internally reflected. Only rays nearly parallel to the fibre axis are guided.",
+  "alt": "Two ray diagrams at a core–cladding boundary: a ray at 75° escapes into the cladding at 78.3°; a ray at 85° is totally internally reflected; the critical angle is 80.6°.",
+  "description": [
+   "The critical angle is sin⁻¹(1.46/1.48) = 80.6° measured from the normal to the boundary.",
+   "A ray at 75° is less than 80.6°, so part of it refracts into the cladding, bending away from the normal to 78.3°.",
+   "A ray at 85° exceeds the critical angle: all the light is reflected back into the core.",
+   "Because the critical angle is so close to 90°, only rays travelling at less than about 9° to the axis are trapped."
+  ],
+  "course": "physics",
+  "lesson": "Total internal reflection",
+  "also": [],
+  "renderer": "refraction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Total internal reflection"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "75°: leaks out, i = 75°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "75°"
+   },
+   {
+    "name": "75°: leaks out, i = 75°: refracted",
+    "ok": true,
+    "detail": "critical angle 80.6°"
+   },
+   {
+    "name": "75°: leaks out, i = 75°: Snell's law gives r = 78.2816°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 78.28°"
+   },
+   {
+    "name": "75°: leaks out, i = 75°: critical angle 80.57°",
+    "ok": true,
+    "detail": "sin⁻¹(n₂/n₁) = 80.57°"
+   },
+   {
+    "name": "75°: leaks out, i = 75°: the ray bends away from the normal",
+    "ok": true,
+    "detail": "75° → 78.3°"
+   },
+   {
+    "name": "85°: trapped, i = 85°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "85°"
+   },
+   {
+    "name": "85°: trapped, i = 85°: totally internally reflected",
+    "ok": true,
+    "detail": "critical angle 80.6°"
+   },
+   {
+    "name": "85°: trapped, i = 85°: critical angle 80.57°",
+    "ok": true,
+    "detail": "sin⁻¹(n₂/n₁) = 80.57°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "840px wide, shown at 84% (labels 12.6px)"
+   }
+  ]
+ },
+ "phys-u19-fibre-loss": {
+  "title": "Power left in a fibre at 0.2 dB km⁻¹",
+  "caption": "Loss in decibels adds along the fibre, so the power fraction falls exponentially: 10^(−0.02L). After 10 km 0.63 remains, after 50 km 0.10, and after 100 km the loss is 20 dB: 0.01, only 1%. That is why long links need optical amplifiers.",
+  "alt": "Graph of the fraction of power received against fibre length from 0 to 120 kilometres: a fall from 1 through 0.63 at 10 km, 0.10 at 50 km and 0.01 at 100 km.",
+  "description": [
+   "The horizontal axis is the fibre length in kilometres; the vertical axis is the fraction of the launched power that arrives.",
+   "At 0.2 dB km⁻¹ the loss in dB is 0.2L, and the fraction is 10^(−0.2L/10).",
+   "After 10 km: 0.63; 50 km: 0.10 (10 dB); 100 km: 20 dB, or 0.01, 1% of the power."
+  ],
+  "course": "physics",
+  "lesson": "Fibre optics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Fibre optics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "20 dB over 100 km leaves 1%",
+    "ok": true,
+    "detail": "y(100) = 0.01"
+   },
+   {
+    "name": "10 dB over 50 km leaves 10%",
+    "ok": true,
+    "detail": "y(50) = 0.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-glass-refraction": {
+  "title": "Light entering glass at 40°",
+  "caption": "Entering glass (n = 1.52) at 40° the ray bends towards the normal: sin θ₂ = sin 40°/1.52 = 0.423, so θ₂ = 25°. Light rays are reversible: the same ray leaving the glass at 25° emerges into air at 40°. A weak reflected ray (about 4% at normal incidence) leaves at 40° too.",
+  "alt": "Two ray diagrams: a ray in air at 40° entering glass bends towards the normal to 25°; a ray in glass at 25° leaves into air at 40°.",
+  "description": [
+   "A ray in air strikes a glass surface (n = 1.52) at 40° to the normal. A faint reflected ray leaves at 40° on the other side of the normal.",
+   "Snell's law: sin θ₂ = sin 40°/1.52 = 0.423, so θ₂ = 25°: the refracted ray bends towards the normal in the denser glass.",
+   "Second panel: the reverse path. A ray in glass meeting the surface at 25° leaves into air at 40°, away from the normal."
+  ],
+  "course": "physics",
+  "lesson": "Reflection and refraction",
+  "also": [],
+  "renderer": "refraction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Reflection and refraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "air to glass, i = 40°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "40°"
+   },
+   {
+    "name": "air to glass, i = 40°: refracted",
+    "ok": true,
+    "detail": "light enters a denser medium: no critical angle"
+   },
+   {
+    "name": "air to glass, i = 40°: Snell's law gives r = 25.017°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 25.02°"
+   },
+   {
+    "name": "air to glass, i = 40°: the ray bends towards the normal",
+    "ok": true,
+    "detail": "40° → 25.0°"
+   },
+   {
+    "name": "the same ray reversed, i = 25.017°: angle of reflection equals angle of incidence",
+    "ok": true,
+    "detail": "25.017°"
+   },
+   {
+    "name": "the same ray reversed, i = 25.017°: refracted",
+    "ok": true,
+    "detail": "critical angle 41.1°"
+   },
+   {
+    "name": "the same ray reversed, i = 25.017°: Snell's law gives r = 40°",
+    "ok": true,
+    "detail": "n₁ sin i / n₂ → r = 40.00°"
+   },
+   {
+    "name": "the same ray reversed, i = 25.017°: the ray bends away from the normal",
+    "ok": true,
+    "detail": "25.017° → 40.0°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "840px wide, shown at 84% (labels 12.6px)"
+   }
+  ]
+ },
+ "phys-u19-grating-orders": {
+  "title": "A 600 lines per mm grating: angle of each order",
+  "caption": "With d = 1/600 mm = 1.67 μm, d sin θ = nλ puts the first-order sodium line (589 nm) at 20.7° and the second order at 45.0°. Orders exist only while nλ < d: at 700 nm just two orders appear, and a third (shown for λ < 556 nm) needs a shorter wavelength. Higher orders spread colours more.",
+  "alt": "Graph of diffraction angle against wavelength from 400 to 700 nanometres for orders 1, 2 and 3 of a 600 lines per mm grating: order 1 rises to 25 degrees, order 2 rises more steeply, and order 3 exists only for wavelengths below 555 nanometres.",
+  "description": [
+   "The horizontal axis is wavelength in nanometres; the vertical axis is the angle of the diffraction maximum in degrees.",
+   "Each curve is θ = sin⁻¹(nλ/d) with d = 1.67 μm for n = 1, 2, 3.",
+   "At 589 nm: first order 20.7°, second order 45.0°.",
+   "The third order ends at 556 nm, where sin θ reaches 1; at 700 nm only two orders fit (n < d/λ = 2.4)."
+  ],
+  "course": "physics",
+  "lesson": "Diffraction gratings",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Diffraction gratings"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "first-order sodium line at 20.7°",
+    "ok": true,
+    "detail": "y(589) = 20.6954"
+   },
+   {
+    "name": "second order at 45.0°",
+    "ok": true,
+    "detail": "y(589) = 44.9751"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-malus-analyser": {
+  "title": "Analyser after a polariser: Malus's law",
+  "caption": "Unpolarised light of 100 W m⁻² loses half at the polariser (50 W m⁻²). The analyser then transmits I = 50 cos²θ, which falls from 50 W m⁻² at 0° to zero at 90°. At 30°, I = 50 × cos²30° = 37.50000000000001 W m⁻².",
+  "alt": "Graph of transmitted intensity against analyser angle from 0 to 90 degrees: a cos-squared curve from 50 watts per square metre at 0 degrees to zero at 90, passing 37.50000000000001 at 30 degrees.",
+  "description": [
+   "The horizontal axis is the angle θ between the polariser and the analyser; the vertical axis is the transmitted intensity in W m⁻².",
+   "After the polariser the light is polarised with intensity 50 W m⁻², half of 100.",
+   "Malus's law gives I = 50 cos²θ: 50 at 0°, 37.50000000000001 at 30° and 0 at 90°."
+  ],
+  "course": "physics",
+  "lesson": "Polarisation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Polarisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at 30° the transmitted intensity is 37.50000000000001 W m⁻²",
+    "ok": true,
+    "detail": "y(30) = 37.5"
+   },
+   {
+    "name": "crossed polarisers pass nothing",
+    "ok": true,
+    "detail": "y(90) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-michelson-fringes": {
+  "title": "Counting fringes with a Michelson interferometer",
+  "caption": "Moving one mirror by λ/2 changes the path by λ and shifts the pattern by one fringe, so the number of fringes is N = 2d/λ. For λ = 632.8 nm, 2000 fringes correspond to d = 2000 × λ/2 = 0.633 mm.",
+  "alt": "Graph of fringes counted against mirror movement from 0 to 1 millimetre: a straight line through the origin passing through 2000 fringes at 0.633 millimetres.",
+  "description": [
+   "The horizontal axis is the mirror displacement in millimetres; the vertical axis is the number of fringes that have passed.",
+   "The line is N = 2d/λ with λ = 632.8 nm: one fringe per λ/2 = 316.4 nm of movement.",
+   "At 2000 fringes the mirror has moved 0.633 mm."
+  ],
+  "course": "physics",
+  "lesson": "Michelson interferometer",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Michelson interferometer"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2000 fringes of 632.8 nm is a movement of 0.633 mm",
+    "ok": true,
+    "detail": "y(0.6328) = 2000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-missing-orders": {
+  "title": "Double slit with d = 3a: orders 3 and 6 are missing",
+  "caption": "The double-slit fringes cos²(πd sin θ/λ) sit inside the single-slit envelope (sin β/β)². With d/a = 0.3 mm/0.1 mm = 3, the fringe maxima fall at a sin θ/λ = n/3, and the envelope is zero at a sin θ/λ = 1, 2, …: orders 3, 6, 9… coincide with single-slit minima and are missing.",
+  "alt": "Graph of intensity against a sin θ over λ from minus 2.2 to 2.2: a central fringe pattern with rapid oscillations inside a sinc-squared envelope, which is zero at plus and minus 1 and 2, where the third and sixth order fringes would have been.",
+  "description": [
+   "The horizontal axis is a sin θ/λ; the vertical axis is intensity relative to the central maximum.",
+   "The dashed curve is the single-slit envelope (sin β/β)², with zeros at a sin θ/λ = ±1, ±2.",
+   "The solid curve is the envelope times the double-slit fringes cos²(3πu), with u = a sin θ/λ. Its maxima are at u = n/3 (orders n = 0, 1, 2, 4, 5, …).",
+   "Orders 3 and 6 would fall at u = 1 and u = 2, exactly at the envelope's zeros, so those fringes are missing."
+  ],
+  "course": "physics",
+  "lesson": "Single-slit and multiple-slit diffraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Single-slit and multiple-slit diffraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "order 3 (u = 1) is missing: the single-slit envelope is zero",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "order 6 (u = 2) is missing",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "order 1 is present at u = 1/3 with intensity 0.68",
+    "ok": true,
+    "detail": "y(0.3333333333333333) = 0.6839"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-projector-lens": {
+  "title": "Between F and 2F: the projector",
+  "caption": "For f = 10 cm an object at 15 cm (between F and 2F) gives a real, inverted image at 30 cm, magnified 2×. Moving the object to 12 cm pushes the image to 60 cm and 5×. A projector puts the slide just beyond F: for a screen 5 m away, 1/u = 1/10 − 1/500 gives u = 10.2 cm, magnification 49.",
+  "alt": "Two ray diagrams for a converging lens of focal length 10 cm: an object at 15 cm forms a real inverted image 30 cm away, twice the size; an object at 12 cm forms one 60 cm away, five times the size.",
+  "description": [
+   "Each panel shows a converging lens of focal length 10 cm with F and 2F marked, and the three ray rules for an object between F and 2F.",
+   "Object at 15 cm: 1/v = 1/10 − 1/15, so v = 30 cm; the image is real, inverted and 2 times the object's height.",
+   "Object at 12 cm: v = 60 cm and the image is 5 times as tall.",
+   "The closer the object is to F, the farther away and larger the image: the lesson's projector has u = 10.2 cm and v = 500 cm, magnification 49."
+  ],
+  "course": "physics",
+  "lesson": "Lens equations",
+  "also": [],
+  "renderer": "rays",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Lens equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Object at 15 cm: the drawn rays meet where the lens equation puts the image",
+    "ok": true,
+    "detail": "rays meet at 30.00 cm, -4.00; 1/v = 1/f − 1/u gives v = 30.00 cm, m = -2.00"
+   },
+   {
+    "name": "Object at 15 cm: stated as real, inverted, magnified",
+    "ok": true,
+    "detail": "computed: real, inverted, magnified"
+   },
+   {
+    "name": "Object at 12 cm: the drawn rays meet where the lens equation puts the image",
+    "ok": true,
+    "detail": "rays meet at 60.00 cm, -5.00; 1/v = 1/f − 1/u gives v = 60.00 cm, m = -5.00"
+   },
+   {
+    "name": "Object at 12 cm: stated as real, inverted, magnified",
+    "ok": true,
+    "detail": "computed: real, inverted, magnified"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "880px wide, shown at 80% (labels 12.1px)"
+   }
+  ]
+ },
+ "phys-u19-pupil-resolution": {
+  "title": "Diffraction limit of a circular aperture at 550 nm",
+  "caption": "The smallest resolvable angle is θ = 1.22λ/D, which falls as the aperture grows: smaller apertures give wider patterns. For the 3 mm pupil, θ = 1.22 × 550 nm/3 mm = 2.2 × 10⁻⁴ rad = 0.8′, close to the eye's actual acuity of about 1′ (dotted).",
+  "alt": "Graph of the diffraction-limited angle in minutes of arc against aperture diameter in millimetres: a falling curve through 0.8 arcminutes at 3 millimetres, with the eye's 1 arcminute acuity marked.",
+  "description": [
+   "The horizontal axis is the aperture diameter D in millimetres; the vertical axis is the smallest resolvable angle in minutes of arc.",
+   "The curve is θ = 1.22λ/D for λ = 550 nm: it is inversely proportional to D.",
+   "At D = 3 mm (the pupil) θ = 2.2 × 10⁻⁴ rad = 0.8′.",
+   "A dotted line marks the eye's actual acuity, about 1′, a little above the diffraction limit."
+  ],
+  "course": "physics",
+  "lesson": "Diffraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Diffraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1.22 × 550 nm/3 mm = 2.2 × 10⁻⁴ rad = 0.8′",
+    "ok": true,
+    "detail": "y(3) = 0.7689"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-quartz-retardation": {
+  "title": "Retardation in a quartz plate at 633 nm",
+  "caption": "The two polarisations pick up a phase difference Δφ = 2π(n_e − n_o)d/λ. With n_e − n_o = 0.0092 at 633 nm it grows by 5.23° per μm of quartz, so a quarter-wave plate (90°, linear ↔ circular) is d = λ/4Δn = 17.2 μm thick, and a half-wave plate (180°) twice that.",
+  "alt": "Graph of retardation in degrees against plate thickness in micrometres: a straight line through the origin reaching 90 degrees at 17.2 micrometres and 180 degrees at 34.4 micrometres.",
+  "description": [
+   "The horizontal axis is the plate thickness in micrometres; the vertical axis is the phase difference between the two polarisations in degrees.",
+   "The line is Δφ = 360° × 0.0092 × d/0.633 μm = 5.23° per μm.",
+   "It reaches 90° (quarter-wave) at 17.2 μm and 180° (half-wave) at 34.4 μm."
+  ],
+  "course": "physics",
+  "lesson": "Birefringence",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Birefringence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a quarter-wave plate is 17.2 μm thick",
+    "ok": true,
+    "detail": "y(17.20108695652174) = 90"
+   },
+   {
+    "name": "twice the thickness gives a half-wave plate",
+    "ok": true,
+    "detail": "y(34.40217391304348) = 180"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-seeing-limit": {
+  "title": "Angular resolution: diffraction limit against seeing",
+  "caption": "An 8 m telescope at 2.2 μm could resolve θ = 1.22λ/D = 0.07″, but turbulence limits it to about 0.6″ unless adaptive optics corrects the wavefront: a gain of about 9×. For comparison the 3 mm pupil of the eye is diffraction-limited at 46″.",
+  "alt": "A logarithmic scale of angle in arcseconds from 0.01 to 100 with the 8 metre telescope's diffraction limit at 0.07, typical seeing at 0.6 and the eye's diffraction limit at 46.",
+  "description": [
+   "A horizontal logarithmic scale of angular resolution in arcseconds (smaller is sharper).",
+   "The 8 m telescope's diffraction limit at 2.2 μm: 1.22 × 2.2 × 10⁻⁶/8 = 3.4 × 10⁻⁷ rad = 0.07″.",
+   "Typical seeing without correction: 0.6″, about 9 times worse; adaptive optics recovers most of the difference.",
+   "The eye (3 mm pupil, 550 nm): 46″, shown for scale."
+  ],
+  "course": "physics",
+  "lesson": "Adaptive optics",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Adaptive optics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "seeing is about 9 times the diffraction limit",
+    "ok": true,
+    "detail": "0.94 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u19-snell-gradient": {
+  "title": "sin i against sin r gives the refractive index",
+  "caption": "Snell's law for light entering the block from air is sin i = n sin r, so a graph of sin i against sin r is a straight line through the origin whose gradient is n. A gradient of 1.48 identifies the block as Perspex/acrylic (crown glass would give about 1.52).",
+  "alt": "Graph of sin i against sin r: a straight line through the origin with gradient 1.48, passing through (0.60, 0.888).",
+  "description": [
+   "The horizontal axis is sin r (angle of refraction in the block) and the vertical axis is sin i (angle of incidence in air).",
+   "Because sin i = n sin r, the points lie on a straight line through the origin with gradient n = 1.48.",
+   "For example sin r = 0.60 corresponds to sin i = 0.888.",
+   "A gradient of 1.48 matches Perspex; glass at 1.52 would be a slightly steeper line."
+  ],
+  "course": "physics",
+  "lesson": "Snell's law",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Snell's law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient is n = 1.48",
+    "ok": true,
+    "detail": "gradient 1.4800"
+   },
+   {
+    "name": "sin r = 0.60 gives sin i = 0.888",
+    "ok": true,
+    "detail": "y(0.6) = 0.888"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u19-sucrose-rotation": {
+  "title": "Rotation by sucrose in a 20 cm tube",
+  "caption": "The rotation is θ = [α]lc. With [α] = 66.5° dm⁻¹ (g/mL)⁻¹ and l = 2 dm, θ = 133° × c, a straight line through the origin. The observed 13.3° therefore gives c = 13.3/(66.5 × 2) = 0.10 g mL⁻¹; measuring the rotation is how a polarimeter reads sugar concentration.",
+  "alt": "Graph of rotation in degrees against concentration in grams per millilitre: a straight line through the origin of gradient 133 degrees per gram per millilitre, passing 13.3 degrees at 0.10 grams per millilitre.",
+  "description": [
+   "The horizontal axis is the concentration of sucrose in g mL⁻¹; the vertical axis is the rotation of the plane of polarisation in degrees.",
+   "θ = [α]lc = 66.5 × 2 × c = 133c, a straight line through the origin.",
+   "A measured rotation of 13.3° corresponds to c = 0.10 g mL⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Optical activity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Optical activity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient [α]l = 133° per g mL⁻¹",
+    "ok": true,
+    "detail": "gradient 133.0000"
+   },
+   {
+    "name": "13.3° means c = 0.10 g mL⁻¹",
+    "ok": true,
+    "detail": "y(0.1) = 13.3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

@@ -1,0 +1,109 @@
+{
+ "id": "phys-u19-cavity-modes",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Optical cavities",
+ "title": "Longitudinal modes of a 30 cm HeNe cavity",
+ "caption": "Standing waves fit the cavity when f = qc/2L, spaced by Δf = c/2L = 500 MHz for L = 30 cm. Under a gain curve 1.5 GHz wide, three modes (centre and ±500 MHz) lie above half gain; the next ones, ±1000 MHz, fall outside it. Real lasers use the modes that reach threshold.",
+ "alt": "Graph of gain against frequency from -1100 to 1100 megahertz: a bell-shaped gain curve 1500 megahertz wide with three vertical lines at -500, 0 and 500 megahertz marking the cavity modes.",
+ "description": [
+  "The horizontal axis is frequency relative to the centre of the gain curve in megahertz; the vertical axis is the relative gain.",
+  "The bell curve is the gain, 1.5 GHz wide at half maximum (it is 0.5 at ±750 MHz).",
+  "The cavity modes are the vertical lines, spaced by c/2L = 3 × 10⁸/0.6 = 500 MHz: at −500, 0 and +500 MHz.",
+  "About 3 modes fit within the gain bandwidth."
+ ],
+ "range": {
+  "x": [
+   -1100,
+   1100
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   -1000,
+   -500,
+   0,
+   500,
+   1000
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  500,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "f offset / MHz",
+  "gain"
+ ],
+ "marks": [
+  {
+   "x": -500,
+   "to": 0.7349
+  },
+  {
+   "x": 0,
+   "to": 1
+  },
+  {
+   "x": 500,
+   "to": 0.7349
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-2.772588722239781*(x/1500)^2)",
+   "colour": "a2",
+   "width": 3,
+   "label": "gain",
+   "labelAt": [
+    620,
+    0.8
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    0.1
+   ],
+   "to": [
+    500,
+    0.1
+   ],
+   "both": true,
+   "label": "500 MHz",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-2.772588722239781*(x/1500)^2)",
+   "x": 750,
+   "y": 0.5,
+   "name": "the gain is half its peak at ±750 MHz (1.5 GHz wide)"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-2.772588722239781*(x/1500)^2)",
+   "x": 500,
+   "y": 0.7349,
+   "name": "the mode at +500 MHz sees gain 0.73"
+  }
+ ]
+}
