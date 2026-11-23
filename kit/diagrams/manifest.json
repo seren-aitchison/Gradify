@@ -66114,5 +66114,144 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u26-clock-rate-horizon": {
+  "title": "Clocks slow down near the horizon",
+  "caption": "A clock held at rest at radius r ticks at √(1 − r_s/r) of the rate of a distant clock. At 4r_s it runs at 0.866; at 1.1r_s at 0.3; at the horizon the factor reaches zero: seen from far away, nothing ever crosses it.",
+  "alt": "Clock rate relative to a distant clock against distance from the black hole in Schwarzschild radii: zero at the horizon, rising steeply and levelling towards 1.",
+  "description": [
+   "Distance in units of the Schwarzschild radius r_s.",
+   "Rate = √(1 − r_s/r) for a clock at rest.",
+   "r = 4r_s: 0.866. r = 1.1r_s: 0.302. r = r_s: 0.",
+   "Far away the rate tends to 1."
+  ],
+  "course": "physics",
+  "lesson": "Black holes and event horizons",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u26.js: Black holes and event horizons"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "√(3/4) at 4r_s",
+    "ok": true,
+    "detail": "y(4) = 0.866"
+   },
+   {
+    "name": "zero at the horizon",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u26-kerr-horizon": {
+  "title": "Spin shrinks a black hole's horizon",
+  "caption": "For a rotating (Kerr) black hole the horizon is at r₊ = (GM/c²)(1 + √(1 − χ²)). A non-rotating hole (χ = 0) has r₊ = 2GM/c² = r_s; at maximal spin (χ = 1) the horizon shrinks to GM/c², half of r_s.",
+  "alt": "Horizon radius as a fraction of the Schwarzschild radius against spin parameter, falling slowly from 1 at zero spin and then steeply to 0.5 at maximal spin.",
+  "description": [
+   "Spin χ = cJ/(GM²), from 0 (no rotation) to 1 (maximal).",
+   "r₊ / r_s = (1 + √(1 − χ²)) / 2.",
+   "χ = 0: 1. χ = 0.9: 0.72. χ = 1: 0.5."
+  ],
+  "course": "physics",
+  "lesson": "Kerr black holes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u26.js: Kerr black holes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "no spin: the Schwarzschild radius",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "maximal spin: half of r_s",
+    "ok": true,
+    "detail": "y(1) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u26-schwarzschild-radius": {
+  "title": "Schwarzschild radius grows in proportion to mass",
+  "caption": "r_s = 2GM/c² is about 2.95 km for each solar mass, so a 10 M☉ black hole has r_s ≈ 29.5 km: a horizon the size of a city.",
+  "alt": "Schwarzschild radius in kilometres against mass in solar masses, a straight line through the origin reaching 29.5 kilometres at 10 solar masses.",
+  "description": [
+   "r_s = 2GM/c² = 2.954 km × (M / M☉).",
+   "10 M☉: 29.5 km.",
+   "Doubling the mass doubles the radius, so the mean density inside falls as 1/M²: supermassive black holes are less dense than water."
+  ],
+  "course": "physics",
+  "lesson": "Schwarzschild solution",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u26.js: Schwarzschild solution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "r_s = 29.5 km for 10 M☉",
+    "ok": true,
+    "detail": "y(10) = 29.5385"
+   },
+   {
+    "name": "2GM☉/c² = 2.95 km (powers of ten cancel to km)",
+    "ok": true,
+    "detail": "y(0) = 2.9538"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

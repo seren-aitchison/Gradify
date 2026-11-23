@@ -189,6 +189,7 @@ H: Physics near the horizon
 P: A distant observer sees an infalling clock slow and its light redden infinitely as it approaches r_{s}; the infaller notices nothing special crossing it (for a large black hole), reaching r = 0 in finite proper time. The singularity at r_{s} in these coordinates is removable (Eddington–Finkelstein, Kruskal coordinates); r = 0 is a true curvature singularity.
 X: Schwarzschild radius of a 10 M_{⊙} black hole?
 > r_{s} = 2 × 6.67 × 10^{-11} × 2 × 10^{31}/(9 × 10^{16}) ≈ 30 km
+D: phys-u26-schwarzschild-radius
 !: Outside a spherical star, spacetime is the same as for a black hole of the same mass; you wouldn't be sucked in if the Sun became a black hole.
 Q: What is the Schwarzschild radius? | r_{s} = 2GM/c^{2}, the event horizon radius of a non-rotating black hole.
 Q: What does Birkhoff's theorem state? | Any spherically symmetric vacuum solution is Schwarzschild (static).
@@ -210,6 +211,7 @@ H: No-hair theorem
 - Tested by ringdown frequencies of merger remnants in gravitational-wave data.
 X: Horizon radius of a maximally spinning (χ = 1) black hole compared with non-rotating?
 > r_{+} = GM/c^{2} vs 2GM/c^{2}: half the size
+D: phys-u26-kerr-horizon
 !: Rotating black holes don't spin like solid objects; frame dragging forces everything near them to co-rotate.
 Q: What is the ergosphere? | The region outside a rotating black hole's horizon where nothing can remain stationary relative to distant stars.
 Q: What does the no-hair theorem say? | Black holes are fully described by their mass, spin and charge.
@@ -325,6 +327,7 @@ P: The event horizon is defined globally: points from which no signal reaches di
 X: Density inside the Schwarzschild radius of a 10^{8} M_{⊙} black hole?
 > r_{s} = 3 × 10^{11} m; V ≈ 1.1 × 10^{35} m^{3}; M = 2 × 10^{38} kg
 > ρ ≈ 1800 kg m^{-3}: about the density of water; large black holes aren't necessarily "dense"
+D: phys-u26-clock-rate-horizon
 !: Black holes don't suck things in; at a distance, they attract exactly like any other object of the same mass.
 Q: What is an event horizon? | The boundary beyond which nothing can escape to infinity.
 Q: What did the Event Horizon Telescope image? | The shadows of the black holes M87* and Sgr A*.
