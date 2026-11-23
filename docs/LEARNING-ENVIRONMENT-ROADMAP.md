@@ -1,6 +1,6 @@
 # Gradify as a learning environment: Labs, Past Papers and Capture
 
-**Version 1.2, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture (Ultra). It records the owner's direction, checks it against what is already in the repository, and sets out the release order. Version 1.1 recorded the owner's decisions (§8) and added the workstream register (§9); 1.2 adds the release register (§10) and the rule that every merge is independently deployable.
+**Version 1.3, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture (Ultra). It records the owner's direction, checks it against what is already in the repository, and sets out the release order. Version 1.1 recorded the owner's decisions (§8) and added the workstream register (§9); 1.2 added the release register (§10) and the rule that every merge is independently deployable; 1.3 records Maths Lab's release checks and the Maths Lab release sequence (§3.2).
 
 **This document is the shared source of truth for the learning environment.** Every conversation or session working on Labs, Past Papers, Specification Mastery or Ultra reads it before planning or building, records its branch and status in §9, and proposes changes here as edits rather than deciding them elsewhere. Work that isn't pushed to a branch can't be seen by anyone else, so push early.
 
@@ -79,7 +79,11 @@ The step checker already does the hardest part of the vision: **it checks the st
 | 6. Graphs, substitutions, alternative methods | Separate graph explorer | Graph mode in the workspace (the roots of `x² − 5x + 6` as the curve's crossings); a substitution check of the final answer; several authored solution paths per problem (factorise, complete the square, formula), with the student's path recognised |
 | 7. Try the next step before revealing it | Reveal-all only | Reveal one step at a time; "Show me the next step" costs a hint, and the outcome is recorded as Assisted |
 
-**First release scope:** step rules, mistake patterns and one-step reveal on the six existing sets, then graph mode, then MathLive. More topics (mapped to specification points once Specification Mastery has a maths specification) and "your own problem" follow. The numeric equivalence check is a check, not a proof (its own comment says so); the workspace must never present it as a proof.
+**Release sequence (owner, 23 November):** each is its own release, shipped when its checks pass: (1) step rules, named mistakes and one-step reveal on the six existing sets, now release-checked (§10); (2) graphs and visual representations; (3) MathLive notation; (4) more topics and exam specifications; (5) handwriting input, possibly Ultra. Graph mode and MathLive don't start until release 1 is stable.
+
+**Known limits of release 1:** the checker tests equality at many values and searches for an equation's roots on −50 to 50; that is a strong check, not a proof, and the page says so. Steps it can't name say only what was checked. Named mistakes are shown but not yet stored in attempt records (a follow-up; evidence recording is unchanged and verified).
+
+**First release scope (original):** step rules, mistake patterns and one-step reveal on the six existing sets, then graph mode, then MathLive. More topics (mapped to specification points once Specification Mastery has a maths specification) and "your own problem" follow. The numeric equivalence check is a check, not a proof (its own comment says so); the workspace must never present it as a proof.
 
 ## 4. Past Papers and Specification Practice
 
@@ -231,7 +235,7 @@ One product roadmap, independent workstreams. Each workstream has one branch at 
 | Roadmap | `claude/nifty-pascal-noklf9` | This document | v1.1 |
 | Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | Built, unmerged. Priority 1: CI and release-readiness checks for its pull request (#170, as reported by the owner) |
 | Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | Built, unmerged; its own release review runs alongside the three priorities (0b) |
-| Maths Lab | `claude/maths-lab-step-rules` | §3.2 | Priority 2. Step rules, named mistakes and Show the next step implemented and pushed (§10); not yet in a pull request |
+| Maths Lab | `claude/maths-lab-step-rules` | §3.2 | Priority 2. Step rules release: implemented, tested and browser-verified (§10); **awaiting the owner's approval** for a pull request. Graph mode and MathLive not started, by decision |
 | Past Papers | — | §4 | Priority 3: the first complete specification-linked question set. Not started |
 | **Ultra / Capture** | **unknown** | §5, the Ultra plan's AI features | **Reconciliation pending.** A separate conversation reports Ultra work, but no Ultra or Capture branch exists on the remote as of this version (checked all branches for "ultra", "capture" and "extension"). The only Ultra code in the repository is on main: plan names and switches, the homepage Ultra section and its waitlist. That workstream must push its branch, add its row here and report against §5 |
 
@@ -253,7 +257,7 @@ Implemented, merged and available to students are different milestones, so each 
 |---|---|---|---|---|---|---|---|---|
 | Organic Chemistry Lab | `claude/organic-chemistry-lab` | ✓ | To confirm against current main | #170 (owner) | — | — | — | — |
 | Specification Mastery (AQA 8461) | `claude/epic-meitner-yb9cad` | ✓ | To confirm against current main | — | — | — | — | — |
-| Maths Lab: step rules, named mistakes, Show the next step | `claude/maths-lab-step-rules` | ✓ (23 Nov) | ✓ Unit tests (7 new; the step checker, maths tools and interactives suites pass). Browser check not yet run | — | — | — | — | — |
+| Maths Lab: step rules, named mistakes, Show the next step | `claude/maths-lab-step-rules` (`c48734f3`) | ✓ 23 Nov | ✓ Unit: 13 step-rules tests; step checker, maths tools and interactives suites pass; full suite has the same 21 failures as main. **Browser-verified:** `scripts/check-maths-steps.cjs --serve .`, 24 of 24 (desktop, iPhone 13, offline, evidence records, keyboard, screen-reader announcements) | — (awaiting approval) | — | — | — | — |
 | Past Papers v1 | — | — | — | — | — | — | — | — |
 | Capture backend | — | — | — | — | — | — | — | — |
 
