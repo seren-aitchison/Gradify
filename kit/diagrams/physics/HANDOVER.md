@@ -83,7 +83,7 @@ A unit listed here is being built; don't start it in another session. Remove the
 | Units | Claimed by |
 |---|---|
 | u19, u20 (u18 landed) | lead session 01PJjzVE, agent P1 (worktree /home/user/wt-p1, branch diagrams/p1) |
-| u28, u29, u30 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
+| u31, u32, u33 | session 01P878LW (chemistry-review follow-up), branch claude/eloquent-fermi-3xe22g |
 
 ## Unit notes
 
@@ -112,6 +112,9 @@ Commit, diagrams and lessons per unit; "lacks" lists renderers its null rows ask
 - **u25** Special relativity (d46f8288): 6 diagrams, 9 lab lessons (spacetime and light cones drawn with `graph`).
 - **u26** General relativity (96fb769e): 3 diagrams. Lacks parallel transport on a sphere, light bending.
 - **u27** Condensed matter (43ce50d2): 5 diagrams. Lacks unit cells, Bravais lattices, Miller planes, band structure, quantum wells.
+- **u28** Semiconductors (7ffcb4cb): 4 diagrams. Lacks band diagrams, p–n junctions, tunnel-diode I–V.
+- **u29** Plasma physics (25198f49): 1 diagram. Lacks gyration orbits, tokamak geometry.
+- **u30** Astrophysics (28918705): 4 diagrams, 5 placements. Lacks the H–R diagram.
 
 ## Lesson errors
 
