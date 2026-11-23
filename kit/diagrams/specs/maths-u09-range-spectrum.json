@@ -1,0 +1,128 @@
+{
+ "id": "maths-u09-range-spectrum",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u09",
+ "lesson": "Banach Algebras",
+ "title": "The spectrum of f(x) = x² + 1 is its range",
+ "caption": "f − λ fails to be invertible exactly when it vanishes somewhere on [0, 1], that is, when λ is a value f takes. f rises from 1 to 2, so σ(f) = [1, 2].",
+ "alt": "The curve y = x squared plus 1 over 0 to 1, rising from (0, 1) to (1, 2), with the heights from 1 to 2 on the vertical axis highlighted.",
+ "description": [
+  "f(x) = x² + 1 on [0, 1] rises steadily from f(0) = 1 to f(1) = 2.",
+  "f − λ has a zero exactly when λ is a height f reaches.",
+  "Every value between 1 and 2 is reached, so the spectrum is the whole interval [1, 2]."
+ ],
+ "range": {
+  "x": [
+   -0.25,
+   1.25
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "f(x)"
+ ],
+ "curves": [
+  {
+   "expr": "x^2+1",
+   "colour": "a1",
+   "domain": [
+    0,
+    1
+   ]
+  },
+  {
+   "expr": "1",
+   "colour": "a2",
+   "dash": "5 5",
+   "domain": [
+    0,
+    1
+   ],
+   "width": 1.6
+  },
+  {
+   "expr": "2",
+   "colour": "a2",
+   "dash": "5 5",
+   "domain": [
+    0,
+    1
+   ],
+   "width": 1.6
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "(0, 1)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 22
+  },
+  {
+   "x": 1,
+   "y": 2,
+   "label": "(1, 2)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "x^2+1",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0,
+   "y": 1,
+   "name": "the smallest value of f on [0, 1] is 1"
+  },
+  {
+   "type": "max",
+   "expr": "x^2+1",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 1,
+   "y": 2,
+   "name": "the largest value of f on [0, 1] is 2"
+  }
+ ],
+ "fromLesson": [
+  "σ(f) = [1, 2]"
+ ]
+}
