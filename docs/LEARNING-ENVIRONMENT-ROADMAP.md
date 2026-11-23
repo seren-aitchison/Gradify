@@ -1,6 +1,6 @@
 # Gradify as a learning environment: Labs, Past Papers and Capture
 
-**Version 1.1, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture (Ultra). It records the owner's direction, checks it against what is already in the repository, and sets out the release order. Version 1.1 records the owner's decisions (§8) and adds the workstream register (§9).
+**Version 1.2, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture (Ultra). It records the owner's direction, checks it against what is already in the repository, and sets out the release order. Version 1.1 recorded the owner's decisions (§8) and added the workstream register (§9); 1.2 adds the release register (§10) and the rule that every merge is independently deployable.
 
 **This document is the shared source of truth for the learning environment.** Every conversation or session working on Labs, Past Papers, Specification Mastery or Ultra reads it before planning or building, records its branch and status in §9, and proposes changes here as edits rather than deciding them elsewhere. Work that isn't pushed to a branch can't be seen by anyone else, so push early.
 
@@ -224,15 +224,15 @@ Workstreams run independently (§9). Writing and maintaining this roadmap never 
 
 ## 9. Workstreams
 
-One product roadmap, independent workstreams. Each workstream has one branch at a time, keeps its row below current, and reads §1, §2 and §8 before planning. **No workstream merges into main, deploys, runs migrations or touches production without the owner's approval.** A workstream that finds a missing requirement proposes it as an edit to this document.
+One product roadmap, independent workstreams. Each workstream has one branch at a time, keeps its row below current, and reads §1, §2 and §8 before planning. **No workstream merges into main, deploys, runs migrations or touches production without the owner's approval.** **Every merged feature must be deployable on its own:** if something it depends on isn't live yet (a migration, an edge function, another branch), it ships behind a feature flag or falls back gracefully, so main can always be deployed. A workstream that finds a missing requirement proposes it as an edit to this document.
 
 | Workstream | Branch | Scope | Status (23 Nov 2026) |
 |---|---|---|---|
 | Roadmap | `claude/nifty-pascal-noklf9` | This document | v1.1 |
-| Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | Built, unmerged, awaiting review (0a) |
-| Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | Built, unmerged, awaiting review (0b) |
-| Maths Lab | — | §3.2 | Foundation on main; not started |
-| Past Papers | — | §4 | Not started |
+| Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | Built, unmerged. Priority 1: CI and release-readiness checks for its pull request (#170, as reported by the owner) |
+| Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | Built, unmerged; its own release review runs alongside the three priorities (0b) |
+| Maths Lab | `claude/maths-lab-step-rules` | §3.2 | Priority 2. Step rules, named mistakes and Show the next step implemented and pushed (§10); not yet in a pull request |
+| Past Papers | — | §4 | Priority 3: the first complete specification-linked question set. Not started |
 | **Ultra / Capture** | **unknown** | §5, the Ultra plan's AI features | **Reconciliation pending.** A separate conversation reports Ultra work, but no Ultra or Capture branch exists on the remote as of this version (checked all branches for "ultra", "capture" and "extension"). The only Ultra code in the repository is on main: plan names and switches, the homepage Ultra section and its waitlist. That workstream must push its branch, add its row here and report against §5 |
 
 ### Ultra reconciliation checklist
@@ -244,3 +244,18 @@ For the Ultra workstream to complete and record here:
 3. Any Ultra feature beyond Capture (for example AI features in the Ultra plan list on the homepage) and how it maps onto §6.
 4. Requirements the Ultra work found that this roadmap is missing, as proposed edits.
 5. No restarting or overwriting existing work; no merge, deploy or migration.
+
+## 10. Release register
+
+Implemented, merged and available to students are different milestones, so each is recorded separately. A workstream updates its row when a milestone is reached, with the evidence (commit, test run, pull request, deploy, live check). "—" means not reached.
+
+| Feature | Branch | Implemented | Tests passed | PR opened | Approved for merge | Merged | Deployed | Live verification |
+|---|---|---|---|---|---|---|---|---|
+| Organic Chemistry Lab | `claude/organic-chemistry-lab` | ✓ | To confirm against current main | #170 (owner) | — | — | — | — |
+| Specification Mastery (AQA 8461) | `claude/epic-meitner-yb9cad` | ✓ | To confirm against current main | — | — | — | — | — |
+| Maths Lab: step rules, named mistakes, Show the next step | `claude/maths-lab-step-rules` | ✓ (23 Nov) | ✓ Unit tests (7 new; the step checker, maths tools and interactives suites pass). Browser check not yet run | — | — | — | — | — |
+| Past Papers v1 | — | — | — | — | — | — | — | — |
+| Capture backend | — | — | — | — | — | — | — | — |
+
+**What "Tests passed" means here:** the feature's own tests and the suites it touches pass, and the full suite shows no new failures compared with main. On 23 November the full suite has 21 failures on main itself (the database, billing and deploy tests that need a local Postgres or production configuration); a branch is measured against that baseline, not against zero.
+
