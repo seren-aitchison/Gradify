@@ -66253,5 +66253,255 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u27-chain-dispersion": {
+  "title": "Phonon dispersion of an atomic chain",
+  "caption": "For a chain of masses m joined by springs K, ω = 2√(K/m)|sin(ka/2)|. Near k = 0 the curve is a straight line (sound waves, speed set by the slope); at the zone edge, k = ±π/a, it flattens at ω_max = 2√(K/m) = 2.92 × 10¹³ rad s⁻¹ for the silicon-like chain.",
+  "alt": "Angular frequency against wavevector from minus pi to pi over a: a sine-shaped arch, linear near zero and flat at a maximum of 2.92 times 10 to the 13 at the zone edges.",
+  "description": [
+   "K = 10 N m⁻¹, m = 4.7 × 10⁻²⁶ kg: ω_max = 2√(K/m) = 2.917 × 10¹³ rad s⁻¹.",
+   "ω = ω_max |sin(ka/2)| across the first Brillouin zone, −π/a to π/a.",
+   "Small k: ω ≈ (a√(K/m))k, sound. Zone edge: the group velocity falls to zero (a standing wave)."
+  ],
+  "course": "physics",
+  "lesson": "Phonons and lattice vibrations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u27.js: Phonons and lattice vibrations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ω_max = 2√(K/m) at the zone edge",
+    "ok": true,
+    "detail": "found (3.142, 2.917)"
+   },
+   {
+    "name": "linear near k = 0 (sound)",
+    "ok": true,
+    "detail": "gradient 1.4586"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u27-copper-resistance": {
+  "title": "Resistance of a metal rises with temperature",
+  "caption": "More lattice vibration scatters the electrons more, so a metal's resistance rises almost linearly: R = R₂₀(1 + αΔT). The copper wire's 10 Ω at 20 °C becomes 12.34 Ω at 80 °C (α = 0.0039 K⁻¹).",
+  "alt": "Resistance against temperature, a straight line rising from 10 ohms at 20 degrees to 12.3 ohms at 80 degrees.",
+  "description": [
+   "R₂₀ = 10 Ω, α = 0.0039 K⁻¹.",
+   "At 80 °C: 10 × (1 + 0.0039 × 60) = 12.34 Ω.",
+   "At low temperature the line flattens to a residual resistance set by impurities (not shown)."
+  ],
+  "course": "physics",
+  "lesson": "Electrical resistivity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u27.js: Electrical resistivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "12.34 Ω at 80 °C",
+    "ok": true,
+    "detail": "y(80) = 12.34"
+   },
+   {
+    "name": "rises 0.039 Ω per kelvin",
+    "ok": true,
+    "detail": "gradient 0.0390"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u27-einstein-heat-capacity": {
+  "title": "Heat capacity of a solid falls at low temperature",
+  "caption": "Classically every solid has C = 3R per mole (Dulong–Petit). Quantised vibrations freeze out when k_BT is small compared with ħω: in the Einstein model C/3R = x²eˣ/(eˣ − 1)², x = θ_E/T. Diamond's vibrations are stiff (θ near 1300 K), so at room temperature it sits well below 3R (about 0.25 on this curve).",
+  "alt": "Heat capacity as a fraction of 3R against temperature over the Einstein temperature, rising from zero in an S-shape towards 1.",
+  "description": [
+   "Horizontal: T/θ_E. Vertical: C/3R.",
+   "At T = θ_E: 0.921. At T = 2θ_E: 0.979, near the classical value.",
+   "At T = 0.23θ_E (diamond at 300 K): 0.25.",
+   "At low temperature it falls off exponentially; the Debye model, with a spread of frequencies, gives the observed T³ instead."
+  ],
+  "course": "physics",
+  "lesson": "Specific heat of solids",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u27.js: Specific heat of solids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C/3R = 0.921 at T = θ_E",
+    "ok": true,
+    "detail": "y(1) = 0.9207"
+   },
+   {
+    "name": "close to 3R at high temperature",
+    "ok": true,
+    "detail": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2 at 2 = 0.98; expected 0.97–1"
+   },
+   {
+    "name": "frozen out at low temperature",
+    "ok": true,
+    "detail": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2 at 0.1 = 0; expected 0–0.01"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u27-fermi-dirac": {
+  "title": "The Fermi–Dirac distribution",
+  "caption": "At absolute zero every state below the Fermi energy is full and every state above is empty. At temperature T the edge softens over a few k_BT: the occupation is ½ exactly at E_F. For copper (E_F = 7.0 eV) the blur at room temperature, about 0.1 eV, is tiny compared with E_F.",
+  "alt": "Occupation probability against energy relative to the Fermi energy in units of kT: a smooth step from 1 to 0, passing one half at zero.",
+  "description": [
+   "f(E) = 1 / (e^((E − E_F)/k_BT) + 1).",
+   "Horizontal axis: (E − E_F) in units of k_BT.",
+   "f = 0.5 at E_F; f = 0.047 at 3k_BT above; 0.953 at 3k_BT below.",
+   "At T = 0 the curve becomes a sharp step."
+  ],
+  "course": "physics",
+  "lesson": "Fermi energy and Fermi surfaces",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u27.js: Fermi energy and Fermi surfaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half occupied at the Fermi energy",
+    "ok": true,
+    "detail": "y(0) = 0.5"
+   },
+   {
+    "name": "a hole below E_F mirrors an electron above it",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u27-quantum-hall": {
+  "title": "Quantum Hall plateaus",
+  "caption": "In a two-dimensional electron gas at low temperature and high field, the Hall resistance locks onto exact values R = h/(νe²) = 25.813 kΩ / ν. On the ν = 2 plateau it is 12.906 kΩ, the same in every sample to parts in 10¹⁰, which is why it now defines the ohm.",
+  "alt": "Hall resistance against magnetic field: flat plateaus at 6.45, 8.60, 12.9 and 25.8 kilohms joined by short rises.",
+  "description": [
+   "h/e² = 25812.807 Ω.",
+   "ν = 4: 6.453 kΩ.",
+   "ν = 3: 8.604 kΩ.",
+   "ν = 2: 12.906 kΩ.",
+   "ν = 1: 25.813 kΩ.",
+   "Between plateaus the resistance rises; the field values of the steps depend on the sample's electron density (illustrative here)."
+  ],
+  "course": "physics",
+  "lesson": "Quantum Hall effect",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u27.js: Quantum Hall effect"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ν = 4 plateau at h/(4e²) = 6.453 kΩ",
+    "ok": true,
+    "detail": "y(0) = 6.4532"
+   },
+   {
+    "name": "ν = 3 plateau at h/(3e²) = 8.604 kΩ",
+    "ok": true,
+    "detail": "y(0) = 8.6043"
+   },
+   {
+    "name": "ν = 2 plateau at h/(2e²) = 12.906 kΩ",
+    "ok": true,
+    "detail": "y(0) = 12.9064"
+   },
+   {
+    "name": "ν = 1 plateau at h/(1e²) = 25.813 kΩ",
+    "ok": true,
+    "detail": "y(0) = 25.8128"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

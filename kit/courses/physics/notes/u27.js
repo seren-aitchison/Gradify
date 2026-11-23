@@ -183,6 +183,7 @@ P: Phonons carry heat in insulators, set heat capacities, scatter electrons (res
 X: Maximum frequency of a chain with K = 10 N m^{-1}, m = 4.7 × 10^{-26} kg (silicon-like)?
 > ω_{max} = 2√(K/m) = 2√(2.1 × 10^{26}) = 2.9 × 10^{13} rad s^{-1}
 > f ≈ 4.6 THz
+D: phys-u27-chain-dispersion
 !: Crystal momentum ħk isn't true momentum; it's conserved only modulo reciprocal lattice vectors (Umklapp processes).
 Q: What is a phonon? | A quantum of collective lattice vibration.
 Q: What's the difference between acoustic and optical phonons? | Acoustic: neighbouring atoms move together, ω → 0 at small k. Optical: atoms in a cell move oppositely, finite ω at k = 0.
@@ -208,6 +209,7 @@ P: Electrons contribute only a small term linear in T, because only those within
 X: Why is diamond's heat capacity at room temperature well below 3R?
 > θ_{D} = 2230 K ≫ 300 K
 > Many vibrational modes are frozen out
+D: phys-u27-einstein-heat-capacity
 !: Dulong–Petit is a high-temperature limit; "room temperature" isn't always high compared with θ_{D}.
 Q: What does the Debye model predict at low temperatures? | Heat capacity ∝ T^{3}.
 Q: Why is the electronic heat capacity of metals small? | Only electrons near the Fermi energy (within ~k_{B}T) can be thermally excited.
@@ -295,6 +297,7 @@ P: Quantum oscillations (de Haas–van Alphen effect): in strong magnetic fields
 X: Fermi velocity in copper (E_{F} = 7.0 eV)?
 > v_{F} = √(2E_{F}/m) = √(2 × 7 × 1.6 × 10^{-19}/9.11 × 10^{-31})
 > ≈ 1.6 × 10^{6} m s^{-1}: fast, even at 0 K
+D: phys-u27-fermi-dirac
 !: Fermi energy depends only on electron density (for free electrons), not on temperature; Fermi–Dirac smearing is just ~k_{B}T wide.
 Q: What is the Fermi surface? | The constant-energy surface in k-space separating occupied from unoccupied states at T = 0.
 Q: How are Fermi surfaces measured? | Quantum oscillations in strong fields and angle-resolved photoemission (ARPES).
@@ -364,6 +367,7 @@ H: Measurement
 P: Four-probe (van der Pauw) methods remove contact resistance; Hall bars measure resistivity and Hall coefficient together.
 X: A copper wire's resistance is 10 Ω at 20 °C. At 80 °C (α = 0.0039 K^{-1})?
 > R = 10(1 + 0.0039 × 60) = 12.3 Ω
+D: phys-u27-copper-resistance
 !: Matthiessen's rule is approximate; scattering mechanisms aren't always independent.
 Q: What is Matthiessen's rule? | Resistivity is the sum of contributions from independent scattering mechanisms.
 Q: What is the Kondo effect? | A rise in resistivity at low temperature caused by magnetic impurities.
@@ -641,6 +645,7 @@ H: Fractional quantum Hall effect
 - Graphene shows a quantum Hall effect even at room temperature in high fields.
 X: Hall resistance on the ν = 2 plateau?
 > R = 25 812.8/2 = 12 906.4 Ω
+D: phys-u27-quantum-hall
 !: The quantisation doesn't depend on the sample's shape, impurities or material; that universality comes from topology.
 Q: What is the von Klitzing constant? | R_{K} = h/e^{2} ≈ 25 812.807 Ω.
 Q: Why is the quantum Hall resistance so precise? | It's a topological invariant (Chern number), insensitive to disorder.
