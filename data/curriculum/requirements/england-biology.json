@@ -10233,11 +10233,11 @@
    "topic": "B2: Scaling up",
    "subtopic": "Supplying the cell",
    "ref": "B2.1e",
-   "text": "describe the functions of stem",
+   "text": "describe the functions of stem cells in embryonic and adult animals, and meristems in plants",
    "loc": "p. 26",
    "status": "examination",
    "separateOnly": null,
-   "include": "division to produce a range of"
+   "include": "division to produce a range of different cell types for development, growth and repair"
   },
   {
    "id": "eng-ocrj247-B2.1f",
@@ -10346,7 +10346,7 @@
    "loc": "p. 28",
    "status": "examination",
    "separateOnly": null,
-   "include": "the structure of the mammalian heart with reference to the cardiac muscle, the names of the valves, chambers, and blood vessels into and out of the heart, the structure of the blood vessels with reference to"
+   "include": "the structure of the mammalian heart with reference to the cardiac muscle, the names of the valves, chambers, and blood vessels into and out of the heart, the structure of the blood vessels with reference to thickness of walls, diameter of lumen, presence of valves"
   },
   {
    "id": "eng-ocrj247-B2.2e",
@@ -10694,7 +10694,7 @@
    "loc": "p. 33",
    "status": "examination",
    "separateOnly": null,
-   "include": "thyroxine as an example of a negative feedback system To include"
+   "include": "thyroxine as an example of a negative feedback system"
   },
   {
    "id": "eng-ocrj247-B3.2c",
@@ -10820,11 +10820,11 @@
    "topic": "B3: Organism level systems",
    "subtopic": null,
    "ref": "B3.2h",
-   "text": "describe some of the variety of",
+   "text": "describe some of the variety of effects of plant hormones, relating to auxins, gibberellins and ethene",
    "loc": "p. 34",
    "status": "examination",
    "separateOnly": null,
-   "include": "controlling growth, controlling"
+   "include": "controlling growth, controlling germination, fruit ripening, flower opening and shedding of leaves"
   },
   {
    "id": "eng-ocrj247-B3.2i",
@@ -11169,7 +11169,7 @@
    "topic": "B4: Community level systems",
    "subtopic": "Ecosystems",
    "ref": "B4.1e",
-   "text": "describe different levels of organisation in an ecosystem from individual organisms to the",
+   "text": "describe different levels of organisation in an ecosystem from individual organisms to the whole ecosystem",
    "loc": "p. 38",
    "status": "examination",
    "separateOnly": null
@@ -11384,11 +11384,12 @@
    "topic": "B5: Genes, inheritance and selection",
    "subtopic": "Inheritance",
    "ref": "B5.1e",
-   "text": "describe how genetic variants may influence phenotype: • •",
+   "text": "describe how genetic variants may influence phenotype: • in coding DNA by altering the activity of a protein • in non-coding DNA by altering how genes are expressed",
    "loc": "p. 41",
    "status": "examination",
    "separateOnly": null,
-   "include": "• •"
+   "include": "• in coding: DNA related to mutations affecting protein structure, including active sites of enzymes • in non-coding: DNA related to stopping transcription of mRNA (use of terms promoter, transcription factor not required)",
+   "corrected": "transcribed by hand from the document's text layer"
   },
   {
    "id": "eng-ocrj247-B5.1f",
@@ -11670,7 +11671,8 @@
    "loc": "p. 43",
    "status": "examination",
    "separateOnly": null,
-   "include": "fossils and antibiotic resistance in"
+   "include": "fossils and antibiotic resistance in bacteria",
+   "corrected": "transcribed by hand from the document's text layer"
   },
   {
    "id": "eng-ocrj247-B5.2f",
@@ -11776,7 +11778,7 @@
    "topic": "B6: Global challenges",
    "subtopic": "Monitoring and maintaining the environment",
    "ref": "B6.1d",
-   "text": "evaluate the evidence for the impact of environmental changes on the distribution of organisms, with reference to water and",
+   "text": "evaluate the evidence for the impact of environmental changes on the distribution of organisms, with reference to water and atmospheric gases",
    "loc": "p. 46",
    "status": "examination",
    "separateOnly": null
@@ -12448,11 +12450,11 @@
    "topic": "B6: Global challenges",
    "subtopic": "Monitoring and maintaining health",
    "ref": "B6.3x",
-   "text": "discuss the potential importance for medicine of our increasing understanding of the human genome",
+   "text": "discuss the potential importance for medicine of our increasing understanding of the human genome learners to progress to further qualifications either Vocational or General. Higher component option. for a learner is missing, or the learner has been omitted entirely from the results supplied to marked scripts. Hz J W C V Ω T",
    "loc": "p. 52",
    "status": "examination",
    "separateOnly": null,
-   "include": "the ideas of predicting the likelihood of diseases occurring and their treatment by drugs which are targeted to genomes"
+   "include": "the ideas of predicting the likelihood of diseases occurring and their treatment by drugs which are targeted to genomes 47 3 Total 50 50 100 Total 50 50 100 59 63"
   },
   {
    "id": "eng-ocrj257-B1.1.1",

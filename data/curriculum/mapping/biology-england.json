@@ -10,9 +10,9 @@
  },
  "counts": {
   "requirements": 902,
-  "judged": 460,
-  "pending": 442,
-  "links": 887
+  "judged": 589,
+  "pending": 313,
+  "links": 1128
  },
  "requirements": {
   "eng-nc-y1-plants-01": {
@@ -1608,9 +1608,9 @@
    "above": false
   },
   "eng-aqa8461-4.3.2.2": {
-   "status": "full",
+   "status": "partial",
    "confidence": "medium",
-   "note": null,
+   "note": "Therapeutic and diagnostic uses are taught; pregnancy tests and the side effects of monoclonal antibodies are not.",
    "batch": "Batch 3: AQA GCSE Biology (8461)",
    "above": false
   },
@@ -2689,9 +2689,9 @@
    "above": false
   },
   "eng-edx1bi0-5.22B": {
-   "status": "full",
+   "status": "partial",
    "confidence": "medium",
-   "note": null,
+   "note": "Diagnostic and therapeutic uses are taught; pregnancy testing is not.",
    "batch": "Batch 4: Pearson Edexcel GCSE Biology (1BI0)",
    "above": false
   },
@@ -3194,6 +3194,901 @@
    "status": "uncovered",
    "note": "Calculating rates of decay is not taught.",
    "batch": "Batch 4: Pearson Edexcel GCSE Biology (1BI0)"
+  },
+  "eng-ocrj247-B1.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Staining is covered in u14-05 and u14-06.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2f": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3a": {
+   "status": "full",
+   "confidence": "medium",
+   "note": "Respiration as the universal supplier of ATP; not drawn together in one lesson.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Respiration as exothermic is implied, not stated as such.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3c": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Anaerobic respiration in plants, fungi (fermentation) and microbes; anaerobic respiration in animals (lactic acid) is not taught.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4c": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4d": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Experiments on photosynthesis rate are described in outline only.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B1.4f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.1f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2b": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B2.2j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1d": {
+   "status": "uncovered",
+   "note": "No lesson teaches the structures of the eye.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)"
+  },
+  "eng-ocrj247-B3.1e": {
+   "status": "uncovered",
+   "note": "Eye defects and their correction are not taught; colour blindness appears only as an X-linked example in u04-27.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)"
+  },
+  "eng-ocrj247-B3.1f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1g": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "The difficulties of investigating brain function are not drawn out.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.1h": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Limits to treating nervous-system damage are not drawn out.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2f": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.2i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B3.3j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1d": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Decomposers are taught; the effect of temperature, water and oxygen on the rate of decomposition is not.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B4.1j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1f": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1h": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1i": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1k": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1l": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.1m": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B5.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.1a": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.1b": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.1c": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.1d": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2a": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Food security factors are not drawn together as a topic.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Fertilisers, biological control and sustainable practice are taught; their use to meet demand is not drawn together.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2c": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2d": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2e": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2f": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.2g": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3a": {
+   "status": "uncovered",
+   "note": "No lesson defines health or relates it to disease.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)"
+  },
+  "eng-ocrj247-B6.3b": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Communicable disease is taught; communicable and non-communicable disease are not contrasted.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3c": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Immunodeficiency increasing susceptibility to infection is taught; interactions between disease types in general are not.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3d": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Spread in plants is barely covered.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3e": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Prevention in plants is not taught.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3f": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "A human infection and HIV are taught; a named plant disease is mentioned only in passing (ash dieback), and STIs are not drawn together.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3g": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Physical plant defences (cuticle, cell wall) against pathogens are not taught as such.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3h": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Chemical plant defences against pathogens are not taught as such.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3i": {
+   "status": "uncovered",
+   "note": "Detecting and identifying plant diseases is not taught.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)"
+  },
+  "eng-ocrj247-B6.3j": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3k": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3l": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3m": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3n": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Pregnancy tests are not taught.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3o": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Antivirals are mentioned only in passing.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3p": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3q": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Preclinical and clinical testing phases are not drawn together.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3r": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Multifactorial causes are taught per disease, not as a topic.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3s": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Treatments for cardiovascular disease are not evaluated.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3t": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Lifestyle factors and incidence data are not taught as a topic.",
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3u": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3v": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3w": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj247-B6.3x": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
   }
  },
  "mappings": [
@@ -7583,11 +8478,11 @@
   {
    "requirement": "eng-aqa8461-4.3.2.2",
    "lesson": "u12-21",
-   "match": "full",
+   "match": "partial",
    "confidence": "medium",
    "evidence": "Notes: \"Monoclonal antibodies are among the best-selling medicines worldwide, used for cancer, autoimmune diseases and infections.\"",
    "evidenceOverlap": 5,
-   "note": null
+   "note": "Therapeutic and diagnostic uses are taught; pregnancy tests and the side effects of monoclonal antibodies are not."
   },
   {
    "requirement": "eng-aqa8461-4.3.2.2",
@@ -7596,7 +8491,7 @@
    "confidence": "medium",
    "evidence": "Notes: \"Immunotherapy includes monoclonal antibodies, checkpoint inhibitors that release T cell brakes, CAR-T cells engineered to target cancer and cancer vaccines; it can give lasting responses but not all patients respond…\"",
    "evidenceOverlap": 6,
-   "note": null
+   "note": "Therapeutic and diagnostic uses are taught; pregnancy tests and the side effects of monoclonal antibodies are not."
   },
   {
    "requirement": "eng-aqa8461-4.3.2.2",
@@ -7605,7 +8500,7 @@
    "confidence": "medium",
    "evidence": "Notes: \"When a disease is rare, even a specific test can give many false positives relative to true positives.\"",
    "evidenceOverlap": 4,
-   "note": null
+   "note": "Therapeutic and diagnostic uses are taught; pregnancy tests and the side effects of monoclonal antibodies are not."
   },
   {
    "requirement": "eng-aqa8461-4.3.3.2",
@@ -10166,11 +11061,11 @@
   {
    "requirement": "eng-edx1bi0-5.22B",
    "lesson": "u12-21",
-   "match": "full",
+   "match": "partial",
    "confidence": "medium",
    "evidence": "Notes: \"Monoclonal antibodies are among the best-selling medicines worldwide, used for cancer, autoimmune diseases and infections.\"",
    "evidenceOverlap": 4,
-   "note": null
+   "note": "Diagnostic and therapeutic uses are taught; pregnancy testing is not."
   },
   {
    "requirement": "eng-edx1bi0-5.22B",
@@ -10179,7 +11074,7 @@
    "confidence": "medium",
    "evidence": "Notes: \"Monoclonal antibodies target specific molecules, such as trastuzumab against HER2 in breast cancer.\"",
    "evidenceOverlap": 5,
-   "note": null
+   "note": "Diagnostic and therapeutic uses are taught; pregnancy testing is not."
   },
   {
    "requirement": "eng-edx1bi0-5.23",
@@ -11179,138 +12074,2178 @@
    "evidence": "Notes: \"Decomposition is faster in warm, moist, aerobic conditions.\"",
    "evidenceOverlap": 1,
    "note": "Decomposers are taught; factors affecting the rate of decomposition in composting are not."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1a",
+   "lesson": "u14-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Temporary slides use thin specimens, stains and careful coverslip placement; microscopes are focused from low power with coarse then fine focus, and graticules are calibrated with a stage micrometer to measure cells.\"",
+   "evidenceOverlap": 6,
+   "note": "Staining is covered in u14-05 and u14-06."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1a",
+   "lesson": "u01-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Calibrate the eyepiece graticule with a stage micrometer at each magnification.\"",
+   "evidenceOverlap": 2,
+   "note": "Staining is covered in u14-05 and u14-06."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1b",
+   "lesson": "u02-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Eukaryotic cells have a nucleus, membrane-bound organelles, linear chromosomes and a cytoskeleton.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1b",
+   "lesson": "u02-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Prokaryotic cells have no nucleus or membrane-bound organelles; their DNA is in a nucleoid, often with plasmids.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1b",
+   "lesson": "u02-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Energy: mitochondria (respiration) and, in plants and algae, chloroplasts (photosynthesis).\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1c",
+   "lesson": "u02-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A light microscope resolves about 0.2 µm, enough for nuclei and chloroplasts; electron microscopes resolve below 1 nm, enough for ribosomes and membranes.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.1c",
+   "lesson": "u09-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transmission electron microscope (TEM): beam passes through thin sections; very high resolution, around 0.1–1 nm in practice for biological samples.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2a",
+   "lesson": "u03-28",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA nucleotides contain deoxyribose;\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2b",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Evidence for the double helix\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2c",
+   "lesson": "u03-28",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nucleotides consist of a pentose sugar, a phosphate group and a nitrogenous base; they join by condensation into polynucleotides with phosphodiester bonds and a sugar-phosphate backbone with 5′ and 3′ ends; purines…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2c",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA stores information in its base sequence, is stabilised by covalent backbones and hydrogen bonds, and can be copied accurately because each strand is a template for complementary pairing.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2d",
+   "lesson": "u04-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Protein synthesis involves transcription, processing, export and translation, followed by targeting via signal sequences to the rough ER, folding and glycosylation, modification in the Golgi and transport in vesicles…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2d",
+   "lesson": "u04-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In prokaryotes, transcription and translation occur together in the cytoplasm.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2d",
+   "lesson": "u04-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Several ribosomes can translate one mRNA at the same time, forming a polysome, which produces many copies of a protein quickly.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2e",
+   "lesson": "u04-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Universal: the same codons code for the same amino acids in almost all organisms.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2e",
+   "lesson": "u04-17",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Gene mutations affect one gene; chromosome mutations affect structure or number of chromosomes.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2f",
+   "lesson": "u03-27",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe how to investigate enzyme activity in the laboratory\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2g",
+   "lesson": "u03-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Lock and key (Fischer, 1894): the active site is a rigid shape that exactly fits the substrate.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2g",
+   "lesson": "u03-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Enzyme activity rises with temperature to an optimum, then falls as the enzyme denatures; each enzyme has an optimum pH; rate rises with substrate concentration to saturation and with enzyme concentration when…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.2g",
+   "lesson": "u03-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Denaturation is the loss of secondary, tertiary and quaternary structure, leaving primary structure intact; high temperature, extreme pH, heavy metals and detergents cause it, destroying shapes such as active sites…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3a",
+   "lesson": "u03-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain how ATP hydrolysis releases energy for cellular processes\"",
+   "evidenceOverlap": 3,
+   "note": "Respiration as the universal supplier of ATP; not drawn together in one lesson."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3a",
+   "lesson": "u02-10",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Mitochondria make most of a cell's ATP by oxidative phosphorylation on their folded inner membrane; their number reflects the cell's energy demand.\"",
+   "evidenceOverlap": 2,
+   "note": "Respiration as the universal supplier of ATP; not drawn together in one lesson."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3b",
+   "lesson": "u03-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain how ATP hydrolysis releases energy for cellular processes\"",
+   "evidenceOverlap": 1,
+   "note": "Respiration as exothermic is implied, not stated as such."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3c",
+   "lesson": "u08-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe anaerobic respiration in plants\"",
+   "evidenceOverlap": 3,
+   "note": "Anaerobic respiration in plants, fungi (fermentation) and microbes; anaerobic respiration in animals (lactic acid) is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3c",
+   "lesson": "u09-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Bacteria carry out processes no animal or plant can, such as nitrogen fixation, converting N₂ to ammonia using the enzyme nitrogenase, and methanogenesis (by archaea).\"",
+   "evidenceOverlap": 3,
+   "note": "Anaerobic respiration in plants, fungi (fermentation) and microbes; anaerobic respiration in animals (lactic acid) is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3c",
+   "lesson": "u09-29",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Downstream processing extracts and purifies the product.\"",
+   "evidenceOverlap": 2,
+   "note": "Anaerobic respiration in plants, fungi (fermentation) and microbes; anaerobic respiration in animals (lactic acid) is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3d",
+   "lesson": "u03-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Key term: \"Reducing sugar\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3d",
+   "lesson": "u03-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the formation and breakdown of glycosidic bonds\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3d",
+   "lesson": "u03-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Polysaccharides\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3e",
+   "lesson": "u03-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"There are 20 amino acids commonly used in proteins, differing only in their R groups.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3e",
+   "lesson": "u03-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The carboxyl group of one amino acid reacts with the amino group of another.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3f",
+   "lesson": "u03-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of a fatty acid\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.3f",
+   "lesson": "u03-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Glycerol + three fatty acids.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4a",
+   "lesson": "u11-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gross primary productivity is the total rate of photosynthetic energy capture and net primary productivity is GPP minus respiration, the energy available to consumers; productivity depends on light, temperature,…\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4a",
+   "lesson": "u11-06",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Identify producers and consumers in a food chain\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4b",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Photosynthesis converts CO₂ and water into glucose and oxygen in chloroplasts, with light-dependent reactions in thylakoids and the Calvin cycle in the stroma; its rate is limited by light, CO₂ or temperature,…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4b",
+   "lesson": "u08-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Light-dependent reactions\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4b",
+   "lesson": "u08-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the reduction and regeneration stages\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4b",
+   "lesson": "u02-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Two sets of reactions\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4c",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Photosynthesis converts CO₂ and water into glucose and oxygen in chloroplasts, with light-dependent reactions in thylakoids and the Calvin cycle in the stroma; its rate is limited by light, CO₂ or temperature,…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4d",
+   "lesson": "u08-12",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Write the overall equation for photosynthesis\"",
+   "evidenceOverlap": 1,
+   "note": "Experiments on photosynthesis rate are described in outline only."
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4e",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Light intensity, CO₂ concentration and temperature limit the rate.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B1.4f",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Light intensity, CO₂ concentration and temperature limit the rate.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1a",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A cell's needs depend on its volume, but its supply comes through its surface, so large organisms can't rely on diffusion across their outer surface and need specialised exchange surfaces and transport systems.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1a",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define osmosis in terms of water potential\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1a",
+   "lesson": "u02-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Active transport uses ATP to change carrier shape and move substances against gradients.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1b",
+   "lesson": "u05-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA doubles in S phase and halves in mitosis, producing identical cells for growth, replacement and repair.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1b",
+   "lesson": "u05-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mitosis produces two nuclei with identical chromosome sets, so it is used for growth, repair and asexual reproduction.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1c",
+   "lesson": "u02-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Differentiation is usually stable, but it can be reversed in the laboratory, as with iPSCs, and it fails in some cancers, where cells lose their specialised features and divide uncontrollably.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1c",
+   "lesson": "u02-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Specialised cells have structures adapted to particular functions, which makes the organism efficient but makes each cell dependent on the others.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1d",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pluripotent: can form all the body's cell types, but not the placenta: the inner cell mass of the blastocyst, the source of embryonic stem cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1d",
+   "lesson": "u08-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Unlike animals, plants grow throughout their lives from meristems.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1e",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Often one division produces one of each, keeping the stem cell population steady while supplying new specialised cells.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1e",
+   "lesson": "u05-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plants have meristems, regions of stem cells that allow growth throughout life.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1e",
+   "lesson": "u08-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Meristem cells can produce all plant tissues, which allows cuttings and tissue culture to work.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1f",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pluripotent: can form all the body's cell types, but not the placenta: the inner cell mass of the blastocyst, the source of embryonic stem cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.1f",
+   "lesson": "u05-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pluripotent: can form all body cell types; embryonic stem cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2a",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A cell's needs depend on its volume, but its supply comes through its surface, so large organisms can't rely on diffusion across their outer surface and need specialised exchange surfaces and transport systems.\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2a",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Rate of diffusion ∝ (surface area × concentration difference) ÷ thickness.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2b",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Small, non-polar molecules (oxygen, carbon dioxide, steroid hormones) diffuse straight through the lipid.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2b",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Oxygen diffuses into blood;\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2c",
+   "lesson": "u07-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the double circulatory system\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2c",
+   "lesson": "u07-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The cardiovascular system of heart, vessels and blood transports substances, defends the body and regulates temperature; cardiovascular disease, often from atherosclerosis, has modifiable risk factors such as smoking…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2d",
+   "lesson": "u07-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The heart has four chambers, with the right side pumping to the lungs and the left to the body; atrioventricular and semilunar valves prevent backflow, coronary arteries supply the muscle and the left ventricle is…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2d",
+   "lesson": "u07-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Veins: thinner walls, wide lumen and valves; carry blood at low pressure back to the heart.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2e",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Blood consists of plasma, red cells carrying oxygen with haemoglobin, white cells for defence and platelets for clotting via fibrin;\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2e",
+   "lesson": "u07-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Most CO₂ is carried as hydrogencarbonate ions in plasma, formed in red cells by carbonic anhydrase.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2f",
+   "lesson": "u08-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Root hairs greatly increase surface area for absorbing water by osmosis and minerals by active transport.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2f",
+   "lesson": "u08-11",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the roles of key mineral ions in plants\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2g",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transpiration is evaporation of water from leaves, mainly through stomata.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2g",
+   "lesson": "u08-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of sieve tube elements and companion cells\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2g",
+   "lesson": "u08-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the internal structure of a leaf\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2h",
+   "lesson": "u08-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Relate xylem structure to its function\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2h",
+   "lesson": "u08-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of sieve tube elements and companion cells\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2i",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A potometer measures water uptake, which approximates transpiration, by tracking the movement of an air bubble in a capillary tube.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B2.2j",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how environmental factors affect transpiration rate\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1a",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nervous system provides sensory input, integration and motor output through the CNS (brain and spinal cord) and the PNS; reflex arcs from receptor to effector via sensory, relay and motor neurones produce rapid…\"",
+   "evidenceOverlap": 8,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1a",
+   "lesson": "u07-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish sensory, relay and motor neurones\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1b",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nervous system provides sensory input, integration and motor output through the CNS (brain and spinal cord) and the PNS; reflex arcs from receptor to effector via sensory, relay and motor neurones produce rapid…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1b",
+   "lesson": "u07-06",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Neurotransmitter diffuses across the cleft and binds receptors on the postsynaptic membrane, opening ion channels.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1c",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe a reflex arc\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1f",
+   "lesson": "u07-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The brain includes the cerebrum with four cortical lobes, the cerebellum for coordination, the brainstem for vital functions and the hypothalamus for homeostasis; the spinal cord relays signals and reflexes, and the…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1f",
+   "lesson": "u07-09",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the role of the hypothalamus and pituitary gland\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1g",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Brain imaging, such as functional MRI, and studies of patients with brain damage show that functions are localised but also distributed across networks.\"",
+   "evidenceOverlap": 3,
+   "note": "The difficulties of investigating brain function are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1h",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Lesson: \"Central nervous system\"",
+   "evidenceOverlap": 2,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj247-B3.1h",
+   "lesson": "u12-20",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Key term: \"Tissue engineering\"",
+   "evidenceOverlap": 1,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2a",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The endocrine system includes the hypothalamus, pituitary, thyroid, adrenals, pancreas and gonads, whose hormones travel in the blood to target cells; the hypothalamus controls the pituitary, negative feedback…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2a",
+   "lesson": "u07-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Peptide hormones bind cell-surface receptors, triggering second messengers such as cyclic AMP.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2b",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many endocrine pathways use negative feedback: for example, thyroxine inhibits release of TSH, keeping levels stable.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2b",
+   "lesson": "u07-02",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish negative and positive feedback with examples\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2c",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The testes and ovaries produce gametes and sex hormones; the menstrual cycle is controlled by FSH, LH, oestrogen and progesterone, with ovulation around day 14, and contraception and IVF work by manipulating these…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2d",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The testes and ovaries produce gametes and sex hormones; the menstrual cycle is controlled by FSH, LH, oestrogen and progesterone, with ovulation around day 14, and contraception and IVF work by manipulating these…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2e",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe methods of contraception and fertility treatment\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2f",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the male and female reproductive organs\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2g",
+   "lesson": "u08-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plant hormones (plant growth regulators) are made in many tissues, not specialised glands.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2g",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2g",
+   "lesson": "u08-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Tropisms are directional growth responses; in phototropism, auxin moves to the shaded side and shoots bend towards light, and in gravitropism auxin collects on the lower side, causing shoots to bend up and roots…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2h",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2h",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the effects of gibberellins on stems\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2h",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethylene is a gaseous hormone that triggers fruit ripening, often by positive feedback in climacteric fruits, and promotes abscission; it is used and controlled commercially to manage ripening and storage.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2i",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Uses: rooting powder for cuttings, selective weedkillers that kill broad-leaved weeds, and seedless fruit.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2i",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"They promote seed germination and break dormancy.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.2i",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethylene is a gaseous hormone that triggers fruit ripening, often by positive feedback in climacteric fruits, and promotes abscission; it is used and controlled commercially to manage ripening and storage.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3a",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Homeostasis is maintaining a stable internal environment despite external changes.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3b",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The skin has an epidermis, dermis and subcutaneous fat; the hypothalamus controls temperature, causing sweating and vasodilation when hot and shivering and vasoconstriction when cold, keeping core temperature near 37 °C.\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3c",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Insulin lowers blood glucose; glucagon raises it.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3c",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Controlled variables include body temperature, blood glucose, blood pH, water balance and blood pressure.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3d",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Insulin lowers blood glucose; glucagon raises it.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3d",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many variables are controlled by more than one effector working in opposite directions, which gives finer control, as with insulin and glucagon.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3e",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Type 1 diabetes is autoimmune destruction of beta cells, treated with insulin.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3e",
+   "lesson": "u10-23",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Autoimmunity occurs when central and peripheral tolerance fail, influenced by genes, infections, hormones and environment; examples include type 1 diabetes, rheumatoid arthritis, multiple sclerosis and Graves'…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3f",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Water moves by osmosis from higher to lower water potential; solutes lower ψ, and pressure from a cell wall raises it.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3f",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"About 60% of body mass is water, split between intracellular and extracellular fluids; sodium and potassium control fluid distribution and excitability, and ADH, aldosterone, the renin-angiotensin system and…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3g",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Kidney function\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3g",
+   "lesson": "u07-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Relate urine concentration to body water balance\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3h",
+   "lesson": "u07-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the main functions of the kidneys\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3h",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Distal convoluted tubule (DCT) and collecting duct.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3i",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how ADH controls water reabsorption\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3i",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"ADH increases water reabsorption in the kidneys.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3j",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sweat cools the body because evaporation of water absorbs heat.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B3.3j",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the distribution of body water\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1a",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nutrients such as carbon, nitrogen and phosphorus are needed for biological molecules.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1a",
+   "lesson": "u11-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how human activities affect the carbon cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1a",
+   "lesson": "u11-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the stages of the nitrogen cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1b",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the role of decomposers in nutrient cycling\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1b",
+   "lesson": "u11-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Nitrogen cycle\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1b",
+   "lesson": "u09-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the roles of microbes in the carbon and nitrogen cycles\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1c",
+   "lesson": "u11-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how human activities affect the carbon cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1c",
+   "lesson": "u11-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the processes of the water cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1d",
+   "lesson": "u11-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Decomposition is faster in warm, moist, aerobic conditions.\"",
+   "evidenceOverlap": 2,
+   "note": "Decomposers are taught; the effect of temperature, water and oxygen on the rate of decomposition is not."
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1e",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ecology studies interactions at the levels of individual, population, community, ecosystem and biosphere, shaped by abiotic and biotic factors, with limiting factors restricting populations.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1e",
+   "lesson": "u01-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Put the levels of biological organisation in order\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1f",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Abiotic factors: non-living, such as temperature, light, water, pH and soil type.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1f",
+   "lesson": "u06-10",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Selection pressures are abiotic or biotic factors affecting survival and reproduction, including human-made ones; strong or changing pressures drive evolution, as in Galápagos finch beaks during drought, and species…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1g",
+   "lesson": "u11-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Food webs combine interlinked food chains, showing interdependence; removing species causes direct and indirect effects and trophic cascades, and keystone species such as sea otters have large effects on community…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1g",
+   "lesson": "u11-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1g",
+   "lesson": "u11-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the ecological importance of predators\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1h",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Trophic levels place organisms from producers to top consumers; pyramids of numbers can be inverted, biomass pyramids are usually upright and energy pyramids are always upright, and persistent chemicals biomagnify at…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1h",
+   "lesson": "u11-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ecosystems contain producers, consumers, decomposers and abiotic components, and provide provisioning, regulating, supporting and cultural services that benefit people.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1i",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Trophic levels place organisms from producers to top consumers; pyramids of numbers can be inverted, biomass pyramids are usually upright and energy pyramids are always upright, and persistent chemicals biomagnify at…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1i",
+   "lesson": "u11-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Energy enters ecosystems as sunlight captured by producers, flows along food chains and leaves as heat; at each level energy is lost through respiration, uneaten material, faeces and excretion, so transfer is…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B4.1j",
+   "lesson": "u11-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Energy enters ecosystems as sunlight captured by producers, flows along food chains and leaves as heat; at each level energy is lost through respiration, uneaten material, faeces and excretion, so transfer is…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1a",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genes are DNA sequences at specific loci, alleles are different versions of a gene arising by mutation, diploid organisms carry two alleles per gene, homozygous genotypes have identical alleles and heterozygous ones…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1a",
+   "lesson": "u04-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define dominant and recessive alleles\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1a",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1b",
+   "lesson": "u04-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The genome is the complete set of DNA in an organism, including genes and non-coding DNA.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1c",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1d",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the possible effects of mutations\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1d",
+   "lesson": "u06-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the range of fitness effects of mutations\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1e",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gene mutations affect one gene; chromosome mutations affect structure or number of chromosomes.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1e",
+   "lesson": "u04-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gene regulation lets cells with identical DNA express different genes; it acts on chromatin, transcription through transcription factors and enhancers, RNA through interference and proteins through modifications such…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1e",
+   "lesson": "u03-24",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"The substrate binds to the active site, forming an enzyme-substrate complex.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1f",
+   "lesson": "u08-32",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Compare sexual and asexual reproduction in plants\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1f",
+   "lesson": "u06-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Populations with little genetic variation, such as cheetahs, are more vulnerable to disease and environmental change because few individuals may carry beneficial alleles.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1g",
+   "lesson": "u05-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Meiosis halves the chromosome number from diploid (2n) to haploid (n), so that fertilisation restores the diploid number: in humans, gametes have 23 chromosomes and the zygote 46.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1h",
+   "lesson": "u05-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Meiosis halves the chromosome number from diploid (2n) to haploid (n), so that fertilisation restores the diploid number: in humans, gametes have 23 chromosomes and the zygote 46.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1i",
+   "lesson": "u04-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe autosomal dominant and recessive inheritance patterns\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1i",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Heterozygous × homozygous recessive (Aa × aa): 1:1.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1j",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1k",
+   "lesson": "u04-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how sex is determined in humans\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1l",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Genotype: the alleles an organism has for a gene, such as Aa.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1l",
+   "lesson": "u04-35",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Interpret GWAS results, including Manhattan plots\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1m",
+   "lesson": "u04-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe Mendel's experimental approach\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.1m",
+   "lesson": "u04-01",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Gregor Mendel published his work on inheritance in pea plants.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2a",
+   "lesson": "u06-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how genetic variation can be measured in populations\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2b",
+   "lesson": "u01-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain why modern classification is based on evolutionary relationships\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2b",
+   "lesson": "u01-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the molecular evidence for the three-domain system\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2b",
+   "lesson": "u06-16",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Phylogenetics changed classification: for example, it showed that birds are living dinosaurs and that whales are closely related to hippos.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2c",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Natural selection acts on phenotypes but changes allele frequencies in populations; individuals do not evolve.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2d",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Natural selection acts on phenotypes but changes allele frequencies in populations; individuals do not evolve.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2d",
+   "lesson": "u06-01",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Lamarck (early 1800s) proposed that species change over time, through the inheritance of acquired characteristics.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2e",
+   "lesson": "u06-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe fossil and anatomical evidence for evolution\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2e",
+   "lesson": "u06-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Fossil evidence\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2e",
+   "lesson": "u06-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Random mutations give some bacteria resistance before the antibiotic is used.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B5.2f",
+   "lesson": "u06-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare Lamarck's ideas with Darwin and Wallace's theory\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1a",
+   "lesson": "u11-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Populations are described by size, density, distribution, age structure and sex ratio, and estimated with quadrats, transects and capture-mark-recapture using the Lincoln index.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1a",
+   "lesson": "u01-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Systematic sampling: samples taken at regular intervals, for example along a transect, useful where conditions change across an area (from a hedge into a field).\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1b",
+   "lesson": "u11-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pollution affects air, water and land; acid rain, nutrient runoff causing eutrophication and plastics harm ecosystems, while indicator species such as lichens reveal pollution levels and laws can reduce it.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1b",
+   "lesson": "u11-29",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In-situ conservation protects species in their habitats through protected areas, restoration and threat control, while ex-situ conservation uses zoos, captive breeding, seed and gene banks; reintroduction and…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1b",
+   "lesson": "u11-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Non-native species are introduced by humans outside their natural range.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1c",
+   "lesson": "u11-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain why biodiversity is important\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1c",
+   "lesson": "u11-29",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish in-situ and ex-situ conservation\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1c",
+   "lesson": "u11-23",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Key term: \"Biodiversity net gain\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1d",
+   "lesson": "u11-26",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the causes of current climate change\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.1d",
+   "lesson": "u11-28",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Environmental DNA (eDNA) detects species from DNA in water or soil.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2a",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Balancing food security, livelihoods, biodiversity and climate.\"",
+   "evidenceOverlap": 2,
+   "note": "Food security factors are not drawn together as a topic."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2b",
+   "lesson": "u08-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Hydroponics grows plants in nutrient solutions without soil.\"",
+   "evidenceOverlap": 3,
+   "note": "Fertilisers, biological control and sustainable practice are taught; their use to meet demand is not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2b",
+   "lesson": "u11-25",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Key term: \"Biological control\"",
+   "evidenceOverlap": 2,
+   "note": "Fertilisers, biological control and sustainable practice are taught; their use to meet demand is not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2b",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Evaluate trade-offs between conservation and human needs\"",
+   "evidenceOverlap": 1,
+   "note": "Fertilisers, biological control and sustainable practice are taught; their use to meet demand is not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2c",
+   "lesson": "u12-01",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Key term: \"Selective breeding\"",
+   "evidenceOverlap": 2,
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2d",
+   "lesson": "u12-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Recombinant DNA is used to make medicines, research tools, GM organisms and vaccines.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2d",
+   "lesson": "u12-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Gene editing\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2e",
+   "lesson": "u12-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Restriction enzymes from bacteria cut DNA at specific, often palindromic, recognition sites, producing sticky or blunt ends; cutting gene and vector with the same enzyme creates complementary sticky ends that ligase…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2e",
+   "lesson": "u12-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In genetic engineering, T4 DNA ligase joins genes into vectors.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2e",
+   "lesson": "u12-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plasmids are small circular DNA molecules that replicate independently and carry genes such as resistance; engineered vectors have an origin of replication, a selectable marker and a multiple cloning site, and are…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2f",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Evaluate the benefits and risks of plant biotechnology\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2f",
+   "lesson": "u12-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Apply ethical principles to biotechnology issues\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2g",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genetic modification: genes are inserted, often using *Agrobacterium tumefaciens* to carry DNA into plant cells.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2g",
+   "lesson": "u12-22",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Lesson: \"Industrial biotechnology\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.2g",
+   "lesson": "u09-29",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Large sterile vessels in which microbes grow under controlled conditions.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3b",
+   "lesson": "u09-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Communicable diseases spread between people; non-communicable diseases do not.\"",
+   "evidenceOverlap": 3,
+   "note": "Communicable disease is taught; communicable and non-communicable disease are not contrasted."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3c",
+   "lesson": "u10-24",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Lesson: \"Immunodeficiency\"",
+   "evidenceOverlap": 0,
+   "note": "Immunodeficiency increasing susceptibility to infection is taught; interactions between disease types in general are not."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3d",
+   "lesson": "u09-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pathogens include bacteria, viruses, fungi, protozoa and prions, and cause harm by damaging cells, producing toxins, triggering damaging immune responses and competing for nutrients.\"",
+   "evidenceOverlap": 4,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3d",
+   "lesson": "u09-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A reservoir is where a pathogen normally lives, such as animals for rabies.\"",
+   "evidenceOverlap": 2,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3e",
+   "lesson": "u09-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe ways of reducing transmission\"",
+   "evidenceOverlap": 1,
+   "note": "Prevention in plants is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3e",
+   "lesson": "u10-20",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Vaccines contain antigens, or instructions to make antigens, from a pathogen.\"",
+   "evidenceOverlap": 1,
+   "note": "Prevention in plants is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3e",
+   "lesson": "u09-24",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Disinfection: reducing microbes on non-living surfaces.\"",
+   "evidenceOverlap": 1,
+   "note": "Prevention in plants is not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3f",
+   "lesson": "u09-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Give examples of bacterial, viral, fungal and protozoan diseases\"",
+   "evidenceOverlap": 3,
+   "note": "A human infection and HIV are taught; a named plant disease is mentioned only in passing (ash dieback), and STIs are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3f",
+   "lesson": "u10-24",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"HIV infection destroys helper T cells, leading to AIDS when CD4 counts fall below 200 cells per mm³.\"",
+   "evidenceOverlap": 3,
+   "note": "A human infection and HIV are taught; a named plant disease is mentioned only in passing (ash dieback), and STIs are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3f",
+   "lesson": "u09-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Fungal infections in humans can be hard to treat because fungal cells are similar to human cells, limiting drug targets.\"",
+   "evidenceOverlap": 2,
+   "note": "A human infection and HIV are taught; a named plant disease is mentioned only in passing (ash dieback), and STIs are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3g",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Plants respond to drought, cold, salt and flooding with hormonal and physiological changes, defend against herbivores and pathogens with physical and chemical defences, and use hypersensitive responses and systemic…\"",
+   "evidenceOverlap": 4,
+   "note": "Physical plant defences (cuticle, cell wall) against pathogens are not taught as such."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3h",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Plants respond to drought, cold, salt and flooding with hormonal and physiological changes, defend against herbivores and pathogens with physical and chemical defences, and use hypersensitive responses and systemic…\"",
+   "evidenceOverlap": 4,
+   "note": "Chemical plant defences against pathogens are not taught as such."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3j",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the functions of red cells, white cells and platelets\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3j",
+   "lesson": "u10-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe how white blood cells are counted\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3k",
+   "lesson": "u10-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Non-specific: recognises broad groups of pathogens.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3k",
+   "lesson": "u10-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Physical barriers such as skin, mucous membranes, mucus and cilia, chemical barriers such as lysozyme, stomach acid and antimicrobial peptides, and protective microbiota prevent most pathogens entering the body.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3l",
+   "lesson": "u10-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare primary and secondary immune responses\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3l",
+   "lesson": "u10-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The constant region determines the class and interacts with immune cells.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3l",
+   "lesson": "u10-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how long immune memory lasts\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3m",
+   "lesson": "u12-21",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Key term: \"Monoclonal antibody\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3n",
+   "lesson": "u12-21",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Monoclonal antibodies are among the best-selling medicines worldwide, used for cancer, autoimmune diseases and infections.\"",
+   "evidenceOverlap": 3,
+   "note": "Pregnancy tests are not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3n",
+   "lesson": "u10-27",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Monoclonal antibodies target specific molecules, such as trastuzumab against HER2 in breast cancer.\"",
+   "evidenceOverlap": 2,
+   "note": "Pregnancy tests are not taught."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3o",
+   "lesson": "u10-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Vaccines stimulate memory without disease, using live attenuated, inactivated, subunit, toxoid, mRNA or viral vector platforms; herd immunity protects the unvaccinated when coverage exceeds a threshold of roughly 1 −…\"",
+   "evidenceOverlap": 2,
+   "note": "Antivirals are mentioned only in passing."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3o",
+   "lesson": "u09-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the modes of action of antibiotics\"",
+   "evidenceOverlap": 1,
+   "note": "Antivirals are mentioned only in passing."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3p",
+   "lesson": "u09-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Aseptic technique: sterilising loops by flaming, working near a Bunsen flame, minimising lid opening and disinfecting benches.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3p",
+   "lesson": "u09-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Autoclaving: steam under pressure at 121 °C for about 15 minutes.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3q",
+   "lesson": "u13-23",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Test in preclinical studies and clinical trials.\"",
+   "evidenceOverlap": 3,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3q",
+   "lesson": "u01-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Positive control: a treatment known to give an effect, showing that the method can detect one (a known antibiotic in an antibiotic test).\"",
+   "evidenceOverlap": 1,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3r",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe major risk factors for cardiovascular disease\"",
+   "evidenceOverlap": 3,
+   "note": "Multifactorial causes are taught per disease, not as a topic."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3r",
+   "lesson": "u05-12",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Identify risk factors for cancer\"",
+   "evidenceOverlap": 2,
+   "note": "Multifactorial causes are taught per disease, not as a topic."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3s",
+   "lesson": "u07-11",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe major risk factors for cardiovascular disease\"",
+   "evidenceOverlap": 2,
+   "note": "Treatments for cardiovascular disease are not evaluated."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3t",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Many risk factors are modifiable, so prevention focuses on not smoking, healthy diet, exercise and control of blood pressure.\"",
+   "evidenceOverlap": 4,
+   "note": "Lifestyle factors and incidence data are not taught as a topic."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3t",
+   "lesson": "u01-13",
+   "match": "indirect",
+   "confidence": "medium",
+   "evidence": "Notes: \"Two variables can be correlated because one causes the other, because a third factor causes both, or by chance.\"",
+   "evidenceOverlap": 1,
+   "note": "Lifestyle factors and incidence data are not taught as a topic."
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3u",
+   "lesson": "u05-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cancer develops from mutations that accumulate in a single cell lineage.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3u",
+   "lesson": "u05-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"NHS screening programmes, such as bowel, breast and cervical screening, aim to detect cancers or precancerous changes early.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3v",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Embryonic stem cells could in principle replace any tissue, but obtaining them destroys an early embryo, which many people object to.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3v",
+   "lesson": "u12-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cell therapies include bone marrow transplants, CAR-T cells, induced pluripotent stem cells and tissue engineering; iPSCs avoid embryo use and rejection, but cell therapies face risks of rejection, tumours, complex…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3w",
+   "lesson": "u12-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Zolgensma, an AAV gene therapy for spinal muscular atrophy, is one of the most expensive medicines in the world.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3w",
+   "lesson": "u12-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Apply ethical principles to biotechnology issues\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3x",
+   "lesson": "u04-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In England, the NHS Genomic Medicine Service offers whole genome sequencing for some rare diseases and cancers, building on the 100,000 Genomes Project.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3x",
+   "lesson": "u13-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Targeted cancer therapies match drugs to tumour mutations.\"",
+   "evidenceOverlap": 2,
+   "note": null
   }
  ],
  "pending": [
-  "eng-ocrj247-B1.1a",
-  "eng-ocrj247-B1.1b",
-  "eng-ocrj247-B1.1c",
-  "eng-ocrj247-B1.2a",
-  "eng-ocrj247-B1.2b",
-  "eng-ocrj247-B1.2c",
-  "eng-ocrj247-B1.2d",
-  "eng-ocrj247-B1.2e",
-  "eng-ocrj247-B1.2f",
-  "eng-ocrj247-B1.2g",
-  "eng-ocrj247-B1.3a",
-  "eng-ocrj247-B1.3b",
-  "eng-ocrj247-B1.3c",
-  "eng-ocrj247-B1.3d",
-  "eng-ocrj247-B1.3e",
-  "eng-ocrj247-B1.3f",
-  "eng-ocrj247-B1.4a",
-  "eng-ocrj247-B1.4b",
-  "eng-ocrj247-B1.4c",
-  "eng-ocrj247-B1.4d",
-  "eng-ocrj247-B1.4e",
-  "eng-ocrj247-B1.4f",
-  "eng-ocrj247-B2.1a",
-  "eng-ocrj247-B2.1b",
-  "eng-ocrj247-B2.1c",
-  "eng-ocrj247-B2.1d",
-  "eng-ocrj247-B2.1e",
-  "eng-ocrj247-B2.1f",
-  "eng-ocrj247-B2.2a",
-  "eng-ocrj247-B2.2b",
-  "eng-ocrj247-B2.2c",
-  "eng-ocrj247-B2.2d",
-  "eng-ocrj247-B2.2e",
-  "eng-ocrj247-B2.2f",
-  "eng-ocrj247-B2.2g",
-  "eng-ocrj247-B2.2h",
-  "eng-ocrj247-B2.2i",
-  "eng-ocrj247-B2.2j",
-  "eng-ocrj247-B3.1a",
-  "eng-ocrj247-B3.1b",
-  "eng-ocrj247-B3.1c",
-  "eng-ocrj247-B3.1d",
-  "eng-ocrj247-B3.1e",
-  "eng-ocrj247-B3.1f",
-  "eng-ocrj247-B3.1g",
-  "eng-ocrj247-B3.1h",
-  "eng-ocrj247-B3.2a",
-  "eng-ocrj247-B3.2b",
-  "eng-ocrj247-B3.2c",
-  "eng-ocrj247-B3.2d",
-  "eng-ocrj247-B3.2e",
-  "eng-ocrj247-B3.2f",
-  "eng-ocrj247-B3.2g",
-  "eng-ocrj247-B3.2h",
-  "eng-ocrj247-B3.2i",
-  "eng-ocrj247-B3.3a",
-  "eng-ocrj247-B3.3b",
-  "eng-ocrj247-B3.3c",
-  "eng-ocrj247-B3.3d",
-  "eng-ocrj247-B3.3e",
-  "eng-ocrj247-B3.3f",
-  "eng-ocrj247-B3.3g",
-  "eng-ocrj247-B3.3h",
-  "eng-ocrj247-B3.3i",
-  "eng-ocrj247-B3.3j",
-  "eng-ocrj247-B4.1a",
-  "eng-ocrj247-B4.1b",
-  "eng-ocrj247-B4.1c",
-  "eng-ocrj247-B4.1d",
-  "eng-ocrj247-B4.1e",
-  "eng-ocrj247-B4.1f",
-  "eng-ocrj247-B4.1g",
-  "eng-ocrj247-B4.1h",
-  "eng-ocrj247-B4.1i",
-  "eng-ocrj247-B4.1j",
-  "eng-ocrj247-B5.1a",
-  "eng-ocrj247-B5.1b",
-  "eng-ocrj247-B5.1c",
-  "eng-ocrj247-B5.1d",
-  "eng-ocrj247-B5.1e",
-  "eng-ocrj247-B5.1f",
-  "eng-ocrj247-B5.1g",
-  "eng-ocrj247-B5.1h",
-  "eng-ocrj247-B5.1i",
-  "eng-ocrj247-B5.1j",
-  "eng-ocrj247-B5.1k",
-  "eng-ocrj247-B5.1l",
-  "eng-ocrj247-B5.1m",
-  "eng-ocrj247-B5.2a",
-  "eng-ocrj247-B5.2b",
-  "eng-ocrj247-B5.2c",
-  "eng-ocrj247-B5.2d",
-  "eng-ocrj247-B5.2e",
-  "eng-ocrj247-B5.2f",
-  "eng-ocrj247-B6.1a",
-  "eng-ocrj247-B6.1b",
-  "eng-ocrj247-B6.1c",
-  "eng-ocrj247-B6.1d",
-  "eng-ocrj247-B6.2a",
-  "eng-ocrj247-B6.2b",
-  "eng-ocrj247-B6.2c",
-  "eng-ocrj247-B6.2d",
-  "eng-ocrj247-B6.2e",
-  "eng-ocrj247-B6.2f",
-  "eng-ocrj247-B6.2g",
-  "eng-ocrj247-B6.3a",
-  "eng-ocrj247-B6.3b",
-  "eng-ocrj247-B6.3c",
-  "eng-ocrj247-B6.3d",
-  "eng-ocrj247-B6.3e",
-  "eng-ocrj247-B6.3f",
-  "eng-ocrj247-B6.3g",
-  "eng-ocrj247-B6.3h",
-  "eng-ocrj247-B6.3i",
-  "eng-ocrj247-B6.3j",
-  "eng-ocrj247-B6.3k",
-  "eng-ocrj247-B6.3l",
-  "eng-ocrj247-B6.3m",
-  "eng-ocrj247-B6.3n",
-  "eng-ocrj247-B6.3o",
-  "eng-ocrj247-B6.3p",
-  "eng-ocrj247-B6.3q",
-  "eng-ocrj247-B6.3r",
-  "eng-ocrj247-B6.3s",
-  "eng-ocrj247-B6.3t",
-  "eng-ocrj247-B6.3u",
-  "eng-ocrj247-B6.3v",
-  "eng-ocrj247-B6.3w",
-  "eng-ocrj247-B6.3x",
   "eng-ocrj257-B1.1.1",
   "eng-ocrj257-B1.1.2",
   "eng-ocrj257-B1.1.3",

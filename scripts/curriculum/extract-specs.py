@@ -142,9 +142,14 @@ def ocr_a():
             if inc and len(rest) > 1 and not (rest[1][0] < col + 45): inc = None
             out.append(cur); continue
         if not cur: continue
-        if re.match(r"^\s*(Topic B\d|B\d\.\d\s|Version \d)", l) or ss[0][1].startswith("Version "):
-            cur = None; continue
-        for st, s in ss:
+        if re.match(r"^\s*(Topic B\d|B\d\.\d\s)", l): cur = None; continue
+        # page furniture: a statement carries on over the page break
+        if any(x.startswith(("Version ", "© OCR", "Learning outcomes", "Practical suggestions", "scientifically", "Working")) or x in ("To include", "Maths") for _, x in ss): continue
+        merged = []
+        for st, s in ss:  # a bullet glyph and its text, set apart by the layout
+            if merged and merged[-1][1] in ("•", "") : merged[-1] = (merged[-1][0], "• " + s)
+            else: merged.append((st, s))
+        for st, s in merged:
             if col - 2 <= st <= col + 3: cur["parts"].append(s)
             elif inc and inc - 2 <= st <= inc + 3: cur["inc"].append(s)
     tmap, smap = {}, {}
@@ -154,9 +159,16 @@ def ocr_a():
             if m and m.group(2) != "Topic title": tmap.setdefault(m.group(1), f"{m.group(1)}: {m.group(2)}")
             m = re.fullmatch(r"(B\d\.\d) {1,8}([A-Z].+)", s)
             if m: smap.setdefault(m.group(1), re.sub(r"\b([A-Z]) ([a-z])", r"\1\2", m.group(2)))
+    # two outcomes the column parser can't follow (bullets in two columns; a one-word wrap far below); wording
+    # transcribed from the same text layer (J247 v4.0, pages 41 and 43) and checked by eye
+    FIX = {"B5.1e": ("describe how genetic variants may influence phenotype: • in coding DNA by altering the activity of a protein • in non-coding DNA by altering how genes are expressed",
+                     "• in coding: DNA related to mutations affecting protein structure, including active sites of enzymes • in non-coding: DNA related to stopping transcription of mRNA (use of terms promoter, transcription factor not required)"),
+           "B5.2e": (None, "fossils and antibiotic resistance in bacteria")}
     seen = {}
     for r in out:
         r["text"] = clean(r.pop("parts")); r["include"] = clean(r.pop("inc"))
+        if r["ref"] in FIX:
+            t, inc = FIX[r["ref"]]; r["text"] = t or r["text"]; r["include"] = inc or r["include"]; r["corrected"] = True
         r["topic"] = tmap.get(r["ref"][:2]); r["sub"] = smap.get(r["ref"][:4])
     for r in out: seen.setdefault(r["ref"], r)  # the specification repeats a few outcomes in summary tables
     return list(seen.values())
@@ -285,6 +297,7 @@ def records(data):
                        topic=r.get("topic"), subtopic=r.get("sub"), ref=r["ref"], title=r.get("title"), text=r["text"], loc=r["loc"], status="examination",
                        separateOnly=r.get("biologyOnly") if r["source"] in ("aqa-8461", "edexcel-1bi0", "ocr-j257") else None)
             if r.get("include"): rec["include"] = r["include"]
+            if r.get("corrected"): rec["corrected"] = "transcribed by hand from the document's text layer"
             if r.get("higherOnly"): rec["tier"] = "higher"
             if r.get("corePractical") or r.get("practical"): rec["practical"] = True
             out.append({k2: v for k2, v in rec.items() if v is not None or k2 in ("separateOnly", "subtopic")})
