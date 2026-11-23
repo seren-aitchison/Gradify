@@ -1,6 +1,6 @@
 # Task 1: topic cards open their topic
 
-Product Excellence Sprint, 23 November 2026. Fixes problem 2 in [ECOSYSTEM-AUDIT.md](ECOSYSTEM-AUDIT.md).
+Product Excellence Sprint, 23 November 2026. Fixes problem 2 of the Week 1 ecosystem audit (186 topic cards on every subject site opened the generic app).
 
 ## The problem, precisely
 
