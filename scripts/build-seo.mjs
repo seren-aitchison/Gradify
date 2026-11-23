@@ -13,6 +13,7 @@
 //   node scripts/build-seo.mjs           rewrite them all
 //   node scripts/build-seo.mjs --check   exit 1 if any is out of date (CI and tests/seo.test.mjs)
 import { readFile, writeFile, mkdir, rm, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { dirname } from "node:path";
 import { page, esc } from "./seo/shell.mjs";
 import { toolPages, TOOLS, LANDINGS, landingPages } from "./seo/tools.mjs";
@@ -110,9 +111,13 @@ ${l("site-map.html", "Site map", "")}
 // self-referencing canonical URL and link-preview tags (Open Graph and Twitter) from its own title and description, if
 // it doesn't have them already, so shared links never split ranking signals or show a blank card in a group chat.
 const attr = (s) => String(s).replace(/&(?!(?:amp|lt|gt|quot|#\d+);)/g, "&amp;").replace(/"/g, "&quot;");
+// a subject site's pages share that site's own link-preview image (assets/og/sites/<folder>.png)
+const siteImage = (href) => { const f = href.replace("https://getgradify.com/", "").split("/")[0]; return /gradify$/.test(f) && existsSync(new URL(`assets/og/sites/${f}.png`, root)) ? `https://getgradify.com/assets/og/sites/${f}.png` : null; };
 export function withHeadTags(html, href) {
   const title = html.match(/<title>([^<]*)<\/title>/)?.[1], desc = html.match(/<meta name="description" content="([^"]*)"/)?.[1];
   if (!title) return html;
+  const img = siteImage(href);
+  if (img) html = html.replace('<meta property="og:image" content="https://getgradify.com/assets/og.png">', `<meta property="og:image" content="${img}">`);
   const want = [
     [/rel="canonical"/, `<link rel="canonical" href="${href}">`],
     [/property="og:title"/, `<meta property="og:title" content="${attr(title)}">`],
@@ -120,7 +125,9 @@ export function withHeadTags(html, href) {
     [/property="og:type"/, '<meta property="og:type" content="website">'],
     [/property="og:url"/, `<meta property="og:url" content="${href}">`],
     [/property="og:site_name"/, '<meta property="og:site_name" content="Gradify">'],
-    [/property="og:image"/, '<meta property="og:image" content="https://getgradify.com/assets/og.png">'],
+    [/property="og:image"/, `<meta property="og:image" content="${img || "https://getgradify.com/assets/og.png"}">`],
+    [/hreflang="en-GB"/, `<link rel="alternate" hreflang="en-GB" href="${href}">`],
+    [/hreflang="x-default"/, `<link rel="alternate" hreflang="x-default" href="${href}">`],
     [/name="twitter:card"/, '<meta name="twitter:card" content="summary_large_image">'],
   ].filter(([re, tag]) => tag && !re.test(html)).map(([, tag]) => tag);
   if (!want.length) return html;

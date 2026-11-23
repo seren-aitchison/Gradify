@@ -180,3 +180,12 @@ test("key-term pages, cross-subject links, topic FAQs, auto-links and the resear
   assert.match(files.get("research/index.html"), /"@type":"Dataset"/);
   const sm = await read("sitemap.xml"); assert.match(sm, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
 });
+
+test("speakable summaries, per-site preview images and hreflang on every indexed page", async () => {
+  assert.match(files.get("guides/command-words/index.html"), /"speakable":\{"@type":"SpeakableSpecification","cssSelector":\["h1",".answer"\]\}/);
+  assert.doesNotMatch(files.get("tools/index.html"), /"speakable"/, "only on guides, topics, comparisons and terms");
+  const t = withHeadTags("<head>\n  <title>MedGradify</title>\n  <meta name=\"description\" content=\"d\">", "https://getgradify.com/medgradify/");
+  assert.match(t, /og:image" content="https:\/\/getgradify\.com\/assets\/og\/sites\/medgradify\.png"/);
+  assert.match(t, /hreflang="en-GB" href="https:\/\/getgradify\.com\/medgradify\/"/);
+  for (const u of (await sitemapUrls()).slice(0, 60)) { let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html"; assert.match(await read(p), /hreflang="x-default"/, p); }
+});

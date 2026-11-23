@@ -48,7 +48,10 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   const trail = [["Home", ""], ...crumbs];
   const breadcrumbs = crumbs.length ? `<nav class="crumbs" aria-label="Breadcrumb"><ol>${trail.map(([n, p], i) => i === trail.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="/${esc(p)}">${esc(n)}</a></li>`).join("")}</ol></nav>` : "";
   const crumbLd = crumbs.length ? { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: trail.map(([n, p], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: url(p) })) } : null;
-  const graph = [crumbLd, ...schema.map((s) => ({ "@context": "https://schema.org", ...s }))].filter(Boolean);
+  // Speakable: on guides, topics, comparisons and key terms, the heading and the answer-first summary are the parts a
+  // voice assistant should read out
+  const speak = /class="answer"/.test(body) && /^(guides|topics|vs|terms)\/./.test(path) ? { "@context": "https://schema.org", "@type": "WebPage", url: canonical, name: title, speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".answer"] } } : null;
+  const graph = [crumbLd, speak, ...schema.map((s) => ({ "@context": "https://schema.org", ...s }))].filter(Boolean);
   return `<!doctype html>
 <html lang="en-GB">
 <head>

@@ -89,6 +89,8 @@ function unitPage(c, u) {
   const glance = [...terms.map(([t, d]) => [plain(t), plain(d)]), ...eqs.map(([x, note]) => [plain(x), plain(note || "")])];
   // "People also ask": the unit's own flashcards that are already phrased as questions, one per lesson, up to four
   const asked = [...new Map(u.lessons.flatMap((l) => l.cards.filter(([q, an]) => /\?$/.test(plain(q)) && plain(q).length < 120 && plain(an).length > 20).slice(0, 1).map(([q, an]) => [plain(q), plain(an)]))).entries()].filter(([q]) => !sample.some((x) => plain(x.q) === q)).slice(0, 4);
+  // topped up from the unit's check questions (the right answer and why), if the flashcards give fewer than four
+  for (const m of mcqAll) { if (asked.length >= 4) break; const q = plain(m.q); if (/\?$/.test(q) && q.length < 140 && !asked.some(([x]) => x === q) && !mcq.includes(m)) asked.push([q, `${plain(m.right).replace(/\.?$/, ".")}${m.why ? ` ${plain(m.why)}` : ""}`]); }
   const paa = asked.length >= 2 ? faq(asked, `${u.title}: questions students ask`) : { html: "", schema: null };
   return {
     path: `topics/${c.slug}/${u.id}/index.html`, title, description, noindex: thin, crumbs: [["Topics", "topics/"], [c.name, `topics/${c.slug}/`], [u.title, `topics/${c.slug}/${u.id}/`]],
