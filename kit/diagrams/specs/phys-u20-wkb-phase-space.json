@@ -1,0 +1,169 @@
+{
+ "id": "phys-u20-wkb-phase-space",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "WKB approximation",
+ "title": "Bohr–Sommerfeld orbits of the harmonic oscillator",
+ "caption": "In phase space (x, p) the oscillator's orbit of energy E is the ellipse p²/2m + mω²x²/2 = E, with area 2πE/ω. The rule ∮p dx = (n + ½)h therefore picks E = (n + ½)ħω. In units ħ = m = ω = 1 (h = 2π) the allowed ellipses for n = 0, 1, 2 have areas π, 3π and 5π: consecutive orbits differ in area by exactly h.",
+ "alt": "Phase-space diagram with momentum against position: three nested ellipses for n equal 0, 1 and 2 with areas pi, 3 pi and 5 pi, each larger one adding the same area 2 pi, which is Planck's constant in these units.",
+ "description": [
+  "The horizontal axis is position x and the vertical axis momentum p, in units where ħ = m = ω = 1.",
+  "Each ellipse is the classical orbit p² + x² = 2E for E = ½, 3/2 and 5/2, with semi-axes √(2E).",
+  "Its area is 2πE: π, 3π and 5π, that is (n + ½)h with h = 2π, for n = 0, 1, 2.",
+  "Neighbouring allowed orbits enclose areas differing by exactly h, one quantum state per area h of phase space."
+ ],
+ "range": {
+  "x": [
+   -2.6,
+   2.6
+  ],
+  "y": [
+   -2.6,
+   2.6
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  360
+ ],
+ "axisLabels": [
+  "x",
+  "p"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(1-x^2)",
+   "domain": [
+    -0.9999999,
+    0.9999999
+   ],
+   "colour": "a1",
+   "width": 3,
+   "samples": 400
+  },
+  {
+   "expr": "-sqrt(1-x^2)",
+   "domain": [
+    -0.9999999,
+    0.9999999
+   ],
+   "colour": "a1",
+   "width": 3,
+   "samples": 400
+  },
+  {
+   "expr": "sqrt(3-x^2)",
+   "domain": [
+    -1.7320507075688771,
+    1.7320507075688771
+   ],
+   "colour": "a4",
+   "width": 3,
+   "samples": 400
+  },
+  {
+   "expr": "-sqrt(3-x^2)",
+   "domain": [
+    -1.7320507075688771,
+    1.7320507075688771
+   ],
+   "colour": "a4",
+   "width": 3,
+   "samples": 400
+  },
+  {
+   "expr": "sqrt(5-x^2)",
+   "domain": [
+    -2.23606787749979,
+    2.23606787749979
+   ],
+   "colour": "a2",
+   "width": 3,
+   "samples": 400
+  },
+  {
+   "expr": "-sqrt(5-x^2)",
+   "domain": [
+    -2.23606787749979,
+    2.23606787749979
+   ],
+   "colour": "a2",
+   "width": 3,
+   "samples": 400
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "colour": "a1",
+   "label": "n = 0",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 0,
+   "y": 1.7320508075688772,
+   "colour": "a4",
+   "label": "n = 1",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 0,
+   "y": 2.23606797749979,
+   "colour": "a2",
+   "label": "n = 2",
+   "dx": 8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "sqrt(1-x^2)",
+   "from": -1,
+   "to": 1,
+   "value": 1.5708,
+   "tol": 0.01,
+   "name": "n = 0: the orbit's area is 2πE = 3.14 = (n + ½)h with h = 2π"
+  },
+  {
+   "type": "area",
+   "expr": "sqrt(3-x^2)",
+   "from": -1.7320508075688772,
+   "to": 1.7320508075688772,
+   "value": 4.7124,
+   "tol": 0.01,
+   "name": "n = 1: the orbit's area is 2πE = 9.42 = (n + ½)h with h = 2π"
+  },
+  {
+   "type": "area",
+   "expr": "sqrt(5-x^2)",
+   "from": -2.23606797749979,
+   "to": 2.23606797749979,
+   "value": 7.854,
+   "tol": 0.01,
+   "name": "n = 2: the orbit's area is 2πE = 15.71 = (n + ½)h with h = 2π"
+  }
+ ]
+}

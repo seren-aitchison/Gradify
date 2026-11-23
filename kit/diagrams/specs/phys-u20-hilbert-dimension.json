@@ -1,0 +1,47 @@
+{
+ "id": "phys-u20-hilbert-dimension",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Hilbert spaces",
+ "title": "The Hilbert space of n qubits",
+ "caption": "Joining systems multiplies dimensions: n qubits live in a 2ⁿ-dimensional space. 3 qubits need 8 amplitudes (the lesson's example), 10 qubits 1,024, 20 qubits about 10⁶ and 50 qubits 2⁵⁰ ≈ 10¹⁵: 14 orders of magnitude more than 3 qubits, which is why simulating them classically is hard.",
+ "alt": "A logarithmic scale of Hilbert-space dimension from 1 to 10^16 with 3 qubits at 8, 10 qubits at 1024, 20 qubits at about a million and 50 qubits at about 10^15.",
+ "description": [
+  "A horizontal logarithmic scale of the number of amplitudes (the dimension of the Hilbert space).",
+  "Marked: 3 qubits, 2³ = 8; 10 qubits, 2¹⁰ = 1024; 20 qubits, 2²⁰ ≈ 10⁶; 50 qubits, 2⁵⁰ ≈ 10¹⁵.",
+  "Each added qubit doubles the dimension, so the numbers grow exponentially."
+ ],
+ "quantity": "dimension",
+ "units": "",
+ "min": 0,
+ "max": 16,
+ "markers": [
+  {
+   "label": "3 qubits: 8",
+   "value": 8
+  },
+  {
+   "label": "10 qubits: 1024",
+   "value": 1024
+  },
+  {
+   "label": "20 qubits: 2²⁰",
+   "value": 1048576
+  },
+  {
+   "label": "50 qubits: 2⁵⁰",
+   "value": 1125899906842624
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "3 qubits: 8",
+   "b": "50 qubits: 2⁵⁰",
+   "value": 14.15,
+   "tol": 0.05,
+   "name": "50 qubits have 2^47 times the dimension of 3 qubits"
+  }
+ ]
+}

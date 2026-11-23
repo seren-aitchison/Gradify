@@ -1,0 +1,96 @@
+{
+ "id": "phys-u20-confinement-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Heisenberg uncertainty principle",
+ "title": "The energy cost of confining an electron",
+ "caption": "Confining an electron to Δx forces a momentum spread of at least Δp = ħ/2Δx, so its kinetic energy is of order (Δp)²/2m, which grows as 1/Δx². For Δx = 0.1 nm, Δp ≥ 5.3 × 10⁻²⁵ kg m s⁻¹ and KE ≈ 0.95 eV: atomic energies. Squeezing to half the size costs four times the energy.",
+ "alt": "Graph of minimum kinetic energy in electronvolts against confinement size from 0.05 to 0.5 nanometres: a steeply falling curve passing 0.95 eV at 0.1 nanometres.",
+ "description": [
+  "The horizontal axis is the size Δx to which the electron is confined, in nanometres; the vertical axis is the minimum kinetic energy in eV.",
+  "The curve is (ħ/2Δx)²/2m_e, proportional to 1/Δx².",
+  "At Δx = 0.1 nm the momentum spread is at least 5.3 × 10⁻²⁵ kg m s⁻¹ and the energy about 0.95 eV, the scale of atomic energies.",
+  "Halving Δx raises the energy fourfold."
+ ],
+ "range": {
+  "x": [
+   0.05,
+   0.5
+  ],
+  "y": [
+   0,
+   4.2
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  0.1,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "Δx / nm",
+  "KE / eV"
+ ],
+ "curves": [
+  {
+   "expr": "0.009524955291955581/x^2",
+   "domain": [
+    0.05,
+    0.5
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "(ħ/2Δx)²/2m",
+   "labelAt": [
+    0.2,
+    1.7
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 0.9525,
+   "colour": "a2",
+   "label": "0.1 nm: 0.95 eV",
+   "dx": 12,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.009524955291955581/x^2",
+   "x": 0.1,
+   "y": 0.9525,
+   "name": "Δp ≥ ħ/2Δx gives KE ≈ 0.95 eV at 0.1 nm"
+  },
+  {
+   "type": "point",
+   "expr": "0.009524955291955581/x^2",
+   "x": 0.2,
+   "y": 0.2381,
+   "name": "KE falls as 1/Δx²: twice the size, a quarter of the energy"
+  }
+ ]
+}

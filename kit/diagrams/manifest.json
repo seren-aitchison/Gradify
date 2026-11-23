@@ -63502,5 +63502,1407 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u20-amplitude-interference": {
+  "title": "Two paths of amplitude 0.5: add amplitudes or add probabilities",
+  "caption": "Two paths with amplitudes 0.5 and 0.5e^{iφ}. If they are indistinguishable, add amplitudes then square: P = |0.5 + 0.5e^{iφ}|² = ½(1 + cos φ), which runs from 1 (in phase) to 0 (φ = π: the lesson's example, total destructive interference). If the paths are distinguishable, add probabilities: P = 0.25 + 0.25 = 0.5 whatever the phase.",
+  "alt": "Graph of detection probability against the relative phase from 0 to 360 degrees: a cosine curve from 1 through 0 at 180 degrees and back to 1, and a flat line at 0.5 for distinguishable paths.",
+  "description": [
+   "The horizontal axis is the relative phase φ between the two paths in degrees; the vertical axis is the probability of detection.",
+   "Solid: indistinguishable paths, P = |0.5 + 0.5e^{iφ}|² = ½(1 + cos φ). It is 1 at 0° and 360° and zero at 180°.",
+   "Dashed: distinguishable paths, P = |0.5|² + |0.5|² = 0.5 at every phase.",
+   "At φ = π the amplitudes 0.5 and −0.5 cancel: the probability is 0, an outcome that adding probabilities could never give."
+  ],
+  "course": "physics",
+  "lesson": "Probability amplitudes",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Probability amplitudes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "amplitudes 0.5 and −0.5 give P = 0",
+    "ok": true,
+    "detail": "y(180) = 0"
+   },
+   {
+    "name": "in phase: amplitude 1, P = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "at 90° the interference term vanishes: P = 0.5",
+    "ok": true,
+    "detail": "y(90) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-beat-oscillation": {
+  "title": "Probability in a box sloshing at (E₂ − E₁)/h",
+  "caption": "For (φ₁ + φ₂)/√2 in a box, each stationary state alone has a time-independent |ψ|², but the mixture does not: at x = L/4 the density is (2/L)[0.75 + 0.71 cos(2π(E₂ − E₁)t/h)]. Since E₂ − E₁ = 3E₁ the density oscillates at f = 3E₁/h, three full cycles in each time h/E₁.",
+  "alt": "Graph of probability density at one point against time in units of h over E1 from 0 to 1: a cosine with three full cycles, varying between 1.46 and 0.04.",
+  "description": [
+   "The horizontal axis is time in units of h/E₁; the vertical axis is |ψ|² at x = L/4 in units of 2/L.",
+   "At x = L/4, φ₁² = 0.5 and φ₂² = 1 (in units of 2/L) and the cross term is 2φ₁φ₂ × ½ cos ωt: |ψ|² = 0.75 + 0.71 cos ωt.",
+   "The two components have energies E₁ and E₂ = 4E₁, so ω = (E₂ − E₁)/ħ = 3E₁/ħ and f = 3E₁/h.",
+   "Three complete cycles fit into one unit of h/E₁."
+  ],
+  "course": "physics",
+  "lesson": "Time-dependent and time-independent Schrödinger equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Time-dependent and time-independent Schrödinger equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the density starts at its maximum 0.75 + 0.71",
+    "ok": true,
+    "detail": "y(0) = 1.4571"
+   },
+   {
+    "name": "half a period later (t = h/6E₁) it is at its minimum",
+    "ok": true,
+    "detail": "y(0.16666666666666666) = 0.0429"
+   },
+   {
+    "name": "a full period is h/3E₁: f = 3E₁/h",
+    "ok": true,
+    "detail": "y(0.3333333333333333) = 1.4571"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-box-levels": {
+  "title": "Energy levels of an electron in a 1 nm infinite well",
+  "caption": "E_n = n²h²/8mL² = n² × 0.38 eV. The levels are not evenly spaced (E₂ = 4E₁, E₃ = 9E₁), the lowest is above zero, and jumps between them give photons: 2 → 1 is 1.13 eV (1099 nm, infrared), 3 → 2 is 1.88 eV (659 nm, red) and 4 → 3 is 2.63 eV (471 nm, blue).",
+  "alt": "Energy-level diagram for an electron in a 1 nm well: levels at 0.38, 1.50, 3.38 and 6.02 electronvolts with downward arrows for the transitions 2 to 1, 3 to 2 and 4 to 3.",
+  "description": [
+   "Horizontal levels for n = 1 to 4 at heights E_n = n² × h²/8mL² with L = 1 nm: 0.38 eV, 1.50 eV, 3.38 eV, 6.02 eV.",
+   "The spacings grow with n (1 : 3 : 5 : 7 in units of E₁) and the lowest level is above zero: the zero-point energy.",
+   "Arrows show photon emission: 2 → 1 gives 1.13 eV, 1099 nm in the infrared; 3 → 2 gives 659 nm, red; 4 → 3 gives 471 nm, blue."
+  ],
+  "course": "physics",
+  "lesson": "Infinite and finite potential wells",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Infinite and finite potential wells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 → 1: photon energy 1.1281 eV",
+    "ok": true,
+    "detail": "ΔE = 1.128 eV"
+   },
+   {
+    "name": "2 → 1: λ = hc/ΔE = 1099.0625 nm",
+    "ok": true,
+    "detail": "1099 nm"
+   },
+   {
+    "name": "2 → 1 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "2 → 1 is in the infrared",
+    "ok": true,
+    "detail": "1100 nm is infrared"
+   },
+   {
+    "name": "3 → 2: photon energy 1.8802 eV",
+    "ok": true,
+    "detail": "ΔE = 1.88 eV"
+   },
+   {
+    "name": "3 → 2: λ = hc/ΔE = 659.4375 nm",
+    "ok": true,
+    "detail": "659.4 nm"
+   },
+   {
+    "name": "3 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "3 → 2 is in the visible",
+    "ok": true,
+    "detail": "659 nm is visible"
+   },
+   {
+    "name": "4 → 3: photon energy 2.6322 eV",
+    "ok": true,
+    "detail": "ΔE = 2.632 eV"
+   },
+   {
+    "name": "4 → 3: λ = hc/ΔE = 471.0268 nm",
+    "ok": true,
+    "detail": "471 nm"
+   },
+   {
+    "name": "4 → 3 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "4 → 3 is in the visible",
+    "ok": true,
+    "detail": "471 nm is visible"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u20-co-vibration-levels": {
+  "title": "Vibrational levels of CO",
+  "caption": "E_n = (n + ½)ħω with ħω = hf = 0.265 eV for f = 6.4 × 10¹³ Hz. The levels are evenly spaced, the lowest is 0.13 eV above the bottom (zero-point energy ½ħω), and every step up absorbs the same 0.265 eV photon, 4.7 μm in the infrared.",
+  "alt": "Energy-level diagram of five equally spaced levels from 0.132 to 1.191 electronvolts, with upward absorption arrows of 0.265 electronvolts between neighbours.",
+  "description": [
+   "Levels n = 0 to 4 at E_n = (n + ½)ħω: 0.132 eV, 0.397 eV, 0.662 eV, 0.926 eV, 1.191 eV.",
+   "The spacing is constant, ħω = 0.265 eV; the lowest level is ½ħω = 0.13 eV (zero-point energy).",
+   "Upward arrows show absorption between neighbours; each photon has 0.265 eV and wavelength 4.7 μm in the infrared."
+  ],
+  "course": "physics",
+  "lesson": "Quantum harmonic oscillator",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Quantum harmonic oscillator"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "0 → 1: photon energy 0.2647 eV",
+    "ok": true,
+    "detail": "ΔE = 0.2647 eV"
+   },
+   {
+    "name": "0 → 1: f = ΔE/h = 6.4 × 10^{13} Hz",
+    "ok": true,
+    "detail": "6.4 × 10^{13} Hz"
+   },
+   {
+    "name": "0 → 1 is absorption",
+    "ok": true,
+    "detail": "upward: a photon is absorbed"
+   },
+   {
+    "name": "0 → 1 is in the infrared",
+    "ok": true,
+    "detail": "4680 nm is infrared"
+   },
+   {
+    "name": "1 → 2: photon energy 0.2647 eV",
+    "ok": true,
+    "detail": "ΔE = 0.2647 eV"
+   },
+   {
+    "name": "1 → 2: f = ΔE/h = 6.4 × 10^{13} Hz",
+    "ok": true,
+    "detail": "6.4 × 10^{13} Hz"
+   },
+   {
+    "name": "1 → 2 is absorption",
+    "ok": true,
+    "detail": "upward: a photon is absorbed"
+   },
+   {
+    "name": "1 → 2 is in the infrared",
+    "ok": true,
+    "detail": "4680 nm is infrared"
+   },
+   {
+    "name": "2 → 3: photon energy 0.2647 eV",
+    "ok": true,
+    "detail": "ΔE = 0.2647 eV"
+   },
+   {
+    "name": "2 → 3: f = ΔE/h = 6.4 × 10^{13} Hz",
+    "ok": true,
+    "detail": "6.4 × 10^{13} Hz"
+   },
+   {
+    "name": "2 → 3 is absorption",
+    "ok": true,
+    "detail": "upward: a photon is absorbed"
+   },
+   {
+    "name": "2 → 3 is in the infrared",
+    "ok": true,
+    "detail": "4680 nm is infrared"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u20-coherence-decay": {
+  "title": "Coherence of a qubit with T₂ = 100 μs",
+  "caption": "Dephasing makes the off-diagonal (coherence) terms of the density matrix decay as e^{−t/T₂}. With T₂ = 100 μs and a gate time of 50 ns, T₂ lasts 2000 gate times: after 2000 gates only 1/e = 0.37 of the coherence is left, and after 500 gates it has already fallen to 0.78. Long algorithms therefore need error correction.",
+  "alt": "Graph of coherence against the number of 50 nanosecond gates from 0 to 6000: an exponential decay passing 0.37 at 2000 gates.",
+  "description": [
+   "The horizontal axis is the number of 50 ns gate operations (elapsed time ÷ 50 ns); the vertical axis is the remaining coherence, starting at 1.",
+   "The curve is e^{−t/T₂} = e^{−n/2000}, since T₂/50 ns = 2000.",
+   "At n = 2000 gates (t = T₂ = 100 μs) the coherence is 1/e = 0.37.",
+   "Beyond a few thousand gates little coherence remains."
+  ],
+  "course": "physics",
+  "lesson": "Decoherence",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Decoherence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "T₂ = 100 μs is 2000 gate times of 50 ns; coherence is 1/e there",
+    "ok": true,
+    "detail": "y(2000.0000000000002) = 0.3679"
+   },
+   {
+    "name": "full coherence at the start",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-compton-shift": {
+  "title": "The Compton shift against scattering angle",
+  "caption": "The wavelength increases by Δλ = λ_C(1 − cos θ) with λ_C = h/m_ec = 2.43 pm. It is zero for no deflection, 2.43 pm at 90° and a maximum of 2λ_C = 4.85 pm for backscatter, independent of the incident wavelength: X-rays of 70 pm scattered at 90° emerge at 72.4 pm.",
+  "alt": "Graph of wavelength shift in picometres against scattering angle from 0 to 180 degrees: a rising curve from zero, 2.43 at 90 degrees and 4.85 at 180 degrees.",
+  "description": [
+   "The horizontal axis is the photon's scattering angle θ in degrees; the vertical axis is the shift in wavelength Δλ in picometres.",
+   "The curve is Δλ = 2.43(1 − cos θ) pm: zero at 0°, 2.43 pm at 90° and 4.85 pm at 180°.",
+   "For the lesson's 70 pm X-rays at 90° the new wavelength is 70 + 2.43 = 72.4 pm."
+  ],
+  "course": "physics",
+  "lesson": "Compton scattering",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Compton scattering"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Δλ = λ_C = 2.43 pm at 90°",
+    "ok": true,
+    "detail": "y(90) = 2.4263"
+   },
+   {
+    "name": "the maximum shift is 2λ_C = 4.85 pm at 180°",
+    "ok": true,
+    "detail": "y(180) = 4.8526"
+   },
+   {
+    "name": "no shift without deflection",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-confinement-energy": {
+  "title": "The energy cost of confining an electron",
+  "caption": "Confining an electron to Δx forces a momentum spread of at least Δp = ħ/2Δx, so its kinetic energy is of order (Δp)²/2m, which grows as 1/Δx². For Δx = 0.1 nm, Δp ≥ 5.3 × 10⁻²⁵ kg m s⁻¹ and KE ≈ 0.95 eV: atomic energies. Squeezing to half the size costs four times the energy.",
+  "alt": "Graph of minimum kinetic energy in electronvolts against confinement size from 0.05 to 0.5 nanometres: a steeply falling curve passing 0.95 eV at 0.1 nanometres.",
+  "description": [
+   "The horizontal axis is the size Δx to which the electron is confined, in nanometres; the vertical axis is the minimum kinetic energy in eV.",
+   "The curve is (ħ/2Δx)²/2m_e, proportional to 1/Δx².",
+   "At Δx = 0.1 nm the momentum spread is at least 5.3 × 10⁻²⁵ kg m s⁻¹ and the energy about 0.95 eV, the scale of atomic energies.",
+   "Halving Δx raises the energy fourfold."
+  ],
+  "course": "physics",
+  "lesson": "Heisenberg uncertainty principle",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Heisenberg uncertainty principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Δp ≥ ħ/2Δx gives KE ≈ 0.95 eV at 0.1 nm",
+    "ok": true,
+    "detail": "y(0.1) = 0.9525"
+   },
+   {
+    "name": "KE falls as 1/Δx²: twice the size, a quarter of the energy",
+    "ok": true,
+    "detail": "y(0.2) = 0.2381"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-electron-double-slit": {
+  "title": "Electrons through two slits: waves against particles",
+  "caption": "If electrons were classical particles the two slits would give the sum P₁ + P₂ (dashed): a smooth hump. Adding amplitudes, P = |ψ₁ + ψ₂|² = |ψ₁|² + |ψ₂|² + interference terms, gives fringes (solid) spaced by λD/d = 5.4 pm × 1 m/1 μm = 5.4 μm, with zero at the dark fringes and twice the classical value at the bright ones.",
+  "alt": "Graph of probability against position on the screen from -14 to 14 micrometres: a smooth dashed hump for classical particles and a solid fringe pattern oscillating between zero and twice that hump with period 5.4 micrometres.",
+  "description": [
+   "The horizontal axis is position on the screen in micrometres; the vertical axis is the probability density in arbitrary units.",
+   "The dashed curve is P₁ + P₂, the classical sum for particles passing through one slit or the other: no fringes.",
+   "The solid curve is P = P₁ + P₂ + interference term: bright fringes where the paths differ by a whole number of wavelengths, spaced by x = λD/d = 5.4 μm.",
+   "At the centre the fringe peak is twice the classical value; halfway between fringes (2.7 μm) the probability falls to zero."
+  ],
+  "course": "physics",
+  "lesson": "Double-slit experiments",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Double-slit experiments"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "twice the classical value at the central bright fringe",
+    "ok": true,
+    "detail": "y(0) = 4"
+   },
+   {
+    "name": "dark fringe halfway between bright fringes",
+    "ok": true,
+    "detail": "y(2.7) = 0"
+   },
+   {
+    "name": "the next bright fringe is x = λD/d = 5.4 μm away",
+    "ok": true,
+    "detail": "y(5.4) = 2.7907"
+   },
+   {
+    "name": "the classical sum P₁ + P₂ is half the bright-fringe value",
+    "ok": true,
+    "detail": "y(0) = 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-electron-wavelength-voltage": {
+  "title": "Wavelength of an electron against accelerating voltage",
+  "caption": "Accelerated through V an electron has λ = h/√(2meV) ≈ 1.23/√V nm. At 100 V that is 0.12 nm, comparable with atomic spacings, which is why electrons diffract from crystals; at the lesson's 150 V it is 0.10 nm. Raising the voltage by 4 only halves the wavelength.",
+  "alt": "Graph of electron wavelength in nanometres against accelerating voltage from 20 to 400 volts: a falling curve through 0.12 at 100 volts and 0.10 at 150 volts.",
+  "description": [
+   "The horizontal axis is the accelerating voltage V in volts; the vertical axis is the electron's de Broglie wavelength in nanometres.",
+   "The curve is λ = 1.23/√V nm, from λ = h/√(2meV).",
+   "At 100 V λ = 0.12 nm; at 150 V λ = 0.10 nm ≈ 0.10 nm.",
+   "A larger voltage gives a shorter wavelength, falling as 1/√V."
+  ],
+  "course": "physics",
+  "lesson": "de Broglie wavelength",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: de Broglie wavelength"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "100 V gives 0.12 nm",
+    "ok": true,
+    "detail": "y(100) = 0.1226"
+   },
+   {
+    "name": "150 V gives 0.10 nm",
+    "ok": true,
+    "detail": "y(150) = 0.1001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-expectation-x": {
+  "title": "⟨x⟩ = L/2 for symmetric densities",
+  "caption": "Both |ψ₁|² and |ψ₂|² of the infinite well are symmetric about x = L/2, so ⟨x⟩ = ∫x|ψ|²dx = L/2 for each. For the ground state that is also where the particle is most likely found. For n = 2 it is where it is never found: ⟨x⟩ is an average over many measurements, not a possible result.",
+  "alt": "Graph of probability density over the well: a single hump for the ground state and two humps with a zero in the middle for the first excited state, with a vertical line at the middle marked as the mean position for both.",
+  "description": [
+   "The horizontal axis is position x in units of L; the vertical axis is |ψ|² in units of 1/L.",
+   "Ground state |ψ₁|² = 2 sin²(πx/L): one hump, value 2 at the centre.",
+   "First excited state |ψ₂|² = 2 sin²(2πx/L): two humps at L/4 and 3L/4 and zero at the centre.",
+   "Each curve is a mirror image about x = L/2, so ⟨x⟩ = L/2 for both; for n = 2 the particle is never found at the mean position."
+  ],
+  "course": "physics",
+  "lesson": "Expectation values",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Expectation values"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "|ψ₁|² is symmetric about L/2 (value at L/4)",
+    "ok": true,
+    "detail": "y(0.25) = 1"
+   },
+   {
+    "name": "|ψ₁|² is symmetric about L/2 (value at 3L/4)",
+    "ok": true,
+    "detail": "y(0.75) = 1"
+   },
+   {
+    "name": "|ψ₂|² peaks at L/4",
+    "ok": true,
+    "detail": "y(0.25) = 2"
+   },
+   {
+    "name": "|ψ₂|² peaks at 3L/4",
+    "ok": true,
+    "detail": "y(0.75) = 2"
+   },
+   {
+    "name": "|ψ₂|² is zero at the mean position",
+    "ok": true,
+    "detail": "y(0.5) = 0"
+   },
+   {
+    "name": "|ψ₂|² is normalised",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-free-particle-dispersion": {
+  "title": "The free-particle relation behind the Schrödinger equation",
+  "caption": "Substituting ψ = e^{i(kx − ωt)} into iħ∂ψ/∂t = −(ħ²/2m)∂²ψ/∂x² works only if ħω = ħ²k²/2m, that is E = p²/2m. For an electron this is a parabola, E = 3.81 k² eV with k in Å⁻¹: k = 1 Å⁻¹ (λ = 2π Å) has 3.81 eV, and doubling k quadruples E.",
+  "alt": "Graph of electron energy in electronvolts against wavenumber from 0 to 3 inverse angstroms: a parabola through 3.81 at 1 and 15.24 at 2.",
+  "description": [
+   "The horizontal axis is the wavenumber k in Å⁻¹; the vertical axis is the energy E = ħω in eV.",
+   "The Schrödinger equation is satisfied by e^{i(kx − ωt)} only when ħω = ħ²k²/2m: the plane wave carries the classical kinetic energy p²/2m with p = ħk.",
+   "For an electron E = 3.81k² eV: 3.81 eV at k = 1 Å⁻¹ and 15.24 eV at k = 2 Å⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Schrödinger equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Schrödinger equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E = ħ²k²/2m = 3.81 eV at k = 1 Å⁻¹ for an electron",
+    "ok": true,
+    "detail": "y(1) = 3.81"
+   },
+   {
+    "name": "doubling k quadruples E",
+    "ok": true,
+    "detail": "y(2) = 15.2399"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-hilbert-dimension": {
+  "title": "The Hilbert space of n qubits",
+  "caption": "Joining systems multiplies dimensions: n qubits live in a 2ⁿ-dimensional space. 3 qubits need 8 amplitudes (the lesson's example), 10 qubits 1,024, 20 qubits about 10⁶ and 50 qubits 2⁵⁰ ≈ 10¹⁵: 14 orders of magnitude more than 3 qubits, which is why simulating them classically is hard.",
+  "alt": "A logarithmic scale of Hilbert-space dimension from 1 to 10^16 with 3 qubits at 8, 10 qubits at 1024, 20 qubits at about a million and 50 qubits at about 10^15.",
+  "description": [
+   "A horizontal logarithmic scale of the number of amplitudes (the dimension of the Hilbert space).",
+   "Marked: 3 qubits, 2³ = 8; 10 qubits, 2¹⁰ = 1024; 20 qubits, 2²⁰ ≈ 10⁶; 50 qubits, 2⁵⁰ ≈ 10¹⁵.",
+   "Each added qubit doubles the dimension, so the numbers grow exponentially."
+  ],
+  "course": "physics",
+  "lesson": "Hilbert spaces",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Hilbert spaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "50 qubits have 2^47 times the dimension of 3 qubits",
+    "ok": true,
+    "detail": "14.15 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u20-hydrogen-balmer": {
+  "title": "Hydrogen: the Lyman α line and the Balmer series",
+  "caption": "With E_n = −13.6 eV/n², dropping from n = 3 to n = 2 releases 13.6(1/4 − 1/9) = 1.89 eV: λ = hc/ΔE = 656 nm, the red Hα line. Transitions ending on n = 2 give the visible Balmer lines (Hα 656, Hβ 486, Hγ 434, Hδ 410 nm); 2 → 1 (Lyman α, 122 nm) is ultraviolet.",
+  "alt": "Hydrogen energy levels n = 1 to 6 with downward arrows for 2 to 1 at 122 nm in the ultraviolet and for 3, 4, 5 and 6 to 2 at 656, 486, 434 and 410 nm in the visible, with the line spectrum below.",
+  "description": [
+   "Hydrogen's levels E_n = −13.6 eV/n² for n = 1 to 6 (the upper levels are spread out, not to scale).",
+   "The Balmer series: n = 3, 4, 5, 6 down to n = 2 gives 656, 486, 434 and 410 nm, all visible.",
+   "Hα (3 → 2): ΔE = 13.6(1/4 − 1/9) = 1.89 eV, λ = 1240/1.89 = 656 nm (red).",
+   "Lyman α (2 → 1) is 122 nm, in the ultraviolet."
+  ],
+  "course": "physics",
+  "lesson": "Hydrogen atom",
+  "also": [],
+  "renderer": "transitions",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Hydrogen atom"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "hydrogen levels follow E_{n} = −13.6 eV / n^{2}",
+    "ok": true,
+    "detail": "6 levels"
+   },
+   {
+    "name": "levels have distinct energies",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 → 1: λ = hc/ΔE = 121.5022 nm",
+    "ok": true,
+    "detail": "121.5 nm"
+   },
+   {
+    "name": "2 → 1 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "2 → 1 is in the ultraviolet",
+    "ok": true,
+    "detail": "121 nm is ultraviolet"
+   },
+   {
+    "name": "3 → 2: λ = hc/ΔE = 656.1119 nm",
+    "ok": true,
+    "detail": "656.3 nm"
+   },
+   {
+    "name": "3 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "3 → 2 is in the visible",
+    "ok": true,
+    "detail": "656 nm is visible"
+   },
+   {
+    "name": "4 → 2: λ = hc/ΔE = 486.0088 nm",
+    "ok": true,
+    "detail": "486 nm"
+   },
+   {
+    "name": "4 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "4 → 2 is in the visible",
+    "ok": true,
+    "detail": "486 nm is visible"
+   },
+   {
+    "name": "5 → 2: λ = hc/ΔE = 433.9365 nm",
+    "ok": true,
+    "detail": "434 nm"
+   },
+   {
+    "name": "5 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "5 → 2 is in the visible",
+    "ok": true,
+    "detail": "434 nm is visible"
+   },
+   {
+    "name": "6 → 2: λ = hc/ΔE = 410.07 nm",
+    "ok": true,
+    "detail": "410.1 nm"
+   },
+   {
+    "name": "6 → 2 is emission",
+    "ok": true,
+    "detail": "downward: a photon is emitted"
+   },
+   {
+    "name": "6 → 2 is in the visible",
+    "ok": true,
+    "detail": "410 nm is visible"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "phys-u20-l2-vector": {
+  "title": "The l = 2 angular momentum with m = 2",
+  "caption": "For l = 2 the length is |L| = √(l(l + 1))ħ = √6 ħ = 2.45ħ, but the largest component along z is only L_z = 2ħ. So L can never point exactly along z: even for m = 2 it makes 35.3° with the z axis and has a perpendicular part √2 ħ = 1.41ħ. The possible L_z are −2ħ, −ħ, 0, ħ, 2ħ.",
+  "alt": "Vector diagram: an arrow of length 2.45 in units of h-bar tilted 35.3 degrees from the vertical z axis, with a vertical component of 2 and a horizontal component of 1.41.",
+  "description": [
+   "|L| = √(l(l + 1))ħ = √6 ħ = 2.45ħ, drawn at 54.7° to the horizontal (35.3° from the z axis).",
+   "The vertical (z) component is L_z = mħ = 2ħ, the largest allowed value for l = 2.",
+   "The horizontal component is √(6 − 4)ħ = 1.41ħ: L_x and L_y cannot both be zero, because they do not commute with L_z.",
+   "The other allowed values of L_z are ħ, 0, −ħ, −2ħ, each with the same |L|."
+  ],
+  "course": "physics",
+  "lesson": "Angular momentum",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Angular momentum"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of L are 1.41, 2",
+    "ok": true,
+    "detail": "|v| cos θ = 1.41, |v| sin θ = 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u20-matter-wave-scales": {
+  "title": "A ball's de Broglie wavelength against atomic sizes",
+  "caption": "For a 1 kg ball at 1 m s⁻¹, λ = h/p = 6.6 × 10⁻³⁴ m: about 23 orders of magnitude smaller than an atom (10⁻¹⁰ m) and 18 below a proton. No experiment can see wave behaviour at that scale. Electrons and atoms have wavelengths comparable with atomic sizes, which is why they diffract.",
+  "alt": "A logarithmic length scale from 10^-35 m to 10^-8 m with the ball's de Broglie wavelength at 6.6 × 10^-34 m, far to the left of a proton at 1.7 × 10^-15 m and a hydrogen atom at 1.1 × 10^-10 m.",
+  "description": [
+   "A horizontal logarithmic scale of length in metres.",
+   "The 1 kg ball at 1 m s⁻¹ has λ = h/p = 6.6 × 10⁻³⁴ m.",
+   "A proton is about 1.7 × 10⁻¹⁵ m across and a hydrogen atom about 1.1 × 10⁻¹⁰ m.",
+   "The ball's wavelength is 23 orders of magnitude below the atom: far too small to measure, so the ball shows no wave behaviour."
+  ],
+  "course": "physics",
+  "lesson": "Wave-particle duality",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Wave-particle duality"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the ball's wavelength is 23 orders of magnitude below an atom",
+    "ok": true,
+    "detail": "23.22 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u20-normalised-densities": {
+  "title": "Two normalised probability densities on 0 < x < L",
+  "caption": "Normalising means the total probability is 1: ∫|ψ|²dx = 1. The lesson's uniform wavefunction ψ = A has |ψ|² = |A|² = 1/L everywhere (dashed). The infinite-well ground state ψ₁ = √(2/L) sin(πx/L) has |ψ|² = (2/L) sin²(πx/L), bunched in the middle (solid). Both enclose an area of exactly 1, in units where L = 1.",
+  "alt": "Graph of probability density times L against x over L from 0 to 1: a flat dashed line at 1 and a solid sine-squared hump peaking at 2 in the middle, each enclosing the same area of 1.",
+  "description": [
+   "The horizontal axis is position x in units of L; the vertical axis is |ψ|² in units of 1/L.",
+   "Dashed: the uniform state ψ = A with A = 1/√L, so |ψ|² = 1 (in units of 1/L) across the whole interval. The area is 1 × 1 = 1.",
+   "Solid (shaded): the infinite-well ground state |ψ₁|² = 2 sin²(πx/L). It peaks at 2 at x = L/2 and has zero at the walls; its area is also 1.",
+   "Different shapes, the same total probability: normalisation fixes the overall size of ψ, not its shape."
+  ],
+  "course": "physics",
+  "lesson": "Wavefunctions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Wavefunctions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the uniform state ψ = 1/√L is normalised (area 1)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the well ground state is normalised (area 1)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "|ψ₁|² peaks at 2/L in the middle of the well",
+    "ok": true,
+    "detail": "found (0.5, 2)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-photoelectric-lines": {
+  "title": "Maximum photoelectron energy against frequency",
+  "caption": "Einstein's equation KE_max = hf − φ is a straight line of gradient h (0.414 eV per 10¹⁴ Hz = h/e per volt of stopping potential), the same for every metal; only the threshold f₀ = φ/h moves. Zinc (φ = 4.3 eV) needs f > 10.4 × 10¹⁴ Hz. For 250 nm light (f = 12.0 × 10¹⁴ Hz, 4.96 eV) its electrons leave with at most 0.66 eV.",
+  "alt": "Graph of maximum kinetic energy in electronvolts against frequency in units of 10^14 hertz: three parallel straight lines for caesium, sodium and zinc crossing zero at 5.1, 5.6 and 10.4 and rising with the same gradient; the 250 nm point on the zinc line is at 0.66 electronvolts.",
+  "description": [
+   "The horizontal axis is the frequency of the light in units of 10¹⁴ Hz; the vertical axis is the maximum kinetic energy of the emitted electrons in eV.",
+   "Each line is KE_max = hf − φ with gradient h = 0.414 eV per 10¹⁴ Hz, so the lines are parallel.",
+   "They meet the axis at the threshold frequencies: caesium (2.1 eV) 5.1, sodium (2.3 eV) 5.6 and zinc (4.3 eV) 10.4 × 10¹⁴ Hz. Below threshold no electrons are emitted whatever the intensity.",
+   "250 nm light has f = 12.0 × 10¹⁴ Hz, so on the zinc line KE_max = 0.66 eV."
+  ],
+  "course": "physics",
+  "lesson": "Photoelectric effect",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Photoelectric effect"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient is h = 0.414 eV per 10¹⁴ Hz",
+    "ok": true,
+    "detail": "gradient 0.4136"
+   },
+   {
+    "name": "zinc: zero energy at threshold f₀ = φ/h",
+    "ok": true,
+    "detail": "y(10.397353740965146) = 0"
+   },
+   {
+    "name": "sodium: zero energy at threshold f₀ = φ/h",
+    "ok": true,
+    "detail": "y(5.56137525679531) = 0"
+   },
+   {
+    "name": "caesium: zero energy at threshold f₀ = φ/h",
+    "ok": true,
+    "detail": "y(5.077777408378328) = 0"
+   },
+   {
+    "name": "250 nm on zinc: KE_max = 0.66 eV",
+    "ok": true,
+    "detail": "y(11.99169832) = 0.6594"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-planck-vs-rayleigh-jeans": {
+  "title": "Planck's law against Rayleigh–Jeans",
+  "caption": "Plotted against x = hf/k_BT, the classical Rayleigh–Jeans energy density grows as x² without limit (the ultraviolet catastrophe) while Planck's law, x³/(eˣ − 1), follows it at low x, peaks near x = 2.82 and is cut off exponentially. At x = 5 the ratio is 5/(e⁵ − 1) = 0.034 (Planck 0.85, Rayleigh–Jeans 25, off the top of the graph).",
+  "alt": "Graph of energy density against hf over kT from 0 to 6: the Rayleigh–Jeans parabola rises off the top of the graph, while Planck's curve matches it at small x, peaks at about 1.4 near x = 2.8 and falls away.",
+  "description": [
+   "The horizontal axis is x = hf/k_BT; the vertical axis is the energy density per unit frequency in units of 8π(k_BT)³/(hc)³.",
+   "The Rayleigh–Jeans curve is x²: it matches Planck's law only at small x, then climbs without bound.",
+   "Planck's curve x³/(eˣ − 1) rises, peaks at x = 2.82 (height 1.42) and then falls exponentially because quanta hf ≫ k_BT are rarely excited.",
+   "At x = 5: Planck = 0.85, Rayleigh–Jeans = 25, a ratio of 0.034."
+  ],
+  "course": "physics",
+  "lesson": "Blackbody radiation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Blackbody radiation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Planck's curve peaks near x = 2.82",
+    "ok": true,
+    "detail": "found (2.821, 1.421)"
+   },
+   {
+    "name": "Planck at x = 5 is 0.85",
+    "ok": true,
+    "detail": "y(5) = 0.848"
+   },
+   {
+    "name": "Rayleigh–Jeans at x = 5 is 25",
+    "ok": true,
+    "detail": "y(5) = 25"
+   },
+   {
+    "name": "the ratio at x = 5 is 5/(e⁵ − 1) = 0.034",
+    "ok": true,
+    "detail": "y(5) = 0.0339"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-shell-capacity": {
+  "title": "Electrons that fit in each shell: 2n²",
+  "caption": "Shell n has l = 0 … n − 1 and 2l + 1 orbitals for each l: n² orbitals in all, each holding two electrons of opposite spin. The capacity is 2n²: 2, 8, 18, 32. For n = 3 it is (1 + 3 + 5) × 2 = 18, the lesson's example.",
+  "alt": "Graph of the maximum number of electrons against shell number n: a rising parabola 2n squared with points at 2 for n equal 1, 8 for n equal 2, 18 for n equal 3 and 32 for n equal 4.",
+  "description": [
+   "The horizontal axis is the shell number n; the vertical axis is the maximum number of electrons in the shell.",
+   "Each shell has n² orbitals (1 + 3 + 5 + … for l = 0, 1, 2, …), and each orbital holds 2 electrons.",
+   "Points: n = 1: 2; n = 2: 8; n = 3: 1 + 3 + 5 = 9 orbitals, 18 electrons; n = 4: 32.",
+   "The curve 2n² shows the capacity growing as the square of n."
+  ],
+  "course": "physics",
+  "lesson": "Pauli exclusion principle",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Pauli exclusion principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "shell 1 holds 2",
+    "ok": true,
+    "detail": "y(1) = 2"
+   },
+   {
+    "name": "shell 2 holds 8",
+    "ok": true,
+    "detail": "y(2) = 8"
+   },
+   {
+    "name": "shell 3 holds 18 = 2 × (1 + 3 + 5) electrons",
+    "ok": true,
+    "detail": "y(3) = 18"
+   },
+   {
+    "name": "shell 4 holds 32",
+    "ok": true,
+    "detail": "y(4) = 32"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-step-reflection": {
+  "title": "Reflection from a 3 eV potential step",
+  "caption": "Above the step (E > V₀ = 3 eV) the wave still reflects partially: R = ((k₁ − k₂)/(k₁ + k₂))² with k ∝ √E and k₂ ∝ √(E − V₀). At E = 5 eV, k₁/k₂ = √(5/2) = 1.58 and R = 0.05, so 5% of the electrons bounce back; T = 1 − R = 0.95. R falls as E rises but never reaches zero, and at E = V₀ all are reflected.",
+  "alt": "Graph of reflection and transmission probabilities against electron energy from 3 to 12 electronvolts for a 3 electronvolt step: reflection falls from 1 to 0.05 at 5 electronvolts and keeps falling; transmission rises correspondingly.",
+  "description": [
+   "The horizontal axis is the electron energy E in eV, above the 3 eV step; the vertical axis is the probability.",
+   "R = ((√E − √(E − 3))/(√E + √(E − 3)))² (the ratio k₂/k₁ = √(1 − V₀/E)). At E = 3 eV, R = 1.",
+   "At E = 5 eV, R = 0.05: about 5% reflected, 95% transmitted.",
+   "As E grows, R decreases towards zero but a classical particle would never be reflected: this is a wave effect."
+  ],
+  "course": "physics",
+  "lesson": "Quantum barriers and scattering",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Quantum barriers and scattering"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "R = 0.05 for E = 5 eV, V₀ = 3 eV",
+    "ok": true,
+    "detail": "y(5) = 0.0507"
+   },
+   {
+    "name": "everything is reflected at E = V₀",
+    "ok": true,
+    "detail": "y(3) = 1"
+   },
+   {
+    "name": "T = 0.95 at 5 eV",
+    "ok": true,
+    "detail": "y(5) = 0.9493"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-tunnelling-decay": {
+  "title": "Tunnelling through a 5 eV barrier: log T against width",
+  "caption": "For an electron of 1 eV meeting a 5 eV barrier, κ = √(2m(V₀ − E))/ħ = 10.25 nm⁻¹ and T ≈ e^{−2κd}. On a logarithmic scale this is a straight line falling by 8.9 powers of ten per nanometre: at the lesson's 0.5 nm, log₁₀T = -4.45, T = 3.5 × 10⁻⁵ ≈ 4 × 10⁻⁵. Adding just 0.1 nm cuts T by a factor of 7.8.",
+  "alt": "Graph of the base-10 logarithm of the transmission probability against barrier width from 0 to 0.6 nanometres: a straight line falling from 0 to -4.45 at 0.5 nanometres.",
+  "description": [
+   "The horizontal axis is the barrier width d in nanometres; the vertical axis is log₁₀ of the transmission probability T.",
+   "κ = √(2 × 9.11 × 10⁻³¹ × 4 eV)/ħ = 10.25 nm⁻¹, so log₁₀T = −2κd log₁₀e = −8.9d.",
+   "At d = 0.5 nm: log₁₀T = -4.45, T = 3.5 × 10⁻⁵.",
+   "A thicker barrier cuts the transmission exponentially: every extra 0.1 nm reduces T about 8-fold."
+  ],
+  "course": "physics",
+  "lesson": "Quantum tunnelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Quantum tunnelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "log₁₀T falls by 8.9 per nm (2κ log₁₀e)",
+    "ok": true,
+    "detail": "gradient -8.8999"
+   },
+   {
+    "name": "0.5 nm gives T = e^{−10.2} ≈ 4 × 10⁻⁵ (log₁₀T = -4.45)",
+    "ok": true,
+    "detail": "y(0.5) = -4.4499"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-variational-gaussian": {
+  "title": "Variational energy of a Gaussian trial function",
+  "caption": "With ψ = e^{−αx²}, ⟨H⟩ = ħ²α/2m + mω²/8α. In units ħ = m = ω = 1 this is α/2 + 1/(8α): it is never below the true ground-state energy ½ħω (dashed) and touches it at α = mω/2ħ = 0.5, because the true ground state is exactly this Gaussian. The kinetic term grows with α (narrower), the potential term falls.",
+  "alt": "Graph of the trial energy against the parameter alpha from 0.15 to 2.5: a U-shaped curve with its minimum of 0.5 at alpha equal to 0.5, touching a dashed horizontal line at the exact ground-state energy 0.5.",
+  "description": [
+   "The horizontal axis is the trial parameter α in units of mω/ħ; the vertical axis is ⟨H⟩ in units of ħω.",
+   "The curve is α/2 + 1/(8α), the sum of a kinetic term ħ²α/2m (rising with α) and a potential term mω²/8α (falling).",
+   "Its minimum is at α = 0.5, where ⟨H⟩ = 0.25 + 0.25 = 0.5.",
+   "The dashed line is the exact ground-state energy ½ħω: the variational curve never goes below it, and here reaches it exactly."
+  ],
+  "course": "physics",
+  "lesson": "Variational method",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Variational method"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the trial energy is smallest at α = mω/2ħ with ⟨H⟩ = ħω/2",
+    "ok": true,
+    "detail": "found (0.5, 0.5)"
+   },
+   {
+    "name": "elsewhere it is higher (α = 1: 0.625)",
+    "ok": true,
+    "detail": "y(1) = 0.625"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-wkb-phase-space": {
+  "title": "Bohr–Sommerfeld orbits of the harmonic oscillator",
+  "caption": "In phase space (x, p) the oscillator's orbit of energy E is the ellipse p²/2m + mω²x²/2 = E, with area 2πE/ω. The rule ∮p dx = (n + ½)h therefore picks E = (n + ½)ħω. In units ħ = m = ω = 1 (h = 2π) the allowed ellipses for n = 0, 1, 2 have areas π, 3π and 5π: consecutive orbits differ in area by exactly h.",
+  "alt": "Phase-space diagram with momentum against position: three nested ellipses for n equal 0, 1 and 2 with areas pi, 3 pi and 5 pi, each larger one adding the same area 2 pi, which is Planck's constant in these units.",
+  "description": [
+   "The horizontal axis is position x and the vertical axis momentum p, in units where ħ = m = ω = 1.",
+   "Each ellipse is the classical orbit p² + x² = 2E for E = ½, 3/2 and 5/2, with semi-axes √(2E).",
+   "Its area is 2πE: π, 3π and 5π, that is (n + ½)h with h = 2π, for n = 0, 1, 2.",
+   "Neighbouring allowed orbits enclose areas differing by exactly h, one quantum state per area h of phase space."
+  ],
+  "course": "physics",
+  "lesson": "WKB approximation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: WKB approximation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 0: the orbit's area is 2πE = 3.14 = (n + ½)h with h = 2π",
+    "ok": true,
+    "detail": "area 1.5708"
+   },
+   {
+    "name": "n = 1: the orbit's area is 2πE = 9.42 = (n + ½)h with h = 2π",
+    "ok": true,
+    "detail": "area 4.7124"
+   },
+   {
+    "name": "n = 2: the orbit's area is 2πE = 15.71 = (n + ½)h with h = 2π",
+    "ok": true,
+    "detail": "area 7.8540"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u20-zeeman-levels": {
+  "title": "Normal Zeeman splitting of an l = 1 level",
+  "caption": "In a field B the magnetic moment gives each m_l level a shift m_lμ_BB with μ_B = 57.88 μeV T⁻¹. In 1 T the three levels of an l = 1 level move to +57.9, 0 and −57.9 μeV, so adjacent levels are μ_BB = 57.9 μeV = 5.8 × 10⁻⁵ eV apart, and the splitting grows in proportion to B.",
+  "alt": "Graph of energy shift in microelectronvolts against magnetic field from 0 to 2 tesla: three straight lines from the origin with gradients plus 57.9, zero and minus 57.9 microelectronvolts per tesla for m equal to 1, 0 and -1.",
+  "description": [
+   "The horizontal axis is the magnetic flux density in tesla; the vertical axis is the shift of the energy level in μeV.",
+   "Each level moves by m_lμ_BB, so the lines have gradients +57.9, 0 and −57.9 μeV per tesla for m_l = +1, 0, −1.",
+   "At B = 1 T the levels are at +57.9, 0 and −57.9 μeV: adjacent levels are 57.9 μeV = 5.8 × 10⁻⁵ eV apart."
+  ],
+  "course": "physics",
+  "lesson": "Orbital angular momentum",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u20.js: Orbital angular momentum"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the m_l = +1 level moves 57.9 μeV per tesla (μ_B)",
+    "ok": true,
+    "detail": "gradient 57.8838"
+   },
+   {
+    "name": "adjacent levels are μ_BB = 57.9 μeV apart in 1 T",
+    "ok": true,
+    "detail": "y(1) = 57.8838"
+   },
+   {
+    "name": "the m_l = −1 level is the mirror image",
+    "ok": true,
+    "detail": "y(1) = -57.8838"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

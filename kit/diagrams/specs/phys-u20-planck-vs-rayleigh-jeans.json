@@ -1,0 +1,132 @@
+{
+ "id": "phys-u20-planck-vs-rayleigh-jeans",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Blackbody radiation",
+ "title": "Planck's law against Rayleigh–Jeans",
+ "caption": "Plotted against x = hf/k_BT, the classical Rayleigh–Jeans energy density grows as x² without limit (the ultraviolet catastrophe) while Planck's law, x³/(eˣ − 1), follows it at low x, peaks near x = 2.82 and is cut off exponentially. At x = 5 the ratio is 5/(e⁵ − 1) = 0.034 (Planck 0.85, Rayleigh–Jeans 25, off the top of the graph).",
+ "alt": "Graph of energy density against hf over kT from 0 to 6: the Rayleigh–Jeans parabola rises off the top of the graph, while Planck's curve matches it at small x, peaks at about 1.4 near x = 2.8 and falls away.",
+ "description": [
+  "The horizontal axis is x = hf/k_BT; the vertical axis is the energy density per unit frequency in units of 8π(k_BT)³/(hc)³.",
+  "The Rayleigh–Jeans curve is x²: it matches Planck's law only at small x, then climbs without bound.",
+  "Planck's curve x³/(eˣ − 1) rises, peaks at x = 2.82 (height 1.42) and then falls exponentially because quanta hf ≫ k_BT are rarely excited.",
+  "At x = 5: Planck = 0.85, Rayleigh–Jeans = 25, a ratio of 0.034."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   2.2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x = hf/k_BT",
+  "u(f), scaled"
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "domain": [
+    0,
+    6
+   ],
+   "colour": "a2",
+   "dash": "6 5",
+   "width": 2.6,
+   "label": "Rayleigh–Jeans",
+   "labelAt": [
+    1.6,
+    2
+   ]
+  },
+  {
+   "expr": "x^3/(exp(x)-1)",
+   "domain": [
+    0.02,
+    6
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "Planck",
+   "labelAt": [
+    3.4,
+    1.45
+   ],
+   "samples": 400
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 0.848,
+   "colour": "ink",
+   "label": "x = 5: 0.85",
+   "dx": -8,
+   "dy": -16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x^3/(exp(x)-1)",
+   "domain": [
+    0.02,
+    8
+   ],
+   "x": 2.8213790000000003,
+   "y": 1.4214354719458173,
+   "name": "Planck's curve peaks near x = 2.82"
+  },
+  {
+   "type": "point",
+   "expr": "x^3/(exp(x)-1)",
+   "x": 5,
+   "y": 0.848,
+   "name": "Planck at x = 5 is 0.85"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 5,
+   "y": 25,
+   "name": "Rayleigh–Jeans at x = 5 is 25"
+  },
+  {
+   "type": "point",
+   "expr": "(x^3/(exp(x)-1))/x^2",
+   "x": 5,
+   "y": 0.0339,
+   "name": "the ratio at x = 5 is 5/(e⁵ − 1) = 0.034"
+  }
+ ]
+}

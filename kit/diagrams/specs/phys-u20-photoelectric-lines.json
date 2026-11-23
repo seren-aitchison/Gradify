@@ -1,0 +1,147 @@
+{
+ "id": "phys-u20-photoelectric-lines",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Photoelectric effect",
+ "title": "Maximum photoelectron energy against frequency",
+ "caption": "Einstein's equation KE_max = hf − φ is a straight line of gradient h (0.414 eV per 10¹⁴ Hz = h/e per volt of stopping potential), the same for every metal; only the threshold f₀ = φ/h moves. Zinc (φ = 4.3 eV) needs f > 10.4 × 10¹⁴ Hz. For 250 nm light (f = 12.0 × 10¹⁴ Hz, 4.96 eV) its electrons leave with at most 0.66 eV.",
+ "alt": "Graph of maximum kinetic energy in electronvolts against frequency in units of 10^14 hertz: three parallel straight lines for caesium, sodium and zinc crossing zero at 5.1, 5.6 and 10.4 and rising with the same gradient; the 250 nm point on the zinc line is at 0.66 electronvolts.",
+ "description": [
+  "The horizontal axis is the frequency of the light in units of 10¹⁴ Hz; the vertical axis is the maximum kinetic energy of the emitted electrons in eV.",
+  "Each line is KE_max = hf − φ with gradient h = 0.414 eV per 10¹⁴ Hz, so the lines are parallel.",
+  "They meet the axis at the threshold frequencies: caesium (2.1 eV) 5.1, sodium (2.3 eV) 5.6 and zinc (4.3 eV) 10.4 × 10¹⁴ Hz. Below threshold no electrons are emitted whatever the intensity.",
+  "250 nm light has f = 12.0 × 10¹⁴ Hz, so on the zinc line KE_max = 0.66 eV."
+ ],
+ "range": {
+  "x": [
+   4,
+   14
+  ],
+  "y": [
+   0,
+   4.2
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  2,
+  1
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "f / 10¹⁴ Hz",
+  "KE_max / eV"
+ ],
+ "curves": [
+  {
+   "expr": "0.4135667696923859*x-4.3",
+   "domain": [
+    10.397353740965146,
+    14
+   ],
+   "colour": "a2",
+   "width": 3.2,
+   "label": "zinc",
+   "labelAt": [
+    11.2,
+    1.15
+   ]
+  },
+  {
+   "expr": "0.4135667696923859*x-2.3",
+   "domain": [
+    5.56137525679531,
+    14
+   ],
+   "colour": "a4",
+   "width": 3.2,
+   "label": "sodium",
+   "labelAt": [
+    11.7,
+    3.15
+   ]
+  },
+  {
+   "expr": "0.4135667696923859*x-2.1",
+   "domain": [
+    5.077777408378328,
+    14
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "label": "caesium",
+   "labelAt": [
+    12.4,
+    3.85
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 11.9917,
+   "y": 0.6594,
+   "colour": "ink",
+   "label": "250 nm: 0.66 eV",
+   "dx": -10,
+   "dy": 16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "0.4135667696923859*x-4.3",
+   "x": 12,
+   "value": 0.4135667696923859,
+   "name": "the gradient is h = 0.414 eV per 10¹⁴ Hz"
+  },
+  {
+   "type": "point",
+   "expr": "0.4135667696923859*x-4.3",
+   "x": 10.397353740965146,
+   "y": 0,
+   "name": "zinc: zero energy at threshold f₀ = φ/h"
+  },
+  {
+   "type": "point",
+   "expr": "0.4135667696923859*x-2.3",
+   "x": 5.56137525679531,
+   "y": 0,
+   "name": "sodium: zero energy at threshold f₀ = φ/h"
+  },
+  {
+   "type": "point",
+   "expr": "0.4135667696923859*x-2.1",
+   "x": 5.077777408378328,
+   "y": 0,
+   "name": "caesium: zero energy at threshold f₀ = φ/h"
+  },
+  {
+   "type": "point",
+   "expr": "0.4135667696923859*x-4.3",
+   "x": 11.99169832,
+   "y": 0.6594,
+   "name": "250 nm on zinc: KE_max = 0.66 eV"
+  }
+ ]
+}

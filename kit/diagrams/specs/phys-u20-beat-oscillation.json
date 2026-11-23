@@ -1,0 +1,102 @@
+{
+ "id": "phys-u20-beat-oscillation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Time-dependent and time-independent Schrödinger equations",
+ "title": "Probability in a box sloshing at (E₂ − E₁)/h",
+ "caption": "For (φ₁ + φ₂)/√2 in a box, each stationary state alone has a time-independent |ψ|², but the mixture does not: at x = L/4 the density is (2/L)[0.75 + 0.71 cos(2π(E₂ − E₁)t/h)]. Since E₂ − E₁ = 3E₁ the density oscillates at f = 3E₁/h, three full cycles in each time h/E₁.",
+ "alt": "Graph of probability density at one point against time in units of h over E1 from 0 to 1: a cosine with three full cycles, varying between 1.46 and 0.04.",
+ "description": [
+  "The horizontal axis is time in units of h/E₁; the vertical axis is |ψ|² at x = L/4 in units of 2/L.",
+  "At x = L/4, φ₁² = 0.5 and φ₂² = 1 (in units of 2/L) and the cross term is 2φ₁φ₂ × ½ cos ωt: |ψ|² = 0.75 + 0.71 cos ωt.",
+  "The two components have energies E₁ and E₂ = 4E₁, so ω = (E₂ − E₁)/ħ = 3E₁/ħ and f = 3E₁/h.",
+  "Three complete cycles fit into one unit of h/E₁."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   1.7
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.5,
+   1,
+   1.5
+  ]
+ ],
+ "grid": [
+  0.3333333333333333,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / (h/E₁)",
+  "|ψ|² at L/4"
+ ],
+ "curves": [
+  {
+   "expr": "0.75+0.7071067811865476*cos(18.849556*x)",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "samples": 400
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    1.58
+   ],
+   "to": [
+    0.3333333333333333,
+    1.58
+   ],
+   "both": true,
+   "label": "period h/3E₁",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.75+0.7071067811865476*cos(18.849556*x)",
+   "x": 0,
+   "y": 1.4571,
+   "name": "the density starts at its maximum 0.75 + 0.71"
+  },
+  {
+   "type": "point",
+   "expr": "0.75+0.7071067811865476*cos(18.849556*x)",
+   "x": 0.16666666666666666,
+   "y": 0.0429,
+   "name": "half a period later (t = h/6E₁) it is at its minimum"
+  },
+  {
+   "type": "point",
+   "expr": "0.75+0.7071067811865476*cos(18.849556*x)",
+   "x": 0.3333333333333333,
+   "y": 1.4571,
+   "name": "a full period is h/3E₁: f = 3E₁/h"
+  }
+ ]
+}

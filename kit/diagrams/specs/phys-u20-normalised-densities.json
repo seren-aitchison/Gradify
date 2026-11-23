@@ -1,0 +1,122 @@
+{
+ "id": "phys-u20-normalised-densities",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Wavefunctions",
+ "title": "Two normalised probability densities on 0 < x < L",
+ "caption": "Normalising means the total probability is 1: ∫|ψ|²dx = 1. The lesson's uniform wavefunction ψ = A has |ψ|² = |A|² = 1/L everywhere (dashed). The infinite-well ground state ψ₁ = √(2/L) sin(πx/L) has |ψ|² = (2/L) sin²(πx/L), bunched in the middle (solid). Both enclose an area of exactly 1, in units where L = 1.",
+ "alt": "Graph of probability density times L against x over L from 0 to 1: a flat dashed line at 1 and a solid sine-squared hump peaking at 2 in the middle, each enclosing the same area of 1.",
+ "description": [
+  "The horizontal axis is position x in units of L; the vertical axis is |ψ|² in units of 1/L.",
+  "Dashed: the uniform state ψ = A with A = 1/√L, so |ψ|² = 1 (in units of 1/L) across the whole interval. The area is 1 × 1 = 1.",
+  "Solid (shaded): the infinite-well ground state |ψ₁|² = 2 sin²(πx/L). It peaks at 2 at x = L/2 and has zero at the walls; its area is also 1.",
+  "Different shapes, the same total probability: normalisation fixes the overall size of ψ, not its shape."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   2.4
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / L",
+  "L|ψ|²"
+ ],
+ "areas": [
+  {
+   "expr": "2*sin(3.14159265*x)^2",
+   "from": 0,
+   "to": 1,
+   "colour": "a2",
+   "opacity": 0.2
+  }
+ ],
+ "curves": [
+  {
+   "expr": "1",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a4",
+   "dash": "6 5",
+   "width": 2.6,
+   "label": "|A|² = 1/L",
+   "labelAt": [
+    0.03,
+    0.82
+   ]
+  },
+  {
+   "expr": "2*sin(3.14159265*x)^2",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "|ψ₁|²",
+   "labelAt": [
+    0.56,
+    2.1
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "1",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "the uniform state ψ = 1/√L is normalised (area 1)"
+  },
+  {
+   "type": "area",
+   "expr": "2*sin(3.14159265*x)^2",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "the well ground state is normalised (area 1)"
+  },
+  {
+   "type": "max",
+   "expr": "2*sin(3.14159265*x)^2",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 2,
+   "name": "|ψ₁|² peaks at 2/L in the middle of the well"
+  }
+ ]
+}
