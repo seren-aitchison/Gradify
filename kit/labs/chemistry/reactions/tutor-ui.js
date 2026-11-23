@@ -10,7 +10,7 @@ const LEVEL = {
   reviewed: "Based on a rule an independent chemist has reviewed.",
   validated: "Based on a validated rule.",
   disputed: "A reviewer has disputed this rule: treat the lab's answer as uncertain.",
-  declined: "The lab can't reliably predict this case, so the tutor won't guess a product.",
+  unsupported: "The lab can't reliably predict this case, so the tutor won't guess a product.",
 };
 const newId = () => globalThis.crypto?.randomUUID?.() ?? `c-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
 // the reply is model text: escaped, then paragraphs
@@ -28,7 +28,7 @@ export function mountTutor(host, { ask = null, getContext, intents, learner = ()
   function paintIntents() {
     const ctx = getContext(), box = q(".ct-intents"); lastCtx = ctx;
     box.innerHTML = ctx ? intents.filter(([k, , when]) => !when || when(ctx)).map(([k, label]) => `<button type="button" class="lab-btn${k === intent ? " pri" : ""}" data-i="${k}">${esc(label)}</button>`).join("") : `<p class="osk-aka">Choose a reaction, mechanism or route first.</p>`;
-    const conf = ctx ? (ctx.status === "declined" ? "declined" : ctx.rule?.confidence || ctx.confidence || null) : null;
+    const conf = ctx ? (ctx.outcome === "unsupported" ? "unsupported" : ctx.rule?.confidence || ctx.confidence || null) : null;
     q(".ct-level").textContent = conf ? LEVEL[conf] || "" : "";
   }
   async function send(text = null) {

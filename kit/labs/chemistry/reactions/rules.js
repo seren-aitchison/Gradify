@@ -70,3 +70,58 @@ export function ruleFor(reagent) {
   const disputes = Object.entries(REVIEWS).filter(([id, v]) => id.endsWith(`|${reagent.id}`) && v.verdict === "disagree").map(([id, v]) => ({ case: id.split("|")[0], correction: v.correction || "", note: v.note || "" }));
   return { reagent: reagent.label, conditions: reagent.cond, level: reagent.level, mechanism: reagent.mechanism || null, ...r, ...(disputes.length ? { confidence: "disputed", disputes } : {}) };
 }
+
+// ---------- coverage: what each rule can vouch for ----------
+// The features of a molecule (predictor.js features()) and, for each reagent, which ones its rule HANDLES (it decides
+// what they do, including "nothing") and which are KNOWN INERT under its conditions. The predictor may only say "no
+// reaction" when every feature of the molecule is handled or inert, and may only predict products when nothing is left
+// over; otherwise it reports the case as unsupported and names what it couldn't account for. Inert lists are
+// deliberately conservative: a feature is listed only when it is standard that it doesn't react under these conditions.
+export const FEATURE_NAMES = {
+  benzylic: "an alkyl side chain on a benzene ring (a benzylic C–H)", strained: "a three- or four-membered ring", alkene: "a C=C", alkyne: "a C≡C",
+  arene: "a benzene ring", haloalkyl: "a halogenoalkane C–X", haloaryl: "a halogen on a ring or C=C carbon", fluoro: "a C–F bond",
+  alc1: "a primary alcohol", alc2: "a secondary alcohol", alc3: "a tertiary alcohol", alcX: "another kind of –OH group", phenol: "a phenol –OH",
+  ether: "an ether", aldehyde: "an aldehyde", ketone: "a ketone", acid: "a carboxylic acid", methanoic: "a H–C(=O)–O group (methanoic acid or a methanoate)",
+  carboxylate: "a carboxylate ion", ester: "an ester", anhydride: "an acid anhydride", amide: "an amide", acylhalide: "an acyl chloride",
+  carbonylX: "another kind of C=O group", nitrile: "a nitrile", amine: "an amine", arylamine: "an –NH₂ on a benzene ring", nitro: "a nitro group",
+  sulfur: "a sulfur-containing group", other: "an element or ion the lab's rules don't cover",
+};
+const A = ["alc1", "alc2", "alc3"];
+const HC = ["arene", "benzylic", "ether", "fluoro"]; // hydrocarbon parts and ethers, inert to most of these reagents
+export const COVERAGE = {
+  "h2-ni": { handles: ["alkene", "alkyne"], inert: [...HC, ...A, "alcX", "phenol", "acid", "carboxylate", "ester", "amide", "amine", "arylamine", "haloaryl"] },
+  lindlar: { handles: ["alkyne"], inert: [...HC, ...A, "alcX", "alkene", "phenol", "acid", "carboxylate", "ester", "amide", "amine", "arylamine", "haloaryl", "aldehyde", "ketone"] },
+  br2: { handles: ["alkene", "alkyne", "arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", ...A, "alcX", "acid", "carboxylate", "ester", "amide", "haloalkyl", "haloaryl", "nitro", "nitrile"] },
+  hbr: { handles: ["alkene", "alkyne"], inert: [...HC, "phenol", "haloalkyl", "haloaryl", "acid", "ester", "amide", "nitro", "nitrile", "ketone"] },
+  steam: { handles: ["alkene"], inert: [...HC, ...A, "phenol", "haloaryl", "acid", "ketone"] },
+  "hg-hydration": { handles: ["alkyne"], inert: [...HC, ...A, "ketone", "acid", "ester", "haloaryl"] },
+  "kmno4-cold": { handles: ["alkene"], inert: [...HC, "alc3", "acid", "carboxylate", "ester", "ketone", "nitro", "haloaryl", "haloalkyl", "amide", "nitrile"] },
+  "kmno4-hot": { handles: ["alkene", "arene", "benzylic"], inert: ["fluoro", "alc3", "ketone", "acid", "carboxylate", "nitro", "haloaryl"] },
+  ozone: { handles: ["alkene"], inert: [...HC, ...A, "acid", "carboxylate", "ester", "ketone", "aldehyde", "haloalkyl", "haloaryl", "nitro", "amide", "nitrile"] },
+  "naoh-aq": { handles: ["haloalkyl", "ester", "anhydride", "amide", "nitrile", "acylhalide", "acid", "phenol"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "carboxylate", "nitro", "amine", "arylamine", "haloaryl", "strained"] },
+  "koh-eth": { handles: ["haloalkyl"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "nitro", "haloaryl", "amine", "arylamine", "strained", "carboxylate"] },
+  tbuok: { handles: ["haloalkyl"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "nitro", "haloaryl", "amine", "arylamine", "strained", "carboxylate"] },
+  kcn: { handles: ["haloalkyl"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "haloaryl", "nitro", "nitrile", "amide", "amine", "arylamine", "strained", "carboxylate"] },
+  water: { handles: ["acylhalide", "anhydride", "haloalkyl"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "phenol", "ketone", "aldehyde", "acid", "carboxylate", "ester", "amide", "nitrile", "nitro", "haloaryl", "strained", "amine", "arylamine"] },
+  nh3: { handles: ["haloalkyl", "acylhalide"], inert: [...HC, ...A, "alkene", "alkyne", "nitro", "nitrile", "haloaryl", "strained", "amine", "arylamine"] },
+  "nh3-cold": { handles: ["acylhalide", "anhydride", "haloalkyl"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "ester", "nitro", "nitrile", "amide", "haloaryl", "strained", "amine", "arylamine", "carboxylate"] },
+  "ethanol-rt": { handles: ["acylhalide", "anhydride"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "ketone", "aldehyde", "acid", "carboxylate", "ester", "amide", "nitrile", "nitro", "haloaryl", "strained", "phenol"] },
+  "cr-distil": { handles: [...A, "aldehyde"], inert: [...HC, "ketone", "acid", "ester", "amide", "nitrile", "nitro", "haloalkyl", "haloaryl", "carboxylate", "strained"] },
+  "cr-reflux": { handles: [...A, "aldehyde"], inert: [...HC, "ketone", "acid", "ester", "amide", "nitrile", "nitro", "haloalkyl", "haloaryl", "carboxylate", "strained"] },
+  tollens: { handles: ["aldehyde", "ketone", "methanoic"], inert: [...HC, ...A, "alcX", "alkene", "acid", "carboxylate", "ester", "amide", "nitrile", "nitro", "haloaryl", "amine", "strained"] },
+  nabh4: { handles: ["aldehyde", "ketone", "acylhalide", "acid", "ester", "amide"], inert: [...HC, ...A, "alcX", "phenol", "alkene", "alkyne", "nitrile", "nitro", "haloalkyl", "haloaryl", "carboxylate", "amine", "arylamine", "strained"] },
+  lialh4: { handles: ["aldehyde", "ketone", "acid", "ester", "amide", "acylhalide", "nitrile"], inert: [...HC, ...A, "alcX", "phenol", "alkene", "alkyne", "haloaryl", "amine", "arylamine", "strained"] },
+  hcn: { handles: ["aldehyde", "ketone"], inert: [...HC, ...A, "alcX", "alkene", "alkyne", "acid", "carboxylate", "ester", "amide", "nitrile", "nitro", "haloaryl", "phenol", "strained"] },
+  grignard: { handles: ["aldehyde", "ketone", "ester", "acylhalide", "nitrile", ...A, "alcX", "acid", "phenol", "methanoic"], inert: [...HC, "alkene", "haloaryl", "strained"] },
+  h3po4: { handles: A, inert: ["arene", "benzylic", "fluoro", "ketone", "acid", "ester", "nitro", "haloaryl", "haloalkyl", "nitrile", "amide"] },
+  esterify: { handles: ["acid"], inert: [...HC, "ketone", "ester", "amide", "nitrile", "nitro", "haloalkyl", "haloaryl", "alkyne", "strained", "phenol"] },
+  "ethanoic-h2so4": { handles: A, inert: [...HC, "ketone", "ester", "amide", "nitrile", "nitro", "haloalkyl", "haloaryl", "phenol", "strained"] },
+  socl2: { handles: ["acid", ...A], inert: [...HC, "alkene", "alkyne", "ketone", "aldehyde", "ester", "nitrile", "nitro", "haloalkyl", "haloaryl", "phenol", "strained"] },
+  "acid-hydrolysis": { handles: ["ester", "anhydride", "amide", "nitrile", "acylhalide", "haloalkyl"], inert: [...HC, ...A, "alcX", "phenol", "alkene", "alkyne", "acid", "ketone", "aldehyde", "nitro", "haloaryl", "strained"] },
+  "br2-uv": { handles: [], inert: [] },
+  nitration: { handles: ["arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", "haloalkyl", "haloaryl", "nitro", "acid", "ester", "ketone", "aldehyde", "nitrile", "amide"] },
+  "cl2-alcl3": { handles: ["arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", "haloaryl", "nitro", "acid", "ester", "ketone", "nitrile"] },
+  "br2-febr3": { handles: ["arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", "haloaryl", "nitro", "acid", "ester", "ketone", "nitrile"] },
+  "fc-alkyl": { handles: ["arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", "haloaryl", "nitro", "acid", "ester", "ketone", "aldehyde", "nitrile"] },
+  "fc-acyl": { handles: ["arene", "phenol", "arylamine"], inert: ["benzylic", "ether", "fluoro", "haloaryl", "nitro", "acid", "ester", "ketone", "aldehyde", "nitrile"] },
+};

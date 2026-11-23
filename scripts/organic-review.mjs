@@ -11,7 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as K from "../kit/labs/chemistry/skeletal.js";
 import * as P from "../kit/labs/chemistry/reactions/predictor.js";
-import { REFERENCE, DECLINE } from "../tests/data/organic-reference.mjs";
+import { REFERENCE, UNSUPPORTED } from "../tests/data/organic-reference.mjs";
 import { SOURCES } from "../kit/labs/chemistry/reactions/rules.js";
 import { REACTIONS, instantiate } from "../kit/labs/chemistry/reactions/library.js";
 import * as E from "../kit/labs/chemistry/reactions/electron-flow.js";
@@ -25,7 +25,7 @@ const REVIEW_COLS = ["verdict (agree / disagree / unsure)", "correction", "comme
 
 function expected(e) {
   if (e === null) return "No reaction";
-  if (e === DECLINE) return "Lab should decline (outside its rules)";
+  if (e === UNSUPPORTED) return "Not supported: the lab should decline";
   if (typeof e === "string") return nameOfSmiles(e);
   if (e.products) return e.products.map(nameOfSmiles).join(" + ");
   return `major: ${e.major.map(nameOfSmiles).join("; ")}${e.minor.length ? ` | minor: ${e.minor.map(nameOfSmiles).join("; ")}` : ""}`;
@@ -35,7 +35,7 @@ function exportPack() {
   const rows = [["id", "topic", "starting material", "reagent", "conditions", "level", "reference outcome", "lab prediction", "lab reasoning (first point)", "reference note", "sources (unchecked pointers)", "confidence", ...REVIEW_COLS]];
   for (const r of REFERENCE) {
     const m = P.drawSmiles(r.start), res = P.predict(m, r.reagent), g = P.reagentOf(r.reagent);
-    const pred = res.reacts ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.status === "declined" ? "Declined" : "No reaction";
+    const pred = res.reacts ? res.products.map((p) => `${p.role}: ${P.nameOf(p.m)}`).join("; ") + (res.byproducts.length ? ` (+ ${res.byproducts.join(", ")})` : "") : res.outcome === "unsupported" ? "Not supported (declined)" : "No reaction";
     rows.push([r.id, r.topic, nameOfSmiles(r.start), g.label, g.cond, g.level, expected(r.expect), pred, res.why?.[0] || "", r.note, r.sources.map((x) => `${SOURCES[x.id] || x.id}: ${x.topic}`).join(" / "), r.confidence, ...(r.review ? [r.review.verdict, r.review.correction, r.review.note, r.review.reviewer, r.review.date] : ["", "", "", "", ""])]);
   }
   fs.writeFileSync(path.join(OUT, "reference-review.csv"), csv(rows));
