@@ -1,6 +1,6 @@
 # Moving Gradify to Next.js: a plan to decide on
 
-Status: **proposal, nothing migrated.** Written 22 November 2026. The Apple-first design system
+Status: **proposal, nothing migrated.** Written 22 November 2026; proof of concept run 23 November 2026 (below). The Apple-first design system
 (`kit/design/tokens.json`, `kit/styles/system.css`, `docs/DESIGN-SYSTEM.md`) is being rolled out on the current site
 now and carries straight over; this document is about the platform underneath it.
 
@@ -94,13 +94,93 @@ can pause without leaving the site half-broken.
 
 - **Two systems at once** for the length of the migration: a page-level switch in the deploy and one design system
   (shared tokens) keep it manageable.
-- **Bundle size:** React adds ~45 KB gzipped to pages that had no framework. Marketing pages can stay mostly
+- **Bundle size:** measured in the proof of concept, Next.js 16 with React 19 adds **about 136 KB of JavaScript,
+  gzipped**, to every page (plus a 39 KB polyfill file that only old browsers download). The earlier estimate of
+  ~45 KB was React alone and too low. Marketing pages can stay mostly
   server-rendered HTML with small client islands.
 - **Hosting:** static export rules out Next.js server features (API routes, ISR, middleware). Gradify doesn't use
   them today; if it needs them later, that's the moment to move hosting, not before.
 
+## Proof of concept (23 November 2026)
+
+`poc/nextjs/` is a minimal Next.js 16 app (App Router, `output: "export"`, React 19, TypeScript). It is never
+published (`scripts/build-site.mjs` lists `poc/` as excluded) and changes nothing on the live site. It has three
+routes: a React homepage on the design-system tokens, `/privacy.html` (a content page that must keep its `.html` URL),
+and `/lawgradify/course/`, the real Law course (19 schools, 480 lessons) mounted by the existing engine.
+
+Run it, from a fresh checkout:
+
+```bash
+npm ci
+```
+
+```bash
+npx playwright install chromium
+```
+
+```bash
+cd poc/nextjs && npm install && npm run build && npm run verify
+```
+
+The first two install the repository's development tools, including Playwright, which the verify scripts load from
+the root `node_modules`, and its Chromium browser. (Skip the second where Chromium is already installed for
+Playwright.) The verify scripts serve `out/` the way GitHub Pages does and drive Chromium. Each result is a pass/fail
+check, and any failure makes `npm run verify` exit non-zero: 27 checks in `verify.cjs`, 5 in `parity.cjs`.
+
+| Question | Result |
+| --- | --- |
+| **Asset paths** | Pass. `public/` links to the repository's `kit/`, `assets/`, `sw.js`, `manifest.webmanifest` and `gradify.config.js`, and `next build` copies them into `out/` at their current paths. Stylesheets and `theme-boot.js` load from `/kit/…` exactly as the static pages load them; `--ds-*` tokens and the device theme apply. No failed requests. |
+| **Course notes** | Pass. The course engine and the Law curriculum are loaded at runtime with `import(/* webpackIgnore: true */ "/kit/…")`, not bundled: no Next chunk contains the notes or the engine, and the whole `_next/` folder is 616 KB uncompressed for every page together. The course renders 388 elements, opens a real lesson by its own hash route (`#/lesson/u01-01`) with its notes, and navigating to it from the React homepage is client-side (no reload). |
+| **Saved progress** | Pass. Progress is the same `localStorage` keys (`gradify.course.law`, `gradify.ui`) on the same origin. With the saved state from the current static course, the Next.js course home renders identically (its whole text compared), the lesson `#/lesson/u01-01` renders the same full notes (all 2,345 characters, as displayed), and the page has the same kit stylesheets in the same order. |
+| **Offline** | Pass, **with a generated service worker**. Used as it is, the existing `sw.js` would fail to install, because its list names pages the Next build doesn't produce (`app.html`, `explore.html`) and it doesn't know Next's chunk files. `postbuild.mjs` rewrites `SHELL` from the build output: the built pages (as `privacy/`, not `privacy/index.html`, so the cached key matches the URL the browser asks for), the kit files that exist and Next's `_next/static` chunks. Offline, the homepage, the Law course (fully working), `/privacy.html` and `/privacy/` all load. |
+| **Existing `.html` URLs** | Pass, **with a post-build step**. No single Next setting keeps every URL. Without trailing slashes, `privacy.html` survives but the course becomes `lawgradify/course.html` (the current URL `/lawgradify/course/` would 404). With `trailingSlash: true`, folders survive but `/privacy.html` 404s. GitHub Pages can't redirect. The fix that worked: `trailingSlash: true`, then `postbuild.mjs` copies `privacy/index.html` to `privacy.html` for each legacy page. All 10 URLs checked return 200 (or GitHub Pages' usual 301 to add a slash). |
+
+### Limitations found
+
+1. **JavaScript weight.** About 136 KB gzipped of framework on every page (above). Today's static pages load no
+   framework. For marketing and content pages this is the main cost of the move; it argues for keeping them mostly
+   static HTML with small client islands, and for measuring load time on real phones before phase 1 ships.
+2. **The service worker must be generated.** It can't be hand-kept once Next names its chunks by content hash. The
+   PoC script is a starting point; the real one also needs the deploy stamp `scripts/build-site.mjs` adds today and
+   `tests/offline.test.mjs` pointed at the build output.
+3. **Two copies of legacy `.html` pages.** Each legacy page exists as `x.html` and `x/index.html`. Harmless for
+   visitors, but the sitemap and canonical links must name one (the `.html` URL, as today).
+4. **Course pages are client-rendered.** The course appears after the engine loads, as it does today. Server-rendering
+   course content would mean moving the notes into the bundler: the opposite of what keeps the bundle small.
+5. **Kit modules are untyped.** Runtime imports from `/kit/…` are `any` to TypeScript. Types come from `.d.ts` files
+   added as modules are touched.
+6. **Not tested in the PoC:** the subject-site header and footer around the course (the PoC page has the course
+   only), the study app (`app.html`), Supabase sign-in and sync, subject-site homepages, Safari,
+   Firefox, Android, screen readers, and load time on a deployed host. Chromium only.
+7. **Build time and size.** `next build` copies the 97 MB `kit/` folder into `out/`; fine for CI, but the deploy should
+   publish from `out/` instead of building the site twice.
+8. **The course engine can't be unmounted.** `mountCourse` adds window listeners, timers and the assistant's UI on
+   `document.body`, and returns no way to remove them. On today's static pages that's fine: leaving the course is a full
+   page load. In a React app that navigates without reloading, leaving and reopening the course would leave the old
+   engine running beside a new one.
+   **Decision (owner, 23 November 2026): a firm gate for phase 4.** The production engine is not changed now: today's
+   full-page navigation tears everything down, and the PoC is research only. Before any course moves into a persistent
+   React app:
+   - `mountCourse()` returns `dispose()`, which removes every resource that instance created: event listeners on
+     `window` and `document`, timers and intervals, subscriptions, workers, and UI appended outside its root (the
+     assistant on `document.body`). `kit/course/course.js` and `kit/course/assistant.js` have about 135 listener,
+     timer and `document.body` call sites between them, so the work starts with an inventory of which ones outlive the
+     course root.
+   - The React wrapper calls `dispose()` on unmount, and keeps the guard that stops an import finishing after unmount
+     from mounting the course.
+   - A test mounts, disposes and remounts a course and checks that nothing is left behind: no duplicate listeners, no
+     running timers, nothing extra on `document.body`.
+9. **Stylesheet order is easy to get wrong.** The first PoC compared only the first 600 characters of the course, and
+   missed that the Next page lacked two of the course's stylesheets (`subsite.css`, `model.css`) and loaded the
+   engine's own `ui.css` in a different place in the cascade. Comparing the full lesson notes caught it ("COMMON
+   MISTAKE" rendered as "Common mistake"). The fix is React 19's `precedence` on every kit stylesheet, so they're
+   placed in `<head>` in the static page's order; `parity.cjs` now checks the order. Any real migration should compare
+   each page's stylesheets and full rendered text against the static page, not a sample.
+
 ## Decisions for you
 
-1. Go ahead with phase 0 (no visible change), or keep building features on the current stack for now?
+1. Go ahead with phase 0 (no visible change), or keep building features on the current stack for now? The PoC shows
+   the move is technically safe for URLs, offline use, course notes and saved progress; the open cost is ~136 KB
+   of framework JavaScript per page.
 2. Stay on GitHub Pages with static export (recommended), or move hosting now?
 3. Who builds it: this is several months of focused work and benefits from a developer owning it.

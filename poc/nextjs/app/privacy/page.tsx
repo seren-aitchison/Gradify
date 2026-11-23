@@ -1,0 +1,1 @@
+export default function Privacy() { return <main className="ds-section"><h1 className="ds-title">Privacy</h1><p className="ds-lead">A static content page. Its URL must stay /privacy.html.</p></main>; }
