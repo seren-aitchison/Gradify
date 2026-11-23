@@ -25,6 +25,7 @@ async function landed(p, href) {
   const B = `http://127.0.0.1:${server.address().port}`, browser = await chromium.launch();
   const rows = [], otherAppLinks = [];
   for (const [site, c] of Object.entries(SITES_CONTENT)) {
+    if (process.env.SITE && site !== process.env.SITE) continue;   // SITE=EduGradify to check one site
     const dir = site.toLowerCase().split(" ")[0];
     for (const [mode, o] of [["desktop", { viewport: { width: 1280, height: 860 } }], ["phone", { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true }]]) {
       if (mode === "phone" && !PHONE_SITES.includes(dir)) continue;
@@ -47,7 +48,7 @@ async function landed(p, href) {
         await el.scrollIntoViewIfNeeded(); await el.click(); await p.waitForTimeout(2200);
         const expected = new URL(card.href, `${B}/${dir}/`);
         const at = new URL(p.url());
-        const sameUrl = at.pathname.replace(/index\.html$/, "") === expected.pathname.replace(/index\.html$/, "") && (at.hash === expected.hash || (!expected.hash && !at.hash) || (expected.hash && at.hash.startsWith(expected.hash)));
+        const sameUrl = at.pathname.replace(/index\.html$/, "") === expected.pathname.replace(/index\.html$/, "") && (at.hash === expected.hash || (!expected.hash && !at.hash) || (expected.hash && at.hash.startsWith(expected.hash)) || (/\/new$/.test(expected.hash) && at.hash.startsWith(expected.hash.replace(/new$/, ""))));   // "…/new" opens a new item at its own id
         const content = sameUrl ? await landed(p, card.href) : `landed at ${at.pathname}${at.hash}`;
         row.ok = sameUrl && content === true; row.result = row.ok ? "✓" : `✗ ${content}`;
         rows.push(row);
