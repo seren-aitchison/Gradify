@@ -83,7 +83,7 @@ test("bands follow the percentage the learner sees, and no evidence is never 0%"
 test("completing lessons is coverage, not mastery", () => {
   const m = run([], { done: { "u02-20": true, "u02-23": true } });
   const p = m.points[0];
-  assert.deepEqual(p.coverage, { gradify: "full", done: 2, total: 2 });
+  assert.deepEqual({ ...p.coverage, ids: undefined, doneIds: undefined }, { gradify: "full", done: 2, total: 2, ids: undefined, doneIds: undefined });
   assert.equal(p.estimate, null, "finished every lesson, answered nothing: still not assessed");
   assert.match(p.next, /hasn't seen you answer/);
   assert.equal(m.points[2].coverage.gradify, "none");
@@ -237,4 +237,22 @@ test("the AQA mapping is labelled as a summary wherever it's shown", async () =>
   // classifications are flagged as unverified too
   assert.match(topicPageHtml(m, m.topics[0]), /Biology only/);
   assert.match(topicPageHtml(m, m.topics[0]), /not yet verified/);
+});
+
+test("overall totals count each lesson once, and an average of early estimates stays an early estimate", () => {
+  // one lesson teaching two points is one lesson in the totals, though it counts towards each point's coverage
+  const shared = { ...MINI, topics: [{ ...MINI.topics[0], groups: [{ ...MINI.topics[0].groups[0], points: [
+    { id: "1.1.1", title: "A", text: "A.", lessons: ["u02-20", "u02-23"], partial: [], flags: [] },
+    { id: "1.1.2", title: "B", text: "B.", lessons: ["u02-20"], partial: [], flags: [] },
+  ] }] }] };
+  const m = specMastery(shared, { attempts: [], now: NOW, done: { "u02-20": true }, titleOf: (id) => id });
+  assert.deepEqual(m.points.map((p) => p.coverage.done), [1, 1], "each point is covered by the lesson");
+  assert.equal(m.overall.lessonsDone, 1, "but it is one lesson done"); assert.equal(m.overall.lessonsMapped, 2);
+  // two easy answers on one point: the point, its topic and the headline are all early estimates
+  const thin = run([att("u02-20", 1, { d: 1, q: "x1" }), att("u02-20", 1, { d: 1, q: "x2" })]);
+  assert.ok(thin.points[0].provisional);
+  assert.equal(thin.topics[0].provisional, true); assert.equal(thin.overall.provisional, true);
+  const many = [];
+  for (let i = 0; i < 20; i++) many.push(att(i % 2 ? "u02-20" : "u02-23", i % 7 ? 1 : 0, { q: `q${i % 10}`, d: 1 + (i % 3), type: ["sba", "short", "card", "num"][i % 4], ago: 30 - i, context: i % 3 ? "lesson" : "review" }));
+  assert.equal(run(many).overall.provisional, false, "a measured point makes the headline a measurement");
 });

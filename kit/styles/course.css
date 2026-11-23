@@ -2347,7 +2347,7 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .sm-key > span { display: inline-flex; align-items: center; gap: 6px; }
 .sm-ramp { gap: 4px !important; } .sm-ramp small { font-size: 12px; margin: 0 4px; }
 .sm-k { width: 16px; height: 16px; border-radius: 4px; }
-.sm-topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px 28px; }
+.sm-topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 22px 28px; }
 .sm-th { display: grid; gap: 3px; margin-bottom: 9px; color: var(--fg); text-decoration: none; }
 .sm-th b { font-size: 15px; } .sm-th:hover b { text-decoration: underline; } .sm-th b::after { content: " ›"; color: var(--mute); }
 .sm-th span { font-size: 12.5px; color: var(--mute); } .sm-th span.warn { color: var(--sm-warn); }

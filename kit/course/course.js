@@ -2261,16 +2261,20 @@ export function mountCourse(root, cfg) {
   // which specification the learner is sitting, and their choices on it (a tier, say), remembered per course on this
   // device. Nothing here is specific to a board or subject: the specification's own `options` say what can be chosen.
   const SPK = `gradify.spec.${cfg.slug}`;
+  let specPrefMem = null; // this visit's choice, used when storage is blocked so a change still takes effect
   const specPref = () => {
-    let v = {}; try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ }
+    let v = specPrefMem || {}; if (!specPrefMem) try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ }
     // the first version stored { id, tier }; a tier saved then still applies
     const spec = SPECS.find((x) => x.id === v.id) || SPECS[0];
     return { spec, choices: { ...(v.tier ? { tier: v.tier } : {}), ...(v.choices || {}) } };
   };
-  const setSpecPref = ({ id, choice }) => { const cur = specPref(); try { localStorage.setItem(SPK, JSON.stringify({ id: id || cur.spec.id, choices: id && id !== cur.spec.id ? {} : { ...cur.choices, ...(choice || {}) } })); } catch { /* storage blocked: the choice isn't remembered */ } };
+  const setSpecPref = ({ id, choice }) => {
+    const cur = specPref(); specPrefMem = { id: id || cur.spec.id, choices: id && id !== cur.spec.id ? {} : { ...cur.choices, ...(choice || {}) } };
+    try { localStorage.setItem(SPK, JSON.stringify(specPrefMem)); } catch { /* storage blocked: the choice holds for this visit only */ }
+  };
   let specMemo = { key: "", model: null };
   function specModel() {
-    const { spec, choices } = specPref(), key = `${spec.id}|${JSON.stringify(choices)}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}`;
+    const { spec, choices } = specPref(), key = `${spec.id}|${JSON.stringify(choices)}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}|${Math.floor(Date.now() / 864e5)}`;
     if (specMemo.key !== key) specMemo = { key, model: specMastery(spec, { attempts: S.attempts || [], levels: cfg.levels || null, exploration: EXPLORE, done: S.done, choices,
       available: (id) => Boolean(byId[id]) && (!cfg.written || cfg.written.includes(byId[id].unit.id)), titleOf: (id) => byId[id]?.title || id }) };
     return specMemo.model;

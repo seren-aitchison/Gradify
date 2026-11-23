@@ -157,7 +157,7 @@ export function specMastery(spec, { attempts = [], levels = null, exploration = 
     const practise = ids.slice().sort((a, b) => rank[readings.get(a).state] - rank[readings.get(b).state] || (readings.get(a).latest ?? 1) - (readings.get(b).latest ?? 1)).slice(0, 3);
     return {
       ...p, lessons: full, partial: part,
-      coverage: { gradify: full.length ? "full" : part.length ? "partial" : "none", done: ids.filter((id) => done[id]).length, total: ids.length },
+      coverage: { gradify: full.length ? "full" : part.length ? "partial" : "none", done: ids.filter((id) => done[id]).length, total: ids.length, ids, doneIds: ids.filter((id) => done[id]) },
       estimate, provisional, band: bandOf(estimate), confidence: conf, profile, trend, series,
       byLesson: Object.fromEntries(readings), can: r.can, struggle: r.struggle, next: r.next,
       practise, focus: ["apply", "transfer"].includes(profile.weakest) ? "application" : "mixed",
@@ -170,29 +170,32 @@ const WEIGHT = { none: 0, low: 1, medium: 2, high: 3 };
 // an average over assessed points only, weighted by how much each estimate can be trusted
 function combine(points) {
   const a = points.filter((p) => p.estimate != null), w = a.reduce((s, p) => s + WEIGHT[p.confidence.level], 0);
-  return { assessed: a.length, estimate: a.length ? a.reduce((s, p) => s + p.estimate * WEIGHT[p.confidence.level], 0) / w : null };
+  // an average of early estimates only is itself an early estimate
+  return { assessed: a.length, estimate: a.length ? a.reduce((s, p) => s + p.estimate * WEIGHT[p.confidence.level], 0) / w : null, provisional: a.length > 0 && a.every((p) => p.provisional) };
 }
 
 function topicOf(t, points) {
-  const { assessed, estimate } = combine(points), band = bandOf(estimate);
+  const { assessed, estimate, provisional } = combine(points), band = bandOf(estimate);
   // points to work on: still emerging or building, or slipping. Named next to the topic's standing, never instead of it
   const toWork = points.filter((p) => (p.estimate != null && ["emerging", "building"].includes(p.band.key)) || p.trend === "slipping").length;
   const base = !assessed ? "Not yet assessed" : assessed < points.length / 2 ? "Partly assessed" : `${band.label} overall`;
   const status = toWork ? `${base} · ${toWork} to work on` : base;
-  return { id: t.id, title: t.title, points, total: points.length, assessed, estimate, band, status, attention: toWork > 0, toWork };
+  return { id: t.id, title: t.title, points, total: points.length, assessed, estimate, provisional, band, status, attention: toWork > 0, toWork };
 }
 
 function overallOf(points) {
-  const { assessed, estimate } = combine(points);
+  const { assessed, estimate, provisional } = combine(points);
   const bands = Object.fromEntries([...BANDS, UNASSESSED].map((b) => [b.key, points.filter((p) => p.band.key === b.key).length]));
   const covered = points.filter((p) => p.coverage.gradify !== "none").length, full = points.filter((p) => p.coverage.gradify === "full").length;
   const share = points.length ? assessed / points.length : 0;
   const firm = points.filter((p) => ["medium", "high"].includes(p.confidence.level)).length;
   // the headline is only as trustworthy as the share of the specification behind it
   const level = !assessed ? "none" : share >= 0.6 && firm >= assessed / 2 ? "high" : share >= 0.25 ? "medium" : "low";
-  return { total: points.length, covered, full, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, band: bandOf(estimate), bands, confidence: level,
+  // one lesson can teach several requirements: the totals count each lesson once
+  const mapped = new Set(points.flatMap((p) => p.coverage.ids)), doneIds = new Set(points.flatMap((p) => p.coverage.doneIds));
+  return { total: points.length, covered, full, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, provisional, band: bandOf(estimate), bands, confidence: level,
     slipping: points.filter((p) => p.trend === "slipping").length,
-    lessonsDone: points.reduce((s, p) => s + p.coverage.done, 0), lessonsMapped: points.reduce((s, p) => s + p.coverage.total, 0) };
+    lessonsDone: doneIds.size, lessonsMapped: mapped.size };
 }
 
 /** the points most worth practising next: weakest assessed points first, slipping ones raised, thin evidence last */

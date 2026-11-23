@@ -68,7 +68,7 @@ function controlsHtml(m, specs) {
 }
 const crumbs = (items) => `<nav class="sm-crumbs" aria-label="Specification">${items.map(([href, t], i) => (i === items.length - 1 ? `<span aria-current="page">${esc(t)}</span>` : `<a href="${href}">${esc(t)}</a>`)).join("")}</nav>`;
 // a topic's standing, with only the part that needs action ("2 to work on") in the warning colour
-const topicStatus = (t) => `${t.estimate != null ? `${pct(t.estimate)} · ` : ""}${esc(t.status.replace(/ · \d+ to work on$/, ""))}${t.toWork ? ` · <span class="sm-warntext">${t.toWork} to work on</span>` : ""}`;
+const topicStatus = (t) => `${t.estimate != null ? `${t.provisional ? "~" : ""}${pct(t.estimate)} · ` : ""}${esc(t.status.replace(/ · \d+ to work on$/, ""))}${t.toWork ? ` · <span class="sm-warntext">${t.toWork} to work on</span>` : ""}`;
 function action(p, practiseHref, { primary = false } = {}) {
   if (!practiseHref || !p.practise.length) return "";
   const label = p.estimate == null ? "Start" : p.band.key === "strong" ? "Keep it fresh" : "Practise";
@@ -100,7 +100,7 @@ export function specPageHtml(m, { specs = [], practiseHref } = {}) {
       <p>Every requirement of your specification, and how well your own answers across Gradify show you can meet it.</p>
       ${controlsHtml(m, specs)}${summaryNote(s)}</div>
     ${measuresHtml({
-      mastery: { estimate: o.estimate, band: o.band, scope: `Across the ${o.assessed} ${o.assessed === 1 ? "requirement" : "requirements"} you've been assessed on. Requirements without answers aren't counted as zero.`, empty: "Answer some check questions and Gradify starts measuring. It doesn't guess from nothing." },
+      mastery: { estimate: o.estimate, provisional: o.provisional, band: o.band, scope: `Across the ${o.assessed} ${o.assessed === 1 ? "requirement" : "requirements"} you've been assessed on. Requirements without answers aren't counted as zero.`, empty: "Answer some check questions and Gradify starts measuring. It doesn't guess from nothing." },
       confidence: { level: o.confidence, basis: o.assessed ? `${o.firm} of the ${o.assessed} assessed requirements have a fair amount of varied evidence. Covering more of the specification makes the figure firmer.` : "No answers yet." },
       coverage: [["Requirements with evidence", o.assessed, o.total], ["Taught on Gradify", o.covered, o.total, o.covered - o.full ? `${o.covered - o.full} only in part` : ""], ["Lessons you've completed", o.lessonsDone, o.lessonsMapped]],
     })}
@@ -169,7 +169,7 @@ export function pointPageHtml(m, p, { titleOf = (id) => id, statusOf = () => nul
 export function specSummaryHtml(m) {
   const o = m.overall;
   return `<section class="co-panel sm-mini"><div class="cx-acth"><h3>Specification mastery</h3><span>${esc(m.spec.title)} ${summaryNote(m.spec, { short: true })}</span></div>
-    <div class="sm-mrow"><div><small>Mastery</small><b>${o.estimate == null ? "Not assessed yet" : pct(o.estimate)}</b>${o.estimate == null ? "" : `<span class="sm-pill b-${o.band.key}">${esc(o.band.label)}</span>`}</div>
+    <div class="sm-mrow"><div><small>Mastery</small><b>${o.estimate == null ? "Not assessed yet" : `${o.provisional ? "~" : ""}${pct(o.estimate)}`}</b>${o.estimate == null ? "" : `<span class="sm-pill b-${o.band.key}">${esc(o.band.label)}</span>`}</div>
       <div><small>Confidence</small><b class="sm-cfig">${meter(o.confidence)}${esc(o.confidence === "none" ? "None yet" : CONFIDENCE[o.confidence].label.replace(" confidence", ""))}</b></div>
       <div><small>Coverage</small><b>${o.assessed}<small> of ${o.total} assessed</small></b></div>
       <a class="btn btn-light lg btn-sm" href="#/spec"><span>Open your specification</span></a></div>
