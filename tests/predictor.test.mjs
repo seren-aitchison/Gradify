@@ -159,3 +159,21 @@ test("starting materials from SMILES: a mixture is refused, not truncated to its
 test("every product the predictor reports is a valid structure, for every starting material and reagent", () => {
   for (const [n] of P.STARTERS) for (const g of P.REAGENTS) { const r = P.predict(P.starter(n), g.id); if (r.reacts) assert.ok(valid(r), `${n} + ${g.id}`); }
 });
+
+test("alkynes: equally substituted ends give both products whichever way the SMILES is written; several such sites are declined", () => {
+  const names = (r) => r.products.map((p) => K.analyse(p.m).hash).sort();
+  for (const g of ["hbr", "hg-hydration"]) {
+    const a = pred("CC#CCC", g), b = pred("CCC#CC", g);
+    assert.deepEqual(names(a), names(b), `${g}: pent-2-yne is the same reaction written either way`);
+    assert.equal(a.products.length, 2, `${g}: both products form`);
+    assert.equal(pred("CC#CCCCC#CCC", g).status, "declined", `${g}: two tied sites`);
+  }
+  assert.ok(has(pred("CC#CCC", "hbr"), "CC(Br)(Br)CCC") && has(pred("CC#CCC", "hbr"), "CCC(Br)(Br)CC"));
+  assert.ok(has(pred("C#CC", "hbr"), "CC(C)(Br)Br") && pred("C#CC", "hbr").products.length === 1, "propyne: one product");
+  assert.equal(pred("CC#CC", "hbr").products.length, 1, "symmetric but-2-yne: one product");
+});
+
+test("the applied rule record names the mechanism actually applied", () => {
+  const ph = pred("Oc1ccccc1", "br2"); assert.equal(ph.mechanism, null); assert.equal(ph.rule.mechanism, null, "phenol + Br₂ is substitution, not the alkene-addition mechanism");
+  const al = pred("CC=CC", "br2"); assert.equal(al.mechanism, "br2-butene"); assert.equal(al.rule.mechanism, "br2-butene");
+});

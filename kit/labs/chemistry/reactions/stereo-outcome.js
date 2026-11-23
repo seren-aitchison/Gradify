@@ -98,7 +98,10 @@ export function stereoOutcome(m, reagentId, res) {
     else if (newOnes && lone.length + done.size / 2 > 1) { for (const id of fromPlanar) strip(pm, id); form = "stereoisomers"; }
     else if (racemised) form = "racemic";
     else if (cfg.centres.some((c) => !c.label)) form = cfg.centres.some((c) => how.get(c.atom) === "unknown") ? "unspecified" : "undrawn";
-    else if (!startDefined) form = chiral(pm) ? "racemic" : "meso";
+    // one stereoisomer only if this product keeps a centre whose configuration the rule determines (kept or inverted
+    // from the drawing). A defined centre elsewhere in the starting material doesn't count: in an ester reduction it
+    // can leave with the other fragment, and the new centre in this one forms from a planar carbon on either face.
+    else if (!cfg.centres.some((c) => c.label && ["kept", "inverted"].includes(how.get(c.atom)) && before.get(c.atom)?.label)) form = chiral(pm) ? "racemic" : "meso";
     else form = chiral(pm) ? "single" : "meso";
     // 4. C=C bonds: kept, made from a C≡C (Lindlar: Z), or made by an elimination (mostly E)
     for (const b of configuration(pm).bonds) {

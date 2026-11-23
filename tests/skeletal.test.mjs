@@ -176,3 +176,8 @@ test("identity: equal hashes mean the same molecule, including symmetric ring sy
   for (const [a, b] of [["c1ccccc1", "C1=CC=CC=C1"], ["Cc1ccccc1", "c1ccc(C)cc1"], ["OC1CCCCC1", "C1CCC(O)CC1"], ["C1CC2CCC1C2", "C1CC2CC1CC2"], ["CC(=O)Oc1ccccc1C(=O)O", "OC(=O)c1ccccc1OC(C)=O"]]) assert.equal(h(a), h(b), `${a} = ${b}`);
   for (const [a, b] of [["Cc1ccccc1C", "Cc1cccc(C)c1"], ["Cc1cccc(C)c1", "Cc1ccc(C)cc1"], ["C1CCCCC1", "CC1CCCC1"]]) assert.notEqual(h(a), h(b), `${a} ≠ ${b}`);
 });
+
+test("SMILES import: aromatic atoms that can't be given a Kekulé structure are refused, not imported as single bonds", () => {
+  assert.throws(() => K.graphFromSmiles("c1cccc1"), /Kekulé/, "a five-carbon 'aromatic' ring is not cyclopentane");
+  for (const [s, f] of [["c1ccccc1", "C6H6"], ["c1ccncc1", "C5H5N"], ["c1ccc2ccccc2c1", "C10H8"], ["c1cc[nH]c1", "C4H5N"], ["Cn1cnc2c1c(=O)n(C)c(=O)n2C", "C8H10N4O2"]]) assert.equal(of(s).formula, f, s);
+});

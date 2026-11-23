@@ -42,7 +42,14 @@ node scripts/organic-review.mjs import reference-review.csv
 which adds the verdicts to `kit/labs/chemistry/reactions/reviews.js`. Imports are cumulative: a row left blank keeps
 whatever verdict that case already has (so a partial review can be returned in parts), and the verdict `clear` removes
 a recorded one. If any row is invalid (an unknown case id or a verdict other than agree, disagree, unsure or clear),
-nothing is written: fix the rows and import again. A case marked `agree` becomes *reviewed*; a
+nothing is written: fix the rows and import again. A file that ends inside a quoted field (a truncated
+export) is refused the same way.
+
+The verdict columns in a freshly exported pack are always empty; any verdict already recorded for a case is shown in
+the read-only *recorded review* column. Only what is typed into the verdict columns is imported, so returning an older
+copy of the sheet can't bring back a verdict that has since been replaced. Each verdict records the outcome it was given
+for: if a case's expected outcome is edited later, an earlier *agree* no longer counts (the case goes back to
+*provisional*, marked "please review again" in the pack); a *disagree* keeps the case disputed until a new verdict. A case marked `agree` becomes *reviewed*; a
 `disagree` marks the case and its rule *disputed* (the lab and its tutor then show the reviewer's note) until it is fixed (to the reference set, the predictor, or both). Regenerate the
 pack after changes with `node scripts/organic-review.mjs export`.
 

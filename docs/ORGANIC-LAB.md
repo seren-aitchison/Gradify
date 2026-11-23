@@ -200,7 +200,8 @@ topics) are part of what the review should confirm.
 * Aromatic substitution is predicted for one benzene ring only; heteroaromatic rings (pyridine) are declined.
 * Declined rather than guessed: HBr on a C=C whose benzylic carbon is less substituted than the other end (benzylic
   against a more substituted cation); HBr on molecules with both C=C and C≡C; hydroxide with a halogen and an
-  aldehyde or ketone together.
+  aldehyde or ketone together; HBr or mercury-catalysed hydration on molecules with more than one C≡C whose carbons are
+  equally substituted (a single such C≡C gives both products).
 * SMILES starting materials must be one molecule, and bracket atoms must have at least the hydrogens their valence
   implies: the drawing model fills valence with implicit hydrogens, so radicals such as `[O]` are refused.
 * Identity (the molecule hash) is exact: rings add a canonical certificate. A very large, highly symmetric molecule can

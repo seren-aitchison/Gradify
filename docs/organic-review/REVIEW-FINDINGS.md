@@ -1,7 +1,8 @@
 # Organic Chemistry Lab: Major review findings (PR #159)
 
-CodeRabbit's two reviews of PR #159 raised 30 **Major** findings (none Critical) and 34 Minor ones. The Major findings
-blocked the merge; the Minor ones are tracked in [BACKLOG.md](BACKLOG.md).
+CodeRabbit's first two reviews of PR #159 raised 30 **Major** findings (none Critical) and 34 Minor ones; its review of
+the fixes raised 12 more Major findings and 20 Minor ones (section 5). The Major findings block the merge; the Minor
+ones are tracked in [BACKLOG.md](BACKLOG.md).
 
 Every Major finding was verified before any code changed, by reproducing it (a probe on the PR's head, `fd37323`) or,
 where only a browser could reproduce it, by reading the code path end to end. **All 30 were real; none was a false
@@ -57,3 +58,24 @@ Expected answers in the tests come from standard chemistry, not from the lab's o
 | 17 | `scripts/organic-review.mjs` | An import with invalid rows still rewrote `reviews.js` with the rest, deleting the recorded verdicts. | Any invalid row aborts the import before writing. | `organic-reference`: review import |
 | 30 | `scripts/organic-review.mjs` | Every import started from nothing, so a partial return dropped earlier verdicts, including unresolved disagreements. | Imports merge into the recorded verdicts; a blank row changes nothing; `clear` removes a verdict explicitly. README updated. | `organic-reference`: review import |
 | 18 | `tests/organic-reference.test.mjs` | The test rejected the `disputed` confidence that a reviewer's "disagree" produces, so the documented review workflow would break the build. | `disputed` accepted; the case must still match the predictor. | `organic-reference`: review import |
+
+## 5. The review of the fixes (head `f2e983f1`)
+
+The same procedure: each finding reproduced (or its code path traced) before changing anything, fixed at its cause, and
+given a regression test that fails on `f2e983f1`. **All 12 were real; none was a false positive.**
+
+| # | Where | Finding, as verified | Fix | Test |
+|---|---|---|---|---|
+| 31 | `lab3d.js` | The 3D model ignored the drawn E/Z: E-but-2-ene was built as the Z isomer, and E and Z shared a cache key. | The drawn C=C geometry is written into the builder's SMILES (`/` on a substituent bond at each end), checked with mol.js and corrected; the cache key includes it, and the panel says when a drawn configuration couldn't be built. | `configuration`: C=C geometry in 3D |
+| 32 | `mechanism-ui.js` notes | An unfinished note that carried an error forward reopened without the marker, so the learner's own next step was checked against the model and rejected, and on the last step couldn't be carried again. | The note saves the marker; older notes get it from the first step where the route leaves the model's. | browser: reopen and finish an HBr route carried forward |
+| 38 | `predictor.js` HBr on alkynes | Pent-2-yne gave 2,2- or 3,3-dibromopentane depending only on the order the bond's atoms were stored. | Equally substituted ends give both products; several such sites are declined. Bond order never decides. | `predictor`: alkynes |
+| 33 | `predictor.js` alkyne hydration | Two tied alkyne sites returned one diketone, dropping the other choices. | The same shared rule: one tied site gives both ketones, several are declined. | `predictor`: alkynes |
+| 34 | `predictor.js` rule record | Phenol + Br₂ (substitution, no mechanism) carried a rule record naming the alkene-addition mechanism, which the tutor received. | The applied rule record names the mechanism actually applied. | `predictor`: applied rule record |
+| 36 | `skeletal.js` SMILES import | `c1cccc1` (aromatic atoms with no Kekulé structure) was imported as cyclopentane. | Refused with the reason; benzene, pyridine, naphthalene, pyrrole and caffeine still import. | `skeletal`: Kekulé |
+| 39 | `stereo-outcome.js` | An ester reduction reported the acid half's new (planar-carbon) centre as a single stereoisomer, because the starting material's defined centre, which left with the alcohol half, counted. | A product is one stereoisomer only if it keeps a centre whose configuration the rule determines. | `stereo-outcome`: retained centres |
+| 41 | `tests/organic-reference.test.mjs` | Exact-product expectations were compared as sets, so one molecule of ethanoic acid passed where two form. | Compared with counts; five reference cases now list their repeated products. | `organic-reference`: review pack |
+| 35 | `scripts/organic-review.mjs` export | The export prefilled the verdict columns from recorded reviews, so returning an old sheet restored a replaced verdict. | The verdict columns start empty; the recorded review is shown read-only beside them. | `organic-reference`: review pack |
+| 37 | `scripts/organic-review.mjs` CSV | A file ending inside a quoted field was imported, truncated last row included. | Refused, nothing imported. | `organic-reference`: review pack |
+| 40 | `scripts/organic-review.mjs` write | `reviews.js` was rewritten in place, so a failed write could leave it truncated and break the next import. | Written to a temporary file beside it, then renamed over it. | code path (a disk failure can't be staged in a test) |
+| 42 | `tests/data/organic-reference.mjs` | An "agree" stayed attached when a case's expected outcome was later edited, so the case still showed as reviewed. | A verdict records the outcome it was given for; an edited case goes back to provisional (flagged in the pack) until reviewed again. A "disagree" stays disputed. | `organic-reference`: review pack |
+

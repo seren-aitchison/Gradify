@@ -253,7 +253,9 @@ export function graphFromSmiles(s) {
     if (needs[a] && needs[b] && !has(a) && !has(b)) { dbl.add(k); if (solve(x + 1)) return true; dbl.delete(k); }
     return solve(x + 1);
   };
-  solve(0);
+  // aromatic atoms that can't each get one double bond (c1cccc1, a five-carbon "aromatic" ring) aren't a molecule the
+  // lab can draw: refuse them rather than quietly import single bonds (that would be cyclopentane)
+  if (!solve(0)) throw new Error(`"${s}" has aromatic atoms that can't be given alternating double bonds (a Kekulé structure), so it isn't a valid aromatic ring.`);
   p.bonds.forEach((b, k) => addBond(m, m.atoms[b.a].id, m.atoms[b.b].id, orders[k] || (dbl.has(k) ? 2 : 1)));
   // explicit H counts from bracket atoms become drawn hydrogens. The drawing model always fills an atom's valence with
   // implicit hydrogens, so a bracket atom with fewer H than that (a radical such as [O] or [CH3]) can't be represented:
@@ -470,8 +472,10 @@ const ORG = { B: [3], C: [4], N: [3, 5], O: [2], P: [3, 5], S: [2, 4, 6], F: [1]
  * SMILES for G, with optional tetrahedral tags (Map of G index → "@" | "@@"); { text, order } where order[k] is the
  * G index of the k-th atom written (the atom order a SMILES reader such as mol.js numbers them in).
  */
-export function smilesOf(G, tags = new Map()) { const order = []; const text = smiles(G, tags, order); return { text, order }; }
-function smiles(G, tags = new Map(), order = []) {
+export function smilesOf(G, tags = new Map(), dirs = new Map()) { const order = []; const text = smiles(G, tags, order, dirs); return { text, order }; }
+// dirs: optional "/" or "\\" on single bonds (Map of "i-j", lower index first, → symbol), written before the bond's
+// second atom, for C=C geometry
+function smiles(G, tags = new Map(), order = [], dirs = new Map()) {
   const vis = new Array(G.n).fill(-1), parts = []; let t = 0; const kids = G.adj.map(() => []), close = new Map();
   for (let s = 0; s < G.n; s++) {
     if (vis[s] >= 0) continue; const root = s;
@@ -484,7 +488,7 @@ function smiles(G, tags = new Map(), order = []) {
   const write = (u) => {
     order.push(u); let s = sym(u);
     for (const e of G.adj[u]) { const k = `${Math.min(u, e.j)}-${Math.max(u, e.j)}`; if (!close.has(k)) continue; if (vis[e.j] > vis[u]) { let d = 1; while (free.includes(d) || [...dig.values()].includes(d)) d++; dig.set(k, d); s += bs(e.o) + (d > 9 ? `%${d}` : d); } else if (dig.has(k)) { const d = dig.get(k); dig.delete(k); s += d > 9 ? `%${d}` : d; } }
-    kids[u].forEach((e, k) => { const sub = bs(e.o) + write(e.j); s += k < kids[u].length - 1 ? `(${sub})` : sub; });
+    kids[u].forEach((e, k) => { const sub = (e.o === 1 ? dirs.get(`${Math.min(u, e.j)}-${Math.max(u, e.j)}`) || "" : "") + bs(e.o) + write(e.j); s += k < kids[u].length - 1 ? `(${sub})` : sub; });
     return s;
   };
   return parts.map(write).join(".");

@@ -64,7 +64,11 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
 
   function load(id, mech = null) {
     stopAnim(); src = id; sel.value = id; pending = []; done = []; viewK = null; fb = null; finished = false; assisted = false; attempts = []; ecf = null; spot = null; stopTimer(); xq = null;
-    if (mech) { inst = mech.reactionId ? instantiate(REACTIONS.find((r) => r.id === mech.reactionId)) : null; src = mech.reactionId || "mine"; sel.value = src; const rp = E.replay({ start: mech.start, steps: mech.steps }); states = rp.states; done = mech.steps.slice(0, rp.states.length - 1).map((s) => s.arrows); }
+    if (mech) { inst = mech.reactionId ? instantiate(REACTIONS.find((r) => r.id === mech.reactionId)) : null; src = mech.reactionId || "mine"; sel.value = src; const rp = E.replay({ start: mech.start, steps: mech.steps }); states = rp.states; done = mech.steps.slice(0, rp.states.length - 1).map((s) => s.arrows);
+      // a note that carried an error forward keeps doing so: its later steps are checked against the learner's own
+      // intermediate, not the model's. Saved with the note; for older notes, the first step where the route leaves the
+      // model's is where the carrying started.
+      if (inst) { const model = E.replay({ start: inst.start, steps: inst.steps }).states, k = states.findIndex((st, i) => i > 0 && (!model[i] || !E.sameState(st, model[i]))); ecf = Number.isInteger(mech.ecf) ? mech.ecf : k > 0 ? k - 1 : null; } }
     else if (id === "mine") {
       inst = null; const m = getDrawing();
       states = m && m.atoms.length ? [E.fromDrawing(m)] : [];
@@ -410,7 +414,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     button(a, "Undo arrow", () => { pending.pop(); fb = null; refresh(); });
     button(a, "Clear arrows", () => { pending = []; fb = null; refresh(); });
     button(a, "Restart", () => load(src));
-    if (onSave) button(a, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })) }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
+    if (onSave) button(a, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })), ecf }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
     if (!inst || exam) return;
     button(h, "Hint", () => { if (finished) return; fb = { kind: "info", html: `<h4>Hint</h4><p>${esc(inst.steps[done.length].hint)}</p>` }; feedback(); });
     button(h, "Explain", () => { if (finished) return; fb = { kind: "info", html: `<h4>The idea</h4><p>${esc(inst.steps[done.length].explain)}</p>` }; feedback(); });

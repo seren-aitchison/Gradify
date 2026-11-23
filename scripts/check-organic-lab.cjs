@@ -102,6 +102,27 @@ async function examToggle(p, on) {
     ok("#3/#5 no page errors", !errs.length, errs.join(" | "));
     await p.close();
   }
+  // ---------- error carried forward survives saving and reopening an unfinished note ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "mechanism"); await pick(p, ".mx-src", "hbr-propene"); await p.waitForTimeout(200);
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    // step 1 drawn wrongly (H to C2, leaving the cation on C1), then carried forward
+    await addArrow(p, "bond:6", "atom:4", "2"); await addArrow(p, "bond:8", "atom:5");
+    await clickText(p, "Check step", '[data-pane="mechanism"]'); await p.waitForTimeout(300);
+    const carried = await p.evaluate(() => { const b = document.querySelector('[data-pane="mechanism"] [data-ecf]'); if (!b) return false; b.click(); return true; });
+    await p.waitForTimeout(2500);
+    await clickText(p, "Save to notes", '[data-pane="mechanism"]'); await p.waitForTimeout(200);
+    await mode(p, "structure"); await p.waitForTimeout(300);
+    await p.evaluate(() => document.querySelector("[data-open]").click()); await p.waitForTimeout(600);
+    // the learner's own next step: Br⁻ attacks the cation they made, at C1
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    await addArrow(p, "lp:5", "atom:1"); await clickText(p, "Check step", '[data-pane="mechanism"]');
+    await p.waitForFunction(() => /Mechanism complete/.test(document.querySelector('[data-pane="mechanism"] .lab-info')?.innerText || ""), null, { timeout: 8000 }).catch(() => {});
+    const fb = await feedback(p);
+    ok("an unfinished note that carried an error forward reopens still carrying it, and the learner can finish", carried && /Mechanism complete/.test(fb) && /carried forward/i.test(fb), carried ? fb.match(/Mechanism complete[^\n]*/)?.[0] || fb.slice(0, 120).replace(/\n/g, " ") : "no carry-forward button");
+    ok("carried-forward note: no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
   // ---------- #25 (and #14): declined predictions aren't graded; a reaction with no organic product is shown as one ----------
   {
     const { p, errs } = await open(b); await mode(p, "reaction"); await p.waitForTimeout(300);

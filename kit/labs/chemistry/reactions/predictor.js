@@ -147,11 +147,25 @@ function markovnikov(m, X0, label) {
   } else why.push(`Each of the ${sites.length} C=C bonds reacts (reagent in excess), each following Markovnikov's rule${picks.some((x) => x.by === "benzylic") ? " (next to a benzene ring, the X goes on the benzylic carbon)" : ""}.`);
   return { prods, why, stereo: stereoNotes(m, prods, "planar"), label };
 }
+/**
+ * Markovnikov addition at every C≡C, with the new group(s) on the more substituted carbon of each. `place(p, b, t)`
+ * adds them at carbon t. At a site whose two carbons are equally substituted but give different products (pent-2-yne),
+ * nothing decides: one such site gives both products; several give a mixture the rules can't rank, so { tie: true }.
+ * The order the bond's atoms happen to be stored in never decides.
+ */
+function alkyneAdd(m, s, place) {
+  const deg = (id) => cCount(m, id), build = (flip) => { const p = K.clone(m); s.forEach((b, k) => { const up = deg(b.a) > deg(b.b) || (deg(b.a) === deg(b.b) && !flip.has(k)); setOrder(p, b.a, b.b, 1); place(p, b, up ? b.a : b.b); }); return p; };
+  const base = build(new Set()), ties = s.map((b, k) => k).filter((k) => deg(s[k].a) === deg(s[k].b) && key(build(new Set([k]))) !== key(base));
+  if (!ties.length) return { prods: [{ m: base, role: "product" }] };
+  if (s.length > 1) return { tie: true };
+  return { prods: [{ m: base, role: "product" }, { m: build(new Set([0])), role: "product" }], both: true };
+}
 /** HX across C≡C twice (excess): both X on the more substituted carbon (a geminal dihalide). */
 function alkyneHX(m, X0) {
   const s = alkynes(m); if (!s.length) return null;
-  const p = K.clone(m); for (const b of s) { const t = cCount(m, b.a) >= cCount(m, b.b) ? b.a : b.b; setOrder(p, b.a, b.b, 1); sprout(p, t, X0); sprout(p, t, X0); }
-  return { prods: [{ m: p, role: "product" }], why: ["With excess HBr each C≡C adds two HBr. Both follow Markovnikov's rule, so both bromines end up on the same, more substituted carbon (a geminal dibromide)."] };
+  const r = alkyneAdd(m, s, (p, b, t) => { sprout(p, t, X0); sprout(p, t, X0); });
+  if (r.tie) return { fail: "Not predicted: this molecule has more than one C≡C whose two carbons are equally substituted, so each gives two different geminal dibromides and the mixture can't be ranked by the lab's rules." };
+  return { prods: r.prods, why: ["With excess HBr each C≡C adds two HBr. Both follow Markovnikov's rule, so both bromines end up on the same, more substituted carbon (a geminal dibromide).", ...(r.both ? ["Both carbons of this C≡C carry the same number of carbon groups, so either can take the bromines: the two geminal dibromides form in similar amounts."] : [])] };
 }
 
 // ---------- aromatic substitution ----------
@@ -355,9 +369,9 @@ export const REAGENTS = [
   { id: "hg-hydration", label: "H₂O, dilute H₂SO₄, HgSO₄ catalyst", cond: "warm", type: "Electrophilic addition (hydration of an alkyne)", level: "advanced",
     run(m) {
       const s = alkynes(m); if (!s.length) return none(m, "this mercury-catalysed hydration is for C≡C bonds");
-      const one = (pick) => { const p = K.clone(m); for (const b of s) { const t = pick(b); setOrder(p, b.a, b.b, 1); sprout(p, t, "O", 2); } return p; };
-      const deg = (id) => cCount(m, id), a = one((b) => (deg(b.a) >= deg(b.b) ? b.a : b.b)), z = one((b) => (deg(b.a) >= deg(b.b) ? b.b : b.a));
-      const prods = key(a) === key(z) ? [{ m: a, role: "product" }] : s.length === 1 && deg(s[0].a) === deg(s[0].b) ? [{ m: a, role: "product" }, { m: z, role: "product" }] : [{ m: a, role: "product" }];
+      const r = alkyneAdd(m, s, (p, b, t) => sprout(p, t, "O", 2));
+      if (r.tie) return { fail: "Not predicted: this molecule has more than one C≡C whose two carbons are equally substituted, so each can give either ketone and the mixture can't be ranked by the lab's rules." };
+      const prods = r.prods;
       return { prods, why: ["Water adds across the C≡C following Markovnikov's rule, giving an enol (C=C–OH), which rearranges at once to the more stable C=O (keto–enol tautomerism).", "A terminal alkyne gives a methyl ketone; ethyne gives ethanal."], byproducts: [] };
     } },
   { id: "kmno4-cold", label: "cold dilute KMnO₄", cond: "room temperature", type: "Oxidation (dihydroxylation)", level: "advanced",
@@ -573,7 +587,9 @@ export const statusOf = (text) => (/^(No reaction|No significant reaction|No add
 export function predict(m, reagentId) {
   const out = predictRaw(m, reagentId);
   out.status = out.reacts ? "reacts" : statusOf(out.why?.[0] || "");
-  out.rule = out.reagent ? ruleFor(out.reagent) : null;
+  // the rule record shown and sent to the tutor names the mechanism actually applied (phenol + Br₂ is substitution, so
+  // not the alkene-addition mechanism the reagent links to by default)
+  out.rule = out.reagent ? { ...ruleFor(out.reagent), mechanism: out.reacts ? out.mechanism || null : null } : null;
   if (out.reacts) { try { out.stereo = [...out.stereo, ...stereoOutcome(m, reagentId, out)]; } catch { for (const p of out.products) p.config = null; } }
   return out;
 }

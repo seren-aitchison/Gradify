@@ -25,7 +25,8 @@ export function check({ start: smiles, reagent, expect: want }) {
   const same = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
   if (typeof want === "string") return main.has(hash(want)) ? null : fail(`expected ${want} as a main product`);
   if (want.byproducts && !want.byproducts.every((b) => r.byproducts.includes(b))) return fail(`expected by-products ${want.byproducts.join(" + ")}`);
-  if (want.products) return same(all, new Set(want.products.map(hash))) ? null : fail(`expected exactly ${want.products.join(" + ") || "no organic product"}`);
+  // exact products are compared with their counts: two molecules of ethanoic acid are not one
+  if (want.products) { const count = (hs) => hs.reduce((mp, h) => mp.set(h, (mp.get(h) || 0) + 1), new Map()), a = count(r.products.map((p) => K.analyse(p.m).hash)), b = count(want.products.map(hash)); return a.size === b.size && [...a].every(([h, n]) => b.get(h) === n) ? null : fail(`expected exactly ${want.products.join(" + ") || "no organic product"}`); }
   if (!same(main, new Set(want.major.map(hash)))) return fail(`expected major ${want.major.join(", ")}`);
   if (!same(minor, new Set(want.minor.map(hash)))) return fail(`expected minor ${want.minor.join(", ") || "none"}`);
   return null;
@@ -79,4 +80,26 @@ test("review import: cumulative, blank rows keep earlier verdicts, and an invali
   assert.equal(mergeReviews(second.reviews, csv([["no-such-case", "agree"]]), known).bad.length, 1);
   // a disputed case (what "disagree" produces) still passes the reference check when the predictor matches it
   const row = { ...REFERENCE[0], confidence: "disputed" }; assert.equal(check(row), null);
+});
+
+test("review pack: exact products count repeats, a truncated CSV is refused, old sheets can't restore verdicts, and edited cases need review again", async () => {
+  const { mergeReviews, referenceRows } = await import("../scripts/organic-review.mjs");
+  const { expectKey } = await import("./data/organic-reference.mjs");
+  // one ethanoic acid where two form is a mismatch
+  assert.ok(check({ start: "CC(=O)OC(C)=O", reagent: "water", expect: { products: ["CC(=O)O"] } }));
+  assert.equal(check({ start: "CC(=O)OC(C)=O", reagent: "water", expect: { products: ["CC(=O)O", "CC(=O)O"] } }), null);
+  const known = new Map(REFERENCE.map((r) => [r.id, expectKey(r.expect)])), [a] = known.keys();
+  const head = "id,start,reagent,expected,verdict,correction,comment,reviewer,date";
+  assert.throws(() => mergeReviews({}, `${head}\n${a},x,y,z,agree,,"cut off here`, known), /quoted field/);
+  // a verdict records the outcome it was given for; editing that outcome makes the agreement stale
+  const { reviews } = mergeReviews({}, `${head}\n${a},x,y,z,agree,,,Dr R,2026-12-01`, known);
+  assert.equal(reviews[a].expect, known.get(a));
+  const { confidenceOf } = await import("./data/organic-reference.mjs");
+  assert.equal(confidenceOf(reviews[a], known.get(a)).confidence, "reviewed", "agreed to this outcome");
+  assert.deepEqual(confidenceOf(reviews[a], expectKey({ products: ["CCO"] })), { stale: true, confidence: "provisional" }, "the outcome was edited after the agreement");
+  assert.equal(confidenceOf({ ...reviews[a], verdict: "disagree" }, expectKey({ products: ["CCO"] })).confidence, "disputed", "a disagreement stays disputed");
+  // the exported sheet leaves the verdict columns empty and shows the recorded review read-only
+  const [hdr, ...rows] = referenceRows([{ ...REFERENCE[0], review: { verdict: "disagree", reviewer: "Dr R", note: "wrong product" }, stale: false }]);
+  const at = (n) => hdr.findIndex((h) => h.startsWith(n));
+  assert.equal(rows[0][at("verdict")], ""); assert.equal(rows[0][at("comment")], ""); assert.match(rows[0][at("recorded review")], /disagree by Dr R: wrong product/);
 });

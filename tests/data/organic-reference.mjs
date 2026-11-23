@@ -9,16 +9,30 @@
 // Tested by tests/organic-reference.test.mjs.
 import { REVIEWS } from "../../kit/labs/chemistry/reactions/reviews.js";
 export const DECLINE = { declined: true };
+/**
+ * The expected outcome as text, stored with a reviewer's verdict: an agreement counts only for the outcome the reviewer
+ * actually saw, so editing a case's expectation sends it back for review (its id, start|reagent, stays the same).
+ */
+/**
+ * A case's confidence from its recorded review: "agree" makes it reviewed only while its expectation is the one agreed
+ * to (otherwise it's stale, back to provisional until reviewed again); "disagree" keeps it disputed whatever is edited,
+ * until a new verdict resolves it.
+ */
+export function confidenceOf(review, key) {
+  const stale = !!review && review.expect !== key;
+  return { stale, confidence: review?.verdict === "disagree" ? "disputed" : review?.verdict === "agree" && !stale ? "reviewed" : "provisional" };
+}
+export const expectKey = (e) => (e === null ? "no-reaction" : e === DECLINE ? "declined" : JSON.stringify(e));
 const SECTION = Symbol("section");
 const RAW = [
   // ---------- alkenes ----------
   SECTION, { topic: "alkenes", sources: [["aqa", "3.3.4 Alkenes"], ["clayden", "electrophilic addition to alkenes"]] },
   ["C=C", "h2-ni", "CC"], ["C=C", "br2", "BrCCBr"], ["C=C", "hbr", "CCBr"], ["C=C", "steam", "CCO"], ["C=C", "kmno4-cold", "OCCO"],
-  ["C=C", "kmno4-hot", { products: [], byproducts: ["CO₂", "H₂O"] }, "oxidised completely to CO₂ and water: a reaction (purple decolourised) with no organic product, not “no reaction”"], ["C=C", "ozone", { products: ["C=O"] }], ["C=C", "lindlar", null], ["C=C", "nabh4", null], ["C=C", "naoh-aq", null],
+  ["C=C", "kmno4-hot", { products: [], byproducts: ["CO₂", "H₂O"] }, "oxidised completely to CO₂ and water: a reaction (purple decolourised) with no organic product, not “no reaction”"], ["C=C", "ozone", { products: ["C=O", "C=O"] }], ["C=C", "lindlar", null], ["C=C", "nabh4", null], ["C=C", "naoh-aq", null],
   ["C=C", "cl2-alcl3", DECLINE], ["C=C", "nitration", null], ["C=C", "tollens", null], ["C=C", "hg-hydration", null], ["C=C", "br2-uv", DECLINE], ["C=C", "grignard", null],
   ["C=CC", "h2-ni", "CCC"], ["C=CC", "br2", "CC(Br)CBr"], ["C=CC", "hbr", { major: ["CC(C)Br"], minor: ["CCCBr"] }], ["C=CC", "steam", { major: ["CC(C)O"], minor: ["CCCO"] }],
   ["C=CC", "kmno4-cold", "CC(O)CO"], ["C=CC", "kmno4-hot", { products: ["CC(=O)O"] }], ["C=CC", "ozone", { products: ["C=O", "CC=O"] }], ["C=CC", "nabh4", null], ["C=CC", "cr-reflux", null],
-  ["CC=CC", "hbr", "CC(Br)CC"], ["CC=CC", "br2", "CC(Br)C(C)Br"], ["CC=CC", "steam", "CC(O)CC"], ["CC=CC", "kmno4-hot", { products: ["CC(=O)O"] }], ["CC=CC", "ozone", { products: ["CC=O"] }], ["CC=CC", "h2-ni", "CCCC"],
+  ["CC=CC", "hbr", "CC(Br)CC"], ["CC=CC", "br2", "CC(Br)C(C)Br"], ["CC=CC", "steam", "CC(O)CC"], ["CC=CC", "kmno4-hot", { products: ["CC(=O)O", "CC(=O)O"] }], ["CC=CC", "ozone", { products: ["CC=O", "CC=O"] }], ["CC=CC", "h2-ni", "CCCC"],
   ["C=C(C)C", "hbr", { major: ["CC(C)(C)Br"], minor: ["CC(C)CBr"] }], ["C=C(C)C", "steam", { major: ["CC(C)(C)O"], minor: ["CC(C)CO"] }], ["C=C(C)C", "kmno4-hot", { products: ["CC(C)=O"] }], ["C=C(C)C", "ozone", { products: ["C=O", "CC(C)=O"] }],
   ["CC=C(C)C", "hbr", { major: ["CCC(C)(C)Br"], minor: ["CC(Br)C(C)C"] }], ["CC=C(C)C", "steam", { major: ["CCC(C)(C)O"], minor: ["CC(O)C(C)C"] }], ["CC=C(C)C", "kmno4-hot", { products: ["CC(=O)O", "CC(C)=O"] }], ["CC=C(C)C", "ozone", { products: ["CC=O", "CC(C)=O"] }],
   ["C=CCC", "hbr", { major: ["CCC(C)Br"], minor: ["CCCCBr"] }], ["C=CCC", "kmno4-hot", { products: ["CCC(=O)O"] }], ["C=CCC", "ozone", { products: ["C=O", "CCC=O"] }], ["C=CCC", "br2", "CCC(Br)CBr"],
@@ -81,11 +95,11 @@ const RAW = [
   ["CCC(=O)O", "esterify", "CCOC(=O)CC"], ["CCC(=O)O", "socl2", "CCC(=O)Cl"],
   ["OC(=O)c1ccccc1", "nitration", "OC(=O)c1cccc(c1)[N+](=O)[O-]"], ["OC(=O)c1ccccc1", "naoh-aq", "[O-]C(=O)c1ccccc1"], ["OC(=O)c1ccccc1", "lialh4", "OCc1ccccc1"], ["OC(=O)c1ccccc1", "cl2-alcl3", "OC(=O)c1cccc(Cl)c1"],
   ["OC(=O)c1ccccc1", "fc-acyl", null, "deactivated"], ["OC(=O)c1ccccc1", "fc-alkyl", null], ["OC(=O)c1ccccc1", "esterify", "CCOC(=O)c1ccccc1"],
-  ["CCOC(C)=O", "naoh-aq", { products: ["CC(=O)[O-]", "CCO"] }], ["CCOC(C)=O", "acid-hydrolysis", { products: ["CC(=O)O", "CCO"] }], ["CCOC(C)=O", "lialh4", { products: ["CCO"] }], ["CCOC(C)=O", "grignard", { products: ["CC(C)(C)O", "CCO"] }],
+  ["CCOC(C)=O", "naoh-aq", { products: ["CC(=O)[O-]", "CCO"] }], ["CCOC(C)=O", "acid-hydrolysis", { products: ["CC(=O)O", "CCO"] }], ["CCOC(C)=O", "lialh4", { products: ["CCO", "CCO"] }], ["CCOC(C)=O", "grignard", { products: ["CC(C)(C)O", "CCO"] }],
   ["CCOC(C)=O", "nabh4", null], ["CCOC(C)=O", "esterify", null], ["CCOC(C)=O", "tollens", null],
   ["COC(=O)c1ccccc1", "naoh-aq", { products: ["[O-]C(=O)c1ccccc1", "CO"] }], ["COC(=O)c1ccccc1", "nitration", "COC(=O)c1cccc(c1)[N+](=O)[O-]"], ["COC(=O)c1ccccc1", "lialh4", { products: ["OCc1ccccc1", "CO"] }],
   ["CC(Cl)=O", "water", "CC(=O)O"], ["CC(Cl)=O", "ethanol-rt", "CCOC(C)=O"], ["CC(Cl)=O", "nh3-cold", "CC(N)=O"], ["CC(Cl)=O", "naoh-aq", "CC(=O)[O-]"], ["CC(Cl)=O", "lialh4", "CCO"], ["CC(Cl)=O", "nabh4", "CCO"], ["CC(Cl)=O", "nh3", DECLINE],
-  ["CC(=O)OC(C)=O", "water", { products: ["CC(=O)O"] }], ["CC(=O)OC(C)=O", "ethanol-rt", { products: ["CCOC(C)=O", "CC(=O)O"] }], ["CC(=O)OC(C)=O", "nh3-cold", { products: ["CC(N)=O", "CC(=O)O"] }],
+  ["CC(=O)OC(C)=O", "water", { products: ["CC(=O)O", "CC(=O)O"] }], ["CC(=O)OC(C)=O", "ethanol-rt", { products: ["CCOC(C)=O", "CC(=O)O"] }], ["CC(=O)OC(C)=O", "nh3-cold", { products: ["CC(N)=O", "CC(=O)O"] }],
   ["CC(N)=O", "acid-hydrolysis", "CC(=O)O"], ["CC(N)=O", "naoh-aq", "CC(=O)[O-]"], ["CC(N)=O", "lialh4", "CCN"], ["CC(N)=O", "nabh4", null],
   ["CCC#N", "acid-hydrolysis", "CCC(=O)O"], ["CCC#N", "naoh-aq", "CCC(=O)[O-]"], ["CCC#N", "lialh4", "CCCN"], ["CCC#N", "nabh4", null], ["CC(O)C#N", "acid-hydrolysis", "CC(O)C(=O)O"],
   // ---------- alkanes ----------
@@ -117,7 +131,7 @@ export const REFERENCE = [];
   for (let i = 0; i < RAW.length; i++) {
     if (RAW[i] === SECTION) { meta = RAW[++i]; continue; }
     const [start, reagent, expect, note] = RAW[i], id = `${start}|${reagent}`;
-    const review = REVIEWS[id];
-    REFERENCE.push({ id, start, reagent, expect, note: note || "", topic: meta.topic, sources: meta.sources.map(([src, topic]) => ({ id: src, topic })), confidence: review?.verdict === "agree" ? "reviewed" : review?.verdict === "disagree" ? "disputed" : "provisional", review: review || null });
+    const review = REVIEWS[id], key = expectKey(expect), { confidence, stale } = confidenceOf(review, key);
+    REFERENCE.push({ id, start, reagent, expect, expectKey: key, note: note || "", topic: meta.topic, sources: meta.sources.map(([src, topic]) => ({ id: src, topic })), confidence, review: review || null, stale });
   }
 }

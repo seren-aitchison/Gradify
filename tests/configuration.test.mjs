@@ -120,3 +120,12 @@ test("the 3D model has the configuration drawn with wedges and dashes, and its m
   }
   assert.equal(build3d(drawSmiles("CC(Br)CC")).drawn.size, 0, "a flat drawing fixes no configuration");
 });
+
+test("the 3D model has the C=C geometry drawn (E or Z), with stereocentres alongside", async () => {
+  const { build3d } = await import("../kit/labs/chemistry/lab3d.js");
+  for (const s of ["C/C=C/C", "C/C=C\\C", "CC/C=C(\\C)Cl", "CC/C=C(/C)Cl", "OC(=O)/C=C\\C(=O)O", "OC(=O)/C=C/C(=O)O", "C/C=C/C=C/C", "C/C=C\\[C@@H](F)Cl"]) {
+    const m = drawSmiles(s), cfg = C.configuration(m), r = build3d(m);
+    assert.equal(r.missed, 0, `${s}: built as drawn`);
+    assert.deepEqual(r.drawnBonds.map(([a, c]) => M.ez(r.mol, a, c)).sort(), cfg.bonds.map((b) => b.label).sort(), `${s}: E/Z`);
+  }
+});

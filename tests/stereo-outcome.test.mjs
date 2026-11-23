@@ -78,3 +78,10 @@ test("several independent addition units give a mixture of stereoisomers, not on
   assert.equal(run("C/C=C/C", "kmno4-cold").products[0].config.form, "racemic"); assert.equal(run("C/C=C\\C", "kmno4-cold").products[0].config.form, "meso");
   assert.equal(run("C=CC", "br2").products[0].config.form, "racemic");
 });
+
+test("a product is one stereoisomer only if it keeps a centre the rule determines, not because the start had one elsewhere", () => {
+  // LiAlH₄ on (S)-butan-2-yl 3-oxobutanoate: the defined centre leaves in the alcohol; the diol's new centre forms at a planar carbon
+  const out = run("CC(=O)CC(=O)O[C@H](C)CC", "lialh4");
+  const diol = out.products.find((p) => K.analyse(p.m).name?.name === "butane-1,3-diol"), alc = out.products.find((p) => K.analyse(p.m).name?.name === "butan-2-ol");
+  assert.equal(diol.config.form, "racemic"); assert.equal(alc.config.form, "single");
+});
