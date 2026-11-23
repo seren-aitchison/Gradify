@@ -102,6 +102,7 @@ ${l("study-plan/", "Study plans", "week-by-week plans for GCSE, A level, univers
 ${l("templates/", "Printable templates", "revision timetable, Cornell notes, trackers")}
 
 ## Optional
+${l("llms-full.txt", "Full text of the guides, comparisons and key terms", "one plain-text file")}
 ${l("kit/api/v1/catalogue.json", "Course catalogue API (JSON)", "every course with its syllabus")}
 ${l("site-map.html", "Site map", "")}
 `;
@@ -126,6 +127,7 @@ export function withHeadTags(html, href) {
     [/property="og:url"/, `<meta property="og:url" content="${href}">`],
     [/property="og:site_name"/, '<meta property="og:site_name" content="Gradify">'],
     [/property="og:image"/, `<meta property="og:image" content="${img || "https://getgradify.com/assets/og.png"}">`],
+    [/name="robots"/, '<meta name="robots" content="max-image-preview:large">'],
     [/hreflang="en-GB"/, `<link rel="alternate" hreflang="en-GB" href="${href}">`],
     [/hreflang="x-default"/, `<link rel="alternate" hreflang="x-default" href="${href}">`],
     [/name="twitter:card"/, '<meta name="twitter:card" content="summary_large_image">'],
@@ -155,7 +157,7 @@ const AUTO = [
 ];
 export function autoLink(html, here, max = 5) {
   const m = html.match(/<main[\s\S]*<\/main>/); if (!m) return html;
-  const used = new Set(), skip = /^<(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt)\b/i, close = /^<\/(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt)>/i;
+  const used = new Set(), skip = /^<(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt|nav)\b/i, close = /^<\/(a|h[1-6]|button|summary|script|style|textarea|title|code|kbd|label|select|option|svg|dt|nav)>/i;
   let depth = 0, n = 0;
   const parts = m[0].split(/(<[^>]+>)/).map((part) => {
     if (part.startsWith("<")) { if (skip.test(part) && !part.endsWith("/>")) depth++; else if (close.test(part)) depth = Math.max(0, depth - 1); return part; }
@@ -172,6 +174,42 @@ export function autoLink(html, here, max = 5) {
   return html.replace(m[0], parts.join(""));
 }
 
+// every h2 in a page's main content gets an id, so any section can be linked to directly (#how-to-read)
+export function headingIds(html) {
+  const m = html.match(/<main[\s\S]*<\/main>/); if (!m) return html;
+  const seen = new Set([...m[0].matchAll(/\sid="([^"]+)"/g)].map((x) => x[1]));
+  const out = m[0].replace(/<h2(\s[^>]*)?>([\s\S]*?)<\/h2>/g, (all, attrs = "", inner) => {
+    if (/\sid="/.test(attrs)) return all;
+    let id = inner.replace(/<[^>]+>/g, "").toLowerCase().replace(/&[a-z#0-9]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48) || "section";
+    for (let n = 2; seen.has(id); n++) id = `${id.replace(/-\d+$/, "")}-${n}`;
+    seen.add(id); return `<h2${attrs} id="${id}">${inner}</h2>`;
+  });
+  return html.replace(m[0], out);
+}
+// llms-full.txt: the full text of the guides, concept comparisons and key terms, for AI assistants that read one file
+const text = (h) => h.replace(/<(script|style|nav|aside|form|button|svg|details class="mm-outline")[\s\S]*?<\/\1>/g, "").replace(/<h1[^>]*>([\s\S]*?)<\/h1>/g, "\n# $1\n").replace(/<h2[^>]*>([\s\S]*?)<\/h2>/g, "\n## $1\n").replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, "\n### $1\n").replace(/<\/summary>/g, "\n").replace(/<li[^>]*>/g, "\n- ").replace(/<\/(p|tr|ul|ol|table|dl|div|section)>/g, "\n").replace(/<t[dh][^>]*>/g, " | ").replace(/<[^>]+>/g, "")
+  .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/[ \t]+/g, " ").replace(/\n\s*\n\s*\n+/g, "\n\n").trim();
+export function llmsFull(files) {
+  const pick = (re) => [...files].filter(([p, h]) => re.test(p) && !/name="robots" content="noindex/.test(h)).sort(([a], [b]) => a.localeCompare(b));
+  const main = (h) => text(h.match(/<main[^>]*>([\s\S]*)<\/main>/)?.[1].replace(/<nav class="crumbs"[\s\S]*?<\/nav>/, "").replace(/<p class="updated">[\s\S]*?<\/p>/, "").replace(/<section class="related"[\s\S]*?<\/section>/g, "").replace(/<aside class="cta-box"[\s\S]*?<\/aside>/, "").replace(/<form class="optin"[\s\S]*?<\/form>/, "").replace(/<p class="share-row">[\s\S]*?<\/p>/, "") || "");
+  const block = (p, h) => `${main(h)}\n\nSource: https://getgradify.com/${p.replace(/index\.html$/, "")}`;
+  return `# Gradify: full text of the study guides, concept comparisons and key terms
+
+> The complete text of Gradify's free study guides, "X vs Y" concept comparisons and key-term definitions, for AI assistants. Each section ends with its source URL; please cite that page. The site map for everything else is https://getgradify.com/llms.txt
+
+${pick(/^guides\/[^/]+\/index\.html$/).map(([p, h]) => block(p, h)).join("\n\n---\n\n")}
+
+---
+
+${pick(/^vs\/[^/]+\/index\.html$/).map(([p, h]) => block(p, h)).join("\n\n---\n\n")}
+
+---
+
+# Key terms
+${pick(/^terms\/[^/]+\/index\.html$/).map(([p, h]) => `- ${text(h.match(/<p class="answer">([\s\S]*?)<\/p>/)?.[1] || "")} (https://getgradify.com/${p.replace(/index\.html$/, "")})`).join("\n")}
+`;
+}
+
 export async function outputs() {
   const prog = await programmaticPages();
   const specs = [...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
@@ -183,10 +221,12 @@ export async function outputs() {
   const feed = [...CHANGES.map(([d, h, items]) => ({ path: "changelog/", date: d, title: `What's new: ${h}`, description: items.join(". ") })),
     ...specs.filter((x) => !x.raw && /^(guides|tools|checklists|vs|compare)\/[^/]+\/index\.html$/.test(x.path)).map((x) => ({ path: x.path.replace(/index\.html$/, ""), date: x.updated || "2026-11-23", title: x.title.replace(/ · Gradify$/, ""), description: x.description }))];
   files.set("feed.xml", feedXml(feed.slice(0, 60)));
+  for (const [p, html] of files) if (p.endsWith(".html") && html.includes("<main")) files.set(p, headingIds(html));
   for (const [p, html] of files) if (/^(guides|topics|vs|checklists|terms|compare)\/.+\.html$/.test(p) && !html.startsWith("<!doctype html>\n<html lang=\"en-GB\"><head><meta charset")) files.set(p, autoLink(html, `/${p.replace(/index\.html$/, "")}`));
   // each page lists the modules it loads, like every other page (scripts/preload-modules.mjs)
   for (const [p, html] of files) if (p.endsWith(".html")) files.set(p, withPreloads(fileURLToPath(new URL(p, root)), html));
   files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
+  files.set("llms-full.txt", llmsFull(files));
   for (const [p, html] of await headTagged()) files.set(p, html);
   return files;
 }

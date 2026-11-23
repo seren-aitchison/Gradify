@@ -1,7 +1,9 @@
+// sitemap.xml is a sitemap index; each section has its own file in sitemaps/, so Search Console reports indexing per
+// section (are the topic pages being indexed? the key terms?).
 // sitemap.xml for search engines: the homepage, the privacy and terms pages and every page of each live or beta site
 // (kit/core/sites.js status). Coming-soon sites stay out until they have content worth finding.
 //   node scripts/build-sitemap.mjs     writes sitemap.xml (tests/launch.test.mjs checks it's up to date)
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile, mkdir, rm } from "node:fs/promises";
 import { SITES, slugOf } from "../kit/core/site.js";
 import { SEO_FOLDERS, SEO_SUBSITE_FILES } from "./seo/folders.mjs";
 
@@ -35,17 +37,45 @@ export async function sitemapUrls() {
 async function lastmod(u) {
   let p = u.replace(`${ORIGIN}/`, ""); if (p === "" || p.endsWith("/")) p += "index.html";
   const html = await readFile(new URL(p, root), "utf8").catch(() => "");
-  return html.match(/<meta property="article:modified_time" content="(\d{4}-\d{2}-\d{2})/)?.[1] || null;
+  return html.match(/<meta property="article:modified_time" content="(\d{4}-\d{2}(?:-\d{2})?)/)?.[1] || null;
 }
-export async function sitemapXml() {
+/** which section's sitemap a URL belongs in */
+export function sectionOf(u) {
+  const f = u.replace(`${ORIGIN}/`, "").split("/")[0];
+  if (/^[a-z]+gradify$/.test(f)) return "sites";
+  if (["topics", "terms", "tools", "questions", "exam-traps"].includes(f)) return f === "exam-traps" ? "questions" : f;
+  if (["pdf-to-flashcards", "lecture-notes-to-mind-map", "notes-to-cheat-sheet", "youtube-to-flashcards", "notes-to-study-chant"].includes(f)) return "tools";
+  if (f === "study-plan") return "study-plans";
+  if (["guides", "vs", "checklists", "compare", "glossary", "templates", "research", "exam-boards", "changelog"].includes(f)) return "guides";
+  return "pages";
+}
+export const SECTIONS = ["pages", "sites", "tools", "topics", "terms", "guides", "questions", "study-plans"];
+/** { "sitemap.xml": the index, "sitemaps/<section>.xml": … } */
+export async function sitemapFiles() {
+  const urls = await sitemapUrls(), out = {};
+  for (const s of SECTIONS) {
+    const mine = urls.filter((u) => sectionOf(u) === s); if (!mine.length) continue;
+    out[`sitemaps/${s}.xml`] = await urlset(mine);
+  }
+  out["sitemap.xml"] = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${Object.keys(out).map((f) => `  <sitemap><loc>${ORIGIN}/${f}</loc></sitemap>`).join("\n")}
+</sitemapindex>
+`;
+  return out;
+}
+export const sitemapXml = async () => (await sitemapFiles())["sitemap.xml"];
+async function urlset(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${(await Promise.all((await sitemapUrls()).map(async (u) => { const d = await lastmod(u); return `  <url><loc>${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`; }))).join("\n")}
+${(await Promise.all(urls.map(async (u) => { const d = await lastmod(u); return `  <url><loc>${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`; }))).join("\n")}
 </urlset>
 `;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  await writeFile(new URL("sitemap.xml", root), await sitemapXml());
-  console.log(`sitemap.xml: ${(await sitemapUrls()).length} pages`);
+  const files = await sitemapFiles();
+  await rm(new URL("sitemaps/", root), { recursive: true, force: true }); await mkdir(new URL("sitemaps/", root), { recursive: true });
+  for (const [f, xml] of Object.entries(files)) await writeFile(new URL(f, root), xml);
+  console.log(`sitemap.xml: an index of ${Object.keys(files).length - 1} section sitemaps, ${(await sitemapUrls()).length} pages`);
 }

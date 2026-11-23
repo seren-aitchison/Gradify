@@ -3,6 +3,7 @@
 // short FAQ and the tools that usually come next. The tool's code: assets/tools-plan.js or assets/tools-write.js
 // (data-mod), run by assets/seo.js, which adds Try an example, Reset, Copy summary, Share link, Print and Embed.
 import { faq, related, esc } from "./shell.mjs";
+import { toolExtraHtml, seriesNav } from "./links.mjs";
 
 const U = "2026-11-23";
 export const CATS = { grades: "Grades and marks", plan: "Plan your revision", focus: "Focus and wellbeing", write: "Coursework and writing", exam: "Exam technique" };
@@ -257,8 +258,9 @@ export function toolPage(t, all) {
       <noscript><p>This tool runs in your browser and needs JavaScript. The worked example below shows the method.</p></noscript>
     </div>
     <h2>Worked example</h2><p>${t.worked}</p>${t.example ? '<p class="no-print"><button type="button" class="mini" data-load-example>Load this example into the tool</button></p>' : ""}
+    ${toolExtraHtml(t.slug)}
     <h2>Who it's for</h2><p>${esc(t.best)}. Free, no account, and nothing you type leaves your browser: it's saved on this device so it's here next time.</p>
-    ${f.html}${related("What to use next", [...nextLinks.map(([h, l]) => [h, l, ""]), ...sameCat].slice(0, 6))}
+    ${seriesNav(`tools/${t.slug}/`)}${f.html}${related("What to use next", [...nextLinks.map(([h, l]) => [h, l, ""]), ...sameCat].slice(0, 6))}
     <p class="hub-back"><a href="/tools/">← All free study tools</a></p>`,
   };
 }

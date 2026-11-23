@@ -235,7 +235,7 @@ async function doctor() {
   const { SITES } = await import(new URL("kit/core/site.js", root).href);
   const { ADAPTERS } = await import(new URL("kit/subjects/index.js", root).href);
   const read = (p) => readFile(new URL(p, root), "utf8").catch(() => "");
-  const [sw, sitemap, tutor] = await Promise.all([read("sw.js"), read("sitemap.xml"), read("kit/assess/tutor.js")]);
+  const [sw, sitemap, tutor] = await Promise.all([read("sw.js"), read("sitemaps/sites.xml"), read("kit/assess/tutor.js")]);
   const spec = checkCourse(course);
   say(!spec.length, "fits the subject config spec (kit/course/spec.js)", spec.join("; "));
   say(course.page && await exists(`${course.page.slice(1)}index.html`), `course page ${course.page}`, "run scaffold");

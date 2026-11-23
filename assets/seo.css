@@ -186,3 +186,16 @@ html.focus main.seo { padding-top: 16px; }
 .term-list { columns: 3 180px; padding-left: 18px; } .term-list li { break-inside: avoid; }
 .rbars { list-style: none; padding: 0; } .rbars li { display: grid; grid-template-columns: minmax(120px, 34%) 1fr 48px; gap: 10px; align-items: center; padding: 4px 0; font-size: 14px; }
 .rb { height: 12px; background: var(--line); border-radius: 99px; overflow: hidden; } .rb i { display: block; height: 100%; background: linear-gradient(90deg, #4641ff, #f055dd); } .rb-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--fg); }
+/* batch 4: callouts that lead to the next step */
+.tool-callout, .core-rule { border: 1px solid var(--line-strong); border-left: 3px solid #4641ff; border-radius: 12px; padding: 10px 14px; margin: 14px 0; background: var(--panel); color: var(--fg) !important; }
+.tool-callout span { color: var(--faint); font-size: 14px; }
+.core-rule { border-left-color: #ffc002; }
+.pitfalls { border: 1px solid var(--line-strong); border-left: 3px solid #ff6b6b; border-radius: 12px; padding: 4px 16px; margin: 16px 0; background: var(--panel); }
+.pitfalls h2.h3 { margin-top: 10px !important; } .pitfalls li::marker { content: "⚠ "; }
+.related-inline { font-size: 15px; }
+.read-steps li { margin: 4px 0; } .decide, .traps-strip { font-size: 15px; }
+.series-nav { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 24px 0; padding: 10px 14px; border: 1px dashed var(--line-strong); border-radius: 12px; font-size: 15px; }
+.series-nav span { color: var(--faint); flex-basis: 100%; font-size: 13px; }
+.stage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.stage-grid > div { border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; background: var(--panel); }
+.stage-grid ul { padding-left: 18px; margin: 6px 0 0; font-size: 14px; }

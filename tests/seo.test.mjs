@@ -175,10 +175,12 @@ test("key-term pages, cross-subject links, topic FAQs, auto-links and the resear
   assert.ok([...files].some(([p, h]) => p.startsWith("topics/") && /"@type":"FAQPage"/.test(h)));
   const linked = autoLink('<main><h2>Spaced repetition</h2><p>Use spaced repetition and <a href="/x">active recall</a>, then active recall again.</p></main>', "/guides/x/");
   assert.match(linked, /<h2>Spaced repetition<\/h2>/, "never inside headings");
+  assert.match(autoLink('<main><nav class="crumbs"><li>Active recall guide</li></nav><p>x</p></main>', "/x/"), /<li>Active recall guide<\/li>/, "never inside breadcrumbs or navigation");
   assert.match(linked, /<p>Use <a href="\/glossary\/spaced-repetition\/">spaced repetition<\/a>/);
   assert.match(linked, /then <a href="\/glossary\/active-recall\/">active recall<\/a> again/, "not inside an existing link, but the next mention");
   assert.match(files.get("research/index.html"), /"@type":"Dataset"/);
-  const sm = await read("sitemap.xml"); assert.match(sm, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  const sm = await read("sitemaps/guides.xml"); assert.match(sm, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  assert.match(await read("sitemap.xml"), /<sitemapindex[\s\S]*sitemaps\/topics\.xml/);
 });
 
 test("speakable summaries, per-site preview images and hreflang on every indexed page", async () => {
@@ -188,4 +190,43 @@ test("speakable summaries, per-site preview images and hreflang on every indexed
   assert.match(t, /og:image" content="https:\/\/getgradify\.com\/assets\/og\/sites\/medgradify\.png"/);
   assert.match(t, /hreflang="en-GB" href="https:\/\/getgradify\.com\/medgradify\/"/);
   for (const u of (await sitemapUrls()).slice(0, 60)) { let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html"; assert.match(await read(p), /hreflang="x-default"/, p); }
+});
+
+test("schema stays honest: BreadcrumbList matches the visible breadcrumbs, and no ratings or reviews are claimed", () => {
+  for (const [p, html] of files) {
+    if (!p.endsWith(".html")) continue;
+    for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) assert.doesNotMatch(m[1], /"(aggregateRating|review|reviewRating|ratingValue)"/, `${p}: no ratings in structured data`);
+    const nav = html.match(/<nav class="crumbs"[\s\S]*?<\/nav>/)?.[0]; if (!nav) continue;
+    const visible = [...nav.matchAll(/<li[^>]*>(?:<a[^>]*>)?([^<]*)/g)].map((m) => m[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"'));
+    const ld = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((x) => x["@type"] === "BreadcrumbList");
+    assert.ok(ld, `${p}: BreadcrumbList for the visible breadcrumbs`);
+    assert.deepEqual(ld.itemListElement.map((x) => x.name), visible, `${p}: BreadcrumbList names = visible breadcrumbs`);
+  }
+});
+
+test("every indexed page has its own title, images have alt text, and h2 headings can be linked to", () => {
+  const titles = new Map();
+  for (const [p, html] of files) {
+    if (!p.endsWith(".html") || /name="robots" content="noindex/.test(html)) continue;
+    const t = html.match(/<title>([^<]*)<\/title>/)?.[1]; if (!t) continue;
+    assert.ok(!titles.has(t), `${p} has the same title as ${titles.get(t)}: ${t}`); titles.set(t, p);
+    for (const img of html.match(/<img\b[^>]*>/g) || []) assert.match(img, /\salt="[^"]+"/, `${p}: ${img.slice(0, 80)}`);
+    const main = html.match(/<main[\s\S]*<\/main>/)?.[0] || "";
+    for (const h of main.match(/<h2\b[^>]*>/g) || []) assert.match(h, /\sid="/, `${p}: ${h}`);
+  }
+});
+
+test("no orphans: every indexed generated page is linked from at least one other page", () => {
+  const inbound = new Map();
+  for (const [p, html] of files) if (p.endsWith(".html")) for (const m of html.matchAll(/href="\/([^"#?]*)/g)) { const t = m[1] === "" || m[1].endsWith("/") ? `${m[1]}index.html` : m[1]; if (t !== p) inbound.set(t, (inbound.get(t) || 0) + 1); }
+  const orphans = [...files].filter(([p, html]) => p.endsWith(".html") && !/name="robots" content="noindex/.test(html) && /^(tools|guides|vs|checklists|terms|topics|questions|exam-traps|compare|glossary|templates|study-plan|research)\//.test(p) && !inbound.get(p)).map(([p]) => p);
+  assert.deepEqual(orphans, []);
+});
+
+test("the speed guard, llms-full.txt and large image previews", async () => {
+  assert.match(files.get("llms-full.txt"), /^# Gradify: full text/);
+  assert.match(files.get("llms-full.txt"), /Source: https:\/\/getgradify\.com\/guides\/command-words\//);
+  assert.match(files.get("guides/command-words/index.html"), /<meta name="robots" content="max-image-preview:large">/);
+  assert.doesNotMatch([...files].find(([, h]) => /noindex, follow/.test(h))[1], /max-image-preview/, "noindex pages keep just noindex");
+  assert.match(await read("scripts/perf-check.cjs"), /LCP_MS/);
 });

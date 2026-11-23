@@ -160,5 +160,6 @@ Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and r
 - [Printable templates](https://getgradify.com/templates/): revision timetable, Cornell notes, trackers
 
 ## Optional
+- [Full text of the guides, comparisons and key terms](https://getgradify.com/llms-full.txt): one plain-text file
 - [Course catalogue API (JSON)](https://getgradify.com/kit/api/v1/catalogue.json): every course with its syllabus
 - [Site map](https://getgradify.com/site-map.html)

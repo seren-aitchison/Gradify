@@ -6,6 +6,7 @@
 // without JavaScript, each linking into the live lesson.
 import { readFile } from "node:fs/promises";
 import { esc, related, toc, faq } from "./shell.mjs";
+import { starterKit, stagesBlock, coreRule } from "./links.mjs";
 import { parseNotes, inline } from "../../kit/course/notes.js";
 
 const root = new URL("../../", import.meta.url);
@@ -24,7 +25,7 @@ export async function courses() {
       let parsed = [];
       try { parsed = parseNotes((await import(new URL(`kit/courses/${c.slug}/notes/${u.id}.js`, root))).default); } catch { continue; }
       const byTitle = new Map(parsed.map((l) => [l.title, l]));
-      const lessons = u.lessons.map((l, i) => { const p = byTitle.get(l.title) || parsed[i]; return p ? { ...l, lead: p.lead, cards: p.cards || [], terms: p.terms || [], mcq: p.mcq || [], prereq: p.prereq || [], keys: p.blocks.filter((b) => b.t === "key").map((b) => b.x), pits: p.blocks.filter((b) => b.t === "pit").map((b) => b.x), eqs: p.blocks.filter((b) => b.t === "eq").flatMap((b) => b.rows) } : null; }).filter(Boolean);
+      const lessons = u.lessons.map((l, i) => { const p = byTitle.get(l.title) || parsed[i]; return p ? { ...l, srcDates: p.sources.map((x) => x.date).filter((d) => /^\d{4}-\d{2}(-\d{2})?$/.test(d)), lead: p.lead, cards: p.cards || [], terms: p.terms || [], mcq: p.mcq || [], prereq: p.prereq || [], keys: p.blocks.filter((b) => b.t === "key").map((b) => b.x), pits: p.blocks.filter((b) => b.t === "pit").map((b) => b.x), eqs: p.blocks.filter((b) => b.t === "eq").flatMap((b) => b.rows) } : null; }).filter(Boolean);
       if (lessons.length) units.push({ id: u.id, n: u.n, title: u.title, lessons });
     }
     if (units.length) out.push({ slug: c.slug, name: api.name, site: api.site, page: c.page, unitWord: api.unitWord || "Unit", units, paths: api.paths || [], allUnits: api.units });
@@ -69,7 +70,8 @@ function unitPage(c, u) {
   const modules = [...new Set(u.lessons.map((l) => l.module).filter(Boolean))];
   const i = c.units.indexOf(u), prev = c.units[i - 1], next = c.units[i + 1];
   const thin = u.lessons.length < MIN_LESSONS || unitWords(u) < MIN_WORDS;
-  const title = `${u.title}: ${c.name} Revision and Flashcards · Gradify`;
+  // the subject always stays in the title, so units with the same name in two courses never share one
+  const title = [`${u.title}: ${c.name} Revision and Flashcards · Gradify`, `${u.title}: ${c.name} Revision · Gradify`, `${u.title}: ${c.name} Revision`, `${u.title} · ${c.name}`].find((t) => t.length <= 60) || `${u.title.slice(0, 56 - c.name.length).replace(/\s+\S*$/, "")}… · ${c.name}`;
   const description = `Free ${c.name} revision for ${u.title}: ${plural(u.lessons.length, "lesson")}, key terms, ${cards || "practice"} flashcards and a quick quiz. Try five sample cards now.`;
   const at = (l) => `${c.page}#/lesson/${l.id}`;
   // what the page's script needs: sample cards for the drill, check questions for the quiz, where the full notes are
@@ -93,7 +95,9 @@ function unitPage(c, u) {
   for (const m of mcqAll) { if (asked.length >= 4) break; const q = plain(m.q); if (/\?$/.test(q) && q.length < 140 && !asked.some(([x]) => x === q) && !mcq.includes(m)) asked.push([q, `${plain(m.right).replace(/\.?$/, ".")}${m.why ? ` ${plain(m.why)}` : ""}`]); }
   const paa = asked.length >= 2 ? faq(asked, `${u.title}: questions students ask`) : { html: "", schema: null };
   return {
-    path: `topics/${c.slug}/${u.id}/index.html`, title, description, noindex: thin, crumbs: [["Topics", "topics/"], [c.name, `topics/${c.slug}/`], [u.title, `topics/${c.slug}/${u.id}/`]],
+    path: `topics/${c.slug}/${u.id}/index.html`, title, description, noindex: thin,
+    // freshness from the content itself: the newest date a source in this unit was checked (no date if none has one)
+    ...(() => { const d = u.lessons.flatMap((l) => l.srcDates).filter((x) => x <= "2026-11-23").sort().at(-1); return d ? { updated: d, updatedLabel: "Sources last checked" } : {}; })(), crumbs: [["Topics", "topics/"], [c.name, `topics/${c.slug}/`], [u.title, `topics/${c.slug}/${u.id}/`]],
     head: `<script type="application/json" id="topic-data">${jsonLd(data)}</script>`,
     schema: [{ "@type": "Course", name: `${c.name}: ${u.title}`, description, url: `https://getgradify.com${c.page}#/learn/${u.id}`, provider: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, inLanguage: "en-GB", hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: `PT${Math.max(1, Math.round(u.lessons.length * 0.25))}H` }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" } },
       ...(terms.length ? [{ "@type": "DefinedTermSet", name: `${u.title} key terms`, hasDefinedTerm: terms.map(([t, d]) => ({ "@type": "DefinedTerm", name: plain(t), description: plain(d) })) }] : []),
@@ -102,6 +106,7 @@ function unitPage(c, u) {
     body: `<div data-topic>
     <h1>${esc(u.title)}</h1>
     <p class="answer">${esc(c.unitWord)} ${u.n} of ${esc(c.site)}'s free ${esc(c.name)} course: ${plural(u.lessons.length, "lesson")}${modules.length ? ` covering ${esc(modules.join("; "))}` : ""}, with ${cards ? plural(cards, "flashcard") : "flashcards"}, practice questions and five mind maps for every lesson.</p>
+    ${eqs[0] ? coreRule(`${esc(plain(eqs[0][0]))}${eqs[0][1] ? ` (${esc(plain(eqs[0][1]))})` : ""}`, "Key formula") : keys[0] ? coreRule(inline(keys[0]), "Key idea") : ""}
     <p><a class="btn btn-primary lg" href="${c.page}#/learn/${u.id}"><span>Practise all ${cards || ""} cards free</span> <span aria-hidden="true">→</span></a></p>
     <div class="topic-bar no-print" aria-label="Study tools for this topic">
       <button type="button" class="mini" data-listen>▶ Listen (2 min)</button><button type="button" class="mini" data-print="cheat">Print cheat sheet</button><button type="button" class="mini" data-t="csv">Export to Anki / Quizlet</button>
@@ -139,8 +144,10 @@ function coursePage(c) {
     schema: [{ "@type": "Course", name: c.name, description: `Free ${c.name} course on ${c.site}`, url: `https://getgradify.com${c.page}`, provider: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, hasCourseInstance: { "@type": "CourseInstance", courseMode: "online" }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" } }],
     body: `<h1>${esc(c.name)} topics</h1><p class="answer">${plural(lessons, "free lesson")} in ${plural(c.units.length, c.unitWord.toLowerCase())}, each with flashcards, practice questions and mind maps. Pick a topic to see its lessons, key terms and sample flashcards.</p>
     <p><a class="btn btn-primary lg" href="${c.page}"><span>Open the ${esc(c.name)} course</span></a></p>
+    ${starterKit(familyOf(c.slug), c.name)}
     <ul class="cards">${c.units.map((u) => `<li><a href="/topics/${c.slug}/${u.id}/">${esc(u.title)}</a><span>${esc(c.unitWord)} ${u.n} · ${plural(u.lessons.length, "lesson")}</span></li>`).join("")}</ul>
-    ${c.paths.length ? `<h2>Study plans</h2><ul class="cards">${c.paths.map((p) => `<li><a href="/study-plan/${c.slug}-${p.id}/">${esc(p.name)}</a><span>${esc(p.sub || "")}</span></li>`).join("")}</ul>` : ""}`,
+    ${c.paths.length ? `<h2>Study plans</h2><ul class="cards">${c.paths.map((p) => `<li><a href="/study-plan/${c.slug}-${p.id}/">${esc(p.name)}</a><span>${esc(p.sub || "")}</span></li>`).join("")}</ul>` : ""}
+    ${stagesBlock()}`,
   };
 }
 
@@ -174,7 +181,8 @@ function planPage(c, p) {
   const plan = []; let wk = 1, load = 0;
   for (const u of units) { let left = u.count; while (left > 0) { const take = Math.min(left, perWeek - load); (plan[wk - 1] ||= []).push(`${u.title}${take < u.count ? ` (${take} lessons)` : ""}`); left -= take; load += take; if (load >= perWeek) { wk++; load = 0; } } }
   const fam = familyOf(c.slug), tips = TIPS[fam];
-  const title = `${p.name} Study Plan: ${weeks}-Week Timetable · Gradify`;
+  const named = p.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]) ? p.name : `${c.name}: ${p.name}`;
+  const title = [`${named} Study Plan: ${weeks}-Week Timetable · Gradify`, `${named} Study Plan (${weeks} Weeks)`, `${named} Study Plan`, named].find((t) => t.length <= 60) || `${named.slice(0, 57)}…`;
   const description = `A free ${weeks}-week ${p.name} study plan: ${plural(total, "lesson")} across ${plural(units.length, "topic")} in order, with flashcards and practice questions, and revision tips for ${c.name}.`;
   return {
     path: `study-plan/${c.slug}-${p.id}/index.html`, title, description, noindex: thin, updated: "2026-11-23", crumbs: [["Study plans", "study-plan/"], [p.name, `study-plan/${c.slug}-${p.id}/`]],
