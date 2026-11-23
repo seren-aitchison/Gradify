@@ -65828,5 +65828,291 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u25-kinetic-energy": {
+  "title": "Relativistic kinetic energy",
+  "caption": "K = (γ − 1)mc² agrees with ½mv² at low speed but grows without limit as v → c. For a proton at 0.9c, γ = 2.294 and K = 1.294 × 938 MeV = 1214 MeV, more than twice the classical ½mv² (380 MeV).",
+  "alt": "Kinetic energy in units of mc squared against v over c: the classical parabola and the relativistic curve together at low speed, the relativistic one rising steeply near 1.",
+  "description": [
+   "Kinetic energy in units of mc².",
+   "Classical: β²/2. Relativistic: γ − 1.",
+   "At β = 0.9: classical 0.405, relativistic 1.294.",
+   "For a proton (mc² = 938 MeV): K = 1214 MeV."
+  ],
+  "course": "physics",
+  "lesson": "Relativistic energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Relativistic energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "γ − 1 = 1.294 at 0.9c",
+    "ok": true,
+    "detail": "y(0.9) = 1.2942"
+   },
+   {
+    "name": "more than the classical value at 0.9c",
+    "ok": true,
+    "detail": "1.29 > 0.41"
+   },
+   {
+    "name": "agrees with ½mv² at low speed",
+    "ok": true,
+    "detail": "1/sqrt(1-x^2)-1-(x^2/2) at 0.1 = 0; expected 0–0.0001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u25-length-contraction": {
+  "title": "Length contraction",
+  "caption": "A moving object is shorter along its motion by 1/γ: L = L₀√(1 − v²/c²). The 100 m ship passing at 0.8c measures 60 m. Its crew still measure 100 m, their proper length.",
+  "alt": "Measured length of a 100 metre ship against its speed, falling slowly at first and then steeply to zero at the speed of light, with 60 metres at 0.8c.",
+  "description": [
+   "Proper length L₀ = 100 m.",
+   "At 0.8c: L = 100 × √(1 − 0.64) = 60 m.",
+   "Lengths across the motion are unchanged."
+  ],
+  "course": "physics",
+  "lesson": "Length contraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Length contraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "60 m at 0.8c",
+    "ok": true,
+    "detail": "y(0.8) = 60"
+   },
+   {
+    "name": "proper length at rest",
+    "ok": true,
+    "detail": "y(0) = 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u25-light-cone": {
+  "title": "Inside or outside the light cone?",
+  "caption": "Event B is 4 × 10⁸ m away but only 1 s (ct = 3 × 10⁸ m) later. Reaching it would need a signal faster than light: B lies outside A's light cone, the interval is spacelike, and A cannot cause B.",
+  "alt": "Spacetime diagram in units of 10^8 metres: A's future light cone bounded by the lines ct = plus and minus x, with event B at x = 4, ct = 3 outside it.",
+  "description": [
+   "Units: 10⁸ m on both axes, so light follows ct = ±x.",
+   "A at the origin. Its future light cone is the region above the lines ct = ±x.",
+   "B at x = 4, ct = 3: |x| > ct, so B is outside the cone.",
+   "(cΔt)² − Δx² = 9 − 16 < 0: a spacelike interval. No signal can link A and B."
+  ],
+  "course": "physics",
+  "lesson": "Causality and light cones",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Causality and light cones"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "B is spacelike from A: |Δx| > cΔt",
+    "ok": true,
+    "detail": "4 > 3"
+   },
+   {
+    "name": "Δx² − (cΔt)² = 16 − 9 = 7 > 0",
+    "ok": true,
+    "detail": "y(4) = 7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u25-lorentz-factor": {
+  "title": "The Lorentz factor γ",
+  "caption": "γ = 1/√(1 − v²/c²) stays close to 1 until v is a large fraction of c, then climbs steeply. At 0.6c it is 1.25; at 0.8c, 1.67; for the muons at 0.999c, 22.4: their 2.2 μs lifetime becomes 49 μs in the lab, long enough to travel about 15 km and reach the ground from 15 km.",
+  "alt": "Lorentz factor against speed as a fraction of c: nearly flat at 1, then rising steeply towards infinity at 1, with points at 0.6, 0.8 and 0.999.",
+  "description": [
+   "γ = 1 / √(1 − β²), β = v/c.",
+   "β = 0.6: γ = 1.25. β = 0.8: γ = 1.667.",
+   "β = 0.999: γ = 22.37. Muon lifetime in the lab: 22.4 × 2.2 μs = 49 μs.",
+   "Distance in that time: 0.999c × 49 μs ≈ 15 km, more than 15 km."
+  ],
+  "course": "physics",
+  "lesson": "Time dilation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Time dilation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "γ = 1.25 at 0.6c",
+    "ok": true,
+    "detail": "y(0.6) = 1.25"
+   },
+   {
+    "name": "γ = 22.37 at 0.999c",
+    "ok": true,
+    "detail": "y(0.999) = 22.3663"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u25-spacetime": {
+  "title": "A spacetime diagram",
+  "caption": "Time runs up the page as ct, so light follows ct = x (45° when both axes share a scale). An object at rest at x = 2 m has a vertical worldline; anything moving slower than light has a worldline steeper than 45°, here one at 0.5c.",
+  "alt": "Spacetime diagram with x across and ct up: a vertical worldline at x = 2 metres, a light ray ct = x from the origin, and a steeper line for an object at half the speed of light.",
+  "description": [
+   "Axes: position x across, ct (in metres) up.",
+   "Object at rest at x = 2 m: a vertical line.",
+   "Light flash from the origin: ct = x, one metre of ct per metre of x.",
+   "An object at 0.5c from the origin: ct = 2x, steeper than light."
+  ],
+  "course": "physics",
+  "lesson": "Spacetime diagrams",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Spacetime diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "light: one metre of x per metre of ct",
+    "ok": true,
+    "detail": "gradient 1.0000"
+   },
+   {
+    "name": "at 0.5c the worldline rises 2 m of ct per metre of x",
+    "ok": true,
+    "detail": "gradient 2.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u25-velocity-addition": {
+  "title": "Adding velocities near the speed of light",
+  "caption": "Two particles each moving at u towards each other in the lab. Galileo's answer, 2u, passes c when u > 0.5c; relativity gives 2u/(1 + u²/c²), which never reaches c. At 0.75c each the relative speed is 0.96c, not 1.5c.",
+  "alt": "Relative speed against each particle's speed: the straight line 2u crossing c at 0.5, and the relativistic curve approaching but never reaching 1, at 0.96 for 0.75.",
+  "description": [
+   "Horizontal: each particle's speed in the lab, u/c.",
+   "Galilean: 2u (dashed), which exceeds c beyond 0.5c.",
+   "Relativistic: 2u / (1 + u²/c²): at 0.75c, 1.5 / 1.5625 = 0.96c.",
+   "As u → c the relative speed → c."
+  ],
+  "course": "physics",
+  "lesson": "Relativistic velocity addition",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u25.js: Relativistic velocity addition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.75c ⊕ 0.75c = 0.96c",
+    "ok": true,
+    "detail": "y(0.75) = 0.96"
+   },
+   {
+    "name": "never more than c",
+    "ok": true,
+    "detail": "found (1, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

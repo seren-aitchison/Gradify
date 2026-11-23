@@ -1,0 +1,97 @@
+{
+ "id": "phys-u25-spacetime",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u25",
+ "lesson": "Spacetime diagrams",
+ "title": "A spacetime diagram",
+ "caption": "Time runs up the page as ct, so light follows ct = x (45° when both axes share a scale). An object at rest at x = 2 m has a vertical worldline; anything moving slower than light has a worldline steeper than 45°, here one at 0.5c.",
+ "alt": "Spacetime diagram with x across and ct up: a vertical worldline at x = 2 metres, a light ray ct = x from the origin, and a steeper line for an object at half the speed of light.",
+ "description": [
+  "Axes: position x across, ct (in metres) up.",
+  "Object at rest at x = 2 m: a vertical line.",
+  "Light flash from the origin: ct = x, one metre of ct per metre of x.",
+  "An object at 0.5c from the origin: ct = 2x, steeper than light."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "height": [
+  340,
+  340
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / m",
+  "ct / m"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "colour": "a3",
+   "label": "light: ct = x",
+   "labelAt": [
+    2.6,
+    2.25
+   ]
+  },
+  {
+   "expr": "2*x",
+   "domain": [
+    0,
+    2
+   ],
+   "colour": "a4",
+   "label": "0.5c: ct = 2x",
+   "labelAt": [
+    0.95,
+    2.9
+   ],
+   "anchor": "end"
+  }
+ ],
+ "marks": [
+  {
+   "x": 2,
+   "to": 4,
+   "label": "at rest, x = 2 m"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x",
+   "x": 1,
+   "value": 1,
+   "name": "light: one metre of x per metre of ct"
+  },
+  {
+   "type": "slope",
+   "expr": "2*x",
+   "x": 1,
+   "value": 2,
+   "name": "at 0.5c the worldline rises 2 m of ct per metre of x"
+  }
+ ]
+}

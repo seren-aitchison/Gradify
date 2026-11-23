@@ -1,0 +1,109 @@
+{
+ "id": "phys-u25-light-cone",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u25",
+ "lesson": "Causality and light cones",
+ "title": "Inside or outside the light cone?",
+ "caption": "Event B is 4 × 10⁸ m away but only 1 s (ct = 3 × 10⁸ m) later. Reaching it would need a signal faster than light: B lies outside A's light cone, the interval is spacelike, and A cannot cause B.",
+ "alt": "Spacetime diagram in units of 10^8 metres: A's future light cone bounded by the lines ct = plus and minus x, with event B at x = 4, ct = 3 outside it.",
+ "description": [
+  "Units: 10⁸ m on both axes, so light follows ct = ±x.",
+  "A at the origin. Its future light cone is the region above the lines ct = ±x.",
+  "B at x = 4, ct = 3: |x| > ct, so B is outside the cone.",
+  "(cΔt)² − Δx² = 9 − 16 < 0: a spacelike interval. No signal can link A and B."
+ ],
+ "range": {
+  "x": [
+   -5,
+   5
+  ],
+  "y": [
+   0,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / 10⁸ m",
+  "ct / 10⁸ m"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a3",
+   "label": "light",
+   "labelAt": [
+    3.4,
+    4.3
+   ]
+  },
+  {
+   "expr": "-x",
+   "domain": [
+    -5,
+    0
+   ],
+   "colour": "a3"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0,
+   "colour": "ink",
+   "label": "A",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -10
+  },
+  {
+   "x": 4,
+   "y": 3,
+   "colour": "a2",
+   "label": "B",
+   "dx": 10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "order",
+   "a": "abs(x)",
+   "b": "3+0*x",
+   "x": 4,
+   "rel": ">",
+   "name": "B is spacelike from A: |Δx| > cΔt"
+  },
+  {
+   "type": "point",
+   "expr": "x^2-9",
+   "x": 4,
+   "y": 7,
+   "name": "Δx² − (cΔt)² = 16 − 9 = 7 > 0"
+  }
+ ]
+}
