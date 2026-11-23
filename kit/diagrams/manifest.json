@@ -71697,5 +71697,718 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u20-bath-stock": {
+  "title": "A stock rising at the net flow",
+  "caption": "The net flow is 10 − 6 = 4 L/min, so the stock rises along a straight line of gradient 4: from 100 L to 140 L in 10 minutes.",
+  "alt": "A straight rising line of bath volume against time, from 100 litres at 0 minutes to 140 litres at 10 minutes.",
+  "description": [
+   "The inflow is 10 L/min and the outflow 6 L/min, so the net flow is 4 L/min.",
+   "dS/dt = 4 is constant, so S is a straight line with gradient 4.",
+   "After 10 minutes the bath holds 100 + 4 × 10 = 140 L."
+  ],
+  "course": "maths",
+  "lesson": "Systems Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Systems Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the gradient is the net flow 10 − 6 = 4 L/min",
+    "ok": true,
+    "detail": "gradient 4.0000"
+   },
+   {
+    "name": "after 10 minutes the bath holds 140 L",
+    "ok": true,
+    "detail": "y(10) = 140"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-cooling-tea": {
+  "title": "A cooling cup of tea",
+  "caption": "Newton's law of cooling gives T = 20 + 70e^(−kt): the tea starts at 90 °C and falls toward the 20 °C room. The reading 60 °C at 10 minutes fixes k = ln(70/40)/10 ≈ 0.056 per minute.",
+  "alt": "A decaying curve starting at 90 degrees Celsius at time 0, passing through 60 degrees at 10 minutes and levelling off towards the dashed room-temperature line at 20 degrees.",
+  "description": [
+   "The temperature starts at 90 °C and the room is at 20 °C.",
+   "The curve T = 20 + 70e^(−kt) falls fast at first, then more slowly.",
+   "The measurement 60 °C at 10 minutes gives k = ln(70/40)/10 ≈ 0.056 per minute.",
+   "The curve levels off at the room temperature, 20 °C."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Mathematical Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "T(0) = 20 + 70 = 90 °C",
+    "ok": true,
+    "detail": "y(0) = 90"
+   },
+   {
+    "name": "T(10) = 60 °C fixes k = ln(70/40)/10",
+    "ok": true,
+    "detail": "y(10) = 60"
+   },
+   {
+    "name": "T(60) is close to the 20 °C room temperature",
+    "ok": true,
+    "detail": "y(60) = 22.4371"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-deep-water-velocities": {
+  "title": "Phase and group velocity of deep-water waves",
+  "caption": "For ω = √(gk) the phase velocity is √(g/k) and the group velocity is half of it, whatever the wavenumber: the crests overtake the group.",
+  "alt": "Two falling curves of speed against wavenumber k, the phase velocity above and the group velocity exactly half as high.",
+  "description": [
+   "The phase velocity v_p = ω/k = √(g/k) falls as k grows.",
+   "The group velocity v_g = dω/dk = ½√(g/k) is half of it at every k.",
+   "At k = 1 rad/m with g = 9.81 m/s² the phase velocity is 3.13 m/s and the group velocity 1.57 m/s."
+  ],
+  "course": "maths",
+  "lesson": "Wave Mechanics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Wave Mechanics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the phase velocity exceeds the group velocity",
+    "ok": true,
+    "detail": "3.13 > 1.57"
+   },
+   {
+    "name": "v_p(1) = √9.81 = 3.13 m/s",
+    "ok": true,
+    "detail": "y(1) = 3.1321"
+   },
+   {
+    "name": "dω/dk = ½√(g/k) at k = 1",
+    "ok": true,
+    "detail": "gradient 1.5660"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-emax": {
+  "title": "A dose–response curve",
+  "caption": "E = 100C/(2 + C) rises steeply and then saturates at E_max = 100%. At C = EC₅₀ = 2 mg/L the effect is 50%, and at C = 6 mg/L it is 75%.",
+  "alt": "A saturating curve of effect against concentration, passing 50 percent at 2 milligrams per litre and 75 percent at 6, levelling towards 100 percent.",
+  "description": [
+   "With E_max = 100% and EC₅₀ = 2 mg/L the effect is E = 100C/(2 + C).",
+   "At C = 2 mg/L the effect is half of E_max: 50%.",
+   "At C = 6 mg/L: E = 100 × 6/8 = 75%.",
+   "The curve approaches 100% but never reaches it."
+  ],
+  "course": "maths",
+  "lesson": "Pharmacodynamic Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Pharmacodynamic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at C = EC₅₀ the effect is E_max/2",
+    "ok": true,
+    "detail": "y(2) = 50"
+   },
+   {
+    "name": "100 × 6/8 = 75%",
+    "ok": true,
+    "detail": "y(6) = 75"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-error-growth": {
+  "title": "A small error grows to O(1)",
+  "caption": "With λ = 0.5 per day the difference 0.001e^(0.5t) grows by a factor e every 2 days and reaches 1 at t = 2 ln 1000 ≈ 13.8 days: an error of one part in a thousand ruins a forecast in two weeks.",
+  "alt": "An exponential curve of the difference between two weather states, starting at 0.001 and climbing through 1 at 13.8 days.",
+  "description": [
+   "The separation starts at 0.001 and grows as 0.001e^(0.5t).",
+   "It is still tiny for the first week, then climbs sharply.",
+   "It reaches 1 when e^(0.5t) = 1000, at t = 2 ln 1000 ≈ 13.8 days."
+  ],
+  "course": "maths",
+  "lesson": "Chaos and Complex Systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Chaos and Complex Systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.001e^(0.5 × 13.8) = 1",
+    "ok": true,
+    "detail": "y(13.815510557964274) = 1"
+   },
+   {
+    "name": "the starting difference is 0.001",
+    "ok": true,
+    "detail": "y(0) = 0.001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-final-size": {
+  "title": "The final size relation for R₀ = 2",
+  "caption": "The final fraction infected z solves z = 1 − e^(−R₀z). For R₀ = 2 the curve 1 − e^(−2z) meets the line y = z at z ≈ 0.797: about 80% are infected.",
+  "alt": "The curve y = 1 − e to the minus 2z and the straight line y = z crossing at z about 0.797.",
+  "description": [
+   "Plot y = z (the line) and y = 1 − e^(−2z) (the curve).",
+   "Both are zero at z = 0; the non-zero crossing is the epidemic's final size.",
+   "It is at z ≈ 0.797: 1 − e^(−1.6) = 0.798 is close to 0.8."
+  ],
+  "course": "maths",
+  "lesson": "Mathematical Epidemiology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Mathematical Epidemiology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve and the line meet at z ≈ 0.797",
+    "ok": true,
+    "detail": "1-exp(-2*x) → 0.797, x → 0.797"
+   },
+   {
+    "name": "1 − e^(−1.6) = 0.798, close to 0.8",
+    "ok": true,
+    "detail": "y(0.8) = 0.7981"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-herd-threshold": {
+  "title": "Measles: the threshold and the coverage needed",
+  "caption": "With R₀ = 15 the immune fraction must reach 1 − 1/15 ≈ 0.933. A vaccine that is 97% effective needs coverage 0.933/0.97 ≈ 0.962 to get there.",
+  "alt": "A number line from 0.9 to 1 with two marked points: 0.933, the herd immunity threshold, and 0.962, the vaccine coverage needed.",
+  "description": [
+   "R₀ = 15, so the herd immunity threshold is 1 − 1/15 ≈ 0.933.",
+   "A 97%-effective vaccine protects 0.97 of those covered.",
+   "Coverage 0.933/0.97 ≈ 0.962 is needed: higher than the threshold itself."
+  ],
+  "course": "maths",
+  "lesson": "Epidemiological Modelling",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Epidemiological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "threshold 0.933 is at 0.9333",
+    "ok": true,
+    "detail": "14/15 = 0.933333"
+   },
+   {
+    "name": "coverage 0.962 is at 0.9622",
+    "ok": true,
+    "detail": "(14/15)/0.97 = 0.962199"
+   },
+   {
+    "name": "threshold 1 − 1/15 = 0.933",
+    "ok": true,
+    "detail": "0.933333"
+   },
+   {
+    "name": "coverage 0.933/0.97 = 0.962",
+    "ok": true,
+    "detail": "0.962199"
+   },
+   {
+    "name": "the lesson states \"Threshold = 1 − 1/15 ≈ 0.933\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 680×112"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×112"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-hydrogen-levels": {
+  "title": "The hydrogen transition n = 2 → n = 1",
+  "caption": "E_n = −13.6/n² eV gives E₁ = −13.6 eV and E₂ = −3.4 eV. The photon carries the difference, −3.4 − (−13.6) = 10.2 eV.",
+  "alt": "Two horizontal energy levels, n = 1 at minus 13.6 electron volts and n = 2 at minus 3.4, joined by a downward arrow marked 10.2 electron volts.",
+  "description": [
+   "E_n = −13.6/n² eV: E₁ = −13.6 eV and E₂ = −13.6/4 = −3.4 eV.",
+   "The electron falls from n = 2 to n = 1.",
+   "The photon takes the difference: ΔE = −3.4 − (−13.6) = 10.2 eV."
+  ],
+  "course": "maths",
+  "lesson": "Quantum Mechanics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Quantum Mechanics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E₁ = −13.6 eV",
+    "ok": true,
+    "detail": "y(0) = -13.6"
+   },
+   {
+    "name": "E₂ = −13.6/4 = −3.4 eV",
+    "ok": true,
+    "detail": "y(0) = -3.4"
+   },
+   {
+    "name": "ΔE = 10.2 eV",
+    "ok": true,
+    "detail": "y(0) = 10.2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-iv-decay": {
+  "title": "Concentration after an IV dose",
+  "caption": "A 500 mg dose in V = 50 L gives C₀ = 10 mg/L, and the half-life of 4 hours means k = 0.693/4 ≈ 0.173 per hour: the concentration is 5 mg/L at 4 hours and 2.5 mg/L at 8.",
+  "alt": "A decaying curve of concentration starting at 10 milligrams per litre, passing 5 at 4 hours and 2.5 at 8 hours.",
+  "description": [
+   "The dose of 500 mg in V = 50 L gives C₀ = 10 mg/L.",
+   "Each 4 hours the concentration halves: 5 mg/L at 4 h, 2.5 mg/L at 8 h, 1.25 mg/L at 12 h.",
+   "The decay rate is k = 0.693/4 ≈ 0.173 per hour and the clearance is CL = kV ≈ 8.7 L/hour."
+  ],
+  "course": "maths",
+  "lesson": "Pharmacokinetic Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Pharmacokinetic Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C(0) = 500/50 = 10 mg/L",
+    "ok": true,
+    "detail": "y(0) = 10"
+   },
+   {
+    "name": "one half-life of 4 hours halves the concentration",
+    "ok": true,
+    "detail": "y(4) = 5"
+   },
+   {
+    "name": "two half-lives give a quarter",
+    "ok": true,
+    "detail": "y(8) = 2.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-levins": {
+  "title": "The Levins metapopulation model",
+  "caption": "dp/dt = 0.4p(1 − p) − 0.1p is positive for small p and negative beyond p* = 1 − e/c = 0.75, so the occupied fraction settles at three-quarters of the patches.",
+  "alt": "A downward parabola of the rate of change of the occupied fraction p against p, crossing zero at p = 0 and at the stable equilibrium p = 0.75.",
+  "description": [
+   "Set c = 0.4 and e = 0.1.",
+   "The rate of change is positive for 0 < p < 0.75 and negative for p > 0.75.",
+   "It is zero at p* = 1 − e/c = 0.75: three-quarters of the patches are occupied."
+  ],
+  "course": "maths",
+  "lesson": "Ecological Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Ecological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "dp/dt = 0 at p = 0.75",
+    "ok": true,
+    "detail": "y(0.75) = 0"
+   },
+   {
+    "name": "the rate peaks half-way between 0 and p*",
+    "ok": true,
+    "detail": "found (0.375, 0.056)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-logistic-rate": {
+  "title": "Logistic growth rate against population",
+  "caption": "With r = 0.5 per hour and K = 10⁹, dN/dt = rN(1 − N/K) is a parabola in N. At N = 5 × 10⁸ the rate is 1.25 × 10⁸ cells per hour, its maximum, half-way to K.",
+  "alt": "A downward parabola of growth rate against population, zero at N = 0 and N = 10 to the 9, with its peak 1.25 at N = 5 (in units of 10 to the 8).",
+  "description": [
+   "Measure N in units of 10⁸ cells, so K = 10 and the rate is in units of 10⁸ cells per hour.",
+   "The rate 0.5N(1 − N/10) is zero at N = 0 and N = 10.",
+   "Its maximum is at N = 5, where the rate is 1.25 (× 10⁸ cells per hour)."
+  ],
+  "course": "maths",
+  "lesson": "Biological Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Biological Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.5 × 5 × (1 − 0.5) = 1.25",
+    "ok": true,
+    "detail": "y(5) = 1.25"
+   },
+   {
+    "name": "the maximum rate is at N = K/2",
+    "ok": true,
+    "detail": "found (5, 1.25)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-perturbation-root": {
+  "title": "The first-order root against the exact root",
+  "caption": "The positive root of x² + εx − 1 = 0 is x ≈ 1 − ε/2 for small ε. At ε = 0.1 the approximation gives 0.95 and the exact root is 0.9512; the two curves part company only as ε grows.",
+  "alt": "Two curves of the root against epsilon from 0 to 0.6: the exact root and the straight line 1 minus epsilon over 2, almost touching near epsilon 0 and separating slowly.",
+  "description": [
+   "For ε = 0 the root is 1.",
+   "The first-order approximation 1 − ε/2 is a straight line.",
+   "The exact root (−ε + √(ε² + 4))/2 is a curve that leaves the line only slowly.",
+   "At ε = 0.1 the approximation is 0.95 and the exact root is 0.9512."
+  ],
+  "course": "maths",
+  "lesson": "Perturbation Theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Perturbation Theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "exact root at ε = 0.1 is 0.9512",
+    "ok": true,
+    "detail": "y(0.1) = 0.9512"
+   },
+   {
+    "name": "first-order root at ε = 0.1 is 0.95",
+    "ok": true,
+    "detail": "y(0.1) = 0.95"
+   },
+   {
+    "name": "the exact root satisfies x² + 0.1x − 1 = 0",
+    "ok": true,
+    "detail": "y(0.9512492197250393) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-protein-steady-state": {
+  "title": "A protein approaching its steady state",
+  "caption": "With production β = 10 nM/min and degradation α = 0.1 per minute, x(t) = 100(1 − e^(−0.1t)) climbs to x* = β/α = 100 nM, reaching half of it after ln 2/α ≈ 6.9 minutes.",
+  "alt": "A rising curve of protein concentration from 0, passing 50 nanomolar at 6.9 minutes and levelling off at 100 nanomolar.",
+  "description": [
+   "Production β = 10 nM/min and degradation α = 0.1 per minute balance at x* = β/α = 100 nM.",
+   "Starting from zero the protein follows x = 100(1 − e^(−0.1t)).",
+   "It is half-way (50 nM) at t = ln 2/α ≈ 6.9 minutes, a time set by the degradation rate."
+  ],
+  "course": "maths",
+  "lesson": "Systems Biology",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Systems Biology"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half of x* is reached at ln 2/α = 6.93 minutes",
+    "ok": true,
+    "detail": "y(6.931471805599452) = 50"
+   },
+   {
+    "name": "the initial rate is the production rate β = 10 nM/min",
+    "ok": true,
+    "detail": "gradient 10.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u20-stable-spiral": {
+  "title": "Eigenvalues (−1 ± i√3)/2: a decaying oscillation",
+  "caption": "The Jacobian has trace −1 and determinant 1, so the eigenvalues are (−1 ± i√3)/2: the imaginary part makes x(t) oscillate and the negative real part makes the oscillation die away as e^(−t/2).",
+  "alt": "The position x against time for the system starting at x = 1: a wave that crosses zero repeatedly and shrinks inside the dashed decay envelope e to the minus t over 2.",
+  "description": [
+   "The Jacobian [[0, 1], [−1, −1]] has trace −1 and determinant 1.",
+   "Its eigenvalues (−1 ± i√3)/2 have real part −½ and imaginary part ±√3/2.",
+   "A solution from x(0) = 1, y(0) = 0 is x = e^(−t/2)(cos(√3t/2) + sin(√3t/2)/√3).",
+   "It oscillates (imaginary part) and decays (negative real part): a stable spiral."
+  ],
+  "course": "maths",
+  "lesson": "Nonlinear Dynamics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u20.js: Nonlinear Dynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "x(0) = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "x′(0) = y(0) = 0",
+    "ok": true,
+    "detail": "gradient 0.0000"
+   },
+   {
+    "name": "the envelope decays at the real part −½: e^(−1) at t = 2",
+    "ok": true,
+    "detail": "y(2) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

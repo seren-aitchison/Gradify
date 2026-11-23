@@ -1,0 +1,109 @@
+{
+ "id": "maths-u20-iv-decay",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Pharmacokinetic Modelling",
+ "title": "Concentration after an IV dose",
+ "caption": "A 500 mg dose in V = 50 L gives C₀ = 10 mg/L, and the half-life of 4 hours means k = 0.693/4 ≈ 0.173 per hour: the concentration is 5 mg/L at 4 hours and 2.5 mg/L at 8.",
+ "alt": "A decaying curve of concentration starting at 10 milligrams per litre, passing 5 at 4 hours and 2.5 at 8 hours.",
+ "description": [
+  "The dose of 500 mg in V = 50 L gives C₀ = 10 mg/L.",
+  "Each 4 hours the concentration halves: 5 mg/L at 4 h, 2.5 mg/L at 8 h, 1.25 mg/L at 12 h.",
+  "The decay rate is k = 0.693/4 ≈ 0.173 per hour and the clearance is CL = kV ≈ 8.7 L/hour."
+ ],
+ "range": {
+  "x": [
+   0,
+   16
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   8,
+   12,
+   16
+  ],
+  [
+   2.5,
+   5,
+   7.5,
+   10
+  ]
+ ],
+ "grid": [
+  4,
+  2.5
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "t (hours)",
+  "C (mg/L)"
+ ],
+ "curves": [
+  {
+   "expr": "10*exp(-0.17328679513998632*x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 10,
+   "label": "10",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 4,
+   "y": 5,
+   "label": "5 (half-life)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 8,
+   "y": 2.5,
+   "label": "2.5",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*exp(-0.17328679513998632*x)",
+   "x": 0,
+   "y": 10,
+   "name": "C(0) = 500/50 = 10 mg/L"
+  },
+  {
+   "type": "point",
+   "expr": "10*exp(-0.17328679513998632*x)",
+   "x": 4,
+   "y": 5,
+   "name": "one half-life of 4 hours halves the concentration"
+  },
+  {
+   "type": "point",
+   "expr": "10*exp(-0.17328679513998632*x)",
+   "x": 8,
+   "y": 2.5,
+   "name": "two half-lives give a quarter"
+  }
+ ],
+ "fromLesson": [
+  "k = 0.693/4 ≈ 0.173 per hour"
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": "maths-u20-final-size",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Mathematical Epidemiology",
+ "title": "The final size relation for R₀ = 2",
+ "caption": "The final fraction infected z solves z = 1 − e^(−R₀z). For R₀ = 2 the curve 1 − e^(−2z) meets the line y = z at z ≈ 0.797: about 80% are infected.",
+ "alt": "The curve y = 1 − e to the minus 2z and the straight line y = z crossing at z about 0.797.",
+ "description": [
+  "Plot y = z (the line) and y = 1 − e^(−2z) (the curve).",
+  "Both are zero at z = 0; the non-zero crossing is the epidemic's final size.",
+  "It is at z ≈ 0.797: 1 − e^(−1.6) = 0.798 is close to 0.8."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.25
+ ],
+ "height": [
+  330,
+  320
+ ],
+ "axisLabels": [
+  "z",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "1-exp(-2*x)",
+   "colour": "a1",
+   "label": "1 − e^(−2z)",
+   "labelAt": [
+    0.1,
+    0.9
+   ],
+   "anchor": "start"
+  },
+  {
+   "expr": "x",
+   "colour": "a2",
+   "dash": "6 4",
+   "label": "y = z",
+   "labelAt": [
+    0.62,
+    0.5
+   ],
+   "anchor": "start"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.7968121300200202,
+   "y": 0.7968121300200202,
+   "label": "z ≈ 0.797",
+   "colour": "a4",
+   "dx": 8,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "1-exp(-2*x)",
+   "b": "x",
+   "x": 0.7968121300200202,
+   "y": 0.7968121300200202,
+   "name": "the curve and the line meet at z ≈ 0.797"
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-2*x)",
+   "x": 0.8,
+   "y": 0.798,
+   "name": "1 − e^(−1.6) = 0.798, close to 0.8"
+  }
+ ],
+ "fromLesson": [
+  "z ≈ 0.797"
+ ]
+}

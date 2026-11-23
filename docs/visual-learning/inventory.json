@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 2680,
-  "plannedVisual": 1383,
-  "plannedDiagram": 1249,
+  "assessed": 2731,
+  "plannedVisual": 1397,
+  "plannedDiagram": 1263,
   "plannedLab": 401,
-  "excluded": 1297,
-  "notAssessed": 7299,
-  "withDiagram": 1251,
+  "excluded": 1334,
+  "notAssessed": 7248,
+  "withDiagram": 1265,
   "withLab": 846,
   "withBoth": 281,
-  "withAny": 1816,
+  "withAny": 1830,
   "plannedNotDelivered": 0,
-  "placements": 1276,
+  "placements": 1290,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
   "withLabActivity": 198
  },
  "diagrams": {
-  "manifest": 1200,
-  "uniquePlaced": 1200,
-  "placements": 1276,
+  "manifest": 1214,
+  "uniquePlaced": 1214,
+  "placements": 1290,
   "reused": 69,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1185},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1185},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":1199},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":1199},
   "failing": [],
   "unplaced": []
  },
@@ -558,18 +558,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 718,
-    "plannedVisual": 356,
-    "plannedDiagram": 325,
+    "assessed": 769,
+    "plannedVisual": 370,
+    "plannedDiagram": 339,
     "plannedLab": 77,
-    "excluded": 362,
-    "notAssessed": 359,
-    "withDiagram": 325,
+    "excluded": 399,
+    "notAssessed": 308,
+    "withDiagram": 339,
     "withLab": 102,
     "withBoth": 59,
-    "withAny": 368,
+    "withAny": 382,
     "plannedNotDelivered": 0,
-    "placements": 325,
+    "placements": 339,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -14426,18 +14426,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 718,
-    "plannedVisual": 356,
-    "plannedDiagram": 325,
+    "assessed": 769,
+    "plannedVisual": 370,
+    "plannedDiagram": 339,
     "plannedLab": 77,
-    "excluded": 362,
-    "notAssessed": 359,
-    "withDiagram": 325,
+    "excluded": 399,
+    "notAssessed": 308,
+    "withDiagram": 339,
     "withLab": 102,
     "withBoth": 59,
-    "withAny": 368,
+    "withAny": 382,
     "plannedNotDelivered": 0,
-    "placements": 325,
+    "placements": 339,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -19166,74 +19166,410 @@
      "totals": {
       "lessons": 51,
       "written": 51,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 51,
+      "plannedVisual": 14,
+      "plannedDiagram": 14,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 51,
-      "withDiagram": 0,
+      "excluded": 37,
+      "notAssessed": 0,
+      "withDiagram": 14,
       "withLab": 1,
       "withBoth": 0,
-      "withAny": 1,
+      "withAny": 15,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 14,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 1
      },
      "lessons": [
-      {"id":"u20-01","title":"Applied Mathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-02","title":"Mathematical Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-03","title":"Dimensional Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-04","title":"Similarity Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-05","title":"Scaling Laws","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-06","title":"Asymptotic Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-07","title":"Perturbation Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-08","title":"Sensitivity and Uncertainty Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-09","title":"Biological Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-10","title":"Mathematical Biology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-11","title":"Biomathematics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-12","title":"Population Dynamics","written":true,"diagrams":[],"labs":["ode"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-13","title":"Ecological Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-14","title":"Epidemiological Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-15","title":"Mathematical Epidemiology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-16","title":"Compartmental Models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-17","title":"Compartmental Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-18","title":"Pharmacokinetic Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-19","title":"Pharmacodynamic Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-20","title":"Systems Biology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-21","title":"Chemical Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-22","title":"Reaction Kinetics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-23","title":"Chemical Kinetics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-24","title":"Reaction Network Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-25","title":"Reaction-Diffusion Systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-26","title":"Physical Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-27","title":"Mathematical Physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-28","title":"Mathematical Physics Equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-29","title":"Classical Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-30","title":"Continuum Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-31","title":"Solid Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-32","title":"Elasticity Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-33","title":"Plasticity Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-34","title":"Fluid Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-35","title":"Fluid Dynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-36","title":"Aerodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-37","title":"Wave Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-38","title":"Acoustics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-39","title":"Thermodynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-40","title":"Heat Transfer","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-41","title":"Mass Transfer","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-42","title":"Transport Phenomena","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-43","title":"Diffusion Processes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-44","title":"Electromagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-45","title":"Quantum Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-46","title":"Statistical Mechanics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-47","title":"Nonlinear Dynamics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-48","title":"Chaos and Complex Systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-49","title":"Agent-Based Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-50","title":"Cellular Automata Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u20-51","title":"Systems Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u20-01",
+       "title": "Applied Mathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"well-posedness is a definition checked against a theorem; the notes' steps carry it"}
+      },
+      {
+       "id": "u20-02",
+       "title": "Mathematical Modelling",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-cooling-tea","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-cooling-tea"]}
+      },
+      {
+       "id": "u20-03",
+       "title": "Dimensional Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-04",
+       "title": "Similarity Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-05",
+       "title": "Scaling Laws",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer log–log axes: a power-law metabolic rate is a straight line there, and on linear axes the ratio 9,500 against 200,000 cannot be shown"}
+      },
+      {
+       "id": "u20-06",
+       "title": "Asymptotic Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Stirling's estimate 3.60 million against 3.63 million differ by 0.8%, a gap too small to see; the notes' two numbers carry it"}
+      },
+      {
+       "id": "u20-07",
+       "title": "Perturbation Theory",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-perturbation-root","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-perturbation-root"]}
+      },
+      {
+       "id": "u20-08",
+       "title": "Sensitivity and Uncertainty Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer tornado chart: the spreads 600 and 250 beds as horizontal bars from the 500-bed baseline"}
+      },
+      {
+       "id": "u20-09",
+       "title": "Biological Modelling",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-logistic-rate","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-logistic-rate"]}
+      },
+      {
+       "id": "u20-10",
+       "title": "Mathematical Biology",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the example is symbolic (a, b, c, d unspecified), so a plot would need invented numbers"}
+      },
+      {
+       "id": "u20-11",
+       "title": "Biomathematics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-12",
+       "title": "Population Dynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": ["ode"],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {"id":"u20-13","title":"Ecological Modelling","written":true,"diagrams":[{"id":"maths-u20-levins","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u20-levins"]}},
+      {
+       "id": "u20-14",
+       "title": "Epidemiological Modelling",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-herd-threshold","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-herd-threshold"]}
+      },
+      {
+       "id": "u20-15",
+       "title": "Mathematical Epidemiology",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-final-size","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-final-size"]}
+      },
+      {
+       "id": "u20-16",
+       "title": "Compartmental Models",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the SIR peak condition S/N = 1/R₀ needs a solved trajectory (two coupled ODEs); the notes give only the threshold"}
+      },
+      {
+       "id": "u20-17",
+       "title": "Compartmental Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the example asks only for the steady state c = 5 and gives no starting concentration, so a curve would need an invented one"}
+      },
+      {
+       "id": "u20-18",
+       "title": "Pharmacokinetic Modelling",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-iv-decay","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-iv-decay"]}
+      },
+      {"id":"u20-19","title":"Pharmacodynamic Modelling","written":true,"diagrams":[{"id":"maths-u20-emax","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u20-emax"]}},
+      {
+       "id": "u20-20",
+       "title": "Systems Biology",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-protein-steady-state","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-protein-steady-state"]}
+      },
+      {
+       "id": "u20-21",
+       "title": "Chemical Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-22",
+       "title": "Reaction Kinetics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-23",
+       "title": "Chemical Kinetics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-24",
+       "title": "Reaction Network Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a deficiency count of complexes, linkage classes and rank; the notes' steps carry it"}
+      },
+      {
+       "id": "u20-25",
+       "title": "Reaction-Diffusion Systems",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer travelling-wave profiles: a front moving at speed c = 2 km/year needs a PDE solution plotted at several times"}
+      },
+      {
+       "id": "u20-26",
+       "title": "Physical Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-27",
+       "title": "Mathematical Physics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-28",
+       "title": "Mathematical Physics Equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-29",
+       "title": "Classical Mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-30",
+       "title": "Continuum Mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-31",
+       "title": "Solid Mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-32",
+       "title": "Elasticity Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-33",
+       "title": "Plasticity Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-34",
+       "title": "Fluid Mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-35",
+       "title": "Fluid Dynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-36",
+       "title": "Aerodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-37",
+       "title": "Wave Mechanics",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-deep-water-velocities","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-deep-water-velocities"]}
+      },
+      {
+       "id": "u20-38",
+       "title": "Acoustics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-39",
+       "title": "Thermodynamics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-40",
+       "title": "Heat Transfer",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-41",
+       "title": "Mass Transfer",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-42",
+       "title": "Transport Phenomena",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-43",
+       "title": "Diffusion Processes",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-44",
+       "title": "Electromagnetism",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-45",
+       "title": "Quantum Mechanics",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-hydrogen-levels","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-hydrogen-levels"]}
+      },
+      {
+       "id": "u20-46",
+       "title": "Statistical Mechanics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a derivation or calculation laid out in the notes' worked steps; a picture would only decorate it"}
+      },
+      {
+       "id": "u20-47",
+       "title": "Nonlinear Dynamics",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-stable-spiral","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-stable-spiral"]}
+      },
+      {
+       "id": "u20-48",
+       "title": "Chaos and Complex Systems",
+       "written": true,
+       "diagrams": [{"id":"maths-u20-error-growth","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u20-error-growth"]}
+      },
+      {
+       "id": "u20-49",
+       "title": "Agent-Based Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer agent grid: Schelling's model needs a coloured grid before and after relocation"}
+      },
+      {
+       "id": "u20-50",
+       "title": "Cellular Automata Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer cellular-automaton grid: the blinker's two phases on a cell grid"}
+      },
+      {"id":"u20-51","title":"Systems Theory","written":true,"diagrams":[{"id":"maths-u20-bath-stock","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u20-bath-stock"]}}
      ]
     },
     {

@@ -1,0 +1,131 @@
+{
+ "id": "maths-u20-hydrogen-levels",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Quantum Mechanics",
+ "title": "The hydrogen transition n = 2 → n = 1",
+ "caption": "E_n = −13.6/n² eV gives E₁ = −13.6 eV and E₂ = −3.4 eV. The photon carries the difference, −3.4 − (−13.6) = 10.2 eV.",
+ "alt": "Two horizontal energy levels, n = 1 at minus 13.6 electron volts and n = 2 at minus 3.4, joined by a downward arrow marked 10.2 electron volts.",
+ "description": [
+  "E_n = −13.6/n² eV: E₁ = −13.6 eV and E₂ = −13.6/4 = −3.4 eV.",
+  "The electron falls from n = 2 to n = 1.",
+  "The photon takes the difference: ΔE = −3.4 − (−13.6) = 10.2 eV."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   -16,
+   2
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   -12,
+   -8,
+   -4,
+   0
+  ]
+ ],
+ "grid": [
+  1,
+  4
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "",
+  "E (eV)"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0.6,
+     -13.6
+    ],
+    [
+     3.4,
+     -13.6
+    ]
+   ],
+   "colour": "a1",
+   "label": "n = 1: −13.6 eV",
+   "labelAt": [
+    0.6,
+    -14.8
+   ],
+   "anchor": "start"
+  },
+  {
+   "points": [
+    [
+     0.6,
+     -3.4
+    ],
+    [
+     3.4,
+     -3.4
+    ]
+   ],
+   "colour": "a1",
+   "label": "n = 2: −3.4 eV",
+   "labelAt": [
+    0.6,
+    -2.2
+   ],
+   "anchor": "start"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    2.4,
+    -3.4
+   ],
+   "to": [
+    2.4,
+    -13.6
+   ],
+   "colour": "a2",
+   "label": "10.2 eV photon",
+   "labelAt": [
+    2.55,
+    -8.5
+   ],
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-13.6/1",
+   "x": 0,
+   "y": -13.6,
+   "name": "E₁ = −13.6 eV"
+  },
+  {
+   "type": "point",
+   "expr": "-13.6/4",
+   "x": 0,
+   "y": -3.4,
+   "name": "E₂ = −13.6/4 = −3.4 eV"
+  },
+  {
+   "type": "point",
+   "expr": "-13.6/4+13.6",
+   "x": 0,
+   "y": 10.2,
+   "name": "ΔE = 10.2 eV"
+  }
+ ],
+ "fromLesson": [
+  "ΔE = −3.4 − (−13.6) = 10.2 eV"
+ ]
+}

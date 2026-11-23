@@ -1,0 +1,94 @@
+{
+ "id": "maths-u20-error-growth",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u20",
+ "lesson": "Chaos and Complex Systems",
+ "title": "A small error grows to O(1)",
+ "caption": "With λ = 0.5 per day the difference 0.001e^(0.5t) grows by a factor e every 2 days and reaches 1 at t = 2 ln 1000 ≈ 13.8 days: an error of one part in a thousand ruins a forecast in two weeks.",
+ "alt": "An exponential curve of the difference between two weather states, starting at 0.001 and climbing through 1 at 13.8 days.",
+ "description": [
+  "The separation starts at 0.001 and grows as 0.001e^(0.5t).",
+  "It is still tiny for the first week, then climbs sharply.",
+  "It reaches 1 when e^(0.5t) = 1000, at t = 2 ln 1000 ≈ 13.8 days."
+ ],
+ "range": {
+  "x": [
+   0,
+   16
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   8,
+   12,
+   16
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ]
+ ],
+ "grid": [
+  4,
+  0.5
+ ],
+ "height": [
+  330,
+  300
+ ],
+ "axisLabels": [
+  "t (days)",
+  "difference"
+ ],
+ "curves": [
+  {
+   "expr": "0.001*exp(0.5*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "difference 1"
+  }
+ ],
+ "points": [
+  {
+   "x": 13.815510557964274,
+   "y": 1,
+   "label": "13.8 days",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 22,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.001*exp(0.5*x)",
+   "x": 13.815510557964274,
+   "y": 1,
+   "name": "0.001e^(0.5 × 13.8) = 1"
+  },
+  {
+   "type": "point",
+   "expr": "0.001*exp(0.5*x)",
+   "x": 0,
+   "y": 0.001,
+   "name": "the starting difference is 0.001"
+  }
+ ],
+ "fromLesson": [
+  "t = 2 ln 1000 ≈ 13.8 days"
+ ]
+}
