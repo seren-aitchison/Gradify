@@ -1,0 +1,103 @@
+{
+ "id": "phys-u17-velocity-selector",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Lorentz force",
+ "title": "Velocity selector: where the two forces balance",
+ "caption": "For a charge q the electric force is qE and the magnetic force is qvB. Per unit charge, E = 2 × 10⁴ V m⁻¹ does not depend on speed while vB = 0.1v rises with it. They cancel, and the particle goes straight through, only at v = E/B = 20000/0.1 = 2 × 10⁵ m s⁻¹. Slower particles are pushed along E; faster ones along the magnetic force.",
+ "alt": "Graph of force per unit charge against speed: a flat line at 2 (units of 10⁴ V m⁻¹) for the electric force and a rising line vB through the origin, crossing at 2 × 10⁵ m s⁻¹.",
+ "description": [
+  "The horizontal axis is the particle's speed in units of 10⁵ m s⁻¹; the vertical axis is force per unit charge in units of 10⁴ V m⁻¹.",
+  "The electric force per charge is E = 2 (×10⁴ V m⁻¹), the same at every speed.",
+  "The magnetic force per charge vB = 0.1v rises from zero in proportion to the speed.",
+  "The lines cross at v = 2 × 10⁵ = 200000 m s⁻¹: only particles of this speed are undeflected."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   4.4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "v / 10⁵ m s⁻¹",
+  "F/q / 10⁴ V m⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "2",
+   "domain": [
+    0,
+    4
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "E",
+   "labelAt": [
+    0.4,
+    2.3
+   ]
+  },
+  {
+   "expr": "1*x",
+   "domain": [
+    0,
+    4
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "vB",
+   "labelAt": [
+    3.2,
+    3.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 2,
+   "colour": "ink",
+   "label": "v = E/B",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "2",
+   "b": "1*x",
+   "x": 2,
+   "y": 2,
+   "name": "E = vB at v = E/B = 200000 m s⁻¹"
+  }
+ ]
+}

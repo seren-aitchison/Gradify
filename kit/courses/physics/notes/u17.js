@@ -16,6 +16,7 @@ H: Field lines
 - Iron filings and compasses map them.
 X: Earth's magnetic field at the surface is ~50 μT. How does that compare with a 1.5 T MRI?
 > Ratio = 1.5/5 × 10^{-5} = 30 000
+D: phys-u17-field-sizes
 !: Earth's geographic North Pole is near a magnetic south pole (it attracts compass north poles).
 P: **Investigate with the lab.** With no electric field, increase B and watch the circle get tighter.
 IX: lorentz
@@ -61,6 +62,7 @@ H: Relativity
 P: Electric and magnetic forces are two aspects of one field. A charge at rest beside a current-carrying wire feels no force; in the frame of a charge moving along the wire, length contraction makes the wire's charge densities unequal, and the magnetic force appears as an electric force. The field tensor F^{μν} combines E and B.
 X: A velocity selector has E = 2 × 10^{4} V m^{-1}, B = 0.1 T. Which speed passes?
 > v = E/B = 2 × 10^{5} m s^{-1}
+D: phys-u17-velocity-selector
 !: Whether a force is "electric" or "magnetic" depends on the observer's frame; the total Lorentz force transforms consistently.
 P: **Investigate with the lab.** Turn on an electric field as well as B and watch the particle drift. Then set E so the particle goes straight through.
 IX: lorentz
@@ -173,6 +175,7 @@ P: Silver atoms passing through a non-uniform magnetic field split into two disc
 X: Torque on a 100-turn coil (A = 4 cm^{2}, I = 0.5 A) with its moment perpendicular to 0.2 T?
 > m = 100 × 0.5 × 4 × 10^{-4} = 0.02 A m^{2}
 > τ = 0.02 × 0.2 = 4 × 10^{-3} N m
+D: phys-u17-coil-torque
 !: A magnetic dipole in a uniform field feels only torque; a net force needs a field gradient.
 Q: What is the magnetic moment of a current loop? | m = NIA, perpendicular to the loop by the right-hand rule.
 Q: What did the Stern–Gerlach experiment show? | Spin angular momentum is quantised: atoms split into discrete beams.
@@ -195,6 +198,7 @@ P: In a superconducting ring, flux is quantised in units of the flux quantum Φ_
 X: A 50-turn coil of area 0.01 m^{2} at 60° to a 0.4 T field (angle between B and the normal). Flux linkage?
 > Φ = 0.4 × 0.01 × cos 60° = 2 × 10^{-3} Wb
 > NΦ = 0.1 Wb-turns
+D: phys-u17-flux-linkage
 !: θ is measured between B and the normal to the surface, not the surface itself.
 Q: Define magnetic flux. | Φ = BA cos θ, the field component normal to a surface times its area.
 Q: What is the flux quantum? | Φ_{0} = h/(2e) ≈ 2.07 × 10^{-15} Wb.
@@ -235,6 +239,7 @@ P: A changing magnetic field creates an electric field with closed loops (non-co
 X: A 200-turn coil (A = 0.05 m^{2}) rotates at 50 rev s^{-1} in 0.1 T. Peak EMF?
 > ω = 314 rad s^{-1}
 > ε_{0} = 200 × 0.1 × 0.05 × 314 = 314 V
+D: phys-u17-generator-emf
 !: EMF depends on the rate of change of flux, not on how large the flux is.
 Q: State Faraday's law. | The induced EMF equals the negative rate of change of flux linkage.
 Q: What is the peak EMF of a rotating coil generator? | NBAω.
@@ -394,6 +399,7 @@ H: Uses
 X: A paramagnet's susceptibility is 2 × 10^{-4} at 300 K. At 30 K?
 > Curie's law: χ ∝ 1/T
 > χ = 2 × 10^{-3}
+D: phys-u17-curie-law
 !: Paramagnets don't retain magnetisation when the field is removed (unlike ferromagnets).
 Q: State Curie's law. | Paramagnetic susceptibility is inversely proportional to temperature: χ = C/T.
 Q: How does adiabatic demagnetisation cool a sample? | Reducing the field at constant entropy lets spins disorder, absorbing energy from the lattice.
@@ -501,6 +507,7 @@ E: ε = NBAω sin ωt
 X: A DC motor (R = 2 Ω) runs on 24 V, drawing 3 A at full speed. Back EMF? Starting current?
 > ε_{b} = 24 − 3 × 2 = 18 V
 > At start (ε_{b} = 0): I = 12 A
+D: phys-u17-motor-back-emf
 !: A stalled motor has no back EMF, so current is maximal and windings can burn out.
 Q: What is back EMF in a motor? | The EMF induced in the spinning coils, opposing the supply and limiting current.
 Q: How does an induction motor work? | A rotating field induces currents in the rotor, which then experience a force, following the field with slight slip.
@@ -606,6 +613,7 @@ P: Applying the conditions to an incident light wave gives Fresnel's reflection 
 X: Skin depth of copper (σ = 6 × 10^{7} S m^{-1}) at 1 MHz?
 > δ = √(2/(4π × 10^{-7} × 6 × 10^{7} × 2π × 10^{6}))
 > ≈ 65 μm: why RF conductors are often hollow or silver-plated
+D: phys-u17-skin-depth-copper
 !: The normal component of B and tangential E are always continuous; D_{⊥} and H_{∥} jump only with free surface charge or current.
 Q: What is the skin depth? | The depth at which an AC field in a conductor falls to 1/e: δ = √(2/(μσω)).
 Q: Which field components are continuous across any boundary? | Normal B and tangential E.

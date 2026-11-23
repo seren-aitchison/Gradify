@@ -1,0 +1,104 @@
+{
+ "id": "phys-u17-skin-depth-copper",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Electromagnetic boundary conditions",
+ "title": "Skin depth of copper at 1 MHz",
+ "caption": "A high-frequency field enters a conductor only a short way: its amplitude falls as e^{−z/δ} with δ = √(2/(μ₀σω)) = 65.0 μm ≈ 65 μm for copper (σ = 6 × 10⁷ S m⁻¹) at 1 MHz. At one skin depth 37% of the surface amplitude remains; at 3δ (195 μm) only 5.0%. The current flows in a thin skin, so a hollow or plated conductor carries RF as well as a solid one.",
+ "alt": "Graph of field amplitude against depth into copper: an exponential decay from 1 at the surface, 0.37 at 65 μm and 0.05 at 195 μm.",
+ "description": [
+  "The horizontal axis is the depth into the copper in micrometres; the vertical axis is the field amplitude as a fraction of the surface value.",
+  "The amplitude falls as e^{−z/δ} with δ = 65 μm.",
+  "At z = δ = 65 μm it is 0.37; at z = 3δ = 195 μm it is 0.05."
+ ],
+ "range": {
+  "x": [
+   0,
+   260
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   65,
+   130,
+   195,
+   260
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  65,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth z / μm",
+  "amplitude / surface value"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/65)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "e^{−z/δ}",
+   "labelAt": [
+    110,
+    0.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 65,
+   "y": 0.36787944117144233,
+   "label": "δ: 0.37",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 195,
+   "y": 0.049787068367863944,
+   "colour": "a2",
+   "label": "3δ: 0.05",
+   "dx": 6,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/65)",
+   "x": 0,
+   "y": 1,
+   "name": "full amplitude at the surface"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/65)",
+   "x": 65,
+   "y": 0.36787944117144233,
+   "name": "37% of the surface amplitude at one skin depth, δ = 65 μm"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/65)",
+   "x": 195,
+   "y": 0.049787068367863944,
+   "name": "5% at 3δ"
+  }
+ ]
+}
