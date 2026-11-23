@@ -812,6 +812,7 @@ async function renderStudy(arg) {
   const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
   let finished = false, answeredSoFar = 0;
   if (queue.length) record(store, { event: "session_started", site: profile.site, concept: topicKey, source: practice ? "practice" : topicKey ? "topic" : "due", detail: { cards: queue.length } });
+  if (queue.length) globalThis.gradifyConsent?.event("flashcard_session_start", { cards: queue.length, mode: practice ? "practice" : topicKey ? "topic" : "due" });   // Google Analytics, with consent (kit/core/consent.js)
   addEventListener("hashchange", () => { if (!finished && answeredSoFar) record(store, { event: "session_abandoned", site: profile.site, concept: topicKey, detail: { answered: answeredSoFar, of: queue.length } }); }, { once: true });
   if (!queue.length) {
     view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">${kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later."}</p><div class="row-actions"><a class="btn btn-primary lg" href="${kb ? kb.back : "#/new"}"><span>${kb ? "Back to your notes" : "Add notes"}</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
@@ -879,6 +880,7 @@ async function renderStudy(arg) {
     await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice), topic: topicName } });
     finished = true;
     record(store, { event: "session_finished", site: profile.site, concept: topicKey, detail: { answered, ...results } });
+    globalThis.gradifyConsent?.event("flashcard_session_complete", { cards: answered, practice: Boolean(practice) });
     if (before) { const after = learnerMemory({ cards: await store.listCards(deckId ? { documentId: deckId } : {}), reviews: await store.listReviews(400) }); for (const e of stageEvents(before, after, profile.site)) record(store, e); }
     // tick off today's review block in the plan
     const blocks = await store.listBlocks(today(), today());

@@ -238,6 +238,7 @@ export function initCalendar(context) {
       const b = blocks.find((x) => x.id === selected);
       b.done = true;
       ctx.logActivity(calOf(b.cal).site, `Finished time block “${b.title}”`, "block", Math.round(dur(b) * 20));
+      globalThis.gradifyConsent?.event("study_plan_block_done", { minutes: Math.round(dur(b) * 60) });   // Google Analytics, with consent (kit/core/consent.js)
       render();
     }
   });
