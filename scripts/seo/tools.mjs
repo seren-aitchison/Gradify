@@ -3,6 +3,7 @@
 // first two sentences, so search snippets and AI assistants can quote it.
 import { faq, related, optIn, esc } from "./shell.mjs";
 import { TOOLS2, CATS } from "./tools2.mjs";
+import { toolExtraHtml, seriesNav, stagesBlock } from "./links.mjs";
 
 const APP = (name) => ({ "@type": "WebApplication", name, applicationCategory: "EducationalApplication", operatingSystem: "Web", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" }, publisher: { "@id": "https://getgradify.com/#org" } });
 const MORE_TOOLS = (except) => related("More free study tools", TOOLS.filter((t) => t.slug !== except).map((t) => [`tools/${t.slug}/`, t.name, t.line]).concat([["tools/", "All free study tools", `${TOOLS.length + TOOLS2.length} calculators, planners and timers`]]));
@@ -126,7 +127,7 @@ export function toolPages() {
     const body = t.body().replace(/(<div class="tool" data-tool="[a-z]+")/, `<p class="tool-tools no-print"><button type="button" class="mini" data-pin>☆ Pin this tool</button> <button type="button" class="mini" data-focus>Focus mode</button> <span class="best">${esc(t.best)}</span></p>\n    $1${ex}`)
       .replace(/(<h2>Worked example<\/h2>\s*<p>[\s\S]*?<\/p>)/, '$1<p class="no-print"><button type="button" class="mini" data-load-example>Load an example into the calculator</button></p>');
     return { path: `tools/${t.slug}/index.html`, title: t.title, description: t.description, crumbs: [["Free study tools", "tools/"], [t.name, `tools/${t.slug}/`]], schema: [APP(t.name), f.schema], updated: "2026-11-23",
-      body: `${body}${f.html}${optIn()}${MORE_TOOLS(t.slug)}<p class="hub-back"><a href="/tools/">← All free study tools</a></p>` };
+      body: `${body}${toolExtraHtml(t.slug)}${seriesNav(`tools/${t.slug}/`)}${f.html}${optIn()}${MORE_TOOLS(t.slug)}<p class="hub-back"><a href="/tools/">← All free study tools</a></p>` };
   });
   const ALL = [...TOOLS, ...TOOLS2];
   pages.push({ path: "tools/index.html", title: "Free Study Tools, Planners and Grade Calculators · Gradify", description: `${ALL.length} free tools for students: grade and degree calculators, cram and deadline planners, a study timer, citation helper and more. No account.`, crumbs: [["Free study tools", "tools/"]], ogType: "website",
@@ -137,6 +138,7 @@ export function toolPages() {
     <div class="chips no-print" role="group" aria-label="Filter tools"><button type="button" class="chip on" data-cat="">All</button>${Object.entries(CATS).map(([k, v]) => `<button type="button" class="chip" data-cat="${k}">${v}</button>`).join("")}</div>
     ${Object.entries(CATS).map(([k, v]) => `<section data-cat-sec="${k}"><h2>${v}</h2><ul class="cards">${ALL.filter((t) => t.cat === k).map((t) => `<li data-cat="${k}"><a href="/tools/${t.slug}/">${esc(t.name)}</a><span>${esc(t.line)}</span><small class="best">${esc(t.best)}</small></li>`).join("")}</ul></section>`).join("")}
     </div>
+    ${stagesBlock()}
     <h2>Turn notes into study material</h2><ul class="cards">${LANDINGS.map((l) => `<li><a href="/${l.slug}/">${l.name}</a><span>${l.line}</span></li>`).join("")}</ul>
     <h2>Printable templates</h2><p>Revision timetables, Cornell notes and trackers to print or save as PDF: <a href="/templates/">see the templates</a>.</p>` });
   // the countdown widget other sites embed (not for search: the tool page is)

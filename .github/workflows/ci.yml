@@ -60,7 +60,7 @@ jobs:
           npm run sync
           node scripts/ix-manifest.mjs
           node scripts/build-api.mjs
-          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js kit/api/ || {
+          git diff --exit-code -- sitemap.xml sitemaps/ supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js kit/api/ || {
             echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs, npm run sync, node scripts/ix-manifest.mjs and node scripts/build-api.mjs, then commit."
             exit 1
           }
@@ -101,6 +101,9 @@ jobs:
           python3 -m http.server 8080 --bind 127.0.0.1 > /dev/null 2>&1 &
           for i in $(seq 1 30); do curl -fsS -o /dev/null http://127.0.0.1:8080/ && exit 0; sleep 1; done
           echo "::error::The site didn't start on port 8080"; exit 1
+
+      - name: Page speed guard (LCP and layout shift, throttled phone, gzipped like GitHub Pages)
+        run: node scripts/perf-check.cjs
 
       - name: Signed-in journey (stand-in Supabase)
         run: node scripts/check-sync.cjs

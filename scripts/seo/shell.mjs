@@ -16,7 +16,7 @@ export const ORG = {
 };
 
 /** "12 November 2026" from "2026-11-12" */
-export const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+export const longDate = (iso) => (/^\d{4}-\d{2}$/.test(iso) ? new Date(`${iso}-15T12:00:00Z`).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" }) : new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }));
 
 /**
  * A whole page. `path` is where it's published ("tools/degree-calculator/index.html"); `crumbs` are [name, path] pairs
@@ -42,7 +42,7 @@ export function fitDesc(d, max = 155) {
 // a link-preview image per section, so a shared tool, topic or guide doesn't look like every other page
 const OG_SECTIONS = ["tools", "topics", "guides", "checklists", "compare", "vs", "terms", "questions", "study-plan"];
 export const ogFor = (path) => { const s = String(path).split("/")[0]; const k = s === "vs" ? "compare" : s === "exam-traps" ? "questions" : s; return OG_SECTIONS.includes(k) ? `${ORIGIN}/assets/og/${k}.png` : `${ORIGIN}/assets/og.png`; };
-export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, ogType = "article", noindex = false, head = "", share = true, cta = true }) {
+export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, updatedLabel = "Last updated", ogType = "article", noindex = false, head = "", share = true, cta = true }) {
   const title = fitTitle(rawTitle), description = fitDesc(rawDesc);
   const canonical = url(path);
   const trail = [["Home", ""], ...crumbs];
@@ -59,7 +59,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  ${noindex ? '<meta name="robots" content="noindex, follow">' : ""}
+  ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="max-image-preview:large">'}
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" hreflang="en-GB" href="${canonical}">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
@@ -99,7 +99,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   </div>
   <main id="main" class="seo">
     ${breadcrumbs}
-    ${updated ? `<p class="updated">Last updated <time datetime="${updated}">${longDate(updated)}</time></p>` : ""}
+    ${updated ? `<p class="updated">${esc(updatedLabel)} <time datetime="${updated}">${longDate(updated)}</time></p>` : ""}
     ${body}
     ${share ? `<p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>` : ""}
     ${cta ? CTA : ""}

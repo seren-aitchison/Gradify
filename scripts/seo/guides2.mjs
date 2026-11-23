@@ -3,6 +3,7 @@
 // apps (getgradify.com/compare/…). Every guide answers first, uses the questions students actually type as its
 // headings, ends sections with a copyable key takeaway, and has a "test yourself" prompt or two.
 import { faq, related, esc, toc, takeaway, selfTest, slugId, ORG } from "./shell.mjs";
+import { GUIDE_EXTRA, VS_EXTRA, toolCallout, pitfallsBox, coreRule, relatedKeys, seriesNav, LINKS } from "./links.mjs";
 
 const U = "2026-11-23";
 const AUTHOR = { "@type": "Organization", "@id": "https://getgradify.com/#org", name: "Gradify", url: "https://getgradify.com/about.html" };
@@ -320,9 +321,10 @@ function vsPage([slug, a, b, answer, rows, when, mix, links]) {
     crumbs: [["Concept comparisons", "vs/"], [`${a} vs ${b}`, `vs/${slug}/`]],
     schema: [{ "@type": "Article", headline: `${a} vs ${b}`, dateModified: U, author: AUTHOR, publisher: ORG, description: answer }, f.schema],
     body: `<h1>${esc(a)} vs ${esc(b)}</h1><p class="answer">${answer}</p>
+    <h2>When should I use each?</h2>${coreRule(when, "Rule of thumb")}${toolCallout((VS_EXTRA[slug]?.tools || []).map((k) => [k, ""]))}
     <div class="scroll"><table><thead><tr><th></th><th>${esc(a)}</th><th>${esc(b)}</th></tr></thead><tbody>${rows.map(([x, p, q]) => `<tr><th scope="row">${x}</th><td>${p}</td><td>${q}</td></tr>`).join("")}</tbody></table></div>
-    <h2>When should I use each?</h2><p>${when}</p>
-    <h2>What's the common exam mix-up?</h2><p>${mix}</p>
+    <h2>What's the common exam mix-up?</h2><aside class="pitfalls"><p>${mix}</p></aside>
+    ${relatedKeys("Related checklists", VS_EXTRA[slug]?.checks || [])}${relatedKeys("Related guides", VS_EXTRA[slug]?.guides || [])}
     ${selfTest(`Without looking up, give one difference between ${a.toLowerCase()} and ${b.toLowerCase()}.`, rows[0] ? `${rows[0][0]}: ${a} — ${rows[0][1]}; ${b} — ${rows[0][2]}.` : answer)}
     ${f.html}${related("Keep going", [...links.map(([h, l]) => [h, l, ""]), ["vs/", "More concept comparisons", ""]])}`,
   };
@@ -362,8 +364,10 @@ export function guide2Page(g) {
     path: `guides/${g.slug}/index.html`, title: g.title, description: g.description, updated: U, crumbs: [["Study guides", "guides/"], [g.h1.replace(/:.*$/, ""), `guides/${g.slug}/`]],
     schema: [article, f.schema],
     body: `<h1>${g.h1}</h1>${byline}<p class="answer">${g.answer}</p>
+    ${coreRule(g.sections.find((s) => s.take)?.take || "")}${toolCallout(GUIDE_EXTRA[g.slug]?.tools || [])}
     ${toc(g.sections.map((s, k) => [ids[k], s.h.replace(/\?$/, "")]))}
     ${g.sections.map((s, k) => `<h2 id="${ids[k]}">${s.h}</h2>${s.html}${s.take ? takeaway(s.take) : ""}${s.test ? selfTest(s.test[0], s.test[1]) : ""}`).join("\n    ")}
+    ${pitfallsBox(GUIDE_EXTRA[g.slug]?.pitfalls || [])}${relatedKeys("Related checklists", GUIDE_EXTRA[g.slug]?.checks || [])}${relatedKeys("Related comparisons", GUIDE_EXTRA[g.slug]?.vs || [])}${seriesNav(`guides/${g.slug}/`)}
     ${f.html}${related("Read next", g.links.map(([h, l]) => [h, l, ""]))}`,
   };
 }

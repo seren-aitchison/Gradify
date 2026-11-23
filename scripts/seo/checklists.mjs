@@ -1,6 +1,9 @@
 // Interactive, printable checklists (getgradify.com/checklists/…). Ticks are saved in the visitor's browser
 // (assets/tools-write.js, the "checklist" tool), with progress, "copy what's left for the group chat" and a clean print.
 import { faq, related, esc } from "./shell.mjs";
+import { seriesNav, stagesBlock, GUIDE_EXTRA, VS_EXTRA, LINKS } from "./links.mjs";
+// guides and comparisons that point at each checklist point back from it
+const backlinks = (slug) => [...Object.entries(GUIDE_EXTRA).filter(([, x]) => x.checks?.includes(`c:${slug}`)).map(([g]) => [`guides/${g}/`, LINKS[`g:${g}`]?.[1] || g.replace(/-/g, " ")]), ...Object.entries(VS_EXTRA).filter(([, x]) => x.checks?.includes(`c:${slug}`)).map(([v]) => [`vs/${v}/`, LINKS[`v:${v}`]?.[1] || v.replace(/-/g, " ")])].slice(0, 4);
 
 const U = "2026-11-23";
 // [slug, name, line, title, description, answer, groups: [[heading, [item | [item, types]]]], faq, links]
@@ -82,13 +85,14 @@ function checklistPage([slug, name, line, title, description, answer, groups, qa
       <div class="actions no-print"><button type="button" class="ghost" data-left>Copy what's left for the group chat</button><button type="button" class="ghost" data-clear>Untick all</button><button type="button" class="ghost" data-print>Print</button></div>
     </div>
     <p class="small">Your ticks are saved in this browser only.</p>
-    ${f.html}${related("Use with", [...links.map(([h, l]) => [h, l, ""]), ["checklists/", "All checklists", ""]])}`,
+    ${seriesNav(`checklists/${slug}/`)}
+    ${f.html}${related("Use with", [...links.map(([h, l]) => [h, l, ""]), ...backlinks(slug).filter(([h]) => !links.some(([x]) => x === h)).map(([h, l]) => [h, l, ""]), ["checklists/", "All checklists", ""]])}`,
   };
 }
 
 export function checklistPages() {
   return [...CHECKLISTS.map(checklistPage), {
     path: "checklists/index.html", title: "Free Study Checklists: Exams, Lab Reports, Essays · Gradify", description: "Free interactive checklists for students: exam day, final 48 hours, lab reports, proofreading, peer review, coursework submission and a semester reset.", crumbs: [["Checklists", "checklists/"]], ogType: "website",
-    body: `<h1>Study checklists</h1><p class="answer">Tick-off checklists for the moments that cost marks: the night before an exam, the last read of an essay, the write-up of a practical. Ticks are saved in your browser, and every list prints cleanly.</p><ul class="cards">${CHECKLISTS.map(([s, n, l]) => `<li><a href="/checklists/${s}/">${esc(n)}</a><span>${esc(l)}</span></li>`).join("")}</ul>`,
+    body: `<h1>Study checklists</h1><p class="answer">Tick-off checklists for the moments that cost marks: the night before an exam, the last read of an essay, the write-up of a practical. Ticks are saved in your browser, and every list prints cleanly.</p><ul class="cards">${CHECKLISTS.map(([s, n, l]) => `<li><a href="/checklists/${s}/">${esc(n)}</a><span>${esc(l)}</span></li>`).join("")}</ul>${stagesBlock()}`,
   }];
 }
