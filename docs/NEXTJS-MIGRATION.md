@@ -154,12 +154,22 @@ check, and any failure makes `npm run verify` exit non-zero: 27 checks in `verif
    Firefox, Android, screen readers, and load time on a deployed host. Chromium only.
 7. **Build time and size.** `next build` copies the 97 MB `kit/` folder into `out/`; fine for CI, but the deploy should
    publish from `out/` instead of building the site twice.
-8. **The course engine can't be unmounted.** `mountCourse` adds window listeners, a timer and the assistant's UI on
+8. **The course engine can't be unmounted.** `mountCourse` adds window listeners, timers and the assistant's UI on
    `document.body`, and returns no way to remove them. On today's static pages that's fine: leaving the course is a full
    page load. In a React app that navigates without reloading, leaving and reopening the course would leave the old
-   engine running beside a new one. Before courses move (phase 4), `mountCourse` needs to return a `dispose()` that
-   removes all of it, and the React wrapper must call it on unmount. Not changed in the PoC, because that's a change to
-   the production course engine.
+   engine running beside a new one.
+   **Decision (owner, 23 November 2026): a firm gate for phase 4.** The production engine is not changed now: today's
+   full-page navigation tears everything down, and the PoC is research only. Before any course moves into a persistent
+   React app:
+   - `mountCourse()` returns `dispose()`, which removes every resource that instance created: event listeners on
+     `window` and `document`, timers and intervals, subscriptions, workers, and UI appended outside its root (the
+     assistant on `document.body`). `kit/course/course.js` and `kit/course/assistant.js` have about 135 listener,
+     timer and `document.body` call sites between them, so the work starts with an inventory of which ones outlive the
+     course root.
+   - The React wrapper calls `dispose()` on unmount, and keeps the guard that stops an import finishing after unmount
+     from mounting the course.
+   - A test mounts, disposes and remounts a course and checks that nothing is left behind: no duplicate listeners, no
+     running timers, nothing extra on `document.body`.
 9. **Stylesheet order is easy to get wrong.** The first PoC compared only the first 600 characters of the course, and
    missed that the Next page lacked two of the course's stylesheets (`subsite.css`, `model.css`) and loaded the
    engine's own `ui.css` in a different place in the cascade. Comparing the full lesson notes caught it ("COMMON
