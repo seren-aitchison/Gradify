@@ -65475,5 +65475,358 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u23-binding-curve": {
+  "title": "Binding energy per nucleon",
+  "caption": "Binding energy per nucleon rises steeply through the light nuclei (⁴He 7.07 MeV), peaks near 8.8 MeV around iron and nickel, and falls slowly to about 7.6 MeV for uranium. Light nuclei release energy by fusing, heavy ones by splitting. The curve is the semi-empirical mass formula with the lesson's coefficients; the points are measured values.",
+  "alt": "Binding energy per nucleon against mass number: a curve rising steeply to a broad peak of about 8.8 MeV near mass 56 to 62, then falling gently to about 7.6 at 238, with measured points for helium-4, iron-56 and uranium-238.",
+  "description": [
+   "Curve: B/A from the semi-empirical mass formula, a_V = 15.8, a_S = 18.3, a_C = 0.71, a_A = 23.2 MeV, along the valley of stability.",
+   "Points: ⁴He 7.07 MeV, ⁵⁶Fe 8.79 MeV, ²³⁸U 7.57 MeV per nucleon.",
+   "The formula gives 8.68 MeV at A = 56 and 7.58 MeV at A = 238.",
+   "Fusion moves nuclei up the steep left side; fission moves them up from the right."
+  ],
+  "course": "physics",
+  "lesson": "Nuclear binding energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Nuclear binding energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "near 8.8 MeV per nucleon at iron",
+    "ok": true,
+    "detail": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2 at 56 = 8.68; expected 8.6–8.95"
+   },
+   {
+    "name": "about 7.6 MeV per nucleon for uranium",
+    "ok": true,
+    "detail": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2 at 238 = 7.58; expected 7.4–7.75"
+   },
+   {
+    "name": "iron is more tightly bound than uranium",
+    "ok": true,
+    "detail": "8.68 > 7.58"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u23-dt-fusion": {
+  "title": "Energy from D–T fusion",
+  "caption": "The products are lighter than the reactants by 0.018 89 u. That mass defect appears as kinetic energy: Q = Δm × 931.5 MeV u⁻¹ = 17.6 MeV per reaction, most of it carried by the neutron.",
+  "alt": "Reaction: deuterium plus tritium gives helium-4 plus a neutron, releasing 17.6 MeV.",
+  "description": [
+   "²H (2.014 102 u) + ³H (3.016 049 u) → ⁴He (4.002 602 u) + n (1.008 665 u).",
+   "Nucleon number 2 + 3 = 4 + 1 and proton number 1 + 1 = 2 + 0 balance.",
+   "Δm = 5.030 151 − 5.011 267 = 0.018 884 u; Q = 0.018 884 × 931.494 = 17.6 MeV."
+  ],
+  "course": "physics",
+  "lesson": "Mass defect",
+  "also": [],
+  "renderer": "nuclear",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Mass defect"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "nucleon number A is conserved",
+    "ok": true,
+    "detail": "5 → 5"
+   },
+   {
+    "name": "charge (proton number Z) is conserved",
+    "ok": true,
+    "detail": "2 → 2"
+   },
+   {
+    "name": "every element symbol matches its proton number",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Q = Δm c^{2} = 17.59 MeV",
+    "ok": true,
+    "detail": "17.59 MeV from the masses"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u23-fission-reaction": {
+  "title": "Balancing a fission reaction",
+  "caption": "Nucleon and proton numbers must balance: 235 + 1 = 141 + 92 + 3 and 92 = 56 + 36, so three neutrons are released. The products are lighter by 0.186 u, about 170 MeV, and the extra neutrons can sustain a chain reaction.",
+  "alt": "Reaction: uranium-235 plus a neutron gives barium-141, krypton-92 and three neutrons, releasing about 170 MeV.",
+  "description": [
+   "²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3 ¹₀n.",
+   "A: 236 on each side. Z: 92 on each side.",
+   "Q from atomic masses: 173 MeV, most of it the kinetic energy of the two fragments."
+  ],
+  "course": "physics",
+  "lesson": "Nuclear reaction equations",
+  "also": [],
+  "renderer": "nuclear",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Nuclear reaction equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "nucleon number A is conserved",
+    "ok": true,
+    "detail": "236 → 236"
+   },
+   {
+    "name": "charge (proton number Z) is conserved",
+    "ok": true,
+    "detail": "92 → 92"
+   },
+   {
+    "name": "every element symbol matches its proton number",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Q = Δm c^{2} = 173.3 MeV",
+    "ok": true,
+    "detail": "173.3 MeV from the masses"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u23-lead-shielding": {
+  "title": "Shielding gamma rays with lead",
+  "caption": "Each 9 mm of lead halves the dose rate. Cutting it by 1000 needs log₂ 1000 ≈ 9.97 half-value layers: 90 mm, about 9 cm.",
+  "alt": "Percentage of the dose rate transmitted against lead thickness, halving every 9 millimetres and reaching 0.1 percent at 90 millimetres.",
+  "description": [
+   "Transmitted fraction = 2^(−x / 9 mm).",
+   "9 mm: 50%. 18 mm: 25%. 27 mm: 12.5%.",
+   "0.1% (a factor of 1000) at x = 9 × log₂ 1000 = 89.7 mm."
+  ],
+  "course": "physics",
+  "lesson": "Radiation shielding",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Radiation shielding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half the dose rate per 9 mm",
+    "ok": true,
+    "detail": "y(9) = 50"
+   },
+   {
+    "name": "a factor of 1000 at 89.7 mm",
+    "ok": true,
+    "detail": "y(89.69205856) = 0.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u23-radium-alpha": {
+  "title": "Alpha decay of radium-226",
+  "caption": "An alpha particle carries off 2 protons and 2 neutrons, so A falls by 4 and Z by 2: radium-226 (Z = 88) becomes radon-222 (Z = 86).",
+  "alt": "Decay step: radium-226 emits an alpha particle and becomes radon-222.",
+  "description": [
+   "²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He.",
+   "Mass number: 226 = 222 + 4. Proton number: 88 = 86 + 2.",
+   "Radon is a gas, which is why radium in rocks leads to radon in buildings."
+  ],
+  "course": "physics",
+  "lesson": "Alpha, beta and gamma decay",
+  "also": [],
+  "renderer": "nuclear",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Alpha, beta and gamma decay"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A and Z change correctly at every step (α: A − 4, Z − 2; β⁻: Z + 1; β⁺ and capture: Z − 1; γ: no change)",
+    "ok": true,
+    "detail": "1 steps"
+   },
+   {
+    "name": "every element symbol matches its proton number",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1 α and 0 β⁻ decays",
+    "ok": true,
+    "detail": "drawn 1 α, 0 β⁻; ΔA = 4, ΔZ = 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u23-reactor-growth": {
+  "title": "Power growth in a slightly supercritical reactor",
+  "caption": "Each generation multiplies the neutron population by k = 1.001. With a 0.1 s generation time the power grows as e^(t/T) with period T = τ/(k − 1) = 100 s: it rises by e ≈ 2.7 every 100 s, slow enough for control rods to respond (delayed neutrons slow it further still).",
+  "alt": "Relative power against time rising exponentially, reaching 2.7 times at 100 seconds and about 20 times at 300 seconds.",
+  "description": [
+   "k = 1.001, generation time 0.1 s.",
+   "Reactor period T = 0.1 / 0.001 = 100 s.",
+   "After 100 s: ×e = 2.72. After 300 s: ×20.1."
+  ],
+  "course": "physics",
+  "lesson": "Chain reactions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Chain reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "period 100 s",
+    "ok": true,
+    "detail": "y(100.00000000001101) = 2.7183"
+   },
+   {
+    "name": "T = τ/(k − 1)",
+    "ok": true,
+    "detail": "y(0) = 100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u23-uranium-lead": {
+  "title": "Dating a rock by uranium and lead",
+  "caption": "Starting with no lead, ²³⁸U decays (through a chain) to ²⁰⁶Pb. The fractions cross when half the uranium has gone: equal numbers of parent and daughter mean the rock is one half-life old, 4.5 × 10⁹ years.",
+  "alt": "Fractions of uranium-238 falling and lead-206 rising with time, crossing at one half at 4.5 billion years.",
+  "description": [
+   "Uranium remaining: 2^(−t/4.5 Gyr). Lead formed: 1 − 2^(−t/4.5 Gyr).",
+   "They are equal (D/P = 1) at t = t½ = 4.5 × 10⁹ years.",
+   "At two half-lives the ratio D/P is 3, at three it is 7."
+  ],
+  "course": "physics",
+  "lesson": "Decay chains and half-life",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u23.js: Decay chains and half-life"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent and daughter equal after one half-life",
+    "ok": true,
+    "detail": "2^(-x/4.5) → 0.5, 1-2^(-x/4.5) → 0.5"
+   },
+   {
+    "name": "three quarters decayed after two half-lives",
+    "ok": true,
+    "detail": "y(9) = 0.75"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

@@ -77,6 +77,7 @@ P: Light nuclei gain binding by fusing (stars); heavy nuclei gain by splitting (
 X: Binding energy of ⁴He (M = 4.002 602 u; m_{p} = 1.007 276 u, m_{n} = 1.008 665 u, m_{e} included via atomic masses: use ¹H = 1.007 825 u).
 > Δm = 2(1.007 825) + 2(1.008 665) − 4.002 602 = 0.030 378 u
 > B = 0.030 378 × 931.5 = 28.3 MeV (7.07 MeV per nucleon)
+D: phys-u23-binding-curve
 !: Binding energy is energy released when a nucleus forms, so more binding means less mass, not more.
 Q: Where does binding energy per nucleon peak? | Near iron and nickel (A ≈ 56–62).
 Q: What do the terms of the semi-empirical mass formula represent? | Volume, surface, Coulomb repulsion, neutron–proton asymmetry and pairing effects.
@@ -98,6 +99,7 @@ P: Penning traps measure atomic masses to parts in 10^{11}, enough to detect the
 X: Q of D + T → ⁴He + n (masses 2.014 102, 3.016 049, 4.002 602, 1.008 665 u)?
 > Δm = 5.030 151 − 5.011 267 = 0.018 884 u
 > Q = 17.6 MeV
+D: phys-u23-dt-fusion
 !: The mass defect isn't missing matter; the energy was released when the nucleus formed, and mass and energy are equivalent.
 Q: What is the mass defect? | The difference between the mass of separated nucleons and the nucleus.
 Q: How much energy is 1 u? | About 931.5 MeV.
@@ -187,6 +189,7 @@ H: Gamma decay
 - Highly penetrating: needs lead or concrete.
 X: Radium-226 alpha decays. Product?
 > ^{226}_{88}Ra → ^{222}_{86}Rn + ^{4}_{2}He: radon-222, a radioactive gas
+D: phys-u23-radium-alpha
 !: Gamma rays carry no charge and no mass number change; they don't change the element.
 P: **Investigate with the lab.** Watch the nuclei change as they decay and note that each decay emits radiation from the nucleus.
 IX: decay
@@ -214,6 +217,7 @@ E: t = (1/λ) ln(1 + D/P) :: daughter D, parent P
 - Isochron methods remove the need to know initial daughter amounts.
 X: A rock has equal numbers of ²³⁸U and its final daughter ²⁰⁶Pb (none initially). Age?
 > D/P = 1 ⇒ t = t_{1/2} = 4.5 × 10^{9} years
+D: phys-u23-uranium-lead
 !: Carbon dating assumes a known initial ¹⁴C level; calibration curves (tree rings, corals) correct for its variations.
 P: **Investigate with the lab.** Mark the moment half the nuclei are left, then run the decay chain and watch the daughter build up, peak and decay away.
 IX: decay
@@ -241,6 +245,7 @@ E: E_{th} = −Q(1 + m_{a}/m_{X}) :: threshold for endothermic reactions (non-re
 X: Complete: ^{235}_{92}U + ^{1}_{0}n → ^{141}_{56}Ba + ^{92}_{36}Kr + ?
 > A: 236 = 141 + 92 + 3; Z: 92 = 56 + 36 + 0
 > 3 neutrons
+D: phys-u23-fission-reaction
 !: Particles' kinetic energies count in energy conservation; mass number and charge balancing alone don't guarantee a reaction is energetically possible.
 Q: What must be conserved in a nuclear reaction equation? | Nucleon number, charge, energy, momentum (and lepton and baryon numbers).
 Q: What was Rutherford's first artificial transmutation? | Nitrogen-14 bombarded by alphas producing oxygen-17 and a proton.
@@ -348,6 +353,7 @@ H: Reactor control
 P: Prompt neutron generation times are ~10^{-4} s in thermal reactors, too fast to control. Delayed neutrons (from fission products, seconds to a minute) extend the effective generation time, so reactors are operated "delayed critical" and controlled by rods and boron. Prompt criticality causes rapid power excursions (as at Chernobyl).
 X: A reactor with k = 1.001 and effective generation time 0.1 s. How fast does power grow?
 > Growth per second: (1.001)^{10} ≈ 1.01: 1% per second, controllable
+D: phys-u23-reactor-growth
 !: A critical reactor (k = 1) isn't dangerous; it simply means a steady chain reaction.
 Q: What does k = 1 mean? | Each generation has the same number of neutrons: a steady chain reaction.
 Q: Why are delayed neutrons essential for reactor control? | They lengthen the effective generation time from ~0.1 ms to ~0.1 s.
@@ -465,6 +471,7 @@ P: Radiation protection relies on minimising time near sources, maximising dista
 X: How much lead (HVL 9 mm) cuts a gamma dose rate by a factor of 1000?
 > 1000 ≈ 2^{10}: 10 half-value layers
 > 9 cm of lead
+D: phys-u23-lead-shielding
 !: Shielding beta emitters with lead can increase dose by generating bremsstrahlung X-rays; use plastic first.
 Q: What are the three principles of radiation protection? | Time, distance and shielding (under ALARA).
 Q: Why are hydrogen-rich materials used for neutron shielding? | Hydrogen nuclei slow neutrons efficiently by elastic collisions.

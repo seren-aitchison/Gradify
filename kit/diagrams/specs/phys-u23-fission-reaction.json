@@ -1,0 +1,43 @@
+{
+ "id": "phys-u23-fission-reaction",
+ "renderer": "nuclear",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Nuclear reaction equations",
+ "title": "Balancing a fission reaction",
+ "caption": "Nucleon and proton numbers must balance: 235 + 1 = 141 + 92 + 3 and 92 = 56 + 36, so three neutrons are released. The products are lighter by 0.186 u, about 170 MeV, and the extra neutrons can sustain a chain reaction.",
+ "alt": "Reaction: uranium-235 plus a neutron gives barium-141, krypton-92 and three neutrons, releasing about 170 MeV.",
+ "description": [
+  "²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3 ¹₀n.",
+  "A: 236 on each side. Z: 92 on each side.",
+  "Q from atomic masses: 173 MeV, most of it the kinetic energy of the two fragments."
+ ],
+ "mode": "reaction",
+ "lhs": [
+  {
+   "sym": "U",
+   "A": 235,
+   "Z": 92,
+   "m": 235.04393
+  },
+  "n"
+ ],
+ "rhs": [
+  {
+   "sym": "Ba",
+   "A": 141,
+   "Z": 56,
+   "m": 140.914412
+  },
+  {
+   "sym": "Kr",
+   "A": 92,
+   "Z": 36,
+   "m": 91.926156
+  },
+  "n",
+  "n",
+  "n"
+ ],
+ "Q": 173.3
+}

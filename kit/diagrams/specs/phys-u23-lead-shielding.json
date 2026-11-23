@@ -1,0 +1,100 @@
+{
+ "id": "phys-u23-lead-shielding",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Radiation shielding",
+ "title": "Shielding gamma rays with lead",
+ "caption": "Each 9 mm of lead halves the dose rate. Cutting it by 1000 needs log₂ 1000 ≈ 9.97 half-value layers: 90 mm, about 9 cm.",
+ "alt": "Percentage of the dose rate transmitted against lead thickness, halving every 9 millimetres and reaching 0.1 percent at 90 millimetres.",
+ "description": [
+  "Transmitted fraction = 2^(−x / 9 mm).",
+  "9 mm: 50%. 18 mm: 25%. 27 mm: 12.5%.",
+  "0.1% (a factor of 1000) at x = 9 × log₂ 1000 = 89.7 mm."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   105
+  ]
+ },
+ "ticks": [
+  [
+   9,
+   18,
+   27,
+   45,
+   90
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "lead thickness / mm",
+  "dose rate transmitted / %"
+ ],
+ "curves": [
+  {
+   "expr": "100*2^(-x/9)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 9,
+   "to": 50
+  },
+  {
+   "y": 50,
+   "to": 9
+  }
+ ],
+ "points": [
+  {
+   "x": 9,
+   "y": 50,
+   "colour": "a2",
+   "label": "50% at 9 mm",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 89.6921,
+   "y": 0.1,
+   "colour": "a2",
+   "label": "0.1% at 90 mm",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*2^(-x/9)",
+   "x": 9,
+   "y": 50,
+   "name": "half the dose rate per 9 mm"
+  },
+  {
+   "type": "point",
+   "expr": "100*2^(-x/9)",
+   "x": 89.69205856,
+   "y": 0.1,
+   "name": "a factor of 1000 at 89.7 mm"
+  }
+ ]
+}
