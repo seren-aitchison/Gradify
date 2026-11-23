@@ -1,0 +1,134 @@
+{
+ "id": "phys-u39-euler",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u39",
+ "lesson": "Solving ordinary differential equations",
+ "title": "Euler's method against the exact solution",
+ "caption": "Euler's method steps along the slope at the start of each step: y_{n+1} = y_n + h f(y_n) = 0.9y_n. After two steps, y(0.2) ≈ 0.81 against the exact e^(−0.2) = 0.8187. The error per unit time shrinks only in proportion to h.",
+ "alt": "The exact decay e to the minus x and Euler's step-by-step points lying slightly below it, from 0 to 1.",
+ "description": [
+  "Exact: y = e^(−x).",
+  "Euler with h = 0.1: 1, 0.9, 0.81, 0.729, … (multiply by 0.9 each step).",
+  "At x = 0.2: Euler 0.81, exact 0.8187. At x = 1: Euler 0.3487, exact 0.3679."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.05
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x)",
+   "colour": "a1",
+   "label": "exact e^{−x}",
+   "labelAt": [
+    0.55,
+    0.72
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     1
+    ],
+    [
+     0.1,
+     0.9
+    ],
+    [
+     0.2,
+     0.81
+    ],
+    [
+     0.3,
+     0.729
+    ],
+    [
+     0.4,
+     0.6561
+    ],
+    [
+     0.5,
+     0.59049
+    ],
+    [
+     0.6,
+     0.531441
+    ],
+    [
+     0.7,
+     0.4782969
+    ],
+    [
+     0.8,
+     0.43046721
+    ],
+    [
+     0.9,
+     0.38742049
+    ],
+    [
+     1,
+     0.34867844
+    ]
+   ],
+   "colour": "a2",
+   "width": 2,
+   "dots": true,
+   "label": "Euler, h = 0.1",
+   "labelAt": [
+    0.4,
+    0.4
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x)",
+   "x": 0.2,
+   "y": 0.81873075,
+   "name": "exact y(0.2) = 0.8187"
+  },
+  {
+   "type": "point",
+   "expr": "0.9^(x/0.1)",
+   "x": 0.2,
+   "y": 0.81,
+   "name": "Euler gives 0.81 after two steps"
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "id": "phys-u39-trapezium",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u39",
+ "lesson": "Numerical integration",
+ "title": "The trapezium rule",
+ "caption": "With h = 0.5 the trapezium rule joins (0, 0), (0.5, 0.25) and (1, 1) with straight lines and adds the trapezia: 0.375 against the exact 1/3. The straight tops lie above the curving x², so it overestimates; Simpson's rule (parabolas) gets 1/3 exactly.",
+ "alt": "The curve y = x squared from 0 to 1, with two straight-topped trapezia under it from 0 to 0.5 and 0.5 to 1 lying slightly above the curve.",
+ "description": [
+  "f(x) = x², sampled at x = 0, 0.5 and 1: 0, 0.25, 1.",
+  "Trapezium rule: 0.5 × (0/2 + 0.25 + 1/2) = 0.375.",
+  "Exact: 1/3 ≈ 0.3333, so the error is 0.0417.",
+  "Halving h would cut the error by about four."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.1
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "areas": [
+  {
+   "expr": "x^2",
+   "from": 0,
+   "to": 1,
+   "colour": "a4",
+   "opacity": 0.18
+  }
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "domain": [
+    0,
+    1.05
+   ],
+   "colour": "a1",
+   "label": "y = x²",
+   "labelAt": [
+    0.68,
+    0.2
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0.5,
+     0.25
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "colour": "a2",
+   "width": 2.4,
+   "dots": true
+  },
+  {
+   "points": [
+    [
+     0.5,
+     0
+    ],
+    [
+     0.5,
+     0.25
+    ]
+   ],
+   "colour": "a2",
+   "width": 1.4
+  },
+  {
+   "points": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "colour": "a2",
+   "width": 1.4
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "x^2",
+   "from": 0,
+   "to": 1,
+   "value": 0.333333,
+   "tol": 0.0005,
+   "name": "exact area 1/3"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*(0/2+x^2+1/2)",
+   "x": 0.5,
+   "y": 0.375,
+   "name": "trapezium estimate 0.375"
+  }
+ ]
+}

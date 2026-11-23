@@ -1,0 +1,93 @@
+{
+ "id": "phys-u39-amdahl",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u39",
+ "lesson": "Parallel computing",
+ "title": "Amdahl's law",
+ "caption": "If 95% of a code runs in parallel, N cores give a speed-up S = 1/(0.05 + 0.95/N). On 100 cores that is 16.8; with infinitely many it can never pass 1/0.05 = 20, because the serial 5% always remains.",
+ "alt": "Speed-up against number of cores, rising steeply then flattening towards a dashed limit of 20, with 16.8 at 100 cores marked.",
+ "description": [
+  "S(N) = 1 / ((1 − p) + p/N), p = 0.95.",
+  "N = 10: 6.9. N = 100: 16.8. N = 1000: 19.6.",
+  "Limit as N → ∞: 1/(1 − p) = 20."
+ ],
+ "range": {
+  "x": [
+   1,
+   400
+  ],
+  "y": [
+   0,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "number of cores",
+  "speed-up"
+ ],
+ "curves": [
+  {
+   "expr": "1/(0.050000000000000044+0.95/x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 20,
+   "label": "limit 20"
+  },
+  {
+   "x": 100,
+   "to": 16.806722689075627
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 16.8067,
+   "colour": "a2",
+   "label": "16.8 on 100 cores",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(0.050000000000000044+0.95/x)",
+   "x": 100,
+   "y": 16.806723,
+   "name": "speed-up 16.8 on 100 cores"
+  },
+  {
+   "type": "value",
+   "expr": "1/(0.050000000000000044+0.95/x)",
+   "x": 400,
+   "between": [
+    19,
+    20
+   ],
+   "name": "approaching but below 20"
+  }
+ ]
+}
