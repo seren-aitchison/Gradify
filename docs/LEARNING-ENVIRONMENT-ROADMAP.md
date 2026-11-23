@@ -1,6 +1,10 @@
 # Gradify as a learning environment: Labs, Past Papers and Capture
 
-**Version 1.0, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture. It records the owner's direction, checks it against what is already in the repository, and sets out the release order and the decisions still open. **Nothing in this document has been built yet.** Each batch below starts only on the owner's approval.
+**Version 1.1, 23 November 2026.** This is the product roadmap for three additions: Interactive Subject Labs, Past Papers and Specification Practice, and Gradify Capture (Ultra). It records the owner's direction, checks it against what is already in the repository, and sets out the release order. Version 1.1 records the owner's decisions (§8) and adds the workstream register (§9).
+
+**This document is the shared source of truth for the learning environment.** Every conversation or session working on Labs, Past Papers, Specification Mastery or Ultra reads it before planning or building, records its branch and status in §9, and proposes changes here as edits rather than deciding them elsewhere. Work that isn't pushed to a branch can't be seen by anyone else, so push early.
+
+**Nothing in this document has been built yet.** Each batch below starts only on the owner's approval.
 
 > **Product principle.** Whatever a student doesn't understand, wherever they encounter it, Gradify should help them understand it, practise it and remember it.
 
@@ -40,7 +44,12 @@ The plan is further along than it looks. Three of the four pillars have real fou
 | **Past papers** | Nothing beyond a YouthGradify lesson on using past papers | — | Not started |
 | **Capture** | Nothing | — | Not started |
 
-**Consequence for the order:** the first job isn't building, it's landing the two branches. The Organic Chemistry Lab and Specification Mastery are both prerequisites for the rest of this roadmap, and every week they stay unmerged makes the merge harder (main moves quickly: 179 remote branches today).
+**Consequence for the order:** the two unmerged branches are useful foundations, but being useful doesn't mean they should be merged straight away. Each is reviewed on its own against current main, its tests and its release requirements, and merged only on the owner's approval (batch 0, §7):
+
+- **Organic Chemistry Lab:** its chemistry rules need independent review, and its migration and tutor deployment are outstanding.
+- **Specification Mastery:** its mapping of 8461 to lessons and its use of AQA's wording need checking.
+
+Neither blocks Maths Lab work, which builds on main.
 
 ## 3. Interactive Subject Labs
 
@@ -48,18 +57,20 @@ The plan is further along than it looks. Three of the four pillars have real fou
 
 Already built (§2). What stands between it and students:
 
-1. Merge `claude/organic-chemistry-lab` into main and re-run its browser journey suite and `scripts/check-organic-lab.cjs` against the merged site.
+1. Review `claude/organic-chemistry-lab` against current main: rebase or merge main into the branch (not the other way round), re-run its browser journey suite and `scripts/check-organic-lab.cjs`, and list what its migration and tutor deployment need. Merge into main only on the owner's approval.
 2. Close the open items in its own backlog (M60–M62) and the second-audit correctness fixes.
 3. Independent chemistry review of the rule set using its existing review pack (`docs/organic-review/`). Until then the lab keeps its "provisional" notice, which is the right release posture: ship it labelled, don't hold it back.
 4. Register its challenges for evidence (`kit/courses/chemistry/interactives.js`, `evidence.js`) so they feed mastery like the other 161 interactives.
 
 ### 3.2 Maths Lab: from step checker to workspace
 
-The step checker already does the hardest part of the vision: **it checks the student's own working line by line** rather than generating an answer. Maths Lab builds a workspace around it, in the same shape as the Chemistry Lab (one problem, connected modes).
+The step checker already does the hardest part of the vision: **it checks the student's own working line by line** rather than generating an answer. **Maths Lab is the step checker, improved; there is no second Maths Lab.** It extends `kit/interactive/stepcheck.js` and the sets in `kit/courses/maths/steps/`, in the same shape as the Chemistry Lab (one problem, connected modes).
+
+**Owner's priorities, in order:** rule explanations for every step; recognising and explaining common mistakes; reveal one step at a time; graphs and visual representations; more topics and broader specification coverage. Input: MathLive for notation, with typed input kept; handwriting later.
 
 | Your requirement | Today | To build |
 |---|---|---|
-| 1. Write with a maths editor | Plain text with a forgiving parser (`x²`, `√`, `½`, implicit multiplication) | A structured equation editor that emits the same text the parser reads (MathLive is MIT-licensed and fits); rendered preview of every line |
+| 1. Write with a maths editor | Plain text with a forgiving parser (`x²`, `√`, `½`, implicit multiplication) | MathLive (MIT-licensed, **decided**) emitting the same text the parser reads, beside the existing typed input, which stays; rendered preview of every line |
 | 1. Handwriting | — | **Later, and Ultra.** Handwriting-to-maths recognition is a paid API or a model call per line; accuracy on school handwriting must be measured before it ships |
 | 2. Choose a question or enter your own | Authored sets only | "Your own problem" for the problem kinds the checker can verify (solve an equation, expand, factorise, differentiate, integrate). For its own problems the checker knows the target by solving numerically, so it can still check lines |
 | 3. Work through it interactively | Yes | Keep |
@@ -68,7 +79,7 @@ The step checker already does the hardest part of the vision: **it checks the st
 | 6. Graphs, substitutions, alternative methods | Separate graph explorer | Graph mode in the workspace (the roots of `x² − 5x + 6` as the curve's crossings); a substitution check of the final answer; several authored solution paths per problem (factorise, complete the square, formula), with the student's path recognised |
 | 7. Try the next step before revealing it | Reveal-all only | Reveal one step at a time; "Show me the next step" costs a hint, and the outcome is recorded as Assisted |
 
-**First release scope:** GCSE and A level algebra (the six existing sets), editor, step rules, mistake patterns, one-step reveal, graph mode. Calculus and "your own problem" follow. The numeric equivalence check is a check, not a proof (its own comment says so); the workspace must never present it as a proof.
+**First release scope:** step rules, mistake patterns and one-step reveal on the six existing sets, then graph mode, then MathLive. More topics (mapped to specification points once Specification Mastery has a maths specification) and "your own problem" follow. The numeric equivalence check is a check, not a proof (its own comment says so); the workspace must never present it as a proof.
 
 ## 4. Past Papers and Specification Practice
 
@@ -78,7 +89,7 @@ Official papers, mark schemes and specification wording are copyright of the awa
 
 | Material | Default position until confirmed |
 |---|---|
-| Past papers and mark schemes | **Link to the board's own page; don't host, copy or transcribe.** Seek written permission or a licence from each board |
+| Past papers and mark schemes | **Link to the board's own page; don't host, copy or transcribe.** Contacting boards about a licence is deferred until there is a clear licensing requirement and commercial plan (owner's decision) |
 | Examiner reports | Same as papers |
 | Specification wording | Specification Mastery (unmerged) already shows 8461 point wording. **Confirm AQA's terms cover this use before that branch is released**, or paraphrase points and link to the official text |
 | Original Gradify questions in exam style, mapped to specification points | **No restriction.** This is the safe foundation |
@@ -112,6 +123,20 @@ Every answered part writes an attempt against its specification points' lessons,
 
 ## 5. Gradify Capture (Ultra)
 
+Capture is its own workstream and branch, but **not a separate product**: it uses the same account, plan check, AI infrastructure, allowances, saved resources and learning intelligence as the rest of Gradify. It is never a standalone screenshot chatbot.
+
+### 5.0 What Ultra must reuse (from main)
+
+| Need | Reuse, don't rebuild | Where |
+|---|---|---|
+| Is this user on Ultra? | The plan helpers. **Internal ids differ from names:** `plus` = Gradify Pro, `pro` = Gradify Ultra (renamed in `9533d2d0`); stored waitlist rows also still say "Gradify Pro" for Ultra | `kit/data/billing.js` (`PLAN_NAME`, plan inclusion), `kit/data/plan.js`, `kit/data/waitlist.js` |
+| Ultra on sale | The existing switch: Ultra stays off until Gradify AI is switched on | `kit/data/billing.js` |
+| AI calls, prompt safety, escaped output | The course tutor and its modes | `supabase/functions/course-tutor`, `kit/assess/tutor.js`, `tutor_modes` migration |
+| Metering and limits | Monthly AI allowances, fair-use windows, AI controls; an upgrade link from an allowance error | migrations `billing_and_ai_allowances`, `monthly_ai_windows`, `ai_controls`; `kit/data/functions.js` |
+| Saved resources | Gradify Notes, flashcards and SRS, rather than a separate Capture library format | `kit/learning/srs.js`, the flashcard engine (`docs/FLASHCARD-ENGINE.md`) |
+| Learning intelligence | Attempt records and the Mastery Engine; Specification Mastery once merged | `kit/learning/mastery.js`, `assessment_attempts` |
+| Marketing | The homepage Ultra section and "Notify me" list already exist; Capture copy goes there, not a new page | `index.html` (`#pro`, `ultra-list`) |
+
 ### 5.1 Backend first
 
 Both clients use one backend, so it's built first (agreed).
@@ -141,7 +166,7 @@ Both clients use one backend, so it's built first (agreed).
 
 1. **Children's data.** Many GCSE students are under 18 and some under 13. The UK Age Appropriate Design Code applies: high-privacy defaults, no use of captures for model training, clear retention, parental route for under-13s. A DPIA before launch.
 2. **Other people's data in screenshots.** A capture of a group chat or a class list contains other people's information. Default retention, easy deletion and no secondary use limit the exposure.
-3. **Academic integrity.** "Screenshot any question, get the answer" is also a cheating tool, and schools will judge Gradify by it. Recommendation: Capture opens in the existing **tutoring mode** (guide the student to the next step, then reveal on request), consistent with the Maths Lab's one-step reveal, and Gradify's terms say Capture isn't for live assessments.
+3. **Academic integrity.** "Screenshot any question, get the answer" is also a cheating tool, and schools will judge Gradify by it. **Decided:** Capture opens in guided tutoring by default (guide the student to the next step), with a clear control for the level of help the student wants, up to a full worked answer. This matches the Maths Lab's one-step reveal. Gradify's terms say Capture isn't for live assessments.
 4. **Cost.** Every capture is a vision model call. It sits inside the Ultra AI allowance and is metered like the tutor.
 
 ## 6. Tiers
@@ -159,29 +184,63 @@ Proposed placement, keeping "learn free" intact:
 | AI marking of extended answers, AI step explanations, handwriting input | Taste allowance | Taste allowance | ✓ |
 | Gradify Capture (Chrome, macOS, Capture History) | — | — | ✓ |
 
-**One tension to decide:** your outline puts "advanced learning" and "expanded practice" in Pro. The pricing page currently promises that labs and practice questions are free, so moving practice behind Pro would change a public promise. The table above keeps learning free and puts organising, timed papers and analytics in Pro. Limits and prices should be set from measured usage and AI cost before launch (`docs/AI-COSTS.md`).
+**Decided:** ordinary practice stays free, as the pricing page promises; only genuinely advanced features (timed full papers, breakdowns, analytics) are in Pro. Limits and prices should be set from measured usage and AI cost before launch (`docs/AI-COSTS.md`).
 
 ## 7. Release order
 
+Workstreams run independently (§9). Writing and maintaining this roadmap never holds up Maths Lab or Past Papers: both build on foundations that exist.
+
 | # | Batch | Outcome | Depends on |
 |---|---|---|---|
-| 0 | **Land the foundations** | Merge Organic Chemistry Lab and Specification Mastery into main; re-run both suites; confirm AQA's terms for 8461 wording | — |
-| 1 | Chemistry Lab release | Backlog closed, evidence registered, released as provisional; independent review commissioned | 0 |
-| 2 | Maths Lab v1 | Workspace, editor, step rules, mistake patterns, one-step reveal, graph mode on the six existing sets | — (can run beside 1) |
-| 3 | Past Papers v1 | Question bank format; AQA 8461 Cell biology in original questions; experience A, then B with deterministic marking | 0 |
-| 4 | Capture backend | Tables, private storage, RLS, `capture-chat`, Capture History page, deletion | — |
+| 0a | **Review the Organic Chemistry Lab branch** | Brought up to date with main on its own branch, tests re-run, migration and tutor deployment listed; merge only on approval | — |
+| 0b | **Review the Specification Mastery branch** | Same; 8461 mapping and wording checked; merge only on approval | — |
+| 1 | Chemistry Lab release | Backlog closed, evidence registered, released as provisional; independent review commissioned | 0a approved |
+| 2 | **Maths Lab v1 (start now)** | Step rules, mistake patterns, one-step reveal on the six sets; then graph mode; then MathLive | — |
+| 3 | **Past Papers v1 (start now)** | Question bank format; AQA 8461 Cell biology in original questions with spec points, model answers, mark points and lessons; experience A, then B with deterministic marking. The format and questions are built on main's spec-point ids so they don't wait for 0b; the Specification Mastery link switches on when 0b merges | — (link: 0b) |
+| 4 | Capture backend (Ultra workstream) | Tables, private storage, RLS, `capture-chat` on the shared tutor, Capture History, deletion | Ultra reconciliation (§9) |
 | 5 | Chrome extension | First Capture client | 4; DPIA (§5.3) |
 | 6 | Past Papers v2 | AI marking of extended answers; more topics; full papers (C) | 3 |
 | 7 | macOS menu-bar app | System-wide Capture | 4, Apple Developer account |
-| 8 | Shared intelligence | Capture and past-paper evidence in Specification Mastery and revision priorities; "Make flashcards from this capture" | 3, 4 |
+| 8 | Shared intelligence | Capture and past-paper evidence in Specification Mastery and revision priorities; "Make flashcards from this capture" | 0b, 3, 4 |
 
-The order differs from your outline in three places: batch 0 is new, Maths Lab v1 can run alongside the Chemistry release because it doesn't touch the same code, and Past Papers v2 (AI marking) comes after the Chrome extension so that AI marking and Capture share one round of AI cost and safety work.
+## 8. Decisions
 
-## 8. Decisions for the owner
+### Decided (owner, 23 November 2026)
 
-1. **Approve batch 0?** Merging the Organic Chemistry Lab and Specification Mastery branches into main.
-2. **Licensing:** confirm that Past Papers starts on original Gradify questions, links to official papers rather than hosting them, and that someone contacts AQA (and later other boards) about a licence.
-3. **Tiers:** keep practice free and put timed papers and analytics in Pro (§6), or move expanded practice into Pro as in your outline?
-4. **Capture's default mode:** tutoring (guide first) or direct answers?
-5. **Apple Developer account and Chrome Web Store account:** who owns them, and in whose name are they registered?
-6. **Maths editor:** adopt MathLive (MIT), or keep typed input and add a symbol palette only?
+| Decision | Outcome |
+|---|---|
+| Merge both branches? | **Not yet.** Review and approve each independently (batches 0a, 0b) |
+| Past Papers content | Original Gradify questions first; link to official papers |
+| AQA licensing | **Deferred** until there is a clear licensing requirement and commercial plan |
+| Practice pricing | Ordinary practice free; genuinely advanced features in Pro |
+| Capture behaviour | Guided tutoring by default, with clear user control over the level of help |
+| Maths input | MathLive for notation, typed input kept; handwriting later |
+| Maths Lab | Improve the existing step checker; no second implementation |
+
+### Still open
+
+1. Who owns the Apple Developer and Chrome Web Store accounts, and in whose name are they registered?
+2. Whether Specification Mastery may show AQA's point wording, or should paraphrase and link (part of batch 0b).
+
+## 9. Workstreams
+
+One product roadmap, independent workstreams. Each workstream has one branch at a time, keeps its row below current, and reads §1, §2 and §8 before planning. **No workstream merges into main, deploys, runs migrations or touches production without the owner's approval.** A workstream that finds a missing requirement proposes it as an edit to this document.
+
+| Workstream | Branch | Scope | Status (23 Nov 2026) |
+|---|---|---|---|
+| Roadmap | `claude/nifty-pascal-noklf9` | This document | v1.1 |
+| Chemistry Lab | `claude/organic-chemistry-lab` | §3.1 | Built, unmerged, awaiting review (0a) |
+| Specification Mastery | `claude/epic-meitner-yb9cad` | Spec engine, AQA 8461 | Built, unmerged, awaiting review (0b) |
+| Maths Lab | — | §3.2 | Foundation on main; not started |
+| Past Papers | — | §4 | Not started |
+| **Ultra / Capture** | **unknown** | §5, the Ultra plan's AI features | **Reconciliation pending.** A separate conversation reports Ultra work, but no Ultra or Capture branch exists on the remote as of this version (checked all branches for "ultra", "capture" and "extension"). The only Ultra code in the repository is on main: plan names and switches, the homepage Ultra section and its waitlist. That workstream must push its branch, add its row here and report against §5 |
+
+### Ultra reconciliation checklist
+
+For the Ultra workstream to complete and record here:
+
+1. What is implemented (branch, commits, files) and what is only planned.
+2. For each item in §5.0: does the Ultra work reuse it, or does it duplicate it? Duplicates are listed with a plan to converge on the shared piece.
+3. Any Ultra feature beyond Capture (for example AI features in the Ultra plan list on the homepage) and how it maps onto §6.
+4. Requirements the Ultra work found that this roadmap is missing, as proposed edits.
+5. No restarting or overwriting existing work; no merge, deploy or migration.
