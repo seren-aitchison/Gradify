@@ -19,6 +19,7 @@
   <meta name="twitter:description" content="Upload a PDF of your notes. Get flashcards checked against what you wrote, and a revision plan for your exam. Free.">
   <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
   <link rel="canonical" href="https://getgradify.com/">
+  <!-- structured data: the FAQ part mirrors the visible #faq (tests/seo.test.mjs checks they match) -->
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
@@ -125,6 +126,7 @@
     const yours = document.getElementById("continue");
     if (mountContinue(yours, { title: "Welcome back: your shelf", layout: "shelf" })) document.getElementById("top")?.before(yours);
   </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "EducationalOrganization", "@id": "https://getgradify.com/#org", "name": "Gradify", "alternateName": ["GetGradify", "Gradify study"], "url": "https://getgradify.com/", "logo": "https://getgradify.com/assets/icons/icon-512.png", "email": "hello@getgradify.com", "founder": {"@type": "Person", "name": "Seren Aitchison"}, "description": "Gradify turns your notes into flashcards and mind maps checked against what you wrote, and schedules revision with spaced repetition. Free courses across 30+ subjects."}, {"@type": "WebSite", "@id": "https://getgradify.com/#site", "name": "Gradify", "url": "https://getgradify.com/", "publisher": {"@id": "https://getgradify.com/#org"}, "inLanguage": "en-GB"}, {"@type": "WebApplication", "name": "Gradify", "url": "https://getgradify.com/app.html", "applicationCategory": "EducationalApplication", "operatingSystem": "Web", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}, "featureList": ["Flashcards from your PDF or notes, each linked to its source line", "Mind maps from notes", "Spaced repetition (FSRS) paced to your exam date", "Free courses in 30+ subjects"], "publisher": {"@id": "https://getgradify.com/#org"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Making flashcards and mind maps from your notes, revising them, every course and planning your own revision are free, with no card. Gradify Pro lets Gradify organise, optimise and manage your learning, and Gradify Ultra adds Gradify AI."}}, {"@type": "Question", "name": "What is Gradify?", "acceptedAnswer": {"@type": "Answer", "text": "Gradify is a free study app that turns your notes into flashcards and mind maps checked against what you wrote, then schedules your revision with spaced repetition up to your exam. It also has free courses in more than 30 subjects, from GCSE to postgraduate."}}, {"@type": "Question", "name": "How does Gradify help with exam revision?", "acceptedAnswer": {"@type": "Answer", "text": "It turns revision into active recall: you answer flashcards from memory instead of re-reading, and each card comes back just before you'd forget it. Set your exam date and Gradify paces your reviews to it. Our guide to active recall explains why this works."}}, {"@type": "Question", "name": "What kind of notes work?", "acceptedAnswer": {"@type": "Answer", "text": "A PDF with selectable text, a .txt or .md file, or notes pasted straight in. One lecture or topic at a time works best. Scanned pages, handwriting and diagrams will need Gradify AI, which isn't switched on yet."}}, {"@type": "Question", "name": "How do I know the flashcards are right?", "acceptedAnswer": {"@type": "Answer", "text": "Every card is matched to the line in your notes it came from, and you can see that line. Cards that don't fully match are marked to check, so you can edit, regenerate or delete them before you revise."}}, {"@type": "Question", "name": "Do I need an account?", "acceptedAnswer": {"@type": "Answer", "text": "Not to try it. Your first study pack is saved on your device. Make a free account (email link or Google, no password) to keep your packs safe in your account. Anything you made before moves across."}}, {"@type": "Question", "name": "How does the revision schedule work?", "acceptedAnswer": {"@type": "Answer", "text": "After each card you say how well you knew it. Gradify uses spaced repetition to bring it back just before you'd forget, and paces everything to your exam date and the time you have each day."}}, {"@type": "Question", "name": "What happens to my data?", "acceptedAnswer": {"@type": "Answer", "text": "It's yours. You can download everything or delete it from Account at any time. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API to make your pack. The privacy page has the details."}}]}]}</script>
 </head>
 <body class="ds">
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -755,6 +757,14 @@
           <p>Yes. Making flashcards and mind maps from your notes, revising them, every course and planning your own revision are free, with no card. <a href="pricing.html">Gradify Pro</a> lets Gradify organise, optimise and manage your learning, and Gradify Ultra adds Gradify AI.</p>
         </details>
         <details class="glass">
+          <summary>What is Gradify?</summary>
+          <p>Gradify is a free study app that turns your notes into flashcards and mind maps checked against what you wrote, then schedules your revision with spaced repetition up to your exam. It also has free courses in more than 30 subjects, from GCSE to postgraduate.</p>
+        </details>
+        <details class="glass">
+          <summary>How does Gradify help with exam revision?</summary>
+          <p>It turns revision into active recall: you answer flashcards from memory instead of re-reading, and each card comes back just before you'd forget it. Set your exam date and Gradify paces your reviews to it. Our <a href="/guides/active-recall/">guide to active recall</a> explains why this works.</p>
+        </details>
+        <details class="glass">
           <summary>What kind of notes work?</summary>
           <p>A PDF with selectable text, a .txt or .md file, or notes pasted straight in. One lecture or topic at a time works best. Scanned pages, handwriting and diagrams will need Gradify AI, which isn't switched on yet.</p>
         </details>
@@ -777,6 +787,14 @@
       </div>
     </section>
 
+    <!-- Free resources: tools, guides and topics anyone can use without an account -->
+    <section class="faq" id="free" aria-labelledby="free-title">
+      <div class="section-head">
+        <h2 id="free-title">Free tools and guides</h2>
+      </div>
+      <p class="lede">No account needed: <a href="/tools/degree-classification-calculator/">UK degree classification calculator</a> · <a href="/tools/final-grade-calculator/">final grade calculator</a> · <a href="/tools/exam-countdown/">exam countdown</a> · <a href="/tools/spaced-repetition-schedule/">spaced repetition schedule</a> · <a href="/pdf-to-flashcards/">PDF to flashcards</a> · <a href="/guides/active-recall/">the complete guide to active recall</a> · <a href="/topics/">revision topics in 30+ subjects</a> · <a href="/study-plan/">study plans</a> · <a href="/templates/">printable templates</a>.</p>
+    </section>
+
     <!-- Closing call to action -->
     <section class="closing glass" aria-labelledby="closing-title">
       <h2 id="closing-title">Your next lecture, as flashcards. <span class="grad">Free.</span></h2>
@@ -791,7 +809,8 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/glossary/">Glossary</a><a href="/templates/">Templates</a><a href="/compare/">Compare</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
     </footer>

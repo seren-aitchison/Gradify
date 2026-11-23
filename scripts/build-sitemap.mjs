@@ -3,6 +3,7 @@
 //   node scripts/build-sitemap.mjs     writes sitemap.xml (tests/launch.test.mjs checks it's up to date)
 import { readdir, writeFile } from "node:fs/promises";
 import { SITES, slugOf } from "../kit/core/site.js";
+import { SEO_FOLDERS } from "./seo/folders.mjs";
 
 const root = new URL("../", import.meta.url), ORIGIN = "https://getgradify.com";
 // tool pages every site shares; the copies on getgradify.com itself are the ones to index
@@ -18,8 +19,10 @@ async function pagesIn(dir) {
 }
 
 export async function sitemapUrls() {
-  const urls = ["", "app.html", "privacy.html", "terms.html", "quality.html"];
+  const urls = ["", "app.html", "explore.html", "journey.html", "pricing.html", "about.html", "ambassadors.html", "site-map.html", "privacy.html", "terms.html", "quality.html"];
   for (const s of SITES.filter((x) => x.built && ["live", "beta"].includes(x.status))) urls.push(...(await pagesIn(`${slugOf(s)}/`)).sort());
+  // the search pages (scripts/build-seo.mjs), apart from the countdown widget other sites embed (noindex)
+  for (const f of SEO_FOLDERS) urls.push(...(await pagesIn(`${f}/`)).filter((p) => !p.endsWith("/embed.html")).sort());
   return urls.map((u) => `${ORIGIN}/${u.replace(/(^|\/)index\.html$/, "$1")}`);
 }
 

@@ -46,6 +46,14 @@ jobs:
       - name: The public site builds from the allowlist and passes its checks
         run: node scripts/build-site.mjs --check
 
+      - name: Search pages are up to date
+        # tools, guides, glossary, topics, study plans, llms.txt, canonical and link-preview tags (scripts/build-seo.mjs)
+        run: |
+          node scripts/build-seo.mjs --check || {
+            echo "::error::Search pages are out of date. Run node scripts/build-seo.mjs, then node scripts/build-sitemap.mjs, then commit."
+            exit 1
+          }
+
       - name: Generated files are up to date
         run: |
           node scripts/build-sitemap.mjs
@@ -139,3 +147,10 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # tell Bing (and the AI search engines that use its index) which pages this deploy changed, via IndexNow
+      # (scripts/indexnow.mjs). Best effort: a failure here never fails the deploy.
+      - name: Ping IndexNow with the changed pages
+        continue-on-error: true
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.event.before }}" 2>/dev/null && node scripts/indexnow.mjs --since "${{ github.event.before }}" || echo "No previous deploy to compare with; skipping IndexNow."
