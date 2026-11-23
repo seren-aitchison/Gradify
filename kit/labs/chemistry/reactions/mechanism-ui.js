@@ -7,7 +7,7 @@ import { challengePanel } from "../ui.js";
 import * as K from "../skeletal.js";
 import * as E from "./electron-flow.js";
 import { REACTIONS, FAMILIES, instantiate, arrowKinds, faultyStep } from "./library.js";
-import { breakdown } from "./marking.js";
+import { breakdown, stepCredit } from "./marking.js";
 import { mountTutor } from "./tutor-ui.js";
 import { LEVELS, atLevel } from "./predictor.js";
 
@@ -15,6 +15,34 @@ const sub = (f) => esc(f).replace(/(\d+)/g, "<sub>$1</sub>").replace(/([+-]+)$/,
 const lerp = (a, b, t) => a + (b - a) * t;
 const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 const COL = { pend: "#f59e0b", bad: "#ff4d6d", good: "#10b981", form: "rgba(16,185,129,.4)", brk: "rgba(255,77,109,.55)" };
+
+// the most a saved note may hold; the editor stops at the same limits, so every note it saves can be reopened
+export const MAX_STEPS = 40, MAX_ARROWS = 12;
+const plainObj = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const shortText = (v, max = 300) => typeof v === "string" && v.length <= max;
+/**
+ * A mechanism note read back from storage, checked and copied field by field: a known reaction (or none, for the
+ * learner's own drawing), a valid start state, steps of valid arrows, and an error-carried-forward step inside the
+ * note. Null when anything is off, or when the note no longer replays, so a tampered note is never opened or drawn.
+ */
+export function restoreNote(v) {
+  if (!plainObj(v) || !shortText(v.title) || !Array.isArray(v.steps) || v.steps.length > MAX_STEPS) return null;
+  const reactionId = v.reactionId ?? null;
+  if (reactionId !== null && !REACTIONS.some((r) => r.id === reactionId)) return null;
+  const start = E.restoreState(v.start); if (!start) return null;
+  const steps = [];
+  for (const st of v.steps) {
+    if (!plainObj(st) || !Array.isArray(st.arrows) || !st.arrows.length || st.arrows.length > MAX_ARROWS) return null;
+    const arrows = st.arrows.map(E.restoreArrow); if (arrows.some((a) => !a)) return null;
+    steps.push({ arrows });
+  }
+  let conditions = null;
+  if (v.conditions != null) { if (!plainObj(v.conditions) || !shortText(v.conditions.above) || !shortText(v.conditions.below)) return null; conditions = { above: v.conditions.above, below: v.conditions.below }; }
+  const ecf = v.ecf ?? null; if (ecf !== null && !(Number.isInteger(ecf) && ecf >= 0 && ecf <= steps.length)) return null;
+  const note = { v: 1, title: v.title, reactionId, conditions, start, steps, ecf };
+  try { if (!E.replay(note).ok) return null; } catch { return null; }
+  return note;
+}
 
 export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDrawing = () => null, onSave = null, prefs = { level: "university" }, onPrefs = () => {} } = {}) {
   host.innerHTML = `
@@ -31,7 +59,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
         <p class="osk-hint mx-hint"></p>
         <div class="mx-steps" role="tablist" aria-label="Mechanism steps"></div>
         <div class="lab-row mx-play"></div>
-        <details class="mx-kbd"><summary>Add an arrow without dragging</summary><div class="lab-row"><label class="lab-sel"><span>From</span><select class="mx-from"></select></label><label class="lab-sel"><span>To</span><select class="mx-to"></select></label><span class="mx-addbtn"></span></div></details>
+        <details class="mx-kbd"><summary>Add an arrow without dragging</summary><div class="lab-row"><label class="lab-sel"><span>From</span><select class="mx-from"></select></label><label class="lab-sel"><span>To</span><select class="mx-to"></select></label><label class="lab-sel mx-endsel" hidden><span>New bond forms from</span><select class="mx-end"></select></label><span class="mx-addbtn"></span></div></details>
       </div>
       <div class="lab-ctrl">
         <div class="lab-info mx-fb" aria-live="polite"></div>
@@ -66,15 +94,22 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
 
   function load(id, mech = null) {
     stopAnim(); src = id; sel.value = id; pending = []; done = []; viewK = null; fb = null; finished = false; assisted = false; attempts = []; ecf = null; spot = null; stopTimer(); xq = null;
-    if (mech) { inst = mech.reactionId ? instantiate(REACTIONS.find((r) => r.id === mech.reactionId)) : null; src = mech.reactionId || "mine"; sel.value = src; const rp = E.replay({ start: mech.start, steps: mech.steps }); states = rp.states; done = mech.steps.slice(0, rp.states.length - 1).map((s) => s.arrows); }
+    if (mech) { inst = mech.reactionId ? instantiate(REACTIONS.find((r) => r.id === mech.reactionId)) : null; src = mech.reactionId || "mine"; sel.value = src; const rp = E.replay({ start: mech.start, steps: mech.steps }); states = rp.states; done = mech.steps.slice(0, rp.states.length - 1).map((s) => s.arrows);
+      // a note that carried an error forward keeps doing so: its later steps are checked against the learner's own
+      // intermediate, not the model's. Saved with the note; for older notes, the first step where the route leaves the
+      // model's is where the carrying started.
+      if (inst) { const model = E.replay({ start: inst.start, steps: inst.steps }).states, k = states.findIndex((st, i) => i > 0 && (!model[i] || !E.sameState(st, model[i]))); ecf = Number.isInteger(mech.ecf) ? mech.ecf : k > 0 ? k - 1 : null; } }
     else if (id === "mine") {
       inst = null; const m = getDrawing();
       states = m && m.atoms.length ? [E.fromDrawing(m)] : [];
       if (!states.length) fb = { kind: "info", html: "<p>Draw the reactants in <b>Structure</b> mode first (for example a halogenoalkane and a hydroxide ion, O with a − charge), then come back to push the electrons.</p>" };
     } else { inst = instantiate(REACTIONS.find((r) => r.id === id)); states = [inst.start]; }
     marks = { got: 0, total: inst ? inst.steps.reduce((t, s) => t + s.arrows.length, 0) : 0, first: [] };
+    // a saved note with every step done opens as a finished mechanism: shown complete, not re-marked (it isn't an
+    // attempt, so it earns no marks or challenges); an unfinished note stays editable from where it stopped
+    if (mech && inst && done.length >= inst.steps.length) { finished = true; assisted = true; fb = { kind: "done", ecf: null, restored: true }; }
     if (inst) type = inst.steps[0].arrows[0].type; q(".mx-type").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.t === type)));
-    if (exam && inst) startExam();
+    if (exam && inst && !finished) startExam();
     fitAll(); about(); actions(); refresh();
   }
   // ---------- exam style ----------
@@ -203,7 +238,10 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   // in exam answers); started near the middle, the end nearer the target is used
   const toFor = (from, h) => { if (from.type === "bond" && h.type === "atom" && from.t != null && (from.t < 0.42 || from.t > 0.58)) { const b = E.bondOf(cur(), from.id); if (b && b.a !== h.id && b.b !== h.id) return { between: [from.t < 0.42 ? b.a : b.b, h.id] }; } return toOf(h); };
   const toOf = (h) => { if (h.type === "bond") { const b = E.bondOf(cur(), h.id); return { between: [b.a, b.b] }; } return { atom: h.id }; };
+  // in exam style nothing can be drawn or checked until the conditions question is answered (pointer or keyboard)
+  const locked = () => exam && xq && xq.phase === "conditions";
   function addArrow(a) {
+    if (locked()) return;
     const n = E.normalize(cur(), a); pending.push(a); finished = false;
     fb = n.error ? { kind: "arrow", errors: [{ arrow: pending.length - 1, ...n.error }], html: "" } : null;
     refresh();
@@ -238,13 +276,28 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
   });
   // the same, from two lists (keyboard and screen readers)
   function kbd() {
-    const s = states.length && viewK == null && !finished && !spot ? cur() : null, f = q(".mx-from"), t = q(".mx-to");
-    if (!s) { f.innerHTML = t.innerHTML = ""; return; }
+    const s = states.length && viewK == null && !finished && !spot && !locked() ? cur() : null, f = q(".mx-from"), t = q(".mx-to"), e = q(".mx-end");
+    if (!s) { f.innerHTML = t.innerHTML = e.innerHTML = ""; endPick(); return; }
     const L = (id) => E.atomLabel(s, id);
     f.innerHTML = s.atoms.filter((a) => a.n > 0).map((a) => `<option value="lp:${a.id}">${a.n % 2 && a.n < 2 ? "unpaired electron" : "lone pair"} on ${esc(L(a.id))}</option>`).join("") + s.bonds.map((b) => `<option value="bond:${b.id}">${esc(L(b.a))}${b.e >= 6 ? "≡" : b.e >= 4 ? "=" : "–"}${esc(L(b.b))} bond</option>`).join("");
     t.innerHTML = s.atoms.map((a) => `<option value="atom:${a.id}">atom ${esc(L(a.id))}</option>`).join("") + s.bonds.map((b) => `<option value="bond:${b.id}">${esc(L(b.a))}–${esc(L(b.b))} bond</option>`).join("");
+    endPick();
   }
-  button(q(".mx-addbtn"), "Add arrow", () => { const [fk, fi] = q(".mx-from").value.split(":"), [tk, ti] = q(".mx-to").value.split(":"); if (!fk || !tk) return; addArrow({ type, from: fromOf({ type: fk, id: Number(fi) }), to: toOf({ type: tk, id: Number(ti) }) }); });
+  // a bond's electrons moving to an atom form a new bond from one end of that bond: which end is chosen here (the
+  // pointer equivalent is starting the arrow near that end); "automatic" leaves it to the end nearer the atom
+  function endPick() {
+    const wrap = q(".mx-endsel"), sel = q(".mx-end"), [fk, fi] = q(".mx-from").value.split(":"), [tk] = q(".mx-to").value.split(":"), s = states.length ? cur() : null;
+    const b = s && fk === "bond" ? E.bondOf(s, Number(fi)) : null, show = !!(b && tk === "atom");
+    wrap.hidden = !show;
+    if (show) { const keep = sel.value; sel.innerHTML = `<option value="">automatic (the end nearer the atom)</option>${[b.a, b.b].map((id) => `<option value="${id}">${esc(E.atomLabel(s, id))}</option>`).join("")}`; if ([...sel.options].some((o) => o.value === keep)) sel.value = keep; }
+  }
+  q(".mx-from").addEventListener("change", endPick); q(".mx-to").addEventListener("change", endPick);
+  button(q(".mx-addbtn"), "Add arrow", () => {
+    const [fk, fi] = q(".mx-from").value.split(":"), [tk, ti] = q(".mx-to").value.split(":"); if (!fk || !tk) return;
+    const end = q(".mx-endsel").hidden ? "" : q(".mx-end").value, b = fk === "bond" ? E.bondOf(cur(), Number(fi)) : null;
+    const to = b && tk === "atom" && end && Number(end) !== Number(ti) && b.a !== Number(ti) && b.b !== Number(ti) ? { between: [Number(end), Number(ti)] } : toOf({ type: tk, id: Number(ti) });
+    addArrow({ type, from: fromOf({ type: fk, id: Number(fi) }), to });
+  });
 
   // ---------- checking ----------
   const keys = (s, arrows) => arrows.map((a) => E.arrowKey(s, a));
@@ -256,10 +309,13 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     return r;
   }
   function check() {
+    if (locked()) return;
     if (spot) { spot = null; fb = null; }
     if (!pending.length) { fb = { kind: "info", html: "<p>Draw the arrows for this step first.</p>" }; refresh(); return; }
     const s = cur(), r = E.applyStep(s, pending), k = done.length;
     if (!inst) {
+      if (k >= MAX_STEPS) { fb = { kind: "info", html: `<p>This mechanism has reached the limit of ${MAX_STEPS} steps. Save it to your notes, or start again.</p>` }; refresh(); return; }
+      if (pending.length > MAX_ARROWS) { fb = { kind: "info", html: `<p>One step can have at most ${MAX_ARROWS} arrows. Split it into smaller steps.</p>` }; refresh(); return; }
       if (!r.ok) { fb = { kind: "bad", errors: r.errors, warnings: r.warnings, checks: r.checks, steps: [] }; refresh(); return; }
       const prev = s; advance(pending.slice(), null); fb = { kind: "good", result: r, title: `Step ${k + 1} applied`, prev, steps: r.steps, warnings: r.warnings, checks: r.checks }; play([k]); return;
     }
@@ -280,7 +336,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     }
     const exp = E.applyStep(s, st.arrows), mine = keys(s, pending), want = keys(s, st.arrows);
     const right = want.filter((w) => mine.includes(w)).length;
-    if (attempts[k] === 1) marks.first[k] = r.ok && E.sameState(r.state, exp.state) ? want.length : right;
+    if (attempts[k] === 1) marks.first[k] = stepCredit({ valid: r.ok, matches: r.ok && E.sameState(r.state, exp.state), found: right, submitted: pending.length, expected: want.length });
     if (r.ok && E.sameState(r.state, exp.state)) {
       const prev = s; advance(pending.slice(), st.move);
       fb = { kind: "good", title: attempts[k] === 1 ? "Correct" : "Correct now", steps: r.steps, warnings: r.warnings.filter((w) => w.code !== "assumed"), checks: r.checks, explain: st.explain, prev };
@@ -341,9 +397,9 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     else if (fb.kind === "good" || fb.kind === "shown") body = `<h4 class="ok">${esc(fb.title || "")}</h4>${list(fb.steps, "")}${list(fb.warnings, "warn")}${fb.explain ? `<p class="mx-why">${esc(fb.explain)}</p>` : ""}${checks(fb.checks)}`;
     else if (fb.kind === "done") {
       const sp = E.species(cur()), names = sp.map((x) => { if (x.radical || x.charge) return sub(x.formula); const sub2 = { atoms: cur().atoms.filter((a) => x.atoms.includes(a.id)), bonds: cur().bonds.filter((b) => x.atoms.includes(b.a)) }; const nm = K.analyse(E.toDrawing(sub2).m).name?.name; return nm ? `${esc(nm)} (${sub(x.formula)})` : sub(x.formula); });
-      const bd = inst ? breakdown({ arrows: inst.steps.map((st) => st.arrows.length), first: marks.first, ecf, conditions: exam && xq ? xq.condOK : null, explanation: exam && xq ? xq.explOK : null, assisted }) : null;
+      const bd = inst && !fb.restored ? breakdown({ arrows: inst.steps.map((st) => st.arrows.length), first: marks.first, ecf, conditions: exam && xq ? xq.condOK : null, explanation: exam && xq ? xq.explOK : null, assisted }) : null;
       const table = bd ? `<table class="mx-marks"><caption>Mark breakdown${exam && xq ? ` · time ${elapsed()}` : ""}</caption>${bd.rows.map((r) => `<tr><td>${esc(r.label)}${r.note ? `<small>${esc(r.note)}</small>` : ""}</td><td>${r.max ? `${r.got}/${r.max}` : ""}</td></tr>`).join("")}<tr class="tot"><td>Total</td><td>${bd.got}/10</td></tr></table>` : "";
-      body = `<h4 class="ok">Mechanism complete${inst ? `: ${bd.got}/10${assisted ? " (with help)" : ""}` : ""}</h4>${table}${fb.ecf != null ? `<p class="osk-aka">Error carried forward from step ${fb.ecf + 1}: the steps after it were marked on your own intermediate, so the products differ from the model answer. Use Full solution to compare.</p>` : ""}<p><small>Products</small><br>${names.join(" + ")}</p>${inst ? `<p class="mx-why">${esc(inst.reaction.outcome)}</p>` : ""}${list(fb.steps, "")}`;
+      body = `<h4 class="ok">Mechanism complete${bd ? `: ${bd.got}/10${assisted ? " (with help)" : ""}` : ""}</h4>${fb.restored ? `<p class="osk-aka">Opened from your notes: a saved mechanism isn't marked again.</p>` : ""}${table}${fb.ecf != null ? `<p class="osk-aka">Error carried forward from step ${fb.ecf + 1}: the steps after it were marked on your own intermediate, so the products differ from the model answer. Use Full solution to compare.</p>` : ""}<p><small>Products</small><br>${names.join(" + ")}</p>${inst ? `<p class="mx-why">${esc(inst.reaction.outcome)}</p>` : ""}${list(fb.steps, "")}`;
     }
     box.innerHTML = head + examHead + body;
   }
@@ -392,7 +448,7 @@ export function mountMechanism(host, { ctx = {}, palette = () => "dark", getDraw
     more.insertAdjacentHTML("beforeend", `<span class="osk-label">More</span>`);
     if (inst && !exam) button(more, "Spot the error", startSpot);
     button(more, "Restart", () => load(src));
-    if (onSave) button(more, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })) }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
+    if (onSave) button(more, "Save to notes", () => { if (!states.length) return; onSave({ v: 1, title: inst ? inst.reaction.title : "My mechanism", reactionId: inst?.reaction.id || null, conditions: inst?.reaction.conditions || null, start: states[0], steps: done.map((arrows) => ({ arrows })), ecf }); fb = { kind: "info", html: "<p class=\"lab-msg ok\">Saved to your organic notes (Structure mode).</p>" }; feedback(); });
     if (!inst || exam) return;
     h.insertAdjacentHTML("beforeend", `<span class="osk-label">Help</span>`);
     button(h, "Hint", () => { if (finished) return; fb = { kind: "info", html: `<h4>Hint</h4><p>${esc(inst.steps[done.length].hint)}</p>` }; feedback(); });

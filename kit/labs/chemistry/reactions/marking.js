@@ -5,6 +5,17 @@
 // earns partial credit. No DOM; tested in tests/mechanism.test.mjs.
 //   breakdown({ arrows: [n per step], first: [arrows right on the first attempt, per step], ecf: step | null,
 //               conditions: bool | null, explanation: bool | null, assisted: bool }) → { rows, got, total }
+/**
+ * First-attempt credit for one mechanism step, out of `expected` arrows. Full credit only when the submission is valid
+ * and does what the model step does; otherwise the expected arrows found, less any extra or repeated ones, and never
+ * full (a rejected step can't earn the intermediate, product or unaided-completion marks). Later attempts don't count.
+ */
+export function stepCredit({ valid, matches, found, submitted, expected }) {
+  if (valid && matches) return expected;
+  const extra = Math.max(0, submitted - found);
+  return Math.max(0, Math.min(found - extra, expected - 1));
+}
+
 export function breakdown({ arrows, first, ecf = null, conditions = null, explanation = null, assisted = false }) {
   const n = arrows.length, frac = (k) => Math.max(0, Math.min(1, (first[k] || 0) / arrows[k]));
   const rows = [];

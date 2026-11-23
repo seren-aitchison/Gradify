@@ -33,6 +33,8 @@ kit/labs/chemistry/
     rules.js                   the evidence record behind each rule: scope, selectivity, limitations, sources, confidence
     competition.js             SN1 / SN2 / E1 / E2 ranking from substrate, nucleophile/base, solvent, temperature
     planner.js                 synthesis search over the predictor's reactions; routes, retrosynthesis, challenges
+    configuration.js           R/S from wedge and dash bonds, E/Z from the page, meso, isomer relationships, stereo SMILES
+    stereo-outcome.js          what each reaction does to configuration: kept, inverted, racemised, formed (syn/anti)
     marking.js                 exam-style 10-mark breakdown with error carried forward
     reaction-ui.js             Reaction mode: Predict (with adaptive and timed practice), Conditions, Synthesis
   lab3d.js                     3D mode (mol.js embedding + molview.js)
@@ -205,7 +207,7 @@ Before adding reactions, the existing rules were checked against hand-worked cas
 | HBr on a C=C conjugated with C=O used Markovnikov's rule (wrong regiochemistry) | declined with the reason |
 | Neopentyl, benzylic and methyl halides mis-scored | quaternary β-carbon blocks SN2; ring carbons don't count as branching; methyl + bulky base gives the ether |
 | Acid anhydrides acylated twice | one half acylates, the other becomes the acid |
-| No stereochemical notes | racemic (planar intermediates), inversion (SN2 at a stereocentre), syn/anti additions |
+| No stereochemical notes | racemic (planar intermediates), inversion (SN2 at a stereocentre), syn/anti additions; since 5c, worked through from wedges and E/Z to each product's R/S |
 
 Passing electron-conservation checks is not treated as proof that a mechanism is right: the library mechanisms are
 each also compared with their stated products and names, and the predictor with the reference set below.
@@ -231,11 +233,49 @@ topics) are part of what the review should confirm.
   modelled (declined where detected).
 * "Unsupported" is deliberately broad: the inert lists only include what is standard knowledge, so some reactions an
   expert would call safe to predict are declined until a reviewer confirms them.
-* A flat drawing has no wedges, so the lab can say a racemate forms or a configuration inverts, but not which
-  enantiomer or diastereomer (E/Z of a starting alkene isn't carried into anti additions).
-* Aromatic substitution is predicted for one benzene ring only.
+* Stereochemistry (see "Stereochemistry" below) follows textbook rules; amounts of diastereomers aren't predicted, E2 from a
+  single diastereomer isn't yet worked through anti-periplanar geometry, and SOCl₂ and other substitutions at a
+  stereocentre outside SN1/SN2 aren't followed stereochemically (the lab says so instead of guessing).
+* CIP priorities use mol.js's simplified ranking (first point of difference by atomic number, duplicated atoms for
+  multiple bonds): no isotopes, no pseudo-asymmetric r/s centres, no like/unlike rules. When two groups tie, the lab
+  gives no descriptor rather than a guess.
+* Aromatic substitution is predicted for one benzene ring only; heteroaromatic rings (pyridine) are declined.
+* Declined rather than guessed: HBr on a C=C whose benzylic carbon is less substituted than the other end (benzylic
+  against a more substituted cation); HBr on molecules with both C=C and C≡C; hydroxide with a halogen and an
+  aldehyde or ketone together; HBr or mercury-catalysed hydration on molecules with more than one C≡C whose carbons are
+  equally substituted (a single such C≡C gives both products).
+* SMILES starting materials must be one molecule, and bracket atoms must have at least the hydrogens their valence
+  implies: the drawing model fills valence with implicit hydrogens, so radicals such as `[O]` are refused.
+* Identity (the molecule hash) is exact: rings add a canonical certificate. A very large, highly symmetric molecule can
+  exhaust the canonical search (20,000 branches); it then falls back to colour refinement alone.
 * Synthesis search uses only the 35 reagents, follows major products and has a node limit, so a longer real-world
   route may exist that the planner doesn't find.
+
+### Stereochemistry (`configuration.js`, `stereo-outcome.js`)
+
+* **Drawing.** A single bond may carry `stereo: "wedge" | "dash"` with its narrow end at `bond.a`, the stereocentre it
+  describes. Structure mode's **Wedge** tool (key W) cycles a bond plain → wedge → dash, with the narrow end at the
+  atom nearer the click. R/S is printed beside each stereocentre and E/Z beside each C=C; the working-out panel gives
+  the descriptor, whether the drawn isomer is chiral or meso, and why a centre has no descriptor.
+* **R/S** comes from each neighbour's page direction (y turned over) lifted towards the viewer for a wedge and away for
+  a dash; a hidden H points away from the other three. **E/Z** comes from which side of the C=C the higher-priority
+  group on each carbon is drawn. Priorities use `cipRank` from `mol.js`.
+* **Chiral, meso and isomer relations** compare descriptors attached to each atom's symmetry class, so a meso compound's
+  mirror image comes out identical: `relation()` gives identical, enantiomers, diastereomers or constitutional.
+* **Stereo SMILES** (`@`, `@@`, `/`, `\`) are laid out with wedges and C=C geometry read straight from the SMILES syntax.
+  (mol.js's 3D embedding was not used for this: it can settle maleic acid and some trisubstituted alkenes into the
+  wrong E/Z isomer.)
+* **Through reactions** (`stereo-outcome.js`, run after every prediction): an untouched stereocentre keeps its
+  arrangement (its label can change with priorities, and the lab says why); SN2 inverts a drawn centre; SN1 racemises
+  it; Br₂ adds anti and H₂/Ni and cold KMnO₄ add syn, so E- and Z-alkenes give different products (E-but-2-ene + Br₂
+  → meso, Z → racemate; the reverse for syn); a ring C=C gives trans (anti) or cis (syn); HBr, steam, NaBH₄, HCN and
+  Grignard reagents attack either face. An achiral starting material can only give achiral, meso or racemic products;
+  a new centre next to an existing one gives diastereomers in amounts the lab doesn't predict. Lindlar gives the Z
+  alkene; an elimination is drawn as its major E isomer. Each product carries `config: { text, form, centres, bonds,
+  notes }`, shown on its card ("(2S,3R)-2,3-dibromobutane · meso") and sent to the tutor, whose prompt forbids it
+  from assigning descriptors itself.
+* Tests: `tests/configuration.test.mjs` (hand-worked cases, 20 stereo SMILES against mol.js, E/Z, meso) and
+  `tests/stereo-outcome.test.mjs` (the textbook outcomes above).
 
 ## 3. Roadmap
 
@@ -250,8 +290,8 @@ topics) are part of what the review should confirm.
 | 4 Assessment | marks per arrow, attempts, outcomes recorded as lab evidence | **Built**: per-arrow marks, error carried forward, spot the error, exam style with a 10-mark breakdown and timer, four difficulty levels, adaptive and timed practice, multiple acceptable answers. Next: exam-board-specific question styles, free-text explanations (needs the tutor) |
 | 5 Advanced | interactive R/S with CIP clicking, displayed formula view, bridged rings, wedges in 3D, synthesis planning | Not started (CIP routines exist in `mol.js`) |
 | 5b Validation | evidence records, confidence and status, reviewer pack and import | **Built**; the review itself is waiting for a qualified chemist |
-| 5c Stereochemistry | wedge/dash bonds, R/S and E/Z descriptors carried through reactions, isomer comparison | Not started (CIP routines exist in `mol.js`) |
-| 6a AI tutor | explanations, comparison, Socratic guidance, diagnosis, synthesis help, mechanism verdicts, all bound to the engine's evidence level | **Built** (needs a deploy of `course-tutor` and the migration `20261122120000_chemistry_tutor_mode.sql`) |
+| 5c Stereochemistry | wedge/dash bonds, R/S and E/Z descriptors carried through reactions, isomer comparison | **Built** (see "Stereochemistry" above) |
+| 6a AI tutor | explanations, comparison, Socratic guidance, diagnosis, synthesis help, mechanism verdicts, all bound to the engine's evidence level | **Built**. Release order: apply the migration `20261122120000_chemistry_tutor_mode.sql`, redeploy `course-tutor` and `study-pack`, then merge. If either backend step is late, the tutor answers "isn't available for this lab right now" with no Claude call and no use counted (`tests/chemistry-tutor-rollout.test.mjs`) |
 | 6 Integration | AI tutor receives `tutorContext()` from the engine; notes; flashcards; mindmaps; study plans | Mechanisms save to the lab notebook and copy as flashcards; `tutorContext()` exists. Tutor endpoint not wired |
 
 Principles kept throughout: no placeholder features (a mode or button appears only when it works), the AI never decides
@@ -269,6 +309,23 @@ against the code before the fix, all six of its tests fail. In the reference set
 expectations became `unsupported` (each with its chemistry in the case's note), 1 became a reaction with no organic
 product, 2 changed product (phenol and 4-methylphenol nitration), and 2 neopentyl cases became `unsupported`.
 
+## Release gate
+
+The lab ships only when all of these hold. Set after the review of PR #159 ([organic-review/REVIEW-FINDINGS.md](organic-review/REVIEW-FINDINGS.md)):
+
+1. No known Major scientific correctness defect (names, products, stereochemistry, valid structures).
+2. No known Major assessment or marking defect.
+3. No reproducible freeze or data-loss defect.
+4. Every confirmed finding has a regression test that fails without its fix.
+5. The reference chemistry tests pass (`tests/organic-reference.test.mjs`, with the other lab suites below).
+6. Browser checks pass at desktop, tablet and phone widths: `node scripts/check-organic-lab.cjs`, `node scripts/check-organic-journeys.cjs` and
+   `node scripts/check-interactives.cjs --serve . --course chemistry`.
+7. CI passes against the latest `main`.
+
+A passing suite is not chemistry validation: the 302 reference cases are still `provisional` until the independent
+review (above) is done. The lab says so to learners: a notice above the mode tabs, visible in every mode, says the
+chemistry is provisional until an independent chemist has reviewed it. Minor findings are tracked in [organic-review/BACKLOG.md](organic-review/BACKLOG.md).
+
 ## 4. Testing record
 
 | Suite | What it checks |
@@ -277,9 +334,15 @@ product, 2 changed product (phenol and 4-methylphenol nitration), and 2 neopenty
 | `tests/mechanism.test.mjs` | electron flow, validation, all 16 mechanisms replayed to named products, spot the error, error carried forward, registration |
 | `tests/predictor.test.mjs` | predictor behaviour on starting materials and learners' own drawings, every product a valid molecule |
 | `tests/organic-reference.test.mjs` | the 302-reaction reference set, with coverage of every reagent; every `no_reaction` case passes the coverage rule |
-| `scripts/check-organic-lab.cjs` | the interface in a real browser at desktop, tablet and phone sizes, dark and light: drawing and editing, carrying the molecule between modes, the three outcomes, practice, conditions, synthesis, mechanisms (keyboard and drag, error carried forward, spot the error, exam), the tutor panel, reloads, sideways scrolling and accessible names. `node scripts/check-organic-lab.cjs` (`--only phone`, `--shots <dir>`) |
+| `scripts/check-organic-journeys.cjs` | the interface in a real browser at desktop, tablet and phone sizes, dark and light: drawing and editing, carrying the molecule between modes, the three outcomes, practice, conditions, synthesis, mechanisms (keyboard and drag, error carried forward, spot the error, exam), the tutor panel, reloads, sideways scrolling and accessible names. `node scripts/check-organic-journeys.cjs` (`--only phone`, `--shots <dir>`) |
 | `tests/organic-outcomes.test.mjs` | the three outcomes: the audit's regression cases, rearrangements, true negatives, and a check over every starter × reagent pair |
 | `tests/planner.test.mjs` | every synthesis challenge solvable in exactly its stated length, retrosynthesis, competition, mark breakdowns |
+| `tests/configuration.test.mjs` | R/S and E/Z from drawings against mol.js, isomer relations by definition, the 3D model's configuration |
+| `tests/stereo-outcome.test.mjs` | the stereochemical outcome of each prediction |
+| `tests/saved-work.test.mjs` | saved drawings, notebook pages and mechanism notes read back from storage: genuine ones round-trip, tampered ones are dropped, atom labels are escaped |
+| `tests/chemistry-tutor-rollout.test.mjs` | the tutor at each stage of the backend release (old functions; functions without the migration, against the real ledger; both deployed): no Claude call or counted use until both are live, and a plain message for the learner |
+| `tests/organic-review-csv.test.mjs` | the review pack's CSV: formula-like text neutralised, numbers and ordinary text unchanged |
+| `scripts/check-organic-lab.cjs` | in Chromium: keyboard arrows and exam style, first-attempt marks, saved notes, declined cases in practice, the tutor's replies and its message when the backend doesn't support the lab yet, tampered saved work, and every mode at 1280, 820 and 390 px (including the provisional-chemistry notice) |
 
 Run the whole suite with `npm test`. In environments without `node_modules`, 17 tests fail because `@electric-sql/pglite`,
 `@anthropic-ai/sdk` and `ts-fsrs` aren't installed; those are environmental and unrelated to the lab, and are listed

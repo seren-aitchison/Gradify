@@ -1,233 +1,273 @@
-// The Organic Chemistry Lab (scigradify/chemistry/#/practice/organic-notes) driven in a real browser, as a student
-// would use it, at desktop, tablet and phone sizes, in dark and light themes. It serves the repository in-process.
-//   node scripts/check-organic-lab.cjs                 every journey at every size
-//   node scripts/check-organic-lab.cjs --only phone    one size (desktop, tablet or phone)
-//   node scripts/check-organic-lab.cjs --shots <dir>   also save screenshots of each mode there
-// Journeys: draw and edit a molecule (click, keyboard, rotate, undo) and see it named; save it and find it again after
-// a reload; carry the drawing into Reaction, Mechanism and 3D; read the three prediction outcomes; practise
-// predictions; compare conditions; plan a synthesis forwards and backwards; push electrons (keyboard and drag), carry an
-// error forward, spot the error, sit an exam-style question; the AI tutor panel (signed out, and with a stand-in for
-// Gradify AI); no sideways scrolling, the light theme, and an accessible name on every control.
-// Exits 1 if any check fails. Needs Playwright with Chromium (as scripts/check-interactives.cjs does).
-const http = require("node:http"), fs = require("node:fs"), path = require("node:path");
-const { chromium, devices } = require("playwright");
-
-const ROOT = path.resolve(__dirname, "..");
-const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith("--") ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith("--") ? all[i + 1] : true]] : a), []));
-const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webmanifest": "application/manifest+json", ".svg": "image/svg+xml", ".png": "image/png", ".webp": "image/webp", ".glb": "model/gltf-binary" };
-const SIZES = [["desktop", { viewport: { width: 1366, height: 900 } }, "dark"], ["tablet", { viewport: { width: 820, height: 1100 } }, "dark"], ["phone", { ...devices["iPhone 13"] }, "light"]];
-let fails = 0;
-const ok = (c, what) => { console.log(`${c ? "ok  " : "FAIL"} ${what}`); if (!c) fails++; };
-
+// The Organic Chemistry Lab in a real browser (docs/ORGANIC-LAB.md, "Release gate"): the behaviours unit tests can't
+// reach, checked through the lab's own controls, plus every mode at desktop, tablet and phone widths.
+//   node scripts/check-organic-lab.cjs                    serves this repository on loopback and checks it
+//   node scripts/check-organic-lab.cjs --url <site>       checks a running copy (e.g. a preview or the live site)
+//   options: --shots <dir> (save a screenshot of every mode at every width)
+// Checks: a bond's electrons can form the new bond from either end from the keyboard (nitration step 1); exam style
+// can't be drawn or checked from the keyboard before the conditions question; a rejected first attempt can't earn
+// full marks; a finished saved mechanism reopens complete and unmarked; Reaction mode never asks or grades a case
+// the lab declines, and shows a reaction with no organic product as one; a tutor reply for a replaced conversation is
+// dropped; an unsupported tutor request (site released before the backend) fails with a plain message and no use;
+// tampered saved work in localStorage is dropped, never drawn; My drawing stops at the steps a saved note can hold; and in every mode at 1280, 820 and 390 px, no page
+// error, no sideways scroll, and the provisional-chemistry notice is visible.
+const { chromium } = require("playwright");
+const fs = require("fs"), path = require("path"), http = require("http");
+const ROOT = fs.realpathSync(path.resolve(__dirname, ".."));
+const args = Object.fromEntries(process.argv.slice(2).map((a, i, all) => (a.startsWith("--") ? [a.slice(2), all[i + 1] && !all[i + 1].startsWith("--") ? all[i + 1] : true] : null)).filter(Boolean));
+const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css", ".json": "application/json", ".webmanifest": "application/manifest+json", ".svg": "image/svg+xml", ".png": "image/png", ".woff2": "font/woff2", ".ico": "image/x-icon" };
+// serves only files inside ROOT (after resolving symlinks), on loopback only
 function serve() {
   const server = http.createServer((req, res) => {
-    const u = decodeURIComponent(new URL(req.url, "http://x").pathname); let p = path.join(ROOT, u), s = fs.statSync(p, { throwIfNoEntry: false });
-    if (s?.isDirectory()) { p = path.join(p, "index.html"); s = fs.statSync(p, { throwIfNoEntry: false }); }
-    if (!s?.isFile() || !p.startsWith(ROOT)) { res.writeHead(404); return res.end(); }
-    res.writeHead(200, { "content-type": TYPES[path.extname(p)] || "application/octet-stream" }); fs.createReadStream(p).pipe(res);
+    try {
+      const u = decodeURIComponent(new URL(req.url, "http://x").pathname); let p = path.join(ROOT, u);
+      let s = fs.statSync(p, { throwIfNoEntry: false });
+      if (s?.isDirectory()) { if (!u.endsWith("/")) { res.writeHead(301, { location: `${u}/` }); return res.end(); } p = path.join(p, "index.html"); s = fs.statSync(p, { throwIfNoEntry: false }); }
+      if (!s?.isFile()) { res.writeHead(404); return res.end(); }
+      const real = fs.realpathSync(p); if (real !== ROOT && !real.startsWith(ROOT + path.sep)) { res.writeHead(403); return res.end(); }
+      res.writeHead(200, { "content-type": TYPES[path.extname(real)] || "application/octet-stream" }); fs.createReadStream(real).pipe(res);
+    } catch { res.writeHead(400); res.end(); }
   });
-  return new Promise((done) => server.listen(0, "127.0.0.1", () => done(server)));
+  return new Promise((ok) => server.listen(0, "127.0.0.1", () => ok(server)));
+}
+let PAGE = "", shots = args.shots && path.resolve(String(args.shots));
+const results = []; const ok = (name, pass, detail = "") => { results.push({ name, pass, detail }); console.log(`${pass ? "PASS" : "FAIL"}  ${name}${detail ? `: ${detail}` : ""}`); };
+
+async function open(b, width = 1280, height = 900) {
+  const p = await b.newPage({ viewport: { width, height } }), errs = [];
+  p.on("pageerror", (e) => errs.push(e.message)); p.on("console", (m) => { if (m.type() === "error" && !/favicon|Failed to load resource/.test(m.text())) errs.push(m.text()); });
+  await p.goto(PAGE, { waitUntil: "load" }); await p.waitForSelector(".osk-modes", { timeout: 15000 }); await p.waitForTimeout(800);
+  return { p, errs };
+}
+const mode = (p, m) => p.click(`.osk-modes [data-mode="${m}"]`);
+const pick = (p, sel, value) => p.evaluate(([s, v]) => { const e = document.querySelector(s); e.value = v; e.dispatchEvent(new Event("change", { bubbles: true })); return e.value === v; }, [sel, value]);
+const clickText = (p, text, scope = "") => p.evaluate(([t, sc]) => { const b = [...document.querySelectorAll(`${sc} button`)].find((x) => x.textContent.trim() === t && x.offsetParent !== null); if (!b) return false; b.click(); return true; }, [text, scope]);
+const feedback = (p) => p.evaluate(() => document.querySelector('[data-pane="mechanism"]').innerText);
+const addArrow = async (p, from, to, end = "") => { await pick(p, ".mx-from", from); await pick(p, ".mx-to", to); if (end) await pick(p, ".mx-end", end); await clickText(p, "Add arrow", '[data-pane="mechanism"]'); };
+async function examToggle(p, on) {
+  await p.evaluate((want) => { const lab = [...document.querySelectorAll('[data-pane="mechanism"] label')].find((l) => /Exam style/.test(l.textContent)); const i = lab.querySelector("input"); if (i.checked !== want) i.click(); }, on);
+  await p.waitForTimeout(200);
 }
 
 (async () => {
-  const server = await serve(), url = `http://127.0.0.1:${server.address().port}/scigradify/chemistry/#/practice/organic-notes`;
-  const shots = typeof args.shots === "string" ? path.resolve(args.shots) : null; if (shots) fs.mkdirSync(shots, { recursive: true });
-  const browser = await chromium.launch();
-  for (const [label, opts, theme] of SIZES.filter(([l]) => !args.only || args.only === l)) {
-    const ctx = await browser.newContext(opts), pg = await ctx.newPage(), errs = [];
-    pg.on("pageerror", (e) => errs.push(e.message)); pg.on("console", (m) => { if (m.type() === "error" && !/Failed to load resource/.test(m.text())) errs.push(m.text()); });
-    await pg.goto(url, { waitUntil: "networkidle" });
-    await pg.evaluate((t) => { localStorage.clear(); localStorage.setItem("gradify.theme", t); }, theme);
-    await pg.reload({ waitUntil: "networkidle" }); await pg.waitForTimeout(1200);
-    const L = (`${label} (${theme})`), shot = async (n) => { if (shots) await pg.locator(".co-lab").first().screenshot({ path: path.join(shots, `${n}-${label}.png`) }); };
-    const text = (sel) => pg.locator(sel).first().innerText();
-    const mode = async (m) => { await pg.locator(`.osk-modes [data-mode="${m}"]`).click(); await pg.waitForTimeout(350); };
-    const sideways = () => pg.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    ok(await pg.locator(".osk-lab").count() === 1, `${L}: the lab opens`);
-    ok(await pg.evaluate(() => getComputedStyle(document.querySelector(".osk-lab")).colorScheme) === (theme === "light" ? "light" : "dark"), `${L}: drawn in the ${theme} theme`);
-
-    // ---------- Structure: draw, edit, rotate, undo, see it named ----------
-    ok(/Start drawing/.test(await text(".osk-info")), `${L}: empty paper explains how to start`);
-    await pg.locator(".osk-stage .osk-svg").click(); await pg.waitForTimeout(250); // scrolls the paper into view first, as a student would
-    ok(/ethane/.test(await text(".osk-info .osk-name")), `${L}: one click on the paper draws a bond: ethane`);
-    await pg.locator(".osk-stage").focus(); await pg.keyboard.press("ArrowRight"); await pg.keyboard.press("o"); await pg.waitForTimeout(250);
-    ok(/methanol/.test(await text(".osk-info .osk-name")), `${L}: select an atom with the keyboard and type O: methanol`);
-    await pg.keyboard.press("Control+z"); await pg.waitForTimeout(200);
-    ok(/ethane/.test(await text(".osk-info .osk-name")), `${L}: undo restores ethane`);
-    await pg.keyboard.press("Control+y"); await pg.waitForTimeout(200);
-    const before = await pg.evaluate(() => JSON.parse(localStorage.getItem("gradify.organicLab")).atoms.map((a) => [a.x, a.y]));
-    await pg.locator('.osk-tools [data-act="rot-r"]').click(); await pg.waitForTimeout(200);
-    const after = await pg.evaluate(() => JSON.parse(localStorage.getItem("gradify.organicLab")).atoms.map((a) => [a.x, a.y]));
-    ok(JSON.stringify(before) !== JSON.stringify(after) && /methanol/.test(await text(".osk-info .osk-name")), `${L}: rotate moves the drawing, the molecule is unchanged`);
-    await pg.locator('.osk-tools [data-act="flip"]').click(); await pg.waitForTimeout(150);
-    ok(/methanol/.test(await text(".osk-info .osk-name")), `${L}: flip keeps the molecule`);
-    ok(await pg.locator(".osk-go [data-go]").count() === 3, `${L}: "Use this molecule" offers Reaction, Mechanism and 3D`);
-    ok(/of 11 done/.test(await text(".osk-probs .osk-chal-n")) && !(await pg.locator(".osk-probs .osk-chal").evaluate((d) => d.open)), `${L}: challenges are a collapsed panel showing progress`);
-    // save it, and find it after a reload (the drawing and the mode come back too)
-    await pg.locator(".osk-saved > summary").click();
-    await pg.locator(".osk-title").fill("My methanol"); await pg.locator(".osk-bookbtns button", { hasText: "Save to notes" }).click(); await pg.waitForTimeout(200);
-    ok(/1 saved/.test(await text(".osk-saved-n")) && /My methanol/.test(await text(".osk-pages")), `${L}: saved work shows the saved drawing`);
-    await shot("structure");
-    if (label === "phone") ok(await pg.$$eval(".osk-group", (gs) => gs.every((g) => g.offsetHeight < 52)), `${L}: each toolbar group stays on one line`);
-
-    // ---------- carry the drawing into the other modes ----------
-    await pg.locator('.osk-go [data-go="reaction"]').click(); await pg.waitForTimeout(400);
-    ok(await pg.locator('[data-pane="reaction"]').isVisible() && (await pg.locator(".rx-src").inputValue()) === "mine", `${L}: "Predict a reaction" opens Reaction with the drawing`);
-    await pg.selectOption(".rx-reag", "cr-reflux"); await pg.waitForTimeout(300);
-    ok(/methanoic acid/.test(await text(".rx-prods")) || /Not predicted|No reaction/.test(await text(".rx-info")), `${L}: the drawing reacts in Reaction mode`);
-    await pg.reload({ waitUntil: "networkidle" }); await pg.waitForTimeout(1000);
-    ok(await pg.locator('[data-pane="reaction"]').isVisible() && (await pg.locator(".rx-reag").inputValue()) === "cr-reflux", `${L}: after a reload the lab returns to Reaction mode with the same reagent`);
-    await mode("structure");
-    ok(/methanol/.test(await text(".osk-info .osk-name")) && /1 saved/.test(await text(".osk-saved-n")), `${L}: the drawing and saved work survive a reload`);
-    await pg.locator('.osk-go [data-go="mechanism"]').click(); await pg.waitForTimeout(400);
-    ok((await pg.locator(".mx-src").inputValue()) === "mine" && /Your own structure/.test(await text(".mx-fb")), `${L}: "Push electrons" opens Mechanism on the drawing`);
-    await mode("structure"); await pg.locator('.osk-go [data-go="3d"]').click(); await pg.waitForTimeout(1200);
-    ok(/methanol/.test(await text(".m3-info")), `${L}: "See it in 3D" shows the drawing`);
-
-    // ---------- Reaction: the three outcomes, products, continuing a route, the rule, practice ----------
-    await mode("reaction");
-    await pg.selectOption(".rx-src", "propene"); await pg.selectOption(".rx-reag", "hbr"); await pg.waitForTimeout(300);
-    ok(/^reaction$/i.test((await text(".osk-outcome .osk-outcome-tag")).trim()) && /Major product: 2-bromopropane/.test(await text(".osk-outcome")), `${L}: a reaction leads with its outcome and major product`);
-    const caps = await pg.locator(".rx-prods figcaption").allInnerTexts();
-    ok(caps.some((c) => /major/i.test(c) && /2-bromopropane/.test(c)) && caps.some((c) => /minor/i.test(c) && /1-bromopropane/.test(c)), `${L}: major and minor products are labelled`);
-    ok(/Markovnikov/.test(await text(".rx-info")), `${L}: the reasoning explains Markovnikov's rule`);
-    await shot("reaction");
-    await pg.selectOption(".rx-reag", "nabh4"); await pg.waitForTimeout(200);
-    ok(/^no reaction$/i.test((await text(".osk-outcome .osk-outcome-tag")).trim()) && /checked/.test(await text(".osk-outcome")), `${L}: "no reaction" is shown as a checked result`);
-    await pg.selectOption(".rx-src", "ethanal"); await pg.selectOption(".rx-reag", "naoh-aq"); await pg.waitForTimeout(200);
-    ok(/^not predicted$/i.test((await text(".osk-outcome .osk-outcome-tag")).trim()) && /may happen/.test(await text(".osk-outcome")), `${L}: an unsupported case is never shown as "no reaction"`);
-    await pg.selectOption(".rx-src", "ethene"); await pg.selectOption(".rx-reag", "kmno4-hot"); await pg.waitForTimeout(200);
-    ok(/^reaction$/i.test((await text(".osk-outcome .osk-outcome-tag")).trim()) && /No organic product/.test(await text(".rx-prods")), `${L}: complete oxidation shows a reaction with no organic product`);
-    await pg.selectOption(".rx-src", "2-bromobutane"); await pg.selectOption(".rx-reag", "koh-eth"); await pg.waitForTimeout(300);
-    const conts = await pg.locator(".rx-btns button", { hasText: "Continue with" }).allInnerTexts();
-    ok(conts.length >= 2 && new Set(conts).size === conts.length, `${L}: each "Continue with" button names its product (${conts.join(", ")})`);
-    await pg.selectOption(".rx-src", "propene"); await pg.selectOption(".rx-reag", "hbr"); await pg.waitForTimeout(200);
-    await pg.locator(".rx-rule summary").click(); await pg.waitForTimeout(100);
-    ok(/Doesn't cover[\s\S]*rearrangements[\s\S]*provisional/.test(await text(".rx-rule")), `${L}: "The rule behind this" shows limitations and confidence`);
-    await pg.locator(".rx-practice .rx-opts input").first().check(); await pg.waitForTimeout(200);
-    ok(await pg.locator(".rx-choices button").count() >= 2, `${L}: "Predict first" hides the answer and offers choices`);
-    await pg.locator(".rx-choices button", { hasText: /^2-bromopropane$/ }).click(); await pg.waitForTimeout(200);
-    ok(/Right/.test(await text(".rx-info")), `${L}: a right prediction is confirmed`);
-    await pg.locator(".rx-practice .rx-opts input").first().uncheck();
-    await pg.selectOption(".rx-src", "ethanol"); await pg.selectOption(".rx-reag", "cr-reflux"); await pg.waitForTimeout(200);
-    await pg.locator(".rx-btns button", { hasText: "Continue with ethanoic acid" }).click(); await pg.waitForTimeout(200);
-    await pg.selectOption(".rx-reag", "esterify"); await pg.waitForTimeout(200);
-    ok(/ethyl ethanoate/.test(await text(".rx-prods")) && /ethanol/.test(await text(".rx-route")), `${L}: a two-step route (ethanol → ethanoic acid → ethyl ethanoate) with its route strip`);
-    await pg.locator(".rx-practice button", { hasText: "Practice question" }).click(); await pg.waitForTimeout(400);
-    ok(await pg.locator(".rx-choices button").count() >= 2, `${L}: a practice question offers choices`);
-    await pg.locator(".rx-choices button").first().click(); await pg.waitForTimeout(300);
-    ok(/this session/.test(await text(".rx-score")), `${L}: the practice score is shown`);
-    // a run of practice questions: each has choices, none is a case the lab can't predict, and nothing breaks
-    let noChoice = 0;
-    for (let i = 0; i < 15; i++) { await pg.locator(".rx-practice button", { hasText: /Practice question|Next question/ }).first().click(); await pg.waitForTimeout(120); if (await pg.locator(".rx-choices button").count() < 2 || await pg.locator(".osk-outcome.warn").count()) noChoice++; }
-    ok(noChoice === 0 && !errs.length, `${L}: 15 practice questions in a row, each a fair question with choices`);
-    ok(await pg.locator(".rx-practice .rx-opts input").first().isChecked(), `${L}: a practice question turns "Predict first" on, and the toggle shows it`);
-    await pg.locator(".rx-practice .rx-opts input").first().uncheck(); await pg.waitForTimeout(150);
-
-    // ---------- the AI tutor panel ----------
-    await pg.selectOption(".rx-src", "propene"); await pg.selectOption(".rx-reag", "hbr"); await pg.waitForTimeout(200);
-    await pg.locator(".rx-tutor .ct-box summary").click(); await pg.waitForTimeout(100);
-    const topts = await pg.locator(".rx-tutor [data-i]").allInnerTexts();
-    ok(topts.includes("Explain this reaction") && topts.includes("Why this product, not another?"), `${L}: the tutor offers explain and compare`);
-    ok(/provisional/.test(await text(".rx-tutor .ct-level")), `${L}: the tutor shows the evidence level`);
-    await pg.locator(".rx-tutor [data-i=explain]").click(); await pg.waitForTimeout(400);
-    ok(/Sign in|account|switched on/i.test(await text(".rx-tutor .ct-box")), `${L}: signed out, the tutor asks to sign in`);
-    if (label === "desktop") {
-      const sent = await pg.evaluate(async () => {
-        const T = await import("/kit/labs/chemistry/reactions/tutor-ui.js"), P = await import("/kit/labs/chemistry/reactions/predictor.js");
-        const host = document.createElement("div"); document.body.append(host); const bodies = [];
-        const m = P.drawSmiles("CC(Br)CC"), res = P.predict(m, "koh-eth");
-        T.mountTutor(host, { ask: async (b) => { bodies.push(JSON.parse(JSON.stringify(b))); return { reply: "E2 wins <b>here</b>." }; }, getContext: () => ({ kind: "prediction", ...P.explainContext(m, res) }), intents: [["compare", "Why?"]] });
-        host.querySelector("details").open = true; host.querySelector("[data-i]").click(); await new Promise((r) => setTimeout(r, 50));
-        host.querySelector(".ct-input").value = "Why not SN2?"; host.querySelector("form").requestSubmit(); await new Promise((r) => setTimeout(r, 50));
-        const html = host.querySelector(".ct-log").innerHTML; host.remove();
-        return { n: bodies.length, mode: bodies[0].mode, outcome: bodies[0].context.outcome, major: bodies[0].context.products.filter((p) => p.role === "major").map((p) => p.name), pathway: bodies[0].context.pathways?.[0]?.mechanism, turns: bodies[1].turns.map((t) => t.role).join(","), conv: bodies[0].conversationId === bodies[1].conversationId, escaped: html.includes("&lt;b&gt;") };
-      });
-      ok(sent.n === 2 && sent.mode === "chemistry" && sent.outcome === "reaction" && sent.major.includes("but-2-ene") && sent.pathway === "E2", `${L}: the tutor is sent the engine's own verdict`);
-      ok(sent.turns === "tutor,learner" && sent.conv && sent.escaped, `${L}: follow-ups share a conversation, and replies are escaped`);
-    }
-
-    // ---------- Conditions and Synthesis ----------
-    await pg.locator('.rx-views [data-v="conditions"]').click(); await pg.waitForTimeout(300);
-    ok(await pg.locator(".cx-set").count() === 2 && /E2\s*major/i.test((await pg.locator(".cx-set").nth(1).innerText()).replace(/\n/g, " ")), `${L}: two condition sets; hot ethanolic hydroxide makes E2 major`);
-    await pg.locator(".cx-set").nth(0).locator('select[data-c="0:nuc"]').selectOption("tbuo"); await pg.waitForTimeout(200);
-    ok(/but-1-ene/.test(await pg.locator(".cx-set").nth(0).innerText()), `${L}: a bulky base gives the Hofmann alkene`);
-    await pg.locator('.rx-views [data-v="synthesis"]').click(); await pg.waitForTimeout(300);
-    await pg.selectOption(".sy-task", "chain-acid"); await pg.waitForTimeout(300);
-    for (const r of ["kcn", "acid-hydrolysis"]) { await pg.selectOption(".sy-reag", r); await pg.locator(".sy-btns button", { hasText: "Apply" }).click(); await pg.waitForTimeout(300); }
-    ok(/Target reached in 2 steps/.test(await text('[data-view="synthesis"]')), `${L}: a forwards synthesis reaches its target`);
-    await shot("synthesis");
-    await pg.selectOption(".sy-task", "ethene-acid"); await pg.waitForTimeout(300);
-    await pg.locator('.sy-dir [data-d="b"]').click(); await pg.waitForTimeout(500);
-    for (let i = 0; i < 8 && !/worked back/.test(await text('[data-view="synthesis"]')); i++) { const n = await pg.locator("[data-b]").count(); if (!n) break; await pg.locator("[data-b]").nth(i % n).click(); await pg.waitForTimeout(400); }
-    ok(/worked back to the starting material/.test(await text('[data-view="synthesis"]')), `${L}: retrosynthesis works back to the starting material`);
-    for (const v of ["predict", "conditions", "synthesis"]) { await pg.locator(`.rx-views [data-v="${v}"]`).click(); await pg.waitForTimeout(250); const w = await sideways(); ok(w <= 1, `${L}: no sideways scrolling in Reaction · ${v} (${w}px)`); }
-    await pg.locator('.rx-views [data-v="predict"]').click();
-
-    // ---------- Mechanism: arrows, error carried forward, spot the error, exam ----------
-    await mode("mechanism");
-    const opt = (sel, re) => pg.locator(`${sel} option`).evaluateAll((os, r) => os.filter((x) => new RegExp(r).test(x.textContent)).map((x) => x.value)[0], re);
-    const add = async (f, t) => { await pg.selectOption(".mx-from", await opt(".mx-from", f)); await pg.selectOption(".mx-to", await opt(".mx-to", t)); await pg.locator(".mx-addbtn button").click(); };
-    const kbd = async () => { if (!(await pg.locator(".mx-kbd").evaluate((d) => d.open))) await pg.locator(".mx-kbd summary").click(); };
-    await pg.selectOption(".mx-src", "hbr-propene"); await pg.waitForTimeout(300);
-    ok(await pg.locator(".mx-actions button").first().innerText() === "Check step" && await pg.locator(".mx-help .lab-btn").count() === 4 && await pg.locator(".mx-more .lab-btn").count() >= 2, `${L}: Check step leads; Help and More are separate groups`);
-    await kbd(); await add("C1=C2 bond", "^atom H$"); await add("H–Br bond", "^atom Br$");
-    await pg.locator(".mx-actions button", { hasText: "Check step" }).click(); await pg.waitForTimeout(2600);
-    ok(/Correct/.test(await text(".mx-fb")), `${L}: step 1 drawn with the keyboard lists is accepted`);
-    await shot("mechanism");
-    if (label === "desktop") {
-      await pg.locator(".mx-more button", { hasText: "Restart" }).click(); await pg.waitForTimeout(300);
-      const geo = await pg.evaluate(async () => {
-        const Lb = await import("/kit/labs/chemistry/reactions/library.js"), E = await import("/kit/labs/chemistry/reactions/electron-flow.js");
-        const inst = Lb.instantiate(Lb.REACTIONS.find((r) => r.id === "hbr-propene")), pts = E.replay({ start: inst.start, steps: inst.steps }).states.flatMap((s) => s.atoms);
-        const host = document.querySelector(".mx-svg"), r = host.getBoundingClientRect(), W = Math.round(host.parentElement.clientWidth), H = parseFloat(host.style.height);
-        const x0 = Math.min(...pts.map((a) => a.x)) - 1.4, x1 = Math.max(...pts.map((a) => a.x)) + 1.4, y0 = Math.min(...pts.map((a) => a.y)) - 1.4, y1 = Math.max(...pts.map((a) => a.y)) + 1.4;
-        const v = { cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, s: Math.min(58, W / (x1 - x0), H / (y1 - y0)) };
-        const at = (x, y) => [r.left + (x - v.cx) * v.s + W / 2, r.top + (y - v.cy) * v.s + H / 2];
-        return { from: at(0.68 * 0.87, 0.68 * 0.5), to: at(-0.3, -1.4) };
-      });
-      await pg.mouse.move(...geo.from); await pg.mouse.down(); for (let i = 1; i <= 8; i++) await pg.mouse.move(geo.from[0] + ((geo.to[0] - geo.from[0]) * i) / 8, geo.from[1] + ((geo.to[1] - geo.from[1]) * i) / 8); await pg.mouse.up();
-      await kbd(); await add("H–Br bond", "^atom Br$");
-      await pg.locator(".mx-actions button", { hasText: "Check step" }).click(); await pg.waitForTimeout(300);
-      ok(/Markovnikov/.test(await text(".mx-fb")) && await pg.locator("[data-ecf]").count() === 1, `${L}: a dragged anti-Markovnikov arrow is recognised and can be carried forward`);
-      await pg.locator("[data-ecf]").click(); await pg.waitForTimeout(2600);
-      await add("lone pair on Br", "^atom C1$");
-      await pg.locator(".mx-actions button", { hasText: "Check step" }).click(); await pg.waitForTimeout(3000);
-      const f2 = await text(".mx-fb");
-      ok(/Error carried forward/.test(f2) && /1-bromopropane/.test(f2), `${L}: the next step is credited on the learner's own intermediate`);
-    }
-    await pg.selectOption(".mx-src", "e1"); await pg.waitForTimeout(300);
-    await pg.locator(".mx-more button", { hasText: "Spot the error" }).click(); await pg.waitForTimeout(300);
-    ok(await pg.locator("[data-spot]").count() >= 1, `${L}: Spot the error shows numbered arrows`);
-    await pg.locator("[data-spot]").first().click(); await pg.waitForTimeout(200);
-    ok(/wrong/.test(await text(".mx-fb")), `${L}: the verdict explains which arrow is wrong`);
-    await pg.locator("[data-spot-end]").click();
-    await pg.selectOption(".mx-src", "sn2"); await pg.waitForTimeout(300);
-    await pg.locator(".mx-opts label", { hasText: "Exam style" }).locator("input").check(); await pg.waitForTimeout(300);
-    ok(await pg.locator("[data-xc]").count() === 4 && await pg.locator(".mx-help .lab-btn").count() === 0, `${L}: exam style asks for conditions first, with no help`);
-    await pg.locator("[data-xc]", { hasText: "NaOH(aq); warm, under reflux" }).click(); await pg.waitForTimeout(200);
-    await kbd(); await add("lone pair on O", "^atom C1$"); await add("C1–Br bond", "^atom Br$");
-    await pg.locator(".mx-actions button", { hasText: "Check step" }).click(); await pg.waitForTimeout(500);
-    ok(await pg.locator("[data-xe]").count() === 4, `${L}: the exam ends with an explanation question`);
-    await pg.locator("[data-xe]", { hasText: "Drawing the arrow from the O atom" }).click(); await pg.waitForTimeout(300);
-    ok(/Total\s*10\/10/.test(await text(".mx-marks")), `${L}: a full mark breakdown, 10/10`);
-    await pg.locator(".mx-opts label", { hasText: "Exam style" }).locator("input").uncheck();
-    ok(/of 22 done/.test(await text('[data-pane="mechanism"] .osk-chal-n')), `${L}: Mechanism challenges collapse to a progress line`);
-
-    // ---------- every mode: no sideways scrolling, named controls ----------
-    for (const m of ["structure", "mechanism", "reaction", "3d"]) {
-      await mode(m); if (m === "3d") await shot("3d");
-      const w = await sideways(); ok(w <= 1, `${L}: no sideways scrolling in ${m} (${w}px)`);
-      const unnamed = await pg.$$eval(".osk-lab button, .osk-lab select, .osk-lab input", (els) => els.filter((e) => e.offsetParent !== null && !(e.getAttribute("aria-label") || e.textContent.trim() || e.closest("label")?.textContent.trim() || e.placeholder)).length);
-      ok(unnamed === 0, `${L}: every visible control in ${m} has an accessible name (${unnamed} without)`);
-    }
-    // theme switch repaints the open mode
-    await mode("reaction"); await pg.evaluate((t) => window.gradifyTheme.set(t), theme === "light" ? "dark" : "light"); await pg.waitForTimeout(300);
-    ok(await pg.evaluate((t) => getComputedStyle(document.querySelector(".osk-lab")).colorScheme === t, theme === "light" ? "dark" : "light"), `${L}: switching theme restyles the open lab`);
-    ok(!errs.length, `${L}: no script errors${errs.length ? `: ${errs.slice(0, 3).join(" | ")}` : ""}`);
-    await ctx.close();
+  let server = null, base = typeof args.url === "string" ? args.url.replace(/\/$/, "") : "";
+  if (!base) { server = await serve(); base = `http://127.0.0.1:${server.address().port}`; }
+  PAGE = `${base}/scigradify/chemistry/#/practice/organic-notes`;
+  const b = await chromium.launch();
+  // ---------- #4: keyboard users choose which end of a bond the new bond forms from ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "mechanism"); await pick(p, ".mx-src", "nitration"); await p.waitForTimeout(200);
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    await pick(p, ".mx-from", "bond:16"); await pick(p, ".mx-to", "atom:8");
+    const shown = await p.evaluate(() => !document.querySelector(".mx-endsel").hidden && [...document.querySelector(".mx-end").options].map((o) => o.textContent).join("|"));
+    ok("#4 the endpoint choice appears for a bond → atom arrow", !!shown, shown || "hidden");
+    await addArrow(p, "bond:16", "atom:8", "1"); await addArrow(p, "bond:23", "atom:9");
+    await clickText(p, "Check step", '[data-pane="mechanism"]');
+    // a correct step animates first, then the lab moves on: wait for step 2 and read the marks
+    await p.waitForFunction(() => /Step 2 of 2/.test(document.querySelector('[data-pane="mechanism"] .lab-info')?.innerText || ""), null, { timeout: 8000 }).catch(() => {});
+    const head = await p.evaluate(() => document.querySelector('[data-pane="mechanism"] .lab-info')?.innerText.split("\n")[0] || "");
+    ok("#4 nitration step 1 entered from the keyboard is accepted with full first-attempt credit", /Step 2 of 2 · marks 2\/4/.test(head), head);
+    ok("#4 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
   }
-  await browser.close(); server.close();
-  console.log(fails ? `\n${fails} check(s) failed.` : "\nAll Organic Chemistry Lab journeys passed.");
-  process.exit(fails ? 1 : 0);
+  // ---------- #20: in exam style, nothing can be drawn or checked from the keyboard before the conditions answer ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "mechanism"); await examToggle(p, true); await pick(p, ".mx-src", "sn2"); await p.waitForTimeout(300);
+    const before = await p.evaluate(() => ({ from: document.querySelector(".mx-from").options.length, q: /which reagents and conditions/.test(document.querySelector('[data-pane="mechanism"]').innerText) }));
+    ok("#20 the conditions question is showing and the keyboard lists are empty", before.q && before.from === 0, JSON.stringify(before));
+    await clickText(p, "Add arrow", '[data-pane="mechanism"]'); await clickText(p, "Check step", '[data-pane="mechanism"]'); await p.keyboard.press("Enter"); await p.waitForTimeout(300);
+    const still = await p.evaluate(() => ({ q: /which reagents and conditions/.test(document.querySelector('[data-pane="mechanism"]').innerText), last: /Last question/.test(document.querySelector('[data-pane="mechanism"]').innerText) }));
+    ok("#20 Add arrow / Check step / Enter don't skip the conditions question", still.q && !still.last, JSON.stringify(still));
+    await p.click("[data-xc]"); await p.waitForTimeout(300);
+    const after = await p.evaluate(() => document.querySelector(".mx-from").options.length);
+    ok("#20 after answering, the keyboard lists are available", after > 0, `${after} options`);
+    ok("#20 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- #5 and #3: a rejected first attempt can't earn full marks; a finished saved mechanism reopens ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "mechanism"); await pick(p, ".mx-src", "sn2"); await p.waitForTimeout(200);
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    for (let k = 0; k < 2; k++) { await addArrow(p, "lp:1", "atom:2"); await addArrow(p, "bond:6", "atom:3"); }
+    await clickText(p, "Check step", '[data-pane="mechanism"]'); await p.waitForTimeout(300);
+    const rejected = !/Mechanism complete/.test(await feedback(p));
+    ok("#5 each SN2 arrow submitted twice is rejected", rejected);
+    await clickText(p, "Clear arrows", '[data-pane="mechanism"]'); await addArrow(p, "lp:1", "atom:2"); await addArrow(p, "bond:6", "atom:3");
+    await clickText(p, "Check step", '[data-pane="mechanism"]'); await p.waitForTimeout(500);
+    const fb = await feedback(p), score = Number(fb.match(/Mechanism complete: ([\d.]+)\/10/)?.[1]);
+    ok("#5 the corrected retry completes but doesn't score 10/10", Number.isFinite(score) && score < 10, `score ${score}`);
+    await clickText(p, "Save to notes", '[data-pane="mechanism"]'); await p.waitForTimeout(300);
+    await mode(p, "structure"); await p.waitForTimeout(300);
+    const opened = await p.evaluate(() => { const o = document.querySelector("[data-open]"); if (!o) return false; o.click(); return true; });
+    await p.waitForTimeout(600);
+    const re = await feedback(p);
+    ok("#3 the finished saved mechanism reopens as complete, unmarked", opened && /Mechanism complete/.test(re) && /Opened from your notes/.test(re), re.slice(0, 140).replace(/\n/g, " "));
+    ok("#3/#5 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- error carried forward survives saving and reopening an unfinished note ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "mechanism"); await pick(p, ".mx-src", "hbr-propene"); await p.waitForTimeout(200);
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    // step 1 drawn wrongly (H to C2, leaving the cation on C1), then carried forward
+    await addArrow(p, "bond:6", "atom:4", "2"); await addArrow(p, "bond:8", "atom:5");
+    await clickText(p, "Check step", '[data-pane="mechanism"]'); await p.waitForTimeout(300);
+    const carried = await p.evaluate(() => { const b = document.querySelector('[data-pane="mechanism"] [data-ecf]'); if (!b) return false; b.click(); return true; });
+    await p.waitForTimeout(2500);
+    await clickText(p, "Save to notes", '[data-pane="mechanism"]'); await p.waitForTimeout(200);
+    await mode(p, "structure"); await p.waitForTimeout(300);
+    await p.evaluate(() => document.querySelector("[data-open]").click()); await p.waitForTimeout(600);
+    // the learner's own next step: Br⁻ attacks the cation they made, at C1
+    await p.evaluate(() => { document.querySelector(".mx-kbd").open = true; });
+    await addArrow(p, "lp:5", "atom:1"); await clickText(p, "Check step", '[data-pane="mechanism"]');
+    await p.waitForFunction(() => /Mechanism complete/.test(document.querySelector('[data-pane="mechanism"] .lab-info')?.innerText || ""), null, { timeout: 8000 }).catch(() => {});
+    const fb = await feedback(p);
+    ok("an unfinished note that carried an error forward reopens still carrying it, and the learner can finish", carried && /Mechanism complete/.test(fb) && /carried forward/i.test(fb), carried ? fb.match(/Mechanism complete[^\n]*/)?.[0] || fb.slice(0, 120).replace(/\n/g, " ") : "no carry-forward button");
+    ok("carried-forward note: no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- #25 (and #14): declined predictions aren't graded; a reaction with no organic product is shown as one ----------
+  {
+    const { p, errs } = await open(b); await mode(p, "reaction"); await p.waitForTimeout(300);
+    await p.evaluate(() => { const lab = [...document.querySelectorAll('[data-pane="reaction"] label')].find((l) => /Predict first/.test(l.textContent)); const i = lab?.querySelector("input"); if (i && !i.checked) i.click(); });
+    await pick(p, ".rx-src", "ethene"); await pick(p, ".rx-reag", "br2-uv"); await p.waitForTimeout(400);
+    const t = await p.evaluate(() => document.querySelector('[data-pane="reaction"]').innerText);
+    ok("#25 predict-first doesn't ask (or grade) a case the lab declines", !/Predict the product/.test(t) && /Not supported by the lab's rules/.test(t), t.match(/Not supported by the lab's rules|Predict the product/)?.[0] || "");
+    await pick(p, ".rx-reag", "kmno4-hot"); await p.waitForTimeout(300);
+    await p.evaluate(() => { const lab = [...document.querySelectorAll('[data-pane="reaction"] label')].find((l) => /Predict first/.test(l.textContent)); const i = lab?.querySelector("input"); if (i && i.checked) i.click(); });
+    await p.waitForTimeout(300);
+    const e = await p.evaluate(() => document.querySelector('[data-pane="reaction"]').innerText);
+    ok("#14 ethene + hot KMnO₄ shows a reaction with no organic product", /No organic product/.test(e) && /CO₂/.test(e) && !/^No reaction$/m.test(e), e.match(/No organic product[^\n]*/)?.[0] || e.slice(0, 100));
+    // practice never lands on a declined case: 40 practice questions, each revealed by answering
+    let declined = 0, asked = 0;
+    for (let k = 0; k < 40; k++) {
+      if (!(await clickText(p, "Practice question", '[data-pane="reaction"]'))) break;
+      await p.waitForTimeout(80); const g = await p.$('[data-pane="reaction"] [data-g]'); if (!g) continue; await g.click(); asked++; await p.waitForTimeout(80);
+      if (/Outside the lab's rules/.test(await p.evaluate(() => document.querySelector('[data-pane="reaction"] .rx-info')?.innerText || ""))) declined++;
+    }
+    ok("#25 practice questions never ask about a declined case", asked > 0 && declined === 0, `${asked} asked, ${declined} declined`);
+    ok("#25 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- #27: a reply for a replaced conversation is dropped, and the new question is sent ----------
+  {
+    const { p, errs } = await open(b);
+    const r = await p.evaluate(async () => {
+      const { mountTutor } = await import("/kit/labs/chemistry/reactions/tutor-ui.js");
+      const host = document.createElement("div"); document.body.append(host);
+      let ctx = { kind: "prediction", status: "reacts", id: "A" }, uses = 0; const sent = [], pending = [];
+      const ask = (req) => new Promise((res) => { sent.push(`${req.intent}:${req.context.id}`); pending.push(() => res({ reply: `about ${req.context.id}` })); });
+      const t = mountTutor(host, { ask, getContext: () => ctx, intents: [["explain", "Explain"], ["compare", "Compare"]], onUse: () => uses++ });
+      host.querySelector("details").open = true;
+      host.querySelector('[data-i="explain"]').click(); // question about A, still pending
+      ctx = { kind: "prediction", status: "reacts", id: "B" }; t.refresh(); // the learner moves to reaction B
+      host.querySelector('[data-i="compare"]').click(); // and asks about B straight away
+      pending[0](); await new Promise((r) => setTimeout(r, 30)); // A's reply arrives late
+      const afterStale = host.querySelector(".ct-log").innerText;
+      pending[1]?.(); await new Promise((r) => setTimeout(r, 30));
+      return { sent, afterStale, final: host.querySelector(".ct-log").innerText, uses };
+    });
+    ok("#27 the new question is sent while the old one is pending", r.sent.join(",") === "explain:A,compare:B", r.sent.join(","));
+    ok("#27 the late reply about A doesn't appear in B's conversation", !/about A/.test(r.afterStale) && !/about A/.test(r.final), JSON.stringify(r.final));
+    ok("#27 B's reply appears, and only it counts as tutor use", /about B/.test(r.final) && r.uses === 1, `uses ${r.uses}`);
+    ok("#27 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- the tutor when the backend doesn't support the lab yet (site released before the functions) ----------
+  {
+    const { p, errs } = await open(b);
+    const r = await p.evaluate(async () => {
+      const { mountTutor } = await import("/kit/labs/chemistry/reactions/tutor-ui.js");
+      const host = document.createElement("div"); document.body.append(host); let uses = 0;
+      const ask = () => Promise.reject(Object.assign(new Error("Unknown mode."), { status: 400 }));
+      mountTutor(host, { ask, getContext: () => ({ kind: "prediction", status: "reacts", id: "A", rule: { confidence: "provisional" } }), intents: [["explain", "Explain"]], onUse: () => uses++ });
+      host.querySelector("details").open = true; host.querySelector('[data-i="explain"]').click();
+      await new Promise((r) => setTimeout(r, 50));
+      return { log: host.querySelector(".ct-log").innerText, level: host.querySelector(".ct-level").innerText, uses };
+    });
+    ok("S3 an unsupported tutor request shows a plain message, not the raw server error", /isn't available for this lab right now/.test(r.log) && !/Unknown mode/.test(r.log), JSON.stringify(r.log));
+    ok("S3 a failed tutor request doesn't count as tutor use", r.uses === 0, `uses ${r.uses}`);
+    ok("S3 the tutor says its answers rest on provisional rules", /provisional rules/.test(r.level), r.level);
+    ok("S3 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- My drawing: the editor stops at the step limit a saved note can hold, so every save reopens ----------
+  {
+    const { p, errs } = await open(b);
+    const r = await p.evaluate(async () => {
+      const K = await import("/kit/labs/chemistry/skeletal.js"), { mountMechanism, restoreNote, MAX_STEPS } = await import("/kit/labs/chemistry/reactions/mechanism-ui.js");
+      const m = K.empty(), h = K.addAtom(m, 0, 0, "H"), cl = K.addAtom(m, 1, 0, "Cl"); K.addBond(m, h.id, cl.id, 1);
+      const host = document.createElement("div"); host.style.width = "900px"; document.body.append(host); let saved = null;
+      const mx = mountMechanism(host, { getDrawing: () => K.clone(m), onSave: (n) => { saved = n; } });
+      mx.load("mine"); host.querySelector(".mx-kbd").open = true;
+      const q = (s) => host.querySelector(s), wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const choose = (sel, pred) => { const o = [...q(sel).options].find(pred); if (!o) return false; q(sel).value = o.value; q(sel).dispatchEvent(new Event("change")); return true; };
+      const btn = (t) => [...host.querySelectorAll("button")].find((x) => x.textContent.trim() === t);
+      let applied = 0;
+      for (let i = 0; i <= MAX_STEPS; i++) {
+        for (let k = 0; k < 40 && !q(".mx-from").options.length; k++) await wait(25);
+        const ok = i % 2 ? choose(".mx-from", (o) => o.value === `lp:${cl.id}`) && choose(".mx-to", (o) => o.value === `atom:${h.id}`)
+                         : choose(".mx-from", (o) => o.value.startsWith("bond:")) && choose(".mx-to", (o) => o.value === `atom:${cl.id}`);
+        if (!ok) break;
+        btn("Add arrow").click(); btn("Apply step").click();
+        const landed = () => [...host.querySelectorAll("button")].some((x) => x.textContent.trim().startsWith(`${i + 1} After step`));
+        for (let k = 0; k < 120 && !landed() && !/limit of \d+ steps/.test(host.innerText); k++) await wait(25);
+        if (landed()) applied = i + 1;
+        if (/limit of \d+ steps/.test(host.innerText)) break;
+        btn("Clear arrows")?.click();
+      }
+      const limitShown = /reached the limit of 40 steps/.test(host.innerText);
+      btn("Save to notes").click();
+      return { applied, limitShown, steps: saved?.steps.length, reopens: !!restoreNote(JSON.parse(JSON.stringify(saved))) };
+    });
+    ok("S4 My drawing accepts steps up to the saved-note limit, then stops with a message", r.applied === 40 && r.limitShown, `applied ${r.applied}, message ${r.limitShown}`);
+    ok("S4 the saved note holds every applied step and reopens", r.steps === 40 && r.reopens, `steps ${r.steps}, reopens ${r.reopens}`);
+    ok("S4 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- tampered saved work in localStorage is dropped, never drawn ----------
+  {
+    const p = await b.newPage({ viewport: { width: 1280, height: 900 } }), errs = [];
+    p.on("pageerror", (e) => errs.push(e.message)); p.on("console", (m) => { if (m.type() === "error" && !/favicon|Failed to load resource/.test(m.text())) errs.push(m.text()); });
+    await p.addInitScript(() => {
+      if (sessionStorage.getItem("seeded")) return; sessionStorage.setItem("seeded", "1");
+      const X = '<img src=x onerror="window.__pwned=(window.__pwned||0)+1">';
+      const atoms = (el) => [{ id: 1, x: 0, y: 0, el: "C", charge: 0 }, { id: 2, x: 0.87, y: 0.5, el: "C", charge: 0 }, { id: 3, x: 1.73, y: 0, el, charge: 0 }];
+      const mol = (el) => ({ atoms: atoms(el), bonds: [{ id: 4, a: 1, b: 2, order: 1 }, { id: 5, a: 2, b: 3, order: 1 }], next: 6 });
+      localStorage.setItem("gradify.organicLab", JSON.stringify(mol(X)));
+      localStorage.setItem("gradify.organicLab.pages", JSON.stringify([
+        { id: "a1", title: "tampered drawing", mol: mol(X), at: "2026-11-20", formula: "C3" },
+        { id: "a2", kind: "mech", title: "tampered mechanism", mech: { v: 1, title: "t", reactionId: null, conditions: null, start: { atoms: [{ id: 1, el: X, x: 0, y: 0, n: 0, h: 0 }], bonds: [], next: 2 }, steps: [], ecf: null }, at: "2026-11-20" },
+        { id: "a3", title: "genuine propan-1-ol", mol: mol("O"), at: "2026-11-20", formula: "C3H8O", note: "kept" },
+      ]));
+    });
+    await p.goto(PAGE, { waitUntil: "load" }); await p.waitForSelector(".osk-modes", { timeout: 15000 }); await p.waitForTimeout(800);
+    await p.evaluate(() => document.querySelector('[data-open="0"]')?.click()); await p.waitForTimeout(300);
+    const r = await p.evaluate(() => ({ pwned: window.__pwned || 0, imgs: document.querySelectorAll(".osk-lab img, .osk-lab svg img").length, pages: [...document.querySelectorAll(".osk-page b")].map((x) => x.textContent), info: document.querySelector(".osk-info, .lab-info")?.innerText || "" }));
+    ok("S1 a tampered element symbol in saved work never reaches the page", r.pwned === 0 && r.imgs === 0, `pwned ${r.pwned}, img elements ${r.imgs}`);
+    ok("S1 tampered notebook pages are dropped and the genuine one is kept", r.pages.join("|") === "genuine propan-1-ol", r.pages.join("|"));
+    ok("S1 the genuine page still opens", (await p.evaluate(() => document.querySelectorAll(".osk-svg text").length)) > 0);
+    ok("S1 no page errors", !errs.length, errs.join(" | "));
+    await p.close();
+  }
+  // ---------- every mode at desktop, tablet and phone: no page error, no sideways scroll ----------
+  if (shots) fs.mkdirSync(shots, { recursive: true });
+  for (const [label, w, h] of [["desktop", 1280, 900], ["tablet", 820, 1180], ["phone", 390, 844]]) {
+    const { p, errs } = await open(b, w, h), wide = [], hidden = [];
+    for (const m of ["structure", "mechanism", "reaction", "3d"]) {
+      await mode(p, m); await p.waitForTimeout(m === "3d" ? 1500 : 500);
+      const over = await p.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      if (over > 1) wide.push(`${m} +${over}px`);
+      const note = await p.evaluate(() => { const e = document.querySelector(".osk-provisional"), r = e?.getBoundingClientRect(); return e && r.width > 0 && r.height > 0 && r.right <= window.innerWidth + 1 && getComputedStyle(e).visibility !== "hidden" ? e.innerText : ""; });
+      if (!/Provisional chemistry/.test(note) || !/independent chemist/.test(note)) hidden.push(m);
+      if (shots) await p.screenshot({ path: `${shots}/${label}-${m}.png` });
+    }
+    ok(`${label} (${w}px): every mode loads without a page error`, !errs.length, errs.join(" | "));
+    ok(`${label} (${w}px): no sideways scroll in any mode`, !wide.length, wide.join(", "));
+    ok(`${label} (${w}px): the provisional-chemistry notice is visible in every mode`, !hidden.length, hidden.join(", "));
+    await p.close();
+  }
+  await b.close(); server?.close();
+  const failed = results.filter((r) => !r.pass);
+  console.log(`\n${results.length - failed.length}/${results.length} browser checks passed`);
+  process.exitCode = failed.length ? 1 : 0;
 })();

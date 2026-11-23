@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 1670,
-  "plannedVisual": 1050,
-  "plannedDiagram": 937,
-  "plannedLab": 339,
-  "excluded": 620,
-  "notAssessed": 8309,
-  "withDiagram": 940,
-  "withLab": 866,
-  "withBoth": 249,
-  "withAny": 1557,
+  "assessed": 1699,
+  "plannedVisual": 1062,
+  "plannedDiagram": 945,
+  "plannedLab": 345,
+  "excluded": 637,
+  "notAssessed": 8280,
+  "withDiagram": 948,
+  "withLab": 867,
+  "withBoth": 252,
+  "withAny": 1563,
   "plannedNotDelivered": 0,
-  "placements": 964,
+  "placements": 972,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
-  "withLabActivity": 230
+  "withLabActivity": 232
  },
  "diagrams": {
-  "manifest": 890,
-  "uniquePlaced": 890,
-  "placements": 964,
+  "manifest": 898,
+  "uniquePlaced": 898,
+  "placements": 972,
   "reused": 67,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":875},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":875},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":883},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":883},
   "failing": [],
   "unplaced": []
  },
@@ -585,21 +585,21 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 1199,
-    "plannedVisual": 755,
-    "plannedDiagram": 671,
-    "plannedLab": 275,
-    "excluded": 444,
-    "notAssessed": 910,
-    "withDiagram": 673,
-    "withLab": 342,
-    "withBoth": 213,
-    "withAny": 802,
+    "assessed": 1228,
+    "plannedVisual": 767,
+    "plannedDiagram": 679,
+    "plannedLab": 281,
+    "excluded": 461,
+    "notAssessed": 881,
+    "withDiagram": 681,
+    "withLab": 343,
+    "withBoth": 216,
+    "withAny": 808,
     "plannedNotDelivered": 0,
-    "placements": 693,
+    "placements": 701,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
-    "withLabActivity": 41
+    "withLabActivity": 43
    }
   },
   {
@@ -4431,14 +4431,14 @@
     "excluded": 45,
     "notAssessed": 0,
     "withDiagram": 361,
-    "withLab": 127,
-    "withBoth": 123,
+    "withLab": 128,
+    "withBoth": 124,
     "withAny": 365,
     "plannedNotDelivered": 0,
     "placements": 362,
     "withInteractiveDiagram": 54,
     "withSimulation": 52,
-    "withLabActivity": 33
+    "withLabActivity": 35
    },
    "units": [
     {
@@ -5911,14 +5911,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
-      "withLab": 17,
-      "withBoth": 17,
+      "withLab": 18,
+      "withBoth": 18,
       "withAny": 22,
       "plannedNotDelivered": 0,
       "placements": 22,
       "withInteractiveDiagram": 9,
       "withSimulation": 0,
-      "withLabActivity": 11
+      "withLabActivity": 13
      },
      "lessons": [
       {
@@ -6021,7 +6021,14 @@
        "labs": ["chirality"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-enantiomers-alanine"],"labs":["chirality"]}
       },
-      {"id":"u12-17","title":"Diastereomers","written":true,"diagrams":[{"id":"chem-diastereomers","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-diastereomers"]}},
+      {
+       "id": "u12-17",
+       "title": "Diastereomers",
+       "written": true,
+       "diagrams": [{"id":"chem-diastereomers","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-diastereomers"]}
+      },
       {
        "id": "u12-18",
        "title": "Optical activity",
@@ -6030,7 +6037,14 @@
        "labs": ["chirality"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-optical-activity"],"labs":["chirality"]}
       },
-      {"id":"u12-19","title":"R and S nomenclature","written":true,"diagrams":[{"id":"chem-r-s","status":"validated"}],"labs":["rs"],"plan":{"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}},
+      {
+       "id": "u12-19",
+       "title": "R and S nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-r-s","status":"validated"}],
+       "labs": ["organic-notes","rs"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}
+      },
       {
        "id": "u12-20",
        "title": "E and Z nomenclature",
@@ -20982,18 +20996,18 @@
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 398,
-    "plannedVisual": 175,
-    "plannedDiagram": 138,
-    "plannedLab": 68,
-    "excluded": 223,
-    "notAssessed": 910,
-    "withDiagram": 139,
+    "assessed": 427,
+    "plannedVisual": 187,
+    "plannedDiagram": 146,
+    "plannedLab": 74,
+    "excluded": 240,
+    "notAssessed": 881,
+    "withDiagram": 147,
     "withLab": 115,
-    "withBoth": 32,
-    "withAny": 222,
+    "withBoth": 34,
+    "withAny": 228,
     "plannedNotDelivered": 0,
-    "placements": 140,
+    "placements": 148,
     "withInteractiveDiagram": 0,
     "withSimulation": 115,
     "withLabActivity": 0
@@ -23674,52 +23688,185 @@
      "totals": {
       "lessons": 29,
       "written": 29,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 29,
-      "withDiagram": 0,
+      "assessed": 29,
+      "plannedVisual": 12,
+      "plannedDiagram": 8,
+      "plannedLab": 6,
+      "excluded": 17,
+      "notAssessed": 0,
+      "withDiagram": 8,
       "withLab": 6,
-      "withBoth": 0,
-      "withAny": 6,
+      "withBoth": 2,
+      "withAny": 12,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 8,
       "withInteractiveDiagram": 0,
       "withSimulation": 6,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u17-01","title":"Magnetic fields","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-02","title":"Magnetic forces on charges","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-03","title":"Lorentz force","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-04","title":"Magnetic forces on current-carrying wires","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-05","title":"Motion of charged particles in magnetic fields","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-06","title":"Biot–Savart law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-07","title":"Ampère's law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-08","title":"Magnetic dipoles","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-09","title":"Magnetic flux","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-10","title":"Electromagnetic induction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-11","title":"Faraday's law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-12","title":"Lenz's law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-13","title":"Inductance","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-14","title":"Self-induction and mutual induction","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-15","title":"Energy stored in magnetic fields","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-16","title":"Magnetic materials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-17","title":"Diamagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-18","title":"Paramagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-19","title":"Ferromagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-20","title":"Hysteresis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-21","title":"Electromagnets","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-22","title":"Solenoids and toroids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-23","title":"Electric motors and generators","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-24","title":"Maxwell's equations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-25","title":"Displacement current","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-26","title":"Electromagnetic potentials","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-27","title":"Gauge transformations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-28","title":"Electromagnetic boundary conditions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u17-29","title":"Electromagnetic momentum and energy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u17-01",
+       "title": "Magnetic fields",
+       "written": true,
+       "diagrams": [{"id":"phys-u17-field-sizes","status":"validated"}],
+       "labs": ["lorentz"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u17-field-sizes"],"labs":["lorentz"]}
+      },
+      {"id":"u17-02","title":"Magnetic forces on charges","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"lab","labs":["lorentz"]}},
+      {
+       "id": "u17-03",
+       "title": "Lorentz force",
+       "written": true,
+       "diagrams": [{"id":"phys-u17-velocity-selector","status":"validated"}],
+       "labs": ["lorentz"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u17-velocity-selector"],"labs":["lorentz"]}
+      },
+      {
+       "id": "u17-04",
+       "title": "Magnetic forces on current-carrying wires",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: three-dimensional force on a wire (F = IL × B) and parallel-wire attraction with the current directions"}
+      },
+      {"id":"u17-05","title":"Motion of charged particles in magnetic fields","written":true,"diagrams":[],"labs":["lorentz"],"plan":{"verdict":"lab","labs":["lorentz"]}},
+      {
+       "id": "u17-06",
+       "title": "Biot–Savart law",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: field of a current loop on its axis and Helmholtz coils (the lesson's centre-field example is one substitution)"}
+      },
+      {
+       "id": "u17-07",
+       "title": "Ampère's law",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u17-08","title":"Magnetic dipoles","written":true,"diagrams":[{"id":"phys-u17-coil-torque","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u17-coil-torque"]}},
+      {"id":"u17-09","title":"Magnetic flux","written":true,"diagrams":[{"id":"phys-u17-flux-linkage","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u17-flux-linkage"]}},
+      {
+       "id": "u17-10",
+       "title": "Electromagnetic induction",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u17-11","title":"Faraday's law","written":true,"diagrams":[{"id":"phys-u17-generator-emf","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u17-generator-emf"]}},
+      {
+       "id": "u17-12",
+       "title": "Lenz's law",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a magnet approaching a coil with the induced current and pole directions"}
+      },
+      {"id":"u17-13","title":"Inductance","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"lab","labs":["transients"]}},
+      {"id":"u17-14","title":"Self-induction and mutual induction","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"lab","labs":["transients"]}},
+      {
+       "id": "u17-15",
+       "title": "Energy stored in magnetic fields",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u17-16",
+       "title": "Magnetic materials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition, list of properties or classification that a picture would not teach"}
+      },
+      {"id":"u17-17","title":"Diamagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition, list of properties or classification that a picture would not teach"}},
+      {"id":"u17-18","title":"Paramagnetism","written":true,"diagrams":[{"id":"phys-u17-curie-law","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u17-curie-law"]}},
+      {"id":"u17-19","title":"Ferromagnetism","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition, list of properties or classification that a picture would not teach"}},
+      {
+       "id": "u17-20",
+       "title": "Hysteresis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a B–H hysteresis loop with coercivity, remanence and the enclosed area as the loss per cycle"}
+      },
+      {
+       "id": "u17-21",
+       "title": "Electromagnets",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u17-22",
+       "title": "Solenoids and toroids",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u17-23",
+       "title": "Electric motors and generators",
+       "written": true,
+       "diagrams": [{"id":"phys-u17-motor-back-emf","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u17-motor-back-emf"]}
+      },
+      {
+       "id": "u17-24",
+       "title": "Maxwell's equations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"formal theory: equations and statements, with no number or geometry in the lesson that a picture would check"}
+      },
+      {
+       "id": "u17-25",
+       "title": "Displacement current",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u17-26",
+       "title": "Electromagnetic potentials",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"formal theory: equations and statements, with no number or geometry in the lesson that a picture would check"}
+      },
+      {
+       "id": "u17-27",
+       "title": "Gauge transformations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"formal theory: equations and statements, with no number or geometry in the lesson that a picture would check"}
+      },
+      {
+       "id": "u17-28",
+       "title": "Electromagnetic boundary conditions",
+       "written": true,
+       "diagrams": [{"id":"phys-u17-skin-depth-copper","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u17-skin-depth-copper"]}
+      },
+      {
+       "id": "u17-29",
+       "title": "Electromagnetic momentum and energy",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: the Poynting vector S = E × H round a battery–resistor circuit (field directions and flow into the resistor)"}
+      }
      ]
     },
     {

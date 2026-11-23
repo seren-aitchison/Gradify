@@ -39,6 +39,34 @@ export function valences(el, q = 0) {
 // ---------- the drawing ----------
 export const empty = () => ({ atoms: [], bonds: [], next: 1 });
 export const clone = (m) => JSON.parse(JSON.stringify(m));
+/** Every element symbol a drawing can hold: the drawable ones (ELEMENTS) and the few more the valence table knows. */
+export const KNOWN_ELEMENTS = new Set(Object.keys(VAL));
+const plain = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const isId = (v) => Number.isSafeInteger(v) && v > 0;
+const isCoord = (v) => typeof v === "number" && Number.isFinite(v) && Math.abs(v) <= 1e4;
+/**
+ * A drawing read back from storage (or anywhere else outside the lab), checked and copied field by field: atoms
+ * { id, x, y, el, charge }, bonds { id, a, b, order, stereo? }. Returns null when anything in it is not what the lab
+ * itself writes (an unknown element symbol, a non-integer charge, a bond to a missing atom...), so a tampered or
+ * corrupted save is dropped whole rather than drawn.
+ */
+export function restore(v, elements = KNOWN_ELEMENTS) {
+  if (!plain(v) || !Array.isArray(v.atoms) || !Array.isArray(v.bonds)) return null;
+  const atoms = [], bonds = [], ids = new Set(), bondIds = new Set(), pairs = new Set();
+  for (const a of v.atoms) {
+    if (!plain(a) || !isId(a.id) || ids.has(a.id) || !isCoord(a.x) || !isCoord(a.y) || typeof a.el !== "string" || !elements.has(a.el)) return null;
+    const charge = a.charge ?? 0; if (!Number.isInteger(charge) || Math.abs(charge) > 3) return null;
+    ids.add(a.id); atoms.push({ id: a.id, x: a.x, y: a.y, el: a.el, charge });
+  }
+  for (const b of v.bonds) {
+    if (!plain(b) || !isId(b.id) || bondIds.has(b.id) || !ids.has(b.a) || !ids.has(b.b) || b.a === b.b || ![1, 2, 3].includes(b.order)) return null;
+    if (b.stereo != null && b.stereo !== "wedge" && b.stereo !== "dash") return null;
+    const pair = `${Math.min(b.a, b.b)}-${Math.max(b.a, b.b)}`; if (pairs.has(pair)) return null;
+    bondIds.add(b.id); pairs.add(pair); bonds.push(b.stereo ? { id: b.id, a: b.a, b: b.b, order: b.order, stereo: b.stereo } : { id: b.id, a: b.a, b: b.b, order: b.order });
+  }
+  const top = Math.max(0, ...ids, ...bondIds);
+  return { atoms, bonds, next: isId(v.next) && v.next > top ? v.next : top + 1 };
+}
 export const atomOf = (m, id) => m.atoms.find((a) => a.id === id);
 export const bondOf = (m, id) => m.bonds.find((b) => b.id === id);
 export const bondBetween = (m, a, b) => m.bonds.find((x) => (x.a === a && x.b === b) || (x.a === b && x.b === a));
@@ -200,7 +228,18 @@ function kekulise(m, bonds) {
 
 /** Sets an atom's element (charges reset). */
 export function setElement(m, id, el) { const a = atomOf(m, id); if (a) { a.el = el; a.charge = 0; } }
-export function cycleOrder(m, id) { const b = bondOf(m, id); if (b) b.order = (b.order % 3) + 1; }
+export function cycleOrder(m, id) { const b = bondOf(m, id); if (b) { b.order = (b.order % 3) + 1; if (b.order !== 1) delete b.stereo; } }
+/**
+ * Cycles a single bond plain → wedge → dash → plain, with the narrow end (bond.a) at `from`, the stereocentre. A
+ * bond whose narrow end is at the other atom is turned round and starts again as a wedge.
+ */
+export function cycleStereo(m, id, from) {
+  const b = bondOf(m, id); if (!b || b.order !== 1) return null;
+  if (from != null && b.a !== from && b.b === from) { [b.a, b.b] = [b.b, b.a]; b.stereo = "wedge"; return b.stereo; }
+  b.stereo = b.stereo === "wedge" ? "dash" : b.stereo === "dash" ? undefined : "wedge";
+  if (!b.stereo) delete b.stereo;
+  return b.stereo || null;
+}
 export function bounds(m) {
   if (!m.atoms.length) return { x0: -3, y0: -2, x1: 3, y1: 2 };
   const xs = m.atoms.map((a) => a.x), ys = m.atoms.map((a) => a.y);
@@ -242,10 +281,18 @@ export function graphFromSmiles(s) {
     if (needs[a] && needs[b] && !has(a) && !has(b)) { dbl.add(k); if (solve(x + 1)) return true; dbl.delete(k); }
     return solve(x + 1);
   };
-  solve(0);
+  // aromatic atoms that can't each get one double bond (c1cccc1, a five-carbon "aromatic" ring) aren't a molecule the
+  // lab can draw: refuse them rather than quietly import single bonds (that would be cyclopentane)
+  if (!solve(0)) throw new Error(`"${s}" has aromatic atoms that can't be given alternating double bonds (a Kekulé structure), so it isn't a valid aromatic ring.`);
   p.bonds.forEach((b, k) => addBond(m, m.atoms[b.a].id, m.atoms[b.b].id, orders[k] || (dbl.has(k) ? 2 : 1)));
-  // explicit H counts from bracket atoms become drawn hydrogens
-  for (const [n, a] of p.atoms.entries()) if (a.hx != null) { const at = m.atoms[n], used = neighbours(m, at.id).reduce((t, x) => t + x.bond.order, 0), want = a.hx, vs = valences(at.el, at.charge), v = vs.find((x) => x >= used); if (v != null && v - used !== want) for (let k = 0; k < want; k++) addBond(m, at.id, addAtom(m, 0, 0, "H").id, 1); }
+  // explicit H counts from bracket atoms become drawn hydrogens. The drawing model always fills an atom's valence with
+  // implicit hydrogens, so a bracket atom with fewer H than that (a radical such as [O] or [CH3]) can't be represented:
+  // it is refused rather than silently turned into another molecule ([O] would otherwise become water).
+  for (const [n, a] of p.atoms.entries()) if (a.hx != null) {
+    const at = m.atoms[n], used = neighbours(m, at.id).reduce((t, x) => t + x.bond.order, 0), want = a.hx, vs = valences(at.el, at.charge), v = vs.find((x) => x >= used);
+    if (v != null && want < v - used) throw new Error(`[${at.el}${want ? `H${want > 1 ? want : ""}` : ""}${at.charge ? (at.charge > 0 ? "+" : "-") : ""}] has fewer hydrogens than its valence needs (a radical or unusual valence), which the lab can't draw.`);
+    if (v != null && v - used !== want) for (let k = 0; k < want; k++) addBond(m, at.id, addAtom(m, 0, 0, "H").id, 1);
+  }
   return m;
 }
 
@@ -297,6 +344,50 @@ function refine(G, ar, skip = new Set(), iters = G.n + 1) {
   return lab;
 }
 
+// The molecule's identity. Colour refinement (refine) labels atoms by their surroundings; for a molecule without rings
+// those labels already decide the structure exactly, but for rings two different molecules can share every label (a
+// triangular prism and K3,3 are both six CH carbons with three carbon neighbours each). So a ring-containing molecule
+// also gets a canonical certificate: individualise one atom of the smallest symmetric class at a time, refine again, and
+// keep the smallest labelled adjacency list over every choice. Equal certificates mean the same molecule, exactly.
+const bondType = (G, ar, i, j, o) => (ar.bonds.has(`${Math.min(i, j)}-${Math.max(i, j)}`) ? "a" : String(o));
+function colourRanks(G, ar, marks) {
+  let sig = G.el.map((e, i) => `${e}${G.q[i]}h${G.h[i]}${ar.atoms.has(i) ? "a" : ""}#${marks.get(i) ?? 0}`), cells = 0;
+  for (;;) {
+    const order = [...new Set(sig)].sort(), rank = new Map(order.map((x, k) => [x, k])), r = sig.map((x) => rank.get(x));
+    if (order.length === cells) return r;
+    cells = order.length;
+    sig = r.map((x, i) => `${x}|${G.adj[i].map((e) => `${bondType(G, ar, i, e.j, e.o)}:${r[e.j]}`).sort().join(",")}`);
+  }
+}
+/**
+ * The canonical form by individualisation–refinement: { cert, orders } where cert is the smallest labelled adjacency
+ * list and orders lists every atom ordering (G indices, canonical position first to last) that gives it. Those orderings
+ * differ from each other exactly by the molecule's symmetries, so they are the ways to lay one drawing over another
+ * of the same constitution. null if a huge symmetric molecule exhausts the search.
+ */
+export function canonical(G, ar) {
+  let best = null, orders = [], budget = 20000;
+  const visit = (marks) => {
+    if (--budget < 0) return;
+    const r = colourRanks(G, ar, marks), size = new Map(); for (const x of r) size.set(x, (size.get(x) || 0) + 1);
+    let cell = -1; for (const [x, c] of size) if (c > 1 && (cell < 0 || c < size.get(cell) || (c === size.get(cell) && x < cell))) cell = x;
+    if (cell < 0) {
+      const at = r.map((x, i) => [x, i]).sort((a, b) => a[0] - b[0]).map(([, i]) => i);
+      const cert = at.map((i) => `${G.el[i]}${G.q[i]}h${G.h[i]}>${G.adj[i].map((e) => `${bondType(G, ar, i, e.j, e.o)}${r[e.j]}`).sort().join(",")}`).join(";");
+      if (best === null || cert < best) { best = cert; orders = [at]; } else if (cert === best) orders.push(at);
+      return;
+    }
+    for (let i = 0; i < G.n; i++) if (r[i] === cell) visit(new Map([...marks, [i, marks.size + 1]]));
+  };
+  visit(new Map());
+  return budget < 0 ? null : { cert: best, orders };
+}
+export const certificate = (G, ar) => canonical(G, ar)?.cert ?? null;
+function identity(G, ar, counts, charge) {
+  const base = `${hill(counts)}|${charge}|${refine(G, ar).slice().sort().join(".")}`;
+  return h53(cycleRank(G) > 0 ? `${base}|${certificate(G, ar) ?? ""}` : base);
+}
+
 const SUB = "₀₁₂₃₄₅₆₇₈₉";
 export const subs = (s) => String(s).replace(/\d/g, (d) => SUB[d]);
 function hill(counts) {
@@ -346,12 +437,14 @@ export function analyse(m) {
     const ends = [[i, e.j], [e.j, i]].map(([a, b]) => { const ls = G.adj[a].filter((x) => x.j !== b).map((x) => `${x.o}:${lab[x.j]}`); for (let k = 0; k < G.h[a]; k++) ls.push("H"); return ls; });
     if (ends.every((ls) => ls.length === 2 && ls[0] !== ls[1])) ez.push(e.bond);
   }
-  const lab = refine(G, ar), hash = h53(`${hill(counts)}|${charge}|${lab.slice().sort().join(".")}`);
+  const lab = refine(G, ar), hash = identity(G, ar, counts, charge);
   Object.assign(out, {
     counts, formula: hill(counts), charge, mass: Object.entries(counts).reduce((t, [k, v]) => t + (MASS[k] || 0) * v, 0),
     empirical: hill(emp), dou, ringCount: nBonds - n + nc, components: nc, aromaticRings: ar.rings.length, aromaticAtoms: [...ar.atoms].map((i) => G.id[i]),
     problems, hyb: Object.fromEntries(G.id.map((id, i) => [id, hyb[i]])), hcount: Object.fromEntries(G.id.map((id, i) => [id, G.hx[i]])),
     carbonClass: Object.fromEntries(G.id.map((id, i) => [id, cls[i]])), carbon, groups, stereo, ez, hash,
+    // constitutional class of each atom (equal for symmetry-equivalent atoms), for comparing stereoisomers
+    classOf: Object.fromEntries(G.id.map((id, i) => [id, lab[i]])),
   });
   out.smiles = smiles(G);
   out.condensed = nc === 1 && out.ringCount === 0 ? condensed(G) : null;
@@ -403,7 +496,14 @@ function functionalGroups(G, ar, cls) {
 
 // ---------- SMILES and the structural formula ----------
 const ORG = { B: [3], C: [4], N: [3, 5], O: [2], P: [3, 5], S: [2, 4, 6], F: [1], Cl: [1], Br: [1], I: [1] };
-function smiles(G) {
+/**
+ * SMILES for G, with optional tetrahedral tags (Map of G index → "@" | "@@"); { text, order } where order[k] is the
+ * G index of the k-th atom written (the atom order a SMILES reader such as mol.js numbers them in).
+ */
+export function smilesOf(G, tags = new Map(), dirs = new Map()) { const order = []; const text = smiles(G, tags, order, dirs); return { text, order }; }
+// dirs: optional "/" or "\\" on single bonds (Map of "i-j", lower index first, → symbol), written before the bond's
+// second atom, for C=C geometry
+function smiles(G, tags = new Map(), order = [], dirs = new Map()) {
   const vis = new Array(G.n).fill(-1), parts = []; let t = 0; const kids = G.adj.map(() => []), close = new Map();
   for (let s = 0; s < G.n; s++) {
     if (vis[s] >= 0) continue; const root = s;
@@ -411,12 +511,12 @@ function smiles(G) {
     dfs(root, -1); parts.push(root);
   }
   const free = [], dig = new Map();
-  const sym = (i) => { const e = G.el[i], used = G.adj[i].reduce((a, x) => a + x.o, 0), v = ORG[e]?.find((x) => x >= used); if (ORG[e] && !G.q[i] && v != null && v - used === G.h[i]) return e; return `[${e}${G.h[i] ? `H${G.h[i] > 1 ? G.h[i] : ""}` : ""}${G.q[i] ? (G.q[i] > 0 ? "+" : "-") + (Math.abs(G.q[i]) > 1 ? Math.abs(G.q[i]) : "") : ""}]`; };
+  const sym = (i) => { const e = G.el[i], used = G.adj[i].reduce((a, x) => a + x.o, 0), v = ORG[e]?.find((x) => x >= used); if (tags.has(i)) return `[${e}${tags.get(i)}${G.h[i] ? `H${G.h[i] > 1 ? G.h[i] : ""}` : ""}${G.q[i] ? (G.q[i] > 0 ? "+" : "-") : ""}]`; if (ORG[e] && !G.q[i] && v != null && v - used === G.h[i]) return e; return `[${e}${G.h[i] ? `H${G.h[i] > 1 ? G.h[i] : ""}` : ""}${G.q[i] ? (G.q[i] > 0 ? "+" : "-") + (Math.abs(G.q[i]) > 1 ? Math.abs(G.q[i]) : "") : ""}]`; };
   const bs = (o) => (o === 2 ? "=" : o === 3 ? "#" : "");
   const write = (u) => {
-    let s = sym(u);
+    order.push(u); let s = sym(u);
     for (const e of G.adj[u]) { const k = `${Math.min(u, e.j)}-${Math.max(u, e.j)}`; if (!close.has(k)) continue; if (vis[e.j] > vis[u]) { let d = 1; while (free.includes(d) || [...dig.values()].includes(d)) d++; dig.set(k, d); s += bs(e.o) + (d > 9 ? `%${d}` : d); } else if (dig.has(k)) { const d = dig.get(k); dig.delete(k); s += d > 9 ? `%${d}` : d; } }
-    kids[u].forEach((e, k) => { const sub = bs(e.o) + write(e.j); s += k < kids[u].length - 1 ? `(${sub})` : sub; });
+    kids[u].forEach((e, k) => { const sub = (e.o === 1 ? dirs.get(`${Math.min(u, e.j)}-${Math.max(u, e.j)}`) || "" : "") + bs(e.o) + write(e.j); s += k < kids[u].length - 1 ? `(${sub})` : sub; });
     return s;
   };
   return parts.map(write).join(".");
@@ -498,7 +598,7 @@ function library() {
   return LIB;
 }
 // the library's hashes come from the same analysis, without the name (which would recurse)
-function analyseQuiet(m) { const G = graph(m), rs = rings(G, 8), ar = aromatic(G, rs), counts = {}; for (let i = 0; i < G.n; i++) { counts[G.el[i]] = (counts[G.el[i]] || 0) + 1; if (G.h[i]) counts.H = (counts.H || 0) + G.h[i]; } const charge = G.q.reduce((a, b) => a + b, 0); return { hash: h53(`${hill(counts)}|${charge}|${refine(G, ar).slice().sort().join(".")}`) }; }
+function analyseQuiet(m) { const G = graph(m), rs = rings(G, 8), ar = aromatic(G, rs), counts = {}; for (let i = 0; i < G.n; i++) { counts[G.el[i]] = (counts[G.el[i]] || 0) + 1; if (G.h[i]) counts.H = (counts.H || 0) + G.h[i]; } const charge = G.q.reduce((a, b) => a + b, 0); return { hash: identity(G, ar, counts, charge) }; }
 
 // ions are named only from the library (systematic naming here is for neutral molecules)
 function ionName(A) { const lib = library().get(A.hash); return lib ? { name: lib.name || lib.aka.split(",")[0], aka: lib.name ? lib.aka : null, from: "library", steps: ["A common ion: named from the library."] } : null; }
@@ -513,7 +613,9 @@ function nameOf(G, rs, A) {
 export function systematic(G, rs = rings(G, 8)) {
   const n = G.n, Cs = G.el.map((e, i) => (e === "C" ? i : -1)).filter((i) => i >= 0);
   if (!Cs.length) return { reason: "There's no carbon chain to name." };
-  if (rs.length) return { reason: "Systematic naming here covers chains, not rings; common ring compounds are recognised from the library." };
+  // any ring at all, whatever its size: rings() only lists rings of up to 8 atoms, and a larger one would send the chain
+  // and substituent walks below round it for ever. The cycle rank (bonds − atoms + connected pieces) is 0 only for trees.
+  if (rs.length || cycleRank(G) > 0) return { reason: "Systematic naming here covers chains, not rings; common ring compounds are recognised from the library." };
   const bad = G.el.find((e) => !["C", "O", ...HAL].includes(e));
   if (bad) return { reason: `Systematic naming here covers C, H, O and halogens; this molecule has ${bad}.` };
   // the features on each carbon
@@ -525,7 +627,12 @@ export function systematic(G, rs = rings(G, 8)) {
     for (const e of dO) if (G.adj[e.j].length !== 1) return { reason: "This C=O oxygen has another bond." };
     if (dO.length > 1) return { reason: "A carbon with two C=O bonds is outside this namer." };
     if (dO.length && sO.length) { if (sO.length > 1) return { reason: "This carbon has too many oxygens to name here." }; f.acid = 1; }
-    else if (dO.length) { if (cNbs(G, c).length <= 1) f.ald = 1; else f.one = 1; }
+    else if (dO.length) {
+      // an aldehyde needs a hydrogen on the carbonyl carbon (–CHO); a terminal C=O without one carries something else
+      // (an acyl chloride such as ethanoyl chloride), which this namer leaves to the library
+      if (cNbs(G, c).length <= 1) { if (G.h[c] < 1) return { reason: "This C=O carbon has no hydrogen, so it isn't an aldehyde: acyl halides and similar groups are named from the library." }; f.ald = 1; }
+      else f.one = 1;
+    }
     else f.ol = sO.length;
     F.set(c, f);
   }
@@ -603,6 +710,13 @@ export function systematic(G, rs = rings(G, 8)) {
   if (subs.length) steps.push(`Substituents, in alphabetical order: ${[...byName.values()].sort((a, b) => a.key.localeCompare(b.key)).map((s) => `${s.name} at ${s.locs.sort((a, b) => a - b).join(", ")}`).join("; ")}.`);
   return { name, chain: path, steps, from: "systematic" };
 }
+/** Independent rings in G (bonds − atoms + connected pieces): 0 exactly when every piece is a tree. */
+export function cycleRank(G) {
+  let edges = 0; for (let i = 0; i < G.n; i++) edges += G.adj[i].length;
+  const seen = new Uint8Array(G.n); let pieces = 0;
+  for (let s = 0; s < G.n; s++) { if (seen[s]) continue; pieces++; const q = [s]; seen[s] = 1; while (q.length) for (const { j } of G.adj[q.pop()]) if (!seen[j]) { seen[j] = 1; q.push(j); } }
+  return edges / 2 - G.n + pieces;
+}
 function compareKeys(a, b) {
   for (let i = 0; i < a.length; i++) { const x = a[i], y = b[i]; const c = Array.isArray(x) ? cmpArr(x, y) : x - y; if (c) return c; }
   return 0;
@@ -632,6 +746,8 @@ export const PALETTES = {
   print: { bg: "#ffffff", bond: "#000000", grid: "rgba(0,0,0,.08)", mute: "#555555", accent: "#047857", hi: "rgba(16,185,129,.22)", warn: "#c8102e", hover: "transparent", ghost: "transparent", el: { N: "#1d4ed8", O: "#c81e1e", S: "#a16207", P: "#c2410c", F: "#15803d", Cl: "#15803d", Br: "#92400e", I: "#7e22ce", B: "#be185d", H: "#000", C: "#000" } },
 };
 const f2 = (v) => Math.round(v * 10) / 10;
+// text placed in the SVG is escaped even when it should only ever be an element symbol (see restore above)
+const escText = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 /** The honeycomb covering a world rectangle, as one SVG path (each edge once). */
 export function gridPath(x0, y0, x1, y1, X, Y) {
@@ -650,7 +766,9 @@ export function gridPath(x0, y0, x1, y1, X, Y) {
 /**
  * The drawing as an SVG string. view: { cx, cy, s } (world centre and pixels per bond), size: [W, H].
  * opts: { palette, grid, showC, showNums, showStereo, highlight: Set of atom ids, hover: { type, id },
- *         ghost: [[x, y], ...] with ghostRing (closed) or a chain, sel: atom id, title }
+ *         ghost: [[x, y], ...] with ghostRing (closed) or a chain, sel: atom id, title,
+ *         descriptors: configuration() from reactions/configuration.js, to print R/S by centres and E/Z by C=C bonds }
+ * Single bonds with stereo "wedge" or "dash" are drawn as wedges, narrow end at bond.a.
  */
 export function render(m, A, view, [W, H], opts = {}) {
   const P = PALETTES[opts.palette || "dark"], s = view.s, X = (x) => (x - view.cx) * s + W / 2, Y = (y) => (y - view.cy) * s + H / 2;
@@ -672,7 +790,12 @@ export function render(m, A, view, [W, H], opts = {}) {
     const dx = q.x - p.x, dy = q.y - p.y, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, nx = -uy, ny = ux;
     const t0 = labelled(p) ? 0.3 : 0, t1 = labelled(q) ? 0.3 : 0, x1 = p.x + ux * t0, y1 = p.y + uy * t0, x2 = q.x - ux * t1, y2 = q.y - uy * t1;
     const col = bad.has(b.a) && bad.has(b.b) ? P.warn : P.bond;
-    if (b.order === 1) seg(x1, y1, x2, y2, col);
+    if (b.order === 1 && (b.stereo === "wedge" || b.stereo === "dash")) {
+      // narrow end at b.a (the stereocentre); a solid wedge comes towards you, a hashed one goes away
+      const w = 0.13, ex = nx * w, ey = ny * w;
+      if (b.stereo === "wedge") out.push(`<path d="M${f2(X(x1))},${f2(Y(y1))}L${f2(X(x2 + ex))},${f2(Y(y2 + ey))}L${f2(X(x2 - ex))},${f2(Y(y2 - ey))}Z" fill="${col}" stroke="${col}" stroke-width="${f2(sw * 0.5)}" stroke-linejoin="round"/>`);
+      else { const k = 7; for (let i = 1; i <= k; i++) { const t = i / k, cx = x1 + (x2 - x1) * t, cy = y1 + (y2 - y1) * t, h = w * t; seg(cx - nx * h, cy - ny * h, cx + nx * h, cy + ny * h, col); } }
+    } else if (b.order === 1) seg(x1, y1, x2, y2, col);
     else if (b.order === 3) { seg(x1, y1, x2, y2, col); for (const o of [-0.14, 0.14]) seg(x1 + nx * o, y1 + ny * o, x2 + nx * o, y2 + ny * o, col); }
     else {
       const key = `${Math.min(b.a, b.b)}-${Math.max(b.a, b.b)}`, rc = ringOf.get(key);
@@ -687,6 +810,14 @@ export function render(m, A, view, [W, H], opts = {}) {
       else { seg(x1, y1, x2, y2, col); const o = 0.17 * side, sh = 0.16; seg(x1 + nx * o + ux * (t0 ? 0 : sh), y1 + ny * o + uy * (t0 ? 0 : sh), x2 + nx * o - ux * (t1 ? 0 : sh), y2 + ny * o - uy * (t1 ? 0 : sh), col); }
     }
   }
+  // E/Z beside each C=C whose geometry the drawing defines
+  for (const d of opts.descriptors?.bonds || []) {
+    if (!d.label) continue; const p = byId.get(d.atoms[0]), q = byId.get(d.atoms[1]); if (!p || !q) continue;
+    const L = Math.hypot(q.x - p.x, q.y - p.y) || 1, nx = -(q.y - p.y) / L, ny = (q.x - p.x) / L, mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2;
+    // the side with fewer atoms nearby
+    const crowd = (sg) => m.atoms.reduce((t, a) => t + Math.max(0, 1.2 - Math.hypot(a.x - (mx + sg * nx * 0.5), a.y - (my + sg * ny * 0.5))), 0), sg = crowd(1) <= crowd(-1) ? 1 : -1;
+    out.push(`<text x="${f2(X(mx + sg * nx * 0.5))}" y="${f2(Y(my + sg * ny * 0.5) + fs * 0.25)}" text-anchor="middle" font-size="${f2(fs * 0.72)}" font-weight="700" font-style="italic" fill="${P.accent}" font-family="Geist, system-ui, sans-serif">${d.label}</text>`);
+  }
   // atom labels
   for (const a of m.atoms) {
     const x = X(a.x), y = Y(a.y), nb = m.bonds.filter((b) => b.a === a.id || b.b === a.id).map((b) => byId.get(b.a === a.id ? b.b : b.a));
@@ -695,11 +826,22 @@ export function render(m, A, view, [W, H], opts = {}) {
     if (labelled(a)) {
       const h = hc[a.id] ?? 0, col = P.el[a.el] || P.bond, hs = h ? `H${h > 1 ? `<tspan font-size="${f2(fs * 0.7)}" dy="${f2(fs * 0.25)}">${h}</tspan>` : ""}` : "";
       const left = h && mx > 0.2 && nb.length === 1, ew = fs * 0.62 * a.el.length;
-      out.push(`<text x="${f2(x)}" y="${f2(y + fs * 0.36)}" text-anchor="middle" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${a.el}</text>`);
+      out.push(`<text x="${f2(x)}" y="${f2(y + fs * 0.36)}" text-anchor="middle" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${escText(a.el)}</text>`);
       if (hs) out.push(left ? `<text x="${f2(x - ew / 2 - fs * 0.04)}" y="${f2(y + fs * 0.36)}" text-anchor="end" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>` : `<text x="${f2(x + ew / 2 + fs * 0.02)}" y="${f2(y + fs * 0.36)}" text-anchor="start" font-size="${f2(fs)}" font-weight="600" fill="${col}" font-family="Geist, system-ui, sans-serif">${hs}</text>`);
     }
     if (a.charge) out.push(`<text x="${f2(x + fs * 0.62)}" y="${f2(y - fs * 0.35)}" text-anchor="middle" font-size="${f2(fs * 0.75)}" font-weight="700" fill="${P.el[a.el] || P.bond}" font-family="Geist, system-ui, sans-serif">${Math.abs(a.charge) > 1 ? Math.abs(a.charge) : ""}${a.charge > 0 ? "+" : "−"}</text>`);
-    if (opts.showStereo && A.stereo?.includes(a.id)) out.push(`<text x="${f2(x - fs * 0.55)}" y="${f2(y - fs * 0.3)}" text-anchor="middle" font-size="${f2(fs * 0.9)}" font-weight="700" fill="${P.accent}">*</text>`);
+    const rs = opts.descriptors?.centres?.find((c) => c.atom === a.id && c.label);
+    if (rs) {
+      // the direction furthest from every bond and from where the main-chain number goes (opposite the bonds)
+      const nbs = m.bonds.filter((b) => b.a === a.id || b.b === a.id).map((b) => byId.get(b.a === a.id ? b.b : b.a)).filter(Boolean);
+      const taken = nbs.map((o) => Math.atan2(o.y - a.y, o.x - a.x));
+      if (opts.showNums) { const vx = -nbs.reduce((t, o) => t + (o.x - a.x), 0), vy = -nbs.reduce((t, o) => t + (o.y - a.y), 0); taken.push(Math.hypot(vx, vy) < 0.2 ? -Math.PI / 2 : Math.atan2(vy, vx)); }
+      const gap = (t) => Math.min(...taken.map((u) => Math.abs(Math.atan2(Math.sin(t - u), Math.cos(t - u)))), Math.PI);
+      let best = -Math.PI / 2; for (let k = 0; k < 24; k++) { const t = (k * Math.PI) / 12; if (gap(t) > gap(best) + 1e-6) best = t; }
+      const r = labelled(a) ? 0.62 : 0.48;
+      out.push(`<text x="${f2(X(a.x + Math.cos(best) * r))}" y="${f2(Y(a.y + Math.sin(best) * r) + fs * 0.25)}" text-anchor="middle" font-size="${f2(fs * 0.72)}" font-weight="700" font-style="italic" fill="${P.accent}" font-family="Geist, system-ui, sans-serif">${rs.label}</text>`);
+    }
+    else if (opts.showStereo && A.stereo?.includes(a.id)) out.push(`<text x="${f2(x - fs * 0.55)}" y="${f2(y - fs * 0.3)}" text-anchor="middle" font-size="${f2(fs * 0.9)}" font-weight="700" fill="${P.accent}">*</text>`);
     if (opts.sel === a.id) out.push(`<circle cx="${f2(x)}" cy="${f2(y)}" r="${f2(s * 0.36)}" fill="none" stroke="${P.accent}" stroke-width="2"/>`);
   }
   // main-chain numbering from the name

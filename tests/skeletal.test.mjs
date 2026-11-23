@@ -139,3 +139,45 @@ test("SVG output: the drawing, the paper and the chain numbering", () => {
   assert.match(svg, /^<svg[^>]+viewBox="0 0 400 240"/); assert.match(svg, />O</); assert.match(svg, />4</, "numbered to carbon 4");
   assert.ok(K.gridPath(-2, -2, 2, 2, (x) => x, (y) => y).length > 100);
 });
+
+// Regressions from the PR #159 review, each written against chemistry known independently of the lab
+test("names: a C=O carbon without a hydrogen is not an aldehyde (ethanoyl chloride is not 1-chloroethanal)", () => {
+  for (const s of ["CC(=O)Cl", "CC(Cl)=O"]) assert.equal(of(s).name.name, "ethanoyl chloride", s);
+  assert.equal(of("CC=O").name.name, "ethanal"); assert.equal(of("C=O").name.name, "methanal"); assert.equal(of("CCC=O").name.name, "propanal");
+  const acyl = of("CCC(=O)Br"); assert.notEqual(acyl.name.name, "1-bromopropanal"); assert.ok(!acyl.name.name || !/al$/.test(acyl.name.name), "no aldehyde name for an acyl bromide");
+});
+
+test("names: a ring of any size is declined by the chain namer, without hanging", () => {
+  for (let k = 3; k <= 14; k++) {
+    const s = `C1${"C".repeat(k - 1)}1`, t = Date.now(), a = of(s);
+    assert.ok(Date.now() - t < 2000, `${k}-ring took too long`);
+    assert.ok(a.name.name === null || /^cyclo/.test(a.name.name), `${k}-ring: ${a.name.name}`);
+  }
+  assert.equal(K.cycleRank(K.graph(K.graphFromSmiles("CCCC"))), 0); assert.equal(K.cycleRank(K.graph(K.graphFromSmiles("C1CCCCCCCC1"))), 1);
+  assert.equal(K.cycleRank(K.graph(K.graphFromSmiles("c1ccc2ccccc2c1"))), 2);
+});
+
+test("SMILES import: bracket hydrogens the drawing can't hold are refused, not turned into another molecule", () => {
+  assert.throws(() => K.graphFromSmiles("[O]"), /fewer hydrogens/, "atomic oxygen is not water");
+  assert.throws(() => K.graphFromSmiles("[CH3]"), /fewer hydrogens/, "a methyl radical is not methane");
+  assert.equal(of("[OH2]").formula, "H2O"); assert.equal(of("O").formula, "H2O");
+  assert.equal(of("[NH4+]").formula, "H4N"); assert.equal(of("CC(=O)[O-]").charge, -1); assert.equal(of("[O-][N+](=O)c1ccccc1").formula, "C6H5NO2");
+});
+
+test("identity: equal hashes mean the same molecule, including symmetric ring systems colour refinement can't separate", () => {
+  // prismane and the K3,3 graph: both C6H6, every carbon CH with three carbon neighbours
+  const build = (edges) => { const m = K.empty(), ids = []; for (let i = 0; i < 6; i++) ids.push(K.addAtom(m, i, 0, "C").id); for (const [a, b] of edges) K.addBond(m, ids[a], ids[b], 1); return m; };
+  const prism = build([[0, 1], [1, 2], [2, 0], [3, 4], [4, 5], [5, 3], [0, 3], [1, 4], [2, 5]]);
+  const k33 = build([[0, 3], [0, 4], [0, 5], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5]]);
+  assert.equal(K.analyse(prism).formula, "C6H6"); assert.equal(K.analyse(k33).formula, "C6H6");
+  assert.notEqual(K.analyse(prism).hash, K.analyse(k33).hash);
+  // one molecule drawn different ways keeps one hash; positional isomers stay apart
+  const h = (s) => of(s).hash;
+  for (const [a, b] of [["c1ccccc1", "C1=CC=CC=C1"], ["Cc1ccccc1", "c1ccc(C)cc1"], ["OC1CCCCC1", "C1CCC(O)CC1"], ["C1CC2CCC1C2", "C1CC2CC1CC2"], ["CC(=O)Oc1ccccc1C(=O)O", "OC(=O)c1ccccc1OC(C)=O"]]) assert.equal(h(a), h(b), `${a} = ${b}`);
+  for (const [a, b] of [["Cc1ccccc1C", "Cc1cccc(C)c1"], ["Cc1cccc(C)c1", "Cc1ccc(C)cc1"], ["C1CCCCC1", "CC1CCCC1"]]) assert.notEqual(h(a), h(b), `${a} ≠ ${b}`);
+});
+
+test("SMILES import: aromatic atoms that can't be given a Kekulé structure are refused, not imported as single bonds", () => {
+  assert.throws(() => K.graphFromSmiles("c1cccc1"), /Kekulé/, "a five-carbon 'aromatic' ring is not cyclopentane");
+  for (const [s, f] of [["c1ccccc1", "C6H6"], ["c1ccncc1", "C5H5N"], ["c1ccc2ccccc2c1", "C10H8"], ["c1cc[nH]c1", "C4H5N"], ["Cn1cnc2c1c(=O)n(C)c(=O)n2C", "C8H10N4O2"]]) assert.equal(of(s).formula, f, s);
+});

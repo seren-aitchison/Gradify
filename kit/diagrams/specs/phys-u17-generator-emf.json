@@ -1,0 +1,93 @@
+{
+ "id": "phys-u17-generator-emf",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Faraday's law",
+ "title": "EMF of a rotating coil",
+ "caption": "A coil of 200 turns (A = 0.05 m²) spinning at 50 rev s⁻¹ in 0.1 T has ω = 2π × 50 = 314 rad s⁻¹ and ε = NBAω sin ωt, a sine wave of peak 314 V = 200 × 0.1 × 0.05 × 314. The period is 20 ms. The EMF is largest when the coil's plane is parallel to B, where the flux is changing fastest, and zero when the flux is largest.",
+ "alt": "Graph of EMF against time: a sine wave of peak 314 V and period 20 ms, shown for two cycles.",
+ "description": [
+  "The horizontal axis is time in milliseconds; the vertical axis is the induced EMF in volts.",
+  "ω = 2π × 50 = 314 rad s⁻¹, so the period is 20 ms.",
+  "The peak EMF is NBAω = 200 × 0.1 × 0.05 × 314 = 314 V, reached a quarter of a period (5 ms) after the coil is perpendicular to B."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   -380,
+   420
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   -300,
+   -150,
+   150,
+   300
+  ]
+ ],
+ "grid": [
+  10,
+  150
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t / ms",
+  "ε / V"
+ ],
+ "curves": [
+  {
+   "expr": "314.1592653589793*sin(x*0.3141592653589793)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "ε = NBAω sin ωt",
+   "labelAt": [
+    26.5,
+    340
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 314.1592653589793,
+   "label": "314 V",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "314.1592653589793*sin(x*0.3141592653589793)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 314.1592653589793,
+   "name": "peak EMF NBAω = 314 V a quarter-period in"
+  },
+  {
+   "type": "point",
+   "expr": "314.1592653589793*sin(x*0.3141592653589793)",
+   "x": 10,
+   "y": 0,
+   "name": "EMF returns to zero after half a period"
+  }
+ ]
+}

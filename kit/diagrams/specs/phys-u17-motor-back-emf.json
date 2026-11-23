@@ -1,0 +1,102 @@
+{
+ "id": "phys-u17-motor-back-emf",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u17",
+ "lesson": "Electric motors and generators",
+ "title": "A DC motor's current falls as its back EMF grows",
+ "caption": "The 2 Ω motor on 24 V draws I = (24 − ε_b)/2. At the start there is no back EMF, so I = 12 A, four times the running current. As it speeds up ε_b rises, until at full speed it is 18 V and the current is 3 A: 24 − 3 × 2 = 18 V.",
+ "alt": "Graph of motor current against back EMF: a straight line falling from 12 A at 0 V to 3 A at 18 V.",
+ "description": [
+  "The horizontal axis is the back EMF in volts; the vertical axis is the motor current in amperes.",
+  "With V = 24 V and R = 2 Ω, I = (24 − ε_b)/2: 12 A when ε_b = 0 (switch-on).",
+  "At full speed I = 3 A, so ε_b = 24 − 3 × 2 = 18 V."
+ ],
+ "range": {
+  "x": [
+   0,
+   26
+  ],
+  "y": [
+   0,
+   14
+  ]
+ },
+ "ticks": [
+  [
+   6,
+   12,
+   18,
+   24
+  ],
+  [
+   3,
+   6,
+   9,
+   12
+  ]
+ ],
+ "grid": [
+  6,
+  3
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ε_{b} / V",
+  "I / A"
+ ],
+ "curves": [
+  {
+   "expr": "(24-x)/2",
+   "domain": [
+    0,
+    24
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "I = (V − ε_{b})/R",
+   "labelAt": [
+    9,
+    8.8
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 12,
+   "label": "12 A at start",
+   "dx": 12,
+   "dy": -8
+  },
+  {
+   "x": 18,
+   "y": 3,
+   "colour": "a2",
+   "label": "3 A at 18 V",
+   "dx": -8,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(24-x)/2",
+   "x": 0,
+   "y": 12,
+   "name": "starting current 24/2 = 12 A"
+  },
+  {
+   "type": "point",
+   "expr": "(24-x)/2",
+   "x": 18,
+   "y": 3,
+   "name": "running current 3 A when ε_b = 18 V"
+  }
+ ]
+}
