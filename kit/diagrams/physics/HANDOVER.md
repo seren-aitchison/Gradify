@@ -8,7 +8,7 @@ State as of 2026-11-21. Read `kit/diagrams/BUILDERS.md`, then `UNIT-AGENT.md` in
   sample in `tests/fixtures/phys-samples.mjs` passes; each is broken in several ways and must fail).
 - Tools: `scripts/diagrams/physics/spec.mjs` (`mk()` keyed by syllabus lesson id; `node … spec.mjs uNN` lists a unit),
   `scripts/diagrams/physics/check-svg.cjs <prefix> [outDir]` (browser check: labels inside the viewBox and not overlapping, PNGs).
-- Plan scaffold: `kit/diagrams/plans/physics.mjs` concatenates `plans/physics/u01.mjs … u32.mjs` (u02–u32 empty).
+- Plan scaffold: `kit/diagrams/plans/physics.mjs` concatenates `plans/physics/u01.mjs … u54.mjs` (empty until a unit is built).
 - Unit 1 complete: 19 lessons assessed; 6 with a diagram (7 diagrams, 7 placements, 0 reused), 0 labs, 13 without a visual
   by design (reasons in the plan); all 7 validated, none failing; all 7 await a subject review (none recorded).
 - Coverage: `node scripts/diagrams/coverage.mjs physics` → 19 lessons assessed · 6 with a passing diagram · 13 by design · 0 missing.
@@ -37,11 +37,10 @@ See `git log -- kit/diagrams/physics/HANDOVER.md` on main for the commit; tests:
 ## Unit claims (read before starting a unit)
 
 A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
-Claimed 23 Nov 2026.
+Claimed 23 Nov 2026 (the earlier claims by session 01H1szfk lapsed when its agents stopped; units on main are removed).
 
 | Units | Claimed by |
 |---|---|
-| u17-u20 | lead session 01H1szfk, agent P1 |
-| u21-u24 | lead session 01H1szfk, agent P2 |
-| u25-u28 | lead session 01H1szfk, agent P3 |
-| u29-u32 | lead session 01H1szfk, agent P4 |
+| u18, u19, u20 | lead session 01PJjzVE, agent P1 |
+| u21, u22, u23 | lead session 01PJjzVE, agent P2 |
+| u24, u25, u26 | lead session 01PJjzVE, agent P3 |
