@@ -1824,6 +1824,7 @@ export function mountCourse(root, cfg) {
     const finish = async () => {
       const p = score / qs.length, pass = p >= 0.75, prev = S.quiz[u.id];
       S.quiz[u.id] = { best: Math.max(p, prev?.best || 0), pass: pass || prev?.pass || false, t: Date.now() }; save();
+      globalThis.gradifyConsent?.event("quiz_complete", { passed: pass });   // Google Analytics, with consent: pass or not, never the score
       main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${Math.round(score * 10) / 10} / ${qs.length}</h2><p>${pass ? `Passed ${U} ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
         <div class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/learn/${u.id}"><span>Back to the ${u1}</span></a><button class="btn btn-light lg btn-sm" data-again><span>Try again</span></button></div></div>`;
       main.querySelector("[data-again]").addEventListener("click", () => viewQuiz(uid));
@@ -2588,7 +2589,8 @@ export function mountCourse(root, cfg) {
   async function route() {
     // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't. A try still
     // open when the learner leaves is recorded first, against the place they're leaving and in that sitting
-    if (location.hash !== routedHash) { endTries(); routedHash = location.hash; labLeave(labTries); }
+    const moved = location.hash !== routedHash;
+    if (moved) { endTries(); routedHash = location.hash; labLeave(labTries); }
     unmountIx();
     lt.stop();
     lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;
@@ -2621,6 +2623,8 @@ export function mountCourse(root, cfg) {
     const arrived = arriveHere({ href: location.hash || "#/", kind: view, title: "" });
     hideBack();
     if (view !== "learn" && !(arrived.back && arrived.y)) scrollTo(0, 0);
+    // Google Analytics, with consent (kit/core/consent.js): a lesson or quiz opened, not a redraw of the same place
+    if (moved && (view === "lesson" || view === "quiz" || view === "exam")) globalThis.gradifyConsent?.event(view === "lesson" ? "lesson_start" : `${view}_start`);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") {
       await viewLesson(arg);

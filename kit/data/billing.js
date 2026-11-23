@@ -104,6 +104,7 @@ const here = () => `${location.pathname}${location.hash || ""}`.replace(/^\/\//,
  *  Resolves only on an error. */
 export async function startCheckout(store, plan = "plus", interval = "month", from = here(), promo = undefined) {
   const { url } = await callFunction(store, "billing-checkout", { plan, interval, from, ...(promo ? { promo } : {}) }, { fallback: "Checkout couldn't be started. Please try again in a minute." });
+  globalThis.gradifyConsent?.event("begin_checkout", { plan, billing_interval: interval, currency: "GBP" });   // Google Analytics, with consent (kit/core/consent.js)
   location.assign(url);
 }
 /** Send the learner to Stripe's billing portal: card, plan, invoices, cancel. */

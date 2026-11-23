@@ -18,6 +18,7 @@
     "check:sync": "node scripts/check-sync.cjs",
     "supabase:admin": "node scripts/supabase-admin.mjs",
     "check:live": "node scripts/check-live.cjs",
+    "check:consent": "node scripts/check-consent.cjs",
     "labs": "node scripts/lab-coverage.mjs",
     "bench": "node scripts/bench.mjs",
     "audit:quality": "node scripts/quality-audit.mjs",

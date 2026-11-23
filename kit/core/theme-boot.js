@@ -118,3 +118,15 @@ document.addEventListener("click", function (e) {
   var later = function () { "requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300); };
   if (document.readyState === "complete") later(); else addEventListener("load", later);
 })();
+
+// Analytics consent and Google Analytics (kit/core/consent.js): the cookie banner, and Google Tag Manager only after
+// "Accept analytics". Loaded from here so every page that has this script gets it.
+(function () {
+  var src = (document.currentScript && document.currentScript.src) || "";
+  if (!src || window.gradifyConsent) return;
+  // events sent before consent.js arrives wait here; it sends them only if analytics is allowed, and drops them otherwise
+  var q = [];
+  window.gradifyConsent = { stub: true, q: q, event: function (n, p) { if (q.length < 50) q.push([n, p]); } };
+  var s = document.createElement("script"); s.src = src.replace(/theme-boot\.js(\?.*)?$/, "consent.js"); s.async = true;
+  document.head.appendChild(s);
+})();

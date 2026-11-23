@@ -45,7 +45,13 @@ export function eventRow(event, site, env = globalThis) {
   return { site: String(site || "Gradify").slice(0, 40), path: String(loc.pathname || "/").slice(0, 200), event, referrer, device: w < 640 ? "phone" : w < 1024 ? "tablet" : "desktop" };
 }
 
+// the same learning and action events go to Google Analytics too, only when the visitor accepted analytics
+// (kit/core/consent.js decides; it does nothing otherwise). Page views aren't forwarded: GA4 counts those itself.
+export const GOOGLE_EVENTS = ["lesson_complete", "exam_finish", "tutor", "tool_use", "quiz_finish", "cta_click", "share", "print", "export"];
+export function googleEvent(name, params, env = globalThis) { try { env.gradifyConsent?.event(name, params); } catch { /* never breaks the page */ } }
+
 export function track(event, site) {
+  if (GOOGLE_EVENTS.includes(event)) googleEvent(event === "tutor" ? "tutor_open" : event);
   if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event)) || (VITALS_LIVE && VITALS_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
