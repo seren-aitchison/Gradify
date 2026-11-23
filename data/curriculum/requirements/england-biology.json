@@ -15433,7 +15433,28 @@
    "topic": "Chapter B6: Life on Earth – past, present and future",
    "subtopic": "B6.2 How do sexual and asexual reproduction affect evolution? (separate science only)",
    "ref": "B6.2.1",
-   "text": "explain some of the advantages and disadvantages of asexual and sexual reproduction in a range of organisms rsity of organisms on Earth? able learning outcomes s will be required to: escribe the impact of developments in biology on lassification systems, including the use of DNA nalysis to classify organisms",
+   "text": "explain some of the advantages and disadvantages of asexual and sexual reproduction in a range of organisms",
+   "loc": "p. 51",
+   "status": "examination",
+   "separateOnly": false
+  },
+  {
+   "id": "eng-ocrj257-B6.3.1",
+   "source": "ocr-j257",
+   "curriculum": "OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257)",
+   "qualification": "gcse",
+   "body": "OCR",
+   "keyStage": "KS4",
+   "years": [
+    10,
+    11
+   ],
+   "yearAllocation": "stage",
+   "discipline": "biology",
+   "topic": "Chapter B6: Life on Earth – past, present and future",
+   "subtopic": "B6.3 How does our understanding of biology help us classify the diversity of organisms on Earth?",
+   "ref": "B6.3.1",
+   "text": "describe the impact of developments in biology on classification systems, including the use of DNA analysis to classify organisms",
    "loc": "p. 51",
    "status": "examination",
    "separateOnly": false

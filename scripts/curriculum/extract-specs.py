@@ -182,24 +182,27 @@ def ocr_b():
     pdf = pdfplumber.open(f"{SRC}/ocrB.pdf"); out, cur, sub = [], None, None
     for pg in pdf.pages:
         words = pg.extract_words()
-        head = next((w for w in words if w["text"] == "Assessable" and 0 < w["top"] < 160), None)
-        if not head or head["top"] < 20: continue
-        top_text = pg.crop((0, 0, pg.width, head["top"] - 2)).extract_text() or ""
-        m = re.search(r"(B\d\.\d) ([^\n]+)", top_text)
-        if m: sub = f"{m.group(1)} {m.group(2).strip()}"
-        if "IaS" in top_text and not m: break  # chapter B7, Ideas about Science
-        right = [w["x0"] for w in words if w["text"] == "Linked" and abs(w["top"] - head["top"]) < 10]
-        x1 = (min(right) - 4) if right else pg.width - 20
-        col = pg.crop((head["x0"] - 4, head["top"] + 24, x1, pg.height - 30)).extract_text() or ""
-        for line in col.split("\n"):
-            line = line.strip()
-            if not line or line.startswith("Learners will be required"): continue
-            if re.fullmatch(r"\d+", line): continue  # page number
-            m = re.match(r"^(\d+)\.\s*(.*)$", line)
-            if m and sub:
-                cur = dict(source="ocr-j257", ref=f"{sub.split()[0]}.{m.group(1)}", topic=sub[:2], sub=sub, parts=[m.group(2)], loc=f"p. {pg.page_number}")
-                out.append(cur); continue
-            if cur: cur["parts"].append(line)
+        heads = sorted((w for w in words if w["text"] == "Assessable" and w["top"] > 20), key=lambda w: w["top"])
+        if not heads: continue
+        for k, head in enumerate(heads):  # a page can hold the end of one sub-topic's table and the start of the next
+            above = heads[k - 1]["top"] + 30 if k else 0
+            bottom = heads[k + 1]["top"] - 60 if k + 1 < len(heads) else pg.height - 30
+            top_text = pg.crop((0, above, pg.width, head["top"] - 2)).extract_text() or ""
+            m = re.search(r"(B\d\.\d) ([^\n]+)", top_text)
+            if m: sub = f"{m.group(1)} {m.group(2).strip()}"
+            if "IaS" in top_text and not m: return finish_b(out)  # chapter B7, Ideas about Science
+            right = [w["x0"] for w in words if w["text"] == "Linked" and abs(w["top"] - head["top"]) < 10]
+            x1 = (min(right) - 4) if right else pg.width - 20
+            col = pg.crop((head["x0"] - 4, head["top"] + 24, x1, bottom)).extract_text() or ""
+            for line in col.split("\n"):
+                line = line.strip()
+                if not line or line.startswith("Learners will be required"): continue
+                if re.fullmatch(r"\d+", line): continue  # page number
+                m = re.match(r"^(\d+)\.\s*(.*)$", line)
+                if m and sub:
+                    cur = dict(source="ocr-j257", ref=f"{sub.split()[0]}.{m.group(1)}", topic=sub[:2], sub=sub, parts=[m.group(2)], loc=f"p. {pg.page_number}")
+                    out.append(cur); continue
+                if cur: cur["parts"].append(line)
     return finish_b(out)
 
 

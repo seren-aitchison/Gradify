@@ -9,10 +9,10 @@
   "note": "Drafted by an AI mapper from lesson objectives, headings and notes searches. Not reviewed by a teacher or examiner; not an official alignment or endorsement."
  },
  "counts": {
-  "requirements": 902,
-  "judged": 589,
-  "pending": 313,
-  "links": 1128
+  "requirements": 903,
+  "judged": 738,
+  "pending": 165,
+  "links": 1382
  },
  "requirements": {
   "eng-nc-y1-plants-01": {
@@ -4088,6 +4088,1039 @@
    "confidence": "high",
    "note": null,
    "batch": "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.8": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.9": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.10": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.11": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.1.12": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.6": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.2.8": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.3.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.3.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B1.3.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.1.1": {
+   "status": "uncovered",
+   "note": "No lesson defines health or relates it to disease.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)"
+  },
+  "eng-ocrj257-B2.1.2": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Communicable and non-communicable disease are not contrasted.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Spread in plants is barely covered.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.1.4": {
+   "status": "full",
+   "confidence": "medium",
+   "note": "Influenza, Salmonella, athlete's foot and malaria are covered across lessons.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.1.5": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Tobacco mosaic virus, ash dieback and Agrobacterium (crown gall) each appear, but plant diseases are not taught as a topic.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.3": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Physical plant defences against pathogens are not taught as such.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.2.6": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Chemical plant defences against pathogens are not taught as such.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Prevention in plants is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.3.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.4.1": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Laboratory identification of human pathogens is taught; plant disease detection in the field is not.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.4.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.4.3": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Calculating the area of inhibition zones with πr² is not worked through.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.4.4": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.4.5": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Diagnostic uses are taught; pregnancy tests are not.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.5.1": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Genetic and lifestyle risk factors are taught per disease, not as a topic.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.5.2": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Incidence of non-communicable disease at local, national and global levels is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.5.3": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Data skills are taught generically; not in the context of disease data.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.5.4": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Interactions between disease types are not taught beyond immunodeficiency.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.6.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.6.2": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Calculating the area of inhibition zones with πr² is not worked through.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.6.3": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Treatments for cardiovascular disease are not evaluated.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B2.6.4": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Preclinical and clinical testing phases are not drawn together.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.5": {
+   "status": "uncovered",
+   "note": "The inverse square law for light intensity is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)"
+  },
+  "eng-ocrj257-B3.1.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.1.7": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Rates and graphs are taught; not in the context of photosynthesis.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.1": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.2.8": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Rate calculations for water uptake are worked partly.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.3": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.8": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.9": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.10": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.11": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.12": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Percentage calculations appear for energy transfer, not for the cycling of substances.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.13": {
+   "status": "partial",
+   "confidence": "low",
+   "note": "Decomposers are taught; factors affecting the rate of decomposition are not.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.3.14": {
+   "status": "uncovered",
+   "note": "Calculating rates of decay is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)"
+  },
+  "eng-ocrj257-B3.4.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.4.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B3.4.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.1.1": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Aerobic and anaerobic respiration are compared for plants and microbes; anaerobic respiration in animals is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.1.2": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.1.4": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Respiration as exothermic is implied, not stated as such.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.1.5": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Investigating respiration rate in yeast with different substrates is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.2.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.2.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.3.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.3.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.3.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.3.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.4.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.4.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.4.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B4.5.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.1": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.1.8": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.2.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.2.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.2.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": "Practical investigation of reaction times is not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.2.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.2.5": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "The difficulties of investigating brain function are not drawn out.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.3.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.4.8": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Graph and data skills are taught generically.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.5.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.5.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.5.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.5.4": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.6.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.6.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.6.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B5.6.4": {
+   "status": "uncovered",
+   "note": "No lesson teaches the structures of the eye.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)"
+  },
+  "eng-ocrj257-B5.6.5": {
+   "status": "uncovered",
+   "note": "Eye defects and their correction are not taught.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)"
+  },
+  "eng-ocrj257-B5.6.6": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Limits to treating nervous-system damage are not drawn out.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.2": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.3": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.5": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.6": {
+   "status": "indirect",
+   "confidence": "low",
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.7": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.8": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.9": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.1.10": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "The impact of evolutionary ideas on medicine is taught; on society more widely, only touched on.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.2.1": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.3.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.1": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.2": {
+   "status": "full",
+   "confidence": "medium",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.3": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Food security factors are not drawn together as a topic.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.4": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.5": {
+   "status": "partial",
+   "confidence": "medium",
+   "note": "Biodiversity data appear in species-richness indices; interpreting biodiversity charts is not practised as such.",
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
+   "above": false
+  },
+  "eng-ocrj257-B6.4.6": {
+   "status": "full",
+   "confidence": "high",
+   "note": null,
+   "batch": "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)",
    "above": false
   }
  },
@@ -14243,157 +15276,2295 @@
    "evidence": "Notes: \"Targeted cancer therapies match drugs to tumour mutations.\"",
    "evidenceOverlap": 2,
    "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.1",
+   "lesson": "u02-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Each human cell nucleus contains about 2 m of DNA packed into a space about 6 µm across.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.1",
+   "lesson": "u02-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Prokaryotic cells have no nucleus or membrane-bound organelles; their DNA is in a nucleoid, often with plasmids.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.1",
+   "lesson": "u14-05",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Use a light microscope correctly\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.2",
+   "lesson": "u04-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The genome is the complete set of DNA in an organism, including genes and non-coding DNA.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.3",
+   "lesson": "u04-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Evidence for the double helix\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.3",
+   "lesson": "u03-28",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In 1953, Watson and Crick, using data from Rosalind Franklin and Maurice Wilkins, proposed the double helix structure of DNA.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.4",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.5",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genes are DNA sequences at specific loci, alleles are different versions of a gene arising by mutation, diploid organisms carry two alleles per gene, homozygous genotypes have identical alleles and heterozygous ones…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.5",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genotype is the set of alleles and phenotype the observable characteristics, determined by genotype, environment and their interaction; discontinuous variation has distinct categories from few genes, while continuous…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.6",
+   "lesson": "u04-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Summarise the stages of protein synthesis from gene to protein\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.6",
+   "lesson": "u03-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"There are 20 amino acids commonly used in proteins, differing only in their R groups.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.7",
+   "lesson": "u03-28",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nucleotides consist of a pentose sugar, a phosphate group and a nitrogenous base; they join by condensation into polynucleotides with phosphodiester bonds and a sugar-phosphate backbone with 5′ and 3′ ends; purines…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.8",
+   "lesson": "u04-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Triplet: each codon is three bases, giving 4³ = 64 codons.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.9",
+   "lesson": "u04-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Protein synthesis involves transcription, processing, export and translation, followed by targeting via signal sequences to the rough ER, folding and glycosylation, modification in the Golgi and transport in vesicles…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.9",
+   "lesson": "u04-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In prokaryotes, transcription and translation occur together in the cytoplasm.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.9",
+   "lesson": "u04-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Several ribosomes can translate one mRNA at the same time, forming a polysome, which produces many copies of a protein quickly.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.10",
+   "lesson": "u06-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mutations arise randomly with respect to need: they are not caused by the environment to help organisms.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.10",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mutations are the ultimate source of genetic variation.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.11",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Most fall in non-coding DNA and have no effect.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.11",
+   "lesson": "u04-18",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Missense: a different amino acid is coded, which may or may not affect function, as in sickle cell anaemia.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.12",
+   "lesson": "u04-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gene regulation explains cell differentiation: a liver cell and a neurone have the same DNA but express different transcription factors.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.1.12",
+   "lesson": "u04-17",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Most fall in non-coding DNA and have no effect.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.1",
+   "lesson": "u04-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define dominant and recessive alleles\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.1",
+   "lesson": "u04-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish homozygous and heterozygous genotypes\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.2",
+   "lesson": "u04-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define dominant and recessive alleles\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.2",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Choose symbols: a capital letter for the dominant allele, the same lower-case letter for the recessive.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.3",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.4",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.5",
+   "lesson": "u04-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Construct genetic diagrams and Punnett squares for monohybrid crosses\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.5",
+   "lesson": "u01-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Chi-squared test: compare observed counts in categories with expected counts (for example genetic ratios).\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.6",
+   "lesson": "u04-22",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Genotype: the alleles an organism has for a gene, such as Aa.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.6",
+   "lesson": "u04-35",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Interpret GWAS results, including Manhattan plots\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.7",
+   "lesson": "u04-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe Mendel's experimental approach\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.7",
+   "lesson": "u04-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sequencing a human genome now costs a few hundred pounds and takes days, compared with about 13 years for the original project.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.2.8",
+   "lesson": "u04-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how sex is determined in humans\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.1",
+   "lesson": "u04-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In England, the NHS Genomic Medicine Service offers whole genome sequencing for some rare diseases and cancers, building on the 100,000 Genomes Project.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.1",
+   "lesson": "u13-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Precision medicine tailors care using genetic, molecular and clinical data, as in targeted cancer therapy and pharmacogenomic testing, but faces challenges of cost, unequal data representation, privacy and limited…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.1",
+   "lesson": "u12-18",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Genetic testing includes diagnostic, carrier, prenatal, newborn and predictive tests; results affect individuals and families, and genetic counselling helps people understand risks and make informed decisions.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.2",
+   "lesson": "u12-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Recombinant DNA is used to make medicines, research tools, GM organisms and vaccines.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.2",
+   "lesson": "u12-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Gene editing\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.3",
+   "lesson": "u12-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Recombinant DNA is made by isolating a gene, inserting it into a vector cut with the same restriction enzyme, joining with ligase, transforming host cells and selecting transformed cells using marker or reporter genes.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.3",
+   "lesson": "u12-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how restriction enzymes are used in genetic engineering\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.3",
+   "lesson": "u12-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plasmids are small circular DNA molecules that replicate independently and carry genes such as resistance; engineered vectors have an origin of replication, a selectable marker and a multiple cloning site, and are…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.4",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Evaluate the benefits and risks of plant biotechnology\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.4",
+   "lesson": "u12-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Apply ethical principles to biotechnology issues\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B1.3.4",
+   "lesson": "u12-19",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Zolgensma, an AAV gene therapy for spinal muscular atrophy, is one of the most expensive medicines in the world.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.2",
+   "lesson": "u09-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Communicable diseases spread between people; non-communicable diseases do not.\"",
+   "evidenceOverlap": 3,
+   "note": "Communicable and non-communicable disease are not contrasted."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.3",
+   "lesson": "u09-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bacteria, viruses, fungi, protozoa, prions.\"",
+   "evidenceOverlap": 3,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.3",
+   "lesson": "u09-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A reservoir is where a pathogen normally lives, such as animals for rabies.\"",
+   "evidenceOverlap": 1,
+   "note": "Spread in plants is barely covered."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.4",
+   "lesson": "u09-17",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Give examples of bacterial, viral, fungal and protozoan diseases\"",
+   "evidenceOverlap": 3,
+   "note": "Influenza, Salmonella, athlete's foot and malaria are covered across lessons."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.4",
+   "lesson": "u09-10",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Zoonoses are infections that spread from animals to humans.\"",
+   "evidenceOverlap": 2,
+   "note": "Influenza, Salmonella, athlete's foot and malaria are covered across lessons."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.4",
+   "lesson": "u09-12",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the life cycle of the malaria parasite\"",
+   "evidenceOverlap": 1,
+   "note": "Influenza, Salmonella, athlete's foot and malaria are covered across lessons."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.4",
+   "lesson": "u09-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Fungal infections in humans can be hard to treat because fungal cells are similar to human cells, limiting drug targets.\"",
+   "evidenceOverlap": 3,
+   "note": "Influenza, Salmonella, athlete's foot and malaria are covered across lessons."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.5",
+   "lesson": "u09-08",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Viruses infect all forms of life, including bacteria (bacteriophages), plants (tobacco mosaic virus) and animals.\"",
+   "evidenceOverlap": 4,
+   "note": "Tobacco mosaic virus, ash dieback and Agrobacterium (crown gall) each appear, but plant diseases are not taught as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.5",
+   "lesson": "u09-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Some cause disease, such as athlete's foot, thrush and ash dieback.\"",
+   "evidenceOverlap": 3,
+   "note": "Tobacco mosaic virus, ash dieback and Agrobacterium (crown gall) each appear, but plant diseases are not taught as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.1.5",
+   "lesson": "u08-34",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Biotechnology is also used to conserve rare plants and produce disease-free stock.\"",
+   "evidenceOverlap": 2,
+   "note": "Tobacco mosaic virus, ash dieback and Agrobacterium (crown gall) each appear, but plant diseases are not taught as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.1",
+   "lesson": "u10-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Non-specific: recognises broad groups of pathogens.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.1",
+   "lesson": "u10-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Physical barriers such as skin, mucous membranes, mucus and cilia, chemical barriers such as lysozyme, stomach acid and antimicrobial peptides, and protective microbiota prevent most pathogens entering the body.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.2",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the functions of red cells, white cells and platelets\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.3",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Physical defences: thorns, hairs, waxy cuticles and thick bark.\"",
+   "evidenceOverlap": 3,
+   "note": "Physical plant defences against pathogens are not taught as such."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.4",
+   "lesson": "u10-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Compare primary and secondary immune responses\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.4",
+   "lesson": "u10-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The constant region determines the class and interacts with immune cells.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.4",
+   "lesson": "u10-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how long immune memory lasts\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.5",
+   "lesson": "u10-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe how white blood cells are counted\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.5",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"White blood cells (leucocytes): defend against infection.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.6",
+   "lesson": "u08-33",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Plants respond to drought, cold, salt and flooding with hormonal and physiological changes, defend against herbivores and pathogens with physical and chemical defences, and use hypersensitive responses and systemic…\"",
+   "evidenceOverlap": 4,
+   "note": "Chemical plant defences against pathogens are not taught as such."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.3.1",
+   "lesson": "u09-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"R₀: the average number of new infections from one case in a fully susceptible population.\"",
+   "evidenceOverlap": 2,
+   "note": "Prevention in plants is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.3.1",
+   "lesson": "u10-20",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"On real infection, a fast secondary response prevents or reduces illness.\"",
+   "evidenceOverlap": 2,
+   "note": "Prevention in plants is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.3.2",
+   "lesson": "u10-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Vaccines contain antigens, or instructions to make antigens, from a pathogen.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.1",
+   "lesson": "u09-27",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain how PCR is used to detect microbes\"",
+   "evidenceOverlap": 1,
+   "note": "Laboratory identification of human pathogens is taught; plant disease detection in the field is not."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.1",
+   "lesson": "u12-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"PCR and RT-PCR detect specific nucleic acid sequences.\"",
+   "evidenceOverlap": 1,
+   "note": "Laboratory identification of human pathogens is taught; plant disease detection in the field is not."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.1",
+   "lesson": "u09-26",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Compare light and electron microscopes\"",
+   "evidenceOverlap": 2,
+   "note": "Laboratory identification of human pathogens is taught; plant disease detection in the field is not."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.2",
+   "lesson": "u09-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe aseptic technique\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.2",
+   "lesson": "u09-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Prions are highly resistant to normal sterilisation, so surgical instruments used on suspected CJD patients need special handling.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.3",
+   "lesson": "u09-25",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe types of culture media\"",
+   "evidenceOverlap": 1,
+   "note": "Calculating the area of inhibition zones with πr² is not worked through."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.4",
+   "lesson": "u12-21",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Biopharmaceuticals are large molecules made in living cells, including recombinant proteins, monoclonal antibodies, vaccines, nucleic acid therapies and cell and gene therapies; most are injected, production must be…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.4",
+   "lesson": "u10-10",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Monoclonal antibodies, used in diagnostics and therapy, are made from a single clone of B cells, a technique developed by Köhler and Milstein in 1975.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.5",
+   "lesson": "u12-21",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Monoclonal antibodies are among the best-selling medicines worldwide, used for cancer, autoimmune diseases and infections.\"",
+   "evidenceOverlap": 3,
+   "note": "Diagnostic uses are taught; pregnancy tests are not."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.4.5",
+   "lesson": "u12-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe nucleic acid and antigen-based diagnostic tests\"",
+   "evidenceOverlap": 2,
+   "note": "Diagnostic uses are taught; pregnancy tests are not."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.1",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe major risk factors for cardiovascular disease\"",
+   "evidenceOverlap": 4,
+   "note": "Genetic and lifestyle risk factors are taught per disease, not as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.1",
+   "lesson": "u05-12",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Identify risk factors for cancer\"",
+   "evidenceOverlap": 3,
+   "note": "Genetic and lifestyle risk factors are taught per disease, not as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.1",
+   "lesson": "u07-23",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the effects of liver disease and diabetes\"",
+   "evidenceOverlap": 4,
+   "note": "Genetic and lifestyle risk factors are taught per disease, not as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.2",
+   "lesson": "u07-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Many risk factors are modifiable, so prevention focuses on not smoking, healthy diet, exercise and control of blood pressure.\"",
+   "evidenceOverlap": 4,
+   "note": "Incidence of non-communicable disease at local, national and global levels is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.3",
+   "lesson": "u01-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Match the graph to the data: line graphs for continuous data, bar charts for categories, histograms for frequency distributions, scatter graphs for correlations.\"",
+   "evidenceOverlap": 7,
+   "note": "Data skills are taught generically; not in the context of disease data."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.3",
+   "lesson": "u01-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Spearman's rank or Pearson's correlation: test the strength of a correlation between two variables.\"",
+   "evidenceOverlap": 3,
+   "note": "Data skills are taught generically; not in the context of disease data."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.5.4",
+   "lesson": "u10-24",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Lesson: \"Immunodeficiency\"",
+   "evidenceOverlap": 0,
+   "note": "Interactions between disease types are not taught beyond immunodeficiency."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.6.1",
+   "lesson": "u09-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the modes of action of antibiotics\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.6.2",
+   "lesson": "u09-25",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe types of culture media\"",
+   "evidenceOverlap": 1,
+   "note": "Calculating the area of inhibition zones with πr² is not worked through."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.6.3",
+   "lesson": "u07-11",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Treatments include lifestyle change, statins, antihypertensives and stents.\"",
+   "evidenceOverlap": 3,
+   "note": "Treatments for cardiovascular disease are not evaluated."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.6.4",
+   "lesson": "u13-23",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Test in preclinical studies and clinical trials.\"",
+   "evidenceOverlap": 3,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj257-B2.6.4",
+   "lesson": "u01-11",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Positive control: a treatment known to give an effect, showing that the method can detect one (a known antibiotic in an antibiotic test).\"",
+   "evidenceOverlap": 1,
+   "note": "Preclinical and clinical testing phases are not drawn together."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.1",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Photosynthesis converts CO₂ and water into glucose and oxygen in chloroplasts, with light-dependent reactions in thylakoids and the Calvin cycle in the stroma; its rate is limited by light, CO₂ or temperature,…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.1",
+   "lesson": "u08-13",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Light-dependent reactions\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.1",
+   "lesson": "u08-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the reduction and regeneration stages\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.2",
+   "lesson": "u02-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Plant cells contain both chloroplasts and mitochondria.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.3",
+   "lesson": "u03-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Substrates bind active sites to form enzyme-substrate complexes and then products; specificity comes from complementary shape and chemistry, and the induced fit model, in which the active site moulds around the…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.3",
+   "lesson": "u03-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the effects of substrate and enzyme concentration\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.4",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Light intensity, CO₂ concentration and temperature limit the rate.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.6",
+   "lesson": "u08-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Light intensity, CO₂ concentration and temperature limit the rate.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.7",
+   "lesson": "u03-25",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Initial rates are found by drawing a tangent to the start of a product-time graph.\"",
+   "evidenceOverlap": 3,
+   "note": "Rates and graphs are taught; not in the context of photosynthesis."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.1.7",
+   "lesson": "u01-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Plot points precisely (small crosses), then join with straight lines point to point or draw a line or curve of best fit as appropriate.\"",
+   "evidenceOverlap": 3,
+   "note": "Rates and graphs are taught; not in the context of photosynthesis."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.1",
+   "lesson": "u08-11",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the roles of key mineral ions in plants\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.1",
+   "lesson": "u08-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Stomata let CO₂ in and O₂ and water vapour out.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.2",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A cell's needs depend on its volume, but its supply comes through its surface, so large organisms can't rely on diffusion across their outer surface and need specialised exchange surfaces and transport systems.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.2",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Define osmosis in terms of water potential\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.2",
+   "lesson": "u02-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Active transport uses ATP to change carrier shape and move substances against gradients.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.3",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Passive transport (diffusion, facilitated diffusion, osmosis) needs no energy.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.3",
+   "lesson": "u02-17",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"A membrane that lets some substances through but not others is partially permeable (or selectively permeable).\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.4",
+   "lesson": "u08-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Root hairs greatly increase surface area for absorbing water by osmosis and minerals by active transport.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.4",
+   "lesson": "u08-11",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the roles of key mineral ions in plants\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.5",
+   "lesson": "u08-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Relate xylem structure to its function\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.5",
+   "lesson": "u08-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of sieve tube elements and companion cells\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.6",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Transpiration is evaporation of water from leaves through stomata, pulling water up the xylem and cooling leaves; it increases with light, temperature and wind and decreases with humidity and drought, and is measured…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.6",
+   "lesson": "u08-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Mass flow: sucrose is loaded at the source, water follows by osmosis, pressure builds and sap flows to the sink.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.6",
+   "lesson": "u08-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Leaves have a cuticle, epidermis, palisade and spongy mesophyll, veins and stomata; they are broad and thin for light and gas exchange, and guard cells open stomata by taking up K⁺ and water and close them in…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.7",
+   "lesson": "u08-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A potometer measures water uptake, which approximates transpiration, by tracking the movement of an air bubble in a capillary tube.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.2.8",
+   "lesson": "u08-10",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"A potometer measures water uptake, which approximates transpiration, by tracking the movement of an air bubble in a capillary tube.\"",
+   "evidenceOverlap": 3,
+   "note": "Rate calculations for water uptake are worked partly."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.1",
+   "lesson": "u03-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Monosaccharides are reducing sugars because their free carbonyl group can reduce copper(II) ions, which is the basis of Benedict's test: a positive test turns from blue to green, yellow, orange or brick red,…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.1",
+   "lesson": "u03-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of a fatty acid\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.1",
+   "lesson": "u03-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"There are 20 amino acids commonly used in proteins, differing only in their R groups.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.2",
+   "lesson": "u11-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Gross primary productivity is the total rate of photosynthetic energy capture and net primary productivity is GPP minus respiration, the energy available to consumers; productivity depends on light, temperature,…\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.3",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Choose the transport mechanism a given substance is likely to use\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.4",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ecology studies interactions at the levels of individual, population, community, ecosystem and biosphere, shaped by abiotic and biotic factors, with limiting factors restricting populations.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.5",
+   "lesson": "u11-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Food webs combine interlinked food chains, showing interdependence; removing species causes direct and indirect effects and trophic cascades, and keystone species such as sea otters have large effects on community…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.5",
+   "lesson": "u11-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.6",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Trophic levels place organisms from producers to top consumers; pyramids of numbers can be inverted, biomass pyramids are usually upright and energy pyramids are always upright, and persistent chemicals biomagnify at…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.7",
+   "lesson": "u11-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Trophic levels place organisms from producers to top consumers; pyramids of numbers can be inverted, biomass pyramids are usually upright and energy pyramids are always upright, and persistent chemicals biomagnify at…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.8",
+   "lesson": "u11-08",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Calculate the efficiency of energy transfer\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.9",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Nutrients must be recycled because their quantity is fixed; decomposers and detritivores break down dead matter, releasing nutrients, and phosphorus cycles from rocks through organisms and back to soil and sediments…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.9",
+   "lesson": "u11-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how human activities affect the carbon cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.9",
+   "lesson": "u11-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the processes of the water cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.10",
+   "lesson": "u11-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how human activities affect the carbon cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.10",
+   "lesson": "u11-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the processes of the water cycle\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.11",
+   "lesson": "u11-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the role of decomposers in nutrient cycling\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.11",
+   "lesson": "u09-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the roles of microbes in the carbon and nitrogen cycles\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.12",
+   "lesson": "u11-08",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe how energy enters and leaves ecosystems\"",
+   "evidenceOverlap": 1,
+   "note": "Percentage calculations appear for energy transfer, not for the cycling of substances."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.3.13",
+   "lesson": "u11-11",
+   "match": "partial",
+   "confidence": "low",
+   "evidence": "Notes: \"Decomposition is faster in warm, moist, aerobic conditions.\"",
+   "evidenceOverlap": 2,
+   "note": "Decomposers are taught; factors affecting the rate of decomposition are not."
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.1",
+   "lesson": "u11-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Biotic factors: living, such as predators, competitors, disease and food.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.1",
+   "lesson": "u11-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.1",
+   "lesson": "u11-27",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Noise and light pollution also affect wildlife.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.2",
+   "lesson": "u11-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Density: number per unit area or volume.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.2",
+   "lesson": "u01-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Systematic sampling: samples taken at regular intervals, for example along a transect, useful where conditions change across an area (from a hedge into a field).\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.3",
+   "lesson": "u01-18",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Calculate mean, median, mode, range and standard deviation\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B3.4.3",
+   "lesson": "u11-02",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Calculate population size using capture-recapture\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.1",
+   "lesson": "u08-18",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Aerobic respiration: glucose + oxygen → carbon dioxide + water, releasing ATP.\"",
+   "evidenceOverlap": 3,
+   "note": "Aerobic and anaerobic respiration are compared for plants and microbes; anaerobic respiration in animals is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.1",
+   "lesson": "u02-10",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"State where the stages of aerobic respiration take place\"",
+   "evidenceOverlap": 2,
+   "note": "Aerobic and anaerobic respiration are compared for plants and microbes; anaerobic respiration in animals is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.1",
+   "lesson": "u09-29",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Large sterile vessels in which microbes grow under controlled conditions.\"",
+   "evidenceOverlap": 2,
+   "note": "Aerobic and anaerobic respiration are compared for plants and microbes; anaerobic respiration in animals is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.2",
+   "lesson": "u03-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"It cannot be stored in large amounts, so cells make it continuously.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.3",
+   "lesson": "u02-10",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Notice they appear in plant cells too, not only animal cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.4",
+   "lesson": "u03-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain how ATP hydrolysis releases energy for cellular processes\"",
+   "evidenceOverlap": 2,
+   "note": "Respiration as exothermic is implied, not stated as such."
+  },
+  {
+   "requirement": "eng-ocrj257-B4.1.5",
+   "lesson": "u09-29",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Lesson: \"Industrial microbiology\"",
+   "evidenceOverlap": 0,
+   "note": "Investigating respiration rate in yeast with different substrates is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B4.2.1",
+   "lesson": "u09-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cryo-electron microscopy, which won the 2017 Nobel Prize in Chemistry, reveals the structures of proteins and viruses in near-atomic detail.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.2.1",
+   "lesson": "u02-01",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"The cell is the basic unit of structure and function in living things.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.2.2",
+   "lesson": "u01-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Calculate actual size from magnification and image size\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.2.2",
+   "lesson": "u01-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A number in standard form is written as A × 10ⁿ, where 1 ≤ A < 10 and n is an integer. 3,700,000 = 3.7 × 10⁶; 0.000052 = 5.2 × 10⁻⁵.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.1",
+   "lesson": "u05-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The cell cycle has interphase (G₁, S and G₂) and M phase (mitosis and cytokinesis), with G₀ as a non-dividing state;\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.1",
+   "lesson": "u05-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"In G₁ the cell grows and makes proteins and organelles, in S phase it replicates DNA and makes histones, and in G₂ it grows further, makes division proteins, duplicates centrosomes and checks DNA, preparing for mitosis.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.1",
+   "lesson": "u05-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the stages of mitosis\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.1",
+   "lesson": "u14-05",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Temporary slides use thin specimens, stains and careful coverslip placement; microscopes are focused from low power with coarse then fine focus, and graticules are calibrated with a stage micrometer to measure cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.2",
+   "lesson": "u05-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cancer develops from mutations that accumulate in a single cell lineage.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.3",
+   "lesson": "u05-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Two haploid cells form, each with one chromosome from each pair, still with two chromatids.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.4",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Pluripotent: can form all the body's cell types, but not the placenta: the inner cell mass of the blastocyst, the source of embryonic stem cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.4",
+   "lesson": "u08-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Unlike animals, plants grow throughout their lives from meristems.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.5",
+   "lesson": "u02-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Specialised cells differ in which genes they express, not which genes they have.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.3.5",
+   "lesson": "u04-14",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"All body cells contain the same genes, but different cells express different sets, producing specialised cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.1",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.1",
+   "lesson": "u08-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Tropisms are directional growth responses; in phototropism, auxin moves to the shaded side and shoots bend towards light, and in gravitropism auxin collects on the lower side, causing shoots to bend up and roots…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.2",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the effects of gibberellins on stems\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.2",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethylene (ethene, C₂H₄) is a gas made by most plant tissues.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.3",
+   "lesson": "u08-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Synthetic auxins such as 2,4-D kill broad-leaved plants by causing uncontrolled growth but leave grasses, such as cereals, largely unharmed.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.3",
+   "lesson": "u08-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"They can induce flowering in some plants.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.4.3",
+   "lesson": "u08-24",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Commercial control\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.5.1",
+   "lesson": "u02-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe medical uses of stem cells and the issues they raise\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B4.5.1",
+   "lesson": "u12-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Ethical concerns about embryonic stem cells.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.1",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Small, non-polar molecules (oxygen, carbon dioxide, steroid hormones) diffuse straight through the lipid.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.1",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Alveolar and capillary walls are each one cell thick, so the diffusion distance is about 0.5 µm.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.2",
+   "lesson": "u02-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Passive transport (diffusion, facilitated diffusion, osmosis) needs no energy.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.2",
+   "lesson": "u02-17",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"A membrane that lets some substances through but not others is partially permeable (or selectively permeable).\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.3",
+   "lesson": "u07-11",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the components of the cardiovascular system\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.3",
+   "lesson": "u07-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the double circulatory system\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.4",
+   "lesson": "u07-12",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The heart has four chambers, with the right side pumping to the lungs and the left to the body; atrioventricular and semilunar valves prevent backflow, coronary arteries supply the muscle and the left ventricle is…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.5",
+   "lesson": "u07-14",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of arteries, capillaries and veins\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.6",
+   "lesson": "u07-15",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Blood consists of plasma, red cells carrying oxygen with haemoglobin, white cells for defence and platelets for clotting via fibrin;\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.6",
+   "lesson": "u07-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Most CO₂ is carried as hydrogencarbonate ions in plasma, formed in red cells by carbonic anhydrase.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.7",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Larger organisms have smaller surface area to volume ratios, so they need exchange surfaces.\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.7",
+   "lesson": "u07-19",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"About 480 million alveoli give a surface area of about 70 m².\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.1.8",
+   "lesson": "u02-20",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Calculate surface area to volume ratios and explain their significance\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.1",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nervous system provides sensory input, integration and motor output through the CNS (brain and spinal cord) and the PNS; reflex arcs from receptor to effector via sensory, relay and motor neurones produce rapid…\"",
+   "evidenceOverlap": 7,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.1",
+   "lesson": "u07-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Sensory neurones carry impulses from receptors to the CNS.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.2",
+   "lesson": "u07-04",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Axon: a long fibre carrying impulses away from the cell body.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.2",
+   "lesson": "u07-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the structure of a chemical synapse\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.3",
+   "lesson": "u07-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"A reflex arc: receptor, sensory neurone, relay neurone (in the spinal cord), motor neurone, effector.\"",
+   "evidenceOverlap": 3,
+   "note": "Practical investigation of reaction times is not taught."
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.4",
+   "lesson": "u07-07",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Cerebrum: the largest part, with two hemispheres and the cerebral cortex, responsible for thought, memory, language and voluntary movement.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.2.5",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Objective: \"Describe the main regions of the brain and their functions\"",
+   "evidenceOverlap": 2,
+   "note": "The difficulties of investigating brain function are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj257-B5.3.1",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The endocrine system includes the hypothalamus, pituitary, thyroid, adrenals, pancreas and gonads, whose hormones travel in the blood to target cells; the hypothalamus controls the pituitary, negative feedback…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.3.2",
+   "lesson": "u07-09",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many endocrine pathways use negative feedback: for example, thyroxine inhibits release of TSH, keeping levels stable.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.3.2",
+   "lesson": "u07-02",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Distinguish negative and positive feedback with examples\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.1",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Homeostasis is maintaining a stable internal environment despite external changes.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.2",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The skin has an epidermis, dermis and subcutaneous fat; the hypothalamus controls temperature, causing sweating and vasodilation when hot and shivering and vasoconstriction when cold, keeping core temperature near 37 °C.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.3",
+   "lesson": "u07-33",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The hypothalamus monitors blood temperature and receives input from skin receptors.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.3",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Homeostasis maintains a stable internal environment using receptors, coordinators and effectors around set points; negative feedback reverses changes, as with insulin and glucose, while positive feedback amplifies…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.4",
+   "lesson": "u02-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Water moves by osmosis from higher to lower water potential; solutes lower ψ, and pressure from a cell wall raises it.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.4",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"About 60% of body mass is water, split between intracellular and extracellular fluids; sodium and potassium control fluid distribution and excitability, and ADH, aldosterone, the renin-angiotensin system and…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.5",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The nephron filters blood at the glomerulus by ultrafiltration, reabsorbs glucose, water and salts in the PCT, uses the loop of Henle to concentrate urine and adjusts water reabsorption in the collecting duct under…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.5",
+   "lesson": "u07-26",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Relate urine concentration to body water balance\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.6",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how ADH controls water reabsorption\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.7",
+   "lesson": "u07-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the distribution of body water\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.7",
+   "lesson": "u07-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Section: \"Processes\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.4.8",
+   "lesson": "u01-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Match the graph to the data: line graphs for continuous data, bar charts for categories, histograms for frequency distributions, scatter graphs for correlations.\"",
+   "evidenceOverlap": 3,
+   "note": "Graph and data skills are taught generically."
+  },
+  {
+   "requirement": "eng-ocrj257-B5.5.1",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the hormonal control of the menstrual cycle\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.5.2",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"The testes and ovaries produce gametes and sex hormones; the menstrual cycle is controlled by FSH, LH, oestrogen and progesterone, with ovulation around day 14, and contraception and IVF work by manipulating these…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.5.3",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe methods of contraception and fertility treatment\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.5.4",
+   "lesson": "u07-31",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the male and female reproductive organs\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.1",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Insulin lowers blood glucose; glucagon raises it.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.1",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Controlled variables include body temperature, blood glucose, blood pH, water balance and blood pressure.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.2",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Insulin lowers blood glucose; glucagon raises it.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.2",
+   "lesson": "u07-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Many variables are controlled by more than one effector working in opposite directions, which gives finer control, as with insulin and glucagon.\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.3",
+   "lesson": "u07-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Type 1 diabetes is autoimmune destruction of beta cells, treated with insulin.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.3",
+   "lesson": "u10-23",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Autoimmunity occurs when central and peripheral tolerance fail, influenced by genes, infections, hormones and environment; examples include type 1 diabetes, rheumatoid arthritis, multiple sclerosis and Graves'…\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.6",
+   "lesson": "u07-07",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Lesson: \"Central nervous system\"",
+   "evidenceOverlap": 2,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj257-B5.6.6",
+   "lesson": "u12-20",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Notes: \"Haematopoietic stem cell transplants (bone marrow transplants) treat leukaemia and blood disorders.\"",
+   "evidenceOverlap": 1,
+   "note": "Limits to treating nervous-system damage are not drawn out."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.1",
+   "lesson": "u06-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how genetic variation can be measured in populations\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.2",
+   "lesson": "u06-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the range of fitness effects of mutations\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.2",
+   "lesson": "u04-17",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain the possible effects of mutations\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.3",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Natural selection acts on phenotypes but changes allele frequencies in populations; individuals do not evolve.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.4",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"State the conditions needed for natural selection\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.4",
+   "lesson": "u11-16",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain how competition affects populations and communities\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.5",
+   "lesson": "u06-03",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Natural selection needs variation, heritability, overproduction and differential survival and reproduction; it changes allele frequencies over generations and can be directional, stabilising or disruptive, acting on…\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.5",
+   "lesson": "u06-01",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Notes: \"Lamarck (early 1800s) proposed that species change over time, through the inheritance of acquired characteristics.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.6",
+   "lesson": "u12-01",
+   "match": "indirect",
+   "confidence": "low",
+   "evidence": "Key term: \"Selective breeding\"",
+   "evidenceOverlap": 2,
+   "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.7",
+   "lesson": "u06-19",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Fossil evidence\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.7",
+   "lesson": "u06-02",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe fossil and anatomical evidence for evolution\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.8",
+   "lesson": "u06-01",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Charles Darwin and Alfred Russel Wallace independently proposed evolution by natural selection, presented together in 1858.\"",
+   "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.9",
+   "lesson": "u06-23",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Random mutations give some bacteria resistance before the antibiotic is used.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.9",
+   "lesson": "u09-22",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Bacteria resist antibiotics by enzymatic inactivation, target modification, efflux pumps, reduced permeability and bypass pathways; resistance is detected by testing and sequencing, and responses include stewardship,…\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.10",
+   "lesson": "u06-01",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe early ideas about the diversity of life\"",
+   "evidenceOverlap": 1,
+   "note": "The impact of evolutionary ideas on medicine is taught; on society more widely, only touched on."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.1.10",
+   "lesson": "u06-22",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the idea of evolutionary mismatch\"",
+   "evidenceOverlap": 1,
+   "note": "The impact of evolutionary ideas on medicine is taught; on society more widely, only touched on."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.2.1",
+   "lesson": "u08-32",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Compare sexual and asexual reproduction in plants\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.2.1",
+   "lesson": "u06-05",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Key term: \"Heterozygote advantage\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.3.1",
+   "lesson": "u01-06",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Describe the molecular evidence for the three-domain system\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.3.1",
+   "lesson": "u06-16",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"DNA, RNA and protein sequences.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.3.1",
+   "lesson": "u01-05",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Today, phylogenetic classification groups organisms by shared ancestry, using DNA sequences as well as anatomy.\"",
+   "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.1",
+   "lesson": "u11-27",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Microplastics have been found in the deepest ocean trenches and in human blood; larger plastics entangle and are swallowed by wildlife.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.1",
+   "lesson": "u11-29",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Lesson: \"Conservation strategies\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.1",
+   "lesson": "u11-25",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Non-native species are introduced by humans outside their natural range.\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.2",
+   "lesson": "u11-26",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Explain the causes of current climate change\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.2",
+   "lesson": "u11-28",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Environmental DNA (eDNA) detects species from DNA in water or soil.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.3",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Balancing food security, livelihoods, biodiversity and climate.\"",
+   "evidenceOverlap": 2,
+   "note": "Food security factors are not drawn together as a topic."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.4",
+   "lesson": "u11-21",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Objective: \"Explain why biodiversity is important\"",
+   "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.4",
+   "lesson": "u11-29",
+   "match": "partial",
+   "confidence": "high",
+   "evidence": "Lesson: \"Conservation strategies\"",
+   "evidenceOverlap": 0,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.5",
+   "lesson": "u11-22",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Interpret diversity indices\"",
+   "evidenceOverlap": 1,
+   "note": "Biodiversity data appear in species-richness indices; interpreting biodiversity charts is not practised as such."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.5",
+   "lesson": "u01-17",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Match the graph to the data: line graphs for continuous data, bar charts for categories, histograms for frequency distributions, scatter graphs for correlations.\"",
+   "evidenceOverlap": 2,
+   "note": "Biodiversity data appear in species-richness indices; interpreting biodiversity charts is not practised as such."
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.6",
+   "lesson": "u08-34",
+   "match": "full",
+   "confidence": "high",
+   "evidence": "Notes: \"Genetic modification: genes are inserted, often using *Agrobacterium tumefaciens* to carry DNA into plant cells.\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B6.4.6",
+   "lesson": "u11-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Evaluate trade-offs between conservation and human needs\"",
+   "evidenceOverlap": 1,
+   "note": null
   }
  ],
  "pending": [
-  "eng-ocrj257-B1.1.1",
-  "eng-ocrj257-B1.1.2",
-  "eng-ocrj257-B1.1.3",
-  "eng-ocrj257-B1.1.4",
-  "eng-ocrj257-B1.1.5",
-  "eng-ocrj257-B1.1.6",
-  "eng-ocrj257-B1.1.7",
-  "eng-ocrj257-B1.1.8",
-  "eng-ocrj257-B1.1.9",
-  "eng-ocrj257-B1.1.10",
-  "eng-ocrj257-B1.1.11",
-  "eng-ocrj257-B1.1.12",
-  "eng-ocrj257-B1.2.1",
-  "eng-ocrj257-B1.2.2",
-  "eng-ocrj257-B1.2.3",
-  "eng-ocrj257-B1.2.4",
-  "eng-ocrj257-B1.2.5",
-  "eng-ocrj257-B1.2.6",
-  "eng-ocrj257-B1.2.7",
-  "eng-ocrj257-B1.2.8",
-  "eng-ocrj257-B1.3.1",
-  "eng-ocrj257-B1.3.2",
-  "eng-ocrj257-B1.3.3",
-  "eng-ocrj257-B1.3.4",
-  "eng-ocrj257-B2.1.1",
-  "eng-ocrj257-B2.1.2",
-  "eng-ocrj257-B2.1.3",
-  "eng-ocrj257-B2.1.4",
-  "eng-ocrj257-B2.1.5",
-  "eng-ocrj257-B2.2.1",
-  "eng-ocrj257-B2.2.2",
-  "eng-ocrj257-B2.2.3",
-  "eng-ocrj257-B2.2.4",
-  "eng-ocrj257-B2.2.5",
-  "eng-ocrj257-B2.2.6",
-  "eng-ocrj257-B2.3.1",
-  "eng-ocrj257-B2.3.2",
-  "eng-ocrj257-B2.4.1",
-  "eng-ocrj257-B2.4.2",
-  "eng-ocrj257-B2.4.3",
-  "eng-ocrj257-B2.4.4",
-  "eng-ocrj257-B2.4.5",
-  "eng-ocrj257-B2.5.1",
-  "eng-ocrj257-B2.5.2",
-  "eng-ocrj257-B2.5.3",
-  "eng-ocrj257-B2.5.4",
-  "eng-ocrj257-B2.6.1",
-  "eng-ocrj257-B2.6.2",
-  "eng-ocrj257-B2.6.3",
-  "eng-ocrj257-B2.6.4",
-  "eng-ocrj257-B3.1.1",
-  "eng-ocrj257-B3.1.2",
-  "eng-ocrj257-B3.1.3",
-  "eng-ocrj257-B3.1.4",
-  "eng-ocrj257-B3.1.5",
-  "eng-ocrj257-B3.1.6",
-  "eng-ocrj257-B3.1.7",
-  "eng-ocrj257-B3.2.1",
-  "eng-ocrj257-B3.2.2",
-  "eng-ocrj257-B3.2.3",
-  "eng-ocrj257-B3.2.4",
-  "eng-ocrj257-B3.2.5",
-  "eng-ocrj257-B3.2.6",
-  "eng-ocrj257-B3.2.7",
-  "eng-ocrj257-B3.2.8",
-  "eng-ocrj257-B3.3.1",
-  "eng-ocrj257-B3.3.2",
-  "eng-ocrj257-B3.3.3",
-  "eng-ocrj257-B3.3.4",
-  "eng-ocrj257-B3.3.5",
-  "eng-ocrj257-B3.3.6",
-  "eng-ocrj257-B3.3.7",
-  "eng-ocrj257-B3.3.8",
-  "eng-ocrj257-B3.3.9",
-  "eng-ocrj257-B3.3.10",
-  "eng-ocrj257-B3.3.11",
-  "eng-ocrj257-B3.3.12",
-  "eng-ocrj257-B3.3.13",
-  "eng-ocrj257-B3.3.14",
-  "eng-ocrj257-B3.4.1",
-  "eng-ocrj257-B3.4.2",
-  "eng-ocrj257-B3.4.3",
-  "eng-ocrj257-B4.1.1",
-  "eng-ocrj257-B4.1.2",
-  "eng-ocrj257-B4.1.3",
-  "eng-ocrj257-B4.1.4",
-  "eng-ocrj257-B4.1.5",
-  "eng-ocrj257-B4.2.1",
-  "eng-ocrj257-B4.2.2",
-  "eng-ocrj257-B4.3.1",
-  "eng-ocrj257-B4.3.2",
-  "eng-ocrj257-B4.3.3",
-  "eng-ocrj257-B4.3.4",
-  "eng-ocrj257-B4.3.5",
-  "eng-ocrj257-B4.4.1",
-  "eng-ocrj257-B4.4.2",
-  "eng-ocrj257-B4.4.3",
-  "eng-ocrj257-B4.5.1",
-  "eng-ocrj257-B5.1.1",
-  "eng-ocrj257-B5.1.2",
-  "eng-ocrj257-B5.1.3",
-  "eng-ocrj257-B5.1.4",
-  "eng-ocrj257-B5.1.5",
-  "eng-ocrj257-B5.1.6",
-  "eng-ocrj257-B5.1.7",
-  "eng-ocrj257-B5.1.8",
-  "eng-ocrj257-B5.2.1",
-  "eng-ocrj257-B5.2.2",
-  "eng-ocrj257-B5.2.3",
-  "eng-ocrj257-B5.2.4",
-  "eng-ocrj257-B5.2.5",
-  "eng-ocrj257-B5.3.1",
-  "eng-ocrj257-B5.3.2",
-  "eng-ocrj257-B5.4.1",
-  "eng-ocrj257-B5.4.2",
-  "eng-ocrj257-B5.4.3",
-  "eng-ocrj257-B5.4.4",
-  "eng-ocrj257-B5.4.5",
-  "eng-ocrj257-B5.4.6",
-  "eng-ocrj257-B5.4.7",
-  "eng-ocrj257-B5.4.8",
-  "eng-ocrj257-B5.5.1",
-  "eng-ocrj257-B5.5.2",
-  "eng-ocrj257-B5.5.3",
-  "eng-ocrj257-B5.5.4",
-  "eng-ocrj257-B5.6.1",
-  "eng-ocrj257-B5.6.2",
-  "eng-ocrj257-B5.6.3",
-  "eng-ocrj257-B5.6.4",
-  "eng-ocrj257-B5.6.5",
-  "eng-ocrj257-B5.6.6",
-  "eng-ocrj257-B6.1.1",
-  "eng-ocrj257-B6.1.2",
-  "eng-ocrj257-B6.1.3",
-  "eng-ocrj257-B6.1.4",
-  "eng-ocrj257-B6.1.5",
-  "eng-ocrj257-B6.1.6",
-  "eng-ocrj257-B6.1.7",
-  "eng-ocrj257-B6.1.8",
-  "eng-ocrj257-B6.1.9",
-  "eng-ocrj257-B6.1.10",
-  "eng-ocrj257-B6.2.1",
-  "eng-ocrj257-B6.4.1",
-  "eng-ocrj257-B6.4.2",
-  "eng-ocrj257-B6.4.3",
-  "eng-ocrj257-B6.4.4",
-  "eng-ocrj257-B6.4.5",
-  "eng-ocrj257-B6.4.6",
   "eng-eduqas-1.1a",
   "eng-eduqas-1.1b",
   "eng-eduqas-1.1c",
