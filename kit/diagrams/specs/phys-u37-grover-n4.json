@@ -1,0 +1,55 @@
+{
+ "id": "phys-u37-grover-n4",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u37",
+ "lesson": "Grover's algorithm",
+ "title": "Grover's algorithm for four items",
+ "caption": "With N = 4 and one marked item, sin θ = 1/2 so θ = 30°. Each iteration rotates the state by 2θ: after one, the angle is 90° and the marked item is found with certainty. Iterating further overshoots, and the probability falls back.",
+ "alt": "Bar chart of the probability of finding the marked item: 0.25 before any iteration, 1 after one, 0.25 after two and three.",
+ "description": [
+  "P(k) = sin²((2k + 1)θ), θ = 30°.",
+  "k = 0: 0.25. k = 1: 1. k = 2: 0.25. k = 3: 0.25.",
+  "So for N = 4 exactly one iteration is optimal; in general about (π/4)√N."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  1.1
+ ],
+ "ticks": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "yLabel": "probability of finding the marked item",
+ "items": [
+  {
+   "key": "0 iterations",
+   "value": 0.25
+  },
+  {
+   "key": "1 iteration",
+   "value": 1
+  },
+  {
+   "key": "2 iterations",
+   "value": 0.25
+  },
+  {
+   "key": "3 iterations",
+   "value": 0.25
+  }
+ ],
+ "highlight": {
+  "1 iteration": "a2"
+ },
+ "claims": [
+  {
+   "type": "max",
+   "key": "1 iteration"
+  }
+ ]
+}

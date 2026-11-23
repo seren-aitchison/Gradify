@@ -68022,5 +68022,185 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u37-bell-correlation": {
+  "title": "Quantum correlations beat any local model",
+  "caption": "For the singlet state the correlation between measurements at angle θ apart is E(θ) = −cos θ. A simple local hidden-variable model gives a straight line. At 45° the quantum correlation is -0.707 against −0.5, and four such settings give S = 4/√2 = 2√2 ≈ 2.83, beyond the local limit of 2.",
+  "alt": "Correlation against the angle between analysers: the quantum curve minus cosine theta lies further from zero than the straight local-model line at 45 and 135 degrees.",
+  "description": [
+   "Quantum (singlet): E(θ) = −cos θ.",
+   "A local model with hidden variables: E(θ) = −1 + 2θ/180°.",
+   "At 45°: quantum -0.707, local −0.5. At 135°: +0.707 against +0.5.",
+   "CHSH: S = |E(a,b) − E(a,b′) + E(a′,b) + E(a′,b′)| = 2√2 for the best angles; any local model gives at most 2."
+  ],
+  "course": "physics",
+  "lesson": "Bell inequalities",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u37.js: Bell inequalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E(45°) = −1/√2",
+    "ok": true,
+    "detail": "y(45) = -0.7071"
+   },
+   {
+    "name": "quantum correlation stronger than the local model at 45°",
+    "ok": true,
+    "detail": "0.71 > 0.5"
+   },
+   {
+    "name": "S = 2√2",
+    "ok": true,
+    "detail": "y(0) = 2.8284"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u37-grover-n4": {
+  "title": "Grover's algorithm for four items",
+  "caption": "With N = 4 and one marked item, sin θ = 1/2 so θ = 30°. Each iteration rotates the state by 2θ: after one, the angle is 90° and the marked item is found with certainty. Iterating further overshoots, and the probability falls back.",
+  "alt": "Bar chart of the probability of finding the marked item: 0.25 before any iteration, 1 after one, 0.25 after two and three.",
+  "description": [
+   "P(k) = sin²((2k + 1)θ), θ = 30°.",
+   "k = 0: 0.25. k = 1: 1. k = 2: 0.25. k = 3: 0.25.",
+   "So for N = 4 exactly one iteration is optimal; in general about (π/4)√N."
+  ],
+  "course": "physics",
+  "lesson": "Grover's algorithm",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u37.js: Grover's algorithm"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 iteration has the highest value",
+    "ok": true,
+    "detail": "found 1 iteration"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u37-grover-speedup": {
+  "title": "Searching a trillion items",
+  "caption": "An unstructured search of N = 10¹² items takes about N/2 = 5 × 10¹¹ classical queries on average, but only about (π/4)√N ≈ 7.9 × 10⁵ with Grover's algorithm: a quadratic speed-up, not an exponential one.",
+  "alt": "Bar chart of the base-10 logarithm of the number of queries: 11.7 classical (5 times 10 to the 11) against 5.9 for Grover (7.9 times 10 to the 5).",
+  "description": [
+   "Classical: N/2 = 5 × 10¹¹ queries.",
+   "Grover: (π/4)√(10¹²) = 785398 queries.",
+   "The ratio is about 6 × 10⁵: huge, but √N, not exponential."
+  ],
+  "course": "physics",
+  "lesson": "Quantum algorithms",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u37.js: Quantum algorithms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "classical has the highest value",
+    "ok": true,
+    "detail": "found classical"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u37-t1-decay": {
+  "title": "A qubit relaxing",
+  "caption": "An excited qubit decays to |0⟩ at random, so the chance it is still excited falls as e^(−t/T₁). With T₁ = 100 μs, after 20 μs that is e^(−0.2) ≈ 0.82; a 50 ns gate leaves room for about 2000 operations within T₁.",
+  "alt": "Probability of the excited state against time, an exponential decay from 1, with 0.82 at 20 microseconds marked.",
+  "description": [
+   "P = e^(−t/100 μs).",
+   "t = 20 μs: 0.819. t = 100 μs: 0.368.",
+   "T₂ (dephasing) is usually shorter still and limits superpositions."
+  ],
+  "course": "physics",
+  "lesson": "Quantum noise and decoherence",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u37.js: Quantum noise and decoherence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.819 after 20 μs",
+    "ok": true,
+    "detail": "y(20) = 0.8187"
+   },
+   {
+    "name": "1/e at T₁",
+    "ok": true,
+    "detail": "y(100) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
