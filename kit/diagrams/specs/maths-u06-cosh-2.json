@@ -1,0 +1,115 @@
+{
+ "id": "maths-u06-cosh-2",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Hyperbolic Functions",
+ "title": "cosh x = 2",
+ "caption": "The curve y = cosh x = (eˣ + e⁻ˣ)/2 has its minimum 1 at x = 0 and is symmetric. It meets y = 2 at x = ±ln(2 + √3) ≈ ±1.317, where eˣ = 2 ± √3.",
+ "alt": "The graph of y = cosh x, a symmetric U-shape with minimum (0, 1), and the line y = 2 meeting it at x ≈ −1.317 and x ≈ 1.317.",
+ "description": [
+  "cosh x = (eˣ + e⁻ˣ)/2 is symmetric about the y-axis with minimum 1.",
+  "cosh x = 2 gives u² − 4u + 1 = 0 with u = eˣ, so u = 2 ± √3.",
+  "Then x = ln(2 + √3) ≈ 1.317 or x = ln(2 − √3) = −1.317."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(exp(x)+exp(-x))/2",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "y = 2"
+  }
+ ],
+ "points": [
+  {
+   "x": -1.3169578969248166,
+   "y": 2,
+   "label": "−1.317",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 1.3169578969248166,
+   "y": 2,
+   "label": "1.317",
+   "colour": "a2",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(exp(x)+exp(-x))/2",
+   "x": 1.3169578969248166,
+   "y": 2,
+   "name": "cosh(ln(2 + √3)) = 2"
+  },
+  {
+   "type": "point",
+   "expr": "(exp(x)+exp(-x))/2",
+   "x": -1.3169578969248166,
+   "y": 2,
+   "name": "cosh(−ln(2 + √3)) = 2"
+  },
+  {
+   "type": "min",
+   "expr": "(exp(x)+exp(-x))/2",
+   "domain": [
+    -3,
+    3
+   ],
+   "x": 0,
+   "y": 1,
+   "name": "the minimum of cosh x is 1 at x = 0"
+  }
+ ],
+ "fromLesson": [
+  "x = ln(2 ± √3)"
+ ]
+}

@@ -58256,5 +58256,1951 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "maths-u06-angle-75": {
+  "title": "75° = 45° + 30° on the unit circle",
+  "caption": "Turning 45° and then a further 30° reaches 75°. The x-coordinate of the point at 75° is cos 75° = cos 45° cos 30° − sin 45° sin 30° = (√6 − √2)/4 ≈ 0.259.",
+  "alt": "The unit circle with the radius at 45° and a second radius at 75°, the angles of 45° and 30° marked between them, and the x-coordinate of the 75° point marked on the axis.",
+  "description": [
+   "Start at the positive x-axis and turn 45°.",
+   "Turn a further 30° to reach 75°.",
+   "The x-coordinate at 75° is cos 75° = cos(45° + 30°).",
+   "The compound angle formula gives (√6 − √2)/4 ≈ 0.259."
+  ],
+  "course": "maths",
+  "lesson": "Compound Angle Formulas",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Compound Angle Formulas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle XOM = 45°",
+    "ok": true,
+    "detail": "measured 45°"
+   },
+   {
+    "name": "angle MOP = 30°",
+    "ok": true,
+    "detail": "measured 30°"
+   },
+   {
+    "name": "OF = 0.259 u06",
+    "ok": true,
+    "detail": "measured 0.2588"
+   },
+   {
+    "name": "the radii end on the unit circle",
+    "ok": true,
+    "detail": "1, 1, 1"
+   },
+   {
+    "name": "45° + 30° = 75°",
+    "ok": true,
+    "detail": "measured 75°"
+   },
+   {
+    "name": "cos 75° = (√6 − √2)/4",
+    "ok": true,
+    "detail": "0.258819"
+   },
+   {
+    "name": "the lesson states \"(√6 − √2)/4\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×313"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-arcsin-triangle": {
+  "title": "cos(arcsin(3/5)) from a 3-4-5 triangle",
+  "caption": "θ = arcsin(3/5) is the angle whose opposite side is 3 and hypotenuse 5, so the adjacent side is 4 and cos θ = 4/5. The angle is 36.9°, in [−π/2, π/2], where cosine is positive.",
+  "alt": "A right-angled triangle with hypotenuse 5, opposite side 3, adjacent side 4 and the angle θ ≈ 36.9° at the origin.",
+  "description": [
+   "sin θ = 3/5: draw a right-angled triangle with opposite 3 and hypotenuse 5.",
+   "The adjacent side is √(25 − 9) = 4.",
+   "cos θ = adjacent/hypotenuse = 4/5."
+  ],
+  "course": "maths",
+  "lesson": "Inverse Trigonometric Functions",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Inverse Trigonometric Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at A is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "angle AOB = 36.9°",
+    "ok": true,
+    "detail": "measured 36.87°"
+   },
+   {
+    "name": "OA = 4 u06",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "AB = 3 u06",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "OB = 5 u06",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "hypotenuse = √(4² + 3²) = 5",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "cos θ = √(1 − 9/25) = 4/5",
+    "ok": true,
+    "detail": "0.8"
+   },
+   {
+    "name": "the lesson states \"cos θ = √(1 − 9/25)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×274"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-arsinh": {
+  "title": "arsinh(3/4) = ln 2",
+  "caption": "arsinh(3/4) is the x for which sinh x = 3/4. Since sinh(ln 2) = (2 − ½)/2 = 3/4, the answer is exactly ln 2 ≈ 0.693.",
+  "alt": "The graph of y = sinh x, rising through the origin, with the line y = 3/4 meeting it at x = ln 2 ≈ 0.693.",
+  "description": [
+   "sinh x = (eˣ − e⁻ˣ)/2 rises steadily through the origin.",
+   "arsinh(3/4) asks: for which x is sinh x = 3/4?",
+   "At x = ln 2, eˣ = 2 and e⁻ˣ = ½, so sinh x = (2 − ½)/2 = 3/4."
+  ],
+  "course": "maths",
+  "lesson": "Inverse Hyperbolic Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Inverse Hyperbolic Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "sinh(ln 2) = 3/4",
+    "ok": true,
+    "detail": "y(0.6931471805599453) = 0.75"
+   },
+   {
+    "name": "sinh(ln(3/4 + 5/4)) = 3/4",
+    "ok": true,
+    "detail": "y(0.6931471805599453) = 0.75"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cos-minus-half": {
+  "title": "cos x = −½ has solutions 120° and 240°",
+  "caption": "2cos x + 1 = 0 means cos x = −½. The line y = −½ meets the cosine graph at x = 180° − 60° = 120° and x = 180° + 60° = 240°, symmetric about 180°.",
+  "alt": "The cosine graph from 0° to 360° with the line y = −0.5 crossing it at 120° and 240°.",
+  "description": [
+   "The cosine curve starts at 1, falls to −1 at 180° and returns to 1.",
+   "The line y = −½ cuts it on the way down and on the way up.",
+   "The crossings are at 120° and 240°, 60° either side of 180°."
+  ],
+  "course": "maths",
+  "lesson": "Cosine",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Cosine"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cos 120° = −½",
+    "ok": true,
+    "detail": "y(120) = -0.5"
+   },
+   {
+    "name": "cos 240° = −½",
+    "ok": true,
+    "detail": "y(240) = -0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cos2x-cosx": {
+  "title": "Where cos 2x meets cos x",
+  "caption": "Solutions of cos 2x = cos x are the crossings of the two graphs: at x = 0°, where both are 1, and at x = 120° and 240°, where both equal −½. They match cos x = −½ and cos x = 1 from the factorised equation.",
+  "alt": "The graphs of cos x and cos 2x from 0° to 360°, which cross at 0°, 120° and 240°.",
+  "description": [
+   "cos x makes one cycle and cos 2x makes two over 0° to 360°.",
+   "At x = 0° both equal 1.",
+   "At 120° and at 240° both equal −½.",
+   "Those are the solutions 0°, 120° and 240°."
+  ],
+  "course": "maths",
+  "lesson": "Double Angle Formulas",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Double Angle Formulas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cos 0° = cos 0° = 1",
+    "ok": true,
+    "detail": "cos(0.017453292519943295*x) → 1, cos(0.017453292519943295*2*x) → 1"
+   },
+   {
+    "name": "cos 120° = cos 240° = -0.5",
+    "ok": true,
+    "detail": "cos(0.017453292519943295*x) → -0.5, cos(0.017453292519943295*2*x) → -0.5"
+   },
+   {
+    "name": "cos 240° = cos 480° = -0.5",
+    "ok": true,
+    "detail": "cos(0.017453292519943295*x) → -0.5, cos(0.017453292519943295*2*x) → -0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cosec-minus-2": {
+  "title": "cosec x = −2",
+  "caption": "cosec x = 1/sin x has branches above 1 and below −1. The line y = −2 meets only the lower branch, twice: where sin x = −½, at x = 210° and 330°.",
+  "alt": "The cosecant graph from 0° to 360°: an upward U on 0°–180° and a downward U on 180°–360°, with the line y = −2 meeting the lower branch at 210° and 330°.",
+  "description": [
+   "cosec x is 1/sin x, so it has asymptotes wherever sin x = 0: at 0°, 180° and 360°.",
+   "Between 0° and 180° the branch lies above y = 1; between 180° and 360° it lies below y = −1.",
+   "The line y = −2 cuts the lower branch at 210° and 330°, where sin x = −½."
+  ],
+  "course": "maths",
+  "lesson": "Cosecant",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Cosecant"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cosec 210° = −2",
+    "ok": true,
+    "detail": "y(210) = -2"
+   },
+   {
+    "name": "cosec 330° = −2",
+    "ok": true,
+    "detail": "y(330) = -2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cosh-2": {
+  "title": "cosh x = 2",
+  "caption": "The curve y = cosh x = (eˣ + e⁻ˣ)/2 has its minimum 1 at x = 0 and is symmetric. It meets y = 2 at x = ±ln(2 + √3) ≈ ±1.317, where eˣ = 2 ± √3.",
+  "alt": "The graph of y = cosh x, a symmetric U-shape with minimum (0, 1), and the line y = 2 meeting it at x ≈ −1.317 and x ≈ 1.317.",
+  "description": [
+   "cosh x = (eˣ + e⁻ˣ)/2 is symmetric about the y-axis with minimum 1.",
+   "cosh x = 2 gives u² − 4u + 1 = 0 with u = eˣ, so u = 2 ± √3.",
+   "Then x = ln(2 + √3) ≈ 1.317 or x = ln(2 − √3) = −1.317."
+  ],
+  "course": "maths",
+  "lesson": "Hyperbolic Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Hyperbolic Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cosh(ln(2 + √3)) = 2",
+    "ok": true,
+    "detail": "y(1.3169578969248166) = 2"
+   },
+   {
+    "name": "cosh(−ln(2 + √3)) = 2",
+    "ok": true,
+    "detail": "y(-1.3169578969248166) = 2"
+   },
+   {
+    "name": "the minimum of cosh x is 1 at x = 0",
+    "ok": true,
+    "detail": "found (0, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cot-roots": {
+  "title": "3cot²x = 1 gives tan x = ±√3",
+  "caption": "cot²x = 1/3 means tan²x = 3, so tan x = √3 or −√3. Each line meets the tangent graph twice in a turn: x = 60° and 240° for +√3, 120° and 300° for −√3.",
+  "alt": "The tangent graph from 0° to 360° with the lines y = √3 and y = −√3 each crossing it twice, at 60°, 240° and at 120°, 300°.",
+  "description": [
+   "3 cot²x = 1 gives cot²x = 1/3, so tan²x = 3.",
+   "tan x = √3 ≈ 1.73 at 60° and 240°.",
+   "tan x = −√3 at 120° and 300°.",
+   "That is four solutions in one turn."
+  ],
+  "course": "maths",
+  "lesson": "Cotangent",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Cotangent"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "tan 60° = √3",
+    "ok": true,
+    "detail": "y(60) = 1.7321"
+   },
+   {
+    "name": "tan 120° = −√3",
+    "ok": true,
+    "detail": "y(120) = -1.7321"
+   },
+   {
+    "name": "tan 240° = √3",
+    "ok": true,
+    "detail": "y(240) = 1.7321"
+   },
+   {
+    "name": "tan 300° = −√3",
+    "ok": true,
+    "detail": "y(300) = -1.7321"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-cuboid-diagonal": {
+  "title": "The angle between a space diagonal and the base",
+  "caption": "Take the right-angled triangle formed by the base diagonal, the vertical edge and the space diagonal. The base diagonal is √(36 + 64) = 10 cm and the edge is 5 cm, so tan θ = 5/10 and θ = 26.6°.",
+  "alt": "A right-angled triangle with a base of 10 cm (the diagonal of the 6 by 8 base), a height of 5 cm, and the space diagonal √125 ≈ 11.18 cm, making 26.6° with the base.",
+  "description": [
+   "The base is 6 cm by 8 cm, so its diagonal is √(36 + 64) = 10 cm.",
+   "The space diagonal rises 5 cm over that 10 cm of horizontal distance.",
+   "tan θ = 5/10 = 0.5, so θ = tan⁻¹ 0.5 ≈ 26.6°."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Geometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Trigonometric Geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at M is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "angle MAT = 26.6°",
+    "ok": true,
+    "detail": "measured 26.565°"
+   },
+   {
+    "name": "AM = 10 u06",
+    "ok": true,
+    "detail": "measured 10"
+   },
+   {
+    "name": "MT = 5 u06",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "AT = 11.18 u06",
+    "ok": true,
+    "detail": "measured 11.1803"
+   },
+   {
+    "name": "base diagonal = √(6² + 8²) = 10",
+    "ok": true,
+    "detail": "measured 10"
+   },
+   {
+    "name": "tan⁻¹(5/10) = 26.57°",
+    "ok": true,
+    "detail": "measured 26.565°"
+   },
+   {
+    "name": "the lesson states \"tan θ = 5/10\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×260"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×247"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-ferris-wheel": {
+  "title": "h(t) = 22 − 20cos(πt/5)",
+  "caption": "The rider oscillates about the centre height 22 m with amplitude 20 m, so h runs from 2 m to 42 m. A turn takes 10 minutes, and starting at the bottom means −cos: h(0) = 22 − 20 = 2.",
+  "alt": "A wave of height against time for 20 minutes starting at the minimum 2 m at t = 0, rising to 42 m at t = 5 minutes and back to 2 m at t = 10 minutes.",
+  "description": [
+   "The midline is the centre height, 22 m, and the amplitude is the radius, 20 m.",
+   "The period is 10 minutes, so B = 2π/10 = π/5.",
+   "A cosine starts at its maximum; the rider starts at the minimum, so use −cos.",
+   "h(t) = 22 − 20 cos(πt/5): minimum 2 m at t = 0, maximum 42 m at t = 5."
+  ],
+  "course": "maths",
+  "lesson": "Sinusoidal Modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Sinusoidal Modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the rider starts at the minimum, 2 m",
+    "ok": true,
+    "detail": "found (0, 2)"
+   },
+   {
+    "name": "the maximum is 42 m at t = 5",
+    "ok": true,
+    "detail": "found (5, 42)"
+   },
+   {
+    "name": "back at the bottom after 10 minutes",
+    "ok": true,
+    "detail": "y(10) = 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-fourier-b1": {
+  "title": "b₁ is the area under x sin x",
+  "caption": "b₁ = (1/π)∫ x sin x dx over (−π, π). The curve x sin x is never negative on this interval and the shaded area is 2π, so b₁ = 2π/π = 2.",
+  "alt": "The graph of y = x sin x from −π to π, an even M-shaped curve touching zero at the ends and the middle, with the area under it shaded and labelled 2π.",
+  "description": [
+   "f(x) = x is odd, so every aₙ = 0.",
+   "b₁ = (1/π)∫ x sin x dx from −π to π.",
+   "The integrand x sin x is non-negative on (−π, π); its area is [−x cos x + sin x] = 2π.",
+   "So b₁ = 2π/π = 2."
+  ],
+  "course": "maths",
+  "lesson": "Fourier Series",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Fourier Series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under x sin x on (−π, π) is 2π, so b₁ = 2π/π = 2",
+    "ok": true,
+    "detail": "area 6.2832"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-great-circle": {
+  "title": "Two points on the equator, 90° apart",
+  "caption": "Seen from above the pole, the equator is a circle of radius R = 6,371 km. Points at longitudes 0° and 90° make a central angle of 90° = π/2, so the great-circle distance is R × π/2 ≈ 10,008 km.",
+  "alt": "The equator as a circle with two points on it, at longitude 0° and longitude 90°, joined to the centre with a right angle between the radii.",
+  "description": [
+   "Look down on the equator: a circle of radius R = 6,371 km.",
+   "The points at 0° and 90° longitude are a quarter of the way round.",
+   "The central angle is 90° = π/2 radians, so the arc length is 6,371 × π/2 ≈ 10,008 km."
+  ],
+  "course": "maths",
+  "lesson": "Spherical Trigonometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Spherical Trigonometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at O is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "both points lie on the equator",
+    "ok": true,
+    "detail": "1, 1"
+   },
+   {
+    "name": "6,371 × π/2 ≈ 10,008 km",
+    "ok": true,
+    "detail": "10,007.543398"
+   },
+   {
+    "name": "the lesson states \"Distance = 6,371 × π/2 ≈ 10,008 km\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 640×320"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-half-angle-15": {
+  "title": "15° is half of 30°",
+  "caption": "cos²15° = (1 + cos 30°)/2 = (2 + √3)/4. The point at 15° is acute, so its x-coordinate is positive: cos 15° = √(2 + √3)/2 = (√6 + √2)/4 ≈ 0.966.",
+  "alt": "The unit circle with a radius at 30° and a radius at 15°, half way, and the x-coordinate of the 15° point marked on the axis.",
+  "description": [
+   "The angle 30° is known exactly: cos 30° = √3/2.",
+   "15° is half of 30°, so the half angle formula applies.",
+   "cos²15° = (1 + cos 30°)/2 = (2 + √3)/4.",
+   "15° is acute, so take the positive root: cos 15° = √(2 + √3)/2 ≈ 0.966."
+  ],
+  "course": "maths",
+  "lesson": "Half Angle Formulas",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Half Angle Formulas"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle XOH = 15°",
+    "ok": true,
+    "detail": "measured 15°"
+   },
+   {
+    "name": "angle HOA = 15°",
+    "ok": true,
+    "detail": "measured 15°"
+   },
+   {
+    "name": "OF = 0.966 u06",
+    "ok": true,
+    "detail": "measured 0.9659"
+   },
+   {
+    "name": "the radii end on the unit circle",
+    "ok": true,
+    "detail": "1, 1, 1"
+   },
+   {
+    "name": "30° is twice 15°",
+    "ok": true,
+    "detail": "measured 30°"
+   },
+   {
+    "name": "√(2 + √3)/2 = (√6 + √2)/4",
+    "ok": true,
+    "detail": "0.965926"
+   },
+   {
+    "name": "cos 15° = (√6 + √2)/4",
+    "ok": true,
+    "detail": "0.965926"
+   },
+   {
+    "name": "the lesson states \"cos^{2} 15° = (1 + cos 30°)/2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×305"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-harbour-depth": {
+  "title": "Harbour depth d = 5 + 3 sin(πt/6)",
+  "caption": "The depth swings 3 m either side of 5 m. One full cycle takes 2π ÷ (π/6) = 12 hours, so the peaks at t = 3 and t = 15 are 12 hours apart, and the maximum depth is 5 + 3 = 8 m.",
+  "alt": "A wave of depth against time for 24 hours, with its peaks of 8 m at 3 and 15 hours, troughs of 2 m, and an arrow marking the period of 12 hours.",
+  "description": [
+   "The depth is d = 5 + 3 sin(πt/6), centred on 5 m with amplitude 3 m.",
+   "The period is 2π ÷ (π/6) = 12 hours.",
+   "The maximum occurs when sin = 1: d = 5 + 3 = 8 m, first at t = 3 hours."
+  ],
+  "course": "maths",
+  "lesson": "Periodic Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Periodic Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the first maximum is 8 m at t = 3",
+    "ok": true,
+    "detail": "found (3, 8)"
+   },
+   {
+    "name": "the next maximum is at t = 15, 12 hours later",
+    "ok": true,
+    "detail": "y(15) = 8"
+   },
+   {
+    "name": "after one period the depth is back to 5 m",
+    "ok": true,
+    "detail": "y(12) = 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-harmonic-roots": {
+  "title": "3 sin x + 4 cos x = 2",
+  "caption": "3 sin x + 4 cos x = 5 sin(x + 53.13°) is a wave of amplitude 5. The line y = 2 meets it twice in a turn, at x ≈ 103.3° and x ≈ 330.4°.",
+  "alt": "The graph of 3 sin x + 4 cos x from 0° to 360°, peaking at 5 and bottoming at −5, with the line y = 2 crossing it at about 103.3° and 330.4°.",
+  "description": [
+   "3 sin x + 4 cos x combines into 5 sin(x + 53.13°): amplitude 5.",
+   "Solving sin(x + 53.13°) = 0.4 gives the two crossings with y = 2.",
+   "They are at x ≈ 103.3° and x ≈ 330.4°."
+  ],
+  "course": "maths",
+  "lesson": "Harmonic Functions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Harmonic Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3 sin 103.3° + 4 cos 103.3° = 2",
+    "ok": true,
+    "detail": "y(103.29171916764219) = 2"
+   },
+   {
+    "name": "3 sin 330.4° + 4 cos 330.4° = 2",
+    "ok": true,
+    "detail": "y(330.4480761240459) = 2"
+   },
+   {
+    "name": "the amplitude is 5, at x = 36.9°",
+    "ok": true,
+    "detail": "found (36.864, 5)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-quadratic-in-sin": {
+  "title": "2cos²x + 3 sin x = 3",
+  "caption": "Replacing cos²x by 1 − sin²x gives 2sin²x − 3 sin x + 1 = 0, so sin x = ½ or sin x = 1. On the graph of 2cos²x + 3 sin x the line y = 3 is met at 30°, 90° (where the curve just touches it) and 150°.",
+  "alt": "The graph of y = 2cos²x + 3 sin x from 0° to 360° with the line y = 3 touching or crossing it at 30°, 90° and 150°.",
+  "description": [
+   "Rewrite cos²x = 1 − sin²x: 2sin²x − 3 sin x + 1 = 0.",
+   "Factorise: (2 sin x − 1)(sin x − 1) = 0.",
+   "sin x = ½ gives 30° and 150°; sin x = 1 gives 90°.",
+   "These are the three places the curve reaches the line y = 3."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Trigonometric Equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2cos²30° + 3 sin 30° = 3",
+    "ok": true,
+    "detail": "y(30) = 3"
+   },
+   {
+    "name": "2cos²90° + 3 sin 90° = 3",
+    "ok": true,
+    "detail": "y(90) = 3"
+   },
+   {
+    "name": "2cos²150° + 3 sin 150° = 3",
+    "ok": true,
+    "detail": "y(150) = 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-radians-150": {
+  "title": "150° is 5π/6 radians",
+  "caption": "A full turn is 360° = 2π radians, so 1° = π/180 and 150° = 150 × π/180 = 5π/6. On the unit circle the arc from (1, 0) to the point at 150° has length 5π/6 ≈ 2.62.",
+  "alt": "The unit circle with an angle of 150° at the centre, measured anticlockwise from the positive x-axis and labelled 150° = 5π/6.",
+  "description": [
+   "Draw the unit circle and measure from the positive x-axis.",
+   "The radius to the point at 150° turns past the vertical, into the second quadrant.",
+   "In radians, 150° = 150 × π/180 = 5π/6."
+  ],
+  "course": "maths",
+  "lesson": "Radians and Degrees",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Radians and Degrees"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle XOP = 150°",
+    "ok": true,
+    "detail": "measured 150°"
+   },
+   {
+    "name": "(1, 0) and the point at 150° lie on the unit circle",
+    "ok": true,
+    "detail": "1, 1"
+   },
+   {
+    "name": "150 × π/180 = 5π/6",
+    "ok": true,
+    "detail": "2.617994"
+   },
+   {
+    "name": "the lesson states \"150 × π/180 = 5π/6\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-ramp": {
+  "title": "The ramp as a right-angled triangle",
+  "caption": "The ramp rises 1.2 m over 8 m: tan θ = 1.2/8 = 0.15, so θ = 8.5°. The slope is the hypotenuse, √(8² + 1.2²) = √65.44 ≈ 8.09 m.",
+  "alt": "A flat triangle: 8 m along the ground, 1.2 m up at the end, and a sloping side of about 8.09 m at an angle of 8.5° to the ground.",
+  "description": [
+   "The horizontal run is 8 m and the rise is 1.2 m.",
+   "tan θ = opposite/adjacent = 1.2/8 = 0.15, so θ = tan⁻¹ 0.15 ≈ 8.5°.",
+   "The slope length is the hypotenuse: √(64 + 1.44) = √65.44 ≈ 8.09 m."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Ratios",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Trigonometric Ratios"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at Q is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "angle QPR = 8.5°",
+    "ok": true,
+    "detail": "measured 8.531°"
+   },
+   {
+    "name": "PQ = 8 u06",
+    "ok": true,
+    "detail": "measured 8"
+   },
+   {
+    "name": "QR = 1.2 u06",
+    "ok": true,
+    "detail": "measured 1.2"
+   },
+   {
+    "name": "PR = 8.089 u06",
+    "ok": true,
+    "detail": "measured 8.0895"
+   },
+   {
+    "name": "slope = √(8² + 1.2²) = √65.44",
+    "ok": true,
+    "detail": "measured 8.0895"
+   },
+   {
+    "name": "the lesson states \"tan θ = 1.2/8 = 0.15\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×260"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×183"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-sec-tan-roots": {
+  "title": "The two tan values from the quadratic",
+  "caption": "Replacing sec²x gives 2tan²x − 3tan x − 1 = 0, so tan x = (3 ± √17)/4 ≈ 1.781 or -0.281. On 0° ≤ x < 180° each value meets the tangent graph once: x ≈ 60.7° and x ≈ 164.3°.",
+  "alt": "The tangent graph from 0° to 180° in two branches. The line y = 1.781 meets the first branch at about 60.7° and the line y = −0.281 meets the second branch at about 164.3°.",
+  "description": [
+   "The quadratic in tan x has roots tan x ≈ 1.781 and tan x ≈ −0.281.",
+   "tan x = 1.781 gives x ≈ 60.7° on the first branch.",
+   "tan x = −0.281 is negative, so it lies on the second branch: x = 180° − 15.7° ≈ 164.3°."
+  ],
+  "course": "maths",
+  "lesson": "Secant",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Secant"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "tan 60.7° = (3 + √17)/4",
+    "ok": true,
+    "detail": "y(60.6834888873168) = 1.7808"
+   },
+   {
+    "name": "tan 164.3° = (3 − √17)/4",
+    "ok": true,
+    "detail": "y(164.3165111126832) = -0.2808"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-shifted-cosine": {
+  "title": "y = 2cos(x − 30°) − 1",
+  "caption": "The cosine curve is stretched to amplitude 2, shifted 30° right and 1 down: its maximum is 2 − 1 = 1 at x = 30° and its minimum is −2 − 1 = −3 at x = 210°.",
+  "alt": "The graph of y = 2cos(x − 30°) − 1 from 0° to 360° with its maximum at (30°, 1) and minimum at (210°, −3) marked.",
+  "description": [
+   "The curve oscillates about the midline y = −1 with amplitude 2.",
+   "Its peak is 30° to the right of the usual cosine peak at 0°: maximum (30°, 1).",
+   "Its lowest point is half a period later, at (210°, −3)."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Graphs",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Trigonometric Graphs"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the maximum is 1 at x = 30°",
+    "ok": true,
+    "detail": "found (30.006, 1)"
+   },
+   {
+    "name": "the minimum is −3 at x = 210°",
+    "ok": true,
+    "detail": "found (210.006, -3)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-ships": {
+  "title": "How far apart are the ships?",
+  "caption": "The paths are 110° − 40° = 70° apart, so the cosine rule gives d² = 12² + 15² − 2 × 12 × 15 × cos 70° ≈ 245.9, and d ≈ 15.7 km.",
+  "alt": "A plan view: the port O, ship A 12 km away on bearing 040° and ship B 15 km away on bearing 110°, with 70° between the paths and AB ≈ 15.7 km.",
+  "description": [
+   "Bearings are measured clockwise from north: the first ship sails 12 km on 040°, the second 15 km on 110°.",
+   "The angle between the two paths at the port is 110° − 40° = 70°.",
+   "Cosine rule: d² = 144 + 225 − 360 cos 70° ≈ 245.9.",
+   "So d ≈ 15.7 km."
+  ],
+  "course": "maths",
+  "lesson": "Cosine Rule",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Cosine Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle NOA = 40°",
+    "ok": true,
+    "detail": "measured 40°"
+   },
+   {
+    "name": "angle AOB = 70°",
+    "ok": true,
+    "detail": "measured 70°"
+   },
+   {
+    "name": "OA = 12 u06",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "OB = 15 u06",
+    "ok": true,
+    "detail": "measured 15"
+   },
+   {
+    "name": "AB = 15.68 u06",
+    "ok": true,
+    "detail": "measured 15.6803"
+   },
+   {
+    "name": "d = √(12² + 15² − 2·12·15·cos 70°)",
+    "ok": true,
+    "detail": "15.68033"
+   },
+   {
+    "name": "the lesson states \"110° − 40° = 70°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×340"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-sin-minus-06": {
+  "title": "sin x = −0.6 has two solutions in a turn",
+  "caption": "The line y = −0.6 meets the sine graph twice between 0° and 360°, in the third and fourth quadrants: x = 180° + 36.9° ≈ 216.9° and x = 360° − 36.9° ≈ 323.1°.",
+  "alt": "The sine graph from 0° to 360° with the line y = −0.6 crossing it at about 216.9° and 323.1°.",
+  "description": [
+   "The sine curve runs from 0 up to 1, down to −1 and back to 0.",
+   "The horizontal line y = −0.6 sits below the axis.",
+   "It meets the curve twice, at x ≈ 216.9° and x ≈ 323.1°."
+  ],
+  "course": "maths",
+  "lesson": "Sine",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Sine"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "sin 216.9° = −0.6",
+    "ok": true,
+    "detail": "y(216.86989764584402) = -0.6"
+   },
+   {
+    "name": "sin 323.1° = −0.6",
+    "ok": true,
+    "detail": "y(323.13010235415595) = -0.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-sine-rule": {
+  "title": "The sine rule in triangle PQR",
+  "caption": "With P = 52°, Q = 71° and so R = 57°, each side over the sine of its opposite angle is the same: p/sin 52° = 15/sin 57°, giving p = 15 sin 52°/sin 57° ≈ 14.1 cm.",
+  "alt": "A triangle PQR drawn to scale with angles 52° at P, 71° at Q, 57° at R, PQ = 15 cm opposite R, and QR = p ≈ 14.1 cm opposite P.",
+  "description": [
+   "The angles add to 180°, so R = 180° − 52° − 71° = 57°.",
+   "Side r = PQ = 15 cm is opposite R.",
+   "The sine rule gives p/sin 52° = 15/sin 57°.",
+   "So p = 15 sin 52°/sin 57° ≈ 14.1 cm."
+  ],
+  "course": "maths",
+  "lesson": "Sine Rule",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Sine Rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle QPR = 52°",
+    "ok": true,
+    "detail": "measured 52°"
+   },
+   {
+    "name": "angle RQP = 71°",
+    "ok": true,
+    "detail": "measured 71°"
+   },
+   {
+    "name": "angle PRQ = 57°",
+    "ok": true,
+    "detail": "measured 57°"
+   },
+   {
+    "name": "PQ = 15 u06",
+    "ok": true,
+    "detail": "measured 15"
+   },
+   {
+    "name": "QR = 14.094 u06",
+    "ok": true,
+    "detail": "measured 14.0939"
+   },
+   {
+    "name": "the angles add up to 180°",
+    "ok": true,
+    "detail": "measured 52 + 71 + 57"
+   },
+   {
+    "name": "p = 15 sin 52°/sin 57°",
+    "ok": true,
+    "detail": "14.093926"
+   },
+   {
+    "name": "the lesson states \"R = 180 − 52 − 71 = 57°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×360"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×333"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-spectrum": {
+  "title": "The spectrum of the signal",
+  "caption": "The signal is a sum of two sine waves, so its spectrum has two spikes: 50 Hz with amplitude 3 and 120 Hz with amplitude 1. The first is three times as tall.",
+  "alt": "A spectrum with two spikes: a tall one of height 3 at 50 hertz and a short one of height 1 at 120 hertz.",
+  "description": [
+   "The signal is 3 sin(2π × 50t) + sin(2π × 120t).",
+   "Each sine wave gives one spike in the spectrum, at its frequency.",
+   "The 50 Hz spike has height 3 and the 120 Hz spike height 1: three times smaller."
+  ],
+  "course": "maths",
+  "lesson": "Fourier Analysis",
+  "also": [],
+  "renderer": "barchart",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Fourier Analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "total = 4",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "the lesson states \"50 Hz with amplitude 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 640×340"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×300"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-tan-four-thirds": {
+  "title": "tan x = 4/3 repeats every 180°",
+  "caption": "The tangent graph repeats every 180°, so the line y = 4/3 meets it at x ≈ 53.1° and again 180° later at x ≈ 233.1°.",
+  "alt": "The tangent graph from 0° to 360° in three branches with the line y = 4/3 crossing the first and third branches at about 53.1° and 233.1°.",
+  "description": [
+   "The tangent graph has vertical asymptotes at 90° and 270° and repeats every 180°.",
+   "The line y = 4/3 crosses the first branch at tan⁻¹(4/3) ≈ 53.1°.",
+   "It crosses the third branch exactly 180° later, at ≈ 233.1°."
+  ],
+  "course": "maths",
+  "lesson": "Tangent",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Tangent"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "tan 53.1° = 4/3",
+    "ok": true,
+    "detail": "y(53.13010235415598) = 1.3333"
+   },
+   {
+    "name": "tan 233.1° = 4/3",
+    "ok": true,
+    "detail": "y(233.13010235415598) = 1.3333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-tan-inequality": {
+  "title": "tan x < 1 on 0° ≤ x < 180°",
+  "caption": "The boundary is x = 45°, where tan x = 1. On the first branch tan x < 1 for x < 45°; on the second branch (90° < x < 180°) tan x is negative, so always below 1. The point 90° is excluded: tan is undefined there.",
+  "alt": "A number line from 0° to 180° with a shaded interval from 0° to 45°, closed at 0° and open at 45°, and another from 90° to 180°, open at both ends.",
+  "description": [
+   "Mark the boundary x = 45°, where tan x = 1, and the excluded point x = 90°.",
+   "From 0° up to 45°, tan x is below 1: 0° ≤ x < 45°.",
+   "Between 90° and 180°, tan x is negative, so tan x < 1 throughout.",
+   "The solution is 0° ≤ x < 45° or 90° < x < 180°."
+  ],
+  "course": "maths",
+  "lesson": "Trigonometric Inequalities",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Trigonometric Inequalities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the interval drawn is 0 <= x < 45",
+    "ok": true,
+    "detail": "drawn 0]…45; inequality gives {\"from\":0,\"to\":45,\"closed\":[true,false]}"
+   },
+   {
+    "name": "the interval drawn is 90 < x < 180",
+    "ok": true,
+    "detail": "drawn 90)…180; inequality gives {\"from\":90,\"to\":180,\"closed\":[false,false]}"
+   },
+   {
+    "name": "tan 45° = 1 is the boundary",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the lesson states \"0° ≤ x < 45° or 90° < x < 180°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×124"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×124"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u06-triangle-5-12-13": {
+  "title": "Naming the sides from angle A",
+  "caption": "From the angle at A: the hypotenuse is AB = 13, opposite the right angle; the opposite side is BC = 5, across from A; the adjacent side is AC = 12, the other side touching A.",
+  "alt": "A right-angled triangle with the right angle at C, AC = 12 along the bottom, BC = 5 up the side and the hypotenuse AB = 13. The angle at A is marked.",
+  "description": [
+   "The right angle is at C, with AC = 12 and BC = 5.",
+   "The hypotenuse AB = 13 is opposite the right angle.",
+   "Looking from angle A, the side across from it is BC = 5: the opposite.",
+   "The side next to A that is not the hypotenuse is AC = 12: the adjacent."
+  ],
+  "course": "maths",
+  "lesson": "Basic Trigonometry",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Basic Trigonometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at C is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AC = 12 u06",
+    "ok": true,
+    "detail": "measured 12"
+   },
+   {
+    "name": "BC = 5 u06",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "AB = 13 u06",
+    "ok": true,
+    "detail": "measured 13"
+   },
+   {
+    "name": "AB = √(12² + 5²) = 13",
+    "ok": true,
+    "detail": "measured 13"
+   },
+   {
+    "name": "the lesson states \"AB = 13\", \"BC = 5\", \"AC = 12\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×277"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×173"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-triangle-area": {
+  "title": "Area = ½ab sin C",
+  "caption": "Two sides of 7 cm and 9 cm enclose 120°, so the area is ½ × 7 × 9 × sin 120° = 63√3/4 ≈ 27.3 cm². The angle may be obtuse: sin 120° = sin 60° = √3/2.",
+  "alt": "A triangle with sides 9 cm along the bottom and 7 cm rising to the left, with an obtuse angle of 120° between them.",
+  "description": [
+   "Two sides of 7 cm and 9 cm meet at an angle of 120°.",
+   "Area = ½ × 7 × 9 × sin 120°.",
+   "sin 120° = √3/2, so the area is 63√3/4 ≈ 27.3 cm²."
+  ],
+  "course": "maths",
+  "lesson": "Area of a Triangle",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Area of a Triangle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle BAC = 120°",
+    "ok": true,
+    "detail": "measured 120°"
+   },
+   {
+    "name": "AB = 9 u06",
+    "ok": true,
+    "detail": "measured 9"
+   },
+   {
+    "name": "AC = 7 u06",
+    "ok": true,
+    "detail": "measured 7"
+   },
+   {
+    "name": "area = ½ × 7 × 9 × sin 120° = 63√3/4",
+    "ok": true,
+    "detail": "shoelace 27.2798"
+   },
+   {
+    "name": "the lesson states \"Area = ½ × 7 × 9 × sin 120°\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×300"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×234"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u06-unit-circle-240": {
+  "title": "240° on the unit circle",
+  "caption": "The point at 240° is in the third quadrant, 60° past the negative x-axis. Its coordinates are (cos 240°, sin 240°) = (−½, −√3/2), so tan 240° = sin/cos = √3.",
+  "alt": "The unit circle with the point at 240° in the third quadrant at (−0.5, −0.866), its reference angle of 60° marked at the centre, and dashed lines to the axes.",
+  "description": [
+   "Turn 240° anticlockwise from the positive x-axis: the point is in the third quadrant.",
+   "It is 60° past the negative x-axis, so the reference angle is 60°.",
+   "Its x-coordinate is cos 240° = −cos 60° = −½.",
+   "Its y-coordinate is sin 240° = −sin 60° = −√3/2, so tan 240° = (−√3/2)/(−½) = √3."
+  ],
+  "course": "maths",
+  "lesson": "Unit Circle",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u06.js: Unit Circle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "angle NOP = 60°",
+    "ok": true,
+    "detail": "measured 60°"
+   },
+   {
+    "name": "OF = 0.5 u06",
+    "ok": true,
+    "detail": "measured 0.5"
+   },
+   {
+    "name": "the point at 240° lies on the unit circle",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "the dashed drop from the point has length √3/2 = |sin 240°|",
+    "ok": true,
+    "detail": "measured 0.86603"
+   },
+   {
+    "name": "tan 240° = sin/cos = √3",
+    "ok": true,
+    "detail": "1.732051"
+   },
+   {
+    "name": "the shorter angle from the positive x-axis is 120°, so the turn is 240°",
+    "ok": true,
+    "detail": "measured 120°"
+   },
+   {
+    "name": "the lesson states \"tan 240° = sin/cos = √3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 640×350"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "6 labels in 380×263"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

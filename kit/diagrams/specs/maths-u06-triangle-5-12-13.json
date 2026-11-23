@@ -1,0 +1,123 @@
+{
+ "id": "maths-u06-triangle-5-12-13",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Basic Trigonometry",
+ "title": "Naming the sides from angle A",
+ "caption": "From the angle at A: the hypotenuse is AB = 13, opposite the right angle; the opposite side is BC = 5, across from A; the adjacent side is AC = 12, the other side touching A.",
+ "alt": "A right-angled triangle with the right angle at C, AC = 12 along the bottom, BC = 5 up the side and the hypotenuse AB = 13. The angle at A is marked.",
+ "description": [
+  "The right angle is at C, with AC = 12 and BC = 5.",
+  "The hypotenuse AB = 13 is opposite the right angle.",
+  "Looking from angle A, the side across from it is BC = 5: the opposite.",
+  "The side next to A that is not the hypotenuse is AC = 12: the adjacent."
+ ],
+ "points": {
+  "C": [
+   0,
+   0
+  ],
+  "A": [
+   12,
+   0
+  ],
+  "B": [
+   0,
+   5
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "C",
+    "A",
+    "B"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "angles": [
+  {
+   "at": "C",
+   "from": "A",
+   "to": "B",
+   "right": true,
+   "colour": "ink"
+  },
+  {
+   "at": "A",
+   "from": "B",
+   "to": "C",
+   "colour": "a2",
+   "r": 34
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "C",
+   "value": 12,
+   "label": "adj 12",
+   "side": 1
+  },
+  {
+   "a": "B",
+   "b": "C",
+   "value": 5,
+   "label": "opp 5",
+   "side": 1
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "value": 13,
+   "label": "hyp 13",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "labelAt": {
+  "C": [
+   -12,
+   14
+  ],
+  "A": [
+   14,
+   12
+  ],
+  "B": [
+   0,
+   -16
+  ]
+ },
+ "view": {
+  "x": [
+   -9,
+   18
+  ],
+  "y": [
+   -2.5,
+   7.5
+  ]
+ },
+ "height": [
+  330,
+  330
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "A",
+   "b": "B",
+   "value": "sqrt(144+25)",
+   "name": "AB = √(12² + 5²) = 13"
+  }
+ ],
+ "fromLesson": [
+  "AB = 13",
+  "BC = 5",
+  "AC = 12"
+ ]
+}

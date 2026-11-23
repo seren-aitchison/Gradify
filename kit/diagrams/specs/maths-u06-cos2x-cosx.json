@@ -1,0 +1,128 @@
+{
+ "id": "maths-u06-cos2x-cosx",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Double Angle Formulas",
+ "title": "Where cos 2x meets cos x",
+ "caption": "Solutions of cos 2x = cos x are the crossings of the two graphs: at x = 0°, where both are 1, and at x = 120° and 240°, where both equal −½. They match cos x = −½ and cos x = 1 from the factorised equation.",
+ "alt": "The graphs of cos x and cos 2x from 0° to 360°, which cross at 0°, 120° and 240°.",
+ "description": [
+  "cos x makes one cycle and cos 2x makes two over 0° to 360°.",
+  "At x = 0° both equal 1.",
+  "At 120° and at 240° both equal −½.",
+  "Those are the solutions 0°, 120° and 240°."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -1.3,
+   1.4
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "cos(0.017453292519943295*x)",
+   "colour": "a1",
+   "label": "cos x",
+   "labelAt": [
+    262,
+    0.56
+   ]
+  },
+  {
+   "expr": "cos(0.017453292519943295*2*x)",
+   "colour": "a2",
+   "label": "cos 2x",
+   "labelAt": [
+    10,
+    -0.8
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "0°",
+   "colour": "a4",
+   "dx": 10,
+   "dy": -10,
+   "anchor": "start"
+  },
+  {
+   "x": 120,
+   "y": -0.5,
+   "label": "120°",
+   "colour": "a4",
+   "dx": 0,
+   "dy": 22,
+   "anchor": "middle"
+  },
+  {
+   "x": 240,
+   "y": -0.5,
+   "label": "240°",
+   "colour": "a4",
+   "dx": 0,
+   "dy": 22,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "cos(0.017453292519943295*x)",
+   "b": "cos(0.017453292519943295*2*x)",
+   "x": 0,
+   "y": 1,
+   "name": "cos 0° = cos 0° = 1"
+  },
+  {
+   "type": "intersect",
+   "a": "cos(0.017453292519943295*x)",
+   "b": "cos(0.017453292519943295*2*x)",
+   "x": 120,
+   "y": -0.5,
+   "name": "cos 120° = cos 240° = -0.5"
+  },
+  {
+   "type": "intersect",
+   "a": "cos(0.017453292519943295*x)",
+   "b": "cos(0.017453292519943295*2*x)",
+   "x": 240,
+   "y": -0.5,
+   "name": "cos 240° = cos 480° = -0.5"
+  }
+ ],
+ "fromLesson": [
+  "x = 0°, 120° or 240°"
+ ]
+}

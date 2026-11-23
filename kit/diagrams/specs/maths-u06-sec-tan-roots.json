@@ -1,0 +1,110 @@
+{
+ "id": "maths-u06-sec-tan-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Secant",
+ "title": "The two tan values from the quadratic",
+ "caption": "Replacing sec²x gives 2tan²x − 3tan x − 1 = 0, so tan x = (3 ± √17)/4 ≈ 1.781 or -0.281. On 0° ≤ x < 180° each value meets the tangent graph once: x ≈ 60.7° and x ≈ 164.3°.",
+ "alt": "The tangent graph from 0° to 180° in two branches. The line y = 1.781 meets the first branch at about 60.7° and the line y = −0.281 meets the second branch at about 164.3°.",
+ "description": [
+  "The quadratic in tan x has roots tan x ≈ 1.781 and tan x ≈ −0.281.",
+  "tan x = 1.781 gives x ≈ 60.7° on the first branch.",
+  "tan x = −0.281 is negative, so it lies on the second branch: x = 180° − 15.7° ≈ 164.3°."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   -3,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   45,
+   90,
+   135,
+   180
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  45,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "tan(0.017453292519943295*x)",
+   "colour": "a1",
+   "domain": [
+    0.4,
+    179.6
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 1.7807764064044151,
+   "label": "y = 1.781"
+  },
+  {
+   "y": -0.28077640640441515,
+   "label": "y = −0.281"
+  }
+ ],
+ "points": [
+  {
+   "x": 60.6834888873168,
+   "y": 1.7807764064044151,
+   "label": "60.7°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 164.3165111126832,
+   "y": -0.28077640640441515,
+   "label": "164.3°",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -14,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 60.6834888873168,
+   "y": 1.7807764064044151,
+   "name": "tan 60.7° = (3 + √17)/4"
+  },
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 164.3165111126832,
+   "y": -0.28077640640441515,
+   "name": "tan 164.3° = (3 − √17)/4"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ 60.7° or x ≈ 164.3°"
+ ]
+}

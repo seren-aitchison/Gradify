@@ -1,0 +1,151 @@
+{
+ "id": "maths-u06-cot-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Cotangent",
+ "title": "3cot²x = 1 gives tan x = ±√3",
+ "caption": "cot²x = 1/3 means tan²x = 3, so tan x = √3 or −√3. Each line meets the tangent graph twice in a turn: x = 60° and 240° for +√3, 120° and 300° for −√3.",
+ "alt": "The tangent graph from 0° to 360° with the lines y = √3 and y = −√3 each crossing it twice, at 60°, 240° and at 120°, 300°.",
+ "description": [
+  "3 cot²x = 1 gives cot²x = 1/3, so tan²x = 3.",
+  "tan x = √3 ≈ 1.73 at 60° and 240°.",
+  "tan x = −√3 at 120° and 300°.",
+  "That is four solutions in one turn."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -4,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -3,
+   -1,
+   1,
+   3
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "tan(0.017453292519943295*x)",
+   "colour": "a1",
+   "domain": [
+    0.4,
+    179.6
+   ]
+  },
+  {
+   "expr": "tan(0.017453292519943295*x)",
+   "colour": "a1",
+   "domain": [
+    180.4,
+    359.6
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 1.7320508075688772,
+   "label": "y = √3"
+  },
+  {
+   "y": -1.7320508075688772,
+   "label": "y = −√3"
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 1.7320508075688772,
+   "label": "60°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 120,
+   "y": -1.7320508075688772,
+   "label": "120°",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 20,
+   "anchor": "start"
+  },
+  {
+   "x": 240,
+   "y": 1.7320508075688772,
+   "label": "240°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 300,
+   "y": -1.7320508075688772,
+   "label": "300°",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 20,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 60,
+   "y": 1.7320508075688772,
+   "name": "tan 60° = √3"
+  },
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 120,
+   "y": -1.7320508075688772,
+   "name": "tan 120° = −√3"
+  },
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 240,
+   "y": 1.7320508075688772,
+   "name": "tan 240° = √3"
+  },
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 300,
+   "y": -1.7320508075688772,
+   "name": "tan 300° = −√3"
+  }
+ ],
+ "fromLesson": [
+  "x = 60°, 120°, 240°, 300°"
+ ]
+}

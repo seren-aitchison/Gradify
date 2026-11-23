@@ -21,6 +21,7 @@ X: In triangle ABC, the right angle is at C, AB = 13, BC = 5 and AC = 12. For th
 > The hypotenuse is opposite the right angle: AB = 13
 > Opposite angle A is side BC = 5
 > Adjacent to angle A (not the hypotenuse) is AC = 12
+D: maths-u06-triangle-5-12-13
 K: Label H, O and A relative to the chosen angle; trigonometry links angles to ratios of sides.
 !: Labelling sides before choosing the angle, or calling the hypotenuse the adjacent side.
 Q: Which side is always the longest in a right-angled triangle? | The hypotenuse.
@@ -52,6 +53,7 @@ X: A ramp rises 1.2 m over a horizontal distance of 8 m. Find the angle of the r
 > tan θ = 1.2/8 = 0.15, so θ = tan^{−1}(0.15) ≈ 8.5°
 > Slope length = √(8^{2} + 1.2^{2}) = √65.44
 > ≈ 8.09 m
+D: maths-u06-ramp
 - Rounding too early spoils later steps: keep the full calculator value until the final answer.
 P: **Investigate with the lab.** Choose Right-angled trigonometry. Label opposite, adjacent and hypotenuse before choosing sin, cos or tan.
 IX: practice
@@ -87,6 +89,7 @@ X: Solve sin x = −0.6 for 0° ≤ x < 360°.
 > The principal value is sin^{−1}(−0.6) ≈ −36.9°, outside the range
 > Sine is negative in the third and fourth quadrants: x = 180° + 36.9° and x = 360° − 36.9°
 > x ≈ 216.9° or x ≈ 323.1°
+D: maths-u06-sin-minus-06
 - On the graph, a horizontal line y = k (with −1 < k < 1) crosses each cycle twice: that's why there are two solutions per period.
 - Sound waves, alternating current and pendulum swings are all described by sine curves.
 P: **Investigate with the lab.** Turn P round the circle and watch its height trace the sine graph. Find every angle between 0° and 360° where sin θ = 1/2.
@@ -121,6 +124,7 @@ X: Solve 2 cos x + 1 = 0 for 0° ≤ x < 360°.
 > cos x = −½
 > The reference angle is 60°; cosine is negative in the second and third quadrants
 > x = 180° − 60° = 120° or x = 180° + 60° = 240°
+D: maths-u06-cos-minus-half
 - On the graph, cos x = k crosses each 360° cycle twice, symmetrically about 0° and 360°.
 - In a right-angled triangle cos θ = adjacent/hypotenuse, which matches the unit circle definition for acute angles.
 - Engineers use the cosine to find the horizontal component of a force: F cos θ.
@@ -157,6 +161,7 @@ X: Solve 3 sin x = 4 cos x for 0° ≤ x < 360°.
 > Divide by cos x: tan x = 4/3
 > Principal value: tan^{−1}(4/3) ≈ 53.1°
 > Add 180°: x ≈ 53.1° or x ≈ 233.1°
+D: maths-u06-tan-four-thirds
 - In a right-angled triangle tan θ = opposite/adjacent, matching sin θ/cos θ for acute angles.
 - Road signs give gradients as percentages: a 10% hill rises 10 m per 100 m horizontally, so tan θ = 0.1 and θ ≈ 5.7°.
 - tan θ grows without limit as θ approaches 90°, which is why a vertical line has no gradient.
@@ -191,6 +196,7 @@ X: Convert 150° to radians and 2.5 radians to degrees.
 > 150 × π/180 = 5π/6
 > 2.5 × 180/π
 > ≈ 143.2°
+D: maths-u06-radians-150
 - A full circle is 2π ≈ 6.28 radians: just over six radius-lengths of arc fit round the circumference.
 - Calculators have a DEG/RAD mode: check it every time you start a calculation.
 - In radians, the angle swept by a wheel turning through arc s is s/r, which links rolling distance and rotation directly.
@@ -227,6 +233,7 @@ X: Find the exact values of sin, cos and tan of 240°.
 > 240° is in the third quadrant, with reference angle 60°
 > sin 240° = −sin 60° = −√3/2; cos 240° = −cos 60° = −½
 > tan 240° = sin/cos = √3 (positive in the third quadrant)
+D: maths-u06-unit-circle-240
 P: **Investigate with the lab.** Visit all four quadrants and note the signs of sin θ and cos θ in each. Check that the exact values repeat with sign changes.
 IX: trig
 K: The point at angle θ is (cos θ, sin θ); use reference angles and quadrant signs (CAST) for exact values.
@@ -258,6 +265,7 @@ X: A cuboid is 6 cm by 8 cm by 5 cm tall. Find the angle between a space diagona
 > The base diagonal is √(36 + 64) = 10 cm
 > The space diagonal rises 5 cm over 10 cm horizontally: tan θ = 5/10
 > θ = tan^{−1}(0.5) ≈ 26.6°
+D: maths-u06-cuboid-diagonal
 K: Draw the horizontal and the right angle; depression from A to B equals elevation from B to A; in 3D, find the right-angled triangle with the projection.
 !: Measuring the angle of depression from the vertical instead of the horizontal.
 Q: How are angles of elevation and depression between two points related? | They're equal (alternate angles).
@@ -289,6 +297,7 @@ X: In triangle PQR, P = 52°, Q = 71° and r = 15 cm. Find p.
 > R = 180 − 52 − 71 = 57°
 > p/sin 52° = 15/sin 57°
 > p = 15 sin 52°/sin 57° ≈ 14.1 cm
+D: maths-u06-sine-rule
 - The rule follows from dropping a perpendicular from one vertex: the height equals b sin A and also a sin B, so a sin B = b sin A.
 - Surveyors use it in triangulation: measure one baseline and two angles, then compute distances to far points.
 - If sin B comes out greater than 1, no triangle fits the data.
@@ -324,6 +333,7 @@ X: Two ships leave a port. One sails 12 km on a bearing of 040°, the other 15 k
 > The angle between their paths is 110° − 40° = 70°
 > d^{2} = 12^{2} + 15^{2} − 2 × 12 × 15 × cos 70° = 144 + 225 − 123.1
 > d^{2} ≈ 245.9, so d ≈ 15.7 km
+D: maths-u06-ships
 K: a^{2} = b^{2} + c^{2} − 2bc cos A; use it for SAS (a side) or SSS (an angle); it reduces to Pythagoras at 90°.
 !: Calculating b^{2} + c^{2} − 2bc and then multiplying by cos A (do the multiplication first).
 Q: What does the cosine rule become when A = 90°? | Pythagoras' theorem.
@@ -355,6 +365,7 @@ X: Find the area of a triangle with sides 7 cm and 9 cm enclosing an angle of 12
 > Area = ½ × 7 × 9 × sin 120°
 > sin 120° = √3/2
 > Area = 63√3/4 ≈ 27.3 cm^{2}
+D: maths-u06-triangle-area
 - Any side can be the base: use the two sides that meet at the known angle.
 - Land surveyors split irregular fields into triangles and add their areas.
 - For an equilateral triangle of side s, the formula gives (√3/4)s^{2}.
@@ -390,6 +401,7 @@ X: Find the great-circle distance between two points on the equator at longitude
 > φ₁ = φ₂ = 0, so cos d = 0 + 1 × 1 × cos 90° = 0
 > d = 90° = π/2 radians
 > Distance = 6,371 × π/2 ≈ 10,008 km
+D: maths-u06-great-circle
 K: Spherical triangles have arc sides measured as angles; the spherical cosine rule gives great-circle distances.
 !: Using plane trigonometry over long distances on the Earth.
 Q: What are the sides of a spherical triangle? | Arcs of great circles, measured by central angles.
@@ -421,6 +433,7 @@ X: Describe y = 2 cos(x − 30°) − 1 and state its maximum and minimum.
 > Amplitude 2, period 360°, shifted right 30° and down 1
 > Maximum 2 − 1 = 1, at x = 30°
 > Minimum −2 − 1 = −3, at x = 210°
+D: maths-u06-shifted-cosine
 - Read graphs from key points: zeros, maxima and minima every quarter period.
 - Graphing software and the graph explorer let you change a, b, c and d and watch each effect separately.
 - Apply horizontal changes in the right order: for sin(2x + 60°), factorise to sin 2(x + 30°), a shift of 30°, not 60°.
@@ -460,6 +473,7 @@ X: Water depth in a harbour is d = 5 + 3 sin(πt/6) metres, with t in hours. Fin
 > Period = 2π ÷ (π/6) = 12 hours
 > Maximum when sin = 1: d = 5 + 3
 > = 8 m
+D: maths-u06-harbour-depth
 - Non-trigonometric examples: the fractional part of x has period 1; a square wave alternates between two values.
 P: **Investigate with the lab.** Change the frequency B and read the period as 360°/B. Find the B that gives a period of 180°.
 IX: trig
@@ -494,6 +508,7 @@ X: Solve cosec x = −2 for 0° ≤ x < 360°.
 > sin x = −1/2
 > Reference angle 30°; sine is negative in the third and fourth quadrants
 > x = 210° or x = 330°
+D: maths-u06-cosec-minus-2
 - Sketch cosec x from the sine graph: where sin x is small the reciprocal is large, and where sin x = ±1 the curves touch ±1.
 - Each branch is U-shaped (above the axis) or an upside-down U (below), between consecutive asymptotes.
 - Physics example: in Snell's law and the critical angle, cosec appears as 1/sin.
@@ -528,6 +543,7 @@ X: Solve 2 sec^{2} x − 3 tan x − 3 = 0 for 0° ≤ x < 180°.
 > Replace sec^{2} x: 2(1 + tan^{2} x) − 3 tan x − 3 = 0, so 2 tan^{2} x − 3 tan x − 1 = 0
 > tan x = (3 ± √17)/4: tan x ≈ 1.781 or tan x ≈ −0.281
 > x ≈ 60.7° or x ≈ 164.3°
+D: maths-u06-sec-tan-roots
 - Sketch sec x from the cosine graph: asymptotes where cos x = 0, touching ±1 where cos x = ±1.
 - Calculators have no sec button: compute 1/cos x.
 - The name comes from the Latin secare, to cut: in the unit circle, sec θ is the length of a line cutting the circle.
@@ -562,6 +578,7 @@ X: Solve 3 cot^{2} x = 1 for 0° ≤ x < 360°.
 > cot^{2} x = 1/3, so tan^{2} x = 3, so tan x = ±√3
 > tan x = √3: x = 60°, 240°; tan x = −√3: x = 120°, 300°
 > x = 60°, 120°, 240°, 300°
+D: maths-u06-cot-roots
 - Sketch cot x from the tan graph: where tan x has an asymptote, cot x is zero, and vice versa.
 - Each branch decreases from +∞ to −∞ between asymptotes at multiples of 180°.
 - Calculators have no cot button: compute 1/tan x, or cos x/sin x when tan x is undefined.
@@ -597,6 +614,7 @@ X: Find the exact value of cos(arcsin(3/5)).
 > Let θ = arcsin(3/5), so sin θ = 3/5 with θ in [−π/2, π/2], where cos θ ≥ 0
 > cos θ = √(1 − 9/25) = √(16/25)
 > = 4/5
+D: maths-u06-arcsin-triangle
 - On a calculator, sin^{−1} means arcsin, not 1/sin: the notation is easy to misread.
 - Navigation and robotics use atan2(y, x), a two-argument arctan that returns the angle in the correct quadrant.
 K: Inverse trig functions return principal values in restricted ranges; know their derivatives for calculus.
@@ -629,6 +647,7 @@ X: A Ferris wheel of diameter 40 m has its centre 22 m above the ground and turn
 > Amplitude 20, midline 22, period 10, so B = 2π/10 = π/5
 > At t = 0 the rider is at the minimum, so use −cos
 > h(t) = 22 − 20 cos(πt/5) metres
+D: maths-u06-ferris-wheel
 K: Amplitude is half the range, the midline is the average of max and min, B = 2π/period; choose sin or cos to match the start.
 !: Using the full range (max − min) as the amplitude instead of half of it.
 Q: A wave varies between 3 and 11. What are its amplitude and midline? | Amplitude 4, midline y = 7.
@@ -660,6 +679,7 @@ X: Solve 3 sin x + 4 cos x = 2 for 0° ≤ x < 360°.
 > Write as 5 sin(x + 53.13°) = 2, so sin(x + 53.13°) = 0.4
 > x + 53.13° = 23.58° + 360° = 383.58°, or 180° − 23.58° = 156.42°
 > x ≈ 103.3° or x ≈ 330.4°
+D: maths-u06-harmonic-roots
 - The angle α is called the phase shift: it tells you how far the combined wave is ahead of a pure sine wave.
 K: a sin x + b cos x = R sin(x + α) with R = √(a^{2} + b^{2}); maximum R; use it to solve equations.
 !: Taking R = a + b instead of √(a^{2} + b^{2}).
@@ -724,6 +744,7 @@ X: Find the exact value of cos 75°.
 > cos(45° + 30°) = cos 45° cos 30° − sin 45° sin 30°
 > = (√2/2)(√3/2) − (√2/2)(½)
 > = (√6 − √2)/4
+D: maths-u06-angle-75
 - Setting A = B gives the double angle formulas (next lesson).
 - Setting A = 90° gives the co-function rules: sin(90° − B) = cos B and cos(90° − B) = sin B.
 - The tan formula is undefined when tan A tan B = 1, where A + B = 90°.
@@ -758,6 +779,7 @@ X: Solve cos 2x = cos x for 0° ≤ x < 360°.
 > Use cos 2x = 2 cos^{2} x − 1: 2 cos^{2} x − cos x − 1 = 0
 > (2 cos x + 1)(cos x − 1) = 0, so cos x = −½ or cos x = 1
 > x = 0°, 120° or 240°
+D: maths-u06-cos2x-cosx
 - Write sin 2x as 2 sin x cos x to factorise equations; never divide away a common factor.
 - Triple angle formulas follow too: sin 3A = 3 sin A − 4 sin^{3} A.
 K: sin 2A = 2 sin A cos A; cos 2A has three forms; use power reduction for integrals.
@@ -790,6 +812,7 @@ X: Find the exact value of cos 15° using a half angle formula.
 > cos^{2} 15° = (1 + cos 30°)/2 = (1 + √3/2)/2 = (2 + √3)/4
 > 15° is acute, so cos 15° is positive
 > cos 15° = √(2 + √3)/2 (equal to (√6 + √2)/4)
+D: maths-u06-half-angle-15
 - Example: tan 22.5° = sin 45°/(1 + cos 45°) = √2 − 1.
 - The half angle formulas are just the double angle formulas read backwards, with A replaced by A/2.
 K: Half angle formulas come from cos 2A; choose the sign by the quadrant; t = tan(x/2) rationalises trig expressions.
@@ -822,6 +845,7 @@ X: Solve 2 cos^{2} x + 3 sin x = 3 for 0° ≤ x < 360°.
 > Replace cos^{2} x: 2(1 − sin^{2} x) + 3 sin x = 3, so 2 sin^{2} x − 3 sin x + 1 = 0
 > (2 sin x − 1)(sin x − 1) = 0, so sin x = ½ or sin x = 1
 > x = 30°, 90° or 150°
+D: maths-u06-quadratic-in-sin
 K: Reduce to one function of one angle, factorise, find all solutions in the interval; adjust the interval for multiple angles.
 !: Solving sin 2x = k and halving only the first solution, missing the others.
 Q: How many solutions does sin 3x = 0.2 have in 0° ≤ x < 360°? | 6.
@@ -852,6 +876,7 @@ X: Solve tan x < 1 for 0° ≤ x < 180°, x ≠ 90°.
 > The boundary is tan x = 1 at x = 45°
 > On 0° ≤ x < 90°, tan x < 1 when x < 45°; on 90° < x < 180°, tan x is negative, so always < 1
 > 0° ≤ x < 45° or 90° < x < 180°
+D: maths-u06-tan-inequality
 - In radians, give interval ends as exact multiples of π where possible.
 - A sketch avoids most mistakes: mark the line y = k and shade where the curve is above or below.
 K: Find boundaries from the equation, then use the graph; watch asymptotes and include boundaries only for ≤ or ≥.
@@ -884,6 +909,7 @@ X: Solve cosh x = 2.
 > (e^{x} + e^{−x})/2 = 2, so e^{x} + e^{−x} = 4
 > Let u = e^{x}: u^{2} − 4u + 1 = 0, so u = 2 ± √3
 > x = ln(2 ± √3) = ±ln(2 + √3) ≈ ±1.317
+D: maths-u06-cosh-2
 - Unlike trig functions, hyperbolic functions aren't periodic for real x.
 K: sinh and cosh are combinations of e^{x} and e^{−x}; cosh^{2} − sinh^{2} = 1; derivatives have no minus signs.
 !: Using cos^{2} + sin^{2} = 1 for hyperbolic functions instead of cosh^{2} − sinh^{2} = 1.
@@ -916,6 +942,7 @@ X: Find the exact value of arsinh(3/4).
 > arsinh x = ln(x + √(x^{2} + 1))
 > √(9/16 + 1) = √(25/16) = 5/4
 > arsinh(3/4) = ln(3/4 + 5/4) = ln 2
+D: maths-u06-arsinh
 - Example: arcosh 2 = ln(2 + √3) ≈ 1.317, matching the solution of cosh x = 2.
 - Calculators label these sinh^{−1}, cosh^{−1} and tanh^{−1}.
 - In special relativity, rapidity is artanh(v/c), which makes velocities add simply.
@@ -951,6 +978,7 @@ X: For f(x) = x on (−π, π), find b₁.
 > b₁ = (1/π) ∫_{−π}^{π} x sin x dx; by parts, ∫ x sin x dx = −x cos x + sin x
 > [−x cos x + sin x]_{−π}^{π} = (π + 0) − (−π + 0) = 2π
 > So b₁ = 2π/π = 2
+D: maths-u06-fourier-b1
 K: Coefficients come from integrals against cos nx and sin nx; even functions give cosines, odd functions sines; partial sums converge except for overshoot at jumps.
 !: Integrating over the wrong interval or forgetting the 1/π factor.
 Q: Which terms appear in the Fourier series of an odd function? | Only sine terms.
@@ -981,6 +1009,7 @@ X: A signal is s(t) = 3 sin(2π × 50t) + sin(2π × 120t). Describe its spectru
 > It's a sum of two pure sine waves
 > One at 50 Hz with amplitude 3 and one at 120 Hz with amplitude 1
 > The spectrum has two spikes, at 50 Hz and 120 Hz, the first three times as tall
+D: maths-u06-spectrum
 K: Fourier analysis decomposes signals into frequencies; the FFT computes spectra fast; it underpins signal processing and imaging.
 !: Expecting a short pulse to have a narrow spectrum: short in time means wide in frequency.
 Q: What does the FFT compute? | The discrete Fourier transform, in O(n log n) time.
