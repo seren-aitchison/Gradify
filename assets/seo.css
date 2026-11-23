@@ -1,0 +1,62 @@
+/* Gradify's search pages: free tools, guides, comparisons, the glossary, study plans, topic pages and templates
+   (written by scripts/build-seo.mjs). Readable line length, the site's tokens, and nothing that shifts layout. */
+main.seo { max-width: 860px; margin: 0 auto; padding: 32px 16px 72px; line-height: 1.65; }
+main.seo h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -.02em; line-height: 1.12; margin: 8px 0 12px; }
+main.seo h2 { font-size: 23px; letter-spacing: -.01em; margin: 40px 0 10px; line-height: 1.25; }
+main.seo h3 { font-size: 18px; margin: 26px 0 6px; }
+main.seo p, main.seo li, main.seo td, main.seo dd { color: var(--mute); }
+main.seo b, main.seo strong, main.seo th, main.seo dt { color: var(--fg); }
+main.seo a { color: inherit; text-underline-offset: 3px; }
+main.seo a.btn { text-decoration: none; }
+main.seo .lead { font-size: 19px; color: var(--fg); }
+main.seo .answer { border-left: 3px solid #f055dd; padding: 4px 0 4px 14px; color: var(--fg); font-size: 17px; }
+main.seo .scroll { overflow-x: auto; }
+main.seo table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 10px 0; }
+main.seo th, main.seo td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+main.seo .note { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--panel); }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 0; padding: 0; margin: 0 0 6px; font-size: 13px; }
+.crumbs li { color: var(--faint); }
+.crumbs li + li::before { content: "›"; margin: 0 8px; color: var(--faint); }
+.crumbs a { color: var(--mute); }
+.updated { font-size: 13px; color: var(--faint) !important; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: 14px 0; padding: 0; list-style: none; }
+.cards > li, .card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 14px 16px; }
+.cards > li a { font-weight: 600; color: var(--fg); }
+.cards > li span { display: block; font-size: 14px; margin-top: 4px; }
+.flash { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); margin: 8px 0; }
+.flash summary { cursor: pointer; padding: 12px 14px; color: var(--fg); font-weight: 500; }
+.flash p { padding: 0 14px 12px; margin: 0; }
+.faq-block details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.faq-block summary { cursor: pointer; color: var(--fg); font-weight: 600; padding: 10px 0; }
+.related ul { padding-left: 18px; } .related li span { display: block; font-size: 14px; }
+.cta-box, .optin { margin: 44px 0 0; border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 20px; background: var(--panel); }
+.cta-box h2, .optin h2 { margin-top: 0 !important; }
+.optin-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.optin input, .tool input, .tool select { font: inherit; color: var(--fg); background: var(--inset); border: 1px solid var(--line-strong); border-radius: 10px; padding: 10px 12px; min-width: 0; }
+.optin input { flex: 1 1 220px; }
+.share-row { margin-top: 36px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.share-btn, .tool button.ghost { font: inherit; font-size: 14px; color: var(--fg); background: transparent; border: 1px solid var(--line-strong); border-radius: 99px; padding: 8px 16px; cursor: pointer; }
+.share-msg, .optin-msg { font-size: 14px; }
+/* tools */
+.tool { border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel); padding: 18px; margin: 18px 0; }
+.tool label { display: block; font-size: 14px; color: var(--fg); margin: 0 0 4px; }
+.tool .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.tool input, .tool select { width: 100%; }
+.tool .rows { display: grid; gap: 8px; margin: 10px 0; }
+.tool .row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 8px; align-items: end; }
+.tool .row.two { grid-template-columns: 1fr 1fr auto; }
+.tool .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.tool .result { margin-top: 16px; padding: 14px; border-radius: 12px; background: var(--inset); color: var(--fg); min-height: 1.6em; }
+.tool .result .big { display: block; font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+.tool textarea { width: 100%; font: 13px/1.5 var(--mono); color: var(--fg); background: var(--inset); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+.tool button.icon { background: none; border: 1px solid var(--line); color: var(--mute); border-radius: 8px; padding: 9px 11px; cursor: pointer; }
+@media (max-width: 560px) { .tool .row { grid-template-columns: 1fr 1fr; } }
+/* printable templates */
+.printable { background: #fff; color: #111; border-radius: 10px; padding: 18px; overflow-x: auto; }
+.printable table { color: #111; } .printable th, .printable td { color: #111 !important; border: 1px solid #bbb; height: 34px; }
+.printable .foot { font-size: 11px; color: #555 !important; margin-top: 8px; }
+@media print {
+  body > .wrap, .crumbs, .updated, .share-row, .cta-box, .optin, .no-print, .related, .faq-block { display: none !important; }
+  main.seo { max-width: none; padding: 0; } .printable { padding: 0; }
+  body { background: #fff !important; }
+}
