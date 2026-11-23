@@ -41,7 +41,8 @@ scrolls), `.ds-stats`, and `.ds-reveal` (a calm fade-up, `kit/ui/reveal.js`). Ev
 comes from a token (status colours are AA on their own backgrounds in both themes; input borders use `--ds-field` and
 focus rings `--ds-focus`, both at least 3:1 against every surface; `--ds-line` is for decorative separators only) and nothing uses `!important`;
 `tests/design-tokens.test.mjs` checks both. Homepage-only overrides in `assets/styles.css` are not part of the system
-and are never copied into subject sites. The review page is `labs/design-system/` (never published).
+and are never copied into subject sites. The review page is `labs/design-system/` (never published). How to use each component (markup, phones, light and dark, keyboard,
+screen readers, error and empty states) is in `docs/DESIGN-SYSTEM-COMPONENTS.md`.
 
 **Appearance.** Every page follows the device's light or dark setting by default (`kit/core/theme-boot.js`). The
 sun/moon button picks light or dark for this device, and **Reading and accessibility → Appearance** offers

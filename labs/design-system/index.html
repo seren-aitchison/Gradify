@@ -41,7 +41,7 @@
 <main class="g-wrap" id="top">
   <span class="ds-eyebrow accent">Gradify Design System</span>
   <h1 class="ds-title" style="margin:0;text-align:left">Shared components</h1>
-  <p class="ds-lead" style="margin-left:0;text-align:left">The foundation every Gradify page will share. Each part uses only the design tokens, so light and dark come for free. Nothing here is on a subject site yet.</p>
+  <p class="ds-lead" style="margin-left:0;text-align:left">The foundation every Gradify page will share. Each part uses only the design tokens, so light and dark come for free. Nothing here is on a subject site yet. How to use each one: <code>docs/DESIGN-SYSTEM-COMPONENTS.md</code>.</p>
   <p class="g-theme" role="group" aria-label="Theme"><a href="?">Device</a><a href="?theme=light">Light</a><a href="?theme=dark">Dark</a></p>
 
   <h2 id="colour">Colour</h2>
@@ -72,6 +72,7 @@
     <article class="ds-card"><span class="ds-badge accent" style="align-self:start">Live</span><h3><a class="ds-card-link" href="#top">A-level Biology</a></h3><p>Cells, genetics, ecosystems and the practical endorsement.</p></article>
     <article class="ds-card"><span class="ds-badge success" style="align-self:start">74% mastered</span><h3><a class="ds-card-link" href="#top">GCSE Maths</a></h3><p>Higher tier, every topic with worked examples and exam questions.</p></article>
     <article class="ds-card"><span class="ds-badge" style="align-self:start">Coming soon</span><h3>Law</h3><p>A card without a link stays still.</p></article>
+    <article class="ds-card"><span class="ds-badge warning" style="align-self:start">Due today</span><h3><a class="ds-card-link" href="#top">Organic chemistry</a></h3><p>A second control stays clickable on its own.</p><button class="ds-btn secondary" type="button" id="g-pin" style="align-self:start;min-height:36px;padding:0 14px;font-size:14px" aria-pressed="false">Pin</button></article>
   </div>
 
   <h2>Fields and search</h2>
@@ -79,6 +80,7 @@
   <div class="g-grid">
     <div class="ds-field"><label for="g-email">Email</label><input class="ds-input" id="g-email" type="email" placeholder="you@example.com" aria-describedby="g-email-hint"><p class="ds-hint" id="g-email-hint">We'll send one link, nothing else.</p></div>
     <div class="ds-field"><label for="g-name">Course name</label><input class="ds-input" id="g-name" value="" aria-invalid="true" aria-describedby="g-name-err"><p class="ds-error" id="g-name-err">Give the course a name.</p></div>
+    <div class="ds-field"><label class="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="ds-sr-only">Search courses</span><input class="ds-input" type="search" value="astro" id="g-search2"></label><p class="ds-hint" role="status">0 courses</p></div>
     <div class="ds-field"><span class="ds-label" id="g-search-l">Search</span><label class="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="ds-input" type="search" placeholder="Search subjects" aria-labelledby="g-search-l"></label></div>
   </div>
 
@@ -98,6 +100,8 @@
   <h2>Empty state</h2>
   <p>Says why there's nothing here and offers the next step.</p>
   <div class="ds-empty"><h3>No bookmarks yet</h3><p>Bookmark any page in a course and it'll wait for you here.</p><a class="ds-btn secondary" href="#top">Browse courses</a></div>
+
+  <div class="ds-empty" style="margin-top:var(--ds-space-4)"><h3>No courses match "astro"</h3><p>Try a shorter word, or browse every subject.</p><button class="ds-btn secondary" type="button">Clear the search</button></div>
 
   <h2 id="editorial">Editorial (already on the homepage)</h2>
   <p>Hero, lead, spectrum phrase, tiles and stats from the reviewed homepage.</p>
@@ -120,6 +124,7 @@
 </footer>
 <script>
   var q = new URLSearchParams(location.search).get("theme") || "";
+  var pin = document.getElementById("g-pin"); pin.addEventListener("click", function () { var on = pin.getAttribute("aria-pressed") !== "true"; pin.setAttribute("aria-pressed", String(on)); pin.textContent = on ? "Pinned" : "Pin"; });
   document.querySelectorAll(".g-theme a").forEach(function (a) { if (a.getAttribute("href") === (q ? "?theme=" + q : "?")) a.setAttribute("aria-current", "true"); });
 </script>
 </body>

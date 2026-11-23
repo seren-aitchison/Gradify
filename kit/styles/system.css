@@ -122,6 +122,8 @@ body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
 .ds-card p { margin: 0; color: var(--ds-fg-2); font-size: 15px; line-height: 1.47; }
 .ds-card-link { color: inherit; text-decoration: none; }
 .ds-card-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+/* any other control in a clickable card sits above the card-wide link, so it stays clickable on its own */
+.ds-card :is(a, button, input, select, textarea, summary, label):not(.ds-card-link) { position: relative; z-index: 1; }
 .ds-card:has(.ds-card-link):hover { transform: translateY(-2px); box-shadow: 0 18px 40px -24px rgba(0, 0, 0, .45); }
 .ds-card:has(.ds-card-link:focus-visible) { outline: 3px solid var(--ds-focus); outline-offset: 3px; }
 .ds-card-link:focus-visible { outline: none; }
@@ -171,9 +173,12 @@ body.ds :is(h1, h2, h3) { font-family: var(--ds-font-display); }
 .ds-empty p { margin: 0; max-width: 32em; }
 .ds-empty .ds-btn { margin-top: var(--ds-space-2); }
 
+/* text for screen readers only (a label the context makes visually obvious, a unique name for "Learn more") */
+.ds-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
 /* the shared focus ring for interface components */
 .ds-header a:focus-visible, .ds-footer a:focus-visible { outline: 3px solid var(--ds-focus); outline-offset: 2px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { .ds-card, .ds-input { transition: none; } .ds-card:has(.ds-card-link):hover { transform: none; } }
 :root[data-motion="reduce"] .ds-card:has(.ds-card-link):hover { transform: none; }
-@media (max-width: 640px) { .ds-header { flex-wrap: wrap; gap: 0 var(--ds-space-3); padding-inline: var(--ds-space-4); } .ds-header .ds-btn { margin-left: auto; }
+@media (max-width: 640px) { .ds-header { flex-wrap: wrap; gap: 0 var(--ds-space-3); padding-inline: var(--ds-space-4); } .ds-header .ds-btn { margin-left: auto; min-height: 44px; }
   .ds-header nav { order: 3; flex-basis: 100%; margin: 0 calc(-1 * var(--ds-space-4)); padding-inline: var(--ds-space-4); gap: var(--ds-space-5); -webkit-mask-image: linear-gradient(90deg, black 85%, transparent); mask-image: linear-gradient(90deg, black 85%, transparent); } .ds-footer { padding-inline: var(--ds-space-4); } }
