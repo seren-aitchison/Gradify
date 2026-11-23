@@ -51,7 +51,8 @@ async function landed(p, href) {
         if (!want) { row.ok = card.tag === "DIV" && !card.href; row.result = row.ok ? "not linked (no destination yet)" : `✗ rendered a link to ${card.href} for a card with no destination`; rows.push(row); continue; }
         if (card.href !== want) { row.ok = false; row.result = `✗ rendered href ${card.href}, declared ${want}`; rows.push(row); continue; }
         await p.goto(`${B}/${dir}/`); await p.waitForTimeout(700);
-        const el = p.locator(".sm-topic").filter({ hasText: title }).first();
+        // match the card by its exact title (a description can contain another card's title: "spreading risk")
+        const el = p.locator(".sm-topic").filter({ has: p.locator("b", { hasText: new RegExp(`^${title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`) }) }).first();
         await el.scrollIntoViewIfNeeded(); await el.click(); await p.waitForTimeout(2200);
         const expected = new URL(want, `${B}/${dir}/`);
         const at = new URL(p.url());
