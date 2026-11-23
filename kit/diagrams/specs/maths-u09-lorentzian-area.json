@@ -1,0 +1,98 @@
+{
+ "id": "maths-u09-lorentzian-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u09",
+ "lesson": "Complex Analysis",
+ "title": "The area the residue gives: π",
+ "caption": "The residue calculation gives ∫ dx/(1 + x²) = 2πi × 1/(2i) = π: exactly the area under this bell-shaped curve, which tails off so fast that almost all of it lies between −6 and 6.",
+ "alt": "A bell-shaped curve 1/(1 + x²) with height 1 at x = 0, shaded between x = −6 and 6, tailing off to zero on both sides.",
+ "description": [
+  "The integrand 1/(1 + x²) has height 1 at x = 0 and falls towards 0 on both sides.",
+  "The residue at the pole i is 1/(2i), so the integral is 2πi × 1/(2i) = π.",
+  "The shaded area under the curve is that number: π ≈ 3.14."
+ ],
+ "range": {
+  "x": [
+   -6,
+   6
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   -6,
+   -4,
+   -2,
+   2,
+   4,
+   6
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  2,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+x^2)",
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "1/(1+x^2)",
+   "from": -6,
+   "to": 6,
+   "colour": "a1",
+   "opacity": 0.18
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 1,
+   "label": "1",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "1/(1+x^2)",
+   "from": -1000,
+   "to": 1000,
+   "value": 3.141592653589793,
+   "tol": 0.005,
+   "name": "the area under 1/(1 + x²) is π (computed out to ±1,000, where the rest is 0.002)"
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+x^2)",
+   "x": 0,
+   "y": 1,
+   "name": "the curve is 1 at x = 0"
+  }
+ ],
+ "fromLesson": [
+  "1/(2i)",
+  "= π"
+ ]
+}

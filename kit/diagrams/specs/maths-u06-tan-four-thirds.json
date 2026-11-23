@@ -1,0 +1,114 @@
+{
+ "id": "maths-u06-tan-four-thirds",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Tangent",
+ "title": "tan x = 4/3 repeats every 180°",
+ "caption": "The tangent graph repeats every 180°, so the line y = 4/3 meets it at x ≈ 53.1° and again 180° later at x ≈ 233.1°.",
+ "alt": "The tangent graph from 0° to 360° in three branches with the line y = 4/3 crossing the first and third branches at about 53.1° and 233.1°.",
+ "description": [
+  "The tangent graph has vertical asymptotes at 90° and 270° and repeats every 180°.",
+  "The line y = 4/3 crosses the first branch at tan⁻¹(4/3) ≈ 53.1°.",
+  "It crosses the third branch exactly 180° later, at ≈ 233.1°."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -4,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "tan(0.017453292519943295*x)",
+   "colour": "a1",
+   "domain": [
+    0.4,
+    179.6
+   ]
+  },
+  {
+   "expr": "tan(0.017453292519943295*x)",
+   "colour": "a1",
+   "domain": [
+    180.4,
+    359.6
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 1.3333333333333333,
+   "label": "y = 4/3"
+  }
+ ],
+ "points": [
+  {
+   "x": 53.13010235415598,
+   "y": 1.3333333333333333,
+   "label": "53.1°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 233.13010235415598,
+   "y": 1.3333333333333333,
+   "label": "233.1°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 53.13010235415598,
+   "y": 1.3333333333333333,
+   "name": "tan 53.1° = 4/3"
+  },
+  {
+   "type": "point",
+   "expr": "tan(0.017453292519943295*x)",
+   "x": 233.13010235415598,
+   "y": 1.3333333333333333,
+   "name": "tan 233.1° = 4/3"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ 53.1° or x ≈ 233.1°"
+ ]
+}

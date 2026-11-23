@@ -1,75 +1,135 @@
 # Maths diagrams: handover
 
-Read with `kit/diagrams/maths/UNIT-AGENT.md` (the per-unit recipe) and `kit/diagrams/BUILDERS.md`.
+Updated 23 Nov 2026 by lead session 01PJjzVE. **New here? Read `kit/diagrams/LEAD.md` first** (setup, launching agents,
+landing, updating this file). Agents follow `UNIT-AGENT.md` in this folder; the bar is `kit/diagrams/BUILDERS.md`.
 
-## Done (first release to main)
+## Next step
 
-Renderer names are global: check `grep -n "register(" kit/diagrams/*-renderers*.js` before adding one.
+1. Check the claims table below; the units in it may have landed since this was written:
+   `git log origin/main --oneline -- kit/diagrams/plans/maths/` and `node scripts/diagrams/unit-status.mjs maths`.
+2. Units not started and not claimed, in suggested order: u16, u18, u19, u20, u21, u22, u23, u24, u25, u26, u27, u28,
+   u29, then u15. Give one agent three at a time (the owner's instruction: one maths agent and one physics agent,
+   three units each, push after every unit).
+3. u15 Graph Theory and Networks is mostly drawings of networks, and there is no network renderer yet (see
+   "Renderers"); build that renderer before u15 if possible, otherwise its lessons become `null, "needs renderer …"`.
 
-- Renderers (each recomputes the maths it shows, plus a layout check: every label inside the viewBox and not
-  overprinting, at both widths; parts of a bar must fit their label; `fromLesson` phrases must be in the lesson's notes):
-  - `kit/diagrams/maths-renderers.js`: number-line, sequence, factor-tree, bar-model, venn (counts, probabilities, HCF/LCM
-    products, nested ℕ⊂ℤ⊂ℚ⊂ℝ), prob-tree
-  - `kit/diagrams/maths-renderers-2.js`: geometry (also draws vectors; the renderer name `vectors` is physics'), transform
-  - `kit/diagrams/maths-renderers-3.js`: histogram, boxplot, scatter, barchart, distribution
-  - `kit/diagrams/maths-core.js` (exact fractions, stats, distributions, geometry), `kit/diagrams/maths-layout.js`
-- Tests: `tests/maths-diagrams.test.mjs` (core maths against known answers; for every renderer a correct spec passes at
-  both widths and a spec with one wrong number fails).
-- Tooling: `scripts/diagrams/maths/spec.mjs` (mk), `place.mjs` (D: after the worked example), `registry.mjs`
-  (updateRegistry for maths), batch `u01.mjs`.
-- Plan: `kit/diagrams/plans/maths.mjs` = concat of `plans/maths/u01..u29.mjs`; only u01 is filled.
-- Unit 1 complete: 17 diagrams placed (`maths-u01-*`), all checks pass, status `validated` (no subject review yet).
+## Status (`node scripts/diagrams/unit-status.mjs maths`, 23 Nov 2026)
 
-## Coverage (`node scripts/diagrams/coverage.mjs maths`)
+| unit | title | status | lessons | planned | diagrams (`maths-uNN-*`) | lessons with a lab | lessons with no visual | failing |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| u01 | Number and Arithmetic | done | 29 | 29 | 17 | 11 | 7 | 0 |
+| u02 | Number Theory and Cryptography | done | 36 | 36 | 8 | 11 | 17 | 0 |
+| u03 | Algebra | done | 45 | 45 | 31 | 14 | 12 | 0 |
+| u04 | Abstract Algebra | not started | 22 | 0 | 0 | 0 | 0 | 0 |
+| u05 | Geometry | done | 50 | 50 | 32 | 6 | 16 | 0 |
+| u06 | Trigonometry | not started | 30 | 0 | 0 | 0 | 0 | 0 |
+| u07 | Calculus | not started | 44 | 0 | 0 | 0 | 0 | 0 |
+| u08 | Multivariable and Vector Calculus | done | 22 | 22 | 8 | 2 | 13 | 0 |
+| u09 | Analysis | done | 14 | 14 | 8 | 0 | 6 | 0 |
+| u10 | Differential Equations | done | 46 | 46 | 15 | 2 | 29 | 0 |
+| u11 | Linear Algebra and Matrices | done | 50 | 50 | 13 | 6 | 33 | 0 |
+| u12 | Probability | done | 50 | 50 | 36 | 7 | 12 | 0 |
+| u13 | Statistics | done | 75 | 75 | 33 | 5 | 42 | 0 |
+| u14 | Discrete Mathematics and Combinatorics | done | 23 | 23 | 6 | 0 | 17 | 0 |
+| u15 | Graph Theory and Networks | not started | 44 | 0 | 0 | 0 | 0 | 0 |
+| u16 | Logic, Sets and Foundations | not started | 52 | 0 | 0 | 0 | 0 | 0 |
+| u17 | Topology and Advanced Pure Mathematics | not started | 22 | 0 | 0 | 0 | 0 | 0 |
+| u18 | Optimisation and Operations Research | not started | 43 | 0 | 0 | 0 | 0 | 0 |
+| u19 | Numerical Analysis and Scientific Computing | not started | 37 | 0 | 0 | 0 | 0 | 0 |
+| u20 | Mathematical Modelling and Applied Mathematics | not started | 51 | 0 | 0 | 0 | 0 | 0 |
+| u21 | Financial Mathematics and Economics | not started | 45 | 0 | 0 | 0 | 0 | 0 |
+| u22 | Time Series and Forecasting | not started | 34 | 0 | 0 | 0 | 0 | 0 |
+| u23 | Information Theory and Signal Processing | not started | 24 | 0 | 0 | 0 | 0 | 0 |
+| u24 | Mathematics for Machine Learning and AI | not started | 35 | 0 | 0 | 0 | 0 | 0 |
+| u25 | Control Theory and Systems | not started | 30 | 0 | 0 | 0 | 0 | 0 |
+| u26 | Mathematical Reasoning and Research Methods | not started | 21 | 0 | 0 | 0 | 0 | 0 |
+| u27 | Mathematical Software and Tools | not started | 50 | 0 | 0 | 0 | 0 | 0 |
+| u28 | School and Examination Mathematics | not started | 25 | 0 | 0 | 0 | 0 | 0 |
+| u29 | Everyday and Practical Mathematics | not started | 28 | 0 | 0 | 0 | 0 | 0 |
+| all | | 11 of 29 done | 1077 | 440 | 207 | 64 | 204 | 0 |
 
-29 lessons assessed · 22 with a visual planned · 17 with a passing diagram · 11 with a lab (6 both) · 7 without one by
-design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01 + maths-transformations in u03).
-
-## Unfinished / next steps
-
-1. Units u02–u29: one agent per unit following UNIT-AGENT.md. Suggested order by renderer fit: u05 geometry, u12
-   probability, u13 statistics, u06 trigonometry (geometry + graph), u03 algebra (graph, number-line inequalities),
-   u07 calculus (graph area/slope), u11 linear algebra (transform, vectors).
-2. Renderers not built yet (plan such lessons `null, "needs renderer X"`): networks/graph theory (u15), 3D solids and
-   nets (u05 solid geometry), complex plane / Argand (could use geometry with axes), cumulative frequency curves
-   (graph `series` works), contingency/two-way tables.
-3. Subject review of the 17 u01 diagrams (record in each spec's `review`, rebuild).
-4. Interactive versions: u01 uses existing labs (sieve, practice). A draggable number-line point or a slider for the
-   bar model would need `kit/diagrams/visual.js` (shared): not done, proposal only.
-
-## Commits
-
-- b2450b4c (main): renderers, tests, tooling, Unit 1. Full `npm test` 1089/1089 pass; tests/renderer-names.test.mjs
-  passes (maths renderer names are unique; do not reuse physics' `vectors`).
-
-## Unit rows
-
-- u02 (agent maths-a): 36 lessons assessed; 8 diagrams (geometry 6, graph 1, sequence 1), 10 lab rows (modular 8, sieve 3 incl. shared), 18 null with reasons. All checks pass. Needed renderers: none missing (lattice/Argand drawn with geometry+axes).
-- u11 (Linear Algebra): 50 lessons assessed; 13 diagrams (`maths-u11-*`: geometry vectors, transform, graph), lab `matrix` on 6 lessons;
-  rest null with reasons. Lacks: 3D vectors/planes (10 lessons), conics (u11-32).
-## Unit u12 (Probability) — agent maths-c
-
-50 lessons assessed · 36 diagrams (graph/distribution/barchart/venn/prob-tree/number-line/bar-model) · 7 lab rows (lln, clt, practice) · 12 with a recorded reason, 5 of them needing renderers: two-way table (u12-17), negative binomial in `distribution` (u12-24), 2D density (u12-43), matrix-variate (u12-45), empirical CDF step function (u12-47). Continuous families (gamma, beta, chi-squared, Weibull, log-normal, Pareto, Cauchy, Gumbel) are drawn with `graph` + area checks.
-- u03 (agent maths-a): 45 lessons assessed; 30 diagrams (graph 21, geometry 5, number-line 2, sequence, venn; plus the existing maths-transformations), labs on 16 rows (quadratics, practice, explog, grapher, complex), 14 null with reasons. All checks pass. No missing renderer.
-
-## Unit u13 (Statistics) — agent maths-c
-
-75 lessons assessed · 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph, barchart, bar-model) · 5 lab rows (regression, clt) · 39 with a recorded reason. Renderers needed: two-way table (u13-34), Mahalanobis ellipse contours (u13-49), points-in-region Monte Carlo (u13-60), path diagram (u13-66), Kaplan-Meier step curve (u13-70). Content note for the author: u13-50 gives eigenvalues 4.2, 1.5, 0.2, 0.1 for four standardised variables, which sum to 6, not 4. FIXED 23 Nov: eigenvalues now 2.8, 1.0, 0.16, 0.04 (sum 4).
-
-## Content issues for the owner
-
-- u13-50 (Multivariate Analysis): the worked example gives eigenvalues 4.2, 1.5, 0.2 and 0.1 for four standardised variables; they sum to 6, but the eigenvalues of a 4 × 4 correlation matrix sum to 4. No diagram was made. FIXED 23 Nov: eigenvalues now 2.8, 1.0, 0.16, 0.04 (sum 4).
-- u05 (agent maths-a): 50 lessons assessed; 32 diagrams (geometry 22, graph 7, transform 1, number-line 1, plus...), labs on 6 rows (circles, practice, matrix), rest null with reasons. All checks pass. Missing renderers: 3D solids/nets/coordinates (u05-03, 20, 21, 23, 30), spherical (35, 36), hyperbolic (37), surfaces/torus (49), knot diagrams (50), Buffon's needle (44), curved-surface curvature (46).
-- u08 (Multivariable and Vector Calculus): 22 lessons assessed; 8 diagrams (`maths-u08-*`), lab `descent` on 2; rest null with reasons.
-  Lacks: 3D surfaces/fields (9 lessons), conics.
+Every diagram is `validated` (its checks pass); none has had a subject review yet.
 
 ## Unit claims (read before starting a unit)
 
 A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
-Claimed 23 Nov 2026 (the earlier claims by session 01H1szfk lapsed when its agents stopped; units on main are removed).
 
 | Units | Claimed by |
 |---|---|
-| u04, u06, u07 | lead session 01PJjzVE, agent M1 |
-| u09, u15, u16 | lead session 01PJjzVE, agent M2 |
-| u17, u18, u19 | lead session 01PJjzVE, agent M3 |
+| u04, u06, u07 | lead session 01PJjzVE, agent M1 (worktree /home/user/wt-m1, branch diagrams/m1) |
+| u17 | lead session 01PJjzVE, agent M3 (landing; M3 stops after it) |
+
+## Unit notes
+
+- **u01** Number: 17 diagrams; labs sieve and practice. Commit b2450b4c (with the renderers, tests and tooling).
+- **u02** (agent maths-a): 8 diagrams (geometry 6, graph 1, sequence 1); labs modular and sieve; lattice and Argand
+  drawn with geometry + axes. No renderer lacked.
+- **u03** Algebra (agent maths-a): 30 diagrams (graph 21, geometry 5, number-line 2, sequence, venn) plus the existing
+  `maths-transformations`; labs quadratics, practice, explog, grapher, complex. No renderer lacked.
+- **u05** Geometry (agent maths-a): 32 diagrams (geometry 22, graph 7, transform, number-line); labs circles, practice,
+  matrix. Lacks 3D solids/nets/coordinates, spherical and hyperbolic geometry, surfaces, knots, Buffon's needle.
+- **u08** Multivariable and vector calculus: 8 diagrams; lab descent on 2 lessons. Lacks 3D surfaces/fields (9
+  lessons) and conics.
+- **u09** Analysis (df08995a, agent M2): 8 diagrams (graph 7, bar-model), 6 lessons without; no renderer lacked.
+- **u10** Differential equations (lead session 01H1szfk): 15 diagrams; 2 lab rows. Lacks phase portraits, cobweb diagrams, 3D surfaces.
+- **u11** Linear algebra: 13 diagrams (geometry vectors, transform, graph); lab matrix on 6 lessons. Lacks 3D vectors
+  and planes (10 lessons) and conics (u11-32).
+- **u12** Probability (agent maths-c): 36 diagrams (graph, distribution, barchart, venn, prob-tree, number-line,
+  bar-model); labs lln, clt, practice. Continuous families (gamma, beta, chi-squared, Weibull, log-normal, Pareto,
+  Cauchy, Gumbel) drawn with `graph` + area checks. Cosmetic: on the narrow layout the "median" label touches the
+  "density" axis label on the log-normal and Pareto diagrams.
+- **u13** Statistics (agent maths-c): 33 diagrams (boxplot, scatter, number-line intervals, distribution, graph,
+  barchart, bar-model); labs regression, clt.
+- **u14** Discrete mathematics and combinatorics (lead session 01H1szfk): 6 diagrams; 17 lessons without, mostly for lack of a network renderer.
+
+## Scouting notes for unbuilt units
+
+From agent M2, which read the worked examples (X: lines) of u15 and u16 but planned nothing:
+- u15: most examples are small graphs and networks (needs the network renderer). Fit existing renderers: u15-27
+  bar-model (strength 16 → 13), u15-36 binomial distribution (n = 99, p = 0.1, mean 9.9), u15-41 bar-model (density
+  22/66), u15-44 bar-model (mean of 2, 4, 6, 8 is 5).
+- u16: candidates u16-03 set operations and u16-05 complements (venn), u16-06 Cartesian product grid and u16-15 Hasse
+  diagram (geometry), u16-04 nested intervals and u16-17 lexicographic order (number-line), u16-12 f(x) = 3x − 5 (graph).
+
+## Lesson errors
+
+Agents report errors in a lesson's own text and leave it without a diagram; the owner decides the fix.
+
+- Fixed: **u13-50** (Multivariate analysis) gave eigenvalues 4.2, 1.5, 0.2, 0.1 for four standardised variables (sum 6;
+  must be 4). Now 2.8, 1.0, 0.16, 0.04; the 70 %, 25 %, 95 % figures are unchanged. Commit 8c1fc41f.
+- Open: none.
+
+## Renderers
+
+Available (each recomputes what it shows and checks the layout at both widths; `fromLesson` phrases must appear in the
+notes): `kit/diagrams/maths-renderers.js` number-line, sequence, factor-tree, bar-model, venn, prob-tree;
+`maths-renderers-2.js` geometry (also vectors with `grid`; the name `vectors` is physics'), transform;
+`maths-renderers-3.js` histogram, boxplot, scatter, barchart, distribution; shared `graph`. Core maths in
+`maths-core.js`, layout in `maths-layout.js`, tests in `tests/maths-diagrams.test.mjs`. Renderer names are global:
+`grep -n "register(" kit/diagrams/*-renderers*.js` before adding one.
+
+Missing, by how many plan rows need them (`node scripts/diagrams/unit-status.mjs maths --needs` lists all 51):
+
+| renderer | rows | where |
+|---|---:|---|
+| 3D vectors, planes, surfaces and fields | 19 | u05, u08, u10-23, u11 |
+| network / graph theory (vertices, coloured edges, state diagrams) | 5 so far | u13-66, u14; u15 will need many |
+| 3D solids and nets | 5 | u05 |
+| step functions (empirical CDF, Kaplan-Meier) | 2 | u12-47, u13-70 |
+| two-way tables | 2 | u12-17, u13-34 |
+| ellipses / conics, ellipse contours | 3 | u08-08, u11-32, u13-49 |
+| phase portraits, cobweb diagrams | 3 | u10 |
+| one each: negative binomial, 2D density, matrix-variate, points in a region, spherical, hyperbolic, surfaces, knots, Buffon's needle, curvature, cellular grid, spectral coefficients | | u05, u10, u12, u13, u14 |
+
+Building renderers is lead work (shared files, tests in `tests/maths-diagrams.test.mjs`); after one lands, revisit the
+`null, "needs renderer …"` rows it covers.
+
+## WIP branches
+
+None live for maths. `wip/maths-c` (u12) and `wip/maths-u14` (u14) are superseded by main and can be deleted.
+
+## Later
+
+- Subject review of every diagram (record `review` in the spec via the batch script; `mk` keeps it).
+- Interactive versions (draggable number-line point, bar-model slider) need a shared change to
+  `kit/diagrams/visual.js`; proposal only.

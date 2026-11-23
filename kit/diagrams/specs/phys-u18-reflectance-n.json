@@ -1,0 +1,153 @@
+{
+ "id": "phys-u18-reflectance-n",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Reflection and transmission",
+ "title": "Reflection at an air–material surface",
+ "caption": "At normal incidence R = ((n₁ − n₂)/(n₁ + n₂))². Air to water reflects 2%, to glass 4%, to diamond 17% (its sparkle) and to silicon 31%, rising steeply with the refractive index.",
+ "alt": "Graph of the fraction reflected against refractive index from 1 to 3.8: a rising curve through water 2%, glass 4%, diamond 17% and silicon 31%.",
+ "description": [
+  "The horizontal axis is the refractive index n of the second material (the first is air, n = 1); the vertical axis is the fraction of light reflected at normal incidence.",
+  "The curve is R = ((n − 1)/(n + 1))².",
+  "Marked points: water (n = 1.33) 2%, glass (1.5) 4%, diamond (2.42) 17%, silicon (about 3.5) 31%.",
+  "The more the index differs from 1, the more light is reflected."
+ ],
+ "range": {
+  "x": [
+   1,
+   3.8
+  ],
+  "y": [
+   0,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5,
+   3,
+   3.5
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ ],
+ "grid": [
+  0.5,
+  0.1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "n",
+  "R"
+ ],
+ "curves": [
+  {
+   "expr": "((x-1)/(x+1))^2",
+   "colour": "a1",
+   "width": 3.4
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    1.3,
+    0.19
+   ],
+   "to": [
+    1.33,
+    0.03
+   ],
+   "label": "water 2%",
+   "labelAt": [
+    1.2,
+    0.21
+   ]
+  },
+  {
+   "from": [
+    1.75,
+    0.13
+   ],
+   "to": [
+    1.52,
+    0.05
+   ],
+   "label": "glass 4%",
+   "labelAt": [
+    1.7,
+    0.15
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1.33,
+   "y": 0.0201,
+   "colour": "ink"
+  },
+  {
+   "x": 1.5,
+   "y": 0.04,
+   "colour": "ink"
+  },
+  {
+   "x": 2.42,
+   "y": 0.1724,
+   "colour": "ink",
+   "label": "diamond 17%",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": 3.5,
+   "y": 0.3086,
+   "colour": "a2",
+   "label": "silicon 31%",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "((x-1)/(x+1))^2",
+   "x": 1.33,
+   "y": 0.0201,
+   "name": "air to water (n = 1.33) reflects 2%"
+  },
+  {
+   "type": "point",
+   "expr": "((x-1)/(x+1))^2",
+   "x": 1.5,
+   "y": 0.04,
+   "name": "air to glass (n = 1.5) reflects 4%"
+  },
+  {
+   "type": "point",
+   "expr": "((x-1)/(x+1))^2",
+   "x": 2.42,
+   "y": 0.1724,
+   "name": "air to diamond (n = 2.42) reflects 17%"
+  },
+  {
+   "type": "point",
+   "expr": "((x-1)/(x+1))^2",
+   "x": 3.5,
+   "y": 0.3086,
+   "name": "air to silicon (n = 3.5) reflects 31%"
+  }
+ ]
+}

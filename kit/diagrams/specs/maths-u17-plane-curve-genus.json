@@ -1,0 +1,140 @@
+{
+ "id": "maths-u17-plane-curve-genus",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Riemann Surfaces",
+ "title": "Genus of a smooth plane curve of degree d",
+ "caption": "The genus (d − 1)(d − 2)/2 grows quadratically with the degree: lines and conics have genus 0, a cubic has genus 1 (a torus, an elliptic curve) and a quartic has genus 3.",
+ "alt": "The parabola g = (d − 1)(d − 2)/2 with dots at the whole-number degrees: 0, 0, 1, 3, 6, 10 for d = 1 to 6, the cubic (1) and the quartic (3) labelled.",
+ "description": [
+  "Plot g = (d − 1)(d − 2)/2 against the degree d.",
+  "The cubic, d = 3, gives 2 × 1/2 = 1: a torus.",
+  "The quartic, d = 4, gives 3 × 2/2 = 3.",
+  "Lines (d = 1) and conics (d = 2) both give genus 0."
+ ],
+ "range": {
+  "x": [
+   0,
+   6.6
+  ],
+  "y": [
+   -1,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "d",
+  "g"
+ ],
+ "curves": [
+  {
+   "expr": "(x-1)*(x-2)/2",
+   "colour": "a1",
+   "domain": [
+    0.6,
+    6.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "colour": "a1",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 2,
+   "y": 0,
+   "colour": "a1",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 5,
+   "y": 6,
+   "colour": "a1",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 6,
+   "y": 10,
+   "colour": "a1",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 3,
+   "y": 1,
+   "colour": "a2",
+   "label": "cubic: g = 1",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  },
+  {
+   "x": 4,
+   "y": 3,
+   "colour": "a2",
+   "label": "quartic: g = 3",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x-1)*(x-2)/2",
+   "x": 3,
+   "y": 1
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)*(x-2)/2",
+   "x": 4,
+   "y": 3
+  },
+  {
+   "type": "point",
+   "expr": "(x-1)*(x-2)/2",
+   "x": 2,
+   "y": 0
+  }
+ ],
+ "fromLesson": [
+  "Quartic: 3 × 2/2 = 3"
+ ]
+}

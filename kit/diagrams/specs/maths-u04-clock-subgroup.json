@@ -1,0 +1,175 @@
+{
+ "id": "maths-u04-clock-subgroup",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Group Theory",
+ "title": "The subgroup ⟨4⟩ on the clock ℤ₁₂",
+ "caption": "Adding 4 repeatedly moves round the clock 0 → 4 → 8 → 12 ≡ 0: three equally spaced points, so 4 has order 3 and generates the subgroup ⟨4⟩ = {0, 4, 8} of order 3 (a divisor of 12).",
+ "alt": "A clock face with 12 points marked 0 to 11. The points 0, 4 and 8 are joined into an equilateral triangle.",
+ "description": [
+  "The twelve elements of ℤ₁₂ sit round a clock, 0 at the top.",
+  "Adding 4 jumps four places: 0, then 4, then 8, then 12 ≡ 0 again.",
+  "Those three points form an equilateral triangle, so 4 has order 3 and ⟨4⟩ = {0, 4, 8}."
+ ],
+ "points": {
+  "0": [
+   0,
+   1
+  ],
+  "1": [
+   0.49999999999999994,
+   0.8660254037844387
+  ],
+  "2": [
+   0.8660254037844386,
+   0.5000000000000001
+  ],
+  "3": [
+   1,
+   6.123233995736766e-17
+  ],
+  "4": [
+   0.8660254037844387,
+   -0.4999999999999998
+  ],
+  "5": [
+   0.49999999999999994,
+   -0.8660254037844387
+  ],
+  "6": [
+   1.2246467991473532e-16,
+   -1
+  ],
+  "7": [
+   -0.4999999999999997,
+   -0.8660254037844388
+  ],
+  "8": [
+   -0.8660254037844385,
+   -0.5000000000000004
+  ],
+  "9": [
+   -1,
+   -1.8369701987210297e-16
+  ],
+  "10": [
+   -0.8660254037844386,
+   0.5000000000000001
+  ],
+  "11": [
+   -0.5000000000000004,
+   0.8660254037844384
+  ],
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "line"
+  }
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "0",
+    "4",
+    "8"
+   ],
+   "colour": "a1",
+   "opacity": 0.14
+  }
+ ],
+ "ticks": [
+  {
+   "seg": [
+    "0",
+    "4"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "4",
+    "8"
+   ],
+   "n": 1
+  },
+  {
+   "seg": [
+    "8",
+    "0"
+   ],
+   "n": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0,
+    -0.05
+   ],
+   "text": "order 3",
+   "colour": "a1"
+  }
+ ],
+ "view": {
+  "x": [
+   -1.45,
+   1.45
+  ],
+  "y": [
+   -1.4,
+   1.4
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11"
+   ],
+   "name": "the 12 clock points lie on the circle"
+  },
+  {
+   "type": "distance",
+   "a": "0",
+   "b": "4",
+   "value": 1.7320508075688772,
+   "name": "the sides 0–4 and 4–8 are equal: the steps are 4 places each"
+  },
+  {
+   "type": "distance",
+   "a": "0",
+   "b": "4",
+   "value": 1.7320508075688776,
+   "name": "the sides 0–4 and 8–0 are equal: the steps are 4 places each"
+  }
+ ],
+ "fromLesson": [
+  "4, 8, 12 ≡ 0",
+  "the order of 4 is 3"
+ ]
+}

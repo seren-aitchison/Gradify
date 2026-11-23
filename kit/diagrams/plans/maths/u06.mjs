@@ -1,2 +1,34 @@
-// Unit 6: not planned yet. Fill this per kit/diagrams/maths/UNIT-AGENT.md.
-export default [];
+// Unit 6, Trigonometry and Periodic Functions. Rows: kit/diagrams/BUILDERS.md.
+const PROOF = "an identity or an exact value derived by algebra: the notes' worked steps carry it better than a picture";
+export default [
+  ["u06-01", "geometry", "maths-u06-triangle-5-12-13", "the 5-12-13 triangle with hypotenuse, opposite and adjacent named for the angle at A"],
+  ["u06-02", "geometry", "maths-u06-ramp", "a ramp rising 1.2 m over 8 m: angle 8.5° and slope length 8.09 m"],
+  ["u06-03", "graph", "maths-u06-sin-minus-06", "sin x = −0.6 on the sine graph: solutions 216.9° and 323.1°"],
+  ["u06-04", "graph", "maths-u06-cos-minus-half", "cos x = −½ on the cosine graph: solutions 120° and 240°"],
+  ["u06-05", "graph", "maths-u06-tan-four-thirds", "tan x = 4/3 on the tangent graph: solutions 53.1° and 233.1°"],
+  ["u06-06", "geometry", "maths-u06-radians-150", "150° = 5π/6 as an angle at the centre of the unit circle"],
+  ["u06-07", "geometry", "maths-u06-unit-circle-240", "240° on the unit circle: reference angle 60°, cos = −½ and sin = −√3/2"],
+  ["u06-08", "geometry", "maths-u06-cuboid-diagonal", "the space diagonal of a 6 × 8 × 5 cuboid rises 5 over a base diagonal of 10: 26.6°"],
+  ["u06-09", "geometry", "maths-u06-sine-rule", "triangle PQR with P = 52°, Q = 71°, R = 57°, r = 15 and p ≈ 14.1"],
+  ["u06-10", "geometry", "maths-u06-ships", "two ships from a port, 12 km at 040° and 15 km at 110°: 70° between, 15.7 km apart"],
+  ["u06-11", "geometry", "maths-u06-triangle-area", "a triangle with sides 7 and 9 enclosing 120°: area 63√3/4 ≈ 27.3"],
+  ["u06-12", "geometry", "maths-u06-great-circle", "two points on the equator 90° apart, seen from above: arc length R × π/2"],
+  ["u06-13", "graph", "maths-u06-shifted-cosine", "y = 2cos(x − 30°) − 1 with maximum (30°, 1) and minimum (210°, −3)"],
+  ["u06-14", "graph", "maths-u06-harbour-depth", "d = 5 + 3 sin(πt/6): period 12 hours, maximum depth 8 m"],
+  ["u06-15", "graph", "maths-u06-cosec-minus-2", "cosec x = −2 on the cosecant graph: solutions 210° and 330°"],
+  ["u06-16", "graph", "maths-u06-sec-tan-roots", "tan x = 1.781 and tan x = −0.281 on 0° ≤ x < 180°: 60.7° and 164.3°"],
+  ["u06-17", "graph", "maths-u06-cot-roots", "tan x = ±√3 on the tangent graph: 60°, 120°, 240°, 300°"],
+  ["u06-18", "geometry", "maths-u06-arcsin-triangle", "arcsin(3/5) as the angle of a 3-4-5 triangle: cos θ = 4/5"],
+  ["u06-19", "graph", "maths-u06-ferris-wheel", "h = 22 − 20cos(πt/5): a rider starting at the bottom, minimum 2 m and maximum 42 m"],
+  ["u06-20", "graph", "maths-u06-harmonic-roots", "3 sin x + 4 cos x = 2: the curve of amplitude 5 meets y = 2 at 103.3° and 330.4°"],
+  ["u06-21", null, PROOF],
+  ["u06-22", "geometry", "maths-u06-angle-75", "75° = 45° + 30° on the unit circle, with cos 75° = (√6 − √2)/4"],
+  ["u06-23", "graph", "maths-u06-cos2x-cosx", "cos 2x = cos x: the two graphs meet at 0°, 120° and 240°"],
+  ["u06-24", "geometry", "maths-u06-half-angle-15", "15° as half of 30° on the unit circle, with cos 15° = (√6 + √2)/4"],
+  ["u06-25", "graph", "maths-u06-quadratic-in-sin", "2cos²x + 3 sin x = 3 meets y = 3 at 30°, 90° and 150°"],
+  ["u06-26", "number-line", "maths-u06-tan-inequality", "tan x < 1 on 0° ≤ x < 180°: 0° ≤ x < 45° or 90° < x < 180°"],
+  ["u06-27", "graph", "maths-u06-cosh-2", "cosh x = 2 meets the curve at x = ±ln(2 + √3) ≈ ±1.317"],
+  ["u06-28", "graph", "maths-u06-arsinh", "arsinh(3/4) = ln 2 as the x for which sinh x = 3/4"],
+  ["u06-29", "graph", "maths-u06-fourier-b1", "b₁ = (1/π)∫x sin x dx: the area under x sin x on (−π, π) is 2π, so b₁ = 2"],
+  ["u06-30", "barchart", "maths-u06-spectrum", "the spectrum of 3 sin(2π·50t) + sin(2π·120t): spikes of height 3 at 50 Hz and 1 at 120 Hz"],
+];

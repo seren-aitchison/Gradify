@@ -93,6 +93,7 @@ X: Find the order of 4 in ℤ₁₂ and the number of subgroups of ℤ₁₂.
 > 4, 8, 12 ≡ 0: the order of 4 is 3 (= 12/gcd(4, 12))
 > ℤ₁₂ has one subgroup for each divisor of 12: 1, 2, 3, 4, 6, 12
 > So it has 6 subgroups
+D: maths-u04-clock-subgroup
 K: Groups have closure, associativity, identity and inverses; element orders divide |G| (Lagrange); ℤ_{n} has one subgroup per divisor; |S_{n}| = n! and |D_{n}| = 2n.
 !: Assuming the converse of Lagrange: a divisor of |G| need not be the order of a subgroup.
 Q: What is the order of D₆, the symmetries of a hexagon? | 12.
@@ -128,6 +129,7 @@ X: Let φ: ℤ → ℤ₅ send n to n mod 5. Find the kernel and image and apply
 > φ(a + b) = (a + b) mod 5 = φ(a) + φ(b), so φ is a homomorphism
 > ker φ = 5ℤ (multiples of 5); im φ = ℤ₅ (it's onto)
 > First isomorphism theorem: ℤ/5ℤ ≅ ℤ₅
+D: maths-u04-kernel-fibres
 K: Homomorphisms preserve operations; kernels are normal subgroups (ideals for rings); injective iff the kernel is trivial; G/ker φ ≅ im φ.
 !: Forgetting to check the operation is preserved for all pairs, not just a few.
 Q: What is the kernel of the sign homomorphism on S_{n}? | The alternating group A_{n}.
@@ -230,6 +232,7 @@ X: Describe the quotient ℤ₁₂/⟨4⟩.
 > ⟨4⟩ = {0, 4, 8}, of order 3
 > The quotient has 12/3 = 4 cosets: ⟨4⟩, 1 + ⟨4⟩, 2 + ⟨4⟩, 3 + ⟨4⟩
 > 1 + ⟨4⟩ has order 4, so ℤ₁₂/⟨4⟩ ≅ ℤ₄
+D: maths-u04-cosets-clock
 - Lagrange's theorem follows from cosets: they all have size |N| and partition G.
 K: Cosets of a normal subgroup form G/N of order |G|/|N|; ideals give quotient rings; ℝ[x]/(x^{2} + 1) ≅ ℂ.
 !: Forming G/H for a subgroup H that isn't normal, where coset multiplication isn't well defined.
@@ -333,6 +336,7 @@ X: Find the units and zero divisors of ℤ₁₂.
 > Units are residues coprime to 12: 1, 5, 7, 11 (each squares to 1)
 > Zero divisors: 2, 3, 4, 6, 8, 9, 10 (for example 3 × 4 = 0)
 > Every non-zero element of ℤ₁₂ is either a unit or a zero divisor
+D: maths-u04-units-zero-divisors
 K: Rings have + and × with distributivity; units have inverses, zero divisors multiply to zero; integral domains have no zero divisors; ideals are kernels.
 !: Assuming cancellation (ab = ac ⇒ b = c) works in every ring.
 Q: Is ℤ₇ an integral domain? | Yes: it's a field, since 7 is prime.
@@ -609,6 +613,7 @@ X: Give a 2-dimensional representation of ℤ₄ and check it respects the group
 > Send 1 ∈ ℤ₄ to the rotation R = [[0, −1], [1, 0]] (90°)
 > Then k ↦ R^{k}; R^{2} = −I, R^{3} = −R, R^{4} = I
 > Since R^{4} = I, adding exponents mod 4 matches the group operation ✓
+D: maths-u04-rotation-rep
 K: Representations make groups act by matrices; irreducibles are the building blocks; Maschke and Schur govern decomposition; applications span science.
 !: Thinking a representation must be injective: it only needs to be a homomorphism.
 Q: What does Maschke's theorem guarantee? | Complete reducibility of representations of finite groups (when the characteristic doesn't divide |G|).
@@ -644,6 +649,7 @@ X: Use the counting formulas to find the dimensions of the irreducible represent
 > Five classes, so five irreducibles, with squares of dimensions adding to 8
 > Trying 1s and 2s: 1 + 1 + 1 + 1 + 4 = 8
 > So D₄ has four 1-dimensional and one 2-dimensional irreducible representation
+D: maths-u04-d4-dimensions
 K: Number of irreducibles = number of classes; Σd^{2} = |G|; characters are traces, constant on classes and orthonormal.
 !: Forgetting that dimensions must divide |G| when solving Σd^{2} = |G|.
 Q: How many irreducible representations does an abelian group of order 10 have? | 10, all 1-dimensional.
@@ -677,6 +683,7 @@ X: Describe ℂ[S₃] using Artin–Wedderburn.
 > S₃ has irreducibles of dimensions 1, 1 and 2
 > ℂ[S₃] ≅ ℂ × ℂ × M₂(ℂ)
 > Dimension check: 1 + 1 + 4 = 6 = |S₃| ✓
+D: maths-u04-s3-algebra
 K: Ring representations are modules; group representations are F[G]-modules; semisimple rings are products of matrix rings; ℂ[G] ≅ Π M_{d}(ℂ).
 !: Applying Maschke and Artin–Wedderburn in characteristic dividing |G|, where they fail.
 Q: What is a representation of a ring R the same as? | An R-module.

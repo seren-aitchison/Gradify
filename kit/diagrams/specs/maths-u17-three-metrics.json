@@ -1,0 +1,175 @@
+{
+ "id": "maths-u17-three-metrics",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Metric Spaces",
+ "title": "Three distances from (0, 0) to (3, 4)",
+ "caption": "The same two points are 7 apart in the taxicab metric d₁ (along the grid), 5 apart in the Euclidean metric d₂ (straight line) and 4 apart in the maximum metric d∞ (the larger coordinate gap). Different metrics, different distances, and different open balls.",
+ "alt": "A right triangle with legs 3 and 4 and hypotenuse 5 from (0, 0) to (3, 4), labelled with the three distances 7, 5 and 4.",
+ "description": [
+  "Go from (0, 0) to (3, 0) and up to (3, 4): the taxicab distance is 3 + 4 = 7.",
+  "The straight line has length √(9 + 16) = 5.",
+  "The maximum metric keeps only the larger gap, max(3, 4) = 4."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "B": [
+   3,
+   0
+  ],
+  "A": [
+   3,
+   4
+  ]
+ },
+ "labelAt": {
+  "O": [
+   -14,
+   14
+  ],
+  "B": [
+   14,
+   14
+  ],
+  "A": [
+   14,
+   -4
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": false
+ },
+ "view": {
+  "x": [
+   -1,
+   5.2
+  ],
+  "y": [
+   -1,
+   5
+  ]
+ },
+ "height": [
+  360,
+  340
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "B",
+    "A"
+   ],
+   "colour": "a1",
+   "opacity": 0.06
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "B",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "B",
+   "b": "A",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a2",
+   "w": 3
+  }
+ ],
+ "angles": [
+  {
+   "at": "B",
+   "from": "O",
+   "to": "A",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "B",
+   "value": 3,
+   "label": "3",
+   "colour": "a1"
+  },
+  {
+   "a": "B",
+   "b": "A",
+   "value": 4,
+   "label": "4",
+   "colour": "a1"
+  },
+  {
+   "a": "O",
+   "b": "A",
+   "value": 5,
+   "label": "5",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    4.1,
+    3.1
+   ],
+   "text": "d₁ = 7",
+   "colour": "a1"
+  },
+  {
+   "at": [
+    4.1,
+    2.4
+   ],
+   "text": "d₂ = 5",
+   "colour": "a2"
+  },
+  {
+   "at": [
+    4.1,
+    1.7
+   ],
+   "text": "d∞ = 4",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "A",
+   "value": "sqrt(9+16)",
+   "name": "d₂((0, 0), (3, 4)) = √(9 + 16) = 5"
+  },
+  {
+   "type": "value",
+   "expr": "3+4",
+   "value": 7,
+   "name": "d₁ = 3 + 4 = 7"
+  },
+  {
+   "type": "value",
+   "expr": "4",
+   "value": 4,
+   "name": "d∞ = the larger gap, 4"
+  }
+ ],
+ "fromLesson": [
+  "d₁ = 3 + 4 = 7",
+  "d₂ = √(9 + 16) = 5"
+ ]
+}

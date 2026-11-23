@@ -1,0 +1,160 @@
+{
+ "id": "maths-u06-ships",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Cosine Rule",
+ "title": "How far apart are the ships?",
+ "caption": "The paths are 110° − 40° = 70° apart, so the cosine rule gives d² = 12² + 15² − 2 × 12 × 15 × cos 70° ≈ 245.9, and d ≈ 15.7 km.",
+ "alt": "A plan view: the port O, ship A 12 km away on bearing 040° and ship B 15 km away on bearing 110°, with 70° between the paths and AB ≈ 15.7 km.",
+ "description": [
+  "Bearings are measured clockwise from north: the first ship sails 12 km on 040°, the second 15 km on 110°.",
+  "The angle between the two paths at the port is 110° − 40° = 70°.",
+  "Cosine rule: d² = 144 + 225 − 360 cos 70° ≈ 245.9.",
+  "So d ≈ 15.7 km."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "N": [
+   0,
+   16
+  ],
+  "A": [
+   7.713451316238471,
+   9.192533317427737
+  ],
+  "B": [
+   14.095389311788626,
+   -5.130302149885031
+  ]
+ },
+ "hide": [
+  "N"
+ ],
+ "labelAt": {
+  "O": [
+   -14,
+   12
+  ],
+  "A": [
+   -4,
+   -16
+  ],
+  "B": [
+   14,
+   8
+  ]
+ },
+ "segments": [
+  {
+   "a": "O",
+   "b": "N",
+   "colour": "soft",
+   "dash": "5 4"
+  },
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a1",
+   "w": 3
+  },
+  {
+   "a": "O",
+   "b": "B",
+   "colour": "a2",
+   "w": 3
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "colour": "ink",
+   "dash": "6 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "N",
+   "to": "A",
+   "deg": 40,
+   "label": "40°",
+   "colour": "soft",
+   "r": 40
+  },
+  {
+   "at": "O",
+   "from": "A",
+   "to": "B",
+   "deg": 70,
+   "label": "70°",
+   "colour": "a3",
+   "r": 30,
+   "labelR": 16
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "A",
+   "value": 12,
+   "label": "12 km",
+   "colour": "a1",
+   "side": 1
+  },
+  {
+   "a": "O",
+   "b": "B",
+   "value": 15,
+   "label": "15 km",
+   "colour": "a2",
+   "side": -1
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "value": 15.6803,
+   "tol": 0.01,
+   "label": "d ≈ 15.7 km",
+   "colour": "ink"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0.8,
+    15
+   ],
+   "text": "N",
+   "colour": "soft"
+  }
+ ],
+ "view": {
+  "x": [
+   -5,
+   19
+  ],
+  "y": [
+   -5,
+   16.5
+  ]
+ },
+ "height": [
+  380,
+  340
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "sqrt(144+225-360*cos(70*pi/180))",
+   "value": 15.680329983860647,
+   "tol": 0.000001,
+   "name": "d = √(12² + 15² − 2·12·15·cos 70°)"
+  }
+ ],
+ "fromLesson": [
+  "110° − 40° = 70°"
+ ]
+}

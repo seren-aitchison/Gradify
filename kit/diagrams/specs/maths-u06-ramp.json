@@ -1,0 +1,124 @@
+{
+ "id": "maths-u06-ramp",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Trigonometric Ratios",
+ "title": "The ramp as a right-angled triangle",
+ "caption": "The ramp rises 1.2 m over 8 m: tan θ = 1.2/8 = 0.15, so θ = 8.5°. The slope is the hypotenuse, √(8² + 1.2²) = √65.44 ≈ 8.09 m.",
+ "alt": "A flat triangle: 8 m along the ground, 1.2 m up at the end, and a sloping side of about 8.09 m at an angle of 8.5° to the ground.",
+ "description": [
+  "The horizontal run is 8 m and the rise is 1.2 m.",
+  "tan θ = opposite/adjacent = 1.2/8 = 0.15, so θ = tan⁻¹ 0.15 ≈ 8.5°.",
+  "The slope length is the hypotenuse: √(64 + 1.44) = √65.44 ≈ 8.09 m."
+ ],
+ "points": {
+  "P": [
+   0,
+   0
+  ],
+  "Q": [
+   8,
+   0
+  ],
+  "R": [
+   8,
+   1.2
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "P",
+    "Q",
+    "R"
+   ],
+   "colour": "a1",
+   "opacity": 0.12
+  }
+ ],
+ "angles": [
+  {
+   "at": "Q",
+   "from": "P",
+   "to": "R",
+   "right": true,
+   "colour": "ink"
+  },
+  {
+   "at": "P",
+   "from": "Q",
+   "to": "R",
+   "deg": 8.5,
+   "tol": 0.1,
+   "label": "θ",
+   "colour": "a2",
+   "r": 60,
+   "labelR": 26
+  }
+ ],
+ "lengths": [
+  {
+   "a": "P",
+   "b": "Q",
+   "value": 8,
+   "label": "8 m",
+   "side": 1
+  },
+  {
+   "a": "Q",
+   "b": "R",
+   "value": 1.2,
+   "label": "1.2 m"
+  },
+  {
+   "a": "P",
+   "b": "R",
+   "value": 8.0895,
+   "tol": 0.01,
+   "label": "slope ≈ 8.09 m",
+   "colour": "a2",
+   "side": -1
+  }
+ ],
+ "labelAt": {
+  "P": [
+   -12,
+   12
+  ],
+  "Q": [
+   12,
+   14
+  ],
+  "R": [
+   12,
+   -10
+  ]
+ },
+ "view": {
+  "x": [
+   -2,
+   10.5
+  ],
+  "y": [
+   -1.6,
+   3.4
+  ]
+ },
+ "height": [
+  260,
+  240
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "P",
+   "b": "R",
+   "value": "sqrt(65.44)",
+   "name": "slope = √(8² + 1.2²) = √65.44"
+  }
+ ],
+ "fromLesson": [
+  "tan θ = 1.2/8 = 0.15"
+ ]
+}

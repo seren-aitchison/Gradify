@@ -1,0 +1,118 @@
+{
+ "id": "maths-u09-characteristic",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u09",
+ "lesson": "Spectral Theory",
+ "title": "The eigenvalues of [[2, 1], [1, 2]] are where det(A − λI) = 0",
+ "caption": "The characteristic polynomial (2 − λ)² − 1 is a parabola that crosses zero at λ = 1 and λ = 3: the spectrum σ(A) = {1, 3}, with spectral radius 3.",
+ "alt": "A parabola with its lowest point at (2, −1) crossing the horizontal axis at 1 and 3.",
+ "description": [
+  "det(A − λI) = (2 − λ)² − 1 is a parabola in λ with minimum −1 at λ = 2.",
+  "It equals zero where (2 − λ)² = 1, so 2 − λ = ±1.",
+  "The roots are λ = 1 and λ = 3, the eigenvalues; the larger, 3, is the spectral radius."
+ ],
+ "range": {
+  "x": [
+   -0.5,
+   4.5
+  ],
+  "y": [
+   -1.5,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -1,
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "λ",
+  "det(A − λI)"
+ ],
+ "curves": [
+  {
+   "expr": "(2-x)^2-1",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "label": "λ = 1",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 36,
+   "anchor": "end"
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "label": "λ = 3",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 36,
+   "anchor": "start"
+  },
+  {
+   "x": 2,
+   "y": -1,
+   "label": "(2, −1)",
+   "colour": "a4",
+   "dx": 0,
+   "dy": 24,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(2-x)^2-1",
+   "x": 1,
+   "y": 0,
+   "name": "λ = 1 is a root"
+  },
+  {
+   "type": "point",
+   "expr": "(2-x)^2-1",
+   "x": 3,
+   "y": 0,
+   "name": "λ = 3 is a root"
+  },
+  {
+   "type": "min",
+   "expr": "(2-x)^2-1",
+   "domain": [
+    -0.5,
+    4.5
+   ],
+   "x": 2,
+   "y": -1,
+   "name": "the lowest point is (2, −1)"
+  }
+ ],
+ "fromLesson": [
+  "(2 − λ)^{2} − 1 = 0",
+  "λ = 1 or λ = 3"
+ ]
+}

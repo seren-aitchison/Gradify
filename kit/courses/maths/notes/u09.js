@@ -24,6 +24,7 @@ X: Prove that (2n + 1)/(n + 3) → 2.
 > |(2n + 1)/(n + 3) − 2| = |−5/(n + 3)| = 5/(n + 3)
 > Given ε > 0, choose N > 5/ε − 3
 > Then for n > N, 5/(n + 3) < ε, as required ∎
+D: maths-u09-epsilon-n
 K: Limits and continuity have ε definitions; completeness of ℝ drives monotone convergence and Bolzano–Weierstrass; uniform convergence preserves continuity.
 !: Choosing N that depends on n rather than only on ε.
 Q: Is ℚ complete? | No: some bounded sets, like {q : q^{2} < 2}, have no rational supremum.
@@ -68,6 +69,7 @@ X: Use residues to evaluate ∫_{−∞}^{∞} dx/(1 + x^{2}).
 > Close the contour with a large upper semicircle; 1/(1 + z^{2}) has a simple pole at i inside
 > Res at i = lim (z − i)/((z − i)(z + i)) = 1/(2i)
 > Integral = 2πi × 1/(2i) = π (the arc contributes 0 as its radius grows)
+D: maths-u09-lorentzian-area
 P: **Investigate with the lab.** Multiply by several w with modulus 1. Each product rotates z without stretching it: the local behaviour of multiplication that makes holomorphic maps angle-preserving.
 IX: complex
 K: Holomorphic ⇔ Cauchy–Riemann; holomorphic functions are analytic; ∮ f dz = 2πi Σ residues; Liouville and contour methods give powerful results.
@@ -159,6 +161,7 @@ X: Show that the Cantor set has measure 0.
 > Remove the middle third (length 1/3), then 2 middle ninths (2/9), then 4 pieces of 1/27, …
 > Total removed = 1/3 + 2/9 + 4/27 + … = (1/3)/(1 − 2/3) = 1
 > The remaining Cantor set has measure 1 − 1 = 0
+D: maths-u09-cantor-stages
 K: Measures are countably additive set functions on σ-algebras; Lebesgue measure extends length; countable and some uncountable sets have measure 0; not every set is measurable.
 !: Assuming that a set with measure zero must be countable.
 Q: What is the Lebesgue measure of ℚ? | 0.
@@ -203,6 +206,7 @@ X: Use dominated convergence to find lim ∫₀¹ x^{n} dx.
 > x^{n} → 0 for 0 ≤ x < 1 (and 1 at the single point x = 1, a set of measure 0)
 > |x^{n}| ≤ 1, and ∫₀¹ 1 dx = 1 < ∞
 > So lim ∫₀¹ x^{n} dx = ∫₀¹ 0 dx = 0 (directly: 1/(n + 1) → 0)
+D: maths-u09-power-areas
 K: Lebesgue integration slices the range; it integrates more functions; monotone and dominated convergence justify swapping limits and integrals.
 !: Swapping a limit and an integral without a dominating function: f_{n} = n·1_{(0, 1/n)} → 0 but ∫ f_{n} = 1.
 Q: What is the Lebesgue integral of Dirichlet's function on [0, 1]? | 0.
@@ -335,6 +339,7 @@ X: Find the fixed point of T(x) = x/2 + 1 on ℝ by iteration from x₀ = 0.
 > T is a contraction with k = ½
 > Iterates: 1, 1.5, 1.75, 1.875, … approaching 2
 > Check: T(2) = 1 + 1 = 2, the unique fixed point
+D: maths-u09-fixed-point
 K: Banach spaces are complete normed spaces; contractions on them have unique fixed points found by iteration; this proves existence for ODEs.
 !: Applying the fixed-point theorem without checking completeness or k < 1.
 Q: Are polynomials on [0, 1] with the max norm a Banach space? | No: they aren't complete.
@@ -379,6 +384,7 @@ X: Find ‖sin x‖ in L^{2}[−π, π].
 > ‖sin x‖^{2} = ∫_{−π}^{π} sin^{2} x dx
 > = ∫ (1 − cos 2x)/2 dx = π
 > ‖sin x‖ = √π ≈ 1.772
+D: maths-u09-sin-norm
 K: Inner products give length, angle and projection; orthonormal bases expand every vector; Parseval and Riesz representation hold; L^{2} and ℓ^{2} are the models.
 !: Forgetting to normalise basis functions, such as using sin nx instead of sin nx/√π.
 Q: What does Cauchy–Schwarz state? | |⟨x, y⟩| ≤ ‖x‖‖y‖.
@@ -468,6 +474,7 @@ X: Find the spectrum and spectral radius of A = [[2, 1], [1, 2]].
 > det(A − λI) = (2 − λ)^{2} − 1 = 0
 > λ = 1 or λ = 3
 > σ(A) = {1, 3}; spectral radius 3 (A is symmetric, so it's diagonalisable with orthonormal eigenvectors)
+D: maths-u09-characteristic
 K: The spectrum generalises eigenvalues and can be continuous; compact self-adjoint operators diagonalise with real eigenvalues; spectral theory underlies quantum mechanics.
 !: Thinking every point of the spectrum is an eigenvalue.
 Q: What is the spectrum of multiplication by x on L^{2}[0, 1]? | [0, 1].
@@ -512,6 +519,7 @@ X: In C[0, 1], find the spectrum of f(x) = x^{2} + 1.
 > f − λ is invertible exactly when it never vanishes on [0, 1]
 > f takes all values from 1 to 2
 > So σ(f) = [1, 2], the range of f
+D: maths-u09-range-spectrum
 K: Banach algebras combine completeness and multiplication; spectra are non-empty and compact; Neumann series invert 1 − x for ‖x‖ < 1; Gelfand theory turns commutative ones into function algebras.
 !: Forgetting the submultiplicative condition ‖xy‖ ≤ ‖x‖‖y‖.
 Q: What is the spectrum of a function in C[0, 1]? | Its range.

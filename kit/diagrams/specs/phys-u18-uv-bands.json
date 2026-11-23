@@ -1,0 +1,74 @@
+{
+ "id": "phys-u18-uv-bands",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Ultraviolet radiation",
+ "title": "The ultraviolet bands",
+ "caption": "Ultraviolet runs from 400 nm down to 10 nm: UVA (315–400 nm) reaches the ground, UVB (280–315 nm) is mostly absorbed by ozone, UVC (100–280 nm) is fully absorbed and extreme UV (10–100 nm) is absorbed by air. A germicidal 254 nm lamp (UVC) carries 4.9 eV per photon; the 13.5 nm EUV used in chip lithography carries 92 eV, from a wavelength 19 times shorter.",
+ "alt": "A logarithmic wavelength scale from 1 to 1000 nanometres with extreme UV, UVC, UVB, UVA and the visible band marked, and the 13.5 nm lithography wavelength and the 254 nm germicidal lamp placed in their bands.",
+ "description": [
+  "A horizontal logarithmic scale of wavelength in nanometres.",
+  "The bands from the lesson: extreme UV 10–100 nm, UVC 100–280 nm, UVB 280–315 nm, UVA 315–400 nm, then visible light from 400 nm.",
+  "A 254 nm germicidal lamp lies in UVC (photon energy 4.9 eV); 13.5 nm chip-lithography light lies in the extreme UV (92 eV).",
+  "Shorter wavelength means more energetic photons, so the lower bands are more damaging."
+ ],
+ "quantity": "wavelength",
+ "units": "nm",
+ "min": 0.5,
+ "max": 3,
+ "regions": [
+  {
+   "label": "extreme UV",
+   "from": 10,
+   "to": 100,
+   "colour": "a5"
+  },
+  {
+   "label": "UVC",
+   "from": 100,
+   "to": 280,
+   "colour": "a2"
+  },
+  {
+   "label": "UVB",
+   "from": 280,
+   "to": 315,
+   "colour": "a3"
+  },
+  {
+   "label": "UVA",
+   "from": 315,
+   "to": 400,
+   "colour": "a4"
+  },
+  {
+   "label": "visible",
+   "from": 400,
+   "to": 700,
+   "colour": "a1"
+  }
+ ],
+ "markers": [
+  {
+   "label": "13.5 nm lithography, 92 eV",
+   "value": 13.5,
+   "region": "extreme UV"
+  },
+  {
+   "label": "254 nm lamp, 4.9 eV",
+   "value": 254,
+   "region": "UVC"
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "13.5 nm lithography, 92 eV",
+   "b": "254 nm lamp, 4.9 eV",
+   "value": 1.27,
+   "tol": 0.05,
+   "name": "254 nm is about 19 times 13.5 nm"
+  }
+ ]
+}

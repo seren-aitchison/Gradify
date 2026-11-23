@@ -1,0 +1,129 @@
+{
+ "id": "maths-u06-arcsin-triangle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Inverse Trigonometric Functions",
+ "title": "cos(arcsin(3/5)) from a 3-4-5 triangle",
+ "caption": "θ = arcsin(3/5) is the angle whose opposite side is 3 and hypotenuse 5, so the adjacent side is 4 and cos θ = 4/5. The angle is 36.9°, in [−π/2, π/2], where cosine is positive.",
+ "alt": "A right-angled triangle with hypotenuse 5, opposite side 3, adjacent side 4 and the angle θ ≈ 36.9° at the origin.",
+ "description": [
+  "sin θ = 3/5: draw a right-angled triangle with opposite 3 and hypotenuse 5.",
+  "The adjacent side is √(25 − 9) = 4.",
+  "cos θ = adjacent/hypotenuse = 4/5."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   4,
+   0
+  ],
+  "B": [
+   4,
+   3
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "O",
+    "A",
+    "B"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "angles": [
+  {
+   "at": "A",
+   "from": "O",
+   "to": "B",
+   "right": true,
+   "colour": "ink"
+  },
+  {
+   "at": "O",
+   "from": "A",
+   "to": "B",
+   "deg": 36.9,
+   "tol": 0.1,
+   "label": "θ",
+   "colour": "a2",
+   "r": 40,
+   "labelR": 24
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "A",
+   "value": 4,
+   "label": "adj 4",
+   "side": 1
+  },
+  {
+   "a": "A",
+   "b": "B",
+   "value": 3,
+   "label": "opp 3"
+  },
+  {
+   "a": "O",
+   "b": "B",
+   "value": 5,
+   "label": "hyp 5",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "labelAt": {
+  "O": [
+   -12,
+   12
+  ],
+  "A": [
+   12,
+   14
+  ],
+  "B": [
+   12,
+   -8
+  ]
+ },
+ "view": {
+  "x": [
+   -2,
+   7
+  ],
+  "y": [
+   -1.5,
+   4.6
+  ]
+ },
+ "height": [
+  290,
+  280
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "O",
+   "b": "B",
+   "value": "sqrt(16+9)",
+   "name": "hypotenuse = √(4² + 3²) = 5"
+  },
+  {
+   "type": "value",
+   "expr": "sqrt(1-9/25)",
+   "value": "4/5",
+   "name": "cos θ = √(1 − 9/25) = 4/5"
+  }
+ ],
+ "fromLesson": [
+  "cos θ = √(1 − 9/25)"
+ ]
+}

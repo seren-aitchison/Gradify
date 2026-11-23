@@ -1,0 +1,63 @@
+{
+ "id": "maths-u06-tan-inequality",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Trigonometric Inequalities",
+ "title": "tan x < 1 on 0° ≤ x < 180°",
+ "caption": "The boundary is x = 45°, where tan x = 1. On the first branch tan x < 1 for x < 45°; on the second branch (90° < x < 180°) tan x is negative, so always below 1. The point 90° is excluded: tan is undefined there.",
+ "alt": "A number line from 0° to 180° with a shaded interval from 0° to 45°, closed at 0° and open at 45°, and another from 90° to 180°, open at both ends.",
+ "description": [
+  "Mark the boundary x = 45°, where tan x = 1, and the excluded point x = 90°.",
+  "From 0° up to 45°, tan x is below 1: 0° ≤ x < 45°.",
+  "Between 90° and 180°, tan x is negative, so tan x < 1 throughout.",
+  "The solution is 0° ≤ x < 45° or 90° < x < 180°."
+ ],
+ "range": [
+  0,
+  180
+ ],
+ "ticks": {
+  "step": 45
+ },
+ "minor": 15,
+ "narrowTicks": {
+  "step": 45
+ },
+ "intervals": [
+  {
+   "from": 0,
+   "to": 45,
+   "closed": [
+    true,
+    false
+   ],
+   "inequality": "0 <= x < 45",
+   "label": "0° ≤ x < 45°",
+   "colour": "a1"
+  },
+  {
+   "from": 90,
+   "to": 180,
+   "closed": [
+    false,
+    false
+   ],
+   "inequality": "90 < x < 180",
+   "label": "90° < x < 180°",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "tan(45*pi/180)",
+   "value": "1",
+   "tol": 1e-9,
+   "name": "tan 45° = 1 is the boundary"
+  }
+ ],
+ "fromLesson": [
+  "0° ≤ x < 45° or 90° < x < 180°"
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "id": "maths-u06-ferris-wheel",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Sinusoidal Modelling",
+ "title": "h(t) = 22 − 20cos(πt/5)",
+ "caption": "The rider oscillates about the centre height 22 m with amplitude 20 m, so h runs from 2 m to 42 m. A turn takes 10 minutes, and starting at the bottom means −cos: h(0) = 22 − 20 = 2.",
+ "alt": "A wave of height against time for 20 minutes starting at the minimum 2 m at t = 0, rising to 42 m at t = 5 minutes and back to 2 m at t = 10 minutes.",
+ "description": [
+  "The midline is the centre height, 22 m, and the amplitude is the radius, 20 m.",
+  "The period is 10 minutes, so B = 2π/10 = π/5.",
+  "A cosine starts at its maximum; the rider starts at the minimum, so use −cos.",
+  "h(t) = 22 − 20 cos(πt/5): minimum 2 m at t = 0, maximum 42 m at t = 5."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   45
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   10,
+   20,
+   30,
+   40
+  ]
+ ],
+ "grid": [
+  5,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (minutes)",
+  "h (m)"
+ ],
+ "curves": [
+  {
+   "expr": "22-20*cos(0.6283185307179586*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 22,
+   "label": "centre 22 m"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 2,
+   "label": "2 m",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 5,
+   "y": 42,
+   "label": "42 m",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -6
+  },
+  {
+   "x": 10,
+   "y": 2,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "22-20*cos(0.6283185307179586*x)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 0,
+   "y": 2,
+   "tol": 0.02,
+   "name": "the rider starts at the minimum, 2 m"
+  },
+  {
+   "type": "max",
+   "expr": "22-20*cos(0.6283185307179586*x)",
+   "domain": [
+    0,
+    10
+   ],
+   "x": 5,
+   "y": 42,
+   "name": "the maximum is 42 m at t = 5"
+  },
+  {
+   "type": "point",
+   "expr": "22-20*cos(0.6283185307179586*x)",
+   "x": 10,
+   "y": 2,
+   "name": "back at the bottom after 10 minutes"
+  }
+ ],
+ "fromLesson": [
+  "h(t) = 22 − 20 cos(πt/5) metres"
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": "phys-u18-person-thermal",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Infrared radiation",
+ "title": "Thermal emission of a person at 310 K",
+ "caption": "A body at 310 K radiates a smooth spectrum that peaks at λ = 2.9 × 10⁻³ m K/310 K = 9.3 μm, in the thermal infrared (8–15 μm), far beyond the red end of the visible band (0.7 μm). That is why thermal cameras work at room temperature and the person is invisible to the eye in the dark.",
+ "alt": "Graph of relative emitted power against wavelength from 2 to 40 micrometres: a skewed peak at 9.3 micrometres, with the visible range far to the left of the picture.",
+ "description": [
+  "The horizontal axis is wavelength in micrometres; the vertical axis is the emitted power per unit wavelength relative to its peak.",
+  "The curve is Planck's law for T = 310 K. It rises steeply from the short-wavelength side, peaks at 9.3 μm (Wien: λ_max = 2.9 × 10⁻³/310) and falls slowly on the long side.",
+  "The peak lies in the thermal infrared band 8–15 μm; visible light (0.4–0.7 μm) is to the left of the drawn range, where the emission is negligible."
+ ],
+ "range": {
+  "x": [
+   2,
+   40
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / μm",
+  "relative power"
+ ],
+ "bands": [
+  {
+   "x": [
+    8,
+    15
+   ],
+   "label": "thermal IR",
+   "colour": "a4"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "10157660.547519596/(x^5*(exp(46.41216129032258/x)-1))",
+   "domain": [
+    2,
+    40
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "310 K",
+   "labelAt": [
+    21,
+    0.55
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 9.3473,
+   "y": 1,
+   "label": "9.3 μm",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "10157660.547519596/(x^5*(exp(46.41216129032258/x)-1))",
+   "domain": [
+    2,
+    40
+   ],
+   "x": 9.3473,
+   "y": 1,
+   "name": "the curve peaks at 9.3 μm (Wien's law at 310 K)"
+  }
+ ]
+}
