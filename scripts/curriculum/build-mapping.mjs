@@ -77,11 +77,36 @@ src.split("\n").forEach((raw, i) => {
   for (const l of links) mappings.push({ ...l, note });
 });
 
+// Review decisions (data/curriculum/review/<slug>-england-decisions.json): a person's verdict on one link. Only a reviewer
+// listed with their name and qualifications can record one. A decision never edits the .map file: a changed or rejected
+// link must be corrected there too, and the build fails until the two agree.
+const decisionsFile = new URL(`data/curriculum/review/${slug}-england-decisions.json`, root);
+let D = { reviewers: {}, decisions: [] };
+try { D = JSON.parse(await readFile(decisionsFile, "utf8")); } catch { /* no decisions yet */ }
+const linkAt = new Map(mappings.map((l) => [`${l.requirement}|${l.lesson}`, l]));
+for (const [i, d] of (D.decisions || []).entries()) {
+  const at = `decision ${i + 1} (${d.requirement} → ${d.lesson})`, who = D.reviewers?.[d.reviewer];
+  if (!who?.name || !who?.qualifications) { problems.push(`${at}: reviewer "${d.reviewer}" must be listed with a name and qualifications`); continue; }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d.on || "")) problems.push(`${at}: needs the review date (YYYY-MM-DD)`);
+  if (!["confirmed", "changed", "rejected"].includes(d.verdict)) { problems.push(`${at}: verdict is confirmed, changed or rejected`); continue; }
+  const l = linkAt.get(`${d.requirement}|${d.lesson}`);
+  if (d.verdict === "rejected") { if (l) problems.push(`${at}: rejected, but the link is still in the .map file; remove it there`); continue; }
+  if (!l) { problems.push(`${at}: no such link in the .map file`); continue; }
+  if (d.verdict === "changed" && l.match !== d.match) problems.push(`${at}: changed to ${d.match}, but the .map file still says ${l.match}`);
+  if (d.verdict === "confirmed" && d.match && d.match !== l.match) problems.push(`${at}: confirmed as ${d.match}, but the .map file says ${l.match}`);
+  l.review = { verdict: d.verdict, reviewer: who.name, on: d.on, note: d.note || null };
+}
+const reviewedLinks = mappings.filter((l) => l.review).length;
+const reviewers = [...new Set(mappings.filter((l) => l.review).map((l) => l.review.reviewer))];
+
 const pending = R.requirements.filter((r) => !judged.has(r.id)).map((r) => r.id);
 const out = {
   slug, system: "uk-eng", generated: new Date().toISOString().slice(0, 10),
-  review: { status: "ai-drafted", reviewer: null, verifiedOn: null, note: "Drafted by an AI mapper from lesson objectives, headings and notes searches. Not reviewed by a teacher or examiner; not an official alignment or endorsement." },
-  counts: { requirements: R.requirements.length, judged: judged.size, pending: pending.length, links: mappings.length },
+  // whole-mapping status: ai-drafted until a named reviewer has decided every link (the course's state in
+  // kit/curriculum/coverage.js is moved by hand, after that)
+  review: { status: reviewedLinks === 0 ? "ai-drafted" : reviewedLinks < mappings.length ? "partly-reviewed" : "reviewed", reviewer: reviewers.length ? reviewers.join(", ") : null, verifiedOn: null, reviewedLinks,
+    note: "Drafted by an AI mapper from lesson objectives, headings and notes searches. Links carry a review only where a named reviewer has decided them; the rest are AI-drafted. Not an official alignment or endorsement." },
+  counts: { requirements: R.requirements.length, judged: judged.size, pending: pending.length, links: mappings.length, reviewedLinks },
   requirements: Object.fromEntries([...judged].map(([id, j]) => [id, j])),
   mappings, pending,
 };

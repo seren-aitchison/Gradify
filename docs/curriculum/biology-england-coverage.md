@@ -2,7 +2,7 @@
 
 _Generated 2026-11-23 by `scripts/curriculum/report.mjs` from the structured data. Don't edit by hand._
 
-> **Status: AI-drafted, not reviewed.** Every link was judged by an AI mapper from lesson objectives, headings and searches of the lesson notes, with evidence quoted from the lesson. No teacher, examiner or awarding body has checked it. This is not an official alignment, and no awarding body endorses Gradify.
+> **Status: Mapping drafted (ai-drafted, 0 of 1661 links reviewed).** Every link was judged by an AI mapper from lesson objectives, headings and searches of the lesson notes, with evidence quoted from the lesson. No teacher, examiner or awarding body has checked it. This is not an official alignment, and no awarding body endorses Gradify. None of these figures is a measure of teaching quality, and none should be used in marketing.
 
 ## Counting rules
 
@@ -13,62 +13,123 @@ _Generated 2026-11-23 by `scripts/curriculum/report.mjs` from the structured dat
 
 ## Overall
 
-903 official requirements: **678 full**, 153 partial, 36 indirect, 36 uncovered (60 uncertain). 75% full, 92% full or partial.
+| Full | Partial | Indirect only | Uncovered | Uncertain (low confidence) |
+|---|---|---|---|---|
+| 678 (75%) | 153 (17%) | 36 (4%) | 36 (4%) | 60 |
+
+Out of 903 official requirements. The four statuses are separate and are never added together: a partial match means part of the requirement is not taught, so it is not coverage.
 
 256 of 391 lessons have at least one full or partial match. Through them, 3197 of 4879 linked resources (flashcards, questions, diagrams, interactives and the generated mind maps) are mapped. 991 resources match a requirement's wording directly.
 
 ## By year, stage, qualification and board
 
-| Curriculum | Requirements | Full | Partial | Indirect | Uncovered | Uncertain | Lessons | Full % |
-|---|---|---|---|---|---|---|---|---|
-| Year 1 (national curriculum, statutory, year by year) | 6 | 0 | 2 | 2 | 2 | 2 | 2 | 0% |
-| Year 2 (national curriculum, statutory, year by year) | 9 | 2 | 3 | 2 | 2 | 0 | 6 | 22% |
-| Year 3 (national curriculum, statutory, year by year) | 6 | 4 | 2 | 0 | 0 | 0 | 14 | 67% |
-| Year 4 (national curriculum, statutory, year by year) | 6 | 3 | 1 | 0 | 2 | 0 | 10 | 50% |
-| Year 5 (national curriculum, statutory, year by year) | 3 | 1 | 1 | 0 | 1 | 0 | 5 | 33% |
-| Year 6 (national curriculum, statutory, year by year) | 8 | 7 | 1 | 0 | 0 | 0 | 16 | 88% |
-| Key stage 3, Years 7–9 (national curriculum, by stage) | 39 | 25 | 11 | 1 | 2 | 1 | 61 | 64% |
-| Key stage 4, Years 10–11 (national curriculum programme of study) | 54 | 46 | 6 | 2 | 0 | 2 | 101 | 85% |
-| Working scientifically, KS1 (science-wide) | 6 | 0 | 0 | 6 | 0 | 6 | 0 | 0% |
-| Working scientifically, KS2 (science-wide) | 15 | 8 | 6 | 1 | 0 | 1 | 11 | 53% |
-| Working scientifically, KS3 (science-wide) | 18 | 15 | 3 | 0 | 0 | 0 | 17 | 83% |
-| Working scientifically, KS4 (science-wide) | 28 | 22 | 5 | 1 | 0 | 0 | 24 | 79% |
-| AQA GCSE Biology (8461): all content | 97 | 72 | 20 | 3 | 2 | 3 | 152 | 74% |
-| AQA GCSE Biology (8461): content shared with AQA GCSE Combined Science: Trilogy (8464) | 71 | 55 | 14 | 2 | 0 | 2 | 125 | 77% |
-| AQA GCSE Biology (8461): separate Biology only | 26 | 17 | 6 | 1 | 2 | 1 | 40 | 65% |
-| Pearson Edexcel GCSE (9–1) Biology (1BI0): all content | 165 | 122 | 30 | 4 | 9 | 12 | 158 | 74% |
-| Pearson Edexcel GCSE (9–1) Biology (1BI0): content shared with Pearson Edexcel GCSE Combined Science (1SC0) | 112 | 87 | 20 | 2 | 3 | 4 | 127 | 78% |
-| Pearson Edexcel GCSE (9–1) Biology (1BI0): separate Biology only | 53 | 35 | 10 | 2 | 6 | 8 | 53 | 66% |
-| OCR GCSE (9–1) Biology A (Gateway Science) (J247): all content | 129 | 106 | 15 | 4 | 4 | 9 | 160 | 82% |
-| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): all content | 149 | 116 | 23 | 5 | 5 | 13 | 152 | 78% |
-| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): content shared with OCR GCSE Combined Science B (Twenty First Century Science) (J260) | 119 | 96 | 18 | 3 | 2 | 8 | 136 | 81% |
-| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): separate Biology only | 30 | 20 | 5 | 2 | 3 | 5 | 28 | 67% |
-| WJEC Eduqas GCSE (9–1) Biology: all content | 165 | 129 | 24 | 5 | 7 | 11 | 157 | 78% |
+| Curriculum | Requirements | Full | Partial | Indirect | Uncovered | Uncertain | Lessons |
+|---|---|---|---|---|---|---|---|
+| Year 1 (national curriculum, statutory, year by year) | 6 | 0 (0%) | 2 (33%) | 2 | 2 | 2 | 2 |
+| Year 2 (national curriculum, statutory, year by year) | 9 | 2 (22%) | 3 (33%) | 2 | 2 | 0 | 6 |
+| Year 3 (national curriculum, statutory, year by year) | 6 | 4 (67%) | 2 (33%) | 0 | 0 | 0 | 14 |
+| Year 4 (national curriculum, statutory, year by year) | 6 | 3 (50%) | 1 (17%) | 0 | 2 | 0 | 10 |
+| Year 5 (national curriculum, statutory, year by year) | 3 | 1 (33%) | 1 (33%) | 0 | 1 | 0 | 5 |
+| Year 6 (national curriculum, statutory, year by year) | 8 | 7 (88%) | 1 (13%) | 0 | 0 | 0 | 16 |
+| Key stage 3, Years 7–9 (national curriculum, by stage) | 39 | 25 (64%) | 11 (28%) | 1 | 2 | 1 | 61 |
+| Key stage 4, Years 10–11 (national curriculum programme of study) | 54 | 46 (85%) | 6 (11%) | 2 | 0 | 2 | 101 |
+| Working scientifically, KS1 (science-wide) | 6 | 0 (0%) | 0 (0%) | 6 | 0 | 6 | 0 |
+| Working scientifically, KS2 (science-wide) | 15 | 8 (53%) | 6 (40%) | 1 | 0 | 1 | 11 |
+| Working scientifically, KS3 (science-wide) | 18 | 15 (83%) | 3 (17%) | 0 | 0 | 0 | 17 |
+| Working scientifically, KS4 (science-wide) | 28 | 22 (79%) | 5 (18%) | 1 | 0 | 0 | 24 |
+| AQA GCSE Biology (8461): all content | 97 | 72 (74%) | 20 (21%) | 3 | 2 | 3 | 152 |
+| AQA GCSE Biology (8461): content shared with AQA GCSE Combined Science: Trilogy (8464) | 71 | 55 (77%) | 14 (20%) | 2 | 0 | 2 | 125 |
+| AQA GCSE Biology (8461): separate Biology only | 26 | 17 (65%) | 6 (23%) | 1 | 2 | 1 | 40 |
+| Pearson Edexcel GCSE (9–1) Biology (1BI0): all content | 165 | 122 (74%) | 30 (18%) | 4 | 9 | 12 | 158 |
+| Pearson Edexcel GCSE (9–1) Biology (1BI0): content shared with Pearson Edexcel GCSE Combined Science (1SC0) | 112 | 87 (78%) | 20 (18%) | 2 | 3 | 4 | 127 |
+| Pearson Edexcel GCSE (9–1) Biology (1BI0): separate Biology only | 53 | 35 (66%) | 10 (19%) | 2 | 6 | 8 | 53 |
+| OCR GCSE (9–1) Biology A (Gateway Science) (J247): all content | 129 | 106 (82%) | 15 (12%) | 4 | 4 | 9 | 160 |
+| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): all content | 149 | 116 (78%) | 23 (15%) | 5 | 5 | 13 | 152 |
+| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): content shared with OCR GCSE Combined Science B (Twenty First Century Science) (J260) | 119 | 96 (81%) | 18 (15%) | 3 | 2 | 8 | 136 |
+| OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): separate Biology only | 30 | 20 (67%) | 5 (17%) | 2 | 3 | 5 | 28 |
+| WJEC Eduqas GCSE (9–1) Biology: all content | 165 | 129 (78%) | 24 (15%) | 5 | 7 | 11 | 157 |
 
 Years 1–6 are statutory year by year. Key stage 3 is set by stage: any year placement within years 7–9 below is **Gradify's suggested sequence**, not the national curriculum's. GCSE content belongs to years 10–11 as a stage. Key stage 1–2 content is mostly taught here at secondary depth, which the mapping marks "above": it covers the idea, but isn't written for that age.
 
-## Requirements that need teaching material (137)
+## Specification completeness
 
-- **Primary science (years 1–6): identification, needs, life cycles and health** (16): `nc-y1-plants-01`, `nc-y1-plants-02`, `nc-y1-animals-including-humans-01`, `nc-y1-animals-including-humans-02`, `nc-y1-animals-including-humans-03`, `nc-y1-animals-including-humans-04`, `nc-y2-living-things-and-their-habitats-02`, `nc-y2-living-things-and-their-habitats-03`, `nc-y2-plants-02`, `nc-y2-animals-including-humans-01`, `nc-y2-animals-including-humans-02`, `nc-y2-animals-including-humans-03`, and 4 more
-- **Selective breeding, farming and food security** (16): `nc-ks3-relationships-in-an-ecosystem-02`, `nc-ks4-evolution-inheritance-and-variation-11`, `aqa8461-4.6.2.3`, `aqa8461-4.7.3.4`, `aqa8461-4.7.5.1`, `aqa8461-4.7.5.2`, `edx1bi0-4.8`, `edx1bi0-4.13B`, `edx1bi0-9.11B`, `ocrj247-B6.2a`, `ocrj247-B6.2b`, `ocrj247-B6.2c`, and 4 more
-- **Health, non-communicable disease and its treatment** (16): `nc-ks4-health-disease-and-the-development-of-medicines-01`, `nc-ks4-health-disease-and-the-development-of-medicines-03`, `nc-ks4-health-disease-and-the-development-of-medicines-08`, `edx1bi0-2.7`, `edx1bi0-5.1`, `edx1bi0-5.24`, `edx1bi0-5.25`, `ocrj247-B6.3a`, `ocrj247-B6.3s`, `ocrj247-B6.3t`, `ocrj257-B2.1.1`, `ocrj257-B2.5.4`, and 4 more
-- **Communicable disease: named examples, STIs, vaccination choices and monoclonal uses** (16): `aqa8461-4.3.1.9`, `aqa8461-4.6.3.6`, `edx1bi0-2.11B`, `edx1bi0-5.8`, `edx1bi0-5.20`, `ocrj247-B3.1g`, `ocrj247-B6.3n`, `ocrj247-B6.3q`, `ocrj257-B2.6.4`, `ocrj257-B5.2.5`, `eduqas-3.2b`, `eduqas-3.3f`, and 4 more
-- **Plant disease and plant defences** (15): `aqa8461-4.3.3.1`, `aqa8461-4.3.3.2`, `edx1bi0-5.9B`, `edx1bi0-5.10B`, `edx1bi0-5.11B`, `ocrj247-B6.3f`, `ocrj247-B6.3g`, `ocrj247-B6.3h`, `ocrj247-B6.3i`, `ocrj257-B2.1.5`, `ocrj257-B2.2.3`, `ocrj257-B2.2.6`, and 3 more
-- **Respiration in animals, exercise and lactic acid** (14): `nc-ks3-cellular-respiration-01`, `nc-ks3-cellular-respiration-02`, `nc-ks3-cellular-respiration-04`, `nc-ks4-key-ideas-06`, `nc-ks4-cell-biology-05`, `aqa8461-4.4.1.3`, `aqa8461-4.4.2.2`, `aqa8461-4.4.2.3`, `edx1bi0-8.9`, `edx1bi0-8.11`, `ocrj247-B1.3c`, `ocrj257-B4.1.1`, and 2 more
-- **The eye and its defects** (10): `aqa8461-4.5.2.3`, `edx1bi0-2.15B`, `edx1bi0-2.16B`, `edx1bi0-2.17B`, `ocrj247-B3.1d`, `ocrj247-B3.1e`, `ocrj257-B5.6.4`, `ocrj257-B5.6.5`, `eduqas-4.1f`, `eduqas-4.1g`
-- **Diet, nutrition, food tests and energy in food** (9): `nc-ks3-nutrition-and-digestion-02`, `nc-ks3-nutrition-and-digestion-03`, `aqa8461-4.2.2.5`, `edx1bi0-1.13B`, `edx1bi0-1.14B`, `ocrj257-B2.5.2`, `eduqas-SP1.3B`, `eduqas-3.4b`, `eduqas-3.4c`
-- **Working scientifically at primary age** (7): `nc-ks1-ws-01`, `nc-ks1-ws-02`, `nc-ks1-ws-03`, `nc-ks1-ws-04`, `nc-ks1-ws-05`, `nc-ks1-ws-06`, `nc-lks2-ws-08`
-- **Practical work, techniques and calculations** (5): `edx1bi0-4.5`, `edx1bi0-6.6`, `ocrj257-B3.1.5`, `eduqas-SP4.3`, `eduqas-7.1h`
-- **The brain and senses** (4): `edx1bi0-2.12B`, `ocrj247-B3.1h`, `ocrj257-B5.6.6`, `eduqas-4.1j`
-- **Decomposition and decay** (4): `edx1bi0-9.17B`, `edx1bi0-9.19B`, `ocrj257-B3.3.14`, `eduqas-6.2e`
-- **Other** (3): `nc-ks3-cells-and-organisation-05`, `nc-ks4-ws-4-vocabulary-units-symbols-and-nomenclature-01`, `nc-ks4-transport-systems-01`
-- **Drugs, medicines and clinical trials** (2): `nc-ks3-health-01`, `nc-ks4-health-disease-and-the-development-of-medicines-07`
+**Comprehensive GCSE specification coverage can't be claimed yet.** These parts of the documents are not extracted, so the GCSE figures above leave them out:
 
-Each requirement's note in `data/curriculum/mapping/biology-england.map` says exactly what is missing.
+- AQA GCSE Biology (8461): Working scientifically (section 3) and mathematical requirements appendix
+- AQA GCSE Biology (8461): Required practical activities as separate records (they are inside the subsections' text)
+- AQA GCSE Biology (8461): AQA GCSE Combined Science: Trilogy (8464) and Synergy (8465) as separate documents
+- Pearson Edexcel GCSE (9–1) Biology (1BI0): Working scientifically and mathematical skills appendices
+- Pearson Edexcel GCSE (9–1) Biology (1BI0): Pearson Edexcel GCSE Combined Science (1SC0) as a separate document
+- OCR GCSE (9–1) Biology A (Gateway Science) (J247): Topic B7: Practical skills
+- OCR GCSE (9–1) Biology A (Gateway Science) (J247): Working scientifically and mathematical skills appendices
+- OCR GCSE (9–1) Biology A (Gateway Science) (J247): OCR GCSE Combined Science A (J250) as a separate document
+- OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Chapter B7: Ideas about Science
+- OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Chapter B8: Practical skills
+- OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Mathematical skills appendix
+- OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): OCR GCSE Combined Science B (J260) as a separate document
+- WJEC Eduqas GCSE (9–1) Biology: Working scientifically and mathematical requirements appendices
+- WJEC Eduqas GCSE (9–1) Biology: WJEC Eduqas GCSE (9–1) Combined Science as a separate document; this specification does not mark statements as separate-science only
+
+## Prioritised gaps (241 requirements; no lessons written yet)
+
+Three kinds of gap, needing different fixes:
+
+- **missing** (72): no lesson teaches it, or one only touches on it. Needs new material.
+- **depth** (137): a lesson covers part of it. Extend what exists; a new lesson isn't the default answer.
+- **age-level** (32): primary content taught only at secondary depth. Needs age-appropriate material, not more secondary lessons.
+
+Priority follows GCSE, then key stage 3, then practical skills, then primary. Within a priority, themes are ranked by how many separate documents ask for them, then by how much is missing outright.
+
+### 1. GCSE (exam specifications and the statutory key stage 4 programme) (158: 43 missing, 115 depth, 0 age-level)
+
+| Theme | Documents | Missing | Depth | Age-level | Requirements |
+|---|---|---|---|---|---|
+| Health, non-communicable disease and its treatment | 6 | 9 | 15 | 0 | `nc-ks4-health-disease-and-the-development-of-medicines-01`, `nc-ks4-health-disease-and-the-development-of-medicines-03`, `nc-ks4-health-disease-and-the-development-of-medicines-08`, `aqa8461-4.2.2.4`, `edx1bi0-2.7`, `edx1bi0-5.1` +18 |
+| Selective breeding, farming and food security | 6 | 7 | 12 | 0 | `nc-ks4-evolution-inheritance-and-variation-11`, `aqa8461-4.6.1.3`, `aqa8461-4.6.2.3`, `aqa8461-4.7.3.3`, `aqa8461-4.7.3.4`, `aqa8461-4.7.5.1` +13 |
+| Respiration in animals, exercise and lactic acid | 6 | 0 | 15 | 0 | `nc-ks4-key-ideas-06`, `nc-ks4-cell-biology-05`, `aqa8461-4.4.1.3`, `aqa8461-4.4.2.1`, `aqa8461-4.4.2.2`, `aqa8461-4.4.2.3` +9 |
+| Drugs, medicines and clinical trials | 6 | 0 | 7 | 0 | `nc-ks4-health-disease-and-the-development-of-medicines-07`, `aqa8461-4.3.1.9`, `edx1bi0-5.20`, `ocrj247-B6.3q`, `ocrj257-B2.6.4`, `ocrj257-B6.1.10` +1 |
+| The eye and its defects | 5 | 9 | 0 | 0 | `aqa8461-4.5.2.3`, `edx1bi0-2.15B`, `edx1bi0-2.16B`, `edx1bi0-2.17B`, `ocrj247-B3.1d`, `ocrj247-B3.1e` +3 |
+| Plant disease and plant defences | 5 | 4 | 14 | 0 | `aqa8461-4.3.1.2`, `aqa8461-4.3.3.1`, `aqa8461-4.3.3.2`, `edx1bi0-5.5`, `edx1bi0-5.9B`, `edx1bi0-5.10B` +12 |
+| Other | 5 | 1 | 18 | 0 | `nc-ks4-ws-1-the-development-of-scientific-thinking-04`, `nc-ks4-ws-3-analysis-and-evaluation-03`, `nc-ks4-ws-4-vocabulary-units-symbols-and-nomenclature-01`, `nc-ks4-transport-systems-01`, `aqa8461-4.6.1.7`, `aqa8461-4.6.2.5` +13 |
+| Practical work, techniques and calculations | 5 | 1 | 11 | 0 | `nc-ks4-ws-2-experimental-skills-and-strategies-03`, `nc-ks4-ws-2-experimental-skills-and-strategies-04`, `nc-ks4-ws-2-experimental-skills-and-strategies-06`, `edx1bi0-3.6`, `edx1bi0-4.5`, `edx1bi0-6.6` +6 |
+| Communicable disease: named examples, STIs, vaccination choices and monoclonal uses | 5 | 0 | 11 | 0 | `aqa8461-4.3.1.3`, `aqa8461-4.3.1.4`, `aqa8461-4.3.2.2`, `edx1bi0-5.8`, `edx1bi0-5.22B`, `edx1bi0-7.8` +5 |
+| The brain and senses | 4 | 7 | 2 | 0 | `edx1bi0-2.11B`, `edx1bi0-2.12B`, `ocrj247-B3.1g`, `ocrj247-B3.1h`, `ocrj257-B5.2.5`, `ocrj257-B5.6.6` +3 |
+| Diet, nutrition, food tests and energy in food | 4 | 3 | 5 | 0 | `aqa8461-4.2.2.5`, `aqa8461-4.2.2.6`, `edx1bi0-1.14B`, `edx1bi0-5.23`, `ocrj257-B2.5.1`, `ocrj257-B2.5.2` +2 |
+| Decomposition and decay | 4 | 2 | 5 | 0 | `edx1bi0-9.17B`, `edx1bi0-9.18B`, `edx1bi0-9.19B`, `ocrj247-B4.1d`, `ocrj257-B3.3.13`, `ocrj257-B3.3.14` +1 |
+
+### 2. Key stage 3 (17: 3 missing, 14 depth, 0 age-level)
+
+| Theme | Documents | Missing | Depth | Age-level | Requirements |
+|---|---|---|---|---|---|
+| Diet, nutrition, food tests and energy in food | 1 | 2 | 1 | 0 | `nc-ks3-nutrition-and-digestion-01`, `nc-ks3-nutrition-and-digestion-02`, `nc-ks3-nutrition-and-digestion-03` |
+| Drugs, medicines and clinical trials | 1 | 1 | 0 | 0 | `nc-ks3-health-01` |
+| Other | 1 | 0 | 6 | 0 | `nc-ks3-ws-analysis-and-evaluation-06`, `nc-ks3-ws-measurement-02`, `nc-ks3-cells-and-organisation-05`, `nc-ks3-the-skeletal-and-muscular-systems-02`, `nc-ks3-photosynthesis-02`, `nc-ks3-inheritance-chromosomes-dna-and-genes-03` |
+| Respiration in animals, exercise and lactic acid | 1 | 0 | 5 | 0 | `nc-ks3-gas-exchange-systems-03`, `nc-ks3-cellular-respiration-01`, `nc-ks3-cellular-respiration-02`, `nc-ks3-cellular-respiration-03`, `nc-ks3-cellular-respiration-04` |
+| Practical work, techniques and calculations | 1 | 0 | 1 | 0 | `nc-ks3-ws-experimental-skills-and-investigations-04` |
+| Selective breeding, farming and food security | 1 | 0 | 1 | 0 | `nc-ks3-relationships-in-an-ecosystem-02` |
+
+### 3. Practical skills and investigations (16: 8 missing, 8 depth, 0 age-level)
+
+| Theme | Documents | Missing | Depth | Age-level | Requirements |
+|---|---|---|---|---|---|
+| Practical work, techniques and calculations | 2 | 2 | 7 | 0 | `edx1bi0-5.18B`, `edx1bi0-6.5`, `eduqas-SP1.1`, `eduqas-SP2.2`, `eduqas-SP3.3`, `eduqas-SP4.1` +3 |
+| Diet, nutrition, food tests and energy in food | 2 | 2 | 0 | 0 | `edx1bi0-1.13B`, `eduqas-SP1.3B` |
+| Respiration in animals, exercise and lactic acid | 2 | 2 | 0 | 0 | `edx1bi0-8.11`, `ocrj257-B4.1.5` |
+| Decomposition and decay | 2 | 1 | 1 | 0 | `aqa8461-4.7.2.3`, `eduqas-SP6.2` |
+| The eye and its defects | 1 | 1 | 0 | 0 | `ocrj257-B5.6.4` |
+
+### 4. Primary (years 1–6) (50: 18 missing, 0 depth, 32 age-level)
+
+| Theme | Documents | Missing | Depth | Age-level | Requirements |
+|---|---|---|---|---|---|
+| Primary science (years 1–6): identification, needs, life cycles and health | 1 | 11 | 0 | 26 | `nc-y1-plants-01`, `nc-y1-plants-02`, `nc-y1-animals-including-humans-01`, `nc-y1-animals-including-humans-02`, `nc-y1-animals-including-humans-03`, `nc-y1-animals-including-humans-04` +31 |
+| Working scientifically at primary age | 1 | 7 | 0 | 6 | `nc-ks1-ws-01`, `nc-ks1-ws-02`, `nc-ks1-ws-03`, `nc-ks1-ws-04`, `nc-ks1-ws-05`, `nc-ks1-ws-06` +7 |
+
+Each requirement's note in `data/curriculum/mapping/biology-england.map` says exactly what is missing; the full list is `gaps.items` in `data/curriculum/reports/biology-england-coverage.json`.
 
 ## Lessons with no official alignment (135)
 
-These lessons have no full or partial match in the England years 1–11 curricula. Most are beyond GCSE, which is expected for a course that runs to first-year undergraduate.
+These lessons have no full or partial match in the England years 1–11 curricula. Most are beyond GCSE, which is expected for a course that runs to first-year undergraduate. They aren't a problem to fix: don't delete them or force a match to raise a percentage.
 
 - **Foundations of Biology** (1): u01-01 What is biology?
 - **Cell Biology** (11): u02-06 Fungal cells; u02-12 Ribosomes; u02-13 Endoplasmic reticulum; u02-14 Golgi apparatus; u02-15 Lysosomes and peroxisomes; u02-16 Cytoskeleton; u02-18 Membrane structure; u02-22 Facilitated diffusion; u02-24 Endocytosis and exocytosis; u02-28 Cell signalling; u02-29 Cell junctions
@@ -128,4 +189,3 @@ Each lesson's earliest placement, from its full and partial links (`data/curricu
 - [OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257)](https://www.ocr.org.uk/Images/234595-specification-accredited-gcse-twenty-first-century-science-suite-biology-b-j257.pdf), Version 4.0, August 2026. Retrieved 2026-11-23.
 - [WJEC Eduqas GCSE (9–1) Biology](https://www.eduqas.co.uk/media/gg2joueu/eduqas-gcse-biology-spec-from-2016-e.pdf), Version 3, January 2019. Retrieved 2026-11-23.
 
-Not yet extracted: OCR J247 topic B7 (Practical skills); OCR J257 chapters B7 (Ideas about Science) and B8 (Practical skills); Exam-board working-scientifically and mathematical-skills appendices; GCSE Combined Science specifications as separate documents (shared content is flagged per statement for AQA, Edexcel and OCR J257 only).

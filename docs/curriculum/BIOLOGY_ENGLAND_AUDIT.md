@@ -96,26 +96,31 @@ Everything is new data, scripts and one test file. **No runtime code, course con
 
 - `scripts/curriculum/`: `extract-specs.py` (requirements), `inventory.mjs`, `candidates.mjs` (shortlists), `build-mapping.mjs` and `report.mjs`. See its `README.md`.
 - `data/curriculum/`: the requirements, inventory, mapping (`.map` source and built `.json`), resource mapping, coverage report data, and `progress.json`.
-- `tests/curriculum-mapping.test.mjs`: 7 tests covering ids, provenance, no invented years, a current inventory, a clean build, evidence on every link, no "verified" claims, and a consistent report.
+- `tests/curriculum-mapping.test.mjs`: 12 tests covering ids, provenance, the shared schema, no invented years, a current inventory, a clean build, evidence on every link, named reviewers, the registry states, import safety, separate headline figures, gap kinds and the review queue.
 
 **Relation to the existing architecture.** The new data sits beside `coverage.js` and `map.js` and doesn't replace them:
 
-- `coverage.js` stays the place for the course-level claim. Biology is still at the default, because changing it changes what learners see on `quality.html`. That is your decision (below).
+- `coverage.js` stays the place for the course-level claim. Biology's claim stays at the default, and its mapping state is recorded separately (see "Validation phase" below).
 - `map.js` stays the unit-level summary for the courses that have one. A Biology `map.js` could be generated from the lesson-level data if you want Biology in `npm run qa`'s framework report. I didn't wire one in, because that would change Biology's course config.
 
 ## Results (snapshot from 23 November 2026)
 
-| Curriculum | Full | Full or partial | Uncovered or indirect only |
-|---|---|---|---|
-| All 903 requirements | 678 (75%) | 92% | 72 |
-| AQA 8461 | 74% | 95% | |
-| Pearson Edexcel 1BI0 | 74% | 92% | |
-| OCR J247 | 82% | 94% | |
-| OCR J257 | 78% | 93% | |
-| WJEC Eduqas | 78% | 93% | |
-| Key stage 4 programme | 85% | | |
-| Key stage 3 | 64% | | |
-| Years 1–6 (taught above the stage) | 0–88% by year | | |
+The four statuses are separate figures. A partial match means part of the requirement isn't taught, so full and partial are never added together. None of these figures measures teaching quality, and none should be used in marketing.
+
+| Curriculum | Full | Partial | Indirect only | Uncovered |
+|---|---|---|---|---|
+| All 903 requirements | 678 (75%) | 153 (17%) | 36 (4%) | 36 (4%) |
+| AQA 8461 | 72 (74%) | 20 | 3 | 2 |
+| Pearson Edexcel 1BI0 | 122 (74%) | 30 | 4 | 9 |
+| OCR J247 | 106 (82%) | 15 | 4 | 4 |
+| OCR J257 | 116 (78%) | 23 | 5 | 5 |
+| WJEC Eduqas | 129 (78%) | 24 | 5 | 7 |
+| Key stage 4 programme | 46 (85%) | 6 | 2 | 0 |
+| Key stage 3 | 25 (64%) | 11 | 1 | 2 |
+
+Years 1–6 range from 0% to 88% full by year, and that teaching is at secondary depth, not written for the age.
+
+The GCSE figures leave out the unextracted practical-skills chapters, appendices and Combined Science specifications, so they are not comprehensive.
 
 Lessons and resources:
 
@@ -144,9 +149,26 @@ The largest gaps are topics with no lesson at all:
   - the Combined Science specifications as separate documents. For AQA, Edexcel and OCR J257, shared content is flagged statement by statement instead.
 - 54 links have no wording overlap between the requirement and the lesson. Some may be right but use different words. `build-mapping.mjs --review` lists them for the reviewer.
 
-## Decisions for you
+## Validation phase (decided 23 November 2026)
 
-1. **`coverage.js`:** should Biology move from the default to `mapped`, for GCSE (`uk-eng`), with `evidence: "docs/curriculum/biology-england-coverage.md"` and a note that the mapping is AI-drafted? This changes `quality.html`.
-2. **Review:** who reviews the mapping, and in what order? I suggest low-confidence links first, then the `--review` list.
-3. **Gaps:** write new lessons for the gap themes, or leave Biology's GCSE scope as it is?
-4. **The UK Coverage dataset:** where it lives, so it can be merged rather than duplicated.
+1. **Registry status.** `kit/curriculum/coverage.js` now has a separate mapping state: none, drafted, reviewed, sources verified, approved. Each state after "drafted" needs the named people and dates that `check()` enforces. Biology is at **drafted**. Its learner-facing claim stays at the default ("Gradify curriculum"), so `quality.html` shows nothing new and can't present the AI-drafted mapping as coverage.
+2. **Review queue.** `docs/curriculum/biology-england-review-queue.md`, with the full list in `data/curriculum/review/biology-england-queue.json`, orders every link:
+   1. the 54 links with no shared wording
+   2. the statutory key stage 4 programme
+   3. the five GCSE specifications, board-unique statements first
+   4. practical skills
+   5. key stages 1–2
+   6. the rest
+
+   Decisions go in `data/curriculum/review/biology-england-decisions.json`. Only a listed, named reviewer with qualifications can record one, and the build fails if a changed or rejected link isn't also corrected in the `.map` file.
+3. **Reporting.** Full, partial, indirect and uncovered are reported separately. The combined full-or-partial percentage has been removed, and a test keeps it out.
+4. **Gaps.** No lessons are written. The report lists the gaps as **missing** (no lesson), **depth** (a lesson covers part of it) or **age-level** (primary content taught only at secondary depth). They are prioritised GCSE, then key stage 3, then practical skills, then primary. The 135 unaligned lessons stay as they are.
+5. **Specification completeness.** Each source records what isn't extracted yet (`notExtracted`), and the report states that comprehensive GCSE coverage can't be claimed until that material is extracted.
+6. **The UK Coverage dataset.** It is not recreated. `kit/curriculum/requirements.js` defines the record shape, and `scripts/curriculum/import-requirements.mjs` checks an existing dataset against it and merges it, refusing anything already present.
+7. **Quality controls.** These are unchanged and tested: source wording, version, page and retrieval date; permanent lesson ids; evidence on every link; and no "verified" without a named reviewer.
+
+## Still open
+
+- A reviewer: a qualified Biology teacher or examiner with GCSE experience, ideally with board-specific knowledge for tier 3.
+- Where the UK Coverage dataset lives.
+- Biology's intended scope (GCSE, key stage 3, primary), before any gap is filled.

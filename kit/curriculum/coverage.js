@@ -18,6 +18,19 @@ export const STATUS = {
   gradify: { name: "Gradify curriculum", line: "Gradify's own course. Useful study, not tied to an official specification." },
 };
 
+// Requirement-level mapping state: a separate, internal record of how far a course's statement-by-statement mapping
+// (data/curriculum/, scripts/curriculum/README.md) has been checked. It never changes a course's claim (STATUS above,
+// shown to learners): a drafted or reviewed mapping is evidence towards a claim, not the claim. Each state needs the
+// fields check() lists, so an AI-drafted mapping can't be recorded as reviewed or approved without a named person.
+export const MAPPING = {
+  none: { name: "Not mapped", line: "No requirement-level mapping exists." },
+  drafted: { name: "Mapping drafted", line: "AI-drafted, statement by statement, with evidence from each lesson; not yet checked by anyone." },
+  reviewed: { name: "Mapping reviewed", line: "A qualified reviewer has checked every link." },
+  "sources-verified": { name: "Sources verified", line: "Reviewed, and the official specifications and supporting references have been checked against the published versions." },
+  approved: { name: "Approved", line: "Reviewed, sources verified, and signed off by the required subject expert." },
+};
+const MAPPING_ORDER = ["none", "drafted", "reviewed", "sources-verified", "approved"];
+
 // the structure, starting with the United Kingdom; other countries are added only with real coverage to show
 export const SYSTEMS = [
   { id: "uk-eng", country: "United Kingdom", system: "England", bodies: ["AQA", "Pearson Edexcel", "OCR", "WJEC Eduqas", "Ofqual (regulator)"], qualifications: ["gcse", "a-level", "degree", "apprenticeship"] },
@@ -48,7 +61,16 @@ export const COURSES = {
   computing: { serves: [{ q: "gcse", status: "aligned" }, { q: "a-level", status: "aligned" }, { q: "degree", status: "aligned" }], systems: ["uk-eng"] },
   pharmacy: { serves: [{ q: "gphc", status: "aligned" }], systems: ["uk-eng", "uk-wal", "uk-sco"] },
   medicine: { serves: [{ q: "mla", status: "aligned" }, { q: "degree", status: "aligned" }], systems: ["uk-eng", "uk-wal", "uk-sco", "uk-ni"] },
+  // the claim stays Gradify's own curriculum until the mapping is reviewed and the claim is decided; the mapping is internal
+  biology: {
+    serves: [{ q: null, status: "gradify" }], systems: ["uk-eng"],
+    mapping: { state: "drafted", scope: "England: national curriculum science, years 1–11, and the AQA, Pearson Edexcel, OCR (J247, J257) and WJEC Eduqas GCSE Biology specifications",
+      evidence: "docs/curriculum/biology-england-coverage.md", data: "data/curriculum/mapping/biology-england.json", draftedOn: "2026-11-23", reviewer: null, reviewedOn: null,
+      note: "AI-drafted and unreviewed. Not a claim of coverage: practical-skills chapters and the Combined Science specifications are not yet extracted." },
+  },
 };
+/** A course's requirement-level mapping record, "none" by default. */
+export const mappingOf = (slug) => COURSES[slug]?.mapping || { state: "none" };
 /** A course's coverage entry, with Gradify's own curriculum as the honest default. */
 export const coverageOf = (slug) => COURSES[slug] || { serves: [{ q: null, status: "gradify" }], systems: [] };
 
@@ -66,6 +88,17 @@ export function check(courses = COURSES) {
     if (s.q && !QUALIFICATIONS[s.q]) p.push(`${slug}: unknown qualification ${s.q}`);
     if (s.status === "verified" && !(s.evidence && s.verifiedOn && s.reviewer && s.version)) p.push(`${slug}: "verified" needs evidence, verifiedOn, reviewer and the specification's version`);
     if (s.status === "mapped" && !s.evidence) p.push(`${slug}: "mapped" needs the mapping document`);
+  }
+  for (const [slug, c] of Object.entries(courses)) {
+    const m = c.mapping; if (!m) continue;
+    const at = MAPPING_ORDER.indexOf(m.state);
+    if (at < 0) { p.push(`${slug}: unknown mapping state ${m.state}`); continue; }
+    if (at >= 1 && !(m.evidence && m.data && m.scope)) p.push(`${slug}: a mapping needs its scope, report (evidence) and data file`);
+    if (at === 1 && (m.reviewer || m.reviewedOn)) p.push(`${slug}: a drafted mapping has no reviewer; move it to "reviewed" with the reviewer's name and date`);
+    if (at >= 2 && !(m.reviewer && m.reviewedOn)) p.push(`${slug}: "${m.state}" needs a named reviewer and review date`);
+    if (at >= 3 && !(m.sourcesCheckedBy && m.sourcesCheckedOn)) p.push(`${slug}: "${m.state}" needs who checked the sources, and when`);
+    if (at >= 4 && !(m.signoff?.by && m.signoff?.on)) p.push(`${slug}: "approved" needs the subject expert's sign-off (signoff: { by, on })`);
+    if (at < 4 && c.serves.some((s) => s.status === "verified")) p.push(`${slug}: can't claim "verified" while its mapping is only ${m.state}`);
   }
   return p;
 }

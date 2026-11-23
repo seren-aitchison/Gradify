@@ -9,7 +9,8 @@
   "5-resource-mapping": "done: inheritance with 991 resources matched specifically and 107 flagged above stage",
   "6-coverage": "done (generated)",
   "7-implementation": "done: data, scripts, tests; no runtime or database changes",
-  "review": "not started: needs a subject specialist to review every link (status stays ai-drafted until then)"
+  "review": "not started: queue ready (docs/curriculum/biology-england-review-queue.md); status stays ai-drafted until a named reviewer decides every link",
+  "registry-state": "drafted (kit/curriculum/coverage.js); learner-facing claim unchanged"
  },
  "batches": {
   "Batch 1: national curriculum, key stages 1–3 (Biology)": 77,
@@ -21,15 +22,26 @@
   "Batch 7: WJEC Eduqas GCSE Biology": 165
  },
  "notExtracted": [
-  "OCR J247 topic B7 (Practical skills)",
-  "OCR J257 chapters B7 (Ideas about Science) and B8 (Practical skills)",
-  "Exam-board working-scientifically and mathematical-skills appendices",
-  "GCSE Combined Science specifications as separate documents (shared content is flagged per statement for AQA, Edexcel and OCR J257 only)"
+  "AQA GCSE Biology (8461): Working scientifically (section 3) and mathematical requirements appendix",
+  "AQA GCSE Biology (8461): Required practical activities as separate records (they are inside the subsections' text)",
+  "AQA GCSE Biology (8461): AQA GCSE Combined Science: Trilogy (8464) and Synergy (8465) as separate documents",
+  "Pearson Edexcel GCSE (9–1) Biology (1BI0): Working scientifically and mathematical skills appendices",
+  "Pearson Edexcel GCSE (9–1) Biology (1BI0): Pearson Edexcel GCSE Combined Science (1SC0) as a separate document",
+  "OCR GCSE (9–1) Biology A (Gateway Science) (J247): Topic B7: Practical skills",
+  "OCR GCSE (9–1) Biology A (Gateway Science) (J247): Working scientifically and mathematical skills appendices",
+  "OCR GCSE (9–1) Biology A (Gateway Science) (J247): OCR GCSE Combined Science A (J250) as a separate document",
+  "OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Chapter B7: Ideas about Science",
+  "OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Chapter B8: Practical skills",
+  "OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): Mathematical skills appendix",
+  "OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257): OCR GCSE Combined Science B (J260) as a separate document",
+  "WJEC Eduqas GCSE (9–1) Biology: Working scientifically and mathematical requirements appendices",
+  "WJEC Eduqas GCSE (9–1) Biology: WJEC Eduqas GCSE (9–1) Combined Science as a separate document; this specification does not mark statements as separate-science only"
  ],
  "next": [
-  "Specialist review of the mapping (start with low-confidence links and the review list from build-mapping.mjs --review)",
-  "Decide whether Biology's entry in kit/curriculum/coverage.js should move from the default to \"mapped\"",
-  "Write lessons for the gap themes in the coverage report",
-  "Repeat for the next subject using the same scripts"
+  "Find the earlier UK Coverage dataset and import it with scripts/curriculum/import-requirements.mjs (don't re-extract those documents)",
+  "Specialist review in queue order, recording decisions in data/curriculum/review/biology-england-decisions.json",
+  "Extract the practical-skills chapters, appendices and Combined Science specifications before any comprehensive GCSE claim",
+  "Decide Biology's intended scope, then address gaps in priority order (GCSE, key stage 3, practical, primary); no lessons written yet",
+  "Only then reuse the pipeline for the next subject"
  ]
 }

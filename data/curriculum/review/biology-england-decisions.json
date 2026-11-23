@@ -1,0 +1,5 @@
+{
+ "about": "Review decisions on the Biology → England mapping, one per link, in the order of data/curriculum/review/biology-england-queue.json. Add the reviewer first (key, name, qualifications, and any boards they examine or teach), then one decision per link: { requirement, lesson, verdict: confirmed | changed | rejected, match (for changed: the corrected full | partial | indirect), reviewer: <key>, on: YYYY-MM-DD, note }. A changed or rejected link must also be corrected in data/curriculum/mapping/biology-england.map; scripts/curriculum/build-mapping.mjs checks the two agree.",
+ "reviewers": {},
+ "decisions": []
+}

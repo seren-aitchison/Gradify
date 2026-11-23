@@ -6,7 +6,8 @@
   "status": "ai-drafted",
   "reviewer": null,
   "verifiedOn": null,
-  "note": "Drafted by an AI mapper from lesson objectives, headings and notes searches. Not reviewed by a teacher or examiner; not an official alignment or endorsement."
+  "reviewedLinks": 0,
+  "note": "Drafted by an AI mapper from lesson objectives, headings and notes searches. Links carry a review only where a named reviewer has decided them; the rest are AI-drafted. Not an official alignment or endorsement."
  },
  "countingRules": "Each requirement counts once, at its strongest single lesson link (full > partial > indirect > none). Resources never add to a requirement's count.",
  "overall": {
@@ -18,7 +19,9 @@
   "pending": 0,
   "uncertain": 60,
   "fullPct": 75,
-  "fullOrPartialPct": 92,
+  "partialPct": 17,
+  "indirectPct": 4,
+  "uncoveredPct": 4,
   "lessons": 256,
   "resources": 3197
  },
@@ -34,7 +37,9 @@
    "pending": 0,
    "uncertain": 2,
    "fullPct": 0,
-   "fullOrPartialPct": 33,
+   "partialPct": 33,
+   "indirectPct": 33,
+   "uncoveredPct": 33,
    "lessons": 2,
    "resources": 24
   },
@@ -49,7 +54,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 22,
-   "fullOrPartialPct": 56,
+   "partialPct": 33,
+   "indirectPct": 22,
+   "uncoveredPct": 22,
    "lessons": 6,
    "resources": 71
   },
@@ -64,7 +71,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 67,
-   "fullOrPartialPct": 100,
+   "partialPct": 33,
+   "indirectPct": 0,
+   "uncoveredPct": 0,
    "lessons": 14,
    "resources": 177
   },
@@ -79,7 +88,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 50,
-   "fullOrPartialPct": 67,
+   "partialPct": 17,
+   "indirectPct": 0,
+   "uncoveredPct": 33,
    "lessons": 10,
    "resources": 123
   },
@@ -94,7 +105,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 33,
-   "fullOrPartialPct": 67,
+   "partialPct": 33,
+   "indirectPct": 0,
+   "uncoveredPct": 33,
    "lessons": 5,
    "resources": 63
   },
@@ -109,7 +122,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 88,
-   "fullOrPartialPct": 100,
+   "partialPct": 13,
+   "indirectPct": 0,
+   "uncoveredPct": 0,
    "lessons": 16,
    "resources": 199
   },
@@ -124,7 +139,9 @@
    "pending": 0,
    "uncertain": 1,
    "fullPct": 64,
-   "fullOrPartialPct": 92,
+   "partialPct": 28,
+   "indirectPct": 3,
+   "uncoveredPct": 5,
    "lessons": 61,
    "resources": 772
   },
@@ -139,7 +156,9 @@
    "pending": 0,
    "uncertain": 2,
    "fullPct": 85,
-   "fullOrPartialPct": 96,
+   "partialPct": 11,
+   "indirectPct": 4,
+   "uncoveredPct": 0,
    "lessons": 101,
    "resources": 1265
   },
@@ -154,7 +173,9 @@
    "pending": 0,
    "uncertain": 6,
    "fullPct": 0,
-   "fullOrPartialPct": 0,
+   "partialPct": 0,
+   "indirectPct": 100,
+   "uncoveredPct": 0,
    "lessons": 0,
    "resources": 0
   },
@@ -169,7 +190,9 @@
    "pending": 0,
    "uncertain": 1,
    "fullPct": 53,
-   "fullOrPartialPct": 93,
+   "partialPct": 40,
+   "indirectPct": 7,
+   "uncoveredPct": 0,
    "lessons": 11,
    "resources": 131
   },
@@ -184,7 +207,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 83,
-   "fullOrPartialPct": 100,
+   "partialPct": 17,
+   "indirectPct": 0,
+   "uncoveredPct": 0,
    "lessons": 17,
    "resources": 203
   },
@@ -199,7 +224,9 @@
    "pending": 0,
    "uncertain": 0,
    "fullPct": 79,
-   "fullOrPartialPct": 96,
+   "partialPct": 18,
+   "indirectPct": 4,
+   "uncoveredPct": 0,
    "lessons": 24,
    "resources": 287
   },
@@ -214,7 +241,9 @@
    "pending": 0,
    "uncertain": 3,
    "fullPct": 74,
-   "fullOrPartialPct": 95,
+   "partialPct": 21,
+   "indirectPct": 3,
+   "uncoveredPct": 2,
    "lessons": 152,
    "resources": 1906
   },
@@ -229,7 +258,9 @@
    "pending": 0,
    "uncertain": 2,
    "fullPct": 77,
-   "fullOrPartialPct": 97,
+   "partialPct": 20,
+   "indirectPct": 3,
+   "uncoveredPct": 0,
    "lessons": 125,
    "resources": 1571
   },
@@ -244,7 +275,9 @@
    "pending": 0,
    "uncertain": 1,
    "fullPct": 65,
-   "fullOrPartialPct": 88,
+   "partialPct": 23,
+   "indirectPct": 4,
+   "uncoveredPct": 8,
    "lessons": 40,
    "resources": 502
   },
@@ -259,7 +292,9 @@
    "pending": 0,
    "uncertain": 12,
    "fullPct": 74,
-   "fullOrPartialPct": 92,
+   "partialPct": 18,
+   "indirectPct": 2,
+   "uncoveredPct": 5,
    "lessons": 158,
    "resources": 1985
   },
@@ -274,7 +309,9 @@
    "pending": 0,
    "uncertain": 4,
    "fullPct": 78,
-   "fullOrPartialPct": 96,
+   "partialPct": 18,
+   "indirectPct": 2,
+   "uncoveredPct": 3,
    "lessons": 127,
    "resources": 1593
   },
@@ -289,7 +326,9 @@
    "pending": 0,
    "uncertain": 8,
    "fullPct": 66,
-   "fullOrPartialPct": 85,
+   "partialPct": 19,
+   "indirectPct": 4,
+   "uncoveredPct": 11,
    "lessons": 53,
    "resources": 665
   },
@@ -304,7 +343,9 @@
    "pending": 0,
    "uncertain": 9,
    "fullPct": 82,
-   "fullOrPartialPct": 94,
+   "partialPct": 12,
+   "indirectPct": 3,
+   "uncoveredPct": 3,
    "lessons": 160,
    "resources": 2008
   },
@@ -319,7 +360,9 @@
    "pending": 0,
    "uncertain": 13,
    "fullPct": 78,
-   "fullOrPartialPct": 93,
+   "partialPct": 15,
+   "indirectPct": 3,
+   "uncoveredPct": 3,
    "lessons": 152,
    "resources": 1913
   },
@@ -334,7 +377,9 @@
    "pending": 0,
    "uncertain": 8,
    "fullPct": 81,
-   "fullOrPartialPct": 96,
+   "partialPct": 15,
+   "indirectPct": 3,
+   "uncoveredPct": 2,
    "lessons": 136,
    "resources": 1710
   },
@@ -349,7 +394,9 @@
    "pending": 0,
    "uncertain": 5,
    "fullPct": 67,
-   "fullOrPartialPct": 83,
+   "partialPct": 17,
+   "indirectPct": 7,
+   "uncoveredPct": 10,
    "lessons": 28,
    "resources": 356
   },
@@ -364,7 +411,9 @@
    "pending": 0,
    "uncertain": 11,
    "fullPct": 78,
-   "fullOrPartialPct": 93,
+   "partialPct": 15,
+   "indirectPct": 3,
+   "uncoveredPct": 4,
    "lessons": 157,
    "resources": 1968
   }
@@ -3015,174 +3064,2753 @@
   }
  ],
  "gaps": {
-  "count": 137,
-  "byTheme": {
-   "Working scientifically at primary age": [
-    "eng-nc-ks1-ws-01",
-    "eng-nc-ks1-ws-02",
-    "eng-nc-ks1-ws-03",
-    "eng-nc-ks1-ws-04",
-    "eng-nc-ks1-ws-05",
-    "eng-nc-ks1-ws-06",
-    "eng-nc-lks2-ws-08"
-   ],
-   "Primary science (years 1–6): identification, needs, life cycles and health": [
-    "eng-nc-y1-plants-01",
-    "eng-nc-y1-plants-02",
-    "eng-nc-y1-animals-including-humans-01",
-    "eng-nc-y1-animals-including-humans-02",
-    "eng-nc-y1-animals-including-humans-03",
-    "eng-nc-y1-animals-including-humans-04",
-    "eng-nc-y2-living-things-and-their-habitats-02",
-    "eng-nc-y2-living-things-and-their-habitats-03",
-    "eng-nc-y2-plants-02",
-    "eng-nc-y2-animals-including-humans-01",
-    "eng-nc-y2-animals-including-humans-02",
-    "eng-nc-y2-animals-including-humans-03",
-    "eng-nc-y4-living-things-and-their-habitats-02",
-    "eng-nc-y4-animals-including-humans-02",
-    "eng-nc-y5-living-things-and-their-habitats-01",
-    "eng-nc-y6-animals-including-humans-02"
-   ],
-   "Other": [
-    "eng-nc-ks3-cells-and-organisation-05",
-    "eng-nc-ks4-ws-4-vocabulary-units-symbols-and-nomenclature-01",
-    "eng-nc-ks4-transport-systems-01"
-   ],
-   "Diet, nutrition, food tests and energy in food": [
-    "eng-nc-ks3-nutrition-and-digestion-02",
-    "eng-nc-ks3-nutrition-and-digestion-03",
-    "eng-aqa8461-4.2.2.5",
-    "eng-edx1bi0-1.13B",
-    "eng-edx1bi0-1.14B",
-    "eng-ocrj257-B2.5.2",
-    "eng-eduqas-SP1.3B",
-    "eng-eduqas-3.4b",
-    "eng-eduqas-3.4c"
-   ],
-   "Drugs, medicines and clinical trials": [
-    "eng-nc-ks3-health-01",
-    "eng-nc-ks4-health-disease-and-the-development-of-medicines-07"
-   ],
-   "Respiration in animals, exercise and lactic acid": [
-    "eng-nc-ks3-cellular-respiration-01",
-    "eng-nc-ks3-cellular-respiration-02",
-    "eng-nc-ks3-cellular-respiration-04",
-    "eng-nc-ks4-key-ideas-06",
-    "eng-nc-ks4-cell-biology-05",
-    "eng-aqa8461-4.4.1.3",
-    "eng-aqa8461-4.4.2.2",
-    "eng-aqa8461-4.4.2.3",
-    "eng-edx1bi0-8.9",
-    "eng-edx1bi0-8.11",
-    "eng-ocrj247-B1.3c",
-    "eng-ocrj257-B4.1.1",
-    "eng-ocrj257-B4.1.5",
-    "eng-eduqas-1.3c"
-   ],
-   "Selective breeding, farming and food security": [
-    "eng-nc-ks3-relationships-in-an-ecosystem-02",
-    "eng-nc-ks4-evolution-inheritance-and-variation-11",
-    "eng-aqa8461-4.6.2.3",
-    "eng-aqa8461-4.7.3.4",
-    "eng-aqa8461-4.7.5.1",
-    "eng-aqa8461-4.7.5.2",
-    "eng-edx1bi0-4.8",
-    "eng-edx1bi0-4.13B",
-    "eng-edx1bi0-9.11B",
-    "eng-ocrj247-B6.2a",
-    "eng-ocrj247-B6.2b",
-    "eng-ocrj247-B6.2c",
-    "eng-ocrj257-B6.1.6",
-    "eng-ocrj257-B6.4.3",
-    "eng-eduqas-6.4b",
-    "eng-eduqas-7.4a"
-   ],
-   "Health, non-communicable disease and its treatment": [
-    "eng-nc-ks4-health-disease-and-the-development-of-medicines-01",
-    "eng-nc-ks4-health-disease-and-the-development-of-medicines-03",
-    "eng-nc-ks4-health-disease-and-the-development-of-medicines-08",
-    "eng-edx1bi0-2.7",
-    "eng-edx1bi0-5.1",
-    "eng-edx1bi0-5.24",
-    "eng-edx1bi0-5.25",
-    "eng-ocrj247-B6.3a",
-    "eng-ocrj247-B6.3s",
-    "eng-ocrj247-B6.3t",
-    "eng-ocrj257-B2.1.1",
-    "eng-ocrj257-B2.5.4",
-    "eng-ocrj257-B2.6.3",
-    "eng-eduqas-3.1a",
-    "eng-eduqas-3.1c",
-    "eng-eduqas-3.4a"
-   ],
-   "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses": [
-    "eng-aqa8461-4.3.1.9",
-    "eng-aqa8461-4.6.3.6",
-    "eng-edx1bi0-2.11B",
-    "eng-edx1bi0-5.8",
-    "eng-edx1bi0-5.20",
-    "eng-ocrj247-B3.1g",
-    "eng-ocrj247-B6.3n",
-    "eng-ocrj247-B6.3q",
-    "eng-ocrj257-B2.6.4",
-    "eng-ocrj257-B5.2.5",
-    "eng-eduqas-3.2b",
-    "eng-eduqas-3.3f",
-    "eng-eduqas-4.1a",
-    "eng-eduqas-4.1i",
-    "eng-eduqas-SP4.1",
-    "eng-eduqas-SP6.2"
-   ],
-   "Plant disease and plant defences": [
-    "eng-aqa8461-4.3.3.1",
-    "eng-aqa8461-4.3.3.2",
-    "eng-edx1bi0-5.9B",
-    "eng-edx1bi0-5.10B",
-    "eng-edx1bi0-5.11B",
-    "eng-ocrj247-B6.3f",
-    "eng-ocrj247-B6.3g",
-    "eng-ocrj247-B6.3h",
-    "eng-ocrj247-B6.3i",
-    "eng-ocrj257-B2.1.5",
-    "eng-ocrj257-B2.2.3",
-    "eng-ocrj257-B2.2.6",
-    "eng-eduqas-3.2g",
-    "eng-eduqas-3.2h",
-    "eng-eduqas-3.2i"
-   ],
-   "The eye and its defects": [
-    "eng-aqa8461-4.5.2.3",
-    "eng-edx1bi0-2.15B",
-    "eng-edx1bi0-2.16B",
-    "eng-edx1bi0-2.17B",
-    "eng-ocrj247-B3.1d",
-    "eng-ocrj247-B3.1e",
-    "eng-ocrj257-B5.6.4",
-    "eng-ocrj257-B5.6.5",
-    "eng-eduqas-4.1f",
-    "eng-eduqas-4.1g"
-   ],
-   "The brain and senses": [
-    "eng-edx1bi0-2.12B",
-    "eng-ocrj247-B3.1h",
-    "eng-ocrj257-B5.6.6",
-    "eng-eduqas-4.1j"
-   ],
-   "Practical work, techniques and calculations": [
-    "eng-edx1bi0-4.5",
-    "eng-edx1bi0-6.6",
-    "eng-ocrj257-B3.1.5",
-    "eng-eduqas-SP4.3",
-    "eng-eduqas-7.1h"
-   ],
-   "Decomposition and decay": [
-    "eng-edx1bi0-9.17B",
-    "eng-edx1bi0-9.19B",
-    "eng-ocrj257-B3.3.14",
-    "eng-eduqas-6.2e"
-   ]
-  }
+  "count": 241,
+  "kinds": {
+   "missing": 72,
+   "depth": 137,
+   "age-level": 32
+  },
+  "prioritised": [
+   {
+    "priority": 1,
+    "name": "GCSE (exam specifications and the statutory key stage 4 programme)",
+    "requirements": 158,
+    "missing": 43,
+    "depth": 115,
+    "age-level": 0,
+    "themes": [
+     {
+      "theme": "Health, non-communicable disease and its treatment",
+      "requirements": 24,
+      "documents": 6,
+      "missing": 9,
+      "depth": 15,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-health-disease-and-the-development-of-medicines-01",
+       "eng-nc-ks4-health-disease-and-the-development-of-medicines-03",
+       "eng-nc-ks4-health-disease-and-the-development-of-medicines-08",
+       "eng-aqa8461-4.2.2.4",
+       "eng-edx1bi0-2.7",
+       "eng-edx1bi0-5.1",
+       "eng-edx1bi0-5.2",
+       "eng-edx1bi0-5.3",
+       "eng-edx1bi0-5.24",
+       "eng-edx1bi0-5.25",
+       "eng-ocrj247-B6.3a",
+       "eng-ocrj247-B6.3b",
+       "eng-ocrj247-B6.3c",
+       "eng-ocrj247-B6.3r",
+       "eng-ocrj247-B6.3s",
+       "eng-ocrj247-B6.3t",
+       "eng-ocrj257-B2.1.1",
+       "eng-ocrj257-B2.1.2",
+       "eng-ocrj257-B2.5.4",
+       "eng-ocrj257-B2.6.3",
+       "eng-eduqas-3.1a",
+       "eng-eduqas-3.1b",
+       "eng-eduqas-3.1c",
+       "eng-eduqas-3.4a"
+      ]
+     },
+     {
+      "theme": "Selective breeding, farming and food security",
+      "requirements": 19,
+      "documents": 6,
+      "missing": 7,
+      "depth": 12,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-evolution-inheritance-and-variation-11",
+       "eng-aqa8461-4.6.1.3",
+       "eng-aqa8461-4.6.2.3",
+       "eng-aqa8461-4.7.3.3",
+       "eng-aqa8461-4.7.3.4",
+       "eng-aqa8461-4.7.5.1",
+       "eng-aqa8461-4.7.5.2",
+       "eng-edx1bi0-4.8",
+       "eng-edx1bi0-4.13B",
+       "eng-edx1bi0-4.14",
+       "eng-edx1bi0-9.11B",
+       "eng-ocrj247-B6.2a",
+       "eng-ocrj247-B6.2b",
+       "eng-ocrj247-B6.2c",
+       "eng-ocrj257-B6.1.6",
+       "eng-ocrj257-B6.4.3",
+       "eng-eduqas-6.4a",
+       "eng-eduqas-6.4b",
+       "eng-eduqas-7.4a"
+      ]
+     },
+     {
+      "theme": "Respiration in animals, exercise and lactic acid",
+      "requirements": 15,
+      "documents": 6,
+      "missing": 0,
+      "depth": 15,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-key-ideas-06",
+       "eng-nc-ks4-cell-biology-05",
+       "eng-aqa8461-4.4.1.3",
+       "eng-aqa8461-4.4.2.1",
+       "eng-aqa8461-4.4.2.2",
+       "eng-aqa8461-4.4.2.3",
+       "eng-edx1bi0-8.9",
+       "eng-edx1bi0-8.10",
+       "eng-ocrj247-B1.3b",
+       "eng-ocrj247-B1.3c",
+       "eng-ocrj257-B4.1.1",
+       "eng-ocrj257-B4.1.4",
+       "eng-eduqas-1.3c",
+       "eng-eduqas-1.3d",
+       "eng-eduqas-1.3e"
+      ]
+     },
+     {
+      "theme": "Drugs, medicines and clinical trials",
+      "requirements": 7,
+      "documents": 6,
+      "missing": 0,
+      "depth": 7,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-health-disease-and-the-development-of-medicines-07",
+       "eng-aqa8461-4.3.1.9",
+       "eng-edx1bi0-5.20",
+       "eng-ocrj247-B6.3q",
+       "eng-ocrj257-B2.6.4",
+       "eng-ocrj257-B6.1.10",
+       "eng-eduqas-3.3f"
+      ]
+     },
+     {
+      "theme": "The eye and its defects",
+      "requirements": 9,
+      "documents": 5,
+      "missing": 9,
+      "depth": 0,
+      "age-level": 0,
+      "ids": [
+       "eng-aqa8461-4.5.2.3",
+       "eng-edx1bi0-2.15B",
+       "eng-edx1bi0-2.16B",
+       "eng-edx1bi0-2.17B",
+       "eng-ocrj247-B3.1d",
+       "eng-ocrj247-B3.1e",
+       "eng-ocrj257-B5.6.5",
+       "eng-eduqas-4.1f",
+       "eng-eduqas-4.1g"
+      ]
+     },
+     {
+      "theme": "Plant disease and plant defences",
+      "requirements": 18,
+      "documents": 5,
+      "missing": 4,
+      "depth": 14,
+      "age-level": 0,
+      "ids": [
+       "eng-aqa8461-4.3.1.2",
+       "eng-aqa8461-4.3.3.1",
+       "eng-aqa8461-4.3.3.2",
+       "eng-edx1bi0-5.5",
+       "eng-edx1bi0-5.9B",
+       "eng-edx1bi0-5.10B",
+       "eng-edx1bi0-5.11B",
+       "eng-ocrj247-B6.3f",
+       "eng-ocrj247-B6.3g",
+       "eng-ocrj247-B6.3h",
+       "eng-ocrj247-B6.3i",
+       "eng-ocrj257-B2.1.5",
+       "eng-ocrj257-B2.2.3",
+       "eng-ocrj257-B2.2.6",
+       "eng-ocrj257-B2.4.1",
+       "eng-eduqas-3.2g",
+       "eng-eduqas-3.2h",
+       "eng-eduqas-3.2i"
+      ]
+     },
+     {
+      "theme": "Other",
+      "requirements": 19,
+      "documents": 5,
+      "missing": 1,
+      "depth": 18,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-ws-1-the-development-of-scientific-thinking-04",
+       "eng-nc-ks4-ws-3-analysis-and-evaluation-03",
+       "eng-nc-ks4-ws-4-vocabulary-units-symbols-and-nomenclature-01",
+       "eng-nc-ks4-transport-systems-01",
+       "eng-aqa8461-4.6.1.7",
+       "eng-aqa8461-4.6.2.5",
+       "eng-aqa8461-4.6.3.6",
+       "eng-edx1bi0-1.12",
+       "eng-edx1bi0-1.17",
+       "eng-edx1bi0-2.5",
+       "eng-edx1bi0-5.19B",
+       "eng-edx1bi0-7.17",
+       "eng-edx1bi0-9.14",
+       "eng-ocrj257-B2.4.3",
+       "eng-ocrj257-B2.5.3",
+       "eng-ocrj257-B2.6.2",
+       "eng-ocrj257-B3.2.8",
+       "eng-ocrj257-B3.3.12",
+       "eng-eduqas-1.1a"
+      ]
+     },
+     {
+      "theme": "Practical work, techniques and calculations",
+      "requirements": 12,
+      "documents": 5,
+      "missing": 1,
+      "depth": 11,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks4-ws-2-experimental-skills-and-strategies-03",
+       "eng-nc-ks4-ws-2-experimental-skills-and-strategies-04",
+       "eng-nc-ks4-ws-2-experimental-skills-and-strategies-06",
+       "eng-edx1bi0-3.6",
+       "eng-edx1bi0-4.5",
+       "eng-edx1bi0-6.6",
+       "eng-ocrj247-B1.4d",
+       "eng-ocrj257-B3.1.5",
+       "eng-ocrj257-B3.1.7",
+       "eng-ocrj257-B5.4.8",
+       "eng-ocrj257-B6.4.5",
+       "eng-eduqas-7.1h"
+      ]
+     },
+     {
+      "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses",
+      "requirements": 11,
+      "documents": 5,
+      "missing": 0,
+      "depth": 11,
+      "age-level": 0,
+      "ids": [
+       "eng-aqa8461-4.3.1.3",
+       "eng-aqa8461-4.3.1.4",
+       "eng-aqa8461-4.3.2.2",
+       "eng-edx1bi0-5.8",
+       "eng-edx1bi0-5.22B",
+       "eng-edx1bi0-7.8",
+       "eng-ocrj247-B6.3n",
+       "eng-ocrj257-B2.4.5",
+       "eng-eduqas-3.2b",
+       "eng-eduqas-3.2f",
+       "eng-eduqas-3.3b"
+      ]
+     },
+     {
+      "theme": "The brain and senses",
+      "requirements": 9,
+      "documents": 4,
+      "missing": 7,
+      "depth": 2,
+      "age-level": 0,
+      "ids": [
+       "eng-edx1bi0-2.11B",
+       "eng-edx1bi0-2.12B",
+       "eng-ocrj247-B3.1g",
+       "eng-ocrj247-B3.1h",
+       "eng-ocrj257-B5.2.5",
+       "eng-ocrj257-B5.6.6",
+       "eng-eduqas-4.1a",
+       "eng-eduqas-4.1i",
+       "eng-eduqas-4.1j"
+      ]
+     },
+     {
+      "theme": "Diet, nutrition, food tests and energy in food",
+      "requirements": 8,
+      "documents": 4,
+      "missing": 3,
+      "depth": 5,
+      "age-level": 0,
+      "ids": [
+       "eng-aqa8461-4.2.2.5",
+       "eng-aqa8461-4.2.2.6",
+       "eng-edx1bi0-1.14B",
+       "eng-edx1bi0-5.23",
+       "eng-ocrj257-B2.5.1",
+       "eng-ocrj257-B2.5.2",
+       "eng-eduqas-3.4b",
+       "eng-eduqas-3.4c"
+      ]
+     },
+     {
+      "theme": "Decomposition and decay",
+      "requirements": 7,
+      "documents": 4,
+      "missing": 2,
+      "depth": 5,
+      "age-level": 0,
+      "ids": [
+       "eng-edx1bi0-9.17B",
+       "eng-edx1bi0-9.18B",
+       "eng-edx1bi0-9.19B",
+       "eng-ocrj247-B4.1d",
+       "eng-ocrj257-B3.3.13",
+       "eng-ocrj257-B3.3.14",
+       "eng-eduqas-6.2e"
+      ]
+     }
+    ]
+   },
+   {
+    "priority": 2,
+    "name": "Key stage 3",
+    "requirements": 17,
+    "missing": 3,
+    "depth": 14,
+    "age-level": 0,
+    "themes": [
+     {
+      "theme": "Diet, nutrition, food tests and energy in food",
+      "requirements": 3,
+      "documents": 1,
+      "missing": 2,
+      "depth": 1,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-nutrition-and-digestion-01",
+       "eng-nc-ks3-nutrition-and-digestion-02",
+       "eng-nc-ks3-nutrition-and-digestion-03"
+      ]
+     },
+     {
+      "theme": "Drugs, medicines and clinical trials",
+      "requirements": 1,
+      "documents": 1,
+      "missing": 1,
+      "depth": 0,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-health-01"
+      ]
+     },
+     {
+      "theme": "Other",
+      "requirements": 6,
+      "documents": 1,
+      "missing": 0,
+      "depth": 6,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-ws-analysis-and-evaluation-06",
+       "eng-nc-ks3-ws-measurement-02",
+       "eng-nc-ks3-cells-and-organisation-05",
+       "eng-nc-ks3-the-skeletal-and-muscular-systems-02",
+       "eng-nc-ks3-photosynthesis-02",
+       "eng-nc-ks3-inheritance-chromosomes-dna-and-genes-03"
+      ]
+     },
+     {
+      "theme": "Respiration in animals, exercise and lactic acid",
+      "requirements": 5,
+      "documents": 1,
+      "missing": 0,
+      "depth": 5,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-gas-exchange-systems-03",
+       "eng-nc-ks3-cellular-respiration-01",
+       "eng-nc-ks3-cellular-respiration-02",
+       "eng-nc-ks3-cellular-respiration-03",
+       "eng-nc-ks3-cellular-respiration-04"
+      ]
+     },
+     {
+      "theme": "Practical work, techniques and calculations",
+      "requirements": 1,
+      "documents": 1,
+      "missing": 0,
+      "depth": 1,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-ws-experimental-skills-and-investigations-04"
+      ]
+     },
+     {
+      "theme": "Selective breeding, farming and food security",
+      "requirements": 1,
+      "documents": 1,
+      "missing": 0,
+      "depth": 1,
+      "age-level": 0,
+      "ids": [
+       "eng-nc-ks3-relationships-in-an-ecosystem-02"
+      ]
+     }
+    ]
+   },
+   {
+    "priority": 3,
+    "name": "Practical skills and investigations",
+    "requirements": 16,
+    "missing": 8,
+    "depth": 8,
+    "age-level": 0,
+    "themes": [
+     {
+      "theme": "Practical work, techniques and calculations",
+      "requirements": 9,
+      "documents": 2,
+      "missing": 2,
+      "depth": 7,
+      "age-level": 0,
+      "ids": [
+       "eng-edx1bi0-5.18B",
+       "eng-edx1bi0-6.5",
+       "eng-eduqas-SP1.1",
+       "eng-eduqas-SP2.2",
+       "eng-eduqas-SP3.3",
+       "eng-eduqas-SP4.1",
+       "eng-eduqas-SP4.3",
+       "eng-eduqas-SP6.3",
+       "eng-eduqas-SP7.1"
+      ]
+     },
+     {
+      "theme": "Diet, nutrition, food tests and energy in food",
+      "requirements": 2,
+      "documents": 2,
+      "missing": 2,
+      "depth": 0,
+      "age-level": 0,
+      "ids": [
+       "eng-edx1bi0-1.13B",
+       "eng-eduqas-SP1.3B"
+      ]
+     },
+     {
+      "theme": "Respiration in animals, exercise and lactic acid",
+      "requirements": 2,
+      "documents": 2,
+      "missing": 2,
+      "depth": 0,
+      "age-level": 0,
+      "ids": [
+       "eng-edx1bi0-8.11",
+       "eng-ocrj257-B4.1.5"
+      ]
+     },
+     {
+      "theme": "Decomposition and decay",
+      "requirements": 2,
+      "documents": 2,
+      "missing": 1,
+      "depth": 1,
+      "age-level": 0,
+      "ids": [
+       "eng-aqa8461-4.7.2.3",
+       "eng-eduqas-SP6.2"
+      ]
+     },
+     {
+      "theme": "The eye and its defects",
+      "requirements": 1,
+      "documents": 1,
+      "missing": 1,
+      "depth": 0,
+      "age-level": 0,
+      "ids": [
+       "eng-ocrj257-B5.6.4"
+      ]
+     }
+    ]
+   },
+   {
+    "priority": 4,
+    "name": "Primary (years 1–6)",
+    "requirements": 50,
+    "missing": 18,
+    "depth": 0,
+    "age-level": 32,
+    "themes": [
+     {
+      "theme": "Primary science (years 1–6): identification, needs, life cycles and health",
+      "requirements": 37,
+      "documents": 1,
+      "missing": 11,
+      "depth": 0,
+      "age-level": 26,
+      "ids": [
+       "eng-nc-y1-plants-01",
+       "eng-nc-y1-plants-02",
+       "eng-nc-y1-animals-including-humans-01",
+       "eng-nc-y1-animals-including-humans-02",
+       "eng-nc-y1-animals-including-humans-03",
+       "eng-nc-y1-animals-including-humans-04",
+       "eng-nc-y2-living-things-and-their-habitats-01",
+       "eng-nc-y2-living-things-and-their-habitats-02",
+       "eng-nc-y2-living-things-and-their-habitats-03",
+       "eng-nc-y2-living-things-and-their-habitats-04",
+       "eng-nc-y2-plants-01",
+       "eng-nc-y2-plants-02",
+       "eng-nc-y2-animals-including-humans-01",
+       "eng-nc-y2-animals-including-humans-02",
+       "eng-nc-y2-animals-including-humans-03",
+       "eng-nc-y3-plants-01",
+       "eng-nc-y3-plants-02",
+       "eng-nc-y3-plants-03",
+       "eng-nc-y3-plants-04",
+       "eng-nc-y3-animals-including-humans-01",
+       "eng-nc-y3-animals-including-humans-02",
+       "eng-nc-y4-living-things-and-their-habitats-01",
+       "eng-nc-y4-living-things-and-their-habitats-02",
+       "eng-nc-y4-living-things-and-their-habitats-03",
+       "eng-nc-y4-animals-including-humans-01",
+       "eng-nc-y4-animals-including-humans-02",
+       "eng-nc-y5-living-things-and-their-habitats-01",
+       "eng-nc-y5-living-things-and-their-habitats-02",
+       "eng-nc-y5-animals-including-humans-01",
+       "eng-nc-y6-living-things-and-their-habitats-01",
+       "eng-nc-y6-living-things-and-their-habitats-02",
+       "eng-nc-y6-animals-including-humans-01",
+       "eng-nc-y6-animals-including-humans-02",
+       "eng-nc-y6-animals-including-humans-03",
+       "eng-nc-y6-evolution-and-inheritance-01",
+       "eng-nc-y6-evolution-and-inheritance-02",
+       "eng-nc-y6-evolution-and-inheritance-03"
+      ]
+     },
+     {
+      "theme": "Working scientifically at primary age",
+      "requirements": 13,
+      "documents": 1,
+      "missing": 7,
+      "depth": 0,
+      "age-level": 6,
+      "ids": [
+       "eng-nc-ks1-ws-01",
+       "eng-nc-ks1-ws-02",
+       "eng-nc-ks1-ws-03",
+       "eng-nc-ks1-ws-04",
+       "eng-nc-ks1-ws-05",
+       "eng-nc-ks1-ws-06",
+       "eng-nc-lks2-ws-01",
+       "eng-nc-lks2-ws-05",
+       "eng-nc-lks2-ws-06",
+       "eng-nc-lks2-ws-07",
+       "eng-nc-lks2-ws-08",
+       "eng-nc-lks2-ws-09",
+       "eng-nc-uks2-ws-04"
+      ]
+     }
+    ]
+   }
+  ],
+  "items": [
+   {
+    "id": "eng-nc-ks1-ws-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above: the scientific method is taught at secondary level; working scientifically for key stages 1–2 is a practical classroom competence, which a course can explain but not deliver on its own.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-ks1-ws-02",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-ks1-ws-03",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-ks1-ws-04",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-ks1-ws-05",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-ks1-ws-06",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "above.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-y1-plants-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson teaches identifying common wild and garden plants or deciduous and evergreen trees by name; u11-05 mentions deciduous forest only as a biome.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y1-plants-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "above: flower, root, stem and leaf structure are taught at secondary depth; the basic whole-plant structure of common flowering plants and trees for young children is not taught directly.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y1-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson teaches identifying and naming common fish, amphibians, reptiles, birds and mammals.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y1-animals-including-humans-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Herbivore, carnivore and omnivore appear as consumer roles in ecosystems; no lesson asks learners to identify and name common animals in each group.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y1-animals-including-humans-03",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "The animal kingdom's features are described; comparing the structure of fish, amphibians, reptiles, birds and mammals is not taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y1-animals-including-humans-04",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "Organ systems are outlined at secondary level; the senses and the body parts associated with each are not taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-living-things-and-their-habitats-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: taught as the characteristics of life and hard cases; \"dead\" versus \"never alive\" is covered by applying the characteristics.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-living-things-and-their-habitats-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Habitat and niche, adaptation and interdependence are taught at secondary depth; meeting the basic needs of animals and plants in named habitats is not taught for this age.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-living-things-and-their-habitats-03",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson asks learners to identify and name plants and animals in habitats or microhabitats.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-living-things-and-their-habitats-04",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: food chains are taught fully; naming different sources of food for animals is not taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-plants-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Germination and asexual reproduction (bulbs) are taught; observing seeds and bulbs growing into mature plants is not a lesson activity.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-plants-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Water and temperature for germination, and light for photosynthesis, are taught; what plants need to grow and stay healthy is not drawn together.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "Human growth and development after birth are described; animals having offspring that grow into adults is not taught as a general idea for this age.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-animals-including-humans-02",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "Nutrition and respiration as characteristics of life imply the needs; the basic needs of animals (water, food and air) are not taught directly.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y2-animals-including-humans-03",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson teaches the importance of exercise, a balanced diet and hygiene for health.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-lks2-ws-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "above: types of enquiry and asking relevant questions.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-lks2-ws-05",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Tables and graphs are taught; drawings, keys and labelled diagrams as recording methods are not.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-lks2-ws-06",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Scientific communication is taught at research level.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-lks2-ws-07",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Drawing conclusions and predictions are taught; suggesting improvements and raising further questions are not practised for this age.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-lks2-ws-08",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "indirect",
+    "note": "Not taught as a skill; comparison runs through lessons implicitly.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-lks2-ws-09",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Evaluating whether evidence supports a conclusion is taught at secondary level.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-y3-plants-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: roots, stems, leaves and flowers are each a lesson at secondary depth.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y3-plants-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Mineral nutrients and the conditions for germination and photosynthesis are taught; room to grow and variation between plants is not.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y3-plants-03",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: water transport, xylem and transpiration (with a potometer) are taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y3-plants-04",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: pollination, seed formation and dispersal are taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y3-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Digestion of food and the consumer role are taught; the right types and amounts of nutrition (a balanced diet) are not.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y3-animals-including-humans-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: functions of the skeleton and antagonistic muscles.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y4-living-things-and-their-habitats-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: taught as taxonomy and the kingdoms.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y4-living-things-and-their-habitats-02",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson teaches using or constructing classification (dichotomous) keys.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y4-living-things-and-their-habitats-03",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "above: climate change, habitat fragmentation and pollution as threats are taught at secondary depth.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y4-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: organs of the digestive system and their roles.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y4-animals-including-humans-02",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson teaches the types of human teeth and their functions.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-uks2-ws-04",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Predictions are taught; using results to set up further tests is not.",
+    "theme": "Working scientifically at primary age"
+   },
+   {
+    "id": "eng-nc-y5-living-things-and-their-habitats-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 4,
+    "status": "uncovered",
+    "note": "No lesson compares the life cycles of a mammal, an amphibian, an insect and a bird; u11-19 covers parasite life cycles only.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y5-living-things-and-their-habitats-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: sexual and asexual reproduction in plants, and human reproduction and fertilisation.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y5-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Growth and development after birth is taught; changes through to old age are only touched on (cellular senescence).",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-living-things-and-their-habitats-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: classification into kingdoms and domains, including micro-organisms.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-living-things-and-their-habitats-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: classifying an unfamiliar organism from its features.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-animals-including-humans-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: the circulatory system, heart, vessels and blood each have a lesson.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-animals-including-humans-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "partial",
+    "note": "Cardiovascular risk factors, exercise and smoking are touched on; diet, drugs and lifestyle as a whole are not taught.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-animals-including-humans-03",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: circulation, absorption and tissue fluid.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-evolution-and-inheritance-01",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: fossil formation, dating and what fossils show.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-evolution-and-inheritance-02",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: variation and heredity.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-y6-evolution-and-inheritance-03",
+    "source": "dfe-nc",
+    "kind": "age-level",
+    "priority": 4,
+    "status": "full",
+    "note": "above: adaptation and natural selection.",
+    "theme": "Primary science (years 1–6): identification, needs, life cycles and health"
+   },
+   {
+    "id": "eng-nc-ks3-ws-experimental-skills-and-investigations-04",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Health and safety and field methods are taught; using apparatus is a practical skill a course can only describe.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-nc-ks3-ws-analysis-and-evaluation-06",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "The cycle of science implies further questions; identifying them from one's own results is not practised.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks3-ws-measurement-02",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Calculations with biological equations (magnification, rates) are taught; deriving equations is not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks3-cells-and-organisation-05",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Protozoa and prokaryote structure are taught; structural adaptations of unicellular organisms (e.g. Euglena, amoeba) are not drawn together.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks3-the-skeletal-and-muscular-systems-02",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Joints, levers and antagonistic pairs are taught; measuring the force exerted by different muscles is not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks3-nutrition-and-digestion-01",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "The biomolecules and their digestion are taught; a healthy diet, and why vitamins, minerals, fibre and water are needed, are not.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-nc-ks3-nutrition-and-digestion-02",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 2,
+    "status": "uncovered",
+    "note": "No lesson teaches calculating daily energy requirements from diet.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-nc-ks3-nutrition-and-digestion-03",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 2,
+    "status": "uncovered",
+    "note": "Obesity, starvation and deficiency diseases from diet are not taught (u08-11 covers mineral deficiencies in plants only).",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-nc-ks3-gas-exchange-systems-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Respiratory diseases including asthma, and smoking, are taught; the effect of exercise on the gas exchange system is only touched on.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks3-health-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 2,
+    "status": "indirect",
+    "note": "Alcohol and nicotine appear only as risks in pregnancy; the effects of recreational drugs and substance misuse on behaviour and health are not taught.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-nc-ks3-photosynthesis-02",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Photosynthesis as the base of food chains, energy flow and the carbon cycle; oxygen levels in the atmosphere are touched on.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks3-cellular-respiration-01",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Aerobic respiration is located in mitochondria and anaerobic respiration is taught for plants; no lesson teaches respiration in living organisms as a whole, including in animals.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks3-cellular-respiration-02",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "The respiration equation appears in plant respiration; no lesson teaches the word summary for aerobic respiration as such.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks3-cellular-respiration-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Anaerobic respiration in plants and fermentation by microbes are taught; anaerobic respiration in humans (lactic acid) is not.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks3-cellular-respiration-04",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "Aerobic and anaerobic respiration are compared for plants only; implications for humans are not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks3-relationships-in-an-ecosystem-02",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "The importance of pollinators is taught; their role in human food security is not drawn out explicitly.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-nc-ks3-inheritance-chromosomes-dna-and-genes-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 2,
+    "status": "partial",
+    "note": "What a species is, and speciation, are taught; differences between species are not a lesson focus.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks4-ws-1-the-development-of-scientific-thinking-04",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Ethical and environmental implications of applications are taught; personal and economic decision-making is not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks4-ws-2-experimental-skills-and-strategies-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Laboratory and field techniques are described; selecting apparatus for a given investigation is not practised.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-nc-ks4-ws-2-experimental-skills-and-strategies-04",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Manipulating apparatus is a practical competence the course describes but cannot assess.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-nc-ks4-ws-2-experimental-skills-and-strategies-06",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Measurement and recording are taught; using a range of apparatus is practical work.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-nc-ks4-ws-3-analysis-and-evaluation-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Choosing and drawing graphs from tables is taught; translating between other forms (equations, diagrams) is not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks4-ws-4-vocabulary-units-symbols-and-nomenclature-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Scientific vocabulary is built through every lesson's key terms; no lesson teaches it as a skill.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks4-key-ideas-06",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Respiration as the source of ATP is taught, but only in parts (mitochondria, ATP, plant respiration); there is no lesson on cellular respiration as a whole.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks4-cell-biology-05",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Aerobic and anaerobic respiration are split across mitochondria, ATP and plant respiration; anaerobic respiration in animals (lactic acid) and the response to exercise are not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-nc-ks4-transport-systems-01",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Transport systems in animals and plants are taught; why multicellular organisms need them (surface area to volume) is not drawn together in one place.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-nc-ks4-health-disease-and-the-development-of-medicines-01",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "No lesson defines health or explains how diseases interact; pathogens and evolutionary medicine touch on it.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-nc-ks4-health-disease-and-the-development-of-medicines-03",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Cardiovascular disease, cancer and diabetes are taught separately; no lesson treats non-communicable disease as a category.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-nc-ks4-health-disease-and-the-development-of-medicines-07",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Drug discovery stages are taught computationally; preclinical and clinical trial phases are not taught as such.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-nc-ks4-health-disease-and-the-development-of-medicines-08",
+    "source": "dfe-nc",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Risk factors for cardiovascular disease and cancer; lifestyle and incidence data are not taught as a topic.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-nc-ks4-evolution-inheritance-and-variation-11",
+    "source": "dfe-nc",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on selective breeding in agriculture.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.2.2.4",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Coronary heart disease and its risk factors are taught; treatments (stents, statins, valve replacement, transplants, artificial hearts) are not evaluated.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-aqa8461-4.2.2.5",
+    "source": "aqa-8461",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "No lesson defines health or explains how communicable and non-communicable diseases interact, or how diet, stress and life situations affect health.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-aqa8461-4.2.2.6",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Risk factors for cardiovascular disease and cancer, and correlation versus causation, are taught; the effects of diet, smoking and alcohol on specific organs, and use of risk data, are not.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-aqa8461-4.3.1.2",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Viral structure and HIV are taught; measles and tobacco mosaic virus as named GCSE examples are not.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-aqa8461-4.3.1.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Bacterial disease is taught; Salmonella and gonorrhoea as named examples, and poultry vaccination, are not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-aqa8461-4.3.1.4",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Fungal pathogens are taught in general; rose black spot and its treatment are not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-aqa8461-4.3.1.9",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Drug discovery stages and placebo controls are taught; digitalis, aspirin and penicillin origins and the phases of clinical trials (double-blind) are not drawn together.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-aqa8461-4.3.2.2",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Therapeutic and diagnostic uses are taught; pregnancy tests and the side effects of monoclonal antibodies are not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-aqa8461-4.3.3.1",
+    "source": "aqa-8461",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Detecting and identifying plant diseases, and ion deficiencies (nitrate, magnesium) as plant conditions, are not taught; u08-11 covers mineral deficiency symptoms only in part.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-aqa8461-4.3.3.2",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Plant stress responses are taught; physical, chemical and mechanical defences against pathogens and herbivores are not covered as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-aqa8461-4.4.1.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Starch, cellulose, respiration and nitrate for amino acids are covered across lessons; uses of glucose are not drawn together.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-aqa8461-4.4.2.1",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Aerobic respiration, anaerobic respiration in plants and fermentation are taught; anaerobic respiration in muscles (lactic acid) is not.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-aqa8461-4.4.2.2",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Blood flow and breathing during exercise are touched on; oxygen debt and lactic acid in muscles are not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-aqa8461-4.4.2.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Metabolic reactions (polymers, lipid synthesis, amino acids, urea) are taught across lessons; metabolism is not drawn together.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-aqa8461-4.5.2.3",
+    "source": "aqa-8461",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson teaches the structure of the eye, accommodation or the correction of myopia and hyperopia.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-aqa8461-4.6.1.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Sexual versus asexual reproduction in plants; malaria parasites and fungi reproducing both ways are touched on.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.6.1.7",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Cystic fibrosis is taught; polydactyly and embryo screening, with its economic, social and ethical issues, are not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-aqa8461-4.6.2.3",
+    "source": "aqa-8461",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; its process, uses and the risks of inbreeding are not taught.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.6.2.5",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Plant cuttings and tissue culture are taught, and adult cell cloning (Dolly) is mentioned; embryo transplants are not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-aqa8461-4.6.3.6",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Extinction and its causes are taught across lessons; not drawn together as one topic.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-aqa8461-4.7.2.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Decomposers are taught; the effect of temperature, water and oxygen on decay, compost and biogas, and required practical 10, are not.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-aqa8461-4.7.3.3",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Habitat loss is taught; destruction of peat bogs and burning peat are not.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.7.3.4",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Deforestation's effect on carbon dioxide and biodiversity is mentioned; reasons for deforestation (cattle, rice, biofuels) are not taught.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.7.5.1",
+    "source": "aqa-8461",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Sustainability of food production is taught; the factors threatening food security (new pests, conflict, cost of farming) are not taught as a topic.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-aqa8461-4.7.5.2",
+    "source": "aqa-8461",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Energy loss between trophic levels underpins it; intensive farming of animals and its ethics are not taught.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-edx1bi0-1.12",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Enzymes as catalysts and digestion are taught; enzymes in the synthesis of carbohydrates, proteins and lipids are only implied.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-1.13B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "Food tests with chemical reagents (iodine, Benedict's, biuret, emulsion test) are not taught.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-edx1bi0-1.14B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Measuring the energy in food by calorimetry is not taught.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-edx1bi0-1.17",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Percentage change in mass is not worked through.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-2.5",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Growth by division and differentiation in animals, and elongation and meristems in plants, are taught in separate lessons.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-2.7",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Percentile charts for monitoring growth are not taught.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-2.11B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Brain imaging (CT and PET scanning) is mentioned at most in passing.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-edx1bi0-2.12B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Limits to treating nervous-system damage and disease are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-edx1bi0-2.15B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson teaches the structure and function of the eye.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-edx1bi0-2.16B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Eye defects (cataracts, long- and short-sightedness, colour blindness) are not taught; colour blindness appears only as an X-linked example in u04-27.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-edx1bi0-2.17B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Correcting eye defects is not taught.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-edx1bi0-3.6",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Nucleic acid extraction is described as a laboratory technique; extracting DNA from fruit is not.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-edx1bi0-4.5",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Human evolution is taught; dating stone tools is not drawn out.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-edx1bi0-4.8",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-edx1bi0-4.13B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Fertilisers and biological control are taught; their advantages and disadvantages as agricultural solutions are not drawn together.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-edx1bi0-4.14",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Benefits and risks of genetic engineering are taught; selective breeding is not.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-edx1bi0-5.1",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson defines health.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-5.2",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Communicable disease is taught; the contrast with non-communicable disease is not.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-5.3",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Immunodeficiency increasing susceptibility (HIV) is taught; disease interactions in general are not.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-5.5",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Cholera, tuberculosis, Chalara ash dieback, malaria and HIV are covered across lessons; Helicobacter stomach ulcers and Ebola are mentioned only in passing.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-edx1bi0-5.8",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "STIs as a group (chlamydia, HIV) and their prevention are not drawn together.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-edx1bi0-5.9B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Physical defences of plants against pathogens and pests are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-edx1bi0-5.10B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Chemical defences of plants are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-edx1bi0-5.11B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Molecular diagnostics are taught for humans; detecting and identifying plant diseases is not.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-edx1bi0-5.18B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Core practical on antiseptics and antibiotics is described in outline only.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-edx1bi0-5.19B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Calculating the area of inhibition zones with πr² is not worked through.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-5.20",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Discovery is taught; the testing phases (preclinical, clinical trials, double-blind) are not drawn together.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-edx1bi0-5.22B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Diagnostic and therapeutic uses are taught; pregnancy testing is not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-edx1bi0-5.23",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Multifactorial causes of cardiovascular disease and cancer are taught separately.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-edx1bi0-5.24",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Lifestyle risk factors are mentioned; their effects at local, national and global levels are not taught.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-5.25",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Treatments for cardiovascular disease (medication, surgery, lifestyle) are not evaluated.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-edx1bi0-6.5",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Core practical on light intensity is described in outline.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-edx1bi0-6.6",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "The inverse square law for light intensity is not taught.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-edx1bi0-7.8",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "IVF is taught; clomifene therapy is not named.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-edx1bi0-7.17",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Correlation is taught; BMI and waist:hip calculations are not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-8.9",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Respiration releasing energy for ATP is taught; respiration as a continuous exothermic process in all cells is not drawn together.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-edx1bi0-8.10",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Aerobic and anaerobic respiration are compared for plants only.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-edx1bi0-8.11",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "The core practical on the rate of respiration (respirometers) is not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-edx1bi0-9.11B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Food security factors are not drawn together as a topic.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-edx1bi0-9.14",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "The water cycle is taught; producing potable water (including desalination) is not.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-edx1bi0-9.17B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Food preservation is mentioned; the effects of temperature, water and oxygen on food decay are not taught.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-edx1bi0-9.18B",
+    "source": "edexcel-1bi0",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Decomposers are taught; factors affecting the rate of decomposition in composting are not.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-edx1bi0-9.19B",
+    "source": "edexcel-1bi0",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Calculating rates of decay is not taught.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-ocrj247-B1.3b",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Respiration as exothermic is implied, not stated as such.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-ocrj247-B1.3c",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Anaerobic respiration in plants, fungi (fermentation) and microbes; anaerobic respiration in animals (lactic acid) is not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-ocrj247-B1.4d",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Experiments on photosynthesis rate are described in outline only.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-ocrj247-B3.1d",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson teaches the structures of the eye.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-ocrj247-B3.1e",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Eye defects and their correction are not taught; colour blindness appears only as an X-linked example in u04-27.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-ocrj247-B3.1g",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "The difficulties of investigating brain function are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-ocrj247-B3.1h",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Limits to treating nervous-system damage are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-ocrj247-B4.1d",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Decomposers are taught; the effect of temperature, water and oxygen on the rate of decomposition is not.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-ocrj247-B6.2a",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Food security factors are not drawn together as a topic.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-ocrj247-B6.2b",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Fertilisers, biological control and sustainable practice are taught; their use to meet demand is not drawn together.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-ocrj247-B6.2c",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-ocrj247-B6.3a",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson defines health or relates it to disease.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj247-B6.3b",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Communicable disease is taught; communicable and non-communicable disease are not contrasted.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj247-B6.3c",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Immunodeficiency increasing susceptibility to infection is taught; interactions between disease types in general are not.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj247-B6.3f",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "A human infection and HIV are taught; a named plant disease is mentioned only in passing (ash dieback), and STIs are not drawn together.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj247-B6.3g",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Physical plant defences (cuticle, cell wall) against pathogens are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj247-B6.3h",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Chemical plant defences against pathogens are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj247-B6.3i",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Detecting and identifying plant diseases is not taught.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj247-B6.3n",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Pregnancy tests are not taught.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-ocrj247-B6.3q",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Preclinical and clinical testing phases are not drawn together.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-ocrj247-B6.3r",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Multifactorial causes are taught per disease, not as a topic.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj247-B6.3s",
+    "source": "ocr-j247",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Treatments for cardiovascular disease are not evaluated.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj247-B6.3t",
+    "source": "ocr-j247",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Lifestyle factors and incidence data are not taught as a topic.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj257-B2.1.1",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson defines health or relates it to disease.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj257-B2.1.2",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Communicable and non-communicable disease are not contrasted.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj257-B2.1.5",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Tobacco mosaic virus, ash dieback and Agrobacterium (crown gall) each appear, but plant diseases are not taught as a topic.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj257-B2.2.3",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Physical plant defences against pathogens are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj257-B2.2.6",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Chemical plant defences against pathogens are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj257-B2.4.1",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Laboratory identification of human pathogens is taught; plant disease detection in the field is not.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-ocrj257-B2.4.3",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Calculating the area of inhibition zones with πr² is not worked through.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-ocrj257-B2.4.5",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Diagnostic uses are taught; pregnancy tests are not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-ocrj257-B2.5.1",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Genetic and lifestyle risk factors are taught per disease, not as a topic.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-ocrj257-B2.5.2",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Incidence of non-communicable disease at local, national and global levels is not taught.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-ocrj257-B2.5.3",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Data skills are taught generically; not in the context of disease data.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-ocrj257-B2.5.4",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Interactions between disease types are not taught beyond immunodeficiency.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj257-B2.6.2",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Calculating the area of inhibition zones with πr² is not worked through.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-ocrj257-B2.6.3",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Treatments for cardiovascular disease are not evaluated.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-ocrj257-B2.6.4",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Preclinical and clinical testing phases are not drawn together.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-ocrj257-B3.1.5",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "The inverse square law for light intensity is not taught.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-ocrj257-B3.1.7",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Rates and graphs are taught; not in the context of photosynthesis.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-ocrj257-B3.2.8",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Rate calculations for water uptake are worked partly.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-ocrj257-B3.3.12",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Percentage calculations appear for energy transfer, not for the cycling of substances.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-ocrj257-B3.3.13",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Decomposers are taught; factors affecting the rate of decomposition are not.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-ocrj257-B3.3.14",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Calculating rates of decay is not taught.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-ocrj257-B4.1.1",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Aerobic and anaerobic respiration are compared for plants and microbes; anaerobic respiration in animals is not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-ocrj257-B4.1.4",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Respiration as exothermic is implied, not stated as such.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-ocrj257-B4.1.5",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 3,
+    "status": "indirect",
+    "note": "Investigating respiration rate in yeast with different substrates is not taught.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-ocrj257-B5.2.5",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "The difficulties of investigating brain function are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-ocrj257-B5.4.8",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Graph and data skills are taught generically.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-ocrj257-B5.6.4",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "No lesson teaches the structures of the eye.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-ocrj257-B5.6.5",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Eye defects and their correction are not taught.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-ocrj257-B5.6.6",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Limits to treating nervous-system damage are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-ocrj257-B6.1.6",
+    "source": "ocr-j257",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-ocrj257-B6.1.10",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "The impact of evolutionary ideas on medicine is taught; on society more widely, only touched on.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-ocrj257-B6.4.3",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Food security factors are not drawn together as a topic.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-ocrj257-B6.4.5",
+    "source": "ocr-j257",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Biodiversity data appear in species-richness indices; interpreting biodiversity charts is not practised as such.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-1.1a",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Cell diagrams are shown and labelled; drawing and labelling cells is not practised.",
+    "theme": "Other"
+   },
+   {
+    "id": "eng-eduqas-SP1.1",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "The microscope and scientific drawing are described; the practical is not carried out.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-1.3c",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Respiration supplying ATP is taught; respiration as a continuous exothermic process in all cells is not drawn together.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-eduqas-1.3d",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Anaerobic respiration in plants and yeast is taught; in humans (lactic acid, oxygen debt) it is not.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-eduqas-1.3e",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Aerobic and anaerobic respiration are compared for plants only.",
+    "theme": "Respiration in animals, exercise and lactic acid"
+   },
+   {
+    "id": "eng-eduqas-SP1.3B",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "Food tests (iodine, Benedict's, biuret) are not taught.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-eduqas-SP2.2",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Vessel structure and histology are taught; examining an artery and vein under the microscope is not carried out.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-3.1a",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson defines health or relates it to disease.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-eduqas-3.1b",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Influenza and cardiovascular disease are each taught; the categories are not contrasted.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-eduqas-3.1c",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Immunodeficiency and UV damage to DNA are taught; disease interactions are not drawn together.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-eduqas-3.2b",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Several named diseases are covered across lessons; not taught as a set with agent, effect and control.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-eduqas-3.2f",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Diagnostic uses are taught; pregnancy testing and the specific examples given are not.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-eduqas-3.2g",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Physical plant defences against pathogens are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-eduqas-3.2h",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Chemical plant defences are not taught as such.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-eduqas-3.2i",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Detecting and identifying plant diseases is not taught.",
+    "theme": "Plant disease and plant defences"
+   },
+   {
+    "id": "eng-eduqas-3.3b",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Herd immunity and vaccine safety are taught; factors in parents' vaccination decisions are not discussed.",
+    "theme": "Communicable disease: named examples, STIs, vaccination choices and monoclonal uses"
+   },
+   {
+    "id": "eng-eduqas-3.3f",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Preclinical and clinical testing phases are not drawn together.",
+    "theme": "Drugs, medicines and clinical trials"
+   },
+   {
+    "id": "eng-eduqas-SP3.3",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Antibiotic sensitivity testing is described in outline.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-3.4a",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Cardiovascular disease, cancer, emphysema and type 2 diabetes are each taught; their multifactorial causes are not drawn together.",
+    "theme": "Health, non-communicable disease and its treatment"
+   },
+   {
+    "id": "eng-eduqas-3.4b",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Lifestyle factors and incidence at local, national and global levels are not taught as a topic.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-eduqas-3.4c",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Statins are mentioned; treatments for cardiovascular disease (angioplasty, lifestyle change) are not evaluated.",
+    "theme": "Diet, nutrition, food tests and energy in food"
+   },
+   {
+    "id": "eng-eduqas-4.1a",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Sensory receptors are taught; sense organs and their stimuli are not taught as a topic.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-eduqas-4.1f",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "No lesson teaches the structure of the eye.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-eduqas-4.1g",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "uncovered",
+    "note": "Eye defects and their correction are not taught.",
+    "theme": "The eye and its defects"
+   },
+   {
+    "id": "eng-eduqas-4.1i",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Methods of studying brain function are touched on only.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-eduqas-4.1j",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Limits to treating nervous-system damage are not drawn out.",
+    "theme": "The brain and senses"
+   },
+   {
+    "id": "eng-eduqas-SP4.1",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "Investigating reaction times is not taught.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-SP4.3",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 3,
+    "status": "indirect",
+    "note": "Kidney structure is taught; dissection is not.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-6.2e",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Factors affecting the rate of decomposition are not taught.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-eduqas-SP6.2",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 3,
+    "status": "uncovered",
+    "note": "Investigating factors affecting decomposition is not taught.",
+    "theme": "Decomposition and decay"
+   },
+   {
+    "id": "eng-eduqas-SP6.3",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Field sampling methods are described; the investigation is not carried out.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-6.4a",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Sustainability is taught; balancing food production and economic development with wildlife is only touched on.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-eduqas-6.4b",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Food security factors are not drawn together as a topic.",
+    "theme": "Selective breeding, farming and food security"
+   },
+   {
+    "id": "eng-eduqas-7.1h",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 1,
+    "status": "partial",
+    "note": "Gel electrophoresis and DNA profiling are mentioned; genetic profiling and its uses are not taught as a topic.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-SP7.1",
+    "source": "eduqas-c400",
+    "kind": "depth",
+    "priority": 3,
+    "status": "partial",
+    "note": "Nucleic acid extraction is described as a technique; simple DNA extraction from living material is not.",
+    "theme": "Practical work, techniques and calculations"
+   },
+   {
+    "id": "eng-eduqas-7.4a",
+    "source": "eduqas-c400",
+    "kind": "missing",
+    "priority": 1,
+    "status": "indirect",
+    "note": "Selective breeding is mentioned only as traditional biotechnology; there is no lesson on it.",
+    "theme": "Selective breeding, farming and food security"
+   }
+  ]
+ },
+ "mappingState": {
+  "state": "drafted",
+  "scope": "England: national curriculum science, years 1–11, and the AQA, Pearson Edexcel, OCR (J247, J257) and WJEC Eduqas GCSE Biology specifications",
+  "evidence": "docs/curriculum/biology-england-coverage.md",
+  "data": "data/curriculum/mapping/biology-england.json",
+  "draftedOn": "2026-11-23",
+  "reviewer": null,
+  "reviewedOn": null,
+  "note": "AI-drafted and unreviewed. Not a claim of coverage: practical-skills chapters and the Combined Science specifications are not yet extracted."
+ },
+ "completeness": {
+  "dfe-nc": [],
+  "aqa-8461": [
+   "Working scientifically (section 3) and mathematical requirements appendix",
+   "Required practical activities as separate records (they are inside the subsections' text)",
+   "AQA GCSE Combined Science: Trilogy (8464) and Synergy (8465) as separate documents"
+  ],
+  "edexcel-1bi0": [
+   "Working scientifically and mathematical skills appendices",
+   "Pearson Edexcel GCSE Combined Science (1SC0) as a separate document"
+  ],
+  "ocr-j247": [
+   "Topic B7: Practical skills",
+   "Working scientifically and mathematical skills appendices",
+   "OCR GCSE Combined Science A (J250) as a separate document"
+  ],
+  "ocr-j257": [
+   "Chapter B7: Ideas about Science",
+   "Chapter B8: Practical skills",
+   "Mathematical skills appendix",
+   "OCR GCSE Combined Science B (J260) as a separate document"
+  ],
+  "eduqas-c400": [
+   "Working scientifically and mathematical requirements appendices",
+   "WJEC Eduqas GCSE (9–1) Combined Science as a separate document; this specification does not mark statements as separate-science only"
+  ]
  },
  "duplication": {
   "sameTitle": [

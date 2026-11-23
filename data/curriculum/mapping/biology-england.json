@@ -6,13 +6,15 @@
   "status": "ai-drafted",
   "reviewer": null,
   "verifiedOn": null,
-  "note": "Drafted by an AI mapper from lesson objectives, headings and notes searches. Not reviewed by a teacher or examiner; not an official alignment or endorsement."
+  "reviewedLinks": 0,
+  "note": "Drafted by an AI mapper from lesson objectives, headings and notes searches. Links carry a review only where a named reviewer has decided them; the rest are AI-drafted. Not an official alignment or endorsement."
  },
  "counts": {
   "requirements": 903,
   "judged": 903,
   "pending": 0,
-  "links": 1661
+  "links": 1661,
+  "reviewedLinks": 0
  },
  "requirements": {
   "eng-nc-y1-plants-01": {

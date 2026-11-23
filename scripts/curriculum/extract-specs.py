@@ -257,17 +257,22 @@ RETRIEVED = "2026-11-23"
 SOURCES = {
     "dfe-nc": dict(name="National curriculum in England: science programmes of study", body="Department for Education",
                    url="https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study",
-                   version="Published September 2013; page updated 6 May 2015", status="statutory"),
+                   version="Published September 2013; page updated 6 May 2015", status="statutory", notExtracted=[]),
     "aqa-8461": dict(name="AQA GCSE Biology (8461)", body="AQA", url="https://filestore.aqa.org.uk/resources/biology/specifications/AQA-8461-SP-2016.PDF",
-                     version="Version 1.0, 21 April 2016 (for exams 2018 onwards)", status="examination", qualification="gcse", combined="AQA GCSE Combined Science: Trilogy (8464)"),
+                     version="Version 1.0, 21 April 2016 (for exams 2018 onwards)", status="examination", qualification="gcse", combined="AQA GCSE Combined Science: Trilogy (8464)",
+                     notExtracted=["Working scientifically (section 3) and mathematical requirements appendix", "Required practical activities as separate records (they are inside the subsections' text)", "AQA GCSE Combined Science: Trilogy (8464) and Synergy (8465) as separate documents"]),
     "edexcel-1bi0": dict(name="Pearson Edexcel GCSE (9–1) Biology (1BI0)", body="Pearson Edexcel", url="https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-biology-spec.pdf",
-                         version="Issue 4, March 2024", status="examination", qualification="gcse", combined="Pearson Edexcel GCSE Combined Science (1SC0)"),
+                         version="Issue 4, March 2024", status="examination", qualification="gcse", combined="Pearson Edexcel GCSE Combined Science (1SC0)",
+                         notExtracted=["Working scientifically and mathematical skills appendices", "Pearson Edexcel GCSE Combined Science (1SC0) as a separate document"]),
     "ocr-j247": dict(name="OCR GCSE (9–1) Biology A (Gateway Science) (J247)", body="OCR", url="https://www.ocr.org.uk/Images/234594-specification-accredited-gcse-gateway-science-suite-biology-a-j247.pdf",
-                     version="Version 4.0, August 2026", status="examination", qualification="gcse", combined="OCR GCSE Combined Science A (Gateway Science) (J250)"),
+                     version="Version 4.0, August 2026", status="examination", qualification="gcse", combined="OCR GCSE Combined Science A (Gateway Science) (J250)",
+                     notExtracted=["Topic B7: Practical skills", "Working scientifically and mathematical skills appendices", "OCR GCSE Combined Science A (J250) as a separate document"]),
     "ocr-j257": dict(name="OCR GCSE (9–1) Biology B (Twenty First Century Science) (J257)", body="OCR", url="https://www.ocr.org.uk/Images/234595-specification-accredited-gcse-twenty-first-century-science-suite-biology-b-j257.pdf",
-                     version="Version 4.0, August 2026", status="examination", qualification="gcse", combined="OCR GCSE Combined Science B (Twenty First Century Science) (J260)"),
+                     version="Version 4.0, August 2026", status="examination", qualification="gcse", combined="OCR GCSE Combined Science B (Twenty First Century Science) (J260)",
+                     notExtracted=["Chapter B7: Ideas about Science", "Chapter B8: Practical skills", "Mathematical skills appendix", "OCR GCSE Combined Science B (J260) as a separate document"]),
     "eduqas-c400": dict(name="WJEC Eduqas GCSE (9–1) Biology", body="WJEC Eduqas", url="https://www.eduqas.co.uk/media/gg2joueu/eduqas-gcse-biology-spec-from-2016-e.pdf",
-                        version="Version 3, January 2019", status="examination", qualification="gcse", combined="WJEC Eduqas GCSE (9–1) Combined Science"),
+                        version="Version 3, January 2019", status="examination", qualification="gcse", combined="WJEC Eduqas GCSE (9–1) Combined Science",
+                        notExtracted=["Working scientifically and mathematical requirements appendices", "WJEC Eduqas GCSE (9–1) Combined Science as a separate document; this specification does not mark statements as separate-science only"]),
 }
 PREFIX = {"aqa-8461": "aqa8461", "edexcel-1bi0": "edx1bi0", "ocr-j247": "ocrj247", "ocr-j257": "ocrj257", "eduqas-c400": "eduqas"}
 

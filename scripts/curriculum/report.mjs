@@ -16,6 +16,7 @@
 //   "Uncertain" = the judged status rests only on low-confidence links.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { norm } from "../../kit/core/text.js";
+import { mappingOf, MAPPING } from "../../kit/curriculum/coverage.js";
 
 const slug = process.argv[2] || "biology";
 const root = new URL("../../", import.meta.url);
@@ -49,7 +50,8 @@ function tally(ids) {
   const t = { total: ids.length, full: 0, partial: 0, indirect: 0, uncovered: 0, pending: 0, uncertain: 0 };
   for (const id of ids) { t[statusOf(id)]++; if (uncertain(id)) t.uncertain++; }
   t.fullPct = t.total ? Math.round((100 * t.full) / t.total) : 0;
-  t.fullOrPartialPct = t.total ? Math.round((100 * (t.full + t.partial)) / t.total) : 0;
+  // each status has its own share; they are never added together (a partial match is not coverage)
+  for (const k of ["partial", "indirect", "uncovered"]) t[`${k}Pct`] = t.total ? Math.round((100 * t[k]) / t.total) : 0;
   const ls = new Set(ids.flatMap((id) => (linksBy.get(id) || []).filter((l) => l.match !== "indirect").map((l) => l.lesson)));
   t.lessons = ls.size;
   t.resources = inv.resources.filter((x) => (x.lessons || [x.lesson]).some((l) => ls.has(l))).length;
@@ -118,7 +120,24 @@ for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
 overlapPairs.sort((x, y) => y.shared - x.shared);
 
 // ---------------------------------------------------------------- gaps: requirements needing teaching material
-const needs = R.requirements.filter((r) => ["uncovered", "indirect"].includes(statusOf(r.id)) || (statusOf(r.id) === "partial" && /\bnot (taught|covered|drawn)|\bno lesson\b/i.test(M.requirements[r.id]?.note || "")));
+// Every requirement short of an age-appropriate full match is a gap of one of three kinds, which need different fixes:
+//   missing    no lesson teaches it (uncovered, or touched on only): new teaching material
+//   depth      a lesson covers part of it: extend or deepen what exists, not a new lesson by default
+//   age-level  primary content taught only at secondary depth: age-appropriate material, not more secondary lessons
+// Priority follows the plan: GCSE, then key stage 3, then practical skills, then primary.
+const isPractical = (r) => r.practical || /^(Core Practical|Specified practical)|Required practical/i.test(r.text) || /PAG\d/.test(r.text);
+const isPrimary = (r) => r.source === "dfe-nc" && ["KS1", "KS2"].includes(r.keyStage);
+const PRIORITY = { 1: "GCSE (exam specifications and the statutory key stage 4 programme)", 2: "Key stage 3", 3: "Practical skills and investigations", 4: "Primary (years 1–6)" };
+const priorityOf = (r) => (isPractical(r) ? 3 : isPrimary(r) ? 4 : r.keyStage === "KS3" ? 2 : 1);
+const gapItems = [];
+for (const r of R.requirements) {
+  const st = statusOf(r.id), j = M.requirements[r.id] || {};
+  let kind = null;
+  if (isPrimary(r)) kind = st === "uncovered" || st === "indirect" ? "missing" : st === "partial" || j.above ? "age-level" : null;
+  else kind = st === "uncovered" || st === "indirect" ? "missing" : st === "partial" ? "depth" : null;
+  if (kind) gapItems.push({ id: r.id, source: r.source, kind, priority: priorityOf(r), status: st, note: j.note || null });
+}
+const needs = gapItems.map((g) => REQ.get(g.id));
 // themes: group the gaps by the words their notes use, so the report can name the missing topics
 const THEMES = [  // first match wins: most specific first
   ["Working scientifically at primary age", (r) => /^eng-nc-(ks1|lks2|uks2)-ws/.test(r.id)],
@@ -129,14 +148,25 @@ const THEMES = [  // first match wins: most specific first
   ["Selective breeding, farming and food security", /selective breeding|food security|farming|agricultur|pollinat.*food|food production|economic development|deforestation/i],
   ["Diet, nutrition, food tests and energy in food", /diet|calorimetry|energy requirements|food tests|nutrition/i],
   ["Health, non-communicable disease and its treatment", /defines health|health and disease|non-communicable|disease interactions|interactions between|lifestyle|cardiovascular disease|treatments for|percentile|incidence/i],
-  ["Communicable disease: named examples, STIs, vaccination choices and monoclonal uses", /STI|named|diseases|pregnancy test|vaccinat|monoclonal/i],
+  ["Communicable disease: named examples, STIs, vaccination choices and monoclonal uses", (r, t) => /\bSTIs?\b/.test(t) || /\bnamed\b|\bdiseases\b|pregnancy test|vaccinat|monoclonal|pathogen/i.test(t)],
   ["Drugs, medicines and clinical trials", /drug|painkiller|clinical|medicine/i],
   ["Decomposition and decay", /decompos|decay/i],
   ["The brain and senses", /brain|nervous-system damage|sense organs/i],
   ["Practical work, techniques and calculations", /practical|investigat|dissection|carried out|extract|inverse square|profiling|stone tools/i],
 ];
-const themeOf = (r) => { const t = `${M.requirements[r.id]?.note || ""} ${r.text}`; return (THEMES.find(([, re]) => (typeof re === "function" ? re(r) : re.test(t))) || ["Other"])[0]; };
+const themeOf = (r) => { const t = `${M.requirements[r.id]?.note || ""} ${r.text}`; return (THEMES.find(([, re]) => (typeof re === "function" ? re(r, t) : re.test(t))) || ["Other"])[0]; };
 const gapThemes = {}; for (const r of needs) (gapThemes[themeOf(r)] ||= []).push(r.id);
+for (const g of gapItems) g.theme = themeOf(REQ.get(g.id));
+// themes ranked within each priority: how many separate documents ask for it, then how much is missing outright
+const KINDS = ["missing", "depth", "age-level"];
+const gapList = Object.entries(PRIORITY).map(([p, name]) => {
+  const xs = gapItems.filter((g) => g.priority === Number(p)), by = {};
+  for (const g of xs) (by[g.theme] ||= []).push(g);
+  const themes = Object.entries(by).map(([theme, gs]) => ({ theme, requirements: gs.length, documents: new Set(gs.map((g) => g.source)).size,
+    ...Object.fromEntries(KINDS.map((k) => [k, gs.filter((g) => g.kind === k).length])), ids: gs.map((g) => g.id) }))
+    .sort((a, b) => b.documents - a.documents || b.missing - a.missing || b.requirements - a.requirements);
+  return { priority: Number(p), name, requirements: xs.length, ...Object.fromEntries(KINDS.map((k) => [k, xs.filter((g) => g.kind === k).length])), themes };
+});
 
 // ---------------------------------------------------------------- write
 const groups = GROUPS.map((g) => ({ key: g.key, name: g.name, ...tally(R.requirements.filter(g.test).map((r) => r.id)) }));
@@ -148,7 +178,8 @@ const coverage = {
   overall: all, groups, lessons: { total: inv.lessons.length, mapped: lessonsMapped, unaligned: unaligned.length, unalignedList: unaligned.map((x) => ({ id: x.id, title: x.title, best: x.best })) },
   resources: { total: inv.resources.length, mappedViaLessons: resourcesMapped, specificResources: resourceMap.counts.specificResources, aboveStageResources: resourceMap.counts.aboveStageResources },
   placement: lessonRows.map((x) => ({ id: x.id, year: x.placement.year, basis: x.placement.basis })),
-  gaps: { count: needs.length, byTheme: gapThemes },
+  gaps: { count: gapItems.length, kinds: Object.fromEntries(KINDS.map((k) => [k, gapItems.filter((g) => g.kind === k).length])), prioritised: gapList, items: gapItems },
+  mappingState: mappingOf(slug), completeness: Object.fromEntries(Object.entries(R.sources).map(([k, s]) => [k, s.notExtracted || []])),
   duplication: { sameTitle, overlapPairs: overlapPairs.slice(0, 40) },
 };
 await mkdir(new URL("data/curriculum/reports/", root), { recursive: true });
@@ -165,23 +196,24 @@ const progress = {
     "4-lesson-mapping": M.counts.pending ? `in progress: ${M.counts.judged} of ${M.counts.requirements}` : `done: ${M.counts.judged} requirements judged, ${M.counts.links} lesson links`,
     "5-resource-mapping": `done: inheritance with ${resourceMap.counts.specificResources} resources matched specifically and ${resourceMap.counts.aboveStageResources} flagged above stage`,
     "6-coverage": "done (generated)", "7-implementation": "done: data, scripts, tests; no runtime or database changes",
-    review: "not started: needs a subject specialist to review every link (status stays ai-drafted until then)",
+    review: M.counts.reviewedLinks ? `in progress: ${M.counts.reviewedLinks} of ${M.counts.links} links decided` : "not started: queue ready (docs/curriculum/biology-england-review-queue.md); status stays ai-drafted until a named reviewer decides every link",
+    "registry-state": `${mappingOf(slug).state} (kit/curriculum/coverage.js); learner-facing claim unchanged`,
   },
   batches,
-  notExtracted: ["OCR J247 topic B7 (Practical skills)", "OCR J257 chapters B7 (Ideas about Science) and B8 (Practical skills)", "Exam-board working-scientifically and mathematical-skills appendices", "GCSE Combined Science specifications as separate documents (shared content is flagged per statement for AQA, Edexcel and OCR J257 only)"],
-  next: ["Specialist review of the mapping (start with low-confidence links and the review list from build-mapping.mjs --review)", "Decide whether Biology's entry in kit/curriculum/coverage.js should move from the default to \"mapped\"", "Write lessons for the gap themes in the coverage report", "Repeat for the next subject using the same scripts"],
+  notExtracted: Object.values(R.sources).flatMap((s) => (s.notExtracted || []).map((x) => `${s.name}: ${x}`)),
+  next: ["Find the earlier UK Coverage dataset and import it with scripts/curriculum/import-requirements.mjs (don't re-extract those documents)", "Specialist review in queue order, recording decisions in data/curriculum/review/biology-england-decisions.json", "Extract the practical-skills chapters, appendices and Combined Science specifications before any comprehensive GCSE claim", "Decide Biology's intended scope, then address gaps in priority order (GCSE, key stage 3, practical, primary); no lessons written yet", "Only then reuse the pipeline for the next subject"],
 };
 await writeFile(new URL("data/curriculum/progress.json", root), JSON.stringify(progress, null, 1));
 
 // the readable report
-const pct = (t) => `${t.fullPct}% full, ${t.fullOrPartialPct}% full or partial`;
-const row = (g) => `| ${g.name} | ${g.total} | ${g.full} | ${g.partial} | ${g.indirect} | ${g.uncovered} | ${g.uncertain} | ${g.lessons} | ${g.fullPct}% |`;
+const pct = (t) => `${t.fullPct}% full, ${t.partialPct}% partial, ${t.indirectPct}% indirect, ${t.uncoveredPct}% uncovered`;
+const row = (g) => `| ${g.name} | ${g.total} | ${g.full} (${g.fullPct}%) | ${g.partial} (${g.partialPct}%) | ${g.indirect} | ${g.uncovered} | ${g.uncertain} | ${g.lessons} |`;
 const md = [
   `# SciGradify Biology against the England curriculum: coverage`,
   ``,
   `_Generated ${today} by \`scripts/curriculum/report.mjs\` from the structured data. Don't edit by hand._`,
   ``,
-  `> **Status: AI-drafted, not reviewed.** Every link was judged by an AI mapper from lesson objectives, headings and searches of the lesson notes, with evidence quoted from the lesson. No teacher, examiner or awarding body has checked it. This is not an official alignment, and no awarding body endorses Gradify.`,
+  `> **Status: ${MAPPING[mappingOf(slug).state].name} (${M.review.status}, ${M.counts.reviewedLinks} of ${M.counts.links} links reviewed).** Every link was judged by an AI mapper from lesson objectives, headings and searches of the lesson notes, with evidence quoted from the lesson. No teacher, examiner or awarding body has checked it. This is not an official alignment, and no awarding body endorses Gradify. None of these figures is a measure of teaching quality, and none should be used in marketing.`,
   ``,
   `## Counting rules`,
   ``,
@@ -192,27 +224,44 @@ const md = [
   ``,
   `## Overall`,
   ``,
-  `${all.total} official requirements: **${all.full} full**, ${all.partial} partial, ${all.indirect} indirect, ${all.uncovered} uncovered (${all.uncertain} uncertain). ${pct(all)}.`,
+  `| Full | Partial | Indirect only | Uncovered | Uncertain (low confidence) |`, `|---|---|---|---|---|`,
+  `| ${all.full} (${all.fullPct}%) | ${all.partial} (${all.partialPct}%) | ${all.indirect} (${all.indirectPct}%) | ${all.uncovered} (${all.uncoveredPct}%) | ${all.uncertain} |`, ``,
+  `Out of ${all.total} official requirements. The four statuses are separate and are never added together: a partial match means part of the requirement is not taught, so it is not coverage.`,
   ``,
   `${lessonsMapped} of ${inv.lessons.length} lessons have at least one full or partial match. Through them, ${resourcesMapped} of ${inv.resources.length} linked resources (flashcards, questions, diagrams, interactives and the generated mind maps) are mapped. ${resourceMap.counts.specificResources} resources match a requirement's wording directly.`,
   ``,
   `## By year, stage, qualification and board`,
   ``,
-  `| Curriculum | Requirements | Full | Partial | Indirect | Uncovered | Uncertain | Lessons | Full % |`,
-  `|---|---|---|---|---|---|---|---|---|`,
+  `| Curriculum | Requirements | Full | Partial | Indirect | Uncovered | Uncertain | Lessons |`,
+  `|---|---|---|---|---|---|---|---|`,
   ...groups.map(row),
   ``,
   `Years 1–6 are statutory year by year. Key stage 3 is set by stage: any year placement within years 7–9 below is **Gradify's suggested sequence**, not the national curriculum's. GCSE content belongs to years 10–11 as a stage. Key stage 1–2 content is mostly taught here at secondary depth, which the mapping marks "above": it covers the idea, but isn't written for that age.`,
   ``,
-  `## Requirements that need teaching material (${needs.length})`,
+  `## Specification completeness`,
   ``,
-  ...Object.entries(gapThemes).sort((a, b) => b[1].length - a[1].length).map(([t, xs]) => `- **${t}** (${xs.length}): ${xs.slice(0, 12).map((x) => `\`${x.replace(/^eng-/, "")}\``).join(", ")}${xs.length > 12 ? `, and ${xs.length - 12} more` : ""}`),
+  `**Comprehensive GCSE specification coverage can't be claimed yet.** These parts of the documents are not extracted, so the GCSE figures above leave them out:`,
   ``,
-  `Each requirement's note in \`data/curriculum/mapping/${slug}-england.map\` says exactly what is missing.`,
+  ...Object.values(R.sources).flatMap((s) => (s.notExtracted || []).map((x) => `- ${s.name}: ${x}`)),
+  ``,
+  `## Prioritised gaps (${gapItems.length} requirements; no lessons written yet)`,
+  ``,
+  `Three kinds of gap, needing different fixes:`,
+  ``,
+  `- **missing** (${gapItems.filter((g) => g.kind === "missing").length}): no lesson teaches it, or one only touches on it. Needs new material.`,
+  `- **depth** (${gapItems.filter((g) => g.kind === "depth").length}): a lesson covers part of it. Extend what exists; a new lesson isn't the default answer.`,
+  `- **age-level** (${gapItems.filter((g) => g.kind === "age-level").length}): primary content taught only at secondary depth. Needs age-appropriate material, not more secondary lessons.`,
+  ``,
+  `Priority follows GCSE, then key stage 3, then practical skills, then primary. Within a priority, themes are ranked by how many separate documents ask for them, then by how much is missing outright.`,
+  ``,
+  ...gapList.flatMap((p) => [`### ${p.priority}. ${p.name} (${p.requirements}: ${p.missing} missing, ${p.depth} depth, ${p["age-level"]} age-level)`, ``,
+    `| Theme | Documents | Missing | Depth | Age-level | Requirements |`, `|---|---|---|---|---|---|`,
+    ...p.themes.map((t) => `| ${t.theme} | ${t.documents} | ${t.missing} | ${t.depth} | ${t["age-level"]} | ${t.ids.slice(0, 6).map((x) => `\`${x.replace(/^eng-/, "")}\``).join(", ")}${t.ids.length > 6 ? ` +${t.ids.length - 6}` : ""} |`), ``]),
+  `Each requirement's note in \`data/curriculum/mapping/${slug}-england.map\` says exactly what is missing; the full list is \`gaps.items\` in \`data/curriculum/reports/${slug}-england-coverage.json\`.`,
   ``,
   `## Lessons with no official alignment (${unaligned.length})`,
   ``,
-  `These lessons have no full or partial match in the England years 1–11 curricula. Most are beyond GCSE, which is expected for a course that runs to first-year undergraduate.`,
+  `These lessons have no full or partial match in the England years 1–11 curricula. Most are beyond GCSE, which is expected for a course that runs to first-year undergraduate. They aren't a problem to fix: don't delete them or force a match to raise a percentage.`,
   ``,
   ...Object.entries(unaligned.reduce((o, x) => ((o[x.unit] ||= []).push(`${x.id} ${x.title}`), o), {})).map(([u, xs]) => `- **${inv.units.find((y) => y.id === u).title}** (${xs.length}): ${xs.join("; ")}`),
   ``,
@@ -234,7 +283,6 @@ const md = [
   ``,
   ...Object.values(R.sources).map((s) => `- [${s.name}](${s.url}), ${s.version}. Retrieved ${s.retrieved}.`),
   ``,
-  `Not yet extracted: ${progress.notExtracted.join("; ")}.`,
   ``,
 ];
 await writeFile(new URL(`docs/curriculum/${slug}-england-coverage.md`, root), md.join("\n"));

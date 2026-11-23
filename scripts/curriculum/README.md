@@ -19,6 +19,7 @@ The review status lives in the mapping file (`review`). It stays `ai-drafted` un
 node scripts/curriculum/inventory.mjs biology
 node scripts/curriculum/build-mapping.mjs biology --review
 node scripts/curriculum/report.mjs biology
+node scripts/curriculum/review-queue.mjs biology
 node --test tests/curriculum-mapping.test.mjs
 ```
 
@@ -36,6 +37,33 @@ python3 -I scripts/curriculum/extract-specs.py <folder> data/curriculum/requirem
 ```
 
 Don't commit the documents: they are the boards' and the DfE's copyright. Requirement ids come from each document's own references (`eng-aqa8461-4.1.1.2`, `eng-ocrj247-B1.1a`, `eng-nc-ks3-cells-and-organisation-01`), so they survive re-extraction. Diff the old and new files before committing.
+
+## Review and states
+
+The validation queue (`review-queue.mjs`) puts every undecided link in risk order:
+
+1. links with no shared wording
+2. the statutory key stage 4 programme
+3. the GCSE specifications, board-unique statements first
+4. practical skills
+5. key stages 1–2
+6. the rest
+
+A reviewer is listed once in `data/curriculum/review/<slug>-england-decisions.json`, with name and qualifications. Each decision is `confirmed`, `changed` or `rejected`. A changed or rejected link must also be corrected in the `.map` file, and the build fails until the two agree.
+
+The mapping's overall status follows the decisions: `ai-drafted`, then `partly-reviewed`, then `reviewed`.
+
+The course's state in `kit/curriculum/coverage.js` (`mapping`) moves by hand: none → drafted → reviewed → sources-verified → approved. `check()` requires the reviewer, the source checker and the sign-off for each step. The mapping state never changes the learner-facing claim (`serves`).
+
+## Importing an existing dataset
+
+Don't re-extract documents someone has already extracted. Put the dataset in the record shape of `kit/curriculum/requirements.js` (`{ sources, requirements }`), then dry-run:
+
+```bash
+node scripts/curriculum/import-requirements.mjs <dataset.json>
+```
+
+Add `--write` to merge. Records keep their ids and gain `importedFrom`. Anything already present (same id, or same source and reference) is reported for a person to reconcile, never overwritten.
 
 ## Writing mappings
 
@@ -58,6 +86,9 @@ Use `candidates.mjs` (a BM25 shortlist) and a notes search to find lessons. `bui
 
 - A requirement counts once, at its strongest single lesson link.
 - Partial lessons never add up to a full match, and resources never add to a requirement's count.
+- Full, partial, indirect and uncovered are reported as separate figures, never combined into one percentage.
+- Gaps are kinds, not just counts: **missing** (no lesson), **depth** (part taught) or **age-level** (primary content at secondary depth). They are prioritised GCSE, then key stage 3, then practical, then primary.
+- Each source's `notExtracted` list blocks any claim of comprehensive coverage until it is empty.
 - Resources inherit their lesson's links. A resource is "specific" when its own wording matches the requirement.
 - Level-3 questions under key stage 1 to 3 requirements are flagged as above stage.
 

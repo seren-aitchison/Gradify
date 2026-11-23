@@ -10,6 +10,7 @@
    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study",
    "version": "Published September 2013; page updated 6 May 2015",
    "status": "statutory",
+   "notExtracted": [],
    "retrieved": "2026-11-23"
   },
   "aqa-8461": {
@@ -20,6 +21,11 @@
    "status": "examination",
    "qualification": "gcse",
    "combined": "AQA GCSE Combined Science: Trilogy (8464)",
+   "notExtracted": [
+    "Working scientifically (section 3) and mathematical requirements appendix",
+    "Required practical activities as separate records (they are inside the subsections' text)",
+    "AQA GCSE Combined Science: Trilogy (8464) and Synergy (8465) as separate documents"
+   ],
    "retrieved": "2026-11-23"
   },
   "edexcel-1bi0": {
@@ -30,6 +36,10 @@
    "status": "examination",
    "qualification": "gcse",
    "combined": "Pearson Edexcel GCSE Combined Science (1SC0)",
+   "notExtracted": [
+    "Working scientifically and mathematical skills appendices",
+    "Pearson Edexcel GCSE Combined Science (1SC0) as a separate document"
+   ],
    "retrieved": "2026-11-23"
   },
   "ocr-j247": {
@@ -40,6 +50,11 @@
    "status": "examination",
    "qualification": "gcse",
    "combined": "OCR GCSE Combined Science A (Gateway Science) (J250)",
+   "notExtracted": [
+    "Topic B7: Practical skills",
+    "Working scientifically and mathematical skills appendices",
+    "OCR GCSE Combined Science A (J250) as a separate document"
+   ],
    "retrieved": "2026-11-23"
   },
   "ocr-j257": {
@@ -50,6 +65,12 @@
    "status": "examination",
    "qualification": "gcse",
    "combined": "OCR GCSE Combined Science B (Twenty First Century Science) (J260)",
+   "notExtracted": [
+    "Chapter B7: Ideas about Science",
+    "Chapter B8: Practical skills",
+    "Mathematical skills appendix",
+    "OCR GCSE Combined Science B (J260) as a separate document"
+   ],
    "retrieved": "2026-11-23"
   },
   "eduqas-c400": {
@@ -60,6 +81,10 @@
    "status": "examination",
    "qualification": "gcse",
    "combined": "WJEC Eduqas GCSE (9–1) Combined Science",
+   "notExtracted": [
+    "Working scientifically and mathematical requirements appendices",
+    "WJEC Eduqas GCSE (9–1) Combined Science as a separate document; this specification does not mark statements as separate-science only"
+   ],
    "retrieved": "2026-11-23"
   }
  },
