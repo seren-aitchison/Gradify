@@ -67740,5 +67740,143 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u35-crystal-absorption": {
+  "title": "Stopping 511 keV photons in a PET crystal",
+  "caption": "The fraction absorbed in thickness x is 1 − e^(−μx). In 2 cm, NaI (μ = 0.34 cm⁻¹) stops 49% of 511 keV photons while dense LSO (0.87 cm⁻¹) stops 82%, which is why PET scanners use LSO.",
+  "alt": "Fraction absorbed against crystal thickness for NaI and LSO, both rising towards 1, LSO much faster: 0.82 against 0.49 at 2 centimetres.",
+  "description": [
+   "Absorbed fraction = 1 − e^(−μx).",
+   "NaI at 2 cm: 1 − e^(−0.68) = 0.493.",
+   "LSO at 2 cm: 1 − e^(−1.74) = 0.824."
+  ],
+  "course": "physics",
+  "lesson": "Medical detector systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u35.js: Medical detector systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "NaI absorbs 49.3% in 2 cm",
+    "ok": true,
+    "detail": "y(2) = 0.4934"
+   },
+   {
+    "name": "LSO absorbs 82.4% in 2 cm",
+    "ok": true,
+    "detail": "y(2) = 0.8245"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u35-effective-half-life": {
+  "title": "Effective half-life in the body",
+  "caption": "A tracer leaves the body by decay (T_phys = 6 h) and by excretion (T_bio = 3 h) at once, so the rates add: 1/T_eff = 1/6 + 1/3, T_eff = 2 h. Of 600 MBq given, 150 MBq remains after 4 h, two effective half-lives.",
+  "alt": "Activity in the body against time: physical decay alone falling slowly, biological clearance alone falling faster, and the effective curve falling fastest, with 150 megabecquerels at 4 hours.",
+  "description": [
+   "Physical decay alone: half-life 6 h.",
+   "Biological clearance alone: half-life 3 h.",
+   "Both together: 1/T_eff = 1/6 + 1/3 = 1/2, T_eff = 2 h.",
+   "Starting from 600 MBq: 300 MBq at 2 h, 150 MBq at 4 h."
+  ],
+  "course": "physics",
+  "lesson": "Nuclear medicine",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u35.js: Nuclear medicine"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "150 MBq after 4 h",
+    "ok": true,
+    "detail": "y(4) = 150"
+   },
+   {
+    "name": "decay and clearance together halve the activity in 2 h",
+    "ok": true,
+    "detail": "y(2) = 300"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u35-inverse-square": {
+  "title": "Distance is the cheapest shielding",
+  "caption": "From a small source the dose rate falls as 1/r². Stepping back from 0.5 m to 2 m, four times as far, cuts 80 μSv h⁻¹ by a factor of 16, to 5 μSv h⁻¹.",
+  "alt": "Dose rate against distance from the source, falling steeply as one over r squared from 80 microsieverts per hour at 0.5 metres to 5 at 2 metres.",
+  "description": [
+   "Dose rate ∝ 1/r² for a point source.",
+   "0.5 m: 80 μSv h⁻¹. 1 m: 20 μSv h⁻¹. 2 m: 5 μSv h⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Radiation protection",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u35.js: Radiation protection"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "5 μSv h⁻¹ at 2 m",
+    "ok": true,
+    "detail": "y(2) = 5"
+   },
+   {
+    "name": "a quarter at twice the distance",
+    "ok": true,
+    "detail": "y(1) = 20"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
