@@ -84,7 +84,7 @@ export const TOOLS = [
       <div class="actions"><button type="button" class="ghost" data-card>Download a story card</button></div>
       <h3>Put this countdown on your own site, blog or Notion</h3>
       <label for="embed">Embed code</label><textarea id="embed" rows="4" readonly data-embed></textarea>
-      <div class="actions"><button type="button" class="ghost" data-copy>Copy embed code</button></div>
+      <div class="actions"><button type="button" class="ghost" data-copy-embed>Copy embed code</button></div>
     </div>
     <h2>How to use your revision hours</h2>
     <p>Divide your hours by the number of topics, then add 20% for past papers. Spread each topic over several short sessions rather than one long one: reviewing after 1, 3 and 7 days beats a single cram (see <a href="/glossary/spacing-effect/">the spacing effect</a>). The <a href="/tools/spaced-repetition-schedule/">spaced repetition schedule generator</a> gives you the dates.</p>`,
