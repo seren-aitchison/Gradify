@@ -66699,5 +66699,52 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u29-debye-shielding": {
+  "title": "Debye shielding",
+  "caption": "Mobile electrons and ions crowd round any charge in a plasma and cancel its field beyond a few Debye lengths: φ ∝ e^(−r/λ_D)/r instead of 1/r. At one Debye length the potential is already down to 1/e (0.37) of the bare Coulomb value; at three, to 0.05.",
+  "alt": "Potential against distance in Debye lengths: the bare Coulomb 1 over r curve and a shielded curve that falls much faster and is nearly zero beyond 3 Debye lengths.",
+  "description": [
+   "Distance r in units of the Debye length λ_D; potential in units of q/(4πε₀λ_D).",
+   "Bare charge: φ = 1/r.",
+   "Shielded: φ = e^(−r)/r, 0.368 of the bare value at r = λ_D and 0.05 at 3λ_D.",
+   "So a plasma looks neutral on scales much larger than λ_D: that is one of the conditions for calling a gas a plasma."
+  ],
+  "course": "physics",
+  "lesson": "Debye shielding",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u29.js: Debye shielding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "down to 1/e of the bare value at one Debye length",
+    "ok": true,
+    "detail": "y(1) = 0.3679"
+   },
+   {
+    "name": "the shielded potential is always smaller",
+    "ok": true,
+    "detail": "0.5 > 0.07"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

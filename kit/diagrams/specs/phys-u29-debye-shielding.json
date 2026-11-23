@@ -1,0 +1,101 @@
+{
+ "id": "phys-u29-debye-shielding",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u29",
+ "lesson": "Debye shielding",
+ "title": "Debye shielding",
+ "caption": "Mobile electrons and ions crowd round any charge in a plasma and cancel its field beyond a few Debye lengths: φ ∝ e^(−r/λ_D)/r instead of 1/r. At one Debye length the potential is already down to 1/e (0.37) of the bare Coulomb value; at three, to 0.05.",
+ "alt": "Potential against distance in Debye lengths: the bare Coulomb 1 over r curve and a shielded curve that falls much faster and is nearly zero beyond 3 Debye lengths.",
+ "description": [
+  "Distance r in units of the Debye length λ_D; potential in units of q/(4πε₀λ_D).",
+  "Bare charge: φ = 1/r.",
+  "Shielded: φ = e^(−r)/r, 0.368 of the bare value at r = λ_D and 0.05 at 3λ_D.",
+  "So a plasma looks neutral on scales much larger than λ_D: that is one of the conditions for calling a gas a plasma."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / λ_{D}",
+  "potential (relative)"
+ ],
+ "curves": [
+  {
+   "expr": "1/x",
+   "domain": [
+    0.33,
+    4
+   ],
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "bare charge: 1/r",
+   "labelAt": [
+    1.6,
+    0.85
+   ]
+  },
+  {
+   "expr": "exp(-x)/x",
+   "domain": [
+    0.2,
+    4
+   ],
+   "colour": "a1",
+   "label": "shielded: e^{−r}/r",
+   "labelAt": [
+    1.45,
+    0.29
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(exp(-x)/x)/(1/x)",
+   "x": 1,
+   "y": 0.36787944,
+   "name": "down to 1/e of the bare value at one Debye length"
+  },
+  {
+   "type": "order",
+   "a": "1/x",
+   "b": "exp(-x)/x",
+   "x": 2,
+   "rel": ">",
+   "name": "the shielded potential is always smaller"
+  }
+ ]
+}
