@@ -1,0 +1,100 @@
+{
+ "id": "phys-u06-damped-amplitude",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Damped oscillations",
+ "title": "Exponential decay of amplitude",
+ "caption": "The amplitude falls from 10° to 5° in 40 s, so γ = ln 2 / 40 = 0.0173 s⁻¹. Energy goes as amplitude squared, decaying at 2γ: it falls to 1% when the amplitude reaches 1°, after ln 100 / 2γ = 133 s.",
+ "alt": "Amplitude in degrees against time, an exponential decay from 10 through 5 at 40 seconds to 1 at 133 seconds.",
+ "description": [
+  "A = 10° × e^(−γt) with γ = 0.01733 s⁻¹.",
+  "Every 40 s the amplitude halves: 10°, 5°, 2.5°, …",
+  "Energy ∝ A²: 1% of the energy is 10% of the amplitude, 1°, reached at t = 133 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   160
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   40,
+   80,
+   120,
+   160
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "amplitude / °"
+ ],
+ "curves": [
+  {
+   "expr": "10*exp(-0.01732867951399863*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 40,
+   "to": 5
+  },
+  {
+   "x": 132.87712379549453,
+   "to": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 40,
+   "y": 5,
+   "colour": "a2",
+   "label": "5° at 40 s",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 132.8771,
+   "y": 1,
+   "colour": "a2",
+   "label": "1° (1% of energy) at 133 s",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -30
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*exp(-0.01732867951399863*x)",
+   "x": 40,
+   "y": 5,
+   "name": "half the amplitude after 40 s"
+  },
+  {
+   "type": "point",
+   "expr": "100*exp(-0.03465735902799726*x)",
+   "x": 132.877124,
+   "y": 1,
+   "name": "energy at 1% after 132.9 s"
+  }
+ ]
+}

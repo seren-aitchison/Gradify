@@ -1,3 +1,33 @@
 // Physics unit 06 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u06-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u06.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u06-01", null, CALC],
+  ["u06-02", "graph", "phys-u06-shm-a-against-x", "a = −ω²x: the defining straight line of SHM, a_max = 7.9 m s⁻²"],
+  ["u06-02", "lab", "oscillator", "watch x, v and a through an oscillation"],
+  ["u06-03", "graph", "phys-u06-phase-difference", "two pendulums 0.5 s apart in a 2.0 s period: 90° out of phase"],
+  ["u06-03", "lab", "oscillator", "change amplitude, frequency and phase"],
+  ["u06-04", "graph", "phys-u06-spring-period", "T = 2π√(m/k): four times the mass, twice the period"],
+  ["u06-04", "lab", "oscillator", "change the mass and spring constant"],
+  ["u06-05", "lab", "pendulum", "time simple and physical pendulums"],
+  ["u06-06", "graph", "phys-u06-shm-energy", "potential and kinetic energy against x, total 1.0 J"],
+  ["u06-06", "lab", "oscillator", "watch energy move between kinetic and potential"],
+  ["u06-07", "graph", "phys-u06-damped-amplitude", "amplitude halving every 40 s; energy at 1% after 133 s"],
+  ["u06-07", "lab", "oscillator", "add damping"],
+  ["u06-08", "graph", "phys-u06-damping-regimes", "underdamped, critically damped (b = 20 kg s⁻¹) and overdamped returns"],
+  ["u06-08", "lab", "oscillator", "compare damping regimes"],
+  ["u06-09", "lab", "oscillator", "drive the oscillator at different frequencies"],
+  ["u06-10", "graph", "phys-u06-resonance-curves", "amplitude against driving frequency for three dampings"],
+  ["u06-10", "lab", "oscillator", "find resonance"],
+  ["u06-11", "lab", "oscillator", "see how damping sets the sharpness of resonance"],
+  ["u06-12", null, CALC],
+  ["u06-13", null, "counting the modes of a molecule is a rule (3N − 6), carried in the text"],
+  ["u06-14", "lab", "waves", "add two waves of nearby frequencies and hear beats"],
+  ["u06-15", "lab", "pendulum", "time a pendulum at large amplitude"],
+  ["u06-16", "lab", "pendulum", "explore large-amplitude, nonlinear swinging"],
+  ["u06-17", null, CALC],
+  ["u06-18", "graph", "phys-u06-transmissibility", "vibration isolation: 4.2% transmitted at a frequency ratio of 5"],
+  ["u06-19", "graph", "phys-u06-rc-low-pass", "an RC low-pass filter: 0.707 at f_c = 159 Hz, 0.0995 at 10f_c"],
+  ["u06-19", "lab", "oscillator", "sweep the driving frequency"],
+  ["u06-20", null, CALC],
+];

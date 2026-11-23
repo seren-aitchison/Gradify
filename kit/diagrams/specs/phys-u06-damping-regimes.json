@@ -1,0 +1,131 @@
+{
+ "id": "phys-u06-damping-regimes",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u06",
+ "lesson": "Underdamping, critical damping and overdamping",
+ "title": "Underdamped, critically damped, overdamped",
+ "caption": "For m = 2.0 kg and k = 50 N m⁻¹, critical damping needs b = 2√(km) = 20 kg s⁻¹. Released from rest, a lightly damped system (b = 4) overshoots and oscillates; at b = 20 it returns fastest without overshooting; heavily damped (b = 50) it creeps back.",
+ "alt": "Displacement against time for three systems released from 1: an oscillation that decays, a smooth fast return, and a slow creeping return.",
+ "description": [
+  "ω₀ = √(50/2) = 5 rad s⁻¹; critical damping b = 2√(50 × 2) = 20 kg s⁻¹.",
+  "b = 4 kg s⁻¹ (underdamped): oscillates inside a decaying envelope.",
+  "b = 20 kg s⁻¹ (critical): reaches equilibrium quickest without crossing it.",
+  "b = 50 kg s⁻¹ (overdamped): returns slowly, never crossing."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   -0.7,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "displacement (released from 1)"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-1*x)*(cos(4.898979485566356*x)+0.20412414523193154*sin(4.898979485566356*x))",
+   "colour": "a1",
+   "label": "underdamped, b = 4",
+   "labelAt": [
+    1.25,
+    -0.55
+   ]
+  },
+  {
+   "expr": "(1+5*x)*exp(-5*x)",
+   "colour": "a4",
+   "label": "critical, b = 20",
+   "labelAt": [
+    0.46,
+    0.4
+   ]
+  },
+  {
+   "expr": "(23.9564392373896*exp(-1.0435607626104009*x)-1.0435607626104009*exp(-23.9564392373896*x))/(22.9128784747792)",
+   "colour": "a2",
+   "label": "overdamped, b = 50",
+   "labelAt": [
+    1.3,
+    0.62
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-1*x)*(cos(4.898979485566356*x)+0.20412414523193154*sin(4.898979485566356*x))",
+   "x": 0,
+   "y": 1,
+   "name": "all start at 1"
+  },
+  {
+   "type": "point",
+   "expr": "(1+5*x)*exp(-5*x)",
+   "x": 0,
+   "y": 1,
+   "name": "critical starts at 1"
+  },
+  {
+   "type": "point",
+   "expr": "(23.9564392373896*exp(-1.0435607626104009*x)-1.0435607626104009*exp(-23.9564392373896*x))/(22.9128784747792)",
+   "x": 0,
+   "y": 1,
+   "name": "overdamped starts at 1"
+  },
+  {
+   "type": "min",
+   "expr": "(1+5*x)*exp(-5*x)",
+   "domain": [
+    0,
+    3
+   ],
+   "x": 3,
+   "tol": 0.01,
+   "name": "critical damping never crosses equilibrium (it keeps falling)"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-1*x)*(cos(4.898979485566356*x)+0.20412414523193154*sin(4.898979485566356*x))",
+   "x": 0.7,
+   "between": [
+    -0.6,
+    -0.1
+   ],
+   "name": "the underdamped system overshoots"
+  },
+  {
+   "type": "order",
+   "a": "(1+5*x)*exp(-5*x)",
+   "b": "(23.9564392373896*exp(-1.0435607626104009*x)-1.0435607626104009*exp(-23.9564392373896*x))/(22.9128784747792)",
+   "x": 1,
+   "rel": "<",
+   "name": "critical returns faster than overdamped"
+  }
+ ]
+}

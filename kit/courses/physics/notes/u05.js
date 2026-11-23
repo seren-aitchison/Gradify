@@ -10,6 +10,7 @@ E: ω = ω_{0} + αt; θ = ω_{0}t + ½αt^{2}; ω^{2} = ω_{0}^{2} + 2αθ :: c
 X: A fan speeds up from rest to 1200 rpm in 4.0 s. Find α and the turns made.
 > ω = 1200 × 2π/60 = 126 rad s^{-1}; α = 126/4.0 = 31.4 rad s^{-2}
 > θ = ½αt^{2} = 251 rad = 40 turns
+D: phys-u05-fan-spin-up
 !: Rotational formulas need radians; using degrees in v = ωr or s = rθ gives wrong answers.
 Q: What are the rotational equivalents of v = u + at and s = ut + ½at^{2}? | ω = ω_{0} + αt and θ = ω_{0}t + ½αt^{2}.
 Q: Which way does the angular velocity vector point? | Along the axis, given by the right-hand rule (fingers curl with the rotation, thumb points along ω).
@@ -66,6 +67,7 @@ H: Everyday torque
 - Engines quote torque: wheel force = engine torque × gear ratio / wheel radius.
 X: A 30 N force pushes a 0.25 m spanner at 60° to the handle. Find the torque.
 > τ = rF sin θ = 0.25 × 30 × sin 60° = 6.5 N m
+D: phys-u05-torque-angle
 !: Torque depends on where the axis is; always say about which point you take moments.
 Q: What is the moment arm? | The perpendicular distance from the axis to the line of action of the force.
 Q: What is a couple? | Two equal and opposite parallel forces with different lines of action, giving pure torque.
@@ -206,6 +208,7 @@ P: The pulley's inertia appears as an extra effective mass I/R^{2}; tensions on 
 X: A 2.0 kg mass hangs from a string wrapped round a 4.0 kg solid cylinder (R = 0.1 m) on a fixed axle. Find a.
 > mg − T = ma; TR = (½MR^{2})(a/R) ⇒ T = ½Ma
 > a = mg/(m + M/2) = 19.6/4 = 4.9 m s^{-2}
+D: phys-u05-unwinding-mass
 !: With a massive pulley, the tension isn't the same on both sides; treating it as equal ignores the pulley's inertia.
 Q: What is Newton's second law for rotation about a fixed axis? | Στ = Iα.
 Q: How does a pulley's inertia enter an Atwood machine? | As an extra effective mass I/R^{2} in the denominator.
@@ -235,6 +238,7 @@ E: v = √(2gh/(1 + I/MR^{2})) :: speed after descending height h
 X: A solid ball rolls from rest down a 1.0 m high ramp. Find its speed at the bottom.
 > v = √(2 × 9.8 × 1.0/1.4) = 3.7 m s^{-1}
 > A frictionless sliding block would reach 4.4 m s^{-1}
+D: phys-u05-rolling-race
 !: Friction is needed for rolling, but for pure rolling it's static and wastes no energy. (Rolling resistance from deformation is a separate effect.)
 Q: Which reaches the bottom of a slope first: a solid sphere or a hoop? | The solid sphere (smaller I/MR^{2}).
 Q: How fast does the top of a rolling wheel move? | 2v, twice the speed of the centre.
@@ -553,6 +557,7 @@ P: Kinetic friction slows the ball's translation while spinning it up. Angular m
 X: A bowling ball is launched at 8.0 m s^{-1} with no spin; μ_{k} = 0.1. When does it start rolling?
 > a = −μg = −0.98 m s^{-2}; α = 5μg/(2R)
 > Rolls when v = ωR: v = (5/7) × 8 = 5.7 m s^{-1}, at t = (8 − 5.7)/0.98 = 2.3 s
+D: phys-u05-skid-to-roll
 H: Snooker spin
 P: Hitting the cue ball above centre gives topspin (follow); below centre gives backspin (screw or draw). A solid ball struck horizontally at a height of 7R/5 above the table (2R/5 above its centre) rolls immediately without slipping.
 !: Don't assume rolling without slipping from the start; check whether v = ωR, and if not, kinetic friction acts until it is.

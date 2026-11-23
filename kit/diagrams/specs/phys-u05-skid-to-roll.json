@@ -1,0 +1,120 @@
+{
+ "id": "phys-u05-skid-to-roll",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u05",
+ "lesson": "Coupled translational and rotational motion",
+ "title": "From skidding to rolling",
+ "caption": "Friction slows the ball (v falls at μg = 0.98 m s⁻²) and spins it up (ωR rises at 5μg/2 = 2.45 m s⁻²). They meet at t = 2.33 s, when v = ωR = 5.71 m s⁻¹ (5/7 of the launch speed) and the ball rolls without slipping.",
+ "alt": "Two lines against time: speed falling from 8 and rim speed omega R rising from zero, meeting at 2.33 seconds and 5.71 metres per second.",
+ "description": [
+  "Speed: v = 8 − 0.98t.",
+  "Rim speed: ωR = 2.45t, since α = μmgR / (⅖mR²) = 5μg / 2R.",
+  "They are equal at t = 8 / (0.98 + 2.45) = 2.33 s, where v = 5.71 m s⁻¹ = 5/7 × 8.",
+  "After that there is no slipping and kinetic friction stops acting."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.5
+  ],
+  "y": [
+   0,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3,
+   3.5
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "speed / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "8-0.9800000000000001*x",
+   "domain": [
+    0,
+    2.332361516034985
+   ],
+   "colour": "a1",
+   "label": "v (skidding)",
+   "labelAt": [
+    0.15,
+    8.4
+   ]
+  },
+  {
+   "expr": "2.45*x",
+   "domain": [
+    0,
+    2.332361516034985
+   ],
+   "colour": "a2",
+   "label": "ωR",
+   "labelAt": [
+    1.1,
+    2
+   ]
+  },
+  {
+   "expr": "5.714285714285714+0*x",
+   "domain": [
+    2.332361516034985,
+    3.5
+   ],
+   "colour": "a4",
+   "label": "rolling",
+   "labelAt": [
+    2.6,
+    6.4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2.3324,
+   "y": 5.7143,
+   "colour": "ink",
+   "label": "2.33 s, 5.71 m s⁻¹",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "8-0.9800000000000001*x",
+   "b": "2.45*x",
+   "x": 2.332362,
+   "y": 5.714286,
+   "name": "v = ωR at t = 2.33 s"
+  },
+  {
+   "type": "point",
+   "expr": "5.714285714285714+0*x",
+   "x": 0,
+   "y": 5.714286,
+   "name": "the rolling speed is 5/7 of the launch speed"
+  }
+ ]
+}

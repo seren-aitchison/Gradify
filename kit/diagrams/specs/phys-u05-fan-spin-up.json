@@ -1,0 +1,96 @@
+{
+ "id": "phys-u05-fan-spin-up",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u05",
+ "lesson": "Angular displacement, velocity and acceleration",
+ "title": "Spinning up a fan",
+ "caption": "ω rises steadily from 0 to 1200 rpm = 125.7 rad s⁻¹ in 4.0 s, so α = 31.4 rad s⁻². The area under the ω–t line is the angle turned, 251 rad, which is 40 turns.",
+ "alt": "Angular velocity against time rising in a straight line from zero to 126 radians per second at 4 seconds, with the area under it shaded.",
+ "description": [
+  "1200 rpm = 1200 × 2π / 60 = 125.7 rad s⁻¹.",
+  "α = 125.7 / 4 = 31.4 rad s⁻² (the gradient).",
+  "Angle turned = ½ × 4 × 125.7 = 251 rad (the area).",
+  "Turns = 251 / 2π = 40."
+ ],
+ "range": {
+  "x": [
+   0,
+   4.4
+  ],
+  "y": [
+   0,
+   140
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   40,
+   80,
+   120
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "ω / rad s⁻¹"
+ ],
+ "areas": [
+  {
+   "expr": "31.41592653589793*x",
+   "from": 0,
+   "to": 4,
+   "colour": "a4",
+   "opacity": 0.18
+  }
+ ],
+ "curves": [
+  {
+   "expr": "31.41592653589793*x",
+   "domain": [
+    0,
+    4
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 125.664,
+   "colour": "a2",
+   "label": "125.7 rad s⁻¹",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "31.41592653589793*x",
+   "x": 2,
+   "value": 31.415927,
+   "name": "α = 31.42 rad s⁻²"
+  },
+  {
+   "type": "area",
+   "expr": "31.41592653589793*x",
+   "from": 0,
+   "to": 4,
+   "value": 251.3274,
+   "tol": 0.01,
+   "name": "251.3 rad turned, 40 turns"
+  }
+ ]
+}

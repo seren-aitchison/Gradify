@@ -1,0 +1,60 @@
+{
+ "id": "phys-u05-rolling-race",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u05",
+ "lesson": "Rolling without slipping",
+ "title": "Which reaches the bottom fastest?",
+ "caption": "Rolling from rest down 1.0 m, part of the energy goes into spinning: v = √(2gh / (1 + I/mR²)). The solid ball reaches 3.74 m s⁻¹; a hoop, with all its mass at the rim, only 3.13. A frictionless sliding block gets 4.43.",
+ "alt": "Bar chart of speeds at the bottom of a 1 metre ramp: sliding block 4.43, solid sphere 3.74, solid cylinder 3.61, hoop 3.13 metres per second.",
+ "description": [
+  "sliding block (I = 0 mR²): v = √(2 × 9.8 × 1 / 1) = 4.43 m s⁻¹.",
+  "solid sphere (I = 0.4 mR²): v = √(2 × 9.8 × 1 / 1.4) = 3.74 m s⁻¹.",
+  "solid cylinder (I = 0.5 mR²): v = √(2 × 9.8 × 1 / 1.5) = 3.61 m s⁻¹.",
+  "hoop (I = 1 mR²): v = √(2 × 9.8 × 1 / 2) = 3.13 m s⁻¹."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  5
+ ],
+ "ticks": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "yLabel": "speed at the bottom / m s⁻¹",
+ "items": [
+  {
+   "key": "sliding block",
+   "value": 4.427
+  },
+  {
+   "key": "solid sphere",
+   "value": 3.742
+  },
+  {
+   "key": "solid cylinder",
+   "value": 3.615
+  },
+  {
+   "key": "hoop",
+   "value": 3.13
+  }
+ ],
+ "highlight": {
+  "solid sphere": "a2"
+ },
+ "claims": [
+  {
+   "type": "decreasing"
+  },
+  {
+   "type": "max",
+   "key": "sliding block"
+  }
+ ]
+}

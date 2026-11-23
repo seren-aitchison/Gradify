@@ -46235,5 +46235,696 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u05-fan-spin-up": {
+  "title": "Spinning up a fan",
+  "caption": "ω rises steadily from 0 to 1200 rpm = 125.7 rad s⁻¹ in 4.0 s, so α = 31.4 rad s⁻². The area under the ω–t line is the angle turned, 251 rad, which is 40 turns.",
+  "alt": "Angular velocity against time rising in a straight line from zero to 126 radians per second at 4 seconds, with the area under it shaded.",
+  "description": [
+   "1200 rpm = 1200 × 2π / 60 = 125.7 rad s⁻¹.",
+   "α = 125.7 / 4 = 31.4 rad s⁻² (the gradient).",
+   "Angle turned = ½ × 4 × 125.7 = 251 rad (the area).",
+   "Turns = 251 / 2π = 40."
+  ],
+  "course": "physics",
+  "lesson": "Angular displacement, velocity and acceleration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u05.js: Angular displacement, velocity and acceleration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "α = 31.42 rad s⁻²",
+    "ok": true,
+    "detail": "gradient 31.4159"
+   },
+   {
+    "name": "251.3 rad turned, 40 turns",
+    "ok": true,
+    "detail": "area 251.3274"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u05-rolling-race": {
+  "title": "Which reaches the bottom fastest?",
+  "caption": "Rolling from rest down 1.0 m, part of the energy goes into spinning: v = √(2gh / (1 + I/mR²)). The solid ball reaches 3.74 m s⁻¹; a hoop, with all its mass at the rim, only 3.13. A frictionless sliding block gets 4.43.",
+  "alt": "Bar chart of speeds at the bottom of a 1 metre ramp: sliding block 4.43, solid sphere 3.74, solid cylinder 3.61, hoop 3.13 metres per second.",
+  "description": [
+   "sliding block (I = 0 mR²): v = √(2 × 9.8 × 1 / 1) = 4.43 m s⁻¹.",
+   "solid sphere (I = 0.4 mR²): v = √(2 × 9.8 × 1 / 1.4) = 3.74 m s⁻¹.",
+   "solid cylinder (I = 0.5 mR²): v = √(2 × 9.8 × 1 / 1.5) = 3.61 m s⁻¹.",
+   "hoop (I = 1 mR²): v = √(2 × 9.8 × 1 / 2) = 3.13 m s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Rolling without slipping",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u05.js: Rolling without slipping"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "sliding block → hoop: decreasing",
+    "ok": true,
+    "detail": "sliding block 4.427, solid sphere 3.742, solid cylinder 3.615, hoop 3.13"
+   },
+   {
+    "name": "sliding block has the highest value",
+    "ok": true,
+    "detail": "found sliding block"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u05-skid-to-roll": {
+  "title": "From skidding to rolling",
+  "caption": "Friction slows the ball (v falls at μg = 0.98 m s⁻²) and spins it up (ωR rises at 5μg/2 = 2.45 m s⁻²). They meet at t = 2.33 s, when v = ωR = 5.71 m s⁻¹ (5/7 of the launch speed) and the ball rolls without slipping.",
+  "alt": "Two lines against time: speed falling from 8 and rim speed omega R rising from zero, meeting at 2.33 seconds and 5.71 metres per second.",
+  "description": [
+   "Speed: v = 8 − 0.98t.",
+   "Rim speed: ωR = 2.45t, since α = μmgR / (⅖mR²) = 5μg / 2R.",
+   "They are equal at t = 8 / (0.98 + 2.45) = 2.33 s, where v = 5.71 m s⁻¹ = 5/7 × 8.",
+   "After that there is no slipping and kinetic friction stops acting."
+  ],
+  "course": "physics",
+  "lesson": "Coupled translational and rotational motion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u05.js: Coupled translational and rotational motion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v = ωR at t = 2.33 s",
+    "ok": true,
+    "detail": "8-0.9800000000000001*x → 5.714, 2.45*x → 5.714"
+   },
+   {
+    "name": "the rolling speed is 5/7 of the launch speed",
+    "ok": true,
+    "detail": "y(0) = 5.7143"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u05-torque-angle": {
+  "title": "Torque depends on the angle of the push",
+  "caption": "τ = rF sin θ. Pushing the 0.25 m spanner with 30 N at 60° to the handle gives τ = 6.5 N m; pushing at 90° gives the most, 7.5 N m, and pushing along the handle gives none.",
+  "alt": "Torque against the angle between force and spanner, a sine curve rising from zero to 7.5 newton metres at 90 degrees, with 6.5 marked at 60 degrees.",
+  "description": [
+   "r = 0.25 m, F = 30 N, so rF = 7.5 N m.",
+   "At 60°: τ = 7.5 × sin 60° = 6.5 N m.",
+   "At 90° the whole force is perpendicular to the handle and the torque is greatest; at 0° and 180° it is zero."
+  ],
+  "course": "physics",
+  "lesson": "Torque and moment of force",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u05.js: Torque and moment of force"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "τ at 60° = 6.5 N m",
+    "ok": true,
+    "detail": "y(60) = 6.4952"
+   },
+   {
+    "name": "greatest torque at 90°",
+    "ok": true,
+    "detail": "found (90, 7.5)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u05-unwinding-mass": {
+  "title": "A mass unwinding from a cylinder",
+  "caption": "The cylinder resists turning (I = ½MR²), so the string's tension holds the mass back. Solving mg − T = ma and TR = Iα with a = αR: a = mg / (m + M/2) = 4.9 m s⁻² and T = 9.8 N.",
+  "alt": "Free-body diagram of the hanging 2 kilogram mass: tension 9.8 newtons up, weight 19.6 newtons down, net 9.8 newtons down.",
+  "description": [
+   "For the mass: 2 × 9.8 − T = 2a.",
+   "For the cylinder: TR = ½MR² × a/R, so T = ½Ma = 2a.",
+   "Adding: a = 19.6 / 4 = 4.9 m s⁻², T = 9.8 N.",
+   "On the mass: 9.8 N up, 19.6 N down, net 9.8 N down."
+  ],
+  "course": "physics",
+  "lesson": "Rotational dynamics",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u05.js: Rotational dynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "net force = 9.8 at 270° from the summed components",
+    "ok": true,
+    "detail": "Σx = -3 × 10^{-15}, Σy = −9.8: 9.8 at 270.0°"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "T: the string; W: Earth's gravity"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u06-damped-amplitude": {
+  "title": "Exponential decay of amplitude",
+  "caption": "The amplitude falls from 10° to 5° in 40 s, so γ = ln 2 / 40 = 0.0173 s⁻¹. Energy goes as amplitude squared, decaying at 2γ: it falls to 1% when the amplitude reaches 1°, after ln 100 / 2γ = 133 s.",
+  "alt": "Amplitude in degrees against time, an exponential decay from 10 through 5 at 40 seconds to 1 at 133 seconds.",
+  "description": [
+   "A = 10° × e^(−γt) with γ = 0.01733 s⁻¹.",
+   "Every 40 s the amplitude halves: 10°, 5°, 2.5°, …",
+   "Energy ∝ A²: 1% of the energy is 10% of the amplitude, 1°, reached at t = 133 s."
+  ],
+  "course": "physics",
+  "lesson": "Damped oscillations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Damped oscillations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half the amplitude after 40 s",
+    "ok": true,
+    "detail": "y(40) = 5"
+   },
+   {
+    "name": "energy at 1% after 132.9 s",
+    "ok": true,
+    "detail": "y(132.877124) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-damping-regimes": {
+  "title": "Underdamped, critically damped, overdamped",
+  "caption": "For m = 2.0 kg and k = 50 N m⁻¹, critical damping needs b = 2√(km) = 20 kg s⁻¹. Released from rest, a lightly damped system (b = 4) overshoots and oscillates; at b = 20 it returns fastest without overshooting; heavily damped (b = 50) it creeps back.",
+  "alt": "Displacement against time for three systems released from 1: an oscillation that decays, a smooth fast return, and a slow creeping return.",
+  "description": [
+   "ω₀ = √(50/2) = 5 rad s⁻¹; critical damping b = 2√(50 × 2) = 20 kg s⁻¹.",
+   "b = 4 kg s⁻¹ (underdamped): oscillates inside a decaying envelope.",
+   "b = 20 kg s⁻¹ (critical): reaches equilibrium quickest without crossing it.",
+   "b = 50 kg s⁻¹ (overdamped): returns slowly, never crossing."
+  ],
+  "course": "physics",
+  "lesson": "Underdamping, critical damping and overdamping",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Underdamping, critical damping and overdamping"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "all start at 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "critical starts at 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "overdamped starts at 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "critical damping never crosses equilibrium (it keeps falling)",
+    "ok": true,
+    "detail": "found (3, 0)"
+   },
+   {
+    "name": "the underdamped system overshoots",
+    "ok": true,
+    "detail": "exp(-1*x)*(cos(4.898979485566356*x)+0.20412414523193154*sin(4.898979485566356*x)) at 0.7 = -0.5; expected -0.6–-0.1"
+   },
+   {
+    "name": "critical returns faster than overdamped",
+    "ok": true,
+    "detail": "0.04 < 0.37"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-phase-difference": {
+  "title": "Phase difference from a time lag",
+  "caption": "Both pendulums have period 2.0 s; B passes equilibrium 0.5 s after A. That lag is 0.5/2 of a cycle, so the phase difference is 90° (π/2 rad): A leads B by a quarter cycle.",
+  "alt": "Two sine curves of the same period, the second shifted half a second to the right, a quarter of a cycle.",
+  "description": [
+   "Period T = 2 s for both.",
+   "B crosses equilibrium moving right 0.5 s after A.",
+   "Phase difference = (0.5 / 2) × 360° = 90° = π/2 rad."
+  ],
+  "course": "physics",
+  "lesson": "Amplitude, frequency, period and phase",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Amplitude, frequency, period and phase"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A crosses equilibrium at t = 2.0 s",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "B crosses 0.5 s later",
+    "ok": true,
+    "detail": "y(2.5) = 0"
+   },
+   {
+    "name": "B peaks a quarter period (90°) after A",
+    "ok": true,
+    "detail": "found (1, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-resonance-curves": {
+  "title": "Resonance: amplitude against driving frequency",
+  "caption": "Driven near its natural frequency, an oscillator's amplitude peaks. The lighter the damping, the taller and narrower the peak: with γ = 0.2ω₀ the amplitude reaches about 5 times its low-frequency value. A singer's note matched to a wine glass's frequency can build up enough to break it.",
+  "alt": "Amplitude against driving frequency for three damping levels, each peaking near the natural frequency; the lightest damping gives the tallest, sharpest peak.",
+  "description": [
+   "Horizontal axis: driving frequency as a fraction of the natural frequency ω₀.",
+   "Vertical axis: amplitude relative to its value at very low frequency.",
+   "γ = 0.2ω₀: a sharp peak of about 5 near ω₀. γ = 0.5ω₀: about 2. γ = 1.0ω₀: a low, broad hump.",
+   "Far above ω₀ the amplitude falls towards zero whatever the damping."
+  ],
+  "course": "physics",
+  "lesson": "Resonance",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Resonance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "light damping peaks near ω₀ at about 5",
+    "ok": true,
+    "detail": "found (0.99, 5.025)"
+   },
+   {
+    "name": "γ = 0.5ω₀: amplitude 2 at ω₀",
+    "ok": true,
+    "detail": "1/sqrt((1-x^2)^2+(0.5*x)^2) at 1 = 2; expected 1.9–2.1"
+   },
+   {
+    "name": "lighter damping, taller peak",
+    "ok": true,
+    "detail": "5 > 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-shm-a-against-x": {
+  "title": "SHM: acceleration proportional to displacement, and opposite",
+  "caption": "In SHM a = −ω²x: a straight line through the origin with gradient −ω². At 2.0 Hz, ω = 12.57 rad s⁻¹, so at the amplitude 0.05 m the acceleration is a_max = ω²A = 7.9 m s⁻² (and v_max = ωA = 0.63 m s⁻¹ at x = 0).",
+  "alt": "Acceleration against displacement: a straight line with negative gradient through the origin, from plus 7.9 at minus 0.05 metres to minus 7.9 at plus 0.05.",
+  "description": [
+   "ω = 2π × 2 = 12.57 rad s⁻¹; ω² = 157.9 s⁻².",
+   "The line a = −157.9x runs between x = ±0.05 m.",
+   "At x = +0.05 m, a = −7.9 m s⁻²; at x = −0.05 m, a = +7.9 m s⁻².",
+   "The minus sign means the acceleration always points back towards equilibrium."
+  ],
+  "course": "physics",
+  "lesson": "Simple harmonic motion",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Simple harmonic motion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient −ω² = −157.9 s⁻²",
+    "ok": true,
+    "detail": "gradient -157.9137"
+   },
+   {
+    "name": "a_max = ω²A = 7.9 m s⁻²",
+    "ok": true,
+    "detail": "y(0.05) = -7.8957"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-shm-energy": {
+  "title": "Energy in a mass–spring oscillator",
+  "caption": "The total energy is fixed at ½kA² = 1.0 J. At x = 0.06 m the spring holds ½kx² = 0.36 J, so the mass has 0.64 J of kinetic energy: v = 1.6 m s⁻¹.",
+  "alt": "Energy against displacement: a parabola of potential energy, an inverted parabola of kinetic energy, and a flat total line at 1 joule.",
+  "description": [
+   "E = ½ × 200 × 0.1² = 1 J.",
+   "Potential energy ½kx² is a parabola, zero at the centre; kinetic energy is E minus it.",
+   "At x = 0.06 m: potential 0.36 J, kinetic 0.64 J, v = √(2 × 0.64 / 0.5) = 1.6 m s⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Energy in oscillatory systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Energy in oscillatory systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "½kx² = 0.36 J at 0.06 m",
+    "ok": true,
+    "detail": "y(0.06) = 0.36"
+   },
+   {
+    "name": "kinetic energy 0.64 J at 0.06 m",
+    "ok": true,
+    "detail": "y(0.06) = 0.64"
+   },
+   {
+    "name": "v = 1.6 m s⁻¹",
+    "ok": true,
+    "detail": "y(0) = 0.64"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-spring-period": {
+  "title": "Period of a mass on a spring",
+  "caption": "T = 2π√(m/k). With k = 100 N m⁻¹, a 0.25 kg mass gives T = 0.314 s; quadrupling the mass to 1.0 kg only doubles the period, to 0.628 s.",
+  "alt": "Period against mass rising as a square-root curve, with 0.314 seconds at 0.25 kilograms and 0.628 seconds at 1.0 kilogram marked.",
+  "description": [
+   "k = 100 N m⁻¹.",
+   "m = 0.25 kg: T = 2π√(0.25/100) = 0.314 s.",
+   "m = 1.0 kg: T = 0.628 s, twice as long, because T ∝ √m."
+  ],
+  "course": "physics",
+  "lesson": "Mass-spring systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Mass-spring systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "T(0.25 kg) = 0.314 s",
+    "ok": true,
+    "detail": "y(0.25) = 0.3142"
+   },
+   {
+    "name": "four times the mass, twice the period",
+    "ok": true,
+    "detail": "y(1) = 0.6283"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-transmissibility": {
+  "title": "Isolating a vibrating machine",
+  "caption": "A 1500 rpm machine shakes at 25 Hz; its mounts resonate at 5 Hz, a frequency ratio of 5. Above r = √2 the mounts transmit less force than they receive; at r = 5 only 1/(r² − 1) = 0.042 (4.2%) gets through.",
+  "alt": "Transmissibility against frequency ratio: a spike at 1, falling below 1 beyond the square root of 2, and down to about 0.04 at a ratio of 5.",
+  "description": [
+   "Forcing 25 Hz, natural 5 Hz: r = 5.",
+   "Transmissibility (undamped) = 1 / |1 − r²|: it blows up at r = 1 (resonance) and equals 1 at r = √2.",
+   "At r = 5: 1 / 24 = 0.0417."
+  ],
+  "course": "physics",
+  "lesson": "Mechanical vibration analysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Mechanical vibration analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "transmissibility 0.0417 at r = 5",
+    "ok": true,
+    "detail": "y(5) = 0.0417"
+   },
+   {
+    "name": "isolation starts at r = √2",
+    "ok": true,
+    "detail": "y(1.41421356) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u06-rc-low-pass": {
+  "title": "Frequency response of a low-pass filter",
+  "caption": "f_c = 1/(2πRC) = 159 Hz. Low frequencies pass almost unchanged; at f_c the gain is 1/√2 = 0.707 (−3 dB); at 10 f_c it is 1/√101 = 0.1, about −20 dB.",
+  "alt": "Gain against frequency in multiples of the cut-off frequency, falling from 1 through 0.707 at 1 to about 0.1 at 10.",
+  "description": [
+   "R = 10 kΩ, C = 100 nF: f_c = 1 / (2π × 10⁴ × 10⁻⁷) = 159 Hz.",
+   "Gain = 1 / √(1 + (f/f_c)²).",
+   "At f = f_c: 0.707. At f = 10f_c (1590 Hz): 0.1."
+  ],
+  "course": "physics",
+  "lesson": "Frequency response",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u06.js: Frequency response"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gain 1/√2 at the cut-off",
+    "ok": true,
+    "detail": "y(1) = 0.7071"
+   },
+   {
+    "name": "gain 0.0995 at 10f_c",
+    "ok": true,
+    "detail": "y(10) = 0.0995"
+   },
+   {
+    "name": "f_c = 159.2 Hz",
+    "ok": true,
+    "detail": "y(0) = 159.1549"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

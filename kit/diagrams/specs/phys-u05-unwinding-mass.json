@@ -1,0 +1,38 @@
+{
+ "id": "phys-u05-unwinding-mass",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u05",
+ "lesson": "Rotational dynamics",
+ "title": "A mass unwinding from a cylinder",
+ "caption": "The cylinder resists turning (I = ½MR²), so the string's tension holds the mass back. Solving mg − T = ma and TR = Iα with a = αR: a = mg / (m + M/2) = 4.9 m s⁻² and T = 9.8 N.",
+ "alt": "Free-body diagram of the hanging 2 kilogram mass: tension 9.8 newtons up, weight 19.6 newtons down, net 9.8 newtons down.",
+ "description": [
+  "For the mass: 2 × 9.8 − T = 2a.",
+  "For the cylinder: TR = ½MR² × a/R, so T = ½Ma = 2a.",
+  "Adding: a = 19.6 / 4 = 4.9 m s⁻², T = 9.8 N.",
+  "On the mass: 9.8 N up, 19.6 N down, net 9.8 N down."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "T",
+   "mag": 9.8,
+   "angle": 90,
+   "source": "the string"
+  },
+  {
+   "label": "W",
+   "mag": 19.6,
+   "angle": 270,
+   "source": "Earth's gravity"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 9.8,
+  "angle": 270
+ },
+ "showResultant": true
+}

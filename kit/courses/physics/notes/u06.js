@@ -41,6 +41,7 @@ P: The period 2π/ω depends only on the system (k/m, g/l), not on the amplitude
 X: A mass oscillates with A = 0.05 m at 2.0 Hz. Find v_{max} and a_{max}.
 > ω = 4π = 12.6 rad s^{-1}
 > v_{max} = Aω = 0.63 m s^{-1}; a_{max} = Aω^{2} = 7.9 m s^{-2}
+D: phys-u06-shm-a-against-x
 !: SHM requires a ∝ −x exactly. A bouncing ball has periodic motion but isn't SHM (its acceleration is constant while airborne).
 P: **Investigate with the lab.** Set damping to zero, pull the mass and release it. Watch the displacement trace and check that the acceleration always points back towards equilibrium.
 IX: oscillator
@@ -73,6 +74,7 @@ E: Δφ = 2πΔt/T
 - On a phasor diagram, oscillations are rotating vectors; phase difference is the angle between them.
 X: Two pendulums of period 2.0 s pass equilibrium (moving right) 0.5 s apart. Find their phase difference.
 > Δφ = 2π × 0.5/2.0 = π/2 (90°)
+D: phys-u06-phase-difference
 !: Phase is often quoted in degrees or fractions of a cycle; check which, and remember 2π rad = 360° = 1 cycle.
 P: **Investigate with the lab.** Change the amplitude and check that the period stays the same. Then read the period and work out the frequency from f = 1/T.
 IX: oscillator
@@ -105,6 +107,7 @@ H: Measuring k
 X: A 0.25 kg mass on a spring of k = 100 N m^{-1}. Find T. How does it change with 1.0 kg?
 > T = 2π√(0.25/100) = 0.31 s
 > Quadrupling m doubles T: 0.63 s
+D: phys-u06-spring-period
 !: Cutting a spring in half doubles its spring constant; each half stretches half as much under the same force.
 P: **Investigate with the lab.** Double the mass and see the period grow by √2, not 2. Then double the spring constant instead and compare.
 IX: oscillator
@@ -169,6 +172,7 @@ P: If the energy can be written as E = ½M_{eff}ẋ^{2} + ½K_{eff}x^{2}, then �
 X: A 0.5 kg mass on a spring (k = 200 N m^{-1}) has A = 0.1 m. Find E and the speed at x = 0.06 m.
 > E = ½ × 200 × 0.01 = 1.0 J
 > KE = 1.0 − ½ × 200 × 0.0036 = 0.64 J ⇒ v = 1.6 m s^{-1}
+D: phys-u06-shm-energy
 !: Doubling the amplitude quadruples the energy, not doubles it.
 P: **Investigate with the lab.** Watch the kinetic and potential energy bars swap during each cycle with no damping, then switch damping on and watch the total fall.
 IX: oscillator
@@ -202,6 +206,7 @@ H: Other damping
 X: A pendulum's amplitude falls from 10° to 5° in 40 s. Find γ and the time for energy to fall to 1%.
 > e^{−γ × 40/2} = 0.5 ⇒ γ = 2 ln 2/40 = 0.035 s^{-1}
 > Energy: e^{−γt} = 0.01 ⇒ t = 4.6/0.035 = 133 s
+D: phys-u06-damped-amplitude
 !: Damping changes the frequency only slightly for light damping; the big effect is on the amplitude.
 P: **Investigate with the lab.** Add a little damping and watch the amplitude decay. Check that each peak is the same fraction of the one before.
 IX: oscillator
@@ -233,6 +238,7 @@ H: Design choices
 - Musical instruments and clocks: very lightly damped, to ring.
 X: A 2.0 kg mass on a spring (k = 50 N m^{-1}). What damping constant b gives critical damping?
 > b_{c} = 2√(km) = 2√100 = 20 kg s^{-1}
+D: phys-u06-damping-regimes
 !: Critical damping isn't "the most damping"; overdamped systems are slower to return.
 P: **Investigate with the lab.** Increase the damping until the mass returns fastest with no overshoot: that is critical damping. Go beyond it and see the return slow down.
 IX: oscillator
@@ -301,6 +307,7 @@ H: Harmful resonance
 X: Why can a singer break a wine glass?
 > The glass has a lightly damped mode (high Q) near 500–1000 Hz
 > A loud note at exactly that frequency builds the vibration until the strain exceeds the breaking strain
+D: phys-u06-resonance-curves
 !: Resonance needs matching frequency and low enough damping; a loud sound at the wrong frequency does little.
 P: **Investigate with the lab.** Tune the driving frequency to within 2% of resonance and watch the amplitude grow. Then add damping and see the peak fall and widen.
 IX: oscillator
@@ -556,6 +563,7 @@ E: transmissibility T = 1/|1 − (ω/ω_{0})^{2}| (undamped)
 X: A 1500 rpm machine is mounted on springs with ω_{0} corresponding to 5 Hz. Find the transmissibility.
 > f = 25 Hz; ratio r = 5
 > T = 1/(25 − 1) ≈ 4%: 96% isolation
+D: phys-u06-transmissibility
 !: Soft mounts amplify vibration when passing through resonance during start-up; add damping or pass through quickly.
 Q: Above what frequency ratio does a spring mount isolate vibration? | ω/ω_{0} > √2.
 Q: What does a peak at twice running speed in a vibration spectrum often indicate? | Shaft misalignment.
@@ -586,6 +594,7 @@ H: Filters
 X: A low-pass RC filter has R = 10 kΩ, C = 100 nF. Find f_{c} and the gain at 10f_{c}.
 > f_{c} = 1/(2π × 10^{4} × 10^{-7}) = 159 Hz
 > At 1.59 kHz: |H| ≈ 0.1 (−20 dB)
+D: phys-u06-rc-low-pass
 !: Frequency response describes steady state only; transients (start-up ringing) need the full time-domain solution.
 P: **Investigate with the lab.** Sweep the driving frequency and watch the resonance curve build up. Compare the curves for light and heavy damping.
 IX: oscillator
