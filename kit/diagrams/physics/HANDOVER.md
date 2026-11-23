@@ -33,3 +33,15 @@ State as of 2026-11-21. Read `kit/diagrams/BUILDERS.md`, then `UNIT-AGENT.md` in
 
 ## Last release
 See `git log -- kit/diagrams/physics/HANDOVER.md` on main for the commit; tests: full `npm test` before each push.
+
+## Unit claims (read before starting a unit)
+
+A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
+Claimed 23 Nov 2026.
+
+| Units | Claimed by |
+|---|---|
+| u17-u20 | lead session 01H1szfk, agent P1 |
+| u21-u24 | lead session 01H1szfk, agent P2 |
+| u25-u28 | lead session 01H1szfk, agent P3 |
+| u29-u32 | lead session 01H1szfk, agent P4 |

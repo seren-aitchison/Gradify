@@ -62,3 +62,16 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 - u05 (agent maths-a): 50 lessons assessed; 32 diagrams (geometry 22, graph 7, transform 1, number-line 1, plus...), labs on 6 rows (circles, practice, matrix), rest null with reasons. All checks pass. Missing renderers: 3D solids/nets/coordinates (u05-03, 20, 21, 23, 30), spherical (35, 36), hyperbolic (37), surfaces/torus (49), knot diagrams (50), Buffon's needle (44), curved-surface curvature (46).
 - u08 (Multivariable and Vector Calculus): 22 lessons assessed; 8 diagrams (`maths-u08-*`), lab `descent` on 2; rest null with reasons.
   Lacks: 3D surfaces/fields (9 lessons), conics.
+
+## Unit claims (read before starting a unit)
+
+A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
+Claimed 23 Nov 2026.
+
+| Units | Claimed by |
+|---|---|
+| u04, u06, u07 | lead session 01H1szfk, agent M1 |
+| u09, u10, u14 (WIP on branch wip/maths-u14) | lead session 01H1szfk, agent M2 |
+| u15, u16, u17, u18, u19 | lead session 01H1szfk, agent M3 |
+| u20-u24 | lead session 01H1szfk, agent M4 |
+| u25-u29 | lead session 01H1szfk, agent M5 |
