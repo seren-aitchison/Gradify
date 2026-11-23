@@ -73,7 +73,7 @@ import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
 import { specsFor } from "../specs/index.js";
 import { specMastery } from "../learning/spec-mastery.js";
-import { specPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
+import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -2258,41 +2258,44 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- specification mastery (kit/learning/spec-mastery.js, docs/SPEC-MASTERY.md) ----------
-  // which specification and tier the learner is sitting, remembered per course on this device
+  // which specification the learner is sitting, and their choices on it (a tier, say), remembered per course on this
+  // device. Nothing here is specific to a board or subject: the specification's own `options` say what can be chosen.
   const SPK = `gradify.spec.${cfg.slug}`;
-  const specPref = () => { let v = {}; try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ } const spec = SPECS.find((x) => x.id === v.id) || SPECS[0]; return { spec, tier: spec?.tiers && v.tier === "foundation" ? "foundation" : "higher" }; };
-  const setSpecPref = ({ id, tier }) => { const cur = specPref(); try { localStorage.setItem(SPK, JSON.stringify({ id: id || cur.spec.id, tier: tier || cur.tier })); } catch { /* storage blocked: the choice isn't remembered */ } };
+  const specPref = () => {
+    let v = {}; try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ }
+    // the first version stored { id, tier }; a tier saved then still applies
+    const spec = SPECS.find((x) => x.id === v.id) || SPECS[0];
+    return { spec, choices: { ...(v.tier ? { tier: v.tier } : {}), ...(v.choices || {}) } };
+  };
+  const setSpecPref = ({ id, choice }) => { const cur = specPref(); try { localStorage.setItem(SPK, JSON.stringify({ id: id || cur.spec.id, choices: id && id !== cur.spec.id ? {} : { ...cur.choices, ...(choice || {}) } })); } catch { /* storage blocked: the choice isn't remembered */ } };
   let specMemo = { key: "", model: null };
   function specModel() {
-    const { spec, tier } = specPref(), key = `${spec.id}|${tier}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}`;
-    if (specMemo.key !== key) specMemo = { key, model: specMastery(spec, { attempts: S.attempts || [], levels: cfg.levels || null, exploration: EXPLORE, done: S.done, tier,
+    const { spec, choices } = specPref(), key = `${spec.id}|${JSON.stringify(choices)}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}`;
+    if (specMemo.key !== key) specMemo = { key, model: specMastery(spec, { attempts: S.attempts || [], levels: cfg.levels || null, exploration: EXPLORE, done: S.done, choices,
       available: (id) => Boolean(byId[id]) && (!cfg.written || cfg.written.includes(byId[id].unit.id)), titleOf: (id) => byId[id]?.title || id }) };
     return specMemo.model;
   }
-  const specPractise = (p) => `#/target/${encodeTest({ minutes: 5, focus: p.focus, scope: "lessons", lessons: p.practise })}`;
-  async function viewSpec(pointId) {
-    const m = specModel(), { tier } = specPref();
-    if (pointId) {
-      const p = m.points.find((x) => x.id === decodeURIComponent(pointId));
-      if (!p) { main.innerHTML = `<div class="co-panel"><h2>That point isn't in this specification</h2><p>It may be Higher tier only, or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to the specification</span></a></div>`; return; }
-      main.innerHTML = pointPageHtml(p, { spec: m.spec, titleOf: (id) => byId[id]?.title || id, statusOf: (id) => (byId[id] ? STATUS[statusOf(id)].label : null), practiseHref: specPractise });
+  const specPractise = (p) => `#/target/${encodeTest({ minutes: 5, focus: p.focus, scope: "lessons", lessons: p.practise.filter((id) => byId[id]) })}`;
+  async function viewSpec(ref) {
+    const m = specModel(), id = ref ? decodeURIComponent(ref) : null;
+    const topic = id && m.topics.find((t) => t.id === id), p = id && !topic && m.points.find((x) => x.id === id);
+    if (id && !topic && !p) { main.innerHTML = `<div class="co-panel"><h2>That requirement isn't in your specification</h2><p>It may not be part of the options you've chosen (a tier, say), or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to your specification</span></a></div>`; return; }
+    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise }); return; }
+    if (p) {
+      main.innerHTML = pointPageHtml(m, p, { titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null), practiseHref: specPractise });
       // what each lesson offers to practise this point with: its check questions and flashcards
-      const ids = [...p.lessons, ...p.partial], need = new Set(ids.map((id) => byId[id]?.unit.id).filter(Boolean));
+      const ids = [...p.lessons, ...p.partial].filter((l) => byId[l]), need = new Set(ids.map((l) => byId[l].unit.id));
       const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
-      for (const id of ids) {
-        const L = notes[id], el = main.querySelector(`[data-res="${CSS.escape(id)}"]`); if (!L || !el) continue;
+      for (const l of ids) {
+        const L = notes[l], el = main.querySelector(`[data-res="${CSS.escape(l)}"]`); if (!L || !el) continue;
         const q = (L.items || []).filter((it) => QTYPES[it.Q.type]?.auto).length, c = (L.cards || []).length;
         el.textContent = [q && `${q} check ${q === 1 ? "question" : "questions"}`, c && `${c} ${c === 1 ? "flashcard" : "flashcards"}`].filter(Boolean).join(" · ");
       }
       return;
     }
-    main.innerHTML = specPageHtml(m, { specs: SPECS, tier, practiseHref: specPractise });
-    const tip = main.querySelector(".sm-tipline");
-    const show = (e) => { const a = e.target.closest?.(".sm-tiles > a"); if (a && tip) tip.textContent = a.dataset.tip; };
-    main.querySelector(".sm-topics")?.addEventListener("mouseover", show);
-    main.querySelector(".sm-topics")?.addEventListener("focusin", show);
+    main.innerHTML = specPageHtml(m, { specs: SPECS, practiseHref: specPractise });
     main.querySelector("[data-spec]")?.addEventListener("change", (e) => { setSpecPref({ id: e.target.value }); route(); });
-    main.querySelectorAll("[data-tier]").forEach((b) => b.addEventListener("click", () => { setSpecPref({ tier: b.dataset.tier }); route(); }));
+    main.querySelectorAll("[data-opt]").forEach((b) => b.addEventListener("click", () => { setSpecPref({ choice: { [b.dataset.opt]: b.dataset.choice } }); route(); }));
   }
 
   async function viewMe() {

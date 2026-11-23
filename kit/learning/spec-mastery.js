@@ -2,7 +2,10 @@
 // from the evidence Gradify already has (docs/SPEC-MASTERY.md). Pure functions, no DOM, so the course page, LifeOS
 // and tests share one model.
 //
-//   specMastery(spec, { attempts, levels, exploration, done, available, titleOf, tier, now })
+//   specMastery(spec, { attempts, levels, exploration, done, available, titleOf, choices, now })
+//
+// Nothing here knows about a board, a subject or a country: a specification is data (kit/specs/), its points name
+// lessons, and the learner's choices (a tier, say) hide the point flags the specification says they hide.
 //   → { points: [...], topics: [...], overall: {...} }
 //
 // Three things are kept apart for every point, because they answer different questions:
@@ -13,7 +16,7 @@
 // never 0%. Nothing new is stored: every figure is worked out from the attempt records (kit/assess/attempts.js)
 // through the Mastery Engine (kit/learning/mastery.js), so the model can change without migrating anyone's data.
 import { evidenceFromAttempts, sixProfile, SIX } from "./mastery.js";
-import { pointsOf } from "../specs/index.js";
+import { pointsOf, resolveRef, hiddenFlags, choicesFor } from "../specs/index.js";
 
 const DAY = 864e5;
 
@@ -119,13 +122,25 @@ function readingOf(point, byLesson, profile, conf, titleOf) {
 }
 
 /** The whole specification, measured. */
-export function specMastery(spec, { attempts = [], levels = null, exploration = null, done = {}, available = () => true, titleOf = (id) => id, tier = "higher", combined = false, now = Date.now() } = {}) {
+// a lesson's evidence is keyed by course and lesson, since lesson ids repeat across courses ("u02-20" is in every one)
+const keyOf = (course, lesson) => `${course}:${lesson}`;
+
+/**
+ * The whole specification, measured.
+ *   attempts   attempt records from any course (each carries its course as `subject`)
+ *   done       { lessonRef: true } lessons completed; available(ref) whether Gradify teaches it; titleOf(ref)
+ *   choices    the learner's options, e.g. { tier: "foundation" }; each option's first choice is the default
+ */
+export function specMastery(spec, { attempts = [], levels = null, exploration = null, done = {}, available = () => true, titleOf = (id) => id, choices = {}, now = Date.now() } = {}) {
   const ev = evidenceFromAttempts(attempts, { levels, exploration }).filter((e) => e.at <= now);
-  const byLesson = new Map(); for (const e of ev) { if (!e.topic) continue; (byLesson.get(e.topic) || byLesson.set(e.topic, []).get(e.topic)).push(e); }
-  const pts = pointsOf(spec).filter((p) => (tier !== "foundation" || !p.ht) && (!combined || !p.sep));
+  const byLesson = new Map();
+  for (const e of ev) { if (!e.topic) continue; const k = keyOf(e.subject || spec.course, e.topic); (byLesson.get(k) || byLesson.set(k, []).get(k)).push(e); }
+  const evOf = (ref) => { const r = resolveRef(spec, ref); return byLesson.get(keyOf(r.course, r.lesson)) || []; };
+  const hidden = hiddenFlags(spec, choices);
+  const pts = pointsOf(spec).filter((p) => !p.flags.some((f) => hidden.has(f)));
   const points = pts.map((p) => {
     const full = p.lessons.filter(available), part = p.partial.filter(available), ids = [...full, ...part];
-    const pev = ids.flatMap((id) => byLesson.get(id) || []);
+    const pev = ids.flatMap(evOf);
     const profile = sixProfile(pev, { now }), conf = confidenceOf(pev, profile, now);
     // a measurement once the Mastery Engine reports one; before that, a provisional estimate from what there is
     let estimate = profile.mastery, provisional = false;
@@ -133,7 +148,7 @@ export function specMastery(spec, { attempts = [], levels = null, exploration = 
       const ds = SIX.map((d) => profile.dims[d.key]).filter((d) => d.value != null);
       estimate = ds.reduce((a, d) => a + d.value * d.n, 0) / ds.reduce((a, d) => a + d.n, 0); provisional = true;
     }
-    const readings = new Map(ids.map((id) => [id, lessonReading(byLesson.get(id) || [])]));
+    const readings = new Map(ids.map((id) => [id, lessonReading(evOf(id))]));
     const r = readingOf(p, readings, profile, conf, titleOf);
     const series = weeklySeries(pev, now), t = profile.trend;
     const trend = !t ? null : t.declining ? "slipping" : t.recent - t.earlier >= 0.15 ? "improving" : "steady";
@@ -148,7 +163,7 @@ export function specMastery(spec, { attempts = [], levels = null, exploration = 
       practise, focus: ["apply", "transfer"].includes(profile.weakest) ? "application" : "mixed",
     };
   });
-  return { spec, tier, points, topics: spec.topics.map((t) => topicOf(t, points.filter((p) => p.topic.id === t.id))).filter((t) => t.total), overall: overallOf(points) };
+  return { spec, choices: choicesFor(spec, choices), points, topics: spec.topics.map((t) => topicOf(t, points.filter((p) => p.topic.id === t.id))).filter((t) => t.total), overall: overallOf(points) };
 }
 
 const WEIGHT = { none: 0, low: 1, medium: 2, high: 3 };
@@ -175,7 +190,7 @@ function overallOf(points) {
   const firm = points.filter((p) => ["medium", "high"].includes(p.confidence.level)).length;
   // the headline is only as trustworthy as the share of the specification behind it
   const level = !assessed ? "none" : share >= 0.6 && firm >= assessed / 2 ? "high" : share >= 0.25 ? "medium" : "low";
-  return { total: points.length, covered, full, assessed, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, band: bandOf(estimate), bands, confidence: level,
+  return { total: points.length, covered, full, assessed, firm, measured: points.filter((p) => p.estimate != null && !p.provisional).length, estimate, band: bandOf(estimate), bands, confidence: level,
     slipping: points.filter((p) => p.trend === "slipping").length,
     lessonsDone: points.reduce((s, p) => s + p.coverage.done, 0), lessonsMapped: points.reduce((s, p) => s + p.coverage.total, 0) };
 }

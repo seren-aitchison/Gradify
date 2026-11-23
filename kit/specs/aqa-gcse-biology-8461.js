@@ -4,25 +4,34 @@
 // Each point is one numbered requirement of the subject content (4.1.1.1 and so on), with:
 //   lessons   lessons that teach and assess the whole point
 //   partial   lessons that cover only part of it (their answers still count as evidence for the point)
-//   ht        the whole point is Higher tier only
-//   sep       Biology only: not in Combined Science
+//   flags     this specification's own classifications (declared in `flags` below): ht, the whole point is Higher
+//             tier only; sep, Biology only (not in Combined Science)
 // A point with no lessons is reported as "not yet covered by Gradify", never as something the learner doesn't know.
 //
-// The numbering and headings follow the structure of the specification as Gradify knows it. The requirement text is
-// Gradify's own paraphrase (wording: "paraphrased"), not AQA's wording: check it against AQA's published
-// specification, and set `verified` and `wording: "verbatim"` only once someone has done that with the current version.
-const P = (id, title, text, lessons, { partial = [], ht = false, sep = false } = {}) => ({ id, title, text, lessons, partial, ht, sep });
+// The numbering, headings and classifications (tier, Biology only) follow the structure of the specification as Gradify
+// knows it, and the requirement text is Gradify's own summary (wording: "paraphrased"), not AQA's wording. None of it
+// has been checked against AQA's published specification yet: set `verified` (and `wording: "verbatim"` if the text
+// is replaced with AQA's own) only once someone has checked every point against the current version.
+const P = (id, title, text, lessons, { partial = [], ht = false, sep = false } = {}) => ({ id, title, text, lessons, partial, flags: [ht && "ht", sep && "sep"].filter(Boolean) });
 
 export default {
   id: "aqa-gcse-biology-8461",
-  board: "AQA", qualification: "GCSE", subject: "Biology", code: "8461",
+  // where it sits: an education system and qualification from kit/curriculum/coverage.js, the awarding body and code
+  system: "uk-eng", qualification: "gcse", board: "AQA", subject: "Biology", code: "8461",
   title: "AQA GCSE Biology (8461)",
   course: "biology",
   url: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification",
   version: "Subject content as known to Gradify (first teaching 2016)",
   wording: "paraphrased",
   verified: null,   // { date, by, version } once checked point by point against the published specification
-  tiers: true,
+  // what each point flag means, and the choices a learner makes that hide points (here, sitting Foundation tier)
+  flags: {
+    ht: { short: "HT", name: "Higher tier only" },
+    sep: { short: "Biology only", name: "In GCSE Biology, not Combined Science" },
+  },
+  options: [
+    { id: "tier", label: "Tier", choices: [{ id: "higher", label: "Higher" }, { id: "foundation", label: "Foundation", hides: ["ht"] }] },
+  ],
   topics: [
     { id: "4.1", title: "Cell biology", groups: [
       { id: "4.1.1", title: "Cell structure", points: [

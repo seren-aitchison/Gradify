@@ -2,7 +2,8 @@
 // point's estimate comes only from answers, with coverage and confidence kept apart from it.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { SPECS, specsFor, specById, pointsOf, checkSpec } from "../kit/specs/index.js";
+import { readFileSync } from "node:fs";
+import { SPECS, specsFor, specById, pointsOf, checkSpec, catalogue, resolveRef, choicesFor } from "../kit/specs/index.js";
 import { specMastery, bandOf, confidenceOf, basisText, weakestPoints, BANDS, UNASSESSED } from "../kit/learning/spec-mastery.js";
 import { sixProfile, evidenceFromAttempts } from "../kit/learning/mastery.js";
 
@@ -14,11 +15,15 @@ const att = (lesson, score, { q = `${lesson}#q${seq++ % 5}`, d = 2, type = "sba"
   question: { id: q, v: 1, type, d, objectives: [] }, lesson, unit: lesson.slice(0, 3), score, correct: score >= 1, attempt, confidence, marking: { method: "auto", status: "final" },
 });
 // a small spec over two lessons for one point, one lesson for another, and one point Gradify doesn't teach
-const MINI = { id: "t", board: "B", qualification: "GCSE", subject: "S", title: "Test", course: "biology", version: "1", wording: "paraphrased", topics: [
+const MINI = { id: "t", board: "B", system: "uk-eng", qualification: "gcse", subject: "S", title: "Test", course: "biology", version: "1", wording: "paraphrased",
+  flags: { ht: { short: "HT", name: "Higher tier only" }, sep: { short: "Separate", name: "Separate science only" } },
+  options: [{ id: "tier", label: "Tier", choices: [{ id: "higher", label: "Higher" }, { id: "foundation", label: "Foundation", hides: ["ht"] }] },
+    { id: "route", label: "Route", choices: [{ id: "separate", label: "Separate" }, { id: "combined", label: "Combined", hides: ["sep"] }] }],
+  topics: [
   { id: "1", title: "Topic one", groups: [{ id: "1.1", title: "G", points: [
-    { id: "1.1.1", title: "Transport", text: "Explain diffusion and active transport.", lessons: ["u02-20", "u02-23"], partial: [], ht: false, sep: false },
-    { id: "1.1.2", title: "Osmosis", text: "Explain osmosis.", lessons: ["u02-21"], partial: [], ht: true, sep: false },
-    { id: "1.1.3", title: "The eye", text: "Describe the eye.", lessons: [], partial: [], ht: false, sep: true },
+    { id: "1.1.1", title: "Transport", text: "Explain diffusion and active transport.", lessons: ["u02-20", "u02-23"], partial: [], flags: [] },
+    { id: "1.1.2", title: "Osmosis", text: "Explain osmosis.", lessons: ["u02-21"], partial: [], flags: ["ht"] },
+    { id: "1.1.3", title: "The eye", text: "Describe the eye.", lessons: [], partial: [], flags: ["sep"] },
   ] }] },
 ] };
 const titles = { "u02-20": "Diffusion", "u02-23": "Active transport", "u02-21": "Osmosis" };
@@ -28,7 +33,7 @@ test("every specification is well formed and maps onto lessons that exist", asyn
   assert.ok(SPECS.length >= 1);
   for (const spec of SPECS) {
     const { UNITS } = await import(`../kit/courses/${spec.course}/syllabus.js`);
-    const ids = new Set(UNITS.flatMap((u) => u.lessons.map((l) => l.id)));
+    const ids = new Set(UNITS.flatMap((u) => u.lessons.map((l) => `${spec.course}:${l.id}`)));
     assert.deepEqual(checkSpec(spec, ids), [], `${spec.id}: ${checkSpec(spec, ids).join("; ")}`);
     assert.ok(specsFor(spec.course).includes(spec) && specById(spec.id) === spec);
     // until someone checks the wording against the published specification, it's labelled as Gradify's paraphrase
@@ -43,13 +48,17 @@ test("AQA GCSE Biology covers the whole subject content, and is honest about its
   const none = pts.filter((p) => !p.lessons.length && !p.partial.length).map((p) => p.id);
   assert.deepEqual(none, ["4.5.2.3"], "only the eye has no lesson at all");
   assert.ok(pts.find((p) => p.id === "4.1.3.3").lessons.includes("u02-23"), "active transport maps to its lesson");
-  assert.ok(pts.filter((p) => p.ht).every((p) => ["4.5.3.6", "4.5.3.7", "4.5.4.2", "4.7.2.4"].includes(p.id)));
+  assert.ok(pts.filter((p) => p.flags.includes("ht")).every((p) => ["4.5.3.6", "4.5.3.7", "4.5.4.2", "4.7.2.4"].includes(p.id)));
 });
 
 test("checkSpec catches the mistakes a mapping can make", () => {
   const bad = structuredClone(MINI); bad.topics[0].groups[0].points.push({ ...bad.topics[0].groups[0].points[0] });
   bad.topics[0].groups[0].points[1].partial = ["u02-21"];
-  const p = checkSpec(bad, new Set(["u02-20", "u02-23"]));
+  bad.topics[0].groups[0].points[2].flags = ["nope"];
+  const p = checkSpec({ ...bad, system: "atlantis", options: [{ id: "tier", label: "Tier", choices: [{ id: "a", label: "A", hides: ["ghost"] }, { id: "b", label: "B" }] }] }, new Set(["biology:u02-20", "biology:u02-23"]));
+  assert.ok(p.some((x) => x.includes("unknown education system atlantis")));
+  assert.ok(p.some((x) => x.includes("hides flag ghost")) && p.some((x) => x.includes("first choice is the default")));
+  assert.ok(p.some((x) => x.includes("flag nope, which isn't declared")));
   assert.ok(p.some((x) => x.includes("duplicate point 1.1.1")));
   assert.ok(p.some((x) => x.includes("names lesson u02-21")));
   assert.ok(p.some((x) => x.includes("both full and partial")));
@@ -121,10 +130,12 @@ test("a point says what's strong, what's inconsistent, and what to practise", ()
   assert.ok(p.can.some((x) => x.includes("Diffusion")) && p.struggle.some((x) => x.includes("Active transport")));
 });
 
-test("Foundation tier hides Higher-only points; combined hides separate-science points", () => {
+test("a specification's own options hide the points its flags say they hide", () => {
   assert.equal(run([]).points.length, 3);
-  assert.deepEqual(run([], { tier: "foundation" }).points.map((p) => p.id), ["1.1.1", "1.1.3"]);
-  assert.deepEqual(run([], { combined: true }).points.map((p) => p.id), ["1.1.1", "1.1.2"]);
+  assert.deepEqual(run([], { choices: { tier: "foundation" } }).points.map((p) => p.id), ["1.1.1", "1.1.3"]);
+  assert.deepEqual(run([], { choices: { route: "combined" } }).points.map((p) => p.id), ["1.1.1", "1.1.2"]);
+  assert.deepEqual(run([], { choices: { tier: "foundation", route: "combined" } }).points.map((p) => p.id), ["1.1.1"]);
+  assert.deepEqual(choicesFor(MINI, { tier: "nonsense" }), { tier: "higher", route: "separate" }, "unknown choices fall back to the default");
 });
 
 test("lessons that aren't written yet don't count as Gradify covering a point", () => {
@@ -164,4 +175,66 @@ test("the real specification runs end to end on a few answers", () => {
   assert.ok(assessed.includes("4.1.3.1") && assessed.includes("4.1.3.3"));
   assert.equal(m.points.find((p) => p.id === "4.5.2.3").coverage.gradify, "none");
   assert.equal(m.topics.length, 7);
+});
+
+// ---------- a reusable system: nothing in the engine or registry is specific to AQA, GCSE, Biology or England ----------
+
+// an invented international specification over two courses, with its own levels and option, and no tiers
+const INTL = { id: "intl-test", title: "International Diploma Science (test)", system: "uk-sco", qualification: "higher", board: "Test Board", subject: "Science", course: "biology",
+  version: "test", wording: "paraphrased", flags: { hl: { short: "HL", name: "Higher level only" } },
+  options: [{ id: "level", label: "Level", choices: [{ id: "hl", label: "Higher level" }, { id: "sl", label: "Standard level", hides: ["hl"] }] }],
+  topics: [{ id: "A", title: "Matter", groups: [{ id: "A1", title: "Particles", points: [
+    { id: "A1.1", title: "Diffusion in cells", text: "Explain diffusion.", lessons: ["u02-20"], partial: [], flags: [] },
+    { id: "A1.2", title: "Rates of reaction", text: "Explain collision theory.", lessons: ["chemistry:u05-03"], partial: [], flags: ["hl"] },
+  ] }] }] };
+
+test("a specification from another system, spanning two courses, runs through the same engine", () => {
+  assert.deepEqual(checkSpec(INTL, new Set(["biology:u02-20", "chemistry:u05-03"])), []);
+  assert.deepEqual(resolveRef(INTL, "chemistry:u05-03"), { course: "chemistry", lesson: "u05-03" });
+  assert.deepEqual(resolveRef(INTL, "u02-20"), { course: "biology", lesson: "u02-20" });
+  // the same lesson id in two courses: evidence goes to the right one
+  const chem = (score, i) => ({ ...att("u05-03", score, { q: `c${i}`, ago: 2 + i }), subject: "chemistry" });
+  const bio = (score, i) => att("u05-03", score, { q: `b${i}`, ago: 2 + i });
+  const m = specMastery(INTL, { attempts: [chem(1, 0), chem(1, 1), chem(1, 2), bio(0, 3), bio(0, 4)], now: NOW });
+  const rates = m.points.find((p) => p.id === "A1.2");
+  assert.equal(rates.confidence.answers, 3, "only chemistry's u05-03 counts");
+  assert.ok(rates.estimate > 0.6);
+  assert.deepEqual(specMastery(INTL, { choices: { level: "sl" }, now: NOW }).points.map((p) => p.id), ["A1.1"]);
+  const cat = catalogue([...SPECS, INTL]);
+  assert.ok(cat.find((s) => s.id === "uk-sco").qualifications.find((q) => q.id === "higher").specs.includes(INTL));
+  assert.ok(cat.find((s) => s.id === "uk-eng").qualifications.find((q) => q.id === "gcse").specs.some((s) => s.id === "aqa-gcse-biology-8461"));
+});
+
+test("the engine and pages never name a board, qualification or subject", () => {
+  for (const f of ["kit/learning/spec-mastery.js", "kit/course/spec-view.js"]) {
+    const src = readFileSync(new URL(`../${f}`, import.meta.url), "utf8").replace(/^\s*\/\/.*$/gm, "");
+    assert.doesNotMatch(src, /\b(AQA|Edexcel|OCR|WJEC|GCSE|Biology|8461)\b/, `${f} is specific to one specification`);
+  }
+});
+
+test("older and partial attempt records don't break the model", () => {
+  const legacy = [
+    { schema: 1, id: "x1", at: new Date(NOW - DAY).toISOString(), question: { id: "u02-20#0", type: "sba" }, lesson: "u02-20", score: 1, attempt: 1, marking: { status: "final" } },
+    { schema: 1, id: "x2", at: new Date(NOW - 2 * DAY).toISOString(), question: { id: "u02-20#1", type: "short", d: 2, objectives: [] }, lesson: "u02-20", score: 0.5, attempt: 1, marking: { status: "provisional" } },
+    { schema: 1, id: "x3", at: "not a date", question: { id: "u02-20#2", type: "sba" }, lesson: "u02-20", score: 1 },
+    { id: "x4" }, null,
+  ];
+  const p = run(legacy).points[0];
+  assert.ok(p.estimate != null, "records without a subject, difficulty or objectives still count, for the specification's own course");
+  assert.ok(Number.isFinite(p.estimate));
+});
+
+test("Specification Mastery works offline: every module it loads is in the service worker's shell", () => {
+  const sw = readFileSync(new URL("../sw.js", import.meta.url), "utf8");
+  for (const f of ["kit/course/spec-view.js", "kit/learning/spec-mastery.js", "kit/specs/index.js", "kit/curriculum/coverage.js", ...SPECS.map((s) => `kit/specs/${s.id}.js`)]) assert.ok(sw.includes(`"${f}"`), `sw.js doesn't cache ${f}`);
+});
+
+test("the AQA mapping is labelled as a summary wherever it's shown", async () => {
+  const { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } = await import("../kit/course/spec-view.js");
+  const spec = specById("aqa-gcse-biology-8461"), m = specMastery(spec, { now: NOW });
+  assert.equal(spec.verified, null);
+  for (const html of [specPageHtml(m), topicPageHtml(m, m.topics[0]), pointPageHtml(m, m.points[0]), specSummaryHtml(m)]) assert.match(html, /Summary, not official wording|Gradify's summary, not official wording/);
+  // classifications are flagged as unverified too
+  assert.match(topicPageHtml(m, m.topics[0]), /Biology only/);
+  assert.match(topicPageHtml(m, m.topics[0]), /not yet verified/);
 });
