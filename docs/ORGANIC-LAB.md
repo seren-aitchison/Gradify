@@ -169,6 +169,30 @@ The lab is drawn in the site's light theme too (it is marked `.lab-light`, which
 rule in `kit/styles/base.css`): white card, the light drawing palette (`skeletal.js` `PALETTES.light`), and
 light-mode partners for every hard-coded colour. Every mode repaints when the theme changes. 3D stages stay dark.
 
+### How the lab is organised for students (UX)
+
+One molecule, four modes. Whatever is drawn in **Structure** is the starting point everywhere: a "Use this molecule"
+row under the working-out offers **Predict a reaction**, **Push electrons** and **See it in 3D**, and each opens that
+mode on the drawing. Reaction mode's results can be continued (**Continue with *product***, named, never duplicated)
+or sent back to Structure for editing. The lab remembers the last mode, Reaction view, starting material and reagent,
+and the drawing and saved work survive reloads.
+
+* **Drawing**: click, drag a chain, rings, elements, charges, keyboard (select an atom with ← →, type an element),
+  undo/redo, and rotate 60° or flip, which keep the drawing on the hexagon grid. On a phone each toolbar group stays
+  on one line and the bar scrolls sideways inside itself.
+* **Results lead with the outcome**: a coloured headline (Reaction / No reaction / Not predicted) and one line saying
+  the major product, that every group was checked, or that the lab can't predict this and what to try instead; then
+  the scheme, then the reasoning and "The rule behind this".
+* **Consistent controls**: in Mechanism mode, *Check step* leads, with *Undo* and *Clear*; *Help* (hint, explain, show
+  next step, full solution) and *More* (spot the error, restart, save) are labelled groups. Practice controls in
+  Reaction mode are one group. Display and export options in Structure are labelled groups.
+* **Less clutter**: challenges sit in a collapsed panel per mode showing progress ("3 of 22 done"); saved work is one
+  collapsed panel ("Saved work · 2 saved") shared by every mode, opened when something is saved.
+* **Fair practice**: practice questions are only drawn from predicted reactions and checked no-reactions, never from
+  cases the lab can't predict; "Predict first" never quizzes an unsupported case.
+* Shared pieces live in `kit/labs/chemistry/ui.js` (challenge panel, outcome headline) and use the site's design
+  tokens, so they work in both themes.
+
 ## 3. Accuracy audit (this milestone)
 
 Before adding reactions, the existing rules were checked against hand-worked cases. Problems found and fixed:
@@ -294,7 +318,7 @@ The lab ships only when all of these hold. Set after the review of PR #159 ([org
 3. No reproducible freeze or data-loss defect.
 4. Every confirmed finding has a regression test that fails without its fix.
 5. The reference chemistry tests pass (`tests/organic-reference.test.mjs`, with the other lab suites below).
-6. Browser checks pass at desktop, tablet and phone widths: `node scripts/check-organic-lab.cjs`, and
+6. Browser checks pass at desktop, tablet and phone widths: `node scripts/check-organic-lab.cjs`, `node scripts/check-organic-journeys.cjs` and
    `node scripts/check-interactives.cjs --serve . --course chemistry`.
 7. CI passes against the latest `main`.
 
@@ -310,6 +334,7 @@ chemistry is provisional until an independent chemist has reviewed it. Minor fin
 | `tests/mechanism.test.mjs` | electron flow, validation, all 16 mechanisms replayed to named products, spot the error, error carried forward, registration |
 | `tests/predictor.test.mjs` | predictor behaviour on starting materials and learners' own drawings, every product a valid molecule |
 | `tests/organic-reference.test.mjs` | the 302-reaction reference set, with coverage of every reagent; every `no_reaction` case passes the coverage rule |
+| `scripts/check-organic-journeys.cjs` | the interface in a real browser at desktop, tablet and phone sizes, dark and light: drawing and editing, carrying the molecule between modes, the three outcomes, practice, conditions, synthesis, mechanisms (keyboard and drag, error carried forward, spot the error, exam), the tutor panel, reloads, sideways scrolling and accessible names. `node scripts/check-organic-journeys.cjs` (`--only phone`, `--shots <dir>`) |
 | `tests/organic-outcomes.test.mjs` | the three outcomes: the audit's regression cases, rearrangements, true negatives, and a check over every starter × reagent pair |
 | `tests/planner.test.mjs` | every synthesis challenge solvable in exactly its stated length, retrosynthesis, competition, mark breakdowns |
 | `tests/configuration.test.mjs` | R/S and E/Z from drawings against mol.js, isomer relations by definition, the 3D model's configuration |
