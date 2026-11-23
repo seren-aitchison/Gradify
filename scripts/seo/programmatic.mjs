@@ -5,7 +5,7 @@
 // The course pages themselves are an app (hash routes); these are static HTML that search engines and AI crawlers read
 // without JavaScript, each linking into the live lesson.
 import { readFile } from "node:fs/promises";
-import { esc, related, toc } from "./shell.mjs";
+import { esc, related, toc, faq } from "./shell.mjs";
 import { parseNotes, inline } from "../../kit/course/notes.js";
 
 const root = new URL("../../", import.meta.url);
@@ -59,7 +59,8 @@ function mindMap(c, u) {
     return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(0)}" y2="${y.toFixed(0)}" class="mm-l"/><g class="mm-b"><rect x="${(x - 92).toFixed(0)}" y="${(y - 20).toFixed(0)}" width="184" height="40" rx="12"/><text x="${x.toFixed(0)}" y="${(y - 2).toFixed(0)}">${esc(cut(name, 26))}</text><text x="${x.toFixed(0)}" y="${(y + 13).toFixed(0)}" class="mm-s">${ls.length} lesson${ls.length === 1 ? "" : "s"}</text></g>`;
   }).join("");
   const label = `Revision mind map for ${u.title} (${c.name}) showing its ${n} main branches: ${branches.map(([b]) => b).join(", ")}`;
-  return `<figure class="mindmap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="mm-t mm-d" xmlns="http://www.w3.org/2000/svg"><title id="mm-t">${esc(u.title)} mind map</title><desc id="mm-d">${esc(label)}</desc><style>.mm-l{stroke:#f055dd;stroke-width:2;opacity:.55}.mm-b rect{fill:#151515;stroke:#444}.mm-c{fill:#f055dd}text{font:600 13px system-ui,sans-serif;fill:#fff;text-anchor:middle}.mm-s{font-weight:400;font-size:11px;fill:#bbb}.mm-w{font-size:10px;fill:#888;text-anchor:end}</style><rect width="${W}" height="${H}" fill="#0b0b0b" rx="16"/>${nodes}<circle cx="${cx}" cy="${cy}" r="62" class="mm-c"/><text x="${cx}" y="${cy + 4}">${esc(cut(u.title, 20))}</text><text x="${W - 14}" y="${H - 12}" class="mm-w">getgradify.com</text></svg><figcaption>${esc(label)}. <button type="button" class="mini no-print" data-mm-png>Download as PNG</button></figcaption></figure>`;
+  return `<figure class="mindmap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="mm-t mm-d" xmlns="http://www.w3.org/2000/svg"><title id="mm-t">${esc(u.title)} mind map</title><desc id="mm-d">${esc(label)}</desc><style>.mm-l{stroke:#f055dd;stroke-width:2;opacity:.55}.mm-b rect{fill:#151515;stroke:#444}.mm-c{fill:#f055dd}text{font:600 13px system-ui,sans-serif;fill:#fff;text-anchor:middle}.mm-s{font-weight:400;font-size:11px;fill:#bbb}.mm-w{font-size:10px;fill:#888;text-anchor:end}</style><rect width="${W}" height="${H}" fill="#0b0b0b" rx="16"/>${nodes}<circle cx="${cx}" cy="${cy}" r="62" class="mm-c"/><text x="${cx}" y="${cy + 4}">${esc(cut(u.title, 20))}</text><text x="${W - 14}" y="${H - 12}" class="mm-w">getgradify.com</text></svg><figcaption>${esc(label)}. <button type="button" class="mini no-print" data-mm-png>Download as PNG</button></figcaption></figure>
+  <details class="mm-outline"><summary>The mind map as an outline</summary><ul><li><b>${esc(u.title)}</b><ul>${[...groups.entries()].map(([name, ls]) => `<li>${esc(name)}${ls.length > 1 || ls[0] !== name ? `<ul>${ls.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}</li>`).join("")}</ul></li></ul></details>`;
 }
 
 function unitPage(c, u) {
@@ -86,11 +87,17 @@ function unitPage(c, u) {
     mcq: mcq.map((m) => ({ q: inline(m.q), right: inline(m.right), wrong: m.wrong.map(inline), why: inline(m.why || ""), d: m.d, l: m.lesson.title })),
     keys: keys.map(plain), pits: pits.map(plain), terms: u.lessons.flatMap((l) => l.terms).slice(0, 30).map(([t, d]) => [plain(t), plain(d)]) };
   const glance = [...terms.map(([t, d]) => [plain(t), plain(d)]), ...eqs.map(([x, note]) => [plain(x), plain(note || "")])];
+  // "People also ask": the unit's own flashcards that are already phrased as questions, one per lesson, up to four
+  const asked = [...new Map(u.lessons.flatMap((l) => l.cards.filter(([q, an]) => /\?$/.test(plain(q)) && plain(q).length < 120 && plain(an).length > 20).slice(0, 1).map(([q, an]) => [plain(q), plain(an)]))).entries()].filter(([q]) => !sample.some((x) => plain(x.q) === q)).slice(0, 4);
+  // topped up from the unit's check questions (the right answer and why), if the flashcards give fewer than four
+  for (const m of mcqAll) { if (asked.length >= 4) break; const q = plain(m.q); if (/\?$/.test(q) && q.length < 140 && !asked.some(([x]) => x === q) && !mcq.includes(m)) asked.push([q, `${plain(m.right).replace(/\.?$/, ".")}${m.why ? ` ${plain(m.why)}` : ""}`]); }
+  const paa = asked.length >= 2 ? faq(asked, `${u.title}: questions students ask`) : { html: "", schema: null };
   return {
     path: `topics/${c.slug}/${u.id}/index.html`, title, description, noindex: thin, crumbs: [["Topics", "topics/"], [c.name, `topics/${c.slug}/`], [u.title, `topics/${c.slug}/${u.id}/`]],
     head: `<script type="application/json" id="topic-data">${jsonLd(data)}</script>`,
     schema: [{ "@type": "Course", name: `${c.name}: ${u.title}`, description, url: `https://getgradify.com${c.page}#/learn/${u.id}`, provider: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, inLanguage: "en-GB", hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: `PT${Math.max(1, Math.round(u.lessons.length * 0.25))}H` }, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" } },
       ...(terms.length ? [{ "@type": "DefinedTermSet", name: `${u.title} key terms`, hasDefinedTerm: terms.map(([t, d]) => ({ "@type": "DefinedTerm", name: plain(t), description: plain(d) })) }] : []),
+      ...(paa.schema ? [paa.schema] : []),
       ...(mcq.length ? [{ "@type": "Quiz", name: `${u.title} quick quiz`, about: u.title, educationalLevel: c.name, hasPart: mcq.map((m) => ({ "@type": "Question", eduQuestionType: "Multiple choice", text: plain(m.q), acceptedAnswer: { "@type": "Answer", text: plain(m.right) } })) }] : [])],
     body: `<div data-topic>
     <h1>${esc(u.title)}</h1>
@@ -111,7 +118,9 @@ function unitPage(c, u) {
     <section id="map"><h2>${esc(u.title)} mind map</h2>${mindMap(c, u)}</section>
     <section id="lessons"><h2>Lessons in this ${esc(c.unitWord.toLowerCase())}</h2>
     <ol>${u.lessons.map((l) => `<li><a href="${at(l)}"><b>${esc(l.title)}</b></a>${l.lead ? `<br>${esc(firstSentence(l.lead))}` : ""}</li>`).join("")}</ol></section>
-    ${terms.length ? `<h2>Key terms</h2><dl>${terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl>` : ""}
+    ${terms.length ? `<h2>Key terms</h2><dl>${terms.map(([t, d]) => { const e = c.terms?.get(termKey(t)); return `<dt>${e?.indexed ? `<a href="/terms/${e.slug}/">${inline(t)}</a>` : inline(t)}</dt><dd>${inline(d)}</dd>`; }).join("")}</dl>` : ""}
+    ${u.cross?.length ? `<h2>The same ideas in other subjects</h2><ul class="cards">${u.cross.map((r) => `<li><a href="/topics/${r.c.slug}/${r.u.id}/">${esc(r.u.title)}</a><span>${esc(r.c.name)} · shares ${r.terms.slice(0, 3).map((k) => esc(c.terms?.get(k)?.name || k)).join(", ")}</span></li>`).join("")}</ul>` : ""}
+    ${paa.html}
     ${prereq.length ? `<h2>Check these first</h2><p>This ${esc(c.unitWord.toLowerCase())} builds on:</p><ul>${prereq.map((t) => { const hit = allLessons.get(t); return `<li>${hit ? `<a href="/topics/${c.slug}/${hit.unit.id}/">${esc(t)}</a> <small>(${esc(hit.unit.title)})</small>` : esc(t)}</li>`; }).join("")}</ul>` : ""}
     <section class="check-in no-print" id="check-in"><h2>How confident are you on ${esc(u.title)}?</h2><p>Your answer stays in this browser. We'll put it in your review list: low comes back tomorrow, medium in 3 days, strong in a week.</p><div class="chips" data-confidence><button type="button" class="chip" data-level="low">Low</button><button type="button" class="chip" data-level="medium">Medium</button><button type="button" class="chip" data-level="strong">Strong</button></div><p><button type="button" class="mini" data-reviewed>Mark topic reviewed</button> <button type="button" class="mini" data-remind>Remind me in 3 days (.ics)</button> <span class="checkin-msg" role="status" aria-live="polite"></span></p></section>
     <h2>How to revise ${esc(u.title)}</h2><p>Test yourself before you re-read: answer the flashcards from memory, review the ones you miss after 1, 3 and 7 days, and finish with the practice questions. <a href="/guides/active-recall/">How active recall works</a>. Got your own lecture notes on this? <a href="/pdf-to-flashcards/">Turn them into flashcards</a> checked against what you wrote.</p>
@@ -181,6 +190,93 @@ function planPage(c, p) {
   };
 }
 
+// ---------- key terms across every course: term pages (getgradify.com/terms/…) and "same topic elsewhere" links ----------
+export const termKey = (t) => plain(t).replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+export const termSlug = (k) => k.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/[\s-]+/g, "-").slice(0, 60).replace(/-$/, "");
+/** every key term (T: lines) → where it's used; a page for terms in 3+ lessons, indexed only with enough substance */
+export function termIndex(all) {
+  const idx = new Map();
+  for (const c of all) for (const u of c.units) for (const l of u.lessons) for (const [t, d] of l.terms) {
+    const k = termKey(t); if (k.length < 3) continue;
+    if (!idx.has(k)) idx.set(k, { key: k, name: plain(t).replace(/\s*\([^)]*\)\s*$/, "").trim(), uses: [] });
+    idx.get(k).uses.push({ c, u, l, d: plain(d) });
+  }
+  const taken = new Set(), out = new Map();
+  for (const e of [...idx.values()].sort((a, b) => b.uses.length - a.uses.length)) {
+    if (e.uses.length < 3) continue;
+    const slug = termSlug(e.key); if (slug.length < 3 || taken.has(slug)) continue; taken.add(slug);
+    const courses = [...new Set(e.uses.map((x) => x.c.slug))], defs = [...new Set(e.uses.map((x) => x.d))];
+    const words = defs.join(" ").split(/\s+/).length;
+    out.set(e.key, { ...e, slug, courses, defs, indexed: words >= 40 && (courses.length >= 2 || e.uses.length >= 4) });
+  }
+  return out;
+}
+const GENERIC = 6; // a term in more than this many courses ("context", "interpretation") says nothing about topic overlap
+/** for each unit, units in other courses that share at least two specific key terms */
+function crossLinks(all) {
+  const by = new Map();
+  for (const c of all) for (const u of c.units) for (const k of new Set(u.lessons.flatMap((l) => l.terms.map(([t]) => termKey(t))))) { if (!by.has(k)) by.set(k, []); by.get(k).push({ c, u }); }
+  for (const [k, v] of by) if (new Set(v.map((x) => x.c.slug)).size > GENERIC) by.delete(k);
+  for (const c of all) for (const u of c.units) {
+    const score = new Map();
+    for (const k of new Set(u.lessons.flatMap((l) => l.terms.map(([t]) => termKey(t))))) for (const o of by.get(k) || []) if (o.c !== c) { const id = `${o.c.slug}/${o.u.id}`; const r = score.get(id) || { ...o, n: 0, terms: [] }; r.n++; r.terms.push(k); score.set(id, r); }
+    u.cross = [...score.values()].filter((r) => r.n >= 2).sort((a, b) => b.n - a.n).slice(0, 4);
+  }
+}
+function termPage(e, terms) {
+  const byCourse = new Map(); for (const x of e.uses) { if (!byCourse.has(x.c)) byCourse.set(x.c, []); byCourse.get(x.c).push(x); }
+  const first = e.uses[0], name = e.name, lower = /^[A-Z][a-z]+(?: [a-z]+)*$/.test(name) ? name.toLowerCase() : name;
+  const card = (x) => x.l.cards.find(([q]) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(plain(q)));
+  const near = [...new Set(e.uses.flatMap((x) => x.u.lessons.flatMap((l) => l.terms.map(([t]) => termKey(t)))))].filter((k) => k !== e.key && terms.get(k)?.indexed).slice(0, 10);
+  const courseNames = [...byCourse.keys()].map((c) => c.name);
+  return {
+    path: `terms/${e.slug}/index.html`, noindex: !e.indexed, updated: "2026-11-23",
+    title: `What Is ${lower === name ? name : name}? Meaning and Examples · Gradify`,
+    description: `${name}: ${first.d.replace(/\.?$/, ".")} ${courseNames.length > 1 ? `How it's used in ${courseNames.slice(0, 3).join(", ")}.` : "What it means, and where to revise it."}`,
+    crumbs: [["Key terms", "terms/"], [name, `terms/${e.slug}/`]],
+    schema: [{ "@type": "DefinedTerm", name, description: first.d, url: `https://getgradify.com/terms/${e.slug}/`, inDefinedTermSet: { "@type": "DefinedTermSet", name: "Gradify key terms", url: "https://getgradify.com/terms/" } }],
+    body: `<h1>What is ${esc(lower)}?</h1><p class="answer"><b>${esc(name)}</b>: ${esc(first.d)}</p>
+    <p>It comes up in ${e.uses.length} Gradify lessons${courseNames.length > 1 ? ` across ${courseNames.length} subjects (${esc(courseNames.join(", "))}), and the meaning shifts a little with the subject` : ""}.</p>
+    ${[...byCourse.entries()].slice(0, 6).map(([c, xs]) => { const cd = xs.map(card).find(Boolean); return `<h2>${esc(name)} in ${esc(c.name)}</h2><p>${esc(xs[0].d)}</p><ul>${[...new Map(xs.map((x) => [x.u.id, x])).values()].slice(0, 4).map((x) => `<li><a href="/topics/${c.slug}/${x.u.id}/">${esc(x.u.title)}</a>: ${esc(x.l.title)}</li>`).join("")}</ul>${cd ? `<details class="flash"><summary>${inline(cd[0])}</summary><p>${inline(cd[1])}</p></details>` : ""}`; }).join("")}
+    ${near.length ? `<h2>Related terms</h2><ul class="cards">${near.map((k) => `<li><a href="/terms/${terms.get(k).slug}/">${esc(terms.get(k).name)}</a></li>`).join("")}</ul>` : ""}
+    <h2>How to remember it</h2><p>Write the definition from memory, then check it word for word: mark schemes reward the exact key terms. Turn it into a flashcard and review it after 1, 3 and 7 days (<a href="/glossary/spaced-repetition/">spaced repetition</a>), or <a href="/pdf-to-flashcards/">make cards from your own notes</a>.</p>`,
+  };
+}
+function termsHub(terms) {
+  const list = [...terms.values()].filter((e) => e.indexed).sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }));
+  const letters = [...new Set(list.map((e) => e.name[0].toUpperCase()).filter((x) => /[A-Z]/.test(x)))];
+  return { path: "terms/index.html", ogType: "website", crumbs: [["Key terms", "terms/"]], title: "Key Terms A to Z: Definitions Across 30+ Subjects · Gradify",
+    description: `${list.length} key terms from Gradify's free courses, each defined in plain English, with how the meaning changes between subjects and where to revise it.`,
+    body: `<h1>Key terms A to Z</h1><p class="answer">${list.length} key terms that come up again and again in Gradify's courses, each defined in plain English, with how the meaning changes between subjects and the topics to revise it in. For study techniques (active recall, spaced repetition), see the <a href="/glossary/">study glossary</a>.</p>
+    <nav class="chips no-print" aria-label="Jump to a letter">${letters.map((x) => `<a class="chip" href="#t-${x}">${x}</a>`).join("")}</nav>
+    ${letters.map((x) => `<h2 id="t-${x}">${x}</h2><ul class="term-list">${list.filter((e) => e.name[0].toUpperCase() === x).map((e) => `<li><a href="/terms/${e.slug}/">${esc(e.name)}</a></li>`).join("")}</ul>`).join("")}` };
+}
+
+// ---------- research: what 30+ courses' notes contain, counted (getgradify.com/research/) ----------
+function researchPage(all, terms) {
+  const rows = all.map((c) => { const L = c.units.flatMap((u) => u.lessons); return { c, lessons: L.length, cards: L.reduce((n, l) => n + l.cards.length, 0), qs: L.reduce((n, l) => n + l.mcq.length, 0), pits: L.reduce((n, l) => n + l.pits.length, 0), terms: L.reduce((n, l) => n + l.terms.length, 0) }; }).filter((r) => r.lessons >= 20);
+  for (const r of rows) r.pitRate = r.pits / r.lessons;
+  const tot = (k) => rows.reduce((n, r) => n + r[k], 0), fmt = (n) => n.toLocaleString("en-GB"), dp = (n) => (Math.round(n * 100) / 100).toFixed(2);
+  const byPit = [...rows].sort((a, b) => b.pitRate - a.pitRate), max = byPit[0].pitRate;
+  const shared = [...terms.values()].sort((a, b) => b.courses.length - a.courses.length || b.uses.length - a.uses.length).slice(0, 12);
+  const bar = (r) => `<li><span class="rb-l"><a href="/exam-traps/${r.c.slug}/">${esc(r.c.name)}</a></span><span class="rb"><i style="width:${Math.round((r.pitRate / max) * 100)}%"></i></span><span class="rb-n">${dp(r.pitRate)}</span></li>`;
+  return {
+    path: "research/index.html", updated: "2026-11-23", crumbs: [["Research", "research/"]],
+    title: "Where Students Slip Up: Common Mistakes in 30+ Subjects · Gradify",
+    description: `We counted the common-mistake warnings in ${fmt(tot("lessons"))} lessons across ${rows.length} subjects. The subjects with the most traps per lesson, and the terms shared across subjects.`,
+    schema: [{ "@type": "Dataset", name: "Common-mistake warnings and key terms in Gradify's courses", description: "Counts of lessons, flashcards, check questions, common-mistake warnings and key terms per subject, from Gradify's course notes.", creator: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, license: "https://creativecommons.org/licenses/by/4.0/", dateModified: "2026-11-23", variableMeasured: ["lessons", "flashcards", "check questions", "common-mistake warnings", "key terms"] }],
+    body: `<h1>Where students slip up: common mistakes across ${rows.length} subjects</h1>
+    <p class="answer">Gradify's lessons flag the mistakes students commonly make with a "common mistake" warning. We counted them: ${fmt(tot("pits"))} warnings in ${fmt(tot("lessons"))} lessons across ${rows.length} subjects. ${esc(byPit[0].c.name)} has the most per lesson (${dp(byPit[0].pitRate)}), then ${esc(byPit[1].c.name)} and ${esc(byPit[2].c.name)}.</p>
+    <p class="note"><b>What this measures:</b> the warnings our course writers put in each lesson, not the mistakes real students made in exams. A high number means a subject has many well-known traps worth checking before an exam. Counted from the course notes on 23 November 2026; free to cite with a link to this page (CC BY 4.0).</p>
+    <h2>Common-mistake warnings per lesson, by subject</h2><ul class="rbars">${byPit.map(bar).join("")}</ul>
+    <h2>The terms that cross the most subjects</h2><p>The same word can mean different things in different subjects, and that's where students mix them up. These key terms appear in the most subjects:</p>
+    <div class="scroll"><table><thead><tr><th>Term</th><th>Subjects</th><th>Lessons</th></tr></thead><tbody>${shared.map((e) => `<tr><th scope="row">${e.indexed ? `<a href="/terms/${e.slug}/">${esc(e.name)}</a>` : esc(e.name)}</th><td>${e.courses.length}</td><td>${e.uses.length}</td></tr>`).join("")}</tbody></table></div>
+    <h2>The full table</h2><div class="scroll"><table><thead><tr><th>Subject</th><th>Lessons</th><th>Flashcards</th><th>Check questions</th><th>Mistake warnings</th><th>Key terms</th></tr></thead><tbody>${[...rows].sort((a, b) => a.c.name.localeCompare(b.c.name)).map((r) => `<tr><th scope="row"><a href="/topics/${r.c.slug}/">${esc(r.c.name)}</a></th><td>${fmt(r.lessons)}</td><td>${fmt(r.cards)}</td><td>${fmt(r.qs)}</td><td>${fmt(r.pits)}</td><td>${fmt(r.terms)}</td></tr>`).join("")}</tbody><tfoot><tr><th>All</th><td>${fmt(tot("lessons"))}</td><td>${fmt(tot("cards"))}</td><td>${fmt(tot("qs"))}</td><td>${fmt(tot("pits"))}</td><td>${fmt(tot("terms"))}</td></tr></tfoot></table></div>
+    <h2>How we counted</h2><p>Each lesson's notes mark common mistakes with their own tag, flashcards and check questions with theirs, and key terms with a term and definition. We counted every tag in every written lesson of each live course with at least 20 lessons. Flashcards here are the cards written into the notes; the app makes more from your own notes.</p>
+    ${related("Use it", [["exam-traps/", "Exam traps by subject", "read the warnings themselves"], ["terms/", "Key terms A to Z", ""], ["guides/mcq-traps/", "Multiple-choice traps", ""]])}`,
+  };
+}
+
 // ---------- practice questions and exam traps, one page per course ----------
 const qItems = (c) => c.units.flatMap((u) => [1, 2, 3].flatMap((d) => u.lessons.flatMap((l) => l.mcq.filter((m) => m.d === d).map((m) => ({ ...m, l, u }))).slice(0, 1)));
 const trapItems = (c) => c.units.flatMap((u) => u.lessons.flatMap((l) => l.pits.map((x) => ({ x, l, u }))).slice(0, 4));
@@ -211,6 +307,11 @@ function trapsPage(c) {
 export async function programmaticPages() {
   const all = await courses(), pages = [];
   for (const c of all) { c.hasQ = qItems(c).length >= 8; c.hasTraps = trapItems(c).length >= 6; }
+  const terms = termIndex(all); for (const c of all) c.terms = terms;
+  crossLinks(all);
+  for (const e of terms.values()) pages.push(termPage(e, terms));
+  pages.push(termsHub(terms));
+  pages.push(researchPage(all, terms));
   for (const c of all) {
     if (c.hasQ) pages.push(questionsPage(c));
     if (c.hasTraps) pages.push(trapsPage(c));

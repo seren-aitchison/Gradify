@@ -153,6 +153,8 @@ Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and r
 - [Practice questions](https://getgradify.com/questions/): multiple-choice questions with answers and explanations, by subject
 - [Exam traps](https://getgradify.com/exam-traps/): the common mistakes in each subject
 - [Exam boards and qualifications](https://getgradify.com/exam-boards/): which qualifications the courses serve, and how strong each claim is
+- [Key terms A to Z](https://getgradify.com/terms/): plain-English definitions, and how meanings change between subjects
+- [Research: where students slip up](https://getgradify.com/research/): counts of common-mistake warnings per subject, CC BY 4.0
 - [What's new](https://getgradify.com/changelog/)
 - [Study plans](https://getgradify.com/study-plan/): week-by-week plans for GCSE, A level, university and professional paths
 - [Printable templates](https://getgradify.com/templates/): revision timetable, Cornell notes, trackers

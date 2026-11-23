@@ -19,7 +19,7 @@ export const RHYTHM_EVENTS = ["autonext_on", "autonext_off", "autonext_go", "aut
 // what visitors do on the free tools, guides and topic pages (scripts/build-seo.mjs): use a tool, finish a quiz, open the
 // app from a call to action, share, print, export. Counted the same anonymous way, once docs/sql/action-events.sql has
 // been run; set ACTIONS_LIVE to true then.
-export const ACTIONS_LIVE = false;
+export const ACTIONS_LIVE = true;   // applied to the live database on 23 Nov 2026 (supabase/migrations/20261123120000_page_events_action_events.sql)
 export const ACTION_EVENTS = ["tool_use", "quiz_finish", "cta_click", "share", "print", "export"];
 
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {

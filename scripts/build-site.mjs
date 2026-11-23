@@ -30,7 +30,7 @@ export const PUBLISH = {
   folders: ["assets", "kit",
     // search pages written by scripts/build-seo.mjs (SEO_FOLDERS there)
     "tools", "guides", "compare", "glossary", "templates", "topics", "study-plan", "pdf-to-flashcards", "lecture-notes-to-mind-map", "notes-to-cheat-sheet",
-    "checklists", "vs", "questions", "exam-traps", "exam-boards", "changelog", "youtube-to-flashcards", "notes-to-study-chant", ".well-known"],
+    "checklists", "vs", "questions", "exam-traps", "exam-boards", "changelog", "youtube-to-flashcards", "notes-to-study-chant", ".well-known", "terms", "research"],
   subsite: /^[a-z]+gradify$/,
 };
 
