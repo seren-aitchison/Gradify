@@ -1,14 +1,14 @@
 # Organic Chemistry Lab: Minor findings backlog
 
 The findings CodeRabbit marked **Minor** (or Trivial) in its reviews of PR #159 (Organic Chemistry Lab), recorded here so
-none is lost: M1–M34 from its first two reviews, M35–M54 from its review of the fixes, M55–M56 from its review of the second round of fixes. They didn't block the merge: the Major findings did, and are resolved in
+none is lost: M1–M34 from its first two reviews, M35–M54 from its review of the fixes, M55–M56 from its review of the second round of fixes, M57–M58 from its review of the third. They didn't block the merge: the Major findings did, and are resolved in
 [REVIEW-FINDINGS.md](REVIEW-FINDINGS.md).
 
 None of these has been verified yet. Each must be checked against the code and the chemistry before it is changed,
 exactly as the Major findings were: reproduce it, fix the cause rather than the reported example, add a regression
 test, and record a false positive with the reason instead of changing working code.
 
-Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f1` for M35–M54, `5e082af5` for M55–M56); later edits may have moved them.
+Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f1` for M35–M54, `5e082af5` for M55–M56, `b8069a30` for M57–M58); later edits may have moved them.
 
 | # | Where | Kind | Finding (CodeRabbit's wording, abridged) | Status |
 |---|---|---|---|---|
@@ -68,3 +68,5 @@ Line numbers refer to the head each review saw (`fd37323` for M1–M34, `f2e983f
 | M54 | `tests/skeletal.test.mjs:152-153` | Stability & Availability | **Enforce the large-ring timeout outside the naming call.** If the nine-membered-ring hang returns, `of(s)` never returns and the elapsed-time assertion never runs. Put these calls in a worker or child process that the test can terminate on timeout. Then the regression fails instead of leaving the test run stuck. | Open |
 | M55 | `kit/labs/chemistry/lab3d.js:71` | Functional Correctness | **Describe only the C=C geometry that matched.** If a drawing has a configured C=C that can't carry direction marks (in a ring, such as cyclooctene) alongside one that is built, the caption lists both labels as built as drawn while the warning below says one wasn't. Build the caption from the matched bonds only. | Open |
 | M56 | `kit/labs/chemistry/reactions/mechanism-ui.js:80` | Functional Correctness | **Keep the carried-forward warning on completed saved notes.** A completed note that carried an error forward restores its marker, but the restored "done" panel is given `ecf: null`, so it hides the carried-forward warning. Keep the restored marker (and `restored: true`, so no marks are awarded). | Open |
+| M57 | `scripts/organic-review.mjs:23` | Data Integrity & Integration | **Quote fields that contain a carriage return.** The CSV writer quotes fields containing commas, quotes or newlines but not a bare carriage return, which `parseCsv` treats as a record boundary: a comment with `first\rsecond` would split its row on the next export. Quote `\r` too, with a round-trip test. | Open |
+| M58 | `scripts/organic-review.mjs:82` | Data Integrity & Integration | **Accept a leading UTF-8 BOM in returned sheets.** A sheet saved by a spreadsheet program with a byte-order mark makes the first header `\uFEFFid`, so the importer reports missing columns. Strip one leading BOM before parsing. | Open |
