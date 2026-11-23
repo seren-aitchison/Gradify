@@ -666,7 +666,7 @@ export function render(m, A, view, [W, H], opts = {}) {
   if (opts.hover?.type === "bond") { const b = m.bonds.find((x) => x.id === opts.hover.id); if (b) { const p = byId.get(b.a), q = byId.get(b.b); out.push(`<line x1="${f2(X(p.x))}" y1="${f2(Y(p.y))}" x2="${f2(X(q.x))}" y2="${f2(Y(q.y))}" stroke="${P.hover}" stroke-width="${f2(s * 0.34)}" stroke-linecap="round"/>`); } }
   // ring centres, for which side a ring's double bond goes
   const ringOf = new Map(); for (const r of rings(G, 8)) for (let k = 0; k < r.length; k++) { const a = G.id[r[k]], b = G.id[r[(k + 1) % r.length]], key = `${Math.min(a, b)}-${Math.max(a, b)}`; if (!ringOf.has(key)) { const pts = r.map((i) => byId.get(G.id[i])); ringOf.set(key, [pts.reduce((t, p) => t + p.x, 0) / pts.length, pts.reduce((t, p) => t + p.y, 0) / pts.length]); } }
-  const sw = Math.max(1.2, s * 0.05), seg = (x1, y1, x2, y2, col = P.bond) => out.push(`<line x1="${f2(X(x1))}" y1="${f2(Y(y1))}" x2="${f2(X(x2))}" y2="${f2(Y(y2))}" stroke="${col}" stroke-width="${f2(sw)}" stroke-linecap="round"/>`);
+  const sw = Math.max(1.4, s * 0.058), seg = (x1, y1, x2, y2, col = P.bond) => out.push(`<line x1="${f2(X(x1))}" y1="${f2(Y(y1))}" x2="${f2(X(x2))}" y2="${f2(Y(y2))}" stroke="${col}" stroke-width="${f2(sw)}" stroke-linecap="round"/>`);
   for (const b of m.bonds) {
     const p = byId.get(b.a), q = byId.get(b.b); if (!p || !q) continue;
     const dx = q.x - p.x, dy = q.y - p.y, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, nx = -uy, ny = ux;
