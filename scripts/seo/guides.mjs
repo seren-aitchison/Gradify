@@ -128,7 +128,7 @@ export function guidePages() {
     const article = { "@type": "Article", headline: g.h1, description: g.description, dateModified: g.updated, datePublished: "2026-11-23", author: AUTHOR, publisher: { ...ORG }, mainEntityOfPage: `https://getgradify.com/guides/${g.slug}/`, image: "https://getgradify.com/assets/og.png", inLanguage: "en-GB" };
     const howto = g.slug === "active-recall" ? [{ "@type": "HowTo", name: "How to do active recall", step: ["Learn it once, properly", "Turn it into questions", "Answer from memory first", "Check and mark honestly", "Space the reviews", "Finish with exam questions"].map((n, i) => ({ "@type": "HowToStep", position: i + 1, name: n, text: n })) }] : [];
     return {
-      path: `guides/${g.slug}/index.html`, title: g.title, description: g.description, updated: g.updated, crumbs: [["Study guides", "guides/"], [g.h1.replace(/:.*$/, ""), `guides/${g.slug}/`]],
+      path: `guides/${g.slug}/index.html`, cite: g.h1, title: g.title, description: g.description, updated: g.updated, crumbs: [["Study guides", "guides/"], [g.h1.replace(/:.*$/, ""), `guides/${g.slug}/`]],
       schema: [article, ...howto, f.schema],
       body: `<h1>${g.h1}</h1>${byline}<p class="answer">${g.answer}</p>
     <p><a href="/app.html#/new">Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →</a></p>

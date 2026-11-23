@@ -17,6 +17,7 @@ let analytics = null;
 const counts = () => (analytics ||= import("/kit/core/analytics.js").catch(() => null));
 export const act = (event) => counts().then((m) => m?.track(event, "Gradify"));
 counts().then((m) => m?.trackView("Gradify"));
+import("/kit/core/vitals.js").then((m) => m.watchVitals("Gradify")).catch(() => {});
 import("/kit/core/attribution.js").then((m) => m.captureFirstTouch()).catch(() => {});
 
 // ---------- copy ----------
@@ -24,6 +25,14 @@ export async function copy(text, msgEl, done = "Copied.") {
   try { await navigator.clipboard.writeText(text); if (msgEl) msgEl.textContent = done; return true; }
   catch { if (msgEl) msgEl.textContent = "Couldn't copy: select the text and copy it yourself."; return false; }
 }
+// copy an element's text exactly (citations), without the "(from …)" line the other copy buttons add
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-copy-el]"); if (!b) return;
+  const el = document.querySelector(b.dataset.copyEl); if (!el) return;
+  copy(el.innerText.trim(), null).then((ok) => { if (ok) { const old = b.textContent; b.textContent = "Copied"; setTimeout(() => { b.textContent = old; }, 1500); } });
+});
+// the "accessed" date in citations is today's
+for (const el of $$("[data-today]")) el.textContent = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 document.addEventListener("click", (e) => {
   const b = e.target.closest("[data-copy]"); if (!b) return;
   const src = b.dataset.copy.startsWith("#") ? document.querySelector(b.dataset.copy)?.innerText : b.dataset.copy;

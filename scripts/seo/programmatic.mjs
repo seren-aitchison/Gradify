@@ -238,7 +238,7 @@ function termPage(e, terms) {
   const near = [...new Set(e.uses.flatMap((x) => x.u.lessons.flatMap((l) => l.terms.map(([t]) => termKey(t)))))].filter((k) => k !== e.key && terms.get(k)?.indexed).slice(0, 10);
   const courseNames = [...byCourse.keys()].map((c) => c.name);
   return {
-    path: `terms/${e.slug}/index.html`, noindex: !e.indexed, updated: "2026-11-23",
+    path: `terms/${e.slug}/index.html`, noindex: !e.indexed, cite: `What is ${lower}?`, updated: "2026-11-23",
     title: `What Is ${lower === name ? name : name}? Meaning and Examples · Gradify`,
     description: `${name}: ${first.d.replace(/\.?$/, ".")} ${courseNames.length > 1 ? `How it's used in ${courseNames.slice(0, 3).join(", ")}.` : "What it means, and where to revise it."}`,
     crumbs: [["Key terms", "terms/"], [name, `terms/${e.slug}/`]],
@@ -269,7 +269,7 @@ function researchPage(all, terms) {
   const shared = [...terms.values()].sort((a, b) => b.courses.length - a.courses.length || b.uses.length - a.uses.length).slice(0, 12);
   const bar = (r) => `<li><span class="rb-l"><a href="/exam-traps/${r.c.slug}/">${esc(r.c.name)}</a></span><span class="rb"><i style="width:${Math.round((r.pitRate / max) * 100)}%"></i></span><span class="rb-n">${dp(r.pitRate)}</span></li>`;
   return {
-    path: "research/index.html", updated: "2026-11-23", crumbs: [["Research", "research/"]],
+    path: "research/index.html", updated: "2026-11-23", cite: "Where students slip up: common mistakes across Gradify's subjects", crumbs: [["Research", "research/"]],
     title: "Where Students Slip Up: Common Mistakes in 30+ Subjects · Gradify",
     description: `We counted the common-mistake warnings in ${fmt(tot("lessons"))} lessons across ${rows.length} subjects. The subjects with the most traps per lesson, and the terms shared across subjects.`,
     schema: [{ "@type": "Dataset", name: "Common-mistake warnings and key terms in Gradify's courses", description: "Counts of lessons, flashcards, check questions, common-mistake warnings and key terms per subject, from Gradify's course notes.", creator: { "@id": "https://getgradify.com/#org" }, isAccessibleForFree: true, license: "https://creativecommons.org/licenses/by/4.0/", dateModified: "2026-11-23", variableMeasured: ["lessons", "flashcards", "check questions", "common-mistake warnings", "key terms"] }],

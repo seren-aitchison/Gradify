@@ -21,6 +21,10 @@ export const RHYTHM_EVENTS = ["autonext_on", "autonext_off", "autonext_go", "aut
 // been run; set ACTIONS_LIVE to true then.
 export const ACTIONS_LIVE = true;   // applied to the live database on 23 Nov 2026 (supabase/migrations/20261123120000_page_events_action_events.sql)
 export const ACTION_EVENTS = ["tool_use", "quiz_finish", "cta_click", "share", "print", "export"];
+// real-user page speed (kit/core/vitals.js): good / needs improvement / poor for LCP, INP and CLS, one count each per
+// page view. Live once supabase/migrations/20261123140000_page_events_vitals.sql is applied (done 23 Nov 2026).
+export const VITALS_LIVE = true;
+export const VITALS_EVENTS = ["lcp", "inp", "cls"].flatMap((m) => ["good", "ni", "poor"].map((b) => `${m}_${b}`));
 
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {
   const nav = env.navigator || {}, loc = env.location || {};
@@ -42,7 +46,7 @@ export function eventRow(event, site, env = globalThis) {
 }
 
 export function track(event, site) {
-  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event))) || !analyticsAllowed()) return;
+  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event)) || (ACTIONS_LIVE && ACTION_EVENTS.includes(event)) || (VITALS_LIVE && VITALS_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
   fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site)) }).catch(() => {});

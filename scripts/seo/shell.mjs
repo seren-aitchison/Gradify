@@ -42,7 +42,18 @@ export function fitDesc(d, max = 155) {
 // a link-preview image per section, so a shared tool, topic or guide doesn't look like every other page
 const OG_SECTIONS = ["tools", "topics", "guides", "checklists", "compare", "vs", "terms", "questions", "study-plan"];
 export const ogFor = (path) => { const s = String(path).split("/")[0]; const k = s === "vs" ? "compare" : s === "exam-traps" ? "questions" : s; return OG_SECTIONS.includes(k) ? `${ORIGIN}/assets/og/${k}.png` : `${ORIGIN}/assets/og.png`; };
-export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, updatedLabel = "Last updated", ogType = "article", noindex = false, head = "", share = true, cta = true }) {
+/** "Cite this page": a ready-made link and APA 7 / Harvard references, so people who quote a page link back to it */
+export function citeBlock(name, href, date) {
+  const d = new Date(`${date.length === 7 ? `${date}-01` : date}T12:00:00Z`), year = d.getUTCFullYear(), md = d.toLocaleDateString("en-GB", { month: "long", day: "numeric", timeZone: "UTC" }).split(" ").reverse().join(" ");
+  const n = esc(name);
+  return `<details class="cite no-print" id="cite"><summary>Cite this page</summary>
+      <p><b>Link (HTML):</b> <code id="cite-link">&lt;a href="${href}"&gt;${n}&lt;/a&gt; (Gradify)</code> <button type="button" class="mini" data-copy-el="#cite-link">Copy</button></p>
+      <p><b>APA 7:</b> <span id="cite-apa">Gradify. (${year}, ${date.length === 7 ? d.toLocaleDateString("en-GB", { month: "long", timeZone: "UTC" }) : md}). <i>${n}</i>. ${href}</span> <button type="button" class="mini" data-copy-el="#cite-apa">Copy</button></p>
+      <p><b>Harvard:</b> <span id="cite-harvard">Gradify (${year}) <i>${n}</i>. Available at: ${href} (Accessed: <span data-today>${longDate(date.length === 7 ? `${date}-01` : date)}</span>).</span> <button type="button" class="mini" data-copy-el="#cite-harvard">Copy</button></p>
+    </details>`;
+}
+
+export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, updatedLabel = "Last updated", ogType = "article", noindex = false, head = "", share = true, cta = true, cite = null }) {
   const title = fitTitle(rawTitle), description = fitDesc(rawDesc);
   const canonical = url(path);
   const trail = [["Home", ""], ...crumbs];
@@ -82,10 +93,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/kit/styles/base.css">
   <script src="/kit/core/theme-boot.js"></script>
   <link rel="stylesheet" href="/assets/seo.css">
@@ -101,6 +109,7 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
     ${breadcrumbs}
     ${updated ? `<p class="updated">${esc(updatedLabel)} <time datetime="${updated}">${longDate(updated)}</time></p>` : ""}
     ${body}
+    ${cite ? citeBlock(cite, canonical, updated || "2026-11-23") : ""}
     ${share ? `<p class="share-row"><button type="button" class="share-btn" data-share>Share with your study group</button><span class="share-msg" role="status" aria-live="polite"></span></p>` : ""}
     ${cta ? CTA : ""}
   </main>

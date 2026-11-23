@@ -230,3 +230,20 @@ test("the speed guard, llms-full.txt and large image previews", async () => {
   assert.doesNotMatch([...files].find(([, h]) => /noindex, follow/.test(h))[1], /max-image-preview/, "noindex pages keep just noindex");
   assert.match(await read("scripts/perf-check.cjs"), /LCP_MS/);
 });
+
+test("batch 5: cite this page, self-hosted fonts, speed buckets, deploy retry", async () => {
+  const g = files.get("guides/command-words/index.html");
+  assert.match(g, /<details class="cite no-print" id="cite">/);
+  assert.match(g, /id="cite-apa">Gradify\. \(2026, November 23\)\. <i>Exam command words: what each one wants<\/i>\. https:\/\/getgradify\.com\/guides\/command-words\//);
+  assert.doesNotMatch(files.get("tools/index.html"), /id="cite"/, "tools aren't cited");
+  for (const [p, h] of files) if (p.endsWith(".html")) assert.doesNotMatch(h, /fonts\.googleapis\.com\/css2\?family=Geist/, `${p}: Geist is self-hosted`);
+  assert.match(g, /rel="preload" href="\/assets\/fonts\/Geist-Variable\.woff2" as="font"/);
+  const { bucket } = await import("../kit/core/vitals.js");
+  assert.deepEqual([bucket("lcp", 2500), bucket("lcp", 2501), bucket("lcp", 4001), bucket("inp", 199), bucket("inp", 450), bucket("cls", 0.3)], ["good", "ni", "poor", "good", "ni", "poor"]);
+  const { VITALS_EVENTS } = await import("../kit/core/analytics.js");
+  const mig = await read("supabase/migrations/20261123140000_page_events_vitals.sql");
+  for (const e of VITALS_EVENTS) assert.ok(mig.includes(`'${e}'`), `${e} is allowed by the database`);
+  const ci = await read(".github/workflows/ci.yml");
+  assert.match(ci, /id: retry\n\s+if: steps\.deployment\.outcome == 'failure'/);
+  assert.match(ci, /Check the live site serves this build/);
+});
