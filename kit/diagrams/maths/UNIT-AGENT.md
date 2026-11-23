@@ -41,8 +41,7 @@ node scripts/diagrams/coverage.mjs maths            # 0 planned but not placed, 
 ```
 Look at both layouts of every diagram (render the SVGs, or a lesson page with `?diagrams=preview#/lesson/uNN-MM`).
 
-**Git:** commit; `git fetch origin main && git rebase origin/main`; on a conflict in `kit/diagrams/manifest.json` or a
-`registry.js` take origin's (`git checkout --theirs <file>` during rebase), rerun your build and the registry script,
-`git add`, `git rebase --continue`; full `npm test`; `git diff origin/main --stat` shows only your files; `git push origin HEAD:main`
-(refetch and rebase on rejection). Commit messages end with the session's Co-Authored-By / Claude-Session trailers.
-Update `kit/diagrams/maths/HANDOVER.md` in the same commit.
+**Git:** commit your unit (plan, batch file, specs, SVGs, notes, manifest, registry; not `HANDOVER.md`, which your lead updates from your report) with
+the commit trailers your lead gives you, then `scripts/diagrams/land-unit.sh maths uNN`. It rebases, rebuilds your unit, regenerates
+the visual learning inventory (CI fails without it), checks scope, runs the full CI gate and pushes to main; it prints `LANDED <sha>`
+or `LAND FAILED: <reason>`. Run it in the foreground and wait: it queues behind other agents. Land after every unit.

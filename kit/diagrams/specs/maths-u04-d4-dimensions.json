@@ -1,0 +1,75 @@
+{
+ "id": "maths-u04-d4-dimensions",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Group Representations",
+ "title": "Squares of dimensions add to |D₄| = 8",
+ "caption": "D₄ has five conjugacy classes, so five irreducible representations, and the squares of their dimensions must add to the order 8. The only way is 1² + 1² + 1² + 1² + 2² = 1 + 1 + 1 + 1 + 4 = 8: four 1-dimensional and one 2-dimensional.",
+ "alt": "One bar of 8 units split into five parts: four parts of 1 labelled 1² and one part of 4 labelled 2².",
+ "description": [
+  "Five classes give five irreducible representations.",
+  "Each contributes the square of its dimension to the total 8.",
+  "Four of dimension 1 give four parts of 1; one of dimension 2 gives a part of 4.",
+  "1 + 1 + 1 + 1 + 4 = 8, the order of the group."
+ ],
+ "bars": [
+  {
+   "label": "|D₄|",
+   "parts": [
+    {
+     "value": 1,
+     "text": "1²",
+     "colour": "a1"
+    },
+    {
+     "value": 1,
+     "text": "1²",
+     "colour": "a1"
+    },
+    {
+     "value": 1,
+     "text": "1²",
+     "colour": "a1"
+    },
+    {
+     "value": 1,
+     "text": "1²",
+     "colour": "a1"
+    },
+    {
+     "value": 4,
+     "text": "2² = 4",
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 4,
+   "value": 8,
+   "text": "1 + 1 + 1 + 1 + 4 = 8"
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    1,
+    1,
+    1,
+    1,
+    4
+   ],
+   "total": 8,
+   "name": "the squares of the dimensions 1, 1, 1, 1, 2 are 1, 1, 1, 1, 4, adding to 8"
+  }
+ ],
+ "fromLesson": [
+  "1 + 1 + 1 + 1 + 4 = 8"
+ ]
+}

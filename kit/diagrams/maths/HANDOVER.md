@@ -66,12 +66,10 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 ## Unit claims (read before starting a unit)
 
 A unit listed here is being built; don't start it in another session. Remove the row when the unit is on main.
-Claimed 23 Nov 2026.
+Claimed 23 Nov 2026 (the earlier claims by session 01H1szfk lapsed when its agents stopped; units on main are removed).
 
 | Units | Claimed by |
 |---|---|
-| u04, u06, u07 | lead session 01H1szfk, agent M1 |
-| u09, u10, u14 (WIP on branch wip/maths-u14) | lead session 01H1szfk, agent M2 |
-| u15, u16, u17, u18, u19 | lead session 01H1szfk, agent M3 |
-| u20-u24 | lead session 01H1szfk, agent M4 |
-| u25-u29 | lead session 01H1szfk, agent M5 |
+| u04, u06, u07 | lead session 01PJjzVE, agent M1 |
+| u09, u15, u16 | lead session 01PJjzVE, agent M2 |
+| u17, u18, u19 | lead session 01PJjzVE, agent M3 |

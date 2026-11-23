@@ -1,0 +1,53 @@
+{
+ "id": "maths-u17-winding-sum",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Fundamental Groups",
+ "title": "Winding numbers add: 3 − 1 = 2",
+ "caption": "A loop's class in π₁(circle) ≅ ℤ is its net winding number: three anticlockwise turns count +3, one clockwise turn counts −1, so the loop is homotopic to going round twice.",
+ "alt": "A number line from −1 to 4: a jump of +3 from 0 to 3 for the anticlockwise turns, then a jump of −1 back to 2 for the clockwise turn.",
+ "description": [
+  "Each anticlockwise circuit counts +1 and each clockwise circuit counts −1.",
+  "Three anticlockwise circuits: 0 → 3.",
+  "One clockwise circuit: 3 → 2.",
+  "The class of the loop is 2 in ℤ."
+ ],
+ "range": [
+  -1,
+  4
+ ],
+ "ticks": {
+  "step": 1
+ },
+ "jumps": {
+  "from": 0,
+  "steps": [
+   {
+    "by": 3,
+    "label": "+3 anticlockwise"
+   },
+   {
+    "by": -1,
+    "label": "−1 clockwise"
+   }
+  ],
+  "to": 2
+ },
+ "points": [
+  {
+   "value": 0,
+   "label": "start",
+   "below": true
+  },
+  {
+   "value": 2,
+   "label": "class 2",
+   "below": true,
+   "colour": "a4"
+  }
+ ],
+ "fromLesson": [
+  "3 − 1 = 2"
+ ]
+}

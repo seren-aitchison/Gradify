@@ -1,0 +1,188 @@
+{
+ "id": "maths-u17-annulus-retraction",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Homotopy Theory",
+ "title": "The annulus retracts onto |z| = 1.5",
+ "caption": "H(z, t) = (1 − t)z + t · 1.5 z/|z| slides every point along its own radius to the circle |z| = 1.5: P at |z| = 2 moves in, Q at |z| = 1 moves out, and R, already on the circle, never moves.",
+ "alt": "Three concentric circles of radius 1, 1.5 and 2. An arrow from P on the outer circle points inward to P′ on the middle circle; an arrow from Q on the inner circle points outward to Q′; R on the middle circle stays put.",
+ "description": [
+  "The annulus lies between the circles |z| = 1 and |z| = 2.",
+  "P (|z| = 2) is pushed along its radius in to P′ on |z| = 1.5.",
+  "Q (|z| = 1) is pushed out along its radius to Q′ on |z| = 1.5.",
+  "R is already on the circle, so H(R, t) = R for every t."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "P": [
+   1.6,
+   1.2
+  ],
+  "P′": [
+   1.2000000000000002,
+   0.8999999999999999
+  ],
+  "Q": [
+   -0.6,
+   -0.8
+  ],
+  "Q′": [
+   -0.8999999999999999,
+   -1.2000000000000002
+  ],
+  "R": [
+   0,
+   1.5
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "labelAt": {
+  "P": [
+   14,
+   -12
+  ],
+  "P′": [
+   -14,
+   14
+  ],
+  "Q": [
+   10,
+   14
+  ],
+  "Q′": [
+   -8,
+   16
+  ],
+  "R": [
+   0,
+   -16
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "a1"
+  },
+  {
+   "centre": "O",
+   "r": 1.5,
+   "colour": "a2"
+  },
+  {
+   "centre": "O",
+   "r": 2,
+   "colour": "a1"
+  }
+ ],
+ "vectors": [
+  {
+   "from": "P",
+   "to": "P′",
+   "colour": "a4"
+  },
+  {
+   "from": "Q",
+   "to": "Q′",
+   "colour": "a4"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0,
+    0.75
+   ],
+   "text": "|z| = 1",
+   "colour": "a1",
+   "size": 13
+  },
+  {
+   "at": [
+    0,
+    1.25
+   ],
+   "text": "|z| = 1.5",
+   "colour": "a2",
+   "size": 13
+  },
+  {
+   "at": [
+    0,
+    2.17
+   ],
+   "text": "|z| = 2",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -2.5,
+   2.5
+  ],
+  "y": [
+   -2.35,
+   2.35
+  ]
+ },
+ "height": [
+  400,
+  360
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "circle": 2,
+   "points": [
+    "P"
+   ],
+   "name": "P is on the circle |z| = 2"
+  },
+  {
+   "type": "onCircle",
+   "circle": 0,
+   "points": [
+    "Q"
+   ],
+   "name": "Q is on the circle |z| = 1"
+  },
+  {
+   "type": "onCircle",
+   "circle": 1,
+   "points": [
+    "P′",
+    "Q′",
+    "R"
+   ],
+   "name": "P′, Q′ and R are on the circle |z| = 1.5"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "O",
+    "P",
+    "P′"
+   ],
+   "name": "P moves along its radius"
+  },
+  {
+   "type": "collinear",
+   "points": [
+    "O",
+    "Q",
+    "Q′"
+   ],
+   "name": "Q moves along its radius"
+  }
+ ],
+ "fromLesson": [
+  "1.5 z/|z|"
+ ]
+}

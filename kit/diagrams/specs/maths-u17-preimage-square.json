@@ -1,0 +1,153 @@
+{
+ "id": "maths-u17-preimage-square",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Continuity in Topology",
+ "title": "The preimage of (1, 4) under x²",
+ "caption": "The open interval (1, 4) on the y-axis pulls back to two open intervals, (−2, −1) and (1, 2): the points whose square lies strictly between 1 and 4. A union of open intervals is open, as continuity requires.",
+ "alt": "The parabola y = x² with a horizontal band between y = 1 and y = 4, and the two x-intervals (−2, −1) and (1, 2) where the curve lies inside the band.",
+ "description": [
+  "Plot y = x² and mark the open interval (1, 4) on the y-axis.",
+  "The curve is inside the band when 1 < x² < 4.",
+  "That happens for x in (−2, −1) and for x in (1, 2).",
+  "Both pieces are open intervals, so the preimage is open."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   -1.3,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   1,
+   4
+  ]
+ ],
+ "grid": [
+  2,
+  4
+ ],
+ "height": [
+  360,
+  320
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "bands": [
+  {
+   "x": [
+    -2,
+    -1
+   ],
+   "label": "(−2, −1)",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    1,
+    2
+   ],
+   "label": "(1, 2)",
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "y = 1"
+  },
+  {
+   "y": 4,
+   "label": "y = 4"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1",
+   "domain": [
+    -2.2,
+    2.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "colour": "a2",
+   "label": "(1, 1)",
+   "dx": 8,
+   "dy": 16
+  },
+  {
+   "x": 2,
+   "y": 4,
+   "colour": "a2",
+   "label": "(2, 4)",
+   "dx": 8,
+   "dy": 4
+  },
+  {
+   "x": -1,
+   "y": 1,
+   "colour": "a2",
+   "label": "(−1, 1)",
+   "anchor": "end",
+   "dx": -8,
+   "dy": 16
+  },
+  {
+   "x": -2,
+   "y": 4,
+   "colour": "a2",
+   "label": "(−2, 4)",
+   "anchor": "end",
+   "dx": -8,
+   "dy": 4
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1,
+   "y": 1
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 2,
+   "y": 4
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": -1,
+   "y": 1
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": -2,
+   "y": 4
+  }
+ ],
+ "fromLesson": [
+  "(−2, −1) ∪ (1, 2)"
+ ]
+}

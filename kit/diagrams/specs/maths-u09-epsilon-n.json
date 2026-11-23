@@ -1,0 +1,134 @@
+{
+ "id": "maths-u09-epsilon-n",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u09",
+ "lesson": "Real Analysis",
+ "title": "Terms of (2n + 1)/(n + 3) entering the ε-band",
+ "caption": "Each term is 5/(n + 3) below 2. With ε = 0.5 the rule N > 5/ε − 3 gives N = 7: from n = 8 on, every term is within 0.5 of the limit 2 (the 8th term is 17/11 ≈ 1.545).",
+ "alt": "A rising curve for (2n + 1)/(n + 3) flattening towards the dashed line at 2, crossing the dashed line at 1.5 when n = 7.",
+ "description": [
+  "The terms (2n + 1)/(n + 3) rise towards the limit 2, always below it.",
+  "The lower dashed line, 1.5, is the edge of the band of width ε = 0.5 around 2.",
+  "The curve meets 1.5 where 5/(n + 3) = 0.5, at n = 7: that is N = 5/ε − 3.",
+  "After n = 7 every term lies inside the band, and a smaller ε only moves N further right."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ]
+ ],
+ "grid": [
+  5,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "n",
+  "aₙ"
+ ],
+ "curves": [
+  {
+   "expr": "(2*x+1)/(x+3)",
+   "colour": "a1",
+   "domain": [
+    0,
+    20
+   ]
+  },
+  {
+   "expr": "2",
+   "colour": "a2",
+   "dash": "6 4"
+  },
+  {
+   "expr": "1.5",
+   "colour": "a4",
+   "dash": "6 4"
+  }
+ ],
+ "marks": [
+  {
+   "x": 7,
+   "to": 1.5,
+   "label": "N = 7",
+   "dx": 0
+  }
+ ],
+ "points": [
+  {
+   "x": 7,
+   "y": 1.5,
+   "colour": "a4"
+  },
+  {
+   "x": 20,
+   "y": 2,
+   "label": "L = 2",
+   "colour": "a2",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 12,
+   "y": 1.5,
+   "label": "2 − ε = 1.5",
+   "colour": "a4",
+   "dx": 0,
+   "dy": 26,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "(2*x+1)/(x+3)",
+   "b": "1.5",
+   "x": 7,
+   "y": 1.5,
+   "name": "(2n + 1)/(n + 3) = 1.5 at n = 7 = 5/ε − 3"
+  },
+  {
+   "type": "point",
+   "expr": "(2*x+1)/(x+3)",
+   "x": 8,
+   "y": 1.5454545454545454,
+   "name": "the 8th term is 17/11, inside the band"
+  },
+  {
+   "type": "point",
+   "expr": "(2*x+1)/(x+3)",
+   "x": 1,
+   "y": 0.75,
+   "name": "the first term is 3/4"
+  }
+ ],
+ "fromLesson": [
+  "5/(n + 3)",
+  "N > 5/ε − 3"
+ ]
+}

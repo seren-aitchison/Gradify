@@ -1,0 +1,169 @@
+{
+ "id": "maths-u04-rotation-rep",
+ "renderer": "transform",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Representation Theory",
+ "title": "ℤ₄ as four rotations",
+ "caption": "Sending k ∈ ℤ₄ to Rᵏ, the quarter turn R = [[0, −1], [1, 0]] applied k times, turns the shape through 0°, 90°, 180° and 270°. A fourth quarter turn returns it to the start, since R⁴ = I, which is why the exponent can be added mod 4.",
+ "alt": "A small triangle in the first quadrant and its images under R, R² and R³: the same triangle turned through 90°, 180° and 270° about the origin.",
+ "description": [
+  "Start with a triangle I in the first quadrant: the image of k = 0.",
+  "R turns it a quarter turn anticlockwise into the second quadrant.",
+  "R² = −I turns it through 180° into the third quadrant, and R³ through 270° into the fourth.",
+  "Another quarter turn is R⁴ = I: back to the start, matching 4 ≡ 0 in ℤ₄."
+ ],
+ "view": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   -4,
+   4
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "object": {
+  "name": "I",
+  "pts": [
+   [
+    1,
+    0.5
+   ],
+   [
+    3,
+    0.5
+   ],
+   [
+    1,
+    1.5
+   ]
+  ],
+  "colour": "a1"
+ },
+ "images": [
+  {
+   "name": "R",
+   "t": {
+    "kind": "matrix",
+    "m": [
+     [
+      0,
+      -1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "pts": [
+    [
+     -0.5,
+     1
+    ],
+    [
+     -0.5,
+     3
+    ],
+    [
+     -1.5,
+     1
+    ]
+   ],
+   "colour": "a2"
+  },
+  {
+   "name": "R²",
+   "t": {
+    "kind": "matrix",
+    "m": [
+     [
+      -1,
+      0
+     ],
+     [
+      0,
+      -1
+     ]
+    ]
+   },
+   "pts": [
+    [
+     -1,
+     -0.5
+    ],
+    [
+     -3,
+     -0.5
+    ],
+    [
+     -1,
+     -1.5
+    ]
+   ],
+   "colour": "a3"
+  },
+  {
+   "name": "R³",
+   "t": {
+    "kind": "matrix",
+    "m": [
+     [
+      0,
+      1
+     ],
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "pts": [
+    [
+     0.5,
+     -1
+    ],
+    [
+     0.5,
+     -3
+    ],
+    [
+     1.5,
+     -1
+    ]
+   ],
+   "colour": "a4"
+  }
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "areaScale",
+   "image": "R",
+   "value": 1
+  },
+  {
+   "type": "areaScale",
+   "image": "R²",
+   "value": 1
+  },
+  {
+   "type": "areaScale",
+   "image": "R³",
+   "value": 1
+  }
+ ],
+ "fromLesson": [
+  "R^{2} = −I",
+  "R^{4} = I"
+ ]
+}

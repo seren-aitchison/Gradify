@@ -1,0 +1,91 @@
+{
+ "id": "maths-u09-sin-norm",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u09",
+ "lesson": "Hilbert Spaces",
+ "title": "The norm of sin x in L²[−π, π]",
+ "caption": "‖sin x‖² is the area under sin²x from −π to π. The curve oscillates between 0 and 1 with average ½, so the area is ½ × 2π = π and the norm is √π ≈ 1.772.",
+ "alt": "The curve y = sin squared x between −π and π, two humps of height 1 touching zero at −π, 0 and π, shaded underneath.",
+ "description": [
+  "The norm squared is ∫ sin²x dx over [−π, π].",
+  "sin²x = (1 − cos 2x)/2 averages ½ over a whole number of periods.",
+  "The area is ½ × 2π = π, so ‖sin x‖ = √π ≈ 1.772."
+ ],
+ "range": {
+  "x": [
+   -3.5,
+   3.5
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "sin²x"
+ ],
+ "curves": [
+  {
+   "expr": "sin(x)^2",
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "sin(x)^2",
+   "from": -3.141592653589793,
+   "to": 3.141592653589793,
+   "colour": "a1",
+   "opacity": 0.2
+  }
+ ],
+ "points": [
+  {
+   "x": 1.5707963267948966,
+   "y": 1,
+   "label": "1",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "sin(x)^2",
+   "from": -3.141592653589793,
+   "to": 3.141592653589793,
+   "value": 3.141592653589793,
+   "tol": 0.001,
+   "name": "the area under sin²x on [−π, π] is π"
+  }
+ ],
+ "fromLesson": [
+  "= π",
+  "√π ≈ 1.772"
+ ]
+}

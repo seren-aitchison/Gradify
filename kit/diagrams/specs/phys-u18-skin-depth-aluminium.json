@@ -1,0 +1,100 @@
+{
+ "id": "phys-u18-skin-depth-aluminium",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Electromagnetic shielding",
+ "title": "Field inside aluminium at 100 MHz",
+ "caption": "In a conductor the field decays as e^{−z/δ}. For aluminium (σ = 3.5 × 10⁷ S m⁻¹) at 100 MHz, δ = √(2/ωμσ) = 8.5 μm. After one skin depth the amplitude is 1/e = 0.37; household foil (about 16 μm) is about 1.9 skin depths thick and leaves only 0.15 of the amplitude, so it attenuates strongly.",
+ "alt": "Graph of field amplitude relative to the surface against depth in aluminium from 0 to 30 micrometres: an exponential decay through 0.37 at 8.5 micrometres and 0.15 at 16 micrometres.",
+ "description": [
+  "The horizontal axis is the depth into the metal in micrometres; the vertical axis is the field amplitude relative to its value at the surface.",
+  "The curve is e^{−z/δ} with δ = 8.5 μm, the skin depth of aluminium at 100 MHz.",
+  "At z = δ the amplitude is 1/e = 0.37.",
+  "At 16 μm, the thickness of foil, it is 0.15."
+ ],
+ "range": {
+  "x": [
+   0,
+   30
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth z / μm",
+  "amplitude / surface value"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/8.507189549448235)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "e^{−z/δ}",
+   "labelAt": [
+    15,
+    0.55
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 8.51,
+   "y": 0.3679,
+   "label": "δ = 8.5 μm",
+   "dx": 12,
+   "dy": -12
+  },
+  {
+   "x": 16,
+   "y": 0.1525,
+   "colour": "a2",
+   "label": "foil, 16 μm: 0.15",
+   "dx": 8,
+   "dy": -16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/8.507189549448235)",
+   "x": 8.507189549448235,
+   "y": 0.3679,
+   "name": "the amplitude is 1/e at one skin depth, 8.5 μm"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/8.507189549448235)",
+   "x": 16,
+   "y": 0.1525,
+   "name": "16 μm of aluminium leaves 0.15 of the amplitude"
+  }
+ ]
+}

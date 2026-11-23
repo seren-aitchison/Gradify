@@ -1,0 +1,86 @@
+{
+ "id": "maths-u17-interior-closure",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Point-Set Topology",
+ "title": "Interior, closure and boundary of [0, 1)",
+ "caption": "The set [0, 1) has interior (0, 1) (every point has room around it), closure [0, 1] (the limit point 1 is added) and boundary {0, 1} (the two points where the set meets its complement).",
+ "alt": "Three number-line rows from −1 to 2: the set [0, 1), its interior (0, 1) and its closure [0, 1], with the boundary points 0 and 1 marked.",
+ "description": [
+  "The set is [0, 1): 0 is included, 1 is not.",
+  "Interior: remove 0, because no interval around 0 stays inside the set: (0, 1).",
+  "Closure: add the limit point 1: [0, 1].",
+  "Boundary: closure minus interior is {0, 1}."
+ ],
+ "range": [
+  -1,
+  2
+ ],
+ "ticks": {
+  "step": 0.5
+ },
+ "narrowTicks": {
+  "step": 1
+ },
+ "tickLabels": {
+  "0": "0",
+  "1": "1",
+  "2": "2",
+  "-1": "−1"
+ },
+ "intervals": [
+  {
+   "from": 0,
+   "to": 1,
+   "closed": [
+    true,
+    false
+   ],
+   "inequality": "0 <= x < 1",
+   "label": "the set [0, 1)",
+   "colour": "a1"
+  },
+  {
+   "from": 0,
+   "to": 1,
+   "closed": [
+    false,
+    false
+   ],
+   "inequality": "0 < x < 1",
+   "label": "interior (0, 1)",
+   "colour": "a2"
+  },
+  {
+   "from": 0,
+   "to": 1,
+   "closed": [
+    true,
+    true
+   ],
+   "inequality": "0 <= x <= 1",
+   "label": "closure [0, 1]",
+   "colour": "a4"
+  }
+ ],
+ "points": [
+  {
+   "value": 0,
+   "label": "boundary",
+   "colour": "a3",
+   "below": true
+  },
+  {
+   "value": 1,
+   "label": "boundary",
+   "colour": "a3",
+   "below": true
+  }
+ ],
+ "fromLesson": [
+  "Interior: (0, 1)",
+  "Closure: [0, 1]",
+  "Boundary: {0, 1}"
+ ]
+}

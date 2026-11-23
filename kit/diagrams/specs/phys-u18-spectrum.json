@@ -1,0 +1,92 @@
+{
+ "id": "phys-u18-spectrum",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Electromagnetic spectrum",
+ "title": "The electromagnetic spectrum",
+ "caption": "The bands run from radio (λ > 1 m) to gamma rays (λ < 0.01 nm), all the same kind of wave. Photon energy E = hf = hc/λ with hc ≈ 1240 eV nm: green light (520 nm) carries 2.4 eV, a 254 nm ultraviolet photon 4.9 eV and the 50 kV X-ray limit (0.025 nm) 50 keV.",
+ "alt": "A logarithmic wavelength scale from 10^-13 m to 10^4 m with the bands radio, microwave, infrared, visible, ultraviolet, X-rays and gamma rays in order, and an FM signal, a microwave oven, a person's thermal glow, green light, a 254 nm ultraviolet lamp and an X-ray tube limit marked.",
+ "description": [
+  "A horizontal logarithmic scale of wavelength in metres, long wavelengths (radio) on the right and short (gamma rays) on the left.",
+  "Bands from the lesson: radio λ > 1 m; microwaves 1 mm–1 m; infrared 700 nm–1 mm; visible 400–700 nm; ultraviolet 10–400 nm; X-rays 0.01–10 nm; gamma rays below 0.01 nm.",
+  "Markers: FM radio 3 m, microwave oven 12 cm, a person's thermal peak 9.4 μm, green light 520 nm (2.4 eV), a 254 nm UV lamp (4.9 eV), and the 0.025 nm limit of a 50 kV tube.",
+  "Higher frequency and photon energy lie to the left; the bands meet with no gaps."
+ ],
+ "kind": "em",
+ "quantity": "wavelength",
+ "units": "m",
+ "min": -13,
+ "max": 4,
+ "regions": [
+  {
+   "label": "radio",
+   "from": 1,
+   "to": 10000
+  },
+  {
+   "label": "microwave",
+   "from": 0.001,
+   "to": 1
+  },
+  {
+   "label": "infrared",
+   "from": 7e-7,
+   "to": 0.001
+  },
+  {
+   "label": "visible",
+   "from": 4e-7,
+   "to": 7e-7
+  },
+  {
+   "label": "ultraviolet",
+   "from": 1e-8,
+   "to": 4e-7
+  },
+  {
+   "label": "X-rays",
+   "from": 1e-11,
+   "to": 1e-8
+  },
+  {
+   "label": "gamma rays",
+   "from": 1e-13,
+   "to": 1e-11
+  }
+ ],
+ "markers": [
+  {
+   "label": "FM radio, 3 m",
+   "value": 3,
+   "region": "radio",
+   "f": 100000000
+  },
+  {
+   "label": "microwave oven, 12 cm",
+   "value": 0.122,
+   "region": "microwave",
+   "f": 2450000000
+  },
+  {
+   "label": "person, 9.4 μm",
+   "value": 0.0000094,
+   "region": "infrared"
+  },
+  {
+   "label": "green light, 2.4 eV",
+   "value": 5.2e-7,
+   "region": "visible"
+  },
+  {
+   "label": "UV lamp, 4.9 eV",
+   "value": 2.54e-7,
+   "region": "ultraviolet"
+  },
+  {
+   "label": "50 kV X-ray limit",
+   "value": 2.5e-11,
+   "region": "X-rays"
+  }
+ ]
+}
