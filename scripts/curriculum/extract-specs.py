@@ -114,7 +114,7 @@ def edexcel():
         if ss[0][0] <= 2 and re.fullmatch(r"\d+\.\d+B?", ss[0][1]) and len(ss) > 1:
             cur = dict(source="edexcel-1bi0", ref=ss[0][1], topic=topic, parts=[ss[1][1]], loc=f"p. {pg}", biologyOnly=ss[0][1].endswith("B"))
             col = ss[1][0]; out.append(cur); continue
-        if cur and col - 1 <= ss[0][0] <= col + 6 and ss[0][0] < 60: cur["parts"].append(ss[0][1])
+        if cur and col - 1 <= ss[0][0] <= col + 6 and ss[0][0] < 60: cur["parts"].append(" ".join(x for st, x in ss if st < 60))
         elif cur and ss[0][0] <= 2: cur = None
     for r in out: r["text"] = clean(r.pop("parts")); r["corePractical"] = r["text"].startswith("Core Practical")
     return out

@@ -6199,7 +6199,7 @@
    "topic": "Topic 1 – Key concepts in biology",
    "subtopic": null,
    "ref": "1.1",
-   "text": "Explain how the sub-cellular structures of eukaryotic and prokaryotic cells are related to their functions, including: a animal cells – nucleus, cell membrane, mitochondria and ribosomes b plant cells – nucleus, cell membrane, cell wall, chloroplasts, mitochondria, vacuole and ribosomes c membrane, ribosomes and flagella",
+   "text": "Explain how the sub-cellular structures of eukaryotic and prokaryotic cells are related to their functions, including: a animal cells – nucleus, cell membrane, mitochondria and ribosomes b plant cells – nucleus, cell membrane, cell wall, chloroplasts, mitochondria, vacuole and ribosomes c bacteria – chromosomal DNA, plasmid DNA, cell membrane, ribosomes and flagella",
    "loc": "p. 14",
    "status": "examination",
    "separateOnly": false
@@ -6220,7 +6220,7 @@
    "topic": "Topic 1 – Key concepts in biology",
    "subtopic": null,
    "ref": "1.2",
-   "text": "Describe how specialised cells are adapted to their function, including: a sperm cells – acrosome, haploid nucleus, mitochondria and tail b egg cells – nutrients in the cytoplasm, haploid nucleus and changes in the cell membrane after fertilisation c",
+   "text": "Describe how specialised cells are adapted to their function, including: a sperm cells – acrosome, haploid nucleus, mitochondria and tail b egg cells – nutrients in the cytoplasm, haploid nucleus and changes in the cell membrane after fertilisation c ciliated epithelial cells",
    "loc": "p. 14",
    "status": "examination",
    "separateOnly": false
@@ -6283,7 +6283,7 @@
    "topic": "Topic 1 – Key concepts in biology",
    "subtopic": null,
    "ref": "1.5",
-   "text": "Demonstrate an understanding of the relationship between quantitative units in relation to cells, including: a milli (10−3) b micro (10−6) c d pico (10−12) e calculations with numbers written in standard form",
+   "text": "Demonstrate an understanding of the relationship between quantitative units in relation to cells, including: a milli (10−3) b micro (10−6) c nano (10−9) d pico (10−12) e calculations with numbers written in standard form",
    "loc": "p. 14",
    "status": "examination",
    "separateOnly": false
@@ -6854,7 +6854,7 @@
    "topic": "Topic 2 – Cells and control",
    "subtopic": null,
    "ref": "2.15B",
-   "text": "Explain the structure and function of the eye as a sensory receptor including the role of: a the cornea and lens b the iris c",
+   "text": "Explain the structure and function of the eye as a sensory receptor including the role of: a the cornea and lens b the iris c rod and cone cells in the retina",
    "loc": "p. 18",
    "status": "examination",
    "separateOnly": true
@@ -6980,7 +6980,7 @@
    "topic": "Topic 3 – Genetics",
    "subtopic": null,
    "ref": "3.4",
-   "text": "Describe DNA as a polymer made up of: a two strands coiled to form a double helix b strands linked by a series of complementary base pairs joined together by weak hydrogen bonds c with one of the four different bases attached to the sugar",
+   "text": "Describe DNA as a polymer made up of: a two strands coiled to form a double helix b strands linked by a series of complementary base pairs joined together by weak hydrogen bonds c nucleotides that consist of a sugar and phosphate group with one of the four different bases attached to the sugar",
    "loc": "p. 19",
    "status": "examination",
    "separateOnly": false
@@ -7064,7 +7064,7 @@
    "topic": "Topic 3 – Genetics",
    "subtopic": null,
    "ref": "3.8B",
-   "text": "Describe the stages of protein synthesis, including transcription and translation: a RNA polymerase binds to non-coding DNA located in front of a gene b RNA polymerase produces a complementary mRNA strand from the coding DNA of the gene c the attachment of the mRNA to the ribosome d the coding by triplets of bases (codons) in the mRNA for specific amino acids e the transfer of amino acids to the ribosome by tRNA f",
+   "text": "Describe the stages of protein synthesis, including transcription and translation: a RNA polymerase binds to non-coding DNA located in front of a gene b RNA polymerase produces a complementary mRNA strand from the coding DNA of the gene c the attachment of the mRNA to the ribosome d the coding by triplets of bases (codons) in the mRNA for specific amino acids e the transfer of amino acids to the ribosome by tRNA f the linking of amino acids to form polypeptides",
    "loc": "p. 19",
    "status": "examination",
    "separateOnly": true
@@ -7463,7 +7463,7 @@
    "topic": "Topic 4 – Natural selection and genetic modification",
    "subtopic": null,
    "ref": "4.4",
-   "text": "Describe the evidence for human evolution, based on fossils, including: a Ardi from 4.4 million years ago b Lucy from 3.2 million years ago c ago",
+   "text": "Describe the evidence for human evolution, based on fossils, including: a Ardi from 4.4 million years ago b Lucy from 3.2 million years ago c Richard Leakey's discovery of fossils from 1.6 million years ago",
    "loc": "p. 22",
    "status": "examination",
    "separateOnly": false
@@ -7778,7 +7778,7 @@
    "topic": "Topic 5 – Health, disease and the development of medicines",
    "subtopic": null,
    "ref": "5.5",
-   "text": "Describe some common infections, including: a b c lesions d e of AIDS fB stomach ulcers caused by Helicobacter (bacteria) gB Ebola (virus) causes haemorrhagic fever",
+   "text": "Describe some common infections, including: a cholera (bacteria) causes diarrhoea b tuberculosis (bacteria) causes lung damage c Chalara ash dieback (fungi) causes leaf loss and bark lesions d malaria (protists) causes damage to blood and liver e HIV (virus) destroys white blood cells, leading to the onset of AIDS fB stomach ulcers caused by Helicobacter (bacteria) gB Ebola (virus) causes haemorrhagic fever",
    "loc": "p. 24",
    "status": "examination",
    "separateOnly": false
@@ -7799,7 +7799,7 @@
    "topic": "Topic 5 – Health, disease and the development of medicines",
    "subtopic": null,
    "ref": "5.6",
-   "text": "Explain how pathogens are spread and how this spread can be reduced or prevented, including: a b c d eB stomach ulcers caused by Helicobacter (bacteria) – oral transmission fB Ebola (virus) – body fluids",
+   "text": "Explain how pathogens are spread and how this spread can be reduced or prevented, including: a cholera (bacteria) – water b tuberculosis (bacteria) – airborne c Chalara ash dieback (fungi) – airborne d malaria (protists) – animal vectors eB stomach ulcers caused by Helicobacter (bacteria) – oral transmission fB Ebola (virus) – body fluids",
    "loc": "p. 24",
    "status": "examination",
    "separateOnly": false
@@ -7841,7 +7841,7 @@
    "topic": "Topic 5 – Health, disease and the development of medicines",
    "subtopic": null,
    "ref": "5.8",
-   "text": "Explain how sexually transmitted infections (STIs) are spread and how this spread can be reduced or prevented, including: a b",
+   "text": "Explain how sexually transmitted infections (STIs) are spread and how this spread can be reduced or prevented, including: a Chlamydia (bacteria) b HIV (virus)",
    "loc": "p. 24",
    "status": "examination",
    "separateOnly": false
@@ -7946,7 +7946,7 @@
    "topic": "Topic 5 – Health, disease and the development of medicines",
    "subtopic": null,
    "ref": "5.13",
-   "text": "Explain the role of the specific immune system of the human body in defence against disease, including: a exposure to pathogen b the antigens trigger an immune response which causes the production of antibodies c lymphocytes d the role of memory lymphocytes in the secondary response to the antigen",
+   "text": "Explain the role of the specific immune system of the human body in defence against disease, including: a exposure to pathogen b the antigens trigger an immune response which causes the production of antibodies c the antigens also trigger production of memory lymphocytes d the role of memory lymphocytes in the secondary response to the antigen",
    "loc": "p. 25",
    "status": "examination",
    "separateOnly": false
@@ -8199,7 +8199,7 @@
    "topic": "Topic 5 – Health, disease and the development of medicines",
    "subtopic": null,
    "ref": "5.25",
-   "text": "Evaluate some different treatments for cardiovascular disease, including: a life-long medication b surgical procedures c",
+   "text": "Evaluate some different treatments for cardiovascular disease, including: a life-long medication b surgical procedures c lifestyle changes",
    "loc": "p. 26",
    "status": "examination",
    "separateOnly": false
@@ -8767,7 +8767,7 @@
    "topic": "Topic 7 – Animal coordination, control and homeostasis",
    "subtopic": null,
    "ref": "7.11B",
-   "text": "Explain how thermoregulation takes place, with reference to the function of the skin, including: a the role of the dermis b the role of the epidermis c",
+   "text": "Explain how thermoregulation takes place, with reference to the function of the skin, including: a the role of the dermis b the role of the epidermis c the role of the hypothalamus",
    "loc": "p. 30",
    "status": "examination",
    "separateOnly": true
@@ -8935,7 +8935,7 @@
    "topic": "Topic 7 – Animal coordination, control and homeostasis",
    "subtopic": null,
    "ref": "7.19B",
-   "text": "Explain how the structure of the nephron is related to its function in filtering the blood and forming urine including: a filtration in the glomerulus and Bowman’s capsule b selective reabsorption of glucose c",
+   "text": "Explain how the structure of the nephron is related to its function in filtering the blood and forming urine including: a filtration in the glomerulus and Bowman’s capsule b selective reabsorption of glucose c reabsorption of water",
    "loc": "p. 30",
    "status": "examination",
    "separateOnly": true
@@ -9124,7 +9124,7 @@
    "topic": "Topic 8 – Exchange and transport in animals",
    "subtopic": null,
    "ref": "8.6",
-   "text": "Explain how the structure of the blood is related to its function: a red blood cells (erythrocytes) b white blood cells (phagocytes and lymphocytes) c d platelets",
+   "text": "Explain how the structure of the blood is related to its function: a red blood cells (erythrocytes) b white blood cells (phagocytes and lymphocytes) c plasma d platelets",
    "loc": "p. 32",
    "status": "examination",
    "separateOnly": false
@@ -9441,7 +9441,7 @@
    "topic": "Topic 9 – Ecosystems and material cycles",
    "subtopic": null,
    "ref": "9.9",
-   "text": "Explain the positive and negative human interactions within ecosystems and their impacts on biodiversity, including: a fish farming b introduction of non-indigenous species c",
+   "text": "Explain the positive and negative human interactions within ecosystems and their impacts on biodiversity, including: a fish farming b introduction of non-indigenous species c eutrophication",
    "loc": "p. 34",
    "status": "examination",
    "separateOnly": false
@@ -9483,7 +9483,7 @@
    "topic": "Topic 9 – Ecosystems and material cycles",
    "subtopic": null,
    "ref": "9.11B",
-   "text": "Describe the biological factors affecting levels of food security, including: a increasing human population b increasing animal farming and the increased meat and fish consumption c d environmental change caused by human activity e sustainability issues, e.g. use of land for biofuel production and the cost of agricultural inputs",
+   "text": "Describe the biological factors affecting levels of food security, including: a increasing human population b increasing animal farming and the increased meat and fish consumption c the impact of new pests and pathogens d environmental change caused by human activity e sustainability issues, e.g. use of land for biofuel production and the cost of agricultural inputs",
    "loc": "p. 35",
    "status": "examination",
    "separateOnly": true
