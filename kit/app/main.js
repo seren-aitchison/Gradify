@@ -1354,6 +1354,7 @@ async function renderProgress() {
     <span class="kicker lo-kicker">${icon("trend")}My Progress</span>
     <h1>Your progress</h1>
     <p class="sub lo-intro">Your activity on every Gradify site, mastery of the topics in your own notes, and below it your level, quests and achievements.</p>
+    <p class="share-progress"><button type="button" class="btn btn-ghost btn-sm" id="share-progress">Share my progress (image)</button></p>
     <article class="panel glass"><div class="panel-head"><h3>Your year</h3><span class="pill-dark">${Object.keys(s.byDay).length} active days</span></div><div class="hm-scroll">${heatmap(s.byDay, 52)}</div></article>
     <article class="panel glass tree-panel lo-tree" data-pane="year"><div class="panel-head"><div><h3>Your Gradify Tree</h3><p class="sub">It grows from what you actually do: a limb for every Gradify site you've studied on, filling out with your last 30 days there, on an island whose grass is your last 60 days.</p></div><span class="pill-dark">${s.acts.filter((a) => Date.now() - Date.parse(a.at) < 30 * DAY).length} activities in 30 days</span></div>
       <div class="grow-body"><div class="tree-wrap" id="lo-tree-svg"></div><aside class="grow-side" id="lo-tree-side"></aside></div></article>
@@ -1371,9 +1372,40 @@ async function renderProgress() {
     <section class="gj lo-journey" id="lo-journey" aria-label="Level, quests and achievements"><p class="sub">Loading your level, quests and achievements…</p></section>
   </section>`;
   drawMyTree(s.acts).catch((e) => console.warn("Tree", e));
+  document.getElementById("share-progress")?.addEventListener("click", () => progressCard(s, forecast).catch((e) => { console.warn("Share card", e); toast("Couldn't make the image."); }));
   // the Journey (kit/game/journey.js) lives here too, with its own styles, loaded once
   if (!document.querySelector("link[data-game-css]")) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-game-css href="${new URL("../styles/game.css", import.meta.url)}">`);
   mountJourney(document.getElementById("lo-journey"), { embedded: true, store }).catch((e) => { console.warn("Journey", e); });
+}
+
+// "Share my progress": a 1080×1350 image of the learner's active days, Gradify Tree, top topics by mastery and reviews
+// due this week, with a small getgradify.com credit, for a study server, a story or #StudyTok. Made in the browser.
+async function progressCard(s, forecast) {
+  const W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d"), grad = g.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0, "#4641ff"); grad.addColorStop(.4, "#f055dd"); grad.addColorStop(.75, "#ff5600"); grad.addColorStop(1, "#ffc002");
+  g.fillStyle = "#0b0b0b"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "#fff"; g.font = "700 64px Geist, system-ui, sans-serif"; g.fillText("My study progress", 70, 130);
+  g.font = "500 36px Geist, system-ui, sans-serif"; g.globalAlpha = .8;
+  g.fillText(`${Object.keys(s.byDay).length} active days · ${forecast.reduce((a, b) => a + b, 0)} reviews due this week`, 70, 190); g.globalAlpha = 1;
+  // the tree, if it has drawn
+  const svg = document.querySelector("#lo-tree-svg svg");
+  if (svg) {
+    const img = new Image(); img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(svg))}`;
+    await new Promise((r) => { img.onload = r; img.onerror = r; });
+    try { g.drawImage(img, 240, 230, 600, 420); } catch { /* skip the tree */ }
+  }
+  g.font = "600 40px Geist, system-ui, sans-serif"; g.fillText("Mastery by topic", 70, 730);
+  s.topics.slice(0, 5).forEach((t, i) => {
+    const y = 790 + i * 92, m = Math.max(0, Math.min(1, (t.mastery ?? 0) > 1 ? t.mastery / 100 : t.mastery ?? 0));
+    g.font = "500 32px Geist, system-ui, sans-serif"; g.fillStyle = "#fff"; g.fillText(String(t.topic).slice(0, 34), 70, y);
+    g.fillStyle = "rgba(255,255,255,.15)"; g.fillRect(70, y + 18, 940, 18); g.fillStyle = grad; g.fillRect(70, y + 18, 940 * m, 18);
+  });
+  if (!s.topics.length) { g.font = "500 32px Geist, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("Just getting started.", 70, 800); g.globalAlpha = 1; }
+  g.fillStyle = "#fff"; g.globalAlpha = .6; g.font = "500 30px Geist, system-ui, sans-serif"; g.fillText("getgradify.com · flashcards checked against your notes", 70, H - 60);
+  const blob = await new Promise((r) => c.toBlob(r, "image/png")), file = new File([blob], "my-gradify-progress.png", { type: "image/png" });
+  if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file], title: "My study progress" }); return; } catch (e) { if (e?.name === "AbortError") return; } }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
 }
 
 // The Gradify Tree (kit/lifeos/tree.js), from the learner's own activity log: a limb per site studied on in the last

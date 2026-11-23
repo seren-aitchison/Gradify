@@ -22,7 +22,25 @@ export const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString
  * A whole page. `path` is where it's published ("tools/degree-calculator/index.html"); `crumbs` are [name, path] pairs
  * after Home, the last being this page; `schema` is a list of extra JSON-LD objects; `updated` an ISO date.
  */
-export function page({ path, title, description, crumbs = [], body, schema = [], updated = null, ogType = "article", noindex = false, head = "", share = true, cta = true }) {
+/** a title that fits a search result (≤ 60 characters): drop "· Free", brackets, then "· Gradify", then cut at a colon or a word */
+export function fitTitle(t, max = 60) {
+  const steps = [(x) => x.replace(/ · Free(?= ·)/g, ""), (x) => x.replace(/ \([^)]*\)/g, ""), (x) => x.replace(/ · Gradify$/, ""), (x) => x.replace(/ \| Gradify$/, "")];
+  let x = String(t).trim();
+  for (const f of steps) { if (x.length <= max) return x; x = f(x).trim(); }
+  if (x.length <= max) return x;
+  const colon = x.indexOf(":"); if (colon >= 20 && colon <= max) return x.slice(0, colon);
+  return x.slice(0, max + 1).replace(/[\s,;:·–-]+\S*$/, "");
+}
+/** a meta description that isn't truncated (≤ 155 characters): whole sentences if possible, else whole words */
+export function fitDesc(d, max = 155) {
+  const x = String(d).replace(/\s+/g, " ").trim(); if (x.length <= max) return x;
+  const cut = x.slice(0, max), end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+  if (end >= 80) return cut.slice(0, end + 1);
+  return `${cut.slice(0, max - 1).replace(/[\s,;:·–-]+\S*$/, "")}…`;
+}
+
+export function page({ path, title: rawTitle, description: rawDesc, crumbs = [], body, schema = [], updated = null, ogType = "article", noindex = false, head = "", share = true, cta = true }) {
+  const title = fitTitle(rawTitle), description = fitDesc(rawDesc);
   const canonical = url(path);
   const trail = [["Home", ""], ...crumbs];
   const breadcrumbs = crumbs.length ? `<nav class="crumbs" aria-label="Breadcrumb"><ol>${trail.map(([n, p], i) => i === trail.length - 1 ? `<li aria-current="page">${esc(n)}</li>` : `<li><a href="/${esc(p)}">${esc(n)}</a></li>`).join("")}</ol></nav>` : "";
@@ -35,8 +53,9 @@ export function page({ path, title, description, crumbs = [], body, schema = [],
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  ${noindex ? '<meta name="robots" content="noindex">' : ""}
+  ${noindex ? '<meta name="robots" content="noindex, follow">' : ""}
   <link rel="canonical" href="${canonical}">
+  <link rel="alternate" type="application/rss+xml" title="Gradify: new study guides and tools" href="${ORIGIN}/feed.xml">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:type" content="${ogType}">
@@ -109,3 +128,12 @@ export const optIn = (offer = "Get our free 7-day active recall exam plan, and o
       <div class="optin-row"><label class="sr-only" for="optin-email">Email address</label><input id="optin-email" type="email" name="email" autocomplete="email" required placeholder="you@uni.ac.uk"><button type="submit" class="btn btn-primary lg"><span>Send it</span></button></div>
       <p class="optin-msg" role="status" aria-live="polite"></p>
     </form>`;
+
+/** "Jump to" pills for a long page: [[id, label]] */
+export const toc = (items) => items.length < 4 ? "" : `<nav class="toc no-print" aria-label="On this page"><span>Jump to:</span> ${items.map(([id, l]) => `<a href="#${id}">${esc(l)}</a>`).join("")}</nav>`;
+/** a section's key takeaway, with a copy button */
+export const takeaway = (text) => `<p class="takeaway"><b>Key takeaway:</b> <span>${text}</span> <button type="button" class="mini no-print" data-copy="${esc(text.replace(/<[^>]+>/g, ""))}">Copy</button></p>`;
+/** a "test yourself" prompt: the question, and the answer behind a reveal */
+export const selfTest = (q, a) => `<details class="self-test"><summary><b>Test yourself:</b> ${q} <span class="reveal">Reveal</span></summary><p>${a}</p></details>`;
+/** an id from a heading */
+export const slugId = (s) => String(s).toLowerCase().replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);

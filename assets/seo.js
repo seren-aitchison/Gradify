@@ -66,6 +66,11 @@ for (const b of $$("[data-print]")) b.addEventListener("click", () => {
   setTimeout(() => { delete html.dataset.print; }, 500);
 });
 
+// answers inside closed <details> (flashcards, FAQs, quiz answers) print too: open them for the printout only
+let opened = [];
+addEventListener("beforeprint", () => { opened = $$("details:not([open])"); opened.forEach((d) => { d.open = true; }); });
+addEventListener("afterprint", () => { opened.forEach((d) => { d.open = false; }); opened = []; });
+
 // ---------- embed mode (?embed=1): just the tool or deck, links open in a new tab ----------
 if (params.get("embed") === "1") {
   html.classList.add("embed");
@@ -91,10 +96,13 @@ export function stateOf(root) {
   const r = $$(".rows > .row", root).map((row) => Object.fromEntries($$("[name]", row).map((el) => [el.name, field(el)])));
   return { f, r };
 }
+/** "+10d" in an example means ten days from today, so examples with dates never go stale */
+export const relDate = (v, now = new Date()) => (typeof v === "string" && /^\+\d+d$/.test(v) ? new Date(now.getTime() + Number(v.slice(1, -1)) * 864e5).toISOString().slice(0, 10) : v);
 export function applyState(root, s) {
   if (!s) return;
-  for (const [k, v] of Object.entries(s.f || {})) { const el = root.querySelector(`[name="${k}"]:not(.row [name])`); if (el) { if (el.type === "checkbox") el.checked = Boolean(v); else el.value = v; } }
-  if (s.r && root.loadRows) root.loadRows(s.r);
+  // field by field, with a change event each, so a select that fills another (unit kind → units) runs first
+  for (const [k, v] of Object.entries(s.f || {})) { const el = root.querySelector(`[name="${k}"]:not(.row [name])`); if (el) { if (el.type === "checkbox") el.checked = Boolean(v); else el.value = relDate(v); el.dispatchEvent(new Event("change", { bubbles: true })); } }
+  if (s.r && root.loadRows) root.loadRows(s.r.map((r) => Object.fromEntries(Object.entries(r).map(([k, v]) => [k, relDate(v)]))));
   root.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
@@ -105,6 +113,8 @@ async function mountTools() {
     const mod = await import(`/assets/${root.dataset.mod || "study-tools"}.js`);
     mod.mount?.(root);
     const shared = params.get("s") && dec(params.get("s")); if (shared) applyState(root, shared);
+    for (const b of $$("[data-load-example]")) b.addEventListener("click", () => { applyState(root, JSON.parse(root.dataset.example)); root.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    if (root.dataset.bar === "off") continue;
     const bar = document.createElement("div"); bar.className = "tool-bar no-print";
     bar.innerHTML = `${root.dataset.example ? '<button type="button" class="ghost" data-x="example">Try an example</button>' : ""}<button type="button" class="ghost" data-x="reset">Reset</button><button type="button" class="ghost" data-x="copy">Copy summary</button><button type="button" class="ghost" data-x="link">Copy share link</button><button type="button" class="ghost" data-x="print">Print</button><button type="button" class="ghost" data-x="embed">Embed</button><span class="tool-msg" role="status" aria-live="polite"></span><textarea class="embed-code" rows="3" readonly hidden aria-label="Embed code"></textarea>`;
     root.append(bar);
@@ -133,7 +143,7 @@ for (const b of $$("[data-pin]")) {
   b.addEventListener("click", () => sync(togglePin(path, title())));
 }
 if (!html.classList.contains("embed")) remember(location.pathname, title());
-for (const el of $$("[data-resume]")) el.innerHTML = resumeHtml(esc);
+for (const el of $$("[data-resume]")) el.innerHTML = resumeHtml(esc, location.pathname);
 badgeTitle();
 
 // ---------- topic pages ----------

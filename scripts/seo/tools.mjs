@@ -1,10 +1,20 @@
 // Free study calculators (getgradify.com/tools/…) and the single-purpose "notes → study material" landing pages.
 // Each tool works in the browser with no account (assets/study-tools.js), and each page answers its question in the
 // first two sentences, so search snippets and AI assistants can quote it.
-import { faq, related, optIn } from "./shell.mjs";
+import { faq, related, optIn, esc } from "./shell.mjs";
+import { TOOLS2, CATS } from "./tools2.mjs";
 
 const APP = (name) => ({ "@type": "WebApplication", name, applicationCategory: "EducationalApplication", operatingSystem: "Web", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" }, publisher: { "@id": "https://getgradify.com/#org" } });
-const MORE_TOOLS = (except) => related("More free study tools", TOOLS.filter((t) => t.slug !== except).map((t) => [`tools/${t.slug}/`, t.name, t.line]));
+const MORE_TOOLS = (except) => related("More free study tools", TOOLS.filter((t) => t.slug !== except).map((t) => [`tools/${t.slug}/`, t.name, t.line]).concat([["tools/", "All free study tools", `${TOOLS.length + TOOLS2.length} calculators, planners and timers`]]));
+// for the hub (filter chips, "Best when…") and the action bar's "Try an example"
+const META = {
+  "degree-classification-calculator": ["grades", "Best in second and final year", { f: { w3: "60" }, r: [{ mark: "62", credits: "60", year: "2" }, { mark: "58", credits: "60", year: "2" }, { mark: "68", credits: "80", year: "3" }, { mark: "71", credits: "40", year: "3" }] }],
+  "final-grade-calculator": ["grades", "Best the week before a final", { f: { current: "65", weight: "40", target: "70" } }],
+  "weighted-grade-calculator": ["grades", "Best mid-module, with some marks back", { r: [{ score: "72", weight: "30" }, { score: "58", weight: "20" }] }],
+  "gpa-calculator": ["grades", "Best for US-style 4.0 grades", { r: [{ grade: "A", credits: "3" }, { grade: "B+", credits: "4" }, { grade: "A-", credits: "3" }] }],
+  "exam-countdown": ["plan", "Best for any single exam", { f: { label: "Organic chemistry final", exam: "+42d", hours: "3", rest: "1" } }],
+  "spaced-repetition-schedule": ["plan", "Best right after you learn a topic", { f: { topic: "Krebs cycle", start: "+0d", exam: "+40d" } }],
+};
 
 export const TOOLS = [
   {
@@ -82,7 +92,7 @@ export const TOOLS = [
       <div class="grid"><div><label for="label">Exam</label><input id="label" name="label" type="text" maxlength="40" placeholder="e.g. Organic chemistry final"></div><div><label for="exam">Exam date</label><input id="exam" name="exam" type="date"></div><div><label for="hours">Hours a day</label><input id="hours" name="hours" type="number" min="0.5" max="14" step="0.5" value="3" inputmode="decimal"></div><div><label for="rest">Rest days a week</label><select id="rest" name="rest"><option>0</option><option selected>1</option><option>2</option></select></div></div>
       <div class="result" role="status" aria-live="polite"></div>
       <div class="actions"><button type="button" class="ghost" data-card>Download a story card</button></div>
-      <h3>Put this countdown on your own site, blog or Notion</h3>
+      <h2 class="h3">Put this countdown on your own site, blog or Notion</h2>
       <label for="embed">Embed code</label><textarea id="embed" rows="4" readonly data-embed></textarea>
       <div class="actions"><button type="button" class="ghost" data-copy-embed>Copy embed code</button></div>
     </div>
@@ -107,16 +117,26 @@ export const TOOLS = [
   },
 ];
 
+for (const t of TOOLS) [t.cat, t.best, t.example] = META[t.slug];
+
 export function toolPages() {
   const pages = TOOLS.map((t) => {
     const f = faq(t.faq);
+    const ex = ` data-example='${JSON.stringify(t.example).replace(/'/g, "&#39;")}'`;
+    const body = t.body().replace(/(<div class="tool" data-tool="[a-z]+")/, `<p class="tool-tools no-print"><button type="button" class="mini" data-pin>☆ Pin this tool</button> <button type="button" class="mini" data-focus>Focus mode</button> <span class="best">${esc(t.best)}</span></p>\n    $1${ex}`)
+      .replace(/(<h2>Worked example<\/h2>\s*<p>[\s\S]*?<\/p>)/, '$1<p class="no-print"><button type="button" class="mini" data-load-example>Load an example into the calculator</button></p>');
     return { path: `tools/${t.slug}/index.html`, title: t.title, description: t.description, crumbs: [["Free study tools", "tools/"], [t.name, `tools/${t.slug}/`]], schema: [APP(t.name), f.schema], updated: "2026-11-23",
-      body: `${t.body()}${f.html}${optIn()}${MORE_TOOLS(t.slug)}` };
+      body: `${body}${f.html}${optIn()}${MORE_TOOLS(t.slug)}<p class="hub-back"><a href="/tools/">← All free study tools</a></p>` };
   });
-  pages.push({ path: "tools/index.html", title: "Free Study Tools and Grade Calculators · Gradify", description: "Free tools for students: UK degree classification, final grade needed, weighted grades, GPA, exam countdown and a spaced repetition schedule. No account, nothing to install.", crumbs: [["Free study tools", "tools/"]], ogType: "website",
-    schema: [{ "@type": "CollectionPage", name: "Free study tools", hasPart: TOOLS.map((t) => ({ "@type": "WebApplication", name: t.name, url: `https://getgradify.com/tools/${t.slug}/` })) }],
-    body: `<h1>Free study tools</h1><p class="lead">Quick tools for the questions students ask the night before a deadline. All free, no account, and nothing you type leaves your browser.</p>
-    <ul class="cards">${TOOLS.map((t) => `<li><a href="/tools/${t.slug}/">${t.name}</a><span>${t.line}</span></li>`).join("")}</ul>
+  const ALL = [...TOOLS, ...TOOLS2];
+  pages.push({ path: "tools/index.html", title: "Free Study Tools, Planners and Grade Calculators · Gradify", description: `${ALL.length} free tools for students: grade and degree calculators, cram and deadline planners, a study timer, citation helper and more. No account.`, crumbs: [["Free study tools", "tools/"]], ogType: "website",
+    schema: [{ "@type": "CollectionPage", name: "Free study tools", hasPart: ALL.map((t) => ({ "@type": "WebApplication", name: t.name, url: `https://getgradify.com/tools/${t.slug}/` })) }],
+    body: `<h1>Free study tools</h1><p class="answer">${ALL.length} free tools for the questions students ask the night before a deadline: what mark do I need, what do I revise first, how do I fit it all in. No account, and nothing you type leaves your browser.</p>
+    <div data-resume></div>
+    <div data-tool-hub>
+    <div class="chips no-print" role="group" aria-label="Filter tools"><button type="button" class="chip on" data-cat="">All</button>${Object.entries(CATS).map(([k, v]) => `<button type="button" class="chip" data-cat="${k}">${v}</button>`).join("")}</div>
+    ${Object.entries(CATS).map(([k, v]) => `<section data-cat-sec="${k}"><h2>${v}</h2><ul class="cards">${ALL.filter((t) => t.cat === k).map((t) => `<li data-cat="${k}"><a href="/tools/${t.slug}/">${esc(t.name)}</a><span>${esc(t.line)}</span><small class="best">${esc(t.best)}</small></li>`).join("")}</ul></section>`).join("")}
+    </div>
     <h2>Turn notes into study material</h2><ul class="cards">${LANDINGS.map((l) => `<li><a href="/${l.slug}/">${l.name}</a><span>${l.line}</span></li>`).join("")}</ul>
     <h2>Printable templates</h2><p>Revision timetables, Cornell notes and trackers to print or save as PDF: <a href="/templates/">see the templates</a>.</p>` });
   // the countdown widget other sites embed (not for search: the tool page is)
@@ -175,6 +195,7 @@ export function landingPages() {
       body: `<h1>${l.h1}</h1><p class="answer">${l.answer}</p>
     <p><a class="btn btn-primary lg" href="${l.cta[0]}"><span>${l.cta[1]}</span> <span aria-hidden="true">→</span></a> <small>Free · no account needed to try it</small></p>
     <h2>How it works</h2><ol>${l.steps.map(([n, t]) => `<li><b>${n}.</b> ${t}</li>`).join("")}</ol>
+    <h2>Before and after</h2><div class="before-after"><div><b>Before</b><ul><li>60 pages of lecture PDFs</li><li>AI summaries you can't check</li><li>Re-reading and highlighting</li></ul></div><div><b>After</b><ul><li>Flashcards, each linked to the line it came from</li><li>A mind map of the topic</li><li>A 60-second recall drill and reviews timed to your exam</li></ul></div></div>
     <h2>Why it's different</h2><p>${l.why}</p>
     <h2>Built for your course</h2><p>Works for GCSE, A level (AQA, OCR, Edexcel), IB and university modules, from first-year biochemistry to postgraduate law. Gradify also has free courses in 30+ subjects if you want ready-made lessons: <a href="/explore.html">explore them</a>.</p>
     ${f.html}${related("Also useful", LANDINGS.filter((x) => x.slug !== l.slug).map((x) => [`${x.slug}/`, x.name, x.line]).concat([["guides/active-recall/", "The complete guide to active recall", "How to revise from the cards you make"]]))}`,

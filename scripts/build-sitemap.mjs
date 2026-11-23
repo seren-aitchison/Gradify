@@ -1,9 +1,9 @@
 // sitemap.xml for search engines: the homepage, the privacy and terms pages and every page of each live or beta site
 // (kit/core/sites.js status). Coming-soon sites stay out until they have content worth finding.
 //   node scripts/build-sitemap.mjs     writes sitemap.xml (tests/launch.test.mjs checks it's up to date)
-import { readdir, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile } from "node:fs/promises";
 import { SITES, slugOf } from "../kit/core/site.js";
-import { SEO_FOLDERS } from "./seo/folders.mjs";
+import { SEO_FOLDERS, SEO_SUBSITE_FILES } from "./seo/folders.mjs";
 
 const root = new URL("../", import.meta.url), ORIGIN = "https://getgradify.com";
 // tool pages every site shares; the copies on getgradify.com itself are the ones to index
@@ -15,7 +15,10 @@ async function pagesIn(dir) {
     if (e.isDirectory()) out.push(...(await pagesIn(`${dir}${e.name}/`)));
     else if (e.name.endsWith(".html") && !SHARED.has(e.name)) out.push(`${dir}${e.name}`);
   }
-  return out;
+  // pages that ask not to be indexed (thin generated pages, widgets) stay out of the sitemap
+  const keep = [];
+  for (const p of out) if (!/<meta name="robots" content="noindex/.test(await readFile(new URL(p, root), "utf8"))) keep.push(p);
+  return keep;
 }
 
 export async function sitemapUrls() {
@@ -23,6 +26,7 @@ export async function sitemapUrls() {
   for (const s of SITES.filter((x) => x.built && ["live", "beta"].includes(x.status))) urls.push(...(await pagesIn(`${slugOf(s)}/`)).sort());
   // the search pages (scripts/build-seo.mjs), apart from the countdown widget other sites embed (noindex)
   for (const f of SEO_FOLDERS) urls.push(...(await pagesIn(`${f}/`)).filter((p) => !p.endsWith("/embed.html")).sort());
+  for (const p of SEO_SUBSITE_FILES) if (p.endsWith(".html") && !urls.includes(p)) urls.push(p);
   return urls.map((u) => `${ORIGIN}/${u.replace(/(^|\/)index\.html$/, "$1")}`);
 }
 

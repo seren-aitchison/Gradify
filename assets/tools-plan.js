@@ -217,7 +217,7 @@ const TOOLS = {
     const row = () => `<div class="row"><div><label>Topic</label><input name="topic" maxlength="60"></div><div><label>Exam weight 1–5</label><input name="weight" type="number" min="1" max="5" value="3"></div><div><label>Confidence 1–5</label><input name="conf" type="number" min="1" max="5" value="3"></div><button type="button" class="icon" data-del aria-label="Remove this topic">✕</button></div>`;
     rowsTool(root, "prioritise", row, val, (rows) => {
       const p = prioritise(rows), li = (l) => (l.length ? `<ul>${l.map((r) => `<li>${esc(r.topic)}</li>`).join("")}</ul>` : "<p>None.</p>");
-      out(root).innerHTML = `<h3>1. Urgent, high-yield: start here</h3>${li(p.first)}<h3>2. Build confidence next</h3>${li(p.next)}<h3>3. Quick polish later</h3>${li(p.later)}`;
+      out(root).innerHTML = `<h2 class="h3">1. Urgent, high-yield: start here</h2>${li(p.first)}<h2 class="h3">2. Build confidence next</h2>${li(p.next)}<h2 class="h3">3. Quick polish later</h2>${li(p.later)}`;
       setNext(root, p.first.length ? `<a href="/tools/cram-planner/">plan the hours for "${esc(p.first[0].topic)}" and the rest</a>.` : "");
     });
   },

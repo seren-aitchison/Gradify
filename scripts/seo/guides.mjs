@@ -2,6 +2,7 @@
 // up to it, a balanced "best study tools" comparison, and seasonal guides published ahead of exam season. Each opens
 // with a two-sentence answer, carries a visible "Last updated" date and an author, and links to the glossary.
 import { faq, related, optIn, ORG } from "./shell.mjs";
+import { GUIDES2, GROUPS } from "./guides2.mjs";
 
 const AUTHOR = { "@type": "Organization", "@id": "https://getgradify.com/#org", name: "Gradify", url: "https://getgradify.com/about.html" };
 const byline = `<p class="byline">By the <a href="/about.html">Gradify team</a> · Based on the learning research named in the text</p>`;
@@ -135,8 +136,10 @@ export function guidePages() {
     };
   });
   pages.push({ path: "guides/index.html", title: "Study Guides: Active Recall, Flashcards and Revision Plans · Gradify", description: "Free, research-backed study guides: active recall, spaced repetition, making flashcards, revision schedules before finals and the best study tools for university.", crumbs: [["Study guides", "guides/"]], ogType: "website",
-    schema: [{ "@type": "CollectionPage", name: "Study guides", hasPart: GUIDES.map((g) => ({ "@type": "Article", headline: g.h1, url: `https://getgradify.com/guides/${g.slug}/` })) }],
-    body: `<h1>Study guides</h1><p class="lead">How to revise in less time, from the research on memory. Start with the <a href="/guides/active-recall/">complete guide to active recall</a>.</p><ul class="cards">${GUIDES.map((g) => `<li><a href="/guides/${g.slug}/">${g.h1}</a><span>${g.answer.split(". ")[0]}.</span></li>`).join("")}</ul>
+    schema: [{ "@type": "CollectionPage", name: "Study guides", hasPart: [...GUIDES, ...GUIDES2].map((g) => ({ "@type": "Article", headline: g.h1, url: `https://getgradify.com/guides/${g.slug}/` })) }],
+    body: `<h1>Study guides</h1><p class="lead">How to revise in less time, from the research on memory. Start with the <a href="/guides/active-recall/">complete guide to active recall</a>.</p><h2>Active recall and revision</h2><ul class="cards">${GUIDES.map((g) => `<li><a href="/guides/${g.slug}/">${g.h1}</a><span>${g.answer.split(". ")[0]}.</span></li>`).join("")}</ul>
+    ${Object.entries(GROUPS).map(([k, v]) => `<h2>${v}</h2><ul class="cards">${GUIDES2.filter((g) => g.group === k).map((g) => `<li><a href="/guides/${g.slug}/">${g.h1}</a><span>${g.answer.split(". ")[0]}.</span></li>`).join("")}</ul>`).join("")}
+    <h2>Concept comparisons</h2><p>Active recall vs spaced repetition, molarity vs molality, correlation vs causation and more: <a href="/vs/">see them all</a>.</p>
     <h2>Look up a term</h2><p>Spaced repetition, the forgetting curve, the Leitner system and more, in plain English: <a href="/glossary/">the study glossary</a>.</p>` });
   return pages;
 }

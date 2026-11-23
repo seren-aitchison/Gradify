@@ -61,8 +61,8 @@ export function badgeTitle(doc = document) {
 }
 
 /** the "pick up where you left off" strip: reviews due, low-confidence topics, recent pages and pinned tools */
-export function resumeHtml(esc) {
-  const d = due().slice(0, 3), r = recent().slice(0, 4), p = pins().slice(0, 4), s = streak();
+export function resumeHtml(esc, here = "") {
+  const d = due().slice(0, 3), r = recent().filter((x) => x.path !== here).slice(0, 4), p = pins().slice(0, 4), s = streak();
   if (!d.length && !r.length && !p.length) return "";
   const a = (x) => `<a href="${esc(x.path)}">${esc(x.title)}</a>`;
   return `<div class="resume">

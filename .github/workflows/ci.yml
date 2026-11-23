@@ -154,3 +154,7 @@ jobs:
         continue-on-error: true
         run: |
           git fetch --no-tags --depth=1 origin "${{ github.event.before }}" 2>/dev/null && node scripts/indexnow.mjs --since "${{ github.event.before }}" || echo "No previous deploy to compare with; skipping IndexNow."
+      # tell feed readers and Google (WebSub) that the RSS feed changed. Best effort, like IndexNow.
+      - name: Ping WebSub with the RSS feed
+        continue-on-error: true
+        run: curl -fsS -X POST -d "hub.mode=publish" --data-urlencode "hub.url=https://getgradify.com/feed.xml" https://pubsubhubbub.appspot.com/ || echo "WebSub ping failed; not fatal."

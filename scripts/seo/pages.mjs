@@ -1,5 +1,6 @@
 // Comparison pages, the study glossary, printable templates, and the About and Ambassadors pages.
 import { faq, related, optIn, esc, ORG } from "./shell.mjs";
+import { ALTS } from "./guides2.mjs";
 
 const U = "2026-11-23";
 
@@ -48,7 +49,7 @@ export function comparePages() {
     };
   });
   pages.push({ path: "compare/index.html", title: "Compare Study Tools: Gradify vs Quizlet, Anki and More · Gradify", description: "Honest comparisons of Gradify with Quizlet, Anki and other study tools, with where each one wins.", crumbs: [["Compare", "compare/"]], ogType: "website",
-    body: `<h1>Compare study tools</h1><p class="lead">Honest comparisons, including where the other tool is better.</p><ul class="cards">${COMPARE.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}<li><a href="/guides/best-study-tools-for-university-students/">The 7 best study tools for university students</a><span>Anki, Quizlet, Notion, RemNote, Forest, NotebookLM and Gradify.</span></li></ul>` });
+    body: `<h1>Compare study tools</h1><p class="lead">Honest comparisons, including where the other tool is better.</p><ul class="cards">${COMPARE.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}${ALTS.map((c) => `<li><a href="/compare/${c.slug}/">${c.name}</a><span>${c.answer.split(". ")[0]}.</span></li>`).join("")}<li><a href="/guides/best-study-tools-for-university-students/">The 7 best study tools for university students</a><span>Anki, Quizlet, Notion, RemNote, Forest, NotebookLM and Gradify.</span></li></ul>` });
   return pages;
 }
 
