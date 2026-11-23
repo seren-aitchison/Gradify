@@ -1,0 +1,35 @@
+{
+ "updated": "2026-11-23",
+ "pilot": "biology → England, years 1–11",
+ "phases": {
+  "1-audit": "done",
+  "2-inventory": "done",
+  "3-requirements": "done: 903 requirements from 6 documents",
+  "4-lesson-mapping": "done: 903 requirements judged, 1661 lesson links",
+  "5-resource-mapping": "done: inheritance with 991 resources matched specifically and 107 flagged above stage",
+  "6-coverage": "done (generated)",
+  "7-implementation": "done: data, scripts, tests; no runtime or database changes",
+  "review": "not started: needs a subject specialist to review every link (status stays ai-drafted until then)"
+ },
+ "batches": {
+  "Batch 1: national curriculum, key stages 1–3 (Biology)": 77,
+  "Batch 2: national curriculum, key stage 4 (Biology) and working scientifically (all key stages; science-wide)": 121,
+  "Batch 3: AQA GCSE Biology (8461)": 97,
+  "Batch 4: Pearson Edexcel GCSE Biology (1BI0)": 165,
+  "Batch 5: OCR GCSE Biology A (Gateway Science) (J247)": 129,
+  "Batch 6: OCR GCSE Biology B (Twenty First Century Science) (J257)": 149,
+  "Batch 7: WJEC Eduqas GCSE Biology": 165
+ },
+ "notExtracted": [
+  "OCR J247 topic B7 (Practical skills)",
+  "OCR J257 chapters B7 (Ideas about Science) and B8 (Practical skills)",
+  "Exam-board working-scientifically and mathematical-skills appendices",
+  "GCSE Combined Science specifications as separate documents (shared content is flagged per statement for AQA, Edexcel and OCR J257 only)"
+ ],
+ "next": [
+  "Specialist review of the mapping (start with low-confidence links and the review list from build-mapping.mjs --review)",
+  "Decide whether Biology's entry in kit/curriculum/coverage.js should move from the default to \"mapped\"",
+  "Write lessons for the gap themes in the coverage report",
+  "Repeat for the next subject using the same scripts"
+ ]
+}

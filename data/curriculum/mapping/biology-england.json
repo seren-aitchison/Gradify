@@ -12,7 +12,7 @@
   "requirements": 903,
   "judged": 903,
   "pending": 0,
-  "links": 1651
+  "links": 1661
  },
  "requirements": {
   "eng-nc-y1-plants-01": {
@@ -8283,6 +8283,15 @@
    "note": null
   },
   {
+   "requirement": "eng-nc-ks4-health-disease-and-the-development-of-medicines-05",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the roles of the main immune cells\"",
+   "evidenceOverlap": 2,
+   "note": null
+  },
+  {
    "requirement": "eng-nc-ks4-health-disease-and-the-development-of-medicines-06",
    "lesson": "u09-19",
    "match": "full",
@@ -10575,6 +10584,15 @@
    "confidence": "high",
    "evidence": "Objective: \"Explain how antibodies help destroy pathogens\"",
    "evidenceOverlap": 4,
+   "note": "Includes physical barriers, phagocytosis and antibodies; antitoxins are not named."
+  },
+  {
+   "requirement": "eng-aqa8461-4.3.1.6",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 7,
    "note": "Includes physical barriers, phagocytosis and antibodies; antitoxins are not named."
   },
   {
@@ -13089,6 +13107,15 @@
    "note": null
   },
   {
+   "requirement": "eng-edx1bi0-5.12",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers: skin, mucus, cilia, stomach acid and enzymes such as lysozyme in tears.\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
    "requirement": "eng-edx1bi0-5.13",
    "lesson": "u10-03",
    "match": "full",
@@ -13113,6 +13140,15 @@
    "confidence": "high",
    "evidence": "Notes: \"Memory B and T cells survive after infection, giving faster and stronger secondary responses due to greater numbers, easier activation and matured antibodies; memory can last for life, though some pathogens evade it…\"",
    "evidenceOverlap": 5,
+   "note": null
+  },
+  {
+   "requirement": "eng-edx1bi0-5.13",
+   "lesson": "u07-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 4,
    "note": null
   },
   {
@@ -16194,6 +16230,15 @@
    "note": null
   },
   {
+   "requirement": "eng-ocrj247-B6.3k",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
    "requirement": "eng-ocrj247-B6.3l",
    "lesson": "u10-03",
    "match": "full",
@@ -16218,6 +16263,15 @@
    "confidence": "high",
    "evidence": "Objective: \"Explain how long immune memory lasts\"",
    "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj247-B6.3l",
+   "lesson": "u07-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the roles of the main immune cells\"",
+   "evidenceOverlap": 2,
    "note": null
   },
   {
@@ -16941,6 +16995,15 @@
    "note": null
   },
   {
+   "requirement": "eng-ocrj257-B2.2.1",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 4,
+   "note": null
+  },
+  {
    "requirement": "eng-ocrj257-B2.2.2",
    "lesson": "u07-15",
    "match": "full",
@@ -16983,6 +17046,15 @@
    "confidence": "high",
    "evidence": "Objective: \"Explain how long immune memory lasts\"",
    "evidenceOverlap": 1,
+   "note": null
+  },
+  {
+   "requirement": "eng-ocrj257-B2.2.4",
+   "lesson": "u07-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Objective: \"Describe the roles of the main immune cells\"",
+   "evidenceOverlap": 2,
    "note": null
   },
   {
@@ -19443,6 +19515,15 @@
    "note": null
   },
   {
+   "requirement": "eng-eduqas-3.2c",
+   "lesson": "u07-30",
+   "match": "full",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 6,
+   "note": null
+  },
+  {
    "requirement": "eng-eduqas-3.2d",
    "lesson": "u10-03",
    "match": "full",
@@ -19476,6 +19557,15 @@
    "confidence": "high",
    "evidence": "Notes: \"Each antibody binds a specific epitope, a small region of an antigen.\"",
    "evidenceOverlap": 3,
+   "note": null
+  },
+  {
+   "requirement": "eng-eduqas-3.2d",
+   "lesson": "u07-30",
+   "match": "partial",
+   "confidence": "medium",
+   "evidence": "Notes: \"Barriers such as skin and mucus block pathogens, innate immunity provides rapid non-specific defence through phagocytes and inflammation, and adaptive immunity uses B cells, antibodies and T cells for specific…\"",
+   "evidenceOverlap": 4,
    "note": null
   },
   {
