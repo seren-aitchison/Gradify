@@ -7,29 +7,29 @@
   "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 1428,
-  "plannedVisual": 934,
-  "plannedDiagram": 835,
-  "plannedLab": 305,
-  "excluded": 494,
-  "notAssessed": 8551,
-  "withDiagram": 839,
-  "withLab": 846,
-  "withBoth": 210,
-  "withAny": 1475,
+  "assessed": 1575,
+  "plannedVisual": 1001,
+  "plannedDiagram": 891,
+  "plannedLab": 331,
+  "excluded": 574,
+  "notAssessed": 8404,
+  "withDiagram": 894,
+  "withLab": 866,
+  "withBoth": 244,
+  "withAny": 1516,
   "plannedNotDelivered": 0,
-  "placements": 863,
+  "placements": 918,
   "withInteractiveDiagram": 272,
   "withSimulation": 397,
-  "withLabActivity": 198
+  "withLabActivity": 230
  },
  "diagrams": {
-  "manifest": 789,
-  "uniquePlaced": 789,
-  "placements": 863,
+  "manifest": 844,
+  "uniquePlaced": 844,
+  "placements": 918,
   "reused": 67,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":774},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":774},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":829},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":829},
   "failing": [],
   "unplaced": []
  },
@@ -558,18 +558,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 210,
-    "plannedVisual": 129,
-    "plannedDiagram": 105,
-    "plannedLab": 49,
-    "excluded": 81,
-    "notAssessed": 867,
-    "withDiagram": 105,
+    "assessed": 285,
+    "plannedVisual": 162,
+    "plannedDiagram": 138,
+    "plannedLab": 54,
+    "excluded": 123,
+    "notAssessed": 792,
+    "withDiagram": 138,
     "withLab": 102,
-    "withBoth": 26,
-    "withAny": 181,
+    "withBoth": 31,
+    "withAny": 209,
     "plannedNotDelivered": 0,
-    "placements": 105,
+    "placements": 138,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -585,21 +585,21 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 1127,
-    "plannedVisual": 721,
-    "plannedDiagram": 648,
-    "plannedLab": 254,
-    "excluded": 406,
-    "notAssessed": 982,
-    "withDiagram": 651,
-    "withLab": 322,
-    "withBoth": 184,
-    "withAny": 789,
+    "assessed": 1199,
+    "plannedVisual": 755,
+    "plannedDiagram": 671,
+    "plannedLab": 275,
+    "excluded": 444,
+    "notAssessed": 910,
+    "withDiagram": 673,
+    "withLab": 342,
+    "withBoth": 213,
+    "withAny": 802,
     "plannedNotDelivered": 0,
-    "placements": 671,
+    "placements": 693,
     "withInteractiveDiagram": 85,
     "withSimulation": 228,
-    "withLabActivity": 9
+    "withLabActivity": 41
    }
   },
   {
@@ -4420,7 +4420,7 @@
    "declaredSite": "SciGradify",
    "servedBy": ["SciGradify"],
    "plan": ["kit/diagrams/plans/chemistry.mjs"],
-   "labs": 30,
+   "labs": 31,
    "totals": {
     "lessons": 460,
     "written": 410,
@@ -4431,14 +4431,14 @@
     "excluded": 45,
     "notAssessed": 0,
     "withDiagram": 361,
-    "withLab": 107,
-    "withBoth": 103,
+    "withLab": 127,
+    "withBoth": 123,
     "withAny": 365,
     "plannedNotDelivered": 0,
     "placements": 362,
     "withInteractiveDiagram": 54,
     "withSimulation": 52,
-    "withLabActivity": 1
+    "withLabActivity": 33
    },
    "units": [
     {
@@ -5911,14 +5911,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
-      "withLab": 10,
-      "withBoth": 10,
+      "withLab": 17,
+      "withBoth": 17,
       "withAny": 22,
       "plannedNotDelivered": 0,
       "placements": 22,
       "withInteractiveDiagram": 9,
       "withSimulation": 0,
-      "withLabActivity": 1
+      "withLabActivity": 11
      },
      "lessons": [
       {
@@ -5935,19 +5935,26 @@
        "title": "Hydrocarbons",
        "written": true,
        "diagrams": [{"id":"chem-hydrocarbon-families","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-hydrocarbon-families"]}
       },
       {"id":"u12-04","title":"Alkanes","written":true,"diagrams":[{"id":"chem-alkanes-series","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkanes-series"]}},
       {"id":"u12-05","title":"Alkenes","written":true,"diagrams":[{"id":"chem-alkenes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkenes"]}},
-      {"id":"u12-06","title":"Alkynes","written":true,"diagrams":[{"id":"chem-alkynes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alkynes"]}},
-      {"id":"u12-07","title":"Aromatic compounds","written":true,"diagrams":[{"id":"chem-aromatics","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-aromatics"]}},
+      {"id":"u12-06","title":"Alkynes","written":true,"diagrams":[{"id":"chem-alkynes","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-alkynes"]}},
+      {
+       "id": "u12-07",
+       "title": "Aromatic compounds",
+       "written": true,
+       "diagrams": [{"id":"chem-aromatics","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-aromatics"]}
+      },
       {
        "id": "u12-08",
        "title": "Benzene structure",
        "written": true,
        "diagrams": [{"id":"chem-benzene-structure","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-benzene-structure"]}
       },
       {
@@ -5955,16 +5962,23 @@
        "title": "Functional groups",
        "written": true,
        "diagrams": [{"id":"chem-functional-groups","status":"validated"}],
-       "labs": ["functional-groups"],
+       "labs": ["functional-groups","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-functional-groups"],"labs":["functional-groups"]}
       },
-      {"id":"u12-10","title":"IUPAC nomenclature","written":true,"diagrams":[{"id":"chem-iupac-naming","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-iupac-naming"]}},
+      {
+       "id": "u12-10",
+       "title": "IUPAC nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-iupac-naming","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-iupac-naming"]}
+      },
       {
        "id": "u12-11",
        "title": "Structural isomerism",
        "written": true,
        "diagrams": [{"id":"chem-structural-isomers","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-structural-isomers"]}
       },
       {
@@ -5980,7 +5994,7 @@
        "title": "Constitutional isomers",
        "written": true,
        "diagrams": [{"id":"chem-constitutional-c3h8o","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-constitutional-c3h8o"]}
       },
       {
@@ -5996,7 +6010,7 @@
        "title": "Chirality",
        "written": true,
        "diagrams": [{"id":"chem-chirality","status":"validated"}],
-       "labs": ["chirality"],
+       "labs": ["chirality","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-chirality"],"labs":["chirality"]}
       },
       {
@@ -6017,7 +6031,14 @@
        "plan": {"verdict":"diagram+lab","diagrams":["chem-optical-activity"],"labs":["chirality"]}
       },
       {"id":"u12-19","title":"R and S nomenclature","written":true,"diagrams":[{"id":"chem-r-s","status":"validated"}],"labs":["rs"],"plan":{"verdict":"diagram+lab","diagrams":["chem-r-s"],"labs":["rs"]}},
-      {"id":"u12-20","title":"E and Z nomenclature","written":true,"diagrams":[{"id":"chem-e-z","status":"validated"}],"labs":["ez"],"plan":{"verdict":"diagram+lab","diagrams":["chem-e-z"],"labs":["ez"]}},
+      {
+       "id": "u12-20",
+       "title": "E and Z nomenclature",
+       "written": true,
+       "diagrams": [{"id":"chem-e-z","status":"validated"}],
+       "labs": ["ez","organic-notes"],
+       "plan": {"verdict":"diagram+lab","diagrams":["chem-e-z"],"labs":["ez"]}
+      },
       {
        "id": "u12-21",
        "title": "Functional group interconversion",
@@ -6050,14 +6071,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 27,
-      "withLab": 10,
-      "withBoth": 10,
+      "withLab": 17,
+      "withBoth": 17,
       "withAny": 27,
       "plannedNotDelivered": 0,
       "placements": 28,
       "withInteractiveDiagram": 5,
       "withSimulation": 5,
-      "withLabActivity": 0
+      "withLabActivity": 14
      },
      "lessons": [
       {
@@ -6065,7 +6086,7 @@
        "title": "Curly arrow notation",
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
@@ -6098,7 +6119,7 @@
        "title": "Radical intermediates",
        "written": true,
        "diagrams": [{"id":"chem-radical-chlorination","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-radical-chlorination"]}
       },
       {
@@ -6114,7 +6135,7 @@
        "title": "Substitution reactions",
        "written": true,
        "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
       },
       {
@@ -6122,7 +6143,7 @@
        "title": "SN1 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-sn1-mechanism","status":"ai-reviewed"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn1-mechanism"],"labs":["sn1-sn2"]}
       },
       {
@@ -6130,26 +6151,40 @@
        "title": "SN2 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-sn2-mechanism","status":"approved"}],
-       "labs": ["sn1-sn2"],
+       "labs": ["organic-notes","sn1-sn2"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-sn2-mechanism"],"labs":["sn1-sn2"]}
       },
       {"id":"u13-11","title":"Elimination reactions","written":true,"diagrams":[{"id":"chem-e2-mechanism","status":"ai-reviewed"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e2-mechanism"]}},
-      {"id":"u13-12","title":"E1 mechanisms","written":true,"diagrams":[{"id":"chem-e1-mechanism","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-e1-mechanism"]}},
+      {
+       "id": "u13-12",
+       "title": "E1 mechanisms",
+       "written": true,
+       "diagrams": [{"id":"chem-e1-mechanism","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-e1-mechanism"]}
+      },
       {
        "id": "u13-13",
        "title": "E2 mechanisms",
        "written": true,
        "diagrams": [{"id":"chem-e2-mechanism","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-e2-mechanism"],"labs":["curly-arrows"]}
       },
-      {"id":"u13-14","title":"Addition reactions","written":true,"diagrams":[{"id":"chem-hbr-propene","status":"approved"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-hbr-propene"]}},
+      {
+       "id": "u13-14",
+       "title": "Addition reactions",
+       "written": true,
+       "diagrams": [{"id":"chem-hbr-propene","status":"approved"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-hbr-propene"]}
+      },
       {
        "id": "u13-15",
        "title": "Electrophilic addition",
        "written": true,
        "diagrams": [{"id":"chem-hbr-propene","status":"approved"},{"id":"chem-br2-bromonium","status":"approved"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-hbr-propene","chem-br2-bromonium"],"labs":["curly-arrows"]}
       },
       {
@@ -6157,7 +6192,7 @@
        "title": "Nucleophilic addition",
        "written": true,
        "diagrams": [{"id":"chem-nucleophilic-addition","status":"ai-reviewed"}],
-       "labs": ["curly-arrows"],
+       "labs": ["curly-arrows","organic-notes"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-nucleophilic-addition"],"labs":["curly-arrows"]}
       },
       {
@@ -6165,7 +6200,7 @@
        "title": "Electrophilic aromatic substitution",
        "written": true,
        "diagrams": [{"id":"chem-nitration","status":"ai-reviewed"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-nitration"]}
       },
       {"id":"u13-18","title":"Nucleophilic aromatic substitution","written":true,"diagrams":[{"id":"chem-snar","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-snar"]}},
@@ -6177,7 +6212,14 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-oxidation-alcohols"]}
       },
-      {"id":"u13-20","title":"Reduction reactions","written":true,"diagrams":[{"id":"chem-nabh4-reduction","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nabh4-reduction"]}},
+      {
+       "id": "u13-20",
+       "title": "Reduction reactions",
+       "written": true,
+       "diagrams": [{"id":"chem-nabh4-reduction","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-nabh4-reduction"]}
+      },
       {
        "id": "u13-21",
        "title": "Condensation reactions",
@@ -6193,11 +6235,18 @@
        "title": "Reaction selectivity",
        "written": true,
        "diagrams": [{"id":"chem-selectivity-overview","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-selectivity-overview"]}
       },
       {"id":"u13-25","title":"Chemoselectivity","written":true,"diagrams":[{"id":"chem-chemoselectivity","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-chemoselectivity"]}},
-      {"id":"u13-26","title":"Regioselectivity","written":true,"diagrams":[{"id":"chem-regioselectivity","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-regioselectivity"]}},
+      {
+       "id": "u13-26",
+       "title": "Regioselectivity",
+       "written": true,
+       "diagrams": [{"id":"chem-regioselectivity","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-regioselectivity"]}
+      },
       {
        "id": "u13-27",
        "title": "Stereoselectivity",
@@ -6222,14 +6271,14 @@
       "excluded": 0,
       "notAssessed": 0,
       "withDiagram": 22,
-      "withLab": 2,
-      "withBoth": 2,
+      "withLab": 8,
+      "withBoth": 8,
       "withAny": 22,
       "plannedNotDelivered": 0,
       "placements": 22,
       "withInteractiveDiagram": 2,
       "withSimulation": 0,
-      "withLabActivity": 0
+      "withLabActivity": 8
      },
      "lessons": [
       {"id":"u14-01","title":"Alcohols","written":true,"diagrams":[{"id":"chem-alcohol-classes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-alcohol-classes"]}},
@@ -6250,7 +6299,7 @@
        "title": "Acyl chlorides",
        "written": true,
        "diagrams": [{"id":"chem-acyl-chloride-water","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-acyl-chloride-water"]}
       },
       {
@@ -6261,8 +6310,8 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-anhydride-acylation"]}
       },
-      {"id":"u14-09","title":"Esters","written":true,"diagrams":[{"id":"chem-esters","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-esters"]}},
-      {"id":"u14-10","title":"Amides","written":true,"diagrams":[{"id":"chem-amides","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-amides"]}},
+      {"id":"u14-09","title":"Esters","written":true,"diagrams":[{"id":"chem-esters","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-esters"]}},
+      {"id":"u14-10","title":"Amides","written":true,"diagrams":[{"id":"chem-amides","status":"validated"}],"labs":["organic-notes"],"plan":{"verdict":"diagram","diagrams":["chem-amides"]}},
       {"id":"u14-11","title":"Amines","written":true,"diagrams":[{"id":"chem-amine-classes","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-amine-classes"]}},
       {"id":"u14-12","title":"Nitriles","written":true,"diagrams":[{"id":"chem-nitriles","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nitriles"]}},
       {"id":"u14-13","title":"Nitro compounds","written":true,"diagrams":[{"id":"chem-nitro-reduction","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-nitro-reduction"]}},
@@ -6274,14 +6323,21 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-halogenoalkane-ammonia"]}
       },
-      {"id":"u14-15","title":"Aromatic compounds","written":true,"diagrams":[{"id":"chem-friedel-crafts","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-friedel-crafts"]}},
+      {
+       "id": "u14-15",
+       "title": "Aromatic compounds",
+       "written": true,
+       "diagrams": [{"id":"chem-friedel-crafts","status":"validated"}],
+       "labs": ["organic-notes"],
+       "plan": {"verdict":"diagram","diagrams":["chem-friedel-crafts"]}
+      },
       {"id":"u14-16","title":"Thiols and sulfides","written":true,"diagrams":[{"id":"chem-thiols","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-thiols"]}},
       {
        "id": "u14-17",
        "title": "Organohalogen compounds",
        "written": true,
        "diagrams": [{"id":"chem-organohalogens","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-organohalogens"]}
       },
       {
@@ -6289,7 +6345,7 @@
        "title": "Carbonyl chemistry",
        "written": true,
        "diagrams": [{"id":"chem-carbonyl-reactivity","status":"validated"}],
-       "labs": [],
+       "labs": ["organic-notes"],
        "plan": {"verdict":"diagram","diagrams":["chem-carbonyl-reactivity"]}
       },
       {
@@ -6306,7 +6362,7 @@
        "title": "Functional group synthesis",
        "written": true,
        "diagrams": [{"id":"chem-synthesis-map","status":"validated"}],
-       "labs": ["synthesis"],
+       "labs": ["organic-notes","synthesis"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-synthesis-map"],"labs":["synthesis"]}
       },
       {
@@ -6314,7 +6370,7 @@
        "title": "Multi-step synthesis",
        "written": true,
        "diagrams": [{"id":"chem-multistep-route","status":"validated"}],
-       "labs": ["synthesis"],
+       "labs": ["organic-notes","synthesis"],
        "plan": {"verdict":"diagram+lab","diagrams":["chem-multistep-route"],"labs":["synthesis"]}
       }
      ]
@@ -14426,18 +14482,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 210,
-    "plannedVisual": 129,
-    "plannedDiagram": 105,
-    "plannedLab": 49,
-    "excluded": 81,
-    "notAssessed": 867,
-    "withDiagram": 105,
+    "assessed": 285,
+    "plannedVisual": 162,
+    "plannedDiagram": 138,
+    "plannedLab": 54,
+    "excluded": 123,
+    "notAssessed": 792,
+    "withDiagram": 138,
     "withLab": 102,
-    "withBoth": 26,
-    "withAny": 181,
+    "withBoth": 31,
+    "withAny": 209,
     "plannedNotDelivered": 0,
-    "placements": 105,
+    "placements": 138,
     "withInteractiveDiagram": 18,
     "withSimulation": 9,
     "withLabActivity": 76
@@ -16250,98 +16306,329 @@
      "totals": {
       "lessons": 75,
       "written": 75,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 75,
-      "withDiagram": 0,
+      "assessed": 75,
+      "plannedVisual": 33,
+      "plannedDiagram": 33,
+      "plannedLab": 5,
+      "excluded": 42,
+      "notAssessed": 0,
+      "withDiagram": 33,
       "withLab": 5,
-      "withBoth": 0,
-      "withAny": 5,
+      "withBoth": 5,
+      "withAny": 33,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 33,
       "withInteractiveDiagram": 0,
       "withSimulation": 1,
       "withLabActivity": 4
      },
      "lessons": [
-      {"id":"u13-01","title":"Descriptive Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-02","title":"Correlation","written":true,"diagrams":[],"labs":["regression"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-03","title":"Data Interpretation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-04","title":"Statistics in Everyday Life","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-05","title":"Inferential Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-06","title":"Statistical Inference","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-07","title":"Sampling Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-08","title":"Sampling Distributions","written":true,"diagrams":[],"labs":["clt"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-09","title":"Sampling Bias","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-10","title":"Confidence Intervals","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-11","title":"Maximum Likelihood Estimation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-12","title":"Method of Moments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-13","title":"Hypothesis Testing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-14","title":"Null Hypothesis Significance Testing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-15","title":"P-Values","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-16","title":"Type I and Type II Errors","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-17","title":"Statistical Power","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-18","title":"Effect Sizes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-19","title":"Multiple Testing Correction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-20","title":"False Discovery Rate","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-21","title":"Parametric Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-22","title":"Nonparametric Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-23","title":"Z-Tests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-24","title":"T-Tests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-25","title":"Chi-Squared Tests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-26","title":"Fisher's Exact Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-27","title":"Mann–Whitney U Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-28","title":"Wilcoxon Signed-Rank Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-29","title":"Kruskal–Wallis Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-30","title":"Kolmogorov–Smirnov Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-31","title":"Analysis of Variance (ANOVA)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-32","title":"Analysis of Covariance (ANCOVA)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-33","title":"Categorical Data Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-34","title":"Contingency Tables","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-35","title":"Regression Analysis","written":true,"diagrams":[],"labs":["regression"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-36","title":"Linear Regression","written":true,"diagrams":[],"labs":["regression"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-37","title":"Multiple Linear Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-38","title":"Logistic Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-39","title":"Poisson Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-40","title":"Nonlinear Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-41","title":"Robust Regression","written":true,"diagrams":[],"labs":["regression"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-42","title":"Quantile Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-43","title":"Ridge Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-44","title":"Lasso Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-45","title":"Generalised Linear Models (GLMs)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-46","title":"Mixed-Effects Models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-47","title":"Generalised Additive Models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-48","title":"Statistical Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-49","title":"Multivariate Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-50","title":"Multivariate Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-51","title":"Factor Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-52","title":"Discriminant Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-53","title":"Cluster Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-54","title":"Frequentist Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-55","title":"Bayesian Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-56","title":"Bayesian Inference","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-57","title":"Prior and Posterior Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-58","title":"Bootstrap Methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-59","title":"Permutation Tests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-60","title":"Monte Carlo Methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-61","title":"Markov Chain Monte Carlo (MCMC)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-62","title":"Statistical Computing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-63","title":"Experimental Design","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-64","title":"Design of Experiments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-65","title":"Causal Inference","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-66","title":"Structural Equation Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-67","title":"Meta-Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-68","title":"Missing Data Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-69","title":"Imputation Methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-70","title":"Survival Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-71","title":"Spatial Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-72","title":"Reliability Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-73","title":"Extreme Value Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-74","title":"Decision Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u13-75","title":"Statistical Learning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u13-01",
+       "title": "Descriptive Statistics",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-boxplot-outlier","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-boxplot-outlier"]}
+      },
+      {
+       "id": "u13-02",
+       "title": "Correlation",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-correlation-r","status":"validated"}],
+       "labs": ["regression"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u13-correlation-r"],"labs":["regression"]}
+      },
+      {
+       "id": "u13-03",
+       "title": "Data Interpretation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a comparison of relative and absolute risk, 50% against 1 in 10,000, laid out as arithmetic in the notes"}
+      },
+      {
+       "id": "u13-04",
+       "title": "Statistics in Everyday Life",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short calculation; the notes' working carries it better than a picture"}
+      },
+      {
+       "id": "u13-05",
+       "title": "Inferential Statistics",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-proportion-interval","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-proportion-interval"]}
+      },
+      {"id":"u13-06","title":"Statistical Inference","written":true,"diagrams":[{"id":"maths-u13-mse-bars","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-mse-bars"]}},
+      {
+       "id": "u13-07",
+       "title": "Sampling Theory",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or short calculation; the notes' working carries it better than a picture"}
+      },
+      {
+       "id": "u13-08",
+       "title": "Sampling Distributions",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-sample-mean-tail","status":"validated"}],
+       "labs": ["clt"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u13-sample-mean-tail"],"labs":["clt"]}
+      },
+      {
+       "id": "u13-09",
+       "title": "Sampling Bias",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-nonresponse-bounds","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-nonresponse-bounds"]}
+      },
+      {
+       "id": "u13-10",
+       "title": "Confidence Intervals",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-mean-interval","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-mean-interval"]}
+      },
+      {
+       "id": "u13-11",
+       "title": "Maximum Likelihood Estimation",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-exponential-likelihood","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-exponential-likelihood"]}
+      },
+      {"id":"u13-12","title":"Method of Moments","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"one-line moment equation; the comment on the estimate is in the notes"}},
+      {"id":"u13-13","title":"Hypothesis Testing","written":true,"diagrams":[{"id":"maths-u13-coin-test","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-coin-test"]}},
+      {
+       "id": "u13-14",
+       "title": "Null Hypothesis Significance Testing",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a conceptual point about significance against importance; no numbers to draw"}
+      },
+      {"id":"u13-15","title":"P-Values","written":true,"diagrams":[{"id":"maths-u13-two-sided-p","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-two-sided-p"]}},
+      {
+       "id": "u13-16",
+       "title": "Type I and Type II Errors",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-type-errors","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-type-errors"]}
+      },
+      {"id":"u13-17","title":"Statistical Power","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a sample-size formula worked in the notes"}},
+      {"id":"u13-18","title":"Effect Sizes","written":true,"diagrams":[{"id":"maths-u13-cohens-d","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-cohens-d"]}},
+      {
+       "id": "u13-19",
+       "title": "Multiple Testing Correction",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-twenty-tests","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-twenty-tests"]}
+      },
+      {"id":"u13-20","title":"False Discovery Rate","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"Benjamini-Hochberg is a sorted-list comparison laid out in the notes"}},
+      {"id":"u13-21","title":"Parametric Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a transformation of five numbers, shown in the notes"}},
+      {
+       "id": "u13-22",
+       "title": "Nonparametric Statistics",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-sign-test","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-sign-test"]}
+      },
+      {"id":"u13-23","title":"Z-Tests","written":true,"diagrams":[{"id":"maths-u13-z-test-bags","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-z-test-bags"]}},
+      {"id":"u13-24","title":"T-Tests","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a t statistic worked in the notes"}},
+      {"id":"u13-25","title":"Chi-Squared Tests","written":true,"diagrams":[{"id":"maths-u13-die-counts","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-die-counts"]}},
+      {
+       "id": "u13-26",
+       "title": "Fisher's Exact Test",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-tea-hypergeometric","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-tea-hypergeometric"]}
+      },
+      {"id":"u13-27","title":"Mann–Whitney U Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"rank sums worked in the notes"}},
+      {"id":"u13-28","title":"Wilcoxon Signed-Rank Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"rank sums worked in the notes"}},
+      {"id":"u13-29","title":"Kruskal–Wallis Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a rank-sum calculation worked in the notes"}},
+      {"id":"u13-30","title":"Kolmogorov–Smirnov Test","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a single statistic compared with a critical value"}},
+      {
+       "id": "u13-31",
+       "title": "Analysis of Variance (ANOVA)",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-anova-groups","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-anova-groups"]}
+      },
+      {"id":"u13-32","title":"Analysis of Covariance (ANCOVA)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an adjusted-mean calculation worked in the notes"}},
+      {
+       "id": "u13-33",
+       "title": "Categorical Data Analysis",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-risk-bars","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-risk-bars"]}
+      },
+      {
+       "id": "u13-34",
+       "title": "Contingency Tables",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer two-way table: the kidney-stone counts with row and column totals (Simpson's paradox)"}
+      },
+      {
+       "id": "u13-35",
+       "title": "Regression Analysis",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-extrapolation","status":"validated"}],
+       "labs": ["regression"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u13-extrapolation"],"labs":["regression"]}
+      },
+      {
+       "id": "u13-36",
+       "title": "Linear Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-least-squares-line","status":"validated"}],
+       "labs": ["regression"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u13-least-squares-line"],"labs":["regression"]}
+      },
+      {"id":"u13-37","title":"Multiple Linear Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a prediction from a fitted equation, worked in the notes"}},
+      {
+       "id": "u13-38",
+       "title": "Logistic Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-logistic-curve","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-logistic-curve"]}
+      },
+      {
+       "id": "u13-39",
+       "title": "Poisson Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-poisson-regression","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-poisson-regression"]}
+      },
+      {
+       "id": "u13-40",
+       "title": "Nonlinear Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-michaelis-menten","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-michaelis-menten"]}
+      },
+      {
+       "id": "u13-41",
+       "title": "Robust Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-outlier-slopes","status":"validated"}],
+       "labs": ["regression"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u13-outlier-slopes"],"labs":["regression"]}
+      },
+      {"id":"u13-42","title":"Quantile Regression","written":true,"diagrams":[{"id":"maths-u13-check-loss","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-check-loss"]}},
+      {"id":"u13-43","title":"Ridge Regression","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"two shrinkage formulas worked in the notes"}},
+      {
+       "id": "u13-44",
+       "title": "Lasso Regression",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-soft-threshold","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-soft-threshold"]}
+      },
+      {"id":"u13-45","title":"Generalised Linear Models (GLMs)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a log-link evaluation worked in the notes"}},
+      {"id":"u13-46","title":"Mixed-Effects Models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a variance-ratio calculation worked in the notes"}},
+      {"id":"u13-47","title":"Generalised Additive Models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an interpretation of a smooth-term difference, no numbers to draw"}},
+      {"id":"u13-48","title":"Statistical Modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"AIC and BIC arithmetic worked in the notes"}},
+      {
+       "id": "u13-49",
+       "title": "Multivariate Statistics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: ellipse contours of equal Mahalanobis distance (geometry draws circles only)"}
+      },
+      {
+       "id": "u13-50",
+       "title": "Multivariate Analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the lesson's eigenvalues 4.2, 1.5, 0.2, 0.1 sum to 6, not 4 for four standardised variables; a scree plot would show the inconsistency, so left for the author to correct"}
+      },
+      {"id":"u13-51","title":"Factor Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"communality arithmetic worked in the notes"}},
+      {
+       "id": "u13-52",
+       "title": "Discriminant Analysis",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-discriminant-boundary","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-discriminant-boundary"]}
+      },
+      {"id":"u13-53","title":"Cluster Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"k-means iterations on six points laid out in the notes"}},
+      {"id":"u13-54","title":"Frequentist Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"one probability, 0.95^20, worked in the notes"}},
+      {"id":"u13-55","title":"Bayesian Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a Bayes factor calculation worked in the notes"}},
+      {
+       "id": "u13-56",
+       "title": "Bayesian Inference",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-normal-posterior","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-normal-posterior"]}
+      },
+      {"id":"u13-57","title":"Prior and Posterior Distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"two posterior means worked in the notes"}},
+      {"id":"u13-58","title":"Bootstrap Methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a procedure for sorted bootstrap values; nothing numeric to draw"}},
+      {
+       "id": "u13-59",
+       "title": "Permutation Tests",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-permutation-differences","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-permutation-differences"]}
+      },
+      {
+       "id": "u13-60",
+       "title": "Monte Carlo Methods",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: random points in a unit square with a quarter circle (geometry has no point scatter inside a region)"}
+      },
+      {"id":"u13-61","title":"Markov Chain Monte Carlo (MCMC)","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an acceptance ratio, 0.1/0.2, worked in the notes"}},
+      {"id":"u13-62","title":"Statistical Computing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a log-sum-exp identity worked in the notes"}},
+      {"id":"u13-63","title":"Experimental Design","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a design and a count of arrangements, laid out in the notes"}},
+      {
+       "id": "u13-64",
+       "title": "Design of Experiments",
+       "written": true,
+       "diagrams": [{"id":"maths-u13-interaction-plot","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u13-interaction-plot"]}
+      },
+      {"id":"u13-65","title":"Causal Inference","written":true,"diagrams":[{"id":"maths-u13-diff-in-diff","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-diff-in-diff"]}},
+      {
+       "id": "u13-66",
+       "title": "Structural Equation Modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: path diagram (a small directed graph with labelled edges)"}
+      },
+      {"id":"u13-67","title":"Meta-Analysis","written":true,"diagrams":[{"id":"maths-u13-fixed-effect","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u13-fixed-effect"]}},
+      {"id":"u13-68","title":"Missing Data Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"two means compared in the notes' arithmetic"}},
+      {"id":"u13-69","title":"Imputation Methods","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"Rubin's rules arithmetic worked in the notes"}},
+      {"id":"u13-70","title":"Survival Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"needs renderer: Kaplan-Meier step curve (graph draws curves, not steps)"}},
+      {"id":"u13-71","title":"Spatial Statistics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a semivariance average worked in the notes"}},
+      {"id":"u13-72","title":"Reliability Analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"series and parallel reliability arithmetic worked in the notes"}},
+      {"id":"u13-73","title":"Extreme Value Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an exceedance probability worked in the notes"}},
+      {"id":"u13-74","title":"Decision Theory","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an expected-cost comparison worked in the notes"}},
+      {"id":"u13-75","title":"Statistical Learning","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a bias-variance sum and a mean of five errors worked in the notes"}}
      ]
     },
     {
@@ -20262,18 +20549,18 @@
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 326,
-    "plannedVisual": 141,
-    "plannedDiagram": 115,
-    "plannedLab": 47,
-    "excluded": 185,
-    "notAssessed": 982,
-    "withDiagram": 117,
+    "assessed": 398,
+    "plannedVisual": 175,
+    "plannedDiagram": 138,
+    "plannedLab": 68,
+    "excluded": 223,
+    "notAssessed": 910,
+    "withDiagram": 139,
     "withLab": 115,
-    "withBoth": 23,
-    "withAny": 209,
+    "withBoth": 32,
+    "withAny": 222,
     "plannedNotDelivered": 0,
-    "placements": 118,
+    "placements": 140,
     "withInteractiveDiagram": 0,
     "withSimulation": 115,
     "withLabActivity": 0
@@ -22486,43 +22773,130 @@
      "totals": {
       "lessons": 20,
       "written": 20,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 20,
+      "plannedVisual": 5,
+      "plannedDiagram": 5,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 20,
-      "withDiagram": 0,
+      "excluded": 15,
+      "notAssessed": 0,
+      "withDiagram": 5,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 5,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 5,
       "withInteractiveDiagram": 0,
       "withSimulation": 0,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u14-01","title":"Conduction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-02","title":"Convection","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-03","title":"Thermal radiation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-04","title":"Fourier's law of heat conduction","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-05","title":"Newton's law of cooling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-06","title":"Stefan–Boltzmann law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-07","title":"Wien's displacement law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-08","title":"Thermal diffusivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-09","title":"Heat exchangers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-10","title":"Insulation and thermal resistance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-11","title":"Blackbody and greybody radiation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-12","title":"Emissivity and absorptivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-13","title":"Greenhouse effect","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-14","title":"Thermoelectric effects","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-15","title":"Peltier and Seebeck effects","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-16","title":"Thermal contact resistance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-17","title":"Cryogenics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-18","title":"Low-temperature physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-19","title":"Heat transport in solids and fluids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-20","title":"Thermal management in engineering","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u14-01","title":"Conduction","written":true,"diagrams":[{"id":"phys-u14-copper-rod","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u14-copper-rod"]}},
+      {
+       "id": "u14-02",
+       "title": "Convection",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a graph would add nothing"}
+      },
+      {
+       "id": "u14-03",
+       "title": "Thermal radiation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the person's net radiation is one T⁴ difference; the Stefan–Boltzmann law lessons (u14-06, u13-18) carry the pictures"}
+      },
+      {
+       "id": "u14-04",
+       "title": "Fourier's law of heat conduction",
+       "written": true,
+       "diagrams": [{"id":"phys-u14-penetration-depth","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u14-penetration-depth"]}
+      },
+      {
+       "id": "u14-05",
+       "title": "Newton's law of cooling",
+       "written": true,
+       "diagrams": [{"id":"phys-u14-coffee-cooling","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u14-coffee-cooling"]}
+      },
+      {
+       "id": "u14-06",
+       "title": "Stefan–Boltzmann law",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a graph would add nothing"}
+      },
+      {"id":"u14-07","title":"Wien's displacement law","written":true,"diagrams":[{"id":"phys-u14-wien-star","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u14-wien-star"]}},
+      {
+       "id": "u14-08",
+       "title": "Thermal diffusivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a graph would add nothing"}
+      },
+      {"id":"u14-09","title":"Heat exchangers","written":true,"diagrams":[{"id":"phys-u14-counterflow","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u14-counterflow"]}},
+      {
+       "id": "u14-10",
+       "title": "Insulation and thermal resistance",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a layered wall with a temperature profile through series thermal resistances; the lesson's numbers give R only, no temperatures"}
+      },
+      {
+       "id": "u14-11",
+       "title": "Blackbody and greybody radiation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the worked example's selective-surface result (634 K) does not follow from 0.1σT⁴ = 950 (640 K), so no diagram can recompute it; reported for the notes owner"}
+      },
+      {
+       "id": "u14-12",
+       "title": "Emissivity and absorptivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Kirchhoff's law and a table of emissivities; the thermal-camera example is one ratio"}
+      },
+      {
+       "id": "u14-13",
+       "title": "Greenhouse effect",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"forcing from CO₂ is a logarithm formula; the greenhouse layer model needs a radiation-balance renderer"}
+      },
+      {"id":"u14-14","title":"Thermoelectric effects","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition or list of properties that a picture would not teach"}},
+      {
+       "id": "u14-15",
+       "title": "Peltier and Seebeck effects",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {
+        "verdict": "none",
+        "reason": "needs renderer: a Peltier energy flow with two inputs (20 W from the cold side and 40 W electricity) and one output of 60 W; the sankey narrow layout fails without a waste output"
+       }
+      },
+      {
+       "id": "u14-16",
+       "title": "Thermal contact resistance",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a graph would add nothing"}
+      },
+      {"id":"u14-17","title":"Cryogenics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition or list of properties that a picture would not teach"}},
+      {"id":"u14-18","title":"Low-temperature physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition or list of properties that a picture would not teach"}},
+      {"id":"u14-19","title":"Heat transport in solids and fluids","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a comparison of mechanisms in words; no worked numbers"}},
+      {"id":"u14-20","title":"Thermal management in engineering","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an engineering survey of cooling methods; no numbers to draw"}}
      ]
     },
     {
@@ -22532,47 +22906,131 @@
      "totals": {
       "lessons": 24,
       "written": 24,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 24,
-      "withDiagram": 0,
+      "assessed": 24,
+      "plannedVisual": 12,
+      "plannedDiagram": 6,
+      "plannedLab": 9,
+      "excluded": 12,
+      "notAssessed": 0,
+      "withDiagram": 6,
       "withLab": 9,
-      "withBoth": 0,
-      "withAny": 9,
+      "withBoth": 3,
+      "withAny": 12,
       "plannedNotDelivered": 0,
-      "placements": 0,
+      "placements": 6,
       "withInteractiveDiagram": 0,
       "withSimulation": 9,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u15-01","title":"Electric charge","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-02","title":"Conservation and quantisation of charge","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-03","title":"Conductors, insulators and dielectrics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-04","title":"Coulomb's law","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-05","title":"Electric fields","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-06","title":"Electric field lines","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-07","title":"Electric potential","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-08","title":"Electric potential energy","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-09","title":"Voltage and potential difference","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-10","title":"Electric dipoles","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-11","title":"Electric flux","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-12","title":"Gauss's law","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-13","title":"Charge distributions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-14","title":"Conductors in electrostatic equilibrium","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-15","title":"Capacitance","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-16","title":"Parallel-plate and spherical capacitors","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-17","title":"Capacitors in series and parallel","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-18","title":"Energy stored in electric fields","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-19","title":"Dielectric polarisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-20","title":"Boundary conditions for electric fields","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-21","title":"Electrostatic shielding","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-22","title":"Method of images","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-23","title":"Poisson's equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u15-24","title":"Laplace's equation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u15-01",
+       "title": "Electric charge",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"charging by rubbing and counting electrons is arithmetic (5 nC ÷ e); no picture adds to it"}
+      },
+      {
+       "id": "u15-02",
+       "title": "Conservation and quantisation of charge",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"quantisation is shown by dividing the measured charges by 1.6 × 10⁻¹⁹ C; a list of numbers, not a graph"}
+      },
+      {
+       "id": "u15-03",
+       "title": "Conductors, insulators and dielectrics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or list of properties that a picture would not teach"}
+      },
+      {"id":"u15-04","title":"Coulomb's law","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"lab","labs":["efield"]}},
+      {
+       "id": "u15-05",
+       "title": "Electric fields",
+       "written": true,
+       "diagrams": [{"id":"phys-u15-electron-deflection","status":"validated"}],
+       "labs": ["efield"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u15-electron-deflection"],"labs":["efield"]}
+      },
+      {
+       "id": "u15-06",
+       "title": "Electric field lines",
+       "written": true,
+       "diagrams": [{"id":"phys-u15-field-lines-2q-q","status":"validated"}],
+       "labs": ["efield"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u15-field-lines-2q-q"],"labs":["efield"]}
+      },
+      {
+       "id": "u15-07",
+       "title": "Electric potential",
+       "written": true,
+       "diagrams": [{"id":"phys-u15-potential-midpoint","status":"validated"}],
+       "labs": ["efield"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u15-potential-midpoint"],"labs":["efield"]}
+      },
+      {"id":"u15-08","title":"Electric potential energy","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"lab","labs":["efield"]}},
+      {"id":"u15-09","title":"Voltage and potential difference","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"lab","labs":["efield"]}},
+      {"id":"u15-10","title":"Electric dipoles","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"lab","labs":["efield"]}},
+      {
+       "id": "u15-11",
+       "title": "Electric flux",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u15-12","title":"Gauss's law","written":true,"diagrams":[{"id":"phys-u15-sphere-field","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u15-sphere-field"]}},
+      {"id":"u15-13","title":"Charge distributions","written":true,"diagrams":[{"id":"phys-u15-ring-axis","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u15-ring-axis"]}},
+      {
+       "id": "u15-14",
+       "title": "Conductors in electrostatic equilibrium",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the two-sphere example is a ratio, E ∝ 1/r; a graph of sphere fields would only restate it"}
+      },
+      {"id":"u15-15","title":"Capacitance","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"lab","labs":["transients"]}},
+      {"id":"u15-16","title":"Parallel-plate and spherical capacitors","written":true,"diagrams":[],"labs":["efield"],"plan":{"verdict":"lab","labs":["efield"]}},
+      {
+       "id": "u15-17",
+       "title": "Capacitors in series and parallel",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: capacitor networks (series and parallel) with charge and voltage on each; the circuit renderer has cells and resistors only"}
+      },
+      {
+       "id": "u15-18",
+       "title": "Energy stored in electric fields",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u15-19","title":"Dielectric polarisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a qualitative argument about polarisation; the worked example is a ratio"}},
+      {
+       "id": "u15-20",
+       "title": "Boundary conditions for electric fields",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a field crossing a dielectric boundary with the normal and tangential components"}
+      },
+      {"id":"u15-21","title":"Electrostatic shielding","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a qualitative argument about shielding; no numbers to draw"}},
+      {"id":"u15-22","title":"Method of images","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"needs renderer: a charge and its image in a conducting plane"}},
+      {"id":"u15-23","title":"Poisson's equation","written":true,"diagrams":[{"id":"phys-u15-poisson-slab","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["phys-u15-poisson-slab"]}},
+      {
+       "id": "u15-24",
+       "title": "Laplace's equation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Laplace's equation is a method (separation, relaxation); no worked numbers to plot"}
+      }
      ]
     },
     {
@@ -22582,51 +23040,198 @@
      "totals": {
       "lessons": 28,
       "written": 28,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 28,
-      "withDiagram": 1,
+      "assessed": 28,
+      "plannedVisual": 17,
+      "plannedDiagram": 12,
+      "plannedLab": 12,
+      "excluded": 11,
+      "notAssessed": 0,
+      "withDiagram": 12,
       "withLab": 12,
-      "withBoth": 1,
-      "withAny": 12,
+      "withBoth": 7,
+      "withAny": 17,
       "plannedNotDelivered": 0,
-      "placements": 1,
+      "placements": 12,
       "withInteractiveDiagram": 0,
       "withSimulation": 12,
       "withLabActivity": 0
      },
      "lessons": [
-      {"id":"u16-01","title":"Electric current","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-02","title":"Resistance and resistivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-03","title":"Ohm's law","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-04","title":"Conductivity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-05","title":"Series and parallel circuits","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-06","title":"Kirchhoff's laws","written":true,"diagrams":[{"id":"phys-kirchhoff-loop","status":"approved"}],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-07","title":"Electromotive force","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-08","title":"Internal resistance","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-09","title":"Electrical power and energy","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-10","title":"Resistor networks","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-11","title":"Capacitor charging and discharging","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-12","title":"RC circuits","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-13","title":"RL circuits","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-14","title":"RLC circuits","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-15","title":"Transient responses","written":true,"diagrams":[],"labs":["transients"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-16","title":"Alternating current","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-17","title":"Root-mean-square values","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-18","title":"Impedance and reactance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-19","title":"Phasor diagrams","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-20","title":"Resonance in AC circuits","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-21","title":"Transformers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-22","title":"Rectification","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-23","title":"Filters and frequency response","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-24","title":"Electrical measurement","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-25","title":"Circuit analysis methods","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-26","title":"Thevenin and Norton equivalents","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-27","title":"Operational amplifiers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u16-28","title":"Semiconductor circuit fundamentals","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {"id":"u16-01","title":"Electric current","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the worked example is one division (I/e); drift velocity is a formula"}},
+      {
+       "id": "u16-02",
+       "title": "Resistance and resistivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u16-03",
+       "title": "Ohm's law",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-ohm-iv","status":"validated"}],
+       "labs": ["circuits"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-ohm-iv"],"labs":["circuits"]}
+      },
+      {
+       "id": "u16-04",
+       "title": "Conductivity",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u16-05","title":"Series and parallel circuits","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"lab","labs":["circuits"]}},
+      {
+       "id": "u16-06",
+       "title": "Kirchhoff's laws",
+       "written": true,
+       "diagrams": [{"id":"phys-kirchhoff-loop","status":"approved"}],
+       "labs": ["circuits"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-kirchhoff-loop"],"labs":["circuits"]}
+      },
+      {"id":"u16-07","title":"Electromotive force","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"lab","labs":["circuits"]}},
+      {
+       "id": "u16-08",
+       "title": "Internal resistance",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-terminal-voltage","status":"validated"}],
+       "labs": ["circuits"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-terminal-voltage"],"labs":["circuits"]}
+      },
+      {"id":"u16-09","title":"Electrical power and energy","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"lab","labs":["circuits"]}},
+      {"id":"u16-10","title":"Resistor networks","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"lab","labs":["circuits"]}},
+      {
+       "id": "u16-11",
+       "title": "Capacitor charging and discharging",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-rc-discharge","status":"validated"}],
+       "labs": ["transients"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-rc-discharge"],"labs":["transients"]}
+      },
+      {
+       "id": "u16-12",
+       "title": "RC circuits",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-rc-lowpass","status":"validated"}],
+       "labs": ["transients"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-rc-lowpass"],"labs":["transients"]}
+      },
+      {
+       "id": "u16-13",
+       "title": "RL circuits",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-rl-growth","status":"validated"}],
+       "labs": ["transients"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-rl-growth"],"labs":["transients"]}
+      },
+      {
+       "id": "u16-14",
+       "title": "RLC circuits",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: damped oscillation of an RLC circuit (underdamped, critical, overdamped) with ω₀ from L and C; the lesson's example is only ω₀ = 10⁴ rad s⁻¹"}
+      },
+      {
+       "id": "u16-15",
+       "title": "Transient responses",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-rc-step","status":"validated"}],
+       "labs": ["transients"],
+       "plan": {"verdict":"diagram+lab","diagrams":["phys-u16-rc-step"],"labs":["transients"]}
+      },
+      {
+       "id": "u16-16",
+       "title": "Alternating current",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-mains-waveform","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u16-mains-waveform"]}
+      },
+      {
+       "id": "u16-17",
+       "title": "Root-mean-square values",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-heater-power","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u16-heater-power"]}
+      },
+      {
+       "id": "u16-18",
+       "title": "Impedance and reactance",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-impedance-triangle","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u16-impedance-triangle"]}
+      },
+      {
+       "id": "u16-19",
+       "title": "Phasor diagrams",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-series-phasors","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u16-series-phasors"]}
+      },
+      {
+       "id": "u16-20",
+       "title": "Resonance in AC circuits",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a resonance curve (current or impedance against frequency, with Q); the lesson's example is only C = 1/(4π²f²L) = 1.3 pF"}
+      },
+      {
+       "id": "u16-21",
+       "title": "Transformers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u16-22","title":"Rectification","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"needs renderer: a rectified and smoothed waveform with the ripple"}},
+      {
+       "id": "u16-23",
+       "title": "Filters and frequency response",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: a log-frequency Bode plot (gain in dB against frequency); the graph renderer has linear axes only"}
+      },
+      {
+       "id": "u16-24",
+       "title": "Electrical measurement",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {"id":"u16-25","title":"Circuit analysis methods","written":true,"diagrams":[],"labs":["circuits"],"plan":{"verdict":"lab","labs":["circuits"]}},
+      {
+       "id": "u16-26",
+       "title": "Thevenin and Norton equivalents",
+       "written": true,
+       "diagrams": [{"id":"phys-u16-thevenin-load-line","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u16-thevenin-load-line"]}
+      },
+      {
+       "id": "u16-27",
+       "title": "Operational amplifiers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a one-line formula whose worked example is a single substitution; a picture would add nothing"}
+      },
+      {
+       "id": "u16-28",
+       "title": "Semiconductor circuit fundamentals",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"needs renderer: diode and transistor characteristics; the LED example is one resistor value, (5 − 2.0)/20 mA = 150 Ω"}
+      }
      ]
     },
     {
