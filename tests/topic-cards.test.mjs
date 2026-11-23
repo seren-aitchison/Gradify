@@ -53,6 +53,9 @@ test("every topic card has a real destination or none, never the generic app", a
       if (href === null) continue;
       assert.equal(typeof href, "string", `${site} "${t[0]}"`);
       linked++;
+      // a card opens something; it never creates something (a tool's "new" route, or the mind map maker, which makes and saves
+      // a blank map on opening and can use a free allowance)
+      if (/#\/tools\/\w+\/new$|#\/tools\/map(\/|$)/.test(href)) { bad.push(`${site} "${t[0]}" → ${href}: creates something just by being opened`); continue; }
       const why = await problem(dirOf(site), href);
       if (why) bad.push(`${site} "${t[0]}" → ${href}: ${why}`);
     }

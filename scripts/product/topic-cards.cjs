@@ -40,16 +40,24 @@ async function landed(p, href) {
       await p.goto(`${B}/${dir}/`); await p.waitForTimeout(900);
       const cards = await p.$$eval(".sm-topic", (els) => els.map((e) => ({ title: e.querySelector("b")?.innerText.trim(), href: e.getAttribute("href"), tag: e.tagName })));
       if (mode === "desktop") otherAppLinks.push(...(await p.$$eval('a[href="app.html"], a[href$="/app.html"]', (a) => a.filter((x) => x.offsetParent && !x.closest("header, nav, footer")).map((x) => x.innerText.trim().replace(/\s+/g, " ").slice(0, 40)))).map((t) => `${dir}: ${t}`));
-      for (const card of cards) {
-        const row = { site, mode, title: card.title, href: card.href };
-        if (!card.href) { row.result = card.tag === "DIV" ? "not linked (no destination yet)" : "✗ link without href"; row.ok = card.tag === "DIV"; rows.push(row); continue; }
+      // the rendered cards must be exactly the declared ones, in order: a missing or extra card fails
+      const declared = c.topics.map(([t]) => t), rendered = cards.map((x) => x.title);
+      if (JSON.stringify(declared) !== JSON.stringify(rendered)) rows.push({ site, mode, title: "(cards rendered)", ok: false, result: `expected ${declared.length} [${declared.join(", ")}], rendered ${rendered.length} [${rendered.join(", ")}]` });
+      for (const [title, , want] of c.topics) {
+        // what's expected comes from the declared destination (kit/core/site-content.js), never from the rendered card
+        const card = cards.find((x) => x.title === title);
+        const row = { site, mode, title, href: want };
+        if (!card) continue;   // already reported above
+        if (!want) { row.ok = card.tag === "DIV" && !card.href; row.result = row.ok ? "not linked (no destination yet)" : `✗ rendered a link to ${card.href} for a card with no destination`; rows.push(row); continue; }
+        if (card.href !== want) { row.ok = false; row.result = `✗ rendered href ${card.href}, declared ${want}`; rows.push(row); continue; }
         await p.goto(`${B}/${dir}/`); await p.waitForTimeout(700);
-        const el = p.locator(`.sm-topic[href="${card.href}"]`).filter({ hasText: card.title }).first();
+        const el = p.locator(".sm-topic").filter({ hasText: title }).first();
         await el.scrollIntoViewIfNeeded(); await el.click(); await p.waitForTimeout(2200);
-        const expected = new URL(card.href, `${B}/${dir}/`);
+        const expected = new URL(want, `${B}/${dir}/`);
         const at = new URL(p.url());
-        const sameUrl = at.pathname.replace(/index\.html$/, "") === expected.pathname.replace(/index\.html$/, "") && (at.hash === expected.hash || (!expected.hash && !at.hash) || (expected.hash && at.hash.startsWith(expected.hash)) || (/\/new$/.test(expected.hash) && at.hash.startsWith(expected.hash.replace(/new$/, ""))));   // "…/new" opens a new item at its own id
-        const content = sameUrl ? await landed(p, card.href) : `landed at ${at.pathname}${at.hash}`;
+        // the exact declared page and route: the bare app (no route) never matches a declared app route
+        const sameUrl = at.pathname.replace(/index\.html$/, "") === expected.pathname.replace(/index\.html$/, "") && (at.hash === expected.hash || (!expected.hash && !at.hash) || (expected.hash && at.hash.startsWith(expected.hash + "/")));
+        const content = sameUrl ? await landed(p, want) : `landed at ${at.pathname}${at.hash}, declared ${want}`;
         row.ok = sameUrl && content === true; row.result = row.ok ? "✓" : `✗ ${content}`;
         rows.push(row);
       }
@@ -61,7 +69,7 @@ async function landed(p, href) {
   const bad = rows.filter((r) => !r.ok), linked = rows.filter((r) => r.href);
   const OUT = path.join(ROOT, "tests/reports/product"); fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, "topic-cards.json"), JSON.stringify({ rows, otherAppLinks }, null, 1));
-  console.log(`clicked ${linked.length} linked cards (${linked.filter((r) => r.mode === "phone").length} on phone); ${rows.filter((r) => !r.href && r.title !== "(page errors)").length} unlinked; ${bad.length} problems`);
+  console.log(`clicked ${linked.length} linked cards (${linked.filter((r) => r.mode === "phone").length} on phone); ${rows.filter((r) => !r.href && !r.title.startsWith("(")).length} unlinked; ${bad.length} problems`);
   for (const r of bad) console.log(`  ✗ ${r.site} [${r.mode}] "${r.title}" → ${r.href}: ${r.result}`);
   console.log(`other links to the bare app on site homepages (not topic cards): ${otherAppLinks.length}`); for (const l of [...new Set(otherAppLinks)].slice(0, 12)) console.log("  " + l);
   process.exitCode = bad.length ? 1 : 0;

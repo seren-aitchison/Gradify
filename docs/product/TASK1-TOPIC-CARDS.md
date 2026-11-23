@@ -47,7 +47,7 @@ correctly for anyone who has answered or skipped it. Stopping onboarding from in
 | A single lesson that matches exactly | 6 |
 | The course home (the topic is taught across the course) | 6 |
 | The course's written practice (LawGradify problem questions) | 1 |
-| A specific app tool (Add notes, Progress, Mind maps, Audio, Convert) | 9 |
+| A specific app tool (Add notes, Progress, Tools, Audio, Convert) | 9 |
 | A real course on another Gradify site | 5 |
 | **Not linked: no real destination yet** | **14** |
 
@@ -85,7 +85,7 @@ The full reasons are in the table. Each needs either content or a new card, whic
 | ProGradify | CPD | `app.html#/progress` | tool | Progress |
 | EduGradify | Retrieval quizzes | `app.html#/new` | tool | Add notes: slides into a study pack |
 | EduGradify | Knowledge organisers | `app.html#/tools/convert` | tool | Convert: notes into a cheat sheet |
-| EduGradify | Mind maps | `app.html#/tools/map/new` | tool | Mind map maker |
+| EduGradify | Mind maps | `app.html#/tools` | tool | Tools: the mind map maker and your maps (opening the maker directly would create a blank map and could use a free allowance) |
 | EduGradify | Hinge questions | `course/#/learn/u04` | unit | Assessment and Feedback |
 | EduGradify | Audio quizzes | `app.html#/tools/audio` | tool | Audio |
 | EduGradify | Your CPD | `app.html#/progress` | tool | Progress |
