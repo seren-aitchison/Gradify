@@ -19,7 +19,8 @@ import { page, esc } from "./seo/shell.mjs";
 import { toolPages, TOOLS, LANDINGS, landingPages } from "./seo/tools.mjs";
 import { guidePages, GUIDES } from "./seo/guides.mjs";
 import { comparePages, COMPARE, glossaryPages, TERMS, templatePages, TEMPLATES, aboutPages } from "./seo/pages.mjs";
-import { programmaticPages } from "./seo/programmatic.mjs";
+import { programmaticPages, courses as courseData } from "./seo/programmatic.mjs";
+import { coursePageOutputs, coursePagePaths } from "./seo/coursepages.mjs";
 import { TOOLS2, tools2Pages } from "./seo/tools2.mjs";
 import { CHECKLISTS, checklistPages } from "./seo/checklists.mjs";
 import { GUIDES2, GROUPS, VS, ALTS, guides2Pages } from "./seo/guides2.mjs";
@@ -135,12 +136,13 @@ export function withHeadTags(html, href) {
   if (!want.length) return html;
   return html.replace(/(\n?)(\s*)<title>[^<]*<\/title>/, (m, nl, sp) => `${m}\n${sp.replace(/^\n/, "") || "  "}<!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->\n${want.map((t) => `${sp.replace(/^\n/, "") || "  "}${t}`).join("\n")}`);
 }
+const COURSE_PAGES = new Set(coursePagePaths());
 async function headTagged() {
   const { sitemapUrls } = await import("./build-sitemap.mjs");
   const out = new Map();
   for (const u of await sitemapUrls()) {
     let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html";
-    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p) || SEO_SUBSITE_FILES.includes(p)) continue;
+    if (SEO_FOLDERS.includes(p.split("/")[0]) || SEO_FILES.includes(p) || SEO_SUBSITE_FILES.includes(p) || COURSE_PAGES.has(p)) continue;
     const html = await readFile(new URL(p, root), "utf8").catch(() => null); if (html === null) continue;
     const next = withHeadTags(html, u); if (next !== html) out.set(p, next);
   }
@@ -228,6 +230,15 @@ export async function outputs() {
   files.set(`${INDEXNOW_KEY}.txt`, `${INDEXNOW_KEY}\n`);
   files.set("llms-full.txt", llmsFull(files));
   for (const [p, html] of await headTagged()) files.set(p, html);
+  // course pages: the crawlable course overview, title and description, then the same head tags as every page
+  const cd = await courseData();
+  const leads = new Map(cd.map((c) => [c.slug, new Map(c.units.flatMap((u) => u.lessons.map((l) => [l.id, l.lead])))]));
+  for (const [p, html] of await coursePageOutputs({
+    leadsFor: (slug) => leads.get(slug) || new Map(),
+    hubFor: (slug) => (files.has(`topics/${slug}/index.html`) ? `/topics/${slug}/` : null),
+    topicsFor: (slug, u) => (files.has(`topics/${slug}/${u.id}/index.html`) ? `/topics/${slug}/${u.id}/` : null),
+    plansFor: (slug) => [...files.keys()].filter((k) => k.startsWith(`study-plan/${slug}-`) && k.endsWith("/index.html") && !/noindex/.test(files.get(k).match(/<meta name="robots"[^>]*>/)?.[0] || "")).map((k) => [`/${k.replace(/index\.html$/, "")}`, files.get(k).match(/<h1[^>]*>([^<]*)/)?.[1].replace(/ study plan$/, "") || k]),
+  })) files.set(p, withHeadTags(html, `https://getgradify.com/${p.replace(/index\.html$/, "")}`));
   return files;
 }
 
