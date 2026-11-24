@@ -14,6 +14,7 @@ import { parseNotes } from "../course/notes.js";
 import { renderQuestion, wireQuestions } from "../assess/questions.js";
 import { icon } from "../core/icons.js";
 import { esc } from "../core/text.js";
+import { actionCard } from "../core/action-card.js";
 import { mountHabits } from "./habits-view.js";
 import { CloudStore, LocalStore } from "../data/store.js";
 
@@ -122,7 +123,7 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
           ${questsHtml("This week", Q.filter((q) => q.kind === "weekly"))}
           <section class="gj-card gj-challenge" id="challenge"></section>
           <section class="gj-card"><h2>Subjects</h2>${s.subjects.length ? s.subjects.map((x) => `<a class="gj-subject" href="${COURSES[x.slug]}"><div><b>${esc(x.name)}</b><span class="gj-sub">${esc(x.site)} · ${esc(x.rank.name)} · level ${x.level.n} · ${fmt(x.xp)} XP</span></div>
-            <div class="gj-bar" role="img" aria-label="${x.done} of ${x.lessons} lessons"><i style="width:${x.lessons ? (100 * x.done) / x.lessons : 0}%"></i></div><span class="gj-sub">${x.done} / ${x.lessons} lessons · ${x.unitsDone} complete</span></a>`).join("") : `<p class="gj-sub">No courses started on this device yet.</p>`}
+            <div class="gj-bar" role="img" aria-label="${x.done} of ${x.lessons} lessons"><i style="width:${x.lessons ? (100 * x.done) / x.lessons : 0}%"></i></div><span class="gj-sub">${x.done} / ${x.lessons} lessons · ${x.unitsDone} complete</span></a>`).join("") : actionCard({ kicker: "Start here", title: "Pick your first course", why: "Nothing is locked. Your progress, quests and achievements fill in here as you learn.", actions: [{ label: "Explore every course", icon: "globe", href: "/explore.html" }, { label: "Bring your own notes", icon: "upload", href: "/app.html#/new", soft: true }] })}
             <p class="gj-sub gj-more">Explore: ${Object.entries(LIVE_COURSES).filter(([k]) => !courses.some((c) => c.slug === k)).map(([k, p]) => `<a href="${p}">${esc(k[0].toUpperCase() + k.slice(1))}</a>`).join(" · ")}</p></section>
         </div>
         <div>

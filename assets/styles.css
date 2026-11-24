@@ -576,13 +576,29 @@ body.ds :is(.how, .proof, .showcase, #find, .pro, .faq, .closing) .btn-primary::
 body.ds .text-link { color: var(--ds-link); text-decoration: none; } body.ds .text-link:hover { text-decoration: underline; }
 /* FAQ: a quiet list */
 body.ds .faq { text-align: left; }
-body.ds .faq details { border-radius: 0 !important; background: none !important; border-bottom: 1px solid var(--ds-line) !important; }
-/* the closing: a black tile, the one dark moment */
-body.ds .closing { margin: var(--ds-space-section) auto; max-width: var(--ds-width-wide); padding: clamp(56px, 8vw, 112px) var(--ds-space-6); border-radius: var(--ds-radius-lg); text-align: center;
-  background: radial-gradient(70% 90% at 50% 120%, rgba(91, 85, 255, .45), transparent 70%), var(--ds-tile-dark) !important; color: #f5f5f7; border: 0 !important; box-shadow: none !important; }
-body.ds .closing h2 { font-family: var(--ds-font-display); font-size: var(--ds-title); line-height: var(--ds-title-line); letter-spacing: var(--ds-title-track); color: #f5f5f7; }
-body.ds .closing p { color: #a1a1a6; font-size: var(--ds-lead); }
-body.ds .closing .grad { color: #a1a1a6; }
+:root body.ds :is(#faq, .faq) details { border-radius: 0 !important; background: var(--g-tile) !important; border: 1px solid var(--g-edge) !important; border-bottom-width: 0 !important; }
+:root body.ds :is(#faq, .faq) details:first-of-type { border-radius: 22px 22px 0 0 !important; }
+:root body.ds :is(#faq, .faq) details:last-of-type { border-radius: 0 0 22px 22px !important; border-bottom-width: 1px !important; box-shadow: var(--g-shadow) !important; }
+body.ds .faq-list { gap: 0; }
+body.ds .faq summary::after { content: ""; flex: none; width: 28px; height: 28px; border-radius: 9px; background: var(--g-accent); opacity: .9; transition: transform .32s cubic-bezier(.32, .72, 0, 1);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='9' fill='%23000' fill-opacity='.14'/%3E%3Cpath d='M9 12l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 28px no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='9' fill='%23000' fill-opacity='.14'/%3E%3Cpath d='M9 12l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 28px no-repeat; }
+body.ds .faq details[open] summary::after { transform: rotate(180deg); }
+body.ds .faq summary { align-items: center; }
+body.ds .faq details summary, body.ds .faq details p { padding-inline: 4px; }
+body.ds #faq { background: var(--ds-bg-alt); }
+body.ds #free .g-tiles { max-width: 980px; margin-top: var(--ds-space-5); }
+@media (min-width: 820px) { body.ds #free .g-tiles { grid-template-columns: repeat(3, 1fr); } }
+body.ds #free .lede { text-align: center; }
+/* the closing: the Gradify gradient, the one bold moment */
+:root body.ds .closing { margin: var(--ds-space-section) auto; max-width: var(--ds-width-wide); padding: clamp(56px, 8vw, 112px) var(--ds-space-6); border-radius: var(--ds-radius-lg); text-align: center;
+  background: radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, .22), transparent 55%), linear-gradient(135deg, #4641ff 0%, #9b3cf0 42%, #e0409f 72%, #ff6a2b 100%) !important; color: #fff; border: 0 !important; box-shadow: 0 18px 50px rgba(155, 60, 240, .28) !important; }
+body.ds .closing::before { display: none; }
+:root body.ds :is(#closing, .closing) .btn-primary { background: #fff !important; color: #2f2acc !important; }  /* outranks the accent rule above, which an id inside its :is() lifts */
+/* white on the gradient in both themes (":root" keeps scripts/theme-tokens.mjs off these) */
+:root body.ds .closing h2 { font-family: var(--ds-font-display); font-size: var(--ds-title); line-height: var(--ds-title-line); letter-spacing: var(--ds-title-track); color: #fff; }
+:root body.ds .closing p { color: rgba(255, 255, 255, .9); font-size: var(--ds-lead); }
+:root body.ds .closing .grad { color: rgba(255, 255, 255, .78); }
 /* the system's page colour wins over the theme's (which sets body at higher specificity) */
 :root body.ds { background: var(--ds-bg); }
 body.ds .sec-head .eyebrow { font-family: var(--ds-font-text) !important; }
