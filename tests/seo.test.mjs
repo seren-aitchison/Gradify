@@ -10,7 +10,7 @@ import { existsSync } from "node:fs";
 import { SEO_FOLDERS, SEO_FILES, INDEXNOW_KEY } from "../scripts/seo/folders.mjs";
 import { PUBLISH } from "../scripts/build-site.mjs";
 import { sitemapUrls } from "../scripts/build-sitemap.mjs";
-import { creditMean, classify, degreeAverage, degreeTracker, neededOnFinal, weighted, gpa, countdown, reviewDates, ics } from "../assets/study-tools.js";
+import { creditMean, classify, degreeAverage, degreeTracker, degreeIntel, neededOnFinal, weighted, gpa, countdown, reviewDates, ics } from "../assets/study-tools.js";
 import { aiSource, touchFrom } from "../kit/core/attribution.js";
 
 const read = (f) => readFile(new URL(`../${f}`, import.meta.url), "utf8");
@@ -281,4 +281,44 @@ test("batch 5: cite this page, self-hosted fonts, speed buckets, deploy retry", 
   const ci = await read(".github/workflows/ci.yml");
   assert.match(ci, /id: retry\n\s+if: steps\.deployment\.outcome == 'failure'/);
   assert.match(ci, /Check the live site serves this build/);
+});
+
+test("degree intelligence: headline, risks, ranked priorities and the next best action", () => {
+  const today = new Date(2026, 10, 24);
+  const rows = [
+    { name: "Ecology", mark: "62", credits: "60", year: "2" }, { name: "Genetics", mark: "64", credits: "60", year: "2" },
+    { name: "Field skills", mark: "70", credits: "20", year: "3" }, { name: "Neuro", mark: "68", credits: "20", year: "3" },
+    { name: "Dissertation", mark: "", credits: "40", year: "3", due: "2027-04-20" },
+    { name: "Stats exam", mark: "", credits: "20", year: "3", due: "2026-11-28" },
+    { name: "Policy essay", mark: "", credits: "20", year: "3" },
+  ];
+  const r = degreeIntel(rows, 60, today);
+  assert.equal(r.cls.short, "2:1");
+  assert.equal(r.headline, "You're on track for a 2:1.");
+  assert.ok(r.insights.some((i) => i.kind === "chance" && /A First is still possible, but needs 77\.5%/.test(i.text)), "First: 77.5% needed on the rest");
+  // ranked by share × urgency: the stats exam (10% of the degree, due in 4 days) beats the dissertation (20%, months away)
+  assert.deepEqual(r.priorities.map((p) => p.name), ["Stats exam", "Dissertation", "Policy essay"]);
+  assert.equal(r.priorities[0].days, 4); assert.equal(r.priorities[0].minutes, 90);
+  assert.ok(Math.abs(r.priorities[1].share - 20) < 1e-9, "a 40-credit final-year module is 20% of a 40/60 degree");
+  assert.match(r.priorities[0].reason, /^Worth 10% of your whole degree, your biggest lever right now: every extra 10 marks here adds 1 to your final average\. It's due in 4 days\. For a First, you need 77\.5% across everything left, this included\.$/);
+  assert.equal(r.next.text, "Spend 90 minutes on Stats exam today.");
+  assert.equal(r.unlisted, 0, "everything still to come is listed");
+    assert.ok(r.insights.some((i) => i.kind === "trend"), "final year above year 2");
+  assert.equal(r.projection, null, "year 2 is complete, so the estimate would only repeat the average");
+  assert.doesNotMatch(r.priorities[1].reason, /For a First/, "the target line is said once, on the top priority");
+  const est = degreeIntel([{ mark: "55", credits: "60", year: "2" }, { mark: "72", credits: "60", year: "3" }], 60, today);
+  assert.ok(est.projection && est.projection.basis === "final-year" && est.projection.avg > est.t.average, "half of each year marked: the final-year pace lifts the estimate");
+
+  // 10 more marks on a 10%-of-the-degree piece adds exactly 1 point to the final average
+  const full = (stats) => rows.map((x) => ({ ...x, mark: x.name === "Stats exam" ? stats : x.mark || "65" }));
+  assert.ok(Math.abs(degreeTracker(full("70"), 60).average - degreeTracker(full("60"), 60).average - 1) < 1e-9, "with everything marked, 10 more marks on it is +1");
+  assert.equal(r.priorities[0].perTen, 1);
+
+  const none = degreeIntel([{ mark: "55", credits: "120", year: "2" }], 60, today);
+  assert.equal(none.priorities.length, 0); assert.equal(none.next.text, "Add the modules you still have to do.");
+  assert.ok(none.unlisted > 59 && none.insights.some((i) => i.kind === "gap"), "the unlisted final year is flagged");
+
+  const atRisk = degreeIntel([{ mark: "61", credits: "120", year: "2" }, { mark: "52", credits: "60", year: "3" }], 60, today);
+  assert.ok(atRisk.insights.some((i) => i.kind === "risk"), "holding a 2:1 needs a step up");
+  assert.equal(degreeIntel([], 60, today).next, null);
 });
