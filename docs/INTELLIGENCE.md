@@ -125,13 +125,14 @@ The engine proposes actions and `applyChange` validates them before anything is 
 - **Tell Gradify** (`kit/intel/nlp.js`): plain English such as "Biology exam on 10 December, chemistry assignment due on the 4th, away this weekend" becomes exams, deadlines, away days, shifts and daily hours. **Paste an email** finds new and moved dates and matches them to existing deadlines (the academic inbox). Everything is previewed for the learner to confirm.
 - **What-if** in Ask: "What happens if I take Friday off?"
 
-## Calendar sync (`kit/intel/ical.js`, `kit/intel/calsync.js`, `supabase/functions/calendar-sync`)
+## Calendar files (`kit/intel/ical.js`, `kit/intel/calsync.js`)
 
-- **In:** calendar links (Google's secret iCal address, iCloud public calendars, Outlook published calendars, university timetables, Moodle, Canvas, Blackboard) and .ics files. Repeats, exclusions, all-day events, cancelled and "free" events are handled.
-- **How imported events are treated:** they become busy time that's never moved. All-day events block the day only when they say "away", "holiday" and so on. Titles with "exam" or "due" become deadlines.
-- **Refreshing:** links re-sync in the background every six hours, and a re-sync replaces only imported events.
+- **In:** an .ics file exported from Google Calendar, Apple Calendar, Outlook, a university timetable, Moodle, Canvas or Blackboard. It's read on the learner's device and never uploaded. Repeats, exclusions, changed occurrences (RECURRENCE-ID), all-day, cancelled and "free" events are handled.
+- **No calendar links.** A feed link works like a password, so since November 2026 Gradify doesn't take links or re-sync them. Links saved before then are removed from the account the next time the learner opens the app (`retiredIntel`), with a one-off notice; `docs/sql/retire-calendar-links.sql` removes them for everyone else (run by hand, with the owner's approval). Events already imported stay. The `calendar-sync` function is retired: it now answers 410 and fetches nothing.
+- **What's kept:** only busy time, labelled "Busy". Titles with words like "exam" or "due" are *suggestions*: the learner ticks the real exams and deadlines on a review list, and only those keep their names. All-day events become an "Away" day only when they say the learner is away; other all-day events are left out. Locations, descriptions, attendees and categories are never kept. Importing an updated file doesn't duplicate blocks. "Remove imported events" deletes them all.
 - **Out:** "Export my Gradify plan" downloads an .ics that any calendar app opens.
-- **Time zones:** times with a time zone are read in the learner's local time (fine for their own calendars).
+- **Time zones:** a time with a TZID is converted with that zone's rules (Outlook's Windows zone names are mapped), so daylight-saving changes come out right, and repeats keep their wall-clock time in their own zone. Floating times are read in the learner's local time.
+- **Degree tracker:** the tracker's Connections page reads the same files for module due dates (`kit/data/connections.js`).
 
 ## Gradify AI coach (`kit/intel/coach.js`, mode `coach` in `kit/assess/tutor.js`)
 
@@ -146,11 +147,7 @@ Ask Gradify answers from the model straight away. When the learner is signed in,
    supabase functions deploy course-tutor
    ```
 
-   ```bash
-   supabase functions deploy calendar-sync
-   ```
-
-Until then, everything else works. Ask Gradify answers from the learner's data, and calendar files import. Calendar links that don't allow browsers show a "sign in" or "couldn't sync" message.
+Until then, everything else works. Ask Gradify answers from the learner's data, and calendar files import.
 
 ## Also
 

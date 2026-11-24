@@ -128,6 +128,11 @@ Written 24 November 2026 for whoever picks this up next. Read this first, then `
   still switched off in production (`ai_settings.enabled = false`, no testers): the owner turns it on. Privacy policy
   updated. Tests: `tests/degree-ai.test.mjs`.
 
+- **Connections** (Stage 6 below, first release): the tracker's "Connections" page (`data-page="connections"`) takes
+  an `.ics` file from a timetable, Moodle or Canvas and offers its possible due dates for review
+  (`kit/data/connections.js`). Files only: no links, tokens or sign-ins, by the owner's decision. Smart Plan stopped
+  saving calendar links. Details and the owner's decisions: `docs/HANDOVER-stage5-and-mygradify.md`.
+
 ### Stage 2: roll the new UI out across the whole site (done, see above)
 Apply the same visual language: tokens like `.tool` in `assets/seo.css` (`--tile`, `--group`, `--tile-edge`,
 `--tile-shadow`, `--brand`, `--c70`…), white tiles, 22–30px radii, coloured squircle icons, and `.g-action` for next

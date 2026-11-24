@@ -929,13 +929,19 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 /* calendar sync */
 .cal-sync h3 { display: flex; gap: 8px; align-items: center; } .cal-sync h3 svg { width: 16px; height: 16px; }
 .cal-sync .panel-head { align-items: flex-start; }
-.feeds { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.feeds li { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 12px; background: rgba(var(--ink-rgb), .03); border: 1px solid var(--line); }
-.feeds li > span:nth-child(2) { display: grid; min-width: 0; } .feeds em { font-style: normal; font-size: 12px; color: var(--mute); }
-.feed-dot { width: 8px; height: 8px; border-radius: 50%; } .feed-dot.ok { background: #1fae8c; } .feed-dot.bad { background: #ff5a4d; }
-.feed-form { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
-.feed-form label { display: grid; gap: 6px; font-size: 13px; color: var(--mute); } .feed-form .grow { flex: 1 1 320px; }
-.feed-form input { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 14px var(--sans); width: 100%; }
+.cal-retired { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 14px; border-radius: 20px; background: rgb(var(--surface-rgb)); border: 1px solid var(--line-strong); box-shadow: 0 6px 18px rgba(70, 65, 255, .10); }
+.cal-retired .sq { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b); }
+.cal-retired .sq svg { width: 20px; height: 20px; } .cal-retired p { margin: 4px 0 10px; font-size: 14px; }
+.cal-review { display: grid; gap: 10px; padding: 14px; border-radius: 20px; border: 1px solid var(--line-strong); background: var(--inset); }
+.cal-review p { margin: 0; font-size: 14px; }
+.cal-review ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.cal-review li { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 14px; background: rgb(var(--surface-rgb)); border: 1px solid var(--line); }
+.cal-review label { display: flex; gap: 10px; align-items: center; min-width: 0; cursor: pointer; }
+.cal-review label span { display: grid; min-width: 0; } .cal-review label b { overflow-wrap: anywhere; }
+.cal-review em { font-style: normal; font-size: 12px; color: var(--mute); }
+.cal-review input[type=checkbox] { width: 20px; height: 20px; accent-color: #4641ff; flex: none; }
+.cal-review select { padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 13px var(--sans); }
+.cal-keep { margin: 0; }
 .file-pill { cursor: pointer; } .file-pill svg { width: 14px; height: 14px; }
 .howto summary { cursor: pointer; color: var(--mute); font-size: 14px; }
 .howto ul { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 8px; }
