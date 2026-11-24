@@ -2,6 +2,7 @@
 // Gradify organised, and why", with undo), the catch-up recovery, Tell Gradify (plain English and pasted emails),
 // opportunities, topic break-downs and focus blocks. Decisions come from kit/intel/autopilot.js; this file only
 // shows them and applies what the learner (or their chosen mode) approves, logging every change with an undo.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { haptic } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
@@ -10,8 +11,6 @@ import { parseTell, parseInbox } from "../intel/nlp.js";
 import { planDay } from "../intel/schedule.js";
 import { dayKey, DAY, hhmm } from "../intel/memory.js";
 import { record } from "../intel/ledger.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const dl = (d, o = { weekday: "short", day: "numeric", month: "short" }) => new Date(`${d}T12:00:00`).toLocaleDateString("en-GB", o);
 const ago = (iso) => { const s = (Date.now() - Date.parse(iso)) / 1000; return s < 3600 ? `${Math.max(1, Math.round(s / 60))} min ago` : s < 86400 ? `${Math.round(s / 3600)} h ago` : `${Math.round(s / 86400)} d ago`; };
 

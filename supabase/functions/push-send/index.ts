@@ -13,8 +13,19 @@ import { decideNudges, summaryFromRows, localClock, prefsOf } from "../_shared/n
 
 const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
 
+// The scheduler's secret, compared in constant time: both sides are hashed to 32 bytes first, so neither the time taken
+// nor an early exit reveals how much of a guess was right, or how long the secret is. With no secret set, nothing passes.
+export async function sameSecret(given: string | null, expected: string | undefined): Promise<boolean> {
+  if (!expected || given === null) return false;
+  const digest = async (s: string) => new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)));
+  const [a, b] = await Promise.all([digest(given), digest(expected)]);
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a[i] ^ b[i];
+  return diff === 0;
+}
+
 Deno.serve(async (req) => {
-  if (req.headers.get("x-cron-secret") !== Deno.env.get("PUSH_CRON_SECRET")) return new Response("Forbidden", { status: 403 });
+  if (!await sameSecret(req.headers.get("x-cron-secret"), Deno.env.get("PUSH_CRON_SECRET"))) return new Response("Forbidden", { status: 403 });
   webpush.setVapidDetails(Deno.env.get("VAPID_SUBJECT")!, Deno.env.get("VAPID_PUBLIC_KEY")!, Deno.env.get("VAPID_PRIVATE_KEY")!);
   const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
   const now = Date.now();

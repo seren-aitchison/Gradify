@@ -8,6 +8,7 @@
 // a stream that runs off the edge as a waterfall, fireflies, trees that sway, and a name tag over each site's tree that
 // follows it as the island turns. el.__highlight(name) lifts one site's tree and tag (the legend calls it on hover).
 import * as THREE from "../vendor/three/three.module.min.js";
+import { esc } from "../core/text.js";
 
 const live = new WeakMap();
 const reduce = globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -261,7 +262,7 @@ export function drawIsland(el, { sites, bars, rand }) {
     // the busiest site's tree carries its name; the others a dot in their colour that names itself on hover or tap
     const t = document.createElement("span"); t.className = `isle-tag${p === planted[0] ? " lead" : ""}`; t.style.setProperty("--c", `#${p.q.c}`);
     t.tabIndex = 0; t.setAttribute("role", "note"); t.setAttribute("aria-label", `${p.q.n}: ${p.q.act ?? 0} activities in the last 30 days`);
-    t.innerHTML = `<i></i>${String(p.q.n).replace(/&/g, "&amp;").replace(/</g, "&lt;")}<b>${p.q.act ?? ""}</b>`; tags.append(t); p.tag = t;
+    t.innerHTML = `<i></i>${esc(p.q.n)}<b>${esc(p.q.act)}</b>`; tags.append(t); p.tag = t;
   });
   let lit = null;
   tags.addEventListener("pointerover", (e) => { const t = e.target.closest(".isle-tag"); if (t) el.__highlight(planted.find((p) => p.tag === t)?.q.n); });

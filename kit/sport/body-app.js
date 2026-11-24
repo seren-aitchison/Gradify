@@ -1,13 +1,12 @@
 // Body Intelligence page (sportgradify/body.html): wires the 3D view (body-view.js), the
 // calculations (body-intel.js) and storage (body-store.js) into the interface.
+import { esc } from "../core/text.js";
 import { MUSCLES, EXERCISES, TESTS, PART_FACTORS, exercisesFor } from "./exercises.js";
 import { recommendations } from "./recommend.js";
 import { partName } from "./anatomy-parts.js";
 import { stimulus, development, recovery, fitness, muscleSummary, heatColour, hex, meshKeys, dayTime, STIMULUS_TOP } from "./body-intel.js";
 import { openBodyStore, XP } from "./body-store.js";
 import { mountBody, ATTRIBUTION } from "./body-view.js";
-
-const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const today = () => new Date().toISOString().slice(0, 10);
 const DAY = 864e5;
 const fmt = (n, d = 1) => (Math.round(n * 10 ** d) / 10 ** d).toLocaleString();

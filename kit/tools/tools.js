@@ -8,13 +8,12 @@
 //   #/tools/explain, podcast, audio, poster, dictionary, sheets, downloads   learn (learn.js)
 //   #/tools/feed, quiz[/practice|timed|adaptive|bank], games                   practise (practise.js)
 // On Free each tool can be used 5 times (kit/data/limits.js), once Pro is on sale.
+import { esc } from "../core/text.js";
 import { searchLessons, loadLesson, factsOf, loadIndex } from "./search.js";
 import { decks, maps, connect, status } from "./store.js";
 import { gate, lockedHtml, toolUsage, limited, TOOLS } from "../data/limits.js";
 export { TOOLS };
 import { split } from "../maps/build.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 export { esc };
 const here = new URL(".", import.meta.url);
 let cssDone = false;

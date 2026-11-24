@@ -2,6 +2,7 @@
 // getgradify.com (getgradify.com/medgradify/), so a page can say which site it is with
 // <meta name="gradify-site" content="MedGradify">, or it's worked out from the folder.
 // getgradify.com's own pages belong to no single site: that's LifeOS, the whole family.
+import { esc } from "./text.js";
 import { GROUPS } from "./sites.js";
 import { SITE as CONFIG_SITE } from "../../gradify.config.js";
 import { mountSubNav } from "./subnav.js";
@@ -27,7 +28,6 @@ import { accentOf, accentOnLight } from "./accent.js";
 export { accentOf, accentOnLight };
 // A site's name with its first word in the accent colour: "<Med>Gradify", "<Tech>Gradify · ForgeLab"
 export function nameHtml(s) {
-  const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
   const m = s.n.match(/^(.+?)(Gradify.*)$/);
   const [first, rest] = m ? [m[1], m[2]] : [s.n.split(" ")[0], s.n.slice(s.n.split(" ")[0].length)];
   // one wrapper, so a flex container (like the top bar) doesn't put a gap inside the name

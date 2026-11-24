@@ -44,7 +44,8 @@ test("the site config holds only the public project URL and anon key", async () 
 // The AI functions use it only for the Gradify AI usage ledger (ai_claim_for / ai_settle_for / the response cache), which
 // learners must not be able to write: everything else they do (sign-in, saved packs) uses the learner's own token.
 const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts",
-  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts"]);
+  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts",
+  "supabase/functions/youtube-notes/index.ts"]);
 
 test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
@@ -69,6 +70,12 @@ test("server functions act as the signed-in learner, never with the service role
       assert.doesNotMatch(src.replace(/\.rpc\("plus_allowed_for", \{ uid: userId \}\)/g, ""), /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
       for (const m of src.matchAll(/\.from\("(\w+)"\)\.(update|delete)\(/g)) assert.equal(m[1], "push_subscriptions", `${f} may only change push_subscriptions`);
     }
+    // youtube-notes runs signed out: the service role is only for its rate limit, one call to youtube_take (which
+    // records a keyed hash of the caller and nothing else); it reads and writes no table
+    if (f.includes("youtube-notes")) {
+      assert.deepEqual([...src.matchAll(/\.rpc\("(\w+)"/g)].map((m) => m[1]), ["youtube_take"], `${f} may only call youtube_take`);
+      assert.doesNotMatch(src, /\.from\(/, `${f} must not touch any table`);
+    }
     if (f.includes("tutor") || f.includes("study-pack")) {
       assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
       // the service-role client is handed to the ledger and used for nothing else
@@ -83,4 +90,18 @@ test("browser code never reads server-only secrets", async () => {
     const src = await readFile(new URL(f, root), "utf8");
     assert.doesNotMatch(src, /ANTHROPIC_API_KEY|Deno\.env|process\.env\.(ANTHROPIC|SUPABASE_SERVICE)/, `${f} references a server-only secret`);
   }
+});
+
+test("push-send compares the scheduler's secret in constant time, and refuses everything when none is set", async () => {
+  const src = await readFile(new URL("supabase/functions/push-send/index.ts", root), "utf8");
+  const body = src.slice(src.indexOf("Deno.serve"));
+  assert.match(body, /if \(!await sameSecret\(req\.headers\.get\("x-cron-secret"\), Deno\.env\.get\("PUSH_CRON_SECRET"\)\)\) return new Response\("Forbidden", \{ status: 403 \}\);/);
+  assert.doesNotMatch(src, /get\("x-cron-secret"\)\s*[!=]==/, "no plain string comparison of the secret");
+  // the real sameSecret, compiled from the TypeScript
+  const { transform } = await import("esbuild");
+  const { code } = await transform(src.match(/export async function sameSecret[\s\S]*?\n\}/)[0], { loader: "ts", format: "esm" });
+  const { sameSecret } = await import(`data:text/javascript,${encodeURIComponent(code)}`);
+  assert.equal(await sameSecret("s3cret-value", "s3cret-value"), true);
+  for (const [given, expected] of [["s3cret-valuX", "s3cret-value"], ["s3cret", "s3cret-value"], ["", "s3cret-value"], [null, "s3cret-value"], [null, undefined], ["", ""], ["anything", undefined], ["anything", ""]])
+    assert.equal(await sameSecret(given, expected), false, `${JSON.stringify(given)} vs ${JSON.stringify(expected)}`);
 });

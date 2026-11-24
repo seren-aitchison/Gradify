@@ -20,7 +20,7 @@ import { mountMine } from "./mine.js";
 import { mountMyMap } from "./my-map.js";
 
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+import { esc } from "../core/text.js";
 const DAY = 864e5;
 const fmt = (d, o) => d.toLocaleDateString("en-GB", o);
 

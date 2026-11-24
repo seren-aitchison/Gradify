@@ -2,8 +2,7 @@
 // from the courses themselves (the page carries the same numbers, so it reads correctly with no script). Learners'
 // quotes appear only once they've agreed to share them: assets/quotes.json, each with the learner's consent recorded
 // (docs/PROOF.md). There are none yet, so the quotes block stays hidden.
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
+import { esc } from "../kit/core/text.js";
 fetch("kit/api/v1/stats.json").then((r) => (r.ok ? r.json() : null)).then((stats) => {
   if (!stats) return;
   document.querySelectorAll("[data-stat]").forEach((el) => {

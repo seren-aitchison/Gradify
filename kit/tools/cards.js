@@ -12,6 +12,7 @@
 //   ![a label](img:abc123)   an image the learner added, on either side of any card
 //
 // Every card has an id from its own text, so editing one line never resets the schedule of the others.
+import { esc } from "../core/text.js";
 
 const hash = (s) => { let h = 2166136261; for (const ch of String(s)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return (h >>> 0).toString(36); };
 const tidy = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
@@ -64,8 +65,6 @@ export function parseDeck(text) {
 
 /** Image ids used in a deck's text (so unused images can be tidied away). */
 export const imagesIn = (text) => [...String(text ?? "").matchAll(/!\[[^\]]*\]\(img:([a-z0-9-]+)\)/gi)].map((m) => m[1]);
-
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 /**
  * A side of a card as HTML: bold, italic, line breaks, images (`src(id)` gives each image's URL) and the cloze gap.
  */

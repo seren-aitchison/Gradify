@@ -1,12 +1,11 @@
 // "Your Gradify": the learner's own LifeOS, at the top of the LifeOS tour, built only from their real data
 // (kit/learning/learner-data.js). It appears only when there is something real to show; the tour below it
 // keeps its example learner, labelled as such. Styles: .mine in kit/styles/components.css.
+import { esc } from "../core/text.js";
 import { loadLearner } from "../learning/learner-data.js";
 import { drawTree } from "./tree.js";
 import { levelOf as gameLevelOf, rankOf } from "../game/engine.js";
 import { SITES, slugOf } from "../core/site.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const site = (n) => SITES.find((s) => s.n === n);
 const colour = (n) => { const s = site(n); return s ? s.spot || s.c : "f055dd"; };
 const pct = (x) => `${Math.round(x * 100)}%`;

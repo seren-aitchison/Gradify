@@ -67,7 +67,8 @@ export async function renderProjects(view, ctx, [id]) {
 function portfolio(view, all) {
   const done = PROJECTS.filter((p) => all[p.id]?.finishedAt).sort((a, b) => all[b.id].finishedAt.localeCompare(all[a.id].finishedAt));
   const link = (s) => esc(s).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" rel="noopener" target="_blank">$1</a>');
-  view.innerHTML = `<div class="tl">${backLink("#/tools/projects", "Projects")}<div class="deck-head"><div><span class="kicker lo-kicker">Portfolio</span><h1>My portfolio</h1><p class="sub">Every project you've finished, with your evidence. Print it, or save it as a PDF from the print window.</p></div>${done.length ? `<button type="button" class="btn btn-light lg" onclick="print()"><span>Print or save as PDF</span></button>` : ""}</div>
+  view.innerHTML = `<div class="tl">${backLink("#/tools/projects", "Projects")}<div class="deck-head"><div><span class="kicker lo-kicker">Portfolio</span><h1>My portfolio</h1><p class="sub">Every project you've finished, with your evidence. Print it, or save it as a PDF from the print window.</p></div>${done.length ? `<button type="button" class="btn btn-light lg" data-print><span>Print or save as PDF</span></button>` : ""}</div>
     ${done.length ? done.map((p) => `<article class="panel glass pj-done"><span class="tl-k">${esc(p.area)} · ${new Date(all[p.id].finishedAt).toLocaleDateString("en-GB", { month: "long", year: "numeric" })} · +${p.xp} XP</span><h3>${esc(p.t)}</h3><p class="sub">${esc(p.d)}</p><p>${link(all[p.id].evidence)}</p></article>`).join("")
       : `<div class="empty-state panel glass"><h3>No finished projects yet</h3><p class="sub">Finish a project and it appears here.</p><a class="btn btn-primary lg" href="#/tools/projects"><span>Choose a project</span></a></div>`}</div>`;
+  view.querySelector("[data-print]")?.addEventListener("click", () => print());
 }

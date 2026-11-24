@@ -6,7 +6,7 @@ import { pounds } from "../kit/data/plan.js";
 import { joinWaitlist, PRO_LIST } from "../kit/data/waitlist.js";
 
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+import { esc } from "../kit/core/text.js";
 const CK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>`;
 
 for (const el of document.querySelectorAll(".pro [data-price]")) el.textContent = pounds(PLAN_PRICES[el.dataset.price].month);

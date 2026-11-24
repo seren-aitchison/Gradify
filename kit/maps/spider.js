@@ -3,10 +3,9 @@
 // The maps themselves still come from the lesson's notes (kit/maps/build.js), so nothing about what they say changes.
 // Kept from the lesson viewer it replaces (kit/maps/view.js openMap, still used by Tools): the Free allowance, the map
 // switcher, deep links (#/lesson/<id>/map/3), the 4K PNG, SVG, Markdown and OPML exports, an outline view and full screen.
+import { esc } from "../core/text.js";
 import { mapsFor, plain } from "./build.js";
 import { gate } from "../data/limits.js";
-
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const slug = (x) => String(x).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 let open = null;   // { overlay, host, view, L, o, r, i, prevHash, onKey }
 

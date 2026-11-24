@@ -8,8 +8,8 @@ import { actionCard } from "../core/action-card.js";
 import { createCatalogue, describeStatus, statusOf } from "../data/catalogue.js";
 import { COUNTRIES, REGIONS, MODES, stagesFor, validateAcademic, saveAcademic, clearAcademic, academicOf, completeness, summary, FIELDS } from "../data/academic.js";
 import { learnerOf } from "../data/profile.js";
+import { esc } from "../core/text.js";
 
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const CHILD = /^(JuniorGradify|YouthGradify)$/;
 const DRAFT = "gradify.academic.draft";
 const STEPS = ["country", "institution", "subject", "course", "year", "modules", "review"];

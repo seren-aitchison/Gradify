@@ -1,5 +1,6 @@
 // Draws the rest of a sub-site's homepage, below its opening section, from site-content.js.
 //   import { renderHome } from "../kit/core/subsite-home.js"; renderHome(el, "MedGradify");
+import { esc } from "./text.js";
 import { SITES, nameHtml, accentOf, pathOf } from "./site.js";
 import { KINDS, SITES_CONTENT } from "./site-content.js";
 import { icon } from "./icons.js";
@@ -11,8 +12,6 @@ import { art, artFor, heroArt } from "../ui/art.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 import { mountContinue } from "./continue.js";
 applyPrefs();
-
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 const DIMS = {
   default: ["Recall", "Explanation", "Application", "Confidence", "Retention"],
   kids: ["Remembers it", "Can explain it", "Can use it", "Feels sure", "Still knows it"],

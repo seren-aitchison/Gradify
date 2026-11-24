@@ -1,5 +1,8 @@
 // Text helpers shared by course notes, assessments and interactives.
-export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+// The one HTML escape for the whole kit: safe in text and in attribute values quoted with " or '. null and undefined
+// become empty text. Everything that builds markup imports this (tests/escape.test.mjs keeps it that way).
+const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ESC[c]);
 // `code` spans are set aside first, so code such as `2 ** 3 * x_{1}` keeps its asterisks, carets and underscores
 export const inline = (s) => {
   const code = [];

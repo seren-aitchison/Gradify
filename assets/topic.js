@@ -4,10 +4,10 @@
 // bullets / a study prompt, a full Anki/Quizlet CSV export, embed code, links to single cards, the mind map as a PNG,
 // and the confidence check-in with a review reminder. Nothing leaves the browser.
 import { rate, markReviewed, topics, studied } from "./memory.js";
+import { esc } from "../kit/core/text.js";
 let copy, act;   // from ./seo.js, loaded in mount() so the pure helpers import cleanly in tests
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const text = (h) => { const d = document.createElement("div"); d.innerHTML = h; return d.textContent.trim(); };
 const LEVELS = { 1: "Foundation recall", 2: "Exam style", 3: "Stretch" };
 

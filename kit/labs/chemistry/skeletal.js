@@ -19,6 +19,7 @@
 //              as in IUPAC 1993); IUPAC 2013 puts chain length first, which differs only for unusual branched alkenes.
 import { MASS } from "../../diagrams/chem-core.js";
 import { parseSmiles } from "./mol.js";
+import { esc } from "../../core/text.js";
 
 const R3 = Math.sqrt(3), DEG = Math.PI / 180;
 export const ELEMENTS = ["C", "H", "N", "O", "S", "P", "F", "Cl", "Br", "I", "B"];
@@ -747,7 +748,7 @@ export const PALETTES = {
 };
 const f2 = (v) => Math.round(v * 10) / 10;
 // text placed in the SVG is escaped even when it should only ever be an element symbol (see restore above)
-const escText = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const escText = esc;
 
 /** The honeycomb covering a world rectangle, as one SVG path (each edge once). */
 export function gridPath(x0, y0, x1, y1, X, Y) {

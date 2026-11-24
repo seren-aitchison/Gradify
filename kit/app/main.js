@@ -59,7 +59,7 @@ import { renderMy, MY_CHILD } from "./my-views.js";
 import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+import { esc } from "../core/text.js";
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
 const today = () => dayKey(new Date());
@@ -1754,7 +1754,8 @@ async function boot() {
       route();
     } catch (e2) {
       console.error(e2);
-      view.innerHTML = `<div class="panel glass"><h3>Gradify couldn't start</h3><p class="sub">${esc(e2.message || String(e2))}</p><button class="btn btn-light btn-sm" type="button" onclick="location.reload()"><span>Try again</span></button></div>`;
+      view.innerHTML = `<div class="panel glass"><h3>Gradify couldn't start</h3><p class="sub">${esc(e2.message || String(e2))}</p><button class="btn btn-light btn-sm" type="button" data-reload><span>Try again</span></button></div>`;
+      view.querySelector("[data-reload]").addEventListener("click", () => location.reload());
     }
   }
 }

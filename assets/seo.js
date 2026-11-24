@@ -5,9 +5,9 @@
 //   - embed mode, focus mode, recently used pages, the study streak and "(2 due)" in the tab title
 //   - copy buttons ([data-copy]), privacy-first counts of views and actions, and Microsoft Clarity when configured
 import { remember, togglePin, pins, studied, badgeTitle, resumeHtml } from "./memory.js";
+import { esc } from "../kit/core/text.js";
 
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const params = new URLSearchParams(location.search);
 const html = document.documentElement;
 const title = () => (document.querySelector("h1")?.textContent || document.title).trim();

@@ -3,12 +3,12 @@
 // and a row of widgets), in Gradify's own look and built only from the learner's real data: their cards, reviews,
 // study packs, topics, activity and plan. Nothing here is example data; every empty state says how to fill it.
 // Styles: the "Cockpit" section of kit/app/app.css.
+import { esc } from "../core/text.js";
 import { icon } from "../core/icons.js";
 import { LEVELS } from "../learning/mastery.js";
 import { haptic } from "../core/haptics.js";
 import { art } from "../ui/art.js";
 
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const n = (x) => Number(x || 0).toLocaleString("en-GB");
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
