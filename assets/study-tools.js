@@ -4,7 +4,7 @@
 import { subjectsFor } from "../kit/core/subject-match.js";
 import { icon } from "../kit/core/icons.js";
 import { accentOf, accentOnLight } from "../kit/core/accent.js";
-import { actionCard } from "../kit/core/action-card.js";
+import { actionCard, SPARK } from "../kit/core/action-card.js";
 
 // ---------- UK degree classification ----------
 export const CLASSES = [[70, "First-class honours (1st)"], [60, "Upper second (2:1)"], [50, "Lower second (2:2)"], [40, "Third-class honours (3rd)"], [0, "Below honours (fail)"]];
@@ -217,8 +217,9 @@ export function formTool(root, id, run) {
 /** the next step after a result: one contextual link under it (cross-tool loops) */
 export function setNext(root, html) {
   let el = root.querySelector(".next-action");
-  if (!el) { el = document.createElement("p"); el.className = "next-action"; root.querySelector(".result")?.after(el); }
-  el.innerHTML = html ? `<b>Next:</b> ${html}` : ""; el.hidden = !html;
+  if (!el) { el = document.createElement("div"); el.className = "next-action g-action compact"; el.setAttribute("aria-live", "polite"); root.querySelector(".result")?.after(el); }
+  // the action card, small: a gradient squircle, "Next step" and the sentence with its link
+  el.innerHTML = html ? `<span class="g-sq">${SPARK}</span><div class="g-action-text"><span class="g-kicker">Next step</span><p>${html.replace(/^((?:<[^>]+>)*)([a-z])/, (m, tags, c) => tags + c.toUpperCase())}</p></div>` : ""; el.hidden = !html;
 }
 export const NOTES = '<a href="/app.html#/new">turn your lecture notes into checked flashcards</a> (free, no account)';
 

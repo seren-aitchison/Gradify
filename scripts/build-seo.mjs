@@ -191,7 +191,7 @@ const text = (h) => h.replace(/<(script|style|nav|aside|form|button|svg|details 
   .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/[ \t]+/g, " ").replace(/\n\s*\n\s*\n+/g, "\n\n").trim();
 export function llmsFull(files) {
   const pick = (re) => [...files].filter(([p, h]) => re.test(p) && !/name="robots" content="noindex/.test(h)).sort(([a], [b]) => a.localeCompare(b));
-  const main = (h) => text(h.match(/<main[^>]*>([\s\S]*)<\/main>/)?.[1].replace(/<nav class="crumbs"[\s\S]*?<\/nav>/, "").replace(/<p class="updated">[\s\S]*?<\/p>/, "").replace(/<section class="related"[\s\S]*?<\/section>/g, "").replace(/<aside class="cta-box"[\s\S]*?<\/aside>/, "").replace(/<form class="optin"[\s\S]*?<\/form>/, "").replace(/<p class="share-row">[\s\S]*?<\/p>/, "") || "");
+  const main = (h) => text(h.match(/<main[^>]*>([\s\S]*)<\/main>/)?.[1].replace(/<nav class="crumbs"[\s\S]*?<\/nav>/, "").replace(/<p class="updated">[\s\S]*?<\/p>/, "").replace(/<section class="related"[\s\S]*?<\/section>/g, "").replace(/<aside class="g-action cta-box"[\s\S]*?<\/aside>/, "").replace(/<form class="optin"[\s\S]*?<\/form>/, "").replace(/<p class="share-row">[\s\S]*?<\/p>/, "") || "");
   const block = (p, h) => `${main(h)}\n\nSource: https://getgradify.com/${p.replace(/index\.html$/, "")}`;
   return `# Gradify: full text of the study guides, concept comparisons and key terms
 
