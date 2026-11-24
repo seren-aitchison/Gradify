@@ -1,0 +1,74 @@
+{
+ "id": "maths-u21-annuity-bars",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Annuities",
+ "title": "The present value of ten £1,000 payments",
+ "caption": "Each payment is worth 1000 × 1.05^−t today, so later payments count for less: £952 for the first down to £614 for the tenth. The ten bars add up to about £7,722.",
+ "alt": "Ten bars falling from about 952 to 614, one for the present value of each year-end payment.",
+ "description": [
+  "The payment at the end of year t is worth 1000 × 1.05^−t now.",
+  "These fall from £952 in year 1 to £614 in year 10.",
+  "Adding all ten gives 1000 × a₁₀ ≈ £7,722."
+ ],
+ "categories": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "values": [
+  952.3809523809523,
+  907.0294784580498,
+  863.8375985314759,
+  822.7024747918819,
+  783.5261664684589,
+  746.2153966366274,
+  710.6813301301214,
+  676.839362028687,
+  644.6089162177971,
+  613.9132535407591
+ ],
+ "range": {
+  "y": [
+   0,
+   1000
+  ]
+ },
+ "ticks": [
+  200,
+  400,
+  600,
+  800,
+  1000
+ ],
+ "grid": [
+  1,
+  200
+ ],
+ "axisLabels": [
+  "year paid",
+  "present value £"
+ ],
+ "highlight": [
+  0,
+  9
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 7721.73492918481,
+   "name": "the ten present values add to 1000 × a₁₀ ≈ £7,722"
+  }
+ ],
+ "fromLesson": [
+  "7,722"
+ ]
+}

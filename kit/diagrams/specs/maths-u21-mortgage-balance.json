@@ -1,0 +1,112 @@
+{
+ "id": "maths-u21-mortgage-balance",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Mortgage Mathematics",
+ "title": "A £150,000 mortgage over 25 years",
+ "caption": "The payment is £966.45 a month. Early on most goes to interest, so the balance falls slowly at first and fastest at the end; at year 12.5 more than half is still owed (£101,816).",
+ "alt": "The mortgage balance curving down from £150,000 to zero over 25 years, flat at the start and steep at the end.",
+ "description": [
+  "The monthly rate is j = 6%/12 = 0.5%, with 12 × 25 = 300 payments.",
+  "P = 150,000 × 0.005/(1 − 1.005^−300) ≈ £966.45.",
+  "Interest takes most of early payments, so the balance falls slowly then faster.",
+  "The balance reaches zero at year 25."
+ ],
+ "range": {
+  "x": [
+   0,
+   25
+  ],
+  "y": [
+   0,
+   160000
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25
+  ],
+  [
+   50000,
+   100000,
+   150000
+  ]
+ ],
+ "grid": [
+  5,
+  50000
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "years",
+  "balance £"
+ ],
+ "curves": [
+  {
+   "expr": "150000*1.005^(12*x)-966.452102228*(1.005^(12*x)-1)/0.005",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 150000,
+   "label": "£150,000",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 18
+  },
+  {
+   "x": 12.5,
+   "y": 101815.70498170951,
+   "label": "year 12.5: £101,816",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -8
+  },
+  {
+   "x": 25,
+   "y": 0,
+   "label": "£0",
+   "colour": "a4",
+   "dx": -12,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "150000*1.005^(12*x)-966.452102228*(1.005^(12*x)-1)/0.005",
+   "x": 25,
+   "y": 0,
+   "name": "after 300 payments the balance is zero"
+  },
+  {
+   "type": "point",
+   "expr": "150000*1.005^(12*x)-966.452102228*(1.005^(12*x)-1)/0.005",
+   "x": 12.5,
+   "y": 101815.70498170951,
+   "name": "after 12.5 years more than half is still owed"
+  },
+  {
+   "type": "point",
+   "expr": "150000*0.005/(1-1.005^(0-300))",
+   "x": 0,
+   "y": 966.4521022282717,
+   "name": "the payment is £966.45 a month"
+  }
+ ],
+ "fromLesson": [
+  "966.45"
+ ]
+}

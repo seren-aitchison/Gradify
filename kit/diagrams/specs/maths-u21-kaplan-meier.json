@@ -1,0 +1,122 @@
+{
+ "id": "maths-u21-kaplan-meier",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Survival Models",
+ "title": "The Kaplan–Meier curve",
+ "caption": "The estimate drops by 20% at month 1 (2 of 10 die), stays level at month 2 when one patient is censored (leaving 7 at risk), and drops by 1/7 at month 3 to S(3) = 0.8 × 6/7 ≈ 0.686.",
+ "alt": "A step curve falling from 1 to 0.8 at month 1 and to 0.686 at month 3, with the censoring at month 2 marked.",
+ "description": [
+  "Month 1: 2 of 10 die, so S = 1 − 2/10 = 0.8.",
+  "Month 2: one patient is censored, leaving 7 at risk; the curve does not drop.",
+  "Month 3: 1 of 7 dies, factor 6/7, S = 0.8 × 6/7 ≈ 0.686."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "months",
+  "survival S(t)"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     0.8
+    ],
+    [
+     3,
+     0.8
+    ],
+    [
+     3,
+     0.6857142857142858
+    ],
+    [
+     4,
+     0.6857142857142858
+    ]
+   ],
+   "colour": "a1",
+   "width": 3
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0.8,
+   "label": "censored",
+   "colour": "a4",
+   "dx": 8,
+   "dy": -14
+  },
+  {
+   "x": 4,
+   "y": 0.6857142857142858,
+   "label": "0.686",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-2/10",
+   "x": 0,
+   "y": 0.8,
+   "name": "after month 1: 1 − 2/10 = 0.8"
+  },
+  {
+   "type": "point",
+   "expr": "(1-2/10)*(1-1/7)",
+   "x": 0,
+   "y": 0.6857142857142858,
+   "name": "S(3) = 0.8 × (1 − 1/7) ≈ 0.686"
+  }
+ ],
+ "fromLesson": [
+  "0.686"
+ ]
+}

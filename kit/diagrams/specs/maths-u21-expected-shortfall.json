@@ -1,0 +1,74 @@
+{
+ "id": "maths-u21-expected-shortfall",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Expected Shortfall",
+ "title": "Ten losses: VaR and expected shortfall",
+ "caption": "The two worst of ten equally likely losses, 20 and 50, are the 20% tail. The 80% VaR is only 8, the threshold, but the expected shortfall averages the tail: (20 + 50)/2 = 35.",
+ "alt": "Ten bars of losses 1 to 8, 20 and 50, with the two largest highlighted.",
+ "description": [
+  "Sort the ten losses: 1, 2, …, 8, 20, 50.",
+  "The worst 20% are 20 and 50.",
+  "ES = (20 + 50)/2 = 35, far above the VaR of 8."
+ ],
+ "categories": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10"
+ ],
+ "values": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  20,
+  50
+ ],
+ "range": {
+  "y": [
+   0,
+   55
+  ]
+ },
+ "ticks": [
+  10,
+  20,
+  30,
+  40,
+  50
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "axisLabels": [
+  "outcome (ranked)",
+  "loss"
+ ],
+ "highlight": [
+  8,
+  9
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 106,
+   "name": "the ten losses add to 106"
+  }
+ ],
+ "fromLesson": [
+  "= 35"
+ ]
+}

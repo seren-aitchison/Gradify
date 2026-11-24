@@ -1,0 +1,123 @@
+{
+ "id": "maths-u21-supply-demand",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Microeconomic Modelling",
+ "title": "Equilibrium and consumer surplus",
+ "caption": "Demand Q = 100 − 2P and supply Q = 3P meet at P = £20, Q = 60. The demand curve reaches the price axis at £50, so consumer surplus is the triangle ½ × 60 × (50 − 20) = 900.",
+ "alt": "A falling demand line and a rising supply line crossing at quantity 60, price £20; the triangle above the price down to demand is the consumer surplus.",
+ "description": [
+  "Demand: P = (100 − Q)/2. Supply: P = Q/3.",
+  "Equal prices when 100 − 2P = 3P: P = 20, Q = 60.",
+  "Demand hits P = 50 when Q = 0.",
+  "Consumer surplus = ½ × 60 × 30 = 900."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   55
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "grid": [
+  20,
+  10
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "quantity Q",
+  "price £"
+ ],
+ "curves": [
+  {
+   "expr": "(100-x)/2",
+   "colour": "a1",
+   "label": "demand",
+   "labelAt": [
+    14,
+    49
+   ]
+  },
+  {
+   "expr": "x/3",
+   "colour": "a2",
+   "label": "supply",
+   "labelAt": [
+    76,
+    32
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 20,
+   "to": 60
+  },
+  {
+   "x": 60,
+   "to": 20
+  }
+ ],
+ "points": [
+  {
+   "x": 60,
+   "y": 20,
+   "label": "(60, £20)",
+   "colour": "a4",
+   "dx": 14,
+   "dy": -12
+  },
+  {
+   "x": 0,
+   "y": 50,
+   "label": "£50",
+   "colour": "a1",
+   "dx": 10,
+   "dy": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "(100-x)/2",
+   "b": "x/3",
+   "x": 60,
+   "y": 20,
+   "name": "demand and supply meet at Q = 60, P = £20"
+  },
+  {
+   "type": "area",
+   "expr": "(100-x)/2-20",
+   "from": 0,
+   "to": 60,
+   "value": 900,
+   "name": "the consumer surplus triangle has area 900"
+  }
+ ],
+ "fromLesson": [
+  "= 900"
+ ]
+}

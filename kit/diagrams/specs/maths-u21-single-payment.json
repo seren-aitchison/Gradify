@@ -1,0 +1,60 @@
+{
+ "id": "maths-u21-single-payment",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Time Value of Money",
+ "title": "Two debts replaced by one payment at year 1",
+ "caption": "At time 1, £1,000 due now has grown to £1,050, and £2,000 due at time 2 is worth £1,904.76 one year earlier. Moving every amount to the same date lets them be added: £2,954.76.",
+ "alt": "One bar split into £1,050 (the debt due now, accumulated) and £1,904.76 (the debt due at year 2, discounted), with a bracket over both for £2,954.76.",
+ "description": [
+  "Choose time 1 as the comparison date.",
+  "The £1,000 due now accumulates one year: 1000 × 1.05 = £1,050.",
+  "The £2,000 due at year 2 is discounted one year: 2000/1.05 = £1,904.76.",
+  "Add the two values at the same date: £2,954.76."
+ ],
+ "prefix": "£",
+ "bars": [
+  {
+   "label": "value at year 1",
+   "parts": [
+    {
+     "value": 1050,
+     "text": "£1,050 (now)"
+    },
+    {
+     "value": 1904.76,
+     "text": "£1,904.76 (year 2)"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 2954.76,
+   "text": "£2,954.76"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 1000,
+   "percent": 105,
+   "value": 1050,
+   "name": "£1,000 grown at 5% for one year is £1,050"
+  },
+  {
+   "type": "percent",
+   "of": "2000/1.05",
+   "percent": 105,
+   "value": 2000,
+   "name": "£1,904.76 grown a year is the £2,000 due at year 2"
+  }
+ ],
+ "fromLesson": [
+  "2954.76"
+ ]
+}

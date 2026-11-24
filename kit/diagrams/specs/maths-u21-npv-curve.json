@@ -1,0 +1,98 @@
+{
+ "id": "maths-u21-npv-curve",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Net Present Value (NPV)",
+ "title": "NPV against the discount rate",
+ "caption": "The project's NPV falls as the discount rate rises. At 10% it is £41.32, so accept; it crosses zero at about 13.1%, the project's IRR.",
+ "alt": "A falling curve of NPV against discount rate, passing through (10%, £41.32) and crossing the axis near 13.1%.",
+ "description": [
+  "NPV(r) = −1000 + 600/(1 + r) + 600/(1 + r)².",
+  "At r = 10% it is 1041.32 − 1000 = £41.32 > 0.",
+  "Higher rates discount the inflows more, so NPV falls.",
+  "NPV is zero at about 13.1%."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.3
+  ],
+  "y": [
+   -250,
+   650
+  ]
+ },
+ "ticks": [
+  [
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3
+  ],
+  [
+   -200,
+   0,
+   200,
+   400,
+   600
+  ]
+ ],
+ "grid": [
+  0.05,
+  200
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "discount rate",
+  "NPV £"
+ ],
+ "curves": [
+  {
+   "expr": "-1000+600/(1+x)+600/(1+x)^2",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 41.32231404958662,
+   "label": "10%: £41.32",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  },
+  {
+   "x": 0.1306623862918075,
+   "y": 0,
+   "label": "IRR 13.1%",
+   "colour": "a4",
+   "dx": 12,
+   "dy": 24
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-1000+600/(1+x)+600/(1+x)^2",
+   "x": 0.1,
+   "y": 41.32231404958662,
+   "name": "at 10% the NPV is £41.32"
+  },
+  {
+   "type": "point",
+   "expr": "-1000+600/(1+x)+600/(1+x)^2",
+   "x": 0.1306623862918075,
+   "y": 0,
+   "name": "the NPV is zero at the IRR"
+  }
+ ],
+ "fromLesson": [
+  "41.32"
+ ]
+}

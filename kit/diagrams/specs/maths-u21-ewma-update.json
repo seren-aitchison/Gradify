@@ -1,0 +1,58 @@
+{
+ "id": "maths-u21-ewma-update",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u21",
+ "lesson": "Market Risk Modelling",
+ "title": "Updating the variance with EWMA",
+ "caption": "The new variance is a blend: 94% weight on yesterday's variance and 6% on today's squared return. In units of 10⁻⁶ that is 94 + 24 = 118, a daily volatility of about 1.09%.",
+ "alt": "One bar made of two parts, 94 (from yesterday's variance) and 24 (from today's return), bracketed as 118.",
+ "description": [
+  "0.94 × 0.0001 = 0.000094, the part from yesterday's variance.",
+  "0.06 × 0.02² = 0.000024, the part from today's squared return.",
+  "Their sum is 0.000118, and its square root is about 1.09%."
+ ],
+ "bars": [
+  {
+   "label": "variance (×10⁻⁶)",
+   "parts": [
+    {
+     "value": 94,
+     "text": "94: old"
+    },
+    {
+     "value": 24,
+     "text": "24"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 118,
+   "text": "118"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 0.0001,
+   "percent": 94,
+   "value": 0.000094,
+   "name": "0.94 × 0.0001 = 0.000094"
+  },
+  {
+   "type": "percent",
+   "of": 0.0004,
+   "percent": 6,
+   "value": 0.000024,
+   "name": "0.06 × 0.02² = 0.000024"
+  }
+ ],
+ "fromLesson": [
+  "0.000118"
+ ]
+}
