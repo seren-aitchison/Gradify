@@ -1,0 +1,942 @@
+{
+ "about.html": [
+  "About Gradify: Who Builds It and How Lessons Are Checked",
+  "About Gradify: who builds it, why, and how every lesson and flashcard is checked. Turn your notes into flashcards checked against what you wrote."
+ ],
+ "ambassadors.html": [
+  "Gradify Campus Ambassadors",
+  "Become a Gradify Campus Ambassador: share a free study tool with your course and societies, get free Gradify Pro, an official title for your CV and…"
+ ],
+ "app.html": [
+  "Gradify app: turn your notes into checked flashcards",
+  "Bring your notes into Gradify. Turn them into flashcards you can trust, revise them, and see your progress."
+ ],
+ "artgradify/course/index.html": [
+  "Art & Design Course: 183 Free Lessons | ArtGradify",
+  "Art and Design: 12 topic areas and 183 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "artgradify/index.html": [
+  "Learn Art & Design Online: Free Course | ArtGradify",
+  "Learn drawing, colour theory, painting, composition and art history in a free art and design course, with practice and flashcards to build your skills."
+ ],
+ "businessgradify/course/index.html": [
+  "Business & Management Course: Free Lessons | BusinessGradify",
+  "Business and Management: 11 topic areas and 178 free lessons, starting with The Business Environment, with notes, check questions, flashcards and quizzes."
+ ],
+ "businessgradify/index.html": [
+  "Business & Management Revision Online | BusinessGradify",
+  "Revise strategy, marketing, operations and organisational behaviour with a free business course, real case studies, flashcards and quizzes."
+ ],
+ "checklists/coursework-submission/index.html": [
+  "Coursework Submission Checklist: Before You Press Submit",
+  "The final checks before submitting coursework: the brief, word count, file format, references, academic integrity declaration and a confirmation receipt."
+ ],
+ "checklists/critical-analysis/index.html": [
+  "Critical Analysis Checklist: From Descriptive to First-Class",
+  "Check each paragraph for critical analysis: a claim, evidence, evaluation of that evidence, comparison with other sources, and a link back to your…"
+ ],
+ "checklists/exam-day/index.html": [
+  "Exam Day Checklist: What to Bring and Do · Gradify",
+  "A free exam day checklist: student ID, pens, calculator in the right mode, timetable and room, water, timing plan and a calm start."
+ ],
+ "checklists/final-48-hours/index.html": [
+  "Final 48 Hours Before an Exam: Checklist · Free · Gradify",
+  "The last two days before an exam: past-paper gaps, rapid recall of weak cards, formula and definition sheets, logistics, sleep."
+ ],
+ "checklists/index.html": [
+  "Free Study Checklists: Exams, Lab Reports, Essays · Gradify",
+  "Free interactive checklists for students: exam day, final 48 hours, lab reports, proofreading, peer review, coursework submission and a semester reset."
+ ],
+ "checklists/lab-report/index.html": [
+  "Lab Report Checklist: Structure and Common Mistakes",
+  "A free interactive lab report checklist: aim, hypothesis, method and controls, results with uncertainty, discussion of limitations and conclusion."
+ ],
+ "checklists/peer-review/index.html": [
+  "Peer Review Checklist: Give Useful Feedback on a Draft",
+  "Give a coursemate useful feedback instead of 'looks good': prompts for essays, lab reports, presentations and code or data projects, with a summary to…"
+ ],
+ "checklists/proofreading/index.html": [
+  "Proofreading Checklist for Essays and Reports · Gradify",
+  "Proofread like a marker: argument and content, structure and signposting, then formatting, units and references."
+ ],
+ "checklists/semester-reset/index.html": [
+  "University Semester Reset Checklist · Gradify",
+  "A start-of-term reset for university: audit your modules and assessments, set up folders and a spaced-repetition routine, and do a baseline quiz."
+ ],
+ "checklists/stem-practical/index.html": [
+  "STEM Practical Exam Checklist (Lab Assessments) · Gradify",
+  "Prepare for a science practical exam or required practicals: techniques, safety, recording results, uncertainty and the write-up questions examiners ask."
+ ],
+ "compare/gizmo-alternatives/index.html": [
+  "Gizmo AI alternatives (2026, Honest List) · Gradify",
+  "Gizmo turns notes into AI quizzes with a game-style 'lives' system on its free plan, and sells an unlimited plan."
+ ],
+ "compare/gradify-vs-anki/index.html": [
+  "Gradify vs Anki: Easier Flashcards From Your Lecture Notes?",
+  "Gradify vs Anki, honestly compared: making cards, scheduling (both use FSRS), shared decks, add-ons, ease of use and price."
+ ],
+ "compare/gradify-vs-quizlet/index.html": [
+  "Gradify vs Quizlet: Which Is Better for Revising From Your",
+  "An honest Gradify vs Quizlet comparison: making flashcards from your own notes, checking them, spaced repetition, shared sets and price, and who each one…"
+ ],
+ "compare/index.html": [
+  "Compare Study Tools: Gradify vs Quizlet, Anki and More",
+  "Honest comparisons of Gradify with Quizlet, Anki and other study tools, with where each one wins."
+ ],
+ "compare/knowt-alternatives/index.html": [
+  "Knowt alternatives (2026, Honest List) · Gradify",
+  "Knowt's free plan covers flashcards, Learn mode, spaced repetition and Quizlet import, with AI features capped and a paid plan for more."
+ ],
+ "compare/quizlet-alternatives/index.html": [
+  "Best Free Quizlet Alternatives in 2026 · Gradify",
+  "Free alternatives to Quizlet for 2026: Anki, Gradify, RemNote, Knowt and Brainscape, compared on making cards from notes, spaced repetition and what's…"
+ ],
+ "compare/quizlet-plus-alternatives/index.html": [
+  "Free Quizlet Plus alternatives (2026, Honest List) · Gradify",
+  "Quizlet's free plan limits some study modes, and Quizlet Plus (and Plus Unlimited) are paid."
+ ],
+ "compare/turbolearn-studyfetch-alternatives/index.html": [
+  "TurboLearn and StudyFetch alternatives · Gradify",
+  "TurboLearn and StudyFetch both turn lectures and PDFs into notes, flashcards and quizzes, with free plans that limit uploads or AI use each month and…"
+ ],
+ "creategradify/course/index.html": [
+  "Design Thinking Course: 173 Free Lessons | CreateGradify",
+  "Design Thinking and Creativity: 12 topic areas and 173 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "creategradify/index.html": [
+  "Design Thinking Course & Creative Briefs | CreateGradify",
+  "Learn design thinking, ideation, user research and prototyping in a free creativity course, then practise on real design briefs."
+ ],
+ "dentalgradify/course/index.html": [
+  "Dentistry Course: 200 Free Lessons | DentalGradify",
+  "Dentistry: 12 topic areas and 200 free lessons, from Oral and Head and Neck Anatomy to Professionalism, Ethics and Law, with flashcards and quizzes."
+ ],
+ "dentalgradify/index.html": [
+  "Dental School Revision: Notes & Flashcards | DentalGradify",
+  "Revise oral anatomy, dental materials, caries and clinical dentistry with a free dental course, flashcards made from your lectures and quizzes."
+ ],
+ "ecogradify/course/index.html": [
+  "Ecology Course: 198 Free Lessons | EcoGradify",
+  "Ecology and Environmental Science: 11 topic areas and 198 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "ecogradify/index.html": [
+  "Ecology & Environmental Science Revision | EcoGradify",
+  "Revise populations, communities, ecosystems, biodiversity and sustainability with a free ecology course, flashcards, quizzes and real-world case studies."
+ ],
+ "edugradify/course/index.html": [
+  "Teaching CPD Course: 228 Free Lessons | EduGradify",
+  "Teaching: 12 topic areas and 228 free lessons, from How Pupils Learn to Education, with notes, check questions, flashcards and quizzes."
+ ],
+ "edugradify/index.html": [
+  "Teacher CPD & Retrieval Practice Resources | EduGradify",
+  "Free teacher CPD on how pupils learn, classroom practice, assessment and adaptive teaching, plus tools that turn your materials into retrieval quizzes."
+ ],
+ "engineergradify/course/index.html": [
+  "Engineering Course: 191 Free Lessons | EngineerGradify",
+  "Engineering: 12 topic areas and 191 free lessons, from Engineering Mathematics to Projects and Professional Practice, with flashcards and quizzes."
+ ],
+ "engineergradify/index.html": [
+  "Engineering Revision Online: Free Course | EngineerGradify",
+  "Revise engineering maths, statics, dynamics, materials and systems with worked problems, flashcards and quizzes in a free engineering course."
+ ],
+ "explore.html": [
+  "Explore · Gradify",
+  "Browse every Gradify course: chapters, topics and lessons, with estimated study time and your progress. Open anything."
+ ],
+ "features/adaptive-difficulty/index.html": [
+  "Adaptive Revision Quizzes That Adjust | Gradify",
+  "Adaptive quizzes get harder or easier as you answer: two right in a row and the questions step up, one wrong and they step down."
+ ],
+ "features/audio-questions/index.html": [
+  "Hands-Free Audio Revision Questions | Gradify",
+  "Audio questions reads a question aloud, pauses so you can answer out loud, then reads the answer."
+ ],
+ "features/bonus-facts-and-boosting/index.html": [
+  "Bonus Facts and Card Boosting in Revision | Gradify",
+  "As you revise in the flashcard feed, bonus facts appear between your cards, and any card you miss can be boosted so you see it more often. Free."
+ ],
+ "features/challenges/index.html": [
+  "Daily and Weekly Study Challenges | Gradify",
+  "Gradify sets daily and weekly challenges across your sites, such as a number of questions or lessons, for XP and rewards. Free."
+ ],
+ "features/chant-podcasts/index.html": [
+  "Revision Chant Podcasts for Every Unit | Gradify",
+  "Chant podcasts turn every unit of a Gradify course into an episode of short, repeated chants of its key facts, played back to back."
+ ],
+ "features/community-chats/index.html": [
+  "Subject Chats for Students | Gradify",
+  "Gradify has a chat for every subject and site, where learners can ask and answer each other's questions about what they're studying. Free."
+ ],
+ "features/confidence-ratings/index.html": [
+  "Flashcards with Confidence Ratings (FSRS) | Gradify",
+  "After each flashcard you rate how well you knew it, and Gradify's spaced repetition (FSRS) brings the card back just before you'd forget it, paced to…"
+ ],
+ "features/dictionaries-and-thesauruses/index.html": [
+  "Subject Dictionary of Key Terms | Gradify",
+  "Gradify's subject dictionaries define every key term used in its lessons, organised by subject. Free."
+ ],
+ "features/downloadable-resources/index.html": [
+  "Free Downloadable Revision Resources | Gradify",
+  "Every lesson's resources can be downloaded and printed: notes, key-terms sheets, questions, posters, and flashcards ready to import into Anki. Free."
+ ],
+ "features/explainer-videos/index.html": [
+  "Make a Revision Explainer Video from Notes | Gradify",
+  "Gradify turns any lesson, unit or your own notes into a short narrated explainer video, one scene per section."
+ ],
+ "features/flashcard-feed/index.html": [
+  "Flashcard Feed: Scroll Your Revision | Gradify",
+  "The flashcard feed is an endless scroll of flashcards from your decks and the subjects you choose, with bonus facts and study hacks mixed in. Free."
+ ],
+ "features/friends-and-school-leaderboards/index.html": [
+  "Study Leaderboards for Friends and Schools | Gradify",
+  "Follow your friends with their friend code and compare progress on friends' and school leaderboards in Gradify. Free."
+ ],
+ "features/gradify-tree/index.html": [
+  "Gradify Tree: See Your Learning Grow | Gradify",
+  "The Gradify Tree grows as you learn, with a branch for every subject you study, so you can see your progress at a glance. Free."
+ ],
+ "features/handwriting-to-text/index.html": [
+  "Handwriting to Text: Free, On Your Device | Gradify",
+  "Handwriting to text turns writing on a phone or tablet, or a photo of a handwritten page, into searchable text."
+ ],
+ "features/heatmap/index.html": [
+  "Study Heatmap: Every Day of Learning | Gradify",
+  "The heatmap shows every day you've learned across every Gradify site, in one calendar grid, so gaps and streaks are easy to see. Free."
+ ],
+ "features/index.html": [
+  "Every Gradify Feature: 38 Study Tools | Gradify",
+  "Every Gradify feature on one page: courses, Notes Studio, flashcards with spaced repetition, quizzes, mind maps, planning, progress and community."
+ ],
+ "features/interim-quizzes/index.html": [
+  "Unit Quizzes Through Every Free Course | Gradify",
+  "Every Gradify course has short quizzes along the way, at the end of each unit, so you know where you stand before you move on. Free."
+ ],
+ "features/internshipgradify/index.html": [
+  "Find Internships and Work Experience | Gradify",
+  "InternshipGradify lists well-known internship, placement and work experience schemes in the UK, matched to the subjects you study. Free."
+ ],
+ "features/key-term-games/index.html": [
+  "Key Term Revision Games: Match & Speed | Gradify",
+  "Key-term games turn the vocabulary of any lesson, unit or your own flashcard deck into three quick games: Match, Speed round and Missing letters."
+ ],
+ "features/key-terms-sheets/index.html": [
+  "Printable Key Terms Sheets for Revision | Gradify",
+  "Key-terms sheets give you a printable sheet of every key term in a lesson, with or without the definitions."
+ ],
+ "features/notebook/index.html": [
+  "Linked Notes App with Built-In Flashcards | Gradify",
+  "Gradify's Notebook keeps your notes as linked pages, like RemNote or Notion, and any line can become a flashcard. Free."
+ ],
+ "features/notes-studio/index.html": [
+  "Notes Studio: Study Packs Checked Against Your Notes",
+  "Notes Studio turns a PDF of your notes, or notes you paste in, into flashcards, a mind map and a cheat sheet."
+ ],
+ "features/online-courses/index.html": [
+  "Free Online Courses in 30+ Subjects | Gradify",
+  "Gradify has free online courses on every one of its subject sites, from GCSE core and primary to medicine, law and physics."
+ ],
+ "features/projects-for-xp/index.html": [
+  "Real Student Projects for XP and a Portfolio | Gradify",
+  "Projects for XP are real projects to complete step by step, such as teaching a topic in a 3-minute video. Free."
+ ],
+ "features/question-bank/index.html": [
+  "Revision Question Bank with Feedback | Gradify",
+  "The question bank puts every practice question on Gradify in one place, with marked feedback on every answer. Part of Gradify Pro (£10 a month)."
+ ],
+ "features/reward-scheme/index.html": [
+  "Study Rewards for Learning Milestones | Gradify",
+  "Gradify rewards long-term milestones, such as answering 1,000 questions or keeping a 100-day streak, and each one is earned once and kept. Free."
+ ],
+ "features/smart-reminders/index.html": [
+  "Smart Study Reminders for Your Deadlines | Gradify",
+  "Smart reminders know your deadlines and your streak, and remind you when it's time to revise. Part of Gradify Pro (£10 a month)."
+ ],
+ "features/spidermaps/index.html": [
+  "Spidermaps: Mind Maps Built from Any Lesson | Gradify",
+  "Gradify's mind map creator builds a spidermap from facts you pick from any lesson, which you can then move, rename and add your own ideas to."
+ ],
+ "features/story-posters/index.html": [
+  "Revision Story Posters with Cloze Mode | Gradify",
+  "Story posters tell a topic as a picture story, one panel at a time. Free: use it 5 times on the free plan, then Gradify Pro (£10 a month) for unlimited…"
+ ],
+ "features/streaks/index.html": [
+  "Study Streaks That Build a Daily Habit | Gradify",
+  "Gradify counts two kinds of streak: a daily streak for every day in a row you learn something, and a streak of correct answers in a row. Free."
+ ],
+ "features/student-mentors/index.html": [
+  "Student Mentors: Advice from Students Ahead | Gradify",
+  "Student mentors are students a year or two ahead of you who offer advice, on subjects, applications and what comes next, inside Gradify. Free."
+ ],
+ "features/study-groups/index.html": [
+  "Online Study Groups with Shared Quizzes | Gradify",
+  "Gradify study groups are private groups with a join code, a chat, members and a weekly leaderboard, for revising together online. Free."
+ ],
+ "features/time-blocking/index.html": [
+  "Revision Planner with Time Blocking | Gradify",
+  "Plan your week in time blocks on a calendar, and let Gradify auto-plan your revision into your free time from your goals, fading topics and deadlines."
+ ],
+ "features/timed-quiz-mode/index.html": [
+  "Timed Revision Quizzes Like the Real Exam | Gradify",
+  "Timed quiz mode gives you a quiz from any lesson, unit or deck with a fixed time to answer, so you practise against the clock like the real exam."
+ ],
+ "features/tutorials-and-simulations/index.html": [
+  "Interactive Science Simulations Online | Gradify",
+  "Gradify's courses include interactive tutorials and simulations you control, from a beating heart and protein structures to circuits and markets. Free."
+ ],
+ "features/tutors/index.html": [
+  "Find a Student Tutor for Any Subject | Gradify",
+  "In Gradify's community, learners offer to tutor in subjects they know well, and you can ask one for help inside Gradify. Free."
+ ],
+ "features/xp-and-levels/index.html": [
+  "Earn XP and Level Up as You Learn | Gradify",
+  "You earn XP for what you learn on Gradify and level up as it adds up. Free."
+ ],
+ "financegradify/course/index.html": [
+  "Accounting & Finance Course: Free Lessons | FinanceGradify",
+  "Accounting and Finance: 12 topic areas and 202 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "financegradify/index.html": [
+  "Accounting & Finance Revision Online | FinanceGradify",
+  "Revise double entry, financial statements, valuation and corporate finance with worked problems, flashcards and quizzes in a free accounting course."
+ ],
+ "glossary/active-recall/index.html": [
+  "What Is Active recall? Definition and How to Use It",
+  "Active recall is studying by retrieving information from memory, for example answering a flashcard or writing what you know on a blank page, instead of re-"
+ ],
+ "glossary/cornell-notes/index.html": [
+  "What Is Cornell notes? Definition and How to Use It",
+  "Cornell notes divide a page into a wide notes column, a narrow cue column for questions or keywords, and a summary at the bottom."
+ ],
+ "glossary/desirable-difficulties/index.html": [
+  "What Is Desirable difficulties? Definition and How to Use It",
+  "Desirable difficulties are study conditions that make learning feel harder in the moment but improve long-term memory, such as testing, spacing and interle"
+ ],
+ "glossary/dual-coding/index.html": [
+  "What Is Dual coding? Definition and How to Use It · Gradify",
+  "Dual coding is combining words with visuals, such as diagrams, timelines and mind maps, so the same idea is stored both verbally and visually."
+ ],
+ "glossary/elaborative-interrogation/index.html": [
+  "What Is Elaborative interrogation? Definition and How to Use",
+  "Elaborative interrogation is asking yourself why and how a fact is true, and answering from what you already know."
+ ],
+ "glossary/feynman-technique/index.html": [
+  "What Is Feynman technique? Definition and How to Use It",
+  "The Feynman technique is learning by explaining a topic in simple words, as if teaching a beginner, then going back to the source wherever the explanation"
+ ],
+ "glossary/forgetting-curve/index.html": [
+  "What Is Forgetting curve? Definition and How to Use It",
+  "The forgetting curve shows how quickly memory fades after learning: steeply in the first hours and days, then more slowly."
+ ],
+ "glossary/fsrs/index.html": [
+  "What Is FSRS? Definition and How to Use It · Gradify",
+  "FSRS is an open-source spaced repetition algorithm that predicts how likely you are to remember each card and schedules the next review for when that chanc"
+ ],
+ "glossary/index.html": [
+  "Study Glossary: Learning Science Terms in Plain English",
+  "Active recall, spaced repetition, the forgetting curve, the Leitner system, interleaving, FSRS and more: learning science terms explained in plain English."
+ ],
+ "glossary/interleaving/index.html": [
+  "What Is Interleaving? Definition and How to Use It · Gradify",
+  "Interleaving is mixing different topics or problem types in one study session (A, B, C, A, C, B) instead of practising one type at a time (A, A, A, B, B, B"
+ ],
+ "glossary/leitner-system/index.html": [
+  "What Is Leitner system? Definition and How to Use It",
+  "The Leitner system is a paper flashcard method using numbered boxes: a card you answer correctly moves up a box and is reviewed less often; a card you miss"
+ ],
+ "glossary/metacognition/index.html": [
+  "What Is Metacognition? Definition and How to Use It",
+  "Metacognition is thinking about your own thinking: judging what you know, planning how to learn and checking whether it's working."
+ ],
+ "glossary/pomodoro-technique/index.html": [
+  "What Is Pomodoro technique? Definition and How to Use It",
+  "The Pomodoro technique is working in focused 25-minute blocks with a 5-minute break after each, and a longer break after four."
+ ],
+ "glossary/retrieval-practice/index.html": [
+  "What Is Retrieval practice? Definition and How to Use It",
+  "Retrieval practice is the research term for learning by recalling information, also called the testing effect: being tested on material improves later memo"
+ ],
+ "glossary/spaced-repetition/index.html": [
+  "What Is Spaced repetition? Definition and How to Use It",
+  "Spaced repetition is reviewing material at increasing intervals, such as after 1, 3, 7 and 14 days, timed so each review comes just before you'd forget."
+ ],
+ "glossary/spacing-effect/index.html": [
+  "What Is Spacing effect? Definition and How to Use It",
+  "The spacing effect is the finding that we remember more when study is spread over several sessions than when the same time is spent in one block (cramming)"
+ ],
+ "guides/active-recall-for-science/index.html": [
+  "How to Use Active Recall for Science Subjects · Gradify",
+  "Active recall for science: flashcards for definitions, blank-page diagrams for processes, and worked problems for calculations."
+ ],
+ "guides/active-recall-schedule-before-finals/index.html": [
+  "The Best Active Recall Schedule Before Finals · Gradify",
+  "A week-by-week active recall and spaced repetition schedule for the six weeks before university finals or A levels, with what to do each day and how to…"
+ ],
+ "guides/active-recall-vs-rereading/index.html": [
+  "Active Recall vs Re-reading Notes: Which Works Better?",
+  "Re-reading feels productive but fades fast. Here's what the research says about active recall vs re-reading, and how to switch a re-reading habit to…"
+ ],
+ "guides/active-recall/index.html": [
+  "Active Recall: The Complete Guide for University Exams",
+  "What active recall is, the research behind it, and a step-by-step method for using it with flashcards, blank pages and past papers to revise for…"
+ ],
+ "guides/best-study-tools-for-university-students/index.html": [
+  "7 Best Study Tools for University Students in 2026 · Gradify",
+  "An honest comparison of the best study tools for university students in 2026: Anki, Quizlet, Notion, RemNote, Forest, Google NotebookLM and Gradify, with…"
+ ],
+ "guides/blurting-method/index.html": [
+  "The Blurting Method: How to Do It · Gradify",
+  "The blurting revision method explained: write everything you remember on a blank page, check it in another colour, and target the gaps."
+ ],
+ "guides/command-words/index.html": [
+  "Exam Command Words Explained · Gradify",
+  "What state, describe, explain, compare, evaluate and 'to what extent' want, with weak vs full-mark answers. For GCSE, A level, IB and university exams."
+ ],
+ "guides/definitions-vs-explanations/index.html": [
+  "Definitions vs Explanations: Matching the Mark Scheme",
+  "When to give a crisp technical definition, a step-by-step explanation or an evaluation, with side-by-side examples, so your answer matches the mark scheme."
+ ],
+ "guides/exam-resit-recovery/index.html": [
+  "Failed an Exam? A Resit Recovery Plan That Works · Gradify",
+  "Failed a module or exam? How to read your feedback, find what actually went wrong, and build a resit revision plan, without panic. With free planners."
+ ],
+ "guides/exam-technique/index.html": [
+  "Exam Technique: Timing, Planning and Checking for Marks",
+  "Exam technique that adds marks without more content: time per mark, the order to answer in, how to break down multi-part questions and what to check at…"
+ ],
+ "guides/export-quizlet-sets/index.html": [
+  "How to Export Quizlet Sets and Study Them Elsewhere",
+  "Export a Quizlet set you made, import it into Anki or Gradify, and check every card against your notes. Step by step, with what to watch for."
+ ],
+ "guides/free-alternatives-to-paid-study-apps/index.html": [
+  "Free Alternatives to Paid Study Apps · Gradify",
+  "Free ways to do what paid study subscriptions charge for: AI flashcards from notes, spaced repetition, mind maps, study planners and timers, some with no…"
+ ],
+ "guides/freshers-study-system/index.html": [
+  "A First-Year University Study System That Works · Gradify",
+  "Set up a simple study system in freshers' week: one folder per module, notes the same day, weekly reviews, flashcards from the start, and a baseline quiz."
+ ],
+ "guides/goodnotes-notion-pdf-to-mind-map/index.html": [
+  "Turn GoodNotes or Notion Notes into Flashcards and Mind Maps",
+  "Export GoodNotes or Notion notes as PDF or Markdown and turn them into source-checked flashcards and a mind map, free. Step by step."
+ ],
+ "guides/graph-reading/index.html": [
+  "How to Read Graphs and Data in Exams · Gradify",
+  "Stop losing marks on data questions: a fast 4-check scan of axes and units, scale and log axes, trend vs anomaly, and caveats like error bars and controls."
+ ],
+ "guides/history-source-essays/index.html": [
+  "How to Write a History Source Essay · Gradify",
+  "Structure a history source or interpretation essay: provenance, content and context, judging value and reliability, and reaching a supported conclusion."
+ ],
+ "guides/how-to-make-good-flashcards/index.html": [
+  "How to Make Good Flashcards: 9 Rules That Actually Work",
+  "Nine rules for making effective flashcards: one idea per card, questions not topics, cloze deletions, images, and why your cards must match your own…"
+ ],
+ "guides/how-to-revise-in-two-weeks/index.html": [
+  "How to Revise in 2 Weeks · Gradify",
+  "Two weeks until your exam? A realistic day-by-day plan: triage topics, turn notes into flashcards fast, use active recall and past papers, and protect…"
+ ],
+ "guides/index.html": [
+  "Study Guides: Active Recall, Flashcards and Revision Plans",
+  "Free, research-backed study guides: active recall, spaced repetition, making flashcards, revision schedules before finals and the best study tools for…"
+ ],
+ "guides/long-answer-questions/index.html": [
+  "How to Answer 6-Mark and 8-Mark Exam Questions · Gradify",
+  "Plan a 6- or 8-mark answer in 60 seconds: core point or mechanism, evidence or example, link back to the question, evaluation."
+ ],
+ "guides/mcq-traps/index.html": [
+  "Multiple-Choice Exam Traps and How to Spot Them · Gradify",
+  "How multiple-choice distractors are built: true statements that don't answer the question, reversed cause and effect, absolutes like always or never, and…"
+ ],
+ "guides/medicinal-chemistry-labs-survival/index.html": [
+  "First-Year Medicinal Chemistry and Pharmacology Labs",
+  "How to survive first-year medicinal chemistry and pharmacology labs: pre-lab prep, lab books, calculations, write-ups and revising mechanisms and drug…"
+ ],
+ "guides/notion-study-template/index.html": [
+  "Free Notion Study Template (Revision Dashboard) · Gradify",
+  "A free Notion revision dashboard: modules, a study schedule, an active-recall tracker and links to free planners and timers."
+ ],
+ "guides/open-book-exams/index.html": [
+  "How to Prepare for Open-Book and Take-Home Exams · Gradify",
+  "Open-book exams still need revision. Build a one-page rapid-lookup index of formulas, definitions and where to find worked examples, and practise under…"
+ ],
+ "guides/organic-mechanisms-revision/index.html": [
+  "How to Revise Organic Chemistry Mechanisms Without Rote",
+  "Revise organic mechanisms by understanding electron flow: nucleophiles, electrophiles, curly arrows and a handful of patterns, then drawing them from…"
+ ],
+ "guides/question-stems/index.html": [
+  "Exam Question Stems and How to Answer Each One · Gradify",
+  "Common exam question stems (account for, suggest why, compare the mechanisms, design an investigation) with a step-by-step response skeleton for each."
+ ],
+ "guides/resits-and-compensation/index.html": [
+  "University Resits, Capped Marks and Compensation Explained",
+  "How UK university resits work: capped vs uncapped marks, compensation and condonement, credit weighting, and what to ask your department."
+ ],
+ "guides/study-methods/index.html": [
+  "Study Methods Compared: Active Recall, Blurting, Pomodoro",
+  "Active recall vs spaced repetition vs Leitner vs blurting vs Pomodoro vs time-blocking: what each is best for, setup time, the main pitfall and how to…"
+ ],
+ "guides/study-myths/index.html": [
+  "7 Study Myths That Waste Your Revision Time · Gradify",
+  "Highlighting, re-reading, learning styles, multitasking and trusting unchecked AI notes: what the research says about common study myths, and what to do…"
+ ],
+ "guides/unit-conversion/index.html": [
+  "Unit Conversion Traps in Science Exams · Gradify",
+  "The unit slips that cost marks in chemistry, biology, physics and pharmacology: mol vs mmol, µg vs mg, cm³ vs dm³, kJ vs J, and a 3-second sanity check."
+ ],
+ "guides/variables-and-controls/index.html": [
+  "Independent, Dependent and Control Variables Explained",
+  "Independent vs dependent vs control variables, with 'naming vs controlling' examples: the difference between losing and getting the mark in practicals…"
+ ],
+ "guides/winter-revision-plan/index.html": [
+  "Winter Break Revision Plan for January Exams and Resits",
+  "How to use the Christmas break before January exams or resits: rest first, light spaced reviews so nothing fades, then focused exam blocks."
+ ],
+ "healthgradify/course/index.html": [
+  "Health & Wellbeing Course: 176 Free Lessons | HealthGradify",
+  "Health and Wellbeing: 11 topic areas and 176 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "healthgradify/index.html": [
+  "How Your Body Works: Free Health Course | HealthGradify",
+  "Clear, trustworthy lessons on the human body, nutrition, sleep, activity and mental health, in small daily steps. Health education, not medical advice."
+ ],
+ "historygradify/course/index.html": [
+  "History Course: 301 Free Lessons | HistoryGradify",
+  "History: 18 topic areas and 301 free lessons, from Historical Thinking and Methods to Historical Examination and Revision, with flashcards and quizzes."
+ ],
+ "historygradify/index.html": [
+  "History Revision: Notes, Sources & Essays | HistoryGradify",
+  "Revise British, European and world history from medieval Britain to the modern world, with sources, interpretations, flashcards and essay practice."
+ ],
+ "index.html": [
+  "Gradify · Turn your notes into flashcards, free",
+  "Upload your notes and Gradify turns them into flashcards checked against what you wrote, then schedules your revision around your exam. Free, no card."
+ ],
+ "internshipgradify/course/index.html": [
+  "Careers & Employability Course | InternshipGradify",
+  "Careers and Employability: 11 topic areas and 145 free lessons, from Knowing Yourself to Career Planning and Resilience, with flashcards and quizzes."
+ ],
+ "internshipgradify/index.html": [
+  "Internships & Careers Help for Students | InternshipGradify",
+  "Find internships and work experience, and prepare with a free careers course on CVs, applications, interviews, networking and your first job."
+ ],
+ "investorgradify/course/index.html": [
+  "Investing Course: 183 Free Lessons | InvestorGradify",
+  "Investing: 12 topic areas and 183 free lessons, from Money Foundations to Building Your Plan, with notes, check questions, flashcards and quizzes."
+ ],
+ "investorgradify/index.html": [
+  "Learn to Invest: Free Investing Course | InvestorGradify",
+  "Learn how markets, asset classes, portfolios, valuation and risk work in a free investing course, with calculators. Education, not financial advice."
+ ],
+ "journey.html": [
+  "Your learning journey · Gradify",
+  "Your Gradify level, streak, daily goal, quests, achievements and progress in every subject, in one place."
+ ],
+ "juniorgradify/course/index.html": [
+  "Primary Learning Course: 167 Free Lessons | JuniorGradify",
+  "Primary: 12 topic areas and 167 free lessons, from Number and Place Value to Geography, with notes, check questions, flashcards and quizzes."
+ ],
+ "juniorgradify/index.html": [
+  "Primary Learning Practice for Ages 5 to 12 | JuniorGradify",
+  "Bite-sized primary practice for ages 5 to 12: number, fractions, phonics, reading, grammar, science, history and geography, with stars and streaks."
+ ],
+ "languagegradify/course/index.html": [
+  "Learn Spanish: 145 Free Lessons | LanguageGradify",
+  "Spanish: 10 topic areas and 145 free lessons, starting with First Steps in Spanish, with notes, check questions, flashcards and quizzes."
+ ],
+ "languagegradify/index.html": [
+  "Learn Spanish & Japanese Online Free | LanguageGradify",
+  "Learn Spanish and Japanese with short daily lessons in vocabulary, grammar and scripts, and spaced repetition that makes new words stick. Free."
+ ],
+ "languagegradify/japanese/index.html": [
+  "Learn Japanese: 182 Free Lessons | LanguageGradify",
+  "Japanese: 12 topic areas and 182 free lessons, from First Steps: Sounds and Hiragana to Japanese Culture and Society, with flashcards and quizzes."
+ ],
+ "lawgradify/course/index.html": [
+  "Law & SQE Course: 480 Free Lessons | LawGradify",
+  "Law: 19 topic areas and 480 free lessons, from Legal Foundations and the English Legal System to SQE2 Skills Practice, with flashcards and quizzes."
+ ],
+ "lawgradify/index.html": [
+  "Law Revision & SQE Prep: Free Notes | LawGradify",
+  "Revise cases, statutes and legal reasoning from the English legal system to SQE1 and SQE2, with single-best-answer questions and flashcards. Free."
+ ],
+ "lecture-notes-to-mind-map/index.html": [
+  "Lecture Notes to Mind Map: Free Mind Map Maker from Notes",
+  "Paste lecture notes or upload a PDF and get a mind map of the topic, free: main ideas, processes, concepts and examples, editable and exportable as PNG…"
+ ],
+ "litgradify/course/index.html": [
+  "English Literature Course: 166 Free Lessons | LitGradify",
+  "English Literature: 10 topic areas and 166 free lessons, starting with Foundations of Literary Study, with notes, check questions, flashcards and quizzes."
+ ],
+ "litgradify/index.html": [
+  "English Literature Revision Online | LitGradify",
+  "Revise poetry, drama, Shakespeare and the novel with close-reading practice, context, quotations and essay writing, in a free English literature course."
+ ],
+ "mathgradify/course/index.html": [
+  "Maths Course: 1,077 Free Lessons | MathGradify",
+  "Maths from everyday numeracy, GCSE and A level to university, with worked examples, generated practice and a line-by-line step checker."
+ ],
+ "mathgradify/index.html": [
+  "GCSE, A Level & University Maths Revision | MathGradify",
+  "Maths from GCSE and A level to university, with worked examples, generated practice and a line-by-line step checker that shows where a method went wrong."
+ ],
+ "medgradify/course/index.html": [
+  "Medicine Course: 234 Free Lessons | MedGradify",
+  "Medicine: 12 topic areas and 234 free lessons, starting with Foundations of Medical Science, with notes, check questions, flashcards and quizzes."
+ ],
+ "medgradify/index.html": [
+  "Medical School Revision: Notes & Flashcards | MedGradify",
+  "Medical school revision for clinical medicine, physiology and pharmacology: a free course, flashcards from your lectures and a 3D anatomy explorer."
+ ],
+ "musicgradify/course/index.html": [
+  "Music Theory Course: 201 Free Lessons | MusicGradify",
+  "Music: 12 topic areas and 201 free lessons, from Notation and Rhythm to Composition and Analysis, with notes, check questions, flashcards and quizzes."
+ ],
+ "musicgradify/index.html": [
+  "Learn Music Theory Online: Free Course | MusicGradify",
+  "Learn notation, scales, chords, harmony, ear training and music history in a free music theory course, with practice, flashcards and quizzes."
+ ],
+ "notes-to-cheat-sheet/index.html": [
+  "Notes to Cheat Sheet: Free One-Page Revision Sheet Maker",
+  "Paste your notes and get a condensed one-page revision sheet, or a key-terms sheet with the definitions blank to test yourself."
+ ],
+ "notes-to-study-chant/index.html": [
+  "Turn Notes into a Song or Chant to Memorise (Free) · Gradify",
+  "Turn your revision notes into a study chant with a beat: each key fact on the beat, plus flashcards, a cheat-sheet poster and a narrated video."
+ ],
+ "nursegradify/course/index.html": [
+  "Nursing Course: 497 Free Lessons | NurseGradify",
+  "Nursing for UK practice: anatomy and physiology, assessment, pharmacology and clinical conditions, with flashcards and quizzes. Education only."
+ ],
+ "nursegradify/index.html": [
+  "Nursing Student Revision & Practice Questions | NurseGradify",
+  "Revise anatomy, pharmacology, clinical skills and nursing fields with a free course mapped to the NMC proficiency standards, plus flashcards and quizzes."
+ ],
+ "pdf-to-flashcards/index.html": [
+  "PDF to Flashcards: Free, Checked Against Your Notes, No",
+  "Turn a lecture PDF into flashcards free in about a minute. Every card is matched to the line in your notes it came from, so nothing is made up."
+ ],
+ "pharmagradify/course/index.html": [
+  "Pharmacy Course: 318 Free Lessons | PharmaGradify",
+  "Pharmacy for UK practice: pharmacology, pharmacokinetics, therapeutics, calculations and law, for the MPharm and the GPhC registration assessment."
+ ],
+ "pharmagradify/index.html": [
+  "Pharmacy Revision for MPharm & GPhC Prep | PharmaGradify",
+  "Revise pharmacology, pharmacokinetics, therapeutics and calculations for the MPharm and the GPhC registration assessment, with a free course and quizzes."
+ ],
+ "postgradify/course/index.html": [
+  "Dissertation & Research Course: Free Lessons | PostGradify",
+  "Research and the Dissertation: 12 topic areas and 197 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "postgradify/index.html": [
+  "Dissertation & PhD Research Study Help | PostGradify",
+  "Plan your dissertation, organise your reading and turn papers into flashcards, with a free course on research questions, design, methods and writing up."
+ ],
+ "pricing.html": [
+  "Pricing · Gradify",
+  "Every Gradify course, lesson, lab and quiz is free. Gradify Pro organises and manages your learning for £10 a month. Gradify Ultra adds Gradify AI."
+ ],
+ "privacy.html": [
+  "Privacy · Gradify",
+  "What Gradify keeps about you, where it's kept, what Gradify AI sees, and how to download or delete it."
+ ],
+ "progradify/course/index.html": [
+  "Professional Skills Course: 169 Free Lessons | ProGradify",
+  "Professional Skills: 10 topic areas and 169 free lessons, starting with Professional Communication, with notes, check questions, flashcards and quizzes."
+ ],
+ "progradify/index.html": [
+  "Professional Skills & CPD Learning Online | ProGradify",
+  "Short daily practice for workplace skills and CPD: communication, management and project skills in a free course, with flashcards and quizzes."
+ ],
+ "psychgradify/course/index.html": [
+  "Psychology Course: 393 Free Lessons | PsychGradify",
+  "Psychology from neurones to cultures: 393 free lessons with interactive experiments, simulations, a data lab, flashcards, quizzes and exams."
+ ],
+ "psychgradify/index.html": [
+  "Psychology Revision Online: Notes & Quizzes | PsychGradify",
+  "Revise cognitive, biological and social psychology, research methods and statistics with interactive experiments, flashcards and quizzes. Free."
+ ],
+ "quality.html": [
+  "Quality and coverage · Gradify",
+  "How Gradify holds its lessons to account: the Quality Constitution, an audit of every lesson on nine dimensions, and the qualifications it can honestly claim."
+ ],
+ "scigradify/biology/index.html": [
+  "Biology Revision: 391 Free Lessons | SciGradify",
+  "Biology from cells to ecosystems: 391 free lessons with notes, interactive simulations, check questions, flashcards, quizzes and exams."
+ ],
+ "scigradify/chemistry/index.html": [
+  "Chemistry Revision: 410 Free Lessons | SciGradify",
+  "Chemistry from atoms to drug design: 410 free lessons with notes, interactive simulations, check questions, flashcards, quizzes and exams."
+ ],
+ "scigradify/index.html": [
+  "Biology, Chemistry & Physics Revision Online | SciGradify",
+  "Free biology, chemistry and physics courses with interactive simulations, notes, flashcards, quizzes and exams, from first principles to advanced topics."
+ ],
+ "scigradify/physics/index.html": [
+  "Physics Revision: 1,308 Free Lessons | SciGradify",
+  "Physics from first principles to research: 54 units and 1,308 free lessons with full notes, check questions, flashcards and unit quizzes."
+ ],
+ "site-map.html": [
+  "Site Map: Every Gradify Page · Gradify",
+  "Every part of Gradify on one page: the app, every subject site, free study tools, guides, comparisons, the glossary, templates, topics and study plans."
+ ],
+ "socgradify/course/index.html": [
+  "Sociology Course: 438 Free Lessons | SocGradify",
+  "Sociology from the sociological imagination to social data science: 438 free lessons with real-data explorers, flashcards, quizzes and exams."
+ ],
+ "socgradify/index.html": [
+  "Sociology Revision Online: Notes & Quizzes | SocGradify",
+  "Revise sociological theory, inequality, culture, institutions and research methods with real-data explorers, flashcards and quizzes. Free."
+ ],
+ "sportgradify/course/index.html": [
+  "Sport Science Course: 205 Free Lessons | SportGradify",
+  "Sport and Exercise Science: 12 topic areas and 205 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "sportgradify/index.html": [
+  "Sport & Exercise Science Revision | SportGradify",
+  "Revise functional anatomy, exercise physiology, energy systems, training principles and coaching with a free sport science course and a 3D body view."
+ ],
+ "templates/7-day-exam-plan/index.html": [
+  "7-day active recall exam plan (Free Printable PDF) · Gradify",
+  "A day-by-day plan for the last week before an exam: what to recall, when to do past papers, and how to protect sleep."
+ ],
+ "templates/active-recall-tracker/index.html": [
+  "Active recall tracker (Free Printable PDF) · Gradify",
+  "Track each topic's recall sessions over spaced days: tick when you can recall it from a blank page, and see what needs another round."
+ ],
+ "templates/cornell-notes/index.html": [
+  "Cornell notes template (Free Printable PDF) · Gradify",
+  "A printable Cornell notes page: a cue column for questions, a notes column and a summary box, for turning lecture notes into a self-test."
+ ],
+ "templates/index.html": [
+  "Free Printable Revision Templates (PDF) · Gradify",
+  "Free printable revision templates: weekly revision timetable, Cornell notes, active recall tracker and a 7-day exam plan. Print or save as PDF."
+ ],
+ "templates/revision-timetable/index.html": [
+  "Weekly revision timetable (Free Printable PDF) · Gradify",
+  "A one-week revision timetable to print: morning, afternoon and evening blocks for each day, with space for due reviews."
+ ],
+ "terms.html": [
+  "Terms · Gradify",
+  "The terms for using Gradify and every Gradify site: accounts, your notes, study material, Gradify AI and Gradify Ultra."
+ ],
+ "tools/a-level-exam-countdown/index.html": [
+  "A level exam countdown: Days Left and Revision Hours",
+  "How many days until A level exams? A free countdown from an estimated 2027 start date (change it to yours), with revision hours left."
+ ],
+ "tools/bookmarklet/index.html": [
+  "Send to Gradify Bookmarklet: Any Webpage to Flashcards",
+  "Drag the Send to Gradify button to your bookmarks bar. Highlight text on any page (Wikipedia, PubMed, BBC Bitesize) and turn it into checked flashcards."
+ ],
+ "tools/calm-reset/index.html": [
+  "60-Second Exam Stress Reset: Breathe, Then One Task",
+  "Frozen before an exam? One minute of paced breathing (in 4, hold 4, out 6), then pick one 10-minute task: three quiz questions or a single flashcard deck."
+ ],
+ "tools/citation-helper/index.html": [
+  "Free Citation Generator: Harvard, APA, Vancouver, IEEE",
+  "Format a journal article, book or web page reference in Harvard, APA 7, Vancouver or IEEE, with the in-text citation. Free, no sign-up, nothing stored."
+ ],
+ "tools/cram-planner/index.html": [
+  "Cram Planner: Revise in 48 Hours · Gradify",
+  "Exam in 2 days? Enter the hours left and your topics and get a ruthless triage plan: high-yield concepts, past-paper gaps, rapid recall, then sleep."
+ ],
+ "tools/deadline-planner/index.html": [
+  "Coursework Deadline Planner with a 48-Hour Buffer · Gradify",
+  "Enter your coursework deadline, hours needed and study days a week. Get daily hours, dated milestones and a 48-hour buffer, as a calendar file."
+ ],
+ "tools/degree-classification-calculator/index.html": [
+  "UK Degree Classification Calculator · Gradify",
+  "Free UK degree calculator: enter your module marks and credits for year 2 and your final year, choose the weighting, and see your classification, with…"
+ ],
+ "tools/dissertation-word-count/index.html": [
+  "Dissertation Word Count Calculator by Chapter · Gradify",
+  "Split a 10,000-word dissertation into chapter word counts (abstract, introduction, literature review, methods, results, discussion) and a daily target."
+ ],
+ "tools/essay-outline-helper/index.html": [
+  "Essay Outline Generator: Paragraph Plan with Word Counts",
+  "Enter your essay question, word count and argument. Get a paragraph-by-paragraph plan (introduction, points, counter-argument, conclusion) with word…"
+ ],
+ "tools/exam-countdown/index.html": [
+  "Exam Countdown & Revision Hours Calculator · Free · Gradify",
+  "How many days until your exam, and how many real revision hours do you have? Free exam countdown with study-hours planning, an embeddable widget and a…"
+ ],
+ "tools/exam-timetable-planner/index.html": [
+  "Exam Timetable Planner: Revise for Back-to-Back Exams",
+  "Add 2 to 8 exams with dates, weight and difficulty. Get a day-by-day revision order that gives heavy, close exams their time first. Free."
+ ],
+ "tools/final-grade-calculator/index.html": [
+  "Final Exam Grade Calculator: What Do I Need on My Final?",
+  "Free final grade calculator: enter your current grade, how much the final is worth and your target, and see exactly what you need to score on the final…"
+ ],
+ "tools/focus-room/index.html": [
+  "Shared Study Timer: Focus Room for Study Groups · Gradify",
+  "A free 'study with me' room: everyone with the link sees the same 50/10 timer, synced to the clock. Share it in Discord or a group chat. No sign-up."
+ ],
+ "tools/gcse-exam-countdown/index.html": [
+  "GCSE exam countdown: Days Left and Revision Hours · Gradify",
+  "How many days until GCSE exams? A free countdown from an estimated 2027 start date (change it to yours), with revision hours left."
+ ],
+ "tools/gpa-calculator/index.html": [
+  "GPA Calculator for College and University · Gradify",
+  "Free GPA calculator on the US 4.0 scale: add each course's letter grade and credit hours to get your semester or cumulative GPA."
+ ],
+ "tools/grade-boundaries/index.html": [
+  "Grade Boundary Checker for Past Papers · Free · Gradify",
+  "Paste your exam board's grade boundaries for a past paper and your raw mark, and see your grade, your percentage and how many marks to the next grade."
+ ],
+ "tools/group-project-planner/index.html": [
+  "Group Project Planner: Split Tasks Fairly · Free · Gradify",
+  "Enter your group members, tasks with rough hours and the deadline. Get a balanced task split and three internal check-ins, ready to paste into the group…"
+ ],
+ "tools/index.html": [
+  "Free Study Tools, Planners and Grade Calculators · Gradify",
+  "35 free tools for students: grade and degree calculators, cram and deadline planners, a study timer, citation helper and more. No account."
+ ],
+ "tools/lit-review-helper/index.html": [
+  "Literature Review Helper: Group Sources into Themes",
+  "Add your sources and how each relates to the main view. Get a thematic structure (agreement, tensions, gap) instead of a list of 'Author A said…'."
+ ],
+ "tools/mark-scheme-checker/index.html": [
+  "Mark Scheme Checker: Compare Your Answer to the Scheme",
+  "Paste a mark scheme and your answer. See which marking points your answer mentions and which keywords you missed. Free, private, no sign-up."
+ ],
+ "tools/mistake-log/index.html": [
+  "Exam Mistake Log: Track Why You Lose Marks · Gradify",
+  "Log every question you get wrong, why (misread, forgot, concept, rushed, guessed) and the right rule. See your mistake pattern and drill the weak spots."
+ ],
+ "tools/module-grade-calculator/index.html": [
+  "Module Grade Calculator: Exam Mark Needed for a 2:1",
+  "Enter your coursework marks and weights and your target (pass, 2:1, First, merit, distinction). See the exact exam mark you need, plus a safe buffer."
+ ],
+ "tools/presentation-prep-helper/index.html": [
+  "Presentation Timing Planner: Slides per Minute · Gradify",
+  "Enter your presentation length and main points. Get a slide-by-slide timing plan, spoken word counts at 130 words a minute, and likely questions."
+ ],
+ "tools/question-deconstructor/index.html": [
+  "Exam Question Breakdown: Command Words and Marks · Gradify",
+  "Paste an exam question and its marks. Get the command word and what it wants, a four-step plan for the answer, and a time guide per mark."
+ ],
+ "tools/reading-time-calculator/index.html": [
+  "Academic Reading Time Calculator (Pages or Text) · Gradify",
+  "How long will 30 pages take? Enter pages or paste text, choose how dense it is, and see reading time plus time for notes and spaced reviews."
+ ],
+ "tools/research-question-helper/index.html": [
+  "Research Question Generator: PICO, SPIDER and FINER",
+  "Turn a broad topic into a focused research question with PICO, SPIDER and FINER: three versions (too broad, focused, analytical) and a feasibility check."
+ ],
+ "tools/seminar-prep-helper/index.html": [
+  "Seminar Prep Helper: Talking Points from a Reading · Gradify",
+  "Enter a reading, its main claim and one limitation. Get three seminar talking points and two questions to ask the group, so you're never silent in a…"
+ ],
+ "tools/spaced-repetition-schedule/index.html": [
+  "Spaced Repetition Schedule Generator · Gradify",
+  "Free spaced repetition schedule: enter when you learn a topic and your exam date, get review dates at 1, 3, 7, 14 and 30 days, and download them to your…"
+ ],
+ "tools/study-hours-calculator/index.html": [
+  "Study Hours Calculator: How Long Should I Revise? · Gradify",
+  "Enter lecture hours, weeks until exams and your confidence, and get the total revision hours and a weekly budget for the module. Free."
+ ],
+ "tools/study-timer/index.html": [
+  "Pomodoro Study Timer with Brown Noise · Gradify",
+  "A free, distraction-free study timer: 25/5 or 50/10 Pomodoro, brown noise or rain made in your browser, break ideas, and a one-line reflection after each…"
+ ],
+ "tools/syllabus-checker/index.html": [
+  "Syllabus Coverage Checker: Have I Revised Everything?",
+  "Paste your exam specification (AQA, OCR, Edexcel or a module syllabus) and your notes."
+ ],
+ "tools/topic-prioritiser/index.html": [
+  "Topic Prioritiser: What Should I Revise First? · Gradify",
+  "List up to 10 topics with how much they're worth and how confident you are. Get them sorted: urgent and high-yield first, build confidence next, polish…"
+ ],
+ "tools/uni-finals-countdown/index.html": [
+  "University finals countdown: Days Left and Revision Hours",
+  "How many days until University finalss? A free countdown from an estimated 2027 start date (change it to yours), with revision hours left."
+ ],
+ "tools/unit-converter/index.html": [
+  "Science Unit Converter: mg, µg, mol, dm³, kJ · Gradify",
+  "Convert the units that cost marks: mass, volume, moles, concentration, energy, pressure, length and time, with the multiplying factor and a sanity check."
+ ],
+ "tools/viva-prep-helper/index.html": [
+  "Viva Prep: Practice Questions for a Project Defence",
+  "Enter your project, main finding and biggest limitation. Get practice viva questions on methodology, limitations and next steps, to rehearse out loud."
+ ],
+ "tools/weighted-grade-calculator/index.html": [
+  "Weighted Grade Calculator for Modules and Courses · Gradify",
+  "Free weighted grade calculator: add each assessment's score and weight to see your current module average, the marks banked so far, and how much is left…"
+ ],
+ "tools/winter-revision-planner/index.html": [
+  "Winter Break Revision Planner for January Exams · Gradify",
+  "Plan the winter break before January exams or resits: rest days first, light spaced-repetition days, then focused exam blocks. Day by day, free."
+ ],
+ "undergradify/course/index.html": [
+  "University Study Skills Course: Free Lessons | UnderGradify",
+  "University Study Skills: 12 topic areas and 189 free lessons, with notes, check questions, flashcards and quizzes."
+ ],
+ "undergradify/index.html": [
+  "University Revision & Study Skills App | UnderGradify",
+  "Revise university modules with flashcards made from your own lecture notes, a free study-skills course and a revision plan paced to your exams."
+ ],
+ "vetgradify/course/index.html": [
+  "Veterinary Science Course: 209 Free Lessons | VetGradify",
+  "Veterinary Science: 12 topic areas and 209 free lessons, starting with Comparative Anatomy, with notes, check questions, flashcards and quizzes."
+ ],
+ "vetgradify/index.html": [
+  "Vet School Revision: Notes & Flashcards | VetGradify",
+  "Revise comparative anatomy, veterinary physiology, pathology and pharmacology across species, with a free veterinary course, flashcards and quizzes."
+ ],
+ "vs/accuracy-vs-precision/index.html": [
+  "Accuracy vs Precision: The Difference Explained · Gradify",
+  "Accuracy is how close a measurement is to the true value; precision is how close repeated measurements are to each other."
+ ],
+ "vs/active-recall-vs-spaced-repetition/index.html": [
+  "Active recall vs Spaced repetition: The Difference Explained",
+  "Active recall is how you study (testing yourself from memory); spaced repetition is when you study (reviews spread out at growing gaps)."
+ ],
+ "vs/aerobic-vs-anaerobic-respiration/index.html": [
+  "Aerobic respiration vs Anaerobic respiration",
+  "Aerobic respiration uses oxygen and releases much more energy per glucose; anaerobic respiration doesn't use oxygen, releases far less, and in human…"
+ ],
+ "vs/blurting-vs-flashcards/index.html": [
+  "Blurting vs Flashcards: The Difference Explained · Gradify",
+  "Blurting tests a whole topic at once and shows how ideas connect; flashcards test single facts and definitions precisely."
+ ],
+ "vs/correlation-vs-causation/index.html": [
+  "Correlation vs Causation: The Difference Explained · Gradify",
+  "Correlation means two things change together; causation means one actually makes the other happen."
+ ],
+ "vs/essay-outline-vs-mind-map/index.html": [
+  "Essay outline vs Mind map: The Difference Explained",
+  "A mind map is best for getting ideas out and seeing connections; an essay outline is best for putting them in an argued order with a word budget."
+ ],
+ "vs/index.html": [
+  "Concept Comparisons: X vs Y, Explained Simply · Gradify",
+  "Closely related ideas students mix up, side by side: active recall vs spaced repetition, molarity vs molality, correlation vs causation, mitosis vs…"
+ ],
+ "vs/mitosis-vs-meiosis/index.html": [
+  "Mitosis vs Meiosis: The Difference Explained · Gradify",
+  "Mitosis is one division that makes two genetically identical diploid cells, for growth and repair; meiosis is two divisions that make four genetically…"
+ ],
+ "vs/molarity-vs-molality/index.html": [
+  "Molarity vs Molality: The Difference Explained · Gradify",
+  "Molarity is moles of solute per litre (dm³) of solution, so it changes slightly with temperature; molality is moles of solute per kilogram of solvent, so…"
+ ],
+ "vs/pomodoro-vs-time-blocking/index.html": [
+  "Pomodoro vs Time-blocking: The Difference Explained",
+  "Pomodoro splits work into short timed focus blocks with breaks (25/5 or 50/10); time-blocking assigns tasks to calendar slots across the day or week."
+ ],
+ "vs/validity-vs-reliability/index.html": [
+  "Validity vs Reliability: The Difference Explained · Gradify",
+  "Validity is whether a method measures what it's meant to; reliability is whether it gives consistent results when repeated."
+ ],
+ "youthgradify/course/index.html": [
+  "GCSE Revision Course: 149 Free Lessons | YouthGradify",
+  "GCSE Core: 9 topic areas and 149 free lessons, from Revision and Exam Skills to Foundations of Health and Wellbeing, with flashcards and quizzes."
+ ],
+ "youthgradify/index.html": [
+  "Free GCSE Revision: Notes & Flashcards | YouthGradify",
+  "Revise for your GCSEs with a free core course written for GCSEs in England, flashcards made from your own notes, quizzes and streaks with friends."
+ ],
+ "youtube-to-flashcards/index.html": [
+  "YouTube Video to Flashcards and Notes (Free) · Gradify",
+  "Turn a YouTube lecture or Panopto recording into notes in chapters, flashcards and a mind map. Paste the link or the transcript; free to try."
+ ]
+}
