@@ -82,8 +82,17 @@
     td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
     tbody th { font-weight: 500; }
     .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .faq details { padding: 16px 18px; border-radius: var(--radius); }
-    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; padding: 11px 0; }
+    .faq details { padding: 6px 18px; border-radius: 20px; background: var(--g-tile) !important; border: 1px solid var(--g-edge) !important; box-shadow: var(--g-shadow) !important; align-self: start; }
+    .faq details::before, .faq details::after { display: none !important; }
+    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; padding: 11px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--g-ink); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: ""; flex: none; width: 26px; height: 26px; border-radius: 9px; background: color-mix(in srgb, var(--g-accent) 14%, transparent); transition: transform .32s cubic-bezier(.32, .72, 0, 1);
+      background-image: linear-gradient(var(--g-accent), var(--g-accent)); background-size: 100% 100%;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='9' fill='%23000' fill-opacity='.14'/%3E%3Cpath d='M8 11l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 26px no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='9' fill='%23000' fill-opacity='.14'/%3E%3Cpath d='M8 11l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 26px no-repeat; }
+    .faq details[open] summary::after { transform: rotate(180deg); }
+    .next-step { max-width: 860px; margin: 36px auto 0; }
+    @media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
     .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
     .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
@@ -198,6 +207,8 @@
         <p>Payments are handled by Stripe. Gradify never sees or stores your card number.</p>
         <div class="faq" id="faq"></div>
       </section>
+
+      <aside class="g-action next-step" aria-label="Your next step"><span class="g-sq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><div class="g-action-text"><span class="g-kicker">Your next step</span><b>Start free, and upgrade only if you need it</b><p>Every course, lesson and lab is free. Bring one set of notes and see your study pack in about a minute.</p><div class="g-action-buttons"><a class="g-act" href="/app.html#/new"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg><span>Try it with your notes</span></a><a class="g-act soft" href="/explore.html"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg><span>Explore every course</span></a></div></div></aside>
 
       <div class="foot">
         <span>Prices in pounds sterling (GBP), including VAT.</span>
