@@ -12,7 +12,7 @@ import { art as drawArt, artFor } from "./art.js";
 export function emptyState({ icon = "sparkles", title, body = "", actions = [], compact = false, art } = {}) {
   ensureStyles();
   // a spot illustration (kit/ui/art.js) that fits the words, instead of a lone icon; art: false keeps the icon
-  const pic = art === false || compact ? `<span class="gx-eico">${uiIcon(icon)}</span>` : drawArt(art || artFor(`${title} ${body}`, "search"), { cls: "gx-eart" });
+  const pic = art === false || compact ? `<span class="gx-eico">${uiIcon(icon)}</span>` : drawArt(art || artFor(title, "") || artFor(body, "search"), { cls: "gx-eart" });
   return `<div class="gx-empty${compact ? " compact" : ""}">${pic}<b>${esc(title)}</b>${body ? `<p>${body}</p>` : ""}${actions.length ? `<div class="gx-eacts">${actions.map((a, i) => a.href
     ? `<a class="btn ${a.primary ? "btn-light" : "btn-ghost"} lg btn-sm" href="${esc(a.href)}"><span>${esc(a.label)}</span></a>`
     : `<button type="button" class="btn ${a.primary ? "btn-light" : "btn-ghost"} lg btn-sm" data-empty-act="${i}"><span>${esc(a.label)}</span></button>`).join("")}</div>` : ""}</div>`;

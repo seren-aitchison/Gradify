@@ -681,7 +681,7 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 .start-card:hover { transform: translateY(-2px); border-color: rgba(var(--ink-rgb), .4); }
 .start-card.primary { background: var(--invert-bg); color: var(--invert-fg); border-color: var(--invert-bg); }
 .start-card span:last-child { font-size: 13px; color: var(--mute); line-height: 1.45; }
-.start-card.primary span:last-child { color: #444; }
+.start-card.primary span:last-child { color: color-mix(in srgb, var(--invert-fg) 74%, var(--invert-bg)); }
 .start-icon svg { width: 22px; height: 22px; }
 .quick-jobs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .quick-jobs a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .04); color: var(--fg); text-decoration: none; font-size: 13px; }
