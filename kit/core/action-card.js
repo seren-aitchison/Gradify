@@ -14,15 +14,18 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 export const SPARK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg>';
 
 /**
- * @param {{ kicker?: string, title: string, why?: string, iconSvg?: string, cls?: string,
+ * `tag` sets the outer element (an <aside> for a page's closing call to action) and `heading` turns the title into a
+ * real heading ("h2") where it belongs in the page outline.
+ * @param {{ kicker?: string, title: string, why?: string, iconSvg?: string, cls?: string, tag?: string, heading?: string,
  *           actions?: { label: string, icon?: string, iconSvg?: string, href?: string, attrs?: string, soft?: boolean }[] }} o
  * @returns {string} HTML
  */
-export function actionCard({ kicker = "Your next best action", title, why = "", iconSvg = SPARK, actions = [], cls = "" }) {
+export function actionCard({ kicker = "Your next best action", title, why = "", iconSvg = SPARK, actions = [], cls = "", tag = "section", heading = "" }) {
   const btn = (a) => {
     const inner = `${a.iconSvg || (a.icon ? iconOf(a.icon) : "")}<span>${esc(a.label)}</span>`;
     const c = `g-act${a.soft ? " soft" : ""}`;
     return a.href ? `<a class="${c}" href="${esc(a.href)}" ${a.attrs || ""}>${inner}</a>` : `<button type="button" class="${c}" ${a.attrs || ""}>${inner}</button>`;
   };
-  return `<section class="g-action ${esc(cls)}"><span class="g-sq">${iconSvg}</span><div class="g-action-text"><span class="g-kicker">${esc(kicker)}</span><b>${esc(title)}</b>${why ? `<p>${esc(why)}</p>` : ""}${actions.length ? `<div class="g-action-buttons">${actions.map(btn).join("")}</div>` : ""}</div></section>`;
+  const t = heading ? `<${heading} class="g-title">${esc(title)}</${heading}>` : `<b>${esc(title)}</b>`;
+  return `<${tag} class="g-action${cls ? ` ${esc(cls)}` : ""}"><span class="g-sq">${iconSvg}</span><div class="g-action-text"><span class="g-kicker">${esc(kicker)}</span>${t}${why ? `<p>${esc(why)}</p>` : ""}${actions.length ? `<div class="g-action-buttons">${actions.map(btn).join("")}</div>` : ""}</div></${tag}>`;
 }

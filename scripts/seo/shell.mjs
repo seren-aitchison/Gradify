@@ -3,6 +3,7 @@
 // data, any other JSON-LD the page needs, a "Last updated" date, and the "Share with your study group" button.
 // Everything is static HTML, so search engines and AI crawlers read the whole page without running JavaScript.
 import { hubHeader, hubFooter } from "../sync-headers.mjs";
+import { actionCard } from "../../kit/core/action-card.js";
 
 export const ORIGIN = "https://getgradify.com";
 export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -121,11 +122,12 @@ export function page({ path, title: rawTitle, description: rawDesc, crumbs = [],
 `.replace(/\n\s*\n/g, "\n");
 }
 
-export const CTA = `<aside class="cta-box">
-      <h2>Turn your own notes into checked flashcards</h2>
-      <p>Drop in a PDF or paste your lecture notes. Gradify makes flashcards and a mind map in about a minute, matches every card to the line it came from, and schedules your revision. Free, and no account needed to try it.</p>
-      <p><a class="btn btn-primary lg" href="/app.html#/new"><span>Try it with your notes</span> <span aria-hidden="true">→</span></a></p>
-    </aside>`;
+export const CTA = actionCard({
+  tag: "aside", heading: "h2", cls: "cta-box", kicker: "Your next step",
+  title: "Turn your own notes into checked flashcards",
+  why: "Drop in a PDF or paste your lecture notes. Gradify makes flashcards and a mind map in about a minute, matches every card to the line it came from, and schedules your revision. Free, and no account needed to try it.",
+  actions: [{ label: "Try it with your notes", icon: "upload", href: "/app.html#/new" }, { label: "See every free tool", icon: "layers", href: "/tools/", soft: true }],
+});
 
 /** an FAQ block as HTML, and its FAQPage structured data */
 export function faq(items, heading = "Questions") {
