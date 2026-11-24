@@ -7,6 +7,7 @@ import { ink } from "./colour.js";
 import { modelOf } from "../models/index.js";
 import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
+import { art, artFor } from "../ui/art.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 import { mountContinue } from "./continue.js";
 applyPrefs();
@@ -46,7 +47,7 @@ export function renderHome(el, siteName) {
     `<section class="sm-continue" hidden></section>`,
     // the subject's 3D icon set, floating (kit/core/glass-icons.js)
     `<section class="sm-iconbar" aria-hidden="true"><div class="g3d-cluster sm-cluster"></div></section>`,
-    section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
+    section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${(() => { const used = new Set(); return k.steps.map(([t, d]) => { let a = artFor(`${t} ${d}`, ""); if (!a || used.has(a)) a = ["lesson", "cards", "progress", "path", "plan", "target"].find((x) => !used.has(x)); used.add(a); return a; }); })().map((a, i) => [a, ...k.steps[i]]).map(([a, t, d], i) => `<li class="glass">${art(a, { cls: "sm-art" })}<em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
     // sites with a 3D model get a section for it
     model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",

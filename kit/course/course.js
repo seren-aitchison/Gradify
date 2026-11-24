@@ -71,6 +71,7 @@ import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
+import { art } from "../ui/art.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -1090,11 +1091,11 @@ export function mountCourse(root, cfg) {
         <div class="cx-col">
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("sparkles")} Recommended for you</h3></div>
             ${recs.length ? `<ul class="cx-recs">${recs.map((r, i) => `<li class="${r.tone || ""}"><span class="cx-reci">${ic(r.icon)}</span><div><b>${esc(r.t)}</b><p>${esc(r.d)}</p><div class="co-row"><a class="btn btn-light lg btn-sm" href="${r.href}" data-rec="${i}"><span>${esc(r.cta)}</span></a>${r.alt ? `<a class="btn btn-ghost lg btn-sm" href="${r.alt[0]}"><span>${esc(r.alt[1])}</span></a>` : ""}</div></div></li>`).join("")}</ul>`
-              : `<p class="co-empty">${started ? "Nothing urgent. Carry on with your next lesson; recommendations appear as your answers show what needs work." : "Recommendations appear once you've done a lesson and answered its questions. They come from your own answers, never guesses."}</p>`}</section>
+              : `<div class="co-emptyart">${art("tutor")}<p class="co-empty">${started ? "Nothing urgent. Carry on with your next lesson; recommendations appear as your answers show what needs work." : "Recommendations appear once you've done a lesson and answered its questions. They come from your own answers, never guesses."}</p></div>`}</section>
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("chart")} Strengths and weaknesses</h3><a href="#/me">Full picture →</a></div>
             ${weak.length || strong.length ? `<div class="cx-sw"><div><span class="co-kicker">Needs work</span>${weak.length ? `<ul>${weak.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} question${w2.questions === 1 ? "" : "s"}</small></li>`).join("")}</ul><a class="btn btn-ghost btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Practise these</span></a>` : `<p class="co-empty">Nothing measured as weak. Good.</p>`}</div>
               <div><span class="co-kicker">Strong</span>${strong.length ? `<ul>${strong.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} questions</small></li>`).join("")}</ul>` : `<p class="co-empty">Mastery shows here once you're right across three or more questions on a lesson.</p>`}</div></div>`
-              : `<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p>`}</section>
+              : `<div class="co-emptyart">${art("progress")}<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p></div>`}</section>
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
             <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>
               <dl>${[["mastered", "Mastered"], ["practised", "Practised"], ["revise", "Needs revision"]].map(([k, t]) => `<div><dt>${dot(k)}${t}</dt><dd>${all.counts[k]}</dd></div>`).join("")}<div><dt><i class="cx-st s-learned"></i>Measured accuracy</dt><dd>${all.mastery == null ? "–" : pc(all.mastery)}</dd></div></dl></div>
@@ -1510,6 +1511,7 @@ export function mountCourse(root, cfg) {
         ${N && isDraft(u) ? `<p class="co-draft" role="note">This ${u1}'s content is still going through expert review, which is rolling out course by course. Check anything important against your course materials.</p>` : ""}
         <footer class="co-finish">
           ${N ? topicStrip(l) : ""}
+          ${N ? art(S.done[id] ? "done" : "lesson", { cls: "co-finish-art" }) : ""}
           <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">
             <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>

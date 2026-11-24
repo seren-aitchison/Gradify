@@ -76,6 +76,13 @@ site gets it. The rules:
   Previous / up / next are three even cards. While a dialog is open the phone dock steps aside.
 - Checked with axe (WCAG 2 A/AA) on lessons in four subjects, light and dark, and on course home and the syllabus.
 
+**The page (November 2026, second pass).** The page is pure white in light mode and pure black in dark: no lavender
+wash and no coloured light at the edges (the aurora, the course's CSS light and the GPU glass scene are all plain).
+Colour comes from the content, from the spot illustrations and from a few background motifs. Every piece of text sits
+in a box (a tile, card, sheet or bar) wherever a motif could reach it. The Gradify bar is plain frosted glass in the
+mode's colour with a hairline. The action card's edge gleams in pink, yellow, orange and the mode's contrast (black on
+white, white on black), with a glint that runs round it, still when motion is reduced.
+
 **Rollout.** The Gradify homepage is on the system now. Subject sites move only after the shared components are
 reviewed and approved. Next: subject site homepages (`kit/core/subsite-home.js`),
 pricing, Explore and Journey, then the study app and courses, one surface at a time. The same tokens become the
@@ -130,6 +137,8 @@ Tailwind theme if Gradify moves to Next.js (`docs/NEXTJS-MIGRATION.md`).
 | Action card options | `actionCard({ tag, heading })`, `.g-action.compact` | `tag: "aside"` for a page's closing call to action, `heading: "h2"` to keep the title in the page outline (the search pages' closing). `.compact` is the one-sentence version under a result (the free tools' "Next step"). Buttons use `--g-btn` (#5b55ff in dark) so white text meets AA |
 | Subject icon and colour | `kit/core/subject-match.js`, `kit/core/accent.js` | `subjectOf(name)` / `subjectsFor(names)`: the Gradify subject site a module or course name belongs to (its icon and brand colour), from the words of the name; unclear names take the degree's main subject. `accentOnLight(site)` / `accentOf(site)` give its colour at 5.5:1 contrast on light and dark |
 | Storage helpers | `kit/ui/store.js` | Safe reads and writes (private windows, blocked storage), `esc`, and the stylesheet loader |
+| **Spot illustrations** | `kit/ui/art.js` + `.g-art` in `kit/styles/base.css` | `art(name)` / `artFor(words)`: small line drawings in the lesson-diagram style (ink lines with round ends, flat tints of indigo, pink, orange, amber and teal, a soft ground shadow); the ink follows the theme. Fourteen drawings: course, modules, upload, plan, path, cards, progress, search, target, streak, done, tutor, lesson, library. Every action card picks one from its words (`art: "plan"` chooses, `art: false` turns it off), and so does every empty state; they also sit on subject-site step tiles, the app's welcome card, the course's empty panels and a lesson's closing panel. Decorative: always `aria-hidden` |
+| **Background motifs** | `kit/ui/motifs.js` (loaded by `kit/core/theme-boot.js`) | Line ribbons at the page's edges, drawn once per theme on a canvas (iridescent glass on white, red, pink and white neon on black), half off-screen and faded out, at most six a page, about one per screen and a half. **Never under bare text**: a motif is only placed where it covers no text that isn't inside a box (a tile, card, sheet or bar). Off for high contrast, reduced transparency, forced colours, the data saver, embeds and print; `<meta name="gradify-motifs" content="off">` turns them off for a page |
 | Everything at once | `kit/ui/index.js` | Re-exports the above |
 
 Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css` itself. Colours are theme tokens from

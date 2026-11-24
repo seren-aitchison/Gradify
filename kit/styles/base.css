@@ -565,3 +565,23 @@ html:root body, html:root body.sub-page { background: transparent; }
    their colour as an edge (the welcome card) or a faint corner (the course hero) */
 :root[data-theme="light"] .cp-welcome { background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #4641ff, #f055dd 40%, #ff5600 75%, #ffc002) border-box; }
 :root[data-theme="light"] .co .cx-hero { background: radial-gradient(60% 120% at 0 0, color-mix(in srgb, var(--a) 8%, transparent), transparent 60%), #fff; box-shadow: var(--g-shadow); }
+
+/* ---------- Spot illustrations (kit/ui/art.js): line drawings in the lesson-diagram style. The ink follows the theme;
+   --art-bg is the surface they sit on (shapes that overlap are filled with it) ---------- */
+.g-art { --art-ink: #1b1b26; --art-bg: var(--g-tile, #fff); display: block; overflow: visible; color: var(--art-ink); }
+:root:not([data-theme="light"]) .g-art { --art-ink: #ececf2; }
+/* in the action card: beside the words, which wrap round it on a phone */
+.g-action .g-action-art { float: right; width: clamp(72px, 16vw, 124px); height: auto; margin: -4px -2px 6px 14px; }
+.g-action-buttons { clear: both; }
+/* in an empty state: above the title, in place of the lone icon */
+.gx-empty .gx-eart { width: 132px; height: auto; margin-bottom: 4px; }
+/* where the drawings sit: a step tile's corner, the app's welcome card, the course's empty panels, a lesson's end */
+.sm-steps li { position: relative; }
+.sm-steps .sm-art { position: absolute; top: 14px; right: 14px; width: clamp(64px, 7vw, 92px); height: auto; }
+.cp-welcome { position: relative; }
+.cp-welcome .cp-welcome-art { position: absolute; top: 22px; right: 24px; width: clamp(110px, 16vw, 190px); height: auto; }
+@media (max-width: 760px) { .cp-welcome .cp-welcome-art { width: 84px; top: 16px; right: 14px; } .cp-welcome .cp-welcome-copy h2 { padding-right: 84px; } }
+.co-emptyart { display: flex; align-items: center; gap: 16px; } .co-emptyart .g-art { flex: none; width: 96px; height: auto; } .co-emptyart .co-empty { margin: 0; }
+@media (max-width: 520px) { .co-emptyart .g-art { width: 72px; } }
+.co-finish .co-finish-art { flex: none; width: 88px; height: auto; }
+@media (max-width: 520px) { .co-finish .co-finish-art { display: none; } }
