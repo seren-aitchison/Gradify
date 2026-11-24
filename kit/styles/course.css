@@ -2296,7 +2296,7 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
    never in body text); Gradify-gradient section numbers; sans labels instead of monospace; a calmer page backdrop
    while reading; compact controls on phones. Callout markup: kit/course/notes.js (lx-call, lx-h, lx-ic, lx-b).
    ===================================================================================================================== */
-.co-read {
+.co, .co-read {
   --lx-paper: #ffffff; --lx-paper: light-dark(#ffffff, #131319);
   --lx-sunk: #f5f5fa; --lx-sunk: light-dark(#f5f5fa, #1b1b23);
   --lx-edge: #e3e3ec; --lx-edge: light-dark(#e3e3ec, #2c2c38);
@@ -2425,3 +2425,25 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 @media (prefers-reduced-motion: reduce) { .co-read .co-check .aq-opts button:is(.right, .wrong) { animation: none; } }
 /* XP: a solid gradient pill that springs up and floats away */
 :root .co-pop { color: #fff !important; font: 800 22px var(--sans) !important; letter-spacing: -.01em; text-shadow: none !important; padding: 10px 20px; border-radius: 999px; background: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b); box-shadow: 0 14px 34px -12px rgba(155, 60, 240, .8); }
+
+/* ---------- course pages (home, syllabus, revise, progress…): one visual language with the lessons ---------- */
+/* labels in the sans face (83 rules use --mono for small caps labels); real code and equations stay monospaced */
+.co { --mono: var(--sans); }
+.co :is(code, kbd, pre, samp, .co-eq code, .lx-eq code) { font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace !important; }
+/* the subject's notice: still there, but compact, so the course starts on the first screen */
+.co .co-notice { font-size: 14px; line-height: 1.55; padding: 12px 16px; background: var(--lx-paper) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--lx-edge) !important; color: var(--lx-sub); }
+.co .co-notice b { color: var(--lx-ink); }
+/* solid surfaces for the course's cards */
+.co :is(.cx-hero, .cx-panel, .cx-sess, .co-tabs) { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.co :is(.cx-panel, .cx-sess:not(.off)) { background: var(--lx-paper) !important; border-color: var(--lx-edge) !important; }
+.co .cx-hero { background: linear-gradient(135deg, color-mix(in srgb, var(--a, #4641ff) 16%, var(--lx-paper)), var(--lx-paper) 60%) !important; border-color: var(--lx-edge) !important; }
+.co .co-tabs { background: var(--lx-paper) !important; border-color: var(--lx-edge) !important; }
+.co .cx-sess { transition: transform .25s cubic-bezier(.32, .72, 0, 1), box-shadow .25s; }
+.co .cx-sess:not(.off):hover { transform: translateY(-2px); box-shadow: 0 14px 30px -22px rgba(20, 20, 60, .55); }
+@media (max-width: 640px) {
+  .co .co-notice { font-size: 13.5px; padding: 10px 14px; margin-top: 10px; }
+  /* breadcrumbs: one line that scrolls, not two lines above the title */
+  .co .cx-crumbs { flex-wrap: nowrap !important; overflow-x: auto; white-space: nowrap; scrollbar-width: none; font-size: 13px; -webkit-mask: linear-gradient(90deg, #000 85%, transparent); mask: linear-gradient(90deg, #000 85%, transparent); }
+  .co .cx-crumbs::-webkit-scrollbar { display: none; }
+  .co .co-title h1 { font-size: clamp(30px, 9vw, 40px) !important; }
+}

@@ -2607,6 +2607,8 @@ export function mountCourse(root, cfg) {
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
     const tab = TAB_OF[view] || view;
     root.querySelectorAll(".co-tabs > a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === tab));
+    // on a narrow screen the tab strip scrolls: keep the current tab in view (scrolls the strip only, never the page)
+    { const ct = root.querySelector(".co-tabs > a[aria-current]"), strip = ct?.parentElement; if (ct && strip.scrollWidth > strip.clientWidth + 4) strip.scrollLeft = Math.max(0, ct.offsetLeft - strip.offsetLeft - 16); }
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
     showTab(); closeMore(); drawer(false);
