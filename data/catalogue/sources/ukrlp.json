@@ -1,0 +1,17 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_ukrlp",
+ "name": "UK Register of Learning Providers (UKRLP)",
+ "owner": "UKRLP",
+ "url": "https://www.ukrlp.co.uk/",
+ "verdict": "blocked",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "notes": "B6: unreachable from this environment (proxy 502)."
+}

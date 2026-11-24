@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue search harness</title>
+  <style>
+    :root { --ink: #0b0b14; --sub: #4a4a5c; --tile: #fff; --edge: #d8d8e4; --accent: #4641ff; --bg: #f4f4fb; }
+    @media (prefers-color-scheme: dark) { :root { --ink: #f4f4fb; --sub: #b9b9cc; --tile: #16161f; --edge: #34344a; --accent: #8f8cff; --bg: #0b0b12; } }
+    body { margin: 0; padding: 24px 16px; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+    main { max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    p { color: var(--sub); margin: 0 0 16px; }
+    label { display: block; font-weight: 700; margin-bottom: 6px; }
+    .combo { position: relative; }
+    input { box-sizing: border-box; width: 100%; padding: 12px 14px; font: inherit; color: var(--ink); background: var(--tile); border: 2px solid var(--edge); border-radius: 14px; }
+    input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    [role="listbox"] { list-style: none; margin: 6px 0 0; padding: 6px; background: var(--tile); border: 1px solid var(--edge); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    [role="listbox"][hidden] { display: none; }
+    [role="option"] { padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+    [role="option"] small { display: block; color: var(--sub); }
+    [role="option"][aria-selected="true"] { background: #4641ff; color: #fff; }
+    [role="option"][aria-selected="true"] small { color: #fff; }
+    .status { min-height: 1.5em; margin-top: 8px; color: var(--sub); }
+    .chosen { margin-top: 12px; font-weight: 700; }
+    @media (prefers-reduced-motion: no-preference) { [role="option"] { transition: background-color .12s; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Find your school, college or university</h1>
+    <p>Reference search box for the catalogue harness (fictional data). Not published.</p>
+    <label for="q" id="q-label">School, college or university</label>
+    <div class="combo">
+      <input id="q" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="q-list" aria-describedby="q-help" autocomplete="off" spellcheck="false">
+      <ul id="q-list" role="listbox" aria-labelledby="q-label" hidden></ul>
+    </div>
+    <div id="q-help" class="status" role="status" aria-live="polite"></div>
+    <div class="chosen" data-chosen></div>
+  </main>
+  <script type="module" src="combobox.js"></script>
+</body>
+</html>

@@ -110,6 +110,14 @@ official Canvas/Moodle APIs, then LTI. Each needs the owner's app registrations 
 
 ---
 
+## MyGradify status (24 November 2026)
+
+- **Architecture:** approved in principle: `docs/PROPOSAL-mygradify-catalogue.md` (Proposal 5 + Addendum A, with the
+  decision register and approval gates G1–G7).
+- **Stage 1 (research):** reported in `docs/STAGE1-RESEARCH-REPORT.md`. Only GIAS is cleared; blockers B1–B9.
+- **Stage 2 (catalogue foundation, repo only):** `docs/CATALOGUE.md`. It's on a PR, waiting for the owner's approval to
+  merge. **G3 (real ingestion) is not approved.**
+
 ## MyGradify: deep academic personalisation and institution intelligence
 
 This is the owner's next big direction. Their brief is below, lightly tidied, followed by the extra criteria we

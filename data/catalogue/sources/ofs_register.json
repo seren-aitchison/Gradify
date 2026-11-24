@@ -1,0 +1,24 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_ofs_register",
+ "name": "OfS Register of English higher education providers",
+ "owner": "Office for Students",
+ "url": "https://www.officeforstudents.org.uk/for-providers/regulatory-resources/the-ofs-register/",
+ "verdict": "confirmation_needed",
+ "licence": {
+  "name": "Open Government Licence v3.0",
+  "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "quote": "All content owned by the OfS is available for re-use under the terms of the Open Government Licence (OGL)."
+ },
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "evidence_urls": [
+  "https://www.officeforstudents.org.uk/copyright/"
+ ],
+ "notes": "B4: the Register is on register.officeforstudents.org.uk (not yet allowed); read its download notice."
+}

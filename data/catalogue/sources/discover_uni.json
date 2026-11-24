@@ -1,0 +1,30 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_discover_uni",
+ "name": "Discover Uni dataset",
+ "owner": "UK funding and regulatory bodies (collected by HESA/Jisc)",
+ "url": "https://discoveruni.gov.uk/information-providers/",
+ "verdict": "permission_needed",
+ "licence": {
+  "name": "Discover Uni website terms (dataset licence unread)",
+  "url": "https://discoveruni.gov.uk/terms-and-conditions-use/",
+  "quote": "provided that the source is acknowledged, the text is not altered and it is not used, wholly or in part, for commercial gain. Use for commercial gain requires the prior written permission of the copyright holders."
+ },
+ "rights": {
+  "ingest": false,
+  "publish": false,
+  "evidence": null,
+  "archive": false
+ },
+ "fields_allowed": {},
+ "cadence": "Weekly",
+ "identifiers": [
+  "UKPRN",
+  "KISCOURSEID (assumed)"
+ ],
+ "evidence_urls": [
+  "https://discoveruni.gov.uk/information-providers/",
+  "https://discoveruni.gov.uk/terms-and-conditions-use/"
+ ],
+ "notes": "D1: the dataset licence is on hesa.ac.uk, which refuses automated access (B1). A permission request is drafted for the owner, not sent."
+}

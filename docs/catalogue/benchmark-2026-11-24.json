@@ -1,0 +1,133 @@
+{
+  "run_at": "2026-11-24T15:12:29.207Z",
+  "environment": {
+    "node": "v22.23.5",
+    "platform": "linux x64",
+    "cpus": 4,
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+  },
+  "targets": {
+    "shard_gzip_kb": 300,
+    "warm_p95_ms": 100
+  },
+  "datasets": [
+    {
+      "key": "fixtures",
+      "label": "Fixtures (fictional)",
+      "gate": "must",
+      "providers": 9,
+      "shard_bytes": 500,
+      "shard_gzip_kb": 0.3,
+      "first_search_local_ms": 57,
+      "warm_p50_ms": 0.9,
+      "warm_p95_ms": 2.2,
+      "warm_max_ms": 2.2,
+      "offline_results": 2,
+      "cold_slow3g_ms": 626,
+      "cold_loading_message": true,
+      "pass_shard": true,
+      "pass_warm": true,
+      "pass_offline": true,
+      "pass_loading": true
+    },
+    {
+      "key": "ca668",
+      "label": "Large US state sample (California, IPEDS 668)",
+      "gate": "must",
+      "providers": 668,
+      "shard_bytes": 62978,
+      "shard_gzip_kb": 14.9,
+      "first_search_local_ms": 121,
+      "warm_p50_ms": 1.9,
+      "warm_p95_ms": 7.1,
+      "warm_max_ms": 7.1,
+      "offline_results": 8,
+      "cold_slow3g_ms": 934,
+      "cold_loading_message": true,
+      "pass_shard": true,
+      "pass_warm": true,
+      "pass_offline": true,
+      "pass_loading": true
+    },
+    {
+      "key": "us6072",
+      "label": "All IPEDS institutions in one shard (6,072)",
+      "gate": "must",
+      "providers": 6072,
+      "shard_bytes": 571091,
+      "shard_gzip_kb": 45.1,
+      "first_search_local_ms": 407,
+      "warm_p50_ms": 2.5,
+      "warm_p95_ms": 13.1,
+      "warm_max_ms": 13.1,
+      "offline_results": 8,
+      "cold_slow3g_ms": 1704,
+      "cold_loading_message": true,
+      "pass_shard": true,
+      "pass_warm": true,
+      "pass_offline": true,
+      "pass_loading": true
+    },
+    {
+      "key": "eng25k",
+      "label": "Large region, assumed 25,000 (England-scale; GIAS count not yet measured)",
+      "gate": "must",
+      "providers": 25000,
+      "shard_bytes": 2350830,
+      "shard_gzip_kb": 119.8,
+      "first_search_local_ms": 874,
+      "warm_p50_ms": 11.8,
+      "warm_p95_ms": 37.2,
+      "warm_max_ms": 37.2,
+      "offline_results": 8,
+      "cold_slow3g_ms": 3594,
+      "cold_loading_message": true,
+      "pass_shard": true,
+      "pass_warm": true,
+      "pass_offline": true,
+      "pass_loading": true
+    },
+    {
+      "key": "eng50k",
+      "label": "Stress, 50,000 in one shard (above any planned shard)",
+      "gate": "report",
+      "providers": 50000,
+      "shard_bytes": 4701672,
+      "shard_gzip_kb": 221.2,
+      "first_search_local_ms": 1264,
+      "warm_p50_ms": 18.5,
+      "warm_p95_ms": 37.4,
+      "warm_max_ms": 37.4,
+      "offline_results": 8,
+      "cold_slow3g_ms": 6408,
+      "cold_loading_message": true,
+      "pass_shard": true,
+      "pass_warm": true,
+      "pass_offline": true,
+      "pass_loading": true
+    }
+  ],
+  "accessibility": {
+    "axe_light": {
+      "closed": [],
+      "open": []
+    },
+    "axe_dark": {
+      "closed": [],
+      "open": []
+    },
+    "keyboard": {
+      "tab_reaches_input": true,
+      "expanded_when_results": true,
+      "arrow_down_highlights_first": true,
+      "arrow_up_wraps_to_not_listed": true,
+      "home_end_keep_focus_in_input": true,
+      "escape_closes_list_keeps_text": true,
+      "enter_chooses_catalogue_record": true,
+      "not_listed_links_nothing": true,
+      "status_announced": true
+    },
+    "manual": "VoiceOver (macOS, iOS) and NVDA (Windows) are NOT automated: see docs/catalogue/MANUAL-ACCESSIBILITY.md for the procedure and recorded results."
+  },
+  "failures": []
+}
