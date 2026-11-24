@@ -1509,3 +1509,37 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 .ac-nav { display: flex; gap: 10px; align-items: center; margin-top: 16px; flex-wrap: wrap; } .ac-nav .grow { flex: 1; }
 .ac-account h3 { display: flex; gap: 8px; align-items: center; } .ac-account h3 svg { width: 18px; height: 18px; }
 @media (max-width: 560px) { .ac-review-row { grid-template-columns: 1fr auto; } .ac-review-row dt { grid-column: 1 / -1; } .ac-nav .btn { flex: 1 1 auto; justify-content: center; } }
+
+/* MyGradify home (#/my) and module pages (kit/app/my-views.js) */
+.my { display: grid; gap: 18px; max-width: 960px; }
+.my h1 { margin: 4px 0; }
+.my-hero { display: flex; flex-direction: row; gap: 16px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; padding: 22px; }
+.my-hero-main { min-width: 0; flex: 1 1 360px; } .my-hero .sub { margin: 4px 0 0; }
+.my-hero-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.my-h { margin: 6px 0 0; font-size: 20px; display: flex; gap: 10px; align-items: center; } .my-h-row { display: flex; justify-content: space-between; align-items: center; }
+.my-facts { margin: 0; padding: 6px 20px; display: grid; }
+.my-facts > div { display: grid; grid-template-columns: minmax(130px, 1fr) 2fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.my-facts > div:last-child { border-bottom: 0; } .my-facts dt { color: var(--mute); font-size: 14px; } .my-facts dd { margin: 0; }
+.my-src { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; white-space: nowrap; }
+.my-src svg { width: 13px; height: 13px; }
+.my-src.linked { color: #fff; background: #4641ff; }
+.my-src.typed { color: var(--fg); background: rgba(var(--ink-rgb), .08); }
+.my-modules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.my-module { padding: 0; display: grid; transition: transform .25s cubic-bezier(.32, .72, 0, 1); }
+.my-module:hover { transform: translateY(-2px); }
+.my-module-link { display: flex; gap: 12px; align-items: center; padding: 16px 16px 8px; color: var(--fg); text-decoration: none; }
+.my-module-link:focus-visible { outline: 2px solid var(--fg); outline-offset: -2px; border-radius: inherit; }
+.my-sq { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; color: #fff; background: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b); }
+.my-sq svg { width: 20px; height: 20px; }
+.my-module-text { display: grid; min-width: 0; } .my-module-text b { overflow-wrap: anywhere; } .my-module-text small { color: var(--mute); font-size: 13px; }
+.my-progress { display: flex; gap: 6px; align-items: center; margin: 0; padding: 0 16px 14px 68px; font-size: 13px; color: var(--mute); } .my-progress svg { width: 14px; height: 14px; }
+.my-empty { padding: 18px 20px; display: grid; gap: 10px; justify-items: start; } .my-empty p { margin: 0; } .my-empty p svg { width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
+.my-add { padding: 18px 20px; display: grid; gap: 10px; } .my-add h3 { margin: 0; }
+.my-add-row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.my-add label { display: grid; gap: 6px; flex: 1 1 240px; font-size: 14px; font-weight: 600; } .my-add .my-code { flex: 0 1 160px; }
+.my-add input { box-sizing: border-box; width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 16px var(--sans); }
+.my-add input:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.my-hint { margin: 0; font-size: 13px; color: var(--mute); }
+.my-list { list-style: none; margin: 0; padding: 6px 20px; } .my-list li { display: grid; gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); } .my-list li:last-child { border-bottom: 0; } .my-list small { color: var(--mute); font-size: 13px; }
+.my-back { color: var(--fg); font-weight: 600; text-decoration: none; } .my-actions { display: flex; gap: 10px; }
+@media (max-width: 560px) { .my-facts > div { grid-template-columns: 1fr auto; } .my-facts dt { grid-column: 1 / -1; } .my-progress { padding-left: 16px; } }

@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 
 const mem = {};
 globalThis.localStorage = { getItem: (k) => (k in mem ? mem[k] : null), setItem: (k, v) => { mem[k] = String(v); }, removeItem: (k) => { delete mem[k]; } };
-const { validateAcademic, saveAcademic, clearAcademic, academicOf, completeness, summary, FIELDS } = await import("../kit/data/academic.js");
+const { validateAcademic, saveAcademic, clearAcademic, academicOf, completeness, summary, FIELDS, addUnit, updateUnit, removeUnit, sourceLabel, MAX_UNITS } = await import("../kit/data/academic.js");
 const { learnerOf, saveLearner } = await import("../kit/data/profile.js");
 const { LocalStore } = await import("../kit/data/store.js");
 const { newId } = await import("../kit/data/catalogue-ids.js");
@@ -110,4 +110,36 @@ test("completeness counts what's filled, never penalises skips; summary reads na
   assert.equal(completeness({ country: { code: "GB", name: "UK" }, units: [] }).filled, 1);
   assert.equal(summary(full()), "BSc Chemistry · Northmoor University · University, year 2");
   assert.equal(summary({ subject: { name: "Law" } }), "Law");
+});
+
+// ---------- module management (MyGradify dashboard): one profile, no separate module store ----------
+test("modules: add, edit and remove change only the module list of the one academic profile", async () => {
+  wipeBrowser();
+  const st = new LocalStore();
+  await saveLearner(st, { prior: { ChemGradify: "some" } });
+  let a = await saveAcademic(st, full(), { now: NOW });
+  a = await saveAcademic(st, addUnit(a, { name: "Lab Skills", code: " LS1 " }), { now: NOW });
+  assert.deepEqual(a.units.at(-1), { id: null, name: "Lab Skills", code: "LS1" });
+  const i = a.units.findIndex((u) => u.name === "Lab Skills");
+  a = await saveAcademic(st, updateUnit(a, i, { name: "Laboratory Skills", code: "" }), { now: NOW });
+  assert.deepEqual(a.units[i], { id: null, name: "Laboratory Skills" });
+  a = await saveAcademic(st, removeUnit(a, 0), { now: NOW });
+  assert.equal(a.units.some((u) => u.id === UNIT), false);
+  const l = learnerOf(await st.getProfile());
+  assert.deepEqual(l.prior, { ChemGradify: "some" }, "other settings untouched");
+  assert.equal(academicOf(l).offering.name, "BSc Chemistry", "the rest of the course untouched");
+  assert.equal(Object.keys(l).filter((k) => /module|unit/i.test(k)).length, 0, "no second module store");
+});
+
+test("modules: duplicates, empty names, the cap, and renaming a module from Gradify's list are refused", () => {
+  const a = validateAcademic(full(), { now: NOW }).value;
+  assert.throws(() => addUnit(a, { name: "organic chemistry ii" }), /already in your list/);
+  assert.throws(() => addUnit(a, { name: "  " }), /Give the module a name/);
+  assert.throws(() => addUnit({ units: Array.from({ length: MAX_UNITS }, (_, n) => ({ id: null, name: `M${n}` })) }, { name: "One more" }), /up to 30/);
+  assert.throws(() => updateUnit(a, 0, { name: "Renamed" }), /comes from Gradify's list/);
+  assert.throws(() => updateUnit(a, 1, { name: "Organic Chemistry II" }), /already in your list/);
+  assert.throws(() => removeUnit(a, 9), /isn't in your list/);
+  assert.equal(addUnit(null, { name: "First" }).units.length, 1, "works before any course is saved");
+  assert.equal(sourceLabel({ id: UNIT }), "From Gradify's list");
+  assert.equal(sourceLabel({ id: null }), "Entered by you");
 });
