@@ -1,7 +1,7 @@
 // Gradient descent on a function of two variables, drawn as a contour (height) map. Click to choose a starting
 // point; each step moves against the gradient by the learning rate times its size. Too small and it crawls; too
 // large and it overshoots, zigzags or diverges. Gradients are computed exactly for the built-in functions.
-import { shell, canvas, slider, select, button, panel, challenges, clear, fmt, C } from "../lab.js";
+import { shell, canvas, slider, select, button, panel, challenges, clear, fmt, C, isLight } from "../lab.js";
 import { plane, dot } from "./plot.js";
 
 export const FUNCS = {
@@ -35,12 +35,15 @@ export function mount(el, ctx = {}) {
     const F = FUNCS[s.key], b = F.box, g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
     const P = plane(g, W, H, { x0: -b, x1: b, y0: -b, y1: b });
     // shaded height map with contour bands, coloured on a log scale so valleys stay visible
-    const tag = `${s.key}:${g.canvas.width}x${g.canvas.height}`;
+    const tag = `${s.key}:${g.canvas.width}x${g.canvas.height}:${isLight()}`;
     if (bg.tag !== tag) {
-      const img = g.createImageData(g.canvas.width, g.canvas.height), sx = img.width / W, sy = img.height / H;
+      const img = g.createImageData(g.canvas.width, g.canvas.height), sx = img.width / W, sy = img.height / H, light = isLight();
       for (let j = 0; j < img.height; j++) for (let i = 0; i < img.width; i++) {
         const v = Math.log1p(F.f(P.ix(i / sx), P.iy(j / sy))), band = (v * 4) % 1 < 0.08, t = Math.min(1, v / 4), k = (j * img.width + i) * 4;
-        img.data[k] = 20 + 60 * t + (band ? 50 : 0); img.data[k + 1] = 30 + 40 * (1 - t) + (band ? 50 : 0); img.data[k + 2] = 60 + 120 * (1 - t) + (band ? 50 : 0); img.data[k + 3] = 255;
+        if (light) { // light mode: pale valleys rising to a warm tint, contour bands in ink
+          const d = band ? 0.7 : 1; img.data[k] = (240 - 12 * (1 - t)) * d; img.data[k + 1] = (246 - 40 * t) * d; img.data[k + 2] = (255 - 70 * t) * d;
+        } else { img.data[k] = 20 + 60 * t + (band ? 50 : 0); img.data[k + 1] = 30 + 40 * (1 - t) + (band ? 50 : 0); img.data[k + 2] = 60 + 120 * (1 - t) + (band ? 50 : 0); }
+        img.data[k + 3] = 255;
       }
       Object.assign(bg, { tag, img });
     }

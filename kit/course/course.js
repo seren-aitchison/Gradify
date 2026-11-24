@@ -1295,7 +1295,9 @@ export function mountCourse(root, cfg) {
         if (p >= 0.6) lightStep("read");
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
-      root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
+      // sections already read tick off as you pass them (a small, satisfying sign of progress)
+      const tocLinks = [...root.querySelectorAll(".co-toc a")], curAt = tocLinks.indexOf(cur);
+      tocLinks.forEach((a, k) => { a.classList.toggle("on", a === cur); a.classList.toggle("past", curAt > -1 && k < curAt); });
       if (cur && cur.dataset.jump !== lastPlace) {
         lastPlace = cur.dataset.jump; place(lastPlace);
         // the section you're in, kept in view in the lesson's sticky bar
@@ -2627,6 +2629,8 @@ export function mountCourse(root, cfg) {
     // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest
     document.querySelector(".course-overview")?.toggleAttribute("hidden", !["home", "overview"].includes(view));
     root.querySelectorAll(".co-tabs > a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === tab));
+    // on a narrow screen the tab strip scrolls: keep the current tab in view (scrolls the strip only, never the page)
+    { const ct = root.querySelector(".co-tabs > a[aria-current]"), strip = ct?.parentElement; if (ct && strip.scrollWidth > strip.clientWidth + 4) strip.scrollLeft = Math.max(0, ct.offsetLeft - strip.offsetLeft - 16); }
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
     showTab(); closeMore(); drawer(false);

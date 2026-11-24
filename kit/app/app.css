@@ -1543,3 +1543,32 @@ body.side-open body.side-open /* phones: set-up's Continue stays in reach at the
 .my-list { list-style: none; margin: 0; padding: 6px 20px; } .my-list li { display: grid; gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); } .my-list li:last-child { border-bottom: 0; } .my-list small { color: var(--mute); font-size: 13px; }
 .my-back { color: var(--fg); font-weight: 600; text-decoration: none; } .my-actions { display: flex; gap: 10px; }
 @media (max-width: 560px) { .my-facts > div { grid-template-columns: 1fr auto; } .my-facts dt { grid-column: 1 / -1; } .my-progress { padding-left: 16px; } }
+/* Flashcards (#/study): the same solid card, answer panel and colour-coded ratings as a course's review */
+.study-session {
+  --fs-paper: #ffffff; --fs-paper: light-dark(#ffffff, #131319);
+  --fs-sunk: #f5f5fa; --fs-sunk: light-dark(#f5f5fa, #1b1b23);
+  --fs-edge: #e3e3ec; --fs-edge: light-dark(#e3e3ec, #2c2c38);
+  --fs-ink: #0b0b14; --fs-ink: light-dark(#0b0b14, #f3f3f8);
+  --fs-sub: #4a4a5c; --fs-sub: light-dark(#4a4a5c, #b4b4c6);
+}
+.study-session .flash-card { background: linear-gradient(var(--fs-paper), var(--fs-paper)) padding-box, linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b) border-box !important; border: 2px solid transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: 0 30px 60px -40px rgba(70, 65, 255, .6) !important; border-radius: 28px !important; }
+.study-session .flash-card::before, .study-session .flash-card::after { display: none !important; }
+.study-session .flash-card .fc-front { color: var(--fs-ink) !important; }
+.study-session .flash-card .kicker { color: var(--fs-sub) !important; font-family: var(--sans) !important; font-weight: 700; letter-spacing: .06em; }
+.study-session .flash-card .fc-back { color: var(--fs-ink) !important; font-size: clamp(18px, 2vw, 21px); font-weight: 600; line-height: 1.5; padding: 14px 18px; border-radius: 16px; background: var(--fs-sunk); border: 1px solid var(--fs-edge); max-width: 52ch; animation: fs-rise .35s cubic-bezier(.32, .72, 0, 1) both; }
+.study-session .flash-card :is(.fc-type input, .fc-write textarea) { background: var(--fs-sunk) !important; border: 1px solid var(--fs-edge) !important; color: var(--fs-ink) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.study-session :is(.sure button:not(.sure-skip), .rate4 button) { background: var(--fs-paper) !important; border: 1px solid var(--fs-edge) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .04) !important; border-radius: 18px !important; color: var(--fs-ink) !important; transition: transform .2s cubic-bezier(.32, .72, 0, 1), border-color .2s; }
+.study-session :is(.sure button, .rate4 button)::before, .study-session :is(.sure button, .rate4 button)::after { display: none !important; }
+.study-session :is(.sure button:not(.sure-skip), .rate4 button):hover { transform: translateY(-2px); }
+.study-session .rate4 button { --rk: #4641ff; border-top: 4px solid var(--rk) !important; }
+.study-session .rate4 .r-again { --rk: #d93a3f; --rk: light-dark(#d93a3f, #ff6b70); } .study-session .rate4 .r-hard { --rk: #c46f00; --rk: light-dark(#c46f00, #ffab3d); }
+.study-session .rate4 .r-good { --rk: #0b8a6b; --rk: light-dark(#0b8a6b, #2fd4a8); } .study-session .rate4 .r-easy { --rk: #4641ff; --rk: light-dark(#4641ff, #8f8cff); }
+.study-session .rate4 button b { color: var(--rk) !important; font-size: 17px; }
+.study-session .rate4 button :is(span, small) { color: var(--fs-sub) !important; }
+.study-session :is(.rate4, .sure) kbd { background: var(--fs-sunk) !important; border: 1px solid var(--fs-edge) !important; color: var(--fs-sub) !important; }
+.study-session .rate4 button.suggested { border-color: var(--rk) !important; box-shadow: 0 0 0 3px color-mix(in srgb, var(--rk) 22%, transparent) !important; }
+/* the session's progress bar in the Gradify gradient */
+.study-session .goal-bar i { background: linear-gradient(90deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b) !important; }
+@keyframes fs-rise { from { transform: translateY(10px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .study-session .flash-card .fc-back { animation: none; } }
+@media (max-width: 760px) { .study-session { padding-bottom: 120px; } .study-session .goal-bar { background: var(--fs-edge) !important; } }

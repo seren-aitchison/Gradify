@@ -281,3 +281,12 @@ body.map-embedded .aurora { display: none; }
 :root .sub-page .sm-cta .btn-ghost { color: #fff; background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .4); box-shadow: none; }
 :root .sub-page .sm-cta .btn::before, :root .sub-page .sm-cta .btn::after { display: none; }
 @media (prefers-reduced-motion: reduce) { .sub-page .sm-topic, .sub-page .sm-faq summary::after { transition: none; } .sub-page a.sm-topic:hover { transform: none; } }
+
+/* Learning experience, November 2026: subject site home pages */
+/* labels in the sans face, like the lessons */
+.sub-course .sc-k { font-family: var(--sans) !important; font-weight: 700; letter-spacing: .08em; }
+/* on phones the decorative icon cloud is one row, not two screens of scrolling before the content */
+@media (max-width: 640px) {
+  .sm-iconbar { max-height: 92px; overflow: hidden; padding: 4px 0 0; -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .sm-iconbar .sm-cluster { flex-wrap: nowrap; justify-content: flex-start; gap: 16px; transform: scale(.82); transform-origin: left top; width: max-content; }
+}

@@ -117,14 +117,24 @@ export function lessonHtml(L, { after = () => "" } = {}) {
   let n = 0;
   return sections.map((s) => `<section${s.h ? ` id="co-s${++n}"` : ""}>${s.h ? `<h3>${inline(s.h)}</h3>` : ""}${s.parts.join("")}</section>`).join("");
 }
+// callout icons (inline so this file stays dependency-free and testable in Node)
+const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const LX = {
+  ex: svg('<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>'),
+  pit: svg('<path d="M12 3.5 21 19H3z"/><path d="M12 10v4M12 16.8v.2"/>'),
+  key: svg('<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>'),
+  safe: svg('<path d="M12 3 4.5 6v6c0 4.5 3.2 7.8 7.5 9 4.3-1.2 7.5-4.5 7.5-9V6z"/><path d="m9 12 2 2 4-4"/>'),
+  eq: svg('<path d="M5 9h14M5 15h14"/>'),
+};
+const head = (k, label) => `<div class="lx-h"><span class="lx-ic">${LX[k]}</span><b>${label}</b></div>`;
 function block(b) {
   if (b.t === "p") return `<p>${inline(b.x)}</p>`;
   if (b.t === "ul") return `<ul>${b.items.map((i) => `<li>${inline(i)}</li>`).join("")}</ul>`;
-  if (b.t === "eq") return `<div class="co-eq">${b.rows.map(([x, n]) => `<div><code>${inline(x)}</code>${n ? `<span>${inline(n)}</span>` : ""}</div>`).join("")}</div>`;
-  if (b.t === "ex") return `<div class="co-ex"><b>Worked example</b><p>${inline(b.x)}</p>${b.steps.length ? `<ol>${b.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div>`;
-  if (b.t === "key") return `<p class="mv-key">${inline(b.x)}</p>`;
-  if (b.t === "safe") return `<div class="co-safe"><b>Competence and safety</b>${inline(b.x)}</div>`;
-  if (b.t === "pit") return `<div class="mv-clin co-pit"><b>Common mistake</b>${inline(b.x)}</div>`;
+  if (b.t === "eq") return `<div class="co-eq lx-call lx-eq">${b.rows.map(([x, n]) => `<div><code>${inline(x)}</code>${n ? `<span>${inline(n)}</span>` : ""}</div>`).join("")}</div>`;
+  if (b.t === "ex") return `<div class="co-ex lx-call lx-ex">${head("ex", "Worked example")}<div class="lx-b"><p>${inline(b.x)}</p>${b.steps.length ? `<ol>${b.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div></div>`;
+  if (b.t === "key") return `<div class="mv-key lx-call lx-key">${head("key", "Key idea")}<p class="lx-b">${inline(b.x)}</p></div>`;
+  if (b.t === "safe") return `<div class="co-safe lx-call lx-safe">${head("safe", "Competence and safety")}<div class="lx-b">${inline(b.x)}</div></div>`;
+  if (b.t === "pit") return `<div class="mv-clin co-pit lx-call lx-pit">${head("pit", "Common mistake")}<div class="lx-b">${inline(b.x)}</div></div>`;
   if (b.t === "ix") return `<div class="co-ixslot" data-ix="${esc(b.id)}"></div>`;
   if (b.t === "dg") return `<figure class="vx" data-dg="${esc(b.id)}" hidden></figure>`;
   return "";

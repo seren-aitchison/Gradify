@@ -340,7 +340,7 @@ header.bar.glass, header.sub-nav.glass {
    on the homepage), and cards painted in a brand colour, where text is white whatever the theme. Inside them every
    token is the dark theme's, so their contents need no light-mode rules of their own. The list of dark ones matches
    ISLANDS in scripts/theme-tokens.mjs. */
-:root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .lab-3d, .lab-cv, .lab-svg, .co-lab, .tablet, .shot-frame,
+:root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .tablet, .shot-frame,
   .vc-stage, .vc-timeline, .vc-props, .holo, .spotlight, .bi-stage, .mv-labels, .mv-tip, .mv-controls, .mv-info,
   .cx-fcard, .cx-bcover, .cx-rings, .cx-wok, .i-profile, .sub-course, .notify-ask, [class*="tone-"], .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
   --fg: #fff; --mute: rgba(255, 255, 255, .78); --faint: rgba(255, 255, 255, .62);
