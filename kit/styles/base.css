@@ -683,3 +683,39 @@ html:root body, html:root body.sub-page { background: transparent; }
 :root body.ds #find { padding-top: clamp(24px, 3vw, 48px); }
 :root .g-tiles > li:nth-child(3n + 2) > a::before { animation-delay: -2.4s; } :root .g-tiles > li:nth-child(3n) > a::before { animation-delay: -4.8s; }
 :root .sub-page .sm-steps li:nth-child(2)::before { animation-delay: -2.3s; } :root .sub-page .sm-steps li:nth-child(3)::before { animation-delay: -4.6s; }
+
+
+/* ---------- The homepage's feature tiles, filters and site search: the same gleaming edge ----------
+   feature tiles in their category's colour, on a solid tile (a faint tint when chosen); the two filter bars and the
+   search in Gradify indigo running to the mode's contrast; the filter bars are solid too (they were lavender). */
+:root body.ds #bubbles .bubble { --gleam: var(--c); border-color: transparent; background: var(--g-tile); box-shadow: var(--g-shadow); }
+:root body.ds #bubbles .bubble.sel { background: color-mix(in srgb, var(--c) 8%, var(--g-tile)); }
+:root body.ds :is(#chips, #bubble-filter) { --gleam: #4641ff; position: relative; background: var(--g-tile); border-color: transparent; box-shadow: var(--g-shadow); }
+:root body.ds #find .search { --gleam: #4641ff; border-color: transparent; background: var(--g-tile); }
+:root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+}
+:root body.ds #find .search::after {
+  display: block; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; transform: none; filter: none; opacity: 1; margin: 0;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 2px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 38%, var(--g-glint) 48%, transparent 58%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 45%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 45%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+  animation-delay: -2.5s;
+}
+:root body.ds #bubbles .bubble:nth-child(3n + 2)::before { animation-delay: -2.3s; } :root body.ds #bubbles .bubble:nth-child(3n)::before { animation-delay: -4.7s; }
+:root body.ds #bubble-filter::before { animation-delay: -1.2s; } :root body.ds #chips::before { animation-delay: -5s; }
+:root body.ds #bubble-filter { overflow: visible; }
+@media (max-width: 640px) { :root body.ds #bubble-filter { overflow-x: auto; } }
+@media (prefers-reduced-motion: reduce) { :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root[data-motion="reduce"] body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; }
+:root body.ds #find .search.lg::before { content: none; }

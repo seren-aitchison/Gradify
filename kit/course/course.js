@@ -71,7 +71,7 @@ import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
-import { art as spotArt, heroArt } from "../ui/art.js";
+import { art as spotArt, heroArt, subjectOf } from "../ui/art.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -1490,7 +1490,7 @@ export function mountCourse(root, cfg) {
         <div class="co-steps">${u.lessons.map((x, k) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}" aria-label="Lesson ${k + 1}: ${esc(x.title)}${S.done[x.id] ? " (done)" : ""}"></a>`).join("")}</div>
       </div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
+        <header class="co-lhead"><span class="co-licon co-lart">${(() => { const k = subjectOf(`${l.title} ${l.module || ""} ${u.title}`); return heroArt(k !== "course" ? k : `${cfg.name} ${cfg.site}`); })()}</span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}

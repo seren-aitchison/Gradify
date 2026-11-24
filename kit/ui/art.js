@@ -9,25 +9,26 @@
 //
 // Styles: .g-art in kit/styles/base.css. Docs: docs/DESIGN-SYSTEM.md, "Spot illustrations".
 
-const C = { i: "#3c40d0", p: "#d6456b", o: "#e8601c", a: "#e3a21a", t: "#13957f" };
+// a muted, grown-up palette: slate indigo, dusty rose, copper, brass and sage (one family, never candy)
+const C = { i: "#4b56a6", p: "#b45a72", o: "#c0703f", a: "#c19a46", t: "#3e8c7c" };
 // a tint (flat fill), an ink line, a filled dot
-const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.9, o * 1.5).toFixed(2)}"`;
-const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const tint = (c, o = 0.22) => `fill="${c}" fill-opacity="${Math.min(0.72, o * 1.25).toFixed(2)}"`;
+const ink = 'fill="none" stroke="var(--art-ink, currentColor)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
 // the gleam: a short glint of light that runs along the ink lines (CSS .g-glint in kit/styles/base.css; still when
 // motion is reduced). Each ink line gets a copy drawn as one short dash that travels its length.
-const GLINT = 'fill="none" stroke="var(--art-glint, #fff)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"';
+const GLINT = 'fill="none" stroke="var(--art-glint, #fff)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
 function glinted(d) {
   let n = 0;
   const copies = [];
-  d.replace(/<(path|rect|circle|ellipse)\b([^>]*?)fill="none" stroke="var\(--art-ink, currentColor\)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"([^>]*)\/>/g, (m, tag, a, b) => {
+  d.replace(/<(path|rect|circle|ellipse)\b([^>]*?)fill="none" stroke="var\(--art-ink, currentColor\)" stroke-width="[\d.]+" stroke-linecap="round" stroke-linejoin="round"([^>]*)\/>/g, (m, tag, a, b) => {
     if (n < 6) copies.push(`<${tag}${a}${GLINT}${b} class="g-glint" pathLength="100" style="--gd:${(n++ * 0.7).toFixed(1)}s"/>`);
     return m;
   });
   return d + copies.join("");
 }
-const line = (c) => `fill="none" stroke="${c}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"`;
+const line = (c) => `fill="none" stroke="${c}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"`;
 const ground = '<ellipse cx="60" cy="88" rx="38" ry="4.5" fill="var(--art-ink, currentColor)" fill-opacity=".08"/>';
-const spark = (x, y, c, s = 1) => `<path d="M${x} ${y - 5 * s}l${1.4 * s} ${3.6 * s} ${3.6 * s} ${1.4 * s}-${3.6 * s} ${1.4 * s}-${1.4 * s} ${3.6 * s}-${1.4 * s}-${3.6 * s}-${3.6 * s}-${1.4 * s} ${3.6 * s}-${1.4 * s}z" fill="${c}"/>`;
+const spark = () => "";   // no confetti or sparkles: the drawings stay calm
 
 const DRAW = {
   // a mortarboard on two books: a course, a degree, MyGradify
@@ -196,7 +197,5 @@ export function heroArt(subject, { cls = "", accent = C.i } = {}) {
   return `<svg class="g-art g-hero-art${cls ? ` ${cls}` : ""}" viewBox="0 0 240 200" aria-hidden="true" focusable="false">
     <ellipse cx="122" cy="166" rx="76" ry="6.5" fill="var(--art-ink, currentColor)" fill-opacity=".1"/>
     <g transform="translate(42 30) scale(1.32)">${glinted(DRAW[k].replace(ground, ""))}</g>
-    ${sat(sats[0], 168, 104, 0.58)}
-    ${spark(36, 40, accent === C.i ? C.a : accent, 1.1)}
   </svg>`;
 }
