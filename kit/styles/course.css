@@ -2483,3 +2483,23 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
 :root .co-read .co-prose .co-lab :is(.co-labnote, .co-labstatus) { color: #c9c9d8; }
 /* teaching diagrams in a lesson: the same card language as the callouts (they stay white in both themes) */
 .co-read .co-prose figure.vx { border-radius: 22px !important; border: 1px solid var(--lx-edge) !important; box-shadow: 0 20px 44px -34px rgba(20, 20, 60, .55) !important; }
+
+/* ---------- flashcard review in a course (#/review): a solid card with a gradient rim, colour-coded ratings ---------- */
+.co .co-revsess .flash-card { background: linear-gradient(var(--lx-paper), var(--lx-paper)) padding-box, linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b) border-box !important; border: 2px solid transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: 0 30px 60px -40px rgba(70, 65, 255, .6) !important; border-radius: 28px !important; }
+.co .co-revsess .flash-card::before, .co .co-revsess .flash-card::after { display: none !important; }
+.co .co-revsess .flash-card :is(.fc-front, .fc-front *) { color: var(--lx-ink) !important; }
+.co .co-revsess .flash-card .fc-back { color: var(--lx-ink) !important; font-size: clamp(18px, 2vw, 21px); font-weight: 600; line-height: 1.5; padding: 14px 18px; border-radius: 16px; background: var(--lx-sunk); border: 1px solid var(--lx-edge); max-width: 52ch; animation: lx-rise .35s cubic-bezier(.32, .72, 0, 1) both; }
+.co .co-revsess .flash-card .fc-type { background: var(--lx-sunk) !important; border: 1px solid var(--lx-edge) !important; color: var(--lx-ink) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+/* how sure are you, and the four ratings: solid buttons, each with its own colour */
+.co .co-revsess :is(.sure button, .rate4 button) { background: var(--lx-paper) !important; border: 1px solid var(--lx-edge) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .04) !important; border-radius: 18px !important; transition: transform .2s cubic-bezier(.32, .72, 0, 1), border-color .2s; }
+.co .co-revsess :is(.sure button, .rate4 button)::before, .co .co-revsess :is(.sure button, .rate4 button)::after { display: none !important; }
+.co .co-revsess :is(.sure button, .rate4 button):hover { transform: translateY(-2px); }
+.co .co-revsess .rate4 button { --rk: #4641ff; border-top: 4px solid var(--rk) !important; }
+.co .co-revsess .rate4 .r-again { --rk: #e5484d; --rk: light-dark(#d93a3f, #ff6b70); } .co .co-revsess .rate4 .r-hard { --rk: #e5890a; --rk: light-dark(#c46f00, #ffab3d); } .co .co-revsess .rate4 .r-good { --rk: #12a37f; --rk: light-dark(#0b8a6b, #2fd4a8); } .co .co-revsess .rate4 .r-easy { --rk: #4641ff; --rk: light-dark(#4641ff, #8f8cff); }
+.co .co-revsess .rate4 button b { color: var(--rk) !important; font-size: 17px; }
+.co .co-revsess .rate4 button span { color: var(--lx-sub) !important; }
+.co .co-revsess .rate4 button kbd { background: var(--lx-sunk) !important; border: 1px solid var(--lx-edge) !important; color: var(--lx-sub) !important; }
+.co .co-revsess .rate4 button.suggested { border-color: var(--rk) !important; box-shadow: 0 0 0 3px color-mix(in srgb, var(--rk) 22%, transparent) !important; }
+.co .co-revsess .sure button { color: var(--lx-ink) !important; }
+/* the side panels and empty states on course pages: solid, like everything else */
+.co .co-side > :is(section, article, div), .co .co-panel { background: var(--lx-paper) !important; border-color: var(--lx-edge) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
