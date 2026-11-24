@@ -387,7 +387,7 @@ export function mountCourse(root, cfg) {
   // ---------- layout ----------
   // the tabs: a few that matter, always visible (Home, Syllabus, Revise, the course's own workspace, Exams, Lab,
   // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
-  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
+  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.papers ? [["papers", "Past papers"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
   const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
   const VIEWS = [...PRIMARY, ...MORE];
   // which tab a view belongs to
@@ -2502,6 +2502,22 @@ export function mountCourse(root, cfg) {
     draft: (k, v) => { S.drafts ||= {}; const key = `ws:${c.id}:${k}`; if (v === undefined) return S.drafts[key] || ""; S.drafts[key] = v; save(); },
     ask: askTutor, signinLine,
   });
+  // ---------- past papers (kit/papers/): exam-style questions tied to a specification. cfg.papers = { banks: [{ id,
+  // title, kind, load: () => import(…) }] }. Each answered part is an attempt record on its lesson (key pp:<question><part>).
+  async function viewPapers(bankId, qid) {
+    main.innerHTML = `<div class="co-pp">${skeleton("text", 6)}</div>`;
+    const el = main.querySelector(".co-pp");
+    try {
+      const view = await import("../papers/view.js");
+      unmountIx();
+      await view.mount(el, { banks: cfg.papers.banks, bankId, qid }, {
+        base: "#/papers", lessonHref: (lid) => `#/lesson/${lid}`, lessonTitle: (lid) => byId[lid]?.title || "",
+        record: (task, { type = "short", d = 2, score = 0, response = null, lesson = null, method = "auto", status = "final" } = {}) =>
+          record({ Q: { type, d, objectives: [] }, key: `pp:${task}`, v: null, l: lesson ? byId[lesson] : undefined }, "practice", bankId, { score, correct: score >= 0.7, method, status }, { response }),
+        results: { get: (k) => S.papers?.[k] || null, set: (k, v) => { S.papers ||= {}; S.papers[k] = v; save(); } },
+      });
+    } catch (e) { el.innerHTML = `<p class="co-empty">Past papers couldn't load (${esc(e.message)}).</p>`; }
+  }
   async function viewPractice(id) {
     const list = ixs;
     if (!id) {
@@ -2608,7 +2624,7 @@ export function mountCourse(root, cfg) {
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
     showTab(); closeMore(); drawer(false);
-    const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
+    const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", "papers", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
     showTree(view === "lesson" || view === "quiz");
@@ -2654,6 +2670,7 @@ export function mountCourse(root, cfg) {
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);
     else if (cfg.workspace && view === cfg.workspace.route) await viewWorkspace(arg);
+    else if (cfg.papers && view === "papers") await viewPapers(arg, sec);
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();

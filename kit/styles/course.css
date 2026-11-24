@@ -2289,3 +2289,22 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .mx-lines li.shown { border-color: rgba(255, 192, 2, .7); border-left-style: dashed; }
 .mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
 .mx-solution .mx-rule { margin: 2px 0 6px; }
+/* past papers (kit/papers/view.js) */
+.pp-group { margin: 22px 0; } .pp-group h3 { font-size: 17px; margin: 0 0 8px; }
+.pp-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pp-list a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--fg); text-decoration: none; background: rgba(var(--ink-rgb), .02); }
+.pp-list a:hover, .pp-list a:focus-visible { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .05); }
+.pp-pt { font-weight: 600; flex: 1 1 220px; } .pp-meta, .pp-score { color: var(--mute); font-size: 14px; }
+.pp-badge { display: inline-block; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line-strong); font-size: 12px; font-weight: 600; color: var(--fg); }
+.pp-head h2 { margin: 4px 0 10px; } .pp-head h2 small { font-size: 15px; color: var(--mute); font-weight: 500; margin-left: 6px; }
+.pp-context { padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
+.pp-part { margin: 18px 0; padding-top: 14px; border-top: 1px solid var(--line); }
+.pp-part h3 { display: flex; justify-content: space-between; font-size: 16px; margin: 0 0 6px; } .pp-marks { color: var(--mute); font-weight: 500; }
+.pp-got { margin: 10px 0 6px; padding: 8px 12px; border-radius: 10px; border-left: 3px solid var(--line-strong); }
+.pp-got.ok { border-color: #2ecc71; background: rgba(46, 204, 113, .07); } .pp-got.part { border-color: #ffc002; background: rgba(255, 192, 2, .08); } .pp-got.no { border-color: #ff8a7a; background: rgba(255, 90, 77, .06); }
+.pp-ms { margin-top: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .02); font-size: 15px; line-height: 1.5; }
+.pp-ms ul { margin: 4px 0 10px; padding-left: 20px; } .pp-note { color: var(--mute); font-size: 13.5px; margin: 0 0 10px; }
+.pp-foot { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 18px; } .pp-total { margin: 0; font-weight: 600; flex: 1 1 200px; }
+/* in past papers the part's own panel gives the marks and the explanation, so the library's one-line result and
+   "why" (shown everywhere else) would repeat it */
+.pp-part .aq-result, .pp-part .aq-why { display: none; }

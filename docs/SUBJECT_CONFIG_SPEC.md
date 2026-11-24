@@ -100,6 +100,12 @@ A Gradify course is a config object handed to the shared course engine (`mountCo
 |---|---|---|---|
 | `workspace` | object |  | A subject tool with its own section: { route, label, title, intro, engine: () => import(…), cases }. |
 
+## papers
+
+| Field | Type | Required | What it does |
+|---|---|---|---|
+| `papers` | object |  | Past papers: Gradify's own exam-style questions for a specification, by topic (kit/papers/): { banks: [{ id, title, kind, load: () => import(…) }] }. Adds the Past papers tab. |
+
 ## authorities
 
 | Field | Type | Required | What it does |

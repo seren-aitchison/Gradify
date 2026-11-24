@@ -24,6 +24,10 @@ export default defineCourse(science, {
   concepts: CONCEPTS,
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: scienceExams(UNITS, TRACKS),
+  // Past papers (kit/papers/): Gradify's own exam-style questions for a specification, by topic
+  papers: { banks: [
+    { id: "cell-biology", title: "4.1 Cell biology", kind: "AQA GCSE Biology (8461)", load: () => import("../../papers/aqa-gcse-biology-8461/cell-biology.js") },
+  ] },
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
   written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),

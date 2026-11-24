@@ -55,6 +55,7 @@ export const FIELDS = [
   ["practiceNote", str, false, "labs", "Introduction to the Explore section."],
   ["concepts", obj, false, "concepts", "The concept graph spec: { modules: { \"<unit>/<module>\": [prerequisites] }, lessons? } (kit/learning/concepts.js)."],
   ["workspace", obj, false, "workspace", "A subject tool with its own section: { route, label, title, intro, engine: () => import(…), cases }."],
+  ["papers", obj, false, "papers", "Past papers: Gradify's own exam-style questions for a specification, by topic (kit/papers/): { banks: [{ id, title, kind, load: () => import(…) }] }. Adds the Past papers tab."],
   ["authorities", str, false, "authorities", "Turns on the case and statute (or drug) cards page, with this tab name; cards come from CASE:, LAW: and DRUG: lines."],
   ["revalidation", bool, false, "revalidation", "Turns on the professional revalidation helper (nursing)."],
   ["anatomy3d", obj, false, "anatomy3d", "3D anatomy models and label quizzes, by lesson."],
@@ -97,12 +98,13 @@ export function checkCourse(cfg) {
   }
   for (const [lab, map] of Object.entries(cfg.evidence || {})) for (const [ch, lid] of Object.entries(map || {})) if (typeof lid === str && !lessonIds.has(lid)) p.push(`evidence ${lab}.${ch} names lesson ${lid}, which doesn't exist`);
   if (cfg.workspace && (!cfg.workspace.route || typeof cfg.workspace.engine !== fn)) p.push("workspace needs a route and engine()");
+  if (cfg.papers && (!Array.isArray(cfg.papers.banks) || !cfg.papers.banks.length || cfg.papers.banks.some((b) => !b.id || !b.title || typeof b.load !== fn))) p.push("papers needs banks, each with an id, a title and load()");
   if (cfg.concepts && typeof cfg.concepts.modules !== obj) p.push("concepts needs a modules object");
   return p;
 }
 
 // capability → the fields that switch it on (core, notes and questions are always on)
-const CAPS = ["labs", "concepts", "workspace", "writing", "exams", "frameworks", "review", "authorities", "revalidation", "anatomy3d", "tutor"];
+const CAPS = ["labs", "concepts", "workspace", "papers", "writing", "exams", "frameworks", "review", "authorities", "revalidation", "anatomy3d", "tutor"];
 /** Which shared capabilities a config switches on. */
 export function capabilitiesOf(cfg) {
   const on = new Set(["core", "notes", "questions", "mastery"]);
