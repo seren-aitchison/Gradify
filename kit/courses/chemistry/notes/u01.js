@@ -213,7 +213,7 @@ Q: Why can gases be compressed but liquids hardly at all? | Gas particles are fa
 SEQ1#chemistry-u01-06-q1: Put these in order of increasing particle spacing for the same substance. | Solid ; Liquid ; Gas | Particles are closest in solids, slightly further in liquids and far apart in gases (water and ice are an exception between solid and liquid).
 M1#chemistry-u01-06-q2: In which state do particles move fastest at the same temperature? | They have the same average kinetic energy | Solid | Liquid | Gas | Temperature measures average kinetic energy; at the same temperature it is the same, though gas particles move freely over larger distances.
 M2#chemistry-u01-06-q3: Why is the boiling plateau on water's heating curve longer than the melting plateau? | Boiling separates the particles completely, needing much more energy than melting, which only loosens the arrangement | Water boils at a higher temperature | Steam is heavier than ice | The thermometer is slower at high temperature | The enthalpy of vaporisation (40.7 kJ/mol) is much larger than the enthalpy of fusion (6.01 kJ/mol).
-M3#chemistry-u01-06-q4: Iodine crystals turn straight into a purple vapour when warmed. What does this suggest about the forces between iodine molecules? | They are weak enough to be overcome at low temperature, and the liquid range at atmospheric pressure is very narrow or absent | They are very strong covalent bonds | Iodine is an ionic compound | Iodine molecules split into atoms | Sublimation of a molecular solid shows weak intermolecular forces; the covalent I–I bonds stay intact.
+M3#chemistry-u01-06-q4: Iodine crystals turn straight into a purple vapour when warmed. What does this suggest about the forces between iodine molecules? | They are weak enough to be overcome at low temperature | They are very strong covalent bonds | Iodine is an ionic compound | Iodine molecules split into atoms | Sublimation of a molecular solid shows weak intermolecular forces; the covalent I–I bonds stay intact.
 
 ## Atomic theory
 S: Everything is made of atoms. The modern atomic model grew over two centuries from Dalton's indivisible spheres to a tiny nucleus surrounded by electrons in energy levels. This lesson traces the evidence that changed the model.
@@ -265,7 +265,7 @@ X: Decode the formula CuSO₄ and explain why CO and Co are different.
 > Co is a single symbol, the element cobalt.
 H: Reading the information in an entry
 - Take **chlorine**: the **atomic number** 17 is the number of protons (and of electrons in the atom), **Cl** is the symbol, and the **relative atomic mass** 35.5 is the average mass of its atoms, weighted by how common each isotope is, on a scale where carbon-12 is exactly 12.
-- Where the entry sits adds more information: the **period** (row) is the number of occupied electron shells, and the **group** (column) gives the outer-shell electrons: the group number for groups 1 and 2, and the group number minus 10 for groups 13 to 18.
+- Where the entry sits adds more information: the **period** (row) is the number of occupied electron shells, and the **group** (column) gives the outer-shell electrons: the group number for groups 1 and 2, and the group number minus 10 for groups 13 to 18 (except helium, which is in group 18 but has only 2 outer-shell electrons).
 - Some periodic tables also show electronegativity or electron configuration in each entry, so check the key before reading a value.
 K: Symbols start with a capital letter and any second letter is lower case; some come from Latin names.
 IX: periodic-table
@@ -380,7 +380,7 @@ SRC: OpenStax, Chemistry 2e, section 4.1 "Balancing Equations" | secondary | 201
 Q: Why must chemical equations be balanced? | Atoms are neither created nor destroyed in reactions, so each element must have the same number of atoms on both sides.
 Q: Balance: Na + H₂O → NaOH + H₂. | 2Na + 2H₂O → 2NaOH + H₂.
 NUM2#chemistry-u01-11-q1: When C₂H₆ + O₂ → CO₂ + H₂O is balanced with the smallest whole numbers, what is the coefficient of O₂? | 7 | 0 |  | 2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O: the right side has 8 + 6 = 14 oxygen atoms, so 7O₂.
-M1#chemistry-u01-11-q2: Which equation is balanced? | 2H₂ + O₂ → 2H₂O | H₂ + O₂ → H₂O | H₂ + O₂ → 2H₂O | 2H₂ + 2O₂ → 2H₂O | Only the first has 4 H and 2 O on each side.
+M1#chemistry-u01-11-q2: Which equation is balanced? | 2H₂ + O₂ → 2H₂O | H₂ + O₂ → H₂O | H₂ + O₂ → 2H₂O | 2H₂ + 2O₂ → 2H₂O | This one has 4 H and 2 O atoms on each side, so it is balanced.
 M2#chemistry-u01-11-q3: Balance Fe₂O₃ + CO → Fe + CO₂. What are the coefficients? | 1, 3, 2, 3 | 1, 1, 2, 1 | 2, 3, 4, 3 | 1, 2, 2, 2 | Fe₂O₃ gives 2 Fe; its 3 O atoms go to 3 CO₂, needing 3 CO: Fe₂O₃ + 3CO → 2Fe + 3CO₂.
 M3#chemistry-u01-11-q4: Magnesium ribbon is heated in an open crucible and its mass increases. Why doesn't this break the law of conservation of mass? | Oxygen from the air combines with the magnesium; including its mass, total mass is conserved | Mass is created when metals are heated | The crucible gained mass | Magnesium expands when heated | The product MgO includes oxygen atoms that came from the air; the system wasn't closed.
 
@@ -497,7 +497,7 @@ P: N_{A} = 6.022 140 76 × 10²³ mol⁻¹, exactly, by definition since 20 May 
 H: How big?
 P: A mole of sand grains would cover the UK to a depth of many kilometres. A mole of water is only 18 g, about a tablespoonful, which shows how small molecules are.
 X: Find the mass of one carbon-12 atom.
-> Molar mass = 12 g/mol, so one atom has a mass of 12 ÷ 6.022 × 10²³ = 1.993 × 10⁻²³ g.
+> Molar mass = 12 g/mol, so one atom has a mass of 12 ÷ (6.022 × 10²³) = 1.993 × 10⁻²³ g.
 H: Measuring it
 P: Early estimates came from the kinetic theory of gases (Loschmidt, 1865) and from Perrin's studies of Brownian motion (1908), which helped convince sceptics that atoms were real. The modern value came from counting the atoms in an almost perfect sphere of silicon-28: measuring its volume and the spacing of atoms in the crystal by X-ray diffraction. That work allowed the 2019 SI to fix N_{A} exactly.
 K: Nₐ = 6.022 140 76 × 10²³ mol⁻¹, a fixed defining constant of the SI.
@@ -512,7 +512,7 @@ Q: What are the units of the Avogadro constant? | mol⁻¹ (per mole).
 Q: Why was the Avogadro constant given an exact value in 2019? | To define the mole independently of the kilogram and a physical artefact, so that the SI rests on fixed constants of nature.
 NUM2#chemistry-u01-15-q1: How many atoms are in 0.25 mol of iron? Give the coefficient A in A × 10²³. | 1.51 | 1% |  | 0.25 × 6.022 × 10²³ = 1.51 × 10²³ atoms.
 M1#chemistry-u01-15-q2: What is the value of the Avogadro constant? | 6.022 × 10²³ mol⁻¹ | 6.022 × 10⁻²³ mol⁻¹ | 3.00 × 10⁸ mol⁻¹ | 1.66 × 10⁻²⁴ mol⁻¹ | Nₐ is about 6.022 × 10²³ particles per mole.
-M2#chemistry-u01-15-q3: What is the approximate mass of one water molecule (M = 18.0 g/mol)? | 3.0 × 10⁻²³ g | 18 g | 1.1 × 10²⁵ g | 6.0 × 10²³ g | Divide the molar mass by Nₐ: 18.0 ÷ 6.022 × 10²³ = 2.99 × 10⁻²³ g.
+M2#chemistry-u01-15-q3: What is the approximate mass of one water molecule (M = 18.0 g/mol)? | 3.0 × 10⁻²³ g | 18 g | 1.1 × 10²⁵ g | 6.0 × 10²³ g | Divide the molar mass by Nₐ: 18.0 ÷ (6.022 × 10²³) = 2.99 × 10⁻²³ g.
 M3#chemistry-u01-15-q4: The silicon sphere method counted atoms by measuring the sphere's volume and the volume per atom. Why was isotopically pure silicon-28 used? | So that the molar mass was known very precisely, avoiding uncertainty from a mixture of isotopes | Because silicon-28 is radioactive | Because it doesn't form crystals | Because it is the cheapest element | Natural silicon contains three isotopes; enriching ²⁸Si reduces the uncertainty in the average atomic mass.
 
 ## Molar mass

@@ -14,7 +14,7 @@ const root = new URL("../../", import.meta.url);
 // cases and statutes)
 export const PILOT = { biology: ["u02"], chemistry: ["u01"], law: ["u01"] };
 export const MIN_WORDS = 250;
-const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<[^>]+>/g, "").trim();
+const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
 const json = async (p) => JSON.parse(await readFile(new URL(p, root), "utf8"));
 
 // a lesson's notes for a standalone page: section headings one level up (the page's h1 is the lesson), diagrams as

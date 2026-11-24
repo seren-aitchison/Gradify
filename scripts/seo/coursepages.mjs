@@ -13,8 +13,24 @@ import { COURSES as COVERAGE, QUALIFICATIONS, STATUS } from "../../kit/curriculu
 
 const root = new URL("../../", import.meta.url);
 const START = "<!-- course-overview: written by scripts/build-seo.mjs (scripts/seo/coursepages.mjs); edit it there -->", END = "<!-- /course-overview -->";
-const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<[^>]+>/g, "").trim();
-const first = (s) => { const m = plain(s).match(/^.{20,200}?[.!?](\s|$)/); return m ? m[0].trim() : plain(s).slice(0, 160); };
+// strips markup but keeps a literal "<" or ">" (the notes say "the signs <, > or =")
+const plain = (s) => String(s ?? "").replace(/\*\*|`|\{|\}|\^|_(?=\{)/g, "").replace(/\*(\S[^*]*)\*/g, "$1").replace(/<\/?[a-z][^<>]*>/gi, "").trim();
+// a sentence never ends after an initial ("C. difficile", "H. pylori") or a common abbreviation
+const NOT_END = /(?:^|[\s(])(?:[A-Z]|e\.g|i\.e|etc|vs|Dr|Mr|Mrs|Ms|St|No|approx|c)\.$/;
+/** the lead's first sentence (20 to 220 characters), else cut at a word boundary with an ellipsis */
+export function first(s) {
+  const t = plain(s), re = /[.!?](?=\s|$)/g;
+  for (let m; (m = re.exec(t)); ) {
+    const end = m.index + 1;
+    if (end < 20 || NOT_END.test(t.slice(0, end))) continue;
+    if (end <= 220) return t.slice(0, end);
+    break;
+  }
+  if (t.length <= 220) return t;
+  return `${t.slice(0, 200).replace(/\s+\S*$/, "")}…`;
+}
+// study plan names arrive from their h1, already HTML-escaped: decode once so esc() doesn't encode them twice
+const unesc = (s) => String(s).replace(/&(#39|quot|lt|gt|amp);/g, (m, e) => ({ "#39": "'", quot: '"', lt: "<", gt: ">", amp: "&" })[e]);
 const n = (x, w) => `${x.toLocaleString("en-GB")} ${w}${x === 1 ? "" : "s"}`;
 
 /** every page that mounts a course: [{ path, slug }] */
@@ -52,7 +68,7 @@ export function overviewHtml(api, { leads = new Map(), lessonHref = (l) => `#/le
       ${units.map((u) => { const t = topicFor(u); return `<details class="co-ov-unit"${u.n === 1 ? " open" : ""}><summary><h3>${esc(U)} ${u.n}: ${esc(u.title)}</h3> <span>${n(u.lessons.length, "lesson")}${u.written ? "" : " · planned"}</span></summary>
         ${t ? `<p><a href="${t}">${esc(u.title)}: key terms, sample flashcards and a quick quiz</a></p>` : ""}
         <ol>${u.lessons.map((l) => { const lead = leads.get(l.id); return `<li><a href="${lessonHref(l)}">${esc(l.title)}</a>${lead ? `: ${esc(first(lead))}` : ""}</li>`; }).join("")}</ol></details>`; }).join("\n      ")}
-      ${plans.length ? `<h2>Study plans</h2><ul class="co-ov-plans">${plans.map(([h, name]) => `<li><a href="${h}">${esc(name)}</a></li>`).join("")}</ul>` : ""}
+      ${plans.length ? `<h2>Study plans</h2><ul class="co-ov-plans">${plans.map(([h, name]) => `<li><a href="${h}">${esc(unesc(name))}</a></li>`).join("")}</ul>` : ""}
       <p class="co-ov-more">More for ${esc(api.name)}: ${topicsHub ? `<a href="${topicsHub}">all ${esc(api.name)} topics</a> · ` : ""}<a href="/tools/">free study tools</a> · <a href="/guides/">study guides</a></p>
     </section>
     ${END}`;
