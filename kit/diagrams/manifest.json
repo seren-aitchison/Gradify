@@ -75920,5 +75920,97 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u53-scaling": {
+  "title": "Superlinear scaling with β = 1.15",
+  "caption": "Output Y ∝ N^β with β = 1.15 grows faster than linearly: a city 10 times larger produces 10^1.15 ≈ 14 times as much, i.e. 1.4 times more per person. The dashed line shows the linear case β = 1.",
+  "alt": "Output against size, in units of the smallest city: a curve N to the 1.15 above the straight line N, reaching about 14 at size 10.",
+  "description": [
+   "Y = N^1.15 in units where N = 1 gives Y = 1.",
+   "N = 10: Y = 14.1, against 10 if linear.",
+   "Per capita Y/N = N^0.15 = 1.41 at N = 10."
+  ],
+  "course": "physics",
+  "lesson": "Complex systems",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u53.js: Complex systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "10^1.15 ≈ 14.1",
+    "ok": true,
+    "detail": "y(10) = 14.1254"
+   },
+   {
+    "name": "per capita 1.4×",
+    "ok": true,
+    "detail": "y(10) = 1.4125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u53-seismic": {
+  "title": "P and S arrival times",
+  "caption": "P-waves (7 km s⁻¹) arrive at t = d/7, S-waves (4 km s⁻¹) at t = d/4, so the delay grows with distance: d(1/4 − 1/7) = 30 s gives d ≈ 280 km. There P arrives after 40 s and S after 70 s.",
+  "alt": "Arrival time against distance for P and S waves: two straight lines from the origin, S steeper, with a 30 second gap between them at 280 kilometres.",
+  "description": [
+   "P: t = d/7. S: t = d/4 (d in km, t in s).",
+   "Delay = d(1/4 − 1/7) = 0.107d; for 30 s, d = 280 km.",
+   "At 280 km: P 40 s, S 70 s."
+  ],
+  "course": "physics",
+  "lesson": "Physics and Earth science",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u53.js: Physics and Earth science"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S − P delay is 30 s at 280 km",
+    "ok": true,
+    "detail": "y(280) = 30"
+   },
+   {
+    "name": "S slope 1/4",
+    "ok": true,
+    "detail": "gradient 0.2500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
