@@ -285,7 +285,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
     // the labels: most important first; one that would overlap a label already drawn is left out this frame
     const taken = [];
     for (const L of labels.sort((a, b) => b.prio - a.prio)) {
-      ctx.font = L.hub ? `${L.on ? 700 : 600} ${L.on ? 12 : W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif` : `${L.bold ? 700 : 500} ${L.size}px Geist, Inter, system-ui, sans-serif`;
+      ctx.font = L.hub ? `${L.on ? 700 : 600} ${L.on ? 12 : W < 500 ? 8.5 : 10}px Inter, system-ui, sans-serif` : `${L.bold ? 700 : 500} ${L.size}px Inter, system-ui, sans-serif`;
       const w = ctx.measureText(L.text).width + 12, h = (L.hub ? 11 : L.size) + 8;
       const box = L.hub ? { x: L.x - 2, y: L.y - h + 3, w, h } : { x: L.x - w / 2, y: L.y - h + 2, w, h };
       if (L.prio < 100 && taken.some((o) => box.x < o.x + o.w && o.x < box.x + box.w && box.y < o.y + o.h && o.y < box.y + box.h)) continue;
@@ -317,7 +317,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
   function label(text, x, y, color, size, bold) {
     ctx.save();
     ctx.globalCompositeOperation = "source-over";
-    ctx.font = `${bold ? 700 : 500} ${size}px Geist, Inter, system-ui, sans-serif`;
+    ctx.font = `${bold ? 700 : 500} ${size}px Inter, system-ui, sans-serif`;
     ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
     const w = ctx.measureText(text).width + 10, h = size + 7, bx = x - w / 2, by = y - size - 1;
     ctx.beginPath(); ctx.roundRect ? ctx.roundRect(bx, by, w, h, 4) : ctx.rect(bx, by, w, h);

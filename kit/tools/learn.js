@@ -40,16 +40,16 @@ function drawScene(ctx, sc, i, n, shown, t) {
   const glow = ctx.createRadialGradient(W * 0.85, H * 0.1, 10, W * 0.85, H * 0.1, W * 0.6); glow.addColorStop(0, a + "88"); glow.addColorStop(1, "transparent"); ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
   const glow2 = ctx.createRadialGradient(W * 0.1, H, 10, W * 0.1, H, W * 0.5); glow2.addColorStop(0, b + "66"); glow2.addColorStop(1, "transparent"); ctx.fillStyle = glow2; ctx.fillRect(0, 0, W, H);
   const P = W * 0.07;
-  ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = `600 ${W * 0.016}px Geist, system-ui, sans-serif`; ctx.fillText(`GRADIFY · ${i + 1} / ${n}`, P, P * 0.9);
+  ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = `600 ${W * 0.016}px Inter, system-ui, sans-serif`; ctx.fillText(`GRADIFY · ${i + 1} / ${n}`, P, P * 0.9);
   if (sc.kind === "title") {
-    ctx.fillStyle = "#fff"; ctx.font = `800 ${W * 0.06}px Geist, system-ui, sans-serif`;
+    ctx.fillStyle = "#fff"; ctx.font = `800 ${W * 0.06}px Inter, system-ui, sans-serif`;
     wrapText(ctx, sc.h, W - 2 * P).slice(0, 3).forEach((l, k) => ctx.fillText(l, P, H * 0.42 + k * W * 0.068));
-    ctx.fillStyle = "rgba(255,255,255,.7)"; ctx.font = `500 ${W * 0.024}px Geist, system-ui, sans-serif`; ctx.fillText(sc.points[0], P, H * 0.8);
+    ctx.fillStyle = "rgba(255,255,255,.7)"; ctx.font = `500 ${W * 0.024}px Inter, system-ui, sans-serif`; ctx.fillText(sc.points[0], P, H * 0.8);
   } else {
-    ctx.fillStyle = "#fff"; ctx.font = `800 ${W * 0.042}px Geist, system-ui, sans-serif`;
+    ctx.fillStyle = "#fff"; ctx.font = `800 ${W * 0.042}px Inter, system-ui, sans-serif`;
     const hl = wrapText(ctx, sc.h, W - 2 * P).slice(0, 2); hl.forEach((l, k) => ctx.fillText(l, P, P * 1.9 + k * W * 0.048));
     let y = P * 1.9 + hl.length * W * 0.048 + W * 0.02;
-    ctx.font = `500 ${W * 0.024}px Geist, system-ui, sans-serif`;
+    ctx.font = `500 ${W * 0.024}px Inter, system-ui, sans-serif`;
     sc.points.forEach((p, k) => {
       if (k >= shown) return;
       const lines = wrapText(ctx, p, W - 2 * P - W * 0.04).slice(0, 3);

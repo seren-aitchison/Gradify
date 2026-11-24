@@ -1377,8 +1377,8 @@ async function progressCard(s, forecast) {
   const g = c.getContext("2d"), grad = g.createLinearGradient(0, 0, W, 0);
   grad.addColorStop(0, "#4641ff"); grad.addColorStop(.4, "#f055dd"); grad.addColorStop(.75, "#ff5600"); grad.addColorStop(1, "#ffc002");
   g.fillStyle = "#0b0b0b"; g.fillRect(0, 0, W, H);
-  g.fillStyle = "#fff"; g.font = "700 64px Geist, system-ui, sans-serif"; g.fillText("My study progress", 70, 130);
-  g.font = "500 36px Geist, system-ui, sans-serif"; g.globalAlpha = .8;
+  g.fillStyle = "#fff"; g.font = "700 64px Inter, system-ui, sans-serif"; g.fillText("My study progress", 70, 130);
+  g.font = "500 36px Inter, system-ui, sans-serif"; g.globalAlpha = .8;
   g.fillText(`${Object.keys(s.byDay).length} active days · ${forecast.reduce((a, b) => a + b, 0)} reviews due this week`, 70, 190); g.globalAlpha = 1;
   // the tree: drawn flat (SVG) off-screen, because on screen it may be the 3D island, which a canvas can't copy
   const { drawTreeFlat } = await import("../lifeos/tree.js"), { sites, bars } = treeData(s.acts), tmp = document.createElement("div");
@@ -1392,14 +1392,14 @@ async function progressCard(s, forecast) {
     await new Promise((r) => { img.onload = r; img.onerror = r; });
     try { g.drawImage(img, 240, 230, 600, 420); } catch { /* skip the tree */ }
   }
-  g.font = "600 40px Geist, system-ui, sans-serif"; g.fillText("Mastery by topic", 70, 730);
+  g.font = "600 40px Inter, system-ui, sans-serif"; g.fillText("Mastery by topic", 70, 730);
   s.topics.slice(0, 5).forEach((t, i) => {
     const y = 790 + i * 92, m = Math.max(0, Math.min(1, (t.mastery ?? 0) > 1 ? t.mastery / 100 : t.mastery ?? 0));
-    g.font = "500 32px Geist, system-ui, sans-serif"; g.fillStyle = "#fff"; g.fillText(String(t.topic).slice(0, 34), 70, y);
+    g.font = "500 32px Inter, system-ui, sans-serif"; g.fillStyle = "#fff"; g.fillText(String(t.topic).slice(0, 34), 70, y);
     g.fillStyle = "rgba(255,255,255,.15)"; g.fillRect(70, y + 18, 940, 18); g.fillStyle = grad; g.fillRect(70, y + 18, 940 * m, 18);
   });
-  if (!s.topics.length) { g.font = "500 32px Geist, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("Just getting started.", 70, 800); g.globalAlpha = 1; }
-  g.fillStyle = "#fff"; g.globalAlpha = .6; g.font = "500 30px Geist, system-ui, sans-serif"; g.fillText("getgradify.com · flashcards checked against your notes", 70, H - 60);
+  if (!s.topics.length) { g.font = "500 32px Inter, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("Just getting started.", 70, 800); g.globalAlpha = 1; }
+  g.fillStyle = "#fff"; g.globalAlpha = .6; g.font = "500 30px Inter, system-ui, sans-serif"; g.fillText("getgradify.com · flashcards checked against your notes", 70, H - 60);
   const blob = await new Promise((r) => c.toBlob(r, "image/png")), file = new File([blob], "my-gradify-progress.png", { type: "image/png" });
   if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file], title: "My study progress" }); return; } catch (e) { if (e?.name === "AbortError") return; } }
   const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();

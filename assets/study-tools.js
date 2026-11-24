@@ -673,10 +673,10 @@ function storyCard(days, name) {
   g.fillStyle = "#0b0b0b"; g.fillRect(0, 0, 1080, 1920);
   g.fillStyle = grad; g.globalAlpha = .9; g.beginPath(); g.arc(540, 820, 400, 0, Math.PI * 2); g.fill(); g.globalAlpha = 1;
   g.fillStyle = "#fff"; g.textAlign = "center";
-  g.font = "700 300px Geist, system-ui, sans-serif"; g.fillText(String(Math.max(0, days)), 540, 900);
-  g.font = "600 64px Geist, system-ui, sans-serif"; g.fillText(days === 1 ? "day to go" : "days to go", 540, 1360);
-  g.font = "500 56px Geist, system-ui, sans-serif"; g.fillText(String(name).slice(0, 30), 540, 1460);
-  g.font = "500 36px Geist, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("getgradify.com", 540, 1820);
+  g.font = "700 300px Inter, system-ui, sans-serif"; g.fillText(String(Math.max(0, days)), 540, 900);
+  g.font = "600 64px Inter, system-ui, sans-serif"; g.fillText(days === 1 ? "day to go" : "days to go", 540, 1360);
+  g.font = "500 56px Inter, system-ui, sans-serif"; g.fillText(String(name).slice(0, 30), 540, 1460);
+  g.font = "500 36px Inter, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("getgradify.com", 540, 1820);
   c.toBlob((b) => { const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "exam-countdown.png"; a.click(); });
 }
 
