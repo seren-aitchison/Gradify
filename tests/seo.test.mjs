@@ -286,7 +286,7 @@ test("batch 5: cite this page, self-hosted fonts, speed buckets, deploy retry", 
   assert.match(g, /id="cite-apa">Gradify\. \(2026, November 23\)\. <i>Exam command words: what each one wants<\/i>\. https:\/\/getgradify\.com\/guides\/command-words\//);
   assert.doesNotMatch(files.get("tools/index.html"), /id="cite"/, "tools aren't cited");
   for (const [p, h] of files) if (p.endsWith(".html")) assert.doesNotMatch(h, /fonts\.googleapis\.com\/css2\?family=Geist/, `${p}: Geist is self-hosted`);
-  assert.match(g, /rel="preload" href="\/assets\/fonts\/Geist-Variable\.woff2" as="font"/);
+  assert.match(g, /rel="preload" href="\/assets\/fonts\/Inter-Variable\.woff2" as="font"/);
   const { bucket, clsOf } = await import("../kit/core/vitals.js");
   // Google's session windows: the worst burst counts, not the sum over a long-open page
   assert.equal(clsOf([{ startTime: 0, value: 0.05 }, { startTime: 500, value: 0.05 }, { startTime: 20000, value: 0.04 }, { startTime: 60000, value: 0.04 }]), 0.1);

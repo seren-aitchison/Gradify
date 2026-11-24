@@ -252,11 +252,11 @@ export function mountVideo(root, { slides, say, cancelSpeech, esc, toast }) {
           c.fillStyle = `#${s.c}`; c.fillRect(0, 0, tw, 8);
           c.fillStyle = "#fff"; c.textBaseline = "top";
           const big = n === 1 && s.big;
-          c.font = `${big ? 700 : 600} ${big ? 44 : n === 1 ? 26 : 22}px Geist, Inter, system-ui, sans-serif`;
+          c.font = `${big ? 700 : 600} ${big ? 44 : n === 1 ? 26 : 22}px Inter, system-ui, sans-serif`;
           const [term, ...rest] = txt.split(": ");
           if (rest.length) {
             c.fillText(term, 18, 26, tw - 36);
-            c.font = "400 18px Geist, Inter, system-ui, sans-serif"; c.fillStyle = "rgba(255,255,255,.78)";
+            c.font = "400 18px Inter, system-ui, sans-serif"; c.fillStyle = "rgba(255,255,255,.78)";
             wrap(c, rest.join(": "), tw - 36).slice(0, 4).forEach((l, k) => c.fillText(l, 18, 64 + k * 24));
           } else wrap(c, txt, tw - 36).slice(0, 4).forEach((l, k) => c.fillText(l, 18, big ? 62 : 30 + k * 32));
         },
@@ -273,12 +273,12 @@ export function mountVideo(root, { slides, say, cancelSpeech, esc, toast }) {
     const small = W < 520, fs = small ? 15 : Math.min(28, W / 26);
     const x = (small ? 12 : 22) + (1 - inK) * -30, y = small ? 62 : H - (cfg.captions ? 86 : 50);
     g.fillStyle = `#${s.c}`; g.fillRect(x, y - fs, 4, fs * 1.3);
-    g.fillStyle = "#fff"; g.font = `700 ${fs}px Geist, Inter, system-ui, sans-serif`;
+    g.fillStyle = "#fff"; g.font = `700 ${fs}px Inter, system-ui, sans-serif`;
     g.fillText(s.h, x + 16, y, W - 60);
     g.globalAlpha = 1;
     // captions
     if (cfg.captions) {
-      g.font = `500 ${Math.max(11, Math.min(16, W / 40))}px Geist, Inter, system-ui, sans-serif`;
+      g.font = `500 ${Math.max(11, Math.min(16, W / 40))}px Inter, system-ui, sans-serif`;
       const lines = wrap(g, s.say, W * 0.86), words = s.say.split(" ").length;
       // show the part of the narration that's being said now, two lines at a time
       const per = Math.max(1, Math.ceil(lines.length / 2)), page = Math.min(per - 1, Math.floor(clamp01(u) * per));
@@ -300,7 +300,7 @@ export function mountVideo(root, { slides, say, cancelSpeech, esc, toast }) {
       const px = gx + ax.x * R, py = gy - ax.y * R;
       g.strokeStyle = ax.c; g.lineWidth = 2; g.beginPath(); g.moveTo(gx, gy); g.lineTo(px, py); g.stroke();
       g.fillStyle = ax.c; g.beginPath(); g.arc(px, py, R < 20 ? 6 : 8, 0, 7); g.fill();
-      g.fillStyle = "#111"; g.font = "700 9px Geist, Inter, system-ui, sans-serif"; g.textAlign = "center"; g.fillText(ax.l, px, py + 3); g.textAlign = "left";
+      g.fillStyle = "#111"; g.font = "700 9px Inter, system-ui, sans-serif"; g.textAlign = "center"; g.fillText(ax.l, px, py + 3); g.textAlign = "left";
     }
     // fade between shots
     const shot = shotAt(t), edge = Math.min(t - shot.start, shot.end - t);
@@ -342,7 +342,7 @@ export function mountVideo(root, { slides, say, cancelSpeech, esc, toast }) {
     const rowH = (DH - RULER) / ROWS.length;
     ROWS.forEach((r, k) => {
       c.fillStyle = k % 2 ? "#232323" : "#282828"; c.fillRect(0, RULER + k * rowH, DW, rowH);
-      c.fillStyle = "#b8b8b8"; c.font = "500 11px Geist, Inter, system-ui, sans-serif"; c.fillText(r, 12, RULER + k * rowH + rowH / 2 + 4);
+      c.fillStyle = "#b8b8b8"; c.font = "500 11px Inter, system-ui, sans-serif"; c.fillText(r, 12, RULER + k * rowH + rowH / 2 + 4);
     });
     c.fillStyle = "#303030"; c.fillRect(0, 0, DW, RULER);
     c.fillStyle = "#151515"; c.fillRect(LABEL_W - 1, 0, 1, DH);

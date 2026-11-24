@@ -1,6 +1,7 @@
-/* Geist and Geist Mono, self-hosted (assets/fonts/, SIL Open Font License: assets/fonts/OFL-Geist.txt), subset to Latin,
-   Greek, punctuation, arrows and maths symbols. One variable file per family covers every weight. */
-@font-face { font-family: "Geist"; src: url("/assets/fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+/* Inter (the Gradify typeface) and Geist Mono (code and maths working), self-hosted (assets/fonts/, SIL Open Font License:
+   assets/fonts/OFL-Inter.txt, OFL-Geist.txt), subset to Latin, Greek, punctuation, arrows and maths symbols. One variable
+   file per family covers every weight; Inter's optical-size axis gives headlines its tighter Display cut automatically. */
+@font-face { font-family: "Inter"; src: url("/assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Geist Mono"; src: url("/assets/fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 /* Gradify Kit: base styles. Tokens, background, glass, liquid glass, buttons, pills and the top bar.
    Every Gradify site loads this first. Dark only. */
@@ -32,7 +33,7 @@
   --page: 1680px;      /* page width: wide, close to the edges, like TechGradify */
   --gutter: 32px;      /* space between the content and the window edge */
   --bar-bleed: 20px;   /* the top bar reaches this much further than the content */
-  --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: dark;
 }
@@ -366,8 +367,8 @@ header.bar.glass, header.sub-nav.glass {
 :root[data-a-size="112"] body { zoom: 1.12; }
 :root[data-a-size="125"] body { zoom: 1.25; }
 :root[data-a-size="150"] body { zoom: 1.5; }
-:root[data-a-font="hyperlegible"] { --sans: "Atkinson Hyperlegible", "Geist", system-ui, sans-serif; }
-:root[data-a-font="lexend"] { --sans: "Lexend", "Geist", system-ui, sans-serif; }
+:root[data-a-font="hyperlegible"] { --sans: "Atkinson Hyperlegible", "Inter", system-ui, sans-serif; }
+:root[data-a-font="lexend"] { --sans: "Lexend", "Inter", system-ui, sans-serif; }
 :root[data-a-font] body, :root[data-a-font] button, :root[data-a-font] input, :root[data-a-font] select, :root[data-a-font] textarea { font-family: var(--sans); }
 :root[data-a-spacing="wide"] body { letter-spacing: .04em; word-spacing: .12em; }
 :root[data-a-spacing="wider"] body { letter-spacing: .08em; word-spacing: .22em; }
@@ -739,3 +740,38 @@ html:root body, html:root body.sub-page { background: transparent; }
 .co.co-reading .co-read .co-lhead .mv-lead { color: rgba(var(--ink-rgb), .86); }
 .co.co-reading .co-read .co-builds { color: rgba(var(--ink-rgb), .84); }
 .co.co-reading .co-read { --lc-ink: color-mix(in oklab, var(--lc) 48%, var(--fg)); }
+
+/* =====================================================================================================================
+   Gradify typography (November 2026). One typeface, Inter, on every platform, with Apple's San Francisco and the system
+   fonts as fallbacks; Geist Mono stays for code and maths working only. Inter's optical-size axis is left on (auto), so
+   headlines get the tighter Display cut and body text the open Text cut from the same file.
+   Hierarchy (weights): homepage hero 750 · section headings 650–700 · lesson titles 650 · body and explanations 400–420 ·
+   navigation and buttons 500–600 · numbers, XP and statistics 650 with tabular figures · small labels 500.
+   Tracking tightens as size grows (-0.025em on display sizes, -0.015em on h3, none on body: Inter's Display cut is already
+   tight, so -0.025em here reads like -0.035em on the Text cut); sizes are set per context,
+   so marketing pages and dense learning screens keep their own scales.
+   ===================================================================================================================== */
+html { font-optical-sizing: auto; }
+body { font-family: var(--sans); line-height: 1.6; font-weight: 400; font-feature-settings: "kern", "calt"; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body.ds { font-family: var(--ds-font-text); }
+:where(h1, h2, h3, h4) { font-family: var(--sans); }
+:where(h1) { font-weight: 750; line-height: 1.05; letter-spacing: -0.025em; }
+:where(h2) { font-weight: 680; line-height: 1.12; letter-spacing: -0.025em; }
+:where(h3) { font-weight: 620; line-height: 1.25; letter-spacing: -0.015em; }
+:where(h4) { font-weight: 600; letter-spacing: -0.015em; }
+/* marketing: the homepage hero and section headings */
+:root .ds-hero, :root .hero-v2 h1, :root .sub-hero h1 { font-weight: 750; letter-spacing: -0.025em; line-height: 1.05; }
+:root :is(.ds-title, .ds-heading, .sec-head h2, .section-head h2, .sm-sec h2, .co-intro h2) { font-weight: 700; letter-spacing: -0.025em; }
+/* learning: lesson and course titles, a little lighter; section headings in a lesson a step below */
+:root .co-read .co-lhead h1, :root .co-head h1 { font-weight: 650; letter-spacing: -0.025em; }
+:root .co-read .co-prose section[id] h3 { font-weight: 650; letter-spacing: -0.02em; }
+/* explanations: Inter's Text cut at a touch over regular, for long reading */
+:root .co-read .co-prose :is(p, li), :root .co-read .co-lhead .mv-lead { font-weight: 420; }
+/* navigation and buttons */
+:root :is(.sub-links a, .bar nav a, .co-tabs > a, .lo-side a, .cx-tree a) { font-weight: 500; }
+:root :is(.btn, .ds-btn, .g-act, button.gx-res) { font-weight: 600; letter-spacing: -0.005em; }
+/* numbers, XP and statistics */
+:root :is(.cx-donestats b, .co-herostats b, .cx-habit b, .ds-stat b, .sm-stat b, .stat b, .co-ring b, .cx-gain) { font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+/* small labels */
+:root :is(.co-kicker, .g-kicker, .gx-kicker, .kicker, .eyebrow, .ds-eyebrow, small) { font-weight: 500; }
+:root :is(.g-kicker, .co-read .co-frame h3, .co-read .co-qn::before) { font-weight: 600; }
