@@ -4,6 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { audit, category, csv } from "../scripts/seo-audit.mjs";
+import { CLUSTERS } from "../scripts/seo/keywords.mjs";
 
 const r = await audit();
 
@@ -34,4 +35,14 @@ test("every category of public page is covered", () => {
 
 test("the inventory in docs/seo/ is current (run node scripts/seo-audit.mjs)", () => {
   assert.equal(readFileSync(new URL("../docs/seo/inventory.csv", import.meta.url), "utf8"), csv(r.pages));
+});
+
+test("search-intent map: one destination per cluster, each a real indexable page, none shared", () => {
+  const byUrl = new Map(r.pages.map((p) => [p.url, p])), seen = new Map();
+  for (const c of CLUSTERS) {
+    const page = byUrl.get(`https://getgradify.com/${c.dest}`);
+    assert.ok(page?.indexable, `${c.cluster}: /${c.dest} is an indexable page`);
+    assert.ok(!seen.has(c.dest), `${c.cluster} and ${seen.get(c.dest)} both target /${c.dest}: give each its own page`); seen.set(c.dest, c.cluster);
+    for (const k of ["demand", "competition"]) assert.ok(["high", "medium", "low"].includes(c[k]), `${c.cluster}: ${k}`);
+  }
 });

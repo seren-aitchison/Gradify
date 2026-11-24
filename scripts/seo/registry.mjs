@@ -138,7 +138,8 @@ export function registry() {
         "@type": "Course", "@id": `${url(p)}#course`, url: url(p), name: f.name, description, inLanguage: "en-GB", isAccessibleForFree: true,
         provider: { "@type": "EducationalOrganization", "@id": ORG["@id"], name: "Gradify", url: `${ORIGIN}/` },
         offers: { "@type": "Offer", price: "0", priceCurrency: "GBP", category: "Free" },
-        hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: `PT${Math.max(1, Math.round(f.lessons * 10 / 60))}H` },
+        // no courseWorkload: Gradify measures each learner's own time, but publishes no course-length estimate to quote
+        hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online" },
         syllabusSections: f.titles.map((t) => ({ "@type": "Syllabus", name: t })),
         ...(quals.length ? { about: quals.map((n) => ({ "@type": "Thing", name: n })) } : {}),
       },

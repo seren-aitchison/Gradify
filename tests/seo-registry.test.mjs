@@ -80,6 +80,7 @@ test("feature pages: unique, honest about what's free, and nothing unreleased is
     const p = FEATURE_PAGES[slug];
     assert.ok(p.answer.split(" ").length >= 20 && p.what.split(" ").length >= 25 && p.steps.length >= 3 && p.good.length >= 2, `${slug}: enough of its own content`);
     if (f.plan === "pro" && !PRO_ON_SALE) { assert.equal(pg.noindex, true, `${slug}: in Ultra, not on sale: noindex`); assert.doesNotMatch(pg.body, /data-cta="feature"/, `${slug}: no "Open" button`); }
+    else if (p.owner) { assert.equal(pg.noindex, true, `${slug}: another page owns its search`); assert.ok(existsSync(new URL(`${p.owner[0]}index.html`, root)), `${slug}: owner ${p.owner[0]} exists`); }
     else assert.ok(!pg.noindex, `${slug} is indexed`);
     if (f.plan === "plus") assert.match(pg.body, /Gradify Pro/, `${slug}: says it's part of Gradify Pro`);
     // the "Open" button goes somewhere that exists

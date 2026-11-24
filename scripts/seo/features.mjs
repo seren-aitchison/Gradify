@@ -17,7 +17,9 @@ const PRO = `Gradify Pro (${pounds(PLAN_PRICES.plus.month)} a month)`;
 
 // title: the search phrase (≤ 60 characters with " | Gradify"); answer: the two sentences under the h1; what: a
 // paragraph; steps: how to use it; good: who or when it helps most; links: free pages on the same job; tool: its
-// allowance key in kit/data/limits.js; src: where it's built
+// allowance key in kit/data/limits.js; src: where it's built; owner: [path, name] of the page that already answers the
+// same search (a single-purpose landing page). Then this page is noindex, follow and points there, so two Gradify
+// pages never compete for one query.
 export const FEATURE_PAGES = {
   "online-courses": { title: "Free Online Courses in 30+ Subjects", src: "kit/course/course.js",
     answer: "Gradify has free online courses on every one of its subject sites, from GCSE core and primary to medicine, law and physics. Each course is split into units and short lessons, with check questions, flashcards, interim quizzes and an exam at the end.",
@@ -73,7 +75,7 @@ export const FEATURE_PAGES = {
     steps: ["Open the flashcard feed in the Gradify app.", "Scroll through your cards; read the bonus facts as they come up.", "Boost any card you want to see more."],
     good: ["Keeping a long revision session varied", "Cards you keep getting wrong", "Curious learners who like the extra detail"],
     links: [["glossary/spaced-repetition/", "Spaced repetition"], ["guides/how-to-make-good-flashcards/", "How to make good flashcards"]] },
-  "notes-studio": { title: "Notes Studio: Turn a PDF into Flashcards", src: "kit/notes/studio.js",
+  "notes-studio": { title: "Notes Studio: Study Packs Checked Against Your Notes", src: "kit/notes/studio.js",
     answer: "Notes Studio turns a PDF of your notes, or notes you paste in, into flashcards, a mind map and a cheat sheet. Every card links to the line in your notes it came from, and cards that don't fully match are marked to check.",
     what: "Upload a PDF with selectable text, a .txt or .md file, or paste your notes. Notes Studio works through them and makes a study pack you can revise straight away with spaced repetition. Because each card shows its source line, you can see why it says what it says and fix anything before you revise. You can try it with no account; your first pack is saved on your device.",
     steps: ["Open the Gradify app and choose New, or go straight to Notes Studio.", "Upload a PDF or paste one lecture or topic of notes.", "Check any cards marked to check, then start revising."],
@@ -91,19 +93,19 @@ export const FEATURE_PAGES = {
     steps: ["Open Tools in the Gradify app and choose Handwriting to text.", "Write on the screen, or upload a photo of your page.", "Check the text, then save it to your Notebook or make cards from it."],
     good: ["Students who take notes by hand", "Making handwritten notes searchable", "Privacy: the recognition never leaves your device"],
     links: [["guides/goodnotes-notion-pdf-to-mind-map/", "GoodNotes and Notion PDFs to a mind map"]] },
-  "notes-to-songs": { title: "Turn Notes into a Song or Study Chant", tool: "convert", src: "kit/tools/convert.js",
+  "notes-to-songs": { title: "Notes to Songs: The Notes Converter's Chant", owner: ["notes-to-study-chant/", "Notes to study chant"], tool: "convert", src: "kit/tools/convert.js",
     answer: "Paste notes in any format and Gradify turns them into a chant to say or sing along to, as well as flashcards, a mind map and a cheat sheet. It works in your browser with no AI, so everything stays in your own words.",
     what: "The notes converter picks out your facts and definitions and sets them as short, repeatable lines with a voice reading them. Rhythm and repetition make lists and definitions easier to recall, and because the chant is built from your notes, it matches what you'll be tested on.",
     steps: ["Open Tools in the Gradify app and choose Notes converter.", "Paste your notes.", "Pick Chant, press play, and say it along."],
     good: ["Lists, sequences and definitions", "Learners who remember lyrics easily", "Revising out loud"],
     links: [["notes-to-study-chant/", "Notes to study chant"], ["guides/study-myths/", "Study myths"]] },
-  "youtube-to-notes": { title: "YouTube to Notes and Flashcards", tool: "youtube", src: "kit/tools/youtube.js",
+  "youtube-to-notes": { title: "YouTube to Notes: Chapters and a Video Chat", owner: ["youtube-to-flashcards/", "YouTube to flashcards"], tool: "youtube", src: "kit/tools/youtube.js",
     answer: "Paste a YouTube link and Gradify makes notes in chapters, flashcards and a mind map from the video, plus a chat that answers only from what's said in it. You can paste the transcript instead.",
     what: "Gradify reads the video's captions, splits them into chapters and makes notes, cards and a map from them in your browser. The chat about the video answers only from the transcript, with the moment each point is made, so it never adds anything the video didn't say.",
     steps: ["Open Tools in the Gradify app and choose YouTube to notes.", "Paste the video link, or its transcript.", "Read the chapter notes, then revise the flashcards it made."],
     good: ["Lecture recordings and revision channels", "Long videos you need the key points from", "Turning watching into active recall"],
     links: [["youtube-to-flashcards/", "YouTube to flashcards"], ["guides/active-recall-vs-rereading/", "Active recall vs rereading"]] },
-  "spidermaps": { title: "Mind Map Maker for Revision (Spidermaps)", tool: "map", src: "kit/tools/mapmaker.js",
+  "spidermaps": { title: "Spidermaps: Mind Maps Built from Any Lesson", tool: "map", src: "kit/tools/mapmaker.js",
     answer: "Gradify's mind map creator builds a spidermap from facts you pick from any lesson, which you can then move, rename and add your own ideas to. Maps are kept with your flashcards in your account.",
     what: "Search every lesson on Gradify, toggle on the facts you want, and they become branches of your map. Then edit freely: drag, rename, add ideas of your own. You can also make a map straight from your notes with Notes Studio or the notes converter.",
     steps: ["Open Tools in the Gradify app and choose Mind map creator.", "Search for a lesson and toggle on the facts you want.", "Arrange and edit the map, then revise from it."],
@@ -277,12 +279,13 @@ export function featurePages() {
   const out = [], bySlug = new Map(FEATURES.map((f) => [featureSlug(f), f]));
   for (const [slug, f] of bySlug) {
     const p = FEATURE_PAGES[slug]; if (!p) continue;
-    const cat = CATS[f.cat], live = usable(f), href = f.href?.startsWith("#") ? "/" : `/${f.href}`;
+    const cat = CATS[f.cat], live = usable(f), owned = Boolean(p.owner), href = f.href?.startsWith("#") ? "/" : `/${f.href}`;
     const siblings = FEATURES.filter((x) => x.cat === f.cat && x !== f && FEATURE_PAGES[featureSlug(x)]).slice(0, 6).map((x) => [`features/${featureSlug(x)}/`, x.n, firstSentence(FEATURE_PAGES[featureSlug(x)].answer)]);
     const q = faq([[`Is ${f.n} free?`, availability(f, p)], [`Where can I use ${f.n}?`, `${f.n} works ${WHERE[f.where]}. One Gradify account works on every Gradify site.`]], "Questions");
     const body = `<h1>${esc(f.n)}</h1>
     <p class="answer">${esc(p.answer)}</p>
     ${live ? "" : `<p class="note"><b>Coming soon.</b> ${esc(availability(f, p))}</p>`}
+    ${owned ? `<p class="note">The full guide, with examples: <a href="/${esc(p.owner[0])}">${esc(p.owner[1])}</a>.</p>` : ""}
     <p class="core-rule"><b>${esc(cat.name)}</b> · Works ${esc(WHERE[f.where])} · ${esc(firstSentence(availability(f, p)))}.</p>
     ${live ? `<p class="row-actions"><a class="btn btn-primary lg" href="${esc(href)}" data-cta="feature"><span>Open ${esc(f.n)}</span> <span aria-hidden="true">→</span></a></p>` : ""}
     <h2>What it does</h2>
@@ -297,7 +300,7 @@ export function featurePages() {
     <p><a href="/features/">Every Gradify feature</a></p>`;
     out.push({
       path: `features/${slug}/index.html`, title: pageTitle(p), description: `${firstSentence(p.answer)}. ${firstSentence(availability(f, p))}.`,
-      crumbs: [["Features", "features/"], [f.n, `features/${slug}/`]], ogType: "website", noindex: !live, body,
+      crumbs: [["Features", "features/"], [f.n, `features/${slug}/`]], ogType: "website", noindex: !live || owned, body,
       schema: [q.schema, { "@type": "WebPage", name: f.n, url: `${ORIGIN}/features/${slug}/`, about: { "@type": "SoftwareApplication", name: `Gradify: ${f.n}`, applicationCategory: "EducationalApplication", operatingSystem: "Web", ...(live && !f.plan ? { offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" } } : {}) }, isPartOf: { "@id": `${ORIGIN}/#site` } }],
     });
   }

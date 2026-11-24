@@ -10,6 +10,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { classify } from "./build-site.mjs";
 import { sitemapUrls, sectionOf } from "./build-sitemap.mjs";
+import { keywordMap } from "./seo/keywords.mjs";
 
 const root = new URL("../", import.meta.url), ORIGIN = "https://getgradify.com";
 const read = (p) => readFileSync(new URL(p, root), "utf8");
@@ -158,7 +159,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   } else {
     mkdirSync(new URL("docs/seo/", root), { recursive: true });
     writeFileSync(new URL("docs/seo/inventory.csv", root), csv(r.pages));
-    writeFileSync(new URL("docs/seo/AUDIT.md", root), report(r, new Date().toISOString().slice(0, 10)));
+    const date = new Date().toISOString().slice(0, 10);
+    writeFileSync(new URL("docs/seo/AUDIT.md", root), report(r, date));
+    writeFileSync(new URL("docs/seo/KEYWORD-MAP.md", root), keywordMap(date));
     console.log(JSON.stringify(r.summary, null, 1));
   }
 }

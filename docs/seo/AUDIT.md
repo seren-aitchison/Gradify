@@ -7,11 +7,11 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 | | Pages |
 |---|---|
 | Published HTML pages | 2498 |
-| Indexable (not noindex, not blocked, not an app screen) | 1405 |
-| In the sitemap | 1405 |
-| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1405 |
-| Indexable with structured data | 1399 |
-| Indexable and passing every error check | 1405 |
+| Indexable (not noindex, not blocked, not an app screen) | 1403 |
+| In the sitemap | 1403 |
+| Indexable with complete metadata (title, description, canonical, link preview, valid JSON-LD) | 1403 |
+| Indexable with structured data | 1397 |
+| Indexable and passing every error check | 1403 |
 | Errors | 0 |
 | Warnings | 35 |
 
@@ -26,7 +26,7 @@ This says what is **eligible** to be indexed. It is not evidence that Google has
 | practice questions | 68 | 68 |
 | guide | 43 | 43 |
 | tool | 42 | 42 |
-| feature | 40 | 39 |
+| feature | 40 | 37 |
 | course | 34 | 33 |
 | site home | 31 | 30 |
 | glossary | 16 | 16 |
