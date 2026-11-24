@@ -8,8 +8,9 @@ import { SITES, slugOf } from "../kit/core/site.js";
 import { SEO_FOLDERS, SEO_SUBSITE_FILES } from "./seo/folders.mjs";
 
 const root = new URL("../", import.meta.url), ORIGIN = "https://getgradify.com";
-// tool pages every site shares; the copies on getgradify.com itself are the ones to index
-const SHARED = new Set(["app.html", "lifeos.html", "3d.html", "map.html"]);
+// tool pages every site shares; the copies on getgradify.com itself are the ones to index. (Each site's 3d.html is
+// its own page, the body, the athlete, the cell, so those are indexed.)
+const SHARED = new Set(["app.html", "lifeos.html", "map.html"]);
 
 async function pagesIn(dir) {
   const out = [];
@@ -17,9 +18,10 @@ async function pagesIn(dir) {
     if (e.isDirectory()) out.push(...(await pagesIn(`${dir}${e.name}/`)));
     else if (e.name.endsWith(".html") && !SHARED.has(e.name)) out.push(`${dir}${e.name}`);
   }
-  // pages that ask not to be indexed (thin generated pages, widgets) stay out of the sitemap
+  // pages that ask not to be indexed (thin generated pages, widgets), and pages that only redirect elsewhere
+  // (http-equiv="refresh", like medgradify/anatomy.html → 3d.html), stay out of the sitemap
   const keep = [];
-  for (const p of out) if (!/<meta name="robots" content="noindex/.test(await readFile(new URL(p, root), "utf8"))) keep.push(p);
+  for (const p of out) { const h = await readFile(new URL(p, root), "utf8"); if (!/<meta name="robots" content="noindex/.test(h) && !/http-equiv="refresh"/i.test(h)) keep.push(p); }
   return keep;
 }
 

@@ -322,3 +322,17 @@ test("degree intelligence: headline, risks, ranked priorities and the next best 
   assert.ok(atRisk.insights.some((i) => i.kind === "risk"), "holding a 2:1 needs a step up");
   assert.equal(degreeIntel([], 60, today).next, null);
 });
+
+test("every sitemap URL is a real, indexable page: canonical to itself, no noindex or redirect, a description, a unique title", async () => {
+  const titles = new Map();
+  for (const u of await sitemapUrls()) {
+    let p = u.replace("https://getgradify.com/", ""); if (p === "" || p.endsWith("/")) p += "index.html";
+    const html = await read(p);
+    assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/)?.[1], u, `${p}: canonical must be its own URL`);
+    assert.doesNotMatch(html, /<meta name="robots" content="noindex/, `${p}: noindex page in the sitemap`);
+    assert.doesNotMatch(html, /http-equiv="refresh"/i, `${p}: redirect page in the sitemap`);
+    assert.match(html, /<meta name="description" content="[^"]{30,}"/, `${p}: description`);
+    const t = html.match(/<title>([^<]*)<\/title>/)?.[1];
+    assert.ok(t && !titles.has(t), `${p}: title "${t}" also on ${titles.get(t)}`); titles.set(t, p);
+  }
+});
