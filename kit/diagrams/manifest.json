@@ -68738,5 +68738,587 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u51-incline-fbd": {
+  "title": "Free-body diagram of a box on an incline",
+  "caption": "Three forces only: weight (9.8 N per kg, straight down), the normal force 8.49 N perpendicular to the slope, and friction up the slope. At rest friction balances the slope component of the weight, mg sin 30° = 4.9 N; there is no separate \"downhill force\" arrow.",
+  "alt": "Free-body diagram for 1 kilogram on a 30 degree slope: weight down, normal force perpendicular to the slope, friction up the slope.",
+  "description": [
+   "Weight 9.8 N per kg, vertically down.",
+   "Normal force mg cos 30° = 8.49 N, perpendicular to the slope.",
+   "Friction up the slope, equal to mg sin 30° = 4.9 N while the box stays at rest.",
+   "The three forces sum to zero."
+  ],
+  "course": "physics",
+  "lesson": "Scientific diagrams and representations",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Scientific diagrams and representations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the forces balance (equilibrium)",
+    "ok": true,
+    "detail": "sum of components (-2.45 × 10^{-5}, -4.24 × 10^{-5})"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "W: Earth's gravity; N: the slope; f: friction"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u51-loglog": {
+  "title": "A log–log gradient of 1.5",
+  "caption": "If log T = 1.5 log r + c, then T = 10^c r^1.5: a power law. Planets (r in AU, T in years) lie on a straight line of gradient 1.5 through the origin, since Earth has r = T = 1. Squaring gives T² ∝ r³, Kepler's third law.",
+  "alt": "Straight line of log T against log r with gradient 1.5 through the origin, with points for Earth, Mars and Jupiter.",
+  "description": [
+   "Plot log₁₀ T against log₁₀ r.",
+   "Gradient 1.5 means T ∝ r^1.5.",
+   "Mars: log r = 0.183, log T = 0.2745 (T = 1.88 years). Jupiter: log r = 0.7163, log T = 1.0744 (T = 11.9 years).",
+   "T² ∝ r³."
+  ],
+  "course": "physics",
+  "lesson": "Interpreting graphs and experimental data",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Interpreting graphs and experimental data"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient 1.5",
+    "ok": true,
+    "detail": "gradient 1.5000"
+   },
+   {
+    "name": "Jupiter on the line",
+    "ok": true,
+    "detail": "y(0.7163) = 1.0745"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u51-skydiver": {
+  "title": "A skydiver approaches terminal velocity",
+  "caption": "Setting weight equal to drag, mg = ½ρC_dAv², gives v_t = √(2mg/ρC_dA) = √1869 ≈ 43 m s⁻¹. The speed starts with slope g and flattens towards v_t; after about 10 s it is within 2% of it.",
+  "alt": "Speed against time for a skydiver, rising from zero with slope g and levelling off at a dashed line at 43 metres per second.",
+  "description": [
+   "v_t = √(2 × 80 × 9.81 / (1.2 × 1 × 0.7)) = 43.2 m s⁻¹.",
+   "With drag, v(t) = v_t tanh(gt/v_t); at t = 10 s v = 42.3 m s⁻¹.",
+   "At first drag is negligible and v ≈ gt."
+  ],
+  "course": "physics",
+  "lesson": "Translating physical situations into mathematical models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u51.js: Translating physical situations into mathematical models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "approaches but stays below v_t",
+    "ok": true,
+    "detail": "43.227*(exp(0.4538829897980429*x)-1)/(exp(0.4538829897980429*x)+1) at 20 = 43.22; expected 42.36–43.23"
+   },
+   {
+    "name": "v_t = 43.2 m s⁻¹",
+    "ok": true,
+    "detail": "y(0) = 43.227"
+   },
+   {
+    "name": "initial slope g",
+    "ok": true,
+    "detail": "gradient 9.8100"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u24-annihilation": {
+  "title": "Annihilation into two photons",
+  "caption": "e⁺ + e⁻ → 2γ at rest: charge is conserved (+1 − 1 = 0) and the two rest energies, 2 × 0.511 MeV = 1.022 MeV, become two photons of 511 keV each, emitted back to back. The reverse, γ → e⁺ + e⁻ near a nucleus, needs more than 1.022 MeV.",
+  "alt": "The equation e plus plus e minus gives gamma plus gamma, with charge and nucleon number conserved and Q equal to 1.022 MeV.",
+  "description": [
+   "Positron (charge +1) and electron (charge −1): total charge 0.",
+   "Two photons: total charge 0.",
+   "Energy released: 2 × 0.511 MeV = 1.022 MeV, shared as 511 keV per photon."
+  ],
+  "course": "physics",
+  "lesson": "Antimatter and antiparticles",
+  "also": [],
+  "renderer": "nuclear",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Antimatter and antiparticles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "nucleon number A is conserved",
+    "ok": true,
+    "detail": "0 → 0"
+   },
+   {
+    "name": "charge (proton number Z) is conserved",
+    "ok": true,
+    "detail": "0 → 0"
+   },
+   {
+    "name": "every element symbol matches its proton number",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Q = Δm c^{2} = 1.022 MeV",
+    "ok": true,
+    "detail": "1.022 MeV from the masses"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "phys-u24-bending-radius": {
+  "title": "Bending radius against momentum",
+  "caption": "r = p/(eB) rises in proportion to momentum. A 7 TeV/c proton (p = 3.7 × 10⁻¹⁵ kg m s⁻¹) in the LHC's 8.3 T has r = 2.8 km; doubling the field to 16.6 T halves it to 1.4 km.",
+  "alt": "Two straight lines of bending radius in kilometres against proton momentum in TeV, the 8.3 tesla line reaching 2.8 km at 7 TeV and the 16.6 tesla line reaching 1.4 km.",
+  "description": [
+   "r = p/(eB), p = 7 TeV/c = 3.7 × 10⁻¹⁵ kg m s⁻¹.",
+   "B = 8.3 T: r = 2.81 km.",
+   "B = 16.6 T: r = 1.41 km, half as much."
+  ],
+  "course": "physics",
+  "lesson": "Particle accelerators",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Particle accelerators"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "r = 2.8 km for 7 TeV in 8.3 T",
+    "ok": true,
+    "detail": "y(7) = 2.8131"
+   },
+   {
+    "name": "twice the field halves the radius",
+    "ok": true,
+    "detail": "y(7) = 1.4066"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u24-collider-energy": {
+  "title": "Collider against fixed target",
+  "caption": "Two beams of energy E colliding head-on give √s = 2E: 7 TeV beams make 14 TeV. A 7 TeV beam on a fixed proton target gives only √(2E m c²) ≈ 115 GeV, about 122 times less.",
+  "alt": "Two curves of centre-of-mass energy against beam energy in GeV: a straight line for a collider reaching 14000 GeV at 7000, and a slowly rising square-root curve for a fixed target reaching about 115 GeV.",
+  "description": [
+   "Collider: √s = 2E, so 2 × 7000 = 14 000 GeV.",
+   "Fixed target (proton, mc² = 0.938 GeV): √s = √(2 × 7000 × 0.938) = 114.6 GeV.",
+   "The collider gives 122 times more."
+  ],
+  "course": "physics",
+  "lesson": "Collider experiments",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Collider experiments"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "7 TeV beams give 14 TeV",
+    "ok": true,
+    "detail": "y(7000) = 14000"
+   },
+   {
+    "name": "fixed target gives 115 GeV",
+    "ok": true,
+    "detail": "y(7000) = 114.5949"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u24-energy-ladder": {
+  "title": "How far above the LHC is the Planck energy?",
+  "caption": "The LHC reaches about 10⁴ GeV. The unification energy (about 10¹⁶ GeV) is 12 orders of magnitude higher, and the Planck energy E_P ≈ 1.2 × 10¹⁹ GeV is about 15 orders above the LHC. Gravity's quantum effects are far beyond any accelerator.",
+  "alt": "A logarithmic energy scale in GeV from 10 to the 2 up to 10 to the 20, with the LHC at 10 to the 4, grand unification at 10 to the 16 and the Planck energy at 1.2 times 10 to the 19.",
+  "description": [
+   "LHC: about 10⁴ GeV.",
+   "Unification: about 10¹⁶ GeV, 12 orders above the LHC.",
+   "Planck energy: 1.2 × 10¹⁹ GeV, 15.1 orders above the LHC."
+  ],
+  "course": "physics",
+  "lesson": "Gravitational interaction",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Gravitational interaction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "unification is 10¹² times the LHC",
+    "ok": true,
+    "detail": "12.00 orders"
+   },
+   {
+    "name": "Planck energy about 10¹⁵ times the LHC",
+    "ok": true,
+    "detail": "15.08 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u24-fermion-masses": {
+  "title": "The mass hierarchy",
+  "caption": "Fermion masses span from the electron (0.511 MeV) to the top quark (173 GeV): 5.5 orders of magnitude, and the neutrinos are lighter still (below 1 eV, so at least 5.7 orders below the electron). No one knows why.",
+  "alt": "A logarithmic mass scale in eV from 10 to the 0 up to 10 to the 12, with neutrinos below 1 eV, the electron at 0.511 MeV and the top quark at 173 GeV.",
+  "description": [
+   "Neutrinos: below 1 eV.",
+   "Electron: 0.511 MeV = 5.11 × 10⁵ eV.",
+   "Top quark: 173 GeV = 1.73 × 10¹¹ eV, 5.5 orders above the electron."
+  ],
+  "course": "physics",
+  "lesson": "Particle generations",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Particle generations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "top is about 3.4 × 10⁵ times the electron",
+    "ok": true,
+    "detail": "5.53 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u24-higgs-potential": {
+  "title": "The Mexican-hat potential",
+  "caption": "V = −μ²φ² + λφ⁴, drawn in units of λv⁴ against φ/v (so μ² = λv²): a hump at φ = 0 and minima at |φ| = v/√2 = 0.707 v, where V = −¼ λv⁴. The vacuum sits in one minimum, which breaks the symmetry.",
+  "alt": "A W-shaped curve: a hump at zero field and two equal minima at plus and minus 0.71 v, each at depth minus one quarter.",
+  "description": [
+   "V/(λv⁴) = −(φ/v)² + (φ/v)⁴.",
+   "Maximum at φ = 0, where V = 0.",
+   "Minima at φ/v = ±1/√2 = ±0.707, where V/(λv⁴) = −1/2 + 1/4 = −0.25.",
+   "The field takes one of the two minima: spontaneous symmetry breaking."
+  ],
+  "course": "physics",
+  "lesson": "Higgs mechanism",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Higgs mechanism"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "minimum at φ = v/√2 with depth −¼",
+    "ok": true,
+    "detail": "found (0.707, -0.25)"
+   },
+   {
+    "name": "V = 0 at φ = 0",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u24-interaction-strengths": {
+  "title": "Four interactions, 38 orders of magnitude",
+  "caption": "Relative strength at about 1 fm, with the strong interaction as 1: electromagnetism about 1/137 (0.0073), the weak interaction about 10⁻⁶ and gravity about 10⁻³⁸. The strongest and weakest differ by 38 orders of magnitude.",
+  "alt": "A logarithmic scale of relative strength from 10 to the minus 40 up to 1, with gravity near 10 to the minus 38, the weak interaction at 10 to the minus 6, electromagnetism at 1 over 137 and the strong interaction at 1.",
+  "description": [
+   "Strong: 1 (range about 1 fm, confined).",
+   "Electromagnetic: 1/137 = 0.0073 (infinite range).",
+   "Weak: about 10⁻⁶ (range about 10⁻¹⁸ m).",
+   "Gravity: about 10⁻³⁸ (infinite range): 38 orders below the strong interaction."
+  ],
+  "course": "physics",
+  "lesson": "Fundamental interactions",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Fundamental interactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "strong and gravity differ by 38 orders (the lesson's 1 and 10⁻³⁸)",
+    "ok": true,
+    "detail": "38.0 orders"
+   },
+   {
+    "name": "strong is 137 times electromagnetic",
+    "ok": true,
+    "detail": "2.14 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u24-oscillation-probability": {
+  "title": "The first oscillation maximum",
+  "caption": "For maximal mixing (sin²2θ = 1) and Δm² = 2.5 × 10⁻³ eV², P = sin²(1.27Δm²L/E) first reaches 1 where 1.27Δm²L/E = π/2, at L/E ≈ 495 km GeV⁻¹. T2K's 295 km at 0.6 GeV is 492 km GeV⁻¹, close to the first maximum.",
+  "alt": "A sine-squared curve against L over E in km per GeV, rising from zero to its first peak of 1 near 495 and falling again, with T2K marked near 492.",
+  "description": [
+   "P = sin²2θ × sin²(1.27 Δm² L/E), with Δm² = 2.5 × 10⁻³ eV², L in km, E in GeV.",
+   "Maximum when 1.27 × 2.5 × 10⁻³ × L/E = π/2: L/E = 495 km GeV⁻¹.",
+   "T2K: 295 km / 0.6 GeV = 492 km GeV⁻¹."
+  ],
+  "course": "physics",
+  "lesson": "Neutrino oscillations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Neutrino oscillations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "first maximum at L/E ≈ 495 km GeV⁻¹",
+    "ok": true,
+    "detail": "found (494.72, 1)"
+   },
+   {
+    "name": "T2K's L/E is near the maximum",
+    "ok": true,
+    "detail": "sin(1.27*0.0025*x)^2 at 491.6666666666667 = 1; expected 0.99–1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u24-pion-survival": {
+  "title": "How far a fast pion travels",
+  "caption": "A pion with τ = 26 ns and γ = 10 has mean decay length L = γβcτ ≈ 78 m. After one L, 1/e (37%) of the pions are left; without time dilation, cτ would give only 7.800000000000001 m.",
+  "alt": "A falling exponential curve, the fraction of pions surviving against distance, passing through 1 over e at 78 metres.",
+  "description": [
+   "N/N₀ = e^(−x/L) with L = γβcτ.",
+   "L ≈ 10 × 3 × 10⁸ × 2.6 × 10⁻⁸ = 78 m.",
+   "At x = 78 m the fraction left is 1/e = 0.368.",
+   "Without dilation: cτ = 7.800000000000001 m."
+  ],
+  "course": "physics",
+  "lesson": "Particle decay",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u24.js: Particle decay"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1/e of the pions remain after 78 m",
+    "ok": true,
+    "detail": "y(78) = 0.3679"
+   },
+   {
+    "name": "after cτ = 7.8 m almost all remain",
+    "ok": true,
+    "detail": "exp(-x/78) at 7.800000000000001 = 0.9; expected 0.9–1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
