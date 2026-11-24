@@ -1,0 +1,97 @@
+{
+ "id": "phys-u47-resonance-peak",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u47",
+ "lesson": "Resonance and damping",
+ "title": "A sharp resonance: Q = 200",
+ "caption": "A resonator at 1000 Hz with half-power bandwidth 5 Hz has Q = f₀/Δf = 200 and ζ = 1/(2Q) = 0.0025. The response peaks at 200 times the static value, and falls to 141.4 (the half-power level, 1/√2 of the peak) at f₀ ± 2.5 Hz, which is r = 0.9975 and 1.0025.",
+ "alt": "A very narrow tall resonance peak of height 200 at a frequency ratio of 1, with a dashed line at the half-power level 141 crossing the curve at 0.9975 and 1.0025.",
+ "description": [
+  "Amplitude response against r = f/f₀ with ζ = 0.0025.",
+  "Peak: 1/(2ζ) = 200 at r = 1.",
+  "Half-power level 141.4; the curve crosses it at r ≈ 0.9975 and 1.0025, a bandwidth of 5 Hz on 1000 Hz.",
+  "Q = 1000/5 = 200; ζ = 0.0025."
+ ],
+ "range": {
+  "x": [
+   0.99,
+   1.01
+  ],
+  "y": [
+   0,
+   220
+  ]
+ },
+ "ticks": [
+  [
+   0.99,
+   0.995,
+   1,
+   1.005,
+   1.01
+  ],
+  [
+   50,
+   100,
+   150,
+   200
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "frequency ratio r = f/f₀",
+  "amplitude ÷ static"
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt((1-x^2)^2+(2*0.0025*x)^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 141.4,
+   "label": "half power 141.4"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 200,
+   "colour": "a2",
+   "label": "Q = 200",
+   "dx": 10,
+   "dy": 4
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/sqrt((1-x^2)^2+(2*0.0025*x)^2)",
+   "x": 1,
+   "y": 200,
+   "name": "peak 200 = 1/(2ζ)"
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt((1-x^2)^2+(2*0.0025*x)^2)",
+   "x": 0.9975,
+   "y": 141.687,
+   "name": "response at the lower half-power point",
+   "tol": 0.02
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt((1-x^2)^2+(2*0.0025*x)^2)",
+   "x": 1.0025,
+   "y": 141.157,
+   "name": "response at the upper half-power point",
+   "tol": 0.02
+  }
+ ]
+}
