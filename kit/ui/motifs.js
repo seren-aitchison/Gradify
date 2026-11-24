@@ -163,12 +163,12 @@ const allowed = () => {
   return true;
 };
 
-function imageFor(light, seed, tone) {
+// drawn once per tone, theme and shape, then copied onto each motif's own canvas. Canvases, not image backgrounds:
+// a large background image painted after load would count as the page's "largest contentful paint" and make every
+// page look slow to Core Web Vitals (scripts/perf-check.cjs caught it); a canvas never does
+function sourceFor(light, seed, tone) {
   const k = `${light ? "l" : "d"}${tone}${seed % 5}`;
-  if (!cache[k]) {
-    const px = Math.round(Math.min(1.5, devicePixelRatio || 1) * 760);
-    cache[k] = drawRibbon(px, { light, seed: (seed % 5) + 1, tone }).toDataURL("image/png");
-  }
+  if (!cache[k]) cache[k] = drawRibbon(Math.round(Math.min(1.5, devicePixelRatio || 1) * 760), { light, seed: (seed % 5) + 1, tone });
   return cache[k];
 }
 
@@ -190,11 +190,16 @@ function place() {
   const seed = [...location.pathname].reduce((s, c) => s * 31 + c.charCodeAt(0), 7) >>> 0;
   const spots = placements({ vw, vh, docH, text, seed });
   const rr = rng(seed + 99), order = [...TONE_NAMES].sort(() => rr() - 0.5);
-  layer.innerHTML = spots.map((p, n) => {
-    const tone = order[n % order.length];
+  layer.textContent = "";
+  spots.forEach((p, n) => {
+    const tone = order[n % order.length], src = sourceFor(light, p.seed, tone);
     const fade = p.side ? "radial-gradient(closest-side at 62% 50%, #000 38%, transparent 100%)" : "radial-gradient(closest-side at 38% 50%, #000 38%, transparent 100%)";
-    return `<i style="position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;background:url(${imageFor(light, p.seed, tone)}) center/cover no-repeat;-webkit-mask:${fade};mask:${fade};opacity:1"></i>`;
-  }).join("");
+    const cv = document.createElement("canvas");
+    cv.width = src.width; cv.height = src.height;
+    cv.style.cssText = `position:absolute;left:${p.x}px;top:${p.y}px;width:${p.size}px;height:${p.size}px;-webkit-mask:${fade};mask:${fade}`;
+    cv.getContext("2d")?.drawImage(src, 0, 0);
+    layer.append(cv);
+  });
 }
 
 const soon = (ms = 400) => { clearTimeout(timer); timer = setTimeout(() => ("requestIdleCallback" in window ? requestIdleCallback(place, { timeout: 1200 }) : place()), ms); };
