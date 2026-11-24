@@ -2447,3 +2447,23 @@ body:has(.co-reading) { background-color: #eeeef5; background-color: light-dark(
   .co .cx-crumbs::-webkit-scrollbar { display: none; }
   .co .co-title h1 { font-size: clamp(30px, 9vw, 40px) !important; }
 }
+
+/* ---------- finishing a lesson (kit/course/course.js lessonSummary): the reward moment ---------- */
+.cx-donebox { --dn-paper: #ffffff; --dn-paper: light-dark(#ffffff, #15151c); --dn-sunk: #f4f4f9; --dn-sunk: light-dark(#f4f4f9, #1e1e27); --dn-edge: #e4e4ee; --dn-edge: light-dark(#e4e4ee, #2e2e3a); background: var(--dn-paper) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border: 1px solid var(--dn-edge) !important; border-radius: 28px !important; animation: lx-rise .5s cubic-bezier(.32, .72, 0, 1) both; }
+/* the tick: white on a deep green disc, with a springy pop and a soft ring */
+:root .cx-donecheck { color: #fff !important; background: linear-gradient(145deg, #1fbf8f, #0b8a6b) !important; box-shadow: 0 0 0 8px color-mix(in srgb, #1fbf8f 18%, transparent), 0 16px 30px -12px rgba(11, 138, 107, .8) !important; animation: lx-pop .6s cubic-bezier(.32, .72, 0, 1) .1s both; }
+:root .cx-donecheck svg { stroke: #fff; color: #fff; }
+/* XP earned: a gradient pill */
+:root .cx-donebox .cx-gain { display: inline-block; color: #fff !important; -webkit-text-fill-color: #fff; background: linear-gradient(135deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b) !important; padding: 8px 18px; border-radius: 999px; font-weight: 800; text-shadow: none !important; box-shadow: 0 14px 30px -14px rgba(155, 60, 240, .9); animation: lx-pop .6s cubic-bezier(.32, .72, 0, 1) .25s both; }
+/* the stats: solid tiles */
+.cx-donestats > * { background: var(--dn-sunk) !important; border: 1px solid var(--dn-edge) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.cx-donestats b, .cx-donestats strong { font-size: 22px; }
+/* the level bar: thicker, in the Gradify gradient */
+.cx-donelv .co-bar, .cx-donebox .co-bar { height: 10px !important; border-radius: 999px !important; background: var(--dn-sunk) !important; overflow: hidden; }
+.cx-donelv .co-bar > *, .cx-donebox .co-bar > * { background: linear-gradient(90deg, #4641ff, #9b3cf0 45%, #e0409f 75%, #ff6a2b) !important; border-radius: inherit; }
+@keyframes lx-pop { from { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.12); opacity: 1; } to { transform: scale(1); } }
+@keyframes lx-rise { from { transform: translateY(18px) scale(.98); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .cx-donebox, .cx-donecheck, .cx-donebox .cx-gain { animation: none !important; } }
+/* dialogs sit above the phone dock; the reward stats make a 2 × 2 grid on phones */
+.co-modal { z-index: 1000 !important; }
+@media (max-width: 560px) { .cx-donestats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
