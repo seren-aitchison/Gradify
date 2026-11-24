@@ -107,3 +107,20 @@ test("the report answers from data, and says what's missing instead of showing z
   assert.match(full, /\| \/lessons\/biology\/page-0\/ \| 3 \| 2 \|/, "question 5 uses the database export");
   assert.match(full, /db-retention-by-site\.csv/, "question 6 still says what it needs");
 });
+
+import { pageProblems, robotsProblems, monitor } from "../scripts/growth/monitor.mjs";
+test("the daily monitor catches what stops pages being found, and only that fails the run", async () => {
+  const O = "https://x.test";
+  assert.deepEqual(robotsProblems(`User-agent: *\nAllow: /\nSitemap: ${O}/sitemap.xml\n`, O), []);
+  assert.match(robotsProblems(`User-agent: *\nDisallow: /\n`, O)[0], /blocks the whole site/);
+  const good = `<title>DNA replication</title><link rel="canonical" href="${O}/a/"><script type="application/ld+json">{}</script>`;
+  assert.deepEqual(pageProblems(`${O}/a/`, 200, good), []);
+  assert.match(pageProblems(`${O}/a/`, 200, good.replace("<title>", '<meta name="robots" content="noindex"><title>')).join(), /noindex/);
+  const site = { "/robots.txt": `User-agent: *\nAllow: /\nSitemap: ${O}/sitemap.xml\n`, "/sitemap.xml": `<sitemapindex><sitemap><loc>${O}/s.xml</loc></sitemap></sitemapindex>`, "/s.xml": `<urlset><url><loc>${O}/</loc></url></urlset>`, "/": good.replace(`${O}/a/`, `${O}/`), "/build.txt": "abc" };
+  const fake = async (u) => { const p = new URL(u).pathname, body = site[p]; return { status: body == null ? 404 : 200, headers: { get: () => "application/xml" }, text: async () => body ?? "" }; };
+  const m = await monitor({ origin: O, fetchImpl: fake });
+  assert.deepEqual(m.critical, [], "the homepage and sitemaps are fine");
+  assert.ok(m.warnings.some((w) => /features\/: HTTP 404/.test(w)), "a missing key page other than home is a warning");
+  site["/robots.txt"] = "User-agent: *\nDisallow: /\n";
+  assert.ok((await monitor({ origin: O, fetchImpl: fake })).critical.some((c) => /blocks the whole site/.test(c)));
+});
