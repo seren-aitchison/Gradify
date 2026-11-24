@@ -464,3 +464,31 @@ main.seo .mini { background: var(--tile); border-color: var(--tile-edge); box-sh
 .rule-foot { margin: 6px 0 0; padding-top: 12px; border-top: 1px solid var(--tile-edge); color: var(--sub) !important; }
 .rule-none p { color: var(--sub) !important; } .rule-none { padding: 14px 18px; }
 @media (max-width: 560px) { .rule-head { grid-template-columns: auto 1fr; } .rule-badge { grid-column: 1 / -1; justify-self: start; } }
+/* the tracker's Import page (kit/data/handbook.js): a file tile, a paste box, and a review list where every module can
+   be edited or left out before anything reaches the tracker */
+.hb-drop { display: grid; gap: 10px; }
+.tool .hb-file { margin: 0; font-size: inherit; font-weight: inherit; position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; padding: 16px 18px; border-radius: var(--tile-r); background: var(--tile); border: 2px dashed color-mix(in srgb, var(--accent) 40%, transparent); cursor: pointer; color: var(--ink); }
+.hb-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.hb-file:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hb-file .sq { grid-column: 1; grid-row: 1 / span 2; } .hb-file b { grid-column: 2; grid-row: 1; font-size: 17px; align-self: end; } .hb-file small { grid-column: 2; grid-row: 2; color: var(--sub); font-size: 13px; align-self: start; }
+.hb-paste { background: var(--tile); border: 1px solid var(--tile-edge); border-radius: 18px; padding: 4px 16px; }
+.hb-paste summary { cursor: pointer; padding: 10px 0; font-weight: 700; color: var(--accent); }
+.hb-paste textarea { margin-bottom: 10px; background: var(--group); }
+.hb-paste button { margin-bottom: 12px; }
+.hb-private { margin: 0 4px; font-size: 13px; color: var(--sub) !important; }
+.hb-status { margin: 10px 4px; font-size: 14px; color: var(--ink) !important; } .hb-status:empty { display: none; }
+.hb-review { display: grid; gap: 10px; }
+.hb-lead { margin: 0 4px; font-size: 15px; color: var(--sub) !important; } .hb-lead b { color: var(--ink); }
+.hb-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.hb-mod { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 14px; border-radius: 20px; background: var(--tile); border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); }
+.hb-mod.check { border-color: color-mix(in srgb, var(--c50) 45%, transparent); }
+.hb-take { grid-row: 1 / span 3; padding-top: 26px; } .hb-take input { width: 22px; height: 22px; accent-color: var(--accent); }
+.hb-fields { display: grid; grid-template-columns: 2fr .8fr 1fr 1.3fr; gap: 8px; } .hb-fields > div { min-width: 0; }
+.hb-fields input, .hb-fields select { width: 100%; background: var(--group); }
+.hb-meta { grid-column: 2; margin: 4px 0 0; font-size: 13px; color: var(--sub) !important; line-height: 1.5; }
+.hb-code { font-weight: 700; color: var(--ink); margin-right: 8px; }
+.hb-flag { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-right: 8px; color: var(--c50); background: color-mix(in srgb, var(--c50) 12%, transparent); }
+.hb-from { grid-column: 2; margin: 0; font-size: 12px; color: var(--sub) !important; opacity: .85; overflow-wrap: anywhere; }
+.hb-go { margin-top: 4px; }
+.tool .g-act.soft { background: color-mix(in srgb, var(--g-accent) 13%, transparent); }
+@media (max-width: 640px) { .hb-fields { grid-template-columns: 1fr 1fr; } .hb-name, .hb-fields > div:last-child { grid-column: 1 / -1; } .hb-take { padding-top: 24px; } }

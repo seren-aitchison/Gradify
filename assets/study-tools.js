@@ -5,6 +5,7 @@ import { subjectsFor } from "../kit/core/subject-match.js";
 import { icon } from "../kit/core/icons.js";
 import { accentOf, accentOnLight } from "../kit/core/accent.js";
 import { actionCard, SPARK } from "../kit/core/action-card.js";
+import { parseHandbook, toRow } from "../kit/data/handbook.js";
 import { UNI_RULES, CHECKED, ruleById, ruleW3, boundariesOf, effectiveMark, threshold, zoneOf, borderlineCheck, describeTest } from "../kit/data/uni-rules.js";
 
 // ---------- UK degree classification ----------
@@ -282,7 +283,7 @@ const TOOLS = {
     const subjectByName = new Map();
 
     // pages: Overview, Plan, Goals and Modules, switched from the toolbar (assets/sheet.js docks it on phones)
-    const PAGES = ["overview", "plan", "goals", "modules", "rules"];
+    const PAGES = ["overview", "plan", "goals", "modules", "rules", "import"];
     let page = (() => { try { return sessionStorage.getItem("gradify.degree.page"); } catch { return null; } })();
     const show = (p, scroll) => {
       if (!PAGES.includes(p)) return;
@@ -345,6 +346,56 @@ const TOOLS = {
         <p class="rule-foot">Your own programme can differ, for example professional, accredited or joint-honours degrees and years abroad. Your programme specification has the final word.</p>
       </div>`;
     };
+
+    // Import a module handbook (kit/data/handbook.js): read in the browser, then a review screen where every module can
+    // be edited or left out. Nothing reaches the tracker until "Add" is pressed.
+    const hbOut = root.querySelector("[data-hb-out]"), hbStatus = root.querySelector("[data-hb-status]");
+    let found = [];
+    const current = () => [...list.children].map(val).filter((r) => r.name || r.mark || r.credits);
+    const review = (res) => {
+      const have = new Set(current().map((r) => String(r.name || "").trim().toLowerCase()));
+      found = res.modules.map((m) => ({ ...m, dup: have.has(m.name.toLowerCase()) }));
+      if (!found.length) { hbOut.innerHTML = `<div class="rule-card rule-none">${res.notes.map((n) => `<p>${esc(n)}</p>`).join("")}</div>`; return; }
+      const asmt = (m) => m.assessments.length ? m.assessments.map((a) => `${esc(a.name)} ${fmt(a.weight)}%${a.due ? ` (${new Date(a.due).toLocaleDateString("en-GB", { day: "numeric", month: "short" })})` : ""}`).join(" · ") : "No assessments found";
+      hbOut.innerHTML = `<div class="hb-review">
+        <p class="hb-lead"><b>Found ${found.length} module${found.length === 1 ? "" : "s"}.</b> Check each one: untick any you don't want, and fix anything that's wrong. Marks stay blank, ready for when you get them back.</p>
+        ${res.notes.map((n) => `<p class="rule-note">${esc(n)}</p>`).join("")}
+        <ul class="hb-list">${found.map((m, i) => `<li class="hb-mod${m.sure ? "" : " check"}" data-hb="${i}">
+          <label class="hb-take"><input type="checkbox" data-k="take" ${m.dup || m.year === "1" ? "" : "checked"}><span class="sr-only">Add ${esc(m.name)}</span></label>
+          <div class="hb-fields">
+            <div class="hb-name"><label>Module</label><input type="text" data-k="name" value="${esc(m.name)}" maxlength="60"></div>
+            <div><label>Credits</label><input type="number" data-k="credits" value="${m.credits ?? ""}" min="0" max="200" inputmode="numeric"></div>
+            <div><label>Year</label><select data-k="year"><option value="2"${m.year !== "3" ? " selected" : ""}>Year 2</option><option value="3"${m.year === "3" ? " selected" : ""}>Final year</option></select></div>
+            <div><label>Next deadline</label><input type="date" data-k="due" value="${esc(m.due)}"></div>
+          </div>
+          <p class="hb-meta">${m.code ? `<span class="hb-code">${esc(m.code)}</span>` : ""}${m.dup ? `<span class="hb-flag">Already in your tracker</span>` : !m.sure ? `<span class="hb-flag">Check this one</span>` : ""}${m.year === "1" ? `<span class="hb-flag">Year 1</span>` : ""} ${asmt(m)}</p>
+          <p class="hb-from">From: “${esc(m.from)}”</p>
+        </li>`).join("")}</ul>
+        <div class="g-action-buttons hb-go"><button type="button" class="g-act" data-hb-add>Add to my tracker</button><button type="button" class="g-act soft" data-hb-replace>Replace my modules instead</button><button type="button" class="g-act soft" data-hb-cancel>Cancel</button></div>
+      </div>`;
+    };
+    const readText = (text) => { const res = parseHandbook(text, { today: new Date() }); hbStatus.textContent = res.modules.length ? "" : "No modules found."; review(res); };
+    root.querySelector("[data-hb-file]").addEventListener("change", async (e) => {
+      const f = e.target.files?.[0]; if (!f) return;
+      hbStatus.textContent = `Reading ${f.name}…`; hbOut.innerHTML = "";
+      try { const { fileText } = await import("../kit/notes/pdf-text.js"); readText(await fileText(f)); }
+      catch { hbStatus.textContent = "Gradify couldn't read that file. Try a PDF with selectable text, or paste the module list."; }
+      e.target.value = "";
+    });
+    root.querySelector("[data-hb-read]").addEventListener("click", () => readText(root.querySelector("[data-hb-text]").value));
+    hbOut.addEventListener("click", (e) => {
+      const add = e.target.closest("[data-hb-add]"), rep = e.target.closest("[data-hb-replace]");
+      if (e.target.closest("[data-hb-cancel]")) { hbOut.innerHTML = ""; found = []; hbStatus.textContent = "Nothing was added."; return; }
+      if (!add && !rep) return;
+      const picked = [...hbOut.querySelectorAll("[data-hb]")].map((li) => { const k = (n) => li.querySelector(`[data-k="${n}"]`); return k("take").checked ? toRow({ name: k("name").value.trim(), credits: Number(k("credits").value) || null, year: k("year").value, due: k("due").value }) : null; }).filter((r) => r && r.name);
+      if (!picked.length) { hbStatus.textContent = "Tick at least one module to add."; return; }
+      root.loadRows(rep ? picked : [...current(), ...picked]);
+      root.dispatchEvent(new Event("input"));
+      found = []; hbStatus.textContent = "";
+      hbOut.innerHTML = actionCard({ kicker: "Done", title: `${picked.length} module${picked.length === 1 ? "" : "s"} ${rep ? "now make up your tracker" : "added to your tracker"}`, iconSvg: ICON.tick,
+        why: "Gradify now ranks them by how much they move your degree and how soon they're due. Add each mark when you get it back.",
+        actions: [{ label: "See your plan", icon: "route", attrs: 'data-go="plan"' }, { label: "Check your modules", icon: "checklist", attrs: 'data-go="modules"', soft: true }] });
+    });
 
     rowsTool(root, "degree", row, val, (rows) => {
       intel = degreeIntel(rows, Number(w.value), new Date(), 120, rule());

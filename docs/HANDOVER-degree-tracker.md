@@ -109,6 +109,14 @@ Written 24 November 2026 for whoever picks this up next. Read this first, then `
     check (Birmingham's dissertation mark). The year-2/final-year split is set from the rule. Every rule so far has
     year 1 at 0; a university that counts year 1 needs a year-1 weight in `degreeTracker` first.
 
+- **Import a module handbook** (Stage 4 below): the tracker's "Import a handbook" page (`data-page="import"`).
+  `kit/notes/pdf-text.js` reads a PDF in the browser line by line (table rows stay on one line);
+  `kit/data/handbook.js` `parseHandbook` finds modules by code, merges repeats (contents, tables, assessment lines),
+  and takes credits (ECTS doubled), the year (its own line, else the nearest "Year 2" / "Level 6" heading above, else
+  a guess from the code, flagged), assessments with weights and the next deadline. A review screen lets the student
+  untick, edit or replace before anything reaches the tracker; nothing is uploaded and no AI is used. Tests:
+  `tests/handbook.test.mjs`. Gradify AI could help with messy layouts later, with consent and a clear notice.
+
 ### Stage 2: roll the new UI out across the whole site (done, see above)
 Apply the same visual language: tokens like `.tool` in `assets/seo.css` (`--tile`, `--group`, `--tile-edge`,
 `--tile-shadow`, `--brand`, `--c70`…), white tiles, 22–30px radii, coloured squircle icons, and `.g-action` for next
@@ -134,7 +142,7 @@ Run `scripts/theme-tokens.mjs` and the full tests after each step.
   (`w3`), shows the borderline rule with its source link, and feeds the borderline insight in `degreeIntel`. Keep the
   maths deterministic and add tests.
 
-### Stage 4: upload a module handbook
+### Stage 4: upload a module handbook (done, deterministic, see above)
 - The app already reads PDFs (`kit/vendor/pdfjs`; see `kit/notes` and `kit/tools/material.js` for how).
 - Extract module names, credits, assessment weights and deadlines. Start with a deterministic parser (tables and
   lines like "20 credits", dates). Gradify AI (Stage 5's backend) could help with messy layouts.
