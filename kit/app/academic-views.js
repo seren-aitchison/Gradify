@@ -17,10 +17,12 @@ const ADULT_KINDS = new Set(["college", "fe", "university", "training", "other"]
 let catalogue = null;
 const cat = () => (catalogue ||= createCatalogue({ base: "/data/catalogue/" }));
 
+// a draft remembers which saved version it started from; if the saved profile has changed since (edited elsewhere, or
+// on the dashboard), the stale draft is dropped so it can never overwrite newer details
 function readDraft(learner) {
-  try { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "null"); if (d) return d; } catch { /* storage blocked */ }
-  const a = academicOf(learner);
-  return a ? { ...structuredClone(a), _region: null } : { _region: null };
+  const a = academicOf(learner), base = a?.last_updated || null;
+  try { const d = JSON.parse(sessionStorage.getItem(DRAFT) || "null"); if (d && (d._base ?? null) === base) return d; } catch { /* storage blocked */ }
+  return a ? { ...structuredClone(a), _region: null, _base: base } : { _region: null, _base: null };
 }
 function writeDraft(d) { try { sessionStorage.setItem(DRAFT, JSON.stringify(d)); } catch { /* storage blocked: the draft lives for this page only */ } }
 function dropDraft() { try { sessionStorage.removeItem(DRAFT); } catch { /* ignore */ } }

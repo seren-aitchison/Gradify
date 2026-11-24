@@ -124,3 +124,35 @@ export async function clearAcademic(store) {
   return saveLearner(store, { academic: null });
 }
 export { learnerOf };
+
+// ---------- module management (MyGradify dashboard): every change returns a new academic object for saveAcademic ----------
+const sameUnit = (a, b) => (a.id && b.id ? a.id === b.id : a.name.trim().toLowerCase() === b.name.trim().toLowerCase());
+/** Add a typed module (id: null). Refuses a duplicate or more than the cap. */
+export function addUnit(academic, { name, code } = {}) {
+  const units = [...(academic?.units || [])], u = { id: null, name: String(name || "").trim(), ...(code && String(code).trim() ? { code: String(code).trim() } : {}) };
+  if (!u.name) throw new Error("Give the module a name.");
+  if (units.some((x) => sameUnit(x, u))) throw new Error("That module is already in your list.");
+  if (units.length >= MAX_UNITS) throw new Error(`You can add up to ${MAX_UNITS} modules.`);
+  return { ...(academic || {}), units: [...units, u] };
+}
+/** Edit a module the student typed. A module linked to Gradify's list keeps its catalogue name (remove it instead). */
+export function updateUnit(academic, index, { name, code } = {}) {
+  const units = [...(academic?.units || [])], cur = units[index];
+  if (!cur) throw new Error("That module isn't in your list.");
+  if (cur.id) throw new Error("This module comes from Gradify's list, so its name can't be changed here.");
+  const next = { id: null, name: String(name ?? cur.name).trim(), ...(code ?? cur.code ? { code: String(code ?? cur.code).trim() } : {}) };
+  if (!next.name) throw new Error("Give the module a name.");
+  if (!next.code) delete next.code;
+  if (units.some((x, i) => i !== index && sameUnit(x, next))) throw new Error("That module is already in your list.");
+  units[index] = next;
+  return { ...academic, units };
+}
+/** Remove a module from this year's list. Study progress isn't stored on modules, so nothing else changes. */
+export function removeUnit(academic, index) {
+  const units = [...(academic?.units || [])];
+  if (!units[index]) throw new Error("That module isn't in your list.");
+  units.splice(index, 1);
+  return { ...academic, units };
+}
+/** Plain words for where a value came from. */
+export const sourceLabel = (v) => (v?.id ? "From Gradify's list" : "Entered by you");
