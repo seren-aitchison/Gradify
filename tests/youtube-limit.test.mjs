@@ -1,4 +1,4 @@
-// The youtube-notes rate limit (supabase/migrations/20261122120000_youtube_rate_limit.sql), run for real in a temporary
+// The youtube-notes rate limit (supabase/migrations/20261124180000_youtube_rate_limit.sql), run for real in a temporary
 // PostgreSQL: per caller per minute and per day, the whole service per day, a day's retention, and only the service
 // role may take a turn. Plus the function's side: it hashes the caller's IP and asks the database before fetching.
 import { test } from "node:test";

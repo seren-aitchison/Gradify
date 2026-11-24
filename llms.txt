@@ -24,6 +24,7 @@ Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and r
 - [Dictionaries and thesauruses](https://getgradify.com/features/dictionaries-and-thesauruses/): Gradify's subject dictionaries define every key term used in its lessons, organised by subject
 - [Key-terms sheets](https://getgradify.com/features/key-terms-sheets/): Key-terms sheets give you a printable sheet of every key term in a lesson, with or without the definitions
 - [Bonus facts and boosting](https://getgradify.com/features/bonus-facts-and-boosting/): As you revise in the flashcard feed, bonus facts appear between your cards, and any card you miss can be boosted so you see it more often
+- [3D visuals on demand](https://getgradify.com/features/3d-visuals-on-demand/): Visualise lets you ask to see a concept, such as benzene, an electric field or the heart, and shows the best visual Gradify already has: a 3D molecule, a labelled 3D model, a course simulation or a diagram computed from the physics
 - [Notes Studio](https://getgradify.com/features/notes-studio/): Notes Studio turns a PDF of your notes, or notes you paste in, into flashcards, a mind map and a cheat sheet
 - [Notebook](https://getgradify.com/features/notebook/): Gradify's Notebook keeps your notes as linked pages, like RemNote or Notion, and any line can become a flashcard
 - [Handwriting to text](https://getgradify.com/features/handwriting-to-text/): Handwriting to text turns writing on a phone or tablet, or a photo of a handwritten page, into searchable text

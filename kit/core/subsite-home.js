@@ -11,6 +11,8 @@ import { trackView } from "./analytics.js";
 import { art, artFor, heroArt } from "../ui/art.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 import { mountContinue } from "./continue.js";
+// the Blender preview renders of a model, at the widths scripts/blender/encode-previews.mjs makes
+const pv = (model, type) => [960, 1920, 3840].map((w) => `../kit/models/previews/${model.file.replace(".js", "")}-${w}.${type} ${w}w`).join(", ");
 applyPrefs();
 const DIMS = {
   default: ["Recall", "Explanation", "Application", "Confidence", "Retention"],
@@ -51,7 +53,7 @@ export function renderHome(el, siteName) {
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${(() => { const used = new Set(); return k.steps.map(([t, d]) => { let a = artFor(`${t} ${d}`, ""); if (!a || used.has(a)) a = ["lesson", "cards", "progress", "path", "plan", "target"].find((x) => !used.has(x)); used.add(a); return a; }); })().map((a, i) => [a, ...k.steps[i]]).map(([a, t, d], i) => `<li class="glass">${art(a, { cls: "sm-art" })}<em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
     // sites with a 3D model get a section for it
-    model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",
+    model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model"><picture><source type="image/avif" srcset="${pv(model, "avif")}" sizes="(max-width: 760px) 100vw, 50vw"><img src="../kit/models/previews/${model.file.replace(".js", ".webp")}" srcset="${pv(model, "webp")}" sizes="(max-width: 760px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></picture><span></span></a></section>` : "",
 
     section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d, href]) => topicCard(t, d, href)).join("")}</div>`),
 

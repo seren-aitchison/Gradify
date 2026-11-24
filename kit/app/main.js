@@ -51,6 +51,7 @@ import { boardHtml, wireBoard, DEFAULT_WIDGETS } from "./widgets.js";
 import { notifyPanelHtml, wireNotify, notifyAskHtml, wireNotifyAsk, startReminders } from "./notify-views.js";
 import { mountIntel3 } from "./intel3-views.js";
 import { plannerHtml, wirePlanner, renderSession, sessionPill } from "./session-views.js";
+import { consent, consentPanelHtml, wireConsent } from "../data/outcomes.js";
 import { orderCards } from "../intel/order.js";
 import { weightedGraph, usable } from "../intel/graph.js";
 import { dependencyGraph } from "../intel/debt.js";
@@ -122,7 +123,7 @@ async function stats() {
 // [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
 const SECTIONS = [
   ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
-  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
+  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["curriculum", "My curriculum", "book"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
   ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
   ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
   ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"]]],
@@ -207,7 +208,7 @@ const SECTION_TABS = {
   revise: [["queue", "Queue", ".seg-chips, .r-list, .revise-page > article.panel:not([data-pane])"], ["breakdown", "Break it down", ""], ["ease", "Ease off", ""]],
   knowledge: [["stages", "Stages", ".k-funnel, .k-grid, .knowledge-page > article.panel:not([data-pane])"], ["debt", "Knowledge debt", ""], ["courses", "Courses", ""]],
   progress: [["year", "Your year", ".today > article.panel, section > article.panel:first-of-type"], ["mastery", "Mastery", ".prog-grid"], ["journey", "Level and quests", ".lo-journey"]],
-  account: [["account", "Account", "#plan-panel, article:has(#signin), article:has(#signout), article:has(.signin)"], ["learning", "Your learning", "form.setup-form"], ["prefs", "Preferences", ".notify, article:has(#haptics)"], ["data", "Your data", "article:has(#export)"]],
+  account: [["account", "Account", "#plan-panel, article:has(#signin), article:has(#signout), article:has(.signin)"], ["learning", "Your learning", "form.setup-form"], ["prefs", "Preferences", ".notify, article:has(#haptics)"], ["data", "Your data", "article:has(#export), .oc-consent"]],
   ai: [["ask", "Ask Gradify", ".i-ask"], ["features", "Gradify AI", ".ai-allow, .ai-tools, .ai-route > p.sub:last-child"]],
 };
 const activeTab = new Map();
@@ -1554,6 +1555,7 @@ async function renderAcademicRoute(step) {
   });
 }
 async function renderAccount() {
+  const consentNow = await consent(store).catch(() => null);
   const user = store.mode === "cloud" ? await store.user() : null;
   const s = siteOf(profile.site);
   view.innerHTML = `<section class="account">
@@ -1584,6 +1586,7 @@ async function renderAccount() {
     <div id="notify-slot"></div>
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
+    ${consentPanelHtml(consentNow, esc)}
   </section>`;
   if (user) renderBillingPlan();
   wireAcademicPanel(view, { store, toast, refresh: async () => { profile = await store.getProfile(); syncMirror(profile); }, rerender: () => route() });
@@ -1600,6 +1603,7 @@ async function renderAccount() {
   $("#open-access")?.addEventListener("click", (e) => window.gradifyAccess?.open(e.currentTarget));
   $("#haptics")?.addEventListener("change", (e) => { setHaptics(e.target.checked); haptic("success"); });
   { const nm = { intel: intelOf(learnerOf(profile)), storeMode: store.mode }; const slot = $("#notify-slot"); if (slot) { slot.outerHTML = notifyPanelHtml(nm); wireNotify(view, nm, apctx()); } }
+  wireConsent(view, store, toast);
   $("#export").addEventListener("click", async () => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify({ ...(await store.exportAll()), quick_notes: exportJots() }, null, 2)], { type: "application/json" }));
@@ -1719,6 +1723,7 @@ async function renderCommunity(arg) {
 }
 routes.community = renderCommunity;
 routes.session = () => renderSession({ view, store, toast });
+routes.curriculum = async () => (await import("./curriculum-views.js")).renderCurriculum({ view, store, toast, profile: await store.getProfile() });
 
 // ---------- Free on a second device ----------
 function showDeviceBanner(cloud, device) {

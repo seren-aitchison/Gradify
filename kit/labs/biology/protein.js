@@ -35,7 +35,7 @@ export function backbone() {
 
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div>`);
-  const S = stage3d($(".lab-stage"), { distance: 6.5, aspect: 0.8 }); S.spin = 0.2;
+  const S = stage3d($(".lab-stage"), { distance: 6.5, aspect: 0.8, ao: true }); S.spin = 0.2;
   const ctrl = $(".lab-ctrl"), info = panel(ctrl);
   let level = "secondary", colour = "ss";
   const st = { levels: new Set(), hydro: false };

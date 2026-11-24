@@ -36,6 +36,7 @@ const TOOL_LIST = [
   { id: "handwriting", group: "create", href: "#/tools/handwriting", name: "Handwriting to text", g3d: "pencil write hand", line: "Write by hand on a phone or tablet, or upload a photo, and get searchable text." },
   { id: "youtube", group: "create", href: "#/tools/youtube", name: "YouTube to notes", g3d: "video play share", line: "Paste a YouTube link: notes in chapters, flashcards, a mind map and a chat about the video." },
   // learn
+  { id: "visualise", group: "learn", href: "#/tools/visualise", name: "Visualise", g3d: "atom molecule 3d", line: "Ask to see any concept: 3D molecules rendered in Blender, 3D models, simulations and computed diagrams." },
   { id: "explain", group: "learn", href: "#/tools/explain", name: "Explainer videos", g3d: "video film sparkles", line: "Any lesson, unit or your notes as a short narrated explainer video you can download." },
   { id: "podcast", group: "learn", href: "#/tools/podcast", name: "Chant podcasts", g3d: "music headphones podcast", line: "Every unit of a course as a chant episode, back to back, for a walk or a commute." },
   { id: "audio", group: "learn", href: "#/tools/audio", name: "Audio questions", g3d: "bell sound voice", line: "Questions read aloud, a pause to answer out loud, then the answer. Hands-free." },
@@ -69,6 +70,7 @@ export async function renderTools(view, ctx) {
   if (tool === "notebook") return (await import("./notebook.js")).renderNotebook(view, ctx, rest);
   if (tool === "handwriting") return (await import("./handwriting.js")).renderHandwriting(view, ctx, rest);
   if (tool === "youtube") return (await import("./youtube.js")).renderYouTube(view, ctx, rest);
+  if (tool === "visualise") return (await import("./visualise.js")).renderVisualise(view, ctx, rest);
   if (tool === "projects") return (await import("./projects.js")).renderProjects(view, ctx, rest);
   const { LEARN_TOOLS } = await import("./learn.js");
   if (LEARN_TOOLS[tool]) return LEARN_TOOLS[tool](view, ctx, rest);

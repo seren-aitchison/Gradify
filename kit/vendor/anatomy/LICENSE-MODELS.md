@@ -15,3 +15,10 @@ by the `open-anatomy-3d` package.
 
 No warranties are given. The models are for education and visualisation and
 are not suitable for diagnosis or any clinical decision.
+
+## Exception: `anatomy-hd.glb` — CC BY-SA 4.0
+
+`anatomy-hd.glb` is derived from Z-Anatomy, which is ShareAlike: it is licensed under
+**Creative Commons Attribution-ShareAlike 4.0 International**
+(https://creativecommons.org/licenses/by-sa/4.0/legalcode). Adaptations of that
+file must be shared under the same licence. Credit text: see ATTRIBUTION.md.

@@ -23,6 +23,7 @@ export const FEATURES = [
   { n: "Dictionaries and thesauruses", cat: "learn", i: "book", where: "web", d: "Subject dictionaries for every site, with a thesaurus for writing.", size: 1, live: true, href: "app.html#/tools/dictionary" },
   { n: "Key-terms sheets", cat: "learn", i: "checklist", where: "both", d: "A key-terms sheet for every mini topic, ready to print.", try: "capture", size: 1, live: true, href: "app.html#/tools/sheets" },
   { n: "Bonus facts and boosting", cat: "learn", i: "star", where: "app", d: "Bonus facts pop up as you learn, and key facts get boosted so you see them more.", try: "study", size: 1, live: true, href: "app.html#/tools/feed" },
+  { n: "3D visuals on demand", cat: "learn", i: "atom", where: "both", d: "Ask to see any concept: molecules built from checked structures and rendered in Blender, 3D models, simulations and diagrams computed from the physics.", size: 2, live: true, href: "app.html#/tools/visualise" },
   // notes and creation
   { n: "Notes Studio", cat: "create", i: "upload", where: "both", d: "Turn a PDF of your notes into clean notes, flashcards, a spidermap, a cheat sheet, a video and a song.", try: "capture", size: 3, live: true, href: "app.html#/new" },
   { n: "Notebook", cat: "create", i: "feather", where: "both", d: "A personal notebook like RemNote or Notion: linked notes, customisable pages, and any line can become a flashcard.", size: 2, live: true, href: "app.html#/tools/notebook" },

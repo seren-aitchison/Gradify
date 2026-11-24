@@ -5,7 +5,7 @@
 // captions themselves (YouTube doesn't allow other sites to), so this does it for them. It only ever fetches
 // youtube.com pages for an 11-character video id and sends nothing of the learner's anywhere.
 // Deployed with verify_jwt off, so it works signed out. Rate limited across every instance by public.youtube_take
-// (supabase/migrations/20261122120000_youtube_rate_limit.sql): 10 videos a minute and 200 a day from one caller, 5000 a
+// (supabase/migrations/20261124180000_youtube_rate_limit.sql): 10 videos a minute and 200 a day from one caller, 5000 a
 // day in all. The only thing kept is a keyed hash of the caller's IP address (HMAC-SHA-256 with the service role key,
 // which never leaves the server), for one day. Uses SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (set by Supabase).
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";

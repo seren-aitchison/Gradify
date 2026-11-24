@@ -75,6 +75,7 @@ import { art as spotArt, heroArt, subjectOf } from "../ui/art.js";
 import { specsFor } from "../specs/index.js";
 import { specMastery } from "../learning/spec-mastery.js";
 import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
+import { STRATEGIES, explain as explainWay, available as waysFor, rank as rankWays, stats as wayStats, record as wayRecord, shown as wayShown, answered as wayAnswered } from "../learning/explain.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -294,9 +295,65 @@ export function mountCourse(root, cfg) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
       if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
+      // an explanation shown in this lesson is judged by the next answer (kit/learning/explain.js)
+      if (it.l && !res.self) { const credited = wayAnswered(it.l.id, res.correct); if (credited) logWay("explanation_outcome", credited, it.l.id, res.correct); }
+      if (!res.correct && !res.self && it.l && !box.querySelector(".co-anotherw")) offerAnotherWay(box, Q, it);
       if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
     });
+  }
+
+  // "Explain it another way": the same idea from a different angle, chosen by what has worked for this learner
+  // (kit/learning/explain.js). Every way is built from the lesson's own notes, apart from the optional AI rewrite.
+  let priorsP = null;
+  const priors = () => (priorsP ||= import("../data/outcomes.js").then((m) => m.explanationPriors()).catch(() => ({})));
+  function logWay(event, strategy, lesson, correct = null) {
+    Promise.resolve(store()).catch(() => null).then((s) => s?.logEvent?.({ event, site: cfg.site, concept: lesson, source: `explain:${strategy}`, result: correct == null ? null : correct ? "correct" : "incorrect" })).catch(() => {});
+  }
+  async function offerAnotherWay(box, Q, it) {
+    const wrap = document.createElement("div"); wrap.className = "co-anotherw";
+    wrap.innerHTML = `<button type="button" class="btn btn-light btn-sm"><span>Explain it another way</span></button><div class="co-way" aria-live="polite"></div>`;
+    box.append(wrap);
+    wrap.querySelector("button").addEventListener("click", async (e) => {
+      e.currentTarget.hidden = true;
+      const L = await notesFor(it.l); if (!L) return;
+      const ways = rankWays(waysFor(L, Q, { ai: Boolean(SUPABASE_URL) }), wayStats(), await priors());
+      const out = wrap.querySelector(".co-way");
+      const show = async (s) => {
+        wayShown(s, it.l.id); logWay("explanation_shown", s, it.l.id);
+        const x = explainWay(s, L, Q), r = wayRecord(wayStats(), s);
+        out.innerHTML = `<div class="co-waytabs" role="tablist" aria-label="Ways to explain it">${ways.map((w) => `<button type="button" role="tab" class="chip" data-way="${w}" aria-selected="${w === s}">${esc(STRATEGIES[w].name)}</button>`).join("")}</div>
+          <div class="co-waybody" role="tabpanel"><h4>${esc(x.title)}</h4>${wayBody(x, L)}</div>
+          <p class="aq-note">${r.n >= 3 ? `Chosen for you: this way has helped you get the next answer right ${Math.round(r.rate * 100)}% of the time (${r.n} tries).` : "Gradify is still learning which way of explaining helps you most. Try another way any time."} Then try the question again.</p>`;
+        if (x.ai) {
+          const body = out.querySelector(".co-waybody");
+          body.insertAdjacentHTML("beforeend", `<p class="co-empty">Rewriting…</p>`);
+          try { const a = await askTutor({ mode: "explain", lesson: { id: it.l.id, title: it.l.title }, question: `I got this wrong: "${Q.q}". Explain the idea it tests again, differently: simpler words, short steps, one everyday example. Don't give the answer letter.` });
+            body.innerHTML = `<h4>${esc(x.title)}</h4>${paras(a.answer)}<p class="aq-note">From Gradify AI${a.fromLesson === false ? ", going beyond this lesson's notes" : ", using this lesson's notes"}. It can be wrong.</p>`; }
+          catch (err) { body.innerHTML = err.signin ? signinLine("Rewriting", "") : `<p class="co-empty">${esc(err.message)}</p>`; }
+        }
+        if (x.strategy === "visual") {
+          const d = diagramsFor(L)[0]; const vb = out.querySelector(".co-wayvis");
+          if (d && vb) vb.innerHTML = glassDiagram(d);
+          try { const [{ findVisuals }, ix] = await Promise.all([import("../visuals/find.js"), fetch(new URL("../api/v1/visuals.json", import.meta.url)).then((r) => r.json())]);
+            const hits = findVisuals(ix.visuals, x.query, 3); if (hits.length && vb) vb.insertAdjacentHTML("beforeend", `<p>${hits.map((v) => `<a class="btn btn-ghost btn-sm" href="${esc(v.href.startsWith("#/") ? `${cfg.app || "/app.html"}${v.href}` : v.href)}"><span>${esc(v.title)}</span></a>`).join(" ")}</p>`); } catch { /* no visuals */ }
+        }
+      };
+      out.addEventListener("click", (ev) => { const b = ev.target.closest("[data-way]"); if (b) show(b.dataset.way); const r = ev.target.closest(".co-reveal"); if (r) { r.nextElementSibling.hidden = false; r.remove(); } });
+      if (ways.length) show(ways[0]);
+    });
+  }
+  function wayBody(x, L) {
+    if (x.ai) return "";
+    return x.parts.map((p) => p.kind === "step" ? `<p class="co-wstep"><b>${p.n}</b> ${inline(p.text)}</p>`
+      : p.kind === "example" ? `<div class="co-ex"><b>Worked example</b><p>${inline(p.text)}</p>${p.extra?.length ? `<ol>${p.extra.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div>`
+      : p.kind === "rule" ? `<p class="mv-key">${inline(p.text)}</p>`
+      : p.kind === "term" ? `<p><b>${esc(p.term)}</b>: ${inline(p.text)}</p>`
+      : p.kind === "mistake" ? `<div class="mv-clin co-pit"><b>The common mistake</b>${inline(p.text)}</div>`
+      : p.kind === "right" ? `<p><b>Instead:</b> ${inline(p.text)}</p>`
+      : p.kind === "ask" ? `<p class="co-wask">${inline(p.text)} <button type="button" class="co-reveal">Show</button><span hidden> ${inline(p.answer)}</span></p>`
+      : p.kind === "visual" ? `${p.text ? `<p>${inline(p.text)}</p>` : ""}<div class="co-wayvis"></div>`
+      : `<p>${inline(p.text)}</p>`).join("");
   }
 
   // "Why was I wrong?": Gradify AI names the likely misconception behind a wrong choice and gives a check question

@@ -104,6 +104,10 @@
     <div class="dims" id="dims"></div>
     <p class="note"><b>What these scores are, and aren't.</b> Each one checks that what good teaching needs is there and well formed: learning outcomes, prerequisites, worked examples, application questions, dated sources, readable sentences, flashcards for spaced review. They can't tell whether an explanation is right or whether you'll learn from it. Accuracy is capped at 60 for any lesson a subject expert hasn't yet reviewed, which is currently every lesson: each course page says so. Real evidence of learning comes from learners' own answers over time.</p>
 
+    <h2 id="outcomes">Measured learning</h2>
+    <p>The audit above checks how lessons are built. This measures whether people actually learn from them: for each lesson, how often learners get its questions right first time, and whether they still get them right a week or more later. It uses only learners who have chosen to take part (Settings → Your data, 16 or over), and shows a lesson only when at least 10 of them have answered it, so no one can be picked out.</p>
+    <div id="measured"><p>Loading…</p></div>
+
     <h2 id="coverage">Which qualifications Gradify covers</h2>
     <p>Gradify only says it covers a qualification when it has checked its lessons against the official specification, outcome by outcome, and recorded when. Until then it says exactly how strong each claim is.</p>
     <div class="stats" id="cov"></div>
@@ -139,6 +143,15 @@
       document.getElementById("cov").innerHTML = Object.entries(STATUS).map(([k, s]) => `<div class="stat"><b>${q.coverage[k]}</b><span>${esc(s.name)}: ${esc(s.line)}</span></div>`).join("");
       document.getElementById("courses").innerHTML = q.courses.map((c) => `<tr><td><b>${esc(c.name)}</b></td><td>${c.lessons}</td><td>${c.serves.map((s) => esc(s.q ? QUALIFICATIONS[s.q].name : "Gradify's own curriculum")).join("<br>")}</td><td>${c.serves.map((s) => `<span class="pill ${s.status}">${esc(STATUS[s.status].name)}</span>`).join("<br>")}</td><td>${c.overall}</td></tr>`).join("");
     } catch { document.getElementById("audit-intro").textContent = "The audit couldn't load. Try again in a moment."; }
+    try {
+      const { summary, learningOutcomes, explanationPriors } = await import("/kit/data/outcomes.js");
+      const [s, rows, ex] = await Promise.all([summary(), learningOutcomes(), explanationPriors()]);
+      const box = document.getElementById("measured");
+      if (!s.enough || !rows.length) box.innerHTML = `<p class="note"><b>Not enough learners have chosen to take part yet.</b> Gradify needs at least ${s.threshold || 10} people in a lesson before it shows anything, and it won't show a number it can't stand behind. This section fills in by itself as people opt in.</p>`;
+      else box.innerHTML = `<div class="scroll"><table><thead><tr><th>Course</th><th>Lesson</th><th>Learners</th><th>Right first time</th><th>Remembered a week later</th></tr></thead><tbody>${rows.map((r) => `<tr><td>${esc(r.subject)}</td><td>${esc(r.lesson_id)}</td><td>${r.learners}</td><td>${Math.round(r.first_try * 100)}%</td><td>${r.retention == null ? "not enough yet" : `${Math.round(r.retention * 100)}%`}</td></tr>`).join("")}</tbody></table></div>`;
+      const ways = Object.entries(ex);
+      if (ways.length) box.insertAdjacentHTML("beforeend", `<h3>Which ways of explaining help</h3><table><thead><tr><th>Way</th><th>Next answer right</th><th>Learners</th></tr></thead><tbody>${ways.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${Math.round((v.ok / (v.ok + v.no)) * 100)}%</td><td>${v.learners}</td></tr>`).join("")}</tbody></table>`);
+    } catch { document.getElementById("measured").innerHTML = `<p class="note">The measures couldn't load just now.</p>`; }
   </script>
 </body>
 </html>

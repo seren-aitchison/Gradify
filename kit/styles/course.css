@@ -971,8 +971,7 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
   .co-pncard.next small::before { content: "→  ·  "; opacity: .7; }
 }
 
-/* ===================================================================================================================
-   Navigation & progress (kit/course/navigator.js, kit/learning/topic-status.js, course.js Home/Syllabus/Revise)
+/* ============================================================================================================   Navigation & progress (kit/course/navigator.js, kit/learning/topic-status.js, course.js Home/Syllabus/Revise)
    The course outline beside a lesson (a drawer below 1280px), the command palette, Home, the Syllabus outline,
    Revise and Target Tests, the lesson toolbar and toolkit, the completion summary, focus mode and the phone dock.
    Topic statuses each have one colour, used everywhere: dots, bars, the topic map.
@@ -2900,3 +2899,16 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co.co-reading .co-read #co-top.co-frame { background: color-mix(in srgb, var(--accent, #4641ff) 10%, var(--g-tile)) !important; border: 1px solid color-mix(in srgb, var(--accent, #4641ff) 45%, transparent) !important; }
 .co.co-reading .co-read #co-top.co-frame li::before { -webkit-mask: none !important; mask: none !important; border: 1.5px solid var(--lc) !important; background: radial-gradient(circle, var(--lc) 0 3px, transparent 3.5px) !important; }
 .co.co-reading .co-read .co-prose section[id] h3::before { color: var(--lc-ink) !important; background: var(--lc-wash) !important; border: 1px solid var(--lc-line) !important; }
+=======
+/* "Explain it another way" (kit/learning/explain.js) */
+.co-anotherw { margin-top: 10px; display: grid; gap: 8px; }
+.co-way:empty { display: none; }
+.co-way { border: 1px solid var(--line); border-radius: 16px; padding: 14px; display: grid; gap: 10px; background: rgba(var(--ink-rgb), .03); }
+.co-waytabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.co-waytabs .chip { padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; }
+.co-waytabs .chip[aria-selected="true"] { background: var(--invert-bg); color: var(--invert-fg); border-color: var(--invert-bg); }
+.co-waybody h4 { margin: 0 0 6px; }
+.co-wstep { display: grid; grid-template-columns: 26px 1fr; gap: 8px; margin: 6px 0; }
+.co-wstep b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--invert-bg); color: var(--invert-fg); font-size: 12px; }
+.co-reveal { margin-left: 6px; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }
+.co-wayvis .gd { max-width: 480px; }
