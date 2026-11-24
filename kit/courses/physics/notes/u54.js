@@ -245,6 +245,7 @@ H: Broader ethics
 P: Dual-use research (lasers, drones, AI, nuclear) requires awareness of misuse. Environmental impact of large facilities and computing. Human participant research (rare in physics but relevant in medical and education research) needs ethics approval and consent. Fair authorship and credit, equality and inclusion, and responsible communication with the public. Institutions have integrity officers and procedures for reporting concerns (whistleblowing protections).
 X: Testing 20 independent hypotheses at α = 0.05: chance of at least one false positive?
 > 1 − 0.95^{20} ≈ 0.64
+D: phys-u54-false-positive
 X: A student drops "outliers" that don't fit the hypothesis without justification. Problem?
 > Falsification/selective reporting: outlier exclusion must follow pre-defined, justified criteria and be reported
 K: Integrity means honest, rigorous, transparent research; misconduct and questionable practices damage science and trust.

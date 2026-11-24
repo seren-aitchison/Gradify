@@ -76941,5 +76941,51 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u54-false-positive": {
+  "title": "False positives grow with the number of tests",
+  "caption": "Each test has a 5% false-positive chance, but the chance of at least one among n independent tests is 1 − 0.95ⁿ. For 20 tests that is 0.64: more likely than not, so a lone \"significant\" result among many is weak evidence.",
+  "alt": "Probability of at least one false positive against the number of tests, rising from 0.05 at one test to 0.64 at twenty and towards 1.",
+  "description": [
+   "P(at least one) = 1 − (1 − α)^n with α = 0.05.",
+   "n = 1: 0.05. n = 20: 1 − 0.95^20 = 0.642. n = 50: 0.92.",
+   "Corrections such as Bonferroni (α/n per test) restore the overall rate."
+  ],
+  "course": "physics",
+  "lesson": "Research ethics and integrity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u54.js: Research ethics and integrity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 − 0.95^20 = 0.64",
+    "ok": true,
+    "detail": "y(20) = 0.6415"
+   },
+   {
+    "name": "one test: 0.05",
+    "ok": true,
+    "detail": "y(1) = 0.05"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
