@@ -71,6 +71,7 @@ import { feel } from "../ui/feel.js";
 import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
+import { art as spotArt, heroArt, subjectOf } from "../ui/art.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -417,6 +418,7 @@ export function mountCourse(root, cfg) {
     <div class="co-head">
       <div class="co-title"><nav class="cx-crumbs" aria-label="Breadcrumb"><a href="/">Gradify</a><a href="../">${esc(cfg.site)}</a><span aria-current="page">${esc(cfg.name)}</span></nav><h1>${esc(cfg.name)}</h1><div class="cx-headrow"><span class="cx-save" hidden></span><button type="button" class="gx-link cx-pin" data-pincourse aria-pressed="false"></button></div></div>
       <div class="co-hud" aria-label="Your progress"></div>
+      ${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-headart" })}
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${PRIMARY.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "revise" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
@@ -1069,8 +1071,8 @@ export function mountCourse(root, cfg) {
         return `<li><a class="cx-book" href="${fin ? `#/lesson/${l.id}` : resumeHref(l)}" style="--a:${t.from};--b:${t.to};--p:${d}" aria-label="${esc(l.title)}, ${fin ? "finished" : `${pct}% read`}, opened ${ago(r.t)}">
           <span class="cx-bcover" aria-hidden="true"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small><b>${esc(l.title)}</b><em>${esc(cfg.name)}</em>${fin ? `<span class="cx-bdone">${ic("check")}</span>` : ""}</span>
           <span class="cx-bmeta" aria-hidden="true"><span class="cx-bbar"><i></i></span><small><b>${fin ? "Finished" : `${pct}%`}</b> · ${ago(r.t)}</small></span></a></li>`; }).join("")}</ul></section>` : "";
-    main.innerHTML = `${weekHtml}<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
-        <div class="cx-herol">
+    main.innerHTML = `${weekHtml}<section class="cx-hero g-gleam" style="--a:${t0.from};--b:${t0.to}">
+        <div class="cx-herol">${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-heroart" })}
           <span class="co-kicker">${started ? `${hello} · pick up where you left off` : `Welcome to ${esc(cfg.name)}`}</span>
           ${nl ? `<p class="cx-path"><a href="#/learn/${nl.unit.id}">${U} ${nl.unit.n} · ${esc(nl.unit.title)}</a>${g?.title ? `<span>›</span><span>${nl.unit.n}.${gi + 1} ${esc(g.title)}</span>` : ""}</p>
           <h2>${esc(nl.title)}</h2>
@@ -1094,20 +1096,20 @@ export function mountCourse(root, cfg) {
         <div class="cx-col">
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("sparkles")} Recommended for you</h3></div>
             ${recs.length ? `<ul class="cx-recs">${recs.map((r, i) => `<li class="${r.tone || ""}"><span class="cx-reci">${ic(r.icon)}</span><div><b>${esc(r.t)}</b><p>${esc(r.d)}</p><div class="co-row"><a class="btn btn-light lg btn-sm" href="${r.href}" data-rec="${i}"><span>${esc(r.cta)}</span></a>${r.alt ? `<a class="btn btn-ghost lg btn-sm" href="${r.alt[0]}"><span>${esc(r.alt[1])}</span></a>` : ""}</div></div></li>`).join("")}</ul>`
-              : `<p class="co-empty">${started ? "Nothing urgent. Carry on with your next lesson; recommendations appear as your answers show what needs work." : "Recommendations appear once you've done a lesson and answered its questions. They come from your own answers, never guesses."}</p>`}</section>
+              : `<div class="co-emptyart">${spotArt("tutor")}<p class="co-empty">${started ? "Nothing urgent. Carry on with your next lesson; recommendations appear as your answers show what needs work." : "Recommendations appear once you've done a lesson and answered its questions. They come from your own answers, never guesses."}</p></div>`}</section>
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("chart")} Strengths and weaknesses</h3><a href="#/me">Full picture →</a></div>
             ${weak.length || strong.length ? `<div class="cx-sw"><div><span class="co-kicker">Needs work</span>${weak.length ? `<ul>${weak.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} question${w2.questions === 1 ? "" : "s"}</small></li>`).join("")}</ul><a class="btn btn-ghost btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Practise these</span></a>` : `<p class="co-empty">Nothing measured as weak. Good.</p>`}</div>
               <div><span class="co-kicker">Strong</span>${strong.length ? `<ul>${strong.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} questions</small></li>`).join("")}</ul>` : `<p class="co-empty">Mastery shows here once you're right across three or more questions on a lesson.</p>`}</div></div>`
-              : `<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p>`}</section>
+              : `<div class="co-emptyart">${spotArt("progress")}<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p></div>`}</section>
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
+            <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>
+              <dl>${[["mastered", "Mastered"], ["practised", "Practised"], ["revise", "Needs revision"]].map(([k, t]) => `<div><dt>${dot(k)}${t}</dt><dd>${all.counts[k]}</dd></div>`).join("")}<div><dt><i class="cx-st s-learned"></i>Measured accuracy</dt><dd>${all.mastery == null ? "–" : pc(all.mastery)}</dd></div></dl></div>
+            <div class="cx-stages">${navGroups().map((gp) => { const r = roll(gp.list.flatMap(idsOf)), t = gp.list[0] && trackOf(gp.list[0]); return `<a href="#/learn/${gp.list[0]?.id || ""}" style="--a:${t?.from};--b:${t?.to}"><span>${esc(gp.name)}</span>${stack(r)}<small>${pc(r.coverage)}</small></a>`; }).join("")}</div></section>
         </div>
         <div class="cx-col">
           ${(() => { const tq = missions().filter((q) => q.kind === "topic"); if (!tq.length) return ""; const cur = tq.filter((q) => !q.earlier), q0 = tq[0].quest, got = cur.filter((q) => q.done).length;
             return `<section class="cx-panel cx-tquest"><div class="cx-sech"><h3>${ic("flag")} Today's topic quest</h3><span class="cx-tqxp">${got} / ${cur.length} · +${q0.xp} XP</span></div><p class="cx-tqname"><b>${esc(q0.topic)}</b> Understand it, remember it, apply it: each step pays only for learning.</p>${missionsHtml("topic", true)}</section>`; })()}
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">Journey →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
-          <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
-            <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>
-              <dl>${[["mastered", "Mastered"], ["practised", "Practised"], ["revise", "Needs revision"]].map(([k, t]) => `<div>${dot(k)}<dt>${t}</dt><dd>${all.counts[k]}</dd></div>`).join("")}<div><i class="cx-st s-learned"></i><dt>Measured accuracy</dt><dd>${all.mastery == null ? "–" : pc(all.mastery)}</dd></div></dl></div>
-            <div class="cx-stages">${navGroups().map((gp) => { const r = roll(gp.list.flatMap(idsOf)), t = gp.list[0] && trackOf(gp.list[0]); return `<a href="#/learn/${gp.list[0]?.id || ""}" style="--a:${t?.from};--b:${t?.to}"><span>${esc(gp.name)}</span>${stack(r)}<small>${pc(r.coverage)}</small></a>`; }).join("")}</div></section>
         </div>
       </div>
       ${marks.length ? `<div class="cx-cols">
@@ -1492,7 +1494,7 @@ export function mountCourse(root, cfg) {
         <div class="co-steps">${u.lessons.map((x, k) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}" aria-label="Lesson ${k + 1}: ${esc(x.title)}${S.done[x.id] ? " (done)" : ""}"></a>`).join("")}</div>
       </div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
+        <header class="co-lhead"><span class="co-licon co-lart">${(() => { const k = subjectOf(`${l.title} ${l.module || ""} ${u.title}`); return heroArt(k !== "course" ? k : `${cfg.name} ${cfg.site}`); })()}</span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h1>${esc(l.title)}</h1>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
@@ -1513,6 +1515,8 @@ export function mountCourse(root, cfg) {
         ${N && F.refs ? `<details class="co-refsec cx-acc" id="co-refs"><summary>${ic("book")} Sources and further reading<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody">${F.refs}</div></details>` : ""}
         ${N && isDraft(u) ? `<p class="co-draft" role="note">This ${u1}'s content is still going through expert review, which is rolling out course by course. Check anything important against your course materials.</p>` : ""}
         <footer class="co-finish">
+          ${N ? topicStrip(l) : ""}
+          ${N ? spotArt(S.done[id] ? "done" : "lesson", { cls: "co-finish-art" }) : ""}
           <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">
             <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -1602,9 +1606,20 @@ export function mountCourse(root, cfg) {
       const lvBefore = levelOf(totalXp());
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
       lightStep("done"); shareProgress(l);
+      const strip = main.querySelector(".co-finish .cx-tstrip"); if (strip) strip.outerHTML = topicStrip(l, { fresh: true });
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else lessonSummary({ l, N, nQ, next: next && byId[next.id], gained: totalXp() - xpBefore, lvBefore, openedAt });
     });
+  }
+  // this lesson's topic as a strip of segments, one per lesson (done, this one, still to do): where the lesson sits and
+  // how much of the topic is behind you, on the lesson's closing panel and in the completion dialog
+  function topicStrip(l, { fresh = false } = {}) {
+    const g = groupsOf(l.unit).find((x) => x.lessons.some((y) => y.id === l.id));
+    const ls = g?.lessons || l.unit.lessons;
+    if (!ls || ls.length < 2) return "";
+    const n = ls.filter((x) => S.done[x.id]).length;
+    return `<div class="cx-tstrip${fresh ? " fresh" : ""}"><p><span>${esc(g?.title || l.unit.title)}</span><b>${n} of ${ls.length} lessons</b></p>
+      <ol aria-hidden="true">${ls.map((x) => `<li class="${S.done[x.id] ? "d" : ""}${x.id === l.id ? " here" : ""}"></li>`).join("")}</ol></div>`;
   }
   // the moment a lesson is completed: what it earned, how the questions went, the level and the day so far, and one
   // clear next step (Enter goes on). The learner chooses: nothing moves on by itself.
@@ -1624,6 +1639,7 @@ export function mountCourse(root, cfg) {
         <div><b>${Math.min(tx, S.goal)}/${S.goal}</b><small>daily XP goal</small></div>
       </div>
       <div class="cx-donelv"><span>Level ${L.n}${ups ? " · level up!" : ""}</span><div class="co-bar"><i style="width:${from * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
+      ${topicStrip(l, { fresh: true })}
       <p class="cx-doneunit">${dot(statusOf(l.id))} ${STATUS[statusOf(l.id)].label} · ${U} ${l.unit.n}: ${r.done} of ${r.total} lessons done${comboBest >= 3 ? ` · best run ${comboBest} in a row` : ""}</p>
       ${nQ && right < nQ ? `<p class="cx-donetip">${ic("target")} ${nQ - right} question${nQ - right === 1 ? "" : "s"} still to get right. They'll come back in Revise, or <a href="#co-check" data-close data-jump="co-check">try them now</a>.</p>` : ""}
       <div class="co-row cx-donego">${next ? "" : `<a class="btn btn-light lg" href="#/learn" data-close><span>Back to the syllabus</span></a>`}
@@ -2546,7 +2562,7 @@ export function mountCourse(root, cfg) {
     const mods = units.reduce((a, u) => a + (u.modules?.filter((m) => m.title).length || 0), 0);
     const started = st.lessons > 0 || st.xp > 0, feat = (O.featured || []).map((id) => ixById[id]).filter(Boolean);
     const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
-    main.innerHTML = `<section class="co-hero" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">
+    main.innerHTML = `<section class="co-hero g-gleam" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">${heroArt(`${cfg.name} ${cfg.site}`, { cls: "co-heroart" })}
         <div class="co-herotext"><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
           <div class="co-row co-herogo">${(() => { const rl = started ? resumeLesson() || nl : nl; return rl ? `<a class="btn btn-light lg co-start1" href="${started ? resumeHref(rl) : `#/lesson/${rl.id}`}"><span>${ic("play")} ${started ? `Continue: ${esc(rl.title)}` : `Start the first lesson`}</span></a>` : ""; })()}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
           <p class="co-herosmall">${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons${ixs.length ? ` · ${ixs.length} interactives` : ""}${nl && !started ? ` · first lesson: ${esc(nl.title)}` : ""}</p></div>

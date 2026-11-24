@@ -1,5 +1,6 @@
 // Gradify app: bring your notes, get a checked study pack, revise it, and watch your progress.
 // Every screen reads and writes the same store, so they always agree.
+import { heroArt } from "../ui/art.js";
 import { toast as uiToast } from "../ui/feedback.js";
 import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
@@ -996,7 +997,7 @@ async function renderToday() {
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
-      </div>
+      ${heroArt(firstRun ? "path" : streakDays ? "streak" : "cards", { cls: "today-art" })}</div>
     ${offerCardHtml()}
     ${needsSetup(profile) ? setupNudgeHtml("Tell it your goal and exam date, and it plans your study around them. About a minute, whenever you like.") : ""}
     ${firstRun ? welcomeHtml(profile.display_name) : ""}

@@ -58,6 +58,31 @@ colour with the gradient along its top). Study app: the end of `kit/app/app.css`
 glass tokens, so panels with their own colours keep them). Rules written as `:root …` are left alone by
 `scripts/theme-tokens.mjs`; use that for white text on a coloured background.
 
+**The lesson reading layer (November 2026).** How a lesson reads is set once, at the end of `kit/styles/course.css`
+(scoped to `.co.co-reading .co-read`, so the 3D model pages keep their own look), and every course on every subject
+site gets it. The rules:
+- *Paper, not glass.* The lesson sheet is solid (`--ls-sheet`) with a hairline and a soft shadow; glass stays for the
+  chrome around it (outline, lesson bar, rails).
+- *The subject's own colour.* `--lc` is the site's `--accent`; `--lc-ink` mixes it towards the ink so text in it is AA on
+  any accent; `--lc-wash` and `--lc-line` are its tint and edge. Goals, section numbers, bullets and the next-lesson card use it.
+- *One label voice.* Every eyebrow in a lesson is `--ls-label` (sans, 13px, 650, sentence case). Mono is for code, maths
+  working, keys and timers only; navigation numbers are sans with tabular figures.
+- *Four callouts, one shape.* Key idea (subject colour), worked example (`--ls-ok`), common mistake (`--ls-warn`) and
+  safety (`--ls-bad`): a tinted surface, a 4px rail, a labelled icon, and body text always in the ink colour. Worked
+  example steps are a numbered timeline.
+- *Answers are lettered rows* (A, B, C…) with hover, picked, right (✓) and wrong (✕) states that don't rely on colour alone.
+- *The end of a lesson says where you are.* The topic strip (`topicStrip()` in `kit/course/course.js`) shows one segment
+  per lesson in the topic on the closing panel and in the completion dialog, and fills in the one just finished.
+  Previous / up / next are three even cards. While a dialog is open the phone dock steps aside.
+- Checked with axe (WCAG 2 A/AA) on lessons in four subjects, light and dark, and on course home and the syllabus.
+
+**The page (November 2026, second pass).** The page is pure white in light mode and pure black in dark: no lavender
+wash and no coloured light at the edges (the aurora, the course's CSS light and the GPU glass scene are all plain).
+Colour comes from the content, from the spot illustrations and from a few background motifs. Every piece of text sits
+in a box (a tile, card, sheet or bar) wherever a motif could reach it. The Gradify bar is plain frosted glass in the
+mode's colour with a hairline. The action card's edge gleams in pink, yellow, orange and the mode's contrast (black on
+white, white on black), with a glint that runs round it, still when motion is reduced.
+
 **Rollout.** The Gradify homepage is on the system now. Subject sites move only after the shared components are
 reviewed and approved. Next: subject site homepages (`kit/core/subsite-home.js`),
 pricing, Explore and Journey, then the study app and courses, one surface at a time. The same tokens become the
@@ -112,6 +137,9 @@ Tailwind theme if Gradify moves to Next.js (`docs/NEXTJS-MIGRATION.md`).
 | Action card options | `actionCard({ tag, heading })`, `.g-action.compact` | `tag: "aside"` for a page's closing call to action, `heading: "h2"` to keep the title in the page outline (the search pages' closing). `.compact` is the one-sentence version under a result (the free tools' "Next step"). Buttons use `--g-btn` (#5b55ff in dark) so white text meets AA |
 | Subject icon and colour | `kit/core/subject-match.js`, `kit/core/accent.js` | `subjectOf(name)` / `subjectsFor(names)`: the Gradify subject site a module or course name belongs to (its icon and brand colour), from the words of the name; unclear names take the degree's main subject. `accentOnLight(site)` / `accentOf(site)` give its colour at 5.5:1 contrast on light and dark |
 | Storage helpers | `kit/ui/store.js` | Safe reads and writes (private windows, blocked storage), `esc`, and the stylesheet loader |
+| **Spot illustrations** | `kit/ui/art.js` + `.g-art` in `kit/styles/base.css` | `art(name)` / `artFor(words)`: small line drawings in the lesson-diagram style (fine ink lines with round ends, duotone fills: the site's or course's colour `--art-a`, a warm neutral `--art-n` and a quiet brass `--art-c`, a soft ground shadow); the ink follows the theme. Fourteen drawings: course, modules, upload, plan, path, cards, progress, search, target, streak, done, tutor, lesson, library. Nineteen subject drawings (maths, flask, dna, atom, history, law, medicine, language, book, art, music, business, finance, computing, engineering, brain, ecology, sport, teaching); `subjectOf(name)` picks one for a site or course. `heroArt(subject)` is the large version for a page's hero (the subject drawing big on a soft blob, with smaller drawings round it): a course page's header, a subject site's course banner (white ink), the homepage hero (either side of the headline on wide screens) and the app's Today. Every action card picks one from its words (`art: "plan"` chooses, `art: false` turns it off), and so does every empty state; they also sit on subject-site step tiles, the app's welcome card, the course's empty panels and a lesson's closing panel. Decorative: always `aria-hidden` |
+| **Background motifs** | `kit/ui/motifs.js` (loaded by `kit/core/theme-boot.js`) | Line ribbons at the page's edges: bands of hair-thin wavy lines whose ripples crowd into bright folds, shimmering through a tone's colours (thin-film light), with a soft glow and fading edges. Fourteen tones (`TONES`): pink, blue, lime, yellow, orange, iris, teal, violet, magenta, coral, emerald, gold, cyan and red, each with a deeper set for white and a brighter one for black; each page shuffles them so neighbouring motifs differ. Drawn once per tone and theme on a canvas, half off-screen and faded out, at most six a page, about one per screen and a half. **Never under bare text**: a motif is only placed where it covers no text that isn't inside a box (a tile, card, sheet or bar). Off for high contrast, reduced transparency, forced colours, the data saver, embeds and print; `<meta name="gradify-motifs" content="off">` turns them off for a page |
+| **Gleaming edge in a site's colour** | `kit/styles/base.css` | Add `.g-gleam` to any rounded surface to give it the edge (set `--gleam` for its colour). Used on: the homepage's site directory, the free-tools tiles (each in its own colour), a subject site's steps and Where to start tiles, and a course's hero boxes (overview and course home, which also fade from a frosted sheen of the course's colour to the plain page, with the course's drawing on the plain side). Drawings can gleam too: `art(name, { gleam: true })` and every `heroArt()` run a short glint of light along their lines (`.g-glint`), still when motion is reduced. The action card's gleaming edge and glint, coloured by the site (`--gleam`, from the card's `--c` or the page's `--accent`): the homepage's site directory (`#groups .card`) and a subject site's "Where to start" tiles (`.sm-topic`). The edge runs from the site's colour to a light tint, the mode's contrast and a deep shade; start times are staggered; still for reduced motion |
 | Everything at once | `kit/ui/index.js` | Re-exports the above |
 
 Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css` itself. Colours are theme tokens from

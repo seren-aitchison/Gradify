@@ -23,12 +23,12 @@
   --ds-ease: cubic-bezier(0.28, 0.11, 0.32, 1); --ds-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ds-fast: 180ms; --ds-base: 320ms; --ds-slow: 700ms; --ds-reveal-distance: 28px;
   /* colour: dark (Gradify's default theme) */
-  --ds-bg: #000000; --ds-bg-alt: #161617; --ds-fg: #f5f5f7; --ds-fg-2: #a1a1a6; --ds-line: #424245;
+  --ds-bg: #000000; --ds-bg-alt: #000000; --ds-fg: #f5f5f7; --ds-fg-2: #a1a1a6; --ds-line: #424245;
   --ds-accent: #5b55ff; --ds-accent-fg: #ffffff; --ds-link: #a29fff; --ds-tile-dark: #161617;
   --ds-surface: #1d1d1f; --ds-success: #5fd39a; --ds-success-bg: #11291d; --ds-warning: #f0b24a; --ds-warning-bg: #2c2210; --ds-danger: #ff7b93; --ds-danger-bg: #2d1218; --ds-focus: #a29fff; --ds-field: #7c7c80;
 }
 :root[data-theme="light"] {
-  --ds-bg: #ffffff; --ds-bg-alt: #f5f5f7; --ds-fg: #1d1d1f; --ds-fg-2: #6e6e73; --ds-line: #d2d2d7;
+  --ds-bg: #ffffff; --ds-bg-alt: #ffffff; --ds-fg: #1d1d1f; --ds-fg-2: #6e6e73; --ds-line: #d2d2d7;
   --ds-accent: #4641ff; --ds-accent-fg: #ffffff; --ds-link: #3c35f0; --ds-tile-dark: #000000;
   --ds-surface: #ffffff; --ds-success: #0f7b47; --ds-success-bg: #e6f5ec; --ds-warning: #8a5300; --ds-warning-bg: #fdf1dc; --ds-danger: #b4233c; --ds-danger-bg: #fbe8ec; --ds-focus: #4641ff; --ds-field: #86868b;
 }

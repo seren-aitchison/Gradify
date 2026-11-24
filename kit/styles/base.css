@@ -38,7 +38,7 @@
 }
 /* light mode: a soft lavender-white page, white glass, near-black ink; the spectrum and rainbow edges stay */
 :root[data-theme="light"] {
-  --bg: #f6f6fb;
+  --bg: #ffffff;
   --fg: #0d0d18;
   --mute: #545466;     /* 7.0:1 on the page */
   --faint: #66667a;    /* 5.5:1 */
@@ -515,3 +515,227 @@ header.bar.glass, header.sub-nav.glass {
 .g-tiles b { font-size: 16px; line-height: 1.3; color: var(--g-ink); align-self: end; }
 .g-tiles a > span:last-child { font-size: 14px; line-height: 1.4; color: var(--g-sub); align-self: start; }
 @media (prefers-reduced-motion: reduce) { .g-tiles a { transition: none; } .g-tiles a:hover { transform: none; } }
+
+/* =====================================================================================================================
+   The page canvas (November 2026, second pass). The page is pure white in light mode and pure black in dark: no lavender
+   wash, no coloured light gathered at the edges (the aurora, the course's CSS light, the sub-sites' glow). Colour comes
+   from the content and from a few line-ribbon motifs down the page (kit/ui/motifs.js), never from a tinted page.
+   ===================================================================================================================== */
+:root { --bg: #000; --page-bg: #000; }
+:root[data-theme="light"] { --bg: #fff; --page-bg: #fff; }
+/* the colour is the root's alone, so layers behind the content (z-index: -1, the motifs) sit above it; the body stays clear */
+html:root { background: var(--page-bg); }
+html:root body, html:root body.sub-page { background: transparent; }
+.aurora { display: none; }
+:root .co::before, :root .co::after { content: none; }
+/* tiles on a white page need their own edge: a firmer hairline and a soft shadow */
+:root[data-theme="light"] { --g-edge: rgba(22, 22, 48, .1); --g-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 8px 24px -10px rgba(22, 22, 48, .14); }
+
+/* the Gradify bar: plain frosted glass in the mode it's in (white frost on white, black frost on black) with a hairline.
+   No rainbow edge: kit/ui/liquid-gl.js draws the bar the same way on the GPU */
+:root { --bar-frost: rgba(14, 14, 16, .72); --bar-edge: rgba(255, 255, 255, .12); }
+:root[data-theme="light"] { --bar-frost: rgba(255, 255, 255, .74); --bar-edge: rgba(22, 22, 48, .1); }
+:root header.bar.glass, :root header.sub-nav.glass {
+  border: 1px solid var(--bar-edge) !important;
+  background: var(--bar-frost) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.6); backdrop-filter: blur(22px) saturate(1.6);
+  box-shadow: 0 1px 0 rgba(var(--ink-rgb), .03), 0 10px 30px -18px rgba(0, 0, 0, .35);
+}
+:root header.bar.glass::before, :root header.bar.glass::after, :root header.sub-nav.glass::before, :root header.sub-nav.glass::after { content: none; }
+
+/* the action card ("Start here", "Next step"): a gleaming edge in pink, yellow, orange and the mode's contrast (black
+   on white, white on black), with a glint that runs round it. Still when motion is reduced. */
+:root { --g-contrast: #fff; --g-glint: rgba(255, 255, 255, .95); }
+:root[data-theme="light"] { --g-contrast: #0d0d18; --g-glint: rgba(255, 255, 255, .95); }
+:root .g-action::before {
+  padding: 3px;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, #ff2e88 0%, #ffc400 22%, #ff6a00 44%, var(--g-contrast) 66%, #ff2e88 88%, #ffc400 100%) 0 0 / 220% 100%;
+  animation: g-gleam 7s linear infinite;
+}
+@keyframes g-gleam {
+  0% { background-position: 160% 0, 0% 0; }
+  45% { background-position: -60% 0, 100% 0; }
+  100% { background-position: -60% 0, 200% 0; }
+}
+@media (prefers-reduced-motion: reduce) { :root .g-action::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] .g-action::before { animation: none; background-position: -60% 0, 30% 0; }
+/* light mode is crisp, not pastel: big cards that were filled with a wash of brand colour are white tiles now, and keep
+   their colour as an edge (the welcome card) or a faint corner (the course hero) */
+:root[data-theme="light"] .cp-welcome { background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #4641ff, #f055dd 40%, #ff5600 75%, #ffc002) border-box; }
+:root[data-theme="light"] .co .cx-hero { background: radial-gradient(60% 120% at 0 0, color-mix(in srgb, var(--a) 8%, transparent), transparent 60%), #fff; box-shadow: var(--g-shadow); }
+
+/* ---------- Spot illustrations (kit/ui/art.js): line drawings in the lesson-diagram style. The ink follows the theme;
+   --art-bg is the surface they sit on (shapes that overlap are filled with it) ---------- */
+.g-art { --art-ink: #1b1b26; --art-bg: var(--g-tile, #fff); display: block; overflow: visible; color: var(--art-ink); }
+:root:not([data-theme="light"]) .g-art { --art-ink: #ececf2; }
+/* in the action card: beside the words, which wrap round it on a phone */
+.g-action .g-action-art { float: right; width: clamp(72px, 16vw, 124px); height: auto; margin: -4px -2px 6px 14px; }
+.g-action-buttons { clear: both; }
+/* in an empty state: above the title, in place of the lone icon */
+.gx-empty .gx-eart { width: 132px; height: auto; margin-bottom: 4px; }
+/* where the drawings sit: a step tile's corner, the app's welcome card, the course's empty panels, a lesson's end */
+.sm-steps li { position: relative; }
+.sm-steps .sm-art { position: absolute; top: 14px; right: 14px; width: clamp(64px, 7vw, 92px); height: auto; }
+.cp-welcome { position: relative; }
+.cp-welcome .cp-welcome-art { position: absolute; top: 22px; right: 24px; width: clamp(110px, 16vw, 190px); height: auto; }
+@media (max-width: 760px) { .cp-welcome .cp-welcome-art { width: 84px; top: 16px; right: 14px; } .cp-welcome .cp-welcome-copy h2 { padding-right: 84px; } }
+.co-emptyart { display: flex; align-items: center; gap: 16px; } .co-emptyart .g-art { flex: none; width: 96px; height: auto; } .co-emptyart .co-empty { margin: 0; }
+@media (max-width: 520px) { .co-emptyart .g-art { width: 72px; } }
+.co-finish .co-finish-art { flex: none; width: 88px; height: auto; }
+@media (max-width: 520px) { .co-finish .co-finish-art { display: none; } }
+/* ---------- Hero illustrations (heroArt in kit/ui/art.js): a subject drawing, big, with smaller ones round it ---------- */
+.g-hero-art { width: 100%; height: auto; }
+/* a subject site's course banner: on the right of the banner, in white ink (the banner is the site's colour) */
+:root .sub-course { padding-right: clamp(30px, 30%, 380px); }
+.sub-course .sc-art { --art-ink: #fff; --art-bg: rgba(255, 255, 255, .12); position: absolute; right: clamp(8px, 3vw, 40px); top: 50%; transform: translateY(-50%);
+  width: clamp(200px, 26%, 340px); pointer-events: none; }
+@media (max-width: 760px) { :root .sub-course { padding-right: 24px; padding-top: 176px; } .sub-course .sc-art { top: 10px; right: auto; left: 18px; transform: none; width: 190px; } }
+/* a course page's header: beside the title */
+.co-head { position: relative; }
+.co-head .co-headart { flex: none; width: clamp(150px, 16vw, 230px); margin: -14px 0 -10px auto; order: 3; }
+@media (max-width: 760px) { .co-head .co-headart { position: absolute; top: 18px; right: -4px; width: 92px; margin: 0; } .co-head .co-title h1 { padding-right: 84px; } }
+/* the homepage hero: a drawing either side of the headline, on screens wide enough to have room */
+.hero-v2 { position: relative; }
+.hero-v2 .hero-art { display: none; position: absolute; top: clamp(40px, 6vw, 90px); width: clamp(180px, 15vw, 250px); pointer-events: none; }
+.hero-v2 .hero-art.l { left: 0; } .hero-v2 .hero-art.r { right: 0; }
+@media (min-width: 1320px) { .hero-v2 .hero-art { display: block; } }
+/* the app's Today: beside the greeting */
+.today-head { position: relative; }
+.today-head .today-art { flex: none; width: clamp(120px, 14vw, 200px); margin: -18px 0 -18px auto; }
+@media (max-width: 640px) { .today-head .today-art { display: none; } }
+
+/* ---------- The gleaming edge in a site's own colour: the action card's edge and glint, for the homepage's site
+   directory and a subject site's "Where to start" tiles. --gleam is the site's colour; the edge runs from it to a light
+   tint, the mode's contrast (black on white, white on black) and a deep shade, with a glint that travels round.
+   Start times are staggered so a grid of them doesn't flash in step; still when motion is reduced. ---------- */
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { --gleam: var(--c, var(--accent, #4641ff)); position: relative; isolation: isolate; }
+:root .sub-page .sm-topic { --gleam: var(--accent, #4641ff); }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+}
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 1)::before { animation-delay: -1.6s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(3n + 2)::before { animation-delay: -4.1s; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam):nth-child(4n)::before { animation-duration: 8.5s; }
+/* "coming soon" sites: the same edge, quieter */
+:root #groups .card.soon::before { opacity: .45; }
+:root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam) { border-color: transparent; }
+@media (prefers-reduced-motion: reduce) { :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] :is(#groups .card, .sub-page .sm-topic)::before { animation: none; background-position: -60% 0, 30% 0; }
+@media print { :root :is(#groups .card, .sub-page .sm-topic, .sub-page .sm-steps li, .g-tiles a, .g-gleam)::before { content: none; } }
+/* the gleam on a drawing's lines: one short dash of light travels each ink line in turn, then rests */
+.g-art { --art-glint: rgba(255, 255, 255, .95); }
+:root:not([data-theme="light"]) .g-art { --art-glint: #ffd77a; }
+.sub-course .sc-art { --art-glint: #ffe39a; }
+.g-glint { stroke-dasharray: 10 90; stroke-dashoffset: 110; opacity: 0; animation: g-glint 6.5s cubic-bezier(.45, 0, .25, 1) infinite; animation-delay: var(--gd, 0s); }
+@keyframes g-glint { 0% { stroke-dashoffset: 110; opacity: 0; } 4% { opacity: 1; } 34% { stroke-dashoffset: 0; opacity: 1; } 38%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+:root:not([data-theme="light"]) .g-glint { filter: drop-shadow(0 0 2px rgba(255, 215, 120, .8)); }
+@media (prefers-reduced-motion: reduce) { .g-glint { display: none; } }
+:root[data-motion="reduce"] .g-glint { display: none; }
+
+/* ---------- A course's hero box (the overview's .co-hero and course home's .cx-hero): opaque, with a soft frosted
+   sheen of the course's colour on the left that fades to the plain page (white, or black) on the right, where the
+   course's illustration sits; the edge gleams in the course's colour. The header's copy of the drawing steps aside. ---------- */
+:root .co :is(.co-hero, .cx-hero) {
+  --gleam: color-mix(in oklab, var(--a, #4641ff) 82%, var(--fg));
+  position: relative; border: 0; border-radius: 22px; overflow: hidden;
+  background:
+    linear-gradient(118deg, transparent 18%, rgba(255, 255, 255, .55) 27%, transparent 38%),
+    linear-gradient(100deg, color-mix(in srgb, var(--a, #4641ff) 13%, #fff) 0%, color-mix(in srgb, var(--b, #f055dd) 7%, #fff) 30%, #fff 56%, #fff 100%);
+  box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 18px 44px -28px color-mix(in srgb, var(--a, #4641ff) 55%, transparent);
+}
+:root:not([data-theme="light"]) .co :is(.co-hero, .cx-hero) {
+  background:
+    linear-gradient(118deg, transparent 18%, rgba(255, 255, 255, .06) 27%, transparent 38%),
+    linear-gradient(100deg, color-mix(in srgb, var(--a, #4641ff) 22%, #0b0b10) 0%, color-mix(in srgb, var(--b, #f055dd) 10%, #070709) 30%, #000 56%, #000 100%);
+  box-shadow: 0 18px 44px -28px color-mix(in srgb, var(--a, #4641ff) 60%, transparent);
+}
+:root .co .co-hero .co-herotext { position: relative; z-index: 2; max-width: min(640px, 58%); }
+:root .co .co-hero .co-herotext p { color: var(--fg); opacity: .86; }
+:root .co .co-hero > .co-heroart { position: absolute; z-index: 1; right: clamp(12px, 4vw, 64px); top: 50%; transform: translateY(-50%); width: clamp(220px, 28vw, 400px); pointer-events: none; }
+:root .co .cx-herol { position: relative; }
+:root .co .cx-herol > .co-heroart { position: absolute; z-index: 0; right: 0; top: 50%; transform: translateY(-50%); width: clamp(180px, 22vw, 300px); pointer-events: none; }
+:root .co .cx-herol > :not(.co-heroart) { position: relative; z-index: 1; }
+:root .co:has(.co-hero, .cx-hero) .co-head .co-headart { display: none; }
+@media (max-width: 900px) {
+  :root .co .co-hero .co-herotext { max-width: none; }
+  :root .co .co-hero { padding-top: 190px; }
+  :root .co .co-hero > .co-heroart { top: 8px; right: 50%; transform: translateX(50%); width: 210px; }
+  :root .co .cx-herol { padding-top: 150px; }
+  :root .co .cx-herol > .co-heroart { top: -6px; right: 50%; transform: translateX(50%); width: 170px; }
+  :root .co .co-hero, :root .co .cx-hero { background: linear-gradient(180deg, color-mix(in srgb, var(--a, #4641ff) 12%, var(--page-bg)) 0%, var(--page-bg) 40%); }
+}
+
+/* the gleam's colour on the free-tools tiles is each tile's own (--k), on a site's steps the site's */
+:root .g-tiles > li > a { --gleam: var(--k); }
+:root .g-tiles > li:nth-child(4n+1) > a { --gleam: #4641ff; } :root .g-tiles > li:nth-child(4n+2) > a { --gleam: #c42a8c; } :root .g-tiles > li:nth-child(4n+3) > a { --gleam: #e1540f; } :root .g-tiles > li:nth-child(4n+4) > a { --gleam: #b97a00; }
+:root .g-tiles > li[style*="--k"] > a { --gleam: var(--k); }
+:root .sub-page .sm-steps li { --gleam: var(--accent, #4641ff); }
+/* the homepage: less air between "Everything that makes Gradify work" and "Find your Gradify" */
+:root body.ds #features { padding-bottom: clamp(28px, 4vw, 56px); }
+:root body.ds #find { padding-top: clamp(24px, 3vw, 48px); }
+:root .g-tiles > li:nth-child(3n + 2) > a::before { animation-delay: -2.4s; } :root .g-tiles > li:nth-child(3n) > a::before { animation-delay: -4.8s; }
+:root .sub-page .sm-steps li:nth-child(2)::before { animation-delay: -2.3s; } :root .sub-page .sm-steps li:nth-child(3)::before { animation-delay: -4.6s; }
+
+
+/* ---------- The homepage's feature tiles, filters and site search: the same gleaming edge ----------
+   feature tiles in their category's colour, on a solid tile (a faint tint when chosen); the two filter bars and the
+   search in Gradify indigo running to the mode's contrast; the filter bars are solid too (they were lavender). */
+:root body.ds #bubbles .bubble { --gleam: var(--c); border-color: transparent; background: var(--g-tile); box-shadow: var(--g-shadow); }
+:root body.ds #bubbles .bubble.sel { background: color-mix(in srgb, var(--c) 8%, var(--g-tile)); }
+:root body.ds :is(#chips, #bubble-filter) { --gleam: #4641ff; position: relative; background: var(--g-tile); border-color: transparent; box-shadow: var(--g-shadow); }
+:root body.ds #find .search { --gleam: #4641ff; border-color: transparent; background: var(--g-tile); }
+:root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+}
+:root body.ds #find .search::after {
+  display: block; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto; transform: none; filter: none; opacity: 1; margin: 0;
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; padding: 3px; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 34%, var(--g-glint) 48%, transparent 62%) 0 0 / 260% 100% no-repeat,
+    linear-gradient(115deg, var(--gleam) 0%, color-mix(in srgb, var(--gleam) 68%, #fff) 22%, var(--g-contrast) 46%, color-mix(in srgb, var(--gleam) 70%, #000) 68%, var(--gleam) 88%, color-mix(in srgb, var(--gleam) 68%, #fff) 100%) 0 0 / 220% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: g-gleam 7s linear infinite;
+  animation-delay: -2.5s;
+}
+:root body.ds #bubbles .bubble:nth-child(3n + 2)::before { animation-delay: -2.3s; } :root body.ds #bubbles .bubble:nth-child(3n)::before { animation-delay: -4.7s; }
+:root body.ds #bubble-filter::before { animation-delay: -1.2s; } :root body.ds #chips::before { animation-delay: -5s; }
+:root body.ds #bubble-filter { overflow: visible; }
+@media (max-width: 640px) { :root body.ds #bubble-filter { overflow-x: auto; } }
+@media (prefers-reduced-motion: reduce) { :root body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; } }
+:root[data-motion="reduce"] body.ds :is(#bubbles .bubble, #chips, #bubble-filter)::before, :root[data-motion="reduce"] body.ds #find .search::after { animation: none; background-position: -60% 0, 30% 0; }
+:root body.ds #find .search.lg::before { content: none; }
+
+/* the drawings' duotone: the site's or course's colour, a warm neutral and a quiet brass (kit/ui/art.js) */
+.g-art { --art-a: color-mix(in oklab, var(--accent, #4b56a6) 85%, #1b1b26); --art-n: #8d8a86; --art-c: #b8935a; }
+:root:not([data-theme="light"]) .g-art { --art-a: color-mix(in oklab, var(--accent, #6d74d6) 80%, #fff); --art-n: #a9a59f; --art-c: #cfa96a; }
+.sub-course .sc-art { --art-a: #fff; --art-n: rgba(255, 255, 255, .7); --art-c: #ffe2a8; }
+#groups ~ * .g-art, .g-action .g-art { --art-a: color-mix(in oklab, var(--g-accent, #4641ff) 85%, #1b1b26); }
+
+/* lesson pages, contrast pass: secondary text, the outline and the rail's small type all darker (light) or brighter
+   (dark); the goals card's tint and edge firmer */
+.co.co-reading { --mute: rgba(var(--ink-rgb), .84); --faint: rgba(var(--ink-rgb), .72); }
+.co.co-reading .cx-tree :is(a, summary, li, span, p) { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .cx-tree :is([aria-current="page"], .here) { color: var(--fg); font-weight: 650; }
+.co.co-reading .cx-tree .cx-tg, .co.co-reading .cx-tree .cx-mt { color: var(--fg); }
+.co.co-reading .cx-widget :is(small, p, li, a, span):not(.btn, .btn *) { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .cx-widget b { color: var(--fg); }
+.co.co-reading .co-read #co-top.co-frame { background: color-mix(in srgb, var(--accent, #4641ff) 10%, var(--g-tile)); border-color: color-mix(in srgb, var(--accent, #4641ff) 45%, transparent); }
+.co.co-reading .co-read #co-top.co-frame li { color: var(--fg); }
+.co.co-reading .co-read .co-lhead .mv-lead { color: rgba(var(--ink-rgb), .86); }
+.co.co-reading .co-read .co-builds { color: rgba(var(--ink-rgb), .84); }
+.co.co-reading .co-read { --lc-ink: color-mix(in oklab, var(--lc) 48%, var(--fg)); }
