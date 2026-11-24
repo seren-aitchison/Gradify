@@ -18,13 +18,13 @@ async function db() {
     create table public.activity (id bigint generated always as identity, user_id uuid, site text default 'Gradify', kind text, xp int default 0, detail jsonb, at timestamptz not null);
     create table public.subscriptions (user_id uuid primary key, status text, cancel_at_period_end boolean default false);
   `);
-  // three learners who signed up 10 days ago: A learns on day 0 and day 1; B only makes a pack; C never comes back
+  // three learners who signed up 10 days ago: A learns on days 0, 1 and 8; B only makes a pack; C never comes back
   const A = "00000000-0000-0000-0000-00000000000a", B = "00000000-0000-0000-0000-00000000000b", C = "00000000-0000-0000-0000-00000000000c";
   const t0 = "now() - interval '10 days'";
   await pg.exec(`
     insert into auth.users values ('${A}', ${t0}, '{"first_touch":{"referrer":"www.google.com","landing":"/features/notes-studio/"}}'),
       ('${B}', ${t0}, '{"first_touch":{"ai":"chatgpt","referrer":"chatgpt.com","landing":"/guides/active-recall/"}}'), ('${C}', ${t0}, null);
-    insert into public.activity (user_id, kind, at) values ('${A}', 'session', ${t0} + interval '2 hours'), ('${A}', 'quiz', ${t0} + interval '1 day 1 hour'), ('${B}', 'pack', ${t0} + interval '1 hour');
+    insert into public.activity (user_id, kind, at) values ('${A}', 'session', ${t0} + interval '2 hours'), ('${A}', 'quiz', ${t0} + interval '1 day 1 hour'), ('${A}', 'session', ${t0} + interval '8 days'), ('${B}', 'pack', ${t0} + interval '1 hour');
     insert into public.subscriptions values ('${A}', 'active', false);
     insert into public.page_events (day, site, path, event, referrer) select current_date - 1, 'Gradify', '/features/notes-studio/', 'view', 'www.google.com' from generate_series(1, 60);
     insert into public.page_events (day, site, path, event) select current_date - 1, 'Gradify', '/features/notes-studio/', 'cta_click' from generate_series(1, 6);
@@ -33,7 +33,7 @@ async function db() {
 }
 
 test("every statement is a read-only SELECT (or WITH … SELECT)", () => {
-  assert.ok(statements.length >= 10, `${statements.length} statements`);
+  assert.ok(statements.length >= 13, `${statements.length} statements`);
   for (const s of statements) {
     assert.match(s, /^(select|with)\b/i, s.slice(0, 60));
     assert.doesNotMatch(s, /\b(insert|update|delete|drop|alter|create|truncate|grant|revoke)\b/i, s.slice(0, 60));
@@ -60,5 +60,10 @@ test("every query runs on PostgreSQL, and the numbers are right", async () => {
   // 10: the funnel row
   const f = out[9][0];
   assert.deepEqual([f.page_views, f.app_clicks, f.signups, f.activated, f.returned, f.paying_now].map(Number), [60, 6, 3, 1, 1, 1]);
+  // 11–13: per page, per site, and paid by feature
+  const pg11 = out[10].find((r) => r.landing === "/features/notes-studio/");
+  assert.deepEqual([pg11.signups, pg11.activated].map(Number), [1, 1]);
+  assert.equal(Number(out[11].find((r) => r.site === "Gradify").returning), 1, "A learned in two different weeks (day 0 and day 8)");
+  assert.ok(out[12].some((r) => r.kind === "session" && Number(r.paying_users) === 1));
   await pg.close();
 });

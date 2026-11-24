@@ -171,3 +171,42 @@ select
   (select count(distinct s.id) from signups s join learning l on l.user_id = s.id and l.at <= s.created_at + interval '7 days') as activated,
   (select count(distinct s.id) from signups s join learning l on l.user_id = s.id and l.at >= s.created_at + interval '1 day') as returned,
   (select count(*) from public.subscriptions where status in ('active', 'trialing', 'past_due')) as paying_now;
+
+---------------------------------------------------------------------------------------------------------------------
+-- For the growth report (scripts/growth/report.mjs). Download each result as CSV from the SQL editor and save it in
+-- data/growth/inputs/ with the name given.
+
+-- 11. save as db-signups-by-page.csv: sign-ups and activated learners by the exact page they first landed on (90 days)
+with learning as (
+  select user_id, at from public.activity
+  where kind in ('session', 'quiz', 'lesson', 'practice', 'review', 'review-fading', 'cards', 'block')
+)
+select coalesce(u.raw_user_meta_data->'first_touch'->>'landing', '(unknown)') as landing,
+  count(distinct u.id) as signups,
+  count(distinct u.id) filter (where exists (select 1 from learning l where l.user_id = u.id and l.at <= u.created_at + interval '7 days')) as activated
+from auth.users u
+where u.created_at > now() - interval '90 days'
+group by 1 order by 3 desc, 2 desc;
+
+-- 12. save as db-retention-by-site.csv: for each site, learners active there in the last 90 days, and how many learned
+-- there in 2 or more different weeks (coming back, not one visit)
+with learning as (
+  select user_id, site, at from public.activity
+  where kind in ('session', 'quiz', 'lesson', 'practice', 'review', 'review-fading', 'cards', 'block') and at > now() - interval '90 days'
+)
+select site, count(distinct user_id) as learners,
+  count(distinct user_id) filter (where weeks >= 2) as returning,
+  round(100.0 * count(distinct user_id) filter (where weeks >= 2) / nullif(count(distinct user_id), 0), 1) as returning_pct
+from (select user_id, site, count(distinct date_trunc('week', at)) as weeks from learning group by 1, 2) x
+group by 1 order by 4 desc nulls last;
+
+-- 13. save as db-features-and-paid.csv: which activity kinds paying learners used before they subscribed, compared
+-- with free learners. An association, not proof a feature caused the purchase.
+with paying as (select user_id from public.subscriptions where status in ('active', 'trialing', 'past_due')),
+used as (select distinct user_id, kind from public.activity where at > now() - interval '180 days')
+select kind,
+  count(*) filter (where user_id in (select user_id from paying)) as paying_users,
+  count(*) filter (where user_id not in (select user_id from paying)) as free_users,
+  round(100.0 * count(*) filter (where user_id in (select user_id from paying)) / nullif((select count(*) from paying), 0), 1) as pct_of_paying,
+  round(100.0 * count(*) filter (where user_id not in (select user_id from paying)) / nullif((select count(distinct user_id) from used where user_id not in (select user_id from paying)), 0), 1) as pct_of_free
+from used group by 1 order by 4 desc nulls last;

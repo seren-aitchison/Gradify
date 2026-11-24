@@ -24,7 +24,11 @@
     "audit:quality": "node scripts/quality-audit.mjs",
     "constitution": "node -e \"import('./kit/quality/constitution.js').then(m=>require('fs').writeFileSync('department/constitution.txt', m.asText()+'\\n'))\"",
     "seo": "node scripts/build-seo.mjs && node scripts/build-sitemap.mjs && node scripts/seo-audit.mjs",
-    "seo:audit": "node scripts/seo-audit.mjs --check"
+    "seo:audit": "node scripts/seo-audit.mjs --check",
+    "growth:fetch": "node scripts/growth/gsc-fetch.mjs",
+    "growth:opportunities": "node scripts/growth/opportunities.mjs",
+    "growth:report": "node scripts/growth/report.mjs",
+    "growth": "node scripts/growth/opportunities.mjs && node scripts/growth/report.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
