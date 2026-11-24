@@ -237,14 +237,9 @@ html.focus main.seo { padding-top: 16px; }
 .hero-bar span { display: block; height: 100%; border-radius: 99px; background: #fff; transition: width .5s cubic-bezier(.32, .72, 0, 1); }
 .hero-line { margin: 12px 0 0; font-size: 18px; font-weight: 600; line-height: 1.35; color: #fff !important; }
 .hero-est { margin: 6px 0 0; font-size: 14px; color: rgba(255, 255, 255, .88) !important; }
-/* next best action */
-.nba { margin-top: 12px; display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: var(--tile-r); background: var(--tile); border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); position: relative; }
-.nba::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: var(--brand); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-.kicker { display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
-.nba-text b { display: block; font-size: 19px; line-height: 1.3; color: var(--ink); } .nba-text p { margin: 6px 0 0; font-size: 15px; color: var(--sub) !important; }
-.nba-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.act { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 99px; font-size: 15px; font-weight: 600; cursor: pointer; color: #fff; background: var(--accent); }
-.act svg { width: 18px; height: 18px; flex: none; } .act.soft { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+/* the next best action is the site-wide action card (.g-action, kit/styles/base.css); inside a tool it uses the tool's tokens */
+.tool .g-action { --g-tile: var(--tile); --g-ink: var(--ink); --g-sub: var(--sub); --g-edge: var(--tile-edge); --g-shadow: var(--tile-shadow); --g-accent: var(--accent); --g-brand: var(--brand); }
+.stack { margin-top: 12px; }
 .act:focus-visible, .chip:focus-visible, .dash-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .dash-h { font-size: 22px !important; margin: 26px 0 2px 4px !important; letter-spacing: -.015em; color: var(--ink) !important; }
 .dash-sub { margin: 0 0 10px 4px; font-size: 15px; color: var(--sub) !important; }
@@ -297,16 +292,6 @@ html.focus main.seo { padding-top: 16px; }
 .sheet-body { padding: 0 14px 14px; }
 .sheet-body[hidden] { display: none; }
 .sheet .rows { margin-top: 10px; gap: 10px; }
-.sheet .row.mod { display: grid; grid-template-columns: 1fr 1fr 1fr 1.3fr; grid-template-areas: "name name name del" "mark cr yr due"; gap: 8px; padding: 12px; border-radius: 20px; background: var(--group); align-items: end; }
-.sheet .row.mod .f-name { grid-area: name; } .sheet .row.mod .f-mark { grid-area: mark; } .sheet .row.mod .f-cr { grid-area: cr; } .sheet .row.mod .f-yr { grid-area: yr; } .sheet .row.mod .f-due { grid-area: due; }
-.sheet .row.mod > button { grid-area: del; justify-self: end; width: 50px; height: 50px; padding: 0; background: var(--tile); border: 1px solid var(--tile-edge); }
-.sheet .row.mod input[name="name"] { font-weight: 600; }
-@media (min-width: 701px) {
-  /* one line per module on larger screens, with the labels once at the top */
-  .sheet .row.mod { grid-template-columns: 2.2fr .9fr .9fr 1.2fr 1.5fr 50px; grid-template-areas: "name mark cr yr due del"; padding: 8px; border-radius: 18px; }
-  .sheet .row.mod:not(:first-child) label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .sheet .rows { gap: 6px; }
-}
 .sheet-spacer { height: 0; }
 .sheet-help { margin: 10px 4px 0; font-size: 14px; color: var(--sub) !important; }
 @media (max-width: 700px) {
@@ -316,7 +301,70 @@ html.focus main.seo { padding-top: 16px; }
     transform: translate3d(0, calc(100% + 40px), 0); will-change: transform; contain: layout paint; backface-visibility: hidden;
     box-shadow: 0 -8px 40px rgba(13, 13, 31, .22), 0 0 0 1px var(--tile-edge); }
   .sheet.docked .sheet-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
-  .sheet .row.mod { grid-template-columns: 1fr 1fr 50px; grid-template-areas: "name name del" "mark cr cr" "yr due due"; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-bar span, .ring-fg { transition: none; } }
 @media print { .sheet.docked { position: static; transform: none !important; box-shadow: none; } .sheet-handle .grip { display: none; } .sheet-spacer { display: none; } }
+
+/* ---- the tracker's pages, toolbar and module grid ---- */
+.tool[data-layout="dash"] { display: flex; flex-direction: column; }
+.tool[data-layout="dash"] > .tool-bar { order: 5; }
+.tracker-page[hidden] { display: none; }
+.tracker-page > .dash-h:first-child { margin-top: 6px !important; }
+.mc { --mc: var(--mcl, var(--accent)); } :root[data-theme="dark"] .mc { --mc: var(--mcd, var(--accent)); }
+.sq.mc { background: var(--mc); } .sq.mc svg { width: 22px; height: 22px; }
+.see-more { all: unset; margin: 18px auto 4px; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--accent); cursor: pointer; padding: 8px 14px; border-radius: 99px; }
+.see-more svg { width: 18px; height: 18px; } .see-more:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.rank { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; font-size: 12px; margin-right: 8px; color: #fff; background: var(--ink); vertical-align: 2px; }
+.prio-meta.mc { color: var(--mc); }
+/* the degree, module by module */
+.comp { display: flex; height: 22px; gap: 3px; border-radius: 99px; overflow: hidden; }
+.comp > span { min-width: 4px; background: var(--mc); } .comp > span.todo { opacity: .35; } .comp > .rest { background: repeating-linear-gradient(135deg, var(--tile-edge) 0 6px, transparent 6px 12px); border: 1px dashed color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 0 99px 99px 0; }
+/* module grid: one tile per module, in its subject's colour */
+.mod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.mod-tile { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 6px; align-content: start; padding: 14px; border-radius: 20px; background: var(--tile); border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); border-top: 4px solid var(--mc, var(--accent)); transition: transform .15s; }
+.mod-tile:hover { transform: translateY(-2px); } .mod-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mod-tile .sq { width: 36px; height: 36px; border-radius: 11px; } .mod-tile .sq svg { width: 20px; height: 20px; }
+.mod-mark { font-size: 24px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.mod-tile.todo .mod-mark { font-size: 15px; color: var(--mc); padding: 6px 0 3px; }
+.mod-tile b { color: var(--ink); font-size: 15px; line-height: 1.25; } .mod-tile small { color: var(--sub); font-size: 12px; }
+.mod-tile.add { border: 2px dashed color-mix(in srgb, var(--accent) 40%, transparent); background: transparent; box-shadow: none; }
+.mod-editor { background: var(--tile); border-radius: 26px; border: 1px solid var(--tile-edge); box-shadow: var(--tile-shadow); padding: 16px; }
+.mod-editor .rows { margin-top: 10px; gap: 6px; }
+.mod-editor .row.mod { display: grid; grid-template-columns: 40px 2.2fr .9fr .9fr 1.2fr 1.5fr 50px; grid-template-areas: "sub name mark cr yr due del"; gap: 8px; padding: 8px; border-radius: 18px; background: var(--group); align-items: end; }
+.mod-editor .row.mod:not(:first-child) label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.row-sub { grid-area: sub; width: 40px; height: 50px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: var(--mcl, var(--accent)); } :root[data-theme="dark"] .row-sub { background: var(--mcd, var(--accent)); }
+.row-sub svg { width: 20px; height: 20px; }
+.mod-editor .row.mod .f-name { grid-area: name; } .mod-editor .row.mod .f-mark { grid-area: mark; } .mod-editor .row.mod .f-cr { grid-area: cr; } .mod-editor .row.mod .f-yr { grid-area: yr; } .mod-editor .row.mod .f-due { grid-area: due; }
+.mod-editor .row.mod > button { grid-area: del; width: 50px; height: 50px; padding: 0; background: var(--tile); border: 1px solid var(--tile-edge); }
+.mod-editor .row.mod input[name="name"] { font-weight: 600; }
+/* the toolbar: page tabs and ☰, a frosted bar like an iOS tab bar. Above the pages on larger screens; floating at the
+   bottom of the screen on phones, where it drags up into the list of every page (assets/sheet.js) */
+.tracker-nav { order: -1; position: sticky; top: 76px; z-index: 6; margin: 0 0 14px; border-radius: 24px; background: color-mix(in srgb, var(--tile) 82%, transparent); -webkit-backdrop-filter: saturate(1.8) blur(20px); backdrop-filter: saturate(1.8) blur(20px); }
+.tracker-nav .sheet-handle { padding: 6px; cursor: default; display: block; }
+.tracker-nav .grip { display: none; }
+.tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.tab { all: unset; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 6px 10px; border-radius: 18px; font-size: 15px; font-weight: 650; color: var(--sub); cursor: pointer; transition: background .2s, color .2s; }
+.tab svg { width: 20px; height: 20px; flex: none; }
+.tab:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 5%, transparent); }
+.tab[aria-selected="true"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.tab.sheet-toggle[aria-expanded="true"] { color: #fff; background: var(--accent); }
+.tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.tracker-nav .sheet-body { padding: 4px 12px 14px; }
+.more-title { margin: 6px 4px 10px; font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--sub) !important; }
+.more-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.more-card { all: unset; box-sizing: border-box; display: grid; gap: 3px; padding: 14px; border-radius: 18px; background: var(--group); cursor: pointer; }
+.more-card b { color: var(--ink); font-size: 15px; } .more-card span { font-size: 13px; color: var(--sub); line-height: 1.4; }
+.more-card:hover { background: color-mix(in srgb, var(--accent) 10%, var(--group)); } .more-card:focus-visible { outline: 2px solid var(--accent); }
+.more-card.soon { cursor: default; opacity: .7; } .more-card.soon em { white-space: nowrap; font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-left: 4px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); vertical-align: 1px; }
+@media (max-width: 700px) {
+  .tracker-nav.docked { order: 0; top: auto; border-radius: 28px; background: color-mix(in srgb, var(--tile) 86%, transparent); }
+  .tracker-nav.docked .sheet-handle { padding: 8px 8px calc(8px + env(safe-area-inset-bottom) * .4); }
+  .tracker-nav.docked .grip { display: block; width: 36px; height: 5px; border-radius: 99px; margin: 0 auto 6px; background: color-mix(in srgb, var(--ink) 22%, transparent); }
+  .tracker-nav.docked .tab { flex-direction: column; gap: 3px; min-height: 52px; padding: 6px 2px; font-size: 11px; border-radius: 16px; }
+  .tracker-nav.docked .tab svg { width: 22px; height: 22px; }
+  .more-grid { grid-template-columns: 1fr 1fr; }
+  .mod-grid { grid-template-columns: 1fr 1fr; }
+  .mod-editor { padding: 10px; }
+  .mod-editor .row.mod { grid-template-columns: 40px 1fr 1fr 50px; grid-template-areas: "sub name name del" "mark mark cr cr" "yr yr due due"; padding: 10px; }
+  .mod-editor .row.mod:not(:first-child) label { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+}

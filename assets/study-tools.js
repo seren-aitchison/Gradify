@@ -1,6 +1,11 @@
 // The free study calculators on getgradify.com/tools/: pure functions (tested in tests/seo.test.mjs), and the code that
 // runs each tool on its page. Everything happens in the browser; nothing typed into a tool is sent anywhere.
 
+import { subjectsFor } from "../kit/core/subject-match.js";
+import { icon } from "../kit/core/icons.js";
+import { accentOf, accentOnLight } from "../kit/core/accent.js";
+import { actionCard } from "../kit/core/action-card.js";
+
 // ---------- UK degree classification ----------
 export const CLASSES = [[70, "First-class honours (1st)"], [60, "Upper second (2:1)"], [50, "Lower second (2:2)"], [40, "Third-class honours (3rd)"], [0, "Below honours (fail)"]];
 /** credit-weighted mean of [{ mark, credits }] (rows with no mark or credits are skipped), or null */
@@ -250,21 +255,62 @@ const ICON = {
 
 const TOOLS = {
   degree(root) {
-    const out = root.querySelector(".result"), w = root.querySelector("[name=w3]"), live = root.querySelector("[data-live]"), sum = root.querySelector("[data-sum]");
-    const row = () => `<div class="row mod"><div class="f-name"><label>Module</label><input name="name" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Dissertation"></div><div class="f-mark"><label>Mark %</label><input name="mark" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="–" aria-describedby="mark-help"></div><div class="f-cr"><label>Credits</label><input name="credits" type="number" min="0" step="5" value="20" inputmode="numeric"></div><div class="f-yr"><label>Year</label><select name="year"><option value="2">Year 2</option><option value="3">Final</option></select></div><div class="f-due"><label>Due (if not marked)</label><input name="due" type="date"></div>${del}</div>`;
-    let intel = null;
+    const out = root.querySelector(".result"), w = root.querySelector("[name=w3]"), live = root.querySelector("[data-live]"), grid = root.querySelector("[data-mod-grid]"), list = root.querySelector(".rows");
+    const row = () => `<div class="row mod"><span class="row-sub" data-row-sub aria-hidden="true"></span><div class="f-name"><label>Module</label><input name="name" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Organic Chemistry"></div><div class="f-mark"><label>Mark %</label><input name="mark" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="–" aria-describedby="mark-help"></div><div class="f-cr"><label>Credits</label><input name="credits" type="number" min="0" step="5" value="20" inputmode="numeric"></div><div class="f-yr"><label>Year</label><select name="year"><option value="2">Year 2</option><option value="3">Final</option></select></div><div class="f-due"><label>Due (if not marked)</label><input name="due" type="date"></div>${del}</div>`;
+    let intel = null, subs = [];
     const pct1 = (n) => `${fmt(n)}%`;
     const dueText = (p) => p.days === null ? "No due date" : p.days < 0 ? `${-p.days} day${p.days === -1 ? "" : "s"} overdue` : p.days === 0 ? "Due today" : p.days === 1 ? "Due tomorrow" : `Due in ${p.days} days`;
     const sessions = (p) => { if (!(p?.days > 1)) return []; const [y, m, d] = p.due.split("-").map(Number); return reviewDates(new Date(), new Date(y, m - 1, d)); };
     const ring = (frac, label, cls = "") => { const C = 2 * Math.PI * 22; return `<svg class="ring ${cls}" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="22" class="ring-bg"/><circle cx="27" cy="27" r="22" class="ring-fg" stroke-dasharray="${(C * frac).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 27 27)"/><text x="27" y="32" text-anchor="middle">${label}</text></svg>`; };
+    // a module's subject: its Gradify subject site's icon and colour (kit/core/subject-match.js)
+    const mc = (site) => `--mcl:${accentOnLight(site)};--mcd:${accentOf(site)}`;
+    const subIcon = (site) => `<span class="sq mc" style="${mc(site)}" title="${esc(site.n)}">${icon(site.i)}</span>`;
+    const subjectByName = new Map();
+
+    // pages: Overview, Plan, Goals and Modules, switched from the toolbar (assets/sheet.js docks it on phones)
+    const PAGES = ["overview", "plan", "goals", "modules"];
+    let page = (() => { try { return sessionStorage.getItem("gradify.degree.page"); } catch { return null; } })();
+    const show = (p, scroll) => {
+      if (!PAGES.includes(p)) return;
+      page = p; root.dataset.view = p;
+      try { sessionStorage.setItem("gradify.degree.page", p); } catch { /* storage blocked */ }
+      root.querySelectorAll('[role="tab"][data-page]').forEach((t) => { const on = t.dataset.page === p; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; });
+      root.querySelectorAll("[data-panel]").forEach((el) => { el.hidden = el.dataset.panel !== p; });
+      if (scroll) { const top = root.getBoundingClientRect().top; if (top < 0 || top > innerHeight * 0.6) root.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
+    };
+    root.addEventListener("click", (e) => {
+      const go = e.target.closest("button[data-page], [data-go]");
+      if (!go || go.closest(".rows")) return;
+      const p = go.dataset.go || go.dataset.page; if (!PAGES.includes(p)) return;
+      show(p, true);
+      root.querySelector("[data-sheet]")?.dispatchEvent(new Event("sheet:close"));
+      if (go.dataset.focus) setTimeout(() => { const i = go.dataset.focus === "new" ? (root.querySelector("[data-add]").click(), list.lastElementChild) : list.children[Number(go.dataset.focus)]; i?.querySelector("input")?.focus({ preventScroll: false }); }, 60);
+    });
+    // arrow keys move between tabs, as in any tab list
+    root.querySelector('[role="tablist"]')?.addEventListener("keydown", (e) => {
+      const tabs = [...root.querySelectorAll('[role="tab"][data-page]')], i = tabs.indexOf(document.activeElement);
+      if (i < 0 || !["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+      e.preventDefault();
+      const n = e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : (i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[n].focus(); show(tabs[n].dataset.page);
+    });
+
     rowsTool(root, "degree", row, val, (rows) => {
       intel = degreeIntel(rows, Number(w.value));
       const t = intel.t;
+      subs = subjectsFor(rows.map((r) => r.name || ""));
+      subjectByName.clear(); rows.forEach((r, i) => subjectByName.set(String(r.name || "").trim(), subs[i]?.site));
+      // each row shows the subject its name matched
+      [...list.children].forEach((el, i) => { const sub = el.querySelector("[data-row-sub]"), site = subs[i]?.site; if (sub && site) { sub.innerHTML = icon(site.i); sub.setAttribute("style", mc(site)); sub.title = site.n; } });
       const n = rows.filter((r) => r.mark !== "" && Number(r.credits) > 0).length, todo = rows.filter((r) => r.mark === "" && Number(r.credits) > 0).length;
-      if (sum) sum.textContent = n || todo ? `${n} marked${todo ? ` · ${todo} to come` : ""}` : "Add your marks";
+      grid.innerHTML = rows.map((r, i) => {
+        if (!(Number(r.credits) > 0) && !r.name) return "";
+        const site = subs[i].site, marked = r.mark !== "" && r.mark != null, p = intel.priorities.find((x) => x.name === String(r.name || "").trim());
+        return `<button type="button" class="mod-tile mc${marked ? "" : " todo"}" style="${mc(site)}" data-go="modules" data-focus="${i}" aria-label="Edit ${esc(r.name || `module ${i + 1}`)}">${subIcon(site)}<span class="mod-mark">${marked ? pct1(Number(r.mark)) : p ? dueText(p) : "To come"}</span><b>${esc(r.name || `Module ${i + 1}`)}</b><small>${esc(r.credits || 0)} credits · ${r.year === "3" ? "Final year" : "Year 2"}</small></button>`;
+      }).join("") + `<button type="button" class="mod-tile add" data-go="modules" data-focus="new"><span class="sq grad">${ICON.gap}</span><b>Add a module</b><small>Its icon and colour come from its name</small></button>`;
       if (t.average === null) {
-        out.innerHTML = `<div class="dash-empty"><span class="sq grad">${ICON.g}</span><b>Start with one module mark</b><span>Gradify shows where your degree stands, what's at risk, and exactly what to work on next.</span><button type="button" class="dash-cta" data-open-sheet>Add a module</button></div>`;
-        root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); return;
+        out.innerHTML = ["overview", "plan", "goals"].map((p) => `<section class="tracker-page" role="tabpanel" id="panel-${p}" aria-labelledby="tab-${p}" data-panel="${p}"><div class="dash-empty"><span class="sq grad">${ICON.g}</span><b>Start with one module mark</b><span>Gradify shows where your degree stands, what's at risk, and exactly what to work on next.</span><button type="button" class="dash-cta" data-go="modules" data-focus="0">Add a module</button></div></section>`).join("");
+        root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); show(page || "modules"); return;
       }
       const { cls, next } = intel, pct = Math.round(t.complete * 100);
       const summary = `${intel.headline} Average so far ${pct1(t.average)}, ${pct}% of the degree marked. Next: ${next.text}`;
@@ -275,26 +321,41 @@ const TOOLS = {
         return `<div class="goal c${g.boundary} ${g.status}"><span class="goal-top"><span class="goal-name">${g.short}</span><span class="goal-mark">${mark}</span></span><span class="goal-need">${text}</span><small>${g.boundary}% boundary</small></div>`;
       };
       const top = next.priority, cal = sessions(top);
-      const prio = intel.priorities.map((p, i) => `<li class="prio-item"><span class="sq n${i}">${i + 1}</span><div class="prio-text"><b>${esc(p.name)}</b><span class="prio-meta">${fmt(p.share)}% of degree · ${dueText(p)} · ${p.minutes} min today</span><p>${esc(p.reason)}</p></div>${sessions(p).length ? `<button type="button" class="chip" data-ics="${i}" aria-label="Add revision sessions for ${esc(p.name)} to your calendar">${ICON.cal}<span>Plan</span></button>` : ""}</li>`).join("");
-      out.innerHTML = `<section class="hero c${cls.boundary}">
+      const action = actionCard({
+        title: next.text, why: next.why,
+        actions: top ? [...(cal.length ? [{ label: `Add ${cal.length} revision sessions to my calendar`, icon: "calendar", attrs: 'data-ics="0"' }] : []), { label: `Turn my ${top.name} notes into flashcards`, icon: "layers", href: "/app.html#/new", soft: true }]
+          : [{ label: "Add a module still to come", icon: "upload", attrs: 'data-go="modules" data-focus="new"' }],
+      });
+      // the degree, module by module: each module's share, in its subject's colour (marked solid, still to come faded)
+      const shareOf = (r) => { const wy = t.years.find((y) => String(y.year) === String(r.year))?.weight || 0; return wy * Number(r.credits || 0) / 120 * 100; };
+      const segs = rows.map((r, i) => ({ r, site: subs[i].site, share: shareOf(r) })).filter((x) => x.share > 0);
+      const listed = segs.reduce((a, x) => a + x.share, 0);
+      const comp = `<div class="comp" role="img" aria-label="How your degree is made up, module by module">${segs.map((x) => `<span class="mc${x.r.mark === "" ? " todo" : ""}" style="${mc(x.site)};flex-basis:${Math.min(100, x.share)}%" title="${esc(x.r.name || "Module")}: ${fmt(x.share)}% of your degree"></span>`).join("")}${listed < 99.5 ? `<span class="rest" style="flex-basis:${100 - listed}%" title="Not in your list yet: ${fmt(100 - listed)}%"></span>` : ""}</div>`;
+      const prio = intel.priorities.map((p, i) => { const site = subjectByName.get(p.name) || subs[0].site; return `<li class="prio-item">${subIcon(site)}<div class="prio-text"><b><span class="rank">${i + 1}</span>${esc(p.name)}</b><span class="prio-meta mc" style="${mc(site)}">${fmt(p.share)}% of degree · ${dueText(p)} · ${p.minutes} min today</span><p>${esc(p.reason)}</p></div>${sessions(p).length ? `<button type="button" class="chip" data-ics="${i}" aria-label="Add revision sessions for ${esc(p.name)} to your calendar">${ICON.cal}<span>Plan</span></button>` : ""}</li>`; }).join("");
+      const panel = (p, html) => `<section class="tracker-page" role="tabpanel" id="panel-${p}" aria-labelledby="tab-${p}" data-panel="${p}">${html}</section>`;
+      out.innerHTML = panel("overview", `<section class="hero c${cls.boundary}">
           <div class="hero-top"><span class="hero-kicker"><span class="hero-g">${ICON.g}</span>Your degree so far</span><span class="pill">${cls.short}</span></div>
           <div class="hero-main"><span class="hero-num">${fmt(t.average)}<small>%</small></span><span class="hero-ring">${ring(t.complete, `${pct}%`, "on-dark")}<small>marked</small></span></div>
           <div class="hero-bar" role="img" aria-label="${pct}% of your degree is marked"><span style="width:${pct}%"></span></div>
           <p class="hero-line">${esc(intel.headline)}</p>
           ${intel.projection ? `<p class="hero-est">Estimate: if the rest goes like your ${intel.projection.basis} so far, you'd finish on about ${pct1(intel.projection.avg)}, a ${intel.projection.short}.</p>` : ""}
         </section>
-        <section class="nba"><span class="sq grad">${ICON.spark}</span><div class="nba-text"><span class="kicker">Your next best action</span><b>${esc(next.text)}</b><p>${esc(next.why)}</p>
-          <div class="nba-actions">${cal.length ? `<button type="button" class="act" data-ics="0">${ICON.cal}<span>Add ${cal.length} revision sessions to my calendar</span></button>` : ""}${top ? `<a class="act soft" href="/app.html#/new">${ICON.cards}<span>Turn my ${esc(top.name)} notes into flashcards</span></a>` : `<button type="button" class="act" data-open-sheet>${ICON.gap}<span>Add a module still to come</span></button>`}</div></div></section>
-        ${prio ? `<h3 class="dash-h">Priorities</h3><p class="dash-sub">Ranked by how much each one moves your degree, and how soon it's due.</p><ol class="prio">${prio}</ol>` : ""}
+        <div class="stack">${action}</div>
+        <h3 class="dash-h">Your degree, module by module</h3><p class="dash-sub">Each module's share of your final mark, in its subject's colour. Faded ones aren't marked yet.</p>${comp}
         ${intel.insights.length ? `<h3 class="dash-h">What this means</h3><ul class="insights">${intel.insights.map((i) => `<li class="ins ${i.kind}"><span class="sq">${ICON[i.kind]}</span><p>${esc(i.text)}</p></li>`).join("")}</ul>` : ""}
-        <h3 class="dash-h">Goals</h3><p class="dash-sub">The average you need across the rest of your degree.</p>
-        <div class="goals">${t.goals.map(goal).join("")}</div>
-        <h3 class="dash-h">Years</h3>
-        <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y.done, y.year === 3 ? "F" : String(y.year))}<span class="year-avg"><b>${y.avg === null ? "–" : pct1(y.avg)}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits marked<br>${fmt(y.weight * 100, 0)}% of your degree</span></div>`).join("")}</div>`;
+        <button type="button" class="see-more" data-go="plan">See your priorities ${ICON.chance}</button>`)
+        + panel("plan", `<h2 class="dash-h">Your plan</h2><p class="dash-sub">Ranked by how much each one moves your degree, and how soon it's due.</p>
+          ${prio ? `<ol class="prio">${prio}</ol>` : `<div class="dash-empty"><b>Nothing to rank yet</b><span>Add the modules you haven't had back yet: give each its credits and due date and leave the mark blank.</span><button type="button" class="dash-cta" data-go="modules" data-focus="new">Add a module still to come</button></div>`}
+          <div class="stack">${action}</div>`)
+        + panel("goals", `<h2 class="dash-h">Goals</h2><p class="dash-sub">The average you need across the rest of your degree.</p>
+          <div class="goals">${t.goals.map(goal).join("")}</div>
+          <h3 class="dash-h">Years</h3>
+          <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y.done, y.year === 3 ? "F" : String(y.year))}<span class="year-avg"><b>${y.avg === null ? "–" : pct1(y.avg)}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits marked<br>${fmt(y.weight * 100, 0)}% of your degree</span></div>`).join("")}</div>`);
+      show(page || "overview");
     });
     w.addEventListener("change", () => root.dispatchEvent(new Event("input")));
     // "Plan": revision sessions from tomorrow up to the due date, spaced out, as a calendar file
-    out.addEventListener("click", (e) => {
+    root.addEventListener("click", (e) => {
       const b = e.target.closest("[data-ics]"); if (!b || !intel) return;
       const p = intel.priorities[Number(b.dataset.ics)]; if (!p) return;
       const dates = sessions(p); if (!dates.length) return;

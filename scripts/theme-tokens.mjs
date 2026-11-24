@@ -43,7 +43,7 @@ const saturatedHex = (v) => [...v.replace(/light-dark\([^()]*(\([^()]*\)[^()]*)*
 // a translucent wash (alpha under .6) over a dark base isn't a coloured background: in light mode the base is light
 const saturatedRgba = (v) => [...v.matchAll(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?/g)].some((m) => !neutral([+m[1], +m[2], +m[3]]) && (m[4] === undefined || +m[4] >= 0.6));
 // a rule whose background is a colour (a gradient pill, a brand tile): white text stays white there
-const accentRule = (body) => body.split(";").some((d) => /^\s*background(-color|-image)?\s*:/i.test(d) && (saturatedHex(d) || saturatedRgba(d) || /var\(--(spectrum|c|a|b|accent|tile|brand|site|hue)\b/.test(d)));
+const accentRule = (body) => body.split(";").some((d) => /^\s*background(-color|-image)?\s*:/i.test(d) && (saturatedHex(d) || saturatedRgba(d) || /var\(--(spectrum|c|a|b|accent|tile|brand|site|hue|g-brand|g-accent)\b/.test(d)));
 // a pastel text colour, readable on black but not on white: a darker shade of the same hue for light mode
 function darker(h) { const [hh, s, l] = hsl(hex(h)); return toHex(fromHsl([hh, Math.min(1, s + 0.1), Math.min(l, 0.36)])); }
 // a dark colour's light-mode partner: the same hue, nearly white
