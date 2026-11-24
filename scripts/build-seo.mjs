@@ -26,6 +26,9 @@ import { TOOLS2, tools2Pages } from "./seo/tools2.mjs";
 import { CHECKLISTS, checklistPages } from "./seo/checklists.mjs";
 import { GUIDES2, GROUPS, VS, ALTS, guides2Pages } from "./seo/guides2.mjs";
 import { hubPages, feedXml, CHANGES } from "./seo/hubs.mjs";
+import { registry, applySeo } from "./seo/registry.mjs";
+import { featurePages, FEATURE_PAGES } from "./seo/features.mjs";
+import { FEATURES, featureSlug } from "../kit/data/features.js";
 import { SITES, slugOf } from "../kit/core/site.js";
 import { withPreloads } from "./preload-modules.mjs";
 import { fileURLToPath } from "node:url";
@@ -41,6 +44,7 @@ function siteMapPage(pages, courses) {
     path: "site-map.html", title: "Site Map: Every Gradify Page · Gradify", description: "Every part of Gradify on one page: the app, every subject site, free study tools, guides, comparisons, the glossary, templates, topics and study plans.", crumbs: [["Site map", "site-map.html"]], ogType: "website", share: false, cta: false,
     body: `<h1>Site map</h1>
     <h2>Gradify</h2>${list([["", "Home"], ["app.html", "The Gradify app"], ["explore.html", "Explore"], ["journey.html", "Journey"], ["pricing.html", "Pricing"], ["about.html", "About"], ["quality.html", "Quality and coverage"], ["ambassadors.html", "Campus ambassadors"], ["privacy.html", "Privacy"], ["terms.html", "Terms"]])}
+    <h2>Features</h2>${list([["features/", "Every Gradify feature"], ...FEATURES.filter((f) => FEATURE_PAGES[featureSlug(f)] && f.plan !== "pro").map((f) => [`features/${featureSlug(f)}/`, f.n])])}
     <h2>Subject sites</h2>${list(live.map((s) => [`${slugOf(s)}/`, s.n]))}
     <h2>Free study tools</h2>${list([...TOOLS.map((t) => [`tools/${t.slug}/`, t.name]), ...TOOLS2.map((t) => [`tools/${t.slug}/`, t.name]), ["tools/bookmarklet/", "Send to Gradify bookmarklet"], ["investorgradify/tools/", "Compound interest and fund fee calculator"], ...LANDINGS.map((l) => [`${l.slug}/`, l.name])])}
     <h2>Checklists</h2>${list(CHECKLISTS.map(([s, n]) => [`checklists/${s}/`, n]))}
@@ -72,6 +76,10 @@ ${l("notes-to-cheat-sheet/", "Notes to cheat sheet", "a one-page revision sheet 
 ${l("pricing.html", "Pricing", "Free, Gradify Pro and Gradify Ultra")}
 ${l("quality.html", "Quality and coverage", "how lessons are audited and which qualifications are covered")}
 ${l("about.html", "About Gradify", "who builds it and how content is checked")}
+
+## Features
+${l("features/", "Every Gradify feature", "what each one does, how to use it and what's free")}
+${FEATURES.filter((f) => FEATURE_PAGES[featureSlug(f)] && f.plan !== "pro").map((f) => l(`features/${featureSlug(f)}/`, f.n, FEATURE_PAGES[featureSlug(f)].answer.split(/(?<=\.) /)[0].replace(/\.$/, ""))).join("\n")}
 
 ## Specialist sites
 ${SITES.filter((s) => ["live", "beta"].includes(s.status) && s.built).map((s) => l(`${slugOf(s)}/`, s.n, s.d || s.desc || "")).join("\n")}
@@ -216,7 +224,7 @@ ${pick(/^terms\/[^/]+\/index\.html$/).map(([p, h]) => `- ${text(h.match(/<p clas
 export async function outputs() {
   const prog = await programmaticPages();
   const lessons = await lessonPages();
-  const specs = [...lessons, ...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
+  const specs = [...lessons, ...featurePages(), ...hubPages(), ...toolPages(), ...tools2Pages(), ...landingPages(), ...checklistPages(), ...guidePages(), ...guides2Pages(), ...comparePages(), ...glossaryPages(), ...templatePages(), ...aboutPages(), ...prog];
   const files = new Map(specs.map((s) => [s.path, s.raw ? s.html : page(s)]));
   const courses = prog.filter((p) => /^topics\/[^/]+\/index\.html$/.test(p.path));
   files.set("site-map.html", siteMapPage(specs, courses));
@@ -249,6 +257,11 @@ export async function outputs() {
     topicsFor: (slug, u) => (files.has(`topics/${slug}/${u.id}/index.html`) ? `/topics/${slug}/${u.id}/` : null),
     plansFor: (slug) => [...files.keys()].filter((k) => k.startsWith(`study-plan/${slug}-`) && k.endsWith("/index.html") && !/noindex/.test(files.get(k).match(/<meta name="robots"[^>]*>/)?.[0] || "")).map((k) => [`/${k.replace(/index\.html$/, "")}`, files.get(k).match(/<h1[^>]*>([^<]*)/)?.[1].replace(/ study plan$/, "") || k]),
   })) files.set(p, withHeadTags(html, `https://getgradify.com/${p.replace(/index\.html$/, "")}`));
+  // the search identity of every site home (after the course pages, which own their own titles) (scripts/seo/registry.mjs)
+  for (const [p, entry] of registry()) {
+    const html = files.get(p) ?? await readFile(new URL(p, root), "utf8").catch(() => null); if (html === null) continue;
+    const next = applySeo(html, entry); if (next !== html || files.has(p)) files.set(p, next);
+  }
   return files;
 }
 

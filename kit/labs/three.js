@@ -2,6 +2,7 @@
 // HTML labels pinned to 3D points, and a render loop that stops when the lab leaves the page.
 import * as THREE from "../vendor/three/three.module.min.js";
 import { OrbitControls } from "../vendor/three/OrbitControls.js";
+import { isLight } from "./theme.js";
 export { THREE };
 
 export function stage3d(host, { aspect = 0.62, max = 520, distance = 12, background = 0x0b0c0e, hint = "Drag to turn · scroll or pinch to zoom" } = {}) {
@@ -9,7 +10,8 @@ export function stage3d(host, { aspect = 0.62, max = 520, distance = 12, backgro
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
   renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.setClearColor(background);
+  // light mode: a soft white studio instead of the dark stage (kit/labs/theme.js)
+  renderer.setClearColor(isLight() && background === 0x0b0c0e ? 0xf4f4f8 : background);
   box.append(renderer.domElement);
   const tip = document.createElement("div"); tip.className = "lab-hint"; tip.textContent = hint; box.append(tip);
   const scene = new THREE.Scene();

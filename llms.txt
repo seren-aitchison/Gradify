@@ -13,6 +13,47 @@ Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and r
 - [Quality and coverage](https://getgradify.com/quality.html): how lessons are audited and which qualifications are covered
 - [About Gradify](https://getgradify.com/about.html): who builds it and how content is checked
 
+## Features
+- [Every Gradify feature](https://getgradify.com/features/): what each one does, how to use it and what's free
+- [Online courses](https://getgradify.com/features/online-courses/): Gradify has free online courses on every one of its subject sites, from GCSE core and primary to medicine, law and physics
+- [Explainer videos](https://getgradify.com/features/explainer-videos/): Gradify turns any lesson, unit or your own notes into a short narrated explainer video, one scene per section
+- [Tutorials and simulations](https://getgradify.com/features/tutorials-and-simulations/): Gradify's courses include interactive tutorials and simulations you control, from a beating heart and protein structures to circuits and markets
+- [Chant podcasts](https://getgradify.com/features/chant-podcasts/): Chant podcasts turn every unit of a Gradify course into an episode of short, repeated chants of its key facts, played back to back
+- [Audio questions](https://getgradify.com/features/audio-questions/): Audio questions reads a question aloud, pauses so you can answer out loud, then reads the answer
+- [Story posters](https://getgradify.com/features/story-posters/): Story posters tell a topic as a picture story, one panel at a time
+- [Dictionaries and thesauruses](https://getgradify.com/features/dictionaries-and-thesauruses/): Gradify's subject dictionaries define every key term used in its lessons, organised by subject
+- [Key-terms sheets](https://getgradify.com/features/key-terms-sheets/): Key-terms sheets give you a printable sheet of every key term in a lesson, with or without the definitions
+- [Bonus facts and boosting](https://getgradify.com/features/bonus-facts-and-boosting/): As you revise in the flashcard feed, bonus facts appear between your cards, and any card you miss can be boosted so you see it more often
+- [Notes Studio](https://getgradify.com/features/notes-studio/): Notes Studio turns a PDF of your notes, or notes you paste in, into flashcards, a mind map and a cheat sheet
+- [Notebook](https://getgradify.com/features/notebook/): Gradify's Notebook keeps your notes as linked pages, like RemNote or Notion, and any line can become a flashcard
+- [Handwriting to text](https://getgradify.com/features/handwriting-to-text/): Handwriting to text turns writing on a phone or tablet, or a photo of a handwritten page, into searchable text
+- [Notes to songs](https://getgradify.com/features/notes-to-songs/): Paste notes in any format and Gradify turns them into a chant to say or sing along to, as well as flashcards, a mind map and a cheat sheet
+- [YouTube to notes](https://getgradify.com/features/youtube-to-notes/): Paste a YouTube link and Gradify makes notes in chapters, flashcards and a mind map from the video, plus a chat that answers only from what's said in it
+- [Spidermaps](https://getgradify.com/features/spidermaps/): Gradify's mind map creator builds a spidermap from facts you pick from any lesson, which you can then move, rename and add your own ideas to
+- [Downloadable resources](https://getgradify.com/features/downloadable-resources/): Every lesson's resources can be downloaded and printed: notes, key-terms sheets, questions, posters, and flashcards ready to import into Anki
+- [Flashcard feed](https://getgradify.com/features/flashcard-feed/): The flashcard feed is an endless scroll of flashcards from your decks and the subjects you choose, with bonus facts and study hacks mixed in
+- [Confidence ratings](https://getgradify.com/features/confidence-ratings/): After each flashcard you rate how well you knew it, and Gradify's spaced repetition (FSRS) brings the card back just before you'd forget it, paced to your exam date
+- [Adaptive difficulty](https://getgradify.com/features/adaptive-difficulty/): Adaptive quizzes get harder or easier as you answer: two right in a row and the questions step up, one wrong and they step down
+- [Timed quiz mode](https://getgradify.com/features/timed-quiz-mode/): Timed quiz mode gives you a quiz from any lesson, unit or deck with a fixed time to answer, so you practise against the clock like the real exam
+- [Question bank](https://getgradify.com/features/question-bank/): The question bank puts every practice question on Gradify in one place, with marked feedback on every answer
+- [Key-term games](https://getgradify.com/features/key-term-games/): Key-term games turn the vocabulary of any lesson, unit or your own flashcard deck into three quick games: Match, Speed round and Missing letters
+- [Interim quizzes](https://getgradify.com/features/interim-quizzes/): Every Gradify course has short quizzes along the way, at the end of each unit, so you know where you stand before you move on
+- [Gradify Tree](https://getgradify.com/features/gradify-tree/): The Gradify Tree grows as you learn, with a branch for every subject you study, so you can see your progress at a glance
+- [Heatmap](https://getgradify.com/features/heatmap/): The heatmap shows every day you've learned across every Gradify site, in one calendar grid, so gaps and streaks are easy to see
+- [XP and levels](https://getgradify.com/features/xp-and-levels/): You earn XP for what you learn on Gradify and level up as it adds up
+- [Streaks](https://getgradify.com/features/streaks/): Gradify counts two kinds of streak: a daily streak for every day in a row you learn something, and a streak of correct answers in a row
+- [Challenges](https://getgradify.com/features/challenges/): Gradify sets daily and weekly challenges across your sites, such as a number of questions or lessons, for XP and rewards
+- [Reward scheme](https://getgradify.com/features/reward-scheme/): Gradify rewards long-term milestones, such as answering 1,000 questions or keeping a 100-day streak, and each one is earned once and kept
+- [Projects for XP](https://getgradify.com/features/projects-for-xp/): Projects for XP are real projects to complete step by step, such as teaching a topic in a 3-minute video
+- [Smart reminders](https://getgradify.com/features/smart-reminders/): Smart reminders know your deadlines and your streak, and remind you when it's time to revise
+- [Time blocking](https://getgradify.com/features/time-blocking/): Plan your week in time blocks on a calendar, and let Gradify auto-plan your revision into your free time from your goals, fading topics and deadlines
+- [Tutors](https://getgradify.com/features/tutors/): In Gradify's community, learners offer to tutor in subjects they know well, and you can ask one for help inside Gradify
+- [Student mentors](https://getgradify.com/features/student-mentors/): Student mentors are students a year or two ahead of you who offer advice, on subjects, applications and what comes next, inside Gradify
+- [Study groups](https://getgradify.com/features/study-groups/): Gradify study groups are private groups with a join code, a chat, members and a weekly leaderboard, for revising together online
+- [Friends and school leaderboards](https://getgradify.com/features/friends-and-school-leaderboards/): Follow your friends with their friend code and compare progress on friends' and school leaderboards in Gradify
+- [Community chats](https://getgradify.com/features/community-chats/): Gradify has a chat for every subject and site, where learners can ask and answer each other's questions about what they're studying
+- [InternshipGradify](https://getgradify.com/features/internshipgradify/): InternshipGradify lists well-known internship, placement and work experience schemes in the UK, matched to the subjects you study
+
 ## Specialist sites
 - [UnderGradify](https://getgradify.com/undergradify/): For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.
 - [PostGradify](https://getgradify.com/postgradify/): For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.

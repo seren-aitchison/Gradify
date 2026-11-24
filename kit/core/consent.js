@@ -138,6 +138,16 @@
       else if (typeof v === "string" && !/@/.test(v)) out[k] = v.slice(0, 100);
     }
     gtag("event", name, out);
+    if (FIRST_VALUE.test(name)) firstValue(name);
+  }
+  // Activation: the first meaningful learning action this browser has sent (a lesson, quiz, exam, flashcard session or
+  // study block finished), once, as first_learning_action with which kind it was. A sign-up alone never counts.
+  // Remembered in this browser only (gradify.firstvalue: the date), so it fires once per device, not per person.
+  var FIRST_VALUE = /^(lesson_complete|quiz_complete|quiz_finish|exam_finish|flashcard_session_complete|study_plan_block_done)$/, FV_KEY = "gradify.firstvalue";
+  function firstValue(kind) {
+    try { if (localStorage.getItem(FV_KEY)) return; localStorage.setItem(FV_KEY, new Date().toISOString().slice(0, 10)); } catch (e) { return; }
+    var exp = ""; try { var e = JSON.parse(localStorage.getItem("gradify.exp") || "{}"); exp = Object.keys(e).map(function (k) { return k + ":" + e[k]; }).join(",").slice(0, 100); } catch (err) { /* none */ }
+    gtag("event", "first_learning_action", exp ? { gradify_site: siteName(), kind: kind, exp: exp } : { gradify_site: siteName(), kind: kind });
   }
 
   // ---------- the banner and the preferences dialog ----------

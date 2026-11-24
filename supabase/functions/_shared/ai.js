@@ -14,13 +14,13 @@
 /** Which allowance a request mode counts against (mirrors public.ai_feature). */
 export const FEATURE_OF = {
   mark: "tutor", roleplay: "tutor", debrief: "tutor", diagnose: "tutor", socratic: "tutor", challenge: "tutor",
-  connect: "tutor", examiner: "tutor", director: "tutor", coach: "tutor", degree: "tutor",
+  connect: "tutor", examiner: "tutor", director: "tutor", coach: "tutor", degree: "tutor", chemistry: "tutor",
   explain: "explain", card: "explain",
   pack: "pack", questions: "quiz",
 };
 const LABEL = { tutor: ["AI tutor conversation", "AI tutor conversations"], explain: ["explanation", "explanations"], pack: ["study pack", "study packs"], quiz: ["AI-written quiz", "AI-written quizzes"] };
 /** Multi-turn tutor modes: turns of one conversation share a single use. */
-export const CONVERSATION_MODES = ["roleplay", "socratic", "examiner"];
+export const CONVERSATION_MODES = ["roleplay", "socratic", "examiner", "chemistry"];
 
 const day = (iso) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "Europe/London" }) : null);
 const plural = (f, n) => (LABEL[f] ? LABEL[f][n === 1 ? 0 : 1] : "uses");

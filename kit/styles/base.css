@@ -340,13 +340,22 @@ header.bar.glass, header.sub-nav.glass {
    on the homepage), and cards painted in a brand colour, where text is white whatever the theme. Inside them every
    token is the dark theme's, so their contents need no light-mode rules of their own. The list of dark ones matches
    ISLANDS in scripts/theme-tokens.mjs. */
-:root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .lab-3d, .lab-cv, .lab-svg, .co-lab, .tablet, .shot-frame,
+:root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .tablet, .shot-frame,
   .vc-stage, .vc-timeline, .vc-props, .holo, .spotlight, .bi-stage, .mv-labels, .mv-tip, .mv-controls, .mv-info,
   .cx-fcard, .cx-bcover, .cx-rings, .cx-wok, .i-profile, .sub-course, .notify-ask, [class*="tone-"], .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
   --fg: #fff; --mute: rgba(255, 255, 255, .78); --faint: rgba(255, 255, 255, .62);
   --ink-rgb: 255, 255, 255; --surface-rgb: 20, 20, 20; --sink-rgb: 0, 0, 0; --invert-bg: #fff; --invert-fg: #000;
   --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .26); --edge: rgba(255, 255, 255, .1);
   color-scheme: dark; color: var(--fg);
+}
+/* Light labs: a lab whose root is marked .lab-light (the Organic Chemistry Lab, kit/labs/chemistry/sketch.js) is drawn in
+   the light theme too, instead of as a dark island: its card goes white and it gets the light tokens back. Its own
+   colours use light-dark(), so they follow. 3D stages inside it (.lab-3d) stay dark islands. */
+:root[data-theme="light"] .co-lab:has(.lab-light) {
+  --fg: #0d0d18; --mute: #545466; --faint: #66667a;
+  --ink-rgb: 22, 22, 48; --surface-rgb: 255, 255, 255; --sink-rgb: 214, 214, 232; --invert-bg: #0d0d18; --invert-fg: #fff;
+  --line: rgba(22, 22, 48, .1); --line-strong: rgba(22, 22, 48, .22); --edge: rgba(22, 22, 48, .08);
+  color-scheme: light; color: var(--fg); background: #fff;
 }
 /* the bright button: ink with white text in light mode (white with black text in dark) */
 :root[data-theme="light"] .btn-primary.lg { --glow: 70, 65, 255; color: #fff; background: linear-gradient(180deg, #2c2c3e 0%, #15151f 55%, #0d0d18 100%); border-color: rgba(22, 22, 48, .9); }

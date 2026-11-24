@@ -4,6 +4,8 @@
 // The course engine (kit/course/course.js) loads labs lazily, embeds them in lessons and lists them in the Lab.
 export const C = { bg: "#0b0c0e", grid: "rgba(255,255,255,.07)", axis: "rgba(255,255,255,.35)", text: "#e8eaed", mute: "#9aa0a6",
   green: "#10b981", teal: "#14d4c4", lime: "#84cc16", amber: "#f59e0b", orange: "#f97316", gold: "#fbbf24", red: "#ff4d6d", blue: "#5aa0ff", violet: "#a78bfa", pink: "#f472b6", white: "#ffffff" };
+import { themedContext, themeTree } from "./theme.js";
+export { adapt, isLight } from "./theme.js";
 export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 export const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 export const lerp = (a, b, t) => a + (b - a) * t;
@@ -15,6 +17,7 @@ export function shell(el, html, cls = "") {
   // the ownership mark is the lab's last line (kit/diagrams/visual.js MARK), clear of its controls
   el.innerHTML = `<div class="lab ${cls}">${html}<small class="gx-mark" aria-hidden="true">© Property of Gradify</small></div>`;
   const root = el.firstElementChild;
+  themeTree(root);   // light mode: the lab's SVG and inline colours follow the theme (kit/labs/theme.js)
   const $ = (sel) => root.querySelector(sel);
   $.all = (sel) => [...root.querySelectorAll(sel)];
   $.root = root;
@@ -24,7 +27,7 @@ export function shell(el, html, cls = "") {
 // a crisp canvas that keeps its aspect ratio and follows its container's width
 export function canvas(host, { aspect = 0.56, max = 520 } = {}) {
   const cv = document.createElement("canvas"); cv.className = "lab-cv"; host.append(cv);
-  const g = cv.getContext("2d"), st = { W: 0, H: 0, dpr: 1 };
+  const g = themedContext(cv.getContext("2d")), st = { W: 0, H: 0, dpr: 1 };
   const fit = () => {
     const w = Math.max(240, host.clientWidth || 600), h = Math.min(max, Math.round(w * aspect)), dpr = Math.min(2, window.devicePixelRatio || 1);
     if (w === st.W && h === st.H && dpr === st.dpr) return false;

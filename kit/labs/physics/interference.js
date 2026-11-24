@@ -1,7 +1,7 @@
 // Young's double slit, single-slit diffraction and the diffraction grating, in the far-field (Fraunhofer)
 // approximation: I(θ) = I₀ · sinc²(πa sinθ/λ) · [sin(Nπd sinθ/λ) / (N sin(πd sinθ/λ))]². Monochromatic light,
 // slits much longer than they are wide.
-import { shell, canvas, slider, seg, axes, line, clear, text, challenges, panel, loop, C } from "../lab.js";
+import { shell, canvas, slider, seg, axes, line, clear, text, challenges, panel, loop, C, isLight } from "../lab.js";
 
 export function intensity(theta, { lambda, a, d, N }) {
   const b = (Math.PI * a * Math.sin(theta)) / lambda, single = b === 0 ? 1 : (Math.sin(b) / b) ** 2;
@@ -59,13 +59,13 @@ export function mount(el, ctx = {}) {
     const o = opt(), [r, g0, b] = wavelengthColour(P.nm);
     // top: a ripple-tank view of the waves leaving the slits
     const g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
-    const wx = W * 0.18, img = g.createImageData(Math.ceil(W - wx), H), lamPx = 16;
+    const wx = W * 0.18, img = g.createImageData(Math.ceil(W - wx), H), lamPx = 16, light = isLight();
     const nSl = mode === "grating" ? 6 : mode === "double" ? 2 : 1, gap = mode === "single" ? 0 : Math.min(H / (nSl + 1), (mode === "double" ? P.d / 4 : 18));
     const srcs = Array.from({ length: nSl }, (_, i) => H / 2 + (i - (nSl - 1) / 2) * gap);
     for (let y = 0; y < H; y += 2) for (let x = 0; x < img.width; x += 2) {
       let s = 0; for (const sy of srcs) { const rr = Math.hypot(x, y - sy); s += Math.sin((2 * Math.PI * rr) / lamPx - t * 6) / Math.sqrt(1 + rr / 30); }
       const v = Math.max(0, s / nSl); const i0 = (y * img.width + x) * 4;
-      for (const [dx, dy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) { const k = i0 + (dy * img.width + dx) * 4; if (k + 3 < img.data.length) { img.data[k] = r * v; img.data[k + 1] = g0 * v; img.data[k + 2] = b * v; img.data[k + 3] = 255; } }
+      for (const [dx, dy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) { const k = i0 + (dy * img.width + dx) * 4; if (k + 3 < img.data.length) { if (light) { img.data[k] = 255 - (255 - r) * v; img.data[k + 1] = 255 - (255 - g0) * v; img.data[k + 2] = 255 - (255 - b) * v; } else { img.data[k] = r * v; img.data[k + 1] = g0 * v; img.data[k + 2] = b * v; } img.data[k + 3] = 255; } }
     }
     g.putImageData(img, wx, 0);
     for (let y = 0; y < H; y++) { const pass = srcs.some((sy) => Math.abs(y - sy) < (mode === "single" ? Math.max(3, P.a / 3) : 3)); if (!pass) { g.fillStyle = "#3a3d44"; g.fillRect(wx - 6, y, 6, 1); } }

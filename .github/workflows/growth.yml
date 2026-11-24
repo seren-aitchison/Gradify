@@ -1,0 +1,76 @@
+# The growth engine's routine (docs/growth/PLAYBOOK.md): daily monitoring, weekly reporting. Read-only: it checks the
+# live site and writes reports as job summaries and artifacts. It never commits, deploys or changes a page; changes go
+# through a branch, review and the normal Test and deploy workflow.
+#   daily   scripts/growth/monitor.mjs: robots.txt, every sitemap, every listed URL, key pages. Fails (and GitHub emails
+#           the repository's watchers) only on something that stops pages being found.
+#   weekly  scripts/growth/opportunities.mjs and report.mjs: the opportunity database and the eight-question report,
+#           as an artifact. With the GSC_SERVICE_ACCOUNT secret (a service-account JSON key, the account added as a
+#           restricted user on the Search Console property), it first fetches the last 28 days of Search Console data.
+#           Without it the report runs on what it has and says what's unavailable.
+# Scheduled runs only happen on the default branch.
+name: Growth engine
+
+on:
+  schedule:
+    - cron: "17 6 * * *"     # daily, 06:17 UTC
+    - cron: "23 7 * * 1"     # Mondays, 07:23 UTC
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "monitor or report"
+        default: monitor
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    if: github.event_name == 'workflow_dispatch' && inputs.job == 'monitor' || github.event_name == 'schedule' && github.event.schedule == '17 6 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Check getgradify.com can be found
+        run: node scripts/growth/monitor.mjs
+
+  report:
+    if: github.event_name == 'workflow_dispatch' && inputs.job == 'report' || github.event_name == 'schedule' && github.event.schedule == '23 7 * * 1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HAS_GSC: ${{ secrets.GSC_SERVICE_ACCOUNT != '' }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci --no-audit --no-fund
+      - name: Sign in to Search Console (read-only scope)
+        id: gauth
+        if: env.HAS_GSC == 'true'
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GSC_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/webmasters.readonly
+      - name: Fetch the last 28 days of Search Console data
+        if: env.HAS_GSC == 'true'
+        env:
+          GSC_ACCESS_TOKEN: ${{ steps.gauth.outputs.access_token }}
+        run: node scripts/growth/gsc-fetch.mjs
+      - name: Opportunities and the weekly report
+        run: |
+          node scripts/growth/opportunities.mjs
+          node scripts/growth/report.mjs
+          cat docs/growth/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: growth-report-${{ github.run_id }}
+          path: |
+            docs/growth/REPORT.md
+            docs/growth/OPPORTUNITIES.md
+            data/growth/opportunities.json
+          retention-days: 90

@@ -48,10 +48,11 @@ export function sectionOf(u) {
   if (["topics", "terms", "tools", "questions", "exam-traps", "lessons"].includes(f)) return f === "exam-traps" ? "questions" : f;
   if (["pdf-to-flashcards", "lecture-notes-to-mind-map", "notes-to-cheat-sheet", "youtube-to-flashcards", "notes-to-study-chant"].includes(f)) return "tools";
   if (f === "study-plan") return "study-plans";
+  if (f === "features") return "features";
   if (["guides", "vs", "checklists", "compare", "glossary", "templates", "research", "exam-boards", "changelog"].includes(f)) return "guides";
   return "pages";
 }
-export const SECTIONS = ["pages", "sites", "tools", "topics", "lessons", "terms", "guides", "questions", "study-plans"];
+export const SECTIONS = ["pages", "sites", "features", "tools", "topics", "lessons", "terms", "guides", "questions", "study-plans"];
 /** { "sitemap.xml": the index, "sitemaps/<section>.xml": … } */
 export async function sitemapFiles() {
   const urls = await sitemapUrls(), out = {};

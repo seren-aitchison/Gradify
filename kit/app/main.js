@@ -54,6 +54,8 @@ import { plannerHtml, wirePlanner, renderSession, sessionPill } from "./session-
 import { orderCards } from "../intel/order.js";
 import { weightedGraph, usable } from "../intel/graph.js";
 import { dependencyGraph } from "../intel/debt.js";
+import { renderAcademic, academicPanelHtml, wireAcademicPanel } from "./academic-views.js";
+import { renderMy, MY_CHILD } from "./my-views.js";
 import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -119,7 +121,7 @@ async function stats() {
 // Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL.
 // [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
 const SECTIONS = [
-  ["today", "Today", "home", [["today", "Today", "home"], ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
+  ["today", "Today", "home", [["today", "Today", "home"], ...(MY_CHILD.test(SITE || "") ? [] : [["my", "MyGradify", "cap"]]), ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
   ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
   ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
   ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
@@ -127,7 +129,7 @@ const SECTIONS = [
 ];
 const SETTINGS = ["account", "Settings", "cog"];
 // screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
-const SCREEN_OF = { deck: "library", jot: "notes", topic: "progress", goal: "goals", session: "study" };
+const SCREEN_OF = { academic: "my", deck: "library", jot: "notes", topic: "progress", goal: "goals", session: "study" };
 const screenOf = (route) => SCREEN_OF[route] || route;
 const sectionOf = (route) => SECTIONS.find(([, , , screens]) => screens.some(([r]) => r === screenOf(route)))?.[0] || null;
 const screenLabel = (route) => (route === "account" ? SETTINGS[1] : SECTIONS.flatMap(([, , , x]) => x).find(([r]) => r === screenOf(route))?.[1]) || "";
@@ -192,7 +194,7 @@ function markLocks() {
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
 // ---------- Router ----------
-const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
+const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount, academic: renderAcademicRoute, my: renderMyRoute };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
 // rainbow line under the one that's open), so each is a short scroll. A pane is an element marked data-pane="id", or
@@ -488,7 +490,9 @@ async function renderStart(stepArg) {
     const l = learnerOf(profile);
     await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: f.get("prior") }, prefs: prefsFrom(f), onboarded_at: l.onboarded_at || new Date().toISOString(), skipped_at: null });
     profile = await store.getProfile();
-    location.hash = currentOffer() ? "#/offer" : "#/new";
+    // university, postgraduate and college students are offered MyGradify course set-up next (skippable)
+    academicFromStart = ["undergraduate", "postgraduate"].includes(f.get("level")) && !/^(JuniorGradify|YouthGradify)$/.test(site);
+    location.hash = academicFromStart ? "#/academic/1" : currentOffer() ? "#/offer" : "#/new";
   });
 }
 
@@ -1535,6 +1539,20 @@ async function renderPlan(arg) {
 }
 
 // ---------- Account ----------
+// ---------- MyGradify: your course (kit/app/academic-views.js) ----------
+async function renderMyRoute(arg, more = []) {
+  await renderMy(arg, more, { view, store, site: SITE || profile.site, toast, profile: () => profile, refresh: async () => { profile = await store.getProfile(); syncMirror(profile); }, rerender: () => route() });
+}
+let academicFromStart = false;
+async function renderAcademicRoute(step) {
+  await renderAcademic(step, {
+    view, store, site: SITE || profile.site, toast,
+    profile: () => profile,
+    refresh: async () => { profile = await store.getProfile(); syncMirror(profile); },
+    rerender: () => route(),
+    next: () => (academicFromStart ? (currentOffer() ? "#/offer" : "#/new") : "#/my"),
+  });
+}
 async function renderAccount() {
   const user = store.mode === "cloud" ? await store.user() : null;
   const s = siteOf(profile.site);
@@ -1548,6 +1566,7 @@ async function renderAccount() {
         : `<h3>Saved on this device</h3><p class="sub">Gradify accounts aren't switched on yet, so your notes and progress are saved in this browser${store.persistent ? "" : " for this visit only (this browser is blocking storage)"}. Export a copy below to keep it safe.</p>`}
     </article>
     ${user ? `<article class="panel glass plan-panel" id="plan-panel" aria-live="polite"><h3>Your plan</h3><p class="sub">Checking your plan…</p></article>` : ""}
+    ${academicPanelHtml(learnerOf(profile), { site: SITE || profile.site })}
     <form class="panel glass setup-form" id="prefs">
       <h3>Your learning</h3>
       <label><span>Goal</span><select name="goal">${GOALS.map((g) => `<option value="${g.id}" ${profile.goal === g.id ? "selected" : ""}>${g.t}</option>`).join("")}</select></label>
@@ -1567,6 +1586,7 @@ async function renderAccount() {
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
   </section>`;
   if (user) renderBillingPlan();
+  wireAcademicPanel(view, { store, toast, refresh: async () => { profile = await store.getProfile(); syncMirror(profile); }, rerender: () => route() });
   $("#prefs").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);

@@ -72,6 +72,9 @@ import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter
 import { masteryMap } from "../learning/mastery-map.js";
 import { renderMasteryMap } from "../ui/mastery-map-view.js";
 import { art as spotArt, heroArt, subjectOf } from "../ui/art.js";
+import { specsFor } from "../specs/index.js";
+import { specMastery } from "../learning/spec-mastery.js";
+import { specPageHtml, topicPageHtml, pointPageHtml, specSummaryHtml } from "./spec-view.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -392,7 +395,9 @@ export function mountCourse(root, cfg) {
   // ---------- layout ----------
   // the tabs: a few that matter, always visible (Home, Syllabus, Revise, the course's own workspace, Exams, Lab,
   // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
-  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
+  // the examination specifications this course is mapped onto (kit/specs/), for Specification Mastery (#/spec)
+  const SPECS = specsFor(cfg.slug);
+  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(SPECS.length ? [["spec", "Specification"]] : []), ["me", "Progress"]];
   const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
   const VIEWS = [...PRIMARY, ...MORE];
   // which tab a view belongs to
@@ -1295,7 +1300,9 @@ export function mountCourse(root, cfg) {
         if (p >= 0.6) lightStep("read");
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
-      root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
+      // sections already read tick off as you pass them (a small, satisfying sign of progress)
+      const tocLinks = [...root.querySelectorAll(".co-toc a")], curAt = tocLinks.indexOf(cur);
+      tocLinks.forEach((a, k) => { a.classList.toggle("on", a === cur); a.classList.toggle("past", curAt > -1 && k < curAt); });
       if (cur && cur.dataset.jump !== lastPlace) {
         lastPlace = cur.dataset.jump; place(lastPlace);
         // the section you're in, kept in view in the lesson's sticky bar
@@ -2273,6 +2280,51 @@ export function mountCourse(root, cfg) {
       ${weak.length ? `<a class="btn btn-light lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Target test on my weak topics</span></a>` : ""}</section>`;
   }
 
+  // ---------- specification mastery (kit/learning/spec-mastery.js, docs/SPEC-MASTERY.md) ----------
+  // which specification the learner is sitting, and their choices on it (a tier, say), remembered per course on this
+  // device. Nothing here is specific to a board or subject: the specification's own `options` say what can be chosen.
+  const SPK = `gradify.spec.${cfg.slug}`;
+  let specPrefMem = null; // this visit's choice, used when storage is blocked so a change still takes effect
+  const specPref = () => {
+    let v = specPrefMem || {}; if (!specPrefMem) try { v = JSON.parse(localStorage.getItem(SPK) || "{}") || {}; } catch { /* storage blocked */ }
+    // the first version stored { id, tier }; a tier saved then still applies
+    const spec = SPECS.find((x) => x.id === v.id) || SPECS[0];
+    return { spec, choices: { ...(v.tier ? { tier: v.tier } : {}), ...(v.choices || {}) } };
+  };
+  const setSpecPref = ({ id, choice }) => {
+    const cur = specPref(); specPrefMem = { id: id || cur.spec.id, choices: id && id !== cur.spec.id ? {} : { ...cur.choices, ...(choice || {}) } };
+    try { localStorage.setItem(SPK, JSON.stringify(specPrefMem)); } catch { /* storage blocked: the choice holds for this visit only */ }
+  };
+  let specMemo = { key: "", model: null };
+  function specModel() {
+    const { spec, choices } = specPref(), key = `${spec.id}|${JSON.stringify(choices)}|${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}|${Object.keys(S.done).length}|${Math.floor(Date.now() / 864e5)}`;
+    if (specMemo.key !== key) specMemo = { key, model: specMastery(spec, { attempts: S.attempts || [], levels: cfg.levels || null, exploration: EXPLORE, done: S.done, choices,
+      available: (id) => Boolean(byId[id]) && (!cfg.written || cfg.written.includes(byId[id].unit.id)), titleOf: (id) => byId[id]?.title || id }) };
+    return specMemo.model;
+  }
+  const specPractise = (p) => `#/target/${encodeTest({ minutes: 5, focus: p.focus, scope: "lessons", lessons: p.practise.filter((id) => byId[id]) })}`;
+  async function viewSpec(ref) {
+    const m = specModel(), id = ref ? decodeURIComponent(ref) : null;
+    const topic = id && m.topics.find((t) => t.id === id), p = id && !topic && m.points.find((x) => x.id === id);
+    if (id && !topic && !p) { main.innerHTML = `<div class="co-panel"><h2>That requirement isn't in your specification</h2><p>It may not be part of the options you've chosen (a tier, say), or the link is out of date.</p><a class="btn btn-light lg btn-sm" href="#/spec"><span>Back to your specification</span></a></div>`; return; }
+    if (topic) { main.innerHTML = topicPageHtml(m, topic, { practiseHref: specPractise }); return; }
+    if (p) {
+      main.innerHTML = pointPageHtml(m, p, { titleOf: (l) => byId[l]?.title || l, statusOf: (l) => (byId[l] ? STATUS[statusOf(l)].label : null), practiseHref: specPractise });
+      // what each lesson offers to practise this point with: its check questions and flashcards
+      const ids = [...p.lessons, ...p.partial].filter((l) => byId[l]), need = new Set(ids.map((l) => byId[l].unit.id));
+      const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+      for (const l of ids) {
+        const L = notes[l], el = main.querySelector(`[data-res="${CSS.escape(l)}"]`); if (!L || !el) continue;
+        const q = (L.items || []).filter((it) => QTYPES[it.Q.type]?.auto).length, c = (L.cards || []).length;
+        el.textContent = [q && `${q} check ${q === 1 ? "question" : "questions"}`, c && `${c} ${c === 1 ? "flashcard" : "flashcards"}`].filter(Boolean).join(" · ");
+      }
+      return;
+    }
+    main.innerHTML = specPageHtml(m, { specs: SPECS, practiseHref: specPractise });
+    main.querySelector("[data-spec]")?.addEventListener("change", (e) => { setSpecPref({ id: e.target.value }); route(); });
+    main.querySelectorAll("[data-opt]").forEach((b) => b.addEventListener("click", () => { setSpecPref({ choice: { [b.dataset.opt]: b.dataset.choice } }); route(); }));
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -2283,6 +2335,7 @@ export function mountCourse(root, cfg) {
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
       <section class="co-panel cx-mmwrap" id="mastery-map"></section>
+      ${SPECS.length ? specSummaryHtml(specModel()) : ""}
       ${topicMapHtml()}
       ${masteryHtml()}
       ${insightHtml()}
@@ -2444,7 +2497,10 @@ export function mountCourse(root, cfg) {
     solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]),
     // which challenge the learner says they're working on (only for labs whose challenges count as evidence)
     focus: x.evidence ? (task, label) => { endTry(x); if (task && x.evidence[task]) labTry.set(x.id, { task, label, moves: 0, last: 0, at: Date.now() }); } : undefined,
-    report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); } });
+    report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); },
+    // a lab with its own tutor (the Organic Chemistry Lab) asks Gradify AI through the course page, so sign-in,
+    // allowances and usage work as everywhere else; once used, the lab's challenges count as met with help
+    ask: SUPABASE_URL ? async (body) => { const out = await askTutor(body); labHelped.add(x.id); return out; } : null });
   const labFor = (id) => {
     const el = id && main.querySelector(`.co-lab[data-ix="${id}"] .co-labstage`);
     if (!el || !ixById[id]) return null;
@@ -2627,10 +2683,12 @@ export function mountCourse(root, cfg) {
     // the static course overview below the app belongs to the course's front page, not to lessons, quizzes and the rest
     document.querySelector(".course-overview")?.toggleAttribute("hidden", !["home", "overview"].includes(view));
     root.querySelectorAll(".co-tabs > a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === tab));
+    // on a narrow screen the tab strip scrolls: keep the current tab in view (scrolls the strip only, never the page)
+    { const ct = root.querySelector(".co-tabs > a[aria-current]"), strip = ct?.parentElement; if (ct && strip.scrollWidth > strip.clientWidth + 4) strip.scrollLeft = Math.max(0, ct.offsetLeft - strip.offsetLeft - 16); }
     const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
     moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
     showTab(); closeMore(); drawer(false);
-    const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
+    const wide = ["home", "me", "spec", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
     showTree(view === "lesson" || view === "quiz");
@@ -2679,6 +2737,7 @@ export function mountCourse(root, cfg) {
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();
+    else if (view === "spec") await viewSpec(arg);
     else viewFeatures();
     paintSide();
     // what this place is called (for "Back to …"), then where to put the page

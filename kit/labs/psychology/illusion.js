@@ -2,7 +2,7 @@
 // fins, then see how far you were out. Explanations are contested: Gregory (1968) proposed misapplied size constancy
 // (fins read as corners); Segall, Campbell and Herskovits (1966) found smaller illusions in some non-Western samples and
 // proposed the "carpentered world" hypothesis; others propose that the fins are averaged into the line's length.
-import { shell, canvas, panel, button, challenges, clear, line, text, C } from "../lab.js";
+import { shell, canvas, panel, button, challenges, clear, line, text, C, isLight } from "../lab.js";
 import { caveat, local } from "../social/ui.js";
 
 export function mount(el, ctx = {}) {
@@ -18,7 +18,7 @@ export function mount(el, ctx = {}) {
     line(g, [[x0, y1], [x0 + std, y1]], C.white, 3);
     for (const [x, d] of [[x0, -1], [x0 + std, 1]]) { const dx = out ? d * f : -d * f; line(g, [[x, y1], [x + dx * 0.8, y1 - f * 0.7]], C.white, 3); line(g, [[x, y1], [x + dx * 0.8, y1 + f * 0.7]], C.white, 3); }
     line(g, [[W / 2 - len / 2, y2], [W / 2 + len / 2, y2]], C.violet, 3);
-    text(g, `Trial ${i + 1} of 6: make the purple line match the white one`, 10, 18, { size: 12, color: C.mute });
+    text(g, `Trial ${i + 1} of 6: make the purple line match the ${isLight() ? "black" : "white"} one`, 10, 18, { size: 12, color: C.mute });
   }
   const adj = (d) => { len = Math.max(40, Math.min(cv.W - 20, len + d)); draw(); };
   button(btns, "← Shorter", () => adj(-4)); button(btns, "Longer →", () => adj(4));

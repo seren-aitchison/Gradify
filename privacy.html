@@ -105,6 +105,29 @@
     <p><b>Your study device.</b> On Free you study on one device at a time, so Gradify keeps a random identifier for the device you study on, made by the app and stored in that browser, and when you last moved it. It identifies a browser, not you, and isn't used for anything else.</p>
     <p><b>Why Gradify can keep it:</b> you made an account so that Gradify can do this for you (the contract between you and Gradify). <b>How long it's kept:</b> until you delete it. <b>Delete all my data</b>, in <b>Account</b> in the Gradify app, removes your notes, study packs, cards, progress, plans and activity straight away. Your sign-in (your email address) and your set-up answers stay so you can still sign in; to close your account completely, email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a> and it will be deleted within 30 days.</p>
 
+    <h2 id="course">Your course details (MyGradify)</h2>
+    <p>You can tell Gradify what and where you study, so it can organise your revision, plan and tracker around your actual course. It's optional, and every question can be skipped. Gradify asks for these eight things only:</p>
+    <ul>
+      <li>the country where you study;</li>
+      <li>your university or college;</li>
+      <li>your subject;</li>
+      <li>your course or qualification;</li>
+      <li>the year you started;</li>
+      <li>which year or stage you're in now;</li>
+      <li>your study mode (for example full-time or part-time);</li>
+      <li>this year's modules.</li>
+    </ul>
+    <p>Alongside them Gradify stores when you last changed them, and a note that they're entered by you and not checked with your university.</p>
+    <ul>
+      <li><b>Where it's kept:</b> with your Gradify profile, in your account when you're signed in (Supabase; only you can read your own profile), and in this browser so pages can use it straight away. If you aren't signed in, it stays in this browser.</li>
+      <li><b>What it's used for:</b> suggesting what to study and shaping your plan and tracker. It isn't sent to Google Analytics, used for advertising, sent to Gradify AI unless a feature you choose says so, or shared with your university or anyone else.</li>
+      <li><b>While you're filling it in:</b> your answers are kept in this browser tab's session storage until you save them, so going back a step loses nothing. They're cleared when you save, choose “Not now”, or close the tab. The nation or state you pick to narrow the search isn't saved.</li>
+      <li><b>Handbooks:</b> if you import a handbook to find your modules, it's read in your browser and not uploaded or kept. Only the modules you tick are saved.</li>
+      <li><b>Changing or removing it:</b> change it any time in Account, or choose <b>Remove</b> there. Removing it doesn't affect your notes, progress or plans.</li>
+      <li><b>Who it's for:</b> university and college students. It isn't offered on JuniorGradify or YouthGradify.</li>
+    </ul>
+    <p><b>Why Gradify can keep it:</b> you chose to add it so Gradify can personalise your studying (the contract between you and Gradify). <b>How long it's kept:</b> until you remove it, or delete your data or account.</p>
+
     <h2 id="calendars">Calendar files</h2>
     <p>You can import a calendar file (.ics) into Smart Plan in the Gradify app, and into the degree tracker's <b>Connections</b> page. Both are optional, and neither is needed to use Gradify.</p>
     <ul>
@@ -170,7 +193,8 @@
       <li>the pages you visit, without anything after <code>?</code> except campaign tags (<code>utm_…</code>), and without sign-in codes after <code>#</code></li>
       <li>the website that linked to Gradify (its address only, not the full link)</li>
       <li>your device type, browser, screen size, language and approximate location (country and city, worked out by Google from your IP address, which Google Analytics 4 doesn't store)</li>
-      <li>study events: a lesson started or finished, a quiz or exam started or finished (passed or not, never your score or answers), a flashcard session started or finished (how many cards), the tutor opened, a free tool used, sharing, printing or exporting, a planned study block finished, and signing up or signing in (only whether by email or Google)</li>
+      <li>study events: a lesson started or finished, a quiz or exam started or finished (passed or not, never your score or answers), a flashcard session started or finished (how many cards), the tutor opened, a free tool used, sharing, printing or exporting, a planned study block finished, signing up or signing in (only whether by email or Google), and, once per browser, the first time you finish a piece of learning (only which kind: a lesson, quiz, exam, flashcard session or study block). Clicks into the app from a free page say which kind of page it was (a tool, a guide, a feature page …)</li>
+      <li>if Gradify is testing two versions of something (for example the words on a button), which version you saw, kept in this browser (<code>gradify.exp</code>) and sent with the events above. Only if you accept analytics; otherwise you always see the normal version and nothing is kept</li>
       <li>on the pricing page, starting checkout and a new subscription (the plan and its price, never payment details)</li>
     </ul>
     <p>It never receives your name, email address, password, payment details, notes, flashcards, answers or scores. Google signals and ad personalisation are off.</p>
@@ -211,7 +235,7 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/features/">Every feature</a><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
         <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
         <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
