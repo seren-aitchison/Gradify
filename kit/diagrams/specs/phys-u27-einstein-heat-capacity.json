@@ -1,0 +1,104 @@
+{
+ "id": "phys-u27-einstein-heat-capacity",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u27",
+ "lesson": "Specific heat of solids",
+ "title": "Heat capacity of a solid falls at low temperature",
+ "caption": "Classically every solid has C = 3R per mole (Dulong–Petit). Quantised vibrations freeze out when k_BT is small compared with ħω: in the Einstein model C/3R = x²eˣ/(eˣ − 1)², x = θ_E/T. Diamond's vibrations are stiff (θ near 1300 K), so at room temperature it sits well below 3R (about 0.25 on this curve).",
+ "alt": "Heat capacity as a fraction of 3R against temperature over the Einstein temperature, rising from zero in an S-shape towards 1.",
+ "description": [
+  "Horizontal: T/θ_E. Vertical: C/3R.",
+  "At T = θ_E: 0.921. At T = 2θ_E: 0.979, near the classical value.",
+  "At T = 0.23θ_E (diamond at 300 K): 0.25.",
+  "At low temperature it falls off exponentially; the Debye model, with a spread of frequencies, gives the observed T³ instead."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "T / θ_{E}",
+  "C / 3R"
+ ],
+ "curves": [
+  {
+   "expr": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2",
+   "domain": [
+    0.03,
+    2
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "Dulong–Petit, 3R"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.2308,
+   "y": 0.25303,
+   "colour": "a2",
+   "label": "diamond at 300 K",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2",
+   "x": 1,
+   "y": 0.92067359,
+   "name": "C/3R = 0.921 at T = θ_E"
+  },
+  {
+   "type": "value",
+   "expr": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2",
+   "x": 2,
+   "between": [
+    0.97,
+    1
+   ],
+   "name": "close to 3R at high temperature"
+  },
+  {
+   "type": "value",
+   "expr": "(1/x)^2*exp(1/x)/(exp(1/x)-1)^2",
+   "x": 0.1,
+   "between": [
+    0,
+    0.01
+   ],
+   "name": "frozen out at low temperature"
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "id": "maths-u17-tan-homeomorphism",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Homeomorphisms",
+ "title": "(0, 1) is homeomorphic to ℝ",
+ "caption": "f(x) = tan(π(x − ½)) stretches the interval (0, 1) over the whole real line: f(½) = 0, f(¾) = 1, f(¼) = −1, and f grows without bound towards both ends. It is a continuous bijection with continuous inverse.",
+ "alt": "The curve y = tan(π(x − ½)) for x between 0 and 1, rising through (¼, −1), (½, 0) and (¾, 1), and running off to −∞ and +∞ at the ends.",
+ "description": [
+  "Shift (0, 1) to (−½, ½) with x − ½, then scale by π to (−π/2, π/2).",
+  "tan maps (−π/2, π/2) onto all of ℝ.",
+  "The curve passes through (¼, −1), (½, 0), (¾, 1).",
+  "The inverse ½ + arctan(y)/π is also continuous."
+ ],
+ "range": {
+  "x": [
+   -0.25,
+   1.25
+  ],
+  "y": [
+   -5,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  0.5,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "marks": [
+  {
+   "x": 0,
+   "to": 5
+  },
+  {
+   "x": 1,
+   "to": 5
+  }
+ ],
+ "curves": [
+  {
+   "expr": "tan(3.141592653589793*(x-0.5))",
+   "colour": "a1",
+   "domain": [
+    0.001,
+    0.999
+   ],
+   "samples": 600
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": 0,
+   "colour": "a2",
+   "label": "(½, 0)",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -12
+  },
+  {
+   "x": 0.75,
+   "y": 1,
+   "colour": "a2",
+   "label": "(¾, 1)",
+   "dx": 8,
+   "dy": 14
+  },
+  {
+   "x": 0.25,
+   "y": -1,
+   "colour": "a2",
+   "label": "(¼, −1)",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -4
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "tan(3.141592653589793*(x-0.5))",
+   "x": 0.5,
+   "y": 0
+  },
+  {
+   "type": "point",
+   "expr": "tan(3.141592653589793*(x-0.5))",
+   "x": 0.75,
+   "y": 1
+  },
+  {
+   "type": "point",
+   "expr": "tan(3.141592653589793*(x-0.5))",
+   "x": 0.25,
+   "y": -1
+  }
+ ],
+ "fromLesson": [
+  "f(x) = tan(π(x − ½))"
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "id": "phys-u32-geotherm",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u32",
+ "lesson": "Geothermal energy",
+ "title": "Temperature rising with depth",
+ "caption": "In the upper crust temperature rises by about 30 °C per kilometre. Starting from 10 °C at the surface, rock at 5 km is about 160 °C: hot enough to drive a geothermal power plant.",
+ "alt": "Temperature against depth, a straight line from 10 degrees at the surface to 160 at 5 kilometres.",
+ "description": [
+  "Gradient: 30 °C km⁻¹; surface 10 °C.",
+  "T = 10 + 30 × depth (km).",
+  "At 5 km: 10 + 150 = 160 °C.",
+  "The gradient is not constant all the way down; it flattens in the mantle."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   200
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   50,
+   100,
+   150,
+   200
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "depth / km",
+  "temperature / °C"
+ ],
+ "curves": [
+  {
+   "expr": "10+30*x",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 5,
+   "to": 160
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 160,
+   "colour": "a2",
+   "label": "160 °C at 5 km",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10+30*x",
+   "x": 5,
+   "y": 160,
+   "name": "160 °C at 5 km"
+  },
+  {
+   "type": "slope",
+   "expr": "10+30*x",
+   "x": 2,
+   "value": 30,
+   "name": "30 °C per km"
+  }
+ ]
+}

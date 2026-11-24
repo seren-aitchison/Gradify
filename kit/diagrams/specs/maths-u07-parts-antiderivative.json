@@ -1,0 +1,108 @@
+{
+ "id": "maths-u07-parts-antiderivative",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Integration by Parts",
+ "title": "x cos x and its antiderivative",
+ "caption": "Integration by parts gives ∫x cos x dx = x sin x + cos x + c. The dashed curve x cos x is the slope of the solid curve at every point: where x cos x is zero, F has a turning point.",
+ "alt": "The curve F(x) = x sin x + cos x and, dashed, its gradient x cos x, which crosses zero where F turns.",
+ "description": [
+  "Take u = x and dv/dx = cos x, so v = sin x.",
+  "∫x cos x dx = x sin x − ∫sin x dx.",
+  "= x sin x + cos x + c.",
+  "Differentiating x sin x + cos x gives x cos x back."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*sin(x)+cos(x)",
+   "colour": "a1",
+   "label": "F",
+   "labelAt": [
+    4.6,
+    3.8
+   ]
+  },
+  {
+   "expr": "x*cos(x)",
+   "colour": "a2",
+   "dash": "6 4",
+   "label": "x cos x",
+   "labelAt": [
+    5.2,
+    4.6
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x*sin(x)+cos(x)",
+   "x": 1,
+   "value": 0.5403023058681398,
+   "name": "the slope of F at x = 1 is x cos x = 0.54"
+  },
+  {
+   "type": "slope",
+   "expr": "x*sin(x)+cos(x)",
+   "x": 2,
+   "value": -0.8322936730942848,
+   "name": "the slope of F at x = 2 is x cos x = -0.832"
+  },
+  {
+   "type": "slope",
+   "expr": "x*sin(x)+cos(x)",
+   "x": 4,
+   "value": -2.6145744834544478,
+   "name": "the slope of F at x = 4 is x cos x = -2.615"
+  },
+  {
+   "type": "slope",
+   "expr": "x*sin(x)+cos(x)",
+   "x": 5,
+   "value": 1.4183109273161312,
+   "name": "the slope of F at x = 5 is x cos x = 1.418"
+  }
+ ],
+ "fromLesson": [
+  "x sin x + cos x + c"
+ ]
+}

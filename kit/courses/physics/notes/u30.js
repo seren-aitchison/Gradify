@@ -40,6 +40,7 @@ E: L ∝ M^{3.5} (roughly, on the main sequence); lifetime ∝ M/L ∝ M^{−2.5
 P: A 10 M_{⊙} star is ~3000 times more luminous than the Sun and lives only ~20–30 million years. The most massive stars burn out in a few million years.
 X: Main-sequence lifetime of a 2 M_{⊙} star (Sun: 10^{10} years)?
 > t ∝ M^{−2.5}: 10^{10} × 2^{−2.5} ≈ 1.8 × 10^{9} years
+D: phys-u30-main-sequence-lifetime
 !: More fuel doesn't mean a longer life: massive stars burn their fuel disproportionately fast.
 Q: What decides a star's fate? | Mainly its initial mass.
 Q: How does main-sequence lifetime scale with mass? | Roughly as M^{−2.5}.
@@ -153,6 +154,7 @@ H: The Sun on the main sequence
 P: The Sun has been on the main sequence for 4.6 billion years and will stay ~5 billion more. It's slowly brightening (~1% per 100 million years): in about a billion years, Earth will become too hot for liquid oceans. Most stars in the galaxy are red dwarfs, too faint to see with the naked eye.
 X: Luminosity of a 0.5 M_{⊙} star?
 > L ≈ 0.5^{3.5} ≈ 0.09 L_{⊙}
+D: phys-u30-mass-luminosity
 !: The main sequence isn't an evolutionary path; stars stay at nearly one point on it while burning hydrogen.
 Q: What defines a main-sequence star? | Core hydrogen fusion into helium.
 Q: What determines a star's position on the main sequence? | Mainly its mass.
@@ -386,6 +388,7 @@ P: Transmission spectroscopy (starlight filtering through an atmosphere during t
 X: Transit depth of a Jupiter (R = 0.1 R_{⊙}) across a Sun-like star?
 > Depth = (R_{p}/R_{*})^{2} = 1%
 > Earth: (0.009)^{2} ≈ 0.008%
+D: phys-u30-transit
 !: Transit surveys only see planets whose orbits are edge-on from our viewpoint; occurrence rates must correct for this geometric bias.
 Q: How does the transit method find planets? | By detecting periodic dips in a star's brightness as a planet crosses it.
 Q: What was the first exoplanet found around a Sun-like star? | 51 Pegasi b (1995), a hot Jupiter.
@@ -519,6 +522,7 @@ H: Dynamics
 P: Clusters evolve dynamically: mass segregation sinks heavy stars to the centre; evaporation loses stars; core collapse in globulars produces dense cores where stellar collisions and binaries form exotic objects (blue stragglers, millisecond pulsars, possibly intermediate-mass black holes). Multiple stellar populations within globulars challenge simple formation models.
 X: A cluster's main-sequence turn-off is at 2 M_{⊙}. Age?
 > Lifetime ≈ 10^{10} × 2^{−2.5} ≈ 1.8 × 10^{9} years
+D: phys-u30-main-sequence-lifetime
 !: Cluster stars aren't all the same mass; they're the same age, which is what makes clusters useful.
 Q: How is a cluster's age found? | From the main-sequence turn-off point on its HR diagram.
 Q: How do open and globular clusters differ? | Open: young, loose, in the disc. Globular: old, dense, in the halo.
@@ -590,6 +594,7 @@ P: Modified Newtonian Dynamics (MOND) changes gravity at very low accelerations 
 X: Flat rotation curve v = 200 km s^{-1}: how does enclosed mass grow with radius?
 > M(r) = v^{2}r/G ∝ r: mass keeps increasing linearly with radius
 > Implies density ρ ∝ 1/r^{2} in the halo
+D: phys-u30-rotation-curve
 !: Dark matter isn't simply undiscovered dim stars or gas; Big Bang nucleosynthesis and the CMB limit ordinary matter to ~5% of the universe.
 Q: What do flat rotation curves imply? | Mass continues to increase with radius: an extended dark matter halo.
 Q: Who measured galaxy rotation curves showing dark matter? | Vera Rubin and Kent Ford (1970s).

@@ -1,0 +1,44 @@
+{
+ "id": "phys-u20-matter-wave-scales",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Wave-particle duality",
+ "title": "A ball's de Broglie wavelength against atomic sizes",
+ "caption": "For a 1 kg ball at 1 m s⁻¹, λ = h/p = 6.6 × 10⁻³⁴ m: about 23 orders of magnitude smaller than an atom (10⁻¹⁰ m) and 18 below a proton. No experiment can see wave behaviour at that scale. Electrons and atoms have wavelengths comparable with atomic sizes, which is why they diffract.",
+ "alt": "A logarithmic length scale from 10^-35 m to 10^-8 m with the ball's de Broglie wavelength at 6.6 × 10^-34 m, far to the left of a proton at 1.7 × 10^-15 m and a hydrogen atom at 1.1 × 10^-10 m.",
+ "description": [
+  "A horizontal logarithmic scale of length in metres.",
+  "The 1 kg ball at 1 m s⁻¹ has λ = h/p = 6.6 × 10⁻³⁴ m.",
+  "A proton is about 1.7 × 10⁻¹⁵ m across and a hydrogen atom about 1.1 × 10⁻¹⁰ m.",
+  "The ball's wavelength is 23 orders of magnitude below the atom: far too small to measure, so the ball shows no wave behaviour."
+ ],
+ "quantity": "length",
+ "units": "m",
+ "min": -35,
+ "max": -8,
+ "markers": [
+  {
+   "label": "ball, λ = h/p",
+   "value": 6.62607015e-34
+  },
+  {
+   "label": "proton",
+   "value": 1.7e-15
+  },
+  {
+   "label": "hydrogen atom",
+   "value": 1.1e-10
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "ball, λ = h/p",
+   "b": "hydrogen atom",
+   "value": 23.2,
+   "tol": 0.2,
+   "name": "the ball's wavelength is 23 orders of magnitude below an atom"
+  }
+ ]
+}

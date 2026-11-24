@@ -22,10 +22,15 @@ export const PUBLISH = {
   files: [
     ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "journey.html", "explore.html", "privacy.html", "terms.html", "quality.html", "pricing.html", "status.html", "ai-usage.html",
     "robots.txt", "sitemap.xml", "manifest.webmanifest", "sw.js", "gradify.config.js",
+    // search pages and files written by scripts/build-seo.mjs (the IndexNow key file proves the site owns the key)
+    "about.html", "ambassadors.html", "site-map.html", "llms.txt", "llms-full.txt", "feed.xml", "send.html", "e0ae881afb2339548688d1f7ff91a66c.txt",
   ],
   // folders published whole, apart from EXCLUDE.inside. Sub-site folders (lawgradify/, medgradify/ …) are matched by
   // name and must each be registered in kit/core/site.js.
-  folders: ["assets", "kit"],
+  folders: ["assets", "kit", "sitemaps",
+    // search pages written by scripts/build-seo.mjs (SEO_FOLDERS there)
+    "tools", "guides", "compare", "glossary", "templates", "topics", "study-plan", "pdf-to-flashcards", "lecture-notes-to-mind-map", "notes-to-cheat-sheet",
+    "checklists", "vs", "questions", "exam-traps", "exam-boards", "changelog", "youtube-to-flashcards", "notes-to-study-chant", ".well-known", "terms", "research"],
   subsite: /^[a-z]+gradify$/,
 };
 

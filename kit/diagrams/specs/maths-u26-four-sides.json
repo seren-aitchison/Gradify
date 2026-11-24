@@ -1,0 +1,52 @@
+{
+ "id": "maths-u26-four-sides",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Deductive Reasoning",
+ "title": "Four sides does not make a square",
+ "caption": "Every square has four sides, so the squares sit inside the four-sided shapes. But a rectangle or a rhombus is also inside the four-sided set and outside the squares: knowing a shape has four sides cannot tell you it is a square.",
+ "alt": "A small set of squares drawn inside a larger set of four-sided shapes, with the rectangle and the rhombus in the larger set only.",
+ "description": [
+  "Draw the set of four-sided shapes.",
+  "Every square lies inside it: if square then four sides.",
+  "A rectangle and a rhombus are four-sided but not squares.",
+  "So 'four sides, therefore square' is invalid."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "squares"
+  },
+  {
+   "name": "B",
+   "label": "four sides"
+  }
+ ],
+ "universe": {
+  "label": "shapes"
+ },
+ "regions": {
+  "A": 0,
+  "AB": 1,
+  "B": 2,
+  "": 1
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "A∩B′",
+   "n": 0,
+   "name": "every square has four sides"
+  },
+  {
+   "type": "count",
+   "event": "B∩A′",
+   "n": 2,
+   "name": "the rectangle and the rhombus have four sides without being squares"
+  }
+ ],
+ "fromLesson": [
+  "rectangle or rhombus"
+ ]
+}

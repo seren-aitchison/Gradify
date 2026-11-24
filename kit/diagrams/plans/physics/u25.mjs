@@ -1,3 +1,33 @@
 // Physics unit 25 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u25-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u25.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u25-01", null, "the history of the ether and Michelson–Morley is told in the text"],
+  ["u25-02", null, CALC],
+  ["u25-03", null, "whether a frame is inertial is an argument, carried in the text"],
+  ["u25-04", "lab", "relativity", "see light's speed unchanged from a moving frame"],
+  ["u25-05", "lab", "relativity", "follow light pulses between frames"],
+  ["u25-06", "lab", "relativity", "transform events between frames"],
+  ["u25-07", "lab", "relativity", "see simultaneous events become non-simultaneous"],
+  ["u25-08", "graph", "phys-u25-lorentz-factor", "γ against v/c: 1.25 at 0.6c, 1.67 at 0.8c, 22.4 for the muons at 0.999c"],
+  ["u25-08", "lab", "relativity", "watch moving clocks run slow"],
+  ["u25-09", "graph", "phys-u25-length-contraction", "a 100 m ship measured as 60 m at 0.8c"],
+  ["u25-09", "lab", "relativity", "watch moving rulers contract"],
+  ["u25-10", "graph", "phys-u25-velocity-addition", "2u/(1 + u²/c²) against Galilean 2u: 0.96c for 0.75c each"],
+  ["u25-10", "lab", "relativity", "add velocities between frames"],
+  ["u25-11", "graph", "phys-u25-spacetime", "worldlines: at rest at x = 2 m, a light ray, and an object at 0.5c"],
+  ["u25-11", "lab", "relativity", "draw worldlines in a spacetime diagram"],
+  ["u25-12", null, CALC],
+  ["u25-13", null, CALC],
+  ["u25-14", null, CALC],
+  ["u25-15", null, CALC],
+  ["u25-16", null, CALC],
+  ["u25-17", "graph", "phys-u25-kinetic-energy", "(γ − 1)mc² against ½mv²: 1214 MeV for a proton at 0.9c"],
+  ["u25-18", null, CALC],
+  ["u25-19", null, CALC],
+  ["u25-20", null, CALC],
+  ["u25-21", null, "a frame-by-frame argument about the force on a moving charge, carried in the text"],
+  ["u25-22", "graph", "phys-u25-light-cone", "event B outside A's light cone: a spacelike interval, no causal link"],
+  ["u25-23", "lab", "relativity", "follow the twins' signals out and back"],
+  ["u25-24", null, CALC],
+];

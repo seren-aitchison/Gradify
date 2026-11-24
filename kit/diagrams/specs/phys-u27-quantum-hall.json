@@ -1,0 +1,219 @@
+{
+ "id": "phys-u27-quantum-hall",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u27",
+ "lesson": "Quantum Hall effect",
+ "title": "Quantum Hall plateaus",
+ "caption": "In a two-dimensional electron gas at low temperature and high field, the Hall resistance locks onto exact values R = h/(νe²) = 25.813 kΩ / ν. On the ν = 2 plateau it is 12.906 kΩ, the same in every sample to parts in 10¹⁰, which is why it now defines the ohm.",
+ "alt": "Hall resistance against magnetic field: flat plateaus at 6.45, 8.60, 12.9 and 25.8 kilohms joined by short rises.",
+ "description": [
+  "h/e² = 25812.807 Ω.",
+  "ν = 4: 6.453 kΩ.",
+  "ν = 3: 8.604 kΩ.",
+  "ν = 2: 12.906 kΩ.",
+  "ν = 1: 25.813 kΩ.",
+  "Between plateaus the resistance rises; the field values of the steps depend on the sample's electron density (illustrative here)."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   0,
+   28
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   6.45,
+   8.6,
+   12.9,
+   25.8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "magnetic field / T (illustrative)",
+  "Hall resistance / kΩ"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0.5,
+     6.45320175
+    ],
+    [
+     1.6,
+     6.45320175
+    ]
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "points": [
+    [
+     1.9,
+     8.604269
+    ],
+    [
+     2.4,
+     8.604269
+    ]
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "points": [
+    [
+     2.8,
+     12.9064035
+    ],
+    [
+     3.9,
+     12.9064035
+    ]
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "points": [
+    [
+     5,
+     25.812807
+    ],
+    [
+     8,
+     25.812807
+    ]
+   ],
+   "colour": "a1",
+   "width": 3.4
+  },
+  {
+   "points": [
+    [
+     1.6,
+     6.45320175
+    ],
+    [
+     1.9,
+     8.604269
+    ]
+   ],
+   "colour": "a1",
+   "width": 1.6
+  },
+  {
+   "points": [
+    [
+     2.4,
+     8.604269
+    ],
+    [
+     2.8,
+     12.9064035
+    ]
+   ],
+   "colour": "a1",
+   "width": 1.6
+  },
+  {
+   "points": [
+    [
+     3.9,
+     12.9064035
+    ],
+    [
+     5,
+     25.812807
+    ]
+   ],
+   "colour": "a1",
+   "width": 1.6
+  }
+ ],
+ "points": [
+  {
+   "x": 1.6,
+   "y": 6.4532,
+   "colour": "a2",
+   "label": "ν = 4",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -12
+  },
+  {
+   "x": 2.4,
+   "y": 8.6043,
+   "colour": "a2",
+   "label": "ν = 3",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -12
+  },
+  {
+   "x": 3.9,
+   "y": 12.9064,
+   "colour": "a2",
+   "label": "ν = 2",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -12
+  },
+  {
+   "x": 8,
+   "y": 25.8128,
+   "colour": "a2",
+   "label": "ν = 1",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "25812.807/4/1000+0*x",
+   "x": 0,
+   "y": 6.45320175,
+   "name": "ν = 4 plateau at h/(4e²) = 6.453 kΩ"
+  },
+  {
+   "type": "point",
+   "expr": "25812.807/3/1000+0*x",
+   "x": 0,
+   "y": 8.604269,
+   "name": "ν = 3 plateau at h/(3e²) = 8.604 kΩ"
+  },
+  {
+   "type": "point",
+   "expr": "25812.807/2/1000+0*x",
+   "x": 0,
+   "y": 12.9064035,
+   "name": "ν = 2 plateau at h/(2e²) = 12.906 kΩ"
+  },
+  {
+   "type": "point",
+   "expr": "25812.807/1/1000+0*x",
+   "x": 0,
+   "y": 25.812807,
+   "name": "ν = 1 plateau at h/(1e²) = 25.813 kΩ"
+  }
+ ]
+}

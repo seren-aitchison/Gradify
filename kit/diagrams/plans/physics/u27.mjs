@@ -1,3 +1,41 @@
 // Physics unit 27 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u27-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u27.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+const ARG = "an argument or explanation, carried in the text";
+export default [
+  ["u27-01", null, ARG],
+  ["u27-02", null, "needs renderer: 3D unit cells (SC, BCC, FCC) with atoms per cell counted"],
+  ["u27-03", null, "needs renderer: the 14 Bravais lattices and why fivefold symmetry cannot tile"],
+  ["u27-04", null, "needs renderer: lattice planes in a cubic cell from Miller indices"],
+  ["u27-05", null, ARG],
+  ["u27-06", null, CALC],
+  ["u27-07", null, CALC],
+  ["u27-08", "graph", "phys-u27-chain-dispersion", "ω = 2√(K/m)|sin(ka/2)| across the Brillouin zone, ω_max = 2.92 × 10¹³ rad s⁻¹"],
+  ["u27-09", "graph", "phys-u27-einstein-heat-capacity", "Einstein C/3R against T/θ_E, with diamond at 300 K far below 3R"],
+  ["u27-10", null, CALC],
+  ["u27-11", null, "needs renderer: band structure E(k) with band gap and effective mass from curvature"],
+  ["u27-12", null, "needs renderer: band diagrams of a metal, semiconductor and insulator"],
+  ["u27-13", "graph", "phys-u27-fermi-dirac", "the Fermi–Dirac occupation, ½ at E_F, softened over a few k_BT"],
+  ["u27-14", null, CALC],
+  ["u27-15", null, CALC],
+  ["u27-16", "graph", "phys-u27-copper-resistance", "R = R₂₀(1 + αΔT): 10 Ω at 20 °C to 12.34 Ω at 80 °C"],
+  ["u27-17", null, CALC],
+  ["u27-18", null, ARG],
+  ["u27-19", null, ARG],
+  ["u27-20", null, CALC],
+  ["u27-21", null, CALC],
+  ["u27-22", null, ARG],
+  ["u27-23", null, CALC],
+  ["u27-24", null, ARG],
+  ["u27-25", null, CALC],
+  ["u27-26", null, CALC],
+  ["u27-27", null, "needs renderer: a quantum well with its energy levels"],
+  ["u27-28", "graph", "phys-u27-quantum-hall", "Hall plateaus at h/(νe²): 25.8, 12.9, 8.6 and 6.45 kΩ"],
+  ["u27-29", null, ARG],
+  ["u27-30", null, ARG],
+  ["u27-31", null, ARG],
+  ["u27-32", null, CALC],
+  ["u27-33", null, CALC],
+  ["u27-34", null, ARG],
+  ["u27-35", null, CALC],
+];

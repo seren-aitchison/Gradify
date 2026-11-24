@@ -1,0 +1,44 @@
+{
+ "id": "phys-u21-lithium-ion",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Hydrogen and hydrogen-like atoms",
+ "title": "Hydrogen-like Li²⁺",
+ "caption": "With one electron and Z = 3, the energies are Z² = 9 times hydrogen's: E_n = −13.6 × 9 / n² eV. The n = 2 → 1 photon carries 91.8 eV, so λ = 13.5 nm, one ninth of hydrogen's 121.5 nm Lyman-α, deep in the ultraviolet.",
+ "alt": "Energy levels of the lithium 2+ ion at minus 122.4, minus 30.6, minus 13.6 and minus 7.7 electronvolts, with the 2 to 1 transition at 13.5 nanometres.",
+ "description": [
+  "E₁ = -122.451 eV, E₂ = -30.613 eV, E₃ = -13.606 eV, E₄ = -7.653 eV.",
+  "ΔE(2 → 1) = 91.84 eV.",
+  "λ = 1239.84 / 91.84 = 13.5 nm."
+ ],
+ "levels": [
+  {
+   "n": 1,
+   "E": -122.451
+  },
+  {
+   "n": 2,
+   "E": -30.613
+  },
+  {
+   "n": 3,
+   "E": -13.606
+  },
+  {
+   "n": 4,
+   "E": -7.653
+  }
+ ],
+ "scale": "sqrt",
+ "transitions": [
+  {
+   "from": 2,
+   "to": 1,
+   "lambda": 13.5,
+   "E": 91.84,
+   "kind": "emission",
+   "region": "ultraviolet"
+  }
+ ]
+}

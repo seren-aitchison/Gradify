@@ -1,0 +1,114 @@
+{
+ "id": "phys-u18-plasma-dispersion",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Electromagnetic wave equation",
+ "title": "Waves in the ionosphere plasma",
+ "caption": "In a plasma ω² = ω_p² + c²k², so for a wave of frequency f the wavenumber is real only above the plasma frequency. For the ionosphere (n = 10¹² m⁻³) f_p ≈ 9√n Hz = 9 MHz: the curve starts at 9 MHz and climbs towards the vacuum line f = ck/2π. Shortwave below 9 MHz has no propagating solution and reflects; FM at 100 MHz is far above the curve's start and passes through.",
+ "alt": "Graph of frequency in megahertz against ck/2π in megahertz: a hyperbola starting at 9 MHz when k is zero and approaching the straight line f = ck/2π, which is the vacuum relation.",
+ "description": [
+  "The horizontal axis is ck/2π in megahertz (the frequency a wave of that wavenumber would have in vacuum); the vertical axis is the frequency f in megahertz.",
+  "The plasma curve is f = √(f_p² + (ck/2π)²) with f_p = 9 MHz, from the lesson's ionosphere example.",
+  "At k = 0 it starts at f_p = 9 MHz: no wave of lower frequency propagates, so shortwave radio below this reflects. At ck/2π = 12 MHz, f = 15 MHz.",
+  "Far above f_p the curve approaches the dashed vacuum line f = ck/2π, so VHF and FM waves pass through."
+ ],
+ "range": {
+  "x": [
+   0,
+   30
+  ],
+  "y": [
+   0,
+   32
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25,
+   30
+  ]
+ ],
+ "grid": [
+  5,
+  5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ck/2π / MHz",
+  "f / MHz"
+ ],
+ "curves": [
+  {
+   "expr": "x",
+   "domain": [
+    0,
+    30
+   ],
+   "colour": "a4",
+   "dash": "6 5",
+   "width": 2.4,
+   "label": "vacuum: f = ck/2π",
+   "labelAt": [
+    20.5,
+    16
+   ]
+  },
+  {
+   "expr": "sqrt(81+x^2)",
+   "domain": [
+    0,
+    30
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "plasma",
+   "labelAt": [
+    3,
+    22.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 9,
+   "colour": "a2",
+   "label": "cut-off f_p = 9 MHz",
+   "dx": 12,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(81+x^2)",
+   "x": 0,
+   "y": 9,
+   "name": "the curve starts at the plasma frequency, 9 MHz, at k = 0"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(81+x^2)",
+   "x": 12,
+   "y": 15,
+   "name": "ω² = ω_p² + c²k²: 15 MHz at ck/2π = 12 MHz"
+  }
+ ]
+}

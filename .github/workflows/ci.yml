@@ -46,13 +46,21 @@ jobs:
       - name: The public site builds from the allowlist and passes its checks
         run: node scripts/build-site.mjs --check
 
+      - name: Search pages are up to date
+        # tools, guides, glossary, topics, study plans, llms.txt, canonical and link-preview tags (scripts/build-seo.mjs)
+        run: |
+          node scripts/build-seo.mjs --check || {
+            echo "::error::Search pages are out of date. Run node scripts/build-seo.mjs, then node scripts/build-sitemap.mjs, then commit."
+            exit 1
+          }
+
       - name: Generated files are up to date
         run: |
           node scripts/build-sitemap.mjs
           npm run sync
           node scripts/ix-manifest.mjs
           node scripts/build-api.mjs
-          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js kit/api/ || {
+          git diff --exit-code -- sitemap.xml sitemaps/ supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js kit/api/ || {
             echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs, npm run sync, node scripts/ix-manifest.mjs and node scripts/build-api.mjs, then commit."
             exit 1
           }
@@ -94,6 +102,9 @@ jobs:
           for i in $(seq 1 30); do curl -fsS -o /dev/null http://127.0.0.1:8080/ && exit 0; sleep 1; done
           echo "::error::The site didn't start on port 8080"; exit 1
 
+      - name: Page speed guard (LCP and layout shift, throttled phone, gzipped like GitHub Pages)
+        run: node scripts/perf-check.cjs
+
       - name: Signed-in journey (stand-in Supabase)
         run: node scripts/check-sync.cjs
         env:
@@ -105,13 +116,13 @@ jobs:
     needs: [test, signed-in]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       pages: write
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     concurrency:
       group: pages
       cancel-in-progress: false
@@ -131,11 +142,50 @@ jobs:
       - name: Assemble the site from the allowlist
         run: node scripts/build-site.mjs "$RUNNER_TEMP/site"
 
+      # which commit this build is, so the step after the deploy can check the live site really serves it
+      - name: Stamp the build
+        run: echo "${{ github.sha }}" > "$RUNNER_TEMP/site/build.txt"
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ runner.temp }}/site
 
+      # GitHub Pages sometimes fails to find the bundle it was just given ("Found 0 artifacts"). Re-running the whole
+      # run then fails for good (two bundles), so the retry happens here, in the same job, with the same bundle.
       - id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before retrying the deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+
+      # the deploy step reporting success isn't proof: check getgradify.com serves this build (or a newer one, if
+      # another deploy landed first). Fails the run loudly instead of leaving the site on an older version unnoticed.
+      - name: Check the live site serves this build
+        run: |
+          for i in $(seq 1 20); do
+            live=$(curl -fsS "https://getgradify.com/build.txt?nocache=$RANDOM$i" 2>/dev/null | tr -d '[:space:]')
+            if [ "$live" = "${{ github.sha }}" ]; then echo "Live: ${live}"; exit 0; fi
+            if [ -n "$live" ] && git fetch -q --depth=100 origin main && git merge-base --is-ancestor "${{ github.sha }}" "$live" 2>/dev/null; then echo "Live is a newer build (${live}); fine."; exit 0; fi
+            sleep 30
+          done
+          echo "::error::getgradify.com still serves ${live:-nothing} 10 minutes after deploying ${{ github.sha }}. Start a fresh run: Actions → Test and deploy → Run workflow (don't re-run this run)."
+          exit 1
+
+      # tell Bing (and the AI search engines that use its index) which pages this deploy changed, via IndexNow
+      # (scripts/indexnow.mjs). Best effort: a failure here never fails the deploy.
+      - name: Ping IndexNow with the changed pages
+        continue-on-error: true
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.event.before }}" 2>/dev/null && node scripts/indexnow.mjs --since "${{ github.event.before }}" || echo "No previous deploy to compare with; skipping IndexNow."
+      # tell feed readers and Google (WebSub) that the RSS feed changed. Best effort, like IndexNow.
+      - name: Ping WebSub with the RSS feed
+        continue-on-error: true
+        run: curl -fsS -X POST -d "hub.mode=publish" --data-urlencode "hub.url=https://getgradify.com/feed.xml" https://pubsubhubbub.appspot.com/ || echo "WebSub ping failed; not fatal."

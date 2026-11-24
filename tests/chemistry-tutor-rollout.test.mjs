@@ -1,5 +1,5 @@
 // The Organic Chemistry Lab's tutor while the backend catches up with the site. Merging the lab deploys the site at
-// once; the "chemistry" tutor mode needs migration 20261122120000_chemistry_tutor_mode.sql and the redeployed
+// once; the "chemistry" tutor mode needs migration 20261124160000_chemistry_tutor_mode.sql and the redeployed
 // course-tutor function (supabase/functions/_shared/tutor.js and ai.js). Each stage of a delayed or out-of-order
 // release must fail safely: no Claude call, no use counted, a plain message for the learner, and nothing in the lab
 // marked as done with help. No Claude call is ever made here: `call` is a fake that counts.
@@ -12,7 +12,7 @@ import { callFunction } from "../kit/data/functions.js";
 import { failureText } from "../kit/labs/chemistry/reactions/tutor-ui.js";
 import { tempDb } from "../scripts/pg-rehearsal.mjs";
 
-const CHEM_MIGRATION = "20261122120000_chemistry_tutor_mode.sql";
+const CHEM_MIGRATION = "20261124160000_chemistry_tutor_mode.sql";
 const U = "00000000-0000-4000-8000-00000000000c";
 const request = { subject: "chemistry", mode: "chemistry", intent: "explain", context: { kind: "prediction", id: "r1", outcome: "reaction", rule: { confidence: "provisional" } }, learner: {}, turns: [], conversationId: "c-1" };
 const reply = { model: "claude-opus-5-5", stop_reason: "end_turn", content: [{ type: "text", text: '{"reply":"Because…"}' }], usage: { input_tokens: 900, output_tokens: 70 } };

@@ -1,0 +1,64 @@
+{
+ "id": "maths-u04-units-zero-divisors",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Ring Theory",
+ "title": "Units and zero divisors of ℤ₁₂",
+ "caption": "Of the 12 residues, 0 is the zero, 4 are units (1, 5, 7, 11, those coprime to 12) and the other 7 (2, 3, 4, 6, 8, 9, 10) are zero divisors, for example 3 × 4 = 0. Every non-zero element is one or the other.",
+ "alt": "One bar of 12 equal units split into three parts: 1 for the zero, 4 for the units 1, 5, 7 and 11, and 7 for the zero divisors 2, 3, 4, 6, 8, 9 and 10.",
+ "description": [
+  "There are 12 residues, 0 to 11.",
+  "The zero element 0 is one part.",
+  "The units, coprime to 12, are 1, 5, 7 and 11: four of them.",
+  "The remaining seven, 2, 3, 4, 6, 8, 9 and 10, share a factor with 12, so each is a zero divisor."
+ ],
+ "bars": [
+  {
+   "label": "ℤ₁₂",
+   "parts": [
+    {
+     "value": 1,
+     "text": "0",
+     "colour": "soft"
+    },
+    {
+     "value": 4,
+     "text": "4 units",
+     "colour": "a1"
+    },
+    {
+     "value": 7,
+     "text": "7 zero divisors",
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 2,
+   "value": 12,
+   "text": "12 residues"
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    1,
+    4,
+    7
+   ],
+   "total": 12,
+   "name": "1 zero + 4 units + 7 zero divisors = 12 residues"
+  }
+ ],
+ "fromLesson": [
+  "1, 5, 7, 11",
+  "2, 3, 4, 6, 8, 9, 10"
+ ]
+}

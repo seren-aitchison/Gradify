@@ -1,0 +1,87 @@
+{
+ "id": "phys-u51-skydiver",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u51",
+ "lesson": "Translating physical situations into mathematical models",
+ "title": "A skydiver approaches terminal velocity",
+ "caption": "Setting weight equal to drag, mg = ½ρC_dAv², gives v_t = √(2mg/ρC_dA) = √1869 ≈ 43 m s⁻¹. The speed starts with slope g and flattens towards v_t; after about 10 s it is within 2% of it.",
+ "alt": "Speed against time for a skydiver, rising from zero with slope g and levelling off at a dashed line at 43 metres per second.",
+ "description": [
+  "v_t = √(2 × 80 × 9.81 / (1.2 × 1 × 0.7)) = 43.2 m s⁻¹.",
+  "With drag, v(t) = v_t tanh(gt/v_t); at t = 10 s v = 42.3 m s⁻¹.",
+  "At first drag is negligible and v ≈ gt."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   50
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "speed / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "43.227*(exp(0.4538829897980429*x)-1)/(exp(0.4538829897980429*x)+1)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 43.2,
+   "label": "terminal 43"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "43.227*(exp(0.4538829897980429*x)-1)/(exp(0.4538829897980429*x)+1)",
+   "x": 20,
+   "between": [
+    42.36,
+    43.23
+   ],
+   "name": "approaches but stays below v_t"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(2*80*9.81/(1.2*1*0.7))+0*x",
+   "x": 0,
+   "y": 43.226976,
+   "name": "v_t = 43.2 m s⁻¹"
+  },
+  {
+   "type": "slope",
+   "expr": "43.227*(exp(0.4538829897980429*x)-1)/(exp(0.4538829897980429*x)+1)",
+   "x": 0,
+   "value": 9.81,
+   "name": "initial slope g"
+  }
+ ]
+}

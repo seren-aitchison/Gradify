@@ -1,0 +1,112 @@
+{
+ "id": "maths-u18-queue-blowup",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u18",
+ "lesson": "Queueing Theory",
+ "title": "Queue length L = ρ/(1 − ρ)",
+ "caption": "With λ = 8 and μ = 10 the utilisation is ρ = 0.8 and the mean number in the system is L = 0.8/0.2 = 4. The curve climbs steeply as ρ nears 1, so a busy server brings long queues.",
+ "alt": "The curve L = ρ/(1 − ρ) for ρ from 0 to 0.95, passing through (0.8, 4) and rising steeply near 1.",
+ "description": [
+  "Utilisation ρ = λ/μ = 8/10 = 0.8.",
+  "L = ρ/(1 − ρ) = 0.8/0.2 = 4 customers.",
+  "Little's law: W = L/λ = 0.5 hours, matching 1/(μ − λ).",
+  "Small rises in ρ near 1 make L grow very fast."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  0.2,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "utilisation ρ",
+  "mean number L"
+ ],
+ "curves": [
+  {
+   "expr": "x/(1-x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    0.95
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.8,
+   "y": 4,
+   "label": "ρ = 0.8: L = 4",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -16,
+   "anchor": "end"
+  },
+  {
+   "x": 0.95,
+   "y": 19,
+   "label": "ρ = 0.95: L = 19",
+   "colour": "a4",
+   "dx": -8,
+   "dy": 16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/(1-x)",
+   "x": 0.8,
+   "y": 4,
+   "name": "ρ = 8/10 = 0.8 gives L = 0.8/0.2 = 4"
+  },
+  {
+   "type": "point",
+   "expr": "x/(1-x)",
+   "x": 0.95,
+   "y": 19,
+   "name": "ρ = 0.95 gives L = 19"
+  },
+  {
+   "type": "value",
+   "expr": "8*(1/(10-8))",
+   "x": 0,
+   "between": [
+    3.999,
+    4.001
+   ],
+   "name": "Little's law: λW = 8 × 0.5 = 4"
+  }
+ ],
+ "fromLesson": [
+  "L = 0.8/0.2 = 4"
+ ]
+}

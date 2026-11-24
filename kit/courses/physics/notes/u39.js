@@ -51,6 +51,7 @@ P: Grid-based rules need N^{d} points in d dimensions, the curse of dimensionali
 X: Estimate ∫_{0}^{1} x^{2} dx with the trapezium rule, h = 0.5.
 > Points: 0, 0.25, 1
 > 0.5 × [0/2 + 0.25 + 1/2] = 0.375 (exact 1/3)
+D: phys-u39-trapezium
 X: The same with Simpson's rule.
 > (0.5/3)(0 + 4 × 0.25 + 1) = (1/6)(2) = 0.3333, exact for polynomials up to cubic
 K: Higher-order rules converge faster for smooth functions; Monte Carlo wins in high dimensions.
@@ -104,6 +105,7 @@ X: Find √2 by Newton on f = x^{2} − 2, x_{0} = 1.
 > x_{1} = 1 − (−1)/2 = 1.5
 > x_{2} = 1.5 − 0.25/3 = 1.41667
 > x_{3} = 1.41667 − 0.00694/2.8333 ≈ 1.414216: digits roughly double each step
+D: phys-u39-newton-step
 X: How many bisection steps to bracket a root in [0, 1] to 10^{-6}?
 > log_{2}(10^{6}) ≈ 20 steps
 K: Bracketing methods are safe, Newton is fast; robust solvers use both.
@@ -130,6 +132,7 @@ P: For Hamiltonian problems like planetary orbits, ordinary methods slowly gain 
 X: Euler for y' = −y, y(0) = 1, h = 0.1. Find y(0.2).
 > y_{1} = 1 − 0.1 = 0.9
 > y_{2} = 0.9 − 0.09 = 0.81 (exact e^{−0.2} = 0.8187)
+D: phys-u39-euler
 X: For y' = −100y, what step size keeps explicit Euler stable?
 > Need |1 − 100h| < 1 ⇒ h < 0.02
 K: Choose RK45 for smooth problems, implicit methods for stiff ones, and symplectic integrators for long Hamiltonian runs.
@@ -448,6 +451,7 @@ P: Constraints use Lagrange multipliers, penalty methods or interior-point algor
 X: Minimise f(x) = (x − 3)^{2} with gradient descent, η = 0.25, from x = 0.
 > ∇f = 2(x − 3); x_{1} = 0 − 0.25 × (−6) = 1.5
 > x_{2} = 1.5 − 0.25 × (−3) = 2.25; converging to 3
+D: phys-u39-gradient-descent
 X: A fit gives χ^{2} = 48 with 50 data points and 2 parameters. Is it reasonable?
 > Reduced χ^{2} = 48/48 = 1.0: consistent with the stated errors
 K: Pick local optimisers for smooth single-minimum problems and global methods for rugged landscapes; always estimate uncertainties.
@@ -531,6 +535,7 @@ P: Grids are split into subdomains, each owned by a process, exchanging "ghost" 
 X: A code is 95% parallel. Maximum speed-up on 100 cores? On infinitely many?
 > S = 1/(0.05 + 0.95/100) = 1/0.0595 ≈ 16.8
 > As N → ∞, S → 1/0.05 = 20
+D: phys-u39-amdahl
 K: Serial fractions and communication limit parallel speed-up; design codes to keep most work local.
 !: Floating-point addition isn't associative, so parallel sums can give slightly different results run to run.
 Q: What does Amdahl's law say? | The serial fraction of a program limits its maximum parallel speed-up.

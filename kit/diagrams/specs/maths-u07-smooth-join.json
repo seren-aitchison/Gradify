@@ -1,0 +1,115 @@
+{
+ "id": "maths-u07-smooth-join",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Differentiability",
+ "title": "Joining x² to a straight line smoothly",
+ "caption": "For f to be differentiable at x = 1 the two pieces must meet (1 = a + b) and have the same slope (2x = 2 gives a = 2). So b = −1 and the line 2x − 1 touches the parabola at (1, 1) without a corner.",
+ "alt": "The parabola y = x² on the left and the line y = 2x − 1 on the right, meeting at (1, 1) with the same gradient 2.",
+ "description": [
+  "For x ≤ 1, f(x) = x²; for x > 1, f(x) = ax + b.",
+  "Continuity at 1 needs a + b = 1.",
+  "Equal slopes at 1 need a = 2x = 2.",
+  "So b = −1 and the pieces join smoothly at (1, 1)."
+ ],
+ "range": {
+  "x": [
+   -1,
+   3
+  ],
+  "y": [
+   -1,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  2,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1",
+   "domain": [
+    -1,
+    1
+   ]
+  },
+  {
+   "expr": "2*x-1",
+   "colour": "a2",
+   "domain": [
+    1,
+    3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1,
+   "label": "(1, 1)",
+   "colour": "a4",
+   "dx": -10,
+   "dy": 20,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1,
+   "y": 1,
+   "name": "the parabola gives 1 at x = 1"
+  },
+  {
+   "type": "point",
+   "expr": "2*x-1",
+   "x": 1,
+   "y": 1,
+   "name": "the line 2x − 1 gives 1 at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2",
+   "x": 1,
+   "value": 2,
+   "name": "the parabola has gradient 2 at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "2*x-1",
+   "x": 1,
+   "value": 2,
+   "name": "the line has gradient a = 2"
+  }
+ ],
+ "fromLesson": [
+  "b = −1"
+ ]
+}

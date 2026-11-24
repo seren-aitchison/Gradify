@@ -1,0 +1,96 @@
+{
+ "id": "phys-u52-limits",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u52",
+ "lesson": "Evaluating limiting cases",
+ "title": "Limiting cases of a = g sin θ",
+ "caption": "At θ = 0 the plane is flat and a = 0; at θ = 90° it is a free fall and a = g = 9.8 m s⁻²; in between a = g sin θ rises smoothly (4.9 m s⁻² at 30°). A formula that gave anything else at the ends would be wrong.",
+ "alt": "Acceleration against incline angle from 0 to 90 degrees, rising from 0 to 9.8 metres per second squared.",
+ "description": [
+  "θ = 0: a = g sin 0 = 0, no slope and no acceleration.",
+  "θ = 30°: a = 4.9 m s⁻².",
+  "θ = 90°: a = g = 9.8 m s⁻², free fall."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "a / m s⁻²"
+ ],
+ "curves": [
+  {
+   "expr": "9.8*sin(x*0.0174532925)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 9.8,
+   "label": "g"
+  }
+ ],
+ "points": [
+  {
+   "x": 30,
+   "y": 4.9,
+   "colour": "a2",
+   "label": "4.9 at 30°",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "9.8*sin(x*0.0174532925)",
+   "x": 0,
+   "y": 0,
+   "name": "a = 0 on the flat"
+  },
+  {
+   "type": "point",
+   "expr": "9.8*sin(x*0.0174532925)",
+   "x": 30,
+   "y": 4.9,
+   "name": "a = 4.9 at 30°"
+  },
+  {
+   "type": "point",
+   "expr": "9.8*sin(x*0.0174532925)",
+   "x": 90,
+   "y": 9.8,
+   "name": "a = g at 90°"
+  }
+ ]
+}

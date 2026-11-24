@@ -1,0 +1,86 @@
+{
+ "id": "phys-u18-lens-transmission",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Reflection and transmission",
+ "title": "Light left after many uncoated surfaces",
+ "caption": "Each uncoated air–glass surface transmits 96%, so N surfaces transmit 0.96^N. For the lens with 10 surfaces that is 0.96¹⁰ = 0.66: about 34% of the light is lost, much of it as stray reflections that cause flare, which is why lenses are coated.",
+ "alt": "Graph of transmitted fraction against the number of air–glass surfaces from 0 to 12: a decaying curve passing 0.66 at 10 surfaces.",
+ "description": [
+  "The horizontal axis is the number of uncoated air–glass surfaces N; the vertical axis is the fraction of light transmitted.",
+  "Each surface transmits 96%, so the fraction is 0.96^N, drawn as a smooth curve.",
+  "At N = 10 it is 0.96¹⁰ = 0.66, so 34% is lost."
+ ],
+ "range": {
+  "x": [
+   0,
+   12
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  2,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "surfaces N",
+  "fraction transmitted"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.040821994520255166*x)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "0.96^N",
+   "labelAt": [
+    2.5,
+    0.62
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.6648,
+   "colour": "a2",
+   "label": "0.66 at N = 10",
+   "dx": -8,
+   "dy": -16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.040821994520255166*x)",
+   "x": 10,
+   "y": 0.6648,
+   "name": "ten surfaces transmit 0.96^10 = 0.66"
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "id": "maths-u06-harmonic-roots",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Harmonic Functions",
+ "title": "3 sin x + 4 cos x = 2",
+ "caption": "3 sin x + 4 cos x = 5 sin(x + 53.13°) is a wave of amplitude 5. The line y = 2 meets it twice in a turn, at x ≈ 103.3° and x ≈ 330.4°.",
+ "alt": "The graph of 3 sin x + 4 cos x from 0° to 360°, peaking at 5 and bottoming at −5, with the line y = 2 crossing it at about 103.3° and 330.4°.",
+ "description": [
+  "3 sin x + 4 cos x combines into 5 sin(x + 53.13°): amplitude 5.",
+  "Solving sin(x + 53.13°) = 0.4 gives the two crossings with y = 2.",
+  "They are at x ≈ 103.3° and x ≈ 330.4°."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -6,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -5,
+   -2,
+   2,
+   5
+  ]
+ ],
+ "grid": [
+  90,
+  3
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "3*sin(0.017453292519943295*x)+4*cos(0.017453292519943295*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "y = 2"
+  }
+ ],
+ "points": [
+  {
+   "x": 103.29171916764219,
+   "y": 2,
+   "label": "103.3°",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -12
+  },
+  {
+   "x": 330.4480761240459,
+   "y": 2,
+   "label": "330.4°",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3*sin(0.017453292519943295*x)+4*cos(0.017453292519943295*x)",
+   "x": 103.29171916764219,
+   "y": 2,
+   "name": "3 sin 103.3° + 4 cos 103.3° = 2"
+  },
+  {
+   "type": "point",
+   "expr": "3*sin(0.017453292519943295*x)+4*cos(0.017453292519943295*x)",
+   "x": 330.4480761240459,
+   "y": 2,
+   "name": "3 sin 330.4° + 4 cos 330.4° = 2"
+  },
+  {
+   "type": "max",
+   "expr": "3*sin(0.017453292519943295*x)+4*cos(0.017453292519943295*x)",
+   "domain": [
+    0,
+    360
+   ],
+   "x": 36.86989764584402,
+   "y": 5,
+   "tol": 0.01,
+   "name": "the amplitude is 5, at x = 36.9°"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ 103.3° or x ≈ 330.4°"
+ ]
+}

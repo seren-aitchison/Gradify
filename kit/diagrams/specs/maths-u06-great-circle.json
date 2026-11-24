@@ -1,0 +1,122 @@
+{
+ "id": "maths-u06-great-circle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Spherical Trigonometry",
+ "title": "Two points on the equator, 90° apart",
+ "caption": "Seen from above the pole, the equator is a circle of radius R = 6,371 km. Points at longitudes 0° and 90° make a central angle of 90° = π/2, so the great-circle distance is R × π/2 ≈ 10,008 km.",
+ "alt": "The equator as a circle with two points on it, at longitude 0° and longitude 90°, joined to the centre with a right angle between the radii.",
+ "description": [
+  "Look down on the equator: a circle of radius R = 6,371 km.",
+  "The points at 0° and 90° longitude are a quarter of the way round.",
+  "The central angle is 90° = π/2 radians, so the arc length is 6,371 × π/2 ≈ 10,008 km."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   1,
+   0
+  ],
+  "B": [
+   0,
+   1
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1
+  }
+ ],
+ "segments": [
+  [
+   "O",
+   "A"
+  ],
+  [
+   "O",
+   "B"
+  ]
+ ],
+ "hide": [
+  "O"
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "A",
+   "to": "B",
+   "right": true,
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "A": [
+   20,
+   6
+  ],
+  "B": [
+   0,
+   -16
+  ]
+ },
+ "notes": [
+  {
+   "at": [
+    -0.4,
+    -0.5
+   ],
+   "text": "R = 6,371 km",
+   "colour": "soft",
+   "size": 13
+  },
+  {
+   "at": [
+    0.55,
+    0.62
+   ],
+   "text": "90° = π/2",
+   "colour": "a2",
+   "size": 13
+  }
+ ],
+ "lengths": [],
+ "view": {
+  "x": [
+   -1.5,
+   1.7
+  ],
+  "y": [
+   -1.3,
+   1.3
+  ]
+ },
+ "height": [
+  320,
+  300
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "A",
+    "B"
+   ],
+   "name": "both points lie on the equator"
+  },
+  {
+   "type": "value",
+   "expr": "6371*pi/2",
+   "value": 10007.543398010286,
+   "tol": 0.000001,
+   "name": "6,371 × π/2 ≈ 10,008 km"
+  }
+ ],
+ "fromLesson": [
+  "Distance = 6,371 × π/2 ≈ 10,008 km"
+ ]
+}

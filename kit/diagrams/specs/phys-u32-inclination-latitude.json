@@ -1,0 +1,95 @@
+{
+ "id": "phys-u32-inclination-latitude",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u32",
+ "lesson": "Paleomagnetism",
+ "title": "Magnetic inclination records latitude",
+ "caption": "In a dipole field the dip of the field lines depends on latitude: tan I = 2 tan λ. A lava that froze in a 30° inclination formed at λ = tan⁻¹(tan 30°/2) ≈ 16°, so the rock has moved if it now lies elsewhere.",
+ "alt": "Magnetic inclination against latitude, rising from zero at the equator to 90 degrees at the pole, with 30 degrees of inclination at 16 degrees of latitude marked.",
+ "description": [
+  "tan I = 2 tan λ: horizontal field at the equator (I = 0), vertical at the poles (I = 90°).",
+  "I = 30°: tan λ = tan 30° / 2 = 0.289, so λ = 16.1°.",
+  "Rocks of different ages from one continent give different latitudes: evidence of drift."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   95
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   30,
+   60,
+   90
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "latitude / °",
+  "inclination / °"
+ ],
+ "curves": [
+  {
+   "expr": "asin(2*tan(x*3.14159265/180)/sqrt(1+4*tan(x*3.14159265/180)^2))*180/3.14159265",
+   "domain": [
+    0,
+    89.9
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 16.102113751986014,
+   "to": 30
+  },
+  {
+   "y": 30,
+   "to": 16.102113751986014
+  }
+ ],
+ "points": [
+  {
+   "x": 16.1021,
+   "y": 30,
+   "colour": "a2",
+   "label": "30° at 16° latitude",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "asin(2*tan(x*3.14159265/180)/sqrt(1+4*tan(x*3.14159265/180)^2))*180/3.14159265",
+   "x": 16.10211375,
+   "y": 30,
+   "name": "I = 30° at λ = 16.1°"
+  },
+  {
+   "type": "point",
+   "expr": "asin(2*tan(x*3.14159265/180)/sqrt(1+4*tan(x*3.14159265/180)^2))*180/3.14159265",
+   "x": 45,
+   "y": 63.434949,
+   "name": "tan I = 2 at 45° latitude"
+  }
+ ]
+}

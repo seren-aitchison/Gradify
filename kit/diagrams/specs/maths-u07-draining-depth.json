@@ -1,0 +1,101 @@
+{
+ "id": "maths-u07-draining-depth",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Rates of Change",
+ "title": "How fast the depth falls at t = 6",
+ "caption": "h = (10 − 0.5t)² has gradient dh/dt = −(10 − 0.5t). At t = 6, h = 49 cm and the gradient is −7: the tangent drawn falls 7 cm for every minute.",
+ "alt": "A falling parabola of depth against time from 100 cm at t = 0 to 0 at t = 20, with its tangent at (6, 49) of gradient −7.",
+ "description": [
+  "h = (10 − 0.5t)²: depth in cm after t minutes.",
+  "dh/dt = 2(10 − 0.5t)(−0.5) = −(10 − 0.5t).",
+  "At t = 6: dh/dt = −7.",
+  "The depth is falling at 7 cm per minute."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "grid": [
+  5,
+  25
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (min)",
+  "h (cm)"
+ ],
+ "curves": [
+  {
+   "expr": "(10-0.5*x)^2",
+   "colour": "a1"
+  },
+  {
+   "expr": "49-7*(x-6)",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    0,
+    14
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 6,
+   "y": 49,
+   "label": "(6, 49)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(10-0.5*x)^2",
+   "x": 6,
+   "y": 49,
+   "name": "h(6) = 7² = 49"
+  },
+  {
+   "type": "slope",
+   "expr": "(10-0.5*x)^2",
+   "x": 6,
+   "value": -7,
+   "name": "dh/dt = −7 at t = 6"
+  },
+  {
+   "type": "slope",
+   "expr": "49-7*(x-6)",
+   "x": 6,
+   "value": -7,
+   "name": "the tangent has gradient −7"
+  }
+ ],
+ "fromLesson": []
+}

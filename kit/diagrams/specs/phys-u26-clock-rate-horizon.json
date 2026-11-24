@@ -1,0 +1,95 @@
+{
+ "id": "phys-u26-clock-rate-horizon",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u26",
+ "lesson": "Black holes and event horizons",
+ "title": "Clocks slow down near the horizon",
+ "caption": "A clock held at rest at radius r ticks at √(1 − r_s/r) of the rate of a distant clock. At 4r_s it runs at 0.866; at 1.1r_s at 0.3; at the horizon the factor reaches zero: seen from far away, nothing ever crosses it.",
+ "alt": "Clock rate relative to a distant clock against distance from the black hole in Schwarzschild radii: zero at the horizon, rising steeply and levelling towards 1.",
+ "description": [
+  "Distance in units of the Schwarzschild radius r_s.",
+  "Rate = √(1 − r_s/r) for a clock at rest.",
+  "r = 4r_s: 0.866. r = 1.1r_s: 0.302. r = r_s: 0.",
+  "Far away the rate tends to 1."
+ ],
+ "range": {
+  "x": [
+   1,
+   10
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / r_{s}",
+  "clock rate / distant rate"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(1-1/x)",
+   "domain": [
+    1,
+    10
+   ],
+   "colour": "a1",
+   "samples": 800
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 0.86603,
+   "colour": "a2",
+   "label": "0.866 at 4r_{s}",
+   "dx": 8,
+   "dy": 16
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "colour": "ink",
+   "label": "horizon",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(1-1/x)",
+   "x": 4,
+   "y": 0.8660254,
+   "name": "√(3/4) at 4r_s"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(1-1/x)",
+   "x": 1,
+   "y": 0,
+   "name": "zero at the horizon"
+  }
+ ]
+}

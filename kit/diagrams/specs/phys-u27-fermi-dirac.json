@@ -1,0 +1,77 @@
+{
+ "id": "phys-u27-fermi-dirac",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u27",
+ "lesson": "Fermi energy and Fermi surfaces",
+ "title": "The Fermi–Dirac distribution",
+ "caption": "At absolute zero every state below the Fermi energy is full and every state above is empty. At temperature T the edge softens over a few k_BT: the occupation is ½ exactly at E_F. For copper (E_F = 7.0 eV) the blur at room temperature, about 0.1 eV, is tiny compared with E_F.",
+ "alt": "Occupation probability against energy relative to the Fermi energy in units of kT: a smooth step from 1 to 0, passing one half at zero.",
+ "description": [
+  "f(E) = 1 / (e^((E − E_F)/k_BT) + 1).",
+  "Horizontal axis: (E − E_F) in units of k_BT.",
+  "f = 0.5 at E_F; f = 0.047 at 3k_BT above; 0.953 at 3k_BT below.",
+  "At T = 0 the curve becomes a sharp step."
+ ],
+ "range": {
+  "x": [
+   -6,
+   6
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   -6,
+   -3,
+   0,
+   3,
+   6
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "(E − E_{F}) / k_{B}T",
+  "occupation f(E)"
+ ],
+ "curves": [
+  {
+   "expr": "1/(exp(x)+1)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.5
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(exp(x)+1)",
+   "x": 0,
+   "y": 0.5,
+   "name": "half occupied at the Fermi energy"
+  },
+  {
+   "type": "point",
+   "expr": "1/(exp(x)+1)+1/(exp(-x)+1)",
+   "x": 2,
+   "y": 1,
+   "name": "a hole below E_F mirrors an electron above it"
+  }
+ ]
+}

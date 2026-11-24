@@ -1,0 +1,104 @@
+{
+ "id": "maths-u07-inflection-xex",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Points of Inflection",
+ "title": "The inflection of xeˣ",
+ "caption": "y″ = eˣ(x + 2) changes sign at x = −2, so (−2, −2e⁻² ≈ −0.271) is a point of inflection: the curve changes from bending down to bending up. The gradient eˣ(x + 1) is at its lowest there.",
+ "alt": "The curve y = xeˣ dipping to a minimum near x = −1 and rising, with the inflection marked at (−2, −0.271) on its left-hand arm.",
+ "description": [
+  "y′ = eˣ(x + 1) and y″ = eˣ(x + 2).",
+  "y″ = 0 at x = −2.",
+  "eˣ > 0 and x + 2 changes sign there, so y″ changes sign.",
+  "The inflection is at (−2, −2e⁻²) ≈ (−2, −0.271)."
+ ],
+ "range": {
+  "x": [
+   -5,
+   2
+  ],
+  "y": [
+   -0.8,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -5,
+   -4,
+   -3,
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*exp(x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "exp(x)*(x+1)",
+   "colour": "a4",
+   "dash": "6 4",
+   "label": "y′",
+   "labelAt": [
+    0.2,
+    1.3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": -2,
+   "y": -0.2706705664732254,
+   "label": "inflection (−2, −0.271)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -16,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x*exp(x)",
+   "x": -2,
+   "y": -0.2706705664732254,
+   "name": "y = −2e⁻² at x = −2"
+  },
+  {
+   "type": "min",
+   "expr": "exp(x)*(x+1)",
+   "domain": [
+    -5,
+    2
+   ],
+   "x": -2,
+   "y": -0.1353352832366127,
+   "name": "the gradient y′ is smallest at x = −2, where y″ = 0"
+  }
+ ],
+ "fromLesson": [
+  "y″ = e^{x}(x + 2)"
+ ]
+}

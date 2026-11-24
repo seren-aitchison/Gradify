@@ -57,6 +57,7 @@ X: In ℝ, find the interior, closure and boundary of [0, 1).
 > Interior: (0, 1) (no open interval around 0 stays inside)
 > Closure: [0, 1] (1 is a limit point)
 > Boundary: {0, 1}
+D: maths-u17-interior-closure
 K: Interior, closure and boundary describe how a set sits in a space; subspace, product and quotient topologies build new spaces; Hausdorff spaces separate points.
 !: Thinking every set is either open or closed (many are neither, like [0, 1)).
 Q: What is the closure of ℚ in ℝ? | ℝ.
@@ -126,6 +127,7 @@ X: Find the distance between (0, 0) and (3, 4) in the d₁, d₂ and d_{∞} met
 > d₁ = 3 + 4 = 7
 > d₂ = √(9 + 16) = 5
 > d_{∞} = max(3, 4) = 4
+D: maths-u17-three-metrics
 K: Metrics satisfy positivity, symmetry and the triangle inequality; open balls define topologies; completeness means Cauchy sequences converge.
 !: Forgetting to check the triangle inequality when proposing a metric.
 Q: Is ℚ complete with the usual metric? | No.
@@ -160,6 +162,7 @@ X: Show f(x) = x^{2} is continuous by checking the preimage of (1, 4).
 > f^{−1}((1, 4)) = {x : 1 < x^{2} < 4}
 > = (−2, −1) ∪ (1, 2)
 > A union of open intervals is open ✓ (and the same works for every open set)
+D: maths-u17-preimage-square
 K: Continuous means open preimages; it matches ε–δ; continuity preserves compactness and connectedness but not openness of images.
 !: Testing continuity with images of open sets instead of preimages.
 Q: Is every map from a discrete space continuous? | Yes.
@@ -193,6 +196,7 @@ X: Give a homeomorphism from (0, 1) to ℝ.
 > f(x) = tan(π(x − ½)) maps (0, 1) to (−π/2, π/2) under π(x − ½), then tan maps that onto ℝ
 > It's a continuous bijection
 > Its inverse x = ½ + arctan(y)/π is continuous, so f is a homeomorphism
+D: maths-u17-tan-homeomorphism
 K: Homeomorphisms are continuous bijections with continuous inverses; invariants like cut points distinguish spaces; continuous bijections can fail to be homeomorphisms.
 !: Assuming every continuous bijection is a homeomorphism.
 Q: Is (0, 1) homeomorphic to ℝ? | Yes.
@@ -226,6 +230,7 @@ X: Show (0, 1) isn't compact.
 > The sets Uₙ = (1/n, 1) for n = 2, 3, … cover (0, 1)
 > Any finite subcollection has a largest n, so it covers only (1/N, 1)
 > Points between 0 and 1/N are missed, so there's no finite subcover
+D: maths-u17-no-finite-subcover
 K: Compact = every open cover has a finite subcover; in ℝⁿ, closed and bounded; compactness guarantees extreme values and convergent subsequences.
 !: Applying Heine–Borel outside ℝⁿ, where closed and bounded may not imply compact.
 Q: Is [0, 1] compact? | Yes.
@@ -260,6 +265,7 @@ X: How many components does ℝ minus the points 0, 1 and 2 have?
 > The remaining set is (−∞, 0) ∪ (0, 1) ∪ (1, 2) ∪ (2, ∞)
 > Each interval is connected, and they're separated
 > 4 components
+D: maths-u17-four-components
 - A set and its closure: the closure of a connected set is connected.
 K: Connected means no split into disjoint open pieces; intervals are ℝ's connected sets; path-connected implies connected; components count pieces.
 !: Assuming connected always means path-connected.
@@ -330,6 +336,7 @@ X: A loop wraps around a circle three times anticlockwise, then once clockwise. 
 > Anticlockwise winds count +1 each, clockwise −1
 > 3 − 1 = 2
 > The loop is homotopic to wrapping twice: class 2 in ℤ
+D: maths-u17-winding-sum
 K: π₁ records loops up to deformation; circle ℤ, sphere trivial, torus ℤ^{2}, figure of eight free on two letters; van Kampen computes it.
 !: Assuming π₁ is always abelian (the figure-of-eight group isn't).
 Q: What is π₁ of a disc? | Trivial.
@@ -365,6 +372,7 @@ X: Show the annulus 1 ≤ |z| ≤ 2 deformation-retracts onto the circle |z| = 1
 > Define H(z, t) = (1 − t)z + t × 1.5 z/|z|
 > At t = 0 it's the identity; at t = 1 every point is pushed radially to |z| = 1.5
 > Points on that circle stay fixed throughout, so it's a deformation retraction
+D: maths-u17-annulus-retraction
 K: Homotopies deform maps continuously; homotopy equivalences preserve invariants; contractible spaces are equivalent to a point; higher homotopy groups detect higher holes.
 !: Thinking homotopy equivalent spaces must be homeomorphic (a disc and a point aren't).
 Q: Is a disc contractible? | Yes.
@@ -434,6 +442,7 @@ X: Show dθ isn't exact on the punctured plane by integrating around the unit ci
 > On the circle, x = cos t and y = sin t, so −y dx + x dy = (sin^{2} t + cos^{2} t) dt = dt
 > ∮ dθ = ∫₀^{2π} dt = 2π
 > If dθ were df, the loop integral would be 0; so it isn't exact, revealing the hole
+D: maths-u17-dtheta-circle
 K: Cohomology is dual to homology with a cup product; de Rham cohomology is closed modulo exact forms; non-exact closed forms detect holes.
 !: Assuming every closed form is exact (true only on spaces without the relevant holes).
 Q: What is ∮ dθ around the origin? | 2π.
@@ -536,6 +545,7 @@ X: Why does the sphere S^{2} need at least two charts?
 > A single chart would make S^{2} homeomorphic to an open subset of ℝ^{2}
 > S^{2} is compact, but no non-empty open subset of ℝ^{2} is compact
 > So one chart is impossible; stereographic projections from both poles give an atlas of two
+D: maths-u17-stereographic-charts
 K: Manifolds are locally Euclidean, Hausdorff and second countable; atlases of charts give coordinates; compact manifolds like spheres need several charts.
 !: Forgetting the Hausdorff condition, which rules out "line with two origins" examples.
 Q: What dimension is the sphere S^{2} as a manifold? | 2.
@@ -570,6 +580,7 @@ X: Use the general Stokes theorem to evaluate ∮ x dy around the boundary of th
 > ω = x dy, so dω = dx ∧ dy
 > ∫ over the square of dx ∧ dy is its area, 1
 > So ∮ x dy = 1 (anticlockwise)
+D: maths-u17-stokes-square
 - Pullback: forms can be moved back along smooth maps, and d commutes with pullback.
 K: Forms are integrands; d generalises grad, curl and div with d^{2} = 0; ∫_{M} dω = ∫_{∂M} ω unifies the integral theorems.
 !: Forgetting orientation, which fixes the sign in Stokes' theorem.
@@ -640,6 +651,7 @@ X: Find the real dimension of ℂP^{3}, and explain why ℂP^{1} is a sphere.
 > ℂPⁿ has complex dimension n, so real dimension 2n: ℂP^{3} has real dimension 6
 > ℂP^{1} is ℂ plus one point at infinity
 > Adding a point to the plane compactifies it into a sphere (stereographic projection)
+D: maths-u17-stereographic-charts
 K: Complex manifolds have holomorphic transitions; real dimension is even; compact ones have only constant holomorphic functions; Kähler and Calabi–Yau manifolds are key classes.
 !: Assuming every even-dimensional real manifold admits a complex structure.
 Q: What is the real dimension of a complex manifold of complex dimension 4? | 8.
@@ -673,6 +685,7 @@ X: Find the genus of a smooth plane quartic curve, and of a smooth cubic.
 > Formula (d − 1)(d − 2)/2
 > Quartic: 3 × 2/2 = 3
 > Cubic: 2 × 1/2 = 1, a torus (an elliptic curve)
+D: maths-u17-plane-curve-genus
 K: Riemann surfaces are 1-dimensional complex manifolds; sheets resolve multivalued functions; compact ones are classified by genus; smooth plane curves have genus (d − 1)(d − 2)/2.
 !: Treating √z as a single-valued function on the punctured plane.
 Q: How many sheets does the Riemann surface of √z have? | 2.

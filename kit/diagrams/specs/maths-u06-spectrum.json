@@ -1,0 +1,48 @@
+{
+ "id": "maths-u06-spectrum",
+ "renderer": "barchart",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Fourier Analysis",
+ "title": "The spectrum of the signal",
+ "caption": "The signal is a sum of two sine waves, so its spectrum has two spikes: 50 Hz with amplitude 3 and 120 Hz with amplitude 1. The first is three times as tall.",
+ "alt": "A spectrum with two spikes: a tall one of height 3 at 50 hertz and a short one of height 1 at 120 hertz.",
+ "description": [
+  "The signal is 3 sin(2π × 50t) + sin(2π × 120t).",
+  "Each sine wave gives one spike in the spectrum, at its frequency.",
+  "The 50 Hz spike has height 3 and the 120 Hz spike height 1: three times smaller."
+ ],
+ "categories": [
+  "50 Hz",
+  "120 Hz"
+ ],
+ "values": [
+  3,
+  1
+ ],
+ "range": {
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "axisLabels": [
+  "frequency",
+  "amplitude"
+ ],
+ "checks": [
+  {
+   "type": "total",
+   "value": 4
+  }
+ ],
+ "fromLesson": [
+  "50 Hz with amplitude 3"
+ ]
+}

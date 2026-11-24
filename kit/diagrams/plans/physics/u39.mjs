@@ -1,0 +1,35 @@
+// Physics unit 39 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u39-MM).
+// Specs are written by scripts/diagrams/physics/u39.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+const ARG = "an argument or explanation, carried in the text";
+export default [
+  ["u39-01", null, CALC],
+  ["u39-02", "graph", "phys-u39-trapezium", "the trapezium rule on x² with h = 0.5: 0.375 against the exact 1/3"],
+  ["u39-03", null, CALC],
+  ["u39-04", "graph", "phys-u39-newton-step", "one Newton step for √2: the tangent at x₀ = 1 meets zero at 1.5"],
+  ["u39-05", "graph", "phys-u39-euler", "Euler steps for y′ = −y with h = 0.1 against the exact e^(−x)"],
+  ["u39-06", null, ARG],
+  ["u39-07", null, CALC],
+  ["u39-08", null, CALC],
+  ["u39-09", null, CALC],
+  ["u39-10", null, CALC],
+  ["u39-11", null, CALC],
+  ["u39-12", null, CALC],
+  ["u39-13", null, CALC],
+  ["u39-14", null, CALC],
+  ["u39-15", null, CALC],
+  ["u39-16", null, CALC],
+  ["u39-17", "graph", "phys-u39-gradient-descent", "gradient descent on (x − 3)² with η = 0.25: 0, 1.5, 2.25, … halving the gap"],
+  ["u39-18", null, CALC],
+  ["u39-19", null, CALC],
+  ["u39-20", "graph", "phys-u39-amdahl", "Amdahl's law for 95% parallel code: 16.8 on 100 cores, never above 20"],
+  ["u39-21", null, CALC],
+  ["u39-22", null, CALC],
+  ["u39-23", null, ARG],
+  ["u39-24", null, "the same fit through the origin is drawn in u03-15"],
+  ["u39-25", null, ARG],
+  ["u39-26", null, ARG],
+  ["u39-27", null, ARG],
+  ["u39-28", null, ARG],
+  ["u39-29", null, CALC],
+];

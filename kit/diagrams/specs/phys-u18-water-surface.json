@@ -1,0 +1,46 @@
+{
+ "id": "phys-u18-water-surface",
+ "renderer": "refraction",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Refraction",
+ "title": "A ray in water meeting the surface",
+ "caption": "Going from water (n = 1.33) to air the ray bends away from the normal. The critical angle is sin θ_c = 1/1.33, θ_c = 48.8°. At 45°, below θ_c, the ray escapes at sin⁻¹(1.33 sin 45°) = 70°; at 60° it is above θ_c and is totally reflected.",
+ "alt": "Two ray diagrams at a water–air surface: a ray at 45° leaves into the air at 70° from the normal, and a ray at 60° is totally internally reflected.",
+ "description": [
+  "The lesson's ray in water (n = 1.33) hits the surface at 45°. The critical angle is sin⁻¹(1/1.33) = 48.8°.",
+  "45° is less than 48.8°, so the ray escapes, bending away from the normal to 70°: n₁ sin 45° = n₂ sin r.",
+  "A second ray at 60° is greater than the critical angle: nothing escapes and the ray is totally internally reflected."
+ ],
+ "panels": [
+  {
+   "n1": 1.33,
+   "n2": 1,
+   "i": 45,
+   "media": [
+    "water",
+    "air"
+   ],
+   "title": "45°: escapes",
+   "expect": {
+    "r": 70.1,
+    "critical": 48.8,
+    "tir": false
+   }
+  },
+  {
+   "n1": 1.33,
+   "n2": 1,
+   "i": 60,
+   "media": [
+    "water",
+    "air"
+   ],
+   "title": "60°: totally reflected",
+   "expect": {
+    "critical": 48.8,
+    "tir": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "id": "phys-u31-matter-fraction",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u31",
+ "lesson": "Matter-energy density parameters",
+ "title": "The matter fraction in the past",
+ "caption": "Ω_m(z) = Ω_m(1 + z)³ / [Ω_m(1 + z)³ + Ω_Λ]. Today it is 0.31; at z = 3 it was 0.966: the early universe was almost entirely matter-dominated (radiation aside), which is why structure could grow.",
+ "alt": "Matter fraction of the total density against redshift, rising from 0.31 today towards 1, reaching 0.97 at z = 3.",
+ "description": [
+  "Today (z = 0): 0.31.",
+  "z = 1: 0.782.",
+  "z = 3: 0.966.",
+  "Radiation, important only above z of a few thousand, is left out."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "redshift z",
+  "Ω_{m}(z)"
+ ],
+ "curves": [
+  {
+   "expr": "0.31*(1+x)^3/(0.31*(1+x)^3+0.69)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3,
+   "to": 0.9663906478324402
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.31,
+   "colour": "a4",
+   "label": "today: 0.31",
+   "dx": 10,
+   "dy": 10
+  },
+  {
+   "x": 3,
+   "y": 0.96639,
+   "colour": "a2",
+   "label": "0.97 at z = 3",
+   "dx": 6,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.31*(1+x)^3/(0.31*(1+x)^3+0.69)",
+   "x": 0,
+   "y": 0.31,
+   "name": "0.31 today"
+  },
+  {
+   "type": "point",
+   "expr": "0.31*(1+x)^3/(0.31*(1+x)^3+0.69)",
+   "x": 3,
+   "y": 0.96639065,
+   "name": "0.966 at z = 3"
+  }
+ ]
+}

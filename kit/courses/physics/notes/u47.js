@@ -73,6 +73,7 @@ H: Uses and dangers
 P: Resonance is useful in musical instruments, radio tuning, MRI, ultrasonic cleaners and MEMS sensors. It's dangerous in rotating machinery (critical speeds), bridges, aircraft (flutter) and wine glasses shattered by sound. Damping trades peak reduction against transmissibility at higher frequencies and energy loss.
 X: A resonator at 1000 Hz has half-power bandwidth 5 Hz. Q and ζ?
 > Q = 1000/5 = 200; ζ ≈ 1/(2Q) = 0.0025
+D: phys-u47-resonance-peak
 X: Time for amplitude to decay by e in free vibration (τ = Q/(πf))?
 > τ = 200/(π × 1000) ≈ 64 ms
 K: Resonance amplifies response by ~Q; damping lowers Q and broadens the peak.
@@ -264,6 +265,7 @@ H: Damping trade-off
 P: Damping limits the resonance peak (important during machine start-up) but increases transmissibility at high frequencies. Sensitive labs (electron microscopes, AFMs) use isolated slabs, pneumatic tables and active systems; LIGO uses multi-stage pendulums and active seismic isolation to reduce ground motion by ~10^{10} at 10 Hz.
 X: A machine runs at 25 Hz; mounts give f_{n} = 5 Hz, ζ ≈ 0. Transmissibility?
 > r = 5; T ≈ 1/(r^{2} − 1) = 1/24 ≈ 0.042: 96% isolation
+D: phys-u47-transmissibility
 X: Spring mounts deflect 10 mm under load. Natural frequency?
 > f_{n} ≈ 15.76/√10 ≈ 5 Hz
 K: Isolate by making the mount's natural frequency much lower than the disturbance; isolation starts above √2 times f_{n}.
@@ -490,6 +492,7 @@ H: Design for reliability
 P: Redundancy (parallel systems), derating components, FMEA, fault tree analysis and condition-based maintenance improve reliability. Aircraft use damage-tolerant design with inspection intervals tied to crack-growth predictions. Digital twins combine sensor data with physics models to predict remaining useful life. Safety-critical systems target failure probabilities ~10^{-9} per hour.
 X: A component with λ = 10^{-5} per hour. Reliability over 1000 hours? MTTF?
 > R = e^{−0.01} ≈ 0.990; MTTF = 10^{5} hours
+D: phys-u47-reliability
 X: Two such components in parallel over 1000 h?
 > R = 1 − (0.01)^{2} = 0.9999
 X: E_{a} = 0.7 eV; test at 125 °C, use at 55 °C. Acceleration factor?

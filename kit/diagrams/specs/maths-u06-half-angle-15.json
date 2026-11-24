@@ -1,0 +1,164 @@
+{
+ "id": "maths-u06-half-angle-15",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Half Angle Formulas",
+ "title": "15° is half of 30°",
+ "caption": "cos²15° = (1 + cos 30°)/2 = (2 + √3)/4. The point at 15° is acute, so its x-coordinate is positive: cos 15° = √(2 + √3)/2 = (√6 + √2)/4 ≈ 0.966.",
+ "alt": "The unit circle with a radius at 30° and a radius at 15°, half way, and the x-coordinate of the 15° point marked on the axis.",
+ "description": [
+  "The angle 30° is known exactly: cos 30° = √3/2.",
+  "15° is half of 30°, so the half angle formula applies.",
+  "cos²15° = (1 + cos 30°)/2 = (2 + √3)/4.",
+  "15° is acute, so take the positive root: cos 15° = √(2 + √3)/2 ≈ 0.966."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "X": [
+   1,
+   0
+  ],
+  "H": [
+   0.9659258262890683,
+   0.25881904510252074
+  ],
+  "A": [
+   0.8660254037844387,
+   0.49999999999999994
+  ],
+  "F": [
+   0.9659258262890683,
+   0
+  ]
+ },
+ "hide": [
+  "O",
+  "X",
+  "F"
+ ],
+ "labelAt": {
+  "H": [
+   16,
+   8
+  ],
+  "A": [
+   8,
+   -14
+  ]
+ },
+ "grid": {
+  "step": 0.5,
+  "axes": true,
+  "labels": 5
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "A",
+   "colour": "a1"
+  },
+  {
+   "a": "O",
+   "b": "H",
+   "colour": "a2",
+   "w": 3
+  },
+  {
+   "a": "H",
+   "b": "F",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "X",
+   "to": "H",
+   "deg": 15,
+   "label": "15°",
+   "colour": "a2",
+   "r": 70,
+   "labelR": 6
+  },
+  {
+   "at": "O",
+   "from": "H",
+   "to": "A",
+   "deg": 15,
+   "colour": "a1",
+   "r": 90
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "F",
+   "value": 0.96593,
+   "tol": 0.001,
+   "label": "cos 15° ≈ 0.966",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "view": {
+  "x": [
+   -1.5,
+   1.8
+  ],
+  "y": [
+   -1.25,
+   1.3
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "X",
+    "H",
+    "A"
+   ],
+   "name": "the radii end on the unit circle"
+  },
+  {
+   "type": "angle",
+   "at": "O",
+   "from": "X",
+   "to": "A",
+   "deg": 30,
+   "name": "30° is twice 15°"
+  },
+  {
+   "type": "value",
+   "expr": "sqrt(2+sqrt(3))/2",
+   "value": "(sqrt(6)+sqrt(2))/4",
+   "tol": 1e-9,
+   "name": "√(2 + √3)/2 = (√6 + √2)/4"
+  },
+  {
+   "type": "value",
+   "expr": "(sqrt(6)+sqrt(2))/4",
+   "value": 0.9659258262890683,
+   "tol": 1e-9,
+   "name": "cos 15° = (√6 + √2)/4"
+  }
+ ],
+ "fromLesson": [
+  "cos^{2} 15° = (1 + cos 30°)/2"
+ ]
+}

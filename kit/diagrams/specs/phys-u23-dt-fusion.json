@@ -1,0 +1,40 @@
+{
+ "id": "phys-u23-dt-fusion",
+ "renderer": "nuclear",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Mass defect",
+ "title": "Energy from D–T fusion",
+ "caption": "The products are lighter than the reactants by 0.018 89 u. That mass defect appears as kinetic energy: Q = Δm × 931.5 MeV u⁻¹ = 17.6 MeV per reaction, most of it carried by the neutron.",
+ "alt": "Reaction: deuterium plus tritium gives helium-4 plus a neutron, releasing 17.6 MeV.",
+ "description": [
+  "²H (2.014 102 u) + ³H (3.016 049 u) → ⁴He (4.002 602 u) + n (1.008 665 u).",
+  "Nucleon number 2 + 3 = 4 + 1 and proton number 1 + 1 = 2 + 0 balance.",
+  "Δm = 5.030 151 − 5.011 267 = 0.018 884 u; Q = 0.018 884 × 931.494 = 17.6 MeV."
+ ],
+ "mode": "reaction",
+ "lhs": [
+  {
+   "sym": "H",
+   "A": 2,
+   "Z": 1,
+   "m": 2.014102
+  },
+  {
+   "sym": "H",
+   "A": 3,
+   "Z": 1,
+   "m": 3.016049
+  }
+ ],
+ "rhs": [
+  {
+   "sym": "He",
+   "A": 4,
+   "Z": 2,
+   "m": 4.002602
+  },
+  "n"
+ ],
+ "Q": 17.59
+}

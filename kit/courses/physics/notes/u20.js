@@ -42,6 +42,7 @@ P: Einstein and Bose reinterpreted Planck's law as a gas of photons obeying Bose
 X: Ratio of Planck to Rayleigh–Jeans energy density at hf = 5k_{B}T?
 > Ratio = x/(e^{x} − 1) with x = 5 ⇒ 5/147 ≈ 0.034
 > The quantum suppression is huge at high frequency
+D: phys-u20-planck-vs-rayleigh-jeans
 !: Planck initially viewed quantisation as a mathematical trick; Einstein took it physically, as quanta of light.
 Q: What was the ultraviolet catastrophe? | The classical prediction of infinite emitted energy at high frequencies.
 Q: Why does Planck's law avoid the catastrophe? | High-frequency modes need large quanta hf ≫ k_{B}T, which are exponentially unlikely to be excited.
@@ -65,6 +66,7 @@ P: Photomultipliers, photodiodes and image sensors use the photoelectric effect 
 X: UV of 250 nm hits zinc (φ = 4.3 eV). Maximum KE of electrons?
 > hf = 1240/250 = 4.96 eV
 > KE_{max} = 0.66 eV
+D: phys-u20-photoelectric-lines
 !: Brighter light below threshold still ejects no electrons; a classical wave picture can't explain this.
 P: **Investigate with the lab.** Find the threshold wavelength for sodium, then raise the reverse voltage until the current just stops.
 IX: photoelectric
@@ -89,6 +91,7 @@ P: Compton scattering dominates gamma-ray interactions in tissue at medical ener
 X: X-rays of 70 pm scatter at 90°. New wavelength?
 > Δλ = 2.43 × (1 − 0) = 2.43 pm
 > λ′ = 72.4 pm
+D: phys-u20-compton-shift
 !: The Compton shift is independent of the incident wavelength; only its relative size changes.
 Q: What does Compton scattering demonstrate? | Photons carry momentum and scatter like particles.
 Q: What is the Compton wavelength of the electron? | h/(m_{e}c) ≈ 2.43 pm.
@@ -109,6 +112,7 @@ E: E = hf; p = h/λ = ħk
 - These relations hold for photons and matter particles alike.
 X: Does a 1 kg ball at 1 m s^{-1} show wave behaviour?
 > λ = h/p = 6.6 × 10^{-34} m: far below any measurable scale
+D: phys-u20-matter-wave-scales
 !: "Duality" doesn't mean a quantum object switches between being a wave and a particle; it's a single quantum entity whose behaviour shows both features.
 P: **Investigate with the lab.** Measure stopping voltages at three wavelengths and read Planck's constant from the slope of your graph.
 IX: photoelectric
@@ -132,6 +136,7 @@ H: Bohr orbits
 P: De Broglie explained Bohr's quantisation: an electron's orbit must fit a whole number of wavelengths, 2πr = nλ, giving mvr = nħ. Standing matter waves are why atomic energy levels are discrete.
 X: Wavelength of an electron accelerated through 150 V?
 > λ = 1.23/√150 nm = 0.10 nm
+D: phys-u20-electron-wavelength-voltage
 !: Use relativistic momentum for fast particles; at 200 kV electrons move at 0.7c.
 Q: State de Broglie's relation. | λ = h/p.
 Q: Why can electron microscopes resolve atoms? | Fast electrons have wavelengths of picometres, far shorter than light.
@@ -152,6 +157,7 @@ H: Delayed choice
 P: Wheeler's delayed-choice experiments decide whether to measure path or interference after the particle has passed the slits; results match quantum predictions, showing no particle "decides" in advance how to behave.
 X: Electrons at 50 keV (λ ≈ 5.4 pm) through slits 1 μm apart, screen 1 m away. Fringe spacing?
 > x = λD/d = 5.4 × 10^{-12}/10^{-6} = 5.4 μm (needs magnification to see)
+D: phys-u20-electron-double-slit
 !: The pattern isn't due to particles interfering with each other; one particle at a time still builds it.
 P: **Investigate with the lab.** Make a double-slit pattern and change the separation and screen distance. The fringes show light behaving as a wave.
 IX: interference
@@ -177,6 +183,7 @@ P: Heisenberg's microscope argument (measuring position with light kicks the par
 X: An electron is confined to 0.1 nm. Minimum momentum spread and energy scale?
 > Δp ≥ ħ/(2Δx) = 5.3 × 10^{-25} kg m s^{-1}
 > KE ~ (Δp)^{2}/2m ≈ 1 eV: atomic energies
+D: phys-u20-confinement-energy
 !: The uncertainty principle isn't about clumsy instruments; it would hold for perfect ones.
 Q: State the position–momentum uncertainty relation. | Δx Δp ≥ ħ/2.
 Q: How does the uncertainty principle explain zero-point energy? | Confining a particle forces a momentum spread, so its kinetic energy can't be zero.
@@ -198,6 +205,7 @@ H: Interpretation
 P: Whether ψ is physically real or just knowledge is debated (Copenhagen, many-worlds, pilot-wave, QBism…). All interpretations agree on predictions. The PBR theorem (2012) argues ψ can't be merely information about an underlying definite state, under reasonable assumptions.
 X: Normalise ψ = A for 0 < x < L (zero elsewhere).
 > ∫_{0}^{L}|A|^{2}dx = |A|^{2}L = 1 ⇒ A = 1/√L
+D: phys-u20-normalised-densities
 !: ψ itself isn't a probability; probabilities come from |ψ|^{2}, and ψ can be negative or complex.
 P: **Investigate with the lab.** Look at the wavefunctions in the infinite well and count their nodes for each energy level.
 IX: quantum
@@ -223,6 +231,7 @@ P: Feynman's formulation sums amplitudes e^{iS/ħ} over every possible path. Pat
 X: A photon reaches a detector by two indistinguishable paths with amplitudes 0.5 and 0.5e^{iπ}. Probability?
 > Total amplitude = 0.5 − 0.5 = 0
 > P = 0: destructive interference
+D: phys-u20-amplitude-interference
 !: You can't add probabilities for indistinguishable paths; doing so misses interference entirely.
 Q: When do you add amplitudes rather than probabilities? | When the alternatives are indistinguishable (no record of which occurred).
 Q: What does the path integral sum over? | Amplitudes e^{iS/ħ} for all possible paths.
@@ -268,6 +277,7 @@ H: Successes and limits
 X: Check that ψ = e^{i(kx − ωt)} solves the free Schrödinger equation.
 > iħ∂ψ/∂t = ħωψ; −(ħ^{2}/2m)∂^{2}ψ/∂x^{2} = (ħ^{2}k^{2}/2m)ψ
 > Solution if ħω = ħ^{2}k^{2}/2m: E = p^{2}/2m
+D: phys-u20-free-particle-dispersion
 !: The Schrödinger equation is first order in time, unlike the classical wave equation, so you need only ψ at t = 0 (not ∂ψ/∂t).
 P: **Investigate with the lab.** Switch between the four potentials and see how each gives a different set of energy levels from the same Schrödinger equation.
 IX: quantum
@@ -293,6 +303,7 @@ H: Solving in practice
 - Numerical: shooting method, matrix diagonalisation on a grid, finite elements.
 X: A particle in a box in the superposition (φ_{1} + φ_{2})/√2. At what frequency does |ψ|^{2} oscillate?
 > f = (E_{2} − E_{1})/h = 3E_{1}/h
+D: phys-u20-beat-oscillation
 !: A single energy eigenstate doesn't "move"; motion arises only from superpositions of different energies.
 P: **Investigate with the lab.** Note that each energy level shown is a stationary state, found from the time-independent equation.
 IX: quantum
@@ -357,6 +368,7 @@ P: If the wave packet is narrow compared with the scale over which the force var
 X: For the infinite well ground state, ⟨x⟩?
 > |ψ_{1}|^{2} is symmetric about L/2
 > ⟨x⟩ = L/2
+D: phys-u20-expectation-x
 !: An expectation value needn't be a possible measurement result: for a spin in an equal superposition of ±ħ/2, ⟨S_{z}⟩ = 0, which is never measured.
 Q: What is an expectation value? | The average result of many measurements on identically prepared systems: ⟨ψ|Â|ψ⟩.
 Q: What does Ehrenfest's theorem show? | Expectation values obey equations resembling classical equations of motion.
@@ -379,6 +391,7 @@ E: H_{AB} = H_{A} ⊗ H_{B}; dim = d_{A} × d_{B}
 P: Joining systems multiplies dimensions: n qubits live in a 2^{n}-dimensional space. Fifty qubits need 2^{50} ≈ 10^{15} amplitudes, which is why quantum systems are hard to simulate classically and why quantum computers might be powerful.
 X: Dimension of the Hilbert space of 3 spin-½ particles?
 > 2^{3} = 8
+D: phys-u20-hilbert-dimension
 !: Hilbert space dimension grows exponentially with the number of particles, not linearly.
 Q: What is the tensor product used for? | Combining Hilbert spaces of subsystems into the space of the composite system.
 Q: How are position and momentum wavefunctions related? | By Fourier transformation.
@@ -486,6 +499,7 @@ P: Quantum dots are nanocrystals whose size sets the energy gap: smaller dots em
 X: Ground-state energy of an electron in a 1 nm infinite well?
 > E_{1} = h^{2}/(8mL^{2}) = (6.63 × 10^{-34})^{2}/(8 × 9.11 × 10^{-31} × 10^{-18})
 > = 6.0 × 10^{-20} J ≈ 0.38 eV
+D: phys-u20-box-levels
 !: The particle can't have zero energy in a well; zero would violate the uncertainty principle.
 P: **Investigate with the lab.** In the infinite well, halve the width and see every energy level go up four times. Then make a finite well so shallow that only one bound state is left.
 IX: quantum
@@ -510,6 +524,7 @@ H: Examples
 X: An electron (E = 1 eV) meets a 5 eV, 0.5 nm barrier. Estimate T.
 > κ = √(2 × 9.11 × 10^{-31} × 4 × 1.6 × 10^{-19})/1.055 × 10^{-34} = 1.02 × 10^{10} m^{-1}
 > T ≈ e^{−10.2} ≈ 4 × 10^{-5}
+D: phys-u20-tunnelling-decay
 !: Tunnelling doesn't violate energy conservation; the particle is never found inside the barrier with negative kinetic energy in any measurement.
 P: **Investigate with the lab.** Get more than 10% of electrons through a barrier higher than their energy. Then make the barrier wider and watch the fraction fall.
 IX: quantum
@@ -538,6 +553,7 @@ H: Applications
 X: CO vibrates at 6.4 × 10^{13} Hz. Zero-point energy and level spacing?
 > ħω = hf = 0.265 eV
 > Zero-point 0.13 eV; spacing 0.265 eV (absorbs at 4.7 μm)
+D: phys-u20-co-vibration-levels
 !: The quantum oscillator's ground state isn't at rest at the bottom of the potential; it's spread out with zero-point motion.
 P: **Investigate with the lab.** Choose the harmonic potential and see the levels evenly spaced by ħω, starting at ½ħω.
 IX: quantum
@@ -564,6 +580,7 @@ E: σ = ∫(dσ/dΩ)dΩ :: cross-section
 X: Electrons (E = 5 eV) meet a step of 3 eV. Reflection probability?
 > k ∝ √E: k_{1}/k_{2} = √(5/2) = 1.58
 > R = ((1.58 − 1)/2.58)^{2} = 0.05
+D: phys-u20-step-reflection
 !: Quantum particles can reflect off a step even when they have more than enough energy to climb it.
 P: **Investigate with the lab.** Change the barrier height and electron energy and watch the transmitted and reflected fractions change.
 IX: quantum
@@ -592,6 +609,7 @@ H: Physical consequences
 X: For l = 2, list possible L_{z} and |L|.
 > L_{z} = −2ħ, −ħ, 0, ħ, 2ħ
 > |L| = √6 ħ ≈ 2.45ħ
+D: phys-u20-l2-vector
 !: The vector model's "cone" is a picture; L_{x} and L_{y} aren't definite while L_{z} is.
 Q: What are the eigenvalues of L^{2}? | l(l + 1)ħ^{2}.
 Q: How many m values are there for a given l? | 2l + 1.
@@ -707,6 +725,7 @@ P: Pauli (1925) proposed exclusion to explain atomic spectra and the periodic ta
 X: Maximum electrons in the n = 3 shell?
 > l = 0, 1, 2: orbitals 1 + 3 + 5 = 9
 > × 2 spins = 18 = 2n^{2}
+D: phys-u20-shell-capacity
 !: The exclusion principle isn't a force; it's a symmetry constraint whose effects look like a strong repulsion.
 Q: State the Pauli exclusion principle. | No two identical fermions can occupy the same quantum state.
 Q: How many electrons can a shell n hold? | 2n^{2}.
@@ -733,6 +752,7 @@ H: Beyond the basic model
 X: Wavelength of Hα (n = 3 → 2)?
 > 1/λ = 1.097 × 10^{7}(1/4 − 1/9) = 1.52 × 10^{6} m^{-1}
 > λ = 656 nm (red)
+D: phys-u20-hydrogen-balmer
 !: Electrons don't orbit in neat circles; orbitals are probability clouds.
 Q: What are hydrogen's energy levels? | E_{n} = −13.6 eV/n^{2}.
 Q: Which series of hydrogen lines is visible? | The Balmer series (transitions to n = 2).
@@ -754,6 +774,7 @@ E: V_{eff} = V(r) + ħ^{2}l(l + 1)/(2mr^{2})
 P: The centrifugal term keeps electrons with l > 0 away from the nucleus. In multi-electron atoms, s electrons penetrate inner shells more than p, d or f, feeling more nuclear charge: so 4s fills before 3d, explaining the transition metals' place in the periodic table.
 X: Normal Zeeman splitting between adjacent m_{l} levels in 1 T?
 > ΔE = μ_{B}B = 9.27 × 10^{-24} J = 5.8 × 10^{-5} eV
+D: phys-u20-zeeman-levels
 !: Orbital shapes are |ψ|^{2} plots of real combinations of Y_{lm}; the m = ±1 complex states are doughnut-shaped.
 Q: What functions describe the angular part of orbitals? | Spherical harmonics Y_{lm}.
 Q: Why does 4s fill before 3d? | s electrons penetrate closer to the nucleus, experiencing less shielding and lower energy.
@@ -821,6 +842,7 @@ P: Recent methods use neural networks as flexible trial wavefunctions (FermiNet,
 X: Use a Gaussian trial ψ = e^{−αx^{2}} for the harmonic oscillator.
 > ⟨H⟩ = ħ^{2}α/(2m) + mω^{2}/(8α)
 > Minimise: α = mω/(2ħ), ⟨H⟩ = ħω/2: exact, because the true ground state is Gaussian
+D: phys-u20-variational-gaussian
 !: The variational method gives an upper bound to the energy but doesn't guarantee the wavefunction itself is accurate for other properties.
 Q: State the variational principle. | The expectation value of H in any trial state is at least the true ground-state energy.
 Q: Why do variational energies converge faster than wavefunctions? | Energy errors are second order in wavefunction errors.
@@ -842,6 +864,7 @@ P: Gamow used this to explain alpha-decay half-lives (Geiger–Nuttall law: log 
 X: Apply ∮p dx = (n + ½)h to the harmonic oscillator.
 > The phase-space orbit is an ellipse of area 2πE/ω
 > 2πE/ω = (n + ½)h ⇒ E = (n + ½)ħω: exact
+D: phys-u20-wkb-phase-space
 !: WKB breaks down where the classical momentum is zero (turning points) and in rapidly varying potentials.
 Q: When is WKB valid? | When the potential varies slowly over the local de Broglie wavelength.
 Q: What does the WKB tunnelling formula explain in nuclear physics? | The enormous range of alpha-decay half-lives (Geiger–Nuttall law).
@@ -925,6 +948,7 @@ P: The environment "selects" which states are stable (pointer states, Zurek), us
 X: A qubit with T_{2} = 100 μs and gate time 50 ns. How many gates before coherence is badly degraded?
 > 100 μs/50 ns = 2000 gate times
 > Error correction is needed for long algorithms
+D: phys-u20-coherence-decay
 !: Decoherence explains why interference disappears, but not why we see one particular outcome; the measurement problem remains.
 Q: What is decoherence? | The loss of quantum coherence through entanglement with an environment.
 Q: What do T_{1} and T_{2} measure? | Energy relaxation time and dephasing (coherence) time.

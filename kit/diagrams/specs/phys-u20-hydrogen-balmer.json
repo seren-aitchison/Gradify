@@ -1,0 +1,87 @@
+{
+ "id": "phys-u20-hydrogen-balmer",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Hydrogen atom",
+ "title": "Hydrogen: the Lyman α line and the Balmer series",
+ "caption": "With E_n = −13.6 eV/n², dropping from n = 3 to n = 2 releases 13.6(1/4 − 1/9) = 1.89 eV: λ = hc/ΔE = 656 nm, the red Hα line. Transitions ending on n = 2 give the visible Balmer lines (Hα 656, Hβ 486, Hγ 434, Hδ 410 nm); 2 → 1 (Lyman α, 122 nm) is ultraviolet.",
+ "alt": "Hydrogen energy levels n = 1 to 6 with downward arrows for 2 to 1 at 122 nm in the ultraviolet and for 3, 4, 5 and 6 to 2 at 656, 486, 434 and 410 nm in the visible, with the line spectrum below.",
+ "description": [
+  "Hydrogen's levels E_n = −13.6 eV/n² for n = 1 to 6 (the upper levels are spread out, not to scale).",
+  "The Balmer series: n = 3, 4, 5, 6 down to n = 2 gives 656, 486, 434 and 410 nm, all visible.",
+  "Hα (3 → 2): ΔE = 13.6(1/4 − 1/9) = 1.89 eV, λ = 1240/1.89 = 656 nm (red).",
+  "Lyman α (2 → 1) is 122 nm, in the ultraviolet."
+ ],
+ "atom": "H",
+ "scale": "sqrt",
+ "spectrum": true,
+ "levels": [
+  {
+   "n": 1,
+   "E": -13.606
+  },
+  {
+   "n": 2,
+   "E": -3.401
+  },
+  {
+   "n": 3,
+   "E": -1.512
+  },
+  {
+   "n": 4,
+   "E": -0.85
+  },
+  {
+   "n": 5,
+   "E": -0.544
+  },
+  {
+   "n": 6,
+   "E": -0.378
+  }
+ ],
+ "transitions": [
+  {
+   "from": 2,
+   "to": 1,
+   "lambda": 121.5022,
+   "kind": "emission",
+   "region": "ultraviolet",
+   "label": "122"
+  },
+  {
+   "from": 3,
+   "to": 2,
+   "lambda": 656.1119,
+   "kind": "emission",
+   "region": "visible",
+   "label": "656"
+  },
+  {
+   "from": 4,
+   "to": 2,
+   "lambda": 486.0088,
+   "kind": "emission",
+   "region": "visible",
+   "label": "486"
+  },
+  {
+   "from": 5,
+   "to": 2,
+   "lambda": 433.9365,
+   "kind": "emission",
+   "region": "visible",
+   "label": "434"
+  },
+  {
+   "from": 6,
+   "to": 2,
+   "lambda": 410.07,
+   "kind": "emission",
+   "region": "visible",
+   "label": "410"
+  }
+ ]
+}

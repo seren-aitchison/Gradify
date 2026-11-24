@@ -94,6 +94,7 @@ X: With A = {1, 2, 3, 4} and B = {3, 4, 5}, find A \\ B, B \\ A and A Δ B.
 > A \\ B = {1, 2}
 > B \\ A = {5}
 > A Δ B = {1, 2, 5}
+D: maths-u16-set-difference
 - Venn diagrams: draw A \\ B as A with the overlap shaded out, and A Δ B as both sets minus the overlap.
 - Set operations correspond to bitwise operations on characteristic vectors (AND, OR, XOR).
 K: Union, intersection, difference, complement and symmetric difference obey commutative, associative, distributive and absorption laws; inclusion–exclusion counts unions.
@@ -131,6 +132,7 @@ X: Find ⋃_{n≥1} [1/n, 2] and ⋂_{n≥1} [0, 1 + 1/n].
 > Every x with 0 < x ≤ 2 lies in [1/n, 2] for large n; 0 never does: union = (0, 2]
 > x lies in every [0, 1 + 1/n] iff 0 ≤ x ≤ 1
 > Intersection = [0, 1]
+D: maths-u16-interval-union
 - Union and intersection are both associative, so A ∪ B ∪ C and A ∩ B ∩ C need no brackets.
 - Each distributes over the other: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).
 K: Union is "or", intersection is "and"; A ⊆ B iff A ∪ B = B; indexed unions and intersections can produce sets unlike any member of the family.
@@ -168,6 +170,7 @@ X: In U = {1, …, 10}, let A = evens and B = multiples of 3. Find (A ∪ B)ᶜ.
 > A ∪ B = {2, 3, 4, 6, 8, 9, 10}
 > Its complement is {1, 5, 7}
 > Check by De Morgan: Aᶜ ∩ Bᶜ = {1, 3, 5, 7, 9} ∩ {1, 2, 4, 5, 7, 8, 10} = {1, 5, 7} ✓
+D: maths-u16-de-morgan
 - Relative complements: B \\ A is the complement of A inside B, with no universal set needed.
 - In a truth table, complement corresponds to negating the membership column.
 K: Complements depend on the universal set; De Morgan's laws swap ∪ and ∩ under complement; A \\ B = A ∩ Bᶜ; complementary counting simplifies problems.
@@ -382,6 +385,7 @@ X: Is R = {(x, y) ∈ ℝ^{2} : x^{2} + y^{2} = 1} a function from [−1, 1] to 
 > For x = 0, both (0, 1) and (0, −1) lie in R
 > So 0 has two outputs
 > R is not a function (though y = √(1 − x^{2}) is)
+D: maths-u16-circle-relation
 K: Functions are relations with exactly one output per input; domain, codomain and range are distinct; rules on equivalence classes must be well defined.
 !: Confusing codomain with range.
 Q: Is every function a relation? | Yes.
@@ -416,6 +420,7 @@ X: Show f(x) = 3x − 5 is a bijection on ℝ and find its inverse.
 > Injective: 3a − 5 = 3b − 5 gives a = b
 > Surjective: for any y, x = (y + 5)/3 gives f(x) = y
 > f^{−1}(y) = (y + 5)/3
+D: maths-u16-bijection-inverse
 - Images and preimages: f(S) = {f(x) : x ∈ S} and f^{−1}(T) = {x : f(x) ∈ T}.
 K: Injective means no collisions, surjective means every output is hit, bijective means both and invertible; composition preserves these properties.
 !: Assuming f ∘ g = g ∘ f.
@@ -487,6 +492,7 @@ X: On {1, 2, 3, 4, 5, 6}, let a ~ b iff a and b have the same remainder mod 3. L
 > Remainder 0: {3, 6}
 > Remainder 1: {1, 4}. Remainder 2: {2, 5}
 > Three classes partition the set
+D: maths-u16-classes-mod-3
 K: Equivalence classes partition a set; classes are equal or disjoint; the quotient is the set of classes; Bell numbers count equivalence relations.
 !: Thinking two different classes can overlap.
 Q: Can two different equivalence classes share an element? | No.
@@ -522,6 +528,7 @@ X: Find the covering pairs of divisibility on {1, 2, 3, 6}.
 > 1 is covered by 2 and by 3 (nothing strictly between)
 > 2 and 3 are each covered by 6
 > 1 | 6 isn't a covering pair, since 2 lies between: the Hasse diagram is a diamond
+D: maths-u16-hasse-diamond
 K: Partial orders are reflexive, antisymmetric and transitive; not every pair need be comparable; Hasse diagrams show covering relations; topological sorting extends them to total orders.
 !: Drawing transitive edges in a Hasse diagram, which should show only covers.
 Q: Are {1} and {2} comparable under ⊆? | No.
@@ -659,6 +666,7 @@ X: Show the divisors of 30 form a Boolean lattice, and find the complement of 6.
 > Divisors: 1, 2, 3, 5, 6, 10, 15, 30, eight elements matching P({2, 3, 5})
 > The complement of 6 must satisfy lcm(6, x) = 30 and gcd(6, x) = 1
 > x = 5, matching the complement of {2, 3} in {2, 3, 5}
+D: maths-u16-divisors-30
 K: Boolean lattices are complemented distributive lattices; finite ones are power sets of size 2ⁿ; they model logic gates and propositional logic.
 !: Expecting divisors of a non-square-free number like 12 to form a Boolean lattice.
 Q: How many elements can a finite Boolean algebra have? | A power of 2.
@@ -1142,6 +1150,7 @@ X: Prove 1 + 2 + … + n = n(n + 1)/2 by induction.
 > Base: n = 1 gives 1 = 1 × 2/2 ✓
 > Step: assume the sum to k is k(k + 1)/2; then the sum to k + 1 is k(k + 1)/2 + (k + 1) = (k + 1)(k + 2)/2
 > This is the formula for k + 1, so it holds for all n ≥ 1
+D: maths-u16-triangle-sums
 K: Induction needs a base case and an inductive step; strong induction assumes all earlier cases; structural induction works on recursive objects; each part is essential.
 !: Omitting the base case, or using an inductive step that fails for small k.
 Q: What does strong induction assume? | That all earlier cases hold.

@@ -1,0 +1,53 @@
+{
+ "id": "phys-u24-interaction-strengths",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Fundamental interactions",
+ "title": "Four interactions, 38 orders of magnitude",
+ "caption": "Relative strength at about 1 fm, with the strong interaction as 1: electromagnetism about 1/137 (0.0073), the weak interaction about 10⁻⁶ and gravity about 10⁻³⁸. The strongest and weakest differ by 38 orders of magnitude.",
+ "alt": "A logarithmic scale of relative strength from 10 to the minus 40 up to 1, with gravity near 10 to the minus 38, the weak interaction at 10 to the minus 6, electromagnetism at 1 over 137 and the strong interaction at 1.",
+ "description": [
+  "Strong: 1 (range about 1 fm, confined).",
+  "Electromagnetic: 1/137 = 0.0073 (infinite range).",
+  "Weak: about 10⁻⁶ (range about 10⁻¹⁸ m).",
+  "Gravity: about 10⁻³⁸ (infinite range): 38 orders below the strong interaction."
+ ],
+ "quantity": "relative strength",
+ "min": -40,
+ "max": 1,
+ "markers": [
+  {
+   "label": "gravity",
+   "value": 1e-38
+  },
+  {
+   "label": "weak",
+   "value": 0.000001
+  },
+  {
+   "label": "electromagnetic",
+   "value": 0.007299
+  },
+  {
+   "label": "strong",
+   "value": 1
+  }
+ ],
+ "claims": [
+  {
+   "type": "span",
+   "value": 38,
+   "tol": 0.5,
+   "name": "strong and gravity differ by 38 orders (the lesson's 1 and 10⁻³⁸)"
+  },
+  {
+   "type": "orders",
+   "a": "electromagnetic",
+   "b": "strong",
+   "value": 2.14,
+   "tol": 0.05,
+   "name": "strong is 137 times electromagnetic"
+  }
+ ]
+}

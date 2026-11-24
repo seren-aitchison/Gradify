@@ -1,0 +1,97 @@
+{
+ "id": "phys-u20-coherence-decay",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Decoherence",
+ "title": "Coherence of a qubit with T₂ = 100 μs",
+ "caption": "Dephasing makes the off-diagonal (coherence) terms of the density matrix decay as e^{−t/T₂}. With T₂ = 100 μs and a gate time of 50 ns, T₂ lasts 2000 gate times: after 2000 gates only 1/e = 0.37 of the coherence is left, and after 500 gates it has already fallen to 0.78. Long algorithms therefore need error correction.",
+ "alt": "Graph of coherence against the number of 50 nanosecond gates from 0 to 6000: an exponential decay passing 0.37 at 2000 gates.",
+ "description": [
+  "The horizontal axis is the number of 50 ns gate operations (elapsed time ÷ 50 ns); the vertical axis is the remaining coherence, starting at 1.",
+  "The curve is e^{−t/T₂} = e^{−n/2000}, since T₂/50 ns = 2000.",
+  "At n = 2000 gates (t = T₂ = 100 μs) the coherence is 1/e = 0.37.",
+  "Beyond a few thousand gates little coherence remains."
+ ],
+ "range": {
+  "x": [
+   0,
+   6000
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1000,
+   2000,
+   3000,
+   4000,
+   5000,
+   6000
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1000,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "gates n",
+  "coherence"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/2000.0000000000002)",
+   "domain": [
+    0,
+    6000
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "e^{−t/T₂}",
+   "labelAt": [
+    2700,
+    0.58
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2000.0000000000002,
+   "y": 0.3679,
+   "colour": "a2",
+   "label": "2000 gates: 0.37",
+   "dx": 12,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/2000.0000000000002)",
+   "x": 2000.0000000000002,
+   "y": 0.3679,
+   "name": "T₂ = 100 μs is 2000 gate times of 50 ns; coherence is 1/e there"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/2000.0000000000002)",
+   "x": 0,
+   "y": 1,
+   "name": "full coherence at the start"
+  }
+ ]
+}

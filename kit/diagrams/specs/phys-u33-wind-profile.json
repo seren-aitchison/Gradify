@@ -1,0 +1,103 @@
+{
+ "id": "phys-u33-wind-profile",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u33",
+ "lesson": "Turbulence and boundary layers",
+ "title": "Wind speed grows with height",
+ "caption": "Near the ground the wind follows a logarithmic profile, u ∝ ln(z/z₀). Over grass (z₀ = 0.03 m), 5 m s⁻¹ at 10 m becomes 7 m s⁻¹ at 100 m, which is why wind turbines are tall.",
+ "alt": "Wind speed against height on a linear axis: rising quickly near the ground then slowly, from 5 metres per second at 10 metres to 7 at 100 metres.",
+ "description": [
+  "u(z) = 5 m s⁻¹ × ln(z / 0.03) / ln(10 / 0.03).",
+  "At 100 m: 5 × 8.11 / 5.81 = 6.98 m s⁻¹.",
+  "The profile holds for neutral stability; on calm nights or sunny afternoons it changes."
+ ],
+ "range": {
+  "x": [
+   0,
+   150
+  ],
+  "y": [
+   0,
+   9
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   50,
+   100,
+   150
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "height / m",
+  "wind speed / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "5*log(x/0.03)/log(10/0.03)",
+   "domain": [
+    0.5,
+    150
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 10,
+   "to": 5
+  },
+  {
+   "x": 100,
+   "to": 6.981862984637578
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 5,
+   "colour": "a4",
+   "label": "5 m s⁻¹ at 10 m",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": 100,
+   "y": 6.9819,
+   "colour": "a2",
+   "label": "7 m s⁻¹ at 100 m",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5*log(x/0.03)/log(10/0.03)",
+   "x": 100,
+   "y": 6.981863,
+   "name": "6.98 m s⁻¹ at 100 m"
+  },
+  {
+   "type": "point",
+   "expr": "5*log(x/0.03)/log(10/0.03)",
+   "x": 10,
+   "y": 5,
+   "name": "5 m s⁻¹ at 10 m"
+  }
+ ]
+}

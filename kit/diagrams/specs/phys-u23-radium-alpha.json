@@ -1,0 +1,36 @@
+{
+ "id": "phys-u23-radium-alpha",
+ "renderer": "nuclear",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Alpha, beta and gamma decay",
+ "title": "Alpha decay of radium-226",
+ "caption": "An alpha particle carries off 2 protons and 2 neutrons, so A falls by 4 and Z by 2: radium-226 (Z = 88) becomes radon-222 (Z = 86).",
+ "alt": "Decay step: radium-226 emits an alpha particle and becomes radon-222.",
+ "description": [
+  "²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He.",
+  "Mass number: 226 = 222 + 4. Proton number: 88 = 86 + 2.",
+  "Radon is a gas, which is why radium in rocks leads to radon in buildings."
+ ],
+ "mode": "chain",
+ "start": {
+  "sym": "Ra",
+  "A": 226,
+  "Z": 88
+ },
+ "steps": [
+  {
+   "decay": "alpha",
+   "to": {
+    "sym": "Rn",
+    "A": 222,
+    "Z": 86
+   },
+   "halfLife": "1600 yr"
+  }
+ ],
+ "counts": {
+  "alpha": 1,
+  "beta": 0
+ }
+}

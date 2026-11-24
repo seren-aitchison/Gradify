@@ -1,0 +1,136 @@
+{
+ "id": "phys-u19-grating-orders",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Diffraction gratings",
+ "title": "A 600 lines per mm grating: angle of each order",
+ "caption": "With d = 1/600 mm = 1.67 μm, d sin θ = nλ puts the first-order sodium line (589 nm) at 20.7° and the second order at 45.0°. Orders exist only while nλ < d: at 700 nm just two orders appear, and a third (shown for λ < 556 nm) needs a shorter wavelength. Higher orders spread colours more.",
+ "alt": "Graph of diffraction angle against wavelength from 400 to 700 nanometres for orders 1, 2 and 3 of a 600 lines per mm grating: order 1 rises to 25 degrees, order 2 rises more steeply, and order 3 exists only for wavelengths below 555 nanometres.",
+ "description": [
+  "The horizontal axis is wavelength in nanometres; the vertical axis is the angle of the diffraction maximum in degrees.",
+  "Each curve is θ = sin⁻¹(nλ/d) with d = 1.67 μm for n = 1, 2, 3.",
+  "At 589 nm: first order 20.7°, second order 45.0°.",
+  "The third order ends at 556 nm, where sin θ reaches 1; at 700 nm only two orders fit (n < d/λ = 2.4)."
+ ],
+ "range": {
+  "x": [
+   400,
+   700
+  ],
+  "y": [
+   0,
+   95
+  ]
+ },
+ "ticks": [
+  [
+   400,
+   450,
+   500,
+   550,
+   600,
+   650,
+   700
+  ],
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ]
+ ],
+ "grid": [
+  50,
+  15
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "λ / nm",
+  "θ / °"
+ ],
+ "curves": [
+  {
+   "expr": "asin(1*x/1666.6666666666667)*57.29577951308232",
+   "domain": [
+    400,
+    700
+   ],
+   "colour": "a1",
+   "width": 3,
+   "label": "n = 1",
+   "labelAt": [
+    640,
+    20
+   ]
+  },
+  {
+   "expr": "asin(2*x/1666.6666666666667)*57.29577951308232",
+   "domain": [
+    400,
+    700
+   ],
+   "colour": "a2",
+   "width": 3,
+   "label": "n = 2",
+   "labelAt": [
+    450,
+    62
+   ]
+  },
+  {
+   "expr": "asin(3*x/1666.6666666666667)*57.29577951308232",
+   "domain": [
+    400,
+    555.5455555555556
+   ],
+   "colour": "a4",
+   "width": 3,
+   "label": "n = 3",
+   "labelAt": [
+    405,
+    80
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 589,
+   "y": 20.6954,
+   "colour": "ink",
+   "label": "20.7°",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": 589,
+   "y": 44.9751,
+   "colour": "ink",
+   "label": "45.0°",
+   "dx": 10,
+   "dy": 14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "asin(1*x/1666.6666666666667)*57.29577951308232",
+   "x": 589,
+   "y": 20.6954,
+   "name": "first-order sodium line at 20.7°"
+  },
+  {
+   "type": "point",
+   "expr": "asin(2*x/1666.6666666666667)*57.29577951308232",
+   "x": 589,
+   "y": 44.9751,
+   "name": "second order at 45.0°"
+  }
+ ]
+}

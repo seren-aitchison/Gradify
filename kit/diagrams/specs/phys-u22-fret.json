@@ -1,0 +1,99 @@
+{
+ "id": "phys-u22-fret",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u22",
+ "lesson": "Energy transfer",
+ "title": "FRET efficiency against distance",
+ "caption": "Energy transfer falls as the sixth power of distance: E = 1/(1 + (r/R₀)⁶). At r = R₀ it is exactly 50%; at 2R₀ only 1/65 = 1.5%. That steepness makes FRET a ruler for distances of a few nanometres.",
+ "alt": "Transfer efficiency against distance in units of R zero, a steep sigmoid falling from 1 through 0.5 at 1 to 0.015 at 2.",
+ "description": [
+  "Distance r in units of the Förster radius R₀.",
+  "E = 1 / (1 + (r/R₀)⁶).",
+  "r = R₀: E = 0.5. r = 2R₀: E = 1/65 = 0.0154."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.5
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / R₀",
+  "transfer efficiency"
+ ],
+ "curves": [
+  {
+   "expr": "1/(1+x^6)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 0.5
+  },
+  {
+   "y": 0.5,
+   "to": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.5,
+   "colour": "a2",
+   "label": "50% at R₀",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 2,
+   "y": 0.01538,
+   "colour": "a2",
+   "label": "1.5% at 2R₀",
+   "dx": 4,
+   "dy": -16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(1+x^6)",
+   "x": 1,
+   "y": 0.5,
+   "name": "50% at R₀"
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+x^6)",
+   "x": 2,
+   "y": 0.01538462,
+   "name": "1/65 at 2R₀"
+  }
+ ]
+}

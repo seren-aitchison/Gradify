@@ -1,0 +1,107 @@
+{
+ "id": "phys-u31-matter-vs-lambda",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u31",
+ "lesson": "Dark energy",
+ "title": "Matter thins out; dark energy does not",
+ "caption": "Matter density scales as (1 + z)³ while a cosmological constant stays fixed. With Ω_m = 0.31 and Ω_Λ = 0.69 today they were equal at z = 0.31. At z = 1 matter was 3.6 times denser than dark energy, so dark energy dominates only recently.",
+ "alt": "Density in units of today's critical density against redshift: matter rising steeply as one plus z cubed from 0.31, dark energy flat at 0.69, crossing at z = 0.31.",
+ "description": [
+  "Matter: 0.31(1 + z)³. Dark energy (w = −1): 0.69, constant.",
+  "Equal when (1 + z)³ = 0.69/0.31: z = 0.306.",
+  "At z = 1: matter 2.48 against dark energy 0.69, a ratio of 3.59."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "redshift z",
+  "density / today's critical density"
+ ],
+ "curves": [
+  {
+   "expr": "0.31*(1+x)^3",
+   "domain": [
+    0,
+    1.15
+   ],
+   "colour": "a1",
+   "label": "matter ∝ (1 + z)³",
+   "labelAt": [
+    1.05,
+    1.6
+   ]
+  },
+  {
+   "expr": "0.69+0*x",
+   "colour": "a2",
+   "label": "dark energy (constant)",
+   "labelAt": [
+    1.2,
+    0.85
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.3056570927117692,
+   "to": 0.69
+  }
+ ],
+ "points": [
+  {
+   "x": 0.30566,
+   "y": 0.69,
+   "colour": "ink",
+   "label": "equal at z = 0.31",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "0.31*(1+x)^3",
+   "b": "0.69+0*x",
+   "x": 0.305657,
+   "y": 0.69,
+   "name": "equal at z = 0.31"
+  },
+  {
+   "type": "point",
+   "expr": "0.31*(1+x)^3",
+   "x": 1,
+   "y": 2.48,
+   "name": "eight times denser at z = 1"
+  }
+ ]
+}

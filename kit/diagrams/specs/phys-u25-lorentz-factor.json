@@ -1,0 +1,103 @@
+{
+ "id": "phys-u25-lorentz-factor",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u25",
+ "lesson": "Time dilation",
+ "title": "The Lorentz factor γ",
+ "caption": "γ = 1/√(1 − v²/c²) stays close to 1 until v is a large fraction of c, then climbs steeply. At 0.6c it is 1.25; at 0.8c, 1.67; for the muons at 0.999c, 22.4: their 2.2 μs lifetime becomes 49 μs in the lab, long enough to travel about 15 km and reach the ground from 15 km.",
+ "alt": "Lorentz factor against speed as a fraction of c: nearly flat at 1, then rising steeply towards infinity at 1, with points at 0.6, 0.8 and 0.999.",
+ "description": [
+  "γ = 1 / √(1 − β²), β = v/c.",
+  "β = 0.6: γ = 1.25. β = 0.8: γ = 1.667.",
+  "β = 0.999: γ = 22.37. Muon lifetime in the lab: 22.4 × 2.2 μs = 49 μs.",
+  "Distance in that time: 0.999c × 49 μs ≈ 15 km, more than 15 km."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   25
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   5,
+   10,
+   15,
+   20,
+   25
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "v / c",
+  "γ"
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt(1-x^2)",
+   "domain": [
+    0,
+    0.99915
+   ],
+   "colour": "a1",
+   "samples": 800
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6,
+   "y": 1.25,
+   "colour": "a4"
+  },
+  {
+   "x": 0.8,
+   "y": 1.6667,
+   "colour": "a4",
+   "label": "1.67 at 0.8c",
+   "dx": -6,
+   "dy": -16,
+   "anchor": "end"
+  },
+  {
+   "x": 0.999,
+   "y": 22.3663,
+   "colour": "a2",
+   "label": "muons: 22.4",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/sqrt(1-x^2)",
+   "x": 0.6,
+   "y": 1.25,
+   "name": "γ = 1.25 at 0.6c"
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt(1-x^2)",
+   "x": 0.999,
+   "y": 22.366272,
+   "name": "γ = 22.37 at 0.999c"
+  }
+ ]
+}

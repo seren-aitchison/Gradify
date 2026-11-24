@@ -21,6 +21,9 @@
 //             (kit/labs/chemistry/reactions: a prediction, a mechanism check or a synthesis route), at the authority
 //             that verdict has (reviewed, provisional, disputed or declined). It teaches from the engine and never
 //             changes, extends or overrules it (chemistryRequest below)
+//   degree    answers a question about the learner's degree from the degree tracker's own results
+//             (assets/study-tools.js degreeBrief). It explains those numbers and never calculates: every figure in
+//             the reply must already be in the brief or the question (checkReply), or the reply is withheld
 // explain and socratic can also carry { lab: { title, state } }: what an interactive lab on the page shows right
 // now, written by the lab itself, so the tutor explains what the learner is actually looking at.
 // Not built: a "research" mode. It would need live sources the tutor can cite and check; until then the tutor
@@ -29,7 +32,7 @@
 
 export const MODEL = "claude-opus-5-5";
 // requests per learner per rolling 24 hours, by mode
-export const DAILY = { mark: 20, roleplay: 150, debrief: 10, explain: 40, diagnose: 40, socratic: 120, challenge: 15, connect: 20, examiner: 100, director: 6, coach: 30, chemistry: 80 };
+export const DAILY = { mark: 20, roleplay: 150, debrief: 10, explain: 40, diagnose: 40, socratic: 120, challenge: 15, connect: 20, examiner: 100, director: 6, coach: 30, degree: 30, chemistry: 80 };
 // modes whose reply is rubric feedback (returned as { feedback }); the rest return their fields directly
 export const FEEDBACK_MODES = ["mark", "debrief"];
 const CAP = { lab: 2000, answer: 8000, lesson: 30000, question: 1000, turn: 1500, turns: 40, field: 4000, candidates: 400, title: 200 };
@@ -131,6 +134,7 @@ export function buildRequest(body) {
   if (mode === "director") return directorRequest(body, rules);
   if (mode === "coach") return coachRequest(body, rules);
   if (mode === "chemistry") return chemistryRequest(body);
+  if (mode === "degree") return degreeRequest(body, rules);
 
   if (mode === "mark") {
     checkTask(body.task);
@@ -314,9 +318,69 @@ QUESTION: ${q}`;
   return { mode: "coach", system, messages: [{ role: "user", content: user }], schema: COACH_SCHEMA, effort: "medium", maxTokens: 1500 };
 }
 
+export const DEGREE_SCHEMA = {
+  type: "object", additionalProperties: false, required: ["answer", "facts", "estimates", "action"],
+  properties: {
+    answer: { type: "string" },
+    facts: { type: "array", items: { type: "string" } },
+    estimates: { type: "array", items: { type: "string" } },
+    action: { type: "object", additionalProperties: false, required: ["id", "why"], properties: { id: { type: "string" }, why: { type: "string" } } },
+  },
+};
+// the degree brief as text: what the tracker worked out, and nothing else (assets/study-tools.js degreeBrief)
+export function degreeText(b) {
+  const L = (x, n = 300) => cut(x, n);
+  const list = (xs, f, n) => (Array.isArray(xs) ? xs.slice(0, n) : []).map(f).filter(Boolean);
+  return `DEGREE TRACKER RESULTS (worked out by Gradify's tracker; quote these, don't recalculate)
+Average so far: ${L(b.average, 20)}. Class on that average: ${L(b.cls, 20)}. Degree marked so far: ${L(b.marked, 20)}.
+Headline: ${L(b.headline)}
+Weighting used: ${L(b.weighting, 120)}.
+University rules: ${L(b.university, 300) || "none chosen (standard UK boundaries: First 70%, 2:1 60%, 2:2 50%, Third 40%)"}
+WHAT EACH CLASS NEEDS ON THE WORK STILL TO COME:
+${list(b.goals, (g) => `- ${L(g, 160)}`, 4).join("\n") || "- nothing to come"}
+YEARS:
+${list(b.years, (y) => `- ${L(y, 160)}`, 3).join("\n") || "- none"}
+PRIORITIES (work still to come, ranked by share of the degree and how soon it's due):
+${list(b.priorities, (p) => `- ${L(p, 400)}`, 3).join("\n") || "- none listed"}
+INSIGHTS:
+${list(b.insights, (i) => `- ${L(i, 400)}`, 8).join("\n") || "- none"}
+ESTIMATE (an estimate, not a result): ${L(b.estimate) || "none"}
+NEXT BEST ACTION: ${L(b.next, 400) || "none"}
+AVAILABLE ACTIONS:
+${list(b.actions, (a) => (a?.id && a?.label ? `${cut(a.id, 40)}: ${cut(a.label, 120)}` : ""), 10).join("\n") || "none"}`;
+}
+// the degree assistant: a question about the learner's own degree, answered from the tracker's results only
+function degreeRequest(body, rules) {
+  const q = cut(body.question, CAP.question).trim();
+  if (!q) throw bad("Ask a question first.");
+  const b = body.degree;
+  if (!b || typeof b !== "object" || !b.average) throw bad("Add some module marks to your tracker first.");
+  const turns = Array.isArray(body.turns) ? body.turns.slice(-4).map((t) => `${t.role === "ai" ? "GRADIFY AI" : "STUDENT"}: ${cut(t.text, CAP.turn)}`).join("\n") : "";
+  const system = `You are Gradify AI, helping a UK university student understand where their degree stands. ${rules}
+You explain the results of Gradify's degree tracker. The tracker has already done every calculation; you never do maths. Use only the numbers in DEGREE TRACKER RESULTS (or in the student's question), quoted exactly as written there. Never add, subtract, average, round, project or estimate a number yourself, and never invent a mark, weighting, boundary, deadline or university rule. If the question needs a number the results don't contain (for example "what if I get 60 on my dissertation?"), say the tracker can show it and how (enter that mark on the Modules page and the tracker recalculates), instead of working it out.
+Keep "facts" (what the results say for certain) separate from "estimates" (only the line marked ESTIMATE, always called an estimate). University rules apply only if one is named in the results; otherwise say the student's own regulations decide borderline cases.
+Answer in plain UK English, warm and direct, in 2 to 5 short sentences in "answer". Put the key figures you used in "facts" (each one a short sentence quoting the results). Put any estimate in "estimates", or leave it empty. End with one next step: choose "action.id" from AVAILABLE ACTIONS and say in "action.why" why it's the right next step, in one sentence.`;
+  const user = `${degreeText(b)}
+${turns ? `\nCONVERSATION SO FAR\n${turns}\n` : ""}
+QUESTION: ${q}`;
+  return { mode: "degree", system, messages: [{ role: "user", content: user }], schema: DEGREE_SCHEMA, effort: "medium", maxTokens: 1500 };
+}
+// every number written in a piece of text ("68.5%", "2:1", "120 credits" → 68.5, 2, 1, 120), normalised
+export const numbersIn = (s) => new Set([...String(s ?? "").matchAll(/\d+(?:\.\d+)?/g)].map((m) => String(Number(m[0]))));
+
 // What the function checks in a reply before returning it: lesson ids must be ones the request offered,
 // choice questions must have exactly one right answer, and lists are capped. Anything that fails is dropped.
 export function checkReply(mode, data, body) {
+  if (mode === "degree") {
+    // the AI explains the tracker's numbers and never calculates: any figure that isn't in the brief or the question
+    // (small counts like "2 modules" aside) means it worked something out, so the reply is withheld
+    const allowed = numbersIn(`${degreeText(body.degree || {})} ${cut(body.question, CAP.question)}`);
+    const out = { answer: String(data.answer || "").slice(0, 1200), facts: (data.facts || []).map((f) => String(f).slice(0, 240)).slice(0, 6), estimates: (data.estimates || []).map((f) => String(f).slice(0, 240)).slice(0, 3) };
+    const unknown = [...numbersIn([out.answer, ...out.facts, ...out.estimates].join(" "))].filter((n) => !allowed.has(n) && !(Number(n) <= 10 && Number.isInteger(Number(n))));
+    if (unknown.length) throw Object.assign(new Error("Gradify AI gave a figure that isn't in your tracker, so the answer was held back. Please ask again."), { unverified: unknown });
+    const ok = new Set((Array.isArray(body.degree?.actions) ? body.degree.actions : []).map((a) => cut(a?.id, 40)));
+    return { ...out, action: ok.has(data.action?.id) ? { id: data.action.id, why: String(data.action.why || "").slice(0, 300) } : null };
+  }
   if (mode === "coach") {
     const ok = new Set((Array.isArray(body.profile?.actions) ? body.profile.actions : []).map((a) => cut(a.id, 120)));
     const seen = new Set();

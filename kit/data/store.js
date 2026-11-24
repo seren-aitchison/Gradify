@@ -149,7 +149,17 @@ export class CloudStore {
     const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, device ? { global: { headers: { "x-gradify-device": device } } } : undefined));
     // keep the current sign-in at hand, so a save can be sent while the page is closing (beaconCourseProgress)
     store.db.auth.getSession().then(({ data }) => { store.current = data.session; }).catch(() => {});
-    store.db.auth.onAuthStateChange((_e, s) => { store.current = s; });
+    // Google Analytics, with consent (kit/core/consent.js): back from a sign-in link or Google, once. An account made in
+    // the last ten minutes is a sign-up. Only the method is sent, never the account.
+    let returned = authReturn();
+    store.db.auth.onAuthStateChange((e, s) => {
+      store.current = s;
+      if (!returned || e !== "SIGNED_IN" || !s?.user) return;
+      returned = false;
+      const method = s.user.app_metadata?.provider === "google" ? "google" : "email";
+      const fresh = Date.now() - new Date(s.user.created_at || 0).getTime() < 10 * 60 * 1000;
+      globalThis.gradifyConsent?.event(fresh ? "sign_up" : "login", { method });
+    });
     return store;
   }
   // The signed-in user, confirmed by the server. If the server rejects the stored access token before the

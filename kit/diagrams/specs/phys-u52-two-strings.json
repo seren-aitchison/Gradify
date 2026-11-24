@@ -1,0 +1,44 @@
+{
+ "id": "phys-u52-two-strings",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u52",
+ "lesson": "Drawing free-body and field diagrams",
+ "title": "A mass hanging from two strings",
+ "caption": "In equilibrium the forces sum to zero. Horizontal: T₁ cos 30° = T₂ cos 60°, so T₂ = √3 T₁. Vertical: T₁ sin 30° + T₂ sin 60° = 19.6 N, so T₁ = 9.8 N and T₂ ≈ 17 N.",
+ "alt": "Free-body diagram of the 2 kilogram mass: weight 19.6 newtons down, tension 9.8 newtons up and left at 30 degrees, tension 17.0 newtons up and right at 60 degrees, net zero.",
+ "description": [
+  "Weight 19.6 N down.",
+  "T₁ = 9.8 N at 30° above the horizontal, to the left.",
+  "T₂ = 16.97 N at 60° above the horizontal, to the right.",
+  "Horizontal: 8.49 N each way. Vertical: 19.6 N up = weight."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 19.6,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "T_{1}",
+   "mag": 9.8,
+   "angle": 150,
+   "source": "string 1"
+  },
+  {
+   "label": "T_{2}",
+   "mag": 16.974,
+   "angle": 60,
+   "source": "string 2"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 0,
+  "angle": 0
+ },
+ "showResultant": false
+}

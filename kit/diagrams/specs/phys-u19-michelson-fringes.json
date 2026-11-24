@@ -1,0 +1,91 @@
+{
+ "id": "phys-u19-michelson-fringes",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Michelson interferometer",
+ "title": "Counting fringes with a Michelson interferometer",
+ "caption": "Moving one mirror by λ/2 changes the path by λ and shifts the pattern by one fringe, so the number of fringes is N = 2d/λ. For λ = 632.8 nm, 2000 fringes correspond to d = 2000 × λ/2 = 0.633 mm.",
+ "alt": "Graph of fringes counted against mirror movement from 0 to 1 millimetre: a straight line through the origin passing through 2000 fringes at 0.633 millimetres.",
+ "description": [
+  "The horizontal axis is the mirror displacement in millimetres; the vertical axis is the number of fringes that have passed.",
+  "The line is N = 2d/λ with λ = 632.8 nm: one fringe per λ/2 = 316.4 nm of movement.",
+  "At 2000 fringes the mirror has moved 0.633 mm."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   3400
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   500,
+   1000,
+   1500,
+   2000,
+   2500,
+   3000
+  ]
+ ],
+ "grid": [
+  0.2,
+  500
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mirror movement d / mm",
+  "fringes N"
+ ],
+ "curves": [
+  {
+   "expr": "3160.556257901391*x",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "N = 2d/λ",
+   "labelAt": [
+    0.1,
+    1100
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6328,
+   "y": 2000,
+   "colour": "a2",
+   "label": "2000 fringes, 0.633 mm",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3160.556257901391*x",
+   "x": 0.6328,
+   "y": 2000,
+   "name": "2000 fringes of 632.8 nm is a movement of 0.633 mm"
+  }
+ ]
+}

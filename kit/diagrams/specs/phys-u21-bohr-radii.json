@@ -1,0 +1,53 @@
+{
+ "id": "phys-u21-bohr-radii",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Bohr model",
+ "title": "Bohr orbits grow as n²",
+ "caption": "In the Bohr model r_n = n²a₀ with a₀ = 0.0529 nm. The n = 2 orbit is four times the ground-state radius, 0.212 nm, and the electron there moves at half the speed (v ∝ 1/n).",
+ "alt": "Bar chart of Bohr orbit radii: 0.053, 0.212, 0.476 and 0.846 nanometres for n = 1 to 4.",
+ "description": [
+  "n = 1: r = 1 × 0.0529 = 0.053 nm.",
+  "n = 2: r = 4 × 0.0529 = 0.212 nm.",
+  "n = 3: r = 9 × 0.0529 = 0.476 nm.",
+  "n = 4: r = 16 × 0.0529 = 0.846 nm.",
+  "The speed falls as 1/n: 2.19 × 10⁶ m s⁻¹ for n = 1, 1.09 × 10⁶ m s⁻¹ for n = 2."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  1
+ ],
+ "ticks": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "yLabel": "orbit radius / nm",
+ "items": [
+  {
+   "key": "n = 1",
+   "value": 0.053
+  },
+  {
+   "key": "n = 2",
+   "value": 0.212
+  },
+  {
+   "key": "n = 3",
+   "value": 0.476
+  },
+  {
+   "key": "n = 4",
+   "value": 0.846
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

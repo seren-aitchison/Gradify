@@ -1,0 +1,93 @@
+{
+ "id": "maths-u06-fourier-b1",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Fourier Series",
+ "title": "b₁ is the area under x sin x",
+ "caption": "b₁ = (1/π)∫ x sin x dx over (−π, π). The curve x sin x is never negative on this interval and the shaded area is 2π, so b₁ = 2π/π = 2.",
+ "alt": "The graph of y = x sin x from −π to π, an even M-shaped curve touching zero at the ends and the middle, with the area under it shaded and labelled 2π.",
+ "description": [
+  "f(x) = x is odd, so every aₙ = 0.",
+  "b₁ = (1/π)∫ x sin x dx from −π to π.",
+  "The integrand x sin x is non-negative on (−π, π); its area is [−x cos x + sin x] = 2π.",
+  "So b₁ = 2π/π = 2."
+ ],
+ "range": {
+  "x": [
+   -3.6,
+   3.6
+  ],
+  "y": [
+   -0.4,
+   2.2
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*sin(x)",
+   "colour": "a1",
+   "domain": [
+    -3.141592653589793,
+    3.141592653589793
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "x*sin(x)",
+   "from": -3.141592653589793,
+   "to": 3.141592653589793,
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.05,
+   "colour": "ink"
+  }
+ ],
+ "marks": [],
+ "arrows": [],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "x*sin(x)",
+   "from": -3.141592653589793,
+   "to": 3.141592653589793,
+   "value": 6.283185307179586,
+   "tol": 0.001,
+   "name": "the area under x sin x on (−π, π) is 2π, so b₁ = 2π/π = 2"
+  }
+ ],
+ "fromLesson": [
+  "So b₁ = 2π/π = 2"
+ ]
+}

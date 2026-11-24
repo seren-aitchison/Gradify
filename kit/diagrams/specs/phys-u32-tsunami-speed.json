@@ -1,0 +1,84 @@
+{
+ "id": "phys-u32-tsunami-speed",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u32",
+ "lesson": "Natural hazard monitoring",
+ "title": "Tsunami speed depends on ocean depth",
+ "caption": "A tsunami's wavelength is far longer than the ocean is deep, so it travels as a shallow-water wave at v = √(gd). Over 4000 m of ocean that is 198 m s⁻¹ (about 710 km h⁻¹), crossing 3000 km in about 4.2 hours; it slows and grows taller as the water shallows.",
+ "alt": "Wave speed against ocean depth, a square-root curve, with 198 metres per second at 4000 metres marked.",
+ "description": [
+  "v = √(g d), g = 9.8 m s⁻².",
+  "d = 4000 m: v = 198 m s⁻¹.",
+  "3000 km takes 15152 s ≈ 4.2 h.",
+  "At 10 m depth near the coast: about 10 m s⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   6000
+  ],
+  "y": [
+   0,
+   260
+  ]
+ },
+ "ticks": [
+  [
+   1000,
+   2000,
+   3000,
+   4000,
+   5000,
+   6000
+  ],
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ocean depth / m",
+  "speed / m s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(9.8*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 4000,
+   "to": 197.9898987322333
+  }
+ ],
+ "points": [
+  {
+   "x": 4000,
+   "y": 197.9899,
+   "colour": "a2",
+   "label": "198 m s⁻¹ at 4000 m",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(9.8*x)",
+   "x": 4000,
+   "y": 197.989899,
+   "name": "198 m s⁻¹ at 4000 m"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "id": "phys-u52-tilted-axes",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u52",
+ "lesson": "Choosing coordinate systems",
+ "title": "Tilted axes on a frictionless incline",
+ "caption": "With one axis along the slope the weight splits in two: along the slope mg sin 30° gives a = g sin 30° = 4.9 m s⁻²; perpendicular, N = mg cos 30° (8.49 N per kg) and there is no acceleration. Only weight and the normal force act.",
+ "alt": "Free-body diagram for 1 kilogram on a frictionless 30 degree slope: weight down, normal force perpendicular to the slope, net force down the slope.",
+ "description": [
+  "Weight 9.8 N per kg, straight down; normal force 8.49 N perpendicular to the slope.",
+  "Net force 4.9 N down the slope, so a = g sin 30° = 4.9 m s⁻²."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 9.8,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "N",
+   "mag": 8.487,
+   "angle": 60,
+   "source": "the slope"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 4.9,
+  "angle": 330
+ },
+ "showResultant": true
+}

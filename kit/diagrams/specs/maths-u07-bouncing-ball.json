@@ -1,0 +1,55 @@
+{
+ "id": "maths-u07-bouncing-ball",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Infinite Series",
+ "title": "The ball's total distance",
+ "caption": "The ball falls 10 m, then rises and falls 6, 3.6, 2.16, … each twice. The bounces add to 2 × 6/(1 − 0.6) = 30 m, so the total distance is 10 + 30 = 40 m.",
+ "alt": "One bar of 40 m split into a part of 10 m for the first drop and a part of 30 m for all the bounces.",
+ "description": [
+  "The first drop is 10 m.",
+  "Each rebound is 60% of the previous height: 6, 3.6, 2.16, …, travelled up and down.",
+  "The bounces: 2 × 6/(1 − 0.6) = 30 m.",
+  "Total = 10 + 30 = 40 m."
+ ],
+ "bars": [
+  {
+   "label": "distance",
+   "parts": [
+    {
+     "value": 10,
+     "text": "drop 10 m",
+     "colour": "a1"
+    },
+    {
+     "value": 30,
+     "text": "bounces 30 m",
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 0,
+   "from": 0,
+   "to": 1,
+   "value": 40,
+   "text": "40 m"
+  }
+ ],
+ "checks": [
+  {
+   "type": "ratio",
+   "bar": 0,
+   "ratio": [
+    1,
+    3
+   ],
+   "total": 40,
+   "name": "10 m + 30 m = 40 m"
+  }
+ ],
+ "fromLesson": []
+}

@@ -1,0 +1,83 @@
+{
+ "id": "phys-u27-chain-dispersion",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u27",
+ "lesson": "Phonons and lattice vibrations",
+ "title": "Phonon dispersion of an atomic chain",
+ "caption": "For a chain of masses m joined by springs K, ω = 2√(K/m)|sin(ka/2)|. Near k = 0 the curve is a straight line (sound waves, speed set by the slope); at the zone edge, k = ±π/a, it flattens at ω_max = 2√(K/m) = 2.92 × 10¹³ rad s⁻¹ for the silicon-like chain.",
+ "alt": "Angular frequency against wavevector from minus pi to pi over a: a sine-shaped arch, linear near zero and flat at a maximum of 2.92 times 10 to the 13 at the zone edges.",
+ "description": [
+  "K = 10 N m⁻¹, m = 4.7 × 10⁻²⁶ kg: ω_max = 2√(K/m) = 2.917 × 10¹³ rad s⁻¹.",
+  "ω = ω_max |sin(ka/2)| across the first Brillouin zone, −π/a to π/a.",
+  "Small k: ω ≈ (a√(K/m))k, sound. Zone edge: the group velocity falls to zero (a standing wave)."
+ ],
+ "range": {
+  "x": [
+   -3.2,
+   3.2
+  ],
+  "y": [
+   0,
+   3.4
+  ]
+ },
+ "ticks": [
+  [
+   -3.14,
+   -1.57,
+   1.57,
+   3.14
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "ka (from −π to π)",
+  "ω / 10¹³ rad s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "2.917299829957891*abs(sin(x/2))",
+   "domain": [
+    -3.14159265,
+    3.14159265
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2.917299829957891,
+   "label": "ω_{max} = 2.92"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "2.917299829957891*abs(sin(x/2))",
+   "domain": [
+    0,
+    3.14159265
+   ],
+   "x": 3.1416,
+   "y": 2.9173,
+   "name": "ω_max = 2√(K/m) at the zone edge"
+  },
+  {
+   "type": "slope",
+   "expr": "2.917299829957891*abs(sin(x/2))",
+   "x": 0.001,
+   "value": 1.4586,
+   "name": "linear near k = 0 (sound)"
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "id": "phys-u20-step-reflection",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Quantum barriers and scattering",
+ "title": "Reflection from a 3 eV potential step",
+ "caption": "Above the step (E > V₀ = 3 eV) the wave still reflects partially: R = ((k₁ − k₂)/(k₁ + k₂))² with k ∝ √E and k₂ ∝ √(E − V₀). At E = 5 eV, k₁/k₂ = √(5/2) = 1.58 and R = 0.05, so 5% of the electrons bounce back; T = 1 − R = 0.95. R falls as E rises but never reaches zero, and at E = V₀ all are reflected.",
+ "alt": "Graph of reflection and transmission probabilities against electron energy from 3 to 12 electronvolts for a 3 electronvolt step: reflection falls from 1 to 0.05 at 5 electronvolts and keeps falling; transmission rises correspondingly.",
+ "description": [
+  "The horizontal axis is the electron energy E in eV, above the 3 eV step; the vertical axis is the probability.",
+  "R = ((√E − √(E − 3))/(√E + √(E − 3)))² (the ratio k₂/k₁ = √(1 − V₀/E)). At E = 3 eV, R = 1.",
+  "At E = 5 eV, R = 0.05: about 5% reflected, 95% transmitted.",
+  "As E grows, R decreases towards zero but a classical particle would never be reflected: this is a wave effect."
+ ],
+ "range": {
+  "x": [
+   3,
+   12
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "E / eV",
+  "probability"
+ ],
+ "curves": [
+  {
+   "expr": "((sqrt(x)-sqrt(x-3))/(sqrt(x)+sqrt(x-3)))^2",
+   "domain": [
+    3,
+    12
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "R",
+   "labelAt": [
+    3.6,
+    0.5
+   ],
+   "samples": 300
+  },
+  {
+   "expr": "1-((sqrt(x)-sqrt(x-3))/(sqrt(x)+sqrt(x-3)))^2",
+   "domain": [
+    3,
+    12
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "T = 1 − R",
+   "labelAt": [
+    8.5,
+    0.82
+   ],
+   "samples": 300
+  }
+ ],
+ "points": [
+  {
+   "x": 5,
+   "y": 0.0507,
+   "colour": "ink",
+   "label": "R = 0.05 at 5 eV",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "((sqrt(x)-sqrt(x-3))/(sqrt(x)+sqrt(x-3)))^2",
+   "x": 5,
+   "y": 0.0507,
+   "name": "R = 0.05 for E = 5 eV, V₀ = 3 eV"
+  },
+  {
+   "type": "point",
+   "expr": "((sqrt(x)-sqrt(x-3))/(sqrt(x)+sqrt(x-3)))^2",
+   "x": 3,
+   "y": 1,
+   "name": "everything is reflected at E = V₀"
+  },
+  {
+   "type": "point",
+   "expr": "1-((sqrt(x)-sqrt(x-3))/(sqrt(x)+sqrt(x-3)))^2",
+   "x": 5,
+   "y": 0.9493,
+   "name": "T = 0.95 at 5 eV"
+  }
+ ]
+}

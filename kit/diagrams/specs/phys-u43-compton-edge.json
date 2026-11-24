@@ -1,0 +1,101 @@
+{
+ "id": "phys-u43-compton-edge",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u43",
+ "lesson": "Scintillation detectors",
+ "title": "Where the Compton edge comes from",
+ "caption": "A 662 keV photon that scatters through angle θ hands the electron less than all its energy; the most is at θ = 180°, a backscatter. With 2E/m_ec² = 2.59, that maximum is 478 keV, the Compton edge: the Compton continuum in a scintillator spectrum stops there, short of the photopeak at 662 keV.",
+ "alt": "Electron recoil energy against photon scattering angle for 662 keV gamma rays, rising from zero at 0 degrees to 478 keV at 180 degrees, below the 662 keV photon energy line.",
+ "description": [
+  "Electron recoil energy T = E·ε(1 − cos θ)/(1 + ε(1 − cos θ)), with ε = E/m_ec² = 662/511.",
+  "At θ = 180° this is E(2ε)/(1 + 2ε) = 662 × 2.59/3.59 ≈ 478 keV.",
+  "Smaller scattering angles give smaller recoil energies, filling the continuum below the edge.",
+  "The photopeak, full absorption at 662 keV, lies above the edge."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   0,
+   720
+  ]
+ },
+ "ticks": [
+  [
+   45,
+   90,
+   135,
+   180
+  ],
+  [
+   200,
+   400,
+   600
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "photon scattering angle θ / °",
+  "electron energy / keV"
+ ],
+ "curves": [
+  {
+   "expr": "662*1.295499*(1-cos(x*0.0174533))/(1+1.295499*(1-cos(x*0.0174533)))",
+   "colour": "a1",
+   "label": "recoil electron",
+   "labelAt": [
+    35,
+    90
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 662,
+   "label": "photopeak 662 keV"
+  },
+  {
+   "y": 478,
+   "label": "Compton edge 478 keV",
+   "to": 180
+  }
+ ],
+ "points": [
+  {
+   "x": 180,
+   "y": 477.65,
+   "colour": "a2",
+   "label": "θ = 180°",
+   "dx": -10,
+   "dy": 20,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "662*1.295499*(1-cos(x*0.0174533))/(1+1.295499*(1-cos(x*0.0174533)))",
+   "x": 180,
+   "y": 477.65,
+   "name": "Compton edge 478 keV at 180°"
+  },
+  {
+   "type": "max",
+   "expr": "662*1.295499*(1-cos(x*0.0174533))/(1+1.295499*(1-cos(x*0.0174533)))",
+   "domain": [
+    0,
+    180
+   ],
+   "x": 180,
+   "y": 477.65,
+   "name": "the largest recoil energy is the backscatter"
+  }
+ ]
+}

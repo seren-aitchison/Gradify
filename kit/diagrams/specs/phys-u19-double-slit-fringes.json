@@ -1,0 +1,99 @@
+{
+ "id": "phys-u19-double-slit-fringes",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Young's double-slit experiment",
+ "title": "Double-slit fringes: 633 nm, slits 0.25 mm apart, screen 2.0 m away",
+ "caption": "Bright fringes lie where d sin θ = nλ, spaced by x = λD/d = 633 × 10⁻⁹ × 2.0/(2.5 × 10⁻⁴) = 5.1 mm. The intensity I = 4I₀cos²(πdx/λD) varies smoothly between 4I₀ and zero (the single-slit envelope is ignored here). Halving d would double the spacing.",
+ "alt": "Graph of relative intensity against position on the screen from -15 to 15 millimetres: equally spaced bright fringes 5.1 millimetres apart with dark fringes halfway between.",
+ "description": [
+  "The horizontal axis is position on the screen in millimetres from the centre; the vertical axis is the intensity as a fraction of the maximum, 4I₀.",
+  "The curve is cos²(πx/5.1 mm): a bright fringe at the centre and at every 5.1 mm, a dark fringe halfway between them.",
+  "The spacing is x = λD/d = 5.1 mm."
+ ],
+ "range": {
+  "x": [
+   -15,
+   15
+  ],
+  "y": [
+   0,
+   1.25
+  ]
+ },
+ "ticks": [
+  [
+   -15,
+   -10,
+   -5,
+   0,
+   5,
+   10,
+   15
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / mm",
+  "I / 4I₀"
+ ],
+ "curves": [
+  {
+   "expr": "cos(3.14159265*x/5.064)^2",
+   "colour": "a1",
+   "width": 3,
+   "samples": 600
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0,
+    1.12
+   ],
+   "to": [
+    5.064,
+    1.12
+   ],
+   "both": true,
+   "label": "5.1 mm",
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/5.064)^2",
+   "x": 0,
+   "y": 1,
+   "name": "a bright fringe at the centre"
+  },
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/5.064)^2",
+   "x": 5.064,
+   "y": 1,
+   "name": "the next bright fringe is x = λD/d = 5.1 mm away"
+  },
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/5.064)^2",
+   "x": 2.532,
+   "y": 0,
+   "name": "a dark fringe halfway between"
+  }
+ ]
+}

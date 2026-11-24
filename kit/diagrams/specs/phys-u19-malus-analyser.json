@@ -1,0 +1,93 @@
+{
+ "id": "phys-u19-malus-analyser",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Polarisation",
+ "title": "Analyser after a polariser: Malus's law",
+ "caption": "Unpolarised light of 100 W m⁻² loses half at the polariser (50 W m⁻²). The analyser then transmits I = 50 cos²θ, which falls from 50 W m⁻² at 0° to zero at 90°. At 30°, I = 50 × cos²30° = 37.50000000000001 W m⁻².",
+ "alt": "Graph of transmitted intensity against analyser angle from 0 to 90 degrees: a cos-squared curve from 50 watts per square metre at 0 degrees to zero at 90, passing 37.50000000000001 at 30 degrees.",
+ "description": [
+  "The horizontal axis is the angle θ between the polariser and the analyser; the vertical axis is the transmitted intensity in W m⁻².",
+  "After the polariser the light is polarised with intensity 50 W m⁻², half of 100.",
+  "Malus's law gives I = 50 cos²θ: 50 at 0°, 37.50000000000001 at 30° and 0 at 90°."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   58
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   10,
+   20,
+   30,
+   40,
+   50
+  ]
+ ],
+ "grid": [
+  15,
+  10
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "I / W m⁻²"
+ ],
+ "curves": [
+  {
+   "expr": "50*cos(x*0.017453292519943295)^2",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "50 cos²θ",
+   "labelAt": [
+    52,
+    28
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 30,
+   "y": 37.50000000000001,
+   "colour": "a2",
+   "label": "37.50000000000001 W m⁻² at 30°",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "50*cos(x*0.017453292519943295)^2",
+   "x": 30,
+   "y": 37.50000000000001,
+   "name": "at 30° the transmitted intensity is 37.50000000000001 W m⁻²"
+  },
+  {
+   "type": "point",
+   "expr": "50*cos(x*0.017453292519943295)^2",
+   "x": 90,
+   "y": 0,
+   "name": "crossed polarisers pass nothing"
+  }
+ ]
+}

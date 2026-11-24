@@ -1,0 +1,163 @@
+{
+ "id": "maths-u17-stokes-square",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Differential Forms",
+ "title": "∮ x dy around the unit square",
+ "caption": "Going anticlockwise round the unit square, only the right edge contributes to ∮ x dy: there x = 1 and y rises by 1, giving 1. The left edge has x = 0, and the top and bottom have dy = 0. Stokes' theorem says the same: ∬ dx ∧ dy is the area, 1.",
+ "alt": "The unit square with anticlockwise arrows on its four edges. The right edge is labelled x = 1 and contributes 1; the left edge is labelled x = 0 and contributes 0; the area inside is 1.",
+ "description": [
+  "ω = x dy, so dω = dx ∧ dy.",
+  "On the right edge x = 1 and ∫ dy = 1, so it contributes 1.",
+  "On the left edge x = 0, so it contributes 0; top and bottom have dy = 0.",
+  "The boundary integral is 1, equal to the area ∬ dx ∧ dy."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   1,
+   0
+  ],
+  "C": [
+   1,
+   1
+  ],
+  "D": [
+   0,
+   1
+  ]
+ },
+ "labelAt": {
+  "A": [
+   -14,
+   14
+  ],
+  "B": [
+   14,
+   14
+  ],
+  "C": [
+   14,
+   -12
+  ],
+  "D": [
+   -14,
+   -12
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "vectors": [
+  {
+   "from": "A",
+   "to": "B",
+   "colour": "a2",
+   "labelSide": -1
+  },
+  {
+   "from": "B",
+   "to": "C",
+   "colour": "a2"
+  },
+  {
+   "from": "C",
+   "to": "D",
+   "colour": "a2"
+  },
+  {
+   "from": "D",
+   "to": "A",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0.5,
+    0.5
+   ],
+   "text": "area = 1",
+   "colour": "a1",
+   "size": 15
+  },
+  {
+   "at": [
+    1.5,
+    0.5
+   ],
+   "text": "x = 1: +1",
+   "colour": "a4"
+  },
+  {
+   "at": [
+    -0.45,
+    0.5
+   ],
+   "text": "x = 0: 0",
+   "colour": "a4"
+  },
+  {
+   "at": [
+    0.5,
+    -0.22
+   ],
+   "text": "dy = 0",
+   "colour": "soft",
+   "size": 13
+  },
+  {
+   "at": [
+    0.5,
+    1.2
+   ],
+   "text": "dy = 0",
+   "colour": "soft",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -1.1,
+   2.1
+  ],
+  "y": [
+   -0.6,
+   1.5
+  ]
+ },
+ "height": [
+  320,
+  300
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "value": 1,
+   "note": 0,
+   "name": "the square has area 1, so ∬ dx ∧ dy = 1"
+  }
+ ],
+ "fromLesson": [
+  "∮ x dy = 1"
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": "phys-u32-travel-times",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u32",
+ "lesson": "Seismology",
+ "title": "Locating an earthquake from the S–P delay",
+ "caption": "P waves (about 6 km s⁻¹) outrun S waves (about 3.4 km s⁻¹), so the gap between their arrivals grows with distance: about 1 s for every 8 km. An S wave 30 s behind the P wave puts the quake about 240 km away; three stations fix the epicentre.",
+ "alt": "Arrival time against distance for P and S waves, two straight lines from the origin that spread apart, with a 30 second gap at 240 kilometres marked.",
+ "description": [
+  "P arrival: t = d / 6. S arrival: t = d / 3.43.",
+  "The gap grows as d (1/v_S − 1/v_P) = d / 8 s per km.",
+  "A 30 s gap: d = 8 × 30 = 240 km (P at 40 s, S at 70 s)."
+ ],
+ "range": {
+  "x": [
+   0,
+   400
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400
+  ],
+  [
+   30,
+   60,
+   90,
+   120
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance from the quake / km",
+  "arrival time / s"
+ ],
+ "curves": [
+  {
+   "expr": "x/6",
+   "colour": "a1",
+   "label": "P wave",
+   "labelAt": [
+    330,
+    46
+   ]
+  },
+  {
+   "expr": "x/3.4285714285714284",
+   "colour": "a2",
+   "label": "S wave",
+   "labelAt": [
+    280,
+    100
+   ],
+   "anchor": "end"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    240,
+    40
+   ],
+   "to": [
+    240,
+    70
+   ],
+   "both": true,
+   "colour": "ink",
+   "label": "30 s",
+   "labelAt": [
+    252,
+    55
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x/3.4285714285714284-x/6",
+   "x": 240,
+   "y": 30,
+   "name": "a 30 s gap at 240 km"
+  },
+  {
+   "type": "slope",
+   "expr": "x/3.4285714285714284-x/6",
+   "x": 100,
+   "value": 0.125,
+   "name": "the gap grows 1 s per 8 km"
+  }
+ ]
+}

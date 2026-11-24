@@ -1,0 +1,53 @@
+{
+ "id": "phys-u32-gutenberg-richter",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u32",
+ "lesson": "Earthquake mechanisms",
+ "title": "Small earthquakes are far more common",
+ "caption": "The Gutenberg–Richter law, log₁₀ N = a − bM, with b ≈ 1, means each step down in magnitude brings ten times as many earthquakes: for every M6 there are about ten M5s and a hundred M4s.",
+ "alt": "Bar chart on a log scale of earthquake counts by magnitude: 10 000 at M4, 1000 at M5, 100 at M6, 10 at M7 (illustrative).",
+ "description": [
+  "Counts for a region and time span chosen so that M7 has 10 (illustrative).",
+  "M6: 100. M5: 1000. M4: 10 000.",
+  "Each magnitude step is a factor of ten in number (b = 1), while each step up releases about 32 times more energy."
+ ],
+ "kind": "bars",
+ "log": true,
+ "range": [
+  1,
+  100000
+ ],
+ "ticks": [
+  1,
+  10,
+  100,
+  1000,
+  10000,
+  100000
+ ],
+ "yLabel": "number of earthquakes (log scale)",
+ "items": [
+  {
+   "key": "M = 4",
+   "value": 10000
+  },
+  {
+   "key": "M = 5",
+   "value": 1000
+  },
+  {
+   "key": "M = 6",
+   "value": 100
+  },
+  {
+   "key": "M = 7",
+   "value": 10
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

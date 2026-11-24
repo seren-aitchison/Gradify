@@ -1,0 +1,86 @@
+{
+ "id": "phys-u23-reactor-growth",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Chain reactions",
+ "title": "Power growth in a slightly supercritical reactor",
+ "caption": "Each generation multiplies the neutron population by k = 1.001. With a 0.1 s generation time the power grows as e^(t/T) with period T = τ/(k − 1) = 100 s: it rises by e ≈ 2.7 every 100 s, slow enough for control rods to respond (delayed neutrons slow it further still).",
+ "alt": "Relative power against time rising exponentially, reaching 2.7 times at 100 seconds and about 20 times at 300 seconds.",
+ "description": [
+  "k = 1.001, generation time 0.1 s.",
+  "Reactor period T = 0.1 / 0.001 = 100 s.",
+  "After 100 s: ×e = 2.72. After 300 s: ×20.1."
+ ],
+ "range": {
+  "x": [
+   0,
+   300
+  ],
+  "y": [
+   0,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / s",
+  "power (relative)"
+ ],
+ "curves": [
+  {
+   "expr": "exp(x/100.00000000001101)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 100.00000000001101,
+   "to": 2.718281828459045
+  }
+ ],
+ "points": [
+  {
+   "x": 100.00000000001101,
+   "y": 2.7183,
+   "colour": "a2",
+   "label": "×e after 100 s",
+   "dx": -6,
+   "dy": -16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(x/100.00000000001101)",
+   "x": 100.00000000001101,
+   "y": 2.718282,
+   "name": "period 100 s"
+  },
+  {
+   "type": "point",
+   "expr": "0.1/(1.001-1)+0*x",
+   "x": 0,
+   "y": 100,
+   "name": "T = τ/(k − 1)"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 // function's reply check (checkReply) keeps only lesson ids it offered and well-formed questions.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { buildRequest, checkReply, DAILY, FEEDBACK_MODES } from "../kit/assess/tutor.js";
 
 const lesson = { id: "u01-01", title: "What is law?", text: "Law is a system of enforceable rules. Moral rules are not legally enforceable on their own." };
@@ -10,9 +10,15 @@ const NEW = ["diagnose", "socratic", "challenge", "connect", "examiner", "direct
 
 test("every mode has a daily limit, and the usage table accepts every mode", async () => {
   for (const m of NEW) assert.ok(DAILY[m] > 0, m);
-  // the latest migration that sets the usage table's allowed modes
-  const sql = await readFile(new URL("../supabase/migrations/20261122120000_chemistry_tutor_mode.sql", import.meta.url), "utf8");
-  for (const m of Object.keys(DAILY)) assert.match(sql, new RegExp(`'${m}'`), `${m} missing from the migration`);
+  // the latest migration that sets the usage table's allowed modes: each one replaces the whole list, so it must keep
+  // every mode, or applying the migrations in order would silently refuse one (two branches adding a mode each)
+  const dir = new URL("../supabase/migrations/", import.meta.url), files = (await readdir(dir)).filter((f) => f.endsWith(".sql")).sort();
+  const setting = []; for (const f of files) if ((await readFile(new URL(f, dir), "utf8")).includes("add constraint tutor_usage_mode_check")) setting.push(f);
+  const latest = setting.at(-1), sql = await readFile(new URL(latest, dir), "utf8");
+  const allowed = sql.match(/add constraint tutor_usage_mode_check\s+check \(mode in \(([^)]*)\)\)/)?.[1] || "";
+  const feature = sql.match(/when mode in \(([^)]*)\) then 'tutor'/)?.[1] || "";
+  for (const m of Object.keys(DAILY)) assert.match(allowed, new RegExp(`'${m}'`), `${m} missing from ${latest}'s allowed modes`);
+  for (const m of Object.keys(DAILY).filter((x) => !["explain"].includes(x))) assert.match(feature, new RegExp(`'${m}'`), `${m} isn't counted as tutor use in ${latest}`);
 });
 
 test("lesson modes carry the notes and the subject's safety rules", () => {

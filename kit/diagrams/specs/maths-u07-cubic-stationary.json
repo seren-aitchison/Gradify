@@ -1,0 +1,104 @@
+{
+ "id": "maths-u07-cubic-stationary",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Stationary Points",
+ "title": "Maximum and minimum of x³ − 12x",
+ "caption": "dy/dx = 3x² − 12 = 0 at x = ±2. The second derivative 6x is −12 at x = −2 (a maximum, (−2, 16)) and +12 at x = 2 (a minimum, (2, −16)).",
+ "alt": "The S-shaped cubic y = x³ − 12x with a maximum at (−2, 16) and a minimum at (2, −16).",
+ "description": [
+  "dy/dx = 3x² − 12 = 0 gives x = ±2.",
+  "The points are (2, −16) and (−2, 16).",
+  "d²y/dx² = 6x: negative at x = −2, so a maximum.",
+  "Positive at x = 2, so a minimum."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   -24,
+   24
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4
+  ],
+  [
+   -20,
+   -10,
+   10,
+   20
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^3-12*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -2,
+   "y": 16,
+   "label": "max (−2, 16)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -8
+  },
+  {
+   "x": 2,
+   "y": -16,
+   "label": "min (2, −16)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 20,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "x^3-12*x",
+   "domain": [
+    -3,
+    0
+   ],
+   "x": -2,
+   "y": 16,
+   "name": "the local maximum is (−2, 16)"
+  },
+  {
+   "type": "min",
+   "expr": "x^3-12*x",
+   "domain": [
+    0,
+    3
+   ],
+   "x": 2,
+   "y": -16,
+   "name": "the local minimum is (2, −16)"
+  }
+ ],
+ "fromLesson": [
+  "(2, −16) and (−2, 16)"
+ ]
+}

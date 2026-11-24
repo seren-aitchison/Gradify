@@ -1,0 +1,99 @@
+{
+ "id": "maths-u07-circle-rings",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Infinitesimal Calculus",
+ "title": "Adding up thin rings",
+ "caption": "A ring at distance x from the centre has circumference 2πx, so its area is about 2πx × dx. The graph of 2πx against x is a straight line, and the total area under it from 0 to r = 3 is a triangle of area ½ × 3 × 6π = 9π = πr².",
+ "alt": "A straight line y = 2πx from 0 to 3 with the triangle under it shaded, labelled with area 9π.",
+ "description": [
+  "A thin ring of radius x and width dx has area about 2πx dx.",
+  "Plot the circumference 2πx against x: a straight line through the origin.",
+  "Adding the rings from x = 0 to x = r is the area under this line.",
+  "For r = 3 the area is 9π = πr²."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (radius)",
+  "circumference 2πx"
+ ],
+ "curves": [
+  {
+   "expr": "6.283185307179586*x",
+   "colour": "a1",
+   "domain": [
+    0,
+    3.9
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "6.283185307179586*x",
+   "from": 0,
+   "to": 3,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 3
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 18.84955592153876,
+   "label": "(3, 6π)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 4
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "6.283185307179586*x",
+   "from": 0,
+   "to": 3,
+   "value": 28.274333882308138,
+   "tol": 0.01,
+   "name": "the area under 2πx from 0 to 3 is 9π = π × 3²"
+  }
+ ],
+ "fromLesson": [
+  "2πx dx"
+ ]
+}

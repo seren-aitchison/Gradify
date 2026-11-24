@@ -1,0 +1,96 @@
+{
+ "id": "maths-u06-arsinh",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Inverse Hyperbolic Functions",
+ "title": "arsinh(3/4) = ln 2",
+ "caption": "arsinh(3/4) is the x for which sinh x = 3/4. Since sinh(ln 2) = (2 − ½)/2 = 3/4, the answer is exactly ln 2 ≈ 0.693.",
+ "alt": "The graph of y = sinh x, rising through the origin, with the line y = 3/4 meeting it at x = ln 2 ≈ 0.693.",
+ "description": [
+  "sinh x = (eˣ − e⁻ˣ)/2 rises steadily through the origin.",
+  "arsinh(3/4) asks: for which x is sinh x = 3/4?",
+  "At x = ln 2, eˣ = 2 and e⁻ˣ = ½, so sinh x = (2 − ½)/2 = 3/4."
+ ],
+ "range": {
+  "x": [
+   -2,
+   2
+  ],
+  "y": [
+   -3,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(exp(x)-exp(-x))/2",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.75,
+   "label": "y = 3/4"
+  },
+  {
+   "x": 0.6931471805599453,
+   "to": 0.75
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6931471805599453,
+   "y": 0.75,
+   "label": "x = ln 2 ≈ 0.693",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 22
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(exp(x)-exp(-x))/2",
+   "x": 0.6931471805599453,
+   "y": 0.75,
+   "name": "sinh(ln 2) = 3/4"
+  },
+  {
+   "type": "point",
+   "expr": "(exp(x)-exp(-x))/2",
+   "x": 0.6931471805599453,
+   "y": 0.75,
+   "name": "sinh(ln(3/4 + 5/4)) = 3/4"
+  }
+ ],
+ "fromLesson": [
+  "arsinh(3/4) = ln(3/4 + 5/4) = ln 2"
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "id": "maths-u07-quotient-rule-flat",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Quotient Rule",
+ "title": "A flat point that is not a turning point",
+ "caption": "dy/dx = eˣ(x − 1)²/(x² + 1)² is never negative: the curve only rises. At x = 1 the numerator (x − 1)² is zero, so the curve flattens at (1, e/2) for a moment and then carries on upwards.",
+ "alt": "The curve y = eˣ/(x² + 1) rising from left to right with a momentary flat point at (1, e/2 ≈ 1.36).",
+ "description": [
+  "Quotient rule with u = eˣ and v = x² + 1.",
+  "dy/dx = eˣ(x − 1)²/(x² + 1)².",
+  "A square is never negative, so the gradient is ≥ 0 everywhere.",
+  "It is zero at x = 1, where the curve flattens but does not turn."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(x)/(x^2+1)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1.3591409142295225,
+   "label": "(1, e/2)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -14,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(x)/(x^2+1)",
+   "x": 1,
+   "y": 1.3591409142295225,
+   "name": "y = e/2 at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(x)/(x^2+1)",
+   "x": 1,
+   "value": 0,
+   "name": "the gradient is zero at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(x)/(x^2+1)",
+   "x": 0,
+   "value": 1,
+   "name": "the gradient at 0 is e⁰(0 − 1)²/1 = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "exp(x)/(x^2+1)",
+   "x": 2,
+   "value": 0.29556224395722597,
+   "name": "the gradient at 2 is e²/25 > 0: still rising"
+  }
+ ],
+ "fromLesson": [
+  "(x^{2} + 1)^{2}"
+ ]
+}

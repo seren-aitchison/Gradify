@@ -1,0 +1,87 @@
+{
+ "id": "phys-u21-moseley",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Multi-electron atoms",
+ "title": "Moseley's law",
+ "caption": "A Kα X-ray comes from an L electron filling a K vacancy; the K electron left behind screens one unit of charge, so E ≈ 10.2 eV × (Z − 1)². For copper (Z = 29): 10.2 × 28² eV = 8 keV. Moseley used this to order the elements by atomic number.",
+ "alt": "Kα energy against atomic number, a curve rising as Z minus 1 squared, with copper marked at 8.0 kiloelectronvolts.",
+ "description": [
+  "E(Kα) = (3/4) × 13.6 eV × (Z − 1)² = 10.2 eV × (Z − 1)².",
+  "Copper, Z = 29: 7.997 keV.",
+  "√E against Z is a straight line: each element's place in the table is fixed by its nuclear charge."
+ ],
+ "range": {
+  "x": [
+   10,
+   45
+  ],
+  "y": [
+   0,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   29,
+   40
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "atomic number Z",
+  "Kα energy / keV"
+ ],
+ "curves": [
+  {
+   "expr": "0.0102*(x-1)^2",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 29,
+   "to": 7.9968
+  }
+ ],
+ "points": [
+  {
+   "x": 29,
+   "y": 7.9968,
+   "colour": "a2",
+   "label": "Cu: 8.0 keV",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.0102*(x-1)^2",
+   "x": 29,
+   "y": 7.9968,
+   "name": "copper Kα = 8 keV"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(0.0102)*(x-1)",
+   "x": 29,
+   "y": 2.827861,
+   "name": "√E is linear in Z"
+  }
+ ]
+}

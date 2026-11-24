@@ -1,0 +1,45 @@
+{
+ "id": "phys-u19-glass-refraction",
+ "renderer": "refraction",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Reflection and refraction",
+ "title": "Light entering glass at 40°",
+ "caption": "Entering glass (n = 1.52) at 40° the ray bends towards the normal: sin θ₂ = sin 40°/1.52 = 0.423, so θ₂ = 25°. Light rays are reversible: the same ray leaving the glass at 25° emerges into air at 40°. A weak reflected ray (about 4% at normal incidence) leaves at 40° too.",
+ "alt": "Two ray diagrams: a ray in air at 40° entering glass bends towards the normal to 25°; a ray in glass at 25° leaves into air at 40°.",
+ "description": [
+  "A ray in air strikes a glass surface (n = 1.52) at 40° to the normal. A faint reflected ray leaves at 40° on the other side of the normal.",
+  "Snell's law: sin θ₂ = sin 40°/1.52 = 0.423, so θ₂ = 25°: the refracted ray bends towards the normal in the denser glass.",
+  "Second panel: the reverse path. A ray in glass meeting the surface at 25° leaves into air at 40°, away from the normal."
+ ],
+ "panels": [
+  {
+   "n1": 1,
+   "n2": 1.52,
+   "i": 40,
+   "media": [
+    "air",
+    "glass"
+   ],
+   "title": "air to glass",
+   "expect": {
+    "r": 25.017,
+    "tir": false
+   }
+  },
+  {
+   "n1": 1.52,
+   "n2": 1,
+   "i": 25.017,
+   "media": [
+    "glass",
+    "air"
+   ],
+   "title": "the same ray reversed",
+   "expect": {
+    "r": 40,
+    "tir": false
+   }
+  }
+ ]
+}

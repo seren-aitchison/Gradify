@@ -1,0 +1,93 @@
+{
+ "id": "phys-u37-t1-decay",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u37",
+ "lesson": "Quantum noise and decoherence",
+ "title": "A qubit relaxing",
+ "caption": "An excited qubit decays to |0⟩ at random, so the chance it is still excited falls as e^(−t/T₁). With T₁ = 100 μs, after 20 μs that is e^(−0.2) ≈ 0.82; a 50 ns gate leaves room for about 2000 operations within T₁.",
+ "alt": "Probability of the excited state against time, an exponential decay from 1, with 0.82 at 20 microseconds marked.",
+ "description": [
+  "P = e^(−t/100 μs).",
+  "t = 20 μs: 0.819. t = 100 μs: 0.368.",
+  "T₂ (dephasing) is usually shorter still and limits superpositions."
+ ],
+ "range": {
+  "x": [
+   0,
+   300
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200,
+   250,
+   300
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / μs",
+  "probability still excited"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/100)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 20,
+   "to": 0.8187307530779818
+  },
+  {
+   "x": 100,
+   "to": 0.36787944117144233,
+   "label": "T_{1}"
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 0.81873,
+   "colour": "a2",
+   "label": "0.82 at 20 μs",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/100)",
+   "x": 20,
+   "y": 0.81873075,
+   "name": "0.819 after 20 μs"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-x/100)",
+   "x": 100,
+   "y": 0.36787944,
+   "name": "1/e at T₁"
+  }
+ ]
+}

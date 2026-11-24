@@ -1,0 +1,87 @@
+{
+ "id": "maths-u07-improper-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Improper Integrals",
+ "title": "A finite area that never ends",
+ "caption": "The curve y = xe^(−x²) never reaches the axis, yet the area under it from 0 to b is ½ − ½e^(−b²), which tends to ½: the improper integral converges to ½. By x = 3 the curve is already almost flat on the axis.",
+ "alt": "The curve y = xe^(−x²) rising to a peak of about 0.43 at x = 0.71 and then decaying towards zero, with the area under it from 0 to 4 shaded.",
+ "description": [
+  "∫ x e^(−x²) dx = −½e^(−x²).",
+  "From 0 to b: ½ − ½e^(−b²).",
+  "As b → ∞, e^(−b²) → 0.",
+  "The area tends to ½."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x*exp(-x^2)",
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "x*exp(-x^2)",
+   "from": 0,
+   "to": 4,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "x*exp(-x^2)",
+   "from": 0,
+   "to": 6,
+   "value": 0.5,
+   "tol": 0.0005,
+   "name": "the area from 0 to 6 is already ½ − ½e⁻³⁶ ≈ ½"
+  },
+  {
+   "type": "max",
+   "expr": "x*exp(-x^2)",
+   "domain": [
+    0,
+    4
+   ],
+   "x": 0.7071067811865476,
+   "y": 0.42888194248035344,
+   "name": "the peak is at x = 1/√2"
+  }
+ ],
+ "fromLesson": []
+}

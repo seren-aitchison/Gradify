@@ -1,0 +1,98 @@
+{
+ "id": "phys-u36-mzm-transfer",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u36",
+ "lesson": "Optical modulators",
+ "title": "Transfer curve of a Mach–Zehnder modulator",
+ "caption": "The voltage shifts the phase in one arm, so the two arms interfere: T = cos²(πV/2V_π). With V_π = 3 V, the output is fully on at 0 V, half at 1.5 V (the quadrature point, where modulation is most linear) and off at 3 V.",
+ "alt": "Transmitted fraction against voltage, a cosine-squared curve from 1 at 0 volts through 0.5 at 1.5 volts to 0 at 3 volts and back up.",
+ "description": [
+  "T = cos²(πV / (2 × 3 V)).",
+  "V = 0: T = 1. V = 1.5 V: cos²(π/4) = 0.5. V = 3 V: T = 0.",
+  "Around 1.5 V the curve is steepest and nearly straight, the usual bias point."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1.5,
+   3,
+   4.5,
+   6
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "voltage / V",
+  "fraction transmitted"
+ ],
+ "curves": [
+  {
+   "expr": "cos(3.14159265*x/(2*3))^2",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1.5,
+   "to": 0.5
+  }
+ ],
+ "points": [
+  {
+   "x": 1.5,
+   "y": 0.5,
+   "colour": "a2",
+   "label": "0.5 at 1.5 V",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 3,
+   "y": 0,
+   "colour": "ink"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/(2*3))^2",
+   "x": 1.5,
+   "y": 0.5,
+   "name": "half transmitted at 1.5 V"
+  },
+  {
+   "type": "point",
+   "expr": "cos(3.14159265*x/(2*3))^2",
+   "x": 3,
+   "y": 0,
+   "name": "fully off at V_π"
+  },
+  {
+   "type": "slope",
+   "expr": "cos(3.14159265*x/(2*3))^2",
+   "x": 1.5,
+   "value": -0.52359878,
+   "name": "steepest at the quadrature point"
+  }
+ ]
+}

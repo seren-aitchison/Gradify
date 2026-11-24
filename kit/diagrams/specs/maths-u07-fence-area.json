@@ -1,0 +1,95 @@
+{
+ "id": "maths-u07-fence-area",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Global Optimisation",
+ "title": "The largest pen",
+ "caption": "With 200 m of fence and a wall on one side, the area is A = x(200 − 2x). It is a downward parabola with its maximum at x = 50: 50 × 100 = 5,000 m².",
+ "alt": "The parabola A = 200x − 2x² for x between 0 and 100, peaking at (50, 5,000).",
+ "description": [
+  "Sides perpendicular to the wall are x, the third side is 200 − 2x.",
+  "A = x(200 − 2x) = 200x − 2x².",
+  "A′ = 200 − 4x = 0 at x = 50 and A″ = −4 < 0.",
+  "The largest area is 50 × 100 = 5,000 m²."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   6000
+  ]
+ },
+ "ticks": [
+  [
+   25,
+   50,
+   75,
+   100
+  ],
+  [
+   2000,
+   4000,
+   6000
+  ]
+ ],
+ "grid": [
+  25,
+  1000
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (m)",
+  "A (m²)"
+ ],
+ "curves": [
+  {
+   "expr": "200*x-2*x^2",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 50,
+   "y": 5000,
+   "label": "(50, 5,000)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "200*x-2*x^2",
+   "domain": [
+    0,
+    100
+   ],
+   "x": 50,
+   "y": 5000,
+   "name": "the maximum area is 5,000 m² at x = 50"
+  },
+  {
+   "type": "point",
+   "expr": "200*x-2*x^2",
+   "x": 0,
+   "y": 0,
+   "name": "no pen at x = 0"
+  },
+  {
+   "type": "point",
+   "expr": "200*x-2*x^2",
+   "x": 100,
+   "y": 0,
+   "name": "no pen at x = 100"
+  }
+ ],
+ "fromLesson": []
+}

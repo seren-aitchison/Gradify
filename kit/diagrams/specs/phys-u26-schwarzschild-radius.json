@@ -1,0 +1,87 @@
+{
+ "id": "phys-u26-schwarzschild-radius",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u26",
+ "lesson": "Schwarzschild solution",
+ "title": "Schwarzschild radius grows in proportion to mass",
+ "caption": "r_s = 2GM/c² is about 2.95 km for each solar mass, so a 10 M☉ black hole has r_s ≈ 29.5 km: a horizon the size of a city.",
+ "alt": "Schwarzschild radius in kilometres against mass in solar masses, a straight line through the origin reaching 29.5 kilometres at 10 solar masses.",
+ "description": [
+  "r_s = 2GM/c² = 2.954 km × (M / M☉).",
+  "10 M☉: 29.5 km.",
+  "Doubling the mass doubles the radius, so the mean density inside falls as 1/M²: supermassive black holes are less dense than water."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   65
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   15,
+   30,
+   45,
+   60
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mass / M☉",
+  "Schwarzschild radius / km"
+ ],
+ "curves": [
+  {
+   "expr": "2.953845147376436*x",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 10,
+   "to": 29.53845147376436
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 29.5385,
+   "colour": "a2",
+   "label": "29.5 km at 10 M☉",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2.953845147376436*x",
+   "x": 10,
+   "y": 29.538451,
+   "name": "r_s = 29.5 km for 10 M☉"
+  },
+  {
+   "type": "point",
+   "expr": "2*6.674*1.989/2.998^2+0*x",
+   "x": 0,
+   "y": 2.95384515,
+   "name": "2GM☉/c² = 2.95 km (powers of ten cancel to km)"
+  }
+ ]
+}

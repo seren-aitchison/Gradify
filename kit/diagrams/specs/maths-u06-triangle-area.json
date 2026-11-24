@@ -1,0 +1,122 @@
+{
+ "id": "maths-u06-triangle-area",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Area of a Triangle",
+ "title": "Area = ½ab sin C",
+ "caption": "Two sides of 7 cm and 9 cm enclose 120°, so the area is ½ × 7 × 9 × sin 120° = 63√3/4 ≈ 27.3 cm². The angle may be obtuse: sin 120° = sin 60° = √3/2.",
+ "alt": "A triangle with sides 9 cm along the bottom and 7 cm rising to the left, with an obtuse angle of 120° between them.",
+ "description": [
+  "Two sides of 7 cm and 9 cm meet at an angle of 120°.",
+  "Area = ½ × 7 × 9 × sin 120°.",
+  "sin 120° = √3/2, so the area is 63√3/4 ≈ 27.3 cm²."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   9,
+   0
+  ],
+  "C": [
+   -3.4999999999999982,
+   6.062177826491071
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "B",
+    "C"
+   ],
+   "colour": "a1",
+   "opacity": 0.12
+  }
+ ],
+ "angles": [
+  {
+   "at": "A",
+   "from": "B",
+   "to": "C",
+   "deg": 120,
+   "label": "120°",
+   "colour": "a2",
+   "r": 26,
+   "labelR": 8
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "B",
+   "value": 9,
+   "label": "9 cm",
+   "side": -1
+  },
+  {
+   "a": "A",
+   "b": "C",
+   "value": 7,
+   "label": "7 cm"
+  }
+ ],
+ "labelAt": {
+  "A": [
+   8,
+   18
+  ],
+  "B": [
+   12,
+   12
+  ],
+  "C": [
+   -10,
+   -12
+  ]
+ },
+ "notes": [
+  {
+   "at": [
+    2,
+    2.7
+   ],
+   "text": "≈ 27.3 cm²",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -7,
+   11
+  ],
+  "y": [
+   -2,
+   8
+  ]
+ },
+ "height": [
+  300,
+  290
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "C"
+   ],
+   "value": "63*sqrt(3)/4",
+   "tol": 0.000001,
+   "name": "area = ½ × 7 × 9 × sin 120° = 63√3/4"
+  }
+ ],
+ "fromLesson": [
+  "Area = ½ × 7 × 9 × sin 120°"
+ ]
+}

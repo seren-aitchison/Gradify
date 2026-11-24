@@ -34,18 +34,9 @@ Plan the row as `["uNN-MM", null, "needs renderer X: what it would draw and chec
   `circuit` (one loop), `energy-profile`, `decision-tree`.
 
 ## Git routine (push tested work straight to main)
-```
-git add <only your files> kit/diagrams/manifest.json && git commit   # message ends with the two trailer lines below
-git fetch origin main && git rebase origin/main
-#  manifest.json conflict: git checkout --ours kit/diagrams/manifest.json   (in a rebase, --ours = origin's version)
-#  then: node scripts/diagrams/build.mjs phys-uNN && git add kit/diagrams/manifest.json && GIT_EDITOR=true git rebase --continue
-npm test                       # full suite must pass (note any pre-existing unrelated failure in your report)
-git diff origin/main --stat    # only your files + manifest
-git push origin HEAD:main      # rejected? fetch + rebase again, then push
-```
-Commit trailers:
-```
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01H1szfkrNVEcaiMBQCCYkDU
-```
+Commit your unit (plan, batch file, specs, SVGs, notes, manifest; not `HANDOVER.md`, which your lead updates from your report) with the commit trailers
+your lead gives you, then run `scripts/diagrams/land-unit.sh physics uNN` in the foreground and wait (it queues behind other agents).
+It rebases, rebuilds your unit, regenerates the visual learning inventory (CI fails without it), checks scope, runs the full CI gate
+and pushes to main, printing `LANDED <sha>` or `LAND FAILED: <reason>`. Land after every unit.
+
 Report: lessons assessed / with a diagram / lab / none (reasons), renderers you needed but lacked, commit SHA.

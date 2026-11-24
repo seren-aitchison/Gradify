@@ -1,0 +1,94 @@
+{
+ "id": "phys-u19-pupil-resolution",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Diffraction",
+ "title": "Diffraction limit of a circular aperture at 550 nm",
+ "caption": "The smallest resolvable angle is θ = 1.22λ/D, which falls as the aperture grows: smaller apertures give wider patterns. For the 3 mm pupil, θ = 1.22 × 550 nm/3 mm = 2.2 × 10⁻⁴ rad = 0.8′, close to the eye's actual acuity of about 1′ (dotted).",
+ "alt": "Graph of the diffraction-limited angle in minutes of arc against aperture diameter in millimetres: a falling curve through 0.8 arcminutes at 3 millimetres, with the eye's 1 arcminute acuity marked.",
+ "description": [
+  "The horizontal axis is the aperture diameter D in millimetres; the vertical axis is the smallest resolvable angle in minutes of arc.",
+  "The curve is θ = 1.22λ/D for λ = 550 nm: it is inversely proportional to D.",
+  "At D = 3 mm (the pupil) θ = 2.2 × 10⁻⁴ rad = 0.8′.",
+  "A dotted line marks the eye's actual acuity, about 1′, a little above the diffraction limit."
+ ],
+ "range": {
+  "x": [
+   1,
+   8
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "D / mm",
+  "θ / arcmin"
+ ],
+ "marks": [
+  {
+   "y": 1,
+   "label": "eye acuity ≈ 1′"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "2.3067280831966945/x",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "1.22λ/D",
+   "labelAt": [
+    5.3,
+    0.62
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 0.7689,
+   "colour": "a2",
+   "label": "3 mm pupil: 0.8′",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2.3067280831966945/x",
+   "x": 3,
+   "y": 0.7689,
+   "name": "1.22 × 550 nm/3 mm = 2.2 × 10⁻⁴ rad = 0.8′"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "id": "maths-u06-cos-minus-half",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Cosine",
+ "title": "cos x = −½ has solutions 120° and 240°",
+ "caption": "2cos x + 1 = 0 means cos x = −½. The line y = −½ meets the cosine graph at x = 180° − 60° = 120° and x = 180° + 60° = 240°, symmetric about 180°.",
+ "alt": "The cosine graph from 0° to 360° with the line y = −0.5 crossing it at 120° and 240°.",
+ "description": [
+  "The cosine curve starts at 1, falls to −1 at 180° and returns to 1.",
+  "The line y = −½ cuts it on the way down and on the way up.",
+  "The crossings are at 120° and 240°, 60° either side of 180°."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -1.3,
+   1.3
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "cos(0.017453292519943295*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": -0.5,
+   "label": "y = −½"
+  }
+ ],
+ "points": [
+  {
+   "x": 120,
+   "y": -0.5,
+   "label": "120°",
+   "colour": "a2",
+   "dx": 0,
+   "dy": 22,
+   "anchor": "middle"
+  },
+  {
+   "x": 240,
+   "y": -0.5,
+   "label": "240°",
+   "colour": "a2",
+   "dx": 0,
+   "dy": 22,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "cos(0.017453292519943295*x)",
+   "x": 120,
+   "y": -0.5,
+   "name": "cos 120° = −½"
+  },
+  {
+   "type": "point",
+   "expr": "cos(0.017453292519943295*x)",
+   "x": 240,
+   "y": -0.5,
+   "name": "cos 240° = −½"
+  }
+ ],
+ "fromLesson": [
+  "x = 180° − 60° = 120° or x = 180° + 60° = 240°"
+ ]
+}

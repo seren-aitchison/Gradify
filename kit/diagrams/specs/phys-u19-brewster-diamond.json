@@ -1,0 +1,135 @@
+{
+ "id": "phys-u19-brewster-diamond",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Brewster's angle",
+ "title": "Reflection from diamond (n = 2.42) for both polarisations",
+ "caption": "Light reflects differently by polarisation. The component in the plane of incidence (p) has no reflection at Brewster's angle θ_B = tan⁻¹ 2.42 = 67.5°, so reflected light there is purely s-polarised. At normal incidence both reflect 17%; at grazing incidence both tend to 100%.",
+ "alt": "Graph of reflectance against angle of incidence from 0 to 90 degrees for diamond: the p curve falls from 17 percent to zero at 67.5 degrees then rises to 100 percent, while the s curve rises steadily from 17 percent to 100 percent.",
+ "description": [
+  "The horizontal axis is the angle of incidence in degrees; the vertical axis is the fraction of light reflected.",
+  "At 0° both polarisations reflect ((2.42 − 1)/(2.42 + 1))² = 0.17.",
+  "The s curve (E perpendicular to the plane of incidence) rises steadily to 1 at 90°.",
+  "The p curve falls to zero at θ_B = tan⁻¹ 2.42 = 67.5°, where the reflected and refracted rays are 90° apart, and then rises to 1."
+ ],
+ "range": {
+  "x": [
+   0,
+   90
+  ],
+  "y": [
+   0,
+   1.08
+  ]
+ },
+ "ticks": [
+  [
+   15,
+   30,
+   45,
+   60,
+   75,
+   90
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  15,
+  0.25
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "angle of incidence / °",
+  "reflectance"
+ ],
+ "curves": [
+  {
+   "expr": "(sin(x*0.017453292519943295-asin(sin(x*0.017453292519943295)/2.42))/sin(x*0.017453292519943295+asin(sin(x*0.017453292519943295)/2.42)))^2",
+   "domain": [
+    0.2,
+    89.9
+   ],
+   "colour": "a2",
+   "width": 3.2,
+   "label": "s",
+   "labelAt": [
+    30,
+    0.34
+   ],
+   "samples": 500
+  },
+  {
+   "expr": "(tan(x*0.017453292519943295-asin(sin(x*0.017453292519943295)/2.42))/tan(x*0.017453292519943295+asin(sin(x*0.017453292519943295)/2.42)))^2",
+   "domain": [
+    0.2,
+    89.9
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "label": "p",
+   "labelAt": [
+    16,
+    0.04
+   ],
+   "samples": 500
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    62,
+    0.14
+   ],
+   "to": [
+    67.2485,
+    0.012
+   ],
+   "label": "Brewster 67.5°",
+   "labelAt": [
+    66,
+    0.17
+   ],
+   "anchor": "end"
+  }
+ ],
+ "points": [
+  {
+   "x": 67.5485,
+   "y": 0,
+   "colour": "ink"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(tan(x*0.017453292519943295-asin(sin(x*0.017453292519943295)/2.42))/tan(x*0.017453292519943295+asin(sin(x*0.017453292519943295)/2.42)))^2",
+   "x": 67.54845354399613,
+   "y": 0,
+   "name": "no p reflection at θ_B = tan⁻¹ 2.42 = 67.5°"
+  },
+  {
+   "type": "point",
+   "expr": "(sin(x*0.017453292519943295-asin(sin(x*0.017453292519943295)/2.42))/sin(x*0.017453292519943295+asin(sin(x*0.017453292519943295)/2.42)))^2",
+   "x": 67.54845354399613,
+   "y": 0.5017,
+   "name": "s-polarisation is still partly reflected at θ_B"
+  },
+  {
+   "type": "point",
+   "expr": "(tan(x*0.017453292519943295-asin(sin(x*0.017453292519943295)/2.42))/tan(x*0.017453292519943295+asin(sin(x*0.017453292519943295)/2.42)))^2",
+   "x": 0.2,
+   "y": 0.1724,
+   "name": "normal-incidence reflectance 0.17"
+  }
+ ]
+}

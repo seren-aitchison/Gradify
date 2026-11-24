@@ -1,0 +1,113 @@
+{
+ "id": "phys-u25-kinetic-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u25",
+ "lesson": "Relativistic energy",
+ "title": "Relativistic kinetic energy",
+ "caption": "K = (γ − 1)mc² agrees with ½mv² at low speed but grows without limit as v → c. For a proton at 0.9c, γ = 2.294 and K = 1.294 × 938 MeV = 1214 MeV, more than twice the classical ½mv² (380 MeV).",
+ "alt": "Kinetic energy in units of mc squared against v over c: the classical parabola and the relativistic curve together at low speed, the relativistic one rising steeply near 1.",
+ "description": [
+  "Kinetic energy in units of mc².",
+  "Classical: β²/2. Relativistic: γ − 1.",
+  "At β = 0.9: classical 0.405, relativistic 1.294.",
+  "For a proton (mc² = 938 MeV): K = 1214 MeV."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "v / c",
+  "kinetic energy / mc²"
+ ],
+ "curves": [
+  {
+   "expr": "1/sqrt(1-x^2)-1",
+   "domain": [
+    0,
+    0.97
+   ],
+   "colour": "a1",
+   "label": "relativistic (γ − 1)",
+   "labelAt": [
+    0.55,
+    1.6
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "x^2/2",
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "classical ½β²",
+   "labelAt": [
+    0.74,
+    0.12
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.9,
+   "y": 1.29416,
+   "colour": "a2",
+   "label": "1214 MeV for a proton",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -6
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/sqrt(1-x^2)-1",
+   "x": 0.9,
+   "y": 1.29415734,
+   "name": "γ − 1 = 1.294 at 0.9c"
+  },
+  {
+   "type": "order",
+   "a": "1/sqrt(1-x^2)-1",
+   "b": "x^2/2",
+   "x": 0.9,
+   "rel": ">",
+   "name": "more than the classical value at 0.9c"
+  },
+  {
+   "type": "value",
+   "expr": "1/sqrt(1-x^2)-1-(x^2/2)",
+   "x": 0.1,
+   "between": [
+    0,
+    0.0001
+   ],
+   "name": "agrees with ½mv² at low speed"
+  }
+ ]
+}

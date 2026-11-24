@@ -1,0 +1,99 @@
+{
+ "id": "phys-u19-snell-gradient",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Snell's law",
+ "title": "sin i against sin r gives the refractive index",
+ "caption": "Snell's law for light entering the block from air is sin i = n sin r, so a graph of sin i against sin r is a straight line through the origin whose gradient is n. A gradient of 1.48 identifies the block as Perspex/acrylic (crown glass would give about 1.52).",
+ "alt": "Graph of sin i against sin r: a straight line through the origin with gradient 1.48, passing through (0.60, 0.888).",
+ "description": [
+  "The horizontal axis is sin r (angle of refraction in the block) and the vertical axis is sin i (angle of incidence in air).",
+  "Because sin i = n sin r, the points lie on a straight line through the origin with gradient n = 1.48.",
+  "For example sin r = 0.60 corresponds to sin i = 0.888.",
+  "A gradient of 1.48 matches Perspex; glass at 1.52 would be a slightly steeper line."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.7
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ ],
+ "grid": [
+  0.1,
+  0.2
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "sin r",
+  "sin i"
+ ],
+ "curves": [
+  {
+   "expr": "1.48*x",
+   "domain": [
+    0,
+    0.7
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "gradient n = 1.48",
+   "labelAt": [
+    0.07,
+    0.62
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6,
+   "y": 0.888,
+   "label": "(0.60, 0.89)",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1.48*x",
+   "x": 0.3,
+   "value": 1.48,
+   "name": "the gradient is n = 1.48"
+  },
+  {
+   "type": "point",
+   "expr": "1.48*x",
+   "x": 0.6,
+   "y": 0.888,
+   "name": "sin r = 0.60 gives sin i = 0.888"
+  }
+ ]
+}

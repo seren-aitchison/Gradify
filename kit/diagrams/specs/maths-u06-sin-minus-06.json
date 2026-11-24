@@ -1,0 +1,100 @@
+{
+ "id": "maths-u06-sin-minus-06",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Sine",
+ "title": "sin x = −0.6 has two solutions in a turn",
+ "caption": "The line y = −0.6 meets the sine graph twice between 0° and 360°, in the third and fourth quadrants: x = 180° + 36.9° ≈ 216.9° and x = 360° − 36.9° ≈ 323.1°.",
+ "alt": "The sine graph from 0° to 360° with the line y = −0.6 crossing it at about 216.9° and 323.1°.",
+ "description": [
+  "The sine curve runs from 0 up to 1, down to −1 and back to 0.",
+  "The horizontal line y = −0.6 sits below the axis.",
+  "It meets the curve twice, at x ≈ 216.9° and x ≈ 323.1°."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -1.3,
+   1.3
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sin(0.017453292519943295*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": -0.6,
+   "label": "y = −0.6"
+  }
+ ],
+ "points": [
+  {
+   "x": 216.86989764584402,
+   "y": -0.6,
+   "label": "216.9°",
+   "colour": "a2",
+   "dx": -8,
+   "dy": 22,
+   "anchor": "middle"
+  },
+  {
+   "x": 323.13010235415595,
+   "y": -0.6,
+   "label": "323.1°",
+   "colour": "a2",
+   "dx": 0,
+   "dy": 22,
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sin(0.017453292519943295*x)",
+   "x": 216.86989764584402,
+   "y": -0.6,
+   "name": "sin 216.9° = −0.6"
+  },
+  {
+   "type": "point",
+   "expr": "sin(0.017453292519943295*x)",
+   "x": 323.13010235415595,
+   "y": -0.6,
+   "name": "sin 323.1° = −0.6"
+  }
+ ],
+ "fromLesson": [
+  "x ≈ 216.9° or x ≈ 323.1°"
+ ]
+}

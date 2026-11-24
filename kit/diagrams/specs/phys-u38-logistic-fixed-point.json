@@ -1,0 +1,102 @@
+{
+ "id": "phys-u38-logistic-fixed-point",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u38",
+ "lesson": "Logistic map",
+ "title": "The logistic map's fixed point",
+ "caption": "A fixed point of x_{n+1} = rx_n(1 − x_n) is where the parabola meets the line y = x. For r = 2.5, x* = 1 − 1/r = 0.6. The slope there is f′(x*) = 2 − r = -0.5; since |f′| < 1 iterates spiral in and it is stable. For r = 3.2 the slope is −1.2 and a 2-cycle takes over.",
+ "alt": "The parabola 2.5x(1 − x) and the diagonal y = x crossing at x = 0.6.",
+ "description": [
+  "f(x) = 2.5x(1 − x), peak 0.625 at x = 0.5.",
+  "Fixed point: f(x) = x at x* = 0.6.",
+  "f′(x*) = r(1 − 2x*) = -0.5: |f′| < 1, so stable."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x_{n}",
+  "x_{n+1}"
+ ],
+ "curves": [
+  {
+   "expr": "2.5*x*(1-x)",
+   "colour": "a1",
+   "label": "f(x) = 2.5x(1 − x)",
+   "labelAt": [
+    0.03,
+    0.78
+   ]
+  },
+  {
+   "expr": "x",
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "y = x",
+   "labelAt": [
+    0.82,
+    0.92
+   ],
+   "anchor": "end"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.6,
+   "to": 0.6
+  }
+ ],
+ "points": [
+  {
+   "x": 0.6,
+   "y": 0.6,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "2.5*x*(1-x)",
+   "b": "x",
+   "x": 0.6,
+   "y": 0.6,
+   "name": "fixed point x* = 0.6"
+  },
+  {
+   "type": "slope",
+   "expr": "2.5*x*(1-x)",
+   "x": 0.6,
+   "value": -0.5,
+   "name": "f′(x*) = −0.5: stable"
+  }
+ ]
+}

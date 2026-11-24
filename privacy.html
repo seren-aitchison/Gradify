@@ -4,13 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Privacy · Gradify</title>
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <meta name="robots" content="max-image-preview:large">
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/privacy.html">
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <link rel="canonical" href="https://getgradify.com/privacy.html">
+  <meta property="og:title" content="Privacy · Gradify">
+  <meta property="og:description" content="What Gradify keeps about you, where it's kept, what Gradify AI sees, and how to download or delete it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getgradify.com/privacy.html">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="What Gradify keeps about you, where it's kept, what Gradify AI sees, and how to download or delete it.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/kit/styles/base.css">
   <script src="/kit/core/theme-boot.js"></script>
   <style>
@@ -42,8 +53,9 @@
   <link rel="modulepreload" href="/kit/ui/shelf.js">
   <link rel="modulepreload" href="/kit/ui/overlay.js">
   <link rel="modulepreload" href="/kit/core/sites.js">
-  <link rel="modulepreload" href="/kit/core/colour.js">
   <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
   <!-- /module-preload --></head>
 <body>
   <div class="wrap hub-top">
@@ -64,7 +76,7 @@
   </div>
   <main id="main">
     <h1>Privacy</h1>
-    <p>A plain-English account of what Gradify keeps about you and where. It describes how the site works today. Last updated 17 November 2026.</p>
+    <p>A plain-English account of what Gradify keeps about you and where. It describes how the site works today. Last updated 24 November 2026.</p>
     <p class="note" id="who"><b>Who's responsible.</b> Gradify, getgradify.com and every Gradify site are run by <b>Gradify Ltd</b>, which is the controller of the personal data described on this page. See also the <a href="/terms.html">terms of use</a>.</p>
     <p class="note" id="contact"><b>Contact.</b> For anything about your personal data (a copy of it, a correction, removal from a launch list, or a question), email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>. For anything else about Gradify, email <a href="mailto:hello@getgradify.com">hello@getgradify.com</a>.</p>
 
@@ -75,7 +87,7 @@
       <li>progress in each course (<code>gradify.course.…</code>)</li>
       <li>your set-up answers and display settings (<code>gradify.learner</code>)</li>
     </ul>
-    <p>Gradify doesn't set cookies. Clearing this site's data in your browser deletes all of it.</p>
+    <p>Gradify itself doesn't set cookies. The only cookies are Google's, for analytics and advertising measurement, and only if you accept them (<a href="#analytics">below</a>). Clearing this site's data in your browser deletes all of it.</p>
 
     <h2>With a Gradify account</h2>
     <p>When accounts are switched on and you sign in, the same things are saved to your account so they follow you between devices:</p>
@@ -102,6 +114,7 @@
       <li>what an interactive lab on the page shows when you ask about it: its settings, results and challenges</li>
       <li>the conversation so far</li>
       <li>a summary of your progress</li>
+      <li>when you ask about your degree: the degree tracker's results (your averages, class, what each class needs, your modules' names and due dates, your university's rules if you chose one, and the tracker's insights), worked out in your browser. Not your files, and not a list of your marks: a single mark appears only where an insight names it (such as your lowest one)</li>
     </ul>
     <p>Gradify saves the study packs it makes from your notes to your account, with a fingerprint of the notes so the same notes are never processed twice. It doesn't keep tutor conversations. For each AI request it records which feature you used, on which site, whether it worked, how much text it took (in tokens) and its estimated cost, so it can apply your monthly allowance and keep Gradify's spending in check. AI features need an account and only run when you choose to use them. Gradify AI is not switched on yet.</p>
     <p><b>Don't put personal details about other people</b>, such as patients or clients, into notes, answers or questions.</p>
@@ -115,11 +128,14 @@
     </ul>
     <p>Nothing else is collected: no account, no payment details, no name. The list is kept in Gradify's database (Supabase, in the UK).</p>
     <p><b>What it's for:</b> one email to tell you that thing has opened. It isn't used for newsletters or marketing, and it isn't shared or sold. <b>Why Gradify can keep it:</b> you asked to be told (your consent), and you can withdraw that at any time.</p>
+
+    <h2 id="study-tips">Study tips emails</h2>
+    <p>If you ask for the free study plan and weekly tips on one of Gradify's guides, tools or templates pages, Gradify keeps the same three things in the same place: your email address, the list ("Study tips") and when you joined. It's used only to send that plan and one study tip a week. It isn't shared or sold. <b>Why Gradify can keep it:</b> you asked for it (your consent). Reply "stop" to any email, or email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>, and you're removed.</p>
     <p><b>How long it's kept:</b> your entry is deleted once that launch email has been sent, and in any case within 12 months of joining if it never opens.</p>
     <p>Nobody can read the list through the website, including you, and joining the same list twice keeps one entry. To have your entry removed before then, email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a> from the address you joined with.</p>
 
     <h2>Usage counts</h2>
-    <p>To see whether Gradify is used, the site counts page views, finished lessons, finished exams and tutor requests. Each count records:</p>
+    <p>To see whether Gradify is used, the site counts page views, finished lessons, finished exams and tutor requests. On the free study pages (tools, guides, topics) it also counts using a tool, finishing a quiz, sharing, printing, exporting and opening the app, and whether the page loaded and responded quickly (just "good", "needs improvement" or "poor" for each of three speed measures, no timings). Each count records:</p>
     <ul>
       <li>the site</li>
       <li>the page address, without anything after <code>#</code> or <code>?</code></li>
@@ -130,11 +146,34 @@
     <p>It records no name, account, cookie or identifier of any kind, and no time of day, so counts can't be linked to you or to each other. Nothing is counted if your browser sends Do Not Track or Global Privacy Control, or if you turn counting off here.</p>
     <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="opt"><span>…</span></button><span id="opt-state" aria-live="polite"></span></div>
 
+    <h2 id="analytics">Google Analytics and Google Ads measurement (only if you accept)</h2>
+    <p>Gradify asks before using Google's cookies, with two separate choices, both off until you say yes:</p>
+    <ul>
+      <li><b>Analytics</b> (Google Analytics): to see which pages and features help people study, and to find what's broken or confusing.</li>
+      <li><b>Advertising measurement</b> (Google Ads): to see whether Gradify's own ads on Google led to a sign-up or a purchase, so Gradify spends less on ads that don't help anyone. It is never used to show you personalised ads or to follow you round other sites (remarketing).</li>
+    </ul>
+    <p>“Accept all” turns both on; “Reject all”, or not choosing, keeps both off; “Manage preferences” lets you pick one. Until you accept one, no Google code loads and no Google cookie is set. Gradify doesn't sell this data.</p>
+    <p><b>Where neither ever runs.</b> Not on JuniorGradify or YouthGradify, whatever you choose. Not if your browser sends Do Not Track or Global Privacy Control: Gradify treats those as a no and doesn't ask. Not if you've turned off the usage counts above.</p>
+    <p><b>What analytics collects, if you accept it.</b> Google Analytics sets cookies named <code>_ga</code> and <code>_ga_…</code> holding a random identifier for this browser. With them, Google Analytics records:</p>
+    <ul>
+      <li>the pages you visit, without anything after <code>?</code> except campaign tags (<code>utm_…</code>), and without sign-in codes after <code>#</code></li>
+      <li>the website that linked to Gradify (its address only, not the full link)</li>
+      <li>your device type, browser, screen size, language and approximate location (country and city, worked out by Google from your IP address, which Google Analytics 4 doesn't store)</li>
+      <li>study events: a lesson started or finished, a quiz or exam started or finished (passed or not, never your score or answers), a flashcard session started or finished (how many cards), the tutor opened, a free tool used, sharing, printing or exporting, a planned study block finished, and signing up or signing in (only whether by email or Google)</li>
+      <li>on the pricing page, starting checkout and a new subscription (the plan and its price, never payment details)</li>
+    </ul>
+    <p>It never receives your name, email address, password, payment details, notes, flashcards, answers or scores. Google signals and ad personalisation are off.</p>
+    <p><b>What advertising measurement adds, if you accept it.</b> When you arrive from one of Gradify's Google ads, Google's click identifier is kept in a cookie named <code>_gcl_…</code> (for up to 90 days), and Google is told when that visit leads to a sign-up, a checkout or a new subscription (with the plan and price). Google matches this to the ad click in its own systems. Nothing about your studying is used, and ad personalisation stays off, whatever you choose.</p>
+    <p><b>Why Gradify can use them:</b> you agreed (your consent), separately for each. <b>How long it's kept:</b> the analytics cookies last up to 13 months, and Google Analytics keeps the detailed records for 2 months before deleting them; totals (such as visits per page per month) are kept. <b>Google's role:</b> for analytics, Google Ireland Limited and Google LLC process this for Gradify under Google's data processing terms. For advertising measurement, Google uses the ad-click data under its own controller terms and privacy policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). The data can be handled in the United States. That transfer is covered by the UK safeguards described below.</p>
+    <p><b>Change your mind any time.</b> Use the button here or “Cookie settings” at the bottom of the site's pages. Turning a choice off deletes its Google cookies in this browser and stops it from the next page. Your choice is kept in this browser (<code>gradify.consent</code>), so you'll be asked again in another browser or if you clear this site's data.</p>
+    <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="ga-opt" data-cookie-settings><span>Cookie settings</span></button><span id="ga-state" aria-live="polite"></span></div>
+
     <h2>Who else handles your data</h2>
     <p>Gradify uses a few services to run. Each only gets what it needs to do its job:</p>
     <ul>
       <li><b>Supabase</b> stores accounts, study data and launch lists, and handles sign-in.</li>
       <li><b>Google</b> signs you in, only if you choose “Sign in with Google”.</li>
+      <li><b>Google Analytics</b> counts visits and feature use, and <b>Google Ads</b> measures whether Gradify's ads lead to sign-ups and purchases, each only if you accept it, as described <a href="#analytics">above</a>.</li>
       <li><b>Google Fonts</b> supplies the fonts on every page, so Google sees your device's IP address when a page loads.</li>
       <li><b>GitHub Pages</b> serves the website itself, and sees your IP address like any web host.</li>
       <li><b>Anthropic</b> (Claude) writes Gradify AI's answers, once Gradify AI is switched on, as described above. Anthropic is in the United States.</li>
@@ -149,8 +188,9 @@
     <ul>
       <li><b>Download</b> your data, or <b>delete</b> your notes, cards and progress, from Account in the Gradify app. Your sign-in and set-up answers stay so you can still sign in; to close your account completely, email <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>.</li>
       <li>Ask about, correct or remove anything Gradify holds about you: <a href="mailto:privacy@getgradify.com">privacy@getgradify.com</a>.</li>
-      <li>Use Gradify without an account, and nothing leaves this browser except the anonymous counts above.</li>
-      <li>Turn the counts off on this page.</li>
+      <li>Use Gradify without an account, and nothing leaves this browser except the anonymous counts above, and Google analytics or advertising measurement if you accept them.</li>
+      <li>Turn the counts off on this page (that turns Google analytics and advertising measurement off too).</li>
+      <li>Accept, reject or withdraw analytics and advertising measurement with “Cookie settings”.</li>
     </ul>
     <p>Under UK data protection law you can ask for a copy of your data, ask for it to be corrected or deleted, object to how it's used, and withdraw consent you've given. If you're unhappy with how Gradify has handled your data, please tell Gradify first; you can also complain to the Information Commissioner's Office (<a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>).</p>
   </main>
@@ -160,7 +200,9 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
     </footer>
@@ -174,8 +216,18 @@
       btn.querySelector("span").textContent = off ? "Count my visits again" : "Don't count my visits";
       state.textContent = off ? "Counting is off in this browser." : analyticsAllowed() ? "Counting is on in this browser." : "Nothing is being counted right now (your browser asks not to be tracked, or counting isn't switched on yet).";
     };
-    btn.addEventListener("click", () => { setAnalytics(analyticsOptedOut()); paint(); });
+    btn.addEventListener("click", () => { setAnalytics(analyticsOptedOut()); paint(); paintGa(); });
     paint();
+    // Google Analytics consent (kit/core/consent.js)
+    const gaState = document.getElementById("ga-state");
+    const paintGa = () => {
+      const c = window.gradifyConsent;
+      if (!c || c.stub) return;
+      const why = c.blocked();
+      gaState.textContent = why === "browser-signal" ? "Off: your browser asks not to be tracked." : why === "counting-off" ? "Off: counting is turned off in this browser." : why ? "Off on this address." : (() => { const p = c.prefs(), w = (v) => v === true ? "on" : v === false ? "off" : "off (not chosen)"; return `In this browser: analytics ${w(p.analytics)}, advertising measurement ${w(p.ads)}.`; })();
+    };
+    document.addEventListener("gradify:consent", paintGa);
+    addEventListener("load", paintGa); setTimeout(paintGa, 500);
   </script>
 </body>
 </html>

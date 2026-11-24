@@ -1,0 +1,110 @@
+{
+ "id": "phys-u30-transit",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u30",
+ "lesson": "Exoplanets",
+ "title": "A transit light curve",
+ "caption": "As the planet crosses its star it blocks a fraction (R_p/R_*)² of the light. A Jupiter (0.1 R☉) in front of a Sun-like star dims it by 1%; an Earth would dim it by only about 0.008%.",
+ "alt": "Relative brightness against time: flat at 1, dipping by 1 percent for the duration of the transit with sloping ingress and egress, then back to 1.",
+ "description": [
+  "Brightness relative to the star alone.",
+  "During the transit it falls to 0.99: a 1% dip, since (0.1)² = 0.01.",
+  "The sloping edges are ingress and egress, while the planet's disc is only partly in front of the star.",
+  "The time axis is illustrative; the depth is from the lesson."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0.985,
+   1.003
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.99,
+   0.995,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / h (illustrative)",
+  "relative brightness"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     1
+    ],
+    [
+     1.5,
+     1
+    ],
+    [
+     1.9,
+     0.99
+    ],
+    [
+     4.1,
+     0.99
+    ],
+    [
+     4.5,
+     1
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "colour": "a1",
+   "width": 3
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    3,
+    1
+   ],
+   "to": [
+    3,
+    0.99
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "1% deep",
+   "labelAt": [
+    3.25,
+    0.995
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-0.1^2+0*x",
+   "x": 0,
+   "y": 0.99,
+   "name": "depth (R_p/R_*)² = 1%"
+  }
+ ]
+}

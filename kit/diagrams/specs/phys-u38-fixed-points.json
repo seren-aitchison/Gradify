@@ -1,0 +1,146 @@
+{
+ "id": "phys-u38-fixed-points",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u38",
+ "lesson": "Fixed points and stability",
+ "title": "Fixed points and their stability",
+ "caption": "Plot ẋ = f(x) against x: fixed points are where the curve crosses zero, at x = −1, 0 and 1. Where f is positive x grows, where negative it shrinks. At x = 0 the slope is +1, so it is unstable; at x = ±1 the slope is −2, so they are stable.",
+ "alt": "Graph of x minus x cubed against x, crossing zero at minus 1, 0 and 1, with arrows on the axis showing flow away from 0 and towards plus and minus 1.",
+ "description": [
+  "f(x) = x − x³ = x(1 − x)(1 + x).",
+  "Zeros (fixed points): x = −1, 0, 1.",
+  "f′(x) = 1 − 3x²: f′(0) = 1 > 0, unstable; f′(±1) = −2 < 0, stable.",
+  "Arrows on the x-axis show the flow: away from 0, towards ±1."
+ ],
+ "range": {
+  "x": [
+   -1.6,
+   1.6
+  ],
+  "y": [
+   -1.2,
+   1.2
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x",
+  "ẋ = f(x)"
+ ],
+ "curves": [
+  {
+   "expr": "x-x^3",
+   "colour": "a1"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    0.15,
+    0.08
+   ],
+   "to": [
+    0.8,
+    0.08
+   ],
+   "colour": "a2"
+  },
+  {
+   "from": [
+    -0.15,
+    0.08
+   ],
+   "to": [
+    -0.8,
+    0.08
+   ],
+   "colour": "a2"
+  },
+  {
+   "from": [
+    1.55,
+    0.08
+   ],
+   "to": [
+    1.15,
+    0.08
+   ],
+   "colour": "a2"
+  },
+  {
+   "from": [
+    -1.55,
+    0.08
+   ],
+   "to": [
+    -1.15,
+    0.08
+   ],
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 0,
+   "colour": "a4",
+   "label": "−1: stable",
+   "anchor": "end",
+   "dx": -6,
+   "dy": 16
+  },
+  {
+   "x": 0,
+   "y": 0,
+   "colour": "a2",
+   "label": "0: unstable",
+   "dx": 6,
+   "dy": 16
+  },
+  {
+   "x": 1,
+   "y": 0,
+   "colour": "a4",
+   "label": "1: stable",
+   "dx": 6,
+   "dy": -28
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x-x^3",
+   "x": 1,
+   "y": 0,
+   "name": "fixed point at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "x-x^3",
+   "x": 0,
+   "value": 1,
+   "name": "f′(0) = 1: unstable"
+  },
+  {
+   "type": "slope",
+   "expr": "x-x^3",
+   "x": 1,
+   "value": -2,
+   "name": "f′(1) = −2: stable"
+  }
+ ]
+}

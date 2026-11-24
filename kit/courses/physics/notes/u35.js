@@ -129,6 +129,7 @@ P: Unsealed-source therapy uses beta or alpha emitters that deposit energy local
 X: A tracer has T_{phys} = 6 h and T_{bio} = 3 h. What is the effective half-life?
 > 1/T_{eff} = 1/6 + 1/3 = 1/2
 > T_{eff} = 2 h
+D: phys-u35-effective-half-life
 X: 600 MBq of Tc-99m is prepared. What remains after 12 h?
 > Two half-lives: 600/4 = 150 MBq
 K: Nuclear medicine images physiology: where the tracer goes, and how fast it gets there and leaves.
@@ -319,6 +320,7 @@ P: UK and ICRP limits: workers 20 mSv per year effective; public 1 mSv per year;
 X: Dose rate is 80 μSv h^{-1} at 0.5 m. What is it at 2 m?
 > Ratio (0.5/2)^{2} = 1/16
 > 80/16 = 5 μSv h^{-1}
+D: phys-u35-inverse-square
 X: Lead has an HVL of 0.25 mm at 80 kV. What fraction passes 0.5 mm apron lead?
 > 0.5/0.25 = 2 HVLs ⇒ 1/4 = 25%
 > In practice, scatter is lower energy and the apron stops >90%
@@ -489,6 +491,7 @@ X: A crystal has μ = 0.34 cm^{-1} at 511 keV for NaI and 0.87 cm^{-1} for LSO. 
 > NaI: 1 − e^{−0.68} ≈ 0.49
 > LSO: 1 − e^{−1.74} ≈ 0.82
 > Hence dense LSO is preferred for PET
+D: phys-u35-crystal-absorption
 K: Detector choice is a balance of stopping power, light or charge yield, speed and cost.
 !: High count rates cause dead-time losses; a detector can under-read a strong source dramatically.
 Q: Why is NaI(Tl) used in gamma cameras? | Good light output and efficiency at 140 keV, and it can be grown in large crystals cheaply.

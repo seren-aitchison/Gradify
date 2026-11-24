@@ -26,6 +26,12 @@ export function clean(s) {
     .replace(/\s+/g, " ").trim();
 }
 
+// "x − 1 = ±3" → "x − 1 = +3 or x − 1 = −3": a ± (or +/-) stands for two lines, one with each sign
+export function plusMinus(s) {
+  const t = String(s ?? "");
+  return /±|\+\/-/.test(t) ? `${t.replace(/±|\+\/-/g, "+")} or ${t.replace(/±|\+\/-/g, "-")}` : t;
+}
+
 function tokenise(src) {
   const s = clean(src), out = [];
   let i = 0;

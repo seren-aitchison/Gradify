@@ -1,0 +1,133 @@
+{
+ "id": "maths-u04-kernel-fibres",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Homomorphisms",
+ "title": "The kernel of n ↦ n mod 5",
+ "caption": "The homomorphism φ(n) = n mod 5 sends the multiples of 5 (the kernel 5ℤ) to 0. Every other value has its own fibre, a copy of the kernel shifted along: the integers sent to 3 are …, −7, −2, 3, 8, ….",
+ "alt": "A number line from −10 to 10. The multiples of 5 are marked as the kernel and the integers −7, −2, 3 and 8, which all map to 3, are marked as a second set, each five apart.",
+ "description": [
+  "The line shows the integers from −10 to 10.",
+  "The kernel, the integers that φ sends to 0, is the multiples of 5: −10, −5, 0, 5, 10.",
+  "The integers that φ sends to 3 are −7, −2, 3, 8: the kernel shifted by 3.",
+  "Each fibre is a coset of the kernel, so ℤ/5ℤ has five elements and is isomorphic to ℤ₅."
+ ],
+ "range": [
+  -10,
+  10
+ ],
+ "ticks": [],
+ "minor": 1,
+ "narrowTicks": [],
+ "points": [
+  {
+   "value": -10,
+   "label": "−10",
+   "colour": "a1"
+  },
+  {
+   "value": -5,
+   "label": "−5",
+   "colour": "a1"
+  },
+  {
+   "value": 0,
+   "label": "0",
+   "colour": "a1"
+  },
+  {
+   "value": 5,
+   "label": "5",
+   "colour": "a1"
+  },
+  {
+   "value": 10,
+   "label": "10",
+   "colour": "a1"
+  },
+  {
+   "value": -7,
+   "label": "−7",
+   "colour": "a2",
+   "below": true
+  },
+  {
+   "value": -2,
+   "label": "−2",
+   "colour": "a2",
+   "below": true
+  },
+  {
+   "value": 3,
+   "label": "3",
+   "colour": "a2",
+   "below": true
+  },
+  {
+   "value": 8,
+   "label": "8",
+   "colour": "a2",
+   "below": true
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "-10/5",
+   "value": "-2",
+   "name": "-10 is a multiple of 5, so φ(-10) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "-5/5",
+   "value": "-1",
+   "name": "-5 is a multiple of 5, so φ(-5) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "0/5",
+   "value": "0",
+   "name": "0 is a multiple of 5, so φ(0) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "5/5",
+   "value": "1",
+   "name": "5 is a multiple of 5, so φ(5) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "10/5",
+   "value": "2",
+   "name": "10 is a multiple of 5, so φ(10) = 0"
+  },
+  {
+   "type": "value",
+   "expr": "(-7-3)/5",
+   "value": "-2",
+   "name": "-7 − 3 is a multiple of 5, so φ(-7) = 3"
+  },
+  {
+   "type": "value",
+   "expr": "(-2-3)/5",
+   "value": "-1",
+   "name": "-2 − 3 is a multiple of 5, so φ(-2) = 3"
+  },
+  {
+   "type": "value",
+   "expr": "(3-3)/5",
+   "value": "0",
+   "name": "3 − 3 is a multiple of 5, so φ(3) = 3"
+  },
+  {
+   "type": "value",
+   "expr": "(8-3)/5",
+   "value": "1",
+   "name": "8 − 3 is a multiple of 5, so φ(8) = 3"
+  }
+ ],
+ "fromLesson": [
+  "ker φ = 5ℤ"
+ ]
+}

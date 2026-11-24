@@ -1,0 +1,137 @@
+{
+ "id": "phys-u20-zeeman-levels",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Orbital angular momentum",
+ "title": "Normal Zeeman splitting of an l = 1 level",
+ "caption": "In a field B the magnetic moment gives each m_l level a shift m_lμ_BB with μ_B = 57.88 μeV T⁻¹. In 1 T the three levels of an l = 1 level move to +57.9, 0 and −57.9 μeV, so adjacent levels are μ_BB = 57.9 μeV = 5.8 × 10⁻⁵ eV apart, and the splitting grows in proportion to B.",
+ "alt": "Graph of energy shift in microelectronvolts against magnetic field from 0 to 2 tesla: three straight lines from the origin with gradients plus 57.9, zero and minus 57.9 microelectronvolts per tesla for m equal to 1, 0 and -1.",
+ "description": [
+  "The horizontal axis is the magnetic flux density in tesla; the vertical axis is the shift of the energy level in μeV.",
+  "Each level moves by m_lμ_BB, so the lines have gradients +57.9, 0 and −57.9 μeV per tesla for m_l = +1, 0, −1.",
+  "At B = 1 T the levels are at +57.9, 0 and −57.9 μeV: adjacent levels are 57.9 μeV = 5.8 × 10⁻⁵ eV apart."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   -130,
+   130
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   -100,
+   -50,
+   50,
+   100
+  ]
+ ],
+ "grid": [
+  0.5,
+  50
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "B / T",
+  "ΔE / μeV"
+ ],
+ "curves": [
+  {
+   "expr": "57.88381806035002*x",
+   "domain": [
+    0,
+    2
+   ],
+   "colour": "a2",
+   "width": 3.2,
+   "label": "m_l = +1",
+   "labelAt": [
+    0.1,
+    75
+   ]
+  },
+  {
+   "expr": "0",
+   "domain": [
+    0,
+    2
+   ],
+   "colour": "a4",
+   "width": 3.2,
+   "label": "m_l = 0",
+   "labelAt": [
+    0.1,
+    14
+   ]
+  },
+  {
+   "expr": "-57.88381806035002*x",
+   "domain": [
+    0,
+    2
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "label": "m_l = −1",
+   "labelAt": [
+    0.1,
+    -75
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 57.8838,
+   "colour": "ink",
+   "label": "57.9 μeV",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 1,
+   "y": -57.8838,
+   "colour": "ink",
+   "label": "−57.9 μeV",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "57.88381806035002*x",
+   "x": 1,
+   "value": 57.8838,
+   "name": "the m_l = +1 level moves 57.9 μeV per tesla (μ_B)"
+  },
+  {
+   "type": "point",
+   "expr": "57.88381806035002*x",
+   "x": 1,
+   "y": 57.8838,
+   "name": "adjacent levels are μ_BB = 57.9 μeV apart in 1 T"
+  },
+  {
+   "type": "point",
+   "expr": "-57.88381806035002*x",
+   "x": 1,
+   "y": -57.8838,
+   "name": "the m_l = −1 level is the mirror image"
+  }
+ ]
+}

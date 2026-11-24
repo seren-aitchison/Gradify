@@ -1,0 +1,57 @@
+{
+ "id": "phys-u19-coherence-lengths",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Interference and coherence",
+ "title": "Coherence lengths of light sources",
+ "caption": "Fringes need path differences shorter than the coherence length l_c ≈ λ²/Δλ. For the LED, l_c = (630 nm)²/20 nm ≈ 20 μm; white light manages about 1 μm, a sodium lamp about 1 mm, a HeNe laser 0.1–1 m and stabilised lasers kilometres: 9 orders of magnitude across the range.",
+ "alt": "A logarithmic scale of coherence length in metres from 10^-7 to 10^4 with white light at about 1 micrometre, an LED at 20 micrometres, a sodium lamp at 1 millimetre, a HeNe laser at tenths of a metre and stabilised lasers at kilometres.",
+ "description": [
+  "A horizontal logarithmic scale of coherence length in metres.",
+  "Marked from shortest to longest: white light ~1 μm, the lesson's LED 20 μm, sodium lamp ~1 mm, HeNe laser 0.1–1 m, stabilised laser ~1 km.",
+  "The longer the coherence length, the larger the path difference over which clear fringes appear: white light shows fringes only from thin films, lasers from interferometers many metres across."
+ ],
+ "quantity": "coherence length",
+ "units": "m",
+ "min": -7,
+ "max": 4,
+ "markers": [
+  {
+   "label": "white light, ~1 μm",
+   "value": 0.000001
+  },
+  {
+   "label": "LED, 20 μm",
+   "value": 0.000019845
+  },
+  {
+   "label": "sodium lamp, ~1 mm",
+   "value": 0.001
+  },
+  {
+   "label": "HeNe laser, 0.1–1 m",
+   "value": 0.3
+  },
+  {
+   "label": "stabilised laser, km",
+   "value": 1000
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "LED, 20 μm",
+   "b": "sodium lamp, ~1 mm",
+   "value": 1.7,
+   "tol": 0.05,
+   "name": "a sodium lamp is about 50 times the LED's coherence length"
+  },
+  {
+   "type": "span",
+   "value": 9,
+   "tol": 0.5,
+   "name": "the sources span 9 orders of magnitude"
+  }
+ ]
+}

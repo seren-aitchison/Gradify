@@ -3,6 +3,7 @@
 import { toast as uiToast } from "../ui/feedback.js";
 import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
+import { actionCard } from "../core/action-card.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { renderJot, jotStripHtml, wireJotStrip, takePackDraft, exportJots, clearJots } from "../notes/jot.js";
@@ -110,54 +111,55 @@ async function stats() {
 }
 
 // ---------- LifeOS sections ----------
-// One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
-// [route, label, short label for the phone tab bar, icon], in the order the sidebar and the More list show them:
-// what you do every day first, then where your learning lives, then everything else; Settings last.
-const NAV = [
-  ["today", "Today", "Today", "home"],
-  ["plan", "Smart Plan", "Plan", "calendar"],
-  ["study", "Study", "Study", "layers"],
-  ["notes", "Notes", "Notes", "upload"],
-  ["learning", "Learn", "Learn", "book"],
-  ["revise", "Revision Centre", "Revise", "checklist"],
-  ["knowledge", "My Knowledge", "Knowledge", "brain"],
-  ["progress", "Progress", "Progress", "trend"],
-  ["goals", "Path", "Path", "route"],
-  ["intel", "Intelligence", "Intel", "sparkles"],
-  ["ai", "Gradify AI", "AI", "bulb"],
-  ["earth", "Earth", "Earth", "globe"],
-  ["tools", "Tools", "Tools", "forge"],
-  ["community", "Community", "Community", "people"],
-  ["account", "Settings", "Settings", "cog"],
+// One navigation for every Gradify site's app, drawn here so the 33 app pages share it. Five sections, each a plain
+// group of the screens it holds, so every screen is one click from anywhere and nothing waits behind a "More":
+//   Today     what to do now and when        Learn     what you study from
+//   Study     what you practise with         Library   what you keep        Progress  how it's going
+// Settings sits on its own at the end (and behind the account button in the top bar). Every screen keeps its own URL.
+// [section id, label, icon, [[route, label, icon], …]]; a section opens its first screen
+const SECTIONS = [
+  ["today", "Today", "home", [["today", "Today", "home"], ["plan", "Smart Plan", "calendar"], ["goals", "Path", "route"]]],
+  ["learn", "Learn", "cap", [["learning", "Courses", "cap"], ["knowledge", "My Knowledge", "brain"], ["earth", "Earth", "globe"]]],
+  ["study", "Study", "layers", [["study", "Flashcards", "layers"], ["revise", "Revision Centre", "checklist"], ["tools", "Tools", "forge"], ["ai", "Gradify AI", "bulb"]]],
+  ["library", "Library", "book", [["notes", "Notes", "feather"], ["library", "Your library", "book"], ["new", "Add notes", "upload"], ["community", "Community", "people"]]],
+  ["progress", "Progress", "trend", [["progress", "Progress", "trend"], ["intel", "Intelligence", "sparkles"]]],
 ];
-// the phone tab bar has room for five: the rest are under More
-const TABS = ["today", "study", "notes", "plan"];
-// screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", library: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
-// the sidebar starts short: the everyday sections, then More. A section joins the list once it has been opened
-// (remembered on this device), and the open section always shows. The phone's More sheet still lists everything.
-const CORE_NAV = ["today", "notes", "study", "plan", "learning", "account"];
-const USED_KEY = "gradify.nav.used";
-const usedNav = () => { try { return JSON.parse(localStorage.getItem(USED_KEY) || "[]"); } catch { return []; } };
-function noteNavUse(section) {
-  if (!section || CORE_NAV.includes(section) || !NAV.some(([r]) => r === section)) return;
-  const u = usedNav(); if (u.includes(section)) return;
-  try { localStorage.setItem(USED_KEY, JSON.stringify([...u, section])); } catch { /* private mode */ }
-  const side = document.querySelector(".lo-side"); if (side) { paintSide(side); markLocks(); }
-}
+const SETTINGS = ["account", "Settings", "cog"];
+// screens that belong to another screen's place in the navigation (a pack lives in your library, a topic in Progress)
+const SCREEN_OF = { deck: "library", jot: "notes", topic: "progress", goal: "goals", session: "study" };
+const screenOf = (route) => SCREEN_OF[route] || route;
+const sectionOf = (route) => SECTIONS.find(([, , , screens]) => screens.some(([r]) => r === screenOf(route)))?.[0] || null;
+const screenLabel = (route) => (route === "account" ? SETTINGS[1] : SECTIONS.flatMap(([, , , x]) => x).find(([r]) => r === screenOf(route))?.[1]) || "";
+const currentRoute = () => location.hash.replace(/^#\/?/, "").split("/")[0] || "today";
 function paintSide(side) {
-  const shown = new Set([...CORE_NAV, ...usedNav()]), link = ([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
-  const main = NAV.filter(([r]) => shown.has(r) && r !== "account"), rest = NAV.filter(([r]) => !shown.has(r)), settings = NAV.find(([r]) => r === "account");
-  const open = side.querySelector(".lo-more-btn")?.getAttribute("aria-expanded") === "true";
-  side.innerHTML = `<span class="lo-side-title">Gradify</span>${main.map(link).join("")}
-    ${rest.length ? `<button type="button" class="lo-more-btn" aria-expanded="${open}" aria-controls="lo-more-list"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span><em>${rest.length}</em></button><div class="lo-more-list" id="lo-more-list" ${open ? "" : "hidden"}>${rest.map(link).join("")}</div>` : ""}
-    ${settings ? link(settings) : ""}`;
-  side.querySelector(".lo-more-btn")?.addEventListener("click", (e) => { const b = e.currentTarget, on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); side.querySelector(".lo-more-list").hidden = !on; });
-  const cur = location.hash.replace(/^#\/?/, "").split("/")[0] || "today", sec = cur in SECTION_OF ? SECTION_OF[cur] : cur;
-  side.querySelectorAll("a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === sec)));
+  const link = ([r, label, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`;
+  side.innerHTML = `<span class="lo-side-title">Gradify</span>
+    ${SECTIONS.map(([id, label, , screens]) => `<div class="lo-sec" data-section="${id}" role="group" aria-labelledby="lo-sec-${id}"><span class="lo-sec-label" id="lo-sec-${id}">${label}</span>${screens.map(link).join("")}</div>`).join("")}
+    <div class="lo-sec lo-sec-end">${link(SETTINGS)}</div>`;
+  markCurrent();
+}
+// which screen and section are open: the screen's link, the section's tab, and the phone's screen row
+function markCurrent() {
+  const route = currentRoute(), screen = screenOf(route), section = sectionOf(route);
+  document.querySelectorAll(".lo-side a, .sec-screens a").forEach((a) => a.setAttribute("aria-current", a.dataset.route === screen ? "page" : "false"));
+  document.querySelectorAll(".tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.section === section)));
+  document.querySelectorAll(".lo-sec[data-section]").forEach((g) => g.classList.toggle("open", g.dataset.section === section));
+  paintScreens(section);
+}
+// below the sidebar's width: the open section's screens as a row of pills above the page, so a sibling screen is one tap
+function paintScreens(section) {
+  let row = document.querySelector(".sec-screens");
+  if (!row) {
+    row = document.createElement("nav"); row.className = "sec-screens"; row.setAttribute("aria-label", "This section");
+    document.querySelector("#view")?.before(row);
+    row.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
+  }
+  const sec = SECTIONS.find(([id]) => id === section), screen = screenOf(currentRoute());
+  row.hidden = !sec || sec[3].length < 2;
+  row.innerHTML = sec ? sec[3].map(([r, label]) => `<a class="chip" href="#/${r}" data-route="${r}" aria-current="${r === screen ? "page" : "false"}">${label}</a>`).join("") : "";
 }
 function drawNav() {
-  // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
+  // the LifeOS sidebar (wide screens); the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
   if (!side) {
     side = document.createElement("nav");
@@ -166,15 +168,13 @@ function drawNav() {
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
   paintSide(side);
-  // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
+  // phones and tablets: the five sections in the tab bar (each opens its first screen) and the section's screens above the page
   for (const nav of document.querySelectorAll(".tabbar")) {
-    nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
-      + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span></button>`;
-    const more = nav.querySelector(".tab-more");
-    more.addEventListener("click", () => { const open = !document.body.classList.contains("side-open"); document.body.classList.toggle("side-open", open); more.setAttribute("aria-expanded", String(open)); });
+    nav.innerHTML = SECTIONS.map(([id, label, ic, screens]) => `<a href="#/${screens[0][0]}" data-section="${id}">${icon(ic)}<span>${label}</span></a>`).join("");
   }
-  side.addEventListener("click", (e) => { if (e.target.closest("a")) { haptic("tap"); document.body.classList.remove("side-open"); } });
+  side.addEventListener("click", (e) => { if (e.target.closest("a")) haptic("tap"); });
   document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
+  markCurrent();
 }
 drawNav();
 // a small lock on the sections that need Gradify Pro, once the learner's plan is known (only while Pro is on sale)
@@ -211,7 +211,7 @@ const activeTab = new Map();
 function tabify(name) {
   const bar = document.querySelector(".app-nav");
   const tabs = SECTION_TABS[name], root = view.querySelector(":scope > section") || view;
-  const label = NAV.find(([r]) => r === (name in SECTION_OF ? SECTION_OF[name] : name))?.[1] || "";
+  const label = screenLabel(name);
   if (!tabs) { if (bar) bar.innerHTML = label ? `<span class="tab-title">${esc(label)}</span>` : ""; return; }
   const ids = tabs.map(([id]) => id);
   const paneOf = (el) => {
@@ -292,9 +292,7 @@ async function route() {
   // Any screen they ask for opens directly: set-up (#/start, "What do you want to achieve?") is never put in front of
   // a destination. It's offered instead, as a card on Today and from Account (docs/product/UX-SPEC.md, onboarding).
   if (needsSetup(profile) && !location.hash.replace(/^#\/?/, "")) { location.replace("#/new"); return; }
-  const section = name in SECTION_OF ? SECTION_OF[name] : name;
-  noteNavUse(section);
-  document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
+  markCurrent();
   document.body.classList.remove("side-open");
   // a Pro prompt belongs to the screen that opened it: leaving the screen closes it
   document.querySelector("dialog.plus-prompt")?.close();
@@ -756,7 +754,7 @@ async function renderNotes() {
       const m = masteryOf(d.id);
       return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
-    }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No study packs yet</h3><p class="sub">Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
+    }).join("")}</div>` : actionCard({ cls: "empty-action", kicker: "Start here", title: "No study packs yet", why: "Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.", iconSvg: icon("upload"), actions: [{ label: "Add notes", icon: "upload", href: "#/new" }] })}
   </section>`;
   wireJotStrip(view);
 }
@@ -815,9 +813,12 @@ async function renderStudy(arg) {
   const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
   let finished = false, answeredSoFar = 0;
   if (queue.length) record(store, { event: "session_started", site: profile.site, concept: topicKey, source: practice ? "practice" : topicKey ? "topic" : "due", detail: { cards: queue.length } });
+  if (queue.length) globalThis.gradifyConsent?.event("flashcard_session_start", { cards: queue.length, mode: practice ? "practice" : topicKey ? "topic" : "due" });   // Google Analytics, with consent (kit/core/consent.js)
   addEventListener("hashchange", () => { if (!finished && answeredSoFar) record(store, { event: "session_abandoned", site: profile.site, concept: topicKey, detail: { answered: answeredSoFar, of: queue.length } }); }, { once: true });
   if (!queue.length) {
-    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">${kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later."}</p><div class="row-actions"><a class="btn btn-primary lg" href="${kb ? kb.back : "#/new"}"><span>${kb ? "Back to your notes" : "Add notes"}</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
+    view.innerHTML = actionCard({ cls: "empty-action", kicker: "Nothing due", title: topicKey ? "No cards in this topic" : "All caught up", iconSvg: icon("check"),
+      why: kb ? "Nothing here is due right now. Practise all of them from the document's Practise button, or come back later." : "Nothing is due right now. Add more notes, or come back later.",
+      actions: [{ label: kb ? "Back to your notes" : "Add notes", icon: kb ? "book" : "upload", href: kb ? kb.back : "#/new" }, { label: "Back to Today", icon: "home", href: "#/today", soft: true }] });
     return;
   }
   const total = queue.length;
@@ -882,6 +883,7 @@ async function renderStudy(arg) {
     await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice), topic: topicName } });
     finished = true;
     record(store, { event: "session_finished", site: profile.site, concept: topicKey, detail: { answered, ...results } });
+    globalThis.gradifyConsent?.event("flashcard_session_complete", { cards: answered, practice: Boolean(practice) });
     if (before) { const after = learnerMemory({ cards: await store.listCards(deckId ? { documentId: deckId } : {}), reviews: await store.listReviews(400) }); for (const e of stageEvents(before, after, profile.site)) record(store, e); }
     // tick off today's review block in the plan
     const blocks = await store.listBlocks(today(), today());
@@ -956,7 +958,7 @@ function heatmap(byDay, weeks = 16) {
 // Set-up, offered and never imposed: someone who hasn't said what they're working towards sees this card (on Today and
 // under a new study pack); nothing is put in front of the screen they asked for (route()).
 function setupNudgeHtml(why) {
-  return `<aside class="setup-nudge panel glass" role="note"><span class="sn-ico">${icon("calendar")}</span><div><b>Want Gradify to plan your revision?</b><span>${why}</span></div><a class="btn btn-primary lg btn-sm" href="#/start"><span>Plan my revision</span></a></aside>`;
+  return actionCard({ tag: "aside", cls: "setup-nudge", kicker: "Your next step", title: "Want Gradify to plan your revision?", why, iconSvg: icon("calendar"), actions: [{ label: "Plan my revision", icon: "calendar", href: "#/start" }] });
 }
 
 async function renderToday() {
@@ -1357,6 +1359,7 @@ async function renderProgress() {
     <span class="kicker lo-kicker">${icon("trend")}My Progress</span>
     <h1>Your progress</h1>
     <p class="sub lo-intro">Your activity on every Gradify site, mastery of the topics in your own notes, and below it your level, quests and achievements.</p>
+    <p class="share-progress"><button type="button" class="btn btn-ghost btn-sm" id="share-progress">Share my progress (image)</button></p>
     <article class="panel glass"><div class="panel-head"><h3>Your year</h3><span class="pill-dark">${Object.keys(s.byDay).length} active days</span></div><div class="hm-scroll">${heatmap(s.byDay, 52)}</div></article>
     <article class="panel glass tree-panel lo-tree" data-pane="year"><div class="panel-head"><div><h3>Your Gradify Tree</h3><p class="sub">It grows from what you actually do: a limb for every Gradify site you've studied on, filling out with your last 30 days there, on an island whose grass is your last 60 days.</p></div><span class="pill-dark">${s.acts.filter((a) => Date.now() - Date.parse(a.at) < 30 * DAY).length} activities in 30 days</span></div>
       <div class="grow-body"><div class="tree-wrap" id="lo-tree-svg"></div><aside class="grow-side" id="lo-tree-side"></aside></div></article>
@@ -1374,9 +1377,45 @@ async function renderProgress() {
     <section class="gj lo-journey" id="lo-journey" aria-label="Level, quests and achievements"><p class="sub">Loading your level, quests and achievements…</p></section>
   </section>`;
   drawMyTree(s.acts).catch((e) => console.warn("Tree", e));
+  document.getElementById("share-progress")?.addEventListener("click", () => progressCard(s, forecast).catch((e) => { console.warn("Share card", e); toast("Couldn't make the image."); }));
   // the Journey (kit/game/journey.js) lives here too, with its own styles, loaded once
   if (!document.querySelector("link[data-game-css]")) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-game-css href="${new URL("../styles/game.css", import.meta.url)}">`);
   mountJourney(document.getElementById("lo-journey"), { embedded: true, store }).catch((e) => { console.warn("Journey", e); });
+}
+
+// "Share my progress": a 1080×1350 image of the learner's active days, Gradify Tree, top topics by mastery and reviews
+// due this week, with a small getgradify.com credit, for a study server, a story or #StudyTok. Made in the browser.
+async function progressCard(s, forecast) {
+  const W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d"), grad = g.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0, "#4641ff"); grad.addColorStop(.4, "#f055dd"); grad.addColorStop(.75, "#ff5600"); grad.addColorStop(1, "#ffc002");
+  g.fillStyle = "#0b0b0b"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "#fff"; g.font = "700 64px Geist, system-ui, sans-serif"; g.fillText("My study progress", 70, 130);
+  g.font = "500 36px Geist, system-ui, sans-serif"; g.globalAlpha = .8;
+  g.fillText(`${Object.keys(s.byDay).length} active days · ${forecast.reduce((a, b) => a + b, 0)} reviews due this week`, 70, 190); g.globalAlpha = 1;
+  // the tree: drawn flat (SVG) off-screen, because on screen it may be the 3D island, which a canvas can't copy
+  const { drawTreeFlat } = await import("../lifeos/tree.js"), { sites, bars } = treeData(s.acts), tmp = document.createElement("div");
+  let seed = 7; const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  try { drawTreeFlat(tmp, { sites: sites.length ? sites : [{ n: "Gradify", c: "4641ff", act: 0, k: 0, creds: [], leaves: { lesson: 0, flashcard: 0, quiz: 0 } }], bars, rand }); } catch (e) { console.warn("Tree for the card", e); }
+  const svg = tmp.querySelector("svg");
+  if (svg) {
+    // an SVG without its own size draws at zero size, and page CSS doesn't reach the image: size and namespace it
+    const copy = svg.cloneNode(true); copy.setAttribute("width", "600"); copy.setAttribute("height", "420"); copy.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const img = new Image(); img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(copy))}`;
+    await new Promise((r) => { img.onload = r; img.onerror = r; });
+    try { g.drawImage(img, 240, 230, 600, 420); } catch { /* skip the tree */ }
+  }
+  g.font = "600 40px Geist, system-ui, sans-serif"; g.fillText("Mastery by topic", 70, 730);
+  s.topics.slice(0, 5).forEach((t, i) => {
+    const y = 790 + i * 92, m = Math.max(0, Math.min(1, (t.mastery ?? 0) > 1 ? t.mastery / 100 : t.mastery ?? 0));
+    g.font = "500 32px Geist, system-ui, sans-serif"; g.fillStyle = "#fff"; g.fillText(String(t.topic).slice(0, 34), 70, y);
+    g.fillStyle = "rgba(255,255,255,.15)"; g.fillRect(70, y + 18, 940, 18); g.fillStyle = grad; g.fillRect(70, y + 18, 940 * m, 18);
+  });
+  if (!s.topics.length) { g.font = "500 32px Geist, system-ui, sans-serif"; g.globalAlpha = .7; g.fillText("Just getting started.", 70, 800); g.globalAlpha = 1; }
+  g.fillStyle = "#fff"; g.globalAlpha = .6; g.font = "500 30px Geist, system-ui, sans-serif"; g.fillText("getgradify.com · flashcards checked against your notes", 70, H - 60);
+  const blob = await new Promise((r) => c.toBlob(r, "image/png")), file = new File([blob], "my-gradify-progress.png", { type: "image/png" });
+  if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file], title: "My study progress" }); return; } catch (e) { if (e?.name === "AbortError") return; } }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
 }
 
 // The Gradify Tree (kit/lifeos/tree.js), from the learner's own activity log: a limb per site studied on in the last

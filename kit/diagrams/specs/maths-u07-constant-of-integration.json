@@ -1,0 +1,129 @@
+{
+ "id": "maths-u07-constant-of-integration",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Indefinite Integrals",
+ "title": "Every value of c gives the same slopes",
+ "caption": "∫(x + 2x⁻²) dx = x²/2 − 2/x + c. Changing c slides the whole curve up or down, but the gradient at each x is still x + 2/x²: at x = 1 it is 3 on every curve.",
+ "alt": "Two copies of y = x²/2 − 2/x, one shifted 3 units above the other, with parallel tangent-slopes at x = 1 and x = 2.",
+ "description": [
+  "Split (x³ + 2)/x² into x + 2x⁻².",
+  "Integrate each term: x²/2 and −2x⁻¹.",
+  "Add the constant c.",
+  "Differentiating any of these curves gives back x + 2/x²."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   4
+  ],
+  "y": [
+   -5,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "x^2/2-2/x",
+   "colour": "a1",
+   "label": "c = 0",
+   "labelAt": [
+    2.9,
+    2
+   ]
+  },
+  {
+   "expr": "x^2/2-2/x+3",
+   "colour": "a2",
+   "label": "c = 3",
+   "labelAt": [
+    2.9,
+    5.2
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x",
+   "x": 1,
+   "value": 3,
+   "name": "the slope of F at x = 1 is x + 2/x² = 3 (c = 0)"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x+3",
+   "x": 1,
+   "value": 3,
+   "name": "the same slope 3 with c = 3"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x",
+   "x": 2,
+   "value": 2.5,
+   "name": "the slope of F at x = 2 is x + 2/x² = 2.5 (c = 0)"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x+3",
+   "x": 2,
+   "value": 2.5,
+   "name": "the same slope 2.5 with c = 3"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x",
+   "x": 3,
+   "value": 3.2222222222222223,
+   "name": "the slope of F at x = 3 is x + 2/x² = 3.222 (c = 0)"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2/2-2/x+3",
+   "x": 3,
+   "value": 3.2222222222222223,
+   "name": "the same slope 3.222 with c = 3"
+  },
+  {
+   "type": "point",
+   "expr": "x^2/2-2/x+3",
+   "x": 1,
+   "y": 1.5,
+   "name": "F(1) = ½ − 2 = −1.5 for c = 0, and 1.5 for c = 3"
+  }
+ ],
+ "fromLesson": [
+  "x^{2}/2 − 2/x + c"
+ ]
+}

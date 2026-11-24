@@ -1,0 +1,134 @@
+{
+ "id": "phys-u52-euler-check",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u52",
+ "lesson": "Comparing analytical and numerical solutions",
+ "title": "Euler against the exact solution",
+ "caption": "Euler multiplies by (1 − 0.1) each step, so y(1) ≈ 0.9¹⁰ = 0.349, against the exact e⁻¹ = 0.368: an error of about 5%. Ten times smaller steps give 0.99¹⁰⁰ ≈ 0.366, about ten times smaller error.",
+ "alt": "The exact decay e to the minus t and Euler's step points lying slightly below it, reaching 0.349 against 0.368 at t equals 1.",
+ "description": [
+  "Exact: y = e^(−t). Euler with h = 0.1: y_{n+1} = 0.9 y_n.",
+  "At t = 1: Euler 0.3487, exact 0.3679.",
+  "With h = 0.01: 0.99^100 = 0.366."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.05
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "t",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x)",
+   "colour": "a1",
+   "label": "exact",
+   "labelAt": [
+    0.3,
+    0.82
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     1
+    ],
+    [
+     0.1,
+     0.9
+    ],
+    [
+     0.2,
+     0.81
+    ],
+    [
+     0.3,
+     0.729
+    ],
+    [
+     0.4,
+     0.6561
+    ],
+    [
+     0.5,
+     0.59049
+    ],
+    [
+     0.6,
+     0.531441
+    ],
+    [
+     0.7,
+     0.4782969
+    ],
+    [
+     0.8,
+     0.43046721
+    ],
+    [
+     0.9,
+     0.38742049
+    ],
+    [
+     1,
+     0.34867844
+    ]
+   ],
+   "colour": "a2",
+   "width": 2,
+   "dots": true,
+   "label": "Euler, h = 0.1",
+   "labelAt": [
+    0.55,
+    0.3
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x)",
+   "x": 1,
+   "y": 0.36787944,
+   "name": "exact y(1) = 0.368"
+  },
+  {
+   "type": "point",
+   "expr": "0.9^(x/0.1)",
+   "x": 1,
+   "y": 0.34867844,
+   "name": "Euler gives 0.349 at t = 1"
+  }
+ ]
+}
