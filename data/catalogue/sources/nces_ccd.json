@@ -1,0 +1,34 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_nces_ccd",
+ "name": "NCES Common Core of Data (CCD)",
+ "owner": "US Department of Education, NCES",
+ "url": "https://nces.ed.gov/ccd/files.asp",
+ "verdict": "confirmation_needed",
+ "licence": {
+  "name": "IES public-domain statement (coverage of nces.ed.gov to confirm)",
+  "url": "https://nces.ed.gov/help/",
+  "quote": "Unless stated otherwise, all information on the U.S. Department of Education's IES website at http://ies.ed.gov is in the public domain and may be reproduced, published, linked to, or otherwise used without IES' permission. This statement does not pertain to information at websites other than http://ies.ed.gov",
+  "attribution": "U.S. Department of Education. Institute of Education Sciences."
+ },
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "cadence": "Annual",
+ "identifiers": [
+  "NCES school ID",
+  "NCES district ID"
+ ],
+ "measured": {
+  "row_count": null
+ },
+ "evidence_urls": [
+  "https://nces.ed.gov/ccd/aboutccd.asp",
+  "https://nces.ed.gov/help/"
+ ],
+ "notes": "Blocker B2: ask NCES whether the statement covers data files on nces.ed.gov."
+}

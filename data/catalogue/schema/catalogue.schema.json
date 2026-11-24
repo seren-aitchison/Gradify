@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://getgradify.com/schema/catalogue/v1",
+  "title": "Gradify education catalogue, schema version 1",
+  "description": "An authoring bundle: records, typed edges, aliases, tombstones, sources (with separate rights), reviewers and evidence. See docs/CATALOGUE.md. Rules beyond structure (rights, personal data, reviewer sign-off, dangling edges) are enforced by scripts/catalogue/validate.mjs.",
+  "type": "object",
+  "required": ["schema_version", "kind", "sources", "reviewers", "evidence", "records", "edges", "aliases", "tombstones"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "kind": { "enum": ["fixture", "source", "synthetic"] },
+    "note": { "type": "string" },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "reviewers": { "type": "array", "items": { "$ref": "#/$defs/reviewer" } },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "records": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "edges": { "type": "array", "items": { "$ref": "#/$defs/edge" } },
+    "aliases": { "type": "array", "items": { "$ref": "#/$defs/alias" } },
+    "tombstones": { "type": "array", "items": { "$ref": "#/$defs/tombstone" } }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^(gy|gp|go|gs|gu|ga|gc|gr)_[0-9A-HJKMNP-TV-Z]{26}$" },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "dateOrNull": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+    "url": { "type": "string", "pattern": "^https?://" },
+    "sourceId": { "type": "string", "pattern": "^src_[a-z0-9_]+$" },
+    "status": { "enum": ["verified", "partially_verified", "unverified", "outdated"] },
+    "review": {
+      "type": "object", "additionalProperties": false, "required": ["by", "at", "evidence"],
+      "properties": {
+        "by": { "type": "string", "pattern": "^rev_[a-z0-9_]+$" },
+        "second_by": { "anyOf": [{ "type": "string", "pattern": "^rev_[a-z0-9_]+$" }, { "type": "null" }] },
+        "at": { "$ref": "#/$defs/date" },
+        "evidence": { "type": "string", "pattern": "^evd_[a-z0-9_]+$" }
+      }
+    },
+    "fieldMeta": {
+      "type": "object", "additionalProperties": false, "required": ["status", "source"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "source": { "$ref": "#/$defs/sourceId" },
+        "review": { "anyOf": [{ "$ref": "#/$defs/review" }, { "type": "null" }] },
+        "note": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "source_url", "retrieved_at", "last_checked", "next_review"],
+      "properties": {
+        "source": { "$ref": "#/$defs/sourceId" },
+        "source_url": { "$ref": "#/$defs/url" },
+        "source_record": { "type": "string" },
+        "retrieved_at": { "$ref": "#/$defs/date" },
+        "content_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "academic_year": { "anyOf": [{ "type": "string", "pattern": "^\\d{4}(-\\d{2})?$" }, { "type": "null" }] },
+        "effective_from": { "$ref": "#/$defs/dateOrNull" },
+        "effective_to": { "$ref": "#/$defs/dateOrNull" },
+        "supersedes": { "anyOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "last_checked": { "$ref": "#/$defs/date" },
+        "next_review": { "$ref": "#/$defs/date" }
+      }
+    },
+    "version": {
+      "type": "object", "additionalProperties": false, "required": ["at", "data", "fields"],
+      "properties": { "at": { "$ref": "#/$defs/date" }, "data": { "type": "object" }, "fields": { "type": "object", "additionalProperties": { "$ref": "#/$defs/fieldMeta" } } }
+    },
+    "pending": {
+      "type": "object", "additionalProperties": false, "required": ["detected_at", "changed"],
+      "properties": { "detected_at": { "$ref": "#/$defs/date" }, "changed": { "type": "array", "minItems": 1, "items": { "type": "string" } }, "data": { "type": "object" } }
+    },
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "type", "data", "fields", "provenance"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "enum": ["system", "provider", "offering", "structure", "unit", "assessment", "curriculum", "rule"] },
+        "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "region": { "type": "string", "pattern": "^[A-Z0-9]{2,4}$" },
+        "lifecycle": { "enum": ["open", "closed", "proposed"] },
+        "fixture": { "const": true },
+        "data": { "type": "object" },
+        "fields": { "type": "object", "additionalProperties": { "$ref": "#/$defs/fieldMeta" } },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "versions": { "type": "array", "items": { "$ref": "#/$defs/version" } },
+        "pending": { "anyOf": [{ "$ref": "#/$defs/pending" }, { "type": "null" }] }
+      }
+    },
+    "data.system": {
+      "type": "object", "additionalProperties": false, "required": ["name", "stages"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "stages": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["key", "label"],
+          "properties": { "key": { "type": "string" }, "label": { "type": "string" }, "typical_age_min": { "type": "integer" }, "typical_age_max": { "type": "integer" } } } },
+        "year_pattern": { "type": "object", "additionalProperties": false, "properties": { "start_month": { "type": "integer", "minimum": 1, "maximum": 12 }, "periods": { "enum": ["terms", "semesters", "trimesters", "quarters", "other"] } } }
+      }
+    },
+    "data.provider": {
+      "type": "object", "additionalProperties": false, "required": ["name", "kind"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "alt_names": { "type": "array", "items": { "type": "string", "maxLength": 200 } },
+        "kind": { "enum": ["school", "college", "fe", "university", "training", "district", "other"] },
+        "stages": { "type": "array", "items": { "type": "string" } },
+        "town": { "type": "string", "maxLength": 100 },
+        "website": { "$ref": "#/$defs/url" },
+        "system": { "$ref": "#/$defs/id" }
+      }
+    },
+    "data.offering": {
+      "type": "object", "additionalProperties": false, "required": ["title", "kind"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "kind": { "enum": ["programme", "qualification", "grade", "course_of_study", "apprenticeship"] },
+        "qualification": { "type": "object", "additionalProperties": false, "required": ["label"], "properties": { "label": { "type": "string" }, "code": { "type": "string" } } },
+        "subjects": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["scheme", "code"], "properties": { "scheme": { "enum": ["cah", "hecos", "cip", "gradify"] }, "code": { "type": "string" }, "label": { "type": "string" } } } },
+        "mode": { "enum": ["full-time", "part-time", "distance", "apprenticeship", "mixed"] },
+        "length": { "type": "object", "additionalProperties": false, "required": ["value", "unit"], "properties": { "value": { "type": "number", "minimum": 0 }, "unit": { "enum": ["years", "terms", "semesters", "months", "weeks", "hours"] } } },
+        "flags": { "type": "object", "additionalProperties": { "type": "boolean" } },
+        "url": { "$ref": "#/$defs/url" }
+      }
+    },
+    "data.structure": {
+      "type": "object", "additionalProperties": false, "required": ["offering", "cohort_start", "stage"],
+      "properties": {
+        "offering": { "$ref": "#/$defs/id" },
+        "cohort_start": { "type": "string", "pattern": "^\\d{4}(-\\d{2})?$" },
+        "stage": { "type": "string" },
+        "size_total": { "type": "object", "additionalProperties": false, "required": ["value", "unit"], "properties": { "value": { "type": "number" }, "unit": { "type": "string" } } }
+      }
+    },
+    "data.unit": {
+      "type": "object", "additionalProperties": false, "required": ["title"],
+      "properties": {
+        "code": { "type": "string", "maxLength": 40 },
+        "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "size": { "type": "object", "additionalProperties": false, "required": ["value", "unit"], "properties": { "value": { "type": "number" }, "unit": { "enum": ["credits", "ects", "carnegie_units", "hours", "other"] } } },
+        "level": { "type": "string" },
+        "period": { "type": "string" }
+      }
+    },
+    "data.assessment": {
+      "type": "object", "additionalProperties": false, "required": ["kind"],
+      "properties": { "kind": { "enum": ["exam", "coursework", "practical", "presentation", "portfolio", "other"] }, "weight": { "type": "number", "minimum": 0, "maximum": 100 }, "timing": { "type": "string" }, "label": { "type": "string" } }
+    },
+    "data.curriculum": {
+      "type": "object", "additionalProperties": false, "required": ["framework", "label"],
+      "properties": { "framework": { "type": "string" }, "version": { "type": "string" }, "ref": { "type": "string" }, "label": { "type": "string" }, "url": { "$ref": "#/$defs/url" } }
+    },
+    "data.rule": {
+      "type": "object", "additionalProperties": false, "required": ["rule_kind", "importance", "body"],
+      "properties": { "rule_kind": { "enum": ["classification", "weighting", "borderline", "progression", "rounding", "other"] }, "importance": { "enum": ["high", "normal"] }, "body": { "type": "object" }, "label": { "type": "string" } }
+    },
+    "edge": {
+      "type": "object", "additionalProperties": false, "required": ["type", "from", "to", "source", "status"],
+      "properties": {
+        "type": { "enum": ["part_of_system", "offers", "has_structure", "includes", "covers", "assesses", "aligned_to", "governed_by", "supersedes"] },
+        "from": { "$ref": "#/$defs/id" }, "to": { "$ref": "#/$defs/id" },
+        "attrs": { "type": "object", "additionalProperties": false, "properties": { "compulsory": { "type": "boolean" }, "group": { "type": "string" }, "group_rule": { "type": "string" } } },
+        "source": { "$ref": "#/$defs/sourceId" },
+        "status": { "$ref": "#/$defs/status" },
+        "review": { "anyOf": [{ "$ref": "#/$defs/review" }, { "type": "null" }] }
+      }
+    },
+    "alias": {
+      "type": "object", "additionalProperties": false, "required": ["scheme", "value", "id", "source"],
+      "properties": {
+        "scheme": { "enum": ["ukprn", "urn", "de_ni_ref", "ipeds_unitid", "opeid", "nces_school", "nces_district", "kiscourseid", "fixture"] },
+        "value": { "type": "string", "minLength": 1 }, "id": { "$ref": "#/$defs/id" }, "source": { "$ref": "#/$defs/sourceId" },
+        "valid_from": { "$ref": "#/$defs/dateOrNull" }, "valid_to": { "$ref": "#/$defs/dateOrNull" }
+      }
+    },
+    "tombstone": {
+      "type": "object", "additionalProperties": false, "required": ["id", "at", "reason"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "merged_into": { "$ref": "#/$defs/id" },
+        "split_into": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/id" } },
+        "at": { "$ref": "#/$defs/date" }, "reason": { "type": "string", "minLength": 1 }, "display_name": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "owner", "url", "verdict", "rights", "fields_allowed", "checked_at"],
+      "properties": {
+        "id": { "$ref": "#/$defs/sourceId" },
+        "name": { "type": "string" }, "owner": { "type": "string" }, "url": { "$ref": "#/$defs/url" },
+        "verdict": { "enum": ["cleared", "confirmation_needed", "permission_needed", "blocked", "fixture"] },
+        "licence": { "anyOf": [{ "type": "null" }, { "type": "object", "additionalProperties": false, "required": ["name"], "properties": { "name": { "type": "string" }, "url": { "$ref": "#/$defs/url" }, "quote": { "type": "string" }, "attribution": { "type": "string" } } }] },
+        "rights": { "type": "object", "additionalProperties": false, "required": ["ingest", "publish", "evidence", "archive"],
+          "properties": { "ingest": { "type": ["boolean", "null"] }, "publish": { "type": ["boolean", "null"] }, "evidence": { "type": ["boolean", "null"] }, "archive": { "type": ["boolean", "null"] } } },
+        "fields_allowed": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string" } } },
+        "excluded_source_fields": { "type": "array", "items": { "type": "string" } },
+        "conditions": { "type": "array", "items": { "type": "string" } },
+        "cadence": { "type": "string" },
+        "identifiers": { "type": "array", "items": { "type": "string" } },
+        "measured": { "type": "object" },
+        "evidence_urls": { "type": "array", "items": { "$ref": "#/$defs/url" } },
+        "checked_at": { "$ref": "#/$defs/date" },
+        "notes": { "type": "string" }
+      }
+    },
+    "reviewer": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name", "competence", "approved_by_owner"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^rev_[a-z0-9_]+$" }, "name": { "type": "string" },
+        "competence": { "type": "array", "minItems": 1, "items": { "enum": ["system", "provider", "offering", "structure", "unit", "assessment", "curriculum", "rule", "edge"] } },
+        "subjects": { "type": "array", "items": { "type": "string" } },
+        "approved_by_owner": { "type": "boolean" }, "approved_at": { "$ref": "#/$defs/dateOrNull" }, "fixture": { "const": true }
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false, "required": ["id", "source", "url", "retrieved_at", "category"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^evd_[a-z0-9_]+$" },
+        "source": { "$ref": "#/$defs/sourceId" }, "url": { "$ref": "#/$defs/url" }, "retrieved_at": { "$ref": "#/$defs/date" },
+        "content_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "category": { "enum": ["internal_extract", "link_only"] },
+        "extract": { "type": "string", "maxLength": 1200 },
+        "retain_until": { "$ref": "#/$defs/dateOrNull" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

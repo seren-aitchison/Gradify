@@ -27,6 +27,7 @@
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
     "@electric-sql/pglite": "0.5.15",
+    "axe-core": "4.10.3",
     "bcryptjs": "2.4.3",
     "esbuild": "^0.25.0",
     "playwright": "1.63.0",

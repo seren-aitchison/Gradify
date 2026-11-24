@@ -1,0 +1,58 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_gias",
+ "name": "Get Information About Schools (GIAS)",
+ "owner": "Department for Education (England)",
+ "url": "https://get-information-schools.service.gov.uk/Downloads",
+ "verdict": "cleared",
+ "licence": {
+  "name": "Open Government Licence v3.0",
+  "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "quote": "All content is available under the Open Government Licence v3.0, except where otherwise stated",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0."
+ },
+ "rights": {
+  "ingest": true,
+  "publish": true,
+  "evidence": true,
+  "archive": true
+ },
+ "fields_allowed": {
+  "provider": [
+   "name",
+   "alt_names",
+   "kind",
+   "stages",
+   "town",
+   "website",
+   "system"
+  ]
+ },
+ "excluded_source_fields": [
+  "All governor download files (named people)",
+  "Any headteacher or other named-person column in the establishment file (assumed column names, to confirm at first download: Stage 1 blocker B9)",
+  "Any contact email or telephone column"
+ ],
+ "conditions": [
+  "Bulk downloads only, never scraping the website (acceptable use policy)",
+  "Only the fields listed in fields_allowed; personal data is excluded by the OGL and refused by the validator",
+  "Attribution on every page that shows GIAS data",
+  "Fields and their order can change: the build must check the header before mapping"
+ ],
+ "cadence": "Daily (\"This data is updated daily\")",
+ "identifiers": [
+  "URN",
+  "UKPRN (assumed column, to confirm)"
+ ],
+ "measured": {
+  "establishment_fields_csv_mb": 61.75,
+  "state_funded_school_fields_csv_mb": 8.87,
+  "row_count": null
+ },
+ "evidence_urls": [
+  "https://get-information-schools.service.gov.uk/Downloads",
+  "https://get-information-schools.service.gov.uk/AcceptableUsePolicy",
+  "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+ ],
+ "notes": "Acceptable use: download bulk data \"for offline analysis or system ingestion, observing the Open Government Licence (OGL) where stated on the site\". No per-file notice differing from the OGL footer was found on the downloads page (read 24 Nov 2026)."
+}

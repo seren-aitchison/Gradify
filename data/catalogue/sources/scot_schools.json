@@ -1,0 +1,17 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_scot_schools",
+ "name": "Scottish Government school contact details",
+ "owner": "Scottish Government",
+ "url": "https://www.gov.scot/publications/school-contact-details/",
+ "verdict": "blocked",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "notes": "B5: gov.scot answers automated requests with a bot challenge."
+}

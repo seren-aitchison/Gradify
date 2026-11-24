@@ -1,0 +1,22 @@
+{
+ "checked_at": "2026-11-24",
+ "id": "src_college_scorecard",
+ "name": "College Scorecard",
+ "owner": "US Department of Education",
+ "url": "https://collegescorecard.ed.gov/data/",
+ "verdict": "confirmation_needed",
+ "licence": null,
+ "rights": {
+  "ingest": null,
+  "publish": null,
+  "evidence": null,
+  "archive": null
+ },
+ "fields_allowed": {},
+ "cadence": "Dated releases (2 Nov 2026; 15 Oct 2026)",
+ "evidence_urls": [
+  "https://collegescorecard.ed.gov/data/",
+  "https://collegescorecard.ed.gov/data/api-documentation/"
+ ],
+ "notes": "No licence wording found; ED notices on www.ed.gov refuse automated access (B7). Overlaps IPEDS."
+}
