@@ -2418,3 +2418,52 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) { .co.co-reading .co-read .aq-opts > button { transition: none; } .co.co-reading .co-read .aq-opts > button:active { transform: none; } }
 :root[data-motion="reduce"] .co.co-reading .co-read .aq-opts > button { transition: none; }
+
+/* ---- the end of a lesson: where it sits in its topic, and the way on ---- */
+/* the topic strip: one segment per lesson in the topic; the one just finished fills in */
+.cx-tstrip { display: grid; gap: 8px; width: 100%; margin: 4px 0 12px; text-align: left; }
+.cx-tstrip p { display: flex; justify-content: space-between; gap: 12px; margin: 0; font-size: 13.5px; color: var(--mute); }
+.cx-tstrip p span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cx-tstrip p b { flex: none; color: var(--fg); font-weight: 650; }
+.cx-tstrip ol { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.cx-tstrip li { position: relative; flex: 1; height: 8px; border-radius: 99px; overflow: hidden; background: rgba(var(--ink-rgb), .1); }
+.cx-tstrip li::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--s-mastered, #2ecc71); transform: scaleX(0); transform-origin: left; }
+.cx-tstrip li.d::after { transform: none; }
+.cx-tstrip li.here:not(.d) { box-shadow: inset 0 0 0 2px var(--accent, var(--fg)); }
+.cx-tstrip.fresh li.here.d::after { animation: cx-fill .7s cubic-bezier(.2, .8, .2, 1) .35s both; }
+@keyframes cx-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.co-finish .cx-tstrip { flex: 1 0 100%; margin: 0 0 4px; }
+/* the check mark arrives with a small spring */
+.cx-donecheck { animation: cx-pop .5s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes cx-pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+/* stats in a 2 × 2 on phones rather than three and an orphan */
+@media (max-width: 520px) { .cx-donestats { grid-template-columns: 1fr 1fr; } }
+/* a dialog is the only thing on screen: the phone dock steps aside while one is open */
+body:has(.co-modal) .cx-dock { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) { .cx-tstrip.fresh li.here.d::after, .cx-donecheck { animation: none; } }
+:root[data-motion="reduce"] :is(.cx-tstrip.fresh li.here.d::after, .cx-donecheck) { animation: none; }
+
+/* previous / up / next: three even cards, labels in the sans, the next lesson carries the subject's colour */
+.co.co-reading .co-lesson .co-pn.cx-pn3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.co.co-reading .co-lesson .co-pn.cx-pn3 > span:empty { display: none; }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) .co-pncard.up { grid-column: 1; }
+.co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) .co-pncard.next { grid-column: 2; }
+.co.co-reading .co-lesson .co-pncard { justify-content: center; gap: 4px; min-height: 92px; padding: 16px 20px; text-align: left; align-items: flex-start;
+  background: rgb(var(--surface-rgb)); border: 1px solid var(--line); box-shadow: 0 10px 30px -26px rgba(0, 0, 0, .5); }
+.co.co-reading .co-lesson .co-pncard::before, .co.co-reading .co-lesson .co-pncard::after { content: none; }
+.co.co-reading .co-lesson .co-pncard small { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; color: var(--mute); }
+.co.co-reading .co-lesson .co-pncard.next { align-items: flex-end; text-align: right;
+  background: color-mix(in srgb, var(--accent, #4641ff) 7%, rgb(var(--surface-rgb))); border-color: color-mix(in srgb, var(--accent, #4641ff) 35%, transparent); }
+.co.co-reading .co-lesson .co-pncard.next small { color: color-mix(in oklab, var(--accent, #4641ff) 72%, var(--fg)); }
+.co.co-reading .co-lesson .co-pncard:hover { border-color: var(--accent, var(--line-strong)); transform: translateY(-2px); }
+.co.co-reading .co-lesson .co-pncard.prev small::after, .co.co-reading .co-lesson .co-pncard.next small::before { content: none; }
+@media (max-width: 760px) {
+  .co.co-reading .co-lesson .co-pn.cx-pn3, .co.co-reading .co-lesson .co-pn.cx-pn3:has(> span:empty) { grid-template-columns: 1fr; }
+  .co.co-reading .co-lesson .co-pn.cx-pn3 .co-pncard { grid-column: 1; }
+  .co.co-reading .co-lesson .co-pncard.next { grid-row: 1; align-items: flex-start; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { .co.co-reading .co-lesson .co-pncard:hover { transform: none; } }
+
+/* the shared "What would you like to do next?" kicker, in the sans like every other label */
+.gx-switch .gx-kicker { font: 600 13px var(--sans); letter-spacing: 0; text-transform: none; }

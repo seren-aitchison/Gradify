@@ -1509,6 +1509,7 @@ export function mountCourse(root, cfg) {
         ${N && F.refs ? `<details class="co-refsec cx-acc" id="co-refs"><summary>${ic("book")} Sources and further reading<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary><div class="cx-accbody">${F.refs}</div></details>` : ""}
         ${N && isDraft(u) ? `<p class="co-draft" role="note">This ${u1}'s content is still going through expert review, which is rolling out course by course. Check anything important against your course materials.</p>` : ""}
         <footer class="co-finish">
+          ${N ? topicStrip(l) : ""}
           <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">
             <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -1598,9 +1599,20 @@ export function mountCourse(root, cfg) {
       const lvBefore = levelOf(totalXp());
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
       lightStep("done"); shareProgress(l);
+      const strip = main.querySelector(".co-finish .cx-tstrip"); if (strip) strip.outerHTML = topicStrip(l, { fresh: true });
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else lessonSummary({ l, N, nQ, next: next && byId[next.id], gained: totalXp() - xpBefore, lvBefore, openedAt });
     });
+  }
+  // this lesson's topic as a strip of segments, one per lesson (done, this one, still to do): where the lesson sits and
+  // how much of the topic is behind you, on the lesson's closing panel and in the completion dialog
+  function topicStrip(l, { fresh = false } = {}) {
+    const g = groupsOf(l.unit).find((x) => x.lessons.some((y) => y.id === l.id));
+    const ls = g?.lessons || l.unit.lessons;
+    if (!ls || ls.length < 2) return "";
+    const n = ls.filter((x) => S.done[x.id]).length;
+    return `<div class="cx-tstrip${fresh ? " fresh" : ""}"><p><span>${esc(g?.title || l.unit.title)}</span><b>${n} of ${ls.length} lessons</b></p>
+      <ol aria-hidden="true">${ls.map((x) => `<li class="${S.done[x.id] ? "d" : ""}${x.id === l.id ? " here" : ""}"></li>`).join("")}</ol></div>`;
   }
   // the moment a lesson is completed: what it earned, how the questions went, the level and the day so far, and one
   // clear next step (Enter goes on). The learner chooses: nothing moves on by itself.
@@ -1620,6 +1632,7 @@ export function mountCourse(root, cfg) {
         <div><b>${Math.min(tx, S.goal)}/${S.goal}</b><small>daily XP goal</small></div>
       </div>
       <div class="cx-donelv"><span>Level ${L.n}${ups ? " · level up!" : ""}</span><div class="co-bar"><i style="width:${from * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
+      ${topicStrip(l, { fresh: true })}
       <p class="cx-doneunit">${dot(statusOf(l.id))} ${STATUS[statusOf(l.id)].label} · ${U} ${l.unit.n}: ${r.done} of ${r.total} lessons done${comboBest >= 3 ? ` · best run ${comboBest} in a row` : ""}</p>
       ${nQ && right < nQ ? `<p class="cx-donetip">${ic("target")} ${nQ - right} question${nQ - right === 1 ? "" : "s"} still to get right. They'll come back in Revise, or <a href="#co-check" data-close data-jump="co-check">try them now</a>.</p>` : ""}
       <div class="co-row cx-donego">${next ? "" : `<a class="btn btn-light lg" href="#/learn" data-close><span>Back to the syllabus</span></a>`}
