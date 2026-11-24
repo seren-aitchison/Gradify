@@ -19,7 +19,8 @@ async function pagesIn(dir) {
   }
   // pages that ask not to be indexed (thin generated pages, widgets) stay out of the sitemap
   const keep = [];
-  for (const p of out) if (!/<meta name="robots" content="noindex/.test(await readFile(new URL(p, root), "utf8"))) keep.push(p);
+  // and so do redirect stubs (an instant meta refresh): a sitemap lists the page a URL ends up at, never the hop
+  for (const p of out) { const h = await readFile(new URL(p, root), "utf8"); if (!/<meta name="robots" content="noindex/.test(h) && !/<meta http-equiv="refresh"/i.test(h)) keep.push(p); }
   return keep;
 }
 

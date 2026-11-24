@@ -79,8 +79,15 @@ const COURSE_DESC = {
 
 // Other public pages inside a site's folder that need their own identity
 export const EXTRA = {
-  "medgradify/anatomy.html": { title: "3D Human Anatomy Explorer: Free & Interactive | MedGradify", description: "Explore human anatomy in 3D in your browser: rotate, zoom and isolate systems, organs and structures, then test yourself. Free, no download.", type: "WebApplication" },
   "sportgradify/body.html": { title: "3D Muscle Map: Training, Recovery & Strength | SportGradify", description: "Your body in 3D, coloured by your own training: recent stimulus, estimated strength progression, recovery and measured fitness for every muscle group.", type: "WebApplication" },
+};
+
+// Sites that are separate products with their own domain (status "external" in kit/core/sites.js): their copies on
+// getgradify.com stay out of search results, so they never compete with the product's own site. Not in the sitemap
+// either (scripts/build-sitemap.mjs).
+export const EXTERNAL = {
+  "techgradify/index.html": { title: "TechGradify · ForgeLab: Coding, Data Science and AI", description: "Hands-on coding, data science and AI engineering, with instant feedback. TechGradify · ForgeLab is a separate product with its own site." },
+  "techgradify/course/index.html": { title: "TechGradify · ForgeLab: Computer Science Course", description: "Computer science, from computational thinking and Python to algorithms, on TechGradify · ForgeLab, a separate product with its own site." },
 };
 
 // written lessons only: a course is described by what a learner can open today
@@ -137,6 +144,7 @@ export function registry() {
       },
     });
   }
+  for (const [p, e] of Object.entries(EXTERNAL)) out.set(p, { ...e, courses: [], noindex: true, schema: null });
   for (const [p, e] of Object.entries(EXTRA)) out.set(p, { ...e, courses: [], schema: { "@type": e.type, "@id": `${url(p)}#app`, url: url(p), name: e.title.replace(/ \| .*$/, ""), description: e.description, applicationCategory: "EducationalApplication", operatingSystem: "Web", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "GBP" }, publisher: { "@id": ORG["@id"] } } });
   return out;
 }
@@ -161,7 +169,9 @@ export function applySeo(html, entry) {
   // one head-tags comment is enough (scripts/build-seo.mjs used to add one per run that added a tag)
   let seen = false;
   html = html.replace(/\n[ \t]*<!-- head-tags: canonical and link previews, added by scripts\/build-seo\.mjs -->/g, (m) => (seen ? "" : ((seen = true), m)));
+  if (entry.noindex) html = /<meta name="robots" content="[^"]*">/.test(html) ? html.replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">') : html.replace(/(<title>[^<]*<\/title>)/, '$1\n  <meta name="robots" content="noindex, follow">');
   const block = `<script type="application/ld+json" data-seo="registry">${JSON.stringify({ "@context": "https://schema.org", ...entry.schema }).replace(/</g, "\\u003c")}</script>`;
   html = html.replace(/\n[ \t]*<!-- search identity: scripts\/seo\/registry\.mjs -->\n[ \t]*<script type="application\/ld\+json" data-seo="registry">[\s\S]*?<\/script>/, "");
+  if (!entry.schema) return html;
   return html.replace(/\n?([ \t]*)<\/head>/, `\n  <!-- search identity: scripts/seo/registry.mjs -->\n  ${block}\n$1</head>`);
 }

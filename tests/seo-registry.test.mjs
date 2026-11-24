@@ -46,6 +46,7 @@ test("the pages on disk carry their registry title, description and valid struct
     const html = read(p);
     assert.equal(applySeo(html, e), html, `${p} is out of date: run node scripts/build-seo.mjs`);
     assert.match(html, new RegExp(`<title>${e.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/&/g, "&amp;")}</title>`), p);
+    if (e.noindex) { assert.match(html, /<meta name="robots" content="noindex, follow">/, `${p}: a separate product's copy stays out of search`); continue; }
     const ld = html.match(/<script type="application\/ld\+json" data-seo="registry">([\s\S]*?)<\/script>/);
     assert.ok(ld, `${p}: registry JSON-LD`);
     const o = JSON.parse(ld[1]);
