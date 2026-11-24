@@ -2404,3 +2404,16 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .sm-mtiles { gap: 3px; text-decoration: none; } .sm-mtiles i { width: 12px; height: 12px; border-radius: 3px; } .sm-mtiles .slip::after { width: 5px; height: 5px; right: -1px; top: -1px; box-shadow: none; }
 @media (prefers-reduced-motion: reduce) { .sm-live i { animation: none; } .sm-tiles a { transition: none; } }
 @media (pointer: coarse) { .sm-topics .sm-tiles a { width: 32px; height: 32px; } }
+
+/* step rules (kit/interactive/steprules.js): the rule behind each valid line, and named mistakes */
+.mx-rule { flex-basis: 100%; font-size: 13.5px; color: var(--mute); }
+.mx-rule summary { cursor: pointer; width: fit-content; list-style: none; min-height: 24px; display: inline-flex; align-items: center; padding: 2px 0; border-radius: 6px; }
+.mx-rule summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.mx-rule summary::-webkit-details-marker { display: none; }
+.mx-rule summary::before { content: "ⓘ\00a0" / ""; }
+.mx-rule[open] summary { color: var(--fg); font-weight: 600; }
+.mx-rule p { margin: 4px 0 2px; line-height: 1.45; max-width: 62ch; }
+.mx-mistake b { color: var(--fg); }
+.mx-lines li.shown { border-color: rgba(255, 192, 2, .7); border-left-style: dashed; }
+.mx-lines li.shown .mx-mark { color: var(--mute); font-weight: 500; }
+.mx-solution .mx-rule { margin: 2px 0 6px; }

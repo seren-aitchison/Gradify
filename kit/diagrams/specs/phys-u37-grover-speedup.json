@@ -1,0 +1,49 @@
+{
+ "id": "phys-u37-grover-speedup",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u37",
+ "lesson": "Quantum algorithms",
+ "title": "Searching a trillion items",
+ "caption": "An unstructured search of N = 10¹² items takes about N/2 = 5 × 10¹¹ classical queries on average, but only about (π/4)√N ≈ 7.9 × 10⁵ with Grover's algorithm: a quadratic speed-up, not an exponential one.",
+ "alt": "Bar chart of the base-10 logarithm of the number of queries: 11.7 classical (5 times 10 to the 11) against 5.9 for Grover (7.9 times 10 to the 5).",
+ "description": [
+  "Classical: N/2 = 5 × 10¹¹ queries.",
+  "Grover: (π/4)√(10¹²) = 785398 queries.",
+  "The ratio is about 6 × 10⁵: huge, but √N, not exponential."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  12
+ ],
+ "ticks": [
+  0,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12
+ ],
+ "yLabel": "log₁₀ (number of queries)",
+ "items": [
+  {
+   "key": "classical",
+   "value": 11.7
+  },
+  {
+   "key": "Grover",
+   "value": 5.9
+  }
+ ],
+ "highlight": {
+  "Grover": "a2"
+ },
+ "claims": [
+  {
+   "type": "max",
+   "key": "classical"
+  }
+ ]
+}

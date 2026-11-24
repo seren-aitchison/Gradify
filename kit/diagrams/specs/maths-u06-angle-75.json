@@ -1,0 +1,160 @@
+{
+ "id": "maths-u06-angle-75",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Compound Angle Formulas",
+ "title": "75° = 45° + 30° on the unit circle",
+ "caption": "Turning 45° and then a further 30° reaches 75°. The x-coordinate of the point at 75° is cos 75° = cos 45° cos 30° − sin 45° sin 30° = (√6 − √2)/4 ≈ 0.259.",
+ "alt": "The unit circle with the radius at 45° and a second radius at 75°, the angles of 45° and 30° marked between them, and the x-coordinate of the 75° point marked on the axis.",
+ "description": [
+  "Start at the positive x-axis and turn 45°.",
+  "Turn a further 30° to reach 75°.",
+  "The x-coordinate at 75° is cos 75° = cos(45° + 30°).",
+  "The compound angle formula gives (√6 − √2)/4 ≈ 0.259."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "X": [
+   1,
+   0
+  ],
+  "M": [
+   0.7071067811865476,
+   0.7071067811865475
+  ],
+  "P": [
+   0.25881904510252074,
+   0.9659258262890683
+  ],
+  "F": [
+   0.25881904510252074,
+   0
+  ]
+ },
+ "hide": [
+  "O",
+  "X",
+  "F"
+ ],
+ "labelAt": {
+  "M": [
+   14,
+   -4
+  ],
+  "P": [
+   -6,
+   -14
+  ]
+ },
+ "grid": {
+  "step": 0.5,
+  "axes": true,
+  "labels": 5
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "M",
+   "colour": "a1",
+   "w": 2.4
+  },
+  {
+   "a": "O",
+   "b": "P",
+   "colour": "a2",
+   "w": 3
+  },
+  {
+   "a": "P",
+   "b": "F",
+   "colour": "a2",
+   "dash": "5 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "X",
+   "to": "M",
+   "deg": 45,
+   "label": "45°",
+   "colour": "a1",
+   "r": 48,
+   "labelR": 8
+  },
+  {
+   "at": "O",
+   "from": "M",
+   "to": "P",
+   "deg": 30,
+   "label": "30°",
+   "colour": "a3",
+   "r": 66,
+   "labelR": 6
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "F",
+   "value": 0.25882,
+   "tol": 0.001,
+   "label": "cos 75° ≈ 0.259",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "view": {
+  "x": [
+   -1.5,
+   1.7
+  ],
+  "y": [
+   -1.25,
+   1.3
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "X",
+    "M",
+    "P"
+   ],
+   "name": "the radii end on the unit circle"
+  },
+  {
+   "type": "angle",
+   "at": "O",
+   "from": "X",
+   "to": "P",
+   "deg": 75,
+   "name": "45° + 30° = 75°"
+  },
+  {
+   "type": "value",
+   "expr": "(sqrt(6)-sqrt(2))/4",
+   "value": 0.25881904510252074,
+   "tol": 1e-9,
+   "name": "cos 75° = (√6 − √2)/4"
+  }
+ ],
+ "fromLesson": [
+  "(√6 − √2)/4"
+ ]
+}

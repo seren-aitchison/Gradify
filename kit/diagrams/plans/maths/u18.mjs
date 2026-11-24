@@ -1,2 +1,50 @@
-// Unit 18: not planned yet. Fill this per kit/diagrams/maths/UNIT-AGENT.md.
-export default [];
+// Unit 18, Mathematical Optimisation. Rows: kit/diagrams/BUILDERS.md.
+
+const ALG = "an algebraic or arithmetic chain of a few lines: the notes lay it out step by step and nothing about it is better seen as a picture";
+const ALGO = "an algorithm worked through a small table or sequence of numbers: the notes already list each step";
+const PROSE = "a modelling or conceptual discussion with no single quantity to draw";
+export default [
+  ["u18-01", "graph", "maths-u18-fence-area", "A = x(100 − 2x) for 100 m of fencing against a wall, maximum 1250 m² at x = 25"],
+  ["u18-02", null, ALG],
+  ["u18-03", "graph", "maths-u18-feasible-endpoint", "(x − 3)² on 0 ≤ x ≤ 2: the unconstrained minimum x = 3 is infeasible, so the boundary x = 2 gives f = 1"],
+  ["u18-04", "graph", "maths-u18-lagrange-tangent", "the level curve xy = 25 touches x + y = 10 at (5, 5), where both have gradient −1"],
+  ["u18-05", "graph", "maths-u18-kkt-boundary", "x² with x ≥ 1: the optimum x* = 1 has gradient 2 = μ, and the free minimum 0 is infeasible"],
+  ["u18-06", null, ALG],
+  ["u18-07", "graph", "maths-u18-two-minima", "x⁴ − 4x² + x with minima near −1.47 (global) and 1.35 (local) and a maximum near 0.13"],
+  ["u18-08", null, ALG],
+  ["u18-09", null, ALG],
+  ["u18-10", "geometry", "maths-u18-pareto-front", "A, B, C, D on a cost against emissions grid: C is dominated by B and A, B, D form the Pareto front"],
+  ["u18-11", null, ALG],
+  ["u18-12", null, ALG],
+  ["u18-13", null, ALG],
+  ["u18-14", "geometry", "maths-u18-lp-vertices", "the feasible region of x + y ≤ 4, x + 3y ≤ 6 with 3x + 2y at each vertex: optimum 12 at (4, 0)"],
+  ["u18-15", null, ALGO],
+  ["u18-16", null, ALG],
+  ["u18-17", null, ALGO],
+  ["u18-18", null, PROSE],
+  ["u18-19", null, ALGO],
+  ["u18-20", null, ALGO],
+  ["u18-21", null, ALGO],
+  ["u18-22", "lab", "descent", "gradient descent rolling downhill on a contour map: the halving steps of x² with a step size of 0.25"],
+  ["u18-23", null, ALGO],
+  ["u18-24", null, ALG],
+  ["u18-25", null, ALGO],
+  ["u18-26", null, ALGO],
+  ["u18-27", null, ALGO],
+  ["u18-28", "graph", "maths-u18-annealing-acceptance", "e^(−5/T) against T: 0.61 at T = 10 and 0.0067 at T = 1"],
+  ["u18-29", null, ALG],
+  ["u18-30", null, ALG],
+  ["u18-31", null, PROSE],
+  ["u18-32", null, ALG],
+  ["u18-33", "graph", "maths-u18-queue-blowup", "L = ρ/(1 − ρ) with L = 4 at ρ = 0.8, rising steeply towards ρ = 1"],
+  ["u18-34", "graph", "maths-u18-eoq-curves", "ordering cost 60000/Q, holding cost 1.5Q and their sum, minimal at Q = 200 with £600"],
+  ["u18-35", null, ALGO],
+  ["u18-36", null, PROSE],
+  ["u18-37", null, ALGO],
+  ["u18-38", null, ALGO],
+  ["u18-39", null, ALGO],
+  ["u18-40", null, ALGO],
+  ["u18-41", null, ALGO],
+  ["u18-42", null, ALGO],
+  ["u18-43", null, ALGO],
+];

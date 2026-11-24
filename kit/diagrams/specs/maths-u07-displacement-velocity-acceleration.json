@@ -1,0 +1,139 @@
+{
+ "id": "maths-u07-displacement-velocity-acceleration",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Higher-Order Derivatives",
+ "title": "Displacement, velocity and acceleration",
+ "caption": "Each curve is the slope of the one before. s = t³ − 6t² + 9t has a maximum where v = 3t² − 12t + 9 is zero, first at t = 1; there a = 6t − 12 = −6, negative because v is falling through zero.",
+ "alt": "Three curves against t: the cubic s, the parabola v which crosses zero at t = 1 and t = 3, and the line a which is −6 at t = 1.",
+ "description": [
+  "s = t³ − 6t² + 9t is the displacement.",
+  "v = ds/dt = 3t² − 12t + 9 = 3(t − 1)(t − 3), zero at t = 1 and t = 3.",
+  "a = dv/dt = 6t − 12.",
+  "At t = 1: a = −6 m s⁻²."
+ ],
+ "range": {
+  "x": [
+   0,
+   4.5
+  ],
+  "y": [
+   -12,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -10,
+   -5,
+   5,
+   10
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (s)",
+  ""
+ ],
+ "curves": [
+  {
+   "expr": "x^3-6*x^2+9*x",
+   "colour": "a1",
+   "label": "s",
+   "labelAt": [
+    3.9,
+    5.5
+   ]
+  },
+  {
+   "expr": "3*x^2-12*x+9",
+   "colour": "a2",
+   "label": "v",
+   "labelAt": [
+    0.05,
+    10.3
+   ]
+  },
+  {
+   "expr": "6*x-12",
+   "colour": "a4",
+   "label": "a",
+   "labelAt": [
+    3.9,
+    10.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "label": "v = 0",
+   "colour": "a2",
+   "dx": 8,
+   "dy": 16
+  },
+  {
+   "x": 1,
+   "y": -6,
+   "label": "a = −6",
+   "colour": "a4",
+   "dx": 10,
+   "dy": 10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3*x^2-12*x+9",
+   "x": 1,
+   "y": 0,
+   "name": "v = 0 at t = 1"
+  },
+  {
+   "type": "point",
+   "expr": "6*x-12",
+   "x": 1,
+   "y": -6,
+   "name": "a = −6 at t = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "x^3-6*x^2+9*x",
+   "x": 1,
+   "value": 0,
+   "name": "the slope of s at t = 1 is v = 0"
+  },
+  {
+   "type": "slope",
+   "expr": "3*x^2-12*x+9",
+   "x": 1,
+   "value": -6,
+   "name": "the slope of v at t = 1 is a = −6"
+  },
+  {
+   "type": "slope",
+   "expr": "3*x^2-12*x+9",
+   "x": 3,
+   "value": 6,
+   "name": "the slope of v at t = 3 is a = 6"
+  }
+ ],
+ "fromLesson": [
+  "a = −6 m s"
+ ]
+}

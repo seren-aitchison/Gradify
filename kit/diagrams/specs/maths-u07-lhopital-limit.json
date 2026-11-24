@@ -1,0 +1,107 @@
+{
+ "id": "maths-u07-lhopital-limit",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "L'Hôpital's Rule",
+ "title": "(eˣ − 1 − x)/x² near 0",
+ "caption": "Direct substitution gives 0/0. L'Hôpital's rule (twice) gives eˣ/2 → ½. The graph agrees: the curve passes through heights close to ½ on both sides of the hole at x = 0.",
+ "alt": "The curve y = (eˣ − 1 − x)/x² rising from left to right with a gap at x = 0, where the height is ½.",
+ "description": [
+  "At x = 0 the fraction is 0/0.",
+  "Differentiate top and bottom: (eˣ − 1)/(2x), still 0/0.",
+  "Again: eˣ/2, which tends to ½.",
+  "The graph approaches height ½ at the hole x = 0."
+ ],
+ "range": {
+  "x": [
+   -3,
+   3
+  ],
+  "y": [
+   0,
+   4
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(exp(x)-1-x)/x^2",
+   "colour": "a1",
+   "domain": [
+    -3,
+    -0.002
+   ]
+  },
+  {
+   "expr": "(exp(x)-1-x)/x^2",
+   "colour": "a1",
+   "domain": [
+    0.002,
+    3
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.5,
+   "label": "½"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.0001,
+   "y": 0.5,
+   "label": "hole at (0, ½)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(exp(x)-1-x)/x^2",
+   "x": 0.001,
+   "y": 0.5,
+   "name": "just right of 0 the value is ≈ ½"
+  },
+  {
+   "type": "point",
+   "expr": "(exp(x)-1-x)/x^2",
+   "x": -0.001,
+   "y": 0.5,
+   "name": "just left of 0 the value is ≈ ½"
+  }
+ ],
+ "fromLesson": [
+  "e^{x}/2"
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "id": "phys-u20-compton-shift",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Compton scattering",
+ "title": "The Compton shift against scattering angle",
+ "caption": "The wavelength increases by Δλ = λ_C(1 − cos θ) with λ_C = h/m_ec = 2.43 pm. It is zero for no deflection, 2.43 pm at 90° and a maximum of 2λ_C = 4.85 pm for backscatter, independent of the incident wavelength: X-rays of 70 pm scattered at 90° emerge at 72.4 pm.",
+ "alt": "Graph of wavelength shift in picometres against scattering angle from 0 to 180 degrees: a rising curve from zero, 2.43 at 90 degrees and 4.85 at 180 degrees.",
+ "description": [
+  "The horizontal axis is the photon's scattering angle θ in degrees; the vertical axis is the shift in wavelength Δλ in picometres.",
+  "The curve is Δλ = 2.43(1 − cos θ) pm: zero at 0°, 2.43 pm at 90° and 4.85 pm at 180°.",
+  "For the lesson's 70 pm X-rays at 90° the new wavelength is 70 + 2.43 = 72.4 pm."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   0,
+   5.6
+  ]
+ },
+ "ticks": [
+  [
+   30,
+   60,
+   90,
+   120,
+   150,
+   180
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  30,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "θ / °",
+  "Δλ / pm"
+ ],
+ "curves": [
+  {
+   "expr": "2.4263102390826217*(1-cos(x*0.017453292519943295))",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "λ_C(1 − cos θ)",
+   "labelAt": [
+    20,
+    3.2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 90,
+   "y": 2.4263,
+   "label": "2.43 pm",
+   "dx": 10,
+   "dy": 16
+  },
+  {
+   "x": 180,
+   "y": 4.8526,
+   "colour": "a2",
+   "label": "4.85 pm",
+   "dx": -10,
+   "dy": 16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2.4263102390826217*(1-cos(x*0.017453292519943295))",
+   "x": 90,
+   "y": 2.4263,
+   "name": "Δλ = λ_C = 2.43 pm at 90°"
+  },
+  {
+   "type": "point",
+   "expr": "2.4263102390826217*(1-cos(x*0.017453292519943295))",
+   "x": 180,
+   "y": 4.8526,
+   "name": "the maximum shift is 2λ_C = 4.85 pm at 180°"
+  },
+  {
+   "type": "point",
+   "expr": "2.4263102390826217*(1-cos(x*0.017453292519943295))",
+   "x": 0,
+   "y": 0,
+   "name": "no shift without deflection"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "phys-u20-l2-vector",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Angular momentum",
+ "title": "The l = 2 angular momentum with m = 2",
+ "caption": "For l = 2 the length is |L| = √(l(l + 1))ħ = √6 ħ = 2.45ħ, but the largest component along z is only L_z = 2ħ. So L can never point exactly along z: even for m = 2 it makes 35.3° with the z axis and has a perpendicular part √2 ħ = 1.41ħ. The possible L_z are −2ħ, −ħ, 0, ħ, 2ħ.",
+ "alt": "Vector diagram: an arrow of length 2.45 in units of h-bar tilted 35.3 degrees from the vertical z axis, with a vertical component of 2 and a horizontal component of 1.41.",
+ "description": [
+  "|L| = √(l(l + 1))ħ = √6 ħ = 2.45ħ, drawn at 54.7° to the horizontal (35.3° from the z axis).",
+  "The vertical (z) component is L_z = mħ = 2ħ, the largest allowed value for l = 2.",
+  "The horizontal component is √(6 − 4)ħ = 1.41ħ: L_x and L_y cannot both be zero, because they do not commute with L_z.",
+  "The other allowed values of L_z are ħ, 0, −ħ, −2ħ, each with the same |L|."
+ ],
+ "mode": "resolve",
+ "units": "ħ",
+ "vectors": [
+  {
+   "label": "L",
+   "mag": 2.4495,
+   "angle": 54.7356,
+   "text": "2.45ħ",
+   "comps": [
+    1.4142,
+    2
+   ],
+   "compLabels": [
+    "1.41ħ",
+    "L_z = 2ħ"
+   ]
+  }
+ ],
+ "notes": [
+  "|L| = √6 ħ = 2.45ħ > L_z,max = 2ħ"
+ ]
+}

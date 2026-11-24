@@ -1,0 +1,116 @@
+{
+ "id": "phys-u39-newton-step",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u39",
+ "lesson": "Root-finding algorithms",
+ "title": "Newton's method follows the tangent",
+ "caption": "Newton's method replaces the curve by its tangent and solves that instead: x₁ = x₀ − f(x₀)/f′(x₀). From x₀ = 1 on f = x² − 2, the tangent meets zero at x₁ = 1 − (−1)/2 = 1.5; the next step gives 1.4167, already close to √2 = 1.41421.",
+ "alt": "The parabola x squared minus 2 with its tangent at x = 1, which crosses the x-axis at 1.5, near the root at 1.414.",
+ "description": [
+  "f(1) = -1, f′(1) = 2.",
+  "Tangent: y = -1 + 2(x − 1), zero at x = 1.5.",
+  "Repeating: x₂ = 1.5 − 0.25/3 = 1.41667, x₃ = 1.41422.",
+  "The number of correct digits roughly doubles each step."
+ ],
+ "range": {
+  "x": [
+   0.5,
+   2
+  ],
+  "y": [
+   -2,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2
+  ],
+  [
+   -2,
+   -1,
+   1,
+   2
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x",
+  "f(x) = x² − 2"
+ ],
+ "curves": [
+  {
+   "expr": "x^2-2",
+   "colour": "a1",
+   "label": "f(x)",
+   "labelAt": [
+    1.75,
+    1.6
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "-1+2*(x-1)",
+   "domain": [
+    0.7,
+    1.75
+   ],
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "tangent at x₀ = 1",
+   "labelAt": [
+    1.12,
+    -1.75
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": -1,
+   "colour": "a2",
+   "label": "x₀",
+   "dx": 6,
+   "dy": 16
+  },
+  {
+   "x": 1.5,
+   "y": 0,
+   "colour": "a2",
+   "label": "x₁ = 1.5",
+   "dx": 8,
+   "dy": 14
+  },
+  {
+   "x": 1.41421,
+   "y": 0,
+   "colour": "a4",
+   "label": "√2",
+   "anchor": "end",
+   "dx": -6,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-1+2*(x-1)",
+   "x": 1.5,
+   "y": 0,
+   "name": "the tangent crosses zero at 1.5"
+  },
+  {
+   "type": "slope",
+   "expr": "x^2-2",
+   "x": 1,
+   "value": 2,
+   "name": "f′(1) = 2"
+  }
+ ]
+}

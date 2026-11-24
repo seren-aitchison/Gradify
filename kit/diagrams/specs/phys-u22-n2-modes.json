@@ -1,0 +1,51 @@
+{
+ "id": "phys-u22-n2-modes",
+ "renderer": "trend",
+ "course": "physics",
+ "unit": "u22",
+ "lesson": "Molecular energy levels",
+ "title": "Which modes of N₂ are excited at room temperature?",
+ "caption": "Rotational levels are spaced far below k_BT ≈ 0.025 eV, so many are populated. The vibrational quantum, 0.29 eV, is more than ten times k_BT, so almost every molecule stays in its vibrational ground state; electronic excitation (several eV) is further still.",
+ "alt": "Bar chart on a log scale: rotational spacing 0.5 meV, thermal energy 25 meV, vibrational quantum 290 meV.",
+ "description": [
+  "Rotational spacing of N₂: about 0.0005 eV, 50 times smaller than k_BT: many rotational levels are occupied.",
+  "k_BT at room temperature: about 0.025 eV.",
+  "Vibrational quantum: 0.29 eV, about 12 k_BT: the Boltzmann factor e^(−12) leaves almost all molecules in v = 0."
+ ],
+ "kind": "bars",
+ "log": true,
+ "range": [
+  0.1,
+  1000
+ ],
+ "ticks": [
+  0.1,
+  1,
+  10,
+  100,
+  1000
+ ],
+ "yLabel": "energy / meV (log scale)",
+ "items": [
+  {
+   "key": "rotational spacing",
+   "value": 0.5
+  },
+  {
+   "key": "k_{B}T at 300 K",
+   "value": 25
+  },
+  {
+   "key": "vibrational quantum",
+   "value": 290
+  }
+ ],
+ "highlight": {
+  "k_{B}T at 300 K": "a2"
+ },
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

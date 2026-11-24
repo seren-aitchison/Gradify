@@ -1,0 +1,2042 @@
+# Gradify: full text of the study guides, concept comparisons and key terms
+
+> The complete text of Gradify's free study guides, "X vs Y" concept comparisons and key-term definitions, for AI assistants. Each section ends with its source URL; please cite that page. The site map for everything else is https://getgradify.com/llms.txt
+
+# How to use active recall for science subjects
+By the Gradify team · Based on the learning research named in the text
+In science, use flashcards for definitions and facts, draw processes and diagrams from memory on a blank page, and practise calculations as unseen problems. Each type of knowledge needs its own kind of recall.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## Definitions and facts: flashcards
+Biology and chemistry are full of precise definitions (osmosis, electronegativity, enthalpy change). One definition per card, answered word for word, then spaced. Examiners reward the exact wording, so recall it exactly.
+
+## Processes: draw them from memory
+For the Krebs cycle, the nitrogen cycle, action potentials or reaction mechanisms, draw the whole process on a blank page, then check every arrow and label. Redraw only what you got wrong. This is dual coding and recall at once.
+
+## Calculations: unseen problems
+For physics and quantitative chemistry, recall means solving a problem you haven't seen the answer to. Mix problem types (moles, rates, equilibria) in one session: interleaving trains you to recognise which method a question needs.
+
+## Required practicals and data questions
+List each practical's method, variables, risks and sources of error from memory. Then practise unfamiliar data questions from past papers.
+
+## Ready-made science courses
+Gradify's free biology, chemistry and physics courses come with flashcards and practice questions for every lesson, and topic pages show what each unit covers.
+
+ Related checklists: STEM practical checklist
+Related comparisons: Accuracy vs precision
+
+## Questions
+How do I memorise biology processes?
+Draw the process from memory on a blank page, check it against your notes, correct it, and repeat on later days until you can draw it fully. Flashcards suit the individual definitions inside it.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/active-recall-for-science/">How to use active recall for science subjects</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to use active recall for science subjects. https://getgradify.com/guides/active-recall-for-science/ 
+
+ Harvard: Gradify (2026) How to use active recall for science subjects. Available at: https://getgradify.com/guides/active-recall-for-science/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/active-recall-for-science/
+
+---
+
+# The best active recall schedule before finals
+By the Gradify team · Based on the learning research named in the text
+Spend the first four weeks covering every topic with active recall and spaced reviews, then use the last two weeks for timed past papers and your weakest topics. Every topic should be recalled at least three times, on different days, before the exam.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## Weeks 6 to 5: build the question bank
+Turn each topic into flashcards and question lists (Gradify does this from your PDFs). Learn two or three topics a day and do the first recall the next day.
+
+## Weeks 4 to 3: cover everything, spaced
+Keep adding topics, but start each session with reviews that are due. Your daily order: due reviews first, then new material. Use the schedule generator or let Gradify schedule the cards.
+
+## Week 2: past papers
+One timed paper every other day. Mark it, and turn every mistake into a new flashcard. Keep daily reviews going.
+
+## Final week: weak spots and sleep
+Only weak cards and the topics past papers exposed. No new material after two days out. Sleep consolidates memory: an all-nighter costs more than it gains.
+
+## A daily template
+
+- 25 to 40 minutes: due reviews
+- Two 50-minute blocks: new topic, learn then question
+- 15 minutes: blank-page recall of yesterday's topic
+- Evening: nothing, or a short review
+Print the revision timetable or the 7-day plan, and check your hours with the exam countdown.
+
+ Related checklists: Final 48 hours checklist · Exam day checklist
+
+## Questions
+How many times should I review a topic before an exam?
+At least three times on separate days, with growing gaps, and more for topics you keep getting wrong.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/active-recall-schedule-before-finals/">The best active recall schedule before finals</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). The best active recall schedule before finals. https://getgradify.com/guides/active-recall-schedule-before-finals/ 
+
+ Harvard: Gradify (2026) The best active recall schedule before finals. Available at: https://getgradify.com/guides/active-recall-schedule-before-finals/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/active-recall-schedule-before-finals/
+
+---
+
+# Active recall vs re-reading: which actually works?
+By the Gradify team · Based on the learning research named in the text
+Active recall works better. Re-reading builds familiarity, which feels like knowing, but self-testing builds memories you can retrieve in an exam, and the gap grows the longer you wait.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## Why re-reading feels so effective
+On a second read, the words are familiar, so the brain reports "I know this". That fluency is real, but it's recognition, not recall, and exams ask you to recall. Students in testing-effect studies routinely predict that re-reading will serve them better, and are wrong.
+
+## What the research found
+When one group re-reads and another practises recall for the same time, the recall group typically remembers more after a few days or a week. The advantage is small or even reversed if you test five minutes later, which is exactly why re-reading seems to work the night before. See the complete guide for the studies.
+
+## How to switch in one evening
+
+- Take the notes you would have re-read.
+- Turn each heading into a question ("What are the stages of mitosis?").
+- Cover the notes and answer aloud or on paper.
+- Check, and mark the ones you missed.
+- Tomorrow, answer only the missed ones; in three days, all of them.
+
+## Is re-reading ever useful?
+Yes: a first read to understand a topic, and a quick re-read of a card's source after you get it wrong. The mistake is using re-reading as the revision itself.
+
+ Related checklists: Final 48 hours checklist
+Related comparisons: Active recall vs spaced repetition
+
+## Questions
+Why do I forget what I re-read?
+Re-reading creates familiarity without practising retrieval, so the memory isn't strengthened for later recall. Testing yourself is what makes it last.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/active-recall-vs-rereading/">Active recall vs re-reading: which actually works?</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Active recall vs re-reading: which actually works?. https://getgradify.com/guides/active-recall-vs-rereading/ 
+
+ Harvard: Gradify (2026) Active recall vs re-reading: which actually works?. Available at: https://getgradify.com/guides/active-recall-vs-rereading/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/active-recall-vs-rereading/
+
+---
+
+# The complete guide to active recall for exams
+By the Gradify team · Based on the learning research named in the text
+Active recall means testing yourself by pulling information out of memory, instead of reading it again. It's one of the two best-supported revision methods in learning research (the other is spacing), and it works because the effort of retrieving a fact is what makes it stick.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## What is active recall?
+Every time you close your notes and try to answer a question, explain a process from memory or write out a definition on a blank page, you're using active recall. Researchers call it retrieval practice or the testing effect. The opposite is passive review: re-reading, highlighting and copying notes out neatly, which feel productive but leave little behind.
+
+## Why does active recall work?
+Retrieval strengthens the route back to a memory. In a well-known 2006 study by Roediger and Karpicke, students who read a passage once and then practised recalling it remembered far more a week later than students who spent the same time re-reading it, even though the re-readers felt more confident. A large 2013 review by Dunlosky and colleagues rated practice testing as one of only two "high utility" techniques, alongside distributed practice, and rated highlighting and re-reading as low utility.
+Recall also shows you what you don't know. Re-reading makes everything look familiar; a blank page tells you the truth, so you spend your time on the gaps.
+
+## How to do active recall: a step-by-step method
+
+- Learn it once, properly. Attend the lecture or read the chapter with the aim of understanding, not memorising.
+- Turn it into questions. Make flashcards or a list of questions from your notes: definitions, processes, causes, comparisons, worked examples. Gradify can do this from a PDF and check each card against your notes.
+- Answer from memory first. Say or write the full answer before you look. A half-answer in your head doesn't count.
+- Check and mark honestly. Compare with the source. Anything wrong or vague comes back sooner.
+- Space the reviews. Come back after 1, 3, 7 and 14 days, longer each time you get it right. The schedule generator gives you the dates.
+- Finish with exam questions. In the last week or two, past papers under timed conditions are active recall in the exam's own format.
+
+## Five active recall techniques
+
+- Flashcards: best for definitions, facts and short processes. Keep one idea per card (how to make good flashcards).
+- The blank page: write everything you know about a topic, then check against your notes and fill the gaps in another colour.
+- Teach it: explain the topic aloud as if to a first-year (the Feynman technique).
+- Question lists: turn each heading of your notes into a question and answer it without looking (the left column of Cornell notes does this).
+- Past papers: the closest practice to the real thing.
+
+## Common mistakes
+
+- Peeking at the answer before committing to one.
+- Making cards so big that you can't tell whether you got them right.
+- Only reviewing cards you already know because it feels good.
+- Cramming every card the night before instead of spacing them.
+- Making cards from material you never understood: recall needs something to recall.
+
+ Related checklists: Final 48 hours checklist
+Related comparisons: Active recall vs spaced repetition
+
+## Questions
+Is active recall better than re-reading?
+Yes. Studies consistently find that testing yourself produces better long-term memory than spending the same time re-reading, even though re-reading feels more effective at the time.
+How long should an active recall session be?
+Twenty-five to fifty minutes is plenty. Stop when your answers become careless, and come back to the same material on a later day.
+Can I use active recall for essay subjects?
+Yes: recall the argument, the key evidence and the counter-arguments for each essay plan, then write timed answers. History, law and English students use question lists and blank-page plans this way.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/active-recall/">The complete guide to active recall for exams</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). The complete guide to active recall for exams. https://getgradify.com/guides/active-recall/ 
+
+ Harvard: Gradify (2026) The complete guide to active recall for exams. Available at: https://getgradify.com/guides/active-recall/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/active-recall/
+
+---
+
+# The 7 best study tools for university students in 2026
+By the Gradify team · Based on the learning research named in the text
+Anki is best for serious long-term memorisation, Quizlet for quick shared vocabulary sets, Notion for organising a whole degree, and Gradify for turning your own lecture notes into checked flashcards and a revision plan. Most students do well with one note tool and one recall tool.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## Quick comparison
+ | | Tool | Best for | Free?
+
+ | Anki | Long-term memorisation with adaptive spaced repetition; huge shared decks (especially medicine) | Yes on desktop, web and Android; paid on iPhone
+
+ | Quizlet | Fast vocabulary sets, sharing with a class, a big library of user-made sets | Free tier; many study modes need Quizlet Plus
+
+ | Notion | Organising notes, deadlines and a whole degree in one place | Free for personal use
+
+ | RemNote | Taking notes that turn into flashcards as you write | Free tier
+
+ | Forest | Staying off your phone during study sessions | Free on Android; paid on iPhone
+
+ | Google NotebookLM | Asking questions of your own sources and generating summaries | Free tier
+
+ | Gradify | Turning lecture PDFs into flashcards and mind maps checked against your notes, with a revision schedule paced to your exam; free courses in 30+ subjects | Yes, no card
+
+Prices and plans change; check each tool's own site. We make Gradify, so weigh our view of it accordingly.
+
+## Which should you choose?
+
+- Medicine or a language: Anki, for its shared decks and scheduler. Gradify can make the cards from your own lectures to go alongside.
+- A class sharing vocab: Quizlet.
+- Lots of lecture PDFs and little time: Gradify, to get from notes to recall in a minute.
+- Disorganised across modules: Notion, plus one recall tool.
+- Distracted: Forest, or your phone's focus mode.
+
+## What matters more than the tool
+The method. Any of these works if you test yourself and space the reviews; none works if you only re-read. Start with active recall.
+
+ Related checklists: Semester reset checklist
+Related comparisons: Active recall vs spaced repetition
+
+## Questions
+What is the best free study app for university?
+It depends on the job: Anki for memorisation, Notion for organisation, and Gradify for turning lecture notes into checked flashcards and a revision plan. All three have free plans.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/best-study-tools-for-university-students/">The 7 best study tools for university students in 2026</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). The 7 best study tools for university students in 2026. https://getgradify.com/guides/best-study-tools-for-university-students/ 
+
+ Harvard: Gradify (2026) The 7 best study tools for university students in 2026. Available at: https://getgradify.com/guides/best-study-tools-for-university-students/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/best-study-tools-for-university-students/
+
+---
+
+# The blurting method: how to do it properly
+By the Gradify team · Updated for the 2026–27 academic year
+Blurting is writing down everything you can remember about a topic on a blank page, without notes, then checking it against your notes in a different colour and filling the gaps. It's active recall for whole topics, and the gaps you fill in colour are exactly what to revise next.
+
+ Core rule: The coloured corrections are your revision list.
+
+## How do I do the blurting method?
+
+- Pick one topic and set a timer (10 to 15 minutes).
+- Write or draw everything you remember: definitions, processes, examples, diagrams.
+- Open your notes and check, adding what you missed in a different colour.
+- Make flashcards for the coloured parts.
+- Blurt the same topic again in two or three days: there should be less colour.
+Key takeaway: The coloured corrections are your revision list. 
+
+## Where can I get blurting sheets?
+Every topic page has a Print blurting sheet button: it prints the topic's headings and prompts with space to write, and the answers stay on the page to check against.
+
+## Blurting or flashcards?
+Blurting tests whole topics and how ideas connect; flashcards test individual facts and definitions. Use blurting to find gaps and flashcards to fix them. More in blurting vs flashcards.
+Test yourself: You blurted a topic and half the page is in correction colour. What next? Reveal
+Make flashcards for the corrections, review them over the next few days, and blurt the topic again in 2 or 3 days.
+
+ Related comparisons: Blurting vs flashcards
+
+## Questions
+Does blurting work?
+Yes: it's a form of retrieval practice, which has strong research support. Checking and correcting afterwards is essential.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/blurting-method/">The blurting method: how to do it properly</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). The blurting method: how to do it properly. https://getgradify.com/guides/blurting-method/ 
+
+ Harvard: Gradify (2026) The blurting method: how to do it properly. Available at: https://getgradify.com/guides/blurting-method/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/blurting-method/
+
+---
+
+# Exam command words: what each one wants
+By the Gradify team · Updated for the 2026–27 academic year
+The command word tells you what kind of answer earns the marks: 'state' wants a fact, 'describe' wants what happens, 'explain' wants why or how, and 'evaluate' wants a judgement backed by evidence on both sides. Most lost marks on short answers come from answering a different command word from the one asked.
+
+ Core rule: Describe = what happens (with data). Explain = why it happens (a cause linked to its effect).
+
+## What's the difference between describe and explain?
+ | | Question | Weak answer | Full-mark approach
+ | Describe the trend in the graph. | "It goes up because more enzyme is made." | "The rate increases steadily from 10 to 40 °C, peaks at 40 °C (2.4 units), then falls sharply to zero by 60 °C." (Data quoted, no reasons.)
+ | Explain the trend. | "The rate increases then decreases." | "Rate rises because molecules have more kinetic energy, so more successful collisions; above 40 °C hydrogen bonds break, the active site changes shape and fewer enzyme-substrate complexes form."
+
+Key takeaway: Describe = what happens (with data). Explain = why it happens (a cause linked to its effect). 
+Test yourself: A question says 'Describe the results'. Should you give reasons? Reveal
+No. Describe asks what the data show: trends, peaks and values with units. Reasons are for 'explain'.
+
+## What do evaluate, assess and 'to what extent' want?
+All three want a judgement: weigh points on both sides, say which matter more and why, and end with a supported conclusion. A list of pros and cons with no verdict usually caps you in the middle mark band. 'To what extent' wants a clear answer on a scale ("largely", "only partly") rather than yes or no.
+Key takeaway: No verdict, no top band: evaluate questions are marked on the judgement. 
+
+## Every common command word
+ | | Command word | What to do
+ | State / Give / Name | A fact or name, no explanation.
+ | Identify | Pick it out from the information given.
+ | Define | The precise meaning, in the key terms the mark scheme expects.
+ | Outline | The main points, briefly.
+ | Describe | What happens or what it's like, step by step.
+ | Explain | Why or how: cause → effect, linked with 'because' or 'so'.
+ | Calculate / Determine | A number, with working and units.
+ | Compare | Similarities and differences, side by side ('whereas', 'both').
+ | Contrast | Differences only, side by side.
+ | Analyse | Break into parts and show how they connect, with evidence.
+ | Suggest | Apply what you know to an unfamiliar situation.
+ | Justify | Reasons for a decision, each backed by evidence.
+ | Discuss | Arguments on more than one side, reaching a view.
+ | Evaluate / Assess | Weigh strengths and weaknesses, then judge.
+ | To what extent | How far it's true: both sides, then a clear verdict.
+
+Exam boards publish their own lists (AQA, OCR, Pearson Edexcel and the IB each have one). The meanings above are common to all of them, but check your board's list for subject-specific words.
+
+## How do I practise command words?
+Take five past-paper questions, underline the command word, and write only the first sentence of each answer. Check: does that sentence do what the word asks? Then use the question deconstructor on anything unfamiliar, and log misreads in your mistake log.
+Test yourself: What does 'compare' need that 'describe' doesn't? Reveal
+Both things in every sentence, with a linking word such as 'whereas' or 'both', so the similarity or difference is explicit.
+
+ Related checklists: Final 48 hours checklist
+
+## Questions
+What does explain mean in an exam?
+Give reasons: say why or how something happens, linking each cause to its effect. Each correct link usually earns a mark.
+What's the difference between evaluate and discuss?
+Discuss wants arguments on more than one side; evaluate also wants a final judgement about which side is stronger, backed by evidence.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/command-words/">Exam command words: what each one wants</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Exam command words: what each one wants. https://getgradify.com/guides/command-words/ 
+
+ Harvard: Gradify (2026) Exam command words: what each one wants. Available at: https://getgradify.com/guides/command-words/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/command-words/
+
+---
+
+# Definitions vs explanations: give the depth the marks ask for
+By the Gradify team · Updated for the 2026–27 academic year
+A definition is one precise sentence in technical terms; an explanation is a chain of steps showing how or why; an evaluation weighs it up. Students lose easy marks by giving an everyday description when a definition is asked for, or a one-line definition for a 4-mark explanation.
+
+ Core rule: Definitions are marked on exact key terms: learn them word for word with flashcards.
+
+## What does a good definition look like?
+"Osmosis is the net movement of water molecules from a region of higher water potential to a region of lower water potential through a partially permeable membrane." Every highlighted term (net, water potential, partially permeable) is a mark-scheme word. "Water moving through a membrane" misses all of them.
+Key takeaway: Definitions are marked on exact key terms: learn them word for word with flashcards. 
+
+## Definition, explanation or evaluation?
+ | | Asked for | Depth | Example on osmosis
+ | Define (1–2 marks) | One precise sentence | The definition above
+ | Explain (3–4 marks) | Steps linked by because/so | Why a red blood cell bursts in pure water
+ | Evaluate (6+ marks) | Steps plus judgement | How useful potato-chip experiments are for measuring water potential
+
+Test yourself: 'Explain why a plant cell doesn't burst in pure water' (3 marks). Is a definition of osmosis enough? Reveal
+No: you need the chain: water enters by osmosis → the cell swells → the cell wall resists expansion, so pressure builds and stops further net entry.
+
+## Questions
+How do I learn definitions for exams?
+Make one flashcard per definition, answer it from memory word for word, and check every key term against the mark scheme or textbook.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/definitions-vs-explanations/">Definitions vs explanations: give the depth the marks ask for</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Definitions vs explanations: give the depth the marks ask for. https://getgradify.com/guides/definitions-vs-explanations/ 
+
+ Harvard: Gradify (2026) Definitions vs explanations: give the depth the marks ask for. Available at: https://getgradify.com/guides/definitions-vs-explanations/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/definitions-vs-explanations/
+
+---
+
+# Failed an exam? A resit recovery plan
+By the Gradify team · Updated for the 2026–27 academic year
+A failed exam is information, not a verdict. Get your feedback and script if you can, find out whether the problem was content, exam technique or time, check what your resit rules are, then build a plan aimed at that specific cause. Most resits are passed by students who change their method, not just their hours.
+
+ Core rule: Read the feedback before you plan: the fix depends on the cause.
+
+## What should I do first after failing an exam?
+
+- Give yourself a day.
+- Read the feedback and, if your university allows, request your script.
+- Check your regulations: when the resit is, whether the mark is capped, and whether compensation applies (see resits and compensation).
+- Talk to your personal tutor: they've seen this many times.
+Key takeaway: Read the feedback before you plan: the fix depends on the cause. 
+
+## Was it content, technique or time?
+Content gaps show up as blank or wrong answers on whole topics. Technique shows up as dropped marks on questions you knew (misread command words, no evaluation). Time shows up as unfinished questions. Log each lost mark in the mistake log to see the split.
+
+## How do I plan the resit?
+Rank topics with the topic prioritiser, plan hours with the exam countdown, and switch from re-reading to active recall and past papers.
+Test yourself: You lost most marks on questions you knew. Content or technique? Reveal
+Technique: the fix is reading command words, planning answers and timing, not more content.
+
+## Where can I get support?
+Your personal tutor, your university's academic skills team and its wellbeing service. If something outside your control affected the exam, ask about extenuating (mitigating) circumstances: deadlines for claims are usually strict.
+
+ Related checklists: Final 48 hours checklist
+
+## Questions
+Can I resit a failed exam at university?
+Usually yes, at least once. Rules on timing, capped marks and how many attempts you get vary by university: check your academic regulations or ask your tutor.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/exam-resit-recovery/">Failed an exam? A resit recovery plan</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Failed an exam? A resit recovery plan. https://getgradify.com/guides/exam-resit-recovery/ 
+
+ Harvard: Gradify (2026) Failed an exam? A resit recovery plan. Available at: https://getgradify.com/guides/exam-resit-recovery/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/exam-resit-recovery/
+
+---
+
+# Exam technique: how to get the marks you already know
+By the Gradify team · Updated for the 2026–27 academic year
+Good exam technique turns what you know into marks: spend about 1 to 1.5 minutes per mark, read every question's command word and constraints before writing, answer the questions you're surest of first, and keep five minutes to check units, names and missed parts.
+
+ Core rule: Minutes per mark = exam minutes ÷ total marks. Stick to it.
+
+## How long should I spend on each question?
+Divide the exam length by the total marks. A 2-hour paper with 100 marks gives 1.2 minutes a mark, so a 6-mark question gets about 7 minutes. Write the finish time for each section on the paper at the start. If a question is taking much longer than its marks justify, move on and come back.
+Key takeaway: Minutes per mark = exam minutes ÷ total marks. Stick to it. 
+
+## How do I break down a multi-part question?
+Use four steps: read the constraints (command word, marks, "using the data"), identify the concept being tested, map one point per mark, then check units and relevance. The question deconstructor walks you through it for any question you paste.
+Test yourself: A 4-mark 'explain' question: how many linked points should you plan? Reveal
+About four creditable points, each a cause linked to its effect.
+
+## What order should I answer questions in?
+Skim the paper, then start with a question you're confident on: early marks calm nerves and bank time. Don't leave the long, high-mark questions until the last ten minutes.
+
+## What should I check at the end?
+
+- Every part answered (look for questions on the back of pages).
+- Units and significant figures on every calculation.
+- Names, candidate numbers and question numbers.
+- Command words: did you explain where it said explain?
+
+ Related checklists: Exam day checklist
+
+## Questions
+How can I improve my exam technique quickly?
+Do one timed past paper, mark it with the mark scheme, and log why you dropped each mark. Most students find a pattern (misreading, timing, missing units) that's quick to fix.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/exam-technique/">Exam technique: how to get the marks you already know</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Exam technique: how to get the marks you already know. https://getgradify.com/guides/exam-technique/ 
+
+ Harvard: Gradify (2026) Exam technique: how to get the marks you already know. Available at: https://getgradify.com/guides/exam-technique/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/exam-technique/
+
+---
+
+# How to export your Quizlet sets
+By the Gradify team · Updated for the 2026–27 academic year
+Quizlet lets you export sets you created as text: open the set, choose Export from the ⋯ menu, and copy the terms. Paste them into Anki (File → Import) or into Gradify's notes, and Gradify turns them into cards checked against your own notes.
+
+ Core rule: Export works for your own sets: copy them as text.
+
+## How do I export a Quizlet set?
+
+- Open a set you created on the Quizlet website.
+- Click the ⋯ (more) menu and choose Export.
+- Choose how terms and definitions are separated (a tab or comma is easiest).
+- Copy the text.
+Export is available for sets you made. Menus change, so if you can't see it, check Quizlet's help centre.
+Key takeaway: Export works for your own sets: copy them as text. 
+
+## How do I import into Anki or Gradify?
+Anki: save the text as a .txt file, then File → Import and match the separator. Gradify: paste the text into Notes Studio, ideally alongside your lecture notes so each card can be checked against them.
+
+## What should I check after moving?
+Formatting and images may not survive. Check cards with formulas, and delete duplicates.
+Test yourself: Why paste your lecture notes alongside an exported set? Reveal
+So each card can be checked against your own course material, catching errors in old or shared sets.
+
+## Questions
+Can I export someone else's Quizlet set?
+Export is designed for sets you created. For other people's sets, check the creator's permission and Quizlet's terms.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/export-quizlet-sets/">How to export your Quizlet sets</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to export your Quizlet sets. https://getgradify.com/guides/export-quizlet-sets/ 
+
+ Harvard: Gradify (2026) How to export your Quizlet sets. Available at: https://getgradify.com/guides/export-quizlet-sets/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/export-quizlet-sets/
+
+---
+
+# Free alternatives to paid study apps
+By the Gradify team · Updated for the 2026–27 academic year
+Most of what study subscriptions charge for has a free option: Anki for spaced repetition, Gradify for flashcards and mind maps made from your notes (no account needed to try it), the free calculators and planners on this site, and your phone's built-in focus mode. Paid plans mostly buy convenience and limits removed.
+
+ Core rule: Try before you pay: most paid features have a free version.
+
+## Is there a free AI flashcard maker without sign-up?
+Gradify's PDF to flashcards makes your first pack from a PDF or pasted notes with no account, and links each card to the line it came from. Anki is free (except on iPhone) but you type cards yourself or import them.
+Key takeaway: Try before you pay: most paid features have a free version. 
+
+## Free spaced repetition and planners
+
+- Spaced repetition: Anki (free on desktop, web and Android), Gradify (free), or the schedule generator for paper cards.
+- Planners: the cram, deadline and exam timetable planners.
+- Focus: the study timer and your phone's focus mode.
+
+## What do paid plans actually add?
+Usually higher limits on AI features, ad removal, offline use and extra study modes. Check what the free tier of any tool limits before you subscribe, and see our honest comparisons.
+
+## Questions
+What's the best free alternative to Quizlet Plus?
+For shared sets, Anki's community decks; for making cards from your own notes, Gradify; for importing Quizlet sets, Knowt's free plan. See our Quizlet Plus alternatives page.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/free-alternatives-to-paid-study-apps/">Free alternatives to paid study apps</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Free alternatives to paid study apps. https://getgradify.com/guides/free-alternatives-to-paid-study-apps/ 
+
+ Harvard: Gradify (2026) Free alternatives to paid study apps. Available at: https://getgradify.com/guides/free-alternatives-to-paid-study-apps/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/free-alternatives-to-paid-study-apps/
+
+---
+
+# A first-year study system: set it up in freshers' week
+By the Gradify team · Updated for the 2026–27 academic year
+A simple system beats a perfect one: one folder per module, notes filed the same day, one weekly review session per module, and flashcards made as you go rather than in May. Set it up in an evening in the first week and you'll never face a semester of unread notes.
+
+ Core rule: One folder per module, notes filed the same day, one review slot a week.
+
+## What should I set up before lectures start?
+Module list with credits and assessment dates in your calendar, one folder per module, and a weekly review slot. The semester reset checklist covers it.
+Key takeaway: One folder per module, notes filed the same day, one review slot a week. 
+
+## How do I take notes in lectures?
+Don't transcribe. Note the structure, examples and anything the lecturer says is important; fill gaps from the slides later. Turn headings into questions (the Cornell method), or turn the slides into flashcards the same week.
+
+## Does first year count?
+At most UK universities, first-year marks don't count towards your degree classification, but the content does: second and final year build on it. A good system now saves months later.
+Test yourself: Why make flashcards in week 1 instead of before exams? Reveal
+Spaced repetition needs time: cards made in week 1 can be reviewed many times at growing gaps before the exam, which is far more effective than cramming them in May.
+
+ Related checklists: Semester reset checklist
+
+## Questions
+How many hours should a first-year student study?
+UK degrees assume about 10 hours of learning per credit, so a 120-credit year is roughly 1,200 hours, around 35 to 40 hours a week in term including lectures.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/freshers-study-system/">A first-year study system: set it up in freshers' week</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). A first-year study system: set it up in freshers' week. https://getgradify.com/guides/freshers-study-system/ 
+
+ Harvard: Gradify (2026) A first-year study system: set it up in freshers' week. Available at: https://getgradify.com/guides/freshers-study-system/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/freshers-study-system/
+
+---
+
+# Turn GoodNotes or Notion notes into flashcards and mind maps
+By the Gradify team · Updated for the 2026–27 academic year
+Export your notes (GoodNotes: Share → Export → PDF; Notion: ⋯ → Export → Markdown or PDF), then upload the file to Gradify's Notes Studio. You get flashcards linked to the lines they came from and an editable mind map, free.
+
+ Core rule: Typed or converted text works best: PDFs need selectable text.
+
+## How do I export from GoodNotes?
+Open the notebook, tap Share (or Export) and choose PDF. Handwriting needs to be converted to text first: use Gradify's Handwriting to text tool in the app, or GoodNotes' own conversion.
+Key takeaway: Typed or converted text works best: PDFs need selectable text. 
+
+## How do I export from Notion?
+Open the page, click ⋯ → Export, and choose Markdown & CSV or PDF. Markdown keeps headings, which helps the mind map.
+
+## Then what?
+Upload to Notes Studio, check the cards marked to check, and start reviewing. See lecture notes to mind map.
+Test yourself: Why do headings in your notes help? Reveal
+They become the branches of the mind map and help group cards by topic.
+
+ Related comparisons: Essay outline vs mind map
+
+## Questions
+Can I make flashcards from handwritten notes?
+Yes, once the handwriting is converted to text. Gradify's Handwriting to text tool or your notes app's conversion can do it.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/goodnotes-notion-pdf-to-mind-map/">Turn GoodNotes or Notion notes into flashcards and mind maps</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Turn GoodNotes or Notion notes into flashcards and mind maps. https://getgradify.com/guides/goodnotes-notion-pdf-to-mind-map/ 
+
+ Harvard: Gradify (2026) Turn GoodNotes or Notion notes into flashcards and mind maps. Available at: https://getgradify.com/guides/goodnotes-notion-pdf-to-mind-map/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/goodnotes-notion-pdf-to-mind-map/
+
+---
+
+# Reading graphs and data: the 4-check scan
+By the Gradify team · Updated for the 2026–27 academic year
+Before you describe any graph, scan four things: the axes and their units, the scale (is it linear or logarithmic, does it start at zero?), the overall trend versus any anomaly, and the caveats (error bars, sample size, control group). Most data-question marks are lost on one of these four.
+
+ Core rule: Quote numbers with units every time.
+
+## 1. Axes and units
+Read both axis labels and units aloud. Quote values with units in your answer: "rises from 2.0 to 6.5 mmol dm⁻³", not "goes up".
+Key takeaway: Quote numbers with units every time. 
+
+## 2. Scale: linear, log, or not starting at zero
+On a log scale each gridline is ten times the last, so a straight line means exponential change. A y-axis that starts at 90 makes small differences look huge.
+
+## 3. Trend vs anomaly
+Describe the overall pattern first (direction, where it changes, the peak), then point out any anomalous point separately. Don't build your conclusion on one odd value.
+
+## 4. Caveats: error bars, sample size, controls
+Overlapping error bars (standard deviation or confidence intervals) mean a difference may not be significant. Small samples and missing controls limit what you can conclude: say so in 'evaluate' questions.
+Test yourself: Two bars differ but their error bars overlap a lot. What should you conclude? Reveal
+The difference may not be significant; you can't confidently say one is higher than the other.
+
+## Correlation or cause?
+A graph showing two things rising together shows correlation. Causation needs a mechanism and a controlled comparison: see correlation vs causation.
+
+ Related checklists: Lab report checklist
+Related comparisons: Correlation vs causation · Accuracy vs precision
+
+## Questions
+How do I describe a graph in an exam?
+State the overall trend, quote specific values with units at key points (start, peak, change), and mention any anomaly separately. Only explain reasons if the command word asks.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/graph-reading/">Reading graphs and data: the 4-check scan</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Reading graphs and data: the 4-check scan. https://getgradify.com/guides/graph-reading/ 
+
+ Harvard: Gradify (2026) Reading graphs and data: the 4-check scan. Available at: https://getgradify.com/guides/graph-reading/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/graph-reading/
+
+---
+
+# How to write a history source essay
+By the Gradify team · Updated for the 2026–27 academic year
+Judge each source on three things: its provenance (who made it, when, why and for whom), its content (what it says and what it leaves out) and its context (what you know about the period). Then reach a judgement on how valuable it is for the specific question asked.
+
+ Core rule: Every judgement about a source links provenance or context to the question.
+
+## How do I analyse a historical source?
+
+- Provenance: author, date, type, audience, purpose. How does each affect what it says?
+- Content: what it claims, its tone, its omissions.
+- Context: your own knowledge that confirms or challenges it.
+Key takeaway: Every judgement about a source links provenance or context to the question. 
+
+## Value or reliability?
+A biased source can still be valuable: propaganda is excellent evidence of what a government wanted people to believe. Always judge value for the question asked.
+Test yourself: Is a biased source useless? Reveal
+No: it can be very valuable evidence of attitudes, intentions or propaganda, depending on the question.
+
+## How do I structure the essay?
+One paragraph per source (or per theme across sources), each ending with a judgement, then a conclusion that compares them and answers the question. The essay outline helper builds the plan.
+
+ Related checklists: Critical analysis checklist
+Related comparisons: Essay outline vs mind map
+
+## Questions
+What is provenance in history?
+Where a source comes from: who made it, when, why, for whom and in what form. It shapes how far you can trust it for a particular question.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/history-source-essays/">How to write a history source essay</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to write a history source essay. https://getgradify.com/guides/history-source-essays/ 
+
+ Harvard: Gradify (2026) How to write a history source essay. Available at: https://getgradify.com/guides/history-source-essays/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/history-source-essays/
+
+---
+
+# How to make good flashcards: 9 rules
+By the Gradify team · Based on the learning research named in the text
+Good flashcards test one idea each, ask a precise question with one right answer, and come from your own course material. Small, specific cards are faster to review and tell you exactly what you don't know.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## The nine rules
+
+- One idea per card. "List the 8 causes of…" becomes eight cards or a cloze.
+- Ask a question, not a topic. "Mitosis" is a topic; "What happens in anaphase?" is a question.
+- One right answer. If you can't mark it, rewrite it.
+- Use your course's wording. Examiners mark against your syllabus.
+- Add cloze deletions for lists and formulae: "ΔG = ΔH − {{T}}ΔS".
+- Add a picture when it helps: diagrams beat descriptions.
+- Make both directions for vocabulary: term → definition and definition → term.
+- Understand before you card. Cards are for remembering, not for learning something new.
+- Check them against your notes. A wrong card, revised 20 times, is a wrong answer in the exam.
+
+## Should I make my own flashcards or use pre-made ones?
+Making cards helps you process the material, but takes time. Pre-made decks save time but may not match your course. Gradify sits in between: it makes cards from your notes and shows the line each one came from, so you get the speed without the mismatch.
+
+ Related comparisons: Blurting vs flashcards
+
+## Questions
+How many flashcards should I make per lecture?
+Typically 15 to 40 for a one-hour lecture: one per definition, process step or key fact that the exam could ask about.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/how-to-make-good-flashcards/">How to make good flashcards: 9 rules</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to make good flashcards: 9 rules. https://getgradify.com/guides/how-to-make-good-flashcards/ 
+
+ Harvard: Gradify (2026) How to make good flashcards: 9 rules. Available at: https://getgradify.com/guides/how-to-make-good-flashcards/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/how-to-make-good-flashcards/
+
+---
+
+# How to revise in two weeks
+By the Gradify team · Based on the learning research named in the text
+Triage first: list every topic, rank them by how likely they are to come up and how weak you are, and cut what you can't cover. Then spend each day on active recall of the top topics and finish with timed past papers.
+
+ Try it on your own notes: Gradify turns a lecture PDF into checked flashcards, free →
+
+## Day 1: triage
+Get the syllabus and three past papers. List topics, mark each red, amber or green, and note which come up most. You won't cover everything; decide now what you'll skip.
+
+## Days 2 to 9: recall, not notes
+Don't rewrite notes. Turn the existing ones into flashcards fast (upload the PDFs), then test yourself: new red topics in the morning, reviews of earlier days in the afternoon.
+
+## Days 10 to 13: past papers
+A timed paper a day, marked the same day, with every mistake made into a card.
+
+## Day 14: light review and sleep
+Review weak cards only. Go to bed at a normal time.
+
+## How many hours do you actually have?
+Check with the exam countdown: at 5 hours a day with one rest day, two weeks is about 60 hours. That's enough for a lot, if every hour is recall.
+
+ Related checklists: Final 48 hours checklist
+
+## Questions
+Is two weeks enough to revise for an exam?
+For most single exams, yes, if you prioritise the most likely topics and spend the time testing yourself rather than re-reading or rewriting notes.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/how-to-revise-in-two-weeks/">How to revise in two weeks</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to revise in two weeks. https://getgradify.com/guides/how-to-revise-in-two-weeks/ 
+
+ Harvard: Gradify (2026) How to revise in two weeks. Available at: https://getgradify.com/guides/how-to-revise-in-two-weeks/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/how-to-revise-in-two-weeks/
+
+---
+
+# How to answer 6-mark and 8-mark questions
+By the Gradify team · Updated for the 2026–27 academic year
+Long-answer questions are usually marked by levels: examiners look for a logical chain of correct points, not a list. Spend 60 seconds planning: core point or mechanism, evidence or an example, a link back to the question, and (if the command word asks) an evaluation.
+
+ Core rule: Levels marking rewards a linked chain of reasoning, not the number of facts.
+
+## How are 6-mark questions marked?
+Most boards use levels of response: the examiner reads the whole answer and places it in a level (for example 1–2, 3–4 or 5–6 marks) by the quality of the reasoning, then picks a mark within it. A long list of disconnected facts often sits in the middle level.
+Key takeaway: Levels marking rewards a linked chain of reasoning, not the number of facts. 
+
+## What does a strong outline look like?
+ | | Weak outline | Strong outline
+ | Fact, fact, fact, fact (no links) | 1. Core point that answers the question → 2. How or why (mechanism) → 3. Evidence or example → 4. Second point, linked → 5. Evaluation or limitation → 6. Conclusion that answers the question
+
+Test yourself: Your 6-mark answer lists four correct facts. Why might it still get 3/6? Reveal
+Levels marking rewards a linked, logical chain that answers the question; unlinked facts usually sit in a middle level.
+
+## How long should a 6-mark answer be?
+Usually 120 to 200 words, or about 7 to 9 minutes. Use the lines given as a guide, not a target.
+
+ Related checklists: Critical analysis checklist
+Related comparisons: Essay outline vs mind map
+
+## Questions
+How many points do I need for a 6-mark question?
+There's no fixed number in levels-marked questions; what matters is a correct, logically linked chain that answers the command word. As a rough guide, three well-developed points beat six bare ones.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/long-answer-questions/">How to answer 6-mark and 8-mark questions</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to answer 6-mark and 8-mark questions. https://getgradify.com/guides/long-answer-questions/ 
+
+ Harvard: Gradify (2026) How to answer 6-mark and 8-mark questions. Available at: https://getgradify.com/guides/long-answer-questions/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/long-answer-questions/
+
+---
+
+# Multiple-choice traps: how distractors are built
+By the Gradify team · Updated for the 2026–27 academic year
+Wrong options in a good multiple-choice question are built to catch specific mistakes. The four most common traps are a true statement that doesn't answer the question, reversed cause and effect, extreme absolutes like 'always' or 'never', and a unit or scale slip. Name the trap and the wrong option loses its pull.
+
+ Core rule: True isn't enough: it has to answer this question.
+
+## Trap 1: a true statement that doesn't answer the question
+The option is correct science but answers a different question. Re-read the stem after choosing: does your option answer this question?
+Key takeaway: True isn't enough: it has to answer this question. 
+
+## Trap 2: reversed cause and effect
+"Increased heart rate causes exercise" sounds familiar because the right words are there in the wrong order. Check the direction of every 'causes', 'leads to' or 'because'.
+
+## Trap 3: always, never, only, all
+Absolute words are rarely true in biology, medicine or the social sciences. They're not automatically wrong, but they need one counter-example to fail.
+
+## Trap 4: unit and scale slips
+Options that differ by a factor of 10 or 1,000 test whether you converted mg to g or cm³ to dm³. Do the unit check before looking at the options. The unit converter shows the factors.
+Test yourself: Two options are 0.25 and 250. What's the trap likely to be? Reveal
+A unit conversion by a factor of 1,000, such as cm³ to dm³ or mg to g.
+
+## How should I approach a multiple-choice question?
+
+- Cover the options and answer from memory.
+- Find your answer among the options.
+- Check each remaining option for one of the four traps.
+- If you guessed, mark it and log it: a lucky guess is still a gap.
+
+## Questions
+Is it better to guess on multiple choice?
+If there's no negative marking, never leave one blank: eliminate what you can and guess. Then treat every guess as a gap to revise, even if it was right.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/mcq-traps/">Multiple-choice traps: how distractors are built</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Multiple-choice traps: how distractors are built. https://getgradify.com/guides/mcq-traps/ 
+
+ Harvard: Gradify (2026) Multiple-choice traps: how distractors are built. Available at: https://getgradify.com/guides/mcq-traps/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/mcq-traps/
+
+---
+
+# Surviving first-year medicinal chemistry and pharmacology labs
+By the Gradify team · Updated for the 2026–27 academic year
+Labs reward preparation: read the script and do the calculations before you arrive, keep a lab book anyone could follow, and write up within 48 hours while you remember. For the exams, learn drug classes and mechanisms with flashcards and practise the calculations until the units are automatic.
+
+ Core rule: Do the calculations before the lab, not during it.
+
+## How do I prepare for a lab?
+
+- Read the script the day before and write a one-line aim.
+- Do every calculation in advance (moles, dilutions, yields), with units.
+- Note the hazards and what you'd do if something spilled.
+Key takeaway: Do the calculations before the lab, not during it. 
+
+## How do I keep a good lab book?
+Date, aim, what you actually did (not what the script said), raw data with units in tables, observations, and anything that went wrong. Never write on scraps.
+
+## How do I revise pharmacology?
+One card per drug class: mechanism, uses, key adverse effects, monitoring. Group by system. The free pharmacy and medicine topic pages have sample cards and quizzes.
+Test yourself: What four things should a drug-class flashcard cover? Reveal
+Mechanism of action, main uses, key adverse effects or cautions, and monitoring or interactions.
+
+ Related checklists: Lab report checklist · STEM practical checklist
+Related comparisons: Accuracy vs precision
+
+## Questions
+How do I get good marks on lab reports?
+Answer the aim, explain how you controlled variables, present data with units and uncertainties, and discuss limitations with their effect on the result.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/medicinal-chemistry-labs-survival/">Surviving first-year medicinal chemistry and pharmacology labs</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Surviving first-year medicinal chemistry and pharmacology labs. https://getgradify.com/guides/medicinal-chemistry-labs-survival/ 
+
+ Harvard: Gradify (2026) Surviving first-year medicinal chemistry and pharmacology labs. Available at: https://getgradify.com/guides/medicinal-chemistry-labs-survival/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/medicinal-chemistry-labs-survival/
+
+---
+
+# Free Notion study template
+By the Gradify team · Updated for the 2026–27 academic year
+Download the template below as a Markdown file and import it into Notion (Settings → Import → Text & Markdown). You get a revision dashboard with a module list, a weekly schedule, an active-recall tracker and embeds for a live exam countdown and study timer.
+
+ Core rule: Import it, then embed a live countdown with /embed.
+
+## What's in the template?
+
+- Modules table: credits, assessments, exam dates, confidence.
+- Weekly schedule with review slots.
+- Active-recall tracker: topic, last tested, score, next review.
+- Embeds: the exam countdown and study timer (Notion's /embed block).
+Download the Notion template (.md)
+Key takeaway: Import it, then embed a live countdown with /embed. 
+
+## How do I embed a Gradify tool in Notion?
+On any tool page, press Embed under the tool to copy its code, or copy the page link. In Notion, type /embed, paste the link, and resize. Topic pages can be embedded the same way (Embed this deck).
+Test yourself: Which Notion command embeds a web tool? Reveal
+/embed, then paste the link.
+
+ Related checklists: Semester reset checklist
+
+## Questions
+Is the Notion template free?
+Yes. Download it as Markdown and import it into any Notion workspace.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/notion-study-template/">Free Notion study template</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Free Notion study template. https://getgradify.com/guides/notion-study-template/ 
+
+ Harvard: Gradify (2026) Free Notion study template. Available at: https://getgradify.com/guides/notion-study-template/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/notion-study-template/
+
+---
+
+# Open-book and take-home exams: how to prepare
+By the Gradify team · Updated for the 2026–27 academic year
+Open-book exams test understanding and application, not memory, and the clock is the real enemy: students who haven't revised lose time flipping through PDFs. Revise as normal, then build a one-page index of formulas, definitions and where each worked example lives, and practise one timed paper with it.
+
+ Core rule: Open book means harder questions, not less revision.
+
+## Do you need to revise for an open-book exam?
+Yes. Questions are harder because notes are allowed: they ask you to apply and evaluate. If you have to look up the basics, you won't have time to answer.
+Key takeaway: Open book means harder questions, not less revision. 
+
+## How do I build a rapid-lookup index?
+
+- One page per module: key formulas, definitions you might quote, and the page or file where each worked example is.
+- Colour or tab by topic.
+- Number your notes' pages and put those numbers in the index.
+- Make a one-page summary sheet from your notes as the front page.
+Test yourself: What's the most useful thing on an open-book index? Reveal
+Where to find each worked example and formula fast (page numbers or file names), so you spend exam time applying, not searching.
+
+## Take-home exams: what changes?
+Over 24 or 48 hours, time management and referencing matter more. Plan the hours (the deadline planner works for this), cite sources properly, and follow your university's rules on collaboration and AI tools.
+
+ Related checklists: Exam day checklist
+
+## Questions
+Are open-book exams easier?
+Usually not: they're designed so looking things up doesn't give you the answer. They reward understanding, application and fast navigation of your notes.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/open-book-exams/">Open-book and take-home exams: how to prepare</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Open-book and take-home exams: how to prepare. https://getgradify.com/guides/open-book-exams/ 
+
+ Harvard: Gradify (2026) Open-book and take-home exams: how to prepare. Available at: https://getgradify.com/guides/open-book-exams/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/open-book-exams/
+
+---
+
+# How to revise organic mechanisms without rote learning
+By the Gradify team · Updated for the 2026–27 academic year
+Most organic mechanisms are combinations of a few patterns: a nucleophile attacks an electrophile, a leaving group leaves, a proton moves. Learn to spot the nucleophile and electrophile and draw curly arrows from electron-rich to electron-poor, then practise drawing each mechanism from memory on a blank page.
+
+ Core rule: Arrows go from electron-rich to electron-poor, always.
+
+## What's the key to organic mechanisms?
+Curly arrows show electron pairs moving, always from a lone pair or bond (electron-rich) to an atom that can accept them (electron-poor). If you can say why each arrow goes where it goes, you don't need to memorise the mechanism.
+Key takeaway: Arrows go from electron-rich to electron-poor, always. 
+
+## Which patterns cover most mechanisms?
+
+- Nucleophilic substitution (SN1, SN2)
+- Elimination (E1, E2)
+- Electrophilic addition to alkenes
+- Nucleophilic addition to carbonyls
+- Electrophilic substitution of arenes
+See chemistry topics for sample cards and quizzes.
+
+## How do I practise mechanisms?
+Blank page, name the reaction, draw the mechanism with every arrow and charge, then check. Do it again in two days. That's blurting for chemistry.
+Test yourself: In SN2, why does the nucleophile attack from the side opposite the leaving group? Reveal
+The C–X σ* orbital is on the far side, and the leaving group blocks the front: backside attack gives inversion of configuration.
+
+## Questions
+How do you remember organic chemistry reactions?
+Understand the electron flow rather than memorising: identify nucleophile and electrophile, draw arrows from electron-rich to electron-poor, and practise from a blank page with spaced reviews.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/organic-mechanisms-revision/">How to revise organic mechanisms without rote learning</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). How to revise organic mechanisms without rote learning. https://getgradify.com/guides/organic-mechanisms-revision/ 
+
+ Harvard: Gradify (2026) How to revise organic mechanisms without rote learning. Available at: https://getgradify.com/guides/organic-mechanisms-revision/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/organic-mechanisms-revision/
+
+---
+
+# Exam question stems and the answer skeleton for each
+By the Gradify team · Updated for the 2026–27 academic year
+Unfamiliar exam questions are usually familiar stems in disguise: 'account for this anomaly', 'suggest why', 'compare these two', 'design an investigation'. Each stem has a skeleton answer you can learn, so on the day you fill in content instead of inventing a structure.
+
+ Core rule: Suggest = principle → this context → consequence.
+
+## How do I answer 'suggest why'?
+'Suggest' means the answer isn't in the specification word for word: apply a principle you know to a new case. Skeleton: name the principle → apply it to this context → state the consequence. Any plausible, scientifically sound answer usually earns credit.
+Key takeaway: Suggest = principle → this context → consequence. 
+
+## How do I answer 'account for the anomaly'?
+Skeleton: identify the anomalous value → name a specific error that would push it in that direction → explain the direction ("the reading is too high because heat was lost, so less…"). Vague answers like "human error" score nothing.
+Key takeaway: Name a specific error and the direction it pushes the result. 
+
+## How do I answer 'compare the mechanisms'?
+Skeleton: one shared feature, then two or three differences, each sentence naming both. Use a quick two-column plan first. Marks go to explicit comparison ("whereas SN1 goes via a carbocation, SN2 is a single step"), not two separate descriptions.
+
+## How do I answer 'design an investigation'?
+Skeleton: independent variable and its range → dependent variable and how it's measured → control variables and how each is kept constant → repeats and means → safety. See variables and controls.
+Key takeaway: Design = IV with range, DV with method, controls with how, repeats, safety. 
+Test yourself: What's missing from 'keep the temperature the same' as a control? Reveal
+How: for example 'use a thermostatic water bath at 25 °C'. Naming a control without the method usually loses the mark.
+
+## How do I answer 'evaluate the claim'?
+Skeleton: what supports the claim (with evidence) → what limits it (sample, method, alternative explanation) → judgement with a reason. End with a sentence that starts "Overall…" and answers the question.
+
+ Related checklists: STEM practical checklist
+
+## Questions
+What is a question stem?
+The opening phrase of an exam question that sets the task, such as 'suggest why' or 'compare'. Learning a skeleton answer for each common stem saves time and marks.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/question-stems/">Exam question stems and the answer skeleton for each</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Exam question stems and the answer skeleton for each. https://getgradify.com/guides/question-stems/ 
+
+ Harvard: Gradify (2026) Exam question stems and the answer skeleton for each. Available at: https://getgradify.com/guides/question-stems/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/question-stems/
+
+---
+
+# Resits, capped marks and compensation, explained
+By the Gradify team · Updated for the 2026–27 academic year
+At most UK universities, a failed module can be resat, but the resit mark is often capped at the pass mark (usually 40% for undergraduates). Some universities also compensate or condone a narrowly failed module if your other marks are strong. The rules differ a lot between universities, so treat this as a guide to the questions to ask, and check your own regulations.
+
+ Core rule: A resit often counts as 40% however well you do: a first sit is usually uncapped.
+
+## What is a capped resit mark?
+If you pass a resit, the module mark recorded is often capped at the pass mark (for example 40%), even if you scored higher. A first sit (granted when extenuating circumstances are accepted) is usually uncapped.
+Key takeaway: A resit often counts as 40% however well you do: a first sit is usually uncapped. 
+
+## What are compensation and condonement?
+Compensation lets a narrowly failed module (for example 30–39%) pass on the strength of your other marks, usually with limits on how many credits. Condonement is similar: the fail stands but you're awarded the credit. Not every university uses them, and professional degrees (medicine, nursing, pharmacy) often don't allow them for core modules.
+
+## What should I ask my department?
+
+- Is the resit mark capped, and at what?
+- Is compensation or condonement possible for this module?
+- When is the resit, and is it the same format?
+- Does it affect progression or my classification?
+- Can I submit extenuating circumstances, and by when?
+Test yourself: Your resit is capped at 40%. Why does how well you do still matter? Reveal
+You still need to pass, and the knowledge carries into later modules and exams that do count.
+
+## Questions
+Is a resit capped at 40%?
+Often, for undergraduates at UK universities, but not always: it depends on your university's regulations and whether extenuating circumstances were accepted.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/resits-and-compensation/">Resits, capped marks and compensation, explained</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Resits, capped marks and compensation, explained. https://getgradify.com/guides/resits-and-compensation/ 
+
+ Harvard: Gradify (2026) Resits, capped marks and compensation, explained. Available at: https://getgradify.com/guides/resits-and-compensation/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/resits-and-compensation/
+
+---
+
+# Study methods compared: which fits your workload?
+By the Gradify team · Updated for the 2026–27 academic year
+The two methods with the strongest evidence are active recall (testing yourself) and spaced repetition (spreading reviews out). Blurting, flashcards and the Leitner system are ways of doing active recall; Pomodoro and time-blocking are ways of organising your time. Use one of each.
+
+ Core rule: Pick one recall method and one time method: they do different jobs.
+
+## Which study method is best?
+ | | Method | Best for | Setup | Main pitfall | Try it free
+ | Active recall | Everything: the core method | None | Peeking too soon | Guide
+ | Spaced repetition | Facts and definitions over weeks | A schedule or app | Skipping days, then a pile-up | Schedule
+ | Flashcards | Definitions, short processes | Making cards | Cards too big to mark | From a PDF
+ | Leitner boxes | Paper flashcards | Five boxes | Losing track of boxes | How it works
+ | Blurting | Whole topics, essay plans | A blank page | Not checking afterwards | Guide
+ | Pomodoro | Starting and staying focused | A timer | Breaks on your phone | Timer
+ | Time-blocking | Busy weeks, many modules | A calendar | Over-filling the plan | Planner
+
+Key takeaway: Pick one recall method and one time method: they do different jobs. 
+
+## Can I combine study methods?
+Yes, and you should: for example Pomodoro blocks, each spent on blurting a topic then checking it with flashcards that are scheduled by spaced repetition.
+Test yourself: Is Pomodoro an alternative to active recall? Reveal
+No: Pomodoro organises time; active recall is what you do inside the time. Use both.
+
+ Related comparisons: Pomodoro vs time-blocking · Blurting vs flashcards
+
+## Questions
+What is the most effective study method?
+Practice testing (active recall) and distributed practice (spaced repetition) have the strongest research support. Other methods are ways of doing or scheduling those two.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/study-methods/">Study methods compared: which fits your workload?</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Study methods compared: which fits your workload?. https://getgradify.com/guides/study-methods/ 
+
+ Harvard: Gradify (2026) Study methods compared: which fits your workload?. Available at: https://getgradify.com/guides/study-methods/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/study-methods/
+
+---
+
+# Seven study myths that waste revision time
+By the Gradify team · Updated for the 2026–27 academic year
+Many of the most popular study habits (highlighting, re-reading, studying to your 'learning style', multitasking, and trusting AI summaries without checking) feel productive but do little for exam performance. The swaps are simple: test yourself, space your reviews, and check what you study against the source.
+
+ Core rule: Turn highlights into questions.
+
+## Myth 1: highlighting helps you remember
+A 2013 review by Dunlosky and colleagues rated highlighting as low utility. It feels like work, but it doesn't make you retrieve anything. Swap: turn each highlight into a question and answer it later.
+Key takeaway: Turn highlights into questions. 
+
+## Myth 2: re-reading is revising
+Re-reading builds familiarity, which feels like knowing. Testing yourself shows what you can actually recall. See active recall vs re-reading.
+
+## Myth 3: you have a learning style
+Matching teaching to visual, auditory or kinaesthetic 'styles' hasn't held up in controlled studies. What helps everyone is combining words and pictures (dual coding).
+
+## Myth 4: multitasking while revising works
+Switching between revision and messages costs attention every time. Use a focus timer and keep your phone out of the room.
+
+## Myth 5: cramming works
+It can get you through tomorrow, but most of it is gone in a week. Spacing the same hours across days gives far better long-term memory (the spacing effect).
+
+## Myth 6: AI notes don't need checking
+AI tools can state wrong facts fluently. If you revise from AI-made material, check it against your lecture notes or textbook. Gradify links every card to the line it came from and marks mismatches to check for this reason.
+Key takeaway: Check AI-made notes against your source before you learn them. 
+
+## Myth 7: more hours means better grades
+An hour of testing yourself beats three hours of re-reading. Count recall, not hours.
+Test yourself: Which two techniques did the 2013 Dunlosky review rate as high utility? Reveal
+Practice testing (retrieval practice) and distributed practice (spacing).
+
+ Related comparisons: Active recall vs spaced repetition
+
+## Questions
+Is highlighting a good study technique?
+On its own, no: research rates it low utility. It's fine as a first step if you then turn the highlighted points into questions and test yourself.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/study-myths/">Seven study myths that waste revision time</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Seven study myths that waste revision time. https://getgradify.com/guides/study-myths/ 
+
+ Harvard: Gradify (2026) Seven study myths that waste revision time. Available at: https://getgradify.com/guides/study-myths/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/study-myths/
+
+---
+
+# Unit conversion traps in science exams
+By the Gradify team · Updated for the 2026–27 academic year
+Most unit mistakes are factor-of-1,000 slips: cm³ to dm³, mg to g, mmol to mol, J to kJ. The 3-second check: converting to a smaller unit gives a bigger number, and converting to a bigger unit gives a smaller one. The free unit converter shows the factor for any pair.
+
+ Core rule: A smaller unit always gives a bigger number. Check every answer against that.
+
+## The top unit traps
+
+- cm³ vs dm³: titration volumes are in cm³; concentrations are mol dm⁻³. Divide cm³ by 1,000.
+- µg vs mg: 1 mg = 1,000 µg. In drug doses this slip is a thousand-fold error.
+- mmol vs mol: 1 mmol = 0.001 mol.
+- kJ vs J: q = mcΔT gives joules; ΔH is usually quoted in kJ mol⁻¹.
+- °C vs K: add 273 for kelvin in gas law and Arrhenius calculations.
+- Percent by mass vs molarity: different quantities, not just different units.
+Key takeaway: A smaller unit always gives a bigger number. Check every answer against that. 
+
+## How do I avoid unit mistakes?
+Write the units on every line of working, not just the answer. Convert everything into the units the equation needs before substituting. Then do a sense check: is a concentration of 250 mol dm⁻³ plausible? (No.)
+Test yourself: 25.0 cm³ of 0.100 mol dm⁻³ NaOH: how many moles? Reveal
+25.0 ÷ 1,000 = 0.0250 dm³; 0.0250 × 0.100 = 0.00250 mol (2.50 mmol).
+
+ Related checklists: STEM practical checklist
+Related comparisons: Accuracy vs precision
+
+## Questions
+How do I convert cm³ to dm³?
+Divide by 1,000. 1 dm³ = 1,000 cm³ = 1 litre.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/unit-conversion/">Unit conversion traps in science exams</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Unit conversion traps in science exams. https://getgradify.com/guides/unit-conversion/ 
+
+ Harvard: Gradify (2026) Unit conversion traps in science exams. Available at: https://getgradify.com/guides/unit-conversion/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/unit-conversion/
+
+---
+
+# Variables and controls: naming vs controlling
+By the Gradify team · Updated for the 2026–27 academic year
+The independent variable is what you change, the dependent variable is what you measure, and control variables are everything you keep the same. The mark usually goes for saying how you keep a control constant (a water bath at 25 °C), not just naming it (temperature).
+
+ Core rule: Change one (independent), measure one (dependent), keep the rest the same (controls).
+
+## Which variable is which?
+ | | Variable | Meaning | Enzyme example
+ | Independent | What you deliberately change | Temperature: 20, 30, 40, 50, 60 °C
+ | Dependent | What you measure | Time for the starch to disappear (s)
+ | Control | What you keep the same | pH, enzyme and substrate concentration, volumes
+
+Key takeaway: Change one (independent), measure one (dependent), keep the rest the same (controls). 
+
+## Naming vs controlling: where the marks are
+ | | Naming (often 0 marks) | Controlling (the mark)
+ | Keep the pH the same | Add 1 cm³ of pH 7 buffer to every tube
+ | Same temperature | Place tubes in a thermostatic water bath at 25 °C
+ | Same amount of enzyme | Use 2 cm³ of 1% amylase, measured with a graduated pipette
+
+Test yourself: How would you control light intensity in a photosynthesis experiment? Reveal
+Keep the lamp at a fixed, measured distance (e.g. 20 cm) and use the same bulb; block other light sources.
+
+## What's a control group?
+A control group (or control experiment) is identical except it doesn't get the independent variable, for example boiled enzyme or a placebo. It shows that the effect is caused by the independent variable and not something else.
+
+ Related checklists: STEM practical checklist · Lab report checklist
+Related comparisons: Validity vs reliability
+
+## Questions
+What is a control variable?
+A variable kept the same throughout an experiment so it can't affect the results. You should say how it's kept constant, not just name it.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/variables-and-controls/">Variables and controls: naming vs controlling</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Variables and controls: naming vs controlling. https://getgradify.com/guides/variables-and-controls/ 
+
+ Harvard: Gradify (2026) Variables and controls: naming vs controlling. Available at: https://getgradify.com/guides/variables-and-controls/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/variables-and-controls/
+
+---
+
+# A winter break revision plan for January exams
+By the Gradify team · Updated for the 2026–27 academic year
+Rest properly first, then keep the term's material alive with 20 minutes of flashcards a day, and save the intensive revision (two 50-minute blocks plus past questions a day) for the last two weeks. That beats both ignoring revision until New Year and burning out before Christmas.
+
+ Core rule: Rest, then light daily reviews, then focus: in that order.
+
+## Should I rest or revise over Christmas?
+Both, in that order. Three to five days of real rest after term reduces burnout. Then short daily reviews stop the forgetting curve wiping out the term, which makes January's focused revision much faster.
+Key takeaway: Rest, then light daily reviews, then focus: in that order. 
+
+## What does a light day look like?
+Twenty minutes of flashcards on the cards that are due, and nothing else. It keeps memories alive at almost no cost.
+
+## What does a focus day look like?
+Two 50-minute blocks: one on your weakest topic, one on timed past-paper questions. Then flashcards. Use the winter revision planner to lay out your days and the exam timetable planner if you have several exams.
+Test yourself: You have 30 days until a January exam. Roughly how many should be focus days? Reveal
+About the last 40%: 12 or so, after rest days and light days.
+
+ Related checklists: Semester reset checklist
+
+## Questions
+How many hours should I revise over Christmas?
+For January exams, a common pattern is very little in the first week, 20 to 30 minutes a day in the middle, and 2 to 4 focused hours a day in the last two weeks.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/guides/winter-revision-plan/">A winter break revision plan for January exams</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). A winter break revision plan for January exams. https://getgradify.com/guides/winter-revision-plan/ 
+
+ Harvard: Gradify (2026) A winter break revision plan for January exams. Available at: https://getgradify.com/guides/winter-revision-plan/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/guides/winter-revision-plan/
+
+---
+
+# Accuracy vs Precision
+Accuracy is how close a measurement is to the true value; precision is how close repeated measurements are to each other. Results can be precise but inaccurate (a systematic error) or accurate on average but imprecise (random error).
+
+## When should I use each?
+Rule of thumb: Talk about accuracy when comparing with a known value; precision when discussing spread of repeats.
+
+ | | | Accuracy | Precision
+ | Meaning | Close to the true value | Close to each other (repeatable)
+ | Affected by | Systematic errors | Random errors
+ | Improve by | Calibrating, removing bias | Better instruments, more repeats
+
+## What's the common exam mix-up?
+
+ Related checklists: Lab report checklist · STEM practical checklist
+Related guides: Variables and controls
+
+ Test yourself: Without looking up, give one difference between accuracy and precision. Reveal
+Meaning: Accuracy — Close to the true value; Precision — Close to each other (repeatable).
+
+## Questions
+What's the difference between accuracy and precision?
+Accuracy is how close a measurement is to the true value; precision is how close repeated measurements are to each other. Results can be precise but inaccurate (a systematic error) or accurate on average but imprecise (random error).
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/accuracy-vs-precision/">Accuracy vs Precision</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Accuracy vs Precision. https://getgradify.com/vs/accuracy-vs-precision/ 
+
+ Harvard: Gradify (2026) Accuracy vs Precision. Available at: https://getgradify.com/vs/accuracy-vs-precision/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/accuracy-vs-precision/
+
+---
+
+# Active recall vs Spaced repetition
+Active recall is how you study (testing yourself from memory); spaced repetition is when you study (reviews spread out at growing gaps). They're not rivals: the most effective revision uses both, recalling each fact at spaced intervals.
+
+## When should I use each?
+Rule of thumb: Use both: test yourself (active recall) on a schedule that spaces the reviews out (spaced repetition).
+
+ | | | Active recall | Spaced repetition
+ | What it is | Retrieving information from memory | Reviewing at increasing intervals
+ | Answers | How should I revise? | When should I revise it again?
+ | Research name | Retrieval practice, the testing effect | Distributed practice, the spacing effect
+ | Example | Answering a flashcard before flipping it | Seeing that card again after 1, 3, 7 days
+
+## What's the common exam mix-up?
+
+ Related checklists: Final 48 hours checklist
+Related guides: Active recall guide · Study methods compared
+
+ Test yourself: Without looking up, give one difference between active recall and spaced repetition. Reveal
+What it is: Active recall — Retrieving information from memory; Spaced repetition — Reviewing at increasing intervals.
+
+## Questions
+What's the difference between active recall and spaced repetition?
+Active recall is how you study (testing yourself from memory); spaced repetition is when you study (reviews spread out at growing gaps). They're not rivals: the most effective revision uses both, recalling each fact at spaced intervals.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/active-recall-vs-spaced-repetition/">Active recall vs Spaced repetition</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Active recall vs Spaced repetition. https://getgradify.com/vs/active-recall-vs-spaced-repetition/ 
+
+ Harvard: Gradify (2026) Active recall vs Spaced repetition. Available at: https://getgradify.com/vs/active-recall-vs-spaced-repetition/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/active-recall-vs-spaced-repetition/
+
+---
+
+# Aerobic respiration vs Anaerobic respiration
+Aerobic respiration uses oxygen and releases much more energy per glucose; anaerobic respiration doesn't use oxygen, releases far less, and in human muscle produces lactate.
+
+## When should I use each?
+Rule of thumb: Anaerobic happens when oxygen can't be supplied fast enough, such as in vigorous exercise.
+
+ | | | Aerobic respiration | Anaerobic respiration
+ | Oxygen | Needed | Not needed
+ | Products (humans) | Carbon dioxide and water | Lactate (lactic acid)
+ | Products (yeast) | Carbon dioxide and water | Ethanol and carbon dioxide
+ | Energy | Much more ATP per glucose | Much less (2 ATP per glucose)
+
+## What's the common exam mix-up?
+
+ Related guides: Definitions vs explanations
+
+ Test yourself: Without looking up, give one difference between aerobic respiration and anaerobic respiration. Reveal
+Oxygen: Aerobic respiration — Needed; Anaerobic respiration — Not needed.
+
+## Questions
+What's the difference between aerobic respiration and anaerobic respiration?
+Aerobic respiration uses oxygen and releases much more energy per glucose; anaerobic respiration doesn't use oxygen, releases far less, and in human muscle produces lactate.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/aerobic-vs-anaerobic-respiration/">Aerobic respiration vs Anaerobic respiration</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Aerobic respiration vs Anaerobic respiration. https://getgradify.com/vs/aerobic-vs-anaerobic-respiration/ 
+
+ Harvard: Gradify (2026) Aerobic respiration vs Anaerobic respiration. Available at: https://getgradify.com/vs/aerobic-vs-anaerobic-respiration/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/aerobic-vs-anaerobic-respiration/
+
+---
+
+# Blurting vs Flashcards
+Blurting tests a whole topic at once and shows how ideas connect; flashcards test single facts and definitions precisely. Use blurting to find gaps, then flashcards to close them.
+
+## When should I use each?
+Rule of thumb: Blurt a topic weekly; review flashcards daily.
+
+ | | | Blurting | Flashcards
+ | Tests | A whole topic | One fact or definition
+ | Best for | Essays, processes, connections | Definitions, key terms, short facts
+ | Scheduling | Repeat every few days | Spaced repetition per card
+
+## What's the common exam mix-up?
+
+ Related guides: The blurting method · Making good flashcards
+
+ Test yourself: Without looking up, give one difference between blurting and flashcards. Reveal
+Tests: Blurting — A whole topic; Flashcards — One fact or definition.
+
+## Questions
+What's the difference between blurting and flashcards?
+Blurting tests a whole topic at once and shows how ideas connect; flashcards test single facts and definitions precisely. Use blurting to find gaps, then flashcards to close them.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/blurting-vs-flashcards/">Blurting vs Flashcards</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Blurting vs Flashcards. https://getgradify.com/vs/blurting-vs-flashcards/ 
+
+ Harvard: Gradify (2026) Blurting vs Flashcards. Available at: https://getgradify.com/vs/blurting-vs-flashcards/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/blurting-vs-flashcards/
+
+---
+
+# Correlation vs Causation
+Correlation means two things change together; causation means one actually makes the other happen. A correlation can come from chance, reverse causation or a third factor, so causation needs a mechanism and a controlled comparison.
+
+## When should I use each?
+Rule of thumb: Say 'is associated with' for correlation; save 'causes' for evidence from controlled comparisons with a plausible mechanism.
+
+ | | | Correlation | Causation
+ | Meaning | Two variables vary together | A change in one produces a change in the other
+ | Shown by | Observational data, scatter graphs | Controlled experiments (ideally randomised)
+ | Classic trap | Ice-cream sales and drownings (both rise in summer) | Assuming the correlation proves the cause
+
+## What's the common exam mix-up?
+
+ Related checklists: Critical analysis checklist
+Related guides: Reading graphs
+
+ Test yourself: Without looking up, give one difference between correlation and causation. Reveal
+Meaning: Correlation — Two variables vary together; Causation — A change in one produces a change in the other.
+
+## Questions
+What's the difference between correlation and causation?
+Correlation means two things change together; causation means one actually makes the other happen. A correlation can come from chance, reverse causation or a third factor, so causation needs a mechanism and a controlled comparison.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/correlation-vs-causation/">Correlation vs Causation</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Correlation vs Causation. https://getgradify.com/vs/correlation-vs-causation/ 
+
+ Harvard: Gradify (2026) Correlation vs Causation. Available at: https://getgradify.com/vs/correlation-vs-causation/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/correlation-vs-causation/
+
+---
+
+# Essay outline vs Mind map
+A mind map is best for getting ideas out and seeing connections; an essay outline is best for putting them in an argued order with a word budget. Most good essays start with a mind map and end with an outline.
+
+## When should I use each?
+Rule of thumb: Mind map first to find your points, then an outline to order them and allocate words.
+
+ | | | Essay outline | Mind map
+ | Shape | Linear: introduction → points → conclusion | Radial: a central idea with branches
+ | Best for | Ordering an argument | Brainstorming and seeing links
+ | Stage | Planning to write | Exploring the topic
+
+## What's the common exam mix-up?
+
+ Related checklists: Critical analysis checklist · Proofreading checklist
+Related guides: 6- and 8-mark answers
+
+ Test yourself: Without looking up, give one difference between essay outline and mind map. Reveal
+Shape: Essay outline — Linear: introduction → points → conclusion; Mind map — Radial: a central idea with branches.
+
+## Questions
+What's the difference between essay outline and mind map?
+A mind map is best for getting ideas out and seeing connections; an essay outline is best for putting them in an argued order with a word budget. Most good essays start with a mind map and end with an outline.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/essay-outline-vs-mind-map/">Essay outline vs Mind map</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Essay outline vs Mind map. https://getgradify.com/vs/essay-outline-vs-mind-map/ 
+
+ Harvard: Gradify (2026) Essay outline vs Mind map. Available at: https://getgradify.com/vs/essay-outline-vs-mind-map/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/essay-outline-vs-mind-map/
+
+---
+
+# Mitosis vs Meiosis
+Mitosis is one division that makes two genetically identical diploid cells, for growth and repair; meiosis is two divisions that make four genetically different haploid gametes, for sexual reproduction.
+
+## When should I use each?
+Rule of thumb: If the question is about variation or gametes, it's meiosis; growth, repair or cloning, it's mitosis.
+
+ | | | Mitosis | Meiosis
+ | Divisions | One | Two
+ | Daughter cells | Two, diploid | Four, haploid
+ | Genetically | Identical to the parent | Different (crossing over, independent assortment)
+ | Purpose | Growth, repair, asexual reproduction | Making gametes
+ | Where (humans) | Body (somatic) cells | Testes and ovaries
+
+## What's the common exam mix-up?
+
+ Related guides: Definitions vs explanations
+
+ Test yourself: Without looking up, give one difference between mitosis and meiosis. Reveal
+Divisions: Mitosis — One; Meiosis — Two.
+
+## Questions
+What's the difference between mitosis and meiosis?
+Mitosis is one division that makes two genetically identical diploid cells, for growth and repair; meiosis is two divisions that make four genetically different haploid gametes, for sexual reproduction.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/mitosis-vs-meiosis/">Mitosis vs Meiosis</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Mitosis vs Meiosis. https://getgradify.com/vs/mitosis-vs-meiosis/ 
+
+ Harvard: Gradify (2026) Mitosis vs Meiosis. Available at: https://getgradify.com/vs/mitosis-vs-meiosis/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/mitosis-vs-meiosis/
+
+---
+
+# Molarity vs Molality
+Molarity is moles of solute per litre (dm³) of solution, so it changes slightly with temperature; molality is moles of solute per kilogram of solvent, so it doesn't. Most school and lab calculations use molarity.
+
+## When should I use each?
+Rule of thumb: Use molarity for titrations and everyday lab work; molality when temperature changes or for colligative properties.
+
+ | | | Molarity | Molality
+ | Definition | mol of solute ÷ dm³ of solution | mol of solute ÷ kg of solvent
+ | Units | mol dm⁻³ (M) | mol kg⁻¹ (m)
+ | Depends on temperature? | Yes (volume changes) | No
+ | Used for | Titrations, most lab work | Colligative properties (boiling point, freezing point)
+
+## What's the common exam mix-up?
+
+ Related checklists: STEM practical checklist
+Related guides: Unit conversion traps
+
+ Test yourself: Without looking up, give one difference between molarity and molality. Reveal
+Definition: Molarity — mol of solute ÷ dm³ of solution; Molality — mol of solute ÷ kg of solvent.
+
+## Questions
+What's the difference between molarity and molality?
+Molarity is moles of solute per litre (dm³) of solution, so it changes slightly with temperature; molality is moles of solute per kilogram of solvent, so it doesn't. Most school and lab calculations use molarity.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/molarity-vs-molality/">Molarity vs Molality</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Molarity vs Molality. https://getgradify.com/vs/molarity-vs-molality/ 
+
+ Harvard: Gradify (2026) Molarity vs Molality. Available at: https://getgradify.com/vs/molarity-vs-molality/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/molarity-vs-molality/
+
+---
+
+# Pomodoro vs Time-blocking
+Pomodoro splits work into short timed focus blocks with breaks (25/5 or 50/10); time-blocking assigns tasks to calendar slots across the day or week. Pomodoro helps you focus; time-blocking helps you plan. They work together.
+
+## When should I use each?
+Rule of thumb: Time-block your week, then work each block in Pomodoros.
+
+ | | | Pomodoro | Time-blocking
+ | Unit | A 25 or 50-minute block | A calendar slot (an hour, a morning)
+ | Solves | Starting, distraction | Too many modules, no plan
+ | Tool | A timer | A calendar
+
+## What's the common exam mix-up?
+
+ Related checklists: Semester reset checklist
+Related guides: Study methods compared
+
+ Test yourself: Without looking up, give one difference between pomodoro and time-blocking. Reveal
+Unit: Pomodoro — A 25 or 50-minute block; Time-blocking — A calendar slot (an hour, a morning).
+
+## Questions
+What's the difference between pomodoro and time-blocking?
+Pomodoro splits work into short timed focus blocks with breaks (25/5 or 50/10); time-blocking assigns tasks to calendar slots across the day or week. Pomodoro helps you focus; time-blocking helps you plan. They work together.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/pomodoro-vs-time-blocking/">Pomodoro vs Time-blocking</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Pomodoro vs Time-blocking. https://getgradify.com/vs/pomodoro-vs-time-blocking/ 
+
+ Harvard: Gradify (2026) Pomodoro vs Time-blocking. Available at: https://getgradify.com/vs/pomodoro-vs-time-blocking/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/pomodoro-vs-time-blocking/
+
+---
+
+# Validity vs Reliability
+Validity is whether a method measures what it's meant to; reliability is whether it gives consistent results when repeated. A method can be reliable without being valid, but not valid without being reliable.
+
+## When should I use each?
+Rule of thumb: In evaluations, say which one a problem affects and why.
+
+ | | | Validity | Reliability
+ | Question | Does it measure the right thing? | Does it give the same result again?
+ | Threats | Uncontrolled variables, poor design | Random error, inconsistent procedure
+ | Check | Controls, a fair test | Repeats, test-retest
+
+## What's the common exam mix-up?
+
+ Related checklists: Lab report checklist
+Related guides: Variables and controls
+
+ Test yourself: Without looking up, give one difference between validity and reliability. Reveal
+Question: Validity — Does it measure the right thing?; Reliability — Does it give the same result again?.
+
+## Questions
+What's the difference between validity and reliability?
+Validity is whether a method measures what it's meant to; reliability is whether it gives consistent results when repeated. A method can be reliable without being valid, but not valid without being reliable.
+
+ Cite this page
+
+ Link (HTML): <a href="https://getgradify.com/vs/validity-vs-reliability/">Validity vs Reliability</a> (Gradify) 
+
+ APA 7: Gradify. (2026, November 23). Validity vs Reliability. https://getgradify.com/vs/validity-vs-reliability/ 
+
+ Harvard: Gradify (2026) Validity vs Reliability. Available at: https://getgradify.com/vs/validity-vs-reliability/ (Accessed: 23 November 2026).
+
+Source: https://getgradify.com/vs/validity-vs-reliability/
+
+---
+
+# Key terms
+- Absolute reference: A cell reference fixed with $, such as $A$1, which doesn't change when the formula is copied (https://getgradify.com/terms/absolute-reference/)
+- Absolute risk: The probability of an event in a group over a stated period (https://getgradify.com/terms/absolute-risk/)
+- Abstract: A short summary of a paper (https://getgradify.com/terms/abstract/)
+- Accountability: Being answerable for your actions and omissions and able to justify them (https://getgradify.com/terms/accountability/)
+- Active listening: Listening with full attention, reflecting back and checking understanding (https://getgradify.com/terms/active-listening/)
+- Active transport: Movement across a membrane against a concentration gradient, using energy from ATP (https://getgradify.com/terms/active-transport/)
+- Acute kidney injury: A rapid reduction in kidney function over hours to days (https://getgradify.com/terms/acute-kidney-injury/)
+- Adaptation: An inherited feature that increases survival and reproduction (https://getgradify.com/terms/adaptation/)
+- Advance decision to refuse treatment: A legally binding refusal of specified treatment made while the person has capacity (https://getgradify.com/terms/advance-decision-to-refuse-treatment/)
+- Adverse childhood experiences: Stressful or traumatic events in childhood, such as abuse or neglect (https://getgradify.com/terms/adverse-childhood-experiences/)
+- Agent: The party who acts on behalf of the principal (https://getgradify.com/terms/agent/)
+- Alt text: A short text alternative for an image, read by screen readers and shown if the image fails to load (https://getgradify.com/terms/alt-text/)
+- Anachronism: Placing something in the wrong period, or judging the past by later assumptions (https://getgradify.com/terms/anachronism/)
+- Anaphylaxis: A severe, whole-body type I reaction (https://getgradify.com/terms/anaphylaxis/)
+- Annotation: Written notes alongside drawings and studies that explain observations, intentions and decisions (https://getgradify.com/terms/annotation/)
+- Anorexia nervosa: An eating disorder involving restriction, low weight and intense fear of weight gain (https://getgradify.com/terms/anorexia-nervosa/)
+- Anticholinergic burden: The cumulative effect of medicines with anticholinergic properties (https://getgradify.com/terms/anticholinergic-burden/)
+- Anticipatory medicines: Medicines prescribed in advance to manage expected symptoms at the end of life (https://getgradify.com/terms/anticipatory-medicines/)
+- Antigen: A molecule, such as a cell surface marker, recognised by the immune system (https://getgradify.com/terms/antigen/)
+- Antimicrobial resistance: The ability of microbes to survive drugs designed to kill them (https://getgradify.com/terms/antimicrobial-resistance/)
+- Antimicrobial stewardship: Coordinated action to use antimicrobials only when needed, to limit resistance (https://getgradify.com/terms/antimicrobial-stewardship/)
+- Assent: A child's agreement to care when they can't legally consent (https://getgradify.com/terms/assent/)
+- Asymptote: A straight line that branches of the locus approach as gain becomes very large (https://getgradify.com/terms/asymptote/)
+- Attrition: Wear from tooth-to-tooth contact (https://getgradify.com/terms/attrition/)
+- Automaticity: Performing a behaviour with little conscious thought (https://getgradify.com/terms/automaticity/)
+- Autonomy: Respect for people's right to make their own decisions (https://getgradify.com/terms/autonomy/)
+- Baseline: The pencil line where samples are spotted (https://getgradify.com/terms/baseline/)
+- Best interests: Decisions made for someone who lacks capacity based on their wishes, beliefs and welfare (https://getgradify.com/terms/best-interests/)
+- Beta: A measure of a share's systematic risk relative to the market (https://getgradify.com/terms/beta/)
+- Bias: A systematic error that leads to a wrong estimate of an association (https://getgradify.com/terms/bias/)
+- Bioavailability: The fraction of an administered dose that reaches the systemic circulation unchanged (https://getgradify.com/terms/bioavailability/)
+- Biopsychosocial model: Engel's (1977) model in which health results from interacting biological, psychological and social factors (https://getgradify.com/terms/biopsychosocial-model/)
+- Body mass index: Weight in kilograms divided by height in metres squared (https://getgradify.com/terms/body-mass-index/)
+- Bolam test: Acting in accordance with a responsible body of professional opinion (https://getgradify.com/terms/bolam-test/)
+- Buffer: A solution that resists changes in pH (https://getgradify.com/terms/buffer/)
+- Burnout: An occupational phenomenon of exhaustion, cynicism and reduced efficacy from unmanaged chronic work stress (https://getgradify.com/terms/burnout/)
+- Caldicott Guardian: A senior person responsible for protecting the confidentiality of people's information in an organisation (https://getgradify.com/terms/caldicott-guardian/)
+- Canon: The works and artists regarded as the most important in a tradition (https://getgradify.com/terms/canon/)
+- Capacity: The ability to understand, retain, weigh information and communicate a decision (https://getgradify.com/terms/capacity/)
+- Cardiac output: The volume of blood pumped by one ventricle per minute; heart rate × stroke volume (https://getgradify.com/terms/cardiac-output/)
+- Case study: A structured account of one project from problem to outcome (https://getgradify.com/terms/case-study/)
+- Cellulitis: A spreading infection of soft tissue (https://getgradify.com/terms/cellulitis/)
+- Census: An official count of the population, taken every ten years from 1801 (https://getgradify.com/terms/census/)
+- Centile: A position on a growth chart showing how a child compares with others of the same age (https://getgradify.com/terms/centile/)
+- Circular economy: A system that keeps materials in use through reuse, repair and recycling (https://getgradify.com/terms/circular-economy/)
+- Client money: Money a firm holds on behalf of its clients, kept separate from the firm's own money (https://getgradify.com/terms/client-money/)
+- Clinical audit: Comparing practice with standards and acting to improve it (https://getgradify.com/terms/clinical-audit/)
+- Clinical governance: A framework for accountability and continuous improvement of care quality (https://getgradify.com/terms/clinical-governance/)
+- Close reading: Detailed analysis of a short passage to show how its language and form create meaning (https://getgradify.com/terms/close-reading/)
+- Code of conduct: A set of standards of behaviour expected of members of a profession (https://getgradify.com/terms/code-of-conduct/)
+- Coefficient: A number in front of a formula in an equation, giving the number of particles or moles (https://getgradify.com/terms/coefficient/)
+- Collusion: A request, usually from relatives, to keep information from the patient (https://getgradify.com/terms/collusion/)
+- Command word: The instruction word in a question that tells you what kind of answer is needed (https://getgradify.com/terms/command-word/)
+- Compensation: The secondary respiratory or renal change that moves pH back towards normal after a primary disturbance (https://getgradify.com/terms/compensation/)
+- Confidence interval: A range of plausible values for an effect (https://getgradify.com/terms/confidence-interval/)
+- Confidentiality: The duty to protect personal information shared in confidence (https://getgradify.com/terms/confidentiality/)
+- Confirmation bias: The tendency to notice and favour information that supports existing beliefs (https://getgradify.com/terms/confirmation-bias/)
+- Conflict of interest: A situation in which personal interests could influence professional judgement (https://getgradify.com/terms/conflict-of-interest/)
+- Confounder: A factor associated with both exposure and outcome, not on the causal pathway, that distorts their relationship (https://getgradify.com/terms/confounder/)
+- Confounding variable: An uncontrolled variable that varies with the independent variable and could account for the result (https://getgradify.com/terms/confounding-variable/)
+- Contemporaneous record: A record made at the time of the work (https://getgradify.com/terms/contemporaneous-record/)
+- Context: The historical, social, cultural and personal circumstances in which a work was made and seen (https://getgradify.com/terms/context/)
+- Contraction: A map T with ‖Tx − Ty‖ ≤ k‖x − y‖ for some k < 1 (https://getgradify.com/terms/contraction/)
+- COPD: Chronic obstructive pulmonary disease (https://getgradify.com/terms/copd/)
+- Correlation coefficient: A measure of the strength and direction of a linear relationship, from −1 to +1 (https://getgradify.com/terms/correlation-coefficient/)
+- Correlation: A statistical association between two variables (https://getgradify.com/terms/correlation/)
+- COSHH: The Control of Substances Hazardous to Health Regulations 2002, which govern hazardous substances at work in Great Britain (https://getgradify.com/terms/coshh/)
+- Coverage: Number of reads covering each base (https://getgradify.com/terms/coverage/)
+- Critical path: The longest sequence of dependent tasks, determining the project's minimum duration (https://getgradify.com/terms/critical-path/)
+- Crystalloid: A solution of electrolytes in water, such as sodium chloride 0.9% or Hartmann's solution (https://getgradify.com/terms/crystalloid/)
+- Cultural capital: Knowledge and tastes that bring social advantage (https://getgradify.com/terms/cultural-capital/)
+- Decolonisation: The process by which colonies became independent (https://getgradify.com/terms/decolonisation/)
+- Degrees of freedom: Independent ways a molecule can move (https://getgradify.com/terms/degrees-of-freedom/)
+- Delegation: Giving a subordinate authority to make a decision while the manager retains responsibility (https://getgradify.com/terms/delegation/)
+- Deprescribing: The planned and supervised reduction or stopping of medicines that may no longer be beneficial (https://getgradify.com/terms/deprescribing/)
+- Derivative claim: A claim brought by a shareholder on behalf of the company for a wrong done to it (https://getgradify.com/terms/derivative-claim/)
+- Derivative: A product made to help identify a compound (https://getgradify.com/terms/derivative/)
+- Designated safeguarding lead: The named person in an organisation who advises on and coordinates safeguarding concerns (https://getgradify.com/terms/designated-safeguarding-lead/)
+- Desirable difficulty: A learning condition that feels harder but improves long-term retention (https://getgradify.com/terms/desirable-difficulty/)
+- Devolution: The transfer of powers from the UK Parliament to the governments of Scotland, Wales and Northern Ireland (https://getgradify.com/terms/devolution/)
+- Diabetic ketoacidosis: A dangerous build-up of ketones due to lack of insulin (https://getgradify.com/terms/diabetic-ketoacidosis/)
+- Diffusion: The net movement of particles from a region of higher concentration to a region of lower concentration (https://getgradify.com/terms/diffusion/)
+- Digital exclusion: Being unable to use digital services because of lack of access, skills or confidence (https://getgradify.com/terms/digital-exclusion/)
+- Discourse: A system of statements and practices that constructs objects and subjects (https://getgradify.com/terms/discourse/)
+- Displacement: Position relative to a chosen origin, with direction (https://getgradify.com/terms/displacement/)
+- Diversification: Growth through new products in new markets (https://getgradify.com/terms/diversification/)
+- Domain: The highest rank of classification: Bacteria, Archaea or Eukarya (https://getgradify.com/terms/domain/)
+- Drift: The change in a portfolio's allocation caused by different returns on its assets (https://getgradify.com/terms/drift/)
+- Duty of candour: The duty to be open and honest with patients when things go wrong (https://getgradify.com/terms/duty-of-candour/)
+- Duty of care: A legal duty on anyone handling waste to keep it safe and pass it only to authorised persons (https://getgradify.com/terms/duty-of-care/)
+- Eatwell Guide: The UK's visual model of a healthy, balanced diet for people aged 2 and over (https://getgradify.com/terms/eatwell-guide/)
+- Ecosystem: A community of organisms together with their physical environment (https://getgradify.com/terms/ecosystem/)
+- Effect size: The magnitude of a difference or relationship (https://getgradify.com/terms/effect-size/)
+- eGFR: Estimated glomerular filtration rate calculated from serum creatinine, age and sex, valid only when function is stable (https://getgradify.com/terms/egfr/)
+- EHC plan: An education, health and care plan for a child or young person with special educational needs (England) (https://getgradify.com/terms/ehc-plan/)
+- Emergence: Behaviour of a whole system that arises from interactions between its parts (https://getgradify.com/terms/emergence/)
+- Entropy: The tendency towards disorder and decay, an idea important to Smithson (https://getgradify.com/terms/entropy/)
+- Epigenetics: Heritable changes in gene expression without sequence change (https://getgradify.com/terms/epigenetics/)
+- Equity: The owners' residual interest: assets minus liabilities (https://getgradify.com/terms/equity/)
+- Evaluation: Judging the significance or effectiveness of a point (https://getgradify.com/terms/evaluation/)
+- Evaporation: Escape of particles from a liquid surface (https://getgradify.com/terms/evaporation/)
+- Expression: A combination of numbers, letters and operations, with no equals sign, such as 3a + 2b (https://getgradify.com/terms/expression/)
+- Exudate: Protein-rich extravascular fluid produced by increased vascular permeability in inflammation (https://getgradify.com/terms/exudate/)
+- Feedback: Information from an employer about how you performed and could improve (https://getgradify.com/terms/feedback/)
+- Field experiment: An experiment in a natural setting in which the researcher manipulates the IV (https://getgradify.com/terms/field-experiment/)
+- Fingertip unit: A measure of topical steroid cream for dosing (https://getgradify.com/terms/fingertip-unit/)
+- First-pass metabolism: Metabolism of a drug in the gut wall and liver before it reaches the circulation (https://getgradify.com/terms/first-pass-metabolism/)
+- Fitness to practise: Having the skills, knowledge, health and character to practise safely (https://getgradify.com/terms/fitness-to-practise/)
+- Fluency: The number of relevant responses produced in a divergent thinking task (https://getgradify.com/terms/fluency/)
+- Forgetting curve: The pattern, first shown by Ebbinghaus, in which memory drops quickly after learning and then more slowly (https://getgradify.com/terms/forgetting-curve/)
+- Formative assessment: Assessment during learning used to guide teaching (https://getgradify.com/terms/formative-assessment/)
+- Forward contract: An agreement to exchange currency at a fixed rate in the future (https://getgradify.com/terms/forward-contract/)
+- Fragility fracture: A fracture from a fall from standing height or less (https://getgradify.com/terms/fragility-fracture/)
+- Frailty: A state of reduced reserve that makes a person vulnerable to decline after minor stress (https://getgradify.com/terms/frailty/)
+- Frame narrative: A story told within another story (https://getgradify.com/terms/frame-narrative/)
+- Function: A rule assigning exactly one output to each input in its domain, written f(x) or f: x ↦ … (https://getgradify.com/terms/function/)
+- Functionalism: Design based mainly on purpose and use rather than decoration (https://getgradify.com/terms/functionalism/)
+- Generative AI: AI that produces new content such as text, images or code (https://getgradify.com/terms/generative-ai/)
+- Gillick competence: Ability of a child under 16 to consent to treatment they fully understand (https://getgradify.com/terms/gillick-competence/)
+- Global warming potential: Warming effect of a gas relative to CO₂ (https://getgradify.com/terms/global-warming-potential/)
+- Globalisation: The increasing integration of economies through trade, investment, technology and the movement of people (https://getgradify.com/terms/globalisation/)
+- Grade: The rate of progression and risk, A to C, based on bone loss for age and modified by smoking and diabetes (https://getgradify.com/terms/grade/)
+- Gradient: The change in y divided by the change in x; on a graph of amount against time it is the rate (https://getgradify.com/terms/gradient/)
+- Gram stain: A staining method that separates bacteria into Gram-positive (purple) and Gram-negative (pink) by their wall structure (https://getgradify.com/terms/gram-stain/)
+- Greenwashing: Misleading claims that a product is environmentally friendly (https://getgradify.com/terms/greenwashing/)
+- Grey literature: Material such as reports and theses published outside commercial journals (https://getgradify.com/terms/grey-literature/)
+- Habit: A behaviour triggered automatically by a context cue, learned through repetition (https://getgradify.com/terms/habit/)
+- Habitus: Bourdieu's term for the dispositions people acquire from their social position, which shape what feels natural (https://getgradify.com/terms/habitus/)
+- Half-life: The time for half the nuclei of a radioactive isotope in a sample to decay (https://getgradify.com/terms/half-life/)
+- Hallucination: Plausible but false content produced by an AI model (https://getgradify.com/terms/hallucination/)
+- HbA1c: Glycated haemoglobin: a measure of average blood glucose over the previous two to three months (https://getgradify.com/terms/hba1c/)
+- Health promotion: The process of enabling people to increase control over, and to improve, their health (Ottawa Charter) (https://getgradify.com/terms/health-promotion/)
+- Hepatic encephalopathy: Brain dysfunction caused by liver failure and portosystemic shunting (https://getgradify.com/terms/hepatic-encephalopathy/)
+- Herd immunity: Indirect protection when most people are immune (https://getgradify.com/terms/herd-immunity/)
+- Heritability: The proportion of variation in a trait due to genetic differences (https://getgradify.com/terms/heritability/)
+- Heterogeneity: Variation in true effects between studies, measured by Cochran's Q, τ2 and I2 (https://getgradify.com/terms/heterogeneity/)
+- Heuristic: A mental short cut or rule of thumb used to make decisions quickly (https://getgradify.com/terms/heuristic/)
+- Hidden curriculum: The norms and values taught through the organisation of school life rather than the formal curriculum (https://getgradify.com/terms/hidden-curriculum/)
+- Histogram: A graph showing the distribution of tones in an image from black to white (https://getgradify.com/terms/histogram/)
+- Homeostasis: Keeping internal conditions within narrow limits despite changes outside (https://getgradify.com/terms/homeostasis/)
+- Hormone: A chemical messenger carried in the blood (https://getgradify.com/terms/hormone/)
+- HSE Management Standards: Six areas of work design used to manage work-related stress (https://getgradify.com/terms/hse-management-standards/)
+- Human factors: The study of how people interact with systems, equipment and environments, used to design safer care (https://getgradify.com/terms/human-factors/)
+- Hydrogen bond: A weak attraction between δ+ hydrogen and a lone pair on O or N (https://getgradify.com/terms/hydrogen-bond/)
+- Hyperkalaemia: Raised serum potassium, above 5.5 mmol/L (https://getgradify.com/terms/hyperkalaemia/)
+- Hyperosmolar hyperglycaemic state: An emergency of severe hyperglycaemia and dehydration without significant ketosis (https://getgradify.com/terms/hyperosmolar-hyperglycaemic-state/)
+- Hypothesis: A testable, falsifiable explanation for an observation (https://getgradify.com/terms/hypothesis/)
+- Identity: The ways people understand who they are and where they belong (https://getgradify.com/terms/identity/)
+- Implementation intention: An if–then plan linking a specific situation to a goal-directed action (https://getgradify.com/terms/implementation-intention/)
+- Implied consent: Consent shown by behaviour, such as opening the mouth for an examination (https://getgradify.com/terms/implied-consent/)
+- Improper fraction: A fraction whose numerator is greater than or equal to its denominator, such as 7/4 = 1¾ (https://getgradify.com/terms/improper-fraction/)
+- Incidence: The number of new cases arising in a population at risk over a period (https://getgradify.com/terms/incidence/)
+- Independent prescriber: A practitioner responsible for assessment and prescribing decisions (https://getgradify.com/terms/independent-prescriber/)
+- Index: A measure of the combined performance of a defined group of securities (https://getgradify.com/terms/index/)
+- Indirect discrimination: A neutral rule that disadvantages a protected group without objective justification (https://getgradify.com/terms/indirect-discrimination/)
+- Inference: A conclusion reasoned from what a source says or shows (https://getgradify.com/terms/inference/)
+- Informed consent: Voluntary agreement to take part in research, given with an understanding of what it involves and its risks (https://getgradify.com/terms/informed-consent/)
+- Insight: A sudden restructuring of a problem's representation that reveals the solution (https://getgradify.com/terms/insight/)
+- Integrated care board: The NHS body that commissions dental services in its area in England since 2023 (https://getgradify.com/terms/integrated-care-board/)
+- Integrated care system: A partnership of NHS and local organisations planning health and care for an area (https://getgradify.com/terms/integrated-care-system/)
+- Integration: The area under a signal, proportional to hydrogen count (https://getgradify.com/terms/integration/)
+- Internal validity: The extent to which the IV, rather than other variables, caused the change in the DV (https://getgradify.com/terms/internal-validity/)
+- Interpretation: An argued account of a work's meaning, supported by visual and contextual evidence (https://getgradify.com/terms/interpretation/)
+- Interquartile range: The range of the middle half of the data, between the lower and upper quartiles (https://getgradify.com/terms/interquartile-range/)
+- Intersectionality: The interaction of gender with race, class and other identities (https://getgradify.com/terms/intersectionality/)
+- Interval: A set of real numbers between two endpoints, such as [2, 5) = x : 2 ≤ x < 5 (https://getgradify.com/terms/interval/)
+- Intrinsic motivation: Motivation from interest, enjoyment or meaning in the task itself (https://getgradify.com/terms/intrinsic-motivation/)
+- Intrinsic value: Value that something has in itself, regardless of use (https://getgradify.com/terms/intrinsic-value/)
+- Invariant: A property preserved by isomorphisms, such as order, being abelian or the number of elements of each order (https://getgradify.com/terms/invariant/)
+- Inverse care law: Tudor Hart's (1971) observation that good medical care tends to be least available where it is most needed (https://getgradify.com/terms/inverse-care-law/)
+- Inversion: Reversal of normal word order to emphasise a word or phrase (https://getgradify.com/terms/inversion/)
+- Just culture: An environment where errors can be reported without blame but recklessness is not tolerated (https://getgradify.com/terms/just-culture/)
+- Kernel: ker φ = g : φ(g) = e, always a normal subgroup (https://getgradify.com/terms/kernel/)
+- Lasting power of attorney: A legal document letting someone make decisions on another's behalf (https://getgradify.com/terms/lasting-power-of-attorney/)
+- Latency: The delay in a video call that can cause people to talk over each other (https://getgradify.com/terms/latency/)
+- Latent condition: A hidden weakness in a system created by earlier decisions (https://getgradify.com/terms/latent-condition/)
+- Leading question: A question that suggests the answer the interviewer wants (https://getgradify.com/terms/leading-question/)
+- Ligand: A molecule or ion that donates a pair of electrons to a central metal ion in a complex (https://getgradify.com/terms/ligand/)
+- Likert scale: A rating scale measuring agreement or satisfaction across ordered, balanced options (https://getgradify.com/terms/likert-scale/)
+- Limited liability: Shareholders' liability for company debts is limited to the amount invested in their shares (https://getgradify.com/terms/limited-liability/)
+- Limiting factor: The factor in shortest supply that restricts a rate (https://getgradify.com/terms/limiting-factor/)
+- Long lie: Remaining on the floor for an hour or more after a fall (https://getgradify.com/terms/long-lie/)
+- Loss aversion: The tendency to feel losses more strongly than equivalent gains (https://getgradify.com/terms/loss-aversion/)
+- Making Every Contact Count: An approach using routine contacts to support healthier behaviour (https://getgradify.com/terms/making-every-contact-count/)
+- Mania: A period of abnormally elevated mood, energy and activity (https://getgradify.com/terms/mania/)
+- Margin of error: The range within which the true population value is likely to lie (https://getgradify.com/terms/margin-of-error/)
+- Material risk: A risk that a reasonable person in the patient's position, or this patient, would likely consider significant (Montgomery) (https://getgradify.com/terms/material-risk/)
+- Materiality: The importance of an issue to a company's value or impact (https://getgradify.com/terms/materiality/)
+- Matrix: The block, plate, stone or screen from which a print is made (https://getgradify.com/terms/matrix/)
+- Mechanism: The sequence of steps from reactants to products (https://getgradify.com/terms/mechanism/)
+- Medicines reconciliation: Comparing an accurate list of current medicines with what is prescribed at transitions (https://getgradify.com/terms/medicines-reconciliation/)
+- Metastasis: The spread of cancer cells to other parts of the body (https://getgradify.com/terms/metastasis/)
+- Methodology: The overall strategy and justification for how a question will be investigated (https://getgradify.com/terms/methodology/)
+- Mind map: A diagram radiating from one central topic through branches of associated keywords and images (https://getgradify.com/terms/mind-map/)
+- Model: A simplified description of how something works, used for comparison (https://getgradify.com/terms/model/)
+- Modelling: Using gradations of tone (or colour) to create the illusion of three-dimensional form (https://getgradify.com/terms/modelling/)
+- Modernism: A movement favouring simple forms, new materials and function over ornament (https://getgradify.com/terms/modernism/)
+- Modulation: Cézanne's term for building form with adjacent patches of colour rather than tonal modelling (https://getgradify.com/terms/modulation/)
+- Moment: The turning effect of a force, equal to force times perpendicular distance from the point (https://getgradify.com/terms/moment/)
+- Motif: The repeated unit in a pattern (https://getgradify.com/terms/motif/)
+- Multidisciplinary team: A team of professionals from different disciplines working together (https://getgradify.com/terms/multidisciplinary-team/)
+- Natural frequency: ωn = √(k/m), the frequency of free undamped oscillation (https://getgradify.com/terms/natural-frequency/)
+- Natural selection: Differential survival and reproduction of individuals due to heritable variation (https://getgradify.com/terms/natural-selection/)
+- Negative feedback: A response that reverses a change (https://getgradify.com/terms/negative-feedback/)
+- Net present value: Present value of inflows minus the initial investment (https://getgradify.com/terms/net-present-value/)
+- Net zero: Balancing greenhouse gases emitted with those removed, so the net total is zero (https://getgradify.com/terms/net-zero/)
+- Neutral zone: Bridges's term for the uncertain period between an ending and a new beginning (https://getgradify.com/terms/neutral-zone/)
+- NEWS2: The National Early Warning Score 2, an aggregate score of six physiological parameters plus oxygen use (https://getgradify.com/terms/news2/)
+- Node: A point on a tree representing a common ancestor (https://getgradify.com/terms/node/)
+- Normal distribution: A symmetrical, bell-shaped distribution of a continuous variable (https://getgradify.com/terms/normal-distribution/)
+- Notifiable disease: A disease that doctors must legally report to public health authorities (https://getgradify.com/terms/notifiable-disease/)
+- Nudge: A change in choice architecture that influences behaviour without removing options (https://getgradify.com/terms/nudge/)
+- Null hypothesis: The hypothesis that there is no effect or no difference; it is what a statistical test assesses (https://getgradify.com/terms/null-hypothesis/)
+- Number needed to treat: The number of patients who must be treated for a stated time to prevent one additional adverse outcome (https://getgradify.com/terms/number-needed-to-treat/)
+- Odds ratio: The odds of exposure in cases divided by the odds of exposure in controls (https://getgradify.com/terms/odds-ratio/)
+- Order: The number of elements of a group; the order of an element g is the smallest k > 0 with gk = e (https://getgradify.com/terms/order/)
+- Orientalism: Western representations of the East that created stereotypes and supported colonial power (https://getgradify.com/terms/orientalism/)
+- Osmosis: The net movement of water from a region of higher water potential to one of lower water potential across a partially permeable membrane (https://getgradify.com/terms/osmosis/)
+- Osteoporosis: Loss of bone density increasing fracture risk (https://getgradify.com/terms/osteoporosis/)
+- Overdiagnosis: Diagnosing a condition that would never have caused symptoms or death in the person's lifetime (https://getgradify.com/terms/overdiagnosis/)
+- Overtrading: Growing faster than working capital can support, causing cash shortage (https://getgradify.com/terms/overtrading/)
+- p-value: The probability of obtaining results at least as extreme as those observed if the null hypothesis were true (https://getgradify.com/terms/p-value/)
+- Palliative care: Care improving quality of life for people with life-limiting illness and their families (https://getgradify.com/terms/palliative-care/)
+- Parameter: An independent function or feature of a design, for which options can be listed (https://getgradify.com/terms/parameter/)
+- Paraphrase: A restatement of a text's sense in other words, which loses what the original form contributes (https://getgradify.com/terms/paraphrase/)
+- Partial fractions: Splitting a rational function into simpler fractions for inversion (https://getgradify.com/terms/partial-fractions/)
+- Partial pressure: Pressure a gas would exert alone (https://getgradify.com/terms/partial-pressure/)
+- Partition: Distribution of a solute between two immiscible solvents (https://getgradify.com/terms/partition/)
+- Patent: A right protecting a new, inventive and industrially applicable invention for a limited period (https://getgradify.com/terms/patent/)
+- Patient group direction: Written instructions for supplying or giving medicines to groups of patients without individual prescriptions (https://getgradify.com/terms/patient-group-direction/)
+- Patronage: Support and commissioning of art by wealthy individuals or institutions (https://getgradify.com/terms/patronage/)
+- Peer review: Evaluation of research by independent experts before publication (https://getgradify.com/terms/peer-review/)
+- Period: A horizontal row of the periodic table (https://getgradify.com/terms/period/)
+- Person-centred care: Care that is personalised, coordinated and enabling, treating the person with dignity, compassion and respect (https://getgradify.com/terms/person-centred-care/)
+- Person specification: A description of the skills, knowledge and experience required for a role (https://getgradify.com/terms/person-specification/)
+- Pharmacogenomics: Using genetic information to guide drug treatment (https://getgradify.com/terms/pharmacogenomics/)
+- PICO: A framework for clinical questions: Patient, Intervention, Comparison, Outcome (https://getgradify.com/terms/pico/)
+- Pivot: A fundamental change in strategy based on validated learning (https://getgradify.com/terms/pivot/)
+- Plagiarism: Using others' work without credit (https://getgradify.com/terms/plagiarism/)
+- Planetary boundaries: Limits on Earth system processes within which humanity can operate safely (https://getgradify.com/terms/planetary-boundaries/)
+- Plaque: A raised, flat-topped lesion broader than it is high (https://getgradify.com/terms/plaque/)
+- Plasmid: A small, usually circular DNA molecule separate from the main chromosome (https://getgradify.com/terms/plasmid/)
+- Polarisation: Distortion of an ion's electron cloud (https://getgradify.com/terms/polarisation/)
+- Polypharmacy: Taking many medicines at the same time (https://getgradify.com/terms/polypharmacy/)
+- Population: All the individuals of one species in the same area at the same time (https://getgradify.com/terms/population/)
+- Positive feedback: A response that amplifies a change (https://getgradify.com/terms/positive-feedback/)
+- Positivism: The view that knowledge should be based on observable, measurable facts (https://getgradify.com/terms/positivism/)
+- Power: The rate of doing work, measured in watts (https://getgradify.com/terms/power/)
+- Prediction: The specific outcome expected in a test if the hypothesis is correct (https://getgradify.com/terms/prediction/)
+- Prefix: A symbol that multiplies a unit by a power of ten, such as micro- (10⁻⁶) (https://getgradify.com/terms/prefix/)
+- Preprint: A manuscript shared before peer review (https://getgradify.com/terms/preprint/)
+- Prescribed person: A body, such as a regulator, to which workers can make protected disclosures (https://getgradify.com/terms/prescribed-person/)
+- Prescribing cascade: Treating a medicine's side effect with another medicine, often without recognising the cause (https://getgradify.com/terms/prescribing-cascade/)
+- Present value: The value today of a future cash flow, found by discounting (https://getgradify.com/terms/present-value/)
+- Prevalence: The proportion of a population with a condition at a given time (https://getgradify.com/terms/prevalence/)
+- Prevention paradox: A measure that brings large benefits to the population may offer little to each individual (https://getgradify.com/terms/prevention-paradox/)
+- Primary source: Evidence produced at or near the time being studied (https://getgradify.com/terms/primary-source/)
+- Probe: A follow-up question asking for more detail about an answer (https://getgradify.com/terms/probe/)
+- Process capability: A measure of how well a process meets its specification limits (https://getgradify.com/terms/process-capability/)
+- Prompt: Text instructions given to an AI tool to guide what it generates (https://getgradify.com/terms/prompt/)
+- Proportion: The size relationship of parts to each other and to the whole (https://getgradify.com/terms/proportion/)
+- Proportionate universalism: Universal actions with intensity scaled to the level of need (https://getgradify.com/terms/proportionate-universalism/)
+- Protected characteristic: One of nine characteristics protected from discrimination by the Equality Act 2010 (https://getgradify.com/terms/protected-characteristic/)
+- Prototype: An early working model built to test a design (https://getgradify.com/terms/prototype/)
+- Psychological safety: A shared belief that the team is safe for interpersonal risk-taking (https://getgradify.com/terms/psychological-safety/)
+- Publication bias: Preferential publication of positive results (https://getgradify.com/terms/publication-bias/)
+- Radian: The angle subtended at the centre by an arc equal in length to the radius; 2π radians = 360° (https://getgradify.com/terms/radian/)
+- Randomised controlled trial: A study in which participants are randomly allocated to an intervention or a control group (https://getgradify.com/terms/randomised-controlled-trial/)
+- Range: Variety of media, techniques and approaches (https://getgradify.com/terms/range/)
+- Ratio: The relative amounts of conjugate base and acid (https://getgradify.com/terms/ratio/)
+- Reasonable adjustment: A change to remove disadvantage for a disabled person (https://getgradify.com/terms/reasonable-adjustment/)
+- Recession: A fall in economic activity, often defined as two consecutive quarters of falling real GDP (https://getgradify.com/terms/recession/)
+- Red flag: A warning sign that an offer may be fraudulent (https://getgradify.com/terms/red-flag/)
+- Reflection-on-action: Looking back on an experience after it has happened to learn from it (https://getgradify.com/terms/reflection-on-action/)
+- Refractory period: A period after an action potential when another cannot occur (https://getgradify.com/terms/refractory-period/)
+- Register: The accurate alignment of successive colours or blocks in printing (https://getgradify.com/terms/register/)
+- Relative risk: The ratio of the risk in one group to the risk in another (https://getgradify.com/terms/relative-risk/)
+- Reliability: The consistency of results when measurements or experiments are repeated (https://getgradify.com/terms/reliability/)
+- Replicability: Obtaining consistent results in a new study (https://getgradify.com/terms/replicability/)
+- Reproducibility: Getting consistent results when an experiment is repeated independently by others (https://getgradify.com/terms/reproducibility/)
+- Research question: A statement of what the team needs to learn to make a design decision (https://getgradify.com/terms/research-question/)
+- Residence nil-rate band: An additional nil-rate band where a home passes to direct descendants (https://getgradify.com/terms/residence-nil-rate-band/)
+- Resolution: The smallest distance between two points that can still be seen as separate (https://getgradify.com/terms/resolution/)
+- ReSPECT: A process for recording personalised recommendations for emergency care, including CPR (https://getgradify.com/terms/respect/)
+- Retrieval practice: Recalling information from memory without looking, as a way to learn it (https://getgradify.com/terms/retrieval-practice/)
+- Revalidation: The process by which licensed doctors show every five years that they remain up to date and fit to practise (https://getgradify.com/terms/revalidation/)
+- Rf value: Distance moved by a spot divided by the solvent front distance (https://getgradify.com/terms/rf-value/)
+- Risk assessment: Identifying hazards and how to control them (https://getgradify.com/terms/risk-assessment/)
+- Risk register: A record of identified risks, their assessment, owners and responses (https://getgradify.com/terms/risk-register/)
+- Romanticism: A late eighteenth- and early nineteenth-century movement valuing imagination, nature and emotion (https://getgradify.com/terms/romanticism/)
+- Safeguarding: Protecting children from harm and promoting their welfare (https://getgradify.com/terms/safeguarding/)
+- Sampling distribution: The probability distribution of a statistic, such as x̄, across repeated samples (https://getgradify.com/terms/sampling-distribution/)
+- Satisfactory quality: The Consumer Rights Act 2015 standard that goods must meet, judged by what a reasonable person would expect (https://getgradify.com/terms/satisfactory-quality/)
+- Saturation: The purity or intensity of a colour, from vivid to greyed; also called chroma (https://getgradify.com/terms/saturation/)
+- SBAR: Situation, Background, Assessment, Recommendation: a structure for clear clinical communication (https://getgradify.com/terms/sbar/)
+- Schema: A mental framework of knowledge and expectations built from experience (https://getgradify.com/terms/schema/)
+- Scope of practice: The range of tasks a registrant group can carry out with training and competence (https://getgradify.com/terms/scope-of-practice/)
+- Screening: The stage that decides whether a project needs a full EIA (https://getgradify.com/terms/screening/)
+- Second messenger: A small molecule inside the cell, such as cAMP, that relays a signal from a cell-surface receptor (https://getgradify.com/terms/second-messenger/)
+- Secondary source: A later account that interprets the past, usually drawing on primary sources (https://getgradify.com/terms/secondary-source/)
+- Self-efficacy: Belief in one's ability to succeed at a task (https://getgradify.com/terms/self-efficacy/)
+- Sensitivity analysis: Testing how much a model's output changes when each input is varied (https://getgradify.com/terms/sensitivity-analysis/)
+- Sensitivity: The proportion of true cases a test detects (https://getgradify.com/terms/sensitivity/)
+- Serotonin syndrome: A potentially dangerous reaction to excess serotonergic activity (https://getgradify.com/terms/serotonin-syndrome/)
+- Shared decision-making: A collaborative process where a person and professional decide together using evidence and the person's values (https://getgradify.com/terms/shared-decision-making/)
+- Shock: A discontinuity that forms when faster information overtakes slower information (https://getgradify.com/terms/shock/)
+- SI units: The International System of Units, based on seven base units such as the metre, kilogram and second (https://getgradify.com/terms/si-units/)
+- Significant figures: The digits in a number that carry meaningful information about its precision (https://getgradify.com/terms/significant-figures/)
+- Signposting: Briefly signalling the structure of what you are about to say (https://getgradify.com/terms/signposting/)
+- Single best answer: A question format with five options where one is the best answer (https://getgradify.com/terms/single-best-answer/)
+- SME: A small or medium-sized enterprise; in UK statistics, a business with fewer than 250 employees (https://getgradify.com/terms/sme/)
+- Social gradient: The stepwise worsening of health with lower social position across the whole population (https://getgradify.com/terms/social-gradient/)
+- Social model of disability: The view that people are disabled by barriers in society rather than by their impairments (https://getgradify.com/terms/social-model-of-disability/)
+- Social prescribing: Linking people to non-medical community support, such as groups, advice or activities, often through a link worker (https://getgradify.com/terms/social-prescribing/)
+- Special category data: Sensitive personal data, such as health information, needing extra protection (https://getgradify.com/terms/special-category-data/)
+- Specific heat capacity: Energy needed to raise the temperature of 1 kg of a substance by 1 °C (https://getgradify.com/terms/specific-heat-capacity/)
+- Specificity: The proportion of non-cases a test correctly identifies as negative (https://getgradify.com/terms/specificity/)
+- Spectrum: The distribution of a signal's energy across frequencies (https://getgradify.com/terms/spectrum/)
+- Stakeholder: Any individual or group that affects or is affected by a business's activities (https://getgradify.com/terms/stakeholder/)
+- Standard deviation: A measure of how spread out values are around the mean (https://getgradify.com/terms/standard-deviation/)
+- Standard error: The standard deviation of the sampling distribution of the mean, estimated by s/√n (https://getgradify.com/terms/standard-error/)
+- Standard form: A way of writing numbers as A × 10ⁿ where 1 ≤ A < 10 (https://getgradify.com/terms/standard-form/)
+- Statistical power: The probability of detecting a real effect (https://getgradify.com/terms/statistical-power/)
+- Status epilepticus: A prolonged seizure, or repeated seizures without recovery, lasting 5 minutes or more (https://getgradify.com/terms/status-epilepticus/)
+- Steady state: The condition reached when currents and voltages no longer change with time (https://getgradify.com/terms/steady-state/)
+- Stepped care: Offering the least intensive effective treatment first, stepping up as needed (https://getgradify.com/terms/stepped-care/)
+- Steroid emergency card: A card identifying people at risk of adrenal crisis (https://getgradify.com/terms/steroid-emergency-card/)
+- Stratified sampling: Sampling subgroups in proportion (https://getgradify.com/terms/stratified-sampling/)
+- Stroke volume: The volume of blood ejected by a ventricle in one beat, EDV minus ESV (https://getgradify.com/terms/stroke-volume/)
+- Structured interview: An interview with standard questions and scoring for all candidates (https://getgradify.com/terms/structured-interview/)
+- Structured medication review: A clinical review of a person's medicines with them (https://getgradify.com/terms/structured-medication-review/)
+- Subject access request: A request by an individual to see the personal data held about them (https://getgradify.com/terms/subject-access-request/)
+- Sublime: An aesthetic of awe or terror in the face of vast or overwhelming nature (https://getgradify.com/terms/sublime/)
+- Supplementary prescriber: A practitioner who prescribes within an agreed clinical management plan (https://getgradify.com/terms/supplementary-prescriber/)
+- Surfactant: A substance reducing surface tension in alveoli (https://getgradify.com/terms/surfactant/)
+- Sustainable development: Development that meets present needs without compromising future generations' ability to meet theirs (https://getgradify.com/terms/sustainable-development/)
+- Synapse: A junction between a neurone and another cell (https://getgradify.com/terms/synapse/)
+- Synovial joint: A freely movable joint with synovial fluid (https://getgradify.com/terms/synovial-joint/)
+- Syntax: The arrangement of words and phrases into sentences (https://getgradify.com/terms/syntax/)
+- Synthesis: Combining research findings into patterns and insights (https://getgradify.com/terms/synthesis/)
+- Systematic error: An error that shifts all measurements in the same direction (https://getgradify.com/terms/systematic-error/)
+- Systematic review: A review using predefined transparent methods (https://getgradify.com/terms/systematic-review/)
+- Teach-back: Asking people to explain information back in their own words to check understanding (https://getgradify.com/terms/teach-back/)
+- Teratogen: A substance that causes developmental defects (https://getgradify.com/terms/teratogen/)
+- Tessitura: The part of the range where most of a melody's notes lie (https://getgradify.com/terms/tessitura/)
+- Therapeutic index: The ratio of toxic to effective dose; a small ratio means a narrow margin of safety (https://getgradify.com/terms/therapeutic-index/)
+- Thesis: A clear, debatable claim that answers the essay question and organises the essay (https://getgradify.com/terms/thesis/)
+- Threshold: The membrane potential at which an action potential is triggered, about −55 mV (https://getgradify.com/terms/threshold/)
+- Time value of money: The idea that money now is worth more than the same sum later (https://getgradify.com/terms/time-value-of-money/)
+- Tissue: A group of similar cells that work together to carry out a function (https://getgradify.com/terms/tissue/)
+- Tolerance: Lack of immune attack on the body's own cells (https://getgradify.com/terms/tolerance/)
+- Topic sentence: The sentence stating a paragraph's main point (https://getgradify.com/terms/topic-sentence/)
+- Total fertility rate: The average number of children a woman would have over her lifetime at current age-specific birth rates (https://getgradify.com/terms/total-fertility-rate/)
+- Transition period: The period after the UK left the EU, to 31 December 2020, while new arrangements were agreed (https://getgradify.com/terms/transition-period/)
+- Transition: The planned move of young people from children's to adult health services (https://getgradify.com/terms/transition/)
+- Translation: A shift of a graph without changing its shape, described by a vector (https://getgradify.com/terms/translation/)
+- Transmission-based precautions: Extra measures for infections spread by contact, droplets or air (https://getgradify.com/terms/transmission-based-precautions/)
+- Troponin: A heart muscle protein released when cells die (https://getgradify.com/terms/troponin/)
+- Turning point: A moment after which the direction of change shifts decisively (https://getgradify.com/terms/turning-point/)
+- Unlimited liability: Personal responsibility of the owners for all the debts of the business (https://getgradify.com/terms/unlimited-liability/)
+- Urbanisation: An increase in the proportion of people living in towns and cities (https://getgradify.com/terms/urbanisation/)
+- Utilitarianism: The theory that the right action produces the greatest good for the greatest number (https://getgradify.com/terms/utilitarianism/)
+- Validation: Checking a model against real measurements to show it represents the physical system adequately (https://getgradify.com/terms/validation/)
+- Validity: Whether a measurement or experiment measures what it claims to, and whether conclusions follow from the data (https://getgradify.com/terms/validity/)
+- Vector: An image made of mathematically defined paths that scale without loss (https://getgradify.com/terms/vector/)
+- Verification: The stage of testing and refining an idea to check it works (https://getgradify.com/terms/verification/)
+- Volume of distribution: The apparent volume into which a drug distributes, the amount in the body divided by the plasma concentration (https://getgradify.com/terms/volume-of-distribution/)
+- Whistleblowing: A worker reporting suspected wrongdoing at work (https://getgradify.com/terms/whistleblowing/)
+- Worker: A person with core employment rights but fewer than an employee (https://getgradify.com/terms/worker/)
+- Working memory: The limited system that holds and manipulates a small amount of information for a few seconds (https://getgradify.com/terms/working-memory/)
+- Written statement of particulars: A document setting out the main terms of employment (https://getgradify.com/terms/written-statement-of-particulars/)
+- Wrongful trading: Continuing to trade when a director knew or ought to have known insolvent liquidation could not be avoided (https://getgradify.com/terms/wrongful-trading/)
+- Yellow Card scheme: The MHRA system for reporting suspected adverse drug and vaccine reactions (https://getgradify.com/terms/yellow-card-scheme/)
+- Yield to maturity: The discount rate that equates a bond's future cash flows to its current price (https://getgradify.com/terms/yield-to-maturity/)
+- Zoonosis: An infection spreading from animals to humans (https://getgradify.com/terms/zoonosis/)

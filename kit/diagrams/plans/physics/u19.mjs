@@ -1,3 +1,51 @@
-// Physics unit 19 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u19-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Physics unit 19, Optics. Specs are written by scripts/diagrams/physics/u19.mjs.
+//   [lessonId, renderer, diagramId, what it shows] | [lessonId, "lab", labId, what it lets you do] | [lessonId, null, reason]
+const DEF = "a definition, list of properties or classification that a picture would not teach";
+const FORMULA = "a one-line formula whose worked example is a single substitution; a picture would add nothing";
+const LIST = "a list of types, uses and devices; a picture would only decorate it";
+export default [
+  ["u19-01", null, "needs renderer: apparent depth, rays from a submerged object refracting at the surface and traced back to a shallower image"],
+  ["u19-01", "lab", "optics", "trace rays through the lens and mirror and check they are straight between surfaces"],
+  ["u19-02", "refraction", "phys-u19-glass-refraction", "light entering glass (n = 1.52) at 40° refracts to 25°, and the reversed ray leaves at 40°"],
+  ["u19-02", "lab", "optics", "change the angle of incidence and compare the reflected and refracted rays"],
+  ["u19-03", "graph", "phys-u19-snell-gradient", "sin i against sin r is a straight line through the origin with gradient n = 1.48"],
+  ["u19-03", "lab", "optics", "measure incidence and refraction angles and check sin i / sin r stays constant"],
+  ["u19-04", "refraction", "phys-u19-fibre-critical", "core 1.48 into cladding 1.46: critical angle 80.6°, a 75° ray leaks, an 85° ray is trapped"],
+  ["u19-04", "lab", "optics", "find the critical angle for light leaving glass"],
+  ["u19-05", null, "needs renderer: ray diagram for a concave mirror (the f = 10 cm, u = 30 cm example: real, inverted, half-size image at 15 cm)"],
+  ["u19-05", "lab", "optics", "move an object in front of a curved mirror to find real and virtual images"],
+  ["u19-06", "rays", "phys-converging-lens", "ray diagrams for a converging lens with the object beyond 2F, at 2F and inside F (existing approved diagram)"],
+  ["u19-06", "lab", "optics", "make a real inverted same-size image, then try a diverging lens"],
+  ["u19-07", "rays", "phys-u19-projector-lens", "objects between F and 2F: the image runs away and grows as the object nears F, as in the projector example"],
+  ["u19-07", "lab", "optics", "predict the image distance with the lens equation, then check"],
+  ["u19-08", null, "needs renderer: the eye with a correcting lens moving the image of a far object to the retina (myopia, far point 2 m, −0.5 D)"],
+  ["u19-08", "lab", "optics", "see the virtual upright image of a magnifying glass with the object inside f"],
+  ["u19-09", null, FORMULA],
+  ["u19-10", null, "needs renderer: ray fan through a lens showing spherical and chromatic aberration (focus shifts)"],
+  ["u19-11", null, "needs renderer: a prism with minimum deviation and dispersed colours (A = 60°, δ = 39°, n = 1.52)"],
+  ["u19-12", null, DEF],
+  ["u19-13", "graph", "phys-u19-double-slit-fringes", "intensity 4I₀cos²(πdx/λD) on the screen: fringes 5.1 mm apart for 633 nm, 0.25 mm slits, 2.0 m"],
+  ["u19-13", "lab", "interference", "halve the slit separation and see the fringes spread; move the screen"],
+  ["u19-14", "scale", "phys-u19-coherence-lengths", "coherence length from white light (1 μm) to stabilised lasers (km), with the LED at 20 μm"],
+  ["u19-14", "lab", "interference", "compare fringes for different slit separations and screen distances"],
+  ["u19-15", "graph", "phys-u19-pupil-resolution", "θ = 1.22λ/D falling with aperture: 0.8′ for the 3 mm pupil against the eye's 1′"],
+  ["u19-15", "lab", "interference", "narrow a single slit and watch the central maximum widen"],
+  ["u19-16", "graph", "phys-u19-missing-orders", "double-slit fringes inside the single-slit envelope with d = 3a: orders 3 and 6 are missing"],
+  ["u19-16", "lab", "interference", "set d = 3a and find the missing fringe at a diffraction minimum"],
+  ["u19-17", "graph", "phys-u19-grating-orders", "θ = sin⁻¹(nλ/d) for orders 1 to 3 of a 600 lines per mm grating: sodium at 20.7° and 45.0°"],
+  ["u19-17", "lab", "interference", "count the orders red light at 700 nm shows on a 600 lines per mm grating"],
+  ["u19-18", "graph", "phys-u19-michelson-fringes", "fringes counted N = 2d/λ against mirror movement: 2000 fringes is 0.633 mm"],
+  ["u19-19", "graph", "phys-u19-fabry-perot-peaks", "Fabry–Pérot transmission peaks 30 GHz apart and 0.49 GHz wide (d = 5 mm, R = 0.95)"],
+  ["u19-20", "graph", "phys-u19-malus-analyser", "Malus's law after a polariser: 50 cos²θ, 37.5 W m⁻² at 30°"],
+  ["u19-21", "graph", "phys-u19-brewster-diamond", "p and s reflectance of diamond against angle: p vanishes at 67.5°"],
+  ["u19-22", "graph", "phys-u19-quartz-retardation", "retardation against thickness of quartz at 633 nm: quarter-wave at 17.2 μm"],
+  ["u19-23", "graph", "phys-u19-sucrose-rotation", "rotation θ = [α]lc against concentration for a 20 cm tube: 13.3° at 0.10 g mL⁻¹"],
+  ["u19-24", null, "needs renderer: energy levels with pumping, population inversion and stimulated emission (transitions renderer draws only absorption and emission between fixed levels)"],
+  ["u19-25", "graph", "phys-u19-cavity-modes", "the 500 MHz mode comb of a 30 cm HeNe cavity under a 1.5 GHz gain curve: three modes"],
+  ["u19-26", "graph", "phys-u19-fibre-loss", "power left in fibre at 0.2 dB km⁻¹: 10% at 50 km, 1% at 100 km"],
+  ["u19-26", "lab", "optics", "find the critical angle and trap light by total internal reflection"],
+  ["u19-27", null, FORMULA],
+  ["u19-28", null, FORMULA],
+  ["u19-29", null, LIST],
+  ["u19-30", "scale", "phys-u19-seeing-limit", "angular resolution: 0.07″ diffraction limit of an 8 m telescope at 2.2 μm against 0.6″ seeing"],
+];

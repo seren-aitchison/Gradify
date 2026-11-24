@@ -1,0 +1,165 @@
+# Gradify
+
+> Gradify turns your notes into flashcards and mind maps checked against what you wrote, and schedules revision with spaced repetition (FSRS) up to your exam. Its headline feature is Notes Studio: upload a PDF or paste notes with no account (zero sign-up); every card links to the line in your notes it came from, and cards that don't fully match are marked "to check". Free, with free courses in 30+ subjects from GCSE to postgraduate.
+
+Gradify is free to use (no card). Gradify Pro (£10 a month) adds planning and removes limits. Specialist sites live in folders of getgradify.com, one account across all of them.
+
+## Product
+- [Gradify app and Notes Studio](https://getgradify.com/app.html): upload notes (PDF, text) and get checked flashcards, mind maps and a revision plan
+- [PDF to flashcards](https://getgradify.com/pdf-to-flashcards/): turn a lecture PDF into source-checked flashcards
+- [Lecture notes to mind map](https://getgradify.com/lecture-notes-to-mind-map/): an editable mind map from notes
+- [Notes to cheat sheet](https://getgradify.com/notes-to-cheat-sheet/): a one-page revision sheet or key-terms sheet
+- [Pricing](https://getgradify.com/pricing.html): Free, Gradify Pro and Gradify Ultra
+- [Quality and coverage](https://getgradify.com/quality.html): how lessons are audited and which qualifications are covered
+- [About Gradify](https://getgradify.com/about.html): who builds it and how content is checked
+
+## Specialist sites
+- [UnderGradify](https://getgradify.com/undergradify/): For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.
+- [PostGradify](https://getgradify.com/postgradify/): For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.
+- [ProGradify](https://getgradify.com/progradify/): For working professionals: CPD, certification prep, workplace skills and career progression.
+- [EduGradify](https://getgradify.com/edugradify/): For teachers and educators: teaching resources, lesson preparation and professional development.
+- [YouthGradify](https://getgradify.com/youthgradify/): For young people: school learning, new skills and early career decisions, bridging school and adult learning.
+- [JuniorGradify](https://getgradify.com/juniorgradify/): For younger learners: strong foundations, interactive practice and age-appropriate activities.
+- [LawGradify](https://getgradify.com/lawgradify/): Case law, legislation, legal terminology and exam prep for legal qualifications.
+- [BusinessGradify](https://getgradify.com/businessgradify/): Management, entrepreneurship, strategy, marketing, operations and real case studies.
+- [FinanceGradify](https://getgradify.com/financegradify/): Finance and accounting concepts, and revision for professional qualifications.
+- [InvestorGradify](https://getgradify.com/investorgradify/): Markets, portfolios, valuation and risk. Investing education, not financial advice.
+- [MedGradify](https://getgradify.com/medgradify/): Anatomy, physiology, pharmacology, clinical concepts and medical exam revision.
+- [DentalGradify](https://getgradify.com/dentalgradify/): Oral anatomy, dental materials, clinical knowledge and dentistry exams.
+- [VetGradify](https://getgradify.com/vetgradify/): Animal anatomy, physiology, pathology, pharmacology and veterinary exam prep.
+- [NurseGradify](https://getgradify.com/nursegradify/): Clinical knowledge, pharmacology, patient care and nursing assessments.
+- [PharmaGradify](https://getgradify.com/pharmagradify/): Medicinal chemistry, drug mechanisms, therapeutics and pharmacy exams.
+- [HealthGradify](https://getgradify.com/healthgradify/): Health literacy, wellbeing, and the fundamentals of anatomy and physiology.
+- [PsychGradify](https://getgradify.com/psychgradify/): Cognitive science, behaviour, research methods, statistics and psychology exams.
+- [InternshipGradify](https://getgradify.com/internshipgradify/): Internships and work experience, matched to what you've learned on Gradify.
+- [EngineerGradify](https://getgradify.com/engineergradify/): Maths, mechanics, materials, systems and engineering problem-solving.
+- [MathGradify](https://getgradify.com/mathgradify/): Maths from everyday numeracy and GCSE to A level, university and data science, with worked examples, generated practice and line-by-line checking.
+- [SciGradify](https://getgradify.com/scigradify/): Biology, chemistry, physics and the scientific method, plus interdisciplinary science.
+- [EcoGradify](https://getgradify.com/ecogradify/): Ecology, environmental science, biodiversity and sustainability.
+- [SocGradify](https://getgradify.com/socgradify/): Sociology, social structures, research methods and social policy.
+- [HistoryGradify](https://getgradify.com/historygradify/): British, European and world history, historical thinking, sources and interpretations, and essay writing.
+- [LitGradify](https://getgradify.com/litgradify/): Literary analysis, close reading, critical interpretation, writing and literary history.
+- [LanguageGradify](https://getgradify.com/languagegradify/): Vocabulary, grammar, pronunciation, listening, speaking and writing practice.
+- [ArtGradify](https://getgradify.com/artgradify/): Techniques, art history, visual composition and creative skills.
+- [MusicGradify](https://getgradify.com/musicgradify/): Theory, instruments, composition, ear training and music history.
+- [SportGradify](https://getgradify.com/sportgradify/): Exercise science, training principles, performance and coaching.
+- [CreateGradify](https://getgradify.com/creategradify/): Ideation, design thinking and creative problem-solving across disciplines.
+
+## Free tools
+- [UK degree classification calculator](https://getgradify.com/tools/degree-classification-calculator/): Work out a 1st, 2:1, 2:2 or 3rd from your module marks.
+- [Final exam grade calculator](https://getgradify.com/tools/final-grade-calculator/): The mark you need on the final to hit your target.
+- [Weighted grade calculator](https://getgradify.com/tools/weighted-grade-calculator/): Your module average from assessments of different weights.
+- [GPA calculator (4.0 scale)](https://getgradify.com/tools/gpa-calculator/): Your grade point average from letter grades and credits.
+- [Exam countdown and revision hours](https://getgradify.com/tools/exam-countdown/): Days to go, real study hours left, and a story card to share.
+- [Spaced repetition schedule generator](https://getgradify.com/tools/spaced-repetition-schedule/): Review dates for any topic, as a calendar file.
+- [Cram planner (revision panic mode)](https://getgradify.com/tools/cram-planner/): 48 hours left? A triage plan for the hours you have.
+- [Coursework deadline planner](https://getgradify.com/tools/deadline-planner/): Work back from a deadline, with a 48-hour buffer.
+- [Exam timetable planner](https://getgradify.com/tools/exam-timetable-planner/): Several exams close together? The revision order.
+- [Study hours calculator](https://getgradify.com/tools/study-hours-calculator/): How many hours to revise a module, a week.
+- [Reading time calculator](https://getgradify.com/tools/reading-time-calculator/): How long a reading list or PDF really takes.
+- [Topic prioritiser](https://getgradify.com/tools/topic-prioritiser/): Which topic first: weight against confidence.
+- [Winter break revision planner](https://getgradify.com/tools/winter-revision-planner/): Rest, then light reviews, then focused blocks before January.
+- [Dissertation word count splitter](https://getgradify.com/tools/dissertation-word-count/): Word targets per chapter, and words a day.
+- [Module grade calculator](https://getgradify.com/tools/module-grade-calculator/): Coursework in: what the exam needs for a 2:1 or First.
+- [Grade boundary checker](https://getgradify.com/tools/grade-boundaries/): Your past-paper score against the boundaries.
+- [Science unit converter](https://getgradify.com/tools/unit-converter/): mol to mmol, µg to mg, cm³ to dm³, with a sanity check.
+- [Study timer (Pomodoro, 50/10)](https://getgradify.com/tools/study-timer/): Focus timer with brown noise, break ideas and a reflection log.
+- [Shared focus room](https://getgradify.com/tools/focus-room/): A synced 50/10 timer anyone with the link sees.
+- [Exam stress calm reset](https://getgradify.com/tools/calm-reset/): 60 seconds of paced breathing, then one small task.
+- [Mistake log (error log)](https://getgradify.com/tools/mistake-log/): Log what you got wrong and why; see your pattern.
+- [Syllabus coverage checker](https://getgradify.com/tools/syllabus-checker/): Paste the spec and your notes: see what's missing.
+- [Mark scheme checker](https://getgradify.com/tools/mark-scheme-checker/): Which mark-scheme points your answer mentions.
+- [Citation and reference formatter](https://getgradify.com/tools/citation-helper/): Harvard, APA 7, Vancouver and IEEE, with the in-text form.
+- [Essay outline helper](https://getgradify.com/tools/essay-outline-helper/): Turn an essay question into a paragraph plan with word counts.
+- [Seminar prep helper](https://getgradify.com/tools/seminar-prep-helper/): Three talking points and two questions from a reading.
+- [Presentation pacing planner](https://getgradify.com/tools/presentation-prep-helper/): Slides by the minute at 130 words a minute, plus likely questions.
+- [Viva and project defence prep](https://getgradify.com/tools/viva-prep-helper/): Practice questions on method, limits and impact.
+- [Research question helper (PICO, SPIDER, FINER)](https://getgradify.com/tools/research-question-helper/): From a broad interest to a sharp, answerable question.
+- [Literature review helper](https://getgradify.com/tools/lit-review-helper/): Group sources by agreement, tension and gap.
+- [Group project planner](https://getgradify.com/tools/group-project-planner/): Split tasks fairly and set check-ins before the deadline.
+- [Exam question deconstructor](https://getgradify.com/tools/question-deconstructor/): Command word, marks and the steps to a full-mark answer.
+- [GCSE exam countdown 2027](https://getgradify.com/tools/gcse-exam-countdown/): Days to go and real revision hours left.
+- [A level exam countdown 2027](https://getgradify.com/tools/a-level-exam-countdown/): Days to go and real revision hours left.
+- [University finals countdown](https://getgradify.com/tools/uni-finals-countdown/): Days to go and real revision hours left.
+
+## Checklists
+- [Lab report checklist](https://getgradify.com/checklists/lab-report/): Aim to conclusion, with the marks students miss.
+- [Semester reset checklist](https://getgradify.com/checklists/semester-reset/): Set up a new term in an evening.
+- [Exam day checklist](https://getgradify.com/checklists/exam-day/): Bag, tech and timing for the morning of an exam.
+- [Proofreading checklist](https://getgradify.com/checklists/proofreading/): Content, structure, formatting, units and references.
+- [Peer review checklist](https://getgradify.com/checklists/peer-review/): Useful feedback on a friend's draft, by draft type.
+- [STEM practical exam checklist](https://getgradify.com/checklists/stem-practical/): Before and during a practical or lab assessment.
+- [Coursework submission checklist](https://getgradify.com/checklists/coursework-submission/): The last checks before you press submit.
+- [Final 48 hours before an exam](https://getgradify.com/checklists/final-48-hours/): What to do (and not do) in the last two days.
+- [Critical analysis checklist](https://getgradify.com/checklists/critical-analysis/): Turn description into first-class argument.
+
+## Guides
+- [The complete guide to active recall for exams](https://getgradify.com/guides/active-recall/): Active recall means testing yourself by pulling information out of memory, instead of reading it again
+- [Active recall vs re-reading: which actually works?](https://getgradify.com/guides/active-recall-vs-rereading/): Active recall works better
+- [How to use active recall for science subjects](https://getgradify.com/guides/active-recall-for-science/): In science, use flashcards for definitions and facts, draw processes and diagrams from memory on a blank page, and practise calculations as unseen problems
+- [The best active recall schedule before finals](https://getgradify.com/guides/active-recall-schedule-before-finals/): Spend the first four weeks covering every topic with active recall and spaced reviews, then use the last two weeks for timed past papers and your weakest topics
+- [How to make good flashcards: 9 rules](https://getgradify.com/guides/how-to-make-good-flashcards/): Good flashcards test one idea each, ask a precise question with one right answer, and come from your own course material
+- [How to revise in two weeks](https://getgradify.com/guides/how-to-revise-in-two-weeks/): Triage first: list every topic, rank them by how likely they are to come up and how weak you are, and cut what you can't cover
+- [The 7 best study tools for university students in 2026](https://getgradify.com/guides/best-study-tools-for-university-students/): Anki is best for serious long-term memorisation, Quizlet for quick shared vocabulary sets, Notion for organising a whole degree, and Gradify for turning your own lecture notes into checked flashcards and a revision plan
+- [Exam command words: what each one wants](https://getgradify.com/guides/command-words/): The command word tells you what kind of answer earns the marks: 'state' wants a fact, 'describe' wants what happens, 'explain' wants why or how, and 'evaluate' wants a judgement backed by evidence on both sides
+- [Exam question stems and the answer skeleton for each](https://getgradify.com/guides/question-stems/): Unfamiliar exam questions are usually familiar stems in disguise: 'account for this anomaly', 'suggest why', 'compare these two', 'design an investigation'
+- [Exam technique: how to get the marks you already know](https://getgradify.com/guides/exam-technique/): Good exam technique turns what you know into marks: spend about 1 to 1.5 minutes per mark, read every question's command word and constraints before writing, answer the questions you're surest of first, and keep five minutes to check units, names and missed parts.
+- [How to answer 6-mark and 8-mark questions](https://getgradify.com/guides/long-answer-questions/): Long-answer questions are usually marked by levels: examiners look for a logical chain of correct points, not a list
+- [Definitions vs explanations: give the depth the marks ask for](https://getgradify.com/guides/definitions-vs-explanations/): A definition is one precise sentence in technical terms; an explanation is a chain of steps showing how or why; an evaluation weighs it up
+- [Multiple-choice traps: how distractors are built](https://getgradify.com/guides/mcq-traps/): Wrong options in a good multiple-choice question are built to catch specific mistakes
+- [Reading graphs and data: the 4-check scan](https://getgradify.com/guides/graph-reading/): Before you describe any graph, scan four things: the axes and their units, the scale (is it linear or logarithmic, does it start at zero?), the overall trend versus any anomaly, and the caveats (error bars, sample size, control group)
+- [Variables and controls: naming vs controlling](https://getgradify.com/guides/variables-and-controls/): The independent variable is what you change, the dependent variable is what you measure, and control variables are everything you keep the same
+- [Unit conversion traps in science exams](https://getgradify.com/guides/unit-conversion/): Most unit mistakes are factor-of-1,000 slips: cm³ to dm³, mg to g, mmol to mol, J to kJ
+- [Open-book and take-home exams: how to prepare](https://getgradify.com/guides/open-book-exams/): Open-book exams test understanding and application, not memory, and the clock is the real enemy: students who haven't revised lose time flipping through PDFs
+- [A winter break revision plan for January exams](https://getgradify.com/guides/winter-revision-plan/): Rest properly first, then keep the term's material alive with 20 minutes of flashcards a day, and save the intensive revision (two 50-minute blocks plus past questions a day) for the last two weeks
+- [A first-year study system: set it up in freshers' week](https://getgradify.com/guides/freshers-study-system/): A simple system beats a perfect one: one folder per module, notes filed the same day, one weekly review session per module, and flashcards made as you go rather than in May
+- [Failed an exam? A resit recovery plan](https://getgradify.com/guides/exam-resit-recovery/): A failed exam is information, not a verdict
+- [Resits, capped marks and compensation, explained](https://getgradify.com/guides/resits-and-compensation/): At most UK universities, a failed module can be resat, but the resit mark is often capped at the pass mark (usually 40% for undergraduates)
+- [Seven study myths that waste revision time](https://getgradify.com/guides/study-myths/): Many of the most popular study habits (highlighting, re-reading, studying to your 'learning style', multitasking, and trusting AI summaries without checking) feel productive but do little for exam performance
+- [Study methods compared: which fits your workload?](https://getgradify.com/guides/study-methods/): The two methods with the strongest evidence are active recall (testing yourself) and spaced repetition (spreading reviews out)
+- [The blurting method: how to do it properly](https://getgradify.com/guides/blurting-method/): Blurting is writing down everything you can remember about a topic on a blank page, without notes, then checking it against your notes in a different colour and filling the gaps
+- [Free alternatives to paid study apps](https://getgradify.com/guides/free-alternatives-to-paid-study-apps/): Most of what study subscriptions charge for has a free option: Anki for spaced repetition, Gradify for flashcards and mind maps made from your notes (no account needed to try it), the free calculators and planners on this site, and your phone's built-in focus mode
+- [Surviving first-year medicinal chemistry and pharmacology labs](https://getgradify.com/guides/medicinal-chemistry-labs-survival/): Labs reward preparation: read the script and do the calculations before you arrive, keep a lab book anyone could follow, and write up within 48 hours while you remember
+- [How to revise organic mechanisms without rote learning](https://getgradify.com/guides/organic-mechanisms-revision/): Most organic mechanisms are combinations of a few patterns: a nucleophile attacks an electrophile, a leaving group leaves, a proton moves
+- [How to write a history source essay](https://getgradify.com/guides/history-source-essays/): Judge each source on three things: its provenance (who made it, when, why and for whom), its content (what it says and what it leaves out) and its context (what you know about the period)
+- [How to export your Quizlet sets](https://getgradify.com/guides/export-quizlet-sets/): Quizlet lets you export sets you created as text: open the set, choose Export from the ⋯ menu, and copy the terms
+- [Turn GoodNotes or Notion notes into flashcards and mind maps](https://getgradify.com/guides/goodnotes-notion-pdf-to-mind-map/): Export your notes (GoodNotes: Share → Export → PDF; Notion: ⋯ → Export → Markdown or PDF), then upload the file to Gradify's Notes Studio
+- [Free Notion study template](https://getgradify.com/guides/notion-study-template/): Download the template below as a Markdown file and import it into Notion (Settings → Import → Text & Markdown)
+
+## Concept comparisons
+- [Active recall vs Spaced repetition](https://getgradify.com/vs/active-recall-vs-spaced-repetition/)
+- [Molarity vs Molality](https://getgradify.com/vs/molarity-vs-molality/)
+- [Correlation vs Causation](https://getgradify.com/vs/correlation-vs-causation/)
+- [Mitosis vs Meiosis](https://getgradify.com/vs/mitosis-vs-meiosis/)
+- [Essay outline vs Mind map](https://getgradify.com/vs/essay-outline-vs-mind-map/)
+- [Blurting vs Flashcards](https://getgradify.com/vs/blurting-vs-flashcards/)
+- [Pomodoro vs Time-blocking](https://getgradify.com/vs/pomodoro-vs-time-blocking/)
+- [Accuracy vs Precision](https://getgradify.com/vs/accuracy-vs-precision/)
+- [Validity vs Reliability](https://getgradify.com/vs/validity-vs-reliability/)
+- [Aerobic respiration vs Anaerobic respiration](https://getgradify.com/vs/aerobic-vs-anaerobic-respiration/)
+
+## Comparisons
+- [Gradify vs Quizlet](https://getgradify.com/compare/gradify-vs-quizlet/)
+- [Gradify vs Anki](https://getgradify.com/compare/gradify-vs-anki/)
+- [Best free Quizlet alternatives](https://getgradify.com/compare/quizlet-alternatives/)
+- [Free Quizlet Plus alternatives](https://getgradify.com/compare/quizlet-plus-alternatives/)
+- [Knowt alternatives](https://getgradify.com/compare/knowt-alternatives/)
+- [Gizmo AI alternatives](https://getgradify.com/compare/gizmo-alternatives/)
+- [TurboLearn and StudyFetch alternatives](https://getgradify.com/compare/turbolearn-studyfetch-alternatives/)
+
+## Reference
+- [Study glossary](https://getgradify.com/glossary/): active recall, spaced repetition, FSRS and more
+- [Revision topics](https://getgradify.com/topics/): every unit of 33 free courses with key terms, sample flashcards, a quick quiz and a mind map
+- [Practice questions](https://getgradify.com/questions/): multiple-choice questions with answers and explanations, by subject
+- [Exam traps](https://getgradify.com/exam-traps/): the common mistakes in each subject
+- [Exam boards and qualifications](https://getgradify.com/exam-boards/): which qualifications the courses serve, and how strong each claim is
+- [Key terms A to Z](https://getgradify.com/terms/): plain-English definitions, and how meanings change between subjects
+- [Research: where students slip up](https://getgradify.com/research/): counts of common-mistake warnings per subject, CC BY 4.0
+- [What's new](https://getgradify.com/changelog/)
+- [Study plans](https://getgradify.com/study-plan/): week-by-week plans for GCSE, A level, university and professional paths
+- [Printable templates](https://getgradify.com/templates/): revision timetable, Cornell notes, trackers
+
+## Optional
+- [Full text of the guides, comparisons and key terms](https://getgradify.com/llms-full.txt): one plain-text file
+- [Course catalogue API (JSON)](https://getgradify.com/kit/api/v1/catalogue.json): every course with its syllabus
+- [Site map](https://getgradify.com/site-map.html)

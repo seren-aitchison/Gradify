@@ -1,0 +1,118 @@
+{
+ "id": "phys-u30-rotation-curve",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u30",
+ "lesson": "Dark matter in galaxies",
+ "title": "A flat rotation curve needs dark matter",
+ "caption": "If a galaxy's mass were all in its visible disc, orbital speeds beyond the disc would fall as 1/√r (dashed). Instead they stay flat at about 200 km s⁻¹. Then M(r) = v²r/G grows in proportion to r: unseen mass keeps adding up, with density falling as 1/r².",
+ "alt": "Orbital speed against radius: an observed flat line at 200 kilometres per second, and a dashed Keplerian curve falling from 200 at 8 kiloparsecs to 100 at 32.",
+ "description": [
+  "Observed: v ≈ 200 km s⁻¹ out to large radius.",
+  "Expected from visible mass alone (beyond 8 kpc): v = 200√(8/r), half as fast at 32 kpc.",
+  "Flat v means M(r) = v²r/G ∝ r: a halo of dark matter with ρ ∝ 1/r²."
+ ],
+ "range": {
+  "x": [
+   0,
+   32
+  ],
+  "y": [
+   0,
+   260
+  ]
+ },
+ "ticks": [
+  [
+   8,
+   16,
+   24,
+   32
+  ],
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "radius / kpc",
+  "orbital speed / km s⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "200+0*x",
+   "domain": [
+    8,
+    32
+   ],
+   "colour": "a1",
+   "label": "observed: flat",
+   "labelAt": [
+    20,
+    222
+   ]
+  },
+  {
+   "expr": "200*sqrt(8/x)",
+   "domain": [
+    8,
+    32
+   ],
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "visible mass only",
+   "labelAt": [
+    22,
+    78
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     150
+    ],
+    [
+     4,
+     190
+    ],
+    [
+     8,
+     200
+    ]
+   ],
+   "colour": "a1",
+   "width": 3
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "200*sqrt(8/x)",
+   "x": 32,
+   "y": 100,
+   "name": "Keplerian speed halves at four times the radius"
+  },
+  {
+   "type": "slope",
+   "expr": "200^2*x",
+   "x": 10,
+   "value": 40000,
+   "name": "M(r) = v²r/G grows linearly with r for flat v"
+  }
+ ]
+}

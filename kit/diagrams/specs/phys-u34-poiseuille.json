@@ -1,0 +1,80 @@
+{
+ "id": "phys-u34-poiseuille",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u34",
+ "lesson": "Biological fluid dynamics",
+ "title": "Flow through a narrowed artery",
+ "caption": "At the same pressure difference, Poiseuille flow goes as the fourth power of the radius. Narrowing an artery to 75% of its radius cuts the flow to 0.75⁴ = 0.32, about a third.",
+ "alt": "Relative flow against relative radius, a steep fourth-power curve, with 0.32 at 0.75 marked.",
+ "description": [
+  "Q ∝ r⁴ (Poiseuille), at fixed pressure difference, length and viscosity.",
+  "r = 0.75 r₀: Q = 0.316 Q₀.",
+  "r = 0.5 r₀: Q = 0.0625 Q₀. Small narrowings matter a great deal."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "radius / original radius",
+  "flow / original flow"
+ ],
+ "curves": [
+  {
+   "expr": "x^4",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.75,
+   "to": 0.31640625
+  }
+ ],
+ "points": [
+  {
+   "x": 0.75,
+   "y": 0.31641,
+   "colour": "a2",
+   "label": "0.32 at 75% radius",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^4",
+   "x": 0.75,
+   "y": 0.31640625,
+   "name": "0.75⁴ = 0.316"
+  }
+ ]
+}

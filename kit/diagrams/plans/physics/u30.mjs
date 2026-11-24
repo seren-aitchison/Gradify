@@ -1,3 +1,40 @@
 // Physics unit 30 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u30-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u30.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+const ARG = "an argument or explanation, carried in the text";
+export default [
+  ["u30-01", null, CALC],
+  ["u30-02", "graph", "phys-u30-main-sequence-lifetime", "lifetime ∝ M^(−2.5): 10 Gyr for the Sun, 1.8 Gyr at 2 M☉"],
+  ["u30-03", null, ARG],
+  ["u30-04", null, CALC],
+  ["u30-05", null, CALC],
+  ["u30-06", null, "needs renderer: the Hertzsprung–Russell diagram with spectral classes and the main sequence"],
+  ["u30-07", "graph", "phys-u30-mass-luminosity", "L ∝ M^3.5: 0.09 L☉ at 0.5 M☉, 11.3 L☉ at 2 M☉"],
+  ["u30-08", null, ARG],
+  ["u30-09", null, CALC],
+  ["u30-10", null, CALC],
+  ["u30-11", null, CALC],
+  ["u30-12", null, CALC],
+  ["u30-13", null, CALC],
+  ["u30-14", null, ARG],
+  ["u30-15", null, CALC],
+  ["u30-16", null, CALC],
+  ["u30-17", "graph", "phys-u30-transit", "a transit light curve 1% deep for a Jupiter crossing a Sun-like star"],
+  ["u30-18", null, ARG],
+  ["u30-19", null, CALC],
+  ["u30-20", null, CALC],
+  ["u30-21", null, ARG],
+  ["u30-22", null, ARG],
+  ["u30-23", "graph", "phys-u30-main-sequence-lifetime", "a 2 M☉ turn-off dates a cluster at about 1.8 Gyr"],
+  ["u30-24", null, CALC],
+  ["u30-25", null, CALC],
+  ["u30-26", "graph", "phys-u30-rotation-curve", "a flat rotation curve at 200 km s⁻¹ against the Keplerian fall-off from visible mass"],
+  ["u30-27", null, CALC],
+  ["u30-28", null, CALC],
+  ["u30-29", null, CALC],
+  ["u30-30", null, ARG],
+  ["u30-31", null, ARG],
+  ["u30-32", null, ARG],
+  ["u30-33", null, CALC],
+  ["u30-34", null, ARG],
+];

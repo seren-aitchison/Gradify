@@ -1,0 +1,127 @@
+{
+ "id": "maths-u07-sliding-ladder",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Related Rates",
+ "title": "The 5 m ladder at one instant",
+ "caption": "When the foot is 3 m from the wall the 5 m ladder reaches 4 m up (3² + 4² = 5²). Differentiating x² + y² = 25 gives 2x dx/dt + 2y dy/dt = 0, so with dx/dt = 0.3 the top slides down at 1.8/8 = 0.225 m s⁻¹.",
+ "alt": "A right-angled triangle: the wall 4 m high, the floor 3 m, and the ladder 5 m long as the hypotenuse.",
+ "description": [
+  "The ladder, wall and ground form a right-angled triangle, so x² + y² = 25.",
+  "When x = 3, y = 4.",
+  "Differentiating: 2x dx/dt + 2y dy/dt = 0.",
+  "2(3)(0.3) + 2(4) dy/dt = 0 gives dy/dt = −0.225 m s⁻¹."
+ ],
+ "points": {
+  "F": [
+   0,
+   0
+  ],
+  "W": [
+   0,
+   4
+  ],
+  "B": [
+   3,
+   0
+  ]
+ },
+ "hide": [
+  "F"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "F",
+    "W",
+    "B"
+   ],
+   "colour": "a1",
+   "opacity": 0.08
+  }
+ ],
+ "segments": [
+  {
+   "a": "W",
+   "b": "B",
+   "colour": "a2",
+   "w": 3.5
+  }
+ ],
+ "angles": [
+  {
+   "at": "F",
+   "from": "B",
+   "to": "W",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "lengths": [
+  {
+   "a": "F",
+   "b": "B",
+   "value": 3,
+   "label": "x = 3 m",
+   "side": -1
+  },
+  {
+   "a": "F",
+   "b": "W",
+   "value": 4,
+   "label": "y = 4 m",
+   "side": -1
+  },
+  {
+   "a": "W",
+   "b": "B",
+   "value": 5,
+   "label": "ladder 5 m",
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "W": [
+   -10,
+   -8
+  ],
+  "B": [
+   12,
+   12
+  ]
+ },
+ "view": {
+  "x": [
+   -2.2,
+   5
+  ],
+  "y": [
+   -1.5,
+   5
+  ]
+ },
+ "height": [
+  320,
+  300
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "W",
+   "b": "B",
+   "value": "sqrt(9+16)",
+   "name": "ladder = √(3² + 4²) = 5"
+  },
+  {
+   "type": "value",
+   "expr": "-(2*3*0.3)/(2*4)",
+   "value": "-0.225",
+   "tol": 1e-12,
+   "name": "dy/dt = −(2 × 3 × 0.3)/(2 × 4) = −0.225"
+  }
+ ],
+ "fromLesson": [
+  "x^{2} + y^{2} = 25"
+ ]
+}

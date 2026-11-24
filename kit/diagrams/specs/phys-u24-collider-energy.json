@@ -1,0 +1,111 @@
+{
+ "id": "phys-u24-collider-energy",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Collider experiments",
+ "title": "Collider against fixed target",
+ "caption": "Two beams of energy E colliding head-on give √s = 2E: 7 TeV beams make 14 TeV. A 7 TeV beam on a fixed proton target gives only √(2E m c²) ≈ 115 GeV, about 122 times less.",
+ "alt": "Two curves of centre-of-mass energy against beam energy in GeV: a straight line for a collider reaching 14000 GeV at 7000, and a slowly rising square-root curve for a fixed target reaching about 115 GeV.",
+ "description": [
+  "Collider: √s = 2E, so 2 × 7000 = 14 000 GeV.",
+  "Fixed target (proton, mc² = 0.938 GeV): √s = √(2 × 7000 × 0.938) = 114.6 GeV.",
+  "The collider gives 122 times more."
+ ],
+ "range": {
+  "x": [
+   0,
+   7500
+  ],
+  "y": [
+   0,
+   15000
+  ]
+ },
+ "ticks": [
+  [
+   2000,
+   4000,
+   6000
+  ],
+  [
+   5000,
+   10000,
+   14000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "beam energy E / GeV",
+  "√s / GeV"
+ ],
+ "curves": [
+  {
+   "expr": "2*x",
+   "domain": [
+    0,
+    7000
+   ],
+   "colour": "a1",
+   "label": "collider, 2E",
+   "labelAt": [
+    3300,
+    8500
+   ]
+  },
+  {
+   "expr": "sqrt(2*x*0.938)",
+   "domain": [
+    0,
+    7000
+   ],
+   "colour": "a2",
+   "label": "fixed target",
+   "labelAt": [
+    3500,
+    1900
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 7000,
+   "y": 14000,
+   "colour": "a1",
+   "label": "14 TeV",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -10
+  },
+  {
+   "x": 7000,
+   "y": 114.59,
+   "colour": "a2",
+   "label": "115 GeV",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*x",
+   "x": 7000,
+   "y": 14000,
+   "name": "7 TeV beams give 14 TeV"
+  },
+  {
+   "type": "point",
+   "expr": "sqrt(2*x*0.938)",
+   "x": 7000,
+   "y": 114.5949,
+   "tol": 0.01,
+   "name": "fixed target gives 115 GeV"
+  }
+ ]
+}

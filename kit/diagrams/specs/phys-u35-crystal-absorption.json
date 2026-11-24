@@ -1,0 +1,110 @@
+{
+ "id": "phys-u35-crystal-absorption",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u35",
+ "lesson": "Medical detector systems",
+ "title": "Stopping 511 keV photons in a PET crystal",
+ "caption": "The fraction absorbed in thickness x is 1 − e^(−μx). In 2 cm, NaI (μ = 0.34 cm⁻¹) stops 49% of 511 keV photons while dense LSO (0.87 cm⁻¹) stops 82%, which is why PET scanners use LSO.",
+ "alt": "Fraction absorbed against crystal thickness for NaI and LSO, both rising towards 1, LSO much faster: 0.82 against 0.49 at 2 centimetres.",
+ "description": [
+  "Absorbed fraction = 1 − e^(−μx).",
+  "NaI at 2 cm: 1 − e^(−0.68) = 0.493.",
+  "LSO at 2 cm: 1 − e^(−1.74) = 0.824."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "crystal thickness / cm",
+  "fraction absorbed"
+ ],
+ "curves": [
+  {
+   "expr": "1-exp(-0.87*x)",
+   "colour": "a1",
+   "label": "LSO",
+   "labelAt": [
+    3,
+    0.98
+   ]
+  },
+  {
+   "expr": "1-exp(-0.34*x)",
+   "colour": "a3",
+   "label": "NaI",
+   "labelAt": [
+    3.4,
+    0.62
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 2,
+   "to": 0.8244795993830032
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0.82448,
+   "colour": "a1",
+   "label": "82%",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -10
+  },
+  {
+   "x": 2,
+   "y": 0.49338,
+   "colour": "a3",
+   "label": "49%",
+   "dx": 10,
+   "dy": 12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-exp(-0.34*x)",
+   "x": 2,
+   "y": 0.49338301,
+   "name": "NaI absorbs 49.3% in 2 cm"
+  },
+  {
+   "type": "point",
+   "expr": "1-exp(-0.87*x)",
+   "x": 2,
+   "y": 0.8244796,
+   "name": "LSO absorbs 82.4% in 2 cm"
+  }
+ ]
+}

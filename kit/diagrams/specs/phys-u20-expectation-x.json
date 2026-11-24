@@ -1,0 +1,135 @@
+{
+ "id": "phys-u20-expectation-x",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Expectation values",
+ "title": "⟨x⟩ = L/2 for symmetric densities",
+ "caption": "Both |ψ₁|² and |ψ₂|² of the infinite well are symmetric about x = L/2, so ⟨x⟩ = ∫x|ψ|²dx = L/2 for each. For the ground state that is also where the particle is most likely found. For n = 2 it is where it is never found: ⟨x⟩ is an average over many measurements, not a possible result.",
+ "alt": "Graph of probability density over the well: a single hump for the ground state and two humps with a zero in the middle for the first excited state, with a vertical line at the middle marked as the mean position for both.",
+ "description": [
+  "The horizontal axis is position x in units of L; the vertical axis is |ψ|² in units of 1/L.",
+  "Ground state |ψ₁|² = 2 sin²(πx/L): one hump, value 2 at the centre.",
+  "First excited state |ψ₂|² = 2 sin²(2πx/L): two humps at L/4 and 3L/4 and zero at the centre.",
+  "Each curve is a mirror image about x = L/2, so ⟨x⟩ = L/2 for both; for n = 2 the particle is never found at the mean position."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   2.5
+  ]
+ },
+ "ticks": [
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  0.25,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x / L",
+  "L|ψ|²"
+ ],
+ "marks": [
+  {
+   "x": 0.5,
+   "label": "⟨x⟩ = L/2",
+   "to": 2.3
+  }
+ ],
+ "curves": [
+  {
+   "expr": "2*sin(3.14159265*x)^2",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "width": 3.2,
+   "label": "|ψ₁|²",
+   "labelAt": [
+    0.07,
+    1
+   ]
+  },
+  {
+   "expr": "2*sin(2*3.14159265*x)^2",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a2",
+   "width": 3.2,
+   "label": "|ψ₂|²",
+   "labelAt": [
+    0.8,
+    2.3
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*sin(3.14159265*x)^2",
+   "x": 0.25,
+   "y": 1,
+   "name": "|ψ₁|² is symmetric about L/2 (value at L/4)"
+  },
+  {
+   "type": "point",
+   "expr": "2*sin(3.14159265*x)^2",
+   "x": 0.75,
+   "y": 1,
+   "name": "|ψ₁|² is symmetric about L/2 (value at 3L/4)"
+  },
+  {
+   "type": "point",
+   "expr": "2*sin(2*3.14159265*x)^2",
+   "x": 0.25,
+   "y": 2,
+   "name": "|ψ₂|² peaks at L/4"
+  },
+  {
+   "type": "point",
+   "expr": "2*sin(2*3.14159265*x)^2",
+   "x": 0.75,
+   "y": 2,
+   "name": "|ψ₂|² peaks at 3L/4"
+  },
+  {
+   "type": "point",
+   "expr": "2*sin(2*3.14159265*x)^2",
+   "x": 0.5,
+   "y": 0,
+   "name": "|ψ₂|² is zero at the mean position"
+  },
+  {
+   "type": "area",
+   "expr": "2*sin(2*3.14159265*x)^2",
+   "from": 0,
+   "to": 1,
+   "value": 1,
+   "name": "|ψ₂|² is normalised"
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "id": "phys-u43-tof-separation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u43",
+ "lesson": "Time-of-flight measurements",
+ "title": "Time-of-flight separation falls as 1/p²",
+ "caption": "Over L = 3.7 m a kaon and a pion of the same momentum arrive Δt ≈ L(m_K² − m_π²)/(2cp²) apart: 1.39 ns at p = 1 GeV, but only 0.15 ns at 3 GeV. The exact relativistic difference (dashed) is smaller at low p, where the approximation p ≫ m fails, but follows the same 1/p² fall. TOF is a low-momentum technique.",
+ "alt": "Pion–kaon flight time difference in nanoseconds against momentum from 0.5 to 3 GeV, falling steeply; the approximate curve lies above the exact dashed curve at low momentum, with 1.39 ns marked at 1 GeV.",
+ "description": [
+  "β = L/(ct); for the same p the lighter particle is faster.",
+  "Approximate: Δt = 3.7 × 0.225/(2 × 3 × 10⁸ × p²) with m_K² − m_π² = 0.244 − 0.019 = 0.225 GeV².",
+  "p = 1 GeV: 1.39 ns. With 80 ps resolution this is about 17σ.",
+  "p = 3 GeV: 0.15 ns, nine times smaller."
+ ],
+ "range": {
+  "x": [
+   0.5,
+   3
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "momentum p / GeV",
+  "Δt(K − π) / ns"
+ ],
+ "curves": [
+  {
+   "expr": "12.333333*0.225/(2*x^2)",
+   "colour": "a1",
+   "label": "Δt ≈ L(m_K² − m_π²)/2cp²",
+   "labelAt": [
+    1.35,
+    3.3
+   ]
+  },
+  {
+   "expr": "12.333333*(sqrt(1+0.244/x^2)-sqrt(1+0.019/x^2))",
+   "colour": "a2",
+   "dash": "6 5",
+   "label": "exact",
+   "labelAt": [
+    1.7,
+    0.85
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1.387,
+   "colour": "a1",
+   "label": "1.39 ns at 1 GeV",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "12.333333*0.225/(2*x^2)",
+   "x": 1,
+   "y": 1.3875,
+   "name": "Δt ≈ 1.39 ns at 1 GeV"
+  },
+  {
+   "type": "point",
+   "expr": "12.333333*0.225/(2*x^2)",
+   "x": 3,
+   "y": 0.154167,
+   "name": "falls to 1/9 at 3 GeV"
+  },
+  {
+   "type": "point",
+   "expr": "12.333333*(sqrt(1+0.244/x^2)-sqrt(1+0.019/x^2))",
+   "x": 1,
+   "y": 1.306004,
+   "name": "exact 1.31 ns at 1 GeV"
+  }
+ ]
+}

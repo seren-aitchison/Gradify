@@ -252,3 +252,32 @@ a.sm-topic:hover .go { color: var(--fg); transform: translateX(3px); }
 body.map-embedded .sub-nav, body.map-embedded .sub-foot { display: none; }
 body.map-embedded .map-page { padding-top: 8px; }
 body.map-embedded .aurora { display: none; }
+
+/* ---------- The Gradify look on every subject site: white rounded tiles with strong text, squircle numbers and arrows in
+   the site's colour, a turning chevron on questions, and the closing in the site's colour running into the Gradify
+   gradient. Tile tokens (--g-tile, --g-edge, --g-shadow) are the action card's, in kit/styles/base.css. ---------- */
+.sub-page :is(.sm-steps li, .sm-topic, .sm-feature, .sm-profile, .sm-levels li, .sm-faq details).glass {
+  background: var(--g-tile); border: 1px solid var(--g-edge); box-shadow: var(--g-shadow); -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 22px; }
+.sub-page .sm-levels li.glass { border-radius: 18px; }
+.sub-page .sm-steps em { border-radius: 11px; box-shadow: none; }
+.sub-page .sm-topic { transition: transform .32s cubic-bezier(.32, .72, 0, 1), box-shadow .32s cubic-bezier(.32, .72, 0, 1); }
+.sub-page a.sm-topic:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(22, 22, 48, .06), 0 12px 28px rgba(22, 22, 48, .1); }
+.sub-page .sm-topic .go { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-size: 0; top: 18px; right: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / 16px no-repeat, var(--accent); }
+.sub-page a.sm-topic:hover .go { transform: translateX(2px); }
+.sub-page .sm-faq summary { align-items: center; }
+.sub-page .sm-faq summary::after { content: ""; flex: none; width: 26px; height: 26px; border-radius: 9px; background: var(--accent); transition: transform .32s cubic-bezier(.32, .72, 0, 1);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='9' fill='%23000' fill-opacity='.16'/%3E%3Cpath d='M8 11l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 26px no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='9' fill='%23000' fill-opacity='.16'/%3E%3Cpath d='M8 11l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 26px no-repeat; }
+.sub-page .sm-faq details[open] summary::after { transform: rotate(180deg); }
+/* the closing: white on a deep shade of the site's colour, with the Gradify gradient along its top edge (":root" keeps scripts/theme-tokens.mjs off it) */
+:root .sub-page .sm-cta.glass { border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 30px; color: #fff;
+  background: radial-gradient(120% 90% at 100% 0%, rgba(255, 255, 255, .2), transparent 55%), linear-gradient(135deg, color-mix(in srgb, var(--accent) 36%, #0a0a1e) 0%, color-mix(in srgb, var(--accent) 54%, #0a0a1e) 100%);
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--accent) 30%, transparent); }
+:root .sub-page .sm-cta { position: relative; overflow: hidden; }
+:root .sub-page .sm-cta::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: linear-gradient(90deg, #4641ff, #9b3cf0 40%, #e0409f 70%, #ff6a2b); }
+:root .sub-page .sm-cta h2 { color: #fff; line-height: 1.08; } :root .sub-page .sm-cta p { color: rgba(255, 255, 255, .9); }
+:root .sub-page .sm-cta .btn-light { color: #16163a; background: #fff; border-color: transparent; box-shadow: 0 6px 18px rgba(0, 0, 0, .18); }
+:root .sub-page .sm-cta .btn-ghost { color: #fff; background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .4); box-shadow: none; }
+:root .sub-page .sm-cta .btn::before, :root .sub-page .sm-cta .btn::after { display: none; }
+@media (prefers-reduced-motion: reduce) { .sub-page .sm-topic, .sub-page .sm-faq summary::after { transition: none; } .sub-page a.sm-topic:hover { transform: none; } }

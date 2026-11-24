@@ -1,0 +1,97 @@
+{
+ "id": "phys-u47-transmissibility",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u47",
+ "lesson": "Vibration isolation",
+ "title": "Transmissibility of an undamped mount",
+ "caption": "With ζ ≈ 0 the transmissibility is T = 1/|1 − r²|. The machine at 25 Hz on mounts with f_n = 5 Hz has r = 5, so T = 1/24 = 0.0417: only 4.2% of the force reaches the floor. Isolation (T < 1) begins only above r = √2 ≈ 1.41; near r = 1 the force is amplified without limit.",
+ "alt": "Transmissibility against frequency ratio: very large near 1, crossing 1 at 1.41 and falling to 0.04 at a ratio of 5.",
+ "description": [
+  "T = 1/|1 − r²| for an undamped isolator, r = f/f_n.",
+  "At r = 5: T = 0.0417.",
+  "T = 1 at r = √2 ≈ 1.4142; below that the mount makes things worse.",
+  "At r = 1 the mount resonates and T is unbounded."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "frequency ratio r = f/f_n",
+  "transmissibility T"
+ ],
+ "curves": [
+  {
+   "expr": "1/abs(1-x^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 1.4142,
+   "y": 1,
+   "colour": "a4",
+   "label": "r = √2",
+   "dx": 8,
+   "dy": -12
+  },
+  {
+   "x": 5,
+   "y": 0.0417,
+   "colour": "a2",
+   "label": "r = 5, T = 0.042",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/abs(1-x^2)",
+   "x": 5,
+   "y": 0.041667,
+   "name": "T = 1/24 at r = 5"
+  },
+  {
+   "type": "point",
+   "expr": "1/abs(1-x^2)",
+   "x": 1.4142,
+   "y": 1,
+   "name": "T = 1 at r = √2",
+   "tol": 0.01
+  }
+ ]
+}

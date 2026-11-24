@@ -184,6 +184,7 @@ P: Clauser (1972) and Aspect (1982) found violations; Zeilinger extended them (N
 X: Calculate S for the singlet with optimal angles.
 > Three setting pairs differ by 45° and one by 135°, so each correlation has magnitude cos 45° = 1/√2
 > The signs line up so all four terms add: S = 4 × (1/√2) = 2√2 ≈ 2.83 > 2
+D: phys-u37-bell-correlation
 K: Bell violations rule out local hidden variables: quantum correlations are stronger than any classical, local explanation allows.
 !: Violating Bell's inequality does not allow faster-than-light signalling; it rules out local realism, not relativity.
 Q: What is the classical CHSH bound? | 2.
@@ -286,6 +287,7 @@ E: Grover: O(√N); Shor: O((log N)^{3}) vs best classical ~exp(c(log N)^{1/3}(l
 X: Search 10^{12} items. Compare classical and Grover queries.
 > Classical average ~N/2 = 5 × 10^{11}
 > Grover ~(π/4)√N ≈ 7.9 × 10^{5}
+D: phys-u37-grover-speedup
 K: Quantum algorithms win by engineering interference, and only for problems with the right structure.
 !: Quantum computers are not universally faster; for most everyday tasks they offer no advantage.
 Q: What is amplitude amplification? | Repeatedly boosting the amplitude of marked states, the technique behind Grover's algorithm.
@@ -339,6 +341,7 @@ P: The √N speed-up is provably optimal (BBBV theorem): no quantum algorithm se
 X: N = 4, one marked item. How many iterations?
 > sin θ = 1/2 ⇒ θ = 30°
 > One iteration: (2 × 1 + 1) × 30° = 90° ⇒ P = 1, found with certainty
+D: phys-u37-grover-n4
 X: N = 2^{20} ≈ 10^{6}. Iterations?
 > (π/4) × 1024 ≈ 804
 K: Grover rotates the state towards the answer with two reflections per step, needing ~√N steps.
@@ -421,6 +424,7 @@ H: Fighting noise
 P: Better materials, shielding, filtering and cryogenics extend coherence. Dynamical decoupling pulses refocus slow noise. Error mitigation (zero-noise extrapolation, probabilistic error cancellation) improves near-term results at the cost of extra shots. Ultimately, error correction is needed. Typical figures: superconducting qubits T_{1} ~ 100–300 μs, two-qubit fidelity ~99.5–99.9%; trapped ions T_{2} seconds and fidelities up to 99.9%+.
 X: A qubit has T_{1} = 100 μs. Probability it is still excited after 20 μs?
 > e^{−0.2} ≈ 0.82
+D: phys-u37-t1-decay
 X: Gate time 50 ns, T_{2} = 100 μs. Rough number of gates in the coherence time?
 > 100 μs/50 ns = 2000
 K: Decoherence is entanglement with the environment; T_{1} and T_{2} time-limit every computation.

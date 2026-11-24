@@ -1,0 +1,198 @@
+{
+ "id": "maths-u04-cosets-clock",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u04",
+ "lesson": "Quotient Structures",
+ "title": "The four cosets of ⟨4⟩ in ℤ₁₂",
+ "caption": "Adding 1, 2 or 3 to ⟨4⟩ = {0, 4, 8} turns the triangle round the clock. The four triangles use every number exactly once, so there are 12 ÷ 3 = 4 cosets, and 1 + ⟨4⟩ has order 4 in the quotient: ℤ₁₂/⟨4⟩ ≅ ℤ₄.",
+ "alt": "A clock face with 12 points. Four equilateral triangles, {0, 4, 8}, {1, 5, 9}, {2, 6, 10} and {3, 7, 11}, in four colours, each point in exactly one triangle.",
+ "description": [
+  "The subgroup ⟨4⟩ = {0, 4, 8} is a triangle on the clock.",
+  "Adding 1 turns it to {1, 5, 9}, adding 2 to {2, 6, 10} and adding 3 to {3, 7, 11}.",
+  "The four triangles are the cosets: congruent, with no point shared, and together they use all 12 numbers.",
+  "Adding 1 four times (0 → 1 → 2 → 3 → 4) returns to ⟨4⟩, so the quotient has order 4: ℤ₁₂/⟨4⟩ ≅ ℤ₄."
+ ],
+ "points": {
+  "0": [
+   0,
+   1
+  ],
+  "1": [
+   0.49999999999999994,
+   0.8660254037844387
+  ],
+  "2": [
+   0.8660254037844386,
+   0.5000000000000001
+  ],
+  "3": [
+   1,
+   6.123233995736766e-17
+  ],
+  "4": [
+   0.8660254037844387,
+   -0.4999999999999998
+  ],
+  "5": [
+   0.49999999999999994,
+   -0.8660254037844387
+  ],
+  "6": [
+   1.2246467991473532e-16,
+   -1
+  ],
+  "7": [
+   -0.4999999999999997,
+   -0.8660254037844388
+  ],
+  "8": [
+   -0.8660254037844385,
+   -0.5000000000000004
+  ],
+  "9": [
+   -1,
+   -1.8369701987210297e-16
+  ],
+  "10": [
+   -0.8660254037844386,
+   0.5000000000000001
+  ],
+  "11": [
+   -0.5000000000000004,
+   0.8660254037844384
+  ],
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "line"
+  }
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "0",
+    "4",
+    "8"
+   ],
+   "colour": "a1",
+   "opacity": 0.06
+  },
+  {
+   "pts": [
+    "1",
+    "5",
+    "9"
+   ],
+   "colour": "a2",
+   "opacity": 0.06
+  },
+  {
+   "pts": [
+    "2",
+    "6",
+    "10"
+   ],
+   "colour": "a3",
+   "opacity": 0.06
+  },
+  {
+   "pts": [
+    "3",
+    "7",
+    "11"
+   ],
+   "colour": "a4",
+   "opacity": 0.06
+  }
+ ],
+ "view": {
+  "x": [
+   -1.45,
+   1.45
+  ],
+  "y": [
+   -1.4,
+   1.4
+  ]
+ },
+ "height": [
+  340,
+  320
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11"
+   ],
+   "name": "the 12 clock points lie on the circle"
+  },
+  {
+   "type": "congruent",
+   "a": [
+    "0",
+    "4",
+    "8"
+   ],
+   "b": [
+    "1",
+    "5",
+    "9"
+   ],
+   "name": "the coset 1 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock"
+  },
+  {
+   "type": "congruent",
+   "a": [
+    "0",
+    "4",
+    "8"
+   ],
+   "b": [
+    "2",
+    "6",
+    "10"
+   ],
+   "name": "the coset 2 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock"
+  },
+  {
+   "type": "congruent",
+   "a": [
+    "0",
+    "4",
+    "8"
+   ],
+   "b": [
+    "3",
+    "7",
+    "11"
+   ],
+   "name": "the coset 3 + ⟨4⟩ is a copy of ⟨4⟩ turned round the clock"
+  }
+ ],
+ "fromLesson": [
+  "2 + ⟨4⟩",
+  "12/3 = 4 cosets"
+ ]
+}

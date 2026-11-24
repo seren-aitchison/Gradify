@@ -1,0 +1,138 @@
+{
+ "id": "maths-u06-sine-rule",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Sine Rule",
+ "title": "The sine rule in triangle PQR",
+ "caption": "With P = 52°, Q = 71° and so R = 57°, each side over the sine of its opposite angle is the same: p/sin 52° = 15/sin 57°, giving p = 15 sin 52°/sin 57° ≈ 14.1 cm.",
+ "alt": "A triangle PQR drawn to scale with angles 52° at P, 71° at Q, 57° at R, PQ = 15 cm opposite R, and QR = p ≈ 14.1 cm opposite P.",
+ "description": [
+  "The angles add to 180°, so R = 180° − 52° − 71° = 57°.",
+  "Side r = PQ = 15 cm is opposite R.",
+  "The sine rule gives p/sin 52° = 15/sin 57°.",
+  "So p = 15 sin 52°/sin 57° ≈ 14.1 cm."
+ ],
+ "points": {
+  "P": [
+   0,
+   0
+  ],
+  "Q": [
+   15,
+   0
+  ],
+  "R": [
+   10.41146637518293,
+   13.326069265774999
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "P",
+    "Q",
+    "R"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "angles": [
+  {
+   "at": "P",
+   "from": "Q",
+   "to": "R",
+   "deg": 52,
+   "label": "52°",
+   "colour": "a2",
+   "r": 38
+  },
+  {
+   "at": "Q",
+   "from": "R",
+   "to": "P",
+   "deg": 71,
+   "label": "71°",
+   "colour": "a3",
+   "r": 30,
+   "labelR": 12
+  },
+  {
+   "at": "R",
+   "from": "P",
+   "to": "Q",
+   "deg": 57,
+   "label": "57°",
+   "colour": "a4",
+   "r": 28,
+   "labelR": 14
+  }
+ ],
+ "lengths": [
+  {
+   "a": "P",
+   "b": "Q",
+   "value": 15,
+   "label": "r = 15 cm",
+   "side": -1
+  },
+  {
+   "a": "Q",
+   "b": "R",
+   "value": 14.0939,
+   "tol": 0.01,
+   "label": "p ≈ 14.1 cm",
+   "colour": "a2"
+  }
+ ],
+ "labelAt": {
+  "P": [
+   -12,
+   14
+  ],
+  "Q": [
+   12,
+   14
+  ],
+  "R": [
+   0,
+   -16
+  ]
+ },
+ "view": {
+  "x": [
+   -3,
+   18
+  ],
+  "y": [
+   -3,
+   15
+  ]
+ },
+ "height": [
+  360,
+  340
+ ],
+ "checks": [
+  {
+   "type": "angleSum",
+   "angles": [
+    0,
+    1,
+    2
+   ],
+   "total": 180
+  },
+  {
+   "type": "value",
+   "expr": "15*sin(52*pi/180)/sin(57*pi/180)",
+   "value": 14.093926454409713,
+   "tol": 0.000001,
+   "name": "p = 15 sin 52°/sin 57°"
+  }
+ ],
+ "fromLesson": [
+  "R = 180 − 52 − 71 = 57°"
+ ]
+}

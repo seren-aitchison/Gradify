@@ -1,0 +1,47 @@
+{
+ "id": "phys-u19-fibre-critical",
+ "renderer": "refraction",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Total internal reflection",
+ "title": "A fibre core meeting its cladding",
+ "caption": "Core n = 1.48 against cladding n = 1.46 gives sin θ_c = 1.46/1.48, so θ_c = 80.6° from the normal. A ray meeting the boundary at 75° is below it and leaks into the cladding (bending to 78.3°); at 85° it is totally internally reflected. Only rays nearly parallel to the fibre axis are guided.",
+ "alt": "Two ray diagrams at a core–cladding boundary: a ray at 75° escapes into the cladding at 78.3°; a ray at 85° is totally internally reflected; the critical angle is 80.6°.",
+ "description": [
+  "The critical angle is sin⁻¹(1.46/1.48) = 80.6° measured from the normal to the boundary.",
+  "A ray at 75° is less than 80.6°, so part of it refracts into the cladding, bending away from the normal to 78.3°.",
+  "A ray at 85° exceeds the critical angle: all the light is reflected back into the core.",
+  "Because the critical angle is so close to 90°, only rays travelling at less than about 9° to the axis are trapped."
+ ],
+ "panels": [
+  {
+   "n1": 1.48,
+   "n2": 1.46,
+   "i": 75,
+   "media": [
+    "core",
+    "cladding"
+   ],
+   "title": "75°: leaks out",
+   "expect": {
+    "r": 78.2816,
+    "critical": 80.57,
+    "tir": false
+   }
+  },
+  {
+   "n1": 1.48,
+   "n2": 1.46,
+   "i": 85,
+   "media": [
+    "core",
+    "cladding"
+   ],
+   "title": "85°: trapped",
+   "expect": {
+    "critical": 80.57,
+    "tir": true
+   }
+  }
+ ]
+}

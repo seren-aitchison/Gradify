@@ -1,0 +1,130 @@
+{
+ "id": "maths-u06-harbour-depth",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Periodic Functions",
+ "title": "Harbour depth d = 5 + 3 sin(πt/6)",
+ "caption": "The depth swings 3 m either side of 5 m. One full cycle takes 2π ÷ (π/6) = 12 hours, so the peaks at t = 3 and t = 15 are 12 hours apart, and the maximum depth is 5 + 3 = 8 m.",
+ "alt": "A wave of depth against time for 24 hours, with its peaks of 8 m at 3 and 15 hours, troughs of 2 m, and an arrow marking the period of 12 hours.",
+ "description": [
+  "The depth is d = 5 + 3 sin(πt/6), centred on 5 m with amplitude 3 m.",
+  "The period is 2π ÷ (π/6) = 12 hours.",
+  "The maximum occurs when sin = 1: d = 5 + 3 = 8 m, first at t = 3 hours."
+ ],
+ "range": {
+  "x": [
+   0,
+   24
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   6,
+   12,
+   18,
+   24
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "grid": [
+  6,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t (hours)",
+  "d (m)"
+ ],
+ "curves": [
+  {
+   "expr": "5+3*sin(0.5235987755982988*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 5,
+   "label": "mean depth 5 m"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    3,
+    9.2
+   ],
+   "to": [
+    15,
+    9.2
+   ],
+   "both": true,
+   "colour": "a2",
+   "label": "period 12 hours",
+   "labelAt": [
+    9,
+    9.7
+   ],
+   "anchor": "middle"
+  }
+ ],
+ "points": [
+  {
+   "x": 3,
+   "y": 8,
+   "label": "8 m",
+   "colour": "a2",
+   "dx": -8,
+   "dy": 22,
+   "anchor": "end"
+  },
+  {
+   "x": 15,
+   "y": 8,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "5+3*sin(0.5235987755982988*x)",
+   "domain": [
+    0,
+    12
+   ],
+   "x": 3,
+   "y": 8,
+   "name": "the first maximum is 8 m at t = 3"
+  },
+  {
+   "type": "point",
+   "expr": "5+3*sin(0.5235987755982988*x)",
+   "x": 15,
+   "y": 8,
+   "name": "the next maximum is at t = 15, 12 hours later"
+  },
+  {
+   "type": "point",
+   "expr": "5+3*sin(0.5235987755982988*x)",
+   "x": 12,
+   "y": 5,
+   "name": "after one period the depth is back to 5 m"
+  }
+ ],
+ "fromLesson": [
+  "Period = 2π ÷ (π/6) = 12 hours"
+ ]
+}

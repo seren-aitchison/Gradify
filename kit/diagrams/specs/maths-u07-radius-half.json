@@ -1,0 +1,58 @@
+{
+ "id": "maths-u07-radius-half",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Power Series",
+ "title": "The interval of convergence",
+ "caption": "The ratio of successive terms tends to |2x|, so the series converges for |2x| < 1, that is −½ < x < ½. The radius of convergence is R = ½.",
+ "alt": "A number line from −1 to 1 with the interval from −½ to ½ shaded, open at both ends, and centre 0.",
+ "description": [
+  "The ratio test gives |2x|(n + 1)/(n + 2) → |2x|.",
+  "The series converges when |2x| < 1.",
+  "That is −½ < x < ½: an interval centred at 0.",
+  "The radius of convergence is ½."
+ ],
+ "range": [
+  -1,
+  1
+ ],
+ "ticks": {
+  "step": 0.5
+ },
+ "minor": 0.1,
+ "narrowTicks": {
+  "step": 0.5
+ },
+ "tickLabels": {
+  "0": "0",
+  "1": "1",
+  "-1": "−1",
+  "-0.5": "−½",
+  "0.5": "½"
+ },
+ "intervals": [
+  {
+   "from": -0.5,
+   "to": 0.5,
+   "closed": [
+    false,
+    false
+   ],
+   "inequality": "-0.5 < x < 0.5",
+   "label": "converges: R = ½",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "1/2",
+   "value": "0.5",
+   "name": "|2x| < 1 gives |x| < 1/2"
+  }
+ ],
+ "fromLesson": [
+  "R = 1/2"
+ ]
+}

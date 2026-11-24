@@ -1,0 +1,85 @@
+{
+ "id": "phys-u24-pion-survival",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Particle decay",
+ "title": "How far a fast pion travels",
+ "caption": "A pion with τ = 26 ns and γ = 10 has mean decay length L = γβcτ ≈ 78 m. After one L, 1/e (37%) of the pions are left; without time dilation, cτ would give only 7.800000000000001 m.",
+ "alt": "A falling exponential curve, the fraction of pions surviving against distance, passing through 1 over e at 78 metres.",
+ "description": [
+  "N/N₀ = e^(−x/L) with L = γβcτ.",
+  "L ≈ 10 × 3 × 10⁸ × 2.6 × 10⁻⁸ = 78 m.",
+  "At x = 78 m the fraction left is 1/e = 0.368.",
+  "Without dilation: cτ = 7.800000000000001 m."
+ ],
+ "range": {
+  "x": [
+   0,
+   250
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance / m",
+  "fraction surviving"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x/78)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 78,
+   "y": 0.3679,
+   "colour": "a2",
+   "label": "1/e at 78 m",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-x/78)",
+   "x": 78,
+   "y": 0.367879,
+   "name": "1/e of the pions remain after 78 m"
+  },
+  {
+   "type": "value",
+   "expr": "exp(-x/78)",
+   "x": 7.800000000000001,
+   "between": [
+    0.9,
+    1
+   ],
+   "name": "after cτ = 7.8 m almost all remain"
+  }
+ ]
+}

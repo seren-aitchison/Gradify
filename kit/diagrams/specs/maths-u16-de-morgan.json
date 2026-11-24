@@ -1,0 +1,57 @@
+{
+ "id": "maths-u16-de-morgan",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u16",
+ "lesson": "Complements",
+ "title": "(A ∪ B)ᶜ in {1, …, 10}",
+ "caption": "A = evens and B = multiples of 3. The union covers 2, 3, 4, 6, 8, 9, 10, so its complement is {1, 5, 7}: the elements outside both circles, which is also Aᶜ ∩ Bᶜ.",
+ "alt": "A Venn diagram with evens in A, multiples of 3 in B, 6 in the overlap and 1, 5 and 7 outside both circles.",
+ "description": [
+  "Place 1 to 10: evens in A, multiples of 3 in B, and 6 in both.",
+  "A ∪ B holds everything inside either circle.",
+  "The complement (A ∪ B)ᶜ is what lies outside both circles: {1, 5, 7}.",
+  "That is the same as Aᶜ ∩ Bᶜ, as De Morgan says."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "evens"
+  },
+  {
+   "name": "B",
+   "label": "mult. of 3"
+  }
+ ],
+ "regions": {
+  "A": 4,
+  "AB": 1,
+  "B": 2,
+  "": 3
+ },
+ "universe": {
+  "label": "U = {1, …, 10}"
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "(A∪B)′",
+   "n": 3,
+   "name": "(A ∪ B)ᶜ = {1, 5, 7} has 3 elements"
+  },
+  {
+   "type": "count",
+   "event": "A′∩B′",
+   "n": 3,
+   "name": "Aᶜ ∩ Bᶜ has the same 3 elements"
+  },
+  {
+   "type": "total",
+   "n": 10,
+   "name": "the universe has 10 elements"
+  }
+ ],
+ "fromLesson": [
+  "{1, 5, 7}"
+ ]
+}

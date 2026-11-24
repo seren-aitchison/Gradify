@@ -44,6 +44,7 @@ H: Uses and limits
 P: GM counters are used for contamination monitoring, survey meters, school experiments and environmental monitoring. Thin mica end-windows let alpha and beta particles in; gamma detection efficiency is low (~1%). They count, but can't distinguish radiation types or energies; dose-rate readings depend on energy calibration (energy-compensated tubes help).
 X: A GM counter with τ = 100 μs reads 2000 counts s^{-1}. True rate?
 > n = 2000/(1 − 0.2) = 2500 counts s^{-1}
+D: phys-u43-dead-time
 X: Field at the wire surface (a = 25 μm, b = 1 cm, V = 800 V)?
 > ln(b/a) = ln 400 ≈ 6.0
 > E = 800/(25 × 10^{-6} × 6) ≈ 5.3 × 10^{6} V m^{-1}
@@ -72,6 +73,7 @@ E: E_{edge} = E_{γ}(2E_{γ}/m_{e}c^{2})/(1 + 2E_{γ}/m_{e}c^{2}) :: Compton edg
 X: Compton edge for Cs-137 (662 keV)?
 > 2E/m_{e}c^{2} = 1324/511 ≈ 2.59
 > E_{edge} = 662 × 2.59/3.59 ≈ 478 keV
+D: phys-u43-compton-edge
 X: 2000 photoelectrons are collected per event. Resolution limit?
 > 2.355/√2000 ≈ 5.3% FWHM
 K: Scintillators turn energy into light; light yield sets energy resolution, density sets efficiency, decay time sets speed.
@@ -263,6 +265,7 @@ X: Pion vs kaon separation at p = 1 GeV over L = 3.7 m.
 > m_{K}^{2} − m_{π}^{2} = 0.244 − 0.019 = 0.225 GeV^{2}
 > Δt ≈ 3.7 × 0.225/(2 × 3 × 10^{8} × 1) ≈ 1.39 ns
 > With 80 ps resolution, separation ≈ 17σ
+D: phys-u43-tof-separation
 X: A neutron covers 20 m in 1 μs. Energy?
 > v = 2 × 10^{7} m s^{-1}; E = ½mv^{2} = ½ × 1.675 × 10^{-27} × 4 × 10^{14} ≈ 3.3 × 10^{-13} J ≈ 2.1 MeV
 K: TOF gives velocity; with momentum, it gives mass. Separation shrinks as 1/p^{2}, so it suits lower momenta.
@@ -294,6 +297,7 @@ X: At p = 0.5 GeV, compare β for pion and proton.
 > π: E = √(0.25 + 0.0195) ≈ 0.519 ⇒ β ≈ 0.963
 > p: E = √(0.25 + 0.880) ≈ 1.063 ⇒ β ≈ 0.470
 > dE/dx ∝ 1/β^{2}: the proton loses ~4× more energy
+D: phys-u43-beta-momentum
 K: PID combines tracking, calorimetry, timing, Cherenkov and dE/dx; each technique covers a momentum range.
 !: PID performance must be calibrated on data; simulations rarely reproduce misidentification rates perfectly.
 Q: How is a muon identified? | It penetrates the calorimeters and leaves hits in the outer muon chambers.
@@ -401,6 +405,7 @@ X: Peaks at ADC 1650 (662 keV) and 3240 (1332 keV). Calibration?
 > a = (1332 − 662)/(3240 − 1650) = 670/1590 ≈ 0.421 keV per ADC count
 > b = 662 − 0.421 × 1650 ≈ −33 keV
 > An ADC value of 2500 corresponds to ≈ 0.421 × 2500 − 33 ≈ 1020 keV
+D: phys-u43-calibration
 X: A Z → ee peak reconstructs at 90.5 GeV (true 91.19 GeV). Scale correction?
 > 91.19/90.5 ≈ 1.0076: scale energies up by 0.76%
 K: Calibrate with known sources and standard candles, align with tracks, and monitor continuously.
@@ -510,6 +515,7 @@ P: Profile likelihood ratio tests with nuisance parameters for systematics are s
 X: S = 25, B = 16. Significance by S/√B and by the Asimov formula?
 > S/√B = 25/4 = 6.25
 > Asimov: √(2[41 ln(1 + 25/16) − 25]) = √(2[41 × 0.9410 − 25]) = √(2 × 13.58) ≈ 5.2
+D: phys-u43-significance
 X: A search over 100 independent bins finds a local 3σ (p = 1.35 × 10^{-3}). Global p?
 > 1 − (1 − 0.00135)^{100} ≈ 0.126, about 1.1σ globally
 K: Five sigma is the discovery standard; account for look-elsewhere effects and systematics before claiming anything.

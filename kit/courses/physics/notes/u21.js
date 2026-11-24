@@ -63,6 +63,7 @@ H: Successes and failures
 X: Radius and speed of the electron in hydrogen's n = 2 orbit?
 > r = 4a_{0} = 0.21 nm
 > v = αc/2 = 1.1 × 10^{6} m s^{-1}
+D: phys-u21-bohr-radii
 !: Bohr orbits don't exist; electrons in atoms aren't on circular tracks. The model's energies are right; its picture isn't.
 Q: What did Bohr assume about angular momentum? | It's quantised in units of ħ: mvr = nħ.
 Q: Why was the Bohr model abandoned? | It couldn't explain multi-electron atoms, fine structure or intensities, and its orbit picture conflicts with quantum mechanics.
@@ -148,6 +149,7 @@ H: Energy level diagrams
 - Rydberg states: highly excited, huge atoms (n ~ 100: ~1 μm across), very sensitive to fields.
 X: Sodium's 3p → 3s transition gives 589 nm light. Energy gap?
 > E = 1240/589 = 2.1 eV
+D: phys-u21-sodium-d
 !: Multi-electron atoms' levels depend on n and l, unlike hydrogen's, because of screening and electron interactions.
 Q: What causes term splitting within a configuration? | Electron–electron repulsion depending on how spins and orbital momenta combine.
 Q: What are Rydberg atoms? | Atoms with an electron in a very high n state, making them huge and highly sensitive to fields.
@@ -171,6 +173,7 @@ H: Exotic hydrogen-like systems
 X: Wavelength of the n = 2 → 1 transition in Li^{2+}?
 > E = 13.6 × 9 × (1 − 1/4) = 91.8 eV
 > λ = 1240/91.8 = 13.5 nm
+D: phys-u21-lithium-ion
 !: Hydrogen-like formulas only apply to one-electron systems; neutral helium needs the multi-electron treatment.
 Q: How do hydrogen-like energies scale with Z? | As Z^{2}.
 Q: What did muonic hydrogen measure? | The proton's charge radius, with surprising initial results (the proton radius puzzle).
@@ -194,6 +197,7 @@ H: X-ray spectra
 P: Inner-shell (K, L) transitions in heavy atoms behave almost hydrogen-like with Z_{eff} ≈ Z − 1. Moseley (1913) found √f ∝ (Z − 1) for Kα lines, establishing that atomic number (not mass) orders the elements and predicting missing ones.
 X: Moseley's law: Kα energy of copper (Z = 29)?
 > E ≈ 10.2 eV × (Z − 1)^{2} = 10.2 × 784 = 8.0 keV (measured 8.05 keV)
+D: phys-u21-moseley
 !: Electrons in multi-electron atoms aren't independent; correlation effects matter for accurate energies.
 Q: What is effective nuclear charge? | The net positive charge an electron experiences after shielding by other electrons.
 Q: What did Moseley's law establish? | Atomic number is the true ordering principle of elements.
@@ -345,6 +349,7 @@ H: Uses
 - Plasma diagnostics; street lighting colours (sodium yellow, mercury blue-green).
 X: A line in a quasar's spectrum: Hα observed at 984 nm. Redshift?
 > z = (984 − 656)/656 = 0.5
+D: phys-u21-balmer-series
 !: Absorption and emission lines occur at the same wavelengths for the same transitions; whether you see bright or dark lines depends on the gas's temperature relative to the background.
 Q: State Kirchhoff's laws of spectroscopy. | Hot dense objects give continuous spectra; hot thin gas gives emission lines; cool gas in front of a continuous source gives absorption lines.
 Q: Where was helium first discovered? | In the Sun's spectrum, during an 1868 eclipse.
@@ -412,6 +417,7 @@ P: A resonant field drives Rabi oscillations: the population sloshes between the
 X: Natural linewidth of a transition with τ = 16 ns (sodium D)?
 > Δf = 1/(2π × 16 × 10^{-9}) = 10 MHz
 > Doppler width at 500 K ≈ 1.5 GHz, 150 times larger
+D: phys-u21-natural-linewidth
 !: Doppler broadening hides natural linewidths in gases; saturation spectroscopy and cold atoms remove it.
 Q: What is natural linewidth? | The minimum linewidth set by the excited state's lifetime, Δf = 1/(2πτ).
 Q: What is a Rabi oscillation? | Periodic exchange of population between two levels driven by a resonant field.

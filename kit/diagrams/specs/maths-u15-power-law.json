@@ -1,0 +1,119 @@
+{
+ "id": "maths-u15-power-law",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u15",
+ "lesson": "Scale-Free Networks",
+ "title": "A power law is a straight line on log-log axes",
+ "caption": "With P(k) ∝ k^−2.5, log₁₀ P(k)/P(10) falls by 2.5 for each tenfold rise in k. From degree 10 to degree 100 it falls by 2.5, so P(100)/P(10) = 10^−2.5 ≈ 0.0032: about 316 times rarer.",
+ "alt": "A straight line of gradient minus 2.5 on log-log axes from degree 10 (x = 1, y = 0) to degree 100 (x = 2, y = minus 2.5).",
+ "description": [
+  "Take P(k) ∝ k^−2.5 and measure everything against degree 10.",
+  "On log axes, log₁₀ P(k)/P(10) = −2.5 (log₁₀ k − 1), a straight line of gradient −2.5.",
+  "At degree 100, log₁₀ k = 2, so the line is at −2.5.",
+  "That is a ratio of 10^−2.5 ≈ 0.0032: degree 100 is about 316 times rarer than degree 10."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.5
+  ],
+  "y": [
+   -3.5,
+   0.5
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ],
+  [
+   -3,
+   -2,
+   -1,
+   0
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "log₁₀ k",
+  "log₁₀ P(k)/P(10)"
+ ],
+ "curves": [
+  {
+   "expr": "-2.5*(x-1)",
+   "colour": "a1",
+   "domain": [
+    0.5,
+    2.3
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "label": "k = 10",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -14,
+   "anchor": "start"
+  },
+  {
+   "x": 2,
+   "y": -2.5,
+   "label": "k = 100: −2.5",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -12,
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-2.5*(x-1)",
+   "x": 1,
+   "y": 0,
+   "name": "degree 10 is the reference: ratio 1, log 0"
+  },
+  {
+   "type": "point",
+   "expr": "-2.5*(x-1)",
+   "x": 2,
+   "y": -2.5,
+   "name": "degree 100 sits 2.5 below"
+  },
+  {
+   "type": "slope",
+   "expr": "-2.5*(x-1)",
+   "x": 1.5,
+   "value": -2.5,
+   "name": "the gradient is −γ = −2.5"
+  },
+  {
+   "type": "value",
+   "expr": "10^(-2.5)",
+   "x": 0,
+   "between": [
+    0.0030622776601683796,
+    0.0032622776601683792
+   ],
+   "name": "10^−2.5 ≈ 0.0032"
+  }
+ ],
+ "fromLesson": [
+  "10^{−2.5}"
+ ]
+}

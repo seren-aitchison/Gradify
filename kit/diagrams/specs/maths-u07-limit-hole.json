@@ -1,0 +1,113 @@
+{
+ "id": "maths-u07-limit-hole",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Limits",
+ "title": "A limit where the function is undefined",
+ "caption": "At x = 4 the fraction is 0/0 and so undefined, but away from 4 it equals 1/(√x + 2). The graph has a hole at (4, ¼): values on both sides approach ¼, which is the limit.",
+ "alt": "The curve y = (√x − 2)/(x − 4) falling gently from left to right with a gap at x = 4, where the height is ¼.",
+ "description": [
+  "The function (√x − 2)/(x − 4) is not defined at x = 4.",
+  "Rewriting x − 4 = (√x − 2)(√x + 2) gives 1/(√x + 2) for x ≠ 4.",
+  "As x approaches 4 from either side, the height approaches 1/4: the hole is at (4, ¼)."
+ ],
+ "range": {
+  "x": [
+   0,
+   9
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   0.25,
+   0.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(sqrt(x)-2)/(x-4)",
+   "colour": "a1",
+   "domain": [
+    0,
+    3.99
+   ]
+  },
+  {
+   "expr": "(sqrt(x)-2)/(x-4)",
+   "colour": "a1",
+   "domain": [
+    4.01,
+    9
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.25,
+   "label": "¼"
+  },
+  {
+   "x": 4,
+   "to": 0.25
+  }
+ ],
+ "points": [
+  {
+   "x": 3.9999,
+   "y": 0.25,
+   "label": "x = 4: undefined, both sides → ¼",
+   "colour": "a2",
+   "dx": 12,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(sqrt(x)-2)/(x-4)",
+   "x": 3.9999,
+   "y": 0.25,
+   "name": "just left of 4 the value is ≈ ¼"
+  },
+  {
+   "type": "point",
+   "expr": "(sqrt(x)-2)/(x-4)",
+   "x": 4.0001,
+   "y": 0.25,
+   "name": "just right of 4 the value is ≈ ¼"
+  },
+  {
+   "type": "point",
+   "expr": "1/(sqrt(x)+2)",
+   "x": 4,
+   "y": 0.25,
+   "name": "1/(√4 + 2) = ¼"
+  }
+ ],
+ "fromLesson": [
+  "1/4"
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "id": "maths-u07-right-endpoint-strips",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Riemann Sums",
+ "title": "Four right-endpoint strips under x²",
+ "caption": "Each strip has width 0.5 and its height is x² at its right edge: 0.25, 1, 2.25, 4. They add to 7.5, so the estimate is 7.5 × 0.5 = 3.75. The true area is 8/3 ≈ 2.67: every strip pokes above the curve because x² is increasing.",
+ "alt": "The curve y = x² from 0 to 2 with four rectangles of width 0.5, each with its top-right corner on the curve, standing above the curve.",
+ "description": [
+  "Divide [0, 2] into 4 strips of width Δx = 0.5.",
+  "The right endpoints are 0.5, 1, 1.5 and 2, with heights 0.25, 1, 2.25 and 4.",
+  "The heights sum to 7.5; times 0.5 gives 3.75.",
+  "The exact area 8/3 is smaller: an overestimate."
+ ],
+ "range": {
+  "x": [
+   0,
+   2.4
+  ],
+  "y": [
+   0,
+   4.6
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   1,
+   2,
+   3,
+   4
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0.25
+    ],
+    [
+     0.5,
+     0.25
+    ],
+    [
+     0.5,
+     0
+    ],
+    [
+     0.5,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     2.25
+    ],
+    [
+     1.5,
+     2.25
+    ],
+    [
+     1.5,
+     0
+    ],
+    [
+     1.5,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "colour": "a2",
+   "width": 2
+  }
+ ],
+ "curves": [
+  {
+   "expr": "x^2",
+   "colour": "a1",
+   "domain": [
+    0,
+    2.2
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "x^2",
+   "from": 0,
+   "to": 2,
+   "colour": "a4",
+   "opacity": 0.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "x^2",
+   "from": 0,
+   "to": 2,
+   "value": 2.6666666666666665,
+   "tol": 0.001,
+   "name": "the exact area under x² from 0 to 2 is 8/3 ≈ 2.67"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 0.5,
+   "y": 0.25,
+   "name": "strip 1 has height 0.25 at x = 0.5"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1,
+   "y": 1,
+   "name": "strip 2 has height 1 at x = 1"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 1.5,
+   "y": 2.25,
+   "name": "strip 3 has height 2.25 at x = 1.5"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 2,
+   "y": 4,
+   "name": "strip 4 has height 4 at x = 2"
+  }
+ ],
+ "fromLesson": [
+  "3.75"
+ ]
+}

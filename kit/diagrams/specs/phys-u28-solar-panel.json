@@ -1,0 +1,32 @@
+{
+ "id": "phys-u28-solar-panel",
+ "renderer": "sankey",
+ "course": "physics",
+ "unit": "u28",
+ "lesson": "Solar cells",
+ "title": "Energy through a solar panel",
+ "caption": "The panel receives 1.6 m² × 1000 W m⁻² = 1600 W of sunlight. At 22% efficiency it delivers 352 W of electrical power; the other 1248 W (about 1250 W) is reflected or becomes heat, mostly because photons above the band gap waste their excess energy and those below it are not absorbed.",
+ "alt": "Energy flow diagram: 1600 watts of sunlight in, 352 watts of electrical power out and 1248 watts lost as heat and reflection.",
+ "description": [
+  "Input: 1600 W of sunlight.",
+  "Electrical output: 0.22 × 1600 = 352 W.",
+  "Losses: 1248 W."
+ ],
+ "units": "W",
+ "input": {
+  "label": "sunlight",
+  "value": 1600
+ },
+ "outputs": [
+  {
+   "label": "electrical power",
+   "value": 352,
+   "useful": true
+  },
+  {
+   "label": "heat and reflection",
+   "value": 1248
+  }
+ ],
+ "efficiency": 0.22
+}

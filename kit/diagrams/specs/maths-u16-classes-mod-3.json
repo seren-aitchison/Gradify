@@ -1,0 +1,66 @@
+{
+ "id": "maths-u16-classes-mod-3",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u16",
+ "lesson": "Equivalence Classes",
+ "title": "The classes of 'same remainder mod 3'",
+ "caption": "The three classes {3, 6}, {1, 4} and {2, 5} do not overlap and together contain all six elements: an equivalence relation splits the set into a partition.",
+ "alt": "Three separate groups of elements with no overlap: {3, 6}, {1, 4} and {2, 5}.",
+ "description": [
+  "Sort 1 to 6 by remainder on division by 3.",
+  "Remainder 0 gives {3, 6}, remainder 1 gives {1, 4}, remainder 2 gives {2, 5}.",
+  "No element is in two classes, and every element is in one.",
+  "So the classes partition the set."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "remainder 0"
+  },
+  {
+   "name": "B",
+   "label": "remainder 1"
+  },
+  {
+   "name": "C",
+   "label": "remainder 2"
+  }
+ ],
+ "regions": {
+  "A": 2,
+  "B": 2,
+  "C": 2
+ },
+ "universe": {
+  "label": "{1, …, 6}"
+ },
+ "checks": [
+  {
+   "type": "count",
+   "event": "A∩B",
+   "n": 0,
+   "name": "classes 0 and 1 do not overlap"
+  },
+  {
+   "type": "count",
+   "event": "A∩C",
+   "n": 0,
+   "name": "classes 0 and 2 do not overlap"
+  },
+  {
+   "type": "count",
+   "event": "B∩C",
+   "n": 0,
+   "name": "classes 1 and 2 do not overlap"
+  },
+  {
+   "type": "total",
+   "n": 6,
+   "name": "the three classes hold all 6 elements"
+  }
+ ],
+ "fromLesson": [
+  "Three classes partition the set"
+ ]
+}

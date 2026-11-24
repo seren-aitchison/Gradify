@@ -40,6 +40,7 @@ H: How much reflects
 - Grazing incidence: almost total reflection (a lake mirrors distant hills).
 X: Light enters glass (n = 1.52) at 40°. Refraction angle?
 > sin θ_{2} = sin 40°/1.52 = 0.423 ⇒ θ_{2} = 25°
+D: phys-u19-glass-refraction
 !: We see most objects by diffuse reflection; a perfect mirror is itself almost invisible.
 P: **Investigate with the lab.** Change the angle of incidence and compare the reflected and refracted rays.
 IX: optics
@@ -62,6 +63,7 @@ H: Measuring n
 P: Trace rays through a glass block at several angles; plot sin i against sin r; the gradient is n. Or find the critical angle, or use a refractometer. Refractive index identifies gems and measures sugar concentration in fruit juice.
 X: A gradient graph of sin i against sin r has gradient 1.48. What is the block likely made of?
 > n = 1.48: Perspex/acrylic (crown glass ~1.52)
+D: phys-u19-snell-gradient
 !: Use sines of angles, not the angles themselves; θ_{1}/θ_{2} ≠ n_{2}/n_{1} except at small angles.
 P: **Investigate with the lab.** Measure the angles of incidence and refraction at three settings and check that sin i / sin r stays constant.
 IX: optics
@@ -88,6 +90,7 @@ P: Even during TIR, a field penetrates about a wavelength into the outer medium,
 X: Critical angle for light leaving a fibre core (1.48) into cladding (1.46)?
 > sin θ_{c} = 1.46/1.48 ⇒ θ_{c} = 80.6°
 > Rays must strike the core boundary at more than 80.6° to the normal (nearly parallel to the axis)
+D: phys-u19-fibre-critical
 !: TIR only happens going from higher to lower index; light entering a denser medium always refracts in.
 P: **Investigate with the lab.** With light leaving glass, increase the angle until you find the critical angle and get total internal reflection.
 IX: optics
@@ -167,6 +170,7 @@ H: Combinations
 X: A projector lens (f = 10 cm) forms a sharp image on a screen 5 m away. Where's the slide, and magnification?
 > 1/u = 1/10 − 1/500 = 0.098 ⇒ u = 10.2 cm
 > m = 500/10.2 = 49
+D: phys-u19-projector-lens
 !: A virtual image can't be projected on a screen, but it can be seen or photographed through the lens.
 P: **Investigate with the lab.** Set the focal length and object distance, predict the image distance with the lens equation, then check.
 IX: optics
@@ -304,6 +308,7 @@ H: Quantum version
 P: Fire photons, electrons, neutrons, atoms or even molecules of ~2000 atoms one at a time: each lands at a single point, but the pattern builds up into fringes. Each particle's wavefunction passes through both slits. Measuring which slit it went through destroys the pattern.
 X: Laser light (633 nm), slits 0.25 mm apart, screen 2.0 m away. Fringe spacing?
 > x = 633 × 10^{-9} × 2.0/2.5 × 10^{-4} = 5.1 mm
+D: phys-u19-double-slit-fringes
 !: The fringes come from path difference to each point on the screen, not from light "bouncing" between the slits.
 P: **Investigate with the lab.** In double-slit mode, halve the slit separation and see the fringes spread twice as far apart. Then move the screen further away.
 IX: interference
@@ -328,6 +333,7 @@ E: V = (I_{max} − I_{min})/(I_{max} + I_{min})
 - Hanbury Brown–Twiss intensity interferometry measures star sizes from intensity correlations.
 X: Coherence length of an LED with λ = 630 nm, Δλ = 20 nm?
 > l_{c} = (630 × 10^{-9})^{2}/(20 × 10^{-9}) ≈ 20 μm
+D: phys-u19-coherence-lengths
 !: Two independent lasers can interfere briefly (beats), but their relative phase drifts; for stable fringes, use beams from one source.
 P: **Investigate with the lab.** Compare the fringes for different slit separations and screen distances, and note that clear fringes need a steady phase relationship between the slits.
 IX: interference
@@ -353,6 +359,7 @@ H: Uses and limits
 X: The pupil (3 mm) viewing at 550 nm. Smallest resolvable angle?
 > θ = 1.22 × 5.5 × 10^{-7}/0.003 = 2.2 × 10^{-4} rad ≈ 0.8′
 > About the eye's actual acuity (~1′)
+D: phys-u19-pupil-resolution
 !: Diffraction happens at every edge and aperture; it's not a defect but a fundamental property of waves.
 P: **Investigate with the lab.** Switch to single-slit mode and narrow the slit: the central maximum gets wider. Widen it and the light spreads less.
 IX: interference
@@ -376,6 +383,7 @@ E: I = I_{0}(sin β/β)^{2}(sin Nγ/sin γ)^{2}, γ = (πd sin θ)/λ
 - **Missing orders**: when a principal maximum falls on a single-slit minimum (d/a an integer).
 X: Double slit with d = 0.3 mm and a = 0.1 mm. Which interference orders are missing?
 > d/a = 3: orders 3, 6, 9… coincide with single-slit minima
+D: phys-u19-missing-orders
 !: The single-slit envelope multiplies the interference pattern; the two effects aren't separate patterns side by side.
 P: **Investigate with the lab.** Set the slit separation to three times the slit width and find the missing bright fringe where it meets a diffraction minimum.
 IX: interference
@@ -403,6 +411,7 @@ P: High-resolution gratings (R ~ 100 000) measure Doppler shifts of stellar line
 X: A grating with 600 lines per mm: angle of the first-order sodium line (589 nm)? Can it resolve the sodium doublet (589.0, 589.6 nm) with 2 cm illuminated?
 > d = 1.67 μm; sin θ = 0.353 ⇒ θ = 20.7°
 > N = 12 000; R = 12 000 in first order; needed: 589/0.6 ≈ 1000 ✓
+D: phys-u19-grating-orders
 !: Gratings send red farther than violet (opposite to prisms) and produce several overlapping orders that can confuse spectra.
 P: **Investigate with the lab.** Use a grating with 600 lines per mm and find how many orders red light at 700 nm can show. Then try shorter wavelengths.
 IX: interference
@@ -426,6 +435,7 @@ H: Uses
 - **Optical coherence tomography (OCT)**: low-coherence interferometry images the retina in 3D.
 X: Moving a mirror changes the pattern by 2000 fringes for λ = 632.8 nm. Mirror movement?
 > d = 2000 × λ/2 = 0.633 mm
+D: phys-u19-michelson-fringes
 !: Each fringe corresponds to a mirror movement of λ/2, not λ, because light travels the arm twice.
 Q: How much must a Michelson mirror move to shift one fringe? | λ/2.
 Q: What did the Michelson–Morley experiment find? | No evidence for motion through an ether.
@@ -449,6 +459,7 @@ H: Uses
 X: A Fabry–Pérot with d = 5 mm in air and mirrors of R = 0.95. FSR and linewidth?
 > FSR = 3 × 10^{8}/0.01 = 30 GHz
 > F = π√0.95/0.05 ≈ 61; Δf ≈ 0.49 GHz
+D: phys-u19-fabry-perot-peaks
 !: High finesse requires both high reflectivity and very flat, parallel surfaces; imperfect surfaces limit the achievable finesse.
 Q: What is the free spectral range? | The frequency spacing between successive transmission peaks, c/(2nd).
 Q: What does finesse measure? | The ratio of free spectral range to peak width; set by mirror reflectivity.
@@ -474,6 +485,7 @@ H: Applications
 X: A polariser and analyser at 30°. Unpolarised light of 100 W m^{-2}. Transmitted?
 > After the polariser: 50 W m^{-2}
 > After the analyser: 50 cos^{2}30° = 37.5 W m^{-2}
+D: phys-u19-malus-analyser
 !: A polariser doesn't "rotate" light into its axis; it removes the perpendicular component.
 Q: How does an LCD use polarisation? | Liquid crystals rotate light's polarisation between crossed polarisers; voltage controls how much passes.
 Q: Why does skylight show polarisation? | Rayleigh scattering polarises light, most strongly at 90° from the Sun.
@@ -495,6 +507,7 @@ H: Uses
 - Brewster angle microscopy images monolayers on water.
 X: Brewster's angle for light hitting diamond (n = 2.42) from air?
 > θ_{B} = tan^{-1} 2.42 = 67.5°
+D: phys-u19-brewster-diamond
 !: Only p-polarised light has zero reflection at Brewster's angle; s-polarised light still reflects.
 Q: State Brewster's law. | tan θ_{B} = n_{2}/n_{1}.
 Q: Why do gas lasers with Brewster windows emit polarised light? | The windows have no loss for p-polarisation, so it dominates lasing.
@@ -517,6 +530,7 @@ H: Induced birefringence
 P: Stress (photoelasticity), electric fields (Kerr, Pockels effects) and magnetic fields (Cotton–Mouton) induce birefringence. Liquid crystals are strongly birefringent fluids whose axis can be turned by voltage, the basis of LCDs.
 X: Thickness of a quartz quarter-wave plate (n_{e} − n_{o} = 0.0092) at 633 nm?
 > d = λ/(4Δn) = 633/(4 × 0.0092) nm = 17 μm (first order)
+D: phys-u19-quartz-retardation
 !: A wave plate works properly only at its design wavelength; at other wavelengths its retardation is wrong.
 Q: What is birefringence? | Having different refractive indices for two polarisations of light.
 Q: What does a half-wave plate do to linear polarisation? | Rotates it by twice the angle between the polarisation and the plate's axis.
@@ -539,6 +553,7 @@ H: Uses
 - Circular dichroism spectroscopy reveals protein secondary structure.
 X: A 20 cm tube of sucrose solution rotates light by 13.3°. Concentration ([α] = 66.5° dm^{-1} (g/mL)^{-1})?
 > c = 13.3/(66.5 × 2) = 0.10 g mL^{-1}
+D: phys-u19-sucrose-rotation
 !: Faraday rotation (magnetic) and optical activity both rotate polarisation, but Faraday rotation doubles on reflection back through the medium while optical activity cancels.
 Q: What causes optical activity? | Chiral molecules with different refractive indices for left- and right-circular polarisation.
 Q: How is optical activity used in industry? | Polarimeters measure concentrations of sugars and check the chirality of drugs.
@@ -583,6 +598,7 @@ H: Applications
 X: A 30 cm HeNe laser cavity. Longitudinal mode spacing? How many modes fit in the 1.5 GHz gain bandwidth?
 > Δf = 3 × 10^{8}/0.6 = 500 MHz
 > About 3 modes
+D: phys-u19-cavity-modes
 !: A laser's linewidth is much narrower than its gain medium's bandwidth because the cavity selects discrete modes.
 Q: What sets the frequency spacing of longitudinal modes? | The cavity length: c/(2nL).
 Q: What is cavity ring-down spectroscopy? | Measuring how fast light leaks from a high-finesse cavity; absorbing gases shorten the ring-down time.
@@ -606,6 +622,7 @@ H: Other uses
 - Endoscopes (bundles of fibres), fibre lasers (industrial cutting), fibre sensors (strain, temperature, distributed acoustic sensing for earthquakes), gyroscopes.
 X: A 100 km link at 0.2 dB km^{-1}. Fraction of power received?
 > Loss = 20 dB ⇒ 1% received
+D: phys-u19-fibre-loss
 !: Bending a fibre too tightly lets light escape: TIR fails when the angle drops below critical.
 P: **Investigate with the lab.** Find the critical angle for light leaving glass and push beyond it to trap the light by total internal reflection.
 IX: optics
@@ -693,6 +710,7 @@ P: Adaptive optics images individual photoreceptor cells in the living eye, shar
 X: Diffraction limit of an 8 m telescope at 2.2 μm vs typical seeing (0.6″)?
 > θ = 1.22 × 2.2 × 10^{-6}/8 = 3.4 × 10^{-7} rad ≈ 0.07″
 > Adaptive optics can improve resolution ~9 times
+D: phys-u19-seeing-limit
 !: Adaptive optics works best at longer (infrared) wavelengths; visible correction needs many more actuators and faster updates.
 Q: What limits ground-based telescope resolution without adaptive optics? | Atmospheric turbulence (seeing).
 Q: What is a laser guide star? | An artificial reference star made by a laser exciting atoms high in the atmosphere.

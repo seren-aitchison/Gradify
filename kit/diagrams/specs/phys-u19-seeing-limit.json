@@ -1,0 +1,44 @@
+{
+ "id": "phys-u19-seeing-limit",
+ "renderer": "scale",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Adaptive optics",
+ "title": "Angular resolution: diffraction limit against seeing",
+ "caption": "An 8 m telescope at 2.2 μm could resolve θ = 1.22λ/D = 0.07″, but turbulence limits it to about 0.6″ unless adaptive optics corrects the wavefront: a gain of about 9×. For comparison the 3 mm pupil of the eye is diffraction-limited at 46″.",
+ "alt": "A logarithmic scale of angle in arcseconds from 0.01 to 100 with the 8 metre telescope's diffraction limit at 0.07, typical seeing at 0.6 and the eye's diffraction limit at 46.",
+ "description": [
+  "A horizontal logarithmic scale of angular resolution in arcseconds (smaller is sharper).",
+  "The 8 m telescope's diffraction limit at 2.2 μm: 1.22 × 2.2 × 10⁻⁶/8 = 3.4 × 10⁻⁷ rad = 0.07″.",
+  "Typical seeing without correction: 0.6″, about 9 times worse; adaptive optics recovers most of the difference.",
+  "The eye (3 mm pupil, 550 nm): 46″, shown for scale."
+ ],
+ "quantity": "angular resolution",
+ "units": "arcsec",
+ "min": -2,
+ "max": 2,
+ "markers": [
+  {
+   "label": "8 m telescope, diffraction limit 0.07″",
+   "value": 0.0692
+  },
+  {
+   "label": "typical seeing 0.6″",
+   "value": 0.6
+  },
+  {
+   "label": "eye, 3 mm pupil: 46″",
+   "value": 46.1346
+  }
+ ],
+ "claims": [
+  {
+   "type": "orders",
+   "a": "8 m telescope, diffraction limit 0.07″",
+   "b": "typical seeing 0.6″",
+   "value": 0.94,
+   "tol": 0.05,
+   "name": "seeing is about 9 times the diffraction limit"
+  }
+ ]
+}

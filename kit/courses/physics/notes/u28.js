@@ -211,6 +211,7 @@ P: Bipolar diodes store minority charge when forward-biased; switching off takes
 X: A diode's current at 0.6 V is 1 mA. Current at 0.66 V (n = 1, 300 K)?
 > Ratio = e^{0.06/0.0259} = e^{2.32} ≈ 10
 > 10 mA: about 60 mV per decade
+D: phys-u28-diode-iv
 !: Diode forward voltage falls ~2 mV per °C; used as a temperature sensor, but it can cause thermal runaway in parallel diodes.
 Q: State the Shockley diode equation. | I = I_{s}(e^{qV/nk_{B}T} − 1).
 Q: Why do Schottky diodes switch faster? | They conduct with majority carriers only, storing no minority charge.
@@ -300,6 +301,7 @@ H: Scaling and its limits
 P: Shrinking dimensions improved speed, density and power for decades (Dennard scaling). At nanometre sizes, problems arose: gate leakage (fixed by high-κ dielectrics and metal gates), short-channel effects (fixed by FinFETs and gate-all-around nanosheets), and the 60 mV per decade limit on switching voltage. "Node" names like "3 nm" no longer correspond to a physical gate length.
 X: A MOSFET with μC_{ox}W/L = 2 mA V^{-2} and V_{T} = 0.5 V at V_{GS} = 1.5 V. Saturation current?
 > I_{D} = ½ × 2 × (1.0)^{2} = 1 mA
+D: phys-u28-mosfet-output
 !: The 60 mV per decade subthreshold slope is a thermal limit (k_{B}T/q × ln 10); beating it needs new physics (tunnel FETs, negative capacitance).
 Q: What creates the channel in a MOSFET? | An inversion layer of carriers induced by the gate voltage.
 Q: Why were FinFETs introduced? | To improve gate control over short channels and reduce leakage.
@@ -344,6 +346,7 @@ H: Materials and wavelengths
 X: Responsivity of a silicon photodiode at 850 nm with η = 0.8?
 > R = 0.8 × 1.6 × 10^{-19} × 850 × 10^{-9}/(6.63 × 10^{-34} × 3 × 10^{8})
 > ≈ 0.55 A W^{-1}
+D: phys-u28-photodiode-responsivity
 !: A photodiode can't detect photons with energy below the band gap; that sets its long-wavelength cut-off.
 Q: How does a photodiode generate current? | Absorbed photons create electron–hole pairs separated by the junction field.
 Q: What is an avalanche photodiode? | A photodiode with internal gain from impact ionisation under high reverse bias.
@@ -369,6 +372,7 @@ H: Economics
 P: Module prices fell more than 99% since 1976 (Swanson's law: ~20% cheaper per doubling of cumulative production). Global capacity passed 1 TW in 2022. Energy payback times are now ~1 year.
 X: A 1.6 m^{2} panel under 1000 W m^{-2} at 22% efficiency. Output?
 > P = 0.22 × 1000 × 1.6 = 352 W
+D: phys-u28-solar-panel
 !: Higher temperatures reduce solar cell voltage and efficiency (~0.3–0.4% per °C for silicon).
 Q: What is the Shockley–Queisser limit? | The maximum efficiency (~33%) of a single-junction solar cell under unconcentrated sunlight.
 Q: What two losses limit single-junction efficiency? | Non-absorption of sub-gap photons and thermalisation of excess photon energy.

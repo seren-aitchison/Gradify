@@ -2,9 +2,19 @@
 // On the first visit to any Gradify page, the utm_* tags in the link (and the referring site's host name)
 // are kept in this browser. When the learner later makes an account, they're written once to the account's
 // user_metadata.first_touch (see recordFirstTouch, called by the app after sign-in).
-// Kept: utm_source, utm_medium, utm_campaign, utm_content, ref, the referrer's host, the landing path, and the day.
+// Kept: utm_source, utm_medium, utm_campaign, utm_content, ref, the referrer's host, the landing path, and the day,
+// and, when that referrer is an AI assistant (ChatGPT, Perplexity, Gemini, Claude, Copilot), which one ("ai").
 const KEY = "gradify.firsttouch";
 const TAGS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "ref"];
+
+// AI assistants that send visitors, by the referring host (or utm_source, which ChatGPT adds to links it cites)
+export const AI_SOURCES = [[/(^|\.)(chatgpt\.com|chat\.openai\.com|openai\.com)$/, "chatgpt"], [/(^|\.)perplexity\.ai$/, "perplexity"], [/(^|\.)gemini\.google\.com$/, "gemini"], [/(^|\.)claude\.ai$/, "claude"], [/(^|\.)copilot\.microsoft\.com$/, "copilot"], [/(^|\.)(you\.com|phind\.com)$/, "other-ai"]];
+/** "chatgpt", "perplexity", … for a referring host or utm_source that is an AI assistant, otherwise null */
+export function aiSource(host) {
+  const h = String(host || "").toLowerCase().replace(/^www\./, "");
+  if (h === "chatgpt.com" || h === "chatgpt") return "chatgpt";
+  return AI_SOURCES.find(([re]) => re.test(h))?.[1] || null;
+}
 
 export function readFirstTouch() {
   try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; }
@@ -20,6 +30,8 @@ export function touchFrom(loc = globalThis.location, doc = globalThis.document) 
     if (r && r.hostname !== loc?.hostname) t.referrer = r.hostname.slice(0, 100);
   } catch { /* not a URL */ }
   if (!Object.keys(t).length) return null;
+  const ai = aiSource(t.referrer) || aiSource(t.utm_source);
+  if (ai) t.ai = ai;
   t.landing = String(loc?.pathname || "/").slice(0, 200);
   t.day = new Date().toISOString().slice(0, 10);
   return t;

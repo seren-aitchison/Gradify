@@ -1,0 +1,40 @@
+{
+ "id": "phys-u21-sodium-d",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u21",
+ "lesson": "Atomic energy levels",
+ "title": "Sodium's yellow line",
+ "caption": "The 3p level lies 2.105 eV above the 3s ground state. An electron falling between them emits a photon of λ = hc/ΔE = 589 nm, the yellow of sodium street lamps.",
+ "alt": "Energy levels of sodium: 3s at minus 5.14 electronvolts and 3p at minus 3.03, with a downward arrow emitting 589 nanometre yellow light.",
+ "description": [
+  "3s (ground state): -5.139 eV. 3p: -3.034 eV.",
+  "ΔE = 2.105 eV.",
+  "λ = 1239.84 eV nm / 2.105 eV = 589 nm, in the visible (yellow)."
+ ],
+ "levels": [
+  {
+   "E": -5.139,
+   "label": "3s"
+  },
+  {
+   "E": -3.034,
+   "label": "3p"
+  },
+  {
+   "E": 0,
+   "label": "ionised"
+  }
+ ],
+ "transitions": [
+  {
+   "from": 1,
+   "to": 0,
+   "lambda": 589,
+   "E": 2.105,
+   "kind": "emission",
+   "region": "visible"
+  }
+ ],
+ "spectrum": true
+}

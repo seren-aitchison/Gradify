@@ -1,0 +1,139 @@
+{
+ "id": "phys-u18-wr90-velocities",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Waveguides",
+ "title": "Group and phase velocity in WR-90 waveguide",
+ "caption": "The TE₁₀ cut-off of WR-90 (a = 2.29 cm) is f_c = c/2a = 6.6 GHz. Above it v_g = c√(1 − (f_c/f)²) rises from zero while v_p = c/√(1 − (f_c/f)²) falls from infinity; at 10 GHz, inside X-band, v_g = 0.76c and v_p = 1.32c. The product v_g v_p = c² always, so the phase velocity exceeds c while the signal travels slower than c.",
+ "alt": "Graph of velocity relative to c against frequency from 6.5 to 12 gigahertz: the group velocity rising from zero at 6.6 GHz towards 1, and the phase velocity falling from a large value towards 1, with the X-band range 8 to 12 GHz shaded.",
+ "description": [
+  "The horizontal axis is frequency in gigahertz; the vertical axis is velocity in units of c.",
+  "Below f_c = 3 × 10⁸/(2 × 0.0229) = 6.6 GHz nothing propagates.",
+  "The group velocity starts at zero at cut-off and rises towards c; at 10 GHz it is 0.76c.",
+  "The phase velocity starts very large at cut-off and falls towards c; at 10 GHz it is 1.32c. The two multiply to c².",
+  "X-band, 8–12 GHz, is shaded."
+ ],
+ "range": {
+  "x": [
+   6.5,
+   12
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  330,
+  310
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "f / GHz",
+  "velocity / c"
+ ],
+ "bands": [
+  {
+   "x": [
+    8,
+    12
+   ],
+   "label": "X-band",
+   "colour": "a4"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(1-(6.550218340611353/x)^2)",
+   "domain": [
+    6.551218340611354,
+    12
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "group v_g",
+   "labelAt": [
+    7,
+    0.85
+   ],
+   "samples": 400
+  },
+  {
+   "expr": "1/sqrt(1-(6.550218340611353/x)^2)",
+   "domain": [
+    6.551218340611354,
+    12
+   ],
+   "colour": "a2",
+   "width": 3.4,
+   "label": "phase v_p",
+   "labelAt": [
+    9.2,
+    1.9
+   ],
+   "samples": 400
+  }
+ ],
+ "points": [
+  {
+   "x": 10,
+   "y": 0.7556,
+   "label": "0.76",
+   "dx": 8,
+   "dy": 16
+  },
+  {
+   "x": 10,
+   "y": 1.3234,
+   "colour": "a2",
+   "label": "1.32",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(1-(6.550218340611353/x)^2)",
+   "x": 10,
+   "y": 0.7556,
+   "name": "v_g = 0.76c at 10 GHz"
+  },
+  {
+   "type": "point",
+   "expr": "1/sqrt(1-(6.550218340611353/x)^2)",
+   "x": 10,
+   "y": 1.3234,
+   "name": "v_p = 1.32c at 10 GHz"
+  },
+  {
+   "type": "point",
+   "expr": "(sqrt(1-(6.550218340611353/x)^2))*(1/sqrt(1-(6.550218340611353/x)^2))",
+   "x": 10,
+   "y": 1,
+   "name": "v_g v_p = c²"
+  }
+ ]
+}

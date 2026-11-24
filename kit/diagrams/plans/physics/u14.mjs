@@ -13,7 +13,7 @@ export default [
   ["u14-08", null, FORMULA],
   ["u14-09", "graph", "phys-u14-counterflow", "the counterflow example: oil and water temperature lines with gaps of 80 K and 70 K, ΔT_lm = 74.9 K"],
   ["u14-10", null, "needs renderer: a layered wall with a temperature profile through series thermal resistances; the lesson's numbers give R only, no temperatures"],
-  ["u14-11", null, "the worked example's selective-surface result (634 K) does not follow from 0.1σT⁴ = 950 (640 K), so no diagram can recompute it; reported for the notes owner"],
+  ["u14-11", null, "the worked example is two one-line substitutions (black 364 K, selective 640 K; corrected from 634 K on 23 Nov 2026); a picture would only restate them"],
   ["u14-12", null, "Kirchhoff's law and a table of emissivities; the thermal-camera example is one ratio"],
   ["u14-13", null, "forcing from CO₂ is a logarithm formula; the greenhouse layer model needs a radiation-balance renderer"],
   ["u14-14", null, DEF],

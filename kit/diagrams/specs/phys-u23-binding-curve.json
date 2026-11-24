@@ -1,0 +1,152 @@
+{
+ "id": "phys-u23-binding-curve",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Nuclear binding energy",
+ "title": "Binding energy per nucleon",
+ "caption": "Binding energy per nucleon rises steeply through the light nuclei (⁴He 7.07 MeV), peaks near 8.8 MeV around iron and nickel, and falls slowly to about 7.6 MeV for uranium. Light nuclei release energy by fusing, heavy ones by splitting. The curve is the semi-empirical mass formula with the lesson's coefficients; the points are measured values.",
+ "alt": "Binding energy per nucleon against mass number: a curve rising steeply to a broad peak of about 8.8 MeV near mass 56 to 62, then falling gently to about 7.6 at 238, with measured points for helium-4, iron-56 and uranium-238.",
+ "description": [
+  "Curve: B/A from the semi-empirical mass formula, a_V = 15.8, a_S = 18.3, a_C = 0.71, a_A = 23.2 MeV, along the valley of stability.",
+  "Points: ⁴He 7.07 MeV, ⁵⁶Fe 8.79 MeV, ²³⁸U 7.57 MeV per nucleon.",
+  "The formula gives 8.68 MeV at A = 56 and 7.58 MeV at A = 238.",
+  "Fusion moves nuclei up the steep left side; fission moves them up from the right."
+ ],
+ "range": {
+  "x": [
+   0,
+   250
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   50,
+   100,
+   150,
+   200,
+   250
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mass number A",
+  "binding energy per nucleon / MeV"
+ ],
+ "curves": [
+  {
+   "expr": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2",
+   "domain": [
+    12,
+    250
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 4,
+   "y": 7.07,
+   "colour": "a2",
+   "label": "⁴He",
+   "dx": 10,
+   "dy": 0
+  },
+  {
+   "x": 56,
+   "y": 8.79,
+   "colour": "a2",
+   "label": "⁵⁶Fe",
+   "dx": 0,
+   "dy": -16
+  },
+  {
+   "x": 238,
+   "y": 7.57,
+   "colour": "a2",
+   "label": "²³⁸U",
+   "anchor": "end",
+   "dx": -8,
+   "dy": -14
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    20,
+    4
+   ],
+   "to": [
+    45,
+    7.4
+   ],
+   "colour": "a4",
+   "label": "fusion",
+   "labelAt": [
+    34,
+    3.6
+   ]
+  },
+  {
+   "from": [
+    200,
+    5.2
+   ],
+   "to": [
+    110,
+    7.6
+   ],
+   "colour": "a3",
+   "label": "fission",
+   "labelAt": [
+    168,
+    5.4
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2",
+   "x": 56,
+   "between": [
+    8.6,
+    8.95
+   ],
+   "name": "near 8.8 MeV per nucleon at iron"
+  },
+  {
+   "type": "value",
+   "expr": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2",
+   "x": 238,
+   "between": [
+    7.4,
+    7.75
+   ],
+   "name": "about 7.6 MeV per nucleon for uranium"
+  },
+  {
+   "type": "order",
+   "a": "15.8-18.3*x^(-1/3)-0.71*(x/(2+0.0153*x^(2/3)))^2/x^(4/3)-23.2*(x-2*(x/(2+0.0153*x^(2/3))))^2/x^2",
+   "b": "15.8-18.3*(x*0+238)^(-1/3)-0.71*((x*0+238)/(2+0.0153*(x*0+238)^(2/3)))^2/(x*0+238)^(4/3)-23.2*((x*0+238)-2*((x*0+238)/(2+0.0153*(x*0+238)^(2/3))))^2/(x*0+238)^2",
+   "x": 56,
+   "rel": ">",
+   "name": "iron is more tightly bound than uranium"
+  }
+ ]
+}

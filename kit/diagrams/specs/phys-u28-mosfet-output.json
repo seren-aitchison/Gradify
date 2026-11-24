@@ -1,0 +1,112 @@
+{
+ "id": "phys-u28-mosfet-output",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u28",
+ "lesson": "MOSFETs",
+ "title": "MOSFET output characteristic",
+ "caption": "With V_GS = 1.5 V and V_T = 0.5 V the overdrive is 1.0 V. The drain current rises with V_DS until V_DS = V_GS − V_T, then saturates at I_D = ½(μC_ox W/L)(V_GS − V_T)² = ½ × 2 × 1² = 1.0 mA.",
+ "alt": "Drain current against drain–source voltage, rising in a curve to 1 milliamp at 1 volt and staying flat beyond it.",
+ "description": [
+  "Triode region (V_DS < 1 V): I_D = k[(V_GS − V_T)V_DS − V_DS²/2].",
+  "At V_DS = 1 V the channel pinches off.",
+  "Saturation (V_DS > 1 V): I_D = 1 mA, independent of V_DS (channel-length modulation ignored)."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   1.3
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V_{DS} / V",
+  "I_{D} / mA"
+ ],
+ "curves": [
+  {
+   "expr": "2*(1*x-x^2/2)",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1",
+   "label": "triode",
+   "labelAt": [
+    0.5,
+    0.42
+   ]
+  },
+  {
+   "expr": "1+0*x",
+   "domain": [
+    1,
+    3
+   ],
+   "colour": "a2",
+   "label": "saturation",
+   "labelAt": [
+    1.9,
+    1.1
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 1,
+   "label": "V_{GS} − V_{T}"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2*(1*x-x^2/2)",
+   "x": 1,
+   "y": 1,
+   "name": "the triode curve meets saturation at 1 mA"
+  },
+  {
+   "type": "max",
+   "expr": "2*(1*x-x^2/2)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 1,
+   "y": 1,
+   "name": "the triode current peaks exactly at pinch-off"
+  },
+  {
+   "type": "point",
+   "expr": "0.5*2*(1.5-0.5)^2+0*x",
+   "x": 0,
+   "y": 1,
+   "name": "½k(V_GS − V_T)² = 1.0 mA"
+  }
+ ]
+}

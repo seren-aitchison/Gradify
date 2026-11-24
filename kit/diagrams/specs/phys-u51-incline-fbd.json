@@ -1,0 +1,45 @@
+{
+ "id": "phys-u51-incline-fbd",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u51",
+ "lesson": "Scientific diagrams and representations",
+ "title": "Free-body diagram of a box on an incline",
+ "caption": "Three forces only: weight (9.8 N per kg, straight down), the normal force 8.49 N perpendicular to the slope, and friction up the slope. At rest friction balances the slope component of the weight, mg sin 30° = 4.9 N; there is no separate \"downhill force\" arrow.",
+ "alt": "Free-body diagram for 1 kilogram on a 30 degree slope: weight down, normal force perpendicular to the slope, friction up the slope.",
+ "description": [
+  "Weight 9.8 N per kg, vertically down.",
+  "Normal force mg cos 30° = 8.49 N, perpendicular to the slope.",
+  "Friction up the slope, equal to mg sin 30° = 4.9 N while the box stays at rest.",
+  "The three forces sum to zero."
+ ],
+ "mode": "body",
+ "units": "N",
+ "vectors": [
+  {
+   "label": "W",
+   "mag": 9.8,
+   "angle": 270,
+   "source": "Earth's gravity"
+  },
+  {
+   "label": "N",
+   "mag": 8.487,
+   "angle": 60,
+   "source": "the slope"
+  },
+  {
+   "label": "f",
+   "mag": 4.9,
+   "angle": 150,
+   "source": "friction",
+   "colour": "a2"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 0,
+  "angle": 0
+ },
+ "showResultant": false
+}

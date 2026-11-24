@@ -1,0 +1,132 @@
+{
+ "id": "maths-u06-cuboid-diagonal",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Trigonometric Geometry",
+ "title": "The angle between a space diagonal and the base",
+ "caption": "Take the right-angled triangle formed by the base diagonal, the vertical edge and the space diagonal. The base diagonal is √(36 + 64) = 10 cm and the edge is 5 cm, so tan θ = 5/10 and θ = 26.6°.",
+ "alt": "A right-angled triangle with a base of 10 cm (the diagonal of the 6 by 8 base), a height of 5 cm, and the space diagonal √125 ≈ 11.18 cm, making 26.6° with the base.",
+ "description": [
+  "The base is 6 cm by 8 cm, so its diagonal is √(36 + 64) = 10 cm.",
+  "The space diagonal rises 5 cm over that 10 cm of horizontal distance.",
+  "tan θ = 5/10 = 0.5, so θ = tan⁻¹ 0.5 ≈ 26.6°."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "M": [
+   10,
+   0
+  ],
+  "T": [
+   10,
+   5
+  ]
+ },
+ "polygons": [
+  {
+   "pts": [
+    "A",
+    "M",
+    "T"
+   ],
+   "colour": "a1",
+   "opacity": 0.1
+  }
+ ],
+ "angles": [
+  {
+   "at": "M",
+   "from": "A",
+   "to": "T",
+   "right": true,
+   "colour": "ink"
+  },
+  {
+   "at": "A",
+   "from": "M",
+   "to": "T",
+   "deg": 26.6,
+   "tol": 0.1,
+   "label": "",
+   "colour": "a2",
+   "r": 70
+  }
+ ],
+ "lengths": [
+  {
+   "a": "A",
+   "b": "M",
+   "value": 10,
+   "label": "10",
+   "side": 1
+  },
+  {
+   "a": "M",
+   "b": "T",
+   "value": 5,
+   "label": "5"
+  },
+  {
+   "a": "A",
+   "b": "T",
+   "value": 11.1803,
+   "tol": 0.01,
+   "label": "√125",
+   "colour": "a2",
+   "side": 1
+  }
+ ],
+ "labelAt": {
+  "A": [
+   -12,
+   14
+  ],
+  "M": [
+   12,
+   14
+  ],
+  "T": [
+   12,
+   -8
+  ]
+ },
+ "view": {
+  "x": [
+   -2.5,
+   13.5
+  ],
+  "y": [
+   -2,
+   7.5
+  ]
+ },
+ "height": [
+  260,
+  250
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "A",
+   "b": "M",
+   "value": "sqrt(36+64)",
+   "name": "base diagonal = √(6² + 8²) = 10"
+  },
+  {
+   "type": "angle",
+   "at": "A",
+   "from": "M",
+   "to": "T",
+   "deg": 26.57,
+   "tol": 0.05,
+   "name": "tan⁻¹(5/10) = 26.57°"
+  }
+ ],
+ "fromLesson": [
+  "tan θ = 5/10"
+ ]
+}

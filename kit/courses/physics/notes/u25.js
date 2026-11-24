@@ -178,6 +178,7 @@ H: Evidence
 X: Muons (τ = 2.2 μs) created at 15 km travel at 0.999c. Do they reach the ground?
 > Without dilation: range ≈ 660 m
 > γ = 22.4: mean range ≈ 14.7 km, so a good fraction survive
+D: phys-u25-lorentz-factor
 !: Time dilation isn't an illusion or a clock malfunction; all processes in the moving frame, including biological ones, slow down.
 P: **Investigate with the lab.** Find the speed at which moving clocks run at half rate (γ = 2).
 IX: relativity
@@ -202,6 +203,7 @@ H: Seeing vs measuring
 X: A 100 m spaceship passes at 0.8c. Its length as measured by you?
 > γ = 5/3
 > L = 60 m
+D: phys-u25-length-contraction
 !: Length contraction isn't a physical squashing due to forces; it's a property of how spacetime coordinates relate between frames.
 P: **Investigate with the lab.** At 0.6c, check that a 1 m rod measures 0.8 m. Then try 0.9c.
 IX: relativity
@@ -226,6 +228,7 @@ H: Fizeau experiment
 P: Light in water moving at v travels at c/n + v(1 − 1/n^{2}), not c/n + v. Fresnel's "drag coefficient" (1 − 1/n^{2}) was explained by Einstein's velocity addition formula, a test of relativity half a century before the theory existed.
 X: Two particles approach each other at 0.75c each (lab frame). Relative speed?
 > u = (0.75 + 0.75)/(1 + 0.5625) = 0.96c
+D: phys-u25-velocity-addition
 !: Closing speeds in the lab (1.5c here) can exceed c, since that's not the speed of any object; the speed of one particle relative to the other can't.
 P: **Investigate with the lab.** Add 0.9c to 0.9c: the result is still below c. Compare with simple addition.
 IX: relativity
@@ -252,6 +255,7 @@ P: Spacetime diagrams resolve paradoxes (twins, ladder in barn) by showing which
 X: Draw the worldline of an object at rest at x = 2 m and of a light flash leaving the origin.
 > Object: vertical line at x = 2 m
 > Light: 45° line from the origin
+D: phys-u25-spacetime
 !: Spacetime diagrams use Minkowski geometry; the "length" of a tilted worldline segment isn't its Euclidean length on paper.
 P: **Investigate with the lab.** Use the spacetime diagram and see how the train's time axis tilts as its speed rises.
 IX: relativity
@@ -384,6 +388,7 @@ P: Bertozzi (1964) accelerated electrons to measured kinetic energies and timed 
 X: Kinetic energy of a proton at 0.9c?
 > γ = 2.29
 > KE = 1.29 × 938 MeV = 1.21 GeV (Newtonian would give 380 MeV)
+D: phys-u25-kinetic-energy
 !: Don't use ½mv^{2} at speeds above about 0.1c; errors exceed ~1%.
 Q: What is relativistic kinetic energy? | KE = (γ − 1)mc^{2}.
 Q: Why does speed barely increase for very high-energy particles? | γ grows enormously as v approaches c; energy rises while v stays just below c.
@@ -493,6 +498,7 @@ H: Apparent superluminal motion
 X: Event A: (t = 0, x = 0). Event B: (t = 1 s, x = 4 × 10^{8} m). Can A cause B?
 > Light covers 3 × 10^{8} m in 1 s; B is farther
 > Spacelike: no causal connection
+D: phys-u25-light-cone
 !: Apparent faster-than-light effects never carry information or causes; check whether anything physical travels.
 Q: What is the elsewhere region of an event? | Spacelike-separated events that can't be causally connected to it.
 Q: Why does faster-than-light signalling threaten causality? | It would allow effects before causes in some frames, and messages into the past.

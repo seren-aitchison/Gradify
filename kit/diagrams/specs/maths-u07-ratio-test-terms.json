@@ -1,0 +1,40 @@
+{
+ "id": "maths-u07-ratio-test-terms",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Convergence and Divergence",
+ "title": "n/2ⁿ and the ratio test",
+ "caption": "The terms of Σ n/2ⁿ are ½, ½, ⅜, ¼, 5/32, … Each term divided by the one before is (n + 1)/(2n), which falls towards ½ and is below 1 from the second term on, so the terms shrink geometrically and the series converges (to 2).",
+ "alt": "Five boxes ½, ½, ⅜, ¼, 5/32 with the ratios of consecutive terms 1, ¾, ⅔, ⅝ beneath.",
+ "description": [
+  "The nth term is n/2ⁿ: 0.5, 0.5, 0.375, 0.25, …",
+  "The ratio of consecutive terms is (n + 1)/(2n).",
+  "It tends to ½ as n grows.",
+  "½ < 1, so the series converges."
+ ],
+ "terms": [
+  0.5,
+  0.5,
+  0.375,
+  0.25,
+  0.15625
+ ],
+ "more": true,
+ "rule": {
+  "kind": "nth",
+  "expr": "n/2^n"
+ },
+ "show": "ratios",
+ "ruleText": "ratio = (n + 1)/(2n) → ½",
+ "checks": [
+  {
+   "type": "nth",
+   "n": 5,
+   "value": 0.15625
+  }
+ ],
+ "fromLesson": [
+  "(n + 1)/(2n)"
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "id": "maths-u07-implicit-curve",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Implicit Differentiation",
+ "title": "The curve x² + 3xy + y² = 11",
+ "caption": "Solving for y gives two branches. The point (1, 2) is on the upper one, and implicit differentiation gives dy/dx = −(2x + 3y)/(3x + 2y) = −8/7 there: the tangent drawn slopes down gently.",
+ "alt": "The curve x² + 3xy + y² = 11 as an upper and lower branch, with the tangent of gradient −8/7 at (1, 2).",
+ "description": [
+  "Differentiate both sides with respect to x, treating y as a function of x.",
+  "Collect dy/dx: dy/dx = −(2x + 3y)/(3x + 2y).",
+  "At (1, 2): −(2 + 6)/(3 + 4) = −8/7.",
+  "The tangent at (1, 2) has gradient −8/7."
+ ],
+ "range": {
+  "x": [
+   -5,
+   5
+  ],
+  "y": [
+   -10,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4
+  ],
+  [
+   -8,
+   -4,
+   4,
+   8
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(-3*x+sqrt(5*x^2+44))/2",
+   "colour": "a1"
+  },
+  {
+   "expr": "(-3*x-sqrt(5*x^2+44))/2",
+   "colour": "a1"
+  },
+  {
+   "expr": "2-8*(x-1)/7",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    -2,
+    4
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 2,
+   "label": "(1, 2)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(-3*x+sqrt(5*x^2+44))/2",
+   "x": 1,
+   "y": 2,
+   "name": "(1, 2) lies on the upper branch"
+  },
+  {
+   "type": "point",
+   "expr": "(-3*x-sqrt(5*x^2+44))/2",
+   "x": 1,
+   "y": -5,
+   "name": "the lower branch passes through (1, −5)"
+  },
+  {
+   "type": "slope",
+   "expr": "(-3*x+sqrt(5*x^2+44))/2",
+   "x": 1,
+   "value": -1.1428571428571428,
+   "name": "the gradient at (1, 2) is −8/7"
+  },
+  {
+   "type": "slope",
+   "expr": "2-8*(x-1)/7",
+   "x": 1,
+   "value": -1.1428571428571428,
+   "name": "the tangent has gradient −8/7"
+  }
+ ],
+ "fromLesson": [
+  "−8/7"
+ ]
+}

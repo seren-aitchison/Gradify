@@ -22,3 +22,9 @@ export const PUSH_PUBLIC_KEY = "";
 // iPhone and iPad share one listing; the Mac app can share it too (one universal purchase) or have its own.
 // Leave them empty and Gradify says the app is coming to the App Store, and installs nothing.
 export const APP_STORE = { ios: "", mac: "" };
+
+// Microsoft Clarity (free heatmaps and session replays) on the free tools, guides and topic pages (docs/SEO.md). Paste
+// the project ID from clarity.microsoft.com to switch it on. It runs only where the anonymous usage counts may run (not
+// with Do Not Track, Global Privacy Control or the privacy-page opt-out), and Clarity is told the visitor hasn't
+// consented to cookies, so it sets none. Leave it empty and nothing loads.
+export const CLARITY_ID = "";

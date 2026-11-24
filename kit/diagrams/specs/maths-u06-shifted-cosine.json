@@ -1,0 +1,107 @@
+{
+ "id": "maths-u06-shifted-cosine",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Trigonometric Graphs",
+ "title": "y = 2cos(x − 30°) − 1",
+ "caption": "The cosine curve is stretched to amplitude 2, shifted 30° right and 1 down: its maximum is 2 − 1 = 1 at x = 30° and its minimum is −2 − 1 = −3 at x = 210°.",
+ "alt": "The graph of y = 2cos(x − 30°) − 1 from 0° to 360° with its maximum at (30°, 1) and minimum at (210°, −3) marked.",
+ "description": [
+  "The curve oscillates about the midline y = −1 with amplitude 2.",
+  "Its peak is 30° to the right of the usual cosine peak at 0°: maximum (30°, 1).",
+  "Its lowest point is half a period later, at (210°, −3)."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -4,
+   2
+  ]
+ },
+ "ticks": [
+  [
+   90,
+   180,
+   270,
+   360
+  ],
+  [
+   -3,
+   -1,
+   1
+  ]
+ ],
+ "grid": [
+  90,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x (degrees)",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "2*cos(0.017453292519943295*(x-30))-1",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": -1,
+   "label": "midline y = −1"
+  }
+ ],
+ "points": [
+  {
+   "x": 30,
+   "y": 1,
+   "label": "max (30°, 1)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": -6
+  },
+  {
+   "x": 210,
+   "y": -3,
+   "label": "min (210°, −3)",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 4
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "2*cos(0.017453292519943295*(x-30))-1",
+   "domain": [
+    0,
+    360
+   ],
+   "x": 30,
+   "y": 1,
+   "name": "the maximum is 1 at x = 30°"
+  },
+  {
+   "type": "min",
+   "expr": "2*cos(0.017453292519943295*(x-30))-1",
+   "domain": [
+    0,
+    360
+   ],
+   "x": 210,
+   "y": -3,
+   "name": "the minimum is −3 at x = 210°"
+  }
+ ],
+ "fromLesson": [
+  "Maximum 2 − 1 = 1, at x = 30°"
+ ]
+}

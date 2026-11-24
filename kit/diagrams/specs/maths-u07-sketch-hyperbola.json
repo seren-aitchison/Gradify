@@ -1,0 +1,135 @@
+{
+ "id": "maths-u07-sketch-hyperbola",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Curve Sketching",
+ "title": "y = (x + 1)/(x − 2)",
+ "caption": "The vertical asymptote is x = 2 and the horizontal asymptote is y = 1. The curve crosses the axes at (−1, 0) and (0, −½), and y′ = −3/(x − 2)² < 0 so it falls on each branch.",
+ "alt": "A hyperbola in two branches: the left branch below y = 1 through (−1, 0) and (0, −½) falling towards x = 2, the right branch above y = 1 falling towards y = 1.",
+ "description": [
+  "As x → 2 the denominator → 0: vertical asymptote x = 2.",
+  "As x → ±∞ the value tends to 1: horizontal asymptote y = 1.",
+  "The intercepts are (−1, 0) and (0, −½).",
+  "y′ = −3/(x − 2)² < 0: decreasing on each branch."
+ ],
+ "range": {
+  "x": [
+   -5,
+   7
+  ],
+  "y": [
+   -5,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6
+  ],
+  [
+   -4,
+   -2,
+   2,
+   4,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "(x+1)/(x-2)",
+   "colour": "a1",
+   "domain": [
+    -5,
+    1.8
+   ]
+  },
+  {
+   "expr": "(x+1)/(x-2)",
+   "colour": "a1",
+   "domain": [
+    2.2,
+    7
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 2,
+   "label": "x = 2"
+  },
+  {
+   "y": 1,
+   "label": "y = 1"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 0,
+   "label": "(−1, 0)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 0,
+   "y": -0.5,
+   "label": "(0, −½)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": 22,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(x+1)/(x-2)",
+   "x": -1,
+   "y": 0,
+   "name": "(−1, 0) is on the curve"
+  },
+  {
+   "type": "point",
+   "expr": "(x+1)/(x-2)",
+   "x": 0,
+   "y": -0.5,
+   "name": "(0, −½) is on the curve"
+  },
+  {
+   "type": "slope",
+   "expr": "(x+1)/(x-2)",
+   "x": 3,
+   "value": -3,
+   "name": "y′ = −3/(3 − 2)² = −3 at x = 3"
+  },
+  {
+   "type": "slope",
+   "expr": "(x+1)/(x-2)",
+   "x": 0,
+   "value": -0.75,
+   "name": "y′ = −3/4 at x = 0: falling"
+  }
+ ],
+ "fromLesson": [
+  "y = 1"
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "id": "phys-u20-electron-wavelength-voltage",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "de Broglie wavelength",
+ "title": "Wavelength of an electron against accelerating voltage",
+ "caption": "Accelerated through V an electron has λ = h/√(2meV) ≈ 1.23/√V nm. At 100 V that is 0.12 nm, comparable with atomic spacings, which is why electrons diffract from crystals; at the lesson's 150 V it is 0.10 nm. Raising the voltage by 4 only halves the wavelength.",
+ "alt": "Graph of electron wavelength in nanometres against accelerating voltage from 20 to 400 volts: a falling curve through 0.12 at 100 volts and 0.10 at 150 volts.",
+ "description": [
+  "The horizontal axis is the accelerating voltage V in volts; the vertical axis is the electron's de Broglie wavelength in nanometres.",
+  "The curve is λ = 1.23/√V nm, from λ = h/√(2meV).",
+  "At 100 V λ = 0.12 nm; at 150 V λ = 0.10 nm ≈ 0.10 nm.",
+  "A larger voltage gives a shorter wavelength, falling as 1/√V."
+ ],
+ "range": {
+  "x": [
+   0,
+   400
+  ],
+  "y": [
+   0,
+   0.5
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300,
+   400
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ]
+ ],
+ "grid": [
+  100,
+  0.1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "V / V",
+  "λ / nm"
+ ],
+ "curves": [
+  {
+   "expr": "1.2264259662591241/sqrt(x)",
+   "domain": [
+    20,
+    400
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "1.23/√V nm",
+   "labelAt": [
+    250,
+    0.2
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    100,
+    0.34
+   ],
+   "to": [
+    100,
+    0.1346
+   ],
+   "label": "100 V: 0.12 nm",
+   "labelAt": [
+    106,
+    0.36
+   ]
+  },
+  {
+   "from": [
+    150,
+    0.25
+   ],
+   "to": [
+    150,
+    0.11209999999999999
+   ],
+   "colour": "a2",
+   "label": "150 V: 0.10 nm",
+   "labelAt": [
+    156,
+    0.27
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 0.1226
+  },
+  {
+   "x": 150,
+   "y": 0.1001,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1.2264259662591241/sqrt(x)",
+   "x": 100,
+   "y": 0.1226,
+   "name": "100 V gives 0.12 nm"
+  },
+  {
+   "type": "point",
+   "expr": "1.2264259662591241/sqrt(x)",
+   "x": 150,
+   "y": 0.1001,
+   "name": "150 V gives 0.10 nm"
+  }
+ ]
+}

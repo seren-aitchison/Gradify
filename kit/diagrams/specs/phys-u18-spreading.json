@@ -1,0 +1,108 @@
+{
+ "id": "phys-u18-spreading",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Electromagnetic wave propagation",
+ "title": "Spreading from a point source",
+ "caption": "From a point source the intensity falls as 1/r² (the same power spread over a sphere of area 4πr²) while the field amplitude falls only as 1/r, because intensity goes as the amplitude squared. Doubling the distance halves the amplitude (0.5) and quarters the intensity (0.25).",
+ "alt": "Graph of relative amplitude (1/r) and relative intensity (1/r²) against distance from 1 to 4 times the first distance: both start at 1, the amplitude curve falls more slowly, and at twice the distance they are 0.5 and 0.25.",
+ "description": [
+  "The horizontal axis is the distance r in units of the first distance r₀; the vertical axis is the value relative to its size at r₀.",
+  "The field amplitude falls as 1/r: at r = 2r₀ it is 0.5.",
+  "The intensity, proportional to amplitude squared, falls as 1/r²: at r = 2r₀ it is 0.25.",
+  "Intensity falls faster than amplitude: the same power spreads over four times the area."
+ ],
+ "range": {
+  "x": [
+   1,
+   4
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "r / r₀",
+  "relative size"
+ ],
+ "curves": [
+  {
+   "expr": "1/x",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "amplitude ∝ 1/r",
+   "labelAt": [
+    2.5,
+    0.52
+   ]
+  },
+  {
+   "expr": "1/x^2",
+   "colour": "a2",
+   "width": 3.4,
+   "label": "intensity ∝ 1/r²",
+   "labelAt": [
+    2.2,
+    0.15
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0.5,
+   "label": "0.5",
+   "dx": 8,
+   "dy": -12
+  },
+  {
+   "x": 2,
+   "y": 0.25,
+   "colour": "a2",
+   "label": "0.25",
+   "dx": 8,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/x",
+   "x": 2,
+   "y": 0.5,
+   "name": "the amplitude is halved at twice the distance"
+  },
+  {
+   "type": "point",
+   "expr": "1/x^2",
+   "x": 2,
+   "y": 0.25,
+   "name": "the intensity is quartered at twice the distance"
+  }
+ ]
+}

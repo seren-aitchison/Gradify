@@ -1,0 +1,155 @@
+{
+ "id": "maths-u06-unit-circle-240",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u06",
+ "lesson": "Unit Circle",
+ "title": "240° on the unit circle",
+ "caption": "The point at 240° is in the third quadrant, 60° past the negative x-axis. Its coordinates are (cos 240°, sin 240°) = (−½, −√3/2), so tan 240° = sin/cos = √3.",
+ "alt": "The unit circle with the point at 240° in the third quadrant at (−0.5, −0.866), its reference angle of 60° marked at the centre, and dashed lines to the axes.",
+ "description": [
+  "Turn 240° anticlockwise from the positive x-axis: the point is in the third quadrant.",
+  "It is 60° past the negative x-axis, so the reference angle is 60°.",
+  "Its x-coordinate is cos 240° = −cos 60° = −½.",
+  "Its y-coordinate is sin 240° = −sin 60° = −√3/2, so tan 240° = (−√3/2)/(−½) = √3."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "X": [
+   1,
+   0
+  ],
+  "N": [
+   -1,
+   0
+  ],
+  "P": [
+   -0.5000000000000004,
+   -0.8660254037844385
+  ],
+  "F": [
+   -0.5000000000000004,
+   0
+  ]
+ },
+ "hide": [
+  "O",
+  "X",
+  "N",
+  "F"
+ ],
+ "grid": {
+  "step": 0.5,
+  "axes": true,
+  "labels": 5
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1
+  }
+ ],
+ "segments": [
+  {
+   "a": "O",
+   "b": "P",
+   "colour": "a2",
+   "w": 3
+  },
+  {
+   "a": "P",
+   "b": "F",
+   "colour": "a1",
+   "dash": "5 4"
+  }
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "N",
+   "to": "P",
+   "deg": 60,
+   "label": "60°",
+   "colour": "a3",
+   "r": 28,
+   "labelR": 6
+  }
+ ],
+ "lengths": [
+  {
+   "a": "O",
+   "b": "F",
+   "value": 0.5,
+   "label": "cos = −½",
+   "colour": "a1",
+   "side": 1
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    -1.85,
+    -0.45
+   ],
+   "text": "sin 240° = −√3/2",
+   "colour": "a1",
+   "size": 13
+  }
+ ],
+ "labelAt": {
+  "P": [
+   -4,
+   18
+  ]
+ },
+ "view": {
+  "x": [
+   -2.6,
+   1.6
+  ],
+  "y": [
+   -1.35,
+   1.35
+  ]
+ },
+ "height": [
+  350,
+  330
+ ],
+ "checks": [
+  {
+   "type": "onCircle",
+   "points": [
+    "P"
+   ],
+   "name": "the point at 240° lies on the unit circle"
+  },
+  {
+   "type": "distance",
+   "a": "P",
+   "b": "F",
+   "value": "sqrt(3)/2",
+   "name": "the dashed drop from the point has length √3/2 = |sin 240°|"
+  },
+  {
+   "type": "value",
+   "expr": "(-sqrt(3)/2)/(-1/2)",
+   "value": "sqrt(3)",
+   "name": "tan 240° = sin/cos = √3"
+  },
+  {
+   "type": "angle",
+   "at": "O",
+   "from": "X",
+   "to": "P",
+   "deg": 120,
+   "name": "the shorter angle from the positive x-axis is 120°, so the turn is 240°"
+  }
+ ],
+ "fromLesson": [
+  "tan 240° = sin/cos = √3"
+ ]
+}

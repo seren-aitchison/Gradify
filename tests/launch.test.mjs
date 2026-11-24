@@ -10,6 +10,8 @@ const read = (f) => readFile(new URL(`../${f}`, import.meta.url), "utf8");
 
 test("sitemap.xml is up to date and lists only public pages", async () => {
   assert.equal(await read("sitemap.xml"), await sitemapXml(), "run node scripts/build-sitemap.mjs");
+  const { sitemapFiles } = await import("../scripts/build-sitemap.mjs");
+  for (const [f, xml] of Object.entries(await sitemapFiles())) assert.equal(await read(f), xml, `${f}: run node scripts/build-sitemap.mjs`);
   const urls = await sitemapUrls();
   assert.ok(urls.includes("https://getgradify.com/") && urls.includes("https://getgradify.com/privacy.html"));
   assert.ok(urls.some((u) => u.endsWith("/lawgradify/course/")));

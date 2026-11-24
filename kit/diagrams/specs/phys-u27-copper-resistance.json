@@ -1,0 +1,97 @@
+{
+ "id": "phys-u27-copper-resistance",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u27",
+ "lesson": "Electrical resistivity",
+ "title": "Resistance of a metal rises with temperature",
+ "caption": "More lattice vibration scatters the electrons more, so a metal's resistance rises almost linearly: R = R₂₀(1 + αΔT). The copper wire's 10 Ω at 20 °C becomes 12.34 Ω at 80 °C (α = 0.0039 K⁻¹).",
+ "alt": "Resistance against temperature, a straight line rising from 10 ohms at 20 degrees to 12.3 ohms at 80 degrees.",
+ "description": [
+  "R₂₀ = 10 Ω, α = 0.0039 K⁻¹.",
+  "At 80 °C: 10 × (1 + 0.0039 × 60) = 12.34 Ω.",
+  "At low temperature the line flattens to a residual resistance set by impurities (not shown)."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   8,
+   13.5
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   9,
+   10,
+   11,
+   12,
+   13
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "temperature / °C",
+  "resistance / Ω"
+ ],
+ "curves": [
+  {
+   "expr": "10*(1+0.0039*(x-20))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 80,
+   "to": 12.34
+  }
+ ],
+ "points": [
+  {
+   "x": 20,
+   "y": 10,
+   "colour": "a4",
+   "label": "10 Ω at 20 °C",
+   "dx": 10,
+   "dy": 14
+  },
+  {
+   "x": 80,
+   "y": 12.34,
+   "colour": "a2",
+   "label": "12.34 Ω at 80 °C",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*(1+0.0039*(x-20))",
+   "x": 80,
+   "y": 12.34,
+   "name": "12.34 Ω at 80 °C"
+  },
+  {
+   "type": "slope",
+   "expr": "10*(1+0.0039*(x-20))",
+   "x": 50,
+   "value": 0.039,
+   "name": "rises 0.039 Ω per kelvin"
+  }
+ ]
+}

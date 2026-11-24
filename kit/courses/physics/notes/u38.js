@@ -71,6 +71,7 @@ P: Lyapunov functions, energy-like quantities that always decrease, prove stabil
 X: Classify fixed points of ẋ = x − x^{3}.
 > x^{*} = 0, ±1; f'(x) = 1 − 3x^{2}
 > f'(0) = 1 > 0: unstable; f'(±1) = −2 < 0: stable
+D: phys-u38-fixed-points
 X: J = [[−1, 2], [−2, −1]]. Classify.
 > τ = −2, Δ = 1 + 4 = 5; τ^{2} − 4Δ = 4 − 20 < 0
 > Stable spiral
@@ -124,6 +125,7 @@ X: For ẋ = r + x^{2}, find fixed points for r = −4.
 > x^{2} = 4 ⇒ x = ±2
 > f'(x) = 2x: x = −2 stable, x = +2 unstable
 > For r > 0 there are none
+D: phys-u38-saddle-node
 X: Pitchfork with r = 0.25: stable states?
 > x = ±√0.25 = ±0.5 (x = 0 is unstable)
 K: Bifurcations are where systems change character; their type predicts smooth change or sudden jumps.
@@ -207,6 +209,7 @@ H: Not all sensitivity is chaos
 P: Unstable fixed points also show exponential divergence, but only temporarily and not in a bounded, recurring way. True chaos combines sensitivity with boundedness and aperiodicity, so trajectories keep separating and approaching across a bounded attractor.
 X: A double pendulum has λ ≈ 2 s^{-1}. An error of 10^{-6} rad grows to 1 rad in about how long?
 > t = ln(10^{6})/2 ≈ 13.8/2 ≈ 7 s
+D: phys-u38-error-growth
 P: **Investigate with the lab.** Set the difference between the twins to a millionth of a radian and time how long they stay together. Make the difference smaller and see how much longer they last.
 IX: pendulum
 K: In chaotic systems, tiny initial differences grow exponentially; forecasts need ensembles and probabilities.
@@ -294,6 +297,7 @@ P: "Period three implies chaos" (Li and Yorke 1975): if a period-3 orbit exists,
 X: Find x^{*} and its stability for r = 2.5.
 > x^{*} = 1 − 1/2.5 = 0.6
 > f'(x^{*}) = 2 − 2.5 = −0.5, |f'| < 1: stable
+D: phys-u38-logistic-fixed-point
 X: At r = 3.2, is x^{*} stable?
 > f' = 2 − 3.2 = −1.2, |f'| > 1: unstable; a 2-cycle takes over
 K: One quadratic map shows extinction, equilibrium, cycles, period doubling and chaos as r rises.
@@ -566,6 +570,7 @@ H: Tools
 P: Agent-based models simulate individuals following rules; network science maps connections; statistical physics (mean-field theory, percolation, renormalisation) explains collective transitions; information theory measures complexity. Applications: pandemic modelling, power grid cascading failures, financial contagion, climate tipping points, urban scaling (larger cities produce more patents per person). The 2021 Nobel Prize (Parisi, Manabe, Hasselmann) honoured complex physical systems.
 X: An epidemic has R_{0} = 3. What fraction must be immune to stop spread?
 > Herd immunity threshold = 1 − 1/R_{0} = 1 − 1/3 ≈ 67%
+D: phys-u38-herd-immunity
 X: In a scale-free network, what happens if random nodes fail versus hubs being attacked?
 > Random failures rarely hit hubs: robust
 > Targeted hub attacks fragment the network quickly: fragile

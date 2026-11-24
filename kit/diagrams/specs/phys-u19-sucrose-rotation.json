@@ -1,0 +1,94 @@
+{
+ "id": "phys-u19-sucrose-rotation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Optical activity",
+ "title": "Rotation by sucrose in a 20 cm tube",
+ "caption": "The rotation is θ = [α]lc. With [α] = 66.5° dm⁻¹ (g/mL)⁻¹ and l = 2 dm, θ = 133° × c, a straight line through the origin. The observed 13.3° therefore gives c = 13.3/(66.5 × 2) = 0.10 g mL⁻¹; measuring the rotation is how a polarimeter reads sugar concentration.",
+ "alt": "Graph of rotation in degrees against concentration in grams per millilitre: a straight line through the origin of gradient 133 degrees per gram per millilitre, passing 13.3 degrees at 0.10 grams per millilitre.",
+ "description": [
+  "The horizontal axis is the concentration of sucrose in g mL⁻¹; the vertical axis is the rotation of the plane of polarisation in degrees.",
+  "θ = [α]lc = 66.5 × 2 × c = 133c, a straight line through the origin.",
+  "A measured rotation of 13.3° corresponds to c = 0.10 g mL⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.16
+  ],
+  "y": [
+   0,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   0.04,
+   0.08,
+   0.12,
+   0.16
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  0.04,
+  5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "c / g mL⁻¹",
+  "θ / °"
+ ],
+ "curves": [
+  {
+   "expr": "133*x",
+   "domain": [
+    0,
+    0.16
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "θ = [α]lc",
+   "labelAt": [
+    0.02,
+    9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.1,
+   "y": 13.3,
+   "colour": "a2",
+   "label": "13.3° at 0.10 g mL⁻¹",
+   "dx": 12,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "133*x",
+   "x": 0.05,
+   "value": 133,
+   "name": "gradient [α]l = 133° per g mL⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "133*x",
+   "x": 0.1,
+   "y": 13.3,
+   "name": "13.3° means c = 0.10 g mL⁻¹"
+  }
+ ]
+}

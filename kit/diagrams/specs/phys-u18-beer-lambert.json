@@ -1,0 +1,98 @@
+{
+ "id": "phys-u18-beer-lambert",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Absorption",
+ "title": "A solution that absorbs half the light per centimetre",
+ "caption": "Each centimetre of the solution passes half of the light that reaches it, so the fraction through x cm is I/I₀ = 0.5^x = e^{−αx} with α = ln 2 = 0.693 cm⁻¹. After 3 cm: 0.5³ = 0.125 = 12.5%.",
+ "alt": "Graph of transmitted fraction against path length from 0 to 4 centimetres: an exponential decay through 0.5 at 1 cm, 0.25 at 2 cm and 0.125 at 3 cm.",
+ "description": [
+  "The horizontal axis is the path length in centimetres; the vertical axis is the fraction of light transmitted.",
+  "The curve is e^{−αx} with α = ln 2 per cm, equal to 0.5^x.",
+  "At 1 cm the fraction is 0.5, at 2 cm 0.25 and at 3 cm 0.5³ = 0.125: 12.5% gets through."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "path length / cm",
+  "I/I₀"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.6931471805599453*x)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "0.5^x",
+   "labelAt": [
+    1.8,
+    0.62
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.5,
+   "label": "50%",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 3,
+   "y": 0.125,
+   "colour": "a2",
+   "label": "12.5% at 3 cm",
+   "dx": -4,
+   "dy": -18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.6931471805599453*x)",
+   "x": 1,
+   "y": 0.5,
+   "name": "1 cm passes 50%"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.6931471805599453*x)",
+   "x": 3,
+   "y": 0.125,
+   "name": "3 cm passes 0.5³ = 12.5%"
+  }
+ ]
+}

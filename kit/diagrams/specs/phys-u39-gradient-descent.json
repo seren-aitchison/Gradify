@@ -1,0 +1,123 @@
+{
+ "id": "phys-u39-gradient-descent",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u39",
+ "lesson": "Optimisation and parameter estimation",
+ "title": "Gradient descent towards a minimum",
+ "caption": "Each step moves against the gradient: x ← x − η f′(x). With f = (x − 3)² and η = 0.25, the steps from 0 go 1.5, 2.25, 2.625, 2.8125: each halves the distance to the minimum at 3. Too large a step would overshoot and oscillate.",
+ "alt": "The parabola (x − 3) squared with dots at x = 0, 1.5, 2.25, 2.625 and 2.8125 sliding down towards the minimum at 3.",
+ "description": [
+  "f(x) = (x − 3)², f′(x) = 2(x − 3).",
+  "x₁ = 0 − 0.25 × (−6) = 1.5; x₂ = 2.25; x₃ = 2.625; x₄ = 2.8125.",
+  "The distance to 3 halves each step because η f″ = 0.5."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   0,
+   10
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "x",
+  "f(x) = (x − 3)²"
+ ],
+ "curves": [
+  {
+   "expr": "(x-3)^2",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 9,
+   "colour": "a2",
+   "label": "x₀ = 0",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 1.5,
+   "y": 2.25,
+   "colour": "a2",
+   "label": "x₁ = 1.5",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 2.25,
+   "y": 0.5625,
+   "colour": "a2",
+   "label": "x₂ = 2.25",
+   "dx": 8,
+   "dy": -10
+  },
+  {
+   "x": 2.625,
+   "y": 0.140625,
+   "colour": "a2"
+  },
+  {
+   "x": 2.8125,
+   "y": 0.035156,
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "(x-3)^2",
+   "domain": [
+    0,
+    5
+   ],
+   "x": 3,
+   "y": 0,
+   "name": "minimum at x = 3"
+  },
+  {
+   "type": "point",
+   "expr": "x-0.25*2*(x-3)",
+   "x": 0,
+   "y": 1.5,
+   "name": "first step to 1.5"
+  },
+  {
+   "type": "point",
+   "expr": "x-0.25*2*(x-3)",
+   "x": 1.5,
+   "y": 2.25,
+   "name": "second step to 2.25"
+  }
+ ]
+}

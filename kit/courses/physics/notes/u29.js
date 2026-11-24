@@ -63,6 +63,7 @@ H: Consequences
 X: A Langmuir probe inserted in a plasma: what forms around it?
 > A sheath a few Debye lengths thick
 > Its current–voltage curve reveals electron temperature and density
+D: phys-u29-debye-shielding
 !: Shielding is statistical; individual charges still move through the plasma and interact.
 Q: What is Debye shielding? | The screening of a charge's field by the surrounding plasma charges, making it decay exponentially.
 Q: What is a plasma sheath? | A thin non-neutral boundary layer, a few Debye lengths thick, between a plasma and a surface.

@@ -1,0 +1,39 @@
+{
+ "id": "maths-u26-circle-regions",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Inductive Reasoning",
+ "title": "Regions made by chords: 1, 2, 4, 8, 16, 31",
+ "caption": "Joining n points on a circle gives 1, 2, 4, 8, 16 regions, which suggests 32 for n = 6. Counting carefully gives 31: the differences 1, 2, 4, 8 are doubling, then the next one is 15, and the pattern fails.",
+ "alt": "The six terms 1, 2, 4, 8, 16, 31 with their differences 1, 2, 4, 8, 15 underneath.",
+ "description": [
+  "For n = 1 to 5 the regions are 1, 2, 4, 8, 16.",
+  "The pattern suggests 2⁵ = 32 for n = 6.",
+  "A careful count gives 31, and the last difference is 15, not 16.",
+  "A pattern from five cases is not a proof."
+ ],
+ "terms": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  31
+ ],
+ "rule": {
+  "kind": "nth",
+  "expr": "(n^4-6*n^3+23*n^2-18*n+24)/24"
+ },
+ "show": "differences",
+ "checks": [
+  {
+   "type": "nth",
+   "n": 6,
+   "value": 31
+  }
+ ],
+ "fromLesson": [
+  "31"
+ ]
+}

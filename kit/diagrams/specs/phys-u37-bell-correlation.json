@@ -1,0 +1,105 @@
+{
+ "id": "phys-u37-bell-correlation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u37",
+ "lesson": "Bell inequalities",
+ "title": "Quantum correlations beat any local model",
+ "caption": "For the singlet state the correlation between measurements at angle θ apart is E(θ) = −cos θ. A simple local hidden-variable model gives a straight line. At 45° the quantum correlation is -0.707 against −0.5, and four such settings give S = 4/√2 = 2√2 ≈ 2.83, beyond the local limit of 2.",
+ "alt": "Correlation against the angle between analysers: the quantum curve minus cosine theta lies further from zero than the straight local-model line at 45 and 135 degrees.",
+ "description": [
+  "Quantum (singlet): E(θ) = −cos θ.",
+  "A local model with hidden variables: E(θ) = −1 + 2θ/180°.",
+  "At 45°: quantum -0.707, local −0.5. At 135°: +0.707 against +0.5.",
+  "CHSH: S = |E(a,b) − E(a,b′) + E(a′,b) + E(a′,b′)| = 2√2 for the best angles; any local model gives at most 2."
+ ],
+ "range": {
+  "x": [
+   0,
+   180
+  ],
+  "y": [
+   -1.1,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   45,
+   90,
+   135,
+   180
+  ],
+  [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "angle between measurements / °",
+  "correlation E"
+ ],
+ "curves": [
+  {
+   "expr": "-cos(x*3.14159265/180)",
+   "colour": "a1",
+   "label": "quantum: −cos θ",
+   "labelAt": [
+    100,
+    -0.55
+   ]
+  },
+  {
+   "expr": "-1+2*x/180",
+   "colour": "a3",
+   "dash": "6 5",
+   "label": "a local model",
+   "labelAt": [
+    120,
+    0.62
+   ],
+   "anchor": "end"
+  }
+ ],
+ "marks": [
+  {
+   "x": 45,
+   "to": -0.7071067811865476
+  },
+  {
+   "x": 135,
+   "to": 0.7071067811865476
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-cos(x*3.14159265/180)",
+   "x": 45,
+   "y": -0.70710678,
+   "name": "E(45°) = −1/√2"
+  },
+  {
+   "type": "order",
+   "a": "abs(-cos(x*3.14159265/180))",
+   "b": "abs(-1+2*x/180)",
+   "x": 45,
+   "rel": ">",
+   "name": "quantum correlation stronger than the local model at 45°"
+  },
+  {
+   "type": "point",
+   "expr": "4*cos(3.14159265/4)+0*x",
+   "x": 0,
+   "y": 2.82842712,
+   "name": "S = 2√2"
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": "phys-u24-bending-radius",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u24",
+ "lesson": "Particle accelerators",
+ "title": "Bending radius against momentum",
+ "caption": "r = p/(eB) rises in proportion to momentum. A 7 TeV/c proton (p = 3.7 × 10⁻¹⁵ kg m s⁻¹) in the LHC's 8.3 T has r = 2.8 km; doubling the field to 16.6 T halves it to 1.4 km.",
+ "alt": "Two straight lines of bending radius in kilometres against proton momentum in TeV, the 8.3 tesla line reaching 2.8 km at 7 TeV and the 16.6 tesla line reaching 1.4 km.",
+ "description": [
+  "r = p/(eB), p = 7 TeV/c = 3.7 × 10⁻¹⁵ kg m s⁻¹.",
+  "B = 8.3 T: r = 2.81 km.",
+  "B = 16.6 T: r = 1.41 km, half as much."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   0,
+   3.5
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "momentum p / (TeV/c)",
+  "radius r / km"
+ ],
+ "curves": [
+  {
+   "expr": "3335.55703802535*x/8.3/1000",
+   "domain": [
+    0,
+    8
+   ],
+   "colour": "a1",
+   "label": "8.3 T",
+   "labelAt": [
+    5.2,
+    2.4
+   ]
+  },
+  {
+   "expr": "3335.55703802535*x/16.6/1000",
+   "domain": [
+    0,
+    8
+   ],
+   "colour": "a2",
+   "label": "16.6 T",
+   "labelAt": [
+    5.2,
+    1
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 7,
+   "y": 2.813,
+   "colour": "a1",
+   "label": "2.8 km",
+   "dx": -8,
+   "dy": -12,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3335.55703802535*x/8.3/1000",
+   "x": 7,
+   "y": 2.8131,
+   "tol": 0.02,
+   "name": "r = 2.8 km for 7 TeV in 8.3 T"
+  },
+  {
+   "type": "point",
+   "expr": "3335.55703802535*x/16.6/1000",
+   "x": 7,
+   "y": 1.4066,
+   "tol": 0.02,
+   "name": "twice the field halves the radius"
+  }
+ ]
+}

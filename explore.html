@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Explore · Gradify</title>
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <meta name="robots" content="max-image-preview:large">
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <link rel="alternate" hreflang="en-GB" href="https://getgradify.com/explore.html">
+  <link rel="alternate" hreflang="x-default" href="https://getgradify.com/explore.html">
+  <!-- head-tags: canonical and link previews, added by scripts/build-seo.mjs -->
+  <meta property="og:title" content="Explore · Gradify">
+  <meta property="og:description" content="Browse every Gradify course: chapters, topics and lessons, with estimated study time and your progress. Open anything.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getgradify.com/explore.html">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <!-- Explore: every Gradify course as one browsable hierarchy (site, course, chapter, topic, lesson), with topic
        previews, the learner's progress and search (kit/ui/explore.js, docs/DESIGN-SYSTEM.md). -->
   <meta name="description" content="Browse every Gradify course: chapters, topics and lessons, with estimated study time and your progress. Open anything.">
@@ -11,10 +24,7 @@
   <link rel="canonical" href="https://getgradify.com/explore.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="kit/styles/base.css">
   <script src="kit/core/theme-boot.js"></script>
   <link rel="stylesheet" href="kit/styles/components.css">
@@ -48,6 +58,7 @@
   <link rel="modulepreload" href="/kit/ui/shelf.js">
   <link rel="modulepreload" href="/gradify.config.js">
   <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/core/accent.js">
   <link rel="modulepreload" href="/kit/ui/overlay.js">
   <!-- /module-preload -->
   <script type="module">
@@ -80,7 +91,9 @@
       <div class="hub-foot-cols">
         <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
         <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
-        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+        <nav aria-label="Free resources"><b>Free resources</b><a href="/tools/">Study tools</a><a href="/guides/">Study guides</a><a href="/topics/">Revision topics</a><a href="/study-plan/">Study plans</a><a href="/checklists/">Checklists</a><a href="/questions/">Practice questions</a><a href="/exam-traps/">Exam traps</a><a href="/glossary/">Glossary</a><a href="/terms/">Key terms A–Z</a><a href="/vs/">Concept comparisons</a><a href="/research/">Research</a><a href="/templates/">Templates</a><a href="/compare/">Compare apps</a><a href="/changelog/">What's new</a></nav>
+        <nav aria-label="Popular tools"><b>Popular tools</b><a href="/tools/degree-classification-calculator/">Degree calculator</a><a href="/tools/final-grade-calculator/">Final grade needed</a><a href="/tools/cram-planner/">Cram planner</a><a href="/tools/study-timer/">Study timer</a><a href="/tools/citation-helper/">Citation helper</a><a href="/pdf-to-flashcards/">PDF to flashcards</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/about.html">About</a><a href="/quality.html">Quality</a><a href="/ambassadors.html">Ambassadors</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/site-map.html">Site map</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
       <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
     </footer>

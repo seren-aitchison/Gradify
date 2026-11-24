@@ -60,6 +60,7 @@ H: Swimming and flying
 X: Narrowing an artery's radius by 25% reduces flow at the same pressure by how much?
 > Q ∝ r^{4}: 0.75^{4} = 0.32
 > Flow falls to about a third
+D: phys-u34-poiseuille
 !: Blood flow in large arteries is pulsatile and not exactly Poiseuille; the r^{4} rule is still a good guide for small vessels.
 Q: Why does arterial narrowing matter so much? | Flow depends on the fourth power of radius.
 Q: How do bacteria swim at low Reynolds number? | By rotating helical flagella, a non-reciprocal motion.
@@ -82,6 +83,7 @@ H: Consequences
 P: Because diffusion time ∝ distance^{2}, organisms larger than ~1 mm need circulatory systems, lungs and gills to move material by bulk flow. Cells use motor proteins and cytoplasmic streaming for long distances (nerve axons up to 1 m long transport cargo actively). Berg and Purcell showed bacteria sense chemicals near the diffusion-limited optimum.
 X: Time for oxygen (D = 2 × 10^{-9} m^{2} s^{-1}) to diffuse 1 mm?
 > t ≈ x^{2}/(2D) = 10^{-6}/(4 × 10^{-9}) = 250 s
+D: phys-u34-diffusion-time
 !: Diffusion doesn't "push" molecules in a direction; net flux arises statistically from concentration differences.
 Q: State Fick's first law. | Diffusive flux is proportional to the concentration gradient: J = −D dc/dx.
 Q: Why do large organisms need circulatory systems? | Diffusion is far too slow over large distances (time ∝ distance squared).
@@ -239,6 +241,7 @@ H: Clinical electrophysiology
 P: ECGs record the heart's electrical activity from the skin (~1 mV); EEGs record brain rhythms (~10–100 μV); EMGs muscles. Pacemakers and defibrillators control heart rhythm electrically; deep brain stimulation treats Parkinson's disease; cochlear implants restore hearing.
 X: Nernst potential for K^{+} with 140 mM inside, 5 mM outside at 310 K?
 > V = (26.7 mV) ln(5/140) = 26.7 × (−3.33) ≈ −89 mV
+D: phys-u34-nernst
 !: The resting potential isn't set by the pump directly; the pump maintains gradients, and permeability (mainly to K^{+}) sets the potential.
 Q: What is the Nernst potential? | The membrane voltage at which an ion's diffusive and electrical driving forces balance.
 Q: What does patch clamping measure? | Currents through individual ion channels or small membrane patches.
@@ -430,6 +433,7 @@ P: Deterministic effects above thresholds (skin burns, cataracts, radiation sick
 X: Surviving fraction after 2 Gy with α = 0.3 Gy^{-1}, β = 0.03 Gy^{-2}?
 > αD + βD^{2} = 0.6 + 0.12 = 0.72
 > S = e^{−0.72} ≈ 0.49
+D: phys-u34-cell-survival
 !: Radiation doesn't make the body radioactive (external beams); it damages molecules, chiefly DNA.
 Q: What is the linear–quadratic model? | Cell survival S = e^{−(αD + βD^{2})} after dose D.
 Q: Why is radiotherapy fractionated? | Normal tissues repair between fractions better than tumours, improving the therapeutic ratio.

@@ -1,0 +1,90 @@
+{
+ "id": "phys-u36-pulse-broadening",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u36",
+ "lesson": "Femtosecond optics",
+ "title": "A femtosecond pulse spreads in glass",
+ "caption": "A short pulse has a wide spectrum, and glass delays its colours by different amounts. A 20 fs pulse through 1 cm of glass (GDD = 360 fs²) leaves about 54 fs long: τ = τ₀√(1 + (4 ln 2 GDD/τ₀²)²). Shorter pulses broaden far more.",
+ "alt": "Output pulse duration against group-delay dispersion, rising from 20 femtoseconds and becoming nearly a straight line, with 54 femtoseconds at 360 square femtoseconds marked.",
+ "description": [
+  "τ₀ = 20 fs (Gaussian, FWHM).",
+  "τ = τ₀ √(1 + (4 ln 2 × GDD / τ₀²)²).",
+  "GDD = 360 fs²: 4 ln 2 × 360 / 400 = 2.5, so τ ≈ 53.8 fs.",
+  "Chirped mirrors or prism pairs add opposite GDD to undo it."
+ ],
+ "range": {
+  "x": [
+   0,
+   800
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   200,
+   400,
+   600,
+   800
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "group-delay dispersion / fs²",
+  "pulse duration / fs"
+ ],
+ "curves": [
+  {
+   "expr": "20*sqrt(1+(4*0.693147*x/400)^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 360,
+   "to": 53.76493675391012
+  }
+ ],
+ "points": [
+  {
+   "x": 360,
+   "y": 53.7649,
+   "colour": "a2",
+   "label": "54 fs",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "20*sqrt(1+(4*0.693147*x/400)^2)",
+   "x": 360,
+   "y": 53.764937,
+   "name": "53.8 fs at 360 fs²"
+  },
+  {
+   "type": "point",
+   "expr": "20*sqrt(1+(4*0.693147*x/400)^2)",
+   "x": 0,
+   "y": 20,
+   "name": "unchanged with no dispersion"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "phys-u28-photodiode-responsivity",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u28",
+ "lesson": "Photodiodes",
+ "title": "Responsivity of a silicon photodiode",
+ "caption": "Each absorbed photon gives at most one electron, so the current per watt, R = ηλe/hc, grows with wavelength (longer-wavelength photons each carry less energy). With η = 0.8, R = 0.55 A W⁻¹ at 850 nm. Beyond λ = hc/E_g = 1107 nm photons cannot cross silicon's band gap and the response stops.",
+ "alt": "Responsivity in amps per watt against wavelength, a straight line rising from 400 nanometres to a cut-off at about 1100 nanometres, with 0.55 at 850 marked.",
+ "description": [
+  "R = η × λ (nm) / 1240 A W⁻¹, with η = 0.8.",
+  "At 850 nm: 0.548 A W⁻¹.",
+  "Cut-off: 1240 / 1.12 eV = 1107 nm; no response beyond it.",
+  "Real silicon diodes fall off before the cut-off because absorption becomes weak near the gap (not shown)."
+ ],
+ "range": {
+  "x": [
+   400,
+   1200
+  ],
+  "y": [
+   0,
+   0.8
+  ]
+ },
+ "ticks": [
+  [
+   400,
+   600,
+   800,
+   1000,
+   1200
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "wavelength / nm",
+  "responsivity / A W⁻¹"
+ ],
+ "curves": [
+  {
+   "expr": "0.8*x/1239.84",
+   "domain": [
+    400,
+    1106.9999999999998
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1106.9999999999998,
+   "to": 0.7142857142857143,
+   "label": "cut-off 1107 nm"
+  },
+  {
+   "x": 850,
+   "to": 0.5484578655310363
+  }
+ ],
+ "points": [
+  {
+   "x": 850,
+   "y": 0.54846,
+   "colour": "a2",
+   "label": "0.55 A W⁻¹ at 850 nm",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.8*x/1239.84",
+   "x": 850,
+   "y": 0.54845787,
+   "name": "0.548 A W⁻¹ at 850 nm"
+  },
+  {
+   "type": "point",
+   "expr": "1239.84/1.12+0*x",
+   "x": 0,
+   "y": 1107,
+   "name": "cut-off at 1107 nm"
+  }
+ ]
+}

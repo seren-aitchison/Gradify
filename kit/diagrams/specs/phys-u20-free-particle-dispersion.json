@@ -1,0 +1,102 @@
+{
+ "id": "phys-u20-free-particle-dispersion",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Schrödinger equation",
+ "title": "The free-particle relation behind the Schrödinger equation",
+ "caption": "Substituting ψ = e^{i(kx − ωt)} into iħ∂ψ/∂t = −(ħ²/2m)∂²ψ/∂x² works only if ħω = ħ²k²/2m, that is E = p²/2m. For an electron this is a parabola, E = 3.81 k² eV with k in Å⁻¹: k = 1 Å⁻¹ (λ = 2π Å) has 3.81 eV, and doubling k quadruples E.",
+ "alt": "Graph of electron energy in electronvolts against wavenumber from 0 to 3 inverse angstroms: a parabola through 3.81 at 1 and 15.24 at 2.",
+ "description": [
+  "The horizontal axis is the wavenumber k in Å⁻¹; the vertical axis is the energy E = ħω in eV.",
+  "The Schrödinger equation is satisfied by e^{i(kx − ωt)} only when ħω = ħ²k²/2m: the plane wave carries the classical kinetic energy p²/2m with p = ħk.",
+  "For an electron E = 3.81k² eV: 3.81 eV at k = 1 Å⁻¹ and 15.24 eV at k = 2 Å⁻¹."
+ ],
+ "range": {
+  "x": [
+   0,
+   3
+  ],
+  "y": [
+   0,
+   36
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   10,
+   20,
+   30
+  ]
+ ],
+ "grid": [
+  0.5,
+  10
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "k / Å⁻¹",
+  "E / eV"
+ ],
+ "curves": [
+  {
+   "expr": "3.8099821167822325*x^2",
+   "domain": [
+    0,
+    3
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "E = ħ²k²/2m",
+   "labelAt": [
+    0.4,
+    18
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 3.81,
+   "label": "3.81 eV",
+   "dx": 10,
+   "dy": 16
+  },
+  {
+   "x": 2,
+   "y": 15.2399,
+   "colour": "a2",
+   "label": "15.2 eV",
+   "dx": 10,
+   "dy": 16
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3.8099821167822325*x^2",
+   "x": 1,
+   "y": 3.81,
+   "name": "E = ħ²k²/2m = 3.81 eV at k = 1 Å⁻¹ for an electron"
+  },
+  {
+   "type": "point",
+   "expr": "3.8099821167822325*x^2",
+   "x": 2,
+   "y": 15.2399,
+   "name": "doubling k quadruples E"
+  }
+ ]
+}

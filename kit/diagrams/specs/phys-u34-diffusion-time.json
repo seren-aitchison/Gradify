@@ -1,0 +1,88 @@
+{
+ "id": "phys-u34-diffusion-time",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u34",
+ "lesson": "Diffusion and transport",
+ "title": "Diffusion is fast over microns, slow over millimetres",
+ "caption": "The time to diffuse a distance x grows as x²/2D. Oxygen (D = 2 × 10⁻⁹ m² s⁻¹) crosses 1 mm in about 250 s, but 10 μm in about 25 ms. Beyond a fraction of a millimetre, organisms need circulation.",
+ "alt": "Diffusion time against distance, a parabola rising to 250 seconds at 1 millimetre and 1000 seconds at 2 millimetres.",
+ "description": [
+  "t ≈ x² / (2D), D = 2 × 10⁻⁹ m² s⁻¹ = 0.002 mm² s⁻¹.",
+  "x = 1 mm: 1 / 0.004 = 250 s.",
+  "x = 2 mm: 1000 s. Doubling the distance quadruples the time.",
+  "x = 10 μm: 0.025 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   2
+  ],
+  "y": [
+   0,
+   1100
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2
+  ],
+  [
+   250,
+   500,
+   750,
+   1000
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "distance / mm",
+  "time / s"
+ ],
+ "curves": [
+  {
+   "expr": "x^2/(2*0.002)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "to": 250
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 250,
+   "colour": "a2",
+   "label": "250 s for 1 mm",
+   "anchor": "end",
+   "dx": -10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "x^2/(2*0.002)",
+   "x": 1,
+   "y": 250,
+   "name": "250 s to diffuse 1 mm"
+  },
+  {
+   "type": "point",
+   "expr": "x^2/(2*0.002)",
+   "x": 2,
+   "y": 1000,
+   "name": "twice the distance, four times the time"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "id": "phys-u47-reliability",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u47",
+ "lesson": "Reliability and physical modelling",
+ "title": "Exponential reliability",
+ "caption": "With a constant failure rate λ = 10⁻⁵ per hour, R(t) = e^(−λt). Over 1000 hours R = e^(−0.01) = 0.99; at t = MTTF = 1/λ = 99999.99999999999 hours the reliability is e⁻¹ = 0.368, so only 37% of components survive to the mean time to failure.",
+ "alt": "Reliability falling exponentially from 1, with marked points of 0.990 at 1000 hours and 0.368 at 100 000 hours.",
+ "description": [
+  "R(t) = exp(−λt) with λ = 10⁻⁵ h⁻¹; time in thousands of hours.",
+  "t = 1000 h: R = 0.99.",
+  "t = 1/λ = 99999.99999999999 h: R = 0.3679."
+ ],
+ "range": {
+  "x": [
+   0,
+   300
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   300
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time (10³ hours)",
+  "reliability R"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.01*x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.99,
+   "colour": "a2",
+   "label": "0.99 at 1000 h",
+   "dx": 12,
+   "dy": 22
+  },
+  {
+   "x": 99.99999999999999,
+   "y": 0.3679,
+   "colour": "a4",
+   "label": "MTTF: 0.368",
+   "dx": 10,
+   "dy": -12
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.01*x)",
+   "x": 1,
+   "y": 0.99005,
+   "name": "R(1000 h) = 0.99"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.01*x)",
+   "x": 99.99999999999999,
+   "y": 0.367879,
+   "name": "R(MTTF) = 1/e"
+  }
+ ]
+}

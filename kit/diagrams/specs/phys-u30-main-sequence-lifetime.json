@@ -1,0 +1,106 @@
+{
+ "id": "phys-u30-main-sequence-lifetime",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u30",
+ "lesson": "Stellar structure and evolution",
+ "title": "Massive stars live fast",
+ "caption": "Fuel grows with mass but luminosity grows much faster (L ∝ M^3.5), so lifetime falls as t ∝ M/L ∝ M^(−2.5). With the Sun at 10 Gyr, a 2 M☉ star lasts about 1.8 Gyr; that is also the age of a cluster whose main-sequence turn-off is at 2 M☉.",
+ "alt": "Main-sequence lifetime in billions of years against mass in solar masses, falling steeply from 10 at one solar mass to 1.8 at two.",
+ "description": [
+  "Lifetime = 10 Gyr × (M/M☉)^(−2.5).",
+  "1 M☉: 10 Gyr. 2 M☉: 1.77 Gyr. 5 M☉: 0.18 Gyr.",
+  "A cluster's turn-off mass therefore dates it: stars above that mass have already left the main sequence."
+ ],
+ "also": [
+  {
+   "course": "physics",
+   "unit": "u30",
+   "lesson": "Star clusters"
+  }
+ ],
+ "range": {
+  "x": [
+   0.5,
+   5
+  ],
+  "y": [
+   0,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "mass / M☉",
+  "lifetime / 10⁹ years"
+ ],
+ "curves": [
+  {
+   "expr": "10*x^(-2.5)",
+   "domain": [
+    0.76,
+    5
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 2,
+   "to": 1.7677669529663687
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 10,
+   "colour": "a4",
+   "label": "Sun: 10 Gyr",
+   "dx": 10,
+   "dy": -10
+  },
+  {
+   "x": 2,
+   "y": 1.7678,
+   "colour": "a2",
+   "label": "1.8 Gyr at 2 M☉",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10*x^(-2.5)",
+   "x": 1,
+   "y": 10,
+   "name": "the Sun lives 10 Gyr"
+  },
+  {
+   "type": "point",
+   "expr": "10*x^(-2.5)",
+   "x": 2,
+   "y": 1.76776695,
+   "name": "a 2 M☉ star lives 1.77 Gyr"
+  }
+ ]
+}

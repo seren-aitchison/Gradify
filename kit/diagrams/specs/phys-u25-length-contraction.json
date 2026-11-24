@@ -1,0 +1,89 @@
+{
+ "id": "phys-u25-length-contraction",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u25",
+ "lesson": "Length contraction",
+ "title": "Length contraction",
+ "caption": "A moving object is shorter along its motion by 1/γ: L = L₀√(1 − v²/c²). The 100 m ship passing at 0.8c measures 60 m. Its crew still measure 100 m, their proper length.",
+ "alt": "Measured length of a 100 metre ship against its speed, falling slowly at first and then steeply to zero at the speed of light, with 60 metres at 0.8c.",
+ "description": [
+  "Proper length L₀ = 100 m.",
+  "At 0.8c: L = 100 × √(1 − 0.64) = 60 m.",
+  "Lengths across the motion are unchanged."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "v / c",
+  "measured length / m"
+ ],
+ "curves": [
+  {
+   "expr": "100*sqrt(1-x^2)",
+   "colour": "a1",
+   "samples": 600
+  }
+ ],
+ "marks": [
+  {
+   "x": 0.8,
+   "to": 60
+  }
+ ],
+ "points": [
+  {
+   "x": 0.8,
+   "y": 60,
+   "colour": "a2",
+   "label": "60 m at 0.8c",
+   "anchor": "end",
+   "dx": -10,
+   "dy": 18
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*sqrt(1-x^2)",
+   "x": 0.8,
+   "y": 60,
+   "name": "60 m at 0.8c"
+  },
+  {
+   "type": "point",
+   "expr": "100*sqrt(1-x^2)",
+   "x": 0,
+   "y": 100,
+   "name": "proper length at rest"
+  }
+ ]
+}

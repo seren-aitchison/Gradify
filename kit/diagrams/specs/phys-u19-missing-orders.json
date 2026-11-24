@@ -1,0 +1,119 @@
+{
+ "id": "phys-u19-missing-orders",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Single-slit and multiple-slit diffraction",
+ "title": "Double slit with d = 3a: orders 3 and 6 are missing",
+ "caption": "The double-slit fringes cos²(πd sin θ/λ) sit inside the single-slit envelope (sin β/β)². With d/a = 0.3 mm/0.1 mm = 3, the fringe maxima fall at a sin θ/λ = n/3, and the envelope is zero at a sin θ/λ = 1, 2, …: orders 3, 6, 9… coincide with single-slit minima and are missing.",
+ "alt": "Graph of intensity against a sin θ over λ from minus 2.2 to 2.2: a central fringe pattern with rapid oscillations inside a sinc-squared envelope, which is zero at plus and minus 1 and 2, where the third and sixth order fringes would have been.",
+ "description": [
+  "The horizontal axis is a sin θ/λ; the vertical axis is intensity relative to the central maximum.",
+  "The dashed curve is the single-slit envelope (sin β/β)², with zeros at a sin θ/λ = ±1, ±2.",
+  "The solid curve is the envelope times the double-slit fringes cos²(3πu), with u = a sin θ/λ. Its maxima are at u = n/3 (orders n = 0, 1, 2, 4, 5, …).",
+  "Orders 3 and 6 would fall at u = 1 and u = 2, exactly at the envelope's zeros, so those fringes are missing."
+ ],
+ "range": {
+  "x": [
+   -2.2,
+   2.2
+  ],
+  "y": [
+   0,
+   1.15
+  ]
+ },
+ "ticks": [
+  [
+   -2,
+   -1,
+   0,
+   1,
+   2
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.5
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "a sin θ / λ",
+  "I / I₀"
+ ],
+ "marks": [
+  {
+   "x": -2,
+   "label": "6 missing",
+   "to": 0.5
+  },
+  {
+   "x": -1,
+   "label": "3 missing",
+   "to": 0.5
+  },
+  {
+   "x": 1,
+   "label": "3 missing",
+   "to": 0.5
+  },
+  {
+   "x": 2,
+   "label": "6 missing",
+   "to": 0.5
+  }
+ ],
+ "curves": [
+  {
+   "expr": "(sin(3.14159265*x)/(3.14159265*x))^2",
+   "domain": [
+    -2.2001,
+    2.2
+   ],
+   "colour": "a4",
+   "dash": "6 5",
+   "width": 2.2
+  },
+  {
+   "expr": "(sin(3.14159265*x)/(3.14159265*x))^2*cos(3*3.14159265*x)^2",
+   "domain": [
+    -2.2001,
+    2.2
+   ],
+   "colour": "a1",
+   "width": 2.6,
+   "samples": 900
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "(sin(3.14159265*x)/(3.14159265*x))^2*cos(3*3.14159265*x)^2",
+   "x": 1,
+   "y": 0,
+   "name": "order 3 (u = 1) is missing: the single-slit envelope is zero"
+  },
+  {
+   "type": "point",
+   "expr": "(sin(3.14159265*x)/(3.14159265*x))^2*cos(3*3.14159265*x)^2",
+   "x": 2,
+   "y": 0,
+   "name": "order 6 (u = 2) is missing"
+  },
+  {
+   "type": "point",
+   "expr": "(sin(3.14159265*x)/(3.14159265*x))^2*cos(3*3.14159265*x)^2",
+   "x": 0.3333333333333333,
+   "y": 0.6839,
+   "name": "order 1 is present at u = 1/3 with intensity 0.68"
+  }
+ ]
+}

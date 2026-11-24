@@ -1,0 +1,63 @@
+{
+ "id": "phys-u20-co-vibration-levels",
+ "renderer": "transitions",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Quantum harmonic oscillator",
+ "title": "Vibrational levels of CO",
+ "caption": "E_n = (n + ½)ħω with ħω = hf = 0.265 eV for f = 6.4 × 10¹³ Hz. The levels are evenly spaced, the lowest is 0.13 eV above the bottom (zero-point energy ½ħω), and every step up absorbs the same 0.265 eV photon, 4.7 μm in the infrared.",
+ "alt": "Energy-level diagram of five equally spaced levels from 0.132 to 1.191 electronvolts, with upward absorption arrows of 0.265 electronvolts between neighbours.",
+ "description": [
+  "Levels n = 0 to 4 at E_n = (n + ½)ħω: 0.132 eV, 0.397 eV, 0.662 eV, 0.926 eV, 1.191 eV.",
+  "The spacing is constant, ħω = 0.265 eV; the lowest level is ½ħω = 0.13 eV (zero-point energy).",
+  "Upward arrows show absorption between neighbours; each photon has 0.265 eV and wavelength 4.7 μm in the infrared."
+ ],
+ "levels": [
+  {
+   "n": 0,
+   "E": 0.1323
+  },
+  {
+   "n": 1,
+   "E": 0.397
+  },
+  {
+   "n": 2,
+   "E": 0.6617
+  },
+  {
+   "n": 3,
+   "E": 0.9264
+  },
+  {
+   "n": 4,
+   "E": 1.1911
+  }
+ ],
+ "transitions": [
+  {
+   "from": 0,
+   "to": 1,
+   "E": 0.2647,
+   "f": 64000000000000,
+   "kind": "absorption",
+   "region": "infrared"
+  },
+  {
+   "from": 1,
+   "to": 2,
+   "E": 0.2647,
+   "f": 64000000000000,
+   "kind": "absorption",
+   "region": "infrared"
+  },
+  {
+   "from": 2,
+   "to": 3,
+   "E": 0.2647,
+   "f": 64000000000000,
+   "kind": "absorption",
+   "region": "infrared"
+  }
+ ]
+}

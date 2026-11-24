@@ -16,6 +16,7 @@ H: Why temperatures vary
 P: The troposphere is heated from the ground, so it's warmest at the bottom and convects. The stratosphere is heated from within by ozone absorbing UV, so it's warmest at the top and stable (inversion). The thermosphere absorbs the most energetic solar radiation, but its gas is so thin that "1000 K" wouldn't feel hot.
 X: Temperature at 8 km if the surface is 15 °C and the lapse rate is 6.5 K km^{-1}?
 > T = 15 − 6.5 × 8 = −37 °C
+D: phys-u33-lapse-rate
 !: The thermosphere's high temperature means fast molecules, not much heat: you'd freeze there because there's too little gas to warm you.
 Q: Why does stratospheric temperature increase with height? | Ozone absorbs solar UV, heating it from within.
 Q: Where does most weather occur? | In the troposphere.
@@ -38,6 +39,7 @@ H: Effects on life
 P: At 5500 m, air pressure is half that at sea level, so each breath has half the oxygen; climbers acclimatise or use oxygen above ~8000 m. Water boils at ~70 °C on Everest's summit. Aircraft cabins are pressurised to ~2000–2400 m equivalent.
 X: Pressure at 3000 m (H = 8 km)?
 > p = 1013 × e^{−3/8} = 1013 × 0.69 ≈ 700 hPa
+D: phys-u33-pressure-height
 !: Pressure differences, not absolute pressure, drive winds; a "high" is only a few per cent above average.
 Q: What is the atmospheric scale height? | The height over which pressure falls by a factor of e, about 8 km.
 Q: What is a temperature inversion? | A layer where temperature increases with height, suppressing convection.
@@ -84,6 +86,7 @@ H: Line-by-line models
 - Thousands of absorption lines (HITRAN database); band models for climate models.
 X: Light passes through an atmosphere with optical depth 0.3. Fraction transmitted?
 > e^{−0.3} = 0.74
+D: phys-u33-optical-depth
 !: An atmosphere opaque at a wavelength still emits at it; what escapes comes from the upper layers.
 Q: What is optical depth? | A measure of how much radiation is attenuated along a path: I = I_{0}e^{−τ}.
 Q: How does adding CO_{2} enhance the greenhouse effect? | It raises the effective emission height to colder levels, reducing outgoing radiation.
@@ -200,6 +203,7 @@ H: Clouds and climate
 P: Clouds cool by reflecting sunlight (especially low stratocumulus) and warm by trapping infrared (especially high cirrus); net ~−20 W m^{-2} today. How clouds change with warming is the largest uncertainty in climate sensitivity. Aerosols change droplet numbers and cloud brightness (Twomey effect): ship tracks show this vividly.
 X: Saturation vapour pressure at 20 °C?
 > e_{s} = 611 × exp(17.27 × 20/257.3) = 611 × e^{1.342} ≈ 2340 Pa
+D: phys-u33-saturation-vapour
 !: Clouds aren't water vapour (invisible); they're liquid droplets or ice crystals.
 Q: What are cloud condensation nuclei? | Small particles on which water vapour condenses to form cloud droplets.
 Q: Why does supercooled water exist in clouds? | Ice formation needs ice nuclei, which are scarce; pure droplets can stay liquid to −38 °C.
@@ -351,6 +355,7 @@ P: Wind turbines sit in the boundary layer; wind speed increases with height, an
 X: Wind at 10 m is 5 m s^{-1} over grass (z_{0} = 0.03 m). Wind at 100 m (neutral)?
 > u(100)/u(10) = ln(100/0.03)/ln(10/0.03) = 8.11/5.81 = 1.40
 > ≈ 7 m s^{-1}
+D: phys-u33-wind-profile
 !: Nights are often less windy at the surface because a stable layer decouples the surface from faster winds aloft.
 Q: What is the atmospheric boundary layer? | The lowest part of the atmosphere directly influenced by the surface, typically 1–2 km.
 Q: What does the Richardson number measure? | The balance of stability against shear, predicting turbulence.

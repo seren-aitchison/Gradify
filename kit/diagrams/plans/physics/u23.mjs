@@ -1,3 +1,32 @@
 // Physics unit 23 diagram plan: rows per kit/diagrams/BUILDERS.md, one or more per written lesson (u23-MM).
-// Filled by the unit agent (kit/diagrams/physics/UNIT-AGENT.md).
-export default [];
+// Specs are written by scripts/diagrams/physics/u23.mjs.
+const CALC = "a calculation method, carried by the worked example; a picture would not add to it";
+export default [
+  ["u23-01", null, CALC],
+  ["u23-02", null, "why a free neutron decays is an argument from masses, carried in the text"],
+  ["u23-03", null, CALC],
+  ["u23-04", "graph", "phys-u23-binding-curve", "binding energy per nucleon from the mass formula, peaking near iron, with fusion and fission"],
+  ["u23-05", "nuclear", "phys-u23-dt-fusion", "D + T → ⁴He + n balanced, Q = 17.6 MeV from the masses"],
+  ["u23-06", null, CALC],
+  ["u23-07", null, "needs renderer: the N–Z chart with the valley of stability and decay directions"],
+  ["u23-08", "lab", "decay", "watch a sample decay and measure its half-life"],
+  ["u23-09", "nuclear", "phys-u23-radium-alpha", "²²⁶Ra → ²²²Rn + α, with A and Z balanced"],
+  ["u23-09", "lab", "decay", "compare alpha, beta and gamma decay"],
+  ["u23-10", "graph", "phys-u23-uranium-lead", "²³⁸U and ²⁰⁶Pb fractions crossing at one half-life, 4.5 Gyr"],
+  ["u23-10", "lab", "decay", "follow parent and daughter populations"],
+  ["u23-11", "nuclear", "phys-u23-fission-reaction", "²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n balanced, Q ≈ 173 MeV"],
+  ["u23-12", null, CALC],
+  ["u23-13", null, CALC],
+  ["u23-14", null, CALC],
+  ["u23-15", null, CALC],
+  ["u23-16", "graph", "phys-u23-reactor-growth", "power growing as e^(t/100 s) for k = 1.001"],
+  ["u23-17", null, CALC],
+  ["u23-18", null, CALC],
+  ["u23-19", null, CALC],
+  ["u23-20", null, CALC],
+  ["u23-21", "graph", "phys-u23-lead-shielding", "dose rate halving every 9 mm of lead: a factor of 1000 at 90 mm"],
+  ["u23-22", null, "identifying cobalt-60 from its two gamma lines is carried by the worked example"],
+  ["u23-23", null, CALC],
+  ["u23-24", null, "why stars and bombs need different conditions is an argument, carried in the text"],
+  ["u23-25", null, CALC],
+];

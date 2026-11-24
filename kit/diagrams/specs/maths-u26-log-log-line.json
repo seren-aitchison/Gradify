@@ -1,0 +1,109 @@
+{
+ "id": "maths-u26-log-log-line",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u26",
+ "lesson": "Mathematical Visualisation",
+ "title": "y = 3x² becomes a straight line on log axes",
+ "caption": "Taking logs of y = 3x² gives log y = log 3 + 2 log x. Plotting log y against log x gives a straight line of slope 2 (the exponent) and intercept log 3 ≈ 0.477 (the constant).",
+ "alt": "A straight line rising with slope 2 from intercept 0.477 on the vertical axis, plotted against log x.",
+ "description": [
+  "Take logs of both sides: log y = log 3 + 2 log x.",
+  "Plot log y against log x.",
+  "The graph is a straight line.",
+  "Its slope 2 is the exponent and its intercept log 3 gives the constant 3."
+ ],
+ "range": {
+  "x": [
+   -1,
+   2
+  ],
+  "y": [
+   -1,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   -1,
+   0,
+   1,
+   2
+  ],
+  [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "log x",
+  "log y"
+ ],
+ "curves": [
+  {
+   "expr": "log(3)/log(10)+2*x",
+   "colour": "a1",
+   "domain": [
+    -1,
+    2
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.47712125471966244,
+   "label": "intercept 0.477",
+   "colour": "a2",
+   "dx": -12,
+   "dy": -12,
+   "anchor": "end"
+  },
+  {
+   "x": 1,
+   "y": 2.4771212547196626,
+   "label": "slope 2",
+   "colour": "a2",
+   "dx": 12,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "log(3)/log(10)+2*x",
+   "x": 0.5,
+   "value": 2,
+   "name": "the slope is the exponent 2"
+  },
+  {
+   "type": "point",
+   "expr": "log(3)/log(10)+2*x",
+   "x": 0,
+   "y": 0.47712125471966244,
+   "name": "the intercept is log 3 ≈ 0.477"
+  },
+  {
+   "type": "point",
+   "expr": "log(3)/log(10)+2*x",
+   "x": 1,
+   "y": 2.4771212547196626,
+   "name": "x = 10 gives y = 300: log 300 = log 3 + 2"
+  }
+ ],
+ "fromLesson": [
+  "log y = log 3 + 2 log x"
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "id": "phys-u23-uranium-lead",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u23",
+ "lesson": "Decay chains and half-life",
+ "title": "Dating a rock by uranium and lead",
+ "caption": "Starting with no lead, ²³⁸U decays (through a chain) to ²⁰⁶Pb. The fractions cross when half the uranium has gone: equal numbers of parent and daughter mean the rock is one half-life old, 4.5 × 10⁹ years.",
+ "alt": "Fractions of uranium-238 falling and lead-206 rising with time, crossing at one half at 4.5 billion years.",
+ "description": [
+  "Uranium remaining: 2^(−t/4.5 Gyr). Lead formed: 1 − 2^(−t/4.5 Gyr).",
+  "They are equal (D/P = 1) at t = t½ = 4.5 × 10⁹ years.",
+  "At two half-lives the ratio D/P is 3, at three it is 7."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   4.5,
+   9,
+   13.5
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / 10⁹ years",
+  "fraction of original uranium atoms"
+ ],
+ "curves": [
+  {
+   "expr": "2^(-x/4.5)",
+   "colour": "a1",
+   "label": "²³⁸U remaining",
+   "labelAt": [
+    0.4,
+    0.93
+   ]
+  },
+  {
+   "expr": "1-2^(-x/4.5)",
+   "colour": "a2",
+   "label": "²⁰⁶Pb formed",
+   "labelAt": [
+    8.6,
+    0.88
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 4.5,
+   "to": 0.5
+  }
+ ],
+ "points": [
+  {
+   "x": 4.5,
+   "y": 0.5,
+   "colour": "ink"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "2^(-x/4.5)",
+   "b": "1-2^(-x/4.5)",
+   "x": 4.5,
+   "y": 0.5,
+   "name": "parent and daughter equal after one half-life"
+  },
+  {
+   "type": "point",
+   "expr": "1-2^(-x/4.5)",
+   "x": 9,
+   "y": 0.75,
+   "name": "three quarters decayed after two half-lives"
+  }
+ ]
+}

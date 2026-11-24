@@ -1,0 +1,168 @@
+{
+ "id": "maths-u17-dtheta-circle",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u17",
+ "lesson": "Cohomology",
+ "title": "dθ along the unit circle",
+ "caption": "On the unit circle dθ = −y dx + x dy points along the tangent with length 1 per unit of arc, so one full circuit gives ∮ dθ = 2π. If dθ were exact, a closed loop would give 0.",
+ "alt": "The unit circle with a unit tangent arrow at (1, 0), (0, 1), (−1, 0) and (0, −1), each pointing anticlockwise, perpendicular to its radius.",
+ "description": [
+  "On the circle x = cos t and y = sin t.",
+  "At (1, 0) the form −y dx + x dy points straight up; at (0, 1) it points left.",
+  "The arrows follow the circle anticlockwise, always tangent.",
+  "Integrating dt from 0 to 2π gives 2π, not 0, so dθ is not exact."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   1,
+   0
+  ],
+  "B": [
+   0,
+   1
+  ],
+  "C": [
+   -1,
+   0
+  ],
+  "D": [
+   0,
+   -1
+  ],
+  "A2": [
+   1,
+   1
+  ],
+  "B2": [
+   -1,
+   1
+  ],
+  "C2": [
+   -1,
+   -1
+  ],
+  "D2": [
+   1,
+   -1
+  ]
+ },
+ "hide": [
+  "O",
+  "A2",
+  "B2",
+  "C2",
+  "D2"
+ ],
+ "labelAt": {
+  "A": [
+   -16,
+   14
+  ],
+  "B": [
+   14,
+   14
+  ],
+  "C": [
+   14,
+   14
+  ],
+  "D": [
+   14,
+   -12
+  ]
+ },
+ "circles": [
+  {
+   "centre": "O",
+   "r": 1,
+   "colour": "a1"
+  }
+ ],
+ "vectors": [
+  {
+   "from": "A",
+   "to": "A2",
+   "colour": "a2"
+  },
+  {
+   "from": "B",
+   "to": "B2",
+   "colour": "a2"
+  },
+  {
+   "from": "C",
+   "to": "C2",
+   "colour": "a2"
+  },
+  {
+   "from": "D",
+   "to": "D2",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    0,
+    0
+   ],
+   "text": "∮ dθ = 2π",
+   "colour": "a4",
+   "size": 16
+  }
+ ],
+ "view": {
+  "x": [
+   -2.3,
+   2.3
+  ],
+  "y": [
+   -2.3,
+   2.3
+  ]
+ },
+ "height": [
+  380,
+  340
+ ],
+ "checks": [
+  {
+   "type": "tangent",
+   "circle": 0,
+   "at": "A",
+   "through": "A2"
+  },
+  {
+   "type": "tangent",
+   "circle": 0,
+   "at": "B",
+   "through": "B2"
+  },
+  {
+   "type": "tangent",
+   "circle": 0,
+   "at": "C",
+   "through": "C2"
+  },
+  {
+   "type": "tangent",
+   "circle": 0,
+   "at": "D",
+   "through": "D2"
+  },
+  {
+   "type": "value",
+   "expr": "2*pi",
+   "value": 6.283185307179586,
+   "name": "the circuit integral ∫₀^{2π} dt = 2π"
+  }
+ ],
+ "fromLesson": [
+  "∮ dθ = ∫₀^{2π} dt = 2π"
+ ]
+}

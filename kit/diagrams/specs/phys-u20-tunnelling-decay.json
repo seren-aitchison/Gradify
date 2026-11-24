@@ -1,0 +1,99 @@
+{
+ "id": "phys-u20-tunnelling-decay",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u20",
+ "lesson": "Quantum tunnelling",
+ "title": "Tunnelling through a 5 eV barrier: log T against width",
+ "caption": "For an electron of 1 eV meeting a 5 eV barrier, κ = √(2m(V₀ − E))/ħ = 10.25 nm⁻¹ and T ≈ e^{−2κd}. On a logarithmic scale this is a straight line falling by 8.9 powers of ten per nanometre: at the lesson's 0.5 nm, log₁₀T = -4.45, T = 3.5 × 10⁻⁵ ≈ 4 × 10⁻⁵. Adding just 0.1 nm cuts T by a factor of 7.8.",
+ "alt": "Graph of the base-10 logarithm of the transmission probability against barrier width from 0 to 0.6 nanometres: a straight line falling from 0 to -4.45 at 0.5 nanometres.",
+ "description": [
+  "The horizontal axis is the barrier width d in nanometres; the vertical axis is log₁₀ of the transmission probability T.",
+  "κ = √(2 × 9.11 × 10⁻³¹ × 4 eV)/ħ = 10.25 nm⁻¹, so log₁₀T = −2κd log₁₀e = −8.9d.",
+  "At d = 0.5 nm: log₁₀T = -4.45, T = 3.5 × 10⁻⁵.",
+  "A thicker barrier cuts the transmission exponentially: every extra 0.1 nm reduces T about 8-fold."
+ ],
+ "range": {
+  "x": [
+   0,
+   0.6
+  ],
+  "y": [
+   -5.6,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6
+  ],
+  [
+   -1,
+   -2,
+   -3,
+   -4,
+   -5
+  ]
+ ],
+ "grid": [
+  0.1,
+  1
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "d / nm",
+  "log₁₀ T"
+ ],
+ "curves": [
+  {
+   "expr": "-8.89985301275704*x",
+   "domain": [
+    0,
+    0.6
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "T ≈ e^{−2κd}",
+   "labelAt": [
+    0.05,
+    -3.9
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.5,
+   "y": -4.4499,
+   "colour": "a2",
+   "label": "T ≈ 4 × 10⁻⁵",
+   "dx": -10,
+   "dy": -16,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "-8.89985301275704*x",
+   "x": 0.3,
+   "value": -8.89985301275704,
+   "name": "log₁₀T falls by 8.9 per nm (2κ log₁₀e)"
+  },
+  {
+   "type": "point",
+   "expr": "-8.89985301275704*x",
+   "x": 0.5,
+   "y": -4.4499,
+   "name": "0.5 nm gives T = e^{−10.2} ≈ 4 × 10⁻⁵ (log₁₀T = -4.45)"
+  }
+ ]
+}

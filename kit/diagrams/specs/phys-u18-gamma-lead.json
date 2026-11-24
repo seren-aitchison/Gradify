@@ -1,0 +1,100 @@
+{
+ "id": "phys-u18-gamma-lead",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u18",
+ "lesson": "Gamma rays",
+ "title": "Gamma rays through lead",
+ "caption": "With μ = 0.77 cm⁻¹ the transmitted fraction is I/I₀ = e^{−μx}. After 3 cm it is e^{−2.31} = 0.10: about 10% gets through. Every 0.90 cm (the half-value thickness ln 2/μ) halves the beam, in line with the lesson's ~9 mm for 1 MeV.",
+ "alt": "Graph of transmitted fraction against thickness of lead from 0 to 6 cm: an exponential fall passing 0.5 at 0.90 cm and 0.10 at 3 cm.",
+ "description": [
+  "The horizontal axis is the thickness of lead in centimetres; the vertical axis is the fraction of the beam transmitted.",
+  "The curve is e^{−0.77x}, from I = I₀e^{−μx} with μ = 0.77 cm⁻¹.",
+  "It reaches 0.5 at x = ln 2/μ = 0.90 cm.",
+  "At 3 cm the exponent is 2.31 and the fraction is 0.10, about 10%."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "thickness x / cm",
+  "I/I₀"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.77*x)",
+   "colour": "a1",
+   "width": 3.4,
+   "label": "e^{−μx}",
+   "labelAt": [
+    3.6,
+    0.35
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 0.9,
+   "y": 0.5,
+   "label": "half at 0.90 cm",
+   "dx": 12,
+   "dy": -8
+  },
+  {
+   "x": 3,
+   "y": 0.0993,
+   "colour": "a2",
+   "label": "0.10 at 3 cm",
+   "dx": 12,
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.77*x)",
+   "x": 3,
+   "y": 0.0993,
+   "name": "3 cm of lead transmits e^{−2.31} = 0.10"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.77*x)",
+   "x": 0.9001911435843445,
+   "y": 0.5,
+   "name": "the half-value thickness is ln 2/μ = 0.90 cm"
+  }
+ ]
+}

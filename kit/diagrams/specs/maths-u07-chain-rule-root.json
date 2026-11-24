@@ -1,0 +1,109 @@
+{
+ "id": "maths-u07-chain-rule-root",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Chain Rule",
+ "title": "The chain rule on y = √(x² + 4x)",
+ "caption": "dy/dx = (x + 2)/√(x² + 4x). At x = 1 this is 3/√5 ≈ 1.342, the slope of the tangent drawn at (1, √5).",
+ "alt": "The curve y = √(x² + 4x) for x ≥ 0 rising from the origin, with its tangent at (1, √5 ≈ 2.236), a line of gradient 1.342.",
+ "description": [
+  "Write y = (x² + 4x)^½: an outer power ½ of an inner function x² + 4x.",
+  "Outer derivative ½(x² + 4x)^(−½), inner derivative 2x + 4.",
+  "Multiplying: dy/dx = (x + 2)/√(x² + 4x).",
+  "At x = 1 it is 3/√5 ≈ 1.342."
+ ],
+ "range": {
+  "x": [
+   0,
+   4
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "x",
+  "y"
+ ],
+ "curves": [
+  {
+   "expr": "sqrt(x^2+4*x)",
+   "colour": "a1",
+   "domain": [
+    0,
+    4
+   ]
+  },
+  {
+   "expr": "2.23606797749979+1.3416407864998738*(x-1)",
+   "colour": "a2",
+   "dash": "6 4",
+   "domain": [
+    0,
+    3.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 2.23606797749979,
+   "label": "(1, √5)",
+   "colour": "a2",
+   "dx": 10,
+   "dy": 20
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "sqrt(x^2+4*x)",
+   "x": 1,
+   "y": 2.23606797749979,
+   "name": "y = √5 at x = 1"
+  },
+  {
+   "type": "slope",
+   "expr": "sqrt(x^2+4*x)",
+   "x": 1,
+   "value": 1.3416407864998738,
+   "name": "the gradient at x = 1 is (1 + 2)/√5 = 3/√5"
+  },
+  {
+   "type": "slope",
+   "expr": "2.23606797749979+1.3416407864998738*(x-1)",
+   "x": 1,
+   "value": 1.3416407864998738,
+   "name": "the tangent has the same gradient"
+  }
+ ],
+ "fromLesson": [
+  "(x + 2)/√(x"
+ ]
+}

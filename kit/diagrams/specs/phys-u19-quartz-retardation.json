@@ -1,0 +1,103 @@
+{
+ "id": "phys-u19-quartz-retardation",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u19",
+ "lesson": "Birefringence",
+ "title": "Retardation in a quartz plate at 633 nm",
+ "caption": "The two polarisations pick up a phase difference Δφ = 2π(n_e − n_o)d/λ. With n_e − n_o = 0.0092 at 633 nm it grows by 5.23° per μm of quartz, so a quarter-wave plate (90°, linear ↔ circular) is d = λ/4Δn = 17.2 μm thick, and a half-wave plate (180°) twice that.",
+ "alt": "Graph of retardation in degrees against plate thickness in micrometres: a straight line through the origin reaching 90 degrees at 17.2 micrometres and 180 degrees at 34.4 micrometres.",
+ "description": [
+  "The horizontal axis is the plate thickness in micrometres; the vertical axis is the phase difference between the two polarisations in degrees.",
+  "The line is Δφ = 360° × 0.0092 × d/0.633 μm = 5.23° per μm.",
+  "It reaches 90° (quarter-wave) at 17.2 μm and 180° (half-wave) at 34.4 μm."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   220
+  ]
+ },
+ "ticks": [
+  [
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   45,
+   90,
+   135,
+   180
+  ]
+ ],
+ "grid": [
+  10,
+  45
+ ],
+ "height": [
+  320,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "thickness d / μm",
+  "Δφ / °"
+ ],
+ "curves": [
+  {
+   "expr": "5.232227488151659*x",
+   "domain": [
+    0,
+    40
+   ],
+   "colour": "a1",
+   "width": 3.4,
+   "label": "Δφ ∝ d",
+   "labelAt": [
+    5,
+    110
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 17.2011,
+   "y": 90,
+   "colour": "a2",
+   "label": "quarter-wave: 17.2 μm",
+   "dx": 12,
+   "dy": 18
+  },
+  {
+   "x": 34.4022,
+   "y": 180,
+   "colour": "a2",
+   "label": "half-wave: 34.4 μm",
+   "dx": -10,
+   "dy": 18,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5.232227488151659*x",
+   "x": 17.20108695652174,
+   "y": 90,
+   "name": "a quarter-wave plate is 17.2 μm thick"
+  },
+  {
+   "type": "point",
+   "expr": "5.232227488151659*x",
+   "x": 34.40217391304348,
+   "y": 180,
+   "name": "twice the thickness gives a half-wave plate"
+  }
+ ]
+}

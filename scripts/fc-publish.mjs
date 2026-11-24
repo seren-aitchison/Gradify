@@ -62,7 +62,7 @@ try {
       log("NOT PUBLISHED: npm test fails:\n" + t.stdout.split("\n").filter((l) => /^not ok|^# (pass|fail)/.test(l)).join("\n"));
       break;
     }
-    git("add", "-A", "--", "kit", "docs", "sitemap.xml", "supabase");
+    git("add", "-A", "--", "kit", "docs", "sitemap.xml", "sitemaps", "supabase");
     const n = notes.length;
     git("commit", "-q", "--allow-empty", "-m", `Publish flashcards: ${n} notes file${n === 1 ? "" : "s"} updated\n\n${notes.map((f) => "- " + f.replace("kit/courses/", "")).join("\n")}\n\nMerges ${branch} at ${sha.slice(0, 7)} and regenerates the course registries, content API and QA reports. Every file passed check-flashcard-additions and the quality audit gate; npm test passes.\n\n${TRAILER}`);
     let pushed = false;

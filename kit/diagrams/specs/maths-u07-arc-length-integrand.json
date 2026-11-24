@@ -1,0 +1,97 @@
+{
+ "id": "maths-u07-arc-length-integrand",
+ "renderer": "graph",
+ "course": "maths",
+ "unit": "u07",
+ "lesson": "Arc Length and Surface Area",
+ "title": "Arc length as an area under the speed",
+ "caption": "For x = t², y = ⅔t³ the speed is √((dx/dt)² + (dy/dt)²) = 2t√(1 + t²). The curve's length for 0 ≤ t ≤ 1 is the area under this speed graph: (2/3)(2√2 − 1) ≈ 1.219.",
+ "alt": "The speed curve 2t√(1 + t²) rising from 0 at t = 0 to 2.83 at t = 1, with the area under it shaded.",
+ "description": [
+  "dx/dt = 2t and dy/dt = 2t².",
+  "Speed = √(4t² + 4t⁴) = 2t√(1 + t²).",
+  "Length = ∫₀¹ 2t√(1 + t²) dt = [(2/3)(1 + t²)^(3/2)]₀¹.",
+  "= (2/3)(2√2 − 1) ≈ 1.219."
+ ],
+ "range": {
+  "x": [
+   0,
+   1.2
+  ],
+  "y": [
+   0,
+   3.4
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1
+  ],
+  [
+   1,
+   2,
+   3
+  ]
+ ],
+ "grid": [
+  0.25,
+  1
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "axisLabels": [
+  "t",
+  "speed"
+ ],
+ "curves": [
+  {
+   "expr": "2*x*sqrt(1+x^2)",
+   "colour": "a1",
+   "domain": [
+    0,
+    1.1
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "2*x*sqrt(1+x^2)",
+   "from": 0,
+   "to": 1,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 2.8284271247461903,
+   "label": "(1, 2√2)",
+   "colour": "a2",
+   "dx": -10,
+   "dy": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "2*x*sqrt(1+x^2)",
+   "from": 0,
+   "to": 1,
+   "value": 1.2189514164974602,
+   "tol": 0.0005,
+   "name": "the area under 2t√(1 + t²) from 0 to 1 is (2/3)(2√2 − 1) ≈ 1.219"
+  }
+ ],
+ "fromLesson": [
+  "2t√(1 + t^{2})"
+ ]
+}
