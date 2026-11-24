@@ -17,6 +17,8 @@ let analytics = null;
 const counts = () => (analytics ||= import("/kit/core/analytics.js").catch(() => null));
 export const act = (event) => counts().then((m) => m?.track(event, "Gradify"));
 counts().then((m) => m?.trackView("Gradify"));
+// start fetching the drag-up sheet now, in parallel with the tool's own code, so it's ready the moment the tool is
+if (document.querySelector("[data-sheet]")) import("/assets/sheet.js").catch(() => {});
 import("/kit/core/vitals.js").then((m) => m.watchVitals("Gradify")).catch(() => {});
 import("/kit/core/attribution.js").then((m) => m.captureFirstTouch()).catch(() => {});
 

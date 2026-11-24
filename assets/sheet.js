@@ -1,78 +1,110 @@
 // A drag-up sheet for a tool's inputs (the degree tracker's module list): [data-sheet] with a .sheet-handle button and
-// a .sheet-body. On phones (assets/seo.css) it sticks to the bottom of the screen while its tool is in view, so the
-// results stay visible above it. Drag the handle up to open it and down to tuck it away, or tap it. On larger screens
-// it's an ordinary card whose handle folds the list away. Open and closed are kept per tool in this browser.
-const PHONE = "(max-width: 700px)";
-const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+// a .sheet-body.
+//   Phones: the sheet floats at the bottom of the screen while its tool is in view, with only its handle showing.
+//     Drag it up (or tap) to edit; drag it down to see the results. It moves with transform alone, on the compositor:
+//     no layout or paint while dragging, one write per frame, and a flick carries it on, like an iOS sheet.
+//   Larger screens: an ordinary card whose handle folds the list away.
+// Open or closed is kept per tool in this browser.
+const PHONE = matchMedia("(max-width: 700px)");
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)");
+const EASE = "transform .5s cubic-bezier(.32, .72, 0, 1)";   // the iOS sheet curve
 
 export function mount(sheet) {
   const handle = sheet.querySelector(".sheet-handle"), body = sheet.querySelector(".sheet-body");
   if (!handle || !body || sheet.dataset.ready) return;
   sheet.dataset.ready = "1";
-  const tool = sheet.closest("[data-tool]"), key = `gradify.sheet.${tool?.dataset.tool || "tool"}`;
-  const phone = () => matchMedia(PHONE).matches;
-  const max = () => Math.round(innerHeight * (phone() ? 0.7 : 10));
-  let open = true;
+  const tool = sheet.closest("[data-tool]") || sheet.parentElement, key = `gradify.sheet.${tool.dataset.tool || "tool"}`;
+  const spacer = document.createElement("div"); spacer.className = "sheet-spacer"; spacer.setAttribute("aria-hidden", "true");
+  sheet.after(spacer);
 
-  function set(next, animate = true) {
+  let open = true, docked = false, shown = false, y = 0, frame = 0, peek = 0, height = 0;
+  const remember = () => { try { localStorage.setItem(key, open ? "1" : "0"); } catch { /* storage blocked */ } };
+  const hasMarks = () => [...tool.querySelectorAll('.rows [name="mark"]')].some((i) => i.value !== "");
+
+  // where the sheet sits when docked: 0 open, (height - peek) closed, past the bottom when its tool is off screen
+  const rest = () => (!shown ? height + 40 : open ? 0 : height - peek);
+  const paint = (to, animate) => {
+    y = to;
+    sheet.style.transition = animate && !REDUCED.matches ? EASE : "none";
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => { sheet.style.transform = `translate3d(0, ${Math.round(y)}px, 0)`; });
+  };
+  const measure = () => { height = sheet.offsetHeight; peek = handle.offsetHeight; spacer.style.height = docked ? `${peek + 24}px` : "0px"; };
+
+  function state(next, animate = true) {
     open = next;
     handle.setAttribute("aria-expanded", String(open));
     sheet.classList.toggle("open", open);
-    try { localStorage.setItem(key, open ? "1" : "0"); } catch { /* storage blocked */ }
-    const done = () => { body.style.height = ""; body.hidden = !open; body.removeEventListener("transitionend", done); };
-    if (!animate || reduced()) { body.style.transition = "none"; done(); requestAnimationFrame(() => { body.style.transition = ""; }); return; }
-    body.hidden = false;
-    const from = body.getBoundingClientRect().height;
-    body.style.height = `${from}px`;
-    const to = open ? Math.min(body.scrollHeight, max()) : 0;
-    requestAnimationFrame(() => { body.style.transition = ""; body.style.height = `${to}px`; });
-    body.addEventListener("transitionend", done);
-    setTimeout(done, 400);   // in case transitionend doesn't fire (no change in height)
+    if (docked) { body.inert = !open; body.hidden = false; paint(rest(), animate); }
+    else { body.inert = false; body.hidden = !open; }
   }
 
-  // where it starts: open on a first visit (there's nothing to see until marks are in), as left otherwise; on phones,
-  // tucked away once there are marks, so the results show
-  let saved = null; try { saved = localStorage.getItem(key); } catch { /* storage blocked */ }
-  const hasMarks = () => [...(tool?.querySelectorAll('.rows [name="mark"]') || [])].some((i) => i.value !== "");
-  set(saved === null ? !(phone() && hasMarks()) : saved === "1", false);
+  // docked on phones, in the page elsewhere
+  function mode() {
+    docked = PHONE.matches;
+    sheet.classList.toggle("docked", docked);
+    if (!docked) { sheet.style.transform = ""; sheet.style.transition = ""; sheet.inert = false; spacer.style.height = "0px"; state(open, false); return; }
+    body.hidden = false; measure(); onScroll(true); state(open, false);
+  }
+  // show the docked sheet only while its tool fills a good part of the screen, so it never covers the article
+  function onScroll(force) {
+    if (!docked) return;
+    const r = tool.getBoundingClientRect(), vh = innerHeight;
+    const want = r.top < vh * 0.7 && r.bottom > vh * 0.45;
+    if (want !== shown || force === true) { shown = want; sheet.classList.toggle("shown", shown); sheet.inert = !shown; if (!drag) paint(rest(), force !== true); }
+  }
+  let ticking = false;
+  addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); }, { passive: true });
+  addEventListener("resize", () => { if (docked) { measure(); paint(rest(), false); } }, { passive: true });
+  PHONE.addEventListener?.("change", mode);
+  // rows added or removed change the sheet's height
+  if ("ResizeObserver" in window) new ResizeObserver(() => { if (docked && !drag) { measure(); paint(rest(), false); } }).observe(body);
 
-  // drag on the handle: the list follows the finger, then snaps open or shut
+  // drag: follow the finger on the compositor, then snap by position or by a flick
   let drag = null;
   handle.addEventListener("pointerdown", (e) => {
     if (e.button !== 0) return;
-    body.hidden = false;
-    drag = { y: e.clientY, h: open ? body.getBoundingClientRect().height : 0, t: performance.now(), moved: false, last: e.clientY, v: 0 };
-    body.style.transition = "none";
+    drag = { start: e.clientY, from: y, moved: false, v: 0, last: e.clientY, t: e.timeStamp };
+    if (docked) { sheet.style.transition = "none"; body.inert = false; }
     handle.setPointerCapture(e.pointerId);
   });
   handle.addEventListener("pointermove", (e) => {
     if (!drag) return;
-    const dy = drag.y - e.clientY;
-    if (Math.abs(dy) > 6) drag.moved = true;
-    if (!drag.moved) return;
-    const now = performance.now(); drag.v = (drag.last - e.clientY) / Math.max(1, now - drag.t); drag.last = e.clientY; drag.t = now;
-    body.style.height = `${Math.max(0, Math.min(max(), Math.min(body.scrollHeight, drag.h + dy)))}px`;
+    const dy = e.clientY - drag.start;
+    if (!drag.moved && Math.abs(dy) < 6) return;
+    drag.moved = true;
+    const dt = Math.max(1, e.timeStamp - drag.t); drag.v = 0.8 * ((e.clientY - drag.last) / dt) + 0.2 * drag.v; drag.last = e.clientY; drag.t = e.timeStamp;
+    if (!docked) return;
+    const max = height - peek, raw = drag.from + dy;
+    // rubber-band past either end, like iOS
+    const to = raw < 0 ? raw / 3 : raw > max ? max + (raw - max) / 3 : raw;
+    y = to; cancelAnimationFrame(frame); frame = requestAnimationFrame(() => { sheet.style.transform = `translate3d(0, ${Math.round(y)}px, 0)`; });
   });
   const end = (e) => {
     if (!drag) return;
     const d = drag; drag = null;
     if (handle.hasPointerCapture?.(e.pointerId)) handle.releasePointerCapture(e.pointerId);
-    body.style.transition = "";
-    if (!d.moved) { body.style.height = open ? "" : "0px"; body.hidden = !open; return; }   // a tap: the click handler toggles
+    if (!d.moved) { if (docked) body.inert = !open; return; }   // a tap: the click handler toggles
     handle.dataset.dragged = "1";
-    const h = body.getBoundingClientRect().height, full = Math.min(body.scrollHeight, max());
-    set(d.v > 0.4 ? true : d.v < -0.4 ? false : h > full / 2);
+    if (!docked) { state(d.v < 0 ? true : d.v > 0 ? false : open); remember(); return; }
+    const max = height - peek;
+    state(d.v < -0.35 ? true : d.v > 0.35 ? false : y < max / 2); remember();
   };
   handle.addEventListener("pointerup", end);
   handle.addEventListener("pointercancel", end);
   handle.addEventListener("click", () => {
     if (handle.dataset.dragged) { delete handle.dataset.dragged; return; }
-    set(!open);
+    state(!open); remember();
   });
-  // anything that asks for the list (the empty dashboard's "Add a module mark") opens it
-  tool?.addEventListener("click", (e) => {
+  // anything that asks for the list (the dashboard's "Add a module") opens it and focuses the first field
+  tool.addEventListener("click", (e) => {
     if (!e.target.closest("[data-open-sheet]")) return;
-    set(true);
-    setTimeout(() => body.querySelector("input, select")?.focus(), reduced() ? 0 : 320);
+    state(true); remember();
+    setTimeout(() => body.querySelector("input, select")?.focus({ preventScroll: true }), REDUCED.matches ? 0 : 350);
   });
+
+  // where it starts: as left last time; on a first visit open, except on a phone once there are marks to show
+  let saved = null; try { saved = localStorage.getItem(key); } catch { /* storage blocked */ }
+  open = saved === null ? !(PHONE.matches && hasMarks()) : saved === "1";
+  mode();
 }

@@ -57,6 +57,85 @@ export function degreeTracker(rows, w3 = 60, perYear = 120) {
   return { years, average, complete, goals };
 }
 
+/**
+ * Degree intelligence: what the numbers mean and what to do next. Deterministic (the maths is degreeTracker), so every
+ * statement can be checked; estimates are labelled as estimates. Rows may also have a `name` and, for work not marked
+ * yet (credits but no mark), a `due` date ("YYYY-MM-DD").
+ *   cls        the class of the average so far ({ boundary, short })
+ *   headline   one sentence: where you stand
+ *   up / keep  the next class up and the current class: { short, boundary, need, status } (null when not relevant)
+ *   projection { avg, short, basis } if the rest of your work matches your most recent year (an estimate), or null
+ *              when that's no different from the average so far
+ *   priorities upcoming modules ranked by impact × urgency: [{ name, share, days, due, score, minutes, perTen, reason }]
+ *              (perTen: how much 10 more marks on that piece adds to the final average)
+ *   unlisted   share of the degree (%) still to come that isn't in the list
+ *   insights   [{ kind: "risk"|"chance"|"trend"|"weak"|"border"|"gap", text }]
+ *   next       the next best action: { text, why, priority } (priority is one of `priorities`, or null)
+ */
+export function degreeIntel(rows, w3 = 60, today = new Date(), perYear = 120) {
+  const t = degreeTracker(rows, w3, perYear);
+  if (t.average === null) return { t, cls: null, headline: "", up: null, keep: null, projection: null, priorities: [], unlisted: 0, insights: [], next: null };
+  const wt = (y) => t.years.find((x) => x.year === Number(y))?.weight ?? 0;
+  const c = classify(t.average), cls = { boundary: c.boundary, short: SHORT_CLASS[c.boundary] };
+  const goal = (b) => t.goals.find((g) => g.boundary === b) || null;
+  const up = c.boundary < 70 ? goal(c.next ?? 40) : null, keep = c.boundary >= 40 ? goal(c.boundary) : null;
+  const banked = t.years.reduce((a, y) => a + (y.avg === null ? 0 : y.weight * y.avg * y.done), 0);
+  const rest = 1 - t.complete;
+  // an estimate: the rest of the degree at the average of the most recent year with marks
+  const recent = [...t.years].reverse().find((y) => y.avg !== null && y.weight > 0);
+  const projection = rest > 1e-9 && recent ? (() => { const avg = banked + rest * recent.avg; return Math.abs(avg - t.average) < 0.5 ? null : { avg, short: SHORT_CLASS[classify(avg).boundary], basis: recent.year === 3 ? "final-year" : "year 2" }; })() : null;
+
+  // the modules still to come, ranked by how much of the degree they carry and how soon they're due
+  const day0 = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const target = up && up.status === "reachable" ? up : keep && keep.status === "reachable" ? keep : null;
+  const upcoming = rows.filter((r) => (r.mark === "" || r.mark == null) && Number(r.credits) > 0 && wt(r.year) > 0).map((r, i) => {
+    const share = wt(r.year) * Number(r.credits) / perYear;
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(r.due || "");
+    const days = m ? Math.round((Date.UTC(+m[1], +m[2] - 1, +m[3]) - day0) / 864e5) : null;
+    const urgency = days === null ? 1 : days < 0 ? 3 : days <= 7 ? 3 : days <= 14 ? 2 : days <= 42 ? 1.4 : 1;
+    const minutes = days === null ? 30 : days <= 7 ? 90 : days <= 14 ? 60 : 45;
+    return { name: String(r.name || "").trim() || `Module ${i + 1} (year ${r.year === "3" ? "final" : r.year})`, share: share * 100, days, due: r.due || "", score: share * 100 * urgency, minutes, perTen: share * 10 };
+  }).sort((a, b) => b.score - a.score);
+  for (const [i, p] of upcoming.entries()) {
+    const when = p.days === null ? "" : p.days < 0 ? ` It was due ${-p.days} day${p.days === -1 ? "" : "s"} ago.` : p.days === 0 ? " It's due today." : p.days === 1 ? " It's due tomorrow." : ` It's due in ${p.days} days.`;
+    const aim = target && i === 0 ? ` For a ${target.short}, you need ${Math.ceil(target.need * 10) / 10}% across everything left, this included.` : "";
+    p.reason = `Worth ${Math.round(p.share * 10) / 10}% of your whole degree${i === 0 && upcoming.length > 1 ? ", your biggest lever right now" : ""}: every extra 10 marks here adds ${Math.round(p.perTen * 100) / 100} to your final average.${when}${aim}`;
+  }
+  const listed = upcoming.reduce((a, p) => a + p.share, 0);
+  const unlisted = Math.max(0, rest * 100 - listed);
+
+  const f1 = (n) => Math.round(n * 10) / 10;
+  const insights = [];
+  if (keep && keep.status === "reachable" && keep.need > t.average + 0.5) insights.push({ kind: "risk", text: `Holding your ${cls.short} needs ${f1(keep.need)}% across what's left, above your ${f1(t.average)}% average so far. This is the one to protect.` });
+  if (up && up.status === "reachable") insights.push({ kind: "chance", text: up.need <= t.average + 5 ? `A ${up.short} is within reach: you need ${f1(up.need)}% across what's left, close to your current ${f1(t.average)}%.` : `A ${up.short} is still possible, but needs ${f1(up.need)}% across what's left, ${f1(up.need - t.average)} points above your average so far.` });
+  if (up && up.status === "out") insights.push({ kind: "gap", text: `A ${up.short} is no longer reachable on these numbers, so put your effort into making your ${cls.short} safe.` });
+  if (c.borderline) insights.push({ kind: "border", text: `You're ${f1(c.next - t.average)} marks under the ${c.next}% boundary. Many universities look again at borderline marks, often by how many of your final-year credits are in the higher class. Check your regulations.` });
+  const y2 = t.years.find((y) => y.year === 2), y3 = t.years.find((y) => y.year === 3);
+  if (y2?.avg != null && y3?.avg != null && y2.weight > 0) {
+    const d = y3.avg - y2.avg;
+    if (d >= 2) insights.push({ kind: "trend", text: `Your final-year marks are ${f1(d)} points above year 2, and the final year carries ${Math.round(y3.weight * 100)}% of your degree. You're heading the right way.` });
+    if (d <= -2) insights.push({ kind: "risk", text: `Your final-year marks are ${f1(-d)} points below year 2, and the final year carries ${Math.round(y3.weight * 100)}% of your degree. Worth acting on now.` });
+  }
+  const marked = rows.filter((r) => r.mark !== "" && r.mark != null && Number(r.credits) > 0 && wt(r.year) > 0);
+  const low = marked.map((r) => ({ name: String(r.name || "").trim(), mark: Number(r.mark) })).sort((a, b) => a.mark - b.mark)[0];
+  if (low && marked.length > 2 && low.mark < t.average - 8) insights.push({ kind: "weak", text: `Your lowest mark is ${low.name ? `${low.name} (${f1(low.mark)}%)` : `${f1(low.mark)}%`}. Reread its feedback before your next assessment in that area; it's the cheapest improvement you can make.` });
+  if (unlisted > 0.5) insights.push({ kind: "gap", text: `${f1(unlisted)}% of your degree is still to come but isn't in your list. Add those modules with their credits and due dates (leave the mark blank) for sharper priorities.` });
+
+  let headline;
+  if (t.complete >= 1 - 1e-9) headline = `Your degree is fully marked: ${f1(t.average)}%, a ${cls.short}.`;
+  else if (c.boundary < 40) headline = `You're below the 40% pass mark so far. A Third needs ${f1(goal(40).need)}% across what's left.`;
+  else if (up && up.status === "reachable" && up.need <= t.average + 5) headline = `You're on track for a ${cls.short}, and a ${up.short} is within reach.`;
+  else if (keep && keep.status === "reachable" && keep.need > t.average + 0.5) headline = `You're on a ${cls.short} for now, but holding it needs a step up.`;
+  else headline = `You're on track for a ${cls.short}.`;
+
+  const top = upcoming[0] || null;
+  const next = top
+    ? { text: `Spend ${top.minutes} minutes on ${top.name} today.`, why: top.reason, priority: top }
+    : { text: "Add the modules you still have to do.", why: "Give each one its credits and due date and leave the mark blank. Gradify will rank them by how much they move your degree and tell you where to start.", priority: null };
+  return { t, cls, headline, up, keep, projection, priorities: upcoming.slice(0, 3), unlisted, insights, next };
+}
+const SHORT_CLASS = { 70: "First", 60: "2:1", 50: "2:2", 40: "Third", 0: "fail" };
+
 // ---------- what you need in the final ----------
 /** the final exam mark needed to reach `target`, given your current mark and the final's weight (all %) */
 export function neededOnFinal(current, weight, target) {
@@ -160,41 +239,67 @@ const svg = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 const ICON = {
   tick: svg('<path d="M5 12.5 10 17 19 7"/>'), cross: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
   target: svg('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8" fill="currentColor"/>'),
-  equals: svg('<path d="M7 9.5h10M7 14.5h10"/>'), flag: svg('<path d="M6 20V4.5M6 5h10.5l-2 3.5 2 3.5H6"/>'),
+  // the Gradify "G": the arc from the logo
+  g: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4"/></svg>',
+  spark: svg('<path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/>'),
+  risk: svg('<path d="M12 3.5 21 19H3z"/><path d="M12 10v4M12 16.8v.2"/>'), chance: svg('<path d="M7 17 17 7M9 7h8v8"/>'),
+  trend: svg('<path d="M3.5 16.5 9 11l4 4 7.5-7.5"/><path d="M15 7.5h5.5V13"/>'), weak: svg('<path d="M4 5.5h6a2 2 0 0 1 2 2V19a2 2 0 0 0-2-2H4zM20 5.5h-6a2 2 0 0 0-2 2V19a2 2 0 0 1 2-2h6z"/>'),
+  border: svg('<path d="M12 4v16M5 8h14M7 8l-3 6h6zM17 8l-3 6h6z"/>'), gap: svg('<circle cx="12" cy="12" r="8.5"/><path d="M12 8v8M8 12h8"/>'),
+  cal: svg('<rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/>'), cards: svg('<rect x="3.5" y="7" width="13" height="13" rx="3"/><path d="M8 4h9.5a3 3 0 0 1 3 3v9.5"/>'),
 };
 
 const TOOLS = {
   degree(root) {
     const out = root.querySelector(".result"), w = root.querySelector("[name=w3]"), live = root.querySelector("[data-live]"), sum = root.querySelector("[data-sum]");
-    const row = () => `<div class="row"><div><label>Module mark %</label><input name="mark" type="number" min="0" max="100" step="0.1" inputmode="decimal"></div><div><label>Credits</label><input name="credits" type="number" min="0" step="5" value="20" inputmode="numeric"></div><div><label>Year</label><select name="year"><option value="2">Year 2</option><option value="3">Final year</option></select></div>${del}</div>`;
+    const row = () => `<div class="row mod"><div class="f-name"><label>Module</label><input name="name" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Dissertation"></div><div class="f-mark"><label>Mark %</label><input name="mark" type="number" min="0" max="100" step="0.1" inputmode="decimal" placeholder="–" aria-describedby="mark-help"></div><div class="f-cr"><label>Credits</label><input name="credits" type="number" min="0" step="5" value="20" inputmode="numeric"></div><div class="f-yr"><label>Year</label><select name="year"><option value="2">Year 2</option><option value="3">Final</option></select></div><div class="f-due"><label>Due (if not marked)</label><input name="due" type="date"></div>${del}</div>`;
+    let intel = null;
+    const pct1 = (n) => `${fmt(n)}%`;
+    const dueText = (p) => p.days === null ? "No due date" : p.days < 0 ? `${-p.days} day${p.days === -1 ? "" : "s"} overdue` : p.days === 0 ? "Due today" : p.days === 1 ? "Due tomorrow" : `Due in ${p.days} days`;
+    const sessions = (p) => { if (!(p?.days > 1)) return []; const [y, m, d] = p.due.split("-").map(Number); return reviewDates(new Date(), new Date(y, m - 1, d)); };
+    const ring = (frac, label, cls = "") => { const C = 2 * Math.PI * 22; return `<svg class="ring ${cls}" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="22" class="ring-bg"/><circle cx="27" cy="27" r="22" class="ring-fg" stroke-dasharray="${(C * frac).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 27 27)"/><text x="27" y="32" text-anchor="middle">${label}</text></svg>`; };
     rowsTool(root, "degree", row, val, (rows) => {
-      const t = degreeTracker(rows, Number(w.value));
-      const n = rows.filter((r) => r.mark !== "" && Number(r.credits) > 0).length;
-      if (sum) sum.textContent = n ? `${n} module${n === 1 ? "" : "s"}` : "Add your marks";
+      intel = degreeIntel(rows, Number(w.value));
+      const t = intel.t;
+      const n = rows.filter((r) => r.mark !== "" && Number(r.credits) > 0).length, todo = rows.filter((r) => r.mark === "" && Number(r.credits) > 0).length;
+      if (sum) sum.textContent = n || todo ? `${n} marked${todo ? ` · ${todo} to come` : ""}` : "Add your marks";
       if (t.average === null) {
-        out.innerHTML = `<div class="dash-empty"><span class="tile-ico">${ICON.target}</span><button type="button" class="dash-cta" data-open-sheet>Add a module mark</button><span>Your average, how much of your degree is marked and what you need for each class appear here.</span></div>`;
+        out.innerHTML = `<div class="dash-empty"><span class="sq grad">${ICON.g}</span><b>Start with one module mark</b><span>Gradify shows where your degree stands, what's at risk, and exactly what to work on next.</span><button type="button" class="dash-cta" data-open-sheet>Add a module</button></div>`;
         root.dataset.summary = ""; if (live) live.textContent = ""; setNext(root, ""); return;
       }
-      const c = classify(t.average), short = SHORT[c.boundary], pct = Math.round(t.complete * 100);
-      const reach = t.goals.find((g) => g.status === "reachable");
-      const summary = `Degree so far: ${fmt(t.average)}% (${short}), ${pct}% marked.${reach ? ` Needs ${fmt(reach.need)}% on the rest for a ${reach.short}.` : ""}`;
+      const { cls, next } = intel, pct = Math.round(t.complete * 100);
+      const summary = `${intel.headline} Average so far ${pct1(t.average)}, ${pct}% of the degree marked. Next: ${next.text}`;
       root.dataset.summary = summary; if (live) live.textContent = summary;
-      setNext(root, c.borderline || t.average < 70 ? `you're ${fmt((c.next ?? 70) - t.average)} marks off the next class. <a href="/tools/module-grade-calculator/">Work out the exam mark each module needs</a>, then ${NOTES}.` : `protect it: <a href="/guides/active-recall-schedule-before-finals/">use the 6-week schedule before finals</a>.`);
+      setNext(root, "");
       const goal = (g) => {
-        const [mark, text] = { secured: [ICON.tick, "Secured"], met: [ICON.tick, "Achieved"], out: [ICON.cross, "Out of reach"], missed: [ICON.cross, "Not reached"], reachable: [ICON.target, `Need ${fmt(g.need)}%`] }[g.status];
-        return `<div class="goal ${g.status}"><span class="goal-top"><span class="goal-name">${g.short} <small>${g.boundary}%</small></span><span class="goal-mark">${mark}</span></span><span class="goal-need">${text}</span></div>`;
+        const [mark, text] = { secured: [ICON.tick, "Secured"], met: [ICON.tick, "Achieved"], out: [ICON.cross, "Out of reach"], missed: [ICON.cross, "Not reached"], reachable: [ICON.target, `Need ${pct1(g.need)}`] }[g.status];
+        return `<div class="goal c${g.boundary} ${g.status}"><span class="goal-top"><span class="goal-name">${g.short}</span><span class="goal-mark">${mark}</span></span><span class="goal-need">${text}</span><small>${g.boundary}% boundary</small></div>`;
       };
-      const ring = (y) => { const C = 2 * Math.PI * 22; return `<svg class="ring" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="22" class="ring-bg"/><circle cx="27" cy="27" r="22" class="ring-fg" stroke-dasharray="${(C * y.done).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 27 27)"/><text x="27" y="32" text-anchor="middle">${y.year === 3 ? "F" : y.year}</text></svg>`; };
-      out.innerHTML = `<div class="dash-progress" role="img" aria-label="${pct}% of your degree is marked"><span style="width:${pct}%"></span></div>
-        <div class="tiles"><div class="tile"><span class="tile-ico cls-${c.boundary}">${ICON.equals}</span><span class="tile-num">${fmt(t.average)}%</span><span class="tile-label">Average · ${short}</span></div>
-        <div class="tile"><span class="tile-ico done">${ICON.flag}</span><span class="tile-num">${pct}%</span><span class="tile-label">Marked</span></div></div>
+      const top = next.priority, cal = sessions(top);
+      const prio = intel.priorities.map((p, i) => `<li class="prio-item"><span class="sq n${i}">${i + 1}</span><div class="prio-text"><b>${esc(p.name)}</b><span class="prio-meta">${fmt(p.share)}% of degree · ${dueText(p)} · ${p.minutes} min today</span><p>${esc(p.reason)}</p></div>${sessions(p).length ? `<button type="button" class="chip" data-ics="${i}" aria-label="Add revision sessions for ${esc(p.name)} to your calendar">${ICON.cal}<span>Plan</span></button>` : ""}</li>`).join("");
+      out.innerHTML = `<section class="hero c${cls.boundary}">
+          <div class="hero-top"><span class="hero-kicker"><span class="hero-g">${ICON.g}</span>Your degree so far</span><span class="pill">${cls.short}</span></div>
+          <div class="hero-main"><span class="hero-num">${fmt(t.average)}<small>%</small></span><span class="hero-ring">${ring(t.complete, `${pct}%`, "on-dark")}<small>marked</small></span></div>
+          <div class="hero-bar" role="img" aria-label="${pct}% of your degree is marked"><span style="width:${pct}%"></span></div>
+          <p class="hero-line">${esc(intel.headline)}</p>
+          ${intel.projection ? `<p class="hero-est">Estimate: if the rest goes like your ${intel.projection.basis} so far, you'd finish on about ${pct1(intel.projection.avg)}, a ${intel.projection.short}.</p>` : ""}
+        </section>
+        <section class="nba"><span class="sq grad">${ICON.spark}</span><div class="nba-text"><span class="kicker">Your next best action</span><b>${esc(next.text)}</b><p>${esc(next.why)}</p>
+          <div class="nba-actions">${cal.length ? `<button type="button" class="act" data-ics="0">${ICON.cal}<span>Add ${cal.length} revision sessions to my calendar</span></button>` : ""}${top ? `<a class="act soft" href="/app.html#/new">${ICON.cards}<span>Turn my ${esc(top.name)} notes into flashcards</span></a>` : `<button type="button" class="act" data-open-sheet>${ICON.gap}<span>Add a module still to come</span></button>`}</div></div></section>
+        ${prio ? `<h3 class="dash-h">Priorities</h3><p class="dash-sub">Ranked by how much each one moves your degree, and how soon it's due.</p><ol class="prio">${prio}</ol>` : ""}
+        ${intel.insights.length ? `<h3 class="dash-h">What this means</h3><ul class="insights">${intel.insights.map((i) => `<li class="ins ${i.kind}"><span class="sq">${ICON[i.kind]}</span><p>${esc(i.text)}</p></li>`).join("")}</ul>` : ""}
         <h3 class="dash-h">Goals</h3><p class="dash-sub">The average you need across the rest of your degree.</p>
         <div class="goals">${t.goals.map(goal).join("")}</div>
         <h3 class="dash-h">Years</h3>
-        <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y)}<span class="year-avg"><b>${y.avg === null ? "–" : `${fmt(y.avg)}%`}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits<br>${fmt(y.weight * 100, 0)}% of degree</span></div>`).join("")}</div>
-        ${c.borderline ? `<p class="dash-note"><b>Borderline:</b> you're within ${fmt(c.next - t.average)} marks of the ${c.next}% boundary. Many universities review borderline cases (often 1 to 2 marks), for example by the share of your credits above the boundary. Check your own regulations.</p>` : ""}`;
+        <div class="years">${t.years.filter((y) => y.weight > 0).map((y) => `<div class="year-row">${ring(y.done, y.year === 3 ? "F" : String(y.year))}<span class="year-avg"><b>${y.avg === null ? "–" : pct1(y.avg)}</b>${y.year === 3 ? "Final year" : "Year 2"} average</span><span class="year-meta">${fmt(y.credits, 0)} / 120 credits marked<br>${fmt(y.weight * 100, 0)}% of your degree</span></div>`).join("")}</div>`;
     });
     w.addEventListener("change", () => root.dispatchEvent(new Event("input")));
+    // "Plan": revision sessions from tomorrow up to the due date, spaced out, as a calendar file
+    out.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-ics]"); if (!b || !intel) return;
+      const p = intel.priorities[Number(b.dataset.ics)]; if (!p) return;
+      const dates = sessions(p); if (!dates.length) return;
+      download(`gradify-${p.name.replace(/[^\w-]+/g, "-").toLowerCase()}-sessions.ics`, ics(p.name, dates), "text/calendar");
+    });
   },
   needed(root) {
     const out = root.querySelector(".result"), f = (n) => Number(root.querySelector(`[name=${n}]`).value);
