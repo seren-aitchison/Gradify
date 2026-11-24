@@ -70778,5 +70778,194 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "phys-u52-euler-check": {
+  "title": "Euler against the exact solution",
+  "caption": "Euler multiplies by (1 − 0.1) each step, so y(1) ≈ 0.9¹⁰ = 0.349, against the exact e⁻¹ = 0.368: an error of about 5%. Ten times smaller steps give 0.99¹⁰⁰ ≈ 0.366, about ten times smaller error.",
+  "alt": "The exact decay e to the minus t and Euler's step points lying slightly below it, reaching 0.349 against 0.368 at t equals 1.",
+  "description": [
+   "Exact: y = e^(−t). Euler with h = 0.1: y_{n+1} = 0.9 y_n.",
+   "At t = 1: Euler 0.3487, exact 0.3679.",
+   "With h = 0.01: 0.99^100 = 0.366."
+  ],
+  "course": "physics",
+  "lesson": "Comparing analytical and numerical solutions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u52.js: Comparing analytical and numerical solutions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "exact y(1) = 0.368",
+    "ok": true,
+    "detail": "y(1) = 0.3679"
+   },
+   {
+    "name": "Euler gives 0.349 at t = 1",
+    "ok": true,
+    "detail": "y(1) = 0.3487"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u52-limits": {
+  "title": "Limiting cases of a = g sin θ",
+  "caption": "At θ = 0 the plane is flat and a = 0; at θ = 90° it is a free fall and a = g = 9.8 m s⁻²; in between a = g sin θ rises smoothly (4.9 m s⁻² at 30°). A formula that gave anything else at the ends would be wrong.",
+  "alt": "Acceleration against incline angle from 0 to 90 degrees, rising from 0 to 9.8 metres per second squared.",
+  "description": [
+   "θ = 0: a = g sin 0 = 0, no slope and no acceleration.",
+   "θ = 30°: a = 4.9 m s⁻².",
+   "θ = 90°: a = g = 9.8 m s⁻², free fall."
+  ],
+  "course": "physics",
+  "lesson": "Evaluating limiting cases",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u52.js: Evaluating limiting cases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a = 0 on the flat",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "a = 4.9 at 30°",
+    "ok": true,
+    "detail": "y(30) = 4.9"
+   },
+   {
+    "name": "a = g at 90°",
+    "ok": true,
+    "detail": "y(90) = 9.8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u52-tilted-axes": {
+  "title": "Tilted axes on a frictionless incline",
+  "caption": "With one axis along the slope the weight splits in two: along the slope mg sin 30° gives a = g sin 30° = 4.9 m s⁻²; perpendicular, N = mg cos 30° (8.49 N per kg) and there is no acceleration. Only weight and the normal force act.",
+  "alt": "Free-body diagram for 1 kilogram on a frictionless 30 degree slope: weight down, normal force perpendicular to the slope, net force down the slope.",
+  "description": [
+   "Weight 9.8 N per kg, straight down; normal force 8.49 N perpendicular to the slope.",
+   "Net force 4.9 N down the slope, so a = g sin 30° = 4.9 m s⁻²."
+  ],
+  "course": "physics",
+  "lesson": "Choosing coordinate systems",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u52.js: Choosing coordinate systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "net force = 4.9 at 330° from the summed components",
+    "ok": true,
+    "detail": "Σx = 4.24, Σy = −2.45: 4.9 at 330.0°"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "W: Earth's gravity; N: the slope"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u52-two-strings": {
+  "title": "A mass hanging from two strings",
+  "caption": "In equilibrium the forces sum to zero. Horizontal: T₁ cos 30° = T₂ cos 60°, so T₂ = √3 T₁. Vertical: T₁ sin 30° + T₂ sin 60° = 19.6 N, so T₁ = 9.8 N and T₂ ≈ 17 N.",
+  "alt": "Free-body diagram of the 2 kilogram mass: weight 19.6 newtons down, tension 9.8 newtons up and left at 30 degrees, tension 17.0 newtons up and right at 60 degrees, net zero.",
+  "description": [
+   "Weight 19.6 N down.",
+   "T₁ = 9.8 N at 30° above the horizontal, to the left.",
+   "T₂ = 16.97 N at 60° above the horizontal, to the right.",
+   "Horizontal: 8.49 N each way. Vertical: 19.6 N up = weight."
+  ],
+  "course": "physics",
+  "lesson": "Drawing free-body and field diagrams",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u52.js: Drawing free-body and field diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the forces balance (equilibrium)",
+    "ok": true,
+    "detail": "sum of components (-4.9 × 10^{-5}, -8.48 × 10^{-5})"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "W: Earth's gravity; T_{1}: string 1; T_{2}: string 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
  }
 }
