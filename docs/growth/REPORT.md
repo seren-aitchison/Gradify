@@ -20,20 +20,20 @@ Until measured data exists, the estimated priorities (judgements, `docs/growth/O
 - flashcard maker from notes → /features/notes-studio/ (priority 12, estimate)
 - lecture notes to mind map → /lecture-notes-to-mind-map/ (priority 12, estimate)
 - mind map generator from text → /lecture-notes-to-mind-map/ (priority 12, estimate)
-- pdf to flashcards → /pdf-to-flashcards/ (priority 12, estimate)
 - what degree will i get calculator → /tools/degree-classification-calculator/ (priority 12, estimate)
 - youtube lecture to notes → /youtube-to-flashcards/ (priority 12, estimate)
 - youtube video to flashcards → /youtube-to-flashcards/ (priority 12, estimate)
 - ai flashcards that are accurate → /features/notes-studio/ (priority 10.8, estimate)
-- make flashcards from lecture slides → /pdf-to-flashcards/ (priority 10.8, estimate)
 - mind map from notes → /lecture-notes-to-mind-map/ (priority 10.8, estimate)
 - study pack from notes → /features/notes-studio/ (priority 10.8, estimate)
-- turn pdf into flashcards → /pdf-to-flashcards/ (priority 10.8, estimate)
 - notes to cheat sheet → /notes-to-cheat-sheet/ (priority 10, estimate)
 - one page revision sheet maker → /notes-to-cheat-sheet/ (priority 10, estimate)
 - revision mind map maker → /features/spidermaps/ (priority 10, estimate)
 - spider diagram maker for revision → /features/spidermaps/ (priority 10, estimate)
 - law flashcards → /lawgradify/ (priority 9.7, estimate)
+- law revision notes → /lawgradify/ (priority 9.7, estimate)
+- med school notes → /medgradify/ (priority 9.7, estimate)
+- medical school revision → /medgradify/ (priority 9.7, estimate)
 
 ## 3. Which pages appear but don't get clicked?
 

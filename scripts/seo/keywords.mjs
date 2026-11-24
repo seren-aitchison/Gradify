@@ -9,10 +9,11 @@
 //   competition  estimated difficulty of ranking: high (Save My Exams, Quizlet, BBC Bitesize own it) / medium / low
 //   fit          how well Gradify's page serves the searcher today: strong / partial
 //   stage        the priority stage in the growth plan: 2 (highest-value pages now) / 4 (curriculum expansion)
+//   sampled      the date competition was checked against a real search sample (docs/growth/COMPETITORS.md), when it was
 // "Win specific student problems first": low-competition, strong-fit clusters rank first.
 export const CLUSTERS = [
   // tools: the problems Gradify solves better than most (source-checked cards from your own notes)
-  { cluster: "pdf to flashcards", queries: ["pdf to flashcards", "turn pdf into flashcards", "make flashcards from lecture slides"], dest: "pdf-to-flashcards/", intent: "do", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
+  { cluster: "pdf to flashcards", queries: ["pdf to flashcards", "turn pdf into flashcards", "make flashcards from lecture slides"], dest: "pdf-to-flashcards/", intent: "do", demand: "medium", competition: "high", sampled: "2026-11-24", fit: "strong", stage: 2 },
   { cluster: "flashcards checked against my notes", queries: ["ai flashcards that are accurate", "flashcard maker from notes", "study pack from notes"], dest: "features/notes-studio/", intent: "do", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
   { cluster: "notes to mind map", queries: ["lecture notes to mind map", "mind map from notes", "mind map generator from text"], dest: "lecture-notes-to-mind-map/", intent: "do", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
   { cluster: "mind map from a lesson", queries: ["revision mind map maker", "spider diagram maker for revision"], dest: "features/spidermaps/", intent: "do", demand: "low", competition: "low", fit: "strong", stage: 2 },
@@ -23,7 +24,7 @@ export const CLUSTERS = [
   { cluster: "linked notes with flashcards", queries: ["remnote alternative", "notes app with flashcards"], dest: "features/notebook/", intent: "do", demand: "low", competition: "medium", fit: "strong", stage: 2 },
   { cluster: "flashcard feed", queries: ["scroll flashcards like tiktok", "flashcard feed app"], dest: "features/flashcard-feed/", intent: "do", demand: "low", competition: "low", fit: "strong", stage: 2 },
   { cluster: "audio revision", queries: ["revise by listening", "audio flashcards hands free"], dest: "features/audio-questions/", intent: "do", demand: "low", competition: "low", fit: "strong", stage: 2 },
-  { cluster: "revision planner", queries: ["revision planner app", "time blocking for students", "auto revision timetable"], dest: "features/time-blocking/", intent: "do", demand: "medium", competition: "high", fit: "partial", stage: 2 },
+  { cluster: "revision planner", queries: ["revision planner app", "time blocking for students", "auto revision timetable"], dest: "features/time-blocking/", intent: "do", demand: "medium", competition: "high", sampled: "2026-11-24", fit: "partial", stage: 2 },
   { cluster: "printable revision timetable", queries: ["revision timetable template", "printable revision timetable"], dest: "templates/revision-timetable/", intent: "get", demand: "high", competition: "high", fit: "partial", stage: 2 },
   { cluster: "degree classification", queries: ["degree classification calculator", "what degree will i get calculator"], dest: "tools/degree-classification-calculator/", intent: "do", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
   { cluster: "final grade needed", queries: ["final grade calculator", "what do i need on my exam"], dest: "tools/final-grade-calculator/", intent: "do", demand: "high", competition: "high", fit: "strong", stage: 2 },
@@ -36,20 +37,20 @@ export const CLUSTERS = [
   { cluster: "gradify vs anki", queries: ["anki vs", "anki alternative easier"], dest: "compare/gradify-vs-anki/", intent: "compare", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
   // subjects: courses and site homes (qualification words only where coverage.js backs them)
   { cluster: "biology revision", queries: ["biology revision online", "free biology lessons", "biology flashcards"], dest: "scigradify/biology/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
-  { cluster: "chemistry revision", queries: ["chemistry revision online", "free chemistry lessons"], dest: "scigradify/chemistry/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
+  { cluster: "chemistry revision", queries: ["chemistry revision online", "free chemistry lessons"], dest: "scigradify/chemistry/", intent: "learn", demand: "high", competition: "high", sampled: "2026-11-24", fit: "partial", stage: 4 },
   { cluster: "physics revision", queries: ["physics revision online", "free physics lessons"], dest: "scigradify/physics/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
   { cluster: "science revision", queries: ["science revision website", "biology chemistry physics revision"], dest: "scigradify/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
   { cluster: "maths revision", queries: ["gcse maths revision", "a level maths revision", "university maths help"], dest: "mathgradify/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
-  { cluster: "sqe and law revision", queries: ["sqe1 revision", "law revision notes", "law flashcards"], dest: "lawgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "strong", stage: 2 },
+  { cluster: "sqe and law revision", queries: ["sqe1 revision", "law revision notes", "law flashcards"], dest: "lawgradify/", intent: "learn", demand: "medium", competition: "medium", sampled: "2026-11-24", fit: "strong", stage: 2 },
   { cluster: "medical school revision", queries: ["medical school revision", "medicine flashcards", "med school notes"], dest: "medgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 2 },
   { cluster: "3d anatomy", queries: ["3d anatomy free", "interactive human anatomy", "3d human body model"], dest: "medgradify/3d.html", intent: "do", demand: "high", competition: "high", fit: "partial", stage: 2 },
-  { cluster: "nursing revision", queries: ["nursing student revision", "nmc proficiencies revision"], dest: "nursegradify/", intent: "learn", demand: "medium", competition: "low", fit: "strong", stage: 2 },
+  { cluster: "nursing revision", queries: ["nursing student revision", "nmc proficiencies revision"], dest: "nursegradify/", intent: "learn", demand: "medium", competition: "low", sampled: "2026-11-24", fit: "strong", stage: 2 },
   { cluster: "pharmacy revision", queries: ["gphc registration assessment revision", "mpharm revision"], dest: "pharmagradify/", intent: "learn", demand: "low", competition: "low", fit: "strong", stage: 2 },
   { cluster: "psychology revision", queries: ["psychology revision online", "research methods psychology"], dest: "psychgradify/", intent: "learn", demand: "medium", competition: "high", fit: "partial", stage: 4 },
   { cluster: "sociology revision", queries: ["sociology revision online", "sociological theory notes"], dest: "socgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 4 },
   { cluster: "history revision", queries: ["history revision online", "history essay practice"], dest: "historygradify/", intent: "learn", demand: "medium", competition: "high", fit: "partial", stage: 4 },
   { cluster: "english literature revision", queries: ["english literature revision", "poetry analysis revision"], dest: "litgradify/", intent: "learn", demand: "medium", competition: "high", fit: "partial", stage: 4 },
-  { cluster: "gcse revision", queries: ["free gcse revision", "gcse revision website"], dest: "youthgradify/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
+  { cluster: "gcse revision", queries: ["free gcse revision", "gcse revision website"], dest: "youthgradify/", intent: "learn", demand: "high", competition: "high", sampled: "2026-11-24", fit: "partial", stage: 4 },
   { cluster: "learn spanish", queries: ["learn spanish online free"], dest: "languagegradify/course/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
   { cluster: "learn japanese", queries: ["learn japanese hiragana", "learn japanese online free"], dest: "languagegradify/japanese/", intent: "learn", demand: "high", competition: "high", fit: "partial", stage: 4 },
   { cluster: "music theory", queries: ["learn music theory online", "music theory free course"], dest: "musicgradify/", intent: "learn", demand: "medium", competition: "medium", fit: "partial", stage: 4 },

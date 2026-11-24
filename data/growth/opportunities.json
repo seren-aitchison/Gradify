@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-24",
- "count": 2298,
+ "count": 2301,
  "opportunities": [
   {
    "phrase": "nmc proficiencies revision",
@@ -13,7 +13,7 @@
    },
    "competition": {
     "value": "low",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "professional",
@@ -36,7 +36,7 @@
    },
    "competition": {
     "value": "low",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "professional",
@@ -142,29 +142,6 @@
    "priority": 12
   },
   {
-   "phrase": "pdf to flashcards",
-   "origin": "intent map",
-   "cluster": "pdf to flashcards",
-   "destination": "https://getgradify.com/pdf-to-flashcards/",
-   "demand": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "competition": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "intent": "do",
-   "audience": "unknown",
-   "geography": "any",
-   "seasons": [
-    "exam-revision"
-   ],
-   "conversionPotential": "tool or feature",
-   "measured": false,
-   "priority": 12
-  },
-  {
    "phrase": "what degree will i get calculator",
    "origin": "intent map",
    "cluster": "degree classification",
@@ -259,30 +236,6 @@
    "priority": 10.8
   },
   {
-   "phrase": "make flashcards from lecture slides",
-   "origin": "intent map",
-   "cluster": "pdf to flashcards",
-   "destination": "https://getgradify.com/pdf-to-flashcards/",
-   "demand": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "competition": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "intent": "learn: revise",
-   "audience": "university",
-   "geography": "any",
-   "seasons": [
-    "exam-revision",
-    "results-and-uni"
-   ],
-   "conversionPotential": "tool or feature",
-   "measured": false,
-   "priority": 10.8
-  },
-  {
    "phrase": "mind map from notes",
    "origin": "intent map",
    "cluster": "notes to mind map",
@@ -323,29 +276,6 @@
    "geography": "any",
    "seasons": [
     "results-and-uni"
-   ],
-   "conversionPotential": "tool or feature",
-   "measured": false,
-   "priority": 10.8
-  },
-  {
-   "phrase": "turn pdf into flashcards",
-   "origin": "intent map",
-   "cluster": "pdf to flashcards",
-   "destination": "https://getgradify.com/pdf-to-flashcards/",
-   "demand": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "competition": {
-    "value": "medium",
-    "source": "estimate"
-   },
-   "intent": "learn: revise",
-   "audience": "unknown",
-   "geography": "any",
-   "seasons": [
-    "exam-revision"
    ],
    "conversionPotential": "tool or feature",
    "measured": false,
@@ -455,7 +385,7 @@
    },
    "competition": {
     "value": "medium",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "professional",
@@ -478,7 +408,7 @@
    },
    "competition": {
     "value": "medium",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "professional",
@@ -617,7 +547,7 @@
    },
    "competition": {
     "value": "medium",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "professional",
@@ -1053,7 +983,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "unknown",
@@ -1076,7 +1006,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "GCSE",
@@ -1122,7 +1052,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "GCSE",
@@ -1362,6 +1292,29 @@
    "priority": 6.5
   },
   {
+   "phrase": "pdf to flashcards",
+   "origin": "intent map",
+   "cluster": "pdf to flashcards",
+   "destination": "https://getgradify.com/pdf-to-flashcards/",
+   "demand": {
+    "value": "medium",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "search sample 2026-11-24"
+   },
+   "intent": "do",
+   "audience": "unknown",
+   "geography": "any",
+   "seasons": [
+    "exam-revision"
+   ],
+   "conversionPotential": "tool or feature",
+   "measured": false,
+   "priority": 6
+  },
+  {
    "phrase": "revision planner app",
    "origin": "intent map",
    "cluster": "revision planner",
@@ -1372,7 +1325,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "do",
    "audience": "unknown",
@@ -1461,13 +1414,37 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: revise",
    "audience": "unknown",
    "geography": "UK",
    "seasons": [
     "new-term",
+    "exam-revision",
+    "results-and-uni"
+   ],
+   "conversionPotential": "tool or feature",
+   "measured": false,
+   "priority": 5.4
+  },
+  {
+   "phrase": "make flashcards from lecture slides",
+   "origin": "intent map",
+   "cluster": "pdf to flashcards",
+   "destination": "https://getgradify.com/pdf-to-flashcards/",
+   "demand": {
+    "value": "medium",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "search sample 2026-11-24"
+   },
+   "intent": "learn: revise",
+   "audience": "university",
+   "geography": "any",
+   "seasons": [
     "exam-revision",
     "results-and-uni"
    ],
@@ -1498,6 +1475,71 @@
    "conversionPotential": "tool or feature",
    "measured": false,
    "priority": 5.4
+  },
+  {
+   "phrase": "turn pdf into flashcards",
+   "origin": "intent map",
+   "cluster": "pdf to flashcards",
+   "destination": "https://getgradify.com/pdf-to-flashcards/",
+   "demand": {
+    "value": "medium",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "search sample 2026-11-24"
+   },
+   "intent": "learn: revise",
+   "audience": "unknown",
+   "geography": "any",
+   "seasons": [
+    "exam-revision"
+   ],
+   "conversionPotential": "tool or feature",
+   "measured": false,
+   "priority": 5.4
+  },
+  {
+   "phrase": "3d anatomy free",
+   "origin": "intent map",
+   "cluster": "3d anatomy",
+   "destination": "https://getgradify.com/medgradify/3d.html",
+   "demand": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "intent": "learn: topic",
+   "audience": "unknown",
+   "geography": "any",
+   "seasons": [],
+   "conversionPotential": "site or course",
+   "measured": false,
+   "priority": 4.9
+  },
+  {
+   "phrase": "3d human body model",
+   "origin": "intent map",
+   "cluster": "3d anatomy",
+   "destination": "https://getgradify.com/medgradify/3d.html",
+   "demand": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "intent": "learn: topic",
+   "audience": "unknown",
+   "geography": "any",
+   "seasons": [],
+   "conversionPotential": "site or course",
+   "measured": false,
+   "priority": 4.9
   },
   {
    "phrase": "english literature revision",
@@ -1556,7 +1598,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: topic",
    "audience": "unknown",
@@ -1634,6 +1676,27 @@
    "seasons": [
     "exam-revision"
    ],
+   "conversionPotential": "site or course",
+   "measured": false,
+   "priority": 4.9
+  },
+  {
+   "phrase": "interactive human anatomy",
+   "origin": "intent map",
+   "cluster": "3d anatomy",
+   "destination": "https://getgradify.com/medgradify/3d.html",
+   "demand": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "competition": {
+    "value": "high",
+    "source": "estimate"
+   },
+   "intent": "learn: topic",
+   "audience": "unknown",
+   "geography": "any",
+   "seasons": [],
    "conversionPotential": "site or course",
    "measured": false,
    "priority": 4.9
@@ -2316,7 +2379,7 @@
    },
    "competition": {
     "value": "high",
-    "source": "estimate"
+    "source": "search sample 2026-11-24"
    },
    "intent": "learn: topic",
    "audience": "unknown",
@@ -3425,7 +3488,9 @@
    "intent": "learn: question",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 2.2
@@ -3446,7 +3511,9 @@
    "intent": "learn: question",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 2.2
@@ -3559,7 +3626,9 @@
    "intent": "learn: question",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 2.2
@@ -4639,7 +4708,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -4660,7 +4731,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -4865,7 +4938,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5047,7 +5122,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5068,7 +5145,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5089,7 +5168,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5110,7 +5191,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5269,7 +5352,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5336,7 +5421,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5357,7 +5444,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5378,7 +5467,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5514,7 +5605,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5535,7 +5628,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5625,7 +5720,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5853,7 +5950,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5874,7 +5973,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5941,7 +6042,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -5985,7 +6088,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6052,7 +6157,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6142,7 +6249,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6186,7 +6295,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6253,7 +6364,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6297,7 +6410,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6456,7 +6571,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6523,7 +6640,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6544,7 +6663,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6726,7 +6847,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6954,7 +7077,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -6998,7 +7123,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7111,7 +7238,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7224,7 +7353,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7268,7 +7399,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7473,7 +7606,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7680,7 +7815,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7724,7 +7861,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7814,7 +7953,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7835,7 +7976,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7879,7 +8022,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7900,7 +8045,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -7944,7 +8091,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8034,7 +8183,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8102,7 +8253,8 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
-    "new-term"
+    "new-term",
+    "exam-revision"
    ],
    "conversionPotential": "topic page",
    "measured": false,
@@ -8124,7 +8276,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8191,7 +8345,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8258,7 +8414,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8279,7 +8437,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8369,7 +8529,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8459,7 +8621,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8480,7 +8644,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8524,7 +8690,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8614,7 +8782,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8773,7 +8943,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8794,7 +8966,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8953,7 +9127,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -8997,7 +9173,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9018,7 +9196,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9062,7 +9242,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9198,7 +9380,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9357,7 +9541,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9401,7 +9587,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9492,7 +9680,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9536,7 +9726,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9856,7 +10048,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9900,7 +10094,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9967,7 +10163,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -9988,7 +10186,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10147,7 +10347,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10168,7 +10370,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10189,7 +10393,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10279,7 +10485,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10324,7 +10532,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10345,7 +10555,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10366,7 +10578,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10387,7 +10601,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10408,7 +10624,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10429,7 +10647,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10473,7 +10693,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10586,7 +10808,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10653,7 +10877,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10697,7 +10923,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -10857,7 +11085,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11017,7 +11247,8 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
-    "new-term"
+    "new-term",
+    "exam-revision"
    ],
    "conversionPotential": "topic page",
    "measured": false,
@@ -11062,7 +11293,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11198,7 +11431,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11219,7 +11454,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11378,7 +11615,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11399,7 +11638,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11420,7 +11661,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11441,7 +11684,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11509,6 +11754,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -11761,7 +12007,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11874,7 +12122,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11895,7 +12145,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -11985,7 +12237,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12006,7 +12260,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12096,7 +12352,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12117,7 +12375,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12276,7 +12536,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12320,7 +12582,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12341,7 +12605,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12362,7 +12628,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12406,7 +12674,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12473,7 +12743,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12494,7 +12766,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12515,7 +12789,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12559,7 +12835,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12580,7 +12858,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12693,7 +12973,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12830,7 +13112,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12897,7 +13181,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12918,7 +13204,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12939,7 +13227,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12960,7 +13250,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -12981,7 +13273,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13002,7 +13296,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13046,7 +13342,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13067,7 +13365,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13274,7 +13574,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13295,7 +13597,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13316,7 +13620,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13360,7 +13666,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13381,7 +13689,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13402,7 +13712,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13446,7 +13758,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13467,7 +13781,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13718,7 +14034,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13785,7 +14103,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13806,7 +14126,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -13919,7 +14241,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14078,7 +14402,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14122,7 +14448,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14166,7 +14494,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14187,7 +14517,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14208,7 +14540,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14229,7 +14563,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14250,7 +14586,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14271,7 +14609,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14408,7 +14748,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14429,7 +14771,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14496,7 +14840,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14517,7 +14863,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14584,7 +14932,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14743,7 +15093,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14764,7 +15116,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14785,7 +15139,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14829,7 +15185,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14850,7 +15208,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14940,7 +15300,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -14984,7 +15346,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15005,7 +15369,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15027,6 +15393,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -15118,7 +15485,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15185,7 +15554,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15367,7 +15738,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15388,7 +15761,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15524,7 +15899,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15545,7 +15922,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15566,7 +15945,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15587,7 +15968,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15631,7 +16014,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15698,7 +16083,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15742,7 +16129,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15786,7 +16175,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15807,7 +16198,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15828,7 +16221,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15872,7 +16267,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15893,7 +16290,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15914,7 +16313,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15935,7 +16336,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15956,7 +16359,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15977,7 +16382,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -15998,7 +16405,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -16042,7 +16451,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -16822,7 +17233,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17027,7 +17440,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17163,7 +17578,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17230,7 +17647,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17459,7 +17878,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17480,7 +17901,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17501,7 +17924,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17545,7 +17970,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17566,7 +17993,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -17749,7 +18178,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18069,7 +18500,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18320,7 +18753,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18341,7 +18776,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18362,7 +18799,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18406,7 +18845,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18427,7 +18868,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18517,7 +18960,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18561,7 +19006,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18582,7 +19029,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18626,7 +19075,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18647,7 +19098,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18691,7 +19144,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -18988,7 +19443,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19079,7 +19536,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19238,7 +19697,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19305,7 +19766,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19326,7 +19789,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19508,7 +19973,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19667,7 +20134,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19688,7 +20157,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19709,7 +20180,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19730,7 +20203,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19774,7 +20249,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19841,7 +20318,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19885,7 +20364,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -19998,7 +20479,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20065,7 +20548,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20086,7 +20571,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20107,7 +20594,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20128,7 +20617,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20172,7 +20663,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20193,7 +20686,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20214,7 +20709,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20235,7 +20732,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20256,7 +20755,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20277,7 +20778,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20298,7 +20801,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20319,7 +20824,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20340,7 +20847,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20361,7 +20870,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20382,7 +20893,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20863,7 +21376,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20953,7 +21468,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20974,7 +21491,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -20995,7 +21514,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21016,7 +21537,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21037,7 +21560,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21058,7 +21583,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21079,7 +21606,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21100,7 +21629,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21121,7 +21652,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21142,7 +21675,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21163,7 +21698,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21184,7 +21721,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21205,7 +21744,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21226,7 +21767,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21293,7 +21836,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21314,7 +21859,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21335,7 +21882,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21379,7 +21928,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21400,7 +21951,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21812,7 +22365,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21833,7 +22388,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21854,7 +22411,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21971,7 +22530,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -21992,7 +22553,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22082,7 +22645,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22103,7 +22668,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22124,7 +22691,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22145,7 +22714,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22166,7 +22737,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22187,7 +22760,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22208,7 +22783,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22229,7 +22806,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22250,7 +22829,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22294,7 +22875,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22315,7 +22898,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22336,7 +22921,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22380,7 +22967,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22401,7 +22990,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22514,7 +23105,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22604,7 +23197,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22671,7 +23266,9 @@
    "intent": "learn: topic",
    "audience": "A level",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22830,7 +23427,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22851,7 +23450,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -22895,7 +23496,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23031,7 +23634,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23098,7 +23703,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23326,7 +23933,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23462,7 +24071,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23506,7 +24117,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23527,7 +24140,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23548,7 +24163,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23569,7 +24186,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23590,7 +24209,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23680,7 +24301,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23701,7 +24324,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -23791,7 +24416,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24088,7 +24715,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24477,7 +25106,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24521,7 +25152,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24588,7 +25221,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24655,7 +25290,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24745,7 +25382,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24789,7 +25428,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24879,7 +25520,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -24923,7 +25566,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25013,7 +25658,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25034,7 +25681,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25124,7 +25773,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25191,7 +25842,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25237,7 +25890,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25258,7 +25913,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25279,7 +25936,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25300,7 +25959,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25321,7 +25982,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -25756,7 +26419,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26238,7 +26903,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26259,7 +26926,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26326,7 +26995,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26347,7 +27018,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26736,7 +27409,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26826,7 +27501,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26963,7 +27640,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -26984,7 +27663,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27028,7 +27709,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27256,7 +27939,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27277,7 +27962,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27436,7 +28123,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27480,7 +28169,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27525,6 +28216,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -27570,7 +28262,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27591,7 +28285,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27612,7 +28308,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27817,7 +28515,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27861,7 +28561,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27951,7 +28653,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -27995,7 +28699,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28016,7 +28722,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28037,7 +28745,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28058,7 +28768,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28079,7 +28791,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28123,7 +28837,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28144,7 +28860,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28165,7 +28883,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28186,7 +28906,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28230,7 +28952,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28274,7 +28998,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28433,7 +29159,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28454,7 +29182,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28498,7 +29228,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28519,7 +29251,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28540,7 +29274,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28561,7 +29297,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28582,7 +29320,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28741,7 +29481,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28762,7 +29504,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28783,7 +29527,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28850,7 +29596,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -28871,7 +29619,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29076,7 +29826,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29166,7 +29918,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29257,7 +30011,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29301,7 +30057,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29391,7 +30149,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29688,7 +30448,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29709,7 +30471,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29753,7 +30517,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29774,7 +30540,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29795,7 +30563,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29862,7 +30632,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -29998,7 +30770,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30019,7 +30793,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30040,7 +30816,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30130,7 +30908,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30151,7 +30931,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30402,7 +31184,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30423,7 +31207,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30766,7 +31552,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -30971,7 +31759,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31038,7 +31828,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31059,7 +31851,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31080,7 +31874,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31101,7 +31897,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31352,7 +32150,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31442,7 +32242,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31463,7 +32265,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31484,7 +32288,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31505,7 +32311,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31549,7 +32357,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31616,7 +32426,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -31959,7 +32771,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32072,7 +32886,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32093,7 +32909,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32298,7 +33116,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32388,7 +33208,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32409,7 +33231,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32476,7 +33300,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32497,7 +33323,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32564,7 +33392,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32585,7 +33415,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32606,7 +33438,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32650,7 +33484,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32763,7 +33599,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32807,7 +33645,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32920,7 +33760,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -32964,7 +33806,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33008,7 +33852,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33121,7 +33967,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33211,7 +34059,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33232,7 +34082,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33299,7 +34151,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33671,7 +34525,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33692,7 +34548,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33736,7 +34594,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33757,7 +34617,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33778,7 +34640,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33799,7 +34663,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33820,7 +34686,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33841,7 +34709,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33885,7 +34755,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33906,7 +34778,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33927,7 +34801,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -33948,7 +34824,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34061,7 +34939,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34082,7 +34962,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34103,7 +34985,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34193,7 +35077,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34214,7 +35100,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34258,7 +35146,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34440,7 +35330,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34461,7 +35353,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34482,7 +35376,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34503,7 +35399,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34524,7 +35422,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34545,7 +35445,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34635,7 +35537,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34656,7 +35560,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34677,7 +35583,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34721,7 +35629,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34788,7 +35698,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34832,7 +35744,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34853,7 +35767,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34874,7 +35790,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34941,7 +35859,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -34962,7 +35882,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35006,7 +35928,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35074,7 +35998,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35095,7 +36021,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35117,6 +36045,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -35139,7 +36068,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35206,7 +36137,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35572,7 +36505,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35616,7 +36551,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -35982,7 +36919,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36003,7 +36942,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36117,6 +37058,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -36163,6 +37105,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -36346,7 +37289,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36390,7 +37335,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36411,7 +37358,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36432,7 +37381,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36453,7 +37404,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36474,7 +37427,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36495,7 +37450,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36516,7 +37473,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36537,7 +37496,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36558,7 +37519,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36602,7 +37565,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36669,7 +37634,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -36690,7 +37657,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37081,7 +38050,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37102,7 +38073,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37399,7 +38372,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37443,7 +38418,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37487,7 +38464,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37508,7 +38487,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37552,7 +38533,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37596,7 +38579,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37709,7 +38694,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37730,7 +38717,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37751,7 +38740,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37772,7 +38763,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37793,7 +38786,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37814,7 +38809,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37835,7 +38832,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37879,7 +38878,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37900,7 +38901,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37921,7 +38924,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -37988,7 +38993,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38079,6 +39086,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -38148,6 +39156,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -38195,6 +39204,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -38286,7 +39296,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38307,7 +39319,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38536,7 +39550,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38672,7 +39688,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38785,7 +39803,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -38944,7 +39964,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39057,7 +40079,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39078,7 +40102,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39122,7 +40148,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39212,7 +40240,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39279,7 +40309,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39438,7 +40470,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39528,7 +40562,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39549,7 +40585,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39570,7 +40608,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39591,7 +40631,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39635,7 +40677,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39679,7 +40723,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39838,7 +40884,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39859,7 +40907,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -39995,7 +41045,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40016,7 +41068,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40037,7 +41091,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40081,7 +41137,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40125,7 +41183,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40169,7 +41229,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40190,7 +41252,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40349,7 +41413,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40485,7 +41551,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40598,7 +41666,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40619,7 +41689,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40847,7 +41919,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40868,7 +41942,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40889,7 +41965,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40910,7 +41988,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40931,7 +42011,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40975,7 +42057,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -40996,7 +42080,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41017,7 +42103,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41038,7 +42126,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41105,7 +42195,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41126,7 +42218,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41147,7 +42241,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41168,7 +42264,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41189,7 +42287,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41256,7 +42356,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41277,7 +42379,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41298,7 +42402,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41319,7 +42425,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41341,6 +42449,7 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
+    "exam-revision",
     "coursework-mocks"
    ],
    "conversionPotential": "topic page",
@@ -41363,7 +42472,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41821,7 +42932,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -41911,7 +43024,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42070,7 +43185,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42137,7 +43254,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42273,7 +43392,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42340,7 +43461,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42407,7 +43530,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42451,7 +43576,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42495,7 +43622,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42539,7 +43668,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42584,7 +43715,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42605,7 +43738,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42626,7 +43761,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42647,7 +43784,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42737,7 +43876,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42804,7 +43945,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42894,7 +44037,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42915,7 +44060,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42936,7 +44083,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -42980,7 +44129,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43001,7 +44152,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43091,7 +44244,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43227,7 +44382,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43248,7 +44405,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43292,7 +44451,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43313,7 +44474,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43334,7 +44497,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43355,7 +44520,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43537,7 +44704,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43581,7 +44750,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -43626,7 +44797,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -44223,7 +45396,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -44637,7 +45812,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -44704,7 +45881,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -44932,7 +46111,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45252,7 +46433,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45342,7 +46525,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45432,7 +46617,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45569,7 +46756,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45590,7 +46779,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45818,7 +47009,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -45839,7 +47032,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46021,7 +47216,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46042,7 +47239,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46362,7 +47561,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46406,7 +47607,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46427,7 +47630,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46448,7 +47653,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46561,7 +47768,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46652,7 +47861,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46673,7 +47884,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -46786,7 +47999,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47014,7 +48229,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47197,7 +48414,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47474,7 +48693,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47518,7 +48739,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47539,7 +48762,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47560,7 +48785,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47581,7 +48808,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -47717,7 +48946,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48221,7 +49452,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48288,7 +49521,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48470,7 +49705,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48675,7 +49912,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48903,7 +50142,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -48924,7 +50165,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49107,7 +50350,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49220,7 +50465,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49241,7 +50488,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49308,7 +50557,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49398,7 +50649,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49465,7 +50718,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49486,7 +50741,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49507,7 +50764,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49528,7 +50787,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49549,7 +50810,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49571,7 +50834,8 @@
    "audience": "unknown",
    "geography": "any",
    "seasons": [
-    "new-term"
+    "new-term",
+    "exam-revision"
    ],
    "conversionPotential": "topic page",
    "measured": false,
@@ -49616,7 +50880,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49660,7 +50926,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49681,7 +50949,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49794,7 +51064,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49838,7 +51110,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49859,7 +51133,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49926,7 +51202,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -49970,7 +51248,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50014,7 +51294,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50035,7 +51317,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50102,7 +51386,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50215,7 +51501,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50328,7 +51616,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50349,7 +51639,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50439,7 +51731,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50644,7 +51938,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50665,7 +51961,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50686,7 +51984,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50707,7 +52007,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50728,7 +52030,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50749,7 +52053,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50770,7 +52076,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50791,7 +52099,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50812,7 +52122,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50833,7 +52145,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -50900,7 +52214,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51220,7 +52536,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51241,7 +52559,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51262,7 +52582,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51329,7 +52651,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51350,7 +52674,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51371,7 +52697,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7
@@ -51576,7 +52904,9 @@
    "intent": "learn: topic",
    "audience": "unknown",
    "geography": "any",
-   "seasons": [],
+   "seasons": [
+    "exam-revision"
+   ],
    "conversionPotential": "topic page",
    "measured": false,
    "priority": 1.7

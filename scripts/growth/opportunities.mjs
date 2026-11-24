@@ -73,7 +73,7 @@ export function score(o) {
 export async function buildOpportunities({ gsc = gscRows(), kp = keywordPlanner() } = {}) {
   const lessons = (await lessonsOf(ORDER.slice(0, 10))).filter((x) => !x.m.missing.length), rows = new Map();
   const add = (phrase, o) => { const k = norm(phrase); if (!k) return; const prev = rows.get(k); if (!prev || (prev.origin !== "search-console" && o.origin === "search-console")) rows.set(k, { phrase: k, ...o }); };
-  for (const c of CLUSTERS) for (const q of c.queries) add(q, { origin: "intent map", cluster: c.cluster, destination: `${ORIGIN}/${c.dest}`, demand: { value: c.demand, source: "estimate" }, competition: { value: c.competition, source: "estimate" } });
+  for (const c of CLUSTERS) for (const q of c.queries) add(q, { origin: "intent map", cluster: c.cluster, destination: `${ORIGIN}/${c.dest}`, demand: { value: c.demand, source: "estimate" }, competition: { value: c.competition, source: c.sampled ? `search sample ${c.sampled}` : "estimate" } });
   for (const f of FEATURES) { const p = FEATURE_PAGES[featureSlug(f)]; if (p && !p.owner && f.plan !== "pro") add(p.title.replace(/\s*\(.*\)$/, ""), { origin: "feature", cluster: f.n, destination: `${ORIGIN}/features/${featureSlug(f)}/`, demand: { value: null, source: "unknown" }, competition: { value: null, source: "unknown" } }); }
   for (const x of lessons) add(titleCase(x.L.title), { origin: "curriculum", cluster: x.c.name, destination: x.inPilot ? `${ORIGIN}/lessons/${x.c.slug}/${x.id}/` : `${ORIGIN}/topics/${x.c.slug}/${x.u.id}/`, demand: { value: null, source: "unknown" }, competition: { value: null, source: "unknown" } });
   // measured queries: the page Google already shows for them is their destination unless a mapped one exists

@@ -9,7 +9,6 @@ Score = demand × fit ÷ competition (high 3, medium 2, low 1; strong fit 2, par
 | Stage | Score (est.) | Cluster | Example searches | Destination | Intent | Demand (est.) | Competition (est.) | Fit |
 |---|---|---|---|---|---|---|---|---|
 | 2 | 4 | nursing revision | nursing student revision; nmc proficiencies revision | [/nursegradify/](https://getgradify.com/nursegradify/) | learn | medium | low | strong |
-| 2 | 2 | pdf to flashcards | pdf to flashcards; turn pdf into flashcards; make flashcards from lecture slides | [/pdf-to-flashcards/](https://getgradify.com/pdf-to-flashcards/) | do | medium | medium | strong |
 | 2 | 2 | flashcards checked against my notes | ai flashcards that are accurate; flashcard maker from notes; study pack from notes | [/features/notes-studio/](https://getgradify.com/features/notes-studio/) | do | medium | medium | strong |
 | 2 | 2 | notes to mind map | lecture notes to mind map; mind map from notes; mind map generator from text | [/lecture-notes-to-mind-map/](https://getgradify.com/lecture-notes-to-mind-map/) | do | medium | medium | strong |
 | 2 | 2 | mind map from a lesson | revision mind map maker; spider diagram maker for revision | [/features/spidermaps/](https://getgradify.com/features/spidermaps/) | do | low | low | strong |
@@ -28,6 +27,7 @@ Score = demand × fit ÷ competition (high 3, medium 2, low 1; strong fit 2, par
 | 2 | 2 | sqe and law revision | sqe1 revision; law revision notes; law flashcards | [/lawgradify/](https://getgradify.com/lawgradify/) | learn | medium | medium | strong |
 | 2 | 2 | pharmacy revision | gphc registration assessment revision; mpharm revision | [/pharmagradify/](https://getgradify.com/pharmagradify/) | learn | low | low | strong |
 | 2 | 2 | university study skills | university revision tips; study skills for university | [/undergradify/](https://getgradify.com/undergradify/) | learn | medium | medium | strong |
+| 2 | 1.3 | pdf to flashcards | pdf to flashcards; turn pdf into flashcards; make flashcards from lecture slides | [/pdf-to-flashcards/](https://getgradify.com/pdf-to-flashcards/) | do | medium | high | strong |
 | 2 | 1.3 | revise in two weeks | how to revise in 2 weeks; last minute revision plan | [/guides/how-to-revise-in-two-weeks/](https://getgradify.com/guides/how-to-revise-in-two-weeks/) | learn | medium | high | strong |
 | 2 | 1 | handwriting to text | handwriting to text free; convert handwritten notes to text | [/features/handwriting-to-text/](https://getgradify.com/features/handwriting-to-text/) | do | high | high | partial |
 | 2 | 1 | linked notes with flashcards | remnote alternative; notes app with flashcards | [/features/notebook/](https://getgradify.com/features/notebook/) | do | low | medium | strong |

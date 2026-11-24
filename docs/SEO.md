@@ -132,6 +132,10 @@ A new site, course or feature isn't finished until CI passes `tests/seo-registry
 - Feature pages have no screenshots or demos yet; each "Open" button goes to the real feature instead.
 - The homepage feature blurbs (`kit/data/features.js` `d`) make a few claims the code doesn't support as written ("a verified credential at the end", "made in Figma and Procreate", "Book a tutor"). The feature pages avoid them; the homepage copy is the owner's call.
 
+## Phase 2 (24 November 2026): the growth engine
+
+The continuous system (search intelligence, CTR change control, lesson readiness, experiments, monitoring and the weekly report) is described in **`docs/growth/PLAYBOOK.md`**. Start there.
+
 ## Needs a person with an account (do once)
 
 - [ ] **Google Search Console**: verify both the Domain property (DNS TXT on Cloudflare) and the `https://getgradify.com` URL-prefix property; submit `sitemap.xml`; switch on email alerts. On 24 November 2026 every production sitemap was fetched as Googlebot: the index and all child sitemaps return 200 `application/xml`, no BOM, and all 1,367 listed URLs return 200 with no redirects. So a "Couldn't fetch" status in Search Console is not the server: remove the sitemap there, submit `https://getgradify.com/sitemap.xml` again (exactly that URL, on the property that matches it), and give it a few days; also submit `sitemaps/features.xml` once this branch is deployed. Weekly: Indexing → Pages, and nudge anything stuck in "Discovered – not indexed" with a link from the homepage or a guide.
