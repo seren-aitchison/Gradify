@@ -352,7 +352,8 @@ function pedigreeChecks(spec) {
 
 // ======================================================================== cellmap
 // spec: cell: "prokaryote" | "animal" | "plant" | "fungus", labels: [structure names drawn and labelled],
-//   claims: [{type: "lacks", structures: [..]}]
+//   claims: [{type: "lacks", structures: [..]}], names: { structure: "text shown" } (optional: the words a level uses,
+//   e.g. "DNA loop" for the nucleoid at GCSE; checks still use the structure names)
 export const STRUCTURES = {
   prokaryote: ["cell wall", "plasma membrane", "cytoplasm", "nucleoid", "plasmid", "70S ribosomes", "capsule", "flagellum", "pili"],
   animal: ["plasma membrane", "cytoplasm", "nucleus", "nucleolus", "nuclear envelope", "mitochondrion", "rough ER", "smooth ER", "Golgi apparatus", "lysosome", "80S ribosomes", "centrioles", "vesicle"],
@@ -430,7 +431,7 @@ function cellmapDraw(spec, W, narrow) {
       for (const it of its) {
         const tx = sd === "L" ? colL : colR;
         s += line(it.ax, it.ay, tx + (sd === "L" ? 4 : -4), it.ty, { stroke: C.soft, w: 1.2 }) + `<circle cx="${f1(it.ax)}" cy="${f1(it.ay)}" r="2.6" fill="${C.ink}"/>`;
-        s += text(tx, it.ty, it.l, { size: 13, weight: 600, anchor: sd === "L" ? "end" : "start" });
+        s += text(tx, it.ty, spec.names?.[it.l] || it.l, { size: 13, weight: 600, anchor: sd === "L" ? "end" : "start" });
         H = Math.max(H, it.ty + 16);
       }
     }
@@ -459,7 +460,7 @@ function cellmapDraw(spec, W, narrow) {
   });
   let y = oy + t1 * sc + 26;
   const half = Math.ceil(labs.length / 2);
-  labs.forEach((l, i) => { const c = i < half ? 0 : 1, r = i < half ? i : i - half; s += text(20 + c * (W / 2), y + r * 20, `${i + 1}  ${l}`, { size: 12.5, anchor: "start" }); });
+  labs.forEach((l, i) => { const c = i < half ? 0 : 1, r = i < half ? i : i - half; s += text(20 + c * (W / 2), y + r * 20, `${i + 1}  ${spec.names?.[l] || l}`, { size: 12.5, anchor: "start" }); });
   return { s, H: y + half * 20 + 4 };
 }
 function cellmapChecks(spec) {

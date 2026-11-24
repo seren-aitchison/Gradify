@@ -1,0 +1,229 @@
+{
+ "id": "gradify-biology-u02-02",
+ "title": "Gradify Biology, lesson u02-02: Prokaryotic cells",
+ "publisher": "Gradify",
+ "authors": [
+  "Gradify"
+ ],
+ "course": "biology",
+ "unit": "u02",
+ "lesson": "Prokaryotic cells",
+ "url": "kit/courses/biology/notes/u02.js",
+ "licence": "gradify",
+ "level": "ug",
+ "type": "gradify-notes",
+ "retrievedOn": "2026-11-24",
+ "version": "as of 2026-11-24",
+ "sha256": "8ace4b4f096db60e11d856825654a484a9cb20c49d1a571f8f697f97e400d46a",
+ "bytes": 140925,
+ "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
+ "policy": "reuse",
+ "attribution": false,
+ "parsedTitle": "Prokaryotic cells",
+ "passages": [
+  {
+   "id": "L41",
+   "kind": "S",
+   "hash": "f56c99f620ccb80f",
+   "words": 31
+  },
+  {
+   "id": "L42",
+   "kind": "O",
+   "hash": "0a7e037068c453ac",
+   "words": 8
+  },
+  {
+   "id": "L43",
+   "kind": "O",
+   "hash": "f3667eab0e158191",
+   "words": 9
+  },
+  {
+   "id": "L44",
+   "kind": "O",
+   "hash": "a022f0f82d356bbf",
+   "words": 7
+  },
+  {
+   "id": "L45",
+   "kind": "PRE",
+   "hash": "6686c51fe96bed39",
+   "words": 2
+  },
+  {
+   "id": "L46",
+   "kind": "H",
+   "hash": "ca8a84b4151cd291",
+   "words": 6
+  },
+  {
+   "id": "L47",
+   "kind": "P",
+   "hash": "562217d6c39d2393",
+   "words": 6
+  },
+  {
+   "id": "L48",
+   "kind": "P",
+   "hash": "b8a4d66d833a9f62",
+   "words": 16
+  },
+  {
+   "id": "L49",
+   "kind": "P",
+   "hash": "813deafa814a83b8",
+   "words": 14
+  },
+  {
+   "id": "L50",
+   "kind": "P",
+   "hash": "31251b1ab0d5c69c",
+   "words": 10
+  },
+  {
+   "id": "L51",
+   "kind": "P",
+   "hash": "04264ad6c4ebcee2",
+   "words": 25
+  },
+  {
+   "id": "L52",
+   "kind": "D",
+   "hash": "e66dad70fd82dd9d",
+   "words": 1
+  },
+  {
+   "id": "L53",
+   "kind": "H",
+   "hash": "ddbe6eb5d54c11af",
+   "words": 4
+  },
+  {
+   "id": "L54",
+   "kind": "P",
+   "hash": "f50d724287643f8c",
+   "words": 47
+  },
+  {
+   "id": "L55",
+   "kind": "H",
+   "hash": "9996d893d80a4804",
+   "words": 3
+  },
+  {
+   "id": "L56",
+   "kind": "P",
+   "hash": "c33c8db56674ebd3",
+   "words": 45
+  },
+  {
+   "id": "L57",
+   "kind": "H",
+   "hash": "db142dd7e43e15a7",
+   "words": 3
+  },
+  {
+   "id": "L58",
+   "kind": "P",
+   "hash": "c6340fa57e663c40",
+   "words": 67
+  },
+  {
+   "id": "L59",
+   "kind": "K",
+   "hash": "d7ce21f8ac070f2a",
+   "words": 17
+  },
+  {
+   "id": "L60",
+   "kind": "!",
+   "hash": "1212b5b5b3c6db3f",
+   "words": 23
+  },
+  {
+   "id": "L61",
+   "kind": "T",
+   "hash": "24e039be504e0d4f",
+   "words": 15
+  },
+  {
+   "id": "L62",
+   "kind": "T",
+   "hash": "f8a0de99c82d1ae7",
+   "words": 16
+  },
+  {
+   "id": "L63",
+   "kind": "T",
+   "hash": "16d9b9b5b3ef22fe",
+   "words": 13
+  },
+  {
+   "id": "L64",
+   "kind": "SUM",
+   "hash": "335e4952d5a5036b",
+   "words": 14
+  },
+  {
+   "id": "L65",
+   "kind": "SUM",
+   "hash": "7c5c1f5c062b8ff9",
+   "words": 11
+  },
+  {
+   "id": "L66",
+   "kind": "SUM",
+   "hash": "40901dc55aaac8ae",
+   "words": 10
+  },
+  {
+   "id": "L67",
+   "kind": "SRC",
+   "hash": "b4bbec894626f44a",
+   "words": 13
+  },
+  {
+   "id": "L68",
+   "kind": "Q",
+   "hash": "a53c457aa367fcdb",
+   "words": 27
+  },
+  {
+   "id": "L69",
+   "kind": "Q",
+   "hash": "0a5e53555297ed74",
+   "words": 29
+  },
+  {
+   "id": "L70",
+   "kind": "M1",
+   "hash": "04dd61f72638ee47",
+   "words": 33
+  },
+  {
+   "id": "L71",
+   "kind": "M2",
+   "hash": "b611e137a600e596",
+   "words": 68
+  },
+  {
+   "id": "L72",
+   "kind": "M3",
+   "hash": "57db415642060755",
+   "words": 84
+  },
+  {
+   "id": "L73",
+   "kind": "MS2",
+   "hash": "7bf418c823a1bd50",
+   "words": 38
+  }
+ ]
+}

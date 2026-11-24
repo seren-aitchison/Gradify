@@ -1,0 +1,55 @@
+## Enzyme-substrate interactions
+S: Enzymes are globular proteins that catalyse reactions by lowering activation energy, unchanged at the end.
+LV: Undergraduate
+O: Define enzyme and use the term correctly
+O: Explain the active site
+O: Explain activation energy
+O: Explain how an enzyme works: the lock and key model
+O: Explain the induced fit model
+H: The idea
+P: **Enzymes** are biological catalysts, almost all globular proteins, that speed up reactions by lowering their activation energy. They are unchanged at the end of each reaction, so a single enzyme molecule can catalyse thousands of reactions a second.
+P: The **active site** is a small cleft or pocket on the enzyme, formed by a few amino acids whose side chains bind the substrate and catalyse its reaction. Its shape and chemistry are set by the protein's tertiary structure.
+P: **Activation energy** is the energy reacting molecules need before they can react. An enzyme provides a different route for the reaction with a lower activation energy, so many more molecules react each second at body temperature.
+K: **Enzyme**: a biological catalyst, usually a globular protein, that lowers the activation energy of a reaction.
+H: Enzymes are specific
+P: **Enzyme specificity** comes from the active site's shape and from the chemical interactions its amino acids make with the substrate: hydrogen bonds, ionic attractions and hydrophobic contacts. Only a substrate that matches both binds well enough to react, so enzymes can even tell apart mirror-image forms of a molecule.
+D: bio-induced-fit
+H: Denaturation
+P: Heat and extreme pH break the hydrogen bonds and ionic bonds that hold an enzyme's tertiary structure, so the active site loses its shape and the substrate can no longer bind: the enzyme is **denatured**.
+H: How an enzyme works: the lock and key model
+P: In the lock and key model, the formation of an enzyme-substrate complex needs no change in shape: the active site is treated as rigid and already complementary to the substrate. The model explains specificity, but not how binding itself helps the reaction along, or why some enzymes bind a range of related substrates.
+- The substrate collides with the enzyme's active site.
+- Because their shapes are complementary, the substrate fits into the active site, forming an enzyme-substrate complex.
+- The reaction happens while the substrate is held in the active site: it is broken down or joined to another molecule.
+- The products are a different shape, so they leave the active site.
+- The enzyme is unchanged and its active site is free to bind another substrate molecule.
+H: The induced fit model
+P: The induced fit model, now preferred, says the active site is flexible.
+- The substrate binds to an active site that is close to, but not exactly, complementary to it.
+- Binding causes the active site to change shape slightly, moulding around the substrate to form the enzyme-substrate complex.
+- The closer fit puts strain on bonds in the substrate and brings reacting groups together, lowering the activation energy.
+- The products are released and the active site returns to its original shape.
+!: "An enzyme is used up in the reaction it catalyses." An enzyme is unchanged at the end of the reaction, so it can catalyse the same reaction again and again.
+!: "In induced fit, the enzyme changes shape permanently." The active site changes shape only while the substrate is bound; it returns to its original shape when the products are released.
+T: Enzyme | A biological catalyst, usually a globular protein, that lowers the activation energy of a reaction
+T: Active site | The region of an enzyme where its substrate binds and the reaction happens
+T: Substrate | The molecule an enzyme acts on
+T: Activation energy | The minimum energy reacting molecules need for a reaction to happen
+T: Enzyme specificity | An enzyme's ability to catalyse the reaction of only one substrate, or a narrow group, set by the shape and chemistry of its active site
+T: Denaturation | The loss of a protein's tertiary structure, and so of its function, when the bonds holding it break
+T: Enzyme-substrate complex | An enzyme with its substrate bound in the active site
+T: Lock and key model | A simplified model of enzyme action in which the substrate fits a complementary active site like a key in a lock
+T: Induced fit model | A model of enzyme action in which the active site changes shape slightly as the substrate binds, giving a closer fit
+SUM: Enzymes are globular proteins that catalyse reactions by lowering activation energy, unchanged at the end.
+SUM: The substrate binds at the enzyme's active site, a region with a particular shape.
+SUM: Enzymes lower the activation energy of a reaction.
+SUM: Each enzyme is specific to one reaction, because only a substrate with a complementary shape fits its active site.
+SUM: Heat and extreme pH change the active site's shape, so the enzyme is denatured and stops working.
+SRC: OpenStax, Rice University, Biology 2e, section 6.5: Enzymes (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/6-5-enzymes
+M1#kb-gradify-bio-u03-24-ug-q1@1: Which of these best describes enzyme? | A biological catalyst, usually a globular protein, that lowers the activation energy of a reaction | An enzyme's ability to catalyse the reaction of only one substrate, or a narrow group, set by the shape and chemistry of its active site | An enzyme is used up in the reaction it catalyses | The region of an enzyme where its substrate binds and the reaction happens | Enzyme: a biological catalyst, usually a globular protein, that lowers the activation energy of a reaction.
+M1#kb-gradify-bio-u03-24-ug-q2@2: Which of these best describes active site? | The region of an enzyme where its substrate binds and the reaction happens | An enzyme is used up in the reaction it catalyses | An enzyme's ability to catalyse the reaction of only one substrate, or a narrow group, set by the shape and chemistry of its active site | The minimum energy reacting molecules need for a reaction to happen | Active site: the region of an enzyme where its substrate binds and the reaction happens.
+M1#kb-gradify-bio-u03-24-ug-q3@3: Which of these best describes activation energy? | The minimum energy reacting molecules need for a reaction to happen | A biological catalyst, usually a globular protein, that lowers the activation energy of a reaction | The loss of a protein's tertiary structure, and so of its function, when the bonds holding it break | In induced fit, the enzyme changes shape permanently | Activation energy: the minimum energy reacting molecules need for a reaction to happen.
+SEQ2#kb-gradify-bio-u03-24-ug-q4@4: How an enzyme works: put these steps in order. | The substrate collides with the enzyme's active site.; Because their shapes are complementary, the substrate fits into the active site, forming an enzyme-substrate complex.; The reaction happens while the substrate is held in the active site: it is broken down or joined to another molecule.; The products are a different shape, so they leave the active site.; The enzyme is unchanged and its active site is free to bind another substrate molecule. | The lock and key model treats the active site as rigid and already complementary to the substrate.
+SEQ2#kb-gradify-bio-u03-24-ug-q5@5: The induced fit model: put these steps in order. | The substrate binds to an active site that is close to, but not exactly, complementary to it.; Binding causes the active site to change shape slightly, moulding around the substrate to form the enzyme-substrate complex.; The closer fit puts strain on bonds in the substrate and brings reacting groups together, lowering the activation energy.; The products are released and the active site returns to its original shape. | In induced fit, the active site changes shape as the substrate binds, straining its bonds and lowering the activation energy.
+TF1#kb-gradify-bio-u03-24-ug-q6@1: In induced fit, the enzyme changes shape permanently. | false | The active site changes shape only while the substrate is bound; it returns to its original shape when the products are released.
+TF1#kb-gradify-bio-u03-24-ug-q7@1: An enzyme is used up in the reaction it catalyses. | false | An enzyme is unchanged at the end of the reaction, so it can catalyse the same reaction again and again.

@@ -52,6 +52,7 @@
  },
  "from": {
   "item": "bio.osmosis.particle-model",
-  "version": 1
+  "version": 2,
+  "form": "default"
  }
 }

@@ -19,6 +19,12 @@
  "sha256": "13be60ecfafe8cc2c8c5f97b98723848fd61055c861d4e66b49c0cd239b705dc",
  "bytes": 44896,
  "licenceName": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+ "category": "noncommercial-only",
+ "uses": {
+  "adapt": false,
+  "commercial": false,
+  "verify": true
+ },
  "policy": "verify-only",
  "policyReason": "NonCommercial (Gradify is a paid product) and ShareAlike",
  "attribution": true,

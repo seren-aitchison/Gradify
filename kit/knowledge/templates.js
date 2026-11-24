@@ -35,6 +35,15 @@ const C = {
   practical: { name: "Practical work", kinds: ["practical"] },
   misconceptions: { name: "Common mistakes", kinds: ["misconception"] },
   apply: { name: "Applying it", kinds: ["application"] },
+  data: { name: "Data to interpret", kinds: ["dataset"] },
+  aim: { name: "Aim", source: "practical", required: true },
+  equipment: { name: "Equipment", source: "practical", required: true },
+  variables: { name: "Variables", source: "practical", required: true },
+  method: { name: "Method", source: "practical", required: true },
+  safety: { name: "Safety", source: "practical", required: true },
+  results: { name: "Recording results", source: "practical", required: true },
+  analysis: { name: "Analysing results", kinds: ["method", "worked-example", "dataset"], required: true },
+  evaluation: { name: "Evaluating the investigation", source: "practical", required: true },
   evidence: { name: "Evidence and sources", source: "sources" },
   practice: { name: "Practice questions", source: "questions", required: true },
   summary: { name: "Summary", source: "summary", required: true },
@@ -50,15 +59,20 @@ const T = (o) => ({ subjects: ["*"], ...o, components: o.components.map((id) => 
 export const TEMPLATES = {
   "primary-science": T({ level: ["primary"], subjects: ["biology", "chemistry", "physics", "science"], components: ["objectives", "explain", "visual", "terms", "apply", "practice", "summary"], readability: [2, 6], visual: "required", questions: { min: 3, kinds: ["choice", "tf"] }, voice: "short sentences, everyday examples, one idea at a time" }),
   "ks3-science": T({ level: ["ks3"], subjects: ["biology", "chemistry", "physics", "science"], components: ["objectives", "prior", "explain", "mechanism", "visual", "terms", "practical", "misconceptions", "apply", "practice", "summary"], readability: [5, 9], visual: "required", questions: { min: 4, kinds: ["choice", "tf"] }, voice: "foundational understanding, key vocabulary, simple particle models" }),
-  "gcse-science": T({ level: ["gcse", "nat5"], subjects: ["biology", "chemistry", "physics", "combined-science"], components: ["objectives", "prior", "explain", "mechanism", "visual", "terms", "quantitative", "worked", "practical", "misconceptions", "apply", "practice", "summary", "connections"], readability: [6, 11], visual: "required", questions: { min: 5, kinds: ["choice", "tf", "num"] }, voice: "the specification's terminology, exam-style application, worked calculations" }),
-  "alevel-science": T({ level: ["as", "alevel", "higher", "advhigher"], subjects: ["biology", "chemistry", "physics"], components: ["objectives", "prior", "explain", "mechanism", "visual", "terms", "quantitative", "worked", "practical", "misconceptions", "apply", "practice", "summary", "connections"], readability: [8, 13], visual: "required", questions: { min: 5, kinds: ["choice", "tf", "num"] }, voice: "mechanisms in depth, quantitative treatment, practical and exam skills" }),
-  "ug-science": T({ level: ["ug"], subjects: ["biology", "chemistry", "physics"], components: ["objectives", "prior", "explain", "mechanism", "quantitative", "visual", "worked", "misconceptions", "apply", "terms", "practice", "evidence", "summary", "connections"], readability: [10, 16], visual: "when-useful", questions: { min: 4, kinds: ["choice", "tf", "num"] }, voice: "academic depth, quantitative relationships, evidence and primary sources" }),
+  "gcse-practical": T({ level: ["gcse", "nat5"], subjects: ["biology", "chemistry", "physics", "combined-science"], for: "practical", components: ["objectives", "prior", "aim", "equipment", "variables", "method", "safety", "results", "analysis", "visual", "evaluation", "misconceptions", "terms", "practice", "summary", "connections"], readability: [6, 11], visual: "required", questions: { min: 5, kinds: ["choice", "multi", "order", "num"] }, voice: "a practical a student can carry out: what to do, why each step matters, how to analyse and evaluate it" }),
+  "gcse-science": T({ level: ["gcse", "nat5"], subjects: ["biology", "chemistry", "physics", "combined-science"], components: ["objectives", "prior", "explain", "mechanism", "visual", "terms", "quantitative", "worked", "practical", "data", "misconceptions", "apply", "practice", "summary", "connections"], readability: [6, 11], visual: "required", questions: { min: 5, kinds: ["choice", "tf", "num"] }, voice: "the specification's terminology, exam-style application, worked calculations" }),
+  "alevel-science": T({ level: ["as", "alevel", "higher", "advhigher"], subjects: ["biology", "chemistry", "physics"], components: ["objectives", "prior", "explain", "mechanism", "visual", "terms", "quantitative", "worked", "practical", "data", "misconceptions", "apply", "practice", "summary", "connections"], readability: [8, 13], visual: "required", questions: { min: 5, kinds: ["choice", "tf", "num"] }, voice: "mechanisms in depth, quantitative treatment, practical and exam skills" }),
+  "ug-science": T({ level: ["ug"], subjects: ["biology", "chemistry", "physics"], components: ["objectives", "prior", "explain", "mechanism", "quantitative", "visual", "worked", "data", "misconceptions", "apply", "terms", "practice", "evidence", "summary", "connections"], readability: [10, 16], visual: "when-useful", questions: { min: 4, kinds: ["choice", "tf", "num"] }, voice: "academic depth, quantitative relationships, evidence and primary sources" }),
   "pg-science": T({ level: ["pg"], subjects: ["biology", "chemistry", "physics"], components: ["objectives", "prior", "explain", "mechanism", "quantitative", "evidence", "apply", "terms", "practice", "summary", "connections"], readability: [12, 18], visual: "when-useful", questions: { min: 3, kinds: ["choice", "num"] }, voice: "research literature, methods, synthesis and critique" }),
 };
 
-/** the template for a level and subject: the subject-specific one, else the level's general one */
-export function templateFor(level, subject) {
-  const fits = Object.entries(TEMPLATES).filter(([, t]) => t.level.includes(level));
+/**
+ * The template for a level, subject and kind of requirement: a required practical gets the practical template where
+ * the level has one; otherwise the subject's template for the level, else the level's general one.
+ */
+export function templateFor(level, subject, { kind = null } = {}) {
+  const all = Object.entries(TEMPLATES).filter(([, t]) => t.level.includes(level)), special = all.filter(([, t]) => t.for && t.for === kind);
+  const fits = special.length ? special : all.filter(([, t]) => !t.for);
   const hit = fits.find(([, t]) => t.subjects.includes(subject)) || fits.find(([, t]) => t.subjects.includes("*"));
   if (!hit) throw new Error(`no lesson template for ${subject} at ${level}`);
   return { id: hit[0], ...hit[1] };

@@ -1,0 +1,45 @@
+## Microscopy
+S: Magnification = size of image ÷ size of real object, with both in the same unit.
+LV: GCSE
+O: Use magnification = size of image ÷ size of real object to work out magnification
+O: Calculate real size from an image
+O: Calculate answers in standard form
+H: Units for small lengths
+P: Cells are measured in **micrometres** (µm): 1 mm = 1000 µm. Smaller structures are measured in **nanometres** (nm): 1 µm = 1000 nm. Before comparing or dividing two lengths, convert them to the same unit.
+D: kb-aqa8461-4-1-1-5-c-gcse-microscopy-magnification
+H: Calculations
+P: **Magnification** says how many times bigger an image is than the real object. Use the formula: divide the size of the image by the real size of the object, with both in the same unit. Magnification has no unit: write it as, for example, ×400.
+E: magnification = size of image ÷ size of real object :: both sizes in the same unit
+P: Rearrange the magnification equation to find a real size from an image and its magnification, or an image size from a real size.
+E: size of real object = size of image ÷ magnification :: and size of image = size of real object × magnification
+P: Very small sizes are often written in standard form. To express a number in standard form, write it as a number between 1 and 10 multiplied by a power of ten.
+- Write the number with one non-zero digit before the decimal point.
+- Count how many places the decimal point moved: that is the power of ten.
+- Moving it to the right gives a negative power: 0.000 025 m = 2.5 × 10⁻⁵ m.
+X: In a drawing at a magnification of ×1500, a cell is 30 mm long. What is its real length, in µm and in metres in standard form?
+> Convert the image size: 30 mm = 30 000 µm.
+> Real size = size of image ÷ magnification = 30 000 µm ÷ 1500 = 20 µm.
+> In metres: 20 µm = 0.000 020 m = 2.0 × 10⁻⁵ m.
+X: A cell is 15 µm long. In a micrograph it is 45 mm long. What is the magnification?
+> Convert to the same unit: 45 mm = 45 × 1000 = 45 000 µm.
+> Magnification = size of image ÷ size of real object = 45 000 µm ÷ 15 µm.
+> Magnification = ×3000.
+!: "Magnification = size of real object ÷ size of image." Divide the image size by the real size; a magnification is bigger than 1 because the image is bigger than the object.
+!: "A 45 mm image of a 15 µm cell is magnified ×3, because 45 ÷ 15 = 3." Convert to the same unit first: 45 mm is 45 000 µm, so the magnification is 45 000 ÷ 15 = ×3000.
+!: "The magnification is 400 mm." Magnification is a ratio of two lengths, so it has no unit: write ×400.
+H: Where this leads
+P: The rest of AQA GCSE Biology 4.1.1.5 (Microscopy) has its own lessons: 4.1.1.5.a, 4.1.1.5.b.
+T: Micrometre | A unit of length, µm: one thousandth of a millimetre
+T: Nanometre | A unit of length, nm: one thousandth of a micrometre
+T: Magnification | How many times bigger an image is than the real object: size of image ÷ size of real object
+SUM: Magnification = size of image ÷ size of real object, with both in the same unit.
+SUM: 1 mm = 1000 µm and 1 µm = 1000 nm: convert lengths to the same unit before dividing.
+SRC: OpenStax, Rice University, Biology 2e, section 4.1: Studying Cells (Mary Ann Clark, Matthew Douglas, Jung Choi), Creative Commons Attribution-NonCommercial-ShareAlike 4.0: used to check facts, not reproduced | secondary | 2026-11-24 | https://openstax.org/books/biology-2e/pages/4-1-studying-cells
+M1#kb-aqa8461-4-1-1-5-c-gcse-q1@1: Which of these best describes micrometre? | A unit of length, µm: one thousandth of a millimetre | The magnification is 400 mm | Magnification = size of real object ÷ size of image | A unit of length, nm: one thousandth of a micrometre | Micrometre: a unit of length, µm: one thousandth of a millimetre.
+M1#kb-aqa8461-4-1-1-5-c-gcse-q2@1: Which of these best describes nanometre? | A unit of length, nm: one thousandth of a micrometre | A 45 mm image of a 15 µm cell is magnified ×3, because 45 ÷ 15 = 3 | Magnification = size of real object ÷ size of image | The magnification is 400 mm | Nanometre: a unit of length, nm: one thousandth of a micrometre.
+TF1#kb-aqa8461-4-1-1-5-c-gcse-q3@1: A 45 mm image of a 15 µm cell is magnified ×3, because 45 ÷ 15 = 3. | false | Convert to the same unit first: 45 mm is 45 000 µm, so the magnification is 45 000 ÷ 15 = ×3000.
+TF1#kb-aqa8461-4-1-1-5-c-gcse-q4@1: The magnification is 400 mm. | false | Magnification is a ratio of two lengths, so it has no unit: write ×400.
+TF1#kb-aqa8461-4-1-1-5-c-gcse-q5@1: Magnification = size of real object ÷ size of image. | false | Divide the image size by the real size; a magnification is bigger than 1 because the image is bigger than the object.
+NUM2#kb-aqa8461-4-1-1-5-c-gcse-q6@1: A cell is 71 µm long. In a drawing it is 28.4 mm long. What is the magnification of the drawing? | 400 | 0 | × | Convert to the same unit: 28.4 mm = 28400 µm. Magnification = 28400 ÷ 71 = ×400.
+NUM3#kb-aqa8461-4-1-1-5-c-gcse-q7@2: An image of a cell is 19 mm long at a magnification of ×1000. What is the cell's real length, in µm? | 19 | 0.01 | µm | Real size = image size ÷ magnification = 19000 µm ÷ 1000 = 19 µm.
+NUM2#kb-aqa8461-4-1-1-5-c-gcse-q8@3: A cell is 69 µm long. What is this length in metres? (You can type it as, for example, 2.5e-5.) | 0.000069 | 6.9e-11 | m | 1 µm = 0.000 001 m, so 69 µm = 0.000069 m = 6.9 × 10^{-5} m in standard form.

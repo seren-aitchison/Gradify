@@ -103,29 +103,31 @@
    ]
   },
   {
-   "id": "bio.osmosis.definition-solutions",
+   "id": "bio.osmosis.definition",
    "kind": "definition",
-   "version": 1,
+   "version": 2,
    "status": "draft",
    "title": "Osmosis",
    "text": "**Osmosis** is the net movement of water molecules across a partially permeable membrane, from a dilute solution into a more concentrated one. It is diffusion of water: water moves from where its molecules are more concentrated to where they are less concentrated.",
+   "summary": "Osmosis is the overall movement of water across a partially permeable membrane, out of a dilute solution and into a more concentrated one.",
+   "terms": [
+    {
+     "term": "Osmosis",
+     "definition": "The diffusion of water: its overall movement across a partially permeable membrane, out of a dilute solution and into a more concentrated one"
+    }
+   ],
    "level": {
     "from": "ks3",
-    "to": "gcse"
+    "to": "pg"
    },
    "concepts": [
     "osmosis"
    ],
-   "terms": [
-    {
-     "term": "Osmosis",
-     "definition": "The diffusion of water: its net movement from a dilute solution to a more concentrated solution across a partially permeable membrane"
-    }
-   ],
    "prereqs": [
     "bio.diffusion.definition",
     "bio.solutions.vocabulary",
-    "bio.membrane.partially-permeable"
+    "bio.membrane.partially-permeable",
+    "bio.water-potential.concept"
    ],
    "sources": [
     {
@@ -135,12 +137,34 @@
      "source": "gradify-biology-u02-21"
     }
    ],
-   "summary": "Osmosis is the net movement of water from a dilute solution to a more concentrated one, across a partially permeable membrane."
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "**Osmosis** is the net movement of water across a partially permeable membrane from a region of higher (less negative) water potential to a region of lower (more negative) water potential.",
+     "summary": "Osmosis is the net movement of water from a higher to a lower water potential across a partially permeable membrane.",
+     "terms": [
+      {
+       "term": "Osmosis",
+       "definition": "The net movement of water from a higher to a lower water potential across a partially permeable membrane"
+      }
+     ]
+    }
+   ],
+   "history": [
+    {
+     "version": 2,
+     "on": "2026-11-25",
+     "change": "one canonical item with a GCSE form and an A level/university form; replaces bio.osmosis.definition-solutions and bio.osmosis.definition-water-potential"
+    }
+   ]
   },
   {
    "id": "bio.osmosis.particle-model",
    "kind": "mechanism",
-   "version": 1,
+   "version": 2,
    "status": "draft",
    "title": "Why water moves overall into the concentrated solution",
    "text": "A particle model explains the direction.",
@@ -160,7 +184,7 @@
     "membranes"
    ],
    "prereqs": [
-    "bio.osmosis.definition-solutions"
+    "bio.osmosis.definition"
    ],
    "visual": {
     "renderer": "osmosisbox",
@@ -169,15 +193,20 @@
      "sides": [
       {
        "water": 16,
-       "solute": 2
+       "solute": 2,
+       "label": "dilute solution",
+       "sub": "more water molecules"
       },
       {
        "water": 8,
-       "solute": 7
+       "solute": 7,
+       "label": "concentrated solution",
+       "sub": "fewer water molecules"
       }
      ],
      "membrane": {
-      "pore": 2.2
+      "pore": 2.2,
+      "label": "partially permeable membrane"
      },
      "sizes": {
       "water": 1,
@@ -195,57 +224,74 @@
        "from": 0,
        "to": 1
       }
-     ]
+     ],
+     "net": {
+      "label": "net movement of water"
+     }
     },
-    "byLevel": [
-     {
-      "level": {
-       "from": "ks3",
-       "to": "gcse"
-      },
-      "labels": {
-       "sides": [
-        {
-         "label": "dilute solution",
-         "sub": "more water molecules"
-        },
-        {
-         "label": "concentrated solution",
-         "sub": "fewer water molecules"
-        }
-       ],
-       "membrane": "partially permeable membrane",
-       "net": "net movement of water"
-      },
-      "title": "Osmosis across a partially permeable membrane",
-      "caption": "Water molecules cross the membrane both ways, but more cross from the dilute solution, so the net movement of water is into the concentrated solution. The sugar molecules are too big to cross.",
-      "alt": "Two solutions separated by a partially permeable membrane. The dilute solution on the left has many water molecules and few sugar molecules; the concentrated solution on the right has fewer water molecules and more sugar molecules. Small arrows show water crossing both ways, three to the right and one to the left, and a large arrow shows the net movement of water to the right.",
-      "description": [
-       "Left: a dilute solution, mostly water molecules with two sugar molecules.",
-       "Right: a concentrated solution, with fewer water molecules and seven sugar molecules.",
-       "Water molecules pass through the membrane's pores in both directions; more pass from left to right.",
-       "The sugar molecules are bigger than the pores and stay on their side.",
-       "Net movement of water: from the dilute solution into the concentrated solution."
-      ]
+    "title": "Osmosis across a partially permeable membrane",
+    "caption": "Water molecules cross the membrane both ways, but more cross from the dilute solution, so the net movement of water is into the concentrated solution. The sugar molecules are too big to cross.",
+    "alt": "Two solutions separated by a partially permeable membrane. The dilute solution on the left has many water molecules and few sugar molecules; the concentrated solution on the right has fewer water molecules and more sugar molecules. Small arrows show water crossing both ways, three to the right and one to the left, and a large arrow shows the net movement of water to the right.",
+    "description": [
+     "Left: a dilute solution, mostly water molecules with two sugar molecules.",
+     "Right: a concentrated solution, with fewer water molecules and seven sugar molecules.",
+     "Water molecules pass through the membrane's pores in both directions; more pass from left to right.",
+     "The sugar molecules are bigger than the pores and stay on their side.",
+     "Net movement of water: from the dilute solution into the concentrated solution."
+    ]
+   },
+   "sources": [
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ],
+   "summary": "Water crosses the membrane both ways, but more crosses from the dilute side, so the net movement is into the concentrated solution; the solute can't cross.",
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "alevel"
      },
-     {
-      "level": {
-       "from": "alevel",
-       "to": "alevel"
-      },
-      "labels": {
+     "visual": {
+      "data": {
        "sides": [
         {
+         "water": 16,
+         "solute": 2,
          "label": "higher water potential",
          "sub": "less negative ψ"
         },
         {
+         "water": 8,
+         "solute": 7,
          "label": "lower water potential",
          "sub": "more negative ψ"
         }
        ],
-       "membrane": "partially permeable membrane",
-       "net": "net movement of water (osmosis)"
+       "membrane": {
+        "pore": 2.2,
+        "label": "partially permeable membrane"
+       },
+       "sizes": {
+        "water": 1,
+        "solute": 2.6
+       },
+       "solute": {
+        "label": "sugar molecule"
+       },
+       "water": {
+        "label": "water molecule"
+       },
+       "claims": [
+        {
+         "type": "net",
+         "from": 0,
+         "to": 1
+        }
+       ],
+       "net": {
+        "label": "net movement of water (osmosis)"
+       }
       },
       "title": "Osmosis down a water potential gradient",
       "caption": "Solute molecules lower the water potential. Water moves overall from the higher to the lower water potential; the solute can't cross.",
@@ -257,14 +303,15 @@
        "Net movement: from higher to lower water potential."
       ]
      }
-    ]
-   },
-   "sources": [
-    {
-     "source": "openstax-biology-2e-5-2"
     }
    ],
-   "summary": "Water crosses the membrane both ways, but more crosses from the dilute side, so the net movement is into the concentrated solution; the solute can't cross."
+   "history": [
+    {
+     "version": 2,
+     "on": "2026-11-25",
+     "change": "visual brief moved to the item's default form, with an A level form"
+    }
+   ]
   },
   {
    "id": "bio.osmosis.passive",
@@ -356,42 +403,6 @@
     }
    ],
    "summary": "Pure water has the highest water potential, 0 kPa; solutes lower it, so solutions have negative water potentials."
-  },
-  {
-   "id": "bio.osmosis.definition-water-potential",
-   "kind": "definition",
-   "version": 1,
-   "status": "draft",
-   "title": "Osmosis, in terms of water potential",
-   "text": "**Osmosis** is the net movement of water across a partially permeable membrane from a region of higher (less negative) water potential to a region of lower (more negative) water potential.",
-   "level": {
-    "from": "alevel",
-    "to": "pg"
-   },
-   "concepts": [
-    "osmosis",
-    "water-potential"
-   ],
-   "terms": [
-    {
-     "term": "Osmosis",
-     "definition": "The net movement of water from a higher to a lower water potential across a partially permeable membrane"
-    }
-   ],
-   "prereqs": [
-    "bio.diffusion.definition",
-    "bio.membrane.partially-permeable",
-    "bio.water-potential.concept"
-   ],
-   "sources": [
-    {
-     "source": "gradify-biology-u02-21"
-    },
-    {
-     "source": "openstax-biology-2e-5-2"
-    }
-   ],
-   "summary": "Osmosis is the net movement of water from a higher to a lower water potential across a partially permeable membrane."
   },
   {
    "id": "bio.water-potential.equation",
@@ -514,7 +525,7 @@
   {
    "id": "bio.osmosis.cells",
    "kind": "application",
-   "version": 1,
+   "version": 2,
    "status": "draft",
    "title": "What osmosis does to animal and plant cells",
    "text": "Whether water enters or leaves a cell depends on the solution around it. Plant cells have a cell wall; animal cells do not, and that changes what happens.",
@@ -565,10 +576,14 @@
     {
      "term": "Plasmolysis",
      "definition": "The shrinking of a plant cell's contents so the membrane pulls away from the cell wall, when the cell loses a lot of water"
+    },
+    {
+     "term": "Cell wall",
+     "definition": "A layer outside the cell membrane of plant cells (and bacteria) that strengthens the cell and stops it bursting"
     }
    ],
    "prereqs": [
-    "bio.osmosis.definition-solutions"
+    "bio.osmosis.definition"
    ],
    "sources": [
     {
@@ -578,7 +593,51 @@
      "source": "gradify-biology-u02-21"
     }
    ],
-   "summary": "In pure water an animal cell swells and may burst, while a plant cell becomes turgid because its wall resists; in a concentrated solution both lose water, and a plant cell can become plasmolysed."
+   "summary": "In pure water an animal cell swells and may burst, while a plant cell becomes turgid because its wall resists; in a concentrated solution both lose water, and a plant cell can become plasmolysed.",
+   "forms": [
+    {
+     "level": {
+      "from": "alevel",
+      "to": "pg"
+     },
+     "text": "Whether water enters or leaves a cell depends on the water potential of the solution around it compared with the cell's. Plant cells have a cell wall, which adds a pressure potential; animal cells do not.",
+     "cases": [
+      {
+       "situation": "A red blood cell is placed in pure water",
+       "outcome": "Water enters by osmosis and the cell swells and bursts (haemolysis)",
+       "why": "Pure water (0 kPa) has a higher water potential than the cytoplasm, and with no wall nothing opposes the swelling."
+      },
+      {
+       "situation": "A red blood cell is placed in a concentrated salt solution",
+       "outcome": "Water leaves by osmosis and the cell shrinks and crenates",
+       "why": "The hypertonic solution has a lower water potential than the cell's contents."
+      },
+      {
+       "situation": "A plant cell is placed in pure water",
+       "outcome": "Water enters by osmosis until the cell is fully turgid",
+       "why": "As the cell fills, the wall pushes back: the pressure potential rises until the cell's water potential reaches that of the water outside."
+      },
+      {
+       "situation": "A plant cell is placed in a concentrated sugar solution",
+       "outcome": "Water leaves by osmosis and the cell becomes flaccid, then plasmolysed",
+       "why": "Once the pressure potential falls to zero, further loss of water pulls the membrane away from the wall."
+      },
+      {
+       "situation": "A cell is placed in an isotonic solution",
+       "outcome": "There is no net movement of water and the cell stays the same",
+       "why": "The water potentials inside and outside are equal."
+      }
+     ],
+     "summary": "Water moves into a cell in a solution of higher water potential and out of it in one of lower water potential; a plant cell's wall adds pressure potential, so it becomes turgid rather than bursting."
+    }
+   ],
+   "history": [
+    {
+     "version": 2,
+     "on": "2026-11-25",
+     "change": "A level/university form in terms of water potential"
+    }
+   ]
   },
   {
    "id": "bio.osmosis.percent-change",
@@ -690,10 +749,10 @@
   {
    "id": "bio.osmosis.practical-tissue",
    "kind": "practical",
-   "version": 1,
+   "version": 2,
    "status": "draft",
    "title": "Investigating osmosis in plant tissue",
-   "text": "Cut cylinders of the same plant tissue (such as potato) to the same length, blot them dry and weigh each one. Put one in each of a range of sugar or salt solutions, from pure water upwards, for the same time at the same temperature. Blot and reweigh each cylinder, work out its percentage change in mass, and plot this against the concentration of the solution. Where the line crosses zero, the solution has the same concentration of water as the tissue.",
+   "text": "This practical measures how the mass of plant tissue changes in sugar (or salt) solutions of different concentrations, and uses the results to estimate the concentration of the tissue's own cells.",
    "level": {
     "from": "gcse",
     "to": "alevel"
@@ -703,6 +762,7 @@
     "practical"
    ],
    "prereqs": [
+    "bio.osmosis.definition",
     "bio.osmosis.percent-change"
    ],
    "sources": [
@@ -711,6 +771,122 @@
     },
     {
      "source": "openstax-biology-2e-5-2"
+    }
+   ],
+   "practical": {
+    "aim": "To investigate how the concentration of a sugar solution affects the change in mass of potato tissue, and to estimate the concentration at which the tissue neither gains nor loses water.",
+    "hypothesis": "Potato cylinders will gain mass in dilute solutions and lose mass in concentrated ones; somewhere in between there will be no change.",
+    "equipment": [
+     "A potato",
+     "A cork borer and a ruler (or a chip cutter)",
+     "A scalpel and a white tile",
+     "Boiling tubes (or test tubes) in a rack, labelled",
+     "Sucrose solutions: 0 (distilled water), 0.2, 0.4, 0.6, 0.8 and 1.0 mol/dm³",
+     "Sugar (sucrose) or salt solutions: 0 (distilled water), 0.2, 0.4, 0.6, 0.8 and 1.0 mol/dm³",
+     "A top-pan balance reading to 0.01 g",
+     "Paper towels",
+     "A timer"
+    ],
+    "variables": {
+     "independent": "The concentration of the sugar solution",
+     "dependent": "The percentage change in mass of the potato cylinder",
+     "control": [
+      "The volume of solution in each tube",
+      "The time the cylinders are left in the solutions",
+      "The size and surface area of each cylinder",
+      "The temperature",
+      "Using cylinders from the same potato"
+     ]
+    },
+    "notControlled": [
+     "The colour of the tubes"
+    ],
+    "method": [
+     "Use the cork borer to cut cylinders from the same potato, and trim them with the scalpel on the tile to the same length (for example 3 cm), removing any skin.",
+     "Blot each cylinder gently with a paper towel and record its starting mass.",
+     "Put the same volume (for example 10 cm³) of each concentration into a labelled tube.",
+     "Put one cylinder in each tube and start the timer; leave them for the same time (for example 30 minutes, or overnight), at room temperature.",
+     "Remove each cylinder, blot it gently in the same way, and record its final mass.",
+     "Calculate the percentage change in mass for each cylinder.",
+     "Repeat with more cylinders at each concentration and calculate a mean for each."
+    ],
+    "orderable": [
+     "Cut cylinders of the same length from one potato",
+     "Blot each cylinder and record its starting mass",
+     "Put one cylinder in each tube of solution",
+     "Leave all the tubes for the same time",
+     "Blot each cylinder and record its final mass",
+     "Calculate the percentage change in mass"
+    ],
+    "orderWhy": "You need each cylinder's starting mass before it goes into the solution, and its final mass after the same time in every tube, to calculate the change.",
+    "reasons": [
+     {
+      "step": "Blot each cylinder before weighing it",
+      "why": "Liquid on the surface would add to the mass without having entered the cells"
+     },
+     {
+      "step": "Use percentage change, not change in mass",
+      "why": "The cylinders start at slightly different masses, and percentage change makes them comparable"
+     },
+     {
+      "step": "Cut all the cylinders from the same potato",
+      "why": "Different potatoes can have cells of different concentrations"
+     },
+     {
+      "step": "Leave every tube for the same time",
+      "why": "The longer a cylinder is left, the more water can move, up to equilibrium"
+     }
+    ],
+    "safety": [
+     "Cut away from your fingers on a white tile, and carry the scalpel and cork borer point down.",
+     "Wipe up spills straight away: sugar solutions make the floor slippery.",
+     "Don't eat any of the potato or drink the solutions in the laboratory."
+    ],
+    "results": {
+     "text": "Record your results in a table with a row for each concentration and its repeats:",
+     "columns": [
+      "Concentration of sugar solution (mol/dm³)",
+      "Starting mass (g)",
+      "Final mass (g)",
+      "Change in mass (g)",
+      "Percentage change in mass (%)"
+     ]
+    },
+    "analysis": [
+     "Work out the percentage change in mass for each cylinder, then the mean for each concentration.",
+     "Plot the mean percentage change (y-axis) against concentration (x-axis), with zero in the middle of the y-axis, and draw a line of best fit.",
+     "Read off where the line crosses zero: at that concentration the solution has the same concentration of water as the potato cells, so there is no net movement."
+    ],
+    "evaluation": [
+     "Blotting is a source of error: blotting harder or more lightly changes the measured mass. Blot every cylinder the same way.",
+     "Water can evaporate from the tubes if they are left a long time: cover them.",
+     "Using more concentrations near where the line crosses zero gives a more precise estimate.",
+     "Repeating and finding a mean makes anomalies easier to spot; an anomalous result should be repeated, not just ignored."
+    ]
+   },
+   "history": [
+    {
+     "version": 2,
+     "on": "2026-11-25",
+     "change": "structured practical: aim, equipment, variables, method, safety, results, analysis and evaluation"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Independent variable",
+     "definition": "The variable you change on purpose in an investigation"
+    },
+    {
+     "term": "Dependent variable",
+     "definition": "The variable you measure, to see how it responds"
+    },
+    {
+     "term": "Control variable",
+     "definition": "A variable kept the same so it can't affect the results"
+    },
+    {
+     "term": "Percentage change in mass",
+     "definition": "The change in mass divided by the starting mass, times 100"
     }
    ]
   },
@@ -857,6 +1033,133 @@
    },
    "concepts": [
     "water-potential"
+   ],
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.rp-tissue-data",
+   "kind": "dataset",
+   "version": 1,
+   "status": "draft",
+   "title": "Potato cylinders in sugar solutions",
+   "text": "A student left potato cylinders in sugar solutions for 30 minutes and worked out the mean percentage change in mass at each concentration.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "practical",
+    "data"
+   ],
+   "prereqs": [
+    "bio.osmosis.percent-change"
+   ],
+   "data": {
+    "provenance": "illustrative",
+    "x": "conc",
+    "y": "change",
+    "columns": [
+     {
+      "key": "conc",
+      "label": "Concentration of sugar solution",
+      "unit": "mol/dm³"
+     },
+     {
+      "key": "change",
+      "label": "Mean percentage change in mass",
+      "unit": "%"
+     }
+    ],
+    "rows": [
+     [
+      0.0,
+      18.2
+     ],
+     [
+      0.2,
+      7.9
+     ],
+     [
+      0.4,
+      -3.1
+     ],
+     [
+      0.6,
+      -11.8
+     ],
+     [
+      0.8,
+      -19.6
+     ],
+     [
+      1.0,
+      -24.0
+     ]
+    ],
+    "claims": [
+     {
+      "type": "xIntercept",
+      "value": 0.37,
+      "tol": 0.01
+     },
+     {
+      "type": "correlation",
+      "sign": "negative",
+      "strength": "strong"
+     }
+    ],
+    "ask": [
+     "xIntercept"
+    ]
+   },
+   "steps": [
+    "The more concentrated the solution, the more mass the potato lost.",
+    "In the most dilute solutions the cylinders gained mass: water entered their cells by osmosis.",
+    "The line crosses zero at about 0.37 mol/dm³, so the potato cells' contents are about as concentrated as a 0.37 mol/dm³ sugar solution."
+   ],
+   "visual": {
+    "renderer": "graph",
+    "title": "Change in mass of potato against sugar concentration",
+    "caption": "Illustrative data. The cylinders gain mass in dilute solutions and lose it in concentrated ones; where the line of best fit crosses zero, there is no net movement of water.",
+    "alt": "A graph of mean percentage change in mass against sugar concentration from 0 to 1.0 mol/dm³. The points fall from about +18% to −24%; a dashed line of best fit crosses zero at about 0.37 mol/dm³.",
+    "description": [
+     "x-axis: concentration of sugar solution, 0 to 1.0 mol/dm³.",
+     "y-axis: mean percentage change in mass, from about −25% to +20%.",
+     "The points fall steadily as concentration increases.",
+     "The line of best fit crosses zero at about 0.37 mol/dm³: no net gain or loss of water there."
+    ]
+   },
+   "summary": "Where the line of best fit crosses zero change in mass, the solution's concentration matches the tissue's.",
+   "sources": [
+    {
+     "source": "gradify-biology-u02-21"
+    },
+    {
+     "source": "openstax-biology-2e-5-2"
+    }
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-mass-change",
+   "kind": "misconception",
+   "version": 1,
+   "status": "draft",
+   "title": "Compare percentage changes",
+   "wrong": "You can compare the cylinders by their change in mass in grams.",
+   "right": "Cylinders start at different masses, so compare the percentage change in mass: the same change in grams is a bigger share of a lighter cylinder.",
+   "level": {
+    "from": "gcse",
+    "to": "alevel"
+   },
+   "concepts": [
+    "osmosis",
+    "practical",
+    "calculation"
    ],
    "sources": [
     {

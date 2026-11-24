@@ -4,6 +4,7 @@
  "level": "gcse",
  "subject": "biology",
  "template": "gcse-science",
+ "requirementKind": "content",
  "requirement": {
   "id": "aqa-gcse-biology:4.1.3.2.a",
   "kind": "specification",
@@ -11,6 +12,7 @@
   "hash": "9c30677569462e62",
   "version": "1.0",
   "page": 22,
+  "statementKind": "content",
   "higherTier": false,
   "biologyOnly": false
  },
@@ -23,110 +25,153 @@
   {
    "id": "bio.diffusion.definition",
    "version": 1,
+   "form": "default",
    "hash": "310fba0dd4ed0139",
+   "formHash": "18f0202b3ddb1a60",
    "status": "draft",
-   "why": "matched"
+   "origin": "original",
+   "why": "required term"
   },
   {
    "id": "bio.solutions.vocabulary",
    "version": 1,
+   "form": "default",
    "hash": "f8869f40900eb547",
+   "formHash": "8a84f1686f61b42f",
    "status": "draft",
-   "why": "required term"
+   "origin": "original",
+   "why": "matched"
   },
   {
    "id": "bio.membrane.partially-permeable",
    "version": 1,
+   "form": "default",
    "hash": "6a9f52a161ef5474",
+   "formHash": "b858220a7ec9b41d",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
-   "id": "bio.osmosis.definition-solutions",
-   "version": 1,
-   "hash": "65ea16deec859516",
+   "id": "bio.osmosis.definition",
+   "version": 2,
+   "form": "default",
+   "hash": "fbd98fbde724b5ff",
+   "formHash": "85a850365e136698",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.passive",
    "version": 1,
+   "form": "default",
    "hash": "2f126bc2eb0c4171",
+   "formHash": "4ee3e67a6ef9c214",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.no-net-movement",
    "version": 1,
+   "form": "default",
    "hash": "cd01a4181917602b",
+   "formHash": "faa3458c7c3c423e",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.particle-model",
-   "version": 1,
-   "hash": "cfbb8e9e5fa082d8",
+   "version": 2,
+   "form": "default",
+   "hash": "73f2ad5163ff2e68",
+   "formHash": "65bccba52c27a9f4",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.cells",
-   "version": 1,
-   "hash": "e258923eefd1648f",
+   "version": 2,
+   "form": "default",
+   "hash": "4d54e55b3f026be1",
+   "formHash": "0ad721fa6cce411b",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.mistake-solute-moves",
    "version": 1,
+   "form": "default",
    "hash": "83c447d69905b5f4",
+   "formHash": "805e991af5287659",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.mistake-direction",
    "version": 1,
+   "form": "default",
    "hash": "7224e6c40c4ff7cc",
+   "formHash": "e271c5b23735940f",
    "status": "draft",
-   "why": "concept"
+   "origin": "original",
+   "why": "matched"
   },
   {
    "id": "bio.osmosis.mistake-whose-concentration",
    "version": 1,
+   "form": "default",
    "hash": "82dbf5bf2b10037f",
+   "formHash": "1986576f4358cd44",
    "status": "draft",
-   "why": "concept"
+   "origin": "original",
+   "why": "matched"
   },
   {
    "id": "bio.osmosis.mistake-energy",
    "version": 1,
+   "form": "default",
    "hash": "b8ae0a52926e8ea6",
+   "formHash": "a5de7c234ac4f2a6",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.mistake-stops",
    "version": 1,
+   "form": "default",
    "hash": "5c6bb0e87d2c281a",
+   "formHash": "0a85a1fad4acb6db",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.mistake-plant-bursts",
    "version": 1,
+   "form": "default",
    "hash": "d0c12f7a14cb0975",
+   "formHash": "26ac6fc1e23e8554",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   }
  ],
  "prior": [],
  "retrieval": {
   "main": "osmosis",
+  "kind": "content",
   "items": [
    {
-    "id": "bio.osmosis.definition-solutions",
+    "id": "bio.osmosis.definition",
     "why": "matched",
-    "score": 16.12,
+    "score": 29.27,
     "matched": [
      "water",
      "acros",
@@ -141,7 +186,7 @@
    {
     "id": "bio.membrane.partially-permeable",
     "why": "matched",
-    "score": 10.96,
+    "score": 18.96,
     "matched": [
      "water",
      "cell",
@@ -155,7 +200,7 @@
    {
     "id": "bio.osmosis.particle-model",
     "why": "matched",
-    "score": 8.87,
+    "score": 17.54,
     "matched": [
      "water",
      "move",
@@ -170,7 +215,7 @@
    {
     "id": "bio.osmosis.passive",
     "why": "matched",
-    "score": 7.18,
+    "score": 13.02,
     "matched": [
      "water",
      "move",
@@ -181,19 +226,9 @@
     ]
    },
    {
-    "id": "bio.diffusion.definition",
-    "why": "matched",
-    "score": 6,
-    "matched": [
-     "move",
-     "diffusion",
-     "concentrated"
-    ]
-   },
-   {
     "id": "bio.osmosis.mistake-solute-moves",
     "why": "matched",
-    "score": 5.97,
+    "score": 12.38,
     "matched": [
      "water",
      "osmosi",
@@ -203,22 +238,48 @@
     ]
    },
    {
+    "id": "bio.osmosis.mistake-direction",
+    "why": "matched",
+    "score": 11.88,
+    "matched": [
+     "water",
+     "osmosi",
+     "dilute",
+     "solution",
+     "concentrated"
+    ]
+   },
+   {
+    "id": "bio.solutions.vocabulary",
+    "why": "matched",
+    "score": 10.57,
+    "matched": [
+     "water",
+     "osmosi",
+     "dilute",
+     "solution",
+     "concentrated"
+    ]
+   },
+   {
+    "id": "bio.osmosis.mistake-whose-concentration",
+    "why": "matched",
+    "score": 10.49,
+    "matched": [
+     "water",
+     "osmosi",
+     "dilute",
+     "solution",
+     "concentrated"
+    ]
+   },
+   {
     "id": "bio.osmosis.no-net-movement",
     "why": "concept",
     "concept": "osmosis"
    },
    {
     "id": "bio.osmosis.cells",
-    "why": "concept",
-    "concept": "osmosis"
-   },
-   {
-    "id": "bio.osmosis.mistake-direction",
-    "why": "concept",
-    "concept": "osmosis"
-   },
-   {
-    "id": "bio.osmosis.mistake-whose-concentration",
     "why": "concept",
     "concept": "osmosis"
    },
@@ -238,13 +299,12 @@
     "concept": "osmosis"
    },
    {
-    "id": "bio.solutions.vocabulary",
+    "id": "bio.diffusion.definition",
     "why": "required term"
    }
   ],
   "excludedAboveLevel": [
    "bio.water-potential.concept",
-   "bio.osmosis.definition-water-potential",
    "bio.water-potential.equation",
    "bio.osmosis.aquaporins",
    "bio.osmosis.tonicity",
@@ -259,7 +319,8 @@
    "renderer": "osmosisbox",
    "from": {
     "item": "bio.osmosis.particle-model",
-    "version": 1
+    "version": 2,
+    "form": "default"
    },
    "checks": [
     {
@@ -309,13 +370,13 @@
   {
    "id": "bio-osmosis-cells",
    "usable": false,
-   "reason": "uses water potential, beyond GCSE",
+   "reason": "uses water potential, solute potential, beyond GCSE",
    "score": 70.5
   },
   {
    "id": "bio-water-pathway",
    "usable": false,
-   "reason": "on another topic (Water transport)",
+   "reason": "uses water potential, beyond GCSE",
    "score": 30.2
   },
   {
@@ -331,6 +392,12 @@
    "score": 26.3
   },
   {
+   "id": "bio-xylem-vessel",
+   "usable": false,
+   "reason": "on another topic (Xylem)",
+   "score": 22.25
+  },
+  {
    "id": "bio-gene-flow",
    "usable": false,
    "reason": "on another topic (Gene flow)",
@@ -343,7 +410,7 @@
    "type": "M",
    "d": 1,
    "items": [
-    "bio.diffusion.definition"
+    "bio.osmosis.definition"
    ],
    "objectives": [
     1
@@ -365,7 +432,7 @@
    "type": "M",
    "d": 1,
    "items": [
-    "bio.solutions.vocabulary"
+    "bio.diffusion.definition"
    ],
    "objectives": [
     1
@@ -388,13 +455,13 @@
   },
   {
    "id": "kb-aqa8461-4-1-3-2-a-gcse-q5",
-   "type": "M",
+   "type": "SEQ",
    "d": 2,
    "items": [
-    "bio.osmosis.cells"
+    "bio.osmosis.particle-model"
    ],
    "objectives": [
-    3
+    2
    ]
   },
   {
@@ -421,6 +488,17 @@
   },
   {
    "id": "kb-aqa8461-4-1-3-2-a-gcse-q8",
+   "type": "M",
+   "d": 2,
+   "items": [
+    "bio.osmosis.cells"
+   ],
+   "objectives": [
+    3
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-1-3-2-a-gcse-q9",
    "type": "TF",
    "d": 1,
    "items": [
@@ -431,7 +509,7 @@
    ]
   },
   {
-   "id": "kb-aqa8461-4-1-3-2-a-gcse-q9",
+   "id": "kb-aqa8461-4-1-3-2-a-gcse-q10",
    "type": "TF",
    "d": 1,
    "items": [
@@ -442,7 +520,7 @@
    ]
   },
   {
-   "id": "kb-aqa8461-4-1-3-2-a-gcse-q10",
+   "id": "kb-aqa8461-4-1-3-2-a-gcse-q11",
    "type": "TF",
    "d": 1,
    "items": [
@@ -456,38 +534,27 @@
  "components": {
   "objectives": 3,
   "prior": 0,
-  "explain": 6,
-  "mechanism": 1,
+  "explain": 10,
+  "mechanism": 8,
+  "visual": 1,
+  "terms": 12,
   "quantitative": 0,
   "worked": 0,
   "practical": 0,
-  "apply": 1,
-  "visual": 1,
+  "data": 0,
   "misconceptions": 6,
-  "terms": 11,
+  "apply": 7,
+  "practice": 11,
   "summary": true,
-  "evidence": 2,
-  "practice": 10,
-  "connections": 9
- },
- "connections": {
-  "siblings": [
-   "4.1.3.2.b",
-   "4.1.3.2.c",
-   "4.1.3.2.RP3"
-  ],
-  "deeper": [
-   "bio.water-potential.concept",
-   "bio.osmosis.definition-water-potential",
-   "bio.water-potential.equation",
-   "bio.osmosis.aquaporins",
-   "bio.osmosis.tonicity",
-   "bio.osmosis.worked-water-potential"
-  ]
+  "connections": 7,
+  "evidence": 2
  },
  "sources": [
   "openstax-biology-2e-5-2",
   "gradify-biology-u02-21"
+ ],
+ "attributed": [
+  "openstax-biology-2e-5-2"
  ],
  "status": "expert-review",
  "history": [
@@ -500,7 +567,7 @@
    "status": "automated-qa",
    "on": "2026-11-24",
    "by": "scripts/knowledge/qa.mjs",
-   "note": "64 checks: 0 failed, 3 for the reviewer"
+   "note": "69 checks: 0 failed, 3 for the reviewer"
   },
   {
    "status": "expert-review",
@@ -512,7 +579,7 @@
  "qa": {
   "result": "pass",
   "on": "2026-11-24",
-  "checks": 64,
+  "checks": 69,
   "fails": 0,
   "reviews": 3,
   "dimensions": {
@@ -520,7 +587,7 @@
     "status": "review",
     "checks": [
      {
-      "name": "every knowledge item the lesson was built from still exists, unchanged",
+      "name": "every knowledge item the lesson was built from still exists, its form for this level unchanged",
       "ok": true,
       "severity": "fail"
      },
@@ -528,7 +595,7 @@
       "name": "every knowledge item has been reviewed by a subject specialist",
       "ok": false,
       "severity": "review",
-      "detail": "14 of 14 items are drafts: bio.diffusion.definition, bio.solutions.vocabulary, bio.membrane.partially-permeable, bio.osmosis.definition-solutions, bio.osmosis.passive, bio.osmosis.no-net-movement, bio.osmosis.particle-model, bio.osmosis.cells, bio.osmosis.mistake-solute-moves, bio.osmosis.mistake-direction, bio.osmosis.mistake-whose-concentration, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops, bio.osmosis.mistake-plant-bursts"
+      "detail": "14 of 14 items are drafts: bio.diffusion.definition, bio.solutions.vocabulary, bio.membrane.partially-permeable, bio.osmosis.definition, bio.osmosis.passive, bio.osmosis.no-net-movement, bio.osmosis.particle-model, bio.osmosis.cells, bio.osmosis.mistake-solute-moves, bio.osmosis.mistake-direction, bio.osmosis.mistake-whose-concentration, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops, bio.osmosis.mistake-plant-bursts"
      },
      {
       "name": "every knowledge item has supporting passages in its sources",
@@ -544,7 +611,7 @@
       "name": "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3)",
       "ok": false,
       "severity": "review",
-      "detail": "bio.osmosis.particle-model (0.21: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1778807); bio.osmosis.cells (0.28: check against gradify-biology-u02-21#L724, gradify-biology-u02-21#L703, gradify-biology-u02-21#L719); bio.osmosis.mistake-whose-concentration (0.26: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1703202)"
+      "detail": "bio.membrane.partially-permeable (0.25: check against gradify-biology-u02-21#L709, gradify-biology-u02-21#L713, gradify-biology-u02-21#L710); bio.osmosis.particle-model (0.27: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1778807)"
      },
      {
       "name": "diagram kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model: every subject check passes",
@@ -638,7 +705,7 @@
       "name": "readability suits GCSE (Flesch–Kincaid grade 6–11)",
       "ok": true,
       "severity": "review",
-      "detail": "grade 9"
+      "detail": "grade 9.1"
      },
      {
       "name": "no sentence is over 30 words",
@@ -680,6 +747,16 @@
       "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model: shows what the lesson's mechanism describes (knowledge bio.osmosis.particle-model)",
       "ok": true,
       "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model (wide): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model (narrow): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
      }
     ]
    },
@@ -690,13 +767,13 @@
       "name": "at least 5 questions",
       "ok": true,
       "severity": "fail",
-      "detail": "10"
+      "detail": "11"
      },
      {
       "name": "the course engine parses every question",
       "ok": true,
       "severity": "fail",
-      "detail": "10 parsed of 10"
+      "detail": "11 parsed of 11"
      },
      {
       "name": "question ids are unique and permanent",
@@ -719,7 +796,7 @@
       "severity": "fail"
      },
      {
-      "name": "question kinds: M, TF",
+      "name": "question kinds: M, SEQ, TF",
       "ok": true,
       "severity": "review"
      }
@@ -736,7 +813,8 @@
      {
       "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model (wide): everything coloured is also labelled in text",
       "ok": true,
-      "severity": "fail"
+      "severity": "fail",
+      "detail": "8 text labels"
      },
      {
       "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model (narrow): role=\"img\" with an aria-label",
@@ -746,7 +824,8 @@
      {
       "name": "kb-aqa8461-4-1-3-2-a-gcse-osmosis-particle-model (narrow): everything coloured is also labelled in text",
       "ok": true,
-      "severity": "fail"
+      "severity": "fail",
+      "detail": "9 text labels"
      },
      {
       "name": "headings break the lesson into sections",
@@ -784,12 +863,12 @@
       "severity": "fail"
      },
      {
-      "name": "bio.osmosis.definition-solutions: source openstax-biology-2e-5-2 has a provenance record",
+      "name": "bio.osmosis.definition: source openstax-biology-2e-5-2 has a provenance record",
       "ok": true,
       "severity": "fail"
      },
      {
-      "name": "bio.osmosis.definition-solutions: source gradify-biology-u02-21 has a provenance record",
+      "name": "bio.osmosis.definition: source gradify-biology-u02-21 has a provenance record",
       "ok": true,
       "severity": "fail"
      },
@@ -854,6 +933,16 @@
       "severity": "fail"
      },
      {
+      "name": "openstax-biology-2e-5-2: licence category noncommercial-only permits fact-checking only",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u02-21: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
       "name": "no item copies 12 or more words in a row from a source it may not reuse",
       "ok": true,
       "severity": "fail"
@@ -874,6 +963,11 @@
       "ok": false,
       "severity": "review",
       "detail": "9 words with openstax-biology-2e-5-2#fs-id2051346: \"moves from a high concentration to a low concentration\" (a standard phrase, or rewrite?)"
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with the specification's own wording",
+      "ok": true,
+      "severity": "review"
      },
      {
       "name": "longest run of words shared with a verify-only source: 5",
@@ -898,8 +992,8 @@
   "status": "awaiting",
   "reviewer": null,
   "flagged": [
-   "every knowledge item has been reviewed by a subject specialist: 14 of 14 items are drafts: bio.diffusion.definition, bio.solutions.vocabulary, bio.membrane.partially-permeable, bio.osmosis.definition-solutions, bio.osmosis.passive, bio.osmosis.no-net-movement, bio.osmosis.particle-model, bio.osmosis.cells, bio.osmosis.mistake-solute-moves, bio.osmosis.mistake-direction, bio.osmosis.mistake-whose-concentration, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops, bio.osmosis.mistake-plant-bursts",
-   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.osmosis.particle-model (0.21: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1778807); bio.osmosis.cells (0.28: check against gradify-biology-u02-21#L724, gradify-biology-u02-21#L703, gradify-biology-u02-21#L719); bio.osmosis.mistake-whose-concentration (0.26: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1703202)",
+   "every knowledge item has been reviewed by a subject specialist: 14 of 14 items are drafts: bio.diffusion.definition, bio.solutions.vocabulary, bio.membrane.partially-permeable, bio.osmosis.definition, bio.osmosis.passive, bio.osmosis.no-net-movement, bio.osmosis.particle-model, bio.osmosis.cells, bio.osmosis.mistake-solute-moves, bio.osmosis.mistake-direction, bio.osmosis.mistake-whose-concentration, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops, bio.osmosis.mistake-plant-bursts",
+   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.membrane.partially-permeable (0.25: check against gradify-biology-u02-21#L709, gradify-biology-u02-21#L713, gradify-biology-u02-21#L710); bio.osmosis.particle-model (0.27: check against openstax-biology-2e-5-2#fs-id1385884, openstax-biology-2e-5-2#fs-id1443145, openstax-biology-2e-5-2#fs-id1778807)",
    "the lesson shares fewer than 8 words in a row with such a source: 9 words with openstax-biology-2e-5-2#fs-id2051346: \"moves from a high concentration to a low concentration\" (a standard phrase, or rewrite?)"
   ],
   "approvedBy": null,

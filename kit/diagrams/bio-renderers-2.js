@@ -111,3 +111,50 @@ function osmosisChecks(spec) {
 }
 
 register({ osmosisbox: { draw: osmosisDraw, checks: osmosisChecks, widths: [700, 380] } });
+
+// ======================================================================== magnification
+// spec: object: { name, real: { value, unit } }, image: { value, unit }, scaleBar: { value, unit },
+//   claims: [{ type: "magnification", value }]   what the lesson says the magnification is
+// Draws the object as it appears in the image, with its measured image length, a scale bar for the real length
+// it stands for, and the calculation. The checks convert units, recompute the magnification and confirm the scale
+// bar is drawn in proportion to the object.
+export const UM = { nm: 0.001, "µm": 1, mm: 1000, cm: 10000, m: 1e6 };
+export const toUm = ({ value, unit }) => { if (!(unit in UM)) throw new Error(`unknown unit ${unit}`); return value * UM[unit]; };
+export const magnificationOf = (spec) => toUm(spec.image) / toUm(spec.object.real);
+const groupDigits = (n) => String(Math.round(n * 1000) / 1000).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+function magnificationDraw(spec, W, narrow) {
+  const fs = narrow ? 12 : 14, pad = narrow ? 14 : 30, cellW = narrow ? 220 : 340, cellH = cellW * 0.62, cx = W / 2, top = narrow ? 70 : 74;
+  let s = "";
+  s += text(cx, narrow ? 16 : 18, `${spec.object.name}, as it appears in the image`, { size: fs + 1, weight: 700 });
+  // the measured image length
+  const x0 = cx - cellW / 2, x1 = cx + cellW / 2, yb = top - 12;
+  s += line(x0, yb, x1, yb, { stroke: col("a1"), w: 1.6 }) + line(x0, yb - 6, x0, yb + 6, { stroke: col("a1"), w: 1.6 }) + line(x1, yb - 6, x1, yb + 6, { stroke: col("a1"), w: 1.6 });
+  s += text(cx, yb - 12, `image length: ${groupDigits(spec.image.value)} ${spec.image.unit}`, { size: fs, weight: 700, fill: col("a1"), halo: true });
+  // the cell
+  s += `<ellipse cx="${cx}" cy="${top + cellH / 2}" rx="${cellW / 2}" ry="${cellH / 2}" fill="${col("panel")}" stroke="${col("ink")}" stroke-width="2"/>`;
+  s += `<ellipse cx="${cx - cellW * 0.08}" cy="${top + cellH * 0.45}" rx="${cellW * 0.12}" ry="${cellH * 0.16}" fill="${col("a5")}" fill-opacity="0.35" stroke="${col("a5")}" stroke-width="1.6"/>`;
+  s += text(cx - cellW * 0.08, top + cellH * 0.45, "nucleus", { size: fs - 2, fill: col("ink") });
+  // the scale bar, drawn to the same scale as the cell
+  const barW = (toUm(spec.scaleBar) / toUm(spec.object.real)) * cellW, by = top + cellH + (narrow ? 30 : 32), bx = pad + 4;
+  s += `<rect x="${bx}" y="${by - 4}" width="${barW.toFixed(1)}" height="8" fill="${col("ink")}"/>`;
+  s += text(barW < 160 ? bx : bx + barW / 2, by + 18, `scale bar = ${groupDigits(spec.scaleBar.value)} ${spec.scaleBar.unit} real length`, { size: fs - 1, anchor: barW < 160 ? "start" : "middle" });
+  // the calculation
+  const m = magnificationOf(spec), ln = [
+    `real length: ${groupDigits(spec.object.real.value)} ${spec.object.real.unit}`,
+    `magnification = image length ÷ real length`,
+    `= ${groupDigits(toUm(spec.image))} µm ÷ ${groupDigits(toUm(spec.object.real))} µm = ×${groupDigits(m)}`,
+  ];
+  let y = by + (narrow ? 50 : 52);
+  for (const [i, l] of ln.entries()) { for (const w of wrap(l, narrow ? 40 : 80)) { s += text(narrow ? pad : cx, y, w, { size: fs, weight: i === 2 ? 700 : 500, anchor: narrow ? "start" : "middle" }); y += fs + 8; } }
+  return { H: y + 4, s };
+}
+function magnificationChecks(spec) {
+  const out = [], m = magnificationOf(spec);
+  out.push(check("units convert to micrometres", [spec.image, spec.object.real, spec.scaleBar].every((q) => q.unit in UM)));
+  out.push(check("the image is larger than the real object (a magnification above 1)", m > 1, `×${m}`));
+  for (const c of spec.claims || []) if (c.type === "magnification") out.push(check(`the lesson's magnification, ×${c.value}, is image ÷ real`, Math.abs(m - c.value) < 1e-9 * Math.max(1, m), `recomputed ×${m}`));
+  out.push(check("the scale bar is drawn in proportion to the object", toUm(spec.scaleBar) < toUm(spec.object.real), `${toUm(spec.scaleBar)} µm bar against a ${toUm(spec.object.real)} µm object`));
+  return out;
+}
+register({ magnification: { draw: magnificationDraw, checks: magnificationChecks, widths: [700, 380] } });

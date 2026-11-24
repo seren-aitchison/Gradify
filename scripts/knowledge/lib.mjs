@@ -24,7 +24,7 @@ export function loadSources() {
 export function loadKnowledge(subject) {
   const dir = at(`${subject}/`);
   if (!existsSync(dir)) return [];
-  return readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "evidence.json").sort().flatMap((f) => load(new URL(f, dir)).items.map((k) => ({ subject, ...k, file: `data/knowledge/${subject}/${f}` })));
+  return readdirSync(dir).filter((f) => f.endsWith(".json") && !["evidence.json", "retired.json"].includes(f)).sort().flatMap((f) => load(new URL(f, dir)).items.map((k) => ({ subject, ...k, file: `data/knowledge/${subject}/${f}` })));
 }
 /** a knowledge item's fingerprint: what a lesson records, so a later edit shows the lesson is out of date */
 export const itemHash = (k) => { const { file, subject, ...rest } = k; return fp(rest); };

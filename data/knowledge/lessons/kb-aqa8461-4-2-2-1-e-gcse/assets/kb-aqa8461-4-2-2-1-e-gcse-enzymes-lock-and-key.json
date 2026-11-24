@@ -1,0 +1,38 @@
+{
+ "id": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key",
+ "renderer": "inducedfit",
+ "course": "knowledge",
+ "title": "The lock and key model",
+ "caption": "The substrate fits the active site because their shapes are complementary, forming an enzyme-substrate complex. After the reaction the products leave, and the enzyme is unchanged and can be used again.",
+ "alt": "The lock and key model in three stages: an enzyme with an empty active site and a substrate of complementary shape; the substrate held in the active site; two products leaving an unchanged enzyme.",
+ "description": [
+  "An enzyme with an active site, and a substrate whose shape fits it.",
+  "The substrate binds in the active site: an enzyme-substrate complex.",
+  "The reaction splits the substrate into two products, which leave.",
+  "The enzyme is the same shape as before."
+ ],
+ "substrate": {
+  "w": 40,
+  "h": 46
+ },
+ "products": [
+  {
+   "w": 22
+  },
+  {
+   "w": 18
+  }
+ ],
+ "models": [
+  {
+   "name": "lock and key",
+   "before": 40,
+   "after": 40
+  }
+ ],
+ "from": {
+  "item": "bio.enzymes.lock-and-key",
+  "version": 1,
+  "form": "default"
+ }
+}

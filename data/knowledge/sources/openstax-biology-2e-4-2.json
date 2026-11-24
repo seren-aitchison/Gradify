@@ -1,0 +1,188 @@
+{
+ "id": "openstax-biology-2e-4-2",
+ "title": "Biology 2e, section 4.2: Prokaryotic Cells",
+ "publisher": "OpenStax, Rice University",
+ "authors": [
+  "Mary Ann Clark",
+  "Matthew Douglas",
+  "Jung Choi"
+ ],
+ "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66446/index.cnxml",
+ "readerUrl": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+ "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66446",
+ "licence": "CC-BY-NC-SA-4.0",
+ "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+ "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+ "level": "ug",
+ "type": "openstax-cnxml",
+ "retrievedOn": "2026-11-24",
+ "sha256": "66c76821585a7b16f6d0d336f2aa513ff92dc73fad3d1fb616873831f4352676",
+ "bytes": 14292,
+ "licenceName": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+ "category": "noncommercial-only",
+ "uses": {
+  "adapt": false,
+  "commercial": false,
+  "verify": true
+ },
+ "policy": "verify-only",
+ "policyReason": "NonCommercial (Gradify is a paid product) and ShareAlike",
+ "attribution": true,
+ "parsedTitle": "Prokaryotic Cells",
+ "passages": [
+  {
+   "id": "fs-id1961711",
+   "kind": "para",
+   "hash": "8bb300b0639e1bb1",
+   "words": 41
+  },
+  {
+   "id": "fs-id1801596",
+   "kind": "para",
+   "hash": "ebf98229bf4fad38",
+   "words": 60
+  },
+  {
+   "id": "fs-id1325738",
+   "kind": "para",
+   "hash": "9aa05d6a7b75d204",
+   "words": 42
+  },
+  {
+   "id": "fs-id1798051",
+   "kind": "para",
+   "hash": "14858e54f1b5894a",
+   "words": 86
+  },
+  {
+   "id": "fs-id1056900",
+   "kind": "para",
+   "hash": "3a652ac0ce512fd6",
+   "words": 96
+  },
+  {
+   "id": "fs-id1627806",
+   "kind": "para",
+   "hash": "09db850b632f1dd4",
+   "words": 32
+  },
+  {
+   "id": "fs-id1904890",
+   "kind": "para",
+   "hash": "d96bb40df22d7207",
+   "words": 56
+  },
+  {
+   "id": "fs-id2028947",
+   "kind": "para",
+   "hash": "c0c21cff282249b4",
+   "words": 64
+  },
+  {
+   "id": "fs-id1775152",
+   "kind": "para",
+   "hash": "13510bc6fdbaf7cf",
+   "words": 75
+  },
+  {
+   "id": "fs-id1443691",
+   "kind": "para",
+   "hash": "9c2330f229ea6189",
+   "words": 217
+  },
+  {
+   "id": "fs-id1418460",
+   "kind": "para",
+   "hash": "6616b2cea6d30202",
+   "words": 93
+  },
+  {
+   "id": "fs-id1228431",
+   "kind": "para",
+   "hash": "70b8ca2a31097220",
+   "words": 25
+  },
+  {
+   "id": "fs-id1320930",
+   "kind": "para",
+   "hash": "6a84a5338bf509c6",
+   "words": 43
+  },
+  {
+   "id": "fs-id1320804",
+   "kind": "para",
+   "hash": "02d7174c68fb839c",
+   "words": 37
+  },
+  {
+   "id": "fs-id806351",
+   "kind": "para",
+   "hash": "1efbc9c1492e0fc3",
+   "words": 46
+  },
+  {
+   "id": "fs-id840966",
+   "kind": "para",
+   "hash": "e897045df9c3eefc",
+   "words": 14
+  },
+  {
+   "id": "fs-id1222779",
+   "kind": "para",
+   "hash": "32fb02c92f5b594b",
+   "words": 9
+  },
+  {
+   "id": "fs-idm74380420",
+   "kind": "para",
+   "hash": "edab2c325dbaf077",
+   "words": 8
+  },
+  {
+   "id": "fs-id1981261",
+   "kind": "para",
+   "hash": "db09121de5cedeb5",
+   "words": 33
+  },
+  {
+   "id": "fs-id1194361",
+   "kind": "para",
+   "hash": "b9739bc6e2c808be",
+   "words": 31
+  },
+  {
+   "id": "fs-id1310945",
+   "kind": "para",
+   "hash": "6bfdceabeace3ee9",
+   "words": 7
+  },
+  {
+   "id": "fs-id1214893",
+   "kind": "para",
+   "hash": "10531369dc4d136f",
+   "words": 30
+  },
+  {
+   "id": "fs-id1227229",
+   "kind": "meaning",
+   "hash": "271845ff675a7d75",
+   "words": 13
+  },
+  {
+   "id": "fs-id1338820",
+   "kind": "meaning",
+   "hash": "9c62e7717c53850f",
+   "words": 11
+  }
+ ],
+ "duplicates": [
+  {
+   "id": "para-00001",
+   "duplicateOf": "openstax-biology-2e-5-2#para-00001"
+  },
+  {
+   "id": "fs-id1130356",
+   "duplicateOf": "openstax-biology-2e-4-2#fs-id1228431"
+  }
+ ]
+}

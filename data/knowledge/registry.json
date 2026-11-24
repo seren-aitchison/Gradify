@@ -6,7 +6,11 @@
    "type": "openstax-cnxml",
    "title": "Biology 2e, section 5.2: Passive Transport",
    "publisher": "OpenStax, Rice University",
-   "authors": ["Mary Ann Clark", "Matthew Douglas", "Jung Choi"],
+   "authors": [
+    "Mary Ann Clark",
+    "Matthew Douglas",
+    "Jung Choi"
+   ],
    "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66374/index.cnxml",
    "readerUrl": "https://openstax.org/books/biology-2e/pages/5-2-passive-transport",
    "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66374",
@@ -20,11 +24,157 @@
    "type": "gradify-notes",
    "title": "Gradify Biology, lesson u02-21: Osmosis",
    "publisher": "Gradify",
-   "authors": ["Gradify"],
+   "authors": [
+    "Gradify"
+   ],
    "course": "biology",
    "unit": "u02",
    "lesson": "Osmosis",
    "url": "kit/courses/biology/notes/u02.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "openstax-biology-2e-4-1",
+   "type": "openstax-cnxml",
+   "title": "Biology 2e, section 4.1: Studying Cells",
+   "publisher": "OpenStax, Rice University",
+   "authors": [
+    "Mary Ann Clark",
+    "Matthew Douglas",
+    "Jung Choi"
+   ],
+   "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66445/index.cnxml",
+   "readerUrl": "https://openstax.org/books/biology-2e/pages/4-1-studying-cells",
+   "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66445",
+   "licence": "CC-BY-NC-SA-4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+   "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+   "level": "ug"
+  },
+  {
+   "id": "openstax-biology-2e-4-2",
+   "type": "openstax-cnxml",
+   "title": "Biology 2e, section 4.2: Prokaryotic Cells",
+   "publisher": "OpenStax, Rice University",
+   "authors": [
+    "Mary Ann Clark",
+    "Matthew Douglas",
+    "Jung Choi"
+   ],
+   "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66446/index.cnxml",
+   "readerUrl": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+   "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66446",
+   "licence": "CC-BY-NC-SA-4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+   "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+   "level": "ug"
+  },
+  {
+   "id": "openstax-biology-2e-6-5",
+   "type": "openstax-cnxml",
+   "title": "Biology 2e, section 6.5: Enzymes",
+   "publisher": "OpenStax, Rice University",
+   "authors": [
+    "Mary Ann Clark",
+    "Matthew Douglas",
+    "Jung Choi"
+   ],
+   "url": "https://raw.githubusercontent.com/openstax/osbooks-biology-bundle/bc1be223bd23a00cc68efb6195dc183f4e1e228a/modules/m66463/index.cnxml",
+   "readerUrl": "https://openstax.org/books/biology-2e/pages/6-5-enzymes",
+   "version": "osbooks-biology-bundle@bc1be223bd23a00cc68efb6195dc183f4e1e228a, module m66463",
+   "licence": "CC-BY-NC-SA-4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+   "licenceEvidence": "LICENSE file and <md:license> in the repository at this commit",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u02-02",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u02-02: Prokaryotic cells",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u02",
+   "lesson": "Prokaryotic cells",
+   "url": "kit/courses/biology/notes/u02.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u03-23",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u03-23: Enzymes",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u03",
+   "lesson": "Enzymes",
+   "url": "kit/courses/biology/notes/u03.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u03-24",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u03-24: Enzyme-substrate interactions",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u03",
+   "lesson": "Enzyme-substrate interactions",
+   "url": "kit/courses/biology/notes/u03.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u14-05",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u14-05: Microscopy",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "Microscopy",
+   "url": "kit/courses/biology/notes/u14.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u01-17",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u01-17: Graphs and data presentation",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u01",
+   "lesson": "Graphs and data presentation",
+   "url": "kit/courses/biology/notes/u01.js",
+   "licence": "gradify",
+   "level": "ug"
+  },
+  {
+   "id": "gradify-biology-u01-18",
+   "type": "gradify-notes",
+   "title": "Gradify Biology, lesson u01-18: Statistical foundations",
+   "publisher": "Gradify",
+   "authors": [
+    "Gradify"
+   ],
+   "course": "biology",
+   "unit": "u01",
+   "lesson": "Statistical foundations",
+   "url": "kit/courses/biology/notes/u01.js",
    "licence": "gradify",
    "level": "ug"
   }

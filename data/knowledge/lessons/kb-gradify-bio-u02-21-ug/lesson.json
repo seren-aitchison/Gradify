@@ -4,6 +4,7 @@
  "level": "ug",
  "subject": "biology",
  "template": "ug-science",
+ "requirementKind": "content",
  "requirement": {
   "id": "gradify-biology:u02-21",
   "kind": "course",
@@ -11,12 +12,13 @@
   "hash": "f1f276a329a43f38",
   "version": null,
   "page": null,
+  "statementKind": "content",
   "higherTier": false,
   "biologyOnly": false
  },
  "objectives": [
   "Define osmosis and use the term correctly",
-  "Explain what water potential is",
+  "Explain water potential",
   "Use ψ = ψs + ψp to work out water potential of a cell",
   "Predict and explain what osmosis does to animal and plant cells"
  ],
@@ -24,71 +26,131 @@
   {
    "id": "bio.water-potential.concept",
    "version": 1,
+   "form": "default",
    "hash": "b2e61c529ee47f2c",
+   "formHash": "2b498fa24d153487",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.tonicity",
    "version": 1,
+   "form": "default",
    "hash": "b8e75ca70fd18bbc",
+   "formHash": "8f68516d118aa40d",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
-   "id": "bio.osmosis.definition-water-potential",
+   "id": "bio.cells.eukaryotic",
    "version": 1,
-   "hash": "658b91c7a22edbee",
+   "form": "alevel-pg",
+   "hash": "06a04ec53206ebb9",
+   "formHash": "87c865b82379ccb5",
    "status": "draft",
-   "why": "concept"
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.membrane.partially-permeable",
+   "version": 1,
+   "form": "default",
+   "hash": "6a9f52a161ef5474",
+   "formHash": "b858220a7ec9b41d",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.osmosis.definition",
+   "version": 2,
+   "form": "alevel-pg",
+   "hash": "fbd98fbde724b5ff",
+   "formHash": "b29dadacc477f680",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
   },
   {
    "id": "bio.osmosis.passive",
    "version": 1,
+   "form": "default",
    "hash": "2f126bc2eb0c4171",
+   "formHash": "4ee3e67a6ef9c214",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.aquaporins",
    "version": 1,
+   "form": "default",
    "hash": "9fa4805d55ef4287",
+   "formHash": "a906cd01f510fbc2",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.water-potential.equation",
    "version": 1,
+   "form": "default",
    "hash": "c1e6a4fdb4ac269a",
+   "formHash": "b3bfb3c6bb119ebe",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.worked-water-potential",
    "version": 1,
+   "form": "default",
    "hash": "fb0388753518b848",
+   "formHash": "f5fac076c3bc1ea7",
    "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.cells",
-   "version": 1,
-   "hash": "e258923eefd1648f",
+   "version": 2,
+   "form": "alevel-pg",
+   "hash": "4d54e55b3f026be1",
+   "formHash": "2b1ef2a4bdeca204",
    "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.osmosis.mistake-psi-sign",
+   "version": 1,
+   "form": "default",
+   "hash": "78f5b113477713cf",
+   "formHash": "e21af00253a95cb2",
+   "status": "draft",
+   "origin": "original",
    "why": "matched"
   },
   {
    "id": "bio.osmosis.mistake-energy",
    "version": 1,
+   "form": "default",
    "hash": "b8ae0a52926e8ea6",
+   "formHash": "a5de7c234ac4f2a6",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   },
   {
    "id": "bio.osmosis.mistake-stops",
    "version": 1,
+   "form": "default",
    "hash": "5c6bb0e87d2c281a",
+   "formHash": "0a85a1fad4acb6db",
    "status": "draft",
+   "origin": "original",
    "why": "concept"
   }
  ],
@@ -96,40 +158,19 @@
   {
    "id": "bio.diffusion.definition",
    "version": 1,
-   "hash": "310fba0dd4ed0139"
-  },
-  {
-   "id": "bio.solutions.vocabulary",
-   "version": 1,
-   "hash": "f8869f40900eb547"
-  },
-  {
-   "id": "bio.membrane.partially-permeable",
-   "version": 1,
-   "hash": "6a9f52a161ef5474"
+   "form": "default",
+   "hash": "310fba0dd4ed0139",
+   "formHash": "18f0202b3ddb1a60"
   }
  ],
  "retrieval": {
   "main": "osmosis",
+  "kind": "content",
   "items": [
-   {
-    "id": "bio.water-potential.equation",
-    "why": "matched",
-    "score": 7.85,
-    "matched": [
-     "osmosi",
-     "water",
-     "potential",
-     "plant",
-     "cell",
-     "solute",
-     "pressure"
-    ]
-   },
    {
     "id": "bio.osmosis.worked-water-potential",
     "why": "matched",
-    "score": 7.75,
+    "score": 15.44,
     "matched": [
      "osmosi",
      "water",
@@ -142,14 +183,13 @@
     ]
    },
    {
-    "id": "bio.water-potential.concept",
+    "id": "bio.water-potential.equation",
     "why": "matched",
-    "score": 7.69,
+    "score": 15.38,
     "matched": [
      "osmosi",
      "water",
      "potential",
-     "solution",
      "plant",
      "cell",
      "solute",
@@ -159,20 +199,37 @@
    {
     "id": "bio.osmosis.cells",
     "why": "matched",
-    "score": 6.48,
+    "score": 15.15,
     "matched": [
      "osmosi",
      "water",
+     "potential",
      "solution",
      "animal",
      "plant",
-     "cell"
+     "cell",
+     "pressure"
+    ]
+   },
+   {
+    "id": "bio.water-potential.concept",
+    "why": "matched",
+    "score": 14.88,
+    "matched": [
+     "osmosi",
+     "water",
+     "potential",
+     "solution",
+     "plant",
+     "cell",
+     "solute",
+     "pressure"
     ]
    },
    {
     "id": "bio.osmosis.tonicity",
     "why": "matched",
-    "score": 4.17,
+    "score": 10.2,
     "matched": [
      "osmosi",
      "water",
@@ -182,12 +239,48 @@
     ]
    },
    {
-    "id": "bio.osmosis.passive",
-    "why": "concept",
-    "concept": "osmosis"
+    "id": "bio.osmosis.mistake-psi-sign",
+    "why": "matched",
+    "score": 6.71,
+    "matched": [
+     "water",
+     "potential",
+     "solution"
+    ]
    },
    {
-    "id": "bio.osmosis.definition-water-potential",
+    "id": "bio.cells.eukaryotic",
+    "why": "matched",
+    "score": 6.49,
+    "matched": [
+     "animal",
+     "plant",
+     "cell"
+    ]
+   },
+   {
+    "id": "bio.membrane.partially-permeable",
+    "why": "matched",
+    "score": 6.33,
+    "matched": [
+     "osmosi",
+     "water",
+     "cell",
+     "solute"
+    ]
+   },
+   {
+    "id": "bio.osmosis.definition",
+    "why": "matched",
+    "score": 6.17,
+    "matched": [
+     "osmosi",
+     "water",
+     "potential"
+    ]
+   },
+   {
+    "id": "bio.osmosis.passive",
     "why": "concept",
     "concept": "osmosis"
    },
@@ -223,13 +316,13 @@
    "id": "bio-osmosis-cells",
    "usable": true,
    "reason": "fits",
-   "score": 74.11
+   "score": 78.17
   },
   {
    "id": "bio-active-transport-gut",
    "usable": false,
    "reason": "on another topic (Active transport)",
-   "score": 34.28
+   "score": 36.71
   },
   {
    "id": "bio-which-route",
@@ -238,10 +331,16 @@
    "score": 32.44
   },
   {
+   "id": "bio-animal-cell",
+   "usable": false,
+   "reason": "on another topic (Animal cells)",
+   "score": 32.3
+  },
+  {
    "id": "bio-water-pathway",
    "usable": false,
    "reason": "on another topic (Water transport)",
-   "score": 27.36
+   "score": 30.2
   },
   {
    "id": "bio-facilitated-diffusion",
@@ -267,10 +366,10 @@
    "type": "M",
    "d": 1,
    "items": [
-    "bio.water-potential.concept"
+    "bio.osmosis.definition"
    ],
    "objectives": [
-    2
+    1
    ]
   },
   {
@@ -322,6 +421,17 @@
    "type": "TF",
    "d": 1,
    "items": [
+    "bio.osmosis.mistake-psi-sign"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-gradify-bio-u02-21-ug-q8",
+   "type": "TF",
+   "d": 1,
+   "items": [
     "bio.osmosis.mistake-stops"
    ],
    "objectives": [
@@ -329,7 +439,7 @@
    ]
   },
   {
-   "id": "kb-gradify-bio-u02-21-ug-q8",
+   "id": "kb-gradify-bio-u02-21-ug-q9",
    "type": "TF",
    "d": 1,
    "items": [
@@ -340,7 +450,7 @@
    ]
   },
   {
-   "id": "kb-gradify-bio-u02-21-ug-q9",
+   "id": "kb-gradify-bio-u02-21-ug-q10",
    "type": "NUM",
    "d": 2,
    "items": [
@@ -352,38 +462,40 @@
    "compute": {
     "fn": "waterPotential",
     "inputs": {
-     "psiS": -880,
-     "psiP": 170
+     "psiS": -1060,
+     "psiP": 210
     },
-    "answer": -710,
+    "answer": -850,
     "dp": 0
    }
   }
  ],
  "components": {
   "objectives": 4,
-  "prior": 3,
-  "explain": 5,
+  "prior": 1,
+  "explain": 11,
   "mechanism": 0,
-  "quantitative": 1,
-  "worked": 1,
-  "practical": 0,
-  "apply": 1,
+  "quantitative": 3,
   "visual": 1,
-  "misconceptions": 2,
-  "terms": 12,
+  "worked": 4,
+  "data": 0,
+  "misconceptions": 3,
+  "apply": 7,
+  "terms": 15,
+  "practice": 10,
+  "evidence": 4,
   "summary": true,
-  "evidence": 2,
-  "practice": 9,
   "connections": 0
- },
- "connections": {
-  "siblings": [],
-  "deeper": []
  },
  "sources": [
   "gradify-biology-u02-21",
-  "openstax-biology-2e-5-2"
+  "openstax-biology-2e-5-2",
+  "openstax-biology-2e-4-2",
+  "gradify-biology-u02-02"
+ ],
+ "attributed": [
+  "openstax-biology-2e-5-2",
+  "openstax-biology-2e-4-2"
  ],
  "status": "expert-review",
  "history": [
@@ -396,7 +508,7 @@
    "status": "automated-qa",
    "on": "2026-11-24",
    "by": "scripts/knowledge/qa.mjs",
-   "note": "59 checks: 0 failed, 3 for the reviewer"
+   "note": "70 checks: 0 failed, 3 for the reviewer"
   },
   {
    "status": "expert-review",
@@ -408,7 +520,7 @@
  "qa": {
   "result": "pass",
   "on": "2026-11-24",
-  "checks": 59,
+  "checks": 70,
   "fails": 0,
   "reviews": 3,
   "dimensions": {
@@ -416,7 +528,7 @@
     "status": "review",
     "checks": [
      {
-      "name": "every knowledge item the lesson was built from still exists, unchanged",
+      "name": "every knowledge item the lesson was built from still exists, its form for this level unchanged",
       "ok": true,
       "severity": "fail"
      },
@@ -424,7 +536,7 @@
       "name": "every knowledge item has been reviewed by a subject specialist",
       "ok": false,
       "severity": "review",
-      "detail": "10 of 10 items are drafts: bio.water-potential.concept, bio.osmosis.tonicity, bio.osmosis.definition-water-potential, bio.osmosis.passive, bio.osmosis.aquaporins, bio.water-potential.equation, bio.osmosis.worked-water-potential, bio.osmosis.cells, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops"
+      "detail": "13 of 13 items are drafts: bio.water-potential.concept, bio.osmosis.tonicity, bio.cells.eukaryotic, bio.membrane.partially-permeable, bio.osmosis.definition, bio.osmosis.passive, bio.osmosis.aquaporins, bio.water-potential.equation, bio.osmosis.worked-water-potential, bio.osmosis.cells, bio.osmosis.mistake-psi-sign, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops"
      },
      {
       "name": "every knowledge item has supporting passages in its sources",
@@ -440,7 +552,7 @@
       "name": "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3)",
       "ok": false,
       "severity": "review",
-      "detail": "bio.osmosis.aquaporins (0.29: check against openstax-biology-2e-5-2#fs-id2051156, openstax-biology-2e-5-2#fs-id1538230, openstax-biology-2e-5-2#fs-id1595889); bio.osmosis.cells (0.28: check against gradify-biology-u02-21#L724, gradify-biology-u02-21#L703, gradify-biology-u02-21#L719)"
+      "detail": "bio.membrane.partially-permeable (0.25: check against gradify-biology-u02-21#L709, gradify-biology-u02-21#L713, gradify-biology-u02-21#L710)"
      },
      {
       "name": "worked example \"Which way does water move?\": its answer recomputes",
@@ -449,10 +561,10 @@
       "detail": "computed -500, stated -500"
      },
      {
-      "name": "question kb-gradify-bio-u02-21-ug-q9: its answer recomputes",
+      "name": "question kb-gradify-bio-u02-21-ug-q10: its answer recomputes",
       "ok": true,
       "severity": "fail",
-      "detail": "computed -710, stated -710"
+      "detail": "computed -850, stated -850"
      },
      {
       "name": "library diagram bio-osmosis-cells passed its own checks (status validated)",
@@ -522,7 +634,7 @@
       "name": "the requirement's own terms are defined in the lesson",
       "ok": true,
       "severity": "fail",
-      "detail": "water potential, osmosis"
+      "detail": "osmosis, water potential"
      }
     ]
    },
@@ -558,7 +670,7 @@
       "name": "readability suits Undergraduate (Flesch–Kincaid grade 10–16)",
       "ok": true,
       "severity": "review",
-      "detail": "grade 9.6"
+      "detail": "grade 10.2"
      },
      {
       "name": "no sentence is over 30 words",
@@ -597,13 +709,13 @@
       "name": "at least 4 questions",
       "ok": true,
       "severity": "fail",
-      "detail": "9"
+      "detail": "10"
      },
      {
       "name": "the course engine parses every question",
       "ok": true,
       "severity": "fail",
-      "detail": "9 parsed of 9"
+      "detail": "10 parsed of 10"
      },
      {
       "name": "question ids are unique and permanent",
@@ -616,7 +728,7 @@
       "severity": "fail"
      },
      {
-      "name": "objective 2 is tested (\"Explain what water potential is\")",
+      "name": "objective 2 is tested (\"Explain water potential\")",
       "ok": true,
       "severity": "fail"
      },
@@ -671,12 +783,32 @@
       "severity": "fail"
      },
      {
-      "name": "bio.osmosis.definition-water-potential: source gradify-biology-u02-21 has a provenance record",
+      "name": "bio.cells.eukaryotic: source openstax-biology-2e-4-2 has a provenance record",
       "ok": true,
       "severity": "fail"
      },
      {
-      "name": "bio.osmosis.definition-water-potential: source openstax-biology-2e-5-2 has a provenance record",
+      "name": "bio.cells.eukaryotic: source gradify-biology-u02-02 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.membrane.partially-permeable: source openstax-biology-2e-5-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.membrane.partially-permeable: source gradify-biology-u02-21 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.osmosis.definition: source openstax-biology-2e-5-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.osmosis.definition: source gradify-biology-u02-21 has a provenance record",
       "ok": true,
       "severity": "fail"
      },
@@ -721,12 +853,37 @@
       "severity": "fail"
      },
      {
+      "name": "bio.osmosis.mistake-psi-sign: source gradify-biology-u02-21 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
       "name": "bio.osmosis.mistake-energy: source openstax-biology-2e-5-2 has a provenance record",
       "ok": true,
       "severity": "fail"
      },
      {
       "name": "bio.osmosis.mistake-stops: source openstax-biology-2e-5-2 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u02-21: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "openstax-biology-2e-5-2: licence category noncommercial-only permits fact-checking only",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "openstax-biology-2e-4-2: licence category noncommercial-only permits fact-checking only",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u02-02: licence category commercial-adapt permits adaptation",
       "ok": true,
       "severity": "fail"
      },
@@ -752,12 +909,22 @@
       "severity": "review"
      },
      {
+      "name": "the lesson shares fewer than 8 words in a row with the specification's own wording",
+      "ok": true,
+      "severity": "review"
+     },
+     {
       "name": "longest run of words shared with a verify-only source: 5",
       "ok": true,
       "severity": "review"
      },
      {
       "name": "attribution to OpenStax, Rice University, Biology 2e, section 5.2: Passive Transport",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "attribution to OpenStax, Rice University, Biology 2e, section 4.2: Prokaryotic Cells",
       "ok": true,
       "severity": "fail"
      },
@@ -774,8 +941,8 @@
   "status": "awaiting",
   "reviewer": null,
   "flagged": [
-   "every knowledge item has been reviewed by a subject specialist: 10 of 10 items are drafts: bio.water-potential.concept, bio.osmosis.tonicity, bio.osmosis.definition-water-potential, bio.osmosis.passive, bio.osmosis.aquaporins, bio.water-potential.equation, bio.osmosis.worked-water-potential, bio.osmosis.cells, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops",
-   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.osmosis.aquaporins (0.29: check against openstax-biology-2e-5-2#fs-id2051156, openstax-biology-2e-5-2#fs-id1538230, openstax-biology-2e-5-2#fs-id1595889); bio.osmosis.cells (0.28: check against gradify-biology-u02-21#L724, gradify-biology-u02-21#L703, gradify-biology-u02-21#L719)",
+   "every knowledge item has been reviewed by a subject specialist: 13 of 13 items are drafts: bio.water-potential.concept, bio.osmosis.tonicity, bio.cells.eukaryotic, bio.membrane.partially-permeable, bio.osmosis.definition, bio.osmosis.passive, bio.osmosis.aquaporins, bio.water-potential.equation, bio.osmosis.worked-water-potential, bio.osmosis.cells, bio.osmosis.mistake-psi-sign, bio.osmosis.mistake-energy, bio.osmosis.mistake-stops",
+   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.membrane.partially-permeable (0.25: check against gradify-biology-u02-21#L709, gradify-biology-u02-21#L713, gradify-biology-u02-21#L710)",
    "no sentence is over 30 words: \"A hypotonic solution has a higher water potential than the c…\"; \"Cells that move a lot of water, such as red blood cells and …\"; \"A plant cell's water potential is the sum of its solute pote…\""
   ],
   "approvedBy": null,

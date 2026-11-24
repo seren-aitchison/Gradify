@@ -1,0 +1,11462 @@
+{
+ "spec": "aqa-gcse-biology",
+ "level": "gcse",
+ "date": "2026-11-24",
+ "statements": 475,
+ "relevant": 63,
+ "complete": 14,
+ "lessons": {
+  "generated": 6,
+  "qaPass": 6,
+  "awaiting": 6,
+  "approved": 0,
+  "published": 0
+ },
+ "knowledge": {
+  "items": 64,
+  "reviewed": 0,
+  "withForms": 14,
+  "adapted": 0,
+  "weakEvidence": 15,
+  "kinds": {
+   "definition": 10,
+   "fact": 9,
+   "application": 2,
+   "misconception": 22,
+   "concept": 4,
+   "mechanism": 3,
+   "equation": 2,
+   "method": 4,
+   "worked-example": 4,
+   "practical": 1,
+   "dataset": 3
+  }
+ },
+ "sources": [
+  {
+   "id": "gradify-biology-u01-17",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u01-18",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u02-02",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u02-21",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u03-23",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u03-24",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "gradify-biology-u14-05",
+   "category": "commercial-adapt",
+   "licence": "gradify",
+   "confirmed": false
+  },
+  {
+   "id": "openstax-biology-2e-4-1",
+   "category": "noncommercial-only",
+   "licence": "CC-BY-NC-SA-4.0",
+   "confirmed": false
+  },
+  {
+   "id": "openstax-biology-2e-4-2",
+   "category": "noncommercial-only",
+   "licence": "CC-BY-NC-SA-4.0",
+   "confirmed": false
+  },
+  {
+   "id": "openstax-biology-2e-5-2",
+   "category": "noncommercial-only",
+   "licence": "CC-BY-NC-SA-4.0",
+   "confirmed": false
+  },
+  {
+   "id": "openstax-biology-2e-6-5",
+   "category": "noncommercial-only",
+   "licence": "CC-BY-NC-SA-4.0",
+   "confirmed": false
+  }
+ ],
+ "topics": [
+  {
+   "ref": "4.1",
+   "title": "Cell biology",
+   "statements": 63,
+   "relevant": 25,
+   "complete": 9,
+   "lessons": 4
+  },
+  {
+   "ref": "4.2",
+   "title": "Organisation",
+   "statements": 65,
+   "relevant": 14,
+   "complete": 5,
+   "lessons": 2
+  },
+  {
+   "ref": "4.3",
+   "title": "Infection and response",
+   "statements": 48,
+   "relevant": 4,
+   "complete": 0,
+   "lessons": 0
+  },
+  {
+   "ref": "4.4",
+   "title": "Bioenergetics",
+   "statements": 27,
+   "relevant": 4,
+   "complete": 0,
+   "lessons": 0
+  },
+  {
+   "ref": "4.5",
+   "title": "Homeostasis and response",
+   "statements": 81,
+   "relevant": 6,
+   "complete": 0,
+   "lessons": 0
+  },
+  {
+   "ref": "4.6",
+   "title": "Inheritance, variation and evolution",
+   "statements": 110,
+   "relevant": 8,
+   "complete": 0,
+   "lessons": 0
+  },
+  {
+   "ref": "4.7",
+   "title": "Ecology",
+   "statements": 81,
+   "relevant": 2,
+   "complete": 0,
+   "lessons": 0
+  }
+ ],
+ "sections": [
+  {
+   "ref": "4.1.1.1",
+   "title": "Eukaryotes and prokaryotes",
+   "statements": 3,
+   "relevant": 2,
+   "complete": 2
+  },
+  {
+   "ref": "4.1.1.2",
+   "title": "Animal and plant cells",
+   "statements": 6,
+   "relevant": 5,
+   "complete": 1
+  },
+  {
+   "ref": "4.1.1.3",
+   "title": "Cell specialisation",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.1.1.4",
+   "title": "Cell differentiation",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.1.1.5",
+   "title": "Microscopy",
+   "statements": 3,
+   "relevant": 1,
+   "complete": 1
+  },
+  {
+   "ref": "4.1.1.6",
+   "title": "Culturing microorganisms",
+   "statements": 9,
+   "relevant": 1,
+   "complete": 1
+  },
+  {
+   "ref": "4.1.2.1",
+   "title": "Chromosomes",
+   "statements": 2,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.1.2.2",
+   "title": "Mitosis and the cell cycle",
+   "statements": 8,
+   "relevant": 2,
+   "complete": 0
+  },
+  {
+   "ref": "4.1.2.3",
+   "title": "Stem cells",
+   "statements": 9,
+   "relevant": 2,
+   "complete": 0
+  },
+  {
+   "ref": "4.1.3.1",
+   "title": "Diffusion",
+   "statements": 10,
+   "relevant": 4,
+   "complete": 2
+  },
+  {
+   "ref": "4.1.3.2",
+   "title": "Osmosis",
+   "statements": 4,
+   "relevant": 4,
+   "complete": 2
+  },
+  {
+   "ref": "4.1.3.3",
+   "title": "Active transport",
+   "statements": 4,
+   "relevant": 3,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.1",
+   "title": "Principles of organisation",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.2.1",
+   "title": "The human digestive system",
+   "statements": 16,
+   "relevant": 4,
+   "complete": 2
+  },
+  {
+   "ref": "4.2.2.2",
+   "title": "The heart and blood vessels",
+   "statements": 6,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.2.3",
+   "title": "Blood",
+   "statements": 3,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.2.4",
+   "title": "Coronary heart disease: a non-communicable disease",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.2.5",
+   "title": "Health issues",
+   "statements": 6,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.2.6",
+   "title": "The effect of lifestyle on some non-communicable diseases",
+   "statements": 8,
+   "relevant": 3,
+   "complete": 3
+  },
+  {
+   "ref": "4.2.2.7",
+   "title": "Cancer",
+   "statements": 4,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.3.1",
+   "title": "Plant tissues",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.2.3.2",
+   "title": "Plant organ system",
+   "statements": 11,
+   "relevant": 4,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.1",
+   "title": "Communicable (infectious) diseases",
+   "statements": 6,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.2",
+   "title": "Viral diseases",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.3",
+   "title": "Bacterial diseases",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.4",
+   "title": "Fungal diseases",
+   "statements": 1,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.5",
+   "title": "Protist diseases",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.6",
+   "title": "Human defence systems",
+   "statements": 4,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.7",
+   "title": "Vaccination",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.8",
+   "title": "Antibiotics and painkillers",
+   "statements": 6,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.1.9",
+   "title": "Discovery and development of drugs",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.2.1",
+   "title": "Producing monoclonal antibodies",
+   "statements": 3,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.2.2",
+   "title": "Uses of monoclonal antibodies",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.3.1",
+   "title": "Detection and identification of plant diseases",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.3.3.2",
+   "title": "Plant defence responses",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.1.1",
+   "title": "Photosynthetic reaction",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.1.2",
+   "title": "Rate of photosynthesis",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.1.3",
+   "title": "Uses of glucose from photosynthesis",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.2.1",
+   "title": "Aerobic and anaerobic respiration",
+   "statements": 8,
+   "relevant": 3,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.2.2",
+   "title": "Response to exercise",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.4.2.3",
+   "title": "Metabolism",
+   "statements": 4,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.1",
+   "title": "Homeostasis",
+   "statements": 5,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.2.1",
+   "title": "Structure and function",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.2.2",
+   "title": "The brain",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.2.3",
+   "title": "The eye",
+   "statements": 8,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.2.4",
+   "title": "Control of body temperature",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.1",
+   "title": "Human endocrine system",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.2",
+   "title": "Control of blood glucose concentration",
+   "statements": 9,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.3",
+   "title": "Maintaining water and nitrogen balance in the body",
+   "statements": 13,
+   "relevant": 3,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.4",
+   "title": "Hormones in human reproduction",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.5",
+   "title": "Contraception",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.6",
+   "title": "The use of hormones to treat infertility",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.3.7",
+   "title": "Negative feedback",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.4.1",
+   "title": "Control and coordination",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.5.4.2",
+   "title": "Use of plant hormones",
+   "statements": 5,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.1",
+   "title": "Sexual and asexual reproduction",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.2",
+   "title": "Meiosis",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.3",
+   "title": "Advantages and disadvantages of sexual and asexual reproduction",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.4",
+   "title": "DNA and the genome",
+   "statements": 5,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.5",
+   "title": "DNA structure",
+   "statements": 13,
+   "relevant": 2,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.6",
+   "title": "Genetic inheritance",
+   "statements": 10,
+   "relevant": 2,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.7",
+   "title": "Inherited disorders",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.1.8",
+   "title": "Sex determination",
+   "statements": 4,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.2.1",
+   "title": "Variation",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.2.2",
+   "title": "Evolution",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.2.3",
+   "title": "Selective breeding",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.2.4",
+   "title": "Genetic engineering",
+   "statements": 10,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.2.5",
+   "title": "Cloning",
+   "statements": 4,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.1",
+   "title": "Theory of evolution",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.2",
+   "title": "Speciation",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.3",
+   "title": "The understanding of genetics",
+   "statements": 6,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.4",
+   "title": "Evidence for evolution",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.5",
+   "title": "Fossils",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.6",
+   "title": "Extinction",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.3.7",
+   "title": "Resistant bacteria",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.6.4",
+   "title": "Classification of living organisms",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.1.1",
+   "title": "Communities",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.1.2",
+   "title": "Abiotic factors",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.1.3",
+   "title": "Biotic factors",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.1.4",
+   "title": "Adaptations",
+   "statements": 3,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.2.1",
+   "title": "Levels of organisation",
+   "statements": 8,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.2.2",
+   "title": "How materials are cycled",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.2.3",
+   "title": "Decomposition",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.2.4",
+   "title": "Impact of environmental change",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.1",
+   "title": "Biodiversity",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.2",
+   "title": "Waste management",
+   "statements": 3,
+   "relevant": 1,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.3",
+   "title": "Land use",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.4",
+   "title": "Deforestation",
+   "statements": 1,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.5",
+   "title": "Global warming",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.3.6",
+   "title": "Maintaining biodiversity",
+   "statements": 3,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.4.1",
+   "title": "Trophic levels",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.4.2",
+   "title": "Pyramids of biomass",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.4.3",
+   "title": "Transfer of biomass",
+   "statements": 7,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.5.1",
+   "title": "Factors affecting food security",
+   "statements": 4,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.5.2",
+   "title": "Farming techniques",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.5.3",
+   "title": "Sustainable fisheries",
+   "statements": 2,
+   "relevant": 0,
+   "complete": 0
+  },
+  {
+   "ref": "4.7.5.4",
+   "title": "Role of biotechnology",
+   "statements": 5,
+   "relevant": 0,
+   "complete": 0
+  }
+ ],
+ "reuse": [
+  {
+   "id": "bio.cells.eukaryotic",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.cells.prokaryotic",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.cells.bacterial-dna",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.cells.plasmids",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.cells.prokaryote-size",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.membrane.partially-permeable",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  },
+  {
+   "id": "bio.osmosis.definition",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.osmosis.passive",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  },
+  {
+   "id": "bio.osmosis.cells",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-energy",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-stops",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  },
+  {
+   "id": "bio.enzymes.definition",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.enzymes.active-site",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.enzymes.specificity",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.enzymes.denaturation",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.enzymes.lock-and-key",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default",
+    "alevel-pg"
+   ]
+  },
+  {
+   "id": "bio.enzymes.mistake-used-up",
+   "lessons": 2,
+   "levels": [
+    "gcse",
+    "ug"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology",
+    "gradify-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  },
+  {
+   "id": "bio.osmosis.mistake-whose-concentration",
+   "lessons": 2,
+   "levels": [
+    "gcse"
+   ],
+   "qualifications": [
+    "aqa-gcse-biology"
+   ],
+   "forms": [
+    "default"
+   ]
+  }
+ ],
+ "gate": [
+  {
+   "lesson": "kb-aqa8461-4-1-1-1-b-gcse",
+   "publishable": false,
+   "problems": 12
+  },
+  {
+   "lesson": "kb-aqa8461-4-1-1-5-c-gcse",
+   "publishable": false,
+   "problems": 12
+  },
+  {
+   "lesson": "kb-aqa8461-4-1-3-2-a-gcse",
+   "publishable": false,
+   "problems": 17
+  },
+  {
+   "lesson": "kb-aqa8461-4-1-3-2-rp3-gcse",
+   "publishable": false,
+   "problems": 9
+  },
+  {
+   "lesson": "kb-aqa8461-4-2-2-1-e-gcse",
+   "publishable": false,
+   "problems": 11
+  },
+  {
+   "lesson": "kb-aqa8461-4-2-2-6-h-gcse",
+   "publishable": false,
+   "problems": 11
+  },
+  {
+   "lesson": "kb-gradify-bio-u02-02-ug",
+   "publishable": false,
+   "problems": 8
+  },
+  {
+   "lesson": "kb-gradify-bio-u02-21-ug",
+   "publishable": false,
+   "problems": 17
+  },
+  {
+   "lesson": "kb-gradify-bio-u03-24-ug",
+   "publishable": false,
+   "problems": 12
+  }
+ ],
+ "rows": [
+  {
+   "ref": "4.1.1.1.a",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": []
+  },
+  {
+   "ref": "4.1.1.1.b",
+   "section": "4.1.1.1",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-1-1-1-b-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 9,
+   "missing": []
+  },
+  {
+   "ref": "4.1.1.1.c",
+   "section": "4.1.1.1",
+   "kind": "skill",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "demonstrate",
+    "understanding",
+    "scale",
+    "order",
+    "magnitude"
+   ]
+  },
+  {
+   "ref": "4.1.1.2.a",
+   "section": "4.1.1.2",
+   "kind": "skill",
+   "share": 0.6363636363636364,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "sub-cellular",
+    "structur",
+    "mitochondria",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.1.1.2.b",
+   "section": "4.1.1.2",
+   "kind": "content",
+   "share": 0.625,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "following",
+    "mitochondria",
+    "ribosom"
+   ]
+  },
+  {
+   "ref": "4.1.1.2.c",
+   "section": "4.1.1.2",
+   "kind": "content",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "addition",
+    "permanent",
+    "vacuole",
+    "filled",
+    "sap"
+   ]
+  },
+  {
+   "ref": "4.1.1.2.d",
+   "section": "4.1.1.2",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": []
+  },
+  {
+   "ref": "4.1.1.2.e",
+   "section": "4.1.1.2",
+   "kind": "skill",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "estimation",
+    "judge",
+    "relative",
+    "area",
+    "sub-cellular"
+   ]
+  },
+  {
+   "ref": "4.1.1.2.RP1",
+   "section": "4.1.1.2",
+   "kind": "practical",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "light",
+    "microscope",
+    "observe",
+    "selection",
+    "animal",
+    "included"
+   ]
+  },
+  {
+   "ref": "4.1.1.3.a",
+   "section": "4.1.1.3",
+   "kind": "skill",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "structure",
+    "typ",
+    "function",
+    "organ",
+    "system",
+    "whole",
+    "organism"
+   ]
+  },
+  {
+   "ref": "4.1.1.3.b",
+   "section": "4.1.1.3",
+   "kind": "content",
+   "share": 0.23076923076923078,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "specialised",
+    "particular",
+    "function",
+    "sperm",
+    "nerve",
+    "muscle",
+    "root",
+    "hair",
+    "xylem",
+    "phloem"
+   ]
+  },
+  {
+   "ref": "4.1.1.4.a",
+   "section": "4.1.1.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cell",
+    "differentiation"
+   ]
+  },
+  {
+   "ref": "4.1.1.4.b",
+   "section": "4.1.1.4",
+   "kind": "content",
+   "share": 0.23076923076923078,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "organism",
+    "develop",
+    "differentiate",
+    "typ",
+    "early",
+    "stage",
+    "retain",
+    "ability",
+    "throughout",
+    "life"
+   ]
+  },
+  {
+   "ref": "4.1.1.4.c",
+   "section": "4.1.1.4",
+   "kind": "content",
+   "share": 0.23529411764705882,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "mature",
+    "division",
+    "mainly",
+    "restricted",
+    "repair",
+    "replacement",
+    "differentiat",
+    "acquir",
+    "sub-cellular",
+    "enable",
+    "certain",
+    "function",
+    "specialised"
+   ]
+  },
+  {
+   "ref": "4.1.1.5.a",
+   "section": "4.1.1.5",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "microscopy",
+    "techniqu",
+    "developed",
+    "electron",
+    "understanding",
+    "sub-cellular",
+    "structur"
+   ]
+  },
+  {
+   "ref": "4.1.1.5.b",
+   "section": "4.1.1.5",
+   "kind": "content",
+   "share": 0.26666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "electron",
+    "microscope",
+    "higher",
+    "resolving",
+    "light",
+    "finer",
+    "detail",
+    "enabled",
+    "biologist",
+    "see",
+    "sub-cellular"
+   ]
+  },
+  {
+   "ref": "4.1.1.5.c",
+   "section": "4.1.1.5",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-1-1-5-c-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 9,
+   "missing": []
+  },
+  {
+   "ref": "4.1.1.6.a",
+   "section": "4.1.1.6",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "multiply",
+    "division",
+    "binary",
+    "fission",
+    "minut",
+    "enough",
+    "nutrient",
+    "suitable",
+    "temperature"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.b",
+   "section": "4.1.1.6",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "grown",
+    "nutrient",
+    "broth",
+    "solution",
+    "colony",
+    "agar",
+    "gel",
+    "plate"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.c",
+   "section": "4.1.1.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "uncontaminated",
+    "cultur",
+    "microorganism",
+    "investigating",
+    "action",
+    "disinfectant",
+    "antibiotic"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.d",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "prepare",
+    "uncontaminated",
+    "culture",
+    "aseptic",
+    "technique"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.e",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "petri",
+    "dish",
+    "culture",
+    "media",
+    "sterilised",
+    "inoculating",
+    "loop",
+    "transfer",
+    "microorganism",
+    "passing",
+    "flame",
+    "lid",
+    "secured",
+    "adhesive",
+    "tape",
+    "stored",
+    "upside",
+    "school",
+    "laboratory",
+    "cultur",
+    "generally",
+    "incubated"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.f",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cross-sectional",
+    "area",
+    "colony",
+    "clear",
+    "around"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.g",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "population",
+    "certain",
+    "division"
+   ]
+  },
+  {
+   "ref": "4.1.1.6.h",
+   "section": "4.1.1.6",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": []
+  },
+  {
+   "ref": "4.1.1.6.RP2",
+   "section": "4.1.1.6",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "antiseptic",
+    "antibiotic",
+    "bacterial",
+    "growth",
+    "agar",
+    "plat",
+    "zon",
+    "inhibition"
+   ]
+  },
+  {
+   "ref": "4.1.2.1.a",
+   "section": "4.1.2.1",
+   "kind": "content",
+   "share": 0.75,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "chromosom",
+    "chromosome"
+   ]
+  },
+  {
+   "ref": "4.1.2.1.b",
+   "section": "4.1.2.1",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "body",
+    "chromosom",
+    "normally",
+    "pair"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.a",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cell",
+    "divide",
+    "sery",
+    "stag",
+    "cycle",
+    "mitosi"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.b",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0.5714285714285714,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "cycle",
+    "doubled",
+    "divided"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.c",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "divide",
+    "grow",
+    "sub-cellular",
+    "ribosom",
+    "mitochondria",
+    "replicat",
+    "copy",
+    "chromosome"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.d",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "mitosi",
+    "set",
+    "chromosom",
+    "pulled",
+    "divid"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.e",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0.6666666666666666,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "finally",
+    "divide"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.f",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "overall",
+    "stag",
+    "cell",
+    "cycle",
+    "phas",
+    "mitosi",
+    "stage"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.g",
+   "section": "4.1.2.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cell",
+    "division",
+    "mitosi",
+    "growth",
+    "development",
+    "multicellular",
+    "organism"
+   ]
+  },
+  {
+   "ref": "4.1.2.2.h",
+   "section": "4.1.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "recognise",
+    "situation",
+    "context",
+    "mitosi",
+    "occurring"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.a",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "stem",
+    "cell",
+    "undifferentiated",
+    "organism",
+    "capable",
+    "giving",
+    "rise",
+    "certain",
+    "arise",
+    "differentiation"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.b",
+   "section": "4.1.2.3",
+   "kind": "skill",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "function",
+    "stem",
+    "embryo",
+    "adult",
+    "meristem"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.c",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "stem",
+    "cell",
+    "human",
+    "embryo",
+    "cloned",
+    "differentiate",
+    "typ"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.d",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0.42857142857142855,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "stem",
+    "bone",
+    "marrow",
+    "typ"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.e",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0.42857142857142855,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "meristem",
+    "differentiate",
+    "throughout",
+    "life"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.f",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "treatment",
+    "stem",
+    "cell",
+    "condition",
+    "diabet",
+    "paralysi"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.g",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "therapeutic",
+    "cloning",
+    "embryo",
+    "produced",
+    "patient",
+    "stem",
+    "rejected",
+    "body",
+    "medical",
+    "treatment"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.h",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "stem",
+    "cell",
+    "potential",
+    "transfer",
+    "viral",
+    "infection",
+    "ethical",
+    "religiou",
+    "objection"
+   ]
+  },
+  {
+   "ref": "4.1.2.3.i",
+   "section": "4.1.2.3",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "stem",
+    "meristem",
+    "produce",
+    "clon",
+    "quickly",
+    "economically",
+    "rare",
+    "specy",
+    "cloned",
+    "protect",
+    "extinction",
+    "crop",
+    "special",
+    "featur",
+    "resistance",
+    "farmer"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.a",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": []
+  },
+  {
+   "ref": "4.1.3.1.b",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 0.6923076923076923,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "spreading",
+    "gas",
+    "resulting",
+    "area"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.c",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "transported",
+    "oxygen",
+    "carbon",
+    "dioxide",
+    "gas",
+    "exchange",
+    "waste",
+    "product",
+    "urea",
+    "plasma",
+    "excretion",
+    "kidney"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.d",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": []
+  },
+  {
+   "ref": "4.1.3.1.e",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 0.625,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "temperature",
+    "surface",
+    "area"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.f",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "single-celled",
+    "organism",
+    "relatively",
+    "surface",
+    "area",
+    "volume",
+    "sufficient",
+    "meet"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.g",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "surface",
+    "area",
+    "volume"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.h",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "exchange",
+    "surfac",
+    "transport",
+    "system",
+    "multicellular",
+    "organism",
+    "surface",
+    "area",
+    "volume"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.i",
+   "section": "4.1.3.1",
+   "kind": "skill",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "intestine",
+    "lung",
+    "mammal",
+    "gill",
+    "fish",
+    "root",
+    "adapted",
+    "exchanging"
+   ]
+  },
+  {
+   "ref": "4.1.3.1.j",
+   "section": "4.1.3.1",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 18,
+   "missing": [
+    "multicellular",
+    "organism",
+    "surfac",
+    "organ",
+    "system",
+    "specialised",
+    "exchanging",
+    "sufficient",
+    "transported",
+    "effectivenes",
+    "exchange",
+    "surface",
+    "area",
+    "thin",
+    "provide",
+    "short",
+    "path",
+    "efficient",
+    "supply",
+    "gaseou",
+    "ventilated"
+   ]
+  },
+  {
+   "ref": "4.1.3.2.a",
+   "section": "4.1.3.2",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-1-3-2-a-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 14,
+   "missing": []
+  },
+  {
+   "ref": "4.1.3.2.b",
+   "section": "4.1.3.2",
+   "kind": "skill",
+   "share": 0.8181818181818182,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "compound",
+    "uptake"
+   ]
+  },
+  {
+   "ref": "4.1.3.2.c",
+   "section": "4.1.3.2",
+   "kind": "skill",
+   "share": 0.6666666666666666,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "graph"
+   ]
+  },
+  {
+   "ref": "4.1.3.2.RP3",
+   "section": "4.1.3.2",
+   "kind": "practical",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-1-3-2-rp3-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 6,
+   "missing": []
+  },
+  {
+   "ref": "4.1.3.3.a",
+   "section": "4.1.3.3",
+   "kind": "content",
+   "share": 0.9230769230769231,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "requir"
+   ]
+  },
+  {
+   "ref": "4.1.3.3.b",
+   "section": "4.1.3.3",
+   "kind": "content",
+   "share": 0.38461538461538464,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "mineral",
+    "ion",
+    "absorbed",
+    "root",
+    "hair",
+    "soil",
+    "healthy",
+    "growth"
+   ]
+  },
+  {
+   "ref": "4.1.3.3.c",
+   "section": "4.1.3.3",
+   "kind": "content",
+   "share": 0.8,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 17,
+   "missing": [
+    "absorbed",
+    "gut"
+   ]
+  },
+  {
+   "ref": "4.1.3.3.d",
+   "section": "4.1.3.3",
+   "kind": "skill",
+   "share": 0.875,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "transported"
+   ]
+  },
+  {
+   "ref": "4.2.1.a",
+   "section": "4.2.1",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "cell",
+    "basic",
+    "building",
+    "block"
+   ]
+  },
+  {
+   "ref": "4.2.1.b",
+   "section": "4.2.1",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "group",
+    "similar",
+    "structure",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.1.c",
+   "section": "4.2.1",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "organ",
+    "aggregation",
+    "tissu",
+    "performing",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.1.d",
+   "section": "4.2.1",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "organ",
+    "organised",
+    "system",
+    "work",
+    "organism"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.a",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "digestive",
+    "system",
+    "organ",
+    "several",
+    "work",
+    "digest",
+    "absorb",
+    "food"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.b",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "enzym",
+    "metabolism"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.c",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 0.6666666666666666,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "nature",
+    "activity"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.d",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 8,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.1.e",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-2-2-1-e-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 8,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.1.f",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.1.g",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "sit",
+    "production",
+    "action",
+    "amylase",
+    "proteas",
+    "lipas"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.h",
+   "section": "4.2.2.1",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "word",
+    "equation",
+    "symbol"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.i",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "digestive",
+    "food",
+    "soluble",
+    "absorbed",
+    "bloodstream"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.j",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "carbohydras",
+    "break",
+    "carbohydrat",
+    "sugar",
+    "amylase",
+    "carbohydrase",
+    "starch"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.k",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "proteas",
+    "break",
+    "amino",
+    "acid"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.l",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "lipas",
+    "break",
+    "lipid",
+    "fat",
+    "glycerol",
+    "fatty",
+    "acid"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.m",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "digestion",
+    "build",
+    "carbohydrat",
+    "lipid",
+    "glucose",
+    "respiration"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.n",
+   "section": "4.2.2.1",
+   "kind": "content",
+   "share": 0.05263157894736842,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "bile",
+    "liver",
+    "stored",
+    "gall",
+    "bladder",
+    "alkaline",
+    "neutralise",
+    "hydrochloric",
+    "acid",
+    "stomach",
+    "emulsify",
+    "fat",
+    "droplet",
+    "surface",
+    "area",
+    "condition",
+    "breakdown",
+    "lipase"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.RP4",
+   "section": "4.2.2.1",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "qualitative",
+    "reagent",
+    "test",
+    "carbohydrat",
+    "lipid",
+    "protein",
+    "benedict",
+    "sugar",
+    "iodine",
+    "starch",
+    "biuret"
+   ]
+  },
+  {
+   "ref": "4.2.2.1.RP5",
+   "section": "4.2.2.1",
+   "kind": "practical",
+   "share": 0.22727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "amylase",
+    "continuou",
+    "sampling",
+    "technique",
+    "determine",
+    "taken",
+    "completely",
+    "digest",
+    "starch",
+    "iodine",
+    "reagent",
+    "test",
+    "temperature",
+    "controlled",
+    "bath",
+    "electric",
+    "heater"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.a",
+   "section": "4.2.2.2",
+   "kind": "skill",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "structure",
+    "functioning",
+    "human",
+    "lung",
+    "adapted",
+    "gaseou",
+    "exchange"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.b",
+   "section": "4.2.2.2",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "organ",
+    "pump",
+    "around",
+    "body",
+    "double",
+    "circulatory",
+    "system",
+    "right",
+    "ventricle",
+    "lung",
+    "gas",
+    "exchange",
+    "tak",
+    "place",
+    "left",
+    "rest"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.c",
+   "section": "4.2.2.2",
+   "kind": "content",
+   "share": 0.1875,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "natural",
+    "controlled",
+    "cell",
+    "located",
+    "right",
+    "atrium",
+    "act",
+    "pacemaker",
+    "artificial",
+    "electrical",
+    "devic",
+    "correct",
+    "irregularity"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.d",
+   "section": "4.2.2.2",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "body",
+    "typ",
+    "vessel",
+    "artery",
+    "vein",
+    "capillary"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.e",
+   "section": "4.2.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "structure",
+    "vessel",
+    "relat",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.2.2.f",
+   "section": "4.2.2.2",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "compound",
+    "measur",
+    "flow"
+   ]
+  },
+  {
+   "ref": "4.2.2.3.a",
+   "section": "4.2.2.3",
+   "kind": "content",
+   "share": 0.4444444444444444,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "consisting",
+    "plasma",
+    "white",
+    "platelet",
+    "suspended"
+   ]
+  },
+  {
+   "ref": "4.2.2.3.b",
+   "section": "4.2.2.3",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "function",
+    "component"
+   ]
+  },
+  {
+   "ref": "4.2.2.3.c",
+   "section": "4.2.2.3",
+   "kind": "skill",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "recognise",
+    "typ",
+    "photograph",
+    "adapted",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.2.4.a",
+   "section": "4.2.2.4",
+   "kind": "skill",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "advantag",
+    "disadvantag",
+    "treating",
+    "diseas",
+    "drug",
+    "mechanical",
+    "devic",
+    "transplant"
+   ]
+  },
+  {
+   "ref": "4.2.2.4.b",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "share": 0.24,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "coronary",
+    "layer",
+    "fatty",
+    "build",
+    "artery",
+    "narrowing",
+    "reduc",
+    "flow",
+    "resulting",
+    "lack",
+    "oxygen",
+    "muscle",
+    "stent",
+    "open",
+    "statin",
+    "widely",
+    "cholesterol",
+    "slow",
+    "deposit"
+   ]
+  },
+  {
+   "ref": "4.2.2.4.c",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "valv",
+    "become",
+    "faulty",
+    "preventing",
+    "valve",
+    "opening",
+    "fully",
+    "develop",
+    "leak",
+    "consequenc",
+    "replaced",
+    "mechanical"
+   ]
+  },
+  {
+   "ref": "4.2.2.4.d",
+   "section": "4.2.2.4",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "case",
+    "failure",
+    "donor",
+    "lung",
+    "transplanted",
+    "artificial",
+    "occasionally",
+    "patient",
+    "alive",
+    "whilst",
+    "waiting",
+    "transplant",
+    "rest",
+    "aid",
+    "recovery"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.a",
+   "section": "4.2.2.5",
+   "kind": "skill",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "relationship",
+    "interaction",
+    "typ"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.b",
+   "section": "4.2.2.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "health",
+    "physical",
+    "mental",
+    "well-being"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.c",
+   "section": "4.2.2.5",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "diseas",
+    "communicable",
+    "non-communicable",
+    "major",
+    "ill",
+    "diet",
+    "stres",
+    "life",
+    "situation",
+    "profound",
+    "physical",
+    "mental"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.d",
+   "section": "4.2.2.5",
+   "kind": "content",
+   "share": 0.16129032258064516,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "typ",
+    "interact",
+    "defect",
+    "immune",
+    "system",
+    "individual",
+    "likely",
+    "suffer",
+    "infectiou",
+    "diseas",
+    "virus",
+    "cell",
+    "trigger",
+    "cancer",
+    "initially",
+    "pathogen",
+    "allergy",
+    "skin",
+    "rash",
+    "asthma",
+    "severe",
+    "physical",
+    "ill",
+    "depression",
+    "mental",
+    "illnes"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.e",
+   "section": "4.2.2.5",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "translate",
+    "incidence",
+    "graphical",
+    "numerical",
+    "construct",
+    "frequency",
+    "tabl",
+    "bar",
+    "chart",
+    "histogram"
+   ]
+  },
+  {
+   "ref": "4.2.2.5.f",
+   "section": "4.2.2.5",
+   "kind": "skill",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "principl",
+    "sampling",
+    "applied",
+    "scientific",
+    "epidemiological"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.a",
+   "section": "4.2.2.6",
+   "kind": "skill",
+   "share": 0.1875,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "discus",
+    "human",
+    "financial",
+    "cost",
+    "non-communicable",
+    "diseas",
+    "individual",
+    "community",
+    "nation",
+    "globally",
+    "alcohol",
+    "incidence",
+    "national"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.b",
+   "section": "4.2.2.6",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.6.c",
+   "section": "4.2.2.6",
+   "kind": "content",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.6.d",
+   "section": "4.2.2.6",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "proven",
+    "exercise",
+    "cardiovascular",
+    "obesity",
+    "diabet",
+    "alcohol",
+    "liver",
+    "brain",
+    "function",
+    "lung",
+    "cancer",
+    "unborn",
+    "baby",
+    "carcinogen",
+    "ionising",
+    "radiation"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.e",
+   "section": "4.2.2.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "diseas",
+    "caused",
+    "interaction"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.f",
+   "section": "4.2.2.6",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "principl",
+    "sampling",
+    "applied",
+    "scientific"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.g",
+   "section": "4.2.2.6",
+   "kind": "skill",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "translate",
+    "graphical",
+    "numerical",
+    "extract",
+    "chart",
+    "graph",
+    "tabl"
+   ]
+  },
+  {
+   "ref": "4.2.2.6.h",
+   "section": "4.2.2.6",
+   "kind": "skill",
+   "share": 1,
+   "relevant": true,
+   "complete": true,
+   "needs": [],
+   "lessons": [
+    {
+     "id": "kb-aqa8461-4-2-2-6-h-gcse",
+     "status": "expert-review",
+     "qa": "pass"
+    }
+   ],
+   "items": 9,
+   "missing": []
+  },
+  {
+   "ref": "4.2.2.7.a",
+   "section": "4.2.2.7",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cancer",
+    "chang",
+    "cell",
+    "uncontrolled",
+    "growth",
+    "division"
+   ]
+  },
+  {
+   "ref": "4.2.2.7.b",
+   "section": "4.2.2.7",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "benign",
+    "tumour",
+    "growth",
+    "abnormal",
+    "contained",
+    "area",
+    "usually",
+    "invade",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.2.2.7.c",
+   "section": "4.2.2.7",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "malignant",
+    "tumour",
+    "cancer",
+    "invade",
+    "neighbouring",
+    "tissu",
+    "spread",
+    "body",
+    "secondary"
+   ]
+  },
+  {
+   "ref": "4.2.2.7.d",
+   "section": "4.2.2.7",
+   "kind": "content",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "identified",
+    "variou",
+    "typ",
+    "cancer"
+   ]
+  },
+  {
+   "ref": "4.2.3.1.a",
+   "section": "4.2.3.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "structur",
+    "plant",
+    "tissu",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.3.1.b",
+   "section": "4.2.3.1",
+   "kind": "content",
+   "share": 0.21428571428571427,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "epidermal",
+    "palisade",
+    "mesophyll",
+    "spongy",
+    "xylem",
+    "phloem",
+    "meristem",
+    "growing",
+    "tip",
+    "shoot",
+    "root"
+   ]
+  },
+  {
+   "ref": "4.2.3.1.c",
+   "section": "4.2.3.1",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "leaf",
+    "organ",
+    "limited",
+    "epidermi",
+    "palisade",
+    "spongy",
+    "mesophyll",
+    "xylem",
+    "phloem",
+    "guard",
+    "surrounding",
+    "stomata"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.a",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "structure",
+    "root",
+    "hair",
+    "xylem",
+    "phloem",
+    "adapted",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.b",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "temperature",
+    "humidity",
+    "air",
+    "movement",
+    "light",
+    "intensity",
+    "transpiration"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.c",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "compound",
+    "transpiration"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.d",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "translate",
+    "graphical",
+    "numerical",
+    "graph",
+    "selecting",
+    "axe",
+    "extract",
+    "chart",
+    "tabl"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.e",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.5555555555555556,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "root",
+    "stem",
+    "organ",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.f",
+   "section": "4.2.3.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "proces",
+    "transpiration",
+    "translocation",
+    "structure",
+    "function",
+    "stomata"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.g",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.4166666666666667,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "root",
+    "hair",
+    "adapted",
+    "efficient",
+    "uptake",
+    "mineral",
+    "ion"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.h",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.23529411764705882,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "xylem",
+    "mineral",
+    "ion",
+    "root",
+    "stem",
+    "composed",
+    "hollow",
+    "tub",
+    "strengthened",
+    "lignin",
+    "adapted",
+    "transpiration",
+    "stream"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.i",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 18,
+   "missing": [
+    "stomata",
+    "guard",
+    "gas",
+    "exchange"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.j",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.5714285714285714,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "phloem",
+    "rest",
+    "immediate",
+    "storage",
+    "food",
+    "translocation"
+   ]
+  },
+  {
+   "ref": "4.2.3.2.k",
+   "section": "4.2.3.2",
+   "kind": "content",
+   "share": 0.3,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "phloem",
+    "composed",
+    "tub",
+    "elongated",
+    "sap",
+    "next",
+    "por"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.a",
+   "section": "4.3.1.1",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "diseas",
+    "caused",
+    "virus",
+    "protist",
+    "fungi",
+    "spread"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.b",
+   "section": "4.3.1.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "spread",
+    "diseas",
+    "prevented"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.c",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "share": 0.3125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "pathogen",
+    "microorganism",
+    "infectiou",
+    "virus",
+    "protist",
+    "fungi",
+    "infect",
+    "spread",
+    "direct",
+    "contact",
+    "air"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.d",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "virus",
+    "reproduce",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.e",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "produce",
+    "poison",
+    "toxin",
+    "damage",
+    "tissu",
+    "feel",
+    "ill"
+   ]
+  },
+  {
+   "ref": "4.3.1.1.f",
+   "section": "4.3.1.1",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "virus",
+    "live",
+    "reproduce",
+    "causing",
+    "damage"
+   ]
+  },
+  {
+   "ref": "4.3.1.2.a",
+   "section": "4.3.1.2",
+   "kind": "content",
+   "share": 0.08,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "measl",
+    "viral",
+    "showing",
+    "symptom",
+    "fever",
+    "red",
+    "skin",
+    "rash",
+    "seriou",
+    "illnes",
+    "fatal",
+    "complication",
+    "arise",
+    "reason",
+    "young",
+    "children",
+    "vaccinated",
+    "viru",
+    "spread",
+    "inhalation",
+    "droplet",
+    "sneez",
+    "cough"
+   ]
+  },
+  {
+   "ref": "4.3.1.2.b",
+   "section": "4.3.1.2",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "hiv",
+    "initially",
+    "flu-like",
+    "illnes",
+    "unles",
+    "successfully",
+    "controlled",
+    "antiretroviral",
+    "drug",
+    "viru",
+    "attack",
+    "body",
+    "immune",
+    "late",
+    "stage",
+    "infection",
+    "aid",
+    "occur",
+    "system",
+    "badly",
+    "damaged",
+    "deal",
+    "cancer",
+    "spread",
+    "sexual",
+    "contact",
+    "exchange",
+    "fluid",
+    "user",
+    "needl"
+   ]
+  },
+  {
+   "ref": "4.3.1.2.c",
+   "section": "4.3.1.2",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "tobacco",
+    "mosaic",
+    "viru",
+    "tmv",
+    "widespread",
+    "pathogen",
+    "specy",
+    "tomato",
+    "giv",
+    "distinctive",
+    "pattern",
+    "discolouration",
+    "growth",
+    "lack",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.3.1.3.a",
+   "section": "4.3.1.3",
+   "kind": "content",
+   "share": 0.09523809523809523,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "salmonella",
+    "food",
+    "poisoning",
+    "spread",
+    "ingested",
+    "prepared",
+    "unhygienic",
+    "condition",
+    "poultry",
+    "vaccinated",
+    "control",
+    "fever",
+    "abdominal",
+    "cramp",
+    "vomiting",
+    "diarrhoea",
+    "caused",
+    "toxin",
+    "secrete"
+   ]
+  },
+  {
+   "ref": "4.3.1.3.b",
+   "section": "4.3.1.3",
+   "kind": "content",
+   "share": 0.15151515151515152,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "gonorrhoea",
+    "sexually",
+    "transmitted",
+    "std",
+    "symptom",
+    "thick",
+    "yellow",
+    "green",
+    "discharge",
+    "vagina",
+    "peni",
+    "pain",
+    "urinating",
+    "easily",
+    "treated",
+    "antibiotic",
+    "penicillin",
+    "resistant",
+    "strain",
+    "appeared",
+    "sexual",
+    "contact",
+    "controlled",
+    "treatment",
+    "barrier",
+    "method",
+    "contraception",
+    "condom"
+   ]
+  },
+  {
+   "ref": "4.3.1.4.a",
+   "section": "4.3.1.4",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "rose",
+    "black",
+    "spot",
+    "fungal",
+    "purple",
+    "develop",
+    "turn",
+    "yellow",
+    "drop",
+    "early",
+    "growth",
+    "photosynthesi",
+    "spread",
+    "wind",
+    "treated",
+    "fungicid",
+    "removing",
+    "destroying"
+   ]
+  },
+  {
+   "ref": "4.3.1.5.a",
+   "section": "4.3.1.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "pathogen",
+    "malaria",
+    "protist"
+   ]
+  },
+  {
+   "ref": "4.3.1.5.b",
+   "section": "4.3.1.5",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "malarial",
+    "protist",
+    "life",
+    "cycle",
+    "includ",
+    "mosquito",
+    "malaria",
+    "caus",
+    "recurrent",
+    "episod",
+    "fever",
+    "fatal",
+    "controlled",
+    "preventing",
+    "vector",
+    "breeding",
+    "avoid",
+    "bitten"
+   ]
+  },
+  {
+   "ref": "4.3.1.6.a",
+   "section": "4.3.1.6",
+   "kind": "skill",
+   "share": 0.08333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 15,
+   "missing": [
+    "non-specific",
+    "defence",
+    "system",
+    "human",
+    "body",
+    "pathogen",
+    "skin",
+    "nose",
+    "trachea",
+    "bronchi",
+    "stomach"
+   ]
+  },
+  {
+   "ref": "4.3.1.6.b",
+   "section": "4.3.1.6",
+   "kind": "skill",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "immune",
+    "system",
+    "defence"
+   ]
+  },
+  {
+   "ref": "4.3.1.6.c",
+   "section": "4.3.1.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "pathogen",
+    "enter",
+    "body",
+    "immune",
+    "system",
+    "try",
+    "destroy"
+   ]
+  },
+  {
+   "ref": "4.3.1.6.d",
+   "section": "4.3.1.6",
+   "kind": "content",
+   "share": 0.3,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "white",
+    "defend",
+    "pathogen",
+    "phagocytosi",
+    "antibody",
+    "production",
+    "antitoxin"
+   ]
+  },
+  {
+   "ref": "4.3.1.7.a",
+   "section": "4.3.1.7",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "vaccination",
+    "prevent",
+    "illnes",
+    "individual",
+    "spread",
+    "pathogen",
+    "immunising",
+    "proportion",
+    "population"
+   ]
+  },
+  {
+   "ref": "4.3.1.7.b",
+   "section": "4.3.1.7",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "vaccination",
+    "involv",
+    "introducing",
+    "quantity",
+    "dead",
+    "inactive",
+    "pathogen",
+    "body",
+    "stimulate",
+    "white",
+    "produce",
+    "antibody",
+    "re-enter",
+    "respond",
+    "quickly",
+    "correct",
+    "preventing",
+    "infection"
+   ]
+  },
+  {
+   "ref": "4.3.1.7.c",
+   "section": "4.3.1.7",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "detail",
+    "vaccination",
+    "schedul",
+    "associated",
+    "vaccin"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.a",
+   "section": "4.3.1.8",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "antibiotic",
+    "medicin",
+    "treating"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.b",
+   "section": "4.3.1.8",
+   "kind": "content",
+   "share": 0.46153846153846156,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "antibiotic",
+    "penicillin",
+    "medicin",
+    "cure",
+    "killing",
+    "infective",
+    "treated"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.c",
+   "section": "4.3.1.8",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "antibiotic",
+    "greatly",
+    "death",
+    "infectiou",
+    "bacterial",
+    "diseas",
+    "however",
+    "emergence",
+    "strain",
+    "resistant",
+    "great",
+    "concern"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.d",
+   "section": "4.3.1.8",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "antibiotic",
+    "cannot",
+    "kill",
+    "viral",
+    "pathogen"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.e",
+   "section": "4.3.1.8",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "painkiller",
+    "medicin",
+    "treat",
+    "symptom",
+    "kill",
+    "pathogen"
+   ]
+  },
+  {
+   "ref": "4.3.1.8.f",
+   "section": "4.3.1.8",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "difficult",
+    "develop",
+    "drug",
+    "kill",
+    "virus",
+    "damaging",
+    "body",
+    "tissu"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.a",
+   "section": "4.3.1.9",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "proces",
+    "discovery",
+    "development",
+    "potential",
+    "medicin",
+    "preclinical",
+    "clinical",
+    "testing"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.b",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0.05555555555555555,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "traditionally",
+    "drug",
+    "extracted",
+    "plant",
+    "microorganism",
+    "digitali",
+    "originat",
+    "foxglov",
+    "painkiller",
+    "aspirin",
+    "willow",
+    "penicillin",
+    "discovered",
+    "alexander",
+    "fleming",
+    "penicillium",
+    "mould"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.c",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "drug",
+    "synthesised",
+    "chemist",
+    "pharmaceutical",
+    "industry",
+    "however",
+    "point",
+    "extracted"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.d",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "medical",
+    "drug",
+    "tested",
+    "trialled",
+    "check",
+    "safe",
+    "effective"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.e",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "drug",
+    "extensively",
+    "tested",
+    "toxicity",
+    "efficacy",
+    "dose"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.f",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "preclinical",
+    "testing",
+    "laboratory",
+    "tissu",
+    "live"
+   ]
+  },
+  {
+   "ref": "4.3.1.9.g",
+   "section": "4.3.1.9",
+   "kind": "content",
+   "share": 0.0625,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "clinical",
+    "trial",
+    "healthy",
+    "volunteer",
+    "patient",
+    "dos",
+    "drug",
+    "safe",
+    "carried",
+    "find",
+    "optimum",
+    "dose",
+    "double",
+    "blind",
+    "placebo"
+   ]
+  },
+  {
+   "ref": "4.3.2.1.a",
+   "section": "4.3.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "monoclonal",
+    "antibody",
+    "produced"
+   ]
+  },
+  {
+   "ref": "4.3.2.1.b",
+   "section": "4.3.2.1",
+   "kind": "content",
+   "share": 0.42857142857142855,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "monoclonal",
+    "antibody",
+    "produced",
+    "clone",
+    "binding",
+    "antigen",
+    "target",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.3.2.1.c",
+   "section": "4.3.2.1",
+   "kind": "content",
+   "share": 0.21052631578947367,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "produced",
+    "stimulating",
+    "mouse",
+    "lymphocyt",
+    "particular",
+    "antibody",
+    "combined",
+    "tumour",
+    "hybridoma",
+    "divide",
+    "cloned",
+    "produce",
+    "amount",
+    "collected",
+    "purified"
+   ]
+  },
+  {
+   "ref": "4.3.2.2.a",
+   "section": "4.3.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "monoclonal",
+    "antibody"
+   ]
+  },
+  {
+   "ref": "4.3.2.2.b",
+   "section": "4.3.2.2",
+   "kind": "content",
+   "share": 0.3055555555555556,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 17,
+   "missing": [
+    "exampl",
+    "diagnosi",
+    "pregnancy",
+    "test",
+    "laboratory",
+    "hormon",
+    "detect",
+    "pathogen",
+    "research",
+    "locate",
+    "binding",
+    "fluorescent",
+    "dye",
+    "treat",
+    "diseas",
+    "cancer",
+    "monoclonal",
+    "antibody",
+    "bound",
+    "radioactive",
+    "toxic",
+    "drug",
+    "growing",
+    "deliver",
+    "harming"
+   ]
+  },
+  {
+   "ref": "4.3.2.2.c",
+   "section": "4.3.2.2",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "monoclonal",
+    "antibody",
+    "create",
+    "expected",
+    "widely",
+    "everyone",
+    "hoped",
+    "developed"
+   ]
+  },
+  {
+   "ref": "4.3.3.1.a",
+   "section": "4.3.3.1",
+   "kind": "content",
+   "share": 0.13333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "diseas",
+    "detected",
+    "stunted",
+    "growth",
+    "spot",
+    "area",
+    "decay",
+    "rot",
+    "malformed",
+    "stem",
+    "discolouration",
+    "presence",
+    "pest"
+   ]
+  },
+  {
+   "ref": "4.3.3.1.b",
+   "section": "4.3.3.1",
+   "kind": "content",
+   "share": 0.06666666666666667,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "identification",
+    "reference",
+    "gardening",
+    "manual",
+    "website",
+    "taking",
+    "infected",
+    "plant",
+    "laboratory",
+    "pathogen",
+    "testing",
+    "kit",
+    "monoclonal",
+    "antibody"
+   ]
+  },
+  {
+   "ref": "4.3.3.1.c",
+   "section": "4.3.3.1",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "infected",
+    "viral",
+    "fungal",
+    "pathogen",
+    "insect"
+   ]
+  },
+  {
+   "ref": "4.3.3.1.d",
+   "section": "4.3.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "plant",
+    "damaged",
+    "ion",
+    "deficiency",
+    "condition",
+    "stunted",
+    "growth",
+    "caused",
+    "nitrate",
+    "chlorosi",
+    "magnesium"
+   ]
+  },
+  {
+   "ref": "4.3.3.2.a",
+   "section": "4.3.3.2",
+   "kind": "skill",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "physical",
+    "plant",
+    "defence",
+    "respons"
+   ]
+  },
+  {
+   "ref": "4.3.3.2.b",
+   "section": "4.3.3.2",
+   "kind": "content",
+   "share": 0.3,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "physical",
+    "defence",
+    "respons",
+    "resist",
+    "invasion",
+    "microorganism",
+    "tough",
+    "waxy",
+    "cuticle",
+    "dead",
+    "stem",
+    "bark",
+    "tre",
+    "fall"
+   ]
+  },
+  {
+   "ref": "4.3.3.2.c",
+   "section": "4.3.3.2",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "plant",
+    "defence",
+    "respons",
+    "antibacterial",
+    "poison",
+    "deter",
+    "herbivor"
+   ]
+  },
+  {
+   "ref": "4.3.3.2.d",
+   "section": "4.3.3.2",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "mechanical",
+    "adaptation",
+    "thorn",
+    "hair",
+    "deter",
+    "droop",
+    "curl",
+    "touched",
+    "mimicry",
+    "trick"
+   ]
+  },
+  {
+   "ref": "4.4.1.1.a",
+   "section": "4.4.1.1",
+   "kind": "content",
+   "share": 0.06666666666666667,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "photosynthesi",
+    "represented",
+    "equation",
+    "carbon",
+    "dioxide",
+    "water",
+    "light",
+    "glucose",
+    "oxygen",
+    "recognise",
+    "symbol",
+    "co2",
+    "h2o",
+    "c6h12o6"
+   ]
+  },
+  {
+   "ref": "4.4.1.1.b",
+   "section": "4.4.1.1",
+   "kind": "skill",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 15,
+   "missing": [
+    "photosynthesi",
+    "endothermic",
+    "reaction",
+    "transferred",
+    "environment",
+    "chloroplast",
+    "light"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.a",
+   "section": "4.4.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "temperature",
+    "light",
+    "intensity",
+    "carbon",
+    "dioxide",
+    "concentration",
+    "amount",
+    "chlorophyll",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.b",
+   "section": "4.4.1.2",
+   "kind": "skill",
+   "share": 0.23076923076923078,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "rat",
+    "photosynthesi",
+    "extract",
+    "graph",
+    "limiting",
+    "selecting",
+    "axe",
+    "translate",
+    "graphical",
+    "numeric"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.c",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "interact",
+    "limit",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.d",
+   "section": "4.4.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "graph",
+    "photosynthesi",
+    "decide",
+    "limiting"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.e",
+   "section": "4.4.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "inverse",
+    "proportion",
+    "square",
+    "law",
+    "light",
+    "intensity",
+    "context",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.f",
+   "section": "4.4.1.2",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "limiting",
+    "economic",
+    "enhancing",
+    "condition",
+    "greenhous",
+    "maximum",
+    "photosynthesi",
+    "maintaining",
+    "profit"
+   ]
+  },
+  {
+   "ref": "4.4.1.2.RP6",
+   "section": "4.4.1.2",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "light",
+    "intensity",
+    "photosynthesi",
+    "aquatic",
+    "organism",
+    "pondweed"
+   ]
+  },
+  {
+   "ref": "4.4.1.3.a",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "share": 0.3157894736842105,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "glucose",
+    "produced",
+    "photosynthesi",
+    "converted",
+    "insoluble",
+    "starch",
+    "storage",
+    "produce",
+    "fat",
+    "oil",
+    "amino",
+    "acid",
+    "synthesi"
+   ]
+  },
+  {
+   "ref": "4.4.1.3.b",
+   "section": "4.4.1.3",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "produce",
+    "plant",
+    "nitrate",
+    "ion",
+    "absorbed",
+    "soil"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.a",
+   "section": "4.4.2.1",
+   "kind": "skill",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "cellular",
+    "exothermic",
+    "continuously",
+    "occurring"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.b",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "transferred",
+    "supply",
+    "needed",
+    "living"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.c",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "take",
+    "place",
+    "aerobically",
+    "oxygen",
+    "anaerobically",
+    "transfer"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.d",
+   "section": "4.4.2.1",
+   "kind": "skill",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 15,
+   "missing": [
+    "aerobic",
+    "anaerobic",
+    "regard",
+    "oxygen",
+    "differing",
+    "product",
+    "relative",
+    "amount",
+    "transferred"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.e",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.7,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "build",
+    "keeping",
+    "warm"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.f",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "aerobic",
+    "represented",
+    "equation",
+    "glucose",
+    "oxygen",
+    "carbon",
+    "dioxide",
+    "recognise",
+    "symbol",
+    "c6h12o6",
+    "co2",
+    "h2o"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.g",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.21428571428571427,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "anaerobic",
+    "muscl",
+    "represented",
+    "equation",
+    "glucose",
+    "lactic",
+    "acid",
+    "oxidation",
+    "incomplete",
+    "transferred",
+    "aerobic"
+   ]
+  },
+  {
+   "ref": "4.4.2.1.h",
+   "section": "4.4.2.1",
+   "kind": "content",
+   "share": 0.17647058823529413,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "anaerobic",
+    "yeast",
+    "represented",
+    "equation",
+    "glucose",
+    "ethanol",
+    "carbon",
+    "dioxide",
+    "fermentation",
+    "economic",
+    "manufacture",
+    "bread",
+    "alcoholic",
+    "drink"
+   ]
+  },
+  {
+   "ref": "4.4.2.2.a",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "human",
+    "body",
+    "react",
+    "demand"
+   ]
+  },
+  {
+   "ref": "4.4.2.2.b",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "breathing",
+    "breath",
+    "volume",
+    "supply",
+    "muscl",
+    "oxygenated",
+    "blood"
+   ]
+  },
+  {
+   "ref": "4.4.2.2.c",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "share": 0.038461538461538464,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "insufficient",
+    "oxygen",
+    "supplied",
+    "anaerobic",
+    "respiration",
+    "tak",
+    "place",
+    "muscl",
+    "incomplete",
+    "oxidation",
+    "glucose",
+    "build",
+    "lactic",
+    "acid",
+    "creat",
+    "debt",
+    "long",
+    "period",
+    "vigorou",
+    "activity",
+    "become",
+    "fatigued",
+    "stop",
+    "contracting",
+    "efficiently"
+   ]
+  },
+  {
+   "ref": "4.4.2.2.d",
+   "section": "4.4.2.2",
+   "kind": "content",
+   "share": 0.3,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "flowing",
+    "muscl",
+    "lactic",
+    "acid",
+    "liver",
+    "converted",
+    "glucose",
+    "oxygen",
+    "debt",
+    "amount",
+    "body",
+    "react",
+    "accumulated",
+    "remove"
+   ]
+  },
+  {
+   "ref": "4.4.2.3.a",
+   "section": "4.4.2.3",
+   "kind": "skill",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "sugar",
+    "amino",
+    "acid",
+    "fatty",
+    "glycerol",
+    "synthesi",
+    "breakdown",
+    "carbohydrat",
+    "lipid"
+   ]
+  },
+  {
+   "ref": "4.4.2.3.b",
+   "section": "4.4.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "metabolism",
+    "sum",
+    "reaction",
+    "cell",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.4.2.3.c",
+   "section": "4.4.2.3",
+   "kind": "content",
+   "share": 0.5454545454545454,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "transferred",
+    "continual",
+    "controlled",
+    "metabolism",
+    "synthesise"
+   ]
+  },
+  {
+   "ref": "4.4.2.3.d",
+   "section": "4.4.2.3",
+   "kind": "content",
+   "share": 0.16,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "metabolism",
+    "includ",
+    "conversion",
+    "glucose",
+    "starch",
+    "glycogen",
+    "formation",
+    "lipid",
+    "glycerol",
+    "fatty",
+    "acid",
+    "nitrate",
+    "ion",
+    "amino",
+    "turn",
+    "synthesise",
+    "respiration",
+    "breakdown",
+    "exces",
+    "urea",
+    "excretion"
+   ]
+  },
+  {
+   "ref": "4.5.1.a",
+   "section": "4.5.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "homeostasi",
+    "regulation",
+    "internal",
+    "condition",
+    "cell",
+    "organism",
+    "maintain",
+    "optimum",
+    "function",
+    "response",
+    "external",
+    "chang"
+   ]
+  },
+  {
+   "ref": "4.5.1.b",
+   "section": "4.5.1",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "homeostasi",
+    "maintain",
+    "optimal",
+    "condition",
+    "cell",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.5.1.c",
+   "section": "4.5.1",
+   "kind": "content",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "human",
+    "body",
+    "glucose",
+    "temperature"
+   ]
+  },
+  {
+   "ref": "4.5.1.d",
+   "section": "4.5.1",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "automatic",
+    "control",
+    "system",
+    "nervou",
+    "respons"
+   ]
+  },
+  {
+   "ref": "4.5.1.e",
+   "section": "4.5.1",
+   "kind": "content",
+   "share": 0.21739130434782608,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "system",
+    "receptor",
+    "detect",
+    "stimuli",
+    "environment",
+    "coordination",
+    "centr",
+    "brain",
+    "spinal",
+    "cord",
+    "pancrea",
+    "receive",
+    "effector",
+    "muscl",
+    "gland",
+    "respons",
+    "restore",
+    "optimum"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.a",
+   "section": "4.5.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "structure",
+    "nervou",
+    "system",
+    "adapted",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.b",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "nervou",
+    "system",
+    "enabl",
+    "human",
+    "react",
+    "surrounding",
+    "coordinate",
+    "behaviour"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.c",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "share": 0.08571428571428572,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "receptor",
+    "along",
+    "neuron",
+    "electrical",
+    "impuls",
+    "central",
+    "nervou",
+    "system",
+    "cns",
+    "brain",
+    "spinal",
+    "cord",
+    "coordinat",
+    "response",
+    "effector",
+    "muscl",
+    "contracting",
+    "gland",
+    "secreting",
+    "hormon",
+    "stimulu",
+    "coordinator",
+    "variou",
+    "reflex",
+    "arc",
+    "sensory",
+    "neurone",
+    "synapse",
+    "relay",
+    "motor",
+    "function",
+    "action"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.d",
+   "section": "4.5.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "reflex",
+    "action",
+    "automatic",
+    "rapid",
+    "consciou",
+    "brain"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.e",
+   "section": "4.5.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "data",
+    "graph",
+    "chart",
+    "tabl",
+    "functioning",
+    "nervou",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.f",
+   "section": "4.5.2.1",
+   "kind": "skill",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "translate",
+    "reaction",
+    "numerical",
+    "graphical"
+   ]
+  },
+  {
+   "ref": "4.5.2.1.RP7",
+   "section": "4.5.2.1",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "plan",
+    "human",
+    "reaction"
+   ]
+  },
+  {
+   "ref": "4.5.2.2.a",
+   "section": "4.5.2.2",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "brain",
+    "control",
+    "complex",
+    "behaviour",
+    "billion",
+    "interconnected",
+    "neuron",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.5.2.2.b",
+   "section": "4.5.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cerebral",
+    "cortex",
+    "cerebellum",
+    "medulla",
+    "diagram",
+    "brain",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.5.2.2.c",
+   "section": "4.5.2.2",
+   "kind": "skill",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "difficulty",
+    "investigating",
+    "brain",
+    "function",
+    "treating",
+    "damage"
+   ]
+  },
+  {
+   "ref": "4.5.2.2.d",
+   "section": "4.5.2.2",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "neuroscientist",
+    "map",
+    "brain",
+    "function",
+    "studying",
+    "patient",
+    "damage",
+    "electrically",
+    "stimulating",
+    "mri",
+    "scanning",
+    "techniqu",
+    "complexity",
+    "delicacy",
+    "investigating",
+    "treating",
+    "disorder",
+    "difficult"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.a",
+   "section": "4.5.2.3",
+   "kind": "skill",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "eye",
+    "function",
+    "includ",
+    "accommodation",
+    "focu",
+    "near",
+    "distant",
+    "adaptation",
+    "dim",
+    "light"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.b",
+   "section": "4.5.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "eye",
+    "sense",
+    "organ",
+    "containing",
+    "receptor",
+    "sensitive",
+    "light",
+    "intensity",
+    "colour"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.c",
+   "section": "4.5.2.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "following",
+    "structur",
+    "diagram",
+    "eye",
+    "structure",
+    "function",
+    "retina",
+    "optic",
+    "nerve",
+    "sclera",
+    "cornea",
+    "iri",
+    "ciliary",
+    "muscl",
+    "suspensory",
+    "ligament"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.d",
+   "section": "4.5.2.3",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "accommodation",
+    "proces",
+    "shape",
+    "len",
+    "focu",
+    "near",
+    "distant"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.e",
+   "section": "4.5.2.3",
+   "kind": "content",
+   "share": 0.06666666666666667,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "focu",
+    "near",
+    "ciliary",
+    "muscl",
+    "contract",
+    "suspensory",
+    "ligament",
+    "loosen",
+    "len",
+    "thicker",
+    "refract",
+    "light",
+    "ray",
+    "strongly"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.f",
+   "section": "4.5.2.3",
+   "kind": "content",
+   "share": 0.0625,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "focu",
+    "distant",
+    "ciliary",
+    "muscl",
+    "relax",
+    "suspensory",
+    "ligament",
+    "pulled",
+    "tight",
+    "len",
+    "thin",
+    "slightly",
+    "refract",
+    "light",
+    "ray"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.g",
+   "section": "4.5.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "common",
+    "defect",
+    "eye",
+    "myopia",
+    "short",
+    "sightednes",
+    "hyperopia",
+    "long",
+    "ray",
+    "light",
+    "focu",
+    "retina",
+    "generally",
+    "treated",
+    "spectacle",
+    "lens",
+    "refract",
+    "technology",
+    "now",
+    "hard",
+    "soft",
+    "contact",
+    "laser",
+    "surgery",
+    "shape",
+    "cornea",
+    "replacement",
+    "len"
+   ]
+  },
+  {
+   "ref": "4.5.2.3.h",
+   "section": "4.5.2.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "ray",
+    "diagram",
+    "showing",
+    "common",
+    "defect",
+    "eye",
+    "demonstrate",
+    "spectacle",
+    "lens",
+    "correct"
+   ]
+  },
+  {
+   "ref": "4.5.2.4.a",
+   "section": "4.5.2.4",
+   "kind": "content",
+   "share": 0.13333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "body",
+    "temperature",
+    "monitored",
+    "controlled",
+    "thermoregulatory",
+    "centre",
+    "brain",
+    "receptor",
+    "sensitive",
+    "skin",
+    "send",
+    "nervou",
+    "impuls"
+   ]
+  },
+  {
+   "ref": "4.5.2.4.b",
+   "section": "4.5.2.4",
+   "kind": "content",
+   "share": 0.35714285714285715,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "temperature",
+    "vessel",
+    "dilate",
+    "vasodilation",
+    "sweat",
+    "produced",
+    "gland",
+    "transfer",
+    "skin"
+   ]
+  },
+  {
+   "ref": "4.5.2.4.c",
+   "section": "4.5.2.4",
+   "kind": "content",
+   "share": 0.08333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "body",
+    "temperature",
+    "vessel",
+    "constrict",
+    "vasoconstriction",
+    "sweating",
+    "stop",
+    "skeletal",
+    "muscl",
+    "contract",
+    "shiver"
+   ]
+  },
+  {
+   "ref": "4.5.2.4.d",
+   "section": "4.5.2.4",
+   "kind": "skill",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "lower",
+    "raise",
+    "body",
+    "temperature",
+    "context"
+   ]
+  },
+  {
+   "ref": "4.5.3.1.a",
+   "section": "4.5.3.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "principl",
+    "hormonal",
+    "coordination",
+    "control",
+    "human",
+    "endocrine",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.5.3.1.b",
+   "section": "4.5.3.1",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "endocrine",
+    "system",
+    "composed",
+    "gland",
+    "secrete",
+    "hormon",
+    "directly",
+    "bloodstream",
+    "hormone",
+    "target",
+    "organ",
+    "produc",
+    "nervou",
+    "slower"
+   ]
+  },
+  {
+   "ref": "4.5.3.1.c",
+   "section": "4.5.3.1",
+   "kind": "content",
+   "share": 0.1875,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "pituitary",
+    "gland",
+    "brain",
+    "master",
+    "secret",
+    "several",
+    "hormon",
+    "response",
+    "body",
+    "condition",
+    "turn",
+    "stimulate",
+    "released"
+   ]
+  },
+  {
+   "ref": "4.5.3.1.d",
+   "section": "4.5.3.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "position",
+    "following",
+    "diagram",
+    "human",
+    "body",
+    "pituitary",
+    "gland",
+    "pancrea",
+    "thyroid",
+    "adrenal",
+    "ovary",
+    "test"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.a",
+   "section": "4.5.3.2",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "glucose",
+    "monitored",
+    "controlled",
+    "pancrea"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.b",
+   "section": "4.5.3.2",
+   "kind": "content",
+   "share": 0.26666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "glucose",
+    "pancrea",
+    "produc",
+    "hormone",
+    "insulin",
+    "liver",
+    "muscle",
+    "exces",
+    "converted",
+    "glycogen",
+    "storage"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.c",
+   "section": "4.5.3.2",
+   "kind": "skill",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 17,
+   "missing": [
+    "insulin",
+    "glucose",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.d",
+   "section": "4.5.3.2",
+   "kind": "content",
+   "share": 0.07142857142857142,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "diabet",
+    "disorder",
+    "pancrea",
+    "fail",
+    "produce",
+    "sufficient",
+    "insulin",
+    "characterised",
+    "uncontrolled",
+    "glucose",
+    "normally",
+    "treated",
+    "injection"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.e",
+   "section": "4.5.3.2",
+   "kind": "content",
+   "share": 0.35294117647058826,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "diabet",
+    "insulin",
+    "produced",
+    "pancrea",
+    "carbohydrate",
+    "controlled",
+    "exercise",
+    "regime",
+    "common",
+    "treatment",
+    "obesity"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.f",
+   "section": "4.5.3.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "diabet",
+    "treated"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.g",
+   "section": "4.5.3.2",
+   "kind": "skill",
+   "share": 0.375,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "extract",
+    "graph",
+    "insulin",
+    "glucose",
+    "diabet"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.h",
+   "section": "4.5.3.2",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "glucose",
+    "pancrea",
+    "produc",
+    "hormone",
+    "glucagon",
+    "glycogen",
+    "converted",
+    "released"
+   ]
+  },
+  {
+   "ref": "4.5.3.2.i",
+   "section": "4.5.3.2",
+   "kind": "skill",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 17,
+   "missing": [
+    "glucagon",
+    "interact",
+    "insulin",
+    "negative",
+    "feedback",
+    "cycle",
+    "glucose",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.a",
+   "section": "4.5.3.3",
+   "kind": "skill",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "osmotic",
+    "body",
+    "fluid"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.b",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "body",
+    "lung",
+    "exhalation"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.c",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "water",
+    "ion",
+    "urea",
+    "lost",
+    "skin",
+    "sweat"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.d",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "control",
+    "ion",
+    "urea",
+    "lung",
+    "skin"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.e",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "exces",
+    "water",
+    "ion",
+    "urea",
+    "removed",
+    "kidney",
+    "urine"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.f",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.625,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 13,
+   "missing": [
+    "body",
+    "function",
+    "efficiently"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.g",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "digestion",
+    "exces",
+    "amino",
+    "acid",
+    "excreted",
+    "safely",
+    "liver",
+    "deaminated",
+    "ammonia",
+    "toxic",
+    "immediately",
+    "converted",
+    "urea",
+    "safe",
+    "excretion"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.h",
+   "section": "4.5.3.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "function",
+    "kidney",
+    "maintaining",
+    "water",
+    "balance",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.i",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "kidney",
+    "produce",
+    "urine",
+    "filtration",
+    "selective",
+    "reabsorption",
+    "useful",
+    "glucose",
+    "ion"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.j",
+   "section": "4.5.3.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "translate",
+    "tabl",
+    "bar",
+    "chart",
+    "glucose",
+    "ion",
+    "urea",
+    "filtration"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.k",
+   "section": "4.5.3.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "adh",
+    "permeability",
+    "kidney",
+    "tubul"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.l",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "body",
+    "controlled",
+    "hormone",
+    "adh",
+    "kidney",
+    "tubul",
+    "released",
+    "pituitary",
+    "gland",
+    "reabsorbed",
+    "negative",
+    "feedback"
+   ]
+  },
+  {
+   "ref": "4.5.3.3.m",
+   "section": "4.5.3.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "suffer",
+    "kidney",
+    "failure",
+    "treated",
+    "organ",
+    "transplant",
+    "dialysi",
+    "basic",
+    "principl"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.a",
+   "section": "4.5.3.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "rol",
+    "hormon",
+    "human",
+    "reproduction",
+    "menstrual",
+    "cycle"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.b",
+   "section": "4.5.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "puberty",
+    "reproductive",
+    "hormon",
+    "secondary",
+    "sex",
+    "characteristic",
+    "develop"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.c",
+   "section": "4.5.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "oestrogen",
+    "female",
+    "reproductive",
+    "hormone",
+    "produced",
+    "ovary",
+    "puberty",
+    "egg",
+    "begin",
+    "mature",
+    "released",
+    "approximately",
+    "day",
+    "ovulation"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.d",
+   "section": "4.5.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "testosterone",
+    "male",
+    "reproductive",
+    "hormone",
+    "produced",
+    "test",
+    "stimulat",
+    "sperm",
+    "production"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.e",
+   "section": "4.5.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "several",
+    "hormon",
+    "involved",
+    "menstrual",
+    "cycle",
+    "woman",
+    "follicle",
+    "stimulating",
+    "hormone",
+    "fsh",
+    "caus",
+    "maturation",
+    "egg",
+    "ovary",
+    "luteinising",
+    "stimulat",
+    "release",
+    "oestrogen",
+    "progesterone",
+    "maintaining",
+    "uteru",
+    "lining"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.f",
+   "section": "4.5.3.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "interaction",
+    "fsh",
+    "oestrogen",
+    "progesterone",
+    "control",
+    "menstrual",
+    "cycle"
+   ]
+  },
+  {
+   "ref": "4.5.3.4.g",
+   "section": "4.5.3.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "data",
+    "graph",
+    "showing",
+    "hormone",
+    "menstrual",
+    "cycle"
+   ]
+  },
+  {
+   "ref": "4.5.3.5.a",
+   "section": "4.5.3.5",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "hormonal",
+    "non-hormonal",
+    "method",
+    "contraception"
+   ]
+  },
+  {
+   "ref": "4.5.3.5.b",
+   "section": "4.5.3.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "fertility",
+    "controlled",
+    "variety",
+    "hormonal",
+    "non-hormonal",
+    "method",
+    "contraception"
+   ]
+  },
+  {
+   "ref": "4.5.3.5.c",
+   "section": "4.5.3.5",
+   "kind": "content",
+   "share": 0.023809523809523808,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "oral",
+    "contraceptiv",
+    "hormon",
+    "inhibit",
+    "fsh",
+    "production",
+    "egg",
+    "mature",
+    "injection",
+    "implant",
+    "skin",
+    "patch",
+    "slow",
+    "release",
+    "progesterone",
+    "maturation",
+    "month",
+    "year",
+    "barrier",
+    "method",
+    "condom",
+    "diaphragm",
+    "prevent",
+    "sperm",
+    "reaching",
+    "intrauterine",
+    "devic",
+    "implantation",
+    "embryo",
+    "hormone",
+    "spermicidal",
+    "agent",
+    "kill",
+    "disable",
+    "abstaining",
+    "intercourse",
+    "oviduct",
+    "surgical",
+    "male",
+    "female",
+    "sterilisation"
+   ]
+  },
+  {
+   "ref": "4.5.3.6.a",
+   "section": "4.5.3.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "hormon",
+    "modern",
+    "reproductive",
+    "technology",
+    "treat",
+    "infertility"
+   ]
+  },
+  {
+   "ref": "4.5.3.6.b",
+   "section": "4.5.3.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "includ",
+    "giving",
+    "fsh",
+    "fertility",
+    "drug",
+    "woman",
+    "she",
+    "become",
+    "pregnant",
+    "normal"
+   ]
+  },
+  {
+   "ref": "4.5.3.6.c",
+   "section": "4.5.3.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "vitro",
+    "fertilisation",
+    "ivf",
+    "treatment",
+    "involv",
+    "giving",
+    "mother",
+    "fsh",
+    "stimulate",
+    "maturation",
+    "several",
+    "egg",
+    "collected",
+    "fertilised",
+    "sperm",
+    "father",
+    "laboratory",
+    "develop",
+    "embryo",
+    "stage",
+    "tiny",
+    "ball",
+    "cell",
+    "inserted",
+    "uteru",
+    "womb"
+   ]
+  },
+  {
+   "ref": "4.5.3.6.d",
+   "section": "4.5.3.6",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "although",
+    "fertility",
+    "treatment",
+    "giv",
+    "woman",
+    "baby",
+    "her",
+    "emotionally",
+    "physically",
+    "stressful",
+    "succes",
+    "rat",
+    "multiple",
+    "birth",
+    "mother"
+   ]
+  },
+  {
+   "ref": "4.5.3.7.a",
+   "section": "4.5.3.7",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "rol",
+    "thyroxine",
+    "adrenaline",
+    "body"
+   ]
+  },
+  {
+   "ref": "4.5.3.7.b",
+   "section": "4.5.3.7",
+   "kind": "content",
+   "share": 0.10526315789473684,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "adrenaline",
+    "produced",
+    "adrenal",
+    "gland",
+    "tim",
+    "fear",
+    "stres",
+    "boost",
+    "delivery",
+    "oxygen",
+    "glucose",
+    "brain",
+    "muscl",
+    "preparing",
+    "body",
+    "flight",
+    "fight"
+   ]
+  },
+  {
+   "ref": "4.5.3.7.c",
+   "section": "4.5.3.7",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "thyroxine",
+    "thyroid",
+    "gland",
+    "stimulat",
+    "basal",
+    "metabolic",
+    "play",
+    "growth",
+    "development"
+   ]
+  },
+  {
+   "ref": "4.5.3.7.d",
+   "section": "4.5.3.7",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "thyroxine",
+    "controlled",
+    "negative",
+    "feedback"
+   ]
+  },
+  {
+   "ref": "4.5.4.1.a",
+   "section": "4.5.4.1",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "produce",
+    "hormon",
+    "coordinate",
+    "growth",
+    "respons",
+    "light",
+    "phototropism",
+    "gravity",
+    "gravitropism",
+    "geotropism",
+    "unequal",
+    "distribution",
+    "auxin",
+    "rat",
+    "root",
+    "shoot"
+   ]
+  },
+  {
+   "ref": "4.5.4.1.b",
+   "section": "4.5.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "gibberellin",
+    "initiating",
+    "seed",
+    "germination"
+   ]
+  },
+  {
+   "ref": "4.5.4.1.c",
+   "section": "4.5.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "ethene",
+    "control",
+    "cell",
+    "division",
+    "ripening",
+    "fruit"
+   ]
+  },
+  {
+   "ref": "4.5.4.1.RP8",
+   "section": "4.5.4.1",
+   "kind": "practical",
+   "share": 0.15384615384615385,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "light",
+    "gravity",
+    "growth",
+    "newly",
+    "germinated",
+    "seedling",
+    "record",
+    "measurement",
+    "careful",
+    "labelled",
+    "biological"
+   ]
+  },
+  {
+   "ref": "4.5.4.2.a",
+   "section": "4.5.4.2",
+   "kind": "skill",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 16,
+   "missing": [
+    "hormon",
+    "growth"
+   ]
+  },
+  {
+   "ref": "4.5.4.2.b",
+   "section": "4.5.4.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "plant",
+    "growth",
+    "hormon",
+    "agriculture",
+    "horticulture"
+   ]
+  },
+  {
+   "ref": "4.5.4.2.c",
+   "section": "4.5.4.2",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "auxin",
+    "weed",
+    "killer",
+    "rooting",
+    "powder",
+    "promoting",
+    "growth",
+    "culture"
+   ]
+  },
+  {
+   "ref": "4.5.4.2.d",
+   "section": "4.5.4.2",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "ethene",
+    "food",
+    "industry",
+    "ripening",
+    "fruit",
+    "storage"
+   ]
+  },
+  {
+   "ref": "4.5.4.2.e",
+   "section": "4.5.4.2",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "gibberellin",
+    "seed",
+    "dormancy",
+    "promote",
+    "flowering",
+    "fruit",
+    "size"
+   ]
+  },
+  {
+   "ref": "4.6.1.1.a",
+   "section": "4.6.1.1",
+   "kind": "skill",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "meiosi",
+    "non-identical",
+    "cell",
+    "formed",
+    "mitosi"
+   ]
+  },
+  {
+   "ref": "4.6.1.1.b",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "sexual",
+    "reproduction",
+    "involv",
+    "joining",
+    "fusion",
+    "male",
+    "female",
+    "gamet",
+    "sperm",
+    "egg",
+    "pollen",
+    "flowering"
+   ]
+  },
+  {
+   "ref": "4.6.1.1.c",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "sexual",
+    "reproduction",
+    "mixing",
+    "variety",
+    "offspring",
+    "formation",
+    "gamet",
+    "involv",
+    "meiosi"
+   ]
+  },
+  {
+   "ref": "4.6.1.1.d",
+   "section": "4.6.1.1",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "asexual",
+    "reproduction",
+    "involv",
+    "parent",
+    "fusion",
+    "gamet",
+    "mixing",
+    "genetically",
+    "offspring",
+    "clon",
+    "mitosi",
+    "involved"
+   ]
+  },
+  {
+   "ref": "4.6.1.2.a",
+   "section": "4.6.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "meiosi",
+    "halv",
+    "chromosom",
+    "gamet",
+    "fertilisation",
+    "restor",
+    "full"
+   ]
+  },
+  {
+   "ref": "4.6.1.2.b",
+   "section": "4.6.1.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "cell",
+    "reproductive",
+    "organ",
+    "divide",
+    "meiosi",
+    "gamet"
+   ]
+  },
+  {
+   "ref": "4.6.1.2.c",
+   "section": "4.6.1.2",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "divid",
+    "gamet",
+    "copy",
+    "twice",
+    "four",
+    "set",
+    "chromosom",
+    "genetically"
+   ]
+  },
+  {
+   "ref": "4.6.1.2.d",
+   "section": "4.6.1.2",
+   "kind": "content",
+   "share": 0.15384615384615385,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "gamet",
+    "fertilisation",
+    "restore",
+    "normal",
+    "chromosom",
+    "cell",
+    "divid",
+    "mitosi",
+    "embryo",
+    "develop",
+    "differentiate"
+   ]
+  },
+  {
+   "ref": "4.6.1.3.a",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "advantag",
+    "sexual",
+    "reproduction",
+    "produc",
+    "variation",
+    "offspring",
+    "environment",
+    "chang",
+    "giv",
+    "survival",
+    "advantage",
+    "natural",
+    "selection",
+    "speeded",
+    "human",
+    "selective",
+    "breeding",
+    "food",
+    "production"
+   ]
+  },
+  {
+   "ref": "4.6.1.3.b",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "advantag",
+    "asexual",
+    "reproduction",
+    "parent",
+    "needed",
+    "efficient",
+    "find",
+    "mate",
+    "faster",
+    "sexual",
+    "offspring",
+    "produced",
+    "condition",
+    "favourable"
+   ]
+  },
+  {
+   "ref": "4.6.1.3.c",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organism",
+    "reproduce",
+    "method",
+    "depending",
+    "circumstanc",
+    "malarial",
+    "parasit",
+    "asexually",
+    "human",
+    "host",
+    "sexually",
+    "mosquito",
+    "fungi",
+    "spor",
+    "variation",
+    "plant",
+    "produce",
+    "seed",
+    "runner",
+    "strawberry",
+    "bulb",
+    "division",
+    "daffodil"
+   ]
+  },
+  {
+   "ref": "4.6.1.3.d",
+   "section": "4.6.1.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "expected",
+    "advantag",
+    "disadvantag",
+    "asexual",
+    "sexual",
+    "reproduction",
+    "organism"
+   ]
+  },
+  {
+   "ref": "4.6.1.4.a",
+   "section": "4.6.1.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "structure",
+    "dna",
+    "define",
+    "genome"
+   ]
+  },
+  {
+   "ref": "4.6.1.4.b",
+   "section": "4.6.1.4",
+   "kind": "content",
+   "share": 0.4666666666666667,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "composed",
+    "polymer",
+    "strand",
+    "forming",
+    "double",
+    "helix",
+    "contained",
+    "chromosom"
+   ]
+  },
+  {
+   "ref": "4.6.1.4.c",
+   "section": "4.6.1.4",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "gene",
+    "section",
+    "dna",
+    "chromosome",
+    "cod",
+    "sequence",
+    "amino",
+    "acid"
+   ]
+  },
+  {
+   "ref": "4.6.1.4.d",
+   "section": "4.6.1.4",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "genome",
+    "organism",
+    "entire",
+    "whole",
+    "human",
+    "now",
+    "studied",
+    "great",
+    "medicine",
+    "future"
+   ]
+  },
+  {
+   "ref": "4.6.1.4.e",
+   "section": "4.6.1.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "discus",
+    "understanding",
+    "human",
+    "genome"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.a",
+   "section": "4.6.1.5",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "dna",
+    "polymer",
+    "four",
+    "nucleotid",
+    "nucleotide",
+    "consist",
+    "common",
+    "sugar",
+    "phosphate",
+    "group",
+    "bas",
+    "attached"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.b",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "dna",
+    "four",
+    "bas"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.c",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "sequence",
+    "bas",
+    "code",
+    "amino",
+    "acid",
+    "order",
+    "control",
+    "assembled",
+    "produce"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.d",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "strand",
+    "consist",
+    "alternating",
+    "sugar",
+    "phosphate",
+    "section",
+    "attached",
+    "four",
+    "bas"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.e",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "dna",
+    "polymer",
+    "repeating",
+    "nucleotide",
+    "unit"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.f",
+   "section": "4.6.1.5",
+   "kind": "skill",
+   "share": 0.26666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "description",
+    "synthesi",
+    "structure",
+    "variant",
+    "influence",
+    "phenotype",
+    "coding",
+    "altering",
+    "activity",
+    "non-coding",
+    "expressed"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.g",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "strand",
+    "alway",
+    "opposite"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.h",
+   "section": "4.6.1.5",
+   "kind": "skill",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "dna",
+    "structure",
+    "synthesised",
+    "gene"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.i",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.1875,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "synthesised",
+    "ribosom",
+    "according",
+    "template",
+    "carrier",
+    "bring",
+    "amino",
+    "acid",
+    "add",
+    "growing",
+    "chain",
+    "correct",
+    "order"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.j",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "chain",
+    "complete",
+    "fold",
+    "unique",
+    "enabl",
+    "job",
+    "hormon",
+    "structur",
+    "body",
+    "collagen"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.k",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "mutation",
+    "occur",
+    "continuously",
+    "alter",
+    "slightly",
+    "appearance",
+    "function"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.l",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.5,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "mutation",
+    "code",
+    "altered",
+    "binding",
+    "structural",
+    "lose",
+    "strength"
+   ]
+  },
+  {
+   "ref": "4.6.1.5.m",
+   "section": "4.6.1.5",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "code",
+    "non-coding",
+    "switch",
+    "variation",
+    "area",
+    "expressed"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.a",
+   "section": "4.6.1.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "gamete",
+    "chromosome",
+    "gene",
+    "allele",
+    "dominant",
+    "recessive",
+    "homozygou",
+    "heterozygou",
+    "genotype",
+    "phenotype"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.b",
+   "section": "4.6.1.6",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "characteristic",
+    "controlled",
+    "fur",
+    "colour",
+    "mice",
+    "red-green",
+    "blindnes",
+    "human",
+    "allel"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.c",
+   "section": "4.6.1.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "allel",
+    "present",
+    "genotype",
+    "operate",
+    "molecular",
+    "develop",
+    "characteristic",
+    "expressed",
+    "phenotype"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.d",
+   "section": "4.6.1.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "dominant",
+    "allele",
+    "alway",
+    "expressed",
+    "copy",
+    "present",
+    "recessive",
+    "therefore"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.e",
+   "section": "4.6.1.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "allel",
+    "present",
+    "organism",
+    "homozygou",
+    "trait",
+    "heterozygou"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.f",
+   "section": "4.6.1.6",
+   "kind": "content",
+   "share": 0.5714285714285714,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "characteristic",
+    "multiple",
+    "interacting"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.g",
+   "section": "4.6.1.6",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "concept",
+    "probability",
+    "predicting",
+    "cros",
+    "phenotype",
+    "featur",
+    "multiple",
+    "inheritance"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.h",
+   "section": "4.6.1.6",
+   "kind": "skill",
+   "share": 0.42857142857142855,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "direct",
+    "proportion",
+    "outcome",
+    "cros"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.i",
+   "section": "4.6.1.6",
+   "kind": "skill",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "complete",
+    "punnett",
+    "square",
+    "diagram",
+    "extract",
+    "cross",
+    "family",
+    "tre"
+   ]
+  },
+  {
+   "ref": "4.6.1.6.j",
+   "section": "4.6.1.6",
+   "kind": "skill",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "construct",
+    "cros",
+    "punnett",
+    "square",
+    "diagram",
+    "prediction",
+    "theory",
+    "probability"
+   ]
+  },
+  {
+   "ref": "4.6.1.7.a",
+   "section": "4.6.1.7",
+   "kind": "content",
+   "share": 0.17647058823529413,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "disorder",
+    "inherited",
+    "caused",
+    "inheritance",
+    "certain",
+    "allel",
+    "polydactyly",
+    "finger",
+    "toe",
+    "dominant",
+    "allele",
+    "cystic",
+    "fibrosi",
+    "recessive"
+   ]
+  },
+  {
+   "ref": "4.6.1.7.b",
+   "section": "4.6.1.7",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "informed",
+    "judgement",
+    "economic",
+    "social",
+    "ethical",
+    "issu",
+    "concerning",
+    "embryo",
+    "screening"
+   ]
+  },
+  {
+   "ref": "4.6.1.8.a",
+   "section": "4.6.1.8",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "ordinary",
+    "human",
+    "body",
+    "cell",
+    "pair",
+    "chromosom"
+   ]
+  },
+  {
+   "ref": "4.6.1.8.b",
+   "section": "4.6.1.8",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "pair",
+    "control",
+    "characteristic",
+    "determine",
+    "sex",
+    "femal",
+    "chromosom",
+    "mal"
+   ]
+  },
+  {
+   "ref": "4.6.1.8.c",
+   "section": "4.6.1.8",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "cros",
+    "sex",
+    "inheritance"
+   ]
+  },
+  {
+   "ref": "4.6.1.8.d",
+   "section": "4.6.1.8",
+   "kind": "skill",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "direct",
+    "proportion",
+    "cross"
+   ]
+  },
+  {
+   "ref": "4.6.2.1.a",
+   "section": "4.6.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "genome",
+    "interaction",
+    "environment",
+    "influence",
+    "development",
+    "phenotype",
+    "organism"
+   ]
+  },
+  {
+   "ref": "4.6.2.1.b",
+   "section": "4.6.2.1",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "differenc",
+    "characteristic",
+    "individual",
+    "population",
+    "variation",
+    "inherited",
+    "caus",
+    "condition",
+    "developed",
+    "environmental",
+    "combination",
+    "environment"
+   ]
+  },
+  {
+   "ref": "4.6.2.1.c",
+   "section": "4.6.2.1",
+   "kind": "skill",
+   "share": 0.08333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "usually",
+    "extensive",
+    "variation",
+    "population",
+    "specy",
+    "variant",
+    "arise",
+    "mutation",
+    "phenotype",
+    "influence",
+    "determine"
+   ]
+  },
+  {
+   "ref": "4.6.2.1.d",
+   "section": "4.6.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "mutation",
+    "occur",
+    "continuously",
+    "rarely",
+    "phenotype",
+    "suited",
+    "environmental",
+    "relatively",
+    "rapid",
+    "specy"
+   ]
+  },
+  {
+   "ref": "4.6.2.2.a",
+   "section": "4.6.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "evolution",
+    "inherited",
+    "characteristic",
+    "population",
+    "proces",
+    "natural",
+    "selection",
+    "formation",
+    "specy"
+   ]
+  },
+  {
+   "ref": "4.6.2.2.b",
+   "section": "4.6.2.2",
+   "kind": "content",
+   "share": 0.21428571428571427,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "evolution",
+    "natural",
+    "selection",
+    "stat",
+    "specy",
+    "evolved",
+    "life",
+    "developed",
+    "billion",
+    "year",
+    "ago"
+   ]
+  },
+  {
+   "ref": "4.6.2.2.c",
+   "section": "4.6.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "evolution",
+    "occur",
+    "natural",
+    "selection",
+    "variant",
+    "rise",
+    "phenotyp",
+    "suited",
+    "environment"
+   ]
+  },
+  {
+   "ref": "4.6.2.2.d",
+   "section": "4.6.2.2",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "population",
+    "specy",
+    "become",
+    "phenotype",
+    "interbreed",
+    "produce",
+    "fertile",
+    "offspring",
+    "formed"
+   ]
+  },
+  {
+   "ref": "4.6.2.3.a",
+   "section": "4.6.2.3",
+   "kind": "skill",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "impact",
+    "selective",
+    "breeding",
+    "food",
+    "domesticated"
+   ]
+  },
+  {
+   "ref": "4.6.2.3.b",
+   "section": "4.6.2.3",
+   "kind": "content",
+   "share": 0.15,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "selective",
+    "breeding",
+    "artificial",
+    "selection",
+    "proces",
+    "human",
+    "breed",
+    "particular",
+    "characteristic",
+    "thousand",
+    "year",
+    "since",
+    "bred",
+    "food",
+    "crop",
+    "wild",
+    "domesticated"
+   ]
+  },
+  {
+   "ref": "4.6.2.3.c",
+   "section": "4.6.2.3",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "selective",
+    "breeding",
+    "involv",
+    "choosing",
+    "parent",
+    "desired",
+    "characteristic",
+    "population",
+    "bred",
+    "offspring",
+    "continu",
+    "generation"
+   ]
+  },
+  {
+   "ref": "4.6.2.3.d",
+   "section": "4.6.2.3",
+   "kind": "content",
+   "share": 0.05555555555555555,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "characteristic",
+    "chosen",
+    "usefulnes",
+    "appearance",
+    "resistance",
+    "food",
+    "crop",
+    "animal",
+    "produce",
+    "meat",
+    "milk",
+    "domestic",
+    "dog",
+    "gentle",
+    "nature",
+    "unusual",
+    "flower"
+   ]
+  },
+  {
+   "ref": "4.6.2.3.e",
+   "section": "4.6.2.3",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "selective",
+    "breeding",
+    "inbreeding",
+    "breed",
+    "particularly",
+    "prone",
+    "inherited",
+    "defect"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.a",
+   "section": "4.6.2.4",
+   "kind": "skill",
+   "share": 0.09090909090909091,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "engineering",
+    "proces",
+    "involv",
+    "modifying",
+    "genome",
+    "organism",
+    "introducing",
+    "gene",
+    "desired",
+    "characteristic"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.b",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "crop",
+    "genetically",
+    "engineered",
+    "resistant",
+    "diseas",
+    "produce",
+    "bigger",
+    "fruit"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.c",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "genetically",
+    "engineered",
+    "produce",
+    "useful",
+    "human",
+    "insulin",
+    "treat",
+    "diabet"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.d",
+   "section": "4.6.2.4",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "potential",
+    "benefit",
+    "engineering",
+    "agriculture",
+    "medicine",
+    "objection"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.e",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "engineering",
+    "chromosom",
+    "human",
+    "organism",
+    "cut",
+    "transferred"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.f",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "crop",
+    "modified",
+    "genetically",
+    "resistant",
+    "insect",
+    "attack",
+    "herbicid",
+    "generally",
+    "yield"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.g",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "concern",
+    "crop",
+    "population",
+    "wild",
+    "flower",
+    "insect",
+    "feel",
+    "eating",
+    "human",
+    "health",
+    "fully",
+    "explored"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.h",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "modern",
+    "medical",
+    "research",
+    "exploring",
+    "possibility",
+    "modification",
+    "overcome",
+    "inherited",
+    "disorder"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.i",
+   "section": "4.6.2.4",
+   "kind": "skill",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "step",
+    "proces",
+    "engineering"
+   ]
+  },
+  {
+   "ref": "4.6.2.4.j",
+   "section": "4.6.2.4",
+   "kind": "content",
+   "share": 0.4166666666666667,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "engineering",
+    "isolate",
+    "inserted",
+    "vector",
+    "viru",
+    "insert",
+    "transferred",
+    "microorganism",
+    "early",
+    "stage",
+    "development",
+    "develop",
+    "desired",
+    "characteristic"
+   ]
+  },
+  {
+   "ref": "4.6.2.5.a",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "culture",
+    "group",
+    "grow",
+    "preserving",
+    "rare",
+    "specy",
+    "commercially",
+    "nursery"
+   ]
+  },
+  {
+   "ref": "4.6.2.5.b",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "cutting",
+    "older",
+    "method",
+    "gardener",
+    "produce",
+    "plant",
+    "parent"
+   ]
+  },
+  {
+   "ref": "4.6.2.5.c",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "share": 0.46153846153846156,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "embryo",
+    "transplant",
+    "splitting",
+    "specialised",
+    "transplanting",
+    "host",
+    "mother"
+   ]
+  },
+  {
+   "ref": "4.6.2.5.d",
+   "section": "4.6.2.5",
+   "kind": "content",
+   "share": 0.17391304347826086,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 10,
+   "missing": [
+    "adult",
+    "cloning",
+    "removed",
+    "unfertilised",
+    "egg",
+    "body",
+    "skin",
+    "inserted",
+    "electric",
+    "shock",
+    "stimulat",
+    "divide",
+    "embryo",
+    "developed",
+    "ball",
+    "womb",
+    "female",
+    "continue",
+    "development"
+   ]
+  },
+  {
+   "ref": "4.6.3.1.a",
+   "section": "4.6.3.1",
+   "kind": "content",
+   "share": 0.08333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "charl",
+    "darwin",
+    "observation",
+    "round",
+    "world",
+    "expedition",
+    "backed",
+    "year",
+    "experimentation",
+    "discussion",
+    "geology",
+    "fossil",
+    "proposed",
+    "theory",
+    "evolution",
+    "natural",
+    "selection",
+    "individual",
+    "organism",
+    "particular",
+    "specy",
+    "wide",
+    "variation",
+    "characteristic",
+    "suited",
+    "likely",
+    "survive",
+    "breed",
+    "successfully",
+    "enabled",
+    "passed",
+    "next",
+    "generation"
+   ]
+  },
+  {
+   "ref": "4.6.3.1.b",
+   "section": "4.6.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "darwin",
+    "published",
+    "his",
+    "origin",
+    "specy",
+    "controversy",
+    "surrounding",
+    "revolutionary"
+   ]
+  },
+  {
+   "ref": "4.6.3.1.c",
+   "section": "4.6.3.1",
+   "kind": "content",
+   "share": 0.17391304347826086,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "theory",
+    "evolution",
+    "natural",
+    "selection",
+    "gradually",
+    "accepted",
+    "challenged",
+    "god",
+    "live",
+    "earth",
+    "insufficient",
+    "evidence",
+    "published",
+    "convince",
+    "inheritance",
+    "variation",
+    "known",
+    "until",
+    "year"
+   ]
+  },
+  {
+   "ref": "4.6.3.1.d",
+   "section": "4.6.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "theory",
+    "jean-baptiste",
+    "lamarck",
+    "based",
+    "mainly",
+    "chang",
+    "occur",
+    "organism",
+    "lifetime",
+    "inherited",
+    "now",
+    "vast",
+    "majority",
+    "cas",
+    "inheritance",
+    "cannot"
+   ]
+  },
+  {
+   "ref": "4.6.3.2.a",
+   "section": "4.6.3.2",
+   "kind": "skill",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "darwin",
+    "wallace",
+    "development",
+    "evolution",
+    "natural",
+    "selection",
+    "impact",
+    "biology"
+   ]
+  },
+  {
+   "ref": "4.6.3.2.b",
+   "section": "4.6.3.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "alfred",
+    "russel",
+    "wallace",
+    "independently",
+    "proposed",
+    "theory",
+    "evolution",
+    "natural",
+    "selection",
+    "published",
+    "joint",
+    "writing",
+    "darwin",
+    "prompted",
+    "publish",
+    "origin",
+    "specy",
+    "following",
+    "year"
+   ]
+  },
+  {
+   "ref": "4.6.3.2.c",
+   "section": "4.6.3.2",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "wallace",
+    "worked",
+    "worldwide",
+    "gathering",
+    "evidence",
+    "evolutionary",
+    "known",
+    "his",
+    "warning",
+    "colouration",
+    "animal",
+    "speciation"
+   ]
+  },
+  {
+   "ref": "4.6.3.2.d",
+   "section": "4.6.3.2",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "alfred",
+    "wallace",
+    "did",
+    "pioneering",
+    "speciation",
+    "evidence",
+    "led",
+    "our",
+    "current",
+    "understanding"
+   ]
+  },
+  {
+   "ref": "4.6.3.2.e",
+   "section": "4.6.3.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "step",
+    "rise",
+    "specy"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.a",
+   "section": "4.6.3.3",
+   "kind": "skill",
+   "share": 0.09090909090909091,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "development",
+    "our",
+    "understanding",
+    "work",
+    "mendel",
+    "discovery",
+    "recognised",
+    "until",
+    "his",
+    "death"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.b",
+   "section": "4.6.3.3",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "mid-19th",
+    "century",
+    "gregor",
+    "mendel",
+    "carried",
+    "breeding",
+    "experiment",
+    "his",
+    "observation",
+    "inheritance",
+    "characteristic",
+    "determined",
+    "unit",
+    "passed",
+    "descendant"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.c",
+   "section": "4.6.3.3",
+   "kind": "content",
+   "share": 0.14285714285714285,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "late",
+    "century",
+    "behaviour",
+    "chromosom",
+    "division",
+    "observed"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.d",
+   "section": "4.6.3.3",
+   "kind": "content",
+   "share": 0.08333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "early",
+    "century",
+    "observed",
+    "chromosom",
+    "mendel",
+    "unit",
+    "behaved",
+    "similar",
+    "led",
+    "now",
+    "located"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.e",
+   "section": "4.6.3.3",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "mid-20th",
+    "century",
+    "structure",
+    "determined",
+    "gene",
+    "function",
+    "worked"
+   ]
+  },
+  {
+   "ref": "4.6.3.3.f",
+   "section": "4.6.3.3",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "scientific",
+    "scientist",
+    "led",
+    "gene",
+    "developed"
+   ]
+  },
+  {
+   "ref": "4.6.3.4.a",
+   "section": "4.6.3.4",
+   "kind": "skill",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "evidence",
+    "evolution",
+    "fossil",
+    "antibiotic",
+    "resistance"
+   ]
+  },
+  {
+   "ref": "4.6.3.4.b",
+   "section": "4.6.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "theory",
+    "evolution",
+    "natural",
+    "selection",
+    "now",
+    "widely",
+    "accepted"
+   ]
+  },
+  {
+   "ref": "4.6.3.4.c",
+   "section": "4.6.3.4",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "evidence",
+    "darwin",
+    "theory",
+    "now",
+    "available",
+    "shown",
+    "characteristic",
+    "passed",
+    "offspring",
+    "fossil",
+    "record",
+    "resistance",
+    "antibiotic",
+    "evolv"
+   ]
+  },
+  {
+   "ref": "4.6.3.5.a",
+   "section": "4.6.3.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "fossil",
+    "remain",
+    "organism",
+    "million",
+    "year",
+    "ago",
+    "rock"
+   ]
+  },
+  {
+   "ref": "4.6.3.5.b",
+   "section": "4.6.3.5",
+   "kind": "content",
+   "share": 0.06666666666666667,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "fossil",
+    "formed",
+    "organism",
+    "decayed",
+    "condition",
+    "needed",
+    "decay",
+    "replaced",
+    "mineral",
+    "preserved",
+    "trac",
+    "footprint",
+    "burrow",
+    "rootlet"
+   ]
+  },
+  {
+   "ref": "4.6.3.5.c",
+   "section": "4.6.3.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "early",
+    "life",
+    "soft-bodied",
+    "left",
+    "trac",
+    "behind",
+    "mainly",
+    "destroyed",
+    "geological",
+    "activity",
+    "scientist",
+    "cannot",
+    "certain",
+    "began",
+    "earth"
+   ]
+  },
+  {
+   "ref": "4.6.3.5.d",
+   "section": "4.6.3.5",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 1,
+   "missing": [
+    "learn",
+    "fossil",
+    "organism",
+    "changed",
+    "life",
+    "developed",
+    "earth"
+   ]
+  },
+  {
+   "ref": "4.6.3.5.e",
+   "section": "4.6.3.5",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "chart",
+    "graph",
+    "tabl",
+    "evolutionary",
+    "tre"
+   ]
+  },
+  {
+   "ref": "4.6.3.6.a",
+   "section": "4.6.3.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extinction",
+    "occur",
+    "remaining",
+    "individual",
+    "specy",
+    "alive"
+   ]
+  },
+  {
+   "ref": "4.6.3.6.b",
+   "section": "4.6.3.6",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "contribute",
+    "extinction",
+    "specy"
+   ]
+  },
+  {
+   "ref": "4.6.3.7.a",
+   "section": "4.6.3.7",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "evolve",
+    "reproduce",
+    "fast"
+   ]
+  },
+  {
+   "ref": "4.6.3.7.b",
+   "section": "4.6.3.7",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "mutation",
+    "pathogen",
+    "produce",
+    "strain",
+    "resistant",
+    "antibiotic",
+    "survive",
+    "reproduce",
+    "population",
+    "ris",
+    "spread",
+    "immune",
+    "effective",
+    "treatment"
+   ]
+  },
+  {
+   "ref": "4.6.3.7.c",
+   "section": "4.6.3.7",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "mrsa",
+    "resistant",
+    "antibiotic"
+   ]
+  },
+  {
+   "ref": "4.6.3.7.d",
+   "section": "4.6.3.7",
+   "kind": "content",
+   "share": 0.09523809523809523,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "development",
+    "antibiotic",
+    "resistant",
+    "strain",
+    "doctor",
+    "prescribe",
+    "inappropriately",
+    "treating",
+    "non-seriou",
+    "viral",
+    "infection",
+    "patient",
+    "complete",
+    "course",
+    "none",
+    "survive",
+    "mutate",
+    "agricultural",
+    "restricted"
+   ]
+  },
+  {
+   "ref": "4.6.3.7.e",
+   "section": "4.6.3.7",
+   "kind": "content",
+   "share": 0.1111111111111111,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "development",
+    "antibiotic",
+    "costly",
+    "slow",
+    "unlikely",
+    "emergence",
+    "resistant",
+    "strain"
+   ]
+  },
+  {
+   "ref": "4.6.4.a",
+   "section": "4.6.4",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "traditionally",
+    "classified",
+    "group",
+    "depending",
+    "structure",
+    "characteristic",
+    "system",
+    "developed",
+    "carl",
+    "linnaeu"
+   ]
+  },
+  {
+   "ref": "4.6.4.b",
+   "section": "4.6.4",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "linnaeu",
+    "classified",
+    "kingdom",
+    "phylum",
+    "clas",
+    "order",
+    "family",
+    "genu",
+    "specy",
+    "named",
+    "binomial",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.6.4.c",
+   "section": "4.6.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "understanding",
+    "linnaean",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.6.4.d",
+   "section": "4.6.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "impact",
+    "development",
+    "biology",
+    "classification",
+    "system"
+   ]
+  },
+  {
+   "ref": "4.6.4.e",
+   "section": "4.6.4",
+   "kind": "content",
+   "share": 0.07692307692307693,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "evidence",
+    "internal",
+    "structur",
+    "became",
+    "developed",
+    "improvement",
+    "microscop",
+    "understanding",
+    "biochemical",
+    "progressed",
+    "classification",
+    "proposed"
+   ]
+  },
+  {
+   "ref": "4.6.4.f",
+   "section": "4.6.4",
+   "kind": "content",
+   "share": 0.3076923076923077,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "evidence",
+    "available",
+    "analysi",
+    "now",
+    "three-domain",
+    "system",
+    "developed",
+    "carl",
+    "woese",
+    "divided",
+    "archaea",
+    "primitive",
+    "environment",
+    "true",
+    "eukaryota",
+    "includ",
+    "protist",
+    "fungi"
+   ]
+  },
+  {
+   "ref": "4.6.4.g",
+   "section": "4.6.4",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "evolutionary",
+    "tre",
+    "method",
+    "scientist",
+    "believe",
+    "current",
+    "classification",
+    "data",
+    "fossil",
+    "extinct"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.a",
+   "section": "4.7.1.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organisation",
+    "ecosystem",
+    "individual",
+    "organism",
+    "whole",
+    "interdependence",
+    "competition",
+    "community"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.b",
+   "section": "4.7.1.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organism",
+    "competing",
+    "habitat",
+    "adapted",
+    "condition",
+    "live"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.c",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "ecosystem",
+    "interaction",
+    "community",
+    "biotic",
+    "non-living",
+    "abiotic",
+    "environment"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.d",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "survive",
+    "reproduce",
+    "supply",
+    "material",
+    "surrounding"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.e",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "share": 0.26666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 14,
+   "missing": [
+    "community",
+    "habitat",
+    "compete",
+    "light",
+    "space",
+    "mineral",
+    "ion",
+    "soil",
+    "food",
+    "mat",
+    "territory"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.f",
+   "section": "4.7.1.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "community",
+    "specy",
+    "depend",
+    "food",
+    "shelter",
+    "pollination",
+    "seed",
+    "dispersal",
+    "etc",
+    "removed",
+    "whole",
+    "interdependence",
+    "stable",
+    "environmental",
+    "balance",
+    "population",
+    "siz",
+    "remain",
+    "fairly",
+    "constant"
+   ]
+  },
+  {
+   "ref": "4.7.1.1.g",
+   "section": "4.7.1.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "chart",
+    "graph",
+    "tabl",
+    "interaction",
+    "organism",
+    "community"
+   ]
+  },
+  {
+   "ref": "4.7.1.2.a",
+   "section": "4.7.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "abiotic",
+    "community",
+    "data",
+    "context"
+   ]
+  },
+  {
+   "ref": "4.7.1.2.b",
+   "section": "4.7.1.2",
+   "kind": "content",
+   "share": 0.16666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "abiotic",
+    "non-living",
+    "community",
+    "light",
+    "intensity",
+    "temperature",
+    "moisture",
+    "soil",
+    "mineral",
+    "wind",
+    "direction",
+    "carbon",
+    "dioxide",
+    "oxygen",
+    "aquatic"
+   ]
+  },
+  {
+   "ref": "4.7.1.2.c",
+   "section": "4.7.1.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "chart",
+    "graph",
+    "tabl",
+    "abiotic",
+    "organism",
+    "community"
+   ]
+  },
+  {
+   "ref": "4.7.1.3.a",
+   "section": "4.7.1.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "biotic",
+    "community",
+    "data",
+    "context"
+   ]
+  },
+  {
+   "ref": "4.7.1.3.b",
+   "section": "4.7.1.3",
+   "kind": "content",
+   "share": 0.15384615384615385,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "biotic",
+    "community",
+    "availability",
+    "food",
+    "predator",
+    "arriving",
+    "pathogen",
+    "specy",
+    "outcompeting",
+    "sufficient",
+    "breed"
+   ]
+  },
+  {
+   "ref": "4.7.1.3.c",
+   "section": "4.7.1.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "extract",
+    "chart",
+    "graph",
+    "tabl",
+    "biotic",
+    "organism",
+    "community"
+   ]
+  },
+  {
+   "ref": "4.7.1.4.a",
+   "section": "4.7.1.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organism",
+    "adapted",
+    "live",
+    "natural",
+    "environment"
+   ]
+  },
+  {
+   "ref": "4.7.1.4.b",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organism",
+    "featur",
+    "adaptation",
+    "enable",
+    "survive",
+    "condition",
+    "normally",
+    "live",
+    "structural",
+    "behavioural",
+    "functional"
+   ]
+  },
+  {
+   "ref": "4.7.1.4.c",
+   "section": "4.7.1.4",
+   "kind": "content",
+   "share": 0.42857142857142855,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "live",
+    "environment",
+    "extreme",
+    "temperature",
+    "extremophil",
+    "deep",
+    "sea",
+    "vent"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.a",
+   "section": "4.7.2.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "photosynthetic",
+    "organism",
+    "producer",
+    "biomas",
+    "life",
+    "earth"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.b",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "share": 0.17647058823529413,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "feeding",
+    "relationship",
+    "community",
+    "represented",
+    "food",
+    "chain",
+    "begin",
+    "producer",
+    "synthesis",
+    "usually",
+    "green",
+    "alga",
+    "glucose",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.c",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "experimental",
+    "method",
+    "transect",
+    "quadrat",
+    "ecologist",
+    "determine",
+    "distribution",
+    "abundance",
+    "specy",
+    "ecosystem"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.d",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 6,
+   "missing": [
+    "relation",
+    "abundance",
+    "organism",
+    "mode",
+    "median",
+    "arithmetic",
+    "graph",
+    "selecting",
+    "axe"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.e",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "producer",
+    "eaten",
+    "primary",
+    "consumer",
+    "turn",
+    "secondary",
+    "tertiary"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.f",
+   "section": "4.7.2.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "consumer",
+    "kill",
+    "eat",
+    "animal",
+    "predator",
+    "eaten",
+    "prey",
+    "stable",
+    "community",
+    "rise",
+    "fall",
+    "cycl"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.g",
+   "section": "4.7.2.1",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "graph",
+    "cycl"
+   ]
+  },
+  {
+   "ref": "4.7.2.1.RP9",
+   "section": "4.7.2.1",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "population",
+    "size",
+    "common",
+    "specy",
+    "habitat",
+    "sampling",
+    "techniqu",
+    "distribution"
+   ]
+  },
+  {
+   "ref": "4.7.2.2.a",
+   "section": "4.7.2.2",
+   "kind": "skill",
+   "share": 0.2727272727272727,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "material",
+    "cycle",
+    "abiotic",
+    "biotic",
+    "component",
+    "ecosystem",
+    "carbon",
+    "cycl"
+   ]
+  },
+  {
+   "ref": "4.7.2.2.b",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "material",
+    "world",
+    "recycled",
+    "provide",
+    "building",
+    "block",
+    "future"
+   ]
+  },
+  {
+   "ref": "4.7.2.2.c",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "share": 0.125,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 2,
+   "missing": [
+    "carbon",
+    "cycle",
+    "return",
+    "organism",
+    "atmosphere",
+    "dioxide",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.7.2.2.d",
+   "section": "4.7.2.2",
+   "kind": "content",
+   "share": 0.25,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "cycle",
+    "provid",
+    "fresh",
+    "land",
+    "draining",
+    "sea",
+    "continuously",
+    "evaporated",
+    "precipitated"
+   ]
+  },
+  {
+   "ref": "4.7.2.2.e",
+   "section": "4.7.2.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "microorganism",
+    "cycling",
+    "material",
+    "ecosystem",
+    "returning",
+    "carbon",
+    "atmosphere",
+    "dioxide",
+    "mineral",
+    "ion",
+    "soil"
+   ]
+  },
+  {
+   "ref": "4.7.2.3.a",
+   "section": "4.7.2.3",
+   "kind": "skill",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "water",
+    "availability",
+    "oxygen",
+    "decay",
+    "material"
+   ]
+  },
+  {
+   "ref": "4.7.2.3.b",
+   "section": "4.7.2.3",
+   "kind": "skill",
+   "share": 0.3076923076923077,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "chang",
+    "decay",
+    "material",
+    "translate",
+    "numerical",
+    "graphical",
+    "graph",
+    "selecting",
+    "axe"
+   ]
+  },
+  {
+   "ref": "4.7.2.3.c",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "share": 0.15789473684210525,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 3,
+   "missing": [
+    "gardener",
+    "farmer",
+    "try",
+    "provide",
+    "optimum",
+    "condition",
+    "rapid",
+    "decay",
+    "waste",
+    "compost",
+    "produced",
+    "natural",
+    "fertiliser",
+    "growing",
+    "garden",
+    "crop"
+   ]
+  },
+  {
+   "ref": "4.7.2.3.d",
+   "section": "4.7.2.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "anaerobic",
+    "decay",
+    "produc",
+    "methane",
+    "gas",
+    "bioga",
+    "generator",
+    "produce",
+    "fuel"
+   ]
+  },
+  {
+   "ref": "4.7.2.3.RP10",
+   "section": "4.7.2.3",
+   "kind": "practical",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a practical item"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "temperature",
+    "decay",
+    "fresh",
+    "milk"
+   ]
+  },
+  {
+   "ref": "4.7.2.4.a",
+   "section": "4.7.2.4",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "impact",
+    "environmental",
+    "chang",
+    "distribution",
+    "specy",
+    "ecosystem"
+   ]
+  },
+  {
+   "ref": "4.7.2.4.b",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "environmental",
+    "chang",
+    "distribution",
+    "specy",
+    "ecosystem",
+    "temperature",
+    "availability",
+    "water",
+    "composition",
+    "atmospheric",
+    "gas"
+   ]
+  },
+  {
+   "ref": "4.7.2.4.c",
+   "section": "4.7.2.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "chang",
+    "seasonal",
+    "geographic",
+    "caused",
+    "human",
+    "interaction"
+   ]
+  },
+  {
+   "ref": "4.7.3.1.a",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "biodiversity",
+    "variety",
+    "specy",
+    "organism",
+    "earth",
+    "ecosystem"
+   ]
+  },
+  {
+   "ref": "4.7.3.1.b",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "great",
+    "biodiversity",
+    "ensur",
+    "stability",
+    "ecosystem",
+    "reducing",
+    "dependence",
+    "specy",
+    "food",
+    "shelter",
+    "maintenance",
+    "physical",
+    "environment"
+   ]
+  },
+  {
+   "ref": "4.7.3.1.c",
+   "section": "4.7.3.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "future",
+    "human",
+    "specy",
+    "earth",
+    "rely",
+    "maintaining",
+    "biodiversity",
+    "activity",
+    "reducing",
+    "recently",
+    "measur",
+    "taken",
+    "try",
+    "stop",
+    "reduction"
+   ]
+  },
+  {
+   "ref": "4.7.3.2.a",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "share": 0.17647058823529413,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "rapid",
+    "growth",
+    "human",
+    "population",
+    "increasingly",
+    "resourc",
+    "waste",
+    "produced",
+    "unles",
+    "material",
+    "properly",
+    "handled",
+    "pollution",
+    "caused"
+   ]
+  },
+  {
+   "ref": "4.7.3.2.b",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "share": 0.07692307692307693,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "pollution",
+    "occur",
+    "water",
+    "sewage",
+    "fertiliser",
+    "toxic",
+    "air",
+    "smoke",
+    "acidic",
+    "gas",
+    "land",
+    "landfill"
+   ]
+  },
+  {
+   "ref": "4.7.3.2.c",
+   "section": "4.7.3.2",
+   "kind": "content",
+   "share": 0.4,
+   "relevant": true,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "pollution",
+    "kill",
+    "biodiversity"
+   ]
+  },
+  {
+   "ref": "4.7.3.3.a",
+   "section": "4.7.3.3",
+   "kind": "content",
+   "share": 0.18181818181818182,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "human",
+    "amount",
+    "land",
+    "available",
+    "building",
+    "quarrying",
+    "farming",
+    "dumping",
+    "waste"
+   ]
+  },
+  {
+   "ref": "4.7.3.3.b",
+   "section": "4.7.3.3",
+   "kind": "content",
+   "share": 0.11764705882352941,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 4,
+   "missing": [
+    "destruction",
+    "peat",
+    "bog",
+    "area",
+    "produce",
+    "garden",
+    "compost",
+    "reduc",
+    "habitat",
+    "thu",
+    "variety",
+    "microorganism",
+    "specy",
+    "live",
+    "biodiversity"
+   ]
+  },
+  {
+   "ref": "4.7.3.3.c",
+   "section": "4.7.3.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "decay",
+    "burning",
+    "peat",
+    "releas",
+    "carbon",
+    "dioxide",
+    "atmosphere"
+   ]
+  },
+  {
+   "ref": "4.7.3.4.a",
+   "section": "4.7.3.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "large-scale",
+    "deforestation",
+    "tropical",
+    "area",
+    "occurred",
+    "provide",
+    "land",
+    "cattle",
+    "rice",
+    "field",
+    "grow",
+    "crop",
+    "biofuel"
+   ]
+  },
+  {
+   "ref": "4.7.3.5.a",
+   "section": "4.7.3.5",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "consequenc",
+    "warming"
+   ]
+  },
+  {
+   "ref": "4.7.3.5.b",
+   "section": "4.7.3.5",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "carbon",
+    "dioxide",
+    "methane",
+    "atmosphere",
+    "increasing",
+    "contribute",
+    "warming"
+   ]
+  },
+  {
+   "ref": "4.7.3.6.a",
+   "section": "4.7.3.6",
+   "kind": "skill",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "human",
+    "interaction",
+    "ecosystem",
+    "impact",
+    "biodiversity"
+   ]
+  },
+  {
+   "ref": "4.7.3.6.b",
+   "section": "4.7.3.6",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "scientist",
+    "concerned",
+    "citizen",
+    "put",
+    "place",
+    "programm",
+    "negative",
+    "human",
+    "ecosystem",
+    "biodiversity"
+   ]
+  },
+  {
+   "ref": "4.7.3.6.c",
+   "section": "4.7.3.6",
+   "kind": "content",
+   "share": 0.034482758620689655,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "breeding",
+    "programm",
+    "endangered",
+    "specy",
+    "protection",
+    "regeneration",
+    "rare",
+    "habitat",
+    "reintroduction",
+    "field",
+    "margin",
+    "hedgerow",
+    "agricultural",
+    "area",
+    "farmer",
+    "grow",
+    "crop",
+    "reduction",
+    "deforestation",
+    "carbon",
+    "dioxide",
+    "emission",
+    "government",
+    "recycling",
+    "resourc",
+    "dumping",
+    "waste",
+    "landfill"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.a",
+   "section": "4.7.4.1",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "differenc",
+    "trophic",
+    "organism",
+    "ecosystem"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.b",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0.15384615384615385,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 12,
+   "missing": [
+    "trophic",
+    "represented",
+    "algae",
+    "numbered",
+    "subsequently",
+    "according",
+    "far",
+    "organism",
+    "along",
+    "food",
+    "chain"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.c",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "plant",
+    "algae",
+    "food",
+    "producer"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.d",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "herbivor",
+    "eat",
+    "plant",
+    "algae",
+    "primary",
+    "consumer"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.e",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "carnivor",
+    "eat",
+    "herbivor",
+    "secondary",
+    "consumer"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.f",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "carnivor",
+    "eat",
+    "tertiary",
+    "consumer",
+    "apex",
+    "predator"
+   ]
+  },
+  {
+   "ref": "4.7.4.1.g",
+   "section": "4.7.4.1",
+   "kind": "content",
+   "share": 0.2857142857142857,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 5,
+   "missing": [
+    "decomposer",
+    "break",
+    "dead",
+    "matter",
+    "secreting",
+    "environment",
+    "soluble",
+    "food",
+    "diffuse",
+    "microorganism"
+   ]
+  },
+  {
+   "ref": "4.7.4.2.a",
+   "section": "4.7.4.2",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "pyramid",
+    "biomas",
+    "constructed",
+    "represent",
+    "relative",
+    "amount",
+    "food",
+    "chain",
+    "trophic",
+    "bottom"
+   ]
+  },
+  {
+   "ref": "4.7.4.2.b",
+   "section": "4.7.4.2",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "construct",
+    "accurate",
+    "pyramid",
+    "biomas",
+    "data"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.a",
+   "section": "4.7.4.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "pyramid",
+    "biomas",
+    "lost",
+    "trophic"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.b",
+   "section": "4.7.4.3",
+   "kind": "content",
+   "share": 0.2222222222222222,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "producer",
+    "mostly",
+    "algae",
+    "transfer",
+    "incident",
+    "light",
+    "photosynthesi"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.c",
+   "section": "4.7.4.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "approximately",
+    "biomas",
+    "trophic",
+    "transferred"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.d",
+   "section": "4.7.4.3",
+   "kind": "content",
+   "share": 0.26666666666666666,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "biomas",
+    "ingested",
+    "material",
+    "absorbed",
+    "egested",
+    "faec",
+    "waste",
+    "carbon",
+    "dioxide",
+    "urea",
+    "urine"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.e",
+   "section": "4.7.4.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "amount",
+    "glucose",
+    "respiration"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.f",
+   "section": "4.7.4.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [
+    "a computed calculation"
+   ],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "efficiency",
+    "biomas",
+    "transfer",
+    "trophic",
+    "percentag",
+    "fraction",
+    "mas"
+   ]
+  },
+  {
+   "ref": "4.7.4.3.g",
+   "section": "4.7.4.3",
+   "kind": "skill",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "organism",
+    "trophic"
+   ]
+  },
+  {
+   "ref": "4.7.5.1.a",
+   "section": "4.7.5.1",
+   "kind": "skill",
+   "share": 0.3333333333333333,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 7,
+   "missing": [
+    "food",
+    "security"
+   ]
+  },
+  {
+   "ref": "4.7.5.1.b",
+   "section": "4.7.5.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "food",
+    "security",
+    "enough",
+    "feed",
+    "population"
+   ]
+  },
+  {
+   "ref": "4.7.5.1.c",
+   "section": "4.7.5.1",
+   "kind": "content",
+   "share": 0.06060606060606061,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "threatening",
+    "food",
+    "security",
+    "increasing",
+    "birth",
+    "threatened",
+    "country",
+    "diet",
+    "developed",
+    "scarce",
+    "resourc",
+    "transported",
+    "around",
+    "world",
+    "pest",
+    "pathogen",
+    "farming",
+    "environmental",
+    "production",
+    "widespread",
+    "famine",
+    "occurring",
+    "rain",
+    "fail",
+    "cost",
+    "agricultural",
+    "input",
+    "conflict",
+    "arisen",
+    "availability",
+    "water"
+   ]
+  },
+  {
+   "ref": "4.7.5.1.d",
+   "section": "4.7.5.1",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "sustainable",
+    "method",
+    "feed",
+    "earth"
+   ]
+  },
+  {
+   "ref": "4.7.5.2.a",
+   "section": "4.7.5.2",
+   "kind": "content",
+   "share": 0.21428571428571427,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 11,
+   "missing": [
+    "efficiency",
+    "food",
+    "production",
+    "improved",
+    "restricting",
+    "transfer",
+    "environment",
+    "limiting",
+    "controlling",
+    "temperature",
+    "surrounding"
+   ]
+  },
+  {
+   "ref": "4.7.5.2.b",
+   "section": "4.7.5.2",
+   "kind": "content",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "animal",
+    "fed",
+    "food",
+    "growth"
+   ]
+  },
+  {
+   "ref": "4.7.5.3.a",
+   "section": "4.7.5.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "fish",
+    "stock",
+    "ocean",
+    "declining",
+    "maintain",
+    "breeding",
+    "continu",
+    "certain",
+    "specy",
+    "disappear",
+    "altogether",
+    "area"
+   ]
+  },
+  {
+   "ref": "4.7.5.3.b",
+   "section": "4.7.5.3",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "control",
+    "net",
+    "size",
+    "introduction",
+    "fishing",
+    "quota",
+    "play",
+    "rol",
+    "conservation",
+    "fish",
+    "stock",
+    "sustainable"
+   ]
+  },
+  {
+   "ref": "4.7.5.4.a",
+   "section": "4.7.5.4",
+   "kind": "skill",
+   "share": 0.2,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 9,
+   "missing": [
+    "biotechnical",
+    "agricultural",
+    "solution",
+    "modification",
+    "demand",
+    "growing",
+    "human",
+    "population"
+   ]
+  },
+  {
+   "ref": "4.7.5.4.b",
+   "section": "4.7.5.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "modern",
+    "biotechnology",
+    "techniqu",
+    "enable",
+    "quantity",
+    "microorganism",
+    "cultured",
+    "food"
+   ]
+  },
+  {
+   "ref": "4.7.5.4.c",
+   "section": "4.7.5.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "fungu",
+    "fusarium",
+    "useful",
+    "producing",
+    "mycoprotein",
+    "protein-rich",
+    "food",
+    "suitable",
+    "vegetarian",
+    "grown",
+    "glucose",
+    "syrup",
+    "aerobic",
+    "condition",
+    "biomas",
+    "harvested",
+    "purified"
+   ]
+  },
+  {
+   "ref": "4.7.5.4.d",
+   "section": "4.7.5.4",
+   "kind": "content",
+   "share": 0.1,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 8,
+   "missing": [
+    "genetically",
+    "modified",
+    "produc",
+    "human",
+    "insulin",
+    "harvested",
+    "purified",
+    "treat",
+    "diabet"
+   ]
+  },
+  {
+   "ref": "4.7.5.4.e",
+   "section": "4.7.5.4",
+   "kind": "content",
+   "share": 0,
+   "relevant": false,
+   "complete": false,
+   "needs": [],
+   "lessons": [],
+   "items": 0,
+   "missing": [
+    "crop",
+    "provide",
+    "food",
+    "improved",
+    "nutritional",
+    "value",
+    "golden",
+    "rice"
+   ]
+  }
+ ]
+}

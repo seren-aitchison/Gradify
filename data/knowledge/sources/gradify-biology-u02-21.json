@@ -17,6 +17,12 @@
  "sha256": "8ace4b4f096db60e11d856825654a484a9cb20c49d1a571f8f697f97e400d46a",
  "bytes": 140925,
  "licenceName": "Gradify's own work",
+ "category": "commercial-adapt",
+ "uses": {
+  "adapt": true,
+  "commercial": true,
+  "verify": true
+ },
  "policy": "reuse",
  "attribution": false,
  "parsedTitle": "Osmosis",

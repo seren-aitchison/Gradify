@@ -16,34 +16,52 @@
 // so a correction to one knowledge item, or a new version of a specification, finds every lesson to revise.
 // Pure: the scripts, tests and (later) the site all use these.
 import { LEVELS } from "./templates.js";
+import { checkForms } from "./forms.js";
 
 export const KINDS = {
   concept: "an idea, explained", definition: "a term and what it means", fact: "a single checkable statement",
   mechanism: "how something happens, step by step", equation: "a relationship, with its quantities", method: "how to do a calculation or procedure",
-  "worked-example": "a problem solved step by step", practical: "an experiment or technique", misconception: "a common wrong idea and the right one",
-  application: "using the idea in situations, with outcomes",
+  "worked-example": "a problem solved step by step", practical: "an experiment or technique, with its method, variables, safety and analysis", misconception: "a common wrong idea and the right one",
+  application: "using the idea in situations, with outcomes", dataset: "a set of data to interpret, with where it came from",
 };
 
 /**
- * What a licence lets Gradify do. Gradify is a paid product, so NonCommercial licences forbid reusing the text;
- * ShareAlike would bind Gradify's lessons to the same licence; NoDerivatives forbids adapting. Facts aren't
- * anyone's property, so any lawfully read source can still be used to check that Gradify's own writing is right.
- *   reuse         text may be adapted into lessons, with attribution
- *   verify-only   read to check facts; never copy or adapt its wording (QA measures overlap)
+ * What a licence lets Gradify do. Gradify is a paid product. Five categories, each with explicit permitted uses:
+ *   public-domain        no copyright: adapt, use commercially, no attribution needed
+ *   commercial-adapt     open licences that allow adaptation and commercial use (CC BY, OGL), with attribution
+ *   noncommercial-only   adaptation allowed, but not for a paid product (CC BY-NC, CC BY-NC-SA): for Gradify, verify only
+ *   verify-only          readable, but no adaptation (CC BY-ND, ShareAlike for Gradify's purposes, all rights reserved)
+ *   unknown              permissions not established: not even for verification until a person checks the licence
+ * `uses`: adapt (rewrite or build on its text in Gradify's content), commercial (in a paid product), verify (read it
+ * to check Gradify's own writing: facts aren't anyone's property, the wording is). A source's licence category
+ * comes from its licence, but a person confirms it (source.licenceConfirmed) before any lesson built on it can be
+ * published. Similarity checks are warnings that copying may have happened, never proof that a use is permitted.
  */
-export const LICENCES = {
-  "CC0-1.0": { name: "CC0 (public domain)", reuse: true, attribution: false },
-  "PD": { name: "Public domain", reuse: true, attribution: false },
-  "CC-BY-4.0": { name: "Creative Commons Attribution 4.0", reuse: true, attribution: true },
-  "CC-BY-SA-4.0": { name: "Creative Commons Attribution-ShareAlike 4.0", reuse: false, attribution: true, why: "ShareAlike would put Gradify's lessons under the same licence" },
-  "CC-BY-NC-4.0": { name: "Creative Commons Attribution-NonCommercial 4.0", reuse: false, attribution: true, why: "NonCommercial: Gradify is a paid product" },
-  "CC-BY-NC-SA-4.0": { name: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0", reuse: false, attribution: true, why: "NonCommercial (Gradify is a paid product) and ShareAlike" },
-  "CC-BY-ND-4.0": { name: "Creative Commons Attribution-NoDerivatives 4.0", reuse: false, attribution: true, why: "NoDerivatives: no adaptation" },
-  "OGL-3.0": { name: "Open Government Licence v3.0", reuse: true, attribution: true },
-  "all-rights-reserved": { name: "All rights reserved", reuse: false, attribution: true, why: "copyright: facts may be checked against it, nothing copied" },
-  "gradify": { name: "Gradify's own work", reuse: true, attribution: false },
+export const CATEGORIES = {
+  "public-domain": { uses: { adapt: true, commercial: true, verify: true }, attribution: false },
+  "commercial-adapt": { uses: { adapt: true, commercial: true, verify: true }, attribution: true },
+  "noncommercial-only": { uses: { adapt: false, commercial: false, verify: true }, attribution: true, why: "NonCommercial: Gradify is a paid product" },
+  "verify-only": { uses: { adapt: false, commercial: false, verify: true }, attribution: true, why: "no adaptation permitted" },
+  unknown: { uses: { adapt: false, commercial: false, verify: false }, attribution: true, why: "permissions not established" },
 };
-export const policyOf = (licence) => (LICENCES[licence]?.reuse ? "reuse" : "verify-only");
+export const LICENCES = {
+  "CC0-1.0": { name: "CC0 (public domain)", category: "public-domain" },
+  "PD": { name: "Public domain", category: "public-domain" },
+  "CC-BY-4.0": { name: "Creative Commons Attribution 4.0", category: "commercial-adapt" },
+  "OGL-3.0": { name: "Open Government Licence v3.0", category: "commercial-adapt" },
+  "CC-BY-SA-4.0": { name: "Creative Commons Attribution-ShareAlike 4.0", category: "verify-only", why: "ShareAlike would put Gradify's lessons under the same licence" },
+  "CC-BY-NC-4.0": { name: "Creative Commons Attribution-NonCommercial 4.0", category: "noncommercial-only" },
+  "CC-BY-NC-SA-4.0": { name: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0", category: "noncommercial-only", why: "NonCommercial (Gradify is a paid product) and ShareAlike" },
+  "CC-BY-ND-4.0": { name: "Creative Commons Attribution-NoDerivatives 4.0", category: "verify-only", why: "NoDerivatives: no adaptation" },
+  "all-rights-reserved": { name: "All rights reserved", category: "verify-only", why: "copyright: facts may be checked against it, nothing copied" },
+  "unknown": { name: "Unknown or unverified", category: "unknown" },
+  "gradify": { name: "Gradify's own work", category: "commercial-adapt", owned: true },
+};
+export const categoryOf = (licence) => LICENCES[licence]?.category || "unknown";
+export const usesOf = (licence) => CATEGORIES[categoryOf(licence)].uses;
+/** the old two-way policy, kept for records: may Gradify adapt it in a paid product? */
+export const policyOf = (licence) => (usesOf(licence).adapt && usesOf(licence).commercial ? "reuse" : "verify-only");
+for (const v of Object.values(LICENCES)) { v.reuse = CATEGORIES[v.category].uses.adapt && CATEGORIES[v.category].uses.commercial; v.attribution = !v.owned && CATEGORIES[v.category].attribution; v.why ||= CATEGORIES[v.category].why; }
 
 export const LIFECYCLE = ["generated", "automated-qa", "expert-review", "approved", "published"];
 /** allowed moves; a failed automated QA or a rejected review sends a lesson back to "generated" for revision */
@@ -59,6 +77,8 @@ export function checkSource(s) {
   for (const k of ["title", "publisher", "url", "retrievedOn", "version", "licence"]) if (!s?.[k]) p.push(`${at}: needs ${k}`);
   if (s?.licence && !LICENCES[s.licence]) p.push(`${at}: unknown licence ${s.licence}`);
   if (s?.licence && s.policy !== policyOf(s.licence)) p.push(`${at}: policy must be ${policyOf(s.licence)} for ${s.licence}`);
+  if (s?.licence && s.category !== categoryOf(s.licence)) p.push(`${at}: category must be ${categoryOf(s.licence)} for ${s.licence}`);
+  if (s?.licenceConfirmed && !(s.licenceConfirmed.by && DATE.test(s.licenceConfirmed.on || ""))) p.push(`${at}: licenceConfirmed needs by and on`);
   if (s?.retrievedOn && !DATE.test(s.retrievedOn)) p.push(`${at}: retrievedOn must be YYYY-MM-DD`);
   if (!/^[0-9a-f]{64}$/.test(s?.sha256 || "")) p.push(`${at}: needs the sha256 of what was retrieved`);
   if (!Array.isArray(s?.passages) || !s.passages.length) p.push(`${at}: no passages indexed`);
@@ -87,7 +107,18 @@ export function checkKnowledge(items, sources = {}) {
     if (k.kind === "application" && !k.cases?.length) p.push(`${at}: an application needs cases`);
     if (k.kind === "equation" && !k.equation) p.push(`${at}: an equation needs its equation`);
     if (k.kind === "worked-example" && !k.steps?.length) p.push(`${at}: a worked example needs steps`);
-    for (const t of k.terms || []) if (!t.term || !t.definition) p.push(`${at}: each term needs term and definition`);
+    for (const t of [...(k.terms || []), ...(k.forms || []).flatMap((f) => f.terms || [])]) if (!t.term || !t.definition) p.push(`${at}: each term needs term and definition`);
+    p.push(...checkForms(k));
+    const o = k.origin || { type: "original" };
+    if (!["original", "adapted"].includes(o.type)) p.push(`${at}: origin must be original or adapted`);
+    if (o.type === "adapted") {
+      const src = sources[o.source];
+      if (!src) p.push(`${at}: adapted from unknown source ${o.source}`);
+      else if (!usesOf(src.licence).adapt || !usesOf(src.licence).commercial) p.push(`${at}: adapted from ${o.source}, whose licence (${src.licence}) doesn't allow commercial adaptation`);
+      if (!o.passages?.length) p.push(`${at}: an adaptation names the passages it adapts`);
+    }
+    if (k.kind === "dataset" && !(k.data?.columns?.length && k.data?.rows?.length && k.data?.provenance)) p.push(`${at}: a dataset needs columns, rows and provenance ("illustrative", or the source it comes from)`);
+    if (k.kind === "practical" && k.practical && !(k.practical.method?.length >= 4 && k.practical.variables?.independent && k.practical.variables?.dependent && k.practical.safety?.length)) p.push(`${at}: a practical needs a method, independent and dependent variables, and safety`);
   }
   for (const k of items) for (const r of [...(k.prereqs || []), ...(k.related || [])]) if (!ids.has(r)) p.push(`${k.id}: links to unknown item ${r}`);
   return p;
@@ -105,4 +136,34 @@ export function checkLesson(l) {
   for (const k of l?.knowledge || []) if (!(k.id && k.version && k.hash)) p.push(`${at}: each knowledge link needs id, version and hash`);
   if (l?.requirement && !(l.requirement.id && l.requirement.hash)) p.push(`${at}: the requirement link needs id and hash`);
   return p;
+}
+
+/**
+ * The publishing gate: every reason a lesson may not be published. Hard rules, not warnings:
+ *   approved by a named reviewer, after passing automated QA
+ *   every knowledge item it uses reviewed by a subject specialist, with an evidence trail
+ *   no item adapted from a source whose licence doesn't allow commercial adaptation
+ *   every source it rests on has a licence category a person has confirmed, and none is "unknown"
+ *   attribution for every source that requires it
+ * Similarity scores are not consulted here: they can suggest copying, never establish permission.
+ */
+export function publishGate({ lesson, items, sources, evidence = {}, attributed = [] }) {
+  const p = [];
+  if (lesson.status !== "approved") p.push(`the lesson is ${lesson.status}, not approved`);
+  if (!lesson.review?.approvedBy) p.push("no named reviewer has approved it");
+  if (lesson.qa?.result !== "pass") p.push("it hasn't passed automated QA");
+  for (const k of items) {
+    if (k.status !== "reviewed") p.push(`${k.id} hasn't been reviewed by a subject specialist`);
+    if (!evidence[k.id]?.passages?.length) p.push(`${k.id} has no evidence trail`);
+    const o = k.origin || { type: "original" };
+    if (o.type === "adapted" && !(usesOf(sources[o.source]?.licence).adapt && usesOf(sources[o.source]?.licence).commercial)) p.push(`${k.id} is adapted from ${o.source}, which Gradify may not adapt commercially`);
+    for (const s of k.sources) {
+      const src = sources[s.source];
+      if (!src) { p.push(`${k.id}: source ${s.source} has no record`); continue; }
+      if (categoryOf(src.licence) === "unknown") p.push(`${s.source}: its licence is unknown or unverified`);
+      if (!src.licenceConfirmed && !LICENCES[src.licence]?.owned) p.push(`${s.source}: no person has confirmed its licence (${src.licence})`);
+    }
+  }
+  for (const id of new Set(items.flatMap((k) => k.sources.map((s) => s.source)))) { const src = sources[id]; if (src && LICENCES[src.licence]?.attribution && !attributed.includes(id)) p.push(`${id}: attribution required and missing`); }
+  return [...new Set(p)];
 }

@@ -1,0 +1,41 @@
+{
+ "id": "kb-aqa8461-4-1-1-1-b-gcse-cells-prokaryotic",
+ "renderer": "cellmap",
+ "course": "knowledge",
+ "title": "A bacterial (prokaryotic) cell",
+ "caption": "A bacterial cell has a cell wall, a cell membrane and cytoplasm, like many other cells, but there is no nucleus: its DNA is a single loop lying in the cytoplasm. Many bacteria also have small rings of DNA called plasmids.",
+ "alt": "A rod-shaped bacterial cell with labels: cell wall, cell membrane, cytoplasm, single loop of DNA, and plasmid (small ring of DNA). There is no nucleus.",
+ "description": [
+  "The outer layer is the cell wall.",
+  "Inside it is the cell membrane, which surrounds the cytoplasm.",
+  "The DNA is a single loop in the cytoplasm, not inside a nucleus.",
+  "A plasmid is a small separate ring of DNA."
+ ],
+ "cell": "prokaryote",
+ "labels": [
+  "cell wall",
+  "plasma membrane",
+  "cytoplasm",
+  "nucleoid",
+  "plasmid"
+ ],
+ "names": {
+  "plasma membrane": "cell membrane",
+  "nucleoid": "single loop of DNA",
+  "plasmid": "plasmid"
+ },
+ "claims": [
+  {
+   "type": "lacks",
+   "structures": [
+    "nucleus",
+    "mitochondrion"
+   ]
+  }
+ ],
+ "from": {
+  "item": "bio.cells.prokaryotic",
+  "version": 1,
+  "form": "default"
+ }
+}

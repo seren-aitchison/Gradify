@@ -1,0 +1,804 @@
+{
+ "id": "kb-aqa8461-4-2-2-1-e-gcse",
+ "title": "The human digestive system",
+ "level": "gcse",
+ "subject": "biology",
+ "template": "gcse-science",
+ "requirementKind": "content",
+ "requirement": {
+  "id": "aqa-gcse-biology:4.2.2.1.e",
+  "kind": "specification",
+  "title": "AQA GCSE Biology 4.2.2.1 The human digestive system",
+  "hash": "1c2d94275e93f38d",
+  "version": "1.0",
+  "page": 23,
+  "statementKind": "content",
+  "higherTier": false,
+  "biologyOnly": false
+ },
+ "objectives": [
+  "Define enzyme and use the term correctly",
+  "Explain the active site",
+  "Explain how an enzyme works: the lock and key model"
+ ],
+ "knowledge": [
+  {
+   "id": "bio.enzymes.definition",
+   "version": 1,
+   "form": "default",
+   "hash": "05f6cfb485243c98",
+   "formHash": "cff8a617356fc8d3",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.active-site",
+   "version": 1,
+   "form": "default",
+   "hash": "9aebcea888082b5a",
+   "formHash": "3d1e5e6ad07e4814",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.specificity",
+   "version": 1,
+   "form": "default",
+   "hash": "5b4665226119c4f3",
+   "formHash": "8d28558967863a8c",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.denaturation",
+   "version": 1,
+   "form": "default",
+   "hash": "17e097211a1d77a3",
+   "formHash": "34bbbded6a14f580",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.lock-and-key",
+   "version": 1,
+   "form": "default",
+   "hash": "3c45ba66f2b68a94",
+   "formHash": "e7d08f88ea9d9c59",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.mistake-killed",
+   "version": 1,
+   "form": "default",
+   "hash": "931c2210483219d5",
+   "formHash": "e33bf22e1eb9a545",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.mistake-used-up",
+   "version": 1,
+   "form": "default",
+   "hash": "7008fb2b08d2f700",
+   "formHash": "08fffd41b387adb3",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  },
+  {
+   "id": "bio.enzymes.mistake-same-shape",
+   "version": 1,
+   "form": "default",
+   "hash": "a5212382c3b37629",
+   "formHash": "218d53242641e8a4",
+   "status": "draft",
+   "origin": "original",
+   "why": "matched"
+  }
+ ],
+ "prior": [],
+ "retrieval": {
+  "main": "enzymes",
+  "kind": "content",
+  "items": [
+   {
+    "id": "bio.enzymes.specificity",
+    "why": "matched",
+    "score": 20.96,
+    "matched": [
+     "enzym",
+     "specific",
+     "reaction",
+     "shape",
+     "active",
+     "site"
+    ]
+   },
+   {
+    "id": "bio.enzymes.mistake-killed",
+    "why": "matched",
+    "score": 14.3,
+    "matched": [
+     "enzym",
+     "living",
+     "shape",
+     "active",
+     "site"
+    ]
+   },
+   {
+    "id": "bio.enzymes.definition",
+    "why": "matched",
+    "score": 13.07,
+    "matched": [
+     "enzym",
+     "reaction",
+     "living",
+     "organism"
+    ]
+   },
+   {
+    "id": "bio.enzymes.active-site",
+    "why": "matched",
+    "score": 12.95,
+    "matched": [
+     "enzym",
+     "reaction",
+     "shape",
+     "active",
+     "site"
+    ]
+   },
+   {
+    "id": "bio.enzymes.mistake-used-up",
+    "why": "matched",
+    "score": 12.14,
+    "matched": [
+     "enzym",
+     "catalyse",
+     "reaction"
+    ]
+   },
+   {
+    "id": "bio.enzymes.mistake-same-shape",
+    "why": "matched",
+    "score": 10.51,
+    "matched": [
+     "enzym",
+     "shape",
+     "active",
+     "site"
+    ]
+   },
+   {
+    "id": "bio.enzymes.denaturation",
+    "why": "matched",
+    "score": 10.49,
+    "matched": [
+     "enzym",
+     "shape",
+     "active",
+     "site"
+    ]
+   },
+   {
+    "id": "bio.enzymes.lock-and-key",
+    "why": "matched",
+    "score": 10.47,
+    "matched": [
+     "enzym",
+     "reaction",
+     "shape",
+     "active",
+     "site"
+    ]
+   }
+  ],
+  "excludedAboveLevel": [
+   "bio.enzymes.induced-fit",
+   "bio.enzymes.activation-energy",
+   "bio.enzymes.mistake-induced-permanent"
+  ]
+ },
+ "assets": [
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key",
+   "kind": "diagram",
+   "origin": "generated",
+   "renderer": "inducedfit",
+   "from": {
+    "item": "bio.enzymes.lock-and-key",
+    "version": 1,
+    "form": "default"
+   },
+   "checks": [
+    {
+     "name": "lock and key: the substrate fits the active site once bound (site 40, substrate 40)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "lock and key: the active site already has the substrate's shape and does not change (40 = 40)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "name": "the products together contain what the substrate did: their sizes add up to the substrate's",
+     "ok": true,
+     "detail": "22 + 18 = 40"
+    }
+   ]
+  }
+ ],
+ "library": [
+  {
+   "id": "bio-induced-fit",
+   "usable": true,
+   "reason": "fits",
+   "score": 53.76
+  },
+  {
+   "id": "bio-enzyme-ph",
+   "usable": true,
+   "reason": "fits",
+   "score": 29.79
+  },
+  {
+   "id": "bio-enzyme-temperature",
+   "usable": true,
+   "reason": "fits",
+   "score": 28.04
+  },
+  {
+   "id": "bio-enzyme-inhibition",
+   "usable": true,
+   "reason": "fits",
+   "score": 21.58
+  },
+  {
+   "id": "bio-restriction-cloning",
+   "usable": true,
+   "reason": "fits",
+   "score": 16.94
+  },
+  {
+   "id": "bio-michaelis-menten",
+   "usable": true,
+   "reason": "fits",
+   "score": 15.59
+  }
+ ],
+ "questions": [
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q1",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.enzymes.definition"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q2",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.enzymes.active-site"
+   ],
+   "objectives": [
+    2
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q3",
+   "type": "M",
+   "d": 1,
+   "items": [
+    "bio.enzymes.definition"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q4",
+   "type": "SEQ",
+   "d": 2,
+   "items": [
+    "bio.enzymes.lock-and-key"
+   ],
+   "objectives": [
+    3
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q5",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.enzymes.mistake-killed"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q6",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.enzymes.mistake-used-up"
+   ],
+   "objectives": [
+    1
+   ]
+  },
+  {
+   "id": "kb-aqa8461-4-2-2-1-e-gcse-q7",
+   "type": "TF",
+   "d": 1,
+   "items": [
+    "bio.enzymes.mistake-same-shape"
+   ],
+   "objectives": [
+    1
+   ]
+  }
+ ],
+ "components": {
+  "objectives": 3,
+  "prior": 0,
+  "explain": 13,
+  "mechanism": 8,
+  "visual": 1,
+  "terms": 8,
+  "quantitative": 0,
+  "worked": 0,
+  "practical": 0,
+  "data": 0,
+  "misconceptions": 3,
+  "apply": 0,
+  "practice": 7,
+  "summary": true,
+  "connections": 17,
+  "evidence": 3
+ },
+ "sources": [
+  "openstax-biology-2e-6-5",
+  "gradify-biology-u03-23",
+  "gradify-biology-u03-24"
+ ],
+ "attributed": [
+  "openstax-biology-2e-6-5"
+ ],
+ "status": "expert-review",
+ "history": [
+  {
+   "status": "generated",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/assemble.mjs"
+  },
+  {
+   "status": "automated-qa",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "65 checks: 0 failed, 2 for the reviewer"
+  },
+  {
+   "status": "expert-review",
+   "on": "2026-11-24",
+   "by": "scripts/knowledge/qa.mjs",
+   "note": "awaiting a subject reviewer"
+  }
+ ],
+ "qa": {
+  "result": "pass",
+  "on": "2026-11-24",
+  "checks": 65,
+  "fails": 0,
+  "reviews": 2,
+  "dimensions": {
+   "accuracy": {
+    "status": "review",
+    "checks": [
+     {
+      "name": "every knowledge item the lesson was built from still exists, its form for this level unchanged",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "every knowledge item has been reviewed by a subject specialist",
+      "ok": false,
+      "severity": "review",
+      "detail": "8 of 8 items are drafts: bio.enzymes.definition, bio.enzymes.active-site, bio.enzymes.specificity, bio.enzymes.denaturation, bio.enzymes.lock-and-key, bio.enzymes.mistake-killed, bio.enzymes.mistake-used-up, bio.enzymes.mistake-same-shape"
+     },
+     {
+      "name": "every knowledge item has supporting passages in its sources",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the evidence was linked to the current version of each item",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3)",
+      "ok": false,
+      "severity": "review",
+      "detail": "bio.enzymes.denaturation (0.21: check against openstax-biology-2e-6-5#fs-id1465037, gradify-biology-u03-23#L934, openstax-biology-2e-6-5#fs-id2199913); bio.enzymes.mistake-killed (0.24: check against openstax-biology-2e-6-5#fs-id1344546, openstax-biology-2e-6-5#fs-id1465037, openstax-biology-2e-6-5#fs-id1728320)"
+     },
+     {
+      "name": "diagram kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key: every subject check passes",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "coverage": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "the requirement is the version the lesson was built for",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson teaches the requirement's content words",
+      "ok": true,
+      "severity": "fail",
+      "detail": "9 of 9"
+     }
+    ]
+   },
+   "depth": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every knowledge item is valid at GCSE",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson's prose uses no term the knowledge base teaches only at a higher level",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the template's depth (gcse-science) matches the lesson's level",
+      "ok": true,
+      "severity": "fail",
+      "detail": "gcse-science"
+     }
+    ]
+   },
+   "terminology": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "every key term the lesson uses is defined in it (or in a prerequisite)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the requirement's own terms are defined in the lesson",
+      "ok": true,
+      "severity": "fail",
+      "detail": "active site, specific"
+     }
+    ]
+   },
+   "explanation": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "template component \"Learning objectives\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Explanation\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Key terms\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Practice questions\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "template component \"Summary\" is present",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "readability suits GCSE (Flesch–Kincaid grade 6–11)",
+      "ok": true,
+      "severity": "review",
+      "detail": "grade 8.5"
+     },
+     {
+      "name": "no sentence is over 30 words",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "every section has content",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "visuals": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "a diagram (the gcse-science template's visual rule is \"required\")",
+      "ok": true,
+      "severity": "fail",
+      "detail": "1 diagram(s)"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key: title, caption, alt text and a step-by-step description",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key: its labels use the lesson's words",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key: placed in the lesson",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key: shows what the lesson's mechanism describes (knowledge bio.enzymes.lock-and-key)",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (wide): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (narrow): every label inside the picture",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "assessment": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "at least 5 questions",
+      "ok": true,
+      "severity": "fail",
+      "detail": "7"
+     },
+     {
+      "name": "the course engine parses every question",
+      "ok": true,
+      "severity": "fail",
+      "detail": "7 parsed of 7"
+     },
+     {
+      "name": "question ids are unique and permanent",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 1 is tested (\"Define enzyme and use the term correctly\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 2 is tested (\"Explain the active site\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "objective 3 is tested (\"Explain how an enzyme works: the lock and key model\")",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "question kinds: M, SEQ, TF",
+      "ok": true,
+      "severity": "review"
+     }
+    ]
+   },
+   "accessibility": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (wide): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (wide): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "13 text labels"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (narrow): role=\"img\" with an aria-label",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "kb-aqa8461-4-2-2-1-e-gcse-enzymes-lock-and-key (narrow): everything coloured is also labelled in text",
+      "ok": true,
+      "severity": "fail",
+      "detail": "13 text labels"
+     },
+     {
+      "name": "headings break the lesson into sections",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   },
+   "sources": {
+    "status": "pass",
+    "checks": [
+     {
+      "name": "bio.enzymes.definition: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.definition: source gradify-biology-u03-23 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.active-site: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.active-site: source gradify-biology-u03-24 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.specificity: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.specificity: source gradify-biology-u03-24 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.denaturation: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.denaturation: source gradify-biology-u03-23 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.lock-and-key: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.lock-and-key: source gradify-biology-u03-24 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.mistake-killed: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.mistake-used-up: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.mistake-used-up: source gradify-biology-u03-23 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "bio.enzymes.mistake-same-shape: source openstax-biology-2e-6-5 has a provenance record",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "openstax-biology-2e-6-5: licence category noncommercial-only permits fact-checking only",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u03-23: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "gradify-biology-u03-24: licence category commercial-adapt permits adaptation",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item copies 12 or more words in a row from a source it may not reuse",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "no item shares 8 or more words in a row with such a source",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson copies no 12 or more words in a row from a source it may not reuse",
+      "ok": true,
+      "severity": "fail",
+      "detail": "5 words from openstax-biology-2e-6-5#fs-id2322412: \"the enzyme s active site\""
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with such a source",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "the lesson shares fewer than 8 words in a row with the specification's own wording",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "longest run of words shared with a verify-only source: 5",
+      "ok": true,
+      "severity": "review"
+     },
+     {
+      "name": "attribution to OpenStax, Rice University, Biology 2e, section 6.5: Enzymes",
+      "ok": true,
+      "severity": "fail"
+     },
+     {
+      "name": "the lesson record links its requirement, template and every item with its version",
+      "ok": true,
+      "severity": "fail"
+     }
+    ]
+   }
+  }
+ },
+ "review": {
+  "status": "awaiting",
+  "reviewer": null,
+  "flagged": [
+   "every knowledge item has been reviewed by a subject specialist: 8 of 8 items are drafts: bio.enzymes.definition, bio.enzymes.active-site, bio.enzymes.specificity, bio.enzymes.denaturation, bio.enzymes.lock-and-key, bio.enzymes.mistake-killed, bio.enzymes.mistake-used-up, bio.enzymes.mistake-same-shape",
+   "each item's sources contain most of its distinctive vocabulary (support ≥ 0.3): bio.enzymes.denaturation (0.21: check against openstax-biology-2e-6-5#fs-id1465037, gradify-biology-u03-23#L934, openstax-biology-2e-6-5#fs-id2199913); bio.enzymes.mistake-killed (0.24: check against openstax-biology-2e-6-5#fs-id1344546, openstax-biology-2e-6-5#fs-id1465037, openstax-biology-2e-6-5#fs-id1728320)"
+  ],
+  "approvedBy": null,
+  "approvedOn": null
+ }
+}

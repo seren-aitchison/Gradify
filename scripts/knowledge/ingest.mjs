@@ -9,7 +9,7 @@
 // A new type is a parser that returns [{ id, text }].
 import { readFileSync } from "node:fs";
 import { at, load, save, sha256, fp, norm, today, ROOT } from "./lib.mjs";
-import { LICENCES, policyOf, checkSource } from "../../kit/knowledge/schema.js";
+import { LICENCES, policyOf, categoryOf, usesOf, checkSource } from "../../kit/knowledge/schema.js";
 
 const strip = (x) => norm(x.replace(/<[^>]+>/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#8217;|&#x2019;/g, "’")).replace(/\s+([.,;:)])/g, "$1");
 
@@ -58,13 +58,16 @@ export async function ingest(def, seen = new Map()) {
   const { type, ...meta } = def;
   const rec = {
     ...meta, type, retrievedOn: today(), version: def.version || (def.type === "gradify-notes" ? `as of ${today()}` : null), sha256: sha256(raw), bytes: Buffer.byteLength(raw),
-    licenceName: lic.name, policy: policyOf(def.licence), ...(lic.why ? { policyReason: lic.why } : {}), attribution: lic.attribution,
+    licenceName: lic.name, category: categoryOf(def.licence), uses: usesOf(def.licence), policy: policyOf(def.licence), ...(lic.why ? { policyReason: lic.why } : {}), attribution: lic.attribution,
     parsedTitle: parsed.title || null,
     passages: passages.map(({ id, kind, hash, text }) => ({ id, kind, hash, words: text.split(" ").length })),
     ...(dropped.length ? { duplicates: dropped } : {}),
   };
   const problems = checkSource(rec);
   if (problems.length) throw new Error(problems.join("; "));
+  // a person's licence confirmation survives a re-ingest only if neither the content nor the licence changed
+  const prev = load(at(`sources/${def.id}.json`));
+  if (prev?.licenceConfirmed && prev.sha256 === rec.sha256 && prev.licence === rec.licence) rec.licenceConfirmed = prev.licenceConfirmed;
   save(at(`sources/${def.id}.json`), rec);
   return rec;
 }
