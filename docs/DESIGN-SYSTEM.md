@@ -58,6 +58,24 @@ colour with the gradient along its top). Study app: the end of `kit/app/app.css`
 glass tokens, so panels with their own colours keep them). Rules written as `:root …` are left alone by
 `scripts/theme-tokens.mjs`; use that for white text on a coloured background.
 
+**The lesson reading layer (November 2026).** How a lesson reads is set once, at the end of `kit/styles/course.css`
+(scoped to `.co.co-reading .co-read`, so the 3D model pages keep their own look), and every course on every subject
+site gets it. The rules:
+- *Paper, not glass.* The lesson sheet is solid (`--ls-sheet`) with a hairline and a soft shadow; glass stays for the
+  chrome around it (outline, lesson bar, rails).
+- *The subject's own colour.* `--lc` is the site's `--accent`; `--lc-ink` mixes it towards the ink so text in it is AA on
+  any accent; `--lc-wash` and `--lc-line` are its tint and edge. Goals, section numbers, bullets and the next-lesson card use it.
+- *One label voice.* Every eyebrow in a lesson is `--ls-label` (sans, 13px, 650, sentence case). Mono is for code, maths
+  working, keys and timers only; navigation numbers are sans with tabular figures.
+- *Four callouts, one shape.* Key idea (subject colour), worked example (`--ls-ok`), common mistake (`--ls-warn`) and
+  safety (`--ls-bad`): a tinted surface, a 4px rail, a labelled icon, and body text always in the ink colour. Worked
+  example steps are a numbered timeline.
+- *Answers are lettered rows* (A, B, C…) with hover, picked, right (✓) and wrong (✕) states that don't rely on colour alone.
+- *The end of a lesson says where you are.* The topic strip (`topicStrip()` in `kit/course/course.js`) shows one segment
+  per lesson in the topic on the closing panel and in the completion dialog, and fills in the one just finished.
+  Previous / up / next are three even cards. While a dialog is open the phone dock steps aside.
+- Checked with axe (WCAG 2 A/AA) on lessons in four subjects, light and dark, and on course home and the syllabus.
+
 **Rollout.** The Gradify homepage is on the system now. Subject sites move only after the shared components are
 reviewed and approved. Next: subject site homepages (`kit/core/subsite-home.js`),
 pricing, Explore and Journey, then the study app and courses, one surface at a time. The same tokens become the

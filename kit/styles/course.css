@@ -2493,3 +2493,7 @@ body:has(.co-modal) .cx-dock { visibility: hidden; }
 .co .cx-sess.off > :is(b, em) { color: var(--mute); }
 .co .cx-sess.off > small { color: var(--faint); }
 .co .cx-sess.off .cx-sessi { opacity: .55; filter: grayscale(.6); }
+/* phones: the study-material notice stays, but as a compact note rather than a block above every view */
+@media (max-width: 760px) {
+  .co > .co-notice, .co-notice { padding: 10px 12px; font-size: 12.5px; line-height: 1.45; border-radius: 12px; margin-block: 8px 12px; }
+}
