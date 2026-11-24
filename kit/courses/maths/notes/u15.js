@@ -1661,6 +1661,7 @@ X: With γ = 2.5, how much less common are nodes of degree 100 than degree 10?
 > P(k) ∝ k^{−2.5}
 > P(100)/P(10) = (100/10)^{−2.5} = 10^{−2.5}
 > ≈ 0.0032: about 300 times rarer, compared with an astronomically larger drop for Poisson degrees
+D: maths-u15-power-law
 K: Scale-free networks have power-law degrees and hubs; preferential attachment produces them; they're robust to random but fragile to targeted failures; test power laws rigorously.
 !: Declaring a network scale-free from a roughly straight log–log plot without statistical testing.
 Q: What exponent does the Barabási–Albert model give? | γ = 3.
