@@ -19,8 +19,8 @@ test("the UK registry: every Biology specification across the four nations, noth
   assert.deepEqual(checkRegistry(), []);
   const bio = specsFor("biology");
   for (const n of ["England", "Wales", "Scotland", "Northern Ireland"]) assert.ok(bio.some((s) => nationsOf(s).map((x) => ({ eng: "England", wal: "Wales", sco: "Scotland", ni: "Northern Ireland" })[x]).includes(n)), n);
-  assert.ok(bio.every((s) => s.confirmed === false), "no specification is confirmed until checked against the official document");
-  assert.match(checkRegistry([{ ...SPECS[0], confirmed: true }])[0], /confirmed needs code, version, the official source URL/);
+  assert.ok(bio.every((s) => s.confirmed === false || (s.document?.sha1 && s.checkedOn)), "no specification is confirmed until checked against the official document");
+  assert.match(checkRegistry([{ ...SPECS[1], confirmed: true }])[0], /confirmed needs code, version, the official source URL/);
   assert.match(checkRegistry([{ ...SPECS[0], qual: "nat5" }])[0], /doesn't award National 5/);
 });
 

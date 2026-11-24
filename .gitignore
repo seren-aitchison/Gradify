@@ -11,3 +11,9 @@ scripts/quality/.work/
 
 # search data exports (may contain the queries people typed): scripts/growth/sources.mjs
 data/growth/inputs/
+
+# specification text is the awarding bodies' copyright: kept local, rebuilt from the official PDF
+# (scripts/curriculum/engine.mjs fetch + import). The committed index is kit/curriculum/specs/.
+data/curriculum/specs/
+data/curriculum/sources/
+data/curriculum/review/
