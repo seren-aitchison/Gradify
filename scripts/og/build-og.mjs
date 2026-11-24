@@ -5,7 +5,7 @@
 //   assets/og/lessons/<course>-<id>.jpg   the lesson's own diagram (pilot lessons that have one)
 // JPEG at quality 88 with full colour resolution: smooth glows, sharp diagram labels, about 60–90 KB each.
 //   assets/og/manifest.json          { "<image path>": "<alt text>" }, read by scripts/seo/shell.mjs
-// Same family as the existing section and site images (assets/og/, assets/og/sites/): dark card, Geist, the spectrum
+// Same family as the existing section and site images (assets/og/, assets/og/sites/): dark card, the site font (Inter), the spectrum
 // rule, getgradify.com in the corner.
 //   node scripts/og/build-og.mjs            render any image that's missing or out of date (tests/og.test.mjs)
 //   node scripts/og/build-og.mjs --all      render every image again
@@ -71,9 +71,9 @@ export function cardHtml(c) {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="/kit/styles/base.css"><link rel="stylesheet" href="/kit/styles/components.css">
 <style>
-@font-face { font-family: Geist; src: url(/assets/fonts/Geist-Variable.woff2) format("woff2"); font-weight: 100 900; }
+@font-face { font-family: Inter; src: url(/assets/fonts/Inter-Variable.woff2) format("woff2"); font-weight: 100 900; }
 html, body { margin: 0; width: 1200px; height: 630px; background: #0b0b0c; overflow: hidden; }
-.card { position: relative; width: 1200px; height: 630px; font-family: Geist, system-ui, sans-serif; color: #fff; }
+.card { position: relative; width: 1200px; height: 630px; font-family: Inter, system-ui, sans-serif; color: #fff; }
 .glow { position: absolute; right: -170px; top: -150px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, ${a}cc 0%, ${b}55 38%, transparent 68%); filter: blur(10px); }
 .text { position: absolute; left: 80px; top: 72px; width: ${c.visual.diagram ? 470 : 640}px; }
 .kick { font-size: 26px; text-transform: none; font-weight: 600; color: #d6d6dc; letter-spacing: .2px; }
