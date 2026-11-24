@@ -62,19 +62,10 @@ float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max
 float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
 vec3 hue(float a){ return clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); }
 float blob(vec2 uv, vec2 c, float r){ vec2 d = (uv - c) * vec2(res.x / res.y, 1.); return exp(-dot(d, d) / (r * r)); }
-// the page's light: the theme, colour at the edges (the course or site, and the Gradify spectrum), a bright (light) or
-// deep (dark) centre
+// the page behind the glass: plain (November 2026: no coloured light gathered at the edges)
 vec3 scene(vec2 px){
-  vec2 uv = px / res; vec3 c = base;
-  float s = lightMode > .5 ? .75 : .62;
-  c = mix(c, acc1, s * blob(uv, vec2(-.04, .10), .42));
-  c = mix(c, acc2, s * blob(uv, vec2(1.04, .16), .40));
-  c = mix(c, vec3(1., .69, .13), s * .7 * blob(uv, vec2(-.06, .62), .30));
-  c = mix(c, vec3(.14, .78, .85), s * .7 * blob(uv, vec2(1.06, .64), .32));
-  c = mix(c, vec3(1., .31, .64), s * .75 * blob(uv, vec2(.06, 1.06), .34));
-  c = mix(c, vec3(.27, .25, 1.), s * .8 * blob(uv, vec2(.96, 1.06), .36));
-  float core = blob(uv, vec2(.5, .46), .62);
-  c = mix(c, lightMode > .5 ? vec3(1.) : base, (lightMode > .5 ? .9 : .7) * core);
+  // the page itself, pure white or pure black: colour comes from the content and the motifs, not a lit backdrop
+  vec3 c = base;
   return c${precision === "highp" ? " + (hash(px) - .5) / 255." : ""};   // a whisper of grain against banding (highp only: mediump can't hash safely)
 }
 void main(){
@@ -86,11 +77,15 @@ void main(){
     if (abs(p.x) > r.z + 70. * dpr || abs(p.y) > r.w + 70. * dpr) continue;
     float d = sdBox(p, r.zw, props[i].x);
     float sh = 1. - smoothstep(-20. * dpr, 50. * dpr, d);
-    if (lightMode > .5) col *= mix(vec3(1.), .9 + .1 * hue(fc.x / res.x * 1.3 + .05), sh * (.6 + .4 * props[i].y)) * (1. - .05 * sh);   // light mode: a faint spectrum in the shadow
+    if (lightMode > .5) col *= 1. - .07 * sh;   // light mode: a soft grey shadow
     else col *= 1. - .22 * sh;
     float dh = sdBox(fc - r.xy, r.zw, props[i].x);                           // a halo, hugging the edge and fading out
     if (dh > 0.) col = mix(col, lightMode > .5 ? vec3(1.) : mix(acc1, vec3(1.), .25), (lightMode > .5 ? .62 : .2) * pow(1. - smoothstep(0., 46. * dpr, dh), 1.6));
   }
+  // the canvas is see-through except for the glass: outside it only the light mode's contact shadow is drawn (as a black
+  // wash), so the page and its motifs (kit/ui/motifs.js), which sit beneath the canvas, show through around the glass
+  float sa = lightMode > .5 ? clamp(1. - col.g / max(base.g, .01), 0., 1.) : 0.;
+  float cover = 0.;
   for (int i = 0; i < ${MAX}; i++) { if (i >= n) break;
     vec4 r = rects[i]; vec2 p = fc - r.xy;
     if (abs(p.x) > r.z + 2. || abs(p.y) > r.w + 2.) continue;
@@ -114,8 +109,7 @@ void main(){
     float rim = smoothstep(-3. * dpr, -.6 * dpr, d) * (1. - smoothstep(-.5, 1., d));   // a definite edge
     float lit = .5 + .5 * dot(nrm, light);
     vec3 rimc = accentRim > .5 ? mix(acc1, vec3(1.), .25 + .45 * lit) : vec3(1.);   // the course's colour, or white light
-    if (props[i].y > .5) { float a = atan(p.y, p.x) / 6.2832 + .5;          // the Gradify bar: a rainbow edge
-      rimc = clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); rimc = mix(rimc, vec3(1.), lightMode > .5 ? .42 : .55); }   // pastel, not primary
+    if (props[i].y > .5) rimc = lightMode > .5 ? vec3(.86, .86, .9) : vec3(.32, .32, .36);   // the Gradify bar: a plain frosted edge
     float gloss = (1. - smoothstep(-r.w, -r.w + min(70. * dpr, r.w * (.7 - .25 * wet)), p.y)) * (lightMode > .5 ? .22 : .1) * (1. + 1.2 * wet);   // a glossy sheet across the top
     // wet: a bright arc where the bevel turns to the light, and light gathered along the bottom edge inside (a caustic)
     float arc = wet * bend * pow(max(dot(nrm, light), 0.), 3.) * (lightMode > .5 ? .35 : .5);
@@ -129,13 +123,13 @@ void main(){
       // holographic: a thin-film spectrum running round the inner bevel, brightest towards the light
       float film = smoothstep(.12, .4, bend) * (1. - smoothstep(.55, .9, bend));
       vec3 iri = mix(mix(hue(atan(p.y, p.x) / 6.2832 + bend * 1.4 + .1), vec3(.78, .72, 1.), .3), vec3(1.), .4);   // pastel: lilac, pink, blue, peach
-      glass = mix(glass, iri, film * (.28 + .2 * wet) * (.55 + .45 * lit));
+      glass = mix(glass, iri, film * .28 * (1. - wet) * (.55 + .45 * lit));   // the bar has no film: plain frost
     }
     glass = mix(glass, rimc, rim * (props[i].y > .5 ? .95 : (accentRim > .5 ? .85 : .55 + .35 * lit)));
     glass *= 1. - (.14 + (lightMode > .5 ? .22 : .12) * wet) * bend * max(dot(nrm, -light), 0.);   // the edge away from the light, in shade (deeper on the bar)
-    col = mix(col, glass, aa);
+    col = mix(col, glass, aa); cover = max(cover, aa);
   }
-  gl_FragColor = vec4(col, 1.);
+  gl_FragColor = vec4(col * cover, cover + (1. - cover) * sa);   // premultiplied
 }`;
 
 const hexRgb = (s) => {
@@ -158,7 +152,7 @@ export function start() {
   };
   const pref = (() => { try { return localStorage.getItem("gradify.glass"); } catch { return null; } })();
   const canvas = document.createElement("canvas");
-  const opts = { antialias: false, alpha: false, depth: false, stencil: false, powerPreference: "default" };
+  const opts = { antialias: false, alpha: true, premultipliedAlpha: true, depth: false, stencil: false, powerPreference: "default" };
   // the browser's own answer to "is there a real GPU here?": no context with this flag on software rendering
   let gl = pref === "force" ? null : canvas.getContext("webgl", { ...opts, failIfMajorPerformanceCaveat: true });
   const caveat = !gl && pref !== "force";
@@ -252,7 +246,7 @@ export function start() {
   const readColours = () => {
     const rs = getComputedStyle(root), course = document.querySelector("#course, .co"), cs = course && getComputedStyle(course), bs = getComputedStyle(document.body);
     const lightMode = root.getAttribute("data-theme") === "light";
-    const base = hexRgb(rs.getPropertyValue("--bg")) || (lightMode ? [.965, .965, .984] : [0, 0, 0]);
+    const base = hexRgb(rs.getPropertyValue("--bg")) || (lightMode ? [1, 1, 1] : [0, 0, 0]);
     const a1 = hexRgb(cs?.getPropertyValue("--la")) || hexRgb(bs.getPropertyValue("--accent")) || [.27, .25, 1];
     const a2 = hexRgb(cs?.getPropertyValue("--lb")) || [.94, .33, .87];
     const next = { lightMode, base, a1, a2, course: !!course };
