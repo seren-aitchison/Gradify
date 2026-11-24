@@ -71,6 +71,7 @@ Sent only after consent, through `window.gradifyConsent.event(name, params)`, as
 | `quiz_complete` | `kit/course/course.js` unit quiz | `passed` (never the score) |
 | `flashcard_session_start` / `_complete` | `kit/app/main.js` | `cards`, `mode` / `practice` |
 | `tool_use`, `quiz_finish`, `cta_click`, `share`, `print`, `export` | free tools, guides, topics, study plans and feature pages, via `track()`; `cta_click` also counts each feature page's "Open" button (`data-cta`) | `page_type` (the page's first folder: `features`, `tools`, `guides`, `topics` …) |
+| `experiment_exposure` | `kit/core/experiments.js`, when a consenting visitor sees a running experiment | `experiment`, `variant`; `cta_click` and `first_learning_action` then carry `exp` (`id:variant`) |
 | `first_learning_action` | `kit/core/consent.js`, once per browser, after the first `lesson_complete`, `quiz_complete`, `quiz_finish`, `exam_finish`, `flashcard_session_complete` or `study_plan_block_done` (activation: a sign-up alone never counts) | `kind` (which of those it was) |
 | `study_plan_block_done` | `kit/lifeos/calendar.js` | `minutes` |
 | `sign_up` / `login` | `kit/data/store.js`, once, on return from an email link or Google | `method` |

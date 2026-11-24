@@ -146,7 +146,8 @@
   var FIRST_VALUE = /^(lesson_complete|quiz_complete|quiz_finish|exam_finish|flashcard_session_complete|study_plan_block_done)$/, FV_KEY = "gradify.firstvalue";
   function firstValue(kind) {
     try { if (localStorage.getItem(FV_KEY)) return; localStorage.setItem(FV_KEY, new Date().toISOString().slice(0, 10)); } catch (e) { return; }
-    gtag("event", "first_learning_action", { gradify_site: siteName(), kind: kind });
+    var exp = ""; try { var e = JSON.parse(localStorage.getItem("gradify.exp") || "{}"); exp = Object.keys(e).map(function (k) { return k + ":" + e[k]; }).join(",").slice(0, 100); } catch (err) { /* none */ }
+    gtag("event", "first_learning_action", exp ? { gradify_site: siteName(), kind: kind, exp: exp } : { gradify_site: siteName(), kind: kind });
   }
 
   // ---------- the banner and the preferences dialog ----------

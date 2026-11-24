@@ -18,7 +18,11 @@ const counts = () => (analytics ||= import("/kit/core/analytics.js").catch(() =>
 // the kind of free page this is (its first folder: features, tools, guides, topics …), sent with actions to Google
 // Analytics so conversion can be compared by page type
 const pageType = location.pathname.split("/")[1] || "home";
-export const act = (event) => counts().then((m) => m?.track(event, "Gradify", { page_type: pageType }));
+// conversion experiments (kit/core/experiments.js): only for visitors who accepted analytics; their actions carry the
+// variant they saw, so results compare like with like
+let exp = "";
+import("/kit/core/experiments.js").then((m) => { m.runExperiments(); exp = m.tags(); }).catch(() => {});
+export const act = (event) => counts().then((m) => m?.track(event, "Gradify", { page_type: pageType, ...(exp ? { exp } : {}) }));
 counts().then((m) => m?.trackView("Gradify"));
 // start fetching the drag-up sheet now, in parallel with the tool's own code, so it's ready the moment the tool is
 if (document.querySelector("[data-sheet]")) import("/assets/sheet.js").catch(() => {});
