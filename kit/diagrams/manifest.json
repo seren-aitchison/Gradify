@@ -70967,5 +70967,150 @@
     "detail": "660px wide, shown at 107% (labels 16.1px)"
    }
   ]
+ },
+ "phys-u47-reliability": {
+  "title": "Exponential reliability",
+  "caption": "With a constant failure rate λ = 10⁻⁵ per hour, R(t) = e^(−λt). Over 1000 hours R = e^(−0.01) = 0.99; at t = MTTF = 1/λ = 99999.99999999999 hours the reliability is e⁻¹ = 0.368, so only 37% of components survive to the mean time to failure.",
+  "alt": "Reliability falling exponentially from 1, with marked points of 0.990 at 1000 hours and 0.368 at 100 000 hours.",
+  "description": [
+   "R(t) = exp(−λt) with λ = 10⁻⁵ h⁻¹; time in thousands of hours.",
+   "t = 1000 h: R = 0.99.",
+   "t = 1/λ = 99999.99999999999 h: R = 0.3679."
+  ],
+  "course": "physics",
+  "lesson": "Reliability and physical modelling",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u47.js: Reliability and physical modelling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "R(1000 h) = 0.99",
+    "ok": true,
+    "detail": "y(1) = 0.99"
+   },
+   {
+    "name": "R(MTTF) = 1/e",
+    "ok": true,
+    "detail": "y(99.99999999999999) = 0.3679"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u47-resonance-peak": {
+  "title": "A sharp resonance: Q = 200",
+  "caption": "A resonator at 1000 Hz with half-power bandwidth 5 Hz has Q = f₀/Δf = 200 and ζ = 1/(2Q) = 0.0025. The response peaks at 200 times the static value, and falls to 141.4 (the half-power level, 1/√2 of the peak) at f₀ ± 2.5 Hz, which is r = 0.9975 and 1.0025.",
+  "alt": "A very narrow tall resonance peak of height 200 at a frequency ratio of 1, with a dashed line at the half-power level 141 crossing the curve at 0.9975 and 1.0025.",
+  "description": [
+   "Amplitude response against r = f/f₀ with ζ = 0.0025.",
+   "Peak: 1/(2ζ) = 200 at r = 1.",
+   "Half-power level 141.4; the curve crosses it at r ≈ 0.9975 and 1.0025, a bandwidth of 5 Hz on 1000 Hz.",
+   "Q = 1000/5 = 200; ζ = 0.0025."
+  ],
+  "course": "physics",
+  "lesson": "Resonance and damping",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u47.js: Resonance and damping"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "peak 200 = 1/(2ζ)",
+    "ok": true,
+    "detail": "y(1) = 200"
+   },
+   {
+    "name": "response at the lower half-power point",
+    "ok": true,
+    "detail": "y(0.9975) = 141.687"
+   },
+   {
+    "name": "response at the upper half-power point",
+    "ok": true,
+    "detail": "y(1.0025) = 141.1567"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u47-transmissibility": {
+  "title": "Transmissibility of an undamped mount",
+  "caption": "With ζ ≈ 0 the transmissibility is T = 1/|1 − r²|. The machine at 25 Hz on mounts with f_n = 5 Hz has r = 5, so T = 1/24 = 0.0417: only 4.2% of the force reaches the floor. Isolation (T < 1) begins only above r = √2 ≈ 1.41; near r = 1 the force is amplified without limit.",
+  "alt": "Transmissibility against frequency ratio: very large near 1, crossing 1 at 1.41 and falling to 0.04 at a ratio of 5.",
+  "description": [
+   "T = 1/|1 − r²| for an undamped isolator, r = f/f_n.",
+   "At r = 5: T = 0.0417.",
+   "T = 1 at r = √2 ≈ 1.4142; below that the mount makes things worse.",
+   "At r = 1 the mount resonates and T is unbounded."
+  ],
+  "course": "physics",
+  "lesson": "Vibration isolation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u47.js: Vibration isolation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "T = 1/24 at r = 5",
+    "ok": true,
+    "detail": "y(5) = 0.0417"
+   },
+   {
+    "name": "T = 1 at r = √2",
+    "ok": true,
+    "detail": "y(1.4142) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }
